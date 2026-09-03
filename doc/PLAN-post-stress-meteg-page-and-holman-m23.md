@@ -845,3 +845,81 @@ Changed paths, all in MAM-basics:
 
 `py/main_verify_and_render_table.py` is untouched, per Ben's decision that the
 check stay out of the renderer.
+
+### Phase 4 done 2026-09-03: both renames applied, and the per-row ketiv/qere vocabulary untouched
+
+**Phase 4 HAS BEEN DONE.** Both renames are in, in one commit, and the two
+Holman pages are re-rendered. Input revision: MAM-basics `8184104a`, this plan's
+Phase 3 commit, in the same worktree.
+
+The rendering run, from the worktree root, with `REPOS_ROOT` set so the
+MAM-parsed and UXLC verification resolves:
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_and_render_table.py
+~~~
+
+**The same command was run BEFORE the edit and produced no diff at all**, so the
+tracked pages were current and every line the rename changed is the rename's.
+
+Rename A, the page identity, three strings in `py/py_render/rt_html.py`:
+
+| constant | before | after |
+|---|---|---|
+| `MAIN_PAGE_TITLE` | `Holman k/q + MAM suggestions` | `Holman MAM suggestions` |
+| `MAIN_PAGE_HEADING` | `Holman's ketiv/qere review and MAM suggestions` | `Holman MAM suggestions` |
+| `SUPPRESSED_PAGE_TITLE` | `Holman k/q - Suppressed` | `Holman MAM suggestions - Archived` |
+
+Rename B, the archive label, four reader-facing values in the same file:
+
+| site | before | after |
+|---|---|---|
+| `SUPPRESSED_NAV_LABEL` | `Suppressed` | `Archived` |
+| `SUPPRESSED_PAGE_TITLE` | (rename A's third row) | (rename A's third row) |
+| `SUPPRESSED_PAGE_HEADING` | `Suppressed` | `Archived` |
+| `records_heading=` at the archive render call | `Suppressed Records` | `Archived Records` |
+
+Measured in the rendered pages:
+
+1. **Five reader-visible "Suppressed" occurrences before, none after**, which is
+   the count the terminology note's own enumeration gives and the count its prose
+   miscalls six. One was in `table_data_findings.html`, the nav link; four were
+   in `table_data_findings_suppressed.html`, its `<title>`, its nav link, its
+   `<h1>` and its "Suppressed Records" section title.
+2. **Three reader-visible rename-A occurrences before, all three renamed**: the
+   main page's `<title>` and `<h1>`, and the archive page's `<title>`. The
+   archive page's `<h1>` was the bare "Suppressed" and belongs to rename B.
+3. **Seven changed lines across the two pages and nothing else**, three in the
+   main page and four in the archive page.
+4. **The generated archive filename is unchanged**,
+   `table_data_findings_suppressed.html`, and so are the hrefs and the redirect
+   script that name it.
+
+**The per-row ketiv/qere vocabulary is untouched.** Counted before and after over
+`table_data_findings.html`: 239 lines matching "ketiv" before, 238 after, the one
+lost line being the `<h1>` rename A replaced. `table_data_findings_suppressed.html`
+stands at 81 lines both before and after, its `<h1>` never having named
+ketiv/qere. The load-bearing machinery is intact: 120 lines with the
+`kind-ketiv-qere` filter ids, 60 with the `cat-kind-ketiv-qere` CSS classes, 59
+with `github.com/bdenckla/holman-ketiv-qere` issue URLs, 59 "UXLC ketiv" column
+names, and `HaKeter ketiv` still in `py/py_render/rt_comparison_table.py`.
+
+Internal names keep the older word, which is what Ben left open rather than
+requiring to change: the `SUPPRESSED_*` constants, the `is_suppressed` predicate,
+`suppressed_output_path`, the `"suppressed"` state value, and the filename. Three
+comments that said "the Suppressed page" now say "the Archived page", and the
+comment above the page-identity constants states Ben's 2026-09-03 reason in place
+of the 2026-09-02 one it overturns, keeping its still-true half about the
+filename.
+
+**One inconsistency this rename creates is RAISED AND NOT FIXED, because the
+wording is Ben's to choose.** `gh-pages/holman/index.html`, which is
+hand-authored rather than generated, names the main page "Ketiv/qere review, and
+suggestions for MAM" at its line 60 — the compound framing rename A retired. The
+page it links to now calls itself "Holman MAM suggestions". Copying that title
+is the obvious repair, and it is the rule
+`py/tests/test_site_index_links.py::test_the_misc_titles_are_the_pages_own_titles`
+enforces for the Misc entries of the site's landing page; but this plan's Phase 4
+is scoped to `py/py_render/rt_html.py` and to a measured three and five rendered
+occurrences, and the entry's descriptive note below the title is accurate as it
+stands.

@@ -41,28 +41,35 @@ from hkq_cmn.table_row_github_issues import require_row_github_issue_metadata
 import hkq_paths
 
 MAIN_NAV_LABEL = "Active"
-SUPPRESSED_NAV_LABEL = "Suppressed"
+SUPPRESSED_NAV_LABEL = "Archived"
 # The nav reaches this report's own two pages and the hand-written landing page,
 # and stops there. It used to carry a fourth link, to the suggested-UXLC-changes
 # report; Ben had it removed on 2026-08-11, the two bodies of work being separate
 # and not to be cross-linked. index.html is where both are reachable from.
 INDEX_PAGE = "index.html"
 INDEX_NAV_LABEL = "Index"
-# The page carries two bodies of Holman's work since 2026-09-02, so its title and
-# heading name both. The FILENAME is unchanged, deliberately: table_data_findings.html
-# is the URL index.html links and the one Ben has already sent to correspondents.
-MAIN_PAGE_TITLE = "Holman k/q + MAM suggestions"
-SUPPRESSED_PAGE_TITLE = "Holman k/q - Suppressed"
-MAIN_PAGE_HEADING = "Holman's ketiv/qere review and MAM suggestions"
-SUPPRESSED_PAGE_HEADING = "Suppressed"
-# Two things reach the Suppressed page by two different routes: a ketiv/qere row
+# The title and heading name the page plainly. Ben's decision, 2026-09-03: the
+# ketiv/qere review the page began as is one kind of MAM suggestion among several
+# now, so the compound title it had until then named an old scope. The per-row
+# ketiv/qere vocabulary stays exactly as it is -- it names a category that still
+# exists, and it drives this page's filtering. The FILENAME is unchanged,
+# deliberately: table_data_findings.html is the URL index.html links and the one Ben
+# has already sent to correspondents.
+MAIN_PAGE_TITLE = "Holman MAM suggestions"
+SUPPRESSED_PAGE_TITLE = "Holman MAM suggestions - Archived"
+MAIN_PAGE_HEADING = "Holman MAM suggestions"
+SUPPRESSED_PAGE_HEADING = "Archived"
+# Two things reach the Archived page by two different routes: a ketiv/qere row
 # whose GitHub issue is closed, and a MAM suggestion with a ruling in
 # hkq_cmn/mam_suggestion_dispositions.py. A suggestion has no issue, so issue
 # state could not have carried it.
 #
-# The subtitle states what suppressed MEANS, because a reader meets the word here
+# The subtitle states what Archived MEANS, because a reader meets the word here
 # and would otherwise guess. Ben's decision, 2026-09-02: it means handled, and
-# says nothing about how -- that module's docstring says why not.
+# says nothing about how -- that module's docstring says why not. The word shown
+# to readers became "Archived" on 2026-09-03; the SUPPRESSED_* names, the
+# is_suppressed predicate, the "suppressed" state value and the generated filename
+# all keep the older word, which Ben left open rather than requiring to change.
 SUPPRESSED_PAGE_SUBTITLE = "Handled: accepted, rejected, or something in between"
 
 
@@ -162,7 +169,7 @@ def render_table_data_findings_html(
         main_output_path=output_html_path,
         suppressed_output_path=suppressed_output_path,
         active_nav_label=SUPPRESSED_NAV_LABEL,
-        records_heading="Suppressed Records",
+        records_heading="Archived Records",
     )
     return output_html_path
 
@@ -247,7 +254,7 @@ def _write_report_page(
         "" if not page_subtitle else f'<p class="subtitle">{escape(page_subtitle)}</p>'
     )
     # Both kinds of anchor, because both kinds of record can be on either page:
-    # a suggestion moves to the Suppressed page once it has been ruled on, so a
+    # a suggestion moves to the Archived page once it has been ruled on, so a
     # #mam<NNN> link handed out while it was active must follow it there.
     row_ids_on_page = sorted(
         [row_fragment_id(as_text(row.get("row_number", ""))) for row in rows]
