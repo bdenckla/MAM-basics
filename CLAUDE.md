@@ -569,6 +569,17 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
+**In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Eleven test
+files read six sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, MAM-private,
+codex-index-leningrad and diffable-pointed-hebrew — and `paths.repos_root()` resolves
+those under the worktree's own parent, `.claude/worktrees/`, where none of them is;
+measured 2026-09-03, that turns a clean run of **973 passed, 5 skipped** into 904
+passed, 34 failed and 35 errors, every failure being the same missing directory.
+
+```powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+```
+
 Sibling-repo paths (MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS, MAM-for-Sefaria)
 are built from `mb_cmn.paths.repo_root()` / `repos_root()` / `sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`

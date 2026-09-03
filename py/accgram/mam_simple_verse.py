@@ -23,6 +23,28 @@ CANT_BET = "cant-bet"
 _CANT_ALL_THREE = "cant-all-three"
 
 
+def require_mam_simple(mam_simple_dir: Path) -> None:
+    """Fail on an absent MAM-simple tree, naming the two overrides that fix it.
+
+    These loaders take the directory as an argument, so they cannot call
+    ``paths.require_mam_simple_dir`` -- but they are still the place the absence
+    is first noticed, and ``paths.require_sibling``'s own docstring names what
+    they used to raise instead: "a bare ``FileNotFoundError`` from deep in a
+    loader does not mention them".  It did not, and the cost was measured on
+    2026-09-03: in a worktree with no ``REPOS_ROOT``, six test files failed for
+    want of MAM-simple, and the two that reached the corpus through these
+    loaders rather than through ``paths`` -- ``test_mam_simple_dualcant_loader``
+    and ``test_versification_differences_doc`` -- got a path and no remedy, so a
+    sweep for the standard "sibling repo X not found" wording missed both.
+
+    The advice is keyed to the sibling even when a caller passed an explicit
+    ``--mam-simple-dir``, whose own default is that sibling; the message names
+    the path actually looked for either way, which is what a wrong ``--mam-simple-dir``
+    needs to show.
+    """
+    paths.require_sibling("MAM-simple", mam_simple_dir)
+
+
 def default_mam_simple_dir(repo_root: Path) -> Path:
     # ``repo_root`` is retained so CLI ``--mam-simple-dir`` flags keep their
     # signature; the sibling lookup is delegated to the env-overridable resolver,
@@ -43,8 +65,7 @@ def load_mam_simple_for_refs(
     two detangled strands as ``vels_cant_alef`` / ``vels_cant_bet`` streams (for the
     dual-cantillation detangler).  It is off by default so existing consumers keep
     receiving the plain ``{"vels": ...}`` shape unchanged."""
-    if not mam_simple_dir.is_dir():
-        raise FileNotFoundError(f"MAM-simple directory not found: {mam_simple_dir}")
+    require_mam_simple(mam_simple_dir)
 
     by_bcv: dict[str, dict[str, object]] = {}
     for bb, ref_pairs in refs_by_book.items():
@@ -95,8 +116,7 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     surveys are keyed to WLC's refs and so read ``json-vtrad-bhs``, and a caller reaching for
     ``json-vtrad-mam`` has no WLC refs to ask it with.
     """
-    if not mam_simple_dir.is_dir():
-        raise FileNotFoundError(f"MAM-simple directory not found: {mam_simple_dir}")
+    require_mam_simple(mam_simple_dir)
 
     refs: dict[str, set[tuple[int, int]]] = {}
     for bb in wlc_bb_codes():
