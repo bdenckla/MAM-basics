@@ -545,8 +545,9 @@ diffable-pointed-hebrew product's samples and its nine short Unicode-name assign
 `diffable-pointed-hebrew/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
 MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
 is deliberately absent from `all-repos.code-workspace`, `repo_visibility`, and vendoring audit
-configuration. The source repository keeps its history as a dated breadcrumb; Ben decides whether
-the source repository is archived after the breadcrumb is verified.
+configuration. The source repository keeps its history as an archived dated breadcrumb. Ben
+archived `bdenckla/diffable-pointed-hebrew` on 2026-09-04; its archive state was then confirmed
+with `gh repo view --json isArchived,url`.
 
 ## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
 

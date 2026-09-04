@@ -56,7 +56,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | **DONE 2026-09-04.** `cam1753/` holds the 100 selected source blobs, including the 14 spreads; the 28 page JPEGs are ignored output regenerated from those spreads. The source repository is an archived breadcrumb, and its clean primary clone has left `GitRepos`. |
-| 4 — diffable-pointed-hebrew | **DONE 2026-09-04.** The product now lives under `diffable-pointed-hebrew/` and `py/main_diffable_pointed_hebrew.py`; the pushed source is a dated breadcrumb, its verified primary clone has left `GitRepos`, and Ben's separate source-archive decision remains pending. |
+| 4 — diffable-pointed-hebrew | **DONE 2026-09-04.** The product now lives under `diffable-pointed-hebrew/` and `py/main_diffable_pointed_hebrew.py`; the source is an archived dated breadcrumb, and its verified primary clone has left `GitRepos`. |
 | 5 — Cross-repo bookkeeping and stage close | Not started. It removes the four workspace entries, performs the final clone-removal checks, records the source-repository dispositions, and closes this stage. |
 
 ## Phase 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions
@@ -369,9 +369,9 @@ repositories. The source's pushed breadcrumb commit `97d95e1` retains only
 the working tree and stash were empty, and `git worktree list` named only its
 primary worktree before the primary clone was moved to the Windows Recycle Bin.
 The MAM-basics suite collected 977 tests with the five established skips, Ruff
-passed, and Black left the edited Python files unchanged. Ben decides whether
-to archive `bdenckla/diffable-pointed-hebrew`; no GitHub archive action has been
-taken.
+passed, and Black left the edited Python files unchanged. Ben archived
+`bdenckla/diffable-pointed-hebrew` on 2026-09-04; `gh repo view --json
+isArchived,url` confirmed its archive state.
 
 ## Phase 5 — Cross-repo bookkeeping and stage close
 
