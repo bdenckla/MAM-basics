@@ -1090,12 +1090,27 @@ chanted words.
 
 **The corrected sof-pasuq boundary moved nothing, and the audit the plan asked
 for is therefore empty.** A U+05BD in the stressed syllable of a chanted word
-with no sof pasuq occurs **0** times, so no mark changed sides. **Twelve verses
-have a last parsed entry with no sof pasuq** — Exodus 20:2, 3, 4, 7, 8 and 9 and
-Deuteronomy 5:6, 7, 8, 11, 12 and 13, in MAM's own versification — and all twelve
-are dual-cantillation spans, where both strands reach one entry list and the
-strand that ends the list is not the one carrying sof pasuq. None of the twelve
-carries a meteg, so none was classified either way.
+with no sof pasuq occurs **0** times, so no mark changed sides.
+
+**Twelve NUMBERED verses have a last parsed entry with no sof pasuq, and the
+distinction between a numbered verse and a chanted verse is the whole of why.**
+The twelve are Exodus 20:2, 3, 4, 7, 8 and 9 and Deuteronomy 5:6, 7, 8, 11, 12
+and 13, in MAM's own versification, and every one of them is dually cantillated.
+This corpus is keyed by numbered verse; a Decalogue numbered verse holds both
+strands, so its entry list ends with the two strands' forms of one chanted word
+standing adjacent — one with silluq and sof pasuq, whose chanted verse ends at
+the numbered verse's boundary, and one with an ordinary accent and no sof pasuq,
+whose chanted verse runs on into the next numbered verse. Exodus 20:2 ends
+`עַל־פָּנָֽי׃` and then `עַל־פָּנַ֗י`, which is that pair.
+
+**The pattern is exceptionless over all twelve, measured 2026-09-04: the sof
+pasuq is on the second-to-last entry every time.** So these twelve are exactly
+where the census script's position-based test could have gone wrong — it would
+have called that trailing mid-chanted-verse word verse-final, and a U+05BD in its
+stressed syllable a silluq. It never did, for a reason that is luck rather than
+design: **none of the twelve trailing chanted words has a meteg**, so none was
+classified either way. The strict rule needs no such luck, a chanted word with no
+sof pasuq ending no chanted verse.
 
 **Post-stress metegs by structural type**, prose verses then poetic:
 open syllable 113 and 13, guttural at the end of the chanted word 33 and 23,

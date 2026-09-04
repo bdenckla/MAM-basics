@@ -41,13 +41,25 @@ classified against a syllable division the two sides do not share.
 
 THE SILLUQ BOUNDARY IS TWO CONDITIONS, BOTH OF THEM, AND NO THIRD.  A U+05BD is the silluq
 when it is in the stressed syllable of a chanted word that has sof pasuq; the sof pasuq is
-what makes that chanted word the last of its chanted verse, so verse-finality needs no test of
-its own and never rests on an entry's position in a list.  The untracked census script this
-module replaces (``doc/post-stress-meteg-census-2026-09-03.md`` is its report) treated a
-verse's last parsed entry as verse-final whether or not it had sof pasuq, which is a silluq
-fallback rather than a test.  ``verses_whose_last_entry_lacks_sof_pasuq`` records every place
-that difference could have bitten, and the run fails on one that dual cantillation does not
-account for.
+what makes that chanted word the last of its CHANTED verse, so nothing here needs a separate
+test of finality and nothing rests on an entry's position in a list.  The untracked census
+script this module replaces (``doc/post-stress-meteg-census-2026-09-03.md`` is its report)
+treated the last parsed entry of a NUMBERED verse as verse-final whether or not it had sof
+pasuq, which is a silluq fallback rather than a test.
+
+A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and the two Decalogues are where
+they come apart -- which is exactly where that fallback could have gone wrong.  This corpus is
+keyed by numbered verse, and each Decalogue numbered verse holds both cantillation strands, so
+its entry list ends with the two strands' forms of one chanted word standing adjacent: one
+with silluq and sof pasuq, whose chanted verse ends at the numbered verse's boundary, and one
+with an ordinary accent and no sof pasuq, whose chanted verse runs on into the next numbered
+verse.  Measured 2026-09-04 over all twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
+and 9 and Deuteronomy 5:6, 7, 8, 11, 12 and 13 in MAM's versification -- the pattern is
+exceptionless: the sof pasuq is on the second-to-last entry every time.  A rule that read
+finality off the position would call that trailing mid-chanted-verse word verse-final, and any
+U+05BD in its stressed syllable a silluq.  ``numbered_verses_whose_last_entry_lacks_sof_pasuq``
+records all twelve, the run fails on a thirteenth that dual cantillation does not account for,
+and no reading of them is needed anyway: none of the twelve has a meteg.
 
 A METEG AND AN ACCENT ON ONE LETTER HAVE NO DEFINED ORDER (Ben, 2026-09-03), so the run fails
 rather than guessing -- except where the accent sharing the letter marks no stress, since then
@@ -416,11 +428,12 @@ _DUALCANT_MARKER = "cb-dualcant"
 
 
 def _has_dual_cantillation(node: object) -> bool:
-    """Whether the verse has Phonetic MAM's dual-cantillation bracket.
+    """Whether the numbered verse has Phonetic MAM's dual-cantillation bracket.
 
-    Structural rather than a list of references: what makes a Decalogue verse special here is
-    that both strands' chanted words reach one entry list, which is also why such a verse's
-    last entry need not be the one carrying sof pasuq.
+    Structural rather than a list of references: what makes a Decalogue numbered verse special
+    here is that both strands' chanted words reach one entry list, which is also why its last
+    entry need not be the one with sof pasuq -- one strand's chanted verse ends at the numbered
+    verse's boundary and the other's runs on past it.
     """
     if isinstance(node, str):
         return node == _DUALCANT_MARKER
@@ -874,14 +887,17 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
         "what": (
             "The Phonetic MAM standard set is regenerated in al-hatorah, on its own"
             " occasions, so it is a snapshot of MAM rather than MAM's current state. This"
-            " counts U+05BD per verse on both sides and names every verse where they differ,"
-            " so the page can say which MAM its figures describe."
+            " counts U+05BD per numbered verse on both sides and names every numbered verse"
+            " where they differ, so the page can say which MAM its figures describe."
         ),
         "how": (
-            "Per verse, in MAM's own versification, which is the numbering both sides use."
-            " Nothing here aligns words, so it survives the places where the two texts group"
-            " atoms differently. Dual-cantillation verses are left out: Phonetic MAM has"
-            " both strands where MAM-simple's loader yields the combined stream once."
+            "Per NUMBERED verse, in MAM's own versification, which is the numbering both"
+            " sides use. Nothing here aligns words, so it survives the places where the two"
+            " texts group atoms differently. Dual-cantillation numbered verses are left out:"
+            " Phonetic MAM has both strands where MAM-simple's loader yields the combined"
+            " stream once. Every other numbered verse ends on a chanted word with sof pasuq,"
+            " measured 2026-09-04, so no chanted verse in the comparison runs past a"
+            " numbered verse's end."
         ),
         "surveyed_snapshot": paths.display_path(paths.al_hatorah_phonetic_dir()),
         "compared_against": paths.display_path(paths.mam_simple_vtrad_mam_dir()),
@@ -1032,7 +1048,7 @@ def build_survey() -> dict:
             "meteg_in_the_stressed_syllable_without_sof_pasuq": found["in_stressed"],
             "sharing_a_letter_with_a_non_stress_marking_accent": found["overlaps"],
             "entries_without_jta_or_fva": found["entries_without_jta_or_fva"],
-            "verses_whose_last_entry_lacks_sof_pasuq": found[
+            "numbered_verses_whose_last_entry_lacks_sof_pasuq": found[
                 "last_entry_lacks_sof_pasuq"
             ],
             "records_without_a_mam_form": [

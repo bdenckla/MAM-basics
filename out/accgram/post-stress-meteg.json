@@ -9411,7 +9411,7 @@
    }
   ],
   "entries_without_jta_or_fva": 0,
-  "verses_whose_last_entry_lacks_sof_pasuq": [
+  "numbered_verses_whose_last_entry_lacks_sof_pasuq": [
    {
     "bcv": "ex20:2",
     "chanted_word": "עַל־פָּנַ֗י",
@@ -9519,8 +9519,8 @@
   "differences": []
  },
  "currency": {
-  "what": "The Phonetic MAM standard set is regenerated in al-hatorah, on its own occasions, so it is a snapshot of MAM rather than MAM's current state. This counts U+05BD per verse on both sides and names every verse where they differ, so the page can say which MAM its figures describe.",
-  "how": "Per verse, in MAM's own versification, which is the numbering both sides use. Nothing here aligns words, so it survives the places where the two texts group atoms differently. Dual-cantillation verses are left out: Phonetic MAM has both strands where MAM-simple's loader yields the combined stream once.",
+  "what": "The Phonetic MAM standard set is regenerated in al-hatorah, on its own occasions, so it is a snapshot of MAM rather than MAM's current state. This counts U+05BD per numbered verse on both sides and names every numbered verse where they differ, so the page can say which MAM its figures describe.",
+  "how": "Per NUMBERED verse, in MAM's own versification, which is the numbering both sides use. Nothing here aligns words, so it survives the places where the two texts group atoms differently. Dual-cantillation numbered verses are left out: Phonetic MAM has both strands where MAM-simple's loader yields the combined stream once. Every other numbered verse ends on a chanted word with sof pasuq, measured 2026-09-04, so no chanted verse in the comparison runs past a numbered verse's end.",
   "surveyed_snapshot": "MAM-private/al-hatorah/io/a01-phonetic-std-set",
   "compared_against": "MAM-simple/json-vtrad-mam",
   "focus_verses": {
