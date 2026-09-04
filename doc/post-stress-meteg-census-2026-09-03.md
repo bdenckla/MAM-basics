@@ -18,6 +18,18 @@ made on 2026-09-04 and not measurements**; Phase 1 of
 is what tests them, and a mismatch with either is a finding rather than something
 to absorb.
 
+**RESULT, 2026-09-04: PHASE 1 TESTED BOTH PREDICTIONS AND NEITHER HELD. Every
+figure below is reproduced exactly — 231 post-stress metegs, 13,131 prose
+pre-stress, and every other category this report has.** The tracked generator's
+`legacy_baseline` section lists no difference at all. The reason is that the
+Phonetic MAM standard set both runs read is a snapshot of MAM taken before the
+rollout, so this census and the tracked survey count the same text: 221 of its
+23,184 comparable verses differ from MAM as it stands today, 38,379 metegs against
+38,170. **So these figures are still a pre-rollout baseline, and they are also
+still the current output** — which is a fact about the oracle rather than about
+this report. Item 1's Phase 1 record has the measurement, and the programme's
+section named above has what would close it.
+
 Evidence for the seven-item programme
 [`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
 and specifically for

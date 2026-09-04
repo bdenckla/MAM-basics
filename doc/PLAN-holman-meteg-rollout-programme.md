@@ -5,11 +5,21 @@ in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this
 point, as I fear loosing track of this larger context."*
 
-**STATUS: items 2 through 7 are ALL DONE, items 5, 6 and 7 having finished on
-2026-09-04. What remains of this programme is item 1's Phase 1, the post-stress
-meteg survey page, and its Phase 2, the M23 card link** — both of which wait on
-item 5 by design, and whose figures item 5 has now moved. Item 1's Phases 3
-through 6 are done and recorded in that plan.
+**STATUS: THE WHOLE PROGRAMME IS DONE. All seven items have run**, items 2
+through 7 on 2026-09-03 and 2026-09-04, and item 1's last two phases on
+2026-09-04. Nothing here is outstanding, and every section below is an execution
+record. This block said "What remains of this programme is item 1's Phase 1, the
+post-stress meteg survey page, and its Phase 2, the M23 card link" until item 1's
+plan recorded both as done.
+
+**One finding of item 1's Phase 1 is left for Ben, and it is a data-currency
+question rather than a step of this programme.** The survey page publishes 231
+post-stress metegs and not the 232 the section below predicts, because the
+Phonetic MAM standard set it counts is a snapshot of MAM taken before the
+rollout: 221 of its 23,184 comparable verses differ from MAM today, 38,379 metegs
+against 38,170. Regenerating that set is a step of al-hatorah's pipeline inside
+MAM-private, and re-running the survey afterwards is one command. The section
+"Item 5 changes the survey's figures" has the measurement.
 
 Every section below is an execution record rather than a sketch. The sketch had
 been assembled from three research-agent reports and one Plan-agent validation
@@ -60,7 +70,7 @@ which are accent-placement records and are NOT part of this programme.
 
 | # | Item | Status |
 |---|---|---|
-| 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the page identity and the archive label | Planned in detail, reviewed — see the plan named below |
+| 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the page identity and the archive label | **DONE**, Phases 3 through 6 on 2026-09-03 and Phases 1 and 2 on 2026-09-04 — all six recorded in the plan named below, whose Phase 1 record carries the finding about the survey's corpus |
 | 2 | Build the Wikisource bot edit files for all 30 | **DONE 2026-09-03**, files built and validated offline — see the item 2 section below, which is now an execution record rather than a sketch |
 | 3 | Run the bot | **DONE 2026-09-03**, 23 chapters saved on Ben's go-ahead — see the item 3 section below, an execution record now |
 | 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | **DONE 2026-09-03**, and Zechariah was repair rather than consistency — see the item 4 section below, an execution record now |
@@ -87,7 +97,17 @@ six phases split around the pipeline:
    alongside.
 2. **After item 5** go item 1's Phase 1, the survey, and its Phase 2, the M23
    card link, which needs Phase 1's page to exist. Item 5 changes the very
-   figures the survey publishes; the next section says by how much.
+   figures the survey publishes; the next section says by how much, and what
+   happened when Phase 1 went looking for the change on 2026-09-04.
+
+**The second ordering bought nothing, as it turned out, and was still right to
+follow.** Phase 1's figures came out identical to the pre-rollout census, item 5
+notwithstanding, because the survey counts Phonetic MAM's text and that edition
+had not been regenerated — so running Phase 1 before item 5 would have published
+the same 231. The ordering was right on what was known: had the corpus been
+current, the page would have gone out with pre-rollout figures. What the episode
+actually shows is that an ordering constraint is only as good as its premise
+about where a survey's data comes from.
 
 Why that check runs only once, and the two alternatives Ben rejected, are
 recorded in that plan's Phase 3.
@@ -130,11 +150,45 @@ first published figures should already be the moved ones: 232 post-stress metegs
 rather than 231, and a prose pre-stress figure about 29 below 13,131. Treat a
 mismatch with either as a finding.
 
-### Item 1: the notes, the page, the M23 link, the terminology rename
+**BOTH PREDICTIONS WERE TESTED ON 2026-09-04 AND BOTH ARE WRONG, AND THE FINDING
+IS ABOUT THE SURVEY'S CORPUS RATHER THAN ABOUT THE PREDICTIONS' ARITHMETIC.**
+Phase 1 measured **231** post-stress metegs and a prose pre-stress figure of
+**13,131** — the pre-rollout census exactly, in every category it has. The
+arithmetic above is sound and the premise under it is not: **Phase 1 does not
+compute against the post-item-5 MAM, because the text it counts is Phonetic MAM's
+own.**
+
+That edition is the survey's stress oracle, which is why it is also its text:
+what the survey counts is the metegs of the chanted words Phonetic MAM marks the
+stress of. al-hatorah regenerates it on its own occasions, and it has not been
+regenerated since the thirty landed — Isaiah 23:12's קוּמִי has no meteg there,
+and 1 Kings 7:24, 2 Chronicles 18:33 and Judges 21:16 still have the marks item 3
+removed. **Measured, per verse, in MAM's own versification: 221 of 23,184
+comparable verses differ, 38,379 metegs in the snapshot against 38,170 in MAM
+today, 206 verses where the snapshot has more and 15 where MAM does.** The survey
+records that comparison in its JSON's `currency` section and the page states which
+MAM its figures describe, so nothing is published as today's that is not.
+
+**What closes it is one al-hatorah pipeline step and one command here**, and
+neither is item 1's: regenerate `al-hatorah/io/a01-phonetic-std-set/` in
+MAM-private, then re-run `py/main_accgram.py survey-post-stress-meteg` and
+`py/main_authored.py gen-site`. Ben's to decide, since regenerating a private
+repository's tracked data is outside this programme.
+
+**The trap this section named was real and fired somewhere else.** It predicted a
+stale published page after item 5; what actually happened is a stale INPUT to a
+page published afterwards. Both are the same defect — a survey whose corpus moved
+and which nothing re-runs — and the `currency` section is what makes the next
+instance visible rather than silent.
+
+### Item 1: the notes, the page, the M23 link, the terminology rename — DONE 2026-09-03 and 2026-09-04
 
 Covered in full by
 [`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md),
-which was reviewed on 2026-09-03 and corrected the same day. That plan
+which was reviewed on 2026-09-03 and corrected the same day, and whose six phases
+all have execution records at the foot of it now. Phase 3, the mgketer verifier,
+ran before item 3 and matched 30 of 30; Phases 4, 5 and 6 ran alongside; Phases 1
+and 2, the page and the M23 card's link, ran on 2026-09-04 after item 5. That plan
 publishes a survey of MAM's 231 post-stress metegs at
 `gh-pages/post-stress-meteg.html`, gives the M23 card a neutral link to it, and
 makes two reader-facing renames on the Holman pages: the archive label from

@@ -768,8 +768,10 @@ push main. Do not stage unrelated changes that were already present.
 
 ## Phase state
 
-Sections are added as phases complete, newest phase last. Phases 1 and 2 have
-not run: the programme's item 5 has to precede them.
+Sections are added as phases complete, newest phase last. **All six phases have
+run**, Phases 1 and 2 on 2026-09-04 after the programme's item 5, which had to
+precede them. Their records are the last two sections of this file, so the order
+here is the order the phases were executed in rather than their numbering.
 
 ### Phase 3 done 2026-09-03: all thirty records matched, and the check will not run again
 
@@ -1040,3 +1042,237 @@ the file pass on the live tree.
 `gh-pages/post-stress-meteg.html`, and this check is what will then require it to
 have a `site_data` entry rather than being published unreachable. That is the gap
 Ben asked to close, and it is closed before the page arrives rather than after.
+### Phase 1 done 2026-09-04: the page is published, and the survey's corpus is a step behind MAM
+
+**Phase 1 HAS BEEN DONE**, in a worktree of `C:/Users/BenDe/GitRepos/MAM-basics`
+on branch `claude/nostalgic-montalcini-8bfd22`, committed as `deb80472`. The page
+is `gh-pages/post-stress-meteg.html` and its data companion is
+`out/accgram/post-stress-meteg.json`, both tracked.
+
+Input revisions, all clean trees:
+
+1. MAM-basics `8ea2c8c6` at the start. Main moved twice under the worktree while
+   this phase was being built — `c12246c6` and `62883b12`, both `doc/`-only — and
+   was merged in afterwards as `15039ab6`.
+2. MAM-private `214b064`, holding the Phonetic MAM standard set this survey
+   reads. That set's own last commit is `c67c210`, the 2026-08-10 evacuation copy,
+   and nothing has touched it since.
+3. MAM-simple `7a4f21d` and MAM-parsed `5108203`, item 5's own commits.
+
+The three commands, from the worktree root, with `REPOS_ROOT` set so MAM-private
+and MAM-simple resolve:
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_accgram.py survey-post-stress-meteg
+~~~
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_authored.py gen-site
+~~~
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q
+~~~
+
+#### The measured figures, and every one of them equals the legacy baseline
+
+| system | chanted words | pre-stress | in the stressed syllable, no sof pasuq | POST-STRESS | silluq |
+|---|---|---|---|---|---|
+| prose verses | 233,715 | 13,131 | 0 | **177** | 18,779 |
+| poetic verses | 29,605 | 1,814 | 0 | **54** | 4,486 |
+
+**The `legacy_baseline` section's list of differences is EMPTY**: every category
+of the 2026-09-03 census in
+[`post-stress-meteg-census-2026-09-03.md`](post-stress-meteg-census-2026-09-03.md)
+is reproduced exactly, the overlapping diagnostic's 27 and 119 included. So the
+231 headline stands, 177 in prose verses and 54 in poetic verses over 263,320
+chanted words.
+
+**The corrected sof-pasuq boundary moved nothing, and the audit the plan asked
+for is therefore empty.** A U+05BD in the stressed syllable of a chanted word
+with no sof pasuq occurs **0** times, so no mark changed sides. **Twelve verses
+have a last parsed entry with no sof pasuq** — Exodus 20:2, 3, 4, 7, 8 and 9 and
+Deuteronomy 5:6, 7, 8, 11, 12 and 13, in MAM's own versification — and all twelve
+are dual-cantillation spans, where both strands reach one entry list and the
+strand that ends the list is not the one carrying sof pasuq. None of the twelve
+carries a meteg, so none was classified either way.
+
+**Post-stress metegs by structural type**, prose verses then poetic:
+open syllable 113 and 13, guttural at the end of the chanted word 33 and 23,
+closed syllable with ṣere 26 and 16, none of the three 5 and 2. The three types'
+mechanical signatures reproduce both books' own examples: Yeivin §338's Numbers
+17:23, Isaiah 40:8 and Isaiah 66:3 come out as the ṣere type, his §354's
+Deuteronomy 29:19 and Judges 19:25 as the guttural type, and his §332's Genesis
+28:2 פַּדֶּנָה — Breuer's type (j) example too — as the open type.
+
+**Three counts that are 0 and are meant to be**: chanted words where the ``jta``
+and the Hebrew count syllables differently, metegs sharing a letter with a
+stress-bearing accent, and entries with no ``jta`` or ``fva``. A nonzero count in
+any of the three is a finding, as the plan says.
+
+**MAM HAS NO POST-SILLUQ METEG, and this run is what establishes it**: of the 231
+post-stress records, **0** are in a chanted word that has sof pasuq. That is the
+claim the M23 evidence note withdrew on 2026-09-03 — "zero metegs after the
+stress on any chanted word with sof pasuq" — because the census script's
+position-based verse-final test could not support it. The strict boundary can,
+and the page's 1 Samuel 17:5 section rests on it.
+
+#### THE PROGRAMME'S TWO PREDICTIONS DID NOT COME TRUE, AND THE REASON IS MEASURED
+
+The programme's section "Item 5 changes the survey's figures" predicted **232**
+post-stress metegs rather than 231, and a prose pre-stress figure about 29 below
+13,131. **Neither moved: the measurement is 231 and 13,131, exactly the
+pre-rollout census.** The reason is not the survey but its corpus.
+
+**The Phonetic MAM standard set is a SNAPSHOT of MAM, and it predates the
+rollout.** It is the stress oracle, and therefore also the text: the survey
+counts the metegs of the chanted words it marks the stress of. al-hatorah
+regenerates it on its own occasions, and it has not been regenerated since the
+thirty Holman suggestions landed. Isaiah 23:12's קוּמִי has no meteg there, and
+the removal verses still have theirs — 1 Kings 7:24, 2 Chronicles 18:33 and
+Judges 21:16 were checked by hand and all three still carry the marks item 3
+removed.
+
+**So the survey now measures its own staleness**, in a `currency` section the
+plan did not ask for and that the finding made necessary. Per verse, in MAM's own
+versification, U+05BD counted on both sides:
+
+1. **221 of 23,184 comparable verses differ.** Dual-cantillation verses are left
+   out of the comparison — 18 of them — because Phonetic MAM has both strands
+   where MAM-simple's loader yields the combined stream once.
+2. **38,379 metegs in the surveyed snapshot against 38,170 in MAM today**, so MAM
+   has 209 fewer than the text this page counts.
+3. **206 of the 221 are verses where the snapshot has more, and 15 where MAM has
+   more.** Isaiah 23:12 is one of the 15, at 3 against 4, which is M23.
+
+**What would close it is not this plan's to do**: regenerating the Phonetic MAM
+standard set is a step of al-hatorah's own pipeline, inside MAM-private, and
+re-running this survey afterwards is one command. The page says which MAM its
+figures describe rather than implying they are today's, and its M23 section says
+outright that the meteg it is about is not among the 231.
+
+#### Six departures from the plan as written, each with its reason
+
+1. **A verse whose last entry lacks sof pasuq does not fail the run outright.**
+   The plan says to collect them and "fail at the end of the run with the
+   complete list". Taken literally that publishes nothing at all, since twelve
+   such verses exist and all twelve are the two Decalogues' dual-cantillation
+   spans — a structure, not incomplete input. The run collects them, records them
+   all, and fails unless every one is a dual-cantillation span carrying no meteg.
+   A thirteenth of any other shape stops the build, which is what the plan's rule
+   is for.
+2. **The page shows fully pointed Hebrew, not `accents_and_letters`.** That
+   helper drops U+05BD along with the vowels, and U+05BD is the page's subject;
+   and the page is about which SYLLABLE a mark falls in, which a reader cannot see
+   without the vowels that make the syllables. Two of the three types are named
+   for a vowel or a syllable shape, so this is the "unless a vowel is the point of
+   that specific comparison" case the plan and the `hebrew-prose` skill both
+   allow.
+3. **Every form shown is MAM's own text, joined to the record from MAM-simple.**
+   Phonetic MAM's forms carry two annotations MAM does not have — a masora circle
+   on a resolved sheva and an upper dot on a dagesh it takes as xazaq — so
+   printing them verbatim would put marks in front of a reader that MAM's text
+   does not have. The join is by a key that drops what the two sides may
+   legitimately differ in; each record says how it matched, and 2 of the 231 have
+   no single MAM form (both at Psalms, where one verse has two chanted words alike
+   in everything the key keeps) and fall back to the snapshot's spelling.
+4. **The page quotes neither book.** The plan permits bounded excerpts and does
+   not require them, so the sections are cited by number and paraphrased, and no
+   private source text reaches a public page. `_EXCERPTS` is empty and
+   `_excerpt_accounting` asserts that it is, which is what the plan asks of a page
+   with no excerpts.
+5. **The survey has a `main_accgram.py` subcommand, `survey-post-stress-meteg`.**
+   Not a member of `_HTML_GENERATORS`, which the plan forbids and which would put
+   it in the mega's batch; a survey subcommand beside `survey-chanted-word-accents`
+   is the shape this repository already has for a computation the mega does not run.
+6. **The page links `wlc/style.css` as well as the deploy root's `style.css`.**
+   The accgram stylesheet is what supplies the `lang="hbo"` font at the size that
+   makes accents legible, the italic for a romanized accent name, and the
+   numeric-cell alignment. Its `@font-face` URL resolves against the stylesheet,
+   so the font is reached from the deploy root as it is from `gh-pages/wlc/`.
+
+#### Changed paths, and the one that had to stay byte-identical
+
+1. `py/accgram/post_stress_meteg.py` — new, the survey.
+2. `py/author_site/post_stress_meteg.py` — new, the page.
+3. `py/author_site/site_data.py` — the filename and title constants, the
+   `wlc/style.css` href, and the authored entry that puts the page in the index's
+   MAM section.
+4. `py/main_accgram.py` — the survey subcommand.
+5. `py/main_authored.py` — `gen_site`'s `--trust-surveys` and the named set
+   `_SURVEY_READING_PAGES` it routes through, written for a set from the start as
+   the plan asks.
+6. `py/main_0_mega.py` — the `gen-site` step passes it.
+7. `out/accgram/post-stress-meteg.json` and `gh-pages/post-stress-meteg.html` —
+   new.
+8. `gh-pages/index.html` — one added entry, from the `site_data` entry.
+
+**`gh-pages/unicode-proposals.html` is byte-identical after the run**, which the
+plan requires and which `git diff --exit-code` confirmed.
+
+#### What was checked besides the suite
+
+**The suite is 975 passed, 5 skipped, 65 subtests** with `REPOS_ROOT` set — the
+figure the programme records, and no test was added: Phase 6's reverse-direction
+check in `py/tests/test_site_index_links.py` is what required the new page to have
+a `site_data` entry, and it fired for exactly that reason before the entry existed.
+
+**Two repository lints caught things a reading had not.**
+`py/tests/test_prose_conventions.py` found sixteen agentive verbs — "MAM writes",
+"MAM carries" — in the new modules and in the JSON's own prose, and
+`py/tests/test_h_dot_below_nfc.py` found h-with-dot-below in a comment where the
+convention is ASCII x. The second only fired once the module was tracked, which
+is worth knowing: that lint reads `git ls-files`.
+
+**The mega's path was checked rather than assumed.** `gen-site --trust-surveys`,
+which is what `main_0_mega.py` calls, renders the page from the tracked JSON
+byte-identically to the recompute-from-corpus run.
+
+**Four negative controls fire**, each with the message it should: an absent survey
+JSON, a page whose claimed post-stress count disagrees with its records, a chanted
+word whose `jta` and Hebrew count syllables differently, and a `jta` with no stress
+marker.
+
+### Phase 2 done 2026-09-04: the M23 card links the page, and nothing else moved
+
+**Phase 2 HAS BEEN DONE**, committed as `1d658100` on the same branch. Input
+revision: MAM-basics `15039ab6`, the merge that brought main's two `doc/` commits
+into this worktree.
+
+The rendering command, from the worktree root:
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_and_render_table.py
+~~~
+
+`py/py_render/rt_suggestion_context.py` is the new map. It is keyed by the
+reference as Holman sent it, `Isa 23:12.11`, and not by the M number, which is an
+ordinal the renderer prints from `case_number`; the card resolves `ref_as_sent`
+before `ref` and this lookup reads the same value. `py/py_render/rt_html.py`
+passes the map to `suggestion_card_html` rather than letting the card builder
+reach for it, so what a card may link to is decided at one call site.
+
+The href's three parts are `site_data` constants —
+`POST_STRESS_METEG_FNAME`, `POST_STRESS_METEG_TITLE` and the
+`POST_STRESS_METEG_M23_ID` that moved there so both trees could read it — so a
+rename of the page cannot leave the card pointing at nothing. Nothing was put in
+`holman/docs-not-served/mam_suggestions.json`, which the plan forbids and which
+would mix an explanation written afterwards into the extracted record.
+
+Measured in the rendered pages:
+
+1. **One line added, and the whole render diff is that one line.** It is on the
+   card whose id is `mam023`, under its notes:
+   `Background: Meteg after the primary stress in MAM`, pointing at
+   `../post-stress-meteg.html#m23-isaiah-23-12`.
+2. **The line is on the ARCHIVED page**, `table_data_findings_suppressed.html`,
+   and `table_data_findings.html` is untouched — all 34 M records having been
+   archived by the programme's item 6, which ran the day before.
+3. **M23's card is otherwise identical**, diffed card against card: its title, its
+   comparison forms, its source message, its disposition and its comparison status
+   are all unchanged, and no other card gained a link.
+4. **The link resolves**: `gh-pages/holman/../post-stress-meteg.html` is the page
+   this plan's Phase 1 published, and the fragment `m23-isaiah-23-12` is that
+   page's M23 heading.
+
+Suite after the change: **975 passed, 5 skipped, 65 subtests**.
