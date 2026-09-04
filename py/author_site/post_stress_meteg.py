@@ -268,13 +268,13 @@ def _opening(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "A meteg almost always appears before the stressed syllable of its chanted"
+                "A meteg almost always appears before the stressed syllable of its chanted",
                 " word, but it can also come after the stress. Both ",
                 itm(),
                 " and ",
                 cos(),
-                " describe post-stress meteg. Neither source says how often post-stress"
-                " meteg occurs; this page counts it in MAM. MAM has ",
+                " describe post-stress meteg. Neither source says how often post-stress",
+                " meteg occurs; we find that MAM has ",
                 f"{total:,} post-stress meteg marks among {words:,} chanted words.",
             )
         ),
@@ -282,10 +282,13 @@ def _opening(survey: dict) -> list:
             "A chanted word is an atom standing alone or a whole maqaf compound. An atom"
             " is one written word between spaces or maqafs. A maqaf compound has one"
             " primary stress across all of its atoms."
+            # You took considerable liberties with my edits; did I ask that you clean it up or say that you should put "something to this effect"?
+            # I think not. Are my original edits lost?
         ),
         _para(
             "Which syllable a chanted word is stressed on is not always obvious,"
             " so for this survey of post-stress meteg marks,"
+            # what happened to my introduction of the initialism (acronym) "PSM"?
             " we use Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
         ),
