@@ -163,3 +163,25 @@ to read at those spots than at the other 27.
   form; the card's `diff-hash` is the record id used above.
 - The by-type totals: count `diff-card` in `by-type/mam-adds-meteg.html` (67) and
   `by-type/mgketer-adds-meteg.html` (5), at MAM-private's state on 2026-09-03.
+
+## Status, 2026-09-04: the refresh has happened and these totals are now HISTORICAL
+
+**Every figure above is pre-refresh.** Item 7 of
+[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md)
+ran `py/main_diff.py --all` on mgketer on 2026-09-04, after items 3 and 5 had put
+the thirty suggestions into MAM. Counted as diff cards on the pages themselves:
+`mam-adds-meteg.html` fell from **67 to 37** and `mgketer-adds-meteg.html` from
+**5 to 4**, "Meteg moved" stayed at 5, and a new `by-type/accent.html` arrived
+holding one card, Zechariah 2:4, which is M34. The non-common total therefore
+went from 281 to 251.
+
+**The section above headed "mgketer records with no Holman counterpart, noticed
+in passing" predicted the shape of the drop, and it was right.** Thirty cards
+left `mam-adds-meteg.html` where twenty-nine records asked for it, because
+2 Kings 21:12 shed two: M18's meteg on the resh, and `2K21:12#0ebb56b0`,
+וִֽיהוּדָ֑ה, the one this note had already noticed as covered by no Holman record.
+
+**One expectation of the larger programme did NOT hold, and it is worth knowing
+before re-establishing anything here.** Joshua 10:12 shows no mgketer diff,
+before the refresh or after: mgketer's `py/python_modules/strip_stress_helpers.py`
+strips stress helpers by design, so M24's doubled pashta cannot produce one.

@@ -17,7 +17,18 @@ script stays untracked at
 repository. The six notes were written under `C:/Users/BenDe/.claude/plans/` because concurrent
 work in git-tracked areas had not concluded, and were moved into `doc/` on 2026-09-03.
 
-## What M23 says (not yet implemented; no edit made; nothing in this note decides it)
+## What M23 says — IMPLEMENTED 2026-09-03
+
+**Status, 2026-09-04: M23 HAS BEEN IMPLEMENTED, and this heading said "not yet
+implemented; no edit made" until now.** The Wikisource bot added the meteg on
+2026-09-03 as item 3 of
+[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+and item 5 carried it into MAM-parsed and the generated repositories on
+2026-09-04. **Nothing in this note decided it, and that part of the old heading
+stands**: Ben Denckla had taken all thirty meteg suggestions as a batch before
+any of this research was done. M23 is archived as item 6 of that programme, its
+disposition keyed `Isa 23:12.11`. Item 7's mgketer refresh removed its diff card
+from `mgketer-adds-meteg.html`, which fell from 5 cards to 4.
 
 Record `#mam023` of `gh-pages/holman/table_data_findings.html` (moved there from
 the now-retired `holman-ketiv-qere` repo during this session — see the path note in

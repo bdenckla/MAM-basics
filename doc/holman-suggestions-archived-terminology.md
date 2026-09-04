@@ -9,7 +9,17 @@ it is NOT part of item 6, which archives the thirty records themselves.
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
 HEAD `3829585`), one of a set of six notes written under `C:/Users/BenDe/.claude/plans/` because
 concurrent work in git-tracked areas had not concluded. All six were moved into `doc/` on
-2026-09-03. The rename itself is not yet done; no edit has been made.
+2026-09-03.
+
+**Status, 2026-09-04: THE RENAME HAS BEEN DONE, and this paragraph said "the
+rename itself is not yet done; no edit has been made" until now.** It was
+applied on 2026-09-03 as Phase 4 of
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md),
+whose "Phase 4 done 2026-09-03" section is the execution record and reports both
+renames applied with the per-row ketiv/qere vocabulary untouched. The
+reader-facing strings live in `py/py_render/rt_html.py` as `SUPPRESSED_NAV_LABEL`,
+`SUPPRESSED_PAGE_TITLE` and `SUPPRESSED_PAGE_HEADING`, whose `SUPPRESSED_*`
+NAMES were deliberately left alone; what changed is their values.
 
 **Path note, 2026-09-03:** the Holman review moved out of the separate `holman-ketiv-qere`
 repo into `MAM-basics/holman/` (data) and `MAM-basics/gh-pages/holman/` (rendered pages)
