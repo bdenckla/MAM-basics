@@ -8,9 +8,33 @@ steps at the end, which write into this repo's own out/ and gh-pages/wlc/.
 wlc-utils had its own mega until 2026-08-01; the two are one list now so that
 accgram cannot read a MAM-simple that mam-simple has not yet regenerated.  The wlc
 steps wrote into the wlc-utils clone until 2026-08-12, when the corpus came home
-(doc/PLAN-evacuate-the-rest-of-wlc-utils.md, Phases 3 and 5) -- so this mega no
-longer writes outside the checkout it runs in, which is what makes a worktree run
-of it isolated.
+(doc/PLAN-evacuate-the-rest-of-wlc-utils.md, Phases 3 and 5) -- so THE WLC HALF no
+longer writes outside the checkout it runs in.
+
+PREFER RUNNING THIS FROM THE PRIMARY CLONE: A WORKTREE RUN MISDIRECTS TWO STEPS,
+SILENTLY.  This paragraph said until 2026-09-04 that the mega "no longer writes
+outside the checkout it runs in, which is what makes a worktree run of it
+isolated".  The first half is true of the wlc half alone, and the conclusion was
+false of the pipeline as a whole: the steps named above write into five sibling
+repositories by design, and two of them find those siblings by a path relative to
+the CURRENT WORKING DIRECTORY rather than through mb_cmn/paths.  mb_misc/
+write_utils.py builds its destination as f"../{mam_for_xxx}", and CLAUDE.md lists
+it among the handful of files deliberately kept cwd-relative so that they stay
+portable when vendored into a sibling.  Run from .claude/worktrees/<name>, that
+resolves to .claude/worktrees/MAM-simple and .claude/worktrees/MAM-for-Sefaria,
+which the run CREATES rather than failing on.  Setting REPOS_ROOT does not help,
+those modules never calling paths.
+
+The failure is silent in both directions, which is what makes it worth this many
+lines.  Measured 2026-09-04 during item 5 of
+doc/PLAN-holman-meteg-rollout-programme.md: 216 MAM-simple files and 160
+MAM-for-Sefaria files went to the phantom siblings; mam-osis and the accgram
+steps then read the REAL MAM-simple, still stale, so MAM-OSIS came out unchanged
+where it should have moved; and the run exited 0.  Nothing wrong was written --
+the misdirected output is correct content in the wrong directory -- so a repair
+is to copy it across and re-run with --resume-from mam-osis.  If this must run
+from a worktree, check .claude/worktrees/ for stray sibling directories
+afterwards, every time.
 """
 
 import argparse
