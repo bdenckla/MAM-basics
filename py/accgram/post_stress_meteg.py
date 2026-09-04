@@ -1162,6 +1162,43 @@ def _consonant_key(text: str) -> str:
     return re.sub("[\u0591-\u05c7\u034f]", "", text)
 
 
+def _mam_form_for_dual_cantillation_atom(raw_atom: str, mam_atoms: list[str]) -> str:
+    """The MAM atom with only the cantillation marks of ``raw_atom``'s branch.
+
+    Phonetic MAM marks a resolved sheva with a masora circle that MAM's text does not have.
+    The raw atom therefore decides only which accent and meteg marks its cantillation branch
+    selects; its letters and points never reach the reader-facing form.
+    """
+    candidates = [
+        atom for atom in mam_atoms if _consonant_key(atom) == _consonant_key(raw_atom)
+    ]
+    assert len(candidates) == 1, (raw_atom, candidates)
+    selected_marks = {char for char in raw_atom if is_accent(char) or char == METEG}
+    return "".join(
+        char
+        for char in candidates[0]
+        if not (is_accent(char) or char == METEG) or char in selected_marks
+    )
+
+
+def _mam_forms_for_dual_cantillation_difference(
+    raw_words: list[str], words_by_bcv: dict[str, list[str]], bcv: str
+) -> list[str]:
+    """The MAM forms selected by one branch's Phonetic-MAM grouping and accents."""
+    mam_atoms = [
+        atom
+        for word in words_by_bcv[bcv]
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    ]
+    return [
+        MAQAF.join(
+            _mam_form_for_dual_cantillation_atom(atom, mam_atoms)
+            for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", raw_word)
+        )
+        for raw_word in raw_words
+    ]
+
+
 def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[dict]:
     """The before-stress records in ``records`` that have no matching chanted word in ``other``."""
     unmatched = Counter(_consonant_key(one["chanted_word"]) for one in other)
@@ -1175,7 +1212,9 @@ def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[
     return out
 
 
-def _meteg_before_stress_difference(found_alef: dict, found_bet: dict) -> dict:
+def _meteg_before_stress_difference(
+    found_alef: dict, found_bet: dict, words_by_bcv: dict[str, list[str]]
+) -> dict:
     """The single dually-cantillated chanted-word difference in meteg-before-stress count."""
     dual_bcv = found_alef["dual_cant_verses"]
     assert dual_bcv == found_bet["dual_cant_verses"]
@@ -1210,8 +1249,16 @@ def _meteg_before_stress_difference(found_alef: dict, found_bet: dict) -> dict:
     assert all(METEG not in word for word in alef_counterparts), alef_counterparts
     return {
         "bcv": bcv,
-        CANT_ALEF: {"chanted_words": alef_counterparts},
-        CANT_BET: {"chanted_words": [bet_record["chanted_word"]]},
+        CANT_ALEF: {
+            "chanted_words": _mam_forms_for_dual_cantillation_difference(
+                alef_counterparts, words_by_bcv, bcv
+            )
+        },
+        CANT_BET: {
+            "chanted_words": _mam_forms_for_dual_cantillation_difference(
+                [bet_record["chanted_word"]], words_by_bcv, bcv
+            )
+        },
     }
 
 
@@ -1276,7 +1323,7 @@ def build_survey() -> dict:
                 CANT_BET: _dually_cantillated_passage_counts(found_bet),
             },
             "meteg_before_stress_difference": _meteg_before_stress_difference(
-                found, found_bet
+                found, found_bet, words_by_bcv
             ),
         },
         "counts": {
