@@ -16,6 +16,8 @@ gutter finder.
 
 import json
 import os
+import sys
+
 import numpy as np
 from PIL import Image
 
@@ -60,6 +62,8 @@ def main():
     MAM-basics, where importing a top-level module to inspect it is ordinary and
     would have rewritten 43 tracked files.
     """
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     spread_dir = cam1753_paths.spreads_dir()
     out_dir = cam1753_paths.pages_dir()
     doc_dir = cam1753_paths.spread_splits_doc_dir()
