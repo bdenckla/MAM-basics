@@ -3,12 +3,13 @@ Map UXLC change entries (changeset 2026.02.05) to book-of-job quirkrecs.
 
 This script establishes and verifies a correspondence between:
   - The 162 change entries in the 2026.02.05 changeset of
-    "in/UXLC-misc/2026.04.01 - Changes.xml"
-  - The 160 "quirkrecs" in the book-of-job repo's
-    "out/enriched-quirkrecs.json"
+    "uxlc/in/UXLC-misc/2026.04.01 - Changes.xml"
+  - The 160 "quirkrecs" in the retained book-of-job tree's
+    "book-of-job/out/enriched-quirkrecs.json"
 
 It produces two outputs:
-  1. A JSON mapping file: in/UXLC-misc/2026.04.01-map-to-book-of-job.json
+  1. A JSON mapping file:
+     uxlc/in/UXLC-misc/2026.04.01-map-to-book-of-job.json
   2. A deep comparison report printed to stdout
 
 The mapping is done in two phases:
@@ -159,10 +160,24 @@ def align_sequences(xml_entries, html_entries):
     return matched, xml_only, html_only
 
 
+def _repo_relative(path):
+    """Spell a path as this repository names it, for the labels below."""
+    return path.relative_to(paths.repo_root()).as_posix()
+
+
 def write_mapping(matched, xml_only, html_only):
+    # "xml_source" and "html_base" are documentation for whoever reads the
+    # mapping: where its input came from, and the prefix that turns each
+    # entry's bare "html" filename into a locatable page.  No program reads
+    # either -- this module writes them and nothing else in the tree mentions
+    # them -- so they are repo-root-relative for a reader rather than paths
+    # anything opens.  Both are DERIVED from XML_PATH and HTML_DIR because the
+    # spelled-out pair went stale unnoticed: 8a04ad54 (2026-09-03) repointed
+    # those two constants into this repository and left the labels naming
+    # UXLC-utils' layout and a book-of-job clone that belongs on no machine.
     output = {
-        "xml_source": "in/UXLC-misc/2026.04.01 - Changes.xml",
-        "html_base": "../book-of-job/gh-pages/jobn-details/",
+        "xml_source": _repo_relative(XML_PATH),
+        "html_base": _repo_relative(HTML_DIR) + "/",
         "changeset": CHANGESET,
         "matched": [
             {"n": xe["n"], "ref": xe["ref"], "pos": xe["pos"], "html": he["file"]}

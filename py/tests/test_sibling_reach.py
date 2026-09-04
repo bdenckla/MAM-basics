@@ -184,15 +184,6 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
             "../MAM-OSIS/",
         )
     },
-    (
-        "py/main_map_changes_to_book_of_job.py",
-        "../book-of-job/gh-pages/jobn-details/",
-    ): (
-        "an html_base written into the mapping JSON as a link prefix.  The module's"
-        " own paths are in-repo -- paths.repo_root() / 'book-of-job' and"
-        " paths.gh_pages_dir() / 'book-of-job' -- book-of-job's tree having been"
-        " evacuated here, so this string reaches no clone"
-    ),
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),
