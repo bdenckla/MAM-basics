@@ -605,7 +605,8 @@ a finding.
 ## Fourth stage — the five MAM products, total evacuation — **PURSUED 2026-09-04; drafted, not started**
 
 **Ben decided on 2026-09-04 to pursue this stage, and did NOT waive its open sub-questions**, which
-are listed under §"The six sub-questions Ben has not waived" below and are his to answer. This is
+are recorded under §"The six sub-questions Ben has not waived" below, for whenever he answers
+them; that section says which lane each one blocks. This is
 the fourth stage §"Whether the products follow — an open question Ben put on 2026-09-02, and not
 decided" said would exist: "if Ben decides yes, it is a fourth stage with its own section here,
 after the third." The five products are **MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS and
@@ -909,8 +910,13 @@ Four smaller differences, each with a precedent:
 
 ### The six sub-questions Ben has not waived
 
-**None is decided, and each changes what a lane does.** They are listed for Ben rather than
-resolved.
+**None is decided, and each changes what a lane does. They are RECORDED HERE for whenever
+Ben answers them, not asked of him at any particular moment.** Each blocks the lane it
+governs and nothing else: drafting this section did not need any of them answered, and a
+session picking this file up may read it, measure against it, and write a plan file from it
+with all six still open. What no session may do is START a lane whose question is one of
+these — so the answer is owed at the head of the lane, and questions 5 and 6, being about
+what runs when and whether a plan file exists, are owed before the first lane of all.
 
 1. **Does the outsider get a sparse checkout, a release archive, or neither?** Objection 2 above.
    "Neither" is a decision to let "get the simple extract" mean cloning about 770 MB.
