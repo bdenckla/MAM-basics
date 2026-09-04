@@ -257,14 +257,14 @@ def _prose_note_html(label: str, value: str) -> str:
     )
 
 
-# A markdown-style inline link inside a prose field: [change](https://...).
-# ONLY https, which is what keeps this from being an injection: everything outside
-# a match is escaped as before, the href is escaped, and no other scheme can match.
-_PROSE_LINK_RE = re.compile(r"\[([^\]\n]+)\]\((https://[^\s)]+)\)")
+# A markdown-style inline link inside a prose field. These accept only an external
+# https URL or an M-card fragment on this generated page: everything outside a match
+# is escaped as before, the href is escaped, and no other scheme or fragment matches.
+_PROSE_LINK_RE = re.compile(r"\[([^\]\n]+)\]\((https://[^\s)]+|#mam[0-9]{3})\)")
 
 
 def _prose_with_links_html(value: str) -> str:
-    """Escape prose, turning ``[text](https://...)`` into a real link.
+    """Escape prose, turning an approved markdown-style link into a real link.
 
     The alternative was a bare URL in the text, and Ben Denckla ruled against that
     on 2026-09-02: a Hebrew Wikisource diff URL is a massive percent-encoded
@@ -278,10 +278,9 @@ def _prose_with_links_html(value: str) -> str:
     position = 0
     for match in _PROSE_LINK_RE.finditer(value):
         parts.append(escape(value[position : match.start()]))
-        parts.append(
-            f'<a href="{escape(match.group(2))}" target="_blank" rel="noopener">'
-            f"{escape(match.group(1))}</a>"
-        )
+        href = match.group(2)
+        target = "" if href.startswith("#") else ' target="_blank" rel="noopener"'
+        parts.append(f'<a href="{escape(href)}"{target}>{escape(match.group(1))}</a>')
         position = match.end()
     parts.append(escape(value[position:]))
     return "".join(parts)

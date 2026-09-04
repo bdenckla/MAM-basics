@@ -119,12 +119,13 @@ the images:
    such a way around an intruding ascender. **Where those cases are is an open question Ben
    raised in the same breath ("where?") and this note does not answer it**; nobody has yet
    collected them. So Ben has no reason to believe the naqdan was dissuaded from a meteg here
-   by the lamed ascender. The aside is worth having only because the first place the eye goes
-   to look for such a meteg is occupied, which a reader of the image should know before
-   concluding anything from its absence.
+   by the lamed ascender. The M10 card now names the encroachment so a reader can read the image
+   with that context; the card does not answer the open question about other cases. The aside is
+   worth having only because the first place the eye goes to look for such a meteg is occupied.
 2. **M27, Judges 5:6, חָֽדְל֖וּ, and M33, Judges 21:16, הָֽעֵדָ֔ה.** A similar situation, less
    severe: something from the neighbouring line encroaches on the space where the meteg would
-   go, but more room for a meteg is present than in M10.
+   go, but more room for a meteg is present than in M10. The M27 and M33 cards now name that
+   smaller encroachment and link to M10 for the fuller image-reading note.
 
 None of this changes the three records' disposition. Holman's page and mgketer both record no
 meteg in the Aleppo Codex at all three atoms, and the aside says only why the image is harder
