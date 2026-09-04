@@ -845,17 +845,21 @@ def _one_verse(
 _FOCUS_VERSES = ("is23:12", "1s17:5")
 
 
-def _mam_words_by_bcv() -> dict[str, list[str]]:
+def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
     """MAM-simple's chanted words per verse, in MAM's versification.
 
     MAM's numbering rather than the BHS one this repo's other surveys read, because Phonetic
     MAM numbers its verses MAM's way; ``test_final_stress_vs_phonetic_mam._measured`` reaches
-    for the same tree for the same reason.
+    for the same tree for the same reason. ``cantillation`` selects an individual
+    dual-cantillation projection; otherwise this returns MAM-simple's combined representation.
     """
     from accgram import mam_simple_verse
 
     mam_dir = paths.require_mam_simple_vtrad_mam_dir()
-    return mna.mam_words(mam_simple_verse.mam_simple_refs(mam_dir), mam_dir)
+    refs_by_book = mam_simple_verse.mam_simple_refs(mam_dir)
+    if cantillation is None:
+        return mna.mam_words(refs_by_book, mam_dir)
+    return mna.mam_words_for_cantillation(refs_by_book, cantillation, mam_dir)
 
 
 def _fold_qamats_qatan(key: str) -> str:
@@ -1206,7 +1210,9 @@ def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[
 
 
 def _meteg_before_stress_difference(
-    found_alef: dict, found_bet: dict, words_by_bcv: dict[str, list[str]]
+    found_alef: dict,
+    found_bet: dict,
+    words_by_cantillation: dict[str, dict[str, list[str]]],
 ) -> dict:
     """The single dually-cantillated chanted-word difference in meteg-before-stress count."""
     dual_bcv = found_alef["dual_cant_verses"]
@@ -1244,12 +1250,12 @@ def _meteg_before_stress_difference(
         "bcv": bcv,
         CANT_ALEF: {
             "chanted_words": _mam_forms_for_dual_cantillation_difference(
-                alef_counterparts, words_by_bcv, bcv
+                alef_counterparts, words_by_cantillation[CANT_ALEF], bcv
             )
         },
         CANT_BET: {
             "chanted_words": _mam_forms_for_dual_cantillation_difference(
-                [bet_record["chanted_word"]], words_by_bcv, bcv
+                [bet_record["chanted_word"]], words_by_cantillation[CANT_BET], bcv
             )
         },
     }
@@ -1267,6 +1273,10 @@ def build_survey() -> dict:
     found_bet = _scan(phon_dir, CANT_BET)
     assert found["dual_cant_verses"] == found_bet["dual_cant_verses"]
     words_by_bcv = _mam_words_by_bcv()
+    words_by_cantillation = {
+        CANT_ALEF: _mam_words_by_bcv(CANT_ALEF),
+        CANT_BET: _mam_words_by_bcv(CANT_BET),
+    }
     unjoined = _attach_mam_forms(
         found["post_stress"] + found["in_stressed"] + found["overlaps"], words_by_bcv
     )
@@ -1313,7 +1323,7 @@ def build_survey() -> dict:
                 CANT_BET: _dually_cantillated_passage_counts(found_bet),
             },
             "meteg_before_stress_difference": _meteg_before_stress_difference(
-                found, found_bet, words_by_bcv
+                found, found_bet, words_by_cantillation
             ),
         },
         "counts": {

@@ -451,6 +451,45 @@ def mam_words(
     }
 
 
+def mam_words_for_cantillation(
+    refs_by_book: dict[str, set[tuple[int, int]]],
+    cantillation: str,
+    mam_simple_dir: Path | None = None,
+) -> dict[str, list[str]]:
+    """MAM-simple's chanted words in one projection of every dual-cantillation span.
+
+    ``cant-combined`` is the merged representation. ``cant-alef`` and ``cant-bet`` select
+    one of the two ordinary cantillation streams instead. A verse without a dual-cantillation
+    span has the same chanted words in every projection.
+    """
+    from accgram import mam_simple_verse
+
+    vels_key_by_cantillation = {
+        mam_simple_verse.CANT_COMBINED: "vels",
+        mam_simple_verse.CANT_ALEF: "vels_cant_alef",
+        mam_simple_verse.CANT_BET: "vels_cant_bet",
+    }
+    try:
+        vels_key = vels_key_by_cantillation[cantillation]
+    except KeyError as exc:
+        raise ValueError(f"Unknown MAM-simple cantillation: {cantillation!r}") from exc
+    loaded = mam_simple_verse.load_mam_simple_for_refs(
+        mam_simple_dir or paths.require_mam_simple_dir(),
+        refs_by_book,
+        include_strands=cantillation != mam_simple_verse.CANT_COMBINED,
+    )
+    return {
+        bcv: _join_on_maqaf(
+            [
+                value
+                for value in payload["mam_simple_verse"][vels_key]
+                if isinstance(value, str)
+            ]
+        )
+        for bcv, payload in loaded.items()
+    }
+
+
 # UXLC ships one XML per book under its own English filename; map those onto the WLC 2-char
 # book codes the genre filters and the bcv keys use.  Public, with ``uxlc_text`` below, because
 # ``chanted_word_accents`` reads the same files a different way -- it needs the ATOMS, where this
