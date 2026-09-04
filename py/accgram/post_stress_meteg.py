@@ -455,8 +455,8 @@ def _has_dual_cantillation(node: object) -> bool:
     return False
 
 
-def _project_cantillation(node: object, cantillation: str) -> object:
-    """Replace each dual span by its cant-alef or cant-bet branch.
+def _select_cantillation_strand(node: object, cantillation: str) -> object:
+    """Replace each dual span with its cant-alef or cant-bet cantillation strand.
 
     Phonetic MAM's source writes the alef branch before the bet branch when it emits a
     ``cb-dualcant`` structure. The explicit names here keep that ordering from becoming an
@@ -475,11 +475,13 @@ def _project_cantillation(node: object, cantillation: str) -> object:
             ):
                 branches = payload[1:]
                 assert len(branches) == 2, len(branches)
-                out.append(_project_cantillation(branches[branch_index], cantillation))
+                out.append(
+                    _select_cantillation_strand(branches[branch_index], cantillation)
+                )
             else:
-                out.append(_project_cantillation(payload, cantillation))
+                out.append(_select_cantillation_strand(payload, cantillation))
         return out
-    return [_project_cantillation(one, cantillation) for one in node]
+    return [_select_cantillation_strand(one, cantillation) for one in node]
 
 
 def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
@@ -726,7 +728,7 @@ def _classify_one_word(
 
 
 def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
-    """Every U+05BD of the Phonetic MAM standard set in one cantillation projection."""
+    """Every U+05BD of the Phonetic MAM standard set in one cantillation strand."""
     assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
         "counts": Counter(),
@@ -753,7 +755,7 @@ def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
                 bb,
                 chnu,
                 vrnu,
-                _project_cantillation(verse, cantillation),
+                _select_cantillation_strand(verse, cantillation),
                 found,
                 dual_cantillation=dual,
                 dual_facts=_dual_cantillation_facts(verse) if dual else None,
@@ -1170,8 +1172,8 @@ def build_survey() -> dict:
         "scope": (
             "Every chanted word of every verse. Prose verses and poetic verses are routed by"
             " accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual"
-            " cantillation passage is counted in the cant-alef projection, as though it"
-            " were read once."
+            " cantillation passage is counted with the cant-alef cantillation strand, as"
+            " though it were read once."
         ),
         "dual_cantillation": {
             "counted_cantillation": CANT_ALEF,

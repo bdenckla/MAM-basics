@@ -3,7 +3,7 @@
  "what": "Every U+05BD in MAM, classified by whether its syllable falls before, in, or after the chanted word's one primary stress. A U+05BD in the stressed syllable of a chanted word carrying sof pasuq is the silluq, and is counted as that rather than as a meteg.",
  "stress_oracle": "Phonetic MAM's jta field, whose ! marks the one stressed syllable. A U+05BD's own position is never used to infer the stress. The Hebrew's nuclei are counted independently and the two counts must agree per chanted word, a furtive patax counting as a syllable on both sides.",
  "silluq_boundary": "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that has sof pasuq. Both conditions are required and there is no third: the sof pasuq is what makes the chanted word the last of its chanted verse, so nothing here rests on an entry's position in a list.",
- "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual cantillation passage is counted in the cant-alef projection, as though it were read once.",
+ "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual cantillation passage is counted with the cant-alef cantillation strand, as though it were read once.",
  "dual_cantillation": {
   "counted_cantillation": "cant-alef",
   "numbered_verses": [

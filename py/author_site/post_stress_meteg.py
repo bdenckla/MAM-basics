@@ -756,8 +756,8 @@ def _dual_cantillation_appendix(survey: dict) -> list:
         _para(
             "Phonetic MAM records two cantillations for the two Decalogue passages and"
             f" Genesis 35:22, across {len(dual_cantillation['numbered_verses'])} numbered"
-            " verses. This census counts each such passage as though it were read once: in"
-            " the cant-alef projection."
+            " verses. These census totals use the cant-alef cantillation strand for each"
+            " such passage, as though the passage were read once."
         ),
         mb_html.para(
             (
