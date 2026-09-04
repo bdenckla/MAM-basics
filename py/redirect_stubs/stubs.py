@@ -162,6 +162,13 @@ REDIRECT_REPOS = (
         manifest_path="in/uxlc_utils_redirect_pages.json",
         clone_url="https://github.com/bdenckla/UXLC-utils.git",
     ),
+    RedirectRepo(
+        source_repo="codex-index-aleppo",
+        site_subtree="aleppo",
+        old_path_prefix="/codex-index-aleppo/",
+        manifest_path="in/codex_index_aleppo_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/codex-index-aleppo.git",
+    ),
 )
 
 # The one row that keeps existing invocations free of an otherwise needless --repo flag.

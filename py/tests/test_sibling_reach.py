@@ -158,6 +158,9 @@ SIBLINGS_REACHED: dict[str, str] = {
         " near-aleppo census there.  Its vendoring audit was given up on"
         " 2026-09-04 (abb03ec4), which removed a third route but not these two."
     ),
+    "codex-index-aleppo": (
+        "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
+    ),
     "codex-index-cam1753": (
         "cam1753_paths.DATA_REPO_NAME -- the Cambridge 1753 image corpus."
     ),
