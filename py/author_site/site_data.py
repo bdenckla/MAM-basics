@@ -70,7 +70,7 @@ UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
-POST_STRESS_METEG_TITLE = "Meteg after the primary stress in MAM"
+POST_STRESS_METEG_TITLE = "Meteg after the primary stress"
 
 # The identifier of that page's section on Holman suggestion M23.  Here rather than in the
 # page module because two trees want it: py/author_site/post_stress_meteg.py emits it, and
