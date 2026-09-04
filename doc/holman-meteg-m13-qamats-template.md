@@ -10,7 +10,19 @@ HEAD `3829585`, clean tree), one of a set of six notes written under
 All six were moved into `doc/` on 2026-09-03, which settles the "where they land" question the
 closing section of this note leaves open.
 
-## Finding: implementing suggestion M13 means removing the meteg from BOTH parameters of a `מ:קמץ` call (not yet done; no edit made)
+## Finding: implementing suggestion M13 means removing the meteg from BOTH parameters of a `מ:קמץ` call — DONE 2026-09-03
+
+**Status, 2026-09-04: M13 HAS BEEN IMPLEMENTED, and this heading said "not yet
+done; no edit made" until now.** The Wikisource bot removed both metegs on
+2026-09-03 as item 3 of
+[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+and item 5's Google Sheet round trip and mega run carried the change into
+MAM-parsed and the generated repositories on 2026-09-04. **The finding below is
+what made the two-parameter shape matter, and it held**: M13's two bot entries
+are the two parameters of one call and so land in a single verse, which is why
+the programme's 35 auto-edit rows touch 33 verses rather than 35. M13 is
+archived as item 6 of that programme, its disposition in
+`py/hkq_cmn/mam_suggestion_dispositions.py` keyed `2Ch 18:33.21`.
 
 Suggestion M13 of `MAM-basics/gh-pages/holman/table_data_findings.html` (record `#mam013`,
 kind "meteg", message dated 2026-08-31) concerns 2 Chronicles 18:33 atom 21 of 21,
