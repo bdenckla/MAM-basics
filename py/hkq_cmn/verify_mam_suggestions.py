@@ -83,12 +83,34 @@ not about Holman.  Measured 2026-09-02 against MAM-parsed ``54ba7e0``, that coun
 was zero even for the two cases corrected on Wikisource on 2026-08-28, because
 the local corpus predates those edits.
 
-It asks that question of the form as EXTRACTED rather than as corrected, because
-``main_ingest_mam_suggestions`` calls ``check_case`` before it applies
-``mam_suggestion_corrections``.  So Joshua 10:12's flag still asks whether MAM has
-the U+05A8 qadma spelling Holman typed, rather than the doubled pashta his card
-shows; that module's docstring records the limitation and why the atom index is
-unaffected by it.
+It asks that question of the form as CORRECTED, and did so of the form as
+extracted until 2026-09-04.  ``main_ingest_mam_suggestions`` reads
+``mam_suggestion_corrections``' ``corrected_form`` for the two quoted-form fields
+before calling ``check_case``, so Joshua 10:12's flag asks whether MAM has the
+doubled pashta his card shows rather than the U+05A8 qadma he typed.  That module's
+docstring records the old ordering, which it had called a limitation rather than a
+choice, and what made changing it urgent.
+
+THE COMPARISON FORM ANCHORS THE DERIVATION ONCE MAM HAS ADOPTED THE SUGGESTION,
+and until 2026-09-04 nothing here could.  The atom index is normally found by
+locating Holman's quoted MAM form in the verse, but a suggestion that has been
+taken leaves MAM without that form: item 5 of
+``doc/PLAN-holman-meteg-rollout-programme.md`` landed the thirty Holman meteg
+suggestions in MAM on 2026-09-03, and every one of the thirty quoted MAM forms
+then occurred zero times, so ``check_case`` raised on the first case and the
+ingest could not run at all.  The derivation therefore falls back to the
+comparison form, which is what MAM has in that case.  THE ANSWER IS THE SAME
+EITHER WAY: ``_differing_offset`` returns None unless the two runs have the same
+length and differ at exactly one offset, so anchor plus offset names the same
+atom whichever of the two runs anchors it.
+
+IT STILL RAISES WHEN NEITHER FORM OCCURS EXACTLY ONCE, which is the case that
+was never derivable and is what the fail-fast here is for; the message now
+reports both counts rather than only the MAM form's.  The offset check runs
+first now, because it asks about the two quoted forms alone and needs no corpus,
+so a case that is underivable on its own terms says so rather than being
+reported as a corpus mismatch.  ``comparison_form_already_present`` says whether
+the fallback was available: it is true exactly when MAM has the comparison form.
 """
 
 from __future__ import annotations
@@ -230,12 +252,7 @@ def check_case(
     proposed = _atom_run(comparison_form)
 
     starts = _run_starts(comparable_atoms, wanted)
-    if len(starts) != 1:
-        raise ValueError(
-            f"{ref}: the quoted MAM form occurs {len(starts)} times in the verse, "
-            "so it does not identify one atom; resolve this case by hand rather "
-            "than letting a derivation guess"
-        )
+    proposed_starts = _run_starts(comparable_atoms, proposed)
     offset = _differing_offset(wanted, proposed)
     if offset is None:
         raise ValueError(
@@ -243,15 +260,26 @@ def check_case(
             "one atom, so the atom this case is about is not derivable; resolve it "
             "by hand"
         )
+    if len(starts) == 1:
+        anchor = starts[0]
+    elif len(proposed_starts) == 1:
+        anchor = proposed_starts[0]
+    else:
+        raise ValueError(
+            f"{ref}: the quoted MAM form occurs {len(starts)} times in the verse "
+            f"and the comparison form {len(proposed_starts)} times, so neither "
+            "identifies one atom; resolve this case by hand rather than letting a "
+            "derivation guess"
+        )
 
     return CaseCheck(
         ref=ref,
         atom_count=len(atoms),
         quoted_atom_count=len(wanted),
-        quoted_form_starts_at=starts[0],
-        derived_atom=starts[0] + offset,
+        quoted_form_starts_at=anchor,
+        derived_atom=anchor + offset,
         stated_atom=atom,
-        comparison_form_already_present=bool(_run_starts(comparable_atoms, proposed)),
+        comparison_form_already_present=bool(proposed_starts),
     )
 
 

@@ -47,6 +47,7 @@ import hkq_paths
 from hkq_cmn.mam_suggestion_corrections import (
     CASE_FIELD_CORRECTIONS,
     apply_corrections,
+    corrected_form,
     require_every_correction_applied,
 )
 from hkq_cmn.mam_suggestion_dispositions import (
@@ -165,13 +166,20 @@ def main() -> None:
     applied_correction_keys: set[tuple[str, str]] = set()
     applied_disposition_refs: set[str] = set()
     for case_index, case in enumerate(cases, start=1):
+        ref_as_sent = str(case.ref)
+        # The quoted forms reach check_case CORRECTED, so that it can anchor its
+        # atom derivation on the form MAM actually has.  The payload below still
+        # gets Holman's wording and apply_corrections still rewrites it, so this
+        # changes what is verified and not what is published.
         check = check_case(
             std_book_name=case.ref.std_book_name,
             chapter=case.ref.chapter,
             verse=case.ref.verse,
             atom=case.ref.atom,
-            mam_form=case.mam_form,
-            comparison_form=case.comparison_form,
+            mam_form=corrected_form(ref_as_sent, "mam_form", case.mam_form),
+            comparison_form=corrected_form(
+                ref_as_sent, "comparison_form", case.comparison_form
+            ),
         )
         checks.append(check)
         payload = case.payload()
@@ -180,7 +188,6 @@ def main() -> None:
         # The derived atom index is the one everything downstream uses; Holman's
         # is kept beside it only where the two differ.  verify_mam_suggestions'
         # docstring says why the derivation is unambiguous.
-        ref_as_sent = str(case.ref)
         if not check.stated_atom_agrees:
             payload["atom"] = check.derived_atom
             payload["atom_as_sent"] = check.stated_atom

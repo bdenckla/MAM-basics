@@ -114,6 +114,276 @@ class Disposition:
 # table beside this one is keyed by too, so that a derived atom index moving does
 # not orphan an entry.
 DISPOSITION_BY_REF: dict[str, Disposition] = {
+    "1Ki 11:1.13": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the צ (tsadi)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the צ (tsadi) where MAM had one. The Wikisource bot "
+            "run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 12:18.21": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ר (resh)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ר (resh) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 15:19.23": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the מ (mem)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the מ (mem) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 15:5.19": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 17:16.14": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the א (alef)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the א (alef) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 18:1.20": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 22:7.6": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ל (lamed)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ל (lamed) where MAM had one. The Wikisource bot "
+            "run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Ki 7:24.17": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the צ (tsadi)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the צ (tsadi) where MAM had one. The Wikisource bot "
+            "run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Sa 18:9.6": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the מ (mem)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the מ (mem) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "1Sa 27:3.15": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ו (vav)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ו (vav) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ch 18:33.21": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ch 24:25.13": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ch 32:7.18": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the first מ (mem)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the first מ (mem) where MAM had one. The Wikisource "
+            "bot run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ch 6:27.17": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the נ (nun)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the נ (nun) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ch 6:28.9": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the י (yod)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the י (yod) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
     "2Ki 17:15.15": Disposition(
         state=SUPPRESSED,
         outcome="Suggestion not taken",
@@ -132,6 +402,133 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
+    ),
+    "2Ki 21:12.11": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ר (resh)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ר (resh) where MAM had one. This meteg was already "
+            "gone from Hebrew Wikisource before the bot edit files were built, "
+            "so no entry of the bot run removed it. It reached MAM through item "
+            "2's download of 2 Kings 21, and item 2's finding 2 in "
+            "doc/PLAN-holman-meteg-rollout-programme.md records it."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Ki 7:12.19": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the י (yod)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the י (yod) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Sa 11:3.14": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Sa 12:31.25": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ר (resh)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ר (resh) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Sa 15:37.8": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ר (resh)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ר (resh) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "2Sa 18:3.9": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ל (lamed)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ל (lamed) where MAM had one. The Wikisource bot "
+            "run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Isa 23:12.11": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has the meteg under the מ (mem)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has a "
+            "meteg under the מ (mem) where MAM had none. M23 is the one record "
+            "of the thirty that adds a meteg rather than removing one. The "
+            "Wikisource bot run of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
     ),
     "Josh 10:12.3": Disposition(
         state=SUPPRESSED,
@@ -170,6 +567,150 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
+    ),
+    "Judg 1:32.9": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 1:7.21": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ר (resh)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ר (resh) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 21:16.3": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ה (he)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ה (he) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 5:11.13": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the י (yod)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the י (yod) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 5:6.7": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the ח (ḥet)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the ח (ḥet) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 6:1.2": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the נ (nun)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the נ (nun) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 6:4.1": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the י (yod)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the י (yod) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
+    ),
+    "Judg 6:5.4": Disposition(
+        state=SUPPRESSED,
+        outcome="Suggestion taken",
+        summary="MAM now has no meteg under the י (yod)",
+        reason=(
+            "Ben Denckla took all thirty of Holman's meteg suggestions as a "
+            "batch on 2026-09-03, the twenty-nine removals and M23's one "
+            "addition alike, so none of the thirty waited on a disposition of "
+            "its own. Holman's comparison form, from the Aleppo Codex, has no "
+            "meteg under the י (yod) where MAM had one. The Wikisource bot run "
+            "of 2026-09-03 made the edit, and "
+            "doc/PLAN-holman-meteg-rollout-programme.md records that run and "
+            "the pipeline that carried it into MAM-parsed and the generated "
+            "repositories."
+        ),
+        decided_by="Ben Denckla",
+        decided_on="2026-09-03",
     ),
     "Zech 2:4.11": Disposition(
         state=SUPPRESSED,
