@@ -34,6 +34,7 @@ that it is, which is the plan's requirement for a page with no excerpts.
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 from accgram import post_stress_meteg as psm
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
@@ -83,6 +84,14 @@ _POST_SILLUQ_VERSE = "1s17:5"
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
+_ITM_ADAPTATION_URL_BY_SECTION = {
+    308: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-307_310.html#ns308",
+    325: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns325",
+    332: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332",
+    338: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns338",
+    354: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-345_357.html#ns354",
+}
+_ITM_SECTION_REFERENCE = re.compile(r"§(?P<section>[0-9]+)")
 
 # Yeivin and Breuer on each of the three types, and how each book grades it.  The pairing is
 # the M23 evidence note's, doc/holman-meteg-m23-isaiah-23-12.md; both books are cited for
@@ -373,6 +382,28 @@ def itm() -> object:
     return mb_html.abbr("ITM", {"title": _ITM_GLOSS})
 
 
+def itm_sections(reference: str) -> tuple:
+    """An ITM reference whose adapted section numbers open the corresponding section."""
+    out = []
+    end = 0
+    for match in _ITM_SECTION_REFERENCE.finditer(reference):
+        out.append(reference[end : match.start()])
+        section = int(match["section"])
+        url = _ITM_ADAPTATION_URL_BY_SECTION[section]
+        out.extend(
+            (
+                "§",
+                mb_html.anchor(
+                    str(section),
+                    {"href": url, "target": "_blank", "rel": "noopener"},
+                ),
+            )
+        )
+        end = match.end()
+    out.append(reference[end:])
+    return tuple(out)
+
+
 def cos() -> object:
     """The abbreviated book name, with Breuer's title on hover."""
     return mb_html.abbr("CoS", {"title": _COS_GLOSS})
@@ -524,7 +555,7 @@ def _by_type(survey: dict) -> list:
                     kind,
                     str(survey["post_stress_by_structural_type"][_PROSE][kind]),
                     str(survey["post_stress_by_structural_type"][_POETIC][kind]),
-                    yeivin,
+                    itm_sections(yeivin),
                     breuer,
                     _hebrew_cell(example["mam_form"] or example["chanted_word"]),
                     _following_example(example, kind),
@@ -591,7 +622,9 @@ def _by_type(survey: dict) -> list:
             (
                 "For the open-syllable type, ",
                 itm(),
-                " §332 describes a chanted word stressed on its penultimate syllable,"
+                " ",
+                *itm_sections("§332"),
+                " describes a chanted word stressed on its penultimate syllable,"
                 " ending in an open syllable, before a chanted word stressed on its first."
                 " Yeivin calls it rarely marked, commonest in early manuscripts and absent"
                 " from printed texts, and ",
@@ -604,7 +637,9 @@ def _by_type(survey: dict) -> list:
             (
                 "The guttural type is described in ",
                 itm(),
-                " §354 and ",
+                " ",
+                *itm_sections("§354"),
+                " and ",
                 cos(),
                 " Ch. 8 type (b), where the last syllable of the chanted word ends in ḥet,"
                 " ayin or he. A furtive pataḥ counts as a separate syllable here, as it"
@@ -618,7 +653,9 @@ def _by_type(survey: dict) -> list:
             (
                 "The tsere type is described in ",
                 itm(),
-                " §338, fed by §308's account of retracted stress: where the stress retracts"
+                " ",
+                *itm_sections("§338, fed by §308"),
+                "'s account of retracted stress: where the stress retracts"
                 " and a final closed syllable keeps its tsere, that syllable takes the mark,"
                 " and Yeivin says it is marked in manuscripts and printed texts alike. ",
                 cos(),
@@ -782,10 +819,14 @@ def build_type_2_body(survey: dict) -> list:
             " chanted word. The following chanted word has a separate column because its"
             " initial consonant selects the filter group."
         ),
-        _para(
-            "Yeivin §354 says this mark is sometimes used when the following chanted word"
-            " begins with lamed or nun. The filter separates those two initial consonants"
-            " from all others."
+        mb_html.para(
+            (
+                "Yeivin ",
+                *itm_sections("§354"),
+                " says this mark is sometimes used when the following chanted word begins"
+                " with lamed or nun. The filter separates those two initial consonants from"
+                " all others.",
+            )
         ),
         _type_2_following_filter(len(rows)),
         _table(
@@ -973,11 +1014,15 @@ def _sources_and_limits(survey: dict) -> list:
             (
                 "The sections behind the three types are ",
                 itm(),
-                " §§308, 332, 338 and 354, and ",
+                " ",
+                *itm_sections("§§308, §332, §338 and §354"),
+                ", and ",
                 cos(),
                 " Ch. 8 §§2–10 and §§46–47, whose §3 is the ten-type taxonomy the"
                 " three rows are drawn from and whose §2 says what makes a meteg optional."
-                " Yeivin's §325, the meteg before a paseq, is deliberately not among them:"
+                " Yeivin's ",
+                *itm_sections("§325"),
+                ", the meteg before a paseq, is deliberately not among them:"
                 " he calls that one marked in early manuscripts and rare even there. Both"
                 " books call the mark a ga'ya; this page says meteg throughout.",
             )
