@@ -4,10 +4,10 @@ Crops of manuscript page images, kept as the evidence behind a stated fact about
 manuscript MAM cites actually has. One file per fact, named
 `<manuscript>-<page>-<ref>-<slug>.png`.
 
-**Where a snip goes.** A manuscript with a repo of its own gets its snips there —
-`../../../codex-index-leningrad/page-snips/`, `../../../codex-index-aleppo/`,
-`../../../codex-index-cam1753/`. This folder is for the rest, which is why the Leningrad
-half of the Lamentations 2:3 question below lives in the sibling repo rather than here.
+**Where a snip goes.** A manuscript with its own page-snips folder keeps its snips there —
+`../../leningrad/page-snips/`, `../../aleppo/`, `../../cam1753/page-snips/`. This folder
+is for the rest, which is why the Leningrad half of the Lamentations 2:3 question below
+lives in the Leningrad folder rather than here.
 MAM-basics is the fallback because it is where MAM's sigla are decoded — see
 [sigil-decoding.md](../sigil-decoding.md).
 
@@ -24,7 +24,7 @@ It gives the page and folio and, where the images are on the Internet Archive, t
 number, so it turns "which page is this verse on" into one URL. It has the Leningrad Codex,
 the Aleppo Codex and Codex Sassoon 1053 among others. Checked 2026-08-04: it does **not**
 have Cambridge University Library MS Add. 1753, so the leaf hunt for that manuscript still
-runs through `../../../codex-index-cam1753/`.
+runs through `../../cam1753/`.
 
 ## sassoon1053-p740-Lam2v3-akhla.png
 
@@ -33,8 +33,8 @@ through the masoretica.org URL above.
 
 **Sassoon 1053 has no meteg on this word** — confirmed by Ben from this image on 2026-08-04.
 So do the other two manuscripts, confirmed the same day:
-`../../../codex-index-leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png` for the
-Leningrad Codex, and `../../../codex-index-cam1753/page-snips/0105B-col2-Lam2v3-akhla.png`
+`../../leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png` for the Leningrad Codex,
+and `../../cam1753/page-snips/0105B-col2-Lam2v3-akhla.png`
 for Cambridge Add. 1753.
 
 The three together answer a Sefaria correction request of 2026-07-22 that asked for

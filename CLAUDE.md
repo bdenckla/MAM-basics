@@ -523,6 +523,16 @@ so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
 
+## Cambridge 1753 data is local under `cam1753/`
+
+Ben's decision, 2026-09-04: `codex-index-cam1753` belongs on no machine. Its archived GitHub
+history remains, but its live data is `cam1753/`, its programs are under `py/`, and the shared
+24-file MAM word-sequence snapshot is `MAM-XML/`. The fourteen source spreads are tracked;
+`cam1753-pages/` is ignored output that `py/main_cam1753_split_spreads.py` regenerates for an
+editor or crop task. The old clone left `all-repos.code-workspace` and
+`in/repo_maintenance_policy.json`'s `repo_visibility` map in the same completed lane: a missing
+workspace entry is therefore a decision, not a clone failure.
+
 The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
 ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
 citations too.

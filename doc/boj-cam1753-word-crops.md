@@ -2,8 +2,8 @@
 # Procedure: Generating Cambridge MS Add. 1753 Word Crops for Quirkrecs
 
 This describes the workflow for supplying μY (Cambridge MS Add. 1753)
-word-level image crops to quirkrecs that lack them. It uses page images
-and line-break data from the sibling `codex-index-cam1753` repo.
+word-level image crops to quirkrecs that lack them. It uses regenerated page images
+and line-break data from `cam1753/` in this repository.
 
 ## Quick start
 
@@ -141,7 +141,6 @@ Process quirkrecs in batches of ~10:
 
 - `../book-of-job/out/cam1753-crops.json` — persistent JSON record of all crop
   coordinates, keyed by SID. Stores enough data to reproduce any crop.
-- Page images in `codex-index-cam1753/cam1753-pages/` — full-resolution
-  JPEG source images.
-- Line-break data in `codex-index-cam1753/cam1753-line-breaks/` — used
+- Page images in `cam1753/cam1753-pages/` — regenerated full-resolution JPEGs.
+- Line-break data in `cam1753/cam1753-line-breaks/` — used
   by the editor to locate words on manuscript pages.
