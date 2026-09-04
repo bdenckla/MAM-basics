@@ -962,6 +962,48 @@ what runs when and whether a plan file exists, are owed before the first lane of
    earlier stage got its own plan file, written by a Phase 0 whose whole job was to write it, which
    argues yes; the products' lanes are more uniform than the trio's, which argues no.
 
+### Planning preflight after the third-stage close — 2026-09-04
+
+**This preflight records facts and does not start a product lane.** MAM-basics was clean at
+`2f1ae14d` (the third-stage Phase 5 closeout). MAM-parsed `5108203`, MAM-simple `7a4f21d`,
+MAM-with-doc `0fe406c`, MAM-OSIS `697dc98`, and MAM-for-Sefaria `ce1e04c` were each clean on
+`main` and had no reported divergence from `origin/main`. No product file, source configuration,
+or MAM-private file changed during the preflight.
+
+The preflight makes the six decisions more concrete without answering any of them.
+
+1. **Question 1 — delivery to an outsider:** none of the five product READMEs documents a sparse
+   checkout or a release archive. MAM-parsed, MAM-simple, and MAM-with-doc have no GitHub release.
+   MAM-OSIS's latest release is `v2023-08-15-2`, with no release asset; MAM-for-Sefaria's latest
+   release is `v2025-03-19`, with one 1,574,115-byte ZIP asset. The mixed release history is not a
+   common delivery mechanism. Ben needs to decide whether the stage provides sparse-checkout
+   instructions, creates and maintains release archives, or deliberately provides neither.
+2. **Question 2 — the differential oracle:** all four `vendored-*` mega steps remain registered.
+   `vendored-tmpl-survey-toy` runs the MAM-parsed example, and the three remaining steps run the
+   MAM-simple examples. The stage draft's 106-output, 22.4-MiB differential-oracle measurement is
+   therefore still the design choice: land the examples and their outputs in MAM-basics, or retire
+   all four steps and explicitly give up that differential check. The draft recommends landing the
+   oracle; Ben has not chosen.
+3. **Question 3 — external data consumers:** all five product workflows deploy only `gh-pages/`.
+   The MAM-OSIS README names STEPBible and CrossWire, and the MAM-for-Sefaria README names Sefaria,
+   but neither README says that a consumer clones or fetches product data automatically. All five
+   GitHub issue trackers have no open issue. Repository evidence cannot establish consumer
+   behaviour. Ben needs to decide whether to await an answer from those consumers or accept a
+   loud one-time failure if a consumer still uses an old data URL.
+4. **Question 4 — lane order:** the current heads and clean product trees provide no new ordering
+   constraint. The existing write-target argument remains the only stated preference: MAM-simple
+   and MAM-for-Sefaria are the two corpus destinations that the `REPOS_ROOT` override cannot steer.
+   Ben needs to order all five lanes.
+5. **Question 5 — third-stage scheduling:** the third stage is now complete, so there is no longer
+   a third-stage lane with which a fourth-stage lane could interleave. The draft recorded this
+   question while three third-stage lanes remained. Ben has not waived the question, so the precise
+   decision is whether to record the fourth stage as running after the completed third stage, or to
+   retire question 5 as no longer applicable.
+6. **Question 6 — plan form:** no dedicated fourth-stage plan was created. Creating one would
+   answer this question by action, while the six live decisions still belong in this programme
+   section. Ben needs to choose a dedicated plan file or these five lane sections before any lane
+   starts.
+
 ### Appendix A is superseded by this section
 
 **§"Appendix A — MAM-simple: nothing to evacuate" closes "This repo is closed for this programme",
