@@ -620,7 +620,7 @@ def _case_chanted_word_cell(record: dict) -> tuple:
         *current,
         " ",
         mb_html.span(
-            ("[", _following_example(record, kind), "]"),
+            _following_example(record, kind),
             {"class": _FOLLOWING_CHANTED_WORD_CLASS},
         ),
     )
@@ -667,9 +667,7 @@ def build_cases_body(survey: dict) -> list:
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
             " text."
         ),
-        _para(
-            "For types 1 and 2, the following chanted word is shown in gray square brackets."
-        ),
+        _para("For types 1 and 2, the following chanted word is shown in gray."),
         _case_type_filter(len(rows)),
         _table(
             headers,
