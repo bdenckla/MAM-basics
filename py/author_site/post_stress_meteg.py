@@ -754,28 +754,23 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             {"id": _DUAL_CANTILLATION_APPENDIX_ID},
         ),
         _para(
-            "Phonetic MAM records two cantillations for the two Decalogue passages and"
-            f" Genesis 35:22, across {len(dual_cantillation['numbered_verses'])} numbered"
-            " verses. These census totals use the cant-alef cantillation strand for each"
-            " such passage, as though the passage were read once."
+            "MAM has two cantillations for the two Decalogues and"
+            " Genesis 35:22."
+            " The census presented above, in the main section of this document,"
+            " use only the cant-alef cantillation strand for each"
+            " such passage."
+            " This section shows that this choice has little effect on that census."
         ),
-        mb_html.para(
-            (
-                "For example, Phonetic MAM has ",
-                *wrap_hebrew_runs(exodus_forms[0][0]),
-                " in cant-alef at Exodus 20:2 and ",
-                *wrap_hebrew_runs(exodus_forms[1][0]),
-                " in cant-bet. The two forms are the same chanted word with different"
-                " accents. Genesis 35:22 has ",
-                f"{genesis_pair_count} such pairs.",
-            )
-        ),
-        _table(headers, rows),
+        _table(headers, rows),  # XXX make the table be of the dually-cantillated passages only!
         _para(
             "Cant-alef and cant-bet give exactly the same post-stress-meteg count:"
             f" {alef['meteg after the stressed syllable']:,}. Cant-alef has one more chanted"
             " word, while cant-bet has one more pre-stress meteg."
         ),
+        # Show the two forms of that one word that has a pre-stress meteg in cant-bet and (what?) in cant-alef.
+        # (I say "what" because I don't know whether it has no meteg in cant-alef or a pre-stress meteg in cant-alef.)
+        # BTW, this is not specific to the appendix, but it occurs to me that instead using PSM, which could just as easily
+        # stand for pre-stress meteg as for post-stress meteg, we should use MBS and gloss it as "meteg before [the] stress"
     ]
 
 
