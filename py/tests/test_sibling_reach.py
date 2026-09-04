@@ -76,13 +76,12 @@ nothing reached.  All FOUR declaration tables are covered -- see the comment abo
 THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 
 * ``sibling_repo("X")`` / ``require_sibling("X", ...)`` -- the sanctioned API.
-* The same calls with the name in a variable: ``cam1753_paths.py`` passes
-  ``DATA_REPO_NAME``, ``redirect_stubs/stubs.py`` passes ``repo.source_repo`` from its
-  ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega guard passes the ``name`` of
-  a loop over ``_CWD_RELATIVE_WRITE_TARGETS``. The survey's grep finds these lines and
-  cannot read a repo off them. Three in-file shapes are resolved here, with no import
-  and no dataflow tracing: a module constant's assignment, the keyword arguments that
-  build the table being iterated, and the collection a for-loop walks.
+* The same calls with the name in a variable: ``redirect_stubs/stubs.py`` passes
+  ``repo.source_repo`` from its ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega
+  guard passes the ``name`` of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``. The survey's
+  grep finds these lines and cannot read a repo off them. Two in-file shapes are resolved
+  here, with no import and no dataflow tracing: the keyword arguments that build the table
+  being iterated and the collection a for-loop walks.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
   builds five subprocess ``cwd``s this way, naming three repos: MAM-parsed,
@@ -160,9 +159,6 @@ SIBLINGS_REACHED: dict[str, str] = {
     ),
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
-    ),
-    "codex-index-cam1753": (
-        "cam1753_paths.DATA_REPO_NAME -- the Cambridge 1753 image corpus."
     ),
     "diffable-pointed-hebrew": (
         "A vendoring-audit destination in in/vendoring_policy.json, reached by"
@@ -391,12 +387,12 @@ def _string_literals_bound_to(tree: ast.Module, ident: str) -> set[str]:
     """String literals bound to ``ident`` anywhere in one file.
 
     Resolves the three shapes this tree actually uses, without importing anything or
-    tracing dataflow: ``DATA_REPO_NAME``, a module constant, from its assignment;
-    ``repo.source_repo``, a dataclass field, from the ``source_repo="wlc-utils"``
-    keyword arguments that build the table being iterated; and a for-loop variable --
-    ``main_0_mega.py``'s mega guard iterates ``_CWD_RELATIVE_WRITE_TARGETS`` and calls
-    ``sibling_repo(name)`` -- from the collection it walks.  An attribute is looked up
-    by its FIELD name; the ``repo`` half is a loop variable and names nothing.
+    tracing dataflow: ``repo.source_repo``, a dataclass field, from the
+    ``source_repo="wlc-utils"`` keyword arguments that build the table being iterated;
+    and a for-loop variable -- ``main_0_mega.py``'s mega guard iterates
+    ``_CWD_RELATIVE_WRITE_TARGETS`` and calls ``sibling_repo(name)`` -- from the
+    collection it walks. An attribute is looked up by its FIELD name; the ``repo``
+    half is a loop variable and names nothing.
     """
     out: set[str] = set()
     field = ident.rsplit(".", 1)[-1]

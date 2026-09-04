@@ -12,7 +12,7 @@ where `<spread>` is the entry's `de_archive_spread`. Note that masoretica.org, w
 answers this question for 187 manuscripts, does **not** have this one.
 
 The sibling repos keep the same folder for their own manuscripts —
-`../../codex-index-leningrad/page-snips/` — and `../../MAM-basics/doc/ms-snips/` takes
+`../../leningrad/page-snips/` — and `../../doc/ms-snips/` takes
 manuscripts with no repo of their own, Codex Sassoon 1053 among them.
 
 ## 0105B-col2-Lam2v3-akhla.png
@@ -23,8 +23,8 @@ right-hand page of archive.org spread n110.
 
 **Cambridge Add. 1753 has no meteg on this word** — confirmed by Ben from this image on
 2026-08-04. It agrees with the Leningrad Codex and with Codex Sassoon 1053, whose crops and
-confirmations are at `../../codex-index-leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png`
-and `../../MAM-basics/doc/ms-snips/sassoon1053-p740-Lam2v3-akhla.png`.
+confirmations are at `../../leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png`
+and `../../doc/ms-snips/sassoon1053-p740-Lam2v3-akhla.png`.
 
 Those three are what MAM follows here. A Sefaria correction request of 2026-07-22 asked that
 Lamentations 2:3 read אָֽכְלָ֖ה rather than אָכְלָ֖ה; MAM has no meteg, and neither does

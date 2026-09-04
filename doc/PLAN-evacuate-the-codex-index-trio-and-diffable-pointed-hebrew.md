@@ -52,7 +52,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 
 | Phase | State |
 | --- | --- |
-| 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the shared `MAM-XML/` disposition is now performed by Phase 2, while the Cam1753 page-image decision remains recorded for Phase 3. |
+| 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the shared `MAM-XML/` disposition is now performed by Phase 2, and Ben's 2026-09-04 Cam1753 decision retains only the 14 spreads. |
 | 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | Not started. Its lane lands `cam1753/`, answers the page-image decision recorded below, and archives the source repository after the verified Empty step. |
@@ -109,8 +109,9 @@ The later lanes cannot silently choose either form of duplicate data.
    decision, 2026-09-04, is one canonical temporary pinned `MAM-XML/` tree:
    both readers share it until the later MAM-simple evacuation replaces it.
 2. `cam1753-pages/` is derived from the tracked Cam1753 spreads by
-   `main_cam1753_split_spreads.py`. Ben decides whether the 48.0 MB page tree
-   remains tracked as an oracle or is regenerated from the spreads when needed.
+   `main_cam1753_split_spreads.py`. Ben's decision, 2026-09-04, is to retain only
+   the 14 spreads (25,262,600 bytes) and regenerate the untracked page JPEGs when
+   an editor or crop task needs them.
 
 These decisions do not hold up the Leningrad lane. They do hold up the Land
 step in the Aleppo and Cam1753 lanes, which must use the chosen paths in their
@@ -141,7 +142,8 @@ The suite's passed count is two higher than the second-stage closeout's 973;
 the recorded fresh measurement, not the older figure, is the Phase 1 baseline.
 The `MAM-XML/` decision was subsequently made on 2026-09-04: one temporary
 canonical pinned tree serves the Aleppo and Cam1753 readers until the MAM-simple
-evacuation replaces it. The Cam1753 page-image decision remains for Phase 3.
+evacuation replaces it. Ben's same-day Cam1753 decision retains only the 14 spreads
+and regenerates page JPEGs when an editor or crop task needs them.
 
 ## Phase 1 — codex-index-leningrad
 
@@ -258,8 +260,8 @@ absent. Black and `ruff check py` passed. The final canonical suite passed
 
 ## Phase 3 — codex-index-cam1753
 
-*The Cam1753 full lane.* Land the source as `cam1753/`, retain or regenerate
-`cam1753-pages/` exactly as Ben decided in Phase 0, and add the scoped
+*The Cam1753 full lane.* Land the source as `cam1753/`, retain the 14 spreads, and
+regenerate the untracked `cam1753-pages/` JPEGs when needed. Add the scoped
 non-commercial, attribution-required Ktiv imagery row to `DATA-LICENSES.md`.
 Repoint the corpus, image helpers, crop editor and paths module onto the local
 tree. Preserve the interactive editor's explicit port 8753 and repoint the

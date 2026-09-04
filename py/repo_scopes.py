@@ -18,9 +18,9 @@ they exist.
 
 WHICH REPOS ARE IN, AND WHY IT IS NOT ALL OF THEM.  Three of the six repos whose
 Python this programme moved into MAM-basics ran these lints over their own trees:
-book-of-job, codex-index-aleppo and codex-index-cam1753, whose copies of the four
-were two committed blobs -- book-of-job's on one side and the two codex-index repos'
-on the other.  Keeping their code linted is a restoration, not an expansion.
+book-of-job, codex-index-aleppo, and Cambridge 1753. The two source codex-index
+repos shared one committed copy of the four checks, while book-of-job held the other.
+Keeping their code linted is a restoration, not an expansion.
 UXLC-utils and holman-ketiv-qere never had these lints, and adding their code here
 would surface violations that are nobody's current business; they are deliberately
 absent. codex-index-leningrad never had them either and IS included, because its
@@ -29,7 +29,7 @@ and closes the one gap a reader would otherwise have to be told about.
 
 CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
 oversight. ``check_mark_order`` reads ``.json`` as well as ``.py``, and the
-hand-made JSON under book-of-job, aleppo, and codex-index-cam1753 is a large part
+hand-made JSON under book-of-job, aleppo, and cam1753 is a large part
 of what the check was ever for -- 24 line-break files in the first, 78 line-break,
 column-coordinate, and flat-stream files in the second, and 27 line-break plus 28
 column-quadrilateral files in the third. The Leningrad tree now holds only two

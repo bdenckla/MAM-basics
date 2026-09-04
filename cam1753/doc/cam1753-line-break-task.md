@@ -17,13 +17,14 @@ Cambridge University Library, MS Add. 1753 (Ketuvim). Images downloaded from arc
 - Col1 = RIGHT column (read first in RTL), Col2 = LEFT column
 - Each has `rel` (0-1 normalized) and `px` coordinates for corners tl/tr/bl/br
 - 26 weighted line-boxes per column: top box 1.5x (ascenders), bottom box 1.25x (descenders), 24 normal
-- Generated via `../MAM-basics/py/main_cam1753_gen_col_quad_editor.py` (interactive HTML editor, serves images via localhost:8119)
+- Generated via `../../py/main_cam1753_gen_col_quad_editor.py` (interactive HTML editor, serves images via localhost:8119)
 
 ## Local HTTP Server
 
-HTML editors that load page images need `http://localhost:8119/` serving the repo root. Start with:
+HTML editors that load page images need `http://localhost:8119/` serving
+`C:/Users/BenDe/GitRepos/MAM-basics/cam1753`. Start there with:
 ```
-python -m http.server 8119
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m http.server 8119
 ```
 Run in background. Required because browsers block `file://` cross-origin image loads in SVG/canvas.
 
@@ -32,8 +33,8 @@ Run in background. Required because browsers block `file://` cross-origin image 
 - [x] Download and split page images (28 pages)
 - [x] Column quad data for all 28 pages
 - [x] Identify text on pages: Ps 149:7 through end of Job (page 0085B). Page 0086A is past Job — ignore it. 27 pages total: 0072B through 0085B.
-- [x] Build flat stream generator (`../MAM-basics/py/main_cam1753_gen_flat_stream.py`)
-- [x] Build line-break editor (`../MAM-basics/py/main_cam1753_gen_line_break_editor.py`) with blank-line feature
+- [x] Build flat stream generator (`../../py/main_cam1753_gen_flat_stream.py`)
+- [x] Build line-break editor (`../../py/main_cam1753_gen_line_break_editor.py`) with blank-line feature
 - [ ] Mark line breaks for all 27 pages (0072B through 0085B)
 
 ### Pages completed
@@ -92,7 +93,8 @@ Run in background. Required because browsers block `file://` cross-origin image 
 
 - **The flat stream generator refuses to overwrite** existing files. Use `--force` to overwrite deliberately.
 - **Minimum word count**: The generator requires at least 300 words. If it rejects, use a later end verse.
-- **Always use MAM-basics' interpreter by absolute path** — never bare `python`. This repo has no `.venv` at all: Phase 7 of `../MAM-basics/doc/PLAN-evacuate-python-from-codex-index-trio.md` deleted it on 2026-08-22, along with codex-index-aleppo's and codex-index-leningrad's, none of the three having any Python left to run. This line read "never this repo's `.venv`" until then, which named something that still existed.
+- **Always use MAM-basics' interpreter by absolute path** — never bare `python`. The
+  active interpreter is `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
 - **Never use `python -c "..."`** one-liners — always create a script in `.novc/`, per the user-level `CLAUDE.md`'s "Running scripts — no inline one-liners" section, whose temp-file-location bullet names a repo's gitignored scratch dir first.
 - The editor loads images from `http://localhost:8119/cam1753-pages/` — the local HTTP server must be running.
 - Col 1 = right column (read first), Col 2 = left column. The editor has a toggle button to switch.
@@ -110,10 +112,10 @@ Run in background. Required because browsers block `file://` cross-origin image 
 
 | File | Purpose |
 |------|---------|
-| `../MAM-basics/py/main_cam1753_gen_flat_stream.py` | Generate flat-stream JSON for a page (manual or `--chain` mode) |
-| `../MAM-basics/py/main_cam1753_gen_line_break_editor.py` | Generate interactive HTML editor for marking line breaks |
+| `../../py/main_cam1753_gen_flat_stream.py` | Generate flat-stream JSON for a page (manual or `--chain` mode) |
+| `../../py/main_cam1753_gen_line_break_editor.py` | Generate interactive HTML editor for marking line breaks |
 | `cam1753-line-breaks/*.json` | Line-break data per page (flat stream + markers) |
 | `cam1753-col-quads/*.json` | Column bounding quad data (used by editor for image cropping) |
 | `cam1753-pages/*.jpg` | Individual page images |
-| `../MAM-basics/py/py_ac_loc/mam_xml_verses.py` | MAM-simple verse extraction |
-| `MAM-simple/*.xml` | Hebrew Bible text source |
+| `../../py/py_ac_loc/mam_xml_verses.py` | MAM-simple verse extraction |
+| `../../MAM-XML/*.xml` | Hebrew Bible text source |

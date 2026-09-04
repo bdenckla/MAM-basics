@@ -17,7 +17,7 @@ BASE_URL = (
 
 
 def main():
-    """Fetch spreads 77-90 into codex-index-cam1753's ``cam1753-spreads/``.
+    """Fetch spreads 77-90 into ``cam1753/cam1753-spreads/``.
 
     Those fourteen JPEGs are DOWNLOADED rather than generated, so no check
     regenerates them; nothing in this repo calls this module, and each page already

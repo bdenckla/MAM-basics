@@ -8,11 +8,11 @@ ASCII "x"/"X" is used instead, since comments don't flow to output.
 SIX SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
 procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
-the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere and codex-index-cam1753
-still hold the other corpora their halves generate into. Leningrad's five data
-files now live under ``leningrad/`` and are scanned by MAM-basics' scope. Each
-separate scope retains the hand-authored transliterations that would otherwise go
-unscanned once Python moved out.
+the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere still holds its corpus, while
+the Cambridge 1753 corpus now lives under ``cam1753/``. Leningrad's five data files
+now live under ``leningrad/`` and are scanned by MAM-basics' scope. Each separate
+scope retains the hand-authored transliterations that would otherwise go unscanned
+once Python moved out.
 ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
 one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
@@ -50,12 +50,12 @@ and would have aimed at MAM-basics for the fifth time running. Diffing its
 extension a dropped copy has contributed; the reverse comparison found nothing
 owed. The scope now covers the hand-authored content under ``aleppo/``.
 
-The codex-index-cam1753 scope is the odd one out, and deliberately: that repo has no
-copy of this test and never had one, so unlike the six above nothing was replaced and
-nothing obliged the entry. Phase 3 of the trio's plan added it anyway, on 2026-08-22,
-because after that repo's Phase 4 nothing anywhere would otherwise read its
-hand-authored Hebrew, and because it passed on the first run. Its exclusion list was
-CHOSEN rather than inherited; the ``_Scope`` below says on what principle.
+The Cambridge 1753 scope is the odd one out, and deliberately: its source repository
+had no copy of this test, so unlike the other migrated corpora nothing was replaced and
+nothing obliged the entry. Phase 3 of the trio's plan added it on 2026-08-22 because
+nothing would otherwise read its hand-authored Hebrew, and because it passed on the
+first run. Its exclusion list was CHOSEN rather than inherited; the ``_Scope`` below
+says on what principle.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -195,6 +195,7 @@ _EXCLUDE_DIR_PREFIXES = (
     "MAM-XML/",
     "uxlc/",
     "aleppo/",
+    "cam1753/",
 )
 
 # The relocated UXLC subtree's generated trees -- out/, gh-pages/ and data/ --
@@ -232,11 +233,11 @@ _AC_EXCLUDE_DIR_PREFIXES = (
 # repo's that sits at the root rather than in a tree the prefixes above cover.
 _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 
-# codex-index-cam1753 is the ONE evacuated repo that never had a copy of this test,
-# so unlike the five above there was nothing to carry over verbatim and this list was
-# CHOSEN rather than inherited.  It applies the principle the other five embody --
-# exclude what is downloaded, vendored or program-written, keep what a human wrote --
-# to that repo's six artifact trees: MAM-XML/ is the vendored MAM-simple snapshot,
+# Cambridge 1753 is the ONE evacuated corpus whose source repository never had a copy
+# of this test, so unlike the five above there was nothing to carry over verbatim and
+# this list was CHOSEN rather than inherited. It applies the principle the other five
+# embody -- exclude what is downloaded, vendored or program-written, keep what a human
+# wrote -- to that corpus's six artifact trees: MAM-XML/ is the vendored MAM-simple snapshot,
 # cam1753-spreads/ the downloaded archive.org scans, cam1753-pages/ and
 # cam1753-spread-splits-doc/ the output of py_cam1753_loc.split_spreads, and
 # cam1753-line-breaks/ and cam1753-col-quads/ the two human-in-the-loop editors'
@@ -355,16 +356,16 @@ def _scopes() -> tuple[_Scope, ...]:
             floor=20,
         ),
         _Scope(
-            label="codex-index-cam1753",
+            label="Cambridge 1753 data",
             root=cam1753_paths.cam1753_data_root(),
             exclude_dir_prefixes=_CAM_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # THE ONE SCOPE HERE THAT IS AN EXPANSION RATHER THAN A RESTORATION, and
             # it was decided rather than assumed.  The other five evacuated repos each
             # had a copy of this test that Phase 3 folded in as a scope;
-            # codex-index-cam1753 never had one, so nothing obliged this entry.  It is
-            # here because the alternative was that after that repo's Phase 4 nothing
-            # anywhere would read its hand-authored Hebrew -- things-noticed-in-cam1753.md,
+            # the source repository never had one, so nothing obliged this entry. It is
+            # here because the alternative was that after its Phase 4 nothing anywhere
+            # would read the hand-authored Hebrew -- things-noticed-in-cam1753.md,
             # page-snips/README.md, cam1753-page-index.json and its two prose files --
             # and because adding it surfaced no violation: it passed on the first run.
             #
@@ -375,11 +376,7 @@ def _scopes() -> tuple[_Scope, ...]:
             # that are nobody's current business, where this check is a decidable
             # property of hand-authored text that passed as soon as it was asked.
             #
-            # 39 files in scope during dual residency and **14** after that repo's
-            # Phase 4, both measured 2026-08-22.  The prediction between the two was
-            # 16, being 39 minus the 23 .py; the two further files are
-            # requirements.txt and codex-index-cam1753.code-workspace, which Ben had
-            # that phase delete as orphaned.  The floor is 10, which keeps
+            # The floor is 10, which keeps
             # meaning "an exclusion filter swallowed everything" rather than asserting
             # a tree size.
             floor=10,
