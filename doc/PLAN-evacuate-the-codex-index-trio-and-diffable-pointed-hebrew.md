@@ -55,7 +55,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the shared `MAM-XML/` disposition is now performed by Phase 2, and Ben's 2026-09-04 Cam1753 decision retains only the 14 spreads. |
 | 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
-| 3 — codex-index-cam1753 | Not started. Its lane lands `cam1753/`, answers the page-image decision recorded below, and archives the source repository after the verified Empty step. |
+| 3 — codex-index-cam1753 | **DONE 2026-09-04.** `cam1753/` holds the 100 selected source blobs, including the 14 spreads; the 28 page JPEGs are ignored output regenerated from those spreads. The source repository is an archived breadcrumb, and its clean primary clone has left `GitRepos`. |
 | 4 — diffable-pointed-hebrew | Not started. Its lane resolves the eight divergent `mb_cmn` copies before moving the root command to `py/main_diffable_pointed_hebrew.py`. |
 | 5 — Cross-repo bookkeeping and stage close | Not started. It removes the four workspace entries, performs the final clone-removal checks, records the source-repository dispositions, and closes this stage. |
 
@@ -271,6 +271,36 @@ The lane's 44-of-44 artifact oracle, mtime checks and blob manifest must all
 pass before the source is emptied. Then push the dated breadcrumb, archive
 `bdenckla/codex-index-cam1753`, remove the workspace and visibility entries,
 and remove the clean primary clone only after all worktrees are gone.
+
+### Execution record — Phase 3, 2026-09-04
+
+The lane began with MAM-basics at `b925d60` and codex-index-cam1753 at
+`3667b6c`, both clean. The 24 source `MAM-XML/` blobs already matched the
+canonical root snapshot. Land commit `e110ada3` copied the other 100 source
+blobs into `cam1753/`; the staged Git-blob manifest matched all 100. It retains
+the 14 spreads (25,262,600 bytes), excludes both the shared XML tree and the
+derived page tree, and preserves the non-reproducible gutter chart without
+rerendering it. `cdfcab56` recorded the Ktiv attribution-required,
+educational-and-research, non-commercial image terms separately.
+
+`d0222fed` repointed the corpus, crop, editor, and validation paths to
+`cam1753/`, made `MAM-XML/` the shared root snapshot, and made
+`cam1753-pages/` ignored output. The splitter regenerated all 28 page JPEGs
+from the 14 retained spreads. The destination mtime check changed exactly the
+15 split records and `check_line_breaks.html`; the generated artifacts had zero
+Git content diff. `check_cam1753_all.py` passed all four checks, including
+160/160 word findings, before and after the primary source clone was removed.
+The sibling-reach and NFC scopes passed, as did `ruff check py`, Black on the
+five edited Python files, `git diff --check`, and the final canonical suite:
+974 passed and 5 skipped.
+
+Source commit `aab417b` left exactly `.gitattributes`, `.gitignore`,
+`README.md`, and `CLAUDE.md`; its `HEAD` equalled `origin/main`, the stash was
+empty, and `git worktree list` reported only the clean primary worktree. GitHub
+reported `isArchived: true`. MAM-basics commit `b71dbdae` removed the source
+from `all-repos.code-workspace` and `repo_visibility`, updated the live crop and
+snip procedures, and recorded the local `cam1753/` location. The verified
+primary clone at `C:/Users/BenDe/GitRepos/codex-index-cam1753` was then removed.
 
 ## Phase 4 — diffable-pointed-hebrew
 
