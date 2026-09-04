@@ -27,6 +27,69 @@ Line number conventions differ between the two sources:
     "including-blank-lines" in qr-lc-loc records how many blank lines
     are included in a positive count. For negative counts, blank lines
     are already excluded.
+  - That model does not explain everything. Of the 30 line discrepancies
+    this program reports, 20 differ by +1, 4 by +2 and 3 by +3, which fits
+    quirkrecs missing an "including-blank-lines" annotation -- only 8 of
+    the 160 have the field, every one with the value 1. The other 3
+    (change ids 2026.02.05-11, -52 and -64) differ by -1, which that
+    reading does not cover.
+
+WHAT THE CHANGESET IS. It is Chris Kimball's port of Ben Denckla's
+book-of-job work into UXLC's format. A record's <author> element names
+whose OBSERVATION it is, not who wrote the record, so all 162 name Ben
+while the records themselves are Kimball's. A disagreement between a
+change entry and its quirkrec is therefore normally an artifact of that
+port rather than a defect in either side's data. Of the 162, 25 changed
+text and 137 did not; <type> says the same, 128 NoAction and 9
+NoTextChange against 14 accent and 11 vowel.
+
+HOW ENTRIES ARE NAMED BELOW. Each is spelled as its change id -- changeset
+date, hyphen, <n> -- which is what mb_cmn.uxlc_change_url and accgram's
+tm_changes use, and which resolves on tanach.us at
+
+    https://tanach.us/Changes/2026.04.01%20-%20Changes/
+    2026.04.01%20-%20Changes.xml?<change id>
+
+A bare "#83" is avoided deliberately: in this repository that shape means a
+MAM-basics issue, every one of these numbers collides with a real issue of
+that number, and renderers turn the bare form into a link to the wrong
+thing. This program's own stdout still prints the bare <n>.
+
+FOUR PROBLEMS NOTICED IN REVIEW AND NOT RESOLVED. These were recorded in a
+companion document, uxlc/out/UXLC-misc/map-changes-to-book-of-job.md, which
+was Claude-written with no regeneration path: nothing rebuilt it when the
+changeset moved underneath it, so its counts drifted from what this program
+prints and it was deleted on 2026-09-04. Its live content is this program's
+output; its surviving content is here.
+  2026.02.05-83   Job 23:5.6   Discusses a different maqaf than intended;
+                  the question is an Aleppo quirk, not relevant to UXLC.
+  2026.02.05-109  Job 31:15.1  Misuses ZWJ against the Unicode Standard.
+                  reftext and changetext are identical and both have the
+                  ZWJ, so the entry no longer records an old form and a new
+                  one.
+  2026.02.05-115  Job 32:6.11  Should use CGJ, not ZWJ, to order the marks
+                  below the shin. Pre-existing; reftext and changetext are
+                  again identical.
+  2026.02.05-161  Job 42:10.10 Image link broken. Not checkable from this
+                  data: no change in the changeset has an image element,
+                  <lc> holding folio, column, line and credit only. The
+                  link belongs to UXLC's web presentation.
+
+FIVE MORE WERE FIXED UPSTREAM between the review and 2026-09-04, listed so
+nobody re-reports them: 2026.02.05-65's LC line (absent, now 9, so
+sanity_problems.json is empty), 2026.02.05-98's description (now names the
+revia on the resh), 2026.02.05-123's citation position (3, now 7), and
+2026.02.05-135's "THe" and 2026.02.05-156's "Examime", neither of which
+occurs anywhere in the changeset now.
+
+2026.02.05-123 IS THE ONE WORTH KNOWING ABOUT, because it shows this file
+moving under its readers. The former bdenckla/UXLC-utils re-downloaded the
+XML from tanach.us eight times; at 816918ca (2026-03-04) and 2ab7f0e1
+(2026-03-05) that entry sat at Job 34:19 position 3, and by d03f1405
+(2026-04-04) it sat at position 7, where it agrees with quirkrec
+3419-NKR0.html. ARITHMETIC CANNOT DETECT SUCH A MOVE: a reviewer lifting one
+entry out of the OK bucket produces exactly the counts a genuine correction
+produces. Only dated versions tell the two apart.
 """
 
 import xml.etree.ElementTree as ET
