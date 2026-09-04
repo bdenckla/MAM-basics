@@ -148,7 +148,7 @@ def main():
             f.write("\n")
 
         print(
-            f"{fname}  gutter@{gutter_x}  →  {left_name} ({left_half.size[0]}x{left_half.size[1]})"
+            f"{fname}  gutter@{gutter_x}  ->  {left_name} ({left_half.size[0]}x{left_half.size[1]})"
             f"  +  {right_name} ({right_half.size[0]}x{right_half.size[1]})"
         )
 
@@ -158,7 +158,7 @@ def main():
         json.dump(all_splits, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    print(f"\nDone. {len(files)} spreads → {len(files) * 2} pages in {out_dir}/")
+    print(f"\nDone. {len(files)} spreads -> {len(files) * 2} pages in {out_dir}/")
     print(
         f"Split docs written to {doc_dir}/ ({len(all_splits)} per-spread + 1 summary)"
     )
