@@ -47,13 +47,14 @@ script this module replaces (``doc/post-stress-meteg-census-2026-09-03.md`` is i
 treated the last parsed entry of a NUMBERED verse as verse-final whether or not it had sof
 pasuq, which is a silluq fallback rather than a test.
 
-A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and the two Decalogues are where
-they come apart -- which is exactly where that fallback could have gone wrong.  This corpus is
-keyed by numbered verse, and each Decalogue numbered verse holds both cantillation strands, so
-its entry list ends with the two strands' forms of one chanted word standing adjacent: one
-with silluq and sof pasuq, whose chanted verse ends at the numbered verse's boundary, and one
-with an ordinary accent and no sof pasuq, whose chanted verse runs on into the next numbered
-verse.  Measured 2026-09-04 over all twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
+A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and dual-cantillation numbered
+verses are where they come apart -- which is exactly where that fallback could have gone wrong.
+Genesis 35:22 has five duplicate chanted-word groups within its numbered verse. The risk here
+comes from twelve numbered verses in the two Decalogues: each entry list ends with the two
+strands' forms of one chanted word standing adjacent, one with silluq and sof pasuq, whose
+chanted verse ends at the numbered verse's boundary, and one with an ordinary accent and no sof
+pasuq, whose chanted verse runs on into the next numbered verse. Measured 2026-09-04 over all
+twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
 and 9 and Deuteronomy 5:6, 7, 8, 11, 12 and 13 in MAM's versification -- the pattern is
 exceptionless: the sof pasuq is on the second-to-last entry every time.  A rule that read
 finality off the position would call that trailing mid-chanted-verse word verse-final, and any
@@ -70,7 +71,8 @@ classified by its syllable like any other and tallied separately as an overlap.
 
 Prose verses and poetic verses are routed by ``poetic_filter.should_keep_line``, so Job's
 prose frame goes with the 21 books.  Dual cantillation contributes both strands, since
-Phonetic MAM has both, and a Decalogue chanted word can therefore be counted twice.
+Phonetic MAM has both, and a chanted word in either Decalogue or Genesis 35:22 can therefore
+be counted twice.
 """
 
 from __future__ import annotations
@@ -430,10 +432,10 @@ _DUALCANT_MARKER = "cb-dualcant"
 def _has_dual_cantillation(node: object) -> bool:
     """Whether the numbered verse has Phonetic MAM's dual-cantillation bracket.
 
-    Structural rather than a list of references: what makes a Decalogue numbered verse special
-    here is that both strands' chanted words reach one entry list, which is also why its last
-    entry need not be the one with sof pasuq -- one strand's chanted verse ends at the numbered
-    verse's boundary and the other's runs on past it.
+    Structural rather than a list of references: both strands' chanted words reach one entry
+    list. The two Decalogues have most of the dual-cantillation numbered verses, and Genesis
+    35:22 has the other one. A last entry need not be the one with sof pasuq -- one strand's
+    chanted verse can end at the numbered verse's boundary and the other can run on past it.
     """
     if isinstance(node, str):
         return node == _DUALCANT_MARKER
@@ -442,6 +444,55 @@ def _has_dual_cantillation(node: object) -> bool:
     if isinstance(node, dict):
         return any(_has_dual_cantillation(value) for value in node.values())
     return False
+
+
+def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
+    """The two branches of each dual-cantillation group in a numbered verse."""
+    out = []
+    if not isinstance(node, list):
+        return out
+    if node and node[0] == "cb":
+        for payload in node[1:]:
+            if (
+                isinstance(payload, list)
+                and payload
+                and payload[0] == [_DUALCANT_MARKER]
+            ):
+                branches = []
+                for branch in payload[1:]:
+                    entries: list[dict] = []
+                    _chanted_words(branch, entries)
+                    branches.append(entries)
+                out.append(branches)
+            else:
+                out.extend(_dual_cantillation_groups(payload))
+    else:
+        for item in node:
+            out.extend(_dual_cantillation_groups(item))
+    return out
+
+
+def _dual_cantillation_facts(verse: object) -> dict:
+    """Counts and one source-derived duplicate for a dual-cantillation numbered verse."""
+    groups = _dual_cantillation_groups(verse)
+    same_groups = []
+    for group in groups:
+        assert len(group) == 2, len(group)
+        first = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[0])
+        second = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[1])
+        if first == second:
+            same_groups.append(group)
+    assert (
+        same_groups
+    ), "a dual-cantillation verse has no repeated chanted-word sequence"
+    first_group = same_groups[0]
+    return {
+        "dual_group_count": len(groups),
+        "same_chanted_word_group_count": len(same_groups),
+        "first_same_chanted_word_group": [
+            [one["fva"].split(" ")[0] for one in branch] for branch in first_group
+        ],
+    }
 
 
 def _bb_of_stem() -> dict[str, str]:
@@ -651,6 +702,7 @@ def _scan(phon_dir: Path) -> dict:
         "last_entry_lacks_sof_pasuq": [],
         "metegs_by_verse": {},
         "dual_cant_verses": set(),
+        "dual_cantillation": {},
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -671,6 +723,7 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
     dual = _has_dual_cantillation(verse)
     if dual:
         found["dual_cant_verses"].add(bcv)
+        found["dual_cantillation"][bcv] = _dual_cantillation_facts(verse)
     entries: list[dict] = []
     _chanted_words(verse, entries)
     usable = [one for one in entries if one.get("jta") and one.get("fva")]
@@ -1041,9 +1094,13 @@ def build_survey() -> dict:
         "scope": (
             "Every chanted word of every verse. Prose verses and poetic verses are routed by"
             " accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual"
-            " cantillation contributes both strands, so a Decalogue chanted word can be"
-            " counted twice."
+            " cantillation contributes both strands, so a chanted word in either Decalogue"
+            " or Genesis 35:22 can be counted twice."
         ),
+        "dual_cantillation": {
+            "numbered_verses": sorted(found["dual_cant_verses"]),
+            "facts_by_numbered_verse": found["dual_cantillation"],
+        },
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)

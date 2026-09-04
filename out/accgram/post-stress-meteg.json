@@ -3,7 +3,247 @@
  "what": "Every U+05BD in MAM, classified by whether its syllable falls before, in, or after the chanted word's one primary stress. A U+05BD in the stressed syllable of a chanted word carrying sof pasuq is the silluq, and is counted as that rather than as a meteg.",
  "stress_oracle": "Phonetic MAM's jta field, whose ! marks the one stressed syllable. A U+05BD's own position is never used to infer the stress. The Hebrew's nuclei are counted independently and the two counts must agree per chanted word, a furtive patax counting as a syllable on both sides.",
  "silluq_boundary": "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that has sof pasuq. Both conditions are required and there is no third: the sof pasuq is what makes the chanted word the last of its chanted verse, so nothing here rests on an entry's position in a list.",
- "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual cantillation contributes both strands, so a Decalogue chanted word can be counted twice.",
+ "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual cantillation contributes both strands, so a chanted word in either Decalogue or Genesis 35:22 can be counted twice.",
+ "dual_cantillation": {
+  "numbered_verses": [
+   "dt5:11",
+   "dt5:12",
+   "dt5:13",
+   "dt5:14",
+   "dt5:16",
+   "dt5:6",
+   "dt5:7",
+   "dt5:8",
+   "dt5:9",
+   "ex20:12",
+   "ex20:2",
+   "ex20:3",
+   "ex20:4",
+   "ex20:5",
+   "ex20:7",
+   "ex20:8",
+   "ex20:9",
+   "gn35:22"
+  ],
+  "facts_by_numbered_verse": {
+   "gn35:22": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 5,
+    "first_same_chanted_word_group": [
+     [
+      "רְ֯אוּבֵ֔ן"
+     ],
+     [
+      "רְ֯אוּבֵ֗ן"
+     ]
+    ]
+   },
+   "ex20:2": {
+    "dual_group_count": 8,
+    "same_chanted_word_group_count": 6,
+    "first_same_chanted_word_group": [
+     [
+      "אָֽנֹכִי֙"
+     ],
+     [
+      "אָֽנֹכִ֖י"
+     ]
+    ]
+   },
+   "ex20:3": {
+    "dual_group_count": 12,
+    "same_chanted_word_group_count": 10,
+    "first_same_chanted_word_group": [
+     [
+      "פֶ֙סֶל֙"
+     ],
+     [
+      "פֶ֣סֶל"
+     ]
+    ]
+   },
+   "ex20:4": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 5,
+    "first_same_chanted_word_group": [
+     [
+      "לֹֽא־תִשְׁתַּחֲוֶ֥ה"
+     ],
+     [
+      "לֹֽא־תִשְׁתַּחֲוֶ֣ה"
+     ]
+    ]
+   },
+   "ex20:5": {
+    "dual_group_count": 3,
+    "same_chanted_word_group_count": 3,
+    "first_same_chanted_word_group": [
+     [
+      "וְ֯עֹ֥שֶׂה"
+     ],
+     [
+      "וְ֯עֹ֤שֶׂה"
+     ]
+    ]
+   },
+   "ex20:7": {
+    "dual_group_count": 4,
+    "same_chanted_word_group_count": 4,
+    "first_same_chanted_word_group": [
+     [
+      "זָכ֛וֹר"
+     ],
+     [
+      "זָכוֹר֩"
+     ]
+    ]
+   },
+   "ex20:8": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 4,
+    "first_same_chanted_word_group": [
+     [
+      "שֵׁ֤שֶׁת"
+     ],
+     [
+      "שֵׁ֣שֶׁת"
+     ]
+    ]
+   },
+   "ex20:9": {
+    "dual_group_count": 14,
+    "same_chanted_word_group_count": 12,
+    "first_same_chanted_word_group": [
+     [
+      "וְ֯יוֹם֙"
+     ],
+     [
+      "וְ֯י֨וֹם"
+     ]
+    ]
+   },
+   "ex20:12": {
+    "dual_group_count": 6,
+    "same_chanted_word_group_count": 3,
+    "first_same_chanted_word_group": [
+     [
+      "לֹ֥א"
+     ],
+     [
+      "לֹ֖א"
+     ]
+    ]
+   },
+   "dt5:6": {
+    "dual_group_count": 8,
+    "same_chanted_word_group_count": 6,
+    "first_same_chanted_word_group": [
+     [
+      "אָֽנֹכִי֙"
+     ],
+     [
+      "אָֽנֹכִ֖י"
+     ]
+    ]
+   },
+   "dt5:7": {
+    "dual_group_count": 12,
+    "same_chanted_word_group_count": 10,
+    "first_same_chanted_word_group": [
+     [
+      "פֶ֙סֶל֙"
+     ],
+     [
+      "פֶ֣סֶל"
+     ]
+    ]
+   },
+   "dt5:8": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 5,
+    "first_same_chanted_word_group": [
+     [
+      "לֹא־תִשְׁתַּחֲוֶ֥ה"
+     ],
+     [
+      "לֹא־תִשְׁתַּחֲוֶ֣ה"
+     ]
+    ]
+   },
+   "dt5:9": {
+    "dual_group_count": 3,
+    "same_chanted_word_group_count": 3,
+    "first_same_chanted_word_group": [
+     [
+      "וְ֯עֹ֥שֶׂה"
+     ],
+     [
+      "וְ֯עֹ֤שֶׂה"
+     ]
+    ]
+   },
+   "dt5:11": {
+    "dual_group_count": 7,
+    "same_chanted_word_group_count": 7,
+    "first_same_chanted_word_group": [
+     [
+      "שָׁמ֛וֹר"
+     ],
+     [
+      "שָׁמ֣וֹר"
+     ]
+    ]
+   },
+   "dt5:12": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 4,
+    "first_same_chanted_word_group": [
+     [
+      "שֵׁ֤שֶׁת"
+     ],
+     [
+      "שֵׁ֣שֶׁת"
+     ]
+    ]
+   },
+   "dt5:13": {
+    "dual_group_count": 5,
+    "same_chanted_word_group_count": 5,
+    "first_same_chanted_word_group": [
+     [
+      "וְ֯יוֹם֙"
+     ],
+     [
+      "וְ֯י֨וֹם"
+     ]
+    ]
+   },
+   "dt5:14": {
+    "dual_group_count": 11,
+    "same_chanted_word_group_count": 10,
+    "first_same_chanted_word_group": [
+     [
+      "וְ֯זָכַרְתָּ֗"
+     ],
+     [
+      "וְ֯זָכַרְתָּ֞"
+     ]
+    ]
+   },
+   "dt5:16": {
+    "dual_group_count": 6,
+    "same_chanted_word_group_count": 3,
+    "first_same_chanted_word_group": [
+     [
+      "לֹ֥א"
+     ],
+     [
+      "לֹ֖א"
+     ]
+    ]
+   }
+  }
+ },
  "counts": {
   "prose verses": {
    "chanted words checked": 233715,

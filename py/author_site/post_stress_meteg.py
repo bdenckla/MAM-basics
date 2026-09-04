@@ -149,6 +149,11 @@ def _both(survey: dict, category: str) -> int:
     return _count(survey, _PROSE, category) + _count(survey, _POETIC, category)
 
 
+def _dual_cantillation_facts(survey: dict, bcv: str) -> dict:
+    """The source-derived facts for one numbered verse with both cantillation strands."""
+    return survey["dual_cantillation"]["facts_by_numbered_verse"][bcv]
+
+
 def _by_type_count(survey: dict, kind: str) -> int:
     return sum(
         survey["post_stress_by_structural_type"][system][kind]
@@ -197,6 +202,11 @@ def pin_claims(survey: dict) -> None:
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
+    exodus = _dual_cantillation_facts(survey, "ex20:2")
+    assert exodus["same_chanted_word_group_count"]
+    assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
+    genesis = _dual_cantillation_facts(survey, "gn35:22")
+    assert genesis["same_chanted_word_group_count"] == 5
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
@@ -313,30 +323,34 @@ def _census(survey: dict) -> list:
         "meteg before the stressed syllable",
         "meteg after the stressed syllable",
     )
-    headers = ("Verse system", "Chanted words", "Meteg before", "Meteg after")
-    # Instead of "verse system" it should say "cant-sys" with a hover-gloss of "cantillation system"
-    # and then the values should be just "prose", "poetic", and "all"
-    #
-    # "Chanted words" should say "c-words" with a hover-gloss of "count of chanted words"i
-    #
-    # "Meteg before" should say "Pre-stress meteg" with a line break before "meteg"
-    # "Meteg after" should say "Post-stress meteg" with a line break before "meteg"
-    #
-    #  Only 1.52%: no need for 3 significant figures: just say 1.5%. Also, say "about" to make it clear that, regardless of the number of signification figures, this is rounded.
+    headers = (
+        mb_html.abbr("cant-sys", {"title": "cantillation system"}),
+        mb_html.abbr("c-words", {"title": "count of chanted words"}),
+        ("Pre-stress", mb_html.line_break(), "meteg"),
+        ("Post-stress", mb_html.line_break(), "meteg"),
+    )
     numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
+    labels = {_PROSE: "prose", _POETIC: "poetic"}
     rows = [
         mb_html.table_row_of_data(
-            (system, *[f"{_count(survey, system, c):,}" for c in categories]), numeric
+            (labels[system], *[f"{_count(survey, system, c):,}" for c in categories]),
+            numeric,
         )
         for system in (_PROSE, _POETIC)
     ]
     rows.append(
         mb_html.table_row_of_data(
-            ("all verses", *[f"{_both(survey, c):,}" for c in categories]), numeric
+            ("all", *[f"{_both(survey, c):,}" for c in categories]), numeric
         )
     )
     before = _both(survey, "meteg before the stressed syllable")
     after = _both(survey, "meteg after the stressed syllable")
+    exodus_forms = _dual_cantillation_facts(survey, "ex20:2")[
+        "first_same_chanted_word_group"
+    ]
+    genesis_pair_count = _dual_cantillation_facts(survey, "gn35:22")[
+        "same_chanted_word_group_count"
+    ]
     return [
         mb_html.heading_level_2("MAM census by verse system"),
         _para(
@@ -348,13 +362,28 @@ def _census(survey: dict) -> list:
             "So, for example, a chanted word of the Exodus Decalogue"
             " can appear twice in these totals."
         ),
+        mb_html.para(
+            (
+                "This happens in Exodus 20:2: Phonetic MAM has ",
+                *wrap_hebrew_runs(exodus_forms[0][0]),
+                " in one strand and ",
+                *wrap_hebrew_runs(exodus_forms[1][0]),
+                " in the other. The two forms are the same chanted word with different"
+                " accents, and both are counted.",
+            )
+        ),
+        _para(
+            "Genesis 35:22 has"
+            f" {genesis_pair_count} such pairs, and the chanted words in both strands there"
+            " are counted too."
+        ),
         _table(headers, rows),
         _para(
             f"So a meteg comes before the stress {before:,} times and after it {after:,}"
             " times."
         ),
         _para(
-            f"Only {after / (before + after):.2%} of the {before + after:,} meteg marks"
+            f"Only about {after / (before + after):.1%} of the {before + after:,} meteg marks"
             " counted here come after the stress."
         ),
     ]
