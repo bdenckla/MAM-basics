@@ -8,7 +8,12 @@ Subcommands:
                 MAM-with-doc/gh-pages/misc/.
     gen-site
                 Write this repo's own published pages at the deploy root:
-                gh-pages/index.html and gh-pages/unicode-proposals.html.
+                gh-pages/index.html, gh-pages/unicode-proposals.html and
+                gh-pages/post-stress-meteg.html.  --trust-surveys lets the
+                last of those read the tracked
+                out/accgram/post-stress-meteg.json instead of recomputing a
+                survey that needs the MAM-private clone; only main_0_mega.py
+                passes it.
     gen-mam-parsed-docs
                 Write index.html to MAM-parsed/gh-pages, plain docs to
                 MAM-parsed/gh-pages/plain/html, and plus docs to
@@ -55,6 +60,8 @@ from author_misc import review_of_artscroll_transliterated_linear_siddur as as_r
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import mam_parsed_docs_build
+from author_site import post_stress_meteg
+from author_site import site_data
 from author_site import site_index
 from author_site import unicode_proposals
 from verify_mp import claims_doc
@@ -117,14 +124,44 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
-def gen_site():
-    """Write this repo's own published pages at the deploy root."""
-    for out_path in (unicode_proposals.gen_html_file(), site_index.gen_html_file()):
+# The deploy-root pages that can be rendered from a tracked JSON instead of recomputing their
+# survey, by name.  A SET rather than the scalar py/main_accgram.py's --trust-survey routes to
+# one report: this one starts with a member and is expected to grow, and a second member added
+# to a scalar would have had to become this anyway.
+#
+# WHY ANY PAGE NEEDS IT: post-stress-meteg's survey reads Phonetic MAM, which lives in
+# MAM-private, and py/main_0_mega.py must not come to require a private clone.  The mega
+# therefore renders that page from out/accgram/post-stress-meteg.json, which the survey
+# subcommand writes and which is tracked; recomputing from the corpus is what a standalone run
+# does.  The JSON's absence FAILS rather than falling back, so a mega that quietly published a
+# page from nothing is not a state this can reach.
+_SURVEY_READING_PAGES = frozenset({site_data.POST_STRESS_METEG_FNAME})
+
+assert _SURVEY_READING_PAGES <= {
+    site_data.POST_STRESS_METEG_FNAME,
+    site_data.UNICODE_PROPOSALS_FNAME,
+}, "a name here that no deploy-root page has would silently render nothing from its JSON"
+
+
+def gen_site(*, trust_surveys: bool = False):
+    """Write this repo's own published pages at the deploy root.
+
+    ``trust_surveys`` is passed by ``main_0_mega.py``; see ``_SURVEY_READING_PAGES``.  The
+    index runs last, so it sees whatever the pages before it have written.
+    """
+    trusted = (
+        trust_surveys and site_data.POST_STRESS_METEG_FNAME in _SURVEY_READING_PAGES
+    )
+    for out_path in (
+        unicode_proposals.gen_html_file(),
+        post_stress_meteg.gen_html_file(trust_survey=trusted),
+        site_index.gen_html_file(),
+    ):
         print(f"Generated {out_path}")
 
 
-def cmd_gen_site(_args):
-    gen_site()
+def cmd_gen_site(args):
+    gen_site(trust_surveys=bool(getattr(args, "trust_surveys", False)))
 
 
 def _run_verify_mp(*, claims) -> None:
@@ -178,6 +215,13 @@ def build_parser():
     sub.add_parser(
         "gen-site",
         help="Generate this repo's own published pages at the gh-pages deploy root.",
+    ).add_argument(
+        "--trust-surveys",
+        action="store_true",
+        help=(
+            "Let a page that has one read its tracked survey JSON instead of recomputing it."
+            " Passed by main_0_mega.py, which cannot reach MAM-private."
+        ),
     )
     sub.add_parser(
         "gen-mam-parsed-docs",

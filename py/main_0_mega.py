@@ -167,6 +167,14 @@ def _run_accgram_survey_chanted_word_accents():
     main_accgram.almost_main(["survey-chanted-word-accents"])
 
 
+def _run_gen_site():
+    # --trust-surveys because gh-pages/post-stress-meteg.html is rendered from the tracked
+    # out/accgram/post-stress-meteg.json rather than from the Phonetic MAM standard set that
+    # survey reads.  That set lives in MAM-private, and the mega must not come to require a
+    # private clone; the survey is run by hand, from main_accgram.py, when the corpus moves.
+    main_authored.gen_site(trust_surveys=True)
+
+
 def _run_accgram_generate_html():
     # --trust-survey because accgram-survey-chanted-word-accents ran directly above and wrote
     # out/accgram/chanted-word-accents.json.  Without it the residue page rebuilds that survey,
@@ -415,8 +423,9 @@ _STEPS = [
     # and could run anywhere in this list.  Moving it would make a diff that says nothing.
     StepRecord(
         "gen-site",
-        main_authored.gen_site,
-        "writes this repo's own gh-pages/index.html and gh-pages/unicode-proposals.html",
+        _run_gen_site,
+        "writes this repo's own gh-pages/index.html, gh-pages/unicode-proposals.html and"
+        " gh-pages/post-stress-meteg.html, the last of those from its tracked survey JSON",
     ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
     # builds, reading the vendored .py copies as they sit in the sibling repos, and a
