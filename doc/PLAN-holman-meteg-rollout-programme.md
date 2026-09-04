@@ -5,16 +5,20 @@ in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this
 point, as I fear loosing track of this larger context."*
 
-**STATUS: items 2, 3 and 4 are DONE, and so are item 5's first two steps;
-item 5's step 3 is Ben's, at the keyboard, and items 6 and 7 are still a SKETCH
-rather than an approved plan.** The sketch was assembled from three research-agent reports
-and one Plan-agent validation pass, synthesized in conversation, and never
-reviewed against repository state a second time. Re-verify every path, command
-and figure before acting on the parts that remain — item 2's execution on
-2026-09-03 found four of its own figures wrong, and item 4's execution the same
-day found one of its own wrong. The sections for items 2, 3 and 4 below are
-execution records now rather than sketches. Item 1 alone has a reviewed,
-tracked plan of its own.
+**STATUS: items 2 through 7 are ALL DONE, items 5, 6 and 7 having finished on
+2026-09-04. What remains of this programme is item 1's Phase 1, the post-stress
+meteg survey page, and its Phase 2, the M23 card link** — both of which wait on
+item 5 by design, and whose figures item 5 has now moved. Item 1's Phases 3
+through 6 are done and recorded in that plan.
+
+Every section below is an execution record rather than a sketch. The sketch had
+been assembled from three research-agent reports and one Plan-agent validation
+pass, synthesized in conversation, and never reviewed against repository state a
+second time, and executing it went on finding its figures wrong to the end:
+item 2 found four of its own wrong on 2026-09-03, item 4 one of its own the same
+day, and item 7 found on 2026-09-04 that its Joshua 10:12 expectation was wrong
+in kind rather than in degree. **A figure in a record below is a measurement, so
+re-measure rather than trusting it, and treat a mismatch as a finding.**
 
 Execute everything here from `C:/Users/BenDe/GitRepos/MAM-basics`, venv
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
@@ -60,9 +64,9 @@ which are accent-placement records and are NOT part of this programme.
 | 2 | Build the Wikisource bot edit files for all 30 | **DONE 2026-09-03**, files built and validated offline — see the item 2 section below, which is now an execution record rather than a sketch |
 | 3 | Run the bot | **DONE 2026-09-03**, 23 chapters saved on Ben's go-ahead — see the item 3 section below, an execution record now |
 | 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | **DONE 2026-09-03**, and Zechariah was repair rather than consistency — see the item 4 section below, an execution record now |
-| 5 | Run the wsgo diff and the standard MAM update pipeline | Steps 1 and 2 **DONE 2026-09-03**; step 3 is Ben's, at the keyboard, and steps 4 through 7 are still a sketch |
-| 6 | Archive the 30 records | Sketch only; the terminology-rename half is in item 1's plan |
-| 7 | Refresh the mgketer comparison | Sketch only |
+| 5 | Run the wsgo diff and the standard MAM update pipeline | **DONE**, steps 1 and 2 on 2026-09-03 and steps 4 through 7 on 2026-09-04, Ben having done step 3 at the keyboard between them — see the item 5 section below, an execution record now |
+| 6 | Archive the 30 records | **DONE 2026-09-04**, all 34 M records archived, and the ingest needed two repairs before it would run at all — see the item 6 section below, an execution record now |
+| 7 | Refresh the mgketer comparison | **DONE 2026-09-04**, 31 meteg diffs gone and one accent diff arrived — see the item 7 section below, an execution record now |
 
 Items 2 through 7 are ordered by dependency, not by preference: each needs the
 one before it.
@@ -115,6 +119,16 @@ printing pre-pipeline figures until somebody re-runs the standalone
 computation. So if item 1's Phase 1 has already been done when item 5 runs,
 **re-running that computation is a step of item 5**, and its diff against the
 tracked JSON is expected to be non-empty in exactly the two ways above.
+
+**IN THE EVENT THE TRAP DID NOT FIRE, because item 5 ran first.** Checked
+2026-09-04, immediately after item 5's mega run: `out/accgram/post-stress-meteg.json`
+does not exist, item 1's Phase 1 never having been done, so there was no stale
+computation to re-run and nothing was published from one. **That makes the
+figures above a PREDICTION that Phase 1 will now test rather than a correction it
+must apply.** Phase 1 computes against the post-item-5 MAM from the start, so its
+first published figures should already be the moved ones: 232 post-stress metegs
+rather than 231, and a prose pre-stress figure about 29 below 13,131. Treat a
+mismatch with either as a finding.
 
 ### Item 1: the notes, the page, the M23 link, the terminology rename
 
@@ -379,11 +393,11 @@ notational convention the source manuscripts are not expected to have, so
 mgketer showing a diff at that atom afterward is correct. It needs no
 suppression entry.
 
-### Item 5: the wsgo diff and the standard update pipeline — steps 1 and 2 DONE 2026-09-03
+### Item 5: the wsgo diff and the standard update pipeline — DONE 2026-09-03 and 2026-09-04
 
 **Steps 1 and 2 ran on 2026-09-03 and are committed as `e43cb5fd`, pushed to
-`main` the same day. Step 3 is Ben's, at the keyboard, and nothing past it has
-been attempted.**
+`main` the same day. Ben did step 3 at the keyboard that day, and steps 4
+through 7 ran on 2026-09-04.** The step list below carries what each one did.
 
 Both tracked outputs were empty before the run, so all **35** rows
 `py/main_diff.py wsgo` wrote are new, and all 35 are accounted for:
@@ -428,13 +442,57 @@ In order:
    then "Apply imported auto-edits", both Apps Scripts under
    `misc/Google Sheet Apps Scripts/`. No session can automate this step.
 4. `py/main_download.py fr-google` — downloads and reparses, producing fresh
-   `MAM-parsed/plus/` and `plain/`.
+   `MAM-parsed/plus/` and `plain/`. **Done 2026-09-04.** Three section CSVs
+   moved, by **33** lines in all — `B-NevRish` 26, `C-NevAx` 2, `F-KetAx` 5 —
+   and those 33 lines are the 33 distinct verses behind the 35 rows, the two
+   rows at 2 Kings 21:12 and the two at 2 Samuel 18:20 each landing in a single
+   verse. Seven books moved in `MAM-parsed`: Joshua, Judges, Samuel, Kings,
+   Isaiah, The-12-Minor-Prophets and Chronicles.
 5. Re-run `py/main_diff.py wsgo` and confirm it is empty for the touched verses.
+   **Done 2026-09-04, and it is empty EVERYWHERE rather than only at the touched
+   verses**: both `out/diff_mamws_mamgo.json` and
+   `out/diff_mamws_mamgo-auto-edits.json` are `[]`, and
+   `out/mam-ws-bot/proto-misc/modified-chapters.json` is `[]` with them. The
+   eleven deferred edits stay invisible, both sides lacking them equally, as the
+   section below this item predicts.
 6. `py/main_0_mega.py` from the repository root, from scratch. Regenerates
    MAM-parsed, MAM-simple, MAM-with-doc, MAM-for-Sefaria, MAM-OSIS, and this
-   repository's own `out/` and `gh-pages/`.
+   repository's own `out/` and `gh-pages/`. **Done 2026-09-04, and see the
+   worktree warning below before running it that way.**
 7. Commit and push every touched sibling repository. Each has its own
-   `gh-pages/` Pages-deploy workflow firing on push to `main`.
+   `gh-pages/` Pages-deploy workflow firing on push to `main`. **Done
+   2026-09-04**, six of them: MAM-parsed `5108203`, MAM-simple `7a4f21d`,
+   MAM-with-doc `0fe406c`, MAM-for-Sefaria `ce1e04c`, MAM-OSIS `697dc98` and
+   MAM-private `d40e0c8`, that last for the near-aleppo census goldens
+   `py/main_0_mega.py` regenerates as a step.
+
+**A MEGA RUN FROM A WORKTREE MISDIRECTS TWO OF ITS STEPS, SILENTLY, AND THE
+MEGA'S OWN DOCSTRING SAYS OTHERWISE.** That docstring claims the mega "no longer
+writes outside the checkout it runs in, which is what makes a worktree run of it
+isolated". That is true of the wlc steps it is written about and false of the
+pipeline as a whole. `mb_misc/write_utils.py` builds its destination as the
+CWD-RELATIVE `f"../{mam_for_xxx}"`, and it is one of the handful of files
+`CLAUDE.md` says are deliberately cwd-relative so that they stay portable when
+vendored. Run from `.claude/worktrees/<name>`, that resolves to
+`.claude/worktrees/MAM-simple` and `.claude/worktrees/MAM-for-Sefaria`, which the
+run CREATES rather than failing on. `REPOS_ROOT` does not help, those modules
+never calling `paths`.
+
+Measured 2026-09-04: **216 MAM-simple files and 160 MAM-for-Sefaria files** went
+to those phantom siblings, and because `mam-osis` and the accgram steps read the
+REAL MAM-simple, which was still stale, MAM-OSIS came out unchanged when it
+should have moved. **The failure is silent in both directions** — exit status 0,
+and a sibling that looks merely untouched.
+
+What repaired it, and what to do instead: the misdirected output is CORRECT
+CONTENT IN THE WRONG DIRECTORY, so it was copied into the real siblings and the
+mega re-run as `--resume-from mam-osis`, which rebuilds everything downstream
+from the corrected MAM-simple. Convergence was then proved twice over — a third
+full mega run left every one of the six siblings' diff sets byte-identical, and
+the strays it re-created compared equal to the real repositories at 0 content
+differences. **Prefer running the mega from the primary clone.** If it must run
+from a worktree, check `.claude/worktrees/` for stray sibling directories
+afterwards, every time.
 
 ### Eleven other Holman meteg edits are live on Wikisource and absent from this snapshot — deferred 2026-09-03
 
@@ -486,18 +544,53 @@ full `py/main_download.py fr-wikisource` closes it too, and closes the whole
 2026-08-26 gap with it, at the price of bringing down a week of edits nobody
 here has reviewed.
 
-### Item 6: archive the 30 records
+### Item 6: archive the 30 records — DONE 2026-09-04
 
-For each of M1–M16, M18–M23, M25–M31 and M33, add a `Disposition` entry to
-`DISPOSITION_BY_REF` in `py/hkq_cmn/mam_suggestion_dispositions.py`: outcome
-"Suggestion taken", a one-line summary naming the letter and the direction,
-`decided_by` "Ben Denckla", `decided_on` the execution date.
+**All thirty are archived, and with the four accent-placement records already
+there that makes all 34.** Committed as `e97bcc79`. Each of M1–M16, M18–M23,
+M25–M31 and M33 has a `Disposition` entry in `DISPOSITION_BY_REF` in
+`py/hkq_cmn/mam_suggestion_dispositions.py`, outcome "Suggestion taken",
+`decided_by` "Ben Denckla". The entries were generated from
+`holman/docs-not-served/mam_suggestions.json` rather than typed, each summary
+naming the letter and the direction from that record's own `description`.
 
-**All thirty are archived, M18 included, and M18's summary is the one that
-differs.** Its outcome is "Suggestion taken" like the rest, but its meteg was
-gone from Hebrew Wikisource before item 2 built the edit files, so no entry of
-this programme's bot removed it — see finding 2 of item 2 above. Say that in
-its summary rather than implying the bot did it.
+`decided_on` is **2026-09-03, not the execution date this item originally
+named.** That is the day Ben took all thirty as a batch and the day the bot ran,
+and the field records who decided rather than who typed; the four entries beside
+them likewise carry the date Seth (Avi) Kadish decided, 2026-08-28.
+
+**THE INGEST WOULD NOT RUN AT ALL, AND TWO REPAIRS WERE NEEDED BEFORE THIS ITEM
+COULD BE DONE.** Both are consequences of item 5 landing rather than defects it
+exposed by chance, and neither was foreseen here. `verify_mam_suggestions`'
+`check_case` derives the atom a case is about by locating Holman's quoted MAM
+form in the verse and asking which atom differs from his comparison form. **A
+suggestion that has been taken leaves MAM without the form he quoted**, so once
+item 5 landed all thirty quoted MAM forms occurred zero times and the first case
+raised.
+
+1. **The comparison form now anchors the derivation when the MAM form is
+   absent**, that being what MAM has in such a case. The answer is unchanged
+   either way, both runs having the same length and differing at one offset, and
+   the evidence that it is unchanged is that `stated_atom_agrees` is still 34 of
+   34. It still raises when NEITHER form occurs exactly once.
+2. **The corrected quoted forms now reach `check_case`**, which
+   `mam_suggestion_corrections`' docstring had already recorded as "a limitation
+   rather than a choice". Joshua 10:12 needs it: MAM never had the U+05A8 qadma
+   spelling Holman typed and no longer has the single-pashta form either, so only
+   the corrected comparison form, the doubled pashta, is findable. The payload is
+   unaffected, `apply_corrections` still rewriting it afterwards.
+
+**The extract's own numbers corroborate the archiving rather than merely
+reporting it.** `suppressed_case_count` goes 4 to 34 and
+`comparison_form_already_present` goes 0 to 32, and the two cases where MAM does
+not have the comparison form are exactly M17 and M32 — the two records whose
+outcome is "Suggestion not taken". All 34 cards render on the Archived page and
+none remains on the findings page.
+
+**The mailbox is untracked and a worktree has none**, so the ingest was run as
+`py/main_ingest_mam_suggestions.py --eml-dir C:/Users/BenDe/GitRepos/MAM-basics/.novc/eml-mam`,
+pointing at the primary clone's copy. It reads only messages Holman sent and
+skips the rest by sender, which it reports.
 
 **Look up each record's actual `ref` field from the suggestions JSON by
 `case_number`; do not construct it from the displayed "BookName ch:v.atom"
@@ -505,14 +598,10 @@ form.** `book_abbrev`, which `ref` uses (for example "2Ch"), differs from
 `std_book_name`, which the display string uses (for example "2Chronicles"), so
 a guessed ref fails to match silently.
 
-Re-run the ingest so the dispositions reach the suggestions JSON, confirm
-`require_every_disposition_applied()` passes — it raises loudly on any stale or
-unmatched key — then re-render and confirm all 30 appear under Archived.
-
 The reader-facing rename of that page's label from "Suppressed" to "Archived"
-is item 1's Phase 4, not this item.
+is item 1's Phase 4, and was already done when this item ran.
 
-### Item 7: refresh the mgketer comparison
+### Item 7: refresh the mgketer comparison — DONE 2026-09-04
 
 mgketer lives in `C:/Users/BenDe/GitRepos/MAM-private/mgketer` and is **outside
 the MAM-basics pipeline**: `py/main_0_mega.py` does not reach it, and this
@@ -526,12 +615,45 @@ C:/Users/BenDe/GitRepos/MAM-private/mgketer/.venv/Scripts/python.exe py/main_dif
 
 No re-scrape is needed, since mgketer's scraped data does not change when MAM
 does, and no suppression entry is needed, since a diff simply disappears when
-the texts agree. Re-read `out-reports/index.html`'s by-type table: "MAM adds
-meteg" (67 before) should drop by however many of the 28 non-M13 removals are
-extant in the Aleppo Codex, and "mgketer adds meteg" (5 before) should drop to
-4, M23 leaving that category. Commit and push MAM-private.
+the texts agree.
 
-Joshua 10:12, per item 4, is expected to show a new diff here. That is correct.
+**DONE 2026-09-04**, committed as MAM-private `5bb03b0` and `7ab3495` and
+pushed. The by-type table moved as follows, counted as diff cards on the pages
+themselves rather than read off the summary alone:
+
+1. **"MAM adds meteg" falls from 67 to 37** — thirty cards leave and none
+   arrives.
+2. **"mgketer adds meteg" falls from 5 to 4**, the departing card being Isaiah
+   23:12, M23 being the one record of the thirty that adds a meteg.
+3. **"Meteg moved" stays at 5.**
+4. **A new "Accent" page arrives with one card**, Zechariah 2:4. That is M34,
+   whose munaḥ item 5 carried to the resh of זֵר֣וּ where mgketer has it on the
+   zayin; the card is marked "AC lost", the Aleppo Codex not being extant there.
+   Its page had to be added to git or `index.html` would link to nothing.
+
+The non-common total therefore falls from **281 to 251**, which reconciles
+exactly: minus 30, minus 1, plus 1.
+
+**THIRTY CARDS LEAVE "MAM adds meteg" WHERE TWENTY-NINE RECORDS ASKED FOR IT**,
+and this item's original guess that the drop would be "however many of the 28
+non-M13 removals are extant" was wrong on both counts. All 29 removal records
+dropped their card, and the thirtieth departure is a SECOND card at 2 Kings
+21:12: one is M18's meteg on the resh of ירושלם, the other the meteg on the vav
+of ויהודה, which no Holman record covers and which item 2's finding 2 predicted
+would travel with it.
+
+**JOSHUA 10:12 SHOWS NO DIFF HERE, AND THIS ITEM'S EXPECTATION OF ONE WAS
+WRONG.** It said a new diff was expected because M24 gives MAM a pashta with its
+stress helper where the Aleppo Codex transcription has the pashta alone. No such
+card exists, before the refresh or after it — mgketer's Joshua report has the
+same four cards either way and 10:12 is not among them. **mgketer strips stress
+helpers by design**: its `py/python_modules/strip_stress_helpers.py` says
+outright that "MAM includes these helpers; mgketer omits them. We strip them so
+they don't produce false diffs", and pashta is one of the four postpositives it
+handles. The massaged Joshua 10 token records the stripping, its `orig_text`
+holding MAM's doubled pashta and its `text` the single pashta the comparison
+sees. So the conclusion that the case needs no suppression entry stands, for the
+opposite reason to the one given: there is no diff to suppress.
 
 ## The evidence notes, and where they live
 
