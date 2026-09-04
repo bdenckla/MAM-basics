@@ -84,8 +84,8 @@ Three things about it are worth knowing before you touch it:
 
 **`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what
 `py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` generate — do not treat
-the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in the
-sibling codex-index-aleppo and MAM-basics' `leningrad/lenin-wiki/`, "were only ever intended to
+the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in
+MAM-basics' `aleppo/aleppo-wiki/` and `leningrad/lenin-wiki/`, "were only ever intended to
 be starting points for manual work on Wikisource." The published pages are that manual work. So
 the gap is the intended transformation, there is no sync to maintain in either direction, and
 **no test or lint should compare the two.**
@@ -94,8 +94,9 @@ The measurements say the same thing, and are worth quoting because the gap is mu
 "a wrapper around a generated body" — re-establish them with
 `py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py`, then compare their
 output against this mirror. Of the Aleppo generator's 700 lines, **26 (4%)** survive into the
-live page; of the Leningrad generator's 1,135 lines, **94 (8%)** do. codex-index-aleppo also
-keeps two snapshots of the hand work itself, `aleppo-wiki/Wikisource-manual-initial.txt` (63
+live page; of the Leningrad generator's 1,135 lines, **94 (8%)** do. The
+`aleppo/aleppo-wiki/` tree also keeps two snapshots of the hand work itself,
+`Wikisource-manual-initial.txt` (63
 lines, carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose
 lines are in the live page) — which is the pipeline written down: generate raw material, then
 build the page by hand from it. The generated file's overlap with the hand-made line is the
@@ -523,6 +524,17 @@ so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
 
+## codex-index-aleppo is a redirect host
+
+**codex-index-aleppo is not in the roster**, so `gitrepos_setup_rule` does not put a clone on
+any machine. Phase 2 of
+`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved the live data to
+`aleppo/` and its published pages to `gh-pages/aleppo/` on 2026-09-04. The source repository
+stays live only as the generated-stub host for its former three Pages URLs. The frozen manifest is
+`in/codex_index_aleppo_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks it
+without a clone. The source tracker has no open issues; qualified citations of its closed issues
+remain source-tracker citations, while new public-side issues belong in MAM-basics.
+
 ## Cambridge 1753 data is local under `cam1753/`
 
 Ben's decision, 2026-09-04: `codex-index-cam1753` belongs on no machine. Its archived GitHub
@@ -531,7 +543,9 @@ history remains, but its live data is `cam1753/`, its programs are under `py/`, 
 `cam1753-pages/` is ignored output that `py/main_cam1753_split_spreads.py` regenerates for an
 editor or crop task. The old clone left `all-repos.code-workspace` and
 `in/repo_maintenance_policy.json`'s `repo_visibility` map in the same completed lane: a missing
-workspace entry is therefore a decision, not a clone failure.
+workspace entry is therefore a decision, not a clone failure. The archived source tracker has no
+open issues; qualified citations of its closed issues remain source-tracker citations, while new
+public-side issues belong in MAM-basics.
 
 The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
 ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
@@ -547,7 +561,8 @@ MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The ol
 is deliberately absent from `all-repos.code-workspace`, `repo_visibility`, and vendoring audit
 configuration. The source repository keeps its history as an archived dated breadcrumb. Ben
 archived `bdenckla/diffable-pointed-hebrew` on 2026-09-04; its archive state was then confirmed
-with `gh repo view --json isArchived,url`.
+with `gh repo view --json isArchived,url`. The source tracker has no issues; new product work is
+tracked in MAM-basics.
 
 ## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
 
@@ -599,20 +614,18 @@ missing directory.
 five retained files into `leningrad/`, repointed
 `py/main_lenin_wikisource_page.py` to MAM-basics' canonical
 `uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
-The archived repository keeps its history and closed issue tracker; no source Pages site or
-redirect manifest exists.
+The archived repository keeps its history and closed issue tracker; new public-side issues belong
+in MAM-basics. No source Pages site or redirect manifest exists.
 
 Nothing in the ordinary suite resolves a Leningrad sibling. The Leningrad generator writes the
 three `leningrad/lenin-wiki/` artifacts, while the `page-snips/` crop is hand-maintained. The
 former repository's eight Python modules remain in MAM-basics' `py/` and stay in the source-lint
 scope through `py/lenin_paths.py`.
 
-The primary clone at `C:/Users/BenDe/GitRepos/codex-index-leningrad` is absent from the workspace
-and roster, but remains solely as the shared Git directory for the retained review input at
-`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/codex-index-leningrad`
-The review input is a clean detached worktree pinned to `2abd7f6`; preserve both paths with the
-review forest rather than treating either path as a roster clone. The primary clone can leave only
-after that forest no longer needs its shared Git metadata.
+Phase 5 on 2026-09-04 confirmed that the clean primary clone's `HEAD` and `origin/main` were both
+`86f88c0`, and that `git worktree list` named only the primary checkout. The review forest was no
+longer present, so the primary clone was moved to the Windows Recycle Bin. No Leningrad clone
+belongs on a machine.
 
 ## There is no `wlc-koren-12th` repo
 

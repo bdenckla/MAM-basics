@@ -14,14 +14,14 @@ starting points for manual work on Wikisource."  The page the wiki actually carr
 ``in/mam-ws-intro/index-leningrad.mediawiki``.  The two therefore diverge BY DESIGN --
 94 of this generator's 1,135 lines reach the live page, 8% of them -- so a difference
 between them is not drift, nothing needs re-syncing in either direction, and no test or
-lint should compare them.  Unlike codex-index-aleppo, which keeps
+lint should compare them. Unlike ``aleppo/aleppo-wiki/``, which keeps
 ``Wikisource-manual-initial.txt`` and ``Wikisource-manual-final.txt`` beside its
 generated file, no snapshot of the Leningrad hand work is tracked; the mirrored page is the
 only copy of it outside the wiki.
 
 THE COUNTERPART PIPELINE IS A DIFFERENT TOOL, which is why the two do not share a
-name here.  codex-index-aleppo's ``aleppo-wiki/main_make_wikisource_page.py`` reads
-a different input format and builds a different page; the trio plan's Phase 0
+name here. ``py/main_ac_wikisource_page.py`` reads a different input format and
+builds a different page; the trio plan's Phase 0
 classified the two as Family 2 and found them to be two tools rather than one with
 drift.  This one has run correctly the whole time, which is why that phase could use
 it as an oracle and could not use the other -- the aleppo half had been dead since

@@ -68,8 +68,8 @@ for a fresh session that has no other context.
   display floor, treated a page error as acceptable, which Ben also refused. The exact
   record model replaced both.)
 - **Ben's decision, 2026-08-07: no page error is ever acceptable, so the data model is
-  the one that makes a page error inexpressible — codex-index-leningrad's.** In
-  `C:/Users/BenDe/GitRepos/codex-index-leningrad/UXLC-utils-sparse/data/lci_recs.json`,
+  the one that makes a page error inexpressible — now MAM-basics'.** In
+  `C:/Users/BenDe/GitRepos/MAM-basics/uxlc/data/lci_augrecs.json`,
   every page has a record of where it starts and where it stops, down to the atom
   within the verse (`bkid`, `startc`, `startv`, `startp`, `stopc`, `stopv`, `stopp` —
   bkids in the `mb_cmn/bib_locales.py` convention, e.g. `Levit`), and consecutive pages

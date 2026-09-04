@@ -57,7 +57,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | **DONE 2026-09-04.** `cam1753/` holds the 100 selected source blobs, including the 14 spreads; the 28 page JPEGs are ignored output regenerated from those spreads. The source repository is an archived breadcrumb, and its clean primary clone has left `GitRepos`. |
 | 4 — diffable-pointed-hebrew | **DONE 2026-09-04.** The product now lives under `diffable-pointed-hebrew/` and `py/main_diffable_pointed_hebrew.py`; the source is an archived dated breadcrumb, and its verified primary clone has left `GitRepos`. |
-| 5 — Cross-repo bookkeeping and stage close | Not started. It removes the four workspace entries, performs the final clone-removal checks, records the source-repository dispositions, and closes this stage. |
+| 5 — Cross-repo bookkeeping and stage close | **IN PROGRESS 2026-09-04.** The configuration audit, clone-removal checks, source-state verification, oracles, vendoring regeneration, source-reference classification, and global-instruction update are complete. MAM-private still has functional Aleppo-source paths; its required third-repository edit awaits Ben's direction. |
 
 ## Phase 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions
 
@@ -391,6 +391,50 @@ the vendoring regeneration, Black on edited Python, Ruff, and `git diff
 final commits and deployed redirects, update the programme Status table, then
 delete the spent programme and second-stage plan only after confirming this
 plan contains their remaining live decisions.
+
+### Execution record — Phase 5 preliminary checks, 2026-09-04
+
+The workspace has eleven folders and names none of the four evacuated source
+repositories. `repo_visibility`, `in/vendoring_policy.json`, and
+`frozen_repos` name none of them either. `DATA-LICENSES.md` already has the
+Aleppo, Cambridge 1753, and diffable-pointed-hebrew rows the source lanes
+added, so the Phase 5 audit found no licence-row change to make.
+
+GitHub confirms that codex-index-leningrad, codex-index-cam1753, and
+diffable-pointed-hebrew are archived, while codex-index-aleppo remains the
+redirect host. All four source trackers have no open issue. The source
+READMEs state their destination and disposition except for
+diffable-pointed-hebrew's last sentence, which still says that Ben decides
+whether to archive it. That sentence predates Ben's archive action. An
+archived repository rejects a push, so correcting the source README would
+require Ben to direct an unarchive-and-rearchive operation.
+
+codex-index-aleppo, codex-index-cam1753, and diffable-pointed-hebrew were
+already absent from `C:/Users/BenDe/GitRepos`. The Leningrad primary clone was
+clean; its `HEAD` and `origin/main` were both `86f88c0`, and `git worktree
+list` named only the primary checkout. The review forest named in the Phase 1
+record was no longer present, so the clean primary clone was moved to the
+Windows Recycle Bin. The four source clone paths are now absent.
+
+The live-roster reference sweep classified current MAM-basics paths and prose
+as destination references, redirect-host configuration, or historical records.
+MAM-basics now names the local Aleppo paths in the affected command docstrings,
+the Wikisource-mirror subcommand, and `doc/scan-pages.md`. The tracked
+github-misc instruction copies and the live Codex instruction file now say
+that codex-index-aleppo is a redirect host; github-misc commit `f2b7a9a` is
+pushed. A functional Aleppo-source path remains in MAM-private. The governing
+programme requires Ben's direction before an edit in that third repository,
+so Phase 5 cannot yet close. Historical plans and dated review findings remain
+as execution records.
+
+The Leningrad and Aleppo generators regenerated with zero Git diff. The
+Cambridge 1753 oracle passed all four checks, including all 160 word findings.
+The standard and tiny diffable-pointed-hebrew samples regenerated
+byte-identically; the normalized historical sample remains data rather than
+output. The redirect-manifest test passed its five tests, vendoring regeneration
+reported seven rows and 43 files, Ruff passed, Black left the five edited
+Python files unchanged, and the canonical suite passed 972, skipped 5, and
+reported 65 subtests.
 
 ## Session discipline
 

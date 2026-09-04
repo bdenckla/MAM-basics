@@ -1,7 +1,7 @@
 """Build the Wikisource page indexing the Aleppo Codex, from J David Stark's index.
 
-Reads the hand-made CSV in the sibling codex-index-aleppo's ``aleppo-wiki/`` and
-writes three artifacts back beside it: the CSV's rows as JSON (``index-flat.json``),
+Reads the hand-made CSV in ``aleppo/aleppo-wiki/`` and writes three artifacts back
+beside it: the CSV's rows as JSON (``index-flat.json``),
 those rows grouped by book (``index-grouped-by-book.json``), and the wikitext itself
 (``index.wiki``).  All four paths come from ``ac_paths``.
 
