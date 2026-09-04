@@ -29,6 +29,11 @@ body.centered-page table {
     font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
     font-style: normal; /* never italicize Hebrew, even inside italic context */
 }
+/* post-stress-meteg.html: the examples preserve vowels because a syllable and its vowel are
+   the subject of the comparison. The shared Hebrew rule above selects Taamey D at 19.6pt from
+   the 14pt body; these table cells need about 24pt for their vowels and accents to remain
+   readable. The class confines the larger size to this page's Hebrew table data. */
+table.post-stress-meteg-table td[dir="rtl"] [lang="hbo"] { font-size: 170%; }
 @font-face {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");

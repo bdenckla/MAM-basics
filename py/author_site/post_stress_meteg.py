@@ -106,6 +106,7 @@ def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) ->
         _TITLE,
         out_path,
         css_hrefs=(site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
+        body_class="centered-page",
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(build_body(survey), write_ctx)
@@ -150,6 +151,17 @@ def _by_type_count(survey: dict, kind: str) -> int:
         survey["post_stress_by_structural_type"][system][kind]
         for system in (_PROSE, _POETIC)
     )
+
+
+def _following_example(record: dict, kind: str) -> tuple:
+    """The following MAM chanted word where the source-derived type requires it."""
+    if kind not in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL):
+        return _hebrew_cell(None)
+    following = record["following_mam_form"]
+    assert (
+        following is not None
+    ), f"{record['bcv']}: no MAM form for the following chanted word of {kind}"
+    return _hebrew_cell(following)
 
 
 def _example_of(survey: dict, kind: str) -> dict:
@@ -216,8 +228,9 @@ def _para(text: str) -> object:
     return mb_html.para(wrap_hebrew_runs(text))
 
 
-def _hebrew_cell(form: str) -> tuple:
-    return (form, _HEBREW_CELL)
+def _hebrew_cell(form: str | None) -> tuple:
+    """A pointed Hebrew form wrapped as an hbo run for an RTL table cell."""
+    return wrap_hebrew_runs(form or "")
 
 
 def _ref_link(bcv: str) -> object:
@@ -241,7 +254,7 @@ def _book_name(bcv: str) -> str:
 def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
     return mb_html.table(
         [mb_html.table_row_of_headers(headers), *rows],
-        attr or {"class": "limited-width"},
+        attr or {"class": "limited-width post-stress-meteg-table"},
     )
 
 
@@ -253,30 +266,28 @@ def _opening(survey: dict) -> list:
     total = _both(survey, "meteg after the stressed syllable")
     words = _both(survey, "chanted words checked")
     return [
-        _para(
-            "A meteg is a metrical mark, and it almost always stands before the syllable a"
-            " chanted word is stressed on. It can also stand after it. Both Yeivin and"
-            " Breuer describe that as a named class with rules, and neither book says"
-            f" how often it happens; this page counts it. MAM has {total:,} of them, over"
-            f" {words:,} chanted words, counted in the Phonetic MAM edition, which is the"
-            " one edition that marks where the stress falls."
+        mb_html.para(
+            (
+                "A meteg almost always appears before the stressed syllable of its chanted"
+                " word, but it can also come after the stress. Both ",
+                itm(),
+                " and ",
+                cos(),
+                " describe post-stress meteg. Neither source says how often post-stress"
+                " meteg occurs; this page counts it in MAM. MAM has ",
+                f"{total:,} post-stress meteg marks among {words:,} chanted words.",
+            )
         ),
         _para(
-            "A chanted word here is what cantillation treats as one unit: a single written"
-            " word, or a whole maqaf compound. Either way it has one primary stress, so a"
-            " meteg on a non-final atom of a compound falls before that one stress rather"
-            " than marking a second one."
+            "A chanted word is an atom standing alone or a whole maqaf compound. An atom"
+            " is one written word between spaces or maqafs. A maqaf compound has one"
+            " primary stress across all of its atoms."
         ),
         _para(
-            "The mark counted is U+05BD, which is the meteg and is also the silluq."
-            " " + psm.SILLUQ_RULE
-        ),
-        _para(
-            "Which syllable a chanted word is stressed on is not readable off the pointing,"
-            " so this page does not guess it: the stress comes from Phonetic MAM, an edition"
-            " of MAM that marks the stressed syllable of every chanted word. The position of"
-            " a meteg is never used to decide where the stress is, which would make the"
-            " question answer itself."
+            "Which syllable a chanted word is stressed on is not always obvious,"
+            " so for this survey of post-stress meteg marks,"
+            " we use Phonetic MAM, an edition"
+            " of MAM that marks the stressed syllable of every chanted word."
         ),
     ]
 
@@ -287,10 +298,9 @@ def _census(survey: dict) -> list:
         "chanted words checked",
         "meteg before the stressed syllable",
         "meteg after the stressed syllable",
-        "silluq",
     )
-    headers = ("Verse system", "Chanted words", "Meteg before", "Meteg after", "Silluq")
-    numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
+    headers = ("Verse system", "Chanted words", "Meteg before", "Meteg after")
+    numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
     rows = [
         mb_html.table_row_of_data(
             (system, *[f"{_count(survey, system, c):,}" for c in categories]), numeric
@@ -299,7 +309,7 @@ def _census(survey: dict) -> list:
     ]
     rows.append(
         mb_html.table_row_of_data(
-            ("both", *[f"{_both(survey, c):,}" for c in categories]), numeric
+            ("all verses", *[f"{_both(survey, c):,}" for c in categories]), numeric
         )
     )
     before = _both(survey, "meteg before the stressed syllable")
@@ -307,15 +317,21 @@ def _census(survey: dict) -> list:
     return [
         mb_html.heading_level_2("MAM census by verse system"),
         _para(
-            "The prose row is the 21 books together with Job's prose frame; the poetic row is"
-            " Psalms, Proverbs and Job's poetry. The two Decalogues are cantillated twice"
-            " over, and both strands are counted, so a chanted word of Exodus 20 or"
-            " Deuteronomy 5 can appear twice in these totals."
+            "The “prose verses” row in the table below"
+            " is for the 21 books plus with Job's prose frame;"
+            " the “poetic verses” row is Job's main, poetic section"
+            " plus all Psalms and the entire book of Proverbs."
+            " Both cantillation strands of each Decalogue are counted, so a Decalogue"
+            " chanted word can appear twice in these totals."
         ),
         _table(headers, rows),
         _para(
-            f"So a meteg stands before the stress {before:,} times and after it {after:,}"
-            f" times: about one in {round(before / after):,}."
+            f"So a meteg comes before the stress {before:,} times and after it {after:,}"
+            " times."
+        ),
+        _para(
+            f"Only {after / (before + after):.2%} of the {before + after:,} meteg marks"
+            " counted here come after the stress."
         ),
     ]
 
@@ -328,7 +344,8 @@ def _by_type(survey: dict) -> list:
         "Poetic",
         mb_html.abbr("ITM", {"title": "Introduction to the Tiberian Masorah"}),
         mb_html.abbr("CoS", {"title": "The Cantillation of Scripture"}),
-        "Example",
+        "Example chanted word",
+        "Following chanted word, if relevant",
     )
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
@@ -341,40 +358,73 @@ def _by_type(survey: dict) -> list:
                     str(survey["post_stress_by_structural_type"][_POETIC][kind]),
                     yeivin,
                     breuer,
-                    example["mam_form"] or example["chanted_word"],
+                    _hebrew_cell(example["mam_form"] or example["chanted_word"]),
+                    _following_example(example, kind),
                 ),
-                (None, _NUMERIC_CELL, _NUMERIC_CELL, None, None, _HEBREW_CELL),
+                (
+                    None,
+                    _NUMERIC_CELL,
+                    _NUMERIC_CELL,
+                    None,
+                    None,
+                    _HEBREW_CELL,
+                    _HEBREW_CELL,
+                ),
             )
         )
     unclassified = psm.TYPE_UNCLASSIFIED
     rows.append(
         mb_html.table_row_of_data(
             (
-                "Not one of the three",
+                "misc (not one of the three types above)",
                 str(survey["post_stress_by_structural_type"][_PROSE][unclassified]),
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
                 "",
                 "",
-                _example_of(survey, unclassified)["mam_form"],
+                _hebrew_cell(_example_of(survey, unclassified)["mam_form"]),
+                _hebrew_cell(None),
             ),
-            (None, _NUMERIC_CELL, _NUMERIC_CELL, None, None, _HEBREW_CELL),
+            (
+                None,
+                _NUMERIC_CELL,
+                _NUMERIC_CELL,
+                None,
+                None,
+                _HEBREW_CELL,
+                _HEBREW_CELL,
+            ),
         )
     )
     return [
-        mb_html.heading_level_2("Post-stress metegs by structural type"),
+        mb_html.heading_level_2("Post-stress meteg marks by structural type"),
+        mb_html.para(
+            (
+                "Both ",
+                itm(),
+                " and ",
+                cos(),
+                " describe three types of post-stress meteg. Each type is named for the"
+                " syllable that has the meteg:",
+            )
+        ),
+        mb_html.ordered_list(
+            (
+                "an open syllable;",
+                "a syllable at the end of the chanted word, closed by a guttural; and",
+                "a closed syllable whose vowel is tsere.",
+            )
+        ),
         _para(
-            "Three types are described in both books, and each is named for the shape of the"
-            " syllable the meteg falls in: an open syllable, a syllable closed by a guttural"
-            " at the end of the chanted word, and a closed syllable whose vowel is a ṣere."
-            " The counts below are mechanical, and a chanted word that meets none of the"
-            " three is left where it is rather than pushed into the nearest."
+            "The counts below are mechanical. A chanted word that does not fit one of the"
+            " three types remains in the “misc” row rather than being forced into"
+            " the nearest type."
         ),
         _table(headers, rows),
         mb_html.para(
             (
-                "The open-syllable type is the one ",
+                "For the open-syllable type, ",
                 itm(),
-                " §332 describes: a chanted word stressed on its penultimate syllable,"
+                " §332 describes a chanted word stressed on its penultimate syllable,"
                 " ending in an open syllable, before a chanted word stressed on its first."
                 " Yeivin calls it rarely marked, commonest in early manuscripts and absent"
                 " from printed texts, and ",
@@ -385,7 +435,7 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The guttural type is ",
+                "The guttural type is described in ",
                 itm(),
                 " §354 and ",
                 cos(),
@@ -399,13 +449,13 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The ṣere type is ",
+                "The tsere type is described in ",
                 itm(),
                 " §338, fed by §308's account of retracted stress: where the stress retracts"
-                " and a final closed syllable keeps its ṣere, that syllable takes the mark,"
+                " and a final closed syllable keeps its tsere, that syllable takes the mark,"
                 " and Yeivin says it is marked in manuscripts and printed texts alike. ",
                 cos(),
-                " Ch. 8's matching type (a) is wider than the ṣere — it is the big vowel"
+                " Ch. 8's matching type (a) is wider than tsere — it is the big vowel"
                 " in a closed syllable — so one or two of the records in the last row"
                 " belong to Breuer's type without belonging to Yeivin's section.",
             )
@@ -420,7 +470,7 @@ def _every_case(survey: dict) -> list:
         mb_html.table_row_of_data(
             (
                 _ref_link(record["bcv"]),
-                record["mam_form"] or record["chanted_word"],
+                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
                 record["structural_type"],
                 rmn(record["accent_on_the_stressed_letter"]),
             ),
@@ -429,13 +479,13 @@ def _every_case(survey: dict) -> list:
         for record in survey["post_stress"]
     ]
     return [
-        mb_html.heading_level_2("Every post-stress meteg in MAM"),
+        mb_html.heading_level_2("Every post-stress meteg mark in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
             " text."
         ),
-        _table(headers, rows, {"class": "accent-pair-table"}),
+        _table(headers, rows, {"class": "accent-pair-table post-stress-meteg-table"}),
     ]
 
 
@@ -462,9 +512,9 @@ def _m23(survey: dict) -> list:
             f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
-            "The same verse already had a post-stress meteg of another type:"
+            "The same verse already had a post-stress meteg mark of another type:"
             f" {yanuax['mam_form']}, whose last syllable a guttural closes. So Isaiah 23:12"
-            " now has two of them, one of each of the two commonest types."
+            " now has two post-stress meteg marks, one of each of the two commonest types."
         ),
         _para(
             "MAM has one other chanted word of exactly this shape, and the table above holds"
@@ -548,7 +598,7 @@ def _post_silluq(survey: dict) -> list:
         _para(
             "A meteg after the silluq would be a harder case than any of the above, since"
             " the two marks are one codepoint and the rule that tells them apart is about"
-            " the stressed syllable. MAM has no such meteg: of the post-stress metegs"
+            " the stressed syllable. MAM has no such meteg: of the post-stress meteg marks"
             " counted here, none is in a chanted word that has sof pasuq."
         ),
         _para(
@@ -598,7 +648,7 @@ def _sources_and_limits(survey: dict) -> list:
             " edition is regenerated when al-hatorah regenerates it, which is not when MAM"
             f" changes: measured against MAM as it stands today, {currency['verses_differing']}"
             f" of its {currency['verses_compared']:,} numbered verses differ in how many"
-            f" metegs they have — {currency['metegs_in_the_surveyed_snapshot']:,} in the"
+            f" meteg marks they have — {currency['metegs_in_the_surveyed_snapshot']:,} in the"
             " surveyed"
             f" text against {currency['metegs_in_mam_simple_today']:,} today. Isaiah 23:12 is"
             " one of them, which is why the meteg this page's M23 section is about is not"
@@ -608,7 +658,7 @@ def _sources_and_limits(survey: dict) -> list:
             "One diagnostic overlaps the three positions rather than adding a fourth: a meteg"
             " can share a letter with an accent that marks no stress, which the prepositives,"
             " the postpositives, ole and geresh muqdam all do. There are"
-            f" {overlap} such metegs, and each is counted in the group its syllable puts it"
+            f" {overlap} such meteg marks, and each is counted in the group its syllable puts it"
             " in, before or after the stress, rather than beside them."
         ),
         _para(

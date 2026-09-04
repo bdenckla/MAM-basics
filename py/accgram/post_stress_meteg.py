@@ -237,7 +237,7 @@ SYSTEM_POETIC = "poetic verses"
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
 # recorded as unclassified rather than pushed into the nearest.
 TYPE_GUTTURAL = "guttural at the end of the chanted word"
-TYPE_CLOSED_TSERE = "closed syllable with ṣere"
+TYPE_CLOSED_TSERE = "closed syllable with tsere"
 TYPE_OPEN = "open syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
@@ -531,6 +531,7 @@ def _record(
     letter_index: int,
     accents_here: list[str],
     before_qere: str | None,
+    following_chanted_word: str | None,
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
     nuclei = parsed["nuclei"]
@@ -547,6 +548,7 @@ def _record(
         "bcv": bcv,
         "system": system,
         "chanted_word": word,
+        "following_chanted_word": following_chanted_word,
         "snapshot_before_qere": before_qere,
         "accents_and_letters": _bare(word),
         "jta": jta,
@@ -579,6 +581,7 @@ def _classify_one_word(
     parsed: dict,
     found: dict,
     before_qere: str | None,
+    following_chanted_word: str | None,
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
     counts = found["counts"]
@@ -619,6 +622,7 @@ def _classify_one_word(
             letter_index=letter_index,
             accents_here=accents_here,
             before_qere=before_qere,
+            following_chanted_word=following_chanted_word,
         )
         if accents_here:
             key = "meteg sharing a letter with a non-stress-marking accent"
@@ -684,9 +688,12 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
             }
         )
     metegs = 0
-    for entry in usable:
+    for index, entry in enumerate(usable):
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
+        following_chanted_word = (
+            usable[index + 1]["fva"].split(" ")[0] if index + 1 < len(usable) else None
+        )
         metegs += word.count(METEG)
         try:
             parsed = _parse(word, jta)
@@ -704,6 +711,7 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
             parsed=parsed,
             found=found,
             before_qere=entry.get("before_qfikq"),
+            following_chanted_word=following_chanted_word,
         )
     found["metegs_by_verse"][bcv] = metegs
 
@@ -805,6 +813,30 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
     return [], "no match"
 
 
+def _following_mam_form(record: dict, words: list[str]) -> str | None:
+    """The MAM form of ``record``'s next chanted word, if the pair resolves uniquely.
+
+    The page's open-syllable and guttural examples need the following chanted word to show
+    the condition that classifies them. A form is shown only after the complete adjacent
+    pair matches MAM, so both Hebrew forms remain lifted from MAM rather than one being a
+    Phonetic-MAM fallback.
+    """
+    following = record["following_chanted_word"]
+    if following is None:
+        return None
+    next_record = {"chanted_word": following}
+    candidates = []
+    for index, word in enumerate(words[:-1]):
+        current_matches, _current_matched_by = _matching_mam_words(record, [word])
+        next_matches, _next_matched_by = _matching_mam_words(
+            next_record, [words[index + 1]]
+        )
+        if current_matches and next_matches:
+            candidates.extend(next_matches)
+    settled, _settled_by = _settle(candidates, following)
+    return settled
+
+
 def _attach_mam_forms(
     records: list[dict], words_by_bcv: dict[str, list[str]]
 ) -> list[dict]:
@@ -837,6 +869,11 @@ def _attach_mam_forms(
         record["mam_form_candidates"] = len(set(matches))
         record["metegs_in_mam_today"] = settled.count(METEG) if settled else None
         record["metegs_in_the_snapshot"] = record["chanted_word"].count(METEG)
+        record["following_mam_form"] = (
+            _following_mam_form(record, words_by_bcv.get(record["bcv"], []))
+            if settled is not None
+            else None
+        )
         if settled is not None:
             # Recomputed off MAM's own form, so that every Hebrew string the page can render
             # from this record comes from one text rather than two.
