@@ -630,8 +630,6 @@ def _record(
     is_last_syllable = syllable_index == len(syllables) - 1
     is_open = _syllable_is_open(syllable)
     vowel = nuclei[syllable_index][1]
-    stress_letter = nuclei[parsed["stressed"]][0]
-    stress_accents = [mark for mark in letters[stress_letter][1] if is_accent(mark)]
     closes_on_a_guttural = is_last_syllable and letters[-1][0] in _GUTTURAL_HOSTS
     return {
         "bcv": bcv,
@@ -648,11 +646,6 @@ def _record(
         "is_the_last_syllable": is_last_syllable,
         "closes_on_a_guttural": closes_on_a_guttural,
         "has_sof_pasuq": parsed["has_sof_pasuq"],
-        "accent_on_the_stressed_letter": (
-            ", ".join(_accent_name(one) for one in stress_accents)
-            if stress_accents
-            else "(none)"
-        ),
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
         "structural_type": _structural_type(
             closes_on_a_guttural=closes_on_a_guttural, is_open=is_open, vowel=vowel
@@ -1283,9 +1276,6 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
-    by_accent = Counter(
-        (one["system"], one["accent_on_the_stressed_letter"]) for one in post_stress
-    )
     return {
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
@@ -1332,19 +1322,6 @@ def build_survey() -> dict:
         },
         "post_stress_by_structural_type": {
             system: {one: by_type[(system, one)] for one in _TYPES}
-            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
-        },
-        "post_stress_by_accent_on_the_stressed_letter": {
-            system: dict(
-                sorted(
-                    (
-                        (accent, n)
-                        for (one_system, accent), n in by_accent.items()
-                        if one_system == system
-                    ),
-                    key=lambda pair: (-pair[1], pair[0]),
-                )
-            )
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
         "post_stress": post_stress,

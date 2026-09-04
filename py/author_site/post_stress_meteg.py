@@ -1,4 +1,4 @@
-r"""``gh-pages/post-stress-meteg.html`` -- MAM's metegs after the primary stress.
+r"""MAM's metegs after the primary stress: the main page and its individual-case table.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -42,12 +42,13 @@ from author_site import site_data
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
-from py_html.my_html_span_romanized import rmn
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
+_CASES_FNAME = site_data.POST_STRESS_METEG_CASES_FNAME
+_CASES_TITLE = site_data.POST_STRESS_METEG_CASES_TITLE
 _DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 
 # The M23 card's link lands here, so the identifier is half of that card's href and cannot be
@@ -93,9 +94,32 @@ _TYPE_SOURCES = {
     ),
 }
 
+_TYPE_CODES = {
+    psm.TYPE_OPEN: ("1", "an open syllable"),
+    psm.TYPE_GUTTURAL: (
+        "2",
+        "a syllable closed by a guttural at the end of the chanted word",
+    ),
+    psm.TYPE_CLOSED_TSERE: ("3", "a closed syllable whose vowel is tsere"),
+}
+_CASE_TABLE_ID = "post-stress-meteg-cases"
+_CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
+_CASE_FILTER_SCRIPT = f"""<script>
+const typeFilter = document.getElementById("{_CASE_TYPE_FILTER_ID}");
+const caseRows = document.querySelectorAll("#{_CASE_TABLE_ID} tr[data-type]");
+typeFilter.addEventListener("change", () => {{
+  for (const row of caseRows) {{
+    row.hidden = typeFilter.value !== "all" && row.dataset.type !== typeFilter.value;
+  }}
+}});
+</script>
+"""
 
-def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write the page.  Returns the path written.
+
+def gen_html_files(
+    out_dir: Path | None = None, *, trust_survey: bool = False
+) -> tuple[str, str]:
+    """Write the main page and the individual-case page.  Returns both paths.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -105,16 +129,27 @@ def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) ->
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
     top_dir = paths.gh_pages_dir() if out_dir is None else Path(out_dir)
-    out_path = str(top_dir / _FNAME)
+    return (
+        _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
+        _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
+    )
+
+
+def _write_page(path: Path, title: str, body: list) -> str:
     write_ctx = mb_html.WriteCtx(
-        _TITLE,
-        out_path,
+        title,
+        str(path),
         css_hrefs=(site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
         body_class="centered-page",
         html_comment=provenance.generated_html_comment(__file__),
     )
-    mb_html.write_html_to_file(build_body(survey), write_ctx)
-    return out_path
+    mb_html.write_html_to_file(body, write_ctx)
+    return str(path)
+
+
+def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
+    """Write both pages and return the main page's path for older callers."""
+    return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
 def build_body(survey: dict) -> list:
@@ -124,7 +159,7 @@ def build_body(survey: dict) -> list:
         *_opening(survey),
         *_census(survey),
         *_by_type(survey),
-        *_every_case(survey),
+        *_case_list_link(survey),
         *_m23(survey),
         *_post_silluq(survey),
         *_sources_and_limits(survey),
@@ -527,29 +562,83 @@ def _by_type(survey: dict) -> list:
     ]
 
 
-def _every_case(survey: dict) -> list:
-    """Every post-stress meteg, so the counts above can be read rather than believed."""
-    headers = ("Verse", "Chanted word", "Type", "Accent on the stressed letter")
-    rows = [
-        mb_html.table_row_of_data(
-            (
-                _ref_link(record["bcv"]),
-                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
-                record["structural_type"],
-                rmn(record["accent_on_the_stressed_letter"]),
-            ),
-            (None, _HEBREW_CELL, None, None),
-        )
-        for record in survey["post_stress"]
-    ]
+def _case_list_link(survey: dict) -> list:
+    """The main page's link to the long list of individual cases."""
     return [
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(
+                    f"{len(survey['post_stress']):,} individual cases", _CASES_FNAME
+                ),
+                " are listed separately and can be filtered by type.",
+            )
+        ),
+    ]
+
+
+def _case_type_code(kind: str) -> str:
+    return _TYPE_CODES.get(kind, ("other", ""))[0]
+
+
+def _case_type_cell(kind: str) -> object:
+    if kind in _TYPE_CODES:
+        code, gloss = _TYPE_CODES[kind]
+        return mb_html.abbr(code, {"title": f"Type {code}: {gloss}"})
+    return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
+
+
+def _case_row(record: dict) -> object:
+    return mb_html.table_row(
+        (
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(
+                _hebrew_cell(record["mam_form"] or record["chanted_word"]), _HEBREW_CELL
+            ),
+            mb_html.table_datum(_case_type_cell(record["structural_type"])),
+        ),
+        {"data-type": _case_type_code(record["structural_type"])},
+    )
+
+
+def _case_type_filter() -> object:
+    options = (
+        ("all", "All types"),
+        *((code, f"Type {code}") for code, _gloss in _TYPE_CODES.values()),
+        ("other", "Not types 1, 2, or 3"),
+    )
+    option_html = "".join(
+        f'<option value="{value}">{label}</option>' for value, label in options
+    )
+    return mb_html.raw_html(
+        f'<p><label for="{_CASE_TYPE_FILTER_ID}">Show </label>'
+        f'<select id="{_CASE_TYPE_FILTER_ID}">{option_html}</select>.</p>\n'
+    )
+
+
+def build_cases_body(survey: dict) -> list:
+    """The individual cases, outside the main page's explanatory sections."""
+    headers = ("Verse", "Chanted word", "Type")
+    rows = [_case_row(record) for record in survey["post_stress"]]
+    return [
+        mb_html.heading_level_1(_CASES_TITLE),
+        mb_html.para(("← Back to ", mb_html.anchor_h(_TITLE, _FNAME), ".")),
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
             " text."
         ),
-        _table(headers, rows, {"class": "accent-pair-table post-stress-meteg-table"}),
+        _case_type_filter(),
+        _table(
+            headers,
+            rows,
+            {
+                "class": "accent-pair-table post-stress-meteg-table",
+                "id": _CASE_TABLE_ID,
+            },
+        ),
+        mb_html.raw_html(_CASE_FILTER_SCRIPT),
     ]
 
 
@@ -581,10 +670,9 @@ def _m23(survey: dict) -> list:
             " now has two of them, one of each of the two commonest types."
         ),
         _para(
-            "MAM has one other chanted word of exactly this shape, and the table above holds"
-            f" it: {same_shape['mam_form']} at {ref_abbrev(same_shape['bcv'])}, with the"
-            " same accent on the stress, the same open final syllable, and the same kind of"
-            " chanted word after it."
+            "MAM has one other chanted word of exactly this shape, and the individual-cases"
+            f" page names it: {same_shape['mam_form']} at {ref_abbrev(same_shape['bcv'])},"
+            " with the same open final syllable and the same kind of chanted word after it."
         ),
         _para(
             f"The counts above do not include the meteg of {qumi}. They are taken from the"
@@ -843,8 +931,9 @@ def add_args(parser, *, repo_root: Path) -> None:
 
 
 def run(args) -> None:
-    out_path = gen_html_file(
+    out_paths = gen_html_files(
         getattr(args, "html_out_dir", None),
         trust_survey=bool(getattr(args, "trust_survey", False)),
     )
-    print(f"Generated {out_path}")
+    for out_path in out_paths:
+        print(f"Generated {out_path}")

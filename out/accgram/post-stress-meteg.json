@@ -315,25 +315,6 @@
    "none of the three": 2
   }
  },
- "post_stress_by_accent_on_the_stressed_letter": {
-  "prose verses": {
-   "munaḥ": 72,
-   "mahapakh": 55,
-   "merkha": 36,
-   "qadma": 8,
-   "darga": 5,
-   "telisha qetanah": 1
-  },
-  "poetic verses": {
-   "munaḥ": 34,
-   "merkha": 13,
-   "atnaḥ hafukh": 2,
-   "mahapakh": 2,
-   "iluy": 1,
-   "tipeḥa": 1,
-   "yeraḥ ben yomo": 1
-  }
- },
  "post_stress": [
   {
    "bcv": "gn3:18",
@@ -350,7 +331,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -376,7 +356,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -402,7 +381,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -428,7 +406,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -454,7 +431,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -480,7 +456,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -506,7 +481,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -532,7 +506,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -558,7 +531,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -584,7 +556,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -610,7 +581,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -636,7 +606,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -662,7 +631,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -688,7 +656,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -714,7 +681,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "darga",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -740,7 +706,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -766,7 +731,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -792,7 +756,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -818,7 +781,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "darga",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -844,7 +806,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "telisha qetanah",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -870,7 +831,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -896,7 +856,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -922,7 +881,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -948,7 +906,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -974,7 +931,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1000,7 +956,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1026,7 +981,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1052,7 +1006,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1078,7 +1031,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1104,7 +1056,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1130,7 +1081,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1156,7 +1106,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1182,7 +1131,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1208,7 +1156,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1234,7 +1181,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1260,7 +1206,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1286,7 +1231,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1312,7 +1256,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1338,7 +1281,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1364,7 +1306,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1390,7 +1331,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1416,7 +1356,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -1442,7 +1381,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1468,7 +1406,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1494,7 +1431,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1520,7 +1456,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1546,7 +1481,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1572,7 +1506,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1598,7 +1531,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1624,7 +1556,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1650,7 +1581,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1676,7 +1606,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1702,7 +1631,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 2,
@@ -1728,7 +1656,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1754,7 +1681,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1780,7 +1706,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1806,7 +1731,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -1832,7 +1756,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -1858,7 +1781,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -1884,7 +1806,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1910,7 +1831,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -1936,7 +1856,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1962,7 +1881,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -1988,7 +1906,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "darga",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -2014,7 +1931,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 2,
@@ -2040,7 +1956,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2066,7 +1981,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2092,7 +2006,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2118,7 +2031,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -2144,7 +2056,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -2170,7 +2081,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2196,7 +2106,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2222,7 +2131,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -2248,7 +2156,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -2274,7 +2181,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2300,7 +2206,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2326,7 +2231,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2352,7 +2256,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2378,7 +2281,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2404,7 +2306,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2430,7 +2331,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2456,7 +2356,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2482,7 +2381,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 2,
@@ -2508,7 +2406,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2534,7 +2431,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2560,7 +2456,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2586,7 +2481,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2612,7 +2506,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2638,7 +2531,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2664,7 +2556,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2690,7 +2581,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2716,7 +2606,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -2742,7 +2631,6 @@
    "is_the_last_syllable": false,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2768,7 +2656,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 3,
@@ -2794,7 +2681,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2820,7 +2706,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -2846,7 +2731,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "darga",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2872,7 +2756,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2898,7 +2781,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -2924,7 +2806,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2950,7 +2831,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -2976,7 +2856,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3002,7 +2881,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3028,7 +2906,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3054,7 +2931,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3080,7 +2956,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3106,7 +2981,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -3132,7 +3006,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3158,7 +3031,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3184,7 +3056,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3210,7 +3081,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3236,7 +3106,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3262,7 +3131,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3288,7 +3156,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3314,7 +3181,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3340,7 +3206,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3366,7 +3231,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3392,7 +3256,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3418,7 +3281,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3444,7 +3306,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3470,7 +3331,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3496,7 +3356,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3522,7 +3381,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3548,7 +3406,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3574,7 +3431,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 2,
@@ -3600,7 +3456,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -3626,7 +3481,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -3652,7 +3506,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3678,7 +3531,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3704,7 +3556,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3730,7 +3581,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3756,7 +3606,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3782,7 +3631,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3808,7 +3656,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -3834,7 +3681,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "atnaḥ hafukh",
    "shares_its_letter_with": [
     "ole"
    ],
@@ -3862,7 +3708,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -3888,7 +3733,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -3914,7 +3758,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3940,7 +3783,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -3966,7 +3808,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -3992,7 +3833,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4018,7 +3858,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "tipeḥa",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -4044,7 +3883,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4070,7 +3908,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4096,7 +3933,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 2,
@@ -4122,7 +3958,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4148,7 +3983,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4174,7 +4008,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4200,7 +4033,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "yeraḥ ben yomo",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4226,7 +4058,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4252,7 +4083,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4278,7 +4108,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 2,
@@ -4304,7 +4133,6 @@
    "is_the_last_syllable": false,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -4330,7 +4158,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4356,7 +4183,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "atnaḥ hafukh",
    "shares_its_letter_with": [
     "ole"
    ],
@@ -4384,7 +4210,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4410,7 +4235,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4436,7 +4260,6 @@
    "is_the_last_syllable": false,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4462,7 +4285,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4488,7 +4310,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4514,7 +4335,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4540,7 +4360,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4566,7 +4385,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4592,7 +4410,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4618,7 +4435,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4644,7 +4460,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4670,7 +4485,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4696,7 +4510,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4722,7 +4535,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4748,7 +4560,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4774,7 +4585,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -4800,7 +4610,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4826,7 +4635,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4852,7 +4660,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4878,7 +4685,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4904,7 +4710,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "iluy",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -4930,7 +4735,6 @@
    "is_the_last_syllable": false,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -4956,7 +4760,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
    "atom": 1,
@@ -4982,7 +4785,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 2,
@@ -5008,7 +4810,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5034,7 +4835,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5060,7 +4860,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5086,7 +4885,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5112,7 +4910,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5138,7 +4935,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5164,7 +4960,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5190,7 +4985,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5216,7 +5010,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5242,7 +5035,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5268,7 +5060,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5294,7 +5085,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5320,7 +5110,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5346,7 +5135,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5372,7 +5160,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5398,7 +5185,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5424,7 +5210,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5450,7 +5235,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5476,7 +5260,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5502,7 +5285,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5528,7 +5310,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5554,7 +5335,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5580,7 +5360,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5606,7 +5385,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5632,7 +5410,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5658,7 +5435,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5684,7 +5460,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5710,7 +5485,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5736,7 +5510,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5762,7 +5535,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5788,7 +5560,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -5814,7 +5585,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "qadma",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -5840,7 +5610,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5866,7 +5635,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5892,7 +5660,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -5918,7 +5685,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5944,7 +5710,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -5970,7 +5735,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -5996,7 +5760,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -6022,7 +5785,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 2,
@@ -6048,7 +5810,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "merkha",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -6074,7 +5835,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6100,7 +5860,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6126,7 +5885,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "closed syllable with tsere",
    "atom": 1,
@@ -6152,7 +5910,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6178,7 +5935,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6204,7 +5960,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -6230,7 +5985,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "munaḥ",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 2,
@@ -6256,7 +6010,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6282,7 +6035,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6308,7 +6060,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": true,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "darga",
    "shares_its_letter_with": [],
    "structural_type": "guttural at the end of the chanted word",
    "atom": 1,
@@ -6334,7 +6085,6 @@
    "is_the_last_syllable": true,
    "closes_on_a_guttural": false,
    "has_sof_pasuq": false,
-   "accent_on_the_stressed_letter": "mahapakh",
    "shares_its_letter_with": [],
    "structural_type": "open syllable",
    "atom": 1,
@@ -6369,7 +6119,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6397,7 +6146,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6425,7 +6173,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6453,7 +6200,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6481,7 +6227,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6509,7 +6254,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6537,7 +6281,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6565,7 +6308,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6593,7 +6335,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6621,7 +6362,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6649,7 +6389,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6677,7 +6416,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6705,7 +6443,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6733,7 +6470,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6761,7 +6497,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6789,7 +6524,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6817,7 +6551,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6845,7 +6578,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6873,7 +6605,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6901,7 +6632,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6929,7 +6659,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6957,7 +6686,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -6985,7 +6713,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7013,7 +6740,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "merkha",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -7041,7 +6767,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7069,7 +6794,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7097,7 +6821,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7125,7 +6848,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7153,7 +6875,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7181,7 +6902,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7209,7 +6929,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7237,7 +6956,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7265,7 +6983,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7293,7 +7010,6 @@
     "is_the_last_syllable": true,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "atnaḥ hafukh",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -7321,7 +7037,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7349,7 +7064,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7377,7 +7091,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7405,7 +7118,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7433,7 +7145,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7461,7 +7172,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7489,7 +7199,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7517,7 +7226,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7545,7 +7253,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -7573,7 +7280,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7601,7 +7307,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7629,7 +7334,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7657,7 +7361,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7685,7 +7388,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7713,7 +7415,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7741,7 +7442,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7769,7 +7469,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "merkha",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -7797,7 +7496,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7825,7 +7523,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7853,7 +7550,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "merkha",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -7881,7 +7577,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7909,7 +7604,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7937,7 +7631,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7965,7 +7658,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -7993,7 +7685,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8021,7 +7712,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8049,7 +7739,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8077,7 +7766,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8105,7 +7793,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8133,7 +7820,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8161,7 +7847,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8189,7 +7874,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8217,7 +7901,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8245,7 +7928,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8273,7 +7955,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8301,7 +7982,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8329,7 +8009,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8357,7 +8036,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8385,7 +8063,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8413,7 +8090,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8441,7 +8117,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8469,7 +8144,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8497,7 +8171,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8525,7 +8198,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8553,7 +8225,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8581,7 +8252,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8609,7 +8279,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8637,7 +8306,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8665,7 +8333,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8693,7 +8360,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8721,7 +8387,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8749,7 +8414,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8777,7 +8441,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8805,7 +8468,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8833,7 +8495,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8861,7 +8522,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8889,7 +8549,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -8917,7 +8576,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8945,7 +8603,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -8973,7 +8630,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -9001,7 +8657,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9029,7 +8684,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9057,7 +8711,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9085,7 +8738,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9113,7 +8765,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9141,7 +8792,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9169,7 +8819,6 @@
     "is_the_last_syllable": true,
     "closes_on_a_guttural": true,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "atnaḥ hafukh",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -9197,7 +8846,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9225,7 +8873,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9253,7 +8900,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -9281,7 +8927,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9309,7 +8954,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9337,7 +8981,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9365,7 +9008,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9393,7 +9035,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -9421,7 +9062,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9449,7 +9089,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9477,7 +9116,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9505,7 +9143,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9533,7 +9170,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "revia",
     "shares_its_letter_with": [
      "geresh muqdam"
     ],
@@ -9561,7 +9197,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9589,7 +9224,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9617,7 +9251,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9645,7 +9278,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9673,7 +9305,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9701,7 +9332,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9729,7 +9359,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9757,7 +9386,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9785,7 +9413,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "merkha",
     "shares_its_letter_with": [
      "ole"
     ],
@@ -9813,7 +9440,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9841,7 +9467,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9869,7 +9494,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9897,7 +9521,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9925,7 +9548,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9953,7 +9575,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -9981,7 +9602,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10009,7 +9629,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10037,7 +9656,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10065,7 +9683,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10093,7 +9710,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10121,7 +9737,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10149,7 +9764,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10177,7 +9791,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10205,7 +9818,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10233,7 +9845,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10261,7 +9872,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10289,7 +9899,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "deḥi",
     "shares_its_letter_with": [
      "deḥi"
     ],
@@ -10317,7 +9926,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -10345,7 +9953,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -10373,7 +9980,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -10401,7 +10007,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
@@ -10429,7 +10034,6 @@
     "is_the_last_syllable": false,
     "closes_on_a_guttural": false,
     "has_sof_pasuq": false,
-    "accent_on_the_stressed_letter": "telisha gedolah",
     "shares_its_letter_with": [
      "telisha gedolah"
     ],
