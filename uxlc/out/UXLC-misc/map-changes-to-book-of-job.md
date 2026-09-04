@@ -74,21 +74,34 @@ mismatch** (#123, said to discuss נָשָׂ֨א rather than נִכַּר־), an
 line-number discrepancies**. Those figures were correct when written, and
 three things have changed since.
 
-1. **The changeset was corrected upstream.** Entry #123 pointed at Job 34:19
-   position 3; it now points at position 7, where its `reftext` is נִכַּר־
-   and its quirkrec `3419-NKR0.html` agrees on verse, LC location, Hebrew
-   text and topic. Entry #124 sits at position 8 with שׁ֭וֹעַ, which
-   corroborates the numbering: נִכַּר־שׁ֭וֹעַ is one chanted word, and #123 and
-   #124 point at its two atoms. Reconstruct the earlier state by setting
-   #123's `pos` to `3` and its `reftext` to the atom standing there, and the
-   program prints `OK: 128` and `Issues: 32` — the 32 being one `HEBREW`
-   mismatch on #123 and the same 31 `LC` issues. So the earlier three
-   categories were the program's two all along, with the 32 issues split by
-   hand into #123 and the rest; #123 was never a judgment the program missed.
+1. **The changeset was corrected upstream, between 2026-03-05 and
+   2026-04-04.** The former `bdenckla/UXLC-utils` re-downloaded this file
+   from tanach.us eight times, and its history has the entry moving. In the
+   two versions contemporaneous with these figures — `816918ca`
+   (2026-03-04) and `2ab7f0e1` (2026-03-05, "new download to get fixes") —
+   entry #123 sits at Job 34:19 **position 3**, its `reftext` is נָשָׂ֨א and
+   its description reads "Examine for dagesh in nun." By `d03f1405`
+   (2026-04-04) it sits at **position 7**, its `reftext` is נִכַּר־ and its
+   description is longer, and it stays that way through the four later
+   refreshes and into this repository. So the entry moved out from under a
+   report nobody rewrote. Its quirkrec `3419-NKR0.html` now agrees on verse,
+   LC location, Hebrew text and topic; entry #124 sits at position 8 with
+   שׁ֭וֹעַ, corroborating the numbering, נִכַּר־שׁ֭וֹעַ being one chanted word
+   whose two atoms #123 and #124 point at.
 2. **The label on the 31 was wrong even then.** One of those 31 was #63's
-   column comparison, described above, not a line number.
+   column comparison, described above, not a line number. Its `<column>` has
+   been `"1 "` in every one of the six versions checked, back to 2026-03-04.
 3. **The trailing-space fix moved one more entry into the OK bucket**,
    giving today's 130 and 30.
+
+**Do not try to settle a question like this by arithmetic alone.**
+Reconstructing the earlier state — setting #123's `pos` to `3` and its
+`reftext` to the atom standing there — makes the program print `OK: 128`
+and `Issues: 32`, which matches what this file reported. But the competing
+reading matches just as well: had the entry never moved, a reviewer lifting
+#123 out of the OK bucket by hand would give 129 minus 1 = **128** fully OK,
+**1** mismatch and **31** issues, the same three numbers. Only the dated
+versions named above tell the two readings apart.
 
 ## Line number conventions
 
@@ -105,7 +118,7 @@ To convert quirkrec line numbers to the XML convention:
 2. If positive and `including-blank-lines` is set: subtract it.
 
 After this normalization the 30 remaining discrepancies distribute as
-follows, the delta being the quirkrec's normalized line minus the XML's --
+follows, the delta being the quirkrec's normalized line minus the XML's —
 both numbers printed on each `LC LINE` line:
 
 | Delta | Entries | Count |
