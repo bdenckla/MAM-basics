@@ -45,7 +45,8 @@ plan can own: the scope, the order, and the work that must happen **before** any
 | codex-index-aleppo, -leningrad, -cam1753 | `PLAN-evacuate-python-from-codex-index-trio.md` (deleted 2026-08-29 by `f6173fe`; in git history) | **DONE 2026-08-22 — every phase, for all three repos, and this plan is COMPLETE. With it the programme is complete: all six repos hold zero tracked `.py`.** Phases 0, 1, 3, 4, 6 and 7 all landed 2026-08-22, the whole plan in one day; Phase 2 does not recur and Phase 5 has no analogue, so it is complete at six phases. Final heads: codex-index-aleppo **`94b824a`** (175 tracked files), codex-index-leningrad **`2abd7f6`** (51), codex-index-cam1753 **`7309882`** (152). **Ben's decision of 2026-08-22 governs the whole plan: the trio's DATA stays put** — "empty" means empty of Python, and all three go on hosting their manuscript scans and derived JSON indefinitely, so unlike book-of-job, holman-ketiv-qere and UXLC-utils they get no gh-pages phase and no forwarding stub. **Phase 3 handled the three repos' 94 modules, and 44 of them were deletions rather than arrivals** — copies of something this repo already held: codex-index-leningrad's 21 became six modules under `py/lenin_wiki/` plus two entry points and a paths module, eleven vendored copies dissolving; codex-index-aleppo's 50 were twenty-nine arrivals against twenty-one deletions; codex-index-cam1753's 23 were eleven against twelve. **`py/repo_scopes.py` is what codex-index-aleppo's Phase 3 actually owed** — the four source lints now union per-repo `code_paths()` lists rather than walking to `.git`, taking mark order from 298 files to 419 and the escape check from 241 `.py` to 278, a restoration that imported no violations. **The twelfth cam1753 deletion was settled on a measurement rather than an argument**: a tag census over the three books both readers read found exactly ONE tag treated differently, `spi-invnun`, the seven inverted nuns of Psalm 107, which codex-index-aleppo's reader raised on and codex-index-cam1753's silently skipped; adding the one missing skip clause and sharing one reader (`b37bdb4`) was proved by loading both side by side — **4512 verses, 30322 words, 0 mismatches**. Un-masking that crash rewrote a **fossil** report covering 1 page of 35, 2 issues → 93. **Phase 4 emptied all three** — `824910e`, `078b74d`, `a9c3abd` — and **Ben settled five orphan questions one at a time**, all five deletions: both `requirements.txt`, both per-repo `.code-workspace` (asked as ONE question covering two repos), and codex-index-aleppo's `.claude/settings.json`, which was **not** orphaned — six of its ten globs were still live — and went because it "dates from before 'auto' permissions", **a reason the evacuation knew nothing about, which is the worked example of why these sub-decisions go to him rather than being inferred from what the move touched**. **Ben lifted Phase 4's gate the same day**: run it for a repo as soon as its Phase 3 is green. **Phase 6 owed one repointing and Phase 7 owed none of its own**, but Phase 7 item 6 **found five stale citations in third repos and all five stop and ask Ben**, four of them reachable only by grepping the repo NAME — book-of-job's Phase 7 lesson at nearly the same ratio. **Two figures this programme should carry forward.** First, **three moves running have owed the issue-tracker sections not one prefix** — holman-ketiv-qere's 60 modules, book-of-job's 241, the trio's 94 — so what a move owes is a function of what its code talks about and never of how many files it is, now confirmed three times. Second, **`py/check_all.py` reads 509 files and not 510**, because `3003a06` deleted a `.claude/settings.json` that sat inside `check_mark_order`'s corpus scope unnoticed: **an orphan decision taken outside the plan moved a lint's file count**, which is the first time in this programme that re-measuring a quoted figure found a cause the plan could not have contained. Closing measurements: suite **940 passed, 5 skipped, 59 subtests** (945 less the five vendoring-lint cases Phase 7 removed), `py/check_all.py` **7 of 7 over 509 files and 297 `.py`**, oracles **4 of 4, 3 of 3 and 44 of 44** byte-identical, all run after the three venvs were deleted. **Family 2 needed no design call and the gate was not tripped.** On committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line file this programme expected to be the trio's real work — is **one blob** and was one on 2026-08-02: "230 lines" is 115 + 115 of whole-file diff, codex-index-aleppo holding all 11 `aleppo-wiki/*.py` as CRLF where codex-index-leningrad holds all 18 as LF. **That is the working-tree instrument costing this programme a fifth table**, and the second time it has left `doc/vendoring-inventory.md` right and a plan stale, book-of-job's Phase 0 being the first. The two that do differ are two tools against two input formats; Phase 3 names them. **The wiki fork is far bigger than the inventory can see** — eighteen copies of MAM-basics modules across the two wiki trees and codex-index-leningrad's root, of which the inventory records eight, the ten invisible ones being **renamed** (`mam_book_names`←`mam_bknas`, `my_open`←`file_io`, `my_locales`←`bib_locales`, `mam_book_names_and_std_book_names`←`mam_bknas_and_std_bknas`), **out of package** (three `py_misc` modules) or **loose** (`vendoring_sync.py`); Cross-cutting finding 2's prescribed cross-check finds none of them, codex-index-leningrad's sync script naming no MAM-basics package at all. Order item 4's five bequests are all discharged: the `alef_bet_to_ascii.py` citation fixed in **both** public copies at once (`a171dd4` there, `ef5525d` here, byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`, mgketer's diverged third copy reported and MAM-private not written to); the depth sweep run over both packages **outright**, finding two walks whose verdicts are **opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here; the `.git`-walk wall confirmed **already up**, the four shared `check_*`/`fix_*` being two blobs and five top-level `py/` names taken; each `requirements.txt` installed and found **wrong in both directions**, omitting Pillow and numpy and naming an unused `pyspellchecker`; and the byte comparison used throughout in place of `git status --porcelain`. **Two live defects found and deliberately not fixed**: `aleppo-wiki/main_make_wikisource_page.py` has been dead since `9025037` (2026-03-28) renamed `aleppo/` to `aleppo-wiki/` without repointing its four literals, so that half of Family 2 **has no oracle**; and codex-index-aleppo's `check_word_finding.py` fails **160 of 160** on a `col: found=1of2 expected=1` string-against-integer comparison, since `eb4bcaf` (2026-03-14) migrated its column identifiers to N-of-M form — every failure a column clause and not one a line or word clause, so the located positions are right in all 160. **codex-index-cam1753's `check_all.py` now passes 4 of 4**, so "no repo's `check_all.py` runs in its own venv" is half retired. **Phase 1 then landed the same day** — `ee09e67`, `eb7c83c`, `7e5ca23` and `72a4629` here — repointing the dead wiki generator first as instructed and **finding a second generator dead since the same rename**, `py/gen_index_flat_annotated.py`, whose dead path went through the vanished sibling repo `codex-index` rather than through a cwd-relative string and so was invisible to the prescribed grep. Nineteen root walks and thirteen cwd-relative literals became **two paths modules and two named `_DATA_ROOT`s**, four sites for Phase 3 rather than thirty-two; **51 of the 56 artifacts with a generator were regenerated and every one came back byte-identical**, and the **295 with none** were covered instead by proving all 36 repointed constants resolve where they did. The `newline=""` defect the plan handed it as one site is **seven sites in six scripts, all in codex-index-cam1753**. And the latent-CRLF claim is corrected: whole-repo against HEAD blobs, **codex-index-leningrad has 0 of 73 and codex-index-aleppo 152 of 222** |
 | **Second stage — the total evacuation of book-of-job, holman-ketiv-qere and UXLC-utils** | [PLAN-evacuate-the-rest-of-three-repos.md](PLAN-evacuate-the-rest-of-three-repos.md) | **DONE 2026-09-03.** All six phases are complete: each source tree landed under its pure MAM-basics prefix, its redirect host retains generated stubs, its source clone left the workspace and its downstream documentation is current. Phase 6 recorded Ben's no-entry `frozen_repos` decision, completed cross-repo bookkeeping and confirmed the 15-folder workspace. The temporary codex-index-leningrad sparse vendor remains and reads MAM-basics under Ben's 2026-09-03 authorization. The third stage's Phase 0 is complete. |
 | **Third stage — the codex-index trio and diffable-pointed-hebrew, total evacuation** | [PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md](PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md) | **Phases 0–1 DONE 2026-09-03.** Fresh clean-tree measurements established the Leningrad baseline; Phase 1 moved its five retained artifacts, repointed its generator, archived the source, and removed its workspace and visibility entries. The primary clone remains only as shared Git metadata for the manifest-pinned review-forest input. The two duplicate-data decisions remain recorded for Ben and do not block Phase 2. The stage reverses this file's "Decision — total evacuation for three repos, Python-only for the codex-index trio" for the trio, and Appendix B for diffable-pointed-hebrew, on the 2026-09-02 single-worktree ground. |
-| MAM-simple | Appendix A below — **out of scope, nothing to evacuate** | closed, no work |
+| **Fourth stage — the five MAM products, total evacuation** | §"Fourth stage — the five MAM products, total evacuation" below; no plan file written | **PURSUED 2026-09-04 — drafted, not started.** Ben decided that day to pursue the stage, on two premises: that running the mega in a worktree matters, and that the forest-of-worktrees technique will not work well because agent harnesses do not natively support it. The stage takes MAM-basics' own out-of-repo writes from **five to zero**; the mega's sixth out-of-repo write is MAM-private's own census program and is a separate task. **Six sub-questions are open and Ben has not waived them** — see that section. Two corrections landed with the draft: the sibling-reach table's two product rows, and the arithmetic behind the 800 MB projection. |
+| MAM-simple | Appendix A below — **out of scope for PYTHON, and superseded 2026-09-04 for data**; its data is a fourth-stage lane | Python closed, no work; data pending the fourth stage |
 | diffable-pointed-hebrew | Appendix B below — **out of scope, left alone** until 2026-09-02; **since then the third stage's last lane** | one loose end, see B — folded into that lane |
 
 **Every number below was measured on 2026-08-02** with the command given beside it; re-measure
@@ -374,8 +375,8 @@ six `py/*_paths.py` modules and `py/repo_scopes.py`.
 | codex-index-cam1753 | `test_h_dot_below_nfc` scope (14 files) | — | `check_mark_order` corpus (72 JSON) | `py/cam1753_paths.py`: nine entry points, `py_cam1753_loc/`, `py_cam1753_word_image/` | third stage |
 | codex-index-leningrad (evacuated) | MAM-basics scope, not a sibling scope | — | eight MAM-basics Leningrad modules | `py/lenin_paths.py`: `main_lenin_wikisource_page.py` | third stage, Phase 1 complete |
 | diffable-pointed-hebrew | `test_vendoring_policy_paths`, as a vendoring destination | `vendoring-audit` | — | `py/main_vendoring.py` | third stage, last lane |
-| MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — `cwd=` steps and writes | — | many | not this stage: MAM's published products — whether they follow is an open question, see "Whether the products follow" below |
-| MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through a cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope | — | — | not this stage: products, the same open question |
+| MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — writes to all three, plus four `cwd=` subprocess steps in MAM-parsed and MAM-simple. **MAM-simple's CORPUS write goes through the same cwd-relative `../` literal in `py/mb_misc/write_utils.py`** that the row below names, `py/main_mam_simple.py`'s `_VARIANT_COMMON` setting `"variant-mam-for-xxx": "MAM-simple"`; this row said only "`cwd=` steps and writes" until 2026-09-04, and §"The sibling-reach table's two product rows HAVE BEEN CORRECTED" below records what that undercount cost | — | many | fourth stage |
+| MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through the cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope. **That literal routes MAM-simple too**, which this row did not say until 2026-09-04; `sibling_repo("MAM-for-Sefaria")` appears nowhere in `py/`, so the literal is this product's only route in | — | — | fourth stage |
 | MAM-private | `test_final_stress_vs_phonetic_mam`, `test_vendoring_policy_paths` | `near-aleppo-census`, `vendoring-audit` | — | one reader since 2026-09-02, `py/accgram/breuer_word_length.py` (phonetic data, read-only; the WLC-private snapshot read was severed that day) | **never**: private — but a read-only sibling needs no worktree, see "What forces a forest" below |
 | phonetic-hbo, Taamey_D, hbofonts, github-misc | no path reach at all — URLs and prose only | no | no | no | not candidates |
 
@@ -598,6 +599,348 @@ Nothing is near a git or GitHub limit. That is the price of one worktree, and it
 MAM-basics, any of the seven candidate repos, or any forest. Phase 0 met that condition; later
 phases use the explicit per-lane write targets in the new plan, and a diff outside those targets is
 a finding.
+
+---
+
+## Fourth stage — the five MAM products, total evacuation — **PURSUED 2026-09-04; drafted, not started**
+
+**Ben decided on 2026-09-04 to pursue this stage, and did NOT waive its open sub-questions**, which
+are listed under §"The six sub-questions Ben has not waived" below and are his to answer. This is
+the fourth stage §"Whether the products follow — an open question Ben put on 2026-09-02, and not
+decided" said would exist: "if Ben decides yes, it is a fourth stage with its own section here,
+after the third." The five products are **MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS and
+MAM-for-Sefaria**.
+
+**Nothing has been executed.** No file has moved, no `.py` was touched, and no plan file has been
+written; drafting this section changed `doc/PLAN-evacuate-public-repos-programme.md` and nothing
+else.
+
+**Ben's two premises, in his words, 2026-09-04:**
+
+1. *"It feels like it is important to be able to run MAM-basics 'mega' in a worktree."*
+2. *"I don't really believe that the 'forest of worktrees' setup is going to ever work well, in
+   practice, because it is not natively supported by agent harnesses the way monorepo worktrees
+   are."*
+
+And on the programme as a whole, the same day: it *"needs to be completed, and possibly expanded.
+(It needs to be expanded if it does not include MAM-parsed, MAM-OSIS, MAM-for-Sefaria,
+MAM-with-doc, etc.)"*
+
+**Premise 1 is what makes this stage differ in kind from the three before it.** The first three
+stages remove worktrees a *task* needs. This one removes the last reason `py/main_0_mega.py`
+cannot safely be run from a worktree at all — and §"The mega misdirected 376 files from a worktree
+on 2026-09-04" below is what that costs today, so the premise is not a preference.
+
+**Premise 2 is a judgment about agent tooling rather than about these repositories, and this file
+does not have to adjudicate it.** The forest technique does work — the third stage's Phase 1 ran
+inside one. Ben's point is that it is not natively supported, so it will keep costing setup that a
+single worktree does not, and every stage of this programme buys the same relief. This stage buys
+the last of it.
+
+### What the stage buys — MAM-basics' own out-of-repo writes go from five to zero
+
+§"What forces a forest is writing to more than one repo, not reading from one" settles the
+currency, on the wlc-utils plan's Phase 11 record: a **read** is served by a primary clone through
+the `REPOS_ROOT` / `REPO_<NAME>_DIR` override chain, and only a **write** target is owed a
+worktree. So this stage's value is counted in write targets removed from `py/main_0_mega.py`, and
+not in siblings named anywhere.
+
+**Measured 2026-09-04 at MAM-basics `85203fc`**, by reading `py/main_0_mega.py`'s `_STEPS` and
+following each step to the code that builds its output path. Re-establish with
+`grep -rn "sibling_repo(" py/ --include=*.py`, and by reading `bkg_path` in
+`py/mb_misc/write_utils.py` and `_run_near_aleppo_census` in `py/main_0_mega.py`.
+
+| Write target outside MAM-basics | Mega steps that write it | How the destination is built | Steered by `REPOS_ROOT` |
+|---|---|---|---|
+| MAM-parsed | `parse-go`; `vendored-tmpl-survey-toy` | `paths.sibling_repo("MAM-parsed")` (`py/subcommands/parse_go.py:82`); the vendored step's `cwd=_REPOS / "MAM-parsed"` | yes |
+| MAM-with-doc | `mam-with-doc`, `diff-mpp` | `paths.sibling_repo("MAM-with-doc")` (`py/main_mam_with_doc.py:20`, `py/subcommands/diff_mpp.py:41`) | yes |
+| MAM-simple | `mam-simple`; `vendored-letter-small-job`, `vendored-mam4sef`, `vendored-mam-osis` | the corpus through `write_utils.bkg_path`'s `f"../{mam_for_xxx}"`, `variant-mam-for-xxx` being `"MAM-simple"` (`py/main_mam_simple.py:69`); three documents through `paths.sibling_repo("MAM-simple")` — `gh-pages/versification-and-cantillation.html`, `gh-pages/index.html`, `doc/versification-differences.md`; the three vendored steps' `cwd=_REPOS / "MAM-simple"` | **the corpus, NO**; the three documents and the three vendored steps, yes |
+| MAM-for-Sefaria | `mam4sef-and-ajf` | the same `write_utils.bkg_path`, taking its `"MAM-for-Sefaria"` default (`py/mb_misc/write_utils.py:105`) | **no** |
+| MAM-OSIS | `mam-osis` | `paths.sibling_repo("MAM-OSIS")` (`py/main_mam_osis.py:10`, `:11`, `:12`, `:19`) | yes |
+| MAM-private | `near-aleppo-census` | `subprocess.run([..., "near-aleppo/census/run_all.py", "--write"], cwd=_REPOS / "MAM-private")` (`py/main_0_mega.py:126`) | yes, through the `cwd` |
+
+**Five of those six are MAM-basics' own code writing the five products, and this stage takes those
+five to zero.** The sixth is not MAM-basics code at all: `near-aleppo/census/run_all.py` belongs to
+MAM-private and is run there as a subprocess. **Moving it into a MAM-private mega of its own is a
+separate task and is NOT part of this stage** — that task has its own chip, and no product lane
+touches the census step. Ben, 2026-09-02, on where it ends up: *"that census will go away
+eventually"*. So the mega's write set after this stage is MAM-basics and MAM-private, and after
+the census leaves MAM-basics' mega, MAM-basics alone.
+
+**A miscount in the sentence this stage continues HAS BEEN corrected here rather than in place.**
+§"What still forces a forest — the sibling reach, measured 2026-09-02" closes: "After
+diffable-pointed-hebrew: **five**, and five is this stage's floor — four products consumed outside
+these repos, and MAM-private, which cannot be merged into a public MAM-basics." The enumeration two
+sentences earlier is right and the gloss is not: the five trees are MAM-basics, MAM-parsed,
+MAM-simple, MAM-with-doc and MAM-private — MAM-basics itself, **three** products the suite reaches,
+and MAM-private, not four products and MAM-private. Re-measured 2026-09-04,
+`grep -rn "sibling_repo(\|require_sibling(" py/tests/` names MAM-parsed and MAM-simple only, and
+MAM-with-doc is reached indirectly by `py/tests/test_urwotm_difftext.py` through
+`urwotm_check/difftext.py`; **MAM-OSIS and MAM-for-Sefaria are in no test's reach at all**. The
+gloss is left as written there, that section being an execution record of what was measured on its
+day, and nothing downstream depends on the wrong reading.
+
+**In the suite's currency this stage takes five trees to two, and both of the two are reads.**
+MAM-basics and MAM-private remain, and MAM-private is read-only here — `py/accgram/breuer_word_length.py`
+and `py/tests/test_final_stress_vs_phonetic_mam.py` reaching
+`MAM-private/al-hatorah/io/a01-phonetic-std-set/` through `paths.require_al_hatorah_phonetic_dir()`.
+So after this stage the suite is owed exactly **one** worktree, which is what premise 1 asks for.
+
+### The mega misdirected 376 files from a worktree on 2026-09-04, and that is the sharpest argument for the stage
+
+**This has been recorded and not repaired**: `py/main_0_mega.py`'s module docstring carries the
+incident and the repair recipe as of `8ea2c8c6`, and the defect in `py/mb_misc/write_utils.py`
+stands. Repairing it is out of scope for a drafting task, and this stage is what removes it.
+
+During item 5 of `doc/PLAN-holman-meteg-rollout-programme.md`, a mega run from a MAM-basics
+worktree wrote **216 MAM-simple files and 160 MAM-for-Sefaria files** — 376 in all — into
+`.claude/worktrees/MAM-simple` and `.claude/worktrees/MAM-for-Sefaria`, directories the run
+**created** rather than failing on. `mam-osis` and the accgram steps then read the **real**
+MAM-simple, still stale, so MAM-OSIS came out unchanged where it should have moved. **The run
+exited 0.**
+
+Three things make this an argument rather than an anecdote:
+
+1. **`REPOS_ROOT` does not help.** `py/mb_misc/write_utils.py` never calls `mb_cmn/paths`, so the
+   override chain that makes every other sibling reach worktree-safe does not reach it. Setting the
+   variable steers `parse-go`, `mam-with-doc`, `mam-osis`, the three MAM-simple documents and the
+   four vendored steps, and leaves the MAM-simple and MAM-for-Sefaria corpus writes pointing at
+   `../`. **A half-steered run is worse than an unsteered one**, because it puts a fresh corpus and
+   a stale one in the same tree.
+2. **The misdirected output is correct content in the wrong directory**, so nothing is malformed
+   and no check downstream of it can see anything wrong. The repair is a copy across plus
+   `--resume-from mam-osis`, which is why the docstring gives it.
+3. **The damage propagated through the repository the sibling-reach table did not flag.**
+   MAM-simple is the larger half by volume (216 files against 160) and the only half anything
+   downstream reads: `mam-osis` and the accgram steps consume MAM-simple's `json-vtrad-bhs` and
+   `xml-vtrad-mam`, while MAM-for-Sefaria is read by nothing in this repository. **And MAM-simple is
+   exactly the product that table's cwd-relative warning did not name** — see the correction below.
+
+### The sibling-reach table's two product rows HAVE BEEN CORRECTED — `write_utils` routes MAM-simple as well as MAM-for-Sefaria
+
+**Both rows of §"What still forces a forest — the sibling reach, measured 2026-09-02" have been
+corrected in place, in the commit that added this section.** The row for MAM-OSIS and
+MAM-for-Sefaria named the cwd-relative literal in `py/mb_misc/write_utils.py` and attributed it to
+MAM-for-Sefaria alone; the row above it, for MAM-parsed, MAM-simple and MAM-with-doc, did not
+mention it. **One function routes both products**, verified 2026-09-04 by reading two files:
+
+* `py/mb_misc/write_utils.py`'s `bkg_path` builds `repo_root = f"../{mam_for_xxx}"` from
+  `variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"`, lines 105–106.
+* `py/main_mam_simple.py`'s `_VARIANT_COMMON` sets `"variant-mam-for-xxx": "MAM-simple"`, line 69,
+  and all three of that module's variants spread it.
+
+`bkg_path`'s six call sites split between the two products — three in `py/main_mam_simple.py` and
+`py/mb_misc/write_utils.py`'s own `write_bkg_in_un_fmt`, three in `py/mb_sefaria/mam4sef_or_ajf.py`
+— and neither product's corpus write can be steered. **`sibling_repo("MAM-for-Sefaria")` appears
+nowhere in `py/`**, which is the shortest proof that the cwd-relative literal is that product's only
+route in. MAM-simple's twelve `sibling_repo` sites are reads apart from four writes — the three
+documents `py/main_mam_simple.py` generates and the `py-examples/` vendoring destination at
+`py/py_misc/mam_simple_copy_py_files.py:42` — and not one of the four is the corpus write.
+
+**The undercount had a cost, and it is the incident above**: the row that named the defect named the
+product whose staleness harmed nothing, and the row that stayed silent covered the product whose
+staleness propagated.
+
+### The five products re-measured 2026-09-04 — every file and MB figure holds; the 800 MB projection holds by an arithmetic the sentence does not give
+
+Measured with `git ls-tree -r -l HEAD` sums per clone, MB meaning MiB (`bytes / 1048576`, which is
+what reproduces the 2026-09-02 figures to the tenth).
+
+| Product | HEAD 2026-09-04 | Tracked files | MB | Pages site | Published HTML |
+|---|---|---|---|---|---|
+| MAM-parsed | `5108203` | 96 | 28.6 | `bdenckla.github.io/MAM-parsed/` | 22 |
+| MAM-simple | `7a4f21d` | 392 | 102.7 | `bdenckla.github.io/MAM-simple/` | 2 |
+| MAM-with-doc | `0fe406c` | 273 | 45.5 | `bdenckla.github.io/MAM-with-doc/` | 113 |
+| MAM-OSIS | `697dc98` | 92 | 28.4 | `bdenckla.github.io/MAM-OSIS/` | 1 |
+| MAM-for-Sefaria | `ce1e04c` | 170 | 31.0 | `bdenckla.github.io/MAM-for-Sefaria/` | 1 |
+| **total** | | **1,023** | **236.3** | **five sites** | **139 stubs** |
+
+**Finding, and it is a null one: the 2026-09-02 table's five per-product figures and its 1,023 /
+236 totals all re-measure identically**, though every one of the five clones has moved since — all
+five HEADs are 2026-09-04 commits carrying the Holman meteg rollout. Twenty-nine metegs off and one
+on is byte-neutral at this resolution, which is why nothing moved.
+
+**Finding: the "roughly 800 MB" projection HAS BEEN re-derived and holds, but not by the
+arithmetic its sentence implies.** MAM-basics tracks **4,161 files and 411.0 MB** at `85203fc`, so
+MAM-basics plus the products is 5,184 files and **647.3 MB**, not 800. The projection is right once
+the third stage's unfinished lanes are counted, which is what it must have meant: codex-index-aleppo
+(175 files, 38.1 MB), codex-index-cam1753 (152, 80.5) and diffable-pointed-hebrew (19, 1.5) still
+have to land, adding 346 files and 120.1 MB. **MAM-basics after the third and fourth stages is
+therefore 5,530 files and 767.4 MB**, or about 716 MB if the third stage drops the duplicate
+`MAM-XML/` and the derivable `cam1753-pages/`. **§"The cost of one big repo, stated so nobody
+rediscovers it as an objection" also holds**: it predicted 520–580 MB after the second and third
+stages, and 411.0 + 120.1 = 531.1.
+
+**The pack cost is deliberately NOT projected here.** MAM-basics' pack is 229.12 MiB today
+(`git count-objects -vH`) and the five products' packs total 139.06 MiB, but a pure-prefix move
+carries one snapshot rather than each product's history, and these products are XML, JSON and CSV,
+which delta-compress far better than the PNGs that took MAM-basics' pack from 105.8 MiB to 229.12
+MiB across the second stage. Measure it at the first lane rather than guessing it from either
+number.
+
+### The four objections, and what each is worth
+
+Three are stated in §"Whether the products follow"; the fourth was found 2026-09-04 and appears in
+no file before this one. **None of the four is resolved here**; each ends with what would settle
+it, and those that are Ben's are repeated in the sub-questions below.
+
+1. **A machine consumer that clones or fetches raw file URLs breaks, and the stub mechanism does not
+   cover it. UNRESOLVED, and it is a question for those consumers rather than for this file.**
+   GitHub redirects a *renamed* repository's URLs and not an *emptied* one's file URLs, so a script
+   at Sefaria, STEPBible or CrossWire that pulls `raw.githubusercontent.com/bdenckla/MAM-OSIS/...`
+   gets a 404 and one that clones gets a breadcrumb `README.md`; both fail loudly and a person there
+   fixes it once. **What re-measuring adds: the exposure lies entirely outside Pages.** All five
+   workflows upload `path: gh-pages` and nothing else, so the corpus — every XML, JSON and CSV file
+   a consumer would want — is reached only by clone, by raw URL or through the API, and no stub
+   covers any of those three. The 139 stubs cover the documentation pages and not one byte of data.
+   **What is known about actual outside citations is small and reassuring**: the mirrored Wikisource
+   introduction cites `bdenckla.github.io/MAM-with-doc/` five times, in Avi Kadish's text
+   (`in/mam-ws-intro/summary.mediawiki` and `ch1.mediawiki`), and `github.com/bdenckla/MAM-parsed`
+   once (`appendices.mediawiki:515`), and names none of the other three products. A Pages citation
+   is exactly what a stub covers, and a `github.com/<owner>/<repo>` citation still resolves, to a
+   live repository showing the breadcrumb. MAM-OSIS's own `README.md` names STEPBible and CrossWire
+   as its consumers and MAM-for-Sefaria's names Sefaria; whether either pulls automatically is
+   unknown to this repository, and asking is the only way to find out.
+2. **MAM-simple stops being a small clone an outsider can run. UNRESOLVED, and it is the objection
+   with the most substance.** MAM-simple exists to be the simple extract, with `py-examples/` meant
+   to run from its own clone, and inside MAM-basics "get the simple extract" becomes cloning a
+   repository near 770 MB. A sparse checkout (`git clone --filter=blob:none --sparse`, then
+   `git sparse-checkout set <dir>`) or a release archive would restore the small-clone story, and
+   neither exists today. **The objection covers MAM-parsed as well as MAM-simple**: both track a
+   `py-examples/` meant to be run in place — MAM-parsed's `main_tmpl_survey_toy_example.py` and
+   MAM-simple's three.
+3. **The licence objection HAS BEEN largely discharged by reading `DATA-LICENSES.md`, and its
+   framing undercounts in the same direction as the table row above.** All five products carry a
+   **byte-identical `LICENSE.md`** — the MAM statement repeated from the Google spreadsheet in
+   English and Hebrew, granting CC-BY-SA 4.0 — so this is not MAM-simple's licence but MAM's, on all
+   five. And MAM-basics already carries that same statement: `DATA-LICENSES.md` §"The MAM statement,
+   repeated verbatim", with CC-BY-SA 4.0 rows for `in/mam-ws/`, `in/mam-go/`,
+   `in/mam-from-sefaria/` and `in/mam-ws-bot-edits/`, and a row reading "derived from the MAM inputs
+   above | CC-BY-SA 4.0, inherited: the license is share-alike, so what is derived from MAM carries
+   MAM's terms". **The five products are exactly that, derived from those inputs.** So each lane's
+   Licence step adds a row per landed directory to a regime already in place — the second stage's
+   Decision B pattern — and is much smaller than the objection implies. **What is left of it**:
+   MAM-with-doc's documentation pages want a row of their own, and MAM-simple's
+   `gh-pages/woff2/Taamey_D.woff2` is another copy of the font `DATA-LICENSES.md` already records
+   as having terms nobody has established.
+4. **Evacuating the products removes a differential oracle, not merely a smoke test, and nothing
+   replaces it yet. UNRESOLVED, and Ben chooses between the two answers below.**
+   `py/main_0_mega.py` has four steps — `vendored-tmpl-survey-toy`, `vendored-letter-small-job`,
+   `vendored-mam4sef`, `vendored-mam-osis` — that run the products' own
+   `py-examples/main_*_example.py` as subprocesses with `cwd` set to the product clone
+   (`cwd=_REPOS / "MAM-parsed"` for the first, `cwd=_REPOS / "MAM-simple"` for the other three,
+   `_REPOS` being `paths.repos_root()`). They are the only check that an outsider's clone-and-run
+   works, the 43 vendored copies under `MAM-simple/py-examples/` being generated by
+   `py/main_vendoring.py` and exercised nowhere else. **Re-measuring 2026-09-04 found they are more
+   than that.** The four steps write **106 tracked files, 22.4 MB** into the two clones
+   (`MAM-simple/py-examples-out/` 105 files, `MAM-parsed/py-examples-out/` 1), and those files are a
+   second derivation of what MAM-basics' own steps produce. Comparing committed blobs:
+   * all **24** of `MAM-simple/py-examples-out/osis/*.xml` are byte-identical to
+     `MAM-OSIS/MAPM-24/*.xml`;
+   * **39 of the 40** files of `MAM-simple/py-examples-out/sefaria/csv/` are byte-identical to
+     `MAM-for-Sefaria/csv/`, the fortieth being `_provenance.md`, which names its generator by
+     design;
+   * `py-examples-out/letter-small-job.txt` is one blob in MAM-basics and MAM-simple, and
+     `py-examples-out/tmpl_survey_toy.json` one blob in MAM-basics and MAM-parsed.
+
+   That is a differential check against an independent oracle with layer-1 blob identity — the first
+   of the two test shapes `CLAUDE.md` sanctions, and the shape the trio's lanes used. **The two
+   answers Ben picks between**: land `py-examples/` and `py-examples-out/` in MAM-basics and keep
+   the four steps running against the landed copies, which preserves the oracle and loses only the
+   clone-and-run half; or retire the four steps and say so in the mega's docstring, on the ground
+   that with the products inside MAM-basics there is no separate clone left to check. **Landing them
+   is the recommendation**, the oracle being what has value, and the clone-and-run half being
+   covered by whatever objection 2 is answered with.
+
+### The lane shape — the second stage's six steps, with three differences and four smaller ones
+
+The lane is the second stage's **Land, Licence, Repoint, Stubs, Empty, Remove**, from
+§"Everything moves; only stubs stay", and the landing follows **Decision F** of
+`PLAN-evacuate-the-rest-of-three-repos.md`: one top-level directory per evacuated repository, the
+tree moved as a pure prefix, the published subtree staying under `gh-pages/<subtree>/`. Only what
+differs is stated here, exactly as §"What the trio lanes have that the second stage's lane does
+not" does for the codex-index trio.
+
+**The difference with no precedent in any earlier lane: these five are consumed outside Ben's
+repositories.** Every repository evacuated so far was read by Ben's own code and by nobody else,
+which is why objections 1 and 2 above have no counterpart in the second or third stages, and why
+the Stubs step is not the whole of the answer here.
+
+1. **Five Pages sites and 139 stubs**, against the trio's one site and three stubs.
+   `py/main_redirect_stubs.py`'s table gains five rows and five frozen manifests
+   (`in/mam_parsed_redirect_pages.json` and four siblings) at 22, 2, 113, 1 and 1 pages.
+   **MAM-simple's workflow is named `static.yml`, not `pages.yml`**, so a lane step that finds a
+   repository's Pages workflow by that filename will miss it; measured 2026-09-04, and MAM-simple is
+   the only one of the five so named.
+2. **No repository is archived.** Decision 2 of §"The four decisions of 2026-09-02" archived the two
+   trio repositories that publish nothing; all five products publish, so all five stay alive as stub
+   hosts. That is the carried-in "alive beats archived" rule applying normally rather than by
+   exception.
+3. **The two cwd-relative corpus writes are repointed BEFORE anything is moved, not after.**
+   `write_utils.bkg_path`'s `f"../{mam_for_xxx}"` and the `variant-mam-for-xxx` key that feeds it
+   are what make a worktree run unsafe today; once MAM-simple and MAM-for-Sefaria are directories of
+   this repository, the destination composes off `paths.repo_root()` and the key disappears.
+   **`py/mb_misc/write_utils.py` is one of the four files `CLAUDE.md` names as deliberately
+   cwd-relative so they stay portable when vendored** — with MAM-simple's `py-examples/mb_misc/`
+   gone as a vendoring destination that reason goes too, and the Repoint step must rewrite the
+   docstring that still gives it.
+
+Four smaller differences, each with a precedent:
+
+4. **`in/vendoring_policy.json` loses MAM-simple**, leaving diffable-pointed-hebrew, MAM-private and
+   hbofonts. `py/tests/test_vendoring_policy_paths.py` needs no edit — its own docstring says "both
+   sides are derived, so adding or removing a repo never needs this file edited" — and
+   `doc/vendoring-inventory.md` is regenerated by the mega's `vendoring` step, so a stale row shows
+   as a diff.
+5. **`DATA-LICENSES.md` gains a row per landed directory**, under the regime objection 3 above shows
+   is already in place.
+6. **`py/pipeline_graph/pipeline_graph_spec.py` names the products at twelve sites** — six
+   `DisplayNode` / `RawNode` pairs labelled `../MAM-parsed/plus/`, `../MAM-parsed/plain/`,
+   `../MAM-simple/`, `../MAM-with-doc/docs/`, `../MAM-for-Sefaria/` and `../MAM-OSIS/` — which
+   become in-repo directory labels, the rendered graph being a tracked artifact whose diff is the
+   check. **One of those labels is already stale and is raised here, not fixed**: MAM-with-doc has
+   `gh-pages/` and no `docs/`, verified 2026-09-04 with `git ls-files` in that clone.
+7. **The products cross-cite each other by `github.com` URL** — MAM-for-Sefaria's `README.md` links
+   MAM-simple and MAM-parsed, and MAM-parsed's, MAM-OSIS's and MAM-with-doc's link their own Pages
+   sites — so the Empty step's breadcrumbs must point at the new locations rather than at each
+   other. **`in/repo_maintenance_policy.json`'s `repo_visibility` map and
+   `all-repos.code-workspace` lose five folders each**, in the same commits, per item 9 of the third
+   stage's list; five is the largest single reduction the roster has taken.
+
+### The six sub-questions Ben has not waived
+
+**None is decided, and each changes what a lane does.** They are listed for Ben rather than
+resolved.
+
+1. **Does the outsider get a sparse checkout, a release archive, or neither?** Objection 2 above.
+   "Neither" is a decision to let "get the simple extract" mean cloning about 770 MB.
+2. **Do the four `vendored-*` steps and their 106 tracked outputs land, or retire?** Objection 4
+   above, where landing them is the recommendation.
+3. **Is any of the five products' data actually pulled automatically by Sefaria, STEPBible or
+   CrossWire?** Objection 1 above. This repository cannot answer it; Ben can ask them, or can decide
+   that a loud one-time failure is acceptable.
+4. **In what order do the five lanes run?** Not put on 2026-09-02 and not decided. The write-target
+   argument favours MAM-simple and MAM-for-Sefaria first, they being the two the override chain
+   cannot steer and so the two whose lanes end the silent misdirection. By size the three superlatives
+   fall to three different products: MAM-simple is largest by tracked MB (102.7), MAM-with-doc by
+   published pages (113), MAM-parsed by pack (54.85 MiB).
+5. **Does this stage run before, after, or interleaved with the third stage's remaining lanes?**
+   The third stage has codex-index-aleppo, codex-index-cam1753 and diffable-pointed-hebrew
+   outstanding, and the second and third stages already interleave by decision 3 of §"The four
+   decisions of 2026-09-02". Interleaving a third is a scheduling choice and not a technical
+   constraint.
+6. **Does a fourth-stage plan file get written, or do the five lanes run from this section?** Every
+   earlier stage got its own plan file, written by a Phase 0 whose whole job was to write it, which
+   argues yes; the products' lanes are more uniform than the trio's, which argues no.
+
+### Appendix A is superseded by this section
+
+**§"Appendix A — MAM-simple: nothing to evacuate" closes "This repo is closed for this programme",
+and that statement is about MAM-simple's PYTHON only.** Its 47 tracked `.py` are 43 generated
+vendored copies plus four maintained in place, and none of that is touched by moving the
+repository's *data*. The sentence is nonetheless read as closing MAM-simple to this programme
+outright, so Appendix A now opens with a bold SUPERSEDED line pointing here — the treatment
+Appendix B took on 2026-09-02 — and the Status table's MAM-simple row names this stage.
 
 ---
 
@@ -1455,6 +1798,8 @@ and `git log` before staging, and commit by hunk.
 ---
 
 ## Appendix A — MAM-simple: nothing to evacuate
+
+**SUPERSEDED 2026-09-04 — this appendix is about MAM-simple's PYTHON only, and MAM-simple's DATA is evacuated as one of the five lanes of the fourth stage; see §"Fourth stage — the five MAM products, total evacuation".** Everything below stays true of the 47 tracked `.py`, and none of it bears on moving the repository's XML, JSON and documentation. The closing sentence "This repo is closed for this programme" was written 2026-08-02 about Python and is the one clause the fourth stage overturns.
 
 MAM-simple tracks 47 `.py`, which would put it fifth in the scale table. **43 of them are already
 generated by MAM-basics** — `py-examples/mb_cmn` (18), `py-examples/mb_misc` (14),
