@@ -36,14 +36,22 @@ which is that doubled pashta, so the qadma is a typing slip rather than a propos
 to use Unicode QADMA.  Ben Denckla settled it on 2026-09-02: "I am 100% sure he
 wasn't honestly suggesting use of Unicode QADMA."
 
-THE CORRECTED FORM DOES NOT REACH ``mam_plus_check``, and that is a limitation
-rather than a choice.  ``main_ingest_mam_suggestions`` calls ``check_case`` on the
-case as extracted and applies this table to the payload afterwards, so the
-``comparison_form_already_present`` reported for Joshua 10:12 still asks whether
-MAM has the qadma spelling, which it never will.  The atom index is unaffected --
-both spellings differ from the MAM form in the same single atom -- so only that one
-flag is wrong, and it reads false today for the separate reason that the local
-MAM-parsed predates the Wikisource edit of 2026-08-28.
+THE CORRECTED FORM REACHES ``mam_plus_check`` SINCE 2026-09-04, and until then it
+did not, which this docstring recorded as a limitation rather than a choice.
+``main_ingest_mam_suggestions`` now reads ``corrected_form`` below for the two
+quoted-form fields before it calls ``check_case``, and applies this table to the
+payload afterwards exactly as before, so nothing about the payload changed.
+
+WHAT TURNED THAT LIMITATION FROM COSMETIC INTO FATAL.  While MAM still had the
+form Holman quoted, the only casualty was Joshua 10:12's
+``comparison_form_already_present``, which asked whether MAM has the qadma
+spelling and so could only ever read false.  Then item 5 of
+``doc/PLAN-holman-meteg-rollout-programme.md`` landed the thirty Holman meteg
+suggestions in MAM on 2026-09-03, and ``check_case`` began anchoring its atom
+derivation on whichever of the two quoted forms MAM actually has.  For Joshua
+10:12 that is the doubled pashta of the CORRECTED comparison form: MAM never had
+the qadma spelling, and no longer has the single-pashta MAM form either.
+Uncorrected, that case raised and the whole ingest stopped on it.
 
 Applying an entry is fail-fast in both directions.  A replacement whose original is
 not the field's exact current value raises, so a reworded message cannot leave a
@@ -116,6 +124,29 @@ CASE_FIELD_CORRECTIONS: dict[tuple[str, str], FieldCorrection] = {
         ),
     ),
 }
+
+
+def corrected_form(ref_as_sent: str, field: str, value: str) -> str:
+    """This case's quoted form as corrected, for a caller with no payload yet.
+
+    ``apply_corrections`` is the general path and rewrites a whole payload;
+    ``check_case`` runs before there is one and needs the form Holman MEANT,
+    because it anchors its atom derivation on whichever quoted form MAM has.  The
+    docstring above says what made that necessary.
+
+    Fail-fast in the same way as ``apply_corrections``: a value that is not the
+    entry's exact original raises rather than being corrected on a guess.
+    """
+    correction = CASE_FIELD_CORRECTIONS.get((ref_as_sent, field))
+    if correction is None:
+        return value
+    if value != correction.original:
+        raise ValueError(
+            f"correction for {ref_as_sent} field {field!r} expected "
+            f"{correction.original!r} but found {value!r}; the message has been "
+            "reworded, so re-read it before changing this entry"
+        )
+    return correction.replacement
 
 
 def apply_corrections(payload: dict[str, object], ref_as_sent: str) -> None:

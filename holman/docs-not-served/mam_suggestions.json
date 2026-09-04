@@ -26,12 +26,12 @@
     }
   ],
   "case_count": 34,
-  "suppressed_case_count": 4,
+  "suppressed_case_count": 34,
   "mam_plus_verify": {
     "case_count": 34,
     "stated_atom_agrees": 34,
     "stated_atom_corrected": 0,
-    "comparison_form_already_present": 0
+    "comparison_form_already_present": 32
   },
   "cases": [
     {
@@ -51,6 +51,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 1,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the צ (tsadi)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the צ (tsadi) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam001_01.png"
       ],
@@ -61,7 +69,7 @@
         "derived_atom": 17,
         "stated_atom": 17,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -81,6 +89,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 2,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the צ (tsadi)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the צ (tsadi) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam002_01.png"
       ],
@@ -91,7 +107,7 @@
         "derived_atom": 13,
         "stated_atom": 13,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -111,6 +127,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 3,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ר (resh)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ר (resh) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam003_01.png"
       ],
@@ -121,7 +145,7 @@
         "derived_atom": 21,
         "stated_atom": 21,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -141,6 +165,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 4,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam004_01.png"
       ],
@@ -151,7 +183,7 @@
         "derived_atom": 19,
         "stated_atom": 19,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -171,6 +203,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 5,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the מ (mem)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the מ (mem) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam005_01.png"
       ],
@@ -181,7 +221,7 @@
         "derived_atom": 23,
         "stated_atom": 23,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -201,6 +241,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 6,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the א (alef)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the א (alef) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam006_01.png"
       ],
@@ -211,7 +259,7 @@
         "derived_atom": 14,
         "stated_atom": 14,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -231,6 +279,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 7,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam007_01.png"
       ],
@@ -241,7 +297,7 @@
         "derived_atom": 20,
         "stated_atom": 20,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -261,6 +317,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 8,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ל (lamed)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ל (lamed) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam008_01.png"
       ],
@@ -271,7 +335,7 @@
         "derived_atom": 6,
         "stated_atom": 6,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -291,6 +355,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 9,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the מ (mem)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the מ (mem) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam009_01.png"
       ],
@@ -301,7 +373,7 @@
         "derived_atom": 6,
         "stated_atom": 6,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -321,6 +393,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 10,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ו (vav)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ו (vav) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam010_01.png"
       ],
@@ -331,7 +411,7 @@
         "derived_atom": 15,
         "stated_atom": 15,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -351,6 +431,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 11,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the נ (nun)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the נ (nun) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam011_01.png"
       ],
@@ -361,7 +449,7 @@
         "derived_atom": 17,
         "stated_atom": 17,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -381,6 +469,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 12,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the י (yod)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the י (yod) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam012_01.png"
       ],
@@ -391,7 +487,7 @@
         "derived_atom": 9,
         "stated_atom": 9,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -411,6 +507,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 13,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam013_01.png"
       ],
@@ -421,7 +525,7 @@
         "derived_atom": 21,
         "stated_atom": 21,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -441,6 +545,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 14,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam014_01.png"
       ],
@@ -451,7 +563,7 @@
         "derived_atom": 13,
         "stated_atom": 13,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -471,6 +583,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 15,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the first מ (mem)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the first מ (mem) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam015_01.png"
       ],
@@ -481,7 +601,7 @@
         "derived_atom": 18,
         "stated_atom": 18,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -501,6 +621,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 16,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the י (yod)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the י (yod) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam016_01.png"
       ],
@@ -511,7 +639,7 @@
         "derived_atom": 19,
         "stated_atom": 19,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -570,6 +698,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 18,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ר (resh)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ר (resh) where MAM had one. This meteg was already gone from Hebrew Wikisource before the bot edit files were built, so no entry of the bot run removed it. It reached MAM through item 2's download of 2 Kings 21, and item 2's finding 2 in doc/PLAN-holman-meteg-rollout-programme.md records it.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam018_01.png"
       ],
@@ -580,7 +716,7 @@
         "derived_atom": 11,
         "stated_atom": 11,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -600,6 +736,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 19,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam019_01.png"
       ],
@@ -610,7 +754,7 @@
         "derived_atom": 14,
         "stated_atom": 14,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -630,6 +774,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 20,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ר (resh)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ר (resh) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam020_01.png"
       ],
@@ -640,7 +792,7 @@
         "derived_atom": 25,
         "stated_atom": 25,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -660,6 +812,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 21,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ר (resh)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ר (resh) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam021_01.png"
       ],
@@ -670,7 +830,7 @@
         "derived_atom": 8,
         "stated_atom": 8,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -690,6 +850,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 22,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ל (lamed)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ל (lamed) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam022_01.png"
       ],
@@ -700,7 +868,7 @@
         "derived_atom": 9,
         "stated_atom": 9,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -720,6 +888,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 23,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has the meteg under the מ (mem)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has a meteg under the מ (mem) where MAM had none. M23 is the one record of the thirty that adds a meteg rather than removing one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam023_01.png"
       ],
@@ -730,7 +906,7 @@
         "derived_atom": 11,
         "stated_atom": 11,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -777,7 +953,7 @@
         "derived_atom": 3,
         "stated_atom": 3,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -797,6 +973,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 25,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ר (resh)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ר (resh) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam025_01.png"
       ],
@@ -807,7 +991,7 @@
         "derived_atom": 21,
         "stated_atom": 21,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -827,6 +1011,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 26,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam026_01.png"
       ],
@@ -837,7 +1029,7 @@
         "derived_atom": 9,
         "stated_atom": 9,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -857,6 +1049,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 27,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ח (ḥet)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ח (ḥet) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam027_01.png"
       ],
@@ -867,7 +1067,7 @@
         "derived_atom": 7,
         "stated_atom": 7,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -887,6 +1087,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 28,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the י (yod)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the י (yod) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam028_01.png"
       ],
@@ -897,7 +1105,7 @@
         "derived_atom": 13,
         "stated_atom": 13,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -917,6 +1125,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 29,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the נ (nun)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the נ (nun) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam029_01.png"
       ],
@@ -927,7 +1143,7 @@
         "derived_atom": 2,
         "stated_atom": 2,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -947,6 +1163,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 30,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the י (yod)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the י (yod) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam030_01.png"
       ],
@@ -957,7 +1181,7 @@
         "derived_atom": 1,
         "stated_atom": 1,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -977,6 +1201,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 31,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the י (yod)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the י (yod) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam031_01.png"
       ],
@@ -987,7 +1219,7 @@
         "derived_atom": 4,
         "stated_atom": 4,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -1046,6 +1278,14 @@
         "fw-30-more-corrections-for-mam"
       ],
       "case_number": 33,
+      "disposition": {
+        "state": "suppressed",
+        "outcome": "Suggestion taken",
+        "summary": "MAM now has no meteg under the ה (he)",
+        "reason": "Ben Denckla took all thirty of Holman's meteg suggestions as a batch on 2026-09-03, the twenty-nine removals and M23's one addition alike, so none of the thirty waited on a disposition of its own. Holman's comparison form, from the Aleppo Codex, has no meteg under the ה (he) where MAM had one. The Wikisource bot run of 2026-09-03 made the edit, and doc/PLAN-holman-meteg-rollout-programme.md records that run and the pipeline that carried it into MAM-parsed and the generated repositories.",
+        "decided_by": "Ben Denckla",
+        "decided_on": "2026-09-03"
+      },
       "image_files": [
         "../gh-pages/holman/mam_img/mam033_01.png"
       ],
@@ -1056,7 +1296,7 @@
         "derived_atom": 3,
         "stated_atom": 3,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     },
     {
@@ -1103,7 +1343,7 @@
         "derived_atom": 11,
         "stated_atom": 11,
         "stated_atom_agrees": true,
-        "comparison_form_already_present": false
+        "comparison_form_already_present": true
       }
     }
   ]
