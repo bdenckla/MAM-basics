@@ -1,0 +1,21 @@
+{
+  "spread_file": "cam1753-page-0089.jpg",
+  "archive_page": 89,
+  "spread_width": 4448,
+  "spread_height": 3072,
+  "gutter_x": 2189,
+  "left_page": {
+    "file": "0085A.jpg",
+    "leaf": 85,
+    "side": "A",
+    "width": 2189,
+    "height": 3072
+  },
+  "right_page": {
+    "file": "0084B.jpg",
+    "leaf": 84,
+    "side": "B",
+    "width": 2259,
+    "height": 3072
+  }
+}

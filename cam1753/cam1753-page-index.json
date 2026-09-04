@@ -1,0 +1,66 @@
+[
+  {
+    "comment": "Low-resolution page index: what verses are on what pages, for pages outside the high-resolution line-break index (0072B-0085B). de_archive_spread is the number in the archive.org BookReader URL .../page/n<N>/mode/1up, and equals the jp2 file number ../MAM-basics/py/main_cam1753_download_spreads.py uses. A de_text_* field names the text a column was read at, with its _ref companion citing the verse. In the Lamentations entries that text is MAM's LETTERS, UNPOINTED, and deliberately so: an entry records where a verse sits on a page, so pointing it would suggest the pointing had been transcribed off the image as well as the letters, which it has not been and which this manuscript may well do differently. No hand transcription is stored anywhere here; MAM is the source of the letters. The older Ps 18 entries are still pointed and have not been revisited."
+  },
+  {
+    "de_leaf": "0105A",
+    "de_archive_spread": 109,
+    "de_spread_side": "left",
+    "de_col": 2,
+    "de_note": "Read off the images by Ben, 2026-08-04, who counted this as the fourth column of the spread, RTL. Lamentations begins here, with Ecclesiastes ending in the same column above it. A heading reading איכה, with no preceding ספר, sits above Lam 1:1 and does take up body-column space — distinguishing it from the sporadic centered ספר איכה annotation seen on 0105B col 2, which does not. See things-noticed-in-cam1753.md.",
+    "de_text_at_line": "איכה ישבה בדד העיר רבתי עם",
+    "de_text_at_line_ref": "Lam 1:1, nineteen lines up from the bottom of the column, so line 8 of 26"
+  },
+  {
+    "de_leaf": "0105B",
+    "de_archive_spread": 110,
+    "de_spread_side": "right",
+    "de_col": 2,
+    "de_text_at_start": "היתה ירושלם לנדה ביניהם׃",
+    "de_text_at_start_ref": "Lam 1:17 (end of verse)",
+    "de_text_near_end": "אכלה",
+    "de_text_near_end_ref": "Lam 2:3, third line up from the bottom of the column",
+    "de_note": "Read off the images by Ben, 2026-08-04; the spread's left page is labelled 106 and קו. This column has a centered ספר איכה above the text, one instance of an annotation that appears sporadically through the book and takes no body-column space — it does not mark the start of Lamentations, which Ben found on 0105A col 2. See things-noticed-in-cam1753.md. The Lam 2:3 sighting is cropped at page-snips/0105B-col2-Lam2v3-akhla.png."
+  },
+  {
+    "de_leaf": "0107A",
+    "de_archive_spread": 111,
+    "de_spread_side": "left",
+    "de_col": 1,
+    "de_text_at_start": "קראתי שמך יהוה מבור תחתיות׃",
+    "de_text_at_start_ref": "Lam 3:55 (start of verse)",
+    "de_note": "Read off the images by Ben, 2026-08-04. The page is labelled 107 in pencil and קז in Hebrew numerals, which is what pins de_archive_spread to the BookReader n number with no offset."
+  },
+  {
+    "de_leaf": "0107A",
+    "de_archive_spread": 111,
+    "de_spread_side": "left",
+    "de_col": 2,
+    "de_text_at_start": "ספיר גזרתם׃ חשך משחור תארם",
+    "de_text_at_start_ref": "Lam 4:7 (last two atoms), then a setumah, then Lam 4:8",
+    "de_note": "Read off the images by Ben, 2026-08-04."
+  },
+  {
+    "de_leaf": "0041B",
+    "de_archive_spread": 46,
+    "de_spread_side": "right",
+    "de_text_at_end": "אֶת־דִּ֭בְרֵי הַשִּׁירָ֣ה",
+    "de_text_at_end_ref": "Ps 18:1 (mid-verse)"
+  },
+  {
+    "de_leaf": "0042A",
+    "de_archive_spread": 46,
+    "de_spread_side": "left",
+    "de_col": 1,
+    "de_text_at_end": "יִגְמְלֵ֣נִי יְהֹוָ֣ה",
+    "de_text_at_end_ref": "Ps 18:21 (start of verse)"
+  },
+  {
+    "de_leaf": "0042A",
+    "de_archive_spread": 46,
+    "de_spread_side": "left",
+    "de_col": 2,
+    "de_text_at_end": "כְּטִ֖יט חוּצ֣וֹת אֲרִיקֵֽם׃",
+    "de_text_at_end_ref": "Ps 18:43 (end of verse)"
+  }
+]
