@@ -65,9 +65,12 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 
 * ``sibling_repo("X")`` / ``require_sibling("X", ...)`` -- the sanctioned API.
 * The same calls with the name in a variable: ``ac_paths.py`` and ``cam1753_paths.py``
-  pass ``DATA_REPO_NAME``, and ``redirect_stubs/stubs.py`` passes ``repo.source_repo``
-  from its ``REDIRECT_REPOS`` table.  The programme's grep finds these lines and cannot
-  read a repo off them; the names are resolved here from literals in the same file.
+  pass ``DATA_REPO_NAME``, ``redirect_stubs/stubs.py`` passes ``repo.source_repo`` from
+  its ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega guard passes the ``name``
+  of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``.  The programme's grep finds these
+  lines and cannot read a repo off them.  Three in-file shapes are resolved here, with
+  no import and no dataflow tracing: a module constant's assignment, the keyword
+  arguments that build the table being iterated, and the collection a for-loop walks.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
   builds five subprocess ``cwd``s this way, naming three repos: MAM-parsed,
@@ -75,7 +78,11 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
   ``in/vendoring_policy.json``.  ``_DYNAMIC_NAME_SOURCES`` names those four sites.
-* Cwd-relative ``"../X"``, the mechanism the programme's grep cannot see.
+* Cwd-relative ``"../X"``, the mechanism the programme's grep cannot see -- as a plain
+  literal, and as an ``f"../{name}"`` whose first segment is interpolated.  For the
+  interpolated shape the names come from a declared source (``write_utils.bkg_path``)
+  or from the same three in-file shapes, filtered by the vocabulary so that a
+  site-relative href interpolating a page name contributes nothing.
 
 WHY THE CWD-RELATIVE SITES ARE NOT DEFECTS TO FIX
 
@@ -258,14 +265,50 @@ def _docstring_ids(tree: ast.Module) -> set[int]:
     return out
 
 
+def _module_level_value(tree: ast.Module, ident: str) -> ast.expr | None:
+    """What ``ident`` is assigned at module level, if anything."""
+    for node in tree.body:
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                if isinstance(target, ast.Name) and target.id == ident:
+                    return node.value
+        elif isinstance(node, ast.AnnAssign) and node.value is not None:
+            if isinstance(node.target, ast.Name) and node.target.id == ident:
+                return node.value
+    return None
+
+
+def _string_literals_in(value: ast.expr, tree: ast.Module) -> set[str]:
+    """String literals in ``value``, following one level of module-level constant.
+
+    ``("MAM-simple", "MAM-for-Sefaria")`` yields both; ``_CWD_RELATIVE_WRITE_TARGETS``
+    yields the same by looking that name up where the module assigns it.
+    """
+    if isinstance(value, ast.Constant):
+        return {value.value} if isinstance(value.value, str) else set()
+    if isinstance(value, (ast.Tuple, ast.List, ast.Set)):
+        out: set[str] = set()
+        for element in value.elts:
+            if isinstance(element, ast.Constant) and isinstance(element.value, str):
+                out.add(element.value)
+        return out
+    if isinstance(value, ast.Name):
+        assigned = _module_level_value(tree, value.id)
+        if assigned is not None and not isinstance(assigned, ast.Name):
+            return _string_literals_in(assigned, tree)
+    return set()
+
+
 def _string_literals_bound_to(tree: ast.Module, ident: str) -> set[str]:
     """String literals bound to ``ident`` anywhere in one file.
 
-    Resolves the two shapes this tree actually uses, without importing anything or
-    tracing dataflow: ``DATA_REPO_NAME``, a module constant, from its assignment; and
+    Resolves the three shapes this tree actually uses, without importing anything or
+    tracing dataflow: ``DATA_REPO_NAME``, a module constant, from its assignment;
     ``repo.source_repo``, a dataclass field, from the ``source_repo="wlc-utils"``
-    keyword arguments that build the table being iterated.  An attribute is looked up
-    by its FIELD name -- the ``repo`` half is a loop variable and names nothing.
+    keyword arguments that build the table being iterated; and a for-loop variable --
+    ``main_0_mega.py``'s mega guard iterates ``_CWD_RELATIVE_WRITE_TARGETS`` and calls
+    ``sibling_repo(name)`` -- from the collection it walks.  An attribute is looked up
+    by its FIELD name; the ``repo`` half is a loop variable and names nothing.
     """
     out: set[str] = set()
     field = ident.rsplit(".", 1)[-1]
@@ -274,6 +317,13 @@ def _string_literals_bound_to(tree: ast.Module, ident: str) -> set[str]:
     def add(value: ast.expr) -> None:
         if isinstance(value, ast.Constant) and isinstance(value.value, str):
             out.add(value.value)
+
+    if not is_attribute:
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.For, ast.AsyncFor)):
+                target = node.target
+                if isinstance(target, ast.Name) and target.id == ident:
+                    out |= _string_literals_in(node.iter, tree)
 
     for node in ast.walk(tree):
         if isinstance(node, ast.keyword) and node.arg == field:
@@ -462,8 +512,27 @@ def _scan_cwd_relative(
                 if (rel, text) in _NOT_A_SIBLING_PATH:
                     continue
                 site = f"{rel}:{node.lineno}"
-                source = _DYNAMIC_NAME_SOURCES.get((rel, text))
-                if source != "variant-mam-for-xxx":
+                if _DYNAMIC_NAME_SOURCES.get((rel, text)) == "variant-mam-for-xxx":
+                    if dynamic is None:
+                        dynamic = _variant_mam_for_xxx_repos(trees)
+                    for name in dynamic:
+                        reached.setdefault(name, set()).add(site)
+                    continue
+                # An interpolated first segment resolvable in the same file: the mega
+                # guard's f"../{name}" over _CWD_RELATIVE_WRITE_TARGETS is this shape.
+                # Filtered by the vocabulary, because the identifier interpolated into
+                # a site-relative href resolves to a page or directory name, not a repo.
+                head_ident = None
+                if len(node.values) > 1 and isinstance(
+                    node.values[1], ast.FormattedValue
+                ):
+                    head_ident = _ident_of(node.values[1].value)
+                resolved = (
+                    _string_literals_bound_to(tree, head_ident) & vocabulary
+                    if head_ident
+                    else set()
+                )
+                if not resolved:
                     problems.append(
                         f"{site}: {text} roots a path at the parent directory with an"
                         " interpolated first segment, so it may name a sibling repo."
@@ -471,9 +540,7 @@ def _scan_cwd_relative(
                         " href, or to _DYNAMIC_NAME_SOURCES if it is a reach."
                     )
                     continue
-                if dynamic is None:
-                    dynamic = _variant_mam_for_xxx_repos(trees)
-                for name in dynamic:
+                for name in resolved:
                     reached.setdefault(name, set()).add(site)
 
 
