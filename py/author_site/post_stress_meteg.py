@@ -269,26 +269,26 @@ def _opening(survey: dict) -> list:
         mb_html.para(
             (
                 "A meteg almost always appears before the stressed syllable of its chanted",
-                " word, but it can also come after the stress. Both ",
+                " word, but it can also come after the stress. Both Yeivin (in ",
                 itm(),
-                " and ",
+                ") and Breuer (in ",
                 cos(),
-                " describe post-stress meteg. Neither source says how often post-stress",
-                " meteg occurs; we find that MAM has ",
-                f"{total:,} post-stress meteg marks among {words:,} chanted words.",
+                ") discuss post-stress meteg. Neither book says how often PSM (post-stress",
+                " meteg) happens; we find that MAM has ",
+                f"{total:,} of them, over {words:,} chanted words.)",
             )
         ),
         _para(
-            "A chanted word is an atom standing alone or a whole maqaf compound. An atom"
-            " is one written word between spaces or maqafs. A maqaf compound has one"
-            " primary stress across all of its atoms."
-            # You took considerable liberties with my edits; did I ask that you clean it up or say that you should put "something to this effect"?
-            # I think not. Are my original edits lost?
+            "First, some definitions:"
+            " a chanted word can be either a simple word,"
+            " which is a word of just one atom"
+            " or it can be a compound word,"
+            " which is a word of two or more atoms connected by maqaf marks."
+            " An atom is a sequence of letters uninterrupted by space, maqaf, or any other punctuation."
         ),
         _para(
             "Which syllable a chanted word is stressed on is not always obvious,"
-            " so for this survey of post-stress meteg marks,"
-            # what happened to my introduction of the initialism (acronym) "PSM"?
+            " so for our survey of PSM,"
             " we use Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
         ),
@@ -324,8 +324,9 @@ def _census(survey: dict) -> list:
             " is for the 21 books plus with Job's prose frame;"
             " the “poetic verses” row is Job's main, poetic section"
             " plus all Psalms and the entire book of Proverbs."
-            " Both cantillation strands of each Decalogue are counted, so a Decalogue"
-            " chanted word can appear twice in these totals."
+            " We count both of the two strands of cantillation of each of the two Decalogues. "
+            "So, for example, a chanted word of the Exodus Decalogue"
+            " can appear twice in these totals."
         ),
         _table(headers, rows),
         _para(
@@ -347,7 +348,7 @@ def _by_type(survey: dict) -> list:
         "Poetic",
         mb_html.abbr("ITM", {"title": "Introduction to the Tiberian Masorah"}),
         mb_html.abbr("CoS", {"title": "The Cantillation of Scripture"}),
-        "Example chanted word",
+        "Example",
         "Following chanted word, if relevant",
     )
     rows = []
@@ -402,25 +403,24 @@ def _by_type(survey: dict) -> list:
         mb_html.heading_level_2("Post-stress meteg marks by structural type"),
         mb_html.para(
             (
-                "Both ",
+                "Three types of PSM are described in both ",
                 itm(),
                 " and ",
                 cos(),
-                " describe three types of post-stress meteg. Each type is named for the"
-                " syllable that has the meteg:",
+                ". Each of the three types is named for the shape of the"
+                " syllable the meteg falls in:",
             )
         ),
         mb_html.ordered_list(
             (
                 "an open syllable;",
-                "a syllable at the end of the chanted word, closed by a guttural; and",
+                "a syllable closed by a guttural at the end of the chanted word; and",
                 "a closed syllable whose vowel is tsere.",
             )
         ),
         _para(
-            "The counts below are mechanical. A chanted word that does not fit one of the"
-            " three types remains in the “misc” row rather than being forced into"
-            " the nearest type."
+            "The counts below are mechanical, and a chanted word that doesn't fit"
+            " one of the three types is left in the “misc” row rather than pushed into the nearest type."
         ),
         _table(headers, rows),
         mb_html.para(
@@ -482,7 +482,7 @@ def _every_case(survey: dict) -> list:
         for record in survey["post_stress"]
     ]
     return [
-        mb_html.heading_level_2("Every post-stress meteg mark in MAM"),
+        mb_html.heading_level_2("Every PSM in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
@@ -515,9 +515,9 @@ def _m23(survey: dict) -> list:
             f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
-            "The same verse already had a post-stress meteg mark of another type:"
+            "The same verse already had a PSM of another type:"
             f" {yanuax['mam_form']}, whose last syllable a guttural closes. So Isaiah 23:12"
-            " now has two post-stress meteg marks, one of each of the two commonest types."
+            " now has two of them, one of each of the two commonest types."
         ),
         _para(
             "MAM has one other chanted word of exactly this shape, and the table above holds"
@@ -601,7 +601,7 @@ def _post_silluq(survey: dict) -> list:
         _para(
             "A meteg after the silluq would be a harder case than any of the above, since"
             " the two marks are one codepoint and the rule that tells them apart is about"
-            " the stressed syllable. MAM has no such meteg: of the post-stress meteg marks"
+            " the stressed syllable. MAM has no such meteg: of the PSMs"
             " counted here, none is in a chanted word that has sof pasuq."
         ),
         _para(
