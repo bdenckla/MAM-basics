@@ -719,6 +719,7 @@ def _classify_one_word(
             found["overlaps"].append(record)
         if syllable_index < stressed:
             counts[(system, "meteg before the stressed syllable")] += 1
+            found["pre_stress"].append(record)
         elif syllable_index == stressed:
             counts[(system, "meteg in the stressed syllable, no sof pasuq")] += 1
             found["in_stressed"].append(record)
@@ -732,6 +733,8 @@ def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
     assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
         "counts": Counter(),
+        "checked_chanted_words_by_bcv": Counter(),
+        "pre_stress": [],
         "post_stress": [],
         "in_stressed": [],
         "overlaps": [],
@@ -742,6 +745,7 @@ def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
         "metegs_by_verse": {},
         "dual_cant_verses": set(),
         "dual_cantillation": {},
+        "dual_cantillation_chanted_words": {},
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -795,6 +799,10 @@ def _one_verse(
     found["entries_without_jta_or_fva"] += len(entries) - len(usable)
     if not usable:
         return
+    if dual:
+        found["dual_cantillation_chanted_words"][bcv] = [
+            one["fva"].split(" ")[0] for one in usable
+        ]
     last_word = usable[-1]["fva"].split(" ")[0]
     if SOF_PASUQ not in last_word:
         found["last_entry_lacks_sof_pasuq"].append(
@@ -821,6 +829,7 @@ def _one_verse(
             )
             continue
         found["counts"][(system, "chanted words checked")] += 1
+        found["checked_chanted_words_by_bcv"][bcv] += 1
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -1132,6 +1141,80 @@ def _total_counts(found: dict, categories: tuple[str, ...]) -> dict[str, int]:
     }
 
 
+def _dually_cantillated_passage_counts(found: dict) -> dict[str, int]:
+    """The three appendix counts restricted to the numbered verses with two strands."""
+    dual_bcv = found["dual_cant_verses"]
+    return {
+        "chanted words checked": sum(
+            found["checked_chanted_words_by_bcv"][bcv] for bcv in dual_bcv
+        ),
+        "meteg before the stressed syllable": sum(
+            one["bcv"] in dual_bcv for one in found["pre_stress"]
+        ),
+        "meteg after the stressed syllable": sum(
+            one["bcv"] in dual_bcv for one in found["post_stress"]
+        ),
+    }
+
+
+def _consonant_key(text: str) -> str:
+    """The Hebrew letters of a chanted word, ignoring vowels, accents, and punctuation."""
+    return re.sub("[\u0591-\u05c7\u034f]", "", text)
+
+
+def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[dict]:
+    """The before-stress records in ``records`` that have no matching chanted word in ``other``."""
+    unmatched = Counter(_consonant_key(one["chanted_word"]) for one in other)
+    out = []
+    for record in records:
+        key = _consonant_key(record["chanted_word"])
+        if unmatched[key]:
+            unmatched[key] -= 1
+        else:
+            out.append(record)
+    return out
+
+
+def _meteg_before_stress_difference(found_alef: dict, found_bet: dict) -> dict:
+    """The single dually-cantillated chanted-word difference in meteg-before-stress count."""
+    dual_bcv = found_alef["dual_cant_verses"]
+    assert dual_bcv == found_bet["dual_cant_verses"]
+    alef_by_bcv = Counter(
+        one["bcv"] for one in found_alef["pre_stress"] if one["bcv"] in dual_bcv
+    )
+    bet_by_bcv = Counter(
+        one["bcv"] for one in found_bet["pre_stress"] if one["bcv"] in dual_bcv
+    )
+    different_bcv = [bcv for bcv in dual_bcv if alef_by_bcv[bcv] != bet_by_bcv[bcv]]
+    assert len(different_bcv) == 1, different_bcv
+    bcv = different_bcv[0]
+    assert bet_by_bcv[bcv] == alef_by_bcv[bcv] + 1
+    alef_records = [one for one in found_alef["pre_stress"] if one["bcv"] == bcv]
+    bet_records = [one for one in found_bet["pre_stress"] if one["bcv"] == bcv]
+    extra_bet = _extra_metegs_before_stress(bet_records, alef_records)
+    assert not _extra_metegs_before_stress(alef_records, bet_records)
+    assert len(extra_bet) == 1, extra_bet
+    bet_record = extra_bet[0]
+    assert bet_record["bcv"] == bcv
+    target_atom_keys = {
+        _consonant_key(atom)
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", bet_record["chanted_word"])
+    }
+    alef_counterparts = [
+        word
+        for word in found_alef["dual_cantillation_chanted_words"][bcv]
+        if target_atom_keys
+        & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
+    ]
+    assert len(alef_counterparts) == 2, alef_counterparts
+    assert all(METEG not in word for word in alef_counterparts), alef_counterparts
+    return {
+        "bcv": bcv,
+        CANT_ALEF: {"chanted_words": alef_counterparts},
+        CANT_BET: {"chanted_words": [bet_record["chanted_word"]]},
+    }
+
+
 def build_survey() -> dict:
     """The whole survey: every U+05BD of the Phonetic MAM standard set, classified.
 
@@ -1142,6 +1225,7 @@ def build_survey() -> dict:
     phon_dir = paths.require_al_hatorah_phonetic_dir()
     found = _scan(phon_dir, CANT_ALEF)
     found_bet = _scan(phon_dir, CANT_BET)
+    assert found["dual_cant_verses"] == found_bet["dual_cant_verses"]
     words_by_bcv = _mam_words_by_bcv()
     unjoined = _attach_mam_forms(
         found["post_stress"] + found["in_stressed"] + found["overlaps"], words_by_bcv
@@ -1179,7 +1263,7 @@ def build_survey() -> dict:
             "counted_cantillation": CANT_ALEF,
             "numbered_verses": sorted(found["dual_cant_verses"]),
             "facts_by_numbered_verse": found["dual_cantillation"],
-            "comparison_counts": {
+            "whole_census_comparison_counts": {
                 CANT_ALEF: _total_counts(
                     found, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
                 ),
@@ -1187,6 +1271,13 @@ def build_survey() -> dict:
                     found_bet, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
                 ),
             },
+            "dually_cantillated_passage_counts": {
+                CANT_ALEF: _dually_cantillated_passage_counts(found),
+                CANT_BET: _dually_cantillated_passage_counts(found_bet),
+            },
+            "meteg_before_stress_difference": _meteg_before_stress_difference(
+                found, found_bet
+            ),
         },
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}

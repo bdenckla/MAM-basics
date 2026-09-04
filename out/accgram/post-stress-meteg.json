@@ -244,7 +244,7 @@
     ]
    }
   },
-  "comparison_counts": {
+  "whole_census_comparison_counts": {
    "cant-alef": {
     "chanted words checked": 263191,
     "meteg before the stressed syllable": 14932,
@@ -254,6 +254,32 @@
     "chanted words checked": 263190,
     "meteg before the stressed syllable": 14933,
     "meteg after the stressed syllable": 231
+   }
+  },
+  "dually_cantillated_passage_counts": {
+   "cant-alef": {
+    "chanted words checked": 222,
+    "meteg before the stressed syllable": 22,
+    "meteg after the stressed syllable": 0
+   },
+   "cant-bet": {
+    "chanted words checked": 221,
+    "meteg before the stressed syllable": 23,
+    "meteg after the stressed syllable": 0
+   }
+  },
+  "meteg_before_stress_difference": {
+   "bcv": "dt5:6",
+   "cant-alef": {
+    "chanted_words": [
+     "לֹא־יִהְיֶ֥ה",
+     "לְ֯ךָ֛"
+    ]
+   },
+   "cant-bet": {
+    "chanted_words": [
+     "יִהְיֶֽה־לְ֯ךָ֩"
+    ]
    }
   }
  },

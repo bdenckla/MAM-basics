@@ -215,18 +215,27 @@ def pin_claims(survey: dict) -> None:
     genesis = _dual_cantillation_facts(survey, "gn35:22")
     assert genesis["same_chanted_word_group_count"] == 5
     dual_cantillation = _dual_cantillation(survey)
-    comparison = dual_cantillation["comparison_counts"]
+    whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
+    passage_comparison = dual_cantillation["dually_cantillated_passage_counts"]
     assert dual_cantillation["counted_cantillation"] == psm.CANT_ALEF
     for category in (
         "chanted words checked",
         "meteg before the stressed syllable",
         "meteg after the stressed syllable",
     ):
-        assert comparison[psm.CANT_ALEF][category] == _both(survey, category)
+        assert whole_census_comparison[psm.CANT_ALEF][category] == _both(
+            survey, category
+        )
     assert (
-        comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
-        == comparison[psm.CANT_BET]["meteg after the stressed syllable"]
+        whole_census_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
+        == whole_census_comparison[psm.CANT_BET]["meteg after the stressed syllable"]
     )
+    assert passage_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
+    assert passage_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
+    difference = dual_cantillation["meteg_before_stress_difference"]
+    assert difference["bcv"] == "dt5:6"
+    assert len(difference[psm.CANT_ALEF]["chanted_words"]) == 2
+    assert len(difference[psm.CANT_BET]["chanted_words"]) == 1
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
@@ -314,8 +323,8 @@ def _opening(survey: dict) -> list:
                 "A meteg almost always appears before the stressed syllable of its chanted",
                 " word, but it can also come after the stress. Both",
                 *[" ", itm(), " and ", cos()],
-                " discuss post-stress meteg. Neither book says how often PSM (post-stress",
-                " meteg) happens; we find that MAM has ",
+                " discuss MAS (meteg after the stress). Neither book says how often MAS",
+                " happens; we find that MAM has ",
                 f"{total:,} of them, over {words:,} chanted words.)",
             )
         ),
@@ -329,10 +338,11 @@ def _opening(survey: dict) -> list:
         ),
         _para(
             "Which syllable a chanted word is stressed on is not always obvious,"
-            " so for our survey of PSM,"
+            " so for our survey of MAS,"
             " we use Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
         ),
+        _para("Here, MAS means meteg after the stress."),
     ]
 
 
@@ -346,8 +356,8 @@ def _census(survey: dict) -> list:
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
         mb_html.abbr("c-words", {"title": "count of chanted words"}),
-        ("Pre-stress", mb_html.line_break(), "meteg"),
-        ("Post-stress", mb_html.line_break(), "meteg"),
+        ("Meteg before", mb_html.line_break(), "the stress"),
+        mb_html.abbr("MAS", {"title": "meteg after the stress"}),
     )
     numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
     labels = {_PROSE: "prose", _POETIC: "poetic"}
@@ -451,10 +461,10 @@ def _by_type(survey: dict) -> list:
         )
     )
     return [
-        mb_html.heading_level_2("Post-stress meteg marks by structural type"),
+        mb_html.heading_level_2("MAS by structural type"),
         mb_html.para(
             (
-                "Three types of PSM are described in both ",
+                "Three types of MAS are described in both ",
                 itm(),
                 " and ",
                 cos(),
@@ -533,7 +543,7 @@ def _every_case(survey: dict) -> list:
         for record in survey["post_stress"]
     ]
     return [
-        mb_html.heading_level_2("Every PSM in MAM"),
+        mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
@@ -566,7 +576,7 @@ def _m23(survey: dict) -> list:
             f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
-            "The same verse already had a PSM of another type:"
+            "The same verse already had another MAS:"
             f" {yanuax['mam_form']}, whose last syllable a guttural closes. So Isaiah 23:12"
             " now has two of them, one of each of the two commonest types."
         ),
@@ -652,7 +662,7 @@ def _post_silluq(survey: dict) -> list:
         _para(
             "A meteg after the silluq would be a harder case than any of the above, since"
             " the two marks are one codepoint and the rule that tells them apart is about"
-            " the stressed syllable. MAM has no such meteg: of the PSMs"
+            " the stressed syllable. MAM has no such meteg: of the MAS"
             " counted here, none is in a chanted word that has sof pasuq."
         ),
         _para(
@@ -726,20 +736,25 @@ def _sources_and_limits(survey: dict) -> list:
 def _dual_cantillation_appendix(survey: dict) -> list:
     """The method for passages Phonetic MAM records with two cantillations."""
     dual_cantillation = _dual_cantillation(survey)
-    comparison = dual_cantillation["comparison_counts"]
-    alef = comparison[psm.CANT_ALEF]
-    bet = comparison[psm.CANT_BET]
-    exodus_forms = _dual_cantillation_facts(survey, "ex20:2")[
-        "first_same_chanted_word_group"
-    ]
-    genesis_pair_count = _dual_cantillation_facts(survey, "gn35:22")[
-        "same_chanted_word_group_count"
-    ]
-    headers = ("Census result", "cant-alef, used", "cant-bet")
+    passage_comparison = dual_cantillation["dually_cantillated_passage_counts"]
+    whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
+    alef = passage_comparison[psm.CANT_ALEF]
+    bet = passage_comparison[psm.CANT_BET]
+    whole_alef = whole_census_comparison[psm.CANT_ALEF]
+    whole_bet = whole_census_comparison[psm.CANT_BET]
+    difference = dual_cantillation["meteg_before_stress_difference"]
+    headers = (
+        "Census result in dually-cantillated passages",
+        "cant-alef, used in the census",
+        "cant-bet",
+    )
     categories = (
         ("Chanted words", "chanted words checked"),
-        ("Pre-stress meteg", "meteg before the stressed syllable"),
-        ("Post-stress meteg", "meteg after the stressed syllable"),
+        ("Meteg before the stress", "meteg before the stressed syllable"),
+        (
+            mb_html.abbr("MAS", {"title": "meteg after the stress"}),
+            "meteg after the stressed syllable",
+        ),
     )
     rows = [
         mb_html.table_row_of_data(
@@ -747,6 +762,29 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             (None, _NUMERIC_CELL, _NUMERIC_CELL),
         )
         for label, category in categories
+    ]
+    difference_headers = (
+        "Cantillation strand",
+        "Relevant chanted word or words",
+        "Meteg before the stress",
+    )
+    difference_rows = [
+        mb_html.table_row_of_data(
+            (
+                psm.CANT_ALEF,
+                _hebrew_cell(" ".join(difference[psm.CANT_ALEF]["chanted_words"])),
+                "none",
+            ),
+            (None, _HEBREW_CELL, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                psm.CANT_BET,
+                _hebrew_cell(" ".join(difference[psm.CANT_BET]["chanted_words"])),
+                "one",
+            ),
+            (None, _HEBREW_CELL, _NUMERIC_CELL),
+        ),
     ]
     return [
         mb_html.heading_level_2(
@@ -761,16 +799,28 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             " such passage."
             " This section shows that this choice has little effect on that census."
         ),
-        _table(headers, rows),  # XXX make the table be of the dually-cantillated passages only!
+        _table(headers, rows),
         _para(
-            "Cant-alef and cant-bet give exactly the same post-stress-meteg count:"
-            f" {alef['meteg after the stressed syllable']:,}. Cant-alef has one more chanted"
-            " word, while cant-bet has one more pre-stress meteg."
+            "Across the whole census, cant-alef has"
+            f" {whole_alef['chanted words checked']:,} chanted words and"
+            f" {whole_alef['meteg before the stressed syllable']:,} metegs before the stress;"
+            " cant-bet has"
+            f" {whole_bet['chanted words checked']:,} chanted words and"
+            f" {whole_bet['meteg before the stressed syllable']:,} metegs before the stress."
+            " Both strands have"
+            f" {whole_alef['meteg after the stressed syllable']:,} MAS."
         ),
-        # Show the two forms of that one word that has a pre-stress meteg in cant-bet and (what?) in cant-alef.
-        # (I say "what" because I don't know whether it has no meteg in cant-alef or a pre-stress meteg in cant-alef.)
-        # BTW, this is not specific to the appendix, but it occurs to me that instead using PSM, which could just as easily
-        # stand for pre-stress meteg as for post-stress meteg, we should use MBS and gloss it as "meteg before [the] stress"
+        mb_html.heading_level_3("The meteg-before-stress difference"),
+        mb_html.para(
+            (
+                "Only ",
+                _ref_link(difference["bcv"]),
+                " differs in metegs before the stress. Cant-bet has one meteg before the"
+                " stress in the chanted word below; cant-alef has the two chanted words"
+                " below, neither with a meteg.",
+            )
+        ),
+        _table(difference_headers, difference_rows),
     ]
 
 
