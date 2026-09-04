@@ -8,7 +8,14 @@ point, as I fear loosing track of this larger context."*
 **STATUS: THE WHOLE PROGRAMME IS DONE. All seven items have run**, items 2
 through 7 on 2026-09-03 and 2026-09-04, and item 1's last two phases on
 2026-09-04. Nothing here is outstanding, and every section below is an execution
-record. This block said "What remains of this programme is item 1's Phase 1, the
+record.
+
+**ONE THING SITS OUTSIDE THE SEVEN AND IS KNOWINGLY LEFT UNDONE: the eleven other
+Holman meteg edits**, live on Hebrew Wikisource and absent from `in/mam-ws/`.
+They have a section of their own between items 5 and 6. Ben deferred them on
+2026-09-03 and said again on 2026-09-04 that he will take them up himself at some
+later date, by either of the two routes that section gives. Nothing here waits on
+them, and a session should not offer to start them. This block said "What remains of this programme is item 1's Phase 1, the
 post-stress meteg survey page, and its Phase 2, the M23 card link" until item 1's
 plan recorded both as done.
 
@@ -620,6 +627,17 @@ then a Google Sheet import-and-apply round of its own, then the mega run. A
 full `py/main_download.py fr-wikisource` closes it too, and closes the whole
 2026-08-26 gap with it, at the price of bringing down a week of edits nobody
 here has reviewed.
+
+**REAFFIRMED 2026-09-04, AFTER THE PROGRAMME FINISHED, AND BEN WILL TAKE IT UP
+HIMSELF.** His words that day, asked what the next phase was: *"I'll do this (or
+a full Wikisource download and push through the pipeline) at some later date."*
+So **both routes above are live and the choice is his at the time** — the
+eleven-chapter one and the full download, which he named himself. **No date and
+no trigger**: this is not waiting on anything here, and nothing in this
+repository schedules it or should. A session that meets this section should not
+propose starting it; the deferral survived the programme's completion
+deliberately, and the whole of what it costs is that MAM keeps the pre-edit form
+at those eleven verses until a download reaches them.
 
 ### Item 6: archive the 30 records — DONE 2026-09-04
 
