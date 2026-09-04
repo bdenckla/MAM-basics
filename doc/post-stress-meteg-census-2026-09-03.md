@@ -27,8 +27,11 @@ rollout, so this census and the tracked survey count the same text: 221 of its
 23,184 comparable verses differ from MAM as it stands today, 38,379 metegs against
 38,170. **So these figures are still a pre-rollout baseline, and they are also
 still the current output** — which is a fact about the oracle rather than about
-this report. Item 1's Phase 1 record has the measurement, and the programme's
-section named above has what would close it.
+this report. Item 1's Phase 1 record has the measurement.
+
+**Ben settled it on 2026-09-04, against refreshing the oracle: *"I can tolerate
+that staleness."*** So these figures stay current as well as being the baseline,
+and the question is closed rather than pending.
 
 Evidence for the seven-item programme
 [`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),

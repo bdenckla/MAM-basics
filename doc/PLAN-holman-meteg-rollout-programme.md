@@ -12,14 +12,22 @@ record. This block said "What remains of this programme is item 1's Phase 1, the
 post-stress meteg survey page, and its Phase 2, the M23 card link" until item 1's
 plan recorded both as done.
 
-**One finding of item 1's Phase 1 is left for Ben, and it is a data-currency
-question rather than a step of this programme.** The survey page publishes 231
-post-stress metegs and not the 232 the section below predicts, because the
-Phonetic MAM standard set it counts is a snapshot of MAM taken before the
-rollout: 221 of its 23,184 comparable verses differ from MAM today, 38,379 metegs
-against 38,170. Regenerating that set is a step of al-hatorah's pipeline inside
-MAM-private, and re-running the survey afterwards is one command. The section
-"Item 5 changes the survey's figures" has the measurement.
+**Item 1's Phase 1 raised one data-currency finding, and Ben has SETTLED it: the
+staleness stands.** His words, 2026-09-04: *"I can tolerate that staleness."* The
+survey page publishes 231 post-stress metegs and not the 232 the section below
+predicts, because the Phonetic MAM standard set it counts is a snapshot of MAM
+taken before the rollout: 221 of its 23,184 comparable numbered verses differ
+from MAM today, 38,379 metegs against 38,170. Regenerating that set is a step of
+al-hatorah's pipeline inside MAM-private, and it is not being taken.
+
+**So this is a closed question rather than an outstanding one, and the fix is not
+to be re-proposed.** The page says which MAM its figures describe and the survey
+JSON's `currency` section holds the measurement, so a reader is not misled and a
+later session can see the size of the gap without re-deriving it. Whoever does
+eventually regenerate that set gets the moved figures by re-running
+`py/main_accgram.py survey-post-stress-meteg` and `py/main_authored.py gen-site`;
+nothing else has to change. The section "Item 5 changes the survey's figures" has
+the measurement.
 
 Every section below is an execution record rather than a sketch. The sketch had
 been assembled from three research-agent reports and one Plan-agent validation
@@ -169,11 +177,15 @@ today, 206 verses where the snapshot has more and 15 where MAM does.** The surve
 records that comparison in its JSON's `currency` section and the page states which
 MAM its figures describe, so nothing is published as today's that is not.
 
-**What closes it is one al-hatorah pipeline step and one command here**, and
+**What would close it is one al-hatorah pipeline step and one command here**, and
 neither is item 1's: regenerate `al-hatorah/io/a01-phonetic-std-set/` in
 MAM-private, then re-run `py/main_accgram.py survey-post-stress-meteg` and
-`py/main_authored.py gen-site`. Ben's to decide, since regenerating a private
-repository's tracked data is outside this programme.
+`py/main_authored.py gen-site`.
+
+**BEN DECIDED ON 2026-09-04 NOT TO DO IT: *"I can tolerate that staleness."*** So
+the published figures stay at 231, the page goes on saying which MAM it counts,
+and this is a closed question. Do not propose the regeneration again; if it
+happens for some other reason, the two commands above bring the page with it.
 
 **The trap this section named was real and fired somewhere else.** It predicted a
 stale published page after item 5; what actually happened is a stale INPUT to a

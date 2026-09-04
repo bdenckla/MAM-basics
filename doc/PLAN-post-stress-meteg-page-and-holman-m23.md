@@ -1166,6 +1166,12 @@ re-running this survey afterwards is one command. The page says which MAM its
 figures describe rather than implying they are today's, and its M23 section says
 outright that the meteg it is about is not among the 231.
 
+**AND BEN SETTLED IT THE SAME DAY, AGAINST DOING IT: *"I can tolerate that
+staleness."*** The figures stay at 231. This is a closed question, not an
+outstanding one, and the regeneration is not to be re-proposed — recorded here
+and in the programme's STATUS block so that a later reader of either meets the
+decision rather than the finding alone.
+
 #### Six departures from the plan as written, each with its reason
 
 1. **A verse whose last entry lacks sof pasuq does not fail the run outright.**
