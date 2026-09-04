@@ -1,0 +1,14 @@
+{
+  "comment": "The former diffable-pointed-hebrew product's nine local short Unicode-name assignments. The source samples require these assignments; all other names come from MAM-basics' mb_cmn.uni_heb.",
+  "short_names_by_code_point": {
+    "1432": "≁",
+    "1454": "~",
+    "1489": "v",
+    "1493": "w",
+    "1506": "ʕ",
+    "1507": "f.",
+    "1508": "f",
+    "1509": "ц.",
+    "1510": "ц"
+  }
+}

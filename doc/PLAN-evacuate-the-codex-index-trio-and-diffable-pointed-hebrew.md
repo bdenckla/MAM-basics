@@ -319,6 +319,30 @@ vendoring-policy test parametrization to lose one case. Retire the source to a
 dated breadcrumb after verification; ask Ben whether this source repository is
 also archived before taking that GitHub action.
 
+### Execution record — Phase 4 classification, 2026-09-04
+
+Before Land, committed blobs at MAM-basics `4f3d26fb` and
+diffable-pointed-hebrew `dd1fdb9e` were compared for every source `mb_cmn/`
+copy. No source copy is deleted before this record. The classifications are:
+
+| source copy | classification and disposition |
+| --- | --- |
+| `cantsys.py` | Byte-identical to MAM-basics. Use MAM-basics' copy; no source copy lands. |
+| `file_io.py` | MAM-basics has the upstream LF-default, provenance, type, and configurable-indent improvements. The source copy is drift to drop; its Windows default writes CRLF, so each source sample re-run differed from its LF tracked blob only in line endings. |
+| `hebrew_accents.py` | Drift to drop. The source copy lacks maintained constants and keeps superseded non-Unicode codes; the product command does not use that surface. |
+| `hebrew_letters.py` | Drift to drop: only older docstring spacing differs. |
+| `hebrew_points.py` | Drift to drop. The source copy lacks maintained regular-expression constants; the product command does not use them. |
+| `hebrew_punctuation.py` | Drift to drop. The source copy lacks maintained punctuation constants; the product command does not use them. |
+| `str_defs.py` | Drift to drop. The source copy lacks two maintained quotation-mark constants; the product command does not use them. |
+| `uni_heb.py` | Retain its local adaptation only: nine short Unicode-name assignments differ from `mb_cmn.uni_heb.shunna()` and are required by all three committed product samples. `diffable-pointed-hebrew/short_unicode_name_overrides.json` holds those nine assignments. The source copy's unused legacy utility surface is drift to drop. |
+
+The former product command calls only `uni_heb.shunna()`. A temporary
+MAM-basics candidate using the nine retained assignments and current
+`mb_cmn` utilities regenerated `sample-output.json`, `tiny-sample-output.json`,
+and `tiny-sample-output-normalized.json` byte-identically from their committed
+source blobs. The source command's three Windows re-runs have the source
+`file_io.py` CRLF output, so none is byte-identical to its LF tracked blob.
+
 ## Phase 5 — Cross-repo bookkeeping and stage close
 
 Confirm all four source repositories are absent from
