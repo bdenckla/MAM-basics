@@ -2,11 +2,11 @@
 
 ## Overview
 
-The 2026.02.05 changeset in `in/UXLC-misc/2026.04.01 - Changes.xml`
+The 2026.02.05 changeset in `uxlc/in/UXLC-misc/2026.04.01 - Changes.xml`
 contains 162 proposed changes to UXLC, all concerning the Book of Job.
 These correspond to the "quirkrecs" (quirk records) maintained in the
-sibling `book-of-job` repo (`out/enriched-quirkrecs.json`), which has
-160 entries.
+retained book-of-job tree (`book-of-job/out/enriched-quirkrecs.json`),
+which has 160 entries.
 
 The script `py/main_map_changes_to_book_of_job.py` establishes and verifies
 this correspondence.
@@ -18,7 +18,7 @@ this correspondence.
 - **2 XML-only** entries with no quirkrec counterpart:
   - **#65 Job 19:16.6** — a "[Part 2 of previous change]" that is
     combined with #64 in the quirkrec. Also flagged in
-    `out/UXLC-misc/sanity_problems.json` as `lc_line_is_none`.
+    `uxlc/out/UXLC-misc/sanity_problems.json` as `lc_line_is_none`.
   - **#71 Job 21:15.2** — a second entry for Job 21:15 (same verse as
     #70) that is combined in the quirkrec.
 - **0 HTML-only** entries
@@ -69,7 +69,7 @@ These were identified during the comparison and review:
 
 ## Output files
 
-- `in/UXLC-misc/2026.04.01-map-to-book-of-job.json` — the mapping
+- `uxlc/in/UXLC-misc/2026.04.01-map-to-book-of-job.json` — the mapping
   from XML change number to quirkrec HTML file
-- `out/UXLC-misc/sanity_problems.json` — sanity check failures
+- `uxlc/out/UXLC-misc/sanity_problems.json` — sanity check failures
   (entry #65 `lc_line_is_none`)

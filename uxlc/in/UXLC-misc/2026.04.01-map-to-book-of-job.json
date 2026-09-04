@@ -1,6 +1,6 @@
 {
-  "xml_source": "in/UXLC-misc/2026.04.01 - Changes.xml",
-  "html_base": "../book-of-job/gh-pages/jobn-details/",
+  "xml_source": "uxlc/in/UXLC-misc/2026.04.01 - Changes.xml",
+  "html_base": "gh-pages/book-of-job/jobn-details/",
   "changeset": "2026.02.05",
   "matched": [
     {
