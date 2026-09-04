@@ -1,6 +1,6 @@
 # Total evacuation: the codex-index trio and diffable-pointed-hebrew
 
-State: Phase 0 complete — the third stage began 2026-09-03
+State: Phases 0–2 complete — the third stage began 2026-09-03
 
 This is the third stage Ben authorized on 2026-09-03. It carries the decision
 record out of [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md)
@@ -52,9 +52,9 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 
 | Phase | State |
 | --- | --- |
-| 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the two duplicate-data decisions are recorded for the Aleppo and Cam1753 lanes. |
+| 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the shared `MAM-XML/` disposition is now performed by Phase 2, while the Cam1753 page-image decision remains recorded for Phase 3. |
 | 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
-| 2 — codex-index-aleppo | Not started. Its lane lands `aleppo/` plus `gh-pages/aleppo/`, freezes the three-page redirect manifest, and leaves the source repository alive. |
+| 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | Not started. Its lane lands `cam1753/`, answers the page-image decision recorded below, and archives the source repository after the verified Empty step. |
 | 4 — diffable-pointed-hebrew | Not started. Its lane resolves the eight divergent `mb_cmn` copies before moving the root command to `py/main_diffable_pointed_hebrew.py`. |
 | 5 — Cross-repo bookkeeping and stage close | Not started. It removes the four workspace entries, performs the final clone-removal checks, records the source-repository dispositions, and closes this stage. |
@@ -105,10 +105,9 @@ paths and SHA-256 values are identical.
 
 The later lanes cannot silently choose either form of duplicate data.
 
-1. `MAM-XML/` occurs in both Aleppo and Cam1753 as the same 24 blobs. The
-   Aleppo and Cam1753 readers can share one copy after the repoint. Ben decides
-   whether MAM-basics retains one canonical `MAM-XML/` tree or preserves two
-   pure-prefix copies.
+1. `MAM-XML/` occurs in both Aleppo and Cam1753 as the same 24 blobs. Ben's
+   decision, 2026-09-04, is one canonical temporary pinned `MAM-XML/` tree:
+   both readers share it until the later MAM-simple evacuation replaces it.
 2. `cam1753-pages/` is derived from the tracked Cam1753 spreads by
    `main_cam1753_split_spreads.py`. Ben decides whether the 48.0 MB page tree
    remains tracked as an oracle or is regenerated from the spreads when needed.
@@ -140,9 +139,9 @@ The canonical MAM-basics suite passed **975 passed, 5 skipped, 65 subtests**
 in 151.12 seconds. `git diff --check` passed before the documentation commit.
 The suite's passed count is two higher than the second-stage closeout's 973;
 the recorded fresh measurement, not the older figure, is the Phase 1 baseline.
-The two duplicate-data questions remain Ben's decisions. They do not block the
-Leningrad lane, which begins next; they must be answered before an Aleppo or
-Cam1753 Land step chooses its `MAM-XML/` or `cam1753-pages/` disposition.
+The `MAM-XML/` decision was subsequently made on 2026-09-04: one temporary
+canonical pinned tree serves the Aleppo and Cam1753 readers until the MAM-simple
+evacuation replaces it. The Cam1753 page-image decision remains for Phase 3.
 
 ## Phase 1 — codex-index-leningrad
 
@@ -215,8 +214,47 @@ Freeze the three old published paths in
 second-stage redirect table, build and test the generated stubs, and deploy the
 MAM-basics target before the source switches. The Aleppo repository remains
 alive as the redirect host, but its clean primary clone leaves the workspace
-after the full post-removal verification. The `MAM-XML/` disposition must be
-Ben's Phase-0 decision, not a fresh local choice.
+after the full post-removal verification. Ben's 2026-09-04 decision is one
+temporary pinned `MAM-XML/` tree shared by this lane and the Cam1753 lane; the
+later MAM-simple evacuation replaces it.
+
+### Execution record — Phase 2, 2026-09-04
+
+Phase 2 began from clean MAM-basics `b470675` and codex-index-aleppo
+`8f1fcfd`. Land commit `df61173a` copied 170 committed source blobs totalling
+39,905,269 bytes: 24 under the shared `MAM-XML/` snapshot, 142 under
+`aleppo/`, and four under `gh-pages/aleppo/`. The five source redirect-host
+files did not land. The manifest compared the source Git blob for every file,
+then compared every staged MAM-basics blob; all 170 matched exactly.
+
+Ben's 2026-09-04 decision retains that one 24-file `MAM-XML/` snapshot as a
+temporary pinned input for the Aleppo and Cam1753 readers. The later MAM-simple
+evacuation replaces the snapshot and removes `MAM-XML/`; Phase 2 does not begin
+that later lane. Commit `a0a2a379` records the snapshot, scans, index, pages,
+and remaining Aleppo data in `DATA-LICENSES.md`.
+
+Commit `f5fdd73c` repointed `ac_paths.ac_data_root()` to `aleppo/` and
+`ac_paths.mam_xml_dir()` to the shared root. The Aleppo NFC scope now scans the
+hand-authored Aleppo data without also scanning it through the MAM-basics root.
+The four artifact outputs — `index-flat.json`, `index-grouped-by-book.json`,
+`index.wiki`, and `index-flat-annotated.json` — regenerated byte-identically;
+all four destination files were rewritten, while the source files retained both
+their hashes and mtimes.
+
+Commit `d10fab55` froze the three former pages in
+`in/codex_index_aleppo_redirect_pages.json` and registered the source host.
+Source commit `ba655df` replaced the three pages with generated stubs and added
+`404.html`; `82aa50b` removed every remaining data path and retained only the
+redirect host. The target Pages deployment for `f5fdd73c` and the source Pages
+deployment for `82aa50b` both succeeded. Each source stub and each MAM-basics
+target answered HTTP 200, and each source stub named its corresponding target.
+
+Commit `a21dd5e7` removed the primary clone from `all-repos.code-workspace` and
+`repo_visibility`. Before deleting the direct clone, its only worktree was the
+clean primary worktree, `git stash list` was empty, and its `HEAD` equalled
+`origin/main` at `82aa50b`; `C:/Users/BenDe/GitRepos/codex-index-aleppo` is now
+absent. Black and `ruff check py` passed. The final canonical suite passed
+**974 passed, 5 skipped, 65 subtests passed** in 89.80 seconds.
 
 ## Phase 3 — codex-index-cam1753
 
