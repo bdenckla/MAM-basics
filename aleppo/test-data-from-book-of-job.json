@@ -1,0 +1,1609 @@
+[
+  {
+    "qr-consensus": "וַיִּפֹּ֥ל",
+    "qr-ac-loc": {
+      "page": "270v",
+      "column": 1,
+      "line": 9,
+      "word": 2
+    },
+    "qr-cv": "1:19"
+  },
+  {
+    "qr-consensus": "שָׁ֔מָּה",
+    "qr-ac-loc": {
+      "page": "270v",
+      "column": 1,
+      "line": 13,
+      "word": 3
+    },
+    "qr-cv": "1:21"
+  },
+  {
+    "qr-consensus": "י֭וֹם",
+    "qr-ac-loc": {
+      "page": "270v",
+      "column": 2,
+      "line": 23,
+      "word": 2
+    },
+    "qr-cv": "3:3"
+  },
+  {
+    "qr-consensus": "מִמַּ֑עַל",
+    "qr-ac-loc": {
+      "page": "270v",
+      "column": 2,
+      "line": 25,
+      "word": 1
+    },
+    "qr-cv": "3:4"
+  },
+  {
+    "qr-consensus": "א֤וֹ",
+    "qr-ac-loc": {
+      "page": "271r",
+      "column": 1,
+      "line": 11,
+      "word": 1
+    },
+    "qr-cv": "3:16"
+  },
+  {
+    "qr-consensus": "כּ֭וֹשֵׁל",
+    "qr-ac-loc": {
+      "page": "271r",
+      "column": 1,
+      "line": 25,
+      "word": 1
+    },
+    "qr-cv": "4:4"
+  },
+  {
+    "qr-consensus": "אֱל֣וֹהַּ",
+    "qr-ac-loc": {
+      "page": "271r",
+      "column": 2,
+      "line": 2,
+      "word": 2
+    },
+    "qr-cv": "4:9"
+  },
+  {
+    "qr-consensus": "מֵאֱל֣וֹהַּ",
+    "qr-ac-loc": {
+      "page": "271r",
+      "column": 2,
+      "line": 11,
+      "word": 4
+    },
+    "qr-cv": "4:17"
+  },
+  {
+    "qr-consensus": "מִצִּנִּ֥ים",
+    "qr-ac-loc": {
+      "page": "271r",
+      "column": 2,
+      "line": 23,
+      "word": 2
+    },
+    "qr-cv": "5:5"
+  },
+  {
+    "qr-consensus": "בְּֽ֭רָעָב",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 1,
+      "line": 12,
+      "word": 6
+    },
+    "qr-cv": "5:20"
+  },
+  {
+    "qr-consensus": "הׇשְׁלְמָה־לָּֽךְ׃",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 1,
+      "line": 17,
+      "word": 1
+    },
+    "qr-cv": "5:23"
+  },
+  {
+    "qr-consensus": "נָ֝וְךָ֗",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 1,
+      "line": 18,
+      "word": 2
+    },
+    "qr-cv": "5:24"
+  },
+  {
+    "qr-consensus": "וּ֥תְהִי־ע֨וֹד׀",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 2,
+      "line": 5,
+      "word": 1
+    },
+    "qr-cv": "6:10"
+  },
+  {
+    "qr-consensus": "בְּעֵ֣ת",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 2,
+      "line": 13,
+      "word": 1
+    },
+    "qr-cv": "6:17"
+  },
+  {
+    "qr-consensus": "לֹ֑א",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 2,
+      "line": 17,
+      "word": 6
+    },
+    "qr-cv": "6:21"
+  },
+  {
+    "qr-consensus": "עַֽל־רֵיעֲכֶֽם׃",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 2,
+      "line": 25,
+      "word": 3
+    },
+    "qr-cv": "6:27"
+  },
+  {
+    "qr-consensus": "וְשׁ֥וּבוּ",
+    "qr-consensus-ketiv": "ושבי",
+    "qr-ac-loc": {
+      "page": "271v",
+      "column": 2,
+      "line": 27,
+      "word": 4
+    },
+    "qr-cv": "6:29"
+  },
+  {
+    "qr-consensus": "וְכִימֵ֖י",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 1,
+      "word": 6
+    },
+    "qr-cv": "7:1"
+  },
+  {
+    "qr-consensus": "יַעֲלֶֽה׃",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 10,
+      "word": 8
+    },
+    "qr-cv": "7:9"
+  },
+  {
+    "qr-consensus": "הָ֫אָדָ֥ם",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 23,
+      "word": 4
+    },
+    "qr-cv": "7:20"
+  },
+  {
+    "qr-consensus": "וְשִׁ֖חַרְתַּ֣נִי",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 26,
+      "word": 3
+    },
+    "qr-cv": "7:21"
+  },
+  {
+    "qr-consensus": "וַיֹּאמַֽר׃",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 27,
+      "word": 4
+    },
+    "qr-cv": "8:1"
+  },
+  {
+    "qr-consensus": "כַּ֝בִּ֗יר",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 1,
+      "line": 28,
+      "word": 6
+    },
+    "qr-cv": "8:2"
+  },
+  {
+    "qr-consensus": "וְ֝אַחֲרִֽיתְךָ֗",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 2,
+      "line": 7,
+      "word": 1
+    },
+    "qr-cv": "8:7"
+  },
+  {
+    "qr-consensus": "עַ֝כָּבִ֗ישׁ",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 2,
+      "line": 14,
+      "word": 5
+    },
+    "qr-cv": "8:14"
+  },
+  {
+    "qr-consensus": "ה֭וּא",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 2,
+      "line": 16,
+      "word": 6
+    },
+    "qr-cv": "8:16"
+  },
+  {
+    "qr-consensus": "יֹֽנַקְתּ֥וֹ",
+    "qr-ac-loc": {
+      "page": "272r",
+      "column": 2,
+      "line": 17,
+      "word": 3
+    },
+    "qr-cv": "8:16"
+  },
+  {
+    "qr-consensus": "יִתְפַּלָּצֽוּן׃",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 1,
+      "line": 2,
+      "word": 2
+    },
+    "qr-cv": "9:6"
+  },
+  {
+    "qr-consensus": "וְ֝נִפְלָא֗וֹת",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 1,
+      "line": 6,
+      "word": 1
+    },
+    "qr-cv": "9:10"
+  },
+  {
+    "qr-consensus": "עִמּֽוֹ׃",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 1,
+      "line": 11,
+      "word": 2
+    },
+    "qr-cv": "9:14"
+  },
+  {
+    "qr-consensus": "כַּפָּֽי׃",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 2,
+      "line": 1,
+      "word": 5
+    },
+    "qr-cv": "9:30"
+  },
+  {
+    "qr-consensus": "אֲֽ֭דַבְּרָה",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 2,
+      "line": 5,
+      "word": 4
+    },
+    "qr-cv": "9:35"
+  },
+  {
+    "qr-consensus": "אֲ֝דַבְּרָ֗ה",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 2,
+      "line": 7,
+      "word": 4
+    },
+    "qr-cv": "10:1"
+  },
+  {
+    "qr-consensus": "וּֽלְחַטָּאתִ֥י",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 2,
+      "line": 13,
+      "word": 4
+    },
+    "qr-cv": "10:6"
+  },
+  {
+    "qr-consensus": "עׇנְיִֽי׃",
+    "qr-ac-loc": {
+      "page": "272v",
+      "column": 2,
+      "line": 23,
+      "word": 6
+    },
+    "qr-cv": "10:15"
+  },
+  {
+    "qr-consensus": "יַחֲרִ֑ישׁוּ",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 1,
+      "line": 6,
+      "word": 3
+    },
+    "qr-cv": "11:3"
+  },
+  {
+    "qr-consensus": "אֱ֝ל֗וֹהַּ",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 1,
+      "line": 10,
+      "word": 5
+    },
+    "qr-cv": "11:6"
+  },
+  {
+    "qr-consensus": "אֱל֣וֹהַּ",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 1,
+      "line": 11,
+      "word": 2
+    },
+    "qr-cv": "11:7"
+  },
+  {
+    "qr-consensus": "אַ֭תָּה",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 1,
+      "line": 17,
+      "word": 2
+    },
+    "qr-cv": "11:13"
+  },
+  {
+    "qr-consensus": "וְאֶת־",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 2,
+      "line": 1,
+      "word": 1
+    },
+    "qr-cv": "12:3"
+  },
+  {
+    "qr-consensus": "יַד־יְ֝הֹוָ֗ה",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 2,
+      "line": 9,
+      "word": 2
+    },
+    "qr-cv": "12:9"
+  },
+  {
+    "qr-consensus": "וְתוּשִׁיָּ֑ה",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 2,
+      "line": 16,
+      "word": 6
+    },
+    "qr-cv": "12:16"
+  },
+  {
+    "qr-consensus": "וְאֵ֖תָנִ֣ים",
+    "qr-ac-loc": {
+      "page": "273r",
+      "column": 2,
+      "line": 20,
+      "word": 1
+    },
+    "qr-cv": "12:19"
+  },
+  {
+    "qr-consensus": "מֵרֵ֣יחַ",
+    "qr-ac-loc": {
+      "page": "273v",
+      "column": 2,
+      "line": 11,
+      "word": 4
+    },
+    "qr-cv": "14:9"
+  },
+  {
+    "qr-consensus": "תָּ֤שִֽׁית",
+    "qr-ac-loc": {
+      "page": "273v",
+      "column": 2,
+      "line": 17,
+      "word": 5
+    },
+    "qr-cv": "14:13"
+  },
+  {
+    "qr-consensus": "אֱל֣וֹהַּ",
+    "qr-ac-loc": {
+      "page": "274r",
+      "column": 1,
+      "line": 9,
+      "word": 2
+    },
+    "qr-cv": "15:8"
+  },
+  {
+    "qr-consensus": "שֹֽׁחַד׃",
+    "qr-ac-loc": {
+      "page": "274r",
+      "column": 2,
+      "line": 11,
+      "word": 4
+    },
+    "qr-cv": "15:34"
+  },
+  {
+    "qr-consensus": "וְיָ֣לֹֽד",
+    "qr-ac-loc": {
+      "page": "274r",
+      "column": 2,
+      "line": 12,
+      "word": 1
+    },
+    "qr-cv": "15:35"
+  },
+  {
+    "qr-consensus": "ל֤וּ יֵ֪שׁ",
+    "qr-ac-loc": {
+      "page": "274r",
+      "column": 2,
+      "line": 16,
+      "word": 5
+    },
+    "qr-cv": "16:4"
+  },
+  {
+    "qr-consensus": "מַה־מִּנִּ֥י",
+    "qr-ac-loc": {
+      "page": "274r",
+      "column": 2,
+      "line": 20,
+      "word": 3
+    },
+    "qr-cv": "16:6"
+  },
+  {
+    "qr-consensus": "מְרֵרָתִֽי׃",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 2,
+      "word": 3
+    },
+    "qr-cv": "16:13"
+  },
+  {
+    "qr-consensus": "אֱ֝ל֗וֹהַּ",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 9,
+      "word": 4
+    },
+    "qr-cv": "16:20"
+  },
+  {
+    "qr-consensus": "עׇרְבֵ֣נִי",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 14,
+      "word": 3
+    },
+    "qr-cv": "17:3"
+  },
+  {
+    "qr-consensus": "מִשָּׂ֑כֶל",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 15,
+      "word": 4
+    },
+    "qr-cv": "17:4"
+  },
+  {
+    "qr-consensus": "וְתֹ֖פֶת",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 17,
+      "word": 4
+    },
+    "qr-cv": "17:6"
+  },
+  {
+    "qr-consensus": "לְבָבִֽי׃",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 1,
+      "line": 22,
+      "word": 8
+    },
+    "qr-cv": "17:11"
+  },
+  {
+    "qr-consensus": "הַֽ֭לְמַעַנְךָ",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 3,
+      "word": 4
+    },
+    "qr-cv": "18:4"
+  },
+  {
+    "qr-consensus": "הַֽ֭לְמַעַנְךָ",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 3,
+      "word": 4
+    },
+    "qr-cv": "18:4"
+  },
+  {
+    "qr-consensus": "א֭וֹר",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 5,
+      "word": 6
+    },
+    "qr-cv": "18:6"
+  },
+  {
+    "qr-consensus": "בְּעָקֵ֣ב",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 8,
+      "word": 5
+    },
+    "qr-cv": "18:9"
+  },
+  {
+    "qr-consensus": "וּֽתְדַכּאוּנַ֥נִי",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 24,
+      "word": 5
+    },
+    "qr-cv": "19:2"
+  },
+  {
+    "qr-consensus": "חֶרְפָּתִֽי׃",
+    "qr-ac-loc": {
+      "page": "274v",
+      "column": 2,
+      "line": 27,
+      "word": 7
+    },
+    "qr-cv": "19:5"
+  },
+  {
+    "qr-consensus": "קָ֭רָאתִי",
+    "qr-ac-loc": {
+      "page": "275r",
+      "column": 1,
+      "line": 11,
+      "word": 4
+    },
+    "qr-cv": "19:16"
+  },
+  {
+    "qr-consensus": "בְּמוֹ־פִ֝֗י",
+    "qr-ac-loc": {
+      "page": "275r",
+      "column": 1,
+      "line": 12,
+      "word": 2
+    },
+    "qr-cv": "19:16"
+  },
+  {
+    "qr-consensus": "תֹ֭אמְרוּ",
+    "qr-ac-loc": {
+      "page": "275r",
+      "column": 1,
+      "line": 24,
+      "word": 5
+    },
+    "qr-cv": "19:28"
+  },
+  {
+    "qr-consensus": "הַֽנַּעֲמָתִ֗י",
+    "qr-ac-loc": {
+      "page": "275r",
+      "column": 1,
+      "line": 27,
+      "word": 3
+    },
+    "qr-cv": "20:1"
+  },
+  {
+    "qr-consensus": "יְֽשַׁלַּח־בּ֭וֹ",
+    "qr-ac-loc": {
+      "page": "275r",
+      "column": 2,
+      "line": 23,
+      "word": 5,
+      "word2": 4
+    },
+    "qr-cv": "20:23"
+  },
+  {
+    "qr-consensus": "מַ֭דּוּעַ",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 1,
+      "line": 10,
+      "word": 4
+    },
+    "qr-cv": "21:7"
+  },
+  {
+    "qr-consensus": "מַה־שַּׁדַּ֥י",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 1,
+      "line": 20,
+      "word": 1
+    },
+    "qr-cv": "21:15"
+  },
+  {
+    "qr-consensus": "וְלֹֽא־",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 2,
+      "line": 3,
+      "word": 5
+    },
+    "qr-cv": "21:25"
+  },
+  {
+    "qr-consensus": "וּ֝תְשׁ֥וּבֹתֵיכֶ֗ם",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 2,
+      "line": 14,
+      "word": 4
+    },
+    "qr-cv": "21:34"
+  },
+  {
+    "qr-consensus": "וִ֝יבַהֶלְךָ֗",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 2,
+      "line": 25,
+      "word": 2
+    },
+    "qr-cv": "22:10"
+  },
+  {
+    "qr-consensus": "רֹ֖אשׁ",
+    "qr-ac-loc": {
+      "page": "275v",
+      "column": 2,
+      "line": 27,
+      "word": 6
+    },
+    "qr-cv": "22:12"
+  },
+  {
+    "qr-consensus": "ל֭וֹ",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 1,
+      "word": 6
+    },
+    "qr-cv": "22:14"
+  },
+  {
+    "qr-consensus": "עִמּ֣וֹ",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 10,
+      "word": 3
+    },
+    "qr-cv": "22:21"
+  },
+  {
+    "qr-consensus": "וּשְׁלָ֑ם",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 10,
+      "word": 4
+    },
+    "qr-cv": "22:21"
+  },
+  {
+    "qr-consensus": "וּכְצ֖וּר",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 14,
+      "word": 1
+    },
+    "qr-cv": "22:24"
+  },
+  {
+    "qr-consensus": "אֹ֭מֶר",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 17,
+      "word": 5
+    },
+    "qr-cv": "22:28"
+  },
+  {
+    "qr-consensus": "יְמַלֵּ֥ט",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 20,
+      "word": 2
+    },
+    "qr-cv": "22:30"
+  },
+  {
+    "qr-consensus": "וְ֝נִמְלַ֗ט",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 20,
+      "word": 5
+    },
+    "qr-cv": "22:30"
+  },
+  {
+    "qr-consensus": "מַה־יֹּ֥אמַר לִֽי׃",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 25,
+      "word": 5
+    },
+    "qr-cv": "23:5"
+  },
+  {
+    "qr-consensus": "הַבְּרׇב־כֹּ֭חַ",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 1,
+      "line": 26,
+      "word": 2,
+      "word2": 1
+    },
+    "qr-cv": "23:6"
+  },
+  {
+    "qr-consensus": "מִ֭שַּׁדַּי",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 2,
+      "line": 11,
+      "word": 6
+    },
+    "qr-cv": "24:1"
+  },
+  {
+    "qr-consensus": "בַּ֥מִּדְבָּ֗ר",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 2,
+      "line": 16,
+      "word": 3
+    },
+    "qr-cv": "24:5"
+  },
+  {
+    "qr-consensus": "בְּֽמֹרְדֵ֫י א֥וֹר",
+    "qr-ac-loc": {
+      "page": "276r",
+      "column": 2,
+      "line": 26,
+      "word": 1
+    },
+    "qr-cv": "24:13"
+  },
+  {
+    "qr-consensus": "יָ֥דְֿעוּ",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 1,
+      "line": 3,
+      "word": 5
+    },
+    "qr-cv": "24:16"
+  },
+  {
+    "qr-consensus": "לֹא־יִ֝פְנֶ֗ה",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 1,
+      "line": 6,
+      "word": 2
+    },
+    "qr-cv": "24:18"
+  },
+  {
+    "qr-consensus": "רֹעֶ֣ה",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 1,
+      "line": 10,
+      "word": 1
+    },
+    "qr-cv": "24:21"
+  },
+  {
+    "qr-consensus": "גְּ֝בוּרֹתָ֗יו",
+    "qr-consensus-ketiv": "גְּ֝בוּרֹתָ֗ו",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 2,
+      "line": 9,
+      "word": 4
+    },
+    "qr-cv": "26:14"
+  },
+  {
+    "qr-consensus": "חַי־",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 2,
+      "line": 11,
+      "word": 1
+    },
+    "qr-cv": "27:2"
+  },
+  {
+    "qr-consensus": "הֲֽ֭צַעֲקָתוֹ",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 2,
+      "line": 20,
+      "word": 1
+    },
+    "qr-cv": "27:9"
+  },
+  {
+    "qr-consensus": "מִשַּׁדַּ֥י",
+    "qr-ac-loc": {
+      "page": "276v",
+      "column": 2,
+      "line": 25,
+      "word": 6
+    },
+    "qr-cv": "27:13"
+  },
+  {
+    "qr-consensus": "הִדְרִיכ֥וּהוּ",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 1,
+      "line": 17,
+      "word": 2
+    },
+    "qr-cv": "28:8"
+  },
+  {
+    "qr-consensus": "ה֭וּא",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 2,
+      "line": 8,
+      "word": 2
+    },
+    "qr-cv": "28:24"
+  },
+  {
+    "qr-consensus": "בַּעֲשֹׂת֣וֹ",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 2,
+      "line": 10,
+      "word": 4
+    },
+    "qr-cv": "28:26"
+  },
+  {
+    "qr-consensus": "לְ֝אוֹר֗וֹ",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 2,
+      "line": 16,
+      "word": 5
+    },
+    "qr-cv": "29:3"
+  },
+  {
+    "qr-consensus": "וִ֝ישִׁישִׁ֗ים",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 2,
+      "line": 22,
+      "word": 2
+    },
+    "qr-cv": "29:8"
+  },
+  {
+    "qr-consensus": "וְעַ֥יִן",
+    "qr-ac-loc": {
+      "page": "277r",
+      "column": 2,
+      "line": 25,
+      "word": 5
+    },
+    "qr-cv": "29:11"
+  },
+  {
+    "qr-consensus": "בִּקְצִירִֽי׃",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 1,
+      "line": 6,
+      "word": 7
+    },
+    "qr-cv": "29:19"
+  },
+  {
+    "qr-consensus": "כֹּ֭חַ",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 7,
+      "word": 2
+    },
+    "qr-cv": "30:18"
+  },
+  {
+    "qr-consensus": "אֶל־ר֭וּחַ",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 11,
+      "word": 6,
+      "word2": 5
+    },
+    "qr-cv": "30:22"
+  },
+  {
+    "qr-consensus": "ע֭וֹרִי",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 21,
+      "word": 1
+    },
+    "qr-cv": "30:30"
+  },
+  {
+    "qr-consensus": "וּמֶ֤ה",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 24,
+      "word": 1
+    },
+    "qr-cv": "31:2"
+  },
+  {
+    "qr-consensus": "ה֭וּא",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 26,
+      "word": 2
+    },
+    "qr-cv": "31:4"
+  },
+  {
+    "qr-consensus": "רַגְלִֽי׃",
+    "qr-ac-loc": {
+      "page": "277v",
+      "column": 2,
+      "line": 27,
+      "word": 8
+    },
+    "qr-cv": "31:5"
+  },
+  {
+    "qr-consensus": "מֽאֿוּם׃",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 1,
+      "line": 2,
+      "word": 5
+    },
+    "qr-cv": "31:7"
+  },
+  {
+    "qr-consensus": "הֲ‍ֽלֹא־בַ֭בֶּטֶן",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 1,
+      "line": 11,
+      "word": 1
+    },
+    "qr-cv": "31:15"
+  },
+  {
+    "qr-consensus": "א֭וֹבֵד",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 1,
+      "line": 15,
+      "word": 3
+    },
+    "qr-cv": "31:19"
+  },
+  {
+    "qr-consensus": "כְּ֝בָשַׂ֗י",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 1,
+      "line": 17,
+      "word": 2
+    },
+    "qr-cv": "31:20"
+  },
+  {
+    "qr-consensus": "ה֭וּא",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 1,
+      "line": 25,
+      "word": 5
+    },
+    "qr-cv": "31:28"
+  },
+  {
+    "qr-consensus": "עֲוֺנִֽי׃",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 2,
+      "line": 4,
+      "word": 3
+    },
+    "qr-cv": "31:33"
+  },
+  {
+    "qr-consensus": "כֹּ֭חָהּ",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 2,
+      "line": 11,
+      "word": 2
+    },
+    "qr-cv": "31:39"
+  },
+  {
+    "qr-consensus": "יְשִׁישִׁ֑ים",
+    "qr-ac-loc": {
+      "page": "278r",
+      "column": 2,
+      "line": 26,
+      "word": 5
+    },
+    "qr-cv": "32:6"
+  },
+  {
+    "qr-consensus": "דֵעִ֣י",
+    "qr-ac-loc": {
+      "page": "278v",
+      "column": 1,
+      "line": 3,
+      "word": 6
+    },
+    "qr-cv": "32:10"
+  },
+  {
+    "qr-consensus": "הוֹחַ֨לְתִּי׀",
+    "qr-ac-loc": {
+      "page": "278v",
+      "column": 1,
+      "line": 4,
+      "word": 2
+    },
+    "qr-cv": "32:11"
+  },
+  {
+    "qr-consensus": "אֱ֝ל֗וֹהַּ",
+    "qr-ac-loc": {
+      "page": "278v",
+      "column": 2,
+      "line": 2,
+      "word": 1
+    },
+    "qr-cv": "33:12"
+  },
+  {
+    "qr-consensus": "וְ֝חַיָּת֗וֹ",
+    "qr-consensus-ketiv": "וחיתי",
+    "qr-ac-loc": {
+      "page": "278v",
+      "column": 2,
+      "line": 21,
+      "word": 5
+    },
+    "qr-cv": "33:28"
+  },
+  {
+    "qr-consensus": "הַחַיִּֽים׃",
+    "qr-ac-loc": {
+      "page": "278v",
+      "column": 2,
+      "line": 24,
+      "word": 5
+    },
+    "qr-cv": "33:30"
+  },
+  {
+    "qr-consensus": "כִּֽי־אָמַ֣ר",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 1,
+      "line": 5,
+      "word": 1
+    },
+    "qr-cv": "34:5"
+  },
+  {
+    "qr-consensus": "אַ֥נֲשֵׁ֥י",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 1,
+      "line": 10,
+      "word": 5
+    },
+    "qr-cv": "34:10"
+  },
+  {
+    "qr-consensus": "נִכַּר־",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 1,
+      "line": 22,
+      "word": 7
+    },
+    "qr-cv": "34:19"
+  },
+  {
+    "qr-consensus": "שׁ֭וֹעַ",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 1,
+      "line": 22,
+      "word": 8
+    },
+    "qr-cv": "34:19"
+  },
+  {
+    "qr-consensus": "חֹ֭שֶׁךְ",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 1,
+      "line": 26,
+      "word": 6
+    },
+    "qr-cv": "34:22"
+  },
+  {
+    "qr-consensus": "הֲֽמֵעִמְּךָ֬",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 11,
+      "word": 6
+    },
+    "qr-cv": "34:33"
+  },
+  {
+    "qr-consensus": "יְשַׁלְּמֶ֨נָּה׀",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 11,
+      "word": 7
+    },
+    "qr-cv": "34:33"
+  },
+  {
+    "qr-consensus": "יְשַׁלְּמֶ֨נָּה׀",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 11,
+      "word": 7
+    },
+    "qr-cv": "34:33"
+  },
+  {
+    "qr-consensus": "וּֽמַה־יָּדַ֥עְתָּ",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 13,
+      "word": 1
+    },
+    "qr-cv": "34:33"
+  },
+  {
+    "qr-consensus": "יִשְׂפּ֑וֹק",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 18,
+      "word": 2
+    },
+    "qr-cv": "34:37"
+  },
+  {
+    "qr-consensus": "מַה־מִּיָּדְךָ֥",
+    "qr-ac-loc": {
+      "page": "279r",
+      "column": 2,
+      "line": 26,
+      "word": 2
+    },
+    "qr-cv": "35:7"
+  },
+  {
+    "qr-consensus": "תֹ֭אמַר",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 1,
+      "line": 5,
+      "word": 3
+    },
+    "qr-cv": "35:14"
+  },
+  {
+    "qr-consensus": "וְֽיַ֫עֲבֹ֥דוּ",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 1,
+      "line": 20,
+      "word": 1
+    },
+    "qr-cv": "36:11"
+  },
+  {
+    "qr-consensus": "בִּבְלִי־",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 1,
+      "line": 22,
+      "word": 2
+    },
+    "qr-cv": "36:12"
+  },
+  {
+    "qr-consensus": "שׁ֭וּעֲךָ",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 2,
+      "line": 1,
+      "word": 7
+    },
+    "qr-cv": "36:19"
+  },
+  {
+    "qr-consensus": "סֻכָּתֽוֹ׃",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 2,
+      "line": 13,
+      "word": 4
+    },
+    "qr-cv": "36:29"
+  },
+  {
+    "qr-consensus": "לַשֶּׁ֨לֶג׀",
+    "qr-ac-loc": {
+      "page": "279v",
+      "column": 2,
+      "line": 24,
+      "word": 6
+    },
+    "qr-cv": "37:6"
+  },
+  {
+    "qr-consensus": "ה֭וֹדִיעֵנוּ",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 1,
+      "line": 13,
+      "word": 1
+    },
+    "qr-cv": "37:19"
+  },
+  {
+    "qr-consensus": "לֹֽא־",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 1,
+      "line": 13,
+      "word": 5
+    },
+    "qr-cv": "37:19"
+  },
+  {
+    "qr-consensus": "ל֭וֹ",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 1,
+      "line": 14,
+      "word": 2
+    },
+    "qr-cv": "37:20"
+  },
+  {
+    "qr-consensus": "הֲֽ֭מִיָּמֶיךָ",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 6,
+      "word": 5
+    },
+    "qr-cv": "38:12"
+  },
+  {
+    "qr-consensus": "יִדַּ֖עְתָּ הַשַּׁ֣חַר",
+    "qr-consensus-ketiv": "ידעתה שחר",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 7,
+      "word": 3
+    },
+    "qr-cv": "38:12"
+  },
+  {
+    "qr-consensus": "צַלְמָ֣וֶת",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 12,
+      "word": 6
+    },
+    "qr-cv": "38:17"
+  },
+  {
+    "qr-consensus": "תָ֝בִ֗ין",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 16,
+      "word": 4
+    },
+    "qr-cv": "38:20"
+  },
+  {
+    "qr-consensus": "שֹׁ֭אָה",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 24,
+      "word": 5
+    },
+    "qr-cv": "38:27"
+  },
+  {
+    "qr-consensus": "שָׁ֝מַ֗יִם",
+    "qr-ac-loc": {
+      "page": "280r",
+      "column": 2,
+      "line": 27,
+      "word": 6
+    },
+    "qr-cv": "38:29"
+  },
+  {
+    "qr-consensus": "וְ֝יָדַעְתָּ֗",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 1,
+      "line": 16,
+      "word": 1
+    },
+    "qr-cv": "39:2"
+  },
+  {
+    "qr-consensus": "מְלֵחָֽה׃",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 1,
+      "line": 20,
+      "word": 6
+    },
+    "qr-cv": "39:6"
+  },
+  {
+    "qr-consensus": "בּ֭וֹ",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 1,
+      "line": 26,
+      "word": 2
+    },
+    "qr-cv": "39:11"
+  },
+  {
+    "qr-consensus": "בּ֭וֹ",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 1,
+      "line": 27,
+      "word": 2
+    },
+    "qr-cv": "39:12"
+  },
+  {
+    "qr-consensus": "אֶ֝בְרָ֗ה",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 1,
+      "line": 28,
+      "word": 5
+    },
+    "qr-cv": "39:13"
+  },
+  {
+    "qr-consensus": "תְדוּשֶֽׁהָ׃",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 2,
+      "line": 2,
+      "word": 7
+    },
+    "qr-cv": "39:15"
+  },
+  {
+    "qr-consensus": "הֲֽ֭תַרְעִישֶׁנּוּ",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 2,
+      "line": 9,
+      "word": 2
+    },
+    "qr-cv": "39:20"
+  },
+  {
+    "qr-consensus": "שָׂ֝רִ֗ים",
+    "qr-ac-loc": {
+      "page": "280v",
+      "column": 2,
+      "line": 16,
+      "word": 5
+    },
+    "qr-cv": "39:25"
+  },
+  {
+    "qr-consensus": "גָא֣וֹן",
+    "qr-ac-loc": {
+      "page": "281r",
+      "column": 1,
+      "line": 6,
+      "word": 3
+    },
+    "qr-cv": "40:10"
+  },
+  {
+    "qr-consensus": "ה֭וּא",
+    "qr-ac-loc": {
+      "page": "281r",
+      "column": 1,
+      "line": 16,
+      "word": 1
+    },
+    "qr-cv": "40:19"
+  },
+  {
+    "qr-consensus": "הָ֝עֹשׂ֗וֹ",
+    "qr-ac-loc": {
+      "page": "281r",
+      "column": 1,
+      "line": 16,
+      "word": 5
+    },
+    "qr-cv": "40:19"
+  },
+  {
+    "qr-consensus": "לֶחֱיֽוֹ׃",
+    "qr-ac-loc": {
+      "page": "281r",
+      "column": 1,
+      "line": 25,
+      "word": 3
+    },
+    "qr-cv": "40:26"
+  },
+  {
+    "qr-consensus": "בּ֭וֹ",
+    "qr-ac-loc": {
+      "page": "281r",
+      "column": 1,
+      "line": 27,
+      "word": 5
+    },
+    "qr-cv": "40:29"
+  },
+  {
+    "qr-consensus": "לִבְלִי־חָֽת׃",
+    "qr-ac-loc": {
+      "page": "281v",
+      "column": 1,
+      "line": 3,
+      "word": 6
+    },
+    "qr-cv": "41:25"
+  },
+  {
+    "qr-consensus": "וַיֹּ֧סֶף",
+    "qr-ac-loc": {
+      "page": "281v",
+      "column": 1,
+      "line": 28,
+      "word": 1
+    },
+    "qr-cv": "42:10"
+  },
+  {
+    "qr-consensus": "בָּנֽוֹת׃",
+    "qr-ac-loc": {
+      "page": "281v",
+      "column": 2,
+      "line": 9,
+      "word": 3
+    },
+    "qr-cv": "42:13"
+  }
+]
