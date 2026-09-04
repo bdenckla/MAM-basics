@@ -8,11 +8,12 @@ scope paragraph's count of post-anchor commits, the scripts' location and the cl
 changed, plus seven Hebrew runs put into MAM-normal mark order: they had been typed rather than
 lifted from the data, which is finding 1's own mechanism, and were caught by running finding 1's
 check over this file before committing it. It is the Claude half of the first dual-agent review
-under `doc/dual-agent-review.md`. The Codex half was neither read nor sought (the blindness rule:
+under `doc/dual-agent-review.md`. The Claude session neither read nor sought the later Codex half:
 no file named `codex-review-findings*`, nothing under `~/.codex/` beyond `AGENTS.md`'s line count,
-nothing under `Documents/Codex/`), and the four-bucket reconciliation is a later, separate task for
-a session that wrote neither file; it goes at the end of this file, under `## Reconciliation with
-the Codex review`. Nothing here was fixed; every finding is "unfixed" or "Ben's decision".
+and nothing under `Documents/Codex/`. The original Claude findings were therefore frozen before
+Codex read them for Design A. The Codex review session appended the reconciliation on 2026-09-04,
+after its report was stable, under `## Reconciliation with the Codex review`. Nothing here was
+fixed; every finding is "unfixed" or "Ben's decision".
 
 ## Scope, anchors and census
 
@@ -652,12 +653,60 @@ gap is in how the loader counts, not in the differences — unresolved, not a de
 5. Whether the twelve pre-existing non-MAM-normal runs of finding 1 are deliberate illustrations.
 6. Whether the 48 repo-root-relative links in `uxlc/doc/` are meant to stay as an execution record.
 
-## For the reconciliation with the Codex review
+## Inputs for the reconciliation with the Codex review
 
-Anchors for bucket-sorting: MAM-basics `4cc0c33..b4706759`; the sibling ranges in the table above;
+Anchors for comparison: MAM-basics `4cc0c33..b4706759`; the sibling ranges in the table above;
 book-of-job `fea3acd..c8a6bbf`, holman-ketiv-qere `aacd3ee..ca55c4a`, UXLC-utils `a2768f4..2745c65`
 on GitHub. Each finding above carries the commit, the file and line as of `b4706759`, the claim, the
-measurement, and the command or `.novc/review-2026-09-04/` script that re-establishes it, so a bucket-4 conflict
+measurement, and the command or `.novc/review-2026-09-04/` script that re-establishes it, so a disagreement
 can be checked by hand without re-deriving the whole window. The reconciliation section goes below, under `## Reconciliation with the Codex review`, per
 `doc/dual-agent-review.md`. The untracked original at `.novc/review-findings-2026-09-04.md` is the
-frozen blind draft, not the file to append to.
+frozen Claude draft, not the file to append to.
+
+## Reconciliation with the Codex review
+
+This window used Design A: Codex read this Claude review deliberately, checked selected claims
+against the same anchors, and looked for commits or defects this review did not account for. The
+Codex result is `doc/codex-review-findings-2026-09-04.md`. Under the Design A rule now recorded in
+`doc/dual-agent-review.md`, the Codex review session wrote this short comparison; no fresh third
+session was needed because Design A is anchored by construction.
+
+### Claude claims confirmed by Codex
+
+Codex independently re-derived four subfindings of finding 13:
+
+1. **Finding 13.1:** `main_0_mega._refuse_if_sibling_writes_are_misdirected()` accepts any existing
+   directory and does not verify that the directory is a clone.
+2. **Finding 13.3:** `mam_suggestion_extract._parse_prose_list()` silently skips an unrecognized
+   book abbreviation despite the table's stated fail-closed purpose.
+3. **Finding 13.4:** `osis_runner._xsd_parser()` does not verify that a supplied `xml_xsd_path`
+   names a file before installing the resolver.
+4. **Finding 13.5:** `test_versification_and_cantillation_doc.py` constructs its MAM-simple path at
+   module scope without `require_sibling`, so a missing clone fails during collection without the
+   standard advice.
+
+All four remain unfixed, as finding 13 states.
+
+### Claude claims rejected by Codex
+
+None among the claims Codex checked. Design A did not independently check every claim in this file,
+so this statement is not an endorsement of every unchecked claim.
+
+### Claude omission found by Codex
+
+**Unfixed:** `py/tests/test_redirect_manifest.py:8`, added in `b6bb8fae`, says its check sits in "a
+suite that runs all the time." MAM-basics' only workflow, `.github/workflows/pages.yml`, deploys the
+existing `gh-pages/` directory and runs no Python test command. The test runs only when a person
+invokes `py/main_test.py`, so the sentence overstates the protection against a stale redirect
+manifest. The Codex finding recommends saying that the check runs whenever the repository test
+suite runs.
+
+### Claude claims not independently checked by Codex
+
+Every Claude finding other than 13.1, 13.3, 13.4 and 13.5 remains outside the Codex re-derivation.
+That is a limit of this Design A run, not disagreement. The Codex review also did not recreate or
+inspect the absent public source clones named in its scope section.
+
+No incompatible factual assertion emerged among the claims the two reviews compared. No finding
+was acted on during reconciliation; dispositions beyond the unfixed states above belong to the
+later remediation pass.

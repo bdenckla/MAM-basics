@@ -1,25 +1,28 @@
 # Running the periodic review with both Claude and Codex
 
-**Nothing in this document has been run.** It records a recommendation Claude made on 2026-09-01,
-in a session titled "Claude and Codex complementary workflows", and it was written down on
-2026-09-03 because until then the recommendation existed only in that session's transcript and had
-to be recovered by searching transcripts. The periodic review is still a Claude-only practice, as
-it has been since 2026-07-29.
+This document records a recommendation Claude made on 2026-09-01, in a session titled "Claude and
+Codex complementary workflows", and first written down on 2026-09-03 because until then the
+recommendation existed only in that session's transcript and had to be recovered by searching
+transcripts. **Design A was first run on the 2026-09-04 window.** Its two inputs are
+`doc/review-findings-2026-09-04.md` and the matching commit ranges; its output is
+`doc/codex-review-findings-2026-09-04.md`, with the reconciliation appended to the Claude file.
 
-Read this before adding a second reviewing agent to the review series. It does not describe
-anything the periodic review currently does.
+Read this before adding a second reviewing agent to a later review window. It now records both the
+two proposed designs and the Design A procedure exercised on 2026-09-04.
 
 **Codex already reviews this repository, in a different series.** The staged review of
 `py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under
 `C:/Users/BenDe/Documents/Codex/ReviewForests/` and produced
-`doc/mega-pipeline-review-phase-*-2026-09-01.md`. What this document proposes is pairing Codex with
-Claude on the **periodic** review — the `doc/review-findings-<date>.md` series — which remains
-Claude-only. Do not read "Claude-only" more broadly than that.
+`doc/mega-pipeline-review-phase-*-2026-09-01.md`. This document instead pairs Codex with Claude on
+the **periodic** review — the `doc/review-findings-<date>.md` series. That series was Claude-only
+through 2026-09-01; the 2026-09-04 window is its first paired review. Do not read the earlier
+Claude-only history more broadly than that.
 
-## What the periodic review is today, and what a second agent would join
+## What the periodic review is, and what Codex joined
 
 Every four to eight days one Claude session reads a commit range across the public repositories and
-writes `doc/review-findings-<date>.md`. Seven such files exist, from 2026-07-29 to 2026-09-01.
+writes `doc/review-findings-<date>.md`. Eight such files exist, from 2026-07-29 to 2026-09-04; the
+2026-09-04 file has the first Codex counterpart.
 
 Two properties of the series matter to everything below.
 
@@ -35,11 +38,11 @@ Two properties of the series matter to everything below.
 The convention of record for both properties is the "The doc/ directory standard" section of
 `py/repo_util/check_repo_standards.py`'s module docstring. Read it there rather than re-deriving it.
 
-## Start with one calibration run, not a standing parallel track
+## Calibrate before adopting a standing parallel track
 
 The series runs every four to eight days, so running two agents on every window is a standing cost
-against a benefit nobody has measured. Run the dual-agent version **once**, reconcile it, count the
-buckets, and only then decide.
+against a benefit that must be measured before the cost becomes standing practice. Under Design B,
+reconcile one blind dual-agent run, count the four buckets, and only then decide.
 
 1. **If the Codex findings are largely a subset of the Claude findings**, a parallel track is not
    worth its cost. The better shape is to **alternate**: every other review is a Codex review. That
@@ -48,8 +51,10 @@ buckets, and only then decide.
 2. **If the two overlap little**, the parallel track is earning its keep and becomes standing
    practice.
 
-Nobody has run either design, so this document has no measurement to report and neither outcome is
-predicted here.
+The 2026-09-04 Design A run confirmed four Claude subfindings it checked, rejected none of the
+checked claims, and found one record error the Claude review omitted. Because Design A is anchored
+to the Claude review, that result measures error-checking value but not independent overlap; it does
+not fill the four Design B buckets. No standing parallel-track decision has been made.
 
 ## Two designs, and why to try the anchored one first
 
@@ -70,8 +75,9 @@ will not look anywhere that review did not.
 found", and the series' output is heavily claims in `CLAUDE.md` and `doc/` that turned out to be
 wrong. And Design A is roughly a fifth of the work of Design B, so it tests the pairing cheaply.
 
-Design A does not need the blindness rule below, because it is anchored by construction. Everything
-from "Keep the two reviews blind" to the end of the reconciliation section applies to Design B only.
+Design A does not need the blindness rule below, because it is anchored by construction. The
+blindness section applies to Design B only. **Both designs require reconciliation**, but the
+reconciliation section below assigns that work differently for Design A and Design B.
 
 ## Keep the two reviews blind to each other
 
@@ -88,17 +94,28 @@ shown the rationale reports agreement with it.
 "Same anchors" means the same commit range in the same repositories, named explicitly, and the same
 starting commit for each repository the range covers.
 
-## Reconcile the two reviews into four buckets — do not merge them into one findings file
+## Reconcile both designs; use four buckets only for Design B
 
 Two findings files sitting side by side in `doc/` are worth nothing unless something compares them,
-because nobody will do it later. The comparison sorts every finding into one of four buckets.
+because nobody will do it later. Both designs therefore end with an explicit reconciliation, but
+the design decides who writes it and what the comparison can honestly claim.
+
+**Under Design A, the Codex reviewer writes the reconciliation before ending the Codex review.**
+Codex has read the Claude findings by design, and its two assigned questions already are the
+comparison: which Claude claims are false, and which commits the Claude review fails to account for.
+Once the Codex findings are stable, the same Codex session appends a short reconciliation recording
+the Claude claims it confirmed, the Claude claims it rejected, the omissions it found, and the
+Claude claims it did not independently check. A fresh session would add no independence to an
+anchored review and would discard the comparison context the Codex reviewer already has.
+
+**Under Design B, a fresh session sorts every finding into four buckets.**
 
 1. Both reviews found it.
 2. Only the Claude review found it.
 3. Only the Codex review found it.
 4. **The two reviews assert incompatible facts.**
 
-**Bucket 4 is the highest-value output of the whole arrangement.** It means at least one review is
+**Bucket 4 is the highest-value output of Design B.** It means at least one review is
 wrong about a re-derived figure, and it names exactly which figure to check by hand. A single
 merged set of findings dissolves bucket 4, because a merge has to pick a winner and does it
 silently. So the reconciliation tabulates the two reviews; it does not wrangle them into one.
@@ -111,30 +128,32 @@ void.** The doc-only replacement is to add a `## Reconciliation with the Codex r
 `doc/review-findings-<date>.md`, which is the file a reader is already in — the same reasoning that
 put the `State:` line there.
 
-Each finding in the reconciliation carries a disposition, written down: fixed, or rejected with the
-reason. Without that, an agent silently drops the findings it does not like and reports that it
-addressed the review.
+Each finding in the reconciliation ultimately carries a disposition, written down: fixed, or
+rejected with the reason. The initial comparison marks unresolved work as unfixed; the later pass
+replaces that state with the earned disposition. Without that record, an agent silently drops the
+findings it does not like and reports that it addressed the review.
 
-**The buckets are known at reconciliation; the dispositions are not, so expect two writes.** Sorting
-the findings into the four buckets needs nothing but the two findings files, and can be done the
-moment both are frozen. Whether a finding was *fixed* is knowable only once somebody has acted on
-it, which is normally a later pass — the same split the `State:` line already makes between a review
-and its `acted on <date>`. So the four-bucket table lands when the comparison runs, and each
-finding's disposition lands when the work is done. Do not hold the table back waiting for the
-dispositions, and do not write a disposition the work has not yet earned.
+**The comparison is known at reconciliation; the dispositions are not, so expect two writes.** The
+Design A comparison can be written when the Codex findings are stable; the Design B buckets can be
+written when both blind findings files are frozen. Whether a finding was *fixed* is knowable only
+once somebody has acted on it, which is normally a later pass — the same split the `State:` line
+already makes between a review and its `acted on <date>`. So the Design A comparison or Design B
+four-bucket table lands when the comparison runs, and each finding's disposition lands when the
+work is done. Do not hold the comparison back waiting for the dispositions, and do not write a
+disposition the work has not yet earned.
 
-**Run the reconciliation as a fresh, post-review task.** Start the task only after both the Claude
-and Codex findings files are complete and frozen. The task may read both files and append the
-four-bucket table and, on the later pass above, the dispositions to the Claude file, but it does not
-rewrite either agent's original findings. The reconciliation is comparison work, not a third review
-or a silent revision of either independent result.
+**Under Design B, run the reconciliation as a fresh, post-review task.** Start the task only after
+both the Claude and Codex findings files are complete and frozen. The task may read both files and
+append the four-bucket table and, on the later pass above, the dispositions to the Claude file, but
+it does not rewrite either agent's original findings. The reconciliation is comparison work, not a
+third review or a silent revision of either independent result.
 
-**"Fresh" means a session that wrote neither findings file** — not merely a new task inside one of
-the two reviewing sessions. The agent whose findings are under comparison must not be the one
-adjudicating bucket 4, which exists precisely because at least one of the two reviews is wrong
-there; an agent grading its own paper there will resolve it in its own favour without ever intending
-to. A session that watched either review being written is anchored to it and is not a reconciler
-either, for the same reason the two reviews are kept blind in the first place.
+For Design B, **"fresh" means a session that wrote neither findings file** — not merely a new task
+inside one of the two reviewing sessions. The agent whose findings are under comparison must not be
+the one adjudicating bucket 4, which exists precisely because at least one of the two reviews is
+wrong there; an agent grading its own paper there will resolve it in its own favour without ever
+intending to. A session that watched either review being written is anchored to it and is not a
+reconciler either, for the same reason the two reviews are kept blind in the first place.
 
 ## Name the Codex file `doc/codex-review-findings-<date>.md`, and do not rename the Claude series
 
@@ -234,8 +253,9 @@ misses.
 
 ## Provenance and caveat
 
-The recommendation recorded here was made by Claude on 2026-09-01 and is written down unrun as a
-pairing for the periodic review series.
+The recommendation recorded here was made by Claude on 2026-09-01. Design A was first run on
+2026-09-04, in `doc/review-findings-2026-09-04.md` and
+`doc/codex-review-findings-2026-09-04.md`; Design B remains unrun.
 
 **Its claim that Codex had never been run on this machine was false, and is corrected here.** The
 2026-09-01 session said so, this document repeated it on 2026-09-03, and a `git worktree list` that
@@ -263,4 +283,7 @@ reconciliation produces and where it goes but never who runs it or when, so the 
 a reviewing agent adjudicating its own bucket 4. Claude then added the two-writes paragraph and the
 "fresh means a session that wrote neither findings file" paragraph. **Ben supplied the turn between
 each round, which is the only reason this was convergence rather than the unattended ping-pong this
-document warns against** — neither agent ever answered the other directly.
+document warns against** — neither agent ever answered the other directly. Ben's decision,
+2026-09-04: that fresh-session safeguard belongs to Design B, where bucket 4 compares independent
+reviews. Under Design A, the Codex review is the comparison, so the Codex reviewer writes the short
+reconciliation while the comparison context is still present.
