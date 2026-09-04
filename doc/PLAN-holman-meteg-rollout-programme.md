@@ -453,8 +453,8 @@ In order:
    verses**: both `out/diff_mamws_mamgo.json` and
    `out/diff_mamws_mamgo-auto-edits.json` are `[]`, and
    `out/mam-ws-bot/proto-misc/modified-chapters.json` is `[]` with them. The
-   eleven deferred edits stay invisible, both sides lacking them equally, as the
-   section below this item predicts.
+   eleven edits whose download is deferred stay invisible, both sides lacking
+   them equally, as the section below this item predicts.
 6. `py/main_0_mega.py` from the repository root, from scratch. Regenerates
    MAM-parsed, MAM-simple, MAM-with-doc, MAM-for-Sefaria, MAM-OSIS, and this
    repository's own `out/` and `gh-pages/`. **Done 2026-09-04, and see the
@@ -494,12 +494,23 @@ differences. **Prefer running the mega from the primary clone.** If it must run
 from a worktree, check `.claude/worktrees/` for stray sibling directories
 afterwards, every time.
 
-### Eleven other Holman meteg edits are live on Wikisource and absent from this snapshot — deferred 2026-09-03
+### Eleven other Holman meteg edits are live on Wikisource and absent from this snapshot — their DOWNLOAD deferred 2026-09-03
 
-**Ben's decision, 2026-09-03: leave them for later.** They are recorded here so
-the gap is not lost. Nothing in items 5 through 7 waits on them: both sides of
-the wsgo comparison lack the eleven equally, so the pipeline stays consistent
-without them.
+**Ben's decision, 2026-09-03: leave their download for later.** They are
+recorded here so the gap is not lost. Nothing in items 5 through 7 waits on
+them: both sides of the wsgo comparison lack the eleven equally, so the pipeline
+stays consistent without them.
+
+**SAY WHAT WAS DEFERRED, BECAUSE IT IS NOT THE EDITS.** Ben's correction,
+2026-09-04, of a report that had called these "the eleven deferred Wikisource
+edits": that phrasing *"was alarming and misleading. The edits to Wikisource
+were not deferred, it is their incorporation into MAM-basics (and propagation
+elsewhere from there) that was deferred."* All eleven edits are **live and
+finished on Hebrew Wikisource**, made between 2026-08-30 and 2026-08-31.
+Deferred is their download into `in/mam-ws/` and their propagation onward from
+there. A short label that attaches "deferred" to the edits reads as though the
+edits themselves were still owing on the wiki, which would be a different and
+much worse state of affairs.
 
 Between 2026-08-30 and 2026-08-31 Seth (Avi) Kadish made **twelve** meteg edits
 to MAM on Hebrew Wikisource, each credited in the MAM change log to Daniel
