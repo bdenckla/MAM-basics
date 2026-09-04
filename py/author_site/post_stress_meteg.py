@@ -104,14 +104,36 @@ _TYPE_CODES = {
 }
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
+_CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
+_CASE_TABLE_CLASS = "post-stress-meteg-cases-table"
+_CASE_STRIPED_ROW_CLASS = "post-stress-meteg-cases-striped-row"
+_FOLLOWING_CHANTED_WORD_CLASS = "post-stress-meteg-following-chanted-word"
 _CASE_FILTER_SCRIPT = f"""<script>
 const typeFilter = document.getElementById("{_CASE_TYPE_FILTER_ID}");
 const caseRows = document.querySelectorAll("#{_CASE_TABLE_ID} tr[data-type]");
-typeFilter.addEventListener("change", () => {{
+const selectedCount = document.getElementById("{_CASE_SELECTED_COUNT_ID}");
+
+function updateCaseRows() {{
+  let visibleCount = 0;
   for (const row of caseRows) {{
-    row.hidden = typeFilter.value !== "all" && row.dataset.type !== typeFilter.value;
+    const isSelected = typeFilter.value === "all" || row.dataset.type === typeFilter.value;
+    row.hidden = !isSelected;
+    row.classList.toggle(
+      "{_CASE_STRIPED_ROW_CLASS}",
+      isSelected && visibleCount % 2 === 1,
+    );
+    if (isSelected) {{
+      visibleCount += 1;
+    }}
   }}
+  selectedCount.textContent = "Showing " + visibleCount + " row" +
+    (visibleCount === 1 ? "" : "s") + ".";
+}}
+
+typeFilter.addEventListener("change", () => {{
+  updateCaseRows();
 }});
+updateCaseRows();
 </script>
 """
 
@@ -588,20 +610,34 @@ def _case_type_cell(kind: str) -> object:
     return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
 
 
+def _case_chanted_word_cell(record: dict) -> tuple:
+    """The case's MAM form, with its required following chanted word demoted."""
+    current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
+    kind = record["structural_type"]
+    if kind not in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL):
+        return current
+    return (
+        *current,
+        " ",
+        mb_html.span(
+            ("[", _following_example(record, kind), "]"),
+            {"class": _FOLLOWING_CHANTED_WORD_CLASS},
+        ),
+    )
+
+
 def _case_row(record: dict) -> object:
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
-            mb_html.table_datum(
-                _hebrew_cell(record["mam_form"] or record["chanted_word"]), _HEBREW_CELL
-            ),
+            mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
             mb_html.table_datum(_case_type_cell(record["structural_type"])),
         ),
         {"data-type": _case_type_code(record["structural_type"])},
     )
 
 
-def _case_type_filter() -> object:
+def _case_type_filter(case_count: int) -> object:
     options = (
         ("all", "All types"),
         *((code, f"Type {code}") for code, _gloss in _TYPE_CODES.values()),
@@ -612,7 +648,9 @@ def _case_type_filter() -> object:
     )
     return mb_html.raw_html(
         f'<p><label for="{_CASE_TYPE_FILTER_ID}">Show </label>'
-        f'<select id="{_CASE_TYPE_FILTER_ID}">{option_html}</select>.</p>\n'
+        f'<select id="{_CASE_TYPE_FILTER_ID}">{option_html}</select>. '
+        f'<output id="{_CASE_SELECTED_COUNT_ID}" aria-live="polite">'
+        f"Showing {case_count:,} rows.</output></p>\n"
     )
 
 
@@ -629,12 +667,15 @@ def build_cases_body(survey: dict) -> list:
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
             " text."
         ),
-        _case_type_filter(),
+        _para(
+            "For types 1 and 2, the following chanted word is shown in gray square brackets."
+        ),
+        _case_type_filter(len(rows)),
         _table(
             headers,
             rows,
             {
-                "class": "accent-pair-table post-stress-meteg-table",
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
                 "id": _CASE_TABLE_ID,
             },
         ),

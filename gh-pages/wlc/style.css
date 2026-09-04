@@ -34,6 +34,16 @@ body.centered-page table {
    the 14pt body; these table cells need about 24pt for their vowels and accents to remain
    readable. The class confines the larger size to this page's Hebrew table data. */
 table.post-stress-meteg-table td[dir="rtl"] [lang="hbo"] { font-size: 170%; }
+/* The individual-cases table has a client-side type filter.  Its stripe follows the visible
+   row number, not the row's original place in the corpus, so selecting a type never leaves a
+   misleading first gray row or a sequence of rows all in the same shade. */
+table.post-stress-meteg-cases-table tr td { background-color: transparent; }
+table.post-stress-meteg-cases-table tr.post-stress-meteg-cases-striped-row td {
+    background-color: light-dark(#eee, #2b2b2b);
+}
+/* The following chanted word supplies the context for types 1 and 2.  It remains legible in
+   both color schemes while looking secondary to the chanted word whose meteg is surveyed. */
+span.post-stress-meteg-following-chanted-word { color: light-dark(#666, #aaa); }
 @font-face {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");
