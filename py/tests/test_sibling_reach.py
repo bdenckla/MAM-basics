@@ -160,10 +160,6 @@ SIBLINGS_REACHED: dict[str, str] = {
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
     ),
-    "diffable-pointed-hebrew": (
-        "A vendoring-audit destination in in/vendoring_policy.json, reached by"
-        " vendoring/ and by tests/test_vendoring_policy_paths.py."
-    ),
     "wlc-utils": (
         "redirect_stubs/stubs.py only, to publish the frozen redirect stubs."
         "  CLAUDE.md: the clone belongs on no machine, and that one-time program"

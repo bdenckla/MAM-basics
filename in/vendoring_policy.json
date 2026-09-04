@@ -35,19 +35,6 @@
         ]
       }
     },
-    "diffable-pointed-hebrew": {
-      "comment": "Unmeasured rather than stale, and the only repo in that category: nobody has looked at how far these eight files have drifted. doc/PLAN-evacuate-public-repos-programme.md's Appendix B is the statement -- seven read DIFFERS and one eol-only, no copy script has ever refreshed them, and it calls that a bug of unknown size rather than an abandoned copy, with the fix being to give the repo a main_update_vendored_files.py and get the rows to identical/copy_script. Changed from stale on 2026-08-07 (#60).",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "unmeasured",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "mb_cmn"
-        ]
-      }
-    },
     "MAM-private": {
       "comment": "IGNORED SINCE 2026-09-04: nothing here measures MAM-private any more, and no MAM-basics program resolves that clone on account of this file. Ben's decision that day, on being shown that vendoring-audit was the second of the two py/main_0_mega.py steps requiring the private clone (the first being near-aleppo-census, whose removal MAM-private/doc/PLAN-mam-private-mega.md carries): 'The lack of vendoring audit of MAM-private is a cost worth the benefit of decoupling MAM-basics from MAM-private.' Three readers stop reaching the clone with this flag: discover.discover_relationships skips an ignored repo before _scanned_dest_paths touches the disk, discover.provenance_dest_repos filters it out, and py/tests/test_vendoring_policy_paths.py excludes it from both of its parametrize lists -- so the suite is decoupled as well as the mega. WHAT MAM-PRIVATE STILL VENDORS, recorded here because ignoring it is what stops this file recording it as rows: mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, 16 files, copied by MAM-private/mgketer/py/main_update_vendored_files.py by intersection with this repo's py/mb_cmn and py/mb_diff_mpu; and al-hatorah/py/mb_cmn, 28 files, copied by MAM-private/al-hatorah/py/main_update_vendored_files.py. All 44 read identical when last measured -- mgketer at 0a3f1509, al-hatorah at 62d6f3e3. Those copies are maintained by those two scripts alone now, and drift in them will not surface here. THE TWO OVERRIDES THAT LEFT WITH THIS ENTRY named mgketer/py/python_modules/my_diffs.py and mgketer/py/python_modules/uni_denorm.py, stale copies of mb_cmn files that no copy script reaches and that both read DIFFERS; repo_policy._load_override rejects an override targeting an ignored repo, so they could not stay. Their one effect beyond the audit was the black sweep's --extend-exclude, through repo_util/maintenance_policy.py's vendored_overrides, and losing it changes nothing today: both files are black-clean at 26.5.1 defaults, measured 2026-09-04. The whole-package copies keep their exclusion either way, that one being derived from global.source_pkg_dirs by directory name rather than from this section. IGNORED RATHER THAN DELETED, unlike the four frozen repos dropped on 2026-08-07, because MAM-private's clone stays on disk and only the audit of it is being given up: an entry preserves this paragraph, and gen_inventory names the ignored repos in the inventory's footer, so the exclusion reads as a decision in the tracked artifact instead of as an absence.",
       "ignore": true,

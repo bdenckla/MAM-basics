@@ -537,6 +537,17 @@ The `../wlc-utils` paths in `doc/`'s plans are execution records of what was tru
 ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
 citations too.
 
+## diffable-pointed-hebrew is local under `diffable-pointed-hebrew/`
+
+The completed Phase 4 lane of
+`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moves the former
+diffable-pointed-hebrew product's samples and its nine short Unicode-name assignments under
+`diffable-pointed-hebrew/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
+MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
+is deliberately absent from `all-repos.code-workspace`, `repo_visibility`, and vendoring audit
+configuration. The source repository keeps its history as a dated breadcrumb; Ben decides whether
+the source repository is archived after the breadcrumb is verified.
+
 ## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
 
 **holman-ketiv-qere is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any
@@ -633,8 +644,8 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 ```
 
 **In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Ten test
-files read five sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, MAM-private
-and diffable-pointed-hebrew — and `paths.repos_root()` resolves those under the
+files read four sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, and MAM-private — and
+`paths.repos_root()` resolves those under the
 worktree's own parent, `.claude/worktrees/`, where none of them is. A fresh primary
 checkout run after the Leningrad move passed **975 passed, 5 skipped, 65 subtests**
 on 2026-09-03.

@@ -1,28 +1,3 @@
 {
-  "repos": [
-    {
-      "repo": "diffable-pointed-hebrew",
-      "scanned_dirs": [
-        ".",
-        "mb_cmn"
-      ],
-      "found_provenance_docs": [],
-      "copy_scripts": [],
-      "mb_cmn_dirs": [
-        {
-          "path": "mb_cmn",
-          "files": [
-            "cantsys.py",
-            "file_io.py",
-            "hebrew_accents.py",
-            "hebrew_letters.py",
-            "hebrew_points.py",
-            "hebrew_punctuation.py",
-            "str_defs.py",
-            "uni_heb.py"
-          ]
-        }
-      ]
-    }
-  ]
+  "repos": []
 }

@@ -1,5 +1,0 @@
-
-=== diffable-pointed-hebrew ===
-  provenance docs: none
-  copy scripts: none found
-  mb_cmn dir (mb_cmn): ['cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py', 'uni_heb.py']

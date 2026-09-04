@@ -24,10 +24,8 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | eol-only |
 | osis_handlers.py, osis_namespace.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | eol-only |
 | osis_index_html.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
-| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | identical |
-| file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
 
-*9 rows, 51 files. Not audited: MAM-private.*
+*7 rows, 43 files. Not audited: MAM-private.*
 
 ## Intentionally non-vendored
 
