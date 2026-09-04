@@ -73,6 +73,8 @@ POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
 POST_STRESS_METEG_TITLE = "Meteg after the primary stress"
 POST_STRESS_METEG_CASES_FNAME = "post-stress-meteg-cases.html"
 POST_STRESS_METEG_CASES_TITLE = "Meteg after the primary stress: individual cases"
+POST_STRESS_METEG_TYPE_2_FNAME = "post-stress-meteg-type-2.html"
+POST_STRESS_METEG_TYPE_2_TITLE = "Meteg after the primary stress: type 2 cases"
 
 # The identifier of that page's section on Holman suggestion M23.  Here rather than in the
 # page module because two trees want it: py/author_site/post_stress_meteg.py emits it, and
@@ -80,7 +82,7 @@ POST_STRESS_METEG_CASES_TITLE = "Meteg after the primary stress: individual case
 # would otherwise have to import the page module, which reaches the whole accgram survey.
 POST_STRESS_METEG_M23_ID = "m23-isaiah-23-12"
 
-# The stylesheet both pages at the deploy root link, hand-written and tracked as
+# The stylesheet all three pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face

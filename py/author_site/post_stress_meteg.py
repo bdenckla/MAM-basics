@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page and its individual-case table.
+r"""MAM's metegs after the primary stress: the main page and two case tables.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -39,6 +39,7 @@ from accgram import post_stress_meteg as psm
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
+from mb_cmn import hebrew_letters as hl
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
@@ -49,6 +50,8 @@ _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
 _CASES_FNAME = site_data.POST_STRESS_METEG_CASES_FNAME
 _CASES_TITLE = site_data.POST_STRESS_METEG_CASES_TITLE
+_TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
+_TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 
 # The M23 card's link lands here, so the identifier is half of that card's href and cannot be
@@ -108,6 +111,14 @@ _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
 _CASE_TABLE_CLASS = "post-stress-meteg-cases-table"
 _CASE_STRIPED_ROW_CLASS = "post-stress-meteg-cases-striped-row"
 _FOLLOWING_CHANTED_WORD_CLASS = "post-stress-meteg-following-chanted-word"
+_TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
+_TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
+_TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
+_TYPE_2_FOLLOWING_GROUPS = ("lamed", "nun", "misc")
+_TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
+    hl.LAMED: "lamed",
+    hl.NUN: "nun",
+}
 _CASE_FILTER_SCRIPT = f"""<script>
 const typeFilter = document.getElementById("{_CASE_TYPE_FILTER_ID}");
 const caseRows = document.querySelectorAll("#{_CASE_TABLE_ID} tr[data-type]");
@@ -136,12 +147,41 @@ typeFilter.addEventListener("change", () => {{
 updateCaseRows();
 </script>
 """
+_TYPE_2_FILTER_SCRIPT = f"""<script>
+const followingFilter = document.getElementById("{_TYPE_2_FOLLOWING_FILTER_ID}");
+const type2Rows = document.querySelectorAll("#{_TYPE_2_TABLE_ID} tr[data-following-initial]");
+const type2SelectedCount = document.getElementById("{_TYPE_2_SELECTED_COUNT_ID}");
+
+function updateType2Rows() {{
+  let visibleCount = 0;
+  for (const row of type2Rows) {{
+    const isSelected = followingFilter.value === "all" ||
+      row.dataset.followingInitial === followingFilter.value;
+    row.hidden = !isSelected;
+    row.classList.toggle(
+      "{_CASE_STRIPED_ROW_CLASS}",
+      isSelected && visibleCount % 2 === 1,
+    );
+    if (isSelected) {{
+      visibleCount += 1;
+    }}
+  }}
+  type2SelectedCount.textContent = "Showing " + visibleCount + " row" +
+    (visibleCount === 1 ? "" : "s") + ".";
+}}
+
+followingFilter.addEventListener("change", () => {{
+  updateType2Rows();
+}});
+updateType2Rows();
+</script>
+"""
 
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str]:
-    """Write the main page and the individual-case page.  Returns both paths.
+) -> tuple[str, str, str]:
+    """Write the main page and the two case pages.  Returns all three paths.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -154,6 +194,7 @@ def gen_html_files(
     return (
         _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
+        _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
     )
 
 
@@ -170,7 +211,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write both pages and return the main page's path for older callers."""
+    """Write all three pages and return the main page's path for older callers."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -263,6 +304,11 @@ def pin_claims(survey: dict) -> None:
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
     ), "the structural types do not partition the post-stress records"
+    type_2_records = _type_2_records(survey)
+    assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
+    assert {_type_2_following_group(record) for record in type_2_records} <= set(
+        _TYPE_2_FOLLOWING_GROUPS
+    )
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
@@ -586,6 +632,7 @@ def _by_type(survey: dict) -> list:
 
 def _case_list_link(survey: dict) -> list:
     """The main page's link to the long list of individual cases."""
+    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     return [
         mb_html.para(
             (
@@ -594,6 +641,14 @@ def _case_list_link(survey: dict) -> list:
                     f"{len(survey['post_stress']):,} individual cases", _CASES_FNAME
                 ),
                 " are listed separately and can be filtered by type.",
+            )
+        ),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(f"{type_2_count:,} type 2 cases", _TYPE_2_FNAME),
+                " have a separate table whose filter uses the following chanted word's"
+                " initial consonant.",
             )
         ),
     ]
@@ -654,6 +709,97 @@ def _case_type_filter(case_count: int) -> object:
     )
 
 
+def _type_2_records(survey: dict) -> list[dict]:
+    """The survey's type-2 records, in the corpus's order."""
+    return [
+        record
+        for record in survey["post_stress"]
+        if record["structural_type"] == psm.TYPE_GUTTURAL
+    ]
+
+
+def _type_2_following_group(record: dict) -> str:
+    """The type-2 filter group set by the following chanted word's first consonant."""
+    following = record["following_mam_form"]
+    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
+    letters = hl.letters(following)
+    assert letters, f"{record['bcv']}: no Hebrew letter in following MAM chanted word"
+    initial = letters[0]
+    return _TYPE_2_FOLLOWING_GROUP_BY_INITIAL.get(initial, "misc")
+
+
+def _type_2_case_row(record: dict) -> object:
+    return mb_html.table_row(
+        (
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(
+                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                _HEBREW_CELL,
+            ),
+            mb_html.table_datum(
+                _following_example(record, psm.TYPE_GUTTURAL), _HEBREW_CELL
+            ),
+        ),
+        {"data-following-initial": _type_2_following_group(record)},
+    )
+
+
+def _type_2_following_filter(case_count: int) -> object:
+    options = (
+        ("all", "All type 2 cases"),
+        ("lamed", "Followed by lamed"),
+        ("nun", "Followed by nun"),
+        ("misc", "Followed by another consonant"),
+    )
+    option_html = "".join(
+        f'<option value="{value}">{label}</option>' for value, label in options
+    )
+    return mb_html.raw_html(
+        f'<p><label for="{_TYPE_2_FOLLOWING_FILTER_ID}">Show </label>'
+        f'<select id="{_TYPE_2_FOLLOWING_FILTER_ID}">{option_html}</select>. '
+        f'<output id="{_TYPE_2_SELECTED_COUNT_ID}" aria-live="polite">'
+        f"Showing {case_count:,} rows.</output></p>\n"
+    )
+
+
+def build_type_2_body(survey: dict) -> list:
+    """The type-2 cases, grouped by the following chanted word's initial consonant."""
+    rows = [_type_2_case_row(record) for record in _type_2_records(survey)]
+    return [
+        mb_html.heading_level_1(_TYPE_2_TITLE),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(_TITLE, _FNAME),
+                " or the ",
+                mb_html.anchor_h(_CASES_TITLE.lower(), _CASES_FNAME),
+                ".",
+            )
+        ),
+        mb_html.heading_level_2("Every type 2 case in MAM"),
+        _para(
+            "Every row has a final guttural closing the last syllable of the first"
+            " chanted word. The following chanted word has a separate column because its"
+            " initial consonant selects the filter group."
+        ),
+        _para(
+            "Yeivin §354 says this mark is sometimes used when the following chanted word"
+            " begins with lamed or nun. The filter separates those two initial consonants"
+            " from all others."
+        ),
+        _type_2_following_filter(len(rows)),
+        _table(
+            ("Verse", "Chanted word", "Following chanted word"),
+            rows,
+            {
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
+                "id": _TYPE_2_TABLE_ID,
+            },
+        ),
+        mb_html.raw_html(_TYPE_2_FILTER_SCRIPT),
+    ]
+
+
 def build_cases_body(survey: dict) -> list:
     """The individual cases, outside the main page's explanatory sections."""
     headers = ("Verse", "Chanted word", "Type")
@@ -668,6 +814,13 @@ def build_cases_body(survey: dict) -> list:
             " text."
         ),
         _para("For types 1 and 2, the following chanted word is shown in gray."),
+        mb_html.para(
+            (
+                "Type 2 has a ",
+                mb_html.anchor_h("separate table", _TYPE_2_FNAME),
+                " filtered by the following chanted word's initial consonant.",
+            )
+        ),
         _case_type_filter(len(rows)),
         _table(
             headers,
