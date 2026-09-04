@@ -11,11 +11,13 @@ steps wrote into the wlc-utils clone until 2026-08-12, when the corpus came home
 (doc/PLAN-evacuate-the-rest-of-wlc-utils.md, Phases 3 and 5) -- so THE WLC HALF no
 longer writes outside the checkout it runs in.
 
-PREFER RUNNING THIS FROM THE PRIMARY CLONE: A WORKTREE RUN MISDIRECTS TWO STEPS,
-SILENTLY.  This paragraph said until 2026-09-04 that the mega "no longer writes
-outside the checkout it runs in, which is what makes a worktree run of it
-isolated".  The first half is true of the wlc half alone, and the conclusion was
-false of the pipeline as a whole: the steps named above write into five sibling
+RUN THIS FROM THE PRIMARY CLONE: A RUN THAT WOULD MISDIRECT TWO STEPS IS REFUSED
+BEFORE THE FIRST STEP, by _refuse_if_sibling_writes_are_misdirected() below.
+Until that guard was added on 2026-09-04, such a run proceeded, silently.  This
+paragraph said until that same day that the mega "no longer writes outside the
+checkout it runs in, which is what makes a worktree run of it isolated".  The
+first half is true of the wlc half alone, and the conclusion was false of the
+pipeline as a whole: the steps named above write into five sibling
 repositories by design, and two of them find those siblings by a path relative to
 the CURRENT WORKING DIRECTORY rather than through mb_cmn/paths.  mb_misc/
 write_utils.py builds its destination as f"../{mam_for_xxx}", and CLAUDE.md lists
@@ -32,13 +34,16 @@ MAM-for-Sefaria files went to the phantom siblings; mam-osis and the accgram
 steps then read the REAL MAM-simple, still stale, so MAM-OSIS came out unchanged
 where it should have moved; and the run exited 0.  Nothing wrong was written --
 the misdirected output is correct content in the wrong directory -- so a repair
-is to copy it across and re-run with --resume-from mam-osis.  If this must run
-from a worktree, check .claude/worktrees/ for stray sibling directories
-afterwards, every time.
+is to copy it across and re-run with --resume-from mam-osis.  THE GUARD COVERS
+THIS ENTRY POINT ONLY: py/main_mam_simple.py and py/main_mam4sef.py, run
+directly, reach the same two writes and still misdirect from a worktree -- so
+after running one of those, check .claude/worktrees/ for stray sibling
+directories.
 """
 
 import argparse
 from dataclasses import dataclass
+from pathlib import Path
 import subprocess
 import sys
 from typing import Callable
@@ -82,6 +87,105 @@ from subcommands import ws_bot_proto
 from wlc_cmn.utf8_io import force_utf8_io
 
 _REPOS = paths.repos_root()
+
+# The two products this pipeline writes through mb_misc/write_utils.py's bkg_path,
+# whose destination is built relative to the current working directory instead of
+# through mb_cmn/paths: MAM-simple because py/main_mam_simple.py's _VARIANT_COMMON
+# sets "variant-mam-for-xxx" to it, MAM-for-Sefaria because
+# py/mb_sefaria/mam4sef_or_ajf.py sets no such key and takes bkg_path's default.
+# Every OTHER sibling the mega writes -- MAM-parsed, MAM-with-doc, MAM-OSIS,
+# MAM-private -- goes through paths.sibling_repo or a subprocess cwd built off
+# _REPOS, and is therefore already steered by REPOS_ROOT and REPO_<NAME>_DIR.
+_CWD_RELATIVE_WRITE_TARGETS = ("MAM-simple", "MAM-for-Sefaria")
+
+# Spelled out because the refusal has to name a working directory that is NOT the one
+# the run is in, and nothing about the wrong checkout yields the right one.
+_PRIMARY_CLONE = "C:/Users/BenDe/GitRepos/MAM-basics"
+
+
+def _refuse_if_sibling_writes_are_misdirected():
+    """Raise unless the two cwd-relative sibling writes land where mb_cmn/paths says.
+
+    TEMPORARY, AND TO BE DELETED RATHER THAN MAINTAINED.  What it guards is the defect
+    this module's docstring records, and the fourth stage of
+    doc/PLAN-evacuate-public-repos-programme.md -- its section "Fourth stage -- the
+    five MAM products, total evacuation" -- is what removes the defect: once
+    MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS and MAM-for-Sefaria are inside
+    MAM-basics, the mega writes no sibling at all, bkg_path's f"../{mam_for_xxx}" has
+    nothing left to misdirect, and this function has nothing left to guard.  WHOEVER
+    LANDS THAT STAGE DELETES THIS FUNCTION, the two constants above it and its call in
+    main().  Do not update it to name whichever siblings remain.
+
+    IT RAISES RATHER THAN WARNS, which is the choice mb_cmn/paths.py's require_sibling
+    already makes, for the reason it gives: a sibling the code cannot find "IS A
+    MISCONFIGURATION, NOT A REASON TO CHECK LESS", and the failure should carry its own
+    fix.  A warning would go unread: the mega runs for minutes and prints throughout,
+    and the 2026-09-04 run that misdirected 376 files exited 0 -- so a warning early in
+    that log is precisely what nobody saw.
+
+    IT DOES NOT MAKE A WORKTREE RUN WORK, and that is deliberate.  bkg_path already
+    honours a "variant-output-root" key that would steer both products, and Ben decided
+    against setting it on 2026-09-04: his answer is to evacuate the sibling
+    repositories so that there is nothing left to misdirect, not to teach the mega a
+    second way to find them.
+
+    IT ASKS TWO QUESTIONS PER PRODUCT, AND AGREEMENT ALONE IS NOT ENOUGH.  The first is
+    whether write_utils and mb_cmn/paths name the same directory: they disagree whenever
+    the cwd's parent is not the siblings root paths.py computes, which is the
+    HALF-STEERED shape the 2026-09-04 incident had -- CLAUDE.md tells a worktree session
+    to set REPOS_ROOT, so the mega's other four write targets, MAM-parsed, MAM-with-doc,
+    MAM-OSIS and MAM-private, found the real siblings while these two products went to
+    directories under .claude/worktrees/ that the run created for them.  The
+    second question is whether the destination exists, which is require_sibling's own
+    test and is here because the first question does not cover the UNSTEERED worktree
+    run: measured 2026-09-04 from .claude/worktrees/sleepy-booth-17eff5 with REPOS_ROOT
+    unset, both spellings resolve to .claude/worktrees/MAM-simple and so AGREE, both
+    being wrong together, and a guard that asked only the first question passed that run
+    through.  Creating the destination is the whole defect -- 376 files landed in
+    directories the run made for them -- so a destination that is not already a clone is
+    refused.
+    """
+    problems = []
+    for name in _CWD_RELATIVE_WRITE_TARGETS:
+        cwd_relative = Path(f"../{name}").resolve()
+        through_paths = paths.sibling_repo(name).resolve()
+        if cwd_relative != through_paths:
+            fault = "write_utils and mb_cmn/paths disagree"
+        elif not cwd_relative.is_dir():
+            fault = "no such directory, so the run would CREATE it and write into it"
+        else:
+            continue
+        problems.append((name, cwd_relative, through_paths, fault))
+    if not problems:
+        return
+    lines = [
+        "refusing to run the mega: it would misdirect the sibling writes of "
+        + " and ".join(name for name, _, _, _ in problems)
+        + ", and nothing downstream of a misdirected write can see anything wrong."
+    ]
+    for name, cwd_relative, through_paths, fault in problems:
+        lines.append(f"  {name} -- {fault}:")
+        lines.append(f"    write_utils would write:   {cwd_relative.as_posix()}")
+        lines.append(f"    mb_cmn/paths would write:  {through_paths.as_posix()}")
+    lines.append(
+        "py/mb_misc/write_utils.py's bkg_path builds those two destinations as"
+        ' f"../{mam_for_xxx}", relative to the current working directory, and CLAUDE.md'
+        " keeps that file cwd-relative on purpose so that it stays portable when"
+        " vendored into a sibling.  It never calls mb_cmn/paths, so REPOS_ROOT and"
+        " REPO_<NAME>_DIR do not steer it and cannot fix this.  The working directory"
+        " is the fix -- run the mega from the primary clone:"
+    )
+    lines.append(f"    cd {_PRIMARY_CLONE}")
+    lines.append("    .venv/Scripts/python.exe py/main_0_mega.py")
+    lines.append(
+        "If the cwd IS already that clone, then the product clone itself is missing:"
+        " every one of them is a folder of all-repos.code-workspace, so clone the one"
+        " named above beside that clone.  (No path is offered for it here: the siblings"
+        " root this run would compute is the wrong one, which is the whole complaint.)"
+        "  This module's docstring records what a run from the wrong directory cost on"
+        " 2026-09-04."
+    )
+    raise RuntimeError("\n".join(lines))
 
 
 @dataclass(frozen=True)
@@ -460,6 +564,9 @@ def main():
         + ", ".join(_STEP_NAMES),
     )
     args = parser.parse_args()
+    # BEFORE the first step, and regardless of --resume-from: a misdirected run
+    # creates its wrong destinations, writes correct content into them and exits 0.
+    _refuse_if_sibling_writes_are_misdirected()
     resuming = args.resume_from is not None
     old_argv = sys.argv
     try:
