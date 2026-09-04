@@ -162,7 +162,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
         title,
         str(path),
         css_hrefs=(site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
-        body_class="centered-page",
+        body_class="centered-page post-stress-meteg-page",
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(body, write_ctx)
