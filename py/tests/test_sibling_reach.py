@@ -63,6 +63,16 @@ does not drift when a file is edited, and every entry carries its reason.  A sit
 scan cannot resolve to a repo name is a HARD FAILURE rather than a skip: it names the
 site and asks for an entry, so an unrecognized new mechanism cannot pass quietly.
 
+AND A SUPPRESSION WHOSE SITE IS GONE IS ITSELF A WEAKENING -- one nobody can see, since
+the lint goes on passing while the table goes on telling its reader about code that no
+longer exists.  On 2026-09-04 ``2e66268a`` removed the literal
+``"../book-of-job/gh-pages/jobn-details/"`` from ``main_map_changes_to_book_of_job.py``
+and had to remove that literal's ``_NOT_A_SIBLING_PATH`` entry by hand; left in, the
+entry would have sat there green.  So each consult point records the declared key it
+used, and ``test_every_declared_suppression_still_matches_a_site`` fails naming the keys
+nothing reached.  All FOUR declaration tables are covered -- see the comment above
+``_Consulted`` for why none of them is exempt.
+
 THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 
 * ``sibling_repo("X")`` / ``require_sibling("X", ...)`` -- the sanctioned API.
@@ -105,6 +115,7 @@ Run:
 from __future__ import annotations
 
 import ast
+import functools
 import json
 import re
 import subprocess
@@ -228,6 +239,88 @@ _SELF = "py/tests/test_sibling_reach.py"
 
 _REACH_CALLS = frozenset({"sibling_repo", "require_sibling"})
 _CWD_RELATIVE = re.compile(r"^\.\./([A-Za-z0-9][A-Za-z0-9._-]*)")
+
+
+# ---------------------------------------------------------------------------
+# THE DEAD-ENTRY CHECK.  Every consult point goes through the class below, which
+# records the declared key it used, so a declaration excusing a site the tree no
+# longer has is reported rather than sitting green.
+#
+# ALL FOUR TABLES ARE COVERED, not just ``_NOT_A_SIBLING_PATH``.  Each names a file
+# or a (file, name) pair, so each goes stale by the one mechanism -- the code it
+# names being edited or deleted -- and each is consulted at a point the scan reaches
+# whenever the site it names still exists.  So an unused key means a site that is
+# gone, never a live one that merely went unvisited, and neither
+# ``_INERT_RESOLVER_TESTS``, ``_DYNAMIC_NAME_SOURCES`` nor ``_PATHS_MODULE`` earns an
+# exemption.  ``_DYNAMIC_NAME_SOURCES`` is read on two separate paths, the paths-API
+# recognizer and the cwd-relative one, and a key hit on either counts.
+#
+# ``_PATHS_MODULE`` needed its consult point MOVED to earn this.  It used to be read
+# before ``_reaching_name_node`` had tested whether the division was rooted at
+# ``repos_root()``, so it fired on every division node in ``paths.py`` -- fifteen of
+# them on 2026-09-04, of which exactly one, ``repos_root() / name`` in
+# ``sibling_repo``, is the mechanism the entry exists to skip.  Recording a hit there
+# would have left the entry reading as used even with that line deleted, and a check
+# that cannot fail is not evidence.
+#
+# One ordering is worth knowing when this check does fire.  In the plain-literal
+# branch the vocabulary filter runs BEFORE ``_NOT_A_SIBLING_PATH``, so an entry for a
+# ``../X`` whose X has left both the roster and the reach set reads as dead -- which
+# is correct, nothing consults it any more, and that same removal fires the reach
+# assertion below in the same run.
+# ---------------------------------------------------------------------------
+class _Consulted:
+    """The declared suppression keys one scan used, one method per declaration table.
+
+    The methods exist so that no consult point spells a table's name as a free string:
+    a typo there would report a live key as dead, which is the very failure this class
+    is built to prevent.
+    """
+
+    def __init__(self) -> None:
+        self._used: set[tuple[str, object]] = set()
+
+    def not_a_sibling_path(self, rel: str, literal: str) -> bool:
+        """Is this (file, literal) declared to construct no sibling path?"""
+        if (rel, literal) not in _NOT_A_SIBLING_PATH:
+            return False
+        self._used.add(("_NOT_A_SIBLING_PATH", (rel, literal)))
+        return True
+
+    def dynamic_name_source(self, rel: str, ident: str) -> str | None:
+        """Where this site's repo names come from, if it is declared to have a source."""
+        source = _DYNAMIC_NAME_SOURCES.get((rel, ident))
+        if source is not None:
+            self._used.add(("_DYNAMIC_NAME_SOURCES", (rel, ident)))
+        return source
+
+    def inert_resolver_test(self, rel: str) -> bool:
+        """Do this file's reaching calls name no clone?"""
+        if rel not in _INERT_RESOLVER_TESTS:
+            return False
+        self._used.add(("_INERT_RESOLVER_TESTS", rel))
+        return True
+
+    def paths_module(self, rel: str) -> bool:
+        """Is this the resolver itself, whose ``repos_root() / name`` IS the mechanism?"""
+        if rel != _PATHS_MODULE:
+            return False
+        self._used.add(("_PATHS_MODULE", rel))
+        return True
+
+    def dead_entries(self) -> list[str]:
+        """Declared keys no site reached -- one line each, naming what to delete."""
+        declared: list[tuple[str, set[object]]] = [
+            ("_NOT_A_SIBLING_PATH", set(_NOT_A_SIBLING_PATH)),
+            ("_DYNAMIC_NAME_SOURCES", set(_DYNAMIC_NAME_SOURCES)),
+            ("_INERT_RESOLVER_TESTS", set(_INERT_RESOLVER_TESTS)),
+            ("_PATHS_MODULE", {_PATHS_MODULE}),
+        ]
+        out: list[str] = []
+        for table, keys in declared:
+            used = {key for name, key in self._used if name == table}
+            out.extend(f"{table}: {key!r}" for key in sorted(keys - used, key=repr))
+        return out
 
 
 def _tracked_py() -> list[tuple[str, Path]]:
@@ -414,18 +507,19 @@ def _scan_calls_and_joins(
     trees: dict[str, ast.Module],
     reached: dict[str, set[str]],
     problems: list[str],
+    consulted: _Consulted,
 ) -> None:
     """The paths-API and repos_root recognizers, over every tracked module."""
     dest_repos: set[str] | None = None
     for rel, tree in trees.items():
         aliases = _repos_root_aliases(tree)
         for node in ast.walk(tree):
-            name_node = _reaching_name_node(node, rel, aliases)
+            name_node = _reaching_name_node(node, rel, aliases, consulted)
             if name_node is None:
                 continue
             site = f"{rel}:{node.lineno}"
             if isinstance(name_node, ast.Constant) and isinstance(name_node.value, str):
-                if rel not in _INERT_RESOLVER_TESTS:
+                if not consulted.inert_resolver_test(rel):
                     reached.setdefault(name_node.value, set()).add(site)
                 continue
             ident = _ident_of(name_node)
@@ -435,7 +529,7 @@ def _scan_calls_and_joins(
                     " scan cannot resolve.  Add the site to _DYNAMIC_NAME_SOURCES."
                 )
                 continue
-            source = _DYNAMIC_NAME_SOURCES.get((rel, ident))
+            source = consulted.dynamic_name_source(rel, ident)
             if source == "vendoring-policy":
                 if dest_repos is None:
                     dest_repos = _vendoring_policy_dest_repos()
@@ -449,13 +543,15 @@ def _scan_calls_and_joins(
                     " _DYNAMIC_NAME_SOURCES saying where its names come from."
                 )
                 continue
-            if rel in _INERT_RESOLVER_TESTS:
+            if consulted.inert_resolver_test(rel):
                 continue
             for name in names:
                 reached.setdefault(name, set()).add(site)
 
 
-def _reaching_name_node(node: ast.AST, rel: str, aliases: set[str]) -> ast.expr | None:
+def _reaching_name_node(
+    node: ast.AST, rel: str, aliases: set[str], consulted: _Consulted
+) -> ast.expr | None:
     """The expression naming the repo, if ``node`` is a reaching site."""
     if isinstance(node, ast.Call):
         callee = node.func
@@ -464,15 +560,16 @@ def _reaching_name_node(node: ast.AST, rel: str, aliases: set[str]) -> ast.expr 
             return node.args[0]
         return None
     if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div):
-        if rel == _PATHS_MODULE:
-            return None
         left = node.left
         rooted = (isinstance(left, ast.Name) and left.id in aliases) or (
             isinstance(left, ast.Call)
             and (getattr(left.func, "attr", None) or getattr(left.func, "id", None))
             == "repos_root"
         )
-        if rooted:
+        # The resolver's own ``repos_root() / name`` is skipped only once the division
+        # is known to be rooted, so that _PATHS_MODULE records a hit on the mechanism
+        # rather than on any of paths.py's other divisions.  See _Consulted above.
+        if rooted and not consulted.paths_module(rel):
             return node.right
     return None
 
@@ -482,6 +579,7 @@ def _scan_cwd_relative(
     vocabulary: set[str],
     reached: dict[str, set[str]],
     problems: list[str],
+    consulted: _Consulted,
 ) -> None:
     """The cwd-relative recognizer -- the mechanism the survey's grep cannot see."""
     dynamic: set[str] | None = None
@@ -494,7 +592,7 @@ def _scan_cwd_relative(
                 match = _CWD_RELATIVE.match(node.value)
                 if match is None or match.group(1) not in vocabulary:
                     continue
-                if (rel, node.value) in _NOT_A_SIBLING_PATH:
+                if consulted.not_a_sibling_path(rel, node.value):
                     continue
                 reached.setdefault(match.group(1), set()).add(f"{rel}:{node.lineno}")
             elif isinstance(node, ast.JoinedStr):
@@ -502,10 +600,10 @@ def _scan_cwd_relative(
                 if not (isinstance(head, ast.Constant) and head.value == "../"):
                     continue
                 text = ast.unparse(node)
-                if (rel, text) in _NOT_A_SIBLING_PATH:
+                if consulted.not_a_sibling_path(rel, text):
                     continue
                 site = f"{rel}:{node.lineno}"
-                if _DYNAMIC_NAME_SOURCES.get((rel, text)) == "variant-mam-for-xxx":
+                if consulted.dynamic_name_source(rel, text) == "variant-mam-for-xxx":
                     if dynamic is None:
                         dynamic = _variant_mam_for_xxx_repos(trees)
                     for name in dynamic:
@@ -537,24 +635,41 @@ def _scan_cwd_relative(
                     reached.setdefault(name, set()).add(site)
 
 
-def _scan() -> tuple[dict[str, set[str]], list[str]]:
+@functools.lru_cache(maxsize=1)
+def _scan() -> tuple[dict[str, set[str]], list[str], list[str]]:
+    """The reach set, the sites the scan could not resolve, and the dead declarations.
+
+    Cached because both tests below want the same pass over the tree, and neither
+    mutates what it is handed.
+    """
     trees: dict[str, ast.Module] = {}
     for rel, path in _tracked_py():
         trees[rel] = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     reached: dict[str, set[str]] = {}
     problems: list[str] = []
-    _scan_calls_and_joins(trees, reached, problems)
+    consulted = _Consulted()
+    _scan_calls_and_joins(trees, reached, problems, consulted)
     vocabulary = _roster_names() | set(reached)
-    _scan_cwd_relative(trees, vocabulary, reached, problems)
-    return reached, problems
+    _scan_cwd_relative(trees, vocabulary, reached, problems, consulted)
+    return reached, problems, consulted.dead_entries()
 
 
 def _sites(reached: dict[str, set[str]], name: str) -> str:
     return ", ".join(sorted(reached.get(name, ())))
 
 
+def test_every_declared_suppression_still_matches_a_site() -> None:
+    _, _, dead = _scan()
+    assert not dead, (
+        "A declaration below excuses a site this tree no longer has.  Nothing consults"
+        " it, so the lint goes on passing while the table goes on describing code that"
+        " is gone -- a weakening of the check rather than a suppression of a false"
+        " positive.  Delete the entries:\n  " + "\n  ".join(dead)
+    )
+
+
 def test_sibling_reach_matches_the_declaration() -> None:
-    reached, problems = _scan()
+    reached, problems, _ = _scan()
     assert not problems, (
         "This scan found a sibling-reaching site it cannot resolve to a repo name,"
         " so the reach set is unknown rather than merely different.  Resolving it is"
