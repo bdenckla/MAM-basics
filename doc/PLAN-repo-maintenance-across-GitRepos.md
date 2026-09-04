@@ -369,9 +369,37 @@ against repos that have earned their docs. For doc/ files that are *not* plans, 
 the inbound-reference one that same section of `check_repo_standards.py` describes; note that
 the screen inverts on plans and must not be used on them.
 
-**This step was added 2026-08-29, so neither of the two runs recorded above included it** — the
-2026-08-07 and 2026-08-27 records describe a sweep of steps 1–5 only, and neither says anything
-about `doc/` either way.
+**7. Retire completed Codex task folders under
+`C:/Users/BenDe/Documents/Codex` — judgment work outside the Python CLI.** This is normal
+repository maintenance even though the folder is outside `GitRepos`, but it deliberately is **not**
+a new `main_repo_util.py` action: an automatic process cannot determine whether a task is active,
+whether an apparently obsolete clone carries unique unmerged work, or whether a multi-repository
+folder is a forest intended for a later handoff.
+
+Keep the `ReviewForests` root, whether it is empty or populated, and keep each active task folder.
+For a dated task folder that appears complete, distinguish these cases before retiring it:
+
+1. A reusable worktree forest has `review-manifest.json` at the forest root and Git worktrees at
+   the paths declared in that manifest. Read the manifest before running Git in any forest member.
+   A directory merely containing repository-named copies is not a forest.
+2. A linked worktree has a `.git` pointer file. A `.git` directory is a standalone clone, so check
+   its cleanliness, branch/ref state, and whether the checked-out commit is already preserved in
+   the primary clone or remote. A clone using `objects/info/alternates` can show dangling objects
+   that actually belong to the primary clone; verify its own object store before calling the clone
+   disposable.
+3. A Git-less `proposed/` copy set is a task artifact, not a forest. Once its changes are committed
+   and pushed, retain the commits and generated reports in their proper repositories rather than
+   retaining the copies.
+
+Move only verified completed task folders to the Windows Recycle Bin, record the exact paths and
+the evidence, and leave an ambiguous task folder in place. The Recycle Bin makes a mistake
+recoverable, but it does not free disk space until emptied. Do not delete the `Documents/Codex`
+root while an active task folder or the `ReviewForests` root remains.
+
+**The `doc/` sweep was added 2026-08-29, so neither of the two runs recorded above included the
+`doc/` sweep** — the 2026-08-07 and 2026-08-27 records describe steps 1–5 only. **The
+`Documents/Codex` task-folder step was added 2026-09-04, so neither historic run assessed those
+folders either.**
 
 ---
 
