@@ -48,6 +48,29 @@ HTML_START = "0119.html"
 LINES_PER_COLUMN = 28
 
 
+def _lc_text(lc, tag):
+    """The text of one <lc> sub-element, stripped of surrounding whitespace.
+
+    deep_compare() below compares these values against the quirkrecs as
+    strings, so a stray space makes two values that agree read as differing.
+    That is not hypothetical: across the 1398 changes of the seventeen
+    changes files under uxlc/in/UXLC-misc/, <column> has a trailing space
+    twice -- 2024.07.08 #6 and 2026.02.05 #63, both "1 " -- and #63 is in
+    this changeset, where it produced the sole LC COL issue. <folio> and
+    <line> are clean in all 1398; they are stripped here because they are
+    compared the same way, not on evidence of their own. "reftext" and
+    "changetext" below were already stripped where they are read.
+
+    Returning "" for a missing element also covers an element present with
+    no text, which the "lc_page" expression this replaced would have hit
+    with an AttributeError.
+    """
+    elem = lc.find(tag)
+    if elem is None or elem.text is None:
+        return ""
+    return elem.text.strip()
+
+
 def parse_xml_entries():
     tree = ET.parse(XML_PATH)
     root = tree.getroot()
@@ -68,19 +91,9 @@ def parse_xml_entries():
                         "desc": change.find("description").text or "",
                         "reftext": (change.find("reftext").text or "").strip(),
                         "changetext": (change.find("changetext").text or "").strip(),
-                        "lc_page": (
-                            lc.find("folio").text.replace("Folio_", "")
-                            if lc.find("folio") is not None
-                            else ""
-                        ),
-                        "lc_col": (
-                            lc.find("column").text
-                            if lc.find("column") is not None
-                            else ""
-                        ),
-                        "lc_line": (
-                            lc.find("line").text if lc.find("line") is not None else ""
-                        ),
+                        "lc_page": _lc_text(lc, "folio").replace("Folio_", ""),
+                        "lc_col": _lc_text(lc, "column"),
+                        "lc_line": _lc_text(lc, "line"),
                         "notes": notes,
                     }
                 )
