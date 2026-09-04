@@ -36,7 +36,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from accgram import post_stress_meteg as psm
-from accgram.almost_errors_html_shared import cos, itm, ref_abbrev, wrap_hebrew_runs
+from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
 from mb_cmn import paths
@@ -75,6 +75,9 @@ _POETIC = psm.SYSTEM_POETIC
 # every other form on the page.
 _M23_VERSE = "is23:12"
 _POST_SILLUQ_VERSE = "1s17:5"
+
+_ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
+_COS_GLOSS = "Breuer's The Cantillation of Scripture"
 
 # Yeivin and Breuer on each of the three types, and how each book grades it.  The pairing is
 # the M23 evidence note's, doc/holman-meteg-m23-isaiah-23-12.md; both books are cited for
@@ -223,6 +226,16 @@ def _excerpt_accounting() -> tuple[int, int]:
 # --- rendering helpers ---------------------------------------------------------
 
 
+def itm() -> object:
+    """The abbreviated book name, with Yeivin's title on hover."""
+    return mb_html.abbr("ITM", {"title": _ITM_GLOSS})
+
+
+def cos() -> object:
+    """The abbreviated book name, with Breuer's title on hover."""
+    return mb_html.abbr("CoS", {"title": _COS_GLOSS})
+
+
 def _para(text: str) -> object:
     """One paragraph, its pointed Hebrew runs wrapped so they take the Hebrew font."""
     return mb_html.para(wrap_hebrew_runs(text))
@@ -346,8 +359,8 @@ def _by_type(survey: dict) -> list:
         "Type",
         "Prose",
         "Poetic",
-        mb_html.abbr("ITM", {"title": "Introduction to the Tiberian Masorah"}),
-        mb_html.abbr("CoS", {"title": "The Cantillation of Scripture"}),
+        itm(),
+        cos(),
         "Example",
         "Following chanted word, if relevant",
     )
