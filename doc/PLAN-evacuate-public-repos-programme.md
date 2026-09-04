@@ -358,37 +358,33 @@ is one fewer worktree a task needs. Ben named holman-ketiv-qere and the codex-in
 next candidates, open to alternates; the assessment below is what was measured, and the four
 decisions under it are what he chose.
 
-### What still forces a forest — the sibling reach, measured 2026-09-02
+### What still forces a forest, and where the sibling reach is declared — `py/tests/test_sibling_reach.py`
 
-Every sibling MAM-basics reaches at run time, from a full sweep of `py/`. Resolution is always
-through `py/mb_cmn/paths.py`'s `sibling_repo` and `require_sibling`, honouring the
-`REPO_<NAME>_DIR` and `REPOS_ROOT` overrides — that override chain is what makes a forest runnable
-at all. Re-establish with `grep -rn "sibling_repo(\|require_sibling(" py/` and by reading the
-six `py/*_paths.py` modules and `py/repo_scopes.py`.
+**The hand-maintained survey and table that stood here HAVE BEEN REPLACED by a lint**,
+`py/tests/test_sibling_reach.py`, added 2026-09-04 in `bc36750c`. It declares, one entry per repo
+with the reason that repo is reached, every sibling clone tracked Python resolves a filesystem
+path into, and it fails naming any addition or removal together with the sites that caused it.
+**Read its module docstring before touching this subject**: it is the fullest statement of the
+design, of what counts as a reaching site and what is deliberately not one, and of the five
+mechanisms by which this tree names a sibling. **Do not copy its list back into this file.** The
+whole point of the change is that the list has exactly one home and that the suite goes red when
+the tree drifts from it, and a second copy here would be stale from the day it was written while
+still reading as authoritative.
 
-| Sibling | Test suite, at run time | Mega pipeline (`py/main_0_mega.py`) | Source lints | Ad hoc generators | Removed by |
-|---|---|---|---|---|---|
-| holman-ketiv-qere | `test_h_dot_below_nfc` scope | — | — (deliberately excluded, `py/repo_scopes.py`) | seven commands plus one, through `py/hkq_paths.py` | second stage, Phase 3 |
-| book-of-job | `test_h_dot_below_nfc` scope | `gen-misc-authored-english-documents` | `check_mark_order` corpus, `check_spelling_in_html`, `check_html_syntax_and_sanity` | `py/boj_paths.py`, and `py/uxlc_paths.py`'s `book_of_job_dir()` | second stage, Phase 4 |
-| UXLC-utils | `test_h_dot_below_nfc` scope; `clc_dual_cant_test` and `clc_kq_test` read `in/UXLC-39/*.xml` | `wlc-vendor-uxlc`, a self-copy once the tree is here | — | `py/main_uxlc_mega.py` (five steps), `main_clc.py`, `main_map_changes_to_book_of_job.py`, and `mb_cmn/paths.py`'s `uxlc_utils_dir()` (four call sites) | second stage, Phase 5 |
-| codex-index-aleppo | `test_h_dot_below_nfc` scope (26 files) | — | `check_mark_order` corpus (78 JSON) | `py/ac_paths.py`: thirteen entry points, eight `py_ac_loc/` modules, the shared `py_ac_word_image_helper/` | third stage |
-| codex-index-cam1753 | `test_h_dot_below_nfc` scope (14 files) | — | `check_mark_order` corpus (72 JSON) | `py/cam1753_paths.py`: nine entry points, `py_cam1753_loc/`, `py_cam1753_word_image/` | third stage |
-| codex-index-leningrad (evacuated) | MAM-basics scope, not a sibling scope | — | eight MAM-basics Leningrad modules | `py/lenin_paths.py`: `main_lenin_wikisource_page.py` | third stage, Phase 1 complete |
-| diffable-pointed-hebrew | `test_vendoring_policy_paths`, as a vendoring destination | `vendoring-audit` | — | `py/main_vendoring.py` | third stage, last lane |
-| MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — writes to all three, plus four `cwd=` subprocess steps in MAM-parsed and MAM-simple. **MAM-simple's CORPUS write goes through the same cwd-relative `../` literal in `py/mb_misc/write_utils.py`** that the row below names, `py/main_mam_simple.py`'s `_VARIANT_COMMON` setting `"variant-mam-for-xxx": "MAM-simple"`; this row said only "`cwd=` steps and writes" until 2026-09-04, and §"The sibling-reach table's two product rows HAVE BEEN CORRECTED" below records what that undercount cost | — | many | fourth stage |
-| MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through the cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope. **That literal routes MAM-simple too**, which this row did not say until 2026-09-04; `sibling_repo("MAM-for-Sefaria")` appears nowhere in `py/`, so the literal is this product's only route in | — | — | fourth stage |
-| MAM-private | `test_final_stress_vs_phonetic_mam`, `test_vendoring_policy_paths` | `near-aleppo-census`, `vendoring-audit` | — | one reader since 2026-09-02, `py/accgram/breuer_word_length.py` (phonetic data, read-only; the WLC-private snapshot read was severed that day) | **never**: private — but a read-only sibling needs no worktree, see "What forces a forest" below |
-| phonetic-hbo, Taamey_D, hbofonts, github-misc | no path reach at all — URLs and prose only | no | no | no | not candidates |
+Two things were wrong with what the lint replaced, both measured 2026-09-04:
 
-**So the suite on 2026-09-02 needs twelve working trees** — MAM-basics plus the eleven rows that
-tests reach — and the mega needs ten. After the second stage: suite nine. After the trio: **suite
-six** (MAM-basics, MAM-parsed, MAM-simple, MAM-with-doc, MAM-private, diffable-pointed-hebrew).
-After diffable-pointed-hebrew: **five**, and five is this stage's floor — four products consumed
-outside these repos, and MAM-private, which cannot be merged into a public MAM-basics. **What
-"single worktree" then means**: any task that neither regenerates a product nor runs the private
-census — accgram pages, the Holman review, the Job review, CLC, the codex indexes, most of the
-suite — runs in one worktree; a product regeneration needs the product's worktree beside it,
-for as long as the product lives in its own repo.
+1. **The survey method covered one of the five mechanisms and half of a second.** It was
+   `grep -rn "sibling_repo(\|require_sibling(" py/` plus a read of the `py/*_paths.py` modules and
+   `py/repo_scopes.py`. That grep cannot see a cwd-relative `"../<repo>"` literal at all, and
+   where the repo name is a variable it finds the line and cannot read a repo off it. The lint's
+   docstring enumerates all five under "THE FIVE MECHANISMS", and resolves each.
+2. **The table attributed `py/mb_misc/write_utils.py`'s cwd-relative literal to MAM-for-Sefaria
+   alone.** `py/main_mam_simple.py`'s `_VARIANT_COMMON` sets `"variant-mam-for-xxx"` to
+   `"MAM-simple"` and routes the identical `bkg_path` there, so that one site reaches **both**
+   products; the lint derives that rather than being told it, and records both. MAM-for-Sefaria
+   has no paths-API route at all — `sibling_repo("MAM-for-Sefaria")` appears nowhere in `py/` — so
+   that cwd-relative default is that product's only route in. §"The mega misdirected 376 files
+   from a worktree on 2026-09-04" below is what the undercount cost.
 
 **What forces a forest is writing to more than one repo, not reading from one** — settled by
 the wlc-utils plan's Phase 11 record, which ran the suite in a lone worktree: without
@@ -397,14 +393,38 @@ and with `REPOS_ROOT=C:/Users/BenDe/GitRepos` it was a first-class run, because 
 sibling repos and writes none". A read-only sibling is served by its primary clone through that
 override; a worktree of its own is owed only to a repo the task **writes**. So the count that
 decides whether a task needs a forest is its write targets, and evacuation converts a write into
-a data repo into a write into MAM-basics itself.
+a data repo into a write into MAM-basics itself. **What "single worktree" then means**: any task
+that neither regenerates a product nor runs the private census — accgram pages, the Holman
+review, the Job review, CLC, the codex indexes, most of the suite — runs in one worktree; a
+product regeneration needs the product's worktree beside it, for as long as the product lives in
+its own repo.
+
+**So the lint's set is wider than the forest question, and one is not a stand-in for the other.**
+The lint answers "what does tracked Python resolve a path into". That counts a redirect host —
+`py/redirect_stubs/stubs.py` resolves four of them, for a one-time publish program whose clones
+belong on no machine, the check that runs all the time (`py/tests/test_redirect_manifest.py`)
+needing none — and it counts a read-only sibling, which a primary clone serves through the
+`REPO_<NAME>_DIR` / `REPOS_ROOT` override chain. **The write targets are counted in §"What the
+stage buys — MAM-basics' own out-of-repo writes go from five to zero"**, which is this section's
+argument in its own currency and is the count to cite. This section carried a working-tree ladder
+derived by hand from the table's rows until 2026-09-04; it went with the table, and it is not
+coming back.
+
+**The replaced table's "Removed by" column HAS BEEN falsified, and the lint is what shows it.**
+That column predicted that the second stage's lanes would take holman-ketiv-qere, UXLC-utils and
+book-of-job out of the reach. All three lanes landed on 2026-09-03, and all three repos are still
+declared: `py/redirect_stubs/stubs.py` resolves each one to publish its frozen stubs, so **the
+redirect-stub route outlives the evacuation that removed everything else**. So a lane's value is
+counted in the worktrees it takes away from a task, not in entries it takes out of the lint's
+declaration.
 
 **Whether the products follow — an open question Ben put on 2026-09-02, and not decided.** The
-sentence above this one read "none of which can be merged into a public MAM-basics" until that
-afternoon, and Ben objected: an emptied repo with a `README.md` pointing at the new location, and
-a URL redirecting to `bdenckla.github.io/MAM-basics/<something>`, are both acceptable to him.
-He is right that nothing technical distinguishes the five products from the six repos of the
-second and third stages — the same lane, with a stub row per Pages site. What distinguishes
+working-tree ladder this section carried until 2026-09-04 said of the five products and
+MAM-private together that "none of which can be merged into a public MAM-basics", until the
+afternoon of 2026-09-02, when Ben objected: an emptied repo with a `README.md` pointing at the
+new location, and a URL redirecting to `bdenckla.github.io/MAM-basics/<something>`, are both
+acceptable to him. He is right that nothing technical distinguishes the five products from the
+six repos of the second and third stages — the same lane, with a stub row per Pages site. What distinguishes
 them is who consumes them, which the stub mechanism covers only in part. Measured 2026-09-02:
 
 | Product | Tracked | Its own README says | Cited by URL outside Ben's repos |
@@ -669,7 +689,9 @@ eventually"*. So the mega's write set after this stage is MAM-basics and MAM-pri
 the census leaves MAM-basics' mega, MAM-basics alone.
 
 **A miscount in the sentence this stage continues HAS BEEN corrected here rather than in place.**
-§"What still forces a forest — the sibling reach, measured 2026-09-02" closes: "After
+§"What still forces a forest, and where the sibling reach is declared" closed with a working-tree
+ladder until 2026-09-04, when that ladder went with the survey and table
+`py/tests/test_sibling_reach.py` replaced. The ladder's last sentence read: "After
 diffable-pointed-hebrew: **five**, and five is this stage's floor — four products consumed outside
 these repos, and MAM-private, which cannot be merged into a public MAM-basics." The enumeration two
 sentences earlier is right and the gloss is not: the five trees are MAM-basics, MAM-parsed,
@@ -678,8 +700,9 @@ and MAM-private, not four products and MAM-private. Re-measured 2026-09-04,
 `grep -rn "sibling_repo(\|require_sibling(" py/tests/` names MAM-parsed and MAM-simple only, and
 MAM-with-doc is reached indirectly by `py/tests/test_urwotm_difftext.py` through
 `urwotm_check/difftext.py`; **MAM-OSIS and MAM-for-Sefaria are in no test's reach at all**. The
-gloss is left as written there, that section being an execution record of what was measured on its
-day, and nothing downstream depends on the wrong reading.
+gloss is not there to fix any more — it went with the ladder on 2026-09-04 — so it is quoted here
+as the record of what that section said on its day, and nothing downstream depends on the wrong
+reading.
 
 **In the suite's currency this stage takes five trees to two, and both of the two are reads.**
 MAM-basics and MAM-private remain, and MAM-private is read-only here — `py/accgram/breuer_word_length.py`
@@ -719,11 +742,14 @@ Three things make this an argument rather than an anecdote:
 
 ### The sibling-reach table's two product rows HAVE BEEN CORRECTED — `write_utils` routes MAM-simple as well as MAM-for-Sefaria
 
-**Both rows of §"What still forces a forest — the sibling reach, measured 2026-09-02" have been
-corrected in place, in the commit that added this section.** The row for MAM-OSIS and
-MAM-for-Sefaria named the cwd-relative literal in `py/mb_misc/write_utils.py` and attributed it to
-MAM-for-Sefaria alone; the row above it, for MAM-parsed, MAM-simple and MAM-with-doc, did not
-mention it. **One function routes both products**, verified 2026-09-04 by reading two files:
+**Both rows of the sibling-reach table were corrected in place, in the commit that added this
+section, and the table itself HAS SINCE BEEN REPLACED** by `py/tests/test_sibling_reach.py`, later
+the same day — which derives the two products from the one function rather than being told them,
+so the correction is now a property of the code and not of a row anybody has to maintain. The row
+for MAM-OSIS and MAM-for-Sefaria named the cwd-relative literal in `py/mb_misc/write_utils.py` and
+attributed it to MAM-for-Sefaria alone; the row above it, for MAM-parsed, MAM-simple and
+MAM-with-doc, did not mention it. **One function routes both products**, verified 2026-09-04 by
+reading two files:
 
 * `py/mb_misc/write_utils.py`'s `bkg_path` builds `repo_root = f"../{mam_for_xxx}"` from
   `variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"`, lines 105–106.

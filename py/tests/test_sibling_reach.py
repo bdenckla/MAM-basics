@@ -3,18 +3,20 @@
 WHAT WENT WRONG, AND WHY A LINT IS THE RIGHT SHAPE OF ANSWER
 
 MAM-basics resolves a sibling clone by more than one mechanism, and the survey method
-of record covers only the first.  ``doc/PLAN-evacuate-public-repos-programme.md``, in
-its "What still forces a forest -- the sibling reach" section, records the method as
+of record covered only the first.  ``doc/PLAN-evacuate-public-repos-programme.md``, in
+its "What still forces a forest" section, recorded the method as
 ``grep -rn "sibling_repo(\\|require_sibling(" py/`` plus a read of the ``py/*_paths.py``
 modules.  That grep cannot see a cwd-relative ``"../<repo>"`` literal at all, and it
 reports a variable rather than a repo wherever the name is not spelled at the call.
+Since 2026-09-04 that section carries neither the survey nor its eleven-row table: it
+points here, and this declaration is the answer it used to state by hand.
 
 The consequence was not hypothetical.  ``mb_misc/write_utils.py``'s ``bkg_path`` builds
 ``f"../{mam_for_xxx}"`` from ``variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"``.
 It never calls ``mb_cmn.paths``, so ``REPOS_ROOT`` does not reach it, and from a worktree
 it resolves under ``.claude/worktrees/``.  ``main_mam_simple.py``'s ``_VARIANT_COMMON``
 sets that key to ``"MAM-simple"`` and routes the identical function there, which the
-programme's table does not record -- it attributes the literal to MAM-for-Sefaria alone.
+programme's table did not record -- it attributed the literal to MAM-for-Sefaria alone.
 On 2026-09-04 a mega run from a worktree wrote 216 MAM-simple and 160 MAM-for-Sefaria
 files into ``.claude/worktrees/``, exited 0, and left MAM-OSIS unchanged because the
 later steps read the real, stale MAM-simple.  ``py/main_0_mega.py``'s module docstring
@@ -67,7 +69,7 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 * The same calls with the name in a variable: ``ac_paths.py`` and ``cam1753_paths.py``
   pass ``DATA_REPO_NAME``, ``redirect_stubs/stubs.py`` passes ``repo.source_repo`` from
   its ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega guard passes the ``name``
-  of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``.  The programme's grep finds these
+  of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``.  The survey's grep finds these
   lines and cannot read a repo off them.  Three in-file shapes are resolved here, with
   no import and no dataflow tracing: a module constant's assignment, the keyword
   arguments that build the table being iterated, and the collection a for-loop walks.
@@ -78,7 +80,7 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
   ``in/vendoring_policy.json``.  ``_DYNAMIC_NAME_SOURCES`` names those four sites.
-* Cwd-relative ``"../X"``, the mechanism the programme's grep cannot see -- as a plain
+* Cwd-relative ``"../X"``, the mechanism the survey's grep cannot see -- as a plain
   literal, and as an ``f"../{name}"`` whose first segment is interpolated.  For the
   interpolated shape the names come from a declared source (``write_utils.bkg_path``)
   or from the same three in-file shapes, filtered by the vocabulary so that a
@@ -490,7 +492,7 @@ def _scan_cwd_relative(
     reached: dict[str, set[str]],
     problems: list[str],
 ) -> None:
-    """The cwd-relative recognizer -- the mechanism the programme's grep cannot see."""
+    """The cwd-relative recognizer -- the mechanism the survey's grep cannot see."""
     dynamic: set[str] | None = None
     for rel, tree in trees.items():
         docstrings = _docstring_ids(tree)
