@@ -1,18 +1,17 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 5 complete — Steps 1–6 completed 2026-09-03
+State: all six phases complete 2026-09-03; retained while the fourth-stage draft relies on this plan's lane and Decision F
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) closed — its last row,
 the codex-index trio, finished that morning and all six public repos in that programme hold zero
-tracked `.py`. This plan is the second stage Ben decided the same day: the three repos named in
-the heading give up **everything else** as well, and stay alive as redirect hosts.
+tracked `.py`. This plan records the second stage Ben decided the same day: the three repos named
+in the heading gave up **everything else** as well, and remain redirect hosts.
 
-**Read [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) before
-executing any phase here.** That plan did this once, for one repo, and finished 2026-08-17. It is
-the model, and this file leans on it rather than restating it: where a question was settled there,
-this file cites the section by name and says only what differs. The two files are not
-interchangeable — that one is a completed execution record, this one is unexecuted work.
+**The historical model is [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md).**
+That plan did this once, for one repo, and finished 2026-08-17. It is the model this completed
+second-stage record used rather than restating it: where a question was settled there, this file
+cites the section by name and says only what differed. Both files are completed execution records.
 
 **The destination repo is `C:/Users/BenDe/GitRepos/MAM-basics`**, whose venv is
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. The three source repos are
@@ -28,7 +27,7 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 ## Status
 
-**CURRENT — Phase 6 completed, 2026-09-03.** Phases 0–5 and the cross-repo bookkeeping are complete.
+**COMPLETED 2026-09-03.** Phases 0–5 and the cross-repo bookkeeping are complete.
 UXLC-utils landed the approved `gh-pages/uxlc/` and `uxlc/` trees, scoped their licences, and repointed the
 MAM-basics readers. The temporary codex-index-leningrad sparse vendor now reads MAM-basics. Steps
 4–5 froze and deployed the redirect host, removed 684 source files, and removed UXLC-utils from
@@ -106,7 +105,7 @@ figures in these plans arriving one more time.
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
 | 4 — book-of-job | **DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry, clean detached review worktree at `d09b966`, and clean main clone at `c8a6bbf` are gone. Post-removal MAM-basics tests passed 973 / 5, the document generator had no output diff, and Ruff is clean. The UXLC generator was not rerun because its output repository already has 26 modified files. |
 | 5 — UXLC-utils | **DONE 2026-09-03.** MAM-basics holds the authorized pure-prefix landing, and every MAM-basics reader uses it. The Leningrad sparse vendor reads MAM-basics rather than UXLC-utils. The redirect manifest and source stubs are deployed; source commit `2745c65` retains 97 redirect-host files. Step 6 retired the clean detached ReviewForest worktree at `b7b4eb9`, removed the clean primary clone, and completed the post-removal suite, generators, vendor refresh, and Ruff check. |
-| 6 — Cross-repo bookkeeping, and close the second stage | **DONE 2026-09-03.** The tracker and procedure text, global copies, Hebrew-prose skill copies, vendoring comment, standards prose and MAM-private paths are current; the workspace has 15 folders and no source-repo path. Ben chose no `frozen_repos` entries. The execution record below closes the second stage; the third stage remains decided and unstarted. |
+| 6 — Cross-repo bookkeeping, and close the second stage | **DONE 2026-09-03.** The tracker and procedure text, global copies, Hebrew-prose skill copies, vendoring comment, standards prose and MAM-private paths are current; the workspace has 15 folders and no source-repo path. Ben chose no `frozen_repos` entries. The execution record below closes the second stage. The third stage completed 2026-09-04; this plan remains because the programme's fourth-stage draft relies on its lane and Decision F. |
 
 ### Assessed 2026-09-02 — ten things that moved while the plan was paused
 

@@ -1,6 +1,6 @@
 # Total evacuation: the codex-index trio and diffable-pointed-hebrew
 
-State: Phases 0–4 complete — Phase 5 cross-repo bookkeeping remains
+State: all five phases complete 2026-09-04
 
 This is the third stage Ben authorized on 2026-09-03. It carries the decision
 record out of [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md)
@@ -57,7 +57,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | **DONE 2026-09-04.** `cam1753/` holds the 100 selected source blobs, including the 14 spreads; the 28 page JPEGs are ignored output regenerated from those spreads. The source repository is an archived breadcrumb, and its clean primary clone has left `GitRepos`. |
 | 4 — diffable-pointed-hebrew | **DONE 2026-09-04.** The product now lives under `diffable-pointed-hebrew/` and `py/main_diffable_pointed_hebrew.py`; the source is an archived dated breadcrumb, and its verified primary clone has left `GitRepos`. |
-| 5 — Cross-repo bookkeeping and stage close | **IN PROGRESS 2026-09-04.** The configuration audit, clone-removal checks, source-state verification, oracles, vendoring regeneration, source-reference classification, and global-instruction update are complete. MAM-private still has functional Aleppo-source paths; its required third-repository edit awaits Ben's direction. |
+| 5 — Cross-repo bookkeeping and stage close | **DONE 2026-09-04.** The configuration audit, clone-removal checks, source-state verification, oracles, vendoring regeneration, source-reference classification, global-instruction update, authorized MAM-private repoint, and corrected diffable-pointed-hebrew breadcrumb are complete. The programme and second-stage plan remain because the programme's fourth-stage draft holds six open decisions and relies on the second-stage lane and Decision F. |
 
 ## Phase 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions
 
@@ -424,9 +424,18 @@ github-misc instruction copies and the live Codex instruction file now say
 that codex-index-aleppo is a redirect host; github-misc commit `f2b7a9a` is
 pushed. Ben authorized MAM-private's functional Aleppo-source repoint, and the
 result is pushed. No functional Aleppo-source path remains in MAM-private.
-Phase 5 still cannot close because correcting diffable-pointed-hebrew's stale
-README requires the directed unarchive-and-rearchive operation described
-above. Historical plans and dated review findings remain as execution records.
+The GitHub API temporarily unarchived diffable-pointed-hebrew, source commit
+`a30ff8a` recorded that Ben archived the source on 2026-09-04, the commit was
+pushed, and the API rearchived the repository. The temporary clean source clone
+was moved to the Windows Recycle Bin.
+
+The programme and the completed second-stage plan are deliberately retained.
+This plan contains the third stage's remaining decisions, but the programme's
+fourth-stage draft holds six open decisions and its live lane text relies on
+the second-stage lane and Decision F. No dedicated fourth-stage plan carries
+those decisions yet, so deleting either planning file would fail Phase 5's
+deletion condition. Historical plans and dated review findings remain as
+execution records.
 
 The Leningrad and Aleppo generators regenerated with zero Git diff. The
 Cambridge 1753 oracle passed all four checks, including all 160 word findings.
