@@ -70,9 +70,9 @@ stress, which is what ``final_stress.NOT_IMPOSITIVE`` says of the same set; such
 classified by its syllable like any other and tallied separately as an overlap.
 
 Prose verses and poetic verses are routed by ``poetic_filter.should_keep_line``, so Job's
-prose frame goes with the 21 books.  Dual cantillation contributes both strands, since
-Phonetic MAM has both, and a chanted word in either Decalogue or Genesis 35:22 can therefore
-be counted twice.
+prose frame goes with the 21 books. For a dual-cantillation passage, this census selects the
+cant-alef strand and counts the passage as though it were read once. A second scan over
+cant-bet is retained in the JSON for the rendered appendix.
 """
 
 from __future__ import annotations
@@ -274,6 +274,12 @@ _COUNT_CATEGORIES = (
     "meteg sharing a letter with a non-stress-marking accent",
 )
 
+_DUAL_CANTILLATION_COMPARISON_CATEGORIES = (
+    "chanted words checked",
+    "meteg before the stressed syllable",
+    "meteg after the stressed syllable",
+)
+
 
 class SurveyProblem(Exception):
     """A survey that cannot honestly finish: bad input, or a mark it must not classify."""
@@ -415,8 +421,8 @@ def _chanted_words(node: object, out: list[dict]) -> None:
     """Every chanted-word entry of one verse, the ``cb`` structures flattened.
 
     A ``cb`` is Phonetic MAM's bracket for something other than a plain run of chanted words
-    -- a paseq, a setuma or petuxa, a qamats note, a dual-cantillation span.  Its branches
-    hold chanted words like any other, so a dual span contributes both strands.  The same walk
+    -- a paseq, a setuma or petuxa, a qamats note, a dual-cantillation span. The census projects
+    each dual span onto one strand before calling this walk. The same walk
     ``test_final_stress_vs_phonetic_mam._chanted_words`` makes.
     """
     if isinstance(node, dict):
@@ -427,6 +433,9 @@ def _chanted_words(node: object, out: list[dict]) -> None:
 
 
 _DUALCANT_MARKER = "cb-dualcant"
+CANT_ALEF = "cant-alef"
+CANT_BET = "cant-bet"
+_CANTILLATION_BRANCH_INDEX = {CANT_ALEF: 0, CANT_BET: 1}
 
 
 def _has_dual_cantillation(node: object) -> bool:
@@ -444,6 +453,33 @@ def _has_dual_cantillation(node: object) -> bool:
     if isinstance(node, dict):
         return any(_has_dual_cantillation(value) for value in node.values())
     return False
+
+
+def _project_cantillation(node: object, cantillation: str) -> object:
+    """Replace each dual span by its cant-alef or cant-bet branch.
+
+    Phonetic MAM's source writes the alef branch before the bet branch when it emits a
+    ``cb-dualcant`` structure. The explicit names here keep that ordering from becoming an
+    anonymous positional convention in this census.
+    """
+    branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
+    if not isinstance(node, list):
+        return node
+    if node and node[0] == "cb":
+        out = ["cb"]
+        for payload in node[1:]:
+            if (
+                isinstance(payload, list)
+                and payload
+                and payload[0] == [_DUALCANT_MARKER]
+            ):
+                branches = payload[1:]
+                assert len(branches) == 2, len(branches)
+                out.append(_project_cantillation(branches[branch_index], cantillation))
+            else:
+                out.append(_project_cantillation(payload, cantillation))
+        return out
+    return [_project_cantillation(one, cantillation) for one in node]
 
 
 def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
@@ -689,8 +725,9 @@ def _classify_one_word(
             found["post_stress"].append(record)
 
 
-def _scan(phon_dir: Path) -> dict:
-    """Every U+05BD of the Phonetic MAM standard set, classified."""
+def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
+    """Every U+05BD of the Phonetic MAM standard set in one cantillation projection."""
+    assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
         "counts": Counter(),
         "post_stress": [],
@@ -710,20 +747,46 @@ def _scan(phon_dir: Path) -> dict:
         data = json.loads(path.read_text(encoding="utf-8"))
         for vkey, verse in data.items():
             chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
-            _one_verse(f"{bb}{chnu}:{vrnu}", bb, chnu, vrnu, verse, found)
+            dual = _has_dual_cantillation(verse)
+            _one_verse(
+                f"{bb}{chnu}:{vrnu}",
+                bb,
+                chnu,
+                vrnu,
+                _project_cantillation(verse, cantillation),
+                found,
+                dual_cantillation=dual,
+                dual_facts=_dual_cantillation_facts(verse) if dual else None,
+            )
     return found
 
 
-def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> None:
+def _one_verse(
+    bcv: str,
+    bb: str,
+    chnu: int,
+    vrnu: int,
+    verse,
+    found: dict,
+    *,
+    dual_cantillation: bool | None = None,
+    dual_facts: dict | None = None,
+) -> None:
     system = (
         SYSTEM_POETIC
         if poetic_filter.should_keep_line(bb, chnu, vrnu)
         else SYSTEM_PROSE
     )
-    dual = _has_dual_cantillation(verse)
+    dual = (
+        _has_dual_cantillation(verse)
+        if dual_cantillation is None
+        else dual_cantillation
+    )
     if dual:
         found["dual_cant_verses"].add(bcv)
-        found["dual_cantillation"][bcv] = _dual_cantillation_facts(verse)
+        found["dual_cantillation"][bcv] = (
+            _dual_cantillation_facts(verse) if dual_facts is None else dual_facts
+        )
     entries: list[dict] = []
     _chanted_words(verse, entries)
     usable = [one for one in entries if one.get("jta") and one.get("fva")]
@@ -1056,6 +1119,17 @@ def _problems(found: dict) -> list[str]:
     return out
 
 
+def _total_counts(found: dict, categories: tuple[str, ...]) -> dict[str, int]:
+    """The two verse systems' totals for the specified census categories."""
+    return {
+        category: sum(
+            found["counts"][(system, category)]
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        )
+        for category in categories
+    }
+
+
 def build_survey() -> dict:
     """The whole survey: every U+05BD of the Phonetic MAM standard set, classified.
 
@@ -1063,12 +1137,14 @@ def build_survey() -> dict:
     so a run that cannot finish still says everything it found.  Collecting before failing is
     what makes the list usable: a run that raises on first sight can never enumerate the rest.
     """
-    found = _scan(paths.require_al_hatorah_phonetic_dir())
+    phon_dir = paths.require_al_hatorah_phonetic_dir()
+    found = _scan(phon_dir, CANT_ALEF)
+    found_bet = _scan(phon_dir, CANT_BET)
     words_by_bcv = _mam_words_by_bcv()
     unjoined = _attach_mam_forms(
         found["post_stress"] + found["in_stressed"] + found["overlaps"], words_by_bcv
     )
-    problems = _problems(found)
+    problems = _problems(found) + _problems(found_bet)
     if problems:
         raise SurveyProblem("; ".join(problems))
     counts = found["counts"]
@@ -1093,13 +1169,22 @@ def build_survey() -> dict:
         "silluq_boundary": SILLUQ_RULE,
         "scope": (
             "Every chanted word of every verse. Prose verses and poetic verses are routed by"
-            " accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual"
-            " cantillation contributes both strands, so a chanted word in either Decalogue"
-            " or Genesis 35:22 can be counted twice."
+            " accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual"
+            " cantillation passage is counted in the cant-alef projection, as though it"
+            " were read once."
         ),
         "dual_cantillation": {
+            "counted_cantillation": CANT_ALEF,
             "numbered_verses": sorted(found["dual_cant_verses"]),
             "facts_by_numbered_verse": found["dual_cantillation"],
+            "comparison_counts": {
+                CANT_ALEF: _total_counts(
+                    found, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
+                ),
+                CANT_BET: _total_counts(
+                    found_bet, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
+                ),
+            },
         },
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}

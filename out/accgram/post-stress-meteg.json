@@ -3,8 +3,9 @@
  "what": "Every U+05BD in MAM, classified by whether its syllable falls before, in, or after the chanted word's one primary stress. A U+05BD in the stressed syllable of a chanted word carrying sof pasuq is the silluq, and is counted as that rather than as a meteg.",
  "stress_oracle": "Phonetic MAM's jta field, whose ! marks the one stressed syllable. A U+05BD's own position is never used to infer the stress. The Hebrew's nuclei are counted independently and the two counts must agree per chanted word, a furtive patax counting as a syllable on both sides.",
  "silluq_boundary": "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that has sof pasuq. Both conditions are required and there is no third: the sof pasuq is what makes the chanted word the last of its chanted verse, so nothing here rests on an entry's position in a list.",
- "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual cantillation contributes both strands, so a chanted word in either Decalogue or Genesis 35:22 can be counted twice.",
+ "scope": "Every chanted word of every verse. Prose verses and poetic verses are routed by accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual cantillation passage is counted in the cant-alef projection, as though it were read once.",
  "dual_cantillation": {
+  "counted_cantillation": "cant-alef",
   "numbered_verses": [
    "dt5:11",
    "dt5:12",
@@ -242,15 +243,27 @@
      ]
     ]
    }
+  },
+  "comparison_counts": {
+   "cant-alef": {
+    "chanted words checked": 263191,
+    "meteg before the stressed syllable": 14932,
+    "meteg after the stressed syllable": 231
+   },
+   "cant-bet": {
+    "chanted words checked": 263190,
+    "meteg before the stressed syllable": 14933,
+    "meteg after the stressed syllable": 231
+   }
   }
  },
  "counts": {
   "prose verses": {
-   "chanted words checked": 233715,
-   "meteg before the stressed syllable": 13131,
+   "chanted words checked": 233586,
+   "meteg before the stressed syllable": 13118,
    "meteg in the stressed syllable, no sof pasuq": 0,
    "meteg after the stressed syllable": 177,
-   "silluq": 18779,
+   "silluq": 18771,
    "meteg sharing a letter with a non-stress-marking accent": 27
   },
   "poetic verses": {
@@ -10405,80 +10418,7 @@
    }
   ],
   "entries_without_jta_or_fva": 0,
-  "numbered_verses_whose_last_entry_lacks_sof_pasuq": [
-   {
-    "bcv": "ex20:2",
-    "chanted_word": "עַל־פָּנַ֗י",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "ex20:3",
-    "chanted_word": "לָאָ֗רֶץ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "ex20:4",
-    "chanted_word": "לְ֯שֹׂנְ֯אָ֑י",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "ex20:7",
-    "chanted_word": "לְ֯קַדְּׄ֯שׁ֗וֹ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "ex20:8",
-    "chanted_word": "כׇל־מְ֯לַאכְתֶּ֒ךָ֒",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "ex20:9",
-    "chanted_word": "בִּשְׁעָרֶ֔יךָ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:6",
-    "chanted_word": "עַל־פָּנַ֗י",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:7",
-    "chanted_word": "לָאָ֗רֶץ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:8",
-    "chanted_word": "לְ֯שֹׂנְ֯אָ֑י",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:11",
-    "chanted_word": "אֱלֹהֶ֗יךָ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:12",
-    "chanted_word": "כׇל־מְ֯לַאכְתֶּ֒ךָ֒",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   },
-   {
-    "bcv": "dt5:13",
-    "chanted_word": "כָּמ֑וֹךָ",
-    "dual_cantillation": true,
-    "carries_a_meteg": false
-   }
-  ],
+  "numbered_verses_whose_last_entry_lacks_sof_pasuq": [],
   "records_without_a_mam_form": [
    {
     "bcv": "ps135:1",
@@ -10510,7 +10450,29 @@
     "meteg sharing a letter with a non-stress-marking accent": 119
    }
   },
-  "differences": []
+  "differences": [
+   {
+    "system": "prose verses",
+    "category": "chanted words checked",
+    "census_2026_09_03": 233715,
+    "measured": 233586,
+    "difference": -129
+   },
+   {
+    "system": "prose verses",
+    "category": "meteg before the stressed syllable",
+    "census_2026_09_03": 13131,
+    "measured": 13118,
+    "difference": -13
+   },
+   {
+    "system": "prose verses",
+    "category": "silluq",
+    "census_2026_09_03": 18779,
+    "measured": 18771,
+    "difference": -8
+   }
+  ]
  },
  "currency": {
   "what": "The Phonetic MAM standard set is regenerated in al-hatorah, on its own occasions, so it is a snapshot of MAM rather than MAM's current state. This counts U+05BD per numbered verse on both sides and names every numbered verse where they differ, so the page can say which MAM its figures describe.",

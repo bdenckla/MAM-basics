@@ -14,7 +14,7 @@ come after the stress. Both
 <abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr> and
 <abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr> discuss post-stress meteg.
 Neither book says how often PSM (post-stress meteg) happens; we find that MAM has 231 of them, over
-263,320 chanted words.)</p>
+263,191 chanted words.)</p>
 <p>First, some definitions: a chanted word can be either a simple word (a word of just one atom) or
 it can be a compound word (a word of two or more atoms connected by maqaf marks). An atom is a
 sequence of letters uninterrupted by space, maqaf, or any other punctuation.</p>
@@ -23,12 +23,8 @@ use Phonetic MAM, an edition of MAM that marks the stressed syllable of every ch
 <h2>MAM census by verse system</h2>
 <p>The “prose verses” row in the table below is for the 21 books plus with Job's prose frame; the
 “poetic verses” row is Job's main, poetic section plus all Psalms and the entire book of Proverbs.
-We count both of the two strands of cantillation of each of the two Decalogues. So, for example, a
-chanted word of the Exodus Decalogue can appear twice in these totals.</p>
-<p>This happens in Exodus 20:2: Phonetic MAM has <span lang="hbo">אָֽנֹכִי֙</span> in one strand and
-<span lang="hbo">אָֽנֹכִ֖י</span> in the other. The two forms are the same chanted word with
-different accents, and both are counted.</p>
-<p>Genesis 35:22 has 5 such pairs, and the chanted words in both strands there are counted too.</p>
+See the <a href="#dually-cantillated-passages">appendix on dually-cantillated passages</a> for how
+this census handles them.</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th><abbr title="cantillation system">cant-sys</abbr></th>
@@ -40,8 +36,8 @@ meteg</th>
 </tr>
 <tr>
 <td>prose</td>
-<td class="numeric">233,715</td>
-<td class="numeric">13,131</td>
+<td class="numeric">233,586</td>
+<td class="numeric">13,118</td>
 <td class="numeric">177</td>
 </tr>
 <tr>
@@ -52,13 +48,13 @@ meteg</th>
 </tr>
 <tr>
 <td>all</td>
-<td class="numeric">263,320</td>
-<td class="numeric">14,945</td>
+<td class="numeric">263,191</td>
+<td class="numeric">14,932</td>
 <td class="numeric">231</td>
 </tr>
 </table>
-<p>So a meteg comes before the stress 14,945 times and after it 231 times.</p>
-<p>Only about 1.5% of the 15,176 meteg marks counted here come after the stress.</p>
+<p>So a meteg comes before the stress 14,932 times and after it 231 times.</p>
+<p>Only about 1.5% of the 15,163 meteg marks counted here come after the stress.</p>
 <h2>Post-stress meteg marks by structural type</h2>
 <p>Three types of PSM are described in both
 <abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr> and
@@ -1594,5 +1590,36 @@ puts it in, before or after the stress, rather than beside them.</p>
 <p>Nothing here says that MAM follows a rule of Breuer's or of Yeivin's. MAM is a consensus text;
 the two books describe the phenomenon, and the counts are measurements of MAM set beside their
 descriptions.</p>
+<h2 id="dually-cantillated-passages">Appendix: dually-cantillated passages</h2>
+<p>Phonetic MAM records two cantillations for the two Decalogue passages and Genesis 35:22, across
+18 numbered verses. This census counts each such passage as though it were read once: in the
+cant-alef projection.</p>
+<p>For example, Phonetic MAM has <span lang="hbo">אָֽנֹכִי֙</span> in cant-alef at Exodus 20:2 and
+<span lang="hbo">אָֽנֹכִ֖י</span> in cant-bet. The two forms are the same chanted word with
+different accents. Genesis 35:22 has 5 such pairs.</p>
+<table class="limited-width post-stress-meteg-table">
+<tr>
+<th>Census result</th>
+<th>cant-alef, used</th>
+<th>cant-bet</th>
+</tr>
+<tr>
+<td>Chanted words</td>
+<td class="numeric">263,191</td>
+<td class="numeric">263,190</td>
+</tr>
+<tr>
+<td>Pre-stress meteg</td>
+<td class="numeric">14,932</td>
+<td class="numeric">14,933</td>
+</tr>
+<tr>
+<td>Post-stress meteg</td>
+<td class="numeric">231</td>
+<td class="numeric">231</td>
+</tr>
+</table>
+<p>Cant-alef and cant-bet give exactly the same post-stress-meteg count: 231. Cant-alef has one more
+chanted word, while cant-bet has one more pre-stress meteg.</p>
 </body>
 </html>

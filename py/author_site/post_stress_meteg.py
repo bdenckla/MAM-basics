@@ -48,6 +48,7 @@ from mb_cmn import bib_locales as tbn
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
+_DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 
 # The M23 card's link lands here, so the identifier is half of that card's href and cannot be
 # renamed alone: py/py_render/rt_suggestion_context.py builds the other half from the same
@@ -127,6 +128,7 @@ def build_body(survey: dict) -> list:
         *_m23(survey),
         *_post_silluq(survey),
         *_sources_and_limits(survey),
+        *_dual_cantillation_appendix(survey),
     ]
 
 
@@ -152,6 +154,11 @@ def _both(survey: dict, category: str) -> int:
 def _dual_cantillation_facts(survey: dict, bcv: str) -> dict:
     """The source-derived facts for one numbered verse with both cantillation strands."""
     return survey["dual_cantillation"]["facts_by_numbered_verse"][bcv]
+
+
+def _dual_cantillation(survey: dict) -> dict:
+    """The one-reading method and cant-alef/cant-bet comparison."""
+    return survey["dual_cantillation"]
 
 
 def _by_type_count(survey: dict, kind: str) -> int:
@@ -207,6 +214,19 @@ def pin_claims(survey: dict) -> None:
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
     genesis = _dual_cantillation_facts(survey, "gn35:22")
     assert genesis["same_chanted_word_group_count"] == 5
+    dual_cantillation = _dual_cantillation(survey)
+    comparison = dual_cantillation["comparison_counts"]
+    assert dual_cantillation["counted_cantillation"] == psm.CANT_ALEF
+    for category in (
+        "chanted words checked",
+        "meteg before the stressed syllable",
+        "meteg after the stressed syllable",
+    ):
+        assert comparison[psm.CANT_ALEF][category] == _both(survey, category)
+    assert (
+        comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
+        == comparison[psm.CANT_BET]["meteg after the stressed syllable"]
+    )
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
@@ -345,37 +365,19 @@ def _census(survey: dict) -> list:
     )
     before = _both(survey, "meteg before the stressed syllable")
     after = _both(survey, "meteg after the stressed syllable")
-    exodus_forms = _dual_cantillation_facts(survey, "ex20:2")[
-        "first_same_chanted_word_group"
-    ]
-    genesis_pair_count = _dual_cantillation_facts(survey, "gn35:22")[
-        "same_chanted_word_group_count"
-    ]
     return [
         mb_html.heading_level_2("MAM census by verse system"),
-        _para(
-            "The “prose verses” row in the table below"
-            " is for the 21 books plus with Job's prose frame;"
-            " the “poetic verses” row is Job's main, poetic section"
-            " plus all Psalms and the entire book of Proverbs."
-            " We count both of the two strands of cantillation of each of the two Decalogues. "
-            "So, for example, a chanted word of the Exodus Decalogue"
-            " can appear twice in these totals."
-        ),
         mb_html.para(
             (
-                "This happens in Exodus 20:2: Phonetic MAM has ",
-                *wrap_hebrew_runs(exodus_forms[0][0]),
-                " in one strand and ",
-                *wrap_hebrew_runs(exodus_forms[1][0]),
-                " in the other. The two forms are the same chanted word with different"
-                " accents, and both are counted.",
+                "The “prose verses” row in the table below is for the 21 books plus with"
+                " Job's prose frame; the “poetic verses” row is Job's main, poetic section"
+                " plus all Psalms and the entire book of Proverbs. See the ",
+                mb_html.anchor_h(
+                    "appendix on dually-cantillated passages",
+                    f"#{_DUAL_CANTILLATION_APPENDIX_ID}",
+                ),
+                " for how this census handles them.",
             )
-        ),
-        _para(
-            "Genesis 35:22 has"
-            f" {genesis_pair_count} such pairs, and the chanted words in both strands there"
-            " are counted too."
         ),
         _table(headers, rows),
         _para(
@@ -717,6 +719,62 @@ def _sources_and_limits(survey: dict) -> list:
             "Nothing here says that MAM follows a rule of Breuer's or of Yeivin's. MAM is a"
             " consensus text; the two books describe the phenomenon, and the counts are"
             " measurements of MAM set beside their descriptions."
+        ),
+    ]
+
+
+def _dual_cantillation_appendix(survey: dict) -> list:
+    """The method for passages Phonetic MAM records with two cantillations."""
+    dual_cantillation = _dual_cantillation(survey)
+    comparison = dual_cantillation["comparison_counts"]
+    alef = comparison[psm.CANT_ALEF]
+    bet = comparison[psm.CANT_BET]
+    exodus_forms = _dual_cantillation_facts(survey, "ex20:2")[
+        "first_same_chanted_word_group"
+    ]
+    genesis_pair_count = _dual_cantillation_facts(survey, "gn35:22")[
+        "same_chanted_word_group_count"
+    ]
+    headers = ("Census result", "cant-alef, used", "cant-bet")
+    categories = (
+        ("Chanted words", "chanted words checked"),
+        ("Pre-stress meteg", "meteg before the stressed syllable"),
+        ("Post-stress meteg", "meteg after the stressed syllable"),
+    )
+    rows = [
+        mb_html.table_row_of_data(
+            (label, f"{alef[category]:,}", f"{bet[category]:,}"),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL),
+        )
+        for label, category in categories
+    ]
+    return [
+        mb_html.heading_level_2(
+            "Appendix: dually-cantillated passages",
+            {"id": _DUAL_CANTILLATION_APPENDIX_ID},
+        ),
+        _para(
+            "Phonetic MAM records two cantillations for the two Decalogue passages and"
+            f" Genesis 35:22, across {len(dual_cantillation['numbered_verses'])} numbered"
+            " verses. This census counts each such passage as though it were read once: in"
+            " the cant-alef projection."
+        ),
+        mb_html.para(
+            (
+                "For example, Phonetic MAM has ",
+                *wrap_hebrew_runs(exodus_forms[0][0]),
+                " in cant-alef at Exodus 20:2 and ",
+                *wrap_hebrew_runs(exodus_forms[1][0]),
+                " in cant-bet. The two forms are the same chanted word with different"
+                " accents. Genesis 35:22 has ",
+                f"{genesis_pair_count} such pairs.",
+            )
+        ),
+        _table(headers, rows),
+        _para(
+            "Cant-alef and cant-bet give exactly the same post-stress-meteg count:"
+            f" {alef['meteg after the stressed syllable']:,}. Cant-alef has one more chanted"
+            " word, while cant-bet has one more pre-stress meteg."
         ),
     ]
 
