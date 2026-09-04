@@ -248,11 +248,12 @@ def main(refresh_live_inputs: bool = True) -> None:
     merged_rows = _merged_rows()
     ignored_repo_names = ignored_repos()
     groups: dict[tuple, list] = {}
-    ignored_file_count = 0
     for d in merged_rows:
         dest_repo = d["dest_repo"]
         if dest_repo in ignored_repo_names:
-            ignored_file_count += 1
+            # Unreachable, and kept as a guard rather than as a filter that does
+            # work: discover.discover_relationships skips an ignored repo, and
+            # every row here comes from it through iter_inventory_seed_rows.
             continue
         src_path = _make_source_path(d["src_pkg"])
         # The destination DIRECTORY is part of the key, not merely of the display.
@@ -325,18 +326,24 @@ def main(refresh_live_inputs: bool = True) -> None:
             f"| {files_str} | {src_pkg_display} | {dest_repo} | {dest_path_display} | {mechanism} | {last_synced_display} | {provenance_doc} | {category} | {notes} |"
         )
     ignored_repos_sorted = ", ".join(sorted(ignored_repo_names))
-    # The parenthetical names WHICH repos were ignored, so with none ignored it has
-    # nothing to say and would render as a dangling "(dest_repos: )". Empty became
-    # reachable on 2026-08-07, when the four ignored repos -- MAM-for-Acc,
-    # MAM-for-CCAR, MAM-for-JPS and TMC -- were dropped from in/vendoring_policy.json
-    # on being moved out of GitRepos into FrozenRepos.
-    ignored_suffix = (
-        f" (dest_repos: {ignored_repos_sorted})" if ignored_repos_sorted else ""
+    # NAMES the ignored repos and gives NO file count for them, because that count
+    # cannot be known without the scan the ignore flag exists to avoid.  This read
+    # "{n} files ignored (dest_repos: ...)" until 2026-09-04, and the n was
+    # structurally zero: it counted rows whose dest_repo is ignored, over a row set
+    # discover.discover_relationships had already stripped of exactly those.  While no
+    # repo was ignored the line was vacuously true; MAM-private's arrival in the
+    # ignored set that day made it read "0 files ignored (dest_repos: MAM-private)"
+    # over 46 files that were in fact ignored.  Empty stays reachable -- the four
+    # frozen repos ignored until 2026-08-07 were dropped from
+    # in/vendoring_policy.json on being moved out of GitRepos -- so with none ignored
+    # the sentence is simply absent rather than dangling.
+    not_audited = (
+        f" Not audited: {ignored_repos_sorted}." if ignored_repos_sorted else ""
     )
     file_count = sum(len(v) for v in groups.values())
     lines += [
         "",
-        f"*{row_count} rows, {file_count} files. {ignored_file_count} files ignored{ignored_suffix}.*",
+        f"*{row_count} rows, {file_count} files.{not_audited}*",
         "",
         "## Intentionally non-vendored",
         "",
@@ -352,7 +359,4 @@ def main(refresh_live_inputs: bool = True) -> None:
     out_path = _REPO_ROOT / "doc" / "vendoring-inventory.md"
     # newline="\n": see the same note in vendoring/compare.py's writer.
     out_path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
-    print(
-        f"Wrote {row_count} rows ({file_count} files,"
-        f" {ignored_file_count} ignored{ignored_suffix}) to {out_path}"
-    )
+    print(f"Wrote {row_count} rows ({file_count} files) to {out_path}{not_audited}")

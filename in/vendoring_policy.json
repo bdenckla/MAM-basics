@@ -49,45 +49,16 @@
       }
     },
     "MAM-private": {
-      "comment": "One key for every tree MAM-private holds, not one key per tree. That repo's doc/PLAN-evacuate-private-repos.md gives each evacuated private repo a top-level directory of its own, so every dest path here carries a tree prefix and discover.py derives it for free: dest_path is taken relative to repos_root()/MAM-private, so a scan root of mgketer/py/mb_cmn yields mgketer/py/mb_cmn/<file>. Renaming the old mgketer key to MAM-private instead would have worked exactly once and then collided when al-hatorah wanted the same key in this same object; al-hatorah was the last of the four to move, on 2026-08-10, and it duly added its scan root to the mb_cmn list below rather than a second key (that plan's mgketer R.0 finding 4). mgketer's tree arrived 2026-08-08 and its clone was emptied to a breadcrumb 2026-08-09; al-hatorah's tree arrived 2026-08-10 and its clone was emptied to a breadcrumb the same day, which is the commit that folded the old al-hatorah key into this one. Active for the three directories the two trees' copy scripts cover. mgketer/py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 0a3f1509 ran it, and all 16 files in those two read identical. al-hatorah/py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, al-hatorah 62d6f3e3 ran it, and all 28 files read identical -- that repo read stale until 2026-08-07, which is why its mechanism was declared rather than derived, gen_inventory deriving copy_script only for an active or generated repo (2026-08-02, #60). The two copy scripts cover only those three directories, so the two mgketer/py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "active",
-      "default_mechanism": "copy_script",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "mgketer/py/mb_cmn",
-          "al-hatorah/py/mb_cmn"
-        ],
-        "mb_diff_mpu": [
-          "mgketer/py/mb_diff_mpu"
-        ]
-      }
+      "comment": "IGNORED SINCE 2026-09-04: nothing here measures MAM-private any more, and no MAM-basics program resolves that clone on account of this file. Ben's decision that day, on being shown that vendoring-audit was the second of the two py/main_0_mega.py steps requiring the private clone (the first being near-aleppo-census, whose removal MAM-private/doc/PLAN-mam-private-mega.md carries): 'The lack of vendoring audit of MAM-private is a cost worth the benefit of decoupling MAM-basics from MAM-private.' Three readers stop reaching the clone with this flag: discover.discover_relationships skips an ignored repo before _scanned_dest_paths touches the disk, discover.provenance_dest_repos filters it out, and py/tests/test_vendoring_policy_paths.py excludes it from both of its parametrize lists -- so the suite is decoupled as well as the mega. WHAT MAM-PRIVATE STILL VENDORS, recorded here because ignoring it is what stops this file recording it as rows: mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, 16 files, copied by MAM-private/mgketer/py/main_update_vendored_files.py by intersection with this repo's py/mb_cmn and py/mb_diff_mpu; and al-hatorah/py/mb_cmn, 28 files, copied by MAM-private/al-hatorah/py/main_update_vendored_files.py. All 44 read identical when last measured -- mgketer at 0a3f1509, al-hatorah at 62d6f3e3. Those copies are maintained by those two scripts alone now, and drift in them will not surface here. THE TWO OVERRIDES THAT LEFT WITH THIS ENTRY named mgketer/py/python_modules/my_diffs.py and mgketer/py/python_modules/uni_denorm.py, stale copies of mb_cmn files that no copy script reaches and that both read DIFFERS; repo_policy._load_override rejects an override targeting an ignored repo, so they could not stay. Their one effect beyond the audit was the black sweep's --extend-exclude, through repo_util/maintenance_policy.py's vendored_overrides, and losing it changes nothing today: both files are black-clean at 26.5.1 defaults, measured 2026-09-04. The whole-package copies keep their exclusion either way, that one being derived from global.source_pkg_dirs by directory name rather than from this section. IGNORED RATHER THAN DELETED, unlike the four frozen repos dropped on 2026-08-07, because MAM-private's clone stays on disk and only the audit of it is being given up: an entry preserves this paragraph, and gen_inventory names the ignored repos in the inventory's footer, so the exclusion reads as a decision in the tracked artifact instead of as an absence.",
+      "ignore": true,
+      "scan_provenance": false,
+      "default_category": null,
+      "default_mechanism": null,
+      "default_provenance_doc": null,
+      "pkg_scan_roots": {}
     }
   },
-  "overrides": [
-    {
-      "comment": null,
-      "dest_repo": "MAM-private",
-      "dest_path": "mgketer/py/python_modules/my_diffs.py",
-      "src_pkg": "mb_cmn",
-      "category": "stale",
-      "mechanism": "unknown",
-      "provenance_doc": null,
-      "notes": "placed in python_modules/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "MAM-private",
-      "dest_path": "mgketer/py/python_modules/uni_denorm.py",
-      "src_pkg": "mb_cmn",
-      "category": "stale",
-      "mechanism": "unknown",
-      "provenance_doc": null,
-      "notes": "placed in python_modules/ not mb_cmn/"
-    }
-  ],
+  "overrides": [],
   "foreign_vendored": [
     {
       "comment": "Files vendored INTO a workspace repo FROM a source repo other than MAM-basics. The audit does not measure these: category and mechanism are the source repo's business ('a vendored copy is maintained in its source repo'), so entries carry no category, no mechanism and no src_pkg, and vendoring/discover.py and vendoring/compare.py never read this section. Its one consumer is repo_util/maintenance_policy.py's vendored_overrides, which folds dest_paths into the black sweep's --extend-exclude so the sweep leaves the copies as they arrive; dest_repo is deliberately not required to be in the repos object above, so nothing here obliges the audit or the suite to resolve the destination repo on disk. Section added 2026-09-01, Ben's decision: af77984 (2026-08-31) added Taamey_D to the workspace roster as hbofonts' public release target and recorded 'where that exclusion belongs' as open, since its six tracked .py are stale copies of hbofonts build scripts that a black sweep would reformat; Ben settled the location as this file during the 2026-09-01 review's follow-up.",

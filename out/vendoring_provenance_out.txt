@@ -3,9 +3,3 @@
   provenance docs: none
   copy scripts: none found
   mb_cmn dir (mb_cmn): ['cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py', 'uni_heb.py']
-
-=== MAM-private ===
-  provenance docs: none
-  COPY SCRIPTS: ['al-hatorah/py/main_update_vendored_files.py', 'al-hatorah/py/mb_cmn/vendoring_sync.py', 'mgketer/py/main_update_vendored_files.py', 'mgketer/py/mb_cmn/vendoring_sync.py']
-  mb_cmn dir (mgketer/py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py', 'template_names.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']
-  mb_cmn dir (al-hatorah/py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'mpplus_schema_guard.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'url_percent.py', 'vendoring_sync.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']

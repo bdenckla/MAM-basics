@@ -17,20 +17,17 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
-| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn | copy_script | mixed | no | active | identical |
-| template_names.py, vendoring_sync.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn | copy_script | 2026-08-25 | no | active | DIFFERS |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, url_percent.py, uxlc_change_url.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | mixed | no | active | identical |
-| template_names.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-25 | no | active | DIFFERS |
-| grapheme_diff.py | mb_diff_mpu | MAM-private | mgketer/py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-08-08 | no | active | identical |
-| my_diffs.py, uni_denorm.py | mb_cmn | MAM-private | mgketer/py/python_modules | unknown | 2026-08-08 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
-| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
-| hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
-| mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
-| osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
-| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | eol-only |
+| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, shrink.py, str_defs.py, ws_tmpl1.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | eol-only |
+| file_io.py, hebrew_accents.py, my_utils.py, provenance.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl2.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
+| hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, verse_and_friends.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | eol-only |
+| mb_html.py, mb_html_get_lines.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, write_utils.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
+| mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | eol-only |
+| osis_handlers.py, osis_namespace.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | eol-only |
+| osis_index_html.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
+| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | identical |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
 
-*12 rows, 97 files. 0 files ignored.*
+*9 rows, 51 files. Not audited: MAM-private.*
 
 ## Intentionally non-vendored
 

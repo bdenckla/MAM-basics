@@ -24,7 +24,13 @@ Three separate questions, deliberately answered by two separate files:
 
 Note that in/vendoring_policy.json also has a per-repo "ignore" flag. That means
 "do not scan this repo for vendoring" and says nothing about whether the repo is
-frozen. The two lists coincide today; that is not a rule and must not become one.
+frozen. This said "The two lists coincide today; that is not a rule and must not
+become one" until 2026-09-04, and the two lists are now DISJOINT, which makes the
+same point more plainly: the sole ignored repo is MAM-private, which is private
+and very much not frozen, and none of the six frozen repos is ignored --
+CCAR-Psalms' freeze record says so in its own comment. MAM-private was ignored
+that day so that no MAM-basics program resolves the private clone on account of
+the vendoring policy; Ben's decision, recorded in that repo's policy comment.
 """
 
 from __future__ import annotations
