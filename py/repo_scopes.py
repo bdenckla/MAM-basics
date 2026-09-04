@@ -28,13 +28,13 @@ eight small modules pass both checks as they stand, so including them costs noth
 and closes the one gap a reader would otherwise have to be told about.
 
 CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
-oversight.  ``check_mark_order`` reads ``.json`` as well as ``.py``, and for
-book-of-job, codex-index-aleppo and codex-index-cam1753 the hand-made JSON that
-stayed behind in each data repo is a large part of what the check was ever for --
-24 line-break files in the first, 78 line-break, column-coordinate and flat-stream
-files in the second, and 27 line-break plus 28 column-quadrilateral files in the
-third. The Leningrad tree now holds only two generated JSON artifacts and no
-separate corpus root, so it contributes no mark-order scope.
+oversight. ``check_mark_order`` reads ``.json`` as well as ``.py``, and the
+hand-made JSON under book-of-job, aleppo, and codex-index-cam1753 is a large part
+of what the check was ever for -- 24 line-break files in the first, 78 line-break,
+column-coordinate, and flat-stream files in the second, and 27 line-break plus 28
+column-quadrilateral files in the third. The Leningrad tree now holds only two
+generated JSON artifacts and no separate corpus root, so it contributes no
+mark-order scope.
 
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in

@@ -13,10 +13,11 @@ What remains below is what is specific to this repo.
 
 ## What this repo has
 
-`MAM-XML/` is a snapshot of MAM-simple's `xml-vtrad-mam`, one file per book24. It is
-vendored, not generated here: see [`MAM-simple-provenance.md`](../MAM-simple-provenance.md)
-for the commit and date it was copied from. Update it by re-copying, never by editing in
-place.
+`../MAM-XML/` is a pinned snapshot of MAM-simple's `xml-vtrad-mam`, one file per
+book24. It is vendored, not generated here: see
+[`MAM-simple-provenance.md`](../MAM-simple-provenance.md) for the commit and date it
+was copied from. The later MAM-simple evacuation replaces this temporary snapshot;
+until then, update it by re-copying, never by editing in place.
 
 `../MAM-basics/py/py_ac_loc/mam_xml_verses.py` reads it. Its entry point is
 `get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one

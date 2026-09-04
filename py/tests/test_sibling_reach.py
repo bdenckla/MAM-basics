@@ -76,13 +76,13 @@ nothing reached.  All FOUR declaration tables are covered -- see the comment abo
 THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 
 * ``sibling_repo("X")`` / ``require_sibling("X", ...)`` -- the sanctioned API.
-* The same calls with the name in a variable: ``ac_paths.py`` and ``cam1753_paths.py``
-  pass ``DATA_REPO_NAME``, ``redirect_stubs/stubs.py`` passes ``repo.source_repo`` from
-  its ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega guard passes the ``name``
-  of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``.  The survey's grep finds these
-  lines and cannot read a repo off them.  Three in-file shapes are resolved here, with
-  no import and no dataflow tracing: a module constant's assignment, the keyword
-  arguments that build the table being iterated, and the collection a for-loop walks.
+* The same calls with the name in a variable: ``cam1753_paths.py`` passes
+  ``DATA_REPO_NAME``, ``redirect_stubs/stubs.py`` passes ``repo.source_repo`` from its
+  ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega guard passes the ``name`` of
+  a loop over ``_CWD_RELATIVE_WRITE_TARGETS``. The survey's grep finds these lines and
+  cannot read a repo off them. Three in-file shapes are resolved here, with no import
+  and no dataflow tracing: a module constant's assignment, the keyword arguments that
+  build the table being iterated, and the collection a for-loop walks.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
   builds five subprocess ``cwd``s this way, naming three repos: MAM-parsed,
@@ -158,7 +158,6 @@ SIBLINGS_REACHED: dict[str, str] = {
         " near-aleppo census there.  Its vendoring audit was given up on"
         " 2026-09-04 (abb03ec4), which removed a third route but not these two."
     ),
-    "codex-index-aleppo": "ac_paths.DATA_REPO_NAME -- the Aleppo page/word image corpus.",
     "codex-index-cam1753": (
         "cam1753_paths.DATA_REPO_NAME -- the Cambridge 1753 image corpus."
     ),

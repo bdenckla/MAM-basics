@@ -7,12 +7,12 @@ ASCII "x"/"X" is used instead, since comments don't flow to output.
 
 SIX SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
-procedures under ``book-of-job/``, and the relocated UXLC data under ``uxlc/``.
-Holman-ketiv-qere, codex-index-aleppo and codex-index-cam1753 still hold the
-other corpora their halves generate into. Leningrad's five data files now live
-under ``leningrad/`` and are scanned by MAM-basics' scope. Each remaining
-separate scope retains the hand-authored transliterations that would otherwise
-go unscanned once Python moved out.
+procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
+the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere and codex-index-cam1753
+still hold the other corpora their halves generate into. Leningrad's five data
+files now live under ``leningrad/`` and are scanned by MAM-basics' scope. Each
+separate scope retains the hand-authored transliterations that would otherwise go
+unscanned once Python moved out.
 ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
 one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
@@ -43,15 +43,12 @@ and book-of-job's set turned out to be a strict subset of this one, so nothing w
 owed. Phase 4 now keeps the scope's two reading procedures at ``book-of-job/doc/``
 and drops the unneeded ``py_ac_loc/`` data tree.
 
-The codex-index-aleppo scope arrived with that repo's Python in the same phase,
-replacing its own 319-line ``py/tests/test_h_dot_below_nfc.py``, which located its
-root the same way and would have aimed at MAM-basics for the fifth time running.
-Diffing its ``_BINARY_EXTENSIONS`` against this file's is what found ``.xlsx``, the
-second extension a dropped copy has contributed; the reverse comparison found
-nothing owed. What its scope keeps alive is ``doc/`` (4), the thirteen text files
-under ``aleppo-wiki/`` -- J David Stark's hand-made CSV index, three of its four
-precursors and the three artifacts derived from it among them -- three provenance
-files, and ``test-data-from-book-of-job.json``.
+The Aleppo scope arrived with codex-index-aleppo's Python, replacing its own
+319-line ``py/tests/test_h_dot_below_nfc.py``, which located its root the same way
+and would have aimed at MAM-basics for the fifth time running. Diffing its
+``_BINARY_EXTENSIONS`` against this file's is what found ``.xlsx``, the second
+extension a dropped copy has contributed; the reverse comparison found nothing
+owed. The scope now covers the hand-authored content under ``aleppo/``.
 
 The codex-index-cam1753 scope is the odd one out, and deliberately: that repo has no
 copy of this test and never had one, so unlike the six above nothing was replaced and
@@ -180,8 +177,8 @@ _EXCLUDE_MAM_GO_FILES = {
 # with no file extension, so _is_binary's extension test does not catch it and
 # read_text raises UnicodeDecodeError on it; this prefix is what keeps it out.
 # gh-pages/ goes in on the principle out/ is already on: generated, not
-# hand-authored. uxlc/ has its own scope below, rather than being scanned twice
-# through the MAM-basics root.
+# hand-authored. MAM-XML/ is a pinned input, while uxlc/ and aleppo/ each have a
+# scope below rather than being scanned twice through the MAM-basics root.
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
@@ -195,7 +192,9 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
+    "MAM-XML/",
     "uxlc/",
+    "aleppo/",
 )
 
 # The relocated UXLC subtree's generated trees -- out/, gh-pages/ and data/ --
@@ -215,14 +214,12 @@ _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 
 # What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
-# its published pages, its vendored MAM-XML snapshot, its downloaded page scans, and
-# the four derived trees.  Its aleppo-wiki/ is deliberately NOT excluded -- the CSV
-# there is J David Stark's hand-made index and the .docx and .xlsx precursors beside
-# it are the same index in Office form, which is why both extensions are in
-# _BINARY_EXTENSIONS above.
+# its published pages, its downloaded page scans, and the four derived trees. Its
+# aleppo-wiki/ is deliberately NOT excluded -- the CSV there is J David Stark's
+# hand-made index and the .docx and .xlsx precursors beside it are the same index in
+# Office form, which is why both extensions are in _BINARY_EXTENSIONS above.
 _AC_EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
-    "MAM-XML/",
     "aleppo-pages/",
     "column-coordinates/",
     "ds-flat-stream/",
@@ -331,7 +328,7 @@ def _scopes() -> tuple[_Scope, ...]:
             floor=1,
         ),
         _Scope(
-            label="codex-index-aleppo",
+            label="Aleppo data",
             root=ac_paths.ac_data_root(),
             exclude_dir_prefixes=_AC_EXCLUDE_DIR_PREFIXES,
             exclude_files=_AC_EXCLUDE_FILES,
