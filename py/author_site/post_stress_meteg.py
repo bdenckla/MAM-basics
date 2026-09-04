@@ -282,21 +282,19 @@ def _opening(survey: dict) -> list:
         mb_html.para(
             (
                 "A meteg almost always appears before the stressed syllable of its chanted",
-                " word, but it can also come after the stress. Both Yeivin (in ",
-                itm(),
-                ") and Breuer (in ",
-                cos(),
-                ") discuss post-stress meteg. Neither book says how often PSM (post-stress",
+                " word, but it can also come after the stress. Both",
+                *[" ", itm(), " and ", cos()],
+                " discuss post-stress meteg. Neither book says how often PSM (post-stress",
                 " meteg) happens; we find that MAM has ",
                 f"{total:,} of them, over {words:,} chanted words.)",
             )
         ),
         _para(
             "First, some definitions:"
-            " a chanted word can be either a simple word,"
-            " which is a word of just one atom"
-            " or it can be a compound word,"
-            " which is a word of two or more atoms connected by maqaf marks."
+            " a chanted word can be either a simple word"
+            " (a word of just one atom)"
+            " or it can be a compound word"
+            " (a word of two or more atoms connected by maqaf marks)."
             " An atom is a sequence of letters uninterrupted by space, maqaf, or any other punctuation."
         ),
         _para(
@@ -316,6 +314,15 @@ def _census(survey: dict) -> list:
         "meteg after the stressed syllable",
     )
     headers = ("Verse system", "Chanted words", "Meteg before", "Meteg after")
+    # Instead of "verse system" it should say "cant-sys" with a hover-gloss of "cantillation system"
+    # and then the values should be just "prose", "poetic", and "all"
+    #
+    # "Chanted words" should say "c-words" with a hover-gloss of "count of chanted words"i
+    #
+    # "Meteg before" should say "Pre-stress meteg" with a line break before "meteg"
+    # "Meteg after" should say "Post-stress meteg" with a line break before "meteg"
+    #
+    #  Only 1.52%: no need for 3 significant figures: just say 1.5%. Also, say "about" to make it clear that, regardless of the number of signification figures, this is rounded.
     numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
     rows = [
         mb_html.table_row_of_data(
