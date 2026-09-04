@@ -422,10 +422,11 @@ MAM-basics now names the local Aleppo paths in the affected command docstrings,
 the Wikisource-mirror subcommand, and `doc/scan-pages.md`. The tracked
 github-misc instruction copies and the live Codex instruction file now say
 that codex-index-aleppo is a redirect host; github-misc commit `f2b7a9a` is
-pushed. A functional Aleppo-source path remains in MAM-private. The governing
-programme requires Ben's direction before an edit in that third repository,
-so Phase 5 cannot yet close. Historical plans and dated review findings remain
-as execution records.
+pushed. Ben authorized MAM-private's functional Aleppo-source repoint, and the
+result is pushed. No functional Aleppo-source path remains in MAM-private.
+Phase 5 still cannot close because correcting diffable-pointed-hebrew's stale
+README requires the directed unarchive-and-rearchive operation described
+above. Historical plans and dated review findings remain as execution records.
 
 The Leningrad and Aleppo generators regenerated with zero Git diff. The
 Cambridge 1753 oracle passed all four checks, including all 160 word findings.
