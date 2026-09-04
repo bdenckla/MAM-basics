@@ -38,6 +38,14 @@ Subcommands:
                 out/accgram/chanted-word-accents.json.  Transcribes Yeivin's prose
                 inventory of the phenomenon beside the measurement and raises where
                 one of his closed verse lists and the data disagree.
+    survey-post-stress-meteg
+                Classify every U+05BD in MAM by whether its syllable falls
+                before, in, or after the chanted word's primary stress, with
+                Phonetic MAM as the stress oracle, and write
+                out/accgram/post-stress-meteg.json.  Needs the MAM-private
+                clone; py/author_site/post_stress_meteg.py renders the page
+                from the JSON this writes, which is how main_0_mega.py stays
+                clear of that clone.
     survey-breuer-zaqef-units
                 Measure how well Breuer's long/short/tiny (CoS Instructions for the
                 Reader) predicts whether a two-chanted-word zaqef realm is divided by
@@ -170,6 +178,7 @@ from accgram import fix_tester
 from accgram import grammaticality
 from accgram import maqaf_nonfinal_accents_page
 from accgram import poetic_oddballs
+from accgram import post_stress_meteg
 from accgram import ps17v14_double_tsinnor
 from accgram import ps17v14_doc_notes
 from accgram import research_tao
@@ -213,6 +222,10 @@ def _run_run_printed_decalogue(args: argparse.Namespace) -> None:
 
 def _run_survey_chanted_word_accents(args: argparse.Namespace) -> None:
     chanted_word_accents.run(args)
+
+
+def _run_survey_post_stress_meteg(args: argparse.Namespace) -> None:
+    post_stress_meteg.run(args)
 
 
 def _run_survey_breuer_zaqef_units(args: argparse.Namespace) -> None:
@@ -380,6 +393,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     chanted_word_accents.add_args(chanted_word_parser, repo_root=_repo_root())
     chanted_word_parser.set_defaults(func=_run_survey_chanted_word_accents)
+
+    post_stress_meteg_parser = subparsers.add_parser(
+        "survey-post-stress-meteg",
+        help=(
+            "Classify every U+05BD in MAM by its position relative to the chanted word's "
+            "primary stress, with Phonetic MAM as the stress oracle, and write "
+            "out/accgram/post-stress-meteg.json. Needs the MAM-private clone."
+        ),
+    )
+    post_stress_meteg.add_args(post_stress_meteg_parser, repo_root=_repo_root())
+    post_stress_meteg_parser.set_defaults(func=_run_survey_post_stress_meteg)
 
     breuer_zaqef_parser = subparsers.add_parser(
         "survey-breuer-zaqef-units",

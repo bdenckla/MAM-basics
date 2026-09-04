@@ -33,6 +33,7 @@ from py_render.rt_html_utils import (
     record_category_badge_html,
 )
 from py_render.rt_render_utils import as_optional_text, as_text
+from py_render.rt_suggestion_context import ContextLink
 from py_render.rt_suggestion_kinds import (
     kind_display_text,
     kind_filter_id,
@@ -77,6 +78,7 @@ def suggestion_card_html(
     output_html_path: Path,
     data_root: Path,
     source_message_dates: dict[str, str],
+    context_links: dict[str, ContextLink] | None = None,
 ) -> str:
     case_number = int(as_text(case.get("case_number", "0")))
     fragment_id = suggestion_fragment_id(case_number)
@@ -110,6 +112,7 @@ def suggestion_card_html(
         _as_sent_html(case),
         _atom_note_html(case),
         _source_note_html(case, source_message_dates),
+        _context_link_html((context_links or {}).get(ref_as_sent)),
     )
 
     images_html = _image_paths_html(
@@ -152,6 +155,25 @@ data-filter-ids="{escape(filter_id)}"
 </div>
 </div>
 </article>"""
+
+
+def _context_link_html(link: ContextLink | None) -> str:
+    """A neutral pointer to a page giving this case's mark some background, or nothing.
+
+    LAST on the card, under the notes, because it is the only line that is not about this
+    case: everything above it is Holman's message and what the ingest derived from it, and
+    this points at a page written afterwards about the kind of mark the case is about.
+
+    The label and the href are escaped and nothing is interpreted: unlike the prose notes,
+    which honour one markdown-style link convention, a context link is a pair of fields from
+    ``rt_suggestion_context`` and carries no text from the extract at all.
+    """
+    if link is None:
+        return ""
+    return (
+        '<div class="note-line"><span class="label">Background:</span> '
+        f'<a href="{escape(link.href)}">{escape(link.label)}</a></div>'
+    )
 
 
 def _comparison_table_html(

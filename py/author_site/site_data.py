@@ -69,6 +69,15 @@ _GDOC = "https://docs.google.com/document/d/e"
 UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
+POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
+POST_STRESS_METEG_TITLE = "Meteg after the primary stress in MAM"
+
+# The identifier of that page's section on Holman suggestion M23.  Here rather than in the
+# page module because two trees want it: py/author_site/post_stress_meteg.py emits it, and
+# py/py_render/rt_suggestion_context.py builds the M23 card's href from it.  The renderer
+# would otherwise have to import the page module, which reaches the whole accgram survey.
+POST_STRESS_METEG_M23_ID = "m23-isaiah-23-12"
+
 # The stylesheet both pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
@@ -77,6 +86,14 @@ UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 # accgram tables that no link index has any use for.  Ben asked for the switching on
 # 2026-08-31, having noticed these two pages staying white on a dark display.
 CSS_HREF = "style.css"
+
+# The accgram stylesheet, linked BESIDE the one above by the one deploy-root page that shows
+# pointed Hebrew and accent-name romanizations: post-stress-meteg.html.  It supplies the
+# lang="hbo" font at the size that makes accents legible, the italic for span.romanized, and
+# the numeric-cell alignment, none of which a page of links has any use for and none of which
+# is therefore in style.css.  Its @font-face URL is relative to the stylesheet, so the font
+# resolves from the deploy root as it does from gh-pages/wlc/.
+ACCGRAM_CSS_HREF = "wlc/style.css"
 
 # Every href below that stays inside this site is written RELATIVE, because this page is
 # published at the site root and a relative link works in a local checkout too.
@@ -124,6 +141,7 @@ _MAM = Section(
             note=(" (presented at the 2023 SBL Annual Meeting in San Antonio)",),
         ),
         _entry("MAM FOI (Features of Interest) Lists", f"{_MWD}foi/index.html"),
+        _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_FNAME),
         _entry(
             ("Notes on Torah ", Italic("aliyot")),
             f"{_MWD_MISC}notes_on_aliyot.html",
