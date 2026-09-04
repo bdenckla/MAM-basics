@@ -390,6 +390,12 @@ For a dated task folder that appears complete, distinguish these cases before re
 3. A Git-less `proposed/` copy set is a task artifact, not a forest. Once its changes are committed
    and pushed, retain the commits and generated reports in their proper repositories rather than
    retaining the copies.
+4. Claude cache and temporary-data directories can live outside `Documents/Codex`, and their paths
+   can change. Report each identified Claude cache or temporary directory with its exact path and
+   measured size; a directory of 1 GiB or more is a maintenance finding. Do not classify a directory as
+   cache only because it is large: Claude project directories, session transcripts, and `memory/`
+   directories can contain durable work. Verify that a directory is disposable cache data before
+   retiring it, and preserve an uncertain directory.
 
 Move only verified completed task folders to the Windows Recycle Bin, record the exact paths and
 the evidence, and leave an ambiguous task folder in place. The Recycle Bin makes a mistake
