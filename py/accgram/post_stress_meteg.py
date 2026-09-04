@@ -729,11 +729,11 @@ def _fold_qamats_qatan(key: str) -> str:
 
 
 # The marks Phonetic MAM adds that MAM's text does not have: a masora circle where it has
-# resolved a sheva, an upper dot on a dagesh it reads as ḥazaq, and a varika where it reads an
-# implicit ḥataf.  Dropped only to ask whether a candidate is the very chanted word the
-# snapshot has -- never to build a displayed form, which is always MAM's own.  U+05C5 goes
-# with U+05C4 because the two puncta are one notation; a chanted word carrying a genuine
-# extraordinary point simply fails this test and is settled by the test after it.
+# resolved a sheva, an upper dot on a dagesh it takes as xazaq, and a varika where it reads an
+# implicit xataf.  Dropped only to ask whether a candidate is the very chanted word the
+# snapshot has -- never to build a displayed form, which is always MAM's.  U+05C5 goes with
+# U+05C4 because the two puncta are one notation; a chanted word with a genuine extraordinary
+# point simply fails this test and is settled by the test after it.
 _PHONETIC_MAM_ANNOTATIONS = str.maketrans(
     {
         hpu.MCIRC: None,

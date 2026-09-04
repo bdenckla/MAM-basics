@@ -20,6 +20,7 @@ from py_render.rt_mam_suggestion_card import (
     suggestion_fragment_id,
 )
 from py_render.rt_record_card import record_card_html
+from py_render.rt_suggestion_context import CONTEXT_BY_REF
 from py_render.rt_suggestion_kinds import KETIV_QERE_KIND, suggestion_kind
 from py_render.rt_render_utils import (
     as_text,
@@ -225,12 +226,16 @@ def _write_report_page(
     # the two bodies of work have unrelated numbering, so one sequence of cards
     # ordered by anything they share would read as arbitrary. The kind filter is
     # what a reader uses to see one body alone.
+    # CONTEXT_BY_REF is passed in rather than reached for inside the card builder, so that
+    # what a card may link to is decided in one place and is visible at the call site.  It
+    # names one case today, M23; a card whose reference is not in it gets no such link.
     suggestion_cards = [
         suggestion_card_html(
             case=case,
             output_html_path=output_html_path,
             data_root=repo_root,
             source_message_dates=source_message_dates,
+            context_links=CONTEXT_BY_REF,
         )
         for case in suggestion_cases
     ]

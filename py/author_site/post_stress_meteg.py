@@ -49,9 +49,10 @@ from mb_cmn import bib_locales as tbn
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
 
-# The M23 card's link lands here, so the identifier is part of that card's href and cannot be
-# renamed on its own: py/py_render/rt_mam_suggestion_card.py holds the other half.
-M23_SECTION_ID = "m23-isaiah-23-12"
+# The M23 card's link lands here, so the identifier is half of that card's href and cannot be
+# renamed alone: py/py_render/rt_suggestion_context.py builds the other half from the same
+# site_data constant.
+M23_SECTION_ID = site_data.POST_STRESS_METEG_M23_ID
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
