@@ -1537,8 +1537,8 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             " branch of each template."
             " The table counts only the chanted words inside those templates, not every"
             " chanted word in the numbered verses that contain them."
-            " The table below shows that this choice has only a tiny effect on the"
-            " prose MBS count, and no effect on any other analysis."
+            " The table below shows that this choice has no effect on the MAS count and"
+            " changes the other two counts only by 1."
         ),
         _table(headers, rows),
         mb_html.para(
