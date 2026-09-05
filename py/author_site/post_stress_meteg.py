@@ -1194,10 +1194,9 @@ def _m23(survey: dict) -> list:
                 "The ",
                 mb_html.anchor_h("Holman M23 record", _HOLMAN_M23_RECORD_HREF),
                 *wrap_hebrew_runs(
-                    " says that the Aleppo Codex has a meteg under the mem of the"
-                    f" chanted word {qumi} at Isaiah 23:12, where MAM had none. The suggestion"
-                    " was taken, so MAM has the meteg there now, and the comparison forms on the"
-                    " M23 card are what Holman was sent, frozen at the date of his message."
+                    " has the MAM form Holman received on 2026-08-31, without a meteg where"
+                    " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
+                    f" has the meteg under the mem of the chanted word {qumi} at Isaiah 23:12."
                 ),
             )
         ),
