@@ -707,7 +707,7 @@ def _by_type(survey: dict) -> list:
     rows.append(
         mb_html.table_row_of_data(
             (
-                "misc (not one of the three types above)",
+                "misc",
                 str(survey["post_stress_by_structural_type"][_PROSE][unclassified]),
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
                 _case_chanted_word_cell(_example_of(survey, unclassified)),
