@@ -827,8 +827,9 @@ def _by_type(survey: dict) -> list:
                 itm(),
                 " and ",
                 cos(),
-                ". Each type has a condition on the syllable where the meteg falls;"
-                " type 1 also has a condition on the following chanted word:",
+                ". The three types are roughly the same in those two books. Our definitions"
+                " of those three types are listed below. (Our definitions roughly agree with"
+                " both books but perfectly agree with neither of them.)",
             )
         ),
         mb_html.ordered_list(
