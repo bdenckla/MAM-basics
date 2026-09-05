@@ -69,6 +69,7 @@ span.romanized { font-style: italic; }
    an unclassed <em> must keep its italic and only this one turns bold. */
 em.emphasis { font-style: normal; font-weight: bold; }
 p { max-width: 40em; text-align: justify}
+p.center { text-align: center; }
 blockquote { max-width: 40em; }
 td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
 td.big { font-size: 250%; }
