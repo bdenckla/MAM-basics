@@ -149,8 +149,7 @@ _TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
     hl.NUN: "nun",
 }
 _HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
-This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
-toggle only that word's spacing.</p>
+__SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
 (() => {{
   const checkbox = document.getElementById("{_HEBREW_SPACING_CHECKBOX_ID}");
@@ -638,9 +637,27 @@ def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
     )
 
 
-def _hebrew_spacing_option() -> object:
+def _hebrew_spacing_option(*, table_above: bool = False) -> object:
     """The page-wide control for the pointed Hebrew's letter spacing."""
-    return mb_html.raw_html(_HEBREW_SPACING_OPTION)
+    if table_above:
+        spacing_text = (
+            "This checkbox controls whether Hebrew letter spacing is expanded in the table above"
+            " as well as the whole document."
+        )
+        toggle_text = (
+            "Alternately, you can click on an individual Hebrew word to toggle only that word's"
+            " spacing."
+        )
+    else:
+        spacing_text = (
+            "This checkbox controls whether Hebrew letter spacing is expanded."
+        )
+        toggle_text = "Or click a Hebrew word to\ntoggle only that word's spacing."
+    return mb_html.raw_html(
+        _HEBREW_SPACING_OPTION.replace("__SPACING_TEXT__", spacing_text).replace(
+            "__TOGGLE_TEXT__", toggle_text
+        )
+    )
 
 
 # --- the sections --------------------------------------------------------------
@@ -821,6 +838,8 @@ def _by_type(survey: dict) -> list:
                 "A final closed syllable whose vowel is tsere.",
             )
         ),
+        _table(headers, rows),
+        _hebrew_spacing_option(table_above=True),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
             f" of the {type_2_count} type-2 records has pataḥ rather than tsere, so no"
@@ -840,8 +859,6 @@ def _by_type(survey: dict) -> list:
             ),
             {"class": "center"},
         ),
-        _hebrew_spacing_option(),
-        _table(headers, rows),
         mb_html.heading_level_3("Sources for types 1–3"),
         _table(("Type", itm(), cos()), source_rows),
         mb_html.para(
