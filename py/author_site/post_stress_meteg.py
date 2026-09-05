@@ -375,17 +375,6 @@ def _subtype_records(survey: dict, subtype: str) -> list[dict]:
     return [one for one in survey["post_stress"] if one["subtype"] == subtype]
 
 
-def _following_example(record: dict, kind: str) -> tuple:
-    """The following MAM chanted word where the source-derived type requires it."""
-    if kind not in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL):
-        return _hebrew_cell(None)
-    following = record["following_mam_form"]
-    assert (
-        following is not None
-    ), f"{record['bcv']}: no MAM form for the following chanted word of {kind}"
-    return _hebrew_cell(following)
-
-
 def _example_of(survey: dict, kind: str) -> dict:
     """The first record of a type, in the corpus's order, as that type's specimen.
 
@@ -1015,12 +1004,14 @@ def _case_subtype_cell(subtype: str | None) -> object:
 
 def _following_chanted_word_matters(record: dict) -> bool:
     """Whether the following chanted word supplies a type condition for this record."""
-    return record["structural_type"] in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL) or (
+    return record["structural_type"] == psm.TYPE_OPEN or (
         record["subtype"] in (psm.SUBTYPE_MISC_ALMOST_TYPE_1, psm.SUBTYPE_MISC_VAYOMER)
     )
 
 
-def _case_chanted_word_cell(record: dict) -> tuple:
+def _case_chanted_word_cell(
+    record: dict, *, include_type_2_following: bool = False
+) -> tuple:
     """The MAM form, with required following context demoted.
 
     The shared routine displays zero or more paseq marks and then the following chanted word.
@@ -1028,7 +1019,10 @@ def _case_chanted_word_cell(record: dict) -> tuple:
     another kind of intervening material a reviewable failure rather than silently dropping it.
     """
     current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
-    if not _following_chanted_word_matters(record):
+    show_following = _following_chanted_word_matters(record) or (
+        include_type_2_following and record["structural_type"] == psm.TYPE_GUTTURAL
+    )
+    if not show_following:
         return current
     following = record["following_mam_form"]
     assert following is not None, f"{record['bcv']}: no following MAM chanted word"
@@ -1113,11 +1107,8 @@ def _type_2_case_row(record: dict) -> object:
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(
-                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                _case_chanted_word_cell(record, include_type_2_following=True),
                 _HEBREW_CELL,
-            ),
-            mb_html.table_datum(
-                _following_example(record, psm.TYPE_GUTTURAL), _HEBREW_CELL
             ),
         ),
         {"data-following-initial": _type_2_following_group(record)},
@@ -1169,8 +1160,8 @@ def build_type_2_body(survey: dict) -> list:
         mb_html.heading_level_2("Every type 2 case in MAM"),
         _para(
             "Every row has a final guttural closing the last syllable of the first"
-            " word. The following word has a separate column because its"
-            " initial consonant selects the filter group."
+            " word. The following word is gray, and its initial consonant selects the"
+            " filter group."
         ),
         mb_html.para(
             (
@@ -1184,7 +1175,7 @@ def build_type_2_body(survey: dict) -> list:
         ),
         _type_2_following_filter(len(rows)),
         _table(
-            ("Verse", "Word", "Following word"),
+            ("Verse", "Word"),
             rows,
             {
                 "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
@@ -1288,7 +1279,7 @@ def build_cases_body(survey: dict) -> list:
             " text."
         ),
         _para(
-            "For types 1 and 2, the following word is shown in gray."
+            "For type 1, the following word is shown in gray."
             " The same is true of misc-almost-type-1, because the following"
             " word's stress keeps that row out of type 1. For misc-vayomer, the"
             " intervening paseq is gray with the following word."
