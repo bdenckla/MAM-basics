@@ -621,9 +621,9 @@ a finding.
 
 ## Fourth stage — the five MAM products, total evacuation — **PURSUED 2026-09-04; drafted, not started**
 
-**Ben decided on 2026-09-04 to pursue this stage, and did NOT waive its open sub-questions**, which
-are recorded under §"The six sub-questions Ben has not waived" below, for whenever he answers
-them; that section says which lane each one blocks. This is
+**Ben decided on 2026-09-04 to pursue this stage.** The six decisions are recorded under
+§"The six sub-questions Ben has not waived" below; five were decided on 2026-09-05, and that
+section says which lane each decision blocks. This is
 the fourth stage §"Whether the products follow — an open question Ben put on 2026-09-02, and not
 decided" said would exist: "if Ben decides yes, it is a fourth stage with its own section here,
 after the third." The five products are **MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS and
@@ -933,44 +933,41 @@ Four smaller differences, each with a precedent:
 
 ### The six sub-questions Ben has not waived
 
-**None is decided, and each changes what a lane does. They are RECORDED HERE for whenever
-Ben answers them, not asked of him at any particular moment.** Each blocks the lane it
-governs and nothing else: drafting this section did not need any of them answered, and a
-session picking this file up may read it, measure against it, and write a plan file from it
-with all six still open. What no session may do is START a lane whose question is one of
-these — so the answer is owed at the head of the lane, and questions 5 and 6, being about
-what runs when and whether a plan file exists, are owed before the first lane of all.
+**At the 2026-09-04 draft all six decisions were open. Ben decided questions 1, 2, 3, 4 and 6 on
+2026-09-05. Question 5 remains open: the third stage's completion does not select its historical
+record.** No session may start a lane before the decisions that govern that lane are recorded in
+the dedicated fourth-stage plan; Question 5 remains owed before the first lane.
 
-1. **Does the outsider get a sparse checkout, a release archive, or neither?** Objection 2 above.
-   "Neither" is a decision to let "get the simple extract" mean cloning about 770 MB.
-2. **Do the four `vendored-*` steps and their 106 tracked outputs land, or retire?** Objection 4
-   above, where landing them is the recommendation.
-3. **Is any of the five products' data actually pulled automatically by Sefaria, STEPBible or
-   CrossWire?** Objection 1 above. This repository cannot answer it; Ben can ask them, or can decide
-   that a loud one-time failure is acceptable.
-4. **In what order do the five lanes run?** Not put on 2026-09-02 and not decided. The write-target
-   argument favours MAM-simple and MAM-for-Sefaria first, they being the two the override chain
-   cannot steer and so the two whose lanes end the silent misdirection. By size the three superlatives
-   fall to three different products: MAM-simple is largest by tracked MB (102.7), MAM-with-doc by
-   published pages (113), MAM-parsed by pack (54.85 MiB).
-5. **Does this stage run before, after, or interleaved with the third stage's remaining lanes?**
-   The third stage has codex-index-aleppo, codex-index-cam1753 and diffable-pointed-hebrew
-   outstanding, and the second and third stages already interleave by decision 3 of §"The four
-   decisions of 2026-09-02". Interleaving a third is a scheduling choice and not a technical
-   constraint.
-6. **Does a fourth-stage plan file get written, or do the five lanes run from this section?** Every
-   earlier stage got its own plan file, written by a Phase 0 whose whole job was to write it, which
-   argues yes; the products' lanes are more uniform than the trio's, which argues no.
+1. **Question 1 — outsider delivery: DECIDED 2026-09-05 — sparse checkout.** The dedicated plan
+   will give outsiders sparse-checkout instructions for the landed MAM-parsed and MAM-simple
+   directories. The stage creates and maintains no release archives; "neither" is rejected.
+2. **Question 2 — the differential oracle: DECIDED 2026-09-05 — land it.** Land the four
+   `vendored-*` example programs and their 106 tracked outputs under MAM-parsed and MAM-simple,
+   retaining the independent differential oracle described in Objection 4 above.
+3. **Question 3 — external data consumers: DECIDED 2026-09-05 — accept a loud one-time failure.**
+   Do not contact Sefaria, STEPBible or CrossWire before the lanes. If an external client uses an
+   old raw-data URL, accept that external client's loud one-time failure and let that client repoint
+   its use to MAM-basics.
+4. **Question 4 — lane order: DECIDED 2026-09-05 — MAM-simple, MAM-for-Sefaria, MAM-parsed,
+   MAM-with-doc, then MAM-OSIS.** MAM-simple and MAM-for-Sefaria first remove the two corpus writes
+   that the `REPOS_ROOT` override cannot steer and therefore end the silent-misdirection hazard.
+5. **Question 5 — third-stage scheduling: OPEN.** The third stage is complete, so it cannot now
+   interleave with this stage. Ben still needs to choose whether this record says that the fourth
+   stage runs after the completed third stage, or retires Question 5 as no longer applicable.
+6. **Question 6 — plan form: DECIDED 2026-09-05 — write a dedicated fourth-stage plan.** A Phase 0
+   writes that plan after Question 5 is decided; no product lane starts while Question 5 remains
+   open.
 
 ### Planning preflight after the third-stage close — 2026-09-04
 
-**This preflight records facts and does not start a product lane.** MAM-basics was clean at
+**This preflight records the facts that were current on 2026-09-04 and does not start a product
+lane.** The decision record above records Ben's later 2026-09-05 answers. MAM-basics was clean at
 `2f1ae14d` (the third-stage Phase 5 closeout). MAM-parsed `5108203`, MAM-simple `7a4f21d`,
 MAM-with-doc `0fe406c`, MAM-OSIS `697dc98`, and MAM-for-Sefaria `ce1e04c` were each clean on
 `main` and had no reported divergence from `origin/main`. No product file, source configuration,
 or MAM-private file changed during the preflight.
 
-The preflight makes the six decisions more concrete without answering any of them.
+At the time of the preflight, the six decisions were open.
 
 1. **Question 1 — delivery to an outsider:** none of the five product READMEs documents a sparse
    checkout or a release archive. MAM-parsed, MAM-simple, and MAM-with-doc have no GitHub release.
