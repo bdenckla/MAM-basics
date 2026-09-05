@@ -877,7 +877,7 @@ def _by_type(survey: dict) -> list:
                 mb_html.table_row_of_data(
                     (
                         _ref_link(record["bcv"]),
-                        _hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                        _case_chanted_word_cell(record),
                     ),
                     (None, _HEBREW_CELL),
                 )
