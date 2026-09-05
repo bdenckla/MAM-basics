@@ -59,6 +59,7 @@ _DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 # renamed alone: py/py_render/rt_suggestion_context.py builds the other half from the same
 # site_data constant.
 M23_SECTION_ID = site_data.POST_STRESS_METEG_M23_ID
+_HOLMAN_M23_RECORD_HREF = "holman/table_data_findings_suppressed.html#mam023"
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
@@ -1065,13 +1066,19 @@ def _m23(survey: dict) -> list:
     open_count = _by_type_count(survey, psm.TYPE_OPEN)
     return [
         mb_html.heading_level_2(
-            "The M23 comparison at Isaiah 23:12", {"id": M23_SECTION_ID}
+            "A new MAS in MAM at Isaiah 23:12", {"id": M23_SECTION_ID}
         ),
-        _para(
-            "Daniel Holman wrote that the Aleppo Codex has a meteg under the mem of the"
-            f" chanted word {qumi} at Isaiah 23:12, where MAM had none. The suggestion was"
-            " taken, so MAM has the meteg there now, and the comparison forms on his card"
-            " are what he was sent, frozen at the date of his message."
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h("Holman M23 record", _HOLMAN_M23_RECORD_HREF),
+                *wrap_hebrew_runs(
+                    " says that the Aleppo Codex has a meteg under the mem of the"
+                    f" chanted word {qumi} at Isaiah 23:12, where MAM had none. The suggestion"
+                    " was taken, so MAM has the meteg there now, and the comparison forms on the"
+                    " M23 card are what Holman was sent, frozen at the date of his message."
+                ),
+            )
         ),
         _para(
             f"The mark is of the open-syllable type: {qumi} is stressed on its first"
@@ -1222,7 +1229,7 @@ def _sources_and_limits(survey: dict) -> list:
             f" meteg marks they have — {currency['metegs_in_the_surveyed_snapshot']:,} in the"
             " surveyed"
             f" text against {currency['metegs_in_mam_simple_today']:,} today. Isaiah 23:12 is"
-            " one of them, which is why the meteg this page's M23 section is about is not"
+            " one of them, which is why the meteg this page's Isaiah 23:12 section is about is not"
             " among the counts above."
         ),
         _para(
