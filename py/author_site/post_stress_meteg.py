@@ -22,8 +22,8 @@ WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and acce
 subject; and what the page is about is which SYLLABLE a mark falls in, which a reader cannot
 see without the vowels that make the syllables.  Both of the page's three structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
-the sense the house rule allows for.  Every form is lifted from the corpus at generation time
--- ``mam_form``, MAM's text -- and none is typed here.
+the sense the house rule allows for.  Every form is lifted from its labelled text at generation
+time -- MAM forms through ``mam_form`` -- and none is typed here.
 
 THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts and does not
 require them; the sections are cited by number and their content paraphrased, so no private
@@ -33,8 +33,10 @@ that it is, which is the plan's requirement for a page with no excerpts.
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 import re
+import xml.etree.ElementTree as ET
 
 from accgram import post_stress_meteg as psm
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
@@ -44,6 +46,8 @@ from mb_cmn import hebrew_letters as hl
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
+from py_uxlc import my_uxlc
+from py_wlc_json_and_unicode import wlc_uword
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
@@ -458,6 +462,10 @@ def pin_claims(survey: dict) -> None:
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
+    post_silluq_forms = dict(_post_silluq_comparison(survey))
+    assert post_silluq_forms["MAM"].count(psm.METEG) == 1
+    assert post_silluq_forms["UXLC 3.9"].count(psm.METEG) == 2
+    assert post_silluq_forms["WLC 4.22"].count(psm.METEG) == 2
     exodus = _dual_cantillation_facts(survey, "ex20:2")
     assert exodus["same_chanted_word_group_count"]
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
@@ -1274,19 +1282,110 @@ def _focus_word(
     both in the middle and at the end, and it is the verse-final one -- the one with sof
     pasuq -- that the post-silluq section is about.
     """
-    words = survey["currency"]["focus_verses"][bcv]["chanted_words"]
+    return _source_focus_word(
+        survey["currency"]["focus_verses"][bcv]["chanted_words"],
+        bcv,
+        letters,
+        must_have=must_have,
+        source="MAM",
+    )
+
+
+def _source_focus_word(
+    words: list[str],
+    bcv: str,
+    letters: tuple[str, ...],
+    *,
+    must_have: str,
+    source: str,
+) -> str:
+    """The one source form at a page-named verse that has these letters and mark."""
     hits = [
         word for word in words if _letters_of(word) == letters and must_have in word
     ]
-    assert len(hits) == 1, f"{bcv}: {len(hits)} chanted words with letters {letters}"
+    assert (
+        len(hits) == 1
+    ), f"{source} {bcv}: {len(hits)} chanted words with letters {letters} and {must_have!r}"
     return hits[0]
+
+
+def _uxlc_words(bcv: str) -> list[str]:
+    """The UXLC atoms at one verse, lifted from its vendored XML source."""
+    bb, chnu, vrnu = _split(bcv)
+    bk39id = wlc_bb_to_bk39id(bb)
+    xml_name = f"{my_uxlc._UXLC_BOOK_FILE_NAMES[bk39id]}.xml"
+    xml_path = paths.in_dir() / "UXLC-39" / xml_name
+    root = ET.parse(xml_path).getroot()
+    chapters = [node for node in root.iter("c") if node.attrib.get("n") == str(chnu)]
+    assert len(chapters) == 1, f"{xml_path}: {len(chapters)} chapter {chnu} elements"
+    verses = [
+        node
+        for node in chapters[0]
+        if node.tag == "v" and node.attrib.get("n") == str(vrnu)
+    ]
+    assert len(verses) == 1, f"{xml_path}: {len(verses)} verse {chnu}:{vrnu} elements"
+    return [
+        atom.text.strip()
+        for atom in verses[0]
+        if atom.tag in {"w", "q"} and atom.text is not None
+    ]
+
+
+def _wlc_words(bcv: str) -> list[str]:
+    """The WLC 4.22 atoms at one verse, decoded from its vendored M-C source."""
+    rows_at_verse = []
+    for json_path in (paths.out_dir() / "wlc422").glob("1verses_*.json"):
+        rows = json.loads(json_path.read_text(encoding="utf-8"))
+        assert isinstance(rows, list), f"Expected a list in {json_path}"
+        rows_at_verse.extend(
+            row for row in rows if isinstance(row, dict) and row.get("bcv") == bcv
+        )
+    assert len(rows_at_verse) == 1, f"WLC 4.22: {len(rows_at_verse)} rows for {bcv}"
+    vels = rows_at_verse[0].get("vels")
+    assert isinstance(vels, list) and all(
+        isinstance(atom, str) for atom in vels
+    ), f"WLC 4.22 {bcv}: non-string vels"
+    return [wlc_uword.uword(atom) for atom in vels]
+
+
+def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
+    """The three source-derived forms relevant to 1 Samuel 17:5's post-silluq question."""
+    letters = ("נחשת",)
+    return (
+        (
+            "MAM",
+            _focus_word(survey, _POST_SILLUQ_VERSE, letters, must_have=psm.SOF_PASUQ),
+        ),
+        (
+            "UXLC 3.9",
+            _source_focus_word(
+                _uxlc_words(_POST_SILLUQ_VERSE),
+                _POST_SILLUQ_VERSE,
+                letters,
+                must_have=psm.SOF_PASUQ,
+                source="UXLC 3.9",
+            ),
+        ),
+        (
+            "WLC 4.22",
+            _source_focus_word(
+                _wlc_words(_POST_SILLUQ_VERSE),
+                _POST_SILLUQ_VERSE,
+                letters,
+                must_have=psm.SOF_PASUQ,
+                source="WLC 4.22",
+            ),
+        ),
+    )
 
 
 def _post_silluq(survey: dict) -> list:
     """Section 5: a meteg after the silluq, which MAM does not have."""
-    nexoshet = _focus_word(
-        survey, _POST_SILLUQ_VERSE, ("נחשת",), must_have=psm.SOF_PASUQ
-    )
+    comparison = _post_silluq_comparison(survey)
+    comparison_rows = [
+        mb_html.table_row_of_data((source, _hebrew_cell(form)), (None, _HEBREW_CELL))
+        for source, form in comparison
+    ]
     return [
         mb_html.heading_level_2("The post-silluq case at 1 Samuel 17:5"),
         _para(
@@ -1295,12 +1394,14 @@ def _post_silluq(survey: dict) -> list:
         ),
         _para(
             "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in"
-            " some BHS-derived editions. MAM has the verse-final chanted word"
-            f" {nexoshet} with one U+05BD, the silluq. UXLC 3.9 and WLC 4.22 are"
-            " BHS-derived transcriptions, and each has a second U+05BD on the final"
-            " syllable. Their forms are evidence about UXLC and WLC; whether the Leningrad"
-            " Codex has a second mark must be read from folio F159A, column 3, line 8,"
-            " where the chanted word stands."
+            " some BHS-derived editions."
+        ),
+        _table(("source", "verse-final chanted word"), comparison_rows),
+        _para(
+            "UXLC 3.9 and WLC 4.22 are BHS-derived transcriptions, and each has a second"
+            " U+05BD on the final syllable. Their forms are evidence about UXLC and WLC;"
+            " whether the Leningrad Codex has a second mark must be read from folio F159A,"
+            " column 3, line 8, where the chanted word stands."
         ),
         _para(
             "Two of the three types could not occur on a silluq word: types 1 and 2 each"
