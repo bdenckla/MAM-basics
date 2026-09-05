@@ -393,11 +393,11 @@ def _misc_almost_type_1_inaugural(survey: dict) -> dict:
     return records[0]
 
 
-def _type_3_almost_2_inaugural(survey: dict) -> dict:
+def _misc_almost_type_2_inaugural(survey: dict) -> dict:
     """The Job 15:35 record that fits Breuer's type (a), but not Yeivin's type 3."""
     records = [
         one
-        for one in _subtype_records(survey, psm.SUBTYPE_3_ALMOST_2)
+        for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_2)
         if one["bcv"] == "jb15:35"
     ]
     assert len(records) == 1, records
@@ -425,7 +425,7 @@ def pin_claims(survey: dict) -> None:
     for subtype in (
         psm.SUBTYPE_MISC_ALMOST_TYPE_1,
         psm.SUBTYPE_MISC_VAYOMER,
-        psm.SUBTYPE_3_ALMOST_2,
+        psm.SUBTYPE_MISC_ALMOST_TYPE_2,
     ):
         subtype_records = _subtype_records(survey, subtype)
         assert len(subtype_records) == _by_subtype_count(survey, subtype)
@@ -433,13 +433,13 @@ def pin_claims(survey: dict) -> None:
             one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
         )
     _misc_almost_type_1_inaugural(survey)
-    type_3_almost_2 = _type_3_almost_2_inaugural(survey)
-    assert _by_subtype_count(survey, psm.SUBTYPE_3_ALMOST_2) == 1
+    misc_almost_type_2 = _misc_almost_type_2_inaugural(survey)
+    assert _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_2) == 1
     assert (
-        type_3_almost_2["vowel"] == "ḥolam"
-        and type_3_almost_2["is_the_last_syllable"]
-        and not type_3_almost_2["syllable_is_open"]
-        and not type_3_almost_2["closes_on_a_guttural"]
+        misc_almost_type_2["vowel"] == "ḥolam"
+        and misc_almost_type_2["is_the_last_syllable"]
+        and not misc_almost_type_2["syllable_is_open"]
+        and not misc_almost_type_2["closes_on_a_guttural"]
     )
     misc_vayomer_records = _subtype_records(survey, psm.SUBTYPE_MISC_VAYOMER)
     assert len(misc_vayomer_records) == 4, misc_vayomer_records
@@ -839,7 +839,7 @@ def _by_type(survey: dict) -> list:
                 " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
                 " closed syllable. The one current record in Breuer's type (a) but not"
                 " Yeivin's type has subtype ",
-                mb_html.code(psm.SUBTYPE_3_ALMOST_2),
+                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_2),
                 "; the ",
                 mb_html.anchor_h("misc cases page", _MISC_FNAME),
                 " lists that record.",
@@ -903,7 +903,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
         psm.SUBTYPE_MISC_VAYOMER: (
             "A Vayomer case with one intervening PASEQ before the following chanted word."
         ),
-        psm.SUBTYPE_3_ALMOST_2: (
+        psm.SUBTYPE_MISC_ALMOST_TYPE_2: (
             "A final closed ḥolam syllable: Breuer's long-vowel type (a), but not"
             " Yeivin's tsere type 3."
         ),
@@ -1097,8 +1097,8 @@ def build_misc_body(survey: dict) -> list:
     records = _misc_records(survey)
     almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
     almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
-    type_3_almost_2_count = _by_subtype_count(survey, psm.SUBTYPE_3_ALMOST_2)
-    type_3_almost_2_inaugural = _type_3_almost_2_inaugural(survey)
+    misc_almost_type_2_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_2)
+    misc_almost_type_2_inaugural = _misc_almost_type_2_inaugural(survey)
     vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     return [
         mb_html.heading_level_1(_MISC_TITLE),
@@ -1142,13 +1142,13 @@ def build_misc_body(survey: dict) -> list:
         mb_html.para(
             (
                 "Within misc, ",
-                mb_html.code(psm.SUBTYPE_3_ALMOST_2),
-                f" has {type_3_almost_2_count} record",
-                "s" if type_3_almost_2_count != 1 else "",
+                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_2),
+                f" has {misc_almost_type_2_count} record",
+                "s" if misc_almost_type_2_count != 1 else "",
                 ". Its initial member is ",
-                _ref_link(type_3_almost_2_inaugural["bcv"]),
+                _ref_link(misc_almost_type_2_inaugural["bcv"]),
                 ": its chanted word ",
-                *_hebrew_cell(type_3_almost_2_inaugural["mam_form"]),
+                *_hebrew_cell(misc_almost_type_2_inaugural["mam_form"]),
                 " has a final closed syllable with ḥolam, a long vowel. It fits Breuer's"
                 " broader type (a), but not Yeivin's tsere type 3.",
             )
