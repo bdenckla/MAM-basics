@@ -645,28 +645,43 @@ def _census(survey: dict) -> list:
         "meteg before the stressed syllable",
         "meteg after the stressed syllable",
     )
+    before_category = "meteg before the stressed syllable"
+    after_category = "meteg after the stressed syllable"
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
         mb_html.abbr("c-words", {"title": "count of chanted words"}),
         mb_html.abbr("MBS", {"title": "Meteg before the stress"}),
         mb_html.abbr("MAS", {"title": "meteg after the stress"}),
+        mb_html.abbr(
+            "% MAS", {"title": "percentage of meteg marks that are after the stress"}
+        ),
     )
-    numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
+    numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
     labels = {_PROSE: "prose", _POETIC: "poetic"}
-    rows = [
-        mb_html.table_row_of_data(
-            (labels[system], *[f"{_count(survey, system, c):,}" for c in categories]),
+    counts_by_system = {
+        system: {category: _count(survey, system, category) for category in categories}
+        for system in (_PROSE, _POETIC)
+    }
+    all_counts = {category: _both(survey, category) for category in categories}
+
+    def row(label: str, counts: dict[str, int]) -> object:
+        before = counts[before_category]
+        after = counts[after_category]
+        return mb_html.table_row_of_data(
+            (
+                label,
+                *[f"{counts[category]:,}" for category in categories],
+                f"{after / (before + after):.1%}",
+            ),
             numeric,
         )
-        for system in (_PROSE, _POETIC)
+
+    rows = [
+        row(labels[system], counts_by_system[system]) for system in (_PROSE, _POETIC)
     ]
-    rows.append(
-        mb_html.table_row_of_data(
-            ("all", *[f"{_both(survey, c):,}" for c in categories]), numeric
-        )
-    )
-    before = _both(survey, "meteg before the stressed syllable")
-    after = _both(survey, "meteg after the stressed syllable")
+    rows.append(row("all", all_counts))
+    before = all_counts[before_category]
+    after = all_counts[after_category]
     return [
         mb_html.heading_level_2("MAS census by cantillation system"),
         mb_html.para(
@@ -685,10 +700,6 @@ def _census(survey: dict) -> list:
         _para(
             f"So a meteg comes before the stress {before:,} times and after it {after:,}"
             " times."
-        ),
-        _para(
-            f"Only about {after / (before + after):.1%} of the {before + after:,} meteg marks"
-            " counted here come after the stress."
         ),
     ]
 
