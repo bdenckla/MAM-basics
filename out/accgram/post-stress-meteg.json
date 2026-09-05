@@ -317,10 +317,12 @@
  },
  "post_stress_by_subtype": {
   "prose verses": {
-   "misc-almost-type-1": 1
+   "misc-almost-type-1": 1,
+   "misc-vayomer": 4
   },
   "poetic verses": {
-   "misc-almost-type-1": 0
+   "misc-almost-type-1": 0,
+   "misc-vayomer": 0
   }
  },
  "post_stress": [
@@ -367,14 +369,20 @@
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
-   "subtype": null,
+   "subtype": "misc-vayomer",
    "atom": 1,
+   "intervening_punctuation": [
+    "׀"
+   ],
    "mam_form": "וַיֹּ֥אמֶֽר",
    "mam_form_matched_by": "as written; one candidate in the verse",
    "mam_form_candidates": 1,
    "metegs_in_mam_today": 1,
    "metegs_in_the_snapshot": 1,
-   "following_mam_form": null
+   "following_mam_form": "לֹ֖א",
+   "intervening_mam_punctuation": [
+    "׀"
+   ]
   },
   {
    "bcv": "gn22:7",
@@ -1407,14 +1415,20 @@
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
-   "subtype": null,
+   "subtype": "misc-vayomer",
    "atom": 1,
+   "intervening_punctuation": [
+    "׀"
+   ],
    "mam_form": "וַיֹּ֥אמֶֽר",
    "mam_form_matched_by": "as written; one candidate in the verse",
    "mam_form_candidates": 1,
    "metegs_in_mam_today": 1,
    "metegs_in_the_snapshot": 1,
-   "following_mam_form": null
+   "following_mam_form": "לֹֽא׃",
+   "intervening_mam_punctuation": [
+    "׀"
+   ]
   },
   {
    "bcv": "ju19:25",
@@ -2135,14 +2149,20 @@
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
-   "subtype": null,
+   "subtype": "misc-vayomer",
    "atom": 1,
+   "intervening_punctuation": [
+    "׀"
+   ],
    "mam_form": "וַיֹּ֥אמֶֽר",
    "mam_form_matched_by": "as written; the one of 2 identical to the snapshot",
    "mam_form_candidates": 2,
    "metegs_in_mam_today": 1,
    "metegs_in_the_snapshot": 1,
-   "following_mam_form": null
+   "following_mam_form": "לֹ֖א",
+   "intervening_mam_punctuation": [
+    "׀"
+   ]
   },
   {
    "bcv": "1k3:12",
@@ -2239,14 +2259,20 @@
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
-   "subtype": null,
+   "subtype": "misc-vayomer",
    "atom": 1,
+   "intervening_punctuation": [
+    "׀"
+   ],
    "mam_form": "וַיֹּ֣אמֶֽר",
    "mam_form_matched_by": "as written; the one of 2 identical to the snapshot",
    "mam_form_candidates": 2,
    "metegs_in_mam_today": 1,
    "metegs_in_the_snapshot": 1,
-   "following_mam_form": null
+   "following_mam_form": "לֹ֔א",
+   "intervening_mam_punctuation": [
+    "׀"
+   ]
   },
   {
    "bcv": "1k11:38",

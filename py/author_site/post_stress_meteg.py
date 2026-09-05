@@ -370,13 +370,27 @@ def pin_claims(survey: dict) -> None:
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
     ), "the structural types do not partition the post-stress records"
-    for subtype in (psm.SUBTYPE_MISC_ALMOST_TYPE_1,):
+    for subtype in (
+        psm.SUBTYPE_MISC_ALMOST_TYPE_1,
+        psm.SUBTYPE_MISC_VAYOMER,
+    ):
         subtype_records = _subtype_records(survey, subtype)
         assert len(subtype_records) == _by_subtype_count(survey, subtype)
         assert all(
             one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
         )
     _misc_almost_type_1_inaugural(survey)
+    misc_vayomer_records = _subtype_records(survey, psm.SUBTYPE_MISC_VAYOMER)
+    assert len(misc_vayomer_records) == 4, misc_vayomer_records
+    assert [
+        one for one in post_stress if one.get("intervening_punctuation")
+    ] == misc_vayomer_records
+    assert all(
+        one.get("intervening_punctuation") == [psm.PASEQ]
+        and one.get("intervening_mam_punctuation") == [psm.PASEQ]
+        and one["following_mam_form"] is not None
+        for one in misc_vayomer_records
+    )
     type_2_records = _type_2_records(survey)
     assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
     assert {_type_2_following_group(record) for record in type_2_records} <= set(
@@ -617,6 +631,7 @@ def _by_type(survey: dict) -> list:
     )
     almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
     almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
+    vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -700,6 +715,16 @@ def _by_type(survey: dict) -> list:
                 ": the MAS syllable is open, but the following chanted word's first full"
                 " syllable is unstressed. An opening simple vocal sheva or xataf vowel is"
                 " pre-syllabic for the type-1 condition.",
+            )
+        ),
+        mb_html.para(
+            (
+                "Within misc, ",
+                mb_html.code(psm.SUBTYPE_MISC_VAYOMER),
+                f" has {vayomer_count} record",
+                "s" if vayomer_count != 1 else "",
+                ". Each has one PASEQ between the meteg-bearing chanted word and the"
+                " following chanted word; the individual-cases page shows that context.",
             )
         ),
         mb_html.para(
@@ -791,37 +816,50 @@ def _case_subtype_cell(subtype: str | None) -> object:
     """The subtype only where a misc record has a named nearer condition."""
     if subtype is None:
         return ""
-    assert subtype == psm.SUBTYPE_MISC_ALMOST_TYPE_1, subtype
+    gloss_by_subtype = {
+        psm.SUBTYPE_MISC_ALMOST_TYPE_1: (
+            "An open-syllable type-1 candidate whose following chanted word has no stress"
+            " on its first full syllable."
+        ),
+        psm.SUBTYPE_MISC_VAYOMER: (
+            "A Vayomer case with one intervening PASEQ before the following chanted word."
+        ),
+    }
     return mb_html.abbr(
         subtype,
-        {
-            "title": (
-                "An open-syllable type-1 candidate whose following chanted word has"
-                " no stress on its first full syllable."
-            )
-        },
+        {"title": gloss_by_subtype[subtype]},
     )
 
 
 def _following_chanted_word_matters(record: dict) -> bool:
     """Whether the following chanted word supplies a type condition for this record."""
     return record["structural_type"] in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL) or (
-        record["subtype"] == psm.SUBTYPE_MISC_ALMOST_TYPE_1
+        record["subtype"] in (psm.SUBTYPE_MISC_ALMOST_TYPE_1, psm.SUBTYPE_MISC_VAYOMER)
     )
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
-    """The case's MAM form, with its required following chanted word demoted."""
+    """The MAM form, with required following context demoted.
+
+    The shared routine displays zero or more PASEQ marks and then the following chanted word.
+    At present only the four ``misc-vayomer`` records have a PASEQ, but survey validation makes
+    another kind of intervening material a reviewable failure rather than silently dropping it.
+    """
     current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
     if not _following_chanted_word_matters(record):
         return current
     following = record["following_mam_form"]
     assert following is not None, f"{record['bcv']}: no following MAM chanted word"
+    punctuation = record.get("intervening_mam_punctuation", ())
+    demoted = []
+    for mark in punctuation:
+        demoted.extend((*_hebrew_cell(mark), " "))
+    demoted.extend(_hebrew_cell(following))
     return (
         *current,
         " ",
         mb_html.span(
-            _hebrew_cell(following),
+            tuple(demoted),
             {"class": _FOLLOWING_CHANTED_WORD_CLASS},
         ),
     )
@@ -969,7 +1007,8 @@ def build_cases_body(survey: dict) -> list:
         _para(
             "For types 1 and 2, the following chanted word is shown in gray."
             " The same is true of misc-almost-type-1, because the following chanted"
-            " word's stress keeps that row out of type 1."
+            " word's stress keeps that row out of type 1. For misc-vayomer, the"
+            " intervening PASEQ is gray with the following chanted word."
         ),
         mb_html.para(
             (

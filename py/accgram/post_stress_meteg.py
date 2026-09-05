@@ -98,6 +98,7 @@ from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 METEG = hpo.MTGOSLQ
 SOF_PASUQ = hpu.SOPA
 MAQAF = hpu.MAQ
+PASEQ = hpu.PASOLEG
 
 SILLUQ_RULE = (
     "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that"
@@ -109,6 +110,14 @@ SILLUQ_RULE = (
 # Phonetic MAM spells MAM's gray maqaf as a tilde and its ordinary maqaf as U+05BE; both are
 # atom boundaries inside one chanted word, and neither is a nucleus.
 _BOUNDARIES = frozenset((MAQAF, hpu.NU_GMAQ))
+
+# Phonetic MAM puts this token between the two chanted words at a narrow-sense paseq.  It is
+# converted to MAM's U+05C0 only after the survey has located it structurally, never by treating
+# the label as Hebrew text to display.
+_PHONETIC_MAM_PASEQ = (
+    "\N{HEBREW LETTER MEM}:\N{HEBREW LETTER PE}\N{HEBREW LETTER SAMEKH}"
+    "\N{HEBREW LETTER QOF}"
+)
 
 _VAV = "\N{HEBREW LETTER VAV}"
 _ALEF = "\N{HEBREW LETTER ALEF}"
@@ -251,9 +260,18 @@ TYPE_UNCLASSIFIED = "none of the three"
 # A strict type-1 candidate that has the open syllable but not the required initial stress in
 # the following chanted word.  Kept within misc rather than recasting it as a fourth type.
 SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
+SUBTYPE_MISC_VAYOMER = "misc-vayomer"
 
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
-_SUBTYPES = (SUBTYPE_MISC_ALMOST_TYPE_1,)
+_SUBTYPES = (SUBTYPE_MISC_ALMOST_TYPE_1, SUBTYPE_MISC_VAYOMER)
+
+_VAYOMER_CONSONANTS = (
+    "\N{HEBREW LETTER VAV}"
+    "\N{HEBREW LETTER YOD}"
+    "\N{HEBREW LETTER ALEF}"
+    "\N{HEBREW LETTER MEM}"
+    "\N{HEBREW LETTER RESH}"
+)
 
 # The 2026-09-03 census, whose report is ``doc/post-stress-meteg-census-2026-09-03.md``.  Its
 # script is untracked and defective at the silluq boundary, so these are a comparison baseline
@@ -462,6 +480,20 @@ def _structural_type(
     return TYPE_UNCLASSIFIED, None
 
 
+def _misc_subtype(
+    *, structural_type: str, chanted_word: str, intervening_punctuation: tuple[str, ...]
+) -> str | None:
+    """A named subdivision of misc where the form and punctuation make one useful set."""
+    if (
+        structural_type == TYPE_UNCLASSIFIED
+        and "".join(letter for letter, _marks, _atom_final in _letters(chanted_word))
+        == _VAYOMER_CONSONANTS
+        and intervening_punctuation == (PASEQ,)
+    ):
+        return SUBTYPE_MISC_VAYOMER
+    return None
+
+
 def _chanted_words(node: object, out: list[dict]) -> None:
     """Every chanted-word entry of one verse, the ``cb`` structures flattened.
 
@@ -475,6 +507,41 @@ def _chanted_words(node: object, out: list[dict]) -> None:
     elif isinstance(node, list):
         for sub in node[1:] if node and node[0] == "cb" else node:
             _chanted_words(sub, out)
+
+
+def _chanted_word_events(node: object, out: list[object]) -> None:
+    """The same chanted-word sequence, retaining material between its entries.
+
+    ``_chanted_words`` is the broad census walk, intentionally omitting everything other than
+    entries. The individual-case page needs narrower context for a post-stress record: an
+    intervening PASEQ is part of the reason its ``vayomer`` cases are distinct. Retaining all
+    other material here makes an unexpected future gap a survey failure rather than an omission.
+    """
+    if isinstance(node, dict):
+        out.append(node)
+    elif isinstance(node, list):
+        for sub in node[1:] if node and node[0] == "cb" else node:
+            _chanted_word_events(sub, out)
+    else:
+        out.append(node)
+
+
+def _intervening_punctuation(
+    *, bcv: str, chanted_word: str, material: tuple[object, ...]
+) -> tuple[str, ...]:
+    """The punctuation between one post-stress record and its following chanted word.
+
+    The current corpus has only Phonetic MAM's narrow-sense paseq token here. A different
+    token is a new display case to classify, not something the page may silently drop.
+    """
+    if not material:
+        return ()
+    if all(one == _PHONETIC_MAM_PASEQ for one in material):
+        return (PASEQ,) * len(material)
+    raise SurveyProblem(
+        f"{bcv} {chanted_word!r}: intervening material before the following chanted word"
+        f" is not a PASEQ: {material!r}"
+    )
 
 
 _DUALCANT_MARKER = "cb-dualcant"
@@ -667,6 +734,7 @@ def _record(
     before_qere: str | None,
     following_chanted_word: str | None,
     following_jta: str | None,
+    intervening_punctuation: tuple[str, ...],
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
     nuclei = parsed["nuclei"]
@@ -683,7 +751,13 @@ def _record(
         vowel=vowel,
         following_jta=following_jta,
     )
-    return {
+    if subtype is None:
+        subtype = _misc_subtype(
+            structural_type=structural_type,
+            chanted_word=word,
+            intervening_punctuation=intervening_punctuation,
+        )
+    record = {
         "bcv": bcv,
         "system": system,
         "chanted_word": word,
@@ -703,6 +777,9 @@ def _record(
         "subtype": subtype,
         "atom": 1 + sum(1 for one in letters[:letter_index] if one[2]),
     }
+    if intervening_punctuation:
+        record["intervening_punctuation"] = intervening_punctuation
+    return record
 
 
 def _classify_one_word(
@@ -716,6 +793,7 @@ def _classify_one_word(
     before_qere: str | None,
     following_chanted_word: str | None,
     following_jta: str | None,
+    intervening_material: tuple[object, ...],
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
     counts = found["counts"]
@@ -758,6 +836,15 @@ def _classify_one_word(
             before_qere=before_qere,
             following_chanted_word=following_chanted_word,
             following_jta=following_jta,
+            intervening_punctuation=(
+                _intervening_punctuation(
+                    bcv=bcv,
+                    chanted_word=word,
+                    material=intervening_material,
+                )
+                if syllable_index > stressed
+                else ()
+            ),
         )
         if accents_here:
             key = "meteg sharing a letter with a non-stress-marking accent"
@@ -839,8 +926,9 @@ def _one_verse(
         found["dual_cantillation"][bcv] = (
             _dual_cantillation_facts(verse) if dual_facts is None else dual_facts
         )
-    entries: list[dict] = []
-    _chanted_words(verse, entries)
+    events: list[object] = []
+    _chanted_word_events(verse, events)
+    entries = [one for one in events if isinstance(one, dict)]
     usable = [one for one in entries if one.get("jta") and one.get("fva")]
     found["entries_without_jta_or_fva"] += len(entries) - len(usable)
     if not usable:
@@ -860,6 +948,11 @@ def _one_verse(
             }
         )
     metegs = 0
+    event_index_by_entry_id = {
+        id(entry): index
+        for index, entry in enumerate(events)
+        if isinstance(entry, dict)
+    }
     for index, entry in enumerate(usable):
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
@@ -870,6 +963,16 @@ def _one_verse(
             else None
         )
         following_jta = following_entry["jta"] if following_entry is not None else None
+        intervening_material = (
+            tuple(
+                events[
+                    event_index_by_entry_id[id(entry)]
+                    + 1 : event_index_by_entry_id[id(following_entry)]
+                ]
+            )
+            if following_entry is not None
+            else ()
+        )
         metegs += word.count(METEG)
         try:
             parsed = _parse(word, jta)
@@ -890,6 +993,7 @@ def _one_verse(
             before_qere=entry.get("before_qfikq"),
             following_chanted_word=following_chanted_word,
             following_jta=following_jta,
+            intervening_material=intervening_material,
         )
     found["metegs_by_verse"][bcv] = metegs
 
@@ -995,28 +1099,40 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
     return [], "no match"
 
 
-def _following_mam_form(record: dict, words: list[str]) -> str | None:
-    """The MAM form of ``record``'s next chanted word, if the pair resolves uniquely.
+def _following_mam_context(
+    record: dict, stream: list[str]
+) -> tuple[str | None, tuple[str, ...] | None]:
+    """The following MAM chanted word and intervening punctuation, if the context resolves.
 
-    The page's open-syllable and guttural examples need the following chanted word to show
-    the condition that classifies them. A form is shown only after the complete adjacent
-    pair matches MAM, so both Hebrew forms remain lifted from MAM rather than one being a
-    Phonetic-MAM fallback.
+    The MAM stream keeps a PASEQ as a standalone token. This makes the usual two-chanted-word
+    context and the four ``vayomer`` contexts one routine: the current chanted word, zero or
+    more punctuation tokens, then the following chanted word. A context is shown only after the
+    complete sequence matches MAM, so every rendered form and punctuation mark comes from MAM.
     """
     following = record["following_chanted_word"]
     if following is None:
-        return None
+        return None, None
     next_record = {"chanted_word": following}
-    candidates = []
-    for index, word in enumerate(words[:-1]):
+    source_punctuation = tuple(record.get("intervening_punctuation", ()))
+    candidates: list[tuple[str, tuple[str, ...]]] = []
+    for index, word in enumerate(stream):
         current_matches, _current_matched_by = _matching_mam_words(record, [word])
+        if not current_matches:
+            continue
+        punctuation = []
+        following_index = index + 1
+        while following_index < len(stream) and stream[following_index] == PASEQ:
+            punctuation.append(stream[following_index])
+            following_index += 1
+        if tuple(punctuation) != source_punctuation or following_index == len(stream):
+            continue
         next_matches, _next_matched_by = _matching_mam_words(
-            next_record, [words[index + 1]]
+            next_record, [stream[following_index]]
         )
-        if current_matches and next_matches:
-            candidates.extend(next_matches)
-    settled, _settled_by = _settle(candidates, following)
-    return settled
+        for next_match in next_matches:
+            candidates.append((next_match, tuple(punctuation)))
+    settled = list(dict.fromkeys(candidates))
+    return settled[0] if len(settled) == 1 else (None, None)
 
 
 def _attach_mam_forms(
@@ -1051,11 +1167,14 @@ def _attach_mam_forms(
         record["mam_form_candidates"] = len(set(matches))
         record["metegs_in_mam_today"] = settled.count(METEG) if settled else None
         record["metegs_in_the_snapshot"] = record["chanted_word"].count(METEG)
-        record["following_mam_form"] = (
-            _following_mam_form(record, words_by_bcv.get(record["bcv"], []))
+        following_mam_form, intervening_mam_punctuation = (
+            _following_mam_context(record, words_by_bcv.get(record["bcv"], []))
             if settled is not None
-            else None
+            else (None, None)
         )
+        record["following_mam_form"] = following_mam_form
+        if intervening_mam_punctuation:
+            record["intervening_mam_punctuation"] = intervening_mam_punctuation
         if settled is not None:
             # Recomputed off MAM's own form, so that every Hebrew string the page can render
             # from this record comes from one text rather than two.
