@@ -1184,10 +1184,9 @@ def _post_silluq(survey: dict) -> list:
             " where the chanted word stands."
         ),
         _para(
-            "Neither book has a rule that would cover such a mark. The open-syllable type"
-            " and the guttural type each require a following chanted word, which a"
-            " verse-final chanted word does not have, so both are out of reach there by"
-            " construction rather than by silence."
+            "Two of the three types could not occur on a silluq word: types 1 and 2 each"
+            " require a following chanted word, which a verse-final chanted word does not"
+            " have. Only type 3 could occur there."
         ),
     ]
 
