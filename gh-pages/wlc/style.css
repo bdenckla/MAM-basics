@@ -35,8 +35,12 @@ body.centered-page table {
    readable. The class confines the larger size to this page's Hebrew table data. */
 table.post-stress-meteg-table td[dir="rtl"] [lang="hbo"] { font-size: 170%; }
 
-/* The post-stress-meteg pages have unusually many similar pointed forms. */
-body.post-stress-meteg-page [lang="hbo"] { letter-spacing: 0.06em; }
+/* The post-stress-meteg pages have unusually many similar pointed forms.  The control at the
+   top of each page switches this page-wide setting and persists it across the three pages. */
+body.post-stress-meteg-page [lang="hbo"] { letter-spacing: normal; }
+body.post-stress-meteg-page.post-stress-meteg-expanded-hebrew [lang="hbo"] {
+    letter-spacing: 0.06em;
+}
 /* The individual-cases table has a client-side type filter.  Its stripe follows the visible
    row number, not the row's original place in the corpus, so selecting a type never leaves a
    misleading first gray row or a sequence of rows all in the same shade. */

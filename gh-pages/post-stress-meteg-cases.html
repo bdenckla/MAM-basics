@@ -7,9 +7,37 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="wlc/style.css">
 </head>
-<body class="centered-page post-stress-meteg-page">
+<body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1>Meteg after the primary stress: individual cases</h1>
-<p>← Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a>.</p>
+<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+Expanded Hebrew letter spacing</label></p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+})();
+</script>
+<p>←
+Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a>.</p>
 <h2>Every MAS in MAM</h2>
 <p>In the order the corpus has them, prose verses and poetic verses together. Each reference links
 to the verse in MAM with doc, and each chanted word is MAM's text.</p>

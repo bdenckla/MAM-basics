@@ -7,9 +7,37 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="wlc/style.css">
 </head>
-<body class="centered-page post-stress-meteg-page">
+<body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1>Meteg after the primary stress: type 2 cases</h1>
-<p>← Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a> or the
+<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+Expanded Hebrew letter spacing</label></p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+})();
+</script>
+<p>←
+Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a> or the
 <a href="post-stress-meteg-cases.html">meteg after the primary stress: individual cases</a>.</p>
 <h2>Every type 2 case in MAM</h2>
 <p>Every row has a final guttural closing the last syllable of the first chanted word. The following

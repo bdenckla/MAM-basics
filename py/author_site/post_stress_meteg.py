@@ -120,6 +120,9 @@ _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
 _CASE_TABLE_CLASS = "post-stress-meteg-cases-table"
 _CASE_STRIPED_ROW_CLASS = "post-stress-meteg-cases-striped-row"
 _FOLLOWING_CHANTED_WORD_CLASS = "post-stress-meteg-following-chanted-word"
+_HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
+_HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
+_HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
 _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
@@ -128,6 +131,34 @@ _TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
     hl.LAMED: "lamed",
     hl.NUN: "nun",
 }
+_HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
+Expanded Hebrew letter spacing</label></p>
+<script>
+(() => {{
+  const checkbox = document.getElementById("{_HEBREW_SPACING_CHECKBOX_ID}");
+  const bodyClass = "{_HEBREW_SPACING_BODY_CLASS}";
+  const storageKey = "{_HEBREW_SPACING_STORAGE_KEY}";
+  let saved = null;
+  try {{
+    saved = localStorage.getItem(storageKey);
+  }} catch (_error) {{
+    // The checkbox still works for the open page if its browser has no page storage.
+  }}
+  if (saved !== null) {{
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }}
+  checkbox.addEventListener("change", () => {{
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {{
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    }} catch (_error) {{
+      // The page's in-memory preference remains usable without page storage.
+    }}
+  }});
+}})();
+</script>
+"""
 _CASE_FILTER_SCRIPT = f"""<script>
 const typeFilter = document.getElementById("{_CASE_TYPE_FILTER_ID}");
 const caseRows = document.querySelectorAll("#{_CASE_TABLE_ID} tr[data-type]");
@@ -212,7 +243,9 @@ def _write_page(path: Path, title: str, body: list) -> str:
         title,
         str(path),
         css_hrefs=(site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
-        body_class="centered-page post-stress-meteg-page",
+        body_class=(
+            "centered-page post-stress-meteg-page " f"{_HEBREW_SPACING_BODY_CLASS}"
+        ),
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(body, write_ctx)
@@ -228,6 +261,7 @@ def build_body(survey: dict) -> list:
     """The page, section by section, every figure in it read off ``survey``."""
     return [
         mb_html.heading_level_1(_TITLE),
+        _hebrew_spacing_option(),
         *_opening(survey),
         *_census(survey),
         *_by_type(survey),
@@ -472,6 +506,11 @@ def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
         [mb_html.table_row_of_headers(headers), *rows],
         attr or {"class": "limited-width post-stress-meteg-table"},
     )
+
+
+def _hebrew_spacing_option() -> object:
+    """The page-wide control for the pointed Hebrew's letter spacing."""
+    return mb_html.raw_html(_HEBREW_SPACING_OPTION)
 
 
 # --- the sections --------------------------------------------------------------
@@ -875,6 +914,7 @@ def build_type_2_body(survey: dict) -> list:
     rows = [_type_2_case_row(record) for record in _type_2_records(survey)]
     return [
         mb_html.heading_level_1(_TYPE_2_TITLE),
+        _hebrew_spacing_option(),
         mb_html.para(
             (
                 "← Back to ",
@@ -918,6 +958,7 @@ def build_cases_body(survey: dict) -> list:
     rows = [_case_row(record) for record in survey["post_stress"]]
     return [
         mb_html.heading_level_1(_CASES_TITLE),
+        _hebrew_spacing_option(),
         mb_html.para(("← Back to ", mb_html.anchor_h(_TITLE, _FNAME), ".")),
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
