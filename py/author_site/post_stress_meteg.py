@@ -1220,7 +1220,10 @@ def _dual_cantillation_appendix(survey: dict) -> list:
     )
     categories = (
         ("Chanted words", "chanted words checked"),
-        ("Meteg before the stress", "meteg before the stressed syllable"),
+        (
+            mb_html.abbr("MBS", {"title": "meteg before the stress"}),
+            "meteg before the stressed syllable",
+        ),
         (
             mb_html.abbr("MAS", {"title": "meteg after the stress"}),
             "meteg after the stressed syllable",
