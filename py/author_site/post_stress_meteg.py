@@ -864,23 +864,12 @@ def _by_type(survey: dict) -> list:
         _table(("Type", itm(), cos()), source_rows),
         mb_html.para(
             (
-                "For the open-syllable type, ",
+                "Unlike our type 1, ",
                 itm(),
-                " ",
-                *itm_sections("§332"),
-                " describes a chanted word stressed on its penultimate syllable,"
-                " ending in an open syllable, before a chanted word whose first syllable is"
-                " stressed."
-                " Yeivin calls it rarely marked, commonest in early manuscripts and absent"
-                " from printed texts, and ",
-                cos(),
-                " Ch. 8 grades it optional — which for Breuer means that no tradition"
-                " settles it and each naqdan decided for himself.",
+                "'s type 1 requires that its word have penultimate stress. The survey counts"
+                " a final furtive pataḥ as a syllable. On that syllable count, the survey's"
+                " type 1 includes four chanted words that Yeivin's type 1 excludes:",
             )
-        ),
-        mb_html.para(
-            "The survey counts a final furtive pataḥ as a syllable. On that syllable count,"
-            " the survey's type 1 includes four chanted words that Yeivin's type 1 excludes:"
         ),
         mb_html.ordered_list(
             tuple(
