@@ -976,13 +976,17 @@ def _case_type_code(kind: str) -> str:
     return _TYPE_CODES.get(kind, ("other", ""))[0]
 
 
-def _case_type_cell(kind: str, *, unqualified_word: bool = False) -> object:
-    """A type label, with the subpages' shorter vocabulary when requested."""
+def _case_type_cell(
+    kind: str, *, unqualified_word: bool = False, misc_label: bool = False
+) -> object:
+    """A type label, with the subpages' shorter vocabulary and misc label when requested."""
     if kind in _TYPE_CODES:
         code, gloss = _TYPE_CODES[kind]
         if unqualified_word:
             gloss = gloss.replace("chanted word", "word")
         return mb_html.abbr(code, {"title": f"Type {code}: {gloss}"})
+    if misc_label:
+        return "misc"
     return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
 
 
@@ -1049,7 +1053,9 @@ def _case_row(record: dict) -> object:
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
             mb_html.table_datum(
-                _case_type_cell(record["structural_type"], unqualified_word=True)
+                _case_type_cell(
+                    record["structural_type"], unqualified_word=True, misc_label=True
+                )
             ),
             mb_html.table_datum(_case_subtype_cell(record["subtype"])),
         ),
@@ -1061,7 +1067,7 @@ def _case_type_filter(case_count: int) -> object:
     options = (
         ("all", "All types"),
         *((code, f"Type {code}") for code, _gloss in _TYPE_CODES.values()),
-        ("other", "Not types 1, 2, or 3"),
+        ("other", "misc"),
     )
     option_html = "".join(
         f'<option value="{value}">{label}</option>' for value, label in options
