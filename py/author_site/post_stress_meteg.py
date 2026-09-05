@@ -813,7 +813,7 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.ordered_list(
             (
-                "An open syllable before a chanted word whose first syllable is stressed.",
+                "An open syllable before an initially-stressed word.",
                 "A final syllable closed by a guttural.",
                 "A final closed syllable whose vowel is tsere.",
             )
