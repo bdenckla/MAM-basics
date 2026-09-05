@@ -1423,6 +1423,19 @@ def _meteg_before_stress_difference(
     ]
     assert len(alef_counterparts) == 2, alef_counterparts
     assert all(METEG not in word for word in alef_counterparts), alef_counterparts
+    counterpart_atom_keys = {
+        _consonant_key(atom)
+        for word in alef_counterparts
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    }
+    bet_counterparts = [
+        word
+        for word in found_bet["dual_cantillation_chanted_words"][bcv]
+        if counterpart_atom_keys
+        & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
+    ]
+    assert len(bet_counterparts) == 2, bet_counterparts
+    assert bet_record["chanted_word"] in bet_counterparts, bet_counterparts
     return {
         "bcv": bcv,
         CANT_ALEF: {
@@ -1432,7 +1445,7 @@ def _meteg_before_stress_difference(
         },
         CANT_BET: {
             "chanted_words": _mam_forms_for_dual_cantillation_difference(
-                [bet_record["chanted_word"]], words_by_cantillation[CANT_BET], bcv
+                bet_counterparts, words_by_cantillation[CANT_BET], bcv
             )
         },
     }

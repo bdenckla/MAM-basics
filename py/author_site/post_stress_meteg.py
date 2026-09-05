@@ -455,7 +455,7 @@ def pin_claims(survey: dict) -> None:
     difference = dual_cantillation["meteg_before_stress_difference"]
     assert difference["bcv"] == "dt5:6"
     assert len(difference[psm.CANT_ALEF]["chanted_words"]) == 2
-    assert len(difference[psm.CANT_BET]["chanted_words"]) == 1
+    assert len(difference[psm.CANT_BET]["chanted_words"]) == 2
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
@@ -1237,9 +1237,9 @@ def _dual_cantillation_appendix(survey: dict) -> list:
         for label, category in categories
     ]
     difference_headers = (
-        "Cantillation strand",
-        "Relevant chanted word or words",
-        "Meteg before the stress",
+        mb_html.abbr("cant-sys", {"title": "cantillation strand"}),
+        mb_html.abbr("c-word(s)", {"title": "relevant chanted word or words"}),
+        mb_html.abbr("MBS", {"title": "meteg before the stress"}),
     )
     difference_rows = [
         mb_html.table_row_of_data(
