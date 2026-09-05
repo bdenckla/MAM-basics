@@ -922,6 +922,7 @@ def _scan(
         "dual_template_entries": {},
         "type_2_type_3_overlap_by_book": Counter(),
         "type_2_type_3_overlap_by_final_letter": Counter(),
+        "type_2_type_3_overlap_example": None,
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -1050,6 +1051,13 @@ def _one_verse(
             found["type_2_type_3_overlap_by_final_letter"][
                 parsed["letters"][-1][0]
             ] += 1
+            if found["type_2_type_3_overlap_example"] is None:
+                found["type_2_type_3_overlap_example"] = {
+                    "bcv": bcv,
+                    "chanted_word": word,
+                    "following_chanted_word": None,
+                    "snapshot_before_qere": entry.get("before_qfikq"),
+                }
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -1657,6 +1665,13 @@ def build_survey() -> dict:
     assert type_2_type_3_overlap_count == sum(
         type_2_type_3_overlap_by_final_letter.values()
     )
+    type_2_type_3_overlap_example = found["type_2_type_3_overlap_example"]
+    assert type_2_type_3_overlap_example is not None
+    unjoined_overlap_example = _attach_mam_forms(
+        [type_2_type_3_overlap_example], words_by_bcv
+    )
+    assert not unjoined_overlap_example, unjoined_overlap_example
+    assert type_2_type_3_overlap_example["mam_form"] is not None
     return {
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
@@ -1718,6 +1733,10 @@ def build_survey() -> dict:
             "by_final_letter": dict(
                 sorted(type_2_type_3_overlap_by_final_letter.items())
             ),
+            "example": {
+                "bcv": type_2_type_3_overlap_example["bcv"],
+                "mam_form": type_2_type_3_overlap_example["mam_form"],
+            },
         },
         "post_stress": post_stress,
         "post_silluq": {

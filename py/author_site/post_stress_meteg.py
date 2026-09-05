@@ -498,6 +498,8 @@ def pin_claims(survey: dict) -> None:
     assert type_2_type_3_overlap["chanted_words"] == 154
     assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}
     assert type_2_type_3_overlap["by_final_letter"] == {"ה": 154}
+    assert type_2_type_3_overlap["example"]["bcv"] == "da2:5"
+    assert type_2_type_3_overlap["example"]["mam_form"] is not None
     assert {_type_2_following_group(record) for record in type_2_records} <= set(
         _TYPE_2_FOLLOWING_GROUPS
     )
@@ -756,6 +758,7 @@ def _by_type(survey: dict) -> list:
     chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = type_2_type_3_overlap["chanted_words"]
     overlap_by_book = type_2_type_3_overlap["by_book"]
+    overlap_example = type_2_type_3_overlap["example"]
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -821,13 +824,21 @@ def _by_type(survey: dict) -> list:
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
             f" of the {type_2_count} type-2 records has pataḥ rather than tsere, so no"
-            " type-2 record also meets the type-3 condition."
-        ),
-        _para(
-            f"Only {overlap_count:,} of all {chanted_word_count:,} chanted words surveyed"
-            " have a final tsere syllable closed by a guttural. All "
+            " type-2 record also meets the type-3 condition. Indeed, words with a final"
+            " tsere closed by a guttural are quite rare even without a meteg. Only "
+            f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
+            " final tsere syllable closed by a guttural. All "
             f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
             f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
+            " An example is as follows:"
+        ),
+        mb_html.para(
+            (
+                _ref_link(overlap_example["bcv"]),
+                " — ",
+                *wrap_hebrew_runs(overlap_example["mam_form"]),
+            ),
+            {"class": "center"},
         ),
         _hebrew_spacing_option(),
         _table(headers, rows),
