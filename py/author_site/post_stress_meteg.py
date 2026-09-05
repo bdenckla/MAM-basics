@@ -410,7 +410,7 @@ def _misc_almost_type_1_only_member(survey: dict) -> dict:
 
 
 def _misc_almost_type_3_only_member(survey: dict) -> dict:
-    """The only chanted word that fits CoS's type (a), but not ITM's type 3: Job 15:35."""
+    """The only word that fits CoS's type (a), but not our tsere-restricted type 3: Job 15:35."""
     records = [
         one
         for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
@@ -1000,7 +1000,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_3: (
             "A final closed ḥolam syllable: CoS's long-vowel type (a), but not"
-            " ITM's tsere type 3."
+            " our type 3, which is restricted to tsere."
         ),
     }
     return mb_html.abbr(
@@ -1248,9 +1248,7 @@ def build_misc_body(survey: dict) -> list:
                 *_hebrew_cell(misc_almost_type_3_only_member["mam_form"]),
                 " has a final closed syllable with ḥolam, a long vowel. It fits ",
                 cos(),
-                "'s broader type (a), but not ",
-                itm(),
-                "'s tsere type 3.",
+                "'s broader type (a), but not our type 3, which is restricted to tsere.",
             )
         ),
         mb_html.para(
