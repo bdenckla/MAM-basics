@@ -837,8 +837,8 @@ def _by_type(survey: dict) -> list:
         _hebrew_spacing_option(table_above=True),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
-            f" of the {type_2_count} type-2 chanted words has pataḥ rather than tsere, so no"
-            " type-2 chanted word also meets the type-3 condition. Indeed, words with a final"
+            f" of the {type_2_count} type-2 words has pataḥ rather than tsere, so no"
+            " type-2 word also meets the type-3 condition. Indeed, words with a final"
             " tsere closed by a guttural are quite rare even without a meteg. Only "
             f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
             " final tsere syllable closed by a guttural. All "
