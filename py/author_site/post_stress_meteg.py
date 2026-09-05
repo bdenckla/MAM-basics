@@ -1274,7 +1274,6 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             " prose MBS count, and no effect on any other analysis."
         ),
         _table(headers, rows),
-        mb_html.heading_level_3("The meteg-before-stress difference"),
         mb_html.para(
             (
                 "Only ",
