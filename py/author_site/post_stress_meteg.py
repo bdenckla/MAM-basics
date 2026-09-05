@@ -865,8 +865,7 @@ def _by_type(survey: dict) -> list:
                 "'s type 1 excludes:",
             )
         ),
-        _table(
-            ("Reference", "Chanted word"),
+        mb_html.table(
             [
                 mb_html.table_row_of_data(
                     (
@@ -877,6 +876,7 @@ def _by_type(survey: dict) -> list:
                 )
                 for record in type_1_nonfinal_meteg_syllable_records
             ],
+            {"class": "limited-width post-stress-meteg-table"},
         ),
         mb_html.para(
             (
