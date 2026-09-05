@@ -232,6 +232,11 @@ _VOCAL_SHEVA = "^"
 # the Hebrew instead.
 _JTA_VOWELS = frozenset("aeiouAEIOU860")
 
+# The three xataf vowels are syllables in ``jta``, but Yeivin's condition for the open-syllable
+# type allows one before the following chanted word's first full syllable, just as it allows a
+# simple vocal sheva.
+_XATAF_JTA_VOWELS = frozenset("680")
+
 SYSTEM_PROSE = "prose verses"
 SYSTEM_POETIC = "poetic verses"
 
@@ -243,7 +248,12 @@ TYPE_CLOSED_TSERE = "closed syllable with tsere"
 TYPE_OPEN = "open syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
+# A strict type-1 candidate that has the open syllable but not the required initial stress in
+# the following chanted word.  Kept within misc rather than recasting it as a fourth type.
+SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
+
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
+_SUBTYPES = (SUBTYPE_MISC_ALMOST_TYPE_1,)
 
 # The 2026-09-03 census, whose report is ``doc/post-stress-meteg-census-2026-09-03.md``.  Its
 # script is untracked and defective at the silluq boundary, so these are a comparison baseline
@@ -371,6 +381,27 @@ def _jta_syllables(jta: str) -> tuple[list[str], int]:
     return out, kept.index(stressed[0])
 
 
+def _first_full_syllable_is_stressed(jta: str) -> bool:
+    """Whether a following chanted word meets Yeivin's type-1 stress condition.
+
+    An opening simple vocal sheva or xataf vowel is pre-syllabic for this condition, so the
+    stress is initial when it falls on the first segment after all such opening segments.  The
+    normal syllable check still runs first: this test adds a source-specific reading of an
+    already-valid ``jta`` form; it does not loosen the survey's validation.
+    """
+    _jta_syllables(jta)
+    syllables = _SYLLABLE_BREAK.split(jta)
+    stressed = [i for i, one in enumerate(syllables) if "!" in one]
+    assert len(stressed) == 1, jta
+    first_full = 0
+    while first_full < len(syllables) and (
+        _VOCAL_SHEVA in syllables[first_full]
+        or set(syllables[first_full]) & _XATAF_JTA_VOWELS
+    ):
+        first_full += 1
+    return stressed[0] == first_full
+
+
 def _syllable_is_open(syllable: str) -> bool:
     return syllable[-1] in _JTA_VOWELS
 
@@ -389,19 +420,27 @@ def _vowel_name(point: str) -> str:
     return name
 
 
-def _structural_type(*, closes_on_a_guttural: bool, is_open: bool, vowel: str) -> str:
-    """Which of the three source-anchored types a post-stress meteg's syllable meets.
+def _structural_type(
+    *,
+    closes_on_a_guttural: bool,
+    is_open: bool,
+    vowel: str,
+    following_jta: str | None,
+) -> tuple[str, str | None]:
+    """Which source-anchored type and subtype a post-stress meteg's syllable meets.
 
     Mechanical, off the syllable Phonetic MAM divided and the letters and points MAM has:
 
-    * an open syllable is ITM §332 and CoS Ch. 8 type (j), the קוּמִי rule;
+    * an open syllable before a chanted word whose first full syllable is stressed is ITM §332
+      and CoS Ch. 8 type (j), the קוּמִי rule;
     * a closed syllable at the end of a chanted word whose last letter is a guttural is ITM
       §354 and CoS Ch. 8 type (b) -- which is where a furtive patax lands; and
     * a closed syllable whose nucleus is a ṣere is ITM §338, and the ṣere case of CoS Ch. 8
       type (a), whose scope is the big vowels rather than the ṣere alone.
 
     Anything else -- a closed syllable with some other vowel, the segol of וַיֹּאמֶר above all
-    -- is left unclassified and stays visible as itself.
+    -- is left unclassified and stays visible as itself.  An open-syllable candidate whose
+    following chanted word fails the stress condition is the ``misc-almost-type-1`` subtype.
 
     OPENNESS IS ASKED FIRST, and the order is the rule rather than a tidying: a final ה is a
     mater in פַּדֶּנָה, whose last syllable is open, and a guttural in וְנֹגַהּ, whose last
@@ -409,12 +448,18 @@ def _structural_type(*, closes_on_a_guttural: bool, is_open: bool, vowel: str) -
     where both books put it under §332 and type (j) by name.
     """
     if is_open:
-        return TYPE_OPEN
+        if following_jta is not None and _first_full_syllable_is_stressed(
+            following_jta
+        ):
+            return TYPE_OPEN, None
+        if following_jta is not None:
+            return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_1
+        return TYPE_UNCLASSIFIED, None
     if closes_on_a_guttural:
-        return TYPE_GUTTURAL
+        return TYPE_GUTTURAL, None
     if vowel == hpo.TSERE:
-        return TYPE_CLOSED_TSERE
-    return TYPE_UNCLASSIFIED
+        return TYPE_CLOSED_TSERE, None
+    return TYPE_UNCLASSIFIED, None
 
 
 def _chanted_words(node: object, out: list[dict]) -> None:
@@ -621,6 +666,7 @@ def _record(
     accents_here: list[str],
     before_qere: str | None,
     following_chanted_word: str | None,
+    following_jta: str | None,
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
     nuclei = parsed["nuclei"]
@@ -631,6 +677,12 @@ def _record(
     is_open = _syllable_is_open(syllable)
     vowel = nuclei[syllable_index][1]
     closes_on_a_guttural = is_last_syllable and letters[-1][0] in _GUTTURAL_HOSTS
+    structural_type, subtype = _structural_type(
+        closes_on_a_guttural=closes_on_a_guttural,
+        is_open=is_open,
+        vowel=vowel,
+        following_jta=following_jta,
+    )
     return {
         "bcv": bcv,
         "system": system,
@@ -647,9 +699,8 @@ def _record(
         "closes_on_a_guttural": closes_on_a_guttural,
         "has_sof_pasuq": parsed["has_sof_pasuq"],
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
-        "structural_type": _structural_type(
-            closes_on_a_guttural=closes_on_a_guttural, is_open=is_open, vowel=vowel
-        ),
+        "structural_type": structural_type,
+        "subtype": subtype,
         "atom": 1 + sum(1 for one in letters[:letter_index] if one[2]),
     }
 
@@ -664,6 +715,7 @@ def _classify_one_word(
     found: dict,
     before_qere: str | None,
     following_chanted_word: str | None,
+    following_jta: str | None,
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
     counts = found["counts"]
@@ -705,6 +757,7 @@ def _classify_one_word(
             accents_here=accents_here,
             before_qere=before_qere,
             following_chanted_word=following_chanted_word,
+            following_jta=following_jta,
         )
         if accents_here:
             key = "meteg sharing a letter with a non-stress-marking accent"
@@ -810,9 +863,13 @@ def _one_verse(
     for index, entry in enumerate(usable):
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
+        following_entry = usable[index + 1] if index + 1 < len(usable) else None
         following_chanted_word = (
-            usable[index + 1]["fva"].split(" ")[0] if index + 1 < len(usable) else None
+            following_entry["fva"].split(" ")[0]
+            if following_entry is not None
+            else None
         )
+        following_jta = following_entry["jta"] if following_entry is not None else None
         metegs += word.count(METEG)
         try:
             parsed = _parse(word, jta)
@@ -832,6 +889,7 @@ def _one_verse(
             found=found,
             before_qere=entry.get("before_qfikq"),
             following_chanted_word=following_chanted_word,
+            following_jta=following_jta,
         )
     found["metegs_by_verse"][bcv] = metegs
 
@@ -1286,6 +1344,11 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
+    by_subtype = Counter(
+        (one["system"], one["subtype"])
+        for one in post_stress
+        if one["subtype"] is not None
+    )
     return {
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
@@ -1332,6 +1395,10 @@ def build_survey() -> dict:
         },
         "post_stress_by_structural_type": {
             system: {one: by_type[(system, one)] for one in _TYPES}
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "post_stress_by_subtype": {
+            system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
         "post_stress": post_stress,

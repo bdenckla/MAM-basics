@@ -275,6 +275,18 @@ def _by_type_count(survey: dict, kind: str) -> int:
     )
 
 
+def _by_subtype_count(survey: dict, subtype: str) -> int:
+    return sum(
+        survey["post_stress_by_subtype"][system][subtype]
+        for system in (_PROSE, _POETIC)
+    )
+
+
+def _subtype_records(survey: dict, subtype: str) -> list[dict]:
+    """The post-stress records whose finer classification is ``subtype``."""
+    return [one for one in survey["post_stress"] if one["subtype"] == subtype]
+
+
 def _following_example(record: dict, kind: str) -> tuple:
     """The following MAM chanted word where the source-derived type requires it."""
     if kind not in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL):
@@ -298,6 +310,17 @@ def _example_of(survey: dict, kind: str) -> dict:
     raise AssertionError(f"no post-stress record of type {kind!r} to show")
 
 
+def _misc_almost_type_1_inaugural(survey: dict) -> dict:
+    """The Jeremiah 46:14 record that starts the strict-type-1 subtype."""
+    records = [
+        one
+        for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
+        if one["bcv"] == "je46:14"
+    ]
+    assert len(records) == 1, records
+    return records[0]
+
+
 def pin_claims(survey: dict) -> None:
     """Re-derive every figure the prose states, and raise on drift.
 
@@ -313,6 +336,13 @@ def pin_claims(survey: dict) -> None:
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
     ), "the structural types do not partition the post-stress records"
+    for subtype in (psm.SUBTYPE_MISC_ALMOST_TYPE_1,):
+        subtype_records = _subtype_records(survey, subtype)
+        assert len(subtype_records) == _by_subtype_count(survey, subtype)
+        assert all(
+            one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
+        )
+    _misc_almost_type_1_inaugural(survey)
     type_2_records = _type_2_records(survey)
     assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
     assert {_type_2_following_group(record) for record in type_2_records} <= set(
@@ -546,6 +576,8 @@ def _by_type(survey: dict) -> list:
         "Example",
         "Following chanted word, if relevant",
     )
+    almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
+    almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -602,13 +634,13 @@ def _by_type(survey: dict) -> list:
                 itm(),
                 " and ",
                 cos(),
-                ". Each of the three types is named for the shape of the"
-                " syllable the meteg falls in:",
+                ". Each type has a condition on the syllable where the meteg falls;"
+                " type 1 also has a condition on the following chanted word:",
             )
         ),
         mb_html.ordered_list(
             (
-                "an open syllable;",
+                "an open syllable before a chanted word whose first full syllable is stressed;",
                 "a syllable closed by a guttural at the end of the chanted word; and",
                 "a closed syllable whose vowel is tsere.",
             )
@@ -620,12 +652,26 @@ def _by_type(survey: dict) -> list:
         _table(headers, rows),
         mb_html.para(
             (
+                "Within misc, ",
+                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_1),
+                f" has {almost_type_1_count} record",
+                "s" if almost_type_1_count != 1 else "",
+                ". Its initial member is ",
+                _ref_link(almost_type_1_inaugural["bcv"]),
+                ": the MAS syllable is open, but the following chanted word's first full"
+                " syllable is unstressed. An opening simple vocal sheva or xataf vowel is"
+                " pre-syllabic for the type-1 condition.",
+            )
+        ),
+        mb_html.para(
+            (
                 "For the open-syllable type, ",
                 itm(),
                 " ",
                 *itm_sections("§332"),
                 " describes a chanted word stressed on its penultimate syllable,"
-                " ending in an open syllable, before a chanted word stressed on its first."
+                " ending in an open syllable, before a chanted word whose first full"
+                " syllable is stressed."
                 " Yeivin calls it rarely marked, commonest in early manuscripts and absent"
                 " from printed texts, and ",
                 cos(),
@@ -702,17 +748,41 @@ def _case_type_cell(kind: str) -> object:
     return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
 
 
+def _case_subtype_cell(subtype: str | None) -> object:
+    """The subtype only where a misc record has a named nearer condition."""
+    if subtype is None:
+        return ""
+    assert subtype == psm.SUBTYPE_MISC_ALMOST_TYPE_1, subtype
+    return mb_html.abbr(
+        subtype,
+        {
+            "title": (
+                "An open-syllable type-1 candidate whose following chanted word has"
+                " no stress on its first full syllable."
+            )
+        },
+    )
+
+
+def _following_chanted_word_matters(record: dict) -> bool:
+    """Whether the following chanted word supplies a type condition for this record."""
+    return record["structural_type"] in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL) or (
+        record["subtype"] == psm.SUBTYPE_MISC_ALMOST_TYPE_1
+    )
+
+
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The case's MAM form, with its required following chanted word demoted."""
     current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
-    kind = record["structural_type"]
-    if kind not in (psm.TYPE_OPEN, psm.TYPE_GUTTURAL):
+    if not _following_chanted_word_matters(record):
         return current
+    following = record["following_mam_form"]
+    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
     return (
         *current,
         " ",
         mb_html.span(
-            _following_example(record, kind),
+            _hebrew_cell(following),
             {"class": _FOLLOWING_CHANTED_WORD_CLASS},
         ),
     )
@@ -724,6 +794,7 @@ def _case_row(record: dict) -> object:
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
             mb_html.table_datum(_case_type_cell(record["structural_type"])),
+            mb_html.table_datum(_case_subtype_cell(record["subtype"])),
         ),
         {"data-type": _case_type_code(record["structural_type"])},
     )
@@ -843,7 +914,7 @@ def build_type_2_body(survey: dict) -> list:
 
 def build_cases_body(survey: dict) -> list:
     """The individual cases, outside the main page's explanatory sections."""
-    headers = ("Verse", "Chanted word", "Type")
+    headers = ("Verse", "Chanted word", "Type", "Subtype")
     rows = [_case_row(record) for record in survey["post_stress"]]
     return [
         mb_html.heading_level_1(_CASES_TITLE),
@@ -854,7 +925,11 @@ def build_cases_body(survey: dict) -> list:
             " reference links to the verse in MAM with doc, and each chanted word is MAM's"
             " text."
         ),
-        _para("For types 1 and 2, the following chanted word is shown in gray."),
+        _para(
+            "For types 1 and 2, the following chanted word is shown in gray."
+            " The same is true of misc-almost-type-1, because the following chanted"
+            " word's stress keeps that row out of type 1."
+        ),
         mb_html.para(
             (
                 "Type 2 has a ",
