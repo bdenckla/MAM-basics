@@ -342,6 +342,14 @@
    "misc-almost-type-3": 1
   }
  },
+ "stress_accent_classification": {
+  "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table.",
+  "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
+  "counts": {
+   "conjunctive": 231,
+   "disjunctive": 0
+  }
+ },
  "type_2_type_3_overlap": {
   "chanted_words": 154,
   "by_book": {

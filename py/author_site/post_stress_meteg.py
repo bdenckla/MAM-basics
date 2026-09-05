@@ -413,6 +413,15 @@ def pin_claims(survey: dict) -> None:
     assert len(post_stress) == _both(
         survey, "meteg after the stressed syllable"
     ), "the post-stress records and the post-stress count disagree"
+    stress_accent_classification = survey["stress_accent_classification"]
+    assert stress_accent_classification["counts"] == {
+        "conjunctive": len(post_stress),
+        "disjunctive": 0,
+    }
+    assert (
+        stress_accent_classification["conclusion"]
+        == "Every MAS has a conjunctive accent on that stress letter."
+    )
     by_type = sum(_by_type_count(survey, kind) for kind in _TYPE_SOURCES)
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
@@ -642,6 +651,7 @@ def _hebrew_spacing_option() -> object:
 def _opening(survey: dict) -> list:
     """Section 1: what is counted, and where the silluq boundary falls."""
     total = _both(survey, "meteg after the stressed syllable")
+    stress_accent_classification = survey["stress_accent_classification"]
     return [
         mb_html.para(
             (
@@ -665,6 +675,11 @@ def _opening(survey: dict) -> list:
             "The location of stress is not always obvious. For our survey of MAS, we"
             " locate stress using Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
+        ),
+        _para(
+            "Under the exact stress-letter rule used in the 2026-09-03 census table, all "
+            f"{stress_accent_classification['counts']['conjunctive']:,} MAS have a "
+            "conjunctive accent. No more detailed stress-accent analysis is used here."
         ),
     ]
 

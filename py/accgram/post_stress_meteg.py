@@ -73,6 +73,14 @@ Prose verses and poetic verses are routed by ``poetic_filter.should_keep_line``,
 prose frame goes with the 21 books. For a dual-cantillation passage, this census selects the
 cant-alef strand and counts the passage as though it were read once. A second scan over
 cant-bet is retained in the JSON for the rendered appendix.
+
+THE STRESS-LETTER ACCENT CHECK retains one result from the 2026-09-03 census table.  The
+table read the accents on the initial Hebrew letter of the one ``jta`` syllable marked ``!``;
+``stress_accent_classification`` implements that exact rule and establishes only that every
+MAS has a conjunctive accent there.  The four ``misc-vayomer`` records have a narrow-sense
+paseq after the chanted word, so that stroke leaves the underlying accent conjunctive.  In a
+poetic verse, U+05A5 can be yored only in an oleh-we-yored chanted word.  The check refuses a
+future U+05A5 case with ole, rather than silently calling it either merkha or yored.
 """
 
 from __future__ import annotations
@@ -261,6 +269,38 @@ _XATAF_JTA_VOWELS = frozenset("680")
 
 SYSTEM_PROSE = "prose verses"
 SYSTEM_POETIC = "poetic verses"
+
+# The regular conjunctives in the two cantillation systems.  The exceptions that concern the
+# stress-letter check are handled in ``stress_accent_classification``: narrow-sense paseq does
+# not change the accent that precedes it, and poetic U+05A5 with ole requires an explicit
+# oleh-we-yored analysis.
+_STRESS_ACCENT_CONJUNCTIVES = {
+    SYSTEM_PROSE: frozenset(
+        (
+            ha.MUN,
+            ha.MAH,
+            ha.MER,
+            ha.DAR,
+            ha.QOM,
+            ha.TEL_Q,
+            ha.YBY,
+            ha.MER_2,
+        )
+    ),
+    SYSTEM_POETIC: frozenset(
+        (
+            ha.MUN,
+            ha.MER,
+            ha.ILU,
+            ha.TIP,
+            ha.YBY,
+            ha.MAH,
+            ha.QOM,
+            ha.SHA,
+            ha.ATN_H,
+        )
+    ),
+}
 
 # The three types the page attributes to Yeivin and Breuer, each keyed on a mechanical
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
@@ -794,6 +834,71 @@ def _parse(word: str, jta: str) -> dict:
         "syllables": syllables,
         "stressed": stressed,
         "has_sof_pasuq": SOF_PASUQ in word,
+    }
+
+
+def _stress_letter_accent(record: dict) -> str:
+    """The one accent on the legacy table's exact stress letter for ``record``.
+
+    The stress letter is the initial Hebrew letter of the nucleus whose Phonetic MAM ``jta``
+    syllable has ``!``.  The 2026-09-03 census table selected its accent with this rule; the
+    record's meteg can occur later in the same chanted word and does not participate in the
+    selection.
+    """
+    parsed = _parse(record["chanted_word"], record["jta"])
+    stress_letter_index, _stress_vowel = parsed["nuclei"][parsed["stressed"]]
+    stress_letter_marks = parsed["letters"][stress_letter_index][1]
+    accents = [mark for mark in stress_letter_marks if is_accent(mark)]
+    if len(accents) != 1:
+        raise SurveyProblem(
+            f"{record['bcv']}: the stress letter has {len(accents)} accents, not one"
+        )
+    return accents[0]
+
+
+def stress_accent_classification(post_stress: list[dict]) -> dict:
+    """The legacy table's weak, reproducible conclusion about MAS stress accents.
+
+    The classification deliberately stops at conjunctive versus disjunctive.  A raw U+05C0
+    cannot distinguish a narrow-sense paseq from legarmeh, so only the structurally identified
+    ``misc-vayomer`` records are allowed to carry it.  A poetic U+05A5 with ole is likewise
+    refused as an oleh-we-yored question instead of being guessed to be normal merkha.
+    """
+    for record in post_stress:
+        punctuation = record.get("intervening_punctuation", ())
+        if punctuation:
+            if not (
+                record["subtype"] == SUBTYPE_MISC_VAYOMER and punctuation == (PASEQ,)
+            ):
+                raise SurveyProblem(
+                    f"{record['bcv']}: the stress-accent check cannot classify its U+05C0"
+                )
+        elif record["subtype"] == SUBTYPE_MISC_VAYOMER:
+            raise SurveyProblem(
+                f"{record['bcv']}: misc-vayomer lacks its narrow-sense paseq"
+            )
+
+        accent = _stress_letter_accent(record)
+        if (
+            record["system"] == SYSTEM_POETIC
+            and accent == ha.MER
+            and ha.OLE in record["chanted_word"]
+        ):
+            raise SurveyProblem(
+                f"{record['bcv']}: poetic U+05A5 with ole needs an oleh-we-yored analysis"
+            )
+        if accent not in _STRESS_ACCENT_CONJUNCTIVES[record["system"]]:
+            raise SurveyProblem(
+                f"{record['bcv']}: stress-letter accent is not a regular conjunctive"
+            )
+
+    return {
+        "exact_rule": (
+            "Read the accents on the initial Hebrew letter of the one jta syllable marked !, "
+            "the rule used by the 2026-09-03 census table."
+        ),
+        "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
+        "counts": {"conjunctive": len(post_stress), "disjunctive": 0},
     }
 
 
@@ -1775,6 +1880,7 @@ def build_survey() -> dict:
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
+        "stress_accent_classification": stress_accent_classification(post_stress),
         "type_2_type_3_overlap": {
             "chanted_words": type_2_type_3_overlap_count,
             "by_book": dict(sorted(type_2_type_3_overlap_by_book.items())),
