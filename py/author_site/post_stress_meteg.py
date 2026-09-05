@@ -473,7 +473,7 @@ def pin_claims(survey: dict) -> None:
     assert genesis["same_chanted_word_group_count"] == 5
     dual_cantillation = _dual_cantillation(survey)
     whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
-    passage_comparison = dual_cantillation["dually_cantillated_passage_counts"]
+    template_comparison = dual_cantillation["template_counts"]
     assert dual_cantillation["counted_cantillation"] == psm.CANT_ALEF
     for category in (
         "chanted words checked",
@@ -487,8 +487,8 @@ def pin_claims(survey: dict) -> None:
         whole_census_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
         == whole_census_comparison[psm.CANT_BET]["meteg after the stressed syllable"]
     )
-    assert passage_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
-    assert passage_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
+    assert template_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
+    assert template_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
     assert survey["post_silluq"]["in_mam"] == 0
     difference = dual_cantillation["meteg_before_stress_difference"]
     assert difference["bcv"] == "dt5:6"
@@ -1427,11 +1427,11 @@ def _overlapping_diagnostic(survey: dict) -> list:
 
 
 def _dual_cantillation_appendix(survey: dict) -> list:
-    """The method for passages Phonetic MAM records with two cantillations."""
+    """The template-only comparison for Phonetic MAM's dual cantillation."""
     dual_cantillation = _dual_cantillation(survey)
-    passage_comparison = dual_cantillation["dually_cantillated_passage_counts"]
-    alef = passage_comparison[psm.CANT_ALEF]
-    bet = passage_comparison[psm.CANT_BET]
+    template_comparison = dual_cantillation["template_counts"]
+    alef = template_comparison[psm.CANT_ALEF]
+    bet = template_comparison[psm.CANT_BET]
     difference = dual_cantillation["meteg_before_stress_difference"]
     headers = (
         "count",
@@ -1485,11 +1485,12 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             {"id": _DUAL_CANTILLATION_APPENDIX_ID},
         ),
         _para(
-            "MAM has two cantillations for the two Decalogues and"
+            "MAM has dual-cantillation templates in the two Decalogues and"
             " Genesis 35:22."
             " The analyses presented in this document use only the cant-alef"
-            " cantillation strand for each"
-            " such passage."
+            " branch of each template."
+            " The table counts only the chanted words inside those templates, not every"
+            " chanted word in the numbered verses that contain them."
             " The table below shows that this choice has only a tiny effect on the"
             " prose MBS count, and no effect on any other analysis."
         ),

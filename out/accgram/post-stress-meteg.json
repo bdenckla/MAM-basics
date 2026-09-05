@@ -256,15 +256,15 @@
     "meteg after the stressed syllable": 231
    }
   },
-  "dually_cantillated_passage_counts": {
+  "template_counts": {
    "cant-alef": {
-    "chanted words checked": 222,
-    "meteg before the stressed syllable": 22,
+    "chanted words checked": 130,
+    "meteg before the stressed syllable": 12,
     "meteg after the stressed syllable": 0
    },
    "cant-bet": {
-    "chanted words checked": 221,
-    "meteg before the stressed syllable": 23,
+    "chanted words checked": 129,
+    "meteg before the stressed syllable": 13,
     "meteg after the stressed syllable": 0
    }
   },

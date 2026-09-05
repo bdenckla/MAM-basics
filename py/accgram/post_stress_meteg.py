@@ -633,6 +633,25 @@ def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
     return out
 
 
+def _dual_template_entry_ids(verse: object, cantillation: str) -> set[int]:
+    """The selected branch's entries that sit inside dual-cantillation templates.
+
+    Entry identity, rather than a spelling key, keeps two equal-looking chanted words distinct
+    when a numbered verse repeats them.  The selected branch remains made of the source
+    dictionaries, so its entries have these same identities after
+    ``_select_cantillation_strand`` projects the whole numbered verse.
+    """
+    assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
+    branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
+    template_entries = [
+        entry
+        for group in _dual_cantillation_groups(verse)
+        for entry in group[branch_index]
+    ]
+    assert template_entries, "a dual-cantillation verse has no template entries"
+    return {id(entry) for entry in template_entries}
+
+
 def _dual_cantillation_facts(verse: object) -> dict:
     """Counts and one source-derived duplicate for a dual-cantillation numbered verse."""
     groups = _dual_cantillation_groups(verse)
@@ -873,8 +892,10 @@ def _classify_one_word(
             found["post_stress"].append(record)
 
 
-def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
-    """Every U+05BD of the Phonetic MAM standard set in one cantillation strand."""
+def _scan(
+    phon_dir: Path, cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False
+) -> dict:
+    """Every U+05BD of one cantillation strand, optionally only inside its templates."""
     assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
         "counts": Counter(),
@@ -899,6 +920,8 @@ def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
         for vkey, verse in data.items():
             chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
             dual = _has_dual_cantillation(verse)
+            if dual_templates_only and not dual:
+                continue
             _one_verse(
                 f"{bb}{chnu}:{vrnu}",
                 bb,
@@ -908,6 +931,11 @@ def _scan(phon_dir: Path, cantillation: str = CANT_ALEF) -> dict:
                 found,
                 dual_cantillation=dual,
                 dual_facts=_dual_cantillation_facts(verse) if dual else None,
+                template_entry_ids=(
+                    _dual_template_entry_ids(verse, cantillation)
+                    if dual_templates_only
+                    else None
+                ),
             )
     return found
 
@@ -922,6 +950,7 @@ def _one_verse(
     *,
     dual_cantillation: bool | None = None,
     dual_facts: dict | None = None,
+    template_entry_ids: set[int] | None = None,
 ) -> None:
     system = (
         SYSTEM_POETIC
@@ -941,34 +970,43 @@ def _one_verse(
     events: list[object] = []
     _chanted_word_events(verse, events)
     entries = [one for one in events if isinstance(one, dict)]
-    usable = [one for one in entries if one.get("jta") and one.get("fva")]
-    found["entries_without_jta_or_fva"] += len(entries) - len(usable)
+    scoped_entries = (
+        entries
+        if template_entry_ids is None
+        else [one for one in entries if id(one) in template_entry_ids]
+    )
+    usable = [one for one in scoped_entries if one.get("jta") and one.get("fva")]
+    all_usable = [one for one in entries if one.get("jta") and one.get("fva")]
+    found["entries_without_jta_or_fva"] += len(scoped_entries) - len(usable)
     if not usable:
         return
     if dual:
         found["dual_cantillation_chanted_words"][bcv] = [
             one["fva"].split(" ")[0] for one in usable
         ]
-    last_word = usable[-1]["fva"].split(" ")[0]
-    if SOF_PASUQ not in last_word:
-        found["last_entry_lacks_sof_pasuq"].append(
-            {
-                "bcv": bcv,
-                "chanted_word": last_word,
-                "dual_cantillation": dual,
-                "carries_a_meteg": METEG in last_word,
-            }
-        )
+    if template_entry_ids is None:
+        last_word = usable[-1]["fva"].split(" ")[0]
+        if SOF_PASUQ not in last_word:
+            found["last_entry_lacks_sof_pasuq"].append(
+                {
+                    "bcv": bcv,
+                    "chanted_word": last_word,
+                    "dual_cantillation": dual,
+                    "carries_a_meteg": METEG in last_word,
+                }
+            )
     metegs = 0
     event_index_by_entry_id = {
         id(entry): index
         for index, entry in enumerate(events)
         if isinstance(entry, dict)
     }
-    for index, entry in enumerate(usable):
+    for index, entry in enumerate(all_usable):
+        if template_entry_ids is not None and id(entry) not in template_entry_ids:
+            continue
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
-        following_entry = usable[index + 1] if index + 1 < len(usable) else None
+        following_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
         following_chanted_word = (
             following_entry["fva"].split(" ")[0]
             if following_entry is not None
@@ -1327,19 +1365,12 @@ def _total_counts(found: dict, categories: tuple[str, ...]) -> dict[str, int]:
     }
 
 
-def _dually_cantillated_passage_counts(found: dict) -> dict[str, int]:
-    """The three appendix counts restricted to the numbered verses with two strands."""
-    dual_bcv = found["dual_cant_verses"]
+def _dual_template_counts(found: dict) -> dict[str, int]:
+    """The three appendix counts restricted to dual-cantillation templates."""
     return {
-        "chanted words checked": sum(
-            found["checked_chanted_words_by_bcv"][bcv] for bcv in dual_bcv
-        ),
-        "meteg before the stressed syllable": sum(
-            one["bcv"] in dual_bcv for one in found["pre_stress"]
-        ),
-        "meteg after the stressed syllable": sum(
-            one["bcv"] in dual_bcv for one in found["post_stress"]
-        ),
+        "chanted words checked": sum(found["checked_chanted_words_by_bcv"].values()),
+        "meteg before the stressed syllable": len(found["pre_stress"]),
+        "meteg after the stressed syllable": len(found["post_stress"]),
     }
 
 
@@ -1473,7 +1504,11 @@ def build_survey() -> dict:
     phon_dir = paths.require_al_hatorah_phonetic_dir()
     found = _scan(phon_dir, CANT_ALEF)
     found_bet = _scan(phon_dir, CANT_BET)
+    template_found = _scan(phon_dir, CANT_ALEF, dual_templates_only=True)
+    template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
     assert found["dual_cant_verses"] == found_bet["dual_cant_verses"]
+    assert template_found["dual_cant_verses"] == found["dual_cant_verses"]
+    assert template_found_bet["dual_cant_verses"] == found["dual_cant_verses"]
     words_by_bcv = _mam_words_by_bcv()
     words_by_cantillation = {
         CANT_ALEF: _mam_words_by_bcv(CANT_ALEF),
@@ -1525,12 +1560,12 @@ def build_survey() -> dict:
                     found_bet, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
                 ),
             },
-            "dually_cantillated_passage_counts": {
-                CANT_ALEF: _dually_cantillated_passage_counts(found),
-                CANT_BET: _dually_cantillated_passage_counts(found_bet),
+            "template_counts": {
+                CANT_ALEF: _dual_template_counts(template_found),
+                CANT_BET: _dual_template_counts(template_found_bet),
             },
             "meteg_before_stress_difference": _meteg_before_stress_difference(
-                found, found_bet, words_by_cantillation
+                template_found, template_found_bet, words_by_cantillation
             ),
         },
         "counts": {
