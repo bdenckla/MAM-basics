@@ -1458,7 +1458,7 @@ def _dual_cantillation_appendix(survey: dict) -> list:
     ]
     difference_headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation strand"}),
-        mb_html.abbr("c-word(s)", {"title": "relevant chanted word or words"}),
+        mb_html.abbr("c-words", {"title": "the two relevant chanted words"}),
         mb_html.abbr("MBS", {"title": "meteg before the stress"}),
     )
     difference_rows = [
