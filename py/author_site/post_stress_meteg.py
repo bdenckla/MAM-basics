@@ -476,6 +476,9 @@ def pin_claims(survey: dict) -> None:
         and record["vowel"] == "pataḥ"
         for record in type_2_records
     ), "the type-2/type-3 non-overlap claim has moved"
+    assert all(
+        record["syllables_after_the_stress"] == 1 for record in type_2_records
+    ), "the type-2 penultimate-stress fact has moved"
     type_1_nonfinal_meteg_syllable_records = (
         _type_1_records_with_nonfinal_meteg_syllable(survey)
     )
@@ -879,7 +882,13 @@ def _by_type(survey: dict) -> list:
                 " Ch. 8 type (b), where the last syllable of the chanted word ends in ḥet,"
                 " ayin or he. A furtive pataḥ counts as a separate syllable here, as it"
                 " is in Phonetic MAM, so a meteg on that guttural comes out after the stress"
-                " rather than in it. Breuer calls the type obligatory; Yeivin's statement is"
+                " rather than in it. All ",
+                str(type_2_count),
+                " type-2 chanted words surveyed have penultimate stress, matching Yeivin's"
+                " description. Penultimate stress is a fact about the ",
+                str(type_2_count),
+                " type-2 chanted words, not a further type-2 condition. Breuer calls the type"
+                " obligatory; Yeivin's statement is"
                 " narrower, that the mark is sometimes used when the chanted word after it"
                 " begins with lamed or nun.",
             )
