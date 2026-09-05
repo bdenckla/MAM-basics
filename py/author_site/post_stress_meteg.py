@@ -976,9 +976,12 @@ def _case_type_code(kind: str) -> str:
     return _TYPE_CODES.get(kind, ("other", ""))[0]
 
 
-def _case_type_cell(kind: str) -> object:
+def _case_type_cell(kind: str, *, unqualified_word: bool = False) -> object:
+    """A type label, with the subpages' shorter vocabulary when requested."""
     if kind in _TYPE_CODES:
         code, gloss = _TYPE_CODES[kind]
+        if unqualified_word:
+            gloss = gloss.replace("chanted word", "word")
         return mb_html.abbr(code, {"title": f"Type {code}: {gloss}"})
     return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
 
@@ -989,11 +992,11 @@ def _case_subtype_cell(subtype: str | None) -> object:
         return ""
     gloss_by_subtype = {
         psm.SUBTYPE_MISC_ALMOST_TYPE_1: (
-            "An open-syllable type-1 candidate whose following chanted word has no stress"
+            "An open-syllable type-1 candidate whose following word has no stress"
             " on its first syllable."
         ),
         psm.SUBTYPE_MISC_VAYOMER: (
-            "A Vayomer case with one intervening paseq before the following chanted word."
+            "A Vayomer case with one intervening paseq before the following word."
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_3: (
             "A final closed ḥolam syllable: CoS's long-vowel type (a), but not"
@@ -1045,7 +1048,9 @@ def _case_row(record: dict) -> object:
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
-            mb_html.table_datum(_case_type_cell(record["structural_type"])),
+            mb_html.table_datum(
+                _case_type_cell(record["structural_type"], unqualified_word=True)
+            ),
             mb_html.table_datum(_case_subtype_cell(record["subtype"])),
         ),
         {"data-type": _case_type_code(record["structural_type"])},
@@ -1158,7 +1163,7 @@ def build_type_2_body(survey: dict) -> list:
         mb_html.heading_level_2("Every type 2 case in MAM"),
         _para(
             "Every row has a final guttural closing the last syllable of the first"
-            " chanted word. The following chanted word has a separate column because its"
+            " word. The following word has a separate column because its"
             " initial consonant selects the filter group."
         ),
         mb_html.para(
@@ -1166,14 +1171,14 @@ def build_type_2_body(survey: dict) -> list:
                 itm(),
                 " ",
                 *itm_sections("§354"),
-                " says this mark is sometimes used when the following chanted word begins"
+                " says this mark is sometimes used when the following word begins"
                 " with lamed or nun. The filter separates those two initial consonants from"
                 " all others.",
             )
         ),
         _type_2_following_filter(len(rows)),
         _table(
-            ("Verse", "Chanted word", "Following chanted word"),
+            ("Verse", "Word", "Following word"),
             rows,
             {
                 "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
@@ -1206,12 +1211,12 @@ def build_misc_body(survey: dict) -> list:
         ),
         mb_html.heading_level_2("Every misc case in MAM"),
         _para(
-            "Each chanted word in the table has MAS but does not meet the definition of"
+            "Each word in the table has MAS but does not meet the definition of"
             " types 1, 2, or 3. Gray following context appears where it is relevant to a"
             " named misc subtype."
         ),
         _table(
-            ("Verse", "Chanted word", "Subtype"),
+            ("Verse", "Word", "Subtype"),
             [_misc_case_row(record) for record in records],
             {
                 "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
@@ -1223,11 +1228,11 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_1,
-                f" has {almost_type_1_count} chanted word",
+                f" has {almost_type_1_count} word",
                 "s" if almost_type_1_count != 1 else "",
                 ". Its only member is ",
                 _ref_link(almost_type_1_only_member["bcv"]),
-                ": the MAS syllable is open, but the following chanted word's first"
+                ": the MAS syllable is open, but the following word's first"
                 " syllable is unstressed.",
             )
         ),
@@ -1235,11 +1240,11 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_3,
-                f" has {misc_almost_type_3_count} chanted word",
+                f" has {misc_almost_type_3_count} word",
                 "s" if misc_almost_type_3_count != 1 else "",
                 ". Its only member is ",
                 _ref_link(misc_almost_type_3_only_member["bcv"]),
-                ": its chanted word ",
+                ": its word ",
                 *_hebrew_cell(misc_almost_type_3_only_member["mam_form"]),
                 " has a final closed syllable with ḥolam, a long vowel. It fits ",
                 cos(),
@@ -1252,10 +1257,10 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_VAYOMER,
-                f" has {vayomer_count} chanted word",
+                f" has {vayomer_count} word",
                 "s" if vayomer_count != 1 else "",
-                ". Each has one paseq between the meteg-bearing chanted word and the"
-                " following chanted word: the gaʿya-before-paseq pattern described in ",
+                ". Each has one paseq between the meteg-bearing word and the following word:"
+                " the gaʿya-before-paseq pattern described in ",
                 itm(),
                 " ",
                 *itm_sections("§325"),
@@ -1267,7 +1272,7 @@ def build_misc_body(survey: dict) -> list:
 
 def build_cases_body(survey: dict) -> list:
     """The individual cases, outside the main page's explanatory sections."""
-    headers = ("Verse", "Chanted word", "Type", "Subtype")
+    headers = ("Verse", "Word", "Type", "Subtype")
     rows = [_case_row(record) for record in survey["post_stress"]]
     return [
         mb_html.heading_level_1(_CASES_TITLE),
@@ -1275,20 +1280,20 @@ def build_cases_body(survey: dict) -> list:
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
-            " reference links to the verse in MAM with doc, and each chanted word is MAM's"
+            " reference links to the verse in MAM with doc, and each word is MAM's"
             " text."
         ),
         _para(
-            "For types 1 and 2, the following chanted word is shown in gray."
-            " The same is true of misc-almost-type-1, because the following chanted"
+            "For types 1 and 2, the following word is shown in gray."
+            " The same is true of misc-almost-type-1, because the following"
             " word's stress keeps that row out of type 1. For misc-vayomer, the"
-            " intervening paseq is gray with the following chanted word."
+            " intervening paseq is gray with the following word."
         ),
         mb_html.para(
             (
                 "Type 2 has a ",
                 mb_html.anchor_h("separate table", _TYPE_2_FNAME),
-                " filtered by the following chanted word's initial consonant.",
+                " filtered by the following word's initial consonant.",
             )
         ),
         _case_type_filter(len(rows)),
