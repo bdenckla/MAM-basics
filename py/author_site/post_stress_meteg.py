@@ -415,6 +415,12 @@ def pin_claims(survey: dict) -> None:
     )
     type_2_records = _type_2_records(survey)
     assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
+    assert all(
+        record["closes_on_a_guttural"]
+        and not record["syllable_is_open"]
+        and record["vowel"] == "pataḥ"
+        for record in type_2_records
+    ), "the type-2/type-3 non-overlap claim has moved"
     assert {_type_2_following_group(record) for record in type_2_records} <= set(
         _TYPE_2_FOLLOWING_GROUPS
     )
@@ -648,10 +654,10 @@ def _by_type(survey: dict) -> list:
         itm(),
         cos(),
         "Example",
-        "Following chanted word, if relevant",
     )
     almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
     almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
+    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
@@ -664,8 +670,7 @@ def _by_type(survey: dict) -> list:
                     str(survey["post_stress_by_structural_type"][_POETIC][kind]),
                     itm_sections(yeivin),
                     breuer,
-                    _hebrew_cell(example["mam_form"] or example["chanted_word"]),
-                    _following_example(example, kind),
+                    _case_chanted_word_cell(example),
                 ),
                 (
                     None,
@@ -673,7 +678,6 @@ def _by_type(survey: dict) -> list:
                     _NUMERIC_CELL,
                     None,
                     None,
-                    _HEBREW_CELL,
                     _HEBREW_CELL,
                 ),
             )
@@ -687,8 +691,7 @@ def _by_type(survey: dict) -> list:
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
                 "",
                 "",
-                _hebrew_cell(_example_of(survey, unclassified)["mam_form"]),
-                _hebrew_cell(None),
+                _case_chanted_word_cell(_example_of(survey, unclassified)),
             ),
             (
                 None,
@@ -696,7 +699,6 @@ def _by_type(survey: dict) -> list:
                 _NUMERIC_CELL,
                 None,
                 None,
-                _HEBREW_CELL,
                 _HEBREW_CELL,
             ),
         )
@@ -719,6 +721,11 @@ def _by_type(survey: dict) -> list:
                 "a final syllable closed by a guttural",
                 "a closed syllable whose vowel is tsere",
             )
+        ),
+        _para(
+            "Types 2 and 3 could in principle overlap. In this survey, however, every"
+            f" one of the {type_2_count} type-2 records has pataḥ rather than tsere, so"
+            " none also meets the type-3 condition."
         ),
         _para(
             "The counts below are mechanical, and a chanted word that doesn't fit"
