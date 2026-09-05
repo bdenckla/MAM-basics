@@ -638,25 +638,17 @@ def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
     )
 
 
-def _hebrew_spacing_option(*, table_above: bool = False) -> object:
+def _hebrew_spacing_option() -> object:
     """The page-wide control for the pointed Hebrew's letter spacing."""
-    if table_above:
-        spacing_text = (
-            "This checkbox controls whether Hebrew letter spacing is expanded in the table above"
-            " as well as the whole document."
-        )
-        toggle_text = (
-            "Alternately, you can click on an individual Hebrew word to toggle only that word's"
-            " spacing."
-        )
-    else:
-        spacing_text = (
-            "This checkbox controls whether Hebrew letter spacing is expanded."
-        )
-        toggle_text = "Or click a Hebrew word to\ntoggle only that word's spacing."
     return mb_html.raw_html(
-        _HEBREW_SPACING_OPTION.replace("__SPACING_TEXT__", spacing_text).replace(
-            "__TOGGLE_TEXT__", toggle_text
+        _HEBREW_SPACING_OPTION.replace(
+            "__SPACING_TEXT__",
+            "This checkbox controls whether Hebrew letter spacing is expanded in the table above"
+            " as well as the whole document.",
+        ).replace(
+            "__TOGGLE_TEXT__",
+            "Alternately, you can click on an individual Hebrew word to toggle only that word's"
+            " spacing.",
         )
     )
 
@@ -834,7 +826,7 @@ def _by_type(survey: dict) -> list:
             )
         ),
         _table(headers, rows),
-        _hebrew_spacing_option(table_above=True),
+        _hebrew_spacing_option(),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
             f" of the {type_2_count} type-2 words has pataḥ rather than tsere, so no"
@@ -1180,7 +1172,6 @@ def build_type_2_body(survey: dict) -> list:
             )
         ),
         _type_2_following_filter(len(rows)),
-        _hebrew_spacing_option(),
         _table(
             ("Verse", "Chanted word", "Following chanted word"),
             rows,
@@ -1189,6 +1180,7 @@ def build_type_2_body(survey: dict) -> list:
                 "id": _TYPE_2_TABLE_ID,
             },
         ),
+        _hebrew_spacing_option(),
         mb_html.raw_html(_TYPE_2_FILTER_SCRIPT),
     ]
 
@@ -1218,7 +1210,6 @@ def build_misc_body(survey: dict) -> list:
             " types 1, 2, or 3. Gray following context appears where it is relevant to a"
             " named misc subtype."
         ),
-        _hebrew_spacing_option(),
         _table(
             ("Verse", "Chanted word", "Subtype"),
             [_misc_case_row(record) for record in records],
@@ -1227,6 +1218,7 @@ def build_misc_body(survey: dict) -> list:
                 "id": _MISC_TABLE_ID,
             },
         ),
+        _hebrew_spacing_option(),
         mb_html.para(
             (
                 "Within misc, ",
@@ -1301,7 +1293,6 @@ def build_cases_body(survey: dict) -> list:
             )
         ),
         _case_type_filter(len(rows)),
-        _hebrew_spacing_option(),
         _table(
             headers,
             rows,
@@ -1310,6 +1301,7 @@ def build_cases_body(survey: dict) -> list:
                 "id": _CASE_TABLE_ID,
             },
         ),
+        _hebrew_spacing_option(),
         mb_html.raw_html(_CASE_FILTER_SCRIPT),
     ]
 

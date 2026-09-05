@@ -19,55 +19,6 @@ chanted word has a separate column because its initial consonant selects the fil
 says this mark is sometimes used when the following chanted word begins with lamed or nun. The
 filter separates those two initial consonants from all others.</p>
 <p><label for="post-stress-meteg-type-2-following-filter">Show </label><select id="post-stress-meteg-type-2-following-filter"><option value="all">All type 2 cases</option><option value="lamed">Followed by lamed</option><option value="nun">Followed by nun</option><option value="misc">Followed by another consonant</option></select>. <output id="post-stress-meteg-type-2-selected-count" aria-live="polite">Showing 56 rows.</output></p>
-<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
-toggle only that word's spacing.</p>
-<script>
-(() => {
-  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
-  const bodyClass = "post-stress-meteg-expanded-hebrew";
-  const storageKey = "post-stress-meteg-expanded-hebrew";
-  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
-  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
-  const hebrewSelector = '[lang="hbo"]';
-  let saved = null;
-  try {
-    saved = localStorage.getItem(storageKey);
-  } catch (_error) {
-    // The checkbox still works for the open page if its browser has no page storage.
-  }
-  if (saved !== null) {
-    checkbox.checked = saved === "true";
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-  }
-  checkbox.addEventListener("change", () => {
-    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
-      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
-    }
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-    try {
-      localStorage.setItem(storageKey, String(checkbox.checked));
-    } catch (_error) {
-      // The page's in-memory preference remains usable without page storage.
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) {
-      return;
-    }
-    const hebrew = event.target.closest(hebrewSelector);
-    if (hebrew === null) {
-      return;
-    }
-    event.preventDefault();
-    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
-      (!hebrew.classList.contains(individualNormalClass) &&
-       document.body.classList.contains(bodyClass));
-    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
-    hebrew.classList.toggle(individualNormalClass, isExpanded);
-  });
-})();
-</script>
 <table class="accent-pair-table post-stress-meteg-table post-stress-meteg-cases-table" id="post-stress-meteg-type-2-cases">
 <tr>
 <th>Verse</th>
@@ -356,6 +307,54 @@ toggle only that word's spacing.</p>
 <td dir="rtl"><span lang="hbo">ל֦וֹ</span></td>
 </tr>
 </table>
+<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+This checkbox controls whether Hebrew letter spacing is expanded in the table above as well as the whole document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
+  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
+  const hebrewSelector = '[lang="hbo"]';
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
+      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
+    }
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {
+      return;
+    }
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
+  });
+})();
+</script>
 <script>
 const followingFilter = document.getElementById("post-stress-meteg-type-2-following-filter");
 const type2Rows = document.querySelectorAll("#post-stress-meteg-type-2-cases tr[data-following-initial]");

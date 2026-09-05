@@ -14,55 +14,6 @@
 <h2>Every misc case in MAM</h2>
 <p>Each chanted word in the table has MAS but does not meet the definition of types 1, 2, or 3. Gray
 following context appears where it is relevant to a named misc subtype.</p>
-<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
-toggle only that word's spacing.</p>
-<script>
-(() => {
-  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
-  const bodyClass = "post-stress-meteg-expanded-hebrew";
-  const storageKey = "post-stress-meteg-expanded-hebrew";
-  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
-  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
-  const hebrewSelector = '[lang="hbo"]';
-  let saved = null;
-  try {
-    saved = localStorage.getItem(storageKey);
-  } catch (_error) {
-    // The checkbox still works for the open page if its browser has no page storage.
-  }
-  if (saved !== null) {
-    checkbox.checked = saved === "true";
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-  }
-  checkbox.addEventListener("change", () => {
-    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
-      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
-    }
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-    try {
-      localStorage.setItem(storageKey, String(checkbox.checked));
-    } catch (_error) {
-      // The page's in-memory preference remains usable without page storage.
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) {
-      return;
-    }
-    const hebrew = event.target.closest(hebrewSelector);
-    if (hebrew === null) {
-      return;
-    }
-    event.preventDefault();
-    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
-      (!hebrew.classList.contains(individualNormalClass) &&
-       document.body.classList.contains(bodyClass));
-    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
-    hebrew.classList.toggle(individualNormalClass, isExpanded);
-  });
-})();
-</script>
 <table class="accent-pair-table post-stress-meteg-table post-stress-meteg-cases-table" id="post-stress-meteg-misc-cases">
 <tr>
 <th>Verse</th>
@@ -115,7 +66,56 @@ toggle only that word's spacing.</p>
 <td><abbr title="A final closed ḥolam syllable: CoS&#x27;s long-vowel type (a), but not ITM&#x27;s tsere type 3.">misc-almost-type-3</abbr></td>
 </tr>
 </table>
-<p>Within misc, misc-almost-type-1 has 1 chanted word. Its initial member is
+<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+This checkbox controls whether Hebrew letter spacing is expanded in the table above as well as the whole document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
+  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
+  const hebrewSelector = '[lang="hbo"]';
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
+      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
+    }
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {
+      return;
+    }
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
+  });
+})();
+</script>
+<p>Within
+misc, misc-almost-type-1 has 1 chanted word. Its initial member is
 <a href="https://bdenckla.github.io/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer. 46:14</a>: the MAS
 syllable is open, but the following chanted word's first syllable is unstressed. An opening simple
 vocal sheva or xataf vowel belongs to that first syllable for the type-1 condition.</p>
