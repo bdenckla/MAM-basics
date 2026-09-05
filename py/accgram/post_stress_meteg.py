@@ -253,7 +253,7 @@ SYSTEM_POETIC = "poetic verses"
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
 # recorded as unclassified rather than pushed into the nearest.
 TYPE_GUTTURAL = "guttural at the end of the chanted word"
-TYPE_CLOSED_TSERE = "closed syllable with tsere"
+TYPE_CLOSED_TSERE = "final closed syllable with tsere"
 TYPE_OPEN = "open syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
@@ -261,9 +261,14 @@ TYPE_UNCLASSIFIED = "none of the three"
 # the following chanted word.  Kept within misc rather than recasting it as a fourth type.
 SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
+SUBTYPE_3_ALMOST_2 = "3-almost-2"
 
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
-_SUBTYPES = (SUBTYPE_MISC_ALMOST_TYPE_1, SUBTYPE_MISC_VAYOMER)
+_SUBTYPES = (
+    SUBTYPE_MISC_ALMOST_TYPE_1,
+    SUBTYPE_MISC_VAYOMER,
+    SUBTYPE_3_ALMOST_2,
+)
 
 _VAYOMER_CONSONANTS = (
     "\N{HEBREW LETTER VAV}"
@@ -441,6 +446,7 @@ def _vowel_name(point: str) -> str:
 def _structural_type(
     *,
     closes_on_a_guttural: bool,
+    is_last_syllable: bool,
     is_open: bool,
     vowel: str,
     following_jta: str | None,
@@ -453,12 +459,15 @@ def _structural_type(
       and CoS Ch. 8 type (j), the קוּמִי rule;
     * a closed syllable at the end of a chanted word whose last letter is a guttural is ITM
       §354 and CoS Ch. 8 type (b) -- which is where a furtive patax lands; and
-    * a closed syllable whose nucleus is a ṣere is ITM §338, and the ṣere case of CoS Ch. 8
-      type (a), whose scope is the big vowels rather than the ṣere alone.
+    * a final closed syllable whose nucleus is a ṣere is ITM §338. This is the narrower
+      condition this survey uses for type 3; CoS Ch. 8 type (a) is wider, covering a long vowel
+      in a closed syllable.
 
     Anything else -- a closed syllable with some other vowel, the segol of וַיֹּאמֶר above all
     -- is left unclassified and stays visible as itself.  An open-syllable candidate whose
     following chanted word fails the stress condition is the ``misc-almost-type-1`` subtype.
+    A final closed ḥolam syllable is the ``3-almost-2`` subtype: it fits Breuer's wider
+    long-vowel condition but not Yeivin's ṣere type.
 
     OPENNESS IS ASKED FIRST, and the order is the rule rather than a tidying: a final ה is a
     mater in פַּדֶּנָה, whose last syllable is open, and a guttural in וְנֹגַהּ, whose last
@@ -475,8 +484,10 @@ def _structural_type(
         return TYPE_UNCLASSIFIED, None
     if closes_on_a_guttural:
         return TYPE_GUTTURAL, None
-    if vowel == hpo.TSERE:
+    if is_last_syllable and vowel == hpo.TSERE:
         return TYPE_CLOSED_TSERE, None
+    if is_last_syllable and vowel in (hpo.XOLAM, hpo.XOLAM_XFV):
+        return TYPE_UNCLASSIFIED, SUBTYPE_3_ALMOST_2
     return TYPE_UNCLASSIFIED, None
 
 
@@ -747,6 +758,7 @@ def _record(
     closes_on_a_guttural = is_last_syllable and letters[-1][0] in _GUTTURAL_HOSTS
     structural_type, subtype = _structural_type(
         closes_on_a_guttural=closes_on_a_guttural,
+        is_last_syllable=is_last_syllable,
         is_open=is_open,
         vowel=vowel,
         following_jta=following_jta,
