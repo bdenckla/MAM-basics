@@ -89,9 +89,7 @@ _POETIC = psm.SYSTEM_POETIC
 # every other form on the page.
 _M23_VERSE = "is23:12"
 _POST_SILLUQ_VERSE = "1s17:5"
-_POST_SILLUQ_LC_CROP_URL = (
-    "https://github.com/user-attachments/assets/" "2983ebc8-df3f-4215-a009-23a33e2a8321"
-)
+_POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
