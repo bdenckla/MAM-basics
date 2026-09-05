@@ -43,7 +43,6 @@ from accgram import post_stress_meteg as psm
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
-from mb_cmn import hebrew_letters as hl
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
@@ -143,11 +142,7 @@ _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
-_TYPE_2_FOLLOWING_GROUPS = ("lamed", "nun", "misc")
-_TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
-    hl.LAMED: "lamed",
-    hl.NUN: "nun",
-}
+_TYPE_2_FOLLOWING_GROUPS = psm.TYPE_2_FOLLOWING_FILTER_GROUPS
 _HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
@@ -1096,10 +1091,7 @@ def _type_2_following_group(record: dict) -> str:
     """The type-2 filter group set by the following chanted word's first consonant."""
     following = record["following_mam_form"]
     assert following is not None, f"{record['bcv']}: no following MAM chanted word"
-    letters = hl.letters(following)
-    assert letters, f"{record['bcv']}: no Hebrew letter in following MAM chanted word"
-    initial = letters[0]
-    return _TYPE_2_FOLLOWING_GROUP_BY_INITIAL.get(initial, "misc")
+    return psm.type_2_following_filter_group(following)
 
 
 def _type_2_case_row(record: dict) -> object:
@@ -1129,8 +1121,8 @@ def _type_2_following_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
         ("lamed", "Followed by lamed"),
-        ("nun", "Followed by nun"),
-        ("misc", "Followed by another consonant"),
+        ("guttural", "Followed by guttural"),
+        ("resh", "Followed by resh"),
     )
     option_html = "".join(
         f'<option value="{value}">{label}</option>' for value, label in options
@@ -1161,7 +1153,7 @@ def build_type_2_body(survey: dict) -> list:
         _para(
             "Every row has a final guttural closing the last syllable of the first"
             " word. The following word is gray, and its initial consonant selects the"
-            " filter group."
+            " lamed, guttural, or resh filter."
         ),
         mb_html.para(
             (
@@ -1169,8 +1161,9 @@ def build_type_2_body(survey: dict) -> list:
                 " ",
                 *itm_sections("§354"),
                 " says this mark is sometimes used when the following word begins"
-                " with lamed or nun. The filter separates those two initial consonants from"
-                " all others.",
+                " with lamed or nun. In this survey, the following word begins only with"
+                " lamed, a guttural, or resh; the analysis asserts that the three filters"
+                " cover every type-2 word.",
             )
         ),
         _type_2_following_filter(len(rows)),

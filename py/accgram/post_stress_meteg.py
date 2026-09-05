@@ -89,6 +89,7 @@ from accgram.uni_to_marks import is_accent
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
@@ -133,6 +134,19 @@ _GUTTURAL_HOSTS = frozenset(
         "\N{HEBREW LETTER HE}",
     )
 )
+
+# The Type 2 page filters every following word into one of these three groups.  The initial
+# letters are named exhaustively rather than putting unexpected initials in a catchall: a
+# changed corpus must stop the survey until its new group has been considered.
+TYPE_2_FOLLOWING_FILTER_GROUPS = ("lamed", "guttural", "resh")
+_TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL = {
+    hl.LAMED: "lamed",
+    hl.ALEF: "guttural",
+    hl.HE: "guttural",
+    hl.XET: "guttural",
+    hl.AYIN: "guttural",
+    hl.RESH: "resh",
+}
 
 _FULL_VOWELS = (
     hpo.XIRIQ,
@@ -344,6 +358,39 @@ def _letters(word: str) -> list[tuple[str, str, bool]]:
     if out:
         out[-1][2] = True
     return [(letter, marks, atom_final) for letter, marks, atom_final in out]
+
+
+def type_2_following_filter_group(following_word: str) -> str:
+    """The Type 2 filter group for a following MAM chanted word.
+
+    This intentionally raises for an unexpected initial.  A catchall filter would let the
+    page continue to claim complete coverage while concealing a corpus change that needs a
+    human choice about the filters.
+    """
+    letters = _letters(following_word)
+    assert (
+        letters
+    ), f"no Hebrew letter in following MAM chanted word: {following_word!r}"
+    initial = letters[0][0]
+    assert initial in _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL, (
+        "Type 2 following initial is outside the page filters: "
+        f"{initial!r} in {following_word!r}"
+    )
+    return _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL[initial]
+
+
+def _assert_type_2_following_filter_coverage(records: list[dict]) -> None:
+    """Require the Type 2 filters to classify every Type 2 record this run finds."""
+    type_2_records = [
+        record for record in records if record["structural_type"] == TYPE_GUTTURAL
+    ]
+    group_count = Counter()
+    for record in type_2_records:
+        following = record["following_mam_form"]
+        assert following is not None, f"{record['bcv']}: no following MAM chanted word"
+        group_count[type_2_following_filter_group(following)] += 1
+    assert sum(group_count.values()) == len(type_2_records)
+    assert set(group_count) <= set(TYPE_2_FOLLOWING_FILTER_GROUPS)
 
 
 def _has_a_vowel(marks: str) -> bool:
@@ -1651,6 +1698,7 @@ def build_survey() -> dict:
         raise SurveyProblem("; ".join(problems))
     counts = found["counts"]
     post_stress = found["post_stress"]
+    _assert_type_2_following_filter_coverage(post_stress)
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
