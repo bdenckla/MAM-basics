@@ -647,7 +647,6 @@ def _hebrew_spacing_option() -> object:
 def _opening(survey: dict) -> list:
     """Section 1: what is counted, and where the silluq boundary falls."""
     total = _both(survey, "meteg after the stressed syllable")
-    words = _both(survey, "chanted words checked")
     return [
         mb_html.para(
             (
@@ -656,7 +655,7 @@ def _opening(survey: dict) -> list:
                 *[" ", itm(), " and ", cos()],
                 " discuss MAS (meteg after the stress). Neither book says how often MAS",
                 " happens; we find that MAM has ",
-                f"{total:,} of them, over {words:,} chanted words.",
+                f"{total:,} of them.",
             )
         ),
         _para(
