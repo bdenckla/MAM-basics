@@ -1333,8 +1333,8 @@ def _dual_cantillation_appendix(survey: dict) -> list:
     bet = passage_comparison[psm.CANT_BET]
     difference = dual_cantillation["meteg_before_stress_difference"]
     headers = (
-        "Census result in dually-cantillated passages",
-        "cant-alef, used in the census",
+        "count",
+        "cant-alef",
         "cant-bet",
     )
     categories = (
