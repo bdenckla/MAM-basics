@@ -720,9 +720,14 @@ def _census(survey: dict) -> list:
     after = all_counts[after_category]
     return [
         mb_html.heading_level_2("MAS census by cantillation system"),
+        _table(headers, rows),
+        _para(
+            f"So a meteg comes before the stress {before:,} times and after it {after:,}"
+            " times."
+        ),
         mb_html.para(
             (
-                "The prose row in the table below is for the 21 books plus the verses of"
+                "The prose row in the table above is for the 21 books plus the verses of"
                 " Job's prose frame; the poetic row is for the verses of Job's main, poetic"
                 " section plus all Psalms and the whole book of Proverbs. See the ",
                 mb_html.anchor_h(
@@ -731,11 +736,6 @@ def _census(survey: dict) -> list:
                 ),
                 " for how this census handles them.",
             )
-        ),
-        _table(headers, rows),
-        _para(
-            f"So a meteg comes before the stress {before:,} times and after it {after:,}"
-            " times."
         ),
     ]
 
