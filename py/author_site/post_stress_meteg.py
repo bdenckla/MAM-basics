@@ -839,7 +839,7 @@ def _by_type(survey: dict) -> list:
                 " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
                 " closed syllable. The one current record in Breuer's type (a) but not"
                 " Yeivin's type has subtype ",
-                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_2),
+                psm.SUBTYPE_MISC_ALMOST_TYPE_2,
                 "; the ",
                 mb_html.anchor_h("misc cases page", _MISC_FNAME),
                 " lists that record.",
@@ -1129,7 +1129,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.para(
             (
                 "Within misc, ",
-                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_1),
+                psm.SUBTYPE_MISC_ALMOST_TYPE_1,
                 f" has {almost_type_1_count} record",
                 "s" if almost_type_1_count != 1 else "",
                 ". Its initial member is ",
@@ -1142,7 +1142,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.para(
             (
                 "Within misc, ",
-                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_2),
+                psm.SUBTYPE_MISC_ALMOST_TYPE_2,
                 f" has {misc_almost_type_2_count} record",
                 "s" if misc_almost_type_2_count != 1 else "",
                 ". Its initial member is ",
@@ -1156,7 +1156,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.para(
             (
                 "Within misc, ",
-                mb_html.code(psm.SUBTYPE_MISC_VAYOMER),
+                psm.SUBTYPE_MISC_VAYOMER,
                 f" has {vayomer_count} record",
                 "s" if vayomer_count != 1 else "",
                 ". Each has one PASEQ between the meteg-bearing chanted word and the"
