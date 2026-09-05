@@ -651,8 +651,6 @@ def _by_type(survey: dict) -> list:
         "Type",
         "Prose",
         "Poetic",
-        itm(),
-        cos(),
         "Example",
     )
     almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
@@ -665,19 +663,15 @@ def _by_type(survey: dict) -> list:
         rows.append(
             mb_html.table_row_of_data(
                 (
-                    kind,
+                    _case_type_cell(kind),
                     str(survey["post_stress_by_structural_type"][_PROSE][kind]),
                     str(survey["post_stress_by_structural_type"][_POETIC][kind]),
-                    itm_sections(yeivin),
-                    breuer,
                     _case_chanted_word_cell(example),
                 ),
                 (
                     None,
                     _NUMERIC_CELL,
                     _NUMERIC_CELL,
-                    None,
-                    None,
                     _HEBREW_CELL,
                 ),
             )
@@ -689,20 +683,23 @@ def _by_type(survey: dict) -> list:
                 "misc (not one of the three types above)",
                 str(survey["post_stress_by_structural_type"][_PROSE][unclassified]),
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
-                "",
-                "",
                 _case_chanted_word_cell(_example_of(survey, unclassified)),
             ),
             (
                 None,
                 _NUMERIC_CELL,
                 _NUMERIC_CELL,
-                None,
-                None,
                 _HEBREW_CELL,
             ),
         )
     )
+    source_rows = [
+        mb_html.table_row_of_data(
+            (_case_type_cell(kind), itm_sections(yeivin), breuer),
+            (None, None, None),
+        )
+        for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
+    ]
     return [
         mb_html.heading_level_2("MAS by structural type"),
         mb_html.para(
@@ -732,6 +729,8 @@ def _by_type(survey: dict) -> list:
             " one of the three types is left in the “misc” row rather than pushed into the nearest type."
         ),
         _table(headers, rows),
+        mb_html.heading_level_3("Sources for types 1–3"),
+        _table(("Type", itm(), cos()), source_rows),
         mb_html.para(
             (
                 "Within misc, ",
