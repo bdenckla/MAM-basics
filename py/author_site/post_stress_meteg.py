@@ -871,16 +871,18 @@ def _by_type(survey: dict) -> list:
                 " four chanted words that Yeivin's type 1 excludes:",
             )
         ),
-        mb_html.ordered_list(
-            tuple(
-                (
-                    _ref_link(record["bcv"]),
-                    " — ",
-                    *_hebrew_cell(record["mam_form"] or record["chanted_word"]),
-                    ".",
+        _table(
+            ("Reference", "Chanted word"),
+            [
+                mb_html.table_row_of_data(
+                    (
+                        _ref_link(record["bcv"]),
+                        _hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                    ),
+                    (None, _HEBREW_CELL),
                 )
                 for record in type_1_nonfinal_meteg_syllable_records
-            )
+            ],
         ),
         mb_html.para(
             (
