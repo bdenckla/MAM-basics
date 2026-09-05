@@ -158,6 +158,9 @@ toggle only that word's spacing.</p>
     document.body.classList.toggle(bodyClass, checkbox.checked);
   }}
   checkbox.addEventListener("change", () => {{
+    for (const hebrew of document.querySelectorAll(hebrewSelector)) {{
+      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
+    }}
     document.body.classList.toggle(bodyClass, checkbox.checked);
     try {{
       localStorage.setItem(storageKey, String(checkbox.checked));
