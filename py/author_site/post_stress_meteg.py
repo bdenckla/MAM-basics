@@ -671,9 +671,9 @@ def _census(survey: dict) -> list:
         mb_html.heading_level_2("MAS census by cantillation system"),
         mb_html.para(
             (
-                "The “prose verses” row in the table below is for the 21 books plus"
-                " Job's prose frame; the “poetic verses” row is Job's main, poetic section"
-                " plus all Psalms and the entire book of Proverbs. See the ",
+                "The prose row in the table below is for the 21 books plus the verses of"
+                " Job's prose frame; the poetic row is for the verses of Job's main, poetic"
+                " section plus all Psalms and the whole book of Proverbs. See the ",
                 mb_html.anchor_h(
                     "appendix on dually-cantillated passages",
                     f"#{_DUAL_CANTILLATION_APPENDIX_ID}",
