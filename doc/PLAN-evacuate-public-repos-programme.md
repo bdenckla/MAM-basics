@@ -5,7 +5,7 @@ third stage completed 2026-09-04; the fourth-stage draft remains open
 
 **RETAIN THIS FILE WHILE THE FOURTH STAGE IS ONLY A DRAFT.** The third-stage
 plan now carries the third stage's live decisions and execution record, but
-the fourth-stage section below carries six open decisions that no dedicated
+the fourth-stage section below carries the six decisions that no dedicated
 fourth-stage plan yet carries. That section also relies on the second-stage
 lane and Decision F in `PLAN-evacuate-the-rest-of-three-repos.md`. Therefore
 the third stage's Phase 5 retains both planning files. Delete them only after a
@@ -622,7 +622,7 @@ a finding.
 ## Fourth stage — the five MAM products, total evacuation — **PURSUED 2026-09-04; drafted, not started**
 
 **Ben decided on 2026-09-04 to pursue this stage.** The six decisions are recorded under
-§"The six sub-questions Ben has not waived" below; five were decided on 2026-09-05, and that
+§"The six sub-questions Ben has not waived" below; all six were decided on 2026-09-05, and that
 section says which lane each decision blocks. This is
 the fourth stage §"Whether the products follow — an open question Ben put on 2026-09-02, and not
 decided" said would exist: "if Ben decides yes, it is a fourth stage with its own section here,
@@ -933,10 +933,9 @@ Four smaller differences, each with a precedent:
 
 ### The six sub-questions Ben has not waived
 
-**At the 2026-09-04 draft all six decisions were open. Ben decided questions 1, 2, 3, 4 and 6 on
-2026-09-05. Question 5 remains open: the third stage's completion does not select its historical
-record.** No session may start a lane before the decisions that govern that lane are recorded in
-the dedicated fourth-stage plan; Question 5 remains owed before the first lane.
+**At the 2026-09-04 draft all six decisions were open. Ben decided all six on 2026-09-05.** No
+session may start a lane before the decisions that govern that lane are recorded in the dedicated
+fourth-stage plan.
 
 1. **Question 1 — outsider delivery: DECIDED 2026-09-05 — sparse checkout.** The dedicated plan
    will give outsiders sparse-checkout instructions for the landed MAM-parsed and MAM-simple
@@ -951,12 +950,11 @@ the dedicated fourth-stage plan; Question 5 remains owed before the first lane.
 4. **Question 4 — lane order: DECIDED 2026-09-05 — MAM-simple, MAM-for-Sefaria, MAM-parsed,
    MAM-with-doc, then MAM-OSIS.** MAM-simple and MAM-for-Sefaria first remove the two corpus writes
    that the `REPOS_ROOT` override cannot steer and therefore end the silent-misdirection hazard.
-5. **Question 5 — third-stage scheduling: OPEN.** The third stage is complete, so it cannot now
-   interleave with this stage. Ben still needs to choose whether this record says that the fourth
-   stage runs after the completed third stage, or retires Question 5 as no longer applicable.
+5. **Question 5 — third-stage scheduling: DECIDED 2026-09-05 — run the fourth stage after the
+   completed third stage.** The third stage completed on 2026-09-04, so the two stages do not
+   interleave. This preserves the historical record rather than retiring Question 5.
 6. **Question 6 — plan form: DECIDED 2026-09-05 — write a dedicated fourth-stage plan.** A Phase 0
-   writes that plan after Question 5 is decided; no product lane starts while Question 5 remains
-   open.
+   writes that plan; no product lane starts before that plan records these decisions.
 
 ### Planning preflight after the third-stage close — 2026-09-04
 
