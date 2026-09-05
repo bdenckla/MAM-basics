@@ -429,6 +429,15 @@ def _syllable_is_open(syllable: str) -> bool:
     return syllable[-1] in _JTA_VOWELS
 
 
+def _has_final_tsere_syllable_closed_by_guttural(parsed: dict) -> bool:
+    """Whether a chanted word could meet both the type-2 and type-3 conditions."""
+    return (
+        not _syllable_is_open(parsed["syllables"][-1])
+        and parsed["nuclei"][-1][1] == hpo.TSERE
+        and parsed["letters"][-1][0] in _GUTTURAL_HOSTS
+    )
+
+
 def _accent_name(accent: str) -> str:
     name = _ACCENT_NAMES.get(accent)
     if name is None:
@@ -913,6 +922,8 @@ def _scan(
         "dual_cantillation": {},
         "dual_cantillation_chanted_words": {},
         "dual_template_entries": {},
+        "type_2_type_3_overlap_by_book": Counter(),
+        "type_2_type_3_overlap_by_final_letter": Counter(),
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -1036,6 +1047,11 @@ def _one_verse(
             continue
         found["counts"][(system, "chanted words checked")] += 1
         found["checked_chanted_words_by_bcv"][bcv] += 1
+        if _has_final_tsere_syllable_closed_by_guttural(parsed):
+            found["type_2_type_3_overlap_by_book"][bb] += 1
+            found["type_2_type_3_overlap_by_final_letter"][
+                parsed["letters"][-1][0]
+            ] += 1
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -1635,6 +1651,14 @@ def build_survey() -> dict:
         for one in post_stress
         if one["subtype"] is not None
     )
+    type_2_type_3_overlap_by_book = found["type_2_type_3_overlap_by_book"]
+    type_2_type_3_overlap_by_final_letter = found[
+        "type_2_type_3_overlap_by_final_letter"
+    ]
+    type_2_type_3_overlap_count = sum(type_2_type_3_overlap_by_book.values())
+    assert type_2_type_3_overlap_count == sum(
+        type_2_type_3_overlap_by_final_letter.values()
+    )
     return {
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
@@ -1689,6 +1713,13 @@ def build_survey() -> dict:
         "post_stress_by_subtype": {
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "type_2_type_3_overlap": {
+            "chanted_words": type_2_type_3_overlap_count,
+            "by_book": dict(sorted(type_2_type_3_overlap_by_book.items())),
+            "by_final_letter": dict(
+                sorted(type_2_type_3_overlap_by_final_letter.items())
+            ),
         },
         "post_stress": post_stress,
         "post_silluq": {

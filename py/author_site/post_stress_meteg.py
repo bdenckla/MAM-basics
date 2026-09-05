@@ -330,6 +330,11 @@ def _both(survey: dict, category: str) -> int:
     return _count(survey, _PROSE, category) + _count(survey, _POETIC, category)
 
 
+def _type_2_type_3_overlap(survey: dict) -> dict:
+    """The all-corpus set that could satisfy both type-2 and type-3 conditions."""
+    return survey["type_2_type_3_overlap"]
+
+
 def _dual_cantillation_facts(survey: dict, bcv: str) -> dict:
     """The source-derived facts for one numbered verse with both cantillation strands."""
     return survey["dual_cantillation"]["facts_by_numbered_verse"][bcv]
@@ -460,6 +465,10 @@ def pin_claims(survey: dict) -> None:
         and record["vowel"] == "pataḥ"
         for record in type_2_records
     ), "the type-2/type-3 non-overlap claim has moved"
+    type_2_type_3_overlap = _type_2_type_3_overlap(survey)
+    assert type_2_type_3_overlap["chanted_words"] == 154
+    assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}
+    assert type_2_type_3_overlap["by_final_letter"] == {"ה": 154}
     assert {_type_2_following_group(record) for record in type_2_records} <= set(
         _TYPE_2_FOLLOWING_GROUPS
     )
@@ -613,7 +622,7 @@ def _opening(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "A meteg almost always appears before the stressed syllable of its chanted",
+                "A meteg almost always comes before the stressed syllable of its chanted",
                 " word, but it can also come after the stress. Both",
                 *[" ", itm(), " and ", cos()],
                 " discuss MAS (meteg after the stress). Neither book says how often MAS",
@@ -713,6 +722,10 @@ def _by_type(survey: dict) -> list:
         "Example",
     )
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
+    type_2_type_3_overlap = _type_2_type_3_overlap(survey)
+    chanted_word_count = _both(survey, "chanted words checked")
+    overlap_count = type_2_type_3_overlap["chanted_words"]
+    overlap_by_book = type_2_type_3_overlap["by_book"]
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -770,25 +783,20 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.ordered_list(
             (
-                "an open syllable before a chanted word whose first full syllable is stressed;",
-                "a final syllable closed by a guttural",
-                "a final closed syllable whose vowel is tsere",
+                "An open syllable before a chanted word whose first full syllable is stressed.",
+                "A final syllable closed by a guttural.",
+                "A final closed syllable whose vowel is tsere.",
             )
         ),
         _para(
-            "This page follows Yeivin's narrower condition for type 3: a final closed"
-            " syllable with tsere. Breuer's corresponding type (a) covers a long vowel in"
-            " a closed syllable, so a record that meets Breuer's condition but not Yeivin's"
-            " remains in misc."
+            f"Only {overlap_count:,} of all {chanted_word_count:,} chanted words surveyed"
+            " have a final tsere syllable closed by a guttural. All "
+            f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
+            f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
         ),
         _para(
-            "Types 2 and 3 could in principle overlap. In this survey, however, every"
-            f" one of the {type_2_count} type-2 records has pataḥ rather than tsere, so"
-            " none also meets the type-3 condition."
-        ),
-        _para(
-            "The counts below are mechanical, and a chanted word that doesn't fit"
-            " one of the three types is left in the “misc” row rather than pushed into the nearest type."
+            f"Every one of the {type_2_count} type-2 records has pataḥ rather than tsere,"
+            " so no type-2 record also meets the type-3 condition."
         ),
         _hebrew_spacing_option(),
         _table(headers, rows),

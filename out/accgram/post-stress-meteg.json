@@ -342,6 +342,16 @@
    "misc-almost-type-2": 1
   }
  },
+ "type_2_type_3_overlap": {
+  "chanted_words": 154,
+  "by_book": {
+   "da": 136,
+   "er": 18
+  },
+  "by_final_letter": {
+   "ה": 154
+  }
+ },
  "post_stress": [
   {
    "bcv": "gn3:18",
