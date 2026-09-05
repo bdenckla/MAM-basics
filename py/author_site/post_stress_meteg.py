@@ -33,6 +33,7 @@ that it is, which is the plan's requirement for a page with no excerpts.
 
 from __future__ import annotations
 
+from collections import Counter
 import json
 from pathlib import Path
 import re
@@ -142,7 +143,6 @@ _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
-_TYPE_2_FOLLOWING_GROUPS = psm.TYPE_2_FOLLOWING_FILTER_GROUPS
 _HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
@@ -484,9 +484,10 @@ def pin_claims(survey: dict) -> None:
     assert type_2_type_3_overlap["by_final_letter"] == {"ה": 154}
     assert type_2_type_3_overlap["example"]["bcv"] == "da2:5"
     assert type_2_type_3_overlap["example"]["mam_form"] is not None
-    assert {_type_2_following_group(record) for record in type_2_records} <= set(
-        _TYPE_2_FOLLOWING_GROUPS
+    type_2_following_group_counts = Counter(
+        _type_2_following_group(record) for record in type_2_records
     )
+    assert type_2_following_group_counts == Counter(lamed=38, guttural=17, resh=1)
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
@@ -1157,13 +1158,17 @@ def build_type_2_body(survey: dict) -> list:
         ),
         mb_html.para(
             (
+                "Based on a similar class of words covered in ",
                 itm(),
                 " ",
                 *itm_sections("§354"),
-                " says this mark is sometimes used when the following word begins"
-                " with lamed or nun. In this survey, the following word begins only with"
-                " lamed, a guttural, or resh; the analysis asserts that the three filters"
-                " cover every type-2 word.",
+                ", I guessed that type-2 words might often be followed by words starting"
+                " with lamed or nun. My guess was correct with respect to lamed but not with"
+                " respect to nun. Perhaps just coincidentally, the type-2 words not followed"
+                " by an initial-lamed word are almost always followed by an initial-guttural"
+                " word, with only one exception: an initial-resh word. Although resh behaves"
+                " like a guttural in some respects, we do not consider it to be a guttural"
+                " here.",
             )
         ),
         _type_2_following_filter(len(rows)),
