@@ -821,14 +821,15 @@ def _by_type(survey: dict) -> list:
             )
         ),
         _para(
+            f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
+            f" of the {type_2_count} type-2 records has pataḥ rather than tsere, so no"
+            " type-2 record also meets the type-3 condition."
+        ),
+        _para(
             f"Only {overlap_count:,} of all {chanted_word_count:,} chanted words surveyed"
             " have a final tsere syllable closed by a guttural. All "
             f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
             f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
-        ),
-        _para(
-            f"Every one of the {type_2_count} type-2 records has pataḥ rather than tsere,"
-            " so no type-2 record also meets the type-3 condition."
         ),
         _hebrew_spacing_option(),
         _table(headers, rows),
