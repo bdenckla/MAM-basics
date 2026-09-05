@@ -901,7 +901,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
             " on its first full syllable."
         ),
         psm.SUBTYPE_MISC_VAYOMER: (
-            "A Vayomer case with one intervening PASEQ before the following chanted word."
+            "A Vayomer case with one intervening paseq before the following chanted word."
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_2: (
             "A final closed ḥolam syllable: Breuer's long-vowel type (a), but not"
@@ -924,8 +924,8 @@ def _following_chanted_word_matters(record: dict) -> bool:
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The MAM form, with required following context demoted.
 
-    The shared routine displays zero or more PASEQ marks and then the following chanted word.
-    At present only the four ``misc-vayomer`` records have a PASEQ, but survey validation makes
+    The shared routine displays zero or more paseq marks and then the following chanted word.
+    At present only the four ``misc-vayomer`` records have a paseq, but survey validation makes
     another kind of intervening material a reviewable failure rather than silently dropping it.
     """
     current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
@@ -1159,8 +1159,12 @@ def build_misc_body(survey: dict) -> list:
                 psm.SUBTYPE_MISC_VAYOMER,
                 f" has {vayomer_count} record",
                 "s" if vayomer_count != 1 else "",
-                ". Each has one PASEQ between the meteg-bearing chanted word and the"
-                " following chanted word; the table above shows that context.",
+                ". Each has one paseq between the meteg-bearing chanted word and the"
+                " following chanted word: the gaʿya-before-paseq pattern described in ",
+                itm(),
+                " ",
+                *itm_sections("§325"),
+                ". The table above shows that context.",
             )
         ),
     ]
@@ -1183,7 +1187,7 @@ def build_cases_body(survey: dict) -> list:
             "For types 1 and 2, the following chanted word is shown in gray."
             " The same is true of misc-almost-type-1, because the following chanted"
             " word's stress keeps that row out of type 1. For misc-vayomer, the"
-            " intervening PASEQ is gray with the following chanted word."
+            " intervening paseq is gray with the following chanted word."
         ),
         mb_html.para(
             (
