@@ -1228,8 +1228,7 @@ def build_misc_body(survey: dict) -> list:
                 ". Its initial member is ",
                 _ref_link(almost_type_1_inaugural["bcv"]),
                 ": the MAS syllable is open, but the following chanted word's first"
-                " syllable is unstressed. An opening simple vocal sheva or xataf vowel"
-                " belongs to that first syllable for the type-1 condition.",
+                " syllable is unstressed.",
             )
         ),
         mb_html.para(
