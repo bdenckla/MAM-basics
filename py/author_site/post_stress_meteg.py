@@ -866,9 +866,9 @@ def _by_type(survey: dict) -> list:
             (
                 "Unlike our type 1, ",
                 itm(),
-                "'s type 1 requires that its word have penultimate stress. The survey counts"
-                " a final furtive pataḥ as a syllable. On that syllable count, the survey's"
-                " type 1 includes four chanted words that Yeivin's type 1 excludes:",
+                "'s type 1 requires penultimate stress. Our survey counts a final furtive"
+                " pataḥ as a syllable. On that syllable count, our survey's type 1 includes"
+                " four chanted words that Yeivin's type 1 excludes:",
             )
         ),
         mb_html.ordered_list(
