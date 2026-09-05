@@ -883,12 +883,6 @@ def _by_type(survey: dict) -> list:
             )
         ),
         mb_html.para(
-            "In all four chanted words, the meteg follows the antepenultimate stress and"
-            " falls on the penultimate open syllable. Yeivin's type 1 instead requires"
-            " penultimate stress and a final open syllable. The four records belong to the"
-            " survey's type 1 but not to Yeivin's type 1."
-        ),
-        mb_html.para(
             (
                 "The guttural type is described in ",
                 itm(),
