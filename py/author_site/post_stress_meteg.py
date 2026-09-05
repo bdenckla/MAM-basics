@@ -451,6 +451,7 @@ def pin_claims(survey: dict) -> None:
     )
     assert passage_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
     assert passage_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
+    assert survey["post_silluq"]["in_mam"] == 0
     difference = dual_cantillation["meteg_before_stress_difference"]
     assert difference["bcv"] == "dt5:6"
     assert len(difference[psm.CANT_ALEF]["chanted_words"]) == 2
@@ -1171,17 +1172,16 @@ def _post_silluq(survey: dict) -> list:
         mb_html.heading_level_2("The post-silluq case at 1 Samuel 17:5"),
         _para(
             "A meteg after a silluq would be hard to identify in Unicode, since the two"
-            " marks are one codepoint and the rule that tells them apart is about"
-            " the stressed syllable. MAM has no such meteg: of the MAS"
-            " counted here, none is in a chanted word that has sof pasuq."
+            " marks are one codepoint."
         ),
         _para(
-            "The place the question comes from is 1 Samuel 17:5, whose verse-final chanted"
-            f" word MAM has as {nexoshet} — one U+05BD, the silluq, on the stressed"
-            " syllable. UXLC 3.9 and WLC 4.22 each record two U+05BD there, the second on"
-            " the final syllable. Those are transcriptions of the Leningrad Codex and are"
-            " evidence about themselves; what the manuscript has is a question for the"
-            " manuscript, whose folio F159A, column 3, line 8 is where the word stands."
+            "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in"
+            " some BHS-derived editions. MAM has the verse-final chanted word"
+            f" {nexoshet} with one U+05BD, the silluq. UXLC 3.9 and WLC 4.22 are"
+            " BHS-derived transcriptions, and each has a second U+05BD on the final"
+            " syllable. Their forms are evidence about UXLC and WLC; whether the Leningrad"
+            " Codex has a second mark must be read from folio F159A, column 3, line 8,"
+            " where the chanted word stands."
         ),
         _para(
             "Neither book has a rule that would cover such a mark. The open-syllable type"
