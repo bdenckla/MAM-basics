@@ -717,7 +717,7 @@ def _by_type(survey: dict) -> list:
             (
                 "an open syllable before a chanted word whose first full syllable is stressed;",
                 "a final syllable closed by a guttural",
-                "a closed syllable whose vowel is tsere.",
+                "a closed syllable whose vowel is tsere",
             )
         ),
         _para(
