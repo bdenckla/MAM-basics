@@ -542,7 +542,7 @@ def _opening(survey: dict) -> list:
                 *[" ", itm(), " and ", cos()],
                 " discuss MAS (meteg after the stress). Neither book says how often MAS",
                 " happens; we find that MAM has ",
-                f"{total:,} of them, over {words:,} chanted words.)",
+                f"{total:,} of them, over {words:,} chanted words.",
             )
         ),
         _para(
@@ -559,7 +559,6 @@ def _opening(survey: dict) -> list:
             " we use Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
         ),
-        _para("Here, MAS means meteg after the stress."),
     ]
 
 
@@ -573,7 +572,7 @@ def _census(survey: dict) -> list:
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
         mb_html.abbr("c-words", {"title": "count of chanted words"}),
-        ("Meteg before", mb_html.line_break(), "the stress"),
+        mb_html.abbr("MBS", {"title": "Meteg before the stress"}),
         mb_html.abbr("MAS", {"title": "meteg after the stress"}),
     )
     numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
@@ -593,10 +592,10 @@ def _census(survey: dict) -> list:
     before = _both(survey, "meteg before the stressed syllable")
     after = _both(survey, "meteg after the stressed syllable")
     return [
-        mb_html.heading_level_2("MAM census by verse system"),
+        mb_html.heading_level_2("MAS census by cantillation system"),
         mb_html.para(
             (
-                "The “prose verses” row in the table below is for the 21 books plus with"
+                "The “prose verses” row in the table below is for the 21 books plus"
                 " Job's prose frame; the “poetic verses” row is Job's main, poetic section"
                 " plus all Psalms and the entire book of Proverbs. See the ",
                 mb_html.anchor_h(
