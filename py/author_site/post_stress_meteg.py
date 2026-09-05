@@ -1170,8 +1170,8 @@ def _post_silluq(survey: dict) -> list:
     return [
         mb_html.heading_level_2("The post-silluq case at 1 Samuel 17:5"),
         _para(
-            "A meteg after the silluq would be a harder case than any of the above, since"
-            " the two marks are one codepoint and the rule that tells them apart is about"
+            "A meteg after a silluq would be hard to identify in Unicode, since the two"
+            " marks are one codepoint and the rule that tells them apart is about"
             " the stressed syllable. MAM has no such meteg: of the MAS"
             " counted here, none is in a chanted word that has sof pasuq."
         ),
