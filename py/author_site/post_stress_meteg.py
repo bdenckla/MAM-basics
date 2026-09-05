@@ -843,8 +843,8 @@ def _by_type(survey: dict) -> list:
         _hebrew_spacing_option(table_above=True),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
-            f" of the {type_2_count} type-2 records has pataḥ rather than tsere, so no"
-            " type-2 record also meets the type-3 condition. Indeed, words with a final"
+            f" of the {type_2_count} type-2 chanted words has pataḥ rather than tsere, so no"
+            " type-2 chanted word also meets the type-3 condition. Indeed, words with a final"
             " tsere closed by a guttural are quite rare even without a meteg. Only "
             f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
             " final tsere syllable closed by a guttural. All "
@@ -917,12 +917,12 @@ def _by_type(survey: dict) -> list:
                 " and Yeivin says it is marked in manuscripts and printed texts alike. ",
                 cos(),
                 " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
-                " closed syllable. The one current record in Breuer's type (a) but not"
+                " closed syllable. The one current chanted word in Breuer's type (a) but not"
                 " Yeivin's type has subtype ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_2,
                 "; the ",
                 mb_html.anchor_h("misc cases page", _MISC_FNAME),
-                " lists that record.",
+                " lists that chanted word.",
             )
         ),
     ]
@@ -1210,7 +1210,7 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_1,
-                f" has {almost_type_1_count} record",
+                f" has {almost_type_1_count} chanted word",
                 "s" if almost_type_1_count != 1 else "",
                 ". Its initial member is ",
                 _ref_link(almost_type_1_inaugural["bcv"]),
@@ -1223,7 +1223,7 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_2,
-                f" has {misc_almost_type_2_count} record",
+                f" has {misc_almost_type_2_count} chanted word",
                 "s" if misc_almost_type_2_count != 1 else "",
                 ". Its initial member is ",
                 _ref_link(misc_almost_type_2_inaugural["bcv"]),
@@ -1237,7 +1237,7 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_VAYOMER,
-                f" has {vayomer_count} record",
+                f" has {vayomer_count} chanted word",
                 "s" if vayomer_count != 1 else "",
                 ". Each has one paseq between the meteg-bearing chanted word and the"
                 " following chanted word: the gaʿya-before-paseq pattern described in ",
@@ -1303,7 +1303,7 @@ def _m23(survey: dict) -> list:
         mb_html.para(
             (
                 "The ",
-                mb_html.anchor_h("Holman M23 record", _HOLMAN_M23_RECORD_HREF),
+                mb_html.anchor_h("Holman M23 case", _HOLMAN_M23_RECORD_HREF),
                 *wrap_hebrew_runs(
                     " has the MAM form Holman received on 2026-08-31, without a meteg where"
                     " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
