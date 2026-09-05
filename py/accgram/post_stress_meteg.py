@@ -241,9 +241,8 @@ _VOCAL_SHEVA = "^"
 # the Hebrew instead.
 _JTA_VOWELS = frozenset("aeiouAEIOU860")
 
-# The three xataf vowels are syllables in ``jta``, but Yeivin's condition for the open-syllable
-# type allows one before the following chanted word's first full syllable, just as it allows a
-# simple vocal sheva.
+# A simple vocal sheva or xataf vowel at the opening of a chanted word belongs to the following
+# segment as the chanted word's first syllable for Yeivin's open-syllable type.
 _XATAF_JTA_VOWELS = frozenset("680")
 
 SYSTEM_PROSE = "prose verses"
@@ -404,25 +403,26 @@ def _jta_syllables(jta: str) -> tuple[list[str], int]:
     return out, kept.index(stressed[0])
 
 
-def _first_full_syllable_is_stressed(jta: str) -> bool:
+def _first_syllable_is_stressed(jta: str) -> bool:
     """Whether a following chanted word meets Yeivin's type-1 stress condition.
 
-    An opening simple vocal sheva or xataf vowel is pre-syllabic for this condition, so the
-    stress is initial when it falls on the first segment after all such opening segments.  The
-    normal syllable check still runs first: this test adds a source-specific reading of an
-    already-valid ``jta`` form; it does not loosen the survey's validation.
+    An opening simple vocal sheva or xataf vowel belongs to the following segment as the first
+    syllable for this condition. The stress is therefore initial when it falls on the first
+    segment after all such opening segments. The normal syllable check still runs first: this
+    test adds a source-specific reading of an already-valid ``jta`` form; it does not loosen the
+    survey's validation.
     """
     _jta_syllables(jta)
     syllables = _SYLLABLE_BREAK.split(jta)
     stressed = [i for i, one in enumerate(syllables) if "!" in one]
     assert len(stressed) == 1, jta
-    first_full = 0
-    while first_full < len(syllables) and (
-        _VOCAL_SHEVA in syllables[first_full]
-        or set(syllables[first_full]) & _XATAF_JTA_VOWELS
+    first_syllable_stress_segment = 0
+    while first_syllable_stress_segment < len(syllables) and (
+        _VOCAL_SHEVA in syllables[first_syllable_stress_segment]
+        or set(syllables[first_syllable_stress_segment]) & _XATAF_JTA_VOWELS
     ):
-        first_full += 1
-    return stressed[0] == first_full
+        first_syllable_stress_segment += 1
+    return stressed[0] == first_syllable_stress_segment
 
 
 def _syllable_is_open(syllable: str) -> bool:
@@ -464,7 +464,7 @@ def _structural_type(
 
     Mechanical, off the syllable Phonetic MAM divided and the letters and points MAM has:
 
-    * an open syllable before a chanted word whose first full syllable is stressed is ITM §332
+    * an open syllable before a chanted word whose first syllable is stressed is ITM §332
       and CoS Ch. 8 type (j), the קוּמִי rule;
     * a closed syllable at the end of a chanted word whose last letter is a guttural is ITM
       §354 and CoS Ch. 8 type (b) -- which is where a furtive patax lands; and
@@ -484,9 +484,7 @@ def _structural_type(
     where both books put it under §332 and type (j) by name.
     """
     if is_open:
-        if following_jta is not None and _first_full_syllable_is_stressed(
-            following_jta
-        ):
+        if following_jta is not None and _first_syllable_is_stressed(following_jta):
             return TYPE_OPEN, None
         if following_jta is not None:
             return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_1

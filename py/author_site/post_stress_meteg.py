@@ -815,7 +815,7 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.ordered_list(
             (
-                "An open syllable before a chanted word whose first full syllable is stressed.",
+                "An open syllable before a chanted word whose first syllable is stressed.",
                 "A final syllable closed by a guttural.",
                 "A final closed syllable whose vowel is tsere.",
             )
@@ -841,8 +841,8 @@ def _by_type(survey: dict) -> list:
                 " ",
                 *itm_sections("§332"),
                 " describes a chanted word stressed on its penultimate syllable,"
-                " ending in an open syllable, before a chanted word whose first full"
-                " syllable is stressed."
+                " ending in an open syllable, before a chanted word whose first syllable is"
+                " stressed."
                 " Yeivin calls it rarely marked, commonest in early manuscripts and absent"
                 " from printed texts, and ",
                 cos(),
@@ -965,7 +965,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
     gloss_by_subtype = {
         psm.SUBTYPE_MISC_ALMOST_TYPE_1: (
             "An open-syllable type-1 candidate whose following chanted word has no stress"
-            " on its first full syllable."
+            " on its first syllable."
         ),
         psm.SUBTYPE_MISC_VAYOMER: (
             "A Vayomer case with one intervening paseq before the following chanted word."
@@ -1201,9 +1201,9 @@ def build_misc_body(survey: dict) -> list:
                 "s" if almost_type_1_count != 1 else "",
                 ". Its initial member is ",
                 _ref_link(almost_type_1_inaugural["bcv"]),
-                ": the MAS syllable is open, but the following chanted word's first full"
-                " syllable is unstressed. An opening simple vocal sheva or xataf vowel is"
-                " pre-syllabic for the type-1 condition.",
+                ": the MAS syllable is open, but the following chanted word's first"
+                " syllable is unstressed. An opening simple vocal sheva or xataf vowel"
+                " belongs to that first syllable for the type-1 condition.",
             )
         ),
         mb_html.para(
@@ -1301,7 +1301,7 @@ def _m23(survey: dict) -> list:
         _para(
             f"The mark is of the open-syllable type: {qumi} is stressed on its first"
             " syllable, ends in an open syllable, and the chanted word after it is stressed"
-            " on its first full syllable. That is the type both books call optional, and"
+            " on its first syllable. That is the type both books call optional, and"
             f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
