@@ -334,12 +334,12 @@
   "prose verses": {
    "misc-almost-type-1": 1,
    "misc-vayomer": 4,
-   "misc-almost-type-2": 0
+   "misc-almost-type-3": 0
   },
   "poetic verses": {
    "misc-almost-type-1": 0,
    "misc-vayomer": 0,
-   "misc-almost-type-2": 1
+   "misc-almost-type-3": 1
   }
  },
  "type_2_type_3_overlap": {
@@ -5004,7 +5004,7 @@
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
-   "subtype": "misc-almost-type-2",
+   "subtype": "misc-almost-type-3",
    "atom": 1,
    "mam_form": "וְיָ֣לֹֽד",
    "mam_form_matched_by": "as written; one candidate in the verse",

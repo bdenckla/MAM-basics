@@ -260,13 +260,13 @@ TYPE_UNCLASSIFIED = "none of the three"
 # the following chanted word.  Kept within misc rather than recasting it as a fourth type.
 SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
-SUBTYPE_MISC_ALMOST_TYPE_2 = "misc-almost-type-2"
+SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
 
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
 _SUBTYPES = (
     SUBTYPE_MISC_ALMOST_TYPE_1,
     SUBTYPE_MISC_VAYOMER,
-    SUBTYPE_MISC_ALMOST_TYPE_2,
+    SUBTYPE_MISC_ALMOST_TYPE_3,
 )
 
 _VAYOMER_CONSONANTS = (
@@ -475,8 +475,8 @@ def _structural_type(
     Anything else -- a closed syllable with some other vowel, the segol of וַיֹּאמֶר above all
     -- is left unclassified and stays visible as itself.  An open-syllable candidate whose
     following chanted word fails the stress condition is the ``misc-almost-type-1`` subtype.
-    A final closed ḥolam syllable is the ``misc-almost-type-2`` subtype: it fits Breuer's wider
-    long-vowel condition but not Yeivin's ṣere type.
+    A final closed ḥolam syllable is the ``misc-almost-type-3`` subtype: it fits CoS's wider
+    long-vowel condition but not ITM's ṣere type.
 
     OPENNESS IS ASKED FIRST, and the order is the rule rather than a tidying: a final ה is a
     mater in פַּדֶּנָה, whose last syllable is open, and a guttural in וְנֹגַהּ, whose last
@@ -494,7 +494,7 @@ def _structural_type(
     if is_last_syllable and vowel == hpo.TSERE:
         return TYPE_CLOSED_TSERE, None
     if is_last_syllable and vowel in (hpo.XOLAM, hpo.XOLAM_XFV):
-        return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_2
+        return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_3
     return TYPE_UNCLASSIFIED, None
 
 
