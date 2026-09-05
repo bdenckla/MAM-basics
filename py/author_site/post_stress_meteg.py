@@ -1210,11 +1210,8 @@ def _dual_cantillation_appendix(survey: dict) -> list:
     """The method for passages Phonetic MAM records with two cantillations."""
     dual_cantillation = _dual_cantillation(survey)
     passage_comparison = dual_cantillation["dually_cantillated_passage_counts"]
-    whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
     alef = passage_comparison[psm.CANT_ALEF]
     bet = passage_comparison[psm.CANT_BET]
-    whole_alef = whole_census_comparison[psm.CANT_ALEF]
-    whole_bet = whole_census_comparison[psm.CANT_BET]
     difference = dual_cantillation["meteg_before_stress_difference"]
     headers = (
         "Census result in dually-cantillated passages",
@@ -1274,16 +1271,6 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             " prose MBS count, and no effect on any other analysis."
         ),
         _table(headers, rows),
-        _para(
-            "Across the whole census, cant-alef has"
-            f" {whole_alef['chanted words checked']:,} chanted words and"
-            f" {whole_alef['meteg before the stressed syllable']:,} metegs before the stress;"
-            " cant-bet has"
-            f" {whole_bet['chanted words checked']:,} chanted words and"
-            f" {whole_bet['meteg before the stressed syllable']:,} metegs before the stress."
-            " Both strands have"
-            f" {whole_alef['meteg after the stressed syllable']:,} MAS."
-        ),
         mb_html.heading_level_3("The meteg-before-stress difference"),
         mb_html.para(
             (
