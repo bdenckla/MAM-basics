@@ -398,8 +398,8 @@ def _example_of(survey: dict, kind: str) -> dict:
     raise AssertionError(f"no post-stress record of type {kind!r} to show")
 
 
-def _misc_almost_type_1_inaugural(survey: dict) -> dict:
-    """The Jeremiah 46:14 record that starts the strict-type-1 subtype."""
+def _misc_almost_type_1_only_member(survey: dict) -> dict:
+    """The only chanted word in the strict-type-1 subtype, Jeremiah 46:14."""
     records = [
         one
         for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
@@ -409,8 +409,8 @@ def _misc_almost_type_1_inaugural(survey: dict) -> dict:
     return records[0]
 
 
-def _misc_almost_type_3_inaugural(survey: dict) -> dict:
-    """The Job 15:35 chanted word that fits CoS's type (a), but not ITM's type 3."""
+def _misc_almost_type_3_only_member(survey: dict) -> dict:
+    """The only chanted word that fits CoS's type (a), but not ITM's type 3: Job 15:35."""
     records = [
         one
         for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
@@ -448,8 +448,8 @@ def pin_claims(survey: dict) -> None:
         assert all(
             one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
         )
-    _misc_almost_type_1_inaugural(survey)
-    misc_almost_type_3 = _misc_almost_type_3_inaugural(survey)
+    _misc_almost_type_1_only_member(survey)
+    misc_almost_type_3 = _misc_almost_type_3_only_member(survey)
     assert _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3) == 1
     assert (
         misc_almost_type_3["vowel"] == "ḥolam"
@@ -1189,9 +1189,9 @@ def build_misc_body(survey: dict) -> list:
     """The misc cases and the named subsets that remain outside types 1–3."""
     records = _misc_records(survey)
     almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
-    almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
+    almost_type_1_only_member = _misc_almost_type_1_only_member(survey)
     misc_almost_type_3_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
-    misc_almost_type_3_inaugural = _misc_almost_type_3_inaugural(survey)
+    misc_almost_type_3_only_member = _misc_almost_type_3_only_member(survey)
     vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     return [
         mb_html.heading_level_1(_MISC_TITLE),
@@ -1225,8 +1225,8 @@ def build_misc_body(survey: dict) -> list:
                 psm.SUBTYPE_MISC_ALMOST_TYPE_1,
                 f" has {almost_type_1_count} chanted word",
                 "s" if almost_type_1_count != 1 else "",
-                ". Its initial member is ",
-                _ref_link(almost_type_1_inaugural["bcv"]),
+                ". Its only member is ",
+                _ref_link(almost_type_1_only_member["bcv"]),
                 ": the MAS syllable is open, but the following chanted word's first"
                 " syllable is unstressed.",
             )
@@ -1237,10 +1237,10 @@ def build_misc_body(survey: dict) -> list:
                 psm.SUBTYPE_MISC_ALMOST_TYPE_3,
                 f" has {misc_almost_type_3_count} chanted word",
                 "s" if misc_almost_type_3_count != 1 else "",
-                ". Its initial member is ",
-                _ref_link(misc_almost_type_3_inaugural["bcv"]),
+                ". Its only member is ",
+                _ref_link(misc_almost_type_3_only_member["bcv"]),
                 ": its chanted word ",
-                *_hebrew_cell(misc_almost_type_3_inaugural["mam_form"]),
+                *_hebrew_cell(misc_almost_type_3_only_member["mam_form"]),
                 " has a final closed syllable with ḥolam, a long vowel. It fits ",
                 cos(),
                 "'s broader type (a), but not ",
