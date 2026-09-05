@@ -308,6 +308,7 @@ def build_body(survey: dict) -> list:
         *_post_silluq(survey),
         *_overlapping_diagnostic(survey),
         *_dual_cantillation_appendix(survey),
+        *_sources_for_types(),
     ]
 
 
@@ -812,13 +813,6 @@ def _by_type(survey: dict) -> list:
             ),
         )
     )
-    source_rows = [
-        mb_html.table_row_of_data(
-            (_case_type_cell(kind), itm_sections(yeivin), breuer),
-            (None, None, None),
-        )
-        for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
-    ]
     return [
         mb_html.heading_level_2("MAS by structural type"),
         mb_html.para(
@@ -860,8 +854,6 @@ def _by_type(survey: dict) -> list:
             ),
             {"class": "center"},
         ),
-        mb_html.heading_level_3("Sources for types 1–3"),
-        _table(("Type", itm(), cos()), source_rows),
         mb_html.para(
             (
                 "Unlike our type 1, ",
@@ -938,6 +930,21 @@ def _by_type(survey: dict) -> list:
                 " lists that chanted word.",
             )
         ),
+    ]
+
+
+def _sources_for_types() -> list:
+    """The references for the three types, kept at the main page's end."""
+    source_rows = [
+        mb_html.table_row_of_data(
+            (_case_type_cell(kind), itm_sections(yeivin), breuer),
+            (None, None, None),
+        )
+        for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
+    ]
+    return [
+        mb_html.heading_level_3("Sources for types 1–3"),
+        _table(("Type", itm(), cos()), source_rows),
     ]
 
 
