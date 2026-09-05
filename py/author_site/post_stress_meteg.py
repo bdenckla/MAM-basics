@@ -123,6 +123,10 @@ _FOLLOWING_CHANTED_WORD_CLASS = "post-stress-meteg-following-chanted-word"
 _HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
+_HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
+    "post-stress-meteg-individually-expanded-hebrew"
+)
+_HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
@@ -132,12 +136,15 @@ _TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
     hl.NUN: "nun",
 }
 _HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
-Expanded Hebrew letter spacing</label></p>
+Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle its spacing)</p>
 <script>
 (() => {{
   const checkbox = document.getElementById("{_HEBREW_SPACING_CHECKBOX_ID}");
   const bodyClass = "{_HEBREW_SPACING_BODY_CLASS}";
   const storageKey = "{_HEBREW_SPACING_STORAGE_KEY}";
+  const individualExpandedClass = "{_HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS}";
+  const individualNormalClass = "{_HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS}";
+  const hebrewSelector = '[lang="hbo"]';
   let saved = null;
   try {{
     saved = localStorage.getItem(storageKey);
@@ -155,6 +162,21 @@ Expanded Hebrew letter spacing</label></p>
     }} catch (_error) {{
       // The page's in-memory preference remains usable without page storage.
     }}
+  }});
+  document.addEventListener("click", (event) => {{
+    if (!(event.target instanceof Element)) {{
+      return;
+    }}
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {{
+      return;
+    }}
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
   }});
 }})();
 </script>

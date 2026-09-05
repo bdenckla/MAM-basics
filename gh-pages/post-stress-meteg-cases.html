@@ -10,12 +10,15 @@
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1>Meteg after the primary stress: individual cases</h1>
 <p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-Expanded Hebrew letter spacing</label></p>
+Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle its spacing)</p>
 <script>
 (() => {
   const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
   const bodyClass = "post-stress-meteg-expanded-hebrew";
   const storageKey = "post-stress-meteg-expanded-hebrew";
+  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
+  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
+  const hebrewSelector = '[lang="hbo"]';
   let saved = null;
   try {
     saved = localStorage.getItem(storageKey);
@@ -33,6 +36,21 @@ Expanded Hebrew letter spacing</label></p>
     } catch (_error) {
       // The page's in-memory preference remains usable without page storage.
     }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {
+      return;
+    }
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
   });
 })();
 </script>
