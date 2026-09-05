@@ -137,7 +137,8 @@ _TYPE_2_FOLLOWING_GROUP_BY_INITIAL = {
     hl.NUN: "nun",
 }
 _HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
-Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle its spacing)</p>
+This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
+toggle only that word's spacing.</p>
 <script>
 (() => {{
   const checkbox = document.getElementById("{_HEBREW_SPACING_CHECKBOX_ID}");
@@ -284,7 +285,6 @@ def build_body(survey: dict) -> list:
     """The page, section by section, every figure in it read off ``survey``."""
     return [
         mb_html.heading_level_1(_TITLE),
-        _hebrew_spacing_option(),
         *_opening(survey),
         *_census(survey),
         *_by_type(survey),
@@ -758,6 +758,7 @@ def _by_type(survey: dict) -> list:
             "The counts below are mechanical, and a chanted word that doesn't fit"
             " one of the three types is left in the “misc” row rather than pushed into the nearest type."
         ),
+        _hebrew_spacing_option(),
         _table(headers, rows),
         mb_html.heading_level_3("Sources for types 1–3"),
         _table(("Type", itm(), cos()), source_rows),
@@ -1029,7 +1030,6 @@ def build_type_2_body(survey: dict) -> list:
     rows = [_type_2_case_row(record) for record in _type_2_records(survey)]
     return [
         mb_html.heading_level_1(_TYPE_2_TITLE),
-        _hebrew_spacing_option(),
         mb_html.para(
             (
                 "← Back to ",
@@ -1055,6 +1055,7 @@ def build_type_2_body(survey: dict) -> list:
             )
         ),
         _type_2_following_filter(len(rows)),
+        _hebrew_spacing_option(),
         _table(
             ("Verse", "Chanted word", "Following chanted word"),
             rows,
@@ -1073,7 +1074,6 @@ def build_cases_body(survey: dict) -> list:
     rows = [_case_row(record) for record in survey["post_stress"]]
     return [
         mb_html.heading_level_1(_CASES_TITLE),
-        _hebrew_spacing_option(),
         mb_html.para(("← Back to ", mb_html.anchor_h(_TITLE, _FNAME), ".")),
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
@@ -1095,6 +1095,7 @@ def build_cases_body(survey: dict) -> list:
             )
         ),
         _case_type_filter(len(rows)),
+        _hebrew_spacing_option(),
         _table(
             headers,
             rows,

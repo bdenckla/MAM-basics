@@ -9,8 +9,19 @@
 </head>
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1>Meteg after the primary stress: individual cases</h1>
+<p>← Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a>.</p>
+<h2>Every MAS in MAM</h2>
+<p>In the order the corpus has them, prose verses and poetic verses together. Each reference links
+to the verse in MAM with doc, and each chanted word is MAM's text.</p>
+<p>For types 1 and 2, the following chanted word is shown in gray. The same is true of
+misc-almost-type-1, because the following chanted word's stress keeps that row out of type 1. For
+misc-vayomer, the intervening PASEQ is gray with the following chanted word.</p>
+<p>Type 2 has a <a href="post-stress-meteg-type-2.html">separate table</a> filtered by the following
+chanted word's initial consonant.</p>
+<p><label for="post-stress-meteg-type-filter">Show </label><select id="post-stress-meteg-type-filter"><option value="all">All types</option><option value="1">Type 1</option><option value="2">Type 2</option><option value="3">Type 3</option><option value="other">Not types 1, 2, or 3</option></select>. <output id="post-stress-meteg-selected-count" aria-live="polite">Showing 231 rows.</output></p>
 <p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle its spacing)</p>
+This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
+toggle only that word's spacing.</p>
 <script>
 (() => {
   const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
@@ -54,17 +65,6 @@ Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle 
   });
 })();
 </script>
-<p>←
-Back to <a href="post-stress-meteg.html">Meteg after the primary stress</a>.</p>
-<h2>Every MAS in MAM</h2>
-<p>In the order the corpus has them, prose verses and poetic verses together. Each reference links
-to the verse in MAM with doc, and each chanted word is MAM's text.</p>
-<p>For types 1 and 2, the following chanted word is shown in gray. The same is true of
-misc-almost-type-1, because the following chanted word's stress keeps that row out of type 1. For
-misc-vayomer, the intervening PASEQ is gray with the following chanted word.</p>
-<p>Type 2 has a <a href="post-stress-meteg-type-2.html">separate table</a> filtered by the following
-chanted word's initial consonant.</p>
-<p><label for="post-stress-meteg-type-filter">Show </label><select id="post-stress-meteg-type-filter"><option value="all">All types</option><option value="1">Type 1</option><option value="2">Type 2</option><option value="3">Type 3</option><option value="other">Not types 1, 2, or 3</option></select>. <output id="post-stress-meteg-selected-count" aria-live="polite">Showing 231 rows.</output></p>
 <table class="accent-pair-table post-stress-meteg-table post-stress-meteg-cases-table" id="post-stress-meteg-cases">
 <tr>
 <th>Verse</th>

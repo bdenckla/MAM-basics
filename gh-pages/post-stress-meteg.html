@@ -9,56 +9,11 @@
 </head>
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1>Meteg after the primary stress</h1>
-<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-Expanded Hebrew letter spacing</label> (click a Hebrew word or phrase to toggle its spacing)</p>
-<script>
-(() => {
-  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
-  const bodyClass = "post-stress-meteg-expanded-hebrew";
-  const storageKey = "post-stress-meteg-expanded-hebrew";
-  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
-  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
-  const hebrewSelector = '[lang="hbo"]';
-  let saved = null;
-  try {
-    saved = localStorage.getItem(storageKey);
-  } catch (_error) {
-    // The checkbox still works for the open page if its browser has no page storage.
-  }
-  if (saved !== null) {
-    checkbox.checked = saved === "true";
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-  }
-  checkbox.addEventListener("change", () => {
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-    try {
-      localStorage.setItem(storageKey, String(checkbox.checked));
-    } catch (_error) {
-      // The page's in-memory preference remains usable without page storage.
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) {
-      return;
-    }
-    const hebrew = event.target.closest(hebrewSelector);
-    if (hebrew === null) {
-      return;
-    }
-    event.preventDefault();
-    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
-      (!hebrew.classList.contains(individualNormalClass) &&
-       document.body.classList.contains(bodyClass));
-    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
-    hebrew.classList.toggle(individualNormalClass, isExpanded);
-  });
-})();
-</script>
-<p>A
-meteg almost always appears before the stressed syllable of its chanted word, but it can also come
-after the stress. Both <abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr>
-and <abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr> discuss MAS (meteg after
-the stress). Neither book says how often MAS happens; we find that MAM has 231 of them, over 263,191
+<p>A meteg almost always appears before the stressed syllable of its chanted word, but it can also
+come after the stress. Both
+<abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr> and
+<abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr> discuss MAS (meteg after the
+stress). Neither book says how often MAS happens; we find that MAM has 231 of them, over 263,191
 chanted words.</p>
 <p>First, some definitions: a chanted word can be either a simple word (a word of just one atom) or
 it can be a compound word (a word of two or more atoms connected by maqaf marks). An atom is a
@@ -115,6 +70,52 @@ Breuer's condition but not Yeivin's remains in misc.</p>
 records has pataḥ rather than tsere, so none also meets the type-3 condition.</p>
 <p>The counts below are mechanical, and a chanted word that doesn't fit one of the three types is
 left in the “misc” row rather than pushed into the nearest type.</p>
+<p><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+This checkbox controls whether Hebrew letter spacing is expanded.</label> Or click a Hebrew word to
+toggle only that word's spacing.</p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
+  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
+  const hebrewSelector = '[lang="hbo"]';
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {
+      return;
+    }
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
+  });
+})();
+</script>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th>Type</th>
