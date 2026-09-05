@@ -29,6 +29,35 @@ body.centered-page table {
     font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
     font-style: normal; /* never italicize Hebrew, even inside italic context */
 }
+/* post-stress-meteg.html: the examples preserve vowels because a syllable and its vowel are
+   the subject of the comparison. The shared Hebrew rule above selects Taamey D at 19.6pt from
+   the 14pt body; these table cells need about 24pt for their vowels and accents to remain
+   readable. The class confines the larger size to this page's Hebrew table data. */
+table.post-stress-meteg-table td[dir="rtl"] [lang="hbo"] { font-size: 170%; }
+
+/* The post-stress-meteg pages have unusually many similar pointed forms. The control at the top
+   of each page switches and persists the page-wide setting; a click on a Hebrew span overrides
+   that setting for that span alone. */
+body.post-stress-meteg-page [lang="hbo"] { cursor: pointer; letter-spacing: normal; }
+body.post-stress-meteg-page.post-stress-meteg-expanded-hebrew [lang="hbo"] {
+    letter-spacing: 0.06em;
+}
+body.post-stress-meteg-page [lang="hbo"].post-stress-meteg-individually-normal-hebrew {
+    letter-spacing: normal;
+}
+body.post-stress-meteg-page [lang="hbo"].post-stress-meteg-individually-expanded-hebrew {
+    letter-spacing: 0.06em;
+}
+/* The individual-cases table has a client-side type filter.  Its stripe follows the visible
+   row number, not the row's original place in the corpus, so selecting a type never leaves a
+   misleading first gray row or a sequence of rows all in the same shade. */
+table.post-stress-meteg-cases-table tr td { background-color: transparent; }
+table.post-stress-meteg-cases-table tr.post-stress-meteg-cases-striped-row td {
+    background-color: light-dark(#eee, #2b2b2b);
+}
+/* The following chanted word supplies the context for types 1 and 2.  It remains legible in
+   both color schemes while looking secondary to the chanted word whose meteg is surveyed. */
+span.post-stress-meteg-following-chanted-word { color: light-dark(#666, #aaa); }
 @font-face {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");
@@ -40,6 +69,7 @@ span.romanized { font-style: italic; }
    an unclassed <em> must keep its italic and only this one turns bold. */
 em.emphasis { font-style: normal; font-weight: bold; }
 p { max-width: 40em; text-align: justify}
+p.center { text-align: center; }
 blockquote { max-width: 40em; }
 td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
 td.big { font-size: 250%; }

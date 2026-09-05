@@ -6,7 +6,7 @@ Checks performed:
   1. HTML5 structure: doctype, <html lang="en">, <meta charset="utf-8">
   2. Broken internal links: href targets resolve to actual files
   3. Broken fragment links: #id targets exist in the referenced file
-  4. Broken image references: <img src="..."> files exist on disk
+  4. Broken local image references: <img src="..."> files exist on disk
   5. Orphan images: files in img/ not referenced from any HTML
   6. CSS class validation: class values are defined in style.css
   7. Font file existence: woff2 font files referenced from CSS exist
@@ -302,9 +302,11 @@ def _check_images(
     html_dir: Path,
     referenced_images: set[Path],
 ) -> list[str]:
-    """Check <img src="..."> targets exist."""
+    """Check local <img src="..."> targets exist; leave remote assets to the browser."""
     issues = []
     for src in info.img_srcs:
+        if src.startswith(("http://", "https://", "data:")):
+            continue
         img_path = (html_dir / src).resolve()
         referenced_images.add(img_path)
         if not img_path.is_file():

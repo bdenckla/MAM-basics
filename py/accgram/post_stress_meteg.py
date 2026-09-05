@@ -47,13 +47,14 @@ script this module replaces (``doc/post-stress-meteg-census-2026-09-03.md`` is i
 treated the last parsed entry of a NUMBERED verse as verse-final whether or not it had sof
 pasuq, which is a silluq fallback rather than a test.
 
-A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and the two Decalogues are where
-they come apart -- which is exactly where that fallback could have gone wrong.  This corpus is
-keyed by numbered verse, and each Decalogue numbered verse holds both cantillation strands, so
-its entry list ends with the two strands' forms of one chanted word standing adjacent: one
-with silluq and sof pasuq, whose chanted verse ends at the numbered verse's boundary, and one
-with an ordinary accent and no sof pasuq, whose chanted verse runs on into the next numbered
-verse.  Measured 2026-09-04 over all twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
+A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and dual-cantillation numbered
+verses are where they come apart -- which is exactly where that fallback could have gone wrong.
+Genesis 35:22 has five duplicate chanted-word groups within its numbered verse. The risk here
+comes from twelve numbered verses in the two Decalogues: each entry list ends with the two
+strands' forms of one chanted word standing adjacent, one with silluq and sof pasuq, whose
+chanted verse ends at the numbered verse's boundary, and one with an ordinary accent and no sof
+pasuq, whose chanted verse runs on into the next numbered verse. Measured 2026-09-04 over all
+twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
 and 9 and Deuteronomy 5:6, 7, 8, 11, 12 and 13 in MAM's versification -- the pattern is
 exceptionless: the sof pasuq is on the second-to-last entry every time.  A rule that read
 finality off the position would call that trailing mid-chanted-verse word verse-final, and any
@@ -69,8 +70,9 @@ stress, which is what ``final_stress.NOT_IMPOSITIVE`` says of the same set; such
 classified by its syllable like any other and tallied separately as an overlap.
 
 Prose verses and poetic verses are routed by ``poetic_filter.should_keep_line``, so Job's
-prose frame goes with the 21 books.  Dual cantillation contributes both strands, since
-Phonetic MAM has both, and a Decalogue chanted word can therefore be counted twice.
+prose frame goes with the 21 books. For a dual-cantillation passage, this census selects the
+cant-alef strand and counts the passage as though it were read once. A second scan over
+cant-bet is retained in the JSON for the rendered appendix.
 """
 
 from __future__ import annotations
@@ -96,6 +98,7 @@ from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 METEG = hpo.MTGOSLQ
 SOF_PASUQ = hpu.SOPA
 MAQAF = hpu.MAQ
+PASEQ = hpu.PASOLEG
 
 SILLUQ_RULE = (
     "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that"
@@ -107,6 +110,14 @@ SILLUQ_RULE = (
 # Phonetic MAM spells MAM's gray maqaf as a tilde and its ordinary maqaf as U+05BE; both are
 # atom boundaries inside one chanted word, and neither is a nucleus.
 _BOUNDARIES = frozenset((MAQAF, hpu.NU_GMAQ))
+
+# Phonetic MAM puts this token between the two chanted words at a narrow-sense paseq.  It is
+# converted to MAM's U+05C0 only after the survey has located it structurally, never by treating
+# the label as Hebrew text to display.
+_PHONETIC_MAM_PASEQ = (
+    "\N{HEBREW LETTER MEM}:\N{HEBREW LETTER PE}\N{HEBREW LETTER SAMEKH}"
+    "\N{HEBREW LETTER QOF}"
+)
 
 _VAV = "\N{HEBREW LETTER VAV}"
 _ALEF = "\N{HEBREW LETTER ALEF}"
@@ -230,6 +241,10 @@ _VOCAL_SHEVA = "^"
 # the Hebrew instead.
 _JTA_VOWELS = frozenset("aeiouAEIOU860")
 
+# A simple vocal sheva or xataf vowel at the opening of a chanted word belongs to the following
+# segment as the chanted word's first syllable for Yeivin's open-syllable type.
+_XATAF_JTA_VOWELS = frozenset("680")
+
 SYSTEM_PROSE = "prose verses"
 SYSTEM_POETIC = "poetic verses"
 
@@ -237,11 +252,30 @@ SYSTEM_POETIC = "poetic verses"
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
 # recorded as unclassified rather than pushed into the nearest.
 TYPE_GUTTURAL = "guttural at the end of the chanted word"
-TYPE_CLOSED_TSERE = "closed syllable with ṣere"
+TYPE_CLOSED_TSERE = "final closed syllable with tsere"
 TYPE_OPEN = "open syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
+# A strict type-1 candidate that has the open syllable but not the required initial stress in
+# the following chanted word.  Kept within misc rather than recasting it as a fourth type.
+SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
+SUBTYPE_MISC_VAYOMER = "misc-vayomer"
+SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
+
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
+_SUBTYPES = (
+    SUBTYPE_MISC_ALMOST_TYPE_1,
+    SUBTYPE_MISC_VAYOMER,
+    SUBTYPE_MISC_ALMOST_TYPE_3,
+)
+
+_VAYOMER_CONSONANTS = (
+    "\N{HEBREW LETTER VAV}"
+    "\N{HEBREW LETTER YOD}"
+    "\N{HEBREW LETTER ALEF}"
+    "\N{HEBREW LETTER MEM}"
+    "\N{HEBREW LETTER RESH}"
+)
 
 # The 2026-09-03 census, whose report is ``doc/post-stress-meteg-census-2026-09-03.md``.  Its
 # script is untracked and defective at the silluq boundary, so these are a comparison baseline
@@ -270,6 +304,12 @@ _COUNT_CATEGORIES = (
     "meteg after the stressed syllable",
     "silluq",
     "meteg sharing a letter with a non-stress-marking accent",
+)
+
+_DUAL_CANTILLATION_COMPARISON_CATEGORIES = (
+    "chanted words checked",
+    "meteg before the stressed syllable",
+    "meteg after the stressed syllable",
 )
 
 
@@ -363,8 +403,39 @@ def _jta_syllables(jta: str) -> tuple[list[str], int]:
     return out, kept.index(stressed[0])
 
 
+def _first_syllable_is_stressed(jta: str) -> bool:
+    """Whether a following chanted word meets Yeivin's type-1 stress condition.
+
+    An opening simple vocal sheva or xataf vowel belongs to the following segment as the first
+    syllable for this condition. The stress is therefore initial when it falls on the first
+    segment after all such opening segments. The normal syllable check still runs first: this
+    test adds a source-specific reading of an already-valid ``jta`` form; it does not loosen the
+    survey's validation.
+    """
+    _jta_syllables(jta)
+    syllables = _SYLLABLE_BREAK.split(jta)
+    stressed = [i for i, one in enumerate(syllables) if "!" in one]
+    assert len(stressed) == 1, jta
+    first_syllable_stress_segment = 0
+    while first_syllable_stress_segment < len(syllables) and (
+        _VOCAL_SHEVA in syllables[first_syllable_stress_segment]
+        or set(syllables[first_syllable_stress_segment]) & _XATAF_JTA_VOWELS
+    ):
+        first_syllable_stress_segment += 1
+    return stressed[0] == first_syllable_stress_segment
+
+
 def _syllable_is_open(syllable: str) -> bool:
     return syllable[-1] in _JTA_VOWELS
+
+
+def _has_final_tsere_syllable_closed_by_guttural(parsed: dict) -> bool:
+    """Whether a chanted word could meet both the type-2 and type-3 conditions."""
+    return (
+        not _syllable_is_open(parsed["syllables"][-1])
+        and parsed["nuclei"][-1][1] == hpo.TSERE
+        and parsed["letters"][-1][0] in _GUTTURAL_HOSTS
+    )
 
 
 def _accent_name(accent: str) -> str:
@@ -381,19 +452,31 @@ def _vowel_name(point: str) -> str:
     return name
 
 
-def _structural_type(*, closes_on_a_guttural: bool, is_open: bool, vowel: str) -> str:
-    """Which of the three source-anchored types a post-stress meteg's syllable meets.
+def _structural_type(
+    *,
+    closes_on_a_guttural: bool,
+    is_last_syllable: bool,
+    is_open: bool,
+    vowel: str,
+    following_jta: str | None,
+) -> tuple[str, str | None]:
+    """Which source-anchored type and subtype a post-stress meteg's syllable meets.
 
     Mechanical, off the syllable Phonetic MAM divided and the letters and points MAM has:
 
-    * an open syllable is ITM §332 and CoS Ch. 8 type (j), the קוּמִי rule;
+    * an open syllable before a chanted word whose first syllable is stressed is ITM §332
+      and CoS Ch. 8 type (j), the קוּמִי rule;
     * a closed syllable at the end of a chanted word whose last letter is a guttural is ITM
       §354 and CoS Ch. 8 type (b) -- which is where a furtive patax lands; and
-    * a closed syllable whose nucleus is a ṣere is ITM §338, and the ṣere case of CoS Ch. 8
-      type (a), whose scope is the big vowels rather than the ṣere alone.
+    * a final closed syllable whose nucleus is a ṣere is ITM §338. This is the narrower
+      condition this survey uses for type 3; CoS Ch. 8 type (a) is wider, covering a long vowel
+      in a closed syllable.
 
     Anything else -- a closed syllable with some other vowel, the segol of וַיֹּאמֶר above all
-    -- is left unclassified and stays visible as itself.
+    -- is left unclassified and stays visible as itself.  An open-syllable candidate whose
+    following chanted word fails the stress condition is the ``misc-almost-type-1`` subtype.
+    A final closed ḥolam syllable is the ``misc-almost-type-3`` subtype: it fits CoS's wider
+    long-vowel condition but not ITM's ṣere type.
 
     OPENNESS IS ASKED FIRST, and the order is the rule rather than a tidying: a final ה is a
     mater in פַּדֶּנָה, whose last syllable is open, and a guttural in וְנֹגַהּ, whose last
@@ -401,20 +484,40 @@ def _structural_type(*, closes_on_a_guttural: bool, is_open: bool, vowel: str) -
     where both books put it under §332 and type (j) by name.
     """
     if is_open:
-        return TYPE_OPEN
+        if following_jta is not None and _first_syllable_is_stressed(following_jta):
+            return TYPE_OPEN, None
+        if following_jta is not None:
+            return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_1
+        return TYPE_UNCLASSIFIED, None
     if closes_on_a_guttural:
-        return TYPE_GUTTURAL
-    if vowel == hpo.TSERE:
-        return TYPE_CLOSED_TSERE
-    return TYPE_UNCLASSIFIED
+        return TYPE_GUTTURAL, None
+    if is_last_syllable and vowel == hpo.TSERE:
+        return TYPE_CLOSED_TSERE, None
+    if is_last_syllable and vowel in (hpo.XOLAM, hpo.XOLAM_XFV):
+        return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_3
+    return TYPE_UNCLASSIFIED, None
+
+
+def _misc_subtype(
+    *, structural_type: str, chanted_word: str, intervening_punctuation: tuple[str, ...]
+) -> str | None:
+    """A named subdivision of misc where the form and punctuation make one useful set."""
+    if (
+        structural_type == TYPE_UNCLASSIFIED
+        and "".join(letter for letter, _marks, _atom_final in _letters(chanted_word))
+        == _VAYOMER_CONSONANTS
+        and intervening_punctuation == (PASEQ,)
+    ):
+        return SUBTYPE_MISC_VAYOMER
+    return None
 
 
 def _chanted_words(node: object, out: list[dict]) -> None:
     """Every chanted-word entry of one verse, the ``cb`` structures flattened.
 
     A ``cb`` is Phonetic MAM's bracket for something other than a plain run of chanted words
-    -- a paseq, a setuma or petuxa, a qamats note, a dual-cantillation span.  Its branches
-    hold chanted words like any other, so a dual span contributes both strands.  The same walk
+    -- a paseq, a setuma or petuxa, a qamats note, a dual-cantillation span. The census projects
+    each dual span onto one strand before calling this walk. The same walk
     ``test_final_stress_vs_phonetic_mam._chanted_words`` makes.
     """
     if isinstance(node, dict):
@@ -424,16 +527,54 @@ def _chanted_words(node: object, out: list[dict]) -> None:
             _chanted_words(sub, out)
 
 
+def _chanted_word_events(node: object, out: list[object]) -> None:
+    """The same chanted-word sequence, retaining material between its entries.
+
+    ``_chanted_words`` is the broad census walk, intentionally omitting everything other than
+    entries. The individual-case page needs narrower context for a post-stress record: an
+    intervening PASEQ is part of the reason its ``vayomer`` cases are distinct. Retaining all
+    other material here makes an unexpected future gap a survey failure rather than an omission.
+    """
+    if isinstance(node, dict):
+        out.append(node)
+    elif isinstance(node, list):
+        for sub in node[1:] if node and node[0] == "cb" else node:
+            _chanted_word_events(sub, out)
+    else:
+        out.append(node)
+
+
+def _intervening_punctuation(
+    *, bcv: str, chanted_word: str, material: tuple[object, ...]
+) -> tuple[str, ...]:
+    """The punctuation between one post-stress record and its following chanted word.
+
+    The current corpus has only Phonetic MAM's narrow-sense paseq token here. A different
+    token is a new display case to classify, not something the page may silently drop.
+    """
+    if not material:
+        return ()
+    if all(one == _PHONETIC_MAM_PASEQ for one in material):
+        return (PASEQ,) * len(material)
+    raise SurveyProblem(
+        f"{bcv} {chanted_word!r}: intervening material before the following chanted word"
+        f" is not a PASEQ: {material!r}"
+    )
+
+
 _DUALCANT_MARKER = "cb-dualcant"
+CANT_ALEF = "cant-alef"
+CANT_BET = "cant-bet"
+_CANTILLATION_BRANCH_INDEX = {CANT_ALEF: 0, CANT_BET: 1}
 
 
 def _has_dual_cantillation(node: object) -> bool:
     """Whether the numbered verse has Phonetic MAM's dual-cantillation bracket.
 
-    Structural rather than a list of references: what makes a Decalogue numbered verse special
-    here is that both strands' chanted words reach one entry list, which is also why its last
-    entry need not be the one with sof pasuq -- one strand's chanted verse ends at the numbered
-    verse's boundary and the other's runs on past it.
+    Structural rather than a list of references: both strands' chanted words reach one entry
+    list. The two Decalogues have most of the dual-cantillation numbered verses, and Genesis
+    35:22 has the other one. A last entry need not be the one with sof pasuq -- one strand's
+    chanted verse can end at the numbered verse's boundary and the other can run on past it.
     """
     if isinstance(node, str):
         return node == _DUALCANT_MARKER
@@ -442,6 +583,103 @@ def _has_dual_cantillation(node: object) -> bool:
     if isinstance(node, dict):
         return any(_has_dual_cantillation(value) for value in node.values())
     return False
+
+
+def _select_cantillation_strand(node: object, cantillation: str) -> object:
+    """Replace each dual span with its cant-alef or cant-bet cantillation strand.
+
+    Phonetic MAM's source writes the alef branch before the bet branch when it emits a
+    ``cb-dualcant`` structure. The explicit names here keep that ordering from becoming an
+    anonymous positional convention in this census.
+    """
+    branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
+    if not isinstance(node, list):
+        return node
+    if node and node[0] == "cb":
+        out = ["cb"]
+        for payload in node[1:]:
+            if (
+                isinstance(payload, list)
+                and payload
+                and payload[0] == [_DUALCANT_MARKER]
+            ):
+                branches = payload[1:]
+                assert len(branches) == 2, len(branches)
+                out.append(
+                    _select_cantillation_strand(branches[branch_index], cantillation)
+                )
+            else:
+                out.append(_select_cantillation_strand(payload, cantillation))
+        return out
+    return [_select_cantillation_strand(one, cantillation) for one in node]
+
+
+def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
+    """The two branches of each dual-cantillation group in a numbered verse."""
+    out = []
+    if not isinstance(node, list):
+        return out
+    if node and node[0] == "cb":
+        for payload in node[1:]:
+            if (
+                isinstance(payload, list)
+                and payload
+                and payload[0] == [_DUALCANT_MARKER]
+            ):
+                branches = []
+                for branch in payload[1:]:
+                    entries: list[dict] = []
+                    _chanted_words(branch, entries)
+                    branches.append(entries)
+                out.append(branches)
+            else:
+                out.extend(_dual_cantillation_groups(payload))
+    else:
+        for item in node:
+            out.extend(_dual_cantillation_groups(item))
+    return out
+
+
+def _dual_template_entry_ids(verse: object, cantillation: str) -> set[int]:
+    """The selected branch's entries that sit inside dual-cantillation templates.
+
+    Entry identity, rather than a spelling key, keeps two equal-looking chanted words distinct
+    when a numbered verse repeats them.  The selected branch remains made of the source
+    dictionaries, so its entries have these same identities after
+    ``_select_cantillation_strand`` projects the whole numbered verse.
+    """
+    assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
+    branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
+    template_entries = [
+        entry
+        for group in _dual_cantillation_groups(verse)
+        for entry in group[branch_index]
+    ]
+    assert template_entries, "a dual-cantillation verse has no template entries"
+    return {id(entry) for entry in template_entries}
+
+
+def _dual_cantillation_facts(verse: object) -> dict:
+    """Counts and one source-derived duplicate for a dual-cantillation numbered verse."""
+    groups = _dual_cantillation_groups(verse)
+    same_groups = []
+    for group in groups:
+        assert len(group) == 2, len(group)
+        first = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[0])
+        second = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[1])
+        if first == second:
+            same_groups.append(group)
+    assert (
+        same_groups
+    ), "a dual-cantillation verse has no repeated chanted-word sequence"
+    first_group = same_groups[0]
+    return {
+        "dual_group_count": len(groups),
+        "same_chanted_word_group_count": len(same_groups),
+        "first_same_chanted_word_group": [
+            [one["fva"].split(" ")[0] for one in branch] for branch in first_group
+        ],
+    }
 
 
 def _bb_of_stem() -> dict[str, str]:
@@ -531,6 +769,9 @@ def _record(
     letter_index: int,
     accents_here: list[str],
     before_qere: str | None,
+    following_chanted_word: str | None,
+    following_jta: str | None,
+    intervening_punctuation: tuple[str, ...],
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
     nuclei = parsed["nuclei"]
@@ -540,13 +781,25 @@ def _record(
     is_last_syllable = syllable_index == len(syllables) - 1
     is_open = _syllable_is_open(syllable)
     vowel = nuclei[syllable_index][1]
-    stress_letter = nuclei[parsed["stressed"]][0]
-    stress_accents = [mark for mark in letters[stress_letter][1] if is_accent(mark)]
     closes_on_a_guttural = is_last_syllable and letters[-1][0] in _GUTTURAL_HOSTS
-    return {
+    structural_type, subtype = _structural_type(
+        closes_on_a_guttural=closes_on_a_guttural,
+        is_last_syllable=is_last_syllable,
+        is_open=is_open,
+        vowel=vowel,
+        following_jta=following_jta,
+    )
+    if subtype is None:
+        subtype = _misc_subtype(
+            structural_type=structural_type,
+            chanted_word=word,
+            intervening_punctuation=intervening_punctuation,
+        )
+    record = {
         "bcv": bcv,
         "system": system,
         "chanted_word": word,
+        "following_chanted_word": following_chanted_word,
         "snapshot_before_qere": before_qere,
         "accents_and_letters": _bare(word),
         "jta": jta,
@@ -557,17 +810,14 @@ def _record(
         "is_the_last_syllable": is_last_syllable,
         "closes_on_a_guttural": closes_on_a_guttural,
         "has_sof_pasuq": parsed["has_sof_pasuq"],
-        "accent_on_the_stressed_letter": (
-            ", ".join(_accent_name(one) for one in stress_accents)
-            if stress_accents
-            else "(none)"
-        ),
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
-        "structural_type": _structural_type(
-            closes_on_a_guttural=closes_on_a_guttural, is_open=is_open, vowel=vowel
-        ),
+        "structural_type": structural_type,
+        "subtype": subtype,
         "atom": 1 + sum(1 for one in letters[:letter_index] if one[2]),
     }
+    if intervening_punctuation:
+        record["intervening_punctuation"] = intervening_punctuation
+    return record
 
 
 def _classify_one_word(
@@ -579,6 +829,9 @@ def _classify_one_word(
     parsed: dict,
     found: dict,
     before_qere: str | None,
+    following_chanted_word: str | None,
+    following_jta: str | None,
+    intervening_material: tuple[object, ...],
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
     counts = found["counts"]
@@ -619,6 +872,17 @@ def _classify_one_word(
             letter_index=letter_index,
             accents_here=accents_here,
             before_qere=before_qere,
+            following_chanted_word=following_chanted_word,
+            following_jta=following_jta,
+            intervening_punctuation=(
+                _intervening_punctuation(
+                    bcv=bcv,
+                    chanted_word=word,
+                    material=intervening_material,
+                )
+                if syllable_index > stressed
+                else ()
+            ),
         )
         if accents_here:
             key = "meteg sharing a letter with a non-stress-marking accent"
@@ -626,6 +890,7 @@ def _classify_one_word(
             found["overlaps"].append(record)
         if syllable_index < stressed:
             counts[(system, "meteg before the stressed syllable")] += 1
+            found["pre_stress"].append(record)
         elif syllable_index == stressed:
             counts[(system, "meteg in the stressed syllable, no sof pasuq")] += 1
             found["in_stressed"].append(record)
@@ -634,10 +899,15 @@ def _classify_one_word(
             found["post_stress"].append(record)
 
 
-def _scan(phon_dir: Path) -> dict:
-    """Every U+05BD of the Phonetic MAM standard set, classified."""
+def _scan(
+    phon_dir: Path, cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False
+) -> dict:
+    """Every U+05BD of one cantillation strand, optionally only inside its templates."""
+    assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
         "counts": Counter(),
+        "checked_chanted_words_by_bcv": Counter(),
+        "pre_stress": [],
         "post_stress": [],
         "in_stressed": [],
         "overlaps": [],
@@ -647,6 +917,12 @@ def _scan(phon_dir: Path) -> dict:
         "last_entry_lacks_sof_pasuq": [],
         "metegs_by_verse": {},
         "dual_cant_verses": set(),
+        "dual_cantillation": {},
+        "dual_cantillation_chanted_words": {},
+        "dual_template_entries": {},
+        "type_2_type_3_overlap_by_book": Counter(),
+        "type_2_type_3_overlap_by_final_letter": Counter(),
+        "type_2_type_3_overlap_example": None,
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -654,39 +930,112 @@ def _scan(phon_dir: Path) -> dict:
         data = json.loads(path.read_text(encoding="utf-8"))
         for vkey, verse in data.items():
             chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
-            _one_verse(f"{bb}{chnu}:{vrnu}", bb, chnu, vrnu, verse, found)
+            dual = _has_dual_cantillation(verse)
+            if dual_templates_only and not dual:
+                continue
+            _one_verse(
+                f"{bb}{chnu}:{vrnu}",
+                bb,
+                chnu,
+                vrnu,
+                _select_cantillation_strand(verse, cantillation),
+                found,
+                dual_cantillation=dual,
+                dual_facts=_dual_cantillation_facts(verse) if dual else None,
+                template_entry_ids=(
+                    _dual_template_entry_ids(verse, cantillation)
+                    if dual_templates_only
+                    else None
+                ),
+            )
     return found
 
 
-def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> None:
+def _one_verse(
+    bcv: str,
+    bb: str,
+    chnu: int,
+    vrnu: int,
+    verse,
+    found: dict,
+    *,
+    dual_cantillation: bool | None = None,
+    dual_facts: dict | None = None,
+    template_entry_ids: set[int] | None = None,
+) -> None:
     system = (
         SYSTEM_POETIC
         if poetic_filter.should_keep_line(bb, chnu, vrnu)
         else SYSTEM_PROSE
     )
-    dual = _has_dual_cantillation(verse)
+    dual = (
+        _has_dual_cantillation(verse)
+        if dual_cantillation is None
+        else dual_cantillation
+    )
     if dual:
         found["dual_cant_verses"].add(bcv)
-    entries: list[dict] = []
-    _chanted_words(verse, entries)
-    usable = [one for one in entries if one.get("jta") and one.get("fva")]
-    found["entries_without_jta_or_fva"] += len(entries) - len(usable)
+        found["dual_cantillation"][bcv] = (
+            _dual_cantillation_facts(verse) if dual_facts is None else dual_facts
+        )
+    events: list[object] = []
+    _chanted_word_events(verse, events)
+    entries = [one for one in events if isinstance(one, dict)]
+    scoped_entries = (
+        entries
+        if template_entry_ids is None
+        else [one for one in entries if id(one) in template_entry_ids]
+    )
+    usable = [one for one in scoped_entries if one.get("jta") and one.get("fva")]
+    all_usable = [one for one in entries if one.get("jta") and one.get("fva")]
+    found["entries_without_jta_or_fva"] += len(scoped_entries) - len(usable)
     if not usable:
         return
-    last_word = usable[-1]["fva"].split(" ")[0]
-    if SOF_PASUQ not in last_word:
-        found["last_entry_lacks_sof_pasuq"].append(
-            {
-                "bcv": bcv,
-                "chanted_word": last_word,
-                "dual_cantillation": dual,
-                "carries_a_meteg": METEG in last_word,
-            }
-        )
+    if dual:
+        found["dual_cantillation_chanted_words"][bcv] = [
+            one["fva"].split(" ")[0] for one in usable
+        ]
+    if template_entry_ids is not None:
+        found["dual_template_entries"][bcv] = usable
+    if template_entry_ids is None:
+        last_word = usable[-1]["fva"].split(" ")[0]
+        if SOF_PASUQ not in last_word:
+            found["last_entry_lacks_sof_pasuq"].append(
+                {
+                    "bcv": bcv,
+                    "chanted_word": last_word,
+                    "dual_cantillation": dual,
+                    "carries_a_meteg": METEG in last_word,
+                }
+            )
     metegs = 0
-    for entry in usable:
+    event_index_by_entry_id = {
+        id(entry): index
+        for index, entry in enumerate(events)
+        if isinstance(entry, dict)
+    }
+    for index, entry in enumerate(all_usable):
+        if template_entry_ids is not None and id(entry) not in template_entry_ids:
+            continue
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
+        following_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
+        following_chanted_word = (
+            following_entry["fva"].split(" ")[0]
+            if following_entry is not None
+            else None
+        )
+        following_jta = following_entry["jta"] if following_entry is not None else None
+        intervening_material = (
+            tuple(
+                events[
+                    event_index_by_entry_id[id(entry)]
+                    + 1 : event_index_by_entry_id[id(following_entry)]
+                ]
+            )
+            if following_entry is not None
+            else ()
+        )
         metegs += word.count(METEG)
         try:
             parsed = _parse(word, jta)
@@ -696,6 +1045,19 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
             )
             continue
         found["counts"][(system, "chanted words checked")] += 1
+        found["checked_chanted_words_by_bcv"][bcv] += 1
+        if _has_final_tsere_syllable_closed_by_guttural(parsed):
+            found["type_2_type_3_overlap_by_book"][bb] += 1
+            found["type_2_type_3_overlap_by_final_letter"][
+                parsed["letters"][-1][0]
+            ] += 1
+            if found["type_2_type_3_overlap_example"] is None:
+                found["type_2_type_3_overlap_example"] = {
+                    "bcv": bcv,
+                    "chanted_word": word,
+                    "following_chanted_word": None,
+                    "snapshot_before_qere": entry.get("before_qfikq"),
+                }
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -704,6 +1066,9 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
             parsed=parsed,
             found=found,
             before_qere=entry.get("before_qfikq"),
+            following_chanted_word=following_chanted_word,
+            following_jta=following_jta,
+            intervening_material=intervening_material,
         )
     found["metegs_by_verse"][bcv] = metegs
 
@@ -717,17 +1082,21 @@ def _one_verse(bcv: str, bb: str, chnu: int, vrnu: int, verse, found: dict) -> N
 _FOCUS_VERSES = ("is23:12", "1s17:5")
 
 
-def _mam_words_by_bcv() -> dict[str, list[str]]:
+def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
     """MAM-simple's chanted words per verse, in MAM's versification.
 
     MAM's numbering rather than the BHS one this repo's other surveys read, because Phonetic
     MAM numbers its verses MAM's way; ``test_final_stress_vs_phonetic_mam._measured`` reaches
-    for the same tree for the same reason.
+    for the same tree for the same reason. ``cantillation`` selects an individual
+    dual-cantillation projection; otherwise this returns MAM-simple's combined representation.
     """
     from accgram import mam_simple_verse
 
     mam_dir = paths.require_mam_simple_vtrad_mam_dir()
-    return mna.mam_words(mam_simple_verse.mam_simple_refs(mam_dir), mam_dir)
+    refs_by_book = mam_simple_verse.mam_simple_refs(mam_dir)
+    if cantillation is None:
+        return mna.mam_words(refs_by_book, mam_dir)
+    return mna.mam_words_for_cantillation(refs_by_book, cantillation, mam_dir)
 
 
 def _fold_qamats_qatan(key: str) -> str:
@@ -805,6 +1174,42 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
     return [], "no match"
 
 
+def _following_mam_context(
+    record: dict, stream: list[str]
+) -> tuple[str | None, tuple[str, ...] | None]:
+    """The following MAM chanted word and intervening punctuation, if the context resolves.
+
+    The MAM stream keeps a PASEQ as a standalone token. This makes the usual two-chanted-word
+    context and the four ``vayomer`` contexts one routine: the current chanted word, zero or
+    more punctuation tokens, then the following chanted word. A context is shown only after the
+    complete sequence matches MAM, so every rendered form and punctuation mark comes from MAM.
+    """
+    following = record["following_chanted_word"]
+    if following is None:
+        return None, None
+    next_record = {"chanted_word": following}
+    source_punctuation = tuple(record.get("intervening_punctuation", ()))
+    candidates: list[tuple[str, tuple[str, ...]]] = []
+    for index, word in enumerate(stream):
+        current_matches, _current_matched_by = _matching_mam_words(record, [word])
+        if not current_matches:
+            continue
+        punctuation = []
+        following_index = index + 1
+        while following_index < len(stream) and stream[following_index] == PASEQ:
+            punctuation.append(stream[following_index])
+            following_index += 1
+        if tuple(punctuation) != source_punctuation or following_index == len(stream):
+            continue
+        next_matches, _next_matched_by = _matching_mam_words(
+            next_record, [stream[following_index]]
+        )
+        for next_match in next_matches:
+            candidates.append((next_match, tuple(punctuation)))
+    settled = list(dict.fromkeys(candidates))
+    return settled[0] if len(settled) == 1 else (None, None)
+
+
 def _attach_mam_forms(
     records: list[dict], words_by_bcv: dict[str, list[str]]
 ) -> list[dict]:
@@ -837,6 +1242,14 @@ def _attach_mam_forms(
         record["mam_form_candidates"] = len(set(matches))
         record["metegs_in_mam_today"] = settled.count(METEG) if settled else None
         record["metegs_in_the_snapshot"] = record["chanted_word"].count(METEG)
+        following_mam_form, intervening_mam_punctuation = (
+            _following_mam_context(record, words_by_bcv.get(record["bcv"], []))
+            if settled is not None
+            else (None, None)
+        )
+        record["following_mam_form"] = following_mam_form
+        if intervening_mam_punctuation:
+            record["intervening_mam_punctuation"] = intervening_mam_punctuation
         if settled is not None:
             # Recomputed off MAM's own form, so that every Hebrew string the page can render
             # from this record comes from one text rather than two.
@@ -966,6 +1379,250 @@ def _problems(found: dict) -> list[str]:
     return out
 
 
+def _total_counts(found: dict, categories: tuple[str, ...]) -> dict[str, int]:
+    """The two verse systems' totals for the specified census categories."""
+    return {
+        category: sum(
+            found["counts"][(system, category)]
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        )
+        for category in categories
+    }
+
+
+def _dual_template_counts(found: dict) -> dict[str, int]:
+    """The three appendix counts restricted to dual-cantillation templates."""
+    return {
+        "chanted words checked": sum(found["checked_chanted_words_by_bcv"].values()),
+        "meteg before the stressed syllable": len(found["pre_stress"]),
+        "meteg after the stressed syllable": len(found["post_stress"]),
+    }
+
+
+def _consonant_key(text: str) -> str:
+    """The Hebrew letters of a chanted word, ignoring vowels, accents, and punctuation."""
+    return re.sub("[\u0591-\u05c7\u034f]", "", text)
+
+
+def _mam_form_for_dual_cantillation_atom(raw_atom: str, mam_atoms: list[str]) -> str:
+    """The MAM atom with only the cantillation marks of ``raw_atom``'s branch.
+
+    Phonetic MAM marks a resolved sheva with a masora circle that MAM's text does not have.
+    The raw atom therefore decides only which accent and meteg marks its cantillation branch
+    selects; its letters and points never reach the reader-facing form.
+    """
+    candidates = [
+        atom for atom in mam_atoms if _consonant_key(atom) == _consonant_key(raw_atom)
+    ]
+    assert len(candidates) == 1, (raw_atom, candidates)
+    selected_marks = {char for char in raw_atom if is_accent(char) or char == METEG}
+    return "".join(
+        char
+        for char in candidates[0]
+        if not (is_accent(char) or char == METEG) or char in selected_marks
+    )
+
+
+def _mam_forms_for_dual_cantillation_difference(
+    raw_words: list[str], words_by_bcv: dict[str, list[str]], bcv: str
+) -> list[str]:
+    """The MAM forms selected by one branch's Phonetic-MAM grouping and accents."""
+    mam_atoms = [
+        atom
+        for word in words_by_bcv[bcv]
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    ]
+    return [
+        MAQAF.join(
+            _mam_form_for_dual_cantillation_atom(atom, mam_atoms)
+            for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", raw_word)
+        )
+        for raw_word in raw_words
+    ]
+
+
+def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[dict]:
+    """The before-stress records in ``records`` that have no matching chanted word in ``other``."""
+    unmatched = Counter(_consonant_key(one["chanted_word"]) for one in other)
+    out = []
+    for record in records:
+        key = _consonant_key(record["chanted_word"])
+        if unmatched[key]:
+            unmatched[key] -= 1
+        else:
+            out.append(record)
+    return out
+
+
+def _meteg_before_stress_difference(
+    found_alef: dict,
+    found_bet: dict,
+    words_by_cantillation: dict[str, dict[str, list[str]]],
+) -> dict:
+    """The single dually-cantillated chanted-word difference in meteg-before-stress count."""
+    dual_bcv = found_alef["dual_cant_verses"]
+    assert dual_bcv == found_bet["dual_cant_verses"]
+    alef_by_bcv = Counter(
+        one["bcv"] for one in found_alef["pre_stress"] if one["bcv"] in dual_bcv
+    )
+    bet_by_bcv = Counter(
+        one["bcv"] for one in found_bet["pre_stress"] if one["bcv"] in dual_bcv
+    )
+    different_bcv = [bcv for bcv in dual_bcv if alef_by_bcv[bcv] != bet_by_bcv[bcv]]
+    assert len(different_bcv) == 1, different_bcv
+    bcv = different_bcv[0]
+    assert bet_by_bcv[bcv] == alef_by_bcv[bcv] + 1
+    alef_records = [one for one in found_alef["pre_stress"] if one["bcv"] == bcv]
+    bet_records = [one for one in found_bet["pre_stress"] if one["bcv"] == bcv]
+    extra_bet = _extra_metegs_before_stress(bet_records, alef_records)
+    assert not _extra_metegs_before_stress(alef_records, bet_records)
+    assert len(extra_bet) == 1, extra_bet
+    bet_record = extra_bet[0]
+    assert bet_record["bcv"] == bcv
+    target_atom_keys = {
+        _consonant_key(atom)
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", bet_record["chanted_word"])
+    }
+    alef_counterparts = [
+        word
+        for word in found_alef["dual_cantillation_chanted_words"][bcv]
+        if target_atom_keys
+        & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
+    ]
+    assert len(alef_counterparts) == 2, alef_counterparts
+    assert all(METEG not in word for word in alef_counterparts), alef_counterparts
+    counterpart_atom_keys = {
+        _consonant_key(atom)
+        for word in alef_counterparts
+        for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    }
+    bet_counterparts = [
+        word
+        for word in found_bet["dual_cantillation_chanted_words"][bcv]
+        if counterpart_atom_keys
+        & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
+    ]
+    assert len(bet_counterparts) == 2, bet_counterparts
+    assert bet_record["chanted_word"] in bet_counterparts, bet_counterparts
+    return {
+        "bcv": bcv,
+        CANT_ALEF: {
+            "chanted_words": _mam_forms_for_dual_cantillation_difference(
+                alef_counterparts, words_by_cantillation[CANT_ALEF], bcv
+            )
+        },
+        CANT_BET: {
+            "chanted_words": _mam_forms_for_dual_cantillation_difference(
+                bet_counterparts, words_by_cantillation[CANT_BET], bcv
+            )
+        },
+    }
+
+
+def _template_mam_forms(
+    entries: list[dict], words_by_bcv: dict[str, list[str]], bcv: str
+) -> list[str]:
+    """The selected template span's chanted words, as MAM has them today.
+
+    A template can include a qere, so the raw Phonetic-MAM form alone cannot identify MAM's
+    form.  ``_attach_mam_forms`` already settles that relation, including its qere spelling,
+    and refuses an ambiguous match.
+    """
+    records = [
+        {
+            "bcv": bcv,
+            "chanted_word": entry["fva"].split(" ")[0],
+            "following_chanted_word": None,
+            "snapshot_before_qere": entry.get("before_qfikq"),
+        }
+        for entry in entries
+    ]
+    unjoined = _attach_mam_forms(records, words_by_bcv)
+    assert not unjoined, unjoined
+    forms = [record["mam_form"] for record in records]
+    assert all(forms), forms
+    return forms
+
+
+def _atom_keys(word: str) -> tuple[str, ...]:
+    """The consonant keys of a chanted word's atoms, in their written order."""
+    return tuple(
+        _consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    )
+
+
+def _different_chanted_word_spans(
+    alef_words: list[str], bet_words: list[str]
+) -> list[tuple[slice, slice]]:
+    """The aligned spans whose atom grouping differs between two template branches."""
+    alef_index = 0
+    bet_index = 0
+    out = []
+    while alef_index < len(alef_words) and bet_index < len(bet_words):
+        if _atom_keys(alef_words[alef_index]) == _atom_keys(bet_words[bet_index]):
+            alef_index += 1
+            bet_index += 1
+            continue
+        alef_start = alef_index
+        bet_start = bet_index
+        alef_atoms: list[str] = []
+        bet_atoms: list[str] = []
+        while not alef_atoms or not bet_atoms or alef_atoms != bet_atoms:
+            if len(alef_atoms) <= len(bet_atoms):
+                assert alef_index < len(alef_words), (alef_words, bet_words)
+                alef_atoms.extend(_atom_keys(alef_words[alef_index]))
+                alef_index += 1
+            else:
+                assert bet_index < len(bet_words), (alef_words, bet_words)
+                bet_atoms.extend(_atom_keys(bet_words[bet_index]))
+                bet_index += 1
+        out.append((slice(alef_start, alef_index), slice(bet_start, bet_index)))
+    assert alef_index == len(alef_words), (alef_words, bet_words)
+    assert bet_index == len(bet_words), (alef_words, bet_words)
+    return out
+
+
+def _chanted_word_count_difference(
+    found_alef: dict,
+    found_bet: dict,
+    words_by_cantillation: dict[str, dict[str, list[str]]],
+) -> dict:
+    """The template grouping that makes cant-alef's chanted-word count one larger."""
+    dual_bcv = found_alef["dual_cant_verses"]
+    assert dual_bcv == found_bet["dual_cant_verses"]
+    different_bcv = [
+        bcv
+        for bcv in dual_bcv
+        if (
+            found_alef["checked_chanted_words_by_bcv"][bcv]
+            != found_bet["checked_chanted_words_by_bcv"][bcv]
+        )
+    ]
+    assert len(different_bcv) == 1, different_bcv
+    bcv = different_bcv[0]
+    alef_words = found_alef["dual_cantillation_chanted_words"][bcv]
+    bet_words = found_bet["dual_cantillation_chanted_words"][bcv]
+    spans = _different_chanted_word_spans(alef_words, bet_words)
+    assert len(spans) == 1, spans
+    alef_span, bet_span = spans[0]
+    assert (alef_span.stop - alef_span.start) == (bet_span.stop - bet_span.start) + 1
+    alef_forms = _template_mam_forms(
+        found_alef["dual_template_entries"][bcv][alef_span],
+        words_by_cantillation[CANT_ALEF],
+        bcv,
+    )
+    bet_forms = _template_mam_forms(
+        found_bet["dual_template_entries"][bcv][bet_span],
+        words_by_cantillation[CANT_BET],
+        bcv,
+    )
+    return {
+        "bcv": bcv,
+        CANT_ALEF: {"chanted_words": alef_forms},
+        CANT_BET: {"chanted_words": bet_forms},
+    }
+
+
 def build_survey() -> dict:
     """The whole survey: every U+05BD of the Phonetic MAM standard set, classified.
 
@@ -973,20 +1630,48 @@ def build_survey() -> dict:
     so a run that cannot finish still says everything it found.  Collecting before failing is
     what makes the list usable: a run that raises on first sight can never enumerate the rest.
     """
-    found = _scan(paths.require_al_hatorah_phonetic_dir())
+    phon_dir = paths.require_al_hatorah_phonetic_dir()
+    found = _scan(phon_dir, CANT_ALEF)
+    found_bet = _scan(phon_dir, CANT_BET)
+    template_found = _scan(phon_dir, CANT_ALEF, dual_templates_only=True)
+    template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
+    assert found["dual_cant_verses"] == found_bet["dual_cant_verses"]
+    assert template_found["dual_cant_verses"] == found["dual_cant_verses"]
+    assert template_found_bet["dual_cant_verses"] == found["dual_cant_verses"]
     words_by_bcv = _mam_words_by_bcv()
+    words_by_cantillation = {
+        CANT_ALEF: _mam_words_by_bcv(CANT_ALEF),
+        CANT_BET: _mam_words_by_bcv(CANT_BET),
+    }
     unjoined = _attach_mam_forms(
         found["post_stress"] + found["in_stressed"] + found["overlaps"], words_by_bcv
     )
-    problems = _problems(found)
+    problems = _problems(found) + _problems(found_bet)
     if problems:
         raise SurveyProblem("; ".join(problems))
     counts = found["counts"]
     post_stress = found["post_stress"]
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
-    by_accent = Counter(
-        (one["system"], one["accent_on_the_stressed_letter"]) for one in post_stress
+    by_subtype = Counter(
+        (one["system"], one["subtype"])
+        for one in post_stress
+        if one["subtype"] is not None
     )
+    type_2_type_3_overlap_by_book = found["type_2_type_3_overlap_by_book"]
+    type_2_type_3_overlap_by_final_letter = found[
+        "type_2_type_3_overlap_by_final_letter"
+    ]
+    type_2_type_3_overlap_count = sum(type_2_type_3_overlap_by_book.values())
+    assert type_2_type_3_overlap_count == sum(
+        type_2_type_3_overlap_by_final_letter.values()
+    )
+    type_2_type_3_overlap_example = found["type_2_type_3_overlap_example"]
+    assert type_2_type_3_overlap_example is not None
+    unjoined_overlap_example = _attach_mam_forms(
+        [type_2_type_3_overlap_example], words_by_bcv
+    )
+    assert not unjoined_overlap_example, unjoined_overlap_example
+    assert type_2_type_3_overlap_example["mam_form"] is not None
     return {
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
@@ -1003,10 +1688,33 @@ def build_survey() -> dict:
         "silluq_boundary": SILLUQ_RULE,
         "scope": (
             "Every chanted word of every verse. Prose verses and poetic verses are routed by"
-            " accgram.poetic_filter, so Job's prose frame goes with the 21 books. Dual"
-            " cantillation contributes both strands, so a Decalogue chanted word can be"
-            " counted twice."
+            " accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual"
+            " cantillation passage is counted with the cant-alef cantillation strand, as"
+            " though it were read once."
         ),
+        "dual_cantillation": {
+            "counted_cantillation": CANT_ALEF,
+            "numbered_verses": sorted(found["dual_cant_verses"]),
+            "facts_by_numbered_verse": found["dual_cantillation"],
+            "whole_census_comparison_counts": {
+                CANT_ALEF: _total_counts(
+                    found, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
+                ),
+                CANT_BET: _total_counts(
+                    found_bet, _DUAL_CANTILLATION_COMPARISON_CATEGORIES
+                ),
+            },
+            "template_counts": {
+                CANT_ALEF: _dual_template_counts(template_found),
+                CANT_BET: _dual_template_counts(template_found_bet),
+            },
+            "meteg_before_stress_difference": _meteg_before_stress_difference(
+                template_found, template_found_bet, words_by_cantillation
+            ),
+            "chanted_word_count_difference": _chanted_word_count_difference(
+                template_found, template_found_bet, words_by_cantillation
+            ),
+        },
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
@@ -1015,18 +1723,20 @@ def build_survey() -> dict:
             system: {one: by_type[(system, one)] for one in _TYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
-        "post_stress_by_accent_on_the_stressed_letter": {
-            system: dict(
-                sorted(
-                    (
-                        (accent, n)
-                        for (one_system, accent), n in by_accent.items()
-                        if one_system == system
-                    ),
-                    key=lambda pair: (-pair[1], pair[0]),
-                )
-            )
+        "post_stress_by_subtype": {
+            system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "type_2_type_3_overlap": {
+            "chanted_words": type_2_type_3_overlap_count,
+            "by_book": dict(sorted(type_2_type_3_overlap_by_book.items())),
+            "by_final_letter": dict(
+                sorted(type_2_type_3_overlap_by_final_letter.items())
+            ),
+            "example": {
+                "bcv": type_2_type_3_overlap_example["bcv"],
+                "mam_form": type_2_type_3_overlap_example["mam_form"],
+            },
         },
         "post_stress": post_stress,
         "post_silluq": {

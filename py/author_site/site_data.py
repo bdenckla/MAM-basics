@@ -70,7 +70,13 @@ UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
-POST_STRESS_METEG_TITLE = "Meteg after the primary stress in MAM"
+POST_STRESS_METEG_TITLE = "Meteg after the primary stress"
+POST_STRESS_METEG_CASES_FNAME = "post-stress-meteg-cases.html"
+POST_STRESS_METEG_CASES_TITLE = "Meteg after the primary stress: individual cases"
+POST_STRESS_METEG_TYPE_2_FNAME = "post-stress-meteg-type-2.html"
+POST_STRESS_METEG_TYPE_2_TITLE = "Meteg after the primary stress: type 2 cases"
+POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
+POST_STRESS_METEG_MISC_TITLE = "Meteg after the primary stress: misc cases"
 
 # The identifier of that page's section on Holman suggestion M23.  Here rather than in the
 # page module because two trees want it: py/author_site/post_stress_meteg.py emits it, and
@@ -78,7 +84,7 @@ POST_STRESS_METEG_TITLE = "Meteg after the primary stress in MAM"
 # would otherwise have to import the page module, which reaches the whole accgram survey.
 POST_STRESS_METEG_M23_ID = "m23-isaiah-23-12"
 
-# The stylesheet both pages at the deploy root link, hand-written and tracked as
+# The stylesheet all four pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face
@@ -87,8 +93,8 @@ POST_STRESS_METEG_M23_ID = "m23-isaiah-23-12"
 # 2026-08-31, having noticed these two pages staying white on a dark display.
 CSS_HREF = "style.css"
 
-# The accgram stylesheet, linked BESIDE the one above by the one deploy-root page that shows
-# pointed Hebrew and accent-name romanizations: post-stress-meteg.html.  It supplies the
+# The accgram stylesheet, linked BESIDE the one above by the four deploy-root pages that show
+# pointed Hebrew and accent-name romanizations. It supplies the
 # lang="hbo" font at the size that makes accents legible, the italic for span.romanized, and
 # the numeric-cell alignment, none of which a page of links has any use for and none of which
 # is therefore in style.css.  Its @font-face URL is relative to the stylesheet, so the font

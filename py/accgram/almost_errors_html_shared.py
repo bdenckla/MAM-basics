@@ -88,11 +88,12 @@ def hbo(text: str) -> object:
 
 
 # A run of Hebrew-block characters -- letters, points, accents, and the maqaf / sof pasuq
-# that join or end an accent-word.  Covers both bare letter skeletons and fully-pointed
-# words, so the whole word stays in one hbo span rather than being split at its marks.
+# that join or end an accent-word -- plus U+034F, which MAM uses between an accent and a
+# meteg.  Covers both bare letter skeletons and fully-pointed words, so the whole word stays
+# in one hbo span rather than being split at its marks.
 # Inter-word spaces are kept inside the run so a whole Hebrew phrase (multiple space-separated
 # words) stays in one hbo span; leading/trailing spaces bordering non-Hebrew text stay out.
-_HEBREW_RUN_RE = re.compile(r"[֐-׿]+(?: +[֐-׿]+)*")
+_HEBREW_RUN_RE = re.compile(r"[\u034f\u0590-\u05ff]+(?: +[\u034f\u0590-\u05ff]+)*")
 
 # Any Hebrew combining mark -- vowel, dagesh, accent, meteg.  The ranges are written as
 # numeric escapes because a bare combining mark in a literal renders as a floating diacritic
