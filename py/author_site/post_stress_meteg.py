@@ -494,6 +494,10 @@ def pin_claims(survey: dict) -> None:
     assert difference["bcv"] == "dt5:6"
     assert len(difference[psm.CANT_ALEF]["chanted_words"]) == 2
     assert len(difference[psm.CANT_BET]["chanted_words"]) == 2
+    chanted_word_difference = dual_cantillation["chanted_word_count_difference"]
+    assert chanted_word_difference["bcv"] == "dt5:14"
+    assert len(chanted_word_difference[psm.CANT_ALEF]["chanted_words"]) == 2
+    assert len(chanted_word_difference[psm.CANT_BET]["chanted_words"]) == 1
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
@@ -1433,6 +1437,7 @@ def _dual_cantillation_appendix(survey: dict) -> list:
     alef = template_comparison[psm.CANT_ALEF]
     bet = template_comparison[psm.CANT_BET]
     difference = dual_cantillation["meteg_before_stress_difference"]
+    chanted_word_difference = dual_cantillation["chanted_word_count_difference"]
     headers = (
         "count",
         "cant-alef",
@@ -1479,6 +1484,29 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             (None, _HEBREW_CELL, _NUMERIC_CELL),
         ),
     ]
+    chanted_word_difference_headers = (
+        mb_html.abbr("cant-sys", {"title": "cantillation strand"}),
+        mb_html.abbr("c-words", {"title": "the relevant chanted words"}),
+        "c-word count",
+    )
+    chanted_word_difference_rows = [
+        mb_html.table_row_of_data(
+            (
+                cantillation,
+                _hebrew_cell(
+                    " ".join(
+                        psm._bare(word)
+                        for word in chanted_word_difference[cantillation][
+                            "chanted_words"
+                        ]
+                    )
+                ),
+                str(len(chanted_word_difference[cantillation]["chanted_words"])),
+            ),
+            (None, _HEBREW_CELL, _NUMERIC_CELL),
+        )
+        for cantillation in (psm.CANT_ALEF, psm.CANT_BET)
+    ]
     return [
         mb_html.heading_level_2(
             "Appendix: dually-cantillated passages",
@@ -1495,6 +1523,15 @@ def _dual_cantillation_appendix(survey: dict) -> list:
             " prose MBS count, and no effect on any other analysis."
         ),
         _table(headers, rows),
+        mb_html.para(
+            (
+                "Only ",
+                _ref_link(chanted_word_difference["bcv"]),
+                " differs in the number of chanted words. Cant-alef has two chanted words"
+                " where cant-bet has one maqaf compound.",
+            )
+        ),
+        _table(chanted_word_difference_headers, chanted_word_difference_rows),
         mb_html.para(
             (
                 "Only ",

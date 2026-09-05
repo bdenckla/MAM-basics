@@ -912,6 +912,7 @@ def _scan(
         "dual_cant_verses": set(),
         "dual_cantillation": {},
         "dual_cantillation_chanted_words": {},
+        "dual_template_entries": {},
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -984,6 +985,8 @@ def _one_verse(
         found["dual_cantillation_chanted_words"][bcv] = [
             one["fva"].split(" ")[0] for one in usable
         ]
+    if template_entry_ids is not None:
+        found["dual_template_entries"][bcv] = usable
     if template_entry_ids is None:
         last_word = usable[-1]["fva"].split(" ")[0]
         if SOF_PASUQ not in last_word:
@@ -1494,6 +1497,110 @@ def _meteg_before_stress_difference(
     }
 
 
+def _template_mam_forms(
+    entries: list[dict], words_by_bcv: dict[str, list[str]], bcv: str
+) -> list[str]:
+    """The selected template span's chanted words, as MAM has them today.
+
+    A template can include a qere, so the raw Phonetic-MAM form alone cannot identify MAM's
+    form.  ``_attach_mam_forms`` already settles that relation, including its qere spelling,
+    and refuses an ambiguous match.
+    """
+    records = [
+        {
+            "bcv": bcv,
+            "chanted_word": entry["fva"].split(" ")[0],
+            "following_chanted_word": None,
+            "snapshot_before_qere": entry.get("before_qfikq"),
+        }
+        for entry in entries
+    ]
+    unjoined = _attach_mam_forms(records, words_by_bcv)
+    assert not unjoined, unjoined
+    forms = [record["mam_form"] for record in records]
+    assert all(forms), forms
+    return forms
+
+
+def _atom_keys(word: str) -> tuple[str, ...]:
+    """The consonant keys of a chanted word's atoms, in their written order."""
+    return tuple(
+        _consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)
+    )
+
+
+def _different_chanted_word_spans(
+    alef_words: list[str], bet_words: list[str]
+) -> list[tuple[slice, slice]]:
+    """The aligned spans whose atom grouping differs between two template branches."""
+    alef_index = 0
+    bet_index = 0
+    out = []
+    while alef_index < len(alef_words) and bet_index < len(bet_words):
+        if _atom_keys(alef_words[alef_index]) == _atom_keys(bet_words[bet_index]):
+            alef_index += 1
+            bet_index += 1
+            continue
+        alef_start = alef_index
+        bet_start = bet_index
+        alef_atoms: list[str] = []
+        bet_atoms: list[str] = []
+        while not alef_atoms or not bet_atoms or alef_atoms != bet_atoms:
+            if len(alef_atoms) <= len(bet_atoms):
+                assert alef_index < len(alef_words), (alef_words, bet_words)
+                alef_atoms.extend(_atom_keys(alef_words[alef_index]))
+                alef_index += 1
+            else:
+                assert bet_index < len(bet_words), (alef_words, bet_words)
+                bet_atoms.extend(_atom_keys(bet_words[bet_index]))
+                bet_index += 1
+        out.append((slice(alef_start, alef_index), slice(bet_start, bet_index)))
+    assert alef_index == len(alef_words), (alef_words, bet_words)
+    assert bet_index == len(bet_words), (alef_words, bet_words)
+    return out
+
+
+def _chanted_word_count_difference(
+    found_alef: dict,
+    found_bet: dict,
+    words_by_cantillation: dict[str, dict[str, list[str]]],
+) -> dict:
+    """The template grouping that makes cant-alef's chanted-word count one larger."""
+    dual_bcv = found_alef["dual_cant_verses"]
+    assert dual_bcv == found_bet["dual_cant_verses"]
+    different_bcv = [
+        bcv
+        for bcv in dual_bcv
+        if (
+            found_alef["checked_chanted_words_by_bcv"][bcv]
+            != found_bet["checked_chanted_words_by_bcv"][bcv]
+        )
+    ]
+    assert len(different_bcv) == 1, different_bcv
+    bcv = different_bcv[0]
+    alef_words = found_alef["dual_cantillation_chanted_words"][bcv]
+    bet_words = found_bet["dual_cantillation_chanted_words"][bcv]
+    spans = _different_chanted_word_spans(alef_words, bet_words)
+    assert len(spans) == 1, spans
+    alef_span, bet_span = spans[0]
+    assert (alef_span.stop - alef_span.start) == (bet_span.stop - bet_span.start) + 1
+    alef_forms = _template_mam_forms(
+        found_alef["dual_template_entries"][bcv][alef_span],
+        words_by_cantillation[CANT_ALEF],
+        bcv,
+    )
+    bet_forms = _template_mam_forms(
+        found_bet["dual_template_entries"][bcv][bet_span],
+        words_by_cantillation[CANT_BET],
+        bcv,
+    )
+    return {
+        "bcv": bcv,
+        CANT_ALEF: {"chanted_words": alef_forms},
+        CANT_BET: {"chanted_words": bet_forms},
+    }
+
+
 def build_survey() -> dict:
     """The whole survey: every U+05BD of the Phonetic MAM standard set, classified.
 
@@ -1565,6 +1672,9 @@ def build_survey() -> dict:
                 CANT_BET: _dual_template_counts(template_found_bet),
             },
             "meteg_before_stress_difference": _meteg_before_stress_difference(
+                template_found, template_found_bet, words_by_cantillation
+            ),
+            "chanted_word_count_difference": _chanted_word_count_difference(
                 template_found, template_found_bet, words_by_cantillation
             ),
         },

@@ -282,6 +282,20 @@
      "יִהְיֶֽה־לְךָ֩"
     ]
    }
+  },
+  "chanted_word_count_difference": {
+   "bcv": "dt5:14",
+   "cant-alef": {
+    "chanted_words": [
+     "כִּ֣י",
+     "עֶ֤בֶד"
+    ]
+   },
+   "cant-bet": {
+    "chanted_words": [
+     "כִּי־עֶ֥בֶד"
+    ]
+   }
   }
  },
  "counts": {
