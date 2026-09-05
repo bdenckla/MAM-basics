@@ -88,6 +88,10 @@ _POETIC = psm.SYSTEM_POETIC
 # every other form on the page.
 _M23_VERSE = "is23:12"
 _POST_SILLUQ_VERSE = "1s17:5"
+_POST_SILLUQ_LC_CROP_URL = (
+    "https://github.com/user-attachments/assets/" "2983ebc8-df3f-4215-a009-23a33e2a8321"
+)
+_POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
@@ -1383,6 +1387,19 @@ def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
     )
 
 
+def _post_silluq_lc_crop() -> object:
+    """The directly inspectable LC line for 1 Samuel 17:5's post-silluq question."""
+    return mb_html.raw_html(
+        f'<figure><a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
+        f' rel="noopener"><img src="{_POST_SILLUQ_LC_CROP_URL}"'
+        ' alt="Leningrad Codex, F159A, column 3, line 8: 1 Samuel 17:5."'
+        ' loading="lazy"></a><figcaption>Leningrad Codex, F159A, column 3, line 8'
+        " (1 Samuel 17:5); crop attached to "
+        f'<a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
+        ' rel="noopener">phonetic-hbo #78</a>.</figcaption></figure>'
+    )
+
+
 def _post_silluq(survey: dict) -> list:
     """Section 5: a meteg after the silluq, which MAM does not have."""
     comparison = _post_silluq_comparison(survey)
@@ -1403,10 +1420,11 @@ def _post_silluq(survey: dict) -> list:
         _table(("source", "verse-final chanted word"), comparison_rows),
         _para(
             "UXLC 3.9 and WLC 4.22 are BHS-derived transcriptions, and each has a second"
-            " U+05BD on the final syllable. Their forms are evidence about UXLC and WLC;"
-            " whether the Leningrad Codex has a second mark must be read from folio F159A,"
-            " column 3, line 8, where the chanted word stands."
+            " U+05BD on the final syllable. Their forms are evidence about UXLC and WLC."
+            " The corresponding Leningrad Codex line, F159A, column 3, line 8, is"
+            " reproduced below so that the manuscript marking can be inspected directly."
         ),
+        _post_silluq_lc_crop(),
         _para(
             "Two of the three types could not occur on a silluq word: types 1 and 2 each"
             " require a following chanted word, which a verse-final chanted word does not"
