@@ -291,7 +291,7 @@ def build_body(survey: dict) -> list:
         *_case_list_link(survey),
         *_m23(survey),
         *_post_silluq(survey),
-        *_sources_and_limits(survey),
+        *_overlapping_diagnostic(survey),
         *_dual_cantillation_appendix(survey),
     ]
 
@@ -1191,57 +1191,17 @@ def _post_silluq(survey: dict) -> list:
     ]
 
 
-def _sources_and_limits(survey: dict) -> list:
-    """Section 6: what was read, what the corpus is, and what the page does not claim."""
-    currency = survey["currency"]
+def _overlapping_diagnostic(survey: dict) -> list:
+    """The diagnostic that overlaps the positional categories."""
     overlap = _both(survey, "meteg sharing a letter with a non-stress-marking accent")
-    excerpts, words = _excerpt_accounting()
     return [
-        mb_html.heading_level_2("Sources and limits"),
-        mb_html.para(
-            (
-                "The sections behind the three types are ",
-                itm(),
-                " ",
-                *itm_sections("§§308, §332, §338 and §354"),
-                ", and ",
-                cos(),
-                " Ch. 8 §§2–10 and §§46–47, whose §3 is the ten-type taxonomy the"
-                " three rows are drawn from and whose §2 says what makes a meteg optional."
-                " Yeivin's ",
-                *itm_sections("§325"),
-                ", the meteg before a paseq, is deliberately not among them:"
-                " he calls that one marked in early manuscripts and rare even there. Both"
-                " books call the mark a ga'ya; this page says meteg throughout.",
-            )
-        ),
-        _para(
-            f"This page quotes neither book: {excerpts} excerpts, {words} words of quoted"
-            " source text."
-        ),
-        _para(
-            "The corpus is MAM as the Phonetic MAM standard set has it, which is where the"
-            " stress marking comes from and is therefore the text the counts describe. That"
-            " edition is regenerated when al-hatorah regenerates it, which is not when MAM"
-            f" changes: measured against MAM as it stands today, {currency['verses_differing']}"
-            f" of its {currency['verses_compared']:,} numbered verses differ in how many"
-            f" meteg marks they have — {currency['metegs_in_the_surveyed_snapshot']:,} in the"
-            " surveyed"
-            f" text against {currency['metegs_in_mam_simple_today']:,} today. Isaiah 23:12 is"
-            " one of them, which is why the meteg this page's Isaiah 23:12 section is about is not"
-            " among the counts above."
-        ),
+        mb_html.heading_level_2("A diagnostic overlapping the three positions"),
         _para(
             "One diagnostic overlaps the three positions rather than adding a fourth: a meteg"
             " can share a letter with an accent that marks no stress, which the prepositives,"
             " the postpositives, ole and geresh muqdam all do. There are"
             f" {overlap} such meteg marks, and each is counted in the group its syllable puts it"
             " in, before or after the stress, rather than beside them."
-        ),
-        _para(
-            "Nothing here says that MAM follows a rule of Breuer's or of Yeivin's. MAM is a"
-            " consensus text; the two books describe the phenomenon, and the counts are"
-            " measurements of MAM set beside their descriptions."
         ),
     ]
 
