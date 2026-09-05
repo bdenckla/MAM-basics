@@ -868,7 +868,9 @@ def _by_type(survey: dict) -> list:
                 itm(),
                 "'s type 1 requires penultimate stress. Our survey counts a final furtive"
                 " pataḥ as a syllable. On that syllable count, our survey's type 1 includes"
-                " four chanted words that Yeivin's type 1 excludes:",
+                " four chanted words that ",
+                itm(),
+                "'s type 1 excludes:",
             )
         ),
         _table(
@@ -897,28 +899,39 @@ def _by_type(survey: dict) -> list:
                 " is in Phonetic MAM, so a meteg on that guttural comes out after the stress"
                 " rather than in it. All ",
                 str(type_2_count),
-                " type-2 chanted words surveyed have penultimate stress, matching Yeivin's"
-                " description. Penultimate stress is a fact about the ",
+                " type-2 chanted words surveyed have penultimate stress, matching ",
+                itm(),
+                "'s description. Penultimate stress is a fact about the ",
                 str(type_2_count),
-                " type-2 chanted words, not a further type-2 condition. Breuer calls the type"
-                " obligatory; Yeivin's statement is"
+                " type-2 chanted words, not a further type-2 condition. ",
+                cos(),
+                " calls the type obligatory; ",
+                itm(),
+                "'s statement is"
                 " narrower, that the mark is sometimes used when the chanted word after it"
                 " begins with lamed or nun.",
             )
         ),
         mb_html.para(
             (
-                "Type 3 follows Yeivin's tsere type, described in ",
+                "Type 3 follows ",
+                itm(),
+                "'s tsere type, described in ",
                 itm(),
                 " ",
                 *itm_sections("§338, fed by §308"),
                 "'s account of retracted stress: where the stress retracts"
                 " and a final closed syllable keeps its tsere, that syllable takes the mark,"
-                " and Yeivin says it is marked in manuscripts and printed texts alike. ",
+                " and ",
+                itm(),
+                " says it is marked in manuscripts and printed texts alike. ",
                 cos(),
                 " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
-                " closed syllable. The one current chanted word in Breuer's type (a) but not"
-                " Yeivin's type has subtype ",
+                " closed syllable. The one current chanted word in ",
+                cos(),
+                "'s type (a) but not ",
+                itm(),
+                "'s type has subtype ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_2,
                 "; the ",
                 mb_html.anchor_h("misc cases page", _MISC_FNAME),
@@ -984,8 +997,8 @@ def _case_subtype_cell(subtype: str | None) -> object:
             "A Vayomer case with one intervening paseq before the following chanted word."
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_2: (
-            "A final closed ḥolam syllable: Breuer's long-vowel type (a), but not"
-            " Yeivin's tsere type 3."
+            "A final closed ḥolam syllable: CoS's long-vowel type (a), but not"
+            " ITM's tsere type 3."
         ),
     }
     return mb_html.abbr(
@@ -1151,7 +1164,8 @@ def build_type_2_body(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "Yeivin ",
+                itm(),
+                " ",
                 *itm_sections("§354"),
                 " says this mark is sometimes used when the following chanted word begins"
                 " with lamed or nun. The filter separates those two initial consonants from"
@@ -1229,8 +1243,11 @@ def build_misc_body(survey: dict) -> list:
                 _ref_link(misc_almost_type_2_inaugural["bcv"]),
                 ": its chanted word ",
                 *_hebrew_cell(misc_almost_type_2_inaugural["mam_form"]),
-                " has a final closed syllable with ḥolam, a long vowel. It fits Breuer's"
-                " broader type (a), but not Yeivin's tsere type 3.",
+                " has a final closed syllable with ḥolam, a long vowel. It fits ",
+                cos(),
+                "'s broader type (a), but not ",
+                itm(),
+                "'s tsere type 3.",
             )
         ),
         mb_html.para(
