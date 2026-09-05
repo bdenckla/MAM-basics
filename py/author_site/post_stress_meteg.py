@@ -667,9 +667,8 @@ def _opening(survey: dict) -> list:
             " An atom is a sequence of letters uninterrupted by space, maqaf, or any other punctuation."
         ),
         _para(
-            "Which syllable a chanted word is stressed on is not always obvious,"
-            " so for our survey of MAS,"
-            " we use Phonetic MAM, an edition"
+            "The location of stress is not always obvious. For our survey of MAS, we"
+            " locate stress using Phonetic MAM, an edition"
             " of MAM that marks the stressed syllable of every chanted word."
         ),
     ]
