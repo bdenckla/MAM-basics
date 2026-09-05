@@ -1267,10 +1267,11 @@ def _dual_cantillation_appendix(survey: dict) -> list:
         _para(
             "MAM has two cantillations for the two Decalogues and"
             " Genesis 35:22."
-            " The census presented above, in the main section of this document,"
-            " use only the cant-alef cantillation strand for each"
+            " The analyses presented in this document use only the cant-alef"
+            " cantillation strand for each"
             " such passage."
-            " This section shows that this choice has little effect on that census."
+            " The table below shows that this choice has only a tiny effect on the"
+            " prose MBS count, and no effect on any other analysis."
         ),
         _table(headers, rows),
         _para(
