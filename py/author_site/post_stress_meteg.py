@@ -716,7 +716,7 @@ def _by_type(survey: dict) -> list:
         mb_html.ordered_list(
             (
                 "an open syllable before a chanted word whose first full syllable is stressed;",
-                "a syllable closed by a guttural at the end of the chanted word; and",
+                "a final syllable closed by a guttural",
                 "a closed syllable whose vowel is tsere.",
             )
         ),
