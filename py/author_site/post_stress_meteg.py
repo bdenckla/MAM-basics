@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page and two case tables.
+r"""MAM's metegs after the primary stress: the main page and three case tables.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -53,6 +53,8 @@ _CASES_FNAME = site_data.POST_STRESS_METEG_CASES_FNAME
 _CASES_TITLE = site_data.POST_STRESS_METEG_CASES_TITLE
 _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
+_MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
+_MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 
 # The M23 card's link lands here, so the identifier is half of that card's href and cannot be
@@ -129,6 +131,7 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
 )
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
+_MISC_TABLE_ID = "post-stress-meteg-misc-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
 _TYPE_2_FOLLOWING_GROUPS = ("lamed", "nun", "misc")
@@ -247,8 +250,8 @@ updateType2Rows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str]:
-    """Write the main page and the two case pages.  Returns all three paths.
+) -> tuple[str, str, str, str]:
+    """Write the main page and the three case pages.  Returns all four paths.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -262,6 +265,7 @@ def gen_html_files(
         _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
         _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
+        _write_page(top_dir / _MISC_FNAME, _MISC_TITLE, build_misc_body(survey)),
     )
 
 
@@ -280,7 +284,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all three pages and return the main page's path for older callers."""
+    """Write all four pages and return the main page's path for older callers."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -407,6 +411,9 @@ def pin_claims(survey: dict) -> None:
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
     ), "the structural types do not partition the post-stress records"
+    misc_records = _misc_records(survey)
+    assert len(misc_records) == _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
+    assert all(one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in misc_records)
     for subtype in (
         psm.SUBTYPE_MISC_ALMOST_TYPE_1,
         psm.SUBTYPE_MISC_VAYOMER,
@@ -678,12 +685,7 @@ def _by_type(survey: dict) -> list:
         "Poetic",
         "Example",
     )
-    almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
-    almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
-    type_3_almost_2_count = _by_subtype_count(survey, psm.SUBTYPE_3_ALMOST_2)
-    type_3_almost_2_inaugural = _type_3_almost_2_inaugural(survey)
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
-    vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -767,43 +769,6 @@ def _by_type(survey: dict) -> list:
         _table(("Type", itm(), cos()), source_rows),
         mb_html.para(
             (
-                "Within misc, ",
-                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_1),
-                f" has {almost_type_1_count} record",
-                "s" if almost_type_1_count != 1 else "",
-                ". Its initial member is ",
-                _ref_link(almost_type_1_inaugural["bcv"]),
-                ": the MAS syllable is open, but the following chanted word's first full"
-                " syllable is unstressed. An opening simple vocal sheva or xataf vowel is"
-                " pre-syllabic for the type-1 condition.",
-            )
-        ),
-        mb_html.para(
-            (
-                "Within misc, ",
-                mb_html.code(psm.SUBTYPE_3_ALMOST_2),
-                f" has {type_3_almost_2_count} record",
-                "s" if type_3_almost_2_count != 1 else "",
-                ". Its initial member is ",
-                _ref_link(type_3_almost_2_inaugural["bcv"]),
-                ": its chanted word ",
-                *_hebrew_cell(type_3_almost_2_inaugural["mam_form"]),
-                " has a final closed syllable with ḥolam, a long vowel. It fits Breuer's"
-                " broader type (a), but not Yeivin's tsere type 3.",
-            )
-        ),
-        mb_html.para(
-            (
-                "Within misc, ",
-                mb_html.code(psm.SUBTYPE_MISC_VAYOMER),
-                f" has {vayomer_count} record",
-                "s" if vayomer_count != 1 else "",
-                ". Each has one PASEQ between the meteg-bearing chanted word and the"
-                " following chanted word; the individual-cases page shows that context.",
-            )
-        ),
-        mb_html.para(
-            (
                 "For the open-syllable type, ",
                 itm(),
                 " ",
@@ -846,9 +811,11 @@ def _by_type(survey: dict) -> list:
                 cos(),
                 " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
                 " closed syllable. The one current record in Breuer's type (a) but not"
-                " Yeivin's type is the ",
+                " Yeivin's type has subtype ",
                 mb_html.code(psm.SUBTYPE_3_ALMOST_2),
-                " record above.",
+                "; the ",
+                mb_html.anchor_h("misc cases page", _MISC_FNAME),
+                " lists that record.",
             )
         ),
     ]
@@ -857,6 +824,7 @@ def _by_type(survey: dict) -> list:
 def _case_list_link(survey: dict) -> list:
     """The main page's link to the long list of individual cases."""
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
+    misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     return [
         mb_html.para(
             (
@@ -865,6 +833,13 @@ def _case_list_link(survey: dict) -> list:
                     f"{len(survey['post_stress']):,} individual cases", _CASES_FNAME
                 ),
                 " are listed separately and can be filtered by type.",
+            )
+        ),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
+                " have a separate table and descriptions of the named misc subtypes.",
             )
         ),
         mb_html.para(
@@ -984,6 +959,15 @@ def _type_2_records(survey: dict) -> list[dict]:
     ]
 
 
+def _misc_records(survey: dict) -> list[dict]:
+    """The survey's misc records, in the corpus's order."""
+    return [
+        record
+        for record in survey["post_stress"]
+        if record["structural_type"] == psm.TYPE_UNCLASSIFIED
+    ]
+
+
 def _type_2_following_group(record: dict) -> str:
     """The type-2 filter group set by the following chanted word's first consonant."""
     following = record["following_mam_form"]
@@ -1007,6 +991,16 @@ def _type_2_case_row(record: dict) -> object:
             ),
         ),
         {"data-following-initial": _type_2_following_group(record)},
+    )
+
+
+def _misc_case_row(record: dict) -> object:
+    return mb_html.table_row(
+        (
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
+            mb_html.table_datum(_case_subtype_cell(record["subtype"])),
+        )
     )
 
 
@@ -1068,6 +1062,80 @@ def build_type_2_body(survey: dict) -> list:
             },
         ),
         mb_html.raw_html(_TYPE_2_FILTER_SCRIPT),
+    ]
+
+
+def build_misc_body(survey: dict) -> list:
+    """The misc cases and the named subsets that remain outside types 1–3."""
+    records = _misc_records(survey)
+    almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
+    almost_type_1_inaugural = _misc_almost_type_1_inaugural(survey)
+    type_3_almost_2_count = _by_subtype_count(survey, psm.SUBTYPE_3_ALMOST_2)
+    type_3_almost_2_inaugural = _type_3_almost_2_inaugural(survey)
+    vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
+    return [
+        mb_html.heading_level_1(_MISC_TITLE),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(_TITLE, _FNAME),
+                " or the ",
+                mb_html.anchor_h(_CASES_TITLE.lower(), _CASES_FNAME),
+                ".",
+            )
+        ),
+        mb_html.heading_level_2("Every misc case in MAM"),
+        _para(
+            "Each chanted word in the table has MAS but does not meet the definition of"
+            " types 1, 2, or 3. Gray following context appears where it is relevant to a"
+            " named misc subtype."
+        ),
+        _hebrew_spacing_option(),
+        _table(
+            ("Verse", "Chanted word", "Subtype"),
+            [_misc_case_row(record) for record in records],
+            {
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
+                "id": _MISC_TABLE_ID,
+            },
+        ),
+        mb_html.para(
+            (
+                "Within misc, ",
+                mb_html.code(psm.SUBTYPE_MISC_ALMOST_TYPE_1),
+                f" has {almost_type_1_count} record",
+                "s" if almost_type_1_count != 1 else "",
+                ". Its initial member is ",
+                _ref_link(almost_type_1_inaugural["bcv"]),
+                ": the MAS syllable is open, but the following chanted word's first full"
+                " syllable is unstressed. An opening simple vocal sheva or xataf vowel is"
+                " pre-syllabic for the type-1 condition.",
+            )
+        ),
+        mb_html.para(
+            (
+                "Within misc, ",
+                mb_html.code(psm.SUBTYPE_3_ALMOST_2),
+                f" has {type_3_almost_2_count} record",
+                "s" if type_3_almost_2_count != 1 else "",
+                ". Its initial member is ",
+                _ref_link(type_3_almost_2_inaugural["bcv"]),
+                ": its chanted word ",
+                *_hebrew_cell(type_3_almost_2_inaugural["mam_form"]),
+                " has a final closed syllable with ḥolam, a long vowel. It fits Breuer's"
+                " broader type (a), but not Yeivin's tsere type 3.",
+            )
+        ),
+        mb_html.para(
+            (
+                "Within misc, ",
+                mb_html.code(psm.SUBTYPE_MISC_VAYOMER),
+                f" has {vayomer_count} record",
+                "s" if vayomer_count != 1 else "",
+                ". Each has one PASEQ between the meteg-bearing chanted word and the"
+                " following chanted word; the table above shows that context.",
+            )
+        ),
     ]
 
 
