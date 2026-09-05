@@ -38,6 +38,7 @@ from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 
+from accgram import final_stress
 from accgram import post_stress_meteg as psm
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
@@ -352,6 +353,16 @@ def _by_type_count(survey: dict, kind: str) -> int:
     )
 
 
+def _type_1_records_with_nonfinal_meteg_syllable(survey: dict) -> list[dict]:
+    """Type-1 records where a further final syllable follows the meteg's syllable."""
+    return [
+        record
+        for record in survey["post_stress"]
+        if record["structural_type"] == psm.TYPE_OPEN
+        and not record["is_the_last_syllable"]
+    ]
+
+
 def _by_subtype_count(survey: dict, subtype: str) -> int:
     return sum(
         survey["post_stress_by_subtype"][system][subtype]
@@ -465,6 +476,21 @@ def pin_claims(survey: dict) -> None:
         and record["vowel"] == "pataḥ"
         for record in type_2_records
     ), "the type-2/type-3 non-overlap claim has moved"
+    type_1_nonfinal_meteg_syllable_records = (
+        _type_1_records_with_nonfinal_meteg_syllable(survey)
+    )
+    assert [record["bcv"] for record in type_1_nonfinal_meteg_syllable_records] == [
+        "is63:12",
+        "pr1:19",
+        "pr11:26",
+        "jb5:10",
+    ]
+    assert all(
+        record["syllables_after_the_stress"] == 1
+        and record["syllable_is_open"]
+        and final_stress.ends_in_furtive_patax(record["chanted_word"])
+        for record in type_1_nonfinal_meteg_syllable_records
+    ), "the type-1 qualification for final furtive pataḥ has moved"
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     assert type_2_type_3_overlap["chanted_words"] == 154
     assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}
@@ -722,6 +748,9 @@ def _by_type(survey: dict) -> list:
         "Example",
     )
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
+    type_1_nonfinal_meteg_syllable_records = (
+        _type_1_records_with_nonfinal_meteg_syllable(survey)
+    )
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = type_2_type_3_overlap["chanted_words"]
@@ -817,6 +846,27 @@ def _by_type(survey: dict) -> list:
                 " Ch. 8 grades it optional — which for Breuer means that no tradition"
                 " settles it and each naqdan decided for himself.",
             )
+        ),
+        mb_html.para(
+            "The survey counts a final furtive pataḥ as a syllable. On that syllable count,"
+            " the survey's type 1 includes four chanted words that Yeivin's type 1 excludes:"
+        ),
+        mb_html.ordered_list(
+            tuple(
+                (
+                    _ref_link(record["bcv"]),
+                    " — ",
+                    *_hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                    ".",
+                )
+                for record in type_1_nonfinal_meteg_syllable_records
+            )
+        ),
+        mb_html.para(
+            "In all four chanted words, the meteg follows the antepenultimate stress and"
+            " falls on the penultimate open syllable. Yeivin's type 1 instead requires"
+            " penultimate stress and a final open syllable. The four records belong to the"
+            " survey's type 1 but not to Yeivin's type 1."
         ),
         mb_html.para(
             (
