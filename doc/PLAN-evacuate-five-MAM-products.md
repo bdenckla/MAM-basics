@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–3 completed 2026-09-06. MAM-parsed is landed in MAM-basics; its former repository is a deployed redirect host and its local clone is in the Windows Recycle Bin. MAM-with-doc and MAM-OSIS remain later lanes.
+State: Phases 0–4 completed 2026-09-06. MAM-parsed and MAM-with-doc are landed in MAM-basics; both former repositories are deployed redirect hosts and both local clones are in the Windows Recycle Bin. MAM-OSIS remains a later lane.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -514,13 +514,23 @@ All four oracle layers are complete. The MAM-basics head before the final
 completion-record/workspace commit was
 `9a61e7b58ccf8a9f7478f19bcb81e5485651e688`; the final source head is
 `c9e04c496920b1c423069dfbc4b31078efa0b0a0`. The source remains unarchived.
-Phases 4 and later remain unstarted, and MAM-private was not modified.
+Phases 5 and later remain unstarted, and MAM-private was not modified.
 
-## Phase 4 — MAM-with-doc
+## Phase 4 — MAM-with-doc — DONE 2026-09-06
 
 The fourth product lane. Land the source tree under MAM-with-doc/ and its published tree under gh-pages/MAM-with-doc/. Repoint py/main_mam_with_doc.py, py/subcommands/diff_mpp.py, MAM-parsed inputs, tests, documentation, and pipeline-graph labels. The current graph label ending in MAM-with-doc/docs/ is stale: the source has gh-pages/ and no docs/ directory. Correct the label as part of the repoint and treat the rendered graph diff as evidence.
 
 Freeze and verify all 113 legacy HTML paths. The MAM-with-doc Pages citations in the local Wikisource introduction are Ben-controlled documentation references and must be repointed to MAM-basics; do not contact Avi Kadish or edit the mirrored Wikisource source as part of this lane.
+
+### Phase 4 execution record — 2026-09-06
+
+1. **Land and licence.** The frozen source at `0fe406c44c1b51e7c540574475830d6169256e73` contained 273 files totaling 47,697,350 bytes. Land commit `5a28bc0e` copied 272 selected blobs without mismatch into `MAM-with-doc/` and `gh-pages/MAM-with-doc/`; the source Pages workflow remained in the redirect host. `DATA-LICENSES.md` records the product’s CC BY-SA terms, the generated page tree, the scans’ separate rights holders, and the two Taamey font copies’ unknown terms without granting rights. The output inventory has 267 published files.
+
+2. **Repoint and permanent inputs.** Target commit `3c8c9750` moved every Phase 4 writer and reader to the landed tree, corrected the pipeline label to `gh-pages/MAM-with-doc/`, repointed the controlled MAM-with-doc URLs, and removed the retired repository from the workspace and visibility configuration. `in/mam_with_doc_redirect_pages.json` records all 113 legacy HTML paths. MAM-parsed’s permanent historical inputs and the explicit `--legacy-history` sibling remained unchanged. The byte-verbatim `in/mam-ws-intro/` source mirror was not edited.
+
+3. **Generation and checks.** The Phase 4 regenerators changed zero source files and 145 target files. A second FOI, MAM-with-doc, MAM-parsed-plus, authored-page, and pipeline-graph generation pass changed zero target output bytes. `py/main_diff.py mpp --all` reports 180 raw changes; the stored latest JSON has `diff_count` 56 and the published page has 58 cards. The frozen redirect manifest built and checked 113 stubs plus `404.html`. The source h-dot-below checker passed its 6 tests. The first full canonical suite exposed a stale generated MAM-simple versification page that still named the retired MAM-with-doc URL. `py/main_mam_simple.py doc-only` changed only that page; its targeted canonical test passed 7 tests and 27 subtests. The target and redirect host passed the HTTPS check, including a legacy page and the custom 404 page; GitHub Pages runs `34061866037` (target) and `34062108606` (redirect host) both succeeded. The final canonical suite passed 976 tests with 5 skipped and 65 subtests in 90.70 seconds.
+
+4. **Empty and remove.** Source commit `904c9fa` retained the dated README, Pages workflow, 113 redirect stubs, and `404.html`, and removed the former product source. Before retirement, the source clone was clean on `main`, `HEAD` equaled `origin/main` at `904c9fa178265dce6fec5704f5c0424fc94f6719`, it had one worktree, and `remediation/mp02-01-extraction-2026-09-02` was an ancestor of `main`. `C:/Users/BenDe/GitRepos/MAM-with-doc` then moved to the Windows Recycle Bin.
 
 ## Phase 5 — MAM-OSIS
 
