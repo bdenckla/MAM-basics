@@ -64,6 +64,7 @@ _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _JEREMIAH_FOOTNOTE_ID = "footnote-1"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-2"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-3"
+_NONFINAL_MAS_FOOTNOTE_ID = "footnote-4"
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
@@ -793,6 +794,8 @@ def _general_mas_facts(survey: dict) -> list:
     """Section 3: the facts shared by every MAS, before structural classification."""
     exceptions = _noninitial_following_stress_records(survey)
     assert len(exceptions) == 1
+    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    assert len(nonfinal_mas_syllable_records) == 4
     return [
         mb_html.heading_level_2("General facts about MAS"),
         mb_html.unordered_list(
@@ -803,6 +806,11 @@ def _general_mas_facts(survey: dict) -> list:
                     "In every MAS case but one (",
                     _footnote_callout(1, _JEREMIAH_FOOTNOTE_ID),
                     "), the following chanted word has initial stress.",
+                ),
+                (
+                    "In every MAS case except four (",
+                    _footnote_callout(4, _NONFINAL_MAS_FOOTNOTE_ID),
+                    "), the MAS syllable is final.",
                 ),
             )
         ),
@@ -1517,6 +1525,7 @@ def _footnotes(survey: dict) -> list:
         ),
         *_dual_cantillation_footnote(survey),
         *_type_2_type_3_footnote(survey),
+        *_nonfinal_mas_syllable_footnote(survey),
     ]
 
 
@@ -1664,13 +1673,20 @@ def _type_2_type_3_footnote(survey: dict) -> list:
             ),
             {"class": "center"},
         ),
+    ]
+
+
+def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
+    """Footnote 4: the four nonfinal MAS syllables."""
+    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    assert len(nonfinal_mas_syllable_records) == 4
+    return [
+        mb_html.heading_level_3(
+            "φ4 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
+        ),
         mb_html.para(
-            (
-                f"In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
-                " records the MAS syllable is final. The other "
-                f"{len(nonfinal_mas_syllable_records)} records are type 2: each has an open"
-                " penultimate tsere MAS syllable before a final furtive-pataḥ syllable.",
-            )
+            "The other four records are type 2: each has an open penultimate tsere MAS"
+            " syllable before a final furtive-pataḥ syllable."
         ),
         mb_html.table(
             [
