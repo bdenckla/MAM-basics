@@ -8,9 +8,22 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 `main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/), and refreshes its example-program support files there.
 
+### Landed product and corpus directories
+
+Each landed product keeps its detailed README beside the files it describes. This root index names the product directories that formerly had repositories of their own.
+
+- [`MAM-simple/`](MAM-simple/) — XML and JSON MAM exports in three versifications
+- [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV MAM export suitable for Sefaria import; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
+- [`aleppo/`](aleppo/) — Aleppo Codex page-location data and photographed-page records
+- [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data and source scans
+- [`leningrad/`](leningrad/) — Leningrad Codex index data and page-image evidence
+- [`book-of-job/`](book-of-job/) — data and reading procedures for the BHQ Job review
+- [`holman/`](holman/) — data and rendered reports from Daniel Holman's three review/correction bodies
+- [`uxlc/`](uxlc/) — UXLC data and documentation for the planned CLC edition
+- [`diffable-pointed-hebrew/`](diffable-pointed-hebrew/) — samples and product-specific short Unicode-name overrides
+
 ### Format variants
 
-- [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV export suitable for import into Sefaria; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
 - `main_mam4sef.py` — Sefaria-compatible MAM variant by default, with `--just-ajf` and `--both-sef-and-ajf` for AJF selection
 - `main_mam_with_doc.py` — HTML with two-column layout and documentation notes
 - `main_mam_osis.py` / `main_osis_split_mapm.py` — OSIS (Open Scripture Information Standard) XML

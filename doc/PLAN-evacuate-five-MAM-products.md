@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phase 0 completed 2026-09-05; no product lane has started
+State: Phases 0–2 completed 2026-09-06; MAM-parsed, MAM-with-doc, and MAM-OSIS remain.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -66,6 +66,24 @@ The canonical suite currently has one baseline failure: py/tests/test_site_index
 
 Run git diff --check before committing. Phase 0 edits Markdown only, so Black does not run. The Phase 0 documentation commit and programme status update are the complete output of Phase 0.
 
+## README audit of completed evacuations — 2026-09-06
+
+The audit reads each historical source README at the revision immediately before its source became a redirect host or was retired, then compares that README with the current MAM-basics destination. A source redirect-host README is not evidence that the former product documentation survived: the source README was deliberately replaced during Empty.
+
+| former repository | historical source README disposition | current MAM-basics disposition after this audit |
+| --- | --- | --- |
+| MAM-simple | The full source README landed and was adapted as `MAM-simple/README.md`. | Keep the detailed product README; the root README now indexes it. |
+| MAM-for-Sefaria | The source README landed byte-identically, then its repository wording and Pages URL were corrected in `598913e5`. | Keep `MAM-for-Sefaria/README.md`; the root README indexes it. |
+| codex-index-cam1753 | The source README landed as `cam1753/README.md` and its paths were adapted. | Keep the detailed product README; the root README now indexes it. |
+| codex-index-leningrad | Only `page-snips/README.md` landed; the source-root overview became a redirect-host breadcrumb. | Add `leningrad/README.md` for the current index generator and page-snips evidence. |
+| codex-index-aleppo | The source-root overview did not land because the redirect-host files stayed at the source. | Add `aleppo/README.md` for the current page-location data, pipeline, and published pages. |
+| diffable-pointed-hebrew | The source one-line README landed unchanged. | Revise `diffable-pointed-hebrew/README.md` to name the current MAM-basics command, retained overrides, and historical normalized output. |
+| holman-ketiv-qere | The source-root overview became a redirect-host breadcrumb. | Add `holman/README.md` for the three review/correction bodies, reports, and public-data boundary. |
+| book-of-job | The source-root overview became a redirect-host breadcrumb. | Add `book-of-job/README.md` for the review site, current data locations, and non-regenerable source data. |
+| UXLC-utils | The source-root overview became a redirect-host breadcrumb. | Add `uxlc/README.md` for the UXLC/CLC data split, current generators, and published pages. |
+
+The root README is now the concise map to every landed product README. The detailed product README remains the reader-facing replacement for the former repository README; it is not copied wholesale into the root README.
+
 ## Common lane: Land — Licence — Repoint — Stubs — Empty — Remove
 
 Every product lane performs the following six steps in order. The lane-specific sections name differences; a lane does not silently skip a common step.
@@ -76,6 +94,17 @@ Every product lane performs the following six steps in order. The lane-specific 
 4. Stubs. Freeze every legacy published HTML path in a dedicated redirect manifest, extend py/main_redirect_stubs.py, generate and test the MAM-basics targets and source stubs, then verify deployment. Add the new target to the generated site index and to its authored description data when the first landed product gives the site a new subtree. The test suite is an invocation-time check, not continuously running CI.
 5. Empty. Replace every source data path with a dated breadcrumb README and generated Pages stubs. Repoint source README links to MAM-basics, retain the source Pages workflow, remove the source from all-repos.code-workspace and in/repo_maintenance_policy.json's repo_visibility map in the same commit, and do not add a frozen_repos entry. Push the source breadcrumb and verify that HEAD matches origin/main.
 6. Remove. Only after every oracle layer passes, confirm that the source clone is clean, has no unpushed branch or unique object, and has no linked worktree that needs shared Git metadata. A retained linked worktree keeps the primary clone in place until the linked worktree is retired. Do not remove a source clone while a linked worktree remains.
+
+### README disposition — required in every remaining product lane
+
+Treat a source README as product documentation to migrate and rewrite, not as a source-host control file that disappears when the source becomes a redirect host.
+
+1. Before Land, read the complete source `README.md` and classify every substantive section: preserve it in the landed product README, move it to a narrower MAM-basics document or module docstring, or drop it because it governs only the former source repository. Record every disposition in the lane's execution record, including deliberate drops.
+2. Include the source README in the Land blob manifest and prove its initial destination copy byte-identical with the rest of the product. Make any needed README adaptation after that proof, so the migration evidence and the current documentation are both explicit.
+3. The default landing home is `<product>/README.md`. Rewrite repository-relative prose as product-directory prose; convert source-root paths to their MAM-basics paths; use relative links to other landed product directories; and change operational Pages links to `https://bdenckla.github.io/MAM-basics/<product>/`. Retain an old source URL only when the prose explicitly describes history or the redirect host.
+4. Add or update one concise root-README entry that links to the landed product README and says what the product directory contains. The root README is an index, not a duplicate of the product README.
+5. In Empty, replace the source README with the dated redirect-host breadcrumb. The source README links to the new product directory and its Pages target, while `<product>/README.md` is the reader-facing documentation that replaces the former repository README.
+6. Before committing, read the landed and source README side by side. Verify that operational paths and Pages URLs name MAM-basics, that the root index reaches the landed README, and that no substantive source README section lacks a recorded MAM-basics home or a recorded reason to drop it.
 
 The four oracle layers apply in every lane.
 
