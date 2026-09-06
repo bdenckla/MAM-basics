@@ -1529,11 +1529,7 @@ def _post_silluq(survey: dict) -> list:
             "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in BHS."
         ),
         _table(("source", "verse-final chanted word"), comparison_rows),
-        _para(
-            "BHS has a second U+05BD on the final syllable. The corresponding Leningrad Codex"
-            " line, F159A, column 3, line 8, is reproduced below so that the manuscript"
-            " marking can be inspected directly."
-        ),
+        _para("The Leningrad codex agrees with BHS as can be seen in the image below:"),
         _post_silluq_lc_crop(),
         _para(
             "Two of the three types could not occur on a silluq word: types 1 and 2 each"
