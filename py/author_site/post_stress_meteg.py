@@ -1988,8 +1988,8 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". It means that a syllable has one or more of the three structures below,"
-                " followed by a word with initial stress and a disjunctive accent. The table"
+                ". It means that a syllable belongs to one or more of the three MAS types below"
+                " and is followed by a word with initial stress and a disjunctive accent. The table"
                 " records how often MAM has MAS in each such situation and how often MAM"
                 " lacks MAS there.",
             )
@@ -2006,7 +2006,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 (
                     f"{mas_not_in_the_table['outside_the_three_types']:,} MAS cases have"
-                    " none of the three structures."
+                    " none of the three MAS types."
                 ),
                 (
                     f"{mas_not_in_the_table['following_word_not_disjunctive']:,} MAS"
