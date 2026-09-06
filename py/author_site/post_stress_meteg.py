@@ -1974,7 +1974,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
     rows.append(
         mb_html.table_row_of_data(
             (
-                "any of the three types",
+                mb_html.abbr("any", {"title": "any of the three types"}),
                 f"{fit_for_mas['fitting_any_type']:,}",
                 f"{fit_for_mas['with_mas']:,}",
                 f"{fit_for_mas['without_mas']:,}",
