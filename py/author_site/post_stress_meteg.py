@@ -46,6 +46,7 @@ from accgram import rtms_report
 from author_site import site_data
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_cmn import hebrew_accents as ha
 from mb_misc import mb_html
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
@@ -1057,6 +1058,24 @@ def _case_chanted_word_cell(record: dict) -> tuple:
     )
 
 
+def _oleh_chanted_word_cell(record: dict) -> tuple:
+    """The oleh context, extending into the next chanted word only for a yored there."""
+    current_form = record["mam_form"] or record["chanted_word"]
+    current = _hebrew_cell(current_form)
+    if ha.MER in current_form:
+        return current
+    following = record["following_mam_form"]
+    assert following is not None, f"{record['bcv']}: no MAM form following oleh"
+    assert ha.MER in following, f"{record['bcv']}: no yored after oleh"
+    return (
+        *current,
+        " ",
+        _following_chanted_word_span(
+            following, record.get("intervening_mam_punctuation", ())
+        ),
+    )
+
+
 def _case_row(record: dict) -> object:
     return mb_html.table_row(
         (
@@ -1551,15 +1570,19 @@ def _oleh_meteg_overlap(survey: dict) -> list:
         if "ole" in record["shares_its_letter_with"]
     ]
     assert oleh_overlaps
-    position_by_syllables_after_stress = {-1: "before", 1: "after"}
+    position_by_syllables_after_stress = {
+        -1: mb_html.abbr("MBS", {"title": "meteg before the stress"}),
+        1: mb_html.abbr("MAS", {"title": "meteg after the stress"}),
+    }
     assert {
         record["syllables_after_the_stress"] for record in oleh_overlaps
     } <= position_by_syllables_after_stress.keys()
+    oleh_overlaps.sort(key=lambda record: record["syllables_after_the_stress"])
     rows = [
         mb_html.table_row_of_data(
             (
                 _ref_link(record["bcv"]),
-                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
+                _oleh_chanted_word_cell(record),
                 position_by_syllables_after_stress[
                     record["syllables_after_the_stress"]
                 ],
@@ -1576,10 +1599,17 @@ def _oleh_meteg_overlap(survey: dict) -> list:
             (
                 f"{len(oleh_overlaps)} meteg marks share a letter with ",
                 mb_html.span_c("oleh", "romanized"),
-                ". The table shows whether each meteg is before or after the stress.",
+                ". The table labels each meteg as MBS or MAS.",
             )
         ),
-        _table(("Verse", "Word", "Meteg position"), rows),
+        mb_html.table(rows, {"class": "limited-width post-stress-meteg-table"}),
+        _para(
+            "We count each such meteg as if the oleh were not there, because oleh is not an"
+            " accent indicating stress, even when it is the last accent in the chanted word,"
+            " as it is in the MAS rows above. In other words, a MAS chanted word with a"
+            ' meteg might at first look like some weird "meteg on the stress" (neither'
+            " before nor after), but it is not!"
+        ),
     ]
 
 
@@ -1614,34 +1644,24 @@ def _dual_cantillation_appendix(survey: dict) -> list:
         )
         for label, category in categories
     ]
-    difference_headers = (
-        mb_html.abbr("cant-sys", {"title": "cantillation strand"}),
-        mb_html.abbr("c-words", {"title": "the two relevant chanted words"}),
-        mb_html.abbr("MBS", {"title": "meteg before the stress"}),
-    )
     difference_rows = [
         mb_html.table_row_of_data(
             (
                 psm.CANT_ALEF,
                 _hebrew_cell(" ".join(difference[psm.CANT_ALEF]["chanted_words"])),
-                "none",
+                "no meteg",
             ),
-            (None, _HEBREW_CELL, _NUMERIC_CELL),
+            (None, _HEBREW_CELL, None),
         ),
         mb_html.table_row_of_data(
             (
                 psm.CANT_BET,
                 _hebrew_cell(" ".join(difference[psm.CANT_BET]["chanted_words"])),
-                "one",
+                mb_html.abbr("MBS", {"title": "meteg before the stress"}),
             ),
-            (None, _HEBREW_CELL, _NUMERIC_CELL),
+            (None, _HEBREW_CELL, None),
         ),
     ]
-    chanted_word_difference_headers = (
-        mb_html.abbr("cant-sys", {"title": "cantillation strand"}),
-        mb_html.abbr("c-words", {"title": "the relevant chanted words"}),
-        "c-word count",
-    )
     chanted_word_difference_rows = [
         mb_html.table_row_of_data(
             (
@@ -1654,9 +1674,8 @@ def _dual_cantillation_appendix(survey: dict) -> list:
                         ]
                     )
                 ),
-                str(len(chanted_word_difference[cantillation]["chanted_words"])),
             ),
-            (None, _HEBREW_CELL, _NUMERIC_CELL),
+            (None, _HEBREW_CELL),
         )
         for cantillation in (psm.CANT_ALEF, psm.CANT_BET)
     ]
@@ -1682,7 +1701,10 @@ def _dual_cantillation_appendix(survey: dict) -> list:
                 " where cant-bet has one maqaf compound.",
             )
         ),
-        _table(chanted_word_difference_headers, chanted_word_difference_rows),
+        mb_html.table(
+            chanted_word_difference_rows,
+            {"class": "limited-width post-stress-meteg-table"},
+        ),
         mb_html.para(
             (
                 "Only ",
@@ -1692,7 +1714,9 @@ def _dual_cantillation_appendix(survey: dict) -> list:
                 " below, neither with a meteg.",
             )
         ),
-        _table(difference_headers, difference_rows),
+        mb_html.table(
+            difference_rows, {"class": "limited-width post-stress-meteg-table"}
+        ),
     ]
 
 
