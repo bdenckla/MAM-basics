@@ -116,6 +116,13 @@ _TYPE_SOURCES = {
     ),
 }
 
+_COS_PAGE_STARTS_BY_TYPE = {
+    psm.TYPE_OPEN: "300; 354; 355",
+    psm.TYPE_GUTTURAL: "299; 308; 309",
+    psm.TYPE_CLOSED_TSERE: "299; 301; 302; 306; 307",
+}
+_COS_PAGE_GLOSS = "page number in Wengrov's English translation of CoS"
+
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "an open, final syllable"),
     psm.TYPE_GUTTURAL: ("2", "a chanted word closed by a guttural"),
@@ -934,14 +941,27 @@ def _sources_for_types() -> list:
     """The references for the three types, kept at the main page's end."""
     source_rows = [
         mb_html.table_row_of_data(
-            (_case_type_cell(kind), itm_sections(yeivin), breuer),
-            (None, None, None),
+            (
+                _case_type_cell(kind),
+                itm_sections(yeivin),
+                breuer,
+                _COS_PAGE_STARTS_BY_TYPE[kind],
+            ),
+            (None, None, None, None),
         )
         for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
     ]
     return [
         mb_html.heading_level_3("Sources for types 1–3"),
-        _table(("Type", itm(), cos()), source_rows),
+        _table(
+            (
+                "Type",
+                itm(),
+                cos(),
+                mb_html.abbr("CoS-pg", {"title": _COS_PAGE_GLOSS}),
+            ),
+            source_rows,
+        ),
     ]
 
 
