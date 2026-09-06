@@ -19,6 +19,7 @@ from py_ac_loc.gen_flat_stream import (
     build_flat_stream,
     get_page_verses,
 )
+from py_cam1753_word_image.hebrew_metrics import no_marks_comparison_key
 
 LB_DIR = ac_paths.line_breaks_dir()
 
@@ -155,12 +156,15 @@ def check_word_sequence_run(label, paths, stats):
     if not json_words:
         return None, None
 
-    # MAM may have extra tokens at the first and last extracted verses.
+    # MAM may have extra tokens at the first and last extracted verses. Match
+    # the shared no-marks key only: pointed JSON strings remain the page's
+    # display and transcription data, while punctuation stays significant.
     match_start = next(
         (
             i
             for i in range(len(mam_words) - len(json_words) + 1)
-            if mam_words[i] == json_words[0]
+            if no_marks_comparison_key(mam_words[i])
+            == no_marks_comparison_key(json_words[0])
         ),
         None,
     )
@@ -182,7 +186,7 @@ def check_word_sequence_run(label, paths, stats):
 
     mismatches = []
     for index, (json_word, mam_word) in enumerate(zip(json_words, mam_slice)):
-        if json_word != mam_word:
+        if no_marks_comparison_key(json_word) != no_marks_comparison_key(mam_word):
             mismatches.append((index, json_word, mam_word))
             if len(mismatches) >= 5:
                 break

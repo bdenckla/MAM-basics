@@ -186,6 +186,11 @@ Deuteronomy run 001r–006r. The strict MAM-simple comparison checks those two
 runs separately: no JSON file represents the text between Deuteronomy 34 and
 Psalms 149.
 
+The MAM-simple sequence comparison removes combining marks and format
+characters, while retaining punctuation including maqaf, PASEQ, and sof pasuq.
+The pointed JSON strings remain the page's display and transcription data, and
+the comparison does not normalize Hebrew.
+
 ## Script promotion policy
 
 When a script in `.novc/` turns out to be part of an ongoing, repeatable workflow
