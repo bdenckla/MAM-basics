@@ -64,6 +64,7 @@ _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
+_PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-1"
 _JEREMIAH_FOOTNOTE_ID = "footnote-2"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-3"
@@ -798,10 +799,13 @@ def _opening(survey: dict) -> list:
                 ", or any other punctuation.",
             )
         ),
-        _para(
-            "The location of a word's stress is not always obvious. In this document, we locate"
-            " stress using Phonetic MAM, an edition of MAM that marks the stress of every word"
-            " in MAM."
+        mb_html.para(
+            (
+                "The location of a word's stress is not always obvious. In this document, we"
+                " locate stress using ",
+                mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
+                ", an edition of MAM that marks the stress of every word in MAM.",
+            )
         ),
     ]
 
