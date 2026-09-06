@@ -1121,10 +1121,18 @@ def _misc_records(survey: dict) -> list[dict]:
 
 
 def _type_2_following_group(record: dict) -> str:
-    """The type-2 filter group set by the following chanted word's first consonant."""
+    """The detailed type-2 group set by the following chanted word's first consonant."""
     following = record["following_mam_form"]
     assert following is not None, f"{record['bcv']}: no following MAM chanted word"
     return psm.type_2_following_filter_group(following)
+
+
+def _type_2_filter_group(record: dict) -> str:
+    """The coarser type-2 filter group shown on the cases page."""
+    detailed_group = _type_2_following_group(record)
+    if detailed_group in ("lamed", "guttural"):
+        return detailed_group
+    return "not-lamed-or-guttural"
 
 
 def _type_2_case_row(record: dict) -> object:
@@ -1136,7 +1144,7 @@ def _type_2_case_row(record: dict) -> object:
                 _HEBREW_CELL,
             ),
         ),
-        {"data-following-initial": _type_2_following_group(record)},
+        {"data-following-initial": _type_2_filter_group(record)},
     )
 
 
@@ -1153,11 +1161,9 @@ def _misc_case_row(record: dict) -> object:
 def _type_2_following_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
-        ("bet", "Followed by bet"),
         ("lamed", "Followed by lamed"),
         ("guttural", "Followed by guttural"),
-        ("mem", "Followed by mem"),
-        ("resh", "Followed by resh"),
+        ("not-lamed-or-guttural", "Not followed by ל or a gutt."),
     )
     option_html = "".join(
         f'<option value="{value}">{label}</option>' for value, label in options
@@ -1190,8 +1196,9 @@ def build_type_2_body(survey: dict) -> list:
         mb_html.heading_level_2("Every type 2 case in MAM"),
         _para(
             "Every row's chanted word has a final syllable phonetically closed by a"
-            " guttural. The following word is gray. Its initial consonant selects the"
-            " bet, guttural, lamed, mem or resh filter. Every following word has initial"
+            " guttural. The following word is gray. The filters show whether the following"
+            " word begins with lamed, a guttural, or neither lamed nor a guttural. Every"
+            " following word has initial"
             " stress, but that stress is not a type-2 condition."
         ),
         mb_html.para(
