@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–2 completed 2026-09-06; Phase 3 paused before Land for a historical-revision decision; MAM-parsed, MAM-with-doc, and MAM-OSIS remain.
+State: Phases 0–2 completed 2026-09-06; Phase 3 resumed with explicit historical inputs and optional sibling history access; MAM-with-doc and MAM-OSIS remain later lanes.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -258,7 +258,7 @@ git -C C:/Users/BenDe/GitRepos/MAM-parsed rev-parse --verify '9ce6ee5^{commit}'
 git -C C:/Users/BenDe/GitRepos/MAM-basics rev-parse --verify '9ce6ee5^{commit}'
 ```
 
-**Proposed resolution, pending Ben's decision:** preserve access to the
+**Superseded proposal, not implemented:** preserve access to the
 source's pre-evacuation Git history through an ignored bare history cache
 under MAM-basics, fetched from the source remote when needed. Read legacy
 revisions from that cache and current/new revisions from MAM-basics, with
@@ -290,6 +290,48 @@ redirect configuration, workspace roster, or maintenance policy changed;
 no source clone was removed. Phases 4 and later remain unstarted. Resume
 Phase 3 only after the history strategy is decided, re-reading the required
 instructions and re-measuring current heads and the canonical suite.
+
+### Phase 3 history decision and resumed execution — 2026-09-06
+
+Ben's decision, 2026-09-06: preserve the historical versions required by the
+common change-log runs as explicit, tracked product inputs in MAM-basics.
+Preserve arbitrary historical comparisons through read access to a sibling
+MAM-parsed clone, required only for that rare mode. The rejected cache
+proposal is not implemented. No command automatically creates or fetches
+the optional clone, and its historical reads do not write to the clone.
+
+The resumed primary checkout was clean at
+`06a21a3acf3fc042a53c5faec32f8e802e625544`. The MAM-parsed source remained
+clean at `51082036e5907991d0d322cb6dfcc6404802099f`.
+
+1. Land commit `63cf6c98` copied every source blob except its Pages workflow:
+   95 files and 29,936,589 bytes under `MAM-parsed/` and
+   `gh-pages/MAM-parsed/`. Every staged blob matched the source, including
+   the complete README and all static assets.
+2. Licence and historical-input commit `8176e91d` retained the scoped MAM
+   licence and unresolved font terms. The historical tree stores the
+   named-release boundary inputs: 144 JSON blobs totaling 84,572,003 bytes.
+   Every staged historical JSON blob matched its recorded source commit.
+   Both commits were pushed to `main`.
+3. Before changing the reader, every named-release report and the latest
+   release against source `51082036` was generated into ignored scratch
+   files. The revised reader reproduced every HTML and JSON byte with
+   `REPO_MAM_PARSED_DIR` pointing at a nonexistent path. Explicit legacy
+   mode matched the stored-input comparison and failed when that clone was
+   absent. `--legacy-history` selects sibling refs; normal `HEAD` selects
+   the committed landed product. The migration metadata preserves the
+   initial source date and the release ordering across the move.
+4. The first repointed `py/main_parse.py go` run passed 79 checks with
+   1 pending documentation check. It changed 74 tracked destination mtimes
+   and zero tracked source mtimes. All original landed blobs remained
+   content-identical. Subsequent README, index-URL, and example-provenance
+   adaptations are required path/documentation changes, recorded separately
+   from that initial zero-difference regeneration.
+
+The remaining Repoint, Stubs, Empty, Remove, final suite, and deployment
+checks are in progress. The historical source-only README link and
+`good_ending` key have been corrected in the preserved product README;
+every original substantive section remains, with no deliberate drop.
 
 ## Phase 4 — MAM-with-doc
 

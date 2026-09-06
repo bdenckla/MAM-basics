@@ -220,11 +220,7 @@ class CaseCheck:
 @lru_cache(maxsize=32)
 def _verse_texts_for_book(std_book_name: str) -> dict[tuple[int, int, int], str]:
     filename, _ = expected_plus_location_for_standard_book_name(std_book_name)
-    plus_path = (
-        paths.require_sibling("MAM-parsed", paths.sibling_repo("MAM-parsed"))
-        / "plus"
-        / filename
-    )
+    plus_path = paths.require_mam_parsed_plus_dir().parent / "plus" / filename
     return verse_texts_by_location(json.loads(plus_path.read_text(encoding="utf-8")))
 
 

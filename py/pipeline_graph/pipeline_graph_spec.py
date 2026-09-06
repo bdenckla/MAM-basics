@@ -33,8 +33,8 @@ class RawEdge:
 
 DISPLAY_NODES = [
     DisplayNode("ds_go_csv", "in/mam-go/\n(Google CSV)", DATA_STORES),
-    DisplayNode("ds_parsed_plus", "../MAM-parsed/plus/", DATA_STORES),
-    DisplayNode("ds_parsed_plain", "../MAM-parsed/plain/", DATA_STORES),
+    DisplayNode("ds_parsed_plus", "MAM-parsed/plus/", DATA_STORES),
+    DisplayNode("ds_parsed_plain", "MAM-parsed/plain/", DATA_STORES),
     DisplayNode("ds_ws", "in/mam-ws/\n(Wikisource JSON)", DATA_STORES),
     DisplayNode("src_ws_live", "Hebrew Wikisource", DATA_STORES),
     DisplayNode("ds_simple", "MAM-simple/", DATA_STORES),
@@ -68,8 +68,8 @@ DISPLAY_NODES = [
 RAW_NODES = [
     RawNode("in_mam_go_csv", "in/mam-go/\n(Google CSV)", "ds_go_csv"),
     # mpu = MAM-parsed-plus (short internal ID)
-    RawNode("mpu_plus", "../MAM-parsed/plus/", "ds_parsed_plus"),
-    RawNode("mpu_plain", "../MAM-parsed/plain/", "ds_parsed_plain"),
+    RawNode("mpu_plus", "MAM-parsed/plus/", "ds_parsed_plus"),
+    RawNode("mpu_plain", "MAM-parsed/plain/", "ds_parsed_plain"),
     RawNode("in_mam_ws", "in/mam-ws/\n(Wikisource JSON)", "ds_ws"),
     RawNode("src_hebrew_wikisource", "Hebrew Wikisource", "src_ws_live"),
     RawNode("out_mam_simple", "MAM-simple/", "ds_simple"),

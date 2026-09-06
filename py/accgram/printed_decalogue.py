@@ -17,7 +17,7 @@ records clean / ungrammatical per chanted verse.
 Both manuscript versions serve as the baseline (MAM's own authoritative text: expected all
 clean); the printed versions are the object of study.  That baseline is not taken on trust:
 ``decalogue_m_trad`` checks all four m-trad strands, word for word and stroke for stroke,
-against MAM's own parse of its own text in the sibling repo MAM-parsed's ``plus`` tree, and
+against MAM's own parse of its own text in the landed MAM-parsed product's ``plus`` tree, and
 they agree exactly (issue wlc-utils#68).  The verdict is stable and stark:
 
   * **taxton** parses clean in both books and both traditions;

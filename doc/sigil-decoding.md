@@ -433,7 +433,7 @@ show it.
 #### Re-deriving these counts
 
 The occurrence figures above are the number of times each qualifier appears inside a hyphenated
-compound, across `../MAM-parsed/plus/*.json`. For מסורת and מסורות a comma-joined sigil list
+compound, across `MAM-parsed/plus/*.json`. For מסורת and מסורות a comma-joined sigil list
 credits every sigil in it (item 6 above), so one compound can contribute several credits, and
 Isaiah 56:10's `לד` is read as `ל,ד` against what the corpus has, which is the one place these
 figures deliberately depart from the text they are measured on. A
@@ -472,7 +472,7 @@ search a one-letter sigil in **sigil position** — flanked by a hyphen, a comma
 sign — read every hit rather than counting them, and expect the total to be a floor.
 
 **A third trap, this one for citations rather than counts: a file name plus a chapter number is
-not a citation.** Five files under `../MAM-parsed/plus/` hold more than one book, under a
+not a citation.** Five files under `MAM-parsed/plus/` hold more than one book, under a
 `book39s` list whose entries are named by `header.sub_book_names` — `BA-Samuel.json` (2),
 `BC-Kings.json` (2), `FA-Ezra-Nexemiah.json` (2), `FC-Chronicles.json` (2) and
 `CA-The-12-Minor-Prophets.json` (12). A walk that keys a site by file and chapter alone therefore

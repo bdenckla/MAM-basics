@@ -19,7 +19,7 @@ from hkq_cmn.verify_table_words_in_mam_plus import verify_table_words_in_mam_plu
 from mb_cmn import paths
 from py_render.rt_html import render_table_data_findings_html
 
-DEFAULT_MAM_PARSED_PATH = paths.sibling_repo("MAM-parsed")
+DEFAULT_MAM_PARSED_PATH = paths.mam_parsed_dir()
 DEFAULT_UXLC_UTILS_PATH = paths.repo_root()
 DEFAULT_TABLE_JSON_PATH = hkq_paths.table_data_json_path()
 DEFAULT_FINDINGS_HTML_PATH = hkq_paths.findings_html_path()
@@ -80,7 +80,7 @@ def main() -> None:
         "--mam-parsed-path",
         type=Path,
         default=DEFAULT_MAM_PARSED_PATH,
-        help="Sibling MAM-parsed repository used for verification.",
+        help="MAM-parsed product directory used for verification.",
     )
     parser.add_argument(
         "--uxlc-utils-path",

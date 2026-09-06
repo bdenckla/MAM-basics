@@ -6,7 +6,7 @@ To regenerate the output HTML, run from the repo root::
 
     .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/mpplus_haarah_2.html.
+Output goes to gh-pages/MAM-parsed/plus/html/mpplus_haarah_2.html.
 """
 
 from mb_misc import mb_html

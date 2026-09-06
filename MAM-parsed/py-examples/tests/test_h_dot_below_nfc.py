@@ -47,7 +47,9 @@ def _repo_root() -> Path:
     return Path(out)
 
 
-REPO_ROOT = _repo_root()
+GIT_ROOT = _repo_root()
+REPO_ROOT = Path(__file__).resolve().parents[2]
+_PRODUCT_PREFIX = REPO_ROOT.relative_to(GIT_ROOT).as_posix() + "/"
 
 _COMBINING_DOT_BELOW = chr(0x0323)
 _H_WITH_DOT_BELOW = chr(0x1E25)
@@ -77,6 +79,7 @@ _BINARY_EXTENSIONS = {
 # emit LF/NFC.
 _EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
+    "historical/",
     "plain/",
     "plus/",
     "py-examples-out/",
@@ -94,15 +97,15 @@ def _is_excluded(posix_rel: str) -> bool:
 
 def _tracked_files_in_scope():
     result = subprocess.run(
-        ["git", "ls-files"],
-        cwd=REPO_ROOT,
+        ["git", "ls-files", "--", _PRODUCT_PREFIX],
+        cwd=GIT_ROOT,
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     in_scope = []
     for line in result.stdout.splitlines():
-        rel = line.strip()
+        rel = line.strip().removeprefix(_PRODUCT_PREFIX)
         if not rel:
             continue
         posix_rel = rel.replace("\\", "/")

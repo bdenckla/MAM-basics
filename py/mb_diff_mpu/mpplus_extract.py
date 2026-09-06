@@ -6,9 +6,8 @@ Exports:
 """
 
 import json
-import subprocess
 
-from mb_cmn import paths
+from mb_diff_mpu import mpplus_revisions
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2
 from mb_diff_mpu.mpplus_file_matching import (
@@ -28,34 +27,12 @@ from mb_diff_mpu.mpplus_structure import (
     template_name_counter,
 )
 
-MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
 _DROP = object()
-
-# ── Git helpers ──────────────────────────────────────────────
 
 
 def _git_show(rev, path):
-    """Read a file from a specific git revision of MAM-parsed.
-
-    RAISES RATHER THAN RETURNING EMPTY.  Every caller passes a path that
-    ``_list_plus_files`` has just listed at this same revision, so the file is in that
-    tree and a non-zero exit here means git could not read what it had just enumerated
-    -- not that the book is absent from that release.  This returned ``None`` on failure
-    until 2026-08-31, and ``diff_all_books`` skipped the pair, which is half of how a
-    whole release could be reported as "0 raw changes found"; see ``_list_plus_files``.
-    """
-    result = subprocess.run(
-        ["git", "-C", MAM_PARSED_DIR, "show", f"{rev}:{path}"],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"git show {rev}:{path} failed in {MAM_PARSED_DIR}"
-            f" (exit {result.returncode}): {result.stderr.strip()}"
-        )
-    return result.stdout
+    """Read a stored or Git-backed plus input; an absent input is a hard error."""
+    return mpplus_revisions.resolve(rev).read(path.removeprefix("plus/"))
 
 
 def _canonicalize_template_names(node):
@@ -157,56 +134,8 @@ def _ep_without_redundant_scrdff_notes(ep):
 
 
 def _list_plus_files(rev):
-    """List plus/ filenames (without the 'plus/' prefix) at a revision.
-
-    AN UNREADABLE REVISION IS A HARD ERROR, NOT AN EMPTY RELEASE.  This ignored
-    ``returncode`` until 2026-08-31, so a revision git could not resolve produced no
-    output, an empty file list, no matched pairs and therefore no diffs -- and the
-    change-log report for that release was written out saying "0 changes found", which
-    is indistinguishable from a release that genuinely changed nothing.
-
-    A SHALLOW CLONE IS THE WAY IN, and it is not exotic: the sibling clone in a cloud
-    session is made with ``--depth 1``, which puts every release boundary in
-    MAM-with-doc's releases.json outside the history.  On 2026-08-31 that wrote five
-    falsified reports before an unrelated ``check=True`` two calls later happened to
-    stop the run.  The tracked generated artifact is this repo's test (CLAUDE.md), so a
-    generator that reports zero when it cannot see is worse than one that crashes.
-    """
-    result = subprocess.run(
-        [
-            "git",
-            "-C",
-            MAM_PARSED_DIR,
-            "-c",
-            "core.quotePath=false",
-            "ls-tree",
-            "--name-only",
-            rev,
-            "plus/",
-        ],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"git ls-tree {rev} plus/ failed in {MAM_PARSED_DIR}"
-            f" (exit {result.returncode}): {result.stderr.strip()}\n"
-            f"If that clone is shallow, deepen it:"
-            f" git -C {MAM_PARSED_DIR} fetch --depth=2000 origin"
-        )
-    lines = result.stdout.strip().split("\n")
-    filenames = [line.strip().removeprefix("plus/") for line in lines if line.strip()]
-    if not filenames:
-        raise RuntimeError(
-            f"no plus/ files at revision {rev} in {MAM_PARSED_DIR}."
-            f" That revision resolves but its tree has no plus/ directory,"
-            f" so there is nothing to diff against."
-        )
-    return filenames
-
-
-# ── Book-level diffing ───────────────────────────────────────
+    """List plus JSON inputs; an unreadable or empty revision is a hard error."""
+    return mpplus_revisions.resolve(rev).filenames()
 
 
 def _diff_one_file(old_json, new_json, canonical_stem, old_rev, new_rev):

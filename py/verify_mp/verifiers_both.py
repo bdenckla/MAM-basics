@@ -44,8 +44,8 @@ def verify_mp_both_file_naming_book24_prefixes(
     del ctx  # This check reads file names directly.
     declared = frozenset(record.data["prefixes"])
 
-    plus_paths = glob.glob(str(paths.sibling_repo("MAM-parsed") / "plus" / "*.json"))
-    plain_paths = glob.glob(str(paths.sibling_repo("MAM-parsed") / "plain" / "*.json"))
+    plus_paths = glob.glob(str(paths.mam_parsed_dir() / "plus" / "*.json"))
+    plain_paths = glob.glob(str(paths.mam_parsed_dir() / "plain" / "*.json"))
     assert plus_paths, "no plus JSON files found for file-naming verification"
     assert plain_paths, "no plain JSON files found for file-naming verification"
 

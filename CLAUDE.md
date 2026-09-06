@@ -657,23 +657,30 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-**In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Ten test
-files read three sibling repos — MAM-parsed, MAM-with-doc, and MAM-private — plus the local
-MAM-simple product. `paths.repos_root()` resolves the three sibling repos under the
+**In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** Tests
+read MAM-with-doc and MAM-private, plus the local MAM-simple and MAM-parsed
+products. `paths.repos_root()` resolves the remaining sibling repos under the
 worktree's own parent, `.claude/worktrees/`, where none of them is. A fresh primary
 checkout run after the Leningrad move passed **975 passed, 5 skipped, 65 subtests**
 on 2026-09-03.
 
 ```powershell
-$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
 ```
 
-Sibling-repo paths (MAM-parsed, MAM-with-doc, MAM-OSIS, MAM-for-Sefaria) are built from
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+```
+
+Sibling-repo paths (MAM-with-doc, MAM-OSIS, and optional MAM-parsed legacy history) are built from
 `mb_cmn.paths.repo_root()` / `repos_root()` / `sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
 literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. The local MAM-simple product uses `repo_root() / "MAM-simple"` and
-does not require `REPOS_ROOT`. Exception: a handful of files that get vendored/copied verbatim
+code should use it too. The local MAM-simple, MAM-parsed, and MAM-for-Sefaria products
+do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
+`MAM-parsed/historical/` inputs and MAM-basics revisions; only explicit
+`--legacy-history` comparisons require read access to a sibling MAM-parsed
+clone. No command fetches or creates that optional clone. Exception: a handful of files that get vendored/copied verbatim
 into sibling repos (`mb_cmn/read_books_from_mam_parsed_plus.py`, `mb_cmn/provenance.py`,
 `mb_misc/write_utils.py`, `mb_sefaria/mam4sef_or_ajf.py`) intentionally keep their
 existing cwd-relative or self-contained `__file__`-relative logic instead, so they stay

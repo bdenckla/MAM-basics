@@ -193,6 +193,9 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc422/",
     "gh-pages/",
     "MAM-simple/",
+    "MAM-parsed/plain/",  # Generated corpus; excluded by the source product's lint.
+    "MAM-parsed/plus/",
+    "MAM-parsed/historical/",  # Verbatim historical source data, never normalized.
     "uxlc/",
     "aleppo/",
     "cam1753/",

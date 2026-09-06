@@ -5,7 +5,7 @@ To regenerate the output HTML, run from the repo root::
 
     .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/index.html.
+Output goes to gh-pages/MAM-parsed/index.html.
 """
 
 from mb_misc import mb_html
@@ -14,7 +14,7 @@ from mb_author.claim import ClaimCollection
 
 _FNAME = "index.html"
 _TITLE = "MAM-parsed"
-_README_URL = "https://github.com/bdenckla/MAM-parsed/blob/main/README.md"
+_README_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-parsed/README.md"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):

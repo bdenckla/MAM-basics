@@ -24,7 +24,7 @@ MS Word, etc.), but the process just changed, so here goes.
 
 7. **Run `py/main_download.py fr-google`.** Auto-edits will be reflected in
    changes to CSV files in the `MAM-basics` repo and JSON files in the
-   `MAM-parsed` repo.
+   `MAM-parsed/` product directory in MAM-basics.
 
 8. **Run `py/main_diff.py wsgo`** again to verify that the diffs go empty.
 

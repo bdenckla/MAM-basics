@@ -66,7 +66,7 @@ class StepRecord:
 def _run_vendored_tmpl_survey_toy():
     subprocess.run(
         [sys.executable, "py-examples/main_tmpl_survey_toy_example.py"],
-        cwd=_REPOS / "MAM-parsed",
+        cwd=paths.mam_parsed_dir(),
         check=True,
     )
 

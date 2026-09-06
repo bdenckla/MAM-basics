@@ -124,9 +124,8 @@ SIBLINGS_REACHED: dict[str, str] = {
         " source repository's frozen redirect stubs."
     ),
     "MAM-parsed": (
-        "The corpus almost everything here reads: paths.mam_parsed_path and"
-        " mam_parsed_plus_dir, a main_0_mega subprocess cwd, and"
-        " read_books_from_mam_parsed_plus.py's vendored '../MAM-parsed' default."
+        "Optional legacy-history comparisons and the portable reader's external"
+        " vendored default. Normal MAM-basics corpus reads use the landed product."
     ),
     "MAM-for-Sefaria": (
         "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
@@ -166,8 +165,6 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
             " and nothing opens them"
         )
         for label in (
-            "../MAM-parsed/plus/",
-            "../MAM-parsed/plain/",
             "../MAM-with-doc/docs/",
             "../MAM-OSIS/",
         )

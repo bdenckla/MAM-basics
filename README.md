@@ -6,12 +6,13 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Core export pipeline
 
-`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/), and refreshes its example-program support files there.
+`main_mam_simple.py` reads from the [MAM-parsed](MAM-parsed/README.md) product directory, produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/), and refreshes its example-program support files there.
 
 ### Landed product and corpus directories
 
 Each landed product keeps its detailed README beside the files it describes. This root index names the product directories that formerly had repositories of their own.
 
+- [`MAM-parsed/`](MAM-parsed/README.md) — plain and plus parsed MAM JSON, historical release inputs, documentation, and a toy example
 - [`MAM-simple/`](MAM-simple/) — XML and JSON MAM exports in three versifications
 - [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV MAM export suitable for Sefaria import; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data and photographed-page records

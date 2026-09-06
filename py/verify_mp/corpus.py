@@ -12,8 +12,8 @@ from mb_cmn import paths
 if TYPE_CHECKING:
     from mb_author.claim import ClaimRecord
 
-_PLUS_DIR = str(paths.sibling_repo("MAM-parsed") / "plus")
-_PLAIN_DIR = str(paths.sibling_repo("MAM-parsed") / "plain")
+_PLUS_DIR = str(paths.mam_parsed_dir() / "plus")
+_PLAIN_DIR = str(paths.mam_parsed_dir() / "plain")
 
 
 @dataclass

@@ -113,7 +113,7 @@ def _iter_plus_verse_payloads(
 # that hits present only in the ignored params will not be found.
 # ---------------------------------------------------------------------------
 # Per-template extraction rules below mirror those in:
-#   MAM-parsed/gh-pages/plus/html/mpplus.html and its siblings, the rendered
+#   gh-pages/MAM-parsed/plus/html/mpplus.html and its siblings, the rendered
 #     structure reference, whose source is this repo's py/author_misc/ --
 #     mpplus_aot.py for the special-letter schema, mp_cmn_groups_misc.py for
 #     the navigation and book-title rows
@@ -291,7 +291,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             # from which the same conclusion about the word's contents can be
             # reached.  Param 5 is a letter/type summary derivable from params 3
             # and 4.  py/author_misc/mpplus_aot.py states that schema and
-            # MAM-parsed/gh-pages/plus/html/mpplus_aot.html is what it renders.
+            # gh-pages/MAM-parsed/plus/html/mpplus_aot.html is what it renders.
             #
             # PARAM 1 IS TAKEN BECAUSE THE OTHER THREE FLATTENERS TAKE IT, not
             # because it is easier to flatten -- param 2 is already a plain

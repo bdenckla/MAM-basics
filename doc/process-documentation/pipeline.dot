@@ -10,8 +10,8 @@ digraph mam_pipeline {
     // ── Data stores ──
     node [shape=cylinder];
     ds_go_csv        [label="in/mam-go/\n(Google CSV)"];
-    ds_parsed_plus   [label="../MAM-parsed/plus/"];
-    ds_parsed_plain  [label="../MAM-parsed/plain/"];
+    ds_parsed_plus   [label="MAM-parsed/plus/"];
+    ds_parsed_plain  [label="MAM-parsed/plain/"];
     ds_ws            [label="in/mam-ws/\n(Wikisource JSON)"];
     src_ws_live      [label="Hebrew Wikisource"];
     ds_simple        [label="MAM-simple/"];

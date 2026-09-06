@@ -124,7 +124,8 @@
           "sha": "c75acf94da3fccc7f48287cd6a25d6712f9fb4e0",
           "size": 811728
         }
-      ]
+      ],
+      "commits_to_migration": 328
     },
     "3d5ecfd83f9a6e943f51e3d316b8345b762aa483": {
       "date": "2025-03-19",
@@ -249,7 +250,8 @@
           "sha": "ace59bd7af6160cc4c06fe2458c20d76f25430d6",
           "size": 862208
         }
-      ]
+      ],
+      "commits_to_migration": 279
     },
     "049e636beeaee721f64fd958f670ffe29a9f1e5c": {
       "date": "2025-03-19",
@@ -374,7 +376,8 @@
           "sha": "ace59bd7af6160cc4c06fe2458c20d76f25430d6",
           "size": 862208
         }
-      ]
+      ],
+      "commits_to_migration": 278
     },
     "cc43fe04ebc01122de1082cd4ea849fb657d528f": {
       "date": "2026-03-06",
@@ -499,7 +502,8 @@
           "sha": "9002337150830bec2aaf43f5a602627256aa3e9b",
           "size": 863382
         }
-      ]
+      ],
+      "commits_to_migration": 259
     },
     "1880cbbda9a769c90126f74cf4c406452af5b209": {
       "date": "2026-03-16",
@@ -624,7 +628,8 @@
           "sha": "12351d802a85315921021d875cdb2c0543d89d2c",
           "size": 815969
         }
-      ]
+      ],
+      "commits_to_migration": 241
     },
     "9ce6ee5d2d611f034208bd2a72d8acb064dd5f19": {
       "date": "2026-04-14",
@@ -749,7 +754,8 @@
           "sha": "d44da26dd1d50bb47d9750c3954db329c61f5527",
           "size": 816345
         }
-      ]
+      ],
+      "commits_to_migration": 219
     }
   },
   "migration": {

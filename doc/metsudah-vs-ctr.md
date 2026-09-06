@@ -83,7 +83,7 @@ same-origin `fetch()` from page context, walking `link[rel="next"]`.
 ## Preconditions for the executing session
 
 - Repos: `C:/Users/BenDe/GitRepos/MAM-basics` (venv at `.venv/Scripts/python.exe`);
-  sibling `C:/Users/BenDe/GitRepos/MAM-parsed` (for `plus/E*.json` MAM text, used only for
+  landed `C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed` (for `plus/E*.json` MAM text, used only for
   spot checks — MAM is not a primary in this comparison).
 - Scratch scripts live in `.novc/metsudah-vs-ctr/` (gitignored), stdlib-only, run from the
   repo root with the venv python. No `sys.path` surgery; run black on any `.py` written.

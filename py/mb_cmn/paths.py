@@ -6,8 +6,8 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-MAM-simple is a landed product under this repository's ``MAM-simple/`` directory, so its
-paths chain directly from ``repo_root()``.  Cross-repo dependencies (MAM-parsed,
+MAM-simple and MAM-parsed are landed products under this repository, so their
+paths chain directly from ``repo_root()``. Cross-repo dependencies (
 MAM-with-doc, MAM-OSIS, wlc-utils, ...) are by default looked up as siblings of this repo
 under a common parent directory.  That convention breaks when the repo is checked out
 somewhere the siblings are not co-located -- most notably a git worktree, whose root is
@@ -216,34 +216,19 @@ def _repo_qualified(repo_name: str, relative: Path) -> str:
     return repo_name if rel == "." else f"{repo_name}/{rel}"
 
 
+def mam_parsed_dir() -> Path:
+    """MAM-parsed's landed product directory in MAM-basics."""
+    return repo_root() / "MAM-parsed"
+
+
 def mam_parsed_path() -> str:
-    """Return the MAM-parsed clone, as the string ``read_parsed_plus_bk39s`` wants.
+    """Return the landed product path for the portable plus reader.
 
-    THE CALLER SUPPLIES THIS PATH BECAUSE THE READER CANNOT.
-    ``mb_cmn/read_books_from_mam_parsed_plus.py`` defaults its ``mam_parsed_path``
-    argument to the cwd-relative literal ``"../MAM-parsed"``, and that default has to
-    stay: the file is vendored verbatim into al-hatorah's ``py/mb_cmn/``, which has no
-    ``paths.py`` for it to import, so consulting this module there would be an
-    ImportError rather than a policy violation.  The literal is right whenever the repo
-    root sits beside its siblings and is the cwd, and wrong in a git worktree, whose
-    root is ``.../.claude/worktrees/<name>`` -- so ``"../MAM-parsed"`` resolves to
-    ``.claude/worktrees/MAM-parsed``, a directory that has never existed.  Passing the
-    path in is what the reader's argument is for, and it puts the override chain this
-    module documents back in front of every caller.
-
-    Returned as a ``str`` rather than a ``Path`` because the reader interpolates it into
-    ``f"{mam_parsed_path}/plus/{...}.json"``.
-
-    These three lines started as ``scan_pages/check.py``'s own ``mam_parsed_path``, the
-    one caller already worktree-correct when the other seventeen were converted on
-    2026-08-07; check.py now calls this instead, so there is one copy again.
+    Callers supply this path explicitly. The portable reader's legacy default
+    remains for external vendored consumers; MAM-basics does not use that default.
     """
-    clone = sibling_repo("MAM-parsed")
-    # Require the subtree the plus reader actually opens, not merely the clone: an
-    # empty or half-cloned MAM-parsed should fail here, naming the overrides, rather
-    # than as a bare FileNotFoundError on the first book.
-    require_sibling("MAM-parsed", clone / "plus")
-    return str(clone)
+    require_mam_parsed_plus_dir()
+    return str(mam_parsed_dir())
 
 
 def mam_simple_dir() -> Path:
@@ -284,16 +269,19 @@ def require_mam_simple_vtrad_mam_dir() -> Path:
 def mam_parsed_plus_dir() -> Path:
     """MAM-parsed's ``plus`` subtree: one JSON per book24, minirow cells C/D/E.
 
-    ``mam_parsed_path`` above names the same clone and is not a duplicate of this: it
-    returns the clone itself, as the ``str`` that ``read_parsed_plus_bk39s`` interpolates,
+    ``mam_parsed_path`` above names the same product directory and is not a duplicate of this: it
+    returns the product directory, as the ``str`` that ``read_parsed_plus_bk39s`` interpolates,
     for callers that hand the path to that reader rather than opening files themselves.
     """
-    return sibling_repo("MAM-parsed") / "plus"
+    return mam_parsed_dir() / "plus"
 
 
 def require_mam_parsed_plus_dir() -> Path:
     """``mam_parsed_plus_dir``, checked -- see ``require_sibling`` for why this is not a skip."""
-    return require_sibling("MAM-parsed", mam_parsed_plus_dir())
+    path = mam_parsed_plus_dir()
+    if not path.is_dir():
+        raise FileNotFoundError(f"MAM-parsed's landed plus JSON is absent: {path}")
+    return path
 
 
 def al_hatorah_phonetic_dir() -> Path:

@@ -6,7 +6,7 @@ Subcommands:
         indexes at in/scan-pages/. Refuses, naming names, on any file it cannot
         classify or that OneDrive has left as a cloud-only placeholder.
     check
-        Lint the tracked indexes. Needs the MAM-parsed sibling, and fails rather
+        Lint the tracked indexes. Needs the landed MAM-parsed product, and fails rather
         than skipping without it; from a worktree, set REPOS_ROOT.
 
 ``lookup`` and ``census`` arrive with Phase 1.

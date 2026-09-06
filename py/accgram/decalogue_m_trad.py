@@ -6,7 +6,7 @@ two copies had better agree:
 
 * the vendored Hebrew Wikisource data ``in/accgram/printed_decalogue_teamim.json``
   (``tradition: "manuscript"``), which the pages read live; and
-* the sibling repo MAM-parsed's ``plus`` subtree, MAM's own parse of its own text.
+* the landed MAM-parsed product's ``plus`` subtree, MAM's own parse of its own text.
 
 This module reads each source into the same ``Strand`` shape and diffs them.  Nothing
 generates output from it; ``py/tests/test_decalogue_m_trad.py`` is the consumer, so a

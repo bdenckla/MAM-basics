@@ -20,7 +20,7 @@ judgment that settles a suggestion is written down deliberately, with its author
 cited, in ``hkq_cmn/mam_suggestion_dispositions.py``.  Both modules' docstrings
 state the boundary.
 
-Verification against the sibling ``../MAM-parsed/plus/*.json`` is part of the
+Verification against the landed ``MAM-parsed/plus/*.json`` is part of the
 ingest rather than a command of its own.  It never fails the run: a case whose
 form is not at its stated atom is a fact about Holman's numbering to be read off
 the extract, not a reason to refuse the whole message.  That is the opposite of

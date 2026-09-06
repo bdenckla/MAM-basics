@@ -6,7 +6,7 @@ To regenerate the output HTML, run from the repo root::
 
     .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/mpplain_multimark.html.
+Output goes to gh-pages/MAM-parsed/plain/html/mpplain_multimark.html.
 """
 
 from mb_author import author

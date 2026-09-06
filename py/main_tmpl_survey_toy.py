@@ -4,7 +4,7 @@
 from mb_cmn import paths
 from mb_misc import tmpl_survey_toy
 
-_PLUS_PATH = str(paths.sibling_repo("MAM-parsed") / "plus" / "BA-Samuel.json")
+_PLUS_PATH = str(paths.mam_parsed_dir() / "plus" / "BA-Samuel.json")
 
 
 def almost_main():

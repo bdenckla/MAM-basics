@@ -3,7 +3,7 @@
 
 Subcommands:
     go
-                Parse downloaded Google Sheets data into ../MAM-parsed outputs.
+                Parse downloaded Google Sheets data into MAM-parsed outputs within MAM-basics.
     ws
                 Parse downloaded Wikisource data into local parsed JSON outputs.
 

@@ -14,8 +14,8 @@ from mb_cmn import paths
 
 _PLAIN_OUT_DIR = "out/tmpl-survey-plain"
 _PLUS_OUT_DIR = "out/tmpl-survey-plus"
-_PLAIN_SVG_DIR = str(paths.sibling_repo("MAM-parsed") / "gh-pages" / "plain" / "svg")
-_PLUS_SVG_DIR = str(paths.sibling_repo("MAM-parsed") / "gh-pages" / "plus" / "svg")
+_PLAIN_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plain" / "svg")
+_PLUS_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plus" / "svg")
 _PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
     "py/tmpl_survey/expanded_stack_grammar_plain.lock.json"
 )

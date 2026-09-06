@@ -1,15 +1,15 @@
 # Navigating MAM-parsed-plus JSON
 
-Full documentation lives at `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
+Full documentation lives at [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html).
 
 ## File naming
 
-Files are at `../MAM-parsed/plus/<book>.json` with abbreviated names:
+Files are at `MAM-parsed/plus/<book>.json` with abbreviated names:
 - `A5-Deuter.json` (not `A5-Deuteronomy.json`)
 - `BC-Kings.json` (not `BC-Kings_II.json`)
 - `BA-Samuel.json` (not `BA-Samuel_I.json`)
 
-Use `ls ../MAM-parsed/plus/` to see the exact names.
+Use `ls MAM-parsed/plus/` to see the exact names.
 
 ## Structure
 

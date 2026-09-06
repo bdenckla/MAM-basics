@@ -1,6 +1,6 @@
 # MAM-parsed
- 
-This Git repository contains
+
+This MAM-basics product directory contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
 in two parsed formats: "plain" and "plus."
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
@@ -25,7 +25,7 @@ In contrast, the contents of the "plus" format files diverge
 from the Google Sheet in the following ways:
 
 * Compared to the Google Sheet, the "plus" format adds:
-    * A `good_ending` key to the `book39` header.
+    * A `good_ending_plus` key to the `book39` header.
     * A targeted version of each מ:הערה template call.
     * A template marking each word with special letters.
 * Compared to the Google Sheet, the "plus" format removes:
@@ -34,11 +34,11 @@ from the Google Sheet in the following ways:
 
 For detailed documentation of the file structures, see:
 
-* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-parsed/plain/html/mpplain.html) — structure reference for the "plain" format
-* [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
+* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-basics/MAM-parsed/plain/html/mpplain.html) — structure reference for the "plain" format
+* [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
-This Git repository also contains a toy sample application
-[`main_tmpl_survey_toy.py`](py-examples/main_tmpl_survey_toy.py),
+This product directory also contains a toy sample application
+[`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),
 giving some sense of how the JSON files might be used.
 It writes its output to [`py-examples-out/tmpl_survey_toy.json`](py-examples-out/tmpl_survey_toy.json).
 
@@ -47,7 +47,52 @@ based on their format, be aware that their format is still subject to change at 
 
 Other versions/formats of MAM (each with their tradeoffs) include:
 
-* [MAM-simple](https://github.com/bdenckla/MAM-simple)
-* [MAM for Sefaria](https://github.com/bdenckla/MAM-for-Sefaria)
+* [MAM-simple](../MAM-simple/README.md)
+* [MAM for Sefaria](../MAM-for-Sefaria/README.md)
 
 Questions? Email maintainer@miqra.simplelogin.com.
+
+## Historical comparisons
+
+The [historical release inputs](historical/README.md) are tracked product data.
+Named-release and current change-log comparisons use MAM-basics alone for
+MAM-parsed inputs. Arbitrary pre-migration revisions require read access to
+a sibling MAM-parsed clone and the explicit `--legacy-history` mode.
+
+## Regeneration and the example
+
+From the MAM-basics root, regenerate plain/plus data, the example support file,
+and the published documentation:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_parse.py go
+```
+
+Run the toy example from this product directory; its existing output is the
+one-file differential reference:
+
+```powershell
+Set-Location C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py-examples/main_tmpl_survey_toy_example.py
+```
+
+## Download only this product
+
+A sparse checkout selects this product from MAM-basics without downloading
+the other product trees. Choose an unused destination for the clone:
+
+```powershell
+git clone --filter=blob:none --sparse https://github.com/bdenckla/MAM-basics.git C:/Users/BenDe/Documents/MAM-parsed-sparse
+```
+
+```powershell
+git -C C:/Users/BenDe/Documents/MAM-parsed-sparse sparse-checkout set MAM-parsed
+```
+
+The files are under `C:/Users/BenDe/Documents/MAM-parsed-sparse/MAM-parsed/`.
+The historical inputs are included. This sparse checkout supplies data and
+the self-contained toy example; the full MAM-basics checkout supplies the
+product generators. No release archive is maintained.

@@ -250,7 +250,7 @@ def _make_bscv_dic(bscv_tuple):
 
 def _do_a_book24(bk24id, accum):
     my_utils_fm.show_progress_g(__file__, bk24id)
-    folder = str(paths.sibling_repo("MAM-parsed") / "plain")
+    folder = str(paths.mam_parsed_dir() / "plain")
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     in_path = f"{folder}/{osdf24}.json"
     with open(in_path, encoding="utf-8") as json_in_fp:

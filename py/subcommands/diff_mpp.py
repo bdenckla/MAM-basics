@@ -7,7 +7,10 @@ Usage:
     .venv/Scripts/python.exe py/main_diff.py mpp --old <rev> --new <rev>
     .venv/Scripts/python.exe py/main_diff.py mpp --all
 
-The revisions are git refs in the ../MAM-parsed repo (commits, tags, branches).
+Named historical releases read tracked MAM-parsed/historical/ snapshots.
+HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
+Use --legacy-history with --old and --new for arbitrary revisions in a sibling
+MAM-parsed clone. That rare mode requires read access and never fetches or clones.
 Output goes to ../MAM-with-doc/gh-pages/change-log/ by default. If the hash range
 matches an entry in releases.json, the release name is used as the filename;
 otherwise the sanitised hash range is used.
@@ -26,7 +29,6 @@ empty reports so stale content is not left behind.
 import argparse
 import json
 import os
-import subprocess
 
 from mb_cmn import paths
 from mb_diff_mpu import (
@@ -35,9 +37,9 @@ from mb_diff_mpu import (
     mpplus_html,
     mpplus_index,
     mpplus_json,
+    mpplus_revisions,
 )
 
-MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
 CHANGE_LOG_DIR = str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / "change-log")
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
@@ -49,21 +51,8 @@ PRESERVED_CHANGE_LOG_ARTIFACTS = (
 
 
 def _commit_date(rev):
-    """Return the commit date (YYYY-MM-DD) for a revision in MAM-parsed.
-
-    Checked, because the date lands in the report's own heading: an unresolvable
-    revision used to return "" here and the report was written with a blank date rather
-    than not written at all.  Same 2026-08-31 finding as mpplus_extract._list_plus_files,
-    where the shallow-clone case is set out.
-    """
-    result = subprocess.run(
-        ["git", "-C", MAM_PARSED_DIR, "log", "-1", "--format=%cs", rev],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        check=True,
-    )
-    return result.stdout.strip()
+    """Return the stored source date or the landed product's commit date."""
+    return mpplus_revisions.resolve(rev).date
 
 
 def _sanitize_rev(rev):
@@ -71,6 +60,7 @@ def _sanitize_rev(rev):
     return (
         rev.replace("/", "_")
         .replace("\\", "_")
+        .replace(":", "_")
         .replace("..", "_")
         .replace("^", "-")[:20]
     )
@@ -103,15 +93,8 @@ def _latest_release_entry():
 
 
 def _count_newer_commits(base_rev):
-    """Return how many commits exist in MAM-parsed between base_rev and HEAD."""
-    result = subprocess.run(
-        ["git", "-C", MAM_PARSED_DIR, "rev-list", "--count", f"{base_rev}..HEAD"],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        check=True,
-    )
-    return int(result.stdout.strip())
+    """Count source commits to migration and subsequent landed product commits."""
+    return mpplus_revisions.count_newer_commits(base_rev)
 
 
 def default_output_path(old_rev, new_rev):
@@ -212,8 +195,13 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         action="store_true",
         help="Generate all named releases from releases.json and regenerate index.html",
     )
-    parser.add_argument("--old", help="Old git revision (in ../MAM-parsed repo)")
-    parser.add_argument("--new", help="New git revision (in ../MAM-parsed repo)")
+    parser.add_argument("--old", help="Stored release or MAM-basics revision")
+    parser.add_argument("--new", help="Stored release or MAM-basics revision")
+    parser.add_argument(
+        "--legacy-history",
+        action="store_true",
+        help="Read both explicit revisions from a sibling MAM-parsed clone; never fetch or clone",
+    )
     parser.add_argument(
         "--output",
         default=None,
@@ -222,6 +210,10 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
 
 
 def run_from_args(args: argparse.Namespace) -> None:
+    if args.legacy_history and (args.all or not args.old or not args.new):
+        raise SystemExit(
+            "--legacy-history requires --old and --new and cannot accompany --all"
+        )
     if args.all:
         if args.old or args.new or args.output:
             raise SystemExit("--all cannot be combined with --old, --new, or --output")
@@ -231,7 +223,8 @@ def run_from_args(args: argparse.Namespace) -> None:
         if not args.old or not args.new:
             raise SystemExit("--old and --new must be provided together")
         output = args.output or default_output_path(args.old, args.new)
-        generate_report(args.old, args.new, output)
+        prefix = "legacy:" if args.legacy_history else ""
+        generate_report(prefix + args.old, prefix + args.new, output)
         return
     if args.output:
         raise SystemExit("--output requires --old and --new")

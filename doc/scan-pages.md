@@ -56,7 +56,7 @@ for a fresh session that has no other context.
   Either way lookup resolves to an atom position and returns the page whose record
   covers that atom, so a phrase deep in a page-straddling verse brings up the later
   page.
-- **Verse text and counts come from the MAM-parsed sibling at runtime** (via
+- **Verse text and counts come from the landed MAM-parsed product at runtime** (via
   `mb_cmn/read_books_from_mam_parsed_plus.py`), not from a second tracked copy — no
   duplicated artifact to drift. Versification: MAM's, and only MAM's. A page record is
   made by locating each page-edge phrase in MAM's text (the record shape below), so an
@@ -382,18 +382,14 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 ## Preconditions for the executing session
 
 - Repos: `C:/Users/BenDe/GitRepos/MAM-basics` (venv at `.venv/Scripts/python.exe`);
-  sibling `C:/Users/BenDe/GitRepos/MAM-parsed` present (verse counts). Scans at
+  product `C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed` present (verse counts). Scans at
   `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks` with the five folders named above.
 - Worktree-isolable (Ben asked 2026-08-07). Every tracked write is in MAM-basics, so a
   worktree isolates the undertaking fully; the spill is read-only. The scans path is
-  absolute and checkout-independent. The MAM-parsed sibling must be named explicitly
-  from a worktree — `REPOS_ROOT=C:/Users/BenDe/GitRepos` (or `REPO_MAM_PARSED_DIR`) —
-  because the default `repo_root().parent` lands in `.claude/worktrees/`;
-  `mb_cmn/paths.py` documents the chain, and its `require_sibling` fails loudly naming
-  both overrides when the sibling is absent. All new sibling-path construction goes
-  through `mb_cmn.paths.sibling_repo` + `require_sibling`, never a `../MAM-parsed`
-  literal. A worktree runs the primary clone's venv by absolute path, per the global
-  rules.
+  absolute and checkout-independent. Since the 2026-09-06 product move,
+  `mb_cmn.paths.mam_parsed_path()` selects the MAM-parsed product inside the
+  same checkout and fails if its plus inputs are absent. A worktree runs the
+  primary clone's venv by absolute path, per the global rules.
 - Baseline: **915 passed, 5 skipped**, measured 2026-08-07 at `fc23077` from the repo root
   of the primary clone. The 320 this bullet used to cite, from `doc/metsudah-vs-ctr.md`, is
   stale by a wide margin — that figure predates the accgram and CLC code arriving on

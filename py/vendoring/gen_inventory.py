@@ -38,7 +38,7 @@ _INTENTIONALLY_NON_VENDORED_ROWS = [
     {
         "repo": "MAM-parsed",
         "path": "py-examples/main_tmpl_survey_toy_example.py",
-        "notes": "Maintained directly in MAM-parsed; not copied from MAM-basics.",
+        "notes": "Maintained directly in MAM-basics/MAM-parsed; not copied from another entry program.",
     },
 ]
 

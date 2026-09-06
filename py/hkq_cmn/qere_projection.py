@@ -50,7 +50,7 @@ IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
 # Callers that count or deduplicate hits must account for this behaviour.
 # ---------------------------------------------------------------------------
 # Per-template extraction rules below mirror those in:
-#   MAM-parsed/gh-pages/plus/html/mpplus.html and its siblings, the rendered
+#   gh-pages/MAM-parsed/plus/html/mpplus.html and its siblings, the rendered
 #     structure reference, whose source is this repo's py/author_misc/
 #   MAM-private/mgketer/documentation/mpu-parsing.md (Template dispatch section)
 #   mam_plus_verse_data._collect_text_fragments

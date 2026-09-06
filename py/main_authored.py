@@ -15,9 +15,9 @@ Subcommands:
                 survey that needs the MAM-private clone; only main_0_mega.py
                 passes it.
     gen-mam-parsed-docs
-                Write index.html to MAM-parsed/gh-pages, plain docs to
-                MAM-parsed/gh-pages/plain/html, and plus docs to
-                MAM-parsed/gh-pages/plus/html.  Runs the claim verification
+                Write index.html to gh-pages/MAM-parsed, plain docs to
+                gh-pages/MAM-parsed/plain/html, and plus docs to
+                gh-pages/MAM-parsed/plus/html.  Runs the claim verification
                 afterwards unless --skip-verify-mp says not to.
     verify-mp
                 Run MAM-parsed claim verification without rewriting
@@ -190,7 +190,7 @@ def _run_verify_mp(*, claims) -> None:
 
 
 def cmd_gen_mam_parsed_docs(_args):
-    out_dir = str(paths.sibling_repo("MAM-parsed") / "gh-pages")
+    out_dir = str(paths.gh_pages_dir() / "MAM-parsed")
     claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
 
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False

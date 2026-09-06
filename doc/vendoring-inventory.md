@@ -33,4 +33,4 @@ These Python files live outside MAM-basics and are intentionally maintained in t
 | MAM-simple | py-examples/main_mam4sef_example.py | Maintained directly in MAM-simple; not copied from MAM-basics. |
 | MAM-simple | py-examples/main_mam_osis_example.py | Maintained directly in MAM-simple; not copied from MAM-basics. |
 | MAM-simple | py-examples/main_letter_small_job_example.py | Maintained directly in MAM-simple; not copied from MAM-basics. |
-| MAM-parsed | py-examples/main_tmpl_survey_toy_example.py | Maintained directly in MAM-parsed; not copied from MAM-basics. |
+| MAM-parsed | py-examples/main_tmpl_survey_toy_example.py | Maintained directly in MAM-basics/MAM-parsed; not copied from another entry program. |

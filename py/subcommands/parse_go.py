@@ -79,7 +79,7 @@ def almost_main():
     For each of the 6 CSVs (one per section), this program parses the
     Wikitext inside the CSV and outputs that to a JSON file.
     """
-    outfolder = str(paths.sibling_repo("MAM-parsed"))
+    outfolder = str(paths.mam_parsed_dir())
     all_plus_paths = []
     for secid in tbn.ALL_SECIDS:
         out_paths_for_section = do_one_section(secid, outfolder)

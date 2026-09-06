@@ -80,7 +80,7 @@ def maybe_handle_cli(parser, args):
 
 def _dataset_folder(dataset_key):
     assert dataset_key in {"plain", "plus"}, dataset_key
-    return str(paths.sibling_repo("MAM-parsed") / dataset_key)
+    return str(paths.mam_parsed_dir() / dataset_key)
 
 
 def _dataset_file_paths(dataset_key):

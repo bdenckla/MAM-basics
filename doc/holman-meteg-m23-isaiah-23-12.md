@@ -42,7 +42,7 @@ under Mem". The page's comparison table:
 | Aleppo Codex | ק֣וּמִֽי |
 
 So the suggestion is to add a meteg on the mem, the syllable after the stress. The verse in
-MAM (`../MAM-parsed/plain/C1-Isaiah.json` line 8052; `plus/` line 4780 has no note on the atom):
+MAM (`MAM-parsed/plain/C1-Isaiah.json` line 8052; `plus/` line 4780 has no note on the atom):
 
 ```
 ק֣וּמִי עֲבֹ֔רִי גַּם־שָׁ֖ם לֹא־יָנ֥וּחַֽ לָֽךְ׃
@@ -290,7 +290,7 @@ Nothing here says whether to accept M23. The facts that bear on it:
 
 ## How to re-establish the findings
 
-- The verse: search `../MAM-parsed/plain/C1-Isaiah.json` for `ק֣וּמִי עֲבֹ֔רִי`; one hit expected.
+- The verse: search `MAM-parsed/plain/C1-Isaiah.json` for `ק֣וּמִי עֲבֹ֔רִי`; one hit expected.
 - The census: run the script as its docstring says; it exits nonzero on any failure or
   mismatch and rewrites the report. Figures above are from MAM-private's state on 2026-09-03.
 - The קוּמִי shape: ripgrep `ק[\x{0591}-\x{05AE}]וּמִ[\x{0591}-\x{05AE}\x{05BD}]?י` over

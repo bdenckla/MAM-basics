@@ -79,7 +79,7 @@ implementer's discretion, since the code names are allowed to keep the old word.
    passes `records_heading="Records"` for the main page, unaffected).
 2. Regenerate the pages with the real command. Two entry points exist post-migration:
    `py/main_just_render_table.py` (the original, still present) and the newer
-   `py/main_verify_and_render_table.py` (adds verification against `../MAM-parsed` and
+   `py/main_verify_and_render_table.py` (adds verification against `MAM-parsed` and
    `../UXLC-utils`); check which is current practice at execution time and use that one.
    Read the diff of `MAM-basics/gh-pages/holman/table_data_findings.html` and
    `table_data_findings_suppressed.html`: exactly the six "Suppressed" occurrences should
