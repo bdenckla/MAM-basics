@@ -1,0 +1,760 @@
+{
+  "source_repository": "https://github.com/bdenckla/MAM-parsed",
+  "revisions": {
+    "b5e8f942c62574647a7ec14b15fdeba52107e840": {
+      "date": "2024-12-17",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "3a8506822a8a51bbf37b8a7677020765769b9e90",
+          "size": 839759
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "35c87f6072da46e9cb4046eea58366e32ddb5365",
+          "size": 669499
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "cb89f1cdf1fe2b972683ac6a6aaa05196cbd7baf",
+          "size": 459274
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "1c57ea31eede4f1ebea5b22e767a8fabac2d09c2",
+          "size": 655431
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "ec377c15460d115e2321b5007b48239016bd7638",
+          "size": 668090
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "e3a7bc184be7309a4f4064bfe594505d4441661c",
+          "size": 317015
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "2a40eb47731d8595c8665168b9f7622d9bb7ff56",
+          "size": 301842
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "e6f5cc2bca227d48ff8349c52ca265fa1ce40e91",
+          "size": 768161
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "2be3a5b7173e626e8931c42b7d467d5f6091ab22",
+          "size": 785529
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "1926d5133361f049954cfd2da591db4989addd1f",
+          "size": 555517
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "fcf04f12422466ef4859f8375d8c336a8395faf6",
+          "size": 687010
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "4269b96a8c8d7a342ec7972d489b715484258716",
+          "size": 604831
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "fa3176fe9be9d951da70f5b540bbb729bcede0ab",
+          "size": 495551
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "df7c1f503f3209c95af5b72dea3fbd67ee65d98b",
+          "size": 1716054
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "a77dd1561d2d67230131669cb2032c4a8998acb7",
+          "size": 561919
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "dafc96064150ea95566774395442874dd6f31d4b",
+          "size": 634908
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "01d5ab6c6059cd500bbc6ff0d510e07a9eb65e14",
+          "size": 77894
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "ef141d7e09db0aa065fdfa909b5445386d6a6655",
+          "size": 68120
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "6cc2a821aa12b99eac41e2a0d74df99999622120",
+          "size": 83576
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "954cf0c72e72d01893c9f2587b1d91b323c31a96",
+          "size": 127056
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "28aa3ba171ec1aa99f952746f4fa464b6abf7290",
+          "size": 124865
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "fd8966f2cc596c70b86c94c66e8a26924a4b18be",
+          "size": 313526
+        },
+        {
+          "path": "plus/FA-Ezra-Ne\u1e25emiah.json",
+          "sha": "0d60ae183a2af9711c4721a2852560356a0d946f",
+          "size": 394346
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "c75acf94da3fccc7f48287cd6a25d6712f9fb4e0",
+          "size": 811728
+        }
+      ]
+    },
+    "3d5ecfd83f9a6e943f51e3d316b8345b762aa483": {
+      "date": "2025-03-19",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "c83ca40a5ed09a1740751c1fb0b4f3498e924a33",
+          "size": 1200914
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "380fc78ce904ec64365eb886d47925098041aefe",
+          "size": 985657
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "7fbc25ad6e63e09e89b043a09edc16d74dffb0a9",
+          "size": 680831
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "3e91658e6a887b68c342ed8188f9f47fd8d401e1",
+          "size": 910605
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "23885be4c10f36d628f231b960345845461490ba",
+          "size": 1031838
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "a0c88fe403e770b73f668c7e1cff7ff33051d400",
+          "size": 339440
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "263720d2c446b920b23c05d47b0fbf53adcbdd8a",
+          "size": 316530
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "ad23e86189544309fcb3d5fee4692487ceddd267",
+          "size": 828358
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "fb0f9b9528cd67551e0d03829bcdc1e34ed0f975",
+          "size": 852277
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "8a3753f51f1046cc25f71e8be7ffe2fe9c4897a2",
+          "size": 594725
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "2dd08242798c6a129ea7e7f41949920201babe6b",
+          "size": 743844
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "b538381c22c4adda50d429fd8d9b7289d0ebf944",
+          "size": 651393
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "e55e9fc270cdbdd563b89301b99ff15676048f92",
+          "size": 567880
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "1f30386dd08146a5de8f6d3c45e238c812a9217c",
+          "size": 1907276
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "a923a7cb8a0d03cbac152abe98c3acbd927cccb0",
+          "size": 600263
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "144c585c9ca37e17a8bb8e5680ce1e95058ecb7e",
+          "size": 680911
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "00676f05e5353e678bb86fac7eef48a88955d184",
+          "size": 109941
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "b2c366247c408b35fef32fccba4647e8aada8f43",
+          "size": 95968
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "174f9ea42494f7ec00385930dd0d0425290766d6",
+          "size": 105271
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "a4d4e85fc4214973fd8310a8545429e0c4c844c9",
+          "size": 163115
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "b0005ffc9576e70aa9bfc100a40f1d839af9041c",
+          "size": 167706
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "813b43611b0f0766a10717ddcb143ed8c9201287",
+          "size": 438679
+        },
+        {
+          "path": "plus/FA-Ezra-Nexemiah.json",
+          "sha": "b6ce8690e8cdcc9833a83a9f6ae7fad0a36a87b5",
+          "size": 490980
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "ace59bd7af6160cc4c06fe2458c20d76f25430d6",
+          "size": 862208
+        }
+      ]
+    },
+    "049e636beeaee721f64fd958f670ffe29a9f1e5c": {
+      "date": "2025-03-19",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "c83ca40a5ed09a1740751c1fb0b4f3498e924a33",
+          "size": 1200914
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "380fc78ce904ec64365eb886d47925098041aefe",
+          "size": 985657
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "7fbc25ad6e63e09e89b043a09edc16d74dffb0a9",
+          "size": 680831
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "3e91658e6a887b68c342ed8188f9f47fd8d401e1",
+          "size": 910605
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "23885be4c10f36d628f231b960345845461490ba",
+          "size": 1031838
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "a0c88fe403e770b73f668c7e1cff7ff33051d400",
+          "size": 339440
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "263720d2c446b920b23c05d47b0fbf53adcbdd8a",
+          "size": 316530
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "ad23e86189544309fcb3d5fee4692487ceddd267",
+          "size": 828358
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "fb0f9b9528cd67551e0d03829bcdc1e34ed0f975",
+          "size": 852277
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "8a3753f51f1046cc25f71e8be7ffe2fe9c4897a2",
+          "size": 594725
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "2dd08242798c6a129ea7e7f41949920201babe6b",
+          "size": 743844
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "b538381c22c4adda50d429fd8d9b7289d0ebf944",
+          "size": 651393
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "e55e9fc270cdbdd563b89301b99ff15676048f92",
+          "size": 567880
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "0ea41d1d179d45018da432574f8ce7fba7a729dd",
+          "size": 1857350
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "245013d091c527a8dba59f750f3fd7da9ff91771",
+          "size": 581660
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "d8150ed5d2d2e396aa10cf3d46995fea77d0dc57",
+          "size": 658461
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "00676f05e5353e678bb86fac7eef48a88955d184",
+          "size": 109941
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "b2c366247c408b35fef32fccba4647e8aada8f43",
+          "size": 95968
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "174f9ea42494f7ec00385930dd0d0425290766d6",
+          "size": 105271
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "a4d4e85fc4214973fd8310a8545429e0c4c844c9",
+          "size": 163115
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "b0005ffc9576e70aa9bfc100a40f1d839af9041c",
+          "size": 167706
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "813b43611b0f0766a10717ddcb143ed8c9201287",
+          "size": 438679
+        },
+        {
+          "path": "plus/FA-Ezra-Nexemiah.json",
+          "sha": "b6ce8690e8cdcc9833a83a9f6ae7fad0a36a87b5",
+          "size": 490980
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "ace59bd7af6160cc4c06fe2458c20d76f25430d6",
+          "size": 862208
+        }
+      ]
+    },
+    "cc43fe04ebc01122de1082cd4ea849fb657d528f": {
+      "date": "2026-03-06",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "3e6e72b5e995a2b5c454c820c2d45d4f3506a5c0",
+          "size": 1202360
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "74080ad738d2d900634b3911a4b7f2378f246f3f",
+          "size": 986563
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "2dcca90f3c2547abef453492fb13e94ac91f85f5",
+          "size": 681881
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "1dcb01033a93c0a53ea3866386d0c1c9fa0c9e11",
+          "size": 912519
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "7acd0fe67eadbc3ca26f89d2f41e449a42a56013",
+          "size": 1033170
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "0fefae6e2aa4b7e27994ea39a59e503dfc26895e",
+          "size": 339621
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "03447faf5e6d73b00fd4b1eb1699e915f9271b54",
+          "size": 317744
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "9b803300bc761348e1739a25ac19325472d76c08",
+          "size": 832779
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "1ae802cecab037931e65018aa248a5b89dffc0e9",
+          "size": 853451
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "3841b22424fff0c01fa51958d4ca8ef8d698cf6f",
+          "size": 595899
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "1f96043889aa1fa6a3943b5ac51a44a91714a3e0",
+          "size": 745256
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "c63607bf70a7768041965cf8be8b4913348c253f",
+          "size": 654828
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "d2c30dd82c9e6a07d67497db1552ad125023581c",
+          "size": 573313
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "999d48b52aacb0aeb6eeb5ab1007a2256039bd9d",
+          "size": 1875993
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "0a9d63236971e40817f9c30fe1c25ecbd1871711",
+          "size": 585697
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "b91fead1e909a171c788e07414c0c81ad997a312",
+          "size": 665685
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "e5382667e4b614b323291819a516ce2d4b3a9e9b",
+          "size": 110243
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "e1592edd9d58173ae3c93b12273107c8527e90d3",
+          "size": 96376
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "7797591c1547dc73e34c4cf2e1ed608e2fd601ed",
+          "size": 106445
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "68ba705eb2d565779275ee260436994c2d2c8474",
+          "size": 163631
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "364ef325cdc380cc1e277c7d98a5a56e01ba1cb1",
+          "size": 168062
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "4f9fa173e12842bca2b65442758c2ba5b8ce8adb",
+          "size": 438219
+        },
+        {
+          "path": "plus/FA-Ezra-Nexemiah.json",
+          "sha": "db0f3aadafbd4cc1afea826dca2c8df9637f67de",
+          "size": 492196
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "9002337150830bec2aaf43f5a602627256aa3e9b",
+          "size": 863382
+        }
+      ]
+    },
+    "1880cbbda9a769c90126f74cf4c406452af5b209": {
+      "date": "2026-03-16",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "a0e4133208eb94c6869ef37117612dc8f3e2062e",
+          "size": 893473
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "d1e0a5cad28f2c8359235ebd9a548177fe77b673",
+          "size": 704875
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "d0d93d2dcc643e2b88b3f3198635d306a0246cb0",
+          "size": 494909
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "aeedc638f14ad5261a114f9b7ade2008ac548cce",
+          "size": 690515
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "76110ebd41f139ba7d00efa9415fdf4edcc22ac5",
+          "size": 705388
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "db956196e828a7a71d4f44777f4b837c4378b788",
+          "size": 319819
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "99056f17ad2640c5506c76df10e454132c7e1123",
+          "size": 304069
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "035b4066991eabf3425c133b4f1dc1161e402726",
+          "size": 776629
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "edd94742ff4e720eed365b630dc219c7887c4e56",
+          "size": 790948
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "b1b8fad1a4e90803da6a58ed3962e3850c7b5d4a",
+          "size": 560929
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "0b20f3322a860e7535573f3f318ae64fa0608993",
+          "size": 692912
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "ff391d759263321de644567f7ef716054ce99124",
+          "size": 610863
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "58699af422f4645a6e7b0eb76a3698526b0dad7e",
+          "size": 505783
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "8daa4ca0d1b01a6c471c2a111d4e34b0795a2285",
+          "size": 1713015
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "71087a7c457d70fb41b5764ac0bb00fb5e38adde",
+          "size": 560999
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "ae1151652ae9ba70baf06903e3b01c0cefac738a",
+          "size": 633395
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "28c54649304798fad5bdcc150e0cc76296aaba7b",
+          "size": 79637
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "6b134bfa218dbe6a1beb1b773da4d3d4b4b3b06a",
+          "size": 69591
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "a93eef3107371f568e86a7e31758f59405a02cc8",
+          "size": 85534
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "b1ebb76c960ce8ad12490f7084de7dd0931446d1",
+          "size": 128436
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "9ee97fa07754385a08c6b523510f627e0cae4e5a",
+          "size": 130286
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "d941be7c61409876a38810179df3d0cde530b87a",
+          "size": 319937
+        },
+        {
+          "path": "plus/FA-Ezra-Nexemiah.json",
+          "sha": "c1744a3549dfd54fbc4bfa9ab38eb2ee6b55e309",
+          "size": 402705
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "12351d802a85315921021d875cdb2c0543d89d2c",
+          "size": 815969
+        }
+      ]
+    },
+    "9ce6ee5d2d611f034208bd2a72d8acb064dd5f19": {
+      "date": "2026-04-14",
+      "files": [
+        {
+          "path": "plus/A1-Genesis.json",
+          "sha": "a0e4133208eb94c6869ef37117612dc8f3e2062e",
+          "size": 893473
+        },
+        {
+          "path": "plus/A2-Exodus.json",
+          "sha": "d1e0a5cad28f2c8359235ebd9a548177fe77b673",
+          "size": 704875
+        },
+        {
+          "path": "plus/A3-Levit.json",
+          "sha": "61121316d8202ff1968cedc14d09772b5e13762d",
+          "size": 494905
+        },
+        {
+          "path": "plus/A4-Numbers.json",
+          "sha": "aeedc638f14ad5261a114f9b7ade2008ac548cce",
+          "size": 690515
+        },
+        {
+          "path": "plus/A5-Deuter.json",
+          "sha": "76110ebd41f139ba7d00efa9415fdf4edcc22ac5",
+          "size": 705388
+        },
+        {
+          "path": "plus/B1-Joshua.json",
+          "sha": "e9d9787c08db9de713489e816f7cfed9195de2c2",
+          "size": 320634
+        },
+        {
+          "path": "plus/B2-Judges.json",
+          "sha": "02dd32d3b717ee08e344704ad05ab8b8f407e645",
+          "size": 304927
+        },
+        {
+          "path": "plus/BA-Samuel.json",
+          "sha": "e792510b5610e0b41d7f66f4289ed0367fefd9ef",
+          "size": 777077
+        },
+        {
+          "path": "plus/BC-Kings.json",
+          "sha": "dbee2da33b10f6152182acfc62979d987d08b02a",
+          "size": 790948
+        },
+        {
+          "path": "plus/C1-Isaiah.json",
+          "sha": "7156df588ac7608dc24a7ff430f9a1f8ae20f6b1",
+          "size": 561264
+        },
+        {
+          "path": "plus/C2-Jeremiah.json",
+          "sha": "0b20f3322a860e7535573f3f318ae64fa0608993",
+          "size": 692912
+        },
+        {
+          "path": "plus/C3-Ezekiel.json",
+          "sha": "29e2f4a715652e9f7ebf3e19bf13ea2e72fdfa85",
+          "size": 615087
+        },
+        {
+          "path": "plus/CA-The-12-Minor-Prophets.json",
+          "sha": "58699af422f4645a6e7b0eb76a3698526b0dad7e",
+          "size": 505783
+        },
+        {
+          "path": "plus/D1-Psalms.json",
+          "sha": "41645f184537a679c9fb90d5f1a3c2b157cdf255",
+          "size": 1715621
+        },
+        {
+          "path": "plus/D2-Proverbs.json",
+          "sha": "71087a7c457d70fb41b5764ac0bb00fb5e38adde",
+          "size": 560999
+        },
+        {
+          "path": "plus/D3-Job.json",
+          "sha": "ae1151652ae9ba70baf06903e3b01c0cefac738a",
+          "size": 633395
+        },
+        {
+          "path": "plus/E1-Song of Songs.json",
+          "sha": "28c54649304798fad5bdcc150e0cc76296aaba7b",
+          "size": 79637
+        },
+        {
+          "path": "plus/E2-Ruth.json",
+          "sha": "f080281d0ca7c4fedeca83adc173ca82ee3cb154",
+          "size": 69594
+        },
+        {
+          "path": "plus/E3-Lamentations.json",
+          "sha": "33ec8674840fde836cf4a081d5857a00b2336380",
+          "size": 87571
+        },
+        {
+          "path": "plus/E4-Ecclesiastes.json",
+          "sha": "b1ebb76c960ce8ad12490f7084de7dd0931446d1",
+          "size": 128436
+        },
+        {
+          "path": "plus/E5-Esther.json",
+          "sha": "6cac8cbb8c02a62267412cfff6e7047c4396c0b3",
+          "size": 130289
+        },
+        {
+          "path": "plus/F1-Daniel.json",
+          "sha": "bb20f4368cf4a9072ef8a68c9797c14578da26c2",
+          "size": 319942
+        },
+        {
+          "path": "plus/FA-Ezra-Nexemiah.json",
+          "sha": "99c5620cc0a3d7d6cc3aa61578269d85071e7da8",
+          "size": 402715
+        },
+        {
+          "path": "plus/FC-Chronicles.json",
+          "sha": "d44da26dd1d50bb47d9750c3954db329c61f5527",
+          "size": 816345
+        }
+      ]
+    }
+  },
+  "migration": {
+    "source_commit": "51082036e5907991d0d322cb6dfcc6404802099f",
+    "source_date": "2026-09-04",
+    "landing_commit": "63cf6c98b8c4daba7d0f90c6fa9b0a10b72d9a96"
+  }
+}
