@@ -119,6 +119,38 @@ The second product lane. Land the source tree under MAM-for-Sefaria/ and its pub
 
 Freeze the one source Pages path, create and deploy its redirect stub, and retain the source as a Pages redirect host. Do not contact Sefaria. The source README may say that the product is suitable for Sefaria import, but no source evidence proves that a Sefaria client automatically fetches the old repository.
 
+### Phase 2 execution record — 2026-09-06
+
+The phase began with MAM-basics at `ca457e0b` and MAM-for-Sefaria at
+`ce1e04c7ce39fc318465450eca004126c4c6128b`, both clean. MAM-basics commit
+`4195440e` landed the product. MAM-for-Sefaria commit `cf23b47` retained the
+source repository as its Pages redirect host. Both commits are pushed to `main`.
+
+1. Blob identity: all 168 selected source blobs — every source path other than
+   the source Pages workflow and a source-only scratch commit message — were
+   staged byte-identically under `MAM-for-Sefaria/` or
+   `gh-pages/MAM-for-Sefaria/`. The landed source-hygiene test then received
+   the necessary product-prefix adaptation, and the static index lost its stale
+   machine-specific validation comment.
+2. Regeneration: `py/main_mam4sef.py` regenerated the landed output with zero
+   Git content diff. All 39 standard CSV blobs match MAM-simple's example
+   output; the two `_provenance.md` files differ only in the generator path by
+   design.
+3. Mtime evidence: the repointed generator changed zero tracked source paths.
+   The product writes only inside MAM-basics.
+4. Published URLs: MAM-basics Pages deployment `34048786608` and
+   MAM-for-Sefaria Pages deployment `34049004202` both succeeded. Live HTTPS
+   checks returned 200 for the landed target and the legacy source URL; the
+   legacy page contains its immediate redirect to the target.
+
+Ruff passed. The landed source-hygiene test passed 6 tests, and the focused
+machine-path, redirect-manifest, and sibling-reach set passed 11 tests. The
+canonical suite passed 974 tests and skipped 5 tests in 106.42 seconds. The
+source's byte-preserved CSV, Unicode-name, and static-page blobs carry
+pre-existing trailing whitespace and final blank lines, so `git diff --check`
+reports them when the files enter MAM-basics; the check passed for every
+Phase 2-authored change.
+
 ## Phase 3 — MAM-parsed
 
 The third product lane. Land the source tree under MAM-parsed/ and its published tree under gh-pages/MAM-parsed/. Repoint parse-go, the MAM-parsed readers, the authored-document output, the test fixtures, and every path in the pipeline graph to MAM-parsed/plus/ or MAM-parsed/plain/ within MAM-basics. Land the MAM-parsed example program and py-examples-out/tmpl_survey_toy.json. Keep vendored-tmpl-survey-toy running against the landed example and verify its one-file differential result.
