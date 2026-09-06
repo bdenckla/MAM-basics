@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page and three case tables.
+r"""MAM's metegs after the primary stress: the main page and five case tables.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -23,7 +23,8 @@ subject; and what the page is about is which SYLLABLE a mark falls in, which a r
 see without the vowels that make the syllables.  Both of the page's three structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
 the sense the house rule allows for.  Every form is lifted from its labelled text at generation
-time -- MAM forms through ``mam_form`` -- and none is typed here.
+time: MAM forms through ``mam_form`` and the Fit-for-MAS lack pages from their analysed Phonetic
+MAM forms.  None is typed here.
 
 THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts and does not
 require them; the sections are cited by number and their content paraphrased, so no private
@@ -64,6 +65,14 @@ _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
+_TYPE_2_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME
+_TYPE_2_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_TITLE
+_TYPE_1_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME
+_TYPE_1_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE
+_LACKS_MAS_FNAME_BY_TYPE = {
+    psm.TYPE_OPEN: _TYPE_1_LACKS_MAS_FNAME,
+    psm.TYPE_GUTTURAL: _TYPE_2_LACKS_MAS_FNAME,
+}
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-1"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-2"
@@ -295,8 +304,8 @@ updateType2Rows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str]:
-    """Write the main page and the three case pages.  Returns all four paths.
+) -> tuple[str, str, str, str, str, str]:
+    """Write the main page and the five case pages.  Returns all six paths.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -311,6 +320,16 @@ def gen_html_files(
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
         _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
         _write_page(top_dir / _MISC_FNAME, _MISC_TITLE, build_misc_body(survey)),
+        _write_page(
+            top_dir / _TYPE_2_LACKS_MAS_FNAME,
+            _TYPE_2_LACKS_MAS_TITLE,
+            build_type_2_lacks_mas_body(survey),
+        ),
+        _write_page(
+            top_dir / _TYPE_1_LACKS_MAS_FNAME,
+            _TYPE_1_LACKS_MAS_TITLE,
+            build_type_1_lacks_mas_body(survey),
+        ),
     )
 
 
@@ -329,7 +348,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all four pages and return the main page's path for older callers."""
+    """Write all six pages and return the main page's path for older callers."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -391,6 +410,11 @@ def _by_type_count(survey: dict, kind: str) -> int:
 def _fit_for_mas(survey: dict) -> dict:
     """The survey's candidate analysis of syllables fit for MAS."""
     return survey["fit_for_mas"]
+
+
+def _lacks_mas_cases(survey: dict) -> dict:
+    """The survey records displayed by the pages linked from the Fit for MAS table."""
+    return _fit_for_mas(survey)["lacks_mas_cases"]
 
 
 def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
@@ -501,6 +525,24 @@ def pin_claims(survey: dict) -> None:
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
     ) == len(post_stress)
+    lacks_mas_cases = _lacks_mas_cases(survey)
+    type_2_lacks_mas_cases = lacks_mas_cases["type_2_all"]
+    type_1_lacks_mas_samples = lacks_mas_cases["type_1_random_sample"]
+    assert len(type_2_lacks_mas_cases) == 269
+    assert len(type_1_lacks_mas_samples[_PROSE]) == 100
+    assert len(type_1_lacks_mas_samples[_POETIC]) == 10
+    assert (
+        len(type_2_lacks_mas_cases)
+        == fit_for_mas["by_structural_type"][psm.TYPE_GUTTURAL]["without_mas"]
+    )
+    assert all(
+        record["chanted_word"]
+        for record in (
+            type_2_lacks_mas_cases
+            + type_1_lacks_mas_samples[_PROSE]
+            + type_1_lacks_mas_samples[_POETIC]
+        )
+    )
     assert (
         sum(fit_for_mas["accent_grammar_token_counts"].values())
         == fit_for_mas["candidate_chanted_words"]
@@ -1263,6 +1305,16 @@ def _type_2_case_row(record: dict) -> object:
     )
 
 
+def _lacks_mas_case_row(record: dict) -> object:
+    """One chanted word fit for MAS but lacking MAS."""
+    return mb_html.table_row(
+        (
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(_hebrew_cell(record["chanted_word"]), _HEBREW_CELL),
+        )
+    )
+
+
 def _misc_case_row(record: dict) -> object:
     return mb_html.table_row(
         (
@@ -1288,6 +1340,21 @@ def _type_2_following_filter(case_count: int) -> object:
         f'<select id="{_TYPE_2_FOLLOWING_FILTER_ID}">{option_html}</select>. '
         f'<output id="{_TYPE_2_SELECTED_COUNT_ID}" aria-live="polite">'
         f"Showing {case_count:,} rows.</output></p>\n"
+    )
+
+
+def _back_to_fit_for_mas_table() -> object:
+    """A standard return link for a case page that the Fit for MAS table opens."""
+    return mb_html.para(
+        (
+            "← Back to ",
+            mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
+            " and the ",
+            mb_html.anchor_h(
+                "Fit for MAS table", f"{_FNAME}#{_FIT_FOR_MAS_FOOTNOTE_ID}"
+            ),
+            ".",
+        )
     )
 
 
@@ -1320,6 +1387,51 @@ def build_type_2_body(survey: dict) -> list:
         ),
         _hebrew_spacing_option(),
         mb_html.raw_html(_TYPE_2_FILTER_SCRIPT),
+    ]
+
+
+def build_type_2_lacks_mas_body(survey: dict) -> list:
+    """Every type-2 chanted word fit for MAS but lacking MAS."""
+    records = _lacks_mas_cases(survey)["type_2_all"]
+    return [
+        mb_html.heading_level_1(_visible_title(_TYPE_2_LACKS_MAS_TITLE)),
+        _back_to_fit_for_mas_table(),
+        mb_html.heading_level_2("Every type 2 case lacking MAS"),
+        _para(
+            f"The table lists all {len(records):,} chanted words fit for MAS as type 2"
+            " that lack MAS."
+        ),
+        _table(
+            ("Verse", "Chanted word"),
+            [_lacks_mas_case_row(record) for record in records],
+        ),
+        _hebrew_spacing_option(),
+    ]
+
+
+def build_type_1_lacks_mas_body(survey: dict) -> list:
+    """The selected type-1 chanted words fit for MAS but lacking MAS."""
+    samples = _lacks_mas_cases(survey)["type_1_random_sample"]
+    prose_records = samples[_PROSE]
+    poetic_records = samples[_POETIC]
+    return [
+        mb_html.heading_level_1(_visible_title(_TYPE_1_LACKS_MAS_TITLE)),
+        _back_to_fit_for_mas_table(),
+        mb_html.heading_level_2("A random selection of type 1 cases lacking MAS"),
+        _para(
+            "Each chanted word in the two tables is fit for MAS as type 1 and lacks MAS."
+        ),
+        mb_html.heading_level_3(f"{len(prose_records):,} prose cases"),
+        _table(
+            ("Verse", "Chanted word"),
+            [_lacks_mas_case_row(record) for record in prose_records],
+        ),
+        mb_html.heading_level_3(f"{len(poetic_records):,} poetic cases"),
+        _table(
+            ("Verse", "Chanted word"),
+            [_lacks_mas_case_row(record) for record in poetic_records],
+        ),
+        _hebrew_spacing_option(),
     ]
 
 
@@ -1964,6 +2076,12 @@ def _fit_for_mas_footnote(survey: dict) -> list:
         assert candidates > 0
         return f"{with_mas / candidates:.1%}"
 
+    def lacks_mas_count(kind: str, count: int) -> object:
+        filename = _LACKS_MAS_FNAME_BY_TYPE.get(kind)
+        if filename is None:
+            return f"{count:,}"
+        return mb_html.anchor_h(f"{count:,}", filename)
+
     headers = ("Type", "Fit for MAS", "Has MAS", "% has MAS", "Lacks MAS")
     rows = [
         mb_html.table_row_of_data(
@@ -1972,7 +2090,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 f"{counts['candidates']:,}",
                 f"{counts['with_mas']:,}",
                 has_mas_percentage(counts["with_mas"], counts["without_mas"]),
-                f"{counts['without_mas']:,}",
+                lacks_mas_count(kind, counts["without_mas"]),
             ),
             (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )

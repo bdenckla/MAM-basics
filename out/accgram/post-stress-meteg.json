@@ -374,6 +374,1532 @@
    "0": 16,
    "1": 53177,
    "2": 826
+  },
+  "lacks_mas_cases": {
+   "type_2_all": [
+    {
+     "bcv": "gn1:11",
+     "chanted_word": "מַזְרִ֣יעַ"
+    },
+    {
+     "bcv": "gn1:12",
+     "chanted_word": "מַזְרִ֤יעַ"
+    },
+    {
+     "bcv": "gn1:29",
+     "chanted_word": "זֹרֵ֣עַ"
+    },
+    {
+     "bcv": "gn1:29",
+     "chanted_word": "זֶ֗רַע"
+    },
+    {
+     "bcv": "gn1:29",
+     "chanted_word": "זֹרֵ֣עַ"
+    },
+    {
+     "bcv": "gn4:17",
+     "chanted_word": "וַיֵּ֤ׄדַע"
+    },
+    {
+     "bcv": "gn6:9",
+     "chanted_word": "נֹ֔חַ"
+    },
+    {
+     "bcv": "gn6:22",
+     "chanted_word": "נֹ֑חַ"
+    },
+    {
+     "bcv": "gn8:11",
+     "chanted_word": "וַיֵּ֣ׄדַע"
+    },
+    {
+     "bcv": "gn9:24",
+     "chanted_word": "וַיֵּׄ֕דַע"
+    },
+    {
+     "bcv": "gn10:1",
+     "chanted_word": "בְּ֯נֵי־נֹ֔חַ"
+    },
+    {
+     "bcv": "gn10:12",
+     "chanted_word": "כָּ֑לַח"
+    },
+    {
+     "bcv": "gn10:24",
+     "chanted_word": "אֶת־שָׁ֑לַח"
+    },
+    {
+     "bcv": "gn11:14",
+     "chanted_word": "וְ֯שֶׁ֥לַח"
+    },
+    {
+     "bcv": "gn11:27",
+     "chanted_word": "תֶּ֔רַח"
+    },
+    {
+     "bcv": "gn18:6",
+     "chanted_word": "קֶ֣מַח"
+    },
+    {
+     "bcv": "gn21:31",
+     "chanted_word": "שָׁ֑בַע"
+    },
+    {
+     "bcv": "gn25:27",
+     "chanted_word": "יֹדֵ֥עַ"
+    },
+    {
+     "bcv": "gn26:33",
+     "chanted_word": "שֶׁ֔בַע"
+    },
+    {
+     "bcv": "gn27:27",
+     "chanted_word": "רֵ֣יחַ"
+    },
+    {
+     "bcv": "gn29:27",
+     "chanted_word": "שְׁ֯בֻ֣עַ"
+    },
+    {
+     "bcv": "gn29:28",
+     "chanted_word": "שְׁ֯בֻ֣עַ"
+    },
+    {
+     "bcv": "gn31:20",
+     "chanted_word": "בֹרֵ֖חַ"
+    },
+    {
+     "bcv": "gn31:42",
+     "chanted_word": "וַיּ֥ׄוֹכַח"
+    },
+    {
+     "bcv": "gn36:5",
+     "chanted_word": "וְ֯אֶת־קֹ֑רַח"
+    },
+    {
+     "bcv": "gn43:16",
+     "chanted_word": "וּטְבֹ֤חַ"
+    },
+    {
+     "bcv": "ex8:17",
+     "chanted_word": "מַשְׁלִ֨יחַ"
+    },
+    {
+     "bcv": "ex10:14",
+     "chanted_word": "וַיָּׄ֕נַח"
+    },
+    {
+     "bcv": "ex12:11",
+     "chanted_word": "פֶּ֥סַח"
+    },
+    {
+     "bcv": "ex12:27",
+     "chanted_word": "זֶֽבַח־פֶּ֨סַח"
+    },
+    {
+     "bcv": "ex16:31",
+     "chanted_word": "כְּ֯זֶ֤רַע"
+    },
+    {
+     "bcv": "ex23:1",
+     "chanted_word": "שֵׁ֣מַע"
+    },
+    {
+     "bcv": "ex25:33",
+     "chanted_word": "וָפָ֑רַח"
+    },
+    {
+     "bcv": "ex30:38",
+     "chanted_word": "לְ֯הָרִ֣יחַ"
+    },
+    {
+     "bcv": "ex32:25",
+     "chanted_word": "פָרֻ֖עַ"
+    },
+    {
+     "bcv": "ex37:19",
+     "chanted_word": "וָפָ֑רַח"
+    },
+    {
+     "bcv": "lv1:16",
+     "chanted_word": "הַמִּׄזְבֵּ֙חַ֙"
+    },
+    {
+     "bcv": "lv4:18",
+     "chanted_word": "הַמִּׄזְבֵּ֗חַ"
+    },
+    {
+     "bcv": "lv10:12",
+     "chanted_word": "הַמִּׄזְבֵּ֑חַ"
+    },
+    {
+     "bcv": "lv13:22",
+     "chanted_word": "נֶ֥גַע"
+    },
+    {
+     "bcv": "lv13:29",
+     "chanted_word": "נָ֑גַע"
+    },
+    {
+     "bcv": "lv13:40",
+     "chanted_word": "קֵרֵ֥חַ"
+    },
+    {
+     "bcv": "lv13:41",
+     "chanted_word": "גִּבֵּ֥ׄחַ"
+    },
+    {
+     "bcv": "lv13:44",
+     "chanted_word": "אִישׁ־צָר֥וּעַ"
+    },
+    {
+     "bcv": "lv13:46",
+     "chanted_word": "הַנֶּ֥ׄגַע"
+    },
+    {
+     "bcv": "lv15:10",
+     "chanted_word": "וְ֯כׇל־הַנֹּׄגֵ֗עַ"
+    },
+    {
+     "bcv": "lv15:19",
+     "chanted_word": "וְ֯כׇל־הַנֹּׄגֵ֥עַ"
+    },
+    {
+     "bcv": "lv15:27",
+     "chanted_word": "וְ֯כׇל־הַנּׄוֹגֵ֥עַ"
+    },
+    {
+     "bcv": "lv21:20",
+     "chanted_word": "מְ֯ר֥וֹחַ"
+    },
+    {
+     "bcv": "lv26:31",
+     "chanted_word": "אָרִ֔יחַ"
+    },
+    {
+     "bcv": "nu7:10",
+     "chanted_word": "הַמִּׄזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "nu7:84",
+     "chanted_word": "הַמִּׄזְבֵּ֗חַ"
+    },
+    {
+     "bcv": "nu11:26",
+     "chanted_word": "הָר֗וּחַ"
+    },
+    {
+     "bcv": "nu16:32",
+     "chanted_word": "לְ֯קֹ֔רַח"
+    },
+    {
+     "bcv": "nu19:11",
+     "chanted_word": "הַנֹּׄגֵ֥עַ"
+    },
+    {
+     "bcv": "nu19:15",
+     "chanted_word": "פָת֔וּחַ"
+    },
+    {
+     "bcv": "nu21:30",
+     "chanted_word": "עַד־נֹ֔פַח"
+    },
+    {
+     "bcv": "nu27:18",
+     "chanted_word": "אֲשֶׁר־ר֣וּחַ"
+    },
+    {
+     "bcv": "nu31:8",
+     "chanted_word": "וְ֯אֶת־רֶ֔בַע"
+    },
+    {
+     "bcv": "nu31:27",
+     "chanted_word": "אֶת־הַמַּׄלְק֔וֹחַ"
+    },
+    {
+     "bcv": "nu34:3",
+     "chanted_word": "יָם־הַמֶּ֖ׄלַח"
+    },
+    {
+     "bcv": "dt3:5",
+     "chanted_word": "וּבְרִ֑יחַ"
+    },
+    {
+     "bcv": "dt3:17",
+     "chanted_word": "הַמֶּׄ֔לַח"
+    },
+    {
+     "bcv": "dt17:3",
+     "chanted_word": "לַיָּׄרֵ֗חַ"
+    },
+    {
+     "bcv": "dt22:27",
+     "chanted_word": "מוֹשִׁ֖יעַ"
+    },
+    {
+     "bcv": "dt27:25",
+     "chanted_word": "לֹקֵ֣חַ"
+    },
+    {
+     "bcv": "dt28:38",
+     "chanted_word": "זֶ֥רַע"
+    },
+    {
+     "bcv": "dt29:3",
+     "chanted_word": "לִשְׁמֹ֑עַ"
+    },
+    {
+     "bcv": "dt31:3",
+     "chanted_word": "יְ֯הוֹשֻׁ֗עַ"
+    },
+    {
+     "bcv": "dt32:13",
+     "chanted_word": "מִסֶּׄ֔לַע"
+    },
+    {
+     "bcv": "js2:11",
+     "chanted_word": "ר֛וּחַ"
+    },
+    {
+     "bcv": "js3:10",
+     "chanted_word": "יְ֯הוֹשֻׁ֔עַ"
+    },
+    {
+     "bcv": "js5:15",
+     "chanted_word": "יְ֯הוֹשֻׁ֖עַ"
+    },
+    {
+     "bcv": "js6:2",
+     "chanted_word": "אֶל־יְ֯הוֹשֻׁ֔עַ"
+    },
+    {
+     "bcv": "js6:22",
+     "chanted_word": "יְ֯הוֹשֻׁ֔עַ"
+    },
+    {
+     "bcv": "js7:7",
+     "chanted_word": "יְ֯הוֹשֻׁ֜עַ"
+    },
+    {
+     "bcv": "js7:23",
+     "chanted_word": "אֶל־יְ֯הוֹשֻׁ֔עַ"
+    },
+    {
+     "bcv": "js8:18",
+     "chanted_word": "אֶל־יְ֯הוֹשֻׁ֗עַ"
+    },
+    {
+     "bcv": "js10:18",
+     "chanted_word": "יְ֯הוֹשֻׁ֔עַ"
+    },
+    {
+     "bcv": "js11:15",
+     "chanted_word": "אֶת־יְ֯הוֹשֻׁ֑עַ"
+    },
+    {
+     "bcv": "js19:2",
+     "chanted_word": "בְּ֯אֵֽר־שֶׁ֥בַע"
+    },
+    {
+     "bcv": "js24:21",
+     "chanted_word": "אֶל־יְ֯הוֹשֻׁ֑עַ"
+    },
+    {
+     "bcv": "js24:25",
+     "chanted_word": "יְ֯הוֹשֻׁ֧עַ"
+    },
+    {
+     "bcv": "ju5:19",
+     "chanted_word": "בֶּ֥צַע"
+    },
+    {
+     "bcv": "ju9:46",
+     "chanted_word": "אֶל־צְ֯רִ֔יחַ"
+    },
+    {
+     "bcv": "ju9:53",
+     "chanted_word": "פֶּ֥לַח"
+    },
+    {
+     "bcv": "ju19:10",
+     "chanted_word": "עַד־נֹ֣כַח"
+    },
+    {
+     "bcv": "ju20:1",
+     "chanted_word": "שֶׁ֔בַע"
+    },
+    {
+     "bcv": "ju20:13",
+     "chanted_word": "לִשְׁמֹ֕עַ"
+    },
+    {
+     "bcv": "1s2:13",
+     "chanted_word": "זֹבֵ֣חַ"
+    },
+    {
+     "bcv": "1s3:20",
+     "chanted_word": "שָׁ֑בַע"
+    },
+    {
+     "bcv": "1s14:6",
+     "chanted_word": "לְ֯הוֹשִׁ֥יעַ"
+    },
+    {
+     "bcv": "1s14:49",
+     "chanted_word": "וּמַלְכִּישׁ֑וּעַ"
+    },
+    {
+     "bcv": "1s15:22",
+     "chanted_word": "מִזֶּ֣ׄבַח"
+    },
+    {
+     "bcv": "1s17:5",
+     "chanted_word": "וְ֯כ֤וֹבַע"
+    },
+    {
+     "bcv": "1s17:38",
+     "chanted_word": "ק֥וֹבַע"
+    },
+    {
+     "bcv": "1s21:3",
+     "chanted_word": "אַל־יֵ֧דַע"
+    },
+    {
+     "bcv": "1s21:15",
+     "chanted_word": "מִשְׁתַּגֵּׄ֔עַ"
+    },
+    {
+     "bcv": "1s23:17",
+     "chanted_word": "יֹדֵ֥עַ"
+    },
+    {
+     "bcv": "2s2:24",
+     "chanted_word": "עַל־פְּ֯נֵי־גִ֔יחַ"
+    },
+    {
+     "bcv": "2s3:7",
+     "chanted_word": "מַדּ֥ׄוּעַ"
+    },
+    {
+     "bcv": "2s3:39",
+     "chanted_word": "וּמָשׁ֣וּחַ"
+    },
+    {
+     "bcv": "2s10:19",
+     "chanted_word": "לְ֯הוֹשִׁ֥יעַ"
+    },
+    {
+     "bcv": "2s11:21",
+     "chanted_word": "פֶּ֨לַח"
+    },
+    {
+     "bcv": "2s22:45",
+     "chanted_word": "לִשְׁמ֥וֹעַ"
+    },
+    {
+     "bcv": "2s24:18",
+     "chanted_word": "מִזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "1k2:18",
+     "chanted_word": "בַּת־שֶׁ֖בַע"
+    },
+    {
+     "bcv": "1k3:4",
+     "chanted_word": "לִזְבֹּ֣חַ"
+    },
+    {
+     "bcv": "1k4:13",
+     "chanted_word": "וּבְרִ֥יחַ"
+    },
+    {
+     "bcv": "1k5:5",
+     "chanted_word": "שָׁ֑בַע"
+    },
+    {
+     "bcv": "1k5:14",
+     "chanted_word": "לִשְׁמֹ֕עַ"
+    },
+    {
+     "bcv": "1k5:18",
+     "chanted_word": "פֶּ֥גַע"
+    },
+    {
+     "bcv": "1k6:20",
+     "chanted_word": "מִזְבֵּ֖חַ"
+    },
+    {
+     "bcv": "1k6:37",
+     "chanted_word": "בְּ֯יֶ֖רַח"
+    },
+    {
+     "bcv": "1k6:38",
+     "chanted_word": "בְּ֯יֶ֣רַח"
+    },
+    {
+     "bcv": "1k8:9",
+     "chanted_word": "הִנִּ֥ׄחַ"
+    },
+    {
+     "bcv": "1k13:2",
+     "chanted_word": "מִזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "1k19:5",
+     "chanted_word": "נֹגֵ֣עַ"
+    },
+    {
+     "bcv": "1k19:11",
+     "chanted_word": "הָר֙וּחַ֙"
+    },
+    {
+     "bcv": "1k22:22",
+     "chanted_word": "ר֣וּחַ"
+    },
+    {
+     "bcv": "1k22:23",
+     "chanted_word": "ר֣וּחַ"
+    },
+    {
+     "bcv": "1k22:35",
+     "chanted_word": "נֹ֣כַח"
+    },
+    {
+     "bcv": "2k17:3",
+     "chanted_word": "הוֹשֵׁ֙עַ֙"
+    },
+    {
+     "bcv": "2k17:4",
+     "chanted_word": "בְּ֯הוֹשֵׁ֜עַ"
+    },
+    {
+     "bcv": "2k19:3",
+     "chanted_word": "וְ֯כֹ֥חַ"
+    },
+    {
+     "bcv": "2k19:10",
+     "chanted_word": "בֹּטֵ֥חַ"
+    },
+    {
+     "bcv": "is2:15",
+     "chanted_word": "גָּבֹ֑הַּ"
+    },
+    {
+     "bcv": "is5:10",
+     "chanted_word": "וְ֯זֶ֥רַע"
+    },
+    {
+     "bcv": "is6:13",
+     "chanted_word": "זֶ֥רַע"
+    },
+    {
+     "bcv": "is7:11",
+     "chanted_word": "הַגְבֵּ֥הַּ"
+    },
+    {
+     "bcv": "is11:2",
+     "chanted_word": "ר֥וּחַ"
+    },
+    {
+     "bcv": "is14:17",
+     "chanted_word": "לֹא־פָ֥תַח"
+    },
+    {
+     "bcv": "is23:5",
+     "chanted_word": "כְּ֯שֵׁ֥מַע"
+    },
+    {
+     "bcv": "is23:10",
+     "chanted_word": "מֵ֥זַח"
+    },
+    {
+     "bcv": "is24:20",
+     "chanted_word": "תָּנ֤וּעַ"
+    },
+    {
+     "bcv": "is25:5",
+     "chanted_word": "תַּכְנִ֑יעַ"
+    },
+    {
+     "bcv": "is27:1",
+     "chanted_word": "בָּרִ֔חַ"
+    },
+    {
+     "bcv": "is29:11",
+     "chanted_word": "אֶל־יוֹדֵ֥עַ"
+    },
+    {
+     "bcv": "is30:25",
+     "chanted_word": "גָּבֹ֗הַּ"
+    },
+    {
+     "bcv": "is37:3",
+     "chanted_word": "וְ֯כֹ֥חַ"
+    },
+    {
+     "bcv": "is37:10",
+     "chanted_word": "בּוֹטֵ֥חַ"
+    },
+    {
+     "bcv": "is40:26",
+     "chanted_word": "כֹּ֔חַ"
+    },
+    {
+     "bcv": "is45:8",
+     "chanted_word": "תַצְמִ֙יחַ֙"
+    },
+    {
+     "bcv": "is45:21",
+     "chanted_word": "וּמוֹשִׁ֔יעַ"
+    },
+    {
+     "bcv": "is50:2",
+     "chanted_word": "מַדּׄ֨וּעַ"
+    },
+    {
+     "bcv": "is50:10",
+     "chanted_word": "נֹ֙גַהּ֙"
+    },
+    {
+     "bcv": "is53:3",
+     "chanted_word": "וִיד֣וּעַ"
+    },
+    {
+     "bcv": "is53:6",
+     "chanted_word": "הִפְגִּ֣יעַ"
+    },
+    {
+     "bcv": "is53:8",
+     "chanted_word": "נֶ֥גַע"
+    },
+    {
+     "bcv": "is54:9",
+     "chanted_word": "מֵי־נֹ֛חַ"
+    },
+    {
+     "bcv": "is55:10",
+     "chanted_word": "לַזֹּׄרֵ֔עַ"
+    },
+    {
+     "bcv": "is57:4",
+     "chanted_word": "זֶ֥רַע"
+    },
+    {
+     "bcv": "is57:7",
+     "chanted_word": "לִזְבֹּ֥חַ"
+    },
+    {
+     "bcv": "is61:11",
+     "chanted_word": "תַצְמִ֑יחַ"
+    },
+    {
+     "bcv": "je2:21",
+     "chanted_word": "זֶ֣רַע"
+    },
+    {
+     "bcv": "je4:15",
+     "chanted_word": "וּמַשְׁמִ֥יעַ"
+    },
+    {
+     "bcv": "je6:13",
+     "chanted_word": "בּוֹצֵ֣עַ"
+    },
+    {
+     "bcv": "je8:10",
+     "chanted_word": "בֹּצֵ֣עַ"
+    },
+    {
+     "bcv": "je10:14",
+     "chanted_word": "וְ֯לֹא־ר֥וּחַ"
+    },
+    {
+     "bcv": "je11:14",
+     "chanted_word": "שֹׁמֵ֗עַ"
+    },
+    {
+     "bcv": "je29:17",
+     "chanted_word": "מְ֯שַׁלֵּ֣ׄחַ"
+    },
+    {
+     "bcv": "je41:13",
+     "chanted_word": "בֶּן־קָרֵ֔חַ"
+    },
+    {
+     "bcv": "je42:8",
+     "chanted_word": "בֶּן־קָרֵ֔חַ"
+    },
+    {
+     "bcv": "je42:13",
+     "chanted_word": "שְׁ֯מֹ֔עַ"
+    },
+    {
+     "bcv": "je49:31",
+     "chanted_word": "וְ֯לֹֽא־בְ֯רִ֛יחַ"
+    },
+    {
+     "bcv": "je51:17",
+     "chanted_word": "וְ֯לֹא־ר֥וּחַ"
+    },
+    {
+     "bcv": "ek1:22",
+     "chanted_word": "רָקִ֔יעַ"
+    },
+    {
+     "bcv": "ek3:26",
+     "chanted_word": "מוֹכִ֑יחַ"
+    },
+    {
+     "bcv": "ek5:2",
+     "chanted_word": "לָר֔וּחַ"
+    },
+    {
+     "bcv": "ek6:13",
+     "chanted_word": "נִיחֹ֔חַ"
+    },
+    {
+     "bcv": "ek8:5",
+     "chanted_word": "הַמִּׄזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "ek10:1",
+     "chanted_word": "אֶל־הָרָקִ֙יעַ֙"
+    },
+    {
+     "bcv": "ek12:14",
+     "chanted_word": "לְ֯כׇל־ר֑וּחַ"
+    },
+    {
+     "bcv": "ek16:7",
+     "chanted_word": "צִמֵּׄ֔חַ"
+    },
+    {
+     "bcv": "ek17:5",
+     "chanted_word": "בִּשְׂדֵה־זָ֑רַע"
+    },
+    {
+     "bcv": "ek21:15",
+     "chanted_word": "טְ֯בֹ֤חַ"
+    },
+    {
+     "bcv": "ek21:27",
+     "chanted_word": "לִפְתֹּ֤חַ"
+    },
+    {
+     "bcv": "ek22:27",
+     "chanted_word": "בְּ֯צֹ֥עַ"
+    },
+    {
+     "bcv": "ek23:23",
+     "chanted_word": "וְ֯שׁ֙וֹעַ֙"
+    },
+    {
+     "bcv": "ek24:4",
+     "chanted_word": "כׇּל־נֵ֥תַח"
+    },
+    {
+     "bcv": "ek24:5",
+     "chanted_word": "לָק֔וֹחַ"
+    },
+    {
+     "bcv": "ek24:7",
+     "chanted_word": "עַל־צְ֯חִ֥יחַ"
+    },
+    {
+     "bcv": "ek24:8",
+     "chanted_word": "עַל־צְ֯חִ֣יחַ"
+    },
+    {
+     "bcv": "ek24:27",
+     "chanted_word": "יִפָּ֤ׄתַח"
+    },
+    {
+     "bcv": "ek26:4",
+     "chanted_word": "לִצְחִ֥יחַ"
+    },
+    {
+     "bcv": "ek26:14",
+     "chanted_word": "לִצְחִ֣יחַ"
+    },
+    {
+     "bcv": "ek29:21",
+     "chanted_word": "אַצְמִ֤יחַ"
+    },
+    {
+     "bcv": "ek30:16",
+     "chanted_word": "לְ֯הִבָּׄקֵ֑עַ"
+    },
+    {
+     "bcv": "ek33:22",
+     "chanted_word": "וַיִּׄפָּ֣ׄתַח"
+    },
+    {
+     "bcv": "ek39:7",
+     "chanted_word": "אוֹדִ֗יעַ"
+    },
+    {
+     "bcv": "ek40:2",
+     "chanted_word": "גָּבֹ֙הַּ֙"
+    },
+    {
+     "bcv": "ek43:16",
+     "chanted_word": "רָב֕וּעַ"
+    },
+    {
+     "bcv": "ek43:18",
+     "chanted_word": "הַמִּׄזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "ek44:2",
+     "chanted_word": "יִפָּׄתֵ֗חַ"
+    },
+    {
+     "bcv": "ek45:21",
+     "chanted_word": "הַפָּ֑ׄסַח"
+    },
+    {
+     "bcv": "ho9:7",
+     "chanted_word": "הָר֔וּחַ"
+    },
+    {
+     "bcv": "ho13:4",
+     "chanted_word": "וּמוֹשִׁ֥יעַ"
+    },
+    {
+     "bcv": "jl1:13",
+     "chanted_word": "מִזְבֵּ֔חַ"
+    },
+    {
+     "bcv": "jl3:4",
+     "chanted_word": "וְ֯הַיָּׄרֵ֖חַ"
+    },
+    {
+     "bcv": "am8:11",
+     "chanted_word": "אִם־לִשְׁמֹ֔עַ"
+    },
+    {
+     "bcv": "jn1:12",
+     "chanted_word": "יוֹדֵ֣עַ"
+    },
+    {
+     "bcv": "mi6:8",
+     "chanted_word": "וְ֯הַצְנֵ֥עַ"
+    },
+    {
+     "bcv": "na2:2",
+     "chanted_word": "כֹּ֖חַ"
+    },
+    {
+     "bcv": "hb2:9",
+     "chanted_word": "בֶּ֥צַע"
+    },
+    {
+     "bcv": "hb3:2",
+     "chanted_word": "תּוֹדִ֑יעַ"
+    },
+    {
+     "bcv": "hg1:14",
+     "chanted_word": "וְֽ֯אֶת־ר֔וּחַ"
+    },
+    {
+     "bcv": "zc6:12",
+     "chanted_word": "צֶ֤מַח"
+    },
+    {
+     "bcv": "zc12:10",
+     "chanted_word": "ר֤וּחַ"
+    },
+    {
+     "bcv": "ma2:15",
+     "chanted_word": "ר֙וּחַ֙"
+    },
+    {
+     "bcv": "ps5:5",
+     "chanted_word": "לֹ֤א~אֵֽל־חָפֵ֘ץ~רֶ֥שַׁע"
+    },
+    {
+     "bcv": "ps33:6",
+     "chanted_word": "וּבְר֥וּחַ"
+    },
+    {
+     "bcv": "ps78:13",
+     "chanted_word": "בָּ֣קַע"
+    },
+    {
+     "bcv": "ps84:13",
+     "chanted_word": "בֹּטֵ֥חַ"
+    },
+    {
+     "bcv": "ps105:20",
+     "chanted_word": "שָׁ֣לַח"
+    },
+    {
+     "bcv": "ps105:41",
+     "chanted_word": "פָּ֣תַח"
+    },
+    {
+     "bcv": "ps119:101",
+     "chanted_word": "מִכׇּׄל־אֹ֣רַח"
+    },
+    {
+     "bcv": "ps119:104",
+     "chanted_word": "כׇּל־אֹ֬רַח"
+    },
+    {
+     "bcv": "ps125:3",
+     "chanted_word": "הָרֶ֗שַׁע"
+    },
+    {
+     "bcv": "pr4:2",
+     "chanted_word": "לֶ֣קַח"
+    },
+    {
+     "bcv": "pr6:29",
+     "chanted_word": "כׇּֽל־הַנֹּׄגֵ֥עַ"
+    },
+    {
+     "bcv": "pr9:8",
+     "chanted_word": "אַל־תּ֣וֹכַח"
+    },
+    {
+     "bcv": "pr14:4",
+     "chanted_word": "בְּ֯כֹ֣חַ"
+    },
+    {
+     "bcv": "pr15:27",
+     "chanted_word": "בּוֹצֵ֣עַ"
+    },
+    {
+     "bcv": "pr16:18",
+     "chanted_word": "גֹּ֣בַהּ"
+    },
+    {
+     "bcv": "pr17:5",
+     "chanted_word": "שָׂמֵ֥חַ"
+    },
+    {
+     "bcv": "pr17:18",
+     "chanted_word": "תּוֹקֵ֣עַ"
+    },
+    {
+     "bcv": "pr17:27",
+     "chanted_word": "יוֹדֵ֣עַ"
+    },
+    {
+     "bcv": "pr19:26",
+     "chanted_word": "יַבְרִ֣יחַ"
+    },
+    {
+     "bcv": "pr20:25",
+     "chanted_word": "יָ֣לַע"
+    },
+    {
+     "bcv": "pr23:29",
+     "chanted_word": "שִׂ֗יחַ"
+    },
+    {
+     "bcv": "pr24:8",
+     "chanted_word": "לְ֯הָרֵ֑עַ"
+    },
+    {
+     "bcv": "pr31:11",
+     "chanted_word": "בָּ֣טַח"
+    },
+    {
+     "bcv": "jb15:30",
+     "chanted_word": "בְּ֯ר֣וּחַ"
+    },
+    {
+     "bcv": "jb22:28",
+     "chanted_word": "נָ֣גַהּ"
+    },
+    {
+     "bcv": "jb29:15",
+     "chanted_word": "לַפִּׄסֵּ֣ׄחַ"
+    },
+    {
+     "bcv": "jb34:11",
+     "chanted_word": "וּֽכְאֹ֥רַח"
+    },
+    {
+     "bcv": "jb37:11",
+     "chanted_word": "יַטְרִ֣יחַ"
+    },
+    {
+     "bcv": "jb39:27",
+     "chanted_word": "יַגְבִּ֣יהַּ"
+    },
+    {
+     "bcv": "ca2:14",
+     "chanted_word": "הַסֶּׄ֗לַע"
+    },
+    {
+     "bcv": "ca8:9",
+     "chanted_word": "ל֥וּחַ"
+    },
+    {
+     "bcv": "ec3:21",
+     "chanted_word": "יוֹדֵ֗עַ"
+    },
+    {
+     "bcv": "ec4:2",
+     "chanted_word": "וְ֯שַׁבֵּ֧ׄחַ"
+    },
+    {
+     "bcv": "ec7:25",
+     "chanted_word": "רֶ֣שַׁע"
+    },
+    {
+     "bcv": "ec8:12",
+     "chanted_word": "גַּם־יוֹדֵ֣עַ"
+    },
+    {
+     "bcv": "ec8:15",
+     "chanted_word": "וְ֯לִשְׂמ֑וֹחַ"
+    },
+    {
+     "bcv": "es2:21",
+     "chanted_word": "לִשְׁלֹ֣חַ"
+    },
+    {
+     "bcv": "es3:6",
+     "chanted_word": "לִשְׁלֹ֤חַ"
+    },
+    {
+     "bcv": "es6:2",
+     "chanted_word": "לִשְׁלֹ֣חַ"
+    },
+    {
+     "bcv": "es9:2",
+     "chanted_word": "לִשְׁלֹ֣חַ"
+    },
+    {
+     "bcv": "da3:27",
+     "chanted_word": "וְ֯רֵ֣יחַ"
+    },
+    {
+     "bcv": "1c1:3",
+     "chanted_word": "מְ֯תוּשֶׁ֖לַח"
+    },
+    {
+     "bcv": "1c1:4",
+     "chanted_word": "נֹ֥חַ"
+    },
+    {
+     "bcv": "1c1:18",
+     "chanted_word": "אֶת־שָׁ֑לַח"
+    },
+    {
+     "bcv": "1c3:7",
+     "chanted_word": "וְ֯נֹ֥גַהּ"
+    },
+    {
+     "bcv": "1c4:18",
+     "chanted_word": "זָנ֑וֹחַ"
+    },
+    {
+     "bcv": "1c6:6",
+     "chanted_word": "זֶ֥רַח"
+    },
+    {
+     "bcv": "1c6:7",
+     "chanted_word": "קֹ֥רַח"
+    },
+    {
+     "bcv": "1c6:35",
+     "chanted_word": "אֲבִישׁ֥וּעַ"
+    },
+    {
+     "bcv": "1c7:21",
+     "chanted_word": "וְ֯שׁוּתֶ֥לַח"
+    },
+    {
+     "bcv": "1c7:25",
+     "chanted_word": "וְ֯רֶ֣פַח"
+    },
+    {
+     "bcv": "1c7:25",
+     "chanted_word": "וְ֯תֶ֛לַח"
+    },
+    {
+     "bcv": "1c7:27",
+     "chanted_word": "יְ֯הוֹשֻׁ֥עַ"
+    },
+    {
+     "bcv": "1c8:13",
+     "chanted_word": "וָשֶׁ֔מַע"
+    },
+    {
+     "bcv": "1c14:6",
+     "chanted_word": "וְ֯נֹ֥גַהּ"
+    },
+    {
+     "bcv": "1c16:21",
+     "chanted_word": "לֹֽא־הִנִּ֤ׄיחַ"
+    },
+    {
+     "bcv": "2c18:21",
+     "chanted_word": "לְ֯ר֣וּחַ"
+    },
+    {
+     "bcv": "2c18:22",
+     "chanted_word": "ר֣וּחַ"
+    },
+    {
+     "bcv": "2c18:34",
+     "chanted_word": "נֹ֥כַח"
+    },
+    {
+     "bcv": "2c26:13",
+     "chanted_word": "בְּ֯כֹ֣חַ"
+    }
+   ],
+   "type_1_random_sample": {
+    "prose verses": [
+     {
+      "bcv": "gn2:17",
+      "chanted_word": "מִמֶּ֑ׄנּׄוּ"
+     },
+     {
+      "bcv": "gn3:17",
+      "chanted_word": "תֹּֽאכְﬞ֯לֶ֔נָּׄה"
+     },
+     {
+      "bcv": "gn19:32",
+      "chanted_word": "מֵאָבִ֖ינוּ"
+     },
+     {
+      "bcv": "gn25:6",
+      "chanted_word": "בְּ֯עוֹדֶ֣נּׄוּ"
+     },
+     {
+      "bcv": "gn30:26",
+      "chanted_word": "וְ֯אֵלֵ֑כָה"
+     },
+     {
+      "bcv": "gn37:8",
+      "chanted_word": "וַיֹּ֤ׄאמְ֯רוּ"
+     },
+     {
+      "bcv": "gn37:15",
+      "chanted_word": "וַיִּׄמְצָאֵ֣הוּ"
+     },
+     {
+      "bcv": "gn38:29",
+      "chanted_word": "עָלֶ֣יךָ"
+     },
+     {
+      "bcv": "gn42:29",
+      "chanted_word": "אַ֣רְצָה"
+     },
+     {
+      "bcv": "gn44:25",
+      "chanted_word": "אָבִ֑ינוּ"
+     },
+     {
+      "bcv": "ex2:7",
+      "chanted_word": "וְ֯קָרָ֤אתִי"
+     },
+     {
+      "bcv": "ex2:20",
+      "chanted_word": "לָ֤מָּׄה"
+     },
+     {
+      "bcv": "ex5:22",
+      "chanted_word": "לָ֥מָּׄה"
+     },
+     {
+      "bcv": "ex9:30",
+      "chanted_word": "יָדַ֕עְתִּי"
+     },
+     {
+      "bcv": "ex15:27",
+      "chanted_word": "אֵילִ֔מָה"
+     },
+     {
+      "bcv": "ex25:12",
+      "chanted_word": "וְ֯יָצַ֣קְתָּ"
+     },
+     {
+      "bcv": "ex33:18",
+      "chanted_word": "הַרְאֵ֥נִי"
+     },
+     {
+      "bcv": "ex34:28",
+      "chanted_word": "לַ֔יְלָה"
+     },
+     {
+      "bcv": "lv7:30",
+      "chanted_word": "תְּ֯בִיאֶ֔ינָה"
+     },
+     {
+      "bcv": "lv10:2",
+      "chanted_word": "וַתֵּ֥ׄצֵא"
+     },
+     {
+      "bcv": "nu3:40",
+      "chanted_word": "וָמָ֑עְלָה"
+     },
+     {
+      "bcv": "nu11:12",
+      "chanted_word": "הָרִ֗יתִי"
+     },
+     {
+      "bcv": "nu22:34",
+      "chanted_word": "חָטָ֔אתִי"
+     },
+     {
+      "bcv": "nu23:15",
+      "chanted_word": "אִקָּ֥ׄרֶה"
+     },
+     {
+      "bcv": "nu25:13",
+      "chanted_word": "וְ֯הָ֤יְ֯תָה"
+     },
+     {
+      "bcv": "nu31:49",
+      "chanted_word": "מִמֶּ֖ׄנּׄוּ"
+     },
+     {
+      "bcv": "dt1:38",
+      "chanted_word": "לְ֯פָנֶ֔יךָ"
+     },
+     {
+      "bcv": "dt19:11",
+      "chanted_word": "וְ֯הִכָּ֥ׄהוּ"
+     },
+     {
+      "bcv": "dt29:10",
+      "chanted_word": "עֵצֶ֔יךָ"
+     },
+     {
+      "bcv": "dt32:24",
+      "chanted_word": "וּלְחֻ֥מֵי"
+     },
+     {
+      "bcv": "dt33:3",
+      "chanted_word": "בְּ֯יָדֶ֑ךָ"
+     },
+     {
+      "bcv": "js1:9",
+      "chanted_word": "אֱלֹהֶ֔יךָ"
+     },
+     {
+      "bcv": "js24:13",
+      "chanted_word": "לֹֽא־יָגַ֣עְתָּ"
+     },
+     {
+      "bcv": "js24:16",
+      "chanted_word": "חָלִ֣ילָה"
+     },
+     {
+      "bcv": "ju1:24",
+      "chanted_word": "הַרְאֵ֤נוּ"
+     },
+     {
+      "bcv": "ju7:4",
+      "chanted_word": "וְ֯אֶצְרְ֯פֶ֥נּׄוּ"
+     },
+     {
+      "bcv": "ju11:6",
+      "chanted_word": "וְ֯הָיִ֥יתָה"
+     },
+     {
+      "bcv": "ju11:37",
+      "chanted_word": "יֵעָ֥שֶׂה"
+     },
+     {
+      "bcv": "ju16:10",
+      "chanted_word": "הֵתַ֣לְתָּ"
+     },
+     {
+      "bcv": "ju18:25",
+      "chanted_word": "מָ֣רֵי"
+     },
+     {
+      "bcv": "ju18:28",
+      "chanted_word": "וַיֵּ֥ׄשְׁ֯בוּ"
+     },
+     {
+      "bcv": "1s6:3",
+      "chanted_word": "תָּשִׁ֛יבוּ"
+     },
+     {
+      "bcv": "1s12:3",
+      "chanted_word": "לָקַ֣חְתִּי"
+     },
+     {
+      "bcv": "1s25:23",
+      "chanted_word": "וַתִּׄשְׁתַּ֖חוּ"
+     },
+     {
+      "bcv": "2s2:22",
+      "chanted_word": "אַכֶּׄ֙כָּׄה֙"
+     },
+     {
+      "bcv": "2s2:22",
+      "chanted_word": "אַ֔רְצָה"
+     },
+     {
+      "bcv": "2s16:8",
+      "chanted_word": "בְּ֯רָ֣עָתֶ֔ךָ"
+     },
+     {
+      "bcv": "2s21:4",
+      "chanted_word": "וְ֯אֵֽין־לָ֥נוּ"
+     },
+     {
+      "bcv": "1k11:36",
+      "chanted_word": "בָּחַ֣רְתִּי"
+     },
+     {
+      "bcv": "1k13:17",
+      "chanted_word": "אֲשֶׁר־הָלַ֥כְתָּ"
+     },
+     {
+      "bcv": "1k15:5",
+      "chanted_word": "אֲשֶׁר־צִוָּׄ֗הוּ"
+     },
+     {
+      "bcv": "1k20:13",
+      "chanted_word": "הֲֽרָאִ֔יתָ"
+     },
+     {
+      "bcv": "1k21:3",
+      "chanted_word": "חָלִ֤ילָה"
+     },
+     {
+      "bcv": "is14:4",
+      "chanted_word": "וְ֯אָמָ֑רְתָּ"
+     },
+     {
+      "bcv": "is22:18",
+      "chanted_word": "כְּ֯בוֹדֶ֔ךָ"
+     },
+     {
+      "bcv": "is29:2",
+      "chanted_word": "וְ֯הָ֥יְ֯תָה"
+     },
+     {
+      "bcv": "is31:2",
+      "chanted_word": "וַיָּ֣ׄבֵא"
+     },
+     {
+      "bcv": "je6:13",
+      "chanted_word": "עֹ֥שֶׂה"
+     },
+     {
+      "bcv": "je6:25",
+      "chanted_word": "אַל־תֵּלֵ֑כוּ"
+     },
+     {
+      "bcv": "je9:12",
+      "chanted_word": "וְ֯לֹא־הָ֥לְ֯כוּ"
+     },
+     {
+      "bcv": "je9:17",
+      "chanted_word": "עָלֵ֖ינוּ"
+     },
+     {
+      "bcv": "je15:14",
+      "chanted_word": "אֶת־אֹ֣יְ֯בֶ֔יךָ"
+     },
+     {
+      "bcv": "je20:14",
+      "chanted_word": "יֻלַּ֖ׄדְתִּי"
+     },
+     {
+      "bcv": "je39:11",
+      "chanted_word": "עַֽל־יִרְמְ֯יָ֑הוּ"
+     },
+     {
+      "bcv": "je42:16",
+      "chanted_word": "מִמֶּׄ֔נָּׄה"
+     },
+     {
+      "bcv": "je48:32",
+      "chanted_word": "עָ֣בְ֯רוּ"
+     },
+     {
+      "bcv": "je48:39",
+      "chanted_word": "הֵילִ֔ילוּ"
+     },
+     {
+      "bcv": "ek14:20",
+      "chanted_word": "חַי־אָ֗נִי"
+     },
+     {
+      "bcv": "ek22:29",
+      "chanted_word": "עָ֣שְׁ֯קוּ"
+     },
+     {
+      "bcv": "ek23:38",
+      "chanted_word": "עָ֣שׂוּ"
+     },
+     {
+      "bcv": "ek27:8",
+      "chanted_word": "הָ֣יוּ"
+     },
+     {
+      "bcv": "ek32:26",
+      "chanted_word": "מְ֯חֻ֣לְ֯לֵי"
+     },
+     {
+      "bcv": "ek39:11",
+      "chanted_word": "וְ֯קָ֣בְ֯רוּ"
+     },
+     {
+      "bcv": "ek47:18",
+      "chanted_word": "תָּמֹ֑דּׄוּ"
+     },
+     {
+      "bcv": "ho6:7",
+      "chanted_word": "בָּ֥גְ֯דוּ"
+     },
+     {
+      "bcv": "ho14:10",
+      "chanted_word": "יֵ֣לְ֯כוּ"
+     },
+     {
+      "bcv": "jn2:6",
+      "chanted_word": "יְ֯סֹבְ֯בֵ֑נִי"
+     },
+     {
+      "bcv": "jn4:4",
+      "chanted_word": "חָ֥רָה"
+     },
+     {
+      "bcv": "mi6:2",
+      "chanted_word": "מ֣וֹסְ֯דֵי"
+     },
+     {
+      "bcv": "na3:19",
+      "chanted_word": "תָּ֤קְ֯עוּ"
+     },
+     {
+      "bcv": "hb3:13",
+      "chanted_word": "מָחַ֤צְתָּ"
+     },
+     {
+      "bcv": "zc10:11",
+      "chanted_word": "וְ֯הֹבִ֕ישׁוּ"
+     },
+     {
+      "bcv": "ca5:8",
+      "chanted_word": "מַה־תַּׄגִּ֣ׄידוּ"
+     },
+     {
+      "bcv": "ru1:8",
+      "chanted_word": "לֵ֣כְנָה"
+     },
+     {
+      "bcv": "lm1:7",
+      "chanted_word": "מִ֣ימֵי"
+     },
+     {
+      "bcv": "lm2:14",
+      "chanted_word": "חָ֤זוּ"
+     },
+     {
+      "bcv": "lm3:47",
+      "chanted_word": "הָ֥יָה"
+     },
+     {
+      "bcv": "lm4:3",
+      "chanted_word": "חָ֣לְ֯צוּ"
+     },
+     {
+      "bcv": "lm5:21",
+      "chanted_word": "יָמֵ֖ינוּ"
+     },
+     {
+      "bcv": "ec2:4",
+      "chanted_word": "בָּנִ֤יתִי"
+     },
+     {
+      "bcv": "ec5:17",
+      "chanted_word": "אֲשֶׁר־רָאִ֣יתִי"
+     },
+     {
+      "bcv": "ec6:3",
+      "chanted_word": "לֹא־הָ֣יְ֯תָה"
+     },
+     {
+      "bcv": "es2:9",
+      "chanted_word": "וְ֯אֶת־נַעֲרוֹתֶ֛יהָ"
+     },
+     {
+      "bcv": "es3:6",
+      "chanted_word": "כִּֽי־הִגִּ֥ׄידוּ"
+     },
+     {
+      "bcv": "da9:6",
+      "chanted_word": "וַאֲבֹתֵ֑ינוּ"
+     },
+     {
+      "bcv": "ne9:26",
+      "chanted_word": "אֲשֶׁר־הֵעִ֥ידוּ"
+     },
+     {
+      "bcv": "1c3:12",
+      "chanted_word": "אֲמַצְיָ֧הוּ"
+     },
+     {
+      "bcv": "1c22:11",
+      "chanted_word": "וּבָנִ֙יתָ֙"
+     },
+     {
+      "bcv": "2c18:22",
+      "chanted_word": "נְ֯בִיאֶ֣יךָ"
+     },
+     {
+      "bcv": "2c26:10",
+      "chanted_word": "הָ֣יָה"
+     }
+    ],
+    "poetic verses": [
+     {
+      "bcv": "ps18:16",
+      "chanted_word": "אֲפִ֥יקֵי"
+     },
+     {
+      "bcv": "ps18:39",
+      "chanted_word": "וְ֯לֹא־יֻ֣כְלוּ"
+     },
+     {
+      "bcv": "ps21:3",
+      "chanted_word": "נָתַ֣תָּׄה"
+     },
+     {
+      "bcv": "ps59:7",
+      "chanted_word": "וִיס֥וֹבְﬞ֯בוּ"
+     },
+     {
+      "bcv": "ps73:19",
+      "chanted_word": "סָ֥פוּ"
+     },
+     {
+      "bcv": "ps77:17",
+      "chanted_word": "רָ֘א֤וּךָ"
+     },
+     {
+      "bcv": "pr14:18",
+      "chanted_word": "יַכְתִּ֥רוּ"
+     },
+     {
+      "bcv": "pr31:16",
+      "chanted_word": "נָ֣טְ֯עָה"
+     },
+     {
+      "bcv": "jb24:20",
+      "chanted_word": "יִשְׁכָּ֘חֵ֤הוּ"
+     },
+     {
+      "bcv": "jb28:7",
+      "chanted_word": "לֹא־יְ֯דָ֣עוֹ"
+     }
+    ]
+   }
   }
  },
  "stress_accent_classification": {

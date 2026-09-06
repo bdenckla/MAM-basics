@@ -89,6 +89,7 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+from random import Random
 
 from accgram import maqaf_nonfinal_accents as mna
 from accgram import poetic_accent_names as pan
@@ -737,6 +738,28 @@ def _intervening_punctuation(
     )
 
 
+_CB_QAMATS_MARKER = "cb-qamats"
+_FIT_FOR_MAS_NON_PUNCTUATION_MATERIAL = frozenset(
+    (None, _CB_QAMATS_MARKER, "סס", "פפ", "ססס", "פפפ")
+)
+
+
+def _fit_for_mas_intervening_punctuation(
+    *, bcv: str, chanted_word: str, material: tuple[object, ...]
+) -> tuple[str, ...]:
+    """The displayed candidate's punctuation, omitting only known non-text metadata."""
+    if not material or all(one == _PHONETIC_MAM_PASEQ for one in material):
+        return _intervening_punctuation(
+            bcv=bcv, chanted_word=chanted_word, material=material
+        )
+    if all(one in _FIT_FOR_MAS_NON_PUNCTUATION_MATERIAL for one in material):
+        return ()
+    raise SurveyProblem(
+        f"{bcv} {chanted_word!r}: unclassified intervening material before a"
+        f" Fit-for-MAS candidate's following chanted word: {material!r}"
+    )
+
+
 _DUALCANT_MARKER = "cb-dualcant"
 CANT_ALEF = "cant-alef"
 CANT_BET = "cant-bet"
@@ -1150,9 +1173,12 @@ def _fit_for_mas_candidate(
     word: str,
     jta: str,
     parsed: dict,
+    before_qere: str | None,
+    following_chanted_word: str | None,
     following_jta: str | None,
     following_accent_grammar_tokens: tuple[str, ...],
     accent_grammar_tokens: tuple[str, ...],
+    intervening_punctuation: tuple[str, ...],
 ) -> dict | None:
     """One potential MAS syllable, or ``None`` when no syllable follows the stress.
 
@@ -1180,10 +1206,14 @@ def _fit_for_mas_candidate(
         for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
         if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
     )
-    return {
+    candidate = {
         "bcv": bcv,
+        "system": system,
         "chanted_word": word,
         "jta": jta,
+        "snapshot_before_qere": before_qere,
+        "following_chanted_word": following_chanted_word,
+        "intervening_punctuation": intervening_punctuation,
         "structural_types": types,
         "has_u05bd": has_u05bd,
         "following_chanted_word_is_initially_stressed": (
@@ -1196,6 +1226,76 @@ def _fit_for_mas_candidate(
         ),
         "accent_grammar_token_count": len(accent_grammar_tokens),
     }
+    return candidate
+
+
+_TYPE_1_PROSE_LACKS_MAS_SAMPLE_SIZE = 100
+_TYPE_1_POETIC_LACKS_MAS_SAMPLE_SIZE = 10
+_LACKS_MAS_SAMPLE_SEED = 20260906
+
+
+def _has_following_word_conditions_for_mas(candidate: dict) -> bool:
+    """Whether the following chanted word has the two Fit-for-MAS properties."""
+    return (
+        candidate["following_chanted_word_is_initially_stressed"]
+        and candidate["following_chanted_word_has_disjunctive_accent"]
+    )
+
+
+def _is_fit_for_mas(candidate: dict) -> bool:
+    """Whether one candidate meets the following-word conditions and a MAS type."""
+    return _has_following_word_conditions_for_mas(candidate) and bool(
+        candidate["structural_types"]
+    )
+
+
+def _sample_in_corpus_order(
+    candidates: list[dict], count: int, random: Random
+) -> list[dict]:
+    """A fixed random sample, restored to the corpus order for the rendered table."""
+    assert len(candidates) >= count, (len(candidates), count)
+    return [
+        candidates[index]
+        for index in sorted(random.sample(range(len(candidates)), count))
+    ]
+
+
+def _lacks_mas_case_lists(candidates: list[dict]) -> dict:
+    """The all-type-2 and selected type-1 Fit-for-MAS cases that lack MAS."""
+
+    def lacking(kind: str, system: str | None = None) -> list[dict]:
+        return [
+            candidate
+            for candidate in candidates
+            if (
+                _is_fit_for_mas(candidate)
+                and kind in candidate["structural_types"]
+                and not candidate["has_mas"]
+                and (system is None or candidate["system"] == system)
+            )
+        ]
+
+    random = Random(_LACKS_MAS_SAMPLE_SEED)
+    return {
+        "type_2_all": lacking(TYPE_GUTTURAL),
+        "type_1_random_sample": {
+            SYSTEM_PROSE: _sample_in_corpus_order(
+                lacking(TYPE_OPEN, SYSTEM_PROSE),
+                _TYPE_1_PROSE_LACKS_MAS_SAMPLE_SIZE,
+                random,
+            ),
+            SYSTEM_POETIC: _sample_in_corpus_order(
+                lacking(TYPE_OPEN, SYSTEM_POETIC),
+                _TYPE_1_POETIC_LACKS_MAS_SAMPLE_SIZE,
+                random,
+            ),
+        },
+    }
+
+
+def _rendered_lacks_mas_case(candidate: dict) -> dict:
+    """The analysed Phonetic MAM form and reference a page needs for one case."""
+    return {key: candidate[key] for key in ("bcv", "chanted_word")}
 
 
 def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dict:
@@ -1212,10 +1312,7 @@ def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dic
     following_word_conditions = [
         candidate
         for candidate in candidates
-        if (
-            candidate["following_chanted_word_is_initially_stressed"]
-            and candidate["following_chanted_word_has_disjunctive_accent"]
-        )
+        if _has_following_word_conditions_for_mas(candidate)
     ]
     fitting = [
         candidate
@@ -1482,9 +1579,16 @@ def _one_verse(
             word=word,
             jta=jta,
             parsed=parsed,
+            before_qere=entry.get("before_qfikq"),
+            following_chanted_word=following_chanted_word,
             following_jta=following_jta,
             following_accent_grammar_tokens=following_accent_grammar_tokens,
             accent_grammar_tokens=accent_grammar_tokens[id(entry)],
+            intervening_punctuation=_fit_for_mas_intervening_punctuation(
+                bcv=bcv,
+                chanted_word=word,
+                material=intervening_material,
+            ),
         )
         if fit_for_mas_candidate is not None:
             found["fit_for_mas_candidates"].append(fit_for_mas_candidate)
@@ -2083,6 +2187,20 @@ def build_survey() -> dict:
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
     fit_for_mas = _fit_for_mas_summary(found["fit_for_mas_candidates"], post_stress)
+    lacks_mas_case_lists = _lacks_mas_case_lists(found["fit_for_mas_candidates"])
+    fit_for_mas["lacks_mas_cases"] = {
+        "type_2_all": [
+            _rendered_lacks_mas_case(candidate)
+            for candidate in lacks_mas_case_lists["type_2_all"]
+        ],
+        "type_1_random_sample": {
+            system: [
+                _rendered_lacks_mas_case(candidate)
+                for candidate in lacks_mas_case_lists["type_1_random_sample"][system]
+            ]
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+    }
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
