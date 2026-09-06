@@ -970,7 +970,7 @@ def _by_type(survey: dict) -> list:
         )
     )
     return [
-        mb_html.heading_level_2("MAS by structural type"),
+        mb_html.heading_level_2("The three types of MAS"),
         mb_html.para(
             (
                 f"All but {unclassified_count} cases of MAS can be sorted into one of the three"
