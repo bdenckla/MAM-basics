@@ -1833,7 +1833,6 @@ def _type_2_type_3_footnote(survey: dict) -> list:
     )
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     overlap = _type_2_type_3_overlap(survey)
-    chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = overlap["chanted_words"]
     overlap_by_book = overlap["by_book"]
     overlap_example = overlap["example"]
@@ -1843,20 +1842,19 @@ def _type_2_type_3_footnote(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
+                f"Types 2 and 3 could in principle overlap. However, {type_2_final_mas_count}"
                 f" of the {type_2_count} type-2 MAS syllables have ",
                 _ROM_PATAH,
-                ", while the other ",
+                ", and while the other ",
                 f"{len(nonfinal_mas_syllable_records)} have ",
                 _ROM_TSERE,
-                " and are not only open but also nonfinal. Thus no type-2 MAS meets the"
+                ", that syllable is not only open but also nonfinal. Thus no type-2 MAS meets the"
                 " type-3 condition. Indeed, words with a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural are quite rare even without a ",
                 _ROM_METEG,
                 ". Only ",
-                f"{overlap_count:,} of all {chanted_word_count:,} words surveyed have"
-                " a final ",
+                f"{overlap_count:,} words have a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural. All ",
                 f"{overlap_count:,} occur in Aramaic and end in a ",
