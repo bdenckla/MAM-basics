@@ -66,11 +66,12 @@ _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-1"
-_JEREMIAH_FOOTNOTE_ID = "footnote-2"
-_NONFINAL_MAS_FOOTNOTE_ID = "footnote-3"
-_SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-4"
-_TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-5"
-_FIT_FOR_MAS_FOOTNOTE_ID = "footnote-6"
+_POST_SILLUQ_FOOTNOTE_ID = "footnote-2"
+_JEREMIAH_FOOTNOTE_ID = "footnote-3"
+_NONFINAL_MAS_FOOTNOTE_ID = "footnote-4"
+_SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
+_TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
+_FIT_FOR_MAS_FOOTNOTE_ID = "footnote-7"
 
 
 def _author_romanization(key: str) -> object:
@@ -341,7 +342,6 @@ def build_body(survey: dict) -> list:
         *_general_mas_facts(survey),
         *_by_type(survey),
         *_case_list_link(survey),
-        *_post_silluq(survey),
         *_oleh_meteg_overlap(survey),
         *_footnotes(survey),
     ]
@@ -898,16 +898,20 @@ def _general_mas_facts(survey: dict) -> list:
         mb_html.heading_level_2("General facts about MAS"),
         mb_html.unordered_list(
             (
-                "In every MAS case, the MAS immediately follows the stress syllable, which"
-                " has a conjunctive accent.",
+                "In every MAS case, the MAS immediately follows the stress syllable.",
+                (
+                    "In every MAS case, the stress syllable has a conjunctive accent (",
+                    _footnote_callout(2, _POST_SILLUQ_FOOTNOTE_ID),
+                    ").",
+                ),
                 (
                     "In every MAS case but one, the next word has initial stress (",
-                    _footnote_callout(2, _JEREMIAH_FOOTNOTE_ID),
+                    _footnote_callout(3, _JEREMIAH_FOOTNOTE_ID),
                     ").",
                 ),
                 (
                     "In every MAS case except four (",
-                    _footnote_callout(3, _NONFINAL_MAS_FOOTNOTE_ID),
+                    _footnote_callout(4, _NONFINAL_MAS_FOOTNOTE_ID),
                     "), the MAS syllable is final.",
                 ),
             )
@@ -971,7 +975,7 @@ def _by_type(survey: dict) -> list:
             (
                 f"All but {unclassified_count} cases of MAS can be sorted into one of the three"
                 " following types: ",
-                _footnote_callout(4, _SOURCES_FOR_TYPES_FOOTNOTE_ID),
+                _footnote_callout(5, _SOURCES_FOR_TYPES_FOOTNOTE_ID),
             )
         ),
         mb_html.unordered_list(
@@ -982,7 +986,7 @@ def _by_type(survey: dict) -> list:
                     "In type 3, the MAS is on a closed, final, ",
                     _ROM_TSERE,
                     "-vowelled syllable. (",
-                    _footnote_callout(5, _TYPE_2_TYPE_3_FOOTNOTE_ID),
+                    _footnote_callout(6, _TYPE_2_TYPE_3_FOOTNOTE_ID),
                     ")",
                 ),
             )
@@ -995,7 +999,7 @@ def _by_type(survey: dict) -> list:
                 " types. The answer is that a MAS actually appears only ",
                 f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS. (",
-                _footnote_callout(6, _FIT_FOR_MAS_FOOTNOTE_ID),
+                _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
                 ")",
             )
         ),
@@ -1004,7 +1008,7 @@ def _by_type(survey: dict) -> list:
 
 
 def _sources_for_types_footnote() -> list:
-    """Footnote 4: sources for the three types."""
+    """Footnote 5: sources for the three types."""
     source_rows = [
         mb_html.table_row_of_data(
             (
@@ -1019,7 +1023,7 @@ def _sources_for_types_footnote() -> list:
     ]
     return [
         mb_html.heading_level_3(
-            "φ4 — Sources for types 1–3", {"id": _SOURCES_FOR_TYPES_FOOTNOTE_ID}
+            "φ5 — Sources for types 1–3", {"id": _SOURCES_FOR_TYPES_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1555,16 +1559,17 @@ def _post_silluq_lc_crop() -> object:
     )
 
 
-def _post_silluq(survey: dict) -> list:
-    """A Leningrad meteg after silluq, which the MAM form does not have."""
+def _post_silluq_footnote(survey: dict) -> list:
+    """Footnote 2: a Leningrad meteg after silluq, which the MAM form does not have."""
     comparison = _post_silluq_comparison(survey)
     comparison_rows = [
         mb_html.table_row_of_data((source, _hebrew_cell(form)), (None, _HEBREW_CELL))
         for source, form in comparison
     ]
     return [
-        mb_html.heading_level_2(
-            ("A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad")
+        mb_html.heading_level_3(
+            ("φ2 — A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad"),
+            {"id": _POST_SILLUQ_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
@@ -1700,8 +1705,9 @@ def _footnotes(survey: dict) -> list:
     return [
         mb_html.heading_level_2("Footnotes"),
         *_dual_cantillation_footnote(survey),
+        *_post_silluq_footnote(survey),
         mb_html.heading_level_3(
-            ("φ2 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
+            ("φ3 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1841,7 +1847,7 @@ def _dual_cantillation_footnote(survey: dict) -> list:
 
 
 def _type_2_type_3_footnote(survey: dict) -> list:
-    """Footnote 5: why types 2 and 3 do not overlap in the current survey."""
+    """Footnote 6: why types 2 and 3 do not overlap in the current survey."""
     type_2_records = _type_2_records(survey)
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     type_2_final_mas_count = sum(
@@ -1854,7 +1860,7 @@ def _type_2_type_3_footnote(survey: dict) -> list:
     overlap_example = overlap["example"]
     return [
         mb_html.heading_level_3(
-            "φ5 — Do types 2 and 3 overlap?", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
+            "φ6 — Do types 2 and 3 overlap?", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1893,12 +1899,12 @@ def _type_2_type_3_footnote(survey: dict) -> list:
 
 
 def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
-    """Footnote 3: the four nonfinal MAS syllables."""
+    """Footnote 4: the four nonfinal MAS syllables."""
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     assert len(nonfinal_mas_syllable_records) == 4
     return [
         mb_html.heading_level_3(
-            "φ3 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
+            "φ4 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1927,7 +1933,7 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
 
 
 def _fit_for_mas_footnote(survey: dict) -> list:
-    """Footnote 6: every syllable fit for MAS, including the ones lacking MAS."""
+    """Footnote 7: every syllable fit for MAS, including the ones lacking MAS."""
     fit_for_mas = _fit_for_mas(survey)
     headers = ("Type", "Fit for MAS", "Has MAS", "Lacks MAS")
     rows = [
@@ -1954,7 +1960,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
         )
     )
     return [
-        mb_html.heading_level_3("φ6 — Fit for MAS", {"id": _FIT_FOR_MAS_FOOTNOTE_ID}),
+        mb_html.heading_level_3("φ7 — Fit for MAS", {"id": _FIT_FOR_MAS_FOOTNOTE_ID}),
         mb_html.para(
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
