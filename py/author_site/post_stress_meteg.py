@@ -117,12 +117,9 @@ _TYPE_SOURCES = {
 }
 
 _TYPE_CODES = {
-    psm.TYPE_OPEN: ("1", "an open syllable"),
-    psm.TYPE_GUTTURAL: (
-        "2",
-        "a syllable closed by a guttural at the end of the chanted word",
-    ),
-    psm.TYPE_CLOSED_TSERE: ("3", "a final closed syllable whose vowel is tsere"),
+    psm.TYPE_OPEN: ("1", "an open, final syllable"),
+    psm.TYPE_GUTTURAL: ("2", "a chanted word closed by a guttural"),
+    psm.TYPE_CLOSED_TSERE: ("3", "a closed, tsere-vowelled syllable"),
 }
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
@@ -346,13 +343,10 @@ def _by_type_count(survey: dict, kind: str) -> int:
     )
 
 
-def _type_1_records_with_nonfinal_meteg_syllable(survey: dict) -> list[dict]:
-    """Type-1 records where a further final syllable follows the meteg's syllable."""
+def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
+    """MAS records where a further final syllable follows the MAS syllable."""
     return [
-        record
-        for record in survey["post_stress"]
-        if record["structural_type"] == psm.TYPE_OPEN
-        and not record["is_the_last_syllable"]
+        record for record in survey["post_stress"] if not record["is_the_last_syllable"]
     ]
 
 
@@ -378,17 +372,6 @@ def _example_of(survey: dict, kind: str) -> dict:
         if record["structural_type"] == kind:
             return record
     raise AssertionError(f"no post-stress record of type {kind!r} to show")
-
-
-def _misc_almost_type_1_only_member(survey: dict) -> dict:
-    """The only chanted word in the strict-type-1 subtype, Jeremiah 46:14."""
-    records = [
-        one
-        for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
-        if one["bcv"] == "je46:14"
-    ]
-    assert len(records) == 1, records
-    return records[0]
 
 
 def _misc_almost_type_3_only_member(survey: dict) -> dict:
@@ -430,7 +413,6 @@ def pin_claims(survey: dict) -> None:
     assert len(misc_records) == _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     assert all(one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in misc_records)
     for subtype in (
-        psm.SUBTYPE_MISC_ALMOST_TYPE_1,
         psm.SUBTYPE_MISC_VAYOMER,
         psm.SUBTYPE_MISC_ALMOST_TYPE_3,
     ):
@@ -439,14 +421,13 @@ def pin_claims(survey: dict) -> None:
         assert all(
             one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
         )
-    _misc_almost_type_1_only_member(survey)
     misc_almost_type_3 = _misc_almost_type_3_only_member(survey)
     assert _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3) == 1
     assert (
         misc_almost_type_3["vowel"] == "ḥolam"
         and misc_almost_type_3["is_the_last_syllable"]
         and not misc_almost_type_3["syllable_is_open"]
-        and not misc_almost_type_3["closes_on_a_guttural"]
+        and not misc_almost_type_3["chanted_word_is_closed_by_a_guttural"]
     )
     misc_vayomer_records = _subtype_records(survey, psm.SUBTYPE_MISC_VAYOMER)
     assert len(misc_vayomer_records) == 4, misc_vayomer_records
@@ -462,18 +443,15 @@ def pin_claims(survey: dict) -> None:
     type_2_records = _type_2_records(survey)
     assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
     assert all(
-        record["closes_on_a_guttural"]
-        and not record["syllable_is_open"]
-        and record["vowel"] == "pataḥ"
+        record["chanted_word_is_closed_by_a_guttural"]
+        and record["following_chanted_word_is_initially_stressed"]
         for record in type_2_records
-    ), "the type-2/type-3 non-overlap claim has moved"
+    ), "the type-2 guttural or following-stress fact has moved"
     assert all(
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
-    type_1_nonfinal_meteg_syllable_records = (
-        _type_1_records_with_nonfinal_meteg_syllable(survey)
-    )
-    assert [record["bcv"] for record in type_1_nonfinal_meteg_syllable_records] == [
+    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    assert [record["bcv"] for record in nonfinal_mas_syllable_records] == [
         "is63:12",
         "pr1:19",
         "pr11:26",
@@ -481,10 +459,44 @@ def pin_claims(survey: dict) -> None:
     ]
     assert all(
         record["syllables_after_the_stress"] == 1
+        and record["structural_type"] == psm.TYPE_GUTTURAL
         and record["syllable_is_open"]
+        and record["vowel"] == "ṣere"
+        and record["chanted_word_is_closed_by_a_guttural"]
         and final_stress.ends_in_furtive_patax(record["chanted_word"])
-        for record in type_1_nonfinal_meteg_syllable_records
-    ), "the type-1 qualification for final furtive pataḥ has moved"
+        for record in nonfinal_mas_syllable_records
+    ), "the four nonfinal-MAS type-2 cases have moved"
+    type_2_final_mas_records = [
+        record for record in type_2_records if record["is_the_last_syllable"]
+    ]
+    assert len(type_2_final_mas_records) == 56
+    assert all(
+        not record["syllable_is_open"] and record["vowel"] == "pataḥ"
+        for record in type_2_final_mas_records
+    ), "the final-MAS type-2 cases have moved"
+    type_3_records = [
+        record
+        for record in post_stress
+        if record["structural_type"] == psm.TYPE_CLOSED_TSERE
+    ]
+    assert len(type_3_records) == _by_type_count(survey, psm.TYPE_CLOSED_TSERE)
+    assert all(
+        record["is_the_last_syllable"]
+        and not record["syllable_is_open"]
+        and record["vowel"] == "ṣere"
+        and record["following_chanted_word_is_initially_stressed"]
+        for record in type_3_records
+    ), "the type-3 finality or following-stress fact has moved"
+    type_1_records = [
+        record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
+    ]
+    assert all(record["is_the_last_syllable"] for record in type_1_records)
+    assert (
+        len(type_1_records),
+        len(type_2_records),
+        len(type_3_records),
+        len(misc_records),
+    ) == (122, 60, 42, 7)
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     assert type_2_type_3_overlap["chanted_words"] == 154
     assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}
@@ -494,7 +506,9 @@ def pin_claims(survey: dict) -> None:
     type_2_following_group_counts = Counter(
         _type_2_following_group(record) for record in type_2_records
     )
-    assert type_2_following_group_counts == Counter(lamed=38, guttural=17, resh=1)
+    assert type_2_following_group_counts == Counter(
+        lamed=38, guttural=17, resh=1, bet=2, mem=2
+    )
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
@@ -759,9 +773,12 @@ def _by_type(survey: dict) -> list:
         "Example",
     )
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
-    type_1_nonfinal_meteg_syllable_records = (
-        _type_1_records_with_nonfinal_meteg_syllable(survey)
+    type_2_records = _type_2_records(survey)
+    type_2_final_mas_count = sum(
+        record["is_the_last_syllable"] for record in type_2_records
     )
+    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    type_3_count = _by_type_count(survey, psm.TYPE_CLOSED_TSERE)
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = type_2_type_3_overlap["chanted_words"]
@@ -818,18 +835,19 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.ordered_list(
             (
-                "An open syllable before an initially-stressed word.",
-                "A final syllable closed by a guttural.",
-                "A final closed syllable whose vowel is tsere.",
+                "An open, final syllable.",
+                "A chanted word closed by a guttural.",
+                "A closed syllable whose vowel is tsere.",
             )
         ),
         _table(headers, rows),
         _hebrew_spacing_option(),
         _para(
-            f"Types 2 and 3 could in principle overlap. In this survey, however, every one"
-            f" of the {type_2_count} type-2 words has pataḥ rather than tsere, so no"
-            " type-2 word also meets the type-3 condition. Indeed, words with a final"
-            " tsere closed by a guttural are quite rare even without a meteg. Only "
+            f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
+            f" of the {type_2_count} type-2 MAS syllables have pataḥ, while the other "
+            f"{len(nonfinal_mas_syllable_records)} have ṣere but are open. Thus no type-2"
+            " MAS meets the type-3 condition. Indeed, chanted words with a final tsere"
+            " syllable closed by a guttural are quite rare even without a meteg. Only "
             f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
             " final tsere syllable closed by a guttural. All "
             f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
@@ -846,13 +864,10 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "Unlike our type 1, ",
-                itm(),
-                "'s type 1 requires penultimate stress. Our survey counts a final furtive"
-                " pataḥ as a syllable. On that syllable count, our survey's type 1 includes"
-                " four chanted words that ",
-                itm(),
-                "'s type 1 excludes:",
+                f"Every MAS syllable directly follows the stress. In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
+                " records the MAS syllable is final. The other "
+                f"{len(nonfinal_mas_syllable_records)} records are type 2: each has an open"
+                " penultimate tsere MAS syllable before a final furtive-pataḥ syllable.",
             )
         ),
         mb_html.table(
@@ -864,7 +879,7 @@ def _by_type(survey: dict) -> list:
                     ),
                     (None, _HEBREW_CELL),
                 )
-                for record in type_1_nonfinal_meteg_syllable_records
+                for record in nonfinal_mas_syllable_records
             ],
             {"class": "limited-width post-stress-meteg-table"},
         ),
@@ -876,22 +891,14 @@ def _by_type(survey: dict) -> list:
                 *itm_sections("§354"),
                 " and ",
                 cos(),
-                " Ch. 8 type (b), where the last syllable of the chanted word ends in ḥet,"
-                " ayin or he. A furtive pataḥ counts as a separate syllable here, as it"
-                " is in Phonetic MAM, so a meteg on that guttural comes out after the stress"
-                " rather than in it. All ",
-                str(type_2_count),
-                " type-2 chanted words surveyed have penultimate stress, matching ",
-                itm(),
-                "'s description. Penultimate stress is a fact about the ",
-                str(type_2_count),
-                " type-2 chanted words, not a further type-2 condition. ",
-                cos(),
-                " calls the type obligatory; ",
-                itm(),
-                "'s statement is"
-                " narrower, that the mark is sometimes used when the chanted word after it"
-                " begins with lamed or nun.",
+                " Ch. 8 type (b). Type 2 requires a final syllable phonetically closed by"
+                " ḥet, ayin or he; a final mater he does not meet that condition. The "
+                f"{len(nonfinal_mas_syllable_records)} nonfinal-MAS type-2 records have a"
+                " final furtive-pataḥ syllable. The other "
+                f"{type_2_final_mas_count} type-2 MAS syllables are final, and their chanted"
+                " words have penultimate stress. Every following chanted word in the type-2"
+                f" set and the {type_3_count} type-3 records has initial stress, but that"
+                " stress is an observation, not a condition that narrows type 2 or type 3.",
             )
         ),
         mb_html.para(
@@ -903,7 +910,7 @@ def _by_type(survey: dict) -> list:
                 " ",
                 *itm_sections("§338, fed by §308"),
                 "'s account of retracted stress: where the stress retracts"
-                " and a final closed syllable keeps its tsere, that syllable takes the mark,"
+                " and a closed syllable keeps its tsere, that syllable takes the mark,"
                 " and ",
                 itm(),
                 " says it is marked in manuscripts and printed texts alike. ",
@@ -993,10 +1000,6 @@ def _case_subtype_cell(subtype: str | None) -> object:
     if subtype is None:
         return ""
     gloss_by_subtype = {
-        psm.SUBTYPE_MISC_ALMOST_TYPE_1: (
-            "An open-syllable type-1 candidate whose following word has no stress"
-            " on its first syllable."
-        ),
         psm.SUBTYPE_MISC_VAYOMER: (
             "A Vayomer case with one intervening paseq before the following word."
         ),
@@ -1012,16 +1015,14 @@ def _case_subtype_cell(subtype: str | None) -> object:
 
 
 def _following_chanted_word_matters(record: dict) -> bool:
-    """Whether the following chanted word supplies a type condition for this record."""
-    return record["structural_type"] == psm.TYPE_OPEN or (
-        record["subtype"] in (psm.SUBTYPE_MISC_ALMOST_TYPE_1, psm.SUBTYPE_MISC_VAYOMER)
-    )
+    """Whether the following chanted word supplies shown context for this record."""
+    return record["subtype"] == psm.SUBTYPE_MISC_VAYOMER
 
 
 def _case_chanted_word_cell(
     record: dict, *, include_type_2_following: bool = False
 ) -> tuple:
-    """The MAM form, with required following context demoted.
+    """The MAM form, with selected following context demoted.
 
     The shared routine displays zero or more paseq marks and then the following chanted word.
     At present only the four ``misc-vayomer`` records have a paseq, but survey validation makes
@@ -1134,8 +1135,10 @@ def _misc_case_row(record: dict) -> object:
 def _type_2_following_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
+        ("bet", "Followed by bet"),
         ("lamed", "Followed by lamed"),
         ("guttural", "Followed by guttural"),
+        ("mem", "Followed by mem"),
         ("resh", "Followed by resh"),
     )
     option_html = "".join(
@@ -1151,7 +1154,10 @@ def _type_2_following_filter(case_count: int) -> object:
 
 def build_type_2_body(survey: dict) -> list:
     """The type-2 cases, grouped by the following chanted word's initial consonant."""
-    rows = [_type_2_case_row(record) for record in _type_2_records(survey)]
+    records = _type_2_records(survey)
+    rows = [_type_2_case_row(record) for record in records]
+    group_counts = Counter(_type_2_following_group(record) for record in records)
+    nonfinal_mas_count = sum(not record["is_the_last_syllable"] for record in records)
     return [
         mb_html.heading_level_1(_TYPE_2_TITLE),
         mb_html.para(
@@ -1165,9 +1171,10 @@ def build_type_2_body(survey: dict) -> list:
         ),
         mb_html.heading_level_2("Every type 2 case in MAM"),
         _para(
-            "Every row has a final guttural closing the last syllable of the first"
-            " word. The following word is gray, and its initial consonant selects the"
-            " lamed, guttural, or resh filter."
+            "Every row's chanted word has a final syllable phonetically closed by a"
+            " guttural. The following word is gray. Its initial consonant selects the"
+            " bet, guttural, lamed, mem or resh filter. Every following word has initial"
+            " stress, but that stress is not a type-2 condition."
         ),
         mb_html.para(
             (
@@ -1175,13 +1182,13 @@ def build_type_2_body(survey: dict) -> list:
                 itm(),
                 " ",
                 *itm_sections("§354"),
-                ", I guessed that type-2 words might often be followed by words starting"
-                " with lamed or nun. My guess was correct with respect to lamed but not with"
-                " respect to nun. Perhaps just coincidentally, the type-2 words not followed"
-                " by an initial-lamed word are almost always followed by an initial-guttural"
-                " word, with only one exception: an initial-resh word. Although resh behaves"
-                " like a guttural in some respects, we do not consider it to be a guttural"
-                " here.",
+                f", I guessed that type-2 words might often be followed by an initial lamed"
+                f" or nun. The {group_counts['lamed']} lamed cases support the first part of"
+                " that guess; there are no nun cases. The other final-MAS type-2 cases have "
+                f"{group_counts['guttural']} guttural initials and {group_counts['resh']} resh"
+                f" initial. The {nonfinal_mas_count} type-2 cases with a final furtive-pataḥ"
+                f" syllable are followed by {group_counts['bet']} bet initials and"
+                f" {group_counts['mem']} mem initials. Resh is not a guttural here.",
             )
         ),
         _type_2_following_filter(len(rows)),
@@ -1201,8 +1208,6 @@ def build_type_2_body(survey: dict) -> list:
 def build_misc_body(survey: dict) -> list:
     """The misc cases and the named subsets that remain outside types 1–3."""
     records = _misc_records(survey)
-    almost_type_1_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_1)
-    almost_type_1_only_member = _misc_almost_type_1_only_member(survey)
     misc_almost_type_3_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
     misc_almost_type_3_only_member = _misc_almost_type_3_only_member(survey)
     vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
@@ -1232,18 +1237,6 @@ def build_misc_body(survey: dict) -> list:
             },
         ),
         _hebrew_spacing_option(),
-        mb_html.para(
-            (
-                "Within misc, ",
-                psm.SUBTYPE_MISC_ALMOST_TYPE_1,
-                f" has {almost_type_1_count} word",
-                "s" if almost_type_1_count != 1 else "",
-                ". Its only member is ",
-                _ref_link(almost_type_1_only_member["bcv"]),
-                ": the MAS syllable is open, but the following word's first"
-                " syllable is unstressed.",
-            )
-        ),
         mb_html.para(
             (
                 "Within misc, ",
@@ -1290,10 +1283,7 @@ def build_cases_body(survey: dict) -> list:
             " text."
         ),
         _para(
-            "For type 1, the following word is shown in gray."
-            " The same is true of misc-almost-type-1, because the following"
-            " word's stress keeps that row out of type 1. For misc-vayomer, the"
-            " intervening paseq is gray with the following word."
+            "For misc-vayomer, the intervening paseq is gray with the following word."
         ),
         mb_html.para(
             (
@@ -1339,8 +1329,7 @@ def _m23(survey: dict) -> list:
         ),
         _para(
             f"The mark is of the open-syllable type: {qumi} is stressed on its first"
-            " syllable, ends in an open syllable, and the chanted word after it is stressed"
-            " on its first syllable. That is the type both books call optional, and"
+            " syllable and ends in an open syllable. That is the type both books call optional, and"
             f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
@@ -1351,7 +1340,7 @@ def _m23(survey: dict) -> list:
         _para(
             "MAM has one other chanted word of exactly this shape, and the individual-cases"
             f" page names it: {same_shape['mam_form']} at {ref_abbrev(same_shape['bcv'])},"
-            " with the same open final syllable and the same kind of chanted word after it."
+            " with the same open final syllable."
         ),
         _para(
             f"The counts above do not include the meteg of {qumi}. They are taken from the"

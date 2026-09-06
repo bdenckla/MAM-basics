@@ -101,6 +101,10 @@ _MIN_DEPLOY_ROOT_PAGES = 2
 _UNLISTED_DEPLOY_ROOT_PAGES = (
     # The index itself.  An entry for it would be the page linking to itself.
     "index.html",
+    # These three child pages are reachable from the main post-stress-meteg page, not the index.
+    "post-stress-meteg-cases.html",
+    "post-stress-meteg-misc.html",
+    "post-stress-meteg-type-2.html",
 )
 
 
