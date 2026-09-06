@@ -872,11 +872,7 @@ def _by_type(survey: dict) -> list:
                 f"{len(survey['post_stress']):,} MAS cases, only ",
                 _ref_link(noninitial_following_stress_record["bcv"]),
                 " has a following chanted word without initial stress: ",
-                *wrap_hebrew_runs(noninitial_following_stress_record["mam_form"]),
-                " is followed by ",
-                *wrap_hebrew_runs(
-                    noninitial_following_stress_record["following_mam_form"]
-                ),
+                *_case_chanted_word_cell(noninitial_following_stress_record),
                 ". Every other MAS has a following chanted word with initial stress.",
             )
         ),
@@ -1032,39 +1028,31 @@ def _case_subtype_cell(subtype: str | None) -> object:
     )
 
 
-def _following_chanted_word_matters(record: dict) -> bool:
-    """Whether the following chanted word supplies shown context for this record."""
-    return record["subtype"] == psm.SUBTYPE_MISC_VAYOMER
-
-
-def _case_chanted_word_cell(
-    record: dict, *, include_type_2_following: bool = False
-) -> tuple:
-    """The MAM form, with selected following context demoted.
-
-    The shared routine displays zero or more paseq marks and then the following chanted word.
-    At present only the four ``misc-vayomer`` records have a paseq, but survey validation makes
-    another kind of intervening material a reviewable failure rather than silently dropping it.
-    """
-    current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
-    show_following = _following_chanted_word_matters(record) or (
-        include_type_2_following and record["structural_type"] == psm.TYPE_GUTTURAL
-    )
-    if not show_following:
-        return current
-    following = record["following_mam_form"]
-    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
-    punctuation = record.get("intervening_mam_punctuation", ())
+def _following_chanted_word_span(
+    following: str, punctuation: tuple[str, ...] | list[str] = ()
+) -> object:
+    """The following chanted word, and any preceding punctuation, in gray."""
     demoted = []
     for mark in punctuation:
         demoted.extend((*_hebrew_cell(mark), " "))
     demoted.extend(_hebrew_cell(following))
+    return mb_html.span(
+        tuple(demoted),
+        {"class": _FOLLOWING_CHANTED_WORD_CLASS},
+    )
+
+
+def _case_chanted_word_cell(record: dict) -> tuple:
+    """The MAM MAS form followed by its next chanted word in gray."""
+    current = _hebrew_cell(record["mam_form"] or record["chanted_word"])
+    following = record["following_mam_form"]
+    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
     return (
         *current,
         " ",
-        mb_html.span(
-            tuple(demoted),
-            {"class": _FOLLOWING_CHANTED_WORD_CLASS},
+        _following_chanted_word_span(
+            following,
+            record.get("intervening_mam_punctuation", ()),
         ),
     )
 
@@ -1140,7 +1128,7 @@ def _type_2_case_row(record: dict) -> object:
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(
-                _case_chanted_word_cell(record, include_type_2_following=True),
+                _case_chanted_word_cell(record),
                 _HEBREW_CELL,
             ),
         ),
@@ -1226,8 +1214,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.heading_level_2("Every misc case in MAM"),
         _para(
             "Each word in the table has MAS but does not meet the definition of"
-            " types 1, 2, or 3. Gray following context appears where it is relevant to a"
-            " named misc subtype."
+            " types 1, 2, or 3. The next chanted word is gray."
         ),
         _table(
             ("Verse", "Word", "Subtype"),
@@ -1247,7 +1234,7 @@ def build_misc_body(survey: dict) -> list:
                 ". Its only member is ",
                 _ref_link(misc_almost_type_3_only_member["bcv"]),
                 ": its word ",
-                *_hebrew_cell(misc_almost_type_3_only_member["mam_form"]),
+                *_case_chanted_word_cell(misc_almost_type_3_only_member),
                 " has a final closed syllable with ḥolam, a long vowel. It fits ",
                 cos(),
                 "'s broader type (a), but not our type 3, which is restricted to tsere.",
@@ -1281,7 +1268,7 @@ def build_cases_body(survey: dict) -> list:
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each word is MAM's"
-            " text."
+            " text followed by the next chanted word in gray."
         ),
         _para(
             "For misc-vayomer, the intervening paseq is gray with the following word."
@@ -1310,6 +1297,7 @@ def build_cases_body(survey: dict) -> list:
 def _m23(survey: dict) -> list:
     """Section 4: the Isaiah 23:12 suggestion, and what kind of meteg it added."""
     qumi = _focus_word(survey, _M23_VERSE, ("קומי",))
+    qumi_following = _following_focus_word(survey, _M23_VERSE, qumi)
     yanuax = _record_at(survey, _M23_VERSE)
     same_shape = _same_shape_as_qumi(survey)
     return [
@@ -1320,24 +1308,37 @@ def _m23(survey: dict) -> list:
             (
                 "The ",
                 mb_html.anchor_h("Holman M23 case", _HOLMAN_M23_RECORD_HREF),
-                *wrap_hebrew_runs(
-                    " has the MAM form Holman suggested on 2026-08-31, without a meteg where"
-                    " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
-                    f" has the meteg under the mem of the chanted word {qumi} at Isaiah 23:12;"
-                    f" the MAS of {qumi} is type 1."
-                ),
+                " has the MAM form Holman suggested on 2026-08-31, without a meteg where"
+                " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
+                " has the meteg under the mem of the chanted word ",
+                *_hebrew_cell(qumi),
+                " ",
+                _following_chanted_word_span(qumi_following),
+                " at Isaiah 23:12; the chanted word's MAS is type 1.",
+            )
+        ),
+        mb_html.para(
+            (
+                "The same verse already had another MAS: ",
+                *_case_chanted_word_cell(yanuax),
+                ", whose last syllable a guttural closes.",
+            )
+        ),
+        mb_html.para(
+            (
+                "Like ",
+                *_hebrew_cell(qumi),
+                " ",
+                _following_chanted_word_span(qumi_following),
+                " at Isaiah 23:12, MAM has ",
+                *_case_chanted_word_cell(same_shape),
+                " at ",
+                ref_abbrev(same_shape["bcv"]),
+                ".",
             )
         ),
         _para(
-            "The same verse already had another MAS:"
-            f" {yanuax['mam_form']}, whose last syllable a guttural closes."
-        ),
-        _para(
-            f"Like {qumi} at Isaiah 23:12, MAM has {same_shape['mam_form']} at"
-            f" {ref_abbrev(same_shape['bcv'])}."
-        ),
-        _para(
-            f"The counts above do not include the meteg of {qumi}. They are taken from the"
+            "The counts above do not include the Isaiah 23:12 meteg. They are taken from the"
             " Phonetic MAM edition, which has not been regenerated since MAM gained it, so"
             " Isaiah 23:12 is one of the verses where the two texts have parted."
         ),
@@ -1401,6 +1402,18 @@ def _focus_word(
         must_have=must_have,
         source="MAM",
     )
+
+
+def _following_focus_word(survey: dict, bcv: str, word: str) -> str:
+    """The next MAM chanted word after a displayed focus word."""
+    words = survey["currency"]["focus_verses"][bcv]["chanted_words"]
+    hit_indexes = [index for index, candidate in enumerate(words) if candidate == word]
+    assert (
+        len(hit_indexes) == 1
+    ), f"MAM {bcv}: {len(hit_indexes)} occurrences of {word!r}"
+    next_index = hit_indexes[0] + 1
+    assert next_index < len(words), f"MAM {bcv}: no next chanted word after {word!r}"
+    return words[next_index]
 
 
 def _source_focus_word(
@@ -1546,7 +1559,7 @@ def _oleh_meteg_overlap(survey: dict) -> list:
         mb_html.table_row_of_data(
             (
                 _ref_link(record["bcv"]),
-                _case_chanted_word_cell(record),
+                _hebrew_cell(record["mam_form"] or record["chanted_word"]),
                 position_by_syllables_after_stress[
                     record["syllables_after_the_stress"]
                 ],
