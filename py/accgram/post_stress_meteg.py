@@ -21,8 +21,11 @@ here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
 ``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per verse on
 both sides and names every verse where the two disagree, so the page can say which MAM its
-figures describe.  Refreshing the oracle is al-hatorah's business; re-running this survey
-afterwards is one command.
+figures describe. It is not a source-form alignment: it neither chooses MAM-parsed-plus template
+arguments nor classifies the U+05C0 glyph as legarmeh or narrow-sense paseq. MAM-simple is the
+right input for that per-verse count. The template-aware Fit-for-MAS audit and its 2026-09-06
+result are recorded in ``doc/post-stress-meteg-method.md``. Refreshing the oracle is al-hatorah's
+business; re-running this survey afterwards is one command.
 
 NUCLEI, AND WHERE THIS PARTS FROM ``final_stress``.  A syllable's nucleus is a point written
 in the text, so the Hebrew's syllable count can be had without syllabifying it: a full vowel
@@ -1653,6 +1656,9 @@ def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
     MAM numbers its verses MAM's way; ``test_final_stress_vs_phonetic_mam._measured`` reaches
     for the same tree for the same reason. ``cantillation`` selects an individual
     dual-cantillation projection; otherwise this returns MAM-simple's combined representation.
+    The result supplies reader-facing MAM forms and the ``currency`` meter, not a semantic
+    interpretation of MAM-parsed-plus templates. In particular, a standalone U+05C0 token here
+    does not establish narrow-sense paseq rather than legarmeh.
     """
     from accgram import mam_simple_verse
 
@@ -1743,12 +1749,13 @@ def _following_mam_context(
 ) -> tuple[str | None, tuple[str, ...] | None]:
     """The following MAM chanted word and intervening punctuation, if the context resolves.
 
-    The MAM stream keeps a PASEQ as a standalone token. This makes the usual two-chanted-word
-    context and the four ``vayomer`` contexts one routine: the current MAM chanted word, zero or
-    more punctuation tokens, then the following MAM chanted word. The snapshot's spelling can
-    differ from MAM's at either chanted word, so the settled current MAM form identifies the
-    first chanted word; the following chanted word and punctuation then come directly from the
-    MAM stream.
+    The MAM-simple stream keeps U+05C0 as a standalone token. This makes the usual
+    two-chanted-word context and the four ``vayomer`` contexts one routine: the current MAM
+    chanted word, zero or more punctuation tokens, then the following MAM chanted word. The
+    snapshot's spelling can differ from MAM's at either chanted word, so the settled current MAM
+    form identifies the first chanted word; the following chanted word and punctuation then come
+    directly from the MAM stream. The standalone token has no legarmeh-versus-narrow-sense-paseq
+    analysis; that question needs MAM-parsed-plus.
     """
     current = record["mam_form"]
     following = record["following_chanted_word"]
@@ -1794,8 +1801,8 @@ def _attach_mam_forms(
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this
-    survey's own subject included, so a chanted word that has GAINED or LOST a meteg since
-    the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
+    survey's own subject included, so a chanted word whose MAM form has a different meteg count
+    from the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
 
     TWO IDENTICAL CANDIDATES ARE ONE ANSWER, and are accepted: a verse with two byte-identical
     chanted words -- Proverbs 12:1's two אֹהֵב, Psalms 135:1's two הללו -- leaves the position
