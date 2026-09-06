@@ -143,16 +143,18 @@ _GUTTURAL_HOSTS = frozenset(
     )
 )
 
-# The Type 2 page filters every following word into one of these three groups.  The initial
+# The Type 2 page filters every following word into one of these five groups.  The initial
 # letters are named exhaustively rather than putting unexpected initials in a catchall: a
 # changed corpus must stop the survey until its new group has been considered.
-TYPE_2_FOLLOWING_FILTER_GROUPS = ("lamed", "guttural", "resh")
+TYPE_2_FOLLOWING_FILTER_GROUPS = ("bet", "guttural", "lamed", "mem", "resh")
 _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL = {
+    hl.BET: "bet",
     hl.LAMED: "lamed",
     hl.ALEF: "guttural",
     hl.HE: "guttural",
     hl.XET: "guttural",
     hl.AYIN: "guttural",
+    hl.MEM: "mem",
     hl.RESH: "resh",
 }
 
@@ -305,20 +307,16 @@ _STRESS_ACCENT_CONJUNCTIVES = {
 # The three types the page attributes to Yeivin and Breuer, each keyed on a mechanical
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
 # recorded as unclassified rather than pushed into the nearest.
-TYPE_GUTTURAL = "guttural at the end of the chanted word"
-TYPE_CLOSED_TSERE = "final closed syllable with tsere"
-TYPE_OPEN = "open syllable"
+TYPE_GUTTURAL = "chanted word closed by a guttural"
+TYPE_CLOSED_TSERE = "closed tsere-vowelled syllable"
+TYPE_OPEN = "open final syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
-# A strict type-1 candidate that has the open syllable but not the required initial stress in
-# the following chanted word.  Kept within misc rather than recasting it as a fourth type.
-SUBTYPE_MISC_ALMOST_TYPE_1 = "misc-almost-type-1"
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
 SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
 
 _TYPES = (TYPE_CLOSED_TSERE, TYPE_GUTTURAL, TYPE_OPEN, TYPE_UNCLASSIFIED)
 _SUBTYPES = (
-    SUBTYPE_MISC_ALMOST_TYPE_1,
     SUBTYPE_MISC_VAYOMER,
     SUBTYPE_MISC_ALMOST_TYPE_3,
 )
@@ -525,6 +523,19 @@ def _has_final_tsere_syllable_closed_by_guttural(parsed: dict) -> bool:
     )
 
 
+def _chanted_word_is_closed_by_a_guttural(parsed: dict) -> bool:
+    """Whether the final syllable is phonetically closed by a consonantal guttural.
+
+    A final mater he leaves a final syllable open; a final guttural after furtive patax closes
+    that syllable.  The syllable boundary, rather than merely the final letter, makes that
+    distinction mechanical.
+    """
+    return (
+        not _syllable_is_open(parsed["syllables"][-1])
+        and parsed["letters"][-1][0] in _GUTTURAL_HOSTS
+    )
+
+
 def _accent_name(accent: str) -> str:
     name = _ACCENT_NAMES.get(accent)
     if name is None:
@@ -541,44 +552,32 @@ def _vowel_name(point: str) -> str:
 
 def _structural_type(
     *,
-    closes_on_a_guttural: bool,
+    chanted_word_is_closed_by_a_guttural: bool,
     is_last_syllable: bool,
     is_open: bool,
     vowel: str,
-    following_jta: str | None,
 ) -> tuple[str, str | None]:
     """Which source-anchored type and subtype a post-stress meteg's syllable meets.
 
     Mechanical, off the syllable Phonetic MAM divided and the letters and points MAM has:
 
-    * an open syllable before a chanted word whose first syllable is stressed is ITM §332
-      and CoS Ch. 8 type (j), the קוּמִי rule;
-    * a closed syllable at the end of a chanted word whose last letter is a guttural is ITM
-      §354 and CoS Ch. 8 type (b) -- which is where a furtive patax lands; and
-    * a final closed syllable whose nucleus is a ṣere is ITM §338. This is the narrower
-      condition this survey uses for type 3; CoS Ch. 8 type (a) is wider, covering a long vowel
-      in a closed syllable.
+    * an open final syllable is ITM §332 and CoS Ch. 8 type (j), the qumi rule;
+    * a chanted word phonetically closed by a guttural is ITM §354 and CoS Ch. 8 type (b);
+      a final mater he is not a guttural closing for this purpose; and
+    * a closed syllable whose nucleus is a ṣere is ITM §338. This is the narrower condition this
+      survey uses for type 3; CoS Ch. 8 type (a) is wider, covering a long vowel in a closed
+      syllable.
 
-    Anything else -- a closed syllable with some other vowel, the segol of וַיֹּאמֶר above all
-    -- is left unclassified and stays visible as itself.  An open-syllable candidate whose
-    following chanted word fails the stress condition is the ``misc-almost-type-1`` subtype.
-    A final closed ḥolam syllable is the ``misc-almost-type-3`` subtype: it fits CoS's wider
-    long-vowel condition but not ITM's ṣere type.
-
-    OPENNESS IS ASKED FIRST, and the order is the rule rather than a tidying: a final ה is a
-    mater in פַּדֶּנָה, whose last syllable is open, and a guttural in וְנֹגַהּ, whose last
-    syllable the same letter closes.  Asking about the letter first files פַּדֶּנָה under §354,
-    where both books put it under §332 and type (j) by name.
+    Anything else -- a closed syllable with some other vowel, the segol of vayomer above all --
+    is left unclassified and stays visible as itself.  A final closed ḥolam syllable is the
+    ``misc-almost-type-3`` subtype: it fits CoS's wider long-vowel condition but not ITM's ṣere
+    type.
     """
-    if is_open:
-        if following_jta is not None and _first_syllable_is_stressed(following_jta):
-            return TYPE_OPEN, None
-        if following_jta is not None:
-            return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_1
-        return TYPE_UNCLASSIFIED, None
-    if closes_on_a_guttural:
+    if is_open and is_last_syllable:
+        return TYPE_OPEN, None
+    if chanted_word_is_closed_by_a_guttural:
         return TYPE_GUTTURAL, None
-    if is_last_syllable and vowel == hpo.TSERE:
+    if not is_open and vowel == hpo.TSERE:
         return TYPE_CLOSED_TSERE, None
     if is_last_syllable and vowel in (hpo.XOLAM, hpo.XOLAM_XFV):
         return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_3
@@ -933,13 +932,12 @@ def _record(
     is_last_syllable = syllable_index == len(syllables) - 1
     is_open = _syllable_is_open(syllable)
     vowel = nuclei[syllable_index][1]
-    closes_on_a_guttural = is_last_syllable and letters[-1][0] in _GUTTURAL_HOSTS
+    chanted_word_is_closed_by_a_guttural = _chanted_word_is_closed_by_a_guttural(parsed)
     structural_type, subtype = _structural_type(
-        closes_on_a_guttural=closes_on_a_guttural,
+        chanted_word_is_closed_by_a_guttural=chanted_word_is_closed_by_a_guttural,
         is_last_syllable=is_last_syllable,
         is_open=is_open,
         vowel=vowel,
-        following_jta=following_jta,
     )
     if subtype is None:
         subtype = _misc_subtype(
@@ -960,7 +958,12 @@ def _record(
         "syllable_is_open": is_open,
         "vowel": _vowel_name(vowel),
         "is_the_last_syllable": is_last_syllable,
-        "closes_on_a_guttural": closes_on_a_guttural,
+        "chanted_word_is_closed_by_a_guttural": (chanted_word_is_closed_by_a_guttural),
+        "following_chanted_word_is_initially_stressed": (
+            _first_syllable_is_stressed(following_jta)
+            if following_jta is not None
+            else None
+        ),
         "has_sof_pasuq": parsed["has_sof_pasuq"],
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
         "structural_type": structural_type,
