@@ -1958,16 +1958,23 @@ def _fit_for_mas_footnote(survey: dict) -> list:
     fit_for_mas = _fit_for_mas(survey)
     mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
     total_mas = len(survey["post_stress"])
-    headers = ("Type", "Fit for MAS", "Has MAS", "Lacks MAS")
+
+    def has_mas_percentage(with_mas: int, without_mas: int) -> str:
+        candidates = with_mas + without_mas
+        assert candidates > 0
+        return f"{with_mas / candidates:.1%}"
+
+    headers = ("Type", "Fit for MAS", "Has MAS", "% has MAS", "Lacks MAS")
     rows = [
         mb_html.table_row_of_data(
             (
                 _case_type_cell(kind),
                 f"{counts['candidates']:,}",
                 f"{counts['with_mas']:,}",
+                has_mas_percentage(counts["with_mas"], counts["without_mas"]),
                 f"{counts['without_mas']:,}",
             ),
-            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
         for kind, counts in fit_for_mas["by_structural_type"].items()
     ]
@@ -1977,9 +1984,10 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 mb_html.abbr("any", {"title": "any of the three types"}),
                 f"{fit_for_mas['fitting_any_type']:,}",
                 f"{fit_for_mas['with_mas']:,}",
+                has_mas_percentage(fit_for_mas["with_mas"], fit_for_mas["without_mas"]),
                 f"{fit_for_mas['without_mas']:,}",
             ),
-            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
     )
     return [
