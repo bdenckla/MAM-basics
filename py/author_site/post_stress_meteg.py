@@ -698,7 +698,6 @@ def _hebrew_spacing_option() -> object:
 def _opening(survey: dict) -> list:
     """Section 1: what is counted, and where the silluq boundary falls."""
     total = _both(survey, "meteg after the stressed syllable")
-    stress_accent_classification = survey["stress_accent_classification"]
     return [
         mb_html.para(
             (
@@ -717,11 +716,6 @@ def _opening(survey: dict) -> list:
             "The location of a word's stress is not always obvious. In this document, we locate"
             " stress using Phonetic MAM, an edition of MAM that marks the stress of every word"
             " in MAM."
-        ),
-        _para(
-            "Under the exact stress-letter rule used in the 2026-09-03 census table, all "
-            f"{stress_accent_classification['counts']['conjunctive']:,} MAS have a "
-            "conjunctive accent. No more detailed stress-accent analysis is used here."
         ),
     ]
 
@@ -879,7 +873,9 @@ def _by_type(survey: dict) -> list:
                 *wrap_hebrew_runs(
                     noninitial_following_stress_record["following_mam_form"]
                 ),
-                ". The record is type 1 because its MAS syllable is open and final;"
+                ". Every other following chanted word has initial stress, and every MAS has a"
+                " conjunctive accent. The record is type 1 because its MAS syllable is open"
+                " and final;"
                 " the type-1 definition does not require the following chanted word's"
                 " stress to be initial.",
             )
