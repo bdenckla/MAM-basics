@@ -79,6 +79,7 @@ from dataclasses import dataclass
 
 from accgram import accent_marks as am
 from accgram import poetic_accent_names as pan
+from mb_cmn import hebrew_accents as ha
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
 _TEXT = am.TEXT  # within one maqqef/space-delimited atom (as in prose)
@@ -273,6 +274,9 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     (re.compile(am.MERKHA), pan.MERKHA),
     (re.compile(am.MAHAPAKH), pan.MAHAPAKH),
     (re.compile(am.QADMA), pan.AZLA),
+    # MAM writes the oleh-we-yored servus with atnaḥ hafukh.  The Leningrad
+    # transcription writes galgal in the same structural slot, so both emit GALGAL.
+    (re.compile(ha.ATN_H), pan.GALGAL),
     (re.compile(am.ILUY), pan.ILLUY),
     (re.compile(am.TIPEXA), pan.TARXA),
     (re.compile(am.YERAX), pan.GALGAL),
@@ -324,6 +328,15 @@ _LEAF: dict[str, str] = {
     pan.TARXA: "tarxa",
     pan.GALGAL: "galgal",
 }
+
+
+@dataclass(frozen=True)
+class Token:
+    """One poetic grammar token and its starting offset in the scanned mark body."""
+
+    type: str
+    leaf: str
+    start: int
 
 
 def _recover_unmarked_oleh(types: list[str]) -> list[str]:
@@ -387,17 +400,16 @@ def _reclassify_revia(types: list[str]) -> list[str]:
     return out
 
 
-def scan_accents(body: str) -> list[tuple[str, str]]:
-    """Scan one poetic verse body (the Unicode-mark accent text after ``ch:vr ``).
+def scan_accent_tokens(body: str) -> list[Token]:
+    """Scan one poetic verse body into positioned grammar tokens.
 
-    Returns (token_type, leaf) pairs, accent tokens followed by SOFPASUQ.  Stops
-    after the first sof pasuq.  REVIA tokens are reclassified to gadol/qatan afterward.
+    The positions make the grammar's accent tokens attributable to their chanted words.
+    ``scan_accents`` remains the pair-returning interface for the grammar callers.
     """
-    raw_types: list[str] = []
+    raw_tokens: list[Token] = []
     # Leaves for the impositive-pair bang tokens, whose type/leaf are computed per pair
     # (not in the static _LEAF map); keyed by index in raw_types.  The reclassify passes
     # below preserve length and index order, so these stay aligned.
-    dyn_leaves: dict[int, str] = {}
     pos = 0
     n = len(body)
     while pos < n:
@@ -417,19 +429,27 @@ def scan_accents(body: str) -> list[tuple[str, str]]:
         if best_type is not None:
             if best_type == pan.BANG_PAIR:
                 bang_type, bang_leaf = _bang_pair_token(body[pos : pos + best_len])
-                dyn_leaves[len(raw_types)] = bang_leaf
-                raw_types.append(bang_type)
+                raw_tokens.append(Token(bang_type, bang_leaf, pos))
             else:
-                raw_types.append(best_type)
+                raw_tokens.append(Token(best_type, _LEAF.get(best_type, ""), pos))
                 if best_type == "SOFPASUQ":
                     break
         pos += max(best_len, 1)
 
-    resolved = _reclassify_revia(_recover_unmarked_oleh(raw_types))
+    resolved = _reclassify_revia(_recover_unmarked_oleh([t.type for t in raw_tokens]))
     return [
-        (t, dyn_leaves[i] if i in dyn_leaves else _LEAF[t])
-        for i, t in enumerate(resolved)
+        Token(
+            token_type,
+            token.leaf if token_type == token.type else _LEAF[token_type],
+            token.start,
+        )
+        for token, token_type in zip(raw_tokens, resolved, strict=True)
     ]
+
+
+def scan_accents(body: str) -> list[tuple[str, str]]:
+    """Scan one poetic verse body into the grammar's ``(type, leaf)`` pairs."""
+    return [(token.type, token.leaf) for token in scan_accent_tokens(body)]
 
 
 @dataclass(frozen=True)

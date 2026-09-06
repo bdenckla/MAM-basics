@@ -92,6 +92,10 @@ from pathlib import Path
 
 from accgram import maqaf_nonfinal_accents as mna
 from accgram import poetic_filter
+from accgram import poetic_scanner
+from accgram import prose_scanner
+from accgram import uni_to_marks
+from accgram import chanted_word_accents as cwa
 from accgram.almost_errors_html_shared import accents_and_letters
 from accgram.uni_to_marks import is_accent
 from mb_cmn import bib_locales as tbn
@@ -630,6 +634,52 @@ def _chanted_word_events(node: object, out: list[object]) -> None:
         out.append(node)
 
 
+def _accent_grammar_tokens_by_entry(
+    *,
+    bb: str,
+    chnu: int,
+    vrnu: int,
+    system: str,
+    events: list[object],
+    has_legarmeh: prose_scanner.HasLegarmeh,
+) -> dict[int, tuple[str, ...]]:
+    """The complete accent-grammar token sequence of every chanted-word entry.
+
+    The candidate survey needs Phonetic MAM's independently supplied primary-stress position,
+    not a count of the raw marks on its stress letter.  The prose and poetic scanners instead
+    resolve helpers, fixed-edge accents, silluq/meteg context, and genuine secondary accents
+    into grammar tokens.  A candidate still is not discarded because its chanted word has zero
+    or several tokens: the three MAS types are structural conditions on the syllable after the
+    one ``jta`` stress.
+    """
+    entries: list[dict] = []
+    fragments: list[cwa.Frag] = []
+    for event in events:
+        if isinstance(event, dict) and event.get("fva"):
+            word = event["fva"].split(" ")[0]
+            entries.append(event)
+            fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
+        elif event == _PHONETIC_MAM_PASEQ:
+            assert fragments, (bb, chnu, vrnu)
+            prior = fragments[-1]
+            fragments[-1] = cwa.Frag(prior.text, prior.marks + PASEQ, True)
+    body, units = cwa._verse_units(fragments)
+    assert len(entries) == len(units), (bb, chnu, vrnu, len(entries), len(units))
+    tokens = (
+        prose_scanner.scan_accents(body, bb, chnu, vrnu, has_legarmeh)
+        if system == SYSTEM_PROSE
+        else poetic_scanner.scan_accent_tokens(body)
+    )
+    by_chanted_word = cwa._by_chanted_word(units, tokens)
+    assert len(by_chanted_word) == len(entries), (bb, chnu, vrnu)
+    return {
+        id(entry): tuple(token.type for token in word_tokens)
+        for entry, (_unit, word_tokens, _unfolded) in zip(
+            entries, by_chanted_word, strict=True
+        )
+    }
+
+
 def _intervening_punctuation(
     *, bcv: str, chanted_word: str, material: tuple[object, ...]
 ) -> tuple[str, ...]:
@@ -1054,6 +1104,100 @@ def _classify_one_word(
             found["post_stress"].append(record)
 
 
+def _fit_for_mas_candidate(
+    *,
+    bcv: str,
+    word: str,
+    jta: str,
+    parsed: dict,
+    accent_grammar_tokens: tuple[str, ...],
+) -> dict | None:
+    """One structural MAS candidate, or ``None`` when no syllable follows the stress.
+
+    Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
+    Unicode accent count cannot supply that information.  The candidate is the syllable directly
+    after a nonfinal stress.  It is included if it fits at least one of the three source-derived
+    structural types, without imposing an extra condition on its chanted word's marks or on the
+    following chanted word. Stress helpers, fixed-edge accents, and secondary accents consequently
+    cannot remove a syllable that is structurally fit for MAS.
+    """
+    stressed = parsed["stressed"]
+    if stressed == len(parsed["syllables"]) - 1:
+        return None
+    potential_syllable = stressed + 1
+    is_open = _syllable_is_open(parsed["syllables"][potential_syllable])
+    vowel = parsed["nuclei"][potential_syllable][1]
+    types = []
+    if is_open and potential_syllable == len(parsed["syllables"]) - 1:
+        types.append(TYPE_OPEN)
+    if _chanted_word_is_closed_by_a_guttural(parsed):
+        types.append(TYPE_GUTTURAL)
+    if not is_open and vowel == hpo.TSERE:
+        types.append(TYPE_CLOSED_TSERE)
+    has_u05bd = any(
+        METEG in marks
+        for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
+        if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
+    )
+    return {
+        "bcv": bcv,
+        "chanted_word": word,
+        "jta": jta,
+        "structural_types": types,
+        "has_u05bd": has_u05bd,
+        "accent_grammar_token_count": len(accent_grammar_tokens),
+    }
+
+
+def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dict:
+    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
+    mas_keys = {
+        (record["bcv"], record["chanted_word"], record["jta"])
+        for record in post_stress
+        if record["syllables_after_the_stress"] == 1
+    }
+    for candidate in candidates:
+        key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        candidate["has_mas"] = key in mas_keys
+        assert candidate["has_u05bd"] == candidate["has_mas"], candidate
+    fitting = [candidate for candidate in candidates if candidate["structural_types"]]
+    by_type = {}
+    for kind in (TYPE_OPEN, TYPE_GUTTURAL, TYPE_CLOSED_TSERE):
+        members = [
+            candidate for candidate in fitting if kind in candidate["structural_types"]
+        ]
+        with_mas = sum(candidate["has_mas"] for candidate in members)
+        by_type[kind] = {
+            "candidates": len(members),
+            "with_mas": with_mas,
+            "without_mas": len(members) - with_mas,
+        }
+    with_mas = sum(candidate["has_mas"] for candidate in fitting)
+    return {
+        "what": (
+            "Every syllable immediately after a nonfinal primary stress, classified by the"
+            " three MAS structural predicates and checked for U+05BD. Primary-stress"
+            " position comes independently from Phonetic MAM's jta field; no raw Unicode"
+            " accent-count condition excludes a candidate."
+        ),
+        "candidate_chanted_words": len(candidates),
+        "fitting_any_type": len(fitting),
+        "with_mas": with_mas,
+        "without_mas": len(fitting) - with_mas,
+        "by_structural_type": by_type,
+        "candidates_meeting_multiple_types": sum(
+            len(candidate["structural_types"]) > 1 for candidate in fitting
+        ),
+        "accent_grammar_token_counts": dict(
+            sorted(
+                Counter(
+                    candidate["accent_grammar_token_count"] for candidate in candidates
+                ).items()
+            )
+        ),
+    }
+
+
 def _scan(
     phon_dir: Path, cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False
 ) -> dict:
@@ -1078,10 +1222,12 @@ def _scan(
         "type_2_type_3_overlap_by_book": Counter(),
         "type_2_type_3_overlap_by_final_letter": Counter(),
         "type_2_type_3_overlap_example": None,
+        "fit_for_mas_candidates": [],
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
         bb = bb_of_stem[path.stem]
+        has_legarmeh = prose_scanner.HasLegarmeh()
         data = json.loads(path.read_text(encoding="utf-8"))
         for vkey, verse in data.items():
             chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
@@ -1095,6 +1241,7 @@ def _scan(
                 vrnu,
                 _select_cantillation_strand(verse, cantillation),
                 found,
+                has_legarmeh=has_legarmeh,
                 dual_cantillation=dual,
                 dual_facts=_dual_cantillation_facts(verse) if dual else None,
                 template_entry_ids=(
@@ -1114,6 +1261,7 @@ def _one_verse(
     verse,
     found: dict,
     *,
+    has_legarmeh: prose_scanner.HasLegarmeh,
     dual_cantillation: bool | None = None,
     dual_facts: dict | None = None,
     template_entry_ids: set[int] | None = None,
@@ -1135,6 +1283,14 @@ def _one_verse(
         )
     events: list[object] = []
     _chanted_word_events(verse, events)
+    accent_grammar_tokens = _accent_grammar_tokens_by_entry(
+        bb=bb,
+        chnu=chnu,
+        vrnu=vrnu,
+        system=system,
+        events=events,
+        has_legarmeh=has_legarmeh,
+    )
     entries = [one for one in events if isinstance(one, dict)]
     scoped_entries = (
         entries
@@ -1213,6 +1369,15 @@ def _one_verse(
                     "following_chanted_word": None,
                     "snapshot_before_qere": entry.get("before_qfikq"),
                 }
+        fit_for_mas_candidate = _fit_for_mas_candidate(
+            bcv=bcv,
+            word=word,
+            jta=jta,
+            parsed=parsed,
+            accent_grammar_tokens=accent_grammar_tokens[id(entry)],
+        )
+        if fit_for_mas_candidate is not None:
+            found["fit_for_mas_candidates"].append(fit_for_mas_candidate)
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -1807,6 +1972,7 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
+    fit_for_mas = _fit_for_mas_summary(found["fit_for_mas_candidates"], post_stress)
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
@@ -1883,6 +2049,7 @@ def build_survey() -> dict:
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
+        "fit_for_mas": fit_for_mas,
         "stress_accent_classification": stress_accent_classification(post_stress),
         "type_2_type_3_overlap": {
             "chanted_words": type_2_type_3_overlap_count,
