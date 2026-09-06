@@ -891,9 +891,9 @@ def _general_mas_facts(survey: dict) -> list:
                 "In every MAS case, the MAS immediately follows the stress syllable, which"
                 " has a conjunctive accent.",
                 (
-                    "In every MAS case but one (",
+                    "In every MAS case but one, the next word has initial stress (",
                     _footnote_callout(2, _JEREMIAH_FOOTNOTE_ID),
-                    "), the next word has initial stress.",
+                    ").",
                 ),
                 (
                     "In every MAS case except four (",
