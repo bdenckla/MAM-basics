@@ -547,8 +547,7 @@ def pin_claims(survey: dict) -> None:
     ), "the post-silluq count and the records disagree"
     post_silluq_forms = dict(_post_silluq_comparison(survey))
     assert post_silluq_forms["MAM"].count(psm.METEG) == 1
-    assert post_silluq_forms["UXLC 3.9"].count(psm.METEG) == 2
-    assert post_silluq_forms["WLC 4.22"].count(psm.METEG) == 2
+    assert post_silluq_forms["BHS"].count(psm.METEG) == 2
     exodus = _dual_cantillation_facts(survey, "ex20:2")
     assert exodus["same_chanted_word_group_count"]
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
@@ -1472,33 +1471,31 @@ def _wlc_words(bcv: str) -> list[str]:
 
 
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
-    """The three source-derived forms relevant to 1 Samuel 17:5's post-silluq question."""
+    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question."""
     letters = ("נחשת",)
+    bhs_form_from_uxlc = _source_focus_word(
+        _uxlc_words(_POST_SILLUQ_VERSE),
+        _POST_SILLUQ_VERSE,
+        letters,
+        must_have=psm.SOF_PASUQ,
+        source="UXLC 3.9",
+    )
+    bhs_form_from_wlc = _source_focus_word(
+        _wlc_words(_POST_SILLUQ_VERSE),
+        _POST_SILLUQ_VERSE,
+        letters,
+        must_have=psm.SOF_PASUQ,
+        source="WLC 4.22",
+    )
+    assert (
+        bhs_form_from_uxlc == bhs_form_from_wlc
+    ), "the two BHS-derived transcriptions differ at 1 Samuel 17:5"
     return (
         (
             "MAM",
             _focus_word(survey, _POST_SILLUQ_VERSE, letters, must_have=psm.SOF_PASUQ),
         ),
-        (
-            "UXLC 3.9",
-            _source_focus_word(
-                _uxlc_words(_POST_SILLUQ_VERSE),
-                _POST_SILLUQ_VERSE,
-                letters,
-                must_have=psm.SOF_PASUQ,
-                source="UXLC 3.9",
-            ),
-        ),
-        (
-            "WLC 4.22",
-            _source_focus_word(
-                _wlc_words(_POST_SILLUQ_VERSE),
-                _POST_SILLUQ_VERSE,
-                letters,
-                must_have=psm.SOF_PASUQ,
-                source="WLC 4.22",
-            ),
-        ),
+        ("BHS", bhs_form_from_uxlc),
     )
 
 
@@ -1529,15 +1526,13 @@ def _post_silluq(survey: dict) -> list:
             " marks are one codepoint."
         ),
         _para(
-            "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in"
-            " some BHS-derived editions."
+            "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in BHS."
         ),
         _table(("source", "verse-final chanted word"), comparison_rows),
         _para(
-            "UXLC 3.9 and WLC 4.22 are BHS-derived transcriptions, and each has a second"
-            " U+05BD on the final syllable. Their forms are evidence about UXLC and WLC."
-            " The corresponding Leningrad Codex line, F159A, column 3, line 8, is"
-            " reproduced below so that the manuscript marking can be inspected directly."
+            "BHS has a second U+05BD on the final syllable. The corresponding Leningrad Codex"
+            " line, F159A, column 3, line 8, is reproduced below so that the manuscript"
+            " marking can be inspected directly."
         ),
         _post_silluq_lc_crop(),
         _para(
