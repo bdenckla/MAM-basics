@@ -63,6 +63,7 @@ _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _JEREMIAH_FOOTNOTE_ID = "footnote-1"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-2"
+_TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-3"
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
@@ -819,17 +820,6 @@ def _by_type(survey: dict) -> list:
     )
     unclassified = psm.TYPE_UNCLASSIFIED
     unclassified_count = _by_type_count(survey, unclassified)
-    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
-    type_2_records = _type_2_records(survey)
-    type_2_final_mas_count = sum(
-        record["is_the_last_syllable"] for record in type_2_records
-    )
-    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
-    type_2_type_3_overlap = _type_2_type_3_overlap(survey)
-    chanted_word_count = _both(survey, "chanted words checked")
-    overlap_count = type_2_type_3_overlap["chanted_words"]
-    overlap_by_book = type_2_type_3_overlap["by_book"]
-    overlap_example = type_2_type_3_overlap["example"]
     rows = []
     for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
@@ -879,52 +869,15 @@ def _by_type(survey: dict) -> list:
             (
                 "In type 1, the MAS is on an open final syllable.",
                 "In type 2, the word is closed by a guttural.",
-                "In type 3, the MAS is on a closed, final, tsere-vowelled syllable.",
+                (
+                    "In type 3, the MAS is on a closed, final, tsere-vowelled syllable. (",
+                    _footnote_callout(3, _TYPE_2_TYPE_3_FOOTNOTE_ID),
+                    ")",
+                ),
             )
         ),
         _table(headers, rows),
         _hebrew_spacing_option(),
-        _para(
-            f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
-            f" of the {type_2_count} type-2 MAS syllables have pataḥ, while the other "
-            f"{len(nonfinal_mas_syllable_records)} have ṣere but are open. Thus no type-2"
-            " MAS meets the type-3 condition. Indeed, chanted words with a final tsere"
-            " syllable closed by a guttural are quite rare even without a meteg. Only "
-            f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
-            " final tsere syllable closed by a guttural. All "
-            f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
-            f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
-            " An example is as follows:"
-        ),
-        mb_html.para(
-            (
-                _ref_link(overlap_example["bcv"]),
-                " — ",
-                *wrap_hebrew_runs(overlap_example["mam_form"]),
-            ),
-            {"class": "center"},
-        ),
-        mb_html.para(
-            (
-                f"In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
-                " records the MAS syllable is final. The other "
-                f"{len(nonfinal_mas_syllable_records)} records are type 2: each has an open"
-                " penultimate tsere MAS syllable before a final furtive-pataḥ syllable.",
-            )
-        ),
-        mb_html.table(
-            [
-                mb_html.table_row_of_data(
-                    (
-                        _ref_link(record["bcv"]),
-                        _case_chanted_word_cell(record),
-                    ),
-                    (None, _HEBREW_CELL),
-                )
-                for record in nonfinal_mas_syllable_records
-            ],
-            {"class": "limited-width post-stress-meteg-table"},
-        ),
     ]
 
 
@@ -1563,6 +1516,7 @@ def _footnotes(survey: dict) -> list:
             )
         ),
         *_dual_cantillation_footnote(survey),
+        *_type_2_type_3_footnote(survey),
     ]
 
 
@@ -1669,6 +1623,67 @@ def _dual_cantillation_footnote(survey: dict) -> list:
         ),
         mb_html.table(
             difference_rows, {"class": "limited-width post-stress-meteg-table"}
+        ),
+    ]
+
+
+def _type_2_type_3_footnote(survey: dict) -> list:
+    """Footnote 3: why types 2 and 3 do not overlap in the current survey."""
+    type_2_records = _type_2_records(survey)
+    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
+    type_2_final_mas_count = sum(
+        record["is_the_last_syllable"] for record in type_2_records
+    )
+    nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    overlap = _type_2_type_3_overlap(survey)
+    chanted_word_count = _both(survey, "chanted words checked")
+    overlap_count = overlap["chanted_words"]
+    overlap_by_book = overlap["by_book"]
+    overlap_example = overlap["example"]
+    return [
+        mb_html.heading_level_3(
+            "φ3 — Types 2 and 3", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
+        ),
+        _para(
+            f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
+            f" of the {type_2_count} type-2 MAS syllables have pataḥ, while the other "
+            f"{len(nonfinal_mas_syllable_records)} have ṣere but are open. Thus no type-2"
+            " MAS meets the type-3 condition. Indeed, chanted words with a final tsere"
+            " syllable closed by a guttural are quite rare even without a meteg. Only "
+            f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
+            " final tsere syllable closed by a guttural. All "
+            f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
+            f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
+            " An example is as follows:"
+        ),
+        mb_html.para(
+            (
+                _ref_link(overlap_example["bcv"]),
+                " — ",
+                *wrap_hebrew_runs(overlap_example["mam_form"]),
+            ),
+            {"class": "center"},
+        ),
+        mb_html.para(
+            (
+                f"In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
+                " records the MAS syllable is final. The other "
+                f"{len(nonfinal_mas_syllable_records)} records are type 2: each has an open"
+                " penultimate tsere MAS syllable before a final furtive-pataḥ syllable.",
+            )
+        ),
+        mb_html.table(
+            [
+                mb_html.table_row_of_data(
+                    (
+                        _ref_link(record["bcv"]),
+                        _case_chanted_word_cell(record),
+                    ),
+                    (None, _HEBREW_CELL),
+                )
+                for record in nonfinal_mas_syllable_records
+            ],
+            {"class": "limited-width post-stress-meteg-table"},
         ),
     ]
 
