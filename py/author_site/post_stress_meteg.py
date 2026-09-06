@@ -1990,8 +1990,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 _ROM_METEG,
                 ". It means that a syllable belongs to one or more of the three MAS types below"
                 " and is followed by a word with initial stress and a disjunctive accent. The table"
-                " records how often MAM has MAS in each such situation and how often MAM"
-                " lacks MAS there.",
+                " records how often MAS occurs in each such situation and how often it does not.",
             )
         ),
         _table(headers, rows),
