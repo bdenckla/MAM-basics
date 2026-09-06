@@ -357,6 +357,15 @@ def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
     ]
 
 
+def _noninitial_following_stress_records(survey: dict) -> list[dict]:
+    """MAS records whose following chanted word does not have initial stress."""
+    return [
+        record
+        for record in survey["post_stress"]
+        if not record["following_chanted_word_is_initially_stressed"]
+    ]
+
+
 def _by_subtype_count(survey: dict, subtype: str) -> int:
     return sum(
         survey["post_stress_by_subtype"][system][subtype]
@@ -498,6 +507,23 @@ def pin_claims(survey: dict) -> None:
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
     assert all(record["is_the_last_syllable"] for record in type_1_records)
+    noninitial_following_stress_records = _noninitial_following_stress_records(survey)
+    assert [
+        (
+            record["bcv"],
+            record["mam_form"],
+            record["following_mam_form"],
+            record["structural_type"],
+        )
+        for record in noninitial_following_stress_records
+    ] == [
+        (
+            "je46:14",
+            "וְהַשְׁמִ֣יעֽוּ",
+            "בְמִגְדּ֔וֹל",
+            psm.TYPE_OPEN,
+        )
+    ], "the noninitial-following-stress exception has moved"
     assert (
         len(type_1_records),
         len(type_2_records),
@@ -785,6 +811,7 @@ def _by_type(survey: dict) -> list:
         record["is_the_last_syllable"] for record in type_2_records
     )
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
+    noninitial_following_stress_record = _noninitial_following_stress_records(survey)[0]
     type_3_count = _by_type_count(survey, psm.TYPE_CLOSED_TSERE)
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     chanted_word_count = _both(survey, "chanted words checked")
@@ -845,6 +872,21 @@ def _by_type(survey: dict) -> list:
                 "An open, final syllable.",
                 "A chanted word closed by a guttural.",
                 "A closed syllable whose vowel is tsere.",
+            )
+        ),
+        mb_html.para(
+            (
+                f"Across all {len(survey['post_stress']):,} MAS records, only ",
+                _ref_link(noninitial_following_stress_record["bcv"]),
+                " has a following chanted word without initial stress: ",
+                *wrap_hebrew_runs(noninitial_following_stress_record["mam_form"]),
+                " is followed by ",
+                *wrap_hebrew_runs(
+                    noninitial_following_stress_record["following_mam_form"]
+                ),
+                ". The record is type 1 because its MAS syllable is open and final;"
+                " the type-1 definition does not require the following chanted word's"
+                " stress to be initial.",
             )
         ),
         _table(headers, rows),
