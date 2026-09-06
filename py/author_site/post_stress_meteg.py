@@ -1835,7 +1835,7 @@ def _type_2_type_3_footnote(survey: dict) -> list:
     overlap_example = overlap["example"]
     return [
         mb_html.heading_level_3(
-            "φ4 — Types 2 and 3", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
+            "φ4 — Do types 2 and 3 overlap?", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
