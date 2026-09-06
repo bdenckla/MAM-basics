@@ -1977,15 +1977,9 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". The analysis reads each chanted word's one primary-stress position from"
-                " Phonetic MAM's independent jta field, then examines the syllable directly"
-                " after every nonfinal stress. The prose or poetic chanted-word accent"
-                " grammar tokenizes its marks, so a stress helper, a fixed-edge accent, a"
-                " meteg or silluq, or a secondary accent cannot be mistaken for another"
-                " primary stress. Every resulting syllable is tested against the three"
-                " structural criteria and classified as having MAS or lacking MAS; the"
-                " analysis applies no additional filter based on the adjacent chanted word's"
-                " accent or stress.",
+                ". It means that a syllable has one or more of the three structures below."
+                " The table records how often MAM has MAS in each structure and how often"
+                " MAM lacks MAS there.",
             )
         ),
         _table(headers, rows),
