@@ -913,7 +913,7 @@ def _opening(survey: dict) -> list:
                 "The location of a word's stress is not always obvious. In this document, we"
                 " locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
-                ", an edition of MAM that marks the stress of every word in MAM.",
+                ", which marks the stress of every word.",
             )
         ),
     ]
@@ -1566,8 +1566,7 @@ def build_cases_body(survey: dict) -> list:
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
-            " reference links to the verse in MAM with doc, and each word is MAM's"
-            " text followed by the next word in gray."
+            " reference links to the MAM-with-doc verse, and the following word is gray."
         ),
         mb_html.para(
             (
