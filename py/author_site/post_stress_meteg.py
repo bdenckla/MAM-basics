@@ -1884,9 +1884,10 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The other four records are type 2: each has an open penultimate ",
+                "The four exceptions are type-2 MAS cases: each MAS syllable is an open"
+                " penultimate ",
                 _ROM_TSERE,
-                " MAS syllable before a final furtive-",
+                " syllable before a final furtive-",
                 _ROM_PATAH,
                 " syllable.",
             )
@@ -1945,7 +1946,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 " next word has initial stress and a disjunctive accent. The"
                 " syllable immediately after the first word's stress is the potential"
                 " MAS syllable. The analysis checks every such syllable against the three"
-                " structural criteria and records whether that syllable has MAS.",
+                " structural criteria and determines whether that syllable has MAS.",
             )
         ),
         _table(headers, rows),
