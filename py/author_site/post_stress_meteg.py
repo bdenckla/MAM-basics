@@ -1180,8 +1180,6 @@ def build_type_2_body(survey: dict) -> list:
     """The type-2 cases, grouped by the following chanted word's initial consonant."""
     records = _type_2_records(survey)
     rows = [_type_2_case_row(record) for record in records]
-    group_counts = Counter(_type_2_following_group(record) for record in records)
-    nonfinal_mas_count = sum(not record["is_the_last_syllable"] for record in records)
     return [
         mb_html.heading_level_1(_TYPE_2_TITLE),
         mb_html.para(
@@ -1194,28 +1192,6 @@ def build_type_2_body(survey: dict) -> list:
             )
         ),
         mb_html.heading_level_2("Every type 2 case in MAM"),
-        _para(
-            "Every row's chanted word has a final syllable phonetically closed by a"
-            " guttural. The following word is gray. The filters show whether the following"
-            " word begins with lamed, a guttural, or neither lamed nor a guttural. Every"
-            " following word has initial"
-            " stress, but that stress is not a type-2 condition."
-        ),
-        mb_html.para(
-            (
-                "Based on a similar class of words covered in ",
-                itm(),
-                " ",
-                *itm_sections("§354"),
-                f", I guessed that type-2 words might often be followed by an initial lamed"
-                f" or nun. The {group_counts['lamed']} lamed cases support the first part of"
-                " that guess; there are no nun cases. The other final-MAS type-2 cases have "
-                f"{group_counts['guttural']} guttural initials and {group_counts['resh']} resh"
-                f" initial. The {nonfinal_mas_count} type-2 cases with a final furtive-pataḥ"
-                f" syllable are followed by {group_counts['bet']} bet initials and"
-                f" {group_counts['mem']} mem initials. Resh is not a guttural here.",
-            )
-        ),
         _type_2_following_filter(len(rows)),
         _table(
             ("Verse", "Word"),
