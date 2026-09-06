@@ -12,7 +12,7 @@ The programme's “Fourth stage — the five MAM products, total evacuation” s
 | --- | --- |
 | Destination | C:/Users/BenDe/GitRepos/MAM-basics |
 | Interpreter | C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe |
-| Phase 1 source | C:/Users/BenDe/GitRepos/MAM-simple |
+| Phase 1 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-simple (moved to the Windows Recycle Bin after the redirect-host commit) |
 | Phase 2 source | C:/Users/BenDe/GitRepos/MAM-for-Sefaria |
 | Phase 3 source | C:/Users/BenDe/GitRepos/MAM-parsed |
 | Phase 4 source | C:/Users/BenDe/GitRepos/MAM-with-doc |
@@ -86,7 +86,7 @@ The four oracle layers apply in every lane.
 
 Run the canonical test suite, git diff --check, redirect-manifest tests, and the affected product oracle before emptying a source and after source removal. Treat the Phase 0 test_site_index_links failure as the only accepted baseline failure. A new test failure, a generator output difference, a changed source mtime, or a manifest mismatch stops the lane.
 
-## Phase 1 — MAM-simple
+## Phase 1 — MAM-simple — DONE 2026-09-06
 
 The first product lane. Land the source tree under MAM-simple/ and the published tree under gh-pages/MAM-simple/. Land all 47 files in MAM-simple/py-examples/ and all 105 files in MAM-simple/py-examples-out/. The three MAM-simple example entry programs remain a differential oracle, not an independent product implementation.
 
@@ -95,6 +95,23 @@ Before copying the source tree, repoint the MAM-simple corpus write. Replace py/
 This lane also replaces the temporary root MAM-XML/ snapshot retained for the Aleppo and Cambridge 1753 readers. Re-measure matching committed XML blobs, repoint both readers to MAM-simple/, and remove MAM-XML/ only after the Aleppo and Cambridge 1753 readers reproduce their documented artifacts. Do not begin a Cambridge 1753 product change or modify MAM-private.
 
 Generate the three MAM-simple documents and corpus with the production command, then run the three example programs against MAM-simple/py-examples/ and compare the 105 outputs with MAM-OSIS, MAM-for-Sefaria, and MAM-basics' expected files. Freeze the two source Pages paths, extend the redirect table, deploy the source stubs and MAM-basics targets, and verify every legacy HTML URL. Add sparse-checkout instructions for MAM-simple/ to the MAM-basics documentation; do not create a release archive.
+
+### Phase 1 execution record — 2026-09-06
+
+The phase began with MAM-basics at `25edd2f31e7f344182f754123ca8a8d0e0061967` and MAM-simple at `7a4f21d0f7882e5c90ae46a5689d016d24528416`, both clean. MAM-basics commit `cf7c7a3509632d87a6432ce0a67cfd39ad0733e4` landed the product. MAM-simple commit `9a350be55f44029cb0349df50fc1246b4e796b38` retained the source repository as its Pages redirect host. Both commits are pushed to `main`.
+
+1. Blob identity: all 389 selected source blobs landed as staged MAM-basics blobs with no difference. The 24 temporary `MAM-XML/` blobs became the MAM-native MAM-simple XML files, and the temporary root tree was removed.
+2. Regeneration: the MAM-simple corpus and three documents regenerated into MAM-basics. The 216 core corpus artifacts, 105 example outputs, 24 MAM-OSIS example artifacts, 39 MAM-for-Sefaria CSV artifacts, 39 MAM-for-Sefaria Unicode-name artifacts, and 43 vendored source files all compared byte-identically with their respective oracles.
+3. Mtime evidence: regeneration changed 407 expected MAM-basics paths and no MAM-simple source path.
+4. Published URLs: MAM-basics Pages deployment `34037896289` and MAM-simple Pages deployment `34038057050` both succeeded. The deployed legacy `index.html` and `versification-and-cantillation.html` stubs contain the expected immediate redirects to the MAM-basics MAM-simple Pages targets.
+
+Cambridge 1753's seven affected line-break JSON files were updated, under Ben's authorization, for the ten diacritic-only differences introduced by current MAM-simple. `py/check_cam1753_all.py` passed all four checks after the update.
+
+The focused Phase 1 test set passed 47 tests. The post-removal full suite passed 973 tests, skipped 5 tests, and passed 65 subtests in 78.22 seconds. `git diff --check` passed before both commits.
+
+Two findings were non-regressions. `py/check_ac_all.py` still reports Aleppo's pre-existing word-finding and line-break JSON-consistency failures with the landed MAM-simple reader; this lane did not change Aleppo's data. The full suite's desktop command bridge discarded its direct exit summary, so the verified result above comes from an ignored UTF-8 recorder that preserved the subprocess exit code and output.
+
+After the source redirect Pages deployment and its live HTML verification, the source clone was clean, its `HEAD` matched `origin/main`, it had one worktree and no unpreserved branch or object, and it was moved to the Windows Recycle Bin. Its contents remain recoverable there.
 
 ## Phase 2 — MAM-for-Sefaria
 
