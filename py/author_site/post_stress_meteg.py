@@ -1333,7 +1333,7 @@ def _m23(survey: dict) -> list:
                 "The ",
                 mb_html.anchor_h("Holman M23 case", _HOLMAN_M23_RECORD_HREF),
                 *wrap_hebrew_runs(
-                    " has the MAM form Holman received on 2026-08-31, without a meteg where"
+                    " has the MAM form Holman suggested on 2026-08-31, without a meteg where"
                     " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
                     f" has the meteg under the mem of the chanted word {qumi} at Isaiah 23:12."
                 ),
