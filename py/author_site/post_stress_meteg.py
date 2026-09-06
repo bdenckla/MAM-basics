@@ -1341,8 +1341,7 @@ def _m23(survey: dict) -> list:
         ),
         _para(
             "The same verse already had another MAS:"
-            f" {yanuax['mam_form']}, whose last syllable a guttural closes. So Isaiah 23:12"
-            " now has two of them, one of each of the two commonest types."
+            f" {yanuax['mam_form']}, whose last syllable a guttural closes."
         ),
         _para(
             "MAM has one other chanted word of exactly this shape, and the individual-cases"
