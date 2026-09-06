@@ -41,13 +41,16 @@ import xml.etree.ElementTree as ET
 
 from accgram import final_stress
 from accgram import post_stress_meteg as psm
+from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
+from mb_author import author
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_cmn import hebrew_accents as ha
 from mb_misc import mb_html
+from py_html.my_html_span_romanized import rmn
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
@@ -65,6 +68,39 @@ _JEREMIAH_FOOTNOTE_ID = "footnote-1"
 _DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-2"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-3"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-4"
+
+
+def _author_romanization(key: str) -> object:
+    """One standard author-wide dollar substitution, already wrapped as romanized text."""
+    (rendered,) = author.dollar_sub(f"${key}")
+    return rendered
+
+
+# Each visible romanization is a module-level HTML node, so the shared ``romanized`` class
+# italicizes it.  Existing ``ROM_*`` spellings stay single-sourced; the author-wide dollar
+# substitutions supply the additional standard spellings this page needs.
+_ROM_METEG = rmn(pds.ROM_METEG)
+_ROM_METEG_CAP = rmn(pds.ROM_METEG.capitalize())
+_ROM_SILLUQ = rmn(pds.ROM_SILLUQ)
+_ROM_PASEQ = rmn(pds.ROM_PASEQ)
+_ROM_PATAH = rmn(pds.ROM_PATAX)
+_ROM_MAQAF = rmn(pds.ROM_MAQAF)
+_ROM_TSERE = _author_romanization("tsere")
+_ROM_HOLAM = _author_romanization("xolam")
+_ROM_GAYA = _author_romanization("gaya_with_half_ring_for_ayin")
+_ROM_OLEH = _author_romanization("oleh")
+_ROM_ALEF = _author_romanization("alef")
+_ROM_BET = _author_romanization("bet")
+_ROM_HE = _author_romanization("hehe")
+_ROM_MAPPIQ = rmn("mappiq")
+_ROM_VAYOMER = rmn("vayomer")
+
+
+def _visible_title(title: str, *, lowercase: bool = False) -> tuple:
+    """A page title whose visible meteg is the standard italic romanization."""
+    assert title.startswith("Meteg "), title
+    return (_ROM_METEG if lowercase else _ROM_METEG_CAP, title.removeprefix("Meteg"))
+
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
@@ -296,7 +332,7 @@ def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) ->
 def build_body(survey: dict) -> list:
     """The page, section by section, every figure in it read off ``survey``."""
     return [
-        mb_html.heading_level_1(_TITLE),
+        mb_html.heading_level_1(_visible_title(_TITLE)),
         *_opening(survey),
         *_census(survey),
         *_general_mas_facts(survey),
@@ -682,6 +718,15 @@ def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
     )
 
 
+def _cantillation_label(cantillation: str) -> tuple:
+    """One visible cantillation-branch label, with its Hebrew letter name italicized."""
+    by_cantillation = {
+        psm.CANT_ALEF: _ROM_ALEF,
+        psm.CANT_BET: _ROM_BET,
+    }
+    return ("cant-", by_cantillation[cantillation])
+
+
 def _hebrew_spacing_option() -> object:
     """The page-wide control for the pointed Hebrew's letter spacing."""
     return mb_html.raw_html(
@@ -706,16 +751,26 @@ def _opening(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "A meteg almost always comes before the stressed syllable of its word, but it"
-                " can also come after the stress. MAM has "
-                f"{total:,} cases of meteg after the stress (MAS).",
+                "A ",
+                _ROM_METEG,
+                " almost always comes before the stressed syllable of its word, but it can"
+                " also come after the stress. MAM has ",
+                f"{total:,} cases of ",
+                _ROM_METEG,
+                " after the stress (MAS).",
             )
         ),
-        _para(
-            'In this document, by "word" we mean a chanted word, which is either a simple word'
-            " (having just one atom) or a compound word (having two or more atoms connected by"
-            ' maqaf marks). By "atom", we mean a sequence of pointed letters uninterrupted by'
-            " space, maqaf, or any other punctuation."
+        mb_html.para(
+            (
+                'In this document, by "word" we mean a chanted word, which is either a simple'
+                " word (having just one atom) or a compound word (having two or more atoms"
+                " connected by ",
+                _ROM_MAQAF,
+                ' marks). By "atom", we mean a sequence of pointed letters uninterrupted by'
+                " space, ",
+                _ROM_MAQAF,
+                ", or any other punctuation.",
+            )
         ),
         _para(
             "The location of a word's stress is not always obvious. In this document, we locate"
@@ -772,9 +827,12 @@ def _census(survey: dict) -> list:
     return [
         mb_html.heading_level_2("MAS census by cantillation system"),
         _table(headers, rows),
-        _para(
-            f"So a meteg comes before the stress {before:,} times and after it {after:,}"
-            " times."
+        mb_html.para(
+            (
+                "So a ",
+                _ROM_METEG,
+                f" comes before the stress {before:,} times and after it {after:,} times.",
+            )
         ),
         mb_html.para(
             (
@@ -878,7 +936,9 @@ def _by_type(survey: dict) -> list:
                 "In type 1, the MAS is on an open final syllable.",
                 "In type 2, the word is closed by a guttural.",
                 (
-                    "In type 3, the MAS is on a closed, final, tsere-vowelled syllable. (",
+                    "In type 3, the MAS is on a closed, final, ",
+                    _ROM_TSERE,
+                    "-vowelled syllable. (",
                     _footnote_callout(3, _TYPE_2_TYPE_3_FOOTNOTE_ID),
                     ")",
                 ),
@@ -990,10 +1050,10 @@ def _case_subtype_cell(subtype: str | None) -> object:
             " our type 3, which is restricted to tsere."
         ),
     }
-    return mb_html.abbr(
-        subtype,
-        {"title": gloss_by_subtype[subtype]},
-    )
+    visible_label: object = subtype
+    if subtype == psm.SUBTYPE_MISC_VAYOMER:
+        visible_label = ("misc-", _ROM_VAYOMER)
+    return mb_html.abbr(visible_label, {"title": gloss_by_subtype[subtype]})
 
 
 def _following_chanted_word_span(
@@ -1135,7 +1195,7 @@ def _misc_case_row(record: dict) -> object:
 def _type_2_following_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
-        ("lamed", "Followed by lamed"),
+        ("lamed", "Followed by ל"),
         ("guttural", "Followed by guttural"),
         ("not-lamed-or-guttural", "Not followed by ל or a gutt."),
     )
@@ -1155,13 +1215,15 @@ def build_type_2_body(survey: dict) -> list:
     records = _type_2_records(survey)
     rows = [_type_2_case_row(record) for record in records]
     return [
-        mb_html.heading_level_1(_TYPE_2_TITLE),
+        mb_html.heading_level_1(_visible_title(_TYPE_2_TITLE)),
         mb_html.para(
             (
                 "← Back to ",
-                mb_html.anchor_h(_TITLE, _FNAME),
+                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
                 " or the ",
-                mb_html.anchor_h(_CASES_TITLE.lower(), _CASES_FNAME),
+                mb_html.anchor_h(
+                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
+                ),
                 ".",
             )
         ),
@@ -1187,13 +1249,15 @@ def build_misc_body(survey: dict) -> list:
     misc_almost_type_3_only_member = _misc_almost_type_3_only_member(survey)
     vayomer_count = _by_subtype_count(survey, psm.SUBTYPE_MISC_VAYOMER)
     return [
-        mb_html.heading_level_1(_MISC_TITLE),
+        mb_html.heading_level_1(_visible_title(_MISC_TITLE)),
         mb_html.para(
             (
                 "← Back to ",
-                mb_html.anchor_h(_TITLE, _FNAME),
+                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
                 " or the ",
-                mb_html.anchor_h(_CASES_TITLE.lower(), _CASES_FNAME),
+                mb_html.anchor_h(
+                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
+                ),
                 ".",
             )
         ),
@@ -1221,19 +1285,31 @@ def build_misc_body(survey: dict) -> list:
                 _ref_link(misc_almost_type_3_only_member["bcv"]),
                 ": its word ",
                 *_case_chanted_word_cell(misc_almost_type_3_only_member),
-                " has a final closed syllable with ḥolam, a long vowel. It fits ",
+                " has a final closed syllable with ",
+                _ROM_HOLAM,
+                ", a long vowel. It fits ",
                 cos(),
-                "'s broader type (a), but not our type 3, which is restricted to tsere.",
+                "'s broader type (a), but not our type 3, which is restricted to ",
+                _ROM_TSERE,
+                ".",
             )
         ),
         mb_html.para(
             (
-                "Within misc, ",
-                psm.SUBTYPE_MISC_VAYOMER,
+                "Within misc, the ",
+                _ROM_VAYOMER,
+                " subset",
                 f" has {vayomer_count} word",
                 "s" if vayomer_count != 1 else "",
-                ". Each has one paseq between the meteg-bearing word and the following word:"
-                " the gaʿya-before-paseq pattern described in ",
+                ". Each has one ",
+                _ROM_PASEQ,
+                " between the ",
+                _ROM_METEG,
+                "-bearing word and the following word: the ",
+                _ROM_GAYA,
+                "-before-",
+                _ROM_PASEQ,
+                " pattern described in ",
                 itm(),
                 " ",
                 *itm_sections("§325"),
@@ -1248,16 +1324,24 @@ def build_cases_body(survey: dict) -> list:
     headers = ("Verse", "Word", "Type", "Subtype")
     rows = [_case_row(record) for record in survey["post_stress"]]
     return [
-        mb_html.heading_level_1(_CASES_TITLE),
-        mb_html.para(("← Back to ", mb_html.anchor_h(_TITLE, _FNAME), ".")),
+        mb_html.heading_level_1(_visible_title(_CASES_TITLE)),
+        mb_html.para(
+            ("← Back to ", mb_html.anchor_h(_visible_title(_TITLE), _FNAME), ".")
+        ),
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each word is MAM's"
             " text followed by the next chanted word in gray."
         ),
-        _para(
-            "For misc-vayomer, the intervening paseq is gray with the following word."
+        mb_html.para(
+            (
+                "For misc-",
+                _ROM_VAYOMER,
+                ", the intervening ",
+                _ROM_PASEQ,
+                " is gray with the following word.",
+            )
         ),
         mb_html.para(
             (
@@ -1423,30 +1507,64 @@ def _post_silluq(survey: dict) -> list:
         for source, form in comparison
     ]
     return [
-        mb_html.heading_level_2("A meteg after silluq in Leningrad"),
-        _para(
-            "In the Leningrad Codex, the last chanted word of 1 Samuel 17:5 seems to have a"
-            " meteg after its silluq."
+        mb_html.heading_level_2(
+            ("A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad")
+        ),
+        mb_html.para(
+            (
+                "In the Leningrad Codex, the last chanted word of 1 Samuel 17:5 seems to"
+                " have a ",
+                _ROM_METEG,
+                " after its ",
+                _ROM_SILLUQ,
+                ".",
+            )
         ),
         _post_silluq_lc_crop(),
-        _para(
-            "Although that meteg is pretty surprising, we deem it less surprising than if we"
-            " interpret the marks in meteg-silluq order. In silluq-meteg order, only the"
-            " presence of the meteg is surprising; in meteg-silluq order, the location of the"
-            " stress is surprising. We find a meteg surprise far more likely than a stress"
-            " surprise."
+        mb_html.para(
+            (
+                "Although that ",
+                _ROM_METEG,
+                " is pretty surprising, we deem it less surprising than if we interpret the"
+                " marks in ",
+                _ROM_METEG,
+                "-",
+                _ROM_SILLUQ,
+                " order. In ",
+                _ROM_SILLUQ,
+                "-",
+                _ROM_METEG,
+                " order, only the presence of the ",
+                _ROM_METEG,
+                " is surprising; in ",
+                _ROM_METEG,
+                "-",
+                _ROM_SILLUQ,
+                " order, the location of the stress is surprising. We find a ",
+                _ROM_METEG,
+                " surprise far more likely than a stress surprise.",
+            )
         ),
-        _para(
-            "This surprising meteg is correctly recorded in BHS and in BHS-derived editions"
-            " such as UXLC and WLC:"
+        mb_html.para(
+            (
+                "This surprising ",
+                _ROM_METEG,
+                " is correctly recorded in BHS and in BHS-derived editions such as UXLC and"
+                " WLC:",
+            )
         ),
         mb_html.table(
             comparison_rows,
             {"class": "limited-width post-stress-meteg-table"},
         ),
-        _para(
-            "A meteg after a silluq is hard to identify in Unicode, since the two marks share"
-            " one codepoint."
+        mb_html.para(
+            (
+                "A ",
+                _ROM_METEG,
+                " after a ",
+                _ROM_SILLUQ,
+                " is hard to identify in Unicode, since the two marks share one codepoint.",
+            )
         ),
     ]
 
@@ -1484,22 +1602,36 @@ def _oleh_meteg_overlap(survey: dict) -> list:
     ]
     return [
         mb_html.heading_level_2(
-            ("Meteg sharing a letter with ", mb_html.span_c("oleh", "romanized"))
+            ("The ", _ROM_METEG, " sharing a letter with ", _ROM_OLEH)
         ),
         mb_html.para(
             (
-                f"{len(oleh_overlaps)} meteg marks share a letter with ",
-                mb_html.span_c("oleh", "romanized"),
-                ". The table labels each meteg as MBS or MAS.",
+                f"{len(oleh_overlaps)} ",
+                _ROM_METEG,
+                " marks share a letter with ",
+                _ROM_OLEH,
+                ". The table labels each ",
+                _ROM_METEG,
+                " as MBS or MAS.",
             )
         ),
         mb_html.table(rows, {"class": "limited-width post-stress-meteg-table"}),
-        _para(
-            "We count each such meteg as if the oleh were not there, because oleh is not an"
-            " accent indicating stress, even when it is the last accent in the chanted word,"
-            " as it is in the MAS rows above. In other words, a MAS chanted word with a"
-            ' meteg might at first look like some weird "meteg on the stress" (neither'
-            " before nor after), but it is not!"
+        mb_html.para(
+            (
+                "We count each such ",
+                _ROM_METEG,
+                " as if the ",
+                _ROM_OLEH,
+                " were not there, because ",
+                _ROM_OLEH,
+                " is not an accent indicating stress, even when it is the last accent in"
+                " the chanted word, as it is in the MAS rows above. In other words, a MAS"
+                " chanted word with a ",
+                _ROM_METEG,
+                ' might at first look like some weird "',
+                _ROM_METEG,
+                ' on the stress" (neither before nor after), but it is not!',
+            )
         ),
     ]
 
@@ -1539,8 +1671,8 @@ def _dual_cantillation_footnote(survey: dict) -> list:
     chanted_word_difference = dual_cantillation["chanted_word_count_difference"]
     headers = (
         "count",
-        "cant-alef",
-        "cant-bet",
+        _cantillation_label(psm.CANT_ALEF),
+        _cantillation_label(psm.CANT_BET),
     )
     categories = (
         ("Chanted words", "chanted words checked"),
@@ -1563,15 +1695,15 @@ def _dual_cantillation_footnote(survey: dict) -> list:
     difference_rows = [
         mb_html.table_row_of_data(
             (
-                psm.CANT_ALEF,
+                _cantillation_label(psm.CANT_ALEF),
                 _hebrew_cell(" ".join(difference[psm.CANT_ALEF]["chanted_words"])),
-                "no meteg",
+                ("no ", _ROM_METEG),
             ),
             (None, _HEBREW_CELL, None),
         ),
         mb_html.table_row_of_data(
             (
-                psm.CANT_BET,
+                _cantillation_label(psm.CANT_BET),
                 _hebrew_cell(" ".join(difference[psm.CANT_BET]["chanted_words"])),
                 mb_html.abbr("MBS", {"title": "meteg before the stress"}),
             ),
@@ -1581,7 +1713,7 @@ def _dual_cantillation_footnote(survey: dict) -> list:
     chanted_word_difference_rows = [
         mb_html.table_row_of_data(
             (
-                cantillation,
+                _cantillation_label(cantillation),
                 _hebrew_cell(
                     " ".join(
                         psm._bare(word)
@@ -1600,21 +1732,27 @@ def _dual_cantillation_footnote(survey: dict) -> list:
             "φ2 — Dually cantillated passages",
             {"id": _DUAL_CANTILLATION_FOOTNOTE_ID},
         ),
-        _para(
-            "MAM has dual-cantillation templates in the two Decalogues and"
-            " Genesis 35:22."
-            " The analyses presented in this document use only the cant-alef"
-            " branch of each template."
-            " The table below shows that this choice has no effect on the MAS count and"
-            " changes the other two counts only by 1."
+        mb_html.para(
+            (
+                "MAM has dual-cantillation templates in the two Decalogues and Genesis"
+                " 35:22. The analyses presented in this document use only the ",
+                _cantillation_label(psm.CANT_ALEF),
+                " branch of each template. The table below shows that this choice has no"
+                " effect on the MAS count and changes the other two counts only by 1.",
+            )
         ),
         _table(headers, rows),
         mb_html.para(
             (
                 "Only ",
                 _ref_link(chanted_word_difference["bcv"]),
-                " differs in the number of chanted words. Cant-alef has two chanted words"
-                " where cant-bet has one maqaf compound.",
+                " differs in the number of chanted words. ",
+                _cantillation_label(psm.CANT_ALEF),
+                " has two chanted words where ",
+                _cantillation_label(psm.CANT_BET),
+                " has one ",
+                _ROM_MAQAF,
+                " compound.",
             )
         ),
         mb_html.table(
@@ -1625,9 +1763,17 @@ def _dual_cantillation_footnote(survey: dict) -> list:
             (
                 "Only ",
                 _ref_link(difference["bcv"]),
-                " differs in metegs before the stress. Cant-bet has one meteg before the"
-                " stress in the chanted word below; cant-alef has the two chanted words"
-                " below, neither with a meteg.",
+                " differs in ",
+                _ROM_METEG,
+                "s before the stress. ",
+                _cantillation_label(psm.CANT_BET),
+                " has one ",
+                _ROM_METEG,
+                " before the stress in the chanted word below; ",
+                _cantillation_label(psm.CANT_ALEF),
+                " has the two chanted words below, neither with a ",
+                _ROM_METEG,
+                ".",
             )
         ),
         mb_html.table(
@@ -1653,18 +1799,31 @@ def _type_2_type_3_footnote(survey: dict) -> list:
         mb_html.heading_level_3(
             "φ3 — Types 2 and 3", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
         ),
-        _para(
-            f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
-            f" of the {type_2_count} type-2 MAS syllables have pataḥ, while the other "
-            f"{len(nonfinal_mas_syllable_records)} have tsere and are not only open but also"
-            " nonfinal. Thus no type-2 MAS meets the type-3 condition. Indeed, chanted words"
-            " with a final tsere"
-            " syllable closed by a guttural are quite rare even without a meteg. Only "
-            f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
-            " final tsere syllable closed by a guttural. All "
-            f"{overlap_count:,} occur in Aramaic and end in a mappiq he: "
-            f"{overlap_by_book['da']:,} are in Daniel and {overlap_by_book['er']:,} are in Ezra."
-            " An example is as follows:"
+        mb_html.para(
+            (
+                f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
+                f" of the {type_2_count} type-2 MAS syllables have ",
+                _ROM_PATAH,
+                ", while the other ",
+                f"{len(nonfinal_mas_syllable_records)} have ",
+                _ROM_TSERE,
+                " and are not only open but also nonfinal. Thus no type-2 MAS meets the"
+                " type-3 condition. Indeed, chanted words with a final ",
+                _ROM_TSERE,
+                " syllable closed by a guttural are quite rare even without a ",
+                _ROM_METEG,
+                ". Only ",
+                f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have"
+                " a final ",
+                _ROM_TSERE,
+                " syllable closed by a guttural. All ",
+                f"{overlap_count:,} occur in Aramaic and end in a ",
+                _ROM_MAPPIQ,
+                " ",
+                _ROM_HE,
+                f": {overlap_by_book['da']:,} are in Daniel and "
+                f"{overlap_by_book['er']:,} are in Ezra. An example is as follows:",
+            )
         ),
         mb_html.para(
             (
@@ -1686,8 +1845,13 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
             "φ4 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
         ),
         mb_html.para(
-            "The other four records are type 2: each has an open penultimate tsere MAS"
-            " syllable before a final furtive-pataḥ syllable."
+            (
+                "The other four records are type 2: each has an open penultimate ",
+                _ROM_TSERE,
+                " MAS syllable before a final furtive-",
+                _ROM_PATAH,
+                " syllable.",
+            )
         ),
         mb_html.table(
             [
