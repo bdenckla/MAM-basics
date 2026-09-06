@@ -79,12 +79,6 @@ POST_STRESS_METEG_TYPE_2_TITLE = "Meteg after the primary stress: type 2 cases"
 POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
 POST_STRESS_METEG_MISC_TITLE = "Meteg after the primary stress: misc cases"
 
-# The identifier of that page's section on Holman suggestion M23.  Here rather than in the
-# page module because two trees want it: py/author_site/post_stress_meteg.py emits it, and
-# py/py_render/rt_suggestion_context.py builds the M23 card's href from it.  The renderer
-# would otherwise have to import the page module, which reaches the whole accgram survey.
-POST_STRESS_METEG_M23_ID = "m23-isaiah-23-12"
-
 # The stylesheet all four pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
