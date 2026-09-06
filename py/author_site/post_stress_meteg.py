@@ -556,16 +556,16 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (2053, 207, 1846, 0)
+    ) == (2060, 207, 1853, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_structural_type"] == {
         psm.TYPE_OPEN: {
-            "candidates": 1809,
+            "candidates": 1816,
             "with_mas": 113,
-            "without_mas": 1696,
+            "without_mas": 1703,
         },
         psm.TYPE_GUTTURAL: {
             "candidates": 204,
@@ -589,7 +589,7 @@ def pin_claims(survey: dict) -> None:
     fitting_records = fit_for_mas["records"]
     assert len(fitting_records) == fit_for_mas["fitting_any_type"]
     assert all(
-        record["chanted_word_has_conjunctive_accent"]
+        record["stress_syllable_has_conjunctive_accent"]
         and record["following_chanted_word_is_initially_stressed"]
         and record["following_chanted_word_has_disjunctive_accent"]
         and len(record["types"]) == 1
@@ -604,7 +604,7 @@ def pin_claims(survey: dict) -> None:
     ) == Counter(
         {
             (psm.TYPE_OPEN, True): 113,
-            (psm.TYPE_OPEN, False): 1696,
+            (psm.TYPE_OPEN, False): 1703,
             (psm.TYPE_GUTTURAL, True): 54,
             (psm.TYPE_GUTTURAL, False): 150,
             (psm.TYPE_CLOSED_TSERE, True): 40,
@@ -1220,10 +1220,11 @@ def _fit_for_mas_question(survey: dict) -> list:
         mb_html.para(
             (
                 "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS, i.e. in situations where a potential MAS syllable meets one of the"
-                " three MAS types, the chanted word carrying the potential MAS syllable has a"
-                " conjunctive accent, and the following word has initial stress and a"
-                " disjunctive accent. The answer is that a MAS actually appears only ",
+                " a MAS, i.e. in situations where a potential MAS syllable comes immediately"
+                " after a nonfinal stress syllable with a conjunctive accent, the next chanted"
+                " word has initial stress and a disjunctive accent, and the potential MAS"
+                " syllable meets one of the three MAS types. The answer is that a MAS actually"
+                " appears only ",
                 f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS. (",
                 _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
@@ -2232,10 +2233,11 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". It means that a syllable belongs to one or more of the three MAS types below"
-                "; the chanted word carrying the syllable has a conjunctive accent; and the"
-                " following word has initial stress and a disjunctive accent. The table records"
-                " how often MAS occurs in each such situation and how often it does not.",
+                ". It means that a potential MAS syllable comes immediately after a nonfinal"
+                " stress syllable with a conjunctive accent, the next chanted word has initial"
+                " stress and a disjunctive accent, and the potential MAS syllable belongs to"
+                " one or more of the three MAS types below. The table records how often MAS"
+                " occurs in each such situation and how often it does not.",
             )
         ),
         _table(headers, rows),
