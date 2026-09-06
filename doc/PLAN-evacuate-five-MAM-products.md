@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–2 completed 2026-09-06; Phase 3 resumed with explicit historical inputs and optional sibling history access; MAM-with-doc and MAM-OSIS remain later lanes.
+State: Phases 0–2 completed 2026-09-06; Phase 3 Land, Licence, Repoint, and Stubs completed; Empty and Remove await direct approval after automatic approval review rejected source-file removal. MAM-with-doc and MAM-OSIS remain later lanes.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -328,10 +328,114 @@ clean at `51082036e5907991d0d322cb6dfcc6404802099f`.
    adaptations are required path/documentation changes, recorded separately
    from that initial zero-difference regeneration.
 
-The remaining Repoint, Stubs, Empty, Remove, final suite, and deployment
-checks are in progress. The historical source-only README link and
-`good_ending` key have been corrected in the preserved product README;
-every original substantive section remains, with no deliberate drop.
+The historical source-only README link and `good_ending` key were corrected
+in the preserved product README; every original substantive section remains,
+with no deliberate drop.
+
+### Phase 3 Repoint and Stubs record; Empty approval pending — 2026-09-06
+
+Repoint commit `8e5735fb722a368c0c19a20ef815fded8dea567a` moved the production
+writers, MAM-basics readers, authored documentation, graph labels, and example
+execution to the landed product. Commit
+`2a50fd15a2c8e4b73b91fa486b79eee508360ca9` added the frozen redirect manifest,
+redirect-host configuration, site-index entry, and an example-support copy
+fix that preserves LF bytes even when the canonical Python checkout uses
+CRLF. Both commits were pushed. An unrelated post-stress-meteg merge then
+advanced clean MAM-basics to `718f48b5fd4381b13a2f4360589fefce9046459b`;
+that merge changed no Phase 3 path.
+
+1. Regeneration and mtimes: the final product check ran `py/main_parse.py go`,
+   `py/main_tmpl_survey.py`, `py/main_pipeline_graph.py`,
+   `py/main_authored.py gen-site`, and the real mega-pipeline
+   `vendored-tmpl-survey-toy` runner with the MAM-parsed sibling override
+   pointing at a nonexistent directory. It changed 109 tracked destination
+   mtimes and zero tracked source mtimes. Core JSON, all 12 call-graph SVGs,
+   and the example output match the original source blobs. The only landed
+   blob differences are the adapted product README, example provenance,
+   example source-hygiene test, and published index README link.
+2. Historical oracle: all five named releases and the unpinned comparison
+   against immutable source `51082036` reproduced the original HTML and JSON
+   bytes. Their raw-change counts are respectively 76, 557, 19, 139, 33, and
+   180. The stored-input comparison against MAM-basics `HEAD` also matched
+   the read-only sibling comparison. Missing legacy history fails rather
+   than creating or fetching a clone. The real `--legacy-history` CLI was
+   exercised with explicit refs and scratch output. Change-log output remains
+   in MAM-with-doc pending Phase 4; no published change-log regeneration was
+   performed as part of Phase 3.
+3. Published URLs: MAM-basics Pages deployment `34054337177` succeeded at
+   `2a50fd15`. MAM-parsed source commit
+   `6dfc8db93f967b2335b9a7b59c62296b4780902f` replaced the 22 original HTML
+   pages with generated stubs, added `404.html`, and removed the 14 superseded
+   site assets. Its Pages deployment `34054626554` succeeded. Live HTTPS
+   checks returned 200 for all 22 targets and all 22 legacy HTML URLs; every
+   source page carries the expected immediate redirect and query/fragment
+   preservation script. Local redirect lint also passed for all 22 stubs and
+   the catch-all.
+4. Verification findings: the canonical suite passed 975 tests and skipped 5
+   in 107.51 seconds after the repoint. Initial lint failures identified
+   historical/generated JSON wrongly included in the source NFC check and
+   obsolete sibling-path exemptions; the corrected scopes preserve the source
+   JSON bytes. The landed source-hygiene suite passed 6 tests. Black, Ruff,
+   and `git diff --check` passed for the authored changes. Adding the new
+   redirect row initially changed the default command choice; the row order
+   was corrected to preserve the existing default.
+
+The final pre-Empty rerun at MAM-basics `718f48b5` reported **1 failed,
+974 passed, and 5 skipped in 101.63 seconds**. The failure is
+`test_site_index_links.py::test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name`,
+which names `post-stress-meteg-type-1-lacks-mas.html` and
+`post-stress-meteg-type-2-lacks-mas.html` as unlisted deploy-root pages.
+Those pages belong to the separately active post-stress-meteg work; Phase 3
+did not edit those pages or their site-index entries. The MAM-parsed tests
+passed. The last historical-oracle rerun also passed all byte comparisons,
+legacy parity, and the required failure when the legacy clone is absent.
+Record and resolve the site-index failure before claiming a green final
+canonical suite; the earlier 975-pass result does not describe the later
+tree.
+
+Empty and Remove have **not** run. The source remains clean at `6dfc8db9`,
+matching remote `main`, with its product files still tracked. Its workspace
+roster and `repo_visibility` entries remain in place. Automatic approval
+review rejected the attempted Empty command before execution, then rejected
+a retry supported by the recovered Phase 3 launch instructions: the review
+requires direct user authorization for deleting the 56 source product files
+and does not accept the agent-created delegation as authorization for that
+scope. No workaround or further deletion attempt was made.
+
+The prepared Empty step removes only the 56 product paths already preserved
+in pushed Land commit `63cf6c98`, replaces the source README with the dated
+redirect-host breadcrumb, and retains `.gitattributes`, `.gitignore`, the
+Pages workflow, all 22 stubs, and `404.html`. Remove then retires only
+`C:/Users/BenDe/GitRepos/MAM-parsed` through the Windows Recycle Bin, after
+rechecking the source commit, working tree, refs, objects, and worktrees.
+The workspace and visibility-map entries must leave together when Empty
+completes. No history rewrite is required.
+
+The source safety check found one primary worktree, no stash, matching
+remote copies of every local branch and tag, and only generated Python
+bytecode among ignored files. The unreachable commit `c7d7ba69` has the
+identical full tree as remote-preserved ancestor `6766d3d9`. The unreachable
+commit `53eed580` differs from remote-preserved ancestor `cc43fe04` only by
+a superseded documentation-link sentence; its implementation and data are
+preserved. Both reachable counterparts and the original source `51082036`
+were verified as ancestors of `origin/main`. These findings do not identify
+unmerged implementation work; the Recycle Bin would retain the local
+objects as well. Re-measure rather than treating the safety report as valid
+indefinitely.
+
+Local evidence and the exact product-path removal list are under
+`C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase3-mam-parsed/`, including
+`retirement-proof.json`, `source-safety-before-empty.json`,
+`live-source-pages.json`, and the product/history oracle logs. The proposed
+source README is
+`C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase3_mam_parsed_source_readme.md`.
+These ignored files are review evidence; the committed product, historical
+manifest, and redirect manifest are the durable inputs.
+
+After approval, complete Empty and Remove, rerun the canonical suite and
+product/history oracles with the actual sibling clone absent, verify the
+final source deployment, and record the final source and destination commits.
+Do not begin Phase 4 or create a successor while Phase 3 remains unfinished.
 
 ## Phase 4 — MAM-with-doc
 

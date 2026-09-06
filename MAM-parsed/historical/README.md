@@ -36,8 +36,8 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpp 
 The clone must already exist, normally at
 `C:/Users/BenDe/GitRepos/MAM-parsed`. `REPO_MAM_PARSED_DIR` or `REPOS_ROOT`
 can locate a clone elsewhere. Missing history fails with an error; the
-command never modifies or fetches the clone. The redirect host's current
-HEAD contains no plus data, so select an explicit pre-evacuation revision.
+command never modifies or fetches the clone. Select explicit pre-migration
+commits so comparisons do not depend on the redirect host's current contents.
 An individual `legacy:<ref>` argument permits a comparison between an
 arbitrary legacy revision and a MAM-basics revision.
 

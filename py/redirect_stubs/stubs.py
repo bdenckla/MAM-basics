@@ -135,18 +135,18 @@ class RedirectRepo:
 # source repo's flip.
 REDIRECT_REPOS = (
     RedirectRepo(
-        source_repo="MAM-parsed",
-        site_subtree="MAM-parsed",
-        old_path_prefix="/MAM-parsed/",
-        manifest_path="in/mam_parsed_redirect_pages.json",
-        clone_url="https://github.com/bdenckla/MAM-parsed.git",
-    ),
-    RedirectRepo(
         source_repo="MAM-simple",
         site_subtree="MAM-simple",
         old_path_prefix="/MAM-simple/",
         manifest_path="in/mam_simple_redirect_pages.json",
         clone_url="https://github.com/bdenckla/MAM-simple.git",
+    ),
+    RedirectRepo(
+        source_repo="MAM-parsed",
+        site_subtree="MAM-parsed",
+        old_path_prefix="/MAM-parsed/",
+        manifest_path="in/mam_parsed_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/MAM-parsed.git",
     ),
     RedirectRepo(
         source_repo="MAM-for-Sefaria",
