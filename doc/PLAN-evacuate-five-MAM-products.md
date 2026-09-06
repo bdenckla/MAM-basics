@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–2 completed 2026-09-06; Phase 3 Land, Licence, Repoint, and Stubs completed; Empty and Remove await direct approval after automatic approval review rejected source-file removal. MAM-with-doc and MAM-OSIS remain later lanes.
+State: Phases 0–3 completed 2026-09-06. MAM-parsed is landed in MAM-basics; its former repository is a deployed redirect host and its local clone is in the Windows Recycle Bin. MAM-with-doc and MAM-OSIS remain later lanes.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -180,7 +180,7 @@ pre-existing trailing whitespace and final blank lines, so `git diff --check`
 reports them when the files enter MAM-basics; the check passed for every
 Phase 2-authored change.
 
-## Phase 3 — MAM-parsed
+## Phase 3 — MAM-parsed — DONE 2026-09-06
 
 The third product lane. Land the source tree under MAM-parsed/ and its published tree under gh-pages/MAM-parsed/. Repoint parse-go, the MAM-parsed readers, the authored-document output, the test fixtures, and every path in the pipeline graph to MAM-parsed/plus/ or MAM-parsed/plain/ within MAM-basics. Land the MAM-parsed example program and py-examples-out/tmpl_survey_toy.json. Keep vendored-tmpl-survey-toy running against the landed example and verify its one-file differential result.
 
@@ -332,7 +332,7 @@ The historical source-only README link and `good_ending` key were corrected
 in the preserved product README; every original substantive section remains,
 with no deliberate drop.
 
-### Phase 3 Repoint and Stubs record; Empty approval pending — 2026-09-06
+### Phase 3 Repoint, Stubs, and approval pause — 2026-09-06
 
 Repoint commit `8e5735fb722a368c0c19a20ef815fded8dea567a` moved the production
 writers, MAM-basics readers, authored documentation, graph labels, and example
@@ -389,13 +389,13 @@ Those pages belong to the separately active post-stress-meteg work; Phase 3
 did not edit those pages or their site-index entries. The MAM-parsed tests
 passed. The last historical-oracle rerun also passed all byte comparisons,
 legacy parity, and the required failure when the legacy clone is absent.
-Record and resolve the site-index failure before claiming a green final
-canonical suite; the earlier 975-pass result does not describe the later
-tree.
+The site-index failure required correction before claiming a green final
+canonical suite; the earlier 975-pass result did not describe the later
+tree. The correction and successful reruns are recorded below.
 
-Empty and Remove have **not** run. The source remains clean at `6dfc8db9`,
-matching remote `main`, with its product files still tracked. Its workspace
-roster and `repo_visibility` entries remain in place. Automatic approval
+At the approval pause, Empty and Remove had **not** run. The source was clean
+at `6dfc8db9`, matching remote `main`, with its product files still tracked.
+Its workspace roster and `repo_visibility` entries remained in place. Automatic approval
 review rejected the attempted Empty command before execution, then rejected
 a retry supported by the recovered Phase 3 launch instructions: the review
 requires direct user authorization for deleting the 56 source product files
@@ -432,10 +432,89 @@ source README is
 These ignored files are review evidence; the committed product, historical
 manifest, and redirect manifest are the durable inputs.
 
-After approval, complete Empty and Remove, rerun the canonical suite and
-product/history oracles with the actual sibling clone absent, verify the
-final source deployment, and record the final source and destination commits.
-Do not begin Phase 4 or create a successor while Phase 3 remains unfinished.
+The pause required direct approval, Empty and Remove, a canonical-suite and
+product/history rerun with the actual sibling clone absent, and final source
+deployment verification before completion. The execution record below records
+that continuation. No later product lane began during the pause.
+
+### Phase 3 Empty and Remove — approved and executed 2026-09-06
+
+Ben's direct approval, 2026-09-06: “I approve of this deletion,” referring to
+the proposed removal of the 56 duplicate product files. Automatic approval
+review accepted the approved operation. Source commit
+`c9e04c496920b1c423069dfbc4b31078efa0b0a0` removed exactly those paths and
+installed the reviewed dated README. The source retains 27 tracked files:
+the README, `.gitattributes`, `.gitignore`, its Pages workflow, 22 redirect
+stubs, and `404.html`. The source commit was pushed to `main`; source Pages
+deployment `34055284061` succeeded at that commit, and all 22 source/target
+URL pairs again passed live HTTPS checks.
+
+The post-stress-meteg site-index failure was resolved separately in
+MAM-basics commit `d3d7e321446d7a73dfeb31dc7ef4d3247c1e78cc`. The rendered
+main page already linked both new child pages; the source lint's list of
+deliberately unlisted child pages lacked their names. Adding those names
+beside the existing child-page entries changed no generated page. The focused
+site-index tests, Black, and Ruff passed. The full pre-removal suite then
+passed **975 tests and skipped 5 in 98.25 seconds**.
+
+MAM-basics commit `9a61e7b58ccf8a9f7478f19bcb81e5485651e688` removed
+MAM-parsed from `all-repos.code-workspace` and `repo_visibility` together and
+was pushed. A final workspace sweep also found the MAM-parsed entry in
+`MAM-basics.code-workspace`; that entry and a stale MAM-simple entry left
+after Phase 1 were removed. The smaller workspace now names MAM-basics,
+MAM-with-doc, and MAM-OSIS. No frozen or keep-absent entry was added.
+
+The final source safety report at `c9e04c4` confirmed a clean tree, matching
+remote copies of every local branch and tag, one primary worktree, no stash,
+and no alternates. Its unreachable objects remained exactly the superseded
+snapshots classified above. The only ignored file was generated Python
+bytecode. The measured clone contained 3,423 files and 253,508,049 bytes.
+The resolved target was checked as exactly
+`C:/Users/BenDe/GitRepos/MAM-parsed`, with no reparse point, and its HEAD,
+clean state, remote, and worktree count were rechecked immediately before
+the Windows Recycle Bin operation. The operation succeeded; the original
+path is absent and the clone remains recoverable in the Recycle Bin.
+
+With the actual sibling clone absent and no path override, the production
+parse, template-survey, pipeline-graph, site, and example commands passed.
+Parse verification reported **79 passed, 0 failed, 1 pending**, retaining
+the pre-existing `mp.plain.docs.book39-skeleton.common` pending check.
+Regeneration changed 111 tracked destination mtimes and produced zero Git
+content differences; the source path remained absent. All original corpus,
+static-asset, and example blobs still match the Land manifest apart from the
+previously recorded README, provenance, source-lint, and index-link changes.
+
+The post-removal historical run reproduced every named-release and unpinned
+oracle HTML/JSON byte. Current MAM-basics `HEAD` comparisons matched the
+immutable migration-source comparison. Explicit legacy history raised the
+required missing-clone error, and no command recreated the sibling path.
+The default unpinned-latest operation also selected release `9ce6ee5` and
+generated its report against MAM-basics `HEAD`, with output directed to
+scratch so the later MAM-with-doc lane remained untouched.
+The frozen redirect manifest passed against regenerated scratch stubs after
+source removal. Logs are `post-removal-products.log`,
+`post-removal-history.log`, and `after-removal-mtimes.json` under the ignored
+Phase 3 evidence directory named above.
+
+The final post-removal canonical suite passed **975 tests and skipped 5 in
+93.67 seconds**, with no failure. Its command remains the canonical
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py`
+from the MAM-basics root; the UTF-8 log is
+`approved-post-removal-suite.log`. `git diff --check` passed, and the final
+configuration/source audit confirmed the absent source path, its 27 remote
+redirect-host blobs totaling 21,201 bytes, and no MAM-parsed entry in either
+workspace or the maintenance-policy maps. The source Git-tree measurement
+can be re-established without restoring the clone:
+
+```powershell
+gh api 'repos/bdenckla/MAM-parsed/git/trees/c9e04c496920b1c423069dfbc4b31078efa0b0a0?recursive=1'
+```
+
+All four oracle layers are complete. The MAM-basics head before the final
+completion-record/workspace commit was
+`9a61e7b58ccf8a9f7478f19bcb81e5485651e688`; the final source head is
+`c9e04c496920b1c423069dfbc4b31078efa0b0a0`. The source remains unarchived.
+Phases 4 and later remain unstarted, and MAM-private was not modified.
 
 ## Phase 4 — MAM-with-doc
 
