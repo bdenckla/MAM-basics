@@ -64,10 +64,11 @@ _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
-_JEREMIAH_FOOTNOTE_ID = "footnote-1"
-_DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-2"
-_TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-3"
-_NONFINAL_MAS_FOOTNOTE_ID = "footnote-4"
+_DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-1"
+_JEREMIAH_FOOTNOTE_ID = "footnote-2"
+_NONFINAL_MAS_FOOTNOTE_ID = "footnote-3"
+_TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-4"
+_FIT_FOR_MAS_FOOTNOTE_ID = "footnote-5"
 
 
 def _author_romanization(key: str) -> object:
@@ -386,6 +387,11 @@ def _by_type_count(survey: dict, kind: str) -> int:
     )
 
 
+def _fit_for_mas(survey: dict) -> dict:
+    """The survey's candidate analysis of syllables fit for MAS."""
+    return survey["fit_for_mas"]
+
+
 def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
     """MAS records where a further final syllable follows the MAS syllable."""
     return [
@@ -458,6 +464,26 @@ def pin_claims(survey: dict) -> None:
         == "Every MAS has a conjunctive accent on that stress letter."
     )
     assert all(record["syllables_after_the_stress"] == 1 for record in post_stress)
+    fit_for_mas = _fit_for_mas(survey)
+    assert (
+        fit_for_mas["fitting_any_type"],
+        fit_for_mas["with_mas"],
+        fit_for_mas["without_mas"],
+        fit_for_mas["candidates_meeting_multiple_types"],
+    ) == (1430, 149, 1281, 0)
+    assert (
+        fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
+        == fit_for_mas["fitting_any_type"]
+    )
+    assert fit_for_mas["by_structural_type"] == {
+        psm.TYPE_OPEN: {"candidates": 1252, "with_mas": 85, "without_mas": 1167},
+        psm.TYPE_GUTTURAL: {"candidates": 150, "with_mas": 36, "without_mas": 114},
+        psm.TYPE_CLOSED_TSERE: {
+            "candidates": 28,
+            "with_mas": 28,
+            "without_mas": 0,
+        },
+    }
     by_type = sum(_by_type_count(survey, kind) for kind in _TYPE_SOURCES)
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
@@ -488,8 +514,8 @@ def pin_claims(survey: dict) -> None:
         one for one in post_stress if one.get("intervening_punctuation")
     ] == misc_vayomer_records
     assert all(
-        one.get("intervening_punctuation") == [psm.PASEQ]
-        and one.get("intervening_mam_punctuation") == [psm.PASEQ]
+        tuple(one.get("intervening_punctuation", ())) == (psm.PASEQ,)
+        and tuple(one.get("intervening_mam_punctuation", ())) == (psm.PASEQ,)
         and one["following_mam_form"] is not None
         for one in misc_vayomer_records
     )
@@ -840,7 +866,7 @@ def _census(survey: dict) -> list:
                 " Job's prose frame; the poetic row is for the verses of Job's main, poetic"
                 " section plus all Psalms and the whole book of Proverbs. Only one"
                 " cantillation (",
-                _footnote_callout(2, _DUAL_CANTILLATION_FOOTNOTE_ID),
+                _footnote_callout(1, _DUAL_CANTILLATION_FOOTNOTE_ID),
                 ") of dually cantillated passages participates in every analysis on this"
                 " page, including the census above.",
             )
@@ -862,12 +888,12 @@ def _general_mas_facts(survey: dict) -> list:
                 " has a conjunctive accent.",
                 (
                     "In every MAS case but one (",
-                    _footnote_callout(1, _JEREMIAH_FOOTNOTE_ID),
+                    _footnote_callout(2, _JEREMIAH_FOOTNOTE_ID),
                     "), the following chanted word has initial stress.",
                 ),
                 (
                     "In every MAS case except four (",
-                    _footnote_callout(4, _NONFINAL_MAS_FOOTNOTE_ID),
+                    _footnote_callout(3, _NONFINAL_MAS_FOOTNOTE_ID),
                     "), the MAS syllable is final.",
                 ),
             )
@@ -939,12 +965,23 @@ def _by_type(survey: dict) -> list:
                     "In type 3, the MAS is on a closed, final, ",
                     _ROM_TSERE,
                     "-vowelled syllable. (",
-                    _footnote_callout(3, _TYPE_2_TYPE_3_FOOTNOTE_ID),
+                    _footnote_callout(4, _TYPE_2_TYPE_3_FOOTNOTE_ID),
                     ")",
                 ),
             )
         ),
         _table(headers, rows),
+        mb_html.para(
+            (
+                "It is natural to ask how often a MAS actually appears in situations fit for"
+                " a MAS, i.e. in situations conforming to the criteria of one of the three MAS"
+                " types. The answer is that a MAS actually appears only ",
+                f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
+                " of the time in situations fit for MAS. (",
+                _footnote_callout(5, _FIT_FOR_MAS_FOOTNOTE_ID),
+                ")",
+            )
+        ),
         _hebrew_spacing_option(),
     ]
 
@@ -1643,8 +1680,9 @@ def _footnotes(survey: dict) -> list:
     exception = exceptions[0]
     return [
         mb_html.heading_level_2("Footnotes"),
+        *_dual_cantillation_footnote(survey),
         mb_html.heading_level_3(
-            ("φ1 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
+            ("φ2 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1655,14 +1693,14 @@ def _footnotes(survey: dict) -> list:
                 ".",
             )
         ),
-        *_dual_cantillation_footnote(survey),
-        *_type_2_type_3_footnote(survey),
         *_nonfinal_mas_syllable_footnote(survey),
+        *_type_2_type_3_footnote(survey),
+        *_fit_for_mas_footnote(survey),
     ]
 
 
 def _dual_cantillation_footnote(survey: dict) -> list:
-    """Footnote 2: the template-only comparison for Phonetic MAM's dual cantillation."""
+    """Footnote 1: the template-only comparison for Phonetic MAM's dual cantillation."""
     dual_cantillation = _dual_cantillation(survey)
     template_comparison = dual_cantillation["template_counts"]
     alef = template_comparison[psm.CANT_ALEF]
@@ -1729,7 +1767,7 @@ def _dual_cantillation_footnote(survey: dict) -> list:
     ]
     return [
         mb_html.heading_level_3(
-            "φ2 — Dually cantillated passages",
+            "φ1 — Dually cantillated passages",
             {"id": _DUAL_CANTILLATION_FOOTNOTE_ID},
         ),
         mb_html.para(
@@ -1783,7 +1821,7 @@ def _dual_cantillation_footnote(survey: dict) -> list:
 
 
 def _type_2_type_3_footnote(survey: dict) -> list:
-    """Footnote 3: why types 2 and 3 do not overlap in the current survey."""
+    """Footnote 4: why types 2 and 3 do not overlap in the current survey."""
     type_2_records = _type_2_records(survey)
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     type_2_final_mas_count = sum(
@@ -1797,7 +1835,7 @@ def _type_2_type_3_footnote(survey: dict) -> list:
     overlap_example = overlap["example"]
     return [
         mb_html.heading_level_3(
-            "φ3 — Types 2 and 3", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
+            "φ4 — Types 2 and 3", {"id": _TYPE_2_TYPE_3_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1837,12 +1875,12 @@ def _type_2_type_3_footnote(survey: dict) -> list:
 
 
 def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
-    """Footnote 4: the four nonfinal MAS syllables."""
+    """Footnote 3: the four nonfinal MAS syllables."""
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     assert len(nonfinal_mas_syllable_records) == 4
     return [
         mb_html.heading_level_3(
-            "φ4 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
+            "φ3 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -1866,6 +1904,51 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
             ],
             {"class": "limited-width post-stress-meteg-table"},
         ),
+    ]
+
+
+def _fit_for_mas_footnote(survey: dict) -> list:
+    """Footnote 5: every syllable fit for MAS, including the ones lacking MAS."""
+    fit_for_mas = _fit_for_mas(survey)
+    headers = ("Type", "Fit for MAS", "Has MAS", "Lacks MAS")
+    rows = [
+        mb_html.table_row_of_data(
+            (
+                _case_type_cell(kind),
+                f"{counts['candidates']:,}",
+                f"{counts['with_mas']:,}",
+                f"{counts['without_mas']:,}",
+            ),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+        )
+        for kind, counts in fit_for_mas["by_structural_type"].items()
+    ]
+    rows.append(
+        mb_html.table_row_of_data(
+            (
+                "any of the three types",
+                f"{fit_for_mas['fitting_any_type']:,}",
+                f"{fit_for_mas['with_mas']:,}",
+                f"{fit_for_mas['without_mas']:,}",
+            ),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+        )
+    )
+    return [
+        mb_html.heading_level_3("φ5 — Fit for MAS", {"id": _FIT_FOR_MAS_FOOTNOTE_ID}),
+        mb_html.para(
+            (
+                '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
+                _ROM_METEG,
+                ". The analysis starts with every chanted-word pair whose first chanted word"
+                " has nonfinal stress and a conjunctive accent on that stress, and whose"
+                " following chanted word has initial stress and a disjunctive accent. The"
+                " syllable immediately after the first chanted word's stress is the potential"
+                " MAS syllable. The analysis checks every such syllable against the three"
+                " structural criteria and records whether that syllable has MAS.",
+            )
+        ),
+        _table(headers, rows),
     ]
 
 

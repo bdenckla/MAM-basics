@@ -340,6 +340,31 @@
    "misc-almost-type-3": 1
   }
  },
+ "fit_for_mas": {
+  "what": "Every candidate syllable immediately after a nonfinal stress in a regular conjunctive chanted word followed by an initially stressed disjunctive chanted word. Each candidate is classified by the three MAS structural predicates and checked for U+05BD.",
+  "candidate_pairs": 2418,
+  "fitting_any_type": 1430,
+  "with_mas": 149,
+  "without_mas": 1281,
+  "by_structural_type": {
+   "open final syllable": {
+    "candidates": 1252,
+    "with_mas": 85,
+    "without_mas": 1167
+   },
+   "chanted word closed by a guttural": {
+    "candidates": 150,
+    "with_mas": 36,
+    "without_mas": 114
+   },
+   "closed tsere-vowelled syllable": {
+    "candidates": 28,
+    "with_mas": 28,
+    "without_mas": 0
+   }
+  },
+  "candidates_meeting_multiple_types": 0
+ },
  "stress_accent_classification": {
   "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table.",
   "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
@@ -10967,7 +10992,7 @@
   "what": "The Phonetic MAM standard set is regenerated in al-hatorah, on its own occasions, so it is a snapshot of MAM rather than MAM's current state. This counts U+05BD per numbered verse on both sides and names every numbered verse where they differ, so the page can say which MAM its figures describe.",
   "how": "Per NUMBERED verse, in MAM's own versification, which is the numbering both sides use. Nothing here aligns words, so it survives the places where the two texts group atoms differently. Dual-cantillation numbered verses are left out: Phonetic MAM has both strands where MAM-simple's loader yields the combined stream once. Every other numbered verse ends on a chanted word with sof pasuq, measured 2026-09-04, so no chanted verse in the comparison runs past a numbered verse's end.",
   "surveyed_snapshot": "MAM-private/al-hatorah/io/a01-phonetic-std-set",
-  "compared_against": "MAM-simple/json-vtrad-mam",
+  "compared_against": "MAM-basics/MAM-simple/json-vtrad-mam",
   "focus_verses": {
    "is23:12": {
     "chanted_words": [

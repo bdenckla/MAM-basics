@@ -1054,6 +1054,106 @@ def _classify_one_word(
             found["post_stress"].append(record)
 
 
+def _fit_for_mas_candidate(
+    *,
+    bcv: str,
+    system: str,
+    word: str,
+    jta: str,
+    parsed: dict,
+    following_word: str | None,
+    following_jta: str | None,
+) -> dict | None:
+    """One potential MAS syllable, or ``None`` when this pair is not a candidate.
+
+    The pair has a regular conjunctive accent on the first chanted word's stress letter and a
+    disjunctive accent on the following chanted word's stress letter. The first chanted word
+    has nonfinal stress and the following chanted word has initial stress. The potential MAS
+    syllable is therefore the syllable directly after the first chanted word's stress.
+    """
+    if following_word is None or following_jta is None:
+        return None
+    try:
+        _parse(following_word, following_jta)
+        accent = _stress_letter_accent({"bcv": bcv, "chanted_word": word, "jta": jta})
+        following_accent = _stress_letter_accent(
+            {"bcv": bcv, "chanted_word": following_word, "jta": following_jta}
+        )
+        following_is_initially_stressed = _first_syllable_is_stressed(following_jta)
+    except SurveyProblem:
+        return None
+    conjunctives = _STRESS_ACCENT_CONJUNCTIVES[system]
+    if accent not in conjunctives or following_accent in conjunctives:
+        return None
+    stressed = parsed["stressed"]
+    if stressed == len(parsed["syllables"]) - 1 or not following_is_initially_stressed:
+        return None
+    potential_syllable = stressed + 1
+    is_open = _syllable_is_open(parsed["syllables"][potential_syllable])
+    vowel = parsed["nuclei"][potential_syllable][1]
+    types = []
+    if is_open and potential_syllable == len(parsed["syllables"]) - 1:
+        types.append(TYPE_OPEN)
+    if _chanted_word_is_closed_by_a_guttural(parsed):
+        types.append(TYPE_GUTTURAL)
+    if not is_open and vowel == hpo.TSERE:
+        types.append(TYPE_CLOSED_TSERE)
+    has_u05bd = any(
+        METEG in marks
+        for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
+        if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
+    )
+    return {
+        "bcv": bcv,
+        "chanted_word": word,
+        "jta": jta,
+        "structural_types": types,
+        "has_u05bd": has_u05bd,
+    }
+
+
+def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dict:
+    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
+    mas_keys = {
+        (record["bcv"], record["chanted_word"], record["jta"])
+        for record in post_stress
+        if record["syllables_after_the_stress"] == 1
+    }
+    for candidate in candidates:
+        key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        candidate["has_mas"] = key in mas_keys
+        assert candidate["has_u05bd"] == candidate["has_mas"], candidate
+    fitting = [candidate for candidate in candidates if candidate["structural_types"]]
+    by_type = {}
+    for kind in (TYPE_OPEN, TYPE_GUTTURAL, TYPE_CLOSED_TSERE):
+        members = [
+            candidate for candidate in fitting if kind in candidate["structural_types"]
+        ]
+        with_mas = sum(candidate["has_mas"] for candidate in members)
+        by_type[kind] = {
+            "candidates": len(members),
+            "with_mas": with_mas,
+            "without_mas": len(members) - with_mas,
+        }
+    with_mas = sum(candidate["has_mas"] for candidate in fitting)
+    return {
+        "what": (
+            "Every candidate syllable immediately after a nonfinal stress in a regular"
+            " conjunctive chanted word followed by an initially stressed disjunctive chanted"
+            " word. Each candidate is classified by the three MAS structural predicates and"
+            " checked for U+05BD."
+        ),
+        "candidate_pairs": len(candidates),
+        "fitting_any_type": len(fitting),
+        "with_mas": with_mas,
+        "without_mas": len(fitting) - with_mas,
+        "by_structural_type": by_type,
+        "candidates_meeting_multiple_types": sum(
+            len(candidate["structural_types"]) > 1 for candidate in fitting
+        ),
+    }
+
+
 def _scan(
     phon_dir: Path, cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False
 ) -> dict:
@@ -1078,6 +1178,7 @@ def _scan(
         "type_2_type_3_overlap_by_book": Counter(),
         "type_2_type_3_overlap_by_final_letter": Counter(),
         "type_2_type_3_overlap_example": None,
+        "fit_for_mas_candidates": [],
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -1213,6 +1314,17 @@ def _one_verse(
                     "following_chanted_word": None,
                     "snapshot_before_qere": entry.get("before_qfikq"),
                 }
+        fit_for_mas_candidate = _fit_for_mas_candidate(
+            bcv=bcv,
+            system=system,
+            word=word,
+            jta=jta,
+            parsed=parsed,
+            following_word=following_chanted_word,
+            following_jta=following_jta,
+        )
+        if fit_for_mas_candidate is not None:
+            found["fit_for_mas_candidates"].append(fit_for_mas_candidate)
         _classify_one_word(
             bcv=bcv,
             system=system,
@@ -1807,6 +1919,7 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
+    fit_for_mas = _fit_for_mas_summary(found["fit_for_mas_candidates"], post_stress)
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
@@ -1883,6 +1996,7 @@ def build_survey() -> dict:
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
+        "fit_for_mas": fit_for_mas,
         "stress_accent_classification": stress_accent_classification(post_stress),
         "type_2_type_3_overlap": {
             "chanted_words": type_2_type_3_overlap_count,
