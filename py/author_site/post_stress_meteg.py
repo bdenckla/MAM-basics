@@ -471,28 +471,36 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (27976, 225, 27751, 0)
+    ) == (3181, 207, 2974, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_structural_type"] == {
         psm.TYPE_OPEN: {
-            "candidates": 23850,
-            "with_mas": 123,
-            "without_mas": 23727,
+            "candidates": 2818,
+            "with_mas": 113,
+            "without_mas": 2705,
         },
         psm.TYPE_GUTTURAL: {
-            "candidates": 4083,
-            "with_mas": 60,
-            "without_mas": 4023,
+            "candidates": 323,
+            "with_mas": 54,
+            "without_mas": 269,
         },
         psm.TYPE_CLOSED_TSERE: {
-            "candidates": 43,
-            "with_mas": 42,
-            "without_mas": 1,
+            "candidates": 40,
+            "with_mas": 40,
+            "without_mas": 0,
         },
     }
+    assert fit_for_mas["mas_not_in_the_table"] == {
+        "outside_the_three_types": 7,
+        "following_word_not_disjunctive": 17,
+        "following_word_not_initially_stressed": 1,
+    }
+    assert fit_for_mas["with_mas"] + sum(
+        fit_for_mas["mas_not_in_the_table"].values()
+    ) == len(post_stress)
     assert (
         sum(fit_for_mas["accent_grammar_token_counts"].values())
         == fit_for_mas["candidate_chanted_words"]
@@ -1008,7 +1016,8 @@ def _by_type(survey: dict) -> list:
             (
                 "It is natural to ask how often a MAS actually appears in situations fit for"
                 " a MAS, i.e. in situations conforming to the criteria of one of the three MAS"
-                " types. The answer is that a MAS actually appears only ",
+                " types and having a following word with initial stress and a disjunctive"
+                " accent. The answer is that a MAS actually appears only ",
                 f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS. (",
                 _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
@@ -1947,6 +1956,8 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
 def _fit_for_mas_footnote(survey: dict) -> list:
     """Footnote 7: every syllable fit for MAS, including the ones lacking MAS."""
     fit_for_mas = _fit_for_mas(survey)
+    mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
+    total_mas = len(survey["post_stress"])
     headers = ("Type", "Fit for MAS", "Has MAS", "Lacks MAS")
     rows = [
         mb_html.table_row_of_data(
@@ -1977,12 +1988,36 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". It means that a syllable has one or more of the three structures below."
-                " The table records how often MAM has MAS in each structure and how often"
-                " MAM lacks MAS there.",
+                ". It means that a syllable has one or more of the three structures below,"
+                " followed by a word with initial stress and a disjunctive accent. The table"
+                " records how often MAM has MAS in each such situation and how often MAM"
+                " lacks MAS there.",
             )
         ),
         _table(headers, rows),
+        mb_html.para(
+            (
+                'The final-row "Has MAS" count is ',
+                f"{fit_for_mas['with_mas']:,}",
+                f", rather than the total of {total_mas:,} MAS cases, for three reasons:",
+            )
+        ),
+        mb_html.ordered_list(
+            (
+                (
+                    f"{mas_not_in_the_table['outside_the_three_types']:,} MAS cases have"
+                    " none of the three structures."
+                ),
+                (
+                    f"{mas_not_in_the_table['following_word_not_disjunctive']:,} MAS"
+                    " cases have a following word with a conjunctive accent."
+                ),
+                (
+                    f"{mas_not_in_the_table['following_word_not_initially_stressed']:,}"
+                    " MAS case has a following word without initial stress."
+                ),
+            )
+        ),
     ]
 
 
