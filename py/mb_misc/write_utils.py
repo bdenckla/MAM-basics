@@ -103,8 +103,7 @@ def bkg_path(
     folders = _FOLDERS[path_qual]
     output_root = variant.get("variant-output-root")
     if output_root is None:
-        mam_for_xxx = variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"
-        output_root = paths.sibling_repo(mam_for_xxx)
+        output_root = paths.repo_root() / "MAM-for-Sefaria"
     output_root = Path(output_root)
     if out_subdir:
         parent = output_root / out_subdir

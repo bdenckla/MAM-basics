@@ -1,0 +1,6 @@
+{
+  "comment": "The URL bdenckla.github.io/MAM-for-Sefaria published, frozen at the 2026-09-06 Phase 2 move. The source repository's small site had its root index. A citation Ben can edit belongs at the MAM-basics URL rather than in this historical redirect set. Derived from the source repository's committed gh-pages/ immediately before the redirect-host flip.",
+  "pages": [
+    "index.html"
+  ]
+}

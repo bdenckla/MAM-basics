@@ -274,7 +274,7 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     (re.compile(am.MERKHA), pan.MERKHA),
     (re.compile(am.MAHAPAKH), pan.MAHAPAKH),
     (re.compile(am.QADMA), pan.AZLA),
-    # MAM writes the oleh-we-yored servus with atnaḥ hafukh.  The Leningrad
+    # MAM has the oleh-we-yored servus with atnax hafux. The Leningrad
     # transcription writes galgal in the same structural slot, so both emit GALGAL.
     (re.compile(ha.ATN_H), pan.GALGAL),
     (re.compile(am.ILUY), pan.ILLUY),

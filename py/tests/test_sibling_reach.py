@@ -11,12 +11,10 @@ reports a variable rather than a repo wherever the name is not spelled at the ca
 Since 2026-09-04 that section carries neither the survey nor its eleven-row table: it
 points here, and this declaration is the answer it used to state by hand.
 
-The consequence was not hypothetical.  ``mb_misc/write_utils.py``'s ``bkg_path`` builds
-``f"../{mam_for_xxx}"`` from ``variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"``.
-It did not call ``mb_cmn.paths``, so ``REPOS_ROOT`` did not reach it, and from a worktree
-it resolved under ``.claude/worktrees/``.  The MAM-simple lane corrected its route to the
-landed product on 2026-09-06. The MAM-for-Sefaria route remains sibling-relative until its
-product lane changes it.
+The consequence was not hypothetical. Until the 2026-09-06 first and second product
+lanes, ``mb_misc/write_utils.py`` built a cwd-relative MAM-simple or MAM-for-Sefaria
+destination. The two landed product trees now use ``mb_cmn.paths.repo_root()`` instead,
+so neither product creates or writes to a sibling clone.
 
 So "which siblings does the tree reach?" is a decidable property of the source text --
 a mechanical lint over the tree, the second of the two test shapes CLAUDE.md sanctions --
@@ -73,33 +71,26 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
 
 * ``sibling_repo("X")`` / ``require_sibling("X", ...)`` -- the sanctioned API.
 * The same calls with the name in a variable: ``redirect_stubs/stubs.py`` passes
-  ``repo.source_repo`` from its ``REDIRECT_REPOS`` table, and ``main_0_mega.py``'s mega
-  guard passes the ``name`` of a loop over ``_CWD_RELATIVE_WRITE_TARGETS``. The survey's
-  grep finds these lines and cannot read a repo off them. Two in-file shapes are resolved
-  here, with no import and no dataflow tracing: the keyword arguments that build the table
-  being iterated and the collection a for-loop walks.
+  ``repo.source_repo`` from its ``REDIRECT_REPOS`` table. The survey's grep finds that
+  line and cannot read a repo off it, so this test resolves the table's keyword arguments
+  without importing the module or tracing data flow.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
   builds subprocess ``cwd``s this way for MAM-parsed and MAM-private.
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
-    ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those four sites and
-    `write_utils.bkg_path`'s variant-selected output route.
+  ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those two sites.
 * Cwd-relative ``"../X"``, the mechanism the survey's grep cannot see -- as a plain
-  literal, and as an ``f"../{name}"`` whose first segment is interpolated.  For the
-  interpolated shape the names come from a declared source (``write_utils.bkg_path``)
-  or from the same three in-file shapes, filtered by the vocabulary so that a
-  site-relative href interpolating a page name contributes nothing.
+  literal or as an interpolated path whose first segment this test can resolve in the
+  same file. The vocabulary filter excludes an interpolated site-relative href.
 
 WHY THE CWD-RELATIVE SITES ARE NOT DEFECTS TO FIX
 
-CLAUDE.md's "Running tests -- always from the repo root" section names four files that
-are vendored verbatim into sibling repos and "intentionally keep their existing
-cwd-relative or self-contained ``__file__``-relative logic instead, so they stay
-portable when copied elsewhere without also requiring ``mb_cmn/paths.py`` to travel
-with them".  Three of the four carry such a literal today, and ``paths.mam_parsed_path``'s
+CLAUDE.md's "Running tests -- always from the repo root" section names vendored files
+that intentionally keep cwd-relative or self-contained ``__file__``-relative logic so
+they stay portable without also requiring ``mb_cmn/paths.py``. ``paths.mam_parsed_path``'s
 docstring states the doctrine behind the first: "THE CALLER SUPPLIES THIS PATH BECAUSE
-THE READER CANNOT."  So the assertion here is NOT "there are no cwd-relative literals".
+THE READER CANNOT." So the assertion here is NOT "there are no cwd-relative literals".
 It is "the siblings reached, by any mechanism, are exactly these" -- and a sanctioned
 cwd-relative default contributes its repo to that set like any other route.
 
@@ -124,9 +115,8 @@ from mb_cmn import paths
 #
 # REMOVING A LANE?  Delete the entry whose last route you removed.  If any route
 # survives, the test fails naming the repo and the surviving sites, so a
-# half-finished removal cannot be mistaken for a finished one.  Expect this list
-# to SHRINK as the third stage's remaining lanes land and, if Ben approves it, a
-# fourth stage covering the five MAM data products.
+# half-finished removal cannot be mistaken for a finished one. Expect this list to
+# shrink as the fourth stage's remaining product lanes land.
 # ---------------------------------------------------------------------------
 SIBLINGS_REACHED: dict[str, str] = {
     "MAM-simple": (
@@ -139,9 +129,8 @@ SIBLINGS_REACHED: dict[str, str] = {
         " read_books_from_mam_parsed_plus.py's vendored '../MAM-parsed' default."
     ),
     "MAM-for-Sefaria": (
-        "Written by write_utils.bkg_path's 'MAM-for-Sefaria' fallback and by"
-        " nothing else -- it has no paths-API route at all, so this cwd-relative"
-        " default is its ONLY route."
+        "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
+        " source repository's frozen redirect stubs."
     ),
     "MAM-OSIS": "Written by the OSIS generators through paths.sibling_repo.",
     "MAM-with-doc": "Holds the change-log and doc trees the diff reports write into.",
@@ -180,7 +169,6 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
             "../MAM-parsed/plus/",
             "../MAM-parsed/plain/",
             "../MAM-with-doc/docs/",
-            "../MAM-for-Sefaria/",
             "../MAM-OSIS/",
         )
     },
@@ -211,7 +199,6 @@ _INERT_RESOLVER_TESTS = frozenset({"py/tests/test_mb_cmn_paths.py"})
 _DYNAMIC_NAME_SOURCES: dict[tuple[str, str], str] = {
     ("py/vendoring/discover.py", "repo_name"): "vendoring-policy",
     ("py/tests/test_vendoring_policy_paths.py", "repo_name"): "vendoring-policy",
-    ("py/mb_misc/write_utils.py", "mam_for_xxx"): "variant-mam-for-xxx",
 }
 
 # paths.py IS the resolver: its `repos_root() / name` is the mechanism rather than a
@@ -352,8 +339,8 @@ def _module_level_value(tree: ast.Module, ident: str) -> ast.expr | None:
 def _string_literals_in(value: ast.expr, tree: ast.Module) -> set[str]:
     """String literals in ``value``, following one level of module-level constant.
 
-    ``("MAM-simple", "MAM-for-Sefaria")`` yields both; ``_CWD_RELATIVE_WRITE_TARGETS``
-    yields the same by looking that name up where the module assigns it.
+    ``("MAM-parsed", "MAM-private")`` yields both; a named module-level tuple yields
+    the same set by looking the name up where the module assigns it.
     """
     if isinstance(value, ast.Constant):
         return {value.value} if isinstance(value.value, str) else set()
@@ -376,10 +363,8 @@ def _string_literals_bound_to(tree: ast.Module, ident: str) -> set[str]:
     Resolves the three shapes this tree actually uses, without importing anything or
     tracing dataflow: ``repo.source_repo``, a dataclass field, from the
     ``source_repo="wlc-utils"`` keyword arguments that build the table being iterated;
-    and a for-loop variable -- ``main_0_mega.py``'s mega guard iterates
-    ``_CWD_RELATIVE_WRITE_TARGETS`` and calls ``sibling_repo(name)`` -- from the
-    collection it walks. An attribute is looked up by its FIELD name; the ``repo``
-    half is a loop variable and names nothing.
+    and a for-loop variable from the collection it walks. An attribute is looked up by
+    its FIELD name; the ``repo`` half is a loop variable and names nothing.
     """
     out: set[str] = set()
     field = ident.rsplit(".", 1)[-1]
@@ -455,29 +440,6 @@ def _vendoring_policy_dest_repos() -> set[str]:
     }
 
 
-def _variant_mam_for_xxx_repos(trees: dict[str, ast.Module]) -> set[str]:
-    """Every repo that can flow into ``write_utils.bkg_path``'s output route.
-
-    The fallback spelled at that call, plus every value the tree gives the
-    ``variant-mam-for-xxx`` key.  Deriving the second half is what makes a new
-    ``"variant-mam-for-xxx": "<repo>"`` entry show up here as a reach, which is
-    precisely the route that went unrecorded until 2026-09-04.
-    """
-    found = {"MAM-for-Sefaria"}
-    for tree in trees.values():
-        for node in ast.walk(tree):
-            if not isinstance(node, ast.Dict):
-                continue
-            for key, value in zip(node.keys, node.values):
-                if not isinstance(key, ast.Constant):
-                    continue
-                if key.value != "variant-mam-for-xxx":
-                    continue
-                if isinstance(value, ast.Constant) and isinstance(value.value, str):
-                    found.add(value.value)
-    return found
-
-
 def _roster_names() -> set[str]:
     """Sibling folder names in ``all-repos.code-workspace`` -- the machine roster."""
     workspace = json.loads(
@@ -500,7 +462,6 @@ def _scan_calls_and_joins(
 ) -> None:
     """The paths-API and repos_root recognizers, over every tracked module."""
     dest_repos: set[str] | None = None
-    dynamic: set[str] | None = None
     for rel, tree in trees.items():
         aliases = _repos_root_aliases(tree)
         for node in ast.walk(tree):
@@ -520,11 +481,7 @@ def _scan_calls_and_joins(
                 )
                 continue
             source = consulted.dynamic_name_source(rel, ident)
-            if source == "variant-mam-for-xxx":
-                if dynamic is None:
-                    dynamic = _variant_mam_for_xxx_repos(trees)
-                names = dynamic
-            elif source == "vendoring-policy":
+            if source == "vendoring-policy":
                 if dest_repos is None:
                     dest_repos = _vendoring_policy_dest_repos()
                 names = dest_repos
@@ -578,7 +535,6 @@ def _scan_cwd_relative(
     consulted: _Consulted,
 ) -> None:
     """The cwd-relative recognizer -- the mechanism the survey's grep cannot see."""
-    dynamic: set[str] | None = None
     for rel, tree in trees.items():
         docstrings = _docstring_ids(tree)
         for node in ast.walk(tree):
@@ -599,16 +555,8 @@ def _scan_cwd_relative(
                 if consulted.not_a_sibling_path(rel, text):
                     continue
                 site = f"{rel}:{node.lineno}"
-                if consulted.dynamic_name_source(rel, text) == "variant-mam-for-xxx":
-                    if dynamic is None:
-                        dynamic = _variant_mam_for_xxx_repos(trees)
-                    for name in dynamic:
-                        reached.setdefault(name, set()).add(site)
-                    continue
-                # An interpolated first segment resolvable in the same file: the mega
-                # guard's f"../{name}" over _CWD_RELATIVE_WRITE_TARGETS is this shape.
-                # Filtered by the vocabulary, because the identifier interpolated into
-                # a site-relative href resolves to a page or directory name, not a repo.
+                # Filter by the vocabulary, because an identifier interpolated into a
+                # site-relative href is a page or directory name, not a repository name.
                 head_ident = None
                 if len(node.values) > 1 and isinstance(
                     node.values[1], ast.FormattedValue

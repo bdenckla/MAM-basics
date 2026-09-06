@@ -142,6 +142,13 @@ REDIRECT_REPOS = (
         clone_url="https://github.com/bdenckla/MAM-simple.git",
     ),
     RedirectRepo(
+        source_repo="MAM-for-Sefaria",
+        site_subtree="MAM-for-Sefaria",
+        old_path_prefix="/MAM-for-Sefaria/",
+        manifest_path="in/mam_for_sefaria_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/MAM-for-Sefaria.git",
+    ),
+    RedirectRepo(
         source_repo="wlc-utils",
         site_subtree="wlc",
         old_path_prefix="/wlc-utils/",
