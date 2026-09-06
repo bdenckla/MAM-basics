@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–2 completed 2026-09-06; MAM-parsed, MAM-with-doc, and MAM-OSIS remain.
+State: Phases 0–2 completed 2026-09-06; Phase 3 paused before Land for a historical-revision decision; MAM-parsed, MAM-with-doc, and MAM-OSIS remain.
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -185,6 +185,111 @@ Phase 2-authored change.
 The third product lane. Land the source tree under MAM-parsed/ and its published tree under gh-pages/MAM-parsed/. Repoint parse-go, the MAM-parsed readers, the authored-document output, the test fixtures, and every path in the pipeline graph to MAM-parsed/plus/ or MAM-parsed/plain/ within MAM-basics. Land the MAM-parsed example program and py-examples-out/tmpl_survey_toy.json. Keep vendored-tmpl-survey-toy running against the landed example and verify its one-file differential result.
 
 Freeze and verify all 22 legacy HTML paths. Add sparse-checkout instructions for MAM-parsed/ to the MAM-basics documentation; do not create a release archive. The source README and source Pages stubs point to the new MAM-basics paths.
+
+### Phase 3 preflight — 2026-09-06 — paused before Land
+
+The preflight used the primary checkout at
+`C:/Users/BenDe/GitRepos/MAM-basics`, initially clean on `main` at
+`bf8969e11d5827aa24e23155d4682426c4cf22ff`. The source at
+`C:/Users/BenDe/GitRepos/MAM-parsed` is clean on `main` at
+`51082036e5907991d0d322cb6dfcc6404802099f`. Its measured inventory remains
+96 tracked files, 29,937,275 Git-blob bytes, 3 Python files, and 36 published
+files including 22 HTML paths. Its only worktree is the primary clone. No
+source instruction file exists among its tracked files or root files.
+
+Re-establish the source inventory from the path, blob-size, and object columns
+of this command; count HTML under `gh-pages/` separately from all published files:
+
+```powershell
+git -C C:/Users/BenDe/GitRepos/MAM-parsed ls-tree -r -l HEAD
+```
+
+The baseline canonical suite passed **974 tests and skipped 5 tests in 91.12
+seconds**, using the command below. The formerly accepted site-index failure
+did not recur. The UTF-8 subprocess log and initial blob inventories are in
+the ignored `C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase3-mam-parsed/`
+directory; these are local evidence, not inputs required by a fresh checkout.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_test.py
+```
+
+During the read-only preflight, MAM-basics advanced to
+`ae450bd04f3fed6d22c07a48d92deec9329adbc3` through an unrelated
+post-stress-meteg merge. The merge changed no Phase 3 instruction or
+change-log reader file. Before the execution-record edit, both primary
+checkouts were clean and their heads matched `git ls-remote origin
+refs/heads/main`. The source head remained unchanged.
+
+**The unresolved dependency is historical MAM-parsed revisions.**
+`py/mb_diff_mpu/mpplus_extract.py` (`MAM_PARSED_DIR`, `_git_show`, and
+`_list_plus_files`) reads `plus/` through Git, rather than reading only the
+current filesystem. `py/subcommands/diff_mpp.py` also reads commit dates,
+selects the latest release by distance to source `HEAD`, and compares that
+release against source `HEAD`. The release definitions read during preflight
+are in `C:/Users/BenDe/GitRepos/MAM-with-doc/gh-pages/change-log/releases.json`
+at MAM-with-doc `0fe406c44c1b51e7c540574475830d6169256e73`.
+
+1. Every boundary in those release definitions resolves in MAM-parsed and
+   fails with exit 128 in MAM-basics: `b5e8f94`, `3d5ecfd`, `049e636`,
+   `cc43fe0`, `1880cbb`, and `9ce6ee5`. Repointing the current data directory
+   does not supply these commits. An in-memory path-only repoint reproduced
+   `_list_plus_files("9ce6ee5")` raising `Not a valid object name 9ce6ee5`;
+   no tracked Python or product file was edited for that check.
+2. Empty would remove `plus/` from the source's new `HEAD`, so retaining the
+   direct clone would not preserve default comparisons. Remove would then
+   remove the local repository in which the historical reads run. The
+   existing canonical tests do not establish that these historical reads
+   survive evacuation; the unpinned-latest tests mock the Git-dependent work.
+3. The programme's carried-over decision says **“Plain copy, no git history
+   graft.”** The present plan does not define how one comparison spans the
+   source history and MAM-basics history, including dates and latest-release
+   selection. Moving MAM-with-doc's output in Phase 4 cannot repair the input
+   dependency after Phase 3 has emptied MAM-parsed.
+
+Reproduce the missing-boundary check with these commands, then repeat for
+each boundary named by the current release definitions:
+
+```powershell
+git -C C:/Users/BenDe/GitRepos/MAM-parsed rev-parse --verify '9ce6ee5^{commit}'
+```
+
+```powershell
+git -C C:/Users/BenDe/GitRepos/MAM-basics rev-parse --verify '9ce6ee5^{commit}'
+```
+
+**Proposed resolution, pending Ben's decision:** preserve access to the
+source's pre-evacuation Git history through an ignored bare history cache
+under MAM-basics, fetched from the source remote when needed. Read legacy
+revisions from that cache and current/new revisions from MAM-basics, with
+explicit repository identity for each revision and a recorded migration
+boundary. The cache is disposable and recreatable; first use requires
+network access. This preserves arbitrary historical comparisons without
+grafting histories or maintaining release archives. Implement and verify
+the revision, date, and latest-release handling before resuming the lane;
+keep MAM-with-doc output relocation in Phase 4. Obtain differential results
+for every named release and for the latest release against the immutable
+source head above before changing the reader, then compare the revised
+reader's results against those results.
+
+The complete source README was read. Its planned disposition is to preserve
+every substantive section in `MAM-parsed/README.md`: product identity and
+data source, JSON/parse-tree explanation, plain/plus differences, detailed
+structure links, toy program and output, format-stability warning,
+alternative formats, and maintainer contact. After initial blob identity,
+adapt repository wording, Pages URLs, and links to landed alternatives;
+correct the broken toy-program link to
+`py-examples/main_tmpl_survey_toy_example.py`, and verify the stated
+`good_ending` header key against the current schema. No section has a
+planned deliberate drop. Initial README blob identity and final side-by-side
+README verification remain unperformed because Land has not begun.
+
+No Land, Licence, Repoint, Stubs, Empty, or Remove step was performed. All
+four lane oracles remain outstanding. No product file, source README,
+redirect configuration, workspace roster, or maintenance policy changed;
+no source clone was removed. Phases 4 and later remain unstarted. Resume
+Phase 3 only after the history strategy is decided, re-reading the required
+instructions and re-measuring current heads and the canonical suite.
 
 ## Phase 4 — MAM-with-doc
 
