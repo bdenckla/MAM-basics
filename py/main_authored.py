@@ -131,7 +131,7 @@ def cmd_gen_misc(_args):
 #
 # WHY ANY PAGE NEEDS IT: post-stress-meteg's survey reads Phonetic MAM, which lives in
 # MAM-private, and py/main_0_mega.py must not come to require a private clone.  The mega
-# therefore renders all four pages from out/accgram/post-stress-meteg.json, which the survey
+# therefore renders all six pages from out/accgram/post-stress-meteg.json, which the survey
 # subcommand writes and which is tracked; recomputing from the corpus is what a standalone run
 # does.  The JSON's absence FAILS rather than falling back, so a mega that quietly published a
 # page from nothing is not a state this can reach.
@@ -141,6 +141,8 @@ _SURVEY_READING_PAGES = frozenset(
         site_data.POST_STRESS_METEG_CASES_FNAME,
         site_data.POST_STRESS_METEG_TYPE_2_FNAME,
         site_data.POST_STRESS_METEG_MISC_FNAME,
+        site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME,
+        site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME,
     }
 )
 
@@ -149,6 +151,8 @@ assert _SURVEY_READING_PAGES <= {
     site_data.POST_STRESS_METEG_CASES_FNAME,
     site_data.POST_STRESS_METEG_TYPE_2_FNAME,
     site_data.POST_STRESS_METEG_MISC_FNAME,
+    site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME,
+    site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME,
     site_data.UNICODE_PROPOSALS_FNAME,
 }, "a name here that no deploy-root page has would silently render nothing from its JSON"
 

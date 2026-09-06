@@ -79,8 +79,16 @@ POST_STRESS_METEG_TYPE_2_FNAME = "post-stress-meteg-type-2.html"
 POST_STRESS_METEG_TYPE_2_TITLE = "Meteg after the primary stress: type 2 cases"
 POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
 POST_STRESS_METEG_MISC_TITLE = "Meteg after the primary stress: misc cases"
+POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME = "post-stress-meteg-type-2-lacks-mas.html"
+POST_STRESS_METEG_TYPE_2_LACKS_MAS_TITLE = (
+    "Meteg after the primary stress: type 2 cases lacking MAS"
+)
+POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME = "post-stress-meteg-type-1-lacks-mas.html"
+POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE = (
+    "Meteg after the primary stress: selected type 1 cases lacking MAS"
+)
 
-# The stylesheet all four pages at the deploy root link, hand-written and tracked as
+# The stylesheet all six pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face
