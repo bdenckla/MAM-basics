@@ -400,9 +400,9 @@ def _misc_almost_type_3_only_member(survey: dict) -> dict:
 def pin_claims(survey: dict) -> None:
     """Re-derive every figure the prose states, and raise on drift.
 
-    The page's sentences say things like "231 chanted words"; each such figure is computed
-    from the survey here as well as where it is rendered, so a corpus that moves under the
-    page fails the build rather than publishing a stale number.
+    The page's sentences state census figures; each figure is computed from the survey here as
+    well as where it is rendered, so a corpus that moves under the page fails the build rather
+    than publishing a stale number.
     """
     post_stress = survey["post_stress"]
     assert len(post_stress) == _both(
@@ -526,7 +526,7 @@ def pin_claims(survey: dict) -> None:
         len(type_2_records),
         len(type_3_records),
         len(misc_records),
-    ) == (122, 60, 42, 7)
+    ) == (123, 60, 42, 7)
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     assert type_2_type_3_overlap["chanted_words"] == 154
     assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}

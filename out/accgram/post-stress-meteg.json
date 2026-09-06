@@ -247,13 +247,13 @@
   "whole_census_comparison_counts": {
    "cant-alef": {
     "chanted words checked": 263191,
-    "meteg before the stressed syllable": 14932,
-    "meteg after the stressed syllable": 231
+    "meteg before the stressed syllable": 14905,
+    "meteg after the stressed syllable": 232
    },
    "cant-bet": {
     "chanted words checked": 263190,
-    "meteg before the stressed syllable": 14933,
-    "meteg after the stressed syllable": 231
+    "meteg before the stressed syllable": 14906,
+    "meteg after the stressed syllable": 232
    }
   },
   "template_counts": {
@@ -301,9 +301,9 @@
  "counts": {
   "prose verses": {
    "chanted words checked": 233586,
-   "meteg before the stressed syllable": 13118,
+   "meteg before the stressed syllable": 13091,
    "meteg in the stressed syllable, no sof pasuq": 0,
-   "meteg after the stressed syllable": 177,
+   "meteg after the stressed syllable": 178,
    "silluq": 18771,
    "meteg sharing a letter with a non-stress-marking accent": 27
   },
@@ -320,7 +320,7 @@
   "prose verses": {
    "closed tsere-vowelled syllable": 26,
    "chanted word closed by a guttural": 34,
-   "open final syllable": 112,
+   "open final syllable": 113,
    "none of the three": 5
   },
   "poetic verses": {
@@ -344,7 +344,7 @@
   "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table.",
   "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
   "counts": {
-   "conjunctive": 231,
+   "conjunctive": 232,
    "disjunctive": 0
   }
  },
@@ -2600,6 +2600,33 @@
    "metegs_in_mam_today": 1,
    "metegs_in_the_snapshot": 1,
    "following_mam_form": "שַׁ֙עַר֙"
+  },
+  {
+   "bcv": "is23:12",
+   "system": "prose verses",
+   "chanted_word": "ק֣וּמִֽי",
+   "following_chanted_word": "עֲבֹ֔רִי",
+   "snapshot_before_qere": null,
+   "accents_and_letters": "ק֣ומי",
+   "jta": "!ku.mI",
+   "syllables_after_the_stress": 1,
+   "syllable": "mI",
+   "syllable_is_open": true,
+   "vowel": "ḥiriq",
+   "is_the_last_syllable": true,
+   "chanted_word_is_closed_by_a_guttural": false,
+   "following_chanted_word_is_initially_stressed": true,
+   "has_sof_pasuq": false,
+   "shares_its_letter_with": [],
+   "structural_type": "open final syllable",
+   "subtype": null,
+   "atom": 1,
+   "mam_form": "ק֣וּמִֽי",
+   "mam_form_matched_by": "as written; one candidate in the verse",
+   "mam_form_candidates": 1,
+   "metegs_in_mam_today": 1,
+   "metegs_in_the_snapshot": 1,
+   "following_mam_form": "עֲבֹ֔רִי"
   },
   {
    "bcv": "is23:12",
@@ -10917,8 +10944,15 @@
     "system": "prose verses",
     "category": "meteg before the stressed syllable",
     "census_2026_09_03": 13131,
-    "measured": 13118,
-    "difference": -13
+    "measured": 13091,
+    "difference": -40
+   },
+   {
+    "system": "prose verses",
+    "category": "meteg after the stressed syllable",
+    "census_2026_09_03": 177,
+    "measured": 178,
+    "difference": 1
    },
    {
     "system": "prose verses",
@@ -10974,9 +11008,9 @@
   "verses_compared": 23184,
   "verses_on_one_side_only": [],
   "dual_cantillation_verses_left_out": 18,
-  "metegs_in_the_surveyed_snapshot": 38379,
+  "metegs_in_the_surveyed_snapshot": 38353,
   "metegs_in_mam_simple_today": 38170,
-  "verses_differing": 221,
+  "verses_differing": 186,
   "differences": [
    {
     "bcv": "1c10:8",
@@ -10990,36 +11024,6 @@
    },
    {
     "bcv": "1c29:21",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1k11:1",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1k12:18",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1k15:19",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1k15:5",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1k17:16",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1k18:1",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
    },
@@ -11042,16 +11046,6 @@
     "bcv": "1k22:34",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "1k22:7",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1k7:24",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
    },
    {
     "bcv": "1k9:27",
@@ -11079,19 +11073,9 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "1s18:9",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
     "bcv": "1s20:27",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "1s27:3",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
    },
    {
     "bcv": "1s28:14",
@@ -11115,11 +11099,6 @@
    },
    {
     "bcv": "2c18:33",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2c24:25",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
    },
@@ -11144,24 +11123,9 @@
     "mam_simple_today": 3
    },
    {
-    "bcv": "2c32:7",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
     "bcv": "2c35:9",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "2c6:27",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "2c6:28",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
    },
    {
     "bcv": "2k15:10",
@@ -11169,19 +11133,9 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "2k21:12",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 2
-   },
-   {
     "bcv": "2k4:20",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "2k7:12",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
    },
    {
     "bcv": "2k8:15",
@@ -11192,26 +11146,6 @@
     "bcv": "2s11:12",
     "surveyed_snapshot": 4,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "2s11:3",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "2s12:31",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "2s15:37",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "2s18:3",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
    },
    {
     "bcv": "2s4:5",
@@ -11544,11 +11478,6 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "is23:12",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 4
-   },
-   {
     "bcv": "is48:21",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
@@ -11664,16 +11593,6 @@
     "mam_simple_today": 4
    },
    {
-    "bcv": "js19:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "js20:5",
-    "surveyed_snapshot": 1,
-    "mam_simple_today": 2
-   },
-   {
     "bcv": "js22:6",
     "surveyed_snapshot": 4,
     "mam_simple_today": 3
@@ -11682,16 +11601,6 @@
     "bcv": "js22:8",
     "surveyed_snapshot": 3,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "js24:29",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "js4:10",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 3
    },
    {
     "bcv": "js5:12",
@@ -11704,21 +11613,6 @@
     "mam_simple_today": 5
    },
    {
-    "bcv": "ju1:32",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju1:7",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ju21:16",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
     "bcv": "ju21:4",
     "surveyed_snapshot": 4,
     "mam_simple_today": 3
@@ -11729,38 +11623,8 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "ju5:11",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju5:6",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ju6:1",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
     "bcv": "ju6:38",
     "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju6:4",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ju6:5",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju7:12",
-    "surveyed_snapshot": 1,
     "mam_simple_today": 2
    },
    {
@@ -11892,11 +11756,6 @@
     "bcv": "ne12:45",
     "surveyed_snapshot": 5,
     "mam_simple_today": 4
-   },
-   {
-    "bcv": "nu11:24",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
    },
    {
     "bcv": "nu11:32",
