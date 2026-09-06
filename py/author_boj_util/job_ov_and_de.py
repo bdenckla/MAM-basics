@@ -291,7 +291,9 @@ def _ancs(quirkrec):
     uxlc_href = f"https://tanach.us/Tanach.xml?Job{cv}"
     uxlc_anc = boj_html.anchor_h("U", uxlc_href)
     cn_v_vn = "c" + cv.replace(":", "v")
-    mwd_href = f"https://bdenckla.github.io/MAM-with-doc/D3-Job.html#{cn_v_vn}"
+    mwd_href = (
+        f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#{cn_v_vn}"
+    )
     mwd_anc = boj_html.anchor_h("M", mwd_href)
     return uxlc_anc, mwd_anc
 

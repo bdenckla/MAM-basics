@@ -5,7 +5,7 @@ that are written by the repo owner and rendered from Python source data.
 Subcommands:
     gen-misc
                 (default) Write misc authored HTML docs to
-                MAM-with-doc/gh-pages/misc/.
+                gh-pages/MAM-with-doc/misc/.
     gen-site
                 Write this repo's own published pages at the deploy root:
                 gh-pages/index.html, gh-pages/unicode-proposals.html and
@@ -86,7 +86,7 @@ def _gen_index_html(top_dir_misc, index_entries):
 
 def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
-    pages_dir = str(paths.sibling_repo("MAM-with-doc") / "gh-pages")
+    pages_dir = str(paths.repo_root() / "gh-pages" / "MAM-with-doc")
     top_dir_misc = f"{pages_dir}/misc"
     top_dir_old = f"{pages_dir}/tsinnorit_oleh"
     #

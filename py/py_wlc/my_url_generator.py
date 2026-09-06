@@ -47,7 +47,7 @@ def _mam_with_doc_url(record):
     # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
     page = quote(f"{osdf}.html")
     bcv_part = f"{page}#c{chnu}v{vrnu}"
-    return f"https://bdenckla.github.io/MAM-with-doc/{bcv_part}"
+    return f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{bcv_part}"
 
 
 def _url_for_uxlc_change(release_and_id):

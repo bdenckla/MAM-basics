@@ -15,6 +15,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 - [`MAM-parsed/`](MAM-parsed/README.md) — plain and plus parsed MAM JSON, historical release inputs, documentation, and a toy example
 - [`MAM-simple/`](MAM-simple/) — XML and JSON MAM exports in three versifications
 - [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV MAM export suitable for Sefaria import; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
+- [`MAM-with-doc/`](MAM-with-doc/README.md) — MAM's HTML edition with documentation notes; its [published edition](https://bdenckla.github.io/MAM-basics/MAM-with-doc/) is in the site tree
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data and photographed-page records
 - [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data and source scans
 - [`leningrad/`](leningrad/) — Leningrad Codex index data and page-image evidence

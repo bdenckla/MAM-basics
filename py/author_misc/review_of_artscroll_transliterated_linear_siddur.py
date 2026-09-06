@@ -120,7 +120,9 @@ _ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 
 _URL_SIDDUR = "https://www.artscroll.com/Books/9781578191512.html"
 _URL_HW_REVIEW = "./review_of_hebrew_worlds_phonetic_bible.html"
-_URL_MAM_WITH_DOC = "https://bdenckla.github.io/MAM-with-doc/A2-Exodus.html#c20v1"
+_URL_MAM_WITH_DOC = (
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c20v1"
+)
 _URL_WS_MAM = "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
 _URL_JACOBSON = "https://bdenckla.github.io/phonetic-hbo/tnkh/A2-Exodus/20.html"
 _URL_MAM = "https://purl.archive.org/mam/hebrew-wikisource"

@@ -159,7 +159,7 @@ def verse_label_templates_block():
                         "Torah $aliyah identifier. See ",
                         author.anchor_h(
                             "notes on $aliyot",
-                            "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
+                            "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/notes_on_aliyot.html",
                         ),
                         ".",
                     ],

@@ -8,7 +8,7 @@
 ## Base URL
 
 ```
-https://bdenckla.github.io/MAM-with-doc/
+https://bdenckla.github.io/MAM-basics/MAM-with-doc/
 ```
 
 ## Book Codes
@@ -52,10 +52,10 @@ To link to a specific verse, append `#c<chapter>v<verse>`:
 ## Full URL Examples
 
 ```
-https://bdenckla.github.io/MAM-with-doc/D1-Psalms.html#c150v1
-https://bdenckla.github.io/MAM-with-doc/D3-Job.html#c1v19
-https://bdenckla.github.io/MAM-with-doc/D2-Proverbs.html#c1v1
-https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c12v10
+https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c150v1
+https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c1v19
+https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c1v1
+https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c12v10
 ```
 
 ## Usage
@@ -63,7 +63,7 @@ https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c12v10
 To open a specific verse in the browser:
 
 ```powershell
-Start-Process "https://bdenckla.github.io/MAM-with-doc/D3-Job.html#c38v31"
+Start-Process "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c38v31"
 ```
 
 Or use the VS Code simple browser for inline viewing.

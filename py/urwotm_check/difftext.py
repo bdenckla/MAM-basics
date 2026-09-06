@@ -72,8 +72,13 @@ def generated_words(part: int):
     """Oracle B: the words of the page this repo now generates."""
     from author_misc import urwotm_common
 
-    with_doc = paths.require_sibling("MAM-with-doc", paths.sibling_repo("MAM-with-doc"))
-    path = with_doc / "gh-pages" / "misc" / urwotm_common.FNAMES[part]
+    path = (
+        paths.repo_root()
+        / "gh-pages"
+        / "MAM-with-doc"
+        / "misc"
+        / urwotm_common.FNAMES[part]
+    )
     doc = lxml.html.fromstring(path.read_text(encoding="utf-8"))
     body = doc.xpath("//body")
     assert len(body) == 1, len(body)

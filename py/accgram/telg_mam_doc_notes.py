@@ -1,5 +1,5 @@
 """Hebrew documentation (נוסח) notes for the five telg + geresh/gershayim verses,
-transcribed verbatim from MAM-with-doc (https://bdenckla.github.io/MAM-with-doc/).
+transcribed verbatim from MAM-with-doc (https://bdenckla.github.io/MAM-basics/MAM-with-doc/).
 Consumed by accgram/telg_doc_notes.py; the English rendering lives there.
 
 Migrated from the former hand-authored JSON sidecar telg_mam_doc_notes.json (issue wlc-utils#33):

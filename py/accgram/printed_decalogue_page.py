@@ -79,7 +79,7 @@ _KOREN_PAGE = "printed-decalogue-koren.html"
 _UVINKHA_PAGE = "printed-decalogue-uvinkha.html"
 
 _CTR_REVIEW_URL = (
-    "https://bdenckla.github.io/MAM-with-doc/misc/rocc_0_review_of_ctr.html"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/rocc_0_review_of_ctr.html"
 )
 
 # CTR (The Complete Tanach with Rashi) on Chabad.org, deep-linked to Deuteronomy 5 -- the

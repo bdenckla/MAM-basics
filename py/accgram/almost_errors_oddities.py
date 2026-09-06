@@ -374,7 +374,7 @@ def ek2031_section(index, parser, has_legarmeh: HasLegarmeh) -> tuple[object, ..
                 ". See the full note on the ",
                 link(
                     "MAM-with-doc Ezekiel page",
-                    "https://bdenckla.github.io/MAM-with-doc/C3-Ezekiel.html#c20v31",
+                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c20v31",
                 ),
                 ". Because the manuscripts agree, this double accent is whitelisted"
                 " rather than treated an error.",

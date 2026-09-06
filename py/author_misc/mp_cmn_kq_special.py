@@ -6,7 +6,7 @@ from author_misc import mp_cmn_claims_core as _claims_core
 from mb_author import author
 
 _KQ_SIMPLE_FOI_URL = (
-    "https://bdenckla.github.io/MAM-with-doc/foi/foi-kq-simple.html#intro-"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-kq-simple.html#intro-"
 )
 
 # Keep this aligned with foi/foiz_wt_kq_1.py:_FOI_PATH for special k/q types.

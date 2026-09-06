@@ -10,7 +10,7 @@ from mb_cmn import paths
 from mb_cmn import uni_denorm as udn
 
 DEFAULT_FOI_KQ_SIMPLE_PATH = str(
-    paths.sibling_repo("MAM-with-doc") / "gh-pages" / "foi" / "foi-kq-simple.json"
+    paths.repo_root() / "gh-pages" / "MAM-with-doc" / "foi" / "foi-kq-simple.json"
 )
 
 _Z_TRIVIAL_PREFIX = "z-trivial/"

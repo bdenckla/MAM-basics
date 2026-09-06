@@ -11,7 +11,7 @@ Named historical releases read tracked MAM-parsed/historical/ snapshots.
 HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
 Use --legacy-history with --old and --new for arbitrary revisions in a sibling
 MAM-parsed clone. That rare mode requires read access and never fetches or clones.
-Output goes to ../MAM-with-doc/gh-pages/change-log/ by default. If the hash range
+Output goes to gh-pages/MAM-with-doc/change-log/ by default. If the hash range
 matches an entry in releases.json, the release name is used as the filename;
 otherwise the sanitised hash range is used.
 
@@ -21,7 +21,7 @@ and regenerates index.html, including unpinned-latest when unreleased diffs exis
 When run with no arguments, the script compares the latest named release
 (the release boundary closest to HEAD) against HEAD. If commits exist beyond
 that release and produce diffs, it writes
-../MAM-with-doc/gh-pages/change-log/unpinned-latest.html.
+gh-pages/MAM-with-doc/change-log/unpinned-latest.html.
 When unreleased diffs are absent, unpinned-latest artifacts are rewritten as
 empty reports so stale content is not left behind.
 """
@@ -40,7 +40,7 @@ from mb_diff_mpu import (
     mpplus_revisions,
 )
 
-CHANGE_LOG_DIR = str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / "change-log")
+CHANGE_LOG_DIR = str(paths.repo_root() / "gh-pages" / "MAM-with-doc" / "change-log")
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
 UNPINNED_LATEST_JSON = UNPINNED_LATEST_HTML.removesuffix(".html") + ".json"

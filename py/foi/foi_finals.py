@@ -49,7 +49,7 @@ def write(args_foi, all_fois):
         _write_finals3(args_foi, all_fois, outspec)
 
 
-_OUT_DIR_PATH = str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / "foi")
+_OUT_DIR_PATH = str(paths.repo_root() / "gh-pages" / "MAM-with-doc" / "foi")
 _CSS_HREF = "two_col_style.css"
 
 

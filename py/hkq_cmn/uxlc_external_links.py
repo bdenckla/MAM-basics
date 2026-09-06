@@ -84,7 +84,7 @@ def verse_links(book: str, chapter: int, verse: int) -> tuple[VerseLink, ...]:
         VerseLink(
             label="MwD",
             href=(
-                "https://bdenckla.github.io/MAM-with-doc/"
+                "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
                 f"{quote(f'{osdf}.html')}#c{chapter}v{verse}"
             ),
             title="This verse in MAM-with-doc",

@@ -3,7 +3,9 @@
 
 from mb_cmn.url_percent import pct_fragment
 
-_FOI_PASOLEG_1_URL = "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
+_FOI_PASOLEG_1_URL = (
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-pasoleg-1.html"
+)
 _SPACE = "«space»"
 _REVIA = "⅃"
 

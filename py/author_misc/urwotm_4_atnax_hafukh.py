@@ -77,7 +77,7 @@ _TITLE = urwotm_common.plain_title(_PART)
 _FNAME = urwotm_common.FNAMES[_PART]
 
 _URL_BDENCKLA_GITHUB_IO_1 = (
-    "https://bdenckla.github.io/MAM-with-doc/D1-Psalms.html#c5v10"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c5v10"
 )
 _URL_BDENCKLA_GITHUB_IO_2 = "https://bdenckla.github.io/Taamey_D/"
 _URL_TANACH_US_1 = "https://tanach.us/"

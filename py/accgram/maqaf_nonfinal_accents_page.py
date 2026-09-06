@@ -465,7 +465,7 @@ _ONE_LETTER_HREF = f"#{_ONE_LETTER_ID}"
 # "yes please do that linking").  Same URL shape ``prose_ob_notes_is`` already uses for
 # foi-pasoleg-1.  NO COUNTS ARE QUOTED from them: they are another repo's numbers, regenerated on
 # another schedule, and this page splices only its own survey.
-_FOI = "https://bdenckla.github.io/MAM-with-doc/foi/foi-{}.html"
+_FOI = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-{}.html"
 
 # sec-merk and sec-misc are the two that catalogue this page's phenomenon per instance -- a
 # merkha, and a mahapakh, standing beside the chanted word's other accent.  Their sibling

@@ -111,7 +111,7 @@ Deḥi and tipeḥa are the same lookalike pair that
 them in the opposite direction: CTR has the TIPEHA codepoint where a deḥi is meant and tells
 the two apart by whether the accent is encoded before or after the vowel, which leaves a bare
 deḥi indistinguishable from a bare tarḥa. Rendered at
-<https://bdenckla.github.io/MAM-with-doc/misc/rocc_2_pre_vowel_accents_in_ctr.html>.
+<https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/rocc_2_pre_vowel_accents_in_ctr.html>.
 
 The comparison this pair of clues prompted — Metsudah's five Megillot against CTR's, run
 2026-08-04/05 — is written up in [metsudah-vs-ctr.md](../metsudah-vs-ctr.md): the

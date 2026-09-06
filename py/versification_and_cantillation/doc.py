@@ -49,14 +49,14 @@ _VDIFF_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/doc/ve
 
 # The MAM-with-doc FOI page listing verses with a פסקא באמצע פסוק (mid-verse
 # samekh/pe divider); linked from the body as the catalogue of such verses.
-_PBP_FOI_URL = (
-    "https://bdenckla.github.io/MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe"
-)
+_PBP_FOI_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe"
 
 # The MAM-with-doc rendering of 1 Samuel 16:12, the {petuxah}-form פסקא באמצע פסוק
 # cited in the body as a plainer counterpart to the Numbers case. Per-verse anchors
 # on those book pages are "c{chapter}v{verse}".
-_1SAM_16_12_URL = "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c16v12"
+_1SAM_16_12_URL = (
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c16v12"
+)
 
 # This repo's own report on whether the printed tradition's Decalogue cantillation is
 # grammatical, under gh-pages/wlc/ since the 2026-08 evacuation. The URL stayed absolute

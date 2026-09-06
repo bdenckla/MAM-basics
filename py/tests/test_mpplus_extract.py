@@ -742,7 +742,7 @@ class CanonicalBookIdTests(unittest.TestCase):
 
         self.assertEqual(
             url,
-            "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c3v4",
+            "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c3v4",
         )
 
     def test_wikisource_url_accepts_canonical_book_id(self):

@@ -102,7 +102,7 @@ _URL_TANACH_US_1 = (
 )
 _URL_IHBMR_COM_1 = "https://ihbmr.com/"
 _URL_BDENCKLA_GITHUB_IO_1 = (
-    "https://bdenckla.github.io/MAM-with-doc/A5-Deuter.html#c12v30"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c12v30"
 )
 _URL_TANACH_US_2 = (
     "https://tanach.us/Changes/2020.02.19%20-%20Changes/2020.02.19%20-%"

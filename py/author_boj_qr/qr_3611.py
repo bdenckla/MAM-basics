@@ -1,6 +1,6 @@
 from author_boj_util import author
 
-_URL = "https://bdenckla.github.io/MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html"
+_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html"
 doc = author.anc_h("document", _URL)
 
 RECORD_3611 = {

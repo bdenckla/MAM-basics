@@ -8,7 +8,7 @@ _COMMENT_PARA1 = [
 ]
 _FOI_FRAGMENT = "intro-poetic/(üazll)/(mer)-(üazll)"
 _FOI_H2 = f"foi-sec-merk.html#{pct_fragment(_FOI_FRAGMENT)}"
-_FOI_H1 = "https://bdenckla.github.io/MAM-with-doc/foi/"
+_FOI_H1 = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/"
 _FOI_ANC = author.anc_h("here", f"{_FOI_H1}{_FOI_H2}")
 _COMMENT_PARA2 = [
     ["This is one of only two strictly analogous cases listed"],

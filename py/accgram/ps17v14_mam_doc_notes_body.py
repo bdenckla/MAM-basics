@@ -35,7 +35,7 @@ BODY = [
             {
                 "_htel_tag": "a",
                 "attr": {
-                    "href": "https://bdenckla.github.io/MAM-with-doc/D1-Psalms.html#c17v14"
+                    "href": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c17v14"
                 },
                 "lb1": "",
                 "lb2": "",

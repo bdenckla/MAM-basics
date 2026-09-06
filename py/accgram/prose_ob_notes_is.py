@@ -11,7 +11,7 @@ from py_html import wlc_utils_html
 _FOI_CATEGORY_NAME = "⅃-leg...non-revia ((tev)) with 2 (qa,da) intervening"
 
 _FOI_CATEGORY_URL = (
-    "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-pasoleg-1.html"
     "#intro-%E2%85%83-leg...non-revia%C2%ABspace%C2%BB((tev))%C2%ABspace%C2%BB"
     "with%C2%ABspace%C2%BB2%C2%ABspace%C2%BB(qa,da)%C2%ABspace%C2%BBintervening"
 )

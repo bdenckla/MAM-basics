@@ -288,7 +288,7 @@ def _intro_section() -> tuple[object, ...]:
                 " about each word. Source: ",
                 link(
                     "MAM-with-doc",
-                    "https://bdenckla.github.io/MAM-with-doc/",
+                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/",
                 ),
                 ".",
             )

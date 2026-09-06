@@ -149,6 +149,13 @@ REDIRECT_REPOS = (
         clone_url="https://github.com/bdenckla/MAM-parsed.git",
     ),
     RedirectRepo(
+        source_repo="MAM-with-doc",
+        site_subtree="MAM-with-doc",
+        old_path_prefix="/MAM-with-doc/",
+        manifest_path="in/mam_with_doc_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/MAM-with-doc.git",
+    ),
+    RedirectRepo(
         source_repo="MAM-for-Sefaria",
         site_subtree="MAM-for-Sefaria",
         old_path_prefix="/MAM-for-Sefaria/",

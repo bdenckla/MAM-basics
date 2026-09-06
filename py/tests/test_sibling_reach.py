@@ -132,7 +132,10 @@ SIBLINGS_REACHED: dict[str, str] = {
         " source repository's frozen redirect stubs."
     ),
     "MAM-OSIS": "Written by the OSIS generators through paths.sibling_repo.",
-    "MAM-with-doc": "Holds the change-log and doc trees the diff reports write into.",
+    "MAM-with-doc": (
+        "redirect_stubs/stubs.py uses this only to create a temporary clone while "
+        "publishing the source repository's frozen redirect stubs."
+    ),
     "MAM-private": (
         "paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's Phonetic MAM"
         " as the oracle for accgram.final_stress, and main_0_mega runs the"
@@ -164,10 +167,7 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
             "a DisplayNode/RawNode label -- the pipeline graph draws these strings,"
             " and nothing opens them"
         )
-        for label in (
-            "../MAM-with-doc/docs/",
-            "../MAM-OSIS/",
-        )
+        for label in ("../MAM-OSIS/",)
     },
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"

@@ -19,7 +19,9 @@ def mam_with_doc_url(book, chapter, verse):
     osdf = tbn.ordered_short_dash_full_39(book)
     # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
     page = quote(f"{osdf}.html")
-    return f"https://bdenckla.github.io/MAM-with-doc/{page}#c{chapter}v{verse}"
+    return (
+        f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{page}#c{chapter}v{verse}"
+    )
 
 
 def wikisource_url(book, chapter):

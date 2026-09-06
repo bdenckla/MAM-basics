@@ -150,9 +150,9 @@ _URL_TANACH_US_2 = (
 _URL_MANUSCRIPTS_SEFARIA_ORG_1 = (
     "https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F274B.jpg"
 )
-_URL_BDENCKLA_GITHUB_IO_1 = "https://bdenckla.github.io/MAM-with-doc/"
+_URL_BDENCKLA_GITHUB_IO_1 = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _URL_BDENCKLA_GITHUB_IO_2 = (
-    "https://bdenckla.github.io/MAM-with-doc/foi/foi-kq-simple.html#int"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-kq-simple.html#int"
     "ro-x-velo-y-k-velo-q"
 )
 

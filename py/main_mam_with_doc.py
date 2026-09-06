@@ -17,7 +17,7 @@ from mb_misc import styles_mam_with_doc
 
 def _out_path(filename):
     # Write into the repository's GitHub Pages publish directory.
-    return str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / filename)
+    return str(paths.repo_root() / "gh-pages" / "MAM-with-doc" / filename)
 
 
 def _handle_survey_results(bkids, survey):
@@ -42,8 +42,7 @@ def _get_out_paths(bkid):
 
 
 def almost_main(bkids=None):
-    """Create a version of MAM intended for deployment to
-    MAM-with-doc public GitHub repo"""
+    """Create MAM's HTML edition with its documentation notes."""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
     books_mpu = plus.read_parsed_plus_bk39s(bkids, paths.mam_parsed_path())
@@ -61,8 +60,7 @@ def almost_main(bkids=None):
 
 
 def main():
-    """Create a version of MAM intended for deployment to
-    MAM-with-doc public GitHub repo"""
+    """Create MAM's HTML edition with its documentation notes."""
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     almost_main(bkids)
 

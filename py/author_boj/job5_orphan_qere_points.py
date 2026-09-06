@@ -5,7 +5,7 @@ from mb_cmn import bib_locales as tbn
 from author_boj_util import author
 from author_boj_util.common_titles_etc import D5_TITLE, D5_H1_CONTENTS, D5_FNAME
 
-_MWD = "https://bdenckla.github.io/MAM-with-doc"
+_MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc"
 _UXLC = "https://tanach.us/Tanach.xml"
 
 

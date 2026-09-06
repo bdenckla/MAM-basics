@@ -70,7 +70,7 @@ def verse_external_links(verse_text: str) -> VerseExternalLinks:
 
     return VerseExternalLinks(
         mgketer_url=f"https://www.mgketer.org/mikra/{mgketer_id}/{chapter}/1/mg/106",
-        mwd_url=f"https://bdenckla.github.io/MAM-with-doc/{quote(f'{osdf}.html')}#c{chapter}v{verse}",
+        mwd_url=f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{quote(f'{osdf}.html')}#c{chapter}v{verse}",
         mam_ws_url=he_taamim_url(BOOK_HEBREW_NAMES[book], chapter_he),
     )
 

@@ -9,7 +9,7 @@ _COMMENT_PARA1 = [
     " but this is actually expected (or at least “allowed”).",
 ]
 _FOI_H2 = "foi-sec-merk.html#intro-poetic/(mer)/(mer),(mer)"
-_FOI_H1 = "https://bdenckla.github.io/MAM-with-doc/foi/"
+_FOI_H1 = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/"
 _FOI_ANC = author.anc_h("here", f"{_FOI_H1}{_FOI_H2}")
 _COMMENT_PARA2 = [
     "This is one of about a dozen analogous cases listed",

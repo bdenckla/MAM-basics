@@ -60,7 +60,7 @@ _RSQM = "\N{RIGHT SINGLE QUOTATION MARK}"
 _EM_DASH = "\N{EM DASH}"
 _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
-_MWD = "https://bdenckla.github.io/MAM-with-doc/"
+_MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
 _MAM_SIMPLE = "https://bdenckla.github.io/MAM-basics/MAM-simple/"
 _MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
