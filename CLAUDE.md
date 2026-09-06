@@ -658,8 +658,8 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 ```
 
 **In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Ten test
-files read four sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, and MAM-private — and
-`paths.repos_root()` resolves those under the
+files read three sibling repos — MAM-parsed, MAM-with-doc, and MAM-private — plus the local
+MAM-simple product. `paths.repos_root()` resolves the three sibling repos under the
 worktree's own parent, `.claude/worktrees/`, where none of them is. A fresh primary
 checkout run after the Leningrad move passed **975 passed, 5 skipped, 65 subtests**
 on 2026-09-03.
@@ -668,15 +668,16 @@ on 2026-09-03.
 $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
-Sibling-repo paths (MAM-parsed, MAM-with-doc, MAM-OSIS)
-are built from `mb_cmn.paths.repo_root()` / `repos_root()` / `sibling_repo(name)` — a
+Sibling-repo paths (MAM-parsed, MAM-with-doc, MAM-OSIS, MAM-for-Sefaria) are built from
+`mb_cmn.paths.repo_root()` / `repos_root()` / `sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
 literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. Exception: the two files that get vendored/copied verbatim into
-sibling repos (`mb_cmn/read_books_from_mam_parsed_plus.py`, `mb_cmn/provenance.py`)
-intentionally keep their existing cwd-relative or self-contained `__file__`-relative logic
-instead, so they stay portable when copied elsewhere without also requiring
-`mb_cmn/paths.py` to travel with them.
+code should use it too. The local MAM-simple product uses `repo_root() / "MAM-simple"` and
+does not require `REPOS_ROOT`. Exception: a handful of files that get vendored/copied verbatim
+into sibling repos (`mb_cmn/read_books_from_mam_parsed_plus.py`, `mb_cmn/provenance.py`,
+`mb_misc/write_utils.py`, `mb_sefaria/mam4sef_or_ajf.py`) intentionally keep their
+existing cwd-relative or self-contained `__file__`-relative logic instead, so they stay
+portable when copied elsewhere without also requiring `mb_cmn/paths.py` to travel with them.
 
 Even so, still run from the repo root, never from `py/`: some in-repo paths (e.g.
 `in/mam-ws-bot-edits/...`) remain cwd-relative by design, and the venv itself

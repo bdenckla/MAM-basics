@@ -282,7 +282,7 @@ def run(args: argparse.Namespace) -> None:
 
 def _load_dual_cant_mam() -> dict[str, dict] | None:
     """Load the MAM-simple strands for the dual-cantillation loci, or None if the
-    sibling MAM-simple corpus is absent (the normal prose run does not require it; the
+    local MAM-simple product is absent (the normal prose run does not require it; the
     detangled dual-cant fold-in is then simply skipped)."""
     mam_dir = mam_simple_verse.default_mam_simple_dir(paths.repo_root())
     if not mam_dir.is_dir():
