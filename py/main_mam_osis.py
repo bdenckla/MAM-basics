@@ -6,7 +6,7 @@ from mb_misc import my_utils_for_mainish as my_utils_fm
 from osis import osis_runner
 
 _PATHS = {
-    "input_xml_dir": str(paths.sibling_repo("MAM-simple") / "xml-vtrad-bhs"),
+    "input_xml_dir": str(paths.repo_root() / "MAM-simple" / "xml-vtrad-bhs"),
     "output_book_dir": str(paths.sibling_repo("MAM-OSIS") / "MAPM-24"),
     "header_path": str(paths.sibling_repo("MAM-OSIS") / "header.xml"),
     "osis_output_path": str(paths.sibling_repo("MAM-OSIS") / "mapm.osis.xml"),
@@ -21,14 +21,14 @@ _PATHS = {
 
 
 def almost_main(bkids=None):
-    """Create MAM-OSIS from MAM-XML."""
+    """Create MAM-OSIS from MAM-simple XML."""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
     osis_runner.almost_main(_PATHS, bkids)
 
 
 def main():
-    """Create MAM-OSIS from MAM-XML."""
+    """Create MAM-OSIS from MAM-simple XML."""
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     almost_main(bkids)
 

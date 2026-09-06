@@ -367,8 +367,8 @@ def main():
                     s["issues"].append(msg)
                     break
 
-    # --- Cross-file word sequence check (MAM-XML ground truth) ---
-    # Build the expected word sequence from MAM-XML for the full page range,
+    # --- Cross-file word sequence check (MAM-simple XML ground truth) ---
+    # Build the expected word sequence from MAM-simple XML for the full page range,
     # then verify that the concatenated JSON words match a contiguous slice.
     if len(paths) > 1:
         # Derive verse range from the line-break files themselves
@@ -405,7 +405,7 @@ def main():
                 if match_start is None:
                     msg = (
                         f"Cross-file word check: first JSON word "
-                        f"{json_words[0]!r} not found in MAM-XML stream"
+                        f"{json_words[0]!r} not found in MAM-simple XML stream"
                     )
                     total_issues += 1
                     all_stats[0]["issues"].append(msg)
@@ -414,7 +414,7 @@ def main():
                     if len(mam_slice) < len(json_words):
                         msg = (
                             f"Cross-file word check: JSON has {len(json_words)} words "
-                            f"but only {len(mam_words) - match_start} remain in MAM-XML "
+                            f"but only {len(mam_words) - match_start} remain in MAM-simple XML "
                             f"from match position"
                         )
                         total_issues += 1
@@ -443,7 +443,7 @@ def main():
                             )
                             msg = (
                                 f"Cross-file word check: {len(mismatches)} mismatch(es) "
-                                f"vs MAM-XML: {detail}"
+                                f"vs MAM-simple XML: {detail}"
                             )
                             total_issues += 1
                             blame_stat["issues"].append(msg)
@@ -616,7 +616,7 @@ def main():
 <h3>Verse markers (cross-file)</h3>
 <ol start="11">
   <li>No full verse (<code>verse-start</code>/<code>verse-end</code>) appears in more than one file</li>
-  <li>Concatenated JSON words match the MAM-XML word sequence for the full page range</li>
+  <li>Concatenated JSON words match the MAM-simple XML word sequence for the full page range</li>
 </ol>
 </body>
 </html>

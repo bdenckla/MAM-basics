@@ -4,7 +4,7 @@
 from mb_cmn import paths
 from mb_misc import letter_small_job
 
-_XML_PATH = str(paths.sibling_repo("MAM-simple") / "xml-vtrad-mam" / "Job.xml")
+_XML_PATH = str(paths.mam_simple_dir() / "Job.xml")
 
 
 def almost_main():

@@ -1,7 +1,7 @@
 """
-Extract verse words from MAM-XML (xml-vtrad-mam) for Aleppo Codex alignment.
+Extract verse words from MAM-simple XML (xml-vtrad-mam) for Aleppo Codex alignment.
 
-Handles all special MAM-XML elements:
+Handles all special MAM-simple XML elements:
   - <text>: plain text spans
   - <lp-legarmeih>, <lp-paseq>: append paseq (U+05C0) to preceding word
   - <kq>: ketiv/qere — use ketiv (kq-k child, unpointed) for manuscript alignment
@@ -23,7 +23,7 @@ Usage:
     from py_ac_loc.mam_xml_verses import get_verses_in_range
 
     verses = get_verses_in_range(
-        r'C:/path/to/MAM-basics/MAM-XML/Job.xml',
+        r'C:/path/to/MAM-basics/MAM-simple/xml-vtrad-mam/Job.xml',
         'Job', (37, 9), (38, 20),
     )
     # Returns: [{'cv': '37:9', 'words': [...], 'ketiv_indices': [], 'parashah_before': None}, ...]
@@ -38,7 +38,7 @@ MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 
 def get_verse_words(verse_el):
     """
-    Extract the word list from a MAM-XML <verse> element.
+    Extract the word list from a MAM-simple XML <verse> element.
 
     Args:
         verse_el: an xml.etree.ElementTree Element for a <verse>.
@@ -140,7 +140,7 @@ def get_verse_words(verse_el):
 
     # Attach standalone sof pasuq (׃) to the preceding word.
     # This happens when a <kq> element is followed by <text text="׃" />
-    # in the MAM-XML — the sof pasuq ends up as its own token.
+    # in the MAM-simple XML — the sof pasuq ends up as its own token.
     SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
     merged = []
     merged_ketiv = []
@@ -157,10 +157,10 @@ def get_verse_words(verse_el):
 
 def get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv):
     """
-    Extract verses from a MAM-XML file in a chapter:verse range.
+    Extract verses from a MAM-simple XML file in a chapter:verse range.
 
     Args:
-        xml_path: path to the MAM-XML file (e.g., .../xml-vtrad-mam/Job.xml)
+        xml_path: path to a MAM-simple XML file (e.g., .../xml-vtrad-mam/Job.xml)
         book_osis_prefix: e.g., 'Job'
         start_cv: (chapter, verse) tuple, inclusive
         end_cv: (chapter, verse) tuple, inclusive

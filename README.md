@@ -6,7 +6,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Core export pipeline
 
-`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM, and refreshes the Python support files copied to the MAM-simple sibling repo.
+`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM under `MAM-simple/`, and refreshes its example-program support files there.
 
 ### Format variants
 

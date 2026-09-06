@@ -8,7 +8,8 @@ support any biblical book. The programs that read and write this data live in
 ## Pipeline
 
 1. [`../py/py_ac_loc/mam_xml_verses.py`](../py/py_ac_loc/mam_xml_verses.py) reads
-   the shared [`../MAM-XML/`](../MAM-XML/) word-sequence snapshot.
+   [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/), the MAM word-sequence
+   ground truth.
 2. [`../py/main_cam1753_gen_flat_stream.py`](../py/main_cam1753_gen_flat_stream.py)
    writes per-page word streams in `cam1753-line-breaks/`.
 3. [`../py/main_cam1753_gen_line_break_editor.py`](../py/main_cam1753_gen_line_break_editor.py)
@@ -27,8 +28,8 @@ support any biblical book. The programs that read and write this data live in
 - `cam1753-line-breaks/` and `cam1753-col-quads/` hold the hand-annotated data.
 - `cam1753-spread-splits-doc/` records each split so it can be audited without
   rerunning the gutter finder.
-- [`../MAM-XML/`](../MAM-XML/) is the pinned 24-file snapshot shared with the Aleppo
-  lane; [`MAM-simple-provenance.md`](MAM-simple-provenance.md) identifies its source.
+- [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) is the MAM word-sequence
+  ground truth shared with the Aleppo lane.
 
 The image attribution and non-commercial terms are in
 [`cam1753-spreads-provenance.md`](cam1753-spreads-provenance.md) and
@@ -44,6 +45,6 @@ The image attribution and non-commercial terms are in
 
 - [`doc/cam1753-line-break-task.md`](doc/cam1753-line-break-task.md) describes the
   manuscript, images, annotation data, and marking task.
-- [`doc/reading-mam-simple.md`](doc/reading-mam-simple.md) describes the MAM-XML
-  reader and snapshot.
+- [`doc/reading-mam-simple.md`](doc/reading-mam-simple.md) describes the MAM-simple XML
+  reader and product path.
 - [`doc/mam-with-doc-urls.md`](doc/mam-with-doc-urls.md) describes MAM-with-doc URLs.

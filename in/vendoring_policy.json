@@ -13,8 +13,8 @@
     }
   },
   "repos": {
-    "MAM-simple": {
-      "comment": "Generated example package copies.",
+    "MAM-basics": {
+      "comment": "Generated MAM-simple example package copies, local under MAM-simple/.",
       "ignore": false,
       "scan_provenance": false,
       "default_category": "generated",
@@ -22,16 +22,16 @@
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
-          "py-examples/mb_cmn"
+          "MAM-simple/py-examples/mb_cmn"
         ],
         "mb_misc": [
-          "py-examples/mb_misc"
+          "MAM-simple/py-examples/mb_misc"
         ],
         "mb_sefaria": [
-          "py-examples/mb_sefaria"
+          "MAM-simple/py-examples/mb_sefaria"
         ],
         "osis": [
-          "py-examples/osis"
+          "MAM-simple/py-examples/osis"
         ]
       }
     },

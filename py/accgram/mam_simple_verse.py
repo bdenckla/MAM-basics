@@ -24,32 +24,21 @@ _CANT_ALL_THREE = "cant-all-three"
 
 
 def require_mam_simple(mam_simple_dir: Path) -> None:
-    """Fail on an absent MAM-simple tree, naming the two overrides that fix it.
+    """Fail clearly when a caller-supplied MAM-simple XML directory is absent.
 
-    These loaders take the directory as an argument, so they cannot call
-    ``paths.require_mam_simple_dir`` -- but they are still the place the absence
-    is first noticed, and ``paths.require_sibling``'s own docstring names what
-    they used to raise instead: "a bare ``FileNotFoundError`` from deep in a
-    loader does not mention them".  It did not, and the cost was measured on
-    2026-09-03: in a worktree with no ``REPOS_ROOT``, six test files failed for
-    want of MAM-simple, and the two that reached the corpus through these
-    loaders rather than through ``paths`` -- ``test_mam_simple_dualcant_loader``
-    and ``test_versification_differences_doc`` -- got a path and no remedy, so a
-    sweep for the standard "sibling repo X not found" wording missed both.
-
-    The advice is keyed to the sibling even when a caller passed an explicit
-    ``--mam-simple-dir``, whose own default is that sibling; the message names
-    the path actually looked for either way, which is what a wrong ``--mam-simple-dir``
-    needs to show.
+    The ordinary path is the local MAM-simple product. A caller may still supply
+    ``--mam-simple-dir`` for an alternate input, and the exception therefore names the
+    exact directory that the caller asked this loader to read.
     """
-    paths.require_sibling("MAM-simple", mam_simple_dir)
+    if not mam_simple_dir.is_dir():
+        raise FileNotFoundError(
+            f"MAM-simple XML directory does not exist: {mam_simple_dir}"
+        )
 
 
 def default_mam_simple_dir(repo_root: Path) -> Path:
     # ``repo_root`` is retained so CLI ``--mam-simple-dir`` flags keep their
-    # signature; the sibling lookup is delegated to the env-overridable resolver,
-    # which anchors itself and so equals ``repo_root.parent / "MAM-simple" / ...``
-    # by default.
+    # signature; the local-product lookup is delegated to the repository-root resolver.
     return paths.mam_simple_dir()
 
 

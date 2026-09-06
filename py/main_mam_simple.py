@@ -7,7 +7,7 @@ variants (BHS, Sefaria, MAM's own).
 Subcommands:
     all
                 Run the core MAM-simple export and then regenerate the docs
-                this repo writes into MAM-simple.  This is what runs when no
+                this repo writes under MAM-simple/.  This is what runs when no
                 subcommand is given at all, so the bare command line is the
                 whole job.
     core-only
@@ -22,7 +22,7 @@ Subcommands:
                 alias for `doc-only`.
     copy-support-files
     copy
-                Copy the support files into the MAM-simple repo, without
+                Copy the support files into MAM-simple/py-examples/, without
                 exporting anything.  `copy` is an alias for
                 `copy-support-files`; the `all` and `core-only` exports finish
                 by doing this themselves.
@@ -66,7 +66,7 @@ def _do_not_convert(_bkids, books_mpu):
 
 
 _VARIANT_COMMON = {
-    "variant-mam-for-xxx": "MAM-simple",
+    "variant-output-root": paths.repo_root() / "MAM-simple",
     "variant-file-format": "vff-xml",
 }
 _VARIANT_VTBHS = {

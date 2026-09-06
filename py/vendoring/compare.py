@@ -40,10 +40,14 @@ import sys
 from pathlib import Path
 
 from mb_cmn import paths
-from vendoring.discover import EOL_ONLY, iter_compare_copies, source_pkg_dirs
+from vendoring.discover import (
+    EOL_ONLY,
+    destination_repo_path,
+    iter_compare_copies,
+    source_pkg_dirs,
+)
 
 _MAM = paths.repo_root()
-_REPOS = paths.repos_root()
 
 
 def _normalize_newlines(data: bytes) -> bytes:
@@ -97,10 +101,11 @@ def main() -> None:
     rows = []
     for filename, src_pkg, dest_repo, dest_rel, notes in iter_compare_copies():
         src_path = _MAM / source_pkg_dir_map[src_pkg] / filename
-        dest_path = _REPOS / dest_repo / dest_rel
+        dest_repo_path = destination_repo_path(dest_repo)
+        dest_path = dest_repo_path / dest_rel
 
         identity_str = _identity(src_path, dest_path)
-        last_synced = _git_log_date(_REPOS / dest_repo, dest_rel)
+        last_synced = _git_log_date(dest_repo_path, dest_rel)
 
         rows.append(
             {

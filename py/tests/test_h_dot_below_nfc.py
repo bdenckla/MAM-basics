@@ -177,8 +177,8 @@ _EXCLUDE_MAM_GO_FILES = {
 # with no file extension, so _is_binary's extension test does not catch it and
 # read_text raises UnicodeDecodeError on it; this prefix is what keeps it out.
 # gh-pages/ goes in on the principle out/ is already on: generated, not
-# hand-authored. MAM-XML/ is a pinned input, while uxlc/ and aleppo/ each have a
-# scope below rather than being scanned twice through the MAM-basics root.
+# hand-authored. MAM-simple/ is generated product data, while uxlc/ and aleppo/ each
+# have a scope below rather than being scanned twice through the MAM-basics root.
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
@@ -192,7 +192,7 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
-    "MAM-XML/",
+    "MAM-simple/",
     "uxlc/",
     "aleppo/",
     "cam1753/",
@@ -237,7 +237,7 @@ _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 # of this test, so unlike the five above there was nothing to carry over verbatim and
 # this list was CHOSEN rather than inherited. It applies the principle the other five
 # embody -- exclude what is downloaded, vendored or program-written, keep what a human
-# wrote -- to that corpus's six artifact trees: MAM-XML/ is the vendored MAM-simple snapshot,
+# wrote -- to that corpus's six artifact trees: MAM-simple/ is generated product data,
 # cam1753-spreads/ the downloaded archive.org scans, cam1753-pages/ and
 # cam1753-spread-splits-doc/ the output of py_cam1753_loc.split_spreads, and
 # cam1753-line-breaks/ and cam1753-col-quads/ the two human-in-the-loop editors'
@@ -249,7 +249,6 @@ _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 # Neither is cam1753-page-index.json, hand-made and read by no program, nor
 # check_line_breaks.html, which codex-index-aleppo's copy also left in scope.
 _CAM_EXCLUDE_DIR_PREFIXES = (
-    "MAM-XML/",
     "cam1753-col-quads/",
     "cam1753-line-breaks/",
     "cam1753-pages/",
@@ -336,24 +335,22 @@ def _scopes() -> tuple[_Scope, ...]:
             # That repo's own copy asserted a floor of 40 over a scope its comment
             # called "~72" and this file measured at 79 before that repo's Phase 4,
             # 2026-08-22. 40 did not survive that phase: 50 of the 79 were the .py
-            # this repo's Phase 3 took, and **26** remain, measured after the
-            # deletion rather than predicted -- doc/ (4), aleppo-wiki/ (13: J David
-            # Stark's CSV index, three of its four precursors, the LICENSE, the
-            # three Wikisource notes, index-flat-corrected.json and the three
-            # artifacts), README.md, CLAUDE.md, three provenance files,
-            # check_line_breaks.html, test-data-from-book-of-job.json and three
-            # dotfiles. The count fell 29 -> 28 -> 27 -> 26 across that phase as Ben
+            # this repo's Phase 3 took, and 26 remained immediately after the
+            # deletion rather than predicted. The MAM-simple landing on 2026-09-06
+            # removed the two no-longer-live MAM-XML provenance files, and the
+            # current scope measures 20 files. The count fell 29 -> 28 -> 27 -> 26
+            # across that phase as Ben
             # settled its three orphan candidates one at a time on 2026-08-22:
             # requirements.txt and codex-index-aleppo.code-workspace as orphaned by
             # the move, and .claude/settings.json for a reason that has nothing to do
             # with it -- it predates Claude Code's "auto" permission mode. The fourth
             # dotfile went with that last one, .claude/ having held nothing else. So
-            # the floor is 20,
+            # the floor is 19,
             # which keeps meaning "an exclusion filter swallowed everything" rather
             # than asserting a tree size, and is what would catch this scope
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
             # binary; the .docx beside it is excluded the same way.
-            floor=20,
+            floor=19,
         ),
         _Scope(
             label="Cambridge 1753 data",

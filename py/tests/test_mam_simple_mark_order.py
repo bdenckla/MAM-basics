@@ -23,7 +23,7 @@ Both were found by a scan someone chose to run, which is exactly the state
 
 WHAT IT COVERS, AND WHY NOT THE CORPUS
 
-Every tracked text file of MAM-simple except ``xml-vtrad-*`` and ``json-vtrad-*``. Those
+Every tracked text file under MAM-simple/ except ``xml-vtrad-*`` and ``json-vtrad-*``. Those
 two are excluded on cost, not on trust: the corpus is 84 MB and takes 13 seconds to
 check, against 0.01 seconds for everything else, and it is the one part already
 guaranteed at generation time by the assert named above. Including it would grow this
@@ -41,7 +41,7 @@ only those four have a declared place. A vowel and an accent pass in either orde
 ``has_std_mark_order`` says nothing about which of them comes first. This lint is
 therefore not a canonical-form check and must not be read as one.
 
-A MISSING SIBLING FAILS RATHER THAN SKIPS -- see ``mb_cmn.paths.require_sibling``.
+A MISSING LANDED PRODUCT FAILS RATHER THAN SKIPS.
 """
 
 import subprocess
@@ -64,21 +64,20 @@ _FLOOR = 20
 
 
 def _mam_simple_root() -> Path:
-    clone = paths.sibling_repo("MAM-simple")
-    return paths.require_sibling("MAM-simple", clone)
+    return paths.repo_root() / "MAM-simple"
 
 
 def _tracked_text_files(root: Path) -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files"],
-        cwd=root,
+        ["git", "ls-files", "--", "MAM-simple"],
+        cwd=paths.repo_root(),
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     in_scope = []
     for line in result.stdout.splitlines():
-        rel = line.strip().replace("\\", "/")
+        rel = line.strip().replace("\\", "/").removeprefix("MAM-simple/")
         if not rel:
             continue
         if rel.startswith(_EXCLUDE_DIR_PREFIXES):

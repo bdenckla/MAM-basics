@@ -55,7 +55,7 @@ def parse_cv(s):
 
 
 def get_page_verses(start_book, start_cv, end_book, end_cv):
-    """Fetch all verses for a page from MAM-XML, handling cross-book ranges.
+    """Fetch all verses for a page from MAM-simple XML, handling cross-book ranges.
 
     Args:
         start_book: e.g. "Ps"
@@ -181,7 +181,7 @@ def find_prev_page_endpoint(prev_page_path):
 
 
 def next_verse(book, cv):
-    """Return the next verse reference.  Uses MAM-XML to find it."""
+    """Return the next verse reference. Uses MAM-simple XML to find it."""
     xml_path = str(MAM_XML_DIR / BOOK_XML[book])
     c, v = cv
     # Try next verse in same chapter

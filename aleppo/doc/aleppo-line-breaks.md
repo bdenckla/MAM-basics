@@ -26,7 +26,7 @@ codex-index-aleppo/            (this repo — the data)
   column-coordinates/   ← per-page column quadrilaterals
   ds-flat-stream/       ← flat streams with no line markers yet
   aleppo-pages/         ← the downloaded page images
-  MAM-XML/              ← the vendored MAM-simple snapshot (Job.xml, Ps.xml, Prov.xml)
+  MAM-simple/           ← the landed MAM-simple product
 
 MAM-basics/py/py_ac_loc/       (the sibling repo — the code)
   gen_flat_stream.py    ← generates initial flat-stream JSON (no line markers)
@@ -38,7 +38,7 @@ MAM-basics/py/py_ac_loc/       (the sibling repo — the code)
 ✗ py/py_ac_loc/line-breaks/    ← never existed; the data is at this repo's root
 ✗ py/py_ac_loc/codex-index/    ← never existed; `codex-index` was a sibling repo,
                                  left behind by a rename on 2026-03-28
-✗ py/py_ac_loc/MAM-simple/     ← never existed; the snapshot is `MAM-XML/` here
+✗ py/py_ac_loc/MAM-simple/     ← never existed; the product is at MAM-basics' root
 ```
 
 Each of those five modules is run through a wrapper of its own at MAM-basics'

@@ -21,9 +21,6 @@
     "MAM-parsed": {
       "visibility": "public"
     },
-    "MAM-simple": {
-      "visibility": "public"
-    },
     "MAM-with-doc": {
       "visibility": "public"
     },

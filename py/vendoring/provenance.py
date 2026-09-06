@@ -11,12 +11,12 @@ from pathlib import Path, PurePosixPath
 
 from mb_cmn import paths
 from vendoring.discover import (
+    destination_repo_path,
     iter_inventory_seed_rows,
     mb_cmn_scan_roots,
     provenance_dest_repos,
 )
 
-_REPOS = paths.repos_root()
 _MAM = paths.repo_root()
 _OUT_TXT = _MAM / "out" / "vendoring_provenance_out.txt"
 _OUT_JSON = _MAM / "out" / "vendoring_provenance_out.json"
@@ -110,7 +110,7 @@ def _find_copy_scripts(repo_path: Path) -> list[str]:
 
 
 def _scan_repo(repo: str) -> dict[str, object]:
-    repo_path = _REPOS / repo
+    repo_path = destination_repo_path(repo)
     scanned_dirs = _candidate_scan_dirs_for_repo(repo)
     found_docs = _find_provenance_docs(repo, repo_path)
     copy_scripts = _find_copy_scripts(repo_path)

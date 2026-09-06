@@ -13,14 +13,10 @@ points here, and this declaration is the answer it used to state by hand.
 
 The consequence was not hypothetical.  ``mb_misc/write_utils.py``'s ``bkg_path`` builds
 ``f"../{mam_for_xxx}"`` from ``variant.get("variant-mam-for-xxx") or "MAM-for-Sefaria"``.
-It never calls ``mb_cmn.paths``, so ``REPOS_ROOT`` does not reach it, and from a worktree
-it resolves under ``.claude/worktrees/``.  ``main_mam_simple.py``'s ``_VARIANT_COMMON``
-sets that key to ``"MAM-simple"`` and routes the identical function there, which the
-programme's table did not record -- it attributed the literal to MAM-for-Sefaria alone.
-On 2026-09-04 a mega run from a worktree wrote 216 MAM-simple and 160 MAM-for-Sefaria
-files into ``.claude/worktrees/``, exited 0, and left MAM-OSIS unchanged because the
-later steps read the real, stale MAM-simple.  ``py/main_0_mega.py``'s module docstring
-records the incident.
+It did not call ``mb_cmn.paths``, so ``REPOS_ROOT`` did not reach it, and from a worktree
+it resolved under ``.claude/worktrees/``.  The MAM-simple lane corrected its route to the
+landed product on 2026-09-06. The MAM-for-Sefaria route remains sibling-relative until its
+product lane changes it.
 
 So "which siblings does the tree reach?" is a decidable property of the source text --
 a mechanical lint over the tree, the second of the two test shapes CLAUDE.md sanctions --
@@ -84,11 +80,11 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
   being iterated and the collection a for-loop walks.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
-  builds five subprocess ``cwd``s this way, naming three repos: MAM-parsed,
-  MAM-simple and MAM-private.
+  builds subprocess ``cwd``s this way for MAM-parsed and MAM-private.
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
-  ``in/vendoring_policy.json``.  ``_DYNAMIC_NAME_SOURCES`` names those four sites.
+    ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those four sites and
+    `write_utils.bkg_path`'s variant-selected output route.
 * Cwd-relative ``"../X"``, the mechanism the survey's grep cannot see -- as a plain
   literal, and as an ``f"../{name}"`` whose first segment is interpolated.  For the
   interpolated shape the names come from a declared source (``write_utils.bkg_path``)
@@ -133,16 +129,14 @@ from mb_cmn import paths
 # fourth stage covering the five MAM data products.
 # ---------------------------------------------------------------------------
 SIBLINGS_REACHED: dict[str, str] = {
+    "MAM-simple": (
+        "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
+        " source repository's frozen redirect stubs."
+    ),
     "MAM-parsed": (
         "The corpus almost everything here reads: paths.mam_parsed_path and"
         " mam_parsed_plus_dir, a main_0_mega subprocess cwd, and"
         " read_books_from_mam_parsed_plus.py's vendored '../MAM-parsed' default."
-    ),
-    "MAM-simple": (
-        "Written by main_mam_simple.py through write_utils.bkg_path's"
-        " cwd-relative f'../{mam_for_xxx}', read back by mam4sef_or_ajf.py's"
-        " vendored '../MAM-simple' default and by paths.mam_simple_dir, and a"
-        " vendoring-audit destination."
     ),
     "MAM-for-Sefaria": (
         "Written by write_utils.bkg_path's 'MAM-for-Sefaria' fallback and by"
@@ -185,7 +179,6 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
         for label in (
             "../MAM-parsed/plus/",
             "../MAM-parsed/plain/",
-            "../MAM-simple/",
             "../MAM-with-doc/docs/",
             "../MAM-for-Sefaria/",
             "../MAM-OSIS/",
@@ -217,10 +210,8 @@ _INERT_RESOLVER_TESTS = frozenset({"py/tests/test_mb_cmn_paths.py"})
 # everywhere else.
 _DYNAMIC_NAME_SOURCES: dict[tuple[str, str], str] = {
     ("py/vendoring/discover.py", "repo_name"): "vendoring-policy",
-    ("py/vendoring/compare.py", "dest_repo"): "vendoring-policy",
-    ("py/vendoring/provenance.py", "repo"): "vendoring-policy",
     ("py/tests/test_vendoring_policy_paths.py", "repo_name"): "vendoring-policy",
-    ("py/mb_misc/write_utils.py", "f'../{mam_for_xxx}'"): "variant-mam-for-xxx",
+    ("py/mb_misc/write_utils.py", "mam_for_xxx"): "variant-mam-for-xxx",
 }
 
 # paths.py IS the resolver: its `repos_root() / name` is the mechanism rather than a
@@ -452,16 +443,20 @@ def _repos_root_aliases(tree: ast.Module) -> set[str]:
 
 
 def _vendoring_policy_dest_repos() -> set[str]:
-    """The un-ignored destination repos of ``in/vendoring_policy.json``."""
+    """The un-ignored sibling destinations of ``in/vendoring_policy.json``."""
     policy = json.loads(
         (paths.in_dir() / "vendoring_policy.json").read_text(encoding="utf-8")
     )
     repos = policy.get("repos", {})
-    return {name for name, entry in repos.items() if not entry.get("ignore")}
+    return {
+        name
+        for name, entry in repos.items()
+        if not entry.get("ignore") and name != paths.repo_root().name
+    }
 
 
 def _variant_mam_for_xxx_repos(trees: dict[str, ast.Module]) -> set[str]:
-    """Every repo that can flow into ``write_utils.bkg_path``'s ``f"../{mam_for_xxx}"``.
+    """Every repo that can flow into ``write_utils.bkg_path``'s output route.
 
     The fallback spelled at that call, plus every value the tree gives the
     ``variant-mam-for-xxx`` key.  Deriving the second half is what makes a new
@@ -505,6 +500,7 @@ def _scan_calls_and_joins(
 ) -> None:
     """The paths-API and repos_root recognizers, over every tracked module."""
     dest_repos: set[str] | None = None
+    dynamic: set[str] | None = None
     for rel, tree in trees.items():
         aliases = _repos_root_aliases(tree)
         for node in ast.walk(tree):
@@ -524,10 +520,16 @@ def _scan_calls_and_joins(
                 )
                 continue
             source = consulted.dynamic_name_source(rel, ident)
-            if source == "vendoring-policy":
+            if source == "variant-mam-for-xxx":
+                if dynamic is None:
+                    dynamic = _variant_mam_for_xxx_repos(trees)
+                names = dynamic
+            elif source == "vendoring-policy":
                 if dest_repos is None:
                     dest_repos = _vendoring_policy_dest_repos()
                 names = dest_repos
+                if not names:
+                    continue
             else:
                 names = _string_literals_bound_to(tree, ident)
             if not names:

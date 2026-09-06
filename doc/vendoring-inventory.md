@@ -17,15 +17,12 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, shrink.py, str_defs.py, ws_tmpl1.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | eol-only |
-| file_io.py, hebrew_accents.py, my_utils.py, provenance.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl2.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
-| hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, verse_and_friends.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | eol-only |
-| mb_html.py, mb_html_get_lines.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, write_utils.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
-| mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | eol-only |
-| osis_handlers.py, osis_namespace.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | eol-only |
-| osis_index_html.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
+| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, paths.py, provenance.py, shrink.py, str_defs.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-basics | MAM-simple/py-examples/mb_cmn | copy_script | no-commits | no | generated | identical |
+| hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-basics | MAM-simple/py-examples/mb_misc | copy_script | no-commits | no | generated | identical |
+| mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-basics | MAM-simple/py-examples/mb_sefaria | copy_script | no-commits | no | generated | identical |
+| osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-basics | MAM-simple/py-examples/osis | copy_script | no-commits | no | generated | identical |
 
-*7 rows, 43 files. Not audited: MAM-private.*
+*4 rows, 44 files. Not audited: MAM-private.*
 
 ## Intentionally non-vendored
 

@@ -22,6 +22,16 @@ EOL_ONLY = "eol-only"
 IDENTITY_VALUES = {"identical", EOL_ONLY, "DIFFERS", "MISSING-DEST", "MISSING-SRC"}
 
 
+def destination_repo_path(repo_name: str) -> Path:
+    """The repository root named by a vendoring-policy destination.
+
+    MAM-simple's generated example copies moved into this repository on 2026-09-06.
+    Its policy entry therefore names MAM-basics itself; every other destination remains
+    a sibling clone below the common repositories root.
+    """
+    return _MAM if repo_name == _MAM.name else _REPOS / repo_name
+
+
 @dataclass(frozen=True)
 class DerivedRelationship:
     file: str
@@ -84,7 +94,7 @@ def _scanned_dest_paths(
     repo_name: str, repo_policy: RepoPolicy
 ) -> list[tuple[str, str]]:
     source_names = _source_file_names()
-    repo_path = _REPOS / repo_name
+    repo_path = destination_repo_path(repo_name)
     if not repo_path.exists():
         raise ValueError(f"Missing destination repo: {repo_name}")
 

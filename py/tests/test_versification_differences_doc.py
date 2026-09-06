@@ -8,24 +8,8 @@ from versification_differences import doc as versification_differences_doc
 
 
 def _current_doc_path():
-    """The tracked doc this test diffs against, its clone required rather than assumed.
-
-    A FUNCTION AND NOT A MODULE CONSTANT, for the reason
-    ``hkq_cmn/qere_ending_search.py`` gives for its own: ``require_sibling`` raises,
-    and at module scope that raise lands during collection, so the file reports as
-    uncollectable rather than as this test failing.
-
-    ``require_sibling`` wants the directory rather than the file, so it is the ``doc``
-    subtree that is required -- the same reason ``paths.mam_parsed_path`` requires
-    ``MAM-parsed/plus`` and not merely the clone.  Until 2026-09-03 this was a bare
-    ``sibling_repo`` compose and the read below died with an unadorned
-    ``FileNotFoundError`` naming a path under ``.claude/worktrees/`` and no way to fix
-    it.
-    """
-    doc_dir = paths.require_sibling(
-        "MAM-simple", paths.sibling_repo("MAM-simple") / "doc"
-    )
-    return doc_dir / "versification-differences.md"
+    """The landed MAM-simple document this test diffs against."""
+    return paths.repo_root() / "MAM-simple" / "doc" / "versification-differences.md"
 
 
 class TestVersificationDifferencesDoc(unittest.TestCase):

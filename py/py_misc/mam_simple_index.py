@@ -1,10 +1,10 @@
-"""Generate MAM-simple/gh-pages/index.html, the site's root pointer to the README.
+"""Generate gh-pages/MAM-simple/index.html, the product's root pointer to its README.
 
-MAM-simple's gh-pages/ held one page (versification-and-cantillation.html) and no
-index.html until 2026-09-01, so https://bdenckla.github.io/MAM-simple/ answered with
-GitHub's 404 rather than with anything of ours.  This emits the stub MAM-parsed's site
-carries at the same spot: a heading and one sentence pointing at the README on
-github.com, which in turn links back to the page served from gh-pages/.
+MAM-simple's former gh-pages/ tree held one page (versification-and-cantillation.html) and no
+index.html until 2026-09-01, so its former Pages URL answered with GitHub's 404 rather than
+with anything of ours. This emits the stub MAM-parsed's site carries at the same spot: a heading
+and one sentence pointing at the README on github.com, which in turn links back to the page
+served from gh-pages/MAM-simple/.
 
 author_misc/mp_index.py is that MAM-parsed counterpart, and is deliberately not reused
 here: it builds its body through mb_html and hands it to MAM-parsed's ClaimCollection
@@ -26,15 +26,14 @@ from mb_cmn import provenance
 
 _GENERATOR_FILE = Path(__file__)
 
-# Served at https://bdenckla.github.io/MAM-simple/ : MAM-simple's Pages workflow
-# publishes gh-pages/ as the site root (.github/workflows/static.yml: path: gh-pages),
-# so this file is the site's root document, not gh-pages/index.html to a visitor.
-_OUTPUT_PATH = paths.sibling_repo("MAM-simple") / "gh-pages" / "index.html"
+# Served at https://bdenckla.github.io/MAM-basics/MAM-simple/ : MAM-basics' Pages workflow
+# publishes gh-pages/ as the site root, so this file is the MAM-simple subtree's root document.
+_OUTPUT_PATH = paths.repo_root() / "gh-pages" / "MAM-simple" / "index.html"
 
-_README_URL = "https://github.com/bdenckla/MAM-simple/blob/main/README.md"
+_README_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/README.md"
 
 # No stylesheet link, which is the one way this departs from MAM-parsed's index.html.
-# That one links a site-wide style.css; MAM-simple's gh-pages/ has no site-wide
+# That one links a site-wide style.css; gh-pages/MAM-simple/ has no site-wide
 # stylesheet, versification-and-cantillation.css being that one page's own, deployed
 # beside it by versification_and_cantillation/generate_doc.py.  A heading and one
 # sentence do not earn a second stylesheet.

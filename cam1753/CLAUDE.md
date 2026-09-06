@@ -3,7 +3,7 @@
 No Python lives in this directory. Cambridge 1753 code lives under
 `C:/Users/BenDe/GitRepos/MAM-basics/py/`, and every data path goes through
 `cam1753_paths.py`. The corpus root is this directory; the shared MAM word-sequence
-snapshot is `C:/Users/BenDe/GitRepos/MAM-basics/MAM-XML/`.
+ground truth is `C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple/xml-vtrad-mam/`.
 
 The fourteen tracked source spreads are the image inputs. `cam1753-pages/` is a
 gitignored, derived 28-JPEG tree: run `main_cam1753_split_spreads.py` when an editor

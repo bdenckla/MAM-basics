@@ -1,7 +1,7 @@
 """Generate MAM-simple/doc/versification-and-cantillation.html.
 
 Companion generator to versification_differences/generate_doc.py; both write into
-the MAM-simple sibling repo and are driven from main_mam_simple.py's doc step.
+MAM-simple/ and are driven from main_mam_simple.py's doc step.
 This one emits a standalone HTML page (served via GitHub Pages), whereas the
 companion still emits Markdown (rendered on github.com).
 """
@@ -13,13 +13,12 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import bib_locales as tbn
 from versification_and_cantillation import doc
 
-# Published as a standalone page under MAM-simple's gh-pages/ dir, which GitHub
-# Pages serves at the repo root (see MAM-simple/.github/workflows/static.yml:
-# path: gh-pages). So the live URL is
-# https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html.
+# Published as a standalone page under gh-pages/MAM-simple/. So the live URL is
+# https://bdenckla.github.io/MAM-basics/MAM-simple/versification-and-cantillation.html.
 _OUTPUT_PATH = (
-    paths.sibling_repo("MAM-simple")
+    paths.repo_root()
     / "gh-pages"
+    / "MAM-simple"
     / "versification-and-cantillation.html"
 )
 # The stylesheet is linked (not inlined), so it is a second deployed file sitting
@@ -37,8 +36,8 @@ _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
 # A third deployed file: the Hebrew font the CSS's @font-face names (issue #203, C1). The page's
 # payload is boundary words stripped to letters + accents, so it needs a font that renders those
 # accents — hence a self-hosted woff2, as our other Pages-served pages do, rather than a
-# system-font stack most visitors would not resolve. Deployed at the sibling path the CSS's
-# url("woff2/Taamey_D.woff2") resolves to; MAM-simple's gh-pages/ had no binary asset before this.
+# system-font stack most visitors would not resolve. Deployed at the product path the CSS's
+# url("woff2/Taamey_D.woff2") resolves to; the former MAM-simple Pages tree had no binary asset before this.
 #
 # Copied verbatim from the in-repo font, deployed by the same read-compare-write shape the .css
 # above uses (just bytes-wise). mpplus_assets._copy_woff2 is the nearest precedent but a poor

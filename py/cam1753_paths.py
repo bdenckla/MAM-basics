@@ -2,8 +2,9 @@
 """Resolve Cambridge 1753's data tree and the code that serves it.
 
 ``cam1753/`` holds the Cambridge Ms. Add. 1753 scans, annotations, generated
-reports, and procedures. ``MAM-XML/`` is the single pinned 24-file snapshot shared
-with the Aleppo lane. The code lives under this repository's ``py/`` directory.
+reports, and procedures. ``MAM-simple/xml-vtrad-mam/`` is the MAM-native XML
+corpus the Cambridge 1753 reader uses as its word-sequence ground truth. The code
+lives under this repository's ``py/`` directory.
 
 TWO MODULES WERE CWD-RELATIVE OUTRIGHT, not merely conflated -- ``gutter_profile``
 and ``split_spreads``, which between them named five of those trees and files as bare
@@ -163,8 +164,8 @@ def spread_splits_doc_dir() -> Path:
 
 
 def mam_xml_dir() -> Path:
-    """Pinned 24-file MAM-XML snapshot, the word-sequence ground truth."""
-    return paths.repo_root() / "MAM-XML"
+    """MAM-simple's MAM-native XML, the word-sequence ground truth."""
+    return paths.repo_root() / "MAM-simple" / "xml-vtrad-mam"
 
 
 def gutter_profiles_png_path() -> Path:

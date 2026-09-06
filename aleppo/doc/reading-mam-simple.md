@@ -1,10 +1,11 @@
 # Reading MAM-simple
 
-The guide to the MAM-simple format lives in the MAM-simple repo, and is canonical there:
+The guide to the MAM-simple format lives under MAM-basics' MAM-simple product tree, and is
+canonical there:
 
-- [doc/reading-mam-simple.md](https://github.com/bdenckla/MAM-simple/blob/main/doc/reading-mam-simple.md) — file layout, and reading MAM-simple from Python
-- [doc/reading-mam-simple-xml.md](https://github.com/bdenckla/MAM-simple/blob/main/doc/reading-mam-simple-xml.md) — the XML hierarchy, element types, and verse attributes
-- [doc/reading-mam-simple-json.md](https://github.com/bdenckla/MAM-simple/blob/main/doc/reading-mam-simple-json.md) — the JSON format
+- [doc/reading-mam-simple.md](../../MAM-simple/doc/reading-mam-simple.md) — file layout, and reading MAM-simple from Python
+- [doc/reading-mam-simple-xml.md](../../MAM-simple/doc/reading-mam-simple-xml.md) — the XML hierarchy, element types, and verse attributes
+- [doc/reading-mam-simple-json.md](../../MAM-simple/doc/reading-mam-simple-json.md) — the JSON format
 
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
 XML under `out/xml-vtrad-mam`, a directory MAM-simple moved to the repo root — so on
@@ -13,13 +14,10 @@ What remains below is what is specific to this repo.
 
 ## What this repo has
 
-`../MAM-XML/` is a pinned snapshot of MAM-simple's `xml-vtrad-mam`, one file per
-book24. It is vendored, not generated here: see
-[`MAM-simple-provenance.md`](../MAM-simple-provenance.md) for the commit and date it
-was copied from. The later MAM-simple evacuation replaces this temporary snapshot;
-until then, update it by re-copying, never by editing in place.
+`../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
+landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
 
-`../MAM-basics/py/py_ac_loc/mam_xml_verses.py` reads it. Its entry point is
+`../../py/py_ac_loc/mam_xml_verses.py` reads it. Its entry point is
 `get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
 dict per verse with `cv`, `words`, `ketiv_indices`, and `parashah_before`.
 

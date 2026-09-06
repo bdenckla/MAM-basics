@@ -54,6 +54,8 @@ def _run_line_breaks():
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     checks = [
         ("Word finding (book-of-job quirkrecs)", check_ac_word_finding.main),
         ("Escape sequences (literal chars)", check_escape_sequences.main),

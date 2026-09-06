@@ -14,7 +14,7 @@ digraph mam_pipeline {
     ds_parsed_plain  [label="../MAM-parsed/plain/"];
     ds_ws            [label="in/mam-ws/\n(Wikisource JSON)"];
     src_ws_live      [label="Hebrew Wikisource"];
-    ds_simple        [label="../MAM-simple/"];
+    ds_simple        [label="MAM-simple/"];
     ds_with_doc      [label="../MAM-with-doc/docs/"];
     ds_sefaria       [label="../MAM-for-Sefaria/"];
     ds_osis          [label="../MAM-OSIS/"];

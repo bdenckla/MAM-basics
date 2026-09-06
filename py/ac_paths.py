@@ -1,9 +1,8 @@
 """Resolve the Aleppo data that now lives in MAM-basics.
 
 ``aleppo/`` holds the Aleppo Codex scans, annotations, index data, reports, and
-procedures. ``MAM-XML/`` holds the one pinned 24-file XML snapshot shared with the
-Cambridge 1753 lane. The snapshot preserves the corpus against which this lane's
-artifacts were verified; the MAM-simple evacuation later replaces it.
+procedures. ``MAM-simple/xml-vtrad-mam/`` is the MAM-native XML corpus the Aleppo
+reader uses as its word-sequence ground truth.
 
 ``CODE_DIR`` is MAM-basics' ``py/`` directory. ``code_paths()`` lists the Aleppo
 modules for the source lints, while every other accessor below names the
@@ -113,8 +112,8 @@ def pages_dir() -> Path:
 
 
 def mam_xml_dir() -> Path:
-    """Pinned 24-file MAM-XML snapshot, the word-sequence ground truth."""
-    return paths.repo_root() / "MAM-XML"
+    """MAM-simple's MAM-native XML, the word-sequence ground truth."""
+    return paths.repo_root() / "MAM-simple" / "xml-vtrad-mam"
 
 
 def ds_flat_stream_dir() -> Path:

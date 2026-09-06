@@ -58,6 +58,7 @@ from __future__ import annotations
 import pytest
 
 from mb_cmn import paths
+from vendoring.discover import destination_repo_path
 from vendoring.repo_policy import load_policy
 
 _POLICY_PATH = paths.repo_root() / "in" / "vendoring_policy.json"
@@ -109,14 +110,19 @@ def test_every_source_pkg_dir_exists(src_pkg: str, rel_dir: str) -> None:
 
 @pytest.mark.parametrize("repo_name", _DEST_REPOS)
 def test_every_non_ignored_dest_repo_is_present(repo_name: str) -> None:
-    # require_sibling rather than a bare is_dir() so the failure carries the two
-    # overrides that fix a clone living somewhere else.
-    paths.require_sibling(repo_name, paths.sibling_repo(repo_name))
+    repo_path = destination_repo_path(repo_name)
+    if repo_name != paths.repo_root().name:
+        # require_sibling rather than a bare is_dir() so the failure carries the two
+        # overrides that fix a clone living somewhere else.
+        repo_path = paths.require_sibling(repo_name, repo_path)
+    assert repo_path.is_dir(), f"Missing destination repository: {repo_path}"
 
 
 @pytest.mark.parametrize("repo_name,src_pkg,root", _SCAN_ROOTS)
 def test_every_pkg_scan_root_exists(repo_name: str, src_pkg: str, root: str) -> None:
-    repo_path = paths.require_sibling(repo_name, paths.sibling_repo(repo_name))
+    repo_path = destination_repo_path(repo_name)
+    if repo_name != paths.repo_root().name:
+        repo_path = paths.require_sibling(repo_name, repo_path)
     root_path = repo_path / root
     assert root_path.is_dir(), (
         f"{_POLICY_PATH.name}: repos.{repo_name}.pkg_scan_roots.{src_pkg} names"

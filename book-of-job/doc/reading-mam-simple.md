@@ -19,11 +19,12 @@ not moved to MAM-basics: no code read it, and it duplicated the codex-index-alep
 snapshot. The Book-of-Job repository history preserves the snapshot and its provenance.
 
 **The code that reads XML of this shape is MAM-basics', and since 2026-08-22 it is one module
-rather than two.** codex-index-aleppo and codex-index-cam1753 each hold a `MAM-XML/` snapshot of
-their own, and each had its own reader for it — `py/py_ac_loc/mam_xml_verses.py` in the first and
+rather than two.** codex-index-aleppo and codex-index-cam1753 initially held a `MAM-XML/` snapshot
+of their own, and each had its own reader for the snapshot — `py/py_ac_loc/mam_xml_verses.py` in the first and
 `py_mam_xml/mam_xml_verses.py` in the second. Both repos' Python moved to MAM-basics that day
 under `../MAM-basics/doc/PLAN-evacuate-python-from-codex-index-trio.md`, whose Phase 3 found the
 two readers to be one tool with 43 lines of drift and merged them: they are
 `../MAM-basics/py/py_ac_loc/mam_xml_verses.py`, single. Neither codex-index repo holds any code
 now; each keeps its data and goes on hosting it. Book-of-Job no longer holds a
-second snapshot.
+second snapshot. Since 2026-09-06 both live reader routes use
+`MAM-basics/MAM-simple/xml-vtrad-mam/`.

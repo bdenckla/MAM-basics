@@ -91,12 +91,13 @@ _REPOS = paths.repos_root()
 # The two products this pipeline writes through mb_misc/write_utils.py's bkg_path,
 # whose destination is built relative to the current working directory instead of
 # through mb_cmn/paths: MAM-simple because py/main_mam_simple.py's _VARIANT_COMMON
-# sets "variant-mam-for-xxx" to it, MAM-for-Sefaria because
+# sets "variant-mam-for-xxx" to it. MAM-simple is now a local product, so
+# MAM-for-Sefaria is the only sibling whose write route needs this CWD guard:
 # py/mb_sefaria/mam4sef_or_ajf.py sets no such key and takes bkg_path's default.
-# Every OTHER sibling the mega writes -- MAM-parsed, MAM-with-doc, MAM-OSIS,
+# Every other sibling the mega writes -- MAM-parsed, MAM-with-doc, MAM-OSIS,
 # MAM-private -- goes through paths.sibling_repo or a subprocess cwd built off
 # _REPOS, and is therefore already steered by REPOS_ROOT and REPO_<NAME>_DIR.
-_CWD_RELATIVE_WRITE_TARGETS = ("MAM-simple", "MAM-for-Sefaria")
+_CWD_RELATIVE_WRITE_TARGETS = ("MAM-for-Sefaria",)
 
 # Spelled out because the refusal has to name a working directory that is NOT the one
 # the run is in, and nothing about the wrong checkout yields the right one.
@@ -206,7 +207,7 @@ def _run_vendored_tmpl_survey_toy():
 def _run_vendored_letter_small_job():
     subprocess.run(
         [sys.executable, "py-examples/main_letter_small_job_example.py"],
-        cwd=_REPOS / "MAM-simple",
+        cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
 
@@ -214,7 +215,7 @@ def _run_vendored_letter_small_job():
 def _run_vendored_mam4sef():
     subprocess.run(
         [sys.executable, "py-examples/main_mam4sef_example.py"],
-        cwd=_REPOS / "MAM-simple",
+        cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
 
@@ -222,7 +223,7 @@ def _run_vendored_mam4sef():
 def _run_vendored_mam_osis():
     subprocess.run(
         [sys.executable, "py-examples/main_mam_osis_example.py"],
-        cwd=_REPOS / "MAM-simple",
+        cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
 
@@ -356,17 +357,17 @@ _STEPS = [
     StepRecord(
         "vendored-letter-small-job",
         _run_vendored_letter_small_job,
-        "runs MAM-simple/py-examples/main_letter_small_job_example.py as subprocess; must come after mam_simple",
+        "runs the landed MAM-simple py-examples/main_letter_small_job_example.py as a subprocess; must come after mam_simple",
     ),
     StepRecord(
         "vendored-mam4sef",
         _run_vendored_mam4sef,
-        "runs MAM-simple/py-examples/main_mam4sef_example.py as subprocess; must come after mam_simple",
+        "runs the landed MAM-simple py-examples/main_mam4sef_example.py as a subprocess; must come after mam_simple",
     ),
     StepRecord(
         "vendored-mam-osis",
         _run_vendored_mam_osis,
-        "runs MAM-simple/py-examples/main_mam_osis_example.py as subprocess; must come after mam_simple",
+        "runs the landed MAM-simple py-examples/main_mam_osis_example.py as a subprocess; must come after mam_simple",
     ),
     StepRecord("decnreub", main_decnreub.almost_main, None),
     StepRecord("multimark", main_multimark.almost_main, None),

@@ -45,7 +45,7 @@ def parse_cv(s):
 
 
 def get_page_verses(start_book, start_cv, end_book, end_cv):
-    """Fetch all verses for a page from MAM-XML, handling cross-book ranges."""
+    """Fetch all verses for a page from MAM-simple XML, handling cross-book ranges."""
     if start_book == end_book:
         xml_path = str(MAM_XML_DIR / BOOK_XML[start_book])
         verses = get_verses_in_range(xml_path, start_book, start_cv, end_cv)
@@ -229,7 +229,7 @@ def build_flat_stream(page_id, verses, skip_first_n_words=0):
 
 
 def next_verse(book, cv):
-    """Return the next verse reference.  Uses MAM-XML to check if there's
+    """Return the next verse reference. Uses MAM-simple XML to check if there's
     a next verse in the same chapter/book, or rolls over."""
     xml_path = str(MAM_XML_DIR / BOOK_XML[book])
     c, v = cv

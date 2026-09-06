@@ -118,4 +118,4 @@ Run in background. Required because browsers block `file://` cross-origin image 
 | `cam1753-col-quads/*.json` | Column bounding quad data (used by editor for image cropping) |
 | `cam1753-pages/*.jpg` | Individual page images |
 | `../../py/py_ac_loc/mam_xml_verses.py` | MAM-simple verse extraction |
-| `../../MAM-XML/*.xml` | Hebrew Bible text source |
+| `../../MAM-simple/xml-vtrad-mam/*.xml` | Hebrew Bible text source |

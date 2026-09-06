@@ -47,7 +47,7 @@ def render_intro_overview_summary_markdown():
             " cantillation can help explain why the versification difference arose."
             " The role of cantillation in those five cases is discussed in",
             "[versification-and-cantillation.html]"
-            "(https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html).",
+            "(https://bdenckla.github.io/MAM-basics/MAM-simple/versification-and-cantillation.html).",
             "",
             "The eight cases where differences occur are:",
             "",

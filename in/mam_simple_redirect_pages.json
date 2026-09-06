@@ -1,0 +1,7 @@
+{
+  "comment": "The URLs bdenckla.github.io/MAM-simple published, frozen at the 2026-09-06 Phase 1 move. The source repository's small site had these two HTML pages: its root index and the versification-and-cantillation page. A citation Ben can edit belongs at the MAM-basics URL rather than in this historical redirect set. Derived from the source repository's committed gh-pages/ immediately before the redirect-host flip.",
+  "pages": [
+    "index.html",
+    "versification-and-cantillation.html"
+  ]
+}

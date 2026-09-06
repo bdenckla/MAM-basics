@@ -8,8 +8,9 @@ from versification_and_cantillation import generate_doc as vc_generate_doc
 from versification_and_cantillation import strands as vc_strands
 
 _CURRENT_DOC_PATH = (
-    paths.sibling_repo("MAM-simple")
+    paths.repo_root()
     / "gh-pages"
+    / "MAM-simple"
     / "versification-and-cantillation.html"
 )
 

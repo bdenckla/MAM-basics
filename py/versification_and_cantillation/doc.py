@@ -5,7 +5,7 @@ the upstream MAM-parsed-plus data via `strands.gather_examples` so the generated
 output stays in lockstep with the source text.
 
 The document is a standalone HTML page (it is served via GitHub Pages at
-https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html),
+https://bdenckla.github.io/MAM-basics/MAM-simple/versification-and-cantillation.html),
 so it carries its own <head> and links its own stylesheet
 (versification-and-cantillation.css, deployed alongside it by generate_doc.py)
 rather than relying on GitHub's Markdown viewer.
@@ -25,7 +25,7 @@ reads as authored markup rather than assembled elements. (The mpplus_*.py diff-r
 generators likewise bypass `mb_html`, for their own — different — reasons.)
 
 Editing note: the rendered output is a *snapshot* — tests/test_versification_and_cantillation_doc.py
-asserts it byte-for-byte against the deployed MAM-simple/gh-pages/ copy. So any edit here,
+asserts it byte-for-byte against the deployed gh-pages/MAM-simple/ copy. So any edit here,
 in strands.py, or in the .css (whose source of truth is the copy beside this file, NOT the
 gh-pages copy — that one is overwritten on regen) is a no-op (and turns that test red)
 until you regenerate the deployed files. Regenerate via the CLI subcommand, from the repo
@@ -45,9 +45,7 @@ _GENERATOR_FILE = Path(__file__).with_name("generate_doc.py")
 
 # The sibling versification-differences doc stays Markdown, rendered on github.com;
 # from this Pages-served HTML page we therefore link to its rendered blob view.
-_VDIFF_URL = (
-    "https://github.com/bdenckla/MAM-simple/blob/main/doc/versification-differences.md"
-)
+_VDIFF_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/doc/versification-differences.md"
 
 # The MAM-with-doc FOI page listing verses with a פסקא באמצע פסוק (mid-verse
 # samekh/pe divider); linked from the body as the catalogue of such verses.
@@ -64,7 +62,7 @@ _1SAM_16_12_URL = "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c16v1
 # grammatical, under gh-pages/wlc/ since the 2026-08 evacuation. The URL stayed absolute
 # when it was repointed off bdenckla.github.io/wlc-utils on 2026-08-22 (Ben's decision --
 # a citation he can edit gets the new URL rather than leaning on wlc-utils' redirect
-# stub), because THIS page is published on MAM-simple's site, so the link is still
+# stub), because this page is published under MAM-basics' MAM-simple subtree, so the link is still
 # cross-repo (the gh-pages/ segment is dropped in the served URL). Linked from the
 # Decalogue-background aside.
 _PRINTED_DECALOGUE_URL = (
