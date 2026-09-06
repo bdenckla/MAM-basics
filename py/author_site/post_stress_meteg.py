@@ -775,6 +775,7 @@ def _hebrew_spacing_option() -> object:
 def _opening(survey: dict) -> list:
     """Section 1: what is counted, and where the silluq boundary falls."""
     total = _both(survey, "meteg after the stressed syllable")
+    example = _example_of(survey, psm.TYPE_OPEN)
     return [
         mb_html.para(
             (
@@ -786,6 +787,15 @@ def _opening(survey: dict) -> list:
                 _ROM_METEG,
                 " after the stress (MAS).",
             )
+        ),
+        mb_html.para("For example:"),
+        mb_html.para(
+            (
+                _ref_link(example["bcv"]),
+                " — ",
+                *_case_chanted_word_cell(example),
+            ),
+            {"class": "center"},
         ),
         mb_html.para(
             (
