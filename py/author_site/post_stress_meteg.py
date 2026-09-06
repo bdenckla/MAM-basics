@@ -1344,9 +1344,8 @@ def _m23(survey: dict) -> list:
             f" {yanuax['mam_form']}, whose last syllable a guttural closes."
         ),
         _para(
-            "MAM has one other chanted word of exactly this shape, and the individual-cases"
-            f" page names it: {same_shape['mam_form']} at {ref_abbrev(same_shape['bcv'])},"
-            " with the same open final syllable."
+            f"Like {qumi} at Isaiah 23:12, MAM has {same_shape['mam_form']} at"
+            f" {ref_abbrev(same_shape['bcv'])}."
         ),
         _para(
             f"The counts above do not include the meteg of {qumi}. They are taken from the"
