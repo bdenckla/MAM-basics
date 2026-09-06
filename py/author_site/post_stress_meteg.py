@@ -471,20 +471,32 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (1430, 149, 1281, 0)
+    ) == (27976, 225, 27751, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_structural_type"] == {
-        psm.TYPE_OPEN: {"candidates": 1252, "with_mas": 85, "without_mas": 1167},
-        psm.TYPE_GUTTURAL: {"candidates": 150, "with_mas": 36, "without_mas": 114},
+        psm.TYPE_OPEN: {
+            "candidates": 23850,
+            "with_mas": 123,
+            "without_mas": 23727,
+        },
+        psm.TYPE_GUTTURAL: {
+            "candidates": 4083,
+            "with_mas": 60,
+            "without_mas": 4023,
+        },
         psm.TYPE_CLOSED_TSERE: {
-            "candidates": 28,
-            "with_mas": 28,
-            "without_mas": 0,
+            "candidates": 43,
+            "with_mas": 42,
+            "without_mas": 1,
         },
     }
+    assert (
+        sum(fit_for_mas["accent_grammar_token_counts"].values())
+        == fit_for_mas["candidate_chanted_words"]
+    )
     by_type = sum(_by_type_count(survey, kind) for kind in _TYPE_SOURCES)
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
@@ -1965,12 +1977,15 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". The analysis starts with every pair whose first word"
-                " has nonfinal stress and a conjunctive accent on that stress, and whose"
-                " next word has initial stress and a disjunctive accent. The"
-                " syllable immediately after the first word's stress is the potential"
-                " MAS syllable. The analysis checks every such syllable against the three"
-                " structural criteria and determines whether that syllable has MAS.",
+                ". The analysis reads each chanted word's one primary-stress position from"
+                " Phonetic MAM's independent jta field, then examines the syllable directly"
+                " after every nonfinal stress. The prose or poetic chanted-word accent"
+                " grammar tokenizes its marks, so a stress helper, a fixed-edge accent, a"
+                " meteg or silluq, or a secondary accent cannot be mistaken for another"
+                " primary stress. Every resulting syllable is tested against the three"
+                " structural criteria and classified as having MAS or lacking MAS; the"
+                " analysis applies no additional filter based on the adjacent chanted word's"
+                " accent or stress.",
             )
         ),
         _table(headers, rows),

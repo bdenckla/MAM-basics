@@ -92,6 +92,10 @@ from pathlib import Path
 
 from accgram import maqaf_nonfinal_accents as mna
 from accgram import poetic_filter
+from accgram import poetic_scanner
+from accgram import prose_scanner
+from accgram import uni_to_marks
+from accgram import chanted_word_accents as cwa
 from accgram.almost_errors_html_shared import accents_and_letters
 from accgram.uni_to_marks import is_accent
 from mb_cmn import bib_locales as tbn
@@ -630,6 +634,52 @@ def _chanted_word_events(node: object, out: list[object]) -> None:
         out.append(node)
 
 
+def _accent_grammar_tokens_by_entry(
+    *,
+    bb: str,
+    chnu: int,
+    vrnu: int,
+    system: str,
+    events: list[object],
+    has_legarmeh: prose_scanner.HasLegarmeh,
+) -> dict[int, tuple[str, ...]]:
+    """The complete accent-grammar token sequence of every chanted-word entry.
+
+    The candidate survey needs Phonetic MAM's independently supplied primary-stress position,
+    not a count of the raw marks on its stress letter.  The prose and poetic scanners instead
+    resolve helpers, fixed-edge accents, silluq/meteg context, and genuine secondary accents
+    into grammar tokens.  A candidate still is not discarded because its chanted word has zero
+    or several tokens: the three MAS types are structural conditions on the syllable after the
+    one ``jta`` stress.
+    """
+    entries: list[dict] = []
+    fragments: list[cwa.Frag] = []
+    for event in events:
+        if isinstance(event, dict) and event.get("fva"):
+            word = event["fva"].split(" ")[0]
+            entries.append(event)
+            fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
+        elif event == _PHONETIC_MAM_PASEQ:
+            assert fragments, (bb, chnu, vrnu)
+            prior = fragments[-1]
+            fragments[-1] = cwa.Frag(prior.text, prior.marks + PASEQ, True)
+    body, units = cwa._verse_units(fragments)
+    assert len(entries) == len(units), (bb, chnu, vrnu, len(entries), len(units))
+    tokens = (
+        prose_scanner.scan_accents(body, bb, chnu, vrnu, has_legarmeh)
+        if system == SYSTEM_PROSE
+        else poetic_scanner.scan_accent_tokens(body)
+    )
+    by_chanted_word = cwa._by_chanted_word(units, tokens)
+    assert len(by_chanted_word) == len(entries), (bb, chnu, vrnu)
+    return {
+        id(entry): tuple(token.type for token in word_tokens)
+        for entry, (_unit, word_tokens, _unfolded) in zip(
+            entries, by_chanted_word, strict=True
+        )
+    }
+
+
 def _intervening_punctuation(
     *, bcv: str, chanted_word: str, material: tuple[object, ...]
 ) -> tuple[str, ...]:
@@ -1057,36 +1107,22 @@ def _classify_one_word(
 def _fit_for_mas_candidate(
     *,
     bcv: str,
-    system: str,
     word: str,
     jta: str,
     parsed: dict,
-    following_word: str | None,
-    following_jta: str | None,
+    accent_grammar_tokens: tuple[str, ...],
 ) -> dict | None:
-    """One potential MAS syllable, or ``None`` when this pair is not a candidate.
+    """One structural MAS candidate, or ``None`` when no syllable follows the stress.
 
-    The pair has a regular conjunctive accent on the first chanted word's stress letter and a
-    disjunctive accent on the following chanted word's stress letter. The first chanted word
-    has nonfinal stress and the following chanted word has initial stress. The potential MAS
-    syllable is therefore the syllable directly after the first chanted word's stress.
+    Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
+    Unicode accent count cannot supply that information.  The candidate is the syllable directly
+    after a nonfinal stress.  It is included if it fits at least one of the three source-derived
+    structural types, without imposing an extra condition on its chanted word's marks or on the
+    following chanted word. Stress helpers, fixed-edge accents, and secondary accents consequently
+    cannot remove a syllable that is structurally fit for MAS.
     """
-    if following_word is None or following_jta is None:
-        return None
-    try:
-        _parse(following_word, following_jta)
-        accent = _stress_letter_accent({"bcv": bcv, "chanted_word": word, "jta": jta})
-        following_accent = _stress_letter_accent(
-            {"bcv": bcv, "chanted_word": following_word, "jta": following_jta}
-        )
-        following_is_initially_stressed = _first_syllable_is_stressed(following_jta)
-    except SurveyProblem:
-        return None
-    conjunctives = _STRESS_ACCENT_CONJUNCTIVES[system]
-    if accent not in conjunctives or following_accent in conjunctives:
-        return None
     stressed = parsed["stressed"]
-    if stressed == len(parsed["syllables"]) - 1 or not following_is_initially_stressed:
+    if stressed == len(parsed["syllables"]) - 1:
         return None
     potential_syllable = stressed + 1
     is_open = _syllable_is_open(parsed["syllables"][potential_syllable])
@@ -1109,6 +1145,7 @@ def _fit_for_mas_candidate(
         "jta": jta,
         "structural_types": types,
         "has_u05bd": has_u05bd,
+        "accent_grammar_token_count": len(accent_grammar_tokens),
     }
 
 
@@ -1138,18 +1175,25 @@ def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dic
     with_mas = sum(candidate["has_mas"] for candidate in fitting)
     return {
         "what": (
-            "Every candidate syllable immediately after a nonfinal stress in a regular"
-            " conjunctive chanted word followed by an initially stressed disjunctive chanted"
-            " word. Each candidate is classified by the three MAS structural predicates and"
-            " checked for U+05BD."
+            "Every syllable immediately after a nonfinal primary stress, classified by the"
+            " three MAS structural predicates and checked for U+05BD. Primary-stress"
+            " position comes independently from Phonetic MAM's jta field; no raw Unicode"
+            " accent-count condition excludes a candidate."
         ),
-        "candidate_pairs": len(candidates),
+        "candidate_chanted_words": len(candidates),
         "fitting_any_type": len(fitting),
         "with_mas": with_mas,
         "without_mas": len(fitting) - with_mas,
         "by_structural_type": by_type,
         "candidates_meeting_multiple_types": sum(
             len(candidate["structural_types"]) > 1 for candidate in fitting
+        ),
+        "accent_grammar_token_counts": dict(
+            sorted(
+                Counter(
+                    candidate["accent_grammar_token_count"] for candidate in candidates
+                ).items()
+            )
         ),
     }
 
@@ -1183,6 +1227,7 @@ def _scan(
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
         bb = bb_of_stem[path.stem]
+        has_legarmeh = prose_scanner.HasLegarmeh()
         data = json.loads(path.read_text(encoding="utf-8"))
         for vkey, verse in data.items():
             chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
@@ -1196,6 +1241,7 @@ def _scan(
                 vrnu,
                 _select_cantillation_strand(verse, cantillation),
                 found,
+                has_legarmeh=has_legarmeh,
                 dual_cantillation=dual,
                 dual_facts=_dual_cantillation_facts(verse) if dual else None,
                 template_entry_ids=(
@@ -1215,6 +1261,7 @@ def _one_verse(
     verse,
     found: dict,
     *,
+    has_legarmeh: prose_scanner.HasLegarmeh,
     dual_cantillation: bool | None = None,
     dual_facts: dict | None = None,
     template_entry_ids: set[int] | None = None,
@@ -1236,6 +1283,14 @@ def _one_verse(
         )
     events: list[object] = []
     _chanted_word_events(verse, events)
+    accent_grammar_tokens = _accent_grammar_tokens_by_entry(
+        bb=bb,
+        chnu=chnu,
+        vrnu=vrnu,
+        system=system,
+        events=events,
+        has_legarmeh=has_legarmeh,
+    )
     entries = [one for one in events if isinstance(one, dict)]
     scoped_entries = (
         entries
@@ -1316,12 +1371,10 @@ def _one_verse(
                 }
         fit_for_mas_candidate = _fit_for_mas_candidate(
             bcv=bcv,
-            system=system,
             word=word,
             jta=jta,
             parsed=parsed,
-            following_word=following_chanted_word,
-            following_jta=following_jta,
+            accent_grammar_tokens=accent_grammar_tokens[id(entry)],
         )
         if fit_for_mas_candidate is not None:
             found["fit_for_mas_candidates"].append(fit_for_mas_candidate)

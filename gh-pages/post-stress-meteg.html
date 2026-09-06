@@ -120,8 +120,7 @@ syllable. (<a href="#footnote-6">φ6</a>)</li>
 </table>
 <p>It is natural to ask how often a MAS actually appears in situations fit for a MAS, i.e. in
 situations conforming to the criteria of one of the three MAS types. The answer is that a MAS
-actually appears only 10.4% of the time in situations fit for MAS.
-(<a href="#footnote-7">φ7</a>)</p>
+actually appears only 0.8% of the time in situations fit for MAS. (<a href="#footnote-7">φ7</a>)</p>
 <p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
 This checkbox controls whether Hebrew letter spacing is expanded in the table above as well as the whole document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
 <script>
@@ -385,11 +384,13 @@ in a <span class="romanized">mappiq</span> <span class="romanized">he</span>: 13
 — <span lang="hbo">וּפִשְׁרֵ֔הּ</span></p>
 <h3 id="footnote-7">φ7 — Fit for MAS</h3>
 <p>"Fit for MAS" is analogous to the broader idea of a syllable fit for a
-<span class="romanized">meteg</span>. The analysis starts with every pair whose first word has
-nonfinal stress and a conjunctive accent on that stress, and whose next word has initial stress and
-a disjunctive accent. The syllable immediately after the first word's stress is the potential MAS
-syllable. The analysis checks every such syllable against the three structural criteria and
-determines whether that syllable has MAS.</p>
+<span class="romanized">meteg</span>. The analysis reads each chanted word's one primary-stress
+position from Phonetic MAM's independent jta field, then examines the syllable directly after every
+nonfinal stress. The prose or poetic chanted-word accent grammar tokenizes its marks, so a stress
+helper, a fixed-edge accent, a meteg or silluq, or a secondary accent cannot be mistaken for another
+primary stress. Every resulting syllable is tested against the three structural criteria and
+classified as having MAS or lacking MAS; the analysis applies no additional filter based on the
+adjacent chanted word's accent or stress.</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th>Type</th>
@@ -399,27 +400,27 @@ determines whether that syllable has MAS.</p>
 </tr>
 <tr>
 <td><abbr title="Type 1: the MAS is on an open final syllable">1</abbr></td>
-<td class="numeric">1,252</td>
-<td class="numeric">85</td>
-<td class="numeric">1,167</td>
+<td class="numeric">23,850</td>
+<td class="numeric">123</td>
+<td class="numeric">23,727</td>
 </tr>
 <tr>
 <td><abbr title="Type 2: the word is closed by a guttural">2</abbr></td>
-<td class="numeric">150</td>
-<td class="numeric">36</td>
-<td class="numeric">114</td>
+<td class="numeric">4,083</td>
+<td class="numeric">60</td>
+<td class="numeric">4,023</td>
 </tr>
 <tr>
 <td><abbr title="Type 3: the MAS is on a closed, final, tsere-vowelled syllable">3</abbr></td>
-<td class="numeric">28</td>
-<td class="numeric">28</td>
-<td class="numeric">0</td>
+<td class="numeric">43</td>
+<td class="numeric">42</td>
+<td class="numeric">1</td>
 </tr>
 <tr>
 <td>any of the three types</td>
-<td class="numeric">1,430</td>
-<td class="numeric">149</td>
-<td class="numeric">1,281</td>
+<td class="numeric">27,976</td>
+<td class="numeric">225</td>
+<td class="numeric">27,751</td>
 </tr>
 </table>
 </body>

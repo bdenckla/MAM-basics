@@ -341,29 +341,34 @@
   }
  },
  "fit_for_mas": {
-  "what": "Every candidate syllable immediately after a nonfinal stress in a regular conjunctive chanted word followed by an initially stressed disjunctive chanted word. Each candidate is classified by the three MAS structural predicates and checked for U+05BD.",
-  "candidate_pairs": 2418,
-  "fitting_any_type": 1430,
-  "with_mas": 149,
-  "without_mas": 1281,
+  "what": "Every syllable immediately after a nonfinal primary stress, classified by the three MAS structural predicates and checked for U+05BD. Primary-stress position comes independently from Phonetic MAM's jta field; no raw Unicode accent-count condition excludes a candidate.",
+  "candidate_chanted_words": 54019,
+  "fitting_any_type": 27976,
+  "with_mas": 225,
+  "without_mas": 27751,
   "by_structural_type": {
    "open final syllable": {
-    "candidates": 1252,
-    "with_mas": 85,
-    "without_mas": 1167
+    "candidates": 23850,
+    "with_mas": 123,
+    "without_mas": 23727
    },
    "chanted word closed by a guttural": {
-    "candidates": 150,
-    "with_mas": 36,
-    "without_mas": 114
+    "candidates": 4083,
+    "with_mas": 60,
+    "without_mas": 4023
    },
    "closed tsere-vowelled syllable": {
-    "candidates": 28,
-    "with_mas": 28,
-    "without_mas": 0
+    "candidates": 43,
+    "with_mas": 42,
+    "without_mas": 1
    }
   },
-  "candidates_meeting_multiple_types": 0
+  "candidates_meeting_multiple_types": 0,
+  "accent_grammar_token_counts": {
+   "0": 16,
+   "1": 53177,
+   "2": 826
+  }
  },
  "stress_accent_classification": {
   "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table.",
