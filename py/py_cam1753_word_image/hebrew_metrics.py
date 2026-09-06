@@ -16,6 +16,16 @@ def strip_heb(s):
     return "".join(out)
 
 
+def no_marks_comparison_key(s):
+    """Return the shared Cambridge comparison key without marks or format chars.
+
+    The key retains punctuation, including maqaf, PASEQ, and sof pasuq.  It is
+    for matching only; callers retain their pointed strings for display and
+    transcription.
+    """
+    return strip_heb(s)
+
+
 def join_maqaf(words):
     """Join maqaf-ending words with the following word. Returns new list."""
     result = []

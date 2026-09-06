@@ -20,6 +20,7 @@ from py_cam1753_loc.gen_flat_stream import (
     build_flat_stream,
     get_page_verses,
 )
+from py_cam1753_word_image.hebrew_metrics import no_marks_comparison_key
 
 LB_DIR = cam1753_paths.line_breaks_dir()
 
@@ -418,13 +419,17 @@ def main():
                 stream = load_stream(path)
                 json_words.extend(x for x in stream if isinstance(x, str))
 
-            # JSON words should appear as a contiguous subsequence of MAM words
+            # JSON words should appear as a contiguous subsequence of MAM words.
+            # Compare a conservative no-marks key here only: the pointed JSON
+            # strings remain the page's display and transcription data.
             # (MAM may have extra words at start/end due to whole-verse extraction)
             if json_words:
                 # Find where json_words[0] first appears in mam_words
                 match_start = None
                 for i in range(len(mam_words) - len(json_words) + 1):
-                    if mam_words[i] == json_words[0]:
+                    if no_marks_comparison_key(mam_words[i]) == no_marks_comparison_key(
+                        json_words[0]
+                    ):
                         match_start = i
                         break
                 if match_start is None:
@@ -448,7 +453,9 @@ def main():
                         # Compare word by word
                         mismatches = []
                         for j, (jw, mw) in enumerate(zip(json_words, mam_slice)):
-                            if jw != mw:
+                            if no_marks_comparison_key(jw) != no_marks_comparison_key(
+                                mw
+                            ):
                                 mismatches.append((j, jw, mw))
                                 if len(mismatches) >= 5:
                                     break
