@@ -22,9 +22,10 @@ WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and acce
 subject; and what the page is about is which SYLLABLE a mark falls in, which a reader cannot
 see without the vowels that make the syllables.  Both of the page's three structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
-the sense the house rule allows for.  Every form is lifted from its labelled text at generation
-time: MAM forms through ``mam_form`` and the Fit-for-MAS lack pages from their analysed Phonetic
-MAM forms.  None is typed here.
+the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
+generation time. The Fit-for-MAS lack pages use each record's ``mam_form`` and
+``following_mam_form``; analysis-only annotations are omitted before HTML is written. None is
+typed here.
 
 THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts and does not
 require them; the sections are cited by number and their content paraphrased, so no private
@@ -315,7 +316,7 @@ def gen_html_files(
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
     top_dir = paths.gh_pages_dir() if out_dir is None else Path(out_dir)
-    return (
+    out_paths = (
         _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
         _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
@@ -331,6 +332,19 @@ def gen_html_files(
             build_type_1_lacks_mas_body(survey),
         ),
     )
+    _assert_no_phonetic_mam_annotations_in_lacks_mas_pages(out_paths[-2:])
+    return out_paths
+
+
+def _assert_no_phonetic_mam_annotations_in_lacks_mas_pages(
+    paths_to_check: tuple[str, str],
+) -> None:
+    """Prevent Phonetic MAM's analysis-only marks from reaching the two reader pages."""
+    forbidden = {chr(code_point) for code_point in psm._PHONETIC_MAM_ANNOTATIONS}
+    for path_string in paths_to_check:
+        path = Path(path_string)
+        present = forbidden & set(path.read_text(encoding="utf-8"))
+        assert not present, (path, present)
 
 
 def _write_page(path: Path, title: str, body: list) -> str:
@@ -533,6 +547,8 @@ def pin_claims(survey: dict) -> None:
         and len(record["types"]) == 1
         and record["chanted_word"]
         and record["following_chanted_word"]
+        and record["mam_form"]
+        and record["following_mam_form"]
         for record in fitting_records
     )
     assert Counter(
@@ -794,8 +810,8 @@ def _para(text: str) -> object:
 
 
 def _hebrew_cell(form: str | None) -> tuple:
-    """A pointed Hebrew form wrapped as an hbo run for an RTL table cell."""
-    return wrap_hebrew_runs(form or "")
+    """A pointed reader-facing Hebrew form wrapped as an hbo run for an RTL table cell."""
+    return wrap_hebrew_runs(psm._as_mam_would_write_it(form or ""))
 
 
 def _ref_link(bcv: str) -> object:
@@ -1327,11 +1343,16 @@ def _type_2_case_row(record: dict) -> object:
 
 
 def _lacks_mas_case_row(record: dict) -> object:
-    """One chanted word fit for MAS but lacking MAS."""
+    """One MAM chanted-word pair fit for MAS but lacking MAS."""
+    punctuation = "".join(record["intervening_mam_punctuation"] or ())
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
-            mb_html.table_datum(_hebrew_cell(record["chanted_word"]), _HEBREW_CELL),
+            mb_html.table_datum(_hebrew_cell(record["mam_form"]), _HEBREW_CELL),
+            mb_html.table_datum(_hebrew_cell(punctuation), _HEBREW_CELL),
+            mb_html.table_datum(
+                _hebrew_cell(record["following_mam_form"]), _HEBREW_CELL
+            ),
         )
     )
 
@@ -1419,11 +1440,11 @@ def build_type_2_lacks_mas_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("Every type 2 case lacking MAS"),
         _para(
-            f"The table lists all {len(records):,} chanted words fit for MAS as type 2"
+            f"The table lists all {len(records):,} chanted-word pairs fit for MAS as type 2"
             " that lack MAS."
         ),
         _table(
-            ("Verse", "Chanted word"),
+            ("Verse", "Chanted word", "Punctuation", "Following chanted word"),
             [_lacks_mas_case_row(record) for record in records],
         ),
         _hebrew_spacing_option(),
@@ -1440,16 +1461,16 @@ def build_type_1_lacks_mas_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("A random selection of type 1 cases lacking MAS"),
         _para(
-            "Each chanted word in the two tables is fit for MAS as type 1 and lacks MAS."
+            "Each chanted-word pair in the two tables is fit for MAS as type 1 and lacks MAS."
         ),
         mb_html.heading_level_3(f"{len(prose_records):,} prose cases"),
         _table(
-            ("Verse", "Chanted word"),
+            ("Verse", "Chanted word", "Punctuation", "Following chanted word"),
             [_lacks_mas_case_row(record) for record in prose_records],
         ),
         mb_html.heading_level_3(f"{len(poetic_records):,} poetic cases"),
         _table(
-            ("Verse", "Chanted word"),
+            ("Verse", "Chanted word", "Punctuation", "Following chanted word"),
             [_lacks_mas_case_row(record) for record in poetic_records],
         ),
         _hebrew_spacing_option(),
