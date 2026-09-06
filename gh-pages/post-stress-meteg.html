@@ -9,10 +9,58 @@
 </head>
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1><span class="romanized">Meteg</span> after the primary stress</h1>
-<p>A <span class="romanized">meteg</span> almost always comes before the stressed syllable of its
-word, but it can also come after the stress. MAM has 232 cases of
-<span class="romanized">meteg</span> after the stress (MAS).</p>
-<p>For example:</p>
+<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
+This checkbox controls whether Hebrew letter spacing is expanded in this document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
+<script>
+(() => {
+  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
+  const bodyClass = "post-stress-meteg-expanded-hebrew";
+  const storageKey = "post-stress-meteg-expanded-hebrew";
+  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
+  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
+  const hebrewSelector = '[lang="hbo"]';
+  let saved = null;
+  try {
+    saved = localStorage.getItem(storageKey);
+  } catch (_error) {
+    // The checkbox still works for the open page if its browser has no page storage.
+  }
+  if (saved !== null) {
+    checkbox.checked = saved === "true";
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+  }
+  checkbox.addEventListener("change", () => {
+    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
+      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
+    }
+    document.body.classList.toggle(bodyClass, checkbox.checked);
+    try {
+      localStorage.setItem(storageKey, String(checkbox.checked));
+    } catch (_error) {
+      // The page's in-memory preference remains usable without page storage.
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    const hebrew = event.target.closest(hebrewSelector);
+    if (hebrew === null) {
+      return;
+    }
+    event.preventDefault();
+    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
+      (!hebrew.classList.contains(individualNormalClass) &&
+       document.body.classList.contains(bodyClass));
+    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
+    hebrew.classList.toggle(individualNormalClass, isExpanded);
+  });
+})();
+</script>
+<p>A
+<span class="romanized">meteg</span> almost always comes before the stressed syllable of its word,
+but it can also come after the stress. MAM has 232 cases of <span class="romanized">meteg</span>
+after the stress (MAS). For example:</p>
 <p class="center"><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c22v7">Gen.
 22:7</a> — <span lang="hbo">הִנֶּ֣נִּֽי</span>
 <span class="post-stress-meteg-next-word"><span lang="hbo">בְנִ֑י</span></span></p>
@@ -20,9 +68,6 @@ word, but it can also come after the stress. MAM has 232 cases of
 word (having two or more atoms connected by <span class="romanized">maqaf</span> marks). By "atom",
 we mean a sequence of pointed letters uninterrupted by space, <span class="romanized">maqaf</span>,
 or any other punctuation.</p>
-<p>The location of a word's stress is not always obvious. In this document, we locate stress using
-<a href="https://bdenckla.github.io/phonetic-hbo/">Phonetic MAM</a>, which marks the stress of every
-word.</p>
 <h2>MAS census by cantillation system</h2>
 <table class="limited-width post-stress-meteg-table">
 <tr>
@@ -55,22 +100,20 @@ word.</p>
 </tr>
 </table>
 <p>So a <span class="romanized">meteg</span> comes before the stress 14,905 times and after it 232
-times.</p>
-<p>The prose row in the table above is for the 21 books plus the verses of Job's prose frame; the
-poetic row is for the verses of Job's main, poetic section plus all Psalms and the whole book of
-Proverbs. Only one cantillation (<a href="#footnote-1">φ1</a>) of dually cantillated passages
-participates in every analysis on this page, including the census above.</p>
+times. See the <a href="post-stress-meteg-methods.html">Methods</a>.</p>
 <h2>General facts about MAS</h2>
 <ul>
-<li>In every MAS case, the MAS immediately follows the stress syllable.</li>
 <li>In every MAS case, the stress syllable has a conjunctive accent
-(<a href="#footnote-2">φ2</a>).</li>
-<li>In every MAS case but one, the next word has initial stress (<a href="#footnote-3">φ3</a>).</li>
-<li>In every MAS case except four (<a href="#footnote-4">φ4</a>), the MAS syllable is final.</li>
+(<a href="#footnote-1">φ1</a>).</li>
+<li>In every MAS case, the MAS syllable comes right after the stress syllable.</li>
+<li>In every MAS case except four (<a href="#footnote-2">φ2</a>), the MAS syllable is final.</li>
+<li>In every MAS case but one (<a href="#footnote-3">φ3</a>), the next word has initial stress.</li>
+<li>In 92.7% of MAS cases (<a href="#footnote-4">φ4</a>), the next word has a disjunctive
+accent.</li>
 </ul>
 <h2>The three types of MAS</h2>
 <p>All but 7 cases of MAS can be sorted into one of the three following types:
-<a href="#footnote-5">φ5</a></p>
+(<a href="#footnote-5">φ5</a>)</p>
 <ul>
 <li>In type 1, the MAS is on an open final syllable.</li>
 <li>In type 2, the word is closed by a guttural.</li>
@@ -118,176 +161,18 @@ syllable. (<a href="#footnote-6">φ6</a>)</li>
 <span lang="hbo">לֹ֖א</span></span></td>
 </tr>
 </table>
-<p>It is natural to ask how often a MAS actually appears in situations fit for a MAS, i.e. in
-situations conforming to the criteria of one of the three MAS types and having a following word with
-initial stress and a disjunctive accent. The answer is that a MAS actually appears only 6.5% of the
-time in situations fit for MAS. (<a href="#footnote-7">φ7</a>)</p>
-<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-This checkbox controls whether Hebrew letter spacing is expanded in the table above as well as the whole document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
-<script>
-(() => {
-  const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
-  const bodyClass = "post-stress-meteg-expanded-hebrew";
-  const storageKey = "post-stress-meteg-expanded-hebrew";
-  const individualExpandedClass = "post-stress-meteg-individually-expanded-hebrew";
-  const individualNormalClass = "post-stress-meteg-individually-normal-hebrew";
-  const hebrewSelector = '[lang="hbo"]';
-  let saved = null;
-  try {
-    saved = localStorage.getItem(storageKey);
-  } catch (_error) {
-    // The checkbox still works for the open page if its browser has no page storage.
-  }
-  if (saved !== null) {
-    checkbox.checked = saved === "true";
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-  }
-  checkbox.addEventListener("change", () => {
-    for (const hebrew of document.querySelectorAll(hebrewSelector)) {
-      hebrew.classList.remove(individualExpandedClass, individualNormalClass);
-    }
-    document.body.classList.toggle(bodyClass, checkbox.checked);
-    try {
-      localStorage.setItem(storageKey, String(checkbox.checked));
-    } catch (_error) {
-      // The page's in-memory preference remains usable without page storage.
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) {
-      return;
-    }
-    const hebrew = event.target.closest(hebrewSelector);
-    if (hebrew === null) {
-      return;
-    }
-    event.preventDefault();
-    const isExpanded = hebrew.classList.contains(individualExpandedClass) ||
-      (!hebrew.classList.contains(individualNormalClass) &&
-       document.body.classList.contains(bodyClass));
-    hebrew.classList.toggle(individualExpandedClass, !isExpanded);
-    hebrew.classList.toggle(individualNormalClass, isExpanded);
-  });
-})();
-</script>
-<p>The
-<a href="post-stress-meteg-cases.html">232 individual cases</a> are listed separately and can be
-filtered by type.</p>
+<p>The <a href="post-stress-meteg-cases.html">232 individual cases</a> are listed separately and can
+be filtered by type.</p>
 <p>The <a href="post-stress-meteg-misc.html">7 misc cases</a> have a separate table and descriptions
 of the named misc subtypes.</p>
 <p>The <a href="post-stress-meteg-type-2.html">60 type 2 cases</a> have a separate table whose
 filter uses the next word's initial consonant.</p>
-<h2>The <span class="romanized">meteg</span> sharing a letter with
-<span class="romanized">oleh</span></h2>
-<p>6 <span class="romanized">meteg</span> marks share a letter with
-<span class="romanized">oleh</span>. The table labels each <span class="romanized">meteg</span> as
-MBS or MAS.</p>
-<table class="limited-width post-stress-meteg-table">
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c2v7">Ps.
-2:7</a></td>
-<td dir="rtl"><span lang="hbo">אֶֽ֫ל־חֹ֥ק</span></td>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-</tr>
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c78v38">Ps.
-78:38</a></td>
-<td dir="rtl"><span lang="hbo">וְֽלֹא־יַֽ֫שְׁחִ֥ית</span></td>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-</tr>
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c80v15">Ps.
-80:15</a></td>
-<td dir="rtl"><span lang="hbo">שֽׁ֫וּב־נָ֥א</span></td>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-</tr>
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c14v14">Job
-14:14</a></td>
-<td dir="rtl"><span lang="hbo">הֲיִֽ֫חְיֶ֥ה</span></td>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-</tr>
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c37v7">Ps.
-37:7</a></td>
-<td dir="rtl"><span lang="hbo">וְהִתְח֢וֹלֵֽ֫ל</span>
-<span class="post-stress-meteg-next-word"><span lang="hbo">ל֥וֹ</span></span></td>
-<td><abbr title="meteg after the stress">MAS</abbr></td>
-</tr>
-<tr>
-<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c8v34">Prov.
-8:34</a></td>
-<td dir="rtl"><span lang="hbo">שֹׁמֵ֢עַֽ֫</span>
-<span class="post-stress-meteg-next-word"><span lang="hbo">לִ֥י</span></span></td>
-<td><abbr title="meteg after the stress">MAS</abbr></td>
-</tr>
-</table>
-<p>We count each such <span class="romanized">meteg</span> as if the
-<span class="romanized">oleh</span> were not there, because <span class="romanized">oleh</span> is
-not an accent indicating stress, even when it is the last accent in the word, as it is in the MAS
-rows above. In other words, a MAS word with a <span class="romanized">meteg</span> might at first
-look like some weird "<span class="romanized">meteg</span> on the stress" (neither before nor
-after), but it is not!</p>
+<p>It is natural to ask how often a MAS actually appears in situations fit for a MAS, i.e. in
+situations conforming to the criteria of one of the three MAS types and having a following word with
+initial stress and a disjunctive accent. The answer is that a MAS actually appears only 6.5% of the
+time in situations fit for MAS. (<a href="#footnote-7">φ7</a>)</p>
 <h2>Footnotes</h2>
-<h3 id="footnote-1">φ1 — Dually cantillated passages</h3>
-<p>MAM has dual-cantillation templates in the two Decalogues and Genesis 35:22. The analyses
-presented in this document use only the cant-<span class="romanized">alef</span> branch of each
-template. The table below shows that this choice has no effect on the MAS count and changes the
-other two counts only by 1.</p>
-<table class="limited-width post-stress-meteg-table">
-<tr>
-<th>count</th>
-<th>cant-<span class="romanized">alef</span></th>
-<th>cant-<span class="romanized">bet</span></th>
-</tr>
-<tr>
-<td>Words</td>
-<td class="numeric">130</td>
-<td class="numeric">129</td>
-</tr>
-<tr>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-<td class="numeric">12</td>
-<td class="numeric">13</td>
-</tr>
-<tr>
-<td><abbr title="meteg after the stress">MAS</abbr></td>
-<td class="numeric">0</td>
-<td class="numeric">0</td>
-</tr>
-</table>
-<p>Only <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c5v14">Deut.
-5:14</a> differs in the number of words. cant-<span class="romanized">alef</span> has two words
-where cant-<span class="romanized">bet</span> has one <span class="romanized">maqaf</span>
-compound.</p>
-<table class="limited-width post-stress-meteg-table">
-<tr>
-<td>cant-<span class="romanized">alef</span></td>
-<td dir="rtl"><span lang="hbo">כ֣י ע֤בד</span></td>
-</tr>
-<tr>
-<td>cant-<span class="romanized">bet</span></td>
-<td dir="rtl"><span lang="hbo">כי־ע֥בד</span></td>
-</tr>
-</table>
-<p>Only <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c5v6">Deut.
-5:6</a> differs in <span class="romanized">meteg</span>s before the stress.
-cant-<span class="romanized">bet</span> has one <span class="romanized">meteg</span> before the
-stress in the word below; cant-<span class="romanized">alef</span> has the two words below, neither
-with a <span class="romanized">meteg</span>.</p>
-<table class="limited-width post-stress-meteg-table">
-<tr>
-<td>cant-<span class="romanized">alef</span></td>
-<td dir="rtl"><span lang="hbo">לֹא־יִהְיֶ֥ה לְךָ֛</span></td>
-<td>no <span class="romanized">meteg</span></td>
-</tr>
-<tr>
-<td>cant-<span class="romanized">bet</span></td>
-<td dir="rtl"><span lang="hbo">לֹ֣א יִהְיֶֽה־לְךָ֩</span></td>
-<td><abbr title="meteg before the stress">MBS</abbr></td>
-</tr>
-</table>
-<h3 id="footnote-2">φ2 — A <span class="romanized">meteg</span> after
+<h3 id="footnote-1">φ1 — A <span class="romanized">meteg</span> after
 <span class="romanized">silluq</span> in Leningrad</h3>
 <p>In the Leningrad Codex, the last word of 1 Samuel 17:5 seems to have a
 <span class="romanized">meteg</span> after its <span class="romanized">silluq</span>.</p>
@@ -313,13 +198,7 @@ BHS-derived editions such as UXLC and WLC:</p>
 </table>
 <p>A <span class="romanized">meteg</span> after a <span class="romanized">silluq</span> is hard to
 identify in Unicode, since the two marks share one codepoint.</p>
-<h3 id="footnote-3">φ3 —
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
-46:14</a></h3>
-<p>At <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
-46:14</a>, the word after the MAS lacks initial stress: <span lang="hbo">וְהַשְׁמִ֣יעֽוּ</span>
-<span class="post-stress-meteg-next-word"><span lang="hbo">בְמִגְדּ֔וֹל</span></span>.</p>
-<h3 id="footnote-4">φ4 — The four nonfinal MAS syllables</h3>
+<h3 id="footnote-2">φ2 — The four nonfinal MAS syllables</h3>
 <p>The four exceptions are type-2 MAS cases: each MAS syllable is an open penultimate
 <span class="romanized">tsere</span> syllable before a final
 furtive-<span class="romanized">pataḥ</span> syllable.</p>
@@ -346,6 +225,123 @@ furtive-<span class="romanized">pataḥ</span> syllable.</p>
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c5v10">Job 5:10</a></td>
 <td dir="rtl"><span lang="hbo">וְשֹׁ֥לֵֽחַ</span>
 <span class="post-stress-meteg-next-word"><span lang="hbo">מַ֝֗יִם</span></span></td>
+</tr>
+</table>
+<h3 id="footnote-3">φ3 —
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
+46:14</a></h3>
+<p>At <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
+46:14</a>, the word after the MAS lacks initial stress: <span lang="hbo">וְהַשְׁמִ֣יעֽוּ</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">בְמִגְדּ֔וֹל</span></span>.</p>
+<h3 id="footnote-4">φ4 — Following chanted words with a conjunctive accent</h3>
+<p>The following chanted word is gray in every row. The table lists every MAS case whose following
+chanted word has a conjunctive accent.</p>
+<table class="limited-width post-stress-meteg-table">
+<tr>
+<th>Verse</th>
+<th>Word</th>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A3-Levit.html#c20v4">Lev.
+20:4</a></td>
+<td dir="rtl"><span lang="hbo">יַעְלִ֩ימֽוּ֩</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">עַ֨ם</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c4v33">Deut.
+4:33</a></td>
+<td dir="rtl"><span lang="hbo">הֲשָׁ֣מַֽע</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">עָם֩</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c2v8">1 Kgs.
+2:8</a></td>
+<td dir="rtl"><span lang="hbo">וָאֶשָּׁ֨בַֽע</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">ל֤וֹ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c11v38">1 Kgs.
+11:38</a></td>
+<td dir="rtl"><span lang="hbo">וּבָנִ֨יתִֽי</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">לְךָ֤</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c37v18">Jer.
+37:18</a></td>
+<td dir="rtl"><span lang="hbo">חָטָ֨אתִֽי</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">לְךָ֤</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c37v7">Ps.
+37:7</a></td>
+<td dir="rtl"><span lang="hbo">וְהִתְח֢וֹלֵֽ֫ל</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">ל֥וֹ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c69v7">Ps.
+69:7</a></td>
+<td dir="rtl"><span lang="hbo">אַל־יִכָּ֣לְמֽוּ</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">בִ֣י</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c80v14">Ps.
+80:14</a></td>
+<td dir="rtl"><span lang="hbo">יְכַרְסְמֶ֣נָּֽה</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">חֲזִ֣יר</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c89v9">Ps.
+89:9</a></td>
+<td dir="rtl"><span lang="hbo">מִי־כָמ֖וֹךָֽ</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">חֲסִ֥ין</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c90v2">Ps.
+90:2</a></td>
+<td dir="rtl"><span lang="hbo">וַתְּח֣וֹלֵֽל</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">אֶ֣רֶץ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c139v6">Ps.
+139:6</a></td>
+<td dir="rtl"><span lang="hbo">פְּלִ֣יאָֽה</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">דַ֣עַת</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c8v34">Prov.
+8:34</a></td>
+<td dir="rtl"><span lang="hbo">שֹׁמֵ֢עַֽ֫</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">לִ֥י</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c9v7">Prov.
+9:7</a></td>
+<td dir="rtl"><span lang="hbo">לֹקֵ֣חַֽ</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">ל֣וֹ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c29v6">Prov.
+29:6</a></td>
+<td dir="rtl"><span lang="hbo">בְּפֶ֤שַֽׁע</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">אִ֣ישׁ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E4-Ecclesiastes.html#c7v25">Eccl.
+7:25</a></td>
+<td dir="rtl"><span lang="hbo">סַבּ֨וֹתִֽי</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">אֲנִ֤י</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c3v12">Dan.
+3:12</a></td>
+<td dir="rtl"><span lang="hbo">לָא־שָׂ֨מֽוּ</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">עֲלָ֤ךְ</span></span></td>
+</tr>
+<tr>
+<td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c20v30">2 Chr.
+20:30</a></td>
+<td dir="rtl"><span lang="hbo">וַיָּ֧נַֽח</span>
+<span class="post-stress-meteg-next-word"><span lang="hbo">ל֦וֹ</span></span></td>
 </tr>
 </table>
 <h3 id="footnote-5">φ5 — Sources for types 1–3</h3>

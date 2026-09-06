@@ -21,11 +21,8 @@ here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
 ``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per verse on
 both sides and names every verse where the two disagree, so the page can say which MAM its
-figures describe. It is not a source-form alignment: it neither chooses MAM-parsed-plus template
-arguments nor classifies the U+05C0 glyph as legarmeh or narrow-sense paseq. MAM-simple is the
-right input for that per-verse count. The template-aware Fit-for-MAS audit and its 2026-09-06
-result are recorded in ``doc/post-stress-meteg-method.md``. Refreshing the oracle is al-hatorah's
-business; re-running this survey afterwards is one command.
+figures describe.  Refreshing the oracle is al-hatorah's business; re-running this survey
+afterwards is one command.
 
 NUCLEI, AND WHERE THIS PARTS FROM ``final_stress``.  A syllable's nucleus is a point written
 in the text, so the Hebrew's syllable count can be had without syllabifying it: a full vowel
@@ -1037,6 +1034,7 @@ def _record(
     before_qere: str | None,
     following_chanted_word: str | None,
     following_jta: str | None,
+    following_chanted_word_accent_classification: str | None,
     intervening_punctuation: tuple[str, ...],
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
@@ -1079,6 +1077,9 @@ def _record(
             if following_jta is not None
             else None
         ),
+        "following_chanted_word_accent_classification": (
+            following_chanted_word_accent_classification
+        ),
         "has_sof_pasuq": parsed["has_sof_pasuq"],
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
         "structural_type": structural_type,
@@ -1101,6 +1102,7 @@ def _classify_one_word(
     before_qere: str | None,
     following_chanted_word: str | None,
     following_jta: str | None,
+    following_chanted_word_accent_classification: str | None,
     intervening_material: tuple[object, ...],
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
@@ -1144,6 +1146,9 @@ def _classify_one_word(
             before_qere=before_qere,
             following_chanted_word=following_chanted_word,
             following_jta=following_jta,
+            following_chanted_word_accent_classification=(
+                following_chanted_word_accent_classification
+            ),
             intervening_punctuation=(
                 _intervening_punctuation(
                     bcv=bcv,
@@ -1322,7 +1327,10 @@ def _lacks_mas_case_lists(records: list[dict]) -> dict:
 
 
 def _fit_for_mas_summary(
-    candidates: list[dict], post_stress: list[dict], words_by_bcv: dict[str, list[str]]
+    candidates: list[dict],
+    post_stress: list[dict],
+    words_by_bcv: dict[str, list[str]],
+    context_by_bcv: dict[str, list[object]],
 ) -> dict:
     """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
     mas_keys = {
@@ -1344,7 +1352,7 @@ def _fit_for_mas_summary(
         for candidate in following_word_conditions
         if candidate["structural_types"]
     ]
-    unjoined = _attach_mam_forms(fitting, words_by_bcv)
+    unjoined = _attach_mam_forms(fitting, words_by_bcv, context_by_bcv)
     assert not unjoined, unjoined
     by_type = {}
     for kind in (TYPE_OPEN, TYPE_GUTTURAL, TYPE_CLOSED_TSERE):
@@ -1574,6 +1582,15 @@ def _one_verse(
             if following_entry is not None
             else ()
         )
+        following_chanted_word_accent_classification = (
+            (
+                "disjunctive"
+                if _has_a_disjunctive_accent(system, following_accent_grammar_tokens)
+                else "conjunctive"
+            )
+            if following_entry is not None
+            else None
+        )
         intervening_material = (
             tuple(
                 events[
@@ -1635,6 +1652,9 @@ def _one_verse(
             before_qere=entry.get("before_qfikq"),
             following_chanted_word=following_chanted_word,
             following_jta=following_jta,
+            following_chanted_word_accent_classification=(
+                following_chanted_word_accent_classification
+            ),
             intervening_material=intervening_material,
         )
     found["metegs_by_verse"][bcv] = metegs
@@ -1656,9 +1676,6 @@ def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
     MAM numbers its verses MAM's way; ``test_final_stress_vs_phonetic_mam._measured`` reaches
     for the same tree for the same reason. ``cantillation`` selects an individual
     dual-cantillation projection; otherwise this returns MAM-simple's combined representation.
-    The result supplies reader-facing MAM forms and the ``currency`` meter, not a semantic
-    interpretation of MAM-parsed-plus templates. In particular, a standalone U+05C0 token here
-    does not establish narrow-sense paseq rather than legarmeh.
     """
     from accgram import mam_simple_verse
 
@@ -1667,6 +1684,47 @@ def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
     if cantillation is None:
         return mna.mam_words(refs_by_book, mam_dir)
     return mna.mam_words_for_cantillation(refs_by_book, cantillation, mam_dir)
+
+
+def _join_mam_context_tokens(atoms: list[object]) -> list[object]:
+    """MAM-simple atoms folded into chanted words, retaining native PASOLEG markers."""
+    from accgram import mam_simple_verse
+
+    out: list[object] = []
+    pending = ""
+    for atom in atoms:
+        if isinstance(atom, mam_simple_verse.MAMNativePaseq):
+            if pending:
+                raise SurveyProblem(
+                    "MAM native paseq/legarmeh occurs before its preceding atom has ended: "
+                    f"{pending!r}"
+                )
+            out.append(atom)
+            continue
+        if not isinstance(atom, str):
+            raise SurveyProblem(f"unexpected MAM-simple atom: {atom!r}")
+        pending += atom
+        if not pending.endswith(MAQAF):
+            out.append(pending)
+            pending = ""
+    if pending:
+        out.append(pending)
+    return out
+
+
+def _mam_context_by_bcv() -> dict[str, list[object]]:
+    """MAM chanted-word streams with MAM's native paseq/legarmeh categories retained."""
+    from accgram import mam_simple_verse
+
+    mam_dir = paths.require_mam_simple_vtrad_mam_dir()
+    refs_by_book = mam_simple_verse.mam_simple_refs(mam_dir)
+    loaded = mam_simple_verse.load_mam_simple_for_refs(
+        mam_dir, refs_by_book, include_native_paseq_roles=True
+    )
+    return {
+        bcv: _join_mam_context_tokens(payload["mam_simple_verse"]["vels"])
+        for bcv, payload in loaded.items()
+    }
 
 
 def _fold_qamats_qatan(key: str) -> str:
@@ -1745,54 +1803,80 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
 
 
 def _following_mam_context(
-    record: dict, stream: list[str]
-) -> tuple[str | None, tuple[str, ...] | None]:
-    """The following MAM chanted word and intervening punctuation, if the context resolves.
+    record: dict, stream: list[object]
+) -> tuple[str | None, tuple[dict[str, str], ...] | None]:
+    """The following MAM chanted word and its native punctuation context, if resolved.
 
-    The MAM-simple stream keeps U+05C0 as a standalone token. This makes the usual
-    two-chanted-word context and the four ``vayomer`` contexts one routine: the current MAM
-    chanted word, zero or more punctuation tokens, then the following MAM chanted word. The
-    snapshot's spelling can differ from MAM's at either chanted word, so the settled current MAM
-    form identifies the first chanted word; the following chanted word and punctuation then come
-    directly from the MAM stream. The standalone token has no legarmeh-versus-narrow-sense-paseq
-    analysis; that question needs MAM-parsed-plus.
+    MAM-simple distinguishes the two PASOLEG meanings structurally: ``lp-paseq`` and
+    ``lp-legarmeih``.  The page needs that distinction to put a narrow-sense paseq with the
+    following chanted word and a legarmeh with the preceding chanted word, so this routine keeps
+    MAM's native category rather than reconstructing one from an accent grammar or the glyph.
     """
+    from accgram import mam_simple_verse
+
     current = record["mam_form"]
     following = record["following_chanted_word"]
     if current is None or following is None:
         return None, None
     snapshot_following_as_mam = _as_mam_would_write_it(following)
     source_punctuation = tuple(record.get("intervening_punctuation", ()))
-    candidates: list[tuple[str, tuple[str, ...]]] = []
-    source_matched_candidates: list[tuple[str, tuple[str, ...]]] = []
+    candidates: list[tuple[str, tuple[dict[str, str], ...]]] = []
+    source_matched_candidates: list[tuple[str, tuple[dict[str, str], ...]]] = []
     for index, word in enumerate(stream):
         if word != current:
             continue
-        punctuation = []
+        punctuation: list[dict[str, str]] = []
         following_index = index + 1
-        while following_index < len(stream) and stream[following_index] == PASEQ:
-            punctuation.append(stream[following_index])
+        while following_index < len(stream) and isinstance(
+            stream[following_index], mam_simple_verse.MAMNativePaseq
+        ):
+            marker = stream[following_index]
+            if marker.kind not in {"paseq", "legarmeh"}:
+                raise SurveyProblem(
+                    f"{record['bcv']} {current!r}: MAM has unclassified native punctuation"
+                    f" {marker.kind!r} before the following chanted word"
+                )
+            punctuation.append({"kind": marker.kind, "glyph": marker.glyph})
             following_index += 1
         if following_index == len(stream):
             continue
-        candidate = (stream[following_index], tuple(punctuation))
+        next_item = stream[following_index]
+        if next_item == PASEQ:
+            raise SurveyProblem(
+                f"{record['bcv']} {current!r}: a MAM PASEQ before the following chanted"
+                " word lacks MAM's native paseq/legarmeh category"
+            )
+        if not isinstance(next_item, str):
+            raise SurveyProblem(
+                f"{record['bcv']} {current!r}: unexpected MAM context item before the"
+                f" following chanted word: {next_item!r}"
+            )
+        candidate = (next_item, tuple(punctuation))
         candidates.append(candidate)
         if (
-            tuple(punctuation) == source_punctuation
-            and stream[following_index] == snapshot_following_as_mam
+            tuple(marker["glyph"] for marker in punctuation) == source_punctuation
+            and next_item == snapshot_following_as_mam
         ):
             source_matched_candidates.append(candidate)
-    source_settled = list(dict.fromkeys(source_matched_candidates))
+    source_settled = []
+    for candidate in source_matched_candidates:
+        if candidate not in source_settled:
+            source_settled.append(candidate)
     if len(source_settled) == 1:
         return source_settled[0]
     if source_settled:
         return None, None
-    settled = list(dict.fromkeys(candidates))
+    settled = []
+    for candidate in candidates:
+        if candidate not in settled:
+            settled.append(candidate)
     return settled[0] if len(settled) == 1 else (None, None)
 
 
 def _attach_mam_forms(
-    records: list[dict], words_by_bcv: dict[str, list[str]]
+    records: list[dict],
+    words_by_bcv: dict[str, list[str]],
+    context_by_bcv: dict[str, list[object]] | None = None,
 ) -> list[dict]:
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
@@ -1801,8 +1885,8 @@ def _attach_mam_forms(
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this
-    survey's own subject included, so a chanted word whose MAM form has a different meteg count
-    from the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
+    survey's own subject included, so a chanted word that has GAINED or LOST a meteg since
+    the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
 
     TWO IDENTICAL CANDIDATES ARE ONE ANSWER, and are accepted: a verse with two byte-identical
     chanted words -- Proverbs 12:1's two אֹהֵב, Psalms 135:1's two הללו -- leaves the position
@@ -1812,6 +1896,7 @@ def _attach_mam_forms(
     A record with no form is named in ``records_without_a_mam_form``, and the page falls back
     to the snapshot's spelling for it, marked as such.
     """
+    context_by_bcv = context_by_bcv or {}
     out = []
     for record in records:
         matches, keyed_by = _matching_mam_words(
@@ -1824,7 +1909,7 @@ def _attach_mam_forms(
         record["metegs_in_mam_today"] = settled.count(METEG) if settled else None
         record["metegs_in_the_snapshot"] = record["chanted_word"].count(METEG)
         following_mam_form, intervening_mam_punctuation = (
-            _following_mam_context(record, words_by_bcv.get(record["bcv"], []))
+            _following_mam_context(record, context_by_bcv.get(record["bcv"], []))
             if settled is not None
             else (None, None)
         )
@@ -2219,12 +2304,25 @@ def build_survey() -> dict:
     assert template_found["dual_cant_verses"] == found["dual_cant_verses"]
     assert template_found_bet["dual_cant_verses"] == found["dual_cant_verses"]
     words_by_bcv = _mam_words_by_bcv()
+    context_by_bcv = _mam_context_by_bcv()
+    assert set(context_by_bcv) == set(words_by_bcv), set(context_by_bcv) ^ set(
+        words_by_bcv
+    )
+    assert {
+        bcv: [item for item in stream if isinstance(item, str)]
+        for bcv, stream in context_by_bcv.items()
+    } == {
+        bcv: [word for word in words if word != PASEQ]
+        for bcv, words in words_by_bcv.items()
+    }
     words_by_cantillation = {
         CANT_ALEF: _mam_words_by_bcv(CANT_ALEF),
         CANT_BET: _mam_words_by_bcv(CANT_BET),
     }
     unjoined = _attach_mam_forms(
-        found["post_stress"] + found["in_stressed"] + found["overlaps"], words_by_bcv
+        found["post_stress"] + found["in_stressed"] + found["overlaps"],
+        words_by_bcv,
+        context_by_bcv,
     )
     problems = _problems(found) + _problems(found_bet)
     if problems:
@@ -2233,7 +2331,7 @@ def build_survey() -> dict:
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
     fit_for_mas = _fit_for_mas_summary(
-        found["fit_for_mas_candidates"], post_stress, words_by_bcv
+        found["fit_for_mas_candidates"], post_stress, words_by_bcv, context_by_bcv
     )
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
@@ -2252,7 +2350,7 @@ def build_survey() -> dict:
     type_2_type_3_overlap_example = found["type_2_type_3_overlap_example"]
     assert type_2_type_3_overlap_example is not None
     unjoined_overlap_example = _attach_mam_forms(
-        [type_2_type_3_overlap_example], words_by_bcv
+        [type_2_type_3_overlap_example], words_by_bcv, context_by_bcv
     )
     assert not unjoined_overlap_example, unjoined_overlap_example
     assert type_2_type_3_overlap_example["mam_form"] is not None
