@@ -1656,8 +1656,9 @@ def _type_2_type_3_footnote(survey: dict) -> list:
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
             f" of the {type_2_count} type-2 MAS syllables have pataḥ, while the other "
-            f"{len(nonfinal_mas_syllable_records)} have ṣere but are open. Thus no type-2"
-            " MAS meets the type-3 condition. Indeed, chanted words with a final tsere"
+            f"{len(nonfinal_mas_syllable_records)} have tsere and are not only open but also"
+            " nonfinal. Thus no type-2 MAS meets the type-3 condition. Indeed, chanted words"
+            " with a final tsere"
             " syllable closed by a guttural are quite rare even without a meteg. Only "
             f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have a"
             " final tsere syllable closed by a guttural. All "
