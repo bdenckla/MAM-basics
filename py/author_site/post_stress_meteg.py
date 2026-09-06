@@ -792,6 +792,7 @@ def _by_type(survey: dict) -> list:
         "Type",
         "Prose",
         "Poetic",
+        "All",
         "Example",
     )
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
@@ -816,10 +817,12 @@ def _by_type(survey: dict) -> list:
                     _case_type_cell(kind),
                     str(survey["post_stress_by_structural_type"][_PROSE][kind]),
                     str(survey["post_stress_by_structural_type"][_POETIC][kind]),
+                    str(_by_type_count(survey, kind)),
                     _case_chanted_word_cell(example),
                 ),
                 (
                     None,
+                    _NUMERIC_CELL,
                     _NUMERIC_CELL,
                     _NUMERIC_CELL,
                     _HEBREW_CELL,
@@ -833,10 +836,12 @@ def _by_type(survey: dict) -> list:
                 "misc",
                 str(survey["post_stress_by_structural_type"][_PROSE][unclassified]),
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
+                str(_by_type_count(survey, unclassified)),
                 _case_chanted_word_cell(_example_of(survey, unclassified)),
             ),
             (
                 None,
+                _NUMERIC_CELL,
                 _NUMERIC_CELL,
                 _NUMERIC_CELL,
                 _HEBREW_CELL,
