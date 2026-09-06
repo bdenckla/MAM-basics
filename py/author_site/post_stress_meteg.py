@@ -556,21 +556,21 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (3181, 207, 2974, 0)
+    ) == (2053, 207, 1846, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_structural_type"] == {
         psm.TYPE_OPEN: {
-            "candidates": 2818,
+            "candidates": 1809,
             "with_mas": 113,
-            "without_mas": 2705,
+            "without_mas": 1696,
         },
         psm.TYPE_GUTTURAL: {
-            "candidates": 323,
+            "candidates": 204,
             "with_mas": 54,
-            "without_mas": 269,
+            "without_mas": 150,
         },
         psm.TYPE_CLOSED_TSERE: {
             "candidates": 40,
@@ -589,7 +589,8 @@ def pin_claims(survey: dict) -> None:
     fitting_records = fit_for_mas["records"]
     assert len(fitting_records) == fit_for_mas["fitting_any_type"]
     assert all(
-        record["following_chanted_word_is_initially_stressed"]
+        record["chanted_word_has_conjunctive_accent"]
+        and record["following_chanted_word_is_initially_stressed"]
         and record["following_chanted_word_has_disjunctive_accent"]
         and len(record["types"]) == 1
         and record["chanted_word"]
@@ -603,16 +604,16 @@ def pin_claims(survey: dict) -> None:
     ) == Counter(
         {
             (psm.TYPE_OPEN, True): 113,
-            (psm.TYPE_OPEN, False): 2705,
+            (psm.TYPE_OPEN, False): 1696,
             (psm.TYPE_GUTTURAL, True): 54,
-            (psm.TYPE_GUTTURAL, False): 269,
+            (psm.TYPE_GUTTURAL, False): 150,
             (psm.TYPE_CLOSED_TSERE, True): 40,
         }
     )
     lacks_mas_cases = _lacks_mas_cases(survey)
     type_2_lacks_mas_cases = lacks_mas_cases["type_2_all"]
     type_1_lacks_mas_samples = lacks_mas_cases["type_1_random_sample"]
-    assert len(type_2_lacks_mas_cases) == 269
+    assert len(type_2_lacks_mas_cases) == 150
     assert len(type_1_lacks_mas_samples[_PROSE]) == 100
     assert len(type_1_lacks_mas_samples[_POETIC]) == 10
     assert (
@@ -1219,9 +1220,10 @@ def _fit_for_mas_question(survey: dict) -> list:
         mb_html.para(
             (
                 "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS, i.e. in situations conforming to the criteria of one of the three MAS"
-                " types and having a following word with initial stress and a disjunctive"
-                " accent. The answer is that a MAS actually appears only ",
+                " a MAS, i.e. in situations where a potential MAS syllable meets one of the"
+                " three MAS types, the chanted word carrying the potential MAS syllable has a"
+                " conjunctive accent, and the following word has initial stress and a"
+                " disjunctive accent. The answer is that a MAS actually appears only ",
                 f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS. (",
                 _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
@@ -2231,8 +2233,9 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
                 ". It means that a syllable belongs to one or more of the three MAS types below"
-                " and is followed by a word with initial stress and a disjunctive accent. The table"
-                " records how often MAS occurs in each such situation and how often it does not.",
+                "; the chanted word carrying the syllable has a conjunctive accent; and the"
+                " following word has initial stress and a disjunctive accent. The table records"
+                " how often MAS occurs in each such situation and how often it does not.",
             )
         ),
         _table(headers, rows),

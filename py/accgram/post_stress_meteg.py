@@ -348,6 +348,21 @@ def _has_a_disjunctive_accent(
     return bool(set(accent_grammar_tokens) & disjunctives)
 
 
+def _has_a_conjunctive_accent(
+    system: str, accent_grammar_tokens: tuple[str, ...]
+) -> bool:
+    """Whether the accent grammar gives a chanted word a conjunctive accent.
+
+    A chanted word can have secondary accent tokens as well as its main accent.  A word with
+    any disjunctive token does not qualify as conjunctive here: a type-specific MAS candidate
+    must have a conjunctive first chanted word, not merely contain a conjunctive token beside a
+    disjunctive one.
+    """
+    return bool(accent_grammar_tokens) and not _has_a_disjunctive_accent(
+        system, accent_grammar_tokens
+    )
+
+
 # The three types the page attributes to Yeivin and Breuer, each keyed on a mechanical
 # signature and never on a verse reference.  A post-stress meteg meeting none of them is
 # recorded as unclassified rather than pushed into the nearest.
@@ -1192,9 +1207,9 @@ def _fit_for_mas_candidate(
 
     Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
     Unicode accent count cannot supply that information.  The potential syllable is directly
-    after a nonfinal stress.  The table calls it fit for MAS only when the following chanted word
-    has initial stress and the accent grammar gives that following chanted word a disjunctive
-    token, in addition to meeting one or more of the three source-derived structural types.
+    after a nonfinal stress.  The table calls it fit for MAS only when the first chanted word has
+    a conjunctive accent, the following chanted word has initial stress and a disjunctive accent,
+    and the potential syllable meets one or more of the three source-derived structural types.
     """
     stressed = parsed["stressed"]
     if stressed == len(parsed["syllables"]) - 1:
@@ -1232,6 +1247,9 @@ def _fit_for_mas_candidate(
         "following_chanted_word_has_disjunctive_accent": _has_a_disjunctive_accent(
             system, following_accent_grammar_tokens
         ),
+        "chanted_word_has_conjunctive_accent": _has_a_conjunctive_accent(
+            system, accent_grammar_tokens
+        ),
         "accent_grammar_token_count": len(accent_grammar_tokens),
     }
     return candidate
@@ -1242,17 +1260,18 @@ _TYPE_1_POETIC_LACKS_MAS_SAMPLE_SIZE = 10
 _LACKS_MAS_SAMPLE_SEED = 20260906
 
 
-def _has_following_word_conditions_for_mas(candidate: dict) -> bool:
-    """Whether the following chanted word has the two Fit-for-MAS properties."""
+def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
+    """Whether a candidate has every Fit-for-MAS property apart from a structural type."""
     return (
-        candidate["following_chanted_word_is_initially_stressed"]
+        candidate["chanted_word_has_conjunctive_accent"]
+        and candidate["following_chanted_word_is_initially_stressed"]
         and candidate["following_chanted_word_has_disjunctive_accent"]
     )
 
 
 def _is_fit_for_mas(candidate: dict) -> bool:
-    """Whether one candidate meets the following-word conditions and a MAS type."""
-    return _has_following_word_conditions_for_mas(candidate) and bool(
+    """Whether one candidate meets the non-type-specific conditions and a MAS type."""
+    return _has_non_type_specific_conditions_for_mas(candidate) and bool(
         candidate["structural_types"]
     )
 
@@ -1285,6 +1304,9 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
         "types": candidate["structural_types"],
         "has_mas": candidate["has_mas"],
+        "chanted_word_has_conjunctive_accent": candidate[
+            "chanted_word_has_conjunctive_accent"
+        ],
         "following_chanted_word_is_initially_stressed": candidate[
             "following_chanted_word_is_initially_stressed"
         ],
@@ -1342,14 +1364,14 @@ def _fit_for_mas_summary(
         key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
         candidate["has_mas"] = key in mas_keys
         assert candidate["has_u05bd"] == candidate["has_mas"], candidate
-    following_word_conditions = [
+    non_type_specific_conditions = [
         candidate
         for candidate in candidates
-        if _has_following_word_conditions_for_mas(candidate)
+        if _has_non_type_specific_conditions_for_mas(candidate)
     ]
     fitting = [
         candidate
-        for candidate in following_word_conditions
+        for candidate in non_type_specific_conditions
         if candidate["structural_types"]
     ]
     unjoined = _attach_mam_forms(fitting, words_by_bcv, context_by_bcv)
@@ -1399,9 +1421,10 @@ def _fit_for_mas_summary(
     assert with_mas + len(excluded_mas) == len(mas_keys), (with_mas, excluded_mas)
     return {
         "what": (
-            "Every syllable immediately after a nonfinal primary stress whose following"
-            " chanted word has initial stress and a disjunctive accent-grammar token,"
-            " classified by the three MAS structural predicates and checked for U+05BD."
+            "Every syllable immediately after a nonfinal primary stress whose first chanted"
+            " word has a conjunctive accent and whose following chanted word has initial"
+            " stress and a disjunctive accent-grammar token, classified by the three MAS"
+            " structural predicates and checked for U+05BD."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
         "records_what": (
@@ -1410,7 +1433,7 @@ def _fit_for_mas_summary(
             " types, and whether the first chanted word has MAS."
         ),
         "candidate_chanted_words": len(candidates),
-        "following_word_conditions": len(following_word_conditions),
+        "non_type_specific_conditions": len(non_type_specific_conditions),
         "fitting_any_type": len(fitting),
         "with_mas": with_mas,
         "without_mas": len(fitting) - with_mas,
