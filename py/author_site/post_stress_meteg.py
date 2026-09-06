@@ -124,9 +124,12 @@ _COS_PAGE_STARTS_BY_TYPE = {
 _COS_PAGE_GLOSS = "page number in Wengrov's English translation of CoS"
 
 _TYPE_CODES = {
-    psm.TYPE_OPEN: ("1", "an open, final syllable"),
-    psm.TYPE_GUTTURAL: ("2", "a chanted word closed by a guttural"),
-    psm.TYPE_CLOSED_TSERE: ("3", "a closed, tsere-vowelled syllable"),
+    psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
+    psm.TYPE_GUTTURAL: ("2", "the word is closed by a guttural"),
+    psm.TYPE_CLOSED_TSERE: (
+        "3",
+        "the MAS is on a closed, final, tsere-vowelled syllable",
+    ),
 }
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
@@ -421,6 +424,7 @@ def pin_claims(survey: dict) -> None:
         stress_accent_classification["conclusion"]
         == "Every MAS has a conjunctive accent on that stress letter."
     )
+    assert all(record["syllables_after_the_stress"] == 1 for record in post_stress)
     by_type = sum(_by_type_count(survey, kind) for kind in _TYPE_SOURCES)
     assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
         post_stress
@@ -794,6 +798,8 @@ def _by_type(survey: dict) -> list:
         "All",
         "Example",
     )
+    unclassified = psm.TYPE_UNCLASSIFIED
+    unclassified_count = _by_type_count(survey, unclassified)
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     type_2_records = _type_2_records(survey)
     type_2_final_mas_count = sum(
@@ -827,14 +833,13 @@ def _by_type(survey: dict) -> list:
                 ),
             )
         )
-    unclassified = psm.TYPE_UNCLASSIFIED
     rows.append(
         mb_html.table_row_of_data(
             (
                 "misc",
                 str(survey["post_stress_by_structural_type"][_PROSE][unclassified]),
                 str(survey["post_stress_by_structural_type"][_POETIC][unclassified]),
-                str(_by_type_count(survey, unclassified)),
+                str(unclassified_count),
                 _case_chanted_word_cell(_example_of(survey, unclassified)),
             ),
             (
@@ -848,16 +853,23 @@ def _by_type(survey: dict) -> list:
     )
     return [
         mb_html.heading_level_2("MAS by structural type"),
-        mb_html.ordered_list(
+        mb_html.para(
+            f"All but {unclassified_count} cases of MAS can be sorted into one of the three"
+            " following types:"
+        ),
+        mb_html.unordered_list(
             (
-                "An open, final syllable.",
-                "A chanted word closed by a guttural.",
-                "A closed syllable whose vowel is tsere.",
+                "In type 1, the MAS is on an open final syllable.",
+                "In type 2, the word is closed by a guttural.",
+                "In type 3, the MAS is on a closed, final, tsere-vowelled syllable.",
             )
         ),
+        _table(headers, rows),
         mb_html.para(
             (
-                f"Across all {len(survey['post_stress']):,} MAS records, only ",
+                "In every MAS case, the MAS immediately follows the stress syllable, and"
+                " every MAS has a conjunctive accent. Across all "
+                f"{len(survey['post_stress']):,} MAS cases, only ",
                 _ref_link(noninitial_following_stress_record["bcv"]),
                 " has a following chanted word without initial stress: ",
                 *wrap_hebrew_runs(noninitial_following_stress_record["mam_form"]),
@@ -865,14 +877,9 @@ def _by_type(survey: dict) -> list:
                 *wrap_hebrew_runs(
                     noninitial_following_stress_record["following_mam_form"]
                 ),
-                ". Every other following chanted word has initial stress, and every MAS has a"
-                " conjunctive accent. The record is type 1 because its MAS syllable is open"
-                " and final;"
-                " the type-1 definition does not require the following chanted word's"
-                " stress to be initial.",
+                ". Every other MAS has a following chanted word with initial stress.",
             )
         ),
-        _table(headers, rows),
         _hebrew_spacing_option(),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
