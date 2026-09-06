@@ -845,17 +845,6 @@ def _by_type(survey: dict) -> list:
     )
     return [
         mb_html.heading_level_2("MAS by structural type"),
-        mb_html.para(
-            (
-                "Three types of MAS are described in both ",
-                itm(),
-                " and ",
-                cos(),
-                ". The three types are roughly the same in those two books. Our definitions"
-                " of those three types are listed below. (Our definitions roughly agree with"
-                " both books but perfectly agree with neither of them.)",
-            )
-        ),
         mb_html.ordered_list(
             (
                 "An open, final syllable.",
@@ -986,6 +975,16 @@ def _sources_for_types() -> list:
     ]
     return [
         mb_html.heading_level_3("Sources for types 1–3"),
+        mb_html.para(
+            (
+                "The three types of MAS are described in both ",
+                itm(),
+                " and ",
+                cos(),
+                ". Exactly what words are included and excluded in these three types vary"
+                " between ITM, CoS, and our document here, but they broadly agree.",
+            )
+        ),
         _table(
             (
                 "Type",
