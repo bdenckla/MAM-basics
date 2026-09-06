@@ -6,13 +6,14 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-Cross-repo dependencies (MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS, wlc-utils,
-...) are by default looked up as siblings of this repo under a common parent
-directory.  That convention breaks when the repo is checked out somewhere the
-siblings are not co-located -- most notably a git worktree, whose root is nested
-under ``.../.claude/worktrees/`` rather than next to the sibling repos.  This was not
-hypothetical: until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics worktree
-resolved to ``.claude/worktrees/MAM-parsed``, a directory that has never existed.
+MAM-simple is a landed product under this repository's ``MAM-simple/`` directory, so its
+paths chain directly from ``repo_root()``.  Cross-repo dependencies (MAM-parsed,
+MAM-with-doc, MAM-OSIS, wlc-utils, ...) are by default looked up as siblings of this repo
+under a common parent directory.  That convention breaks when the repo is checked out
+somewhere the siblings are not co-located -- most notably a git worktree, whose root is
+nested under ``.../.claude/worktrees/`` rather than next to the sibling repos.  This was
+not hypothetical: until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics
+worktree resolved to ``.claude/worktrees/MAM-parsed``, a directory that has never existed.
 
 To make sibling lookups overridable without changing default behavior, two kinds
 of environment variable are honored, resolved per dependency in this order:
