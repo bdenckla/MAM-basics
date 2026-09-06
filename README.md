@@ -6,10 +6,11 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Core export pipeline
 
-`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM under `MAM-simple/`, and refreshes its example-program support files there.
+`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/), and refreshes its example-program support files there.
 
 ### Format variants
 
+- [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV export suitable for import into Sefaria; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
 - `main_mam4sef.py` — Sefaria-compatible MAM variant by default, with `--just-ajf` and `--both-sef-and-ajf` for AJF selection
 - `main_mam_with_doc.py` — HTML with two-column layout and documentation notes
 - `main_mam_osis.py` / `main_osis_split_mapm.py` — OSIS (Open Scripture Information Standard) XML
