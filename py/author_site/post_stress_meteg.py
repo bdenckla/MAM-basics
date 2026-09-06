@@ -170,7 +170,7 @@ _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
 _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
 _CASE_TABLE_CLASS = "post-stress-meteg-cases-table"
 _CASE_STRIPED_ROW_CLASS = "post-stress-meteg-cases-striped-row"
-_FOLLOWING_CHANTED_WORD_CLASS = "post-stress-meteg-following-chanted-word"
+_NEXT_WORD_CLASS = "post-stress-meteg-next-word"
 _HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
@@ -788,8 +788,8 @@ def _opening(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                'In this document, by "word" we mean a chanted word, which is either a simple'
-                " word (having just one atom) or a compound word (having two or more atoms"
+                'In this document, by "word" we mean either a simple word (having just one'
+                " atom) or a compound word (having two or more atoms"
                 " connected by ",
                 _ROM_MAQAF,
                 ' marks). By "atom", we mean a sequence of pointed letters uninterrupted by'
@@ -817,7 +817,7 @@ def _census(survey: dict) -> list:
     after_category = "meteg after the stressed syllable"
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
-        mb_html.abbr("c-words", {"title": "count of chanted words"}),
+        mb_html.abbr("words", {"title": "count of words"}),
         mb_html.abbr("MBS", {"title": "Meteg before the stress"}),
         mb_html.abbr("MAS", {"title": "meteg after the stress"}),
         mb_html.abbr(
@@ -889,7 +889,7 @@ def _general_mas_facts(survey: dict) -> list:
                 (
                     "In every MAS case but one (",
                     _footnote_callout(2, _JEREMIAH_FOOTNOTE_ID),
-                    "), the following chanted word has initial stress.",
+                    "), the next word has initial stress.",
                 ),
                 (
                     "In every MAS case except four (",
@@ -1049,7 +1049,7 @@ def _case_list_link(survey: dict) -> list:
             (
                 "The ",
                 mb_html.anchor_h(f"{type_2_count:,} type 2 cases", _TYPE_2_FNAME),
-                " have a separate table whose filter uses the following chanted word's"
+                " have a separate table whose filter uses the next word's"
                 " initial consonant.",
             )
         ),
@@ -1103,7 +1103,7 @@ def _following_chanted_word_span(
     demoted.extend(_hebrew_cell(following))
     return mb_html.span(
         tuple(demoted),
-        {"class": _FOLLOWING_CHANTED_WORD_CLASS},
+        {"class": _NEXT_WORD_CLASS},
     )
 
 
@@ -1301,7 +1301,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.heading_level_2("Every misc case in MAM"),
         _para(
             "Each word in the table has MAS but does not meet the definition of"
-            " types 1, 2, or 3. The next chanted word is gray."
+            " types 1, 2, or 3. The next word is gray."
         ),
         _table(
             ("Verse", "Word", "Subtype"),
@@ -1369,7 +1369,7 @@ def build_cases_body(survey: dict) -> list:
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
             " reference links to the verse in MAM with doc, and each word is MAM's"
-            " text followed by the next chanted word in gray."
+            " text followed by the next word in gray."
         ),
         mb_html.para(
             (
@@ -1549,7 +1549,7 @@ def _post_silluq(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "In the Leningrad Codex, the last chanted word of 1 Samuel 17:5 seems to"
+                "In the Leningrad Codex, the last word of 1 Samuel 17:5 seems to"
                 " have a ",
                 _ROM_METEG,
                 " after its ",
@@ -1662,8 +1662,8 @@ def _oleh_meteg_overlap(survey: dict) -> list:
                 " were not there, because ",
                 _ROM_OLEH,
                 " is not an accent indicating stress, even when it is the last accent in"
-                " the chanted word, as it is in the MAS rows above. In other words, a MAS"
-                " chanted word with a ",
+                " the word, as it is in the MAS rows above. In other words, a MAS"
+                " word with a ",
                 _ROM_METEG,
                 ' might at first look like some weird "',
                 _ROM_METEG,
@@ -1688,7 +1688,7 @@ def _footnotes(survey: dict) -> list:
             (
                 "At ",
                 _ref_link(exception["bcv"]),
-                ", the following chanted word lacks initial stress: ",
+                ", the word after the MAS lacks initial stress: ",
                 *_case_chanted_word_cell(exception),
                 ".",
             )
@@ -1713,7 +1713,7 @@ def _dual_cantillation_footnote(survey: dict) -> list:
         _cantillation_label(psm.CANT_BET),
     )
     categories = (
-        ("Chanted words", "chanted words checked"),
+        ("Words", "chanted words checked"),
         (
             mb_html.abbr("MBS", {"title": "meteg before the stress"}),
             "meteg before the stressed syllable",
@@ -1784,9 +1784,9 @@ def _dual_cantillation_footnote(survey: dict) -> list:
             (
                 "Only ",
                 _ref_link(chanted_word_difference["bcv"]),
-                " differs in the number of chanted words. ",
+                " differs in the number of words. ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has two chanted words where ",
+                " has two words where ",
                 _cantillation_label(psm.CANT_BET),
                 " has one ",
                 _ROM_MAQAF,
@@ -1807,9 +1807,9 @@ def _dual_cantillation_footnote(survey: dict) -> list:
                 _cantillation_label(psm.CANT_BET),
                 " has one ",
                 _ROM_METEG,
-                " before the stress in the chanted word below; ",
+                " before the stress in the word below; ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has the two chanted words below, neither with a ",
+                " has the two words below, neither with a ",
                 _ROM_METEG,
                 ".",
             )
@@ -1846,12 +1846,12 @@ def _type_2_type_3_footnote(survey: dict) -> list:
                 f"{len(nonfinal_mas_syllable_records)} have ",
                 _ROM_TSERE,
                 " and are not only open but also nonfinal. Thus no type-2 MAS meets the"
-                " type-3 condition. Indeed, chanted words with a final ",
+                " type-3 condition. Indeed, words with a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural are quite rare even without a ",
                 _ROM_METEG,
                 ". Only ",
-                f"{overlap_count:,} of all {chanted_word_count:,} chanted words surveyed have"
+                f"{overlap_count:,} of all {chanted_word_count:,} words surveyed have"
                 " a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural. All ",
@@ -1940,10 +1940,10 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". The analysis starts with every chanted-word pair whose first chanted word"
+                ". The analysis starts with every pair whose first word"
                 " has nonfinal stress and a conjunctive accent on that stress, and whose"
-                " following chanted word has initial stress and a disjunctive accent. The"
-                " syllable immediately after the first chanted word's stress is the potential"
+                " next word has initial stress and a disjunctive accent. The"
+                " syllable immediately after the first word's stress is the potential"
                 " MAS syllable. The analysis checks every such syllable against the three"
                 " structural criteria and records whether that syllable has MAS.",
             )
