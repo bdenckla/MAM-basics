@@ -1533,10 +1533,13 @@ def _post_silluq(survey: dict) -> list:
             " marks are one codepoint."
         ),
         _para(
-            "MAM has no MAS on a silluq word, but 1 Samuel 17:5 does raise this issue in BHS"
-            " and BHS-derived editions such as UXLC and WLC."
+            "MAM has no MAS on a silluq word, but the last word of 1 Samuel 17:5 does raise"
+            " this issue in BHS and BHS-derived editions such as UXLC and WLC."
         ),
-        _table(("source", "verse-final chanted word"), comparison_rows),
+        mb_html.table(
+            comparison_rows,
+            {"class": "limited-width post-stress-meteg-table"},
+        ),
         _para("The Leningrad codex agrees with BHS as can be seen in the image below:"),
         _post_silluq_lc_crop(),
     ]
