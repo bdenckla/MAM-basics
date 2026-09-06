@@ -1323,7 +1323,6 @@ def _m23(survey: dict) -> list:
     qumi = _focus_word(survey, _M23_VERSE, ("קומי",))
     yanuax = _record_at(survey, _M23_VERSE)
     same_shape = _same_shape_as_qumi(survey)
-    open_count = _by_type_count(survey, psm.TYPE_OPEN)
     return [
         mb_html.heading_level_2(
             "A new MAS in MAM at Isaiah 23:12", {"id": M23_SECTION_ID}
@@ -1335,14 +1334,10 @@ def _m23(survey: dict) -> list:
                 *wrap_hebrew_runs(
                     " has the MAM form Holman suggested on 2026-08-31, without a meteg where"
                     " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
-                    f" has the meteg under the mem of the chanted word {qumi} at Isaiah 23:12."
+                    f" has the meteg under the mem of the chanted word {qumi} at Isaiah 23:12;"
+                    f" the MAS of {qumi} is type 1."
                 ),
             )
-        ),
-        _para(
-            f"The mark is of the open-syllable type: {qumi} is stressed on its first"
-            " syllable and ends in an open syllable. That is the type both books call optional, and"
-            f" at {open_count} occurrences it is also the commonest of the three in MAM."
         ),
         _para(
             "The same verse already had another MAS:"
