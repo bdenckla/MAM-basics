@@ -61,7 +61,8 @@ _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
-_DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
+_JEREMIAH_FOOTNOTE_ID = "footnote-1"
+_DUAL_CANTILLATION_FOOTNOTE_ID = "footnote-2"
 
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
@@ -296,12 +297,13 @@ def build_body(survey: dict) -> list:
         mb_html.heading_level_1(_TITLE),
         *_opening(survey),
         *_census(survey),
+        *_general_mas_facts(survey),
         *_by_type(survey),
         *_case_list_link(survey),
         *_post_silluq(survey),
         *_oleh_meteg_overlap(survey),
-        *_dual_cantillation_appendix(survey),
         *_sources_for_types(),
+        *_footnotes(survey),
     ]
 
 
@@ -656,6 +658,11 @@ def _ref_link(bcv: str) -> object:
     )
 
 
+def _footnote_callout(number: int, footnote_id: str) -> object:
+    """The in-line phi marker that links down to one footnote."""
+    return mb_html.anchor_h(f"φ{number}", f"#{footnote_id}")
+
+
 def _split(bcv: str) -> tuple[str, int, int]:
     bb = bcv[:2]
     chnu, _colon, vrnu = bcv[2:].partition(":")
@@ -771,19 +778,38 @@ def _census(survey: dict) -> list:
             (
                 "The prose row in the table above is for the 21 books plus the verses of"
                 " Job's prose frame; the poetic row is for the verses of Job's main, poetic"
-                " section plus all Psalms and the whole book of Proverbs. See the ",
-                mb_html.anchor_h(
-                    "appendix on dually-cantillated passages",
-                    f"#{_DUAL_CANTILLATION_APPENDIX_ID}",
+                " section plus all Psalms and the whole book of Proverbs. Only one"
+                " cantillation (",
+                _footnote_callout(2, _DUAL_CANTILLATION_FOOTNOTE_ID),
+                ") of dually cantillated passages participates in every analysis on this"
+                " page, including the census above.",
+            )
+        ),
+    ]
+
+
+def _general_mas_facts(survey: dict) -> list:
+    """Section 3: the facts shared by every MAS, before structural classification."""
+    exceptions = _noninitial_following_stress_records(survey)
+    assert len(exceptions) == 1
+    return [
+        mb_html.heading_level_2("General facts about MAS"),
+        mb_html.unordered_list(
+            (
+                "In every MAS case, the MAS immediately follows the stress syllable, which"
+                " has a conjunctive accent.",
+                (
+                    "In every MAS case but one (",
+                    _footnote_callout(1, _JEREMIAH_FOOTNOTE_ID),
+                    "), the following chanted word has initial stress.",
                 ),
-                " for how this census handles them.",
             )
         ),
     ]
 
 
 def _by_type(survey: dict) -> list:
-    """Section 3: the three types the two books describe, and what is left over."""
+    """Section 4: the three types the two books describe, and what is left over."""
     headers = (
         "Type",
         "Prose",
@@ -799,7 +825,6 @@ def _by_type(survey: dict) -> list:
         record["is_the_last_syllable"] for record in type_2_records
     )
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
-    noninitial_following_stress_record = _noninitial_following_stress_records(survey)[0]
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = type_2_type_3_overlap["chanted_words"]
@@ -858,17 +883,6 @@ def _by_type(survey: dict) -> list:
             )
         ),
         _table(headers, rows),
-        mb_html.para(
-            (
-                "In every MAS case, the MAS immediately follows the stress syllable, and"
-                " every MAS has a conjunctive accent. Across all "
-                f"{len(survey['post_stress']):,} MAS cases, only ",
-                _ref_link(noninitial_following_stress_record["bcv"]),
-                " has a following chanted word without initial stress: ",
-                *_case_chanted_word_cell(noninitial_following_stress_record),
-                ". Every other MAS has a following chanted word with initial stress.",
-            )
-        ),
         _hebrew_spacing_option(),
         _para(
             f"Types 2 and 3 could in principle overlap. In this survey, however, {type_2_final_mas_count}"
@@ -892,7 +906,7 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"Every MAS syllable directly follows the stress. In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
+                f"In {len(survey['post_stress']) - len(nonfinal_mas_syllable_records)}"
                 " records the MAS syllable is final. The other "
                 f"{len(nonfinal_mas_syllable_records)} records are type 2: each has an open"
                 " penultimate tsere MAS syllable before a final furtive-pataḥ syllable.",
@@ -1529,8 +1543,31 @@ def _oleh_meteg_overlap(survey: dict) -> list:
     ]
 
 
-def _dual_cantillation_appendix(survey: dict) -> list:
-    """The template-only comparison for Phonetic MAM's dual cantillation."""
+def _footnotes(survey: dict) -> list:
+    """The exceptions and methods the page marks with its phi callouts."""
+    exceptions = _noninitial_following_stress_records(survey)
+    assert len(exceptions) == 1
+    exception = exceptions[0]
+    return [
+        mb_html.heading_level_2("Footnotes"),
+        mb_html.heading_level_3(
+            ("φ1 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
+        ),
+        mb_html.para(
+            (
+                "At ",
+                _ref_link(exception["bcv"]),
+                ", the following chanted word lacks initial stress: ",
+                *_case_chanted_word_cell(exception),
+                ".",
+            )
+        ),
+        *_dual_cantillation_footnote(survey),
+    ]
+
+
+def _dual_cantillation_footnote(survey: dict) -> list:
+    """Footnote 2: the template-only comparison for Phonetic MAM's dual cantillation."""
     dual_cantillation = _dual_cantillation(survey)
     template_comparison = dual_cantillation["template_counts"]
     alef = template_comparison[psm.CANT_ALEF]
@@ -1596,9 +1633,9 @@ def _dual_cantillation_appendix(survey: dict) -> list:
         for cantillation in (psm.CANT_ALEF, psm.CANT_BET)
     ]
     return [
-        mb_html.heading_level_2(
-            "Appendix: dually-cantillated passages",
-            {"id": _DUAL_CANTILLATION_APPENDIX_ID},
+        mb_html.heading_level_3(
+            "φ2 — Dually cantillated passages",
+            {"id": _DUAL_CANTILLATION_FOOTNOTE_ID},
         ),
         _para(
             "MAM has dual-cantillation templates in the two Decalogues and"
