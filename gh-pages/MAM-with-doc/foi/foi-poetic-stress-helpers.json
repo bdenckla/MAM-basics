@@ -1,0 +1,642 @@
+[
+  {
+    "bcv_short": "Ps5:6",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps15:1",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps25:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps26:11",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps27:6",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps27:6",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps37:36",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps44:27",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Ps55:18",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps55:18",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps56:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps57:9",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps61:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps61:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Ps69:29",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps69:35",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps74:4",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps74:6",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Ps75:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps77:8",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps77:20",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח', 'כו״ק')"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps86:7",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps99:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps105:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps108:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps108:11",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps113:1",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps135:1",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps138:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps139:7",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps148:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps148:4",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps148:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps150:3",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Ps150:4",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Pr6:13",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Pr6:13",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Pr13:25",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Pr24:17",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Pr26:24",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Pr26:24",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb6:10",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb11:13",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb11:17",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb11:17",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb16:16",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Jb18:14",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb18:14",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb18:15",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb18:15",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb20:7",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb21:24",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קמץ',)"
+  },
+  {
+    "bcv_short": "Jb27:15",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Jb27:15",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Jb29:16",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb33:28",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Jb38:31",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('נוסח',)"
+  },
+  {
+    "bcv_short": "Jb38:41",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Jb38:41",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('מ:קו״כ-אם-2',)"
+  },
+  {
+    "bcv_short": "Jb42:2",
+    "fp": "dexi-with-tmpl-above",
+    "r": "('כו״ק',)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "fp": "dexi-with-tmpl-below",
+    "r": "מ:אות-מיוחדת-במילה"
+  },
+  {
+    "bcv_short": "Ps13:6",
+    "fp": "tsinnor",
+    "r": "בָטַ֮חְתִּי֮"
+  },
+  {
+    "bcv_short": "Ps14:2",
+    "fp": "tsinnor",
+    "r": "מִשָּׁמַ֮יִם֮"
+  },
+  {
+    "bcv_short": "Ps15:5",
+    "fp": "tsinnor",
+    "r": "בְּנֶ֮שֶׁךְ֮"
+  },
+  {
+    "bcv_short": "Ps16:11",
+    "fp": "tsinnor",
+    "r": "תּֽוֹדִיעֵ֮נִי֮"
+  },
+  {
+    "bcv_short": "Ps18:44",
+    "fp": "tsinnor",
+    "r": "תְּפַלְּטֵ֮נִי֮"
+  },
+  {
+    "bcv_short": "Ps22:15",
+    "fp": "tsinnor",
+    "r": "נִשְׁפַּ֮כְתִּי֮"
+  },
+  {
+    "bcv_short": "Ps27:9",
+    "fp": "tsinnor",
+    "r": "מִמֶּ֮נִּי֮"
+  },
+  {
+    "bcv_short": "Ps31:21",
+    "fp": "tsinnor",
+    "r": "פָּנֶ֮יךָ֮"
+  },
+  {
+    "bcv_short": "Ps31:23",
+    "fp": "tsinnor",
+    "r": "נִגְרַ֮זְתִּי֮"
+  },
+  {
+    "bcv_short": "Ps32:4",
+    "fp": "tsinnor",
+    "r": "וָלַ֮יְלָה֮"
+  },
+  {
+    "bcv_short": "Ps32:6",
+    "fp": "tsinnor",
+    "r": "אֵלֶ֮יךָ֮"
+  },
+  {
+    "bcv_short": "Ps32:9",
+    "fp": "tsinnor",
+    "r": "כְּפֶ֮רֶד֮"
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "fp": "tsinnor",
+    "r": "תֹּאמַ֮רְנָה֮"
+  },
+  {
+    "bcv_short": "Ps39:13",
+    "fp": "tsinnor",
+    "r": "הַאֲזִ֮ינָה֮"
+  },
+  {
+    "bcv_short": "Ps40:15",
+    "fp": "tsinnor",
+    "r": "יַ֮חַד֮"
+  },
+  {
+    "bcv_short": "Ps45:8",
+    "fp": "tsinnor",
+    "r": "צֶּ֮דֶק֮"
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "fp": "tsinnor",
+    "r": "שַׁ֮תּוּ֮"
+  },
+  {
+    "bcv_short": "Ps51:6",
+    "fp": "tsinnor",
+    "r": "חָטָ֮אתִי֮"
+  },
+  {
+    "bcv_short": "Ps53:3",
+    "fp": "tsinnor",
+    "r": "מִשָּׁמַ֮יִם֮"
+  },
+  {
+    "bcv_short": "Ps53:6",
+    "fp": "tsinnor",
+    "r": "פַ֮חַד֮"
+  },
+  {
+    "bcv_short": "Ps56:14",
+    "fp": "tsinnor",
+    "r": "מִמָּ֮וֶת֮"
+  },
+  {
+    "bcv_short": "Ps59:17",
+    "fp": "tsinnor",
+    "r": "עֻזֶּ֮ךָ֮"
+  },
+  {
+    "bcv_short": "Ps60:2",
+    "fp": "tsinnor",
+    "r": "נַהֲרַ֮יִם֮"
+  },
+  {
+    "bcv_short": "Ps62:5",
+    "fp": "tsinnor",
+    "r": "לְהַדִּ֮יחַ֮"
+  },
+  {
+    "bcv_short": "Ps62:11",
+    "fp": "tsinnor",
+    "r": "בְעֹ֮שֶׁק֮"
+  },
+  {
+    "bcv_short": "Ps63:12",
+    "fp": "tsinnor",
+    "r": "וְהַמֶּ֮לֶךְ֮"
+  },
+  {
+    "bcv_short": "Ps68:21",
+    "fp": "tsinnor",
+    "r": "לָ֮נוּ֮"
+  },
+  {
+    "bcv_short": "Ps69:7",
+    "fp": "tsinnor",
+    "r": "קֹוֶ֮יךָ֮"
+  },
+  {
+    "bcv_short": "Ps71:22",
+    "fp": "tsinnor",
+    "r": "בִכְלִי־נֶ֮בֶל֮"
+  },
+  {
+    "bcv_short": "Ps72:16",
+    "fp": "tsinnor",
+    "r": "בָּאָ֮רֶץ֮"
+  },
+  {
+    "bcv_short": "Ps72:17",
+    "fp": "tsinnor",
+    "r": "לִפְנֵי־שֶׁ֮מֶשׁ֮"
+  },
+  {
+    "bcv_short": "Ps75:9",
+    "fp": "tsinnor",
+    "r": "מֶ֮סֶךְ֮"
+  },
+  {
+    "bcv_short": "Ps78:20",
+    "fp": "tsinnor",
+    "r": "מַ֮יִם֮"
+  },
+  {
+    "bcv_short": "Ps79:8",
+    "fp": "tsinnor",
+    "r": "אַֽל־תִּזְכׇּר־לָ֮נוּ֮"
+  },
+  {
+    "bcv_short": "Ps79:11",
+    "fp": "tsinnor",
+    "r": "לְפָנֶ֮יךָ֮"
+  },
+  {
+    "bcv_short": "Ps79:13",
+    "fp": "tsinnor",
+    "r": "מַרְעִיתֶ֮ךָ֮"
+  },
+  {
+    "bcv_short": "Ps99:4",
+    "fp": "tsinnor",
+    "r": "מֶ֮לֶךְ֮"
+  },
+  {
+    "bcv_short": "Ps99:8",
+    "fp": "tsinnor",
+    "r": "אֱלֹהֵ֮ינוּ֮"
+  },
+  {
+    "bcv_short": "Ps101:5",
+    "fp": "tsinnor",
+    "r": "רֵעֵ֮הוּ֮"
+  },
+  {
+    "bcv_short": "Ps101:6",
+    "fp": "tsinnor",
+    "r": "בְּנֶֽאֶמְנֵי־אֶ֮רֶץ֮"
+  },
+  {
+    "bcv_short": "Ps102:3",
+    "fp": "tsinnor",
+    "r": "מִמֶּ֮נִּי֮"
+  },
+  {
+    "bcv_short": "Ps102:27",
+    "fp": "tsinnor",
+    "r": "יֹאבֵ֮דוּ֮"
+  },
+  {
+    "bcv_short": "Ps104:29",
+    "fp": "tsinnor",
+    "r": "פָּנֶ֮יךָ֮"
+  },
+  {
+    "bcv_short": "Ps106:47",
+    "fp": "tsinnor",
+    "r": "וְקַבְּצֵ֮נוּ֮"
+  },
+  {
+    "bcv_short": "Ps109:28",
+    "fp": "tsinnor",
+    "r": "יְקַֽלְﬞלוּ־הֵ֮מָּה֮"
+  },
+  {
+    "bcv_short": "Ps126:2",
+    "fp": "tsinnor",
+    "r": "פִּ֮ינוּ֮"
+  },
+  {
+    "bcv_short": "Ps139:12",
+    "fp": "tsinnor",
+    "r": "גַּם־חֹ֮שֶׁךְ֮"
+  },
+  {
+    "bcv_short": "Ps143:8",
+    "fp": "tsinnor",
+    "r": "חַסְדֶּ֮ךָ֮"
+  },
+  {
+    "bcv_short": "Ps143:10",
+    "fp": "tsinnor",
+    "r": "רְצוֹנֶ֮ךָ֮"
+  },
+  {
+    "bcv_short": "Ps144:11",
+    "fp": "tsinnor",
+    "r": "וְהַצִּילֵ֮נִי֮"
+  },
+  {
+    "bcv_short": "Pr23:31",
+    "fp": "tsinnor",
+    "r": "יַּ֮יִן֮"
+  },
+  {
+    "bcv_short": "Pr23:35",
+    "fp": "tsinnor",
+    "r": "בַל־חָלִ֮יתִי֮"
+  },
+  {
+    "bcv_short": "Pr30:9",
+    "fp": "tsinnor",
+    "r": "וְכִחַ֮שְׁתִּי֮"
+  },
+  {
+    "bcv_short": "Pr30:19",
+    "fp": "tsinnor",
+    "r": "בַּשָּׁמַ֮יִם֮"
+  },
+  {
+    "bcv_short": "Jb20:26",
+    "fp": "tsinnor",
+    "r": "כׇּל־חֹ֮שֶׁךְ֮"
+  },
+  {
+    "bcv_short": "Jb34:20",
+    "fp": "tsinnor",
+    "r": "יָמֻ֮תוּ֮"
+  }
+]

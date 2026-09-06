@@ -1,0 +1,19 @@
+{
+  "_header": [
+    "Each entry defines a named release as a half-open range (old, new]",
+    " of commits in the MAM-parsed repo.",
+    " 'old' is the state before the first change (exclusive boundary);",
+    " 'new' is the state after the last change (inclusive boundary).",
+    " Consecutive releases share a boundary: the 'new' of one release",
+    " equals the 'old' of the next.",
+    " main_diff_mpplus.py also uses these to map --old/--new args to a release",
+    " name for the output filename."
+  ],
+  "releases": [
+    {"old": "b5e8f94", "new": "3d5ecfd", "name": "2025-03-19a"},
+    {"old": "3d5ecfd", "new": "049e636", "name": "2025-03-19b"},
+    {"old": "049e636", "new": "cc43fe0", "name": "2026-03-06"},
+    {"old": "cc43fe0", "new": "1880cbb", "name": "2026-03-16"},
+    {"old": "1880cbb", "new": "9ce6ee5", "name": "2026-04-14"}
+  ]
+}

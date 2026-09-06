@@ -1,0 +1,2102 @@
+[
+  {
+    "bcv_short": "G35:22",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "G35:22",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "G35:22",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "E20:13",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "N10:35",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "N10:36",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "N26:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "D2:8",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-כפול",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "D5:17",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Js4:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "Ju2:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "1S6:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S6:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S6:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S6:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S6:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S10:11",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S10:18",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "1S10:22",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S14:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "1S14:19",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "1S14:36",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S16:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "1S17:37",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S19:21",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S20:27",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "1S21:10",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S23:2",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1S23:11",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:27",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:27",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:28",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:28",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1S30:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S5:19",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "2S6:20",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S7:4",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S7:5",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S12:7",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S12:13",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S16:13",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S17:14",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S18:2",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S18:28",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S19:8",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S20:14",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S21:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2S21:6",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "2S23:25",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:26",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:26",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:27",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:28",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:31",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:32",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:33",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:34",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:35",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:36",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:37",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S23:38",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2S24:10",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "2S24:11",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "2S24:23",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1K1:19",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "1K4:3",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1K4:4",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1K4:5",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1K4:6",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1K13:20",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "2K1:17",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "I8:3",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "I36:16",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "Je13:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Je25:27",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "Je38:17",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Je38:28",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ee3:16",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "Ee20:31",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ee27:3",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ee37:9",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ee43:27",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ho1:2",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "Er2:36",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפ"
+  },
+  {
+    "bcv_short": "Er3:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Er3:9",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Er8:2",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Er8:2",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Er8:3",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Er8:18",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:4",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:4",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:8",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:23",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne3:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne7:59",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "Ne7:72",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ne13:30",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "1C1:51",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "1C4:33",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C5:29",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C10:4",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1C11:26",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:27",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:28",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:31",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:32",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:33",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:34",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:35",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:37",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:38",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:40",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:41",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:44",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:46",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C11:47",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C15:17",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C16:38",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C17:7",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1C19:7",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C19:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1C23:6",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:7",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:8",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:9",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:10",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:11",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:12",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:13",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:14",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:15",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:17",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:18",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:25",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C24:26",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C25:9",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C26:17",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "1C27:16",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:18",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:19",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:21",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:25",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:27",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:28",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:29",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "1C27:30",
+    "פסקא באמצע פסוק": null,
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2C5:1",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2C6:14",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "פפפ"
+  },
+  {
+    "bcv_short": "2C10:18",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2C13:3",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2C14:7",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2C17:14",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "2C29:12",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2C29:14",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2C30:24",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "ססס"
+  },
+  {
+    "bcv_short": "2C34:26",
+    "פסקא באמצע פסוק": "פסקא באמצע פסוק",
+    "stack_str": null,
+    "fp": "col-e-sampe",
+    "r": "סס"
+  },
+  {
+    "bcv_short": "Ps1:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps1:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps1:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps2:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps2:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps2:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps5:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps5:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps6:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps14:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps15:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps18:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps18:12",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps18:20",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps18:20",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps22:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps22:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps24:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps30:8",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps30:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps31:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps31:19",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps31:20",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps31:21",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps31:22",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps32:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps36:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps39:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps39:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps40:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps40:18",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps42:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps43:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps45:8",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps46:4",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps47:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps53:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps54:8",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps60:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps62:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps62:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps64:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps65:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps65:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps66:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps66:20",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps67:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps68:11",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps69:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps73:28",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps74:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps80:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps83:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps88:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps88:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps95:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps96:4",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps97:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps98:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps102:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps104:6",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps106:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps106:48",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps111:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps112:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps113:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps117:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps135:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps137:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps141:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps143:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps144:2",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps144:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps145:21",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps147:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps147:20",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps148:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps149:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps150:1",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr1:22",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr3:12",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr6:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr6:26",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr8:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr8:34",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr19:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr22:17",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr23:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr25:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr27:22",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr28:22",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr29:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr30:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Pr30:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb3:4",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb7:11",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb12:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb14:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb14:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb18:19",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb21:33",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb22:28",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb24:13",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb24:15",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb31:7",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb32:5",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb33:9",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb34:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb34:37",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb37:6",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb37:21",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb40:10",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "Jb42:3",
+    "fp": "implicit-maqaf",
+    "r": ""
+  },
+  {
+    "bcv_short": "I66:24",
+    "fp": "na-good-ending",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ma3:24",
+    "fp": "na-good-ending",
+    "r": ""
+  },
+  {
+    "bcv_short": "La5:22",
+    "fp": "na-good-ending",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ec12:14",
+    "fp": "na-good-ending",
+    "r": ""
+  },
+  {
+    "bcv_short": "G4:13",
+    "fp": "na-note",
+    "r": "מִנְּשֹֽׂא / בספרי ספרד ואשכנז מִנְּשֽׂוֹא / אאא*"
+  },
+  {
+    "bcv_short": "G5:1",
+    "fp": "na-note",
+    "r": "סֵ֔פֶר / בספרי תימן סֵ֔פֶר בסמ\"ך גדולה / אאא*"
+  },
+  {
+    "bcv_short": "G7:11",
+    "fp": "na-note",
+    "r": "מַעְיְנֹת֙ / בספרי ספרד ואשכנז מַעְיְנוֹת֙ / אאא*"
+  },
+  {
+    "bcv_short": "G9:29",
+    "fp": "na-note",
+    "r": "וַיִּֽהְיוּ֙ / בספרי ספרד ואשכנז וַֽיְהִי֙ / אאא*"
+  },
+  {
+    "bcv_short": "G41:45",
+    "fp": "na-note",
+    "r": "פּ֥וֹטִי פֶ֛רַע / בספרי תימן פּֽוֹטִיפֶ֛רַע בתיבה אחת / אאא*"
+  },
+  {
+    "bcv_short": "G41:50",
+    "fp": "na-note",
+    "r": "פּ֥וֹטִי פֶ֖רַע / בספרי תימן פּֽוֹטִיפֶ֖רַע בתיבה אחת / אאא*"
+  },
+  {
+    "bcv_short": "G46:20",
+    "fp": "na-note",
+    "r": "פּ֥וֹטִי פֶ֖רַע / בספרי תימן פּֽוֹטִיפֶ֖רַע בתיבה אחת / אאא*"
+  },
+  {
+    "bcv_short": "E1:19",
+    "fp": "na-note",
+    "r": "אֲלֵהֶ֛ן / בכתר ארם צובה היה כתוב אֲלֵיהֶ֛ן / אאא*"
+  },
+  {
+    "bcv_short": "E17:16",
+    "fp": "na-note",
+    "r": "כֵּ֣ס יָ֔הּ / בכתר ארם צובה היה כתוב כֵּ֣סְיָ֔הּ בתיבה אחת / אאא*"
+  },
+  {
+    "bcv_short": "E25:31",
+    "fp": "na-note",
+    "r": "תֵּעָשֶׂ֤ה / בספרי ספרד ואשכנז תֵּיעָשֶׂ֤ה / אאא*"
+  },
+  {
+    "bcv_short": "E26:7",
+    "fp": "na-note",
+    "r": "__ / ספק פרשה פתוחה בכתר ארם צובה / אאא*"
+  },
+  {
+    "bcv_short": "E28:26",
+    "fp": "na-note",
+    "r": "הָאֵפֹ֖ד / בספרי ספרד ואשכנז הָאֵפ֖וֹד / אאא*"
+  },
+  {
+    "bcv_short": "E34:1",
+    "fp": "na-note",
+    "r": "{פ} / ספק פרשה סתומה בכתר ארם צובה / אאא*"
+  },
+  {
+    "bcv_short": "E34:7",
+    "fp": "na-note",
+    "r": "נֹצֵ֥ר / בספרי תימן נֹצֵ֥ר בנו\"ן רגילה / אאא*"
+  },
+  {
+    "bcv_short": "L6:2",
+    "fp": "na-note",
+    "r": "מוֹקְדָ֨הֿ / בספרי תימן מוֹקְדָ֨הֿ במ\"ם רגילה / אאא*"
+  },
+  {
+    "bcv_short": "L7:22",
+    "fp": "na-note",
+    "r": "{פ} / אין פרשה בספרי ספרד ואשכנז / אאא*"
+  },
+  {
+    "bcv_short": "L7:28",
+    "fp": "na-note",
+    "r": "{פ} / אין פרשה בספרי תימן / אאא*"
+  },
+  {
+    "bcv_short": "L19:16",
+    "fp": "na-note",
+    "r": "רֵעֶ֑ךָ / בכתר ארם צובה היה כתוב רֵעֶ֑יךָ / אאא*"
+  },
+  {
+    "bcv_short": "N1:17",
+    "fp": "na-note",
+    "r": "בְּשֵׁמֹֽת / בספרי ספרד ואשכנז בְּשֵׁמֽוֹת / אאא*"
+  },
+  {
+    "bcv_short": "N10:10",
+    "fp": "na-note",
+    "r": "חׇדְשֵׁיכֶם֒ / בספרי ספרד ואשכנז חׇדְשֵׁכֶם֒ / אאא*"
+  },
+  {
+    "bcv_short": "N22:5",
+    "fp": "na-note",
+    "r": "בְּעֹ֗ר / בספרי ספרד ואשכנז בְּע֗וֹר / אאא*"
+  },
+  {
+    "bcv_short": "N25:11",
+    "fp": "na-note",
+    "r": "פִּֽינְחָ֨ס / בספרי ספרד ואשכנז נהוג לכתוב פִּֽינְחָ֨ס ביו\"ד זעירא / אאא*"
+  },
+  {
+    "bcv_short": "N25:12",
+    "fp": "na-note",
+    "r": "שָׁלֽוֹם / בספרי ספרד ואשכנז וי\"ו קטיעא / אאא*"
+  },
+  {
+    "bcv_short": "D11:21",
+    "fp": "na-note",
+    "r": "עַל־הָאָֽרֶץ / בספרי תימן הָאָֽרֶץ בצד\"י גדולה / אאא*"
+  },
+  {
+    "bcv_short": "D22:6",
+    "fp": "na-note",
+    "r": "קַן־צִפּ֣וֹר / בספרי תימן קַן בקו\"ף גדולה / *אאא"
+  },
+  {
+    "bcv_short": "D23:2",
+    "fp": "na-note",
+    "r": "דַּכָּ֛א / בספרי ספרד ורוב ספרי אשכנז דַּכָּ֛ה / אאא*"
+  },
+  {
+    "bcv_short": "D27:20",
+    "fp": "na-note",
+    "r": "__ / ספק פרשה סתומה בכתר ארם צובה / אאא*"
+  },
+  {
+    "bcv_short": "D32:6",
+    "fp": "na-note",
+    "r": "הַ לְיְהֹוָה֙ / בספרי תימן הַֽלְיהֹוָה֙ בתיבה אחת / אאא*"
+  },
+  {
+    "bcv_short": "D33:29",
+    "fp": "na-note",
+    "r": "אַשְׁרֶ֨יךָ / בספרי תימן אַשְׁרֶ֨יךָ באל\"ף גדולה / אאא*"
+  },
+  {
+    "bcv_short": "Es8:11",
+    "fp": "na-note",
+    "r": "וְלַהֲרֹ֨ג / במגילות אשכנז כתוב לַהֲרֹ֨ג / אאא*"
+  },
+  {
+    "bcv_short": "Es9:2",
+    "fp": "na-note",
+    "r": "לִפְנֵיהֶ֔ם / במגילות אשכנז כתוב בִּפְנֵיהֶ֔ם / אאא*"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "fp": "na-note",
+    "r": "אֲרִדַ֖י / בספרים אחרים אֲרִידַ֖י וכך כתוב במגילות רבות / אאא*"
+  },
+  {
+    "bcv_short": "N10:35",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "N10:36",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:23",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:24",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:25",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:26",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:27",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:28",
+    "fp": "wp-invnun",
+    "r": ""
+  },
+  {
+    "bcv_short": "Ps107:40",
+    "fp": "wp-invnun",
+    "r": ""
+  }
+]

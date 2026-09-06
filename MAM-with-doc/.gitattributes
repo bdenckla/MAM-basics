@@ -1,0 +1,12 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# CSV is pseudo-binary: written as CRLF by Python's csv module; keep CRLF in workdir.
+*.csv text eol=crlf
+
+# Binary assets: never convert.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff2 binary

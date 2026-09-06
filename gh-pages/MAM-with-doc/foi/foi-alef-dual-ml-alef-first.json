@@ -1,0 +1,671 @@
+[
+  {
+    "bcv_short": "Js12:20",
+    "stack_str": null,
+    "fp": "a-misc",
+    "r": "מְרֹאון֙"
+  },
+  {
+    "bcv_short": "Ju4:19",
+    "stack_str": null,
+    "fp": "a-misc",
+    "r": "אֶת־נֹ֧אוד"
+  },
+  {
+    "bcv_short": "Je27:1",
+    "stack_str": null,
+    "fp": "a-misc",
+    "r": "בֶּן־יֹאושִׁיָּ֖הוּ"
+  },
+  {
+    "bcv_short": "Ps144:13",
+    "stack_str": null,
+    "fp": "a-misc",
+    "r": "צֹאונֵ֣נוּ"
+  },
+  {
+    "bcv_short": "Ju8:1",
+    "stack_str": null,
+    "fp": "b-ot",
+    "r": "קְרֹ֣אות"
+  },
+  {
+    "bcv_short": "Ee17:6",
+    "stack_str": null,
+    "fp": "b-ot",
+    "r": "פֹּרֹֽאות׃"
+  },
+  {
+    "bcv_short": "Er2:69",
+    "stack_str": null,
+    "fp": "b-ot",
+    "r": "שֵׁשׁ־רִבֹּ֣אות"
+  },
+  {
+    "bcv_short": "Je25:12",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "כִמְלֹ֣אות"
+  },
+  {
+    "bcv_short": "Jb20:22",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "בִּמְלֹ֣אות"
+  },
+  {
+    "bcv_short": "Da9:2",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "לְמַלֹּ֛אות"
+  },
+  {
+    "bcv_short": "1C29:5",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "לְמַלֹּ֥אות"
+  },
+  {
+    "bcv_short": "2C36:21",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "לְמַלֹּ֤אות"
+  },
+  {
+    "bcv_short": "2C36:21",
+    "stack_str": null,
+    "fp": "c-m.lot",
+    "r": "לְמַלֹּ֖אות"
+  },
+  {
+    "bcv_short": "N20:17",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֔אול"
+  },
+  {
+    "bcv_short": "N22:26",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "D2:27",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "D17:20",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "D28:14",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "Js1:7",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "Js23:6",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "Ju7:20",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "בְיַד־שְׂמֹאולָם֙"
+  },
+  {
+    "bcv_short": "1S6:12",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "2S2:19",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וְעַֽל־הַשְּׂמֹ֔אול"
+  },
+  {
+    "bcv_short": "1K7:49",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מִשְּׂמֹ֛אול"
+  },
+  {
+    "bcv_short": "2K22:2",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "2K23:8",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "אֲשֶֽׁר־עַל־שְׂמֹ֥אול"
+  },
+  {
+    "bcv_short": "I9:19",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "עַל־שְׂמֹ֖אול"
+  },
+  {
+    "bcv_short": "I54:3",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֖אול"
+  },
+  {
+    "bcv_short": "Ee1:10",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מֵהַשְּׂמֹ֖אול"
+  },
+  {
+    "bcv_short": "Ee16:46",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "עַל־שְׂמֹאולֵ֑ךְ"
+  },
+  {
+    "bcv_short": "Ee39:3",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "שְׂמֹאולֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Zc4:11",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וְעַל־שְׂמֹאולָֽהּ׃"
+  },
+  {
+    "bcv_short": "Zc12:6",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וְעַל־שְׂמֹ֛אול"
+  },
+  {
+    "bcv_short": "Pr3:16",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "בִּ֝שְׂמֹאולָ֗הּ"
+  },
+  {
+    "bcv_short": "Pr4:27",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "Jb23:9",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "שְׂמֹ֣אול"
+  },
+  {
+    "bcv_short": "1C6:29",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "עַֽל־הַשְּׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "2C3:17",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מֵֽהַשְּׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "2C4:6",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מִשְּׂמֹאול֙"
+  },
+  {
+    "bcv_short": "2C4:7",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מִשְּׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "2C4:8",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "מִשְּׂמֹ֑אול"
+  },
+  {
+    "bcv_short": "2C34:2",
+    "stack_str": null,
+    "fp": "c-smol",
+    "r": "וּשְׂמֹֽאול׃"
+  },
+  {
+    "bcv_short": "Js24:19",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וּלְחַטֹּאותֵיכֶֽם׃"
+  },
+  {
+    "bcv_short": "1K14:16",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּ֤אות"
+  },
+  {
+    "bcv_short": "1K15:3",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּכׇל־חַטֹּ֥אות"
+  },
+  {
+    "bcv_short": "1K15:30",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "עַל־חַטֹּ֤אות"
+  },
+  {
+    "bcv_short": "1K16:13",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "כׇּל־חַטֹּ֣אות"
+  },
+  {
+    "bcv_short": "1K16:13",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וְחַטֹּ֖אות"
+  },
+  {
+    "bcv_short": "1K16:31",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּחַטֹּ֖אות"
+  },
+  {
+    "bcv_short": "2K3:3",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּחַטֹּ֞אות"
+  },
+  {
+    "bcv_short": "2K10:31",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּ֣אות"
+  },
+  {
+    "bcv_short": "2K13:11",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מִכׇּל־חַטֹּ֞אות"
+  },
+  {
+    "bcv_short": "2K14:24",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מִכׇּל־חַטֹּאות֙"
+  },
+  {
+    "bcv_short": "2K15:9",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מֵֽחַטֹּאות֙"
+  },
+  {
+    "bcv_short": "2K15:18",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּ֜אות"
+  },
+  {
+    "bcv_short": "2K15:24",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מֵֽחַטֹּאות֙"
+  },
+  {
+    "bcv_short": "2K15:28",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מִן־חַטֹּאות֙"
+  },
+  {
+    "bcv_short": "2K17:22",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּכׇל־חַטֹּ֥אות"
+  },
+  {
+    "bcv_short": "I43:24",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּחַטֹּאותֶ֔יךָ"
+  },
+  {
+    "bcv_short": "I44:22",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּאותֶ֑יךָ"
+  },
+  {
+    "bcv_short": "I59:2",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וְחַטֹּאותֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "I59:12",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וְחַטֹּאותֵ֖ינוּ"
+  },
+  {
+    "bcv_short": "Je5:25",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וְחַטֹּ֣אותֵיכֶ֔ם"
+  },
+  {
+    "bcv_short": "Je15:13",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וּבְכׇל־חַטֹּאותֶ֖יךָ"
+  },
+  {
+    "bcv_short": "Ee21:29",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּ֣אותֵיכֶ֔ם"
+  },
+  {
+    "bcv_short": "Ho8:13",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּאותָ֔ם"
+  },
+  {
+    "bcv_short": "Ho9:9",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּאותָֽם׃"
+  },
+  {
+    "bcv_short": "Mi1:5",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "וּבְחַטֹּ֖אות"
+  },
+  {
+    "bcv_short": "Mi7:19",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "כׇּל־חַטֹּאותָֽם׃"
+  },
+  {
+    "bcv_short": "Ps25:7",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "חַטֹּ֤אות"
+  },
+  {
+    "bcv_short": "Ps25:18",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "לְכׇל־חַטֹּאותָֽי׃"
+  },
+  {
+    "bcv_short": "La4:13",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "מֵֽחַטֹּ֣אות"
+  },
+  {
+    "bcv_short": "Ne1:6",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "עַל־חַטֹּ֤אות"
+  },
+  {
+    "bcv_short": "Ne9:37",
+    "stack_str": null,
+    "fp": "c-xatot",
+    "r": "בְּחַטֹּאותֵ֑ינוּ"
+  },
+  {
+    "bcv_short": "N26:7",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "הָראֿוּבֵנִ֑י"
+  },
+  {
+    "bcv_short": "N34:14",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "הָראֿוּבֵנִי֙"
+  },
+  {
+    "bcv_short": "D3:12",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָרֽאֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "D3:16",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וְלָראֿוּבֵנִ֨י"
+  },
+  {
+    "bcv_short": "D4:43",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָרֽאֿוּבֵנִ֑י"
+  },
+  {
+    "bcv_short": "D29:7",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָראֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "Js1:12",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וְלָרֽאֿוּבֵנִי֙"
+  },
+  {
+    "bcv_short": "Js12:6",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָרֽאֿוּבֵנִי֙"
+  },
+  {
+    "bcv_short": "Js13:8",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "הָרֽאֿוּבֵנִי֙"
+  },
+  {
+    "bcv_short": "Js22:1",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָראֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "Js24:14",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "יְר֧אֿוּ"
+  },
+  {
+    "bcv_short": "1S12:24",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "יְר֣אֿוּ"
+  },
+  {
+    "bcv_short": "2S11:24",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וַיֹּר֨אֿוּ"
+  },
+  {
+    "bcv_short": "2K10:33",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וְהָראֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "Ee47:8",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וְנִרְפּ֥אֿוּ"
+  },
+  {
+    "bcv_short": "Ps34:10",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "יְר֣אֿוּ"
+  },
+  {
+    "bcv_short": "Jb19:2",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "וּֽתְדַכּאֿוּנַ֥נִי"
+  },
+  {
+    "bcv_short": "Jb31:7",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "מֽאֿוּם׃"
+  },
+  {
+    "bcv_short": "Da1:4",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "מאֿוּם֩"
+  },
+  {
+    "bcv_short": "1C5:6",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָרֽאֿוּבֵנִֽי׃"
+  },
+  {
+    "bcv_short": "1C5:26",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָראֿוּבֵנִ֣י"
+  },
+  {
+    "bcv_short": "1C11:42",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "הָראֿוּבֵנִ֗י"
+  },
+  {
+    "bcv_short": "1C11:42",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָראֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "1C12:38",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "מִן־הָראֿוּבֵנִ֨י"
+  },
+  {
+    "bcv_short": "1C26:32",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "עַל־הָראֿוּבֵנִ֤י"
+  },
+  {
+    "bcv_short": "1C27:16",
+    "stack_str": null,
+    "fp": "d-alef-rafeh-shuruq",
+    "r": "לָראֿוּבֵנִ֣י"
+  },
+  {
+    "bcv_short": "Js21:10",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "רִאישֹׁנָֽה׃"
+  },
+  {
+    "bcv_short": "Ju13:18",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "וְהוּא־פֶֽלִאי׃"
+  },
+  {
+    "bcv_short": "1S14:33",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "חֹטִ֥אים"
+  },
+  {
+    "bcv_short": "2S11:24",
+    "stack_str": null,
+    "fp": "e-alef-yod",
+    "r": "הַמּוֹרִ֤אֿים"
+  },
+  {
+    "bcv_short": "I30:5",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "הֹבִ֔אישׁ"
+  },
+  {
+    "bcv_short": "Ps99:6",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "קֹרִ֥אים"
+  },
+  {
+    "bcv_short": "Jb15:7",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "הֲרִאישׁ֣וֹן"
+  },
+  {
+    "bcv_short": "Da4:16",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "מָרִ֕אי"
+  },
+  {
+    "bcv_short": "Da4:21",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "מָרִ֥אי"
+  },
+  {
+    "bcv_short": "Er4:12",
+    "stack_str": null,
+    "rafeh": "no rafeh",
+    "fp": "e-alef-yod",
+    "r": "וּבִֽאישְׁתָּא֙"
+  }
+]

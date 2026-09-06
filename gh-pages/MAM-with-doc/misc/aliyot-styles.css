@@ -1,0 +1,23 @@
+body {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14pt;
+}
+p { text-align: justify; }
+li { text-align: justify; }
+span.romanized { font-style: italic }
+span.small-caps {
+    font-variant: small-caps;
+}
+table { margin-left: auto; margin-right: auto; }
+table.border-collapse { border-collapse: collapse }
+table.break-inside-avoid { break-inside: avoid }
+th, td {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+}
+td.vertical-align-bottom { vertical-align: bottom }
+td.hcenter { text-align: center }
+td.implicit-label { color: gray }
+*.bordered { border: 1px solid }

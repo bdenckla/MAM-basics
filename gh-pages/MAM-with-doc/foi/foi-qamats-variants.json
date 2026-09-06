@@ -1,0 +1,7502 @@
+[
+  {
+    "bcv_short": "G9:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֹֽה ס=אָהֳלֹֽה"
+  },
+  {
+    "bcv_short": "G12:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֹ֑ה ס=אָהֳלֹ֑ה"
+  },
+  {
+    "bcv_short": "G19:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "G26:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "G31:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽת־אׇהֳלוֹ֙ ס=אֶֽת־אָהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "G32:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "שׁ",
+    "m3_zmnl": ":",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=יִֽפְגׇשְׁךָ֞ ס=יִֽפְגָשְׁךָ֞"
+  },
+  {
+    "bcv_short": "G33:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳל֔וֹ ס=אָהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "G36:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאֶת־אׇהֳלִֽיבָמָה֙ ס=וְאֶת־אָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇהֳלִֽיבָמָה֙ ס=וְאָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָמָ֧ה ס=אָהֳלִיבָמָ֧ה"
+  },
+  {
+    "bcv_short": "G36:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִֽיבָמָה֙ ס=אָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִֽיבָמָ֛ה ס=אָהֳלִֽיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "G36:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇהֳלִיבָמָ֖ה ס=וְאָהֳלִיבָמָ֖ה"
+  },
+  {
+    "bcv_short": "G36:41",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָמָ֛ה ס=אָהֳלִיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "G43:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָֽיִם ס=בַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "G43:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "E9:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E11:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרִי־אָֽף ס=בָּחֳרִי־אָֽף"
+  },
+  {
+    "bcv_short": "E16:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳל֖וֹ ס=בְּאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E18:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E30:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קֹֽדֶשׁ־קׇדָשִׁ֥ים ס=קֹֽדֶשׁ־קָדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "E31:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיאָ֞ב ס=אָהֳלִיאָ֞ב"
+  },
+  {
+    "bcv_short": "E32:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E32:30",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E33:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "E33:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֽוֹ ס=אָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "E35:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽת־אׇהֳל֖וֹ ס=אֶֽת־אָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E36:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇהֳלִיאָ֜ב ס=וְאָהֳלִיאָ֜ב"
+  },
+  {
+    "bcv_short": "E38:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיאָ֞ב ס=אָהֳלִיאָ֞ב"
+  },
+  {
+    "bcv_short": "L7:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּמִֽמׇּחֳרָ֔ת ס=וּמִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "L12:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָ֑הֿ ס=טָהֳרָ֑הֿ"
+  },
+  {
+    "bcv_short": "L12:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָֽהּ ס=טָהֳרָֽהּ"
+  },
+  {
+    "bcv_short": "L12:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָֽהֿ ס=טָהֳרָֽהֿ"
+  },
+  {
+    "bcv_short": "L12:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָ֗הּ ס=טָהֳרָ֗הּ"
+  },
+  {
+    "bcv_short": "L13:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְטׇהֳרָת֑וֹ ס=לְטָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "L13:35",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָתֽוֹ ס=טָהֳרָתֽוֹ"
+  },
+  {
+    "bcv_short": "L14:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָת֑וֹ ס=טָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "L14:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳל֖וֹ ס=לְאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "L14:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְטׇהֳרָת֖וֹ ס=לְטָהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L14:32",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּטׇהֳרָתֽוֹ ס=בְּטָהֳרָתֽוֹ"
+  },
+  {
+    "bcv_short": "L15:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְטׇהֳרָת֖וֹ ס=לְטָהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L19:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּמִֽמׇּחֳרָ֑ת ס=וּמִֽמָּחֳרָ֑ת"
+  },
+  {
+    "bcv_short": "L23:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרַת֙ ס=מִֽמָּחֳרַת֙"
+  },
+  {
+    "bcv_short": "L23:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִמׇּחֳרַ֣ת ס=מִמָּחֳרַ֣ת"
+  },
+  {
+    "bcv_short": "L23:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרַ֤ת ס=מִֽמָּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "L27:28",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קֹֽדֶשׁ־קׇדָשִׁ֥ים ס=קֹֽדֶשׁ־קָדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "L27:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=יׇחֳרַ֛ם ס=יָחֳרַ֛ם"
+  },
+  {
+    "bcv_short": "N6:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָת֔וֹ ס=טָהֳרָת֔וֹ"
+  },
+  {
+    "bcv_short": "N11:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "N11:32",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הַֽמׇּחֳרָ֗ת ס=הַֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "N16:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֨י ס=אָהֳלֵ֨י"
+  },
+  {
+    "bcv_short": "N17:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "N17:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "N33:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרַ֣ת ס=מִֽמָּחֳרַ֣ת"
+  },
+  {
+    "bcv_short": "D1:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְאׇהֳלֵיכֶם֙ ס=בְאָהֳלֵיכֶם֙"
+  },
+  {
+    "bcv_short": "D5:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳלֵיכֶֽם ס=לְאָהֳלֵיכֶֽם"
+  },
+  {
+    "bcv_short": "D11:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאֶת־אׇהֳלֵיהֶ֑ם ס=וְאֶת־אָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "D28:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרַ֗יִם ס=בַּֽצָּהֳרַ֗יִם"
+  },
+  {
+    "bcv_short": "D28:59",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וׇחֳלָיִ֖ם ס=וָחֳלָיִ֖ם"
+  },
+  {
+    "bcv_short": "D28:68",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳנִיּוֹת֒ ס=בָּאֳנִיּוֹת֒"
+  },
+  {
+    "bcv_short": "Js5:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִמׇּחֳרַ֥ת ס=מִמָּחֳרַ֥ת"
+  },
+  {
+    "bcv_short": "Js5:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "Js7:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הָאׇהֳלִ֖י ס=הָאָהֳלִ֖י"
+  },
+  {
+    "bcv_short": "Js7:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳל֖וֹ ס=בְּאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "Js7:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאֶֽת־אׇהֳלוֹ֙ ס=וְאֶֽת־אָהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "Js22:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳלֵיכֶ֗ם ס=לְאָהֳלֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "Js22:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶל־אׇהֳלֵיהֶֽם ס=אֶל־אָהֳלֵיהֶֽם"
+  },
+  {
+    "bcv_short": "Js22:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶל־אׇהֳלֵיהֶ֖ם ס=אֶל־אָהֳלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "Ju6:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇהֳלֵיהֶ֗ם ס=וְאָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ju6:38",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Ju8:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇאֳהָלִ֔ים ס=בָאֳהָלִ֔ים"
+  },
+  {
+    "bcv_short": "Ju9:42",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Ju20:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳל֔וֹ ס=לְאָהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "Ju21:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S1:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּעֳנִ֣י ס=בָּעֳנִ֣י"
+  },
+  {
+    "bcv_short": "1S5:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S5:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָת֒ ס=מִֽמָּחֳרָת֒"
+  },
+  {
+    "bcv_short": "1S11:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S13:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": ":",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הַדׇּרְבָֽן ס=הַדָּרְבָֽן"
+  },
+  {
+    "bcv_short": "1S15:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לִמְשׇׁחֳךָ֣ ס=לִמְשָׁחֳךָ֣"
+  },
+  {
+    "bcv_short": "1S17:54",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֽוֹ ס=בְּאָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "1S18:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S20:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרַ֤ת ס=מִֽמָּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "1S20:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרִי־אָ֑ף ס=בָּחֳרִי־אָ֑ף"
+  },
+  {
+    "bcv_short": "1S28:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇסֳמִי־ ס=קָסֳמִי־"
+  },
+  {
+    "bcv_short": "1S28:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מַֽה־תׇּאֳר֔וֹ ס=מַֽה־תָּאֳר֔וֹ"
+  },
+  {
+    "bcv_short": "1S30:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְמׇחֳרָתָ֑ם ס=לְמָחֳרָתָ֑ם"
+  },
+  {
+    "bcv_short": "1S31:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "2S4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הַֽצׇּהֳרָֽיִם ס=הַֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "2S11:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּמִֽמׇּחֳרָֽת ס=וּמִֽמָּחֳרָֽת"
+  },
+  {
+    "bcv_short": "1K8:66",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳלֵיהֶ֗ם ס=לְאָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "1K9:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וׇאֳנִ֡י ס=וָאֳנִ֡י"
+  },
+  {
+    "bcv_short": "1K18:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְעַד־הַצׇּהֳרַ֤יִם ס=וְעַד־הַצָּהֳרַ֤יִם"
+  },
+  {
+    "bcv_short": "1K18:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַֽצׇּהֳרַ֜יִם ס=בַֽצָּהֳרַ֜יִם"
+  },
+  {
+    "bcv_short": "1K18:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הַֽצׇּהֳרַ֔יִם ס=הַֽצָּהֳרַ֔יִם"
+  },
+  {
+    "bcv_short": "1K20:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "1K22:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הׇחֳלֵֽיתִי ס=הָחֳלֵֽיתִי"
+  },
+  {
+    "bcv_short": "1K22:35",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מׇעֳמָ֛ד ס=מָעֳמָ֛ד"
+  },
+  {
+    "bcv_short": "1K22:50",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳנִיּ֑וֹת ס=בָּאֳנִיּ֑וֹת"
+  },
+  {
+    "bcv_short": "2K3:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הׇחֳרֵ֤ב ס=הָחֳרֵ֤ב"
+  },
+  {
+    "bcv_short": "2K4:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=עַד־הַֽצׇּהֳרַ֖יִם ס=עַד־הַֽצָּהֳרַ֖יִם"
+  },
+  {
+    "bcv_short": "2K7:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶת־אׇהֳלֵיהֶ֗ם ס=אֶת־אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "2K8:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "2K13:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֵיהֶ֖ם ס=בְּאָהֳלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "I7:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרִי־אַ֛ף ס=בָּחֳרִי־אַ֛ף"
+  },
+  {
+    "bcv_short": "I11:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִשׇּׁרָשָׁ֥יו ס=מִשָּׁרָשָׁ֥יו"
+  },
+  {
+    "bcv_short": "I16:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=צׇהֳרָ֑יִם ס=צָהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "I40:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּשׇׁעֳל֜וֹ ס=בְּשָׁעֳל֜וֹ"
+  },
+  {
+    "bcv_short": "I44:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=יְתׇאֳרֵ֑הוּ ס=יְתָאֳרֵ֑הוּ"
+  },
+  {
+    "bcv_short": "I54:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֗ךְ ס=אָהֳלֵ֗ךְ"
+  },
+  {
+    "bcv_short": "I58:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כַּֽצׇּהֳרָֽיִם ס=כַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "I59:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַֽצׇּהֳרַ֙יִם֙ ס=בַֽצָּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "I60:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וׇאֳנִיּ֤וֹת ס=וָאֳנִיּ֤וֹת"
+  },
+  {
+    "bcv_short": "I66:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=תְּשׇׁעֳשָֽׁעוּ ס=תְּשָׁעֳשָֽׁעוּ"
+  },
+  {
+    "bcv_short": "Je6:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַֽצׇּהֳרָ֑יִם ס=בַֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Je10:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִ֣י ס=אָהֳלִ֣י"
+  },
+  {
+    "bcv_short": "Je15:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Je17:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשָׁ֔יו ס=שָׁרָשָׁ֔יו"
+  },
+  {
+    "bcv_short": "Je20:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Je20:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=צׇהֳרָֽיִם ס=צָהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Je25:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּפׇעֳלָ֖ם ס=כְּפָעֳלָ֖ם"
+  },
+  {
+    "bcv_short": "Je30:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Je35:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳהָלִ֤ים ס=בָּאֳהָלִ֤ים"
+  },
+  {
+    "bcv_short": "Je35:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳהָלִ֑ים ס=בָּאֳהָלִ֑ים"
+  },
+  {
+    "bcv_short": "Je49:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵיהֶ֤ם ס=אָהֳלֵיהֶ֤ם"
+  },
+  {
+    "bcv_short": "Je50:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּפׇעֳלָ֔הּ ס=כְּפָעֳלָ֔הּ"
+  },
+  {
+    "bcv_short": "Ee13:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרָב֑וֹת ס=בָּחֳרָב֑וֹת"
+  },
+  {
+    "bcv_short": "Ee17:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְשׇׁרָשָׁ֖יו ס=וְשָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "Ee17:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשֶׁ֣יהָ ס=שָׁרָשֶׁ֣יהָ"
+  },
+  {
+    "bcv_short": "Ee17:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶת־שׇׁרָשֶׁ֨יהָ ס=אֶת־שָׁרָשֶׁ֨יהָ"
+  },
+  {
+    "bcv_short": "Ee17:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִשׇּׁרָשֶֽׁיהָ ס=מִשָּׁרָשֶֽׁיהָ"
+  },
+  {
+    "bcv_short": "Ee20:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרִ֣י ס=בָּחֳרִ֣י"
+  },
+  {
+    "bcv_short": "Ee22:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשַׁ֖י ס=קָדָשַׁ֖י"
+  },
+  {
+    "bcv_short": "Ee22:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשַׁי֒ ס=קָדָשַׁי֒"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלָ֤ה ס=אָהֳלָ֤ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇהֳלִיבָ֣ה ס=וְאָהֳלִיבָ֣ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלָ֔ה ס=אָהֳלָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָֽה ס=אָהֳלִיבָֽה"
+  },
+  {
+    "bcv_short": "Ee23:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלָ֖ה ס=אָהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָ֔ה ס=אָהֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָ֗ה ס=אָהֳלִיבָ֗ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽת־אׇהֳלָ֖ה ס=אֶֽת־אָהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאֶת־אׇהֳלִיבָ֑ה ס=וְאֶת־אָהֳלִיבָ֑ה"
+  },
+  {
+    "bcv_short": "Ee23:42",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=סׇבָאִ֖ים ס=סָבָאִ֖ים"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽל־אׇהֳלָה֙ ס=אֶֽל־אָהֳלָה֙"
+  },
+  {
+    "bcv_short": "Ee26:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הׇחֳרָֽבָה ס=הָחֳרָֽבָה"
+  },
+  {
+    "bcv_short": "Ee26:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כׇּחֳרָב֤וֹת ס=כָּחֳרָב֤וֹת"
+  },
+  {
+    "bcv_short": "Ee36:38",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשִׁ֗ים ס=קָדָשִׁ֗ים"
+  },
+  {
+    "bcv_short": "Ee43:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשִׁ֔ים ס=קָדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "Ee44:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשָׁ֑י ס=קָדָשָׁ֑י"
+  },
+  {
+    "bcv_short": "Ee44:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇהֳרָת֑וֹ ס=טָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "Ee45:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשִֽׁים ס=קָדָשִֽׁים"
+  },
+  {
+    "bcv_short": "Ee48:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשִׁ֑ים ס=קָדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "Ho9:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֵיהֶֽם ס=בְּאָהֳלֵיהֶֽם"
+  },
+  {
+    "bcv_short": "Ho9:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּאׇהֳבָֽם ס=כְּאָהֳבָֽם"
+  },
+  {
+    "bcv_short": "Ho12:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇאֳהָלִ֖ים ס=בָאֳהָלִ֖ים"
+  },
+  {
+    "bcv_short": "Ho14:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשָׁ֖יו ס=שָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "A2:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=עַֽל־מׇאֳסָ֞ם ס=עַֽל־מָאֳסָ֞ם"
+  },
+  {
+    "bcv_short": "A2:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְשׇׁרָשָׁ֖יו ס=וְשָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "A8:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Jn4:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לַֽמׇּחֳרָ֑ת ס=לַֽמָּחֳרָ֑ת"
+  },
+  {
+    "bcv_short": "Mi2:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=טׇמְאָ֛ה ס=טָמְאָ֛ה"
+  },
+  {
+    "bcv_short": "Hb3:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ts2:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרַ֙יִם֙ ס=בַּֽצָּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "Zc12:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶת־אׇהֳלֵ֥י ס=אֶת־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ma2:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מֵאׇהֳלֵ֖י ס=מֵאָהֳלֵ֖י"
+  },
+  {
+    "bcv_short": "Ps15:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֶ֑ךָ ס=בְּאָהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps27:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps27:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְ֭אׇהֳלוֹ ס=בְ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Ps28:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּפׇעֳלָם֮ ס=כְּפָעֳלָם֮"
+  },
+  {
+    "bcv_short": "Ps37:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כַּֽצׇּהֳרָֽיִם ס=כַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Ps55:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְ֭צׇהֳרַיִם ס=וְ֭צָהֳרַיִם"
+  },
+  {
+    "bcv_short": "Ps69:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מׇעֳמָ֑ד ס=מָעֳמָ֑ד"
+  },
+  {
+    "bcv_short": "Ps69:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּ֝אׇהֳלֵיהֶ֗ם ס=בְּ֝אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps77:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלֶ֑ךָ ס=פָּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps78:51",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֵי־חָֽם ס=בְּאָהֳלֵי־חָֽם"
+  },
+  {
+    "bcv_short": "Ps78:55",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּ֝אׇהֳלֵיהֶ֗ם ס=בְּ֝אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps83:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ps84:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֵי־רֶֽשַׁע ס=בְּאָהֳלֵי־רֶֽשַׁע"
+  },
+  {
+    "bcv_short": "Ps90:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇעֳלֶ֑ךָ ס=פָעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps91:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=צׇהֳרָֽיִם ס=צָהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Ps91:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֶֽךָ ס=בְּאָהֳלֶֽךָ"
+  },
+  {
+    "bcv_short": "Ps92:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּפׇעֳלֶ֑ךָ ס=בְּפָעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps95:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇעֳלִֽי ס=פָעֳלִֽי"
+  },
+  {
+    "bcv_short": "Ps104:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְפׇעֳל֑וֹ ס=לְפָעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps106:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְאׇהֳלֵיהֶ֑ם ס=בְאָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "Ps107:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳנִיּ֑וֹת ס=בָּאֳנִיּ֑וֹת"
+  },
+  {
+    "bcv_short": "Ps111:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳל֑וֹ ס=פָּעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps118:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֵ֥י ס=בְּאָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps120:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=עִֽם־אׇהֳלֵ֥י ס=עִֽם־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps143:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלֶ֑ךָ ס=פָּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Pr7:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּאֳהָבִֽים ס=בָּאֳהָבִֽים"
+  },
+  {
+    "bcv_short": "Pr20:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלֽוֹ ס=פָּעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr21:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלֽוֹ ס=פָּעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr24:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּפׇעֳלֽוֹ ס=כְּפָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr24:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּפׇעֳלֽוֹ ס=כְּפָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr31:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כׇּאֳנִיּ֣וֹת ס=כָּאֳנִיּ֣וֹת"
+  },
+  {
+    "bcv_short": "Jb4:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=תׇּהֳלָֽה ס=תָּהֳלָֽה"
+  },
+  {
+    "bcv_short": "Jb5:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַֽצׇּהֳרָֽיִם ס=בַֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Jb5:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֶ֑ךָ ס=אָהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Jb7:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇעֳלֽוֹ ס=פָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Jb8:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשָׁ֣יו ס=שָׁרָשָׁ֣יו"
+  },
+  {
+    "bcv_short": "Jb11:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּֽ֭מִצׇּהֳרַיִם ס=וּֽ֭מִצָּהֳרַיִם"
+  },
+  {
+    "bcv_short": "Jb15:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵי־שֹֽׁחַד ס=אָהֳלֵי־שֹֽׁחַד"
+  },
+  {
+    "bcv_short": "Jb18:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳל֑וֹ ס=בְּאָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb18:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מֵ֭אׇהֳלוֹ ס=מֵ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb18:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּ֭אׇהֳלוֹ ס=בְּ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb18:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשָׁ֣יו ס=שָׁרָשָׁ֣יו"
+  },
+  {
+    "bcv_short": "Jb19:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳלִֽי ס=לְאָהֳלִֽי"
+  },
+  {
+    "bcv_short": "Jb20:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּאׇהֳלֽוֹ ס=בְּאָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Jb22:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מֵאׇהֳלֶֽךָ ס=מֵאָהֳלֶֽךָ"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בְּ֭פׇעֳלָם ס=בְּ֭פָעֳלָם"
+  },
+  {
+    "bcv_short": "Jb29:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִֽי ס=אָהֳלִֽי"
+  },
+  {
+    "bcv_short": "Jb31:31",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִ֑י ס=אָהֳלִ֑י"
+  },
+  {
+    "bcv_short": "Jb36:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלָ֑ם ס=פָּעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "Jb36:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇעֳל֑וֹ ס=פָעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb37:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְפׇעֳלָ֑ם ס=לְפָעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "S1:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּאׇהֳלֵ֣י ס=כְּאָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "S1:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "S7:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=תׇּאֳמֵ֥י ס=תָּאֳמֵ֥י"
+  },
+  {
+    "bcv_short": "R1:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֜י ס=נָעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R1:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִי֙ ס=נָעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִי֙ ס=נָעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִֽי ס=נָעֳמִֽי"
+  },
+  {
+    "bcv_short": "R1:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֔י ס=נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R1:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֗י ס=נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּֽלְנׇעֳמִ֞י ס=וּֽלְנָעֳמִ֞י"
+  },
+  {
+    "bcv_short": "R2:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽל־נׇעֳמִ֗י ס=אֶֽל־נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=עִֽם־נׇעֳמִ֖י ס=עִֽם־נָעֳמִ֖י"
+  },
+  {
+    "bcv_short": "R2:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=פׇּעֳלֵ֑ךְ ס=פָּעֳלֵ֑ךְ"
+  },
+  {
+    "bcv_short": "R2:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֜י ס=נָעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R2:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֗י ס=נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֖י ס=נָעֳמִ֖י"
+  },
+  {
+    "bcv_short": "R3:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֣י ס=נָעֳמִ֣י"
+  },
+  {
+    "bcv_short": "R3:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְגׇאֳלֵ֛ךְ ס=לְגָאֳלֵ֛ךְ"
+  },
+  {
+    "bcv_short": "R4:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֔י ס=נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R4:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִֽי ס=נָעֳמִֽי"
+  },
+  {
+    "bcv_short": "R4:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶֽל־נׇעֳמִ֔י ס=אֶֽל־נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=נׇעֳמִ֤י ס=נָעֳמִ֤י"
+  },
+  {
+    "bcv_short": "R4:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְנׇעֳמִ֑י ס=לְנָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "Ec6:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וׇחֳלִ֥י ס=וָחֳלִ֥י"
+  },
+  {
+    "bcv_short": "Da2:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇחֳרָן֙ ס=וְאָחֳרָן֙"
+  },
+  {
+    "bcv_short": "Da2:39",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרִ֖י ס=אָחֳרִ֖י"
+  },
+  {
+    "bcv_short": "Da2:39",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרִי֙ ס=אָחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da2:44",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרָ֖ן ס=אָחֳרָ֖ן"
+  },
+  {
+    "bcv_short": "Da3:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da3:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרָ֔ן ס=אָחֳרָ֔ן"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרֵ֡ין ס=אָחֳרֵ֡ין"
+  },
+  {
+    "bcv_short": "Da5:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְלׇקֳבֵ֥ל ס=וְלָקֳבֵ֥ל"
+  },
+  {
+    "bcv_short": "Da5:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da5:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇקֳבֵ֨ל ס=לָקֳבֵ֨ל"
+  },
+  {
+    "bcv_short": "Da5:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇחֳרָ֣ן ס=לְאָחֳרָ֣ן"
+  },
+  {
+    "bcv_short": "Da7:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרִ֨י ס=אָחֳרִ֨י"
+  },
+  {
+    "bcv_short": "Da7:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇחֳרִ֤י ס=אָחֳרִ֤י"
+  },
+  {
+    "bcv_short": "Da7:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇחֳרִי֙ ס=וְאָחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְאׇחֳרָ֞ן ס=וְאָחֳרָ֞ן"
+  },
+  {
+    "bcv_short": "Da11:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=שׇׁרָשֶׁ֖יהָ ס=שָׁרָשֶׁ֖יהָ"
+  },
+  {
+    "bcv_short": "Da11:40",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וּבׇאֳנִיּ֖וֹת ס=וּבָאֳנִיּ֖וֹת"
+  },
+  {
+    "bcv_short": "Da11:45",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Er4:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇסְנַפַּר֙ ס=אָסְנַפַּר֙"
+  },
+  {
+    "bcv_short": "Er4:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Er4:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָמָֽי ס=קָדָמָֽי"
+  },
+  {
+    "bcv_short": "Er5:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇסְפַּ֥רְנָא ס=אָסְפַּ֥רְנָא"
+  },
+  {
+    "bcv_short": "Er6:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇקֳבֵ֗ל ס=לָקֳבֵ֗ל"
+  },
+  {
+    "bcv_short": "Er10:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=יׇחֳרַ֖ם ס=יָחֳרַ֖ם"
+  },
+  {
+    "bcv_short": "Ne12:45",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הַֽטׇּהֳרָ֔ה ס=הַֽטָּהֳרָ֔ה"
+  },
+  {
+    "bcv_short": "Ne13:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=גׇּאֳלֵ֣י ס=גָּאֳלֵ֣י"
+  },
+  {
+    "bcv_short": "1C1:52",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אׇהֳלִיבָמָ֛ה ס=אָהֳלִיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "1C4:41",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=אֶת־אׇהֳלֵיהֶ֜ם ס=אֶת־אָהֳלֵיהֶ֜ם"
+  },
+  {
+    "bcv_short": "1C10:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1C23:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=קׇדָשִׁ֤ים ס=קָדָשִׁ֤ים"
+  },
+  {
+    "bcv_short": "1C23:28",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְעַֽל־טׇהֳרַ֖ת ס=וְעַֽל־טָהֳרַ֖ת"
+  },
+  {
+    "bcv_short": "1C29:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְֽמׇחֳרַת֮ ס=לְֽמָחֳרַת֮"
+  },
+  {
+    "bcv_short": "2C7:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לְאׇהֳלֵיהֶ֑ם ס=לְאָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "2C9:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=מׇאֳחָזִ֔ים ס=מָאֳחָזִ֔ים"
+  },
+  {
+    "bcv_short": "2C14:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְגַם־אׇהֳלֵ֥י ס=וְגַם־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "2C15:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=וְקׇדָשָׁ֖יו ס=וְקָדָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "2C18:33",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הׇחֳלֵֽיתִי ס=הָחֳלֵֽיתִי"
+  },
+  {
+    "bcv_short": "2C21:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳלָיִ֥ים ס=בָּחֳלָיִ֥ים"
+  },
+  {
+    "bcv_short": "2C21:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=לׇחֳלִ֖י ס=לָחֳלִ֖י"
+  },
+  {
+    "bcv_short": "2C25:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=בׇּחֳרִי־אָֽף ס=בָּחֳרִי־אָֽף"
+  },
+  {
+    "bcv_short": "2C30:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=כְּטׇהֳרַ֥ת ס=כְּטָהֳרַ֥ת"
+  },
+  {
+    "bcv_short": "2C35:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-0-qq-count-1",
+    "r": "ד=הׇחֳלֵ֖יתִי ס=הָחֳלֵ֖יתִי"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-כפול",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵ֑ם֒ ס=תָעׇבְדֵ֑ם֒"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵ֑ם ס=תָעׇבְדֵ֑ם"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵם֒ ס=תָעׇבְדֵם֒"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-כפול",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵ֑ם֒ ס=תָעׇבְדֵ֑ם֒"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵ֑ם ס=תָעׇבְדֵ֑ם"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=תׇעׇבְדֵם֒ ס=תָעׇבְדֵם֒"
+  },
+  {
+    "bcv_short": "1K12:10",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ט",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=קׇטׇנִּ֥י ס=קָטׇנִּ֥י"
+  },
+  {
+    "bcv_short": "I30:12",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=מׇאׇסְכֶ֖ם ס=מָאׇסְכֶ֖ם"
+  },
+  {
+    "bcv_short": "I41:24",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=וּפׇעׇלְכֶ֖ם ס=וּפָעׇלְכֶ֖ם"
+  },
+  {
+    "bcv_short": "Ps61:5",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": "oa",
+    "fp": "accent-0-qq-count-2",
+    "r": "ד=בְ֭אׇהׇלְךָ ס=בְ֭אָהׇלְךָ"
+  },
+  {
+    "bcv_short": "Ps80:10",
+    "accent": "(ger_m)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(ger_m)-qq-count-1",
+    "r": "ד=שׇׁ֝רָשֶׁ֗יהָ ס=שָׁ֝רָשֶׁ֗יהָ"
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ל",
+    "m3_zmnl": "",
+    "fp": "accent-1-(mer)-qq-count-1",
+    "r": "ד=כׇּ֥ל ס=כָּ֥ל"
+  },
+  {
+    "bcv_short": "Ps86:2",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mer)-qq-count-1",
+    "r": "ד=שׇׁ֥מְרָ֣ה ס=שָׁ֥מְרָ֣ה"
+  },
+  {
+    "bcv_short": "Pr19:7",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ל",
+    "m3_zmnl": "",
+    "fp": "accent-1-(mer)-qq-count-1",
+    "r": "ד=כׇּ֥ל ס=כָּ֥ל"
+  },
+  {
+    "bcv_short": "G9:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=בְּאׇֽהֳלֵי־שֵׁ֑ם ס=בְּאָֽהֳלֵי־שֵׁ֑ם"
+  },
+  {
+    "bcv_short": "G13:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳלֹה֙ ס=אָֽהֳלֹה֙"
+  },
+  {
+    "bcv_short": "G13:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": "kq-triv-pqere",
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳלֹוֹ֙ ס=אָֽהֳלֹוֹ֙"
+  },
+  {
+    "bcv_short": "G35:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳלֹ֔ה ס=אָֽהֳלֹ֔ה"
+  },
+  {
+    "bcv_short": "E22:19",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=יׇֽחֳרָ֑ם ס=יָֽחֳרָ֑ם"
+  },
+  {
+    "bcv_short": "E29:37",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֔ים ס=קָֽדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "E30:29",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֑ים ס=קָֽדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "E30:36",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "E35:34",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=וְאׇֽהֳלִיאָ֥ב ס=וְאָֽהֳלִיאָ֥ב"
+  },
+  {
+    "bcv_short": "E36:2",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=וְאֶל־אׇֽהֳלִיאָב֒ ס=וְאֶל־אָֽהֳלִיאָב֒"
+  },
+  {
+    "bcv_short": "E40:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִֽׁים ס=קָֽדָשִֽׁים"
+  },
+  {
+    "bcv_short": "L2:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L2:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L6:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁים֙ ס=קָֽדָשִׁים֙"
+  },
+  {
+    "bcv_short": "L6:18",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L6:22",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L7:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L7:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L10:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L10:17",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L14:13",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L16:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=יׇֽעֳמַד־חַ֛י ס=יָֽעֳמַד־חַ֛י"
+  },
+  {
+    "bcv_short": "L24:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֨ים ס=קָֽדָשִׁ֨ים"
+  },
+  {
+    "bcv_short": "N16:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳלֵיהֶ֔ם ס=אָֽהֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "N18:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֥ים ס=קָֽדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "D12:26",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשֶׁ֛יךָ ס=קָֽדָשֶׁ֛יךָ"
+  },
+  {
+    "bcv_short": "D32:4",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=פׇּֽעֳל֔וֹ ס=פָּֽעֳל֔וֹ"
+  },
+  {
+    "bcv_short": "Js22:8",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אֶל־אׇֽהֳלֵיכֶם֙ ס=אֶל־אָֽהֳלֵיכֶם֙"
+  },
+  {
+    "bcv_short": "Ju4:11",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳל֔וֹ ס=אָֽהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "1K9:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=בׇּֽאֳנִי֙ ס=בָּֽאֳנִי֙"
+  },
+  {
+    "bcv_short": "I1:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=לׇֽחֳלִ֔י ס=לָֽחֳלִ֔י"
+  },
+  {
+    "bcv_short": "I48:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=בׇּֽחֳרָבוֹת֙ ס=בָּֽחֳרָבוֹת֙"
+  },
+  {
+    "bcv_short": "Je10:20",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽהֳלִ֔י ס=אָֽהֳלִ֔י"
+  },
+  {
+    "bcv_short": "Je37:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=בְּאׇֽהֳלוֹ֙ ס=בְּאָֽהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "Ee8:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=לְרׇֽחֳקָה֙ ס=לְרָֽחֳקָה֙"
+  },
+  {
+    "bcv_short": "Ee29:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=מׇֽחֳרָבוֹת֙ ס=מָֽחֳרָבוֹת֙"
+  },
+  {
+    "bcv_short": "Ee30:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=חׇֽרָבָ֔ה ס=חָֽרָבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee47:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=לׇֽחֳדָשָׁיו֙ ס=לָֽחֳדָשָׁיו֙"
+  },
+  {
+    "bcv_short": "O1:11",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=עֲמׇֽדְךָ֣ ס=עֲמָֽדְךָ֣"
+  },
+  {
+    "bcv_short": "Mi2:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=הַדׇּֽבְר֔וֹ ס=הַדָּֽבְר֔וֹ"
+  },
+  {
+    "bcv_short": "Ps16:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=שׇֽׁמְרֵ֥נִי ס=שָֽׁמְרֵ֥נִי"
+  },
+  {
+    "bcv_short": "Ps30:4",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=מִיׇּֽרְדִי־ ס=מִיָּֽרְדִי־"
+  },
+  {
+    "bcv_short": "Ps38:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=רׇֽדְפִי־ ס=רָֽדְפִי־"
+  },
+  {
+    "bcv_short": "Jb9:20",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ם",
+    "m3_zmnl": "-",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=תׇּֽם־אָ֝֗נִי ס=תָּֽם־אָ֝֗נִי"
+  },
+  {
+    "bcv_short": "Jb9:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ם",
+    "m3_zmnl": "-",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=תׇּֽם־אָ֭נִי ס=תָּֽם־אָ֭נִי"
+  },
+  {
+    "bcv_short": "La2:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=בׇּֽחֳרִי־אַ֗ף ס=בָּֽחֳרִי־אַ֗ף"
+  },
+  {
+    "bcv_short": "La4:8",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=תׇּֽאֳרָ֔ם ס=תָּֽאֳרָ֔ם"
+  },
+  {
+    "bcv_short": "Da2:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֔י ס=קָֽדָמַ֔י"
+  },
+  {
+    "bcv_short": "Da3:32",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֖י ס=קָֽדָמַ֖י"
+  },
+  {
+    "bcv_short": "Da4:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֔י ס=קָֽדָמַ֔י"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֨י ס=קָֽדָמַ֨י"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמ֥וֹהִי ס=קָֽדָמ֥וֹהִי"
+  },
+  {
+    "bcv_short": "Da5:15",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֗י ס=קָֽדָמַ֗י"
+  },
+  {
+    "bcv_short": "Da5:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמָ֗ךְ ס=קָֽדָמָ֗ךְ"
+  },
+  {
+    "bcv_short": "Da6:19",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמ֑וֹהִי ס=קָֽדָמ֑וֹהִי"
+  },
+  {
+    "bcv_short": "Da6:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמ֙וֹהִי֙ ס=קָֽדָמ֙וֹהִי֙"
+  },
+  {
+    "bcv_short": "Da6:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמָךְ֙ ס=קָֽדָמָךְ֙"
+  },
+  {
+    "bcv_short": "Da7:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=אׇֽחֳרִי֙ ס=אָֽחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:7",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָמַ֔הּ ס=קָֽדָמַ֔הּ"
+  },
+  {
+    "bcv_short": "Da9:24",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִֽׁים ס=קָֽדָשִֽׁים"
+  },
+  {
+    "bcv_short": "Er4:15",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=הׇֽחָרְבַֽת ס=הָֽחָרְבַֽת"
+  },
+  {
+    "bcv_short": "2C31:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=קׇֽדָשִׁ֔ים ס=קָֽדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "2C31:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=כׇּֽנַנְיָ֣הוּ ס=כָּֽנַנְיָ֣הוּ"
+  },
+  {
+    "bcv_short": "2C31:13",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=כׇּֽנַנְיָ֙הוּ֙ ס=כָּֽנַנְיָ֙הוּ֙"
+  },
+  {
+    "bcv_short": "2C35:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=וְ֠כׇֽנַנְיָ֠הוּ ס=וְ֠כָֽנַנְיָ֠הוּ"
+  },
+  {
+    "bcv_short": "E23:24",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=תׇֽעׇבְדֵ֔ם ס=תָֽעׇבְדֵ֔ם"
+  },
+  {
+    "bcv_short": "D13:3",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=וְנׇֽעׇבְדֵֽם ס=וְנָֽעׇבְדֵֽם"
+  },
+  {
+    "bcv_short": "2K15:10",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=קׇֽבׇל־ ס=קָֽבׇל־"
+  },
+  {
+    "bcv_short": "Ee26:9",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=קׇֽבׇלּ֔וֹ ס=קָֽבׇלּ֔וֹ"
+  },
+  {
+    "bcv_short": "Ho13:14",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ט",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=קׇֽטׇבְךָ֙ ס=קָֽטׇבְךָ֙"
+  },
+  {
+    "bcv_short": "Hb3:2",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "accent-1-(mos)-qq-count-2",
+    "r": "ד=פׇּֽעׇלְךָ֙ ס=פָּֽעׇלְךָ֙"
+  },
+  {
+    "bcv_short": "Js3:14",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mun)-qq-count-1",
+    "r": "ד=מֵאׇ֣הֳלֵיהֶ֔ם ס=מֵאָ֣הֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mun)-qq-count-1",
+    "r": "ד=וְאֶל־אׇ֣הֳלִיבָ֔ה ס=וְאֶל־אָ֣הֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee44:13",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "accent-1-(mun)-qq-count-1",
+    "r": "ד=קׇ֣דָשַׁ֔י ס=קָ֣דָשַׁ֔י"
+  },
+  {
+    "bcv_short": "1C5:10",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "accent-1-(mun)-qq-count-1",
+    "r": "ד=בְּאׇ֣הֳלֵיהֶ֔ם ס=בְּאָ֣הֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "G9:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֹֽה ס=אָהֳלֹֽה"
+  },
+  {
+    "bcv_short": "G9:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇֽהֳלֵי־שֵׁ֑ם ס=בְּאָֽהֳלֵי־שֵׁ֑ם"
+  },
+  {
+    "bcv_short": "G12:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֹ֑ה ס=אָהֳלֹ֑ה"
+  },
+  {
+    "bcv_short": "G13:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳלֹה֙ ס=אָֽהֳלֹה֙"
+  },
+  {
+    "bcv_short": "G13:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": "kq-triv-pqere",
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳלֹוֹ֙ ס=אָֽהֳלֹוֹ֙"
+  },
+  {
+    "bcv_short": "G19:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "G26:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "G31:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽת־אׇהֳלוֹ֙ ס=אֶֽת־אָהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "G32:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "שׁ",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=יִֽפְגׇשְׁךָ֞ ס=יִֽפְגָשְׁךָ֞"
+  },
+  {
+    "bcv_short": "G33:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳל֔וֹ ס=אָהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "G35:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳלֹ֔ה ס=אָֽהֳלֹ֔ה"
+  },
+  {
+    "bcv_short": "G36:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶת־אׇהֳלִֽיבָמָה֙ ס=וְאֶת־אָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇהֳלִֽיבָמָה֙ ס=וְאָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָמָ֧ה ס=אָהֳלִיבָמָ֧ה"
+  },
+  {
+    "bcv_short": "G36:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִֽיבָמָה֙ ס=אָהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִֽיבָמָ֛ה ס=אָהֳלִֽיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "G36:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇהֳלִיבָמָ֖ה ס=וְאָהֳלִיבָמָ֖ה"
+  },
+  {
+    "bcv_short": "G36:41",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָמָ֛ה ס=אָהֳלִיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "G43:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָֽיִם ס=בַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "G43:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "E9:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E11:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרִי־אָֽף ס=בָּחֳרִי־אָֽף"
+  },
+  {
+    "bcv_short": "E16:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳל֖וֹ ס=בְּאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E18:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-כפול",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵ֑ם֒ ס=תָעׇבְדֵ֑ם֒"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵ֑ם ס=תָעׇבְדֵ֑ם"
+  },
+  {
+    "bcv_short": "E20:4",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵם֒ ס=תָעׇבְדֵם֒"
+  },
+  {
+    "bcv_short": "E22:19",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=יׇֽחֳרָ֑ם ס=יָֽחֳרָ֑ם"
+  },
+  {
+    "bcv_short": "E23:24",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇֽעׇבְדֵ֔ם ס=תָֽעׇבְדֵ֔ם"
+  },
+  {
+    "bcv_short": "E29:37",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֔ים ס=קָֽדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "E30:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קֹֽדֶשׁ־קׇדָשִׁ֥ים ס=קֹֽדֶשׁ־קָדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "E30:29",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֑ים ס=קָֽדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "E30:36",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "E31:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיאָ֞ב ס=אָהֳלִיאָ֞ב"
+  },
+  {
+    "bcv_short": "E32:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E32:30",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E33:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "E33:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֽוֹ ס=אָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "E35:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽת־אׇהֳל֖וֹ ס=אֶֽת־אָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E35:34",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇֽהֳלִיאָ֥ב ס=וְאָֽהֳלִיאָ֥ב"
+  },
+  {
+    "bcv_short": "E36:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇהֳלִיאָ֜ב ס=וְאָהֳלִיאָ֜ב"
+  },
+  {
+    "bcv_short": "E36:2",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶל־אׇֽהֳלִיאָב֒ ס=וְאֶל־אָֽהֳלִיאָב֒"
+  },
+  {
+    "bcv_short": "E38:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיאָ֞ב ס=אָהֳלִיאָ֞ב"
+  },
+  {
+    "bcv_short": "E40:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִֽׁים ס=קָֽדָשִֽׁים"
+  },
+  {
+    "bcv_short": "L2:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L2:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L6:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁים֙ ס=קָֽדָשִׁים֙"
+  },
+  {
+    "bcv_short": "L6:18",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L6:22",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L7:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L7:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L7:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּמִֽמׇּחֳרָ֔ת ס=וּמִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "L10:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L10:17",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L12:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָ֑הֿ ס=טָהֳרָ֑הֿ"
+  },
+  {
+    "bcv_short": "L12:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָֽהּ ס=טָהֳרָֽהּ"
+  },
+  {
+    "bcv_short": "L12:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָֽהֿ ס=טָהֳרָֽהֿ"
+  },
+  {
+    "bcv_short": "L12:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָ֗הּ ס=טָהֳרָ֗הּ"
+  },
+  {
+    "bcv_short": "L13:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְטׇהֳרָת֑וֹ ס=לְטָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "L13:35",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָתֽוֹ ס=טָהֳרָתֽוֹ"
+  },
+  {
+    "bcv_short": "L14:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָת֑וֹ ס=טָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "L14:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳל֖וֹ ס=לְאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "L14:13",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֖ים ס=קָֽדָשִׁ֖ים"
+  },
+  {
+    "bcv_short": "L14:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְטׇהֳרָת֖וֹ ס=לְטָהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L14:32",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּטׇהֳרָתֽוֹ ס=בְּטָהֳרָתֽוֹ"
+  },
+  {
+    "bcv_short": "L15:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְטׇהֳרָת֖וֹ ס=לְטָהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L16:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=יׇֽעֳמַד־חַ֛י ס=יָֽעֳמַד־חַ֛י"
+  },
+  {
+    "bcv_short": "L19:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּמִֽמׇּחֳרָ֑ת ס=וּמִֽמָּחֳרָ֑ת"
+  },
+  {
+    "bcv_short": "L23:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרַת֙ ס=מִֽמָּחֳרַת֙"
+  },
+  {
+    "bcv_short": "L23:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִמׇּחֳרַ֣ת ס=מִמָּחֳרַ֣ת"
+  },
+  {
+    "bcv_short": "L23:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרַ֤ת ס=מִֽמָּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "L24:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֨ים ס=קָֽדָשִׁ֨ים"
+  },
+  {
+    "bcv_short": "L27:28",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קֹֽדֶשׁ־קׇדָשִׁ֥ים ס=קֹֽדֶשׁ־קָדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "L27:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=יׇחֳרַ֛ם ס=יָחֳרַ֛ם"
+  },
+  {
+    "bcv_short": "N6:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָת֔וֹ ס=טָהֳרָת֔וֹ"
+  },
+  {
+    "bcv_short": "N11:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "N11:32",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הַֽמׇּחֳרָ֗ת ס=הַֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "N16:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֨י ס=אָהֳלֵ֨י"
+  },
+  {
+    "bcv_short": "N16:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳלֵיהֶ֔ם ס=אָֽהֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "N17:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "N17:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "N18:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֥ים ס=קָֽדָשִׁ֥ים"
+  },
+  {
+    "bcv_short": "N33:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרַ֣ת ס=מִֽמָּחֳרַ֣ת"
+  },
+  {
+    "bcv_short": "D1:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְאׇהֳלֵיכֶם֙ ס=בְאָהֳלֵיכֶם֙"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-כפול",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵ֑ם֒ ס=תָעׇבְדֵ֑ם֒"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-א/תחתון/פשוטה",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵ֑ם ס=תָעׇבְדֵ֑ם"
+  },
+  {
+    "bcv_short": "D5:8",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": "כפול-ב/עליון/מדרשית",
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=תׇעׇבְדֵם֒ ס=תָעׇבְדֵם֒"
+  },
+  {
+    "bcv_short": "D5:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳלֵיכֶֽם ס=לְאָהֳלֵיכֶֽם"
+  },
+  {
+    "bcv_short": "D11:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶת־אׇהֳלֵיהֶ֑ם ס=וְאֶת־אָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "D12:26",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשֶׁ֛יךָ ס=קָֽדָשֶׁ֛יךָ"
+  },
+  {
+    "bcv_short": "D13:3",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=וְנׇֽעׇבְדֵֽם ס=וְנָֽעׇבְדֵֽם"
+  },
+  {
+    "bcv_short": "D28:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרַ֗יִם ס=בַּֽצָּהֳרַ֗יִם"
+  },
+  {
+    "bcv_short": "D28:59",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וׇחֳלָיִ֖ם ס=וָחֳלָיִ֖ם"
+  },
+  {
+    "bcv_short": "D28:68",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳנִיּוֹת֒ ס=בָּאֳנִיּוֹת֒"
+  },
+  {
+    "bcv_short": "D32:4",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּֽעֳל֔וֹ ס=פָּֽעֳל֔וֹ"
+  },
+  {
+    "bcv_short": "Js3:14",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מֵאׇ֣הֳלֵיהֶ֔ם ס=מֵאָ֣הֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "Js5:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִמׇּחֳרַ֥ת ס=מִמָּחֳרַ֥ת"
+  },
+  {
+    "bcv_short": "Js5:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "Js7:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הָאׇהֳלִ֖י ס=הָאָהֳלִ֖י"
+  },
+  {
+    "bcv_short": "Js7:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳל֖וֹ ס=בְּאָהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "Js7:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶֽת־אׇהֳלוֹ֙ ס=וְאֶֽת־אָהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "Js22:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳלֵיכֶ֗ם ס=לְאָהֳלֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "Js22:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶל־אׇהֳלֵיהֶֽם ס=אֶל־אָהֳלֵיהֶֽם"
+  },
+  {
+    "bcv_short": "Js22:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶל־אׇהֳלֵיהֶ֖ם ס=אֶל־אָהֳלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "Js22:8",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶל־אׇֽהֳלֵיכֶם֙ ס=אֶל־אָֽהֳלֵיכֶם֙"
+  },
+  {
+    "bcv_short": "Ju4:11",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳל֔וֹ ס=אָֽהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "Ju6:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇהֳלֵיהֶ֗ם ס=וְאָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ju6:38",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Ju8:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇאֳהָלִ֔ים ס=בָאֳהָלִ֔ים"
+  },
+  {
+    "bcv_short": "Ju9:42",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Ju20:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳל֔וֹ ס=לְאָהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "Ju21:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S1:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּעֳנִ֣י ס=בָּעֳנִ֣י"
+  },
+  {
+    "bcv_short": "1S5:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S5:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָת֒ ס=מִֽמָּחֳרָת֒"
+  },
+  {
+    "bcv_short": "1S11:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S13:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=הַדׇּרְבָֽן ס=הַדָּרְבָֽן"
+  },
+  {
+    "bcv_short": "1S15:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לִמְשׇׁחֳךָ֣ ס=לִמְשָׁחֳךָ֣"
+  },
+  {
+    "bcv_short": "1S17:54",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֽוֹ ס=בְּאָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "1S18:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S20:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרַ֤ת ס=מִֽמָּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "1S20:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרִי־אָ֑ף ס=בָּחֳרִי־אָ֑ף"
+  },
+  {
+    "bcv_short": "1S28:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=קׇסֳמִי־ ס=קָסֳמִי־"
+  },
+  {
+    "bcv_short": "1S28:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מַֽה־תׇּאֳר֔וֹ ס=מַֽה־תָּאֳר֔וֹ"
+  },
+  {
+    "bcv_short": "1S30:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְמׇחֳרָתָ֑ם ס=לְמָחֳרָתָ֑ם"
+  },
+  {
+    "bcv_short": "1S31:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "2S4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הַֽצׇּהֳרָֽיִם ס=הַֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "2S11:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּמִֽמׇּחֳרָֽת ס=וּמִֽמָּחֳרָֽת"
+  },
+  {
+    "bcv_short": "1K8:66",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳלֵיהֶ֗ם ס=לְאָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "1K9:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וׇאֳנִ֡י ס=וָאֳנִ֡י"
+  },
+  {
+    "bcv_short": "1K9:27",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּֽאֳנִי֙ ס=בָּֽאֳנִי֙"
+  },
+  {
+    "bcv_short": "1K12:10",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ט",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=קׇטׇנִּ֥י ס=קָטׇנִּ֥י"
+  },
+  {
+    "bcv_short": "1K18:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְעַד־הַצׇּהֳרַ֤יִם ס=וְעַד־הַצָּהֳרַ֤יִם"
+  },
+  {
+    "bcv_short": "1K18:27",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַֽצׇּהֳרַ֜יִם ס=בַֽצָּהֳרַ֜יִם"
+  },
+  {
+    "bcv_short": "1K18:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הַֽצׇּהֳרַ֔יִם ס=הַֽצָּהֳרַ֔יִם"
+  },
+  {
+    "bcv_short": "1K20:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "1K22:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הׇחֳלֵֽיתִי ס=הָחֳלֵֽיתִי"
+  },
+  {
+    "bcv_short": "1K22:35",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מׇעֳמָ֛ד ס=מָעֳמָ֛ד"
+  },
+  {
+    "bcv_short": "1K22:50",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳנִיּ֑וֹת ס=בָּאֳנִיּ֑וֹת"
+  },
+  {
+    "bcv_short": "2K3:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הׇחֳרֵ֤ב ס=הָחֳרֵ֤ב"
+  },
+  {
+    "bcv_short": "2K4:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=עַד־הַֽצׇּהֳרַ֖יִם ס=עַד־הַֽצָּהֳרַ֖יִם"
+  },
+  {
+    "bcv_short": "2K7:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶת־אׇהֳלֵיהֶ֗ם ס=אֶת־אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "2K8:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֗ת ס=מִֽמָּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "2K13:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֵיהֶ֖ם ס=בְּאָהֳלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "2K15:10",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=קׇֽבׇל־ ס=קָֽבׇל־"
+  },
+  {
+    "bcv_short": "I1:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇֽחֳלִ֔י ס=לָֽחֳלִ֔י"
+  },
+  {
+    "bcv_short": "I7:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרִי־אַ֛ף ס=בָּחֳרִי־אַ֛ף"
+  },
+  {
+    "bcv_short": "I11:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=מִשׇּׁרָשָׁ֥יו ס=מִשָּׁרָשָׁ֥יו"
+  },
+  {
+    "bcv_short": "I16:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=צׇהֳרָ֑יִם ס=צָהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "I30:12",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=מׇאׇסְכֶ֖ם ס=מָאׇסְכֶ֖ם"
+  },
+  {
+    "bcv_short": "I40:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּשׇׁעֳל֜וֹ ס=בְּשָׁעֳל֜וֹ"
+  },
+  {
+    "bcv_short": "I41:24",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=וּפׇעׇלְכֶ֖ם ס=וּפָעׇלְכֶ֖ם"
+  },
+  {
+    "bcv_short": "I44:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=יְתׇאֳרֵ֑הוּ ס=יְתָאֳרֵ֑הוּ"
+  },
+  {
+    "bcv_short": "I48:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּֽחֳרָבוֹת֙ ס=בָּֽחֳרָבוֹת֙"
+  },
+  {
+    "bcv_short": "I54:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֗ךְ ס=אָהֳלֵ֗ךְ"
+  },
+  {
+    "bcv_short": "I58:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כַּֽצׇּהֳרָֽיִם ס=כַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "I59:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַֽצׇּהֳרַ֙יִם֙ ס=בַֽצָּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "I60:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וׇאֳנִיּ֤וֹת ס=וָאֳנִיּ֤וֹת"
+  },
+  {
+    "bcv_short": "I66:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=תְּשׇׁעֳשָֽׁעוּ ס=תְּשָׁעֳשָֽׁעוּ"
+  },
+  {
+    "bcv_short": "Je6:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַֽצׇּהֳרָ֑יִם ס=בַֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Je10:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִ֣י ס=אָהֳלִ֣י"
+  },
+  {
+    "bcv_short": "Je10:20",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽהֳלִ֔י ס=אָֽהֳלִ֔י"
+  },
+  {
+    "bcv_short": "Je15:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Je17:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשָׁ֔יו ס=שָׁרָשָׁ֔יו"
+  },
+  {
+    "bcv_short": "Je20:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Je20:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=צׇהֳרָֽיִם ס=צָהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Je25:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּפׇעֳלָ֖ם ס=כְּפָעֳלָ֖ם"
+  },
+  {
+    "bcv_short": "Je30:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Je35:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳהָלִ֤ים ס=בָּאֳהָלִ֤ים"
+  },
+  {
+    "bcv_short": "Je35:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳהָלִ֑ים ס=בָּאֳהָלִ֑ים"
+  },
+  {
+    "bcv_short": "Je37:10",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇֽהֳלוֹ֙ ס=בְּאָֽהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "Je49:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵיהֶ֤ם ס=אָהֳלֵיהֶ֤ם"
+  },
+  {
+    "bcv_short": "Je50:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּפׇעֳלָ֔הּ ס=כְּפָעֳלָ֔הּ"
+  },
+  {
+    "bcv_short": "Ee8:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְרׇֽחֳקָה֙ ס=לְרָֽחֳקָה֙"
+  },
+  {
+    "bcv_short": "Ee13:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרָב֑וֹת ס=בָּחֳרָב֑וֹת"
+  },
+  {
+    "bcv_short": "Ee17:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=וְשׇׁרָשָׁ֖יו ס=וְשָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "Ee17:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשֶׁ֣יהָ ס=שָׁרָשֶׁ֣יהָ"
+  },
+  {
+    "bcv_short": "Ee17:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=אֶת־שׇׁרָשֶׁ֨יהָ ס=אֶת־שָׁרָשֶׁ֨יהָ"
+  },
+  {
+    "bcv_short": "Ee17:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=מִשׇּׁרָשֶֽׁיהָ ס=מִשָּׁרָשֶֽׁיהָ"
+  },
+  {
+    "bcv_short": "Ee20:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרִ֣י ס=בָּחֳרִ֣י"
+  },
+  {
+    "bcv_short": "Ee22:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשַׁ֖י ס=קָדָשַׁ֖י"
+  },
+  {
+    "bcv_short": "Ee22:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשַׁי֒ ס=קָדָשַׁי֒"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלָ֤ה ס=אָהֳלָ֤ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇהֳלִיבָ֣ה ס=וְאָהֳלִיבָ֣ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלָ֔ה ס=אָהֳלָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָֽה ס=אָהֳלִיבָֽה"
+  },
+  {
+    "bcv_short": "Ee23:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלָ֖ה ס=אָהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָ֔ה ס=אָהֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָ֗ה ס=אָהֳלִיבָ֗ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽת־אׇהֳלָ֖ה ס=אֶֽת־אָהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶת־אׇהֳלִיבָ֑ה ס=וְאֶת־אָהֳלִיבָ֑ה"
+  },
+  {
+    "bcv_short": "Ee23:42",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=סׇבָאִ֖ים ס=סָבָאִ֖ים"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽל־אׇהֳלָה֙ ס=אֶֽל־אָהֳלָה֙"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאֶל־אׇ֣הֳלִיבָ֔ה ס=וְאֶל־אָ֣הֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee26:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הׇחֳרָֽבָה ס=הָחֳרָֽבָה"
+  },
+  {
+    "bcv_short": "Ee26:9",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=קׇֽבׇלּ֔וֹ ס=קָֽבׇלּ֔וֹ"
+  },
+  {
+    "bcv_short": "Ee26:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כׇּחֳרָב֤וֹת ס=כָּחֳרָב֤וֹת"
+  },
+  {
+    "bcv_short": "Ee29:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מׇֽחֳרָבוֹת֙ ס=מָֽחֳרָבוֹת֙"
+  },
+  {
+    "bcv_short": "Ee30:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=חׇֽרָבָ֔ה ס=חָֽרָבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee36:38",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשִׁ֗ים ס=קָדָשִׁ֗ים"
+  },
+  {
+    "bcv_short": "Ee43:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשִׁ֔ים ס=קָדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "Ee44:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשָׁ֑י ס=קָדָשָׁ֑י"
+  },
+  {
+    "bcv_short": "Ee44:13",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇ֣דָשַׁ֔י ס=קָ֣דָשַׁ֔י"
+  },
+  {
+    "bcv_short": "Ee44:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=טׇהֳרָת֑וֹ ס=טָהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "Ee45:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשִֽׁים ס=קָדָשִֽׁים"
+  },
+  {
+    "bcv_short": "Ee47:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇֽחֳדָשָׁיו֙ ס=לָֽחֳדָשָׁיו֙"
+  },
+  {
+    "bcv_short": "Ee48:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשִׁ֑ים ס=קָדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "Ho9:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֵיהֶֽם ס=בְּאָהֳלֵיהֶֽם"
+  },
+  {
+    "bcv_short": "Ho9:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּאׇהֳבָֽם ס=כְּאָהֳבָֽם"
+  },
+  {
+    "bcv_short": "Ho12:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇאֳהָלִ֖ים ס=בָאֳהָלִ֖ים"
+  },
+  {
+    "bcv_short": "Ho13:14",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ט",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=קׇֽטׇבְךָ֙ ס=קָֽטׇבְךָ֙"
+  },
+  {
+    "bcv_short": "Ho14:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשָׁ֖יו ס=שָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "A2:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=עַֽל־מׇאֳסָ֞ם ס=עַֽל־מָאֳסָ֞ם"
+  },
+  {
+    "bcv_short": "A2:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=וְשׇׁרָשָׁ֖יו ס=וְשָׁרָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "A8:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "O1:11",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=עֲמׇֽדְךָ֣ ס=עֲמָֽדְךָ֣"
+  },
+  {
+    "bcv_short": "Jn4:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לַֽמׇּחֳרָ֑ת ס=לַֽמָּחֳרָ֑ת"
+  },
+  {
+    "bcv_short": "Mi2:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=טׇמְאָ֛ה ס=טָמְאָ֛ה"
+  },
+  {
+    "bcv_short": "Mi2:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ב",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=הַדׇּֽבְר֔וֹ ס=הַדָּֽבְר֔וֹ"
+  },
+  {
+    "bcv_short": "Hb3:2",
+    "accent": "(mos)",
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=פׇּֽעׇלְךָ֙ ס=פָּֽעׇלְךָ֙"
+  },
+  {
+    "bcv_short": "Hb3:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ts2:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרַ֙יִם֙ ס=בַּֽצָּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "Zc12:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶת־אׇהֳלֵ֥י ס=אֶת־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ma2:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מֵאׇהֳלֵ֖י ס=מֵאָהֳלֵ֖י"
+  },
+  {
+    "bcv_short": "Ps15:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֶ֑ךָ ס=בְּאָהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps16:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=שׇֽׁמְרֵ֥נִי ס=שָֽׁמְרֵ֥נִי"
+  },
+  {
+    "bcv_short": "Ps27:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳל֑וֹ ס=אָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps27:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְ֭אׇהֳלוֹ ס=בְ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Ps28:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּפׇעֳלָם֮ ס=כְּפָעֳלָם֮"
+  },
+  {
+    "bcv_short": "Ps30:4",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=מִיׇּֽרְדִי־ ס=מִיָּֽרְדִי־"
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ל",
+    "m3_zmnl": "",
+    "fp": "all",
+    "r": "ד=כׇּ֥ל ס=כָּ֥ל"
+  },
+  {
+    "bcv_short": "Ps37:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כַּֽצׇּהֳרָֽיִם ס=כַּֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Ps38:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=רׇֽדְפִי־ ס=רָֽדְפִי־"
+  },
+  {
+    "bcv_short": "Ps55:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְ֭צׇהֳרַיִם ס=וְ֭צָהֳרַיִם"
+  },
+  {
+    "bcv_short": "Ps61:5",
+    "accent": null,
+    "qq_count": "2",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": "oa",
+    "fp": "all",
+    "r": "ד=בְ֭אׇהׇלְךָ ס=בְ֭אָהׇלְךָ"
+  },
+  {
+    "bcv_short": "Ps69:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מׇעֳמָ֑ד ס=מָעֳמָ֑ד"
+  },
+  {
+    "bcv_short": "Ps69:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּ֝אׇהֳלֵיהֶ֗ם ס=בְּ֝אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps77:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלֶ֑ךָ ס=פָּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps78:51",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֵי־חָֽם ס=בְּאָהֳלֵי־חָֽם"
+  },
+  {
+    "bcv_short": "Ps78:55",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּ֝אׇהֳלֵיהֶ֗ם ס=בְּ֝אָהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps80:10",
+    "accent": "(ger_m)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁ֝רָשֶׁ֗יהָ ס=שָׁ֝רָשֶׁ֗יהָ"
+  },
+  {
+    "bcv_short": "Ps83:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ps84:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֵי־רֶֽשַׁע ס=בְּאָהֳלֵי־רֶֽשַׁע"
+  },
+  {
+    "bcv_short": "Ps86:2",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "מ",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=שׇׁ֥מְרָ֣ה ס=שָׁ֥מְרָ֣ה"
+  },
+  {
+    "bcv_short": "Ps90:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇעֳלֶ֑ךָ ס=פָעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps91:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=צׇהֳרָֽיִם ס=צָהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Ps91:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֶֽךָ ס=בְּאָהֳלֶֽךָ"
+  },
+  {
+    "bcv_short": "Ps92:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּפׇעֳלֶ֑ךָ ס=בְּפָעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps95:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇעֳלִֽי ס=פָעֳלִֽי"
+  },
+  {
+    "bcv_short": "Ps104:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְפׇעֳל֑וֹ ס=לְפָעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps106:25",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְאׇהֳלֵיהֶ֑ם ס=בְאָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "Ps107:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳנִיּ֑וֹת ס=בָּאֳנִיּ֑וֹת"
+  },
+  {
+    "bcv_short": "Ps111:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳל֑וֹ ס=פָּעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps118:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֵ֥י ס=בְּאָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps120:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=עִֽם־אׇהֳלֵ֥י ס=עִֽם־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps143:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלֶ֑ךָ ס=פָּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Pr7:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּאֳהָבִֽים ס=בָּאֳהָבִֽים"
+  },
+  {
+    "bcv_short": "Pr19:7",
+    "accent": "(mer)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ל",
+    "m3_zmnl": "",
+    "fp": "all",
+    "r": "ד=כׇּ֥ל ס=כָּ֥ל"
+  },
+  {
+    "bcv_short": "Pr20:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלֽוֹ ס=פָּעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr21:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלֽוֹ ס=פָּעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr24:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּפׇעֳלֽוֹ ס=כְּפָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr24:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּפׇעֳלֽוֹ ס=כְּפָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Pr31:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כׇּאֳנִיּ֣וֹת ס=כָּאֳנִיּ֣וֹת"
+  },
+  {
+    "bcv_short": "Jb4:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=תׇּהֳלָֽה ס=תָּהֳלָֽה"
+  },
+  {
+    "bcv_short": "Jb5:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַֽצׇּהֳרָֽיִם ס=בַֽצָּהֳרָֽיִם"
+  },
+  {
+    "bcv_short": "Jb5:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֶ֑ךָ ס=אָהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Jb7:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇעֳלֽוֹ ס=פָעֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Jb8:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשָׁ֣יו ס=שָׁרָשָׁ֣יו"
+  },
+  {
+    "bcv_short": "Jb9:20",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ם",
+    "m3_zmnl": "-",
+    "fp": "all",
+    "r": "ד=תׇּֽם־אָ֝֗נִי ס=תָּֽם־אָ֝֗נִי"
+  },
+  {
+    "bcv_short": "Jb9:21",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ם",
+    "m3_zmnl": "-",
+    "fp": "all",
+    "r": "ד=תׇּֽם־אָ֭נִי ס=תָּֽם־אָ֭נִי"
+  },
+  {
+    "bcv_short": "Jb11:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּֽ֭מִצׇּהֳרַיִם ס=וּֽ֭מִצָּהֳרַיִם"
+  },
+  {
+    "bcv_short": "Jb15:34",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵי־שֹֽׁחַד ס=אָהֳלֵי־שֹֽׁחַד"
+  },
+  {
+    "bcv_short": "Jb18:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳל֑וֹ ס=בְּאָהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb18:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מֵ֭אׇהֳלוֹ ס=מֵ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb18:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּ֭אׇהֳלוֹ ס=בְּ֭אָהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb18:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשָׁ֣יו ס=שָׁרָשָׁ֣יו"
+  },
+  {
+    "bcv_short": "Jb19:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳלִֽי ס=לְאָהֳלִֽי"
+  },
+  {
+    "bcv_short": "Jb20:26",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇהֳלֽוֹ ס=בְּאָהֳלֽוֹ"
+  },
+  {
+    "bcv_short": "Jb22:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מֵאׇהֳלֶֽךָ ס=מֵאָהֳלֶֽךָ"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּ֭פׇעֳלָם ס=בְּ֭פָעֳלָם"
+  },
+  {
+    "bcv_short": "Jb29:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִֽי ס=אָהֳלִֽי"
+  },
+  {
+    "bcv_short": "Jb31:31",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִ֑י ס=אָהֳלִ֑י"
+  },
+  {
+    "bcv_short": "Jb36:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלָ֑ם ס=פָּעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "Jb36:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇעֳל֑וֹ ס=פָעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb37:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְפׇעֳלָ֑ם ס=לְפָעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "S1:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּאׇהֳלֵ֣י ס=כְּאָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "S1:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בַּֽצׇּהֳרָ֑יִם ס=בַּֽצָּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "S7:4",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=תׇּאֳמֵ֥י ס=תָּאֳמֵ֥י"
+  },
+  {
+    "bcv_short": "R1:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֜י ס=נָעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R1:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִי֙ ס=נָעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִי֙ ס=נָעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִֽי ס=נָעֳמִֽי"
+  },
+  {
+    "bcv_short": "R1:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֔י ס=נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R1:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֗י ס=נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּֽלְנׇעֳמִ֞י ס=וּֽלְנָעֳמִ֞י"
+  },
+  {
+    "bcv_short": "R2:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽל־נׇעֳמִ֗י ס=אֶֽל־נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:6",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=עִֽם־נׇעֳמִ֖י ס=עִֽם־נָעֳמִ֖י"
+  },
+  {
+    "bcv_short": "R2:12",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=פׇּעֳלֵ֑ךְ ס=פָּעֳלֵ֑ךְ"
+  },
+  {
+    "bcv_short": "R2:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֜י ס=נָעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R2:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֗י ס=נָעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:22",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֖י ס=נָעֳמִ֖י"
+  },
+  {
+    "bcv_short": "R3:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֣י ס=נָעֳמִ֣י"
+  },
+  {
+    "bcv_short": "R3:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְגׇאֳלֵ֛ךְ ס=לְגָאֳלֵ֛ךְ"
+  },
+  {
+    "bcv_short": "R4:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֔י ס=נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֑י ס=נָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R4:9",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִֽי ס=נָעֳמִֽי"
+  },
+  {
+    "bcv_short": "R4:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶֽל־נׇעֳמִ֔י ס=אֶֽל־נָעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=נׇעֳמִ֤י ס=נָעֳמִ֤י"
+  },
+  {
+    "bcv_short": "R4:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ע",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְנׇעֳמִ֑י ס=לְנָעֳמִ֑י"
+  },
+  {
+    "bcv_short": "La2:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּֽחֳרִי־אַ֗ף ס=בָּֽחֳרִי־אַ֗ף"
+  },
+  {
+    "bcv_short": "La4:8",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=תׇּֽאֳרָ֔ם ס=תָּֽאֳרָ֔ם"
+  },
+  {
+    "bcv_short": "Ec6:2",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וׇחֳלִ֥י ס=וָחֳלִ֥י"
+  },
+  {
+    "bcv_short": "Da2:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֔י ס=קָֽדָמַ֔י"
+  },
+  {
+    "bcv_short": "Da2:11",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇחֳרָן֙ ס=וְאָחֳרָן֙"
+  },
+  {
+    "bcv_short": "Da2:39",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרִ֖י ס=אָחֳרִ֖י"
+  },
+  {
+    "bcv_short": "Da2:39",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרִי֙ ס=אָחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da2:44",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרָ֖ן ס=אָחֳרָ֖ן"
+  },
+  {
+    "bcv_short": "Da3:3",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da3:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרָ֔ן ס=אָחֳרָ֔ן"
+  },
+  {
+    "bcv_short": "Da3:32",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֖י ס=קָֽדָמַ֖י"
+  },
+  {
+    "bcv_short": "Da4:3",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֔י ס=קָֽדָמַ֔י"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרֵ֡ין ס=אָחֳרֵ֡ין"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֨י ס=קָֽדָמַ֨י"
+  },
+  {
+    "bcv_short": "Da4:5",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמ֥וֹהִי ס=קָֽדָמ֥וֹהִי"
+  },
+  {
+    "bcv_short": "Da5:1",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְלׇקֳבֵ֥ל ס=וְלָקֳבֵ֥ל"
+  },
+  {
+    "bcv_short": "Da5:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da5:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇקֳבֵ֨ל ס=לָקֳבֵ֨ל"
+  },
+  {
+    "bcv_short": "Da5:15",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֗י ס=קָֽדָמַ֗י"
+  },
+  {
+    "bcv_short": "Da5:17",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇחֳרָ֣ן ס=לְאָחֳרָ֣ן"
+  },
+  {
+    "bcv_short": "Da5:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמָ֗ךְ ס=קָֽדָמָ֗ךְ"
+  },
+  {
+    "bcv_short": "Da6:19",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמ֑וֹהִי ס=קָֽדָמ֑וֹהִי"
+  },
+  {
+    "bcv_short": "Da6:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמ֙וֹהִי֙ ס=קָֽדָמ֙וֹהִי֙"
+  },
+  {
+    "bcv_short": "Da6:23",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמָךְ֙ ס=קָֽדָמָךְ֙"
+  },
+  {
+    "bcv_short": "Da7:5",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרִ֨י ס=אָחֳרִ֨י"
+  },
+  {
+    "bcv_short": "Da7:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇֽחֳרִי֙ ס=אָֽחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:7",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָמַ֔הּ ס=קָֽדָמַ֔הּ"
+  },
+  {
+    "bcv_short": "Da7:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇחֳרִ֤י ס=אָחֳרִ֤י"
+  },
+  {
+    "bcv_short": "Da7:20",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇחֳרִי֙ ס=וְאָחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:24",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְאׇחֳרָ֞ן ס=וְאָחֳרָ֞ן"
+  },
+  {
+    "bcv_short": "Da9:24",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִֽׁים ס=קָֽדָשִֽׁים"
+  },
+  {
+    "bcv_short": "Da11:7",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ר",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=שׇׁרָשֶׁ֖יהָ ס=שָׁרָשֶׁ֖יהָ"
+  },
+  {
+    "bcv_short": "Da11:40",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וּבׇאֳנִיּ֖וֹת ס=וּבָאֳנִיּ֖וֹת"
+  },
+  {
+    "bcv_short": "Da11:45",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלֵ֣י ס=אָהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Er4:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=אׇסְנַפַּר֙ ס=אָסְנַפַּר֙"
+  },
+  {
+    "bcv_short": "Er4:15",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=הׇֽחָרְבַֽת ס=הָֽחָרְבַֽת"
+  },
+  {
+    "bcv_short": "Er4:16",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇקֳבֵ֣ל ס=לָקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Er4:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָמָֽי ס=קָדָמָֽי"
+  },
+  {
+    "bcv_short": "Er5:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ס",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=אׇסְפַּ֥רְנָא ס=אָסְפַּ֥רְנָא"
+  },
+  {
+    "bcv_short": "Er6:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ק",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇקֳבֵ֗ל ס=לָקֳבֵ֗ל"
+  },
+  {
+    "bcv_short": "Er10:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=יׇחֳרַ֖ם ס=יָחֳרַ֖ם"
+  },
+  {
+    "bcv_short": "Ne12:45",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הַֽטׇּהֳרָ֔ה ס=הַֽטָּהֳרָ֔ה"
+  },
+  {
+    "bcv_short": "Ne13:29",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=גׇּאֳלֵ֣י ס=גָּאֳלֵ֣י"
+  },
+  {
+    "bcv_short": "1C1:52",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אׇהֳלִיבָמָ֛ה ס=אָהֳלִיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "1C4:41",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=אֶת־אׇהֳלֵיהֶ֜ם ס=אֶת־אָהֳלֵיהֶ֜ם"
+  },
+  {
+    "bcv_short": "1C5:10",
+    "accent": "(mun)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בְּאׇ֣הֳלֵיהֶ֔ם ס=בְּאָ֣הֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "1C10:8",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מִֽמׇּחֳרָ֔ת ס=מִֽמָּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1C23:13",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇדָשִׁ֤ים ס=קָדָשִׁ֤ים"
+  },
+  {
+    "bcv_short": "1C23:28",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְעַֽל־טׇהֳרַ֖ת ס=וְעַֽל־טָהֳרַ֖ת"
+  },
+  {
+    "bcv_short": "1C29:21",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְֽמׇחֳרַת֮ ס=לְֽמָחֳרַת֮"
+  },
+  {
+    "bcv_short": "2C7:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לְאׇהֳלֵיהֶ֑ם ס=לְאָהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "2C9:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "א",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=מׇאֳחָזִ֔ים ס=מָאֳחָזִ֔ים"
+  },
+  {
+    "bcv_short": "2C14:14",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=וְגַם־אׇהֳלֵ֥י ס=וְגַם־אָהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "2C15:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=וְקׇדָשָׁ֖יו ס=וְקָדָשָׁ֖יו"
+  },
+  {
+    "bcv_short": "2C18:33",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הׇחֳלֵֽיתִי ס=הָחֳלֵֽיתִי"
+  },
+  {
+    "bcv_short": "2C21:15",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳלָיִ֥ים ס=בָּחֳלָיִ֥ים"
+  },
+  {
+    "bcv_short": "2C21:18",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=לׇחֳלִ֖י ס=לָחֳלִ֖י"
+  },
+  {
+    "bcv_short": "2C25:10",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=בׇּחֳרִי־אָֽף ס=בָּחֳרִי־אָֽף"
+  },
+  {
+    "bcv_short": "2C30:19",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ה",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=כְּטׇהֳרַ֥ת ס=כְּטָהֳרַ֥ת"
+  },
+  {
+    "bcv_short": "2C31:6",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ד",
+    "m3_zmnl": "a",
+    "fp": "all",
+    "r": "ד=קׇֽדָשִׁ֔ים ס=קָֽדָשִׁ֔ים"
+  },
+  {
+    "bcv_short": "2C31:12",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "all",
+    "r": "ד=כׇּֽנַנְיָ֣הוּ ס=כָּֽנַנְיָ֣הוּ"
+  },
+  {
+    "bcv_short": "2C31:13",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "all",
+    "r": "ד=כׇּֽנַנְיָ֙הוּ֙ ס=כָּֽנַנְיָ֙הוּ֙"
+  },
+  {
+    "bcv_short": "2C35:9",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "נ",
+    "m3_zmnl": "_",
+    "fp": "all",
+    "r": "ד=וְ֠כׇֽנַנְיָ֠הוּ ס=וְ֠כָֽנַנְיָ֠הוּ"
+  },
+  {
+    "bcv_short": "2C35:23",
+    "accent": null,
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "ח",
+    "m3_zmnl": ":a",
+    "fp": "all",
+    "r": "ד=הׇחֳלֵ֖יתִי ס=הָחֳלֵ֖יתִי"
+  }
+]

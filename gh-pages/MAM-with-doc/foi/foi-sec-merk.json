@@ -1,0 +1,2170 @@
+[
+  {
+    "bcv_short": "Ps48:5",
+    "ref_1": "09.35.rn2",
+    "ref_2": "11.55.rn1",
+    "note": null,
+    "fp": "poetic/(atn)/(mer),(atn)",
+    "r": "נ֥וֹעֲד֑וּ"
+  },
+  {
+    "bcv_short": "Ps106:29",
+    "ref_1": "09.35.rn2",
+    "ref_2": "11.55.rn1",
+    "note": null,
+    "fp": "poetic/(atn)/(mer),(atn)",
+    "r": "בְּמַ֥עַלְלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "Ps78:7",
+    "ref_1": "09.36.rn2",
+    "ref_2": "11.55.rn2",
+    "note": "Also appears in 9.37.",
+    "fp": "poetic/(atn)/(mer)-(atn)",
+    "r": "יִ֭שְׁכְּחוּ מַ֥עַלְלֵי־אֵ֑ל"
+  },
+  {
+    "bcv_short": "Ps2:7",
+    "ref_1": null,
+    "ref_2": "11.47.es2.rn1",
+    "note": "Also appears in 11.47.fn27.",
+    "fp": "poetic/(atn)/(mer)~(atn)",
+    "r": "אָמַ֘ר~אֵלַ֥י בְּנִ֥י~אַ֑תָּה"
+  },
+  {
+    "bcv_short": "Jb32:11",
+    "ref_1": null,
+    "ref_2": "11.55.rn1",
+    "note": null,
+    "fp": "poetic/(atn)/-(mer),(ümtg),(atn)",
+    "r": "עַד־תְּב֥וּנֹֽתֵיכֶ֑ם"
+  },
+  {
+    "bcv_short": "Ps96:4",
+    "ref_1": "09.18",
+    "ref_2": "11.50.rn3",
+    "note": null,
+    "fp": "poetic/(mah)/(mer)~(zarshit),(mah)",
+    "r": "כִּ֥י~גָ֘ד֤וֹל יְהֹוָ֣ה וּמְהֻלָּ֣ל מְאֹ֑ד"
+  },
+  {
+    "bcv_short": "Ps117:2",
+    "ref_1": "09.18",
+    "ref_2": "11.04.rn1",
+    "note": null,
+    "fp": "poetic/(mah)/(mer)~(zarshit),(mah)",
+    "r": "כִּ֥י~גָ֘בַ֤ר עָלֵ֨ינוּ׀"
+  },
+  {
+    "bcv_short": "Ps143:3",
+    "ref_1": null,
+    "ref_2": "11.04.rn1",
+    "note": null,
+    "fp": "poetic/(mah)/(mer)~(zarshit),(mah)",
+    "r": "כִּ֥י~רָ֘דַ֤ף אוֹיֵ֨ב׀"
+  },
+  {
+    "bcv_short": "Jb34:37",
+    "ref_1": "09.18",
+    "ref_2": "11.14.rn1",
+    "note": null,
+    "fp": "poetic/(mah)/(mer)~(zarshit),(mah)",
+    "r": "כִּ֥י~יֹ֘סִ֤יף עַֽל־חַטָּאת֣וֹ פֶ֭שַׁע"
+  },
+  {
+    "bcv_short": "Ps18:3",
+    "ref_1": "09.23.fn23",
+    "ref_2": "11.20.rn4",
+    "note": "חטף חריק",
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "סַ֥לְעִ֥י וּמְצוּדָתִ֗י"
+  },
+  {
+    "bcv_short": "Ps31:24",
+    "ref_1": "09.23",
+    "ref_2": "11.20.rn3",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "אֶ֥הֱב֥וּ אֶֽת־יְהֹוָ֗ה"
+  },
+  {
+    "bcv_short": "Ps37:40",
+    "ref_1": null,
+    "ref_2": "11.20.rn2",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "וַ֥יַּעְזְרֵ֥ם יְהֹוָ֗ה"
+  },
+  {
+    "bcv_short": "Ps40:6",
+    "ref_1": null,
+    "ref_2": "11.20.rn2",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "נִ֥פְלְאֹתֶ֥יךָ וּמַחְשְׁבֹתֶ֗יךָ"
+  },
+  {
+    "bcv_short": "Ps67:5",
+    "ref_1": null,
+    "ref_2": "11.20.rn3",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "יִ֥שְׂמְח֥וּ וִירַנְּנ֗וּ"
+  },
+  {
+    "bcv_short": "Ps68:24",
+    "ref_1": "09.24.rn2",
+    "ref_2": "11.20.rn4",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "תִּ֥מְﬞחַ֥ץ רַגְלְךָ֗"
+  },
+  {
+    "bcv_short": "Ps69:21",
+    "ref_1": "09.24.rn2",
+    "ref_2": "11.20.rn3",
+    "note": "explicitly called vocal in 9.23.fn23",
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "שָׁ֥בְרָ֥ה לִבִּ֗י"
+  },
+  {
+    "bcv_short": "Ps73:28",
+    "ref_1": null,
+    "ref_2": "11.20.rn4",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "קִ֥רְﬞבַ֥ת אֱלֹהִ֗ים"
+  },
+  {
+    "bcv_short": "Ps77:7",
+    "ref_1": "09.24.rn2",
+    "ref_2": "11.20.rn3",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "אֶ֥זְכְּרָ֥ה נְגִינָתִ֗י"
+  },
+  {
+    "bcv_short": "Ps104:3",
+    "ref_1": null,
+    "ref_2": "11.20.rn2",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "הַ֥מְﬞקָרֶ֥ה בַמַּ֗יִם"
+  },
+  {
+    "bcv_short": "Jb34:10",
+    "ref_1": null,
+    "ref_2": "11.20.rn4",
+    "note": null,
+    "fp": "poetic/(mer)/(mer),(mer)",
+    "r": "אַ֥נְﬞשֵׁ֥י לֵבָ֗ב"
+  },
+  {
+    "bcv_short": "Ps1:2",
+    "ref_1": "09.27.rn2",
+    "ref_2": "11.20.rn2",
+    "note": null,
+    "fp": "poetic/(mer)/(mer)~(mer)",
+    "r": "אִ֥ם~בְּתוֹרַ֥ת יְהֹוָ֗ה"
+  },
+  {
+    "bcv_short": "Ps39:2",
+    "ref_1": null,
+    "ref_2": "11.47.es2.rn2",
+    "note": "Also appears in 11.47.fn27.",
+    "fp": "poetic/(mer)/(mer)~(mer)",
+    "r": "אֶשְׁמְרָ֥ה~לְפִ֥י מַחְס֑וֹם"
+  },
+  {
+    "bcv_short": "Ps12:7",
+    "ref_1": "09.23.rn2",
+    "ref_2": "11.26.rn4",
+    "note": "Also appears in 9.33.rn2.",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "אִ֥מְﬞר֣וֹת יְהֹוָה֮"
+  },
+  {
+    "bcv_short": "Ps18:7",
+    "ref_1": "09.23.rn2",
+    "ref_2": "11.26.rn4",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "אֶ֥קְﬞרָ֣א יְהֹוָה֮"
+  },
+  {
+    "bcv_short": "Ps37:14",
+    "ref_1": "09.23.rn2",
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "פָּ֥תְח֣וּ רְשָׁעִים֮"
+  },
+  {
+    "bcv_short": "Ps39:2",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "אֶ֥שְׁמְרָ֣ה דְרָכַי֮"
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "ref_1": "09.23.fn23",
+    "ref_2": "11.26.rn4",
+    "note": "חטף חולם",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "לִ֥שְׁא֣וֹל שַׁתּוּ֮"
+  },
+  {
+    "bcv_short": "Ps51:19",
+    "ref_1": "09.23.fn23",
+    "ref_2": null,
+    "note": "חטף צירה",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "זִ֥בְחֵ֣י"
+  },
+  {
+    "bcv_short": "Ps62:4",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "תְּה֥וֹתְﬞת֣וּ עַל־אִישׁ֮"
+  },
+  {
+    "bcv_short": "Ps62:5",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "יָ֥עֲצ֣וּ לְהַדִּיחַ֮"
+  },
+  {
+    "bcv_short": "Ps65:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": "I find no reference to this in CoS. Da-at Miqra considers μL to have געיה not mer; how/why? (It considers μA to have mer)",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "תִּ֥בְﬞחַ֣ר"
+  },
+  {
+    "bcv_short": "Ps76:12",
+    "ref_1": null,
+    "ref_2": "11.26.rn4",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "נִ֥דְﬞר֣וּ וְשַׁלְּמוּ֮"
+  },
+  {
+    "bcv_short": "Ps86:2",
+    "ref_1": "09.23.fn23",
+    "ref_2": "11.26.rn4",
+    "note": "vocal (or at least, “not [...] fully silent” (!))",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "שׇׁ֥מְרָ֣ה נַפְשִׁי֮"
+  },
+  {
+    "bcv_short": "Ps113:7",
+    "ref_1": null,
+    "ref_2": "11.56.rn1",
+    "note": "Mentioned indirectly in 9.38.fn27. By “indirectly” I mean via reference to 11.56.",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "מְקִ֥ימִ֣י מֵעָפָ֣ר דָּ֑ל"
+  },
+  {
+    "bcv_short": "Ps140:4",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "שָׁ֥נְﬞנ֣וּ לְשׁוֹנָם֮"
+  },
+  {
+    "bcv_short": "Ps143:10",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "לַ֥עֲשׂ֣וֹת רְצוֹנֶךָ֮"
+  },
+  {
+    "bcv_short": "Pr8:13",
+    "ref_1": "09.23.fn23",
+    "ref_2": null,
+    "note": "vocal (or at least, “not [...] fully silent” (!))",
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "יִ֥רְאַ֣ת"
+  },
+  {
+    "bcv_short": "Pr30:17",
+    "ref_1": null,
+    "ref_2": "11.26.rn4",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "תִּ֥לְﬞעַ֣ג לְאָב֮"
+  },
+  {
+    "bcv_short": "Jb11:6",
+    "ref_1": null,
+    "ref_2": "11.26.rn2",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "תַּ֥עֲלֻמ֣וֹת חׇכְמָה֮"
+  },
+  {
+    "bcv_short": "Jb29:25",
+    "ref_1": null,
+    "ref_2": "11.26.rn4",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "אֶ֥בְﬞחַ֣ר דַּרְכָּם֮"
+  },
+  {
+    "bcv_short": "Jb30:1",
+    "ref_1": null,
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(mun)",
+    "r": "שָׂ֥חֲק֣וּ עָלַי֮"
+  },
+  {
+    "bcv_short": "Ps89:25",
+    "ref_1": "09.32.rn2",
+    "ref_2": "11.53",
+    "note": null,
+    "fp": "poetic/(mun)/(mer),(ümtg),(mun)",
+    "r": "וֶ֥אֱֽמוּנָתִ֣י וְחַסְדִּ֣י עִמּ֑וֹ"
+  },
+  {
+    "bcv_short": "Ps40:9",
+    "ref_1": "09.28.rn2",
+    "ref_2": "11.53",
+    "note": "Why doesn't CoS (1) have a mqf (2) mention μL's געיה on ש? Also appears in 9.32 body text and 9.33.rn1.",
+    "fp": "poetic/(mun)/(mer)-(mun)",
+    "r": "לַ֥עֲשׂוֹת־רְצוֹנְךָ֣ אֱלֹהַ֣י חָפָ֑צְתִּי"
+  },
+  {
+    "bcv_short": "Ps14:7",
+    "ref_1": "09.27.rn1",
+    "ref_2": "11.26.rn2",
+    "note": null,
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "מִ֥י~יִתֵּ֣ן מִצִּיּוֹן֮"
+  },
+  {
+    "bcv_short": "Ps53:7",
+    "ref_1": "09.27.rn1",
+    "ref_2": "11.26.rn2",
+    "note": null,
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "מִ֥י~יִתֵּ֣ן מִצִּיּוֹן֮"
+  },
+  {
+    "bcv_short": "Ps60:2",
+    "ref_1": "09.27.rn1",
+    "ref_2": "11.26.rn3",
+    "note": null,
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "אֶ֥ת~אֲרַ֣ם נַהֲרַיִם֮"
+  },
+  {
+    "bcv_short": "Pr3:12",
+    "ref_1": "09.27.rn4",
+    "ref_2": "11.53",
+    "note": null,
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "אֶ֥ת~אֲשֶׁ֣ר יֶאֱהַ֣ב יְהֹוָ֣ה יוֹכִ֑יחַ"
+  },
+  {
+    "bcv_short": "Jb31:7",
+    "ref_1": "09.27.rn1",
+    "ref_2": "11.26.rn2",
+    "note": null,
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "אִ֥ם~תִּטֶּ֣ה אַשֻּׁרִי֮"
+  },
+  {
+    "bcv_short": "Jb40:10",
+    "ref_1": null,
+    "ref_2": "11.56.rn2",
+    "note": "Mentioned indirectly in 9.38.fn27. By “indirectly” I mean via reference to 11.56. CoS says that עדה should be considered to be followed by a mqf.",
+    "fp": "poetic/(mun)/(mer)~(mun)",
+    "r": "עֲדֵ֥ה~נָ֣א גָא֣וֹן וָגֹ֑בַהּ"
+  },
+  {
+    "bcv_short": "Pr27:22",
+    "ref_1": null,
+    "ref_2": "11.10",
+    "note": null,
+    "fp": "poetic/(paz)/(mer),(paz)",
+    "r": "בַּ֥מַּכְתֵּ֡שׁ"
+  },
+  {
+    "bcv_short": "Ps89:20",
+    "ref_1": null,
+    "ref_2": "11.08.a.es2.rn1",
+    "note": "The reference I find in CoS (11.8) has space rather than mqf, presumably because CoS classifies this mer as primary (conjunctive), not 2ndary. This would make its absence from 11.10 intentional. Like CoS 11.8, JC has space rather than mqf. μA & μL have mqf.",
+    "fp": "poetic/(paz)/(mer),(ümtg)-(paz)",
+    "r": "דִּבַּ֥רְתָּֽ־בְחָז֡וֹן"
+  },
+  {
+    "bcv_short": "Ps22:26",
+    "ref_1": null,
+    "ref_2": "11.19",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(rev)/(mer),(rev)",
+    "r": "מֵ֥אִתְּךָ֗"
+  },
+  {
+    "bcv_short": "Ps31:19",
+    "ref_1": "09.20",
+    "ref_2": "11.19",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(rev)/(mer),(rev)",
+    "r": "תֵּ֥אָלַ֗מְנָה"
+  },
+  {
+    "bcv_short": "Jb12:6",
+    "ref_1": null,
+    "ref_2": "11.35.rn1",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(rev)",
+    "r": "לְשֹׁ֥דְﬞדִ֗ים"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "ref_1": null,
+    "ref_2": "11.36.rn1",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(rev)",
+    "r": "בַּ֥מִּדְבָּ֗ר"
+  },
+  {
+    "bcv_short": "Jb32:12",
+    "ref_1": null,
+    "ref_2": "11.19",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(rev)/(mer),(rev)",
+    "r": "וְעָ֥דֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps1:1",
+    "ref_1": "09.34.rn2",
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "אַ֥שְֽׁרֵי~הָאִ֗ישׁ"
+  },
+  {
+    "bcv_short": "Ps32:2",
+    "ref_1": null,
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "אַ֥שְֽׁרֵי~אָדָ֗ם"
+  },
+  {
+    "bcv_short": "Ps40:5",
+    "ref_1": null,
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "אַ֥שְֽׁרֵי~הַגֶּ֗בֶר"
+  },
+  {
+    "bcv_short": "Ps64:7",
+    "ref_1": null,
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "יַ֥חְפְּֽשׂוּ~עוֹלֹ֗ת"
+  },
+  {
+    "bcv_short": "Ps98:9",
+    "ref_1": null,
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "לִ֥פְֽנֵי~יְהֹוָ֗ה"
+  },
+  {
+    "bcv_short": "Pr28:22",
+    "ref_1": null,
+    "ref_2": "11.28.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer),(ümtg)~(rev)",
+    "r": "נִ֥בְﬞהָֽל~לַה֗וֹן"
+  },
+  {
+    "bcv_short": "Ps92:8",
+    "ref_1": null,
+    "ref_2": "11.32.rn3",
+    "note": "Also appears in 11.32.fn17, where Breuer calls μA's mqf \"inexplicable.\" CoS & JC have space rather than mqf. μA has mqf; μL has space. (Same situation as Ps12:6.)",
+    "fp": "poetic/(rev)/(mer)-(rev)",
+    "r": "כְּמ֥וֹ־עֵ֗שֶׂב"
+  },
+  {
+    "bcv_short": "Pr22:17",
+    "ref_1": null,
+    "ref_2": "11.36.rn2",
+    "note": null,
+    "fp": "poetic/(rev)/(mer)~(rev)",
+    "r": "הַ֥ט~אׇזְנְךָ֗"
+  },
+  {
+    "bcv_short": "Ps98:3",
+    "ref_1": "09.32.rn1",
+    "ref_2": "11.27.rn3",
+    "note": null,
+    "fp": "poetic/(zarnor)/(mer),(ümtg),(zarnor)",
+    "r": "וֶ֥אֱֽמוּנָתוֹ֮"
+  },
+  {
+    "bcv_short": "Pr8:34",
+    "ref_1": "09.28.rn1",
+    "ref_2": "11.27.rn2",
+    "note": "Also appears in 9.33.rn1.",
+    "fp": "poetic/(zarnor)/(mer),(ümtg)~(zarnor)",
+    "r": "אַ֥שְֽׁרֵי~אָדָם֮"
+  },
+  {
+    "bcv_short": "Ps61:5",
+    "ref_1": "09.26.rn1",
+    "ref_2": "11.79.rn1",
+    "note": "Also appears in 9.33.rn1.",
+    "fp": "poetic/(üazl)/(mer),(üazl)",
+    "r": "אֶ֥חֱסֶ֨ה בְסֵ֖תֶר כְּנָפֶ֣יךָ סֶּֽלָה׃"
+  },
+  {
+    "bcv_short": "Ps89:46",
+    "ref_1": "09.26.rn1",
+    "ref_2": "11.79.rn1",
+    "note": "Also appears in 9.29, where it is noted that μS1 has געיה where μA & μL have azla (the opposite of Ps66:15).",
+    "fp": "poetic/(üazl)/(mer),(üazl)",
+    "r": "הֶ֥עֱטִ֨יתָ עָלָ֖יו בּוּשָׁ֣ה סֶֽלָה׃"
+  },
+  {
+    "bcv_short": "Ps106:38",
+    "ref_1": "09.26.rn2",
+    "ref_2": "11.10",
+    "note": null,
+    "fp": "poetic/(üazl)/(mer),(üazl)",
+    "r": "וַיִּ֥שְׁפְּכ֨וּ דָ֪ם נָקִ֡י"
+  },
+  {
+    "bcv_short": "Pr27:10",
+    "ref_1": "09.26.rn2",
+    "ref_2": "11.10",
+    "note": null,
+    "fp": "poetic/(üazl)/(mer),(üazl)",
+    "r": "רֵ֥עֲךָ֨ וְרֵ֪עַ אָבִ֡יךָ"
+  },
+  {
+    "bcv_short": "Ps47:5",
+    "ref_1": "09.27.rn4",
+    "ref_2": "11.79.rn1",
+    "note": "Also appears in 9.30, where it is noted that μS1 has געיה where μA & μL have azla (like Ps89:46).",
+    "fp": "poetic/(üazl)/(mer)~(üazl)",
+    "r": "אֶ֥ת~גְּא֨וֹן יַעֲקֹ֖ב אֲשֶׁר־אָהֵ֣ב סֶֽלָה׃"
+  },
+  {
+    "bcv_short": "Ps2:2",
+    "ref_1": null,
+    "ref_2": "11.06.rn2",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "יִ֥תְיַצְּב֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps5:11",
+    "ref_1": "09.25.rn2",
+    "ref_2": "11.06.rn2",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "הַ֥אֲשִׁימֵ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps31:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "וְלִ֥שְׁﬞכֵנַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps87:5",
+    "ref_1": null,
+    "ref_2": "11.06.rn2",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "וּ֥לְﬞצִיּ֨וֹן׀"
+  },
+  {
+    "bcv_short": "Pr6:14",
+    "ref_1": "09.25.rn2",
+    "ref_2": "11.06.rn2",
+    "note": "Also appears in 9.23 body text.",
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "תַּ֥הְפֻּכ֨וֹת׀"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "ref_1": null,
+    "ref_2": "11.06.rn2",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(üazll)",
+    "r": "לַ֥עֲלוּקָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps7:6",
+    "ref_1": "09.23.fn21",
+    "ref_2": "11.03",
+    "note": "CoS 11.3 has space rather than mqf.",
+    "fp": "poetic/(üazll)/(mer),(ümtg)-(üazll)",
+    "r": "יִ֥רַדֹּֽף־אוֹיֵ֨ב׀"
+  },
+  {
+    "bcv_short": "Ps17:14",
+    "ref_1": null,
+    "ref_2": "11.03",
+    "note": "CoS 11.3 has space rather than mqf.",
+    "fp": "poetic/(üazll)/(mer),(ümtg)-(üazll)",
+    "r": "מִ֥מְﬞתִֽים־יָדְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps19:15",
+    "ref_1": "09.23.fn22",
+    "ref_2": "11.03",
+    "note": "The mer does not mobilize the shewa? CoS 11.3 has space rather than mqf.",
+    "fp": "poetic/(üazll)/(mer),(ümtg)-(üazll)",
+    "r": "יִ֥הְיֽוּ־לְרָצ֨וֹן׀"
+  },
+  {
+    "bcv_short": "Ps140:6",
+    "ref_1": "09.23.fn23",
+    "ref_2": "11.03",
+    "note": "vocal. CoS 11.3 has space rather than mqf.",
+    "fp": "poetic/(üazll)/(mer),(ümtg)-(üazll)",
+    "r": "טָ֥מְנֽוּ־גֵאִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps39:13",
+    "ref_1": null,
+    "ref_2": "11.03",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(ümtg)~(üazll)",
+    "r": "שִׁ֥מְﬞעָֽה~תְפִלָּתִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps141:5",
+    "ref_1": "09.34.rn2",
+    "ref_2": "11.03",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer),(ümtg)~(üazll)",
+    "r": "יֶ֥הֶלְמֵֽנִי~צַדִּ֨יק׀"
+  },
+  {
+    "bcv_short": "Pr25:20",
+    "ref_1": "09.27",
+    "ref_2": "11.06.rn2",
+    "note": "Also appears in 9.37. Mqf not omitted!",
+    "fp": "poetic/(üazll)/(mer)-(üazll)",
+    "r": "מַ֥עֲדֶה־בֶּ֨גֶד׀"
+  },
+  {
+    "bcv_short": "Jb6:10",
+    "ref_1": "09.27",
+    "ref_2": "11.06.rn2",
+    "note": "Also appears in 9.37. Mqf not omitted!",
+    "fp": "poetic/(üazll)/(mer)-(üazll)",
+    "r": "וּ֥תְהִי־ע֨וֹד׀"
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "כׇּ֥ל~עַצְמוֹתַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps106:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps111:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps112:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps113:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps135:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps137:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "עַ֥ל~נַהֲר֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps147:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps148:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps149:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps150:1",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "הַ֥לְﬞלוּ~יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Pr30:9",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "פֶּ֥ן~אֶשְׂבַּ֨ע׀"
+  },
+  {
+    "bcv_short": "Jb14:5",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(üazll)",
+    "r": "אִ֥ם~חֲרוּצִ֨ים׀"
+  },
+  {
+    "bcv_short": "Pr27:22",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~(ümtg)--(üazll)",
+    "r": "אִ֥ם~תִּכְתּֽוֹשׁ־אֶת־הָאֱוִ֨יל׀"
+  },
+  {
+    "bcv_short": "Pr19:7",
+    "ref_1": "09.27.rn3",
+    "ref_2": "11.06.rn3",
+    "note": null,
+    "fp": "poetic/(üazll)/(mer)~-(üazll)",
+    "r": "כׇּ֥ל~אֲחֵי־רָ֨שׁ׀"
+  },
+  {
+    "bcv_short": "Ps21:2",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וּ֝בִישׁ֥וּעָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps36:6",
+    "ref_1": "09.20",
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. Only cited at 36:6 by CoS but also appears at 88:12.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "אֱ֝מ֥וּנָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps40:9",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. Only cited at 40:9 by CoS but also appears at 119:109 and 119:174.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וְ֝ת֥וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps88:12",
+    "ref_1": "09.20",
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. Only cited at 36:6 by CoS but also appears at 88:12.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "אֱ֝מ֥וּנָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps89:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וֶ֝אֱמ֥וּנָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps92:3",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וֶ֝אֱמ֥וּנָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps107:6",
+    "ref_1": null,
+    "ref_2": "11.40.es2.rn1",
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "מִ֝מְּצ֥וּקוֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps107:13",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "מִ֝מְּצֻ֥קוֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps107:19",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "מִ֝מְּצֻ֥קוֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps118:26",
+    "ref_1": null,
+    "ref_2": "11.41",
+    "note": "The mer is primary (conjunctive), not 2ndary",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "בֵּ֝רַ֥כְנוּכֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps119:41",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "תְּ֝שׁ֥וּעָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps119:51",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "מִ֝תּ֥וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps119:109",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. Only cited at 40:9 by CoS but also appears at 119:109 and 119:174.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וְ֝ת֥וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps119:174",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. Only cited at 40:9 by CoS but also appears at 119:109 and 119:174.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וְ֝ת֥וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Jb13:21",
+    "ref_1": null,
+    "ref_2": "11.40.es2.rn1",
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וְ֝אֵ֥מָתְךָ֗"
+  },
+  {
+    "bcv_short": "Jb21:34",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(ürevirm)/(ger_m),(mer),(ürevirm)",
+    "r": "וּ֝תְשׁ֥וּבֹתֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps119:61",
+    "ref_1": null,
+    "ref_2": "11.40.es2.rn1",
+    "note": null,
+    "fp": "poetic/(ürevirm)/(mer)+(ger_m),(ürevirm)",
+    "r": "תּ֥֝וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps107:17",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary. CoS has no געיה.",
+    "fp": "poetic/(ürevirm)/(ümtg)+(ger_m),(mer),(ürevirm)",
+    "r": "וּֽ֝מֵעֲוֺ֥נֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps107:28",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/(ümtg)+(ger_m),(mer),(ürevirm)",
+    "r": "וּֽ֝מִמְּצ֥וּקֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps89:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/-(ger_m),(mer),(ürevirm)",
+    "r": "אַף־אֱ֝מ֥וּנָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps119:77",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/-(mer)+(ger_m),(ürevirm)",
+    "r": "כִּי־ת֥֝וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Ps119:153",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/(ürevirm)/-(mer)+(ger_m),(ürevirm)",
+    "r": "כִּי־ת֥֝וֹרָתְךָ֗"
+  },
+  {
+    "bcv_short": "Pr3:5",
+    "ref_1": null,
+    "ref_2": "11.40.es1.rn1",
+    "note": "The mer is primary (conjunctive), not 2ndary.",
+    "fp": "poetic/(ürevirm)/-(mer)+(ger_m),(ürevirm)",
+    "r": "וְאֶל־בִּ֥֝ינָתְךָ֗"
+  },
+  {
+    "bcv_short": "Jb21:2",
+    "ref_1": null,
+    "ref_2": "11.80.rn3",
+    "note": "CoS has no געיה",
+    "fp": "poetic/(üslq)/(mer),(ümtg),(üslq)",
+    "r": "תַּנְח֥וּמֹֽתֵיכֶֽם׃"
+  },
+  {
+    "bcv_short": "Ps12:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": "I find no reference to this in CoS. JC has space rather than mqf. μA has mqf; μL has space. (Same situation as Ps92:8.)",
+    "fp": "poetic/(üslq)/(mer),(ümtg)-(üslq)",
+    "r": "יָפִ֥יחַֽ־לֽוֹ׃"
+  },
+  {
+    "bcv_short": "Ps106:39",
+    "ref_1": "09.35.rn2",
+    "ref_2": "11.80.rn3",
+    "note": null,
+    "fp": "poetic/(üslq)/(mer),(üslq)",
+    "r": "בְּמַ֥עַלְלֵיהֶֽם׃"
+  },
+  {
+    "bcv_short": "Ps46:4",
+    "ref_1": "09.28.rn2",
+    "ref_2": "11.79.rn2",
+    "note": "Also appears in 9.33.rn1.",
+    "fp": "poetic/(ütar)/(mer),(ümtg)~(ütar)",
+    "r": "יִ֥רְעֲשֽׁוּ~הָרִ֖ים בְּגַאֲוָת֣וֹ סֶֽלָה׃"
+  },
+  {
+    "bcv_short": "Ps66:15",
+    "ref_1": "09.29.var-rn2",
+    "ref_2": "11.79.rn2",
+    "note": "9.29 notes that μS1 has azla where μA & μL have געיה (the opposite of Ps89:46).",
+    "fp": "poetic/(ütar)/(mer),(ümtg)~(ütar)",
+    "r": "אֶ֥עֱשֶֽׂה~בָקָ֖ר עִם־עַתּוּדִ֣ים סֶֽלָה׃"
+  },
+  {
+    "bcv_short": "Pr26:27",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "וְג֥וֹלֵֽל אֶ֝֗בֶן"
+  },
+  {
+    "bcv_short": "Jb35:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "וּתְח֥וֹלֵֽל לֽוֹ׃"
+  },
+  {
+    "bcv_short": "Ps94:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-after-tsere/(ümtg)-(mer),(ümtg)",
+    "r": "אִֽם־יֹ֥צֵֽר עַ֝֗יִן"
+  },
+  {
+    "bcv_short": "Ps19:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "מִפֶּ֥שַֽׁע רָֽב׃"
+  },
+  {
+    "bcv_short": "Ps95:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "נָרִ֥יעַֽ לֽוֹ׃"
+  },
+  {
+    "bcv_short": "Ps132:15",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "אַשְׂבִּ֥יעַֽ לָֽחֶם׃"
+  },
+  {
+    "bcv_short": "Pr29:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "יֵאָ֥נַֽח עָֽם׃"
+  },
+  {
+    "bcv_short": "Jb5:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "וְשֹׁ֥לֵֽחַ מַ֝֗יִם"
+  },
+  {
+    "bcv_short": "Jb34:34",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "שֹׁמֵ֥עַֽ לִֽי׃"
+  },
+  {
+    "bcv_short": "Ps139:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-misc/-(mer),(ümtg)",
+    "r": "לֹא־א֥וּכַֽל לָֽהּ׃"
+  },
+  {
+    "bcv_short": "Ps66:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-open/(mer),(ümtg)",
+    "r": "הִרְכַּ֥בְתָּֽ אֱנ֗וֹשׁ"
+  },
+  {
+    "bcv_short": "Ps119:90",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-open/(mer),(ümtg)",
+    "r": "כּוֹנַ֥נְתָּֽ אֶ֝֗רֶץ"
+  },
+  {
+    "bcv_short": "Ps58:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "poetic/psg-open/-(mer),(ümtg)",
+    "r": "הֲרׇס־שִׁנֵּ֥ימֽוֹ בְּפִ֑ימוֹ"
+  },
+  {
+    "bcv_short": "D8:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/(üqom),(mer)",
+    "r": "הַמַּאֲכִ֨לְךָ֥"
+  },
+  {
+    "bcv_short": "I30:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/(üqom),(mer)",
+    "r": "וַתֹּ֨אמְר֥וּ"
+  },
+  {
+    "bcv_short": "Ne12:44",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/(üqom),(mer)",
+    "r": "לָא֨וֹצָר֥וֹת"
+  },
+  {
+    "bcv_short": "L10:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/-(üqom),(mer)",
+    "r": "וְאֶל־אִ֨יתָמָ֥ר"
+  },
+  {
+    "bcv_short": "Ju21:21",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/-(üqom),(mer)",
+    "r": "אִם־יֵ֨צְא֥וּ"
+  },
+  {
+    "bcv_short": "I32:15",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mer)/-(üqom),(mer)",
+    "r": "עַד־יֵ֨עָרֶ֥ה"
+  },
+  {
+    "bcv_short": "Ne8:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(mun)/(mer),(mun)",
+    "r": "וְשֵׁרֵ֥בְיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee16:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(pash)/(mer),(ümtg)-(pash),(pash)",
+    "r": "וָ֥אֶתֵּֽן־נֶ֙זֶם֙"
+  },
+  {
+    "bcv_short": "G7:19",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "גָּ֥בְר֛וּ"
+  },
+  {
+    "bcv_short": "G40:1",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "חָ֥טְא֛וּ"
+  },
+  {
+    "bcv_short": "E7:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּהָ֥פְכ֛וּ"
+  },
+  {
+    "bcv_short": "E11:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְהָ֥יְתָ֛ה"
+  },
+  {
+    "bcv_short": "E12:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְנָ֥תְנ֛וּ"
+  },
+  {
+    "bcv_short": "E12:41",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥צְא֛וּ"
+  },
+  {
+    "bcv_short": "E35:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥צְא֛וּ"
+  },
+  {
+    "bcv_short": "N15:38",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְנָ֥תְנ֛וּ"
+  },
+  {
+    "bcv_short": "D10:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נָ֥סְע֛וּ"
+  },
+  {
+    "bcv_short": "D13:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥דְךָ֛"
+  },
+  {
+    "bcv_short": "D20:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וּפָ֥קְד֛וּ"
+  },
+  {
+    "bcv_short": "D21:13",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וּבָ֥כְתָ֛ה"
+  },
+  {
+    "bcv_short": "D22:18",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְלָ֥קְח֛וּ"
+  },
+  {
+    "bcv_short": "D27:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְאָ֥מְר֛וּ"
+  },
+  {
+    "bcv_short": "D31:25",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נֹ֥שְׂאֵ֛י"
+  },
+  {
+    "bcv_short": "Js3:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נֹ֥שְׂאֵ֛י"
+  },
+  {
+    "bcv_short": "Js8:15",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיִּנָּ֥גְע֛וּ"
+  },
+  {
+    "bcv_short": "Js21:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נָ֥תְנ֛וּ"
+  },
+  {
+    "bcv_short": "Ju9:44",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "פָּ֥שְׁט֛וּ"
+  },
+  {
+    "bcv_short": "1S14:38",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "הָ֥יְתָ֛ה"
+  },
+  {
+    "bcv_short": "1S23:26",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "עֹ֥טְרִ֛ים"
+  },
+  {
+    "bcv_short": "1S29:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "עֹ֥בְרִ֛ים"
+  },
+  {
+    "bcv_short": "2S4:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥לְכ֛וּ"
+  },
+  {
+    "bcv_short": "2S24:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥צְא֛וּ"
+  },
+  {
+    "bcv_short": "2K11:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְשָׁ֥מְר֛וּ"
+  },
+  {
+    "bcv_short": "I10:17",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְאָ֥כְלָ֛ה"
+  },
+  {
+    "bcv_short": "I23:17",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְזָ֥נְתָ֛ה"
+  },
+  {
+    "bcv_short": "Je2:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥לְכ֛וּ"
+  },
+  {
+    "bcv_short": "Je3:24",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "אָ֥כְלָ֛ה"
+  },
+  {
+    "bcv_short": "Je9:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "הִתְבּ֥וֹנְנ֛וּ"
+  },
+  {
+    "bcv_short": "Je12:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נָ֥תְנ֛וּ"
+  },
+  {
+    "bcv_short": "Je17:27",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְאָ֥כְלָ֛ה"
+  },
+  {
+    "bcv_short": "Je19:4",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וּמָ֥לְא֛וּ"
+  },
+  {
+    "bcv_short": "Je20:4",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְנָ֥פְל֛וּ"
+  },
+  {
+    "bcv_short": "Je26:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥שְׁב֛וּ"
+  },
+  {
+    "bcv_short": "Je37:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְשָׂ֥רְפ֛וּ"
+  },
+  {
+    "bcv_short": "Ee1:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "חֹ֥בְרֹ֛ת"
+  },
+  {
+    "bcv_short": "Ee10:3",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "עֹ֥מְדִ֛ים"
+  },
+  {
+    "bcv_short": "Ee32:21",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥רְד֛וּ"
+  },
+  {
+    "bcv_short": "Ee33:28",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְשָׁ֥מְﬞמ֛וּ"
+  },
+  {
+    "bcv_short": "Ee36:3",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַתֵּ֥עֲל֛וּ"
+  },
+  {
+    "bcv_short": "Ho5:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יֵ֥לְכ֛וּ"
+  },
+  {
+    "bcv_short": "A3:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "הָא֥וֹצְרִ֛ים"
+  },
+  {
+    "bcv_short": "A8:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יְשׁ֥וֹטְט֛וּ"
+  },
+  {
+    "bcv_short": "Ts2:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יֹ֥שְׁבֵ֛י"
+  },
+  {
+    "bcv_short": "Zc12:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְאָ֥מְר֛וּ"
+  },
+  {
+    "bcv_short": "La1:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יִשְׂתָּ֥רְג֛וּ"
+  },
+  {
+    "bcv_short": "Es8:14",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥צְא֛וּ"
+  },
+  {
+    "bcv_short": "Da10:19",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וָאֹ֥מְרָ֛ה"
+  },
+  {
+    "bcv_short": "Er6:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "בְּבִ֥ירְתָ֛א"
+  },
+  {
+    "bcv_short": "Er8:18",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְשֵׁרֵ֥בְיָ֛ה"
+  },
+  {
+    "bcv_short": "Er9:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "הָ֥יְתָ֛ה"
+  },
+  {
+    "bcv_short": "Ne7:1",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיִּפָּ֥קְד֛וּ"
+  },
+  {
+    "bcv_short": "Ne12:47",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "נֹ֥תְנִ֛ים"
+  },
+  {
+    "bcv_short": "1C2:46",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥לְדָ֛ה"
+  },
+  {
+    "bcv_short": "1C4:28",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥שְׁב֛וּ"
+  },
+  {
+    "bcv_short": "1C5:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "יָ֥שְׁב֛וּ"
+  },
+  {
+    "bcv_short": "1C5:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וַיֵּ֥שְׁב֛וּ"
+  },
+  {
+    "bcv_short": "1C14:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "קָ֥רְא֛וּ"
+  },
+  {
+    "bcv_short": "2C1:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "וְאֵ֥צְאָ֛ה"
+  },
+  {
+    "bcv_short": "2C16:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(mer),(tev)",
+    "r": "מֵאֹ֥צְר֛וֹת"
+  },
+  {
+    "bcv_short": "S2:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(ümtg)-(mer),(tev)",
+    "r": "וְֽאִם־תְּע֥וֹרְﬞר֛וּ"
+  },
+  {
+    "bcv_short": "S3:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(ümtg)-(mer),(tev)",
+    "r": "וְֽאִם־תְּע֥וֹרְﬞר֛וּ"
+  },
+  {
+    "bcv_short": "S8:4",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/(ümtg)-(mer),(tev)",
+    "r": "וּֽמַה־תְּעֹ֥רְר֛וּ"
+  },
+  {
+    "bcv_short": "N32:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/-(mer),(tev)",
+    "r": "אִם־תֵּחָ֥לְצ֛וּ"
+  },
+  {
+    "bcv_short": "D13:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/-(mer),(tev)",
+    "r": "אֶת־יֹ֥שְׁבֵ֛י"
+  },
+  {
+    "bcv_short": "Da5:3",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/-(mer),(tev)",
+    "r": "מִן־הֵ֥יכְלָ֛א"
+  },
+  {
+    "bcv_short": "2C13:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/-(mer),(tev)",
+    "r": "אַל־תִּלָּ֥חֲמ֛וּ"
+  },
+  {
+    "bcv_short": "2C31:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(tev)/-(mer),(tev)",
+    "r": "עַל־הַכֹּ֥הֲנִ֛ים"
+  },
+  {
+    "bcv_short": "Ju8:10",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(üslq)/(mer),(ümtg)-(üslq)",
+    "r": "שֹׁ֥לֵֽף־חָֽרֶב׃"
+  },
+  {
+    "bcv_short": "Ju20:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(üslq)/(mer),(ümtg)-(üslq)",
+    "r": "שֹׁ֥לֵֽף־חָֽרֶב׃"
+  },
+  {
+    "bcv_short": "Ju20:35",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(üslq)/(mer),(ümtg)-(üslq)",
+    "r": "שֹׁ֥לֵֽף־חָֽרֶב׃"
+  },
+  {
+    "bcv_short": "1C21:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(üslq)/(mer),(ümtg)-(üslq)",
+    "r": "שֹׁ֥לֵֽף־חָֽרֶב׃"
+  },
+  {
+    "bcv_short": "S8:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(üslq)/(mer),(üslq)",
+    "r": "שַׁלְהֶ֥בֶתְיָֽה׃"
+  },
+  {
+    "bcv_short": "Ee1:4",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ümtg)-(ütip)",
+    "r": "וְנֹ֥גַֽהּ־ל֖וֹ"
+  },
+  {
+    "bcv_short": "2C14:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ümtg)-(ütip)",
+    "r": "וַיָּ֥נַֽח־לָ֖נוּ"
+  },
+  {
+    "bcv_short": "Je8:18",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ütip)",
+    "r": "מַבְלִ֥יגִיתִ֖י"
+  },
+  {
+    "bcv_short": "S6:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ütip)",
+    "r": "שֶׁ֥הֵ֖ם"
+  },
+  {
+    "bcv_short": "Da5:17",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ütip)",
+    "r": "וּנְבָ֥זְבְּיָתָ֖ךְ"
+  },
+  {
+    "bcv_short": "1C15:13",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(mer),(ütip)",
+    "r": "לְמַבָּרִ֥אשׁוֹנָ֖ה"
+  },
+  {
+    "bcv_short": "Ee44:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/(ümtg)-(mer),(ütip)",
+    "r": "מִֽכׇּל־תּוֹעֲב֥וֹתֵיכֶ֖ם"
+  },
+  {
+    "bcv_short": "I66:8",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/-(mer),(ümtg)-(ütip)",
+    "r": "אִם־יִוָּ֥לֵֽד־גּ֖וֹי"
+  },
+  {
+    "bcv_short": "2C8:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/-(mer),(ümtg)-(ütip)",
+    "r": "אֲשֶׁר־בָּ֥אָֽה־אֲלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "L23:21",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/-(mer),(ütip)",
+    "r": "בְּכׇל־מוֹשְׁבֹ֥תֵיכֶ֖ם"
+  },
+  {
+    "bcv_short": "2K15:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/-(mer),(ütip)",
+    "r": "כׇּל־הֶהָ֥רוֹתֶ֖יהָ"
+  },
+  {
+    "bcv_short": "Ee36:25",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/(ütip)/-(mer),(ütip)",
+    "r": "וּמִכׇּל־גִּלּ֥וּלֵיכֶ֖ם"
+  },
+  {
+    "bcv_short": "G18:15",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-before-paseq/(mer),(ümtg)",
+    "r": "וַיֹּ֥אמֶֽר ‖ לֹ֖א"
+  },
+  {
+    "bcv_short": "Ju12:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-before-paseq/(mer),(ümtg)",
+    "r": "וַיֹּ֥אמֶֽר ‖ לֹֽא׃"
+  },
+  {
+    "bcv_short": "1K2:30",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-before-paseq/(mer),(ümtg)",
+    "r": "וַיֹּ֥אמֶֽר ‖ לֹ֖א"
+  },
+  {
+    "bcv_short": "Ju20:46",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "שֹׁ֥לֵֽף חֶ֖רֶב"
+  },
+  {
+    "bcv_short": "Je23:29",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "יְפֹ֥צֵֽץ סָֽלַע׃"
+  },
+  {
+    "bcv_short": "Je31:21",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "תְּס֥וֹבֵֽב גָּֽבֶר׃"
+  },
+  {
+    "bcv_short": "Es5:3",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-after-tsere/(mer),(ümtg)",
+    "r": "וְיִנָּ֥תֵֽן לָֽךְ׃"
+  },
+  {
+    "bcv_short": "2S22:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-after-tsere/-(mer),(ümtg)",
+    "r": "כִּי־חָ֥פֵֽץ בִּֽי׃"
+  },
+  {
+    "bcv_short": "2S10:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "לְהוֹשִׁ֥יעַֽ לָֽךְ׃"
+  },
+  {
+    "bcv_short": "2S13:16",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "לִשְׁמֹ֥עַֽ לָֽהּ׃"
+  },
+  {
+    "bcv_short": "2S19:24",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "וַיִּשָּׁ֥בַֽע ל֖וֹ"
+  },
+  {
+    "bcv_short": "Ee1:27",
+    "ref_1": null,
+    "ref_2": null,
+    "note": "ITM-354",
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "וְנֹ֥גַֽהּ ל֖וֹ"
+  },
+  {
+    "bcv_short": "Ho14:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "וְרֵ֥יחַֽ ל֖וֹ"
+  },
+  {
+    "bcv_short": "R1:21",
+    "ref_1": null,
+    "ref_2": null,
+    "note": "ITM-354",
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "הֵ֥רַֽע לִֽי׃"
+  },
+  {
+    "bcv_short": "La5:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "לִשְׂבֹּ֥עַֽ לָֽחֶם׃"
+  },
+  {
+    "bcv_short": "Ec1:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "זוֹרֵ֥חַֽ ה֖וּא"
+  },
+  {
+    "bcv_short": "Ec5:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "מַנִּ֥יחַֽ ל֖וֹ"
+  },
+  {
+    "bcv_short": "Ne13:8",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/(mer),(ümtg)",
+    "r": "וַיֵּ֥רַֽע לִ֖י"
+  },
+  {
+    "bcv_short": "I23:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/-(mer),(ümtg)",
+    "r": "לֹא־יָנ֥וּחַֽ לָֽךְ׃"
+  },
+  {
+    "bcv_short": "A5:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-closed-by-guttural/-(mer),(ümtg)",
+    "r": "וְלֹא־נֹ֥גַֽהּ לֽוֹ׃"
+  },
+  {
+    "bcv_short": "G28:7",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "פַּדֶּ֥נָֽה אֲרָֽם׃"
+  },
+  {
+    "bcv_short": "G31:28",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "הִסְכַּ֥לְתָּֽ עֲשֽׂוֹ׃"
+  },
+  {
+    "bcv_short": "G43:9",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "וְחָטָ֥אתִֽי לְךָ֖"
+  },
+  {
+    "bcv_short": "G50:18",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "הִנֶּ֥נּֽוּ לְךָ֖"
+  },
+  {
+    "bcv_short": "1K2:2",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "וְהָיִ֥יתָֽ לְאִֽישׁ׃"
+  },
+  {
+    "bcv_short": "1K3:13",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "כָמ֥וֹךָֽ אִ֛ישׁ"
+  },
+  {
+    "bcv_short": "2K1:13",
+    "ref_1": null,
+    "ref_2": null,
+    "note": "ITM-332",
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "עֲבָדֶ֥יךָֽ אֵ֛לֶּה"
+  },
+  {
+    "bcv_short": "I42:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "קְרָאתִ֥יךָֽ בְצֶ֖דֶק"
+  },
+  {
+    "bcv_short": "S5:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "קַ֥מְתִּֽי אֲנִ֖י"
+  },
+  {
+    "bcv_short": "Ec2:20",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "וְסַבּ֥וֹתִֽי אֲנִ֖י"
+  },
+  {
+    "bcv_short": "Da6:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "הַשְׁכַּ֥חְנָֽא עֲל֖וֹהִי"
+  },
+  {
+    "bcv_short": "Da7:5",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(mer),(ümtg)",
+    "r": "ק֥וּמִֽי אֲכֻ֖לִי"
+  },
+  {
+    "bcv_short": "L25:53",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(ümtg)-(mer),(ümtg)",
+    "r": "לֹֽא־יִרְדֶּ֥נּֽוּ בְּפֶ֖רֶךְ"
+  },
+  {
+    "bcv_short": "Mi1:12",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/(ümtg)-(mer),(ümtg)",
+    "r": "כִּֽי־חָ֥לָֽה לְט֖וֹב"
+  },
+  {
+    "bcv_short": "D17:11",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/-(mer),(ümtg)",
+    "r": "אֲשֶׁר־יַגִּ֥ידֽוּ לְךָ֖"
+  },
+  {
+    "bcv_short": "1S3:6",
+    "ref_1": null,
+    "ref_2": null,
+    "note": null,
+    "fp": "prose/psg-open/-(mer),(ümtg)",
+    "r": "לֹא־קָרָ֥אתִֽי בְנִ֖י"
+  }
+]

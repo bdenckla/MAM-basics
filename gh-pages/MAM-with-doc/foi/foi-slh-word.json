@@ -1,0 +1,7754 @@
+[
+  {
+    "bcv_short": "G1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּרֵאשִׁ֖ית",
+          "slhw-desc-1": "ב.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ב/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "בְּ"
+            ]
+          },
+          "רֵאשִׁ֖ית"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "בְּרֵאשִׁ֖ית/ב...../ג (אות בי״ת גדולה)"
+  },
+  {
+    "bcv_short": "E34:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נֹצֵ֥ר",
+          "slhw-desc-1": "נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נֹ"
+            ]
+          },
+          "צֵ֥ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "נֹצֵ֥ר/נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "E34:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אַחֵ֑ר",
+          "slhw-desc-1": "..ר",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ר/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אַחֵ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ר"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "אַחֵ֑ר/..ר/ג (אות רי״ש גדולה)"
+  },
+  {
+    "bcv_short": "L11:42",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־גָּח֜וֹן",
+          "slhw-desc-1": "..־..ו.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ו/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־גָּח֜",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וֹ"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "עַל־גָּח֜וֹן/..־..ו./ג (אות וי״ו גדולה)"
+  },
+  {
+    "bcv_short": "L13:33",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהִ֨תְגַּלָּ֔ח",
+          "slhw-desc-1": "...ג..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהִ֨תְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "גַּ"
+            ]
+          },
+          "לָּ֔ח"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "וְהִ֨תְגַּלָּ֔ח/...ג../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "N14:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "יִגְדַּל־נָ֖א",
+          "slhw-desc-1": "י...־..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "י/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "יִ"
+            ]
+          },
+          "גְדַּל־נָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "יִגְדַּל־נָ֖א/י...־../ג (אות יו״ד גדולה)"
+  },
+  {
+    "bcv_short": "N27:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִשְׁפָּטָ֖ן",
+          "slhw-desc-1": "....ן",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ן/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִשְׁפָּטָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "מִשְׁפָּטָ֖ן/....ן/ג (אות נו״ן סופית גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שְׁמַ֖ע",
+          "slhw-desc-1": "..ע",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ע/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שְׁמַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ע"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "שְׁמַ֖ע/..ע/ג (אות עי״ן גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֶחָֽד",
+          "slhw-desc-1": "..ד",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ד/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֶחָֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ד"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "אֶחָֽד/..ד/ג (אות דל״ת גדולה)"
+  },
+  {
+    "bcv_short": "D29:27",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיַּשְׁלִכֵ֛ם",
+          "slhw-desc-1": "...ל..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיַּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "לִ"
+            ]
+          },
+          "כֵ֛ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "וַיַּשְׁלִכֵ֛ם/...ל../ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ",
+          "slhw-desc-1": "ה",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "הַ/ה/ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "2K17:31",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נִבְחַ֖ז",
+          "slhw-desc-1": "...ז",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "נִבְחַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ז"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "נִבְחַ֖ז/...ז/ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "I56:10",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צֹפָ֞ו",
+          "slhw-desc-1": "צ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צֹ"
+            ]
+          },
+          "פָ֞ו"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "צֹפָ֞ו/צ../ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "Ma3:22",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "זִכְר֕וּ",
+          "slhw-desc-1": "ז...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "זִ"
+            ]
+          },
+          "כְר֕וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "זִכְר֕וּ/ז.../ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "וְ֭כַנָּה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּ֭ה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּ֭ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "וְ֭כַנָּ֭ה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps84:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קֵ֥ן",
+          "slhw-desc-1": "ק.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ק/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "קֵ֥"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "קֵ֥ן/ק./ג (אות קו״ף גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵי",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "מִ֭שְׁלֵי/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵ֭י",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵ֭י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "מִ֭שְׁלֵ֭י/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Jb9:34",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁבְט֑וֹ",
+          "slhw-desc-1": "..ט.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שִׁבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֑"
+            ]
+          },
+          "וֹ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "שִׁבְט֑וֹ/..ט./ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "S1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁ֥יר",
+          "slhw-desc-1": "ש..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שִׁ֥"
+            ]
+          },
+          "יר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "שִׁ֥יר/ש../ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "R3:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לִ֣ינִי׀",
+          "slhw-desc-1": "..נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לִ֣י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נִ"
+            ]
+          },
+          "י ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "לִ֣ינִי׀/..נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "Ec7:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ט֥וֹב",
+          "slhw-desc-1": "ט..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֥"
+            ]
+          },
+          "וֹב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "ט֥וֹב/ט../ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Ec12:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ס֥וֹף",
+          "slhw-desc-1": "ס..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ס֥"
+            ]
+          },
+          "וֹף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "ס֥וֹף/ס../ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "Es1:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ח֣וּר׀",
+          "slhw-desc-1": "ח...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ח֣"
+            ]
+          },
+          "וּר ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "ח֣וּר׀/ח.../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Es9:29",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַ֠תִּכְתֹּ֠ב",
+          "slhw-desc-1": ".ת...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ת/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַ֠",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "תִּ"
+            ]
+          },
+          "כְתֹּ֠ב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "וַ֠תִּכְתֹּ֠ב/.ת.../ג (אות תי״ו גדולה)"
+  },
+  {
+    "bcv_short": "1C1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָדָ֥ם",
+          "slhw-desc-1": "א..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "א/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "אָ"
+            ]
+          },
+          "דָ֥ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ג",
+    "r": "אָדָ֥ם/א../ג (אות אל״ף גדולה)"
+  },
+  {
+    "bcv_short": "G2:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּהִבָּֽרְאָ֑ם",
+          "slhw-desc-1": ".ה....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ה/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "הִ"
+            ]
+          },
+          "בָּֽרְאָ֑ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "בְּהִבָּֽרְאָ֑ם/.ה..../ק (אות ה״א קטנה)"
+  },
+  {
+    "bcv_short": "G23:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְלִבְכֹּתָֽהּ",
+          "slhw-desc-1": "...כ..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "כ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְלִבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "כֹּ"
+            ]
+          },
+          "תָֽהּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "וְלִבְכֹּתָֽהּ/...כ../ק (אות כ״ף קטנה)"
+  },
+  {
+    "bcv_short": "G27:46",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קַ֣צְתִּי",
+          "slhw-desc-1": "ק...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ק/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "קַ֣"
+            ]
+          },
+          "צְתִּי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "קַ֣צְתִּי/ק.../ק (אות קו״ף קטנה)"
+  },
+  {
+    "bcv_short": "L1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּקְרָ֖א",
+          "slhw-desc-1": "....א",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "א/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּקְרָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "א"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "וַיִּקְרָ֖א/....א/ק (אות אל״ף קטנה)"
+  },
+  {
+    "bcv_short": "L6:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מוֹקְדָ֨הֿ",
+          "slhw-desc-1": "מ....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "מ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "מ"
+            ]
+          },
+          "וֹקְדָ֨הֿ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "מוֹקְדָ֨הֿ/מ..../ק (אות מ״ם קטנה)"
+  },
+  {
+    "bcv_short": "D32:18",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "תֶּ֑שִׁי",
+          "slhw-desc-1": "..י",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "תֶּ֑שִׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "תֶּ֑שִׁי/..י/ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "2S21:19",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־יַעְרֵ֨י",
+          "slhw-desc-1": "..־..ר.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ר/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־יַעְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "רֵ֨"
+            ]
+          },
+          "י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "בֶּן־יַעְרֵ֨י/..־..ר./ק (אות רי״ש קטנה)"
+  },
+  {
+    "bcv_short": "I44:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֹ֖רֶן",
+          "slhw-desc-1": "..ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֹ֖רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "אֹ֖רֶן/..ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "Je14:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְצִוְחַ֥ת",
+          "slhw-desc-1": ".צ...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "צ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "צִ"
+            ]
+          },
+          "וְחַ֥ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "וְצִוְחַ֥ת/.צ.../ק (אות צד״י קטנה)"
+  },
+  {
+    "bcv_short": "Je39:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּנְבֽוּשַׁזְבָּן֙",
+          "slhw-desc-1": ".......ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּנְבֽוּשַׁזְבָּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן֙"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "וּנְבֽוּשַׁזְבָּן֙/.......ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "Na1:3",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּסוּפָ֤ה",
+          "slhw-desc-1": ".ס...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ס/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ס"
+            ]
+          },
+          "וּפָ֤ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "בְּסוּפָ֤ה/.ס.../ק (אות סמ״ך קטנה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "אָ֭דָם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָ֭ם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ֭"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "אָ֭דָ֭ם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ֤ב",
+          "slhw-desc-1": ".ב",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ב/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַ֤",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ב"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "הַ֤ב/.ב/ק (אות בי״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb7:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וגיש",
+          "slhw-desc-1": ".ג..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ג/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "ו",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ג"
+            ]
+          },
+          "יש"
+        ]
+      }
+    ],
+    "stack_str": "kq-ketiv",
+    "fp": "non-note/1/ק",
+    "r": "וגיש/.ג../ק (אות גימ״ל קטנה)"
+  },
+  {
+    "bcv_short": "Jb16:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־פְּנֵי־פָ֑רֶץ",
+          "slhw-desc-1": "..־...־..ץ",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ץ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־פְּנֵי־פָ֑רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "עַל־פְּנֵי־פָ֑רֶץ/..־...־..ץ/ק (אות צד״י סופית קטנה)"
+  },
+  {
+    "bcv_short": "Jb33:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "חַ֥ף",
+          "slhw-desc-1": "ח.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ח/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "חַ֥"
+            ]
+          },
+          "ף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "חַ֥ף/ח./ק (אות חי״ת קטנה)"
+  },
+  {
+    "bcv_short": "La1:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ל֣וֹא",
+          "slhw-desc-1": "ל..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ל/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ל֣"
+            ]
+          },
+          "וֹא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "ל֣וֹא/ל../ק (אות למ״ד קטנה)"
+  },
+  {
+    "bcv_short": "La2:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "טָבְע֤וּ",
+          "slhw-desc-1": "ט...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ט/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "טָ"
+            ]
+          },
+          "בְע֤וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "טָבְע֤וּ/ט.../ק (אות טי״ת קטנה)"
+  },
+  {
+    "bcv_short": "La3:36",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לְעַוֵּ֤ת",
+          "slhw-desc-1": ".ע..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ע/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "וֵּ֤ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "לְעַוֵּ֤ת/.ע../ק (אות עי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְשַׁנְדָּ֛תָא",
+          "slhw-desc-1": ".....ת.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ת/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְשַׁנְדָּ֛",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "תָ"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "פַּרְשַׁנְדָּ֛תָא/.....ת./ק (אות תי״ו קטנה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְמַ֙שְׁתָּא֙",
+          "slhw-desc-1": "...ש..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ש/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְמַ֙",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "שְׁ"
+            ]
+          },
+          "תָּא֙"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ק",
+    "r": "פַּרְמַ֙שְׁתָּא֙/...ש../ק (אות שי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Ju18:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־מְנַשֶּׁ֜ה",
+          "slhw-desc-1": "..־.נ..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "נ/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־מְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "נַ"
+            ]
+          },
+          "שֶּׁ֜ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ת",
+    "r": "בֶּן־מְנַשֶּׁ֜ה/..־.נ../ת (אות נו״ן תלויה)"
+  },
+  {
+    "bcv_short": "Ps80:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִיָּ֑עַר",
+          "slhw-desc-1": "..ע.",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִיָּ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ת",
+    "r": "מִיָּ֑עַר/..ע./ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Jb38:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "רְשָׁעִ֣ים",
+          "slhw-desc-1": "..ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "רְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ת",
+    "r": "רְשָׁעִ֣ים/..ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Jb38:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מֵרְשָׁעִ֣ים",
+          "slhw-desc-1": "...ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מֵרְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/1/ת",
+    "r": "מֵרְשָׁעִ֣ים/...ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיְזָֽתָא",
+          "slhw-desc-1": "ו.ז..",
+          "slhw-desc-2": "גק",
+          "slhw-desc-3": "ו/ג,ז/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַ"
+            ]
+          },
+          "יְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "זָֽ"
+            ]
+          },
+          "תָא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/2/גק",
+    "r": "וַיְזָֽתָא/ו.ז../גק (אות וי״ו גדולה, אות זי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Da6:20",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בִּשְׁפַּרְפָּרָ֖א",
+          "slhw-desc-1": "..פ.פ..",
+          "slhw-desc-2": "קג",
+          "slhw-desc-3": "פ/ק,פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "פַּ"
+            ]
+          },
+          "רְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פָּ"
+            ]
+          },
+          "רָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "non-note/2/קג",
+    "r": "בִּשְׁפַּרְפָּרָ֖א/..פ.פ../קג (אות פ״א קטנה, אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "G1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּרֵאשִׁ֖ית",
+          "slhw-desc-1": "ב.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ב/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "בְּ"
+            ]
+          },
+          "רֵאשִׁ֖ית"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "בְּרֵאשִׁ֖ית/ב...../ג (אות בי״ת גדולה)"
+  },
+  {
+    "bcv_short": "G2:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּהִבָּֽרְאָ֑ם",
+          "slhw-desc-1": ".ה....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ה/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "הִ"
+            ]
+          },
+          "בָּֽרְאָ֑ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "בְּהִבָּֽרְאָ֑ם/.ה..../ק (אות ה״א קטנה)"
+  },
+  {
+    "bcv_short": "G5:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "סֵ֔פֶר",
+          "slhw-desc-1": "ס..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "סֵ֔"
+            ]
+          },
+          "פֶר"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "סֵ֔פֶר/ס../ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "G23:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְלִבְכֹּתָֽהּ",
+          "slhw-desc-1": "...כ..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "כ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְלִבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "כֹּ"
+            ]
+          },
+          "תָֽהּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וְלִבְכֹּתָֽהּ/...כ../ק (אות כ״ף קטנה)"
+  },
+  {
+    "bcv_short": "G27:46",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קַ֣צְתִּי",
+          "slhw-desc-1": "ק...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ק/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "קַ֣"
+            ]
+          },
+          "צְתִּי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "קַ֣צְתִּי/ק.../ק (אות קו״ף קטנה)"
+  },
+  {
+    "bcv_short": "G30:42",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּבְהַעֲטִ֥יף",
+          "slhw-desc-1": "......ף",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ף/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּבְהַעֲטִ֥י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ף"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וּבְהַעֲטִ֥יף/......ף/ג (אות פ״א סופית גדולה)"
+  },
+  {
+    "bcv_short": "G34:31",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַכְזוֹנָ֕ה",
+          "slhw-desc-1": "..ז...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַכְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ז"
+            ]
+          },
+          "וֹנָ֕ה"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "הַכְזוֹנָ֕ה/..ז.../ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "G49:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "חַכְלִילִ֥י",
+          "slhw-desc-1": "ח.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חַ"
+            ]
+          },
+          "כְלִילִ֥י"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "חַכְלִילִ֥י/ח...../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "G50:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁלֵּשִׁ֑ים",
+          "slhw-desc-1": "....ם",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ם/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שִׁלֵּשִׁ֑י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ם"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "שִׁלֵּשִׁ֑ים/....ם/ג (אות מ״ם סופית גדולה)"
+  },
+  {
+    "bcv_short": "E2:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כִּי־ט֣וֹב",
+          "slhw-desc-1": "..־ט..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "כִּי־",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֣"
+            ]
+          },
+          "וֹב"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "כִּי־ט֣וֹב/..־ט../ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "E11:8",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צֵ֤א",
+          "slhw-desc-1": "צ.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צֵ֤"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "צֵ֤א/צ./ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "E28:36",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צִּ֖יץ",
+          "slhw-desc-1": "..ץ",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ץ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "צִּ֖י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "צִּ֖יץ/..ץ/ג (אות צד״י סופית גדולה)"
+  },
+  {
+    "bcv_short": "E32:25",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּקָמֵיהֶֽם",
+          "slhw-desc-1": ".ק....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ק/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "קָ"
+            ]
+          },
+          "מֵיהֶֽם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "בְּקָמֵיהֶֽם/.ק..../ק (אות קו״ף קטנה)"
+  },
+  {
+    "bcv_short": "E34:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נֹצֵ֥ר",
+          "slhw-desc-1": "נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נֹ"
+            ]
+          },
+          "צֵ֥ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "נֹצֵ֥ר/נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "E34:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שְׁמׇ֨ר־לְךָ֔",
+          "slhw-desc-1": "ש..־..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שְׁ"
+            ]
+          },
+          "מׇ֨ר־לְךָ֔"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "שְׁמׇ֨ר־לְךָ֔/ש..־../ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "E34:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אַחֵ֑ר",
+          "slhw-desc-1": "..ר",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ר/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אַחֵ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ר"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אַחֵ֑ר/..ר/ג (אות רי״ש גדולה)"
+  },
+  {
+    "bcv_short": "L1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּקְרָ֖א",
+          "slhw-desc-1": "....א",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "א/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּקְרָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "א"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וַיִּקְרָ֖א/....א/ק (אות אל״ף קטנה)"
+  },
+  {
+    "bcv_short": "L6:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מוֹקְדָ֨הֿ",
+          "slhw-desc-1": "מ....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "מ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "מ"
+            ]
+          },
+          "וֹקְדָ֨הֿ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מוֹקְדָ֨הֿ/מ..../ק (אות מ״ם קטנה)"
+  },
+  {
+    "bcv_short": "L8:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֗ט",
+          "slhw-desc-1": "...ח.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חָ֗"
+            ]
+          },
+          "ט"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וַיִּשְׁחָ֗ט/...ח./ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "L8:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֓ט׀",
+          "slhw-desc-1": "...ח..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חָ֓"
+            ]
+          },
+          "ט ׀"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וַיִּשְׁחָ֓ט׀/...ח../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "L11:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהַלְּטָאָ֑ה",
+          "slhw-desc-1": "..ל...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "לְּ"
+            ]
+          },
+          "טָאָ֑ה"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וְהַלְּטָאָ֑ה/..ל.../ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "L11:42",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־גָּח֜וֹן",
+          "slhw-desc-1": "..־..ו.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ו/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־גָּח֜",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וֹ"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "עַל־גָּח֜וֹן/..־..ו./ג (אות וי״ו גדולה)"
+  },
+  {
+    "bcv_short": "L13:33",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהִ֨תְגַּלָּ֔ח",
+          "slhw-desc-1": "...ג..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהִ֨תְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "גַּ"
+            ]
+          },
+          "לָּ֔ח"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וְהִ֨תְגַּלָּ֔ח/...ג../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "N1:18",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לְגֻלְגְּלֹתָֽם",
+          "slhw-desc-1": ".ג.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "גֻ"
+            ]
+          },
+          "לְגְּלֹתָֽם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "לְגֻלְגְּלֹתָֽם/.ג...../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "N3:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־פִּ֣י",
+          "slhw-desc-1": "..־פ.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פִּ֣"
+            ]
+          },
+          "י"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "עַל־פִּ֣י/..־פ./ג (אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "N13:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיַּ֧הַס",
+          "slhw-desc-1": "...ס",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיַּ֧הַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ס"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וַיַּ֧הַס/...ס/ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "N14:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "יִגְדַּל־נָ֖א",
+          "slhw-desc-1": "י...־..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "י/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "יִ"
+            ]
+          },
+          "גְדַּל־נָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "יִגְדַּל־נָ֖א/י...־../ג (אות יו״ד גדולה)"
+  },
+  {
+    "bcv_short": "N24:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מַה־טֹּ֥בוּ",
+          "slhw-desc-1": "מ.־...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מַ"
+            ]
+          },
+          "ה־טֹּ֥בוּ"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "מַה־טֹּ֥בוּ/מ.־.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "N25:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פִּֽינְחָ֨ס",
+          "slhw-desc-1": ".י...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פִּֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          },
+          "נְחָ֨ס"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "פִּֽינְחָ֨ס/.י.../ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "N25:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פִּֽינְחָ֨ס",
+          "slhw-desc-1": ".י...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פִּֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          },
+          "נְחָ֨ס"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "פִּֽינְחָ֨ס/.י.../ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "N27:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִשְׁפָּטָ֖ן",
+          "slhw-desc-1": "....ן",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ן/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִשְׁפָּטָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מִשְׁפָּטָ֖ן/....ן/ג (אות נו״ן סופית גדולה)"
+  },
+  {
+    "bcv_short": "D2:33",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַנַּ֥ךְ",
+          "slhw-desc-1": "..ך",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ך/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַנַּ֥",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ךְ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וַנַּ֥ךְ/..ך/ג (אות כ״ף סופית גדולה)"
+  },
+  {
+    "bcv_short": "D3:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עֶ֣רֶשׂ",
+          "slhw-desc-1": "..ש",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עֶ֣רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שׂ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "עֶ֣רֶשׂ/..ש/ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שְׁמַ֖ע",
+          "slhw-desc-1": "..ע",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ע/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שְׁמַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ע"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "שְׁמַ֖ע/..ע/ג (אות עי״ן גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֶחָֽד",
+          "slhw-desc-1": "..ד",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ד/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֶחָֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ד"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אֶחָֽד/..ד/ג (אות דל״ת גדולה)"
+  },
+  {
+    "bcv_short": "D9:24",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מַמְרִ֥ים",
+          "slhw-desc-1": "מ....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "מ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "מַ"
+            ]
+          },
+          "מְרִ֥ים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "מַמְרִ֥ים/מ..../ק (אות מ״ם קטנה)"
+  },
+  {
+    "bcv_short": "D11:21",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הָאָֽרֶץ",
+          "slhw-desc-1": "...ץ",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ץ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הָאָֽרֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "הָאָֽרֶץ/...ץ/ג (אות צד״י סופית גדולה)"
+  },
+  {
+    "bcv_short": "D18:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "תָּמִ֣ים",
+          "slhw-desc-1": "ת...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ת/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "תָּ"
+            ]
+          },
+          "מִ֣ים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "תָּמִ֣ים/ת.../ג (אות תי״ו גדולה)"
+  },
+  {
+    "bcv_short": "D22:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קַן",
+          "slhw-desc-1": "ק.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ק/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "קַ"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "קַן/ק./ג (אות קו״ף גדולה)"
+  },
+  {
+    "bcv_short": "D28:68",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהִתְמַכַּרְתֶּ֨ם",
+          "slhw-desc-1": "....כ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהִתְמַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַּ"
+            ]
+          },
+          "רְתֶּ֨ם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וְהִתְמַכַּרְתֶּ֨ם/....כ.../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "D29:27",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיַּשְׁלִכֵ֛ם",
+          "slhw-desc-1": "...ל..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיַּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "לִ"
+            ]
+          },
+          "כֵ֛ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וַיַּשְׁלִכֵ֛ם/...ל../ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "D32:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַצּוּר֙",
+          "slhw-desc-1": ".צ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צּ"
+            ]
+          },
+          "וּר֙"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "הַצּוּר֙/.צ../ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "D32:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּפְתַלְתֹּֽל",
+          "slhw-desc-1": ".פ....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פְ"
+            ]
+          },
+          "תַלְתֹּֽל"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וּפְתַלְתֹּֽל/.פ..../ג (אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ",
+          "slhw-desc-1": "ה",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "הַ/ה/ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַֽלְיהֹוָה֙",
+          "slhw-desc-1": "ה.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַֽ"
+            ]
+          },
+          "לְיהֹוָה֙"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "הַֽלְיהֹוָה֙/ה...../ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ",
+          "slhw-desc-1": "ה",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "הַ/ה/ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַֽלְיהֹוָה֙",
+          "slhw-desc-1": "ה.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַֽ"
+            ]
+          },
+          "לְיהֹוָה֙"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "הַֽלְיהֹוָה֙/ה...../ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:18",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "תֶּ֑שִׁי",
+          "slhw-desc-1": "..י",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "תֶּ֑שִׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "תֶּ֑שִׁי/..י/ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "D33:29",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אַשְׁרֶ֨יךָ",
+          "slhw-desc-1": "א....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "א/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "אַ"
+            ]
+          },
+          "שְׁרֶ֨יךָ"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "slh-letter-count/1",
+    "r": "אַשְׁרֶ֨יךָ/א..../ג (אות אל״ף גדולה)"
+  },
+  {
+    "bcv_short": "D34:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כׇּל־יִשְׂרָאֵֽל",
+          "slhw-desc-1": "..־....ל",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "כׇּל־יִשְׂרָאֵֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ל"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "כׇּל־יִשְׂרָאֵֽל/..־....ל/ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "Js14:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כְּכֹ֥חִי",
+          "slhw-desc-1": "כ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כְּ"
+            ]
+          },
+          "כֹ֥חִי"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "כְּכֹ֥חִי/כ.../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ju18:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־מְנַשֶּׁ֜ה",
+          "slhw-desc-1": "..־.נ..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "נ/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־מְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "נַ"
+            ]
+          },
+          "שֶּׁ֜ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "בֶּן־מְנַשֶּׁ֜ה/..־.נ../ת (אות נו״ן תלויה)"
+  },
+  {
+    "bcv_short": "2S21:19",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־יַעְרֵ֨י",
+          "slhw-desc-1": "..־..ר.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ר/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־יַעְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "רֵ֨"
+            ]
+          },
+          "י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "בֶּן־יַעְרֵ֨י/..־..ר./ק (אות רי״ש קטנה)"
+  },
+  {
+    "bcv_short": "2K17:31",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נִבְחַ֖ז",
+          "slhw-desc-1": "...ז",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "נִבְחַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ז"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "נִבְחַ֖ז/...ז/ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "I44:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֹ֖רֶן",
+          "slhw-desc-1": "..ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֹ֖רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אֹ֖רֶן/..ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "I56:10",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צֹפָ֞ו",
+          "slhw-desc-1": "צ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צֹ"
+            ]
+          },
+          "פָ֞ו"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "צֹפָ֞ו/צ../ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "Je14:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְצִוְחַ֥ת",
+          "slhw-desc-1": ".צ...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "צ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "צִ"
+            ]
+          },
+          "וְחַ֥ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וְצִוְחַ֥ת/.צ.../ק (אות צד״י קטנה)"
+  },
+  {
+    "bcv_short": "Je39:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּנְבֽוּשַׁזְבָּן֙",
+          "slhw-desc-1": ".......ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּנְבֽוּשַׁזְבָּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן֙"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וּנְבֽוּשַׁזְבָּן֙/.......ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "Na1:3",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּסוּפָ֤ה",
+          "slhw-desc-1": ".ס...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ס/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ס"
+            ]
+          },
+          "וּפָ֤ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "בְּסוּפָ֤ה/.ס.../ק (אות סמ״ך קטנה)"
+  },
+  {
+    "bcv_short": "Ma3:22",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "זִכְר֕וּ",
+          "slhw-desc-1": "ז...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "זִ"
+            ]
+          },
+          "כְר֕וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "זִכְר֕וּ/ז.../ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "Ps24:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לַשָּׁ֣וְא",
+          "slhw-desc-1": "..ו.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ו/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לַשָּׁ֣",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "וְ"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "לַשָּׁ֣וְא/..ו./ק (אות וי״ו קטנה)"
+  },
+  {
+    "bcv_short": "Ps77:8",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ֭לְעוֹלָמִים",
+          "slhw-desc-1": "ה.......",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ֭"
+            ]
+          },
+          "לְעוֹלָמִים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "הַ֭לְעוֹלָמִים/ה......./ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִיָּ֑עַר",
+          "slhw-desc-1": "..ע.",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִיָּ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מִיָּ֑עַר/..ע./ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וְ֭כַנָּה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּ֭ה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּ֭ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וְ֭כַנָּ֭ה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps84:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קֵ֥ן",
+          "slhw-desc-1": "ק.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ק/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "קֵ֥"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "קֵ֥ן/ק./ג (אות קו״ף גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵי",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מִ֭שְׁלֵי/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵ֭י",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵ֭י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מִ֭שְׁלֵ֭י/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אָ֭דָם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָ֭ם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ֭"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אָ֭דָ֭ם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּדַם־נָ֑פֶשׁ",
+          "slhw-desc-1": ".ד.־...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דַ"
+            ]
+          },
+          "ם־נָ֑פֶשׁ"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "בְּדַם־נָ֑פֶשׁ/.ד.־.../ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ֤ב",
+          "slhw-desc-1": ".ב",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ב/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַ֤",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ב"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "הַ֤ב/.ב/ק (אות בי״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb7:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וגיש",
+          "slhw-desc-1": ".ג..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ג/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "ו",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ג"
+            ]
+          },
+          "יש"
+        ]
+      }
+    ],
+    "stack_str": "kq-ketiv",
+    "fp": "slh-letter-count/1",
+    "r": "וגיש/.ג../ק (אות גימ״ל קטנה)"
+  },
+  {
+    "bcv_short": "Jb7:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וגיש",
+          "slhw-desc-1": ".ג..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "ו",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ג"
+            ]
+          },
+          "יש"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/1",
+    "r": "וגיש/.ג../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "Jb9:34",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁבְט֑וֹ",
+          "slhw-desc-1": "..ט.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שִׁבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֑"
+            ]
+          },
+          "וֹ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "שִׁבְט֑וֹ/..ט./ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Jb16:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־פְּנֵי־פָ֑רֶץ",
+          "slhw-desc-1": "..־...־..ץ",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ץ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־פְּנֵי־פָ֑רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "עַל־פְּנֵי־פָ֑רֶץ/..־...־..ץ/ק (אות צד״י סופית קטנה)"
+  },
+  {
+    "bcv_short": "Jb33:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "חַ֥ף",
+          "slhw-desc-1": "ח.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ח/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "חַ֥"
+            ]
+          },
+          "ף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "חַ֥ף/ח./ק (אות חי״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb38:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "רְשָׁעִ֣ים",
+          "slhw-desc-1": "..ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "רְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "רְשָׁעִ֣ים/..ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Jb38:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מֵרְשָׁעִ֣ים",
+          "slhw-desc-1": "...ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מֵרְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "מֵרְשָׁעִ֣ים/...ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "S1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁ֥יר",
+          "slhw-desc-1": "ש..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שִׁ֥"
+            ]
+          },
+          "יר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "שִׁ֥יר/ש../ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "R3:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לִ֣ינִי׀",
+          "slhw-desc-1": "..נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לִ֣י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נִ"
+            ]
+          },
+          "י ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "לִ֣ינִי׀/..נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "La1:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ל֣וֹא",
+          "slhw-desc-1": "ל..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ל/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ל֣"
+            ]
+          },
+          "וֹא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "ל֣וֹא/ל../ק (אות למ״ד קטנה)"
+  },
+  {
+    "bcv_short": "La2:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "טָבְע֤וּ",
+          "slhw-desc-1": "ט...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ט/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "טָ"
+            ]
+          },
+          "בְע֤וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "טָבְע֤וּ/ט.../ק (אות טי״ת קטנה)"
+  },
+  {
+    "bcv_short": "La3:36",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לְעַוֵּ֤ת",
+          "slhw-desc-1": ".ע..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ע/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "וֵּ֤ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "לְעַוֵּ֤ת/.ע../ק (אות עי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Ec7:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ט֥וֹב",
+          "slhw-desc-1": "ט..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֥"
+            ]
+          },
+          "וֹב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "ט֥וֹב/ט../ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Ec12:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ס֥וֹף",
+          "slhw-desc-1": "ס..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ס֥"
+            ]
+          },
+          "וֹף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "ס֥וֹף/ס../ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "Es1:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ח֣וּר׀",
+          "slhw-desc-1": "ח...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ח֣"
+            ]
+          },
+          "וּר ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "ח֣וּר׀/ח.../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְשַׁנְדָּ֛תָא",
+          "slhw-desc-1": ".....ת.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ת/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְשַׁנְדָּ֛",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "תָ"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "פַּרְשַׁנְדָּ֛תָא/.....ת./ק (אות תי״ו קטנה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְמַ֙שְׁתָּא֙",
+          "slhw-desc-1": "...ש..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ש/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְמַ֙",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "שְׁ"
+            ]
+          },
+          "תָּא֙"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "פַּרְמַ֙שְׁתָּא֙/...ש../ק (אות שי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Es9:29",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַ֠תִּכְתֹּ֠ב",
+          "slhw-desc-1": ".ת...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ת/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַ֠",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "תִּ"
+            ]
+          },
+          "כְתֹּ֠ב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "וַ֠תִּכְתֹּ֠ב/.ת.../ג (אות תי״ו גדולה)"
+  },
+  {
+    "bcv_short": "1C1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָדָ֥ם",
+          "slhw-desc-1": "א..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "א/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "אָ"
+            ]
+          },
+          "דָ֥ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/1",
+    "r": "אָדָ֥ם/א../ג (אות אל״ף גדולה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיְזָֽתָא",
+          "slhw-desc-1": "ו.ז..",
+          "slhw-desc-2": "גק",
+          "slhw-desc-3": "ו/ג,ז/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַ"
+            ]
+          },
+          "יְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "זָֽ"
+            ]
+          },
+          "תָא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/2",
+    "r": "וַיְזָֽתָא/ו.ז../גק (אות וי״ו גדולה, אות זי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Da6:20",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בִּשְׁפַּרְפָּרָ֖א",
+          "slhw-desc-1": "..פ.פ..",
+          "slhw-desc-2": "קג",
+          "slhw-desc-3": "פ/ק,פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "פַּ"
+            ]
+          },
+          "רְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פָּ"
+            ]
+          },
+          "רָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "slh-letter-count/2",
+    "r": "בִּשְׁפַּרְפָּרָ֖א/..פ.פ../קג (אות פ״א קטנה, אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "L8:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֗ט",
+          "slhw-desc-1": "וישחט",
+          "slhw-desc-2": "גגגגג",
+          "slhw-desc-3": "וישחט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַיִּשְׁחָ֗ט"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/5",
+    "r": "וַיִּשְׁחָ֗ט/וישחט/גגגגג (אותות וי״ו, יו״ד, שי״ן, חי״ת, טי״ת גדולות)"
+  },
+  {
+    "bcv_short": "L8:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֓ט׀",
+          "slhw-desc-1": "וישחט.",
+          "slhw-desc-2": "גגגגג",
+          "slhw-desc-3": "וישחט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַיִּשְׁחָ֓ט"
+            ]
+          },
+          " ׀"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "slh-letter-count/5",
+    "r": "וַיִּשְׁחָ֓ט׀/וישחט./גגגגג (אותות וי״ו, יו״ד, שי״ן, חי״ת, טי״ת גדולות)"
+  },
+  {
+    "bcv_short": "G1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּרֵאשִׁ֖ית",
+          "slhw-desc-1": "ב.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ב/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "בְּ"
+            ]
+          },
+          "רֵאשִׁ֖ית"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בְּרֵאשִׁ֖ית/ב...../ג (אות בי״ת גדולה)"
+  },
+  {
+    "bcv_short": "G2:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּהִבָּֽרְאָ֑ם",
+          "slhw-desc-1": ".ה....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ה/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "הִ"
+            ]
+          },
+          "בָּֽרְאָ֑ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בְּהִבָּֽרְאָ֑ם/.ה..../ק (אות ה״א קטנה)"
+  },
+  {
+    "bcv_short": "G23:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְלִבְכֹּתָֽהּ",
+          "slhw-desc-1": "...כ..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "כ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְלִבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "כֹּ"
+            ]
+          },
+          "תָֽהּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וְלִבְכֹּתָֽהּ/...כ../ק (אות כ״ף קטנה)"
+  },
+  {
+    "bcv_short": "G27:46",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קַ֣צְתִּי",
+          "slhw-desc-1": "ק...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ק/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "קַ֣"
+            ]
+          },
+          "צְתִּי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "קַ֣צְתִּי/ק.../ק (אות קו״ף קטנה)"
+  },
+  {
+    "bcv_short": "E34:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נֹצֵ֥ר",
+          "slhw-desc-1": "נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נֹ"
+            ]
+          },
+          "צֵ֥ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "נֹצֵ֥ר/נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "E34:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אַחֵ֑ר",
+          "slhw-desc-1": "..ר",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ר/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אַחֵ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ר"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אַחֵ֑ר/..ר/ג (אות רי״ש גדולה)"
+  },
+  {
+    "bcv_short": "L1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּקְרָ֖א",
+          "slhw-desc-1": "....א",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "א/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּקְרָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "א"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וַיִּקְרָ֖א/....א/ק (אות אל״ף קטנה)"
+  },
+  {
+    "bcv_short": "L6:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מוֹקְדָ֨הֿ",
+          "slhw-desc-1": "מ....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "מ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "מ"
+            ]
+          },
+          "וֹקְדָ֨הֿ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מוֹקְדָ֨הֿ/מ..../ק (אות מ״ם קטנה)"
+  },
+  {
+    "bcv_short": "L11:42",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־גָּח֜וֹן",
+          "slhw-desc-1": "..־..ו.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ו/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־גָּח֜",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וֹ"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "עַל־גָּח֜וֹן/..־..ו./ג (אות וי״ו גדולה)"
+  },
+  {
+    "bcv_short": "L13:33",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהִ֨תְגַּלָּ֔ח",
+          "slhw-desc-1": "...ג..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהִ֨תְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "גַּ"
+            ]
+          },
+          "לָּ֔ח"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וְהִ֨תְגַּלָּ֔ח/...ג../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "N14:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "יִגְדַּל־נָ֖א",
+          "slhw-desc-1": "י...־..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "י/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "יִ"
+            ]
+          },
+          "גְדַּל־נָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "יִגְדַּל־נָ֖א/י...־../ג (אות יו״ד גדולה)"
+  },
+  {
+    "bcv_short": "N27:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִשְׁפָּטָ֖ן",
+          "slhw-desc-1": "....ן",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ן/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִשְׁפָּטָ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מִשְׁפָּטָ֖ן/....ן/ג (אות נו״ן סופית גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שְׁמַ֖ע",
+          "slhw-desc-1": "..ע",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ע/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שְׁמַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ע"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "שְׁמַ֖ע/..ע/ג (אות עי״ן גדולה)"
+  },
+  {
+    "bcv_short": "D6:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֶחָֽד",
+          "slhw-desc-1": "..ד",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ד/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֶחָֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ד"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אֶחָֽד/..ד/ג (אות דל״ת גדולה)"
+  },
+  {
+    "bcv_short": "D29:27",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיַּשְׁלִכֵ֛ם",
+          "slhw-desc-1": "...ל..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיַּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "לִ"
+            ]
+          },
+          "כֵ֛ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וַיַּשְׁלִכֵ֛ם/...ל../ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ",
+          "slhw-desc-1": "ה",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "הַ/ה/ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:18",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "תֶּ֑שִׁי",
+          "slhw-desc-1": "..י",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "תֶּ֑שִׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "תֶּ֑שִׁי/..י/ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "Ju18:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־מְנַשֶּׁ֜ה",
+          "slhw-desc-1": "..־.נ..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "נ/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־מְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "נַ"
+            ]
+          },
+          "שֶּׁ֜ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בֶּן־מְנַשֶּׁ֜ה/..־.נ../ת (אות נו״ן תלויה)"
+  },
+  {
+    "bcv_short": "2S21:19",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בֶּן־יַעְרֵ֨י",
+          "slhw-desc-1": "..־..ר.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ר/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בֶּן־יַעְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "רֵ֨"
+            ]
+          },
+          "י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בֶּן־יַעְרֵ֨י/..־..ר./ק (אות רי״ש קטנה)"
+  },
+  {
+    "bcv_short": "2K17:31",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "נִבְחַ֖ז",
+          "slhw-desc-1": "...ז",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "נִבְחַ֖",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ז"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "נִבְחַ֖ז/...ז/ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "I44:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אֹ֖רֶן",
+          "slhw-desc-1": "..ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אֹ֖רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אֹ֖רֶן/..ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "I56:10",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צֹפָ֞ו",
+          "slhw-desc-1": "צ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צֹ"
+            ]
+          },
+          "פָ֞ו"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "צֹפָ֞ו/צ../ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "Je14:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְצִוְחַ֥ת",
+          "slhw-desc-1": ".צ...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "צ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "צִ"
+            ]
+          },
+          "וְחַ֥ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וְצִוְחַ֥ת/.צ.../ק (אות צד״י קטנה)"
+  },
+  {
+    "bcv_short": "Je39:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּנְבֽוּשַׁזְבָּן֙",
+          "slhw-desc-1": ".......ן",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ן/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּנְבֽוּשַׁזְבָּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ן֙"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וּנְבֽוּשַׁזְבָּן֙/.......ן/ק (אות נו״ן סופית קטנה)"
+  },
+  {
+    "bcv_short": "Na1:3",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּסוּפָ֤ה",
+          "slhw-desc-1": ".ס...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ס/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ס"
+            ]
+          },
+          "וּפָ֤ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בְּסוּפָ֤ה/.ס.../ק (אות סמ״ך קטנה)"
+  },
+  {
+    "bcv_short": "Ma3:22",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "זִכְר֕וּ",
+          "slhw-desc-1": "ז...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "זִ"
+            ]
+          },
+          "כְר֕וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "זִכְר֕וּ/ז.../ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִיָּ֑עַר",
+          "slhw-desc-1": "..ע.",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מִיָּ֑",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "ר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מִיָּ֑עַר/..ע./ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וְ֭כַנָּה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps80:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְ֭כַנָּ֭ה",
+          "slhw-desc-1": ".כ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַ"
+            ]
+          },
+          "נָּ֭ה"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וְ֭כַנָּ֭ה/.כ../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps84:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קֵ֥ן",
+          "slhw-desc-1": "ק.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ק/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "קֵ֥"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "קֵ֥ן/ק./ג (אות קו״ף גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵי",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵי"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מִ֭שְׁלֵי/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Pr1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מִ֭שְׁלֵ֭י",
+          "slhw-desc-1": "מ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מִ֭"
+            ]
+          },
+          "שְׁלֵ֭י"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מִ֭שְׁלֵ֭י/מ.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אָ֭דָם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָ֭דָ֭ם",
+          "slhw-desc-1": ".ד.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "אָ֭",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דָ֭"
+            ]
+          },
+          "ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אָ֭דָ֭ם/.ד./ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ֤ב",
+          "slhw-desc-1": ".ב",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ב/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַ֤",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ב"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "הַ֤ב/.ב/ק (אות בי״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb9:34",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁבְט֑וֹ",
+          "slhw-desc-1": "..ט.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שִׁבְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֑"
+            ]
+          },
+          "וֹ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "שִׁבְט֑וֹ/..ט./ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Jb16:14",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־פְּנֵי־פָ֑רֶץ",
+          "slhw-desc-1": "..־...־..ץ",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ץ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־פְּנֵי־פָ֑רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "עַל־פְּנֵי־פָ֑רֶץ/..־...־..ץ/ק (אות צד״י סופית קטנה)"
+  },
+  {
+    "bcv_short": "Jb33:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "חַ֥ף",
+          "slhw-desc-1": "ח.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ח/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "חַ֥"
+            ]
+          },
+          "ף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "חַ֥ף/ח./ק (אות חי״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb38:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "רְשָׁעִ֣ים",
+          "slhw-desc-1": "..ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "רְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "רְשָׁעִ֣ים/..ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "Jb38:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מֵרְשָׁעִ֣ים",
+          "slhw-desc-1": "...ע..",
+          "slhw-desc-2": "ת",
+          "slhw-desc-3": "ע/ת",
+          "lang": "hbo"
+        },
+        "contents": [
+          "מֵרְשָׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-hung"
+            },
+            "contents": [
+              "עִ֣"
+            ]
+          },
+          "ים"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "מֵרְשָׁעִ֣ים/...ע../ת (אות עי״ן תלויה)"
+  },
+  {
+    "bcv_short": "S1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁ֥יר",
+          "slhw-desc-1": "ש..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שִׁ֥"
+            ]
+          },
+          "יר"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "שִׁ֥יר/ש../ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "R3:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לִ֣ינִי׀",
+          "slhw-desc-1": "..נ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "נ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לִ֣י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "נִ"
+            ]
+          },
+          "י ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "לִ֣ינִי׀/..נ../ג (אות נו״ן גדולה)"
+  },
+  {
+    "bcv_short": "La1:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ל֣וֹא",
+          "slhw-desc-1": "ל..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ל/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ל֣"
+            ]
+          },
+          "וֹא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "ל֣וֹא/ל../ק (אות למ״ד קטנה)"
+  },
+  {
+    "bcv_short": "La2:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "טָבְע֤וּ",
+          "slhw-desc-1": "ט...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ט/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "טָ"
+            ]
+          },
+          "בְע֤וּ"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "טָבְע֤וּ/ט.../ק (אות טי״ת קטנה)"
+  },
+  {
+    "bcv_short": "La3:36",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לְעַוֵּ֤ת",
+          "slhw-desc-1": ".ע..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ע/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "עַ"
+            ]
+          },
+          "וֵּ֤ת"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "לְעַוֵּ֤ת/.ע../ק (אות עי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Ec7:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ט֥וֹב",
+          "slhw-desc-1": "ט..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֥"
+            ]
+          },
+          "וֹב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "ט֥וֹב/ט../ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Ec12:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ס֥וֹף",
+          "slhw-desc-1": "ס..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ס֥"
+            ]
+          },
+          "וֹף"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "ס֥וֹף/ס../ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "Es1:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "ח֣וּר׀",
+          "slhw-desc-1": "ח...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ח֣"
+            ]
+          },
+          "וּר ׀"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "ח֣וּר׀/ח.../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְשַׁנְדָּ֛תָא",
+          "slhw-desc-1": ".....ת.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ת/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְשַׁנְדָּ֛",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "תָ"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "פַּרְשַׁנְדָּ֛תָא/.....ת./ק (אות תי״ו קטנה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פַּרְמַ֙שְׁתָּא֙",
+          "slhw-desc-1": "...ש..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ש/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פַּרְמַ֙",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "שְׁ"
+            ]
+          },
+          "תָּא֙"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "פַּרְמַ֙שְׁתָּא֙/...ש../ק (אות שי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיְזָֽתָא",
+          "slhw-desc-1": "ו.ז..",
+          "slhw-desc-2": "גק",
+          "slhw-desc-3": "ו/ג,ז/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַ"
+            ]
+          },
+          "יְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "זָֽ"
+            ]
+          },
+          "תָא"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וַיְזָֽתָא/ו.ז../גק (אות וי״ו גדולה, אות זי״ן קטנה)"
+  },
+  {
+    "bcv_short": "Es9:29",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַ֠תִּכְתֹּ֠ב",
+          "slhw-desc-1": ".ת...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ת/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַ֠",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "תִּ"
+            ]
+          },
+          "כְתֹּ֠ב"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "וַ֠תִּכְתֹּ֠ב/.ת.../ג (אות תי״ו גדולה)"
+  },
+  {
+    "bcv_short": "Da6:20",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בִּשְׁפַּרְפָּרָ֖א",
+          "slhw-desc-1": "..פ.פ..",
+          "slhw-desc-2": "קג",
+          "slhw-desc-3": "פ/ק,פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "פַּ"
+            ]
+          },
+          "רְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פָּ"
+            ]
+          },
+          "רָ֖א"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "בִּשְׁפַּרְפָּרָ֖א/..פ.פ../קג (אות פ״א קטנה, אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "1C1:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אָדָ֥ם",
+          "slhw-desc-1": "א..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "א/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "אָ"
+            ]
+          },
+          "דָ֥ם"
+        ]
+      }
+    ],
+    "stack_str": null,
+    "fp": "stack/None",
+    "r": "אָדָ֥ם/א../ג (אות אל״ף גדולה)"
+  },
+  {
+    "bcv_short": "G30:42",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּבְהַעֲטִ֥יף",
+          "slhw-desc-1": "......ף",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ף/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּבְהַעֲטִ֥י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ף"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וּבְהַעֲטִ֥יף/......ף/ג (אות פ״א סופית גדולה)"
+  },
+  {
+    "bcv_short": "G34:31",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַכְזוֹנָ֕ה",
+          "slhw-desc-1": "..ז...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ז/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַכְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ז"
+            ]
+          },
+          "וֹנָ֕ה"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "הַכְזוֹנָ֕ה/..ז.../ג (אות זי״ן גדולה)"
+  },
+  {
+    "bcv_short": "G49:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "חַכְלִילִ֥י",
+          "slhw-desc-1": "ח.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חַ"
+            ]
+          },
+          "כְלִילִ֥י"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "חַכְלִילִ֥י/ח...../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "G50:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שִׁלֵּשִׁ֑ים",
+          "slhw-desc-1": "....ם",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ם/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "שִׁלֵּשִׁ֑י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ם"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "שִׁלֵּשִׁ֑ים/....ם/ג (אות מ״ם סופית גדולה)"
+  },
+  {
+    "bcv_short": "E2:2",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כִּי־ט֣וֹב",
+          "slhw-desc-1": "..־ט..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "כִּי־",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ט֣"
+            ]
+          },
+          "וֹב"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "כִּי־ט֣וֹב/..־ט../ג (אות טי״ת גדולה)"
+  },
+  {
+    "bcv_short": "E11:8",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צֵ֤א",
+          "slhw-desc-1": "צ.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צֵ֤"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "צֵ֤א/צ./ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "E28:36",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "צִּ֖יץ",
+          "slhw-desc-1": "..ץ",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ץ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "צִּ֖י",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "צִּ֖יץ/..ץ/ג (אות צד״י סופית גדולה)"
+  },
+  {
+    "bcv_short": "E32:25",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּקָמֵיהֶֽם",
+          "slhw-desc-1": ".ק....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ק/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "קָ"
+            ]
+          },
+          "מֵיהֶֽם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "בְּקָמֵיהֶֽם/.ק..../ק (אות קו״ף קטנה)"
+  },
+  {
+    "bcv_short": "E34:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "שְׁמׇ֨ר־לְךָ֔",
+          "slhw-desc-1": "ש..־..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שְׁ"
+            ]
+          },
+          "מׇ֨ר־לְךָ֔"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "שְׁמׇ֨ר־לְךָ֔/ש..־../ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "L8:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֗ט",
+          "slhw-desc-1": "...ח.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חָ֗"
+            ]
+          },
+          "ט"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַיִּשְׁחָ֗ט/...ח./ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "L8:15",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֗ט",
+          "slhw-desc-1": "וישחט",
+          "slhw-desc-2": "גגגגג",
+          "slhw-desc-3": "וישחט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַיִּשְׁחָ֗ט"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַיִּשְׁחָ֗ט/וישחט/גגגגג (אותות וי״ו, יו״ד, שי״ן, חי״ת, טי״ת גדולות)"
+  },
+  {
+    "bcv_short": "L8:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֓ט׀",
+          "slhw-desc-1": "...ח..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ח/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיִּשְׁ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "חָ֓"
+            ]
+          },
+          "ט ׀"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַיִּשְׁחָ֓ט׀/...ח../ג (אות חי״ת גדולה)"
+  },
+  {
+    "bcv_short": "L8:23",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיִּשְׁחָ֓ט׀",
+          "slhw-desc-1": "וישחט.",
+          "slhw-desc-2": "גגגגג",
+          "slhw-desc-3": "וישחט/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "וַיִּשְׁחָ֓ט"
+            ]
+          },
+          " ׀"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַיִּשְׁחָ֓ט׀/וישחט./גגגגג (אותות וי״ו, יו״ד, שי״ן, חי״ת, טי״ת גדולות)"
+  },
+  {
+    "bcv_short": "L11:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהַלְּטָאָ֑ה",
+          "slhw-desc-1": "..ל...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "לְּ"
+            ]
+          },
+          "טָאָ֑ה"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וְהַלְּטָאָ֑ה/..ל.../ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "N1:18",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לְגֻלְגְּלֹתָֽם",
+          "slhw-desc-1": ".ג.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לְ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "גֻ"
+            ]
+          },
+          "לְגְּלֹתָֽם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "לְגֻלְגְּלֹתָֽם/.ג...../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "N3:16",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עַל־פִּ֣י",
+          "slhw-desc-1": "..־פ.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עַל־",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פִּ֣"
+            ]
+          },
+          "י"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "עַל־פִּ֣י/..־פ./ג (אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "N13:30",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַיַּ֧הַס",
+          "slhw-desc-1": "...ס",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַיַּ֧הַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ס"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַיַּ֧הַס/...ס/ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "N24:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מַה־טֹּ֥בוּ",
+          "slhw-desc-1": "מ.־...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "מ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "מַ"
+            ]
+          },
+          "ה־טֹּ֥בוּ"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "מַה־טֹּ֥בוּ/מ.־.../ג (אות מ״ם גדולה)"
+  },
+  {
+    "bcv_short": "N25:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פִּֽינְחָ֨ס",
+          "slhw-desc-1": ".י...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פִּֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          },
+          "נְחָ֨ס"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "פִּֽינְחָ֨ס/.י.../ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "D2:33",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וַנַּ֥ךְ",
+          "slhw-desc-1": "..ך",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ך/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וַנַּ֥",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ךְ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וַנַּ֥ךְ/..ך/ג (אות כ״ף סופית גדולה)"
+  },
+  {
+    "bcv_short": "D3:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "עֶ֣רֶשׂ",
+          "slhw-desc-1": "..ש",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ש/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "עֶ֣רֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "שׂ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "עֶ֣רֶשׂ/..ש/ג (אות שי״ן גדולה)"
+  },
+  {
+    "bcv_short": "D9:24",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "מַמְרִ֥ים",
+          "slhw-desc-1": "מ....",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "מ/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "מַ"
+            ]
+          },
+          "מְרִ֥ים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "מַמְרִ֥ים/מ..../ק (אות מ״ם קטנה)"
+  },
+  {
+    "bcv_short": "D18:13",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "תָּמִ֣ים",
+          "slhw-desc-1": "ת...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ת/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "תָּ"
+            ]
+          },
+          "מִ֣ים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "תָּמִ֣ים/ת.../ג (אות תי״ו גדולה)"
+  },
+  {
+    "bcv_short": "D28:68",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וְהִתְמַכַּרְתֶּ֨ם",
+          "slhw-desc-1": "....כ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וְהִתְמַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כַּ"
+            ]
+          },
+          "רְתֶּ֨ם"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וְהִתְמַכַּרְתֶּ֨ם/....כ.../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "D32:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַצּוּר֙",
+          "slhw-desc-1": ".צ..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "צ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הַ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "צּ"
+            ]
+          },
+          "וּר֙"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "הַצּוּר֙/.צ../ג (אות צד״י גדולה)"
+  },
+  {
+    "bcv_short": "D32:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וּפְתַלְתֹּֽל",
+          "slhw-desc-1": ".פ....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "פ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "וּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "פְ"
+            ]
+          },
+          "תַלְתֹּֽל"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וּפְתַלְתֹּֽל/.פ..../ג (אות פ״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ",
+          "slhw-desc-1": "ה",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "הַ/ה/ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַֽלְיהֹוָה֙",
+          "slhw-desc-1": "ה.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַֽ"
+            ]
+          },
+          "לְיהֹוָה֙"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "הַֽלְיהֹוָה֙/ה...../ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D34:12",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כׇּל־יִשְׂרָאֵֽל",
+          "slhw-desc-1": "..־....ל",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ל/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "כׇּל־יִשְׂרָאֵֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ל"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "כׇּל־יִשְׂרָאֵֽל/..־....ל/ג (אות למ״ד גדולה)"
+  },
+  {
+    "bcv_short": "Js14:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "כְּכֹ֥חִי",
+          "slhw-desc-1": "כ...",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "כ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "כְּ"
+            ]
+          },
+          "כֹ֥חִי"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "כְּכֹ֥חִי/כ.../ג (אות כ״ף גדולה)"
+  },
+  {
+    "bcv_short": "Ps24:4",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "לַשָּׁ֣וְא",
+          "slhw-desc-1": "..ו.",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ו/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "לַשָּׁ֣",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "וְ"
+            ]
+          },
+          "א"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "לַשָּׁ֣וְא/..ו./ק (אות וי״ו קטנה)"
+  },
+  {
+    "bcv_short": "Ps77:8",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַ֭לְעוֹלָמִים",
+          "slhw-desc-1": "ה.......",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַ֭"
+            ]
+          },
+          "לְעוֹלָמִים"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "הַ֭לְעוֹלָמִים/ה......./ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "Pr28:17",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "בְּדַם־נָ֑פֶשׁ",
+          "slhw-desc-1": ".ד.־...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ד/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "בְּ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "דַ"
+            ]
+          },
+          "ם־נָ֑פֶשׁ"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "בְּדַם־נָ֑פֶשׁ/.ד.־.../ק (אות דל״ת קטנה)"
+  },
+  {
+    "bcv_short": "Jb7:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וגיש",
+          "slhw-desc-1": ".ג..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ג/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "ו",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ג"
+            ]
+          },
+          "יש"
+        ]
+      }
+    ],
+    "stack_str": "doc-part-n",
+    "fp": "stack/doc-part-n",
+    "r": "וגיש/.ג../ג (אות גימ״ל גדולה)"
+  },
+  {
+    "bcv_short": "Jb7:5",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "וגיש",
+          "slhw-desc-1": ".ג..",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "ג/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "ו",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "ג"
+            ]
+          },
+          "יש"
+        ]
+      }
+    ],
+    "stack_str": "kq-ketiv",
+    "fp": "stack/kq-ketiv",
+    "r": "וגיש/.ג../ק (אות גימ״ל קטנה)"
+  },
+  {
+    "bcv_short": "G5:1",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "סֵ֔פֶר",
+          "slhw-desc-1": "ס..",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ס/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "סֵ֔"
+            ]
+          },
+          "פֶר"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "סֵ֔פֶר/ס../ג (אות סמ״ך גדולה)"
+  },
+  {
+    "bcv_short": "N25:11",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "פִּֽינְחָ֨ס",
+          "slhw-desc-1": ".י...",
+          "slhw-desc-2": "ק",
+          "slhw-desc-3": "י/ק",
+          "lang": "hbo"
+        },
+        "contents": [
+          "פִּֽ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-small"
+            },
+            "contents": [
+              "י"
+            ]
+          },
+          "נְחָ֨ס"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "פִּֽינְחָ֨ס/.י.../ק (אות יו״ד קטנה)"
+  },
+  {
+    "bcv_short": "D11:21",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הָאָֽרֶץ",
+          "slhw-desc-1": "...ץ",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ץ/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          "הָאָֽרֶ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "ץ"
+            ]
+          }
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "הָאָֽרֶץ/...ץ/ג (אות צד״י סופית גדולה)"
+  },
+  {
+    "bcv_short": "D22:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "קַן",
+          "slhw-desc-1": "ק.",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ק/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "קַ"
+            ]
+          },
+          "ן"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "קַן/ק./ג (אות קו״ף גדולה)"
+  },
+  {
+    "bcv_short": "D32:6",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "הַֽלְיהֹוָה֙",
+          "slhw-desc-1": "ה.....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "ה/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "הַֽ"
+            ]
+          },
+          "לְיהֹוָה֙"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "הַֽלְיהֹוָה֙/ה...../ג (אות ה״א גדולה)"
+  },
+  {
+    "bcv_short": "D33:29",
+    "html": [
+      {
+        "_htel_tag": "span",
+        "attr": {
+          "class": "slh-word",
+          "slhw-desc-0": "אַשְׁרֶ֨יךָ",
+          "slhw-desc-1": "א....",
+          "slhw-desc-2": "ג",
+          "slhw-desc-3": "א/ג",
+          "lang": "hbo"
+        },
+        "contents": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-letter-large"
+            },
+            "contents": [
+              "אַ"
+            ]
+          },
+          "שְׁרֶ֨יךָ"
+        ]
+      }
+    ],
+    "stack_str": "scrdfftar-note",
+    "fp": "stack/scrdfftar-note",
+    "r": "אַשְׁרֶ֨יךָ/א..../ג (אות אל״ף גדולה)"
+  }
+]

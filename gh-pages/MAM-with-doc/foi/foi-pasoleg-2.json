@@ -1,0 +1,11267 @@
+[
+  {
+    "bcv_short": "E20:9",
+    "fp": "dualcant/lower/lp-legarmeih",
+    "r": "אַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "D5:15",
+    "fp": "dualcant/lower/lp-legarmeih",
+    "r": "לְמַ֣עַן׀"
+  },
+  {
+    "bcv_short": "E20:3",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "בַּמַּ֣יִם׀"
+  },
+  {
+    "bcv_short": "E20:9",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "שַׁבָּ֣ת׀"
+  },
+  {
+    "bcv_short": "D5:7",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "בַּמַּ֣יִם׀"
+  },
+  {
+    "bcv_short": "D5:11",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "צִוְּךָ֣׀"
+  },
+  {
+    "bcv_short": "D5:13",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "שַׁבָּ֣ת׀"
+  },
+  {
+    "bcv_short": "D5:14",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "הָיִ֣יתָ׀"
+  },
+  {
+    "bcv_short": "D5:15",
+    "fp": "dualcant/upper/lp-legarmeih",
+    "r": "לְמַ֣עַן׀"
+  },
+  {
+    "bcv_short": "E20:3",
+    "fp": "dualcant/upper/lp-paseq",
+    "r": "פֶ֣סֶל‖"
+  },
+  {
+    "bcv_short": "E20:3",
+    "fp": "dualcant/upper/lp-paseq",
+    "r": "בַּשָּׁמַ֣יִם‖"
+  },
+  {
+    "bcv_short": "D5:7",
+    "fp": "dualcant/upper/lp-paseq",
+    "r": "פֶ֣סֶל‖"
+  },
+  {
+    "bcv_short": "D5:7",
+    "fp": "dualcant/upper/lp-paseq",
+    "r": "בַּשָּׁמַ֣יִם‖"
+  },
+  {
+    "bcv_short": "G1:29",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־כׇּל־עֵ֣שֶׂב׀"
+  },
+  {
+    "bcv_short": "G1:30",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "G2:5",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "G3:15",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵיבָ֣ה׀"
+  },
+  {
+    "bcv_short": "G3:22",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "G3:22",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "G6:16",
+    "fp": "lp-legarmeih",
+    "r": "צֹ֣הַר׀"
+  },
+  {
+    "bcv_short": "G7:2",
+    "fp": "lp-legarmeih",
+    "r": "מִכֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "G7:21",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־בָּשָׂ֣ר׀"
+  },
+  {
+    "bcv_short": "G8:20",
+    "fp": "lp-legarmeih",
+    "r": "מִכֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "G11:4",
+    "fp": "lp-legarmeih",
+    "r": "הָ֣בָה׀"
+  },
+  {
+    "bcv_short": "G13:10",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "G13:16",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "G14:2",
+    "fp": "lp-legarmeih",
+    "r": "שִׁנְאָ֣ב׀"
+  },
+  {
+    "bcv_short": "G15:1",
+    "fp": "lp-legarmeih",
+    "r": "אַחַ֣ר׀"
+  },
+  {
+    "bcv_short": "G15:13",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־גֵ֣ר׀"
+  },
+  {
+    "bcv_short": "G17:8",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "G17:14",
+    "fp": "lp-legarmeih",
+    "r": "וְעָרֵ֣ל׀"
+  },
+  {
+    "bcv_short": "G17:20",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "G18:25",
+    "fp": "lp-legarmeih",
+    "r": "מֵעֲשֹׂ֣ת׀"
+  },
+  {
+    "bcv_short": "G19:9",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּאמְר֣וּ׀"
+  },
+  {
+    "bcv_short": "G19:16",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּתְמַהְמָ֓הּ׀"
+  },
+  {
+    "bcv_short": "G22:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "G23:6",
+    "fp": "lp-legarmeih",
+    "r": "שְׁמָעֵ֣נוּ׀"
+  },
+  {
+    "bcv_short": "G23:17",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣קׇם׀"
+  },
+  {
+    "bcv_short": "G24:7",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "G24:12",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּאמַ֓ר׀"
+  },
+  {
+    "bcv_short": "G24:30",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G26:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּחְפֹּ֣ר׀"
+  },
+  {
+    "bcv_short": "G26:32",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G27:1",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־עֵשָׂ֣ו׀"
+  },
+  {
+    "bcv_short": "G28:9",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽת־מָחֲלַ֣ת׀"
+  },
+  {
+    "bcv_short": "G29:9",
+    "fp": "lp-legarmeih",
+    "r": "וְרָחֵ֣ל׀"
+  },
+  {
+    "bcv_short": "G29:13",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־שֵׁ֣מַע׀"
+  },
+  {
+    "bcv_short": "G30:32",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־שֶׂ֣ה׀"
+  },
+  {
+    "bcv_short": "G31:29",
+    "fp": "lp-legarmeih",
+    "r": "אֶ֣מֶשׁ׀"
+  },
+  {
+    "bcv_short": "G31:33",
+    "fp": "lp-legarmeih",
+    "r": "יַעֲקֹ֣ב׀"
+  },
+  {
+    "bcv_short": "G31:51",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "G32:23",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣קׇם׀"
+  },
+  {
+    "bcv_short": "G35:5",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G36:12",
+    "fp": "lp-legarmeih",
+    "r": "וְתִמְנַ֣ע׀"
+  },
+  {
+    "bcv_short": "G36:43",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "G37:2",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "G37:20",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "G38:24",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G38:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G39:8",
+    "fp": "lp-legarmeih",
+    "r": "וַיְמָאֵ֓ן׀"
+  },
+  {
+    "bcv_short": "G39:23",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ין׀"
+  },
+  {
+    "bcv_short": "G40:13",
+    "fp": "lp-legarmeih",
+    "r": "בְּע֣וֹד׀"
+  },
+  {
+    "bcv_short": "G40:19",
+    "fp": "lp-legarmeih",
+    "r": "בְּע֣וֹד׀"
+  },
+  {
+    "bcv_short": "G40:20",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "G40:20",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־רֹ֣אשׁ׀"
+  },
+  {
+    "bcv_short": "G41:5",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "G41:22",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "G41:48",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־כׇּל־אֹ֣כֶל׀"
+  },
+  {
+    "bcv_short": "G45:5",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "G46:15",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "G47:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּקְרָ֣א׀"
+  },
+  {
+    "bcv_short": "G48:7",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֣י׀"
+  },
+  {
+    "bcv_short": "E2:11",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "E3:8",
+    "fp": "lp-legarmeih",
+    "r": "לְהַצִּיל֣וֹ׀"
+  },
+  {
+    "bcv_short": "E4:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣שׇׁב׀"
+  },
+  {
+    "bcv_short": "E6:5",
+    "fp": "lp-legarmeih",
+    "r": "וְגַ֣ם׀"
+  },
+  {
+    "bcv_short": "E7:17",
+    "fp": "lp-legarmeih",
+    "r": "מַכֶּ֣ה׀"
+  },
+  {
+    "bcv_short": "E7:19",
+    "fp": "lp-legarmeih",
+    "r": "עַֽל־נַהֲרֹתָ֣ם׀"
+  },
+  {
+    "bcv_short": "E7:20",
+    "fp": "lp-legarmeih",
+    "r": "כַּאֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "E8:5",
+    "fp": "lp-legarmeih",
+    "r": "לְמָתַ֣י׀"
+  },
+  {
+    "bcv_short": "E9:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E10:5",
+    "fp": "lp-legarmeih",
+    "r": "וְאָכַ֣ל׀"
+  },
+  {
+    "bcv_short": "E11:2",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "E11:3",
+    "fp": "lp-legarmeih",
+    "r": "גַּ֣ם׀"
+  },
+  {
+    "bcv_short": "E11:7",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "E12:15",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E12:19",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E12:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "E13:12",
+    "fp": "lp-legarmeih",
+    "r": "וְכׇל־פֶּ֣טֶר׀"
+  },
+  {
+    "bcv_short": "E13:17",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E14:10",
+    "fp": "lp-legarmeih",
+    "r": "מִצְרַ֣יִם׀"
+  },
+  {
+    "bcv_short": "E14:20",
+    "fp": "lp-legarmeih",
+    "r": "בֵּ֣ין׀"
+  },
+  {
+    "bcv_short": "E15:26",
+    "fp": "lp-legarmeih",
+    "r": "לְק֣וֹל׀"
+  },
+  {
+    "bcv_short": "E16:22",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "E16:29",
+    "fp": "lp-legarmeih",
+    "r": "שְׁב֣וּ׀"
+  },
+  {
+    "bcv_short": "E16:32",
+    "fp": "lp-legarmeih",
+    "r": "לְמַ֣עַן׀"
+  },
+  {
+    "bcv_short": "E17:7",
+    "fp": "lp-legarmeih",
+    "r": "עַל־רִ֣יב׀"
+  },
+  {
+    "bcv_short": "E18:12",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "E19:11",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E21:32",
+    "fp": "lp-legarmeih",
+    "r": "כֶּ֣סֶף׀"
+  },
+  {
+    "bcv_short": "E22:24",
+    "fp": "lp-legarmeih",
+    "r": "אִם־כֶּ֣סֶף׀"
+  },
+  {
+    "bcv_short": "E23:31",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "E25:32",
+    "fp": "lp-legarmeih",
+    "r": "שְׁלֹשָׁ֣ה׀"
+  },
+  {
+    "bcv_short": "E26:2",
+    "fp": "lp-legarmeih",
+    "r": "אֹ֣רֶךְ׀"
+  },
+  {
+    "bcv_short": "E26:8",
+    "fp": "lp-legarmeih",
+    "r": "אֹ֣רֶךְ׀"
+  },
+  {
+    "bcv_short": "E27:16",
+    "fp": "lp-legarmeih",
+    "r": "מָסָ֣ךְ׀"
+  },
+  {
+    "bcv_short": "E27:18",
+    "fp": "lp-legarmeih",
+    "r": "וְרֹ֣חַב׀"
+  },
+  {
+    "bcv_short": "E27:20",
+    "fp": "lp-legarmeih",
+    "r": "תְּצַוֶּ֣ה׀"
+  },
+  {
+    "bcv_short": "E28:43",
+    "fp": "lp-legarmeih",
+    "r": "בְּבֹאָ֣ם׀"
+  },
+  {
+    "bcv_short": "E29:22",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־הַחֵ֣לֶב׀"
+  },
+  {
+    "bcv_short": "E29:22",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "E29:27",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "E30:4",
+    "fp": "lp-legarmeih",
+    "r": "תַּֽעֲשֶׂה־לּ֣וֹ׀"
+  },
+  {
+    "bcv_short": "E30:13",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "E31:7",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "E32:1",
+    "fp": "lp-legarmeih",
+    "r": "ק֣וּם׀"
+  },
+  {
+    "bcv_short": "E32:1",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "E32:23",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "E32:34",
+    "fp": "lp-legarmeih",
+    "r": "לֵ֣ךְ׀"
+  },
+  {
+    "bcv_short": "E33:7",
+    "fp": "lp-legarmeih",
+    "r": "וְנָֽטָה־ל֣וֹ׀"
+  },
+  {
+    "bcv_short": "E33:16",
+    "fp": "lp-legarmeih",
+    "r": "וּבַמֶּ֣ה׀"
+  },
+  {
+    "bcv_short": "E34:7",
+    "fp": "lp-legarmeih",
+    "r": "פֹּקֵ֣ד׀"
+  },
+  {
+    "bcv_short": "E34:15",
+    "fp": "lp-legarmeih",
+    "r": "וְזָנ֣וּ׀"
+  },
+  {
+    "bcv_short": "E34:27",
+    "fp": "lp-legarmeih",
+    "r": "עַל־פִּ֣י׀"
+  },
+  {
+    "bcv_short": "E35:16",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "E35:22",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "E36:1",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "E37:16",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽת־הַכֵּלִ֣ים׀"
+  },
+  {
+    "bcv_short": "E37:18",
+    "fp": "lp-legarmeih",
+    "r": "שְׁלֹשָׁ֣ה׀"
+  },
+  {
+    "bcv_short": "E37:27",
+    "fp": "lp-legarmeih",
+    "r": "עָֽשָׂה־ל֣וֹ׀"
+  },
+  {
+    "bcv_short": "E38:9",
+    "fp": "lp-legarmeih",
+    "r": "לִפְאַ֣ת׀"
+  },
+  {
+    "bcv_short": "E38:24",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "E39:39",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L4:7",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L4:18",
+    "fp": "lp-legarmeih",
+    "r": "יִתֵּ֣ן׀"
+  },
+  {
+    "bcv_short": "L5:4",
+    "fp": "lp-legarmeih",
+    "r": "לְהָרַ֣ע׀"
+  },
+  {
+    "bcv_short": "L7:12",
+    "fp": "lp-legarmeih",
+    "r": "וְהִקְרִ֣יב׀"
+  },
+  {
+    "bcv_short": "L7:16",
+    "fp": "lp-legarmeih",
+    "r": "וְאִם־נֶ֣דֶר׀"
+  },
+  {
+    "bcv_short": "L7:21",
+    "fp": "lp-legarmeih",
+    "r": "א֣וֹ׀"
+  },
+  {
+    "bcv_short": "L7:34",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L8:2",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L8:23",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּשְׁחָ֓ט׀"
+  },
+  {
+    "bcv_short": "L8:26",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "L10:6",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תִּפְרָ֣עוּ׀"
+  },
+  {
+    "bcv_short": "L10:14",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L10:16",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L10:17",
+    "fp": "lp-legarmeih",
+    "r": "וְאֹתָ֣הּ׀"
+  },
+  {
+    "bcv_short": "L11:3",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "L11:26",
+    "fp": "lp-legarmeih",
+    "r": "וְשֶׁ֣סַע׀"
+  },
+  {
+    "bcv_short": "L11:27",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "L11:42",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "L11:45",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "L12:6",
+    "fp": "lp-legarmeih",
+    "r": "וּבִמְלֹ֣את׀"
+  },
+  {
+    "bcv_short": "L13:3",
+    "fp": "lp-legarmeih",
+    "r": "הָפַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "L13:21",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "L13:26",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "L13:49",
+    "fp": "lp-legarmeih",
+    "r": "יְרַקְרַ֣ק׀"
+  },
+  {
+    "bcv_short": "L13:52",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽת־הַשְּׁתִ֣י׀"
+  },
+  {
+    "bcv_short": "L13:55",
+    "fp": "lp-legarmeih",
+    "r": "אַחֲרֵ֣י׀"
+  },
+  {
+    "bcv_short": "L13:59",
+    "fp": "lp-legarmeih",
+    "r": "הַצֶּ֣מֶר׀"
+  },
+  {
+    "bcv_short": "L14:6",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L14:28",
+    "fp": "lp-legarmeih",
+    "r": "מִן־הַשֶּׁ֣מֶן׀"
+  },
+  {
+    "bcv_short": "L14:51",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L15:14",
+    "fp": "lp-legarmeih",
+    "r": "וּבָ֣א׀"
+  },
+  {
+    "bcv_short": "L16:13",
+    "fp": "lp-legarmeih",
+    "r": "וְכִסָּ֣ה׀"
+  },
+  {
+    "bcv_short": "L16:17",
+    "fp": "lp-legarmeih",
+    "r": "לֹא־יִהְיֶ֣ה׀"
+  },
+  {
+    "bcv_short": "L16:27",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L19:34",
+    "fp": "lp-legarmeih",
+    "r": "הַגֵּ֣ר׀"
+  },
+  {
+    "bcv_short": "L20:2",
+    "fp": "lp-legarmeih",
+    "r": "וּמִן־הַגֵּ֣ר׀"
+  },
+  {
+    "bcv_short": "L20:5",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "L21:10",
+    "fp": "lp-legarmeih",
+    "r": "עַל־רֹאשׁ֣וֹ׀"
+  },
+  {
+    "bcv_short": "L22:3",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "L23:17",
+    "fp": "lp-legarmeih",
+    "r": "תָּבִ֣יאּוּ׀"
+  },
+  {
+    "bcv_short": "L23:21",
+    "fp": "lp-legarmeih",
+    "r": "בְּעֶ֣צֶם׀"
+  },
+  {
+    "bcv_short": "L25:16",
+    "fp": "lp-legarmeih",
+    "r": "לְפִ֣י׀"
+  },
+  {
+    "bcv_short": "L25:22",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ד׀"
+  },
+  {
+    "bcv_short": "L27:16",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "N3:38",
+    "fp": "lp-legarmeih",
+    "r": "מֹשֶׁ֣ה׀"
+  },
+  {
+    "bcv_short": "N4:7",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "N4:9",
+    "fp": "lp-legarmeih",
+    "r": "וְלָקְח֣וּ׀"
+  },
+  {
+    "bcv_short": "N4:11",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "N4:16",
+    "fp": "lp-legarmeih",
+    "r": "אֶלְעָזָ֣ר׀"
+  },
+  {
+    "bcv_short": "N4:19",
+    "fp": "lp-legarmeih",
+    "r": "וְזֹ֣את׀"
+  },
+  {
+    "bcv_short": "N7:7",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "N7:8",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "N7:13",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:19",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:25",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:31",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:37",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:43",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:49",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:55",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:61",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:67",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:73",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:79",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "N7:84",
+    "fp": "lp-legarmeih",
+    "r": "זֹ֣את׀"
+  },
+  {
+    "bcv_short": "N7:88",
+    "fp": "lp-legarmeih",
+    "r": "בְּקַ֣ר׀"
+  },
+  {
+    "bcv_short": "N8:19",
+    "fp": "lp-legarmeih",
+    "r": "נְתֻנִ֣ים׀"
+  },
+  {
+    "bcv_short": "N9:13",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "N10:29",
+    "fp": "lp-legarmeih",
+    "r": "נֹסְעִ֣ים׀"
+  },
+  {
+    "bcv_short": "N10:31",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "N10:32",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "N10:35",
+    "fp": "lp-legarmeih",
+    "r": "קוּמָ֣ה׀"
+  },
+  {
+    "bcv_short": "N11:15",
+    "fp": "lp-legarmeih",
+    "r": "וְאִם־כָּ֣כָה׀"
+  },
+  {
+    "bcv_short": "N11:19",
+    "fp": "lp-legarmeih",
+    "r": "וְלֹ֣א׀"
+  },
+  {
+    "bcv_short": "N11:20",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ד׀"
+  },
+  {
+    "bcv_short": "N11:31",
+    "fp": "lp-legarmeih",
+    "r": "נָסַ֣ע׀"
+  },
+  {
+    "bcv_short": "N11:32",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "N14:14",
+    "fp": "lp-legarmeih",
+    "r": "נִרְאָ֣ה׀"
+  },
+  {
+    "bcv_short": "N14:35",
+    "fp": "lp-legarmeih",
+    "r": "אִם־לֹ֣א׀"
+  },
+  {
+    "bcv_short": "N15:30",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶֽׁר־תַּעֲשֶׂ֣ה׀"
+  },
+  {
+    "bcv_short": "N16:17",
+    "fp": "lp-legarmeih",
+    "r": "וּקְח֣וּ׀"
+  },
+  {
+    "bcv_short": "N17:12",
+    "fp": "lp-legarmeih",
+    "r": "כַּאֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "N17:17",
+    "fp": "lp-legarmeih",
+    "r": "דַּבֵּ֣ר׀"
+  },
+  {
+    "bcv_short": "N18:15",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "N18:19",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "N19:2",
+    "fp": "lp-legarmeih",
+    "r": "דַּבֵּ֣ר׀"
+  },
+  {
+    "bcv_short": "N19:9",
+    "fp": "lp-legarmeih",
+    "r": "וְאָסַ֣ף׀"
+  },
+  {
+    "bcv_short": "N20:5",
+    "fp": "lp-legarmeih",
+    "r": "לֹ֣א׀"
+  },
+  {
+    "bcv_short": "N20:21",
+    "fp": "lp-legarmeih",
+    "r": "וַיְמָאֵ֣ן׀"
+  },
+  {
+    "bcv_short": "N26:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־רֹ֣אשׁ׀"
+  },
+  {
+    "bcv_short": "N26:58",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "N26:59",
+    "fp": "lp-legarmeih",
+    "r": "וְשֵׁ֣ם׀"
+  },
+  {
+    "bcv_short": "N26:62",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "N31:19",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "N31:52",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "N32:1",
+    "fp": "lp-legarmeih",
+    "r": "וּמִקְנֶ֣ה׀"
+  },
+  {
+    "bcv_short": "N35:5",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־פְּאַת־יָ֣ם׀"
+  },
+  {
+    "bcv_short": "N35:14",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "D1:7",
+    "fp": "lp-legarmeih",
+    "r": "פְּנ֣וּ׀"
+  },
+  {
+    "bcv_short": "D1:28",
+    "fp": "lp-legarmeih",
+    "r": "אָנָ֣ה׀"
+  },
+  {
+    "bcv_short": "D1:33",
+    "fp": "lp-legarmeih",
+    "r": "בָּאֵ֣שׁ׀"
+  },
+  {
+    "bcv_short": "D1:41",
+    "fp": "lp-legarmeih",
+    "r": "וַֽתַּעֲנ֣וּ׀"
+  },
+  {
+    "bcv_short": "D2:7",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "D2:14",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־הָלַ֣כְנוּ׀"
+  },
+  {
+    "bcv_short": "D3:10",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "D3:27",
+    "fp": "lp-legarmeih",
+    "r": "עֲלֵ֣ה׀"
+  },
+  {
+    "bcv_short": "D4:5",
+    "fp": "lp-legarmeih",
+    "r": "רְאֵ֣ה׀"
+  },
+  {
+    "bcv_short": "D4:34",
+    "fp": "lp-legarmeih",
+    "r": "א֣וֹ׀"
+  },
+  {
+    "bcv_short": "D4:47",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־אֶ֣רֶץ׀"
+  },
+  {
+    "bcv_short": "D5:4",
+    "fp": "lp-legarmeih",
+    "r": "פָּנִ֣ים׀"
+  },
+  {
+    "bcv_short": "D5:21",
+    "fp": "lp-legarmeih",
+    "r": "אִם־יֹסְפִ֣ים׀"
+  },
+  {
+    "bcv_short": "D5:23",
+    "fp": "lp-legarmeih",
+    "r": "וְאַ֣תְּ׀"
+  },
+  {
+    "bcv_short": "D6:10",
+    "fp": "lp-legarmeih",
+    "r": "יְבִיאֲךָ֣׀"
+  },
+  {
+    "bcv_short": "D7:6",
+    "fp": "lp-legarmeih",
+    "r": "בָּחַ֣ר׀"
+  },
+  {
+    "bcv_short": "D7:12",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "D8:15",
+    "fp": "lp-legarmeih",
+    "r": "בַּמִּדְבָּ֣ר׀"
+  },
+  {
+    "bcv_short": "D9:5",
+    "fp": "lp-legarmeih",
+    "r": "בְּרִשְׁעַ֣ת׀"
+  },
+  {
+    "bcv_short": "D9:7",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־יָצָ֣אתָ׀"
+  },
+  {
+    "bcv_short": "D11:2",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "D11:25",
+    "fp": "lp-legarmeih",
+    "r": "יִתֵּ֣ן׀"
+  },
+  {
+    "bcv_short": "D12:15",
+    "fp": "lp-legarmeih",
+    "r": "תִּזְבַּ֣ח׀"
+  },
+  {
+    "bcv_short": "D13:6",
+    "fp": "lp-legarmeih",
+    "r": "אֶתְכֶ֣ם׀"
+  },
+  {
+    "bcv_short": "D13:7",
+    "fp": "lp-legarmeih",
+    "r": "א֣וֹ׀"
+  },
+  {
+    "bcv_short": "D14:23",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "D14:28",
+    "fp": "lp-legarmeih",
+    "r": "מִקְצֵ֣ה׀"
+  },
+  {
+    "bcv_short": "D15:10",
+    "fp": "lp-legarmeih",
+    "r": "בִּגְלַ֣ל׀"
+  },
+  {
+    "bcv_short": "D16:11",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "D16:16",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־פְּנֵ֣י׀"
+  },
+  {
+    "bcv_short": "D17:3",
+    "fp": "lp-legarmeih",
+    "r": "וְלַשֶּׁ֣מֶשׁ׀"
+  },
+  {
+    "bcv_short": "D17:6",
+    "fp": "lp-legarmeih",
+    "r": "עַל־פִּ֣י׀"
+  },
+  {
+    "bcv_short": "D18:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "D19:15",
+    "fp": "lp-legarmeih",
+    "r": "עַל־פִּ֣י׀"
+  },
+  {
+    "bcv_short": "D22:6",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇל־עֵ֣ץ׀"
+  },
+  {
+    "bcv_short": "D22:22",
+    "fp": "lp-legarmeih",
+    "r": "שֹׁכֵ֣ב׀"
+  },
+  {
+    "bcv_short": "D22:24",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־שַׁ֣עַר׀"
+  },
+  {
+    "bcv_short": "D23:15",
+    "fp": "lp-legarmeih",
+    "r": "מִתְהַלֵּ֣ךְ׀"
+  },
+  {
+    "bcv_short": "D26:2",
+    "fp": "lp-legarmeih",
+    "r": "מֵרֵאשִׁ֣ית׀"
+  },
+  {
+    "bcv_short": "D26:5",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "D27:3",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהֶ֣יךָ׀"
+  },
+  {
+    "bcv_short": "D28:13",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־מִצְוֺ֣ת׀"
+  },
+  {
+    "bcv_short": "D28:55",
+    "fp": "lp-legarmeih",
+    "r": "מִתֵּ֣ת׀"
+  },
+  {
+    "bcv_short": "D28:57",
+    "fp": "lp-legarmeih",
+    "r": "הַיּוֹצֵ֣ת׀"
+  },
+  {
+    "bcv_short": "D30:9",
+    "fp": "lp-legarmeih",
+    "r": "בְּכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "D30:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "D31:3",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "D31:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "D31:8",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "D31:10",
+    "fp": "lp-legarmeih",
+    "r": "מִקֵּ֣ץ׀"
+  },
+  {
+    "bcv_short": "D31:20",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽל־הָאֲדָמָ֣ה׀"
+  },
+  {
+    "bcv_short": "D31:24",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "D32:39",
+    "fp": "lp-legarmeih",
+    "r": "רְא֣וּ׀"
+  },
+  {
+    "bcv_short": "Js1:11",
+    "fp": "lp-legarmeih",
+    "r": "עִבְר֣וּ׀"
+  },
+  {
+    "bcv_short": "Js1:11",
+    "fp": "lp-legarmeih",
+    "r": "בְּע֣וֹד׀"
+  },
+  {
+    "bcv_short": "Js1:15",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Js2:4",
+    "fp": "lp-legarmeih",
+    "r": "וַתֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Js3:4",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Js5:4",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Js5:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Js5:14",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Js6:5",
+    "fp": "lp-legarmeih",
+    "r": "בִּמְשֹׁ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Js6:15",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Js6:19",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Js6:24",
+    "fp": "lp-legarmeih",
+    "r": "רַ֣ק׀"
+  },
+  {
+    "bcv_short": "Js7:7",
+    "fp": "lp-legarmeih",
+    "r": "אֲהָ֣הּ׀"
+  },
+  {
+    "bcv_short": "Js8:1",
+    "fp": "lp-legarmeih",
+    "r": "רְאֵ֣ה׀"
+  },
+  {
+    "bcv_short": "Js8:33",
+    "fp": "lp-legarmeih",
+    "r": "נֹשְׂאֵ֣י׀"
+  },
+  {
+    "bcv_short": "Js9:10",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Js9:12",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "Js10:5",
+    "fp": "lp-legarmeih",
+    "r": "חֲמֵ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "Js10:11",
+    "fp": "lp-legarmeih",
+    "r": "בְּנֻסָ֣ם׀"
+  },
+  {
+    "bcv_short": "Js10:12",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Js10:23",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Js10:27",
+    "fp": "lp-legarmeih",
+    "r": "לְעֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Js12:1",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "Js13:3",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Js13:3",
+    "fp": "lp-legarmeih",
+    "r": "חֲמֵ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "Js13:21",
+    "fp": "lp-legarmeih",
+    "r": "אֹת֣וֹ׀"
+  },
+  {
+    "bcv_short": "Js13:30",
+    "fp": "lp-legarmeih",
+    "r": "כׇּֽל־מַמְלְכ֣וּת׀"
+  },
+  {
+    "bcv_short": "Js15:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Js17:4",
+    "fp": "lp-legarmeih",
+    "r": "וְלִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Js18:19",
+    "fp": "lp-legarmeih",
+    "r": "וְהָי֣וּ׀"
+  },
+  {
+    "bcv_short": "Js19:47",
+    "fp": "lp-legarmeih",
+    "r": "אוֹתָ֣הּ׀"
+  },
+  {
+    "bcv_short": "Js20:4",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־אַחַ֣ת׀"
+  },
+  {
+    "bcv_short": "Js20:6",
+    "fp": "lp-legarmeih",
+    "r": "וְיָשַׁ֣ב׀"
+  },
+  {
+    "bcv_short": "Js20:6",
+    "fp": "lp-legarmeih",
+    "r": "אָ֣ז׀"
+  },
+  {
+    "bcv_short": "Js20:9",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Js21:13",
+    "fp": "lp-legarmeih",
+    "r": "וְלִבְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Js21:32",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־עִ֣יר׀"
+  },
+  {
+    "bcv_short": "Js22:4",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Js22:5",
+    "fp": "lp-legarmeih",
+    "r": "רַ֣ק׀"
+  },
+  {
+    "bcv_short": "Js22:7",
+    "fp": "lp-legarmeih",
+    "r": "וְלַחֲצִ֣י׀"
+  },
+  {
+    "bcv_short": "Js22:9",
+    "fp": "lp-legarmeih",
+    "r": "וַחֲצִ֣י׀"
+  },
+  {
+    "bcv_short": "Js22:16",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Js22:20",
+    "fp": "lp-legarmeih",
+    "r": "הֲל֣וֹא׀"
+  },
+  {
+    "bcv_short": "Js23:10",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Js23:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Js23:14",
+    "fp": "lp-legarmeih",
+    "r": "מִכֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Js24:7",
+    "fp": "lp-legarmeih",
+    "r": "בֵּינֵיכֶ֣ם׀"
+  },
+  {
+    "bcv_short": "Js24:13",
+    "fp": "lp-legarmeih",
+    "r": "אֶ֣רֶץ׀"
+  },
+  {
+    "bcv_short": "Js24:31",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju2:7",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju2:12",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju2:12",
+    "fp": "lp-legarmeih",
+    "r": "אַחֲרֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ju2:15",
+    "fp": "lp-legarmeih",
+    "r": "בְּכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju2:19",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju3:3",
+    "fp": "lp-legarmeih",
+    "r": "חֲמֵ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "Ju3:20",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵה֣וּד׀"
+  },
+  {
+    "bcv_short": "Ju4:6",
+    "fp": "lp-legarmeih",
+    "r": "צִוָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju6:2",
+    "fp": "lp-legarmeih",
+    "r": "לָהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "Ju6:8",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju6:31",
+    "fp": "lp-legarmeih",
+    "r": "הַאַתֶּ֣ם׀"
+  },
+  {
+    "bcv_short": "Ju7:4",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju8:12",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־שְׁנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ju9:28",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Ju9:54",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־הַנַּ֣עַר׀"
+  },
+  {
+    "bcv_short": "Ju10:4",
+    "fp": "lp-legarmeih",
+    "r": "יִקְרְא֣וּ׀"
+  },
+  {
+    "bcv_short": "Ju10:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּסִ֣יפוּ׀"
+  },
+  {
+    "bcv_short": "Ju10:6",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Ju11:23",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju11:39",
+    "fp": "lp-legarmeih",
+    "r": "מִקֵּ֣ץ׀"
+  },
+  {
+    "bcv_short": "Ju11:40",
+    "fp": "lp-legarmeih",
+    "r": "מִיָּמִ֣ים׀"
+  },
+  {
+    "bcv_short": "Ju13:7",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תִּשְׁתִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ju14:15",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ju14:17",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ju14:19",
+    "fp": "lp-legarmeih",
+    "r": "מֵהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "Ju15:19",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֣ן׀"
+  },
+  {
+    "bcv_short": "Ju16:2",
+    "fp": "lp-legarmeih",
+    "r": "לַעַזָּתִ֣ים׀"
+  },
+  {
+    "bcv_short": "Ju16:3",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣קׇם׀"
+  },
+  {
+    "bcv_short": "Ju16:29",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־שְׁנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ju16:31",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיַּעֲל֣וּ׀"
+  },
+  {
+    "bcv_short": "Ju18:7",
+    "fp": "lp-legarmeih",
+    "r": "שֹׁקֵ֣ט׀"
+  },
+  {
+    "bcv_short": "Ju18:10",
+    "fp": "lp-legarmeih",
+    "r": "תָּבֹ֣אוּ׀"
+  },
+  {
+    "bcv_short": "Ju18:19",
+    "fp": "lp-legarmeih",
+    "r": "הֲט֣וֹב׀"
+  },
+  {
+    "bcv_short": "Ju19:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ju19:8",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Ju19:16",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ju20:10",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju20:16",
+    "fp": "lp-legarmeih",
+    "r": "מִכֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju20:28",
+    "fp": "lp-legarmeih",
+    "r": "עֹמֵ֣ד׀"
+  },
+  {
+    "bcv_short": "Ju20:31",
+    "fp": "lp-legarmeih",
+    "r": "כְּפַ֣עַם׀"
+  },
+  {
+    "bcv_short": "Ju20:33",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ju21:12",
+    "fp": "lp-legarmeih",
+    "r": "מִיּוֹשְׁבֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ju21:19",
+    "fp": "lp-legarmeih",
+    "r": "מִיָּמִ֣ים׀"
+  },
+  {
+    "bcv_short": "Ju21:22",
+    "fp": "lp-legarmeih",
+    "r": "לָרִ֣יב׀"
+  },
+  {
+    "bcv_short": "1S1:11",
+    "fp": "lp-legarmeih",
+    "r": "תִרְאֶ֣ה׀"
+  },
+  {
+    "bcv_short": "1S2:15",
+    "fp": "lp-legarmeih",
+    "r": "וּבָ֣א׀"
+  },
+  {
+    "bcv_short": "1S4:18",
+    "fp": "lp-legarmeih",
+    "r": "כְּהַזְכִּיר֣וֹ׀"
+  },
+  {
+    "bcv_short": "1S4:18",
+    "fp": "lp-legarmeih",
+    "r": "בְּעַ֣ד׀"
+  },
+  {
+    "bcv_short": "1S5:4",
+    "fp": "lp-legarmeih",
+    "r": "וּשְׁתֵּ֣י׀"
+  },
+  {
+    "bcv_short": "1S5:9",
+    "fp": "lp-legarmeih",
+    "r": "אַחֲרֵ֣י׀"
+  },
+  {
+    "bcv_short": "1S6:8",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "1S6:15",
+    "fp": "lp-legarmeih",
+    "r": "הוֹרִ֣ידוּ׀"
+  },
+  {
+    "bcv_short": "1S6:18",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ד׀"
+  },
+  {
+    "bcv_short": "1S7:1",
+    "fp": "lp-legarmeih",
+    "r": "אַנְשֵׁ֣י׀"
+  },
+  {
+    "bcv_short": "1S7:6",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּשְׁפְּכ֣וּ׀"
+  },
+  {
+    "bcv_short": "1S9:9",
+    "fp": "lp-legarmeih",
+    "r": "לְפָנִ֣ים׀"
+  },
+  {
+    "bcv_short": "1S9:12",
+    "fp": "lp-legarmeih",
+    "r": "מַהֵ֣ר׀"
+  },
+  {
+    "bcv_short": "1S9:24",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣שֶׂם׀"
+  },
+  {
+    "bcv_short": "1S10:3",
+    "fp": "lp-legarmeih",
+    "r": "נֹשֵׂ֣א׀"
+  },
+  {
+    "bcv_short": "1S10:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S12:2",
+    "fp": "lp-legarmeih",
+    "r": "הַמֶּ֣לֶךְ׀"
+  },
+  {
+    "bcv_short": "1S12:21",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1S12:24",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "1S13:5",
+    "fp": "lp-legarmeih",
+    "r": "נֶאֶסְפ֣וּ׀"
+  },
+  {
+    "bcv_short": "1S13:8",
+    "fp": "lp-legarmeih",
+    "r": "וַיּ֣וֹחֶל׀"
+  },
+  {
+    "bcv_short": "1S14:3",
+    "fp": "lp-legarmeih",
+    "r": "אִיכָב֣וֹד׀"
+  },
+  {
+    "bcv_short": "1S14:6",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־הַנַּ֣עַר׀"
+  },
+  {
+    "bcv_short": "1S14:12",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־יוֹנָתָ֣ן׀"
+  },
+  {
+    "bcv_short": "1S14:36",
+    "fp": "lp-legarmeih",
+    "r": "בָהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "1S14:47",
+    "fp": "lp-legarmeih",
+    "r": "בְּמוֹאָ֣ב׀"
+  },
+  {
+    "bcv_short": "1S16:5",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S16:7",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1S17:13",
+    "fp": "lp-legarmeih",
+    "r": "וְשֵׁ֣ם׀"
+  },
+  {
+    "bcv_short": "1S17:23",
+    "fp": "lp-legarmeih",
+    "r": "וְה֣וּא׀"
+  },
+  {
+    "bcv_short": "1S17:25",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S17:25",
+    "fp": "lp-legarmeih",
+    "r": "הַמֶּ֣לֶךְ׀"
+  },
+  {
+    "bcv_short": "1S17:28",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S18:27",
+    "fp": "lp-legarmeih",
+    "r": "וַיֵּ֣לֶךְ׀"
+  },
+  {
+    "bcv_short": "1S18:30",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1S20:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S20:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1S20:21",
+    "fp": "lp-legarmeih",
+    "r": "הַחִצִּ֣ים׀"
+  },
+  {
+    "bcv_short": "1S20:25",
+    "fp": "lp-legarmeih",
+    "r": "כְּפַ֣עַם׀"
+  },
+  {
+    "bcv_short": "1S20:41",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּשְּׁק֣וּ׀"
+  },
+  {
+    "bcv_short": "1S20:42",
+    "fp": "lp-legarmeih",
+    "r": "יִהְיֶ֣ה׀"
+  },
+  {
+    "bcv_short": "1S21:10",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־הִכִּ֣יתָ׀"
+  },
+  {
+    "bcv_short": "1S22:3",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S22:17",
+    "fp": "lp-legarmeih",
+    "r": "וְהָמִ֣יתוּ׀"
+  },
+  {
+    "bcv_short": "1S22:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣מֶת׀"
+  },
+  {
+    "bcv_short": "1S24:16",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1S25:13",
+    "fp": "lp-legarmeih",
+    "r": "חִגְר֣וּ׀"
+  },
+  {
+    "bcv_short": "1S25:13",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיַּעֲל֣וּ׀"
+  },
+  {
+    "bcv_short": "1S25:20",
+    "fp": "lp-legarmeih",
+    "r": "הִ֣יא׀"
+  },
+  {
+    "bcv_short": "1S25:29",
+    "fp": "lp-legarmeih",
+    "r": "צְרוּרָ֣ה׀"
+  },
+  {
+    "bcv_short": "1S25:34",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1S26:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1S26:16",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "1S26:19",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "1S27:1",
+    "fp": "lp-legarmeih",
+    "r": "אִמָּלֵ֣ט׀"
+  },
+  {
+    "bcv_short": "1S28:15",
+    "fp": "lp-legarmeih",
+    "r": "וּפְלִשְׁתִּ֣ים׀"
+  },
+  {
+    "bcv_short": "1S29:3",
+    "fp": "lp-legarmeih",
+    "r": "עֶ֣בֶד׀"
+  },
+  {
+    "bcv_short": "1S30:24",
+    "fp": "lp-legarmeih",
+    "r": "כְּחֵ֣לֶק׀"
+  },
+  {
+    "bcv_short": "1S31:4",
+    "fp": "lp-legarmeih",
+    "r": "חַרְבְּךָ֣׀"
+  },
+  {
+    "bcv_short": "1S31:7",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2S1:2",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2S1:6",
+    "fp": "lp-legarmeih",
+    "r": "הַנַּ֣עַר׀"
+  },
+  {
+    "bcv_short": "2S1:10",
+    "fp": "lp-legarmeih",
+    "r": "הַנֵּ֣זֶר׀"
+  },
+  {
+    "bcv_short": "2S2:7",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2S2:16",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "2S3:8",
+    "fp": "lp-legarmeih",
+    "r": "עִם־בֵּ֣ית׀"
+  },
+  {
+    "bcv_short": "2S3:13",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2S3:18",
+    "fp": "lp-legarmeih",
+    "r": "בְּיַ֣ד׀"
+  },
+  {
+    "bcv_short": "2S4:9",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־רֵכָ֣ב׀"
+  },
+  {
+    "bcv_short": "2S6:2",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣קׇם׀"
+  },
+  {
+    "bcv_short": "2S6:5",
+    "fp": "lp-legarmeih",
+    "r": "וְדָוִ֣ד׀"
+  },
+  {
+    "bcv_short": "2S6:16",
+    "fp": "lp-legarmeih",
+    "r": "נִשְׁקְפָ֣ה׀"
+  },
+  {
+    "bcv_short": "2S7:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2S7:28",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2S10:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶעֱשֶׂה־חֶ֣סֶד׀"
+  },
+  {
+    "bcv_short": "2S11:1",
+    "fp": "lp-legarmeih",
+    "r": "לְעֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2S11:2",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2S12:9",
+    "fp": "lp-legarmeih",
+    "r": "בָּזִ֣יתָ׀"
+  },
+  {
+    "bcv_short": "2S12:11",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "2S12:18",
+    "fp": "lp-legarmeih",
+    "r": "ל֣וֹ׀"
+  },
+  {
+    "bcv_short": "2S12:23",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2S13:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּקֻ֣מוּ׀"
+  },
+  {
+    "bcv_short": "2S13:32",
+    "fp": "lp-legarmeih",
+    "r": "יוֹנָדָ֣ב׀"
+  },
+  {
+    "bcv_short": "2S13:36",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2S14:7",
+    "fp": "lp-legarmeih",
+    "r": "תְּנִ֣י׀"
+  },
+  {
+    "bcv_short": "2S14:17",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2S14:19",
+    "fp": "lp-legarmeih",
+    "r": "אִם־אִ֣שׁ׀"
+  },
+  {
+    "bcv_short": "2S15:12",
+    "fp": "lp-legarmeih",
+    "r": "יוֹעֵ֣ץ׀"
+  },
+  {
+    "bcv_short": "2S15:20",
+    "fp": "lp-legarmeih",
+    "r": "תְּמ֣וֹל׀"
+  },
+  {
+    "bcv_short": "2S15:21",
+    "fp": "lp-legarmeih",
+    "r": "יִהְיֶה־שָּׁ֣ם׀"
+  },
+  {
+    "bcv_short": "2S15:30",
+    "fp": "lp-legarmeih",
+    "r": "עֹלֶ֣ה׀"
+  },
+  {
+    "bcv_short": "2S16:8",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "2S17:18",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּבֹ֣אוּ׀"
+  },
+  {
+    "bcv_short": "2S17:21",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2S19:1",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ה׀"
+  },
+  {
+    "bcv_short": "2S19:7",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2S19:7",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2S19:10",
+    "fp": "lp-legarmeih",
+    "r": "הִצִּילָ֣נוּ׀"
+  },
+  {
+    "bcv_short": "2S19:36",
+    "fp": "lp-legarmeih",
+    "r": "הַאֵדַ֣ע׀"
+  },
+  {
+    "bcv_short": "2S19:38",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "2S20:8",
+    "fp": "lp-legarmeih",
+    "r": "חָג֣וּר׀"
+  },
+  {
+    "bcv_short": "2S20:10",
+    "fp": "lp-legarmeih",
+    "r": "בַּחֶ֣רֶב׀"
+  },
+  {
+    "bcv_short": "2S21:16",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2S21:20",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2S23:8",
+    "fp": "lp-legarmeih",
+    "r": "תַּחְכְּמֹנִ֣י׀"
+  },
+  {
+    "bcv_short": "2S23:10",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ד׀"
+  },
+  {
+    "bcv_short": "2S23:18",
+    "fp": "lp-legarmeih",
+    "r": "אֲחִ֣י׀"
+  },
+  {
+    "bcv_short": "2S24:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־יוֹאָ֣ב׀"
+  },
+  {
+    "bcv_short": "1K1:13",
+    "fp": "lp-legarmeih",
+    "r": "וּבֹ֣אִי׀"
+  },
+  {
+    "bcv_short": "1K1:25",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1K1:32",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1K2:3",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־מִשְׁמֶ֣רֶת׀"
+  },
+  {
+    "bcv_short": "1K2:31",
+    "fp": "lp-legarmeih",
+    "r": "וַהֲסִירֹ֣תָ׀"
+  },
+  {
+    "bcv_short": "1K2:37",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K3:12",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "1K3:14",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "1K3:26",
+    "fp": "lp-legarmeih",
+    "r": "וַתֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1K4:19",
+    "fp": "lp-legarmeih",
+    "r": "סִיח֣וֹן׀"
+  },
+  {
+    "bcv_short": "1K5:4",
+    "fp": "lp-legarmeih",
+    "r": "רֹדֶ֣ה׀"
+  },
+  {
+    "bcv_short": "1K5:19",
+    "fp": "lp-legarmeih",
+    "r": "כַּאֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "1K5:20",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1K6:27",
+    "fp": "lp-legarmeih",
+    "r": "בְּת֣וֹךְ׀"
+  },
+  {
+    "bcv_short": "1K6:29",
+    "fp": "lp-legarmeih",
+    "r": "מֵסַ֣ב׀"
+  },
+  {
+    "bcv_short": "1K7:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־בֵּ֣ית׀"
+  },
+  {
+    "bcv_short": "1K7:23",
+    "fp": "lp-legarmeih",
+    "r": "עָגֹ֣ל׀"
+  },
+  {
+    "bcv_short": "1K7:25",
+    "fp": "lp-legarmeih",
+    "r": "וּשְׁלֹשָׁ֣ה׀"
+  },
+  {
+    "bcv_short": "1K7:29",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "1K7:38",
+    "fp": "lp-legarmeih",
+    "r": "יָכִ֣יל׀"
+  },
+  {
+    "bcv_short": "1K7:51",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־קׇדְשֵׁ֣י׀"
+  },
+  {
+    "bcv_short": "1K8:20",
+    "fp": "lp-legarmeih",
+    "r": "וָאֵשֵׁ֣ב׀"
+  },
+  {
+    "bcv_short": "1K8:25",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K8:32",
+    "fp": "lp-legarmeih",
+    "r": "וְאַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "1K8:36",
+    "fp": "lp-legarmeih",
+    "r": "וְאַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "1K8:47",
+    "fp": "lp-legarmeih",
+    "r": "וְשָׁ֣בוּ׀"
+  },
+  {
+    "bcv_short": "1K8:53",
+    "fp": "lp-legarmeih",
+    "r": "בְּיַ֣ד׀"
+  },
+  {
+    "bcv_short": "1K8:54",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1K8:59",
+    "fp": "lp-legarmeih",
+    "r": "לַעֲשׂ֣וֹת׀"
+  },
+  {
+    "bcv_short": "1K8:65",
+    "fp": "lp-legarmeih",
+    "r": "חֲמָ֣ת׀"
+  },
+  {
+    "bcv_short": "1K9:15",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶֽׁר־הֶעֱלָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K9:19",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "1K9:23",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "1K10:10",
+    "fp": "lp-legarmeih",
+    "r": "וְעֶשְׂרִ֣ים׀"
+  },
+  {
+    "bcv_short": "1K10:22",
+    "fp": "lp-legarmeih",
+    "r": "תָּב֣וֹא׀"
+  },
+  {
+    "bcv_short": "1K11:32",
+    "fp": "lp-legarmeih",
+    "r": "לְמַ֣עַן׀"
+  },
+  {
+    "bcv_short": "1K11:33",
+    "fp": "lp-legarmeih",
+    "r": "יַ֣עַן׀"
+  },
+  {
+    "bcv_short": "1K11:34",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1K12:2",
+    "fp": "lp-legarmeih",
+    "r": "כִּשְׁמֹ֣עַ׀"
+  },
+  {
+    "bcv_short": "1K12:27",
+    "fp": "lp-legarmeih",
+    "r": "אִֽם־יַעֲלֶ֣ה׀"
+  },
+  {
+    "bcv_short": "1K12:32",
+    "fp": "lp-legarmeih",
+    "r": "כֶּחָ֣ג׀"
+  },
+  {
+    "bcv_short": "1K12:33",
+    "fp": "lp-legarmeih",
+    "r": "עַֽל־הַמִּזְבֵּ֣חַ׀"
+  },
+  {
+    "bcv_short": "1K13:1",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "1K13:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1K13:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֵ֣ן׀"
+  },
+  {
+    "bcv_short": "1K14:21",
+    "fp": "lp-legarmeih",
+    "r": "שָׁנָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K15:13",
+    "fp": "lp-legarmeih",
+    "r": "וְגַ֣ם׀"
+  },
+  {
+    "bcv_short": "1K15:18",
+    "fp": "lp-legarmeih",
+    "r": "הַנּוֹתָרִ֣ים׀"
+  },
+  {
+    "bcv_short": "1K16:2",
+    "fp": "lp-legarmeih",
+    "r": "וַתֵּ֣לֶךְ׀"
+  },
+  {
+    "bcv_short": "1K17:10",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣קׇם׀"
+  },
+  {
+    "bcv_short": "1K18:5",
+    "fp": "lp-legarmeih",
+    "r": "אוּלַ֣י׀"
+  },
+  {
+    "bcv_short": "1K18:10",
+    "fp": "lp-legarmeih",
+    "r": "חַ֣י׀"
+  },
+  {
+    "bcv_short": "1K18:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲנִ֣י׀"
+  },
+  {
+    "bcv_short": "1K18:23",
+    "fp": "lp-legarmeih",
+    "r": "אֶעֱשֶׂ֣ה׀"
+  },
+  {
+    "bcv_short": "1K18:36",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1K18:40",
+    "fp": "lp-legarmeih",
+    "r": "תִּפְשׂ֣וּ׀"
+  },
+  {
+    "bcv_short": "1K18:45",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1K19:4",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "1K19:8",
+    "fp": "lp-legarmeih",
+    "r": "בְּכֹ֣חַ׀"
+  },
+  {
+    "bcv_short": "1K19:10",
+    "fp": "lp-legarmeih",
+    "r": "לַיהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K19:13",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1K19:14",
+    "fp": "lp-legarmeih",
+    "r": "לַיהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "1K20:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1K20:13",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "1K20:25",
+    "fp": "lp-legarmeih",
+    "r": "כַּסּ֣וּס׀"
+  },
+  {
+    "bcv_short": "1K20:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1K20:39",
+    "fp": "lp-legarmeih",
+    "r": "עַבְדְּךָ֣׀"
+  },
+  {
+    "bcv_short": "1K21:15",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־כֶּ֣רֶם׀"
+  },
+  {
+    "bcv_short": "1K22:13",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־הָלַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "1K22:38",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ל׀"
+  },
+  {
+    "bcv_short": "2K1:6",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "2K1:13",
+    "fp": "lp-legarmeih",
+    "r": "עַל־בִּרְכָּ֣יו׀"
+  },
+  {
+    "bcv_short": "2K1:17",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "2K2:4",
+    "fp": "lp-legarmeih",
+    "r": "אֱלִישָׁ֣ע׀"
+  },
+  {
+    "bcv_short": "2K2:12",
+    "fp": "lp-legarmeih",
+    "r": "אָבִ֣י׀"
+  },
+  {
+    "bcv_short": "2K2:14",
+    "fp": "lp-legarmeih",
+    "r": "אַף־ה֣וּא׀"
+  },
+  {
+    "bcv_short": "2K2:23",
+    "fp": "lp-legarmeih",
+    "r": "וְה֣וּא׀"
+  },
+  {
+    "bcv_short": "2K3:17",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "2K4:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2K5:8",
+    "fp": "lp-legarmeih",
+    "r": "כִּשְׁמֹ֣עַ׀"
+  },
+  {
+    "bcv_short": "2K5:11",
+    "fp": "lp-legarmeih",
+    "r": "אֵלַ֣י׀"
+  },
+  {
+    "bcv_short": "2K5:18",
+    "fp": "lp-legarmeih",
+    "r": "וְה֣וּא׀"
+  },
+  {
+    "bcv_short": "2K5:20",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "2K5:22",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "2K6:32",
+    "fp": "lp-legarmeih",
+    "r": "וְה֣וּא׀"
+  },
+  {
+    "bcv_short": "2K6:32",
+    "fp": "lp-legarmeih",
+    "r": "רְא֣וּ׀"
+  },
+  {
+    "bcv_short": "2K7:1",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "2K7:6",
+    "fp": "lp-legarmeih",
+    "r": "הִשְׁמִ֣יעַ׀"
+  },
+  {
+    "bcv_short": "2K7:9",
+    "fp": "lp-legarmeih",
+    "r": "לֹא־כֵ֣ן׀"
+  },
+  {
+    "bcv_short": "2K8:14",
+    "fp": "lp-legarmeih",
+    "r": "וַיֵּ֣לֶךְ׀"
+  },
+  {
+    "bcv_short": "2K8:18",
+    "fp": "lp-legarmeih",
+    "r": "בְּדֶ֣רֶךְ׀"
+  },
+  {
+    "bcv_short": "2K9:7",
+    "fp": "lp-legarmeih",
+    "r": "דְּמֵ֣י׀"
+  },
+  {
+    "bcv_short": "2K10:6",
+    "fp": "lp-legarmeih",
+    "r": "וּלְקֹלִ֣י׀"
+  },
+  {
+    "bcv_short": "2K10:25",
+    "fp": "lp-legarmeih",
+    "r": "כְּכַלֹּת֣וֹ׀"
+  },
+  {
+    "bcv_short": "2K11:4",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּקַּ֣ח׀"
+  },
+  {
+    "bcv_short": "2K11:11",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "2K11:15",
+    "fp": "lp-legarmeih",
+    "r": "הַמֵּא֣וֹת׀"
+  },
+  {
+    "bcv_short": "2K11:19",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K13:3",
+    "fp": "lp-legarmeih",
+    "r": "בְּיַ֣ד׀"
+  },
+  {
+    "bcv_short": "2K13:16",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "2K13:21",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֣ם׀"
+  },
+  {
+    "bcv_short": "2K17:29",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּנִּ֣יחוּ׀"
+  },
+  {
+    "bcv_short": "2K17:41",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּהְי֣וּ׀"
+  },
+  {
+    "bcv_short": "2K17:41",
+    "fp": "lp-legarmeih",
+    "r": "גַּם־בְּנֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "2K18:4",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "2K18:12",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ל׀"
+  },
+  {
+    "bcv_short": "2K18:17",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־רַב־סָרִ֣יס׀"
+  },
+  {
+    "bcv_short": "2K19:4",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K19:6",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "2K19:11",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "2K19:35",
+    "fp": "lp-legarmeih",
+    "r": "וַיֵּצֵ֣א׀"
+  },
+  {
+    "bcv_short": "2K19:37",
+    "fp": "lp-legarmeih",
+    "r": "בֵּ֣ית׀"
+  },
+  {
+    "bcv_short": "2K20:13",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K20:14",
+    "fp": "lp-legarmeih",
+    "r": "אָמְר֣וּ׀"
+  },
+  {
+    "bcv_short": "2K20:17",
+    "fp": "lp-legarmeih",
+    "r": "וְנִשָּׂ֣א׀"
+  },
+  {
+    "bcv_short": "2K21:8",
+    "fp": "lp-legarmeih",
+    "r": "רַ֣ק׀"
+  },
+  {
+    "bcv_short": "2K22:12",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K22:14",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "2K22:17",
+    "fp": "lp-legarmeih",
+    "r": "תַּ֣חַת׀"
+  },
+  {
+    "bcv_short": "2K22:19",
+    "fp": "lp-legarmeih",
+    "r": "וַתִּכָּנַ֣ע׀"
+  },
+  {
+    "bcv_short": "2K23:3",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽת־הַבְּרִ֣ית׀"
+  },
+  {
+    "bcv_short": "2K23:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־עָשׂ֣וּ׀"
+  },
+  {
+    "bcv_short": "2K23:13",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2K23:13",
+    "fp": "lp-legarmeih",
+    "r": "לְעַשְׁתֹּ֣רֶת׀"
+  },
+  {
+    "bcv_short": "2K23:19",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2K23:26",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "2K24:2",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K24:3",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "2K24:14",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2K24:20",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2K25:4",
+    "fp": "lp-legarmeih",
+    "r": "שַׁ֣עַר׀"
+  },
+  {
+    "bcv_short": "2K25:16",
+    "fp": "lp-legarmeih",
+    "r": "הָעַמּוּדִ֣ים׀"
+  },
+  {
+    "bcv_short": "2K25:17",
+    "fp": "lp-legarmeih",
+    "r": "קוֹמַ֣ת׀"
+  },
+  {
+    "bcv_short": "2K25:19",
+    "fp": "lp-legarmeih",
+    "r": "פָקִ֣יד׀"
+  },
+  {
+    "bcv_short": "2K25:25",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "I1:4",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וֹי׀"
+  },
+  {
+    "bcv_short": "I2:2",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I2:3",
+    "fp": "lp-legarmeih",
+    "r": "לְכ֣וּ׀"
+  },
+  {
+    "bcv_short": "I4:3",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I4:4",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ם׀"
+  },
+  {
+    "bcv_short": "I6:2",
+    "fp": "lp-legarmeih",
+    "r": "בִּשְׁתַּ֣יִם׀"
+  },
+  {
+    "bcv_short": "I7:18",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I8:4",
+    "fp": "lp-legarmeih",
+    "r": "יִשָּׂ֣א׀"
+  },
+  {
+    "bcv_short": "I9:3",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "I9:16",
+    "fp": "lp-legarmeih",
+    "r": "לֹא־יִשְׂמַ֣ח׀"
+  },
+  {
+    "bcv_short": "I10:13",
+    "fp": "lp-legarmeih",
+    "r": "וְאָסִ֣יר׀"
+  },
+  {
+    "bcv_short": "I10:20",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I10:27",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I11:11",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I13:8",
+    "fp": "lp-legarmeih",
+    "r": "וְֽנִבְהָ֓לוּ׀"
+  },
+  {
+    "bcv_short": "I15:5",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "I17:9",
+    "fp": "lp-legarmeih",
+    "r": "יִהְי֣וּ׀"
+  },
+  {
+    "bcv_short": "I18:2",
+    "fp": "lp-legarmeih",
+    "r": "לְכ֣וּ׀"
+  },
+  {
+    "bcv_short": "I18:7",
+    "fp": "lp-legarmeih",
+    "r": "גּ֣וֹי׀"
+  },
+  {
+    "bcv_short": "I19:16",
+    "fp": "lp-legarmeih",
+    "r": "וְחָרַ֣ד׀"
+  },
+  {
+    "bcv_short": "I21:8",
+    "fp": "lp-legarmeih",
+    "r": "עַל־מִצְפֶּ֣ה׀"
+  },
+  {
+    "bcv_short": "I21:15",
+    "fp": "lp-legarmeih",
+    "r": "מִפְּנֵ֣י׀"
+  },
+  {
+    "bcv_short": "I22:2",
+    "fp": "lp-legarmeih",
+    "r": "תְּשֻׁא֣וֹת׀"
+  },
+  {
+    "bcv_short": "I22:11",
+    "fp": "lp-legarmeih",
+    "r": "וּמִקְוָ֣ה׀"
+  },
+  {
+    "bcv_short": "I22:13",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "I22:24",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "I23:1",
+    "fp": "lp-legarmeih",
+    "r": "הֵילִ֣ילוּ׀"
+  },
+  {
+    "bcv_short": "I23:13",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֣ן׀"
+  },
+  {
+    "bcv_short": "I23:17",
+    "fp": "lp-legarmeih",
+    "r": "מִקֵּ֣ץ׀"
+  },
+  {
+    "bcv_short": "I27:9",
+    "fp": "lp-legarmeih",
+    "r": "בְּשׂוּמ֣וֹ׀"
+  },
+  {
+    "bcv_short": "I27:13",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I28:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "I30:25",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "I33:14",
+    "fp": "lp-legarmeih",
+    "r": "מִ֣י׀"
+  },
+  {
+    "bcv_short": "I36:2",
+    "fp": "lp-legarmeih",
+    "r": "מֶֽלֶךְ־אַשּׁ֣וּר׀"
+  },
+  {
+    "bcv_short": "I37:2",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "I37:4",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "I37:6",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "I37:11",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "I37:36",
+    "fp": "lp-legarmeih",
+    "r": "וַיֵּצֵ֣א׀"
+  },
+  {
+    "bcv_short": "I37:38",
+    "fp": "lp-legarmeih",
+    "r": "בֵּ֣ית׀"
+  },
+  {
+    "bcv_short": "I39:2",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "I39:3",
+    "fp": "lp-legarmeih",
+    "r": "אָמְר֣וּ׀"
+  },
+  {
+    "bcv_short": "I39:6",
+    "fp": "lp-legarmeih",
+    "r": "וְנִשָּׂ֣א׀"
+  },
+  {
+    "bcv_short": "I41:22",
+    "fp": "lp-legarmeih",
+    "r": "הָרִאשֹׁנ֣וֹת׀"
+  },
+  {
+    "bcv_short": "I45:14",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "I47:1",
+    "fp": "lp-legarmeih",
+    "r": "רְדִ֣י׀"
+  },
+  {
+    "bcv_short": "I48:1",
+    "fp": "lp-legarmeih",
+    "r": "הַֽנִּשְׁבָּעִ֣ים׀"
+  },
+  {
+    "bcv_short": "I49:5",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "I49:8",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "I49:21",
+    "fp": "lp-legarmeih",
+    "r": "גֹּלָ֣ה׀"
+  },
+  {
+    "bcv_short": "I49:25",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "I50:1",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "I50:4",
+    "fp": "lp-legarmeih",
+    "r": "יָעִ֣יר׀"
+  },
+  {
+    "bcv_short": "I50:10",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "I50:11",
+    "fp": "lp-legarmeih",
+    "r": "לְכ֣וּ׀"
+  },
+  {
+    "bcv_short": "I52:1",
+    "fp": "lp-legarmeih",
+    "r": "לִבְשִׁ֣י׀"
+  },
+  {
+    "bcv_short": "I54:2",
+    "fp": "lp-legarmeih",
+    "r": "הַרְחִ֣יבִי׀"
+  },
+  {
+    "bcv_short": "I56:4",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "I60:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־לִ֣י׀"
+  },
+  {
+    "bcv_short": "I61:3",
+    "fp": "lp-legarmeih",
+    "r": "לָשׂ֣וּם׀"
+  },
+  {
+    "bcv_short": "I61:11",
+    "fp": "lp-legarmeih",
+    "r": "כֵּ֣ן׀"
+  },
+  {
+    "bcv_short": "I63:1",
+    "fp": "lp-legarmeih",
+    "r": "מִי־זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "I63:3",
+    "fp": "lp-legarmeih",
+    "r": "פּוּרָ֣ה׀"
+  },
+  {
+    "bcv_short": "I63:9",
+    "fp": "lp-legarmeih",
+    "r": "בְּֽכׇל־צָרָתָ֣ם׀"
+  },
+  {
+    "bcv_short": "I63:11",
+    "fp": "lp-legarmeih",
+    "r": "אַיֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "I65:8",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "I65:13",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "I66:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je1:10",
+    "fp": "lp-legarmeih",
+    "r": "הִפְקַדְתִּ֣יךָ׀"
+  },
+  {
+    "bcv_short": "Je1:15",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je1:15",
+    "fp": "lp-legarmeih",
+    "r": "פֶּ֣תַח׀"
+  },
+  {
+    "bcv_short": "Je2:5",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je2:13",
+    "fp": "lp-legarmeih",
+    "r": "מְק֣וֹר׀"
+  },
+  {
+    "bcv_short": "Je2:24",
+    "fp": "lp-legarmeih",
+    "r": "פֶּ֣רֶה׀"
+  },
+  {
+    "bcv_short": "Je4:3",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je4:10",
+    "fp": "lp-legarmeih",
+    "r": "אֲהָ֣הּ׀"
+  },
+  {
+    "bcv_short": "Je4:13",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je4:22",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je5:15",
+    "fp": "lp-legarmeih",
+    "r": "גּ֣וֹי׀"
+  },
+  {
+    "bcv_short": "Je6:1",
+    "fp": "lp-legarmeih",
+    "r": "הָעִ֣זוּ׀"
+  },
+  {
+    "bcv_short": "Je6:16",
+    "fp": "lp-legarmeih",
+    "r": "וְשַׁאֲל֣וּ׀"
+  },
+  {
+    "bcv_short": "Je7:14",
+    "fp": "lp-legarmeih",
+    "r": "לַבַּ֣יִת׀"
+  },
+  {
+    "bcv_short": "Je7:16",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תִּתְפַּלֵּ֣ל׀"
+  },
+  {
+    "bcv_short": "Je7:20",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Je7:34",
+    "fp": "lp-legarmeih",
+    "r": "וְהִשְׁבַּתִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je8:1",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Je8:2",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Je9:22",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je10:2",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je11:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je11:16",
+    "fp": "lp-legarmeih",
+    "r": "לְק֣וֹל׀"
+  },
+  {
+    "bcv_short": "Je11:19",
+    "fp": "lp-legarmeih",
+    "r": "כִּֽי־עָלַ֣י׀"
+  },
+  {
+    "bcv_short": "Je12:14",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je13:10",
+    "fp": "lp-legarmeih",
+    "r": "הַֽמֵּאֲנִ֣ים׀"
+  },
+  {
+    "bcv_short": "Je14:13",
+    "fp": "lp-legarmeih",
+    "r": "אֲהָ֣הּ׀"
+  },
+  {
+    "bcv_short": "Je14:16",
+    "fp": "lp-legarmeih",
+    "r": "מִפְּנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Je15:11",
+    "fp": "lp-legarmeih",
+    "r": "אִם־ל֣וֹא׀"
+  },
+  {
+    "bcv_short": "Je16:3",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je16:5",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je17:5",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je17:8",
+    "fp": "lp-legarmeih",
+    "r": "כְּעֵ֣ץ׀"
+  },
+  {
+    "bcv_short": "Je17:16",
+    "fp": "lp-legarmeih",
+    "r": "לֹא־אַ֣צְתִּי׀"
+  },
+  {
+    "bcv_short": "Je17:24",
+    "fp": "lp-legarmeih",
+    "r": "לְבִלְתִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je17:25",
+    "fp": "lp-legarmeih",
+    "r": "רֹכְבִ֣ים׀"
+  },
+  {
+    "bcv_short": "Je17:27",
+    "fp": "lp-legarmeih",
+    "r": "וּלְבִלְתִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je18:20",
+    "fp": "lp-legarmeih",
+    "r": "זְכֹ֣ר׀"
+  },
+  {
+    "bcv_short": "Je19:4",
+    "fp": "lp-legarmeih",
+    "r": "יַ֣עַן׀"
+  },
+  {
+    "bcv_short": "Je19:11",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Je21:7",
+    "fp": "lp-legarmeih",
+    "r": "מִן־הַדֶּ֣בֶר׀"
+  },
+  {
+    "bcv_short": "Je22:3",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je22:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je22:30",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je23:19",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je24:8",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je24:8",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Je25:3",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ד׀"
+  },
+  {
+    "bcv_short": "Je25:25",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Je25:26",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Je26:2",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je26:8",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Je26:10",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּשְׁמְע֣וּ׀"
+  },
+  {
+    "bcv_short": "Je26:15",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Je26:18",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Je27:18",
+    "fp": "lp-legarmeih",
+    "r": "הַכֵּלִ֣ים׀"
+  },
+  {
+    "bcv_short": "Je28:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Je28:3",
+    "fp": "lp-legarmeih",
+    "r": "בְּע֣וֹד׀"
+  },
+  {
+    "bcv_short": "Je28:11",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־עֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Je28:14",
+    "fp": "lp-legarmeih",
+    "r": "עַל־צַוַּ֣אר׀"
+  },
+  {
+    "bcv_short": "Je29:16",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je29:18",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Je29:21",
+    "fp": "lp-legarmeih",
+    "r": "הִנְנִ֣י׀"
+  },
+  {
+    "bcv_short": "Je30:8",
+    "fp": "lp-legarmeih",
+    "r": "נְאֻ֣ם׀"
+  },
+  {
+    "bcv_short": "Je30:11",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇֽל־הַגּוֹיִ֣ם׀"
+  },
+  {
+    "bcv_short": "Je30:15",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ל׀"
+  },
+  {
+    "bcv_short": "Je30:18",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je30:23",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je31:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je31:14",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je31:15",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je31:34",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je31:36",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je32:8",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Je32:17",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je32:35",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Je32:36",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Je32:43",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Je33:10",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je33:12",
+    "fp": "lp-legarmeih",
+    "r": "יִהְיֶ֣ה׀"
+  },
+  {
+    "bcv_short": "Je35:5",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Je36:23",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Je36:27",
+    "fp": "lp-legarmeih",
+    "r": "אַחֲרֵ֣י׀"
+  },
+  {
+    "bcv_short": "Je36:32",
+    "fp": "lp-legarmeih",
+    "r": "לָקַ֣ח׀"
+  },
+  {
+    "bcv_short": "Je37:7",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je37:9",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je38:4",
+    "fp": "lp-legarmeih",
+    "r": "הַֽנִּשְׁאָרִ֣ים׀"
+  },
+  {
+    "bcv_short": "Je38:4",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je38:6",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־הַבּ֣וֹר׀"
+  },
+  {
+    "bcv_short": "Je38:11",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּקַּ֣ח׀"
+  },
+  {
+    "bcv_short": "Je38:20",
+    "fp": "lp-legarmeih",
+    "r": "שְֽׁמַֽע־נָ֣א׀"
+  },
+  {
+    "bcv_short": "Je39:4",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Je40:1",
+    "fp": "lp-legarmeih",
+    "r": "אַחַ֣ר׀"
+  },
+  {
+    "bcv_short": "Je40:7",
+    "fp": "lp-legarmeih",
+    "r": "וְכִ֣י׀"
+  },
+  {
+    "bcv_short": "Je40:8",
+    "fp": "lp-legarmeih",
+    "r": "וּבְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Je40:11",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־בְּמוֹאָ֣ב׀"
+  },
+  {
+    "bcv_short": "Je40:14",
+    "fp": "lp-legarmeih",
+    "r": "בַּעֲלִ֣יס׀"
+  },
+  {
+    "bcv_short": "Je41:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Je41:2",
+    "fp": "lp-legarmeih",
+    "r": "הָאֲנָשִׁ֣ים׀"
+  },
+  {
+    "bcv_short": "Je41:9",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Je42:6",
+    "fp": "lp-legarmeih",
+    "r": "בְּק֣וֹל׀"
+  },
+  {
+    "bcv_short": "Je42:16",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־אַתֶּ֣ם׀"
+  },
+  {
+    "bcv_short": "Je44:9",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־רָע֣וֹת׀"
+  },
+  {
+    "bcv_short": "Je44:14",
+    "fp": "lp-legarmeih",
+    "r": "וְלָשׁ֣וּב׀"
+  },
+  {
+    "bcv_short": "Je44:17",
+    "fp": "lp-legarmeih",
+    "r": "אֶֽת־כׇּל־הַדָּבָ֣ר׀"
+  },
+  {
+    "bcv_short": "Je44:30",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je45:4",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je46:16",
+    "fp": "lp-legarmeih",
+    "r": "ק֣וּמָה׀"
+  },
+  {
+    "bcv_short": "Je46:28",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇֽל־הַגּוֹיִ֣ם׀"
+  },
+  {
+    "bcv_short": "Je47:2",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je48:27",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ם׀"
+  },
+  {
+    "bcv_short": "Je49:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֹ֣ה׀"
+  },
+  {
+    "bcv_short": "Je49:28",
+    "fp": "lp-legarmeih",
+    "r": "לְקֵדָ֣ר׀"
+  },
+  {
+    "bcv_short": "Je49:37",
+    "fp": "lp-legarmeih",
+    "r": "וְלִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Je49:39",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Je50:34",
+    "fp": "lp-legarmeih",
+    "r": "גֹּאֲלָ֣ם׀"
+  },
+  {
+    "bcv_short": "Je51:6",
+    "fp": "lp-legarmeih",
+    "r": "נֻ֣סוּ׀"
+  },
+  {
+    "bcv_short": "Je51:24",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Je51:59",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־צִוָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Je52:3",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Je52:15",
+    "fp": "lp-legarmeih",
+    "r": "הָעָ֣ם׀"
+  },
+  {
+    "bcv_short": "Je52:20",
+    "fp": "lp-legarmeih",
+    "r": "הָעַמּוּדִ֣ים׀"
+  },
+  {
+    "bcv_short": "Je52:25",
+    "fp": "lp-legarmeih",
+    "r": "פָקִ֣יד׀"
+  },
+  {
+    "bcv_short": "Ee1:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ee1:27",
+    "fp": "lp-legarmeih",
+    "r": "וָאֵ֣רֶא׀"
+  },
+  {
+    "bcv_short": "Ee3:6",
+    "fp": "lp-legarmeih",
+    "r": "לֹ֣א׀"
+  },
+  {
+    "bcv_short": "Ee3:13",
+    "fp": "lp-legarmeih",
+    "r": "וְק֣וֹל׀"
+  },
+  {
+    "bcv_short": "Ee4:9",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־אַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee5:1",
+    "fp": "lp-legarmeih",
+    "r": "קַח־לְךָ֣׀"
+  },
+  {
+    "bcv_short": "Ee5:7",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee6:13",
+    "fp": "lp-legarmeih",
+    "r": "בְּכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee8:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ee8:6",
+    "fp": "lp-legarmeih",
+    "r": "יִשְׂרָאֵ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee9:2",
+    "fp": "lp-legarmeih",
+    "r": "בָּאִ֣ים׀"
+  },
+  {
+    "bcv_short": "Ee9:2",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee9:3",
+    "fp": "lp-legarmeih",
+    "r": "וּכְב֣וֹד׀"
+  },
+  {
+    "bcv_short": "Ee9:11",
+    "fp": "lp-legarmeih",
+    "r": "הָאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "Ee10:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־הָאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "Ee12:25",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ee13:11",
+    "fp": "lp-legarmeih",
+    "r": "הָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee13:18",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee13:18",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee13:20",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee14:4",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee14:6",
+    "fp": "lp-legarmeih",
+    "r": "אֱמֹ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee16:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ee16:43",
+    "fp": "lp-legarmeih",
+    "r": "דַּרְכֵּ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Ee16:52",
+    "fp": "lp-legarmeih",
+    "r": "גַּם־אַ֣תְּ׀"
+  },
+  {
+    "bcv_short": "Ee17:3",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee17:9",
+    "fp": "lp-legarmeih",
+    "r": "וְאֶת־פִּרְיָ֣הּ׀"
+  },
+  {
+    "bcv_short": "Ee17:24",
+    "fp": "lp-legarmeih",
+    "r": "הִשְׁפַּ֣לְתִּי׀"
+  },
+  {
+    "bcv_short": "Ee18:20",
+    "fp": "lp-legarmeih",
+    "r": "לֹא־יִשָּׂ֣א׀"
+  },
+  {
+    "bcv_short": "Ee20:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ee20:30",
+    "fp": "lp-legarmeih",
+    "r": "אֱמֹ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee20:32",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee20:39",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee20:40",
+    "fp": "lp-legarmeih",
+    "r": "בְּהַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee21:20",
+    "fp": "lp-legarmeih",
+    "r": "לְמַ֣עַן׀"
+  },
+  {
+    "bcv_short": "Ee21:24",
+    "fp": "lp-legarmeih",
+    "r": "שִׂים־לְךָ֣׀"
+  },
+  {
+    "bcv_short": "Ee21:27",
+    "fp": "lp-legarmeih",
+    "r": "הָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee22:11",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "Ee24:6",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee24:17",
+    "fp": "lp-legarmeih",
+    "r": "הֵאָנֵ֣ק׀"
+  },
+  {
+    "bcv_short": "Ee24:21",
+    "fp": "lp-legarmeih",
+    "r": "אֱמֹ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee26:15",
+    "fp": "lp-legarmeih",
+    "r": "הֲלֹ֣א׀"
+  },
+  {
+    "bcv_short": "Ee28:2",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee28:25",
+    "fp": "lp-legarmeih",
+    "r": "בְּקַבְּצִ֣י׀"
+  },
+  {
+    "bcv_short": "Ee29:3",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee29:12",
+    "fp": "lp-legarmeih",
+    "r": "בְּת֣וֹךְ׀"
+  },
+  {
+    "bcv_short": "Ee30:22",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee32:24",
+    "fp": "lp-legarmeih",
+    "r": "עֲרֵלִ֣ים׀"
+  },
+  {
+    "bcv_short": "Ee33:25",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee34:2",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee34:8",
+    "fp": "lp-legarmeih",
+    "r": "נְאֻ֣ם׀"
+  },
+  {
+    "bcv_short": "Ee35:12",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֣עְתִּי׀"
+  },
+  {
+    "bcv_short": "Ee36:6",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee36:36",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ee37:9",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee38:10",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee38:13",
+    "fp": "lp-legarmeih",
+    "r": "לָשֵׂ֣את׀"
+  },
+  {
+    "bcv_short": "Ee38:14",
+    "fp": "lp-legarmeih",
+    "r": "הֲל֣וֹא׀"
+  },
+  {
+    "bcv_short": "Ee38:18",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ee38:19",
+    "fp": "lp-legarmeih",
+    "r": "אִם־לֹ֣א׀"
+  },
+  {
+    "bcv_short": "Ee39:9",
+    "fp": "lp-legarmeih",
+    "r": "יֹשְׁבֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ee39:17",
+    "fp": "lp-legarmeih",
+    "r": "כֹּה־אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ee39:17",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee40:1",
+    "fp": "lp-legarmeih",
+    "r": "בְּעֶ֣צֶם׀"
+  },
+  {
+    "bcv_short": "Ee40:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיָּ֣מׇד׀"
+  },
+  {
+    "bcv_short": "Ee40:47",
+    "fp": "lp-legarmeih",
+    "r": "אֹ֣רֶךְ׀"
+  },
+  {
+    "bcv_short": "Ee42:10",
+    "fp": "lp-legarmeih",
+    "r": "בְּרֹ֣חַב׀"
+  },
+  {
+    "bcv_short": "Ee42:13",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֣נָּה׀"
+  },
+  {
+    "bcv_short": "Ee42:13",
+    "fp": "lp-legarmeih",
+    "r": "יַנִּ֣יחוּ׀"
+  },
+  {
+    "bcv_short": "Ee43:8",
+    "fp": "lp-legarmeih",
+    "r": "וְטִמְּא֣וּ׀"
+  },
+  {
+    "bcv_short": "Ee48:2",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:3",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:4",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:5",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:6",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:7",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:18",
+    "fp": "lp-legarmeih",
+    "r": "לְעֻמַּ֣ת׀"
+  },
+  {
+    "bcv_short": "Ee48:22",
+    "fp": "lp-legarmeih",
+    "r": "בֵּ֣ין׀"
+  },
+  {
+    "bcv_short": "Ee48:24",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:25",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:26",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ee48:27",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ho1:1",
+    "fp": "lp-legarmeih",
+    "r": "דְּבַר־יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ho2:23",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ho3:4",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ho4:3",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֣ן׀"
+  },
+  {
+    "bcv_short": "Ho5:1",
+    "fp": "lp-legarmeih",
+    "r": "וְהַקְשִׁ֣יבוּ׀"
+  },
+  {
+    "bcv_short": "Ho7:16",
+    "fp": "lp-legarmeih",
+    "r": "יָשׁ֣וּבוּ׀"
+  },
+  {
+    "bcv_short": "Ho9:7",
+    "fp": "lp-legarmeih",
+    "r": "בָּ֣אוּ׀"
+  },
+  {
+    "bcv_short": "Ho13:2",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ho14:4",
+    "fp": "lp-legarmeih",
+    "r": "אַשּׁ֣וּר׀"
+  },
+  {
+    "bcv_short": "A1:1",
+    "fp": "lp-legarmeih",
+    "r": "בִּימֵ֣י׀"
+  },
+  {
+    "bcv_short": "A1:2",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּאמַ֓ר׀"
+  },
+  {
+    "bcv_short": "A8:9",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "A8:11",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "A9:8",
+    "fp": "lp-legarmeih",
+    "r": "עֵינֵ֣י׀"
+  },
+  {
+    "bcv_short": "Jn1:3",
+    "fp": "lp-legarmeih",
+    "r": "אֳנִיָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Jn4:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּ֣עַל׀"
+  },
+  {
+    "bcv_short": "Jn4:8",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Mi1:1",
+    "fp": "lp-legarmeih",
+    "r": "דְּבַר־יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Mi3:11",
+    "fp": "lp-legarmeih",
+    "r": "רָאשֶׁ֣יהָ׀"
+  },
+  {
+    "bcv_short": "Mi4:1",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Mi4:2",
+    "fp": "lp-legarmeih",
+    "r": "לְכ֣וּ׀"
+  },
+  {
+    "bcv_short": "Mi5:4",
+    "fp": "lp-legarmeih",
+    "r": "אַשּׁ֣וּר׀"
+  },
+  {
+    "bcv_short": "Mi5:6",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Na1:12",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "Na3:19",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Hb3:6",
+    "fp": "lp-legarmeih",
+    "r": "עָמַ֣ד׀"
+  },
+  {
+    "bcv_short": "Hb3:16",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֣עְתִּי׀"
+  },
+  {
+    "bcv_short": "Ts1:1",
+    "fp": "lp-legarmeih",
+    "r": "דְּבַר־יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ts2:2",
+    "fp": "lp-legarmeih",
+    "r": "בְּטֶ֣רֶם׀"
+  },
+  {
+    "bcv_short": "Ts2:15",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣יךְ׀"
+  },
+  {
+    "bcv_short": "Ts3:11",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־אָ֣ז׀"
+  },
+  {
+    "bcv_short": "Hg1:12",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Hg2:12",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֣ן׀"
+  },
+  {
+    "bcv_short": "Zc1:6",
+    "fp": "lp-legarmeih",
+    "r": "אַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Zc1:8",
+    "fp": "lp-legarmeih",
+    "r": "רָאִ֣יתִי׀"
+  },
+  {
+    "bcv_short": "Zc1:17",
+    "fp": "lp-legarmeih",
+    "r": "ע֣וֹד׀"
+  },
+  {
+    "bcv_short": "Zc3:8",
+    "fp": "lp-legarmeih",
+    "r": "יְהוֹשֻׁ֣עַ׀"
+  },
+  {
+    "bcv_short": "Zc3:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Zc6:15",
+    "fp": "lp-legarmeih",
+    "r": "וּרְחוֹקִ֣ים׀"
+  },
+  {
+    "bcv_short": "Zc8:17",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "Zc10:6",
+    "fp": "lp-legarmeih",
+    "r": "וְגִבַּרְתִּ֣י׀"
+  },
+  {
+    "bcv_short": "Zc12:10",
+    "fp": "lp-legarmeih",
+    "r": "וְעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Zc13:2",
+    "fp": "lp-legarmeih",
+    "r": "נְאֻ֣ם׀"
+  },
+  {
+    "bcv_short": "Zc13:4",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Zc13:9",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "Zc14:8",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Zc14:12",
+    "fp": "lp-legarmeih",
+    "r": "וְזֹ֣את׀"
+  },
+  {
+    "bcv_short": "Zc14:12",
+    "fp": "lp-legarmeih",
+    "r": "הָמֵ֣ק׀"
+  },
+  {
+    "bcv_short": "Ma1:6",
+    "fp": "lp-legarmeih",
+    "r": "אָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Ma2:5",
+    "fp": "lp-legarmeih",
+    "r": "בְּרִיתִ֣י׀"
+  },
+  {
+    "bcv_short": "Ma2:11",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ma2:14",
+    "fp": "lp-legarmeih",
+    "r": "וּבֵ֣ין׀"
+  },
+  {
+    "bcv_short": "Ma2:17",
+    "fp": "lp-legarmeih",
+    "r": "ט֣וֹב׀"
+  },
+  {
+    "bcv_short": "Ma3:1",
+    "fp": "lp-legarmeih",
+    "r": "הָאָד֣וֹן׀"
+  },
+  {
+    "bcv_short": "Ma3:5",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיִ֣יתִי׀"
+  },
+  {
+    "bcv_short": "Ps1:1",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps1:3",
+    "fp": "lp-legarmeih",
+    "r": "פִּרְי֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps1:5",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps2:2",
+    "fp": "lp-legarmeih",
+    "r": "יִ֥תְיַצְּב֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps2:12",
+    "fp": "lp-legarmeih",
+    "r": "פֶּן־יֶאֱנַ֤ף׀"
+  },
+  {
+    "bcv_short": "Ps3:1",
+    "fp": "lp-legarmeih",
+    "r": "מִפְּנֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps3:8",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps4:2",
+    "fp": "lp-legarmeih",
+    "r": "עֲנֵ֤נִי׀"
+  },
+  {
+    "bcv_short": "Ps5:3",
+    "fp": "lp-legarmeih",
+    "r": "הַקְשִׁ֤יבָה׀"
+  },
+  {
+    "bcv_short": "Ps5:9",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps5:11",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥אֲשִׁימֵ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps6:7",
+    "fp": "lp-legarmeih",
+    "r": "יָגַ֤עְתִּי׀"
+  },
+  {
+    "bcv_short": "Ps6:11",
+    "fp": "lp-legarmeih",
+    "r": "יֵבֹ֤שׁוּ׀"
+  },
+  {
+    "bcv_short": "Ps7:6",
+    "fp": "lp-legarmeih",
+    "r": "יִ֥רַדֹּֽף־אוֹיֵ֨ב׀"
+  },
+  {
+    "bcv_short": "Ps7:6",
+    "fp": "lp-legarmeih",
+    "r": "וּכְבוֹדִ֓י׀"
+  },
+  {
+    "bcv_short": "Ps7:7",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps7:10",
+    "fp": "lp-legarmeih",
+    "r": "רַ֨ע׀"
+  },
+  {
+    "bcv_short": "Ps8:3",
+    "fp": "lp-legarmeih",
+    "r": "עוֹלְﬞלִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps9:7",
+    "fp": "lp-legarmeih",
+    "r": "הָֽאוֹיֵ֨ב׀"
+  },
+  {
+    "bcv_short": "Ps9:17",
+    "fp": "lp-legarmeih",
+    "r": "נ֤וֹדַ֨ע׀"
+  },
+  {
+    "bcv_short": "Ps9:21",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps10:2",
+    "fp": "lp-legarmeih",
+    "r": "יִתָּפְשׂ֓וּ׀"
+  },
+  {
+    "bcv_short": "Ps10:5",
+    "fp": "lp-legarmeih",
+    "r": "דְרָכָ֨ו׀"
+  },
+  {
+    "bcv_short": "Ps10:7",
+    "fp": "lp-legarmeih",
+    "r": "אָלָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps10:8",
+    "fp": "lp-legarmeih",
+    "r": "יֵשֵׁ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps10:9",
+    "fp": "lp-legarmeih",
+    "r": "בַּמִּסְתָּ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps10:13",
+    "fp": "lp-legarmeih",
+    "r": "עַל־מֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps10:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps10:14",
+    "fp": "lp-legarmeih",
+    "r": "וָכַ֨עַס׀"
+  },
+  {
+    "bcv_short": "Ps10:14",
+    "fp": "lp-legarmeih",
+    "r": "אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps11:1",
+    "fp": "lp-legarmeih",
+    "r": "בַּֽיהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps11:4",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps12:3",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֤וְא׀"
+  },
+  {
+    "bcv_short": "Ps12:5",
+    "fp": "lp-legarmeih",
+    "r": "אָמְר֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps12:8",
+    "fp": "lp-legarmeih",
+    "r": "תִּצְּרֶ֓נּוּ׀"
+  },
+  {
+    "bcv_short": "Ps13:2",
+    "fp": "lp-legarmeih",
+    "r": "עַד־אָ֓נָה׀"
+  },
+  {
+    "bcv_short": "Ps13:3",
+    "fp": "lp-legarmeih",
+    "r": "עַד־אָ֓נָה׀"
+  },
+  {
+    "bcv_short": "Ps13:6",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps14:5",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps15:3",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־רָגַ֨ל׀"
+  },
+  {
+    "bcv_short": "Ps15:4",
+    "fp": "lp-legarmeih",
+    "r": "נִבְזֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps15:5",
+    "fp": "lp-legarmeih",
+    "r": "כַּסְפּ֤וֹ׀"
+  },
+  {
+    "bcv_short": "Ps16:9",
+    "fp": "lp-legarmeih",
+    "r": "לָכֵ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps16:10",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps17:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps17:3",
+    "fp": "lp-legarmeih",
+    "r": "לִבִּ֨י׀"
+  },
+  {
+    "bcv_short": "Ps17:14",
+    "fp": "lp-legarmeih",
+    "r": "מִ֥מְﬞתִֽים־יָדְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps18:1",
+    "fp": "lp-legarmeih",
+    "r": "לַמְנַצֵּ֤חַ׀"
+  },
+  {
+    "bcv_short": "Ps18:1",
+    "fp": "lp-legarmeih",
+    "r": "דִּבֶּ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps18:3",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps18:7",
+    "fp": "lp-legarmeih",
+    "r": "בַּצַּר־לִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps18:7",
+    "fp": "lp-legarmeih",
+    "r": "לְפָנָ֤יו׀"
+  },
+  {
+    "bcv_short": "Ps18:8",
+    "fp": "lp-legarmeih",
+    "r": "וַתִּרְעַ֨שׁ׀"
+  },
+  {
+    "bcv_short": "Ps18:9",
+    "fp": "lp-legarmeih",
+    "r": "עָשָׁ֨ן׀"
+  },
+  {
+    "bcv_short": "Ps18:12",
+    "fp": "lp-legarmeih",
+    "r": "יָ֤שֶׁת־חֹ֨שֶׁךְ׀"
+  },
+  {
+    "bcv_short": "Ps18:14",
+    "fp": "lp-legarmeih",
+    "r": "בַּשָּׁמַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps18:16",
+    "fp": "lp-legarmeih",
+    "r": "וַיֵּ֤רָא֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps18:31",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֤ל׀"
+  },
+  {
+    "bcv_short": "Ps18:50",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps18:51",
+    "fp": "lp-legarmeih",
+    "r": "חֶ֨סֶד׀"
+  },
+  {
+    "bcv_short": "Ps19:5",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇל־הָאָ֨רֶץ׀"
+  },
+  {
+    "bcv_short": "Ps19:7",
+    "fp": "lp-legarmeih",
+    "r": "הַשָּׁמַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps19:10",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps19:14",
+    "fp": "lp-legarmeih",
+    "r": "מִזֵּדִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps19:15",
+    "fp": "lp-legarmeih",
+    "r": "יִ֥הְיֽוּ־לְרָצ֨וֹן׀"
+  },
+  {
+    "bcv_short": "Ps20:2",
+    "fp": "lp-legarmeih",
+    "r": "שֵׁ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps20:6",
+    "fp": "lp-legarmeih",
+    "r": "נְרַנְּנָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps20:8",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנַ֓חְנוּ׀"
+  },
+  {
+    "bcv_short": "Ps21:5",
+    "fp": "lp-legarmeih",
+    "r": "חַיִּ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps21:10",
+    "fp": "lp-legarmeih",
+    "r": "תְּשִׁיתֵ֤מוֹ׀"
+  },
+  {
+    "bcv_short": "Ps22:16",
+    "fp": "lp-legarmeih",
+    "r": "כַּחֶ֨רֶשׂ׀"
+  },
+  {
+    "bcv_short": "Ps22:24",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps22:27",
+    "fp": "lp-legarmeih",
+    "r": "עֲנָוִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps22:28",
+    "fp": "lp-legarmeih",
+    "r": "יִזְכְּר֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps22:30",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּֽשְׁתַּחֲו֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps23:5",
+    "fp": "lp-legarmeih",
+    "r": "לְפָנַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps23:6",
+    "fp": "lp-legarmeih",
+    "r": "אַ֤ךְ׀"
+  },
+  {
+    "bcv_short": "Ps24:4",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps24:7",
+    "fp": "lp-legarmeih",
+    "r": "שְׁעָרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps24:9",
+    "fp": "lp-legarmeih",
+    "r": "שְׁעָרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps25:5",
+    "fp": "lp-legarmeih",
+    "r": "בַאֲמִתֶּ֨ךָ׀"
+  },
+  {
+    "bcv_short": "Ps25:7",
+    "fp": "lp-legarmeih",
+    "r": "נְעוּרַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps26:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps27:2",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps27:3",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps27:4",
+    "fp": "lp-legarmeih",
+    "r": "אַחַ֤ת׀"
+  },
+  {
+    "bcv_short": "Ps27:5",
+    "fp": "lp-legarmeih",
+    "r": "יִצְפְּנֵ֨נִי׀"
+  },
+  {
+    "bcv_short": "Ps27:8",
+    "fp": "lp-legarmeih",
+    "r": "לְךָ֤׀"
+  },
+  {
+    "bcv_short": "Ps27:9",
+    "fp": "lp-legarmeih",
+    "r": "פָּנֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps28:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps28:7",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps28:9",
+    "fp": "lp-legarmeih",
+    "r": "הוֹשִׁ֤יעָה׀"
+  },
+  {
+    "bcv_short": "Ps29:9",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps29:11",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֓ה׀"
+  },
+  {
+    "bcv_short": "Ps30:6",
+    "fp": "lp-legarmeih",
+    "r": "רֶ֨גַע׀"
+  },
+  {
+    "bcv_short": "Ps30:13",
+    "fp": "lp-legarmeih",
+    "r": "לְמַ֤עַן׀"
+  },
+  {
+    "bcv_short": "Ps31:3",
+    "fp": "lp-legarmeih",
+    "r": "אֵלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps31:3",
+    "fp": "lp-legarmeih",
+    "r": "לִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps31:12",
+    "fp": "lp-legarmeih",
+    "r": "וְלִ֥שְׁﬞכֵנַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps31:14",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֨עְתִּי׀"
+  },
+  {
+    "bcv_short": "Ps31:15",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps31:21",
+    "fp": "lp-legarmeih",
+    "r": "תַּסְתִּירֵ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps31:23",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps32:4",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps32:6",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־חָסִ֨יד׀"
+  },
+  {
+    "bcv_short": "Ps32:7",
+    "fp": "lp-legarmeih",
+    "r": "אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps32:8",
+    "fp": "lp-legarmeih",
+    "r": "אַשְׂכִּֽילְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps32:9",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תִּהְי֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps33:12",
+    "fp": "lp-legarmeih",
+    "r": "הָעָ֓ם׀"
+  },
+  {
+    "bcv_short": "Ps35:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps35:10",
+    "fp": "lp-legarmeih",
+    "r": "כׇּ֥ל־עַצְמוֹתַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps35:13",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps35:26",
+    "fp": "lp-legarmeih",
+    "r": "וְיַחְפְּר֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps36:5",
+    "fp": "lp-legarmeih",
+    "r": "אָ֤וֶן׀"
+  },
+  {
+    "bcv_short": "Ps36:7",
+    "fp": "lp-legarmeih",
+    "r": "צִדְקָתְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps37:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps37:7",
+    "fp": "lp-legarmeih",
+    "r": "דּ֤וֹם׀"
+  },
+  {
+    "bcv_short": "Ps37:14",
+    "fp": "lp-legarmeih",
+    "r": "חֶ֤רֶב׀"
+  },
+  {
+    "bcv_short": "Ps37:20",
+    "fp": "lp-legarmeih",
+    "r": "רְשָׁעִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps37:25",
+    "fp": "lp-legarmeih",
+    "r": "נַ֤עַר׀"
+  },
+  {
+    "bcv_short": "Ps37:28",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps37:34",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps38:12",
+    "fp": "lp-legarmeih",
+    "r": "אֹֽהֲבַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps38:13",
+    "fp": "lp-legarmeih",
+    "r": "וַיְנַקְשׁ֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps39:4",
+    "fp": "lp-legarmeih",
+    "r": "חַם־לִבִּ֨י׀"
+  },
+  {
+    "bcv_short": "Ps39:5",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps39:6",
+    "fp": "lp-legarmeih",
+    "r": "טְפָח֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps39:7",
+    "fp": "lp-legarmeih",
+    "r": "אַךְ־בְּצֶ֤לֶם׀"
+  },
+  {
+    "bcv_short": "Ps39:12",
+    "fp": "lp-legarmeih",
+    "r": "עַל־עָוֺ֨ן׀"
+  },
+  {
+    "bcv_short": "Ps39:13",
+    "fp": "lp-legarmeih",
+    "r": "שִׁ֥מְﬞעָֽה־תְפִלָּתִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps39:13",
+    "fp": "lp-legarmeih",
+    "r": "וְשַׁוְעָתִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps40:3",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּעֲלֵ֤נִי׀"
+  },
+  {
+    "bcv_short": "Ps40:4",
+    "fp": "lp-legarmeih",
+    "r": "בְּפִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps40:6",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֤ין׀"
+  },
+  {
+    "bcv_short": "Ps40:7",
+    "fp": "lp-legarmeih",
+    "r": "וּמִנְחָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps40:10",
+    "fp": "lp-legarmeih",
+    "r": "צֶ֨דֶק׀"
+  },
+  {
+    "bcv_short": "Ps40:11",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־כִסִּ֨יתִי׀"
+  },
+  {
+    "bcv_short": "Ps40:13",
+    "fp": "lp-legarmeih",
+    "r": "אָפְﬞפֽוּ־עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps40:15",
+    "fp": "lp-legarmeih",
+    "r": "וְיַחְפְּר֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps40:17",
+    "fp": "lp-legarmeih",
+    "r": "וְיִשְׂמְח֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps40:18",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps41:3",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps41:7",
+    "fp": "lp-legarmeih",
+    "r": "לִרְא֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps41:8",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֓י׀"
+  },
+  {
+    "bcv_short": "Ps41:10",
+    "fp": "lp-legarmeih",
+    "r": "שְׁלוֹמִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps41:14",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps42:3",
+    "fp": "lp-legarmeih",
+    "r": "נַפְשִׁ֨י׀"
+  },
+  {
+    "bcv_short": "Ps42:5",
+    "fp": "lp-legarmeih",
+    "r": "אֶזְכְּרָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps42:5",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps42:5",
+    "fp": "lp-legarmeih",
+    "r": "אֶעֱבֹ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps42:6",
+    "fp": "lp-legarmeih",
+    "r": "מַה־תִּשְׁתּ֬וֹחֲחִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps42:9",
+    "fp": "lp-legarmeih",
+    "r": "יוֹמָ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps42:9",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps42:10",
+    "fp": "lp-legarmeih",
+    "r": "אוֹמְרָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps42:11",
+    "fp": "lp-legarmeih",
+    "r": "בְּרֶ֤צַח׀"
+  },
+  {
+    "bcv_short": "Ps42:12",
+    "fp": "lp-legarmeih",
+    "r": "מַה־תִּשְׁתּ֬וֹחֲחִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps43:1",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps43:2",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps43:4",
+    "fp": "lp-legarmeih",
+    "r": "וְאָב֤וֹאָה׀"
+  },
+  {
+    "bcv_short": "Ps43:5",
+    "fp": "lp-legarmeih",
+    "r": "מַה־תִּשְׁתּ֬וֹחֲחִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps44:2",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps44:3",
+    "fp": "lp-legarmeih",
+    "r": "אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps44:9",
+    "fp": "lp-legarmeih",
+    "r": "וְשִׁמְךָ֓׀"
+  },
+  {
+    "bcv_short": "Ps44:24",
+    "fp": "lp-legarmeih",
+    "r": "ע֤וּרָה׀"
+  },
+  {
+    "bcv_short": "Ps45:2",
+    "fp": "lp-legarmeih",
+    "r": "לִבִּ֨י׀"
+  },
+  {
+    "bcv_short": "Ps45:2",
+    "fp": "lp-legarmeih",
+    "r": "עֵ֤ט׀"
+  },
+  {
+    "bcv_short": "Ps45:5",
+    "fp": "lp-legarmeih",
+    "r": "וַהֲדָ֬רְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps45:8",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps45:13",
+    "fp": "lp-legarmeih",
+    "r": "וּבַֽת־צֹ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps47:9",
+    "fp": "lp-legarmeih",
+    "r": "יָשַׁ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps47:10",
+    "fp": "lp-legarmeih",
+    "r": "עַמִּ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps48:9",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֨עְנוּ׀"
+  },
+  {
+    "bcv_short": "Ps48:12",
+    "fp": "lp-legarmeih",
+    "r": "יִשְׂמַ֤ח׀"
+  },
+  {
+    "bcv_short": "Ps48:14",
+    "fp": "lp-legarmeih",
+    "r": "לִבְּכֶ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps48:15",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps49:11",
+    "fp": "lp-legarmeih",
+    "r": "יִרְאֶ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps49:12",
+    "fp": "lp-legarmeih",
+    "r": "בָּתֵּ֨ימוֹ׀"
+  },
+  {
+    "bcv_short": "Ps49:14",
+    "fp": "lp-legarmeih",
+    "r": "וְאַחֲרֵיהֶ֓ם׀"
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "fp": "lp-legarmeih",
+    "r": "כַּצֹּ֤אן׀"
+  },
+  {
+    "bcv_short": "Ps49:15",
+    "fp": "lp-legarmeih",
+    "r": "יְשָׁרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps50:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּֽי־אֱלֹהִ֓ים׀"
+  },
+  {
+    "bcv_short": "Ps50:7",
+    "fp": "lp-legarmeih",
+    "r": "עַמִּ֨י׀"
+  },
+  {
+    "bcv_short": "Ps50:16",
+    "fp": "lp-legarmeih",
+    "r": "וְלָ֤רָשָׁ֨ע׀"
+  },
+  {
+    "bcv_short": "Ps50:21",
+    "fp": "lp-legarmeih",
+    "r": "עָשִׂ֨יתָ׀"
+  },
+  {
+    "bcv_short": "Ps51:6",
+    "fp": "lp-legarmeih",
+    "r": "לְבַדְּךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps51:16",
+    "fp": "lp-legarmeih",
+    "r": "מִדָּמִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps51:18",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps52:2",
+    "fp": "lp-legarmeih",
+    "r": "בְּב֤וֹא׀"
+  },
+  {
+    "bcv_short": "Ps52:5",
+    "fp": "lp-legarmeih",
+    "r": "שֶׁ֓קֶר׀"
+  },
+  {
+    "bcv_short": "Ps52:10",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps53:6",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps54:5",
+    "fp": "lp-legarmeih",
+    "r": "זָרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps55:16",
+    "fp": "lp-legarmeih",
+    "r": "מָ֨וֶת׀"
+  },
+  {
+    "bcv_short": "Ps55:22",
+    "fp": "lp-legarmeih",
+    "r": "חָלְק֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps55:23",
+    "fp": "lp-legarmeih",
+    "r": "עַל־יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps56:1",
+    "fp": "lp-legarmeih",
+    "r": "לַמְנַצֵּ֤חַ׀"
+  },
+  {
+    "bcv_short": "Ps56:7",
+    "fp": "lp-legarmeih",
+    "r": "יָג֤וּרוּ׀"
+  },
+  {
+    "bcv_short": "Ps56:8",
+    "fp": "lp-legarmeih",
+    "r": "עַמִּ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps57:2",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps57:4",
+    "fp": "lp-legarmeih",
+    "r": "מִשָּׁמַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps57:5",
+    "fp": "lp-legarmeih",
+    "r": "נַפְשִׁ֤י׀"
+  },
+  {
+    "bcv_short": "Ps57:7",
+    "fp": "lp-legarmeih",
+    "r": "רֶ֤שֶׁת׀"
+  },
+  {
+    "bcv_short": "Ps58:10",
+    "fp": "lp-legarmeih",
+    "r": "בְּטֶ֤רֶם׀"
+  },
+  {
+    "bcv_short": "Ps59:8",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps59:12",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תַּהַרְגֵ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps59:17",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps60:2",
+    "fp": "lp-legarmeih",
+    "r": "בְּהַצּוֹת֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps60:8",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps60:9",
+    "fp": "lp-legarmeih",
+    "r": "גִלְעָ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps60:10",
+    "fp": "lp-legarmeih",
+    "r": "מוֹאָ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps61:3",
+    "fp": "lp-legarmeih",
+    "r": "הָאָ֨רֶץ׀"
+  },
+  {
+    "bcv_short": "Ps62:4",
+    "fp": "lp-legarmeih",
+    "r": "עַד־אָ֤נָה׀"
+  },
+  {
+    "bcv_short": "Ps62:5",
+    "fp": "lp-legarmeih",
+    "r": "מִשְּׂאֵת֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps62:9",
+    "fp": "lp-legarmeih",
+    "r": "בְכׇל־עֵ֨ת׀"
+  },
+  {
+    "bcv_short": "Ps62:10",
+    "fp": "lp-legarmeih",
+    "r": "אַ֤ךְ׀"
+  },
+  {
+    "bcv_short": "Ps62:11",
+    "fp": "lp-legarmeih",
+    "r": "חַ֤יִל׀"
+  },
+  {
+    "bcv_short": "Ps62:12",
+    "fp": "lp-legarmeih",
+    "r": "אַחַ֤ת׀"
+  },
+  {
+    "bcv_short": "Ps63:2",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps63:2",
+    "fp": "lp-legarmeih",
+    "r": "לְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps64:6",
+    "fp": "lp-legarmeih",
+    "r": "יְחַזְּקוּ־לָ֨מוֹ׀"
+  },
+  {
+    "bcv_short": "Ps65:5",
+    "fp": "lp-legarmeih",
+    "r": "אַשְׁרֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps65:6",
+    "fp": "lp-legarmeih",
+    "r": "נ֤וֹרָא֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps65:8",
+    "fp": "lp-legarmeih",
+    "r": "מַשְׁבִּ֤יחַ׀"
+  },
+  {
+    "bcv_short": "Ps65:9",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּ֤ירְא֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps65:14",
+    "fp": "lp-legarmeih",
+    "r": "כָרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps66:4",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־הָאָ֤רֶץ׀"
+  },
+  {
+    "bcv_short": "Ps66:6",
+    "fp": "lp-legarmeih",
+    "r": "יָ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps66:7",
+    "fp": "lp-legarmeih",
+    "r": "בִּגְבוּרָת֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps66:7",
+    "fp": "lp-legarmeih",
+    "r": "הַסּוֹרְﬞרִ֓ים׀"
+  },
+  {
+    "bcv_short": "Ps67:5",
+    "fp": "lp-legarmeih",
+    "r": "וּלְאֻמִּ֓ים׀"
+  },
+  {
+    "bcv_short": "Ps68:5",
+    "fp": "lp-legarmeih",
+    "r": "שִׁ֤ירוּ׀"
+  },
+  {
+    "bcv_short": "Ps68:7",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps68:7",
+    "fp": "lp-legarmeih",
+    "r": "יְחִידִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps68:9",
+    "fp": "lp-legarmeih",
+    "r": "רָעָ֨שָׁה׀"
+  },
+  {
+    "bcv_short": "Ps68:17",
+    "fp": "lp-legarmeih",
+    "r": "לָ֤מָּה׀"
+  },
+  {
+    "bcv_short": "Ps68:19",
+    "fp": "lp-legarmeih",
+    "r": "לַמָּר֨וֹם׀"
+  },
+  {
+    "bcv_short": "Ps68:24",
+    "fp": "lp-legarmeih",
+    "r": "לְמַ֤עַן׀"
+  },
+  {
+    "bcv_short": "Ps68:28",
+    "fp": "lp-legarmeih",
+    "r": "בִּנְיָמִ֨ן׀"
+  },
+  {
+    "bcv_short": "Ps68:31",
+    "fp": "lp-legarmeih",
+    "r": "אַבִּירִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps69:3",
+    "fp": "lp-legarmeih",
+    "r": "טָבַ֤עְתִּי׀"
+  },
+  {
+    "bcv_short": "Ps69:5",
+    "fp": "lp-legarmeih",
+    "r": "רַבּ֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps69:7",
+    "fp": "lp-legarmeih",
+    "r": "בִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps69:14",
+    "fp": "lp-legarmeih",
+    "r": "תְפִלָּֽתִי־לְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps69:16",
+    "fp": "lp-legarmeih",
+    "r": "אַל־תִּשְׁטְפֵ֤נִי׀"
+  },
+  {
+    "bcv_short": "Ps69:21",
+    "fp": "lp-legarmeih",
+    "r": "חֶרְפָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps69:36",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps70:5",
+    "fp": "lp-legarmeih",
+    "r": "וְיִשְׂמְח֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps70:6",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps71:3",
+    "fp": "lp-legarmeih",
+    "r": "לִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps71:6",
+    "fp": "lp-legarmeih",
+    "r": "עָלֶ֤יךָ׀"
+  },
+  {
+    "bcv_short": "Ps71:15",
+    "fp": "lp-legarmeih",
+    "r": "פִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps71:18",
+    "fp": "lp-legarmeih",
+    "r": "עַד־זִקְנָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps71:20",
+    "fp": "lp-legarmeih",
+    "r": "הִרְאִיתַ֨נִי׀"
+  },
+  {
+    "bcv_short": "Ps71:21",
+    "fp": "lp-legarmeih",
+    "r": "תֶּ֤רֶב׀"
+  },
+  {
+    "bcv_short": "Ps71:22",
+    "fp": "lp-legarmeih",
+    "r": "גַּם־אֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps72:1",
+    "fp": "lp-legarmeih",
+    "r": "לִשְׁלֹמֹ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps72:4",
+    "fp": "lp-legarmeih",
+    "r": "יִשְׁפֹּ֤ט׀"
+  },
+  {
+    "bcv_short": "Ps72:16",
+    "fp": "lp-legarmeih",
+    "r": "פִסַּת־בַּ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps72:17",
+    "fp": "lp-legarmeih",
+    "r": "שְׁמ֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps72:18",
+    "fp": "lp-legarmeih",
+    "r": "בָּר֤וּךְ׀"
+  },
+  {
+    "bcv_short": "Ps72:19",
+    "fp": "lp-legarmeih",
+    "r": "וּבָר֤וּךְ׀"
+  },
+  {
+    "bcv_short": "Ps73:8",
+    "fp": "lp-legarmeih",
+    "r": "יָמִ֤יקוּ׀"
+  },
+  {
+    "bcv_short": "Ps73:10",
+    "fp": "lp-legarmeih",
+    "r": "לָכֵ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps73:20",
+    "fp": "lp-legarmeih",
+    "r": "בָּעִ֤יר׀"
+  },
+  {
+    "bcv_short": "Ps73:28",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps73:28",
+    "fp": "lp-legarmeih",
+    "r": "שַׁתִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps74:2",
+    "fp": "lp-legarmeih",
+    "r": "עֲדָתְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps74:2",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps75:2",
+    "fp": "lp-legarmeih",
+    "r": "לְּךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps75:9",
+    "fp": "lp-legarmeih",
+    "r": "חָמַ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps76:6",
+    "fp": "lp-legarmeih",
+    "r": "אֶשְׁתּֽוֹלְﬞל֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps76:8",
+    "fp": "lp-legarmeih",
+    "r": "אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps77:3",
+    "fp": "lp-legarmeih",
+    "r": "יָדִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps77:4",
+    "fp": "lp-legarmeih",
+    "r": "אָשִׂ֓יחָה׀"
+  },
+  {
+    "bcv_short": "Ps77:17",
+    "fp": "lp-legarmeih",
+    "r": "מַּ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps77:18",
+    "fp": "lp-legarmeih",
+    "r": "מַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps77:19",
+    "fp": "lp-legarmeih",
+    "r": "רַעַמְךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps78:4",
+    "fp": "lp-legarmeih",
+    "r": "נְכַחֵ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps78:5",
+    "fp": "lp-legarmeih",
+    "r": "עֵד֨וּת׀"
+  },
+  {
+    "bcv_short": "Ps78:6",
+    "fp": "lp-legarmeih",
+    "r": "יֵדְע֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps78:8",
+    "fp": "lp-legarmeih",
+    "r": "יִהְי֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps78:20",
+    "fp": "lp-legarmeih",
+    "r": "הִכָּה־צ֨וּר׀"
+  },
+  {
+    "bcv_short": "Ps78:21",
+    "fp": "lp-legarmeih",
+    "r": "לָכֵ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps78:31",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps78:38",
+    "fp": "lp-legarmeih",
+    "r": "רַח֨וּם׀"
+  },
+  {
+    "bcv_short": "Ps78:49",
+    "fp": "lp-legarmeih",
+    "r": "יְשַׁלַּח־בָּ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps78:55",
+    "fp": "lp-legarmeih",
+    "r": "מִפְּנֵיהֶ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps79:1",
+    "fp": "lp-legarmeih",
+    "r": "גוֹיִ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps79:3",
+    "fp": "lp-legarmeih",
+    "r": "דָמָ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps79:9",
+    "fp": "lp-legarmeih",
+    "r": "עׇזְרֵ֤נוּ׀"
+  },
+  {
+    "bcv_short": "Ps79:10",
+    "fp": "lp-legarmeih",
+    "r": "לָ֤מָּה׀"
+  },
+  {
+    "bcv_short": "Ps79:13",
+    "fp": "lp-legarmeih",
+    "r": "עַמְּךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps80:2",
+    "fp": "lp-legarmeih",
+    "r": "יִשְׂרָאֵ֨ל׀"
+  },
+  {
+    "bcv_short": "Ps80:3",
+    "fp": "lp-legarmeih",
+    "r": "אֶפְרַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps81:6",
+    "fp": "lp-legarmeih",
+    "r": "עֵד֤וּת׀"
+  },
+  {
+    "bcv_short": "Ps81:11",
+    "fp": "lp-legarmeih",
+    "r": "אָֽנֹכִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps82:5",
+    "fp": "lp-legarmeih",
+    "r": "יָדְע֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps84:3",
+    "fp": "lp-legarmeih",
+    "r": "וְגַם־כָּלְתָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps84:4",
+    "fp": "lp-legarmeih",
+    "r": "וּדְר֤וֹר׀"
+  },
+  {
+    "bcv_short": "Ps84:7",
+    "fp": "lp-legarmeih",
+    "r": "עֹבְרֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps84:12",
+    "fp": "lp-legarmeih",
+    "r": "שֶׁ֨מֶשׁ׀"
+  },
+  {
+    "bcv_short": "Ps85:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps86:9",
+    "fp": "lp-legarmeih",
+    "r": "כׇּל־גּוֹיִ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps86:9",
+    "fp": "lp-legarmeih",
+    "r": "יָב֤וֹאוּ׀"
+  },
+  {
+    "bcv_short": "Ps86:11",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps86:12",
+    "fp": "lp-legarmeih",
+    "r": "אוֹדְךָ֤׀"
+  },
+  {
+    "bcv_short": "Ps86:14",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps87:4",
+    "fp": "lp-legarmeih",
+    "r": "אַזְכִּ֤יר׀"
+  },
+  {
+    "bcv_short": "Ps87:5",
+    "fp": "lp-legarmeih",
+    "r": "וּ֥לְﬞצִיּ֨וֹן׀"
+  },
+  {
+    "bcv_short": "Ps88:6",
+    "fp": "lp-legarmeih",
+    "r": "חֲלָלִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps88:11",
+    "fp": "lp-legarmeih",
+    "r": "יָק֤וּמוּ׀"
+  },
+  {
+    "bcv_short": "Ps88:14",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps89:2",
+    "fp": "lp-legarmeih",
+    "r": "וָדֹ֓ר׀"
+  },
+  {
+    "bcv_short": "Ps89:3",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֓יִם׀"
+  },
+  {
+    "bcv_short": "Ps89:9",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps89:50",
+    "fp": "lp-legarmeih",
+    "r": "אַיֵּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps90:2",
+    "fp": "lp-legarmeih",
+    "r": "בְּטֶ֤רֶם׀"
+  },
+  {
+    "bcv_short": "Ps90:10",
+    "fp": "lp-legarmeih",
+    "r": "בִּגְבוּרֹ֨ת׀"
+  },
+  {
+    "bcv_short": "Ps90:17",
+    "fp": "lp-legarmeih",
+    "r": "וִיהִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps91:4",
+    "fp": "lp-legarmeih",
+    "r": "בְּאֶבְרָת֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps91:7",
+    "fp": "lp-legarmeih",
+    "r": "מִצִּדְּךָ֨׀"
+  },
+  {
+    "bcv_short": "Ps91:15",
+    "fp": "lp-legarmeih",
+    "r": "יִקְרָאֵ֨נִי׀"
+  },
+  {
+    "bcv_short": "Ps92:8",
+    "fp": "lp-legarmeih",
+    "r": "רְשָׁעִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps93:3",
+    "fp": "lp-legarmeih",
+    "r": "נְהָר֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps93:4",
+    "fp": "lp-legarmeih",
+    "r": "מִקֹּל֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps93:5",
+    "fp": "lp-legarmeih",
+    "r": "עֵֽדֹתֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps94:12",
+    "fp": "lp-legarmeih",
+    "r": "אַשְׁרֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps94:14",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps94:17",
+    "fp": "lp-legarmeih",
+    "r": "כִּמְעַ֓ט׀"
+  },
+  {
+    "bcv_short": "Ps94:23",
+    "fp": "lp-legarmeih",
+    "r": "עֲלֵיהֶ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps95:10",
+    "fp": "lp-legarmeih",
+    "r": "שָׁנָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps96:5",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Ps96:10",
+    "fp": "lp-legarmeih",
+    "r": "בַגּוֹיִ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps96:13",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps97:7",
+    "fp": "lp-legarmeih",
+    "r": "יֵבֹ֤שׁוּ׀"
+  },
+  {
+    "bcv_short": "Ps97:8",
+    "fp": "lp-legarmeih",
+    "r": "וַתִּשְׂמַ֨ח׀"
+  },
+  {
+    "bcv_short": "Ps98:1",
+    "fp": "lp-legarmeih",
+    "r": "לַיהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps98:3",
+    "fp": "lp-legarmeih",
+    "r": "חַסְדּ֨וֹ׀"
+  },
+  {
+    "bcv_short": "Ps98:6",
+    "fp": "lp-legarmeih",
+    "r": "לִפְנֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps99:4",
+    "fp": "lp-legarmeih",
+    "r": "בְּיַעֲקֹ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps99:6",
+    "fp": "lp-legarmeih",
+    "r": "וְאַהֲרֹ֨ן׀"
+  },
+  {
+    "bcv_short": "Ps100:4",
+    "fp": "lp-legarmeih",
+    "r": "שְׁעָרָ֨יו׀"
+  },
+  {
+    "bcv_short": "Ps101:2",
+    "fp": "lp-legarmeih",
+    "r": "אַשְׂכִּ֤ילָה׀"
+  },
+  {
+    "bcv_short": "Ps101:3",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־אָשִׁ֨ית׀"
+  },
+  {
+    "bcv_short": "Ps101:5",
+    "fp": "lp-legarmeih",
+    "r": "בַסֵּ֨תֶר׀"
+  },
+  {
+    "bcv_short": "Ps101:6",
+    "fp": "lp-legarmeih",
+    "r": "עֵינַ֤י׀"
+  },
+  {
+    "bcv_short": "Ps101:7",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־יֵשֵׁ֨ב׀"
+  },
+  {
+    "bcv_short": "Ps102:3",
+    "fp": "lp-legarmeih",
+    "r": "פָּנֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps102:20",
+    "fp": "lp-legarmeih",
+    "r": "מִשָּׁמַ֤יִם׀"
+  },
+  {
+    "bcv_short": "Ps102:27",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֤מָּה׀"
+  },
+  {
+    "bcv_short": "Ps103:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps103:17",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps103:22",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps104:8",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps104:14",
+    "fp": "lp-legarmeih",
+    "r": "חָצִ֨יר׀"
+  },
+  {
+    "bcv_short": "Ps104:15",
+    "fp": "lp-legarmeih",
+    "r": "וְיַ֤יִן׀"
+  },
+  {
+    "bcv_short": "Ps104:24",
+    "fp": "lp-legarmeih",
+    "r": "מַעֲשֶׂ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps104:25",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps104:35",
+    "fp": "lp-legarmeih",
+    "r": "חַטָּאִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps104:35",
+    "fp": "lp-legarmeih",
+    "r": "וּרְשָׁעִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps105:3",
+    "fp": "lp-legarmeih",
+    "r": "לֵ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps105:45",
+    "fp": "lp-legarmeih",
+    "r": "בַּעֲב֤וּר׀"
+  },
+  {
+    "bcv_short": "Ps106:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps106:5",
+    "fp": "lp-legarmeih",
+    "r": "לִרְא֤וֹת׀"
+  },
+  {
+    "bcv_short": "Ps106:7",
+    "fp": "lp-legarmeih",
+    "r": "בְמִצְרַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps106:47",
+    "fp": "lp-legarmeih",
+    "r": "הֽוֹשִׁיעֵ֨נוּ׀"
+  },
+  {
+    "bcv_short": "Ps106:48",
+    "fp": "lp-legarmeih",
+    "r": "מִן־הָ֤עוֹלָ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps108:8",
+    "fp": "lp-legarmeih",
+    "r": "אֱלֹהִ֤ים׀"
+  },
+  {
+    "bcv_short": "Ps108:9",
+    "fp": "lp-legarmeih",
+    "r": "גִלְעָ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps108:10",
+    "fp": "lp-legarmeih",
+    "r": "מוֹאָ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps109:14",
+    "fp": "lp-legarmeih",
+    "r": "יִזָּכֵ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps109:16",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps109:21",
+    "fp": "lp-legarmeih",
+    "r": "וְאַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps109:25",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps109:28",
+    "fp": "lp-legarmeih",
+    "r": "קָ֤מוּ׀"
+  },
+  {
+    "bcv_short": "Ps110:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps110:4",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps111:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps111:9",
+    "fp": "lp-legarmeih",
+    "r": "פְּד֤וּת׀"
+  },
+  {
+    "bcv_short": "Ps111:10",
+    "fp": "lp-legarmeih",
+    "r": "חׇכְמָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps112:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps112:9",
+    "fp": "lp-legarmeih",
+    "r": "פִּזַּ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps112:10",
+    "fp": "lp-legarmeih",
+    "r": "יִרְאֶ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps113:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps113:9",
+    "fp": "lp-legarmeih",
+    "r": "מֽוֹשִׁיבִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps115:7",
+    "fp": "lp-legarmeih",
+    "r": "יְדֵיהֶ֤ם׀"
+  },
+  {
+    "bcv_short": "Ps115:18",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנַ֤חְנוּ׀"
+  },
+  {
+    "bcv_short": "Ps116:3",
+    "fp": "lp-legarmeih",
+    "r": "אֲפָפ֤וּנִי׀"
+  },
+  {
+    "bcv_short": "Ps116:19",
+    "fp": "lp-legarmeih",
+    "r": "בְּחַצְר֤וֹת׀"
+  },
+  {
+    "bcv_short": "Ps117:2",
+    "fp": "lp-legarmeih",
+    "r": "עָלֵ֨ינוּ׀"
+  },
+  {
+    "bcv_short": "Ps118:15",
+    "fp": "lp-legarmeih",
+    "r": "ק֤וֹל׀"
+  },
+  {
+    "bcv_short": "Ps118:27",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֤ל׀"
+  },
+  {
+    "bcv_short": "Ps119:69",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇל־לֵ֤ב׀"
+  },
+  {
+    "bcv_short": "Ps119:104",
+    "fp": "lp-legarmeih",
+    "r": "שָׂנֵ֤אתִי׀"
+  },
+  {
+    "bcv_short": "Ps119:128",
+    "fp": "lp-legarmeih",
+    "r": "עַל־כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Ps122:5",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֨מָּה׀"
+  },
+  {
+    "bcv_short": "Ps126:6",
+    "fp": "lp-legarmeih",
+    "r": "יֵלֵ֨ךְ׀"
+  },
+  {
+    "bcv_short": "Ps127:1",
+    "fp": "lp-legarmeih",
+    "r": "אִם־יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps127:1",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֤וְא׀"
+  },
+  {
+    "bcv_short": "Ps128:3",
+    "fp": "lp-legarmeih",
+    "r": "אֶשְׁתְּךָ֤׀"
+  },
+  {
+    "bcv_short": "Ps129:8",
+    "fp": "lp-legarmeih",
+    "r": "אָמְר֨וּ׀"
+  },
+  {
+    "bcv_short": "Ps131:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps131:1",
+    "fp": "lp-legarmeih",
+    "r": "וְלֹֽא־הִלַּ֓כְתִּי׀"
+  },
+  {
+    "bcv_short": "Ps131:2",
+    "fp": "lp-legarmeih",
+    "r": "שִׁוִּ֨יתִי׀"
+  },
+  {
+    "bcv_short": "Ps132:11",
+    "fp": "lp-legarmeih",
+    "r": "נִשְׁבַּֽע־יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps132:12",
+    "fp": "lp-legarmeih",
+    "r": "בָנֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps133:2",
+    "fp": "lp-legarmeih",
+    "r": "הַטּ֨וֹב׀"
+  },
+  {
+    "bcv_short": "Ps133:3",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps134:1",
+    "fp": "lp-legarmeih",
+    "r": "הִנֵּ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps135:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps135:9",
+    "fp": "lp-legarmeih",
+    "r": "שָׁלַ֤ח׀"
+  },
+  {
+    "bcv_short": "Ps135:11",
+    "fp": "lp-legarmeih",
+    "r": "לְסִיח֤וֹן׀"
+  },
+  {
+    "bcv_short": "Ps135:21",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps137:1",
+    "fp": "lp-legarmeih",
+    "r": "עַ֥ל־נַהֲר֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps137:6",
+    "fp": "lp-legarmeih",
+    "r": "תִּדְבַּֽק־לְשׁוֹנִ֨י׀"
+  },
+  {
+    "bcv_short": "Ps137:7",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps137:9",
+    "fp": "lp-legarmeih",
+    "r": "אַשְׁרֵ֤י׀"
+  },
+  {
+    "bcv_short": "Ps138:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps138:7",
+    "fp": "lp-legarmeih",
+    "r": "אִם־אֵלֵ֤ךְ׀"
+  },
+  {
+    "bcv_short": "Ps139:16",
+    "fp": "lp-legarmeih",
+    "r": "גׇּלְמִ֤י׀"
+  },
+  {
+    "bcv_short": "Ps140:5",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps140:6",
+    "fp": "lp-legarmeih",
+    "r": "טָ֥מְנֽוּ־גֵאִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps141:4",
+    "fp": "lp-legarmeih",
+    "r": "עֲלִל֨וֹת׀"
+  },
+  {
+    "bcv_short": "Ps141:5",
+    "fp": "lp-legarmeih",
+    "r": "יֶ֥הֶלְמֵֽנִי־צַדִּ֨יק׀"
+  },
+  {
+    "bcv_short": "Ps141:8",
+    "fp": "lp-legarmeih",
+    "r": "אֵלֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Ps142:4",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Ps142:5",
+    "fp": "lp-legarmeih",
+    "r": "יָמִ֨ין׀"
+  },
+  {
+    "bcv_short": "Ps142:7",
+    "fp": "lp-legarmeih",
+    "r": "הַקְשִׁ֤יבָה׀"
+  },
+  {
+    "bcv_short": "Ps142:8",
+    "fp": "lp-legarmeih",
+    "r": "מִמַּסְגֵּ֨ר׀"
+  },
+  {
+    "bcv_short": "Ps143:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps143:3",
+    "fp": "lp-legarmeih",
+    "r": "אוֹיֵ֨ב׀"
+  },
+  {
+    "bcv_short": "Ps143:5",
+    "fp": "lp-legarmeih",
+    "r": "יָמִ֨ים׀"
+  },
+  {
+    "bcv_short": "Ps143:6",
+    "fp": "lp-legarmeih",
+    "r": "נַפְשִׁ֓י׀"
+  },
+  {
+    "bcv_short": "Ps143:7",
+    "fp": "lp-legarmeih",
+    "r": "עֲנֵ֨נִי׀"
+  },
+  {
+    "bcv_short": "Ps143:8",
+    "fp": "lp-legarmeih",
+    "r": "בַבֹּ֨קֶר׀"
+  },
+  {
+    "bcv_short": "Ps143:10",
+    "fp": "lp-legarmeih",
+    "r": "לַמְּדֵ֤נִי׀"
+  },
+  {
+    "bcv_short": "Ps143:11",
+    "fp": "lp-legarmeih",
+    "r": "בְּצִדְקָתְךָ֓׀"
+  },
+  {
+    "bcv_short": "Ps144:1",
+    "fp": "lp-legarmeih",
+    "r": "לְדָוִ֨ד׀"
+  },
+  {
+    "bcv_short": "Ps144:1",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps144:12",
+    "fp": "lp-legarmeih",
+    "r": "בָּנֵ֨ינוּ׀"
+  },
+  {
+    "bcv_short": "Ps145:12",
+    "fp": "lp-legarmeih",
+    "r": "לְהוֹדִ֤יעַ׀"
+  },
+  {
+    "bcv_short": "Ps146:3",
+    "fp": "lp-legarmeih",
+    "r": "בְּבֶן־אָדָ֓ם׀"
+  },
+  {
+    "bcv_short": "Ps146:6",
+    "fp": "lp-legarmeih",
+    "r": "עֹשֶׂ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps146:7",
+    "fp": "lp-legarmeih",
+    "r": "מִשְׁפָּ֨ט׀"
+  },
+  {
+    "bcv_short": "Ps146:8",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps146:9",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps146:10",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֨ה׀"
+  },
+  {
+    "bcv_short": "Ps147:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps147:8",
+    "fp": "lp-legarmeih",
+    "r": "שָׁמַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Ps147:20",
+    "fp": "lp-legarmeih",
+    "r": "כֵ֨ן׀"
+  },
+  {
+    "bcv_short": "Ps148:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps148:4",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֤ר׀"
+  },
+  {
+    "bcv_short": "Ps148:13",
+    "fp": "lp-legarmeih",
+    "r": "יְהַלְﬞל֤וּ׀"
+  },
+  {
+    "bcv_short": "Ps148:14",
+    "fp": "lp-legarmeih",
+    "r": "קֶ֨רֶן׀"
+  },
+  {
+    "bcv_short": "Ps149:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Ps149:9",
+    "fp": "lp-legarmeih",
+    "r": "בָּהֶ֨ם׀"
+  },
+  {
+    "bcv_short": "Ps150:1",
+    "fp": "lp-legarmeih",
+    "r": "הַ֥לְﬞלוּ־יָ֨הּ׀"
+  },
+  {
+    "bcv_short": "Pr1:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Pr1:27",
+    "fp": "lp-legarmeih",
+    "r": "כְשׁוֹאָ֨ה׀"
+  },
+  {
+    "bcv_short": "Pr3:28",
+    "fp": "lp-legarmeih",
+    "r": "לְרֵעֲךָ֨׀"
+  },
+  {
+    "bcv_short": "Pr5:21",
+    "fp": "lp-legarmeih",
+    "r": "נֹ֨כַח׀"
+  },
+  {
+    "bcv_short": "Pr6:10",
+    "fp": "lp-legarmeih",
+    "r": "מְעַ֓ט׀"
+  },
+  {
+    "bcv_short": "Pr6:14",
+    "fp": "lp-legarmeih",
+    "r": "תַּ֥הְפֻּכ֨וֹת׀"
+  },
+  {
+    "bcv_short": "Pr6:22",
+    "fp": "lp-legarmeih",
+    "r": "בְּהִתְהַלֶּכְךָ֨׀"
+  },
+  {
+    "bcv_short": "Pr7:12",
+    "fp": "lp-legarmeih",
+    "r": "פַּ֤עַם׀"
+  },
+  {
+    "bcv_short": "Pr8:13",
+    "fp": "lp-legarmeih",
+    "r": "וְגָא֨וֹן׀"
+  },
+  {
+    "bcv_short": "Pr8:29",
+    "fp": "lp-legarmeih",
+    "r": "לַיָּ֨ם׀"
+  },
+  {
+    "bcv_short": "Pr9:7",
+    "fp": "lp-legarmeih",
+    "r": "יֹ֤סֵ֨ר׀"
+  },
+  {
+    "bcv_short": "Pr10:26",
+    "fp": "lp-legarmeih",
+    "r": "כַּחֹ֤מֶץ׀"
+  },
+  {
+    "bcv_short": "Pr16:10",
+    "fp": "lp-legarmeih",
+    "r": "קֶ֤סֶם׀"
+  },
+  {
+    "bcv_short": "Pr16:11",
+    "fp": "lp-legarmeih",
+    "r": "פֶּ֤לֶס׀"
+  },
+  {
+    "bcv_short": "Pr19:7",
+    "fp": "lp-legarmeih",
+    "r": "כׇּ֥ל־אֲחֵי־רָ֨שׁ׀"
+  },
+  {
+    "bcv_short": "Pr19:10",
+    "fp": "lp-legarmeih",
+    "r": "כִּֽי־לְעֶ֤בֶד׀"
+  },
+  {
+    "bcv_short": "Pr21:20",
+    "fp": "lp-legarmeih",
+    "r": "אוֹצָ֤ר׀"
+  },
+  {
+    "bcv_short": "Pr21:29",
+    "fp": "lp-legarmeih",
+    "r": "ה֤וּא׀"
+  },
+  {
+    "bcv_short": "Pr22:3",
+    "fp": "lp-legarmeih",
+    "r": "עָר֤וּם׀"
+  },
+  {
+    "bcv_short": "Pr22:29",
+    "fp": "lp-legarmeih",
+    "r": "אִ֤ישׁ׀"
+  },
+  {
+    "bcv_short": "Pr23:7",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Pr23:29",
+    "fp": "lp-legarmeih",
+    "r": "מִדְיָנִ֨ים׀"
+  },
+  {
+    "bcv_short": "Pr24:12",
+    "fp": "lp-legarmeih",
+    "r": "לִבּ֨וֹת׀"
+  },
+  {
+    "bcv_short": "Pr24:14",
+    "fp": "lp-legarmeih",
+    "r": "כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Pr24:16",
+    "fp": "lp-legarmeih",
+    "r": "שֶׁ֨בַע׀"
+  },
+  {
+    "bcv_short": "Pr24:20",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Pr24:24",
+    "fp": "lp-legarmeih",
+    "r": "אֹ֤מֵ֨ר׀"
+  },
+  {
+    "bcv_short": "Pr24:27",
+    "fp": "lp-legarmeih",
+    "r": "בַּח֨וּץ׀"
+  },
+  {
+    "bcv_short": "Pr24:31",
+    "fp": "lp-legarmeih",
+    "r": "כֻלּ֨וֹ׀"
+  },
+  {
+    "bcv_short": "Pr24:33",
+    "fp": "lp-legarmeih",
+    "r": "מְעַ֓ט׀"
+  },
+  {
+    "bcv_short": "Pr25:1",
+    "fp": "lp-legarmeih",
+    "r": "אַנְשֵׁ֤י׀"
+  },
+  {
+    "bcv_short": "Pr25:13",
+    "fp": "lp-legarmeih",
+    "r": "כְּצִנַּת־שֶׁ֨לֶג׀"
+  },
+  {
+    "bcv_short": "Pr25:20",
+    "fp": "lp-legarmeih",
+    "r": "מַ֥עֲדֶה־בֶּ֨גֶד׀"
+  },
+  {
+    "bcv_short": "Pr26:1",
+    "fp": "lp-legarmeih",
+    "r": "כַּשֶּׁ֤לֶג׀"
+  },
+  {
+    "bcv_short": "Pr27:12",
+    "fp": "lp-legarmeih",
+    "r": "עָר֤וּם׀"
+  },
+  {
+    "bcv_short": "Pr27:14",
+    "fp": "lp-legarmeih",
+    "r": "רֵעֵ֨הוּ׀"
+  },
+  {
+    "bcv_short": "Pr27:22",
+    "fp": "lp-legarmeih",
+    "r": "אִ֥ם־תִּכְתּֽוֹשׁ־אֶת־הָאֱוִ֨יל׀"
+  },
+  {
+    "bcv_short": "Pr27:27",
+    "fp": "lp-legarmeih",
+    "r": "וְדֵ֤י׀"
+  },
+  {
+    "bcv_short": "Pr28:10",
+    "fp": "lp-legarmeih",
+    "r": "יְשָׁרִ֨ים׀"
+  },
+  {
+    "bcv_short": "Pr28:24",
+    "fp": "lp-legarmeih",
+    "r": "גּוֹזֵ֤ל׀"
+  },
+  {
+    "bcv_short": "Pr30:1",
+    "fp": "lp-legarmeih",
+    "r": "דִּבְרֵ֤י׀"
+  },
+  {
+    "bcv_short": "Pr30:4",
+    "fp": "lp-legarmeih",
+    "r": "עָלָֽה־שָׁמַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Pr30:4",
+    "fp": "lp-legarmeih",
+    "r": "אָֽסַף־ר֨וּחַ׀"
+  },
+  {
+    "bcv_short": "Pr30:4",
+    "fp": "lp-legarmeih",
+    "r": "צָֽרַר־מַ֨יִם׀"
+  },
+  {
+    "bcv_short": "Pr30:8",
+    "fp": "lp-legarmeih",
+    "r": "שָׁ֤וְא׀"
+  },
+  {
+    "bcv_short": "Pr30:9",
+    "fp": "lp-legarmeih",
+    "r": "פֶּ֥ן־אֶשְׂבַּ֨ע׀"
+  },
+  {
+    "bcv_short": "Pr30:14",
+    "fp": "lp-legarmeih",
+    "r": "דּ֤וֹר׀"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "fp": "lp-legarmeih",
+    "r": "לַ֥עֲלוּקָ֨ה׀"
+  },
+  {
+    "bcv_short": "Pr30:17",
+    "fp": "lp-legarmeih",
+    "r": "עַ֤יִן׀"
+  },
+  {
+    "bcv_short": "Pr30:19",
+    "fp": "lp-legarmeih",
+    "r": "הַנֶּ֨שֶׁר׀"
+  },
+  {
+    "bcv_short": "Pr30:20",
+    "fp": "lp-legarmeih",
+    "r": "כֵּ֤ן׀"
+  },
+  {
+    "bcv_short": "Pr31:4",
+    "fp": "lp-legarmeih",
+    "r": "לַֽמְלָכִ֨ים׀"
+  },
+  {
+    "bcv_short": "Pr31:15",
+    "fp": "lp-legarmeih",
+    "r": "וַתָּ֤קׇם׀"
+  },
+  {
+    "bcv_short": "Jb1:1",
+    "fp": "lp-legarmeih",
+    "r": "וְהָיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Jb1:16",
+    "fp": "lp-legarmeih",
+    "r": "ע֣וֹד׀"
+  },
+  {
+    "bcv_short": "Jb1:17",
+    "fp": "lp-legarmeih",
+    "r": "ע֣וֹד׀"
+  },
+  {
+    "bcv_short": "Jb1:17",
+    "fp": "lp-legarmeih",
+    "r": "שָׂ֣מוּ׀"
+  },
+  {
+    "bcv_short": "Jb1:19",
+    "fp": "lp-legarmeih",
+    "r": "בָּ֣אָה׀"
+  },
+  {
+    "bcv_short": "Jb2:11",
+    "fp": "lp-legarmeih",
+    "r": "שְׁלֹ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "Jb3:13",
+    "fp": "lp-legarmeih",
+    "r": "אָ֤ז׀"
+  },
+  {
+    "bcv_short": "Jb3:26",
+    "fp": "lp-legarmeih",
+    "r": "שָׁלַ֨וְתִּי׀"
+  },
+  {
+    "bcv_short": "Jb4:5",
+    "fp": "lp-legarmeih",
+    "r": "עַתָּ֨ה׀"
+  },
+  {
+    "bcv_short": "Jb4:16",
+    "fp": "lp-legarmeih",
+    "r": "יַעֲמֹ֤ד׀"
+  },
+  {
+    "bcv_short": "Jb4:19",
+    "fp": "lp-legarmeih",
+    "r": "אַ֤ף׀"
+  },
+  {
+    "bcv_short": "Jb5:5",
+    "fp": "lp-legarmeih",
+    "r": "קְצִיר֨וֹ׀"
+  },
+  {
+    "bcv_short": "Jb5:6",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Jb5:19",
+    "fp": "lp-legarmeih",
+    "r": "וּבְשֶׁ֓בַע׀"
+  },
+  {
+    "bcv_short": "Jb6:10",
+    "fp": "lp-legarmeih",
+    "r": "וּ֥תְהִי־ע֨וֹד׀"
+  },
+  {
+    "bcv_short": "Jb7:20",
+    "fp": "lp-legarmeih",
+    "r": "אֶפְעַ֨ל׀"
+  },
+  {
+    "bcv_short": "Jb7:21",
+    "fp": "lp-legarmeih",
+    "r": "וּמֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb9:24",
+    "fp": "lp-legarmeih",
+    "r": "אֶ֤רֶץ׀"
+  },
+  {
+    "bcv_short": "Jb10:3",
+    "fp": "lp-legarmeih",
+    "r": "לְךָ֨׀"
+  },
+  {
+    "bcv_short": "Jb10:17",
+    "fp": "lp-legarmeih",
+    "r": "עֵדֶ֨יךָ׀"
+  },
+  {
+    "bcv_short": "Jb10:22",
+    "fp": "lp-legarmeih",
+    "r": "עֵפָ֨תָה׀"
+  },
+  {
+    "bcv_short": "Jb11:6",
+    "fp": "lp-legarmeih",
+    "r": "וְיַגֶּד־לְךָ֨׀"
+  },
+  {
+    "bcv_short": "Jb11:15",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־אָ֤ז׀"
+  },
+  {
+    "bcv_short": "Jb12:3",
+    "fp": "lp-legarmeih",
+    "r": "לֵבָ֨ב׀"
+  },
+  {
+    "bcv_short": "Jb12:4",
+    "fp": "lp-legarmeih",
+    "r": "לְרֵעֵ֨הוּ׀"
+  },
+  {
+    "bcv_short": "Jb12:6",
+    "fp": "lp-legarmeih",
+    "r": "אֹהָלִ֨ים׀"
+  },
+  {
+    "bcv_short": "Jb13:14",
+    "fp": "lp-legarmeih",
+    "r": "עַל־מָ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb13:27",
+    "fp": "lp-legarmeih",
+    "r": "בַּסַּ֨ד׀"
+  },
+  {
+    "bcv_short": "Jb14:5",
+    "fp": "lp-legarmeih",
+    "r": "אִ֥ם־חֲרוּצִ֨ים׀"
+  },
+  {
+    "bcv_short": "Jb14:13",
+    "fp": "lp-legarmeih",
+    "r": "יִתֵּ֨ן׀"
+  },
+  {
+    "bcv_short": "Jb14:19",
+    "fp": "lp-legarmeih",
+    "r": "אֲבָנִ֤ים׀"
+  },
+  {
+    "bcv_short": "Jb15:23",
+    "fp": "lp-legarmeih",
+    "r": "יָדַ֓ע׀"
+  },
+  {
+    "bcv_short": "Jb15:24",
+    "fp": "lp-legarmeih",
+    "r": "כְּמֶ֤לֶךְ׀"
+  },
+  {
+    "bcv_short": "Jb15:28",
+    "fp": "lp-legarmeih",
+    "r": "וַיִּשְׁכּ֤וֹן׀"
+  },
+  {
+    "bcv_short": "Jb15:30",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־יָס֨וּר׀"
+  },
+  {
+    "bcv_short": "Jb16:4",
+    "fp": "lp-legarmeih",
+    "r": "גַּ֤ם׀"
+  },
+  {
+    "bcv_short": "Jb16:9",
+    "fp": "lp-legarmeih",
+    "r": "טָרַ֨ף׀"
+  },
+  {
+    "bcv_short": "Jb16:9",
+    "fp": "lp-legarmeih",
+    "r": "צָרִ֓י׀"
+  },
+  {
+    "bcv_short": "Jb16:10",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Jb16:12",
+    "fp": "lp-legarmeih",
+    "r": "הָיִ֨יתִי׀"
+  },
+  {
+    "bcv_short": "Jb16:13",
+    "fp": "lp-legarmeih",
+    "r": "עָלַ֨י׀"
+  },
+  {
+    "bcv_short": "Jb18:2",
+    "fp": "lp-legarmeih",
+    "r": "עַד־אָ֤נָה׀"
+  },
+  {
+    "bcv_short": "Jb19:12",
+    "fp": "lp-legarmeih",
+    "r": "יַ֤חַד׀"
+  },
+  {
+    "bcv_short": "Jb19:27",
+    "fp": "lp-legarmeih",
+    "r": "אֲנִ֨י׀"
+  },
+  {
+    "bcv_short": "Jb19:29",
+    "fp": "lp-legarmeih",
+    "r": "לָכֶ֨ם׀"
+  },
+  {
+    "bcv_short": "Jb20:20",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֤י׀"
+  },
+  {
+    "bcv_short": "Jb20:23",
+    "fp": "lp-legarmeih",
+    "r": "יְהִ֤י׀"
+  },
+  {
+    "bcv_short": "Jb20:29",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb21:17",
+    "fp": "lp-legarmeih",
+    "r": "כַּמָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb21:28",
+    "fp": "lp-legarmeih",
+    "r": "אֹ֤הֶל׀"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "fp": "lp-legarmeih",
+    "r": "פְּרָאִ֨ים׀"
+  },
+  {
+    "bcv_short": "Jb24:12",
+    "fp": "lp-legarmeih",
+    "r": "מְתִ֨ים׀"
+  },
+  {
+    "bcv_short": "Jb24:13",
+    "fp": "lp-legarmeih",
+    "r": "הֵ֤מָּה׀"
+  },
+  {
+    "bcv_short": "Jb24:15",
+    "fp": "lp-legarmeih",
+    "r": "נֹאֵ֨ף׀"
+  },
+  {
+    "bcv_short": "Jb24:17",
+    "fp": "lp-legarmeih",
+    "r": "יַחְדָּ֨ו׀"
+  },
+  {
+    "bcv_short": "Jb24:18",
+    "fp": "lp-legarmeih",
+    "r": "קַל־ה֤וּא׀"
+  },
+  {
+    "bcv_short": "Jb24:20",
+    "fp": "lp-legarmeih",
+    "r": "רֶ֨חֶם׀"
+  },
+  {
+    "bcv_short": "Jb24:24",
+    "fp": "lp-legarmeih",
+    "r": "מְּעַ֨ט׀"
+  },
+  {
+    "bcv_short": "Jb26:14",
+    "fp": "lp-legarmeih",
+    "r": "הֶן־אֵ֤לֶּה׀"
+  },
+  {
+    "bcv_short": "Jb27:13",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb28:3",
+    "fp": "lp-legarmeih",
+    "r": "קֵ֤ץ׀"
+  },
+  {
+    "bcv_short": "Jb28:4",
+    "fp": "lp-legarmeih",
+    "r": "נַ֨חַל׀"
+  },
+  {
+    "bcv_short": "Jb28:28",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֤אמֶר׀"
+  },
+  {
+    "bcv_short": "Jb30:1",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb31:34",
+    "fp": "lp-legarmeih",
+    "r": "אֶעֱר֨וֹץ׀"
+  },
+  {
+    "bcv_short": "Jb31:35",
+    "fp": "lp-legarmeih",
+    "r": "יִתֶּן־לִ֨י׀"
+  },
+  {
+    "bcv_short": "Jb31:40",
+    "fp": "lp-legarmeih",
+    "r": "חִטָּ֨ה׀"
+  },
+  {
+    "bcv_short": "Jb32:2",
+    "fp": "lp-legarmeih",
+    "r": "אַ֨ף׀"
+  },
+  {
+    "bcv_short": "Jb32:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּ֤עַן׀"
+  },
+  {
+    "bcv_short": "Jb32:6",
+    "fp": "lp-legarmeih",
+    "r": "וָאִירָ֓א׀"
+  },
+  {
+    "bcv_short": "Jb32:11",
+    "fp": "lp-legarmeih",
+    "r": "הוֹחַ֨לְתִּי׀"
+  },
+  {
+    "bcv_short": "Jb33:15",
+    "fp": "lp-legarmeih",
+    "r": "בַּחֲל֤וֹם׀"
+  },
+  {
+    "bcv_short": "Jb33:23",
+    "fp": "lp-legarmeih",
+    "r": "עָלָ֨יו׀"
+  },
+  {
+    "bcv_short": "Jb33:26",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־אֱל֨וֹהַּ׀"
+  },
+  {
+    "bcv_short": "Jb33:27",
+    "fp": "lp-legarmeih",
+    "r": "יָשֹׁ֤ר׀"
+  },
+  {
+    "bcv_short": "Jb34:10",
+    "fp": "lp-legarmeih",
+    "r": "לָכֵ֤ן׀"
+  },
+  {
+    "bcv_short": "Jb34:19",
+    "fp": "lp-legarmeih",
+    "r": "לֹֽא־נָשָׂ֨א׀"
+  },
+  {
+    "bcv_short": "Jb34:20",
+    "fp": "lp-legarmeih",
+    "r": "רֶ֤גַע׀"
+  },
+  {
+    "bcv_short": "Jb34:29",
+    "fp": "lp-legarmeih",
+    "r": "יַשְׁקִ֨ט׀"
+  },
+  {
+    "bcv_short": "Jb34:33",
+    "fp": "lp-legarmeih",
+    "r": "יְשַׁלְּמֶ֨נָּה׀"
+  },
+  {
+    "bcv_short": "Jb36:16",
+    "fp": "lp-legarmeih",
+    "r": "הֲסִֽיתְךָ֨׀"
+  },
+  {
+    "bcv_short": "Jb36:28",
+    "fp": "lp-legarmeih",
+    "r": "עֲלֵ֤י׀"
+  },
+  {
+    "bcv_short": "Jb37:4",
+    "fp": "lp-legarmeih",
+    "r": "אַחֲרָ֤יו׀"
+  },
+  {
+    "bcv_short": "Jb37:6",
+    "fp": "lp-legarmeih",
+    "r": "לַשֶּׁ֨לֶג׀"
+  },
+  {
+    "bcv_short": "Jb37:12",
+    "fp": "lp-legarmeih",
+    "r": "מְסִבּ֨וֹת׀"
+  },
+  {
+    "bcv_short": "Jb37:12",
+    "fp": "lp-legarmeih",
+    "r": "יְצַוֵּ֓ם׀"
+  },
+  {
+    "bcv_short": "Jb37:14",
+    "fp": "lp-legarmeih",
+    "r": "וְהִתְבּוֹנֵ֤ן׀"
+  },
+  {
+    "bcv_short": "Jb37:21",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "Jb38:2",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֨ה׀"
+  },
+  {
+    "bcv_short": "Jb39:25",
+    "fp": "lp-legarmeih",
+    "r": "שֹׁפָ֨ר׀"
+  },
+  {
+    "bcv_short": "Jb40:23",
+    "fp": "lp-legarmeih",
+    "r": "יִבְטַ֓ח׀"
+  },
+  {
+    "bcv_short": "Jb42:3",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֨ה׀"
+  },
+  {
+    "bcv_short": "Jb42:8",
+    "fp": "lp-legarmeih",
+    "r": "וּלְכ֣וּ׀"
+  },
+  {
+    "bcv_short": "S4:8",
+    "fp": "lp-legarmeih",
+    "r": "תָּשׁ֣וּרִי׀"
+  },
+  {
+    "bcv_short": "S4:14",
+    "fp": "lp-legarmeih",
+    "r": "נֵ֣רְדְּ׀"
+  },
+  {
+    "bcv_short": "S5:2",
+    "fp": "lp-legarmeih",
+    "r": "ק֣וֹל׀"
+  },
+  {
+    "bcv_short": "S8:14",
+    "fp": "lp-legarmeih",
+    "r": "בְּרַ֣ח׀"
+  },
+  {
+    "bcv_short": "R1:2",
+    "fp": "lp-legarmeih",
+    "r": "שְׁנֵֽי־בָנָ֣יו׀"
+  },
+  {
+    "bcv_short": "R1:13",
+    "fp": "lp-legarmeih",
+    "r": "הֲלָהֵ֣ן׀"
+  },
+  {
+    "bcv_short": "R2:21",
+    "fp": "lp-legarmeih",
+    "r": "גַּ֣ם׀"
+  },
+  {
+    "bcv_short": "R3:3",
+    "fp": "lp-legarmeih",
+    "r": "וְרָחַ֣צְתְּ׀"
+  },
+  {
+    "bcv_short": "R3:13",
+    "fp": "lp-legarmeih",
+    "r": "לִ֣ינִי׀"
+  },
+  {
+    "bcv_short": "La1:1",
+    "fp": "lp-legarmeih",
+    "r": "אֵיכָ֣ה׀"
+  },
+  {
+    "bcv_short": "La1:16",
+    "fp": "lp-legarmeih",
+    "r": "עַל־אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "La2:19",
+    "fp": "lp-legarmeih",
+    "r": "ק֣וּמִי׀"
+  },
+  {
+    "bcv_short": "Ec1:13",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "Ec2:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Ec4:1",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ec4:8",
+    "fp": "lp-legarmeih",
+    "r": "וּלְמִ֣י׀"
+  },
+  {
+    "bcv_short": "Ec5:17",
+    "fp": "lp-legarmeih",
+    "r": "בְּכׇל־עֲמָל֣וֹ׀"
+  },
+  {
+    "bcv_short": "Ec6:2",
+    "fp": "lp-legarmeih",
+    "r": "לְנַפְשׁ֣וֹ׀"
+  },
+  {
+    "bcv_short": "Ec6:3",
+    "fp": "lp-legarmeih",
+    "r": "וְרַ֣ב׀"
+  },
+  {
+    "bcv_short": "Ec8:14",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Ec9:3",
+    "fp": "lp-legarmeih",
+    "r": "זֶ֣ה׀"
+  },
+  {
+    "bcv_short": "Es1:2",
+    "fp": "lp-legarmeih",
+    "r": "כְּשֶׁ֣בֶת׀"
+  },
+  {
+    "bcv_short": "Es1:3",
+    "fp": "lp-legarmeih",
+    "r": "חֵ֣יל׀"
+  },
+  {
+    "bcv_short": "Es1:5",
+    "fp": "lp-legarmeih",
+    "r": "וּבִמְל֣וֹאת׀"
+  },
+  {
+    "bcv_short": "Es1:6",
+    "fp": "lp-legarmeih",
+    "r": "ח֣וּר׀"
+  },
+  {
+    "bcv_short": "Es1:6",
+    "fp": "lp-legarmeih",
+    "r": "מִטּ֣וֹת׀"
+  },
+  {
+    "bcv_short": "Es1:8",
+    "fp": "lp-legarmeih",
+    "r": "כִּי־כֵ֣ן׀"
+  },
+  {
+    "bcv_short": "Es1:14",
+    "fp": "lp-legarmeih",
+    "r": "שָׂרֵ֣י׀"
+  },
+  {
+    "bcv_short": "Es1:15",
+    "fp": "lp-legarmeih",
+    "r": "עַ֣ל׀"
+  },
+  {
+    "bcv_short": "Es1:18",
+    "fp": "lp-legarmeih",
+    "r": "תֹּאמַ֣רְנָה׀"
+  },
+  {
+    "bcv_short": "Es2:12",
+    "fp": "lp-legarmeih",
+    "r": "לָב֣וֹא׀"
+  },
+  {
+    "bcv_short": "Es2:14",
+    "fp": "lp-legarmeih",
+    "r": "בָּעֶ֣רֶב׀"
+  },
+  {
+    "bcv_short": "Es3:1",
+    "fp": "lp-legarmeih",
+    "r": "אַחַ֣ר׀"
+  },
+  {
+    "bcv_short": "Es3:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Es4:7",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Es5:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Es5:14",
+    "fp": "lp-legarmeih",
+    "r": "וּבַבֹּ֣קֶר׀"
+  },
+  {
+    "bcv_short": "Es7:8",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־בֵּ֣ית׀"
+  },
+  {
+    "bcv_short": "Es8:9",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Es8:11",
+    "fp": "lp-legarmeih",
+    "r": "לַיְּהוּדִ֣ים׀"
+  },
+  {
+    "bcv_short": "Es8:15",
+    "fp": "lp-legarmeih",
+    "r": "יָצָ֣א׀"
+  },
+  {
+    "bcv_short": "Es9:16",
+    "fp": "lp-legarmeih",
+    "r": "נִקְהֲל֣וּ׀"
+  },
+  {
+    "bcv_short": "Es10:3",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da2:23",
+    "fp": "lp-legarmeih",
+    "r": "לָ֣ךְ׀"
+  },
+  {
+    "bcv_short": "Da2:24",
+    "fp": "lp-legarmeih",
+    "r": "אֲזַ֣ל׀"
+  },
+  {
+    "bcv_short": "Da2:35",
+    "fp": "lp-legarmeih",
+    "r": "וְאַבְנָ֣א׀"
+  },
+  {
+    "bcv_short": "Da3:2",
+    "fp": "lp-legarmeih",
+    "r": "לְמִכְנַ֣שׁ׀"
+  },
+  {
+    "bcv_short": "Da3:15",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Da4:6",
+    "fp": "lp-legarmeih",
+    "r": "דִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da4:9",
+    "fp": "lp-legarmeih",
+    "r": "תַּטְלֵ֣ל׀"
+  },
+  {
+    "bcv_short": "Da4:15",
+    "fp": "lp-legarmeih",
+    "r": "פִּשְׁרֵ֣א׀"
+  },
+  {
+    "bcv_short": "Da4:15",
+    "fp": "lp-legarmeih",
+    "r": "דִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da4:22",
+    "fp": "lp-legarmeih",
+    "r": "כְתוֹרִ֣ין׀"
+  },
+  {
+    "bcv_short": "Da4:31",
+    "fp": "lp-legarmeih",
+    "r": "עַיְנַ֣י׀"
+  },
+  {
+    "bcv_short": "Da4:33",
+    "fp": "lp-legarmeih",
+    "r": "מַנְדְּעִ֣י׀"
+  },
+  {
+    "bcv_short": "Da5:2",
+    "fp": "lp-legarmeih",
+    "r": "אֲמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Da5:7",
+    "fp": "lp-legarmeih",
+    "r": "וְאָמַ֣ר׀"
+  },
+  {
+    "bcv_short": "Da5:21",
+    "fp": "lp-legarmeih",
+    "r": "וְלִבְבֵ֣הּ׀"
+  },
+  {
+    "bcv_short": "Da5:29",
+    "fp": "lp-legarmeih",
+    "r": "בֵּאדַ֣יִן׀"
+  },
+  {
+    "bcv_short": "Da6:8",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ל׀"
+  },
+  {
+    "bcv_short": "Da6:11",
+    "fp": "lp-legarmeih",
+    "r": "ה֣וּא׀"
+  },
+  {
+    "bcv_short": "Da6:27",
+    "fp": "lp-legarmeih",
+    "r": "דִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da6:27",
+    "fp": "lp-legarmeih",
+    "r": "דִּי־ה֣וּא׀"
+  },
+  {
+    "bcv_short": "Da7:9",
+    "fp": "lp-legarmeih",
+    "r": "לְבוּשֵׁ֣הּ׀"
+  },
+  {
+    "bcv_short": "Da7:28",
+    "fp": "lp-legarmeih",
+    "r": "שַׂגִּ֣יא׀"
+  },
+  {
+    "bcv_short": "Da8:3",
+    "fp": "lp-legarmeih",
+    "r": "וְהִנֵּ֣ה׀"
+  },
+  {
+    "bcv_short": "Da8:5",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲנִ֣י׀"
+  },
+  {
+    "bcv_short": "Da8:7",
+    "fp": "lp-legarmeih",
+    "r": "מַגִּ֣יעַ׀"
+  },
+  {
+    "bcv_short": "Da9:12",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־דְּבָר֣וֹ׀"
+  },
+  {
+    "bcv_short": "Da9:13",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־פְּנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Da9:15",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Da9:17",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Da9:18",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da9:24",
+    "fp": "lp-legarmeih",
+    "r": "עַֽל־עַמְּךָ֣׀"
+  },
+  {
+    "bcv_short": "Da9:27",
+    "fp": "lp-legarmeih",
+    "r": "יַשְׁבִּ֣ית׀"
+  },
+  {
+    "bcv_short": "Da10:12",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Da10:13",
+    "fp": "lp-legarmeih",
+    "r": "וְשַׂ֣ר׀"
+  },
+  {
+    "bcv_short": "Da11:14",
+    "fp": "lp-legarmeih",
+    "r": "וּבְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "Da12:7",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־הָאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "Er2:1",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "Er3:8",
+    "fp": "lp-legarmeih",
+    "r": "אֲחֵיהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "Er4:2",
+    "fp": "lp-legarmeih",
+    "r": "וְל֣וֹ׀"
+  },
+  {
+    "bcv_short": "Er5:6",
+    "fp": "lp-legarmeih",
+    "r": "תַּתְּנַ֣י׀"
+  },
+  {
+    "bcv_short": "Er5:8",
+    "fp": "lp-legarmeih",
+    "r": "יְדִ֣יעַ׀"
+  },
+  {
+    "bcv_short": "Er5:15",
+    "fp": "lp-legarmeih",
+    "r": "וַאֲמַר־לֵ֓הּ׀"
+  },
+  {
+    "bcv_short": "Er6:1",
+    "fp": "lp-legarmeih",
+    "r": "וּבַקַּ֣רוּ׀"
+  },
+  {
+    "bcv_short": "Er6:9",
+    "fp": "lp-legarmeih",
+    "r": "מְלַ֣ח׀"
+  },
+  {
+    "bcv_short": "Er6:12",
+    "fp": "lp-legarmeih",
+    "r": "דִּ֣י׀"
+  },
+  {
+    "bcv_short": "Er6:22",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Er7:11",
+    "fp": "lp-legarmeih",
+    "r": "וְזֶ֣ה׀"
+  },
+  {
+    "bcv_short": "Er8:35",
+    "fp": "lp-legarmeih",
+    "r": "עֹל֣וֹת׀"
+  },
+  {
+    "bcv_short": "Er8:35",
+    "fp": "lp-legarmeih",
+    "r": "אֵילִ֣ים׀"
+  },
+  {
+    "bcv_short": "Er8:36",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּתְּנ֣וּ׀"
+  },
+  {
+    "bcv_short": "Er9:7",
+    "fp": "lp-legarmeih",
+    "r": "בְּיַ֣ד׀"
+  },
+  {
+    "bcv_short": "Er9:8",
+    "fp": "lp-legarmeih",
+    "r": "מֵאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Er9:13",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "Er10:14",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "Ne1:4",
+    "fp": "lp-legarmeih",
+    "r": "כְּשׇׁמְעִ֣י׀"
+  },
+  {
+    "bcv_short": "Ne2:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ne2:2",
+    "fp": "lp-legarmeih",
+    "r": "מַדּ֣וּעַ׀"
+  },
+  {
+    "bcv_short": "Ne2:6",
+    "fp": "lp-legarmeih",
+    "r": "וְהַשֵּׁגַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ne2:12",
+    "fp": "lp-legarmeih",
+    "r": "וָאָק֣וּם׀"
+  },
+  {
+    "bcv_short": "Ne2:19",
+    "fp": "lp-legarmeih",
+    "r": "וְטֹבִיָּ֣ה׀"
+  },
+  {
+    "bcv_short": "Ne3:14",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "Ne3:28",
+    "fp": "lp-legarmeih",
+    "r": "מֵעַ֣ל׀"
+  },
+  {
+    "bcv_short": "Ne3:34",
+    "fp": "lp-legarmeih",
+    "r": "וַיֹּ֣אמֶר׀"
+  },
+  {
+    "bcv_short": "Ne4:10",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "Ne5:14",
+    "fp": "lp-legarmeih",
+    "r": "מִיּ֣וֹם׀"
+  },
+  {
+    "bcv_short": "Ne6:17",
+    "fp": "lp-legarmeih",
+    "r": "גַּ֣ם׀"
+  },
+  {
+    "bcv_short": "Ne7:6",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "Ne8:3",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "Ne8:7",
+    "fp": "lp-legarmeih",
+    "r": "וְשֵׁרֵ֥בְיָ֣ה׀"
+  },
+  {
+    "bcv_short": "Ne11:1",
+    "fp": "lp-legarmeih",
+    "r": "לְהָבִ֣יא׀"
+  },
+  {
+    "bcv_short": "Ne13:23",
+    "fp": "lp-legarmeih",
+    "r": "גַּ֣ם׀"
+  },
+  {
+    "bcv_short": "1C2:3",
+    "fp": "lp-legarmeih",
+    "r": "עֵ֣ר׀"
+  },
+  {
+    "bcv_short": "1C3:1",
+    "fp": "lp-legarmeih",
+    "r": "הַבְּכ֣וֹר׀"
+  },
+  {
+    "bcv_short": "1C4:41",
+    "fp": "lp-legarmeih",
+    "r": "בִּימֵ֣י׀"
+  },
+  {
+    "bcv_short": "1C4:42",
+    "fp": "lp-legarmeih",
+    "r": "וּמֵהֶ֣ם׀"
+  },
+  {
+    "bcv_short": "1C5:14",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣לֶּה׀"
+  },
+  {
+    "bcv_short": "1C5:26",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־ר֣וּחַ׀"
+  },
+  {
+    "bcv_short": "1C10:4",
+    "fp": "lp-legarmeih",
+    "r": "חַרְבְּךָ֣׀"
+  },
+  {
+    "bcv_short": "1C11:23",
+    "fp": "lp-legarmeih",
+    "r": "מִדָּ֣ה׀"
+  },
+  {
+    "bcv_short": "1C12:38",
+    "fp": "lp-legarmeih",
+    "r": "וַחֲצִ֣י׀"
+  },
+  {
+    "bcv_short": "1C13:2",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "1C15:2",
+    "fp": "lp-legarmeih",
+    "r": "כִּֽי־בָ֣ם׀"
+  },
+  {
+    "bcv_short": "1C15:27",
+    "fp": "lp-legarmeih",
+    "r": "מְכֻרְבָּ֣ל׀"
+  },
+  {
+    "bcv_short": "1C15:29",
+    "fp": "lp-legarmeih",
+    "r": "נִשְׁקְפָ֣ה׀"
+  },
+  {
+    "bcv_short": "1C16:39",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "1C17:25",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1C18:8",
+    "fp": "lp-legarmeih",
+    "r": "בָּ֣הּ׀"
+  },
+  {
+    "bcv_short": "1C19:2",
+    "fp": "lp-legarmeih",
+    "r": "אֶעֱשֶׂה־חֶ֣סֶד׀"
+  },
+  {
+    "bcv_short": "1C20:1",
+    "fp": "lp-legarmeih",
+    "r": "לְעֵ֣ת׀"
+  },
+  {
+    "bcv_short": "1C20:1",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּשְׁחֵ֣ת׀"
+  },
+  {
+    "bcv_short": "1C20:2",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּמְצָאָ֣הּ׀"
+  },
+  {
+    "bcv_short": "1C20:6",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "1C21:18",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1C22:18",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "1C24:31",
+    "fp": "lp-legarmeih",
+    "r": "לְעֻמַּ֣ת׀"
+  },
+  {
+    "bcv_short": "1C26:8",
+    "fp": "lp-legarmeih",
+    "r": "מִבְּנֵ֣י׀"
+  },
+  {
+    "bcv_short": "1C26:14",
+    "fp": "lp-legarmeih",
+    "r": "יוֹעֵ֣ץ׀"
+  },
+  {
+    "bcv_short": "1C27:1",
+    "fp": "lp-legarmeih",
+    "r": "לְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "1C27:4",
+    "fp": "lp-legarmeih",
+    "r": "מַחֲלֹ֣קֶת׀"
+  },
+  {
+    "bcv_short": "1C28:10",
+    "fp": "lp-legarmeih",
+    "r": "רְאֵ֣ה׀"
+  },
+  {
+    "bcv_short": "1C29:6",
+    "fp": "lp-legarmeih",
+    "r": "וְשָׂרֵ֣י׀"
+  },
+  {
+    "bcv_short": "2C1:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2C2:3",
+    "fp": "lp-legarmeih",
+    "r": "לְשֵׁ֣ם׀"
+  },
+  {
+    "bcv_short": "2C3:5",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2C4:2",
+    "fp": "lp-legarmeih",
+    "r": "עָג֣וֹל׀"
+  },
+  {
+    "bcv_short": "2C4:4",
+    "fp": "lp-legarmeih",
+    "r": "וּשְׁלֹשָׁ֣ה׀"
+  },
+  {
+    "bcv_short": "2C5:1",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־קׇדְשֵׁ֣י׀"
+  },
+  {
+    "bcv_short": "2C6:10",
+    "fp": "lp-legarmeih",
+    "r": "וָאֵשֵׁ֣ב׀"
+  },
+  {
+    "bcv_short": "2C6:16",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "2C6:23",
+    "fp": "lp-legarmeih",
+    "r": "וְאַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2C6:27",
+    "fp": "lp-legarmeih",
+    "r": "וְאַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2C6:32",
+    "fp": "lp-legarmeih",
+    "r": "וּבָ֣א׀"
+  },
+  {
+    "bcv_short": "2C6:37",
+    "fp": "lp-legarmeih",
+    "r": "וְשָׁ֣בוּ׀"
+  },
+  {
+    "bcv_short": "2C7:3",
+    "fp": "lp-legarmeih",
+    "r": "וְכֹ֣ל׀"
+  },
+  {
+    "bcv_short": "2C7:9",
+    "fp": "lp-legarmeih",
+    "r": "כִּ֣י׀"
+  },
+  {
+    "bcv_short": "2C7:22",
+    "fp": "lp-legarmeih",
+    "r": "אֶת־יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "2C8:1",
+    "fp": "lp-legarmeih",
+    "r": "מִקֵּ֣ץ׀"
+  },
+  {
+    "bcv_short": "2C8:6",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2C9:8",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "2C9:9",
+    "fp": "lp-legarmeih",
+    "r": "וְעֶשְׂרִ֣ים׀"
+  },
+  {
+    "bcv_short": "2C9:21",
+    "fp": "lp-legarmeih",
+    "r": "תָּב֣וֹאנָה׀"
+  },
+  {
+    "bcv_short": "2C12:13",
+    "fp": "lp-legarmeih",
+    "r": "שָׁנָ֣ה׀"
+  },
+  {
+    "bcv_short": "2C13:5",
+    "fp": "lp-legarmeih",
+    "r": "יְהֹוָ֣ה׀"
+  },
+  {
+    "bcv_short": "2C13:8",
+    "fp": "lp-legarmeih",
+    "r": "וְעַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "2C14:6",
+    "fp": "lp-legarmeih",
+    "r": "נִבְנֶ֣ה׀"
+  },
+  {
+    "bcv_short": "2C15:3",
+    "fp": "lp-legarmeih",
+    "r": "לְלֹ֣א׀"
+  },
+  {
+    "bcv_short": "2C15:16",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣ם׀"
+  },
+  {
+    "bcv_short": "2C17:10",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2C18:12",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־הָלַ֣ךְ׀"
+  },
+  {
+    "bcv_short": "2C19:10",
+    "fp": "lp-legarmeih",
+    "r": "מֵאֲחֵיכֶ֣ם׀"
+  },
+  {
+    "bcv_short": "2C20:7",
+    "fp": "lp-legarmeih",
+    "r": "הֲלֹ֣א׀"
+  },
+  {
+    "bcv_short": "2C21:6",
+    "fp": "lp-legarmeih",
+    "r": "בְּדֶ֣רֶךְ׀"
+  },
+  {
+    "bcv_short": "2C21:12",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "2C21:19",
+    "fp": "lp-legarmeih",
+    "r": "לְיָמִ֣ים׀"
+  },
+  {
+    "bcv_short": "2C23:10",
+    "fp": "lp-legarmeih",
+    "r": "וְאִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "2C23:14",
+    "fp": "lp-legarmeih",
+    "r": "הַמֵּא֣וֹת׀"
+  },
+  {
+    "bcv_short": "2C23:20",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2C24:5",
+    "fp": "lp-legarmeih",
+    "r": "לְחַזֵּ֣ק׀"
+  },
+  {
+    "bcv_short": "2C24:20",
+    "fp": "lp-legarmeih",
+    "r": "כֹּ֣ה׀"
+  },
+  {
+    "bcv_short": "2C24:23",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2C24:24",
+    "fp": "lp-legarmeih",
+    "r": "בָּ֣אוּ׀"
+  },
+  {
+    "bcv_short": "2C25:16",
+    "fp": "lp-legarmeih",
+    "r": "וַיְהִ֣י׀"
+  },
+  {
+    "bcv_short": "2C26:15",
+    "fp": "lp-legarmeih",
+    "r": "וַיַּ֣עַשׂ׀"
+  },
+  {
+    "bcv_short": "2C26:21",
+    "fp": "lp-legarmeih",
+    "r": "מְצֹרָ֣ע׀"
+  },
+  {
+    "bcv_short": "2C28:7",
+    "fp": "lp-legarmeih",
+    "r": "זִכְרִ֣י׀"
+  },
+  {
+    "bcv_short": "2C30:25",
+    "fp": "lp-legarmeih",
+    "r": "וַֽיִּשְׂמְח֣וּ׀"
+  },
+  {
+    "bcv_short": "2C31:2",
+    "fp": "lp-legarmeih",
+    "r": "אִ֣ישׁ׀"
+  },
+  {
+    "bcv_short": "2C31:21",
+    "fp": "lp-legarmeih",
+    "r": "אֲשֶׁר־הֵחֵ֣ל׀"
+  },
+  {
+    "bcv_short": "2C32:22",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2C32:31",
+    "fp": "lp-legarmeih",
+    "r": "בִּמְלִיצֵ֣י׀"
+  },
+  {
+    "bcv_short": "2C33:8",
+    "fp": "lp-legarmeih",
+    "r": "רַ֣ק׀"
+  },
+  {
+    "bcv_short": "2C34:9",
+    "fp": "lp-legarmeih",
+    "r": "אֶל־חִלְקִיָּ֣הוּ׀"
+  },
+  {
+    "bcv_short": "2C34:20",
+    "fp": "lp-legarmeih",
+    "r": "וְאֵ֣ת׀"
+  },
+  {
+    "bcv_short": "2C34:22",
+    "fp": "lp-legarmeih",
+    "r": "אֵ֣שֶׁת׀"
+  },
+  {
+    "bcv_short": "2C34:25",
+    "fp": "lp-legarmeih",
+    "r": "תַּ֣חַת׀"
+  },
+  {
+    "bcv_short": "2C34:27",
+    "fp": "lp-legarmeih",
+    "r": "וַתִּכָּנַ֣ע׀"
+  },
+  {
+    "bcv_short": "2C36:23",
+    "fp": "lp-legarmeih",
+    "r": "כּ֣וֹרֶשׁ׀"
+  },
+  {
+    "bcv_short": "Je4:19",
+    "fp": "lp-legarmeih/paseq-after",
+    "r": "מֵעַ֣י׀ מֵעַ֨י‖"
+  },
+  {
+    "bcv_short": "Ps5:5",
+    "fp": "lp-legarmeih/paseq-after",
+    "r": "כִּ֤י׀ לֹ֤א־אֵֽל־חָפֵ֘ץ־רֶ֥שַׁע‖"
+  },
+  {
+    "bcv_short": "Ps55:24",
+    "fp": "lp-legarmeih/paseq-after",
+    "r": "אֱלֹהִ֨ים׀ תּוֹרִדֵ֬ם‖"
+  },
+  {
+    "bcv_short": "G7:23",
+    "fp": "lp-legarmeih×2",
+    "r": "אֶֽת־כׇּל־הַיְק֣וּם׀ אֲשֶׁ֣ר׀"
+  },
+  {
+    "bcv_short": "G19:14",
+    "fp": "lp-legarmeih×2",
+    "r": "וַיְדַבֵּ֣ר׀ אֶל־חֲתָנָ֣יו׀"
+  },
+  {
+    "bcv_short": "L10:9",
+    "fp": "lp-legarmeih×2",
+    "r": "אַל־תֵּ֣שְׁתְּ׀ אַתָּ֣ה׀"
+  },
+  {
+    "bcv_short": "N4:26",
+    "fp": "lp-legarmeih×2",
+    "r": "וְאֶת־מָסַ֣ךְ׀ פֶּ֣תַח׀"
+  },
+  {
+    "bcv_short": "N31:30",
+    "fp": "lp-legarmeih×2",
+    "r": "תִּקַּ֣ח׀ אֶחָ֣ד׀"
+  },
+  {
+    "bcv_short": "N32:33",
+    "fp": "lp-legarmeih×2",
+    "r": "וְלַחֲצִ֣י׀ שֵׁ֣בֶט׀"
+  },
+  {
+    "bcv_short": "D31:16",
+    "fp": "lp-legarmeih×2",
+    "r": "וְזָנָ֣ה׀ אַחֲרֵ֣י׀"
+  },
+  {
+    "bcv_short": "Ju12:1",
+    "fp": "lp-legarmeih×2",
+    "r": "מַדּ֣וּעַ׀ עָבַ֣רְתָּ׀"
+  },
+  {
+    "bcv_short": "1S30:21",
+    "fp": "lp-legarmeih×2",
+    "r": "אֲשֶֽׁר־פִּגְּר֣וּ׀ מִלֶּ֣כֶת׀"
+  },
+  {
+    "bcv_short": "2S24:17",
+    "fp": "lp-legarmeih×2",
+    "r": "בִּרְאֹת֣וֹ׀ אֶֽת־הַמַּלְאָ֣ךְ׀"
+  },
+  {
+    "bcv_short": "1K3:15",
+    "fp": "lp-legarmeih×2",
+    "r": "וַֽיַּעֲמֹ֣ד׀ לִפְנֵ֣י׀"
+  },
+  {
+    "bcv_short": "1K16:7",
+    "fp": "lp-legarmeih×2",
+    "r": "כׇּל־הָרָעָ֣ה׀ אֲשֶׁר־עָשָׂ֣ה׀"
+  },
+  {
+    "bcv_short": "Je29:32",
+    "fp": "lp-legarmeih×2",
+    "r": "אִ֣ישׁ׀ יוֹשֵׁ֣ב׀"
+  },
+  {
+    "bcv_short": "Je44:26",
+    "fp": "lp-legarmeih×2",
+    "r": "נִקְרָ֣א׀ בְּפִ֣י׀"
+  },
+  {
+    "bcv_short": "Ee33:11",
+    "fp": "lp-legarmeih×2",
+    "r": "חַי־אָ֣נִי׀ נְאֻ֣ם׀"
+  },
+  {
+    "bcv_short": "Ee38:8",
+    "fp": "lp-legarmeih×2",
+    "r": "תָּב֣וֹא׀ אֶל־אֶ֣רֶץ׀"
+  },
+  {
+    "bcv_short": "Ps27:1",
+    "fp": "lp-legarmeih×2",
+    "r": "לְדָוִ֨ד׀ יְהֹוָ֤ה׀"
+  },
+  {
+    "bcv_short": "Ps40:6",
+    "fp": "lp-legarmeih×2",
+    "r": "עָשִׂ֨יתָ׀ אַתָּ֤ה׀"
+  },
+  {
+    "bcv_short": "G1:5",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "G1:10",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "G1:21",
+    "fp": "lp-paseq",
+    "r": "הַֽחַיָּ֣ה‖"
+  },
+  {
+    "bcv_short": "G1:27",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "G2:21",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "G2:22",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "G3:14",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "G12:17",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֧ה‖"
+  },
+  {
+    "bcv_short": "G14:15",
+    "fp": "lp-paseq",
+    "r": "עֲלֵיהֶ֧ם‖"
+  },
+  {
+    "bcv_short": "G17:13",
+    "fp": "lp-paseq",
+    "r": "הִמּ֧וֹל‖"
+  },
+  {
+    "bcv_short": "G18:15",
+    "fp": "lp-paseq",
+    "r": "שָׂרָ֧ה‖"
+  },
+  {
+    "bcv_short": "G18:15",
+    "fp": "lp-paseq",
+    "r": "כִּ֣י‖"
+  },
+  {
+    "bcv_short": "G18:15",
+    "fp": "lp-paseq",
+    "r": "וַיֹּ֥אמֶֽר‖"
+  },
+  {
+    "bcv_short": "G18:21",
+    "fp": "lp-paseq",
+    "r": "עָשׂ֣וּ‖"
+  },
+  {
+    "bcv_short": "G21:14",
+    "fp": "lp-paseq",
+    "r": "אַבְרָהָ֣ם‖"
+  },
+  {
+    "bcv_short": "G21:17",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "G22:11",
+    "fp": "lp-paseq",
+    "r": "אַבְרָהָ֣ם‖"
+  },
+  {
+    "bcv_short": "G22:14",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "G26:28",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "G30:8",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "G30:20",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "G37:22",
+    "fp": "lp-paseq",
+    "r": "אֲלֵהֶ֣ם‖"
+  },
+  {
+    "bcv_short": "G39:10",
+    "fp": "lp-paseq",
+    "r": "י֣וֹם‖"
+  },
+  {
+    "bcv_short": "G42:13",
+    "fp": "lp-paseq",
+    "r": "אַחִ֧ים‖"
+  },
+  {
+    "bcv_short": "G42:21",
+    "fp": "lp-paseq",
+    "r": "אֲשֵׁמִ֣ים‖"
+  },
+  {
+    "bcv_short": "G42:22",
+    "fp": "lp-paseq",
+    "r": "אֲלֵיכֶ֧ם‖"
+  },
+  {
+    "bcv_short": "G43:11",
+    "fp": "lp-paseq",
+    "r": "אִם־כֵּ֣ן‖"
+  },
+  {
+    "bcv_short": "G46:2",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "G46:2",
+    "fp": "lp-paseq",
+    "r": "יַעֲקֹ֣ב‖"
+  },
+  {
+    "bcv_short": "E13:18",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "E14:21",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "E15:18",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "E16:5",
+    "fp": "lp-paseq",
+    "r": "י֥וֹם‖"
+  },
+  {
+    "bcv_short": "E17:6",
+    "fp": "lp-paseq",
+    "r": "שָּׁ֥ם‖"
+  },
+  {
+    "bcv_short": "E17:15",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "E23:17",
+    "fp": "lp-paseq",
+    "r": "הָאָדֹ֥ן‖"
+  },
+  {
+    "bcv_short": "E30:34",
+    "fp": "lp-paseq",
+    "r": "נָטָ֤ף‖"
+  },
+  {
+    "bcv_short": "E34:6",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "E34:6",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "E34:23",
+    "fp": "lp-paseq",
+    "r": "הָֽאָדֹ֥ן‖"
+  },
+  {
+    "bcv_short": "E35:35",
+    "fp": "lp-paseq",
+    "r": "חָרָ֣שׁ‖"
+  },
+  {
+    "bcv_short": "L5:12",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "L10:3",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "L10:6",
+    "fp": "lp-paseq",
+    "r": "וּלְאִֽיתָמָ֨ר‖"
+  },
+  {
+    "bcv_short": "L10:12",
+    "fp": "lp-paseq",
+    "r": "וְאֶל־אִ֨יתָמָ֥ר‖"
+  },
+  {
+    "bcv_short": "L11:32",
+    "fp": "lp-paseq",
+    "r": "מֵהֶ֨ם‖"
+  },
+  {
+    "bcv_short": "L11:35",
+    "fp": "lp-paseq",
+    "r": "מִנִּבְלָתָ֥ם‖"
+  },
+  {
+    "bcv_short": "L13:45",
+    "fp": "lp-paseq",
+    "r": "וְטָמֵ֥א‖"
+  },
+  {
+    "bcv_short": "L23:20",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "N3:2",
+    "fp": "lp-paseq",
+    "r": "הַבְּכֹ֣ר‖"
+  },
+  {
+    "bcv_short": "N3:38",
+    "fp": "lp-paseq",
+    "r": "אֹֽהֶל־מוֹעֵ֨ד‖"
+  },
+  {
+    "bcv_short": "N5:22",
+    "fp": "lp-paseq",
+    "r": "אָמֵ֥ן‖"
+  },
+  {
+    "bcv_short": "N6:20",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֥ן‖"
+  },
+  {
+    "bcv_short": "N6:25",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֧ה‖"
+  },
+  {
+    "bcv_short": "N6:26",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "N9:10",
+    "fp": "lp-paseq",
+    "r": "כִּי־יִהְיֶֽה־טָמֵ֣א‖"
+  },
+  {
+    "bcv_short": "N11:25",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "N11:26",
+    "fp": "lp-paseq",
+    "r": "שְׁנֵֽי־אֲנָשִׁ֣ים‖"
+  },
+  {
+    "bcv_short": "N11:26",
+    "fp": "lp-paseq",
+    "r": "הָאֶחָ֣ד‖"
+  },
+  {
+    "bcv_short": "N15:31",
+    "fp": "lp-paseq",
+    "r": "הִכָּרֵ֧ת‖"
+  },
+  {
+    "bcv_short": "N16:7",
+    "fp": "lp-paseq",
+    "r": "בָהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "N16:7",
+    "fp": "lp-paseq",
+    "r": "עֲלֵיהֶ֨ן‖"
+  },
+  {
+    "bcv_short": "N17:21",
+    "fp": "lp-paseq",
+    "r": "אֵלָ֣יו‖"
+  },
+  {
+    "bcv_short": "N17:28",
+    "fp": "lp-paseq",
+    "r": "הַקָּרֵ֧ב‖"
+  },
+  {
+    "bcv_short": "N21:1",
+    "fp": "lp-paseq",
+    "r": "וַיִּ֥שְׁבְּ‖"
+  },
+  {
+    "bcv_short": "N22:20",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "N30:13",
+    "fp": "lp-paseq",
+    "r": "אֹתָ֥ם‖"
+  },
+  {
+    "bcv_short": "N32:29",
+    "fp": "lp-paseq",
+    "r": "וּבְנֵי־רְאוּבֵ֣ן‖"
+  },
+  {
+    "bcv_short": "N32:33",
+    "fp": "lp-paseq",
+    "r": "לָהֶ֣ם‖"
+  },
+  {
+    "bcv_short": "N35:16",
+    "fp": "lp-paseq",
+    "r": "בַרְזֶ֧ל‖"
+  },
+  {
+    "bcv_short": "D3:20",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "D4:32",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "D6:4",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "D6:22",
+    "fp": "lp-paseq",
+    "r": "וְרָעִ֧ים‖"
+  },
+  {
+    "bcv_short": "D7:1",
+    "fp": "lp-paseq",
+    "r": "גּֽוֹיִם־רַבִּ֣ים‖"
+  },
+  {
+    "bcv_short": "D7:26",
+    "fp": "lp-paseq",
+    "r": "שַׁקֵּ֧ץ‖"
+  },
+  {
+    "bcv_short": "D7:26",
+    "fp": "lp-paseq",
+    "r": "וְתַעֵ֥ב‖"
+  },
+  {
+    "bcv_short": "D8:15",
+    "fp": "lp-paseq",
+    "r": "נָחָ֤שׁ‖"
+  },
+  {
+    "bcv_short": "D9:4",
+    "fp": "lp-paseq",
+    "r": "אֹתָ֥ם‖"
+  },
+  {
+    "bcv_short": "D9:21",
+    "fp": "lp-paseq",
+    "r": "אֹת֣וֹ‖"
+  },
+  {
+    "bcv_short": "D16:16",
+    "fp": "lp-paseq",
+    "r": "פְּעָמִ֣ים‖"
+  },
+  {
+    "bcv_short": "D17:8",
+    "fp": "lp-paseq",
+    "r": "בֵּֽין־דָּ֨ם‖"
+  },
+  {
+    "bcv_short": "D22:6",
+    "fp": "lp-paseq",
+    "r": "קַן־צִפּ֣וֹר‖"
+  },
+  {
+    "bcv_short": "D25:19",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהֶ֣יךָ‖"
+  },
+  {
+    "bcv_short": "D27:9",
+    "fp": "lp-paseq",
+    "r": "הַסְכֵּ֤ת‖"
+  },
+  {
+    "bcv_short": "D28:12",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "D28:20",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "D28:25",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "D28:68",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "D29:12",
+    "fp": "lp-paseq",
+    "r": "הַיּ֨וֹם‖"
+  },
+  {
+    "bcv_short": "Js1:15",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Js2:19",
+    "fp": "lp-paseq",
+    "r": "בֵיתֵ֧ךְ‖"
+  },
+  {
+    "bcv_short": "Js8:33",
+    "fp": "lp-paseq",
+    "r": "וְשֹׁטְרִ֣ים‖"
+  },
+  {
+    "bcv_short": "Js11:20",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "Js14:10",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Js15:7",
+    "fp": "lp-paseq",
+    "r": "הַגְּב֥וּל‖"
+  },
+  {
+    "bcv_short": "Js15:25",
+    "fp": "lp-paseq",
+    "r": "וְחָצ֤וֹר‖"
+  },
+  {
+    "bcv_short": "Js15:55",
+    "fp": "lp-paseq",
+    "r": "מָע֥וֹן‖"
+  },
+  {
+    "bcv_short": "Js19:7",
+    "fp": "lp-paseq",
+    "r": "עַ֥יִן‖"
+  },
+  {
+    "bcv_short": "Js19:11",
+    "fp": "lp-paseq",
+    "r": "גְבוּלָ֧ם‖"
+  },
+  {
+    "bcv_short": "Js19:51",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "Js22:31",
+    "fp": "lp-paseq",
+    "r": "הַיּ֤וֹם‖"
+  },
+  {
+    "bcv_short": "Js22:32",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "Js24:32",
+    "fp": "lp-paseq",
+    "r": "בְנֵי־יִשְׂרָאֵ֥ל‖"
+  },
+  {
+    "bcv_short": "Ju1:7",
+    "fp": "lp-paseq",
+    "r": "שִׁבְעִ֣ים‖"
+  },
+  {
+    "bcv_short": "Ju2:18",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Ju11:17",
+    "fp": "lp-paseq",
+    "r": "מַלְאָכִ֣ים‖"
+  },
+  {
+    "bcv_short": "Ju11:17",
+    "fp": "lp-paseq",
+    "r": "אֱד֨וֹם‖"
+  },
+  {
+    "bcv_short": "Ju12:5",
+    "fp": "lp-paseq",
+    "r": "וַיֹּ֥אמֶֽר‖"
+  },
+  {
+    "bcv_short": "Ju18:2",
+    "fp": "lp-paseq",
+    "r": "בְנֵי־דָ֣ן‖"
+  },
+  {
+    "bcv_short": "Ju20:35",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "1S1:3",
+    "fp": "lp-paseq",
+    "r": "מִיָּמִ֣ים‖"
+  },
+  {
+    "bcv_short": "1S2:16",
+    "fp": "lp-paseq",
+    "r": "וְאָמַ֥ר‖"
+  },
+  {
+    "bcv_short": "1S2:19",
+    "fp": "lp-paseq",
+    "r": "מִיָּמִ֣ים‖"
+  },
+  {
+    "bcv_short": "1S3:9",
+    "fp": "lp-paseq",
+    "r": "לֵ֣ךְ‖"
+  },
+  {
+    "bcv_short": "1S3:10",
+    "fp": "lp-paseq",
+    "r": "שְׁמוּאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "1S5:9",
+    "fp": "lp-paseq",
+    "r": "יַד־יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1S7:14",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֤ל‖"
+  },
+  {
+    "bcv_short": "1S9:10",
+    "fp": "lp-paseq",
+    "r": "לְכָ֣ה‖"
+  },
+  {
+    "bcv_short": "1S9:16",
+    "fp": "lp-paseq",
+    "r": "כָּעֵ֣ת‖"
+  },
+  {
+    "bcv_short": "1S9:24",
+    "fp": "lp-paseq",
+    "r": "הָעָ֣ם‖"
+  },
+  {
+    "bcv_short": "1S11:7",
+    "fp": "lp-paseq",
+    "r": "הַמַּלְאָכִ֣ים‖"
+  },
+  {
+    "bcv_short": "1S12:3",
+    "fp": "lp-paseq",
+    "r": "אֶת־שׁוֹר֩‖"
+  },
+  {
+    "bcv_short": "1S14:3",
+    "fp": "lp-paseq",
+    "r": "כֹּהֵ֧ן‖"
+  },
+  {
+    "bcv_short": "1S14:36",
+    "fp": "lp-paseq",
+    "r": "פְלִשְׁתִּ֨ים‖"
+  },
+  {
+    "bcv_short": "1S14:45",
+    "fp": "lp-paseq",
+    "r": "הֲֽיוֹנָתָ֤ן‖"
+  },
+  {
+    "bcv_short": "1S14:47",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "1S17:40",
+    "fp": "lp-paseq",
+    "r": "חַלֻּקֵֽי־אֲבָנִ֣ים‖"
+  },
+  {
+    "bcv_short": "1S18:10",
+    "fp": "lp-paseq",
+    "r": "כְּי֣וֹם‖"
+  },
+  {
+    "bcv_short": "1S19:9",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1S20:12",
+    "fp": "lp-paseq",
+    "r": "כָּעֵ֤ת‖"
+  },
+  {
+    "bcv_short": "1S20:21",
+    "fp": "lp-paseq",
+    "r": "קָחֶ֧נּוּ‖"
+  },
+  {
+    "bcv_short": "1S25:14",
+    "fp": "lp-paseq",
+    "r": "מַלְאָכִ֧ים‖"
+  },
+  {
+    "bcv_short": "1S25:25",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנִ֣י‖"
+  },
+  {
+    "bcv_short": "1S25:31",
+    "fp": "lp-paseq",
+    "r": "זֹ֣את‖"
+  },
+  {
+    "bcv_short": "1S25:36",
+    "fp": "lp-paseq",
+    "r": "אֲבִיגַ֣יִל‖"
+  },
+  {
+    "bcv_short": "1S26:7",
+    "fp": "lp-paseq",
+    "r": "וַאֲבִישַׁ֥י‖"
+  },
+  {
+    "bcv_short": "1S26:23",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1S28:12",
+    "fp": "lp-paseq",
+    "r": "אֶל־שָׁא֧וּל‖"
+  },
+  {
+    "bcv_short": "2S2:1",
+    "fp": "lp-paseq",
+    "r": "בַּיהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "2S3:12",
+    "fp": "lp-paseq",
+    "r": "מַלְאָכִ֧ים‖"
+  },
+  {
+    "bcv_short": "2S3:21",
+    "fp": "lp-paseq",
+    "r": "אָק֣וּמָה‖"
+  },
+  {
+    "bcv_short": "2S7:24",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֧ל‖"
+  },
+  {
+    "bcv_short": "2S14:26",
+    "fp": "lp-paseq",
+    "r": "יָמִ֤ים‖"
+  },
+  {
+    "bcv_short": "2S14:32",
+    "fp": "lp-paseq",
+    "r": "אֵלֶ֣יךָ‖"
+  },
+  {
+    "bcv_short": "2S20:3",
+    "fp": "lp-paseq",
+    "r": "עֶשֶׂר־נָשִׁ֣ים‖"
+  },
+  {
+    "bcv_short": "2S24:3",
+    "fp": "lp-paseq",
+    "r": "כָּהֵ֤ם‖"
+  },
+  {
+    "bcv_short": "2S24:16",
+    "fp": "lp-paseq",
+    "r": "הַמַּלְאָ֥ךְ‖"
+  },
+  {
+    "bcv_short": "1K1:36",
+    "fp": "lp-paseq",
+    "r": "וַיֹּ֣אמֶר‖"
+  },
+  {
+    "bcv_short": "1K1:45",
+    "fp": "lp-paseq",
+    "r": "הַנָּבִ֨יא‖"
+  },
+  {
+    "bcv_short": "1K2:30",
+    "fp": "lp-paseq",
+    "r": "וַיֹּ֥אמֶֽר‖"
+  },
+  {
+    "bcv_short": "1K7:24",
+    "fp": "lp-paseq",
+    "r": "לִשְׂפָת֤וֹ‖"
+  },
+  {
+    "bcv_short": "1K7:25",
+    "fp": "lp-paseq",
+    "r": "פֹנִ֣ים‖"
+  },
+  {
+    "bcv_short": "1K7:25",
+    "fp": "lp-paseq",
+    "r": "פֹנִ֨ים‖"
+  },
+  {
+    "bcv_short": "1K7:29",
+    "fp": "lp-paseq",
+    "r": "אֲרָי֤וֹת‖"
+  },
+  {
+    "bcv_short": "1K7:35",
+    "fp": "lp-paseq",
+    "r": "עָגֹ֣ל‖"
+  },
+  {
+    "bcv_short": "1K8:65",
+    "fp": "lp-paseq",
+    "r": "בָעֵת־הַהִ֣יא‖"
+  },
+  {
+    "bcv_short": "1K11:22",
+    "fp": "lp-paseq",
+    "r": "וַיֹּ֣אמֶֽר‖"
+  },
+  {
+    "bcv_short": "1K11:36",
+    "fp": "lp-paseq",
+    "r": "כׇּֽל־הַיָּמִ֤ים‖"
+  },
+  {
+    "bcv_short": "1K12:32",
+    "fp": "lp-paseq",
+    "r": "יָרׇבְעָ֣ם‖"
+  },
+  {
+    "bcv_short": "1K12:32",
+    "fp": "lp-paseq",
+    "r": "י֨וֹם‖"
+  },
+  {
+    "bcv_short": "1K13:4",
+    "fp": "lp-paseq",
+    "r": "לֵאמֹ֣ר‖"
+  },
+  {
+    "bcv_short": "1K13:11",
+    "fp": "lp-paseq",
+    "r": "אִישׁ־הָאֱלֹהִ֨ים‖"
+  },
+  {
+    "bcv_short": "1K18:12",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1K19:7",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1K20:25",
+    "fp": "lp-paseq",
+    "r": "תִֽמְנֶֽה־לְךָ֣‖"
+  },
+  {
+    "bcv_short": "1K20:30",
+    "fp": "lp-paseq",
+    "r": "הַנּוֹתָרִ֥ים‖"
+  },
+  {
+    "bcv_short": "1K22:8",
+    "fp": "lp-paseq",
+    "r": "מֶלֶךְ־יִשְׂרָאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "2K3:16",
+    "fp": "lp-paseq",
+    "r": "גֵּבִ֥ים‖"
+  },
+  {
+    "bcv_short": "2K4:13",
+    "fp": "lp-paseq",
+    "r": "חָרַ֣דְתְּ‖"
+  },
+  {
+    "bcv_short": "2K4:19",
+    "fp": "lp-paseq",
+    "r": "רֹאשִׁ֣י‖"
+  },
+  {
+    "bcv_short": "2K7:1",
+    "fp": "lp-paseq",
+    "r": "כָּעֵ֤ת‖"
+  },
+  {
+    "bcv_short": "2K10:5",
+    "fp": "lp-paseq",
+    "r": "אֶל־יֵה֤וּא‖"
+  },
+  {
+    "bcv_short": "2K10:6",
+    "fp": "lp-paseq",
+    "r": "סֵ֨פֶר‖"
+  },
+  {
+    "bcv_short": "2K12:22",
+    "fp": "lp-paseq",
+    "r": "בֶּן־שֹׁמֵ֤ר‖"
+  },
+  {
+    "bcv_short": "2K13:14",
+    "fp": "lp-paseq",
+    "r": "אָבִ֣י‖"
+  },
+  {
+    "bcv_short": "2K19:4",
+    "fp": "lp-paseq",
+    "r": "מֶֽלֶךְ־אַשּׁ֤וּר‖"
+  },
+  {
+    "bcv_short": "2K19:16",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "2K19:23",
+    "fp": "lp-paseq",
+    "r": "חֵרַ֣פְתָּ‖"
+  },
+  {
+    "bcv_short": "2K24:2",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "2K25:4",
+    "fp": "lp-paseq",
+    "r": "הַמִּלְחָמָ֤ה‖"
+  },
+  {
+    "bcv_short": "2K25:17",
+    "fp": "lp-paseq",
+    "r": "עָלָ֥יו‖"
+  },
+  {
+    "bcv_short": "I3:7",
+    "fp": "lp-paseq",
+    "r": "הַה֤וּא‖"
+  },
+  {
+    "bcv_short": "I4:5",
+    "fp": "lp-paseq",
+    "r": "עָנָ֤ן‖"
+  },
+  {
+    "bcv_short": "I5:19",
+    "fp": "lp-paseq",
+    "r": "יְמַהֵ֧ר‖"
+  },
+  {
+    "bcv_short": "I6:2",
+    "fp": "lp-paseq",
+    "r": "עֹמְדִ֤ים‖"
+  },
+  {
+    "bcv_short": "I6:3",
+    "fp": "lp-paseq",
+    "r": "קָד֧וֹשׁ‖"
+  },
+  {
+    "bcv_short": "I10:14",
+    "fp": "lp-paseq",
+    "r": "כַקֵּ֤ן‖"
+  },
+  {
+    "bcv_short": "I11:11",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנָ֤י‖"
+  },
+  {
+    "bcv_short": "I21:2",
+    "fp": "lp-paseq",
+    "r": "הַבּוֹגֵ֤ד‖"
+  },
+  {
+    "bcv_short": "I21:2",
+    "fp": "lp-paseq",
+    "r": "וְהַשּׁוֹדֵ֣ד‖"
+  },
+  {
+    "bcv_short": "I22:13",
+    "fp": "lp-paseq",
+    "r": "הָרֹ֤ג‖"
+  },
+  {
+    "bcv_short": "I24:3",
+    "fp": "lp-paseq",
+    "r": "הִבּ֧וֹק‖"
+  },
+  {
+    "bcv_short": "I24:3",
+    "fp": "lp-paseq",
+    "r": "וְהִבּ֣וֹז‖"
+  },
+  {
+    "bcv_short": "I25:7",
+    "fp": "lp-paseq",
+    "r": "פְּנֵֽי־הַלּ֥וֹט‖"
+  },
+  {
+    "bcv_short": "I26:3",
+    "fp": "lp-paseq",
+    "r": "שָׁל֣וֹם‖"
+  },
+  {
+    "bcv_short": "I31:4",
+    "fp": "lp-paseq",
+    "r": "אָֽמַר־יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "I37:4",
+    "fp": "lp-paseq",
+    "r": "מֶלֶךְ־אַשּׁ֤וּר‖"
+  },
+  {
+    "bcv_short": "I37:17",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "I37:24",
+    "fp": "lp-paseq",
+    "r": "חֵרַ֣פְתָּ‖"
+  },
+  {
+    "bcv_short": "I40:28",
+    "fp": "lp-paseq",
+    "r": "עוֹלָ֤ם‖"
+  },
+  {
+    "bcv_short": "I42:5",
+    "fp": "lp-paseq",
+    "r": "הָאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "I57:19",
+    "fp": "lp-paseq",
+    "r": "שָׁל֨וֹם‖"
+  },
+  {
+    "bcv_short": "I63:7",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "I65:13",
+    "fp": "lp-paseq",
+    "r": "עֲבָדַ֤י‖"
+  },
+  {
+    "bcv_short": "I66:19",
+    "fp": "lp-paseq",
+    "r": "מֵהֶ֣ם‖"
+  },
+  {
+    "bcv_short": "Je1:13",
+    "fp": "lp-paseq",
+    "r": "דְבַר־יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "Je4:1",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֧ל‖"
+  },
+  {
+    "bcv_short": "Je6:11",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "Je6:14",
+    "fp": "lp-paseq",
+    "r": "שָׁל֣וֹם‖"
+  },
+  {
+    "bcv_short": "Je7:9",
+    "fp": "lp-paseq",
+    "r": "הֲגָנֹ֤ב‖"
+  },
+  {
+    "bcv_short": "Je8:11",
+    "fp": "lp-paseq",
+    "r": "שָׁל֣וֹם‖"
+  },
+  {
+    "bcv_short": "Je9:2",
+    "fp": "lp-paseq",
+    "r": "אֶל־רָעָ֧ה‖"
+  },
+  {
+    "bcv_short": "Je11:5",
+    "fp": "lp-paseq",
+    "r": "אָמֵ֥ן‖"
+  },
+  {
+    "bcv_short": "Je12:5",
+    "fp": "lp-paseq",
+    "r": "אֶת־רַגְלִ֥ים‖"
+  },
+  {
+    "bcv_short": "Je15:12",
+    "fp": "lp-paseq",
+    "r": "בַּרְזֶ֧ל‖"
+  },
+  {
+    "bcv_short": "Je17:25",
+    "fp": "lp-paseq",
+    "r": "מְלָכִ֣ים‖"
+  },
+  {
+    "bcv_short": "Je21:7",
+    "fp": "lp-paseq",
+    "r": "וְאֶת־עֲבָדָ֣יו‖"
+  },
+  {
+    "bcv_short": "Je23:6",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Je31:39",
+    "fp": "lp-paseq",
+    "r": "הַפְּגָרִ֣ים‖"
+  },
+  {
+    "bcv_short": "Je32:44",
+    "fp": "lp-paseq",
+    "r": "בַּסֵּ֥פֶר‖"
+  },
+  {
+    "bcv_short": "Je33:16",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Je34:1",
+    "fp": "lp-paseq",
+    "r": "מֶלֶךְ־בָּבֶ֣ל‖"
+  },
+  {
+    "bcv_short": "Je35:15",
+    "fp": "lp-paseq",
+    "r": "הַנְּבִאִ֣ים‖"
+  },
+  {
+    "bcv_short": "Je35:15",
+    "fp": "lp-paseq",
+    "r": "וְשָׁלֹ֣חַ‖"
+  },
+  {
+    "bcv_short": "Je41:10",
+    "fp": "lp-paseq",
+    "r": "וַיִּ֣שְׁבְּ‖"
+  },
+  {
+    "bcv_short": "Je44:25",
+    "fp": "lp-paseq",
+    "r": "מִלֵּאתֶ֣ם‖"
+  },
+  {
+    "bcv_short": "Je48:20",
+    "fp": "lp-paseq",
+    "r": "הֵילִ֣ילוּ‖"
+  },
+  {
+    "bcv_short": "Je49:24",
+    "fp": "lp-paseq",
+    "r": "וְרֶ֣טֶט‖"
+  },
+  {
+    "bcv_short": "Je49:37",
+    "fp": "lp-paseq",
+    "r": "עֲלֵיהֶ֧ם‖"
+  },
+  {
+    "bcv_short": "Je50:14",
+    "fp": "lp-paseq",
+    "r": "עַל־בָּבֶ֤ל‖"
+  },
+  {
+    "bcv_short": "Je50:29",
+    "fp": "lp-paseq",
+    "r": "אֶל־בָּבֶ֣ל‖"
+  },
+  {
+    "bcv_short": "Je51:2",
+    "fp": "lp-paseq",
+    "r": "לְבָבֶ֤ל‖"
+  },
+  {
+    "bcv_short": "Ee3:27",
+    "fp": "lp-paseq",
+    "r": "הַשֹּׁמֵ֤עַ‖"
+  },
+  {
+    "bcv_short": "Ee3:27",
+    "fp": "lp-paseq",
+    "r": "וְהֶחָדֵ֣ל‖"
+  },
+  {
+    "bcv_short": "Ee7:11",
+    "fp": "lp-paseq",
+    "r": "הֶחָמָ֥ס‖"
+  },
+  {
+    "bcv_short": "Ee8:3",
+    "fp": "lp-paseq",
+    "r": "ר֣וּחַ‖"
+  },
+  {
+    "bcv_short": "Ee8:10",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee14:21",
+    "fp": "lp-paseq",
+    "r": "שְׁפָטַ֣י‖"
+  },
+  {
+    "bcv_short": "Ee21:3",
+    "fp": "lp-paseq",
+    "r": "מַֽצִּית־בְּךָ֣‖"
+  },
+  {
+    "bcv_short": "Ee26:16",
+    "fp": "lp-paseq",
+    "r": "חֲרָד֤וֹת‖"
+  },
+  {
+    "bcv_short": "Ee33:25",
+    "fp": "lp-paseq",
+    "r": "עַל־הַדָּ֧ם‖"
+  },
+  {
+    "bcv_short": "Ee34:8",
+    "fp": "lp-paseq",
+    "r": "הֱיֽוֹת־צֹאנִ֣י‖"
+  },
+  {
+    "bcv_short": "Ee35:12",
+    "fp": "lp-paseq",
+    "r": "לֵאמֹ֣ר‖"
+  },
+  {
+    "bcv_short": "Ee36:5",
+    "fp": "lp-paseq",
+    "r": "נָתְנֽוּ־אֶת־אַרְצִ֣י‖"
+  },
+  {
+    "bcv_short": "Ee37:2",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee39:11",
+    "fp": "lp-paseq",
+    "r": "לְגוֹג֩‖"
+  },
+  {
+    "bcv_short": "Ee40:5",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:14",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee40:16",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:16",
+    "fp": "lp-paseq",
+    "r": "סָבִ֤יב‖"
+  },
+  {
+    "bcv_short": "Ee40:17",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:25",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:29",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:30",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:33",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:36",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee40:43",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee41:5",
+    "fp": "lp-paseq",
+    "r": "סָבִ֧יב‖"
+  },
+  {
+    "bcv_short": "Ee41:6",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee41:7",
+    "fp": "lp-paseq",
+    "r": "סָבִ֤יב‖"
+  },
+  {
+    "bcv_short": "Ee41:8",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee41:10",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee41:11",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee41:12",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee41:16",
+    "fp": "lp-paseq",
+    "r": "וְהָאַתִּיקִ֤ים‖"
+  },
+  {
+    "bcv_short": "Ee41:16",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee41:17",
+    "fp": "lp-paseq",
+    "r": "סָבִ֧יב‖"
+  },
+  {
+    "bcv_short": "Ee41:19",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee42:15",
+    "fp": "lp-paseq",
+    "r": "סָבִ֥יב‖"
+  },
+  {
+    "bcv_short": "Ee42:20",
+    "fp": "lp-paseq",
+    "r": "סָבִ֣יב‖"
+  },
+  {
+    "bcv_short": "Ee43:12",
+    "fp": "lp-paseq",
+    "r": "סָבִ֤יב‖"
+  },
+  {
+    "bcv_short": "Ee45:1",
+    "fp": "lp-paseq",
+    "r": "לַיהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Ee47:9",
+    "fp": "lp-paseq",
+    "r": "חַיָּ֣ה‖"
+  },
+  {
+    "bcv_short": "Ee47:16",
+    "fp": "lp-paseq",
+    "r": "חֲמָ֤ת‖"
+  },
+  {
+    "bcv_short": "Ee47:17",
+    "fp": "lp-paseq",
+    "r": "וְצָפ֥וֹן‖"
+  },
+  {
+    "bcv_short": "Ee48:1",
+    "fp": "lp-paseq",
+    "r": "דֶּֽרֶךְ־חֶתְלֹ֣ן‖"
+  },
+  {
+    "bcv_short": "Ee48:21",
+    "fp": "lp-paseq",
+    "r": "אֶ֥לֶף‖"
+  },
+  {
+    "bcv_short": "Ee48:35",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Ho9:1",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֤ל‖"
+  },
+  {
+    "bcv_short": "Ho9:4",
+    "fp": "lp-paseq",
+    "r": "לַיהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Ts3:15",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֤ל‖"
+  },
+  {
+    "bcv_short": "Hg1:12",
+    "fp": "lp-paseq",
+    "r": "זְרֻבָּבֶ֣ל‖"
+  },
+  {
+    "bcv_short": "Hg2:4",
+    "fp": "lp-paseq",
+    "r": "זְרֻבָּבֶ֣ל‖"
+  },
+  {
+    "bcv_short": "Hg2:20",
+    "fp": "lp-paseq",
+    "r": "דְבַר־יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "Zc4:2",
+    "fp": "lp-paseq",
+    "r": "רָאִ֣יתִי‖"
+  },
+  {
+    "bcv_short": "Zc11:12",
+    "fp": "lp-paseq",
+    "r": "וְאִם־לֹ֣א‖"
+  },
+  {
+    "bcv_short": "Zc14:2",
+    "fp": "lp-paseq",
+    "r": "אֶת־כׇּל־הַגּוֹיִ֥ם‖"
+  },
+  {
+    "bcv_short": "Ps5:2",
+    "fp": "lp-paseq",
+    "r": "הַאֲזִ֥ינָה‖"
+  },
+  {
+    "bcv_short": "Ps5:7",
+    "fp": "lp-paseq",
+    "r": "יְתָ֘עֵ֥ב‖"
+  },
+  {
+    "bcv_short": "Ps10:3",
+    "fp": "lp-paseq",
+    "r": "נִ֘אֵ֥ץ‖"
+  },
+  {
+    "bcv_short": "Ps10:13",
+    "fp": "lp-paseq",
+    "r": "רָשָׁ֥ע‖"
+  },
+  {
+    "bcv_short": "Ps18:50",
+    "fp": "lp-paseq",
+    "r": "בַגּוֹיִ֥ם‖"
+  },
+  {
+    "bcv_short": "Ps20:7",
+    "fp": "lp-paseq",
+    "r": "הוֹשִׁ֥יעַ‖"
+  },
+  {
+    "bcv_short": "Ps35:21",
+    "fp": "lp-paseq",
+    "r": "הֶאָ֣ח‖"
+  },
+  {
+    "bcv_short": "Ps36:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps40:16",
+    "fp": "lp-paseq",
+    "r": "הֶ֘אָ֥ח‖"
+  },
+  {
+    "bcv_short": "Ps41:14",
+    "fp": "lp-paseq",
+    "r": "אָ֘מֵ֥ן‖"
+  },
+  {
+    "bcv_short": "Ps44:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps44:24",
+    "fp": "lp-paseq",
+    "r": "תִישַׁ֥ן‖"
+  },
+  {
+    "bcv_short": "Ps47:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps49:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps50:1",
+    "fp": "lp-paseq",
+    "r": "אֵ֤ל‖"
+  },
+  {
+    "bcv_short": "Ps57:10",
+    "fp": "lp-paseq",
+    "r": "בָעַמִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps58:7",
+    "fp": "lp-paseq",
+    "r": "נְתֹ֣ץ‖"
+  },
+  {
+    "bcv_short": "Ps59:2",
+    "fp": "lp-paseq",
+    "r": "מֵאֹיְבַ֥י‖"
+  },
+  {
+    "bcv_short": "Ps59:6",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָֽה־אֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps61:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps61:9",
+    "fp": "lp-paseq",
+    "r": "י֣וֹם‖"
+  },
+  {
+    "bcv_short": "Ps66:8",
+    "fp": "lp-paseq",
+    "r": "עַמִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps66:18",
+    "fp": "lp-paseq",
+    "r": "יִשְׁמַ֣ע‖"
+  },
+  {
+    "bcv_short": "Ps67:4",
+    "fp": "lp-paseq",
+    "r": "עַמִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps67:6",
+    "fp": "lp-paseq",
+    "r": "עַמִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps68:19",
+    "fp": "lp-paseq",
+    "r": "לִשְׁכֹּ֤ן‖"
+  },
+  {
+    "bcv_short": "Ps68:20",
+    "fp": "lp-paseq",
+    "r": "י֤וֹם‖"
+  },
+  {
+    "bcv_short": "Ps68:21",
+    "fp": "lp-paseq",
+    "r": "הָ֤אֵ֣ל‖"
+  },
+  {
+    "bcv_short": "Ps68:36",
+    "fp": "lp-paseq",
+    "r": "נֹתֵ֨ן‖"
+  },
+  {
+    "bcv_short": "Ps69:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps70:4",
+    "fp": "lp-paseq",
+    "r": "הֶ֘אָ֥ח‖"
+  },
+  {
+    "bcv_short": "Ps72:19",
+    "fp": "lp-paseq",
+    "r": "אָ֘מֵ֥ן‖"
+  },
+  {
+    "bcv_short": "Ps74:18",
+    "fp": "lp-paseq",
+    "r": "חֵרֵ֣ף‖"
+  },
+  {
+    "bcv_short": "Ps77:8",
+    "fp": "lp-paseq",
+    "r": "יִזְנַ֥ח‖"
+  },
+  {
+    "bcv_short": "Ps78:65",
+    "fp": "lp-paseq",
+    "r": "כְּיָשֵׁ֥ן‖"
+  },
+  {
+    "bcv_short": "Ps81:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps85:1",
+    "fp": "lp-paseq",
+    "r": "לַמְנַצֵּ֬חַ‖"
+  },
+  {
+    "bcv_short": "Ps85:9",
+    "fp": "lp-paseq",
+    "r": "הָאֵ֢ל‖"
+  },
+  {
+    "bcv_short": "Ps86:8",
+    "fp": "lp-paseq",
+    "r": "בָאֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps89:9",
+    "fp": "lp-paseq",
+    "r": "חֲסִ֥ין‖"
+  },
+  {
+    "bcv_short": "Ps89:50",
+    "fp": "lp-paseq",
+    "r": "הָרִאשֹׁנִ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps89:52",
+    "fp": "lp-paseq",
+    "r": "אוֹיְבֶ֥יךָ‖"
+  },
+  {
+    "bcv_short": "Ps89:53",
+    "fp": "lp-paseq",
+    "r": "אָ֘מֵ֥ן‖"
+  },
+  {
+    "bcv_short": "Ps94:3",
+    "fp": "lp-paseq",
+    "r": "רְשָׁעִ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps108:4",
+    "fp": "lp-paseq",
+    "r": "בָעַמִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps113:4",
+    "fp": "lp-paseq",
+    "r": "עַל־כׇּל־גּוֹיִ֥ם‖"
+  },
+  {
+    "bcv_short": "Ps116:1",
+    "fp": "lp-paseq",
+    "r": "כִּי־יִשְׁמַ֥ע‖"
+  },
+  {
+    "bcv_short": "Ps119:52",
+    "fp": "lp-paseq",
+    "r": "מֵעוֹלָ֥ם‖"
+  },
+  {
+    "bcv_short": "Ps119:156",
+    "fp": "lp-paseq",
+    "r": "רַבִּ֥ים‖"
+  },
+  {
+    "bcv_short": "Ps137:7",
+    "fp": "lp-paseq",
+    "r": "עָ֤רוּ‖"
+  },
+  {
+    "bcv_short": "Ps139:19",
+    "fp": "lp-paseq",
+    "r": "אֱל֥וֹהַּ‖"
+  },
+  {
+    "bcv_short": "Ps139:21",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "Ps141:4",
+    "fp": "lp-paseq",
+    "r": "לְדָבָ֪ר‖"
+  },
+  {
+    "bcv_short": "Ps143:9",
+    "fp": "lp-paseq",
+    "r": "מֵאֹיְבַ֥י‖"
+  },
+  {
+    "bcv_short": "Pr1:22",
+    "fp": "lp-paseq",
+    "r": "עַד־מָתַ֣י‖"
+  },
+  {
+    "bcv_short": "Pr6:3",
+    "fp": "lp-paseq",
+    "r": "אֵפ֪וֹא‖"
+  },
+  {
+    "bcv_short": "Pr6:9",
+    "fp": "lp-paseq",
+    "r": "עָצֵ֥ל‖"
+  },
+  {
+    "bcv_short": "Pr8:21",
+    "fp": "lp-paseq",
+    "r": "אֹהֲבַ֥י‖"
+  },
+  {
+    "bcv_short": "Pr8:30",
+    "fp": "lp-paseq",
+    "r": "י֤וֹם‖"
+  },
+  {
+    "bcv_short": "Pr8:34",
+    "fp": "lp-paseq",
+    "r": "י֤וֹם‖"
+  },
+  {
+    "bcv_short": "Pr15:25",
+    "fp": "lp-paseq",
+    "r": "יִסַּ֥ח‖"
+  },
+  {
+    "bcv_short": "Pr30:15",
+    "fp": "lp-paseq",
+    "r": "הַ֤ב‖"
+  },
+  {
+    "bcv_short": "Jb27:9",
+    "fp": "lp-paseq",
+    "r": "יִשְׁמַ֥ע‖"
+  },
+  {
+    "bcv_short": "Jb27:13",
+    "fp": "lp-paseq",
+    "r": "רָשָׁ֥ע‖"
+  },
+  {
+    "bcv_short": "Jb35:13",
+    "fp": "lp-paseq",
+    "r": "לֹא־יִשְׁמַ֥ע‖"
+  },
+  {
+    "bcv_short": "Jb38:1",
+    "fp": "lp-paseq",
+    "r": "מִ֥ן‖"
+  },
+  {
+    "bcv_short": "Jb40:6",
+    "fp": "lp-paseq",
+    "r": "מִ֥ן‖"
+  },
+  {
+    "bcv_short": "Jb40:9",
+    "fp": "lp-paseq",
+    "r": "כָּאֵ֥ל‖"
+  },
+  {
+    "bcv_short": "S1:13",
+    "fp": "lp-paseq",
+    "r": "הַמֹּ֤ר‖"
+  },
+  {
+    "bcv_short": "S1:14",
+    "fp": "lp-paseq",
+    "r": "הַכֹּ֤פֶר‖"
+  },
+  {
+    "bcv_short": "S2:7",
+    "fp": "lp-paseq",
+    "r": "אִם־תָּעִ֧ירוּ‖"
+  },
+  {
+    "bcv_short": "S2:13",
+    "fp": "lp-paseq",
+    "r": "וְהַגְּפָנִ֥ים‖"
+  },
+  {
+    "bcv_short": "S3:5",
+    "fp": "lp-paseq",
+    "r": "אִם־תָּעִ֧ירוּ‖"
+  },
+  {
+    "bcv_short": "S3:11",
+    "fp": "lp-paseq",
+    "r": "צְאֶ֧נָה‖"
+  },
+  {
+    "bcv_short": "S4:12",
+    "fp": "lp-paseq",
+    "r": "גַּ֥ן‖"
+  },
+  {
+    "bcv_short": "S8:4",
+    "fp": "lp-paseq",
+    "r": "מַה־תָּעִ֧ירוּ‖"
+  },
+  {
+    "bcv_short": "R4:11",
+    "fp": "lp-paseq",
+    "r": "כְּרָחֵ֤ל‖"
+  },
+  {
+    "bcv_short": "La1:15",
+    "fp": "lp-paseq",
+    "r": "כׇל־אַבִּירַ֤י‖"
+  },
+  {
+    "bcv_short": "La1:16",
+    "fp": "lp-paseq",
+    "r": "עֵינִ֤י‖"
+  },
+  {
+    "bcv_short": "La2:1",
+    "fp": "lp-paseq",
+    "r": "בְּאַפּ֤וֹ‖"
+  },
+  {
+    "bcv_short": "La2:5",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנָ֤י‖"
+  },
+  {
+    "bcv_short": "La2:6",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "La2:7",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנָ֤י‖"
+  },
+  {
+    "bcv_short": "La2:8",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "La5:21",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "Ec1:6",
+    "fp": "lp-paseq",
+    "r": "סוֹבֵ֤ב‖"
+  },
+  {
+    "bcv_short": "Ec7:24",
+    "fp": "lp-paseq",
+    "r": "וְעָמֹ֥ק‖"
+  },
+  {
+    "bcv_short": "Es3:7",
+    "fp": "lp-paseq",
+    "r": "מִיּ֧וֹם‖"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֧ת‖"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es9:7",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es9:8",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֧ת‖"
+  },
+  {
+    "bcv_short": "Es9:8",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es9:8",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֤ת‖"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֣ת‖"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es9:9",
+    "fp": "lp-paseq",
+    "r": "וְאֵ֥ת‖"
+  },
+  {
+    "bcv_short": "Es10:1",
+    "fp": "lp-paseq",
+    "r": "אֲחַשְׁוֵר֧וֹשׁ‖"
+  },
+  {
+    "bcv_short": "Da4:20",
+    "fp": "lp-paseq",
+    "r": "נָחִ֣ת‖"
+  },
+  {
+    "bcv_short": "Da5:12",
+    "fp": "lp-paseq",
+    "r": "ר֣וּחַ‖"
+  },
+  {
+    "bcv_short": "Da5:23",
+    "fp": "lp-paseq",
+    "r": "מָרֵֽא־שְׁמַיָּ֣א‖"
+  },
+  {
+    "bcv_short": "Da9:18",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהַ֥י‖"
+  },
+  {
+    "bcv_short": "Da9:19",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנָ֤י‖"
+  },
+  {
+    "bcv_short": "Da9:19",
+    "fp": "lp-paseq",
+    "r": "אֲדֹנָ֣י‖"
+  },
+  {
+    "bcv_short": "Da11:17",
+    "fp": "lp-paseq",
+    "r": "וְיָשֵׂ֣ם‖"
+  },
+  {
+    "bcv_short": "Da11:18",
+    "fp": "lp-paseq",
+    "r": "וְיָשֵׂ֧ם‖"
+  },
+  {
+    "bcv_short": "Er6:9",
+    "fp": "lp-paseq",
+    "r": "י֥וֹם‖"
+  },
+  {
+    "bcv_short": "Er7:17",
+    "fp": "lp-paseq",
+    "r": "תּוֹרִ֤ין‖"
+  },
+  {
+    "bcv_short": "Er10:9",
+    "fp": "lp-paseq",
+    "r": "וּבִנְיָמִ֨ן‖"
+  },
+  {
+    "bcv_short": "Ne2:12",
+    "fp": "lp-paseq",
+    "r": "וַאֲנָשִׁ֣ים‖"
+  },
+  {
+    "bcv_short": "Ne2:13",
+    "fp": "lp-paseq",
+    "r": "אֲשֶׁר־הֵ֣ם‖"
+  },
+  {
+    "bcv_short": "Ne8:6",
+    "fp": "lp-paseq",
+    "r": "אָמֵ֤ן‖"
+  },
+  {
+    "bcv_short": "Ne8:7",
+    "fp": "lp-paseq",
+    "r": "שַׁבְּתַ֣י‖"
+  },
+  {
+    "bcv_short": "Ne8:9",
+    "fp": "lp-paseq",
+    "r": "הַכֹּהֵ֣ן‖"
+  },
+  {
+    "bcv_short": "Ne8:17",
+    "fp": "lp-paseq",
+    "r": "מִן־הַשְּׁבִ֥י‖"
+  },
+  {
+    "bcv_short": "Ne8:18",
+    "fp": "lp-paseq",
+    "r": "י֣וֹם‖"
+  },
+  {
+    "bcv_short": "Ne11:33",
+    "fp": "lp-paseq",
+    "r": "חָצ֥וֹר‖"
+  },
+  {
+    "bcv_short": "1C1:24",
+    "fp": "lp-paseq",
+    "r": "שֵׁ֥ם‖"
+  },
+  {
+    "bcv_short": "1C2:25",
+    "fp": "lp-paseq",
+    "r": "הַבְּכ֣וֹר‖"
+  },
+  {
+    "bcv_short": "1C8:38",
+    "fp": "lp-paseq",
+    "r": "עַזְרִיקָ֥ם‖"
+  },
+  {
+    "bcv_short": "1C9:20",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֥ה‖"
+  },
+  {
+    "bcv_short": "1C9:44",
+    "fp": "lp-paseq",
+    "r": "עַזְרִיקָ֥ם‖"
+  },
+  {
+    "bcv_short": "1C12:19",
+    "fp": "lp-paseq",
+    "r": "שָׁל֨וֹם‖"
+  },
+  {
+    "bcv_short": "1C12:21",
+    "fp": "lp-paseq",
+    "r": "עָלָ֣יו‖"
+  },
+  {
+    "bcv_short": "1C12:41",
+    "fp": "lp-paseq",
+    "r": "וּבַפְּרָדִ֣ים‖"
+  },
+  {
+    "bcv_short": "1C13:6",
+    "fp": "lp-paseq",
+    "r": "הָאֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "1C15:18",
+    "fp": "lp-paseq",
+    "r": "וִיחִיאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "1C17:22",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֧ל‖"
+  },
+  {
+    "bcv_short": "1C21:3",
+    "fp": "lp-paseq",
+    "r": "עַל־עַמּ֤וֹ‖"
+  },
+  {
+    "bcv_short": "1C21:12",
+    "fp": "lp-paseq",
+    "r": "אוֹיְבֶ֣יךָ‖"
+  },
+  {
+    "bcv_short": "1C21:12",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֤ה‖"
+  },
+  {
+    "bcv_short": "1C22:3",
+    "fp": "lp-paseq",
+    "r": "וּבַרְזֶ֣ל‖"
+  },
+  {
+    "bcv_short": "1C22:5",
+    "fp": "lp-paseq",
+    "r": "לְהַגְדִּ֨יל‖"
+  },
+  {
+    "bcv_short": "1C24:6",
+    "fp": "lp-paseq",
+    "r": "וְאָחֻ֥ז‖"
+  },
+  {
+    "bcv_short": "1C27:1",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "1C27:1",
+    "fp": "lp-paseq",
+    "r": "הָאֲלָפִ֣ים‖"
+  },
+  {
+    "bcv_short": "1C27:12",
+    "fp": "lp-paseq",
+    "r": "לַבֵּ֣ן‖"
+  },
+  {
+    "bcv_short": "1C28:1",
+    "fp": "lp-paseq",
+    "r": "כׇל־רְכוּשׁ־וּמִקְנֶה֩‖"
+  },
+  {
+    "bcv_short": "1C29:2",
+    "fp": "lp-paseq",
+    "r": "הַזָּהָ֣ב‖"
+  },
+  {
+    "bcv_short": "1C29:11",
+    "fp": "lp-paseq",
+    "r": "לְכֹ֥ל‖"
+  },
+  {
+    "bcv_short": "1C29:15",
+    "fp": "lp-paseq",
+    "r": "כַּצֵּ֧ל‖"
+  },
+  {
+    "bcv_short": "1C29:21",
+    "fp": "lp-paseq",
+    "r": "לַיהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "1C29:23",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֧ה‖"
+  },
+  {
+    "bcv_short": "2C1:11",
+    "fp": "lp-paseq",
+    "r": "אֱלֹהִ֣ים‖"
+  },
+  {
+    "bcv_short": "2C2:9",
+    "fp": "lp-paseq",
+    "r": "חִטִּ֨ים‖"
+  },
+  {
+    "bcv_short": "2C4:3",
+    "fp": "lp-paseq",
+    "r": "סָבִ֤יב‖"
+  },
+  {
+    "bcv_short": "2C4:4",
+    "fp": "lp-paseq",
+    "r": "פֹנִ֣ים‖"
+  },
+  {
+    "bcv_short": "2C4:4",
+    "fp": "lp-paseq",
+    "r": "פֹנִ֨ים‖"
+  },
+  {
+    "bcv_short": "2C10:16",
+    "fp": "lp-paseq",
+    "r": "אֶת־הַמֶּ֣לֶךְ‖"
+  },
+  {
+    "bcv_short": "2C12:6",
+    "fp": "lp-paseq",
+    "r": "צַדִּ֥יק‖"
+  },
+  {
+    "bcv_short": "2C12:7",
+    "fp": "lp-paseq",
+    "r": "אֶל־שְׁמַעְיָ֧ה‖"
+  },
+  {
+    "bcv_short": "2C13:12",
+    "fp": "lp-paseq",
+    "r": "הָאֱלֹהִ֧ים‖"
+  },
+  {
+    "bcv_short": "2C16:8",
+    "fp": "lp-paseq",
+    "r": "לְחַ֧יִל‖"
+  },
+  {
+    "bcv_short": "2C18:7",
+    "fp": "lp-paseq",
+    "r": "מֶלֶךְ־יִשְׂרָאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "2C19:10",
+    "fp": "lp-paseq",
+    "r": "בֵּֽין־דָּ֣ם‖"
+  },
+  {
+    "bcv_short": "2C20:1",
+    "fp": "lp-paseq",
+    "r": "וְעִמָּהֶ֧ם‖"
+  },
+  {
+    "bcv_short": "2C20:8",
+    "fp": "lp-paseq",
+    "r": "לְךָ֧‖"
+  },
+  {
+    "bcv_short": "2C20:22",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֣ה‖"
+  },
+  {
+    "bcv_short": "2C21:3",
+    "fp": "lp-paseq",
+    "r": "לָהֶ֣ם‖"
+  },
+  {
+    "bcv_short": "2C21:18",
+    "fp": "lp-paseq",
+    "r": "יְהֹוָ֧ה‖"
+  },
+  {
+    "bcv_short": "2C21:19",
+    "fp": "lp-paseq",
+    "r": "לְיָמִ֣ים‖"
+  },
+  {
+    "bcv_short": "2C24:11",
+    "fp": "lp-paseq",
+    "r": "לְי֣וֹם‖"
+  },
+  {
+    "bcv_short": "2C26:17",
+    "fp": "lp-paseq",
+    "r": "כֹּהֲנִ֧ים‖"
+  },
+  {
+    "bcv_short": "2C30:10",
+    "fp": "lp-paseq",
+    "r": "מֵעִ֧יר‖"
+  },
+  {
+    "bcv_short": "2C30:19",
+    "fp": "lp-paseq",
+    "r": "הָאֱלֹהִ֥ים‖"
+  },
+  {
+    "bcv_short": "2C30:21",
+    "fp": "lp-paseq",
+    "r": "י֣וֹם‖"
+  },
+  {
+    "bcv_short": "2C33:14",
+    "fp": "lp-paseq",
+    "r": "חִיצוֹנָ֣ה‖"
+  },
+  {
+    "bcv_short": "2C34:12",
+    "fp": "lp-paseq",
+    "r": "וַעֲלֵיהֶ֣ם‖"
+  },
+  {
+    "bcv_short": "2C35:18",
+    "fp": "lp-paseq",
+    "r": "יִשְׂרָאֵ֣ל‖"
+  },
+  {
+    "bcv_short": "2C35:25",
+    "fp": "lp-paseq",
+    "r": "כׇֽל־הַשָּׁרִ֣ים‖"
+  },
+  {
+    "bcv_short": "Ps55:20",
+    "fp": "lp-paseq/legarmeih-after",
+    "r": "יִשְׁמַ֤ע‖ אֵ֨ל׀"
+  },
+  {
+    "bcv_short": "Js8:33",
+    "fp": "lp-paseq×2",
+    "r": "מִזֶּ֣ה‖ וּמִזֶּ֣ה‖"
+  },
+  {
+    "bcv_short": "Js19:51",
+    "fp": "lp-paseq×2",
+    "r": "בְּנֵי־יִשְׂרָאֵ֨ל‖ בְּגוֹרָ֤ל‖"
+  },
+  {
+    "bcv_short": "Js22:22",
+    "fp": "lp-paseq×2",
+    "r": "אֵל֩‖ אֱלֹהִ֨ים‖"
+  },
+  {
+    "bcv_short": "Js22:22",
+    "fp": "lp-paseq×2",
+    "r": "אֵ֣ל‖ אֱלֹהִ֤ים‖"
+  },
+  {
+    "bcv_short": "Ju20:25",
+    "fp": "lp-paseq×2",
+    "r": "בִנְיָמִ֨ן‖ לִקְרָאתָ֥ם‖"
+  },
+  {
+    "bcv_short": "1S18:10",
+    "fp": "lp-paseq×2",
+    "r": "אֱלֹהִ֨ים‖ רָעָ֤ה‖"
+  },
+  {
+    "bcv_short": "1S24:10",
+    "fp": "lp-paseq×2",
+    "r": "יְהֹוָ֨ה‖ הַיּ֤וֹם‖"
+  },
+  {
+    "bcv_short": "2S24:13",
+    "fp": "lp-paseq×2",
+    "r": "שֶׁבַע־שָׁנִ֣ים‖ רָעָ֣ב‖"
+  },
+  {
+    "bcv_short": "1K12:16",
+    "fp": "lp-paseq×2",
+    "r": "אֶת־הַמֶּ֣לֶךְ‖ דָּבָ֣ר‖"
+  },
+  {
+    "bcv_short": "1K21:2",
+    "fp": "lp-paseq×2",
+    "r": "אֶל־נָב֣וֹת‖ לֵאמֹר֩‖"
+  },
+  {
+    "bcv_short": "I66:20",
+    "fp": "lp-paseq×2",
+    "r": "מִכׇּל־הַגּוֹיִ֣ם‖ מִנְחָ֣ה‖"
+  },
+  {
+    "bcv_short": "Je51:37",
+    "fp": "lp-paseq×2",
+    "r": "בָבֶ֨ל‖ לְגַלִּ֧ים‖"
+  },
+  {
+    "bcv_short": "Ee47:12",
+    "fp": "lp-paseq×2",
+    "r": "מִזֶּ֣ה‖ וּמִזֶּ֣ה‖"
+  },
+  {
+    "bcv_short": "Ee48:21",
+    "fp": "lp-paseq×2",
+    "r": "מִזֶּ֣ה‖ וּמִזֶּ֣ה‖"
+  },
+  {
+    "bcv_short": "Es9:27",
+    "fp": "lp-paseq×2",
+    "r": "הַיְּהוּדִים֩‖ עֲלֵיהֶ֨ם‖"
+  },
+  {
+    "bcv_short": "Er6:9",
+    "fp": "lp-paseq×2",
+    "r": "וְאִמְּרִ֣ין‖ לַעֲלָוָ֣ן‖"
+  },
+  {
+    "bcv_short": "Ne13:15",
+    "fp": "lp-paseq×2",
+    "r": "בִֽיהוּדָ֣ה‖ דֹּֽרְכִֽים־גִּתּ֣וֹת‖"
+  },
+  {
+    "bcv_short": "1C21:15",
+    "fp": "lp-paseq×2",
+    "r": "הָאֱלֹהִ֨ים‖ מַלְאָ֥ךְ‖"
+  },
+  {
+    "bcv_short": "2C35:21",
+    "fp": "lp-paseq×2",
+    "r": "מַלְאָכִ֣ים‖ לֵאמֹר֩‖"
+  },
+  {
+    "bcv_short": "2K18:14",
+    "fp": "lp-paseq×3",
+    "r": "אֶל־מֶֽלֶךְ־אַשּׁוּר֩‖ לָכִ֨ישָׁה‖ לֵאמֹ֤ר‖"
+  }
+]
