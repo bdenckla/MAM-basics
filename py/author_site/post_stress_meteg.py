@@ -702,26 +702,21 @@ def _opening(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "A meteg almost always comes before the stressed syllable of its chanted",
-                " word, but it can also come after the stress. Both",
-                *[" ", itm(), " and ", cos()],
-                " discuss MAS (meteg after the stress). Neither book says how often MAS",
-                " happens; we find that MAM has ",
-                f"{total:,} of them.",
+                "A meteg almost always comes before the stressed syllable of its word, but it"
+                " can also come after the stress. We find that MAM has "
+                f"{total:,} cases of meteg after the stress (MAS).",
             )
         ),
         _para(
-            "First, some definitions:"
-            " a chanted word can be either a simple word"
-            " (a word of just one atom)"
-            " or it can be a compound word"
-            " (a word of two or more atoms connected by maqaf marks)."
-            " An atom is a sequence of letters uninterrupted by space, maqaf, or any other punctuation."
+            'In this document, by "word" we mean a chanted word, which is either a simple word'
+            " (having just one atom) or a compound word (having two or more atoms connected by"
+            ' maqaf marks). By "atom", we mean a sequence of pointed letters uninterrupted by'
+            " space, maqaf, or any other punctuation."
         ),
         _para(
-            "The location of stress is not always obvious. For our survey of MAS, we"
-            " locate stress using Phonetic MAM, an edition"
-            " of MAM that marks the stressed syllable of every chanted word."
+            "The location of a word's stress is not always obvious. In this document, we locate"
+            " stress using Phonetic MAM, an edition of MAM that marks the stress of every word"
+            " in MAM."
         ),
         _para(
             "Under the exact stress-letter rule used in the 2026-09-03 census table, all "
