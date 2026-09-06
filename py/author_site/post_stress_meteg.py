@@ -413,8 +413,8 @@ def _fit_for_mas(survey: dict) -> dict:
 
 
 def _lacks_mas_cases(survey: dict) -> dict:
-    """The survey records displayed by the pages linked from the Fit for MAS table."""
-    return _fit_for_mas(survey)["lacks_mas_cases"]
+    """The tables displayed by the pages linked from the complete Fit-for-MAS records."""
+    return psm._lacks_mas_case_lists(_fit_for_mas(survey)["records"])
 
 
 def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
@@ -525,6 +525,27 @@ def pin_claims(survey: dict) -> None:
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
     ) == len(post_stress)
+    fitting_records = fit_for_mas["records"]
+    assert len(fitting_records) == fit_for_mas["fitting_any_type"]
+    assert all(
+        record["following_chanted_word_is_initially_stressed"]
+        and record["following_chanted_word_has_disjunctive_accent"]
+        and len(record["types"]) == 1
+        and record["chanted_word"]
+        and record["following_chanted_word"]
+        for record in fitting_records
+    )
+    assert Counter(
+        (record["types"][0], record["has_mas"]) for record in fitting_records
+    ) == Counter(
+        {
+            (psm.TYPE_OPEN, True): 113,
+            (psm.TYPE_OPEN, False): 2705,
+            (psm.TYPE_GUTTURAL, True): 54,
+            (psm.TYPE_GUTTURAL, False): 269,
+            (psm.TYPE_CLOSED_TSERE, True): 40,
+        }
+    )
     lacks_mas_cases = _lacks_mas_cases(survey)
     type_2_lacks_mas_cases = lacks_mas_cases["type_2_all"]
     type_1_lacks_mas_samples = lacks_mas_cases["type_1_random_sample"]

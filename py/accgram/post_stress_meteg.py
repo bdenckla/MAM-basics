@@ -1260,18 +1260,38 @@ def _sample_in_corpus_order(
     ]
 
 
-def _lacks_mas_case_lists(candidates: list[dict]) -> dict:
-    """The all-type-2 and selected type-1 Fit-for-MAS cases that lack MAS."""
+def _fit_for_mas_record(candidate: dict) -> dict:
+    """The complete public-data record for one chanted-word pair fit for MAS."""
+    assert _is_fit_for_mas(candidate), candidate
+    return {
+        "bcv": candidate["bcv"],
+        "system": candidate["system"],
+        "chanted_word": candidate["chanted_word"],
+        "jta": candidate["jta"],
+        "following_chanted_word": candidate["following_chanted_word"],
+        "intervening_punctuation": candidate["intervening_punctuation"],
+        "types": candidate["structural_types"],
+        "has_mas": candidate["has_mas"],
+        "following_chanted_word_is_initially_stressed": candidate[
+            "following_chanted_word_is_initially_stressed"
+        ],
+        "following_chanted_word_has_disjunctive_accent": candidate[
+            "following_chanted_word_has_disjunctive_accent"
+        ],
+    }
+
+
+def _lacks_mas_case_lists(records: list[dict]) -> dict:
+    """The all-type-2 and selected type-1 tables extracted from complete Fit-for-MAS data."""
 
     def lacking(kind: str, system: str | None = None) -> list[dict]:
         return [
-            candidate
-            for candidate in candidates
+            record
+            for record in records
             if (
-                _is_fit_for_mas(candidate)
-                and kind in candidate["structural_types"]
-                and not candidate["has_mas"]
-                and (system is None or candidate["system"] == system)
+                kind in record["types"]
+                and not record["has_mas"]
+                and (system is None or record["system"] == system)
             )
         ]
 
@@ -1291,11 +1311,6 @@ def _lacks_mas_case_lists(candidates: list[dict]) -> dict:
             ),
         },
     }
-
-
-def _rendered_lacks_mas_case(candidate: dict) -> dict:
-    """The analysed Phonetic MAM form and reference a page needs for one case."""
-    return {key: candidate[key] for key in ("bcv", "chanted_word")}
 
 
 def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dict:
@@ -1369,6 +1384,11 @@ def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dic
             " classified by the three MAS structural predicates and checked for U+05BD."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
+        "records_what": (
+            "Every chanted-word pair fit for MAS. Each record has the chanted word whose"
+            " post-stress syllable is classified, the following chanted word, the applicable"
+            " types, and whether the first chanted word has MAS."
+        ),
         "candidate_chanted_words": len(candidates),
         "following_word_conditions": len(following_word_conditions),
         "fitting_any_type": len(fitting),
@@ -1394,6 +1414,7 @@ def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dic
                 ).items()
             )
         ),
+        "records": [_fit_for_mas_record(candidate) for candidate in fitting],
     }
 
 
@@ -2187,20 +2208,6 @@ def build_survey() -> dict:
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
     fit_for_mas = _fit_for_mas_summary(found["fit_for_mas_candidates"], post_stress)
-    lacks_mas_case_lists = _lacks_mas_case_lists(found["fit_for_mas_candidates"])
-    fit_for_mas["lacks_mas_cases"] = {
-        "type_2_all": [
-            _rendered_lacks_mas_case(candidate)
-            for candidate in lacks_mas_case_lists["type_2_all"]
-        ],
-        "type_1_random_sample": {
-            system: [
-                _rendered_lacks_mas_case(candidate)
-                for candidate in lacks_mas_case_lists["type_1_random_sample"][system]
-            ]
-            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
-        },
-    }
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
