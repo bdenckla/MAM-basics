@@ -24,6 +24,57 @@ LB_DIR = ac_paths.line_breaks_dir()
 
 EXPECTED_LINES_PER_COL = 28
 
+# The directory holds two distinct, internally contiguous capture runs.  They
+# must not be joined into one MAM-simple comparison: the MAM verses between
+# Deut 34 and Ps 149 do not occur in either JSON run.
+WORD_SEQUENCE_RUNS = (
+    (
+        "Deuteronomy pages 001r-006r",
+        (
+            "001r",
+            "001v",
+            "002r",
+            "002v",
+            "003r",
+            "003v",
+            "004r",
+            "004v",
+            "005r",
+            "005v",
+            "006r",
+        ),
+    ),
+    (
+        "Aleppo leaf run 270r-281v",
+        (
+            "270r",
+            "270v",
+            "271r",
+            "271v",
+            "272r",
+            "272v",
+            "273r",
+            "273v",
+            "274r",
+            "274v",
+            "275r",
+            "275v",
+            "276r",
+            "276v",
+            "277r",
+            "277v",
+            "278r",
+            "278v",
+            "279r",
+            "279v",
+            "280r",
+            "280v",
+            "281r",
+            "281v",
+        ),
+    ),
+)
+
 
 def load_stream(path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -63,6 +114,98 @@ def _last_verse_ref(path):
                 if key in item:
                     return _parse_verse_label(item[key])
     return None
+
+
+def word_sequence_runs(paths):
+    """Return selected paths partitioned into their declared text runs.
+
+    The expected MAM-simple stream is contiguous only within each run.  New
+    line-break JSON requires an explicit entry in ``WORD_SEQUENCE_RUNS`` rather
+    than silently extending the preceding run.
+    """
+    by_page = {path.stem: path for path in paths}
+    declared = {page_id for _, page_ids in WORD_SEQUENCE_RUNS for page_id in page_ids}
+    undeclared = sorted(set(by_page) - declared)
+    runs = []
+    for label, page_ids in WORD_SEQUENCE_RUNS:
+        selected = [by_page[page_id] for page_id in page_ids if page_id in by_page]
+        if selected:
+            runs.append((label, selected))
+    return runs, undeclared
+
+
+def check_word_sequence_run(label, paths, stats):
+    """Return the cross-file word-sequence issue for one contiguous run, if any."""
+    first_ref = _first_verse_ref(paths[0])
+    last_ref = _last_verse_ref(paths[-1])
+    if not first_ref or not last_ref:
+        return None, None
+
+    mega_verses = get_page_verses(
+        first_ref[0],
+        (first_ref[1], first_ref[2]),
+        last_ref[0],
+        (last_ref[1], last_ref[2]),
+    )
+    mega_stream = build_flat_stream("_mega_", mega_verses)
+    mam_words = [x for x in mega_stream if isinstance(x, str)]
+    json_words = []
+    for path in paths:
+        json_words.extend(x for x in load_stream(path) if isinstance(x, str))
+    if not json_words:
+        return None, None
+
+    # MAM may have extra tokens at the first and last extracted verses.
+    match_start = next(
+        (
+            i
+            for i in range(len(mam_words) - len(json_words) + 1)
+            if mam_words[i] == json_words[0]
+        ),
+        None,
+    )
+    if match_start is None:
+        return (
+            f"Cross-file word check ({label}): first JSON word "
+            f"{json_words[0]!r} not found in MAM-simple XML stream",
+            stats[0],
+        )
+
+    mam_slice = mam_words[match_start : match_start + len(json_words)]
+    if len(mam_slice) < len(json_words):
+        return (
+            f"Cross-file word check ({label}): JSON has {len(json_words)} words "
+            f"but only {len(mam_words) - match_start} remain in MAM-simple XML "
+            "from match position",
+            stats[-1],
+        )
+
+    mismatches = []
+    for index, (json_word, mam_word) in enumerate(zip(json_words, mam_slice)):
+        if json_word != mam_word:
+            mismatches.append((index, json_word, mam_word))
+            if len(mismatches) >= 5:
+                break
+    if not mismatches:
+        return None, None
+
+    words_so_far = 0
+    mismatch_index = mismatches[0][0]
+    blame_stat = stats[0]
+    for stat in stats:
+        if words_so_far + stat["words"] > mismatch_index:
+            blame_stat = stat
+            break
+        words_so_far += stat["words"]
+    detail = "; ".join(
+        f"word {index}: JSON={json_word!r} MAM={mam_word!r}"
+        for index, json_word, mam_word in mismatches
+    )
+    return (
+        f"Cross-file word check ({label}): {len(mismatches)} mismatch(es) "
+        f"shown vs MAM-simple XML: {detail}",
+        blame_stat,
+    )
 
 
 def classify_item(item):
@@ -368,85 +511,24 @@ def main():
                     break
 
     # --- Cross-file word sequence check (MAM-simple XML ground truth) ---
-    # Build the expected word sequence from MAM-simple XML for the full page range,
-    # then verify that the concatenated JSON words match a contiguous slice.
+    # Each declared run is contiguous in MAM-simple.  The directory as a whole
+    # is not: its Deuteronomy pages and Aleppo leaf run are separated by text
+    # that no JSON file represents.
     if len(paths) > 1:
-        # Derive verse range from the line-break files themselves
-        first_ref = _first_verse_ref(paths[0])
-        last_ref = _last_verse_ref(paths[-1])
-        if first_ref and last_ref:
-            mega_verses = get_page_verses(
-                first_ref[0],
-                (first_ref[1], first_ref[2]),
-                last_ref[0],
-                (last_ref[1], last_ref[2]),
+        runs, undeclared_pages = word_sequence_runs(paths)
+        if undeclared_pages:
+            total_issues += 1
+            all_stats[0]["issues"].append(
+                "Cross-file word check: undeclared page run(s): "
+                + ", ".join(undeclared_pages)
             )
-        else:
-            mega_verses = None
-        if mega_verses is not None:
-            mega_stream = build_flat_stream("_mega_", mega_verses)
-            mam_words = [x for x in mega_stream if isinstance(x, str)]
-
-            # Concatenate JSON words from all files in order
-            json_words = []
-            for path in paths:
-                stream = load_stream(path)
-                json_words.extend(x for x in stream if isinstance(x, str))
-
-            # JSON words should appear as a contiguous subsequence of MAM words
-            # (MAM may have extra words at start/end due to whole-verse extraction)
-            if json_words:
-                # Find where json_words[0] first appears in mam_words
-                match_start = None
-                for i in range(len(mam_words) - len(json_words) + 1):
-                    if mam_words[i] == json_words[0]:
-                        match_start = i
-                        break
-                if match_start is None:
-                    msg = (
-                        f"Cross-file word check: first JSON word "
-                        f"{json_words[0]!r} not found in MAM-simple XML stream"
-                    )
-                    total_issues += 1
-                    all_stats[0]["issues"].append(msg)
-                else:
-                    mam_slice = mam_words[match_start : match_start + len(json_words)]
-                    if len(mam_slice) < len(json_words):
-                        msg = (
-                            f"Cross-file word check: JSON has {len(json_words)} words "
-                            f"but only {len(mam_words) - match_start} remain in MAM-simple XML "
-                            f"from match position"
-                        )
-                        total_issues += 1
-                        all_stats[-1]["issues"].append(msg)
-                    else:
-                        # Compare word by word
-                        mismatches = []
-                        for j, (jw, mw) in enumerate(zip(json_words, mam_slice)):
-                            if jw != mw:
-                                mismatches.append((j, jw, mw))
-                                if len(mismatches) >= 5:
-                                    break
-                        if mismatches:
-                            # Find which page the first mismatch falls in
-                            words_so_far = 0
-                            mismatch_idx = mismatches[0][0]
-                            blame_stat = all_stats[0]
-                            for s in all_stats:
-                                if words_so_far + s["words"] > mismatch_idx:
-                                    blame_stat = s
-                                    break
-                                words_so_far += s["words"]
-                            detail = "; ".join(
-                                f"word {j}: JSON={jw!r} MAM={mw!r}"
-                                for j, jw, mw in mismatches
-                            )
-                            msg = (
-                                f"Cross-file word check: {len(mismatches)} mismatch(es) "
-                                f"vs MAM-simple XML: {detail}"
-                            )
-                            total_issues += 1
-                            blame_stat["issues"].append(msg)
+        stats_by_name = {stat["name"]: stat for stat in all_stats}
+        for label, run_paths in runs:
+            run_stats = [stats_by_name[path.stem] for path in run_paths]
+            msg, blame_stat = check_word_sequence_run(label, run_paths, run_stats)
+            if msg:
+                total_issues += 1
+                blame_stat["issues"].append(msg)
 
     # --- Collect unique verse-start values ---
     all_verses = set()

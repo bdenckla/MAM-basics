@@ -181,7 +181,10 @@ column (the second export will include both columns’ markers).
 ## Pages with line breaks defined
 
 All 24 Job pages (270r–281v) have line breaks defined for both columns
-(28 lines per column). All data is in `line-breaks/*.json`.
+(28 lines per column). `line-breaks/` also retains the separately contiguous
+Deuteronomy run 001r–006r. The strict MAM-simple comparison checks those two
+runs separately: no JSON file represents the text between Deuteronomy 34 and
+Psalms 149.
 
 ## Script promotion policy
 
