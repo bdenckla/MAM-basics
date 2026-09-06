@@ -183,6 +183,11 @@ def unordered_list(liconts, attr=None):
     return htel_mk("ul", attr, tuple(map(_list_item, liconts)))
 
 
+def ordered_list(liconts, attr=None):
+    """Make an <ol> element containing <li> elements."""
+    return htel_mk("ol", attr, tuple(map(_list_item, liconts)))
+
+
 def heading_level_1(contents, attr=None):
     """Make an <h1> element."""
     return htel_mk("h1", attr, contents)

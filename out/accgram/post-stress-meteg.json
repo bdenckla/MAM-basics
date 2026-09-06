@@ -341,29 +341,35 @@
   }
  },
  "fit_for_mas": {
-  "what": "Every syllable immediately after a nonfinal primary stress, classified by the three MAS structural predicates and checked for U+05BD. Primary-stress position comes independently from Phonetic MAM's jta field; no raw Unicode accent-count condition excludes a candidate.",
+  "what": "Every syllable immediately after a nonfinal primary stress whose following chanted word has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and checked for U+05BD. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "candidate_chanted_words": 54019,
-  "fitting_any_type": 27976,
-  "with_mas": 225,
-  "without_mas": 27751,
+  "following_word_conditions": 5446,
+  "fitting_any_type": 3181,
+  "with_mas": 207,
+  "without_mas": 2974,
   "by_structural_type": {
    "open final syllable": {
-    "candidates": 23850,
-    "with_mas": 123,
-    "without_mas": 23727
+    "candidates": 2818,
+    "with_mas": 113,
+    "without_mas": 2705
    },
    "chanted word closed by a guttural": {
-    "candidates": 4083,
-    "with_mas": 60,
-    "without_mas": 4023
+    "candidates": 323,
+    "with_mas": 54,
+    "without_mas": 269
    },
    "closed tsere-vowelled syllable": {
-    "candidates": 43,
-    "with_mas": 42,
-    "without_mas": 1
+    "candidates": 40,
+    "with_mas": 40,
+    "without_mas": 0
    }
   },
   "candidates_meeting_multiple_types": 0,
+  "mas_not_in_the_table": {
+   "outside_the_three_types": 7,
+   "following_word_not_disjunctive": 17,
+   "following_word_not_initially_stressed": 1
+  },
   "accent_grammar_token_counts": {
    "0": 16,
    "1": 53177,

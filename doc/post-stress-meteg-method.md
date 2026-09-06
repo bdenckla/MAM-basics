@@ -11,18 +11,17 @@ of the three source-derived types it meets, then records whether MAM has a meteg
 The types are Yeivin's §332 open-syllable type, §354 guttural type, and §338 closed-tsere type,
 with Breuer's corresponding Ch. 8 types (j), (b), and (a).
 
-The table is not a search limited to the regular configuration of a pair of neighbouring words.
-The page's general facts are observations about MAM's MAS cases, not universal preconditions for
-the structural table. In particular, the word after a MAS has initial stress in every case except
-Jeremiah 46:14. The survey does not currently screen the table by the following word's accent.
+The table is a search limited to a regular configuration of neighbouring words. A candidate has a
+following word with initial stress and a disjunctive accent, as established by the prose or poetic
+accent grammar. The U+05BD on ר in Genesis 28:7's following word, אֲרָֽם׃, is silluq, not an
+absence of an accent: the sof pasuq supplies the context that classifies it.
 
-The earlier raw-mark check could not determine whether the following accent was disjunctive: it
-treated U+05BD as neither accent nor silluq. Genesis 28:7 shows the error plainly: the following
-word, אֲרָֽם׃, has its primary stress on ר, and the U+05BD there is the verse-final silluq.
-A grammar-aware audit on 2026-09-06 found 215 following disjunctives and 17 following
-conjunctives among the 232 MAS records. The 17 conjunctives are six munax, five mahapakh, three
-merkha, one azla, one merkha kefula, and one telisha qetana. A following disjunctive is therefore
-not a general fact about MAS and cannot be a screen for the whole structural table.
+The following-word conditions deliberately define a narrower table than the MAS census. A
+grammar-aware audit on 2026-09-06 found 215 following disjunctives and 17 following conjunctives
+among the 232 MAS records; all but Jeremiah 46:14 have initial stress in the following word. The
+fit-for-MAS footnote accounts for every resulting difference between the table's "Has MAS" count
+and the total MAS count, including the seven MAS cases that meet none of the three structural
+types.
 
 The three source descriptions also do not supply one shared following-word condition. Yeivin §332
 specifies initial stress in the following word for the open-syllable type. Yeivin §354 specifies a
@@ -38,9 +37,7 @@ than inferring primary stress from the number or placement of Unicode accent mar
 poetic accent grammars still tokenize each word, and the JSON records their token-count
 distribution as a diagnostic. Tokenization does not exclude a structural candidate.
 
-Earlier code did exclude candidates unless a raw stress-letter test reported a conjunctive on the
-MAS word, an initially stressed following word, and a disjunctive on the following word. That
-screen combined observations and type-specific conditions into one rule. It also could not
-recognize U+05BD as a verse-final silluq on the stress letter, and so could falsely report that
-the word had no accent. The structural survey replaced that screen so that the table can count
-both MAS and non-MAS instances of each type.
+Earlier code used Phonetic MAM's `jta` field to find stress, then classified the accent by raw
+Unicode marks on the stress letter. That raw-mark step could not recognize fixed-edge accents or a
+verse-final U+05BD as silluq. The table now retains the following-word conditions, but establishes
+the accent condition through the accent grammar instead.
