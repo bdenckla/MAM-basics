@@ -707,7 +707,7 @@ def _opening(survey: dict) -> list:
         mb_html.para(
             (
                 "A meteg almost always comes before the stressed syllable of its word, but it"
-                " can also come after the stress. We find that MAM has "
+                " can also come after the stress. MAM has "
                 f"{total:,} cases of meteg after the stress (MAS).",
             )
         ),
