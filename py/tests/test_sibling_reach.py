@@ -199,7 +199,7 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
     ),
     (
         "py/py_render/rt_suggestion_context.py",
-        "f'../{site_data.POST_STRESS_METEG_FNAME}#{site_data.POST_STRESS_METEG_M23_ID}'",
+        "f'../{site_data.POST_STRESS_METEG_FNAME}'",
     ): "a site-relative href to another page of the same site",
 }
 

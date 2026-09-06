@@ -63,12 +63,6 @@ _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _DUAL_CANTILLATION_APPENDIX_ID = "dually-cantillated-passages"
 
-# The M23 card's link lands here, so the identifier is half of that card's href and cannot be
-# renamed alone: py/py_render/rt_suggestion_context.py builds the other half from the same
-# site_data constant.
-M23_SECTION_ID = site_data.POST_STRESS_METEG_M23_ID
-_HOLMAN_M23_RECORD_HREF = "holman/table_data_findings_suppressed.html#mam023"
-
 # Every Hebrew cell says so, whatever else it says.  The whole-column rule: blank cells
 # included, the English heading left alone, no class and no stylesheet rule.
 _HEBREW_CELL = {"dir": "rtl"}
@@ -85,10 +79,9 @@ _MAX_WORDS_IN_ALL_EXCERPTS = 300
 _PROSE = psm.SYSTEM_PROSE
 _POETIC = psm.SYSTEM_POETIC
 
-# The two verses the page names outside its tables.  The survey records their chanted words as
-# MAM has them today, under ``currency.focus_verses``, so the forms shown here are lifted like
-# every other form on the page.
-_M23_VERSE = "is23:12"
+# The one verse the page names outside its tables.  The survey records its chanted words as MAM
+# has them today, under ``currency.focus_verses``, so the form shown here is lifted like every
+# other form on the page.
 _POST_SILLUQ_VERSE = "1s17:5"
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
@@ -305,7 +298,6 @@ def build_body(survey: dict) -> list:
         *_census(survey),
         *_by_type(survey),
         *_case_list_link(survey),
-        *_m23(survey),
         *_post_silluq(survey),
         *_oleh_meteg_overlap(survey),
         *_dual_cantillation_appendix(survey),
@@ -588,7 +580,7 @@ def pin_claims(survey: dict) -> None:
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
-    for bcv in (_M23_VERSE, _POST_SILLUQ_VERSE):
+    for bcv in (_POST_SILLUQ_VERSE,):
         assert bcv in survey["currency"]["focus_verses"], (
             f"{bcv} is named in the page's prose but the survey records no chanted word"
             " for it; add it to post_stress_meteg._FOCUS_VERSES"
@@ -1313,80 +1305,6 @@ def build_cases_body(survey: dict) -> list:
     ]
 
 
-def _m23(survey: dict) -> list:
-    """Section 4: the Isaiah 23:12 suggestion, and what kind of meteg it added."""
-    qumi = _focus_word(survey, _M23_VERSE, ("קומי",))
-    qumi_following = _following_focus_word(survey, _M23_VERSE, qumi)
-    yanuax = _record_at(survey, _M23_VERSE)
-    same_shape = _same_shape_as_qumi(survey)
-    return [
-        mb_html.heading_level_2(
-            "A new MAS in MAM at Isaiah 23:12", {"id": M23_SECTION_ID}
-        ),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h("Holman M23 case", _HOLMAN_M23_RECORD_HREF),
-                " has the MAM form Holman suggested on 2026-08-31, without a meteg where"
-                " the Aleppo Codex form has one. The suggestion was taken, so current MAM"
-                " has the meteg under the mem of the chanted word ",
-                *_hebrew_cell(qumi),
-                " ",
-                _following_chanted_word_span(qumi_following),
-                " at Isaiah 23:12; the chanted word's MAS is type 1.",
-            )
-        ),
-        mb_html.para(
-            (
-                "The same verse already had another MAS: ",
-                *_case_chanted_word_cell(yanuax),
-                ", whose last syllable a guttural closes.",
-            )
-        ),
-        mb_html.para(
-            (
-                "Like ",
-                *_hebrew_cell(qumi),
-                " ",
-                _following_chanted_word_span(qumi_following),
-                " at Isaiah 23:12, MAM has ",
-                *_case_chanted_word_cell(same_shape),
-                " at ",
-                ref_abbrev(same_shape["bcv"]),
-                ".",
-            )
-        ),
-        _para(
-            "The counts above do not include the Isaiah 23:12 meteg. They are taken from the"
-            " Phonetic MAM edition, which has not been regenerated since MAM gained it, so"
-            " Isaiah 23:12 is one of the verses where the two texts have parted."
-        ),
-    ]
-
-
-def _record_at(survey: dict, bcv: str) -> dict:
-    """The one post-stress record at a verse the page names, or a failure saying so."""
-    records = [one for one in survey["post_stress"] if one["bcv"] == bcv]
-    assert len(records) == 1, f"{bcv} has {len(records)} post-stress records, not one"
-    return records[0]
-
-
-def _same_shape_as_qumi(survey: dict) -> dict:
-    """MAM's other open-syllable post-stress meteg on a chanted word whose letters are קומי.
-
-    Found rather than named, so the sentence that calls it the only other one is checked by
-    the search that produces it: two hits, or none, stop the build.
-    """
-    hits = [
-        one
-        for one in survey["post_stress"]
-        if one["structural_type"] == psm.TYPE_OPEN
-        and _letters_of(one["mam_form"] or one["chanted_word"]) == ("קומי",)
-    ]
-    assert len(hits) == 1, f"{len(hits)} chanted words of the M23 shape, not one"
-    return hits[0]
-
-
 def _letters_of(word: str) -> tuple[str, ...]:
     """The base letters of each atom of a chanted word, as a tuple, one string per atom.
 
@@ -1421,18 +1339,6 @@ def _focus_word(
         must_have=must_have,
         source="MAM",
     )
-
-
-def _following_focus_word(survey: dict, bcv: str, word: str) -> str:
-    """The next MAM chanted word after a displayed focus word."""
-    words = survey["currency"]["focus_verses"][bcv]["chanted_words"]
-    hit_indexes = [index for index, candidate in enumerate(words) if candidate == word]
-    assert (
-        len(hit_indexes) == 1
-    ), f"MAM {bcv}: {len(hit_indexes)} occurrences of {word!r}"
-    next_index = hit_indexes[0] + 1
-    assert next_index < len(words), f"MAM {bcv}: no next chanted word after {word!r}"
-    return words[next_index]
 
 
 def _source_focus_word(
@@ -1535,28 +1441,38 @@ def _post_silluq_lc_crop() -> object:
 
 
 def _post_silluq(survey: dict) -> list:
-    """Section 5: a meteg after the silluq, which MAM does not have."""
+    """A Leningrad meteg after silluq, which the MAM form does not have."""
     comparison = _post_silluq_comparison(survey)
     comparison_rows = [
         mb_html.table_row_of_data((source, _hebrew_cell(form)), (None, _HEBREW_CELL))
         for source, form in comparison
     ]
     return [
-        mb_html.heading_level_2("The post-silluq case at 1 Samuel 17:5"),
+        mb_html.heading_level_2("A meteg after silluq in Leningrad"),
         _para(
-            "A meteg after a silluq would be hard to identify in Unicode, since the two"
-            " marks are one codepoint."
+            "In the Leningrad Codex, the last chanted word of 1 Samuel 17:5 seems to have a"
+            " meteg after its silluq."
+        ),
+        _post_silluq_lc_crop(),
+        _para(
+            "Although that meteg is pretty surprising, we deem it less surprising than if we"
+            " interpret the marks in meteg-silluq order. In silluq-meteg order, only the"
+            " presence of the meteg is surprising; in meteg-silluq order, the location of the"
+            " stress is surprising. We find a meteg surprise far more likely than a stress"
+            " surprise."
         ),
         _para(
-            "MAM has no MAS on a silluq word, but the last word of 1 Samuel 17:5 does raise"
-            " this issue in BHS and BHS-derived editions such as UXLC and WLC."
+            "This surprising meteg is correctly recorded in BHS and in BHS-derived editions"
+            " such as UXLC and WLC:"
         ),
         mb_html.table(
             comparison_rows,
             {"class": "limited-width post-stress-meteg-table"},
         ),
-        _para("The Leningrad codex agrees with BHS as can be seen in the image below:"),
-        _post_silluq_lc_crop(),
+        _para(
+            "A meteg after a silluq is hard to identify in Unicode, since the two marks share"
+            " one codepoint."
+        ),
     ]
 
 
