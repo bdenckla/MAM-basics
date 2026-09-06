@@ -15,9 +15,6 @@
     "MAM-OSIS": {
       "visibility": "public"
     },
-    "MAM-parsed": {
-      "visibility": "public"
-    },
     "MAM-with-doc": {
       "visibility": "public"
     },
