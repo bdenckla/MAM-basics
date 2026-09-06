@@ -1531,11 +1531,6 @@ def _post_silluq(survey: dict) -> list:
         _table(("source", "verse-final chanted word"), comparison_rows),
         _para("The Leningrad codex agrees with BHS as can be seen in the image below:"),
         _post_silluq_lc_crop(),
-        _para(
-            "Two of the three types could not occur on a silluq word: types 1 and 2 each"
-            " require a following chanted word, which a verse-final chanted word does not"
-            " have. Only type 3 could occur there."
-        ),
     ]
 
 
