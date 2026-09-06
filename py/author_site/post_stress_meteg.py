@@ -306,7 +306,7 @@ def build_body(survey: dict) -> list:
         *_case_list_link(survey),
         *_m23(survey),
         *_post_silluq(survey),
-        *_ole_meteg_overlap(survey),
+        *_oleh_meteg_overlap(survey),
         *_dual_cantillation_appendix(survey),
         *_sources_for_types(),
     ]
@@ -1545,24 +1545,45 @@ def _post_silluq(survey: dict) -> list:
     ]
 
 
-def _ole_meteg_overlap(survey: dict) -> list:
-    """The meteg marks that share ole's letter."""
-    ole_overlaps = [
+def _oleh_meteg_overlap(survey: dict) -> list:
+    """The meteg marks that share oleh's letter."""
+    oleh_overlaps = [
         record
         for record in survey["diagnostics"][
             "sharing_a_letter_with_a_non_stress_marking_accent"
         ]
         if "ole" in record["shares_its_letter_with"]
     ]
-    assert ole_overlaps
-    assert {record["system"] for record in ole_overlaps} == {"poetic verses"}
+    assert oleh_overlaps
+    position_by_syllables_after_stress = {-1: "before", 1: "after"}
+    assert {
+        record["syllables_after_the_stress"] for record in oleh_overlaps
+    } <= position_by_syllables_after_stress.keys()
+    rows = [
+        mb_html.table_row_of_data(
+            (
+                _ref_link(record["bcv"]),
+                _case_chanted_word_cell(record),
+                position_by_syllables_after_stress[
+                    record["syllables_after_the_stress"]
+                ],
+            ),
+            (None, _HEBREW_CELL, None),
+        )
+        for record in oleh_overlaps
+    ]
     return [
-        mb_html.heading_level_2("Meteg sharing a letter with ole"),
-        _para(
-            f"{len(ole_overlaps)} meteg marks share a letter with ole, all in poetic verses."
-            f" The {len(ole_overlaps)} meteg marks are counted by their positions before or"
-            " after the stress."
+        mb_html.heading_level_2(
+            ("Meteg sharing a letter with ", mb_html.span_c("oleh", "romanized"))
         ),
+        mb_html.para(
+            (
+                f"{len(oleh_overlaps)} meteg marks share a letter with ",
+                mb_html.span_c("oleh", "romanized"),
+                ". The table shows whether each meteg is before or after the stress.",
+            )
+        ),
+        _table(("Verse", "Word", "Meteg position"), rows),
     ]
 
 
