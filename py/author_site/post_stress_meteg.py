@@ -802,7 +802,6 @@ def _by_type(survey: dict) -> list:
     )
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     noninitial_following_stress_record = _noninitial_following_stress_records(survey)[0]
-    type_3_count = _by_type_count(survey, psm.TYPE_CLOSED_TSERE)
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     chanted_word_count = _both(survey, "chanted words checked")
     overlap_count = type_2_type_3_overlap["chanted_words"]
@@ -916,50 +915,6 @@ def _by_type(survey: dict) -> list:
                 for record in nonfinal_mas_syllable_records
             ],
             {"class": "limited-width post-stress-meteg-table"},
-        ),
-        mb_html.para(
-            (
-                "The guttural type is described in ",
-                itm(),
-                " ",
-                *itm_sections("§354"),
-                " and ",
-                cos(),
-                " Ch. 8 type (b). Type 2 requires a final syllable phonetically closed by"
-                " ḥet, ayin or he; a final mater he does not meet that condition. The "
-                f"{len(nonfinal_mas_syllable_records)} nonfinal-MAS type-2 records have a"
-                " final furtive-pataḥ syllable. The other "
-                f"{type_2_final_mas_count} type-2 MAS syllables are final, and their chanted"
-                " words have penultimate stress. Every following chanted word in the type-2"
-                f" set and the {type_3_count} type-3 records has initial stress, but that"
-                " stress is an observation, not a condition that narrows type 2 or type 3.",
-            )
-        ),
-        mb_html.para(
-            (
-                "Type 3 follows ",
-                itm(),
-                "'s tsere type, described in ",
-                itm(),
-                " ",
-                *itm_sections("§338, fed by §308"),
-                "'s account of retracted stress: where the stress retracts"
-                " and a closed syllable keeps its tsere, that syllable takes the mark,"
-                " and ",
-                itm(),
-                " says it is marked in manuscripts and printed texts alike. ",
-                cos(),
-                " Ch. 8's corresponding type (a) is wider: it has a long vowel in a"
-                " closed syllable. The one current chanted word in ",
-                cos(),
-                "'s type (a) but not ",
-                itm(),
-                "'s type has subtype ",
-                psm.SUBTYPE_MISC_ALMOST_TYPE_3,
-                "; the ",
-                mb_html.anchor_h("misc cases page", _MISC_FNAME),
-                " lists that chanted word.",
-            )
         ),
     ]
 
