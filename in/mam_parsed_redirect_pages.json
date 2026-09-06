@@ -1,0 +1,27 @@
+{
+  "comment": "MAM-parsed HTML paths frozen for the 2026-09-06 Phase 3 move from source commit 51082036e5907991d0d322cb6dfcc6404802099f. Each old path redirects to the same suffix under MAM-basics/MAM-parsed/.",
+  "pages": [
+    "index.html",
+    "plain/html/mpplain.html",
+    "plain/html/mpplain_docnote.html",
+    "plain/html/mpplain_dualcant.html",
+    "plain/html/mpplain_good_ending_tmpl.html",
+    "plain/html/mpplain_kq_am2.html",
+    "plain/html/mpplain_kq_special.html",
+    "plain/html/mpplain_multimark.html",
+    "plain/html/mpplain_poetic_spacing.html",
+    "plus/html/mpplus-template-call-graphs.html",
+    "plus/html/mpplus.html",
+    "plus/html/mpplus_aot.html",
+    "plus/html/mpplus_diff_from_plain.html",
+    "plus/html/mpplus_docnote.html",
+    "plus/html/mpplus_dualcant.html",
+    "plus/html/mpplus_good_ending_plus_field.html",
+    "plus/html/mpplus_good_ending_tmpl.html",
+    "plus/html/mpplus_haarah_2.html",
+    "plus/html/mpplus_kq_am2.html",
+    "plus/html/mpplus_kq_special.html",
+    "plus/html/mpplus_plain_only_templates.html",
+    "plus/html/mpplus_poetic_spacing.html"
+  ]
+}

@@ -19,7 +19,10 @@ def copy_support_files():
     for pyfile_relpath in PYFILE_RELPATHS:
         src = os.path.join(_PY_DIR, pyfile_relpath)
         dst = f"{mam_parsed_pyex}/{pyfile_relpath}"
-        shutil.copy(src, dst)
+        with open(src, encoding="utf-8") as source:
+            text = source.read()
+        with open(dst, "w", encoding="utf-8", newline="") as target:
+            target.write(text)
     prov_path = f"{mam_parsed_pyex}/provenance.md"
     with open(prov_path, "w", encoding="utf-8", newline="") as f:
         f.write(_PROVENANCE_MD)

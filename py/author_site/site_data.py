@@ -63,6 +63,7 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 _MWD = "https://bdenckla.github.io/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
 _MAM_SIMPLE = "https://bdenckla.github.io/MAM-basics/MAM-simple/"
+_MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
 _PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
 _TAAMEY_D = "https://bdenckla.github.io/Taamey_D/"
 _GDOC = "https://docs.google.com/document/d/e"
@@ -289,6 +290,7 @@ _EDITIONS = Section(
     entries=(
         _entry("Phonetic MAM", _PHONETIC),
         _entry("MAM-simple", _MAM_SIMPLE),
+        _entry("MAM-parsed", _MAM_PARSED),
         _entry("MAM with doc", _MWD),
     ),
 )
