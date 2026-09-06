@@ -303,7 +303,7 @@ def build_body(survey: dict) -> list:
         *_case_list_link(survey),
         *_m23(survey),
         *_post_silluq(survey),
-        *_overlapping_diagnostic(survey),
+        *_ole_meteg_overlap(survey),
         *_dual_cantillation_appendix(survey),
         *_sources_for_types(),
     ]
@@ -1535,17 +1535,23 @@ def _post_silluq(survey: dict) -> list:
     ]
 
 
-def _overlapping_diagnostic(survey: dict) -> list:
-    """The diagnostic that overlaps the positional categories."""
-    overlap = _both(survey, "meteg sharing a letter with a non-stress-marking accent")
+def _ole_meteg_overlap(survey: dict) -> list:
+    """The meteg marks that share ole's letter."""
+    ole_overlaps = [
+        record
+        for record in survey["diagnostics"][
+            "sharing_a_letter_with_a_non_stress_marking_accent"
+        ]
+        if "ole" in record["shares_its_letter_with"]
+    ]
+    assert ole_overlaps
+    assert {record["system"] for record in ole_overlaps} == {"poetic verses"}
     return [
-        mb_html.heading_level_2("A diagnostic overlapping the three positions"),
+        mb_html.heading_level_2("Meteg sharing a letter with ole"),
         _para(
-            "One diagnostic overlaps the three positions rather than adding a fourth: a meteg"
-            " can share a letter with an accent that marks no stress, which the prepositives,"
-            " the postpositives, ole and geresh muqdam all do. There are"
-            f" {overlap} such meteg marks, and each is counted in the group its syllable puts it"
-            " in, before or after the stress, rather than beside them."
+            f"{len(ole_overlaps)} meteg marks share a letter with ole, all in poetic verses."
+            f" The {len(ole_overlaps)} meteg marks are counted by their positions before or"
+            " after the stress."
         ),
     ]
 
