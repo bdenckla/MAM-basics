@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 import json
 from pathlib import Path
 
@@ -21,6 +22,14 @@ CANT_COMBINED = "cant-combined"
 CANT_ALEF = "cant-alef"
 CANT_BET = "cant-bet"
 _CANT_ALL_THREE = "cant-all-three"
+
+
+@dataclass(frozen=True)
+class MAMNativePaseq:
+    """One MAM-native structural distinction between a narrow-sense paseq and legarmeh."""
+
+    kind: str
+    glyph: str = hpunc.PASOLEG
 
 
 def require_mam_simple(mam_simple_dir: Path) -> None:
@@ -47,13 +56,17 @@ def load_mam_simple_for_refs(
     refs_by_book: dict[str, set[tuple[int, int]]],
     *,
     include_strands: bool = False,
+    include_native_paseq_roles: bool = False,
 ) -> dict[str, dict[str, object]]:
     """Load the requested MAM-simple verses, keyed by compact bcv.
 
     ``include_strands`` (issue wlc-utils#36) additionally exposes each dually-cantillated span's
     two detangled strands as ``vels_cant_alef`` / ``vels_cant_bet`` streams (for the
     dual-cantillation detangler).  It is off by default so existing consumers keep
-    receiving the plain ``{"vels": ...}`` shape unchanged."""
+    receiving the plain ``{"vels": ...}`` shape unchanged.  ``include_native_paseq_roles``
+    keeps MAM's ``lp-paseq`` / ``lp-legarmeih`` distinction in the selected token stream as
+    ``MAMNativePaseq`` objects; it is off by default for the same compatibility reason.
+    """
     require_mam_simple(mam_simple_dir)
 
     by_bcv: dict[str, dict[str, object]] = {}
@@ -89,7 +102,9 @@ def load_mam_simple_for_refs(
             by_bcv[bcv] = {
                 "mam_simple_json_file": json_path.name,
                 "mam_simple_verse": _normalize_mam_simple_verse(
-                    verse_node, include_strands=include_strands
+                    verse_node,
+                    include_strands=include_strands,
+                    include_native_paseq_roles=include_native_paseq_roles,
                 ),
             }
 
@@ -185,7 +200,10 @@ def _parse_osis_id(osis_id: str) -> tuple[int, int]:
 
 
 def _normalize_mam_simple_verse(
-    verse_node: dict[str, object], *, include_strands: bool = False
+    verse_node: dict[str, object],
+    *,
+    include_strands: bool = False,
+    include_native_paseq_roles: bool = False,
 ) -> dict[str, object]:
     """Normalize a verse into ``vels`` (and, when requested, the two detangled strands).
 
@@ -197,11 +215,23 @@ def _normalize_mam_simple_verse(
     Decalogue range yields a shared stream automatically.
     """
     verse: dict[str, object] = {
-        "vels": _normalize_mam_simple_node(verse_node, CANT_COMBINED),
+        "vels": _normalize_mam_simple_node(
+            verse_node,
+            CANT_COMBINED,
+            include_native_paseq_roles=include_native_paseq_roles,
+        ),
     }
     if include_strands:
-        verse["vels_cant_alef"] = _normalize_mam_simple_node(verse_node, CANT_ALEF)
-        verse["vels_cant_bet"] = _normalize_mam_simple_node(verse_node, CANT_BET)
+        verse["vels_cant_alef"] = _normalize_mam_simple_node(
+            verse_node,
+            CANT_ALEF,
+            include_native_paseq_roles=include_native_paseq_roles,
+        )
+        verse["vels_cant_bet"] = _normalize_mam_simple_node(
+            verse_node,
+            CANT_BET,
+            include_native_paseq_roles=include_native_paseq_roles,
+        )
     return verse
 
 
@@ -238,7 +268,10 @@ _DROPPED_NODE_TYPES = frozenset(
 
 
 def _normalize_mam_simple_node(
-    node: object, cant_strand: str = CANT_COMBINED
+    node: object,
+    cant_strand: str = CANT_COMBINED,
+    *,
+    include_native_paseq_roles: bool = False,
 ) -> list[object]:
     """The ATOMS of one node's subtree -- one written word each, between spaces or maqafs
     -- with every maqaf kept on the atom it follows, plus a lone PASOLEG token for each
@@ -248,11 +281,20 @@ def _normalize_mam_simple_node(
     scanners fold a maqaf compound into one chanted word downstream, an atom that ends in
     a maqaf continuing into the next.
     """
-    return _tokens_from_fragments(_mam_simple_fragments(node, cant_strand))
+    return _tokens_from_fragments(
+        _mam_simple_fragments(
+            node,
+            cant_strand,
+            include_native_paseq_roles=include_native_paseq_roles,
+        )
+    )
 
 
 def _mam_simple_fragments(
-    node: object, cant_strand: str = CANT_COMBINED
+    node: object,
+    cant_strand: str = CANT_COMBINED,
+    *,
+    include_native_paseq_roles: bool = False,
 ) -> list[object]:
     """One node's subtree as text fragments and ``_BOUNDARY`` separators.
 
@@ -298,7 +340,12 @@ def _mam_simple_fragments(
         if node_type in {"lp-paseq", "lp-legarmeih"}:
             # A token of its own, as it has always been: the mark stands between two
             # atoms rather than inside either.
-            return [_BOUNDARY, hpunc.PASOLEG, _BOUNDARY]
+            marker: object = hpunc.PASOLEG
+            if include_native_paseq_roles:
+                marker = MAMNativePaseq(
+                    "legarmeh" if node_type == "lp-legarmeih" else "paseq"
+                )
+            return [_BOUNDARY, marker, _BOUNDARY]
         if node_type == "implicit-maqaf":
             # No boundary before it, so it lands on the atom it follows.
             return [hpunc.MAQ]
@@ -310,10 +357,18 @@ def _mam_simple_fragments(
             if isinstance(contents, list):
                 for child in contents:
                     if isinstance(child, dict) and child.get("type") == cant_strand:
-                        return _mam_simple_fragments(child, cant_strand)
+                        return _mam_simple_fragments(
+                            child,
+                            cant_strand,
+                            include_native_paseq_roles=include_native_paseq_roles,
+                        )
             return []
         if node_type in {"kq", "kq-trivial", "kq-q-velo-k"}:
-            return _mam_simple_kq_qere_fragments(node, cant_strand)
+            return _mam_simple_kq_qere_fragments(
+                node,
+                cant_strand,
+                include_native_paseq_roles=include_native_paseq_roles,
+            )
         if node_type in {"kq-k", "ketiv", "kq-k-velo-q"}:
             return [_BOUNDARY]
 
@@ -321,7 +376,13 @@ def _mam_simple_fragments(
     if isinstance(contents, list):
         out_fragments: list[object] = []
         for child in contents:
-            out_fragments.extend(_mam_simple_fragments(child, cant_strand))
+            out_fragments.extend(
+                _mam_simple_fragments(
+                    child,
+                    cant_strand,
+                    include_native_paseq_roles=include_native_paseq_roles,
+                )
+            )
         return out_fragments
 
     text = node.get("text")
@@ -332,7 +393,10 @@ def _mam_simple_fragments(
 
 
 def _mam_simple_kq_qere_fragments(
-    node: dict[str, object], cant_strand: str = CANT_COMBINED
+    node: dict[str, object],
+    cant_strand: str = CANT_COMBINED,
+    *,
+    include_native_paseq_roles: bool = False,
 ) -> list[object]:
     """A ketiv/qere node's QERE side, spliced into the run around it.
 
@@ -363,7 +427,13 @@ def _mam_simple_kq_qere_fragments(
     ]
     out_fragments: list[object] = []
     for child in chosen:
-        out_fragments.extend(_mam_simple_fragments(child, cant_strand))
+        out_fragments.extend(
+            _mam_simple_fragments(
+                child,
+                cant_strand,
+                include_native_paseq_roles=include_native_paseq_roles,
+            )
+        )
     return out_fragments
 
 
@@ -381,6 +451,11 @@ def _tokens_from_fragments(fragments: list[object]) -> list[object]:
             if run:
                 out_tokens.extend(_split_mam_simple_text("".join(run)))
                 run = []
+        elif isinstance(fragment, MAMNativePaseq):
+            if run:
+                out_tokens.extend(_split_mam_simple_text("".join(run)))
+                run = []
+            out_tokens.append(fragment)
         else:
             run.append(fragment)
     if run:

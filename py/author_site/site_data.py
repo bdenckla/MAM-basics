@@ -72,6 +72,8 @@ UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
 POST_STRESS_METEG_TITLE = "Meteg after the primary stress"
+POST_STRESS_METEG_METHODS_FNAME = "post-stress-meteg-methods.html"
+POST_STRESS_METEG_METHODS_TITLE = "Meteg after the primary stress: methods"
 POST_STRESS_METEG_CASES_FNAME = "post-stress-meteg-cases.html"
 POST_STRESS_METEG_CASES_TITLE = "Meteg after the primary stress: individual cases"
 POST_STRESS_METEG_TYPE_2_FNAME = "post-stress-meteg-type-2.html"
@@ -87,7 +89,7 @@ POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE = (
     "Meteg after the primary stress: selected type 1 cases lacking MAS"
 )
 
-# The stylesheet all six pages at the deploy root link, hand-written and tracked as
+# The stylesheet all seven pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face

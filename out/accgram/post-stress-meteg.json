@@ -11898,7 +11898,10 @@
     "mam_form": "אֱלֹהֶ֣יךָ",
     "following_mam_form": "לְ֠ךָ֠",
     "intervening_mam_punctuation": [
-     "׀"
+     {
+      "kind": "paseq",
+      "glyph": "׀"
+     }
     ],
     "types": [
      "open final syllable"
@@ -34969,7 +34972,10 @@
     "mam_form": "חַי־אָ֣נִי",
     "following_mam_form": "נְאֻ֣ם",
     "intervening_mam_punctuation": [
-     "׀"
+     {
+      "kind": "legarmeh",
+      "glyph": "׀"
+     }
     ],
     "types": [
      "open final syllable"
@@ -39342,7 +39348,10 @@
     "mam_form": "לֹ֤א־אֵֽל־חָפֵ֘ץ־רֶ֥שַׁע",
     "following_mam_form": "אָ֑תָּה",
     "intervening_mam_punctuation": [
-     "׀"
+     {
+      "kind": "paseq",
+      "glyph": "׀"
+     }
     ],
     "types": [
      "chanted word closed by a guttural"
@@ -43392,7 +43401,10 @@
     "mam_form": "עָ֤רוּ",
     "following_mam_form": "עָ֑רוּ",
     "intervening_mam_punctuation": [
-     "׀"
+     {
+      "kind": "paseq",
+      "glyph": "׀"
+     }
     ],
     "types": [
      "open final syllable"
@@ -54508,6 +54520,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -54536,6 +54549,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -54551,7 +54565,10 @@
    "metegs_in_the_snapshot": 1,
    "following_mam_form": "לֹ֖א",
    "intervening_mam_punctuation": [
-    "׀"
+    {
+     "kind": "paseq",
+     "glyph": "׀"
+    }
    ]
   },
   {
@@ -54569,6 +54586,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54597,6 +54615,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -54625,6 +54644,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54653,6 +54673,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54681,6 +54702,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54709,6 +54731,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54737,6 +54760,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54765,6 +54789,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54793,6 +54818,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54821,6 +54847,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54849,6 +54876,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54877,6 +54905,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54905,6 +54934,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54933,6 +54963,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54961,6 +54992,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -54989,6 +55021,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55017,6 +55050,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55045,6 +55079,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55073,6 +55108,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55101,6 +55137,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55129,6 +55166,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55157,6 +55195,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55185,6 +55224,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -55213,6 +55253,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55241,6 +55282,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55269,6 +55311,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55297,6 +55340,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -55325,6 +55369,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55353,6 +55398,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55381,6 +55427,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55409,6 +55456,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55437,6 +55485,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55465,6 +55514,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55493,6 +55543,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55521,6 +55572,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55549,6 +55601,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55577,6 +55630,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55605,6 +55659,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55633,6 +55688,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55661,6 +55717,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -55676,7 +55733,10 @@
    "metegs_in_the_snapshot": 1,
    "following_mam_form": "לֹֽא׃",
    "intervening_mam_punctuation": [
-    "׀"
+    {
+     "kind": "paseq",
+     "glyph": "׀"
+    }
    ]
   },
   {
@@ -55694,6 +55754,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -55722,6 +55783,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -55750,6 +55812,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -55778,6 +55841,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -55806,6 +55870,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55834,6 +55899,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55862,6 +55928,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55890,6 +55957,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55918,6 +55986,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55946,6 +56015,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -55974,6 +56044,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56002,6 +56073,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56030,6 +56102,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56058,6 +56131,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56086,6 +56160,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56114,6 +56189,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -56142,6 +56218,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -56170,6 +56247,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56198,6 +56276,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56226,6 +56305,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56254,6 +56334,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56282,6 +56363,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56310,6 +56392,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -56338,6 +56421,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -56366,6 +56450,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56394,6 +56479,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56422,6 +56508,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56450,6 +56537,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -56465,7 +56553,10 @@
    "metegs_in_the_snapshot": 1,
    "following_mam_form": "לֹ֖א",
    "intervening_mam_punctuation": [
-    "׀"
+    {
+     "kind": "paseq",
+     "glyph": "׀"
+    }
    ]
   },
   {
@@ -56483,6 +56574,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56511,6 +56603,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56539,6 +56632,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56567,6 +56661,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -56582,7 +56677,10 @@
    "metegs_in_the_snapshot": 1,
    "following_mam_form": "לֹ֔א",
    "intervening_mam_punctuation": [
-    "׀"
+    {
+     "kind": "paseq",
+     "glyph": "׀"
+    }
    ]
   },
   {
@@ -56600,6 +56698,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56628,6 +56727,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56656,6 +56756,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56684,6 +56785,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56712,6 +56814,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -56740,6 +56843,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56768,6 +56872,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56796,6 +56901,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56824,6 +56930,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56852,6 +56959,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -56880,6 +56988,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56908,6 +57017,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56936,6 +57046,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -56964,6 +57075,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -56992,6 +57104,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57020,6 +57133,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57048,6 +57162,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57076,6 +57191,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57104,6 +57220,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57132,6 +57249,7 @@
    "is_the_last_syllable": false,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57160,6 +57278,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57188,6 +57307,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57216,6 +57336,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57244,6 +57365,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57272,6 +57394,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57300,6 +57423,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57328,6 +57452,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57356,6 +57481,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57384,6 +57510,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57412,6 +57539,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57440,6 +57568,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57468,6 +57597,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57496,6 +57626,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57524,6 +57655,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57552,6 +57684,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": false,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57580,6 +57713,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57608,6 +57742,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57636,6 +57771,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57664,6 +57800,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57692,6 +57829,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57720,6 +57858,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57748,6 +57887,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57776,6 +57916,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57804,6 +57945,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -57832,6 +57974,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57860,6 +58003,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57888,6 +58032,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57916,6 +58061,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -57944,6 +58090,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -57972,6 +58119,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -58000,6 +58148,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58028,6 +58177,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58056,6 +58206,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58084,6 +58235,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58112,6 +58264,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58140,6 +58293,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58168,6 +58322,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58196,6 +58351,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58224,6 +58380,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58252,6 +58409,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58280,6 +58438,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58308,6 +58467,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [
     "ole"
@@ -58338,6 +58498,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58366,6 +58527,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -58394,6 +58556,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58422,6 +58585,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58450,6 +58614,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58478,6 +58643,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58506,6 +58672,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58534,6 +58701,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -58562,6 +58730,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58590,6 +58759,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -58618,6 +58788,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58646,6 +58817,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58674,6 +58846,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58702,6 +58875,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58730,6 +58904,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58758,6 +58933,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -58786,6 +58962,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -58814,6 +58991,7 @@
    "is_the_last_syllable": false,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58842,6 +59020,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58870,6 +59049,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [
     "ole"
@@ -58900,6 +59080,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58928,6 +59109,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -58956,6 +59138,7 @@
    "is_the_last_syllable": false,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -58984,6 +59167,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59012,6 +59196,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59040,6 +59225,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59068,6 +59254,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59096,6 +59283,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59124,6 +59312,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59152,6 +59341,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59180,6 +59370,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59208,6 +59399,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59236,6 +59428,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59264,6 +59457,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59292,6 +59486,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59320,6 +59515,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59348,6 +59544,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59376,6 +59573,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59404,6 +59602,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59432,6 +59631,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59460,6 +59660,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59488,6 +59689,7 @@
    "is_the_last_syllable": false,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59516,6 +59718,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "none of the three",
@@ -59544,6 +59747,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59572,6 +59776,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59600,6 +59805,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59628,6 +59834,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -59656,6 +59863,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59684,6 +59892,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59712,6 +59921,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59740,6 +59950,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59768,6 +59979,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59796,6 +60008,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59824,6 +60037,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59852,6 +60066,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -59880,6 +60095,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59908,6 +60124,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59936,6 +60153,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59964,6 +60182,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -59992,6 +60211,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60020,6 +60240,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60048,6 +60269,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60076,6 +60298,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60104,6 +60327,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60132,6 +60356,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60160,6 +60385,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -60188,6 +60414,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60216,6 +60443,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60244,6 +60472,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60272,6 +60501,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60300,6 +60530,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60328,6 +60559,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60356,6 +60588,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60384,6 +60617,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60412,6 +60646,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60440,6 +60675,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60468,6 +60704,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60496,6 +60733,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60524,6 +60762,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60552,6 +60791,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60580,6 +60820,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60608,6 +60849,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -60636,6 +60878,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -60664,6 +60907,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -60692,6 +60936,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -60720,6 +60965,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60748,6 +60994,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60776,6 +61023,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "closed tsere-vowelled syllable",
@@ -60804,6 +61052,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60832,6 +61081,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60860,6 +61110,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60888,6 +61139,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60916,6 +61168,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60944,6 +61197,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -60972,6 +61226,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": true,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "conjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "chanted word closed by a guttural",
@@ -61000,6 +61255,7 @@
    "is_the_last_syllable": true,
    "chanted_word_is_closed_by_a_guttural": false,
    "following_chanted_word_is_initially_stressed": true,
+   "following_chanted_word_accent_classification": "disjunctive",
    "has_sof_pasuq": false,
    "shares_its_letter_with": [],
    "structural_type": "open final syllable",
@@ -61037,6 +61293,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61067,6 +61324,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61097,6 +61355,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61127,6 +61386,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": true,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61157,6 +61417,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61187,6 +61448,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61217,6 +61479,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61247,6 +61510,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61277,6 +61541,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61307,6 +61572,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61337,6 +61603,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61367,6 +61634,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61397,6 +61665,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61427,6 +61696,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61457,6 +61727,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61487,6 +61758,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61517,6 +61789,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61547,6 +61820,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61577,6 +61851,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61607,6 +61882,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61637,6 +61913,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61667,6 +61944,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -61697,6 +61975,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -61727,6 +62006,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -61757,6 +62037,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -61787,6 +62068,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -61817,6 +62099,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -61847,6 +62130,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -61877,6 +62161,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -61907,6 +62192,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -61937,6 +62223,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -61967,6 +62254,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -61997,6 +62285,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62027,6 +62316,7 @@
     "is_the_last_syllable": true,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -62057,6 +62347,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62087,6 +62378,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62117,6 +62409,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62147,6 +62440,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62177,6 +62471,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62207,6 +62502,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -62237,6 +62533,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62267,6 +62564,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62297,6 +62595,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -62327,6 +62626,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62357,6 +62657,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62387,6 +62688,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62417,6 +62719,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62447,6 +62750,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62477,6 +62781,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62507,6 +62812,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62537,6 +62843,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -62567,6 +62874,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62597,6 +62905,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62627,6 +62936,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -62657,6 +62967,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62687,6 +62998,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62717,6 +63029,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62747,6 +63060,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62777,6 +63091,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62807,6 +63122,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62837,6 +63153,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -62867,6 +63184,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -62897,6 +63215,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62927,6 +63246,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62957,6 +63277,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -62987,6 +63308,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63017,6 +63339,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63047,6 +63370,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63077,6 +63401,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63107,6 +63432,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63137,6 +63463,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63167,6 +63494,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63197,6 +63525,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63227,6 +63556,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63257,6 +63587,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63287,6 +63618,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63317,6 +63649,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63347,6 +63680,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63377,6 +63711,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63407,6 +63742,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63437,6 +63773,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63467,6 +63804,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63497,6 +63835,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63527,6 +63866,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63557,6 +63897,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63587,6 +63928,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63617,6 +63959,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63647,6 +63990,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63677,6 +64021,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63707,6 +64052,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63737,6 +64083,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63767,6 +64114,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63797,6 +64145,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63827,6 +64176,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -63857,6 +64207,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63887,6 +64238,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63917,6 +64269,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63947,6 +64300,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -63977,6 +64331,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": true,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64007,6 +64362,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64037,6 +64393,7 @@
     "is_the_last_syllable": true,
     "chanted_word_is_closed_by_a_guttural": true,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -64067,6 +64424,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64097,6 +64455,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64127,6 +64486,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -64157,6 +64517,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64187,6 +64548,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64217,6 +64579,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": true,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64247,6 +64610,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64277,6 +64641,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -64307,6 +64672,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64337,6 +64703,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64367,6 +64734,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64397,6 +64765,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64427,6 +64796,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "geresh muqdam"
@@ -64457,6 +64827,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64487,6 +64858,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64517,6 +64889,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64547,6 +64920,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64577,6 +64951,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64607,6 +64982,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64637,6 +65013,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64667,6 +65044,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64697,6 +65075,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "ole"
@@ -64727,6 +65106,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64757,6 +65137,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64787,6 +65168,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64817,6 +65199,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64847,6 +65230,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64877,6 +65261,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64907,6 +65292,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64937,6 +65323,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64967,6 +65354,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -64997,6 +65385,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65027,6 +65416,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65057,6 +65447,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65087,6 +65478,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65117,6 +65509,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65147,6 +65540,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65177,6 +65571,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "disjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65207,6 +65602,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": true,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65237,6 +65633,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "deḥi"
@@ -65267,6 +65664,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -65297,6 +65695,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -65327,6 +65726,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -65357,6 +65757,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
@@ -65387,6 +65788,7 @@
     "is_the_last_syllable": false,
     "chanted_word_is_closed_by_a_guttural": false,
     "following_chanted_word_is_initially_stressed": false,
+    "following_chanted_word_accent_classification": "conjunctive",
     "has_sof_pasuq": false,
     "shares_its_letter_with": [
      "telisha gedolah"
