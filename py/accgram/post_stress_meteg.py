@@ -1263,6 +1263,8 @@ def _sample_in_corpus_order(
 def _fit_for_mas_record(candidate: dict) -> dict:
     """The complete public-data record for one chanted-word pair fit for MAS."""
     assert _is_fit_for_mas(candidate), candidate
+    assert candidate["mam_form"] is not None, candidate
+    assert candidate["following_mam_form"] is not None, candidate
     return {
         "bcv": candidate["bcv"],
         "system": candidate["system"],
@@ -1270,6 +1272,9 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "jta": candidate["jta"],
         "following_chanted_word": candidate["following_chanted_word"],
         "intervening_punctuation": candidate["intervening_punctuation"],
+        "mam_form": candidate["mam_form"],
+        "following_mam_form": candidate["following_mam_form"],
+        "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
         "types": candidate["structural_types"],
         "has_mas": candidate["has_mas"],
         "following_chanted_word_is_initially_stressed": candidate[
@@ -1313,7 +1318,9 @@ def _lacks_mas_case_lists(records: list[dict]) -> dict:
     }
 
 
-def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dict:
+def _fit_for_mas_summary(
+    candidates: list[dict], post_stress: list[dict], words_by_bcv: dict[str, list[str]]
+) -> dict:
     """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
     mas_keys = {
         (record["bcv"], record["chanted_word"], record["jta"])
@@ -1334,6 +1341,8 @@ def _fit_for_mas_summary(candidates: list[dict], post_stress: list[dict]) -> dic
         for candidate in following_word_conditions
         if candidate["structural_types"]
     ]
+    unjoined = _attach_mam_forms(fitting, words_by_bcv)
+    assert not unjoined, unjoined
     by_type = {}
     for kind in (TYPE_OPEN, TYPE_GUTTURAL, TYPE_CLOSED_TSERE):
         members = [
@@ -1735,32 +1744,42 @@ def _following_mam_context(
     """The following MAM chanted word and intervening punctuation, if the context resolves.
 
     The MAM stream keeps a PASEQ as a standalone token. This makes the usual two-chanted-word
-    context and the four ``vayomer`` contexts one routine: the current chanted word, zero or
-    more punctuation tokens, then the following chanted word. A context is shown only after the
-    complete sequence matches MAM, so every rendered form and punctuation mark comes from MAM.
+    context and the four ``vayomer`` contexts one routine: the current MAM chanted word, zero or
+    more punctuation tokens, then the following MAM chanted word. The snapshot's spelling can
+    differ from MAM's at either chanted word, so the settled current MAM form identifies the
+    first chanted word; the following chanted word and punctuation then come directly from the
+    MAM stream.
     """
+    current = record["mam_form"]
     following = record["following_chanted_word"]
-    if following is None:
+    if current is None or following is None:
         return None, None
-    next_record = {"chanted_word": following}
+    snapshot_following_as_mam = _as_mam_would_write_it(following)
     source_punctuation = tuple(record.get("intervening_punctuation", ()))
     candidates: list[tuple[str, tuple[str, ...]]] = []
+    source_matched_candidates: list[tuple[str, tuple[str, ...]]] = []
     for index, word in enumerate(stream):
-        current_matches, _current_matched_by = _matching_mam_words(record, [word])
-        if not current_matches:
+        if word != current:
             continue
         punctuation = []
         following_index = index + 1
         while following_index < len(stream) and stream[following_index] == PASEQ:
             punctuation.append(stream[following_index])
             following_index += 1
-        if tuple(punctuation) != source_punctuation or following_index == len(stream):
+        if following_index == len(stream):
             continue
-        next_matches, _next_matched_by = _matching_mam_words(
-            next_record, [stream[following_index]]
-        )
-        for next_match in next_matches:
-            candidates.append((next_match, tuple(punctuation)))
+        candidate = (stream[following_index], tuple(punctuation))
+        candidates.append(candidate)
+        if (
+            tuple(punctuation) == source_punctuation
+            and stream[following_index] == snapshot_following_as_mam
+        ):
+            source_matched_candidates.append(candidate)
+    source_settled = list(dict.fromkeys(source_matched_candidates))
+    if len(source_settled) == 1:
+        return source_settled[0]
+    if source_settled:
+        return None, None
     settled = list(dict.fromkeys(candidates))
     return settled[0] if len(settled) == 1 else (None, None)
 
@@ -1803,8 +1822,7 @@ def _attach_mam_forms(
             else (None, None)
         )
         record["following_mam_form"] = following_mam_form
-        if intervening_mam_punctuation:
-            record["intervening_mam_punctuation"] = intervening_mam_punctuation
+        record["intervening_mam_punctuation"] = intervening_mam_punctuation
         if settled is not None:
             # Recomputed off MAM's own form, so that every Hebrew string the page can render
             # from this record comes from one text rather than two.
@@ -2207,7 +2225,9 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
-    fit_for_mas = _fit_for_mas_summary(found["fit_for_mas_candidates"], post_stress)
+    fit_for_mas = _fit_for_mas_summary(
+        found["fit_for_mas_candidates"], post_stress, words_by_bcv
+    )
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     by_subtype = Counter(
         (one["system"], one["subtype"])
