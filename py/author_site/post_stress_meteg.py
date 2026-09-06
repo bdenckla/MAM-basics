@@ -185,7 +185,7 @@ _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
 _TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
-_HEBREW_SPACING_OPTION = f"""<p><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
+_HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
 (() => {{

@@ -48,6 +48,11 @@ body.post-stress-meteg-page [lang="hbo"].post-stress-meteg-individually-normal-h
 body.post-stress-meteg-page [lang="hbo"].post-stress-meteg-individually-expanded-hebrew {
     letter-spacing: 0.06em;
 }
+/* This is interface guidance for the spacing control, not body prose. */
+p.post-stress-meteg-spacing-control {
+    font-family: Arial, sans-serif;
+    font-size: 85%;
+}
 /* The individual-cases table has a client-side type filter.  Its stripe follows the visible
    row number, not the row's original place in the corpus, so selecting a type never leaves a
    misleading first gray row or a sequence of rows all in the same shade. */
