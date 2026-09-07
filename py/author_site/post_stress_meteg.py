@@ -398,16 +398,22 @@ def build_methods_body(survey: dict) -> list:
         _hebrew_spacing_option(),
         mb_html.para(
             (
-                "The location of a chanted word's stress is not always obvious. In this"
-                " document, we locate stress using ",
+                "The location of a chanted word's stress is not always obvious. In the"
+                " research we present here, we locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
                 ", which marks the stress of every chanted word.",
             )
         ),
         mb_html.para(
-            "The census table's prose row is for the 21 books plus the verses of Job's"
-            " prose frame; its poetic row is for the verses of Job's main, poetic section"
-            " plus all Psalms and the whole book of Proverbs."
+            "In the research we present here, we define “prose” and “poetic” as follows:"
+        ),
+        mb_html.unordered_list(
+            (
+                "Prose verses are all verses of the 21 books plus the verses of Job's prose"
+                " frame.",
+                "Poetic verses are the verses of Job's main, poetic section plus all verses"
+                " of Psalms and Proverbs.",
+            )
         ),
         *_dually_cantillated_passages(survey),
         *_oleh_meteg_overlap(survey),
@@ -2019,11 +2025,12 @@ def _oleh_meteg_overlap(survey: dict) -> list:
         mb_html.heading_level_2((_ROM_METEG_CAP, " sharing a letter with ", _ROM_OLEH)),
         mb_html.para(
             (
+                "In MAM, ",
                 f"{len(oleh_overlaps)} ",
                 _ROM_METEG,
                 " marks share a letter with ",
                 _ROM_OLEH,
-                ". The table labels each ",
+                ". The table below labels each such ",
                 _ROM_METEG,
                 " as MBS or MAS.",
             )
@@ -2147,11 +2154,14 @@ def _dually_cantillated_passages(survey: dict) -> list:
         mb_html.heading_level_2("Dually cantillated passages"),
         mb_html.para(
             (
-                "MAM has dual-cantillation templates in the two Decalogues and Genesis"
-                " 35:22. The analyses presented in this document use only the ",
+                "The Masoretic tradition records two cantillations for three passages. Those"
+                " three passages are the two Decalogues and Genesis 35:22. The analyses"
+                " presented in this document use only MAM's ",
                 _cantillation_label(psm.CANT_ALEF),
-                " branch of each template. The table below shows that this choice has no"
-                " effect on the MAS count and changes the other two counts only by 1.",
+                " cantillation. The table below shows that this choice has no effect on the"
+                " MAS count and changes the other two counts only by 1. (We have not analyzed"
+                " what effect the choice has on the “fit for MAS” analysis, but I think it is"
+                " safe to assume that the choice has little or no effect.)",
             )
         ),
         _table(headers, rows),
