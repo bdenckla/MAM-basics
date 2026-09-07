@@ -149,7 +149,7 @@ _GUTTURAL_HOSTS = frozenset(
     )
 )
 
-# The Type 2 page filters every following word into one of these five groups.  The initial
+# The Type 2 page filters every next word into one of these five groups.  The initial
 # letters are named exhaustively rather than putting unexpected initials in a catchall: a
 # changed corpus must stop the survey until its new group has been considered.
 TYPE_2_FOLLOWING_FILTER_GROUPS = ("bet", "guttural", "lamed", "mem", "resh")
@@ -271,7 +271,7 @@ _VOCAL_SHEVA = "^"
 # the Hebrew instead.
 _JTA_VOWELS = frozenset("aeiouAEIOU860")
 
-# A simple vocal sheva or xataf vowel at the opening of a chanted word belongs to the following
+# A simple vocal sheva or xataf vowel at the opening of a chanted word belongs to the next
 # segment as the chanted word's first syllable for Yeivin's open-syllable type.
 _XATAF_JTA_VOWELS = frozenset("680")
 
@@ -311,7 +311,7 @@ _STRESS_ACCENT_CONJUNCTIVES = {
 }
 
 # The prose scanner exposes token names rather than raw marks.  This set identifies the
-# disjunctive tokens among them; a following word can also have conjunctive or secondary tokens,
+# disjunctive tokens among them; a next word can also have conjunctive or secondary tokens,
 # so the fit-for-MAS screen asks whether at least one of its grammar tokens is disjunctive.
 _PROSE_DISJUNCTIVE_TOKENS = frozenset(
     (
@@ -455,35 +455,33 @@ def _letters(word: str) -> list[tuple[str, str, bool]]:
     return [(letter, marks, atom_final) for letter, marks, atom_final in out]
 
 
-def type_2_following_filter_group(following_word: str) -> str:
-    """The Type 2 filter group for a following MAM chanted word.
+def type_2_next_filter_group(next_word: str) -> str:
+    """The Type 2 filter group for a next MAM chanted word.
 
     This intentionally raises for an unexpected initial.  A catchall filter would let the
     page continue to claim complete coverage while concealing a corpus change that needs a
     human choice about the filters.
     """
-    letters = _letters(following_word)
-    assert (
-        letters
-    ), f"no Hebrew letter in following MAM chanted word: {following_word!r}"
+    letters = _letters(next_word)
+    assert letters, f"no Hebrew letter in next MAM chanted word: {next_word!r}"
     initial = letters[0][0]
     assert initial in _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL, (
-        "Type 2 following initial is outside the page filters: "
-        f"{initial!r} in {following_word!r}"
+        "Type 2 next-word initial is outside the page filters: "
+        f"{initial!r} in {next_word!r}"
     )
     return _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL[initial]
 
 
-def _assert_type_2_following_filter_coverage(records: list[dict]) -> None:
+def _assert_type_2_next_filter_coverage(records: list[dict]) -> None:
     """Require the Type 2 filters to classify every Type 2 record this run finds."""
     type_2_records = [
         record for record in records if record["structural_type"] == TYPE_GUTTURAL
     ]
     group_count = Counter()
     for record in type_2_records:
-        following = record["following_mam_form"]
-        assert following is not None, f"{record['bcv']}: no following MAM chanted word"
-        group_count[type_2_following_filter_group(following)] += 1
+        next_word = record["next_mam_form"]
+        assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
+        group_count[type_2_next_filter_group(next_word)] += 1
     assert sum(group_count.values()) == len(type_2_records)
     assert set(group_count) <= set(TYPE_2_FOLLOWING_FILTER_GROUPS)
 
@@ -546,9 +544,9 @@ def _jta_syllables(jta: str) -> tuple[list[str], int]:
 
 
 def _first_syllable_is_stressed(jta: str) -> bool:
-    """Whether a following chanted word meets Yeivin's type-1 stress condition.
+    """Whether a next chanted word meets Yeivin's type-1 stress condition.
 
-    An opening simple vocal sheva or xataf vowel belongs to the following segment as the first
+    An opening simple vocal sheva or xataf vowel belongs to the next segment as the first
     syllable for this condition. The stress is therefore initial when it falls on the first
     segment after all such opening segments. The normal syllable check still runs first: this
     test adds a source-specific reading of an already-valid ``jta`` form; it does not loosen the
@@ -573,20 +571,18 @@ def _starts_with_a_vocal_shewa(jta: str) -> bool:
     return _VOCAL_SHEVA in first_segment or bool(set(first_segment) & _XATAF_JTA_VOWELS)
 
 
-def _type_1_subtype(
-    following_chanted_word: str | None, following_jta: str | None
-) -> str | None:
-    """The following chanted word's type-1 initial-stress subtype, if it has initial stress."""
-    if following_chanted_word is None or following_jta is None:
+def _type_1_subtype(next_chanted_word: str | None, next_jta: str | None) -> str | None:
+    """The next chanted word's type-1 initial-stress subtype, if it has initial stress."""
+    if next_chanted_word is None or next_jta is None:
         return None
-    if not _first_syllable_is_stressed(following_jta):
+    if not _first_syllable_is_stressed(next_jta):
         return None
-    if _starts_with_a_vocal_shewa(following_jta):
+    if _starts_with_a_vocal_shewa(next_jta):
         return TYPE_1_SUBTYPE_A
-    following_parsed = _parse(following_chanted_word, following_jta)
-    has_pashta_stress_helper = following_chanted_word.count(
+    next_parsed = _parse(next_chanted_word, next_jta)
+    has_pashta_stress_helper = next_chanted_word.count(
         ha.PASH
-    ) == 2 and ha.PASH in _stress_letter_accents(following_parsed)
+    ) == 2 and ha.PASH in _stress_letter_accents(next_parsed)
     return TYPE_1_SUBTYPE_B if has_pashta_stress_helper else TYPE_1_SUBTYPE_C
 
 
@@ -759,7 +755,7 @@ def _accent_grammar_tokens_by_entry(
 def _intervening_punctuation(
     *, bcv: str, chanted_word: str, material: tuple[object, ...]
 ) -> tuple[str, ...]:
-    """The punctuation between one post-stress record and its following chanted word.
+    """The punctuation between one post-stress record and its next chanted word.
 
     The current corpus has only Phonetic MAM's narrow-sense paseq token here. A different
     token is a new display case to classify, not something the page may silently drop.
@@ -769,7 +765,7 @@ def _intervening_punctuation(
     if all(one == _PHONETIC_MAM_PASEQ for one in material):
         return (PASEQ,) * len(material)
     raise SurveyProblem(
-        f"{bcv} {chanted_word!r}: intervening material before the following chanted word"
+        f"{bcv} {chanted_word!r}: intervening material before the next chanted word"
         f" is not a PASEQ: {material!r}"
     )
 
@@ -792,7 +788,7 @@ def _fit_for_mas_intervening_punctuation(
         return ()
     raise SurveyProblem(
         f"{bcv} {chanted_word!r}: unclassified intervening material before a"
-        f" Fit-for-MAS candidate's following chanted word: {material!r}"
+        f" Fit-for-MAS candidate's next chanted word: {material!r}"
     )
 
 
@@ -1083,9 +1079,9 @@ def _record(
     letter_index: int,
     accents_here: list[str],
     before_qere: str | None,
-    following_chanted_word: str | None,
-    following_jta: str | None,
-    following_chanted_word_accent_classification: str | None,
+    next_chanted_word: str | None,
+    next_jta: str | None,
+    next_chanted_word_accent_classification: str | None,
     intervening_punctuation: tuple[str, ...],
 ) -> dict:
     """One classified U+05BD, with everything the page's tables and counts derive from."""
@@ -1113,7 +1109,7 @@ def _record(
         "bcv": bcv,
         "system": system,
         "chanted_word": word,
-        "following_chanted_word": following_chanted_word,
+        "next_chanted_word": next_chanted_word,
         "snapshot_before_qere": before_qere,
         "accents_and_letters": _bare(word),
         "jta": jta,
@@ -1123,13 +1119,11 @@ def _record(
         "vowel": _vowel_name(vowel),
         "is_the_last_syllable": is_last_syllable,
         "chanted_word_is_closed_by_a_guttural": (chanted_word_is_closed_by_a_guttural),
-        "following_chanted_word_is_initially_stressed": (
-            _first_syllable_is_stressed(following_jta)
-            if following_jta is not None
-            else None
+        "next_chanted_word_is_initially_stressed": (
+            _first_syllable_is_stressed(next_jta) if next_jta is not None else None
         ),
-        "following_chanted_word_accent_classification": (
-            following_chanted_word_accent_classification
+        "next_chanted_word_accent_classification": (
+            next_chanted_word_accent_classification
         ),
         "has_sof_pasuq": parsed["has_sof_pasuq"],
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
@@ -1151,9 +1145,9 @@ def _classify_one_word(
     parsed: dict,
     found: dict,
     before_qere: str | None,
-    following_chanted_word: str | None,
-    following_jta: str | None,
-    following_chanted_word_accent_classification: str | None,
+    next_chanted_word: str | None,
+    next_jta: str | None,
+    next_chanted_word_accent_classification: str | None,
     intervening_material: tuple[object, ...],
 ) -> None:
     """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
@@ -1195,10 +1189,10 @@ def _classify_one_word(
             letter_index=letter_index,
             accents_here=accents_here,
             before_qere=before_qere,
-            following_chanted_word=following_chanted_word,
-            following_jta=following_jta,
-            following_chanted_word_accent_classification=(
-                following_chanted_word_accent_classification
+            next_chanted_word=next_chanted_word,
+            next_jta=next_jta,
+            next_chanted_word_accent_classification=(
+                next_chanted_word_accent_classification
             ),
             intervening_punctuation=(
                 _intervening_punctuation(
@@ -1233,9 +1227,9 @@ def _fit_for_mas_candidate(
     jta: str,
     parsed: dict,
     before_qere: str | None,
-    following_chanted_word: str | None,
-    following_jta: str | None,
-    following_accent_grammar_tokens: tuple[str, ...],
+    next_chanted_word: str | None,
+    next_jta: str | None,
+    next_accent_grammar_tokens: tuple[str, ...],
     accent_grammar_tokens: tuple[str, ...],
     intervening_punctuation: tuple[str, ...],
 ) -> dict | None:
@@ -1244,7 +1238,7 @@ def _fit_for_mas_candidate(
     Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
     Unicode accent count cannot supply that information.  The potential syllable is directly
     after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has a
-    conjunctive accent, the following chanted word has initial stress and a disjunctive accent,
+    conjunctive accent, the next chanted word has initial stress and a disjunctive accent,
     and the potential syllable meets one or more of the three source-derived structural types.
     """
     stressed = parsed["stressed"]
@@ -1265,10 +1259,8 @@ def _fit_for_mas_candidate(
         for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
         if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
     )
-    following_chanted_word_is_initially_stressed = (
-        _first_syllable_is_stressed(following_jta)
-        if following_jta is not None
-        else False
+    next_chanted_word_is_initially_stressed = (
+        _first_syllable_is_stressed(next_jta) if next_jta is not None else False
     )
     candidate = {
         "bcv": bcv,
@@ -1276,23 +1268,23 @@ def _fit_for_mas_candidate(
         "chanted_word": word,
         "jta": jta,
         "snapshot_before_qere": before_qere,
-        "following_chanted_word": following_chanted_word,
+        "next_chanted_word": next_chanted_word,
         "intervening_punctuation": intervening_punctuation,
         "structural_types": types,
         "has_u05bd": has_u05bd,
-        "following_chanted_word_is_initially_stressed": (
-            following_chanted_word_is_initially_stressed
+        "next_chanted_word_is_initially_stressed": (
+            next_chanted_word_is_initially_stressed
         ),
-        "following_chanted_word_has_disjunctive_accent": _has_a_disjunctive_accent(
-            system, following_accent_grammar_tokens
+        "next_chanted_word_has_disjunctive_accent": _has_a_disjunctive_accent(
+            system, next_accent_grammar_tokens
         ),
         "stress_syllable_has_conjunctive_accent": (
             _stress_syllable_has_conjunctive_accent(system, parsed)
         ),
         "accent_grammar_token_count": len(accent_grammar_tokens),
         "type_1_subtype": (
-            _type_1_subtype(following_chanted_word, following_jta)
-            if TYPE_OPEN in types and following_chanted_word_is_initially_stressed
+            _type_1_subtype(next_chanted_word, next_jta)
+            if TYPE_OPEN in types and next_chanted_word_is_initially_stressed
             else None
         ),
     }
@@ -1308,8 +1300,8 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     """Whether a candidate has every Fit-for-MAS property apart from its type criterion."""
     return (
         candidate["stress_syllable_has_conjunctive_accent"]
-        and candidate["following_chanted_word_is_initially_stressed"]
-        and candidate["following_chanted_word_has_disjunctive_accent"]
+        and candidate["next_chanted_word_is_initially_stressed"]
+        and candidate["next_chanted_word_has_disjunctive_accent"]
     )
 
 
@@ -1359,16 +1351,16 @@ def _fit_for_mas_record(candidate: dict) -> dict:
     fit_type = _fit_type(candidate)
     assert fit_type is not None, candidate
     assert candidate["mam_form"] is not None, candidate
-    assert candidate["following_mam_form"] is not None, candidate
+    assert candidate["next_mam_form"] is not None, candidate
     return {
         "bcv": candidate["bcv"],
         "system": candidate["system"],
         "chanted_word": candidate["chanted_word"],
         "jta": candidate["jta"],
-        "following_chanted_word": candidate["following_chanted_word"],
+        "next_chanted_word": candidate["next_chanted_word"],
         "intervening_punctuation": candidate["intervening_punctuation"],
         "mam_form": candidate["mam_form"],
-        "following_mam_form": candidate["following_mam_form"],
+        "next_mam_form": candidate["next_mam_form"],
         "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
         "types": candidate["structural_types"],
         "fit_type": fit_type,
@@ -1377,11 +1369,11 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "stress_syllable_has_conjunctive_accent": candidate[
             "stress_syllable_has_conjunctive_accent"
         ],
-        "following_chanted_word_is_initially_stressed": candidate[
-            "following_chanted_word_is_initially_stressed"
+        "next_chanted_word_is_initially_stressed": candidate[
+            "next_chanted_word_is_initially_stressed"
         ],
-        "following_chanted_word_has_disjunctive_accent": candidate[
-            "following_chanted_word_has_disjunctive_accent"
+        "next_chanted_word_has_disjunctive_accent": candidate[
+            "next_chanted_word_has_disjunctive_accent"
         ],
     }
 
@@ -1464,7 +1456,7 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
         if candidate["type_1_subtype"] is None
     ]
     assert all(
-        not candidate["following_chanted_word_is_initially_stressed"]
+        not candidate["next_chanted_word_is_initially_stressed"]
         for candidate in not_initially_stressed
     )
     by_initial_stress_pattern["not_initially_stressed"] = {
@@ -1550,19 +1542,19 @@ def _fit_for_mas_summary(
         for candidate in candidates
         if candidate["has_mas"] and not candidate["structural_types"]
     ]
-    mas_with_non_disjunctive_following_word = [
+    mas_with_non_disjunctive_next_word = [
         candidate
         for candidate in candidates
         if (
             candidate["has_mas"]
-            and not candidate["following_chanted_word_has_disjunctive_accent"]
+            and not candidate["next_chanted_word_has_disjunctive_accent"]
         )
     ]
-    mas_with_noninitial_following_word = [
+    mas_with_noninitial_next_word = [
         candidate
         for candidate in candidates
         if candidate["has_mas"]
-        and not candidate["following_chanted_word_is_initially_stressed"]
+        and not candidate["next_chanted_word_is_initially_stressed"]
     ]
     mas_with_nonconjunctive_stress_syllable = [
         candidate
@@ -1584,8 +1576,8 @@ def _fit_for_mas_summary(
     ]
     excluded_mas = (
         mas_outside_the_three_types
-        + mas_with_non_disjunctive_following_word
-        + mas_with_noninitial_following_word
+        + mas_with_non_disjunctive_next_word
+        + mas_with_noninitial_next_word
         + mas_with_type_1_subtype_c
     )
     assert len(
@@ -1598,7 +1590,7 @@ def _fit_for_mas_summary(
     return {
         "what": (
             "Every syllable immediately after a nonfinal primary stress with a conjunctive"
-            " accent and with a following chanted word that has initial stress and a"
+            " accent and with a next chanted word that has initial stress and a"
             " disjunctive accent-grammar token, classified by the three MAS structural"
             " predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD."
             " Fit for MAS includes Types 2 and 3 and Type 1 subtypes A and B."
@@ -1606,7 +1598,7 @@ def _fit_for_mas_summary(
         ),
         "records_what": (
             "Every chanted-word pair fit for MAS. Each record has the chanted word whose"
-            " post-stress syllable is classified, the following chanted word, the applicable"
+            " post-stress syllable is classified, the next chanted word, the applicable"
             " structural types and Fit-for-MAS class, and whether the first chanted word has"
             " MAS."
         ),
@@ -1622,12 +1614,8 @@ def _fit_for_mas_summary(
         ),
         "mas_not_in_the_table": {
             "outside_the_three_types": len(mas_outside_the_three_types),
-            "following_word_not_disjunctive": len(
-                mas_with_non_disjunctive_following_word
-            ),
-            "following_word_not_initially_stressed": len(
-                mas_with_noninitial_following_word
-            ),
+            "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
+            "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
         },
         "accent_grammar_token_counts": dict(
@@ -1773,35 +1761,31 @@ def _one_verse(
             continue
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
-        following_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
-        following_chanted_word = (
-            following_entry["fva"].split(" ")[0]
-            if following_entry is not None
-            else None
+        next_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
+        next_chanted_word = (
+            next_entry["fva"].split(" ")[0] if next_entry is not None else None
         )
-        following_jta = following_entry["jta"] if following_entry is not None else None
-        following_accent_grammar_tokens = (
-            accent_grammar_tokens[id(following_entry)]
-            if following_entry is not None
-            else ()
+        next_jta = next_entry["jta"] if next_entry is not None else None
+        next_accent_grammar_tokens = (
+            accent_grammar_tokens[id(next_entry)] if next_entry is not None else ()
         )
-        following_chanted_word_accent_classification = (
+        next_chanted_word_accent_classification = (
             (
                 "disjunctive"
-                if _has_a_disjunctive_accent(system, following_accent_grammar_tokens)
+                if _has_a_disjunctive_accent(system, next_accent_grammar_tokens)
                 else "conjunctive"
             )
-            if following_entry is not None
+            if next_entry is not None
             else None
         )
         intervening_material = (
             tuple(
                 events[
                     event_index_by_entry_id[id(entry)]
-                    + 1 : event_index_by_entry_id[id(following_entry)]
+                    + 1 : event_index_by_entry_id[id(next_entry)]
                 ]
             )
-            if following_entry is not None
+            if next_entry is not None
             else ()
         )
         metegs += word.count(METEG)
@@ -1823,7 +1807,7 @@ def _one_verse(
                 found["type_2_type_3_overlap_example"] = {
                     "bcv": bcv,
                     "chanted_word": word,
-                    "following_chanted_word": None,
+                    "next_chanted_word": None,
                     "snapshot_before_qere": entry.get("before_qfikq"),
                 }
         fit_for_mas_candidate = _fit_for_mas_candidate(
@@ -1833,9 +1817,9 @@ def _one_verse(
             jta=jta,
             parsed=parsed,
             before_qere=entry.get("before_qfikq"),
-            following_chanted_word=following_chanted_word,
-            following_jta=following_jta,
-            following_accent_grammar_tokens=following_accent_grammar_tokens,
+            next_chanted_word=next_chanted_word,
+            next_jta=next_jta,
+            next_accent_grammar_tokens=next_accent_grammar_tokens,
             accent_grammar_tokens=accent_grammar_tokens[id(entry)],
             intervening_punctuation=_fit_for_mas_intervening_punctuation(
                 bcv=bcv,
@@ -1853,10 +1837,10 @@ def _one_verse(
             parsed=parsed,
             found=found,
             before_qere=entry.get("before_qfikq"),
-            following_chanted_word=following_chanted_word,
-            following_jta=following_jta,
-            following_chanted_word_accent_classification=(
-                following_chanted_word_accent_classification
+            next_chanted_word=next_chanted_word,
+            next_jta=next_jta,
+            next_chanted_word_accent_classification=(
+                next_chanted_word_accent_classification
             ),
             intervening_material=intervening_material,
         )
@@ -2005,23 +1989,23 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
     return [], "no match"
 
 
-def _following_mam_context(
+def _next_mam_context(
     record: dict, stream: list[object]
 ) -> tuple[str | None, tuple[dict[str, str], ...] | None]:
-    """The following MAM chanted word and its native punctuation context, if resolved.
+    """The next MAM chanted word and its native punctuation context, if resolved.
 
     MAM-simple distinguishes the two PASOLEG meanings structurally: ``lp-paseq`` and
     ``lp-legarmeih``.  The page needs that distinction to put a narrow-sense paseq with the
-    following chanted word and a legarmeh with the preceding chanted word, so this routine keeps
+    next chanted word and a legarmeh with the preceding chanted word, so this routine keeps
     MAM's native category rather than reconstructing one from an accent grammar or the glyph.
     """
     from accgram import mam_simple_verse
 
     current = record["mam_form"]
-    following = record["following_chanted_word"]
-    if current is None or following is None:
+    next_word = record["next_chanted_word"]
+    if current is None or next_word is None:
         return None, None
-    snapshot_following_as_mam = _as_mam_would_write_it(following)
+    snapshot_next_as_mam = _as_mam_would_write_it(next_word)
     source_punctuation = tuple(record.get("intervening_punctuation", ()))
     candidates: list[tuple[str, tuple[dict[str, str], ...]]] = []
     source_matched_candidates: list[tuple[str, tuple[dict[str, str], ...]]] = []
@@ -2029,36 +2013,36 @@ def _following_mam_context(
         if word != current:
             continue
         punctuation: list[dict[str, str]] = []
-        following_index = index + 1
-        while following_index < len(stream) and isinstance(
-            stream[following_index], mam_simple_verse.MAMNativePaseq
+        next_stream_index = index + 1
+        while next_stream_index < len(stream) and isinstance(
+            stream[next_stream_index], mam_simple_verse.MAMNativePaseq
         ):
-            marker = stream[following_index]
+            marker = stream[next_stream_index]
             if marker.kind not in {"paseq", "legarmeh"}:
                 raise SurveyProblem(
                     f"{record['bcv']} {current!r}: MAM has unclassified native punctuation"
-                    f" {marker.kind!r} before the following chanted word"
+                    f" {marker.kind!r} before the next chanted word"
                 )
             punctuation.append({"kind": marker.kind, "glyph": marker.glyph})
-            following_index += 1
-        if following_index == len(stream):
+            next_stream_index += 1
+        if next_stream_index == len(stream):
             continue
-        next_item = stream[following_index]
+        next_item = stream[next_stream_index]
         if next_item == PASEQ:
             raise SurveyProblem(
-                f"{record['bcv']} {current!r}: a MAM PASEQ before the following chanted"
+                f"{record['bcv']} {current!r}: a MAM PASEQ before the next chanted"
                 " word lacks MAM's native paseq/legarmeh category"
             )
         if not isinstance(next_item, str):
             raise SurveyProblem(
                 f"{record['bcv']} {current!r}: unexpected MAM context item before the"
-                f" following chanted word: {next_item!r}"
+                f" next chanted word: {next_item!r}"
             )
         candidate = (next_item, tuple(punctuation))
         candidates.append(candidate)
         if (
             tuple(marker["glyph"] for marker in punctuation) == source_punctuation
-            and next_item == snapshot_following_as_mam
+            and next_item == snapshot_next_as_mam
         ):
             source_matched_candidates.append(candidate)
     source_settled = []
@@ -2111,12 +2095,12 @@ def _attach_mam_forms(
         record["mam_form_candidates"] = len(set(matches))
         record["metegs_in_mam_today"] = settled.count(METEG) if settled else None
         record["metegs_in_the_snapshot"] = record["chanted_word"].count(METEG)
-        following_mam_form, intervening_mam_punctuation = (
-            _following_mam_context(record, context_by_bcv.get(record["bcv"], []))
+        next_mam_form, intervening_mam_punctuation = (
+            _next_mam_context(record, context_by_bcv.get(record["bcv"], []))
             if settled is not None
             else (None, None)
         )
-        record["following_mam_form"] = following_mam_form
+        record["next_mam_form"] = next_mam_form
         record["intervening_mam_punctuation"] = intervening_mam_punctuation
         if settled is not None:
             # Recomputed off MAM's own form, so that every Hebrew string the page can render
@@ -2400,7 +2384,7 @@ def _template_mam_forms(
         {
             "bcv": bcv,
             "chanted_word": entry["fva"].split(" ")[0],
-            "following_chanted_word": None,
+            "next_chanted_word": None,
             "snapshot_before_qere": entry.get("before_qfikq"),
         }
         for entry in entries
@@ -2532,7 +2516,7 @@ def build_survey() -> dict:
         raise SurveyProblem("; ".join(problems))
     counts = found["counts"]
     post_stress = found["post_stress"]
-    _assert_type_2_following_filter_coverage(post_stress)
+    _assert_type_2_next_filter_coverage(post_stress)
     mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
     actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(

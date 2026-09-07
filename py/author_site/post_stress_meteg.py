@@ -24,7 +24,7 @@ see without the vowels that make the syllables.  Both of the page's three struct
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
 the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
 generation time. The Fit-for-MAS lack pages use each record's ``mam_form`` and
-``following_mam_form``; analysis-only annotations are omitted before HTML is written. None is
+``next_mam_form``; analysis-only annotations are omitted before HTML is written. None is
 typed here.
 
 THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts and does not
@@ -81,7 +81,7 @@ _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
 _JEREMIAH_FOOTNOTE_ID = "footnote-3"
-_FOLLOWING_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
+_NEXT_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
 _SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
 _FIT_FOR_MAS_FOOTNOTE_ID = "footnote-7"
@@ -198,7 +198,7 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
-_TYPE_2_FOLLOWING_FILTER_ID = "post-stress-meteg-type-2-following-filter"
+_TYPE_2_NEXT_FILTER_ID = "post-stress-meteg-type-2-next-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
@@ -278,15 +278,15 @@ updateCaseRows();
 </script>
 """
 _TYPE_2_FILTER_SCRIPT = f"""<script>
-const followingFilter = document.getElementById("{_TYPE_2_FOLLOWING_FILTER_ID}");
-const type2Rows = document.querySelectorAll("#{_TYPE_2_TABLE_ID} tr[data-following-initial]");
+const nextFilter = document.getElementById("{_TYPE_2_NEXT_FILTER_ID}");
+const type2Rows = document.querySelectorAll("#{_TYPE_2_TABLE_ID} tr[data-next-initial]");
 const type2SelectedCount = document.getElementById("{_TYPE_2_SELECTED_COUNT_ID}");
 
 function updateType2Rows() {{
   let visibleCount = 0;
   for (const row of type2Rows) {{
-    const isSelected = followingFilter.value === "all" ||
-      row.dataset.followingInitial === followingFilter.value;
+    const isSelected = nextFilter.value === "all" ||
+      row.dataset.nextInitial === nextFilter.value;
     row.hidden = !isSelected;
     row.classList.toggle(
       "{_CASE_STRIPED_ROW_CLASS}",
@@ -300,7 +300,7 @@ function updateType2Rows() {{
     (visibleCount === 1 ? "" : "s") + ".";
 }}
 
-followingFilter.addEventListener("change", () => {{
+nextFilter.addEventListener("change", () => {{
   updateType2Rows();
 }});
 updateType2Rows();
@@ -483,23 +483,23 @@ def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
     ]
 
 
-def _noninitial_following_stress_records(survey: dict) -> list[dict]:
-    """MAS records whose following chanted word does not have initial stress."""
+def _noninitial_next_stress_records(survey: dict) -> list[dict]:
+    """MAS records whose next chanted word does not have initial stress."""
     return [
         record
         for record in survey["post_stress"]
-        if not record["following_chanted_word_is_initially_stressed"]
+        if not record["next_chanted_word_is_initially_stressed"]
     ]
 
 
-def _following_conjunctive_records(survey: dict) -> list[dict]:
-    """MAS records whose following chanted word has a conjunctive accent."""
+def _next_conjunctive_records(survey: dict) -> list[dict]:
+    """MAS records whose next chanted word has a conjunctive accent."""
     records = [
         record
         for record in survey["post_stress"]
-        if record["following_chanted_word_accent_classification"] == "conjunctive"
+        if record["next_chanted_word_accent_classification"] == "conjunctive"
     ]
-    assert all(record["following_chanted_word"] for record in records)
+    assert all(record["next_chanted_word"] for record in records)
     return records
 
 
@@ -559,10 +559,10 @@ def pin_claims(survey: dict) -> None:
         == "Every MAS has a conjunctive accent on that stress letter."
     )
     assert all(record["syllables_after_the_stress"] == 1 for record in post_stress)
-    following_accent_classification = Counter(
-        record["following_chanted_word_accent_classification"] for record in post_stress
+    next_accent_classification = Counter(
+        record["next_chanted_word_accent_classification"] for record in post_stress
     )
-    assert following_accent_classification == {
+    assert next_accent_classification == {
         "disjunctive": 215,
         "conjunctive": 17,
     }
@@ -642,8 +642,8 @@ def pin_claims(survey: dict) -> None:
     }
     assert fit_for_mas["mas_not_in_the_table"] == {
         "outside_the_three_types": 7,
-        "following_word_not_disjunctive": 17,
-        "following_word_not_initially_stressed": 1,
+        "next_word_not_disjunctive": 17,
+        "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
     }
     assert fit_for_mas["with_mas"] + sum(
@@ -653,13 +653,13 @@ def pin_claims(survey: dict) -> None:
     assert len(fitting_records) == fit_for_mas["fitting_any_type"]
     assert all(
         record["stress_syllable_has_conjunctive_accent"]
-        and record["following_chanted_word_is_initially_stressed"]
-        and record["following_chanted_word_has_disjunctive_accent"]
+        and record["next_chanted_word_is_initially_stressed"]
+        and record["next_chanted_word_has_disjunctive_accent"]
         and len(record["types"]) == 1
         and record["chanted_word"]
-        and record["following_chanted_word"]
+        and record["next_chanted_word"]
         and record["mam_form"]
-        and record["following_mam_form"]
+        and record["next_mam_form"]
         for record in fitting_records
     )
     assert Counter(
@@ -726,20 +726,23 @@ def pin_claims(survey: dict) -> None:
     assert [
         one for one in post_stress if one.get("intervening_punctuation")
     ] == misc_vayomer_records
+    # Both punctuation fields are normalized before comparison because a freshly built survey
+    # carries tuples where a JSON round trip carries lists, and this routine has to accept
+    # either: gen_html_files reads the tracked JSON only when trust_survey is on.
     assert all(
         tuple(one.get("intervening_punctuation", ())) == (psm.PASEQ,)
-        and one.get("intervening_mam_punctuation")
+        and list(one.get("intervening_mam_punctuation") or ())
         == [{"kind": "paseq", "glyph": psm.PASEQ}]
-        and one["following_mam_form"] is not None
+        and one["next_mam_form"] is not None
         for one in misc_vayomer_records
     )
     type_2_records = _type_2_records(survey)
     assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
     assert all(
         record["chanted_word_is_closed_by_a_guttural"]
-        and record["following_chanted_word_is_initially_stressed"]
+        and record["next_chanted_word_is_initially_stressed"]
         for record in type_2_records
-    ), "the type-2 guttural or following-stress fact has moved"
+    ), "the type-2 guttural or next-word-stress fact has moved"
     assert all(
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
@@ -777,22 +780,22 @@ def pin_claims(survey: dict) -> None:
         record["is_the_last_syllable"]
         and not record["syllable_is_open"]
         and record["vowel"] == "ṣere"
-        and record["following_chanted_word_is_initially_stressed"]
+        and record["next_chanted_word_is_initially_stressed"]
         for record in type_3_records
-    ), "the type-3 finality or following-stress fact has moved"
+    ), "the type-3 finality or next-word-stress fact has moved"
     type_1_records = [
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
     assert all(record["is_the_last_syllable"] for record in type_1_records)
-    noninitial_following_stress_records = _noninitial_following_stress_records(survey)
+    noninitial_next_stress_records = _noninitial_next_stress_records(survey)
     assert [
         (
             record["bcv"],
             record["mam_form"],
-            record["following_mam_form"],
+            record["next_mam_form"],
             record["structural_type"],
         )
-        for record in noninitial_following_stress_records
+        for record in noninitial_next_stress_records
     ] == [
         (
             "je46:14",
@@ -800,7 +803,7 @@ def pin_claims(survey: dict) -> None:
             "בְמִגְדּ֔וֹל",
             psm.TYPE_OPEN,
         )
-    ], "the noninitial-following-stress exception has moved"
+    ], "the noninitial-next-stress exception has moved"
     assert (
         len(type_1_records),
         len(type_2_records),
@@ -813,10 +816,10 @@ def pin_claims(survey: dict) -> None:
     assert type_2_type_3_overlap["by_final_letter"] == {"ה": 154}
     assert type_2_type_3_overlap["example"]["bcv"] == "da2:5"
     assert type_2_type_3_overlap["example"]["mam_form"] is not None
-    type_2_following_group_counts = Counter(
-        _type_2_following_group(record) for record in type_2_records
+    type_2_next_group_counts = Counter(
+        _type_2_next_group(record) for record in type_2_records
     )
-    assert type_2_following_group_counts == Counter(
+    assert type_2_next_group_counts == Counter(
         lamed=38, guttural=17, resh=1, bet=2, mem=2
     )
     assert survey["post_silluq"]["in_mam"] == sum(
@@ -1086,16 +1089,16 @@ def _census(survey: dict) -> list:
 
 def _mas_facts(survey: dict) -> list:
     """Section 3: the facts shared by every MAS, before structural classification."""
-    exceptions = _noninitial_following_stress_records(survey)
+    exceptions = _noninitial_next_stress_records(survey)
     assert len(exceptions) == 1
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     assert len(nonfinal_mas_syllable_records) == 4
-    following_conjunctive = _following_conjunctive_records(survey)
+    next_conjunctive = _next_conjunctive_records(survey)
     total = len(survey["post_stress"])
     assert (
-        len(following_conjunctive)
+        len(next_conjunctive)
         + sum(
-            record["following_chanted_word_accent_classification"] == "disjunctive"
+            record["next_chanted_word_accent_classification"] == "disjunctive"
             for record in survey["post_stress"]
         )
         == total
@@ -1121,8 +1124,8 @@ def _mas_facts(survey: dict) -> list:
                     "), the next word has initial stress.",
                 ),
                 (
-                    f"In {(total - len(following_conjunctive)) / total:.1%} of MAS cases (",
-                    _footnote_callout(4, _FOLLOWING_CONJUNCTIVE_FOOTNOTE_ID),
+                    f"In {(total - len(next_conjunctive)) / total:.1%} of MAS cases (",
+                    _footnote_callout(4, _NEXT_CONJUNCTIVE_FOOTNOTE_ID),
                     "), the next word has a disjunctive accent.",
                 ),
             )
@@ -1286,12 +1289,12 @@ def _case_subpage_links(survey: dict) -> list:
 
 
 def _type_1_facts(survey: dict) -> list:
-    """The complete structural type-1 MAS population by following-stress pattern."""
+    """The complete structural type-1 MAS population by next-word-stress pattern."""
     type_1_mas = _actual_type_1_mas(survey)
     pattern_counts = type_1_mas["by_initial_stress_pattern"]
     headers = (
         "Initial-stress pattern",
-        "Following chanted word",
+        "Next chanted word",
         "Prose",
         "Poetic",
         "All",
@@ -1382,10 +1385,10 @@ def _fit_type_cell(fit_type: str) -> object:
     """One Fit-for-MAS table label, including the two admitted type-1 subtypes."""
     titles = {
         psm.FIT_TYPE_1_A: (
-            "Type 1A: type 1 with non-plain initial stress on the following chanted word."
+            "Type 1A: type 1 with non-plain initial stress on the next chanted word."
         ),
         psm.FIT_TYPE_1_B: (
-            "Type 1B: type 1 with plain initial stress on the following chanted word, "
+            "Type 1B: type 1 with plain initial stress on the next chanted word, "
             "marked by a pashta stress helper."
         ),
         psm.FIT_TYPE_2: "Type 2: the chanted word is closed by a guttural.",
@@ -1400,7 +1403,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
         return ""
     gloss_by_subtype = {
         psm.SUBTYPE_MISC_VAYOMER: (
-            "A Vayomer case with one intervening paseq before the following word."
+            "A Vayomer case with one intervening paseq before the next word."
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_3: (
             "A final closed ḥolam syllable: CoS's long-vowel type (a), but not"
@@ -1413,15 +1416,15 @@ def _case_subtype_cell(subtype: str | None) -> object:
     return mb_html.abbr(visible_label, {"title": gloss_by_subtype[subtype]})
 
 
-def _following_chanted_word_span(
-    following: str, punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = ()
+def _next_chanted_word_span(
+    next_word: str, punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = ()
 ) -> object:
-    """The following chanted word, and each preceding native narrow-sense paseq, in gray."""
+    """The next chanted word, and each preceding native narrow-sense paseq, in gray."""
     demoted = []
     for marker in punctuation:
         assert marker["kind"] == "paseq", marker
         demoted.extend((*_hebrew_cell(marker["glyph"]), " "))
-    demoted.extend(_hebrew_cell(following))
+    demoted.extend(_hebrew_cell(next_word))
     return mb_html.span(
         tuple(demoted),
         {"class": _NEXT_WORD_CLASS},
@@ -1431,49 +1434,47 @@ def _following_chanted_word_span(
 def _native_mam_punctuation_parts(
     punctuation: tuple[dict[str, str], ...] | list[dict[str, str]],
 ) -> tuple[list[str], list[dict[str, str]]]:
-    """The marks MAM attaches visually to the preceding and following chanted words."""
+    """The marks MAM attaches visually to the preceding and the next chanted words."""
     preceding = []
-    following = []
+    next_marks = []
     for marker in punctuation:
         kind = marker["kind"]
         if kind == "legarmeh":
             preceding.append(marker["glyph"])
         elif kind == "paseq":
-            following.append(marker)
+            next_marks.append(marker)
         else:
             raise AssertionError(
                 f"unclassified MAM punctuation in page data: {marker!r}"
             )
-    return preceding, following
+    return preceding, next_marks
 
 
 def _paired_chanted_word_cell(
     current_form: str,
-    following_form: str,
+    next_form: str,
     punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = (),
 ) -> tuple:
     """One MAM chanted-word pair, with punctuation placed by MAM's native category."""
-    preceding_punctuation, following_punctuation = _native_mam_punctuation_parts(
-        punctuation
-    )
+    preceding_punctuation, next_punctuation = _native_mam_punctuation_parts(punctuation)
     return (
         *_hebrew_cell(current_form),
         *[part for glyph in preceding_punctuation for part in _hebrew_cell(glyph)],
         " ",
-        _following_chanted_word_span(
-            following_form,
-            following_punctuation,
+        _next_chanted_word_span(
+            next_form,
+            next_punctuation,
         ),
     )
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The MAM MAS form followed by its next chanted word in gray."""
-    following = record["following_mam_form"]
-    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
+    next_word = record["next_mam_form"]
+    assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
         record["mam_form"] or record["chanted_word"],
-        following,
+        next_word,
         record.get("intervening_mam_punctuation", ()),
     )
 
@@ -1483,12 +1484,12 @@ def _oleh_chanted_word_cell(record: dict) -> tuple:
     current_form = record["mam_form"] or record["chanted_word"]
     if ha.MER in current_form:
         return _hebrew_cell(current_form)
-    following = record["following_mam_form"]
-    assert following is not None, f"{record['bcv']}: no MAM form following oleh"
-    assert ha.MER in following, f"{record['bcv']}: no yored after oleh"
+    next_word = record["next_mam_form"]
+    assert next_word is not None, f"{record['bcv']}: no MAM form after oleh"
+    assert ha.MER in next_word, f"{record['bcv']}: no yored after oleh"
     return _paired_chanted_word_cell(
         current_form,
-        following,
+        next_word,
         record.get("intervening_mam_punctuation", ()),
     )
 
@@ -1544,16 +1545,16 @@ def _misc_records(survey: dict) -> list[dict]:
     ]
 
 
-def _type_2_following_group(record: dict) -> str:
-    """The detailed type-2 group set by the following chanted word's first consonant."""
-    following = record["following_mam_form"]
-    assert following is not None, f"{record['bcv']}: no following MAM chanted word"
-    return psm.type_2_following_filter_group(following)
+def _type_2_next_group(record: dict) -> str:
+    """The detailed type-2 group set by the next chanted word's first consonant."""
+    next_word = record["next_mam_form"]
+    assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
+    return psm.type_2_next_filter_group(next_word)
 
 
 def _type_2_filter_group(record: dict) -> str:
     """The coarser type-2 filter group shown on the cases page."""
-    detailed_group = _type_2_following_group(record)
+    detailed_group = _type_2_next_group(record)
     if detailed_group in ("lamed", "guttural"):
         return detailed_group
     return "not-lamed-or-guttural"
@@ -1568,7 +1569,7 @@ def _type_2_case_row(record: dict) -> object:
                 _HEBREW_CELL,
             ),
         ),
-        {"data-following-initial": _type_2_filter_group(record)},
+        {"data-next-initial": _type_2_filter_group(record)},
     )
 
 
@@ -1592,7 +1593,7 @@ def _misc_case_row(record: dict) -> object:
     )
 
 
-def _type_2_following_filter(case_count: int) -> object:
+def _type_2_next_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
         ("lamed", "Followed by ל"),
@@ -1603,8 +1604,8 @@ def _type_2_following_filter(case_count: int) -> object:
         f'<option value="{value}">{label}</option>' for value, label in options
     )
     return mb_html.raw_html(
-        f'<p><label for="{_TYPE_2_FOLLOWING_FILTER_ID}">Show </label>'
-        f'<select id="{_TYPE_2_FOLLOWING_FILTER_ID}">{option_html}</select>. '
+        f'<p><label for="{_TYPE_2_NEXT_FILTER_ID}">Show </label>'
+        f'<select id="{_TYPE_2_NEXT_FILTER_ID}">{option_html}</select>. '
         f'<output id="{_TYPE_2_SELECTED_COUNT_ID}" aria-live="polite">'
         f"Showing {case_count:,} rows.</output></p>\n"
     )
@@ -1626,7 +1627,7 @@ def _back_to_fit_for_mas_table() -> object:
 
 
 def build_type_2_body(survey: dict) -> list:
-    """The type-2 cases, grouped by the following chanted word's initial consonant."""
+    """The type-2 cases, grouped by the next chanted word's initial consonant."""
     records = _type_2_records(survey)
     rows = [_type_2_case_row(record) for record in records]
     return [
@@ -1644,7 +1645,7 @@ def build_type_2_body(survey: dict) -> list:
             )
         ),
         mb_html.heading_level_2("Every type 2 case in MAM"),
-        _type_2_following_filter(len(rows)),
+        _type_2_next_filter(len(rows)),
         _table(
             ("Verse", "Word"),
             rows,
@@ -1766,7 +1767,7 @@ def build_misc_body(survey: dict) -> list:
                 _ROM_PASEQ,
                 " between the ",
                 _ROM_METEG,
-                "-bearing word and the following word: the ",
+                "-bearing word and the next word: the ",
                 _ROM_GAYA,
                 "-before-",
                 _ROM_PASEQ,
@@ -1793,7 +1794,7 @@ def build_cases_body(survey: dict) -> list:
         mb_html.heading_level_2("Every MAS in MAM"),
         _para(
             "In the order the corpus has them, prose verses and poetic verses together. Each"
-            " reference links to the MAM-with-doc verse, and the following word is gray."
+            " reference links to the MAM-with-doc verse, and the next word is gray."
         ),
         mb_html.para(
             (
@@ -1801,14 +1802,14 @@ def build_cases_body(survey: dict) -> list:
                 _ROM_VAYOMER,
                 ", the intervening ",
                 _ROM_PASEQ,
-                " is gray with the following word.",
+                " is gray with the next word.",
             )
         ),
         mb_html.para(
             (
                 "Type 2 has a ",
                 mb_html.anchor_h("separate table", _TYPE_2_FNAME),
-                " filtered by the following word's initial consonant.",
+                " filtered by the next word's initial consonant.",
             )
         ),
         _case_type_filter(len(rows)),
@@ -2098,7 +2099,7 @@ def _oleh_meteg_overlap(survey: dict) -> list:
 
 def _footnotes(survey: dict) -> list:
     """The exceptions and methods the page marks with its phi callouts."""
-    exceptions = _noninitial_following_stress_records(survey)
+    exceptions = _noninitial_next_stress_records(survey)
     assert len(exceptions) == 1
     exception = exceptions[0]
     return [
@@ -2117,7 +2118,7 @@ def _footnotes(survey: dict) -> list:
                 ".",
             )
         ),
-        *_following_conjunctive_footnote(survey),
+        *_next_conjunctive_footnote(survey),
         *_sources_for_types_footnote(),
         *_type_2_type_3_footnote(survey),
         *_fit_for_mas_footnote(survey),
@@ -2389,10 +2390,10 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 ". It means that a potential MAS syllable comes immediately after a nonfinal"
                 " stress syllable with a conjunctive accent, the next chanted word has initial"
                 " stress and a disjunctive accent, and the potential MAS syllable is type 2,"
-                " type 3, type 1A, or type 1B. In type 1A, the following chanted word has"
+                " type 3, type 1A, or type 1B. In type 1A, the next chanted word has"
                 " non-plain initial stress because it starts with a vocal ",
                 _ROM_SHEWA,
-                ". In type 1B, the following chanted word has plain initial stress marked"
+                ". In type 1B, the next chanted word has plain initial stress marked"
                 " by a ",
                 _ROM_PASHTA,
                 " stress helper. Type 1C has other plain initial stress and is not fit for"
@@ -2415,30 +2416,30 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                     " none of the three MAS types."
                 ),
                 (
-                    f"{mas_not_in_the_table['following_word_not_disjunctive']:,} MAS"
-                    " cases have a following word with a conjunctive accent."
+                    f"{mas_not_in_the_table['next_word_not_disjunctive']:,} MAS"
+                    " cases have a next word with a conjunctive accent."
                 ),
                 (
-                    f"{mas_not_in_the_table['following_word_not_initially_stressed']:,}"
-                    " MAS case has a following word without initial stress."
+                    f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}"
+                    " MAS case has a next word without initial stress."
                 ),
                 (
                     f"{mas_not_in_the_table['type_1_subtype_C']:,} MAS cases are type 1C,"
-                    " whose following chanted word has other plain initial stress."
+                    " whose next chanted word has other plain initial stress."
                 ),
             )
         ),
     ]
 
 
-def _following_conjunctive_footnote(survey: dict) -> list:
-    """Footnote 4: the MAS records whose following chanted word has a conjunctive accent."""
-    records = _following_conjunctive_records(survey)
+def _next_conjunctive_footnote(survey: dict) -> list:
+    """Footnote 4: the MAS records whose next chanted word has a conjunctive accent."""
+    records = _next_conjunctive_records(survey)
     total = len(survey["post_stress"])
     assert (
         len(records)
         + sum(
-            record["following_chanted_word_accent_classification"] == "disjunctive"
+            record["next_chanted_word_accent_classification"] == "disjunctive"
             for record in survey["post_stress"]
         )
         == total
@@ -2452,12 +2453,12 @@ def _following_conjunctive_footnote(survey: dict) -> list:
     ]
     return [
         mb_html.heading_level_3(
-            "φ4 — Following chanted words with a conjunctive accent",
-            {"id": _FOLLOWING_CONJUNCTIVE_FOOTNOTE_ID},
+            "φ4 — Next chanted words with a conjunctive accent",
+            {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
         ),
         mb_html.para(
-            "The following chanted word is gray in every row. The table lists every MAS"
-            " case whose following chanted word has a conjunctive accent."
+            "The next chanted word is gray in every row. The table lists every MAS"
+            " case whose next chanted word has a conjunctive accent."
         ),
         _table(("Verse", "Word"), rows),
     ]
