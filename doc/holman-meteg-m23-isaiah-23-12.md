@@ -126,6 +126,20 @@ Breuer's translation spells it "ga'aya"; a grep for "ga'ya" or "gaya" misses him
 6. **Ch. 8 §2** (`C08-S001.md` lines 19–33): optional ga'ayot "do not appear according to a
    set tradition", vary between manuscripts and within one, and the Ben Asher versus Ben
    Naftali disputes do not touch them.
+7. **Ch. 14 §8** (`C14-S001.md`, anchor `<!-- §8 -->`; printed pp. 547–549), read 2026-09-07:
+   the ga'aya section of *Pasek, Hyphen and Ga'aya*, the last section of Part II, and the only
+   place in Chs. 9–15 that discusses a ga'aya after the stressed syllable. Its opening sentence
+   is the premise the rest rests on — the Eme"t books' ga'aya "only differs from the *ga'aya*
+   of the 21 books in the following types" — so a type §8 omits carries over to the poetic
+   system unchanged, an argument from silence that has to be written as "not listed" and never
+   as "the same". Item (b), on p. 547, is type (b) outright: in the 21 books this ga'aya
+   "almost always only appears before a word beginning with ל or with נ", while in the Eme"t
+   books it "is also common before a word beginning with a guttural; and it sometimes also
+   appears before a word beginning with ר", the cantillated-word examples being Ps. 18:45,
+   10:11, 105:28 and 19:14 and the infrequent hyphenated ones Ps. 73:11 and Prov. 28:19; item
+   (a), also on p. 547, restates type (a) for the end of a hyphenated word alone, where the
+   meteg stands before the compound chanted word's one stress and so counts as MBS here; and
+   type (j) is not listed at all.
 
 Neither book says a gaʿya is never marked after the stress; both say the opposite. Neither
 discusses a gaʿya after silluq, and the rules for the open-syllable and guttural types each
@@ -299,3 +313,11 @@ Nothing here says whether to accept M23. The facts that bear on it:
   `gh issue view 19 --repo bdenckla/MAM-for-JPS`.
 - Yeivin and Breuer: grep the two `md-export-of-docx` trees for `after the accent`, and
   Breuer's for `ga'aya`; the section files named above.
+- The printed page a CoS section begins on: the 719 scans at
+  `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/The Cantillation of Scripture - English/`
+  carry the printed page number in the filename, so `C547-P2-C14-Pas-Hyph-Ga.jpg` is p. 547 and
+  `C354-P1-C8-Ga-aya.jpg` is p. 354, where Ch. 8 §46's heading stands. A roman-numbered page
+  takes a `B` name, `B16.jpg` being p. xvi. `masorah-books/py/cos/fix_diacritics.py`'s
+  `SCAN_REPAIRS` already relies on this convention.
+- Ch. 14 §8's own span: p. 550 is blank, `C551` and `C552` are the Part III title leaves, and
+  Ch. 15 opens on p. 553, so §8 ends on p. 549.

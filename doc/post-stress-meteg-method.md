@@ -12,6 +12,8 @@ immediately after the first chanted word's primary stress must also meet one or 
 source-derived types. The survey places that syllable in each type it meets, then records whether
 MAM has a meteg on the syllable. The types are Yeivin's §332 open-syllable type, §354 guttural
 type, and §338 closed-tsere type, with Breuer's corresponding Ch. 8 types (j), (b), and (a).
+Breuer's Ch. 14 §8 lists only the types where the poetic system's rule differs from the prose
+system's rule, and item (b) there is the guttural type.
 
 The table is a search limited to a regular configuration of neighbouring chanted words. Phonetic
 MAM supplies the first chanted word's stress position, and the survey checks the conjunctive accent

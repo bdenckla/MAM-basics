@@ -31,6 +31,38 @@ THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts an
 require them; the sections are cited by number and their content paraphrased, so no private
 source text reaches a public page.  ``_EXCERPTS`` is empty and ``_excerpt_accounting`` asserts
 that it is, which is the plan's requirement for a page with no excerpts.
+
+CoS CH. 14 §8 IS WHERE BREUER TREATS THE POETIC SYSTEM'S GA'AYA, cited here since 2026-09-07.
+Read that day off ``C14-S001.md`` in the CoS export at
+``MAM-private/masorah-books/books/cos/md-export-of-docx/``, anchor ``<!-- §8 -->``, and off
+the scans.  Chapters 9 through 15 discuss a ga'aya after the stressed syllable there and
+nowhere else: Chs. 10, 12 and 15 name no ga'aya at all, and the Ch. 9, 11 and 13 hits are the
+"syllable fit for a light ga'aya" position yardstick for placing a secondary servant, plus
+Ch. 8 §4's ga'aya standing in place of an omitted accent, which is the opposite of MAS.
+§8's opening sentence is the premise the rest rests on -- the Eme"t books' ga'aya "only
+differs from the ga'aya of the 21 books in the following types" -- so a type §8 omits
+carries over unchanged.  That is an argument from silence, which is
+why the rendered wording says "not listed" and never "the same".  Item (b)
+is type 2 outright; item (a) covers type 3 for the end of a hyphenated word alone, where the
+meteg stands before the compound chanted word's one stress and the survey counts it as MBS;
+type 1 is not listed at all.  The printed pages are read off the scan filenames -- C547, C548
+and ``C549-P2-C14-Pas-Hyph-Ga.jpg`` for §8, ``C354-P1-C8-Ga-aya.jpg`` for Ch. 8 §46 -- and the
+four claims are pinned in masorah-books' ``py/cos/check_cos_claims.py``.  ITM states nothing
+poetic-specific about a ga'aya after the stress, so the page claims nothing about ITM in
+either direction.
+
+MAM AGREES WITH ITEM (b), AND THAT MEASUREMENT IS RECORDED HERE RATHER THAN RENDERED.  Ben's
+decision of 2026-09-07 is references only: the page gets the Ch. 14 citations, their printed
+pages and a paraphrase, and no page renders a MAM count for this.  Measured 2026-09-07 from
+the tracked ``out/accgram/post-stress-meteg.json`` at ``11fb9c24``: of the 17 type-2 MAS whose
+next chanted word begins with a guttural, seven are prose verses -- nu35:16, nu35:17, nu35:18,
+nu35:21, dt4:33, 1s22:17 and ec1:5, exactly the exceptions Ch. 8 §9 lists as its Examples II
+-- and ten are poetic verses: ps10:11, ps18:45, ps19:3, ps94:9, ps105:28, pr28:2, pr29:2,
+pr29:6, pr29:18 and jb22:13.  The one type-2 MAS whose next chanted word begins with ר is
+poetic, ps19:14, which is one of item (b)'s four cantillated-word examples; all four of those
+examples are type-2 MAS records here.  Re-derive by grouping that JSON's ``TYPE_GUTTURAL``
+records by ``(record["system"], psm.type_2_next_filter_group(record["next_mam_form"]))``; the
+groups must sum to ``pin_claims``' ungrouped lamed=38, guttural=17, resh=1, bet=2, mem=2.
 """
 
 from __future__ import annotations
@@ -157,7 +189,9 @@ _ITM_SECTION_REFERENCE = re.compile(r"§(?P<section>[0-9]+)")
 
 # Yeivin and Breuer on each of the three types, and how each book grades it.  The pairing is
 # the M23 evidence note's, doc/holman-meteg-m23-isaiah-23-12.md; both books are cited for
-# every type, so no row rests on one source.
+# every type, so no row rests on one source.  The Ch. 14 pairing below was added 2026-09-07
+# and is CoS's alone: ITM states nothing poetic-specific about a gaʿya after the stress, so
+# the ITM column stays as it was and the page claims nothing about ITM in either direction.
 _TYPE_SOURCES = {
     psm.TYPE_OPEN: ("§332", "§3(j), §§46-47", "optional in both books"),
     psm.TYPE_GUTTURAL: ("§354", "§3(b), §§9-10", "obligatory in Breuer"),
@@ -168,12 +202,36 @@ _TYPE_SOURCES = {
     ),
 }
 
+# Each number is the printed page on which the cited Ch. 8 section begins.  How to read one
+# off the scans, recorded 2026-09-07 because nothing recorded it when 14023ae4 added these
+# numbers on 2026-09-05: the 719 images at ~/OneDrive/Documents/ScansOfBooks/The Cantillation
+# of Scripture - English/ carry the printed page number in the filename, so
+# C354-P1-C8-Ga-aya.jpg is p. 354, which is where §46's heading stands.  A roman-numbered
+# page is a B name, B16.jpg being p. xvi; py/cos/fix_diacritics.py's SCAN_REPAIRS in
+# masorah-books already relies on the same convention.
 _COS_PAGE_STARTS_BY_TYPE = {
     psm.TYPE_OPEN: "300; 354; 355",
     psm.TYPE_GUTTURAL: "299; 308; 309",
     psm.TYPE_CLOSED_TSERE: "299; 301; 302; 306; 307",
 }
-_COS_PAGE_GLOSS = "page number in Wengrov's English translation of CoS"
+_COS_PAGE_GLOSS = (
+    "printed page in Wengrov's English translation of CoS on which the cited Ch. 8 section"
+    " begins"
+)
+
+# What Ch. 14 §8 says about each type.  §8 lists only the types whose rules differ between
+# the prose and poetic systems, as its opening sentence says, so a type it does not list is
+# "not listed" and never "the same": the inference is an argument from silence and the page
+# says so.  Read off C14-S001.md's <!-- §8 --> anchor and off the scans, 2026-09-07.
+_COS_CH_14_BY_TYPE = {
+    psm.TYPE_OPEN: "not listed",
+    psm.TYPE_GUTTURAL: "(b)",
+    psm.TYPE_CLOSED_TSERE: ("(a), before a ", _ROM_MAQAF, " only"),
+}
+# §8 runs from the Ga'aya heading on p. 547 to the closing "On rare occasions" sentence on
+# p. 549; p. 550 is blank, C551 and C552 are the Part III title leaves, and Ch. 15 opens on
+# p. 553.  Items (a) and (b) are both on p. 547.
+_COS_CH_14_SECTION_8_PAGES = "547–549"
 
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
@@ -1219,8 +1277,9 @@ def _sources_for_types_footnote() -> list:
                 itm_sections(yeivin),
                 breuer,
                 _COS_PAGE_STARTS_BY_TYPE[kind],
+                _COS_CH_14_BY_TYPE[kind],
             ),
-            (None, None, None, None),
+            (None, None, None, None, None),
         )
         for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
     ]
@@ -1242,10 +1301,35 @@ def _sources_for_types_footnote() -> list:
             (
                 "Type",
                 itm(),
-                cos(),
-                mb_html.abbr("CoS-pg", {"title": _COS_PAGE_GLOSS}),
+                (cos(), " Ch. 8"),
+                mb_html.abbr("Ch. 8 pg", {"title": _COS_PAGE_GLOSS}),
+                (cos(), " Ch. 14 §8"),
             ),
             source_rows,
+        ),
+        mb_html.para(
+            (
+                "CoS treats the poetic system's ",
+                _ROM_GAYA,
+                f" in Ch. 14 §8 (pp. {_COS_CH_14_SECTION_8_PAGES}), which lists only the"
+                " types where the poetic system's rule differs from the prose system's"
+                " rule, as its opening sentence says. Item (b) is type 2: in the prose"
+                " system this ",
+                _ROM_METEG,
+                " almost always comes only before a chanted word beginning with ל or נ,"
+                " while in the poetic system it is also common before a chanted word"
+                " beginning with a guttural, and it sometimes comes before a chanted word"
+                " beginning with ר. Item (a) restates the rule of Breuer's type (a), the"
+                " type behind type 3, for an atom followed by a ",
+                _ROM_MAQAF,
+                " alone: a ",
+                _ROM_METEG,
+                " on such an atom comes before the one stress of its chanted word, so this"
+                " document counts it as ",
+                mb_html.abbr("MBS", {"title": "meteg before the stress"}),
+                " rather than MAS. Type 1 is not listed, so CoS states no poetic-specific"
+                " difference for it.",
+            )
         ),
     ]
 
