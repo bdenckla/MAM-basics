@@ -239,10 +239,13 @@ def _display_path(generator_file: str, repo_name: str | None = None) -> str:
     The top-level path segment is the ``repo_name`` argument when supplied, else the
     repo's own name as ``this_repo_name()`` above resolves it.
 
-    Nothing in MAM-basics passes ``repo_name`` any more.  It was wlc-utils'
-    ``REPO_NAME`` override, which held the breadcrumbs at ``wlc-utils/...`` while
-    that repo's Python was being copied into MAM-basics, and was dropped on
-    2026-08-01 once the generators really did live here.
+    One caller in MAM-basics passes ``repo_name``: ``scan_pages/index_io.py`` passes
+    the literal ``"MAM-basics"`` (d6264677, 2026-08-07), written four days before
+    0008eb8d taught the default to derive the repo's name from git's own files rather
+    than from the checkout directory, and left in place since.  The parameter's other
+    user was wlc-utils' ``REPO_NAME`` override, which held the breadcrumbs at
+    ``wlc-utils/...`` while that repo's Python was being copied into MAM-basics, and
+    was dropped on 2026-08-01 once the generators really did live here.
     """
     generator_path = Path(generator_file).resolve()
     repo_root = _repo_root()

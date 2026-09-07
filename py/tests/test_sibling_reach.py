@@ -114,7 +114,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from mb_cmn import paths
+from mb_cmn import paths, provenance
 
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  One entry per sibling repo this tree resolves a path into,
@@ -437,10 +437,14 @@ def _vendoring_policy_dest_repos() -> set[str]:
         (paths.in_dir() / "vendoring_policy.json").read_text(encoding="utf-8")
     )
     repos = policy.get("repos", {})
+    # This filter is the lint's model of the branch ``destination_repo_path`` takes for
+    # this repository's own policy entry, so it has to ask the question that function
+    # asks: is this name the repository's, as provenance derives it?  Never the checkout
+    # directory's name, which in a branch-named worktree is not ``MAM-basics``.
     return {
         name
         for name, entry in repos.items()
-        if not entry.get("ignore") and name != paths.repo_root().name
+        if not entry.get("ignore") and name != provenance.this_repo_name()
     }
 
 

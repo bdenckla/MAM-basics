@@ -7,10 +7,11 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from mb_cmn import paths
+from mb_cmn import paths, provenance
 from vendoring.repo_policy import OverridePolicy, RepoPolicy, load_policy
 
 _MAM = paths.repo_root()
+_MAM_NAME = provenance.this_repo_name()
 _REPOS = paths.repos_root()
 
 # The verdict ``vendoring/compare.py`` reaches when a copy's bytes differ from its
@@ -28,8 +29,14 @@ def destination_repo_path(repo_name: str) -> Path:
     MAM-simple's generated example copies moved into this repository on 2026-09-06.
     Its policy entry therefore names MAM-basics itself; every other destination remains
     a sibling clone below the common repositories root.
+
+    That entry is recognized by the repository's NAME as ``provenance.this_repo_name``
+    derives it, never by ``_MAM.name``, because in a linked worktree ``_MAM.name`` is
+    the worktree directory's name -- ``MAM-basics-post-stress-meteg`` -- and the
+    ``MAM-basics`` entry would then resolve to a sibling clone instead of to the
+    checkout running the audit.
     """
-    return _MAM if repo_name == _MAM.name else _REPOS / repo_name
+    return _MAM if repo_name == _MAM_NAME else _REPOS / repo_name
 
 
 @dataclass(frozen=True)

@@ -17,6 +17,8 @@ index_html_dir   : directory for gh-pages index.html/CSS; None => skip
 
 import xml.etree.ElementTree as ET
 import copy
+from pathlib import Path
+
 import lxml.etree as lxml_etree
 
 from mb_misc import mb_html
@@ -203,6 +205,8 @@ def _xsd_parser(xml_xsd_path: str | None):
     """
     if xml_xsd_path is None:
         return None
+    if not Path(xml_xsd_path).is_file():
+        raise FileNotFoundError(f"local XML namespace XSD not found: {xml_xsd_path}")
     parser = lxml_etree.XMLParser()
     parser.resolvers.add(_XmlNamespaceXsdResolver(xml_xsd_path))
     return parser
