@@ -21,11 +21,12 @@ verse twice -- ``_require_distinct_refs`` would reject that -- so the message
 and the verse name one case between them.
 
 Two guards, because an entry can go stale in two directions.
-``require_known_cases`` raises on an entry naming no case at all, so an email
-key that changes spelling is loud rather than silently inert -- the same guard
-``uxlc_attachment_notes.require_known_attachments`` gives its two tables.
-``_build_case`` raises on an entry for a case whose message states an index of
-its own, which is what a re-sent message with the index added would produce.
+
+1. ``require_known_cases`` raises on an entry naming no case at all, so an email
+   key that changes spelling is loud rather than silently inert -- the same guard
+   ``uxlc_attachment_notes.require_known_attachments`` gives its two tables.
+2. ``_build_case`` raises on an entry for a case whose message states an index,
+   which is what a re-sent message with the index added would produce.
 """
 
 from __future__ import annotations
@@ -33,14 +34,13 @@ from __future__ import annotations
 # (email key, bk39 id, chapter, verse) -> Holman's atom index.
 #
 # Holman's 1 Samuel 28:12 message of 2026-08-23 is a single case headed with the
-# message's own subject line, which names the verse and stops there; no field of
-# it carries an index either. The UXLC's 1 Samuel 28:12 has sixteen child
-# elements and no ketiv, qere or samekh among them, so its count and Holman's
-# are the same count, and the eleventh is שָׁא֧וּל -- the atom his Change line
-# alters, אֶל־ before it being the tenth. He quotes the maqaf compound whole and
-# indexes the atom that carries the change, which is what his 2 Samuel 5:21.1
-# (וַיַּעַזְבוּ־שָׁ֖ם, indexing the atom the maqaf sits on) and his 2 Samuel
-# 7:22.7 (כִּֽי־אֵֽין, indexing the second atom) both do.
+# message's subject line, which names the verse and stops there; no field has an
+# index either. The UXLC's 1 Samuel 28:12 has sixteen child elements and no ketiv,
+# qere or samekh among them, so its count and Holman's are the same count, and the
+# eleventh is שָׁא֧וּל -- the atom his Change line alters, אֶל־ before it being the
+# tenth. He quotes the maqaf compound whole and indexes the atom that has the
+# change. His 2 Samuel 5:21.1 example, וַיַּעַזְבוּ־שָׁ֖ם, indexes the atom the
+# maqaf sits on. His 2 Samuel 7:22.7 example, כִּֽי־אֵֽין, indexes the second atom.
 ATOM_INDEX_BY_VERSE_CASE = {
     ("uxlc-correction-for-1samuel-28-12", "1Samuel", 28, 12): 11,
 }

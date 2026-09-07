@@ -67,13 +67,16 @@ CORRECTOR = "Ben Denckla"
 
 # Joshua 10:12.3's comparison form, in the spelling sent and in the corrected one.
 # The word is יהושע, Joshua's name, and EVERY CHARACTER IS A NAMED ESCAPE, for
-# three reasons.  U+05A8 and U+0599 are hard to tell apart in a literal, and which
-# of the two is meant is the whole of this correction.  The shin dot precedes the
-# qubuts here, which is MAM-normal mark order rather than the Unicode-normal order
-# a keyboard or a paste through anything that normalizes will produce -- typing the
-# stem instead of spelling it put the qubuts first, and the fail-fast check below
-# is what caught it.  And a source line whose first strong character is Hebrew lays
-# out right to left, which leaves the escapes beside it hard to read.
+# three reasons.
+#
+# 1. U+05A8 and U+0599 are hard to tell apart in a literal, and which codepoint is
+#    meant is the whole of this correction.
+# 2. The shin dot precedes the qubuts here, which is MAM-normal mark order rather
+#    than the Unicode-normal order a keyboard or a paste through anything that
+#    normalizes will produce. Typing the stem instead of spelling it put the qubuts
+#    first, and the fail-fast check below is what caught the error.
+# 3. A source line whose first strong character is Hebrew lays out right to left,
+#    which leaves the escapes beside it hard to read.
 _JOSH_STEM = (
     "\N{HEBREW LETTER YOD}\N{HEBREW POINT SHEVA}"
     "\N{HEBREW LETTER HE}"

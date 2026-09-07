@@ -59,8 +59,8 @@ def suggestion_kind(mam_form: str, comparison_form: str) -> str:
     A meteg case is one whose two forms become equal once every meteg is dropped
     from both -- so the meteg is the whole of the difference.  Everything else is
     an accent-placement case, which is what the four Jerusalem Crown cases are: a
-    qadma added, and a merkha, a geresh and a munaḥ each sitting on a different
-    letter in the two editions.
+    pashta's stress helper added, and a merkha, a geresh and a munaḥ each sitting
+    on a different letter in the two editions.
 
     Note that a meteg is not an accent, which is why the two kinds are named as
     they are rather than as two kinds of accent difference.

@@ -62,7 +62,7 @@ def comparison_table_html(rows: list[dict[str, str]]) -> str:
             "<tr>\n"
             f'<td class="comparison-name-col">{_comparison_label_html(row["name"])}<'
             "/td>\n"
-            f'<td class="comparison-value-col">{_comparison_literal_value_html(row["value"])}<'
+            f'<td class="comparison-value-col" dir="rtl">{_comparison_literal_value_html(row["value"])}<'
             "/td>\n"
             f'<td class="comparison-symval-col">{_comparison_symval_html(row["symval"])}<'
             "/td>\n"

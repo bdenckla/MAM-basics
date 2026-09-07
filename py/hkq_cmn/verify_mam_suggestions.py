@@ -52,9 +52,9 @@ why it was the one case of the 34 that has one.
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
 and the atom he numbers is the one that differs every time.  There are three,
-each differing by one meteg on the compound's second atom: 2Ki 21:12.11,
-2Sa 18:3.9 and Judg 6:1.2, measured 2026-09-03 against holman-ketiv-qere
-``6a2f34f``.  At 2Ki 21:12 that meteg sits on the ר:
+each differing by one meteg: the second atom at 2Ki 21:12.11, and the first atom
+at 2Sa 18:3.9 and Judg 6:1.2, measured 2026-09-03 against
+holman-ketiv-qere ``6a2f34f``.  At 2Ki 21:12 the meteg is on the ר:
 
     MAM form         עַל־יְרֽוּשָׁלַ֖͏ִם
     comparison form  עַל־יְרוּשָׁלַ֖͏ִם

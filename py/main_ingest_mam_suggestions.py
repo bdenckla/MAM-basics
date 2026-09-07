@@ -21,12 +21,11 @@ cited, in ``hkq_cmn/mam_suggestion_dispositions.py``.  Both modules' docstrings
 state the boundary.
 
 Verification against the landed ``MAM-parsed/plus/*.json`` is part of the
-ingest rather than a command of its own.  It never fails the run: a case whose
-form is not at its stated atom is a fact about Holman's numbering to be read off
-the extract, not a reason to refuse the whole message.  That is the opposite of
-the fixed 77-row review's fail-fast verification, and deliberately so -- there
-the corpus is the oracle for a fixed scope, here it is a second opinion on
-correspondence that Holman and Ben are still working out.
+ingest rather than a command of its own.  It fails when either quoted form does
+not locate exactly one atom. A case whose form is not at its stated atom remains
+a fact about Holman's numbering to be read off the extract, not a reason to
+refuse the whole message: the uniquely derived atom replaces the stated index,
+which is retained beside it.
 """
 
 from __future__ import annotations

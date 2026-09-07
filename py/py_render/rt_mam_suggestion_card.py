@@ -44,9 +44,9 @@ MAM_ROW_NAME = "MAM"
 
 # Cases whose comparison table is set with extra letter spacing, so that WHICH
 # LETTER an accent belongs to can be seen.  Ben Denckla asked for these two on
-# 2026-09-02: in וַיֹּ֥אמֶר against וַ֥יֹּאמֶר the merkha moves between adjacent
+# 2026-09-02: in וַיֹּ֥אמֶר against וַ֥יֹּאמֶר the merkha moves between adjacent
 # letters, and in זֵ֣רוּ against זֵר֣וּ the munax does, and at normal spacing a
-# reader cannot tell which letter carries the mark in either.
+# reader cannot tell which letter has the mark in either.
 #
 # Per case rather than for every card, because the spacing is a fix for a
 # specific difficulty and looks like a typographic tic where there is no such

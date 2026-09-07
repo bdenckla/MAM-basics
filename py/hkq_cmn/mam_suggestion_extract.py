@@ -48,20 +48,21 @@ so the message has no image attachments at all and the crops are named
 to.  ``xlsx_xml_utils.anchored_image_targets_by_row`` recovers the mapping from
 the drawing anchors; that module's docstring says why nothing else can.
 
-HOLMAN'S OWN WORDS FOR HIS COMPARISON SOURCES ARE KEPT AS HE WROTE THEM.  The
+HOLMAN'S WORDS FOR HIS COMPARISON SOURCES ARE KEPT AS HE WROTE THEM.  The
 prose-list message says "Aleppo"; both workbook messages say "HUB" and nothing
 else.  "HUB" was identified as a particular printed edition in the reply thread,
 by a correspondent -- which is exactly the material this module does not store,
-so the identification is not applied here and ``comparison_source`` holds his
+so the identification is not applied here and ``comparison_source`` records his
 label verbatim.  Deciding what MAM should call that edition is an editorial
 question for Ben Denckla, not a parsing question for this module.
 
-THE TWO WORKBOOK MESSAGES CARRY THE SAME FOUR CASES, so ingesting both would
+THE TWO WORKBOOK MESSAGES HAVE THE SAME FOUR CASES, so ingesting both would
 double-count.  ``_merge_cases`` folds duplicates by reference and raises when two
 messages disagree about a case rather than picking one, since a disagreement
 means his forms changed between messages and that wants deciding.  The later
-message adds a suggestion per case that the earlier lacks; a suggestion
-present in one and absent in the other is a merge rather than a conflict.
+message adds a suggestion per case that the earlier message lacks; a suggestion
+present in the later message and absent in the earlier message is a merge rather
+than a conflict.
 """
 
 from __future__ import annotations
