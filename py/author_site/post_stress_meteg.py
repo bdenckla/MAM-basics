@@ -1277,6 +1277,14 @@ def _census_definitions(survey: dict) -> list:
         if record["has_mas"] and record["word_has_another_meteg"]
     ]
     assert len(fitting_mas_with_another_meteg) == len(records)
+    fit_record_by_bcv_and_mam_form = {
+        (record["bcv"], record["mam_form"]): record
+        for record in fitting_mas_with_another_meteg
+    }
+    assert len(fit_record_by_bcv_and_mam_form) == len(records)
+    assert {(record["bcv"], record["mam_form"]) for record in records} == set(
+        fit_record_by_bcv_and_mam_form
+    )
     return [
         mb_html.heading_level_2("Census definitions"),
         mb_html.para(
@@ -1307,11 +1315,19 @@ def _census_definitions(survey: dict) -> list:
             "There are ten MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
         ),
         _table(
-            ("Verse", "Chanted word"),
+            ("", "", "(sub)types"),
             [
                 mb_html.table_row_of_data(
-                    (_ref_link(record["bcv"]), _hebrew_cell(record["mam_form"])),
-                    (None, _HEBREW_CELL),
+                    (
+                        _ref_link(record["bcv"]),
+                        _hebrew_cell(record["mam_form"]),
+                        _fit_type_cell(
+                            fit_record_by_bcv_and_mam_form[
+                                (record["bcv"], record["mam_form"])
+                            ]["fit_type"]
+                        ),
+                    ),
+                    (None, _HEBREW_CELL, None),
                 )
                 for record in records
             ],
