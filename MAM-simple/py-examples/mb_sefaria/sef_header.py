@@ -45,7 +45,7 @@ _VERSION_NOTES = (
     "is some textual concern or ambiguity includes a documentation note; "
     "these "
     'notes can be viewed conveniently <a href="'
-    "https://bdenckla.github.io/MAM-with-doc/"
+    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
     '">here</a>. '
     'If an error is discovered, it may be reported to <a href="'
     + _REPORT_URL
