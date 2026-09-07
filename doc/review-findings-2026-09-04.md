@@ -1,6 +1,6 @@
 # Findings of the 2026-09-04 review of the public repos since 2026-09-01
 
-State: not acted on. Written untracked at `.novc/review-findings-2026-09-04.md` on Ben's
+State: acted on 2026-09-07. Written untracked at `.novc/review-findings-2026-09-04.md` on Ben's
 instruction of 2026-09-04 ("Don't write anything to git-tracked locations … Even your review
 findings should go to .novc", other sessions being live in MAM-basics), then committed here the
 same afternoon at Ben's instruction with nothing acted on. Between the two, only this paragraph, the
@@ -12,8 +12,11 @@ under `doc/dual-agent-review.md`. The Claude session neither read nor sought the
 no file named `codex-review-findings*`, nothing under `~/.codex/` beyond `AGENTS.md`'s line count,
 and nothing under `Documents/Codex/`. The original Claude findings were therefore frozen before
 Codex read them for Design A. The Codex review session appended the reconciliation on 2026-09-04,
-after its report was stable, under `## Reconciliation with the Codex review`. Nothing here was
-fixed; every finding is "unfixed" or "Ben's decision".
+after its report was stable, under `## Reconciliation with the Codex review`. Remediation followed
+in MAM-basics commits `726daafd`, `7f60c41f`, `9eedccbd`, `23d8ba3b` and `887f7fb8`, in github-misc
+commit `d961120`, and in the final disposition pass recorded at the end of this file. Historical
+statements that say "unfixed" describe the review's 2026-09-04 state; the disposition table is the
+current state.
 
 ## Scope, anchors and census
 
@@ -685,7 +688,9 @@ Codex independently re-derived four subfindings of finding 13:
    module scope without `require_sibling`, so a missing clone fails during collection without the
    standard advice.
 
-All four remain unfixed, as finding 13 states.
+All four were unfixed at the review anchor. Findings 13.3 and 13.4 were fixed by `726daafd`.
+Findings 13.1 and 13.5 were superseded when the MAM products landed inside MAM-basics: the sibling
+write guard was removed, and the versification test now reads the local `MAM-simple/` tree.
 
 ### Claude claims rejected by Codex
 
@@ -694,12 +699,11 @@ so this statement is not an endorsement of every unchecked claim.
 
 ### Claude omission found by Codex
 
-**Unfixed:** `py/tests/test_redirect_manifest.py:8`, added in `b6bb8fae`, says its check sits in "a
+**Fixed by `726daafd`:** `py/tests/test_redirect_manifest.py:8`, added in `b6bb8fae`, said its check sat in "a
 suite that runs all the time." MAM-basics' only workflow, `.github/workflows/pages.yml`, deploys the
 existing `gh-pages/` directory and runs no Python test command. The test runs only when a person
 invokes `py/main_test.py`, so the sentence overstates the protection against a stale redirect
-manifest. The Codex finding recommends saying that the check runs whenever the repository test
-suite runs.
+manifest. The docstring now says that the check runs whenever the repository test suite runs.
 
 ### Claude claims not independently checked by Codex
 
@@ -708,5 +712,36 @@ That is a limit of this Design A run, not disagreement. The Codex review also di
 inspect the absent public source clones named in its scope section.
 
 No incompatible factual assertion emerged among the claims the two reviews compared. No finding
-was acted on during reconciliation; dispositions beyond the unfixed states above belong to the
-later remediation pass.
+was acted on during reconciliation; the later remediation pass is recorded below.
+
+## Dispositions after remediation, 2026-09-07
+
+This table is the compact remediation record. "Fixed" means the current tree or current machine
+state no longer has the reported problem. "Rejected" means the proposed change would rewrite
+history, erase a deliberately retained execution record, broaden a narrow cleanup mechanism, or
+repair code that a later evacuation removed.
+
+| Finding | Disposition | Remediation |
+|---:|---|---|
+| 1 | **Fixed** | `7f60c41f` corrected the nine hand-authored mark-order runs and regenerated the Holman JSON and pages. The standard mark-order check now passes over 459 files. |
+| 2 | **Fixed** | The landed MAM-with-doc change log now covers the rollout: its JSON has 56 records and its HTML has 58 cards dated 2026-09-04. |
+| 3 | **Fixed** | `9eedccbd` distinguishes the two Ben-written UXLC search artifacts from generated output and repairs the seed-CSV link. |
+| 4 | **Fixed** | `9eedccbd` records the review-forest retirement; the Leningrad source clone was retired after evacuation, and `CLAUDE.md` now states that no Leningrad clone belongs on a machine. |
+| 5 | **Fixed** | `9eedccbd` repoints the Book-of-Job procedures and the two related landed-document paths. |
+| 6 | **Fixed** | `9eedccbd` replaces the five deleted-plan links and repairs one UXLC link; `887f7fb8` repairs the remaining 47 UXLC links and replaces the obsolete sparse-vendoring account with the landed paths. |
+| 7 | **Fixed** | `9eedccbd` restores `\uXXXX` and tab escape notation at all four sites. |
+| 8 | **Fixed** | `7f60c41f` corrects the maqaf-compound atom, Joshua 10:12, and ingest fail-closed descriptions. |
+| 9 | **Fixed** | `9eedccbd` corrects the stale test history and the native-pytest subtest account. The 2026-09-07 full run passed 976 tests and 65 subtests, with 5 skips. |
+| 10 | **Fixed** | `9eedccbd` reconciles the roster figures and visibility map and corrects the hbofonts classification. |
+| 11 | **Fixed** | `9eedccbd` and `23d8ba3b` correct the plan states, status rows, and duplicated fragment. **Rejected:** deleting the Holman programme, because Ben explicitly requested that its consolidated context remain tracked as an execution record. |
+| 12 | **Rejected** | The inaccurate commit subjects are immutable history and were not rewritten. The product-removal counts and the two additional 2 Kings 21:12 removals are now stated in the Holman programme. |
+| 13 | **Fixed / rejected where superseded** | `9eedccbd` repairs the UTF-8/HTML checker and expands generated-tree lint coverage; `726daafd` makes the Holman parser and OSIS schema path fail closed. The sibling write guard and missing-MAM-simple advice were superseded by the 2026-09-06 product landings. The maintenance roster remains explicitly outside sibling-dependency lint, and automatic branch deletion remains restricted to the Claude worktree convention; the merged Codex/review branches were instead removed after Ben's explicit authorization. |
+| 14 | **Fixed in the authorized scope** | `887f7fb8` adds root landing-page links for the newly landed UXLC, Holman, and Aleppo indexes. **Rejected:** a blanket requirement that every nested page have a root-index entry; the subtree indexes remain responsible for nested pages, and the existing WLC-index redirect decision remains unchanged. |
+| 15 | **Fixed** | `9eedccbd` corrects items 15.1–15.8: CRLF scope, machine-path history, the empty override example, M13/M22, collector scope, licence rows, landed paths, and shared email helpers. The 2026-09-07 disposition pass relabels item 15.9's figures as checked-out bytes rather than Git-blob bytes. |
+| 16 | **Fixed** | `7f60c41f`, `9eedccbd`, and `23d8ba3b` apply the prose rules, repair RTL cell direction, and regenerate affected pages. |
+| 17 | **Fixed** | github-misc `d961120` tracks the Codex state-pruning skill variant and documents its deployment. |
+| 18 | **Fixed / rejected where historical** | Six merged local MAM-basics branches and merged remote `review/mega-pipeline-2026-09-01` were deleted on 2026-09-07; the retired MAM-with-doc clone no longer has a local branch to clean. `GitRepos/.pytest_cache`, the empty `GitRepos/.codex/worktrees` container, and the verification-created MAM-basics pytest cache were moved to the Windows Recycle Bin. `887f7fb8` adds the 2 Chronicles 28:23 warning to both Holman download routes. **Rejected:** rewriting old trailers or the 38-minute JSON history, changing the deliberate primary-clone constant, or deleting honest historical process notes. |
+| 19 | **Rejected** | These are immutable commit-message slips. Their corrected measurements remain in finding 19; history was not rewritten. |
+
+The Codex-only redirect-manifest omission is **fixed** by `726daafd` and is also recorded in the
+reconciliation above.

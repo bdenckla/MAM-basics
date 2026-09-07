@@ -541,6 +541,13 @@ In order:
    MAM-private `d40e0c8`, that last for the near-aleppo census goldens
    `py/main_0_mega.py` regenerates as a step.
 
+The product diffs count more removals than item 3's 29 bot removals because the
+fresh download also removed the two metegs at 2 Kings 21:12. MAM-parsed's
+`plain` and `plus` trees each remove 31 metegs and add one, for a net reduction
+of 30. Each of MAM-simple's six vtrad trees removes 30 and adds one, for a net
+reduction of 29. M13 accounts for the one-removal difference: its two
+`{{מ:קמץ}}` parameters remain separate in MAM-parsed.
+
 **A MEGA RUN FROM A WORKTREE MISDIRECTS TWO OF ITS STEPS, SILENTLY, AND THE
 MEGA'S OWN DOCSTRING SAYS OTHERWISE.** That docstring claims the mega "no longer
 writes outside the checkout it runs in, which is what makes a worktree run of it
