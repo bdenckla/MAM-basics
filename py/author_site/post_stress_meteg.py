@@ -119,6 +119,7 @@ _NEXT_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
 _SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
 _VOCAL_SHEWA_FOOTNOTE_ID = "footnote-7"
+_PASHTA_STRESS_HELPER_FOOTNOTE_ID = "footnote-8"
 _FIT_FOR_MAS_SECTION_ID = "fit-for-mas"
 
 
@@ -251,12 +252,12 @@ _TYPE_1_SUBTYPE_CODES = {
     None: "1D",
 }
 _TYPE_2_SUBTYPE_SPECS = (
-    ("lamed", "2A", "2A: the next chanted word begins with ל."),
-    ("guttural", "2B", "2B: the next chanted word begins with a guttural."),
+    ("lamed", "2A", "2A: The next word begins with ל (lamed)."),
+    ("guttural", "2B", "2B: The next word begins with a guttural."),
     (
         "not-lamed-or-guttural",
         "2C",
-        "2C: the next chanted word begins with another consonant.",
+        "2C: The next word begins with neither ל nor a guttural.",
     ),
 )
 _CASE_TABLE_ID = "post-stress-meteg-cases"
@@ -494,7 +495,7 @@ def build_body(survey: dict) -> list:
         *_by_type(survey),
         *_case_list_link(survey),
         *_type_1_subtypes(survey),
-        *_type_2_type_3_and_misc_facts(survey),
+        *_type_2_facts(survey),
         *_fit_for_mas_facts(survey),
         *_footnotes(survey),
     ]
@@ -1412,6 +1413,7 @@ def _sources_for_types_footnote() -> list:
 
 def _case_list_link(survey: dict) -> list:
     """The main page's link to the long list of individual cases."""
+    misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     return [
         mb_html.para(
             (
@@ -1419,27 +1421,17 @@ def _case_list_link(survey: dict) -> list:
                 mb_html.anchor_h(
                     f"{len(survey['post_stress']):,} individual cases", _CASES_FNAME
                 ),
-                " are listed separately and can be filtered by type.",
+                " are listed separately and can be filtered by type. The ",
+                mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
+                " have a separate table and descriptions of the named misc subtypes.",
             )
         )
     ]
 
 
-def _type_2_type_3_and_misc_facts(survey: dict) -> list:
-    """The facts sections for type 2, type 3, and misc MAS cases."""
-    misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
-    return [
-        *_type_2_subtypes(survey),
-        mb_html.heading_level_2("Facts about MAS type 3"),
-        mb_html.heading_level_2("Facts about MAS misc"),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " have a separate table and descriptions of the named misc subtypes.",
-            )
-        ),
-    ]
+def _type_2_facts(survey: dict) -> list:
+    """The type-2 subtype section."""
+    return _type_2_subtypes(survey)
 
 
 def _type_1_example(survey: dict, example_key: dict) -> dict:
@@ -1494,21 +1486,21 @@ def _type_1_subtypes(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "1A: the next word has initial stress and an initial vocal ",
+                    "1A: The next word has initial stress and an initial vocal ",
                     _ROM_SHEWA,
                     ". (",
                     _footnote_callout(7, _VOCAL_SHEWA_FOOTNOTE_ID),
                     ")",
                 ),
                 (
-                    "1B: the next word has initial stress marked by a ",
+                    "1B: The next word has a ",
                     _ROM_PASHTA,
-                    " stress helper, and no initial vocal ",
-                    _ROM_SHEWA,
-                    ".",
+                    " stress helper on its first letter. (",
+                    _footnote_callout(8, _PASHTA_STRESS_HELPER_FOOTNOTE_ID),
+                    ")",
                 ),
-                ("1C: Like 1B, but with no ", _ROM_PASHTA, " stress helper."),
-                "1D: the chanted word does not have initial stress.",
+                ("1C: Like 1B, but with some accent other than ", _ROM_PASHTA, "."),
+                "1D: The next word does not have initial stress.",
             )
         ),
         _table(headers, rows),
@@ -1560,8 +1552,7 @@ def _type_2_subtypes(survey: dict) -> list:
             (
                 "The ",
                 mb_html.anchor_h(f"{total:,} type 2 cases", _TYPE_2_FNAME),
-                " have a separate table whose filter uses the next word's"
-                " initial consonant.",
+                " have a separate table whose filter uses the subtype.",
             )
         ),
     ]
@@ -1825,9 +1816,9 @@ def _misc_case_row(record: dict) -> object:
 def _type_2_next_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
-        ("lamed", "Subtype 2A: followed by ל"),
-        ("guttural", "Subtype 2B: followed by guttural"),
-        ("not-lamed-or-guttural", "Subtype 2C: another initial consonant"),
+        ("lamed", "Subtype 2A: begins with ל (lamed)"),
+        ("guttural", "Subtype 2B: begins with a guttural"),
+        ("not-lamed-or-guttural", "Subtype 2C: neither ל nor a guttural"),
     )
     option_html = "".join(
         f'<option value="{value}">{label}</option>' for value, label in options
@@ -2402,6 +2393,7 @@ def _footnotes(survey: dict) -> list:
         *_sources_for_types_footnote(),
         *_type_2_type_3_footnote(survey),
         *_vocal_shewa_footnote(),
+        *_pashta_stress_helper_footnote(),
     ]
 
 
@@ -2594,6 +2586,26 @@ def _vocal_shewa_footnote() -> list:
                 " to be a syllable, so a word with an initial vocal ",
                 _ROM_SHEWA,
                 " can still have initial stress.",
+            )
+        ),
+    ]
+
+
+def _pashta_stress_helper_footnote() -> list:
+    """Footnote 8: a pashta helper on the first letter excludes initial vocal shewa."""
+    return [
+        mb_html.heading_level_3(
+            "φ8 — A pashta stress helper on the first letter",
+            {"id": _PASHTA_STRESS_HELPER_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "Because this word has a ",
+                _ROM_PASHTA,
+                " stress helper on its first letter, we know that it does not have an initial"
+                " vocal ",
+                _ROM_SHEWA,
+                ".",
             )
         ),
     ]
