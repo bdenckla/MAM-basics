@@ -356,6 +356,19 @@ TYPE_CLOSED_TSERE = "closed tsere-vowelled syllable"
 TYPE_OPEN = "open final syllable"
 TYPE_UNCLASSIFIED = "none of the three"
 
+TYPE_1_SUBTYPE_A = "A"
+TYPE_1_SUBTYPE_B = "B"
+TYPE_1_SUBTYPE_C = "C"
+_TYPE_1_SUBTYPES = (TYPE_1_SUBTYPE_A, TYPE_1_SUBTYPE_B, TYPE_1_SUBTYPE_C)
+
+# Fit for MAS distinguishes the two admitted type-1 subtypes from the structural types 2 and
+# 3.  The short labels are also the labels used in the reader-facing Fit-for-MAS table.
+FIT_TYPE_1_A = "1A"
+FIT_TYPE_1_B = "1B"
+FIT_TYPE_2 = "2"
+FIT_TYPE_3 = "3"
+_FIT_TYPES = (FIT_TYPE_1_A, FIT_TYPE_1_B, FIT_TYPE_2, FIT_TYPE_3)
+
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
 SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
 
@@ -552,6 +565,29 @@ def _first_syllable_is_stressed(jta: str) -> bool:
     ):
         first_syllable_stress_segment += 1
     return stressed[0] == first_syllable_stress_segment
+
+
+def _starts_with_a_vocal_shewa(jta: str) -> bool:
+    """Whether a chanted word's first JTA segment is a simple or xataf vocal shewa."""
+    first_segment = _SYLLABLE_BREAK.split(jta)[0]
+    return _VOCAL_SHEVA in first_segment or bool(set(first_segment) & _XATAF_JTA_VOWELS)
+
+
+def _type_1_subtype(
+    following_chanted_word: str | None, following_jta: str | None
+) -> str | None:
+    """The following chanted word's type-1 initial-stress subtype, if it has initial stress."""
+    if following_chanted_word is None or following_jta is None:
+        return None
+    if not _first_syllable_is_stressed(following_jta):
+        return None
+    if _starts_with_a_vocal_shewa(following_jta):
+        return TYPE_1_SUBTYPE_A
+    following_parsed = _parse(following_chanted_word, following_jta)
+    has_pashta_stress_helper = following_chanted_word.count(
+        ha.PASH
+    ) == 2 and ha.PASH in _stress_letter_accents(following_parsed)
+    return TYPE_1_SUBTYPE_B if has_pashta_stress_helper else TYPE_1_SUBTYPE_C
 
 
 def _syllable_is_open(syllable: str) -> bool:
@@ -1229,6 +1265,11 @@ def _fit_for_mas_candidate(
         for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
         if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
     )
+    following_chanted_word_is_initially_stressed = (
+        _first_syllable_is_stressed(following_jta)
+        if following_jta is not None
+        else False
+    )
     candidate = {
         "bcv": bcv,
         "system": system,
@@ -1240,9 +1281,7 @@ def _fit_for_mas_candidate(
         "structural_types": types,
         "has_u05bd": has_u05bd,
         "following_chanted_word_is_initially_stressed": (
-            _first_syllable_is_stressed(following_jta)
-            if following_jta is not None
-            else False
+            following_chanted_word_is_initially_stressed
         ),
         "following_chanted_word_has_disjunctive_accent": _has_a_disjunctive_accent(
             system, following_accent_grammar_tokens
@@ -1251,6 +1290,11 @@ def _fit_for_mas_candidate(
             _stress_syllable_has_conjunctive_accent(system, parsed)
         ),
         "accent_grammar_token_count": len(accent_grammar_tokens),
+        "type_1_subtype": (
+            _type_1_subtype(following_chanted_word, following_jta)
+            if TYPE_OPEN in types and following_chanted_word_is_initially_stressed
+            else None
+        ),
     }
     return candidate
 
@@ -1261,7 +1305,7 @@ _LACKS_MAS_SAMPLE_SEED = 20260906
 
 
 def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
-    """Whether a candidate has every Fit-for-MAS property apart from a structural type."""
+    """Whether a candidate has every Fit-for-MAS property apart from its type criterion."""
     return (
         candidate["stress_syllable_has_conjunctive_accent"]
         and candidate["following_chanted_word_is_initially_stressed"]
@@ -1269,10 +1313,32 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     )
 
 
+def _fit_type(candidate: dict) -> str | None:
+    """The one Fit-for-MAS class that a candidate meets, if it has one."""
+    structural_types = candidate["structural_types"]
+    fit_types = []
+    if (
+        TYPE_OPEN in structural_types
+        and candidate["type_1_subtype"] == TYPE_1_SUBTYPE_A
+    ):
+        fit_types.append(FIT_TYPE_1_A)
+    if (
+        TYPE_OPEN in structural_types
+        and candidate["type_1_subtype"] == TYPE_1_SUBTYPE_B
+    ):
+        fit_types.append(FIT_TYPE_1_B)
+    if TYPE_GUTTURAL in structural_types:
+        fit_types.append(FIT_TYPE_2)
+    if TYPE_CLOSED_TSERE in structural_types:
+        fit_types.append(FIT_TYPE_3)
+    assert len(fit_types) <= 1, candidate
+    return fit_types[0] if fit_types else None
+
+
 def _is_fit_for_mas(candidate: dict) -> bool:
-    """Whether one candidate meets the non-type-specific conditions and a MAS type."""
+    """Whether a candidate meets the non-type-specific conditions and a Fit-for-MAS class."""
     return _has_non_type_specific_conditions_for_mas(candidate) and bool(
-        candidate["structural_types"]
+        _fit_type(candidate)
     )
 
 
@@ -1290,6 +1356,8 @@ def _sample_in_corpus_order(
 def _fit_for_mas_record(candidate: dict) -> dict:
     """The complete public-data record for one chanted-word pair fit for MAS."""
     assert _is_fit_for_mas(candidate), candidate
+    fit_type = _fit_type(candidate)
+    assert fit_type is not None, candidate
     assert candidate["mam_form"] is not None, candidate
     assert candidate["following_mam_form"] is not None, candidate
     return {
@@ -1303,6 +1371,8 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "following_mam_form": candidate["following_mam_form"],
         "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
         "types": candidate["structural_types"],
+        "fit_type": fit_type,
+        "type_1_subtype": candidate["type_1_subtype"],
         "has_mas": candidate["has_mas"],
         "stress_syllable_has_conjunctive_accent": candidate[
             "stress_syllable_has_conjunctive_accent"
@@ -1348,13 +1418,8 @@ def _lacks_mas_case_lists(records: list[dict]) -> dict:
     }
 
 
-def _fit_for_mas_summary(
-    candidates: list[dict],
-    post_stress: list[dict],
-    words_by_bcv: dict[str, list[str]],
-    context_by_bcv: dict[str, list[object]],
-) -> dict:
-    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
+def _mark_candidates_with_mas(candidates: list[dict], post_stress: list[dict]) -> int:
+    """Mark each candidate according to whether it has a MAS, and return the MAS count."""
     mas_keys = {
         (record["bcv"], record["chanted_word"], record["jta"])
         for record in post_stress
@@ -1364,25 +1429,117 @@ def _fit_for_mas_summary(
         key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
         candidate["has_mas"] = key in mas_keys
         assert candidate["has_u05bd"] == candidate["has_mas"], candidate
+    assert {
+        (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        for candidate in candidates
+        if candidate["has_mas"]
+    } == mas_keys
+    return len(mas_keys)
+
+
+def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
+    """All structurally type-1 MAS cases, regardless of Fit-for-MAS conditions."""
+    actual_type_1_mas = [
+        candidate
+        for candidate in candidates
+        if candidate["has_mas"] and TYPE_OPEN in candidate["structural_types"]
+    ]
+    by_initial_stress_pattern = {}
+    for subtype in _TYPE_1_SUBTYPES:
+        members = [
+            candidate
+            for candidate in actual_type_1_mas
+            if candidate["type_1_subtype"] == subtype
+        ]
+        by_initial_stress_pattern[subtype] = {
+            "cases": len(members),
+            "by_system": {
+                system: sum(candidate["system"] == system for candidate in members)
+                for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+            },
+        }
+    not_initially_stressed = [
+        candidate
+        for candidate in actual_type_1_mas
+        if candidate["type_1_subtype"] is None
+    ]
+    assert all(
+        not candidate["following_chanted_word_is_initially_stressed"]
+        for candidate in not_initially_stressed
+    )
+    by_initial_stress_pattern["not_initially_stressed"] = {
+        "cases": len(not_initially_stressed),
+        "by_system": {
+            system: sum(
+                candidate["system"] == system for candidate in not_initially_stressed
+            )
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+    }
+    assert sum(counts["cases"] for counts in by_initial_stress_pattern.values()) == len(
+        actual_type_1_mas
+    )
+    return {
+        "cases": len(actual_type_1_mas),
+        "by_initial_stress_pattern": by_initial_stress_pattern,
+    }
+
+
+def _fit_for_mas_summary(
+    candidates: list[dict],
+    mas_count: int,
+    words_by_bcv: dict[str, list[str]],
+    context_by_bcv: dict[str, list[object]],
+) -> dict:
+    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
     non_type_specific_conditions = [
         candidate
         for candidate in candidates
         if _has_non_type_specific_conditions_for_mas(candidate)
     ]
+    type_1_candidates = [
+        candidate
+        for candidate in non_type_specific_conditions
+        if TYPE_OPEN in candidate["structural_types"]
+    ]
+    assert all(
+        candidate["type_1_subtype"] in _TYPE_1_SUBTYPES
+        for candidate in type_1_candidates
+    ), type_1_candidates
     fitting = [
         candidate
         for candidate in non_type_specific_conditions
-        if candidate["structural_types"]
+        if _fit_type(candidate) is not None
     ]
     unjoined = _attach_mam_forms(fitting, words_by_bcv, context_by_bcv)
     assert not unjoined, unjoined
-    by_type = {}
-    for kind in (TYPE_OPEN, TYPE_GUTTURAL, TYPE_CLOSED_TSERE):
+    by_type_1_subtype = {}
+    for subtype in _TYPE_1_SUBTYPES:
         members = [
-            candidate for candidate in fitting if kind in candidate["structural_types"]
+            candidate
+            for candidate in type_1_candidates
+            if candidate["type_1_subtype"] == subtype
         ]
         with_mas = sum(candidate["has_mas"] for candidate in members)
-        by_type[kind] = {
+        by_type_1_subtype[subtype] = {
+            "candidates": len(members),
+            "with_mas": with_mas,
+            "without_mas": len(members) - with_mas,
+            "with_mas_by_system": {
+                system: sum(
+                    candidate["has_mas"] and candidate["system"] == system
+                    for candidate in members
+                )
+                for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+            },
+        }
+    by_fit_type = {}
+    for fit_type in _FIT_TYPES:
+        members = [
+            candidate for candidate in fitting if _fit_type(candidate) == fit_type
+        ]
+        with_mas = sum(candidate["has_mas"] for candidate in members)
+        by_fit_type[fit_type] = {
             "candidates": len(members),
             "with_mas": with_mas,
             "without_mas": len(members) - with_mas,
@@ -1416,10 +1573,20 @@ def _fit_for_mas_summary(
     assert (
         not mas_with_nonconjunctive_stress_syllable
     ), mas_with_nonconjunctive_stress_syllable
+    mas_with_type_1_subtype_c = [
+        candidate
+        for candidate in non_type_specific_conditions
+        if (
+            candidate["has_mas"]
+            and TYPE_OPEN in candidate["structural_types"]
+            and candidate["type_1_subtype"] == TYPE_1_SUBTYPE_C
+        )
+    ]
     excluded_mas = (
         mas_outside_the_three_types
         + mas_with_non_disjunctive_following_word
         + mas_with_noninitial_following_word
+        + mas_with_type_1_subtype_c
     )
     assert len(
         {
@@ -1427,26 +1594,29 @@ def _fit_for_mas_summary(
             for candidate in excluded_mas
         }
     ) == len(excluded_mas), excluded_mas
-    assert with_mas + len(excluded_mas) == len(mas_keys), (with_mas, excluded_mas)
+    assert with_mas + len(excluded_mas) == mas_count, (with_mas, excluded_mas)
     return {
         "what": (
             "Every syllable immediately after a nonfinal primary stress with a conjunctive"
             " accent and with a following chanted word that has initial stress and a"
             " disjunctive accent-grammar token, classified by the three MAS structural"
-            " predicates and checked for U+05BD."
+            " predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD."
+            " Fit for MAS includes Types 2 and 3 and Type 1 subtypes A and B."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
         "records_what": (
             "Every chanted-word pair fit for MAS. Each record has the chanted word whose"
             " post-stress syllable is classified, the following chanted word, the applicable"
-            " types, and whether the first chanted word has MAS."
+            " structural types and Fit-for-MAS class, and whether the first chanted word has"
+            " MAS."
         ),
         "candidate_chanted_words": len(candidates),
         "non_type_specific_conditions": len(non_type_specific_conditions),
         "fitting_any_type": len(fitting),
         "with_mas": with_mas,
         "without_mas": len(fitting) - with_mas,
-        "by_structural_type": by_type,
+        "by_type_1_subtype": by_type_1_subtype,
+        "by_fit_type": by_fit_type,
         "candidates_meeting_multiple_types": sum(
             len(candidate["structural_types"]) > 1 for candidate in fitting
         ),
@@ -1458,6 +1628,7 @@ def _fit_for_mas_summary(
             "following_word_not_initially_stressed": len(
                 mas_with_noninitial_following_word
             ),
+            "type_1_subtype_C": len(mas_with_type_1_subtype_c),
         },
         "accent_grammar_token_counts": dict(
             sorted(
@@ -2362,10 +2533,15 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
+    mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
+    actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(
-        found["fit_for_mas_candidates"], post_stress, words_by_bcv, context_by_bcv
+        found["fit_for_mas_candidates"], mas_count, words_by_bcv, context_by_bcv
     )
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
+    assert actual_type_1_mas["cases"] == sum(
+        by_type[(system, TYPE_OPEN)] for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+    )
     by_subtype = Counter(
         (one["system"], one["subtype"])
         for one in post_stress
@@ -2441,6 +2617,7 @@ def build_survey() -> dict:
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
+        "actual_type_1_mas": actual_type_1_mas,
         "fit_for_mas": fit_for_mas,
         "stress_accent_classification": stress_accent_classification(post_stress),
         "type_2_type_3_overlap": {
