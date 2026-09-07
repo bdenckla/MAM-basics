@@ -204,7 +204,7 @@ _COS_PAGE_STARTS_BY_TYPE = {
     psm.TYPE_CLOSED_TSERE: "299; 301; 302; 306; 307",
 }
 _COS_CH_8_PAGE_GLOSS = (
-    "printed page in Wengrove's English translation of CoS on which the cited Ch. 8 section"
+    "printed page in Wengrov's English translation of CoS on which the cited Ch. 8 section"
     " begins"
 )
 
@@ -1374,7 +1374,7 @@ def _sources_for_types_footnote() -> list:
         ),
         mb_html.para(
             (
-                "For those using the Wengrove translation of ",
+                "For those using the Wengrov translation of ",
                 cos(),
                 ", below is a table of the page numbers corresponding to the section"
                 " identifiers in the table above:",
@@ -1388,7 +1388,7 @@ def _sources_for_types_footnote() -> list:
                     "CoS Ch. 14 §8 pg",
                     {
                         "title": (
-                            "printed page in Wengrove's English translation of CoS on which"
+                            "printed page in Wengrov's English translation of CoS on which"
                             " the cited Ch. 14 §8 item begins"
                         )
                     },
@@ -1922,19 +1922,6 @@ def build_cases_body(survey: dict) -> list:
             ("← Back to ", mb_html.anchor_h(_visible_title(_TITLE), _FNAME), ".")
         ),
         mb_html.heading_level_2("Every MAS in MAM"),
-        _para(
-            "In the order the corpus has them, prose verses and poetic verses together. Each"
-            " reference links to the MAM-with-doc verse, and the next word is gray."
-        ),
-        mb_html.para(
-            (
-                "For misc-",
-                _ROM_VAYOMER,
-                ", the intervening ",
-                _ROM_PASEQ,
-                " is gray with the next word.",
-            )
-        ),
         _case_type_filter(len(rows)),
         _table(
             headers,
@@ -2593,7 +2580,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 " a MAS. The answer is that a MAS appears ",
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS, but the “yield” varies widely"
-                " between types 1A, 1B, 2A, 2B, and 3. Notably, the type 3 “yield” is ",
+                " between types. Notably, the type 3 “yield” is ",
                 f"{type_3_yield:.0%}",
                 ".",
             )
@@ -2664,7 +2651,8 @@ def _next_conjunctive_footnote(survey: dict) -> list:
             (
                 _ref_link(record["bcv"]),
                 _case_chanted_word_cell(record),
-                _case_filter_subtype(record) or "",
+                _case_filter_subtype(record)
+                or _case_type_code(record["structural_type"]),
             ),
             (None, _HEBREW_CELL, None),
         )
@@ -2675,7 +2663,7 @@ def _next_conjunctive_footnote(survey: dict) -> list:
             "φ4 — Next words with a conjunctive accent",
             {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
         ),
-        _table(("", "", "Subtype"), rows),
+        _table(("", "", mb_html.abbr("(sub)type", {"title": "type or subtype"})), rows),
     ]
 
 
