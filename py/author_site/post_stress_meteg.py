@@ -1252,8 +1252,7 @@ def _census(survey: dict) -> list:
                 " words where none of them are after the stress. (There is never more"
                 " than one meteg mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
-                " for the definitions and the catalog of MAS words that also have"
-                " a meteg before the stress.",
+                " page for more details.",
             )
         ),
     ]
