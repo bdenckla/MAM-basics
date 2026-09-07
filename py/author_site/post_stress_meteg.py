@@ -2713,7 +2713,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 "Its word has penultimate stress from a conjunctive accent.",
                 "The next chanted word has initial stress from a disjunctive accent.",
-                "If a MAS were present, it would be of (sub)types 1A, 1B, 2A, 2B, or 3.",
+                "If a MAS were present, it would be of (sub)type 1A, 1B, 2A, 2B, or 3.",
             )
         ),
         mb_html.para(
