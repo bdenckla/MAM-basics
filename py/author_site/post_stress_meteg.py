@@ -1295,23 +1295,19 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"In the surveyed snapshot, {multiple_mbs:,} MBS_O chanted words have more"
+                f"{multiple_mbs:,} MBS_O chanted words have more"
                 " than one meteg mark. Every one of those MBS_O chanted words has exactly"
                 " two meteg marks.",
             )
+        ),
+        mb_html.para(
+            "No MAS word has more than one meteg mark after the stress: every MAS word has exactly one meteg mark after the stress.",
         ),
         mb_html.heading_level_3(
             "The ten MAS chanted words that also have a meteg before the stress"
         ),
         mb_html.para(
-            (
-                "Each chanted word below has two distinct metegs: one ",
-                mb_html.abbr("MBS", {"title": "meteg before the stress"}),
-                " before its primary stress and one ",
-                mb_html.abbr("MAS", {"title": "meteg after the stress"}),
-                " immediately after its primary stress. The MBS and MAS are distinct marks;"
-                " neither meteg belongs to both categories.",
-            )
+            "There are ten MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
         ),
         _table(
             ("Verse", "Chanted word"),
