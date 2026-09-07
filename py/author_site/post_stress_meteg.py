@@ -232,7 +232,7 @@ _COS_CH_14_PAGES_BY_TYPE = {
 
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
-    psm.TYPE_GUTTURAL: ("2", "the chanted word is closed by a guttural"),
+    psm.TYPE_GUTTURAL: ("2", "the word is closed by a guttural"),
     psm.TYPE_CLOSED_TSERE: (
         "3",
         "the MAS is on a closed, final, tsere-vowelled syllable",
@@ -487,10 +487,10 @@ def build_methods_body(survey: dict) -> list:
         _hebrew_spacing_option(),
         mb_html.para(
             (
-                "The location of a chanted word's stress is not always obvious. In the"
+                "The location of a word's stress is not always obvious. In the"
                 " research we present here, we locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
-                ", which marks the stress of every chanted word.",
+                ", which marks the stress of every word.",
             )
         ),
         mb_html.para(
@@ -1284,11 +1284,11 @@ def _census_definitions(survey: dict) -> list:
         mb_html.para(
             (
                 mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
-                " counts chanted words that have one or more meteg marks before the"
+                " counts words that have one or more meteg marks before the"
                 " primary stress and none after it. The “O” means “only.” ",
                 mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
-                " counts chanted words that have one or more meteg marks after the"
-                " primary stress, whether the chanted word has zero or more meteg marks"
+                " counts words that have one or more meteg marks after the"
+                " primary stress, whether the word has zero or more meteg marks"
                 " before the stress.",
             )
         ),
@@ -1297,8 +1297,8 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"{multiple_mbs:,} MBS_O chanted words have more"
-                " than one meteg mark. Every one of those MBS_O chanted words has exactly"
+                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every one"
+                " of those MBS_O words has exactly"
                 " two meteg marks.",
             )
         ),
@@ -1314,7 +1314,11 @@ def _census_definitions(survey: dict) -> list:
                 mb_html.table_row_of_data(
                     (
                         _ref_link(record["bcv"]),
-                        _hebrew_cell(record["mam_form"]),
+                        _case_chanted_word_cell(
+                            fit_record_by_bcv_and_mam_form[
+                                (record["bcv"], record["mam_form"])
+                            ]
+                        ),
                         _fit_type_cell(
                             fit_record_by_bcv_and_mam_form[
                                 (record["bcv"], record["mam_form"])
@@ -1487,7 +1491,7 @@ def _sources_for_types_footnote() -> list:
                 itm(),
                 " and ",
                 cos(),
-                ". Exactly what chanted words are included and excluded in these three types varies"
+                ". Exactly what words are included and excluded in these three types varies"
                 " between ITM, CoS, and our document here, but they broadly agree.",
             )
         ),
@@ -2658,14 +2662,14 @@ def _fit_for_mas_facts(survey: dict) -> list:
         ),
         mb_html.table_row_of_data(
             (
-                "The next chanted word has a conjunctive accent.",
+                "The next word has a conjunctive accent.",
                 f"{mas_not_in_the_table['next_word_not_disjunctive']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The next chanted word does not have initial stress.",
+                "The next word does not have initial stress.",
                 f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}",
             ),
             (None, _NUMERIC_CELL),
@@ -2709,7 +2713,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 "The potential MAS syllable comes immediately after a nonfinal stress"
                 " syllable with a conjunctive accent.",
-                "The next chanted word has initial stress and a disjunctive accent.",
+                "The next word has initial stress and a disjunctive accent.",
                 "The potential MAS syllable is type 1A, type 1B, type 2A, type 2B, or"
                 " type 3.",
             )
