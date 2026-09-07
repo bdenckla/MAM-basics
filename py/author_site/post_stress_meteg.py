@@ -2693,29 +2693,27 @@ def _fit_for_mas_facts(survey: dict) -> list:
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
         mb_html.para(
             (
-                "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS. The answer is that a MAS appears ",
+                "How often does a MAS appear in cases that seem fit for a MAS? According to"
+                ' our definition of "fit for MAS", it appears ',
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
-                " of the time in situations fit for MAS, but the “yield” varies widely"
-                " between types. Notably, the type 3 “yield” is ",
+                " of the time, but the “yield” varies widely between (sub)types. Notably, the"
+                " type 3 “yield” is ",
                 f"{type_3_yield:.0%}",
                 ".",
             )
         ),
         mb_html.para(
             (
-                '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
+                'The idea of "fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". A potential MAS syllable is fit for MAS when:",
+                ". A syllable is fit for MAS when:",
             )
         ),
         mb_html.unordered_list(
             (
-                "The potential MAS syllable comes immediately after a nonfinal stress"
-                " syllable with a conjunctive accent.",
-                "The next word has initial stress and a disjunctive accent.",
-                "The potential MAS syllable is type 1A, type 1B, type 2A, type 2B, or"
-                " type 3.",
+                "Its word has penultimate stress from a conjunctive accent",
+                "The next chanted word has initial stress from disjunctive accent.",
+                "If a MAS were present, it would be of (sub)types 1A, 1B, 2A, 2B, or 3.",
             )
         ),
         mb_html.para(
