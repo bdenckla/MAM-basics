@@ -316,9 +316,21 @@
    "meteg sharing a letter with a non-stress-marking accent": 119
   }
  },
- "meteg_mark_counting": {
-  "what": "The MBS and MAS census columns count individual U+05BD meteg marks, not chanted words. A chanted word with two MBS marks contributes two counts to the MBS column, while a chanted word with an MBS and a MAS contributes one count to each column.",
-  "chanted_words_with_mbs_and_mas": [
+ "census_chanted_word_summary": {
+  "what": "MBS-O counts chanted words with one or more U+05BD meteg marks before the primary stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the primary stress, irrespective of the number before it.",
+  "by_system": {
+   "prose verses": {
+    "mbs_only": 12957,
+    "mas": 178
+   },
+   "poetic verses": {
+    "mbs_only": 1795,
+    "mas": 54
+   }
+  },
+  "mbs_only_chanted_words_with_multiple_mbs": 143,
+  "mbs_only_chanted_words_with_more_than_two_mbs": 0,
+  "mas_chanted_words_with_mbs": [
    {
     "bcv": "lv25:53",
     "system": "prose verses",
@@ -369,9 +381,7 @@
     "system": "prose verses",
     "mam_form": "דִּֽי־שְׁלִ֤טֽוּ"
    }
-  ],
-  "chanted_words_with_two_mbs": 143,
-  "chanted_words_with_more_than_two_mbs": 0
+  ]
  },
  "post_stress_by_structural_type": {
   "prose verses": {

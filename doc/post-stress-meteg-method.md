@@ -27,9 +27,11 @@ grammar-aware audit found 217 next-word disjunctives and 15 next-word conjunctiv
 MAS records; all but Jeremiah 46:14 have initial stress in the next chanted word. The Fit-for-MAS
 section accounts for every difference between the table's "Has MAS" count and the total MAS count.
 In particular, ten chanted words have two distinct metegs: an MBS before the primary stress and a
-MAS immediately after it. Each MBS and MAS census column counts meteg marks rather than chanted
-words, so each of the ten chanted words contributes one count to each column. Another meteg in the
-first chanted word does not exclude the candidate from the Fit-for-MAS table.
+MAS immediately after it. The MBS-O census category counts chanted words with one or more MBS
+marks and no MAS, while the MAS category counts chanted words with a MAS regardless of whether a
+chanted word also has an MBS. The ten chanted words therefore appear only in the MAS census
+category. Another meteg in the first chanted word does not exclude the candidate from the
+Fit-for-MAS table.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
 initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a

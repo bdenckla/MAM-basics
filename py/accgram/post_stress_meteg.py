@@ -1397,27 +1397,71 @@ def _record_key(record: dict) -> tuple[str, str, str]:
     return record["bcv"], record["chanted_word"], record["jta"]
 
 
-def _mas_with_both_mbs_and_mas(
+def _census_chanted_word_summary(
     pre_stress: list[dict], post_stress: list[dict]
-) -> list[dict]:
-    """The chanted words that have distinct MBS and MAS marks."""
-    pre_stress_keys = {_record_key(record) for record in pre_stress}
-    both = [record for record in post_stress if _record_key(record) in pre_stress_keys]
-    assert all(record["chanted_word"].count(METEG) == 2 for record in both), both
-    assert all(record["syllables_after_the_stress"] == 1 for record in both), both
-    return both
-
-
-def _multiple_mbs_counts(pre_stress: list[dict]) -> dict[str, int]:
-    """The chanted words that contribute two or more MBS marks to the census."""
-    mbs_marks_by_chanted_word = Counter(_record_key(record) for record in pre_stress)
+) -> dict:
+    """The MBS-O and MAS census categories, which count chanted words."""
+    pre_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
+    post_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
+    for record in pre_stress:
+        pre_records_by_key.setdefault(_record_key(record), []).append(record)
+    for record in post_stress:
+        post_records_by_key.setdefault(_record_key(record), []).append(record)
+    all_keys = pre_records_by_key.keys() | post_records_by_key.keys()
+    system_by_key = {
+        key: (pre_records_by_key.get(key) or post_records_by_key[key])[0]["system"]
+        for key in all_keys
+    }
+    assert all(
+        {
+            record["system"]
+            for record in pre_records_by_key.get(key, [])
+            + post_records_by_key.get(key, [])
+        }
+        == {system_by_key[key]}
+        for key in all_keys
+    )
+    mbs_only_keys = [
+        key for key in pre_records_by_key if key not in post_records_by_key
+    ]
+    mas_keys = list(post_records_by_key)
+    mas_with_mbs_keys = [key for key in mas_keys if key in pre_records_by_key]
+    assert all(
+        len(pre_records_by_key[key]) == 1 for key in mas_with_mbs_keys
+    ), mas_with_mbs_keys
+    assert all(
+        len(post_records_by_key[key]) == 1 for key in mas_keys
+    ), post_records_by_key
+    mas_with_mbs = [post_records_by_key[key][0] for key in mas_with_mbs_keys]
+    assert all(record["mam_form"] is not None for record in mas_with_mbs)
     return {
-        "chanted_words_with_two_mbs": sum(
-            mbs_count == 2 for mbs_count in mbs_marks_by_chanted_word.values()
+        "what": (
+            "MBS-O counts chanted words with one or more U+05BD meteg marks before"
+            " the primary stress and none after it. MAS counts chanted words with one or"
+            " more U+05BD meteg marks after the primary stress, irrespective of the number"
+            " before it."
         ),
-        "chanted_words_with_more_than_two_mbs": sum(
-            mbs_count > 2 for mbs_count in mbs_marks_by_chanted_word.values()
+        "by_system": {
+            system: {
+                "mbs_only": sum(system_by_key[key] == system for key in mbs_only_keys),
+                "mas": sum(system_by_key[key] == system for key in mas_keys),
+            }
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "mbs_only_chanted_words_with_multiple_mbs": sum(
+            len(pre_records_by_key[key]) > 1 for key in mbs_only_keys
         ),
+        "mbs_only_chanted_words_with_more_than_two_mbs": sum(
+            len(pre_records_by_key[key]) > 2 for key in mbs_only_keys
+        ),
+        "mas_chanted_words_with_mbs": [
+            {
+                "bcv": record["bcv"],
+                "system": record["system"],
+                "mam_form": record["mam_form"],
+            }
+            for record in mas_with_mbs
+        ],
     }
 
 
@@ -2559,19 +2603,17 @@ def build_survey() -> dict:
     post_stress = found["post_stress"]
     _assert_type_2_next_filter_coverage(post_stress)
     mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
-    mas_with_both_mbs_and_mas = _mas_with_both_mbs_and_mas(
+    census_chanted_word_summary = _census_chanted_word_summary(
         found["pre_stress"], post_stress
     )
-    multiple_mbs_counts = _multiple_mbs_counts(found["pre_stress"])
     mas_candidates_with_another_meteg = [
         candidate
         for candidate in found["fit_for_mas_candidates"]
         if candidate["has_mas"] and candidate["word_has_another_meteg"]
     ]
-    assert {
-        _record_key(candidate) for candidate in mas_candidates_with_another_meteg
-    } == {_record_key(record) for record in mas_with_both_mbs_and_mas}
-    assert all(record["mam_form"] is not None for record in mas_with_both_mbs_and_mas)
+    assert len(mas_candidates_with_another_meteg) == len(
+        census_chanted_word_summary["mas_chanted_words_with_mbs"]
+    )
     actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(
         found["fit_for_mas_candidates"],
@@ -2650,23 +2692,7 @@ def build_survey() -> dict:
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
-        "meteg_mark_counting": {
-            "what": (
-                "The MBS and MAS census columns count individual U+05BD meteg marks,"
-                " not chanted words. A chanted word with two MBS marks contributes two"
-                " counts to the MBS column, while a chanted word with an MBS and a MAS"
-                " contributes one count to each column."
-            ),
-            "chanted_words_with_mbs_and_mas": [
-                {
-                    "bcv": record["bcv"],
-                    "system": record["system"],
-                    "mam_form": record["mam_form"],
-                }
-                for record in mas_with_both_mbs_and_mas
-            ],
-            **multiple_mbs_counts,
-        },
+        "census_chanted_word_summary": census_chanted_word_summary,
         "post_stress_by_structural_type": {
             system: {one: by_type[(system, one)] for one in _TYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
