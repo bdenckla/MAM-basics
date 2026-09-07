@@ -2608,7 +2608,6 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 " are listed separately and can be filtered by subtype.",
             )
         ),
-        mb_html.heading_level_3("MAS cases that are not fit for MAS"),
         mb_html.para(
             (
                 'The final-row "Has MAS" count is ',
