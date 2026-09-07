@@ -15,10 +15,12 @@ accent -> poetic reading (the accents that matter in the Three Books):
     atnax                                                                  II.3
     oleh-we-yored ole sign (above, pre-stress) plus the yored = merkha     II.2
                   below the stress; the merkha is consumed into the one
-                  OLEH_WEYORED token, not emitted as a servus.  WLC 4.22 writes
-                  the pair cross-letter (ole then, later, the yored merkha);
-                  MAM stacks both on one base letter (stored merkha-then-ole)
-                  when the stress is word-initial -- both shapes fuse here.
+                  OLEH_WEYORED token, not emitted as a servus. Within one atom,
+                  WLC 4.22 writes the pair across letters (ole then, later, the
+                  yored merkha), while MAM stacks both marks on one base letter
+                  (stored merkha-then-ole) when the stress is initial. The pair can
+                  also cross two chanted words. A cross-chanted-word token starts at
+                  the yored, so the yored's chanted word receives the disjunctive.
     revia mugrash geresh muqdam (preposed) plus revia; if the revia dot    II.5
                   is omitted because it would fall on the same letter as
                   the geresh muqdam, it is implied
@@ -91,6 +93,17 @@ _TEXT = am.TEXT  # within one maqqef/space-delimited atom (as in prose)
 # in the omitted-maqaf rule it additionally enforces a tsinnorit-*only* first atom (no
 # main accent of its own -- the cue that the chanted word continues across the hyphen).
 _TSINNORIT_ATOM_TAIL = r"[^ \r\n֑-֮-]*"
+
+# The unaccented run between an oleh and its yored: letters, points, meteg, and
+# the M-C note markers pass through, but an accent, maqaf, or separator refuses
+# the match. The cross-chanted-word fusion uses it after the positioned scan.
+_OLE_TO_YORED_RUN = (
+    "[^ \r\n֑-֮" + am.PASEQ + am.SOF_PASUQ + am.UPPER_DOT + am.LOWER_DOT + "-]*"
+)
+
+_CROSS_CHANTED_WORD_YORED = re.compile(
+    am.OLE + _OLE_TO_YORED_RUN + " " + _OLE_TO_YORED_RUN + am.MERKHA
+)
 
 # silluq right context (as in prose prose_scanner): meteg/silluq immediately before
 # sof pasuq, rebuilt over the mark alphabet (issue wlc-utils#9, Phase 2).
@@ -179,23 +192,26 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     # silluq: meteg/silluq sign immediately before sof pasuq.
     (re.compile(am.METEG + _SILLUQ_LA), pan.SILLUQ),
     (re.compile(am.ATNAX), pan.ATNAX),
-    # oleh-we-yored: ole plus its yored merkha in the same word; the merkha is
-    # consumed here so it is not also emitted as a servus.  Bare ole (yored on
-    # the next word, or unmarked) still yields the accent.  Two graphical shapes:
-    #   - cross-letter (WLC 4.22): the ole sits on the pre-stress letter and the yored
-    #     merkha on a later (stress) letter of the same word, so the ole's codepoint comes
-    #     first -> OLE ... MERKHA, matched by the first rule (its _TEXT spans the letters
-    #     between).  This is the ONLY shape WLC 4.22 uses (corpus-wide: 0 same-letter).
-    #   - same-letter (MAM, and any edition that stacks the pair): when the stress is on the
-    #     word's first syllable the yored merkha and the ole land on ONE base letter, stored
-    #     merkha-THEN-ole (no ``LETTER`` between) -> matched by the MERKHA+OLE rule.  13 verses
-    #     across Ps/Prov/Job in MAM-simple (e.g. Ps 30:12 לִ֥֫י), none in WLC 4.22.
-    # Both shapes fuse to the one OLEH_WEYORED disjunctive -- the merkha is the yored, not a
-    # servus.  Without the same-letter rule MAM's merkha+ole would fall through to the bang
+    # oleh-we-yored: ole plus its yored merkha in the same atom; the merkha is
+    # consumed here so it is not also emitted as a servus. A bare ole still yields
+    # the accent; _fuse_cross_chanted_word_yored moves it when its yored is on the
+    # next chanted word. Two graphical shapes:
+    #   - across letters of one atom (WLC 4.22): the ole sits on the pre-stress letter and the
+    #     yored merkha on a later stress letter, so the ole's codepoint comes first ->
+    #     OLE ... MERKHA, matched by the first rule. This is WLC 4.22's only same-atom shape.
+    #   - same letter (MAM, and any edition that stacks the pair): when the stress is on the
+    #     initial syllable, the yored merkha and ole share one base letter, stored
+    #     merkha-THEN-ole -> matched by the MERKHA+OLE rule. Thirteen MAM poetic verses have
+    #     this shape (e.g. Ps 30:12 לִ֥֫י); WLC 4.22 has none.
+    # Across chanted words is handled by _fuse_cross_chanted_word_yored after the positioned
+    # scan, so the token starts at the yored rather than at the ole. Every shape here fuses to
+    # one OLEH_WEYORED disjunctive -- the merkha is the yored, not a
+    # servus. Without the same-letter rule MAM's merkha+ole would fall through to the bang
     # guard and be flagged merkha!ole -> NO_PARSE; this keeps the checker faithful to a wider
-    # range of texts (issue wlc-utils#42) while leaving WLC 4.22 output unchanged (the rule never fires
-    # there).  The MERKHA+OLE rule must precede both the bare MERKHA servus rule and the bang
-    # guard, which it does (longest-match ties to the bang guard but wins by earlier order).
+    # range of texts (issue wlc-utils#42) while leaving WLC 4.22 output unchanged (the rule
+    # never fires there). The MERKHA+OLE rule must precede both the bare MERKHA servus rule
+    # and the bang guard, which it does (longest-match ties to the bang guard but wins by
+    # earlier order).
     (re.compile(am.OLE + _TEXT + am.MERKHA), pan.OLEH_WEYORED),
     (re.compile(am.MERKHA + am.OLE), pan.OLEH_WEYORED),
     (re.compile(am.OLE), pan.OLEH_WEYORED),
@@ -332,7 +348,11 @@ _LEAF: dict[str, str] = {
 
 @dataclass(frozen=True)
 class Token:
-    """One poetic grammar token and its starting offset in the scanned mark body."""
+    """One poetic grammar token and its starting offset in the scanned mark body.
+
+    A cross-chanted-word oleh-we-yored starts at its yored, not at its ole, so the
+    offset assigns the token to the yored's chanted word.
+    """
 
     type: str
     leaf: str
@@ -366,6 +386,35 @@ def _recover_unmarked_oleh(types: list[str]) -> list[str]:
         if out[i] == pan.MERKHA and out[i - 1] == pan.GALGAL:
             out[i] = pan.OLEH_WEYORED
     return out
+
+
+def _fuse_cross_chanted_word_yored(body: str, raw_tokens: list[Token]) -> list[Token]:
+    """Move a cross-chanted-word oleh-we-yored token from its ole to its yored.
+
+    The table emits a bare oleh-we-yored token at an ole that has no yored in the
+    same atom. When the next chanted word has the yored merkha and no intervening
+    accent, the two marks are one disjunctive. The yored's chanted word receives
+    the token because its stress is marked by the yored; the ole is written on the
+    preceding chanted word when the yored's chanted word has no pre-stress letter.
+    """
+    fused: list[Token] = []
+    index = 0
+    while index < len(raw_tokens):
+        token = raw_tokens[index]
+        following = raw_tokens[index + 1] if index + 1 < len(raw_tokens) else None
+        if (
+            token.type == pan.OLEH_WEYORED
+            and body[token.start] == am.OLE
+            and following is not None
+            and following.type == pan.MERKHA
+            and _CROSS_CHANTED_WORD_YORED.match(body, token.start)
+        ):
+            fused.append(Token(token.type, token.leaf, following.start))
+            index += 2
+            continue
+        fused.append(token)
+        index += 1
+    return fused
 
 
 def _reclassify_revia(types: list[str]) -> list[str]:
@@ -436,6 +485,7 @@ def scan_accent_tokens(body: str) -> list[Token]:
                     break
         pos += max(best_len, 1)
 
+    raw_tokens = _fuse_cross_chanted_word_yored(body, raw_tokens)
     resolved = _reclassify_revia(_recover_unmarked_oleh([t.type for t in raw_tokens]))
     return [
         Token(

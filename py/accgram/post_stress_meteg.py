@@ -79,8 +79,9 @@ table read the accents on the initial Hebrew letter of the one ``jta`` syllable 
 ``stress_accent_classification`` implements that exact rule and establishes only that every
 MAS has a conjunctive accent there.  The four ``misc-vayomer`` records have a narrow-sense
 paseq after the chanted word, so that stroke leaves the underlying accent conjunctive.  In a
-poetic verse, U+05A5 can be yored only in an oleh-we-yored chanted word.  The check refuses a
-future U+05A5 case with ole, rather than silently calling it either merkha or yored.
+poetic verse, U+05A5 can be yored in an oleh-we-yored whose ole is in the same chanted word or
+the preceding chanted word.  The check refuses either future shape rather than silently calling
+U+05A5 either merkha or yored.
 """
 
 from __future__ import annotations
@@ -1019,10 +1020,12 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
 
     The classification deliberately stops at conjunctive versus disjunctive.  A raw U+05C0
     cannot distinguish a narrow-sense paseq from legarmeh, so only the structurally identified
-    ``misc-vayomer`` records are allowed to have it.  A poetic U+05A5 with ole is likewise
-    refused as an oleh-we-yored question instead of being guessed to be normal merkha.
+    ``misc-vayomer`` records are allowed to have it. A poetic U+05A5 whose chanted word or
+    preceding chanted word has ole is likewise refused as an oleh-we-yored question instead of
+    being guessed to be normal merkha.
     """
     for record in post_stress:
+        preceding_chanted_word = record.pop("_preceding_chanted_word")
         punctuation = record.get("intervening_punctuation", ())
         if punctuation:
             if not (
@@ -1040,10 +1043,10 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
         if (
             record["system"] == SYSTEM_POETIC
             and accent == ha.MER
-            and ha.OLE in record["chanted_word"]
+            and (ha.OLE in record["chanted_word"] or ha.OLE in preceding_chanted_word)
         ):
             raise SurveyProblem(
-                f"{record['bcv']}: poetic U+05A5 with ole needs an oleh-we-yored analysis"
+                f"{record['bcv']}: poetic U+05A5 near ole needs an oleh-we-yored analysis"
             )
         if accent not in _STRESS_ACCENT_CONJUNCTIVES[record["system"]]:
             raise SurveyProblem(
@@ -1079,6 +1082,7 @@ def _record(
     letter_index: int,
     accents_here: list[str],
     before_qere: str | None,
+    preceding_chanted_word: str,
     next_chanted_word: str | None,
     next_jta: str | None,
     next_chanted_word_accent_classification: str | None,
@@ -1109,6 +1113,7 @@ def _record(
         "bcv": bcv,
         "system": system,
         "chanted_word": word,
+        "_preceding_chanted_word": preceding_chanted_word,
         "next_chanted_word": next_chanted_word,
         "snapshot_before_qere": before_qere,
         "accents_and_letters": _bare(word),
@@ -1145,6 +1150,7 @@ def _classify_one_word(
     parsed: dict,
     found: dict,
     before_qere: str | None,
+    preceding_chanted_word: str,
     next_chanted_word: str | None,
     next_jta: str | None,
     next_chanted_word_accent_classification: str | None,
@@ -1189,6 +1195,7 @@ def _classify_one_word(
             letter_index=letter_index,
             accents_here=accents_here,
             before_qere=before_qere,
+            preceding_chanted_word=preceding_chanted_word,
             next_chanted_word=next_chanted_word,
             next_jta=next_jta,
             next_chanted_word_accent_classification=(
@@ -1773,6 +1780,10 @@ def _one_verse(
             continue
         word = entry["fva"].split(" ")[0]
         jta = entry["jta"]
+        previous_entry = all_usable[index - 1] if index else None
+        preceding_chanted_word = (
+            previous_entry["fva"].split(" ")[0] if previous_entry is not None else ""
+        )
         next_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
         next_chanted_word = (
             next_entry["fva"].split(" ")[0] if next_entry is not None else None
@@ -1849,6 +1860,7 @@ def _one_verse(
             parsed=parsed,
             found=found,
             before_qere=entry.get("before_qfikq"),
+            preceding_chanted_word=preceding_chanted_word,
             next_chanted_word=next_chanted_word,
             next_jta=next_jta,
             next_chanted_word_accent_classification=(

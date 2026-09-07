@@ -53,6 +53,7 @@ do, not why.)
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from mb_cmn import hebrew_accents as ha
@@ -83,14 +84,15 @@ def base_letters(word: str) -> str:
     )
 
 
-# One in-order traversal event: (kind, disjunctive_marker, servus, self_servus, text).
+# One in-order traversal event:
+# (kind, disjunctive_marker, servus, self_servus, text, chanted_word).
 # A WORD carries a (provisional) disjunctive marker XOR a servus (its main accent is
 # either a divider or a conjunctive), plus an optional self_servus: a conjunctive sign
-# standing on the SAME word, before the disjunctive mark (a long word can host its own
-# servant -- e.g. galgal then pazer on one word), and ``text`` = its base letters
-# (the word-alignment key).  SOFPASUQ carries only its text; LP_LEG / LP_PASEQ carry
-# none of the four.
-_Event = tuple[str, str | None, str | None, str | None, str | None]
+# standing on the same chanted word before the disjunctive mark (a long chanted word can
+# host its servus -- e.g. galgal then pazer), ``text`` = its base letters (the alignment
+# key), and ``chanted_word`` = the marked Hebrew text. SOFPASUQ carries its text and
+# chanted word; LP_LEG / LP_PASEQ carry none of the five values.
+_Event = tuple[str, str | None, str | None, str | None, str | None, str | None]
 
 # MAM Unicode accent -> intermediate disjunctive marker (REVIA / SHALSHELET stay
 # provisional; resolved in the second pass).  Checked in this priority order so
@@ -144,6 +146,19 @@ _QERE_TYPES = frozenset({"qere", "kq-q", "kq-trivial", "kq-q-velo-k"})
 _KQ_TYPES = frozenset({"kq", "kq-trivial", "kq-q-velo-k"})
 
 _POETIC_DISJUNCTIVES = pan.POETIC_DISJUNCTIVES
+
+# Between an oleh and a yored in separate chanted words, MAM permits only letters,
+# points, and meteg. Any other accent, a maqaf, or punctuation refuses the fusion.
+_OLE_TO_YORED_CHANTED_WORD_RUN = (
+    r"[\u05B0-\u05BC\u05BD\u05BF\u05C1-\u05C2\u05C4-\u05C5\u05C7\u05D0-\u05EA]*"
+)
+_CROSS_CHANTED_WORD_YORED = re.compile(
+    ha.OLE
+    + _OLE_TO_YORED_CHANTED_WORD_RUN
+    + " "
+    + _OLE_TO_YORED_CHANTED_WORD_RUN
+    + ha.MER
+)
 
 
 def _word_marker(accents: str) -> str | None:
@@ -199,7 +214,7 @@ def _word_servus(accents: str) -> str | None:
 
 
 def _emit_word_events(text: str, events: list[_Event]) -> None:
-    """Append a ('WORD', marker, servus, self_servus) event per whitespace-delimited word.
+    """Append a WORD event per whitespace-delimited chanted word.
 
     Whitespace-delimited means CHANTED word: a maqaf compound has no space in it, so it
     comes through whole (issue wlc-utils#81).
@@ -213,11 +228,11 @@ def _emit_word_events(text: str, events: list[_Event]) -> None:
     for word in text.split():
         letters = base_letters(word)
         if _SOF_PASUQ in word:
-            events.append(("SOFPASUQ", None, None, None, letters))
+            events.append(("SOFPASUQ", None, None, None, letters, word))
             continue
         marker, marker_char = _word_marker_and_char(word)
         if marker is None:
-            events.append(("WORD", None, _word_servus(word), None, letters))
+            events.append(("WORD", None, _word_servus(word), None, letters, word))
         else:
             # Oleh-weyored is a two-mark sign (ole + a yored merkha); MAM sometimes
             # encodes the yored merkha BEFORE the ole, so it would masquerade as a
@@ -228,7 +243,7 @@ def _emit_word_events(text: str, events: list[_Event]) -> None:
                 if marker == pan.OLEH_WEYORED
                 else _word_self_servus(word, marker_char)
             )
-            events.append(("WORD", marker, None, self_servus, letters))
+            events.append(("WORD", marker, None, self_servus, letters, word))
 
 
 def _walk(node: object, events: list[_Event]) -> None:
@@ -243,10 +258,10 @@ def _walk(node: object, events: list[_Event]) -> None:
     node_type = node.get("type")
     if isinstance(node_type, str):
         if node_type == "lp-legarmeih":
-            events.append(("LP_LEG", None, None, None, None))
+            events.append(("LP_LEG", None, None, None, None, None))
             return
         if node_type == "lp-paseq":
-            events.append(("LP_PASEQ", None, None, None, None))
+            events.append(("LP_PASEQ", None, None, None, None, None))
             return
         if node_type in _KETIV_TYPES:
             return
@@ -294,6 +309,24 @@ def _walk_kq(node: dict, events: list[_Event]) -> None:
         _walk(child, events)
 
 
+def _first_chanted_word_supplies_yored(
+    marker: str | None,
+    chanted_word: str | None,
+    following_servus: str | None,
+    following_chanted_word: str | None,
+) -> bool:
+    """Whether the following chanted word's merkha is this oleh's yored."""
+    return (
+        marker == pan.OLEH_WEYORED
+        and chanted_word is not None
+        and ha.MER not in chanted_word
+        and following_servus == pan.MERKHA
+        and following_chanted_word is not None
+        and _CROSS_CHANTED_WORD_YORED.search(f"{chanted_word} {following_chanted_word}")
+        is not None
+    )
+
+
 def _build_word_accents(events: list[_Event]) -> list[list[str | None]]:
     """Reduce traversal events to a per-word ``[disjunctive, servus, self_servus, text]`` list.
 
@@ -305,9 +338,35 @@ def _build_word_accents(events: list[_Event]) -> list[list[str | None]]:
     self_servus, and text (base-letter alignment key) columns are carried through
     untouched.
     """
+    events = list(events)
+    for index, event in enumerate(events[:-1]):
+        kind, marker, _servus, _self_servus, _text, chanted_word = event
+        following = events[index + 1]
+        (
+            following_kind,
+            _following_marker,
+            following_servus,
+            _following_self_servus,
+            _following_text,
+            following_chanted_word,
+        ) = following
+        if kind != "WORD" or following_kind != "WORD":
+            continue
+        if _first_chanted_word_supplies_yored(
+            marker, chanted_word, following_servus, following_chanted_word
+        ):
+            events[index + 1] = (
+                following_kind,
+                _following_marker,
+                None,
+                _following_self_servus,
+                _following_text,
+                following_chanted_word,
+            )
+
     words: list[list[str | None]] = []
     last_word_index: int | None = None
-    for kind, marker, servus, self_servus, text in events:
+    for kind, marker, servus, self_servus, text, _chanted_word in events:
         if kind == "WORD":
             words.append([marker, servus, self_servus, text])
             last_word_index = len(words) - 1

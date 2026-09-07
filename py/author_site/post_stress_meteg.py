@@ -621,8 +621,8 @@ def pin_claims(survey: dict) -> None:
         record["next_chanted_word_accent_classification"] for record in post_stress
     )
     assert next_accent_classification == {
-        "disjunctive": 215,
-        "conjunctive": 17,
+        "disjunctive": 217,
+        "conjunctive": 15,
     }
     actual_type_1_mas = _actual_type_1_mas(survey)
     assert {
@@ -664,16 +664,16 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (496, 203, 293, 0)
+    ) == (499, 205, 294, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_type_1_subtype"] == {
         psm.TYPE_1_SUBTYPE_A: {
-            "candidates": 209,
+            "candidates": 210,
             "with_mas": 97,
-            "without_mas": 112,
+            "without_mas": 113,
             "with_mas_by_system": {_PROSE: 93, _POETIC: 4},
         },
         psm.TYPE_1_SUBTYPE_B: {
@@ -683,17 +683,17 @@ def pin_claims(survey: dict) -> None:
             "with_mas_by_system": {_PROSE: 12, _POETIC: 0},
         },
         psm.TYPE_1_SUBTYPE_C: {
-            "candidates": 1564,
+            "candidates": 1571,
             "with_mas": 4,
-            "without_mas": 1560,
+            "without_mas": 1567,
             "with_mas_by_system": {_PROSE: 2, _POETIC: 2},
         },
     }
     assert fit_for_mas["by_fit_type"] == {
         psm.FIT_TYPE_1_A: {
-            "candidates": 209,
+            "candidates": 210,
             "with_mas": 97,
-            "without_mas": 112,
+            "without_mas": 113,
         },
         psm.FIT_TYPE_1_B: {
             "candidates": 43,
@@ -701,19 +701,19 @@ def pin_claims(survey: dict) -> None:
             "without_mas": 31,
         },
         psm.FIT_TYPE_2: {
-            "candidates": 204,
-            "with_mas": 54,
+            "candidates": 205,
+            "with_mas": 55,
             "without_mas": 150,
         },
         psm.FIT_TYPE_3: {
-            "candidates": 40,
-            "with_mas": 40,
+            "candidates": 41,
+            "with_mas": 41,
             "without_mas": 0,
         },
     }
     assert fit_for_mas["mas_not_in_the_table"] == {
         "outside_the_three_types": 7,
-        "next_word_not_disjunctive": 17,
+        "next_word_not_disjunctive": 15,
         "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
     }
@@ -738,12 +738,12 @@ def pin_claims(survey: dict) -> None:
     ) == Counter(
         {
             (psm.FIT_TYPE_1_A, True): 97,
-            (psm.FIT_TYPE_1_A, False): 112,
+            (psm.FIT_TYPE_1_A, False): 113,
             (psm.FIT_TYPE_1_B, True): 12,
             (psm.FIT_TYPE_1_B, False): 31,
-            (psm.FIT_TYPE_2, True): 54,
+            (psm.FIT_TYPE_2, True): 55,
             (psm.FIT_TYPE_2, False): 150,
-            (psm.FIT_TYPE_3, True): 40,
+            (psm.FIT_TYPE_3, True): 41,
         }
     )
     lacks_mas_cases = _lacks_mas_cases(survey)

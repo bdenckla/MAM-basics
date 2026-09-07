@@ -31,7 +31,7 @@ import difflib
 
 from accgram.mam_poetic_accents import base_letters
 from accgram.poetic_accent_names import POETIC_DISJUNCTIVES
-from accgram.poetic_scanner import scan_accents
+from accgram.poetic_scanner import scan_accent_tokens
 from mb_cmn import hebrew_punctuation as hpunc
 
 
@@ -164,17 +164,22 @@ def _wlc_disjunctives_per_word(body: str) -> list[tuple[str, ...]]:
     """The M-C scanner's resolved disjunctives, partitioned per chanted word.
 
     The scanner runs verse-level passes (unmarked-ole recovery, revia
-    reclassification) that need context beyond one chanted word, so we keep the whole-verse
-    resolved stream and slice it by each chanted word's own token count (the passes relabel
-    tokens but never change their count)."""
-    resolved = [t for t, _leaf in scan_accents(body)]
+    reclassification) that need context beyond one chanted word, so partition its
+    positioned whole-verse token stream by each chanted word's offsets."""
+    tokens = scan_accent_tokens(body)
     words: list[tuple[str, ...]] = []
     pos = 0
-    for mc_word in body.split():
-        count = len(scan_accents(mc_word))
-        segment = resolved[pos : pos + count]
-        pos += count
-        words.append(tuple(t for t in segment if t in POETIC_DISJUNCTIVES))
+    for run in body.split(" "):
+        if run:
+            end = pos + len(run)
+            words.append(
+                tuple(
+                    token.type
+                    for token in tokens
+                    if pos <= token.start < end and token.type in POETIC_DISJUNCTIVES
+                )
+            )
+        pos += len(run) + 1
     return words
 
 

@@ -115,7 +115,6 @@
 "MERKHA",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "MUNAX",
 "MUNAX",
 "ATNAX",
@@ -153,7 +152,6 @@
 {
 "label": "atnax_phrase",
 "leaves": [
-"merkha",
 "munax",
 "munax",
 "atnax"
@@ -258,7 +256,6 @@
 "TSINNOR",
 "GALGAL",
 "OLEH_WEYORED",
-"MERKHA",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -300,7 +297,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "dexi"
 ]
 },
@@ -6385,7 +6381,6 @@
 "TSINNOR",
 "MAHAPAKH",
 "OLEH_WEYORED",
-"MERKHA",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -6426,7 +6421,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "dexi"
 ]
 },
@@ -27142,7 +27136,6 @@
 "TILDE",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -27182,7 +27175,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "dexi"
 ]
 },
@@ -40656,7 +40648,6 @@
 "TSINNOR",
 "GALGAL",
 "OLEH_WEYORED",
-"MERKHA",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -40711,7 +40702,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "dexi"
 ]
 },
@@ -42349,7 +42339,6 @@
 "REVIA_QATAN",
 "OLEH_WEYORED",
 "MERKHA",
-"MERKHA",
 "ATNAX",
 "TARXA",
 "MUNAX",
@@ -42385,7 +42374,6 @@
 {
 "label": "atnax_phrase",
 "leaves": [
-"merkha",
 "merkha",
 "atnax"
 ]
@@ -44254,7 +44242,6 @@
 "MERKHA",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "TARXA",
 "MERKHA",
 "REVIA_MUGRASH",
@@ -44303,7 +44290,6 @@
 {
 "label": "revia_mugrash_phrase",
 "leaves": [
-"merkha",
 "tarxa",
 "merkha",
 "revia mugrash"
@@ -48802,7 +48788,6 @@
 "REVIA_QATAN",
 "OLEH_WEYORED",
 "MERKHA",
-"MERKHA",
 "ATNAX",
 "REVIA_MUGRASH",
 "MERKHA",
@@ -48849,7 +48834,6 @@
 {
 "label": "atnax_phrase",
 "leaves": [
-"merkha",
 "merkha",
 "atnax"
 ]
@@ -56756,7 +56740,6 @@
 "MERKHA",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "MUNAX",
 "DEXI",
 "MUNAX",
@@ -56811,7 +56794,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "munax",
 "dexi"
 ]
