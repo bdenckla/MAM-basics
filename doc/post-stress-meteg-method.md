@@ -15,29 +15,29 @@ type, and §338 closed-tsere type, with Breuer's corresponding Ch. 8 types (j), 
 
 The table is a search limited to a regular configuration of neighbouring chanted words. Phonetic
 MAM supplies the first chanted word's stress position, and the survey checks the conjunctive accent
-on that stress syllable. The prose or poetic accent grammar establishes the following chanted
-word's disjunctive accent. The U+05BD on ר in Genesis 28:7's following chanted word, אֲרָֽם׃, is
+on that stress syllable. The prose or poetic accent grammar establishes the next chanted
+word's disjunctive accent. The U+05BD on ר in Genesis 28:7's next chanted word, אֲרָֽם׃, is
 silluq, not an absence of an accent: the sof pasuq supplies the context that classifies it.
 
 The non-type-specific conditions deliberately define a narrower table than the MAS census. A
-grammar-aware audit on 2026-09-06 found 215 following disjunctives and 17 following conjunctives
-among the 232 MAS records; all but Jeremiah 46:14 have initial stress in the following word. The
+grammar-aware audit on 2026-09-06 found 215 next-word disjunctives and 17 next-word conjunctives
+among the 232 MAS records; all but Jeremiah 46:14 have initial stress in the next word. The
 fit-for-MAS footnote accounts for every resulting difference between the table's "Has MAS" count
 and the total MAS count, including the seven MAS cases that meet none of the three structural
 types.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
-initial stress in the following chanted word for the open-syllable type. Yeivin §354 specifies a
-following chanted word that begins with lamed or nun for the guttural type. Breuer's description
-of the closed-tsere type includes a following chanted word accented initially or a long chanted
-word that begins with a closed syllable. No source statement here makes a following disjunctive a
+initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a
+next chanted word that begins with lamed or nun for the guttural type. Breuer's description
+of the closed-tsere type includes a next chanted word accented initially or a long chanted
+word that begins with a closed syllable. No source statement here makes a next-word disjunctive a
 condition for all three types.
 
 ## Phonetic MAM source-form alignment
 
 The Fit-for-MAS records use Phonetic MAM for primary stress and MAM today for reader-facing forms.
 Those are not interchangeable inputs. On 2026-09-06, the 3,181 Fit-for-MAS records' first and
-following chanted words were compared directly with MAM-parsed-plus: 6,362 pairs in all. This was
+next chanted words were compared directly with MAM-parsed-plus: 6,362 pairs in all. This was
 a template-aware comparison, not a comparison against MAM-simple's flattened stream.
 
 The selected MAM-parsed-plus form has the following explicit choices.
@@ -53,7 +53,7 @@ The selected MAM-parsed-plus form has the following explicit choices.
 
 Under that policy, 6,308 pairs are identical and 16 more agree with the shared varika retained.
 The remaining 38 pairs are not text differences. Each has `מ:לגרמיה-2` immediately after the
-matching MAM chanted word, and each Fit-for-MAS record has the following chanted word's
+matching MAM chanted word, and each Fit-for-MAS record has the next chanted word's
 disjunctive accent. MAM-simple represents the U+05C0 glyph in a separate stream position, while
 the MAM-parsed-plus template records the legarmeh analysis. Four of the 38 numbered verses also
 have a `מ:פסק` template elsewhere; that template does not describe the candidate chanted word.
@@ -82,5 +82,5 @@ distribution as a diagnostic. Tokenization does not exclude a structural candida
 
 Earlier code used Phonetic MAM's `jta` field to find stress, then classified the accent by raw
 Unicode marks on the stress letter. That raw-mark step could not recognize fixed-edge accents or a
-verse-final U+05BD as silluq. The table now retains the following-word conditions, but establishes
+verse-final U+05BD as silluq. The table now retains the next-word conditions, but establishes
 the accent condition through the accent grammar instead.
