@@ -163,7 +163,6 @@ then remove only a clean primary clone after `git worktree list` proves no
 forest worktree needs its shared Git metadata. A retained forest input keeps its
 primary clone in place, while the workspace folder and visibility-map entry
 still leave in the same Empty commit; no `frozen_repos` entry is added.
-in the same Empty commit; no `frozen_repos` entry is added.
 
 ### Execution record — Phase 1, 2026-09-03
 

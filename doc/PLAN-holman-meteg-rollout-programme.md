@@ -74,7 +74,7 @@ gave them on 2026-08-28.
 **Twenty-nine of the thirty remove a meteg from MAM; one, M23 at Isaiah 23:12,
 adds one.** That asymmetry is the single most common way to get this work
 wrong, and it recurs in items 2, 3 and 7. Measured 2026-09-03 over
-`holman/docs-not-served/mam_suggestions.json`: 29 records where MAM carries the
+`holman/docs-not-served/mam_suggestions.json`: 29 records where MAM has the
 extra meteg, one where the Aleppo comparison does.
 
 **The letter M is the MAM-suggestion series prefix, not an abbreviation of

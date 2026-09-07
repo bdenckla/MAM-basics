@@ -82,7 +82,7 @@ WHITESPACE_TMPL_NAMES = {
 # If you don't recognize a template, fail fast."  So a template that reaches a
 # verse payload has to be listed here or handled by name somewhere.
 #
-# TWO KINDS SIT HERE, FOR THE ONE THING THEY SHARE.  Most carry nothing at all:
+# TWO KINDS SIT HERE, FOR THE ONE THING THEY SHARE.  Most have no mark at all:
 # WHITESPACE_TMPL_NAMES' shirah spaces and setuma/petucha and poetic-space
 # markers, ר4 alongside them, the three no-parashah chapter tags, and the
 # navigation and titling furniture, whose parameters are a verse reference, an

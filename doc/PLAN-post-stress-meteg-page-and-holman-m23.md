@@ -364,7 +364,7 @@ The page needs these named sections:
    complete chanted-word forms lifted from the source data, never hand-typed
    accents. Because this phase runs after the programme's item 5, MAM has the
    meteg by then and Holman's recorded comparison forms do not: his `mam_form`
-   is what he was sent, frozen at the date of his message. Say that, rather
+   is the form Holman recorded in his message, frozen at the date of his message. Say that, rather
    than presenting a difference that no longer exists. The suggestion was
    taken, and the section's subject is what kind of meteg it is and how common
    that kind is in MAM, not an open disagreement.
