@@ -2650,6 +2650,8 @@ def _fit_for_mas_facts(survey: dict) -> list:
     fit_for_mas = _fit_for_mas(survey)
     mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
     total_mas = len(survey["post_stress"])
+    surprising_mas_count = total_mas - fit_for_mas["with_mas"]
+    assert surprising_mas_count == sum(mas_not_in_the_table.values())
     type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
     type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
 
@@ -2690,6 +2692,36 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
     )
+    surprising_mas_rows = (
+        mb_html.table_row_of_data(
+            (
+                "The MAS syllable has none of types 1, 2, or 3.",
+                f"{mas_not_in_the_table['outside_the_three_types']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                "The next chanted word has a conjunctive accent.",
+                f"{mas_not_in_the_table['next_word_not_disjunctive']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                "The next chanted word does not have initial stress.",
+                f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                "The MAS syllable is type 1C.",
+                f"{mas_not_in_the_table['type_1_subtype_C']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+    )
     return [
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
         mb_html.para(
@@ -2707,47 +2739,36 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". It means that a potential MAS syllable comes immediately after a nonfinal"
-                " stress syllable with a conjunctive accent, the next chanted word has initial"
-                " stress and a disjunctive accent, and the potential MAS syllable is type 2,"
-                " type 3, type 1A, or type 1B. In type 1A, the next chanted word has"
-                " non-plain initial stress because it starts with a vocal ",
-                _ROM_SHEWA,
-                ". In type 1B, the next chanted word has plain initial stress marked"
-                " by a ",
-                _ROM_PASHTA,
-                " stress helper. Type 1C has other plain initial stress and is not fit for"
-                " MAS. The table records how often MAS occurs in each such situation and how"
-                " often it does not.",
+                ". A potential MAS syllable is fit for MAS when:",
             )
         ),
+        mb_html.unordered_list(
+            (
+                "The potential MAS syllable comes immediately after a nonfinal stress"
+                " syllable with a conjunctive accent.",
+                "The next chanted word has initial stress and a disjunctive accent.",
+                "The potential MAS syllable is type 2, type 3, type 1A, or type 1B.",
+            )
+        ),
+        mb_html.para(
+            "The Fit for MAS table records how often MAS occurs in situations that meet these"
+            " criteria and how often MAS does not occur."
+        ),
         _table(headers, rows),
+        mb_html.heading_level_3("MAS cases that are not fit for MAS"),
         mb_html.para(
             (
                 'The final-row "Has MAS" count is ',
                 f"{fit_for_mas['with_mas']:,}",
-                f", rather than the total of {total_mas:,} MAS cases, for four reasons:",
+                f", rather than the total of {total_mas:,} MAS cases, because "
+                f"{surprising_mas_count:,} syllables have MAS even though the Fit for MAS"
+                " definition does not consider the syllables fit for MAS. The table shows why"
+                " the surprising MAS cases are not fit for MAS.",
             )
         ),
-        mb_html.ordered_list(
-            (
-                (
-                    f"{mas_not_in_the_table['outside_the_three_types']:,} MAS cases have"
-                    " none of the three MAS types."
-                ),
-                (
-                    f"{mas_not_in_the_table['next_word_not_disjunctive']:,} MAS"
-                    " cases have a next word with a conjunctive accent."
-                ),
-                (
-                    f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}"
-                    " MAS case has a next word without initial stress."
-                ),
-                (
-                    f"{mas_not_in_the_table['type_1_subtype_C']:,} MAS cases are type 1C,"
-                    " whose next chanted word has other plain initial stress."
-                ),
-            )
+        _table(
+            ("Why the MAS syllable is not fit for MAS", "MAS cases"),
+            surprising_mas_rows,
         ),
     ]
 
