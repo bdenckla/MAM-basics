@@ -466,6 +466,11 @@ def _fit_for_mas(survey: dict) -> dict:
     return survey["fit_for_mas"]
 
 
+def _actual_type_1_mas(survey: dict) -> dict:
+    """The survey's complete structural type-1 MAS analysis."""
+    return survey["actual_type_1_mas"]
+
+
 def _lacks_mas_cases(survey: dict) -> dict:
     """The tables displayed by the pages linked from the complete Fit-for-MAS records."""
     return psm._lacks_mas_case_lists(_fit_for_mas(survey)["records"])
@@ -560,6 +565,27 @@ def pin_claims(survey: dict) -> None:
     assert following_accent_classification == {
         "disjunctive": 215,
         "conjunctive": 17,
+    }
+    assert _actual_type_1_mas(survey) == {
+        "cases": 123,
+        "by_initial_stress_pattern": {
+            psm.TYPE_1_SUBTYPE_A: {
+                "cases": 103,
+                "by_system": {_PROSE: 97, _POETIC: 6},
+            },
+            psm.TYPE_1_SUBTYPE_B: {
+                "cases": 12,
+                "by_system": {_PROSE: 12, _POETIC: 0},
+            },
+            psm.TYPE_1_SUBTYPE_C: {
+                "cases": 7,
+                "by_system": {_PROSE: 3, _POETIC: 4},
+            },
+            "not_initially_stressed": {
+                "cases": 1,
+                "by_system": {_PROSE: 1, _POETIC: 0},
+            },
+        },
     }
     fit_for_mas = _fit_for_mas(survey)
     assert (
@@ -1260,9 +1286,16 @@ def _case_subpage_links(survey: dict) -> list:
 
 
 def _type_1_facts(survey: dict) -> list:
-    """The three exclusive initial-stress subtypes among the actual type-1 MAS cases."""
-    subtype_counts = _fit_for_mas(survey)["by_type_1_subtype"]
-    headers = ("Subtype", "Following chanted word", "Prose", "Poetic", "All")
+    """The complete structural type-1 MAS population by following-stress pattern."""
+    type_1_mas = _actual_type_1_mas(survey)
+    pattern_counts = type_1_mas["by_initial_stress_pattern"]
+    headers = (
+        "Initial-stress pattern",
+        "Following chanted word",
+        "Prose",
+        "Poetic",
+        "All",
+    )
     descriptions = {
         psm.TYPE_1_SUBTYPE_A: (
             "Non-plain initial stress: it starts with a vocal ",
@@ -1275,22 +1308,29 @@ def _type_1_facts(survey: dict) -> list:
             " stress helper.",
         ),
         psm.TYPE_1_SUBTYPE_C: "Other plain initial stress.",
+        "not_initially_stressed": "Not initially stressed.",
+    }
+    labels = {
+        psm.TYPE_1_SUBTYPE_A: psm.TYPE_1_SUBTYPE_A,
+        psm.TYPE_1_SUBTYPE_B: psm.TYPE_1_SUBTYPE_B,
+        psm.TYPE_1_SUBTYPE_C: psm.TYPE_1_SUBTYPE_C,
+        "not_initially_stressed": "Not A, B, or C",
     }
     rows = [
         mb_html.table_row_of_data(
             (
-                subtype,
-                descriptions[subtype],
-                str(counts["with_mas_by_system"][_PROSE]),
-                str(counts["with_mas_by_system"][_POETIC]),
-                str(counts["with_mas"]),
+                labels[pattern],
+                descriptions[pattern],
+                str(counts["by_system"][_PROSE]),
+                str(counts["by_system"][_POETIC]),
+                str(counts["cases"]),
             ),
             (None, None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
-        for subtype, counts in subtype_counts.items()
+        for pattern, counts in pattern_counts.items()
     ]
-    total = sum(counts["with_mas"] for counts in subtype_counts.values())
-    assert total == 113
+    total = sum(counts["cases"] for counts in pattern_counts.values())
+    assert total == type_1_mas["cases"] == 123
     return [
         mb_html.heading_level_2("Facts about MAS type 1"),
         mb_html.para(f"The {total:,} type 1 MAS cases divide exclusively as follows."),

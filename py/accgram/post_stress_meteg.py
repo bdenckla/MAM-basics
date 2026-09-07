@@ -1418,13 +1418,8 @@ def _lacks_mas_case_lists(records: list[dict]) -> dict:
     }
 
 
-def _fit_for_mas_summary(
-    candidates: list[dict],
-    post_stress: list[dict],
-    words_by_bcv: dict[str, list[str]],
-    context_by_bcv: dict[str, list[object]],
-) -> dict:
-    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
+def _mark_candidates_with_mas(candidates: list[dict], post_stress: list[dict]) -> int:
+    """Mark each candidate according to whether it has a MAS, and return the MAS count."""
     mas_keys = {
         (record["bcv"], record["chanted_word"], record["jta"])
         for record in post_stress
@@ -1434,6 +1429,69 @@ def _fit_for_mas_summary(
         key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
         candidate["has_mas"] = key in mas_keys
         assert candidate["has_u05bd"] == candidate["has_mas"], candidate
+    assert {
+        (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        for candidate in candidates
+        if candidate["has_mas"]
+    } == mas_keys
+    return len(mas_keys)
+
+
+def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
+    """All structurally type-1 MAS cases, regardless of Fit-for-MAS conditions."""
+    actual_type_1_mas = [
+        candidate
+        for candidate in candidates
+        if candidate["has_mas"] and TYPE_OPEN in candidate["structural_types"]
+    ]
+    by_initial_stress_pattern = {}
+    for subtype in _TYPE_1_SUBTYPES:
+        members = [
+            candidate
+            for candidate in actual_type_1_mas
+            if candidate["type_1_subtype"] == subtype
+        ]
+        by_initial_stress_pattern[subtype] = {
+            "cases": len(members),
+            "by_system": {
+                system: sum(candidate["system"] == system for candidate in members)
+                for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+            },
+        }
+    not_initially_stressed = [
+        candidate
+        for candidate in actual_type_1_mas
+        if candidate["type_1_subtype"] is None
+    ]
+    assert all(
+        not candidate["following_chanted_word_is_initially_stressed"]
+        for candidate in not_initially_stressed
+    )
+    by_initial_stress_pattern["not_initially_stressed"] = {
+        "cases": len(not_initially_stressed),
+        "by_system": {
+            system: sum(
+                candidate["system"] == system for candidate in not_initially_stressed
+            )
+            for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+    }
+    assert sum(counts["cases"] for counts in by_initial_stress_pattern.values()) == len(
+        actual_type_1_mas
+    )
+    return {
+        "cases": len(actual_type_1_mas),
+        "by_initial_stress_pattern": by_initial_stress_pattern,
+    }
+
+
+def _fit_for_mas_summary(
+    candidates: list[dict],
+    mas_count: int,
+    words_by_bcv: dict[str, list[str]],
+    context_by_bcv: dict[str, list[object]],
+) -> dict:
+    """The fit-for-MAS candidates, their type membership, and whether each has MAS."""
     non_type_specific_conditions = [
         candidate
         for candidate in candidates
@@ -1536,7 +1594,7 @@ def _fit_for_mas_summary(
             for candidate in excluded_mas
         }
     ) == len(excluded_mas), excluded_mas
-    assert with_mas + len(excluded_mas) == len(mas_keys), (with_mas, excluded_mas)
+    assert with_mas + len(excluded_mas) == mas_count, (with_mas, excluded_mas)
     return {
         "what": (
             "Every syllable immediately after a nonfinal primary stress with a conjunctive"
@@ -2475,10 +2533,15 @@ def build_survey() -> dict:
     counts = found["counts"]
     post_stress = found["post_stress"]
     _assert_type_2_following_filter_coverage(post_stress)
+    mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
+    actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(
-        found["fit_for_mas_candidates"], post_stress, words_by_bcv, context_by_bcv
+        found["fit_for_mas_candidates"], mas_count, words_by_bcv, context_by_bcv
     )
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
+    assert actual_type_1_mas["cases"] == sum(
+        by_type[(system, TYPE_OPEN)] for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+    )
     by_subtype = Counter(
         (one["system"], one["subtype"])
         for one in post_stress
@@ -2554,6 +2617,7 @@ def build_survey() -> dict:
             system: {one: by_subtype[(system, one)] for one in _SUBTYPES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
+        "actual_type_1_mas": actual_type_1_mas,
         "fit_for_mas": fit_for_mas,
         "stress_accent_classification": stress_accent_classification(post_stress),
         "type_2_type_3_overlap": {
