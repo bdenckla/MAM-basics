@@ -204,7 +204,7 @@ _COS_PAGE_STARTS_BY_TYPE = {
     psm.TYPE_CLOSED_TSERE: "299; 301; 302; 306; 307",
 }
 _COS_CH_8_PAGE_GLOSS = (
-    "printed page in Wengrov's English translation of CoS on which the cited Ch. 8 section"
+    "printed page in Wengrove's English translation of CoS on which the cited Ch. 8 section"
     " begins"
 )
 
@@ -482,10 +482,10 @@ def build_methods_body(survey: dict) -> list:
         _hebrew_spacing_option(),
         mb_html.para(
             (
-                "The location of a chanted word's stress is not always obvious. In the"
+                "The location of a word's stress is not always obvious. In the"
                 " research we present here, we locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
-                ", which marks the stress of every chanted word.",
+                ", which marks the stress of every word.",
             )
         ),
         mb_html.para(
@@ -1370,6 +1370,14 @@ def _sources_for_types_footnote() -> list:
             ),
             source_rows,
         ),
+        mb_html.para(
+            (
+                "For those using the Wengrove translation of ",
+                cos(),
+                ", below is a table of the page numbers corresponding to the section"
+                " identifiers in the table above:",
+            )
+        ),
         _table(
             (
                 "Type",
@@ -1378,7 +1386,7 @@ def _sources_for_types_footnote() -> list:
                     "CoS Ch. 14 §8 pg",
                     {
                         "title": (
-                            "printed page in Wengrov's English translation of CoS on which"
+                            "printed page in Wengrove's English translation of CoS on which"
                             " the cited Ch. 14 §8 item begins"
                         )
                     },
@@ -1544,18 +1552,18 @@ def _fit_type_cell(fit_type: str) -> object:
     """One Fit-for-MAS table label, including the two admitted type-1 subtypes."""
     titles = {
         psm.FIT_TYPE_1_A: (
-            "Type 1A: type 1 with non-plain initial stress on the next chanted word."
+            "Type 1A: type 1 with non-plain initial stress on the next word."
         ),
         psm.FIT_TYPE_1_B: (
-            "Type 1B: type 1 with plain initial stress on the next chanted word, "
+            "Type 1B: type 1 with plain initial stress on the next word, "
             "marked by a pashta stress helper."
         ),
         psm.FIT_TYPE_2_A: (
-            "Type 2A: the chanted word is closed by a guttural, and the next chanted word"
+            "Type 2A: the word is closed by a guttural, and the next word"
             " begins with ל (lamed)."
         ),
         psm.FIT_TYPE_2_B: (
-            "Type 2B: the chanted word is closed by a guttural, and the next chanted word"
+            "Type 2B: the word is closed by a guttural, and the next word"
             " begins with a guttural."
         ),
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
@@ -2219,7 +2227,7 @@ def _footnotes(survey: dict) -> list:
         *_post_silluq_footnote(survey),
         *_nonfinal_mas_syllable_footnote(survey),
         mb_html.heading_level_3(
-            ("φ3 — ", _ref_link(exception["bcv"])), {"id": _JEREMIAH_FOOTNOTE_ID}
+            "φ3 — Next word lacking initial stress", {"id": _JEREMIAH_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
@@ -2321,7 +2329,7 @@ def _dually_cantillated_passages(survey: dict) -> list:
         _table(headers, rows),
         mb_html.para(
             (
-                "The difference in number of chanted words between ",
+                "The difference in number of words between ",
                 _cantillation_label(psm.CANT_ALEF),
                 " and ",
                 _cantillation_label(psm.CANT_BET),
@@ -2329,7 +2337,7 @@ def _dually_cantillated_passages(survey: dict) -> list:
                 _ref_link(chanted_word_difference["bcv"]),
                 ": ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has two chanted words where ",
+                " has two words where ",
                 _cantillation_label(psm.CANT_BET),
                 " has one ",
                 _ROM_MAQAF,
@@ -2352,9 +2360,9 @@ def _dually_cantillated_passages(survey: dict) -> list:
                 _cantillation_label(psm.CANT_BET),
                 " has one ",
                 _ROM_METEG,
-                " before the stress in the chanted word below; ",
+                " before the stress in the word below; ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has the two chanted words below, neither with a ",
+                " has the two words below, neither with a ",
                 _ROM_METEG,
                 ".",
             )
@@ -2456,13 +2464,16 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
     """Footnote 2: the four nonfinal MAS syllables."""
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     assert len(nonfinal_mas_syllable_records) == 4
+    assert all(
+        _case_filter_subtype(record) == "2C" for record in nonfinal_mas_syllable_records
+    )
     return [
         mb_html.heading_level_3(
             "φ2 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
-                "The four exceptions are type-2 MAS cases: each MAS syllable is an open"
+                "The four exceptions are all MAS cases of subtype 2C: each MAS syllable is an open"
                 " penultimate ",
                 _ROM_TSERE,
                 " syllable before a final furtive-",
@@ -2537,14 +2548,14 @@ def _fit_for_mas_facts(survey: dict) -> list:
         ),
         mb_html.table_row_of_data(
             (
-                "The next chanted word has a conjunctive accent.",
+                "The next word has a conjunctive accent.",
                 f"{mas_not_in_the_table['next_word_not_disjunctive']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The next chanted word does not have initial stress.",
+                "The next word does not have initial stress.",
                 f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}",
             ),
             (None, _NUMERIC_CELL),
@@ -2588,7 +2599,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 "The potential MAS syllable comes immediately after a nonfinal stress"
                 " syllable with a conjunctive accent.",
-                "The next chanted word has initial stress and a disjunctive accent.",
+                "The next word has initial stress and a disjunctive accent.",
                 "The potential MAS syllable is type 1A, type 1B, type 2A, type 2B, or"
                 " type 3.",
             )
@@ -2639,21 +2650,21 @@ def _next_conjunctive_footnote(survey: dict) -> list:
     )
     rows = [
         mb_html.table_row_of_data(
-            (_ref_link(record["bcv"]), _case_chanted_word_cell(record)),
-            (None, _HEBREW_CELL),
+            (
+                _ref_link(record["bcv"]),
+                _case_chanted_word_cell(record),
+                _case_filter_subtype(record) or "",
+            ),
+            (None, _HEBREW_CELL, None),
         )
         for record in records
     ]
     return [
         mb_html.heading_level_3(
-            "φ4 — Next chanted words with a conjunctive accent",
+            "φ4 — Next words with a conjunctive accent",
             {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
         ),
-        mb_html.para(
-            "The next chanted word is gray in every row. The table lists every MAS"
-            " case whose next chanted word has a conjunctive accent."
-        ),
-        _table(("Verse", "Word"), rows),
+        _table(("", "", "Subtype"), rows),
     ]
 
 
