@@ -1303,9 +1303,6 @@ def _census_definitions(survey: dict) -> list:
         mb_html.para(
             "No MAS word has more than one meteg mark after the stress: every MAS word has exactly one meteg mark after the stress.",
         ),
-        mb_html.heading_level_3(
-            "The ten MAS chanted words that also have a meteg before the stress"
-        ),
         mb_html.para(
             "There are ten MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
         ),
@@ -1319,7 +1316,6 @@ def _census_definitions(survey: dict) -> list:
                 for record in records
             ],
         ),
-        mb_html.para("All ten chanted words also meet the Fit-for-MAS definition."),
     ]
 
 
