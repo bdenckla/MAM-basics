@@ -1216,17 +1216,19 @@ def _case_list_link(survey: dict) -> list:
 
 def _fit_for_mas_question(survey: dict) -> list:
     """The closing question in the three-types section."""
+    fit_for_mas = _fit_for_mas(survey)
+    type_3_counts = fit_for_mas["by_structural_type"][psm.TYPE_CLOSED_TSERE]
+    type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
     return [
         mb_html.para(
             (
                 "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS, i.e. in situations where a potential MAS syllable comes immediately"
-                " after a nonfinal stress syllable with a conjunctive accent, the next chanted"
-                " word has initial stress and a disjunctive accent, and the potential MAS"
-                " syllable meets one of the three MAS types. The answer is that a MAS actually"
-                " appears only ",
-                f"{_fit_for_mas(survey)['with_mas'] / _fit_for_mas(survey)['fitting_any_type']:.1%}",
-                " of the time in situations fit for MAS. (",
+                " a MAS. The answer is that a MAS actually appears only ",
+                f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
+                " of the time in situations fit for MAS, but the “yield” varies widely over"
+                " the three MAS types. Notably, the type 3 “yield” is ",
+                f"{type_3_yield:.0%}",
+                ". (",
                 _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
                 ")",
             )
