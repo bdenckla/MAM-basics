@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page, methods page, and six case pages.
+r"""MAM's metegs after the primary stress: the main page, methods page, and three case pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -23,7 +23,7 @@ subject; and what the page is about is which SYLLABLE a mark falls in, which a r
 see without the vowels that make the syllables.  Both of the page's three structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
 the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
-generation time. The Fit-for-MAS lack pages use each record's ``mam_form`` and
+generation time. The Fit-for-MAS lack page uses each record's ``mam_form`` and
 ``next_mam_form``; analysis-only annotations are omitted before HTML is written. None is
 typed here.
 
@@ -93,22 +93,10 @@ _METHODS_FNAME = site_data.POST_STRESS_METEG_METHODS_FNAME
 _METHODS_TITLE = site_data.POST_STRESS_METEG_METHODS_TITLE
 _CASES_FNAME = site_data.POST_STRESS_METEG_CASES_FNAME
 _CASES_TITLE = site_data.POST_STRESS_METEG_CASES_TITLE
-_TYPE_1_FNAME = site_data.POST_STRESS_METEG_TYPE_1_FNAME
-_TYPE_1_TITLE = site_data.POST_STRESS_METEG_TYPE_1_TITLE
-_TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
-_TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
-_TYPE_2_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME
-_TYPE_2_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_TITLE
-_TYPE_1_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME
-_TYPE_1_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE
-_LACKS_MAS_FNAME_BY_FIT_TYPE = {
-    psm.FIT_TYPE_1_A: _TYPE_1_LACKS_MAS_FNAME,
-    psm.FIT_TYPE_1_B: _TYPE_1_LACKS_MAS_FNAME,
-    psm.FIT_TYPE_2_A: _TYPE_2_LACKS_MAS_FNAME,
-    psm.FIT_TYPE_2_B: _TYPE_2_LACKS_MAS_FNAME,
-}
+_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_LACKS_MAS_FNAME
+_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_LACKS_MAS_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
@@ -260,12 +248,41 @@ _TYPE_2_SUBTYPE_SPECS = (
         "2C: The next word begins with neither ל nor a guttural.",
     ),
 )
+_TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP = {
+    group: code for group, code, _description in _TYPE_2_SUBTYPE_SPECS
+}
+_CASE_FILTER_OPTIONS = (
+    ("all", "All types"),
+    ("1", "Type 1"),
+    ("1A", "Type 1A"),
+    ("1B", "Type 1B"),
+    ("1C", "Type 1C"),
+    ("1D", "Type 1D"),
+    ("2", "Type 2"),
+    ("2A", "Type 2A"),
+    ("2B", "Type 2B"),
+    ("2C", "Type 2C"),
+    ("3", "Type 3"),
+    ("other", "misc"),
+)
+_LACKS_MAS_FILTER_OPTIONS = tuple(
+    (fit_type, f"Type {fit_type}")
+    for fit_type in (
+        psm.FIT_TYPE_1_A,
+        psm.FIT_TYPE_1_B,
+        psm.FIT_TYPE_2_A,
+        psm.FIT_TYPE_2_B,
+    )
+)
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
 _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
 _CASE_TABLE_CLASS = "post-stress-meteg-cases-table"
 _CASE_STRIPED_ROW_CLASS = "post-stress-meteg-cases-striped-row"
 _NEXT_WORD_CLASS = "post-stress-meteg-next-word"
+_LACKS_MAS_TABLE_ID = "post-stress-meteg-lacks-mas-cases"
+_LACKS_MAS_SUBTYPE_FILTER_ID = "post-stress-meteg-lacks-mas-subtype-filter"
+_LACKS_MAS_SELECTED_COUNT_ID = "post-stress-meteg-lacks-mas-selected-count"
 _HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
@@ -273,13 +290,7 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
     "post-stress-meteg-individually-expanded-hebrew"
 )
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
-_TYPE_1_TABLE_ID = "post-stress-meteg-type-1-cases"
-_TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
-_TYPE_1_SUBTYPE_FILTER_ID = "post-stress-meteg-type-1-subtype-filter"
-_TYPE_1_SELECTED_COUNT_ID = "post-stress-meteg-type-1-selected-count"
-_TYPE_2_NEXT_FILTER_ID = "post-stress-meteg-type-2-next-filter"
-_TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
@@ -337,7 +348,9 @@ const selectedCount = document.getElementById("{_CASE_SELECTED_COUNT_ID}");
 function updateCaseRows() {{
   let visibleCount = 0;
   for (const row of caseRows) {{
-    const isSelected = typeFilter.value === "all" || row.dataset.type === typeFilter.value;
+    const isSelected = typeFilter.value === "all" ||
+      row.dataset.type === typeFilter.value ||
+      row.dataset.subtype === typeFilter.value;
     row.hidden = !isSelected;
     row.classList.toggle(
       "{_CASE_STRIPED_ROW_CLASS}",
@@ -357,16 +370,16 @@ typeFilter.addEventListener("change", () => {{
 updateCaseRows();
 </script>
 """
-_TYPE_2_FILTER_SCRIPT = f"""<script>
-const nextFilter = document.getElementById("{_TYPE_2_NEXT_FILTER_ID}");
-const type2Rows = document.querySelectorAll("#{_TYPE_2_TABLE_ID} tr[data-next-initial]");
-const type2SelectedCount = document.getElementById("{_TYPE_2_SELECTED_COUNT_ID}");
+_LACKS_MAS_FILTER_SCRIPT = f"""<script>
+const lacksMasSubtypeFilter = document.getElementById("{_LACKS_MAS_SUBTYPE_FILTER_ID}");
+const lacksMasRows = document.querySelectorAll("#{_LACKS_MAS_TABLE_ID} tr[data-subtype]");
+const lacksMasSelectedCount = document.getElementById("{_LACKS_MAS_SELECTED_COUNT_ID}");
 
-function updateType2Rows() {{
+function updateLacksMasRows() {{
   let visibleCount = 0;
-  for (const row of type2Rows) {{
-    const isSelected = nextFilter.value === "all" ||
-      row.dataset.nextInitial === nextFilter.value;
+  for (const row of lacksMasRows) {{
+    const isSelected = lacksMasSubtypeFilter.value === "all" ||
+      row.dataset.subtype === lacksMasSubtypeFilter.value;
     row.hidden = !isSelected;
     row.classList.toggle(
       "{_CASE_STRIPED_ROW_CLASS}",
@@ -376,51 +389,22 @@ function updateType2Rows() {{
       visibleCount += 1;
     }}
   }}
-  type2SelectedCount.textContent = "Showing " + visibleCount + " row" +
+  lacksMasSelectedCount.textContent = "Showing " + visibleCount + " row" +
     (visibleCount === 1 ? "" : "s") + ".";
 }}
 
-nextFilter.addEventListener("change", () => {{
-  updateType2Rows();
+lacksMasSubtypeFilter.addEventListener("change", () => {{
+  updateLacksMasRows();
 }});
-updateType2Rows();
-</script>
-"""
-_TYPE_1_FILTER_SCRIPT = f"""<script>
-const type1SubtypeFilter = document.getElementById("{_TYPE_1_SUBTYPE_FILTER_ID}");
-const type1Rows = document.querySelectorAll("#{_TYPE_1_TABLE_ID} tr[data-subtype]");
-const type1SelectedCount = document.getElementById("{_TYPE_1_SELECTED_COUNT_ID}");
-
-function updateType1Rows() {{
-  let visibleCount = 0;
-  for (const row of type1Rows) {{
-    const isSelected = type1SubtypeFilter.value === "all" ||
-      row.dataset.subtype === type1SubtypeFilter.value;
-    row.hidden = !isSelected;
-    row.classList.toggle(
-      "{_CASE_STRIPED_ROW_CLASS}",
-      isSelected && visibleCount % 2 === 1,
-    );
-    if (isSelected) {{
-      visibleCount += 1;
-    }}
-  }}
-  type1SelectedCount.textContent = "Showing " + visibleCount + " row" +
-    (visibleCount === 1 ? "" : "s") + ".";
-}}
-
-type1SubtypeFilter.addEventListener("change", () => {{
-  updateType1Rows();
-}});
-updateType1Rows();
+updateLacksMasRows();
 </script>
 """
 
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str, str, str]:
-    """Write the main page, its Methods page, and the six case pages.
+) -> tuple[str, str, str, str, str]:
+    """Write the main page, its Methods page, and the three case pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -436,33 +420,23 @@ def gen_html_files(
             top_dir / _METHODS_FNAME, _METHODS_TITLE, build_methods_body(survey)
         ),
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
-        _write_page(top_dir / _TYPE_1_FNAME, _TYPE_1_TITLE, build_type_1_body(survey)),
-        _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
         _write_page(top_dir / _MISC_FNAME, _MISC_TITLE, build_misc_body(survey)),
         _write_page(
-            top_dir / _TYPE_2_LACKS_MAS_FNAME,
-            _TYPE_2_LACKS_MAS_TITLE,
-            build_type_2_lacks_mas_body(survey),
-        ),
-        _write_page(
-            top_dir / _TYPE_1_LACKS_MAS_FNAME,
-            _TYPE_1_LACKS_MAS_TITLE,
-            build_type_1_lacks_mas_body(survey),
+            top_dir / _LACKS_MAS_FNAME,
+            _LACKS_MAS_TITLE,
+            build_lacks_mas_body(survey),
         ),
     )
-    _assert_no_phonetic_mam_annotations_in_lacks_mas_pages(out_paths[-2:])
+    _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[-1])
     return out_paths
 
 
-def _assert_no_phonetic_mam_annotations_in_lacks_mas_pages(
-    paths_to_check: tuple[str, str],
-) -> None:
-    """Prevent Phonetic MAM's analysis-only marks from reaching the two reader pages."""
+def _assert_no_phonetic_mam_annotations_in_lacks_mas_page(path_string: str) -> None:
+    """Prevent Phonetic MAM's analysis-only marks from reaching the reader page."""
     forbidden = {chr(code_point) for code_point in psm._PHONETIC_MAM_ANNOTATIONS}
-    for path_string in paths_to_check:
-        path = Path(path_string)
-        present = forbidden & set(path.read_text(encoding="utf-8"))
-        assert not present, (path, present)
+    path = Path(path_string)
+    present = forbidden & set(path.read_text(encoding="utf-8"))
+    assert not present, (path, present)
 
 
 def _write_page(path: Path, title: str, body: list) -> str:
@@ -581,9 +555,11 @@ def _actual_type_1_mas(survey: dict) -> dict:
     return survey["actual_type_1_mas"]
 
 
-def _lacks_mas_cases(survey: dict) -> dict:
-    """The tables displayed by the pages linked from the complete Fit-for-MAS records."""
-    return psm._lacks_mas_case_lists(_fit_for_mas(survey)["records"])
+def _lacks_mas_records(survey: dict) -> list[dict]:
+    """Every chanted-word pair fit for MAS but lacking MAS, in corpus order."""
+    return [
+        record for record in _fit_for_mas(survey)["records"] if not record["has_mas"]
+    ]
 
 
 def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
@@ -806,24 +782,17 @@ def pin_claims(survey: dict) -> None:
             (psm.FIT_TYPE_3, True): 41,
         }
     )
-    lacks_mas_cases = _lacks_mas_cases(survey)
-    type_2_lacks_mas_cases = lacks_mas_cases["type_2_all"]
-    type_1_lacks_mas_samples = lacks_mas_cases["type_1_random_sample"]
-    assert len(type_2_lacks_mas_cases) == 40
-    assert len(type_1_lacks_mas_samples[_PROSE]) == 100
-    assert len(type_1_lacks_mas_samples[_POETIC]) == 10
-    assert len(type_2_lacks_mas_cases) == (
-        fit_for_mas["by_fit_type"][psm.FIT_TYPE_2_A]["without_mas"]
-        + fit_for_mas["by_fit_type"][psm.FIT_TYPE_2_B]["without_mas"]
+    lacks_mas_records = _lacks_mas_records(survey)
+    assert len(lacks_mas_records) == fit_for_mas["without_mas"]
+    assert Counter(record["fit_type"] for record in lacks_mas_records) == Counter(
+        {
+            psm.FIT_TYPE_1_A: 113,
+            psm.FIT_TYPE_1_B: 31,
+            psm.FIT_TYPE_2_A: 6,
+            psm.FIT_TYPE_2_B: 34,
+        }
     )
-    assert all(
-        record["chanted_word"]
-        for record in (
-            type_2_lacks_mas_cases
-            + type_1_lacks_mas_samples[_PROSE]
-            + type_1_lacks_mas_samples[_POETIC]
-        )
-    )
+    assert all(record["chanted_word"] for record in lacks_mas_records)
     assert (
         sum(fit_for_mas["accent_grammar_token_counts"].values())
         == fit_for_mas["candidate_chanted_words"]
@@ -1513,13 +1482,6 @@ def _type_1_subtypes(survey: dict) -> list:
             )
         ),
         _table(headers, rows),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(f"{total:,} type 1 cases", _TYPE_1_FNAME),
-                " have a separate table whose filter uses the subtype.",
-            )
-        ),
     ]
 
 
@@ -1557,13 +1519,6 @@ def _type_2_subtypes(survey: dict) -> list:
             tuple(description for _group, _code, description in _TYPE_2_SUBTYPE_SPECS)
         ),
         _table(("Subtype", "Prose", "Poetic", "All", "Example"), rows),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(f"{total:,} type 2 cases", _TYPE_2_FNAME),
-                " have a separate table whose filter uses the subtype.",
-            )
-        ),
     ]
 
 
@@ -1706,6 +1661,10 @@ def _oleh_chanted_word_cell(record: dict) -> tuple:
 
 
 def _case_row(record: dict) -> object:
+    subtype = _case_filter_subtype(record)
+    attrs = {"data-type": _case_type_code(record["structural_type"])}
+    if subtype is not None:
+        attrs["data-subtype"] = subtype
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
@@ -1715,20 +1674,20 @@ def _case_row(record: dict) -> object:
                     record["structural_type"], unqualified_word=True, misc_label=True
                 )
             ),
-            mb_html.table_datum(_case_subtype_cell(record["subtype"])),
+            mb_html.table_datum(
+                subtype
+                if subtype is not None
+                else _case_subtype_cell(record["subtype"])
+            ),
         ),
-        {"data-type": _case_type_code(record["structural_type"])},
+        attrs,
     )
 
 
 def _case_type_filter(case_count: int) -> object:
-    options = (
-        ("all", "All types"),
-        *((code, f"Type {code}") for code, _gloss in _TYPE_CODES.values()),
-        ("other", "misc"),
-    )
     option_html = "".join(
-        f'<option value="{value}">{label}</option>' for value, label in options
+        f'<option value="{value}">{label}</option>'
+        for value, label in _CASE_FILTER_OPTIONS
     )
     return mb_html.raw_html(
         f'<p><label for="{_CASE_TYPE_FILTER_ID}">Show </label>'
@@ -1744,15 +1703,6 @@ def _type_2_records(survey: dict) -> list[dict]:
         record
         for record in survey["post_stress"]
         if record["structural_type"] == psm.TYPE_GUTTURAL
-    ]
-
-
-def _type_1_records(survey: dict) -> list[dict]:
-    """The survey's type-1 records, in the corpus's order."""
-    return [
-        record
-        for record in survey["post_stress"]
-        if record["structural_type"] == psm.TYPE_OPEN
     ]
 
 
@@ -1786,36 +1736,26 @@ def _type_1_subtype_code(record: dict) -> str:
     return _TYPE_1_SUBTYPE_CODES[record["type_1_subtype"]]
 
 
-def _type_1_case_row(record: dict) -> object:
-    return mb_html.table_row(
-        (
-            mb_html.table_datum(_ref_link(record["bcv"])),
-            mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
-        ),
-        {"data-subtype": _type_1_subtype_code(record)},
-    )
-
-
-def _type_2_case_row(record: dict) -> object:
-    return mb_html.table_row(
-        (
-            mb_html.table_datum(_ref_link(record["bcv"])),
-            mb_html.table_datum(
-                _case_chanted_word_cell(record),
-                _HEBREW_CELL,
-            ),
-        ),
-        {"data-next-initial": _type_2_filter_group(record)},
-    )
+def _case_filter_subtype(record: dict) -> str | None:
+    """The subtype used by the all-cases page's flat filter list."""
+    structural_type = record["structural_type"]
+    if structural_type == psm.TYPE_OPEN:
+        return _type_1_subtype_code(record)
+    if structural_type == psm.TYPE_GUTTURAL:
+        return _TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP[_type_2_filter_group(record)]
+    return None
 
 
 def _lacks_mas_case_row(record: dict) -> object:
     """One MAM chanted-word pair fit for MAS but lacking MAS."""
+    fit_type = record["fit_type"]
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
-        )
+            mb_html.table_datum(_fit_type_cell(fit_type)),
+        ),
+        {"data-subtype": fit_type},
     )
 
 
@@ -1829,45 +1769,22 @@ def _misc_case_row(record: dict) -> object:
     )
 
 
-def _type_2_next_filter(case_count: int) -> object:
-    options = (
-        ("all", "All type 2 cases"),
-        ("lamed", "Subtype 2A: begins with ל (lamed)"),
-        ("guttural", "Subtype 2B: begins with a guttural"),
-        ("not-lamed-or-guttural", "Subtype 2C: neither ל nor a guttural"),
-    )
+def _lacks_mas_subtype_filter(case_count: int) -> object:
+    """The unified lacks-MAS table's subtype filter."""
     option_html = "".join(
-        f'<option value="{value}">{label}</option>' for value, label in options
+        f'<option value="{value}">{label}</option>'
+        for value, label in (("all", "All subtypes"), *_LACKS_MAS_FILTER_OPTIONS)
     )
     return mb_html.raw_html(
-        f'<p><label for="{_TYPE_2_NEXT_FILTER_ID}">Show </label>'
-        f'<select id="{_TYPE_2_NEXT_FILTER_ID}">{option_html}</select>. '
-        f'<output id="{_TYPE_2_SELECTED_COUNT_ID}" aria-live="polite">'
-        f"Showing {case_count:,} rows.</output></p>\n"
-    )
-
-
-def _type_1_subtype_filter(case_count: int) -> object:
-    options = (
-        ("all", "All type 1 cases"),
-        ("1A", "Subtype 1A"),
-        ("1B", "Subtype 1B"),
-        ("1C", "Subtype 1C"),
-        ("1D", "Subtype 1D"),
-    )
-    option_html = "".join(
-        f'<option value="{value}">{label}</option>' for value, label in options
-    )
-    return mb_html.raw_html(
-        f'<p><label for="{_TYPE_1_SUBTYPE_FILTER_ID}">Show </label>'
-        f'<select id="{_TYPE_1_SUBTYPE_FILTER_ID}">{option_html}</select>. '
-        f'<output id="{_TYPE_1_SELECTED_COUNT_ID}" aria-live="polite">'
+        f'<p><label for="{_LACKS_MAS_SUBTYPE_FILTER_ID}">Show </label>'
+        f'<select id="{_LACKS_MAS_SUBTYPE_FILTER_ID}">{option_html}</select>. '
+        f'<output id="{_LACKS_MAS_SELECTED_COUNT_ID}" aria-live="polite">'
         f"Showing {case_count:,} rows.</output></p>\n"
     )
 
 
 def _back_to_fit_for_mas_table() -> object:
-    """A standard return link for a case page that the Fit for MAS table opens."""
+    """A standard return link for the unified Fit-for-MAS case page."""
     return mb_html.para(
         (
             "← Back to ",
@@ -1881,113 +1798,28 @@ def _back_to_fit_for_mas_table() -> object:
     )
 
 
-def build_type_1_body(survey: dict) -> list:
-    """The type-1 cases, filterable by next-chanted-word-stress subtype."""
-    records = _type_1_records(survey)
-    rows = [_type_1_case_row(record) for record in records]
+def build_lacks_mas_body(survey: dict) -> list:
+    """Every chanted-word pair fit for MAS but lacking MAS, filterable by subtype."""
+    records = _lacks_mas_records(survey)
     return [
-        mb_html.heading_level_1(_visible_title(_TYPE_1_TITLE)),
-        _hebrew_spacing_option(),
-        mb_html.para(
-            (
-                "← Back to ",
-                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
-                " or the ",
-                mb_html.anchor_h(
-                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
-                ),
-                ".",
-            )
-        ),
-        mb_html.heading_level_2("Every type 1 case in MAM"),
-        _type_1_subtype_filter(len(rows)),
-        _table(
-            ("Verse", "Word"),
-            rows,
-            {
-                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
-                "id": _TYPE_1_TABLE_ID,
-            },
-        ),
-        mb_html.raw_html(_TYPE_1_FILTER_SCRIPT),
-    ]
-
-
-def build_type_2_body(survey: dict) -> list:
-    """The type-2 cases, grouped by the next chanted word's initial consonant."""
-    records = _type_2_records(survey)
-    rows = [_type_2_case_row(record) for record in records]
-    return [
-        mb_html.heading_level_1(_visible_title(_TYPE_2_TITLE)),
-        _hebrew_spacing_option(),
-        mb_html.para(
-            (
-                "← Back to ",
-                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
-                " or the ",
-                mb_html.anchor_h(
-                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
-                ),
-                ".",
-            )
-        ),
-        mb_html.heading_level_2("Every type 2 case in MAM"),
-        _type_2_next_filter(len(rows)),
-        _table(
-            ("Verse", "Word"),
-            rows,
-            {
-                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
-                "id": _TYPE_2_TABLE_ID,
-            },
-        ),
-        mb_html.raw_html(_TYPE_2_FILTER_SCRIPT),
-    ]
-
-
-def build_type_2_lacks_mas_body(survey: dict) -> list:
-    """Every type-2A/2B chanted word fit for MAS but lacking MAS."""
-    records = _lacks_mas_cases(survey)["type_2_all"]
-    return [
-        mb_html.heading_level_1(_visible_title(_TYPE_2_LACKS_MAS_TITLE)),
+        mb_html.heading_level_1(_visible_title(_LACKS_MAS_TITLE)),
         _hebrew_spacing_option(),
         _back_to_fit_for_mas_table(),
-        mb_html.heading_level_2("Every type 2A or 2B case lacking MAS"),
+        mb_html.heading_level_2("Every case fit for MAS that lacks MAS"),
         _para(
-            f"The table lists all {len(records):,} chanted-word pairs fit for MAS as type 2A"
-            " or type 2B that lack MAS."
+            f"The table lists all {len(records):,} chanted-word pairs fit for MAS that lack"
+            " MAS."
         ),
+        _lacks_mas_subtype_filter(len(records)),
         _table(
-            ("Verse", "Word"),
+            ("Verse", "Word", "Subtype"),
             [_lacks_mas_case_row(record) for record in records],
+            {
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
+                "id": _LACKS_MAS_TABLE_ID,
+            },
         ),
-    ]
-
-
-def build_type_1_lacks_mas_body(survey: dict) -> list:
-    """The selected type-1A/type-1B chanted words fit for MAS but lacking MAS."""
-    samples = _lacks_mas_cases(survey)["type_1_random_sample"]
-    prose_records = samples[_PROSE]
-    poetic_records = samples[_POETIC]
-    return [
-        mb_html.heading_level_1(_visible_title(_TYPE_1_LACKS_MAS_TITLE)),
-        _hebrew_spacing_option(),
-        _back_to_fit_for_mas_table(),
-        mb_html.heading_level_2("A random selection of type 1 cases lacking MAS"),
-        _para(
-            "Each chanted-word pair in the two tables is fit for MAS as type 1A or 1B and"
-            " lacks MAS."
-        ),
-        mb_html.heading_level_3(f"{len(prose_records):,} prose cases"),
-        _table(
-            ("Verse", "Word"),
-            [_lacks_mas_case_row(record) for record in prose_records],
-        ),
-        mb_html.heading_level_3(f"{len(poetic_records):,} poetic cases"),
-        _table(
-            ("Verse", "Word"),
-            [_lacks_mas_case_row(record) for record in poetic_records],
-        ),
+        mb_html.raw_html(_LACKS_MAS_FILTER_SCRIPT),
     ]
 
 
@@ -2090,13 +1922,6 @@ def build_cases_body(survey: dict) -> list:
                 ", the intervening ",
                 _ROM_PASEQ,
                 " is gray with the next word.",
-            )
-        ),
-        mb_html.para(
-            (
-                "Type 2 has a ",
-                mb_html.anchor_h("separate table", _TYPE_2_FNAME),
-                " filtered by the next word's initial consonant.",
             )
         ),
         _case_type_filter(len(rows)),
@@ -2676,12 +2501,6 @@ def _fit_for_mas_facts(survey: dict) -> list:
         assert candidates > 0
         return f"{with_mas / candidates:.1%}"
 
-    def lacks_mas_count(kind: str, count: int) -> object:
-        filename = _LACKS_MAS_FNAME_BY_FIT_TYPE.get(kind)
-        if filename is None:
-            return f"{count:,}"
-        return mb_html.anchor_h(f"{count:,}", filename)
-
     headers = ("Type", "Fit for MAS", "Has MAS", "% has MAS", "Lacks MAS")
     rows = [
         mb_html.table_row_of_data(
@@ -2690,7 +2509,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 f"{counts['candidates']:,}",
                 f"{counts['with_mas']:,}",
                 has_mas_percentage(counts["with_mas"], counts["without_mas"]),
-                lacks_mas_count(kind, counts["without_mas"]),
+                f"{counts['without_mas']:,}",
             ),
             (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
@@ -2779,6 +2598,16 @@ def _fit_for_mas_facts(survey: dict) -> list:
             " criteria and how often MAS does not occur."
         ),
         _table(headers, rows),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(
+                    f"{fit_for_mas['without_mas']:,} cases fit for MAS that lack MAS",
+                    _LACKS_MAS_FNAME,
+                ),
+                " are listed separately and can be filtered by subtype.",
+            )
+        ),
         mb_html.heading_level_3("MAS cases that are not fit for MAS"),
         mb_html.para(
             (

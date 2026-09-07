@@ -90,7 +90,6 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
-from random import Random
 
 from accgram import maqaf_nonfinal_accents as mna
 from accgram import poetic_accent_names as pan
@@ -1304,11 +1303,6 @@ def _fit_for_mas_candidate(
     return candidate
 
 
-_TYPE_1_PROSE_LACKS_MAS_SAMPLE_SIZE = 100
-_TYPE_1_POETIC_LACKS_MAS_SAMPLE_SIZE = 10
-_LACKS_MAS_SAMPLE_SEED = 20260906
-
-
 def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     """Whether a candidate has every Fit-for-MAS property apart from its type criterion."""
     return (
@@ -1363,17 +1357,6 @@ def _is_fit_for_mas(candidate: dict) -> bool:
     )
 
 
-def _sample_in_corpus_order(
-    candidates: list[dict], count: int, random: Random
-) -> list[dict]:
-    """A fixed random sample, restored to the corpus order for the rendered table."""
-    assert len(candidates) >= count, (len(candidates), count)
-    return [
-        candidates[index]
-        for index in sorted(random.sample(range(len(candidates)), count))
-    ]
-
-
 def _fit_for_mas_record(candidate: dict) -> dict:
     """The complete public-data record for one chanted-word pair fit for MAS."""
     assert _is_fit_for_mas(candidate), candidate
@@ -1404,38 +1387,6 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "next_chanted_word_has_disjunctive_accent": candidate[
             "next_chanted_word_has_disjunctive_accent"
         ],
-    }
-
-
-def _lacks_mas_case_lists(records: list[dict]) -> dict:
-    """The type-2A/2B and selected type-1 tables from complete Fit-for-MAS data."""
-
-    def lacking(kind: str, system: str | None = None) -> list[dict]:
-        return [
-            record
-            for record in records
-            if (
-                kind in record["types"]
-                and not record["has_mas"]
-                and (system is None or record["system"] == system)
-            )
-        ]
-
-    random = Random(_LACKS_MAS_SAMPLE_SEED)
-    return {
-        "type_2_all": lacking(TYPE_GUTTURAL),
-        "type_1_random_sample": {
-            SYSTEM_PROSE: _sample_in_corpus_order(
-                lacking(TYPE_OPEN, SYSTEM_PROSE),
-                _TYPE_1_PROSE_LACKS_MAS_SAMPLE_SIZE,
-                random,
-            ),
-            SYSTEM_POETIC: _sample_in_corpus_order(
-                lacking(TYPE_OPEN, SYSTEM_POETIC),
-                _TYPE_1_POETIC_LACKS_MAS_SAMPLE_SIZE,
-                random,
-            ),
-        },
     }
 
 
