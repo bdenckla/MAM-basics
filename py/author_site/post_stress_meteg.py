@@ -72,9 +72,10 @@ _TYPE_2_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME
 _TYPE_2_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_2_LACKS_MAS_TITLE
 _TYPE_1_LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME
 _TYPE_1_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE
-_LACKS_MAS_FNAME_BY_TYPE = {
-    psm.TYPE_OPEN: _TYPE_1_LACKS_MAS_FNAME,
-    psm.TYPE_GUTTURAL: _TYPE_2_LACKS_MAS_FNAME,
+_LACKS_MAS_FNAME_BY_FIT_TYPE = {
+    psm.FIT_TYPE_1_A: _TYPE_1_LACKS_MAS_FNAME,
+    psm.FIT_TYPE_1_B: _TYPE_1_LACKS_MAS_FNAME,
+    psm.FIT_TYPE_2: _TYPE_2_LACKS_MAS_FNAME,
 }
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
@@ -110,6 +111,8 @@ _ROM_BET = _author_romanization("bet")
 _ROM_HE = _author_romanization("hehe")
 _ROM_MAPPIQ = rmn("mappiq")
 _ROM_VAYOMER = rmn("vayomer")
+_ROM_SHEWA = rmn("shewa")
+_ROM_PASHTA = rmn(pds.ROM_PASHTA)
 
 
 def _visible_title(title: str, *, lowercase: bool = False) -> tuple:
@@ -378,9 +381,11 @@ def build_body(survey: dict) -> list:
         _hebrew_spacing_option(),
         *_opening(survey),
         *_census(survey),
-        *_general_mas_facts(survey),
+        *_mas_facts(survey),
         *_by_type(survey),
         *_case_list_link(survey),
+        *_type_1_facts(survey),
+        *_case_subpage_links(survey),
         *_fit_for_mas_question(survey),
         *_footnotes(survey),
     ]
@@ -556,23 +561,48 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (2060, 207, 1853, 0)
+    ) == (496, 203, 293, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
-    assert fit_for_mas["by_structural_type"] == {
-        psm.TYPE_OPEN: {
-            "candidates": 1816,
-            "with_mas": 113,
-            "without_mas": 1703,
+    assert fit_for_mas["by_type_1_subtype"] == {
+        psm.TYPE_1_SUBTYPE_A: {
+            "candidates": 209,
+            "with_mas": 97,
+            "without_mas": 112,
+            "with_mas_by_system": {_PROSE: 93, _POETIC: 4},
         },
-        psm.TYPE_GUTTURAL: {
+        psm.TYPE_1_SUBTYPE_B: {
+            "candidates": 43,
+            "with_mas": 12,
+            "without_mas": 31,
+            "with_mas_by_system": {_PROSE: 12, _POETIC: 0},
+        },
+        psm.TYPE_1_SUBTYPE_C: {
+            "candidates": 1564,
+            "with_mas": 4,
+            "without_mas": 1560,
+            "with_mas_by_system": {_PROSE: 2, _POETIC: 2},
+        },
+    }
+    assert fit_for_mas["by_fit_type"] == {
+        psm.FIT_TYPE_1_A: {
+            "candidates": 209,
+            "with_mas": 97,
+            "without_mas": 112,
+        },
+        psm.FIT_TYPE_1_B: {
+            "candidates": 43,
+            "with_mas": 12,
+            "without_mas": 31,
+        },
+        psm.FIT_TYPE_2: {
             "candidates": 204,
             "with_mas": 54,
             "without_mas": 150,
         },
-        psm.TYPE_CLOSED_TSERE: {
+        psm.FIT_TYPE_3: {
             "candidates": 40,
             "with_mas": 40,
             "without_mas": 0,
@@ -582,6 +612,7 @@ def pin_claims(survey: dict) -> None:
         "outside_the_three_types": 7,
         "following_word_not_disjunctive": 17,
         "following_word_not_initially_stressed": 1,
+        "type_1_subtype_C": 4,
     }
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
@@ -600,14 +631,16 @@ def pin_claims(survey: dict) -> None:
         for record in fitting_records
     )
     assert Counter(
-        (record["types"][0], record["has_mas"]) for record in fitting_records
+        (record["fit_type"], record["has_mas"]) for record in fitting_records
     ) == Counter(
         {
-            (psm.TYPE_OPEN, True): 113,
-            (psm.TYPE_OPEN, False): 1703,
-            (psm.TYPE_GUTTURAL, True): 54,
-            (psm.TYPE_GUTTURAL, False): 150,
-            (psm.TYPE_CLOSED_TSERE, True): 40,
+            (psm.FIT_TYPE_1_A, True): 97,
+            (psm.FIT_TYPE_1_A, False): 112,
+            (psm.FIT_TYPE_1_B, True): 12,
+            (psm.FIT_TYPE_1_B, False): 31,
+            (psm.FIT_TYPE_2, True): 54,
+            (psm.FIT_TYPE_2, False): 150,
+            (psm.FIT_TYPE_3, True): 40,
         }
     )
     lacks_mas_cases = _lacks_mas_cases(survey)
@@ -618,7 +651,7 @@ def pin_claims(survey: dict) -> None:
     assert len(type_1_lacks_mas_samples[_POETIC]) == 10
     assert (
         len(type_2_lacks_mas_cases)
-        == fit_for_mas["by_structural_type"][psm.TYPE_GUTTURAL]["without_mas"]
+        == fit_for_mas["by_fit_type"][psm.FIT_TYPE_2]["without_mas"]
     )
     assert all(
         record["chanted_word"]
@@ -1019,7 +1052,7 @@ def _census(survey: dict) -> list:
     ]
 
 
-def _general_mas_facts(survey: dict) -> list:
+def _mas_facts(survey: dict) -> list:
     """Section 3: the facts shared by every MAS, before structural classification."""
     exceptions = _noninitial_following_stress_records(survey)
     assert len(exceptions) == 1
@@ -1036,7 +1069,7 @@ def _general_mas_facts(survey: dict) -> list:
         == total
     )
     return [
-        mb_html.heading_level_2("General facts about MAS"),
+        mb_html.heading_level_2("Facts about MAS"),
         mb_html.unordered_list(
             (
                 (
@@ -1184,8 +1217,6 @@ def _sources_for_types_footnote() -> list:
 
 def _case_list_link(survey: dict) -> list:
     """The main page's link to the long list of individual cases."""
-    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
-    misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     return [
         mb_html.para(
             (
@@ -1195,7 +1226,15 @@ def _case_list_link(survey: dict) -> list:
                 ),
                 " are listed separately and can be filtered by type.",
             )
-        ),
+        )
+    ]
+
+
+def _case_subpage_links(survey: dict) -> list:
+    """The additional links from the case-list paragraph to the filtered case pages."""
+    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
+    misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
+    return [
         mb_html.para(
             (
                 "The ",
@@ -1214,10 +1253,49 @@ def _case_list_link(survey: dict) -> list:
     ]
 
 
+def _type_1_facts(survey: dict) -> list:
+    """The three exclusive initial-stress subtypes among the actual type-1 MAS cases."""
+    subtype_counts = _fit_for_mas(survey)["by_type_1_subtype"]
+    headers = ("Subtype", "Following chanted word", "Prose", "Poetic", "All")
+    descriptions = {
+        psm.TYPE_1_SUBTYPE_A: (
+            "Non-plain initial stress: it starts with a vocal ",
+            _ROM_SHEWA,
+            ".",
+        ),
+        psm.TYPE_1_SUBTYPE_B: (
+            "Plain initial stress marked by a ",
+            _ROM_PASHTA,
+            " stress helper.",
+        ),
+        psm.TYPE_1_SUBTYPE_C: "Other plain initial stress.",
+    }
+    rows = [
+        mb_html.table_row_of_data(
+            (
+                subtype,
+                descriptions[subtype],
+                str(counts["with_mas_by_system"][_PROSE]),
+                str(counts["with_mas_by_system"][_POETIC]),
+                str(counts["with_mas"]),
+            ),
+            (None, None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+        )
+        for subtype, counts in subtype_counts.items()
+    ]
+    total = sum(counts["with_mas"] for counts in subtype_counts.values())
+    assert total == 113
+    return [
+        mb_html.heading_level_2("Facts about MAS type 1"),
+        mb_html.para(f"The {total:,} type 1 MAS cases divide exclusively as follows."),
+        _table(headers, rows),
+    ]
+
+
 def _fit_for_mas_question(survey: dict) -> list:
-    """The closing question in the three-types section."""
+    """The closing question after the type and type-1-subtype facts."""
     fit_for_mas = _fit_for_mas(survey)
-    type_3_counts = fit_for_mas["by_structural_type"][psm.TYPE_CLOSED_TSERE]
+    type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
     type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
     return [
         mb_html.para(
@@ -1225,8 +1303,8 @@ def _fit_for_mas_question(survey: dict) -> list:
                 "It is natural to ask how often a MAS actually appears in situations fit for"
                 " a MAS. The answer is that a MAS actually appears only ",
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
-                " of the time in situations fit for MAS, but the “yield” varies widely over"
-                " the three MAS types. Notably, the type 3 “yield” is ",
+                " of the time in situations fit for MAS, but the “yield” varies widely"
+                " between types 1A, 1B, 2, and 3. Notably, the type 3 “yield” is ",
                 f"{type_3_yield:.0%}",
                 ". (",
                 _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
@@ -1252,6 +1330,22 @@ def _case_type_cell(
     if misc_label:
         return "misc"
     return mb_html.abbr("—", {"title": "Not one of types 1, 2, or 3."})
+
+
+def _fit_type_cell(fit_type: str) -> object:
+    """One Fit-for-MAS table label, including the two admitted type-1 subtypes."""
+    titles = {
+        psm.FIT_TYPE_1_A: (
+            "Type 1A: type 1 with non-plain initial stress on the following chanted word."
+        ),
+        psm.FIT_TYPE_1_B: (
+            "Type 1B: type 1 with plain initial stress on the following chanted word, "
+            "marked by a pashta stress helper."
+        ),
+        psm.FIT_TYPE_2: "Type 2: the chanted word is closed by a guttural.",
+        psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
+    }
+    return mb_html.abbr(fit_type, {"title": titles[fit_type]})
 
 
 def _case_subtype_cell(subtype: str | None) -> object:
@@ -1537,7 +1631,7 @@ def build_type_2_lacks_mas_body(survey: dict) -> list:
 
 
 def build_type_1_lacks_mas_body(survey: dict) -> list:
-    """The selected type-1 chanted words fit for MAS but lacking MAS."""
+    """The selected type-1A/type-1B chanted words fit for MAS but lacking MAS."""
     samples = _lacks_mas_cases(survey)["type_1_random_sample"]
     prose_records = samples[_PROSE]
     poetic_records = samples[_POETIC]
@@ -1547,7 +1641,8 @@ def build_type_1_lacks_mas_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("A random selection of type 1 cases lacking MAS"),
         _para(
-            "Each chanted-word pair in the two tables is fit for MAS as type 1 and lacks MAS."
+            "Each chanted-word pair in the two tables is fit for MAS as type 1A or 1B and"
+            " lacks MAS."
         ),
         mb_html.heading_level_3(f"{len(prose_records):,} prose cases"),
         _table(
@@ -2198,7 +2293,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
         return f"{with_mas / candidates:.1%}"
 
     def lacks_mas_count(kind: str, count: int) -> object:
-        filename = _LACKS_MAS_FNAME_BY_TYPE.get(kind)
+        filename = _LACKS_MAS_FNAME_BY_FIT_TYPE.get(kind)
         if filename is None:
             return f"{count:,}"
         return mb_html.anchor_h(f"{count:,}", filename)
@@ -2207,7 +2302,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
     rows = [
         mb_html.table_row_of_data(
             (
-                _case_type_cell(kind),
+                _fit_type_cell(kind),
                 f"{counts['candidates']:,}",
                 f"{counts['with_mas']:,}",
                 has_mas_percentage(counts["with_mas"], counts["without_mas"]),
@@ -2215,12 +2310,12 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             ),
             (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
-        for kind, counts in fit_for_mas["by_structural_type"].items()
+        for kind, counts in fit_for_mas["by_fit_type"].items()
     ]
     rows.append(
         mb_html.table_row_of_data(
             (
-                mb_html.abbr("any", {"title": "any of the three types"}),
+                mb_html.abbr("any", {"title": "any of types 1A, 1B, 2, or 3"}),
                 f"{fit_for_mas['fitting_any_type']:,}",
                 f"{fit_for_mas['with_mas']:,}",
                 has_mas_percentage(fit_for_mas["with_mas"], fit_for_mas["without_mas"]),
@@ -2237,9 +2332,16 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 _ROM_METEG,
                 ". It means that a potential MAS syllable comes immediately after a nonfinal"
                 " stress syllable with a conjunctive accent, the next chanted word has initial"
-                " stress and a disjunctive accent, and the potential MAS syllable belongs to"
-                " one or more of the three MAS types below. The table records how often MAS"
-                " occurs in each such situation and how often it does not.",
+                " stress and a disjunctive accent, and the potential MAS syllable is type 2,"
+                " type 3, type 1A, or type 1B. In type 1A, the following chanted word has"
+                " non-plain initial stress because it starts with a vocal ",
+                _ROM_SHEWA,
+                ". In type 1B, the following chanted word has plain initial stress marked"
+                " by a ",
+                _ROM_PASHTA,
+                " stress helper. Type 1C has other plain initial stress and is not fit for"
+                " MAS. The table records how often MAS occurs in each such situation and how"
+                " often it does not.",
             )
         ),
         _table(headers, rows),
@@ -2247,7 +2349,7 @@ def _fit_for_mas_footnote(survey: dict) -> list:
             (
                 'The final-row "Has MAS" count is ',
                 f"{fit_for_mas['with_mas']:,}",
-                f", rather than the total of {total_mas:,} MAS cases, for three reasons:",
+                f", rather than the total of {total_mas:,} MAS cases, for four reasons:",
             )
         ),
         mb_html.ordered_list(
@@ -2263,6 +2365,10 @@ def _fit_for_mas_footnote(survey: dict) -> list:
                 (
                     f"{mas_not_in_the_table['following_word_not_initially_stressed']:,}"
                     " MAS case has a following word without initial stress."
+                ),
+                (
+                    f"{mas_not_in_the_table['type_1_subtype_C']:,} MAS cases are type 1C,"
+                    " whose following chanted word has other plain initial stress."
                 ),
             )
         ),
