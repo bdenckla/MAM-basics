@@ -37,26 +37,20 @@ that every page published at the deploy root is named by an entry or is excluded
 NAME.  Without the second, a page generated at the deploy root with no ``site_data``
 entry is published and unreachable from the index, and nothing says so.
 
-WHY THE REVERSE CHECK STOPS AT THE DEPLOY ROOT.  The pages under ``gh-pages/wlc/``,
-``gh-pages/holman/`` and ``gh-pages/book-of-job/`` are reached through their own subtree
-indexes rather than through an authored entry, so walking the whole tree would fail
-immediately and for the wrong reason.
+WHY THE REVERSE CHECK STOPS AT THE DEPLOY ROOT.  Ben's 2026-09-07 decision added authored
+landing-page entries for the UXLC, Holman and Aleppo subtree indexes.  The forward check
+therefore verifies those three index files now.  It still does not crawl the entries within
+any subtree index: pages under ``gh-pages/wlc/`` and ``gh-pages/book-of-job/``, and pages below
+the three newly linked indexes, are reached through links below the deploy root.  Requiring an
+authored landing-page entry for every nested page would fail immediately and for the wrong
+reason.
 
-BEN IS AT PEACE WITH NO LINT REACHING ``gh-pages/holman/index.html``, so do not propose
-one.  His words, 2026-09-03: *"I am at peace with no lint reaching this file."*  That
-index is hand-authored rather than generated -- no module writes it, so no re-render
-touches it -- and nothing checks that it names the pages beneath it, or that it names
-them by the titles those pages carry.  The occasion for saying so was that both its
-entries had stopped matching: one went stale that day when the Holman findings page's
-title became "Holman MAM suggestions", and the other had never matched.  Both were
-repaired by hand once a person noticed.  So the gap is accepted with its cost measured
-rather than merely unexamined, and the decision is recorded HERE, in the file a widening
-would be proposed from, rather than only in the plan that occasioned it.
-
-That decision is about the Holman index in particular and leaves the paragraph above
-standing on its own reasoning: the reverse check stops at the deploy root because a
-subtree page has no authored entry to be named by, which would be true whatever anyone
-felt about linting a subtree index.
+THE HOLMAN SUBTREE-INDEX GAP REMAINS ACCEPTED.  Ben said on 2026-09-03, *"I am at peace
+with no lint reaching this file."*  The 2026-09-07 landing-page entry reverses only the index's
+unreachability: this file now checks that ``gh-pages/holman/index.html`` exists, but still does
+not check that the hand-authored Holman index names every page beneath it or copies every page's
+title correctly.  That distinction keeps the accepted cost recorded where a future proposal to
+widen the lint will arise.
 
 WHY THE EXCLUSIONS ARE NAMED RATHER THAN INFERRED.  A deliberate omission must not be
 indistinguishable from an accident, which is what any rule of the form "skip the pages
@@ -87,7 +81,7 @@ _PAGES_PREFIX = "gh-pages/"
 _MISC_MODULE_DIR = "py/author_misc"
 _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 
-# document-index carried 25 links and this page carries 28 after the 2026-08-31 Misc trim;
+# document-index carried 25 links and this page carries 31 after the 2026-09-07 index additions;
 # if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
 # the exact count: it is a floor guarding against a broken walk, not an inventory.
 _MIN_AUTHORED_ANCHORS = 25

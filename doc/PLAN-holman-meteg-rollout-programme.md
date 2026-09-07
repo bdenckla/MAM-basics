@@ -541,6 +541,13 @@ In order:
    MAM-private `d40e0c8`, that last for the near-aleppo census goldens
    `py/main_0_mega.py` regenerates as a step.
 
+The product diffs count more removals than item 3's 29 bot removals because the
+fresh download also removed the two metegs at 2 Kings 21:12. MAM-parsed's
+`plain` and `plus` trees each remove 31 metegs and add one, for a net reduction
+of 30. Each of MAM-simple's six vtrad trees removes 30 and adds one, for a net
+reduction of 29. M13 accounts for the one-removal difference: its two
+`{{מ:קמץ}}` parameters remain separate in MAM-parsed.
+
 **A MEGA RUN FROM A WORKTREE MISDIRECTS TWO OF ITS STEPS, SILENTLY, AND THE
 MEGA'S OWN DOCSTRING SAYS OTHERWISE.** That docstring claims the mega "no longer
 writes outside the checkout it runs in, which is what makes a worktree run of it
@@ -628,7 +635,10 @@ those eleven chapters — Joshua 19, 1 Samuel 1 and 22, 2 Kings 6, 2 Chronicles
 then a Google Sheet import-and-apply round of its own, then the mega run. A
 full `py/main_download.py fr-wikisource` closes it too, and closes the whole
 2026-08-26 gap with it, at the price of bringing down a week of edits nobody
-here has reviewed.
+here has reviewed. The chapter-targeted route also includes 2 Chronicles 28, so
+it brings the current live 2 Chronicles 28:23 `{{נוסח|…}}` documentation note
+that is absent locally. That non-meteg edit was not reviewed by the 2026-09-04
+dual-agent review; the warning therefore applies to both download routes.
 
 **REAFFIRMED 2026-09-04, AFTER THE PROGRAMME FINISHED, AND BEN WILL TAKE IT UP
 HIMSELF.** His words that day, asked what the next phase was: *"I'll do this (or

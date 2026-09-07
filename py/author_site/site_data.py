@@ -161,6 +161,18 @@ _MAM = Section(
     ),
 )
 
+_HEBREW_BIBLE_RESOURCES = Section(
+    heading="Hebrew Bible resources",
+    entries=(
+        _entry("UXLC-utils web pages", "uxlc/index.html"),
+        _entry(
+            "Daniel Holman's observations on the Hebrew Bible text",
+            "holman/index.html",
+        ),
+        _entry(f"Aleppo Codex {_EM_DASH} Missing Sections", "aleppo/index.html"),
+    ),
+)
+
 _REVIEWS = Section(
     heading="Reviews",
     entries=(
@@ -320,7 +332,16 @@ _EXCERPTS = Section(
 )
 
 # document-index's order, which is Ben's.
-BY_ME = (_UNICODE, _MAM, _REVIEWS, _WLC, _URWOTM, _MISC, _TAAMEY)
+BY_ME = (
+    _UNICODE,
+    _MAM,
+    _HEBREW_BIBLE_RESOURCES,
+    _REVIEWS,
+    _WLC,
+    _URWOTM,
+    _MISC,
+    _TAAMEY,
+)
 NOT_BY_ME = (_EDITIONS, _EXCERPTS)
 
 # The MAM-with-doc half of the Misc section, and the modules whose _TITLE each entry copies.

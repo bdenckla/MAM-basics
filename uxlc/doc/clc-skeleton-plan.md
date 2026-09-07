@@ -9,13 +9,13 @@
 
 The skeleton is **built and exceeded** — the definition of done below is met, and several
 later-phase features have already landed. (See the design doc's §11 status table for the full
-picture.) Built: a `py/main_clc.py` driver writing `gh-pages/clc/<book>.html` (+ `<book>-notes.json`)
+picture.) Built: a `py/main_clc.py` driver writing `gh-pages/uxlc/clc/<book>.html` (+ `<book>-notes.json`)
 for three pilot books — **Genesis, Proverbs, 2 Samuel**.
 
 **Deviations from this plan, as built:**
 - **Note prose is the real tanach.us *note page*, not the change-log description.** A *separate*
   offline step (`py/main_clc_download_notes.py`) downloads the note pages into committed
-  `in/UXLC-notes/`; the build reads them locally and never touches the network (deterministic). The
+  `uxlc/in/UXLC-notes/`; the build reads them locally and never touches the network (deterministic). The
   change-log `<correction><description>` is kept **only** for the atom-letter consistency guard; an
   atom whose page is not yet downloaded shows a **`[note not yet downloaded]`** placeholder, never a
   fabricated substitute (issue #19). (Fixes a multi-word/numbered-book URL bug via
@@ -31,16 +31,16 @@ with two loudly-flagged charities (§7.7, `clc_dual_cant`); ketiv/qere boxed-rub
 ## Definition of done (skeleton)
 
 A driver `py/main_clc.py` that, for **one pilot book (or chapter)**, reads today's UXLC text and
-writes a static page under **`gh-pages/clc/`** in MAM-style **3 columns** (*as built:* `text | ref |
+writes a static page under **`gh-pages/uxlc/clc/`** in MAM-style **3 columns** (*as built:* `text | ref |
 doc`, ref a central spine), where the doc column shows **UXLC's own `<x>` notes** (the under-bar `m`/`d`, plus the transcription-uncertainty `t`) **as always-links**, each carrying the note's prose (*as built:* the tanach.us note
 page, downloaded offline — see Status above; the change log is only the consistency guard, and a
 not-yet-downloaded page shows a `[note not yet downloaded]` placeholder). **No accent
 grammar, no charitable resolution yet** — the skeleton proves the pipeline (read → CLC note schema →
-one renderer → `gh-pages/clc/`). Charity layers on later.
+one renderer → `gh-pages/uxlc/clc/`). Charity layers on later.
 
 ## Locked decisions (do not re-litigate)
 
-- **Home:** `py/clc/` (Python) + `gh-pages/clc/` (output). Existing repo modules are importable
+- **Home:** `py/clc/` (Python) + `gh-pages/uxlc/clc/` (output). Existing repo modules are importable
   directly (not vendored) — see the design doc §4.
 - **Notes policy:** **always link** (uniform; no MAM short-inline / long-link threshold). §7.3.
 - **Versification:** primary `vtrad-BHS`. §7.8. (No MAM-boundary coloring in the skeleton.)
@@ -52,10 +52,10 @@ one renderer → `gh-pages/clc/`). Charity layers on later.
 
 | need | use |
 |---|---|
-| read UXLC text | `uxlc_misc/my_uxlc.read(book_id)` → chapters→verses→words; or `my_uxlc.read_all_books(handlers)`. Examples: [py/main_uxlc_word_list.py](../py/main_uxlc_word_list.py), [py/main_fois.py](../py/main_fois.py) |
-| extract `<x>` note codes per atom | the FOIs reader pattern — [`_handle_wc_x`](../py/main_fois.py#L54-L59) builds `atom[2]["types"]` |
-| note **prose** (the apparatus text) | **as built:** the tanach.us *note page*, downloaded offline by [py/main_clc_download_notes.py](../py/main_clc_download_notes.py) into committed `in/UXLC-notes/` and read by [py/clc/clc_note_pages.py](../py/clc/clc_note_pages.py). The change-log `<correction><description>` ([py/uxlc_changes/](../py/uxlc_changes/), joinable by citation `ch:v.atom`) is now only the **consistency guard**, not the prose. |
-| book ids / order / cant-system | `mb_cmn.mb_cmn_bib_locales` (`ALL_BOOK_IDS`), `mb_cmn.cantsys` (prose/poetic), `_is_prose_section_of_job` |
+| read UXLC text | `uxlc_misc/my_uxlc.read(book_id)` → chapters→verses→words; or `my_uxlc.read_all_books(handlers)`. Examples: [py/main_uxlc_word_list.py](../../py/main_uxlc_word_list.py), [py/main_fois.py](../../py/main_fois.py) |
+| extract `<x>` note codes per atom | the FOIs reader pattern — [`_handle_wc_x`](../../py/main_fois.py#L54-L59) builds `atom[2]["types"]` |
+| note **prose** (the apparatus text) | **as built:** the tanach.us *note page*, downloaded offline by [py/main_clc_download_notes.py](../../py/main_clc_download_notes.py) into committed `uxlc/in/UXLC-notes/` and read by [py/clc/clc_note_pages.py](../../py/clc/clc_note_pages.py). The change-log `<correction><description>` ([py/uxlc_changes/](../../py/uxlc_changes/), joinable by citation `ch:v.atom`) is now only the **consistency guard**, not the prose. |
+| book ids / order / cant-system | `mb_cmn.bib_locales` (`ALL_BOOK_IDS`), `mb_cmn.cantsys` (prose/poetic), `_is_prose_section_of_job` |
 | JSON / file output | `mb_cmn.file_io.json_dump_to_file_path` |
 | 3-column presentation model | MAM-with-doc: `MAM-basics/py/mwd/mwd_write_book.py`, `mam_doc_utils.mark_doc_targets`, `mwd_utils.html_for_ver_ndd` (design doc §5). Output examples in `MAM-with-doc/gh-pages/*.html` |
 | fonts / css | reuse `gh-pages/woff2/Taamey_D.woff2` + `gh-pages/style.css`; borrow `mam-doc-*` CSS or define `clc-doc-*` |
@@ -63,7 +63,7 @@ one renderer → `gh-pages/clc/`). Charity layers on later.
 ## Build order
 
 1. **`py/clc/` package + `py/main_clc.py` driver** that reads one pilot book and writes
-   `gh-pages/clc/<book>.html`. Get an empty 3-column page rendering first.
+   `gh-pages/uxlc/clc/<book>.html`. Get an empty 3-column page rendering first.
 2. **CLC note schema** (one dict/dataclass): `book, ch, v, atom, word, note_code, note_text,
    source, diff_type, is_uxlc_departure, uxlc_reading, clc_reading`. Plain data (JSON-serializable)
    so the same records can later feed the §7.9 difference index. (Schema fields per design doc §8.)

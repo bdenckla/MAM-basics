@@ -89,7 +89,7 @@ Fresh measurement on 2026-09-03 began from clean trees at MAM-basics
 `897e8fd`, Leningrad `aa603a9`, Aleppo `8f1fcfd`, Cam1753 `3667b6c`, and
 diffable-pointed-hebrew `dd1fdb9`:
 
-| Repository | Tracked files | Tracked bytes | Tracked `.py` | `gh-pages/` files / HTML |
+| Repository | Tracked files | Checked-out bytes of tracked files | Tracked `.py` | `gh-pages/` files / HTML |
 | --- | ---: | ---: | ---: | ---: |
 | MAM-basics | 4,151 | 429,462,145 | 1,159 | 1,500 / 428 |
 | codex-index-leningrad | 51 | 13,388,571 | 0 | 0 / 0 |
@@ -167,7 +167,7 @@ still leave in the same Empty commit; no `frozen_repos` entry is added.
 ### Execution record — Phase 1, 2026-09-03
 
 Phase 1 re-measured clean starting heads at MAM-basics `bc358cd` (4,152 tracked
-files, 429,477,537 bytes and 1,159 tracked Python files) and
+files whose checked-out copies totalled 429,477,537 bytes, and 1,159 tracked Python files) and
 codex-index-leningrad `aa603a9` (51 tracked files, 13,388,571 bytes and no
 tracked Python). The Land manifest retained five artifacts under `leningrad/`:
 the three `lenin-wiki/` index files, the hand-maintained crop, and its README.

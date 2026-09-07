@@ -1,12 +1,13 @@
 # Codex Design A review of the 2026-09-04 public-repository window
 
-State: not acted on. Written untracked at
+State: acted on 2026-09-07. Written untracked at
 `.novc/codex-review-findings-2026-09-04.md` on Ben Denckla's 2026-09-04
 instruction not to write a tracked file while another task was active, then promoted
 to this tracked path after Ben reported that task paused and asked for the review to
 be committed. This is the Codex half of the first dual-agent review under
 `doc/dual-agent-review.md`. It is not the reconciliation and does not alter the
-Claude findings.
+Claude findings. The later remediation disposition is recorded below and in
+`doc/review-findings-2026-09-04.md`.
 
 ## Scope and method
 
@@ -70,3 +71,11 @@ a pre-existing `DATA-LICENSES.md` modification at the start. MAM-basics then adv
 concurrently through the diffable-pointed-hebrew evacuation and was clean immediately
 before this report was promoted. The review's disposable scan remains ignored at
 `.novc/codex_review_scan.py`.
+
+## Disposition after remediation, 2026-09-07
+
+The redirect-manifest wording, the Holman fail-closed parser, and the OSIS schema-path check were
+**fixed** by `726daafd`. The sibling write guard and the missing-MAM-simple advice were **rejected as
+superseded**: the 2026-09-06 product landings removed the sibling-output guard and made the
+versification test read MAM-basics' local `MAM-simple/` tree. The complete fixed/rejected table is
+in `doc/review-findings-2026-09-04.md`.

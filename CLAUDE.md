@@ -608,7 +608,7 @@ again after the source repository's Pages deployment succeeds. `../UXLC-utils` w
 `all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
 missing directory.
 
-## codex-index-leningrad is a review-forest exception
+## codex-index-leningrad has been evacuated
 
 **codex-index-leningrad is not in the roster.** Phase 1 of
 `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
