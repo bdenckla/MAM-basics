@@ -396,13 +396,13 @@
   }
  },
  "fit_for_mas": {
-  "what": "Every syllable immediately after a nonfinal primary stress with a conjunctive accent and with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD. Fit for MAS includes Types 2 and 3 and Type 1 subtypes A and B. Primary-stress position comes independently from Phonetic MAM's jta field.",
+  "what": "Every syllable immediately after a nonfinal primary stress with a conjunctive accent and with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD. Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and Type 3. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
   "candidate_chanted_words": 54019,
   "non_type_specific_conditions": 3468,
-  "fitting_any_type": 499,
-  "with_mas": 205,
-  "without_mas": 294,
+  "fitting_any_type": 384,
+  "with_mas": 200,
+  "without_mas": 184,
   "by_type_1_subtype": {
    "A": {
     "candidates": 210,
@@ -443,10 +443,15 @@
     "with_mas": 12,
     "without_mas": 31
    },
-   "2": {
-    "candidates": 205,
-    "with_mas": 55,
-    "without_mas": 150
+   "2A": {
+    "candidates": 41,
+    "with_mas": 35,
+    "without_mas": 6
+   },
+   "2B": {
+    "candidates": 49,
+    "with_mas": 15,
+    "without_mas": 34
    },
    "3": {
     "candidates": 41,
@@ -459,7 +464,8 @@
    "outside_the_three_types": 7,
    "next_word_not_disjunctive": 15,
    "next_word_not_initially_stressed": 1,
-   "type_1_subtype_C": 4
+   "type_1_subtype_C": 4,
+   "type_2_subtype_C": 5
   },
   "accent_grammar_token_counts": {
    "0": 16,
@@ -467,26 +473,6 @@
    "2": 809
   },
   "records": [
-   {
-    "bcv": "gn1:11",
-    "system": "prose verses",
-    "chanted_word": "מַזְרִ֣יעַ",
-    "jta": "maz.!rI.a`",
-    "next_chanted_word": "זֶ֔רַע",
-    "intervening_punctuation": [],
-    "mam_form": "מַזְרִ֣יעַ",
-    "next_mam_form": "זֶ֔רַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
    {
     "bcv": "gn1:11",
     "system": "prose verses",
@@ -508,66 +494,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "gn1:12",
-    "system": "prose verses",
-    "chanted_word": "מַזְרִ֤יעַ",
-    "jta": "maz.!rI.a`",
-    "next_chanted_word": "זֶ֙רַע֙",
-    "intervening_punctuation": [],
-    "mam_form": "מַזְרִ֤יעַ",
-    "next_mam_form": "זֶ֙רַע֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn1:29",
-    "system": "prose verses",
-    "chanted_word": "זֹרֵ֣עַ",
-    "jta": "zO.!rE.a`",
-    "next_chanted_word": "זֶ֗רַע",
-    "intervening_punctuation": [],
-    "mam_form": "זֹרֵ֣עַ",
-    "next_mam_form": "זֶ֗רַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn1:29",
-    "system": "prose verses",
-    "chanted_word": "זֹרֵ֣עַ",
-    "jta": "zO.!rE.a`",
-    "next_chanted_word": "זָ֑רַע",
-    "intervening_punctuation": [],
-    "mam_form": "זֹרֵ֣עַ",
-    "next_mam_form": "זָ֑רַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "gn3:18",
     "system": "prose verses",
     "chanted_word": "תַּצְמִ֣יחַֽ",
@@ -580,49 +506,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn4:17",
-    "system": "prose verses",
-    "chanted_word": "וַיֵּ֤ׄדַע",
-    "jta": "vay.!yE.da`",
-    "next_chanted_word": "קַ֙יִן֙",
-    "intervening_punctuation": [],
-    "mam_form": "וַיֵּ֤דַע",
-    "next_mam_form": "קַ֙יִן֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn8:11",
-    "system": "prose verses",
-    "chanted_word": "וַיֵּ֣ׄדַע",
-    "jta": "vay.!yE.da`",
-    "next_chanted_word": "נֹ֔חַ",
-    "intervening_punctuation": [],
-    "mam_form": "וַיֵּ֣דַע",
-    "next_mam_form": "נֹ֔חַ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -640,7 +526,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -702,26 +588,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn18:6",
-    "system": "prose verses",
-    "chanted_word": "קֶ֣מַח",
-    "jta": "!ke.max",
-    "next_chanted_word": "סֹ֔לֶת",
-    "intervening_punctuation": [],
-    "mam_form": "קֶ֣מַח",
-    "next_mam_form": "סֹ֔לֶת",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -820,49 +686,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn25:27",
-    "system": "prose verses",
-    "chanted_word": "יֹדֵ֥עַ",
-    "jta": "yO.!dE.a`",
-    "next_chanted_word": "צַ֖יִד",
-    "intervening_punctuation": [],
-    "mam_form": "יֹדֵ֥עַ",
-    "next_mam_form": "צַ֖יִד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn27:27",
-    "system": "prose verses",
-    "chanted_word": "רֵ֣יחַ",
-    "jta": "!rE.ax",
-    "next_chanted_word": "בְּ֯נִ֔י",
-    "intervening_punctuation": [],
-    "mam_form": "רֵ֣יחַ",
-    "next_mam_form": "בְּנִ֔י",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -948,46 +774,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "gn29:27",
-    "system": "prose verses",
-    "chanted_word": "שְׁ֯בֻ֣עַ",
-    "jta": "sh^.!vu.a`",
-    "next_chanted_word": "זֹ֑את",
-    "intervening_punctuation": [],
-    "mam_form": "שְׁבֻ֣עַ",
-    "next_mam_form": "זֹ֑את",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn29:28",
-    "system": "prose verses",
-    "chanted_word": "שְׁ֯בֻ֣עַ",
-    "jta": "sh^.!vu.a`",
-    "next_chanted_word": "זֹ֑את",
-    "intervening_punctuation": [],
-    "mam_form": "שְׁבֻ֣עַ",
-    "next_mam_form": "זֹ֑את",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "gn31:18",
     "system": "prose verses",
     "chanted_word": "אַ֥רְצָה",
@@ -1040,7 +826,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1143,26 +929,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn43:16",
-    "system": "prose verses",
-    "chanted_word": "וּטְבֹ֤חַ",
-    "jta": "ut.!vO.ax",
-    "next_chanted_word": "טֶ֙בַח֙",
-    "intervening_punctuation": [],
-    "mam_form": "וּטְבֹ֤חַ",
-    "next_mam_form": "טֶ֙בַח֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1288,26 +1054,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ex8:17",
-    "system": "prose verses",
-    "chanted_word": "מַשְׁלִ֨יחַ",
-    "jta": "mash.!lI.ax",
-    "next_chanted_word": "בְּ֯ךָ֜",
-    "intervening_punctuation": [],
-    "mam_form": "מַשְׁלִ֨יחַ",
-    "next_mam_form": "בְּךָ֜",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ex12:11",
     "system": "prose verses",
     "chanted_word": "פֶּ֥סַח",
@@ -1320,7 +1066,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1360,7 +1106,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1382,26 +1128,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ex16:31",
-    "system": "prose verses",
-    "chanted_word": "כְּ֯זֶ֤רַע",
-    "jta": "k^.!ze.ra`",
-    "next_chanted_word": "גַּד֙",
-    "intervening_punctuation": [],
-    "mam_form": "כְּזֶ֤רַע",
-    "next_mam_form": "גַּד֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -1462,46 +1188,6 @@
     ],
     "fit_type": "1B",
     "type_1_subtype": "B",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ex23:1",
-    "system": "prose verses",
-    "chanted_word": "שֵׁ֣מַע",
-    "jta": "!shE.ma`",
-    "next_chanted_word": "שָׁ֑וְא",
-    "intervening_punctuation": [],
-    "mam_form": "שֵׁ֣מַע",
-    "next_mam_form": "שָׁ֑וְא",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ex30:38",
-    "system": "prose verses",
-    "chanted_word": "לְ֯הָרִ֣יחַ",
-    "jta": "l^.ha.!rI.ax",
-    "next_chanted_word": "בָּ֑הּ",
-    "intervening_punctuation": [],
-    "mam_form": "לְהָרִ֣יחַ",
-    "next_mam_form": "בָּ֑הּ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -1580,7 +1266,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1600,7 +1286,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1620,7 +1306,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1640,67 +1326,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "lv13:46",
-    "system": "prose verses",
-    "chanted_word": "הַנֶּ֥ׄגַע",
-    "jta": "han.!ne.ga`",
-    "next_chanted_word": "בּ֛וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "הַנֶּ֥גַע",
-    "next_mam_form": "בּ֛וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "lv15:19",
-    "system": "prose verses",
-    "chanted_word": "וְ֯כׇל־הַנֹּׄגֵ֥עַ",
-    "jta": "v^.khol-han.nO.!gE.a`",
-    "next_chanted_word": "בָּ֖הּ",
-    "intervening_punctuation": [],
-    "mam_form": "וְכׇל־הַנֹּגֵ֥עַ",
-    "next_mam_form": "בָּ֖הּ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "lv15:27",
-    "system": "prose verses",
-    "chanted_word": "וְ֯כׇל־הַנּׄוֹגֵ֥עַ",
-    "jta": "v^.khol-han.nO.!gE.a`",
-    "next_chanted_word": "בָּ֖ם",
-    "intervening_punctuation": [],
-    "mam_form": "וְכׇל־הַנּוֹגֵ֥עַ",
-    "next_mam_form": "בָּ֖ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1720,7 +1346,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1760,7 +1386,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -1928,26 +1554,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "nu19:11",
-    "system": "prose verses",
-    "chanted_word": "הַנֹּׄגֵ֥עַ",
-    "jta": "han.nO.!gE.a`",
-    "next_chanted_word": "בְּ֯מֵ֖ת",
-    "intervening_punctuation": [],
-    "mam_form": "הַנֹּגֵ֥עַ",
-    "next_mam_form": "בְּמֵ֖ת",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "nu22:28",
     "system": "prose verses",
     "chanted_word": "מֶה־עָשִׂ֣יתִֽי",
@@ -1988,26 +1594,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "nu27:18",
-    "system": "prose verses",
-    "chanted_word": "אֲשֶׁר־ר֣וּחַ",
-    "jta": "'8.sher-!ru.ax",
-    "next_chanted_word": "בּ֑וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "אֲשֶׁר־ר֣וּחַ",
-    "next_mam_form": "בּ֑וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "nu35:10",
     "system": "prose verses",
     "chanted_word": "אַ֥רְצָה",
@@ -2040,7 +1626,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2060,7 +1646,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2080,7 +1666,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2100,7 +1686,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2295,46 +1881,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "dt27:25",
-    "system": "prose verses",
-    "chanted_word": "לֹקֵ֣חַ",
-    "jta": "lO.!kE.ax",
-    "next_chanted_word": "שֹׁ֔חַד",
-    "intervening_punctuation": [],
-    "mam_form": "לֹקֵ֣חַ",
-    "next_mam_form": "שֹׁ֔חַד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "dt28:38",
-    "system": "prose verses",
-    "chanted_word": "זֶ֥רַע",
-    "jta": "!ze.ra`",
-    "next_chanted_word": "רַ֖ב",
-    "intervening_punctuation": [],
-    "mam_form": "זֶ֥רַע",
-    "next_mam_form": "רַ֖ב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "dt28:68",
     "system": "prose verses",
     "chanted_word": "אָמַ֣רְתִּֽי",
@@ -2367,7 +1913,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2475,66 +2021,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "js19:2",
-    "system": "prose verses",
-    "chanted_word": "בְּ֯אֵֽר־שֶׁ֥בַע",
-    "jta": "b^.'Er-!she.va`",
-    "next_chanted_word": "וְ֯שֶׁ֖בַע",
-    "intervening_punctuation": [],
-    "mam_form": "בְּאֵֽר־שֶׁ֥בַע",
-    "next_mam_form": "וְשֶׁ֖בַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "js24:25",
-    "system": "prose verses",
-    "chanted_word": "יְ֯הוֹשֻׁ֧עַ",
-    "jta": "y^.hO.!shu.a`",
-    "next_chanted_word": "בְּ֯רִ֛ית",
-    "intervening_punctuation": [],
-    "mam_form": "יְהוֹשֻׁ֧עַ",
-    "next_mam_form": "בְּרִ֛ית",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ju5:19",
-    "system": "prose verses",
-    "chanted_word": "בֶּ֥צַע",
-    "jta": "!be.tsa`",
-    "next_chanted_word": "כֶּ֖סֶף",
-    "intervening_punctuation": [],
-    "mam_form": "בֶּ֥צַע",
-    "next_mam_form": "כֶּ֖סֶף",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ju7:4",
     "system": "prose verses",
     "chanted_word": "וְ֯אֶצְרְ֯פֶ֥נּׄוּ",
@@ -2595,26 +2081,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ju9:53",
-    "system": "prose verses",
-    "chanted_word": "פֶּ֥לַח",
-    "jta": "!pe.lax",
-    "next_chanted_word": "רֶ֖כֶב",
-    "intervening_punctuation": [],
-    "mam_form": "פֶּ֥לַח",
-    "next_mam_form": "רֶ֖כֶב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ju11:8",
     "system": "prose verses",
     "chanted_word": "וְ֯הָיִ֤יתָ",
@@ -2655,26 +2121,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ju19:10",
-    "system": "prose verses",
-    "chanted_word": "עַד־נֹ֣כַח",
-    "jta": "`ad-!nO.khax",
-    "next_chanted_word": "יְ֯ב֔וּס",
-    "intervening_punctuation": [],
-    "mam_form": "עַד־נֹ֣כַח",
-    "next_mam_form": "יְב֔וּס",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ju19:25",
     "system": "prose verses",
     "chanted_word": "לִשְׁמֹ֣עַֽ",
@@ -2687,7 +2133,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -2755,26 +2201,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1s2:13",
-    "system": "prose verses",
-    "chanted_word": "זֹבֵ֣חַ",
-    "jta": "zO.!vE.ax",
-    "next_chanted_word": "זֶ֗בַח",
-    "intervening_punctuation": [],
-    "mam_form": "זֹבֵ֣חַ",
-    "next_mam_form": "זֶ֗בַח",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1s3:6",
     "system": "prose verses",
     "chanted_word": "לֹא־קָרָ֥אתִֽי",
@@ -2829,26 +2255,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s14:6",
-    "system": "prose verses",
-    "chanted_word": "לְ֯הוֹשִׁ֥יעַ",
-    "jta": "l^.hO.!shI.a`",
-    "next_chanted_word": "בְּ֯רַ֖ב",
-    "intervening_punctuation": [],
-    "mam_form": "לְהוֹשִׁ֥יעַ",
-    "next_mam_form": "בְּרַ֖ב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -2935,26 +2341,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1s15:22",
-    "system": "prose verses",
-    "chanted_word": "מִזֶּ֣ׄבַח",
-    "jta": "miz.!ze.vax",
-    "next_chanted_word": "ט֔וֹב",
-    "intervening_punctuation": [],
-    "mam_form": "מִזֶּ֣בַח",
-    "next_mam_form": "ט֔וֹב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1s16:21",
     "system": "prose verses",
     "chanted_word": "וַיֶּׄאֱהָבֵ֣הֽוּ",
@@ -2970,46 +2356,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s17:5",
-    "system": "prose verses",
-    "chanted_word": "וְ֯כ֤וֹבַע",
-    "jta": "v^.!khO.va`",
-    "next_chanted_word": "נְ֯חֹ֙שֶׁת֙",
-    "intervening_punctuation": [],
-    "mam_form": "וְכ֤וֹבַע",
-    "next_mam_form": "נְחֹ֙שֶׁת֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s17:38",
-    "system": "prose verses",
-    "chanted_word": "ק֥וֹבַע",
-    "jta": "!kO.va`",
-    "next_chanted_word": "נְ֯חֹ֖שֶׁת",
-    "intervening_punctuation": [],
-    "mam_form": "ק֥וֹבַע",
-    "next_mam_form": "נְחֹ֖שֶׁת",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3075,26 +2421,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1s21:3",
-    "system": "prose verses",
-    "chanted_word": "אַל־יֵ֧דַע",
-    "jta": "'al-!yE.da`",
-    "next_chanted_word": "מְ֯א֛וּמָה",
-    "intervening_punctuation": [],
-    "mam_form": "אַל־יֵ֧דַע",
-    "next_mam_form": "מְא֛וּמָה",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1s22:17",
     "system": "prose verses",
     "chanted_word": "כִּֽי־בֹרֵ֣חַֽ",
@@ -3107,29 +2433,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s23:17",
-    "system": "prose verses",
-    "chanted_word": "יֹדֵ֥עַ",
-    "jta": "yO.!dE.a`",
-    "next_chanted_word": "כֵּֽן׃",
-    "intervening_punctuation": [],
-    "mam_form": "יֹדֵ֥עַ",
-    "next_mam_form": "כֵּֽן׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3167,7 +2473,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3210,46 +2516,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "2s3:7",
-    "system": "prose verses",
-    "chanted_word": "מַדּ֥ׄוּעַ",
-    "jta": "mad.!du.a`",
-    "next_chanted_word": "בָּ֖אתָה",
-    "intervening_punctuation": [],
-    "mam_form": "מַדּ֥וּעַ",
-    "next_mam_form": "בָּ֖אתָה",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "2s3:39",
-    "system": "prose verses",
-    "chanted_word": "וּמָשׁ֣וּחַ",
-    "jta": "u.ma.!shu.ax",
-    "next_chanted_word": "מֶ֔לֶךְ",
-    "intervening_punctuation": [],
-    "mam_form": "וּמָשׁ֣וּחַ",
-    "next_mam_form": "מֶ֔לֶךְ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3347,7 +2613,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3367,27 +2633,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "2s11:21",
-    "system": "prose verses",
-    "chanted_word": "פֶּ֨לַח",
-    "jta": "!pe.lax",
-    "next_chanted_word": "רֶ֜כֶב",
-    "intervening_punctuation": [],
-    "mam_form": "פֶּ֨לַח",
-    "next_mam_form": "רֶ֜כֶב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3467,7 +2713,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3507,7 +2753,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3527,7 +2773,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3567,7 +2813,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -3630,26 +2876,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k3:4",
-    "system": "prose verses",
-    "chanted_word": "לִזְבֹּ֣חַ",
-    "jta": "liz.!bO.ax",
-    "next_chanted_word": "שָׁ֔ם",
-    "intervening_punctuation": [],
-    "mam_form": "לִזְבֹּ֣חַ",
-    "next_mam_form": "שָׁ֔ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3735,86 +2961,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1k4:13",
-    "system": "prose verses",
-    "chanted_word": "וּבְרִ֥יחַ",
-    "jta": "uv.!rI.ax",
-    "next_chanted_word": "נְ֯חֹֽשֶׁת׃",
-    "intervening_punctuation": [],
-    "mam_form": "וּבְרִ֥יחַ",
-    "next_mam_form": "נְחֹֽשֶׁת׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k5:18",
-    "system": "prose verses",
-    "chanted_word": "פֶּ֥גַע",
-    "jta": "!pe.ga`",
-    "next_chanted_word": "רָֽע׃",
-    "intervening_punctuation": [],
-    "mam_form": "פֶּ֥גַע",
-    "next_mam_form": "רָֽע׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k6:38",
-    "system": "prose verses",
-    "chanted_word": "בְּ֯יֶ֣רַח",
-    "jta": "b^.!ye.rax",
-    "next_chanted_word": "בּ֗וּל",
-    "intervening_punctuation": [],
-    "mam_form": "בְּיֶ֣רַח",
-    "next_mam_form": "בּ֗וּל",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k8:9",
-    "system": "prose verses",
-    "chanted_word": "הִנִּ֥ׄחַ",
-    "jta": "hin.!ni.ax",
-    "next_chanted_word": "שָׁ֛ם",
-    "intervening_punctuation": [],
-    "mam_form": "הִנִּ֥חַ",
-    "next_mam_form": "שָׁ֛ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1k8:16",
     "system": "prose verses",
     "chanted_word": "לֹֽא־בָחַ֣רְתִּֽי",
@@ -3895,26 +3041,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1k19:5",
-    "system": "prose verses",
-    "chanted_word": "נֹגֵ֣עַ",
-    "jta": "nO.!gE.a`",
-    "next_chanted_word": "בּ֔וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "נֹגֵ֣עַ",
-    "next_mam_form": "בּ֔וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1k20:20",
     "system": "prose verses",
     "chanted_word": "וַיָּׄנֻ֣סֽוּ",
@@ -3935,46 +3061,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1k22:22",
-    "system": "prose verses",
-    "chanted_word": "ר֣וּחַ",
-    "jta": "!ru.ax",
-    "next_chanted_word": "שֶׁ֔קֶר",
-    "intervening_punctuation": [],
-    "mam_form": "ר֣וּחַ",
-    "next_mam_form": "שֶׁ֔קֶר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k22:23",
-    "system": "prose verses",
-    "chanted_word": "ר֣וּחַ",
-    "jta": "!ru.ax",
-    "next_chanted_word": "שֶׁ֔קֶר",
-    "intervening_punctuation": [],
-    "mam_form": "ר֣וּחַ",
-    "next_mam_form": "שֶׁ֔קֶר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1k22:35",
     "system": "prose verses",
     "chanted_word": "נֹ֣כַח",
@@ -3987,7 +3073,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4247,27 +3333,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "2k19:10",
-    "system": "prose verses",
-    "chanted_word": "בֹּטֵ֥חַ",
-    "jta": "bO.!tE.ax",
-    "next_chanted_word": "בּ֖וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "בֹּטֵ֥חַ",
-    "next_mam_form": "בּ֖וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4327,7 +3393,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4349,26 +3415,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is6:13",
-    "system": "prose verses",
-    "chanted_word": "זֶ֥רַע",
-    "jta": "!ze.ra`",
-    "next_chanted_word": "קֹ֖דֶשׁ",
-    "intervening_punctuation": [],
-    "mam_form": "זֶ֥רַע",
-    "next_mam_form": "קֹ֖דֶשׁ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -4407,47 +3453,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is11:2",
-    "system": "prose verses",
-    "chanted_word": "ר֥וּחַ",
-    "jta": "!ru.ax",
-    "next_chanted_word": "דַּ֖עַת",
-    "intervening_punctuation": [],
-    "mam_form": "ר֥וּחַ",
-    "next_mam_form": "דַּ֖עַת",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is14:17",
-    "system": "prose verses",
-    "chanted_word": "לֹא־פָ֥תַח",
-    "jta": "lO-!fa.tax",
-    "next_chanted_word": "בָּֽיְתָה׃",
-    "intervening_punctuation": [],
-    "mam_form": "לֹא־פָ֥תַח",
-    "next_mam_form": "בָּֽיְתָה׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4495,26 +3501,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "is23:5",
-    "system": "prose verses",
-    "chanted_word": "כְּ֯שֵׁ֥מַע",
-    "jta": "k^.!shE.ma`",
-    "next_chanted_word": "צֹֽר׃",
-    "intervening_punctuation": [],
-    "mam_form": "כְּשֵׁ֥מַע",
-    "next_mam_form": "צֹֽר׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "is23:10",
     "system": "prose verses",
     "chanted_word": "מֵ֥זַח",
@@ -4527,7 +3513,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4567,7 +3553,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4587,7 +3573,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4610,26 +3596,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is29:11",
-    "system": "prose verses",
-    "chanted_word": "אֶל־יוֹדֵ֥עַ",
-    "jta": "'el-yO.!dE.a`",
-    "next_chanted_word": "סֵ֛פֶר",
-    "intervening_punctuation": [],
-    "mam_form": "אֶל־יוֹדֵ֥עַ",
-    "next_mam_form": "סֵ֛פֶר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4687,27 +3653,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is37:10",
-    "system": "prose verses",
-    "chanted_word": "בּוֹטֵ֥חַ",
-    "jta": "bO.!tE.ax",
-    "next_chanted_word": "בּ֖וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "בּוֹטֵ֥חַ",
-    "next_mam_form": "בּ֖וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4835,26 +3781,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "is50:2",
-    "system": "prose verses",
-    "chanted_word": "מַדּׄ֨וּעַ",
-    "jta": "mad.!du.a`",
-    "next_chanted_word": "בָּ֜אתִי",
-    "intervening_punctuation": [],
-    "mam_form": "מַדּ֨וּעַ",
-    "next_mam_form": "בָּ֜אתִי",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "is52:2",
     "system": "prose verses",
     "chanted_word": "ק֥וּמִי",
@@ -4907,27 +3833,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is53:6",
-    "system": "prose verses",
-    "chanted_word": "הִפְגִּ֣יעַ",
-    "jta": "hif.!gI.a`",
-    "next_chanted_word": "בּ֔וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "הִפְגִּ֣יעַ",
-    "next_mam_form": "בּ֔וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -4947,47 +3853,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is57:4",
-    "system": "prose verses",
-    "chanted_word": "זֶ֥רַע",
-    "jta": "!ze.ra`",
-    "next_chanted_word": "שָֽׁקֶר׃",
-    "intervening_punctuation": [],
-    "mam_form": "זֶ֥רַע",
-    "next_mam_form": "שָֽׁקֶר׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is57:7",
-    "system": "prose verses",
-    "chanted_word": "לִזְבֹּ֥חַ",
-    "jta": "liz.!bO.ax",
-    "next_chanted_word": "זָֽבַח׃",
-    "intervening_punctuation": [],
-    "mam_form": "לִזְבֹּ֥חַ",
-    "next_mam_form": "זָֽבַח׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -5029,26 +3895,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is63:12",
-    "system": "prose verses",
-    "chanted_word": "בּ֤וֹקֵֽעַ",
-    "jta": "!bO.kE.a`",
-    "next_chanted_word": "מַ֙יִם֙",
-    "intervening_punctuation": [],
-    "mam_form": "בּ֤וֹקֵֽעַ",
-    "next_mam_form": "מַ֙יִם֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -5127,7 +3973,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -5147,27 +3993,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "je6:13",
-    "system": "prose verses",
-    "chanted_word": "בּוֹצֵ֣עַ",
-    "jta": "bO.!tsE.a`",
-    "next_chanted_word": "בָּ֑צַע",
-    "intervening_punctuation": [],
-    "mam_form": "בּוֹצֵ֣עַ",
-    "next_mam_form": "בָּ֑צַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -5190,26 +4016,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "je8:10",
-    "system": "prose verses",
-    "chanted_word": "בֹּצֵ֣עַ",
-    "jta": "bO.!tsE.a`",
-    "next_chanted_word": "בָּ֑צַע",
-    "intervening_punctuation": [],
-    "mam_form": "בֹּצֵ֣עַ",
-    "next_mam_form": "בָּ֑צַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5250,26 +4056,6 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "je10:14",
-    "system": "prose verses",
-    "chanted_word": "וְ֯לֹא־ר֥וּחַ",
-    "jta": "v^.lO-!ru.ax",
-    "next_chanted_word": "בָּֽם׃",
-    "intervening_punctuation": [],
-    "mam_form": "וְלֹא־ר֥וּחַ",
-    "next_mam_form": "בָּֽם׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5367,7 +4153,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -5390,26 +4176,6 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "je29:17",
-    "system": "prose verses",
-    "chanted_word": "מְ֯שַׁלֵּ֣ׄחַ",
-    "jta": "m^.shal.!lE.ax",
-    "next_chanted_word": "בָּ֔ם",
-    "intervening_punctuation": [],
-    "mam_form": "מְשַׁלֵּ֣חַ",
-    "next_mam_form": "בָּ֔ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5595,26 +4361,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "je51:17",
-    "system": "prose verses",
-    "chanted_word": "וְ֯לֹא־ר֥וּחַ",
-    "jta": "v^.lO-!ru.ax",
-    "next_chanted_word": "בָּֽם׃",
-    "intervening_punctuation": [],
-    "mam_form": "וְלֹא־ר֥וּחַ",
-    "next_mam_form": "בָּֽם׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ek1:27",
     "system": "prose verses",
     "chanted_word": "וְ֯נֹ֥גַֽהּ",
@@ -5627,7 +4373,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -5707,29 +4453,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek21:15",
-    "system": "prose verses",
-    "chanted_word": "טְ֯בֹ֤חַ",
-    "jta": "t^.!vO.ax",
-    "next_chanted_word": "טֶ֙בַח֙",
-    "intervening_punctuation": [],
-    "mam_form": "טְבֹ֤חַ",
-    "next_mam_form": "טֶ֙בַח֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5749,26 +4475,6 @@
     ],
     "fit_type": "1B",
     "type_1_subtype": "B",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek21:27",
-    "system": "prose verses",
-    "chanted_word": "לִפְתֹּ֤חַ",
-    "jta": "lif.!tO.ax",
-    "next_chanted_word": "פֶּה֙",
-    "intervening_punctuation": [],
-    "mam_form": "לִפְתֹּ֤חַ",
-    "next_mam_form": "פֶּה֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -5795,106 +4501,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ek22:27",
-    "system": "prose verses",
-    "chanted_word": "בְּ֯צֹ֥עַ",
-    "jta": "b^.!tsO.a`",
-    "next_chanted_word": "בָּֽצַע׃",
-    "intervening_punctuation": [],
-    "mam_form": "בְּצֹ֥עַ",
-    "next_mam_form": "בָּֽצַע׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek24:4",
-    "system": "prose verses",
-    "chanted_word": "כׇּל־נֵ֥תַח",
-    "jta": "kol-!nE.tax",
-    "next_chanted_word": "ט֖וֹב",
-    "intervening_punctuation": [],
-    "mam_form": "כׇּל־נֵ֥תַח",
-    "next_mam_form": "ט֖וֹב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek24:7",
-    "system": "prose verses",
-    "chanted_word": "עַל־צְ֯חִ֥יחַ",
-    "jta": "`al-ts^.!xI.ax",
-    "next_chanted_word": "סֶ֖לַע",
-    "intervening_punctuation": [],
-    "mam_form": "עַל־צְחִ֥יחַ",
-    "next_mam_form": "סֶ֖לַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek24:8",
-    "system": "prose verses",
-    "chanted_word": "עַל־צְ֯חִ֣יחַ",
-    "jta": "`al-ts^.!xI.ax",
-    "next_chanted_word": "סָ֑לַע",
-    "intervening_punctuation": [],
-    "mam_form": "עַל־צְחִ֣יחַ",
-    "next_mam_form": "סָ֑לַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek24:27",
-    "system": "prose verses",
-    "chanted_word": "יִפָּ֤ׄתַח",
-    "jta": "yip.!pa.tax",
-    "next_chanted_word": "פִּ֙יךָ֙",
-    "intervening_punctuation": [],
-    "mam_form": "יִפָּ֤תַח",
-    "next_mam_form": "פִּ֙יךָ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ek25:7",
     "system": "prose verses",
     "chanted_word": "וּנְתַתִּ֤ׄיךָֽ",
@@ -5910,46 +4516,6 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek26:4",
-    "system": "prose verses",
-    "chanted_word": "לִצְחִ֥יחַ",
-    "jta": "lits.!xI.ax",
-    "next_chanted_word": "סָֽלַע׃",
-    "intervening_punctuation": [],
-    "mam_form": "לִצְחִ֥יחַ",
-    "next_mam_form": "סָֽלַע׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek26:14",
-    "system": "prose verses",
-    "chanted_word": "לִצְחִ֣יחַ",
-    "jta": "lits.!xI.ax",
-    "next_chanted_word": "סֶ֗לַע",
-    "intervening_punctuation": [],
-    "mam_form": "לִצְחִ֣יחַ",
-    "next_mam_form": "סֶ֗לַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5989,26 +4555,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek29:21",
-    "system": "prose verses",
-    "chanted_word": "אַצְמִ֤יחַ",
-    "jta": "'ats.!mI.ax",
-    "next_chanted_word": "קֶ֙רֶן֙",
-    "intervening_punctuation": [],
-    "mam_form": "אַצְמִ֤יחַ",
-    "next_mam_form": "קֶ֙רֶן֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -6074,26 +4620,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek33:22",
-    "system": "prose verses",
-    "chanted_word": "וַיִּׄפָּ֣ׄתַח",
-    "jta": "vay.yip.!pa.tax",
-    "next_chanted_word": "פִּ֔י",
-    "intervening_punctuation": [],
-    "mam_form": "וַיִּפָּ֣תַח",
-    "next_mam_form": "פִּ֔י",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -6212,7 +4738,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6312,7 +4838,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6332,7 +4858,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6392,7 +4918,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6412,7 +4938,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6512,7 +5038,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6560,26 +5086,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "hb2:9",
-    "system": "prose verses",
-    "chanted_word": "בֶּ֥צַע",
-    "jta": "!be.tsa`",
-    "next_chanted_word": "רָ֖ע",
-    "intervening_punctuation": [],
-    "mam_form": "בֶּ֥צַע",
-    "next_mam_form": "רָ֖ע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "zc1:15",
     "system": "prose verses",
     "chanted_word": "קָצַ֣פְתִּי",
@@ -6620,26 +5126,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "zc6:12",
-    "system": "prose verses",
-    "chanted_word": "צֶ֤מַח",
-    "jta": "!tse.max",
-    "next_chanted_word": "שְׁ֯מוֹ֙",
-    "intervening_punctuation": [],
-    "mam_form": "צֶ֤מַח",
-    "next_mam_form": "שְׁמוֹ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "zc11:7",
     "system": "prose verses",
     "chanted_word": "קָרָ֤אתִֽי",
@@ -6672,7 +5158,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6719,7 +5205,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6739,7 +5225,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6779,7 +5265,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6799,7 +5285,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -6821,46 +5307,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps19:14",
-    "system": "poetic verses",
-    "chanted_word": "מִפֶּ֥ׄשַֽׁע",
-    "jta": "mip.!pe.sha`",
-    "next_chanted_word": "רָֽב׃",
-    "intervening_punctuation": [],
-    "mam_form": "מִפֶּ֥שַֽׁע",
-    "next_mam_form": "רָֽב׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps33:6",
-    "system": "poetic verses",
-    "chanted_word": "וּבְר֥וּחַ",
-    "jta": "uv.!ru.ax",
-    "next_chanted_word": "פִּ֝֗יו",
-    "intervening_punctuation": [],
-    "mam_form": "וּבְר֥וּחַ",
-    "next_mam_form": "פִּ֝֗יו",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -7007,26 +5453,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ps78:13",
-    "system": "poetic verses",
-    "chanted_word": "בָּ֣קַע",
-    "jta": "!ba.ka`",
-    "next_chanted_word": "יָ֭ם",
-    "intervening_punctuation": [],
-    "mam_form": "בָּ֣קַע",
-    "next_mam_form": "יָ֭ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ps79:8",
     "system": "poetic verses",
     "chanted_word": "דַלּ֣ׄוֹנוּ",
@@ -7059,29 +5485,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps84:13",
-    "system": "poetic verses",
-    "chanted_word": "בֹּטֵ֥חַ",
-    "jta": "bO.!tE.ax",
-    "next_chanted_word": "בָּֽךְ׃",
-    "intervening_punctuation": [],
-    "mam_form": "בֹּטֵ֥חַ",
-    "next_mam_form": "בָּֽךְ׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7119,7 +5525,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7159,7 +5565,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7187,26 +5593,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "ps105:20",
-    "system": "poetic verses",
-    "chanted_word": "שָׁ֣לַח",
-    "jta": "!sha.lax",
-    "next_chanted_word": "מֶ֭לֶךְ",
-    "intervening_punctuation": [],
-    "mam_form": "שָׁ֣לַח",
-    "next_mam_form": "מֶ֭לֶךְ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "ps105:28",
     "system": "poetic verses",
     "chanted_word": "שָׁ֣לַֽח",
@@ -7219,29 +5605,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps105:41",
-    "system": "poetic verses",
-    "chanted_word": "פָּ֣תַח",
-    "jta": "!pa.tax",
-    "next_chanted_word": "צ֭וּר",
-    "intervening_punctuation": [],
-    "mam_form": "פָּ֣תַח",
-    "next_mam_form": "צ֭וּר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7261,46 +5627,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps119:101",
-    "system": "poetic verses",
-    "chanted_word": "מִכׇּׄל־אֹ֣רַח",
-    "jta": "mik.kol-!'O.rax",
-    "next_chanted_word": "רָ֭ע",
-    "intervening_punctuation": [],
-    "mam_form": "מִכׇּל־אֹ֣רַח",
-    "next_mam_form": "רָ֭ע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps119:104",
-    "system": "poetic verses",
-    "chanted_word": "כׇּל־אֹ֬רַח",
-    "jta": "kol-!'O.rax",
-    "next_chanted_word": "שָֽׁקֶר׃",
-    "intervening_punctuation": [],
-    "mam_form": "כׇּל־אֹ֬רַח",
-    "next_mam_form": "שָֽׁקֶר׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -7339,7 +5665,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7387,26 +5713,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "pr1:19",
-    "system": "poetic verses",
-    "chanted_word": "כׇּל־בֹּ֣צֵֽעַ",
-    "jta": "kol-!bO.tsE.a`",
-    "next_chanted_word": "בָּ֑צַע",
-    "intervening_punctuation": [],
-    "mam_form": "כׇּל־בֹּ֣צֵֽעַ",
-    "next_mam_form": "בָּ֑צַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "pr1:33",
     "system": "poetic verses",
     "chanted_word": "וְ֯שֹׁמֵ֣עַֽ",
@@ -7419,49 +5725,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr4:2",
-    "system": "poetic verses",
-    "chanted_word": "לֶ֣קַח",
-    "jta": "!le.kax",
-    "next_chanted_word": "ט֭וֹב",
-    "intervening_punctuation": [],
-    "mam_form": "לֶ֣קַח",
-    "next_mam_form": "ט֭וֹב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr6:29",
-    "system": "poetic verses",
-    "chanted_word": "כׇּֽל־הַנֹּׄגֵ֥עַ",
-    "jta": "kol-han.nO.!gE.a`",
-    "next_chanted_word": "בָּֽהּ׃",
-    "intervening_punctuation": [],
-    "mam_form": "כׇּֽל־הַנֹּגֵ֥עַ",
-    "next_mam_form": "בָּֽהּ׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7479,7 +5745,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7499,7 +5765,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7540,26 +5806,6 @@
      "closed tsere-vowelled syllable"
     ],
     "fit_type": "3",
-    "type_1_subtype": null,
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr11:26",
-    "system": "poetic verses",
-    "chanted_word": "מֹ֣נֵֽעַ",
-    "jta": "!mO.nE.a`",
-    "next_chanted_word": "בָּ֭ר",
-    "intervening_punctuation": [],
-    "mam_form": "מֹ֣נֵֽעַ",
-    "next_mam_form": "בָּ֭ר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7627,26 +5873,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "pr14:4",
-    "system": "poetic verses",
-    "chanted_word": "בְּ֯כֹ֣חַ",
-    "jta": "b^.!khO.ax",
-    "next_chanted_word": "שֽׁוֹר׃",
-    "intervening_punctuation": [],
-    "mam_form": "בְּכֹ֣חַ",
-    "next_mam_form": "שֽׁוֹר׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "pr14:31",
     "system": "poetic verses",
     "chanted_word": "עֹ֣שֵֽׁק",
@@ -7679,49 +5905,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr15:27",
-    "system": "poetic verses",
-    "chanted_word": "בּוֹצֵ֣עַ",
-    "jta": "bO.!tsE.a`",
-    "next_chanted_word": "בָּ֑צַע",
-    "intervening_punctuation": [],
-    "mam_form": "בּוֹצֵ֣עַ",
-    "next_mam_form": "בָּ֑צַע",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr16:18",
-    "system": "poetic verses",
-    "chanted_word": "גֹּ֣בַהּ",
-    "jta": "!gO.vah",
-    "next_chanted_word": "רֽוּחַ׃",
-    "intervening_punctuation": [],
-    "mam_form": "גֹּ֣בַהּ",
-    "next_mam_form": "רֽוּחַ׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7739,7 +5925,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7767,26 +5953,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "pr17:18",
-    "system": "poetic verses",
-    "chanted_word": "תּוֹקֵ֣עַ",
-    "jta": "tO.!kE.a`",
-    "next_chanted_word": "כָּ֑ף",
-    "intervening_punctuation": [],
-    "mam_form": "תּוֹקֵ֣עַ",
-    "next_mam_form": "כָּ֑ף",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "pr17:19",
     "system": "poetic verses",
     "chanted_word": "אֹ֣הֵֽב",
@@ -7802,26 +5968,6 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr17:27",
-    "system": "poetic verses",
-    "chanted_word": "יוֹדֵ֣עַ",
-    "jta": "yO.!dE.a`",
-    "next_chanted_word": "דָּ֑עַת",
-    "intervening_punctuation": [],
-    "mam_form": "יוֹדֵ֣עַ",
-    "next_mam_form": "דָּ֑עַת",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7879,7 +6025,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -7899,29 +6045,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr20:25",
-    "system": "poetic verses",
-    "chanted_word": "יָ֣לַע",
-    "jta": "!ya.la`",
-    "next_chanted_word": "קֹ֑דֶשׁ",
-    "intervening_punctuation": [],
-    "mam_form": "יָ֣לַע",
-    "next_mam_form": "קֹ֑דֶשׁ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8039,7 +6165,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8059,7 +6185,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8079,29 +6205,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "pr31:11",
-    "system": "poetic verses",
-    "chanted_word": "בָּ֣טַח",
-    "jta": "!ba.tax",
-    "next_chanted_word": "בָּ֭הּ",
-    "intervening_punctuation": [],
-    "mam_form": "בָּ֣טַח",
-    "next_mam_form": "בָּ֭הּ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8119,27 +6225,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "jb5:10",
-    "system": "poetic verses",
-    "chanted_word": "וְ֯שֹׁ֥לֵֽחַ",
-    "jta": "v^.!shO.lE.ax",
-    "next_chanted_word": "מַ֝֗יִם",
-    "intervening_punctuation": [],
-    "mam_form": "וְשֹׁ֥לֵֽחַ",
-    "next_mam_form": "מַ֝֗יִם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8187,26 +6273,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "jb15:30",
-    "system": "poetic verses",
-    "chanted_word": "בְּ֯ר֣וּחַ",
-    "jta": "b^.!ru.ax",
-    "next_chanted_word": "פִּֽיו׃",
-    "intervening_punctuation": [],
-    "mam_form": "בְּר֣וּחַ",
-    "next_mam_form": "פִּֽיו׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "jb22:13",
     "system": "poetic verses",
     "chanted_word": "מַה־יָּ֣ׄדַֽע",
@@ -8219,7 +6285,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8239,7 +6305,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8279,7 +6345,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8319,7 +6385,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8339,7 +6405,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8359,7 +6425,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8399,7 +6465,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8419,27 +6485,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "jb39:27",
-    "system": "poetic verses",
-    "chanted_word": "יַגְבִּ֣יהַּ",
-    "jta": "yag.!bI.ah",
-    "next_chanted_word": "נָ֑שֶׁר",
-    "intervening_punctuation": [],
-    "mam_form": "יַגְבִּ֣יהַּ",
-    "next_mam_form": "נָ֑שֶׁר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8519,7 +6565,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8539,7 +6585,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8679,7 +6725,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8699,7 +6745,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8899,7 +6945,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -8959,29 +7005,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ec7:25",
-    "system": "prose verses",
-    "chanted_word": "רֶ֣שַׁע",
-    "jta": "!re.sha`",
-    "next_chanted_word": "כֶּ֔סֶל",
-    "intervening_punctuation": [],
-    "mam_form": "רֶ֣שַׁע",
-    "next_mam_form": "כֶּ֔סֶל",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8999,7 +7025,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -9042,46 +7068,6 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "es2:21",
-    "system": "prose verses",
-    "chanted_word": "לִשְׁלֹ֣חַ",
-    "jta": "lish.!lO.ax",
-    "next_chanted_word": "יָ֔ד",
-    "intervening_punctuation": [],
-    "mam_form": "לִשְׁלֹ֣חַ",
-    "next_mam_form": "יָ֔ד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "es3:6",
-    "system": "prose verses",
-    "chanted_word": "לִשְׁלֹ֤חַ",
-    "jta": "lish.!lO.ax",
-    "next_chanted_word": "יָד֙",
-    "intervening_punctuation": [],
-    "mam_form": "לִשְׁלֹ֤חַ",
-    "next_mam_form": "יָד֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -9147,26 +7133,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "es6:2",
-    "system": "prose verses",
-    "chanted_word": "לִשְׁלֹ֣חַ",
-    "jta": "lish.!lO.ax",
-    "next_chanted_word": "יָ֔ד",
-    "intervening_punctuation": [],
-    "mam_form": "לִשְׁלֹ֣חַ",
-    "next_mam_form": "יָ֔ד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "es7:2",
     "system": "prose verses",
     "chanted_word": "וְ֯תִנָּ֣ׄתֵֽן",
@@ -9202,26 +7168,6 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "es9:2",
-    "system": "prose verses",
-    "chanted_word": "לִשְׁלֹ֣חַ",
-    "jta": "lish.!lO.ax",
-    "next_chanted_word": "יָ֔ד",
-    "intervening_punctuation": [],
-    "mam_form": "לִשְׁלֹ֣חַ",
-    "next_mam_form": "יָ֔ד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -9281,26 +7227,6 @@
     ],
     "fit_type": "1A",
     "type_1_subtype": "A",
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "da3:27",
-    "system": "prose verses",
-    "chanted_word": "וְ֯רֵ֣יחַ",
-    "jta": "v^.!rE.ax",
-    "next_chanted_word": "נ֔וּר",
-    "intervening_punctuation": [],
-    "mam_form": "וְרֵ֣יחַ",
-    "next_mam_form": "נ֔וּר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
@@ -9659,7 +7585,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -9679,7 +7605,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -9719,7 +7645,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
     "stress_syllable_has_conjunctive_accent": true,
@@ -9759,49 +7685,9 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c1:4",
-    "system": "prose verses",
-    "chanted_word": "נֹ֥חַ",
-    "jta": "!nO.ax",
-    "next_chanted_word": "שֵׁ֖ם",
-    "intervening_punctuation": [],
-    "mam_form": "נֹ֥חַ",
-    "next_mam_form": "שֵׁ֖ם",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c3:7",
-    "system": "prose verses",
-    "chanted_word": "וְ֯נֹ֥גַהּ",
-    "jta": "v^.!nO.gah",
-    "next_chanted_word": "וְ֯נֶ֖פֶג",
-    "intervening_punctuation": [],
-    "mam_form": "וְנֹ֥גַהּ",
-    "next_mam_form": "וְנֶ֖פֶג",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -9887,126 +7773,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1c6:6",
-    "system": "prose verses",
-    "chanted_word": "זֶ֥רַח",
-    "jta": "!ze.rax",
-    "next_chanted_word": "בְּ֯נ֖וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "זֶ֥רַח",
-    "next_mam_form": "בְּנ֖וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c6:7",
-    "system": "prose verses",
-    "chanted_word": "קֹ֥רַח",
-    "jta": "!kO.rax",
-    "next_chanted_word": "בְּ֯נ֖וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "קֹ֥רַח",
-    "next_mam_form": "בְּנ֖וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c6:35",
-    "system": "prose verses",
-    "chanted_word": "אֲבִישׁ֥וּעַ",
-    "jta": "'8.vI.!shu.a`",
-    "next_chanted_word": "בְּ֯נֽוֹ׃",
-    "intervening_punctuation": [],
-    "mam_form": "אֲבִישׁ֥וּעַ",
-    "next_mam_form": "בְּנֽוֹ׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c7:21",
-    "system": "prose verses",
-    "chanted_word": "וְ֯שׁוּתֶ֥לַח",
-    "jta": "v^.shu.!te.lax",
-    "next_chanted_word": "בְּ֯נ֖וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "וְשׁוּתֶ֥לַח",
-    "next_mam_form": "בְּנ֖וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c7:25",
-    "system": "prose verses",
-    "chanted_word": "וְ֯רֶ֣פַח",
-    "jta": "v^.!re.fax",
-    "next_chanted_word": "בְּ֯נ֗וֹ",
-    "intervening_punctuation": [],
-    "mam_form": "וְרֶ֣פַח",
-    "next_mam_form": "בְּנ֗וֹ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c7:27",
-    "system": "prose verses",
-    "chanted_word": "יְ֯הוֹשֻׁ֥עַ",
-    "jta": "y^.hO.!shu.a`",
-    "next_chanted_word": "בְּ֯נֽוֹ׃",
-    "intervening_punctuation": [],
-    "mam_form": "יְהוֹשֻׁ֥עַ",
-    "next_mam_form": "בְּנֽוֹ׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1c12:26",
     "system": "prose verses",
     "chanted_word": "גִּבּ֤ׄוֹרֵֽי",
@@ -10027,26 +7793,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "1c14:6",
-    "system": "prose verses",
-    "chanted_word": "וְ֯נֹ֥גַהּ",
-    "jta": "v^.!nO.gah",
-    "next_chanted_word": "וְ֯נֶ֖פֶג",
-    "intervening_punctuation": [],
-    "mam_form": "וְנֹ֥גַהּ",
-    "next_mam_form": "וְנֶ֖פֶג",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "1c16:21",
     "system": "prose verses",
     "chanted_word": "לֹֽא־הִנִּ֤ׄיחַ",
@@ -10059,7 +7805,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -10307,46 +8053,6 @@
     "next_chanted_word_has_disjunctive_accent": true
    },
    {
-    "bcv": "2c18:21",
-    "system": "prose verses",
-    "chanted_word": "לְ֯ר֣וּחַ",
-    "jta": "l^.!ru.ax",
-    "next_chanted_word": "שֶׁ֔קֶר",
-    "intervening_punctuation": [],
-    "mam_form": "לְר֣וּחַ",
-    "next_mam_form": "שֶׁ֔קֶר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "2c18:22",
-    "system": "prose verses",
-    "chanted_word": "ר֣וּחַ",
-    "jta": "!ru.ax",
-    "next_chanted_word": "שֶׁ֔קֶר",
-    "intervening_punctuation": [],
-    "mam_form": "ר֣וּחַ",
-    "next_mam_form": "שֶׁ֔קֶר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2",
-    "type_1_subtype": null,
-    "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
     "bcv": "2c18:34",
     "system": "prose verses",
     "chanted_word": "נֹ֥כַח",
@@ -10359,7 +8065,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,
@@ -10399,7 +8105,7 @@
     "types": [
      "chanted word closed by a guttural"
     ],
-    "fit_type": "2",
+    "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
     "stress_syllable_has_conjunctive_accent": true,

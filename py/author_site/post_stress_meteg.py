@@ -109,7 +109,8 @@ _TYPE_1_LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE
 _LACKS_MAS_FNAME_BY_FIT_TYPE = {
     psm.FIT_TYPE_1_A: _TYPE_1_LACKS_MAS_FNAME,
     psm.FIT_TYPE_1_B: _TYPE_1_LACKS_MAS_FNAME,
-    psm.FIT_TYPE_2: _TYPE_2_LACKS_MAS_FNAME,
+    psm.FIT_TYPE_2_A: _TYPE_2_LACKS_MAS_FNAME,
+    psm.FIT_TYPE_2_B: _TYPE_2_LACKS_MAS_FNAME,
 }
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
@@ -716,7 +717,7 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (499, 205, 294, 0)
+    ) == (384, 200, 184, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
@@ -752,10 +753,15 @@ def pin_claims(survey: dict) -> None:
             "with_mas": 12,
             "without_mas": 31,
         },
-        psm.FIT_TYPE_2: {
-            "candidates": 205,
-            "with_mas": 55,
-            "without_mas": 150,
+        psm.FIT_TYPE_2_A: {
+            "candidates": 41,
+            "with_mas": 35,
+            "without_mas": 6,
+        },
+        psm.FIT_TYPE_2_B: {
+            "candidates": 49,
+            "with_mas": 15,
+            "without_mas": 34,
         },
         psm.FIT_TYPE_3: {
             "candidates": 41,
@@ -768,6 +774,7 @@ def pin_claims(survey: dict) -> None:
         "next_word_not_disjunctive": 15,
         "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
+        "type_2_subtype_C": 5,
     }
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
@@ -793,20 +800,22 @@ def pin_claims(survey: dict) -> None:
             (psm.FIT_TYPE_1_A, False): 113,
             (psm.FIT_TYPE_1_B, True): 12,
             (psm.FIT_TYPE_1_B, False): 31,
-            (psm.FIT_TYPE_2, True): 55,
-            (psm.FIT_TYPE_2, False): 150,
+            (psm.FIT_TYPE_2_A, True): 35,
+            (psm.FIT_TYPE_2_A, False): 6,
+            (psm.FIT_TYPE_2_B, True): 15,
+            (psm.FIT_TYPE_2_B, False): 34,
             (psm.FIT_TYPE_3, True): 41,
         }
     )
     lacks_mas_cases = _lacks_mas_cases(survey)
     type_2_lacks_mas_cases = lacks_mas_cases["type_2_all"]
     type_1_lacks_mas_samples = lacks_mas_cases["type_1_random_sample"]
-    assert len(type_2_lacks_mas_cases) == 150
+    assert len(type_2_lacks_mas_cases) == 40
     assert len(type_1_lacks_mas_samples[_PROSE]) == 100
     assert len(type_1_lacks_mas_samples[_POETIC]) == 10
-    assert (
-        len(type_2_lacks_mas_cases)
-        == fit_for_mas["by_fit_type"][psm.FIT_TYPE_2]["without_mas"]
+    assert len(type_2_lacks_mas_cases) == (
+        fit_for_mas["by_fit_type"][psm.FIT_TYPE_2_A]["without_mas"]
+        + fit_for_mas["by_fit_type"][psm.FIT_TYPE_2_B]["without_mas"]
     )
     assert all(
         record["chanted_word"]
@@ -1586,7 +1595,14 @@ def _fit_type_cell(fit_type: str) -> object:
             "Type 1B: type 1 with plain initial stress on the next chanted word, "
             "marked by a pashta stress helper."
         ),
-        psm.FIT_TYPE_2: "Type 2: the chanted word is closed by a guttural.",
+        psm.FIT_TYPE_2_A: (
+            "Type 2A: the chanted word is closed by a guttural, and the next chanted word"
+            " begins with ל (lamed)."
+        ),
+        psm.FIT_TYPE_2_B: (
+            "Type 2B: the chanted word is closed by a guttural, and the next chanted word"
+            " begins with a guttural."
+        ),
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
     }
     return mb_html.abbr(fit_type, {"title": titles[fit_type]})
@@ -1930,16 +1946,16 @@ def build_type_2_body(survey: dict) -> list:
 
 
 def build_type_2_lacks_mas_body(survey: dict) -> list:
-    """Every type-2 chanted word fit for MAS but lacking MAS."""
+    """Every type-2A/2B chanted word fit for MAS but lacking MAS."""
     records = _lacks_mas_cases(survey)["type_2_all"]
     return [
         mb_html.heading_level_1(_visible_title(_TYPE_2_LACKS_MAS_TITLE)),
         _hebrew_spacing_option(),
         _back_to_fit_for_mas_table(),
-        mb_html.heading_level_2("Every type 2 case lacking MAS"),
+        mb_html.heading_level_2("Every type 2A or 2B case lacking MAS"),
         _para(
-            f"The table lists all {len(records):,} chanted-word pairs fit for MAS as type 2"
-            " that lack MAS."
+            f"The table lists all {len(records):,} chanted-word pairs fit for MAS as type 2A"
+            " or type 2B that lack MAS."
         ),
         _table(
             ("Verse", "Word"),
@@ -2683,7 +2699,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
     rows.append(
         mb_html.table_row_of_data(
             (
-                mb_html.abbr("any", {"title": "any of types 1A, 1B, 2, or 3"}),
+                mb_html.abbr("any", {"title": "any of types 1A, 1B, 2A, 2B, or 3"}),
                 f"{fit_for_mas['fitting_any_type']:,}",
                 f"{fit_for_mas['with_mas']:,}",
                 has_mas_percentage(fit_for_mas["with_mas"], fit_for_mas["without_mas"]),
@@ -2721,6 +2737,13 @@ def _fit_for_mas_facts(survey: dict) -> list:
             ),
             (None, _NUMERIC_CELL),
         ),
+        mb_html.table_row_of_data(
+            (
+                "The MAS syllable is type 2C.",
+                f"{mas_not_in_the_table['type_2_subtype_C']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
     )
     return [
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
@@ -2730,7 +2753,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 " a MAS. The answer is that a MAS actually appears only ",
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS, but the “yield” varies widely"
-                " between types 1A, 1B, 2, and 3. Notably, the type 3 “yield” is ",
+                " between types 1A, 1B, 2A, 2B, and 3. Notably, the type 3 “yield” is ",
                 f"{type_3_yield:.0%}",
                 ".",
             )
@@ -2747,7 +2770,8 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 "The potential MAS syllable comes immediately after a nonfinal stress"
                 " syllable with a conjunctive accent.",
                 "The next chanted word has initial stress and a disjunctive accent.",
-                "The potential MAS syllable is type 2, type 3, type 1A, or type 1B.",
+                "The potential MAS syllable is type 1A, type 1B, type 2A, type 2B, or"
+                " type 3.",
             )
         ),
         mb_html.para(

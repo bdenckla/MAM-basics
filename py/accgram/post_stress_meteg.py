@@ -366,9 +366,10 @@ _TYPE_1_SUBTYPES = (TYPE_1_SUBTYPE_A, TYPE_1_SUBTYPE_B, TYPE_1_SUBTYPE_C)
 # 3.  The short labels are also the labels used in the reader-facing Fit-for-MAS table.
 FIT_TYPE_1_A = "1A"
 FIT_TYPE_1_B = "1B"
-FIT_TYPE_2 = "2"
+FIT_TYPE_2_A = "2A"
+FIT_TYPE_2_B = "2B"
 FIT_TYPE_3 = "3"
-_FIT_TYPES = (FIT_TYPE_1_A, FIT_TYPE_1_B, FIT_TYPE_2, FIT_TYPE_3)
+_FIT_TYPES = (FIT_TYPE_1_A, FIT_TYPE_1_B, FIT_TYPE_2_A, FIT_TYPE_2_B, FIT_TYPE_3)
 
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
 SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
@@ -1251,7 +1252,7 @@ def _fit_for_mas_candidate(
     Unicode accent count cannot supply that information.  The potential syllable is directly
     after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has a
     conjunctive accent, the next chanted word has initial stress and a disjunctive accent,
-    and the potential syllable meets one or more of the three source-derived structural types.
+    and the potential syllable meets one of the Fit-for-MAS types.
     """
     stressed = parsed["stressed"]
     if stressed == len(parsed["syllables"]) - 1:
@@ -1317,6 +1318,20 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     )
 
 
+def _type_2_fit_type(next_chanted_word: str | None) -> str | None:
+    """The admitted type-2 Fit-for-MAS class, if the next chanted word has one."""
+    if next_chanted_word is None:
+        return None
+    letters = _letters(next_chanted_word)
+    assert letters, f"no Hebrew letter in next chanted word: {next_chanted_word!r}"
+    initial = letters[0][0]
+    if initial == hl.LAMED:
+        return FIT_TYPE_2_A
+    if initial in (hl.ALEF, hl.HE, hl.XET, hl.AYIN):
+        return FIT_TYPE_2_B
+    return None
+
+
 def _fit_type(candidate: dict) -> str | None:
     """The one Fit-for-MAS class that a candidate meets, if it has one."""
     structural_types = candidate["structural_types"]
@@ -1332,7 +1347,9 @@ def _fit_type(candidate: dict) -> str | None:
     ):
         fit_types.append(FIT_TYPE_1_B)
     if TYPE_GUTTURAL in structural_types:
-        fit_types.append(FIT_TYPE_2)
+        type_2_fit_type = _type_2_fit_type(candidate["next_chanted_word"])
+        if type_2_fit_type is not None:
+            fit_types.append(type_2_fit_type)
     if TYPE_CLOSED_TSERE in structural_types:
         fit_types.append(FIT_TYPE_3)
     assert len(fit_types) <= 1, candidate
@@ -1391,7 +1408,7 @@ def _fit_for_mas_record(candidate: dict) -> dict:
 
 
 def _lacks_mas_case_lists(records: list[dict]) -> dict:
-    """The all-type-2 and selected type-1 tables extracted from complete Fit-for-MAS data."""
+    """The type-2A/2B and selected type-1 tables from complete Fit-for-MAS data."""
 
     def lacking(kind: str, system: str | None = None) -> list[dict]:
         return [
@@ -1598,11 +1615,21 @@ def _fit_for_mas_summary(
             and candidate["type_1_subtype"] == TYPE_1_SUBTYPE_C
         )
     ]
+    mas_with_type_2_subtype_c = [
+        candidate
+        for candidate in non_type_specific_conditions
+        if (
+            candidate["has_mas"]
+            and TYPE_GUTTURAL in candidate["structural_types"]
+            and _type_2_fit_type(candidate["next_chanted_word"]) is None
+        )
+    ]
     excluded_mas = (
         mas_outside_the_three_types
         + mas_with_non_disjunctive_next_word
         + mas_with_noninitial_next_word
         + mas_with_type_1_subtype_c
+        + mas_with_type_2_subtype_c
     )
     assert len(
         {
@@ -1617,7 +1644,8 @@ def _fit_for_mas_summary(
             " accent and with a next chanted word that has initial stress and a"
             " disjunctive accent-grammar token, classified by the three MAS structural"
             " predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD."
-            " Fit for MAS includes Types 2 and 3 and Type 1 subtypes A and B."
+            " Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and"
+            " Type 3."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
         "records_what": (
@@ -1641,6 +1669,7 @@ def _fit_for_mas_summary(
             "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
+            "type_2_subtype_C": len(mas_with_type_2_subtype_c),
         },
         "accent_grammar_token_counts": dict(
             sorted(

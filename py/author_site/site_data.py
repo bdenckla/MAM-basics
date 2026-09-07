@@ -85,7 +85,7 @@ POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
 POST_STRESS_METEG_MISC_TITLE = "Meteg after the primary stress: misc cases"
 POST_STRESS_METEG_TYPE_2_LACKS_MAS_FNAME = "post-stress-meteg-type-2-lacks-mas.html"
 POST_STRESS_METEG_TYPE_2_LACKS_MAS_TITLE = (
-    "Meteg after the primary stress: type 2 cases lacking MAS"
+    "Meteg after the primary stress: type 2A and 2B cases lacking MAS"
 )
 POST_STRESS_METEG_TYPE_1_LACKS_MAS_FNAME = "post-stress-meteg-type-1-lacks-mas.html"
 POST_STRESS_METEG_TYPE_1_LACKS_MAS_TITLE = (
