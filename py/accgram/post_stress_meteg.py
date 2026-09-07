@@ -1134,6 +1134,11 @@ def _record(
         "shares_its_letter_with": [_accent_name(one) for one in accents_here],
         "structural_type": structural_type,
         "subtype": subtype,
+        "type_1_subtype": (
+            _type_1_subtype(next_chanted_word, next_jta)
+            if structural_type == TYPE_OPEN
+            else None
+        ),
         "atom": 1 + sum(1 for one in letters[:letter_index] if one[2]),
     }
     if intervening_punctuation:

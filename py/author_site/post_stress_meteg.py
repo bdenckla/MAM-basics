@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page and five case tables.
+r"""MAM's metegs after the primary stress: the main page, methods page, and six case pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -96,6 +96,8 @@ _METHODS_FNAME = site_data.POST_STRESS_METEG_METHODS_FNAME
 _METHODS_TITLE = site_data.POST_STRESS_METEG_METHODS_TITLE
 _CASES_FNAME = site_data.POST_STRESS_METEG_CASES_FNAME
 _CASES_TITLE = site_data.POST_STRESS_METEG_CASES_TITLE
+_TYPE_1_FNAME = site_data.POST_STRESS_METEG_TYPE_1_FNAME
+_TYPE_1_TITLE = site_data.POST_STRESS_METEG_TYPE_1_TITLE
 _TYPE_2_FNAME = site_data.POST_STRESS_METEG_TYPE_2_FNAME
 _TYPE_2_TITLE = site_data.POST_STRESS_METEG_TYPE_2_TITLE
 _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
@@ -116,6 +118,7 @@ _JEREMIAH_FOOTNOTE_ID = "footnote-3"
 _NEXT_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
 _SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
+_VOCAL_SHEWA_FOOTNOTE_ID = "footnote-7"
 _FIT_FOR_MAS_SECTION_ID = "fit-for-mas"
 
 
@@ -241,6 +244,21 @@ _TYPE_CODES = {
         "the MAS is on a closed, final, tsere-vowelled syllable",
     ),
 }
+_TYPE_1_SUBTYPE_CODES = {
+    psm.TYPE_1_SUBTYPE_A: "1A",
+    psm.TYPE_1_SUBTYPE_B: "1B",
+    psm.TYPE_1_SUBTYPE_C: "1C",
+    None: "1D",
+}
+_TYPE_2_SUBTYPE_SPECS = (
+    ("lamed", "2A", "2A: the next chanted word begins with ל."),
+    ("guttural", "2B", "2B: the next chanted word begins with a guttural."),
+    (
+        "not-lamed-or-guttural",
+        "2C",
+        "2C: the next chanted word begins with another consonant.",
+    ),
+)
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
 _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
@@ -254,8 +272,11 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
     "post-stress-meteg-individually-expanded-hebrew"
 )
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
+_TYPE_1_TABLE_ID = "post-stress-meteg-type-1-cases"
 _TYPE_2_TABLE_ID = "post-stress-meteg-type-2-cases"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
+_TYPE_1_SUBTYPE_FILTER_ID = "post-stress-meteg-type-1-subtype-filter"
+_TYPE_1_SELECTED_COUNT_ID = "post-stress-meteg-type-1-selected-count"
 _TYPE_2_NEXT_FILTER_ID = "post-stress-meteg-type-2-next-filter"
 _TYPE_2_SELECTED_COUNT_ID = "post-stress-meteg-type-2-selected-count"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
@@ -364,12 +385,41 @@ nextFilter.addEventListener("change", () => {{
 updateType2Rows();
 </script>
 """
+_TYPE_1_FILTER_SCRIPT = f"""<script>
+const type1SubtypeFilter = document.getElementById("{_TYPE_1_SUBTYPE_FILTER_ID}");
+const type1Rows = document.querySelectorAll("#{_TYPE_1_TABLE_ID} tr[data-subtype]");
+const type1SelectedCount = document.getElementById("{_TYPE_1_SELECTED_COUNT_ID}");
+
+function updateType1Rows() {{
+  let visibleCount = 0;
+  for (const row of type1Rows) {{
+    const isSelected = type1SubtypeFilter.value === "all" ||
+      row.dataset.subtype === type1SubtypeFilter.value;
+    row.hidden = !isSelected;
+    row.classList.toggle(
+      "{_CASE_STRIPED_ROW_CLASS}",
+      isSelected && visibleCount % 2 === 1,
+    );
+    if (isSelected) {{
+      visibleCount += 1;
+    }}
+  }}
+  type1SelectedCount.textContent = "Showing " + visibleCount + " row" +
+    (visibleCount === 1 ? "" : "s") + ".";
+}}
+
+type1SubtypeFilter.addEventListener("change", () => {{
+  updateType1Rows();
+}});
+updateType1Rows();
+</script>
+"""
 
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str, str]:
-    """Write the main page, its Methods page, and the five case pages.
+) -> tuple[str, str, str, str, str, str, str, str]:
+    """Write the main page, its Methods page, and the six case pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -385,6 +435,7 @@ def gen_html_files(
             top_dir / _METHODS_FNAME, _METHODS_TITLE, build_methods_body(survey)
         ),
         _write_page(top_dir / _CASES_FNAME, _CASES_TITLE, build_cases_body(survey)),
+        _write_page(top_dir / _TYPE_1_FNAME, _TYPE_1_TITLE, build_type_1_body(survey)),
         _write_page(top_dir / _TYPE_2_FNAME, _TYPE_2_TITLE, build_type_2_body(survey)),
         _write_page(top_dir / _MISC_FNAME, _MISC_TITLE, build_misc_body(survey)),
         _write_page(
@@ -858,6 +909,9 @@ def pin_claims(survey: dict) -> None:
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
     assert all(record["is_the_last_syllable"] for record in type_1_records)
+    assert Counter(
+        _type_1_subtype_code(record) for record in type_1_records
+    ) == Counter({"1A": 103, "1B": 12, "1C": 7, "1D": 1})
     noninitial_next_stress_records = _noninitial_next_stress_records(survey)
     assert [
         (
@@ -893,6 +947,9 @@ def pin_claims(survey: dict) -> None:
     assert type_2_next_group_counts == Counter(
         lamed=38, guttural=17, resh=1, bet=2, mem=2
     )
+    assert Counter(
+        _type_2_filter_group(record) for record in type_2_records
+    ) == Counter(lamed=38, guttural=17, **{"not-lamed-or-guttural": 5})
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
@@ -1032,6 +1089,19 @@ def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
     )
 
 
+def _singleton_example_table(bcv: str, form: tuple) -> object:
+    """One example displayed in the same two-column table as a multi-row example set."""
+    return mb_html.table(
+        [
+            mb_html.table_row_of_data(
+                (_ref_link(bcv), form),
+                (None, _HEBREW_CELL),
+            )
+        ],
+        {"class": "limited-width post-stress-meteg-table"},
+    )
+
+
 def _cantillation_label(cantillation: str) -> tuple:
     """One visible cantillation-branch label, with its Hebrew letter name italicized."""
     by_cantillation = {
@@ -1075,14 +1145,7 @@ def _opening(survey: dict) -> list:
                 " after the stress (MAS). For example:",
             )
         ),
-        mb_html.para(
-            (
-                _ref_link(example["bcv"]),
-                " — ",
-                *_case_chanted_word_cell(example),
-            ),
-            {"class": "center"},
-        ),
+        _singleton_example_table(example["bcv"], _case_chanted_word_cell(example)),
         mb_html.para(
             (
                 'In this document, by "word" we mean either a simple word (having just one'
@@ -1264,12 +1327,12 @@ def _by_type(survey: dict) -> list:
                 ")",
             )
         ),
-        mb_html.unordered_list(
+        mb_html.ordered_list(
             (
-                "In type 1, the MAS is on an open final syllable.",
-                "In type 2, the word is closed by a guttural.",
+                "The MAS is on an open final syllable.",
+                "The word is closed by a guttural.",
                 (
-                    "In type 3, the MAS is on a closed, final, ",
+                    "The MAS is on a closed, final, ",
                     _ROM_TSERE,
                     "-vowelled syllable. (",
                     _footnote_callout(6, _TYPE_2_TYPE_3_FOOTNOTE_ID),
@@ -1364,18 +1427,9 @@ def _case_list_link(survey: dict) -> list:
 
 def _type_2_type_3_and_misc_facts(survey: dict) -> list:
     """The facts sections for type 2, type 3, and misc MAS cases."""
-    type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     return [
-        mb_html.heading_level_2("Facts about MAS type 2"),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(f"{type_2_count:,} type 2 cases", _TYPE_2_FNAME),
-                " have a separate table whose filter uses the next word's"
-                " initial consonant.",
-            )
-        ),
+        *_type_2_subtypes(survey),
         mb_html.heading_level_2("Facts about MAS type 3"),
         mb_html.heading_level_2("Facts about MAS misc"),
         mb_html.para(
@@ -1412,10 +1466,10 @@ def _type_1_subtypes(survey: dict) -> list:
         "Example",
     )
     labels = {
-        psm.TYPE_1_SUBTYPE_A: psm.TYPE_1_SUBTYPE_A,
-        psm.TYPE_1_SUBTYPE_B: psm.TYPE_1_SUBTYPE_B,
-        psm.TYPE_1_SUBTYPE_C: psm.TYPE_1_SUBTYPE_C,
-        "not_initially_stressed": "D",
+        psm.TYPE_1_SUBTYPE_A: "1A",
+        psm.TYPE_1_SUBTYPE_B: "1B",
+        psm.TYPE_1_SUBTYPE_C: "1C",
+        "not_initially_stressed": "1D",
     }
     rows = [
         mb_html.table_row_of_data(
@@ -1440,21 +1494,76 @@ def _type_1_subtypes(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "In type 1A, the next chanted word has non-plain initial stress because"
-                    " the next chanted word starts with a vocal ",
+                    "1A: the next word has initial stress and an initial vocal ",
+                    _ROM_SHEWA,
+                    ". (",
+                    _footnote_callout(7, _VOCAL_SHEWA_FOOTNOTE_ID),
+                    ")",
+                ),
+                (
+                    "1B: the next word has initial stress marked by a ",
+                    _ROM_PASHTA,
+                    " stress helper, and no initial vocal ",
                     _ROM_SHEWA,
                     ".",
                 ),
-                (
-                    "In type 1B, the next chanted word has plain initial stress marked by a ",
-                    _ROM_PASHTA,
-                    " stress helper.",
-                ),
-                "In type 1C, the next chanted word has other plain initial stress.",
-                "In type 1D, the next chanted word does not have initial stress.",
+                ("1C: Like 1B, but with no ", _ROM_PASHTA, " stress helper."),
+                "1D: the chanted word does not have initial stress.",
             )
         ),
         _table(headers, rows),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(f"{total:,} type 1 cases", _TYPE_1_FNAME),
+                " have a separate table whose filter uses the subtype.",
+            )
+        ),
+    ]
+
+
+def _type_2_subtypes(survey: dict) -> list:
+    """The complete structural type-2 MAS population by next-word initial consonant."""
+    records_by_group = {
+        group: [] for group, _code, _description in _TYPE_2_SUBTYPE_SPECS
+    }
+    for record in _type_2_records(survey):
+        records_by_group[_type_2_filter_group(record)].append(record)
+    rows = []
+    for group, code, _description in _TYPE_2_SUBTYPE_SPECS:
+        records = records_by_group[group]
+        assert records, group
+        rows.append(
+            mb_html.table_row_of_data(
+                (
+                    code,
+                    str(sum(record["system"] == _PROSE for record in records)),
+                    str(sum(record["system"] == _POETIC for record in records)),
+                    str(len(records)),
+                    _case_chanted_word_cell(records[0]),
+                ),
+                (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _HEBREW_CELL),
+            )
+        )
+    total = sum(len(records) for records in records_by_group.values())
+    assert total == _by_type_count(survey, psm.TYPE_GUTTURAL) == 60
+    return [
+        mb_html.heading_level_2("The three subtypes of MAS type 2"),
+        mb_html.para(
+            "All cases of MAS type 2 can be sorted into one of the three following subtypes:"
+        ),
+        mb_html.unordered_list(
+            tuple(description for _group, _code, description in _TYPE_2_SUBTYPE_SPECS)
+        ),
+        _table(("Subtype", "Prose", "Poetic", "All", "Example"), rows),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(f"{total:,} type 2 cases", _TYPE_2_FNAME),
+                " have a separate table whose filter uses the next word's"
+                " initial consonant.",
+            )
+        ),
     ]
 
 
@@ -1631,6 +1740,15 @@ def _type_2_records(survey: dict) -> list[dict]:
     ]
 
 
+def _type_1_records(survey: dict) -> list[dict]:
+    """The survey's type-1 records, in the corpus's order."""
+    return [
+        record
+        for record in survey["post_stress"]
+        if record["structural_type"] == psm.TYPE_OPEN
+    ]
+
+
 def _misc_records(survey: dict) -> list[dict]:
     """The survey's misc records, in the corpus's order."""
     return [
@@ -1653,6 +1771,22 @@ def _type_2_filter_group(record: dict) -> str:
     if detailed_group in ("lamed", "guttural"):
         return detailed_group
     return "not-lamed-or-guttural"
+
+
+def _type_1_subtype_code(record: dict) -> str:
+    """The reader-facing subtype code for one structural type-1 record."""
+    assert record["structural_type"] == psm.TYPE_OPEN, record
+    return _TYPE_1_SUBTYPE_CODES[record["type_1_subtype"]]
+
+
+def _type_1_case_row(record: dict) -> object:
+    return mb_html.table_row(
+        (
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
+        ),
+        {"data-subtype": _type_1_subtype_code(record)},
+    )
 
 
 def _type_2_case_row(record: dict) -> object:
@@ -1691,9 +1825,9 @@ def _misc_case_row(record: dict) -> object:
 def _type_2_next_filter(case_count: int) -> object:
     options = (
         ("all", "All type 2 cases"),
-        ("lamed", "Followed by ל"),
-        ("guttural", "Followed by guttural"),
-        ("not-lamed-or-guttural", "Not followed by ל or a gutt."),
+        ("lamed", "Subtype 2A: followed by ל"),
+        ("guttural", "Subtype 2B: followed by guttural"),
+        ("not-lamed-or-guttural", "Subtype 2C: another initial consonant"),
     )
     option_html = "".join(
         f'<option value="{value}">{label}</option>' for value, label in options
@@ -1702,6 +1836,25 @@ def _type_2_next_filter(case_count: int) -> object:
         f'<p><label for="{_TYPE_2_NEXT_FILTER_ID}">Show </label>'
         f'<select id="{_TYPE_2_NEXT_FILTER_ID}">{option_html}</select>. '
         f'<output id="{_TYPE_2_SELECTED_COUNT_ID}" aria-live="polite">'
+        f"Showing {case_count:,} rows.</output></p>\n"
+    )
+
+
+def _type_1_subtype_filter(case_count: int) -> object:
+    options = (
+        ("all", "All type 1 cases"),
+        ("1A", "Subtype 1A"),
+        ("1B", "Subtype 1B"),
+        ("1C", "Subtype 1C"),
+        ("1D", "Subtype 1D"),
+    )
+    option_html = "".join(
+        f'<option value="{value}">{label}</option>' for value, label in options
+    )
+    return mb_html.raw_html(
+        f'<p><label for="{_TYPE_1_SUBTYPE_FILTER_ID}">Show </label>'
+        f'<select id="{_TYPE_1_SUBTYPE_FILTER_ID}">{option_html}</select>. '
+        f'<output id="{_TYPE_1_SELECTED_COUNT_ID}" aria-live="polite">'
         f"Showing {case_count:,} rows.</output></p>\n"
     )
 
@@ -1719,6 +1872,38 @@ def _back_to_fit_for_mas_table() -> object:
             ".",
         )
     )
+
+
+def build_type_1_body(survey: dict) -> list:
+    """The type-1 cases, filterable by next-chanted-word-stress subtype."""
+    records = _type_1_records(survey)
+    rows = [_type_1_case_row(record) for record in records]
+    return [
+        mb_html.heading_level_1(_visible_title(_TYPE_1_TITLE)),
+        _hebrew_spacing_option(),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
+                " or the ",
+                mb_html.anchor_h(
+                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
+                ),
+                ".",
+            )
+        ),
+        mb_html.heading_level_2("Every type 1 case in MAM"),
+        _type_1_subtype_filter(len(rows)),
+        _table(
+            ("Verse", "Word"),
+            rows,
+            {
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
+                "id": _TYPE_1_TABLE_ID,
+            },
+        ),
+        mb_html.raw_html(_TYPE_1_FILTER_SCRIPT),
+    ]
 
 
 def build_type_2_body(survey: dict) -> list:
@@ -2216,6 +2401,7 @@ def _footnotes(survey: dict) -> list:
         *_next_conjunctive_footnote(survey),
         *_sources_for_types_footnote(),
         *_type_2_type_3_footnote(survey),
+        *_vocal_shewa_footnote(),
     ]
 
 
@@ -2384,16 +2570,31 @@ def _type_2_type_3_footnote(survey: dict) -> list:
                 " ",
                 _ROM_HE,
                 f": {overlap_by_book['da']:,} are in Daniel and "
-                f"{overlap_by_book['er']:,} are in Ezra. An example is as follows:",
+                f"{overlap_by_book['er']:,} are in Ezra. For example:",
             )
+        ),
+        _singleton_example_table(
+            overlap_example["bcv"],
+            wrap_hebrew_runs(overlap_example["mam_form"]),
+        ),
+    ]
+
+
+def _vocal_shewa_footnote() -> list:
+    """Footnote 7: an initial vocal shewa does not block initial stress."""
+    return [
+        mb_html.heading_level_3(
+            "φ7 — Vocal shewa and initial stress",
+            {"id": _VOCAL_SHEWA_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
-                _ref_link(overlap_example["bcv"]),
-                " — ",
-                *wrap_hebrew_runs(overlap_example["mam_form"]),
-            ),
-            {"class": "center"},
+                "We don't consider vocal ",
+                _ROM_SHEWA,
+                " to be a syllable, so a word with an initial vocal ",
+                _ROM_SHEWA,
+                " can still have initial stress.",
+            )
         ),
     ]
 
