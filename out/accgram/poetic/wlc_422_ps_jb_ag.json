@@ -30444,7 +30444,6 @@
 "TSINNOR",
 "OLEH_WEYORED",
 "MERKHA",
-"MERKHA",
 "ATNAX",
 "MERKHA",
 "REVIA_MUGRASH",
@@ -30490,7 +30489,6 @@
 {
 "label": "atnax_phrase",
 "leaves": [
-"merkha",
 "merkha",
 "atnax"
 ]

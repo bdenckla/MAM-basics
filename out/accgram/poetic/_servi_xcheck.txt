@@ -41,8 +41,8 @@
   verdict: UNIFORM in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
 
 ## DEXI
-  L adjacent servant: MUNAX:1372, MAHAPAKH:3, MERKHA:3
-  vs MAM (length-matched verses): both-served 1369 (agree 1369, type-conflict 0); one-sided 6; verse-count-mismatch 25
+  L adjacent servant: MUNAX:1372, MAHAPAKH:3, MERKHA:2
+  vs MAM (length-matched verses): both-served 1369 (agree 1369, type-conflict 0); one-sided 5; verse-count-mismatch 25
   verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
 
 ## TSINNOR
@@ -58,8 +58,8 @@
     Psalms 28:5: MAHAPAKH -> GALGAL
 
 ## LEGARMEH
-  L adjacent servant: MAHAPAKH:211, ILLUY:32, MERKHA:25, MUNAX:1
-  vs MAM (length-matched verses): both-served 251 (agree 250, type-conflict 1); one-sided 14; verse-count-mismatch 22
+  L adjacent servant: MAHAPAKH:211, ILLUY:32, MERKHA:24, MUNAX:1
+  vs MAM (length-matched verses): both-served 251 (agree 250, type-conflict 1); one-sided 13; verse-count-mismatch 22
   verdict: 1 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Psalms 40:13: MERKHA -> MAHAPAKH

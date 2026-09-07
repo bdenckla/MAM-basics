@@ -19,8 +19,9 @@ accent -> poetic reading (the accents that matter in the Three Books):
                   WLC 4.22 writes the pair across letters (ole then, later, the
                   yored merkha), while MAM stacks both marks on one base letter
                   (stored merkha-then-ole) when the stress is initial. The pair can
-                  also cross two chanted words. A cross-chanted-word token starts at
-                  the yored, so the yored's chanted word receives the disjunctive.
+                  also cross atoms of one chanted word or two chanted words. A
+                  cross-chanted-word token starts at the yored, so the yored's
+                  chanted word receives the disjunctive.
     revia mugrash geresh muqdam (preposed) plus revia; if the revia dot    II.5
                   is omitted because it would fall on the same letter as
                   the geresh muqdam, it is implied
@@ -96,7 +97,8 @@ _TSINNORIT_ATOM_TAIL = r"[^ \r\n֑-֮-]*"
 
 # The unaccented run between an oleh and its yored: letters, points, meteg, and
 # the M-C note markers pass through, but an accent, maqaf, or separator refuses
-# the match. The cross-chanted-word fusion uses it after the positioned scan.
+# the match. The cross-chanted-word fusion uses it after the positioned scan; the
+# cross-atom rule uses it directly in the table below.
 _OLE_TO_YORED_RUN = (
     "[^ \r\n֑-֮" + am.PASEQ + am.SOF_PASUQ + am.UPPER_DOT + am.LOWER_DOT + "-]*"
 )
@@ -203,9 +205,10 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     #     initial syllable, the yored merkha and ole share one base letter, stored
     #     merkha-THEN-ole -> matched by the MERKHA+OLE rule. Thirteen MAM poetic verses have
     #     this shape (e.g. Ps 30:12 לִ֥֫י); WLC 4.22 has none.
-    # Across chanted words is handled by _fuse_cross_chanted_word_yored after the positioned
-    # scan, so the token starts at the yored rather than at the ole. Every shape here fuses to
-    # one OLEH_WEYORED disjunctive -- the merkha is the yored, not a
+    #   - across atoms of one chanted word: matched by the second OLE rule. Across chanted
+    #     words is handled by _fuse_cross_chanted_word_yored after the positioned scan, so
+    #     the token starts at the yored rather than at the ole.
+    # Every shape fuses to one OLEH_WEYORED disjunctive -- the merkha is the yored, not a
     # servus. Without the same-letter rule MAM's merkha+ole would fall through to the bang
     # guard and be flagged merkha!ole -> NO_PARSE; this keeps the checker faithful to a wider
     # range of texts (issue wlc-utils#42) while leaving WLC 4.22 output unchanged (the rule
@@ -213,6 +216,12 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     # and the bang guard, which it does (longest-match ties to the bang guard but wins by
     # earlier order).
     (re.compile(am.OLE + _TEXT + am.MERKHA), pan.OLEH_WEYORED),
+    (
+        re.compile(
+            am.OLE + _OLE_TO_YORED_RUN + am.MAQAF + _OLE_TO_YORED_RUN + am.MERKHA
+        ),
+        pan.OLEH_WEYORED,
+    ),
     (re.compile(am.MERKHA + am.OLE), pan.OLEH_WEYORED),
     (re.compile(am.OLE), pan.OLEH_WEYORED),
     # revia mugrash: geresh muqdam plus revia in the same word; the revia is
@@ -414,6 +423,11 @@ def _fuse_cross_chanted_word_yored(body: str, raw_tokens: list[Token]) -> list[T
             continue
         fused.append(token)
         index += 1
+    # A successful fusion moves its token to the yored and drops only the paired
+    # merkha servus. The pass must never create or remove an oleh-we-yored reading.
+    assert sum(token.type == pan.OLEH_WEYORED for token in fused) == sum(
+        token.type == pan.OLEH_WEYORED for token in raw_tokens
+    ), body
     return fused
 
 

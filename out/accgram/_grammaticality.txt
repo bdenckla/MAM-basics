@@ -363,11 +363,11 @@ Among CLEAN verses the two rankings are largely orthogonal: only 2/30 of the rar
 # Continuous grammaticality -- poetic checker
 
 4463 treed verses (4450 clean estimate the grammar, 13 ungrammatical scored against it).
-Clean per-accent log-likelihood: mean -1.245, sd 0.368, range [-4.074, -0.739] (less negative = more typical).
+Clean per-accent log-likelihood: mean -1.244, sd 0.367, range [-4.074, -0.739] (less negative = more typical).
 
 ## Estimated grammar (productions by descending probability)
 
-21 nonterminals, 190 distinct productions.
+21 nonterminals, 188 distinct productions.
 
 silluq_clause  (total 7873, 14 rule(s))
        3024  p=0.3838  -> revia_mugrash_phrase silluq_phrase
@@ -418,19 +418,19 @@ silluq_phrase  (total 4450, 25 rule(s))
 
 atnax_phrase  (total 4200, 28 rule(s))
        1932  p=0.4585  -> (munax atnax)
-        754  p=0.1790  -> (munax munax atnax)
-        753  p=0.1788  -> (merkha atnax)
+        756  p=0.1795  -> (munax munax atnax)
+        756  p=0.1795  -> (merkha atnax)
         603  p=0.1432  -> (atnax)
          74  p=0.0177  -> (mahapakh munax munax atnax)
          22  p=0.0053  -> (tarxa merkha atnax)
          16  p=0.0039  -> (illuy munax munax atnax)
          13  p=0.0032  -> (mahapakh metsunnar munax munax atnax)
-          6  p=0.0015  -> (merkha merkha atnax)
           5  p=0.0013  -> (mahapakh atnax)
-          3  p=0.0008  -> (merkha munax munax atnax)
+          3  p=0.0008  -> (merkha merkha atnax)
           2  p=0.0006  -> (mahapakh shalshelet qetannah illuy atnax)
           2  p=0.0006  -> (merkha munax atnax)
           1  p=0.0004  -> (munax tarxa munax atnax)
+          1  p=0.0004  -> (merkha munax munax atnax)
           1  p=0.0004  -> (tarxa atnax)
           1  p=0.0004  -> (mahapakh merkha munax munax munax atnax)
           1  p=0.0004  -> (mahapakh metsunnar atnax)
@@ -446,10 +446,10 @@ atnax_phrase  (total 4200, 28 rule(s))
           1  p=0.0004  -> (illuy merkha atnax)
           1  p=0.0004  -> (munax mahapakh atnax)
 
-revia_mugrash_phrase  (total 3180, 16 rule(s))
-       1988  p=0.6236  -> (revia mugrash)
-       1100  p=0.3451  -> (merkha revia mugrash)
-         37  p=0.0118  -> (tarxa merkha revia mugrash)
+revia_mugrash_phrase  (total 3180, 15 rule(s))
+       1988  p=0.6237  -> (revia mugrash)
+       1100  p=0.3452  -> (merkha revia mugrash)
+         38  p=0.0121  -> (tarxa merkha revia mugrash)
          35  p=0.0111  -> (merkha merkha revia mugrash)
           5  p=0.0017  -> (mahapakh metsunnar revia mugrash)
           3  p=0.0011  -> (mahapakh tarxa merkha revia mugrash)
@@ -457,7 +457,6 @@ revia_mugrash_phrase  (total 3180, 16 rule(s))
           2  p=0.0008  -> (merkha merkha metsunnar revia mugrash)
           1  p=0.0005  -> (munax merkha revia mugrash)
           1  p=0.0005  -> (mahapakh merkha metsunnar merkha revia mugrash)
-          1  p=0.0005  -> (merkha tarxa merkha revia mugrash)
           1  p=0.0005  -> (mahapakh shalshelet qetannah mahapakh metsunnar revia mugrash)
           1  p=0.0005  -> (mahapakh metsunnar shalshelet qetannah mahapakh metsunnar revia mugrash)
           1  p=0.0005  -> (mahapakh azla tarxa merkha revia mugrash)
@@ -474,15 +473,14 @@ atnax_clause  (total 3109, 8 rule(s))
          41  p=0.0133  -> legarmeh_phrase atnax_phrase
           1  p=0.0005  -> pazer_clause atnax_phrase
 
-dexi_phrase  (total 2681, 11 rule(s))
-       1308  p=0.4870  -> (dexi)
-       1267  p=0.4717  -> (munax dexi)
+dexi_phrase  (total 2681, 10 rule(s))
+       1309  p=0.4874  -> (dexi)
+       1270  p=0.4729  -> (munax dexi)
          67  p=0.0251  -> (mahapakh munax dexi)
          19  p=0.0073  -> (mahapakh metsunnar munax dexi)
           8  p=0.0032  -> (illuy munax dexi)
-          3  p=0.0013  -> (merkha dexi)
-          3  p=0.0013  -> (merkha munax dexi)
           3  p=0.0013  -> (mahapakh dexi)
+          2  p=0.0009  -> (merkha dexi)
           1  p=0.0006  -> (merkha mahapakh metsunnar munax dexi)
           1  p=0.0006  -> (tarxa munax dexi)
           1  p=0.0006  -> (munax munax dexi)
@@ -500,11 +498,11 @@ revia_gadol_phrase  (total 583, 10 rule(s))
           1  p=0.0025  -> (illuy illuy revia gadol)
 
 legarmeh_phrase  (total 566, 8 rule(s))
-        300  p=0.5267  -> (legarmeh)
+        301  p=0.5285  -> (legarmeh)
         151  p=0.2656  -> (mahapakh legarmeh)
          56  p=0.0990  -> (mahapakh metsunnar legarmeh)
          32  p=0.0570  -> (illuy legarmeh)
-         23  p=0.0412  -> (merkha legarmeh)
+         22  p=0.0394  -> (merkha legarmeh)
           2  p=0.0044  -> (merkha mahapakh metsunnar legarmeh)
           1  p=0.0026  -> (azla mahapakh metsunnar legarmeh)
           1  p=0.0026  -> (mahapakh merkha legarmeh)
@@ -602,13 +600,13 @@ pazer_clause  (total 20, 1 rule(s))
          20  p=0.9762  -> legarmeh_phrase pazer_phrase
 
 ## Validation: flagged ungrammatical scored against the clean grammar
-All 13 ungrammatical land at percentile <= 3.6 among same-length clean verses; 11 sit at <= 1st percentile, 13 at <= 5th. The score recovers the binary verdict from the bottom up. Showing the 13 rarest:
+All 13 ungrammatical land at percentile <= 3.5 among same-length clean verses; 11 sit at <= 1st percentile, 13 at <= 5th. The score recovers the binary verdict from the bottom up. Showing the 13 rarest:
 
-  Psalms 89:41           acc= 3  logL=  -13.80  /acc= -4.60  pct=  0.0  bg/tok= -2.43
+  Psalms 89:41           acc= 3  logL=  -13.79  /acc= -4.60  pct=  0.0  bg/tok= -2.43
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
-  Psalms 37:31           acc= 4  logL=  -13.80  /acc= -3.45  pct=  0.0  bg/tok= -2.15
+  Psalms 37:31           acc= 4  logL=  -13.79  /acc= -3.45  pct=  0.0  bg/tok= -2.15
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
-  Psalms 78:41           acc= 4  logL=  -13.80  /acc= -3.45  pct=  0.0  bg/tok= -2.15
+  Psalms 78:41           acc= 4  logL=  -13.79  /acc= -3.45  pct=  0.0  bg/tok= -2.15
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
   Psalms 32:2            acc= 8  logL=  -26.96  /acc= -3.37  pct=  0.0  bg/tok= -2.86
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
@@ -626,7 +624,7 @@ All 13 ungrammatical land at percentile <= 3.6 among same-length clean verses; 1
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
   Proverbs 24:15         acc= 5  logL=  -13.12  /acc= -2.62  pct=  0.4  bg/tok= -2.00
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
-  Psalms 89:7            acc= 8  logL=  -17.17  /acc= -2.15  pct=  3.6  bg/tok= -1.89
+  Psalms 89:7            acc= 8  logL=  -17.16  /acc= -2.15  pct=  3.5  bg/tok= -1.89
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
   Psalms 74:17           acc= 7  logL=  -14.23  /acc= -2.03  pct=  2.4  bg/tok= -1.79
       rarest: silluq_phrase -> (ERROR)  (logp -9.10)
@@ -648,25 +646,25 @@ All 13 ungrammatical land at percentile <= 3.6 among same-length clean verses; 1
       rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
   Psalms 85:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
       rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
-  Job 36:28              acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Job 36:28              acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 3:1             acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Psalms 3:1             acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 56:8            acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Psalms 56:8            acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 73:20           acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Psalms 73:20           acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 88:11           acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Psalms 88:11           acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 119:104         acc= 6  logL=  -21.20  /acc= -3.53  pct=  0.4  bg/tok= -1.55
+  Psalms 119:104         acc= 6  logL=  -21.19  /acc= -3.53  pct=  0.4  bg/tok= -1.55
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
   Psalms 137:9           acc= 5  logL=  -17.15  /acc= -3.43  pct=  0.1  bg/tok= -2.33
       rarest: revia_mugrash_phrase -> (shalshelet qetannah illuy revia mugrash)  (logp -7.66)
-  Job 21:28              acc= 8  logL=  -26.60  /acc= -3.32  pct=  0.2  bg/tok= -1.69
+  Job 21:28              acc= 8  logL=  -26.59  /acc= -3.32  pct=  0.2  bg/tok= -1.69
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Proverbs 21:29         acc= 8  logL=  -25.02  /acc= -3.13  pct=  0.7  bg/tok= -1.83
+  Proverbs 21:29         acc= 8  logL=  -25.01  /acc= -3.13  pct=  0.7  bg/tok= -1.83
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 119:69          acc= 8  logL=  -25.02  /acc= -3.13  pct=  0.7  bg/tok= -1.83
+  Psalms 119:69          acc= 8  logL=  -25.01  /acc= -3.13  pct=  0.7  bg/tok= -1.83
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
   Psalms 47:9            acc= 7  logL=  -21.65  /acc= -3.09  pct=  0.1  bg/tok= -1.45
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
@@ -678,24 +676,24 @@ All 13 ungrammatical land at percentile <= 3.6 among same-length clean verses; 1
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
   Psalms 116:19          acc= 6  logL=  -17.99  /acc= -3.00  pct=  0.5  bg/tok= -2.23
       rarest: revia_mugrash_phrase -> (mahapakh metsunnar revia mugrash)  (logp -6.36)
-  Job 3:13               acc= 7  logL=  -20.46  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+  Job 3:13               acc= 7  logL=  -20.45  /acc= -2.92  pct=  0.9  bg/tok= -1.29
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Job 15:24              acc= 7  logL=  -20.46  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+  Job 15:24              acc= 7  logL=  -20.45  /acc= -2.92  pct=  0.9  bg/tok= -1.29
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 102:20          acc= 7  logL=  -20.46  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+  Psalms 102:20          acc= 7  logL=  -20.45  /acc= -2.92  pct=  0.9  bg/tok= -1.29
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 105:3           acc= 7  logL=  -20.46  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+  Psalms 105:3           acc= 7  logL=  -20.45  /acc= -2.92  pct=  0.9  bg/tok= -1.29
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 148:4           acc= 7  logL=  -20.46  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+  Psalms 148:4           acc= 7  logL=  -20.45  /acc= -2.92  pct=  0.9  bg/tok= -1.29
       rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
-  Psalms 146:3           acc= 6  logL=  -17.49  /acc= -2.91  pct=  0.6  bg/tok= -1.93
+  Psalms 146:3           acc= 6  logL=  -17.48  /acc= -2.91  pct=  0.6  bg/tok= -1.93
       rarest: silluq_phrase -> (mahapakh merkha silluq)  (logp -8.00)
   Psalms 135:21          acc= 6  logL=  -17.45  /acc= -2.91  pct=  0.7  bg/tok= -1.93
       rarest: revia_mugrash_phrase -> (mahapakh metsunnar revia mugrash)  (logp -6.36)
 
 ## n-gram baseline (sanity check, not the model)
 Ungrammatical vs clean separation (clean-mean minus ungrammatical-mean, in clean sd):
-  PCFG  per-accent:  clean -1.245+-0.368  ungrammatical -3.047  ->  4.9 sd
-  bigram per-token:  clean -0.980+-0.288  ungrammatical -2.147  ->  4.0 sd
+  PCFG  per-accent:  clean -1.244+-0.367  ungrammatical -3.046  ->  4.9 sd
+  bigram per-token:  clean -0.979+-0.287  ungrammatical -2.147  ->  4.1 sd
 Structure (PCFG) separates anomalies far more sharply than sequence (bigram), confirming the PCFG as the primary measure.
 Among CLEAN verses the two rankings are largely orthogonal: only 2/30 of the rarest-by-PCFG verses are also rarest-by-bigram -- structure-rare and sequence-rare are different questions.

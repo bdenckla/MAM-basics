@@ -7557,7 +7557,6 @@
 "MERKHA",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -7598,7 +7597,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "dexi"
 ]
 },
@@ -36768,7 +36766,6 @@
 "MERKHA",
 "REVIA_QATAN",
 "OLEH_WEYORED",
-"MERKHA",
 "MUNAX",
 "DEXI",
 "MUNAX",
@@ -36820,7 +36817,6 @@
 {
 "label": "dexi_phrase",
 "leaves": [
-"merkha",
 "munax",
 "dexi"
 ]
@@ -49826,7 +49822,6 @@
 "GALGAL",
 "OLEH_WEYORED",
 "MERKHA",
-"MERKHA",
 "ATNAX",
 "MERKHA",
 "SILLUQ",
@@ -49873,7 +49868,6 @@
 {
 "label": "atnax_phrase",
 "leaves": [
-"merkha",
 "merkha",
 "atnax"
 ]
