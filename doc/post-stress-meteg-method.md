@@ -5,15 +5,15 @@ post-stress-meteg page explains the cantillation findings without this implement
 
 ## Fit for MAS
 
-The fit-for-MAS table asks a broad structural question about a pair of chanted words. A candidate
-has a first chanted word with a nonfinal primary stress syllable that has a conjunctive accent,
-followed by a chanted word with initial stress and a disjunctive accent. The candidate syllable
-immediately after the first chanted word's primary stress must also meet one or more of the three
-source-derived types. The survey places that syllable in each type it meets, then records whether
-MAM has a meteg on the syllable. The types are Yeivin's §332 open-syllable type, §354 guttural
-type, and §338 closed-tsere type, with Breuer's corresponding Ch. 8 types (j), (b), and (a).
-Breuer's Ch. 14 §8 lists only the types where the poetic system's rule differs from the prose
-system's rule, and item (b) there is the guttural type.
+The fit-for-MAS table asks a narrow structural question about a pair of chanted words. A candidate
+has a first chanted word with a nonfinal primary stress syllable and a candidate syllable
+immediately after that stress. The table includes the pair only when the stress syllable has one
+conjunctive accent, the next chanted word has initial stress and a disjunctive accent, and the
+first chanted word has no other meteg. The candidate syllable must be type 1A, 1B, 2A, 2B, or 3.
+The types are Yeivin's §332 open-syllable type, §354 guttural type, and §338 closed-tsere type,
+with Breuer's corresponding Ch. 8 types (j), (b), and (a). Breuer's Ch. 14 §8 lists only the
+types where the poetic system's rule differs from the prose system, and item (b) there is the
+guttural type.
 
 The table is a search limited to a regular configuration of neighbouring chanted words. Phonetic
 MAM supplies the first chanted word's stress position, and the survey checks the conjunctive accent
@@ -22,11 +22,12 @@ word's disjunctive accent. The U+05BD on ר in Genesis 28:7's next chanted word,
 silluq, not an absence of an accent: the sof pasuq supplies the context that classifies it.
 
 The non-type-specific conditions deliberately define a narrower table than the MAS census. A
-grammar-aware audit on 2026-09-06 found 215 next-word disjunctives and 17 next-word conjunctives
-among the 232 MAS records; all but Jeremiah 46:14 have initial stress in the next word. The
-fit-for-MAS footnote accounts for every resulting difference between the table's "Has MAS" count
-and the total MAS count, including the seven MAS cases that meet none of the three structural
-types.
+grammar-aware audit found 217 next-word disjunctives and 15 next-word conjunctives among the 232
+MAS records; all but Jeremiah 46:14 have initial stress in the next chanted word. The Fit-for-MAS
+section accounts for every difference between the table's "Has MAS" count and the total MAS count.
+In particular, ten chanted words have two distinct metegs: an MBS before the primary stress and a
+MAS immediately after it. The table excludes those ten chanted words because its definition
+requires no other meteg, while the MBS and MAS census categories each include the applicable mark.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
 initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a
@@ -38,9 +39,8 @@ condition for all three types.
 ## Phonetic MAM source-form alignment
 
 The Fit-for-MAS records use Phonetic MAM for primary stress and MAM today for reader-facing forms.
-Those are not interchangeable inputs. On 2026-09-06, the 3,181 Fit-for-MAS records' first and
-next chanted words were compared directly with MAM-parsed-plus: 6,362 pairs in all. This was
-a template-aware comparison, not a comparison against MAM-simple's flattened stream.
+Those are not interchangeable inputs. Each displayed MAM form is found from its Phonetic-MAM
+counterpart by a template-aware comparison, not by matching MAM-simple's flattened stream alone.
 
 The selected MAM-parsed-plus form has the following explicit choices.
 
@@ -53,13 +53,10 @@ The selected MAM-parsed-plus form has the following explicit choices.
 4. The comparison removes Phonetic MAM's upper dot and rafe, which the reader-facing MAM-form
    projection also removes. A shared varika stays in the form.
 
-Under that policy, 6,308 pairs are identical and 16 more agree with the shared varika retained.
-The remaining 38 pairs are not text differences. Each has `מ:לגרמיה-2` immediately after the
-matching MAM chanted word, and each Fit-for-MAS record has the next chanted word's
-disjunctive accent. MAM-simple represents the U+05C0 glyph in a separate stream position, while
-the MAM-parsed-plus template records the legarmeh analysis. Four of the 38 numbered verses also
-have a `מ:פסק` template elsewhere; that template does not describe the candidate chanted word.
-After those semantic agreements, no form pair remains unaccounted for.
+When a matching MAM chanted word is followed by a `מ:לגרמיה-2` template, the two inputs agree
+semantically rather than textually: MAM-simple represents U+05C0 in a separate stream position,
+while the MAM-parsed-plus template records the legarmeh analysis. A `מ:פסק` template elsewhere in
+the numbered verse does not describe the candidate chanted word.
 
 MAM-simple remains appropriate where this survey needs its current reader-facing forms or a
 per-numbered-verse U+05BD count. MAM-parsed-plus is the input where the question depends on a
@@ -78,11 +75,11 @@ against the template-aware source-form result above.
 ## Primary stress and accent parsing
 
 Phonetic MAM's `jta` field gives the primary-stress position. The survey uses that field rather
-than inferring primary stress from the number or placement of Unicode accent marks. The prose and
-poetic accent grammars still tokenize each word, and the JSON records their token-count
-distribution as a diagnostic. Tokenization does not exclude a structural candidate.
+than inferring primary stress from the number or placement of Unicode accent marks. The potential
+chanted word's stress syllable must have one regular conjunctive accent, checked directly on the
+stress letter. The prose or poetic accent grammar determines whether the next chanted word has a
+disjunctive accent; a next chanted word without that token does not meet the Fit-for-MAS filter.
 
-Earlier code used Phonetic MAM's `jta` field to find stress, then classified the accent by raw
-Unicode marks on the stress letter. That raw-mark step could not recognize fixed-edge accents or a
-verse-final U+05BD as silluq. The table now retains the next-word conditions, but establishes
-the accent condition through the accent grammar instead.
+The census classifies a U+05BD that shares a stress letter with a stress-marking accent only when
+their order is defined. A U+05BD sharing a letter with a fixed-edge accent is classified by its
+syllable, because that accent does not identify the primary stress.

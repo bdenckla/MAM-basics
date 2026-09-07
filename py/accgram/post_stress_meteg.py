@@ -237,7 +237,7 @@ _ACCENT_NAMES = {
 # strictly for the same reason ``_ACCENT_NAMES`` is: a point with no name here stops the run.
 _VOWEL_NAMES = {
     hpo.XIRIQ: "ḥiriq",
-    hpo.TSERE: "ṣere",
+    hpo.TSERE: "tsere",
     hpo.SEGOL_V: "segol",
     hpo.PATAX: "pataḥ",
     hpo.QAMATS: "qamats",
@@ -641,13 +641,13 @@ def _structural_type(
     * an open final syllable is ITM §332 and CoS Ch. 8 type (j), the qumi rule;
     * a chanted word phonetically closed by a guttural is ITM §354 and CoS Ch. 8 type (b);
       a final mater he is not a guttural closing for this purpose; and
-    * a closed syllable whose nucleus is a ṣere is ITM §338. This is the narrower condition this
+    * a closed syllable whose nucleus is a tsere is ITM §338. This is the narrower condition this
       survey uses for type 3; CoS Ch. 8 type (a) is wider, covering a long vowel in a closed
       syllable.
 
     Anything else -- a closed syllable with some other vowel, the segol of vayomer above all --
     is left unclassified and stays visible as itself.  A final closed ḥolam syllable is the
-    ``misc-almost-type-3`` subtype: it fits CoS's wider long-vowel condition but not ITM's ṣere
+    ``misc-almost-type-3`` subtype: it fits CoS's wider long-vowel condition but not ITM's tsere
     type.
     """
     if is_open and is_last_syllable:
@@ -1393,6 +1393,22 @@ def _fit_for_mas_record(candidate: dict) -> dict:
     }
 
 
+def _record_key(record: dict) -> tuple[str, str, str]:
+    """The source identity shared by a chanted word's meteg records and candidate."""
+    return record["bcv"], record["chanted_word"], record["jta"]
+
+
+def _mas_with_both_mbs_and_mas(
+    pre_stress: list[dict], post_stress: list[dict]
+) -> list[dict]:
+    """The chanted words that have distinct MBS and MAS marks."""
+    pre_stress_keys = {_record_key(record) for record in pre_stress}
+    both = [record for record in post_stress if _record_key(record) in pre_stress_keys]
+    assert all(record["chanted_word"].count(METEG) == 2 for record in both), both
+    assert all(record["syllables_after_the_stress"] == 1 for record in both), both
+    return both
+
+
 def _mark_candidates_with_mas(candidates: list[dict], post_stress: list[dict]) -> int:
     """Mark each candidate according to whether it has a MAS, and return the MAS count."""
     mas_keys = {
@@ -1475,6 +1491,7 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
 def _fit_for_mas_summary(
     candidates: list[dict],
     mas_count: int,
+    mas_with_both_mbs_and_mas: list[dict],
     words_by_bcv: dict[str, list[str]],
     context_by_bcv: dict[str, list[object]],
 ) -> dict:
@@ -1583,6 +1600,10 @@ def _fit_for_mas_summary(
         for candidate in candidates
         if candidate["has_mas"] and candidate["word_has_another_meteg"]
     ]
+    assert {_record_key(candidate) for candidate in mas_with_another_meteg} == {
+        _record_key(record) for record in mas_with_both_mbs_and_mas
+    }
+    assert all(record["mam_form"] is not None for record in mas_with_both_mbs_and_mas)
     excluded_mas = (
         mas_outside_the_three_types
         + mas_with_non_disjunctive_next_word
@@ -1631,8 +1652,16 @@ def _fit_for_mas_summary(
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
             "type_2_subtype_C": len(mas_with_type_2_subtype_c),
-            "word_already_has_meteg": len(mas_with_another_meteg),
+            "chanted_word_has_mbs_and_mas": len(mas_with_both_mbs_and_mas),
         },
+        "chanted_words_with_mbs_and_mas": [
+            {
+                "bcv": record["bcv"],
+                "system": record["system"],
+                "mam_form": record["mam_form"],
+            }
+            for record in mas_with_both_mbs_and_mas
+        ],
         "accent_grammar_token_counts": dict(
             sorted(
                 Counter(
@@ -2229,7 +2258,7 @@ def _problems(found: dict) -> list[str]:
         refs = [one["bcv"] for one in found["same_letter_failures"][:20]]
         out.append(
             f"{len(found['same_letter_failures'])} metegs share a letter with a"
-            f" stress-bearing accent, whose order is undefined: {refs}"
+            f" accent on the stress letter, whose order is undefined: {refs}"
         )
     if found["mismatches"]:
         refs = [one["bcv"] for one in found["mismatches"][:20]]
@@ -2538,9 +2567,16 @@ def build_survey() -> dict:
     post_stress = found["post_stress"]
     _assert_type_2_next_filter_coverage(post_stress)
     mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
+    mas_with_both_mbs_and_mas = _mas_with_both_mbs_and_mas(
+        found["pre_stress"], post_stress
+    )
     actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(
-        found["fit_for_mas_candidates"], mas_count, words_by_bcv, context_by_bcv
+        found["fit_for_mas_candidates"],
+        mas_count,
+        mas_with_both_mbs_and_mas,
+        words_by_bcv,
+        context_by_bcv,
     )
     by_type = Counter((one["system"], one["structural_type"]) for one in post_stress)
     assert actual_type_1_mas["cases"] == sum(

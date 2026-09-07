@@ -227,7 +227,7 @@ _COS_CH_14_PAGES_BY_TYPE = {
 
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
-    psm.TYPE_GUTTURAL: ("2", "the word is closed by a guttural"),
+    psm.TYPE_GUTTURAL: ("2", "the chanted word is closed by a guttural"),
     psm.TYPE_CLOSED_TSERE: (
         "3",
         "the MAS is on a closed, final, tsere-vowelled syllable",
@@ -750,8 +750,25 @@ def pin_claims(survey: dict) -> None:
         "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
         "type_2_subtype_C": 5,
-        "word_already_has_meteg": 10,
+        "chanted_word_has_mbs_and_mas": 10,
     }
+    mbs_and_mas = fit_for_mas["chanted_words_with_mbs_and_mas"]
+    assert [record["bcv"] for record in mbs_and_mas] == [
+        "lv25:53",
+        "1s22:17",
+        "1s25:15",
+        "1s29:6",
+        "1k8:16",
+        "is65:18",
+        "je42:2",
+        "mi1:12",
+        "ps94:9",
+        "da6:25",
+    ]
+    assert all(
+        record["mam_form"] is not None and record["mam_form"].count(psm.METEG) == 2
+        for record in mbs_and_mas
+    )
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
     ) == len(post_stress)
@@ -859,7 +876,7 @@ def pin_claims(survey: dict) -> None:
         record["syllables_after_the_stress"] == 1
         and record["structural_type"] == psm.TYPE_GUTTURAL
         and record["syllable_is_open"]
-        and record["vowel"] == "ṣere"
+        and record["vowel"] == "tsere"
         and record["chanted_word_is_closed_by_a_guttural"]
         and final_stress.ends_in_furtive_patax(record["chanted_word"])
         for record in nonfinal_mas_syllable_records
@@ -881,7 +898,7 @@ def pin_claims(survey: dict) -> None:
     assert all(
         record["is_the_last_syllable"]
         and not record["syllable_is_open"]
-        and record["vowel"] == "ṣere"
+        and record["vowel"] == "tsere"
         and record["next_chanted_word_is_initially_stressed"]
         for record in type_3_records
     ), "the type-3 finality or next-word-stress fact has moved"
@@ -1359,7 +1376,7 @@ def _sources_for_types_footnote() -> list:
                 itm(),
                 " and ",
                 cos(),
-                ". Exactly what words are included and excluded in these three types vary"
+                ". Exactly what chanted words are included and excluded in these three types varies"
                 " between ITM, CoS, and our document here, but they broadly agree.",
             )
         ),
@@ -1537,14 +1554,10 @@ def _case_type_code(kind: str) -> str:
     return _TYPE_CODES.get(kind, ("other", ""))[0]
 
 
-def _case_type_cell(
-    kind: str, *, unqualified_word: bool = False, misc_label: bool = False
-) -> object:
+def _case_type_cell(kind: str, *, misc_label: bool = False) -> object:
     """A type label, with the subpages' shorter vocabulary and misc label when requested."""
     if kind in _TYPE_CODES:
         code, gloss = _TYPE_CODES[kind]
-        if unqualified_word:
-            gloss = gloss.replace("chanted word", "word")
         return mb_html.abbr(code, {"title": f"Type {code}: {gloss}"})
     if misc_label:
         return "misc"
@@ -1681,9 +1694,7 @@ def _case_row(record: dict) -> object:
             mb_html.table_datum(_ref_link(record["bcv"])),
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
             mb_html.table_datum(
-                _case_type_cell(
-                    record["structural_type"], unqualified_word=True, misc_label=True
-                )
+                _case_type_cell(record["structural_type"], misc_label=True)
             ),
             mb_html.table_datum(
                 subtype
@@ -2489,9 +2500,11 @@ def _fit_for_mas_facts(survey: dict) -> list:
     """Every syllable fit for MAS, including the ones lacking MAS."""
     fit_for_mas = _fit_for_mas(survey)
     mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
+    mbs_and_mas = fit_for_mas["chanted_words_with_mbs_and_mas"]
     total_mas = len(survey["post_stress"])
-    surprising_mas_count = total_mas - fit_for_mas["with_mas"]
-    assert surprising_mas_count == sum(mas_not_in_the_table.values())
+    not_fit_for_mas_count = total_mas - fit_for_mas["with_mas"]
+    assert not_fit_for_mas_count == sum(mas_not_in_the_table.values())
+    assert len(mbs_and_mas) == mas_not_in_the_table["chanted_word_has_mbs_and_mas"]
     type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
     type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
 
@@ -2564,8 +2577,8 @@ def _fit_for_mas_facts(survey: dict) -> list:
         ),
         mb_html.table_row_of_data(
             (
-                "The word already has another meteg.",
-                f"{mas_not_in_the_table['word_already_has_meteg']:,}",
+                "The chanted word has both MBS and MAS.",
+                f"{mas_not_in_the_table['chanted_word_has_mbs_and_mas']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
@@ -2620,14 +2633,34 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 'The final-row "Has MAS" count is ',
                 f"{fit_for_mas['with_mas']:,}",
                 f", rather than the total of {total_mas:,} MAS cases, because "
-                f"{surprising_mas_count:,} syllables have MAS even though the Fit for MAS"
-                " definition does not consider the syllables fit for MAS. The table shows why"
-                " the surprising MAS cases are not fit for MAS.",
+                f"{not_fit_for_mas_count:,} MAS cases do not meet the Fit-for-MAS"
+                " definition. The table shows which condition each case does not meet.",
             )
         ),
         _table(
             ("Why the MAS syllable is not fit for MAS", "MAS cases"),
             surprising_mas_rows,
+        ),
+        mb_html.heading_level_3("The ten chanted words with both MBS and MAS"),
+        mb_html.para(
+            (
+                "Each chanted word below has two distinct metegs: one ",
+                mb_html.abbr("MBS", {"title": "meteg before the stress"}),
+                " before its primary stress and one ",
+                mb_html.abbr("MAS", {"title": "meteg after the stress"}),
+                " immediately after its primary stress. The MBS and MAS are distinct marks;"
+                " neither meteg belongs to both categories.",
+            )
+        ),
+        _table(
+            ("Verse", "Chanted word"),
+            [
+                mb_html.table_row_of_data(
+                    (_ref_link(record["bcv"]), _hebrew_cell(record["mam_form"])),
+                    (None, _HEBREW_CELL),
+                )
+                for record in mbs_and_mas
+            ],
         ),
     ]
 
