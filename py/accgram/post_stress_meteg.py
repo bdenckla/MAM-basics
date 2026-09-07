@@ -1249,9 +1249,9 @@ def _fit_for_mas_candidate(
 
     Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
     Unicode accent count cannot supply that information.  The potential syllable is directly
-    after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has a
-    conjunctive accent, the next chanted word has initial stress and a disjunctive accent, the
-    word has no other meteg, and the potential syllable meets one of the Fit-for-MAS types.
+    after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has
+    exactly one regular conjunctive accent, the next chanted word has initial stress and a
+    disjunctive accent-grammar token, and the candidate meets one of the Fit-for-MAS types.
     """
     stressed = parsed["stressed"]
     if stressed == len(parsed["syllables"]) - 1:
