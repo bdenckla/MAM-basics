@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: Phases 0–4 completed 2026-09-06. MAM-parsed and MAM-with-doc are landed in MAM-basics; both former repositories are deployed redirect hosts and both local clones are in the Windows Recycle Bin. MAM-OSIS remains a later lane.
+State: live
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -142,7 +142,7 @@ Two findings were non-regressions. `py/check_ac_all.py` still reports Aleppo's p
 
 After the source redirect Pages deployment and its live HTML verification, the source clone was clean, its `HEAD` matched `origin/main`, it had one worktree and no unpreserved branch or object, and it was moved to the Windows Recycle Bin. Its contents remain recoverable there.
 
-## Phase 2 — MAM-for-Sefaria
+## Phase 2 — MAM-for-Sefaria — DONE 2026-09-06
 
 The second product lane. Land the source tree under MAM-for-Sefaria/ and its published tree under gh-pages/MAM-for-Sefaria/. Repoint the Sefaria writer to the landed MAM-simple corpus and to MAM-for-Sefaria/. The lane removes the second cwd-relative corpus write that REPOS_ROOT cannot steer. Confirm that the MAM-simple example's 39 CSV blobs match the MAM-for-Sefaria CSV blobs and that the remaining _provenance.md difference names the example generator by design.
 

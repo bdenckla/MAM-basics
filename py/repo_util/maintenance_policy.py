@@ -87,10 +87,9 @@ def vendored_package_names(policy_path: Path | None = None) -> list[str]:
 def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
     """Map of repo name to individually vendored file paths within it.
 
-    Whole vendored packages are found by directory name, but the policy also
-    records single files copied to paths of their own -- mgketer's two
-    py/python_modules/ files. Those are just as vendored and just as much not
-    this repo's to reformat.
+    Whole vendored packages are found by directory name, but the policy can also
+    record single files copied to paths of their own. Those files are just as
+    vendored and just as much not this repo's to reformat.
 
     Merges the policy's two per-file sections: overrides (MAM-basics-sourced,
     measured by the vendoring audit) and foreign_vendored (sourced outside

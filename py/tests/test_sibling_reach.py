@@ -84,6 +84,13 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
   literal or as an interpolated path whose first segment this test can resolve in the
   same file. The vocabulary filter excludes an interpolated site-relative href.
 
+THE MAINTENANCE ROSTER IS DELIBERATELY NOT A SIXTH REACH. ``repo_selection.py`` walks
+the repositories named by a workspace file because those repositories are the subjects of
+one maintenance run. It does not make MAM-basics depend on or generate into each repository.
+``SIBLINGS_REACHED`` records cross-repository dependencies; treating roster enumeration as a
+dependency would duplicate the workspace roster and make every maintenance target look like
+a source-code reach.
+
 WHY THE CWD-RELATIVE SITES ARE NOT DEFECTS TO FIX
 
 CLAUDE.md's "Running tests -- always from the repo root" section names vendored files

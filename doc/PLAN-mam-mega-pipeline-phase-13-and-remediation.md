@@ -1,7 +1,6 @@
 # PLAN — MAM mega-pipeline Phase 13, remediation handoff, and forest retirement
 
-State: Phase 13 complete; the first three remediation waves completed 2026-09-02;
-the near-Aleppo census gate was added 2026-09-03
+State: live
 
 Ben's decision, 2026-09-01: the review should have one final Phase 13 for
 whole-pipeline integration and closeout. Phase 13 is followed by a separate
@@ -9,6 +8,11 @@ remediation program. The pinned review forest remains read-only during a short
 handoff overlap, then its worktrees are retired after a separately named
 remediation forest has been created and verified. The review forest is not the
 remediation workspace.
+
+Both forests were retired by 2026-09-04 after their committed reports and ledgers
+had become the durable record. Later execution-record sentences saying that a
+forest "remains present" describe the state when those waves ended, not the
+current filesystem.
 
 This file is the canonical, Git-tracked plan. It is written for a fresh session
 with none of the conversation that produced it. At this file's creation, no

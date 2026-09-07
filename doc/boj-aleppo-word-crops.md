@@ -23,8 +23,8 @@ workflow is:
 ## Prerequisites
 
 All 24 Job pages (270r–281v) must have:
-- Line-break data in `../book-of-job/py_ac_loc/line-breaks/{page}.json`
-- Column-coordinate data in `../book-of-job/py_ac_loc/column-coordinates/{page}.json`
+- Line-break data in `aleppo/line-breaks/{page}.json`
+- Column-coordinate data in `aleppo/column-coordinates/{page}.json`
 
 Both are already complete.
 
@@ -40,12 +40,12 @@ Lists all quirkrecs that don't yet have an Aleppo image.
 .venv/Scripts/python.exe py/main_list_missing_aleppo_imgs.py -n 20    # first 20 missing
 ```
 
-A quirkrec counts as "done" if `../book-of-job/gh-pages/jobn/img/Aleppo/Aleppo-{sid}.png` exists
+A quirkrec counts as "done" if `gh-pages/book-of-job/jobn/img/Aleppo/Aleppo-{sid}.png` exists
 or it already has a `qr-aleppo-img` key.
 
 ### `py/main_gen_aleppo_crop_editor.py`
 
-Generates an interactive HTML crop editor at `../book-of-job/.novc/word_crop_editor.html`.
+Generates an interactive HTML crop editor at `.novc/book-of-job/word_crop_editor.html`.
 
 ```
 .venv/Scripts/python.exe py/main_gen_aleppo_crop_editor.py 0417 0505 0520    # specific SIDs
@@ -53,12 +53,12 @@ Generates an interactive HTML crop editor at `../book-of-job/.novc/word_crop_edi
 ```
 
 The script:
-1. Loads each enriched quirkrec from `../book-of-job/out/enriched-quirkrecs.json`
+1. Loads each enriched quirkrec from `book-of-job/out/enriched-quirkrecs.json`
 2. Locates the consensus word in the line-break data via
    `py/py_ac_word_image_helper/linebreak_search.py`
 3. Computes pixel coordinates from column-coordinate data
 4. Downloads manuscript images from archive.org at scale=2 (cached in
-   `../book-of-job/.novc/page_cache_{page}_s2.jpg`)
+   `.novc/book-of-job/page_cache_{page}_s2.jpg`)
 5. Generates crop-edit PNGs showing the target line with a fade overlay
    and the target word highlighted
 6. Builds an interactive HTML editor with SVG overlays for each item
@@ -81,7 +81,7 @@ repo's code) that:
 1. Defines the `CROPS` list with `sid`, `page`, and `bbox_ref` for each
 2. Downloads page images at scale=1 (2× the reference coordinates)
 3. Scales `bbox_ref` by factor 2 and crops
-4. Saves to `../book-of-job/gh-pages/jobn/img/Aleppo/Aleppo-{sid}.png`
+4. Saves to `gh-pages/book-of-job/jobn/img/Aleppo/Aleppo-{sid}.png`
 
 Template:
 ```python
@@ -95,7 +95,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "py"))
 from py_ac_word_image_helper.codex_page import download_page
 import boj_paths
 
-OUT_DIR = boj_paths.aleppo_img_dir()  # the sibling book-of-job's tree, not this repo's
+OUT_DIR = boj_paths.aleppo_img_dir()  # MAM-basics' gh-pages/book-of-job tree
 CROPS = [
     {"sid": "XXXX", "page": "NNNx", "bbox_ref": {"x": ..., "y": ..., "w": ..., "h": ...}},
     # ...
@@ -135,7 +135,7 @@ Process quirkrecs in batches of ~5:
    ```
    .venv/Scripts/python.exe py/main_gen_aleppo_crop_editor.py SID1 SID2 SID3 SID4 SID5
    ```
-   Then open `../book-of-job/.novc/word_crop_editor.html` in the browser.
+   Then give Ben a link to `.novc/book-of-job/word_crop_editor.html`.
 
 3. **Adjust bounding boxes** in the editor, then click **Export JSON**.
 
@@ -145,7 +145,7 @@ Process quirkrecs in batches of ~5:
 5. **Rebuild HTML and verify:**
    ```
    .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
-   git -C ../book-of-job diff --stat HEAD -- gh-pages/
+   git diff --stat HEAD -- gh-pages/book-of-job/ book-of-job/out/
    ```
    `git status --porcelain` stood here until 2026-08-21 and is the **wrong
    instrument** in book-of-job: a no-op regeneration has left it reporting 183
@@ -154,21 +154,16 @@ Process quirkrecs in batches of ~5:
    run as written once this file moved, `git status` refusing a path outside the
    repository it is run in.)
 
-6. **Show detail pages in browser** — open each detail page directly
-   as a local file (no server needed):
-   ```powershell
-   $sids = @("SID1","SID2","SID3","SID4","SID5")
-   foreach ($s in $sids) { Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"; Start-Sleep -Milliseconds 500 }
-   ```
-   Detail pages are named `{SID}.html` in `../book-of-job/gh-pages/jobn-details/`.
-   The 500 ms delay prevents tabs from being dropped.
+6. **Show detail pages** — give Ben `file:///` links to the local files rather
+   than opening browser tabs. Detail pages are named `{SID}.html` in
+   `gh-pages/book-of-job/jobn-details/`.
 
 7. **Commit** when satisfied.
 
 ## Image naming convention
 
 - `Aleppo-{short_id}.png` where `short_id` = `CCVV` or `CCVV_WORDID`
-- Saved to `../book-of-job/gh-pages/jobn/img/Aleppo/`
+- Saved to `gh-pages/book-of-job/jobn/img/Aleppo/`
 - Typical size: ~130–430px wide, ~190–220px tall
 
 ## Scale conventions
@@ -185,7 +180,7 @@ Process quirkrecs in batches of ~5:
   locates a word in line-break data. Handles maqaf-joined consensus words
   (e.g., `הׇשְׁלְמָה־לָּֽךְ׃`) by joining adjacent maqaf-connected tokens.
 - `py/py_ac_word_image_helper/codex_page.py` — `download_page()` fetches
-  archive.org images with caching in `../book-of-job/.novc/`.
+  archive.org images with caching in `.novc/book-of-job/`.
 - `py/py_ac_word_image_helper/hebrew_metrics.py` — `strip_heb()` strips
   cantillation and vowels for fuzzy word matching.
 - `py/author_boj_util/short_id_etc.py` — `short_id()` extracts the SID from

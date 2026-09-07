@@ -24,7 +24,7 @@ pre-stress, and every other category this report has.** The tracked generator's
 `legacy_baseline` section lists no difference at all. The reason is that the
 Phonetic MAM standard set both runs read is a snapshot of MAM taken before the
 rollout, so this census and the tracked survey count the same text: 221 of its
-23,184 comparable verses differ from MAM as it stands today, 38,379 metegs against
+23,184 comparable numbered verses differ from MAM as it stands today, 38,379 metegs against
 38,170. **So these figures are still a pre-rollout baseline, and they are also
 still the current output** — which is a fact about the oracle rather than about
 this report. Item 1's Phase 1 record has the measurement.

@@ -32,7 +32,7 @@ It distinguishes between:
 
 - Type: object
 - Meaning: post-extraction verification summary against MAM-parsed-plus verse text
-- Source: `../MAM-basics/py/hkq_cmn/verify_table_words_in_mam_plus.py`
+- Source: `../../py/hkq_cmn/verify_table_words_in_mam_plus.py`
 - Current data observation: all `77` rows are found in their mapped MAM-parsed-plus verse text
 
 ### `mam_plus_rows_matching_mpu_verse_template_arg`

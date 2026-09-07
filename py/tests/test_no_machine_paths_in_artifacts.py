@@ -1,6 +1,6 @@
 """Lint: a generated artifact must not spell out the path of the machine that made it.
 
-WHAT THIS GUARDS.  ``out/`` and ``gh-pages/`` hold git-tracked generated files, and in
+WHAT THIS GUARDS.  The paths in ``_SCANNED_PATHS`` hold git-tracked generated files, and in
 this repo the tracked generated artifact IS the test (CLAUDE.md): you regenerate and read
 the diff, and an unexplained diff is a failure until explained.  An absolute path baked
 into such a file breaks that outright -- the artifact then encodes the author's home
@@ -14,12 +14,13 @@ recorded input paths read ``C:\\Users\\BenDe\\GitRepos\\...`` against a regenera
 ``/home/user/...``.  ``mb_cmn.paths.display_path`` is the fix, and this is the guard that
 keeps the next such key from arriving unnoticed.
 
-SCOPE IS THE TWO GENERATED TREES, not the whole repo.  A machine path is perfectly
+SCOPE IS THE GENERATED TREES, not the whole repo.  A machine path is perfectly
 legitimate in a workspace file, in a ``doc/`` plan recording what someone ran, in
 ``in/repo_maintenance_policy.json`` as declared configuration, and in a docstring giving
-an example command -- twelve tracked files outside ``out/`` and ``gh-pages/`` carry one,
-and none of them is a defect.  What makes these two trees different is that a program
-rewrites them.
+an example command. Such paths outside the declared generated trees are not automatically
+defects. The generated trees differ because a program rewrites them. The two saved-search
+files directly under ``uxlc/out/`` are Ben-written records, so the scan names the generated
+``UXLC-misc`` directory and two generated JSON files instead of all of ``uxlc/out/``.
 """
 
 import re
@@ -36,13 +37,29 @@ _MACHINE_PATH_RE = re.compile(
     r"C:[\\/]+Users[\\/]|/home/[a-z][a-z0-9_-]*/|/Users/[A-Za-z][A-Za-z0-9_-]*/"
 )
 
-_SCANNED_DIRS = ("out", "gh-pages")
+_SCANNED_PATHS = (
+    "out",
+    "gh-pages",
+    "book-of-job/out",
+    "doc/mp-claims.md",
+    "doc/vendoring-inventory.md",
+    "holman/data",
+    "holman/docs-not-served",
+    "holman/emails",
+    "holman/out",
+    "leningrad/lenin-wiki",
+    "py-examples-out",
+    "uxlc/out/UXLC-misc",
+    "uxlc/out/uxlc-words-fragile.json",
+    "uxlc/out/uxlc-words.json",
+)
 
 # A scan that silently matches nothing reports green having checked nothing, which is the
-# failure mode CLAUDE.md's testing section is built around.  These two trees held 626
-# tracked files when this was written -- 341 under out/, 285 under gh-pages/ -- of which
-# 500 survive the binary filter below.  400 leaves room for the trees to shrink without
-# tripping this, and is far above anything a broken enumeration would return.
+# failure mode CLAUDE.md's testing section is built around. The original ``out/`` and
+# ``gh-pages/`` trees held 626 tracked files when this was written -- 341 under out/, 285
+# under gh-pages/ -- of which 500 survive the binary filter below. 400 leaves room for the
+# trees to shrink without tripping this, and is far above anything a broken enumeration
+# would return.
 _FILE_FLOOR = 400
 
 _BINARY_SUFFIXES = (
@@ -80,7 +97,7 @@ _EXCLUDED = frozenset()
 
 def _tracked_text_files() -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "-z", *_SCANNED_DIRS],
+        ["git", "ls-files", "-z", *_SCANNED_PATHS],
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -101,7 +118,7 @@ class TestNoMachinePathsInArtifacts(unittest.TestCase):
         self.assertGreaterEqual(
             len(scanned),
             _FILE_FLOOR,
-            f"only {len(scanned)} tracked text files found under {_SCANNED_DIRS};"
+            f"only {len(scanned)} tracked text files found under {_SCANNED_PATHS};"
             " the enumeration is broken, so the scan below verifies nothing",
         )
 

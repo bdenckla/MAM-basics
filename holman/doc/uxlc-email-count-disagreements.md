@@ -3,7 +3,7 @@
 Three of Daniel Holman's thirteen suggested-UXLC-correction messages state a number of
 corrections that something else in the same message contradicts. Two of the three are
 disagreements between the cases written up and the images attached, and are the reason
-`../MAM-basics/py/hkq_cmn/uxlc_attachment_notes.py` has an `IMAGES_WITH_NO_CASE` table at all. The
+`../../py/hkq_cmn/uxlc_attachment_notes.py` has an `IMAGES_WITH_NO_CASE` table at all. The
 third is a preamble sentence reused from an earlier message.
 
 Measured 2026-08-12, against holman-ketiv-qere `636213d` and the thirteen messages in
@@ -176,7 +176,7 @@ any of it.
 ## Re-establishing the figures
 
 No tracked script produces the table above; it was measured with a throwaway in `.novc/`. The
-method, run from `C:/Users/BenDe/GitRepos/holman-ketiv-qere` on that repo's own venv:
+method, run from `C:/Users/BenDe/GitRepos/MAM-basics` with that repository's venv:
 
 - **Cases per message** — `uxlc_email_extract.read_emails(emails_dir, image_dir)`, grouping the
   returned cases by `email_key`.

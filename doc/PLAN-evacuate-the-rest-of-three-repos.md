@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: all six phases complete 2026-09-03; retained while the fourth-stage draft relies on this plan's lane and Decision F
+State: executed 2026-09-03
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) closed — its last row,
@@ -8,7 +8,8 @@ the codex-index trio, finished that morning and all six public repos in that pro
 tracked `.py`. This plan records the second stage Ben decided the same day: the three repos named
 in the heading gave up **everything else** as well, and remain redirect hosts.
 
-**The historical model is [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md).**
+**The historical model is `PLAN-evacuate-the-rest-of-wlc-utils.md` (deleted 2026-09-03 by
+`80c9ad85`; in git history).**
 That plan did this once, for one repo, and finished 2026-08-17. It is the model this completed
 second-stage record used rather than restating it: where a question was settled there, this file
 cites the section by name and says only what differed. Both files are completed execution records.
@@ -41,7 +42,7 @@ context only.
 
 **Two executed plans are kept in `doc/` FOR THIS ONE, and go when it closes.** The 2026-08-29
 `doc/` sweep deleted seven finished plans and spared
-[`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) and
+`PLAN-evacuate-the-rest-of-wlc-utils.md` (deleted 2026-09-03 by `80c9ad85`; in git history) and
 [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md), both of which carry
 `State: executed` and would otherwise have gone with the seven. This file leans on both rather
 than restating them — the first as its model, per the instruction at the top of this file, the
@@ -58,7 +59,7 @@ stage — the codex-index trio and diffable-pointed-hebrew, total evacuation": 2
 not started, and **that file is its only copy**, the plan file of its own that its Status row
 promises — `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` — being
 written when the stage begins and not existing yet. So closing this plan deletes
-[`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md), as the
+`PLAN-evacuate-the-rest-of-wlc-utils.md` (deleted 2026-09-03 by `80c9ad85`; in git history), as the
 sentence says, and **leaves `PLAN-evacuate-public-repos-programme.md` standing**. That file goes only
 once the third stage has left it — written out into the plan file named above, which then closes
 on its own account, or abandoned on Ben's word — and whoever deletes it reads that section first
@@ -852,7 +853,7 @@ apply unchanged in shape. What differs is layer 2, and the difference is large e
 first.
 
 **Layer 1 — blob-hash manifest identity, which proves the copy.** `git ls-files -s` in the source
-repo yields `<mode> <sha1> 0/t<path>` per file. After the copy, the same command in MAM-basics,
+repo yields `<mode> <sha1> 0\t<path>` per file. After the copy, the same command in MAM-basics,
 restricted to the destination paths, must yield the **identical SHA-1s**, differing only in path.
 Git blobs are content-addressed, so this is exact byte-identity — and it is the **only** evidence
 covering the 884 PNGs, 3 JPGs and the 4 woff2 across the three repos, which no program
@@ -1846,6 +1847,12 @@ the URL set is frozen at `in/wlc_redirect_pages.json` rather than derived from t
 reported **971 passed, 5 skipped** in 181.54 seconds, with no subtests line; `python -m pip
 show pytest-subtests` reports that package absent. The passed and skipped counts match Phase 1,
 but no later phase should copy a subtest count without re-measuring the installed environment.
+
+**Correction, 2026-09-07:** the plugin inference was wrong. Pytest 9.1.1 could report
+`unittest` subtests without `pytest-subtests`, and later phases using the same venv
+reproduced the 65-subtest figure. The current suite no longer prints a subtest line;
+future records should preserve the output actually measured rather than infer a count
+from whether the plugin is installed.
 `ruff check` and `black --check` passed on every changed Python file; both MAM-basics and
 wlc-utils passed `git diff --check`.
 

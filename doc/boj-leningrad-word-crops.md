@@ -15,28 +15,26 @@ When the user needs to crop a word from the Leningrad Codex (μL) Sefaria image:
 3. **Crop to the relevant quadrant** using Pillow. In a ~27-line, 2-column
    layout: column 1 = right half, column 2 = left half; top/bottom half is
    determined by line number (lines 1–14 ≈ top, 15–27 ≈ bottom). Save the
-   crop to `../book-of-job/.novc/`.
+   crop to `.novc/book-of-job/`.
 
-4. **Create a guide HTML page** in `../book-of-job/.novc/` that shows:
+4. **Create a guide HTML page** in `.novc/book-of-job/` that shows:
    - Column number and which side (right/left)
    - Line number
    - The Hebrew word to look for (in a `dir=rtl` span)
    - The cropped image below the text
 
-   Open this page with `Start-Process` so the user can locate the word.
+   Give Ben a `file:///` link to this page so he can locate the word.
 
 5. **User takes screenshots** of the relevant portions at the desired zoom.
 
 6. **Glue screenshots together** with Pillow at native resolution (no scaling)
-   and save to `../book-of-job/gh-pages/jobn/img/Lenin/Lenin-{SID}.png`, replacing the existing image.
+   and save to `gh-pages/book-of-job/jobn/img/Lenin/Lenin-{SID}.png`, replacing the existing image.
    When the issue asks to include a word from a previous line, glue the
    screenshots **side-by-side** (not stacked vertically): the earlier word
    goes on the **right** and the main word on the **left**, so they read
    right-to-left as if on the same line. This is spatially "dishonest" but
    matches the Hebrew reading direction.
 
-7. **Open the quirkrec detail page** via the local HTTP server so the user
-   can verify the new image in context:
-   ```
-   Start-Process "http://localhost:8471/jobn/job1_full_list_details.html#row-{SID}"
-   ```
+7. **Show the quirkrec detail page** by giving Ben a `file:///` link to
+   `gh-pages/book-of-job/jobn/job1_full_list_details.html#row-{SID}` so he can
+   verify the new image in context.

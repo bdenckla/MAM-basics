@@ -1,6 +1,6 @@
 # Total evacuation: the codex-index trio and diffable-pointed-hebrew
 
-State: all five phases complete 2026-09-04
+State: executed 2026-09-04
 
 This is the third stage Ben authorized on 2026-09-03. It carries the decision
 record out of [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md)

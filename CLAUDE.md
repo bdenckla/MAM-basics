@@ -443,8 +443,9 @@ metadata, and quirk-record comment style. **Read the relevant one before touchin
 `py/author_boj*`, `py/py_ac_word_image_helper/` or `py/py_cam1753_word_image/`** — nothing in
 the code points at them.
 
-Every path in them was repointed on arrival: this repo's code as `py/…`, book-of-job's corpus and
-published site as `../book-of-job/…`. **But the prose is Copilot-era and has not been
+Every path in them was repointed on arrival: this repo's code as `py/…`, the retained corpus
+records as `book-of-job/out/…`, the published site as `gh-pages/book-of-job/…`, and scratch
+output as `.novc/book-of-job/…`. **But the prose is Copilot-era and has not been
 re-verified.** All seven were `.github/copilot-instructions-*.md` in book-of-job until
 2026-08-03. Where one gives a command that conflicts with the global conventions in
 `~/.claude/CLAUDE.md` — a `python -c` one-liner, a bare `python`, `PYTHONIOENCODING`, a
@@ -657,12 +658,11 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-**In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** Tests
-read MAM-with-doc and MAM-private, plus the local MAM-simple and MAM-parsed
-products. `paths.repos_root()` resolves the remaining sibling repos under the
-worktree's own parent, `.claude/worktrees/`, where none of them is. A fresh primary
-checkout run after the Leningrad move passed **975 passed, 5 skipped, 65 subtests**
-on 2026-09-03.
+**In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** The suite
+reads MAM-private, while MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc
+are local products. `paths.repos_root()` otherwise resolves the remaining sibling
+repos under the worktree's parent, where none of them is. A fresh primary-checkout
+run passed **976 passed, 5 skipped** on 2026-09-07.
 
 ```powershell
 $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"

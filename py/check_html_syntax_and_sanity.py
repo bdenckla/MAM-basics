@@ -24,6 +24,9 @@ Usage:
 
 If no pages_dir given, defaults to book-of-job's own gh-pages tree
 (boj_paths.gh_pages_dir()), whatever the working directory.
+The repository's multi-site ``gh-pages/`` root is not one homogeneous document
+tree and is refused: its sub-sites have separate CSS vocabularies and entry
+points, so checking it as one site produces false positives.
 The --w3c flag sends each HTML file to the W3C Nu HTML Checker API
 for full conformance validation (requires internet access).
 """
@@ -42,6 +45,8 @@ import boj_paths
 
 
 def main(argv=None):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(
         description="Lint the generated HTML files in gh-pages/.",
     )
@@ -64,6 +69,14 @@ def main(argv=None):
     args = parser.parse_args(argv)
     # The default was the cwd-relative "gh-pages", which check_all.py always took.
     docs_dir = Path(args.pages_dir) if args.pages_dir else boj_paths.gh_pages_dir()
+
+    if docs_dir.resolve() == boj_paths.gh_pages_dir().parent.resolve():
+        print(
+            "Error: check one Pages sub-site, not MAM-basics' multi-site gh-pages root;"
+            f" use {boj_paths.gh_pages_dir()} for the Book-of-Job checks",
+            file=sys.stderr,
+        )
+        return 2
 
     if not docs_dir.is_dir():
         print(f"Error: {docs_dir} is not a directory", file=sys.stderr)
@@ -289,7 +302,7 @@ def _check_internal_links(
         else:
             # Fragment-only link (#foo) — check in same file
             if fragment is not None:
-                same_path = (html_dir / rel).resolve()
+                same_path = (html_dir / Path(rel).name).resolve()
                 target_ids = all_ids.get(same_path, [])
                 if fragment not in target_ids:
                     issues.append(f"{rel}: broken fragment #{fragment}" " (same-file)")

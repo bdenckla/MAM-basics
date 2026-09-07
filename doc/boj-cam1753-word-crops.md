@@ -25,26 +25,20 @@ the scripts handle that automatically.
 3. **Tell the user** which SIDs/verses are in the batch (from the
    script output) and ask them to adjust bounding boxes and paste the
    Export JSON.
-4. **When user pastes JSON**, save to `../book-of-job/.novc/cam1753_crops_export.json`
+4. **When user pastes JSON**, save to `.novc/book-of-job/cam1753_crops_export.json`
    and run:
    ```powershell
-   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
+   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py .novc/book-of-job/cam1753_crops_export.json
    ```
 5. **Rebuild HTML:**
    ```powershell
    .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
-6. **Open detail pages** for visual confirmation:
+6. **Show detail pages** for visual confirmation by giving Ben `file:///` links
+   to the files under `gh-pages/book-of-job/jobn-details/`.
+7. **Clean `.novc/book-of-job/`** after user confirms:
    ```powershell
-   $sids = @("SID1","SID2","SID3")   # from step 2 output
-   foreach ($s in $sids) {
-         Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"
-       Start-Sleep -Milliseconds 500
-   }
-   ```
-7. **Clean `../book-of-job/.novc/`** after user confirms:
-   ```powershell
-   Get-ChildItem "../book-of-job/.novc" -File | Remove-Item -Force
+   Get-ChildItem ".novc/book-of-job" -File | Remove-Item -Force
    ```
 
 **That\u2019s it.** Steps 2-3 are all that\u2019s needed to start a batch.
@@ -58,16 +52,16 @@ relevant word from the Cambridge manuscript. The workflow is:
    boxes overlaid on the manuscript image
 2. **User adjusts** → drag/nudge boxes to tightly frame each word
 3. **Export JSON** → user clicks Export, copies bbox coordinates
-4. **Paste JSON into chat** → assistant saves to `../book-of-job/.novc/cam1753_crops_export.json`
+4. **Paste JSON into chat** → assistant saves to `.novc/book-of-job/cam1753_crops_export.json`
 5. **Apply crops** → crop from full-resolution page images, save PNGs
 6. **Rebuild HTML** → regenerate output docs
-7. **Show in browser** → open detail pages to visually confirm
+7. **Show for review** → give Ben `file:///` links to the detail pages
 
 ## Scripts
 
 ### `py/main_gen_cam1753_crop_editor.py`
 
-Generates an interactive HTML crop editor at `../book-of-job/.novc/cam1753_crop_editor.html`.
+Generates an interactive HTML crop editor at `.novc/book-of-job/cam1753_crop_editor.html`.
 
 ```powershell
 .venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --status       # progress summary
@@ -82,14 +76,14 @@ Generates an interactive HTML crop editor at `../book-of-job/.novc/cam1753_crop_
 Applies crop bounding boxes from the editor export JSON to produce final PNGs.
 
 ```powershell
-.venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
+.venv/Scripts/python.exe py/main_apply_cam1753_crops.py .novc/book-of-job/cam1753_crops_export.json
 ```
 
 This:
 - Crops each word from the full-resolution page image
-- Saves PNGs to `../book-of-job/gh-pages/jobn/img/cam1753/cam1753-{sid}.png`
+- Saves PNGs to `gh-pages/book-of-job/jobn/img/cam1753/cam1753-{sid}.png`
 - Embeds tEXt metadata in each PNG for reproducibility
-- Appends entries to `../book-of-job/out/cam1753-crops.json` (persistent crop record)
+- Appends entries to `book-of-job/out/cam1753-crops.json` (persistent crop record)
 
 ## Batch workflow (step by step)
 
@@ -104,9 +98,9 @@ Process quirkrecs in batches of ~10:
 2. **Adjust bounding boxes** in the editor, then click **Export JSON**.
 
 3. **Paste the JSON** into the chat. The assistant saves it to
-   `../book-of-job/.novc/cam1753_crops_export.json` and runs:
+   `.novc/book-of-job/cam1753_crops_export.json` and runs:
    ```powershell
-   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
+   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py .novc/book-of-job/cam1753_crops_export.json
    ```
 
 4. **Rebuild HTML:**
@@ -114,20 +108,13 @@ Process quirkrecs in batches of ~10:
    .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
 
-5. **Show detail pages in browser** — open each detail page directly
-   as a local file (no server needed):
-   ```powershell
-   $sids = @("SID1","SID2","SID3")
-   foreach ($s in $sids) {
-         Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"
-       Start-Sleep -Milliseconds 500
-   }
-   ```
-      Detail pages are named `{SID}.html` in `../book-of-job/gh-pages/jobn-details/`.
+5. **Show detail pages** — give Ben `file:///` links to the local files rather
+   than opening browser tabs. Detail pages are named `{SID}.html` in
+   `gh-pages/book-of-job/jobn-details/`.
 
-6. **Clean `../book-of-job/.novc/`** after confirming the crops look good:
+6. **Clean `.novc/book-of-job/`** after confirming the crops look good:
    ```powershell
-   Get-ChildItem "../book-of-job/.novc" -File | Remove-Item -Force
+   Get-ChildItem ".novc/book-of-job" -File | Remove-Item -Force
    ```
 
 7. **Commit** when satisfied.
@@ -135,11 +122,11 @@ Process quirkrecs in batches of ~10:
 ## Image naming convention
 
 - `cam1753-{short_id}.png` where `short_id` = `CCVV` or compound SID
-- Saved to `../book-of-job/gh-pages/jobn/img/cam1753/`
+- Saved to `gh-pages/book-of-job/jobn/img/cam1753/`
 
 ## Key data files
 
-- `../book-of-job/out/cam1753-crops.json` — persistent JSON record of all crop
+- `book-of-job/out/cam1753-crops.json` — persistent JSON record of all crop
   coordinates, keyed by SID. Stores enough data to reproduce any crop.
 - Page images in `cam1753/cam1753-pages/` — regenerated full-resolution JPEGs.
 - Line-break data in `cam1753/cam1753-line-breaks/` — used

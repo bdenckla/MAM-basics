@@ -18,10 +18,13 @@ displayed height matches the Aleppo image's native height.
 
 ## Procedure for matching heights
 
-1. **Get the native dimensions** of both images:
+1. **Get the native dimensions** of both images. Write a uniquely named
+   `.novc/` Python script that opens
+   `gh-pages/book-of-job/jobn/img/Aleppo/Aleppo-{SID}.png` and
+   `gh-pages/book-of-job/jobn/img/Lenin/Lenin-{SID}.png`, then prints both image
+   sizes and the Aleppo-height / Leningrad-height ratio. Run that file with:
    ```powershell
-   $env:PYTHONIOENCODING="utf-8"
-   .venv/Scripts/python.exe -c "from PIL import Image; a=Image.open('../book-of-job/gh-pages/jobn/img/Aleppo/Aleppo-{SID}.png'); l=Image.open('../book-of-job/gh-pages/jobn/img/Lenin/Lenin-{SID}.png'); print(f'Aleppo: {a.size[0]}x{a.size[1]}'); print(f'Lenin:  {l.size[0]}x{l.size[1]}'); print(f'Scale:  {a.size[1]/l.size[1]:.4f}')"
+   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/inspect_boj_image_dimensions_{SID}.py
    ```
 
 2. **Set the scale factor** in `py/author_boj_util/lenin_img_too_tall.py`:
@@ -35,10 +38,8 @@ displayed height matches the Aleppo image's native height.
    .venv/Scripts/python.exe ./py/main_gen_misc_authored_english_documents.py
    ```
 
-4. **Open the detail page** to verify:
-   ```powershell
-   Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/{SID}.html"
-   ```
+4. **Show the detail page** by giving Ben a `file:///` link to
+   `C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/book-of-job/jobn-details/{SID}.html`.
 
 ## Notes
 

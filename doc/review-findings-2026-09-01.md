@@ -366,7 +366,9 @@ mega existed to absorb; (3) MAM-with-doc's `unpinned-latest.html` end date movin
 day, its "0 changes found" remaining truthful because the sigil replacement rewrote doc notes,
 not body text. The two kinds of noise, read and then restored rather than committed: (1) fifteen
 CRLF phantoms — generators that write without `newline=""` met the forest's fresh LF checkout,
-and `git diff` shows zero content hunks in every one; (2) MAM-parsed's twelve call-graph SVGs,
+and `git diff` shows zero content hunks in every one; those fifteen were MAM-basics' subset of
+twenty-nine across the forest, with one in MAM-parsed, twelve in MAM-with-doc, and one in
+MAM-simple; (2) MAM-parsed's twelve call-graph SVGs,
 which this machine's graphviz 14.1.2 lays out differently than the committed 15.1.1 renders
 (`0128e69`) — an SVG diff from this machine is renderer skew until its graphviz is upgraded.
 (That upgrade happened later on 2026-09-01: winget took this machine from 14.1.2 to 16.0.0

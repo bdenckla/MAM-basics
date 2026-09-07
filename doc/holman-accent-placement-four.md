@@ -69,8 +69,8 @@ Ben's point, stated directly: the added pashta at Joshua 10:12 is a **stress hel
 convention of repeating a postpositive accent's own codepoint to mark where the stress
 actually falls (the same convention `hebrew-prose`'s terminology reference documents for
 pashta, segol, telisha qetanah, telisha gedolah and deḥi; zarqa is the one exception, using a
-different codepoint pair). Ben does not expect the Aleppo Codex, or mgketer's own reading, to
-carry this helper at all — the helper is a MAM notational addition, not a manuscript reading
+different codepoint pair). Ben does not expect the Aleppo Codex, or mgketer's reading, to
+have this helper at all — the helper is a MAM notational addition, not a manuscript reading
 mgketer inherits.
 
 **Consequence for the rollout plan's later phases:** once the Wikisource fix propagates

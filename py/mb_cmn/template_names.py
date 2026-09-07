@@ -1,6 +1,6 @@
 """Exports Latin-alphabet symbols for some template names
 
-QUOTE MARKS: a name here carrying a quote mark uses Hebrew gershayim (U+05F4),
+QUOTE MARKS: a name here with a quote mark uses Hebrew gershayim (U+05F4),
 which is the canonical form of the name rather than one format's variant of it.
 The raw wikitext writes an ASCII double quote as a shorthand for the gershayim,
 and ``ws_tmpl1.template_name()`` resolves that shorthand — it normalizes the quote
@@ -87,14 +87,14 @@ WHITESPACE_TMPL_NAMES = {
 # markers, ר4 alongside them, the three no-parashah chapter tags, and the
 # navigation and titling furniture, whose parameters are a verse reference, an
 # aliyah identifier, a book title, a prophet name and a Psalms division name.
-# The paseq, legarmeh and gray-maqaf templates DO carry a mark, and are here
+# The paseq, legarmeh and gray-maqaf templates DO have a mark, and are here
 # because that mark is not an atom; whether one of them renders U+05C0 or a
 # maqaf is a separate question, which Ben Denckla settled as separate on
 # 2026-09-02.  That is also why the set is not called "no verse text", which
 # would be false of those three.
 #
 # NAMED AS A SET BECAUSE WHAT A TEMPLATE MEANS DECIDES WHAT IT CONTRIBUTES,
-# and whether it carries parameters does not.  The corpus evidence, and the
+# and whether it has parameters does not.  The corpus evidence, and the
 # defect that reading a parameter as a proxy for meaning produced, are recorded
 # at hkq_cmn/mam_plus_verse_data._collect_text_fragments.
 NO_ATOM_TMPL_NAMES = WHITESPACE_TMPL_NAMES | {

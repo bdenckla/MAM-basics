@@ -143,13 +143,13 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
     same day: "Don't have any fallbacks. If you don't recognize a template, fail
     fast."  So a parameter-free template is not ASSUMED to be a separator; it is
     named in NO_ATOM_TMPL_NAMES like every other, and an unrecognised name raises
-    whether or not it carries parameters.  Both halves of the old proxy are gone,
+    whether or not it has parameters.  Both halves of the old proxy are gone,
     not just the half that was leaking.
 
-    THE CORPUS SETTLES IT, RATHER THAN ARGUMENT.  Four templates appear in
-    MAM-parsed both with and without a parameter: the setuma and petucha
+    THE COLLECTOR'S INPUT SETTLES IT, RATHER THAN ARGUMENT. Four templates reach
+    this collector both with and without a parameter: the setuma and petucha
     markers סס (1519 parameter-free against 35 parameter-bearing), ססס (404
-    against 26), פפ (1545 against 8) and פפפ (3 against 15).  In all 84 of the
+    against 26), פפ (1545 against 8) and פפפ (3 against 15). In all 84 of the
     parameter-bearing cases the parameter is one identical string: it is the
     note פסקא באמצע פסוק, which names what the marker is.  So one marker with
     one meaning was getting opposite treatment according to whether a note had
@@ -173,9 +173,13 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
          is a prophet name: מ:רווח בתרי עשר בפסוק הראשון
       6. the Psalms-division first-verse spacing template, 5, whose parameter
          is a division name: מ:רווח לספר בתהלים בפסוק הראשון
-      7. the special-letter template מ:אות-מיוחדת-במילה, 51, which is not
-         metadata but collected all five of its parameters, so that the word
+      7. the special-letter template מ:אות-מיוחדת-במילה, 51 reached instances,
+         which is not metadata but collected all five of its parameters, so that the word
          went in twice and three parameters of documentation followed it
+
+    These are execution-path counts, not counts of every occurrence anywhere in
+    MAM-parsed: occurrences nested inside parameters this collector deliberately
+    does not enter are outside the measurement.
 
     Genesis 1:1 is the worked example.  It rendered 9 atoms for a seven-word
     verse, its first atom running the book title, the whole navigation

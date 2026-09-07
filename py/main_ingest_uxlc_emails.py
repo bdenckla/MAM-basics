@@ -1,11 +1,11 @@
-"""Ingest Holman's .eml files into the tracked derivative under emails/.
+"""Ingest Holman's .eml files into the tracked derivative under holman/emails/.
 
 Run from repo root, with the mailbox in the default untracked location:
     .venv/Scripts/python.exe py/main_ingest_uxlc_emails.py
 
-Writes, for each message: emails/<key>.txt (the body, with every email address
-replaced), emails/<key>.json (subject, sender name, date, attachment list), and
-each attached PNG into gh-pages/uxlc_img/.
+Writes, for each message: holman/emails/<key>.txt (the body, with every email
+address replaced), holman/emails/<key>.json (subject, sender name, date,
+attachment list), and each attached PNG into gh-pages/holman/uxlc_img/.
 
 This is the only step that touches a .eml file. Those are NOT tracked -- their
 headers carry the correspondents' addresses and this repo is public -- so they
@@ -18,8 +18,8 @@ ordinary case and writes only that message's files, leaving every other
 message's derivative alone; the summary's ``mailbox_is_complete`` says whether
 this run saw every message the derivative records.
 
-After running this, rerun py/main_estimate_uxlc_locations.py, which needs the
-sibling UXLC-utils clone, and then py/main_render_uxlc_corrections.py.
+After running this, rerun py/main_estimate_uxlc_locations.py, which reads the
+landed data under uxlc/, and then py/main_render_uxlc_corrections.py.
 """
 
 from __future__ import annotations

@@ -1,5 +1,7 @@
 # Programme: the seven-item Holman meteg rollout
 
+State: executed 2026-09-04
+
 Written 2026-09-03, consolidating into git a plan that until then existed only
 in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this
@@ -89,7 +91,7 @@ which are accent-placement records and are NOT part of this programme.
 | 2 | Build the Wikisource bot edit files for all 30 | **DONE 2026-09-03**, files built and validated offline — see the item 2 section below, which is now an execution record rather than a sketch |
 | 3 | Run the bot | **DONE 2026-09-03**, 23 chapters saved on Ben's go-ahead — see the item 3 section below, an execution record now |
 | 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | **DONE 2026-09-03**, and Zechariah was repair rather than consistency — see the item 4 section below, an execution record now |
-| 5 | Run the wsgo diff and the standard MAM update pipeline | **DONE**, steps 1 and 2 on 2026-09-03 and steps 4 through 7 on 2026-09-04, Ben having done step 3 at the keyboard between them — see the item 5 section below, an execution record now |
+| 5 | Run the Wikisource/Google comparison (`wsgo`) and the standard MAM update pipeline | **DONE**, steps 1 and 2 on 2026-09-03 and steps 4 through 7 on 2026-09-04, Ben having done step 3 at the keyboard between them — see the item 5 section below, an execution record now |
 | 6 | Archive the 30 records | **DONE 2026-09-04**, all 34 M records archived, and the ingest needed two repairs before it would run at all — see the item 6 section below, an execution record now |
 | 7 | Refresh the mgketer comparison | **DONE 2026-09-04**, 31 meteg diffs gone and one accent diff arrived — see the item 7 section below, an execution record now |
 
@@ -175,11 +177,11 @@ own.**
 
 That edition is the survey's stress oracle, which is why it is also its text:
 what the survey counts is the metegs of the chanted words Phonetic MAM marks the
-stress of. al-hatorah regenerates it on its own occasions, and it has not been
+stress of. al-hatorah regenerates it when al-hatorah's pipeline runs, and it has not been
 regenerated since the thirty landed — Isaiah 23:12's קוּמִי has no meteg there,
 and 1 Kings 7:24, 2 Chronicles 18:33 and Judges 21:16 still have the marks item 3
-removed. **Measured, per verse, in MAM's own versification: 221 of 23,184
-comparable verses differ, 38,379 metegs in the snapshot against 38,170 in MAM
+removed. **Measured per numbered verse, in MAM's versification: 221 of 23,184
+comparable numbered verses differ, 38,379 metegs in the snapshot against 38,170 in MAM
 today, 206 verses where the snapshot has more and 15 where MAM does.** The survey
 records that comparison in its JSON's `currency` section and the page states which
 MAM its figures describe, so nothing is published as today's that is not.
@@ -454,7 +456,7 @@ Measured 2026-09-03, immediately before this download,
 `MAM-parsed/plain/CA-The-12-Minor-Prophets.json` still does; the download
 replaced it with אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is M34 and has
 been live on Hebrew Wikisource since 2026-08-28. So **both** extra chapters
-were stale locally, on the same footing, and item 5's wsgo diff carries two
+were stale locally, on the same footing, and item 5's `wsgo` diff includes two
 accent-placement corrections to the Google Sheet rather than Joshua's alone.
 `holman-accent-placement-four.md`'s stage table says the same wrong thing and
 now carries a correction beside it. Joshua 10:12 was stale as stated, with one
@@ -499,7 +501,7 @@ Both tracked outputs were empty before the run, so all **35** rows
 The suite was green in the worktree with `REPOS_ROOT` set: **975 passed, 5
 skipped**.
 
-**What these 35 rows do NOT carry is eleven further Holman meteg edits made on
+**What these 35 rows do NOT include is eleven further Holman meteg edits made on
 Wikisource on 2026-08-30 and 2026-08-31**, deliberately left for later — see
 the section between this item and item 6.
 

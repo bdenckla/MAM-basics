@@ -45,7 +45,7 @@ verse-addressed**, so the same 8 hex digits recur wherever the same diff recurs 
 
 In every case mgketer's `mam-side` equals Holman's MAM form and mgketer's `mgk-side` equals
 Holman's Aleppo form, character for character, apart from the two display artifacts noted
-under M13 and M18 below. So Holman's page and the mgketer comparison are two routes to the same
+under M13 and M22 below. So Holman's page and the mgketer comparison are two routes to the same
 30 differences, and neither reports an Aleppo reading the other contradicts.
 
 Ben's example, M1 = `1K7:24#8701a1ff`, is confirmed and is the pattern for all 29 "MAM adds

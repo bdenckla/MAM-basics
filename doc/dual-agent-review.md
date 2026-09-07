@@ -259,8 +259,9 @@ The recommendation recorded here was made by Claude on 2026-09-01. Design A was 
 
 **Its claim that Codex had never been run on this machine was false, and is corrected here.** The
 2026-09-01 session said so, this document repeated it on 2026-09-03, and a `git worktree list` that
-same day disproved it: four Codex review forests exist under
-`C:/Users/BenDe/Documents/Codex/ReviewForests/`, `~/.codex/sessions` holds Codex's own history, and
+same day disproved it: four Codex review forests then existed under
+`C:/Users/BenDe/Documents/Codex/ReviewForests/`. Those forests were retired by 2026-09-04;
+`~/.codex/sessions` holds Codex's own history, and
 `~/.codex/AGENTS.md` is 998 lines. Codex ran the staged mega-pipeline review of `py/main_0_mega.py`'s
 42 steps, whose output is this repository's `doc/mega-pipeline-review-phase-*-2026-09-01.md` — that
 review names its governing forest and records that the `worktree-forest` and `hebrew-prose` skills

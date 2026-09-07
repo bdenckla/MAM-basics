@@ -19,7 +19,7 @@ THE CORPUS IS PHONETIC MAM'S OWN TEXT, and it is a SNAPSHOT of MAM rather than M
 state.  Phonetic MAM is regenerated in al-hatorah, on its own schedule, so the standard set
 here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the thirty Holman
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
-``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per verse on
+``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per numbered verse on
 both sides and names every verse where the two disagree, so the page can say which MAM its
 figures describe.  Refreshing the oracle is al-hatorah's business; re-running this survey
 afterwards is one command.
@@ -40,9 +40,9 @@ they disagree is recorded as a MISMATCH and left out of every count, rather than
 classified against a syllable division the two sides do not share.
 
 THE SILLUQ BOUNDARY IS TWO CONDITIONS, BOTH OF THEM, AND NO THIRD.  A U+05BD is the silluq
-when it is in the stressed syllable of a chanted word that has sof pasuq; the sof pasuq is
-what makes that chanted word the last of its CHANTED verse, so nothing here needs a separate
-test of finality and nothing rests on an entry's position in a list.  The untracked census
+when it is in the stressed syllable of a chanted word that has sof pasuq. Sof pasuq identifies
+the last chanted word directly; a parsed entry's position within a numbered verse is not
+evidence of silluq.  The untracked census
 script this module replaces (``doc/post-stress-meteg-census-2026-09-03.md`` is its report)
 treated the last parsed entry of a NUMBERED verse as verse-final whether or not it had sof
 pasuq, which is a silluq fallback rather than a test.
@@ -117,9 +117,9 @@ PASEQ = hpu.PASOLEG
 
 SILLUQ_RULE = (
     "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that"
-    " has sof pasuq. Both conditions are required and there is no third: the sof pasuq"
-    " is what makes the chanted word the last of its chanted verse, so nothing here rests on"
-    " an entry's position in a list."
+    " has sof pasuq. Both conditions are required and there is no third. Sof pasuq identifies"
+    " the last chanted word directly; a parsed entry's position within a numbered verse is"
+    " not evidence of silluq."
 )
 
 # Phonetic MAM spells MAM's gray maqaf as a tilde and its ordinary maqaf as U+05BE; both are
@@ -261,7 +261,7 @@ _SYLLABLE_BREAK = re.compile(r"[.\-]")
 _VERSE_KEY = re.compile(r"^.+?(\d+):(\d+)$")
 
 # A vocal sheva is a syllable in ``jta`` and no nucleus in the Hebrew, so the two
-# sides are compared over the syllables that do NOT carry this marker.
+# sides are compared over the syllables that do NOT have this marker.
 _VOCAL_SHEVA = "^"
 
 # ``jta``'s vowel letters, uppercase for the long vowels and lowercase for the short.  Only
@@ -480,7 +480,7 @@ def _has_a_vowel(marks: str) -> bool:
 
 
 def _nuclei(letters: list[tuple[str, str, bool]]) -> list[tuple[int, str]]:
-    """``(index of the letter carrying each nucleus, the point that is the nucleus)``.
+    """``(index of the letter with each nucleus, the point that is the nucleus)``.
 
     A FURTIVE PATAX COUNTS, unlike in ``final_stress``: Phonetic MAM has it as a syllable of
     its own, the two sides' syllable counts are compared here, so it has to count on this
@@ -987,7 +987,7 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
 
     The classification deliberately stops at conjunctive versus disjunctive.  A raw U+05C0
     cannot distinguish a narrow-sense paseq from legarmeh, so only the structurally identified
-    ``misc-vayomer`` records are allowed to carry it.  A poetic U+05A5 with ole is likewise
+    ``misc-vayomer`` records are allowed to have it.  A poetic U+05A5 with ole is likewise
     refused as an oleh-we-yored question instead of being guessed to be normal merkha.
     """
     for record in post_stress:
@@ -1588,7 +1588,7 @@ def _one_verse(
                     "bcv": bcv,
                     "chanted_word": last_word,
                     "dual_cantillation": dual,
-                    "carries_a_meteg": METEG in last_word,
+                    "has_a_meteg": METEG in last_word,
                 }
             )
     metegs = 0
@@ -1702,7 +1702,7 @@ _FOCUS_VERSES = ("is23:12", "1s17:5")
 
 
 def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:
-    """MAM-simple's chanted words per verse, in MAM's versification.
+    """MAM-simple's chanted words per numbered verse, in MAM's versification.
 
     MAM's numbering rather than the BHS one this repo's other surveys read, because Phonetic
     MAM numbers its verses MAM's way; ``test_final_stress_vs_phonetic_mam._measured`` reaches
@@ -1913,7 +1913,7 @@ def _attach_mam_forms(
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
     THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``, and this is where the difference is
-    made.  Phonetic MAM's own text carries two annotations MAM does not write -- a masora
+    made.  Phonetic MAM's text has two annotations MAM does not write -- a masora
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this
@@ -1970,7 +1970,7 @@ def _focus_verses(words_by_bcv: dict[str, list[str]]) -> dict:
 def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
     """How far the surveyed snapshot of MAM stands from the MAM-simple beside it.
 
-    A per-verse U+05BD count on each side, in MAM's own versification so the verse keys line
+    A per-numbered-verse U+05BD count on each side, in MAM's versification so the verse keys line
     up, and every verse where the two disagree.  This needs no word-by-word alignment and so
     survives the places where the two texts group atoms differently.
 
@@ -1995,13 +1995,13 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
     ]
     return {
         "what": (
-            "The Phonetic MAM standard set is regenerated in al-hatorah, on its own"
-            " occasions, so it is a snapshot of MAM rather than MAM's current state. This"
+            "The Phonetic MAM standard set is regenerated when al-hatorah's pipeline runs,"
+            " so it is a snapshot of MAM rather than MAM's current state. This"
             " counts U+05BD per numbered verse on both sides and names every numbered verse"
             " where they differ, so the page can say which MAM its figures describe."
         ),
         "how": (
-            "Per NUMBERED verse, in MAM's own versification, which is the numbering both"
+            "Per NUMBERED verse, in MAM's versification, which is the numbering both"
             " sides use. Nothing here aligns words, so it survives the places where the two"
             " texts group atoms differently. Dual-cantillation numbered verses are left out:"
             " Phonetic MAM has both strands where MAM-simple's loader yields the combined"
@@ -2040,7 +2040,7 @@ def _legacy_baseline(counts: Counter) -> dict:
         "what": (
             "The 2026-09-03 census, doc/post-stress-meteg-census-2026-09-03.md, whose script"
             " is untracked and treats a verse's last parsed entry as verse-final whether or"
-            " not it carries sof pasuq. A comparison baseline, not a second measurement."
+            " not it has sof pasuq. A comparison baseline, not a second measurement."
         ),
         "baseline": _LEGACY_BASELINE,
         "differences": differences,
@@ -2065,13 +2065,13 @@ def _problems(found: dict) -> list[str]:
     unexplained = [
         one
         for one in found["last_entry_lacks_sof_pasuq"]
-        if not one["dual_cantillation"] or one["carries_a_meteg"]
+        if not one["dual_cantillation"] or one["has_a_meteg"]
     ]
     if unexplained:
         refs = [one["bcv"] for one in unexplained[:20]]
         out.append(
             f"{len(unexplained)} verses whose last chanted word lacks sof pasuq outside a"
-            f" dual-cantillation span, or lacks it while carrying a meteg: {refs}"
+            f" dual-cantillation span, or lacks it while having a meteg: {refs}"
         )
     return out
 
@@ -2390,18 +2390,18 @@ def build_survey() -> dict:
         "what": (
             "Every U+05BD in MAM, classified by whether its syllable falls before, in, or"
             " after the chanted word's one primary stress. A U+05BD in the stressed syllable"
-            " of a chanted word carrying sof pasuq is the silluq, and is counted as that"
+            " of a chanted word with sof pasuq is the silluq, and is counted as that"
             " rather than as a meteg."
         ),
         "stress_oracle": (
             "Phonetic MAM's jta field, whose ! marks the one stressed syllable. A U+05BD's"
-            " own position is never used to infer the stress. The Hebrew's nuclei are counted"
+            " position is never used to infer the stress. The Hebrew's nuclei are counted"
             " independently and the two counts must agree per chanted word, a furtive patax"
             " counting as a syllable on both sides."
         ),
         "silluq_boundary": SILLUQ_RULE,
         "scope": (
-            "Every chanted word of every verse. Prose verses and poetic verses are routed by"
+            "Every chanted word of every numbered verse. Prose verses and poetic verses are routed by"
             " accgram.poetic_filter, so Job's prose frame goes with the 21 books. A dual"
             " cantillation passage is counted with the cant-alef cantillation strand, as"
             " though it were read once."
@@ -2463,7 +2463,7 @@ def build_survey() -> dict:
             ),
             "in_mam": sum(1 for one in post_stress if one["has_sof_pasuq"]),
             "how_it_is_counted": (
-                "A post-stress record whose chanted word carries sof pasuq is one: the"
+                "A post-stress record whose chanted word has sof pasuq is one: the"
                 " silluq is in the stressed syllable and this mark is after it. The census"
                 " of 2026-09-03 could not support this count, its verse-final test having"
                 " been position-based, and the claim was withdrawn from"

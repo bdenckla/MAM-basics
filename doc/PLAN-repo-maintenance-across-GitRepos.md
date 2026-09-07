@@ -561,7 +561,7 @@ Findings from that run, worth carrying forward:
   never a tracked file.
 - **`HEX_ESCAPES` findings are advisory and are never auto-fixed** —
   `check_repo_standards.py` says findings are reported, never auto-fixed. Do not start
-  converting `/uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
+  converting `\uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
 - **A dangling `[[link]]` in a memory file is not an error.** It marks something worth writing
   later. MAM-basics' one dangling link was deliberately left in place on 2026-08-07.
 - **A skip in a test suite may be a semantic signal, not a problem.** In MAM-basics' accgram

@@ -1,21 +1,16 @@
 """Message-level helpers shared by the two Holman ingests, and the address boundary they keep.
 
-holman-ketiv-qere is public and every ``.eml`` Holman sends carries his address,
+MAM-basics is public and every ``.eml`` Holman sends has his address,
 his other correspondents' and Ben Denckla's.  The rule both ingests keep is that
 nothing derived from a mail header reaches a tracked file except the sender's
 display name and the message's subject and date -- ``sender_display_name`` below
 raises rather than let a ``From`` with no display name through, which is what
 makes the rule enforced rather than merely intended.
 
-WHY THIS MODULE DUPLICATES FIVE PRIVATE FUNCTIONS OF ``uxlc_email_extract``
-RATHER THAN THAT MODULE IMPORTING FROM HERE.  It should not, and the end state
-is that ``uxlc_email_extract`` uses these and its own copies go.  That change was
-deliberately not made on 2026-09-02, when this module was written: a second
-session was live in the same two repos, working on a new UXLC correction
-message, so editing the file it was in would have traded a tidier tree for a
-merge conflict in the one file both sessions wanted.  The duplication is ~40
-lines, it is confined to this file, and undoing it is a one-file edit.  Do that
-when no other session is in ``uxlc_email_extract``.
+``uxlc_email_extract`` imports the shared header, slug, MIME-part, and UTC
+helpers from here. Its body reader remains separate: the UXLC ingest falls back
+to HTML when a message has no plain-text part, while the MAM-suggestion ingest
+must distinguish that HTML-only shape from a message whose cases are plain text.
 """
 
 from __future__ import annotations

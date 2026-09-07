@@ -73,7 +73,7 @@ out the three numberings in play and how each was established.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
 import email
 import email.message
 import email.policy
@@ -84,6 +84,12 @@ from pathlib import Path
 import re
 
 from mb_cmn import bib_locales as tbn
+from hkq_cmn.holman_email_common import (
+    email_key as _email_key,
+    parts_of_type as _parts_of_type,
+    sender_display_name as _sender_display_name,
+    utc as _utc,
+)
 from hkq_cmn.uxlc_atom_index_notes import (
     atom_index_for_verse_case,
     require_known_cases,
@@ -481,25 +487,6 @@ def _tracked_attachments(emails_dir: Path) -> set[str]:
     return written
 
 
-def _sender_display_name(from_header: object) -> str:
-    """The From header's display name, never its address."""
-    display_name, address = email.utils.parseaddr(str(from_header))
-    if not display_name or "@" in display_name:
-        raise ValueError(
-            f"From header has no address-free display name: {address!r}. "
-            "This repo is public; supply the name rather than letting an "
-            "address reach the derivative."
-        )
-    return display_name
-
-
-def _email_key(path: Path) -> str:
-    key = _NON_SLUG_RE.sub("-", path.stem.lower()).strip("-")
-    if not key:
-        raise ValueError(f"{path.name}: filename reduces to an empty email key")
-    return key
-
-
 def _plain_text_body(message: email.message.EmailMessage, path: Path) -> str:
     """The message's one text/plain part, or its one text/html part read as text.
 
@@ -533,15 +520,6 @@ def _plain_text_body(message: email.message.EmailMessage, path: Path) -> str:
             "parts; decide which is the message body before ingesting it"
         )
     return _text_from_html(html_bodies[0])
-
-
-def _parts_of_type(message: email.message.EmailMessage, content_type: str) -> list[str]:
-    """Every non-attachment part of one content type, decoded."""
-    return [
-        part.get_content()
-        for part in message.walk()
-        if part.get_content_type() == content_type and part.get_filename() is None
-    ]
 
 
 def _text_from_html(source: str) -> str:
@@ -590,13 +568,6 @@ def _png_attachments(
             raise ValueError(f"{path.name}: image/png attachment without a filename")
         attachments.append((file_name, part.get_payload(decode=True)))
     return attachments
-
-
-def _utc(when: datetime) -> datetime:
-    """An aware UTC datetime, tolerating the naive result of a -0000 header."""
-    if when.tzinfo is None:
-        return when.replace(tzinfo=timezone.utc)
-    return when.astimezone(timezone.utc)
 
 
 # ---------------------------------------------------------------- read back

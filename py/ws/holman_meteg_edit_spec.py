@@ -328,7 +328,7 @@ def _qamats_entries(case, qamats_call):
     """M13's two entries, one per parameter of its ``{{מ:קמץ}}`` call.
 
     The Ashkenazic ``ד`` form and the Sephardic ``ס`` form differ only in the
-    qamats, and both carry the meteg, so both lose it or the template starts
+    qamats, and both have the meteg, so both lose it or the template starts
     varying something it does not exist to vary.
     """
     entries = []

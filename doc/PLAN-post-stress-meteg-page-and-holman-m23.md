@@ -1,5 +1,7 @@
 # Plan: post-stress-meteg page and Holman M23 follow-through
 
+State: executed 2026-09-04
+
 Created 2026-09-03. Execute this plan from
 C:/Users/BenDe/GitRepos/MAM-basics. The implementation publishes a generated
 survey of MAM metegs after the primary stress, gives Holman suggestion M23 a
@@ -11,8 +13,9 @@ which is item 6 of the programme.
 
 This plan is ITEM 1 of a seven-item programme, and it is the only item written
 down in a tracked document. The other six — build the Wikisource bot edit for
-all 30 meteg suggestions, run it, download the affected chapters, run the wsgo
-diff and the standard MAM update pipeline, archive the 30 records, and refresh
+all 30 meteg suggestions, run it, download the affected chapters, run the
+Wikisource/Google (`wsgo`) diff and the standard MAM update pipeline, archive
+the 30 records, and refresh
 the mgketer comparison — are described in
 [`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md).
 Read that document first for the ordering and the cross-item dependencies; this
@@ -301,7 +304,7 @@ C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/final_stress.py to reuse: that
 module is a predicate over a pointed word, whose public surface is
 ends_in_furtive_patax, last_syllable_onset, and is_final_stress, and
 is_final_stress answers only whether the stress is final rather than which
-syllable carries it. Reuse its nucleus-finding conventions where they fit, and
+syllable has the stress. Reuse its nucleus-finding conventions where they fit, and
 reach the stressed syllable itself from the JTA field. Preserve the MAM form
 and source reference exactly as supplied. Do not normalize Hebrew text. Treat
 the stress marker in the JTA field as the stress oracle; do not infer primary
@@ -367,7 +370,7 @@ The page needs these named sections:
    that kind is in MAM, not an open disagreement.
 5. “The post-silluq case at 1 Samuel 17:5” says explicitly that MAM has only
    its silluq at that place, and attributes every other reading to the source
-   that actually carries it. Name WLC 4.22 and UXLC 3.9 as the transcriptions
+   that actually has it. Name WLC 4.22 and UXLC 3.9 as the transcriptions
    they are — “UXLC 3.9 records two U+05BD”, never “Leningrad has two” — and
    cite the Leningrad Codex only from the manuscript image, folio F159A column
    3 line 8, which the M23 evidence note links. Do not write “LC/WLC”: that
@@ -1142,17 +1145,17 @@ pre-rollout census.** The reason is not the survey but its corpus.
 **The Phonetic MAM standard set is a SNAPSHOT of MAM, and it predates the
 rollout.** It is the stress oracle, and therefore also the text: the survey
 counts the metegs of the chanted words it marks the stress of. al-hatorah
-regenerates it on its own occasions, and it has not been regenerated since the
+regenerates it when al-hatorah's pipeline runs, and it has not been regenerated since the
 thirty Holman suggestions landed. Isaiah 23:12's קוּמִי has no meteg there, and
 the removal verses still have theirs — 1 Kings 7:24, 2 Chronicles 18:33 and
-Judges 21:16 were checked by hand and all three still carry the marks item 3
+Judges 21:16 were checked by hand and all three still have the marks item 3
 removed.
 
 **So the survey now measures its own staleness**, in a `currency` section the
-plan did not ask for and that the finding made necessary. Per verse, in MAM's own
+plan did not ask for and that the finding made necessary. Per numbered verse, in MAM's
 versification, U+05BD counted on both sides:
 
-1. **221 of 23,184 comparable verses differ.** Dual-cantillation verses are left
+1. **221 of 23,184 comparable numbered verses differ.** Dual-cantillation numbered verses are left
    out of the comparison — 18 of them — because Phonetic MAM has both strands
    where MAM-simple's loader yields the combined stream once.
 2. **38,379 metegs in the surveyed snapshot against 38,170 in MAM today**, so MAM
@@ -1179,7 +1182,7 @@ decision rather than the finding alone.
    complete list". Taken literally that publishes nothing at all, since twelve
    such verses exist and all twelve are the two Decalogues' dual-cantillation
    spans — a structure, not incomplete input. The run collects them, records them
-   all, and fails unless every one is a dual-cantillation span carrying no meteg.
+   all, and fails unless every one is a dual-cantillation span with no meteg.
    A thirteenth of any other shape stops the build, which is what the plan's rule
    is for.
 2. **The page shows fully pointed Hebrew, not `accents_and_letters`.** That
@@ -1189,8 +1192,8 @@ decision rather than the finding alone.
    for a vowel or a syllable shape, so this is the "unless a vowel is the point of
    that specific comparison" case the plan and the `hebrew-prose` skill both
    allow.
-3. **Every form shown is MAM's own text, joined to the record from MAM-simple.**
-   Phonetic MAM's forms carry two annotations MAM does not have — a masora circle
+3. **Every form shown is MAM's text, joined to the record from MAM-simple.**
+   Phonetic MAM's forms have two annotations MAM does not have — a masora circle
    on a resolved sheva and an upper dot on a dagesh it takes as xazaq — so
    printing them verbatim would put marks in front of a reader that MAM's text
    does not have. The join is by a key that drops what the two sides may

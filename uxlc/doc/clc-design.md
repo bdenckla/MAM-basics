@@ -200,7 +200,7 @@ largely an act of *composition* over existing machinery, plus the new identity-r
     `gh-pages/amb-early-mtg/` (`index.html`, `dubious.html`, `full-record/`, `img/`).
   - Supporting modules: `amb_early_mtg_full.py`, `amb_early_mtg_summary.py`, `*_extend.py`,
     `*_three_and_beyond.py`, `*_html_for_img.py`, `*_url_generator.py` (Sefaria image URL gen).
-  - Seed list also lives as [Possible false early meteg marks.csv](Possible%20false%20early%20meteg%20marks.csv)
+  - Seed list also lives as [Possible false early meteg marks.csv](../out/Possible%20false%20early%20meteg%20marks.csv)
     and the matching `.code-search`.
 
   → It is **one harvesting lead among several** (§7.12), **not** a pillar and **not** the CLC note

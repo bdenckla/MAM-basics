@@ -48,7 +48,7 @@ wikitext for the verse, at `in/mam-ws/FD-2Chronicles.json` line 641 (searchable 
 
 **To implement M13, the meteg under the he has to be removed from both the `ד` (dalet)
 and the `ס` (samekh) parameter.** Removing it from `ד` alone would leave the Sephardic form
-still carrying the meteg the Ashkenazic form had lost, so the two forms would then differ in
+with the meteg the Ashkenazic form had lost, so the two forms would then differ in
 something other than the qamats, which is the only thing the template exists to vary. The
 edited call would read:
 
