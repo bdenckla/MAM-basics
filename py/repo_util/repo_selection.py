@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
+from mb_cmn import provenance
 from repo_util.common import (
     local_date_from_git_iso8601,
     read_json,
@@ -68,7 +69,26 @@ class RepoInfo:
 
     @property
     def name(self) -> str:
-        return self.path.name
+        """The NAME of the repo at ``path``, which is what every consumer keys on.
+
+        NOT ``path.name``, which this returned until 2026-09-07.  The roster's ``"."``
+        folder resolves to whatever checkout the sweep runs from, and in a linked
+        worktree named for its branch -- ``MAM-basics-post-stress-meteg`` -- the
+        directory name is not the repo's.  So ``--visibility`` raised ``KeyError`` for
+        a repo with no visibility declared, and a run without it wrote the worktree's
+        name into every report header and JSON row, and looked up the frozen-repo and
+        vendored-override tables under a name neither could hold.
+
+        ``provenance.repo_name_of`` is the derivation ``report_destination.repo_name``
+        reuses for the same reason (b4a12119): it follows a worktree's ``.git`` file
+        into the main clone's common git dir, prefers the ``remote.origin.url``
+        basename, and degrades to the directory name rather than raising.  For every
+        sibling in ``all-repos.code-workspace`` the two names agree (measured
+        2026-09-07, six of six), so only the ``"."`` folder's answer changes, and only
+        from a worktree.  ``_resolve_repo_path`` resolves every path it returns, which
+        is what ``repo_name_of``'s cache asks for.
+        """
+        return provenance.repo_name_of(self.path)
 
 
 def _resolve_repo_path(folder_path: str, workspace_dir: Path, repos_root: Path) -> Path:
@@ -126,6 +146,14 @@ def _select_explicit_repos(
         match = None
         for repo_dir in repo_dirs:
             if repo_dir.name.casefold() == token_lc:
+                match = repo_dir
+                break
+            # The repo's NAME as well as its directory's, so that from a linked
+            # worktree a token naming this repo -- "MAM-basics" -- still selects the
+            # "." folder, whose directory is named for the worktree.  Until 2026-09-07
+            # that token raised "Requested repo was not found in workspace folders"
+            # from every such worktree.  See RepoInfo.name above.
+            if provenance.repo_name_of(repo_dir).casefold() == token_lc:
                 match = repo_dir
                 break
             if str(repo_dir).casefold() == str(token_abs).casefold():
