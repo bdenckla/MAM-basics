@@ -371,6 +371,28 @@
      "poetic verses": 0
     }
    }
+  },
+  "example_keys_by_initial_stress_pattern": {
+   "A": {
+    "bcv": "gn22:7",
+    "chanted_word": "הִנֶּ֣ׄנִּֽׄי",
+    "jta": "hin.!nen.nI"
+   },
+   "B": {
+    "bcv": "nu9:14",
+    "chanted_word": "וְ֯עָ֤שָֽׂה",
+    "jta": "v^.!`a.sa"
+   },
+   "C": {
+    "bcv": "lv20:4",
+    "chanted_word": "יַעְלִ֩ימֽוּ֩",
+    "jta": "ya`.!lI.mu"
+   },
+   "not_initially_stressed": {
+    "bcv": "je46:14",
+    "chanted_word": "וְ֯הַשְׁמִ֣יעֽוּ",
+    "jta": "v^.hash.!mI.`u"
+   }
   }
  },
  "fit_for_mas": {

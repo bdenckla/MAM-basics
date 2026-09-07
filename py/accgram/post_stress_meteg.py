@@ -1437,18 +1437,23 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
         if candidate["has_mas"] and TYPE_OPEN in candidate["structural_types"]
     ]
     by_initial_stress_pattern = {}
+    example_keys_by_initial_stress_pattern = {}
     for subtype in _TYPE_1_SUBTYPES:
         members = [
             candidate
             for candidate in actual_type_1_mas
             if candidate["type_1_subtype"] == subtype
         ]
+        assert members, subtype
         by_initial_stress_pattern[subtype] = {
             "cases": len(members),
             "by_system": {
                 system: sum(candidate["system"] == system for candidate in members)
                 for system in (SYSTEM_PROSE, SYSTEM_POETIC)
             },
+        }
+        example_keys_by_initial_stress_pattern[subtype] = {
+            key: members[0][key] for key in ("bcv", "chanted_word", "jta")
         }
     not_initially_stressed = [
         candidate
@@ -1459,6 +1464,7 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
         not candidate["next_chanted_word_is_initially_stressed"]
         for candidate in not_initially_stressed
     )
+    assert not_initially_stressed
     by_initial_stress_pattern["not_initially_stressed"] = {
         "cases": len(not_initially_stressed),
         "by_system": {
@@ -1468,12 +1474,18 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
     }
+    example_keys_by_initial_stress_pattern["not_initially_stressed"] = {
+        key: not_initially_stressed[0][key] for key in ("bcv", "chanted_word", "jta")
+    }
     assert sum(counts["cases"] for counts in by_initial_stress_pattern.values()) == len(
         actual_type_1_mas
     )
     return {
         "cases": len(actual_type_1_mas),
         "by_initial_stress_pattern": by_initial_stress_pattern,
+        "example_keys_by_initial_stress_pattern": (
+            example_keys_by_initial_stress_pattern
+        ),
     }
 
 

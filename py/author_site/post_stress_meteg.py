@@ -116,7 +116,7 @@ _JEREMIAH_FOOTNOTE_ID = "footnote-3"
 _NEXT_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
 _SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
-_FIT_FOR_MAS_FOOTNOTE_ID = "footnote-7"
+_FIT_FOR_MAS_SECTION_ID = "fit-for-mas"
 
 
 def _author_romanization(key: str) -> object:
@@ -442,9 +442,9 @@ def build_body(survey: dict) -> list:
         *_mas_facts(survey),
         *_by_type(survey),
         *_case_list_link(survey),
-        *_type_1_facts(survey),
-        *_case_subpage_links(survey),
-        *_fit_for_mas_question(survey),
+        *_type_1_subtypes(survey),
+        *_type_2_type_3_and_misc_facts(survey),
+        *_fit_for_mas_facts(survey),
         *_footnotes(survey),
     ]
 
@@ -624,7 +624,11 @@ def pin_claims(survey: dict) -> None:
         "disjunctive": 215,
         "conjunctive": 17,
     }
-    assert _actual_type_1_mas(survey) == {
+    actual_type_1_mas = _actual_type_1_mas(survey)
+    assert {
+        "cases": actual_type_1_mas["cases"],
+        "by_initial_stress_pattern": actual_type_1_mas["by_initial_stress_pattern"],
+    } == {
         "cases": 123,
         "by_initial_stress_pattern": {
             psm.TYPE_1_SUBTYPE_A: {
@@ -645,6 +649,15 @@ def pin_claims(survey: dict) -> None:
             },
         },
     }
+    assert tuple(actual_type_1_mas["example_keys_by_initial_stress_pattern"]) == tuple(
+        actual_type_1_mas["by_initial_stress_pattern"]
+    )
+    assert all(
+        set(example_key) == {"bcv", "chanted_word", "jta"}
+        for example_key in actual_type_1_mas[
+            "example_keys_by_initial_stress_pattern"
+        ].values()
+    )
     fit_for_mas = _fit_for_mas(survey)
     assert (
         fit_for_mas["fitting_any_type"],
@@ -1349,18 +1362,12 @@ def _case_list_link(survey: dict) -> list:
     ]
 
 
-def _case_subpage_links(survey: dict) -> list:
-    """The additional links from the case-list paragraph to the filtered case pages."""
+def _type_2_type_3_and_misc_facts(survey: dict) -> list:
+    """The facts sections for type 2, type 3, and misc MAS cases."""
     type_2_count = _by_type_count(survey, psm.TYPE_GUTTURAL)
     misc_count = _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     return [
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " have a separate table and descriptions of the named misc subtypes.",
-            )
-        ),
+        mb_html.heading_level_2("Facts about MAS type 2"),
         mb_html.para(
             (
                 "The ",
@@ -1369,81 +1376,85 @@ def _case_subpage_links(survey: dict) -> list:
                 " initial consonant.",
             )
         ),
+        mb_html.heading_level_2("Facts about MAS type 3"),
+        mb_html.heading_level_2("Facts about MAS misc"),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
+                " have a separate table and descriptions of the named misc subtypes.",
+            )
+        ),
     ]
 
 
-def _type_1_facts(survey: dict) -> list:
-    """The complete structural type-1 MAS population by next-word-stress pattern."""
+def _type_1_example(survey: dict, example_key: dict) -> dict:
+    """The MAM-backed post-stress record identified by a type-1 summary example key."""
+    matches = [
+        record
+        for record in survey["post_stress"]
+        if all(record[key] == value for key, value in example_key.items())
+    ]
+    assert len(matches) == 1, (example_key, matches)
+    return matches[0]
+
+
+def _type_1_subtypes(survey: dict) -> list:
+    """The complete structural type-1 MAS population by next-word-stress subtype."""
     type_1_mas = _actual_type_1_mas(survey)
     pattern_counts = type_1_mas["by_initial_stress_pattern"]
+    example_keys = type_1_mas["example_keys_by_initial_stress_pattern"]
     headers = (
-        "Initial-stress pattern",
-        "Next chanted word",
+        "Subtype",
         "Prose",
         "Poetic",
         "All",
+        "Example",
     )
-    descriptions = {
-        psm.TYPE_1_SUBTYPE_A: (
-            "Non-plain initial stress: it starts with a vocal ",
-            _ROM_SHEWA,
-            ".",
-        ),
-        psm.TYPE_1_SUBTYPE_B: (
-            "Plain initial stress marked by a ",
-            _ROM_PASHTA,
-            " stress helper.",
-        ),
-        psm.TYPE_1_SUBTYPE_C: "Other plain initial stress.",
-        "not_initially_stressed": "Not initially stressed.",
-    }
     labels = {
         psm.TYPE_1_SUBTYPE_A: psm.TYPE_1_SUBTYPE_A,
         psm.TYPE_1_SUBTYPE_B: psm.TYPE_1_SUBTYPE_B,
         psm.TYPE_1_SUBTYPE_C: psm.TYPE_1_SUBTYPE_C,
-        "not_initially_stressed": "Not A, B, or C",
+        "not_initially_stressed": "D",
     }
     rows = [
         mb_html.table_row_of_data(
             (
                 labels[pattern],
-                descriptions[pattern],
                 str(counts["by_system"][_PROSE]),
                 str(counts["by_system"][_POETIC]),
                 str(counts["cases"]),
+                _case_chanted_word_cell(_type_1_example(survey, example_keys[pattern])),
             ),
-            (None, None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _HEBREW_CELL),
         )
         for pattern, counts in pattern_counts.items()
     ]
     total = sum(counts["cases"] for counts in pattern_counts.values())
     assert total == type_1_mas["cases"] == 123
     return [
-        mb_html.heading_level_2("Facts about MAS type 1"),
-        mb_html.para(f"The {total:,} type 1 MAS cases divide exclusively as follows."),
-        _table(headers, rows),
-    ]
-
-
-def _fit_for_mas_question(survey: dict) -> list:
-    """The closing question after the type and type-1-subtype facts."""
-    fit_for_mas = _fit_for_mas(survey)
-    type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
-    type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
-    return [
+        mb_html.heading_level_2("The four subtypes of MAS type 1"),
         mb_html.para(
+            "All cases of MAS type 1 can be sorted into one of the four following subtypes:"
+        ),
+        mb_html.unordered_list(
             (
-                "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS. The answer is that a MAS actually appears only ",
-                f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
-                " of the time in situations fit for MAS, but the “yield” varies widely"
-                " between types 1A, 1B, 2, and 3. Notably, the type 3 “yield” is ",
-                f"{type_3_yield:.0%}",
-                ". (",
-                _footnote_callout(7, _FIT_FOR_MAS_FOOTNOTE_ID),
-                ")",
+                (
+                    "In type 1A, the next chanted word has non-plain initial stress because"
+                    " the next chanted word starts with a vocal ",
+                    _ROM_SHEWA,
+                    ".",
+                ),
+                (
+                    "In type 1B, the next chanted word has plain initial stress marked by a ",
+                    _ROM_PASHTA,
+                    " stress helper.",
+                ),
+                "In type 1C, the next chanted word has other plain initial stress.",
+                "In type 1D, the next chanted word does not have initial stress.",
             )
-        )
+        ),
+        _table(headers, rows),
     ]
 
 
@@ -1703,7 +1714,7 @@ def _back_to_fit_for_mas_table() -> object:
             mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
             " and the ",
             mb_html.anchor_h(
-                "Fit for MAS table", f"{_FNAME}#{_FIT_FOR_MAS_FOOTNOTE_ID}"
+                "Fit for MAS table", f"{_FNAME}#{_FIT_FOR_MAS_SECTION_ID}"
             ),
             ".",
         )
@@ -2205,7 +2216,6 @@ def _footnotes(survey: dict) -> list:
         *_next_conjunctive_footnote(survey),
         *_sources_for_types_footnote(),
         *_type_2_type_3_footnote(survey),
-        *_fit_for_mas_footnote(survey),
     ]
 
 
@@ -2422,11 +2432,13 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
     ]
 
 
-def _fit_for_mas_footnote(survey: dict) -> list:
-    """Footnote 7: every syllable fit for MAS, including the ones lacking MAS."""
+def _fit_for_mas_facts(survey: dict) -> list:
+    """Every syllable fit for MAS, including the ones lacking MAS."""
     fit_for_mas = _fit_for_mas(survey)
     mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
     total_mas = len(survey["post_stress"])
+    type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
+    type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
 
     def has_mas_percentage(with_mas: int, without_mas: int) -> str:
         candidates = with_mas + without_mas
@@ -2466,7 +2478,18 @@ def _fit_for_mas_footnote(survey: dict) -> list:
         )
     )
     return [
-        mb_html.heading_level_3("φ7 — Fit for MAS", {"id": _FIT_FOR_MAS_FOOTNOTE_ID}),
+        mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
+        mb_html.para(
+            (
+                "It is natural to ask how often a MAS actually appears in situations fit for"
+                " a MAS. The answer is that a MAS actually appears only ",
+                f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
+                " of the time in situations fit for MAS, but the “yield” varies widely"
+                " between types 1A, 1B, 2, and 3. Notably, the type 3 “yield” is ",
+                f"{type_3_yield:.0%}",
+                ".",
+            )
+        ),
         mb_html.para(
             (
                 '"Fit for MAS" is analogous to the broader idea of a syllable fit for a ',
