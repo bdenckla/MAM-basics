@@ -2750,7 +2750,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
         mb_html.para(
             (
                 "It is natural to ask how often a MAS actually appears in situations fit for"
-                " a MAS. The answer is that a MAS actually appears only ",
+                " a MAS. The answer is that a MAS appears ",
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
                 " of the time in situations fit for MAS, but the “yield” varies widely"
                 " between types 1A, 1B, 2A, 2B, and 3. Notably, the type 3 “yield” is ",
