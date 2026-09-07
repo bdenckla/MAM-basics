@@ -2327,11 +2327,9 @@ def _dually_cantillated_passages(survey: dict) -> list:
                 _ref_link(chanted_word_difference["bcv"]),
                 ": ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has two words where ",
+                " has two simple words where ",
                 _cantillation_label(psm.CANT_BET),
-                " has one ",
-                _ROM_MAQAF,
-                " compound.",
+                " has one compound word.",
             )
         ),
         mb_html.table(
@@ -2347,14 +2345,14 @@ def _dually_cantillated_passages(survey: dict) -> list:
                 " is due to the different pointing of three atoms in ",
                 _ref_link(difference["bcv"]),
                 ": ",
+                _cantillation_label(psm.CANT_ALEF),
+                " has no ",
+                _ROM_METEG,
+                " among those three atoms; ",
                 _cantillation_label(psm.CANT_BET),
                 " has one ",
                 _ROM_METEG,
-                " before the stress in the word below; ",
-                _cantillation_label(psm.CANT_ALEF),
-                " has the two words below, neither with a ",
-                _ROM_METEG,
-                ".",
+                " before the stress among those three atoms.",
             )
         ),
         mb_html.table(
