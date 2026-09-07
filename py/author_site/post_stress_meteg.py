@@ -158,6 +158,11 @@ _MAX_WORDS_IN_ALL_EXCERPTS = 300
 
 _PROSE = psm.SYSTEM_PROSE
 _POETIC = psm.SYSTEM_POETIC
+_MBS_O_CENSUS_GLOSS = "count of words with one or more meteg marks before the primary stress and none after it"
+_MAS_CENSUS_GLOSS = (
+    "count of words with one or more meteg marks after the primary stress and any number"
+    " (including zero) before it"
+)
 
 # The one verse the page names outside its tables.  The survey records its chanted words as MAM
 # has them today, under ``currency.focus_verses``, so the form shown here is lifted like every
@@ -1185,21 +1190,11 @@ def _census(survey: dict) -> list:
         mb_html.abbr("words", {"title": "count of words"}),
         mb_html.abbr(
             "MBS_O",
-            {
-                "title": (
-                    "count of words with one or more meteg marks before the"
-                    " primary stress and none after it"
-                )
-            },
+            {"title": _MBS_O_CENSUS_GLOSS},
         ),
         mb_html.abbr(
             "MAS",
-            {
-                "title": (
-                    "count of words with one or more meteg marks after the"
-                    " primary stress and any number (including zero) before it"
-                )
-            },
+            {"title": _MAS_CENSUS_GLOSS},
         ),
         mb_html.abbr(
             "% MAS",
@@ -1288,10 +1283,10 @@ def _census_definitions(survey: dict) -> list:
         mb_html.heading_level_2("Census definitions"),
         mb_html.para(
             (
-                mb_html.abbr("MBS_O", {"title": "meteg before the stress only"}),
+                mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
                 " counts chanted words that have one or more meteg marks before the"
                 " primary stress and none after it. The “O” means “only.” ",
-                mb_html.abbr("MAS", {"title": "meteg after the stress"}),
+                mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
                 " counts chanted words that have one or more meteg marks after the"
                 " primary stress, whether the chanted word has zero or more meteg marks"
                 " before the stress.",
