@@ -5,8 +5,9 @@ WHY THIS IS A TEST AND THE REST OF THE LINT IS NOT
 ``py/main_redirect_stubs.py check`` lints each source repo's stub tree, and it cannot run
 here without a clone. One of its four checks needs no stub tree at all, because both sides
 are in this repo -- the frozen list of old URLs and the MAM-basics pages those URLs
-redirect to. That check is the one hoisted here, into a suite that runs all the time,
-rather than left in a program nothing schedules and nothing can currently run.
+redirect to. That check is the one hoisted here, so it runs whenever the repository
+test suite runs, rather than being left in a program nothing schedules and nothing can
+currently run.
 
 WHAT BREAKS IT, AND WHY THAT MATTERS
 

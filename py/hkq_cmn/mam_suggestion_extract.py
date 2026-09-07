@@ -305,8 +305,12 @@ def _parse_prose_list(body: str, path: Path) -> list[SuggestionCase]:
         heading = _CASE_HEADING_RE.match(line)
         if heading is None:
             continue
-        if heading.group("book") not in STD_BOOK_NAME_BY_HOLMAN_ABBREV:
-            continue
+        case_ref = _ref_from_match(heading)
+        if case_ref.book_abbrev not in STD_BOOK_NAME_BY_HOLMAN_ABBREV:
+            raise ValueError(
+                f"{path.name}: unknown book abbreviation {case_ref.book_abbrev!r}; "
+                "add it to STD_BOOK_NAME_BY_HOLMAN_ABBREV rather than guessing"
+            )
 
         mam_form = None
         comparison_form = None
@@ -328,13 +332,13 @@ def _parse_prose_list(body: str, path: Path) -> list[SuggestionCase]:
 
         if mam_form is None or comparison_form is None:
             raise ValueError(
-                f"{path.name}: case {_ref_from_match(heading)} has no "
+                f"{path.name}: case {case_ref} has no "
                 f"{'MAM' if mam_form is None else 'comparison'} form line"
             )
 
         cases.append(
             SuggestionCase(
-                ref=_ref_from_match(heading),
+                ref=case_ref,
                 comparison_source=comparison_source or "",
                 mam_form=mam_form,
                 comparison_form=comparison_form,
