@@ -40,12 +40,9 @@ nowhere else: Chs. 10, 12 and 15 name no ga'aya at all, and the Ch. 9, 11 and 13
 "syllable fit for a light ga'aya" position yardstick for placing a secondary servant, plus
 Ch. 8 §4's ga'aya standing in place of an omitted accent, which is the opposite of MAS.
 §8's opening sentence is the premise the rest rests on -- the Eme"t books' ga'aya "only
-differs from the ga'aya of the 21 books in the following types" -- so a type §8 omits
-carries over unchanged.  That is an argument from silence, which is
-why the rendered wording says "not listed" and never "the same".  Item (b)
-is type 2 outright; item (a) covers type 3 for the end of a hyphenated word alone, where the
-meteg stands before the compound chanted word's one stress and the survey counts it as MBS;
-type 1 is not listed at all.  The printed pages are read off the scan filenames -- C547, C548
+differs from the ga'aya of the 21 books in the following types."  The rendered table reports
+only item (b), which is type 2 outright, and leaves the other Ch. 14 cells blank.  The printed
+pages are read off the scan filenames -- C547, C548
 and ``C549-P2-C14-Pas-Hyph-Ga.jpg`` for §8, ``C354-P1-C8-Ga-aya.jpg`` for Ch. 8 §46 -- and the
 four claims are pinned in masorah-books' ``py/cos/check_cos_claims.py``.  ITM states nothing
 poetic-specific about a ga'aya after the stress, so the page claims nothing about ITM in
@@ -184,7 +181,6 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
 _ITM_ADAPTATION_URL_BY_SECTION = {
-    308: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-307_310.html#ns308",
     325: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns325",
     332: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332",
     338: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns338",
@@ -201,7 +197,7 @@ _TYPE_SOURCES = {
     psm.TYPE_OPEN: ("§332", "§3(j), §§46-47", "optional in both books"),
     psm.TYPE_GUTTURAL: ("§354", "§3(b), §§9-10", "obligatory in Breuer"),
     psm.TYPE_CLOSED_TSERE: (
-        "§338, fed by §308",
+        "§338",
         "§3(a), §§5-8",
         "obligatory in both books",
     ),
@@ -219,24 +215,27 @@ _COS_PAGE_STARTS_BY_TYPE = {
     psm.TYPE_GUTTURAL: "299; 308; 309",
     psm.TYPE_CLOSED_TSERE: "299; 301; 302; 306; 307",
 }
-_COS_PAGE_GLOSS = (
+_COS_CH_8_PAGE_GLOSS = (
     "printed page in Wengrov's English translation of CoS on which the cited Ch. 8 section"
     " begins"
 )
 
-# What Ch. 14 §8 says about each type.  §8 lists only the types whose rules differ between
-# the prose and poetic systems, as its opening sentence says, so a type it does not list is
-# "not listed" and never "the same": the inference is an argument from silence and the page
-# says so.  Read off C14-S001.md's <!-- §8 --> anchor and off the scans, 2026-09-07.
+# Ch. 14 §8's item (b) concerns type 2.  The source table reports that item and leaves the
+# other Ch. 14 cells blank.  Read off C14-S001.md's <!-- §8 --> anchor and off the scans,
+# 2026-09-07.
 _COS_CH_14_BY_TYPE = {
-    psm.TYPE_OPEN: "not listed",
+    psm.TYPE_OPEN: "",
     psm.TYPE_GUTTURAL: "(b)",
-    psm.TYPE_CLOSED_TSERE: ("(a), before a ", _ROM_MAQAF, " only"),
+    psm.TYPE_CLOSED_TSERE: "",
 }
 # §8 runs from the Ga'aya heading on p. 547 to the closing "On rare occasions" sentence on
 # p. 549; p. 550 is blank, C551 and C552 are the Part III title leaves, and Ch. 15 opens on
-# p. 553.  Items (a) and (b) are both on p. 547.
-_COS_CH_14_SECTION_8_PAGES = "547–549"
+# p. 553.  Item (b) is on p. 547.
+_COS_CH_14_PAGES_BY_TYPE = {
+    psm.TYPE_OPEN: "",
+    psm.TYPE_GUTTURAL: "547",
+    psm.TYPE_CLOSED_TSERE: "",
+}
 
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
@@ -1362,12 +1361,22 @@ def _sources_for_types_footnote() -> list:
                 _case_type_cell(kind),
                 itm_sections(yeivin),
                 breuer,
-                _COS_PAGE_STARTS_BY_TYPE[kind],
                 _COS_CH_14_BY_TYPE[kind],
             ),
-            (None, None, None, None, None),
+            (None, None, None, None),
         )
         for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
+    ]
+    cos_page_rows = [
+        mb_html.table_row_of_data(
+            (
+                _case_type_cell(kind),
+                _COS_PAGE_STARTS_BY_TYPE[kind],
+                _COS_CH_14_PAGES_BY_TYPE[kind],
+            ),
+            (None, None, None),
+        )
+        for kind in _TYPE_SOURCES
     ]
     return [
         mb_html.heading_level_3(
@@ -1388,34 +1397,25 @@ def _sources_for_types_footnote() -> list:
                 "Type",
                 itm(),
                 (cos(), " Ch. 8"),
-                mb_html.abbr("Ch. 8 pg", {"title": _COS_PAGE_GLOSS}),
                 (cos(), " Ch. 14 §8"),
             ),
             source_rows,
         ),
-        mb_html.para(
+        _table(
             (
-                "CoS treats the poetic system's ",
-                _ROM_GAYA,
-                f" in Ch. 14 §8 (pp. {_COS_CH_14_SECTION_8_PAGES}), which lists only the"
-                " types where the poetic system's rule differs from the prose system's"
-                " rule, as its opening sentence says. Item (b) is type 2: in the prose"
-                " system this ",
-                _ROM_METEG,
-                " almost always comes only before a chanted word beginning with ל or נ,"
-                " while in the poetic system it is also common before a chanted word"
-                " beginning with a guttural, and it sometimes comes before a chanted word"
-                " beginning with ר. Item (a) restates the rule of Breuer's type (a), the"
-                " type behind type 3, for an atom followed by a ",
-                _ROM_MAQAF,
-                " alone: a ",
-                _ROM_METEG,
-                " on such an atom comes before the one stress of its chanted word, so this"
-                " document counts it as ",
-                mb_html.abbr("MBS", {"title": "meteg before the stress"}),
-                " rather than MAS. Type 1 is not listed, so CoS states no poetic-specific"
-                " difference for it.",
-            )
+                "Type",
+                mb_html.abbr("CoS Ch. 8 pg", {"title": _COS_CH_8_PAGE_GLOSS}),
+                mb_html.abbr(
+                    "CoS Ch. 14 §8 pg",
+                    {
+                        "title": (
+                            "printed page in Wengrov's English translation of CoS on which"
+                            " the cited Ch. 14 §8 item begins"
+                        )
+                    },
+                ),
+            ),
+            cos_page_rows,
         ),
     ]
 
