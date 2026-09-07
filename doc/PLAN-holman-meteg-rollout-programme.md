@@ -628,7 +628,10 @@ those eleven chapters — Joshua 19, 1 Samuel 1 and 22, 2 Kings 6, 2 Chronicles
 then a Google Sheet import-and-apply round of its own, then the mega run. A
 full `py/main_download.py fr-wikisource` closes it too, and closes the whole
 2026-08-26 gap with it, at the price of bringing down a week of edits nobody
-here has reviewed.
+here has reviewed. The chapter-targeted route also includes 2 Chronicles 28, so
+it brings the current live 2 Chronicles 28:23 `{{נוסח|…}}` documentation note
+that is absent locally. That non-meteg edit was not reviewed by the 2026-09-04
+dual-agent review; the warning therefore applies to both download routes.
 
 **REAFFIRMED 2026-09-04, AFTER THE PROGRAMME FINISHED, AND BEN WILL TAKE IT UP
 HIMSELF.** His words that day, asked what the next phase was: *"I'll do this (or
