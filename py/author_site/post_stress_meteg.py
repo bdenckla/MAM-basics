@@ -2735,8 +2735,9 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 'The final-row "Has MAS" count is ',
                 f"{fit_for_mas['with_mas']:,}",
                 f", rather than the total of {total_mas:,} MAS cases, because "
-                f"{not_fit_for_mas_count:,} MAS cases do not meet the Fit-for-MAS"
-                " definition. The table shows which condition each case does not meet.",
+                f"{not_fit_for_mas_count:,} syllables, though they do have MAS, are deemed"
+                " not fit for MAS by our criteria. The table shows which condition each case"
+                " does not meet.",
             )
         ),
         _table(
