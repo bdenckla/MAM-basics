@@ -253,20 +253,20 @@ _TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP = {
 }
 _CASE_FILTER_OPTIONS = (
     ("all", "All types"),
-    ("1", "Type 1"),
-    ("1A", "Type 1A"),
-    ("1B", "Type 1B"),
-    ("1C", "Type 1C"),
-    ("1D", "Type 1D"),
-    ("2", "Type 2"),
-    ("2A", "Type 2A"),
-    ("2B", "Type 2B"),
-    ("2C", "Type 2C"),
+    ("1", "Type 1 (all subtypes)"),
+    ("1A", "Subtype 1A"),
+    ("1B", "Subtype 1B"),
+    ("1C", "Subtype 1C"),
+    ("1D", "Subtype 1D"),
+    ("2", "Type 2 (all subtypes)"),
+    ("2A", "Subtype 2A"),
+    ("2B", "Subtype 2B"),
+    ("2C", "Subtype 2C"),
     ("3", "Type 3"),
     ("other", "misc"),
 )
 _LACKS_MAS_FILTER_OPTIONS = tuple(
-    (fit_type, f"Type {fit_type}")
+    (fit_type, f"Subtype {fit_type}")
     for fit_type in (
         psm.FIT_TYPE_1_A,
         psm.FIT_TYPE_1_B,
@@ -692,55 +692,55 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (384, 200, 184, 0)
+    ) == (362, 190, 172, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
     )
     assert fit_for_mas["by_type_1_subtype"] == {
         psm.TYPE_1_SUBTYPE_A: {
-            "candidates": 210,
-            "with_mas": 97,
-            "without_mas": 113,
-            "with_mas_by_system": {_PROSE: 93, _POETIC: 4},
+            "candidates": 196,
+            "with_mas": 89,
+            "without_mas": 107,
+            "with_mas_by_system": {_PROSE: 85, _POETIC: 4},
         },
         psm.TYPE_1_SUBTYPE_B: {
-            "candidates": 43,
+            "candidates": 41,
             "with_mas": 12,
-            "without_mas": 31,
+            "without_mas": 29,
             "with_mas_by_system": {_PROSE: 12, _POETIC: 0},
         },
         psm.TYPE_1_SUBTYPE_C: {
-            "candidates": 1571,
+            "candidates": 1525,
             "with_mas": 4,
-            "without_mas": 1567,
+            "without_mas": 1521,
             "with_mas_by_system": {_PROSE: 2, _POETIC: 2},
         },
     }
     assert fit_for_mas["by_fit_type"] == {
         psm.FIT_TYPE_1_A: {
-            "candidates": 210,
-            "with_mas": 97,
-            "without_mas": 113,
+            "candidates": 196,
+            "with_mas": 89,
+            "without_mas": 107,
         },
         psm.FIT_TYPE_1_B: {
-            "candidates": 43,
+            "candidates": 41,
             "with_mas": 12,
-            "without_mas": 31,
+            "without_mas": 29,
         },
         psm.FIT_TYPE_2_A: {
-            "candidates": 41,
+            "candidates": 40,
             "with_mas": 35,
-            "without_mas": 6,
+            "without_mas": 5,
         },
         psm.FIT_TYPE_2_B: {
-            "candidates": 49,
-            "with_mas": 15,
-            "without_mas": 34,
+            "candidates": 45,
+            "with_mas": 14,
+            "without_mas": 31,
         },
         psm.FIT_TYPE_3: {
-            "candidates": 41,
-            "with_mas": 41,
+            "candidates": 40,
+            "with_mas": 40,
             "without_mas": 0,
         },
     }
@@ -750,6 +750,7 @@ def pin_claims(survey: dict) -> None:
         "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
         "type_2_subtype_C": 5,
+        "word_already_has_meteg": 10,
     }
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
@@ -760,6 +761,7 @@ def pin_claims(survey: dict) -> None:
         record["stress_syllable_has_conjunctive_accent"]
         and record["next_chanted_word_is_initially_stressed"]
         and record["next_chanted_word_has_disjunctive_accent"]
+        and not record["word_has_another_meteg"]
         and len(record["types"]) == 1
         and record["chanted_word"]
         and record["next_chanted_word"]
@@ -771,25 +773,25 @@ def pin_claims(survey: dict) -> None:
         (record["fit_type"], record["has_mas"]) for record in fitting_records
     ) == Counter(
         {
-            (psm.FIT_TYPE_1_A, True): 97,
-            (psm.FIT_TYPE_1_A, False): 113,
+            (psm.FIT_TYPE_1_A, True): 89,
+            (psm.FIT_TYPE_1_A, False): 107,
             (psm.FIT_TYPE_1_B, True): 12,
-            (psm.FIT_TYPE_1_B, False): 31,
+            (psm.FIT_TYPE_1_B, False): 29,
             (psm.FIT_TYPE_2_A, True): 35,
-            (psm.FIT_TYPE_2_A, False): 6,
-            (psm.FIT_TYPE_2_B, True): 15,
-            (psm.FIT_TYPE_2_B, False): 34,
-            (psm.FIT_TYPE_3, True): 41,
+            (psm.FIT_TYPE_2_A, False): 5,
+            (psm.FIT_TYPE_2_B, True): 14,
+            (psm.FIT_TYPE_2_B, False): 31,
+            (psm.FIT_TYPE_3, True): 40,
         }
     )
     lacks_mas_records = _lacks_mas_records(survey)
     assert len(lacks_mas_records) == fit_for_mas["without_mas"]
     assert Counter(record["fit_type"] for record in lacks_mas_records) == Counter(
         {
-            psm.FIT_TYPE_1_A: 113,
-            psm.FIT_TYPE_1_B: 31,
-            psm.FIT_TYPE_2_A: 6,
-            psm.FIT_TYPE_2_B: 34,
+            psm.FIT_TYPE_1_A: 107,
+            psm.FIT_TYPE_1_B: 29,
+            psm.FIT_TYPE_2_A: 5,
+            psm.FIT_TYPE_2_B: 31,
         }
     )
     assert all(record["chanted_word"] for record in lacks_mas_records)
@@ -1409,7 +1411,8 @@ def _case_list_link(survey: dict) -> list:
                 ),
                 " are listed separately and can be filtered by type. The ",
                 mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " have a separate table and descriptions of the named misc subtypes.",
+                " appear in that large list, but are also further discussed on a page of"
+                " their own.",
             )
         )
     ]
@@ -1902,7 +1905,7 @@ def build_misc_body(survey: dict) -> list:
                 itm(),
                 " ",
                 *itm_sections("§325"),
-                ". The table above shows that context.",
+                ".",
             )
         ),
     ]
@@ -2574,6 +2577,13 @@ def _fit_for_mas_facts(survey: dict) -> list:
             ),
             (None, _NUMERIC_CELL),
         ),
+        mb_html.table_row_of_data(
+            (
+                "The word already has another meteg.",
+                f"{mas_not_in_the_table['word_already_has_meteg']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
     )
     return [
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
@@ -2600,6 +2610,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 "The potential MAS syllable comes immediately after a nonfinal stress"
                 " syllable with a conjunctive accent.",
                 "The next word has initial stress and a disjunctive accent.",
+                "The word does not already have a meteg.",
                 "The potential MAS syllable is type 1A, type 1B, type 2A, type 2B, or"
                 " type 3.",
             )

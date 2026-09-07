@@ -396,36 +396,36 @@
   }
  },
  "fit_for_mas": {
-  "what": "Every syllable immediately after a nonfinal primary stress with a conjunctive accent and with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD. Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and Type 3. Primary-stress position comes independently from Phonetic MAM's jta field.",
+  "what": "Every syllable immediately after a nonfinal primary stress with a conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes, and with no meteg elsewhere in the chanted word. The potential syllable is checked for U+05BD. Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and Type 3. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
   "candidate_chanted_words": 54019,
-  "non_type_specific_conditions": 3468,
-  "fitting_any_type": 384,
-  "with_mas": 200,
-  "without_mas": 184,
+  "non_type_specific_conditions": 3369,
+  "fitting_any_type": 362,
+  "with_mas": 190,
+  "without_mas": 172,
   "by_type_1_subtype": {
    "A": {
-    "candidates": 210,
-    "with_mas": 97,
-    "without_mas": 113,
+    "candidates": 196,
+    "with_mas": 89,
+    "without_mas": 107,
     "with_mas_by_system": {
-     "prose verses": 93,
+     "prose verses": 85,
      "poetic verses": 4
     }
    },
    "B": {
-    "candidates": 43,
+    "candidates": 41,
     "with_mas": 12,
-    "without_mas": 31,
+    "without_mas": 29,
     "with_mas_by_system": {
      "prose verses": 12,
      "poetic verses": 0
     }
    },
    "C": {
-    "candidates": 1571,
+    "candidates": 1525,
     "with_mas": 4,
-    "without_mas": 1567,
+    "without_mas": 1521,
     "with_mas_by_system": {
      "prose verses": 2,
      "poetic verses": 2
@@ -434,28 +434,28 @@
   },
   "by_fit_type": {
    "1A": {
-    "candidates": 210,
-    "with_mas": 97,
-    "without_mas": 113
+    "candidates": 196,
+    "with_mas": 89,
+    "without_mas": 107
    },
    "1B": {
-    "candidates": 43,
+    "candidates": 41,
     "with_mas": 12,
-    "without_mas": 31
+    "without_mas": 29
    },
    "2A": {
-    "candidates": 41,
+    "candidates": 40,
     "with_mas": 35,
-    "without_mas": 6
+    "without_mas": 5
    },
    "2B": {
-    "candidates": 49,
-    "with_mas": 15,
-    "without_mas": 34
+    "candidates": 45,
+    "with_mas": 14,
+    "without_mas": 31
    },
    "3": {
-    "candidates": 41,
-    "with_mas": 41,
+    "candidates": 40,
+    "with_mas": 40,
     "without_mas": 0
    }
   },
@@ -465,7 +465,8 @@
    "next_word_not_disjunctive": 15,
    "next_word_not_initially_stressed": 1,
    "type_1_subtype_C": 4,
-   "type_2_subtype_C": 5
+   "type_2_subtype_C": 5,
+   "word_already_has_meteg": 10
   },
   "accent_grammar_token_counts": {
    "0": 16,
@@ -489,6 +490,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -509,6 +511,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -529,6 +532,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -549,6 +553,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -569,6 +574,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -589,6 +595,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -609,6 +616,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -629,26 +637,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "gn20:9",
-    "system": "prose verses",
-    "chanted_word": "מֶֽה־עָשִׂ֤יתָ",
-    "jta": "me-`a.!sI.ta",
-    "next_chanted_word": "לָּׄ֙נוּ֙",
-    "intervening_punctuation": [],
-    "mam_form": "מֶֽה־עָשִׂ֤יתָ",
-    "next_mam_form": "לָּ֙נוּ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1B",
-    "type_1_subtype": "B",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -669,6 +658,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -689,6 +679,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -709,6 +700,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -729,6 +721,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -749,6 +742,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -769,6 +763,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -789,6 +784,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -809,6 +805,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -829,6 +826,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -849,6 +847,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -869,6 +868,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -889,6 +889,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -909,6 +910,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -929,6 +931,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -949,6 +952,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -969,6 +973,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -989,6 +994,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1009,6 +1015,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1029,6 +1036,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1049,6 +1057,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1069,6 +1078,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1089,26 +1099,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ex12:27",
-    "system": "prose verses",
-    "chanted_word": "זֶֽבַח־פֶּ֨סַח",
-    "jta": "ze.vax-!pe.sax",
-    "next_chanted_word": "ה֜וּא",
-    "intervening_punctuation": [],
-    "mam_form": "זֶֽבַח־פֶּ֨סַח",
-    "next_mam_form": "ה֜וּא",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2B",
-    "type_1_subtype": null,
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1129,6 +1120,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1149,6 +1141,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1169,6 +1162,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1189,6 +1183,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1209,6 +1204,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1229,6 +1225,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1249,6 +1246,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1269,6 +1267,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1289,6 +1288,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1309,6 +1309,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1329,6 +1330,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1349,26 +1351,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "lv25:53",
-    "system": "prose verses",
-    "chanted_word": "לֹֽא־יִרְדֶּ֥נּֽׄוּ",
-    "jta": "lO-yir.!den.nu",
-    "next_chanted_word": "בְּ֯פֶ֖רֶךְ",
-    "intervening_punctuation": [],
-    "mam_form": "לֹֽא־יִרְדֶּ֥נּֽוּ",
-    "next_mam_form": "בְּפֶ֖רֶךְ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1389,6 +1372,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1409,6 +1393,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1429,6 +1414,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1449,6 +1435,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1469,6 +1456,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1489,6 +1477,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1509,6 +1498,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1529,6 +1519,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1549,6 +1540,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1569,6 +1561,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1589,6 +1582,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1609,6 +1603,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1629,6 +1624,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1649,6 +1645,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1669,6 +1666,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1689,6 +1687,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1709,6 +1708,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1729,6 +1729,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1749,6 +1750,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1769,6 +1771,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1789,26 +1792,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "dt21:15",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־תִהְיֶ֨יןָ",
-    "jta": "kI-tih.!ye.na",
-    "next_chanted_word": "לְ֯אִ֜ישׁ",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־תִהְיֶ֨יןָ",
-    "next_mam_form": "לְאִ֜ישׁ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1829,6 +1813,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1856,6 +1841,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1876,6 +1862,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1896,6 +1883,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1916,6 +1904,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1936,6 +1925,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1956,6 +1946,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1976,6 +1967,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -1996,6 +1988,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2016,6 +2009,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2036,6 +2030,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2056,6 +2051,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2076,6 +2072,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2096,6 +2093,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2116,6 +2114,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2136,6 +2135,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2156,6 +2156,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2176,6 +2177,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2196,6 +2198,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2216,6 +2219,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2236,6 +2240,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2256,6 +2261,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2276,6 +2282,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2296,6 +2303,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2316,6 +2324,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2336,6 +2345,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2356,6 +2366,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2376,6 +2387,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2396,6 +2408,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2416,46 +2429,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s22:17",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־בֹרֵ֣חַֽ",
-    "jta": "kI-vO.!rE.ax",
-    "next_chanted_word": "ה֔וּא",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־בֹרֵ֣חַֽ",
-    "next_mam_form": "ה֔וּא",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2B",
-    "type_1_subtype": null,
-    "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s25:15",
-    "system": "prose verses",
-    "chanted_word": "וְ֯לֹֽא־פָקַ֣דְנֽוּ",
-    "jta": "v^.lO-fa.!kad.nu",
-    "next_chanted_word": "מְ֯א֔וּמָה",
-    "intervening_punctuation": [],
-    "mam_form": "וְלֹֽא־פָקַ֣דְנֽוּ",
-    "next_mam_form": "מְא֔וּמָה",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2476,26 +2450,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1s29:6",
-    "system": "prose verses",
-    "chanted_word": "לֹֽא־מָצָ֤אתִֽי",
-    "jta": "lO-ma.!tsa.tI",
-    "next_chanted_word": "בְ֯ךָ֙",
-    "intervening_punctuation": [],
-    "mam_form": "לֹֽא־מָצָ֤אתִֽי",
-    "next_mam_form": "בְךָ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2516,6 +2471,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2536,6 +2492,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2556,6 +2513,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2576,6 +2534,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2596,6 +2555,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2616,6 +2576,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2636,6 +2597,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2656,6 +2618,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2676,6 +2639,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2696,6 +2660,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2716,6 +2681,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2736,6 +2702,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2756,6 +2723,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2776,6 +2744,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2796,6 +2765,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2816,6 +2786,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2836,6 +2807,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2856,6 +2828,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2876,6 +2849,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2896,26 +2870,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k3:11",
-    "system": "prose verses",
-    "chanted_word": "וְ֯לֹֽא־שָׁאַ֤לְתָּ",
-    "jta": "v^.lO-sha.!'al.ta",
-    "next_chanted_word": "לְּׄ֯ךָ֙",
-    "intervening_punctuation": [],
-    "mam_form": "וְלֹֽא־שָׁאַ֤לְתָּ",
-    "next_mam_form": "לְּךָ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2936,6 +2891,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2956,26 +2912,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1k8:16",
-    "system": "prose verses",
-    "chanted_word": "לֹֽא־בָחַ֣רְתִּֽי",
-    "jta": "lO-va.!xar.tI",
-    "next_chanted_word": "בְ֯עִ֗יר",
-    "intervening_punctuation": [],
-    "mam_form": "לֹֽא־בָחַ֣רְתִּֽי",
-    "next_mam_form": "בְעִ֗יר",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -2996,6 +2933,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3016,6 +2954,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3036,6 +2975,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3056,6 +2996,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3076,6 +3017,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3096,6 +3038,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3116,6 +3059,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3136,6 +3080,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3156,6 +3101,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3176,6 +3122,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3196,6 +3143,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3216,6 +3164,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3236,6 +3185,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3256,6 +3206,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3276,6 +3227,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3296,6 +3248,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3316,6 +3269,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3336,6 +3290,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3356,6 +3311,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3376,6 +3332,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3396,6 +3353,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3416,6 +3374,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3436,6 +3395,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3456,6 +3416,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3476,26 +3437,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is22:16",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־חָצַ֧בְתָּ",
-    "jta": "kI-xa.!tsav.ta",
-    "next_chanted_word": "לְּׄ֯ךָ֛",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־חָצַ֧בְתָּ",
-    "next_mam_form": "לְּךָ֛",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3516,6 +3458,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3536,6 +3479,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3556,6 +3500,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3576,6 +3521,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3596,6 +3542,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3616,6 +3563,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3636,6 +3584,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3656,6 +3605,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3676,6 +3626,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3696,6 +3647,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3716,6 +3668,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3736,6 +3689,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3756,6 +3710,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3776,6 +3731,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3796,6 +3752,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3816,6 +3773,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3836,6 +3794,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3856,6 +3815,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3876,6 +3836,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3896,26 +3857,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "is65:18",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־אִם־שִׂ֤ישֽׂוּ",
-    "jta": "kI-'im-!sI.su",
-    "next_chanted_word": "וְ֯גִ֙ילוּ֙",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־אִם־שִׂ֤ישֽׂוּ",
-    "next_mam_form": "וְגִ֙ילוּ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3936,6 +3878,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3956,6 +3899,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3976,6 +3920,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -3996,6 +3941,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4016,6 +3962,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4036,6 +3983,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4056,6 +4004,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4076,6 +4025,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4096,6 +4046,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4116,6 +4067,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4136,6 +4088,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4156,6 +4109,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4176,6 +4130,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4196,6 +4151,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4216,6 +4172,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4236,6 +4193,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4256,26 +4214,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "je42:2",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־נִשְׁאַ֤רְנֽוּ",
-    "jta": "kI-nish.!'ar.nu",
-    "next_chanted_word": "מְ֯עַט֙",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־נִשְׁאַ֤רְנֽוּ",
-    "next_mam_form": "מְעַט֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4296,6 +4235,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4316,6 +4256,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4336,6 +4277,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4356,6 +4298,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4376,6 +4319,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4396,6 +4340,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4416,6 +4361,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4436,6 +4382,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4456,26 +4403,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ek21:16",
-    "system": "prose verses",
-    "chanted_word": "הִֽיא־הוּחַ֤דָּׄה",
-    "jta": "hI-hu.!xad.da",
-    "next_chanted_word": "חֶ֙רֶב֙",
-    "intervening_punctuation": [],
-    "mam_form": "הִֽיא־הוּחַ֤דָּה",
-    "next_mam_form": "חֶ֙רֶב֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1B",
-    "type_1_subtype": "B",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4496,6 +4424,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4516,6 +4445,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4536,6 +4466,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4556,6 +4487,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4576,6 +4508,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4596,6 +4529,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4621,6 +4555,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4641,6 +4576,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4661,6 +4597,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4681,6 +4618,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4701,6 +4639,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4721,6 +4660,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4741,6 +4681,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4761,6 +4702,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4781,6 +4723,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4801,6 +4744,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4821,6 +4765,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4841,6 +4786,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4861,6 +4807,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4881,6 +4828,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4901,6 +4849,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4921,6 +4870,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4941,6 +4891,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -4961,26 +4912,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "mi1:12",
-    "system": "prose verses",
-    "chanted_word": "כִּֽי־חָ֥לָֽה",
-    "jta": "kI-!xa.la",
-    "next_chanted_word": "לְ֯ט֖וֹב",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־חָ֥לָֽה",
-    "next_mam_form": "לְט֖וֹב",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5001,6 +4933,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5021,6 +4954,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5041,6 +4975,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5061,6 +4996,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5081,6 +5017,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5101,6 +5038,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5121,6 +5059,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5141,6 +5080,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5161,6 +5101,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5181,33 +5122,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps5:5",
-    "system": "poetic verses",
-    "chanted_word": "לֹ֤א~אֵֽל־חָפֵ֘ץ~רֶ֥שַׁע",
-    "jta": "lO-'El-xa.fEts-!re.sha`",
-    "next_chanted_word": "אָ֑תָּׄה",
-    "intervening_punctuation": [
-     "׀"
-    ],
-    "mam_form": "לֹ֤א־אֵֽל־חָפֵ֘ץ־רֶ֥שַׁע",
-    "next_mam_form": "אָ֑תָּה",
-    "intervening_mam_punctuation": [
-     {
-      "kind": "paseq",
-      "glyph": "׀"
-     }
-    ],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2B",
-    "type_1_subtype": null,
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5228,6 +5143,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5248,6 +5164,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5268,6 +5185,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5288,6 +5206,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5308,6 +5227,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5328,6 +5248,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5348,26 +5269,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps56:2",
-    "system": "poetic verses",
-    "chanted_word": "כִּֽי־שְׁ֯אָפַ֣נִי",
-    "jta": "kI-sh^.'a.!fa.nI",
-    "next_chanted_word": "אֱנ֑וֹשׁ",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־שְׁאָפַ֣נִי",
-    "next_mam_form": "אֱנ֑וֹשׁ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5388,6 +5290,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5408,6 +5311,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5428,6 +5332,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5448,6 +5353,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5468,6 +5374,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5488,6 +5395,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5508,6 +5416,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5528,26 +5437,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps94:9",
-    "system": "poetic verses",
-    "chanted_word": "אִֽם־יֹ֥צֵֽר",
-    "jta": "'im-!yO.tsEr",
-    "next_chanted_word": "עַ֝֗יִן",
-    "intervening_punctuation": [],
-    "mam_form": "אִֽם־יֹ֥צֵֽר",
-    "next_mam_form": "עַ֝֗יִן",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "closed tsere-vowelled syllable"
-    ],
-    "fit_type": "3",
-    "type_1_subtype": null,
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5568,6 +5458,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5588,6 +5479,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5608,6 +5500,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5628,26 +5521,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps119:151",
-    "system": "poetic verses",
-    "chanted_word": "וְֽ֯כׇל־מִצְוֺתֶ֥יךָ",
-    "jta": "v^.khol-mits.vO.!te.kha",
-    "next_chanted_word": "אֱמֶֽת׃",
-    "intervening_punctuation": [],
-    "mam_form": "וְֽכׇל־מִצְוֺתֶ֥יךָ",
-    "next_mam_form": "אֱמֶֽת׃",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5668,6 +5542,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5688,26 +5563,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "ps142:7",
-    "system": "poetic verses",
-    "chanted_word": "כִּֽי־דַלּ֢ׄוֹתִ֫י",
-    "jta": "kI-dal.!lO.tI",
-    "next_chanted_word": "מְ֯אֹ֥ד",
-    "intervening_punctuation": [],
-    "mam_form": "כִּֽי־דַלּ֢וֹתִ֫י",
-    "next_mam_form": "מְאֹ֥ד",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5728,6 +5584,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5748,6 +5605,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5768,6 +5626,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5788,6 +5647,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5808,6 +5668,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5828,6 +5689,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5848,6 +5710,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5868,6 +5731,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5888,6 +5752,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5908,6 +5773,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5928,6 +5794,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5948,6 +5815,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5968,6 +5836,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -5988,6 +5857,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6008,6 +5878,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6028,6 +5899,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6048,6 +5920,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6068,6 +5941,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6088,6 +5962,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6108,6 +5983,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6128,6 +6004,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6148,6 +6025,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6168,6 +6046,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6188,6 +6067,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6208,6 +6088,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6228,6 +6109,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6248,6 +6130,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6268,6 +6151,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6288,6 +6172,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6308,6 +6193,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6328,6 +6214,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6348,6 +6235,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6368,6 +6256,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6388,26 +6277,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "jb34:11",
-    "system": "poetic verses",
-    "chanted_word": "וּֽכְאֹ֥רַח",
-    "jta": "ukh.!'O.rax",
-    "next_chanted_word": "אִ֝֗ישׁ",
-    "intervening_punctuation": [],
-    "mam_form": "וּֽכְאֹ֥רַח",
-    "next_mam_form": "אִ֝֗ישׁ",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2B",
-    "type_1_subtype": null,
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6428,6 +6298,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6448,6 +6319,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6468,6 +6340,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6488,6 +6361,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6508,6 +6382,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6528,6 +6403,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6548,6 +6424,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6568,6 +6445,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6588,6 +6466,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6608,6 +6487,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6628,6 +6508,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6648,6 +6529,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6668,6 +6550,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6688,6 +6571,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6708,6 +6592,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6728,6 +6613,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6748,6 +6634,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6768,6 +6655,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6788,6 +6676,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6808,6 +6697,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6828,6 +6718,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6848,6 +6739,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6868,6 +6760,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6888,6 +6781,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6908,6 +6802,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6928,6 +6823,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6948,6 +6844,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6968,6 +6865,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -6988,6 +6886,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7008,6 +6907,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7028,6 +6928,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7048,6 +6949,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7068,6 +6970,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7088,6 +6991,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7108,6 +7012,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7128,6 +7033,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7148,6 +7054,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7168,6 +7075,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7188,6 +7096,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7208,6 +7117,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7228,6 +7138,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7248,6 +7159,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7268,6 +7180,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7288,6 +7201,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7308,26 +7222,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "da6:25",
-    "system": "prose verses",
-    "chanted_word": "דִּֽי־שְׁ֯לִ֤טֽוּ",
-    "jta": "dI-sh^.!li.tu",
-    "next_chanted_word": "בְ֯הוֹן֙",
-    "intervening_punctuation": [],
-    "mam_form": "דִּֽי־שְׁלִ֤טֽוּ",
-    "next_mam_form": "בְהוֹן֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "open final syllable"
-    ],
-    "fit_type": "1A",
-    "type_1_subtype": "A",
-    "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7348,6 +7243,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7368,6 +7264,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7388,6 +7285,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7408,6 +7306,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7428,6 +7327,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7448,6 +7348,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7468,6 +7369,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7488,6 +7390,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7508,6 +7411,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7528,6 +7432,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7548,6 +7453,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7568,6 +7474,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7588,6 +7495,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7608,6 +7516,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7628,6 +7537,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7648,6 +7558,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7668,6 +7579,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7688,6 +7600,7 @@
     "fit_type": "2A",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7708,6 +7621,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7728,6 +7642,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7748,6 +7663,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7768,6 +7684,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7788,26 +7705,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
-    "stress_syllable_has_conjunctive_accent": true,
-    "next_chanted_word_is_initially_stressed": true,
-    "next_chanted_word_has_disjunctive_accent": true
-   },
-   {
-    "bcv": "1c16:21",
-    "system": "prose verses",
-    "chanted_word": "לֹֽא־הִנִּ֤ׄיחַ",
-    "jta": "lO-hin.!nI.ax",
-    "next_chanted_word": "לְ֯אִישׁ֙",
-    "intervening_punctuation": [],
-    "mam_form": "לֹֽא־הִנִּ֤יחַ",
-    "next_mam_form": "לְאִישׁ֙",
-    "intervening_mam_punctuation": [],
-    "types": [
-     "chanted word closed by a guttural"
-    ],
-    "fit_type": "2A",
-    "type_1_subtype": null,
-    "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7828,6 +7726,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7848,6 +7747,7 @@
     "fit_type": "3",
     "type_1_subtype": null,
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7868,6 +7768,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7888,6 +7789,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7908,6 +7810,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7928,6 +7831,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7948,6 +7852,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7968,6 +7873,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -7988,6 +7894,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8008,6 +7915,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8028,6 +7936,7 @@
     "fit_type": "1B",
     "type_1_subtype": "B",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8048,6 +7957,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8068,6 +7978,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8088,6 +7999,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8108,6 +8020,7 @@
     "fit_type": "2B",
     "type_1_subtype": null,
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8128,6 +8041,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8148,6 +8062,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": true,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true
@@ -8168,6 +8083,7 @@
     "fit_type": "1A",
     "type_1_subtype": "A",
     "has_mas": false,
+    "word_has_another_meteg": false,
     "stress_syllable_has_conjunctive_accent": true,
     "next_chanted_word_is_initially_stressed": true,
     "next_chanted_word_has_disjunctive_accent": true

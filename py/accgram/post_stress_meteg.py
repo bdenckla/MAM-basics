@@ -1250,8 +1250,8 @@ def _fit_for_mas_candidate(
     Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
     Unicode accent count cannot supply that information.  The potential syllable is directly
     after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has a
-    conjunctive accent, the next chanted word has initial stress and a disjunctive accent,
-    and the potential syllable meets one of the Fit-for-MAS types.
+    conjunctive accent, the next chanted word has initial stress and a disjunctive accent, the
+    word has no other meteg, and the potential syllable meets one of the Fit-for-MAS types.
     """
     stressed = parsed["stressed"]
     if stressed == len(parsed["syllables"]) - 1:
@@ -1266,8 +1266,8 @@ def _fit_for_mas_candidate(
         types.append(TYPE_GUTTURAL)
     if not is_open and vowel == hpo.TSERE:
         types.append(TYPE_CLOSED_TSERE)
-    has_u05bd = any(
-        METEG in marks
+    potential_syllable_meteg_count = sum(
+        marks.count(METEG)
         for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
         if _syllable_of(parsed["nuclei"], letter_index) == potential_syllable
     )
@@ -1283,7 +1283,8 @@ def _fit_for_mas_candidate(
         "next_chanted_word": next_chanted_word,
         "intervening_punctuation": intervening_punctuation,
         "structural_types": types,
-        "has_u05bd": has_u05bd,
+        "has_u05bd": bool(potential_syllable_meteg_count),
+        "word_has_another_meteg": (word.count(METEG) > potential_syllable_meteg_count),
         "next_chanted_word_is_initially_stressed": (
             next_chanted_word_is_initially_stressed
         ),
@@ -1309,6 +1310,7 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
         candidate["stress_syllable_has_conjunctive_accent"]
         and candidate["next_chanted_word_is_initially_stressed"]
         and candidate["next_chanted_word_has_disjunctive_accent"]
+        and not candidate["word_has_another_meteg"]
     )
 
 
@@ -1378,6 +1380,7 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "fit_type": fit_type,
         "type_1_subtype": candidate["type_1_subtype"],
         "has_mas": candidate["has_mas"],
+        "word_has_another_meteg": candidate["word_has_another_meteg"],
         "stress_syllable_has_conjunctive_accent": candidate[
             "stress_syllable_has_conjunctive_accent"
         ],
@@ -1575,12 +1578,18 @@ def _fit_for_mas_summary(
             and _type_2_fit_type(candidate["next_chanted_word"]) is None
         )
     ]
+    mas_with_another_meteg = [
+        candidate
+        for candidate in candidates
+        if candidate["has_mas"] and candidate["word_has_another_meteg"]
+    ]
     excluded_mas = (
         mas_outside_the_three_types
         + mas_with_non_disjunctive_next_word
         + mas_with_noninitial_next_word
         + mas_with_type_1_subtype_c
         + mas_with_type_2_subtype_c
+        + mas_with_another_meteg
     )
     assert len(
         {
@@ -1592,9 +1601,10 @@ def _fit_for_mas_summary(
     return {
         "what": (
             "Every syllable immediately after a nonfinal primary stress with a conjunctive"
-            " accent and with a next chanted word that has initial stress and a"
+            " accent, with a next chanted word that has initial stress and a"
             " disjunctive accent-grammar token, classified by the three MAS structural"
-            " predicates and Type 1's A/B/C initial-stress subtypes, and checked for U+05BD."
+            " predicates and Type 1's A/B/C initial-stress subtypes, and with no meteg"
+            " elsewhere in the chanted word. The potential syllable is checked for U+05BD."
             " Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and"
             " Type 3."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
@@ -1621,6 +1631,7 @@ def _fit_for_mas_summary(
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
             "type_2_subtype_C": len(mas_with_type_2_subtype_c),
+            "word_already_has_meteg": len(mas_with_another_meteg),
         },
         "accent_grammar_token_counts": dict(
             sorted(
