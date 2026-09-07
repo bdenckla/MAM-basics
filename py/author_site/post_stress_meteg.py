@@ -2717,8 +2717,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
             )
         ),
         mb_html.para(
-            "The Fit for MAS table records how often MAS occurs in situations that meet these"
-            " criteria and how often MAS does not occur."
+            "The table below records how often MAS does and does not appear in syllables fit for it."
         ),
         _table(headers, rows),
         mb_html.para(
