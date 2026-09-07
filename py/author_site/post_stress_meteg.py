@@ -1182,12 +1182,12 @@ def _census(survey: dict) -> list:
     census_chanted_word_summary = survey["census_chanted_word_summary"]
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
-        mb_html.abbr("words", {"title": "count of chanted words"}),
+        mb_html.abbr("words", {"title": "count of words"}),
         mb_html.abbr(
-            "MBS-O",
+            "MBS_O",
             {
                 "title": (
-                    "count of chanted words with one or more meteg marks before the"
+                    "count of words with one or more meteg marks before the"
                     " primary stress and none after it"
                 )
             },
@@ -1196,19 +1196,14 @@ def _census(survey: dict) -> list:
             "MAS",
             {
                 "title": (
-                    "count of chanted words with one or more meteg marks after the"
+                    "count of words with one or more meteg marks after the"
                     " primary stress and any number (including zero) before it"
                 )
             },
         ),
         mb_html.abbr(
             "% MAS",
-            {
-                "title": (
-                    "percentage of MBS-O and MAS chanted words that have one or more"
-                    " meteg marks after the primary stress"
-                )
-            },
+            {"title": "MAS/(MAS+MBS_O)"},
         ),
     )
     numeric = (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL)
@@ -1243,14 +1238,21 @@ def _census(survey: dict) -> list:
         row(labels[system], counts_by_system[system]) for system in (_PROSE, _POETIC)
     ]
     rows.append(row("all", all_counts))
+    mbs_only = all_counts["mbs_only"]
+    mas = all_counts["mas"]
     return [
         mb_html.heading_level_2("MAS census by cantillation system"),
         _table(headers, rows),
         mb_html.para(
             (
-                "The MBS-O and MAS columns count chanted words. See the ",
+                "So, among words with at least one meteg mark, there are ",
+                f"{mas:,}",
+                " words where one of them is after the stress and ",
+                f"{mbs_only:,}",
+                " words where none of them are after the stress. (There is never more"
+                " than one meteg mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
-                " for the definitions and the catalog of MAS chanted words that also have"
+                " for the definitions and the catalog of MAS words that also have"
                 " a meteg before the stress.",
             )
         ),
@@ -1279,7 +1281,7 @@ def _census_definitions(survey: dict) -> list:
         mb_html.heading_level_2("Census definitions"),
         mb_html.para(
             (
-                mb_html.abbr("MBS-O", {"title": "meteg before the stress only"}),
+                mb_html.abbr("MBS_O", {"title": "meteg before the stress only"}),
                 " counts chanted words that have one or more meteg marks before the"
                 " primary stress and none after it. The “O” means “only.” ",
                 mb_html.abbr("MAS", {"title": "meteg after the stress"}),
@@ -1289,12 +1291,12 @@ def _census_definitions(survey: dict) -> list:
             )
         ),
         mb_html.para(
-            "The % MAS column is the MAS count divided by the sum of the MBS-O and MAS counts.",
+            "The % MAS column is the MAS count divided by the sum of the MBS_O and MAS counts.",
         ),
         mb_html.para(
             (
-                f"In the surveyed snapshot, {multiple_mbs:,} MBS-O chanted words have more"
-                " than one meteg mark. Every one of those MBS-O chanted words has exactly"
+                f"In the surveyed snapshot, {multiple_mbs:,} MBS_O chanted words have more"
+                " than one meteg mark. Every one of those MBS_O chanted words has exactly"
                 " two meteg marks.",
             )
         ),

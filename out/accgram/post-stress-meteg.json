@@ -317,7 +317,7 @@
   }
  },
  "census_chanted_word_summary": {
-  "what": "MBS-O counts chanted words with one or more U+05BD meteg marks before the primary stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the primary stress, irrespective of the number before it.",
+  "what": "MBS_O counts chanted words with one or more U+05BD meteg marks before the primary stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the primary stress, irrespective of the number before it.",
   "by_system": {
    "prose verses": {
     "mbs_only": 12957,

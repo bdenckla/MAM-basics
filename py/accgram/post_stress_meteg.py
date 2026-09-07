@@ -1400,7 +1400,7 @@ def _record_key(record: dict) -> tuple[str, str, str]:
 def _census_chanted_word_summary(
     pre_stress: list[dict], post_stress: list[dict]
 ) -> dict:
-    """The MBS-O and MAS census categories, which count chanted words."""
+    """The MBS_O and MAS census categories, which count chanted words."""
     pre_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
     post_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
     for record in pre_stress:
@@ -1436,7 +1436,7 @@ def _census_chanted_word_summary(
     assert all(record["mam_form"] is not None for record in mas_with_mbs)
     return {
         "what": (
-            "MBS-O counts chanted words with one or more U+05BD meteg marks before"
+            "MBS_O counts chanted words with one or more U+05BD meteg marks before"
             " the primary stress and none after it. MAS counts chanted words with one or"
             " more U+05BD meteg marks after the primary stress, irrespective of the number"
             " before it."
