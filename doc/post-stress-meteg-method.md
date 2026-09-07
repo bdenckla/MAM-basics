@@ -8,8 +8,9 @@ post-stress-meteg page explains the cantillation findings without this implement
 The fit-for-MAS table asks a narrow structural question about a pair of chanted words. A candidate
 has a first chanted word with a nonfinal primary stress syllable and a candidate syllable
 immediately after that stress. The table includes the pair only when the stress syllable has one
-conjunctive accent, the next chanted word has initial stress and a disjunctive accent, and the
-first chanted word has no other meteg. The candidate syllable must be type 1A, 1B, 2A, 2B, or 3.
+conjunctive accent and the next chanted word has initial stress and a disjunctive accent. The
+candidate syllable must be type 1A, 1B, 2A, 2B, or 3. Another meteg in the first chanted word
+does not disqualify the candidate.
 The types are Yeivin's §332 open-syllable type, §354 guttural type, and §338 closed-tsere type,
 with Breuer's corresponding Ch. 8 types (j), (b), and (a). Breuer's Ch. 14 §8 lists only the
 types where the poetic system's rule differs from the prose system, and item (b) there is the
@@ -26,8 +27,9 @@ grammar-aware audit found 217 next-word disjunctives and 15 next-word conjunctiv
 MAS records; all but Jeremiah 46:14 have initial stress in the next chanted word. The Fit-for-MAS
 section accounts for every difference between the table's "Has MAS" count and the total MAS count.
 In particular, ten chanted words have two distinct metegs: an MBS before the primary stress and a
-MAS immediately after it. The table excludes those ten chanted words because its definition
-requires no other meteg, while the MBS and MAS census categories each include the applicable mark.
+MAS immediately after it. Each MBS and MAS census column counts meteg marks rather than chanted
+words, so each of the ten chanted words contributes one count to each column. Another meteg in the
+first chanted word does not exclude the candidate from the Fit-for-MAS table.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
 initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a

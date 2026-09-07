@@ -1310,7 +1310,6 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
         candidate["stress_syllable_has_conjunctive_accent"]
         and candidate["next_chanted_word_is_initially_stressed"]
         and candidate["next_chanted_word_has_disjunctive_accent"]
-        and not candidate["word_has_another_meteg"]
     )
 
 
@@ -1409,6 +1408,19 @@ def _mas_with_both_mbs_and_mas(
     return both
 
 
+def _multiple_mbs_counts(pre_stress: list[dict]) -> dict[str, int]:
+    """The chanted words that contribute two or more MBS marks to the census."""
+    mbs_marks_by_chanted_word = Counter(_record_key(record) for record in pre_stress)
+    return {
+        "chanted_words_with_two_mbs": sum(
+            mbs_count == 2 for mbs_count in mbs_marks_by_chanted_word.values()
+        ),
+        "chanted_words_with_more_than_two_mbs": sum(
+            mbs_count > 2 for mbs_count in mbs_marks_by_chanted_word.values()
+        ),
+    }
+
+
 def _mark_candidates_with_mas(candidates: list[dict], post_stress: list[dict]) -> int:
     """Mark each candidate according to whether it has a MAS, and return the MAS count."""
     mas_keys = {
@@ -1491,7 +1503,6 @@ def _actual_type_1_mas_summary(candidates: list[dict]) -> dict:
 def _fit_for_mas_summary(
     candidates: list[dict],
     mas_count: int,
-    mas_with_both_mbs_and_mas: list[dict],
     words_by_bcv: dict[str, list[str]],
     context_by_bcv: dict[str, list[object]],
 ) -> dict:
@@ -1595,22 +1606,12 @@ def _fit_for_mas_summary(
             and _type_2_fit_type(candidate["next_chanted_word"]) is None
         )
     ]
-    mas_with_another_meteg = [
-        candidate
-        for candidate in candidates
-        if candidate["has_mas"] and candidate["word_has_another_meteg"]
-    ]
-    assert {_record_key(candidate) for candidate in mas_with_another_meteg} == {
-        _record_key(record) for record in mas_with_both_mbs_and_mas
-    }
-    assert all(record["mam_form"] is not None for record in mas_with_both_mbs_and_mas)
     excluded_mas = (
         mas_outside_the_three_types
         + mas_with_non_disjunctive_next_word
         + mas_with_noninitial_next_word
         + mas_with_type_1_subtype_c
         + mas_with_type_2_subtype_c
-        + mas_with_another_meteg
     )
     assert len(
         {
@@ -1624,8 +1625,8 @@ def _fit_for_mas_summary(
             "Every syllable immediately after a nonfinal primary stress with a conjunctive"
             " accent, with a next chanted word that has initial stress and a"
             " disjunctive accent-grammar token, classified by the three MAS structural"
-            " predicates and Type 1's A/B/C initial-stress subtypes, and with no meteg"
-            " elsewhere in the chanted word. The potential syllable is checked for U+05BD."
+            " predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable"
+            " is checked for U+05BD."
             " Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and"
             " Type 3."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
@@ -1652,16 +1653,7 @@ def _fit_for_mas_summary(
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
             "type_2_subtype_C": len(mas_with_type_2_subtype_c),
-            "chanted_word_has_mbs_and_mas": len(mas_with_both_mbs_and_mas),
         },
-        "chanted_words_with_mbs_and_mas": [
-            {
-                "bcv": record["bcv"],
-                "system": record["system"],
-                "mam_form": record["mam_form"],
-            }
-            for record in mas_with_both_mbs_and_mas
-        ],
         "accent_grammar_token_counts": dict(
             sorted(
                 Counter(
@@ -2570,11 +2562,20 @@ def build_survey() -> dict:
     mas_with_both_mbs_and_mas = _mas_with_both_mbs_and_mas(
         found["pre_stress"], post_stress
     )
+    multiple_mbs_counts = _multiple_mbs_counts(found["pre_stress"])
+    mas_candidates_with_another_meteg = [
+        candidate
+        for candidate in found["fit_for_mas_candidates"]
+        if candidate["has_mas"] and candidate["word_has_another_meteg"]
+    ]
+    assert {
+        _record_key(candidate) for candidate in mas_candidates_with_another_meteg
+    } == {_record_key(record) for record in mas_with_both_mbs_and_mas}
+    assert all(record["mam_form"] is not None for record in mas_with_both_mbs_and_mas)
     actual_type_1_mas = _actual_type_1_mas_summary(found["fit_for_mas_candidates"])
     fit_for_mas = _fit_for_mas_summary(
         found["fit_for_mas_candidates"],
         mas_count,
-        mas_with_both_mbs_and_mas,
         words_by_bcv,
         context_by_bcv,
     )
@@ -2648,6 +2649,23 @@ def build_survey() -> dict:
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "meteg_mark_counting": {
+            "what": (
+                "The MBS and MAS census columns count individual U+05BD meteg marks,"
+                " not chanted words. A chanted word with two MBS marks contributes two"
+                " counts to the MBS column, while a chanted word with an MBS and a MAS"
+                " contributes one count to each column."
+            ),
+            "chanted_words_with_mbs_and_mas": [
+                {
+                    "bcv": record["bcv"],
+                    "system": record["system"],
+                    "mam_form": record["mam_form"],
+                }
+                for record in mas_with_both_mbs_and_mas
+            ],
+            **multiple_mbs_counts,
         },
         "post_stress_by_structural_type": {
             system: {one: by_type[(system, one)] for one in _TYPES}
