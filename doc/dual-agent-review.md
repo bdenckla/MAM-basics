@@ -3,7 +3,8 @@
 This document records a recommendation Claude made on 2026-09-01, in a session titled "Claude and
 Codex complementary workflows", and first written down on 2026-09-03 because until then the
 recommendation existed only in that session's transcript and had to be recovered by searching
-transcripts. **Design A was first run on the 2026-09-04 window.** Its two inputs are
+transcripts. **Design A is the default dual-agent design, by Ben's decision of 2026-09-07, and was
+first run on the 2026-09-04 window.** Its two inputs are
 `doc/review-findings-2026-09-04.md` and the matching commit ranges; its output is
 `doc/codex-review-findings-2026-09-04.md`, with the reconciliation appended to the Claude file.
 
@@ -56,7 +57,12 @@ checked claims, and found one record error the Claude review omitted. Because De
 to the Claude review, that result measures error-checking value but not independent overlap; it does
 not fill the four Design B buckets. No standing parallel-track decision has been made.
 
-## Two designs, and why to try the anchored one first
+That undecided cadence question is separate from the design choice. Whenever a periodic review is
+run as a dual-agent review, use Design A unless Ben explicitly requests Design B's blind,
+independent sweep. Making Design A the default does not require every periodic review window to use
+two agents.
+
+## Two designs; Design A is the default
 
 **Design A, Codex reviews the finished Claude review.** Point Codex at the completed
 `doc/review-findings-<date>.md` **plus** the same commit range, and ask two questions: which claims
@@ -70,10 +76,11 @@ Codex review looks where the Claude review did not. **Design A catches errors**,
 re-derives claims that are already written down — but it is anchored to the Claude review and so
 will not look anywhere that review did not.
 
-**Design A is the recommended starting point on two grounds.** The record says errors dominate here:
+**Design A is the default on two grounds.** The record says errors dominate here:
 `251b287`'s commit message is "Record the 2026-09-01 review's findings, and fix the record errors it
 found", and the series' output is heavily claims in `CLAUDE.md` and `doc/` that turned out to be
-wrong. And Design A is roughly a fifth of the work of Design B, so it tests the pairing cheaply.
+wrong. And Design A is roughly a fifth of the work of Design B. Use Design B only when the second
+review must search independently for omissions rather than checking and extending the first review.
 
 Design A does not need the blindness rule below, because it is anchored by construction. The
 blindness section applies to Design B only. **Both designs require reconciliation**, but the
@@ -255,7 +262,8 @@ misses.
 
 The recommendation recorded here was made by Claude on 2026-09-01. Design A was first run on
 2026-09-04, in `doc/review-findings-2026-09-04.md` and
-`doc/codex-review-findings-2026-09-04.md`; Design B remains unrun.
+`doc/codex-review-findings-2026-09-04.md`. Ben made Design A the default dual-agent design on
+2026-09-07; Design B remains unrun and optional by explicit request.
 
 **Its claim that Codex had never been run on this machine was false, and is corrected here.** The
 2026-09-01 session said so, this document repeated it on 2026-09-03, and a `git worktree list` that
