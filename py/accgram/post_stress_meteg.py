@@ -2030,12 +2030,13 @@ def _one_verse(
 # The verses the page names outside its tables, whose chanted words it therefore has to show
 # as MAM has them TODAY rather than as the surveyed snapshot has them.  Isaiah 23:12 is
 # where the two differ -- suggestion M23 added a meteg there after the snapshot was taken --
-# and 1 Samuel 17:5 is the post-silluq case, where the page's claim is about what MAM lacks.
+# and 1 Samuel 17:5 is the Leningrad Codex post-silluq case, where the page's claim is about
+# what MAM lacks.  First Kings 7:37 is MAM's post-silluq case, which the research ignores.
 # 2 Chronicles 8:11 supplies MAM's form beside a possible different interpretation of the
 # Leningrad Codex.  Named here rather than in the page module so the form is lifted from the
 # corpus at generation time and reaches the page through the tracked JSON, as every other form
 # does.
-_FOCUS_VERSES = ("is23:12", "1s17:5", "2c8:11")
+_FOCUS_VERSES = ("is23:12", "1s17:5", "1k7:37", "2c8:11")
 
 
 def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:

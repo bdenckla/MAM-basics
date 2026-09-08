@@ -176,6 +176,7 @@ _MAS_CENSUS_GLOSS = (
 # has them today, under ``currency.focus_verses``, so the form shown here is lifted like every
 # other form on the page.
 _POST_SILLUQ_VERSE = "1s17:5"
+_MAM_POST_SILLUQ_VERSE = "1k7:37"
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
@@ -570,6 +571,7 @@ def build_methods_body(survey: dict) -> list:
                 ", which marks the stress of every word.",
             )
         ),
+        mb_html.para(_mam_post_silluq_statement(survey)),
         mb_html.para(
             "In the research we present here, we define “prose” and “poetic” as follows:"
         ),
@@ -1109,7 +1111,11 @@ def pin_claims(survey: dict) -> None:
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
-    for bcv in (_POST_SILLUQ_VERSE, _CHRONICLES_8_11_VERSE):
+    for bcv in (
+        _POST_SILLUQ_VERSE,
+        _MAM_POST_SILLUQ_VERSE,
+        _CHRONICLES_8_11_VERSE,
+    ):
         assert bcv in survey["currency"]["focus_verses"], (
             f"{bcv} is named in the page's prose but the survey records no chanted word"
             " for it; add it to post_stress_meteg._FOCUS_VERSES"
@@ -1177,11 +1183,12 @@ def _hebrew_cell(form: str | None) -> tuple:
     return wrap_hebrew_runs(psm._as_mam_would_write_it(form or ""))
 
 
-def _ref_link(bcv: str) -> object:
+def _ref_link(bcv: str, text: str | None = None) -> object:
     """The reference, linked to the verse in MAM with doc."""
     bb, chnu, vrnu = _split(bcv)
     return mb_html.anchor_h(
-        ref_abbrev(bcv), rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu)
+        text or ref_abbrev(bcv),
+        rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu),
     )
 
 
@@ -2411,6 +2418,37 @@ def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
     )
 
 
+def _mam_post_silluq_form(survey: dict) -> str:
+    """MAM's verse-final form at 1 Kings 7:37, lifted from the survey."""
+    return _focus_word(
+        survey,
+        _MAM_POST_SILLUQ_VERSE,
+        ("לכלהנה",),
+        must_have=psm.SOF_PASUQ,
+    )
+
+
+def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) -> tuple:
+    """The 1 Kings 7:37 MAM case that this research excludes."""
+    return (
+        "At " if starts_sentence else "at ",
+        _ref_link(_MAM_POST_SILLUQ_VERSE, "1K 7:37"),
+        ", in MAM, there is a ",
+        _ROM_METEG,
+        " after ",
+        _ROM_SILLUQ,
+        " in ",
+        wrap_hebrew_runs(_mam_post_silluq_form(survey)),
+        ". We ignore it for the purposes of this research.",
+    )
+
+
+def _post_silluq_leningrad_form(survey: dict) -> str:
+    """The BHS transcription of the Leningrad Codex form at 1 Samuel 17:5."""
+    forms = dict(_post_silluq_comparison(survey))
+    return forms["BHS"]
+
+
 def _post_silluq_lc_crop() -> object:
     """The directly inspectable LC line for 1 Samuel 17:5's post-silluq question."""
     return mb_html.raw_html(
@@ -2527,22 +2565,32 @@ def build_post_silluq_body(survey: dict) -> list:
     ]
 
 
-def _post_silluq_footnote() -> list:
-    """Footnote 1: a one-sentence pointer to the post-silluq page."""
+def _post_silluq_footnote(survey: dict) -> list:
+    """Footnote 1: the MAM and Leningrad Codex post-silluq cases."""
     return [
         mb_html.heading_level_3(
-            ("φ1 — A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad"),
+            ("φ1 — ", _ROM_METEG, " after ", _ROM_SILLUQ),
             {"id": _POST_SILLUQ_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
-                "See ",
-                mb_html.anchor_h("this page", _POST_SILLUQ_FNAME),
-                " regarding a ",
+                "As noted on the ",
+                mb_html.anchor_h("Methods", _METHODS_FNAME),
+                " page, ",
+                *_mam_post_silluq_statement(survey, starts_sentence=False),
+            )
+        ),
+        mb_html.para(
+            (
+                "At 1 Samuel 17:5, in the Leningrad codex, there is a ",
                 _ROM_METEG,
                 " after ",
                 _ROM_SILLUQ,
-                " in 1 Samuel 17:5.",
+                " in ",
+                wrap_hebrew_runs(_post_silluq_leningrad_form(survey)),
+                ". See ",
+                mb_html.anchor_h("this page", _POST_SILLUQ_FNAME),
+                ".",
             )
         ),
     ]
@@ -2733,7 +2781,7 @@ def _footnotes(survey: dict) -> list:
     exception = exceptions[0]
     return [
         mb_html.heading_level_2("Footnotes"),
-        *_post_silluq_footnote(),
+        *_post_silluq_footnote(survey),
         *_nonfinal_mas_syllable_footnote(survey),
         mb_html.heading_level_3(
             "φ3 — Next word lacking initial stress", {"id": _JEREMIAH_FOOTNOTE_ID}
