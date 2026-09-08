@@ -40,8 +40,8 @@ found later that is neither is a new citation of a dead site, not one this sweep
 
 THE PAGE LIST IS FROZEN, AND CAN ONLY SHRINK
 
-``redirected_pages`` reads ``in/wlc_redirect_pages.json``, the 154 paths wlc-utils
-published at the 2026-08-17 move.  What earns a stub is having been published under
+For the wlc-utils row, ``redirected_pages`` reads ``in/wlc_redirect_pages.json``, the
+154 paths wlc-utils published at the 2026-08-17 move.  What earns a stub is having been published under
 ``bdenckla.github.io/wlc-utils/`` -- a fact about the past, which no later page can
 acquire, since new work is given out as a MAM-basics URL and cited as one.  So a page
 added under ``gh-pages/wlc/`` after the move is not a missing stub, and ``check`` says
@@ -112,8 +112,8 @@ _MAM_BASICS_SITE = "https://bdenckla.github.io/MAM-basics/"
 class RedirectRepo:
     """One evacuated repository whose old published URLs need forwarding stubs.
 
-    A row exists only after the repo's lane captures its frozen manifest. The table starts
-    with wlc-utils and grows one row at a time through Phases 3 to 5.
+    A row exists only after the repository's lane captures its frozen manifest. Callers
+    select a row explicitly; table order carries no command-line meaning.
     """
 
     source_repo: str
@@ -199,9 +199,6 @@ REDIRECT_REPOS = (
     ),
 )
 
-# The one row that keeps existing invocations free of an otherwise needless --repo flag.
-_DEFAULT_REPO = REDIRECT_REPOS[0]
-
 # The catch-all, which is a stub for no page and so is exempt from the correspondence
 # check that every other .html in the tree faces.
 NOT_FOUND_NAME = "404.html"
@@ -265,11 +262,6 @@ def redirect_repo(name: str) -> RedirectRepo:
             return repo
     choices = ", ".join(repo.source_repo for repo in REDIRECT_REPOS)
     raise ValueError(f"unknown redirect repository {name!r}; choose one of: {choices}")
-
-
-def default_redirect_repo() -> RedirectRepo:
-    """The default table row, preserving the original one-host command line."""
-    return _DEFAULT_REPO
 
 
 def redirect_repo_names() -> tuple[str, ...]:

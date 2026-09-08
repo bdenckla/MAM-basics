@@ -10,7 +10,7 @@ direction that needs no stub tree -- a frozen URL whose page is no longer publis
 -- is ``py/tests/test_redirect_manifest.py``, which is the only part of this lint that
 still runs with no source clone on the disk.
 
-The default target is the selected source repo's committed ``gh-pages/``, so with no clone
+The default target is the explicitly selected source repo's committed ``gh-pages/``, so with no clone
 on the disk this subcommand needs either ``--dir`` or a fresh clone;
 ``stubs.source_pages_dir`` says how to get one.
 """
@@ -32,7 +32,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
     parser.add_argument(
         "--repo",
         choices=stubs.redirect_repo_names(),
-        default=stubs.default_redirect_repo().source_repo,
+        required=True,
         help=(
             "source redirect host to check; each row is added only when its frozen"
             " manifest has been captured"

@@ -108,7 +108,7 @@ IT STILL RAISES WHEN NEITHER FORM OCCURS EXACTLY ONCE, which is the case that
 was never derivable and is what the fail-fast here is for; the message now
 reports both counts rather than only the MAM form's.  The offset check runs
 first now, because it asks about the two quoted forms alone and needs no corpus,
-so a case that is underivable on its own terms says so rather than being
+so a case that is underivable from the two quoted forms says so rather than being
 reported as a corpus mismatch.  ``comparison_form_already_present`` says whether
 the fallback was available: it is true exactly when MAM has the comparison form.
 """

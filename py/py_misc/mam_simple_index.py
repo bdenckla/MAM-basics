@@ -36,7 +36,7 @@ _README_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/READM
 # That one links a site-wide style.css; gh-pages/MAM-simple/ has no site-wide
 # stylesheet, versification-and-cantillation.css being that one page's own, deployed
 # beside it by versification_and_cantillation/generate_doc.py.  A heading and one
-# sentence do not earn a second stylesheet.
+# two sentences do not earn a second stylesheet.
 _TEMPLATE = """\
 <!doctype html>
 <!-- {comment} -->
@@ -50,6 +50,8 @@ _TEMPLATE = """\
 <h1>MAM-simple</h1>
 <p>For the full project overview, see the
 <a href="{readme_url}">README</a>.</p>
+<p>For an explanation of MAM's versification and cantillation variants, see
+<a href="versification-and-cantillation.html">Versification and cantillation</a>.</p>
 </body>
 </html>
 """

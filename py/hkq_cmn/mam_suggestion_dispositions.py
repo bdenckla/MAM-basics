@@ -17,7 +17,7 @@ them, and Ben asked outright that they be cited.
 
 So a reason here may quote and attribute his scholarly point.  It may not carry
 anything about his availability, his circumstances, or anyone else's.  The same
-holds for Ben's own remarks.  ``mam_suggestion_extract``'s module docstring states
+holds for Ben's remarks.  ``mam_suggestion_extract``'s module docstring states
 the boundary the ingest keeps; this is the one exception to it, and it is narrow.
 
 SUPPRESSED MEANS HANDLED, AND DELIBERATELY DOES NOT SAY HOW.  Ben Denckla settled
@@ -40,11 +40,11 @@ research aside that states no disposition at all.
 
 THE PHONETIC TANAKH IS NOT MENTIONED IN A REASON, and this is a decision rather
 than an oversight.  Two of the Jerusalem Crown cases carry a note in the mailbox,
-Ben Denckla's own, saying the fix is needed in the Phonetic Tanakh as well.  It
+Ben Denckla's, saying the fix is needed in the Phonetic Tanakh as well.  It
 was put to him on 2026-09-02 as a candidate for the reasons here and he declined
 it: *"Thanks for raising the possibility that Phonetic Tanakh should be mentioned
 here, but I've decided it should not be mentioned here."*  A reason says what was
-decided about the suggestion; a downstream edition's own to-do is a different
+decided about the suggestion; a to-do for a downstream edition is a different
 matter and does not belong on these cards.  Do not re-propose it.
 
 GLOSS A BARE HEBREW LETTER WITH ITS NAME: "the י (yod)", "the ש (shin)".  A reason
@@ -84,7 +84,7 @@ class Disposition:
     "Suggestion not taken" -- and the point of leaving it as text is that a third
     and a fourth are expected: "Suggestion partly taken" is the case he named
     outright, and a suggestion right about the problem and wrong about the fix
-    would want wording of its own again.  ``state`` does the routing; ``outcome``
+    would want different wording again.  ``state`` does the routing; ``outcome``
     tells the reader what happened; neither is a substitute for the other.
 
     It is also the card's LABEL for the summary line, so it is written without

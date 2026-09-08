@@ -535,29 +535,73 @@ Goal: make current public instructions and records describe the landed repositor
 decision visible. This wave covers findings 7, 9–11, 14–15, 18–21, and the decision-bearing parts of
 finding 23.
 
-- [ ] Resolve decision gates 1–5 before making their corresponding edit or deletion.
-- [ ] Correct the fourth-stage and third-stage execution records from current Git objects, manifests,
+- [x] Resolve decision gates 1–4 before making their corresponding edit or deletion. Gate 5 remains
+      deferred until the active `post-stress-meteg` worktree closes.
+- [x] Correct the fourth-stage and third-stage execution records from current Git objects, manifests,
       source-host READMEs, and generated files. Every numeric correction must name the command or
       scratch script that re-established it.
-- [ ] Update `doc/PLAN-repo-maintenance-across-GitRepos.md` from the current global maintenance rules,
+- [x] Update `doc/PLAN-repo-maintenance-across-GitRepos.md` from the current global maintenance rules,
       including forest manifests, future handoffs, absent-manifest handling, standalone-clone object
       checks, and the distinction between dated task folders and external Claude cache paths.
-- [ ] Correct live docstrings and comments after re-running their scanners. Preserve an honest dated
+- [x] Correct live docstrings and comments after re-running their scanners. Preserve an honest dated
       execution record; use a dated correction rather than rewriting the historical action.
-- [ ] Repair `README.md`, `DATA-LICENSES.md`, and every affected landed README. Re-census
+- [x] Repair `README.md`, `DATA-LICENSES.md`, and every affected landed README. Re-census
       `gh-pages/img/`: it contains six tracked manuscript crops at `c73a2ad3`, including the new
       Aleppo and Leningrad crops for 1 Kings 7:37. Number every announced count and keep GPL, MIT,
       corpus-text, font, image, and source/product directory scopes distinct.
-- [ ] Update the MAM-simple redirect-host README through the established host workflow if the dated
+- [x] Update the MAM-simple redirect-host README through the established host workflow if the dated
       breadcrumb remains missing. Do not leave a permanent source clone in `GitRepos`.
-- [ ] Apply the reachability decisions and rerun the complete 576-page baseline method against the
+- [x] Apply the reachability decisions and rerun the complete 576-page baseline method against the
       current page count. Record zero dead internal targets and every deliberate orphan by exact path;
       re-measure the page count rather than trusting 576.
-- [ ] Apply the global prose rules to current files, including the `own` scan, announced-list
+- [x] Apply the global prose rules to current files, including the `own` scan, announced-list
       numbering, headings that name their subject, exact referents, and stable names.
 
 Expected not to change in Wave 5: immutable commit messages and trailers, frozen original review
 findings, private instruction content, and an orphan decision Ben has not changed.
+
+### Wave 5 execution result — 2026-09-08
+
+- Ben accepted the four actionable recommendations. Redirect-stub `build` and `check` now require
+  an explicit `--repo`; both bare commands fail on the missing argument, while an explicit
+  wlc-utils scratch build produced 154 stubs plus `404.html` and passed the checker.
+- The complete MAM-for-Sefaria safety check found a clean clone whose `HEAD`, `main`, and
+  `origin/main` were all `cf23b478`; the only unreachable commit, `34c94a8`, has the same patch ID
+  as reachable commit `746d6d2`. The exact clone path was moved to the Windows Recycle Bin and is
+  recoverable. The source repository remains represented by its redirect host and the landed
+  `MAM-for-Sefaria/` product.
+- Retired the five roster-driven files under `misc/linux-sh/`: the three multi-repository shell
+  scripts and the two text rosters. Preserved `misc/linux-sh/linux-clone-MAM-basics.sh`, which is a
+  standalone bootstrap for MAM-basics and does not declare the multi-repository roster.
+- Added the MAM-for-Sefaria product to the deploy-root index and linked MAM-simple's
+  `versification-and-cantillation.html` from the MAM-simple index. The complete link graph now
+  measures 577 HTML pages, nine pages with no inbound link, and zero dead internal targets. The
+  nine deliberate orphan pages are:
+  1. `gh-pages/MAM-with-doc/misc/index.html`, retained under the flat MAM-with-doc landing policy;
+  2. `gh-pages/MAM-with-doc/tsinnorit_oleh/tsinnorit_and_oleh_on_ivs.html`, a legacy redirect path
+     whose target is linked elsewhere;
+  3. `gh-pages/book-of-job/index.html`;
+  4. `gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-ז - English.html`;
+  5. `gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-ז.html`;
+  6. `gh-pages/uxlc/clc/2Samuel.html`;
+  7. `gh-pages/uxlc/clc/Genesis.html`;
+  8. `gh-pages/uxlc/clc/Proverbs.html`; and
+  9. `gh-pages/wlc/index.html`.
+- Updated the MAM-simple redirect-host README through a temporary shallow clone. Commit `376912a`
+  (`Date the MAM-simple evacuation breadcrumb`) is pushed on the redirect host's `main`; the clean
+  temporary clone was then moved to the Windows Recycle Bin.
+- Corrected the public execution plans, maintenance runbook, landed READMEs, root README, live
+  docstrings, and `DATA-LICENSES.md`. The licence table now distinguishes code, analysis, corpus
+  text, fonts, manuscript crops, and landed source/product trees and covers all twelve tracked
+  Taamey D font copies.
+- Ben's decision for the MAS census is recorded in `py/accgram/post_stress_meteg.py` and
+  `doc/post-stress-meteg-method.md`: a `מ:קמץ` row contributes exactly one parameter, never both;
+  the current selection is `ד`. The `ס` parameter remains available for grouping-difference
+  evidence, and no separate effect analysis is required.
+- Decision gate 5 remains deferred. The live worktree is now at `c5b170ad`; `main` is nine commits
+  ahead and `post-stress-meteg` is four commits ahead of `main`, while
+  `origin/post-stress-meteg` is 128 commits behind the local worktree branch. No branch or `d4d1`
+  path was removed while that worktree is active.
 
 ## Wave 6 — final verification and disposition write-back
 

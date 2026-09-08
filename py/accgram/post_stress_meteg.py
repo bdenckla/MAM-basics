@@ -774,6 +774,10 @@ def _select_qamats_reading(node: object) -> object:
     The public Phonetic MAM page presents the two phonetic readings in one row for one MAM
     chanted-word sequence. The census counts that sequence once. The marker is retained as an
     event so context handling still knows that an annotation stood between neighboring entries.
+
+    Ben's decision, 2026-09-08: select exactly one of the מ:קמץ parameters, ד or ס, never
+    both. The choice need not receive a separate effect analysis; selecting ד here is
+    acceptable, analogous to selecting cant-alef for dual-cantillation templates.
     """
     if not isinstance(node, list):
         return node

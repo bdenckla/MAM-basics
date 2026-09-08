@@ -22,12 +22,9 @@ and one declaration replaces a hand-maintained table that goes stale silently.
 
 THE DESIGN DECISION: WHAT COUNTS AS A REACHING SITE, AND WHY NOT A GREP
 
-A naive grep for ``"../<repo>"`` over ``py/`` returns about fifty hits and the great
-majority construct no path: 22 ``py/author_misc/*.py`` module docstrings reading
-"Output goes to ../MAM-parsed/gh-pages/<name>.html" (measured 2026-09-04, one
-occurrence each), ``pipeline_graph/pipeline_graph_spec.py``'s deliberate display
-labels, and assorted comments.  A lint that flags those is useless and gets deleted,
-so this one is an AST pass with three deliberate narrowings:
+A naive grep for ``"../<repo>"`` over ``py/`` finds site-relative links, deliberate
+display labels, and comments that construct no path. A lint that flags those is
+useless and gets deleted, so this one is an AST pass with three deliberate narrowings:
 
 1. COMMENTS ARE INVISIBLE TO ``ast`` and docstrings are cheap to drop -- a module,
    class or function whose first statement is a string constant.  That alone removes
@@ -76,7 +73,7 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
   without importing the module or tracing data flow.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
-  builds subprocess ``cwd``s this way for MAM-parsed and MAM-private.
+  builds the MAM-private subprocess ``cwd`` this way.
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
   ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those two sites.
@@ -93,11 +90,9 @@ a source-code reach.
 
 WHY THE CWD-RELATIVE SITES ARE NOT DEFECTS TO FIX
 
-CLAUDE.md's "Running tests -- always from the repo root" section names vendored files
-that intentionally keep cwd-relative or self-contained ``__file__``-relative logic so
-they stay portable without also requiring ``mb_cmn/paths.py``. ``paths.mam_parsed_path``'s
-docstring states the doctrine behind the first: "THE CALLER SUPPLIES THIS PATH BECAUSE
-THE READER CANNOT." So the assertion here is NOT "there are no cwd-relative literals".
+Some copied example files intentionally keep cwd-relative or self-contained
+``__file__``-relative logic so they stay portable. The assertion here is therefore NOT
+"there are no cwd-relative literals".
 It is "the siblings reached, by any mechanism, are exactly these" -- and a sanctioned
 cwd-relative default contributes its repo to that set like any other route.
 
@@ -207,8 +202,8 @@ _DYNAMIC_NAME_SOURCES: dict[tuple[str, str], str] = {
 
 # paths.py IS the resolver: its `repos_root() / name` is the mechanism rather than a
 # call site, and its `name` is a parameter no in-file lookup can resolve.  Only the
-# repos_root recognizer skips it; its own sibling_repo("MAM-parsed") and
-# sibling_repo("MAM-private") calls are real reaches and are counted.
+# repos_root recognizer skips it; its sibling_repo("MAM-private") call is a real reach
+# and is counted.
 _PATHS_MODULE = "py/mb_cmn/paths.py"
 
 _SELF = "py/tests/test_sibling_reach.py"

@@ -21,7 +21,7 @@ snapshot. The Book-of-Job repository history preserves the snapshot and its prov
 
 **The code that reads XML of this shape is MAM-basics', and since 2026-08-22 it is one module
 rather than two.** codex-index-aleppo and codex-index-cam1753 initially held a `MAM-XML/` snapshot
-of their own. codex-index-aleppo read the snapshot with
+as separate copies. codex-index-aleppo read the snapshot with
 `py/py_ac_loc/mam_xml_verses.py`; codex-index-cam1753 used
 `py_mam_xml/mam_xml_verses.py`. Both repos' Python moved to MAM-basics that day
 under `doc/PLAN-evacuate-python-from-codex-index-trio.md` (deleted 2026-08-29 by

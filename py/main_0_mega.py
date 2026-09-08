@@ -1,12 +1,13 @@
 """Run all, or a selected subset, of the processing jobs in sequence.
 
-The sequence combines this repository's own processing steps with the wlc steps
+The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
 MAM-simple and MAM-for-Sefaria product trees became local paths in the 2026-09-06
 fourth-stage evacuation, so their generators no longer depend on a sibling clone.
-Several other generators still write to sibling repositories through
-``mb_cmn.paths``; a worktree run therefore still needs the documented
-``REPOS_ROOT`` and ``REPO_<NAME>_DIR`` routing.
+Two jobs still reach sibling repositories through ``mb_cmn.paths``: the OSIS
+generator writes MAM-OSIS, and the near-Aleppo census runs in MAM-private. A
+worktree run therefore still needs the documented ``REPOS_ROOT`` and
+``REPO_<NAME>_DIR`` routing.
 """
 
 import argparse
@@ -400,11 +401,12 @@ _STEPS = [
     StepRecord(
         "gen-site",
         _run_gen_site,
-        "writes this repo's own gh-pages/index.html, gh-pages/unicode-proposals.html and"
-        " gh-pages/post-stress-meteg.html, the last of those from its tracked survey JSON",
+        "writes the ten deploy-root pages: gh-pages/index.html,"
+        " gh-pages/unicode-proposals.html, and eight post-stress-meteg pages from the"
+        " tracked survey JSON",
     ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
-    # builds, reading the vendored .py copies as they sit in the sibling repos, and a
+    # builds, reading the copied .py files under MAM-simple/py-examples/, and a
     # report reads most naturally as the closing act.  It is here at all because until
     # 2026-08-02 nothing routine ran py/main_vendoring.py, which let it stay outright
     # broken for a day (a deleted wlc-utils scan root) and let its inventory drift
@@ -413,7 +415,8 @@ _STEPS = [
     StepRecord(
         "vendoring-audit",
         main_vendoring.almost_main,
-        "scans every sibling repo on disk; writes doc/vendoring-inventory.md and out/vendoring_*_out.*",
+        "audits 44 MAM-simple example-support copies; writes"
+        " doc/vendoring-inventory.md and out/vendoring_*_out.*",
     ),
 ]
 

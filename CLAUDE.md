@@ -288,9 +288,8 @@ SID in the title, 11 of those leading with the verse, as "30:18: add prefix; exp
 does — one issue per quirk record, per manuscript image, or per crop-editor failure. **The bullet
 below about modules that render issue references as data does not apply here**: book-of-job's
 issue numbers live in its tracker and in prose, and no module of its code turns them into links or
-tags, so it has no counterpart to `io/table_row_github_issues.json`. `py/boj_paths.py`'s
-`DATA_REPO_NAME` names a sibling repo to build paths from, exactly as `py/hkq_paths.py`'s does,
-and is nothing to do with `gh`.
+tags, so it has no counterpart to `io/table_row_github_issues.json`. The book-of-job data and
+programs now live under `book-of-job/` and `py/` in MAM-basics; no `DATA_REPO_NAME` constant remains.
 
 **Four of the six numbers named above are now FIVE-way collisions** — #19, #29, #48 and #52, whose
 book-of-job titles are "Add Aleppo Codex image for 34:5", "supplement μA images with manuscript
@@ -347,15 +346,9 @@ framing, and recorded here so a rename is not re-proposed. Finding 2 of
 
 **This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
 trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,
-and "Five issue trackers" since. **Ten sentences across four plans still cite it under one of the
-three retired names**, counted 2026-08-22: four in `doc/PLAN-evacuate-the-rest-of-wlc-utils.md`
-under "Two issue trackers"; three under "Three issue trackers", being
-`doc/PLAN-evacuate-python-from-UXLC-utils.md`'s Status row and its Phase 6 record plus
-`doc/PLAN-evacuate-public-repos-programme.md`'s UXLC-utils row; and three under "Four issue trackers",
-being `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md`'s Status row and its Phase 6 record
-plus `doc/PLAN-evacuate-public-repos-programme.md`'s holman-ketiv-qere row. They are those plans'
-execution records, describing the section as it stood when each phase ran, so they are left as
-written rather than re-pointed.
+and "Five issue trackers" since. Dated execution records in the surviving programme and in
+deleted plans preserved in Git history use the earlier names because each record describes the
+section as it stood when that phase ran.
 
 Three things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
 
@@ -443,9 +436,10 @@ metadata, and quirk-record comment style. **Read the relevant one before touchin
 `py/author_boj*`, `py/py_ac_word_image_helper/` or `py/py_cam1753_word_image/`** — nothing in
 the code points at them.
 
-Every path in them was repointed on arrival: this repo's code as `py/…`, the retained corpus
-records as `book-of-job/out/…`, the published site as `gh-pages/book-of-job/…`, and scratch
-output as `.novc/book-of-job/…`. **But the prose is Copilot-era and has not been
+The paths now name this repo's code as `py/…`, the retained corpus records as
+`book-of-job/out/…`, the published site as `gh-pages/book-of-job/…`, and scratch output as
+`.novc/book-of-job/…`; the current spellings were completed on 2026-09-07 rather than on arrival.
+**But the prose is Copilot-era and has not been
 re-verified.** All seven were `.github/copilot-instructions-*.md` in book-of-job until
 2026-08-03. Where one gives a command that conflicts with the global conventions in
 `~/.claude/CLAUDE.md` — a `python -c` one-liner, a bare `python`, `PYTHONIOENCODING`, a
@@ -496,10 +490,11 @@ reflog said otherwise: exactly one `clone:` entry, dated **2024-02-20**, running
 machine's disk standing for every machine's. The clone was removed 2026-08-31, along with
 al-hatorah's and masorah-books', on the evacuated-repos rule above.
 
-**One thing still wants a clone, and it is a one-time program Ben expects never to run again.**
-`py/main_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
-`py/redirect_stubs/stubs.py`'s `source_pages_dir`, which is the only site in this tree that
-resolves the clone. **Nothing schedules it**: it is in no pipeline — `py/main_0_mega.py` and
+**Only explicitly selected redirect-host work wants a clone.**
+`py/main_redirect_stubs.py build --repo wlc-utils --publish`, and
+`check --repo wlc-utils` with no `--dir`, reach `py/redirect_stubs/stubs.py`'s
+`source_pages_dir`. Every redirect command requires `--repo`; table order never chooses a
+missing source clone. **Nothing schedules the program**: it is in no pipeline — `py/main_0_mega.py` and
 `py/pipeline_graph/pipeline_graph_spec.py` never name it — and the one check that runs all the
 time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely because it
 needs no clone. It raises with the command that fixes it:
@@ -672,19 +667,18 @@ $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
-Sibling-repo paths (MAM-with-doc, MAM-OSIS, and optional MAM-parsed legacy history) are built from
-`mb_cmn.paths.repo_root()` / `repos_root()` / `sibling_repo(name)` — a
+Sibling-repo paths for MAM-OSIS, MAM-private, temporary redirect hosts, and optional
+MAM-parsed legacy history are built from `mb_cmn.paths.repo_root()` / `repos_root()` /
+`sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
 literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. The local MAM-simple, MAM-parsed, and MAM-for-Sefaria products
+code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc products
 do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
 `MAM-parsed/historical/` inputs and MAM-basics revisions; only explicit
 `--legacy-history` comparisons require read access to a sibling MAM-parsed
-clone. No command fetches or creates that optional clone. Exception: a handful of files that get vendored/copied verbatim
-into sibling repos (`mb_cmn/read_books_from_mam_parsed_plus.py`, `mb_cmn/provenance.py`,
-`mb_misc/write_utils.py`, `mb_sefaria/mam4sef_or_ajf.py`) intentionally keep their
-existing cwd-relative or self-contained `__file__`-relative logic instead, so they stay
-portable when copied elsewhere without also requiring `mb_cmn/paths.py` to travel with them.
+clone. No command fetches or creates that optional clone. Some files copied into
+`MAM-simple/py-examples/` keep cwd-relative or self-contained `__file__`-relative logic for
+portable example use; `mb_cmn/paths.py` is among the copied support files.
 
 Even so, still run from the repo root, never from `py/`: some in-repo paths (e.g.
 `in/mam-ws-bot-edits/...`) remain cwd-relative by design, and the venv itself

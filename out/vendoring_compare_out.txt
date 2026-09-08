@@ -21,7 +21,7 @@ ws_tmpl2.py                                MAM-basics                 MAM-simple
 ws_tmpl_named_params.py                    MAM-basics                 MAM-simple/py-examples/mb_cmn/ws_tmpl_named_params.py   eol-only       2026-09-06   generated
 hebrew_letter_names.py                     MAM-basics                 MAM-simple/py-examples/mb_misc/hebrew_letter_names.py   eol-only       2026-09-06   generated
 hebrew_letter_words.py                     MAM-basics                 MAM-simple/py-examples/mb_misc/hebrew_letter_words.py   eol-only       2026-09-06   generated
-letter_small_job.py                        MAM-basics                 MAM-simple/py-examples/mb_misc/letter_small_job.py      eol-only       2026-09-06   generated
+letter_small_job.py                        MAM-basics                 MAM-simple/py-examples/mb_misc/letter_small_job.py      eol-only       2026-09-08   generated
 mb_html.py                                 MAM-basics                 MAM-simple/py-examples/mb_misc/mb_html.py               identical      2026-09-06   generated
 mb_html_get_lines.py                       MAM-basics                 MAM-simple/py-examples/mb_misc/mb_html_get_lines.py     identical      2026-09-06   generated
 my_utils_for_mainish.py                    MAM-basics                 MAM-simple/py-examples/mb_misc/my_utils_for_mainish.py  eol-only       2026-09-06   generated

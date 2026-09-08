@@ -53,7 +53,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | Phase | State |
 | --- | --- |
 | 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the shared `MAM-XML/` disposition is now performed by Phase 2, and Ben's 2026-09-04 Cam1753 decision retains only the 14 spreads. |
-| 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
+| 1 — codex-index-leningrad | **DONE 2026-09-03; clone retired 2026-09-04.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and Phase 5 moved the clean primary clone to the Windows Recycle Bin after the retained review forest was gone. |
 | 2 — codex-index-aleppo | **DONE 2026-09-04.** The Aleppo tree and pages now live under `aleppo/` and `gh-pages/aleppo/`; the source repository is a deployed redirect host, and its clean primary clone has left `GitRepos`. |
 | 3 — codex-index-cam1753 | **DONE 2026-09-04.** `cam1753/` holds the 100 selected source blobs, including the 14 spreads; the 28 page JPEGs are ignored output regenerated from those spreads. The source repository is an archived breadcrumb, and its clean primary clone has left `GitRepos`. |
 | 4 — diffable-pointed-hebrew | **DONE 2026-09-04.** The product now lives under `diffable-pointed-hebrew/` and `py/main_diffable_pointed_hebrew.py`; the source is an archived dated breadcrumb, and its verified primary clone has left `GitRepos`. |
@@ -211,7 +211,7 @@ corpus count. Re-establish the 4-of-4 Aleppo artifact oracle and layer-1
 identity before changing the source.
 
 Freeze the three old published paths in
-`in/codex-index-aleppo_redirect_pages.json`, add the Aleppo row to the
+`in/codex_index_aleppo_redirect_pages.json`, add the Aleppo row to the
 second-stage redirect table, build and test the generated stubs, and deploy the
 MAM-basics target before the source switches. The Aleppo repository remains
 alive as the redirect host, but its clean primary clone leaves the workspace
@@ -362,8 +362,8 @@ at three entries where the old normalization had reordered Hebrew marks.
 
 Empty removed the source from `all-repos.code-workspace`, `repo_visibility`,
 the vendoring policy, the sibling-reach declaration, and the former vendoring
-prose. Vendoring regeneration wrote 43 rows across seven destination
-repositories. The source's pushed breadcrumb commit `97d95e1` retains only
+prose. Vendoring regeneration wrote 7 rows covering 43 files. The source's
+pushed breadcrumb commit `97d95e1` retains only
 `.gitattributes`, `.gitignore`, and `README.md`; `HEAD` equalled `origin/main`,
 the working tree and stash were empty, and `git worktree list` named only its
 primary worktree before the primary clone was moved to the Windows Recycle Bin.

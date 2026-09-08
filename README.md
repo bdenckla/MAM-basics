@@ -28,7 +28,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 - `main_mam4sef.py` — Sefaria-compatible MAM variant by default, with `--just-ajf` and `--both-sef-and-ajf` for AJF selection
 - `main_mam_with_doc.py` — HTML with two-column layout and documentation notes
-- `main_mam_osis.py` / `main_osis_split_mapm.py` — OSIS (Open Scripture Information Standard) XML
+- `main_mam_osis.py` — OSIS (Open Scripture Information Standard) XML
 
 ### Downloading
 
@@ -64,8 +64,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 ### Utilities
 
-- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes this repo's own published pages, `gh-pages/index.html` (Ben's index of his documents) and `gh-pages/unicode-proposals.html`
-- `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
+- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes the ten deploy-root pages: `gh-pages/index.html`, `gh-pages/unicode-proposals.html`, and the eight `gh-pages/post-stress-meteg*.html` pages
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 - `main_repo_maintenance.py` — routine repo maintenance: clean `.novc/`, run `main_test.py`, run `main_0_mega.py`
 
@@ -106,13 +105,6 @@ Run tests through the unified harness:
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-Optional: list or run selected test groups:
-
-```bash
-.venv/Scripts/python.exe py/main_test.py --list
-.venv/Scripts/python.exe py/main_test.py --ws-urls-encoding
-```
-
 ## Repository layout
 
 ```
@@ -128,23 +120,23 @@ py/              Python source
   ...
 in/              Input data files
 doc/             Documentation and notes
-linux-sh/        Shell scripts for Linux setup
+misc/linux-sh/   Standalone Linux bootstrap script for cloning MAM-basics
 ```
 
-Naming note: `mb_` means "from MAM-basics." For currently vendored
-packages such as `mb_cmn`, `mb_diff_mpu`, and `mb_author`, the prefix
-also signals vendoring origin. For `mb_xml` and `mb_json`, which are
-not currently vendored, `mb_` is additionally useful to avoid collisions
-with common `xml` and `json` package names.
+Naming note: `mb_` means "from MAM-basics." The MAM-simple examples currently
+receive copies from `mb_cmn`, `mb_misc`, `mb_sefaria`, and `osis`. For
+`mb_xml`, `mb_json`, and other packages that are not currently copied, the
+`mb_` prefix is additionally useful to avoid collisions with common package
+names.
 
 ## License
 
-Two declarations, because this repository holds code and data under different terms.
+Two declarations, because this repository holds code and data under different terms:
 
-- **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' own work in code and prose —
-  everything under `py/`, `.github/` and `doc/`, and the generated indexes and reports under
-  `out/` that carry no corpus text.
-- **Data: mapped path by path** in [`DATA-LICENSES.md`](DATA-LICENSES.md). Most corpora keep the
+1. **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' work in code and prose —
+   everything under `py/`, `.github/` and `doc/` except the third-party font under `doc/woff2/`,
+   and the generated indexes and reports under `out/` that carry no corpus text.
+2. **Data: mapped path by path** in [`DATA-LICENSES.md`](DATA-LICENSES.md). Most corpora keep the
   terms their preparers set: MAM is CC-BY-SA 4.0, attributed to Hebrew Wikisource, and several
   other corpora are reproduced under no grant at all. The accent-grammar material that is this
   repository's own work is CC0 1.0, dedicated in that file. Read it before redistributing

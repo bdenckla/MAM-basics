@@ -72,6 +72,10 @@ does not support a blanket migration from MAM-simple to MAM-parsed-plus.
 
 A `מ:קמץ` row in Phonetic MAM contains a qamats-dal reading and a qamats-sam reading. The
 source-entry count includes both readings, but the MAM census selects the qamats-dal reading once.
+In template terms, the census takes parameter `ד` and does not also take parameter `ס`. Ben's
+decision, 2026-09-08: selecting exactly one of `ד` or `ס` is the required treatment; which one is
+selected need not receive a separate effect analysis. The present choice of `ד` is acceptable,
+analogous to the survey's selection of cant-alef for a dual-cantillation template.
 The 2026-09-08 survey found 309 such rows in prose verses and 61 in poetic verses. Those 370
 rows contribute 372 duplicate phonetic-reading entries because Psalms 35:10 and Proverbs 19:7
 each form one chanted word in the qamats-dal reading and two chanted words in the qamats-sam

@@ -333,7 +333,7 @@ as Step 6, with the untracked-content check that has to precede it.
 
 ---
 
-## Third stage — the codex-index trio and diffable-pointed-hebrew, total evacuation — **Phases 0–2 DONE 2026-09-04**
+## Third stage — the codex-index trio and diffable-pointed-hebrew, total evacuation — **ALL FIVE PHASES DONE 2026-09-04**
 
 **Ben authorized the stage on 2026-09-03.** Phase 0 wrote
 `C:/Users/BenDe/GitRepos/MAM-basics/doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md`
@@ -342,7 +342,7 @@ in the relationship `PLAN-evacuate-the-rest-of-three-repos.md` has to
 Licence, Repoint, Stubs, Empty, Remove) and four oracle layers by section name, and states only
 what differs. Call this **the third stage**; the second stage is
 `PLAN-evacuate-the-rest-of-three-repos.md`, and the first was this programme. One task executes
-one phase; the Leningrad lane is complete, and a later task runs Phase 2 only.
+one phase. All four product lanes and the Phase 5 stage close are complete.
 
 **The motivation, in Ben's words, 2026-09-02:** *"Although the 'forest of worktrees' technique has
 shown promise, nothing beats a single worktree."* A forest — one worktree per sibling repo a task
@@ -505,7 +505,7 @@ once.
 2. **The trio is included, and the two repos without Pages are ARCHIVED after emptying.**
    codex-index-aleppo stays alive as a stub host for its three pages, under the generalized stub
    generator the second stage's Phase 2 builds (its row is the fifth and smallest that generator
-   will ever have) with a frozen manifest `in/codex-index-aleppo_redirect_pages.json`;
+   will ever have) with a frozen manifest `in/codex_index_aleppo_redirect_pages.json`;
    codex-index-leningrad and codex-index-cam1753 are emptied to a breadcrumb `README.md` — the
    shape al-hatorah and masorah-books took — and then archived on GitHub, read-only. **This is a
    deliberate exception to the second stage's carried-in decision 3, "alive beats archived", which
@@ -536,8 +536,8 @@ once.
 2. **The landing is a per-repo directory** — decision 1. Each `*_paths.py` root accessor becomes
    `paths.repo_root() / "<dir>"` before the module dissolves; `py/repo_scopes.py`'s
    `corpus_roots()` and the three trio scopes in `py/tests/test_h_dot_below_nfc.py` fold into
-   MAM-basics' own scopes, and the mark-order check keeps scanning the same 150 JSON — a change in
-   its file count is a finding.
+   MAM-basics' scopes. The completed landing has 162 JSON files in the three corpus roots:
+   83 under `aleppo/`, 72 under `cam1753/`, and 7 under `book-of-job/`.
 3. **Each repo's `README.md` says of the data staying "Nothing about that is provisional"**, and
    must be rewritten as the breadcrumb.
 4. **`DATA-LICENSES.md` gains a row for 72 MB of Ktiv-sourced imagery under non-commercial,
@@ -629,9 +629,8 @@ decided" said would exist: "if Ben decides yes, it is a fourth stage with its ow
 after the third." The five products are **MAM-parsed, MAM-simple, MAM-with-doc, MAM-OSIS and
 MAM-for-Sefaria**.
 
-**When this section was drafted, nothing had been executed.** Phase 0 then created the dedicated
-plan, and Phase 1 landed MAM-simple on 2026-09-06. The remaining four product lanes have not
-started; the dedicated plan carries the Phase 1 measurements and commit identifiers.
+**When this section was drafted, nothing had been executed.** The dedicated plan now records
+Phases 1–4 as complete through 2026-09-06; Phase 5, MAM-OSIS, remains open.
 
 **Ben's two premises, in his words, 2026-09-04:**
 
@@ -709,9 +708,9 @@ So after this stage the suite is owed exactly **one** worktree, which is what pr
 
 ### The mega misdirected 376 files from a worktree on 2026-09-04, and that is the sharpest argument for the stage
 
-**This has been recorded and not repaired**: `py/main_0_mega.py`'s module docstring carries the
-incident and the repair recipe as of `8ea2c8c6`, and the defect in `py/mb_misc/write_utils.py`
-stands. Repairing it is out of scope for a drafting task, and this stage is what removes it.
+**This was recorded before execution and was repaired by the first two product lanes.**
+`py/mb_misc/write_utils.py` now writes the local MAM-simple and MAM-for-Sefaria product trees.
+The paragraphs below preserve the pre-execution incident that motivated the repair.
 
 During item 5 of `doc/PLAN-holman-meteg-rollout-programme.md`, a mega run from a MAM-basics
 worktree wrote **216 MAM-simple files and 160 MAM-for-Sefaria files** — 376 in all — into
@@ -911,8 +910,8 @@ the Stubs step is not the whole of the answer here.
 
 Four smaller differences, each with a precedent:
 
-4. **`in/vendoring_policy.json` loses MAM-simple**, leaving diffable-pointed-hebrew and
-   MAM-private in `repos`. hbofonts appears only as the `src_repo` of a
+4. **`in/vendoring_policy.json` now audits the MAM-simple examples locally under the
+   MAM-basics entry**, while MAM-private remains an ignored `repos` entry. hbofonts appears only as the `src_repo` of a
    `foreign_vendored` entry; it is not a `repos` entry. `py/tests/test_vendoring_policy_paths.py` needs no edit — its own docstring says "both
    sides are derived, so adding or removing a repo never needs this file edited" — and
    `doc/vendoring-inventory.md` is regenerated by the mega's `vendoring` step, so a stale row shows
@@ -923,8 +922,7 @@ Four smaller differences, each with a precedent:
    `DisplayNode` / `RawNode` pairs labelled `../MAM-parsed/plus/`, `../MAM-parsed/plain/`,
    `../MAM-simple/`, `../MAM-with-doc/docs/`, `../MAM-for-Sefaria/` and `../MAM-OSIS/` — which
    become in-repo directory labels, the rendered graph being a tracked artifact whose diff is the
-   check. **One of those labels is already stale and is raised here, not fixed**: MAM-with-doc has
-   `gh-pages/` and no `docs/`, verified 2026-09-04 with `git ls-files` in that clone.
+   check. The MAM-with-doc label was corrected to `gh-pages/MAM-with-doc/` during Phase 4.
 7. **The products cross-cite each other by `github.com` URL** — MAM-for-Sefaria's `README.md` links
    MAM-simple and MAM-parsed, and MAM-parsed's, MAM-OSIS's and MAM-with-doc's link their own Pages
    sites — so the Empty step's breadcrumbs must point at the new locations rather than at each

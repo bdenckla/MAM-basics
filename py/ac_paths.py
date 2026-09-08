@@ -103,7 +103,10 @@ def col_coords_dir() -> Path:
 
 
 def pages_dir() -> Path:
-    """Aleppo Codex page scans (37 tracked JPEG), leaves 270-281 recto and verso.
+    """Aleppo Codex page scans (37 tracked JPEG).
+
+    Twenty-four are leaves 270-281 recto and verso; the other thirteen are
+    001r-006r and 148r/148v.
 
     DOWNLOADED, not generated: ``download_aleppo_pages`` fetches them from
     archive.org, and no check regenerates them.

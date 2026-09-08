@@ -65,18 +65,14 @@ From the MAM-basics root, regenerate plain/plus data, the example support file,
 and the published documentation:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_parse.py go
+.venv/Scripts/python.exe py/main_parse.py go
 ```
 
-Run the toy example from this product directory; its existing output is the
+Run the toy example from the MAM-basics root; its existing output is the
 one-file differential reference:
 
 ```powershell
-Set-Location C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed
-```
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py-examples/main_tmpl_survey_toy_example.py
+.venv/Scripts/python.exe MAM-parsed/py-examples/main_tmpl_survey_toy_example.py
 ```
 
 ## Download only this product
@@ -85,14 +81,14 @@ A sparse checkout selects this product from MAM-basics without downloading
 the other product trees. Choose an unused destination for the clone:
 
 ```powershell
-git clone --filter=blob:none --sparse https://github.com/bdenckla/MAM-basics.git C:/Users/BenDe/Documents/MAM-parsed-sparse
+git clone --filter=blob:none --sparse https://github.com/bdenckla/MAM-basics.git MAM-parsed-sparse
 ```
 
 ```powershell
-git -C C:/Users/BenDe/Documents/MAM-parsed-sparse sparse-checkout set MAM-parsed
+git -C MAM-parsed-sparse sparse-checkout set MAM-parsed
 ```
 
-The files are under `C:/Users/BenDe/Documents/MAM-parsed-sparse/MAM-parsed/`.
+The files are under `MAM-parsed-sparse/MAM-parsed/`.
 The historical inputs are included. This sparse checkout supplies data and
 the self-contained toy example; the full MAM-basics checkout supplies the
 product generators. No release archive is maintained.

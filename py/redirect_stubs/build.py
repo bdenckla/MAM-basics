@@ -24,7 +24,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
     parser.add_argument(
         "--repo",
         choices=stubs.redirect_repo_names(),
-        default=stubs.default_redirect_repo().source_repo,
+        required=True,
         help=(
             "source redirect host to build; each row is added only when its frozen"
             " manifest has been captured"

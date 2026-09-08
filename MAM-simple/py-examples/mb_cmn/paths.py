@@ -6,9 +6,10 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-MAM-simple and MAM-parsed are landed products under this repository, so their
-paths chain directly from ``repo_root()``. Cross-repo dependencies (
-MAM-with-doc, MAM-OSIS, wlc-utils, ...) are by default looked up as siblings of this repo
+MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc are landed products under
+this repository, so their paths chain directly from ``repo_root()``. Cross-repo
+dependencies such as MAM-OSIS and MAM-private, and temporary redirect-host clones,
+are by default looked up as siblings of this repo
 under a common parent directory.  That convention breaks when the repo is checked out
 somewhere the siblings are not co-located -- most notably a git worktree, whose root is
 nested under ``.../.claude/worktrees/`` rather than next to the sibling repos.  This was
@@ -172,8 +173,9 @@ def require_sibling(name: str, path: Path) -> Path:
 def display_path(path) -> str:
     """``path`` as a repo-qualified, machine-independent string, for recording in an artifact.
 
-    ``MAM-basics/out/accgram/prose/_oddballs.json``, ``MAM-simple/json-vtrad-bhs``: the
-    repo's name, then the path within it, forward-slashed on every platform.
+    ``MAM-private/al-hatorah/io/a01-phonetic-std-set`` and
+    ``MAM-basics/MAM-simple/xml-vtrad-mam``: the repo's name, then the path within it,
+    forward-slashed on every platform.
 
     AN ABSOLUTE PATH WRITTEN INTO A GENERATED FILE PINS THAT FILE TO ONE MACHINE.
     ``out/accgram/research-oddballs.json`` carried ``C:/Users/BenDe/GitRepos/...``

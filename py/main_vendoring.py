@@ -16,13 +16,13 @@ here went wrong unnoticed while that was true.  Phase 4 of
 existed; from that moment ``--all`` died with ``ValueError: Configured scan root does
 not exist``, and it took a day and a hand-run to notice.  Meanwhile
 ``doc/vendoring-inventory.md`` had not been regenerated since April and had drifted to
-26 rows/189 files against an actual 24/174.
+26 rows/189 files against an actual 24/174 at that time.
 
 So the audit is now a step of ``py/main_0_mega.py``, which is what makes the drift
 visible: the three artifacts it writes are git-tracked, and in this repo the tracked
 generated artifact IS the test (CLAUDE.md).  A stale inventory shows up as an ordinary
-unexplained diff after a rebuild.  It costs about 15 seconds -- it hashes ~174 vendored
-copies and runs one ``git log`` per copy -- which is noise beside the rest of the mega.
+unexplained diff after a rebuild. The current audit hashes 44 MAM-simple example-support
+copies and runs one ``git log`` per copy.
 
 The crash half is caught earlier and more cheaply by
 ``py/tests/test_vendoring_policy_paths.py``, a lint over the same policy file that

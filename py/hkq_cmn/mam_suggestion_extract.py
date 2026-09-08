@@ -30,7 +30,7 @@ That boundary is enforced structurally rather than by redaction.  A message is a
 source of suggestions only if ``SUGGESTION_SENDER_NAME`` sent it; everything
 else in the mailbox is skipped and named in the run summary, which goes to
 stdout and is not tracked.  So a reply, and equally a third party's forward of
-one of Holman's own messages, cannot contribute text even though the forward
+one of Holman's messages, cannot contribute text even though the forward
 quotes the suggestions verbatim.
 
 TWO MESSAGE SHAPES, and a caller must not assume either.
@@ -85,7 +85,7 @@ from hkq_cmn.holman_email_common import (
 
 SUGGESTION_SENDER_NAME = "Daniel Holman"
 
-# Holman's own abbreviations, mapped to the standard 39-book names of
+# Holman's abbreviations, mapped to the standard 39-book names of
 # mb_cmn/bib_locales.py.  Deliberately a closed table rather than a fuzzy
 # matcher: an abbreviation nobody has seen before is a message whose shape
 # changed, and guessing at it would put a case under the wrong book silently.
@@ -125,7 +125,7 @@ STD_BOOK_NAME_BY_HOLMAN_ABBREV = {
 # the rejection on 2026-08-30 because "Hebrew University Bible" already names
 # something else, the Hebrew University Bible Project, and these four cases have
 # nothing to do with it; Ben Denckla settled Jerusalem Crown as the name on
-# 2026-09-02.  Four sites had let the initialism back in as our own word and were
+# 2026-09-02.  Four sites had let the initialism back into our prose and were
 # corrected the same day.
 #
 # A label with no entry raises rather than passing through, so a message
@@ -414,7 +414,7 @@ def _header_index(
 ) -> tuple[dict[str, str], dict[str, str]]:
     """Two views of the header row: lowered label to column, and lowered label to raw label.
 
-    The raw label is kept because it is Holman's own spelling of the comparison
+    The raw label is kept because it is Holman's spelling of the comparison
     edition -- "HUB", not "Hub" -- and that spelling is what reaches the record.
     Matching is done on the lowered form so that a later message capitalizing a
     header differently still parses.
@@ -435,9 +435,9 @@ def _parse_workbook(payload: bytes, path: Path) -> list[SuggestionCase]:
 
     Columns are found by their header text rather than by position, since the two
     workbooks differ: the later one adds a "HUB Images" column between the
-    comparison form and the suggestion.  The comparison column's own header
+    comparison form and the suggestion.  The comparison column header
     supplies ``comparison_source``, which is how Holman's label reaches the record
-    without this module naming an edition of its own.
+    without this module supplying the edition name.
     """
     with zipfile.ZipFile(io.BytesIO(payload)) as archive:
         sheet_part = xlsx_xml_utils.first_sheet_part(archive)
@@ -549,7 +549,7 @@ def _images_for_row(
     """The crops anchored to a case's row, or to the blank row beneath it.
 
     The earlier workbook spaces its cases two rows apart and anchors each picture
-    to the case's own row; the later one has them contiguous and does the same.
+    to the case row; the later one has them contiguous and does the same.
     Both are covered by taking the case row and, when it has none, the row below,
     which is where a picture anchored to a spacer row would sit.
     """
