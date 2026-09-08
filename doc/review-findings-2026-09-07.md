@@ -871,3 +871,46 @@ The Sol limits are listed in `doc/codex-review-findings-2026-09-07-sol.md` under
 `## Limits of the Sol re-review`. Codex Sol did not rerun the full suite, the mega pipeline,
 artifact generators, GitHub Pages deployments, issue state, mutable worktree state, private-side
 facts, source-clone safety reports, source-book claims, or every code fragility under finding 17.
+
+## Dispositions after remediation, 2026-09-08
+
+The review remains `not yet acted on` only because finding 23.2 cannot be decided safely while the
+`post-stress-meteg` worktree is active and its branch diverges from `main`. Every other actionable
+finding is fixed, rejected with a reason, recorded, or referred to repository maintenance.
+
+| Finding | Disposition | Evidence |
+|---:|---|---|
+| 1 | fixed | `c76239a5` repairs every live `sdt-target` shape and the full-corpus reader probe. |
+| 2 | fixed | `c76239a5` restores the Deuteronomy 33:29 chanted word to the beginning of Aleppo leaf 006r. |
+| 3 | fixed | `e91d7358` counts each `מ:קמץ` row once in the MAM census. The Sol correction of 368 rows and 370 duplicate entries was right for the review anchor; the 2026-09-08 source has 370 rows and 372 duplicate entries. Psalms 35:10 and Proverbs 19:7 remain the two measured grouping differences. Ben's 2026-09-08 decision accepts selecting exactly one parameter without a separate effect analysis; the implementation selects `ד`, never both `ד` and `ס`. |
+| 4 | fixed | `c76239a5` corrects the Job XML path and makes a failed input parse preserve the prior output. |
+| 5 | fixed | `4afe3ebc` regenerates every affected product; the final census has no old-host URL in owned generated output. |
+| 6 | fixed | `4afe3ebc` makes all 44 MAM-simple support copies LF-stable and source-identical and corrects the inventory count. |
+| 7 | fixed | `9cf48863` requires an explicit `--repo` for both redirect commands. Bare-command adverse probes fail, and an explicit wlc-utils build/check passes with 154 stubs plus `404.html`. |
+| 8 | fixed | `a42216ee` consolidates the NFC scope, restores MAM-simple mark-order coverage, adds deploy-root HTML coverage, and extends the machine-path lint. |
+| 9 | fixed | `9cf48863` corrects the fourth-stage records. The clean MAM-for-Sefaria clone at `cf23b478` was moved to the Windows Recycle Bin after the unreachable `34c94a8` patch was matched to reachable `746d6d2`. MAM-simple redirect-host commit `376912a` dates its breadcrumb and is pushed on that host's `main`. |
+| 10 | fixed | `9cf48863` corrects the third-stage records and expands the maintenance runbook from the current rules. |
+| 11 | fixed | `e91d7358` repairs the post-stress records; `9cf48863` repairs the remaining current records and prose while preserving dated history. |
+| 12 | fixed | `e91d7358` remeasures and reconciles the survey JSON, eight pages, plans, census note, and fragment links. |
+| 13 | fixed | `e91d7358` aligns type 3 with the classifier, completes the type-2 rename, and identifies UXLC 3.9 and WLC 4.22 as the inputs actually read. |
+| 14 | fixed | `9cf48863` covers the post-stress analysis, six deploy-root manuscript crops, twelve Taamey D font copies, and the current landed product/source paths without extending a rights grant. |
+| 15 | fixed | `9cf48863` retires the three multi-repository Linux scripts and two text rosters while preserving the standalone MAM-basics bootstrap script. |
+| 16 | fixed | `a42216ee` puts all 50 inherited Aleppo-page Hebrew runs in MAM mark order and adds a mechanical lint over the three owned Aleppo pages. |
+| 17 | fixed | `c76239a5` narrows the line comparison; `e91d7358` hardens the post-stress contracts and sample descriptions; `a42216ee` prevents legacy-history output from selecting a tracked named-release path. |
+| 18 | fixed | `9cf48863` updates the live repoint, corpus-count, product-location, and review-procedure docstrings and comments. |
+| 19 | fixed | `9cf48863` removes nonexistent options and entry points, corrects package classifications, numbers the announced lists, and separates GPL, MIT, data, and font scopes. |
+| 20 | fixed | `9cf48863` adds the two accepted navigation links. The complete graph has 577 HTML pages, nine deliberate orphan pages recorded in the remediation plan, and zero dead internal targets. |
+| 21 | fixed | `e91d7358` applies the Hebrew-prose rules to the post-stress analysis; `9cf48863` applies the global prose rules to the remaining current files and disposition. |
+| 22 | record only | No instruction file changed during remediation, so the review's verified identity result requires no remediation or private-content publication. |
+| 23 | needs Ben's decision | Item 23.2 remains deferred: the active worktree is at `c5b170ad`, `main` is nine commits ahead, and `post-stress-meteg` is four commits ahead of `main`; no branch or `d4d1` path was removed. Items 23.3 and 23.4 are referred to repository maintenance. Item 23.5 is a known future `fr-wikisource` diff, and item 23.6 is a cadence census rather than a code defect. Historical trailers remain unchanged. |
+| 24 | record only | Immutable commit subjects and bodies remain unchanged; the corrected facts are preserved in this disposition and the remediation plan. |
+| Sol-1 | fixed | `4afe3ebc` regenerates the affected artifacts and makes the current `git diff --check` pass while preserving byte-verbatim and downloaded inputs. |
+
+Finding 23.1's narrower count of three Codex spellings is correct. The complete set among the 99
+review-window commits with a co-author trailer has five exact lines:
+
+1. `Co-Authored-By: Codex <noreply@openai.com>` — 92 commits;
+2. `Co-Authored-By: Codex <codex@openai.com>` — 3 commits;
+3. `Co-authored-by: Codex <noreply@openai.com>` — 2 commits;
+4. `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` — 1 commit; and
+5. `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` — 1 commit.

@@ -607,33 +607,69 @@ findings, private instruction content, and an orphan decision Ben has not change
 
 Goal: prove the combined tree, record every outcome, and leave no finding silently dropped.
 
-- [ ] Run black once on all and only the Python files changed by remediation. Use the primary clone's
+- [x] Run black once on all and only the Python files changed by remediation. Use the primary clone's
       interpreter and black's default configuration.
-- [ ] Run ruff on the changed Python scope and the complete canonical suite.
-- [ ] Run the repository-standards public sweep with `all-repos.code-workspace` and read the labelled
+- [x] Run ruff on the changed Python scope and the complete canonical suite.
+- [x] Run the repository-standards public sweep with `all-repos.code-workspace` and read the labelled
       report. A changed repository count must be explained by the current workspace, not copied from
       the review.
-- [ ] Run the relevant product generators and the mega pipeline one final time. The final run must be
+- [x] Run the relevant product generators and the mega pipeline one final time. The final run must be
       content-idempotent and leave no unexplained generated diff.
-- [ ] Run the HTML link graph, HTML syntax checks, mark-order checks, NFC checks, machine-path checks,
+- [x] Run the HTML link graph, HTML syntax checks, mark-order checks, NFC checks, machine-path checks,
       vendoring audit, old-host URL census, and `git diff --check`.
-- [ ] Reconfirm instruction-file identity only if an instruction file changed; finding 22 otherwise
+- [x] Reconfirm instruction-file identity only if an instruction file changed; finding 22 otherwise
       receives `record only — no remediation required`.
-- [ ] Append `## Dispositions after remediation, <date>` to
+- [x] Append `## Dispositions after remediation, <date>` to
       `doc/review-findings-2026-09-07.md`. Give findings 1–24 and Sol-1 one row each. Each row says
       `fixed`, `already fixed`, `rejected` with the reason, `record only`, `referred to maintenance`,
       or `needs Ben's decision`, and names commits or verified machine state.
-- [ ] Record the Sol correction for finding 3 and the five exact trailer spellings in the disposition
+- [x] Record the Sol correction for finding 3 and the five exact trailer spellings in the disposition
       prose without rewriting the frozen Claude section.
-- [ ] Change the review's `State:` line to `acted on <date>` only when every actionable row is fixed,
+- [x] Keep the review's `State:` line unchanged until every actionable row is fixed,
       rejected with a reason, or explicitly deferred by Ben. A mere plan or unresolved decision does
       not earn `acted on`.
-- [ ] Write the phase result back into this plan after every wave: changed files, commands, generated
+- [x] Write the phase result back into this plan after every wave: changed files, commands, generated
       diffs, commits, pushes, unresolved risks, and the exact next wave.
 - [ ] Commit finished work and push `main`. If execution used a secondary worktree, follow the global
       four-step integration rule immediately before that task is archived: merge `main` into the
       worktree branch, verify in the worktree, fast-forward the primary clone with `--ff-only`, and
       push `main`.
+
+### Wave 6 verification result — 2026-09-08
+
+- Black left all 25 Python files changed in Wave 5 unchanged, and Ruff passed the same 25-file
+  scope. The final canonical suite reported 981 passed, 5 skipped, and 65 subtests passed in 120.45
+  seconds.
+- The public repository-standards sweep passed across the current public workspace repositories:
+  MAM-basics, MAM-OSIS, phonetic-hbo, and Taamey_D. MAM-basics reported one linked
+  worktree, zero agent branches, zero `sys.path` mutations, zero orphan combining marks, 80 allowed
+  hexadecimal escapes, 30 NFC h-with-dot-below findings, and 49 general NFC Latin findings.
+- Two consecutive complete mega-pipeline runs each reported 102 scripts, 102 goldens written, and
+  zero crashes. No new working-tree path appeared after either pass. The vendoring audit reported
+  44 comparison rows and 8 inventory rows covering 44 files.
+- `py/check_all.py` passed all seven repository checks:
+  1. HTML spell checking;
+  2. function ordering;
+  3. QR filename/record consistency;
+  4. cross-record relations;
+  5. Hebrew mark order over 459 files;
+  6. unnecessary Unicode escapes over 296 Python files; and
+  7. HTML output lint.
+- The full HTML graph measured 577 pages, nine deliberate orphan pages, and zero dead internal
+  targets. The old MAM-with-doc host census found only three deliberate categories:
+  1. one documentation file with 3 hits;
+  2. 39 downloaded Sefaria input files with 39 hits; and
+  3. 5 byte-verbatim Wikisource-introduction files with 5 hits.
+  `git diff --check` passed.
+- No instruction file changed, so finding 22 remains record only. The dispositions give findings
+  1–24 and Sol-1 exactly one row each and record the five exact co-author trailer lines.
+- Wave 5 implementation commit `9cf48863` is local. The push of that 55-file public-record commit
+  was rejected by the approval layer as broader than the earlier four-file MAM-private
+  authorization. The Wave 6 disposition commit and both MAM-basics pushes therefore await Ben's
+  explicit confirmation of the 55-file MAM-basics scope.
+- Finding 23.2 is the only review item still awaiting a later decision. Its branch and empty-path
+  cleanup remains deferred until the active `post-stress-meteg` worktree closes and its divergent
+  branch is reconciled.
 
 Run the full suite with:
 
