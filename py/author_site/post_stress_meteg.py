@@ -182,6 +182,13 @@ _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.pn
 _CHRONICLES_8_11_VERSE = "2c8:11"
 _CHRONICLES_8_11_ALEPPO_CROP_URL = "img/Aleppo-Codex-2Chr-8v11.png"
 _CHRONICLES_8_11_LENINGRAD_CROP_URL = "img/Leningrad-Codex-2Chr-8v11.png"
+_CHRONICLES_8_11_L1 = "אֲשֶׁר־בָּ֥אָֽה"
+_CHRONICLES_8_11_L2 = "אֲשֶׁר־בָּֽאָ֥ה"
+_CHRONICLES_8_11_LENINGRAD_NEXT_WORD = "אֲלֵיהֶ֖ם"
+_CHRONICLES_8_11_LENINGRAD_GLOSSES = {
+    "L-1": "merkha-meteg interpretation of Leningrad",
+    "L-2": "meteg-merkha interpretation of Leningrad",
+}
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
@@ -2546,18 +2553,6 @@ def _chronicles_8_11_mam_compound(survey: dict) -> str:
     return hits[0]
 
 
-def _chronicles_8_11_mam_atom(survey: dict) -> str:
-    """The final atom of MAM's אֲשֶׁר־בָּאָה compound, with its corpus pointing."""
-    compound = _chronicles_8_11_mam_compound(survey)
-    atoms = compound.split(psm.MAQAF)
-    assert len(atoms) == 3 and _letters_of(compound) == (
-        "אשר",
-        "באה",
-        "אליהם",
-    ), compound
-    return atoms[1]
-
-
 def _chronicles_8_11_crop(codex: str, image_url: str) -> object:
     """One supplied manuscript crop, kept at a readable width on every screen."""
     return mb_html.raw_html(
@@ -2567,10 +2562,14 @@ def _chronicles_8_11_crop(codex: str, image_url: str) -> object:
     )
 
 
+def _chronicles_8_11_leningrad_label(label: str) -> object:
+    """One short table label, with the complete Leningrad interpretation on hover."""
+    return mb_html.abbr(label, {"title": _CHRONICLES_8_11_LENINGRAD_GLOSSES[label]})
+
+
 def build_chronicles_8_11_body(survey: dict) -> list:
     """The manuscript evidence behind the possible extra MAS case in 2 Chronicles 8:11."""
     mam_compound = _chronicles_8_11_mam_compound(survey)
-    mam_atom = _chronicles_8_11_mam_atom(survey)
     return [
         mb_html.heading_level_1(_visible_title(_CHRONICLES_8_11_TITLE)),
         _hebrew_spacing_option(),
@@ -2586,22 +2585,33 @@ def build_chronicles_8_11_body(survey: dict) -> list:
                 "The main MAS page identifies ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
                 " as a possible additional Leningrad Codex case whose next chanted word is not"
-                " initially stressed. MAM has ",
-                *_hebrew_cell(mam_compound),
-                ", a three-atom compound; this page puts MAM's pointing beside the possible"
-                " Leningrad Codex interpretation and the two manuscript crops.",
+                " initially stressed. The table puts MAM's complete chanted word beside two"
+                " interpretations of the Leningrad Codex.",
             )
         ),
         _table(
-            ("Text", "Pointing of final atom"),
+            ("Text", "Relevant chanted word or chanted-word pair"),
             [
                 mb_html.table_row_of_data(
-                    ("MAM", _hebrew_cell(mam_atom)), (None, _HEBREW_CELL)
+                    ("MAM", _hebrew_cell(mam_compound)), (None, _HEBREW_CELL)
                 ),
                 mb_html.table_row_of_data(
                     (
-                        "Possible Leningrad Codex interpretation",
-                        _hebrew_cell("בָּֽאָ֥ה"),
+                        _chronicles_8_11_leningrad_label("L-1"),
+                        _paired_chanted_word_cell(
+                            _CHRONICLES_8_11_L1,
+                            _CHRONICLES_8_11_LENINGRAD_NEXT_WORD,
+                        ),
+                    ),
+                    (None, _HEBREW_CELL),
+                ),
+                mb_html.table_row_of_data(
+                    (
+                        _chronicles_8_11_leningrad_label("L-2"),
+                        _paired_chanted_word_cell(
+                            _CHRONICLES_8_11_L2,
+                            _CHRONICLES_8_11_LENINGRAD_NEXT_WORD,
+                        ),
                     ),
                     (None, _HEBREW_CELL),
                 ),
@@ -2609,13 +2619,9 @@ def build_chronicles_8_11_body(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "In the Leningrad Codex crop, באה could be argued to be pointed ",
-                *_hebrew_cell("בָּֽאָ֥ה"),
-                " (",
-                _ROM_METEG,
-                "-",
-                rmn("merkha"),
-                "), in which case the 2 Chronicles 8:11 atom is not a MAS case at all.",
+                "L-1 is the merkha-meteg interpretation of Leningrad. L-2 is the meteg-merkha"
+                " interpretation of Leningrad. In L-2, the 2 Chronicles 8:11 atom is not a"
+                " MAS case at all.",
             )
         ),
         mb_html.heading_level_2("Manuscript crops of 2 Chronicles 8:11"),
