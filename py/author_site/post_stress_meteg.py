@@ -2753,7 +2753,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                     f"{fit_for_mas['without_mas']:,} cases fit for MAS that lack MAS",
                     _LACKS_MAS_FNAME,
                 ),
-                " are listed separately and can be filtered by subtype.",
+                " are listed separately and can be filtered by (sub)type.",
             )
         ),
         mb_html.para(
