@@ -2750,12 +2750,11 @@ def _footnotes(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The Leningrad Codex may have an additional case where the next word is not "
-                "initially stressed: at ",
+                "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
-                ". See ",
-                mb_html.anchor_h("the 2 Chronicles 8:11 page", _CHRONICLES_8_11_FNAME),
-                " for more details.",
+                ", in the Leningrad codex, the word after a MAS lacks initial stress. See ",
+                mb_html.anchor_h("this page", _CHRONICLES_8_11_FNAME),
+                ".",
             )
         ),
         *_next_conjunctive_footnote(survey),
