@@ -80,7 +80,9 @@ POST_STRESS_METEG_CASES_TITLE = "Meteg after the stress: individual cases"
 POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
 POST_STRESS_METEG_MISC_TITLE = "Meteg after the stress: misc cases"
 POST_STRESS_METEG_LACKS_MAS_FNAME = "post-stress-meteg-lacks-mas.html"
-POST_STRESS_METEG_LACKS_MAS_TITLE = "Meteg after the stress: cases lacking MAS"
+POST_STRESS_METEG_LACKS_MAS_TITLE = (
+    "Meteg after the stress: syllables fit for it, but lacking it"
+)
 POST_STRESS_METEG_NOT_FIT_FNAME = "post-stress-meteg-not-fit.html"
 POST_STRESS_METEG_NOT_FIT_TITLE = "Meteg after the stress: cases not fit for MAS"
 POST_STRESS_METEG_POST_SILLUQ_FNAME = "post-stress-meteg-post-silluq.html"
