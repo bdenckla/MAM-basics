@@ -1621,7 +1621,8 @@ def _type_1_subtypes(survey: dict) -> list:
     return [
         mb_html.heading_level_2("The four subtypes of MAS type 1"),
         mb_html.para(
-            "All cases of MAS type 1 can be sorted into one of the four following subtypes:"
+            "Based on properties of the next word, all cases of MAS type 1 can be sorted"
+            " into one of the four following subtypes:"
         ),
         mb_html.unordered_list(
             (
@@ -1675,7 +1676,8 @@ def _type_2_subtypes(survey: dict) -> list:
     return [
         mb_html.heading_level_2("The three subtypes of MAS type 2"),
         mb_html.para(
-            "All cases of MAS type 2 can be sorted into one of the three following subtypes:"
+            "Based on properties of the next word, all cases of MAS type 2 can be sorted"
+            " into one of the three following subtypes:"
         ),
         mb_html.unordered_list(
             tuple(description for _group, _code, description in _TYPE_2_SUBTYPE_SPECS)
@@ -2737,7 +2739,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 "Its word has penultimate stress from a conjunctive accent.",
                 "The next word has initial stress from a disjunctive accent.",
-                "If a MAS were present, it would be of (sub)type 1A, 1B, 2A, 2B, or 3.",
+                "The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
             )
         ),
         mb_html.para(
