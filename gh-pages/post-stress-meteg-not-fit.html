@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Meteg after the primary stress: cases not fit for MAS</title>
+<title>Meteg after the stress: cases not fit for MAS</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="wlc/style.css">
 </head>
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
-<h1><span class="romanized">Meteg</span> after the primary stress: cases not fit for MAS</h1>
+<h1><span class="romanized">Meteg</span> after the stress: cases not fit for MAS</h1>
 <p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
 This checkbox controls whether Hebrew letter spacing is expanded in this document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
 <script>
@@ -58,13 +58,14 @@ This checkbox controls whether Hebrew letter spacing is expanded in this documen
 })();
 </script>
 <p>←
-Back to <a href="post-stress-meteg.html"><span class="romanized">Meteg</span> after the primary
-stress</a> and the <a href="post-stress-meteg.html#fit-for-mas">Fit for MAS table</a>.</p>
+Back to <a href="post-stress-meteg.html"><span class="romanized">Meteg</span> after the stress</a>
+and the <a href="post-stress-meteg.html#fit-for-mas">Fit for MAS table</a>.</p>
 <h2>Every MAS case not fit for MAS</h2>
 <p>The table lists all 32 MAS words that are not fit for MAS.</p>
 <p>Columns 1–3 correspond to the three Fit-for-MAS criteria. A red ❌ marks each criterion that a
 word does not meet; blank cells mark criteria that the word meets.</p>
-<table class="accent-pair-table post-stress-meteg-table">
+<p><label for="post-stress-meteg-not-fit-type-filter">Show </label><select id="post-stress-meteg-not-fit-type-filter"><option value="all">All (sub)types</option><option value="1">Type 1 (all subtypes)</option><option value="1A">Subtype 1A</option><option value="1B">Subtype 1B</option><option value="1C">Subtype 1C</option><option value="1D">Subtype 1D</option><option value="2">Type 2 (all subtypes)</option><option value="2A">Subtype 2A</option><option value="2B">Subtype 2B</option><option value="2C">Subtype 2C</option><option value="3">Type 3</option><option value="other">misc</option></select>. <output id="post-stress-meteg-not-fit-selected-count" aria-live="polite">Showing 32 rows.</output></p>
+<table class="accent-pair-table post-stress-meteg-table post-stress-meteg-cases-table" id="post-stress-meteg-not-fit-cases">
 <tr>
 <th>Verse</th>
 <th>Word</th>
@@ -72,7 +73,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <th><abbr title="The next word has initial stress from a disjunctive accent.">2</abbr></th>
 <th><abbr title="The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.">3</abbr></th>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c18v15">Gen.
 18:15</a></td>
 <td dir="rtl"><span lang="hbo">וַיֹּ֥אמֶֽר</span> <span class="post-stress-meteg-next-word">׀
@@ -81,7 +82,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A3-Levit.html#c20v4">Lev.
 20:4</a></td>
 <td dir="rtl"><span lang="hbo">יַעְלִ֩ימֽוּ֩</span>
@@ -90,7 +91,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2B">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c4v33">Deut.
 4:33</a></td>
 <td dir="rtl"><span lang="hbo">הֲשָׁ֣מַֽע</span>
@@ -99,7 +100,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c12v5">Judg.
 12:5</a></td>
 <td dir="rtl"><span lang="hbo">וַיֹּ֥אמֶֽר</span> <span class="post-stress-meteg-next-word">׀
@@ -108,7 +109,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c3v15">2 Sam.
 3:15</a></td>
 <td dir="rtl"><span lang="hbo">מֵ֣עִֽם</span>
@@ -117,7 +118,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c2v8">1 Kgs.
 2:8</a></td>
 <td dir="rtl"><span lang="hbo">וָאֶשָּׁ֨בַֽע</span>
@@ -126,7 +127,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c2v30">1 Kgs.
 2:30</a></td>
 <td dir="rtl"><span lang="hbo">וַיֹּ֥אמֶֽר</span> <span class="post-stress-meteg-next-word">׀
@@ -135,7 +136,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c3v13">1 Kgs.
 3:13</a></td>
 <td dir="rtl"><span lang="hbo">כָמ֥וֹךָֽ</span>
@@ -144,7 +145,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c11v22">1 Kgs.
 11:22</a></td>
 <td dir="rtl"><span lang="hbo">וַיֹּ֣אמֶֽר</span> <span class="post-stress-meteg-next-word">׀
@@ -153,7 +154,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c11v38">1 Kgs.
 11:38</a></td>
 <td dir="rtl"><span lang="hbo">וּבָנִ֨יתִֽי</span>
@@ -162,7 +163,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c1v13">2 Kgs.
 1:13</a></td>
 <td dir="rtl"><span lang="hbo">עֲבָדֶ֥יךָֽ</span>
@@ -171,7 +172,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C1-Isaiah.html#c63v12">Isa.
 63:12</a></td>
 <td dir="rtl"><span lang="hbo">בּ֤וֹקֵֽעַ</span>
@@ -180,7 +181,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c37v18">Jer.
 37:18</a></td>
 <td dir="rtl"><span lang="hbo">חָטָ֨אתִֽי</span>
@@ -189,7 +190,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1D">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
 46:14</a></td>
 <td dir="rtl"><span lang="hbo">וְהַשְׁמִ֣יעֽוּ</span>
@@ -198,7 +199,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c19v14">Ps.
 19:14</a></td>
 <td dir="rtl"><span lang="hbo">מִפֶּ֥שַֽׁע</span>
@@ -207,7 +208,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c69v7">Ps.
 69:7</a></td>
 <td dir="rtl"><span lang="hbo">אַל־יִכָּ֣לְמֽוּ</span>
@@ -216,7 +217,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c80v14">Ps.
 80:14</a></td>
 <td dir="rtl"><span lang="hbo">יְכַרְסְמֶ֣נָּֽה</span>
@@ -225,7 +226,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c89v9">Ps.
 89:9</a></td>
 <td dir="rtl"><span lang="hbo">מִי־כָמ֖וֹךָֽ</span>
@@ -234,7 +235,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="3">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c90v2">Ps.
 90:2</a></td>
 <td dir="rtl"><span lang="hbo">וַתְּח֣וֹלֵֽל</span>
@@ -243,7 +244,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c119v90">Ps.
 119:90</a></td>
 <td dir="rtl"><span lang="hbo">כּוֹנַ֥נְתָּֽ</span>
@@ -252,7 +253,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c127v2">Ps.
 127:2</a></td>
 <td dir="rtl"><span lang="hbo">מַשְׁכִּ֪ימֵֽי</span>
@@ -261,7 +262,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c139v6">Ps.
 139:6</a></td>
 <td dir="rtl"><span lang="hbo">פְּלִ֣יאָֽה</span>
@@ -270,7 +271,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c139v6">Ps.
 139:6</a></td>
 <td dir="rtl"><span lang="hbo">לֹא־א֥וּכַֽל</span>
@@ -279,7 +280,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c1v19">Prov.
 1:19</a></td>
 <td dir="rtl"><span lang="hbo">כׇּל־בֹּ֣צֵֽעַ</span>
@@ -288,7 +289,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c9v7">Prov.
 9:7</a></td>
 <td dir="rtl"><span lang="hbo">לֹקֵ֣חַֽ</span>
@@ -297,7 +298,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c11v26">Prov.
 11:26</a></td>
 <td dir="rtl"><span lang="hbo">מֹ֣נֵֽעַ</span>
@@ -306,7 +307,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2B">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c29v6">Prov.
 29:6</a></td>
 <td dir="rtl"><span lang="hbo">בְּפֶ֤שַֽׁע</span>
@@ -315,7 +316,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2C">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c5v10">Job 5:10</a></td>
 <td dir="rtl"><span lang="hbo">וְשֹׁ֥לֵֽחַ</span>
 <span class="post-stress-meteg-next-word"><span lang="hbo">מַ֝֗יִם</span></span></td>
@@ -323,7 +324,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="other">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c15v35">Job
 15:35</a></td>
 <td dir="rtl"><span lang="hbo">וְיָ֣לֹֽד</span>
@@ -332,7 +333,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E4-Ecclesiastes.html#c7v25">Eccl.
 7:25</a></td>
 <td dir="rtl"><span lang="hbo">סַבּ֨וֹתִֽי</span>
@@ -341,7 +342,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="1 1A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c3v12">Dan.
 3:12</a></td>
 <td dir="rtl"><span lang="hbo">לָא־שָׂ֨מֽוּ</span>
@@ -350,7 +351,7 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"><span class="post-stress-meteg-not-fit-failure" title="does not meet this Fit-for-MAS criterion">❌</span></td>
 <td class="centered"></td>
 </tr>
-<tr>
+<tr data-type-codes="2 2A">
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c20v30">2 Chr.
 20:30</a></td>
 <td dir="rtl"><span lang="hbo">וַיָּ֧נַֽח</span>
@@ -360,5 +361,33 @@ word does not meet; blank cells mark criteria that the word meets.</p>
 <td class="centered"></td>
 </tr>
 </table>
+<script>
+const notFitTypeFilter = document.getElementById("post-stress-meteg-not-fit-type-filter");
+const notFitRows = document.querySelectorAll("#post-stress-meteg-not-fit-cases tr[data-type-codes]");
+const notFitSelectedCount = document.getElementById("post-stress-meteg-not-fit-selected-count");
+
+function updateNotFitRows() {
+  let visibleCount = 0;
+  for (const row of notFitRows) {
+    const isSelected = notFitTypeFilter.value === "all" ||
+      row.dataset.typeCodes.split(" ").includes(notFitTypeFilter.value);
+    row.hidden = !isSelected;
+    row.classList.toggle(
+      "post-stress-meteg-cases-striped-row",
+      isSelected && visibleCount % 2 === 1,
+    );
+    if (isSelected) {
+      visibleCount += 1;
+    }
+  }
+  notFitSelectedCount.textContent = "Showing " + visibleCount + " row" +
+    (visibleCount === 1 ? "" : "s") + ".";
+}
+
+notFitTypeFilter.addEventListener("change", () => {
+  updateNotFitRows();
+});
+updateNotFitRows();
+</script>
 </body>
 </html>

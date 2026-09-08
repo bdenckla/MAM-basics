@@ -1,4 +1,4 @@
-r"""MAM's metegs after the primary stress: the main page, methods page, and three case pages.
+r"""MAM's metegs after the stress: the main page, methods page, and three case pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -283,6 +283,10 @@ _LACKS_MAS_FILTER_OPTIONS = tuple(
         psm.FIT_TYPE_2_B,
     )
 )
+_NOT_FIT_FILTER_OPTIONS = (
+    ("all", "All (sub)types"),
+    *_CASE_FILTER_OPTIONS[1:],
+)
 _CASE_TABLE_ID = "post-stress-meteg-cases"
 _CASE_TYPE_FILTER_ID = "post-stress-meteg-type-filter"
 _CASE_SELECTED_COUNT_ID = "post-stress-meteg-selected-count"
@@ -293,6 +297,9 @@ _LACKS_MAS_TABLE_ID = "post-stress-meteg-lacks-mas-cases"
 _LACKS_MAS_SUBTYPE_FILTER_ID = "post-stress-meteg-lacks-mas-subtype-filter"
 _LACKS_MAS_SELECTED_COUNT_ID = "post-stress-meteg-lacks-mas-selected-count"
 _NOT_FIT_FAILURE_CLASS = "post-stress-meteg-not-fit-failure"
+_NOT_FIT_TABLE_ID = "post-stress-meteg-not-fit-cases"
+_NOT_FIT_TYPE_FILTER_ID = "post-stress-meteg-not-fit-type-filter"
+_NOT_FIT_SELECTED_COUNT_ID = "post-stress-meteg-not-fit-selected-count"
 _HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
@@ -413,6 +420,35 @@ lacksMasSubtypeFilter.addEventListener("change", () => {{
   updateLacksMasRows();
 }});
 updateLacksMasRows();
+</script>
+"""
+_NOT_FIT_FILTER_SCRIPT = f"""<script>
+const notFitTypeFilter = document.getElementById("{_NOT_FIT_TYPE_FILTER_ID}");
+const notFitRows = document.querySelectorAll("#{_NOT_FIT_TABLE_ID} tr[data-type-codes]");
+const notFitSelectedCount = document.getElementById("{_NOT_FIT_SELECTED_COUNT_ID}");
+
+function updateNotFitRows() {{
+  let visibleCount = 0;
+  for (const row of notFitRows) {{
+    const isSelected = notFitTypeFilter.value === "all" ||
+      row.dataset.typeCodes.split(" ").includes(notFitTypeFilter.value);
+    row.hidden = !isSelected;
+    row.classList.toggle(
+      "{_CASE_STRIPED_ROW_CLASS}",
+      isSelected && visibleCount % 2 === 1,
+    );
+    if (isSelected) {{
+      visibleCount += 1;
+    }}
+  }}
+  notFitSelectedCount.textContent = "Showing " + visibleCount + " row" +
+    (visibleCount === 1 ? "" : "s") + ".";
+}}
+
+notFitTypeFilter.addEventListener("change", () => {{
+  updateNotFitRows();
+}});
+updateNotFitRows();
 </script>
 """
 
@@ -1321,10 +1357,10 @@ def _census_definitions(survey: dict) -> list:
             (
                 mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
                 " counts words that have one or more meteg marks before the"
-                " primary stress and none after it. The “O” means “only.” ",
+                " stress and none after it. The “O” means “only.” ",
                 mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
                 " counts words that have one or more meteg marks after the"
-                " primary stress, whether the word has zero or more meteg marks"
+                " stress, whether the word has zero or more meteg marks"
                 " before the stress.",
             )
         ),
@@ -1974,6 +2010,20 @@ def _lacks_mas_subtype_filter(case_count: int) -> object:
     )
 
 
+def _not_fit_for_mas_type_filter(case_count: int) -> object:
+    """The not-fit-for-MAS table's (sub)type filter."""
+    option_html = "".join(
+        f'<option value="{value}">{label}</option>'
+        for value, label in _NOT_FIT_FILTER_OPTIONS
+    )
+    return mb_html.raw_html(
+        f'<p><label for="{_NOT_FIT_TYPE_FILTER_ID}">Show </label>'
+        f'<select id="{_NOT_FIT_TYPE_FILTER_ID}">{option_html}</select>. '
+        f'<output id="{_NOT_FIT_SELECTED_COUNT_ID}" aria-live="polite">'
+        f"Showing {case_count:,} rows.</output></p>\n"
+    )
+
+
 def _back_to_fit_for_mas_table() -> object:
     """A standard return link for the unified Fit-for-MAS case page."""
     return mb_html.para(
@@ -2029,29 +2079,53 @@ def _not_fit_for_mas_criterion_cell(meets_criterion: bool) -> object:
     )
 
 
+def _not_fit_for_mas_type_codes(record: dict) -> tuple[str, ...]:
+    """Every (sub)type that makes one not-fit-for-MAS word selectable."""
+    structural_types = record["types"]
+    codes = []
+    if psm.TYPE_OPEN in structural_types:
+        codes.extend(("1", _TYPE_1_SUBTYPE_CODES[record["type_1_subtype"]]))
+    if psm.TYPE_GUTTURAL in structural_types:
+        codes.extend(
+            (
+                "2",
+                _TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP[_type_2_filter_group(record)],
+            )
+        )
+    if psm.TYPE_CLOSED_TSERE in structural_types:
+        codes.append("3")
+    if not codes:
+        codes.append("other")
+    assert set(structural_types) <= set(_TYPE_CODES), record
+    return tuple(codes)
+
+
 def _not_fit_for_mas_case_row(record: dict) -> object:
     """One MAS word, with a result for each Fit-for-MAS criterion."""
-    return mb_html.table_row_of_data(
+    return mb_html.table_row(
         (
-            _ref_link(record["bcv"]),
-            _case_chanted_word_cell(record),
-            _not_fit_for_mas_criterion_cell(
-                record["meets_first_fit_for_mas_criterion"]
+            mb_html.table_datum(_ref_link(record["bcv"])),
+            mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
+            mb_html.table_datum(
+                _not_fit_for_mas_criterion_cell(
+                    record["meets_first_fit_for_mas_criterion"]
+                ),
+                {"class": "centered"},
             ),
-            _not_fit_for_mas_criterion_cell(
-                record["meets_second_fit_for_mas_criterion"]
+            mb_html.table_datum(
+                _not_fit_for_mas_criterion_cell(
+                    record["meets_second_fit_for_mas_criterion"]
+                ),
+                {"class": "centered"},
             ),
-            _not_fit_for_mas_criterion_cell(
-                record["meets_third_fit_for_mas_criterion"]
+            mb_html.table_datum(
+                _not_fit_for_mas_criterion_cell(
+                    record["meets_third_fit_for_mas_criterion"]
+                ),
+                {"class": "centered"},
             ),
         ),
-        (
-            None,
-            _HEBREW_CELL,
-            {"class": "centered"},
-            {"class": "centered"},
-            {"class": "centered"},
-        ),
+        {"data-type-codes": " ".join(_not_fit_for_mas_type_codes(record))},
     )
 
 
@@ -2075,11 +2149,16 @@ def build_not_fit_body(survey: dict) -> list:
             f" {_RED_X} marks each criterion that a word does not meet; blank cells mark"
             " criteria that the word meets."
         ),
+        _not_fit_for_mas_type_filter(len(records)),
         _table(
             ("Verse", "Word", *criterion_headers),
             [_not_fit_for_mas_case_row(record) for record in records],
-            {"class": "accent-pair-table post-stress-meteg-table"},
+            {
+                "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
+                "id": _NOT_FIT_TABLE_ID,
+            },
         ),
+        mb_html.raw_html(_NOT_FIT_FILTER_SCRIPT),
     ]
 
 
@@ -2813,12 +2892,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 f"{fit_for_mas['with_mas']:,}",
                 f", rather than the total of {total_mas:,} MAS cases, because "
                 f"{not_fit_for_mas_count:,} syllables, though they do have MAS, are deemed"
-                " not fit for MAS by our criteria.",
-            )
-        ),
-        mb_html.para(
-            (
-                "This ",
+                " not fit for MAS by our criteria. This ",
                 mb_html.anchor_h("page", _NOT_FIT_FNAME),
                 f" lists all {not_fit_for_mas_count:,} of those words and why they are"
                 " deemed not fit for MAS.",

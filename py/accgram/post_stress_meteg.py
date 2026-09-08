@@ -1424,6 +1424,8 @@ def _not_fit_for_mas_record(candidate: dict) -> dict:
         "mam_form": candidate["mam_form"],
         "next_mam_form": candidate["next_mam_form"],
         "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
+        "types": candidate["structural_types"],
+        "type_1_subtype": candidate["type_1_subtype"],
         "meets_first_fit_for_mas_criterion": _has_first_fit_for_mas_criterion(
             candidate
         ),
@@ -1479,8 +1481,8 @@ def _census_chanted_word_summary(
     return {
         "what": (
             "MBS_O counts chanted words with one or more U+05BD meteg marks before"
-            " the primary stress and none after it. MAS counts chanted words with one or"
-            " more U+05BD meteg marks after the primary stress, irrespective of the number"
+            " the stress and none after it. MAS counts chanted words with one or"
+            " more U+05BD meteg marks after the stress, irrespective of the number"
             " before it."
         ),
         "by_system": {

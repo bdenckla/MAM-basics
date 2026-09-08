@@ -72,19 +72,17 @@ UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
-POST_STRESS_METEG_TITLE = "Meteg after the primary stress"
+POST_STRESS_METEG_TITLE = "Meteg after the stress"
 POST_STRESS_METEG_METHODS_FNAME = "post-stress-meteg-methods.html"
-POST_STRESS_METEG_METHODS_TITLE = "Meteg after the primary stress: methods"
+POST_STRESS_METEG_METHODS_TITLE = "Meteg after the stress: methods"
 POST_STRESS_METEG_CASES_FNAME = "post-stress-meteg-cases.html"
-POST_STRESS_METEG_CASES_TITLE = "Meteg after the primary stress: individual cases"
+POST_STRESS_METEG_CASES_TITLE = "Meteg after the stress: individual cases"
 POST_STRESS_METEG_MISC_FNAME = "post-stress-meteg-misc.html"
-POST_STRESS_METEG_MISC_TITLE = "Meteg after the primary stress: misc cases"
+POST_STRESS_METEG_MISC_TITLE = "Meteg after the stress: misc cases"
 POST_STRESS_METEG_LACKS_MAS_FNAME = "post-stress-meteg-lacks-mas.html"
-POST_STRESS_METEG_LACKS_MAS_TITLE = "Meteg after the primary stress: cases lacking MAS"
+POST_STRESS_METEG_LACKS_MAS_TITLE = "Meteg after the stress: cases lacking MAS"
 POST_STRESS_METEG_NOT_FIT_FNAME = "post-stress-meteg-not-fit.html"
-POST_STRESS_METEG_NOT_FIT_TITLE = (
-    "Meteg after the primary stress: cases not fit for MAS"
-)
+POST_STRESS_METEG_NOT_FIT_TITLE = "Meteg after the stress: cases not fit for MAS"
 
 # The stylesheet all eight pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
