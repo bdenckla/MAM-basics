@@ -101,6 +101,8 @@ _NOT_FIT_FNAME = site_data.POST_STRESS_METEG_NOT_FIT_FNAME
 _NOT_FIT_TITLE = site_data.POST_STRESS_METEG_NOT_FIT_TITLE
 _POST_SILLUQ_FNAME = site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME
 _POST_SILLUQ_TITLE = site_data.POST_STRESS_METEG_POST_SILLUQ_TITLE
+_CHRONICLES_8_11_FNAME = site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME
+_CHRONICLES_8_11_TITLE = site_data.POST_STRESS_METEG_2CHRONICLES_8_11_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
@@ -177,6 +179,9 @@ _POST_SILLUQ_VERSE = "1s17:5"
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
+_CHRONICLES_8_11_VERSE = "2c8:11"
+_CHRONICLES_8_11_ALEPPO_CROP_URL = "img/Aleppo-Codex-2Chr-8v11.png"
+_CHRONICLES_8_11_LENINGRAD_CROP_URL = "img/Leningrad-Codex-2Chr-8v11.png"
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
@@ -458,8 +463,8 @@ updateNotFitRows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str, str]:
-    """Write the main page, its Methods page, and the five case pages.
+) -> tuple[str, str, str, str, str, str, str, str]:
+    """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -490,6 +495,11 @@ def gen_html_files(
             top_dir / _POST_SILLUQ_FNAME,
             _POST_SILLUQ_TITLE,
             build_post_silluq_body(survey),
+        ),
+        _write_page(
+            top_dir / _CHRONICLES_8_11_FNAME,
+            _CHRONICLES_8_11_TITLE,
+            build_chronicles_8_11_body(survey),
         ),
     )
     _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
@@ -1092,7 +1102,7 @@ def pin_claims(survey: dict) -> None:
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
         if _by_type_count(survey, kind):
             _example_of(survey, kind)
-    for bcv in (_POST_SILLUQ_VERSE,):
+    for bcv in (_POST_SILLUQ_VERSE, _CHRONICLES_8_11_VERSE):
         assert bcv in survey["currency"]["focus_verses"], (
             f"{bcv} is named in the page's prose but the survey records no chanted word"
             " for it; add it to post_stress_meteg._FOCUS_VERSES"
@@ -2528,6 +2538,96 @@ def _post_silluq_footnote() -> list:
     ]
 
 
+def _chronicles_8_11_mam_compound(survey: dict) -> str:
+    """MAM's three-atom compound at the site of 2 Chronicles 8:11's possible LC case."""
+    words = survey["currency"]["focus_verses"][_CHRONICLES_8_11_VERSE]["chanted_words"]
+    hits = [word for word in words if _letters_of(word) == ("אשר", "באה", "אליהם")]
+    assert len(hits) == 1, hits
+    return hits[0]
+
+
+def _chronicles_8_11_mam_atom(survey: dict) -> str:
+    """The final atom of MAM's אֲשֶׁר־בָּאָה compound, with its corpus pointing."""
+    compound = _chronicles_8_11_mam_compound(survey)
+    atoms = compound.split(psm.MAQAF)
+    assert len(atoms) == 3 and _letters_of(compound) == (
+        "אשר",
+        "באה",
+        "אליהם",
+    ), compound
+    return atoms[1]
+
+
+def _chronicles_8_11_crop(codex: str, image_url: str) -> object:
+    """One supplied manuscript crop, kept at a readable width on every screen."""
+    return mb_html.raw_html(
+        f'<figure><img src="{image_url}" alt="{codex} crop of 2 Chronicles 8:11."'
+        ' loading="lazy" style="max-width: 100%; height: auto;"><figcaption>'
+        f"{codex}, 2 Chronicles 8:11.</figcaption></figure>"
+    )
+
+
+def build_chronicles_8_11_body(survey: dict) -> list:
+    """The manuscript evidence behind the possible extra MAS case in 2 Chronicles 8:11."""
+    mam_compound = _chronicles_8_11_mam_compound(survey)
+    mam_atom = _chronicles_8_11_mam_atom(survey)
+    return [
+        mb_html.heading_level_1(_visible_title(_CHRONICLES_8_11_TITLE)),
+        _hebrew_spacing_option(),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(_TITLE, _FNAME),
+                ".",
+            )
+        ),
+        mb_html.para(
+            (
+                "The main MAS page identifies ",
+                _ref_link(_CHRONICLES_8_11_VERSE),
+                " as a possible additional Leningrad Codex case whose next chanted word is not"
+                " initially stressed. MAM has ",
+                *_hebrew_cell(mam_compound),
+                ", a three-atom compound; this page puts MAM's pointing beside the possible"
+                " Leningrad Codex interpretation and the two manuscript crops.",
+            )
+        ),
+        _table(
+            ("Text", "Pointing of final atom"),
+            [
+                mb_html.table_row_of_data(
+                    ("MAM", _hebrew_cell(mam_atom)), (None, _HEBREW_CELL)
+                ),
+                mb_html.table_row_of_data(
+                    (
+                        "Possible Leningrad Codex interpretation",
+                        _hebrew_cell("בָּֽאָ֥ה"),
+                    ),
+                    (None, _HEBREW_CELL),
+                ),
+            ],
+        ),
+        mb_html.para(
+            (
+                "In the Leningrad Codex crop, באה could be argued to be pointed ",
+                *_hebrew_cell("בָּֽאָ֥ה"),
+                " (",
+                _ROM_METEG,
+                "-",
+                rmn("merkha"),
+                "), in which case the 2 Chronicles 8:11 atom is not a MAS case at all.",
+            )
+        ),
+        mb_html.heading_level_2("Manuscript crops of 2 Chronicles 8:11"),
+        mb_html.para(
+            "The Aleppo Codex crop is included for comparison; the Leningrad Codex crop is the"
+            " basis for the possible meteg-merkha interpretation."
+        ),
+        _chronicles_8_11_crop("Aleppo Codex", _CHRONICLES_8_11_ALEPPO_CROP_URL),
+        _chronicles_8_11_crop("Leningrad Codex", _CHRONICLES_8_11_LENINGRAD_CROP_URL),
+    ]
+
+
 def _oleh_meteg_overlap(survey: dict) -> list:
     """The meteg marks that share oleh's letter."""
     oleh_overlaps = [
@@ -2617,19 +2717,12 @@ def _footnotes(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The Leningrad Codex has an additional case where the next word is not "
+                "The Leningrad Codex may have an additional case where the next word is not "
                 "initially stressed: at ",
-                _ref_link("2c8:11"),
-                ", ",
-                *_paired_chanted_word_cell("אֲשֶׁר־בָּ֥אָֽה", "אֲלֵיהֶ֖ם"),
-                ". But באה could be argued to be pointed ",
-                *_hebrew_cell("בָּֽאָ֥ה"),
-                " (",
-                _ROM_METEG,
-                "-",
-                rmn("merkha"),
-                ") in the Leningrad Codex, in which case the 2 Chronicles 8:11 word is "
-                "not a MAS case at all.",
+                _ref_link(_CHRONICLES_8_11_VERSE),
+                ". See ",
+                mb_html.anchor_h("the 2 Chronicles 8:11 page", _CHRONICLES_8_11_FNAME),
+                " for more details.",
             )
         ),
         *_next_conjunctive_footnote(survey),
