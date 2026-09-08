@@ -2652,10 +2652,6 @@ def build_chronicles_8_11_body(survey: dict) -> list:
             {"class": "limited-width post-stress-meteg-table"},
         ),
         mb_html.heading_level_2("Manuscript crops of 2 Chronicles 8:11"),
-        mb_html.para(
-            "The Aleppo Codex crop is included for comparison; the Leningrad Codex crop is the"
-            " basis for the possible meteg-merkha interpretation."
-        ),
         _chronicles_8_11_crop("Aleppo Codex", _CHRONICLES_8_11_ALEPPO_CROP_URL),
         _chronicles_8_11_crop("Leningrad Codex", _CHRONICLES_8_11_LENINGRAD_CROP_URL),
     ]
