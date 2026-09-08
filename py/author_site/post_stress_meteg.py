@@ -2567,6 +2567,15 @@ def _chronicles_8_11_leningrad_label(label: str) -> object:
     return mb_html.abbr(label, {"title": _CHRONICLES_8_11_LENINGRAD_GLOSSES[label]})
 
 
+def _chronicles_8_11_meteg_position_label(label: str) -> object:
+    """The MBS or MAS classification of one 2 Chronicles 8:11 interpretation."""
+    titles = {
+        "MBS": "meteg before the stress",
+        "MAS": "meteg after the stress",
+    }
+    return mb_html.abbr(label, {"title": titles[label]})
+
+
 def build_chronicles_8_11_body(survey: dict) -> list:
     """The manuscript evidence behind the possible extra MAS case in 2 Chronicles 8:11."""
     mam_compound = _chronicles_8_11_mam_compound(survey)
@@ -2589,40 +2598,58 @@ def build_chronicles_8_11_body(survey: dict) -> list:
                 " interpretations of the Leningrad Codex.",
             )
         ),
-        _table(
-            ("Text", "Relevant chanted word or chanted-word pair"),
+        mb_html.table(
             [
                 mb_html.table_row_of_data(
-                    ("MAM", _hebrew_cell(mam_compound)), (None, _HEBREW_CELL)
+                    (
+                        "MAM",
+                        _chronicles_8_11_meteg_position_label("MBS"),
+                        _hebrew_cell(mam_compound),
+                    ),
+                    (None, None, _HEBREW_CELL),
                 ),
                 mb_html.table_row_of_data(
                     (
                         _chronicles_8_11_leningrad_label("L-1"),
+                        _chronicles_8_11_meteg_position_label("MAS"),
                         _paired_chanted_word_cell(
                             _CHRONICLES_8_11_L1,
                             _CHRONICLES_8_11_LENINGRAD_NEXT_WORD,
                         ),
                     ),
-                    (None, _HEBREW_CELL),
+                    (None, None, _HEBREW_CELL),
                 ),
                 mb_html.table_row_of_data(
                     (
                         _chronicles_8_11_leningrad_label("L-2"),
+                        _chronicles_8_11_meteg_position_label("MBS"),
                         _paired_chanted_word_cell(
                             _CHRONICLES_8_11_L2,
                             _CHRONICLES_8_11_LENINGRAD_NEXT_WORD,
                         ),
                     ),
-                    (None, _HEBREW_CELL),
+                    (None, None, _HEBREW_CELL),
                 ),
             ],
+            {"class": "limited-width post-stress-meteg-table"},
         ),
         mb_html.para(
-            (
-                "L-1 is the merkha-meteg interpretation of Leningrad. L-2 is the meteg-merkha"
-                " interpretation of Leningrad. In L-2, the 2 Chronicles 8:11 atom is not a"
-                " MAS case at all.",
-            )
+            "The following table lists the printed editions that have each Leningrad"
+            " interpretation."
+        ),
+        mb_html.table(
+            [
+                mb_html.table_row_of_data(
+                    (_chronicles_8_11_leningrad_label("L-1"), "BHS")
+                ),
+                mb_html.table_row_of_data(
+                    (
+                        _chronicles_8_11_leningrad_label("L-2"),
+                        "Breuer (Da-at Miqra), Dotan (BHL)",
+                    )
+                ),
+            ],
+            {"class": "limited-width post-stress-meteg-table"},
         ),
         mb_html.heading_level_2("Manuscript crops of 2 Chronicles 8:11"),
         mb_html.para(
