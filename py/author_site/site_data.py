@@ -86,9 +86,9 @@ POST_STRESS_METEG_LACKS_MAS_TITLE = (
 POST_STRESS_METEG_NOT_FIT_FNAME = "post-stress-meteg-not-fit.html"
 POST_STRESS_METEG_NOT_FIT_TITLE = "Meteg after the stress: cases not fit for MAS"
 POST_STRESS_METEG_POST_SILLUQ_FNAME = "post-stress-meteg-post-silluq.html"
-POST_STRESS_METEG_POST_SILLUQ_TITLE = "Meteg after silluq in 1 Samuel 17:5"
+POST_STRESS_METEG_POST_SILLUQ_TITLE = "Meteg after silluq in 1 Sam. 17:5"
 POST_STRESS_METEG_2CHRONICLES_8_11_FNAME = "post-stress-meteg-2chr-8-11.html"
-POST_STRESS_METEG_2CHRONICLES_8_11_TITLE = "Meteg in 2 Chronicles 8:11"
+POST_STRESS_METEG_2CHRONICLES_8_11_TITLE = "Meteg in 2 Chr. 8:11"
 POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME = "post-stress-meteg-next-conjunctive.html"
 POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
     "Meteg after the stress: next words with a conjunctive accent"

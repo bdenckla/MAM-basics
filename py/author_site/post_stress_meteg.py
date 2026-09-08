@@ -185,12 +185,26 @@ _MAS_CENSUS_GLOSS = (
 # other form on the page.
 _POST_SILLUQ_VERSE = "1s17:5"
 _MAM_POST_SILLUQ_VERSE = "1k7:37"
+# Every visible spelling of these two references comes from ``ref_abbrev``, the
+# short-but-not-super-short prose form built on ``mb_misc/osis_book_abbrevs.py``'s
+# OSIS list -- "Gen. 2:7", "1 Sam. 17:5", "1 Kgs. 7:37".  Ben's rule of 2026-09-08:
+# no reference is typed out, here or in a figure caption or an alt text.
+_POST_SILLUQ_REF = ref_abbrev(_POST_SILLUQ_VERSE)
+_MAM_POST_SILLUQ_REF = ref_abbrev(_MAM_POST_SILLUQ_VERSE)
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _CHRONICLES_8_11_VERSE = "2c8:11"
+_CHRONICLES_8_11_REF = ref_abbrev(_CHRONICLES_8_11_VERSE)
+# site_data spells these two page titles by hand, being a plain data module with no accgram
+# import.  These are what keep those two spellings at ref_abbrev's form.
+assert _POST_SILLUQ_REF in _POST_SILLUQ_TITLE, (_POST_SILLUQ_TITLE, _POST_SILLUQ_REF)
+assert _CHRONICLES_8_11_REF in _CHRONICLES_8_11_TITLE, (
+    _CHRONICLES_8_11_TITLE,
+    _CHRONICLES_8_11_REF,
+)
 _CHRONICLES_8_11_ALEPPO_CROP_URL = "img/Aleppo-Codex-2Chr-8v11.png"
 _CHRONICLES_8_11_LENINGRAD_CROP_URL = "img/Leningrad-Codex-2Chr-8v11.png"
 _CHRONICLES_8_11_L1 = "אֲשֶׁר־בָּ֥אָֽה"
@@ -622,14 +636,14 @@ def build_methods_body(survey: dict) -> list:
             )
         ),
         mb_html.heading_level_2(
-            (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, " in 1 Kgs. 7:37")
+            (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, f" in {_MAM_POST_SILLUQ_REF}")
         ),
         mb_html.para(_mam_post_silluq_statement(survey)),
         _mam_post_silluq_aleppo_crop(),
         mb_html.para(
             (
                 "At ",
-                _ref_link(_MAM_POST_SILLUQ_VERSE, "1 Kgs. 7:37"),
+                _ref_link(_MAM_POST_SILLUQ_VERSE),
                 ", the Leningrad Codex lacks the ",
                 _ROM_METEG,
                 " after the ",
@@ -2303,7 +2317,7 @@ def build_misc_body(survey: dict) -> list:
                 mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
                 " or the ",
                 mb_html.anchor_h(
-                    _visible_title(_CASES_TITLE, lowercase=True), _CASES_FNAME
+                    f"{len(survey['post_stress']):,} individual cases", _CASES_FNAME
                 ),
                 ".",
             )
@@ -2533,7 +2547,7 @@ def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) ->
     """The 1 Kings 7:37 MAM case that this research excludes."""
     return (
         "At " if starts_sentence else "at ",
-        _ref_link(_MAM_POST_SILLUQ_VERSE, "1 Kgs. 7:37"),
+        _ref_link(_MAM_POST_SILLUQ_VERSE),
         ", in MAM, there is a ",
         _ROM_METEG,
         " after ",
@@ -2548,10 +2562,10 @@ def _mam_post_silluq_aleppo_crop() -> object:
     """The Aleppo Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        ' alt="Aleppo Codex crop of the verse-final word at 1 Kgs. 7:37; it has'
-        ' a meteg after the silluq."'
+        f' alt="Aleppo Codex crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
+        ' it has a meteg after the silluq."'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo Codex, 1 Kgs. 7:37.</figcaption></figure>"
+        f"<figcaption>Aleppo Codex, {_MAM_POST_SILLUQ_REF}.</figcaption></figure>"
     )
 
 
@@ -2559,10 +2573,10 @@ def _mam_post_silluq_leningrad_crop() -> object:
     """The Leningrad Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_LENINGRAD_CROP_URL}"'
-        ' alt="Leningrad Codex crop of the verse-final word at 1 Kgs. 7:37; it'
-        ' lacks a meteg after the silluq."'
+        f' alt="Leningrad Codex crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
+        ' it lacks a meteg after the silluq."'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad Codex, 1 Kgs. 7:37.</figcaption></figure>"
+        f"<figcaption>Leningrad Codex, {_MAM_POST_SILLUQ_REF}.</figcaption></figure>"
     )
 
 
@@ -2577,9 +2591,9 @@ def _post_silluq_lc_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_POST_SILLUQ_LC_CROP_URL}"'
-        ' alt="Leningrad Codex, F159A, column 3, line 8: 1 Samuel 17:5."'
+        f' alt="Leningrad Codex, F159A, column 3, line 8: {_POST_SILLUQ_REF}."'
         ' loading="lazy"></a><figcaption>Leningrad Codex, F159A, column 3, line 8'
-        " (1 Samuel 17:5); crop attached to "
+        f" ({_POST_SILLUQ_REF}); crop attached to "
         f'<a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">phonetic-hbo #78</a>.</figcaption></figure>'
     )
@@ -2589,9 +2603,9 @@ def _post_silluq_aleppo_crop() -> object:
     """The Aleppo crop showing no meteg after the silluq in 1 Samuel 17:5."""
     return mb_html.raw_html(
         f'<figure><img src="{_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        ' alt="Aleppo Codex crop of the verse-final word in 1 Samuel 17:5; it has no'
-        ' meteg after the silluq." loading="lazy"><figcaption>Aleppo Codex, 1 Samuel'
-        " 17:5.</figcaption></figure>"
+        f' alt="Aleppo Codex crop of the verse-final word in {_POST_SILLUQ_REF}; it has'
+        ' no meteg after the silluq." loading="lazy">'
+        f"<figcaption>Aleppo Codex, {_POST_SILLUQ_REF}.</figcaption></figure>"
     )
 
 
@@ -2605,7 +2619,7 @@ def _post_silluq_details(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "In the Leningrad Codex, the last word of 1 Samuel 17:5 has a ",
+                f"In the Leningrad Codex, the last word of {_POST_SILLUQ_REF} has a ",
                 _ROM_METEG,
                 " after its ",
                 _ROM_SILLUQ,
@@ -2696,7 +2710,7 @@ def _post_silluq_footnote(survey: dict) -> list:
     """Footnote 1: the MAM and Leningrad Codex post-silluq cases."""
     return [
         mb_html.heading_level_3(
-            ("φ1 — ", _ROM_METEG, " after ", _ROM_SILLUQ),
+            ("φ1 — ", _ROM_METEG_CAP, " after ", _ROM_SILLUQ),
             {"id": _POST_SILLUQ_FOOTNOTE_ID},
         ),
         mb_html.para(
@@ -2709,7 +2723,7 @@ def _post_silluq_footnote(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "At 1 Samuel 17:5, in the Leningrad Codex, there is a ",
+                f"At {_POST_SILLUQ_REF}, in the Leningrad Codex, there is a ",
                 _ROM_METEG,
                 " after ",
                 _ROM_SILLUQ,
@@ -2717,7 +2731,12 @@ def _post_silluq_footnote(survey: dict) -> list:
                 wrap_hebrew_runs(_post_silluq_leningrad_form(survey)),
                 ". See ",
                 mb_html.anchor_h(
-                    ("the ", *_visible_title(_POST_SILLUQ_TITLE, lowercase=True)),
+                    (
+                        "the crops and why we read the marks as ",
+                        _ROM_SILLUQ,
+                        "-",
+                        _ROM_METEG,
+                    ),
                     _POST_SILLUQ_FNAME,
                 ),
                 ".",
@@ -2737,9 +2756,10 @@ def _chronicles_8_11_mam_compound(survey: dict) -> str:
 def _chronicles_8_11_crop(codex: str, image_url: str) -> object:
     """One supplied manuscript crop, kept at a readable width on every screen."""
     return mb_html.raw_html(
-        f'<figure><img src="{image_url}" alt="{codex} crop of 2 Chronicles 8:11."'
+        f'<figure><img src="{image_url}"'
+        f' alt="{codex} crop of {_CHRONICLES_8_11_REF}."'
         ' loading="lazy" style="max-width: 100%; height: auto;"><figcaption>'
-        f"{codex}, 2 Chronicles 8:11.</figcaption></figure>"
+        f"{codex}, {_CHRONICLES_8_11_REF}.</figcaption></figure>"
     )
 
 
@@ -2840,7 +2860,7 @@ def build_chronicles_8_11_body(survey: dict) -> list:
             ],
             {"class": "limited-width post-stress-meteg-table"},
         ),
-        mb_html.heading_level_2("Manuscript crops of 2 Chronicles 8:11"),
+        mb_html.heading_level_2(f"Manuscript crops of {_CHRONICLES_8_11_REF}"),
         _chronicles_8_11_crop("Aleppo Codex", _CHRONICLES_8_11_ALEPPO_CROP_URL),
         _chronicles_8_11_crop("Leningrad Codex", _CHRONICLES_8_11_LENINGRAD_CROP_URL),
     ]
@@ -2941,7 +2961,7 @@ def _footnotes(survey: dict) -> list:
                 _ref_link(_CHRONICLES_8_11_VERSE),
                 ", in the Leningrad Codex, the word after a MAS lacks initial stress. See ",
                 mb_html.anchor_h(
-                    "the ambiguous marks in 2 Chronicles 8:11",
+                    f"the ambiguous marks in {_CHRONICLES_8_11_REF}",
                     _CHRONICLES_8_11_FNAME,
                 ),
                 ".",
@@ -3193,16 +3213,26 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
     assert all(
         _case_filter_subtype(record) == "2C" for record in nonfinal_mas_syllable_records
     )
+    # How nearly the four exhaust subtype 2C is the point of the second clause below, so the
+    # remainder is counted here rather than stated as a constant.  Ben's ask of 2026-09-08.
+    two_c_records = [
+        record
+        for record in survey["post_stress"]
+        if _case_filter_subtype(record) == "2C"
+    ]
+    other_two_c_count = len(two_c_records) - len(nonfinal_mas_syllable_records)
+    assert other_two_c_count == 1, two_c_records
     return [
         mb_html.heading_level_3(
             "φ2 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}
         ),
         mb_html.para(
             (
-                "The four exceptions are all of subtype 2C. Each MAS syllable is an open"
-                " penultimate ",
+                "The four exceptions are all of subtype 2C; indeed, subtype 2C has only ",
+                _spelled(other_two_c_count),
+                " other case. Each of the four exceptions has an open penultimate ",
                 _ROM_TSERE,
-                " syllable before a final furtive-",
+                " MAS syllable before a final furtive-",
                 _ROM_PATAH,
                 " syllable.",
             )
