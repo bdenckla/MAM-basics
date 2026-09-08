@@ -1,4 +1,4 @@
-r"""MAM's metegs after the stress: the main page, methods page, and three case pages.
+r"""MAM's metegs after the stress: the main page, methods page, and five case pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -99,6 +99,8 @@ _LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_LACKS_MAS_FNAME
 _LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_LACKS_MAS_TITLE
 _NOT_FIT_FNAME = site_data.POST_STRESS_METEG_NOT_FIT_FNAME
 _NOT_FIT_TITLE = site_data.POST_STRESS_METEG_NOT_FIT_TITLE
+_POST_SILLUQ_FNAME = site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME
+_POST_SILLUQ_TITLE = site_data.POST_STRESS_METEG_POST_SILLUQ_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
@@ -174,6 +176,7 @@ _MAS_CENSUS_GLOSS = (
 _POST_SILLUQ_VERSE = "1s17:5"
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
+_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
@@ -455,8 +458,8 @@ updateNotFitRows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str]:
-    """Write the main page, its Methods page, and the four case pages.
+) -> tuple[str, str, str, str, str, str, str]:
+    """Write the main page, its Methods page, and the five case pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -482,6 +485,11 @@ def gen_html_files(
             top_dir / _NOT_FIT_FNAME,
             _NOT_FIT_TITLE,
             build_not_fit_body(survey),
+        ),
+        _write_page(
+            top_dir / _POST_SILLUQ_FNAME,
+            _POST_SILLUQ_TITLE,
+            build_post_silluq_body(survey),
         ),
     )
     _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
@@ -511,7 +519,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all six post-stress-meteg pages and return the main page's path."""
+    """Write all seven post-stress-meteg pages and return the main page's path."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -2396,18 +2404,24 @@ def _post_silluq_lc_crop() -> object:
     )
 
 
-def _post_silluq_footnote(survey: dict) -> list:
-    """Footnote 1: a Leningrad meteg after silluq, which the MAM form does not have."""
+def _post_silluq_aleppo_crop() -> object:
+    """The Aleppo crop showing no meteg after the silluq in 1 Samuel 17:5."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_POST_SILLUQ_ALEPPO_CROP_URL}"'
+        ' alt="Aleppo Codex crop of the verse-final word in 1 Samuel 17:5; it has no'
+        ' meteg after the silluq." loading="lazy"><figcaption>Aleppo Codex, 1 Samuel'
+        " 17:5.</figcaption></figure>"
+    )
+
+
+def _post_silluq_details(survey: dict) -> list:
+    """The evidence and discussion for 1 Samuel 17:5's post-silluq meteg."""
     comparison = _post_silluq_comparison(survey)
     comparison_rows = [
         mb_html.table_row_of_data((source, _hebrew_cell(form)), (None, _HEBREW_CELL))
         for source, form in comparison
     ]
     return [
-        mb_html.heading_level_3(
-            ("φ1 — A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad"),
-            {"id": _POST_SILLUQ_FOOTNOTE_ID},
-        ),
         mb_html.para(
             (
                 "In the Leningrad Codex, the last word of 1 Samuel 17:5 seems to"
@@ -2462,6 +2476,53 @@ def _post_silluq_footnote(survey: dict) -> list:
                 " after a ",
                 _ROM_SILLUQ,
                 " is hard to identify in Unicode, since the two marks share one codepoint.",
+            )
+        ),
+    ]
+
+
+def build_post_silluq_body(survey: dict) -> list:
+    """The independent page about a meteg after silluq in 1 Samuel 17:5."""
+    return [
+        mb_html.heading_level_1(_visible_title(_POST_SILLUQ_TITLE)),
+        _hebrew_spacing_option(),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
+                ".",
+            )
+        ),
+        *_post_silluq_details(survey),
+        mb_html.para(
+            (
+                "As one would expect, the Aleppo Codex has this word with no ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                ":",
+            )
+        ),
+        _post_silluq_aleppo_crop(),
+    ]
+
+
+def _post_silluq_footnote() -> list:
+    """Footnote 1: a one-sentence pointer to the post-silluq page."""
+    return [
+        mb_html.heading_level_3(
+            ("φ1 — A ", _ROM_METEG, " after ", _ROM_SILLUQ, " in Leningrad"),
+            {"id": _POST_SILLUQ_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "See ",
+                mb_html.anchor_h("this page", _POST_SILLUQ_FNAME),
+                " regarding a ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                " in 1 Samuel 17:5.",
             )
         ),
     ]
@@ -2540,7 +2601,7 @@ def _footnotes(survey: dict) -> list:
     exception = exceptions[0]
     return [
         mb_html.heading_level_2("Footnotes"),
-        *_post_silluq_footnote(survey),
+        *_post_silluq_footnote(),
         *_nonfinal_mas_syllable_footnote(survey),
         mb_html.heading_level_3(
             "φ3 — Next word lacking initial stress", {"id": _JEREMIAH_FOOTNOTE_ID}

@@ -101,6 +101,7 @@ _UNLISTED_DEPLOY_ROOT_PAGES = (
     "post-stress-meteg-methods.html",
     "post-stress-meteg-misc.html",
     "post-stress-meteg-not-fit.html",
+    "post-stress-meteg-post-silluq.html",
 )
 
 
