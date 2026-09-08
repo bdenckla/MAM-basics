@@ -776,3 +776,43 @@ window. Findings 1, 2, 3, 4, 5 and 7 were re-derived by the main session as well
 (the two scan crops were read, the reader and the XML element read, the `Job.xml` path resolved, the
 old-URL grep and the redirect default read). The reconciliation section goes below this one, under
 `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
+
+## Reconciliation with the Codex review
+
+This window used Design A. Codex read this Claude review deliberately, checked selected claims
+against the same anchors, and looked for an unaccounted commit or defect. The Codex result is
+`doc/codex-review-findings-2026-09-07.md`. Under the Design A procedure in
+`doc/dual-agent-review.md`, the Codex reviewer writes this comparison because Design A is anchored
+by construction; a fresh third reviewer is required only for Design B.
+
+### Claude claims confirmed by Codex
+
+Codex independently confirmed nine selected claims:
+
+1. Finding 1's Deuteronomy 32:6 reader and XML mechanism.
+2. Finding 4's nonexistent MAM-simple Job XML path.
+3. Finding 5's 669 stale generated MAM-with-doc URLs outside the stated records and data.
+4. Finding 7's MAM-simple redirect default and the stale wlc-utils documentation.
+5. Findings 8.1 and 8.2's NFC and MAM-mark-order coverage gaps.
+6. Finding 13.1's disagreement between the type-3 page definition and its classifier.
+7. Findings 14.1 and 14.2's licence-coverage gaps.
+8. Finding 15's second Linux clone roster.
+9. Finding 18's stale instruction-file count and incompatible read-only instruction.
+
+### Claude claims rejected by Codex
+
+None among the selected claims Codex checked. Design A did not independently check every claim in
+this file, so this result does not endorse the claims outside the selected set.
+
+### Claude omission found by Codex
+
+None in the selected commit and static checks. Codex re-derived the 257 / 220 commit census, found
+no new `sys.path` mutation in the reviewed Python diff, and verified that the six commits after the
+anchor change only the thirteen paths this report declares. Those checks do not establish that no
+unselected omission exists.
+
+### Claude claims not independently checked by Codex
+
+The unselected claims are listed in `doc/codex-review-findings-2026-09-07.md` under
+`## Limits of the Codex review`. The Codex review also did not recreate or inspect the absent public
+source clones, and it preserved the Claude report's public-only boundary.
