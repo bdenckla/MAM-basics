@@ -3352,6 +3352,12 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 " are listed separately, with the criteria each one fails.",
             )
         ),
+        mb_html.para(
+            f"A good way to think about the {author.dquote('fit for MAS')} criteria is as"
+            " a predictor. Like most predictors, this one has both false positives and"
+            " false negatives. Its false positives are cases fit for MAS that lack MAS;"
+            " its false negatives are cases not fit for MAS that nonetheless have MAS."
+        ),
     ]
 
 
