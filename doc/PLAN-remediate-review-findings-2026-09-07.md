@@ -378,21 +378,21 @@ products, Aleppo line data, and the private Phonetic MAM source tree.
 Goal: bring generated products back into agreement with their generators after Waves 1 and 2 remove
 the known blockers. This wave covers findings 5 and 6 and Codex Sol finding Sol-1.
 
-- [ ] Recount old MAM-with-doc URLs by owned output family. Preserve occurrences only in dated records,
+- [x] Recount old MAM-with-doc URLs by owned output family. Preserve occurrences only in dated records,
       byte-verbatim Wikisource input, and downloaded Sefaria input.
-- [ ] Run `copy-support-files`, confirm all 44 mapped MAM-simple examples are blob-identical to their
+- [x] Run `copy-support-files`, confirm all 44 mapped MAM-simple examples are blob-identical to their
       sources, and make the copy operation LF-stable on a CRLF checkout.
-- [ ] Regenerate the MAM-for-Sefaria, Book of Job, Holman, UXLC, WLC, and MAM-parsed output families
+- [x] Regenerate the MAM-for-Sefaria, Book of Job, Holman, UXLC, WLC, and MAM-parsed output families
       from their real entry points. Do not perform a textual bulk replacement in generated files.
-- [ ] Run the complete mega pipeline only after finding 4 is fixed and the focused product runs are
+- [x] Run the complete mega pipeline only after finding 4 is fixed and the focused product runs are
       understood. Inventory every changed file before accepting it.
-- [ ] Run `git diff --check b4706759..8bf586a3` to preserve the Sol measurement, then run
+- [x] Run `git diff --check b4706759..8bf586a3` to preserve the Sol measurement, then run
       `git diff --check` on the remediation changes. Fix whitespace in the canonical source or
       generator where one exists. Keep imported byte-verbatim data unchanged unless its policy
       explicitly assigns formatting ownership to MAM-basics.
-- [ ] Run every generator a second time without restoring the first run. The second run must add no
+- [x] Run every generator a second time without restoring the first run. The second run must add no
       content change.
-- [ ] Recount the old-host URLs. The expected result is zero in owned generated outputs; every
+- [x] Recount the old-host URLs. The expected result is zero in owned generated outputs; every
       surviving occurrence must be listed by exact deliberate category.
 
 Use these established entry points:
@@ -413,6 +413,51 @@ Expected not to change in Wave 3: byte-verbatim/downloaded input trees, private 
 generated families whose source and URL constants were untouched. The first mega run may expose the
 known future `fr-wikisource` diff; separate that data refresh from URL and whitespace remediation in
 the disposition record.
+
+### Wave 3 execution result — 2026-09-08
+
+- Regenerated the six named product families from their real entry points. The accepted MAM-basics
+  content diff before this execution record comprised 390 files: 383 generated URL-family files and
+  seven other files. A byte-level check, after replacing the old host with the new host and ignoring
+  whitespace, found zero additional differences in the 383 URL-family files. The seven other files
+  were the two Python fixes, the copied MAM-simple support module, one generated path record, two
+  documentation records, and one vendoring report. No `fr-wikisource` file changed.
+- Changed `py/py_misc/mam_simple_copy_py_files.py` to copy UTF-8 text with explicit newline handling.
+  Two copy passes and the final verification each reported 44 mapped files, zero clean-blob
+  mismatches, and zero CRLF destinations. `doc/PLAN-evacuate-five-MAM-products.md` now records the
+  correct Phase 1 count of 44 and names `MAM-simple/py-examples/mb_cmn/paths.py` as the omitted path.
+  Vendoring regeneration reported 44 comparison rows and 8 inventory rows covering 44 files.
+- The first complete mega attempt exposed a stale sibling-path assumption in the MAM-private
+  near-Aleppo subprocess: the old `C:/Users/BenDe/GitRepos/MAM-parsed` clone no longer exists.
+  `py/main_0_mega.py` now supplies the consolidated `MAM-parsed` directory through
+  `REPO_MAM_PARSED_DIR`. The resumed run then completed all 102 scripts and exposed four current
+  near-Aleppo census expectations.
+- **Authorized scope exception, Ben's decision, 2026-09-08:** update exactly the four generated
+  MAM-private expectations exposed by the corrected near-Aleppo run. MAM-private commit `267a3e25`
+  (`Refresh near-Aleppo census goldens`) contains only `gershayim_contexts.txt`,
+  `legarmeh_narpas_diffs.txt`, `manual_suppression_outcome.txt`, and
+  `nusach_suppression_outcome.txt`; it is pushed to `origin/main`. The update records the consolidated
+  MAM product locations and the current suppression data. Two subsequent complete mega runs left
+  MAM-private clean at `267a3e25`.
+- Ran the complete mega pipeline twice from the beginning after the scope exception. Each run
+  reported 102 scripts, 102 goldens written, and zero crashes. SHA-256 snapshots of all 5,517 tracked
+  MAM-basics files changed in zero files from the pre-run tree through the first run and in zero files
+  from the first run through the second run. The focused family generators had already passed the
+  same two-run comparison.
+- Reproduced the frozen Sol whitespace measurement: `git diff --check b4706759..8bf586a3` exits 2
+  with 210 findings, comprising 21 trailing-whitespace findings and 189 new-blank-line-at-EOF
+  findings. The current `git diff --check` exits 0. Byte-verbatim Wikisource input and downloaded
+  Sefaria input did not change.
+- The final old-host census has zero occurrences in owned generated output. The surviving deliberate
+  occurrences are one documentation file with 3 hits, 39 downloaded Sefaria input files with 39
+  hits, and 5 byte-verbatim Wikisource introduction files with 5 hits.
+- Black left both changed Python files unchanged, ruff passed both files, and the canonical suite
+  reported 976 passed, 5 skipped, and 65 subtests passed. The ignored inventories, censuses, and
+  SHA-256 evidence are under `.novc/remediation-review-2026-09-07-wave3/`.
+- Commit and push: `4afe3ebc` (`Repair review Wave 3 generated products`) is on `main` and was pushed
+  to `origin/main`. The commit contains the 390-file implementation and generated-product diff.
+- Next wave: consolidate the canonical lint scopes, repair the two inherited Aleppo mark-order pages,
+  harden legacy-history output paths, and add the adverse and mechanical checks specified by Wave 4.
 
 ## Wave 4 — lint coverage and latent safeguards
 
