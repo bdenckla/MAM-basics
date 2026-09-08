@@ -222,9 +222,11 @@ def run_from_args(args: argparse.Namespace) -> None:
     if args.old or args.new:
         if not args.old or not args.new:
             raise SystemExit("--old and --new must be provided together")
-        output = args.output or default_output_path(args.old, args.new)
         prefix = "legacy:" if args.legacy_history else ""
-        generate_report(prefix + args.old, prefix + args.new, output)
+        old_rev = prefix + args.old
+        new_rev = prefix + args.new
+        output = args.output or default_output_path(old_rev, new_rev)
+        generate_report(old_rev, new_rev, output)
         return
     if args.output:
         raise SystemExit("--output requires --old and --new")

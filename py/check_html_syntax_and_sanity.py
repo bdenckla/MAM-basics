@@ -8,7 +8,7 @@ Checks performed:
   3. Broken fragment links: #id targets exist in the referenced file
   4. Broken local image references: <img src="..."> files exist on disk
   5. Orphan images: files in img/ not referenced from any HTML
-  6. CSS class validation: class values are defined in style.css
+  6. CSS class inventory: undefined class values are reported but are not fatal
   7. Font file existence: woff2 font files referenced from CSS exist
   8. Stale files: unexpected files (e.g., extensionless, 0-byte)
   9. Duplicate IDs: no duplicate id attributes within a single file
@@ -20,13 +20,16 @@ Exit codes:
   1 - Issues found
 
 Usage:
-    python check_html_syntax_and_sanity.py [pages_dir] [--w3c]
+    python check_html_syntax_and_sanity.py [pages_dir] [--deploy-root] [--w3c]
 
 If no pages_dir given, defaults to book-of-job's own gh-pages tree
 (boj_paths.gh_pages_dir()), whatever the working directory.
-The repository's multi-site ``gh-pages/`` root is not one homogeneous document
-tree and is refused: its sub-sites have separate CSS vocabularies and entry
-points, so checking it as one site produces false positives.
+The repository's multi-site ``gh-pages/`` root is accepted only through the explicit
+``--deploy-root`` mode. That mode checks the ten HTML files and CSS files directly at
+the deploy root without folding any sub-site's pages or CSS vocabulary into the root.
+Without ``--deploy-root``, the root is refused and one sub-site is checked recursively.
+Undefined CSS classes are informational because the current ownership model cannot
+distinguish a shared or external CSS vocabulary from a defect.
 The --w3c flag sends each HTML file to the W3C Nu HTML Checker API
 for full conformance validation (requires internet access).
 """
@@ -42,6 +45,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 import boj_paths
+from mb_cmn import paths
 
 
 def main(argv=None):
@@ -57,6 +61,11 @@ def main(argv=None):
         help="path to the Pages directory (default: book-of-job's own gh-pages)",
     )
     parser.add_argument(
+        "--deploy-root",
+        action="store_true",
+        help="check only HTML and CSS files directly under MAM-basics' deploy root",
+    )
+    parser.add_argument(
         "--w3c",
         action="store_true",
         help="also validate each file via the W3C Nu HTML Checker API",
@@ -67,12 +76,22 @@ def main(argv=None):
         help="with --w3c, show all messages (don't suppress known issues)",
     )
     args = parser.parse_args(argv)
-    # The default was the cwd-relative "gh-pages", which check_all.py always took.
-    docs_dir = Path(args.pages_dir) if args.pages_dir else boj_paths.gh_pages_dir()
+    deploy_root = paths.gh_pages_dir().resolve()
+    if args.deploy_root:
+        docs_dir = Path(args.pages_dir) if args.pages_dir else deploy_root
+        if docs_dir.resolve() != deploy_root:
+            print(
+                f"Error: --deploy-root requires MAM-basics' deploy root: {deploy_root}",
+                file=sys.stderr,
+            )
+            return 2
+    else:
+        # The default was the cwd-relative "gh-pages", which check_all.py always took.
+        docs_dir = Path(args.pages_dir) if args.pages_dir else boj_paths.gh_pages_dir()
 
-    if docs_dir.resolve() == boj_paths.gh_pages_dir().parent.resolve():
+    if not args.deploy_root and docs_dir.resolve() == deploy_root:
         print(
-            "Error: check one Pages sub-site, not MAM-basics' multi-site gh-pages root;"
+            "Error: use --deploy-root for MAM-basics' multi-site gh-pages root, or"
             f" use {boj_paths.gh_pages_dir()} for the Book-of-Job checks",
             file=sys.stderr,
         )
@@ -82,9 +101,13 @@ def main(argv=None):
         print(f"Error: {docs_dir} is not a directory", file=sys.stderr)
         return 1
 
-    # Discover HTML and CSS files
-    html_files = sorted(docs_dir.rglob("*.html"))
-    css_files = sorted(docs_dir.rglob("*.css"))
+    # A sub-site is one recursive document tree. The deploy root is only the files
+    # directly at that level; every directory below it is a separate sub-site.
+    recursive = not args.deploy_root
+    html_files = sorted(
+        docs_dir.rglob("*.html") if recursive else docs_dir.glob("*.html")
+    )
+    css_files = sorted(docs_dir.rglob("*.css") if recursive else docs_dir.glob("*.css"))
 
     if not html_files:
         print(f"No HTML files found in {docs_dir}")
@@ -112,6 +135,7 @@ def main(argv=None):
 
     # Run checks
     all_issues: list[str] = []
+    unknown_css_references: list[str] = []
     referenced_images: set[Path] = set()
 
     for hf in html_files:
@@ -123,20 +147,29 @@ def main(argv=None):
         all_issues.extend(_check_duplicate_ids(rel, info))
         all_issues.extend(_check_internal_links(rel, info, html_dir, all_ids))
         all_issues.extend(_check_images(rel, info, html_dir, referenced_images))
-        all_issues.extend(_check_css_classes(rel, info, css_classes))
+        unknown_css_references.extend(_check_css_classes(rel, info, css_classes))
         all_issues.extend(_check_css_links(rel, info, html_dir))
 
     # Cross-file checks
     for cf in css_files:
         all_issues.extend(_check_font_files(cf, docs_dir))
-    all_issues.extend(_check_orphan_images(docs_dir, referenced_images))
-    all_issues.extend(_check_stale_files(docs_dir))
+    all_issues.extend(
+        _check_orphan_images(docs_dir, referenced_images, recursive=recursive)
+    )
+    all_issues.extend(_check_stale_files(docs_dir, recursive=recursive))
     all_issues.extend(_check_orphan_html(docs_dir, html_files, all_internal_hrefs))
 
     # Optional W3C conformance check
     if args.w3c:
         print("Running W3C Nu HTML Checker ...")
         all_issues.extend(_check_w3c(html_files, docs_dir, strict=args.w3c_strict))
+
+    if unknown_css_references:
+        print(
+            "Informational: "
+            f"{len(unknown_css_references)} undefined CSS class reference(s); "
+            "not fatal until CSS ownership distinguishes shared/external classes."
+        )
 
     # Report
     if all_issues:
@@ -294,7 +327,11 @@ def _check_internal_links(
                 continue
             # Check fragment in target file
             if fragment is not None:
-                target_ids = all_ids.get(target_path, [])
+                target_ids = all_ids.get(target_path)
+                if target_ids is None and target_path.suffix.lower() == ".html":
+                    target_ids = _parse_html(target_path).ids
+                if target_ids is None:
+                    target_ids = []
                 if fragment not in target_ids:
                     issues.append(
                         f"{rel}: broken fragment #{fragment}" f' in "{path_part}"'
@@ -330,10 +367,12 @@ def _check_images(
 def _check_orphan_images(
     docs_dir: Path,
     referenced_images: set[Path],
+    *,
+    recursive: bool,
 ) -> list[str]:
     """Find image files not referenced from any HTML."""
     issues = []
-    for img_dir in _find_img_dirs(docs_dir):
+    for img_dir in _find_img_dirs(docs_dir, recursive=recursive):
         for img_file in sorted(img_dir.rglob("*")):
             if img_file.is_file() and img_file.resolve() not in referenced_images:
                 rel = img_file.relative_to(docs_dir)
@@ -341,8 +380,10 @@ def _check_orphan_images(
     return issues
 
 
-def _find_img_dirs(docs_dir: Path) -> list[Path]:
+def _find_img_dirs(docs_dir: Path, *, recursive: bool) -> list[Path]:
     """Find all img/ subdirectories under docs_dir."""
+    if not recursive:
+        return []
     return sorted(p for p in docs_dir.rglob("img") if p.is_dir())
 
 
@@ -385,11 +426,12 @@ def _check_font_files(css_path: Path, docs_dir: Path) -> list[str]:
     return issues
 
 
-def _check_stale_files(docs_dir: Path) -> list[str]:
+def _check_stale_files(docs_dir: Path, *, recursive: bool) -> list[str]:
     """Flag unexpected files: 0-byte, extensionless, etc."""
     issues = []
     expected_exts = {".html", ".css", ".png", ".jpg", ".jpeg", ".woff2"}
-    for path in sorted(docs_dir.rglob("*")):
+    paths_in_scope = docs_dir.rglob("*") if recursive else docs_dir.glob("*")
+    for path in sorted(paths_in_scope):
         if not path.is_file():
             continue
         rel = path.relative_to(docs_dir)
