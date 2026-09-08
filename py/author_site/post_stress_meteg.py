@@ -1432,6 +1432,22 @@ def _by_type(survey: dict) -> list:
             ),
         )
     )
+    all_prose_count = sum(survey["post_stress_by_structural_type"][_PROSE].values())
+    all_poetic_count = sum(survey["post_stress_by_structural_type"][_POETIC].values())
+    all_count = all_prose_count + all_poetic_count
+    assert all_count == len(survey["post_stress"])
+    rows.append(
+        mb_html.table_row_of_data(
+            (
+                mb_html.abbr("all", {"title": "All cases: types 1, 2, 3, and misc."}),
+                str(all_prose_count),
+                str(all_poetic_count),
+                str(all_count),
+                "",
+            ),
+            (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _HEBREW_CELL),
+        )
+    )
     return [
         mb_html.heading_level_2("The three types of MAS"),
         mb_html.para(
@@ -1444,12 +1460,12 @@ def _by_type(survey: dict) -> list:
         ),
         mb_html.ordered_list(
             (
-                "The MAS is on an open final syllable.",
-                "The word is closed by a guttural.",
+                "The MAS syllable is open and final.",
+                "The MAS word is closed by a guttural.",
                 (
-                    "The MAS is on a closed, final, ",
+                    "The MAS syllable is a closed, final, and ",
                     _ROM_TSERE,
-                    "-vowelled syllable. (",
+                    "-vowelled. (",
                     _footnote_callout(6, _TYPE_2_TYPE_3_FOOTNOTE_ID),
                     ")",
                 ),
@@ -1727,7 +1743,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
 def _next_chanted_word_span(
     next_word: str, punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = ()
 ) -> object:
-    """The next chanted word, and each preceding native narrow-sense paseq, in gray."""
+    """The next word and each preceding native narrow-sense paseq."""
     demoted = []
     for marker in punctuation:
         assert marker["kind"] == "paseq", marker
@@ -1777,7 +1793,7 @@ def _paired_chanted_word_cell(
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
-    """The MAM MAS form followed by its next chanted word in gray."""
+    """The MAM MAS form followed by its next word."""
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
@@ -1986,7 +2002,7 @@ def build_misc_body(survey: dict) -> list:
         mb_html.heading_level_2("Every misc case in MAM"),
         _para(
             "Each word in the table has MAS but does not meet the definition of"
-            " types 1, 2, or 3. The next word is gray."
+            " types 1, 2, or 3."
         ),
         _table(
             ("Verse", "Word", "Subtype"),
@@ -2022,11 +2038,9 @@ def build_misc_body(survey: dict) -> list:
                 " subset",
                 f" has {vayomer_count} word",
                 "s" if vayomer_count != 1 else "",
-                ". Each has one ",
+                ". Each has a ",
                 _ROM_PASEQ,
-                " between the ",
-                _ROM_METEG,
-                "-bearing word and the next word: the ",
+                " between the MAS word and the next. This is the ",
                 _ROM_GAYA,
                 "-before-",
                 _ROM_PASEQ,
@@ -2790,6 +2804,10 @@ def _next_conjunctive_footnote(survey: dict) -> list:
         mb_html.heading_level_3(
             "φ4 — Next words with a conjunctive accent",
             {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            f"Here are the {len(records):,} cases of MAS in which the next word has a"
+            " conjunctive accent:"
         ),
         _table(("", "", mb_html.abbr("(sub)type", {"title": "type or subtype"})), rows),
     ]
