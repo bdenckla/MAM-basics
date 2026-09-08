@@ -158,9 +158,11 @@ _MAX_WORDS_IN_ALL_EXCERPTS = 300
 
 _PROSE = psm.SYSTEM_PROSE
 _POETIC = psm.SYSTEM_POETIC
-_MBS_O_CENSUS_GLOSS = "count of words with one or more meteg marks before the primary stress and none after it"
+_MBS_O_CENSUS_GLOSS = (
+    "count of words with one or more meteg marks before the stress and none after it"
+)
 _MAS_CENSUS_GLOSS = (
-    "count of words with one or more meteg marks after the primary stress and any number"
+    "count of words with one or more meteg marks after the stress and any number"
     " (including zero) before it"
 )
 
@@ -2656,43 +2658,43 @@ def _fit_for_mas_facts(survey: dict) -> list:
     surprising_mas_rows = (
         mb_html.table_row_of_data(
             (
-                "The MAS syllable has none of types 1, 2, or 3.",
-                f"{mas_not_in_the_table['outside_the_three_types']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "The MAS syllable's word does not have penultimate stress.",
+                "1. Its word does not have penultimate stress from a conjunctive accent.",
                 f"{mas_not_in_the_table['stress_not_penultimate']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The next word has a conjunctive accent.",
+                "2. The next word has a conjunctive accent, not a disjunctive accent.",
                 f"{mas_not_in_the_table['next_word_not_disjunctive']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The next word does not have initial stress.",
+                "2. The next word's stress is not initial.",
                 f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The MAS syllable is type 1C.",
+                "3. A MAS in the syllable would be type 1C, not (sub)type 1A or 1B.",
                 f"{mas_not_in_the_table['type_1_subtype_C']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
         mb_html.table_row_of_data(
             (
-                "The MAS syllable is type 2C.",
+                "3. A MAS in the syllable would be type 2C, not (sub)type 2A or 2B.",
                 f"{mas_not_in_the_table['type_2_subtype_C']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                "3. A MAS in the syllable would be none of (sub)types 1A, 1B, 2A, 2B, or 3.",
+                f"{mas_not_in_the_table['outside_the_three_types']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),
@@ -2744,12 +2746,17 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 f"{fit_for_mas['with_mas']:,}",
                 f", rather than the total of {total_mas:,} MAS cases, because "
                 f"{not_fit_for_mas_count:,} syllables, though they do have MAS, are deemed"
-                " not fit for MAS by our criteria. The table shows which condition each case"
-                " does not meet.",
+                " not fit for MAS by our criteria. Read the table in the order of the three"
+                " criteria above. Each row identifies the first criterion that a MAS syllable"
+                " does not meet, so the table narrows the MAS syllables successively: the"
+                " criterion-2 rows include only syllables that meet criterion 1, and the"
+                " criterion-3 rows include only syllables that meet criteria 1 and 2. Every"
+                " MAS syllable's stress has a conjunctive accent, so the four criterion-1"
+                " failures have nonpenultimate stress.",
             )
         ),
         _table(
-            ("Why the MAS syllable is not fit for MAS", "MAS cases"),
+            ("First Fit-for-MAS criterion not met", "MAS cases"),
             surprising_mas_rows,
         ),
     ]

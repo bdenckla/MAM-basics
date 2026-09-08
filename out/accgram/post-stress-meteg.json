@@ -528,12 +528,12 @@
   },
   "candidates_meeting_multiple_types": 0,
   "mas_not_in_the_table": {
-   "outside_the_three_types": 7,
    "stress_not_penultimate": 4,
    "next_word_not_disjunctive": 15,
    "next_word_not_initially_stressed": 1,
    "type_1_subtype_C": 4,
-   "type_2_subtype_C": 1
+   "type_2_subtype_C": 1,
+   "outside_the_three_types": 7
   },
   "accent_grammar_token_counts": {
    "0": 16,

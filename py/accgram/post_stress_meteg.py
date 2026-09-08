@@ -1307,14 +1307,27 @@ def _fit_for_mas_candidate(
     return candidate
 
 
-def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
-    """Whether a candidate has every Fit-for-MAS property apart from its type criterion."""
+def _has_first_fit_for_mas_criterion(candidate: dict) -> bool:
+    """Whether the word has penultimate stress from a conjunctive accent."""
     return (
         candidate["stress_is_penultimate"]
         and candidate["stress_syllable_has_conjunctive_accent"]
-        and candidate["next_chanted_word_is_initially_stressed"]
+    )
+
+
+def _has_second_fit_for_mas_criterion(candidate: dict) -> bool:
+    """Whether the next word has initial stress from a disjunctive accent."""
+    return (
+        candidate["next_chanted_word_is_initially_stressed"]
         and candidate["next_chanted_word_has_disjunctive_accent"]
     )
+
+
+def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
+    """Whether a candidate meets the first two Fit-for-MAS criteria."""
+    return _has_first_fit_for_mas_criterion(
+        candidate
+    ) and _has_second_fit_for_mas_criterion(candidate)
 
 
 def _type_2_fit_type(next_chanted_word: str | None) -> str | None:
@@ -1608,64 +1621,94 @@ def _fit_for_mas_summary(
             "without_mas": len(members) - with_mas,
         }
     with_mas = sum(candidate["has_mas"] for candidate in fitting)
-    mas_outside_the_three_types = [
+    mas_candidates = [candidate for candidate in candidates if candidate["has_mas"]]
+    mas_after_first_criterion = [
         candidate
-        for candidate in candidates
-        if candidate["has_mas"] and not candidate["structural_types"]
+        for candidate in mas_candidates
+        if _has_first_fit_for_mas_criterion(candidate)
     ]
     mas_with_nonpenultimate_stress = [
         candidate
-        for candidate in candidates
+        for candidate in mas_candidates
         if candidate["has_mas"] and not candidate["stress_is_penultimate"]
-    ]
-    mas_with_non_disjunctive_next_word = [
-        candidate
-        for candidate in candidates
-        if (
-            candidate["has_mas"]
-            and not candidate["next_chanted_word_has_disjunctive_accent"]
-        )
-    ]
-    mas_with_noninitial_next_word = [
-        candidate
-        for candidate in candidates
-        if candidate["has_mas"]
-        and not candidate["next_chanted_word_is_initially_stressed"]
     ]
     mas_with_nonconjunctive_stress_syllable = [
         candidate
-        for candidate in candidates
-        if candidate["has_mas"]
-        and not candidate["stress_syllable_has_conjunctive_accent"]
+        for candidate in mas_candidates
+        if not candidate["stress_syllable_has_conjunctive_accent"]
     ]
     assert (
         not mas_with_nonconjunctive_stress_syllable
     ), mas_with_nonconjunctive_stress_syllable
+    mas_failing_first_criterion = [
+        candidate
+        for candidate in mas_candidates
+        if not _has_first_fit_for_mas_criterion(candidate)
+    ]
+    assert len(mas_failing_first_criterion) == len(mas_with_nonpenultimate_stress)
+
+    mas_after_second_criterion = [
+        candidate
+        for candidate in mas_after_first_criterion
+        if _has_second_fit_for_mas_criterion(candidate)
+    ]
+    mas_with_non_disjunctive_next_word = [
+        candidate
+        for candidate in mas_after_first_criterion
+        if not candidate["next_chanted_word_has_disjunctive_accent"]
+    ]
+    mas_with_noninitial_next_word = [
+        candidate
+        for candidate in mas_after_first_criterion
+        if (
+            candidate["next_chanted_word_has_disjunctive_accent"]
+            and not candidate["next_chanted_word_is_initially_stressed"]
+        )
+    ]
+    mas_failing_second_criterion = [
+        candidate
+        for candidate in mas_after_first_criterion
+        if not _has_second_fit_for_mas_criterion(candidate)
+    ]
+    assert len(mas_failing_second_criterion) == (
+        len(mas_with_non_disjunctive_next_word) + len(mas_with_noninitial_next_word)
+    )
+
     mas_with_type_1_subtype_c = [
         candidate
-        for candidate in non_type_specific_conditions
+        for candidate in mas_after_second_criterion
         if (
-            candidate["has_mas"]
-            and TYPE_OPEN in candidate["structural_types"]
+            TYPE_OPEN in candidate["structural_types"]
             and candidate["type_1_subtype"] == TYPE_1_SUBTYPE_C
         )
     ]
     mas_with_type_2_subtype_c = [
         candidate
-        for candidate in non_type_specific_conditions
+        for candidate in mas_after_second_criterion
         if (
-            candidate["has_mas"]
-            and TYPE_GUTTURAL in candidate["structural_types"]
+            TYPE_GUTTURAL in candidate["structural_types"]
             and _type_2_fit_type(candidate["next_chanted_word"]) is None
         )
     ]
+    mas_outside_the_three_types = [
+        candidate
+        for candidate in mas_after_second_criterion
+        if not candidate["structural_types"]
+    ]
+    mas_failing_third_criterion = [
+        candidate
+        for candidate in mas_after_second_criterion
+        if _fit_type(candidate) is None
+    ]
+    assert len(mas_failing_third_criterion) == (
+        len(mas_with_type_1_subtype_c)
+        + len(mas_with_type_2_subtype_c)
+        + len(mas_outside_the_three_types)
+    )
     excluded_mas = (
-        mas_outside_the_three_types
-        + mas_with_nonpenultimate_stress
-        + mas_with_non_disjunctive_next_word
-        + mas_with_noninitial_next_word
-        + mas_with_type_1_subtype_c
-        + mas_with_type_2_subtype_c
+        mas_failing_first_criterion
+        + mas_failing_second_criterion
+        + mas_failing_third_criterion
     )
     assert len(
         {
@@ -1702,12 +1745,12 @@ def _fit_for_mas_summary(
             len(candidate["structural_types"]) > 1 for candidate in fitting
         ),
         "mas_not_in_the_table": {
-            "outside_the_three_types": len(mas_outside_the_three_types),
             "stress_not_penultimate": len(mas_with_nonpenultimate_stress),
             "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
             "type_2_subtype_C": len(mas_with_type_2_subtype_c),
+            "outside_the_three_types": len(mas_outside_the_three_types),
         },
         "accent_grammar_token_counts": dict(
             sorted(
