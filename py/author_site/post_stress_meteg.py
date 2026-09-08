@@ -2701,7 +2701,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
         mb_html.para(
             (
-                "How often does a MAS appear in cases that seem fit for a MAS? According to"
+                "How often does MAS appear in a syllable that seems fit for MAS? According to"
                 ' our definition of "fit for MAS", it appears ',
                 f"{fit_for_mas['with_mas'] / fit_for_mas['fitting_any_type']:.1%}",
                 " of the time, but the “yield” varies widely between (sub)types. Notably, the"
@@ -2712,9 +2712,9 @@ def _fit_for_mas_facts(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                'The idea of "fit for MAS" is analogous to the broader idea of a syllable fit for a ',
+                'The idea of a syllable "fit for MAS" is part of the broader idea of a syllable fit for a ',
                 _ROM_METEG,
-                ". A syllable is fit for MAS when:",
+                ". We deem a syllable fit for MAS when:",
             )
         ),
         mb_html.unordered_list(
