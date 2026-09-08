@@ -1337,7 +1337,7 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
 
 
 def _type_2_fit_type_from_initial(next_chanted_word: str | None) -> str | None:
-    """The type-2 Fit-for-MAS class selected by the next chanted word's initial."""
+    """The type-2 Fit-for-MAS class selected by the next word's initial."""
     if next_chanted_word is None:
         return None
     letters = _letters(next_chanted_word)
@@ -1351,7 +1351,7 @@ def _type_2_fit_type_from_initial(next_chanted_word: str | None) -> str | None:
 
 
 def _type_2_fit_type(candidate: dict) -> str | None:
-    """The 2Af or 2Bf class, including the condition that the next chanted word lacks IVS."""
+    """The 2Af or 2Bf class, including the condition that the next word lacks IVS."""
     if candidate["next_chanted_word_starts_with_a_vocal_shewa"] is not False:
         return None
     return _type_2_fit_type_from_initial(candidate["next_chanted_word"])
@@ -1784,7 +1784,7 @@ def _fit_for_mas_summary(
             " predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable"
             " is checked for U+05BD."
             " Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require"
-            " that the next chanted word not begin with vocal shewa."
+            " that the next word not begin with vocal shewa."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
         "records_what": (

@@ -1,4 +1,4 @@
-r"""MAM's metegs after the stress: the main page, methods page, and five case pages.
+r"""MAM's metegs after the stress: the main page and eight supporting pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a constant of its own.
@@ -103,6 +103,8 @@ _POST_SILLUQ_FNAME = site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME
 _POST_SILLUQ_TITLE = site_data.POST_STRESS_METEG_POST_SILLUQ_TITLE
 _CHRONICLES_8_11_FNAME = site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME
 _CHRONICLES_8_11_TITLE = site_data.POST_STRESS_METEG_2CHRONICLES_8_11_TITLE
+_NEXT_CONJUNCTIVE_FNAME = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME
+_NEXT_CONJUNCTIVE_TITLE = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
@@ -477,7 +479,7 @@ updateNotFitRows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str, str, str]:
+) -> tuple[str, str, str, str, str, str, str, str, str]:
     """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
@@ -515,6 +517,11 @@ def gen_html_files(
             _CHRONICLES_8_11_TITLE,
             build_chronicles_8_11_body(survey),
         ),
+        _write_page(
+            top_dir / _NEXT_CONJUNCTIVE_FNAME,
+            _NEXT_CONJUNCTIVE_TITLE,
+            build_next_conjunctive_body(survey),
+        ),
     )
     _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
     return out_paths
@@ -543,7 +550,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all seven post-stress-meteg pages and return the main page's path."""
+    """Write all nine post-stress-meteg pages and return the main page's path."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -1841,12 +1848,12 @@ def _fit_type_cell(fit_type: str) -> object:
             "marked by a pashta stress helper."
         ),
         psm.FIT_TYPE_2_AF: (
-            "Fit-for-MAS type 2Af: the chanted word is closed by a guttural; the next"
-            " chanted word begins with ל (lamed) and does not begin with vocal shewa."
+            "Fit-for-MAS type 2Af: the word is closed by a guttural; the next word"
+            " begins with ל (lamed) and does not begin with vocal shewa."
         ),
         psm.FIT_TYPE_2_BF: (
-            "Fit-for-MAS type 2Bf: the chanted word is closed by a guttural; the next"
-            " chanted word begins with a guttural and does not begin with vocal shewa."
+            "Fit-for-MAS type 2Bf: the word is closed by a guttural; the next word"
+            " begins with a guttural and does not begin with vocal shewa."
         ),
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
     }
@@ -2476,7 +2483,7 @@ def _mam_post_silluq_aleppo_crop() -> object:
     """The Aleppo Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        ' alt="Aleppo Codex crop of the verse-final chanted word at 1 Kings 7:37; it has'
+        ' alt="Aleppo Codex crop of the verse-final word at 1 Kings 7:37; it has'
         ' a meteg after the silluq."'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo Codex, 1 Kings 7:37.</figcaption></figure>"
@@ -2487,7 +2494,7 @@ def _mam_post_silluq_leningrad_crop() -> object:
     """The Leningrad Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_LENINGRAD_CROP_URL}"'
-        ' alt="Leningrad Codex crop of the verse-final chanted word at 1 Kings 7:37; it'
+        ' alt="Leningrad Codex crop of the verse-final word at 1 Kings 7:37; it'
         ' lacks a meteg after the silluq."'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
         "<figcaption>Leningrad Codex, 1 Kings 7:37.</figcaption></figure>"
@@ -3092,13 +3099,13 @@ def _fit_type_2_no_ivs_footnote() -> list:
         mb_html.para(
             (
                 "For Fit for MAS, 2Af is subtype 2A with an added condition: the next"
-                " chanted word does not begin with vocal ",
+                " word does not begin with vocal ",
                 _ROM_SHEWA,
                 ". For Fit for MAS, 2Bf is subtype 2B with an added condition: the"
-                " next chanted word does not begin with vocal ",
+                " next word does not begin with vocal ",
                 _ROM_SHEWA,
                 ". The f stands for “fit for MAS.” Every type-2 MAS case already has a"
-                " next chanted word without vocal ",
+                " next word without vocal ",
                 _ROM_SHEWA,
                 ", so the condition does not distinguish the general type-2 subtypes 2A,"
                 " 2B, and 2C.",
@@ -3244,8 +3251,8 @@ def _fit_for_mas_facts(survey: dict) -> list:
     ]
 
 
-def _next_conjunctive_footnote(survey: dict) -> list:
-    """Footnote 4: the MAS records whose next chanted word has a conjunctive accent."""
+def build_next_conjunctive_body(survey: dict) -> list:
+    """The cases of MAS whose next word has a conjunctive accent."""
     records = _next_conjunctive_records(survey)
     total = len(survey["post_stress"])
     assert (
@@ -3269,15 +3276,41 @@ def _next_conjunctive_footnote(survey: dict) -> list:
         for record in records
     ]
     return [
-        mb_html.heading_level_3(
-            "φ4 — Next words with a conjunctive accent",
-            {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
+        mb_html.heading_level_1(_visible_title(_NEXT_CONJUNCTIVE_TITLE)),
+        _hebrew_spacing_option(),
+        mb_html.para(
+            (
+                "← Back to ",
+                mb_html.anchor_h(
+                    _visible_title(_TITLE),
+                    f"{_FNAME}#{_NEXT_CONJUNCTIVE_FOOTNOTE_ID}",
+                ),
+                ".",
+            )
         ),
         mb_html.para(
             f"Here are the {len(records):,} cases of MAS in which the next word has a"
             " conjunctive accent:"
         ),
         _table(("", "", mb_html.abbr("(sub)type", {"title": "type or subtype"})), rows),
+    ]
+
+
+def _next_conjunctive_footnote(survey: dict) -> list:
+    """Footnote 4: a pointer to MAS cases whose next word has a conjunctive accent."""
+    records = _next_conjunctive_records(survey)
+    return [
+        mb_html.heading_level_3(
+            "φ4 — Next words with a conjunctive accent",
+            {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                mb_html.anchor_h("This page", _NEXT_CONJUNCTIVE_FNAME),
+                f" lists the {len(records):,} cases of MAS in which the next word has a"
+                " conjunctive accent.",
+            )
+        ),
     ]
 
 

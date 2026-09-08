@@ -463,7 +463,7 @@
   }
  },
  "fit_for_mas": {
-  "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require that the next chanted word not begin with vocal shewa. Primary-stress position comes independently from Phonetic MAM's jta field.",
+  "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require that the next word not begin with vocal shewa. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
   "not_fit_records_what": "Every MAS word that is not fit for MAS. Each record has the MAS word, its next word, and whether it meets each of the three Fit-for-MAS criteria.",
   "candidate_chanted_words": 54019,

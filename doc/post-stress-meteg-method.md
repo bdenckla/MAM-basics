@@ -11,7 +11,7 @@ immediately after that stress. The table includes the pair only when the stress 
 conjunctive accent and the next word has initial stress and a disjunctive accent. The
 candidate syllable must be type 1A, 1B, 2Af, 2Bf, or 3. Types 2Af and 2Bf are the
 Fit-for-MAS versions of the general type-2 subtypes 2A and 2B; both additionally require that
-the next chanted word not begin with vocal shewa. Another meteg in the first word does not
+the next word not begin with vocal shewa. Another meteg in the first word does not
 disqualify the candidate.
 The types are Yeivin's §332 open-syllable type, §354 guttural type, and §338 closed-tsere type,
 with Breuer's corresponding Ch. 8 types (j), (b), and (a). Breuer's Ch. 14 §8 lists only the

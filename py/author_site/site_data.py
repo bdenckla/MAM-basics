@@ -87,8 +87,12 @@ POST_STRESS_METEG_POST_SILLUQ_FNAME = "post-stress-meteg-post-silluq.html"
 POST_STRESS_METEG_POST_SILLUQ_TITLE = "Meteg after silluq in 1 Samuel 17:5"
 POST_STRESS_METEG_2CHRONICLES_8_11_FNAME = "post-stress-meteg-2chr-8-11.html"
 POST_STRESS_METEG_2CHRONICLES_8_11_TITLE = "Meteg in 2 Chronicles 8:11"
+POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME = "post-stress-meteg-next-conjunctive.html"
+POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
+    "Meteg after the stress: next words with a conjunctive accent"
+)
 
-# The stylesheet all ten pages at the deploy root link, hand-written and tracked as
+# The stylesheet all eleven pages at the deploy root link, hand-written and tracked as
 # gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face
@@ -97,7 +101,7 @@ POST_STRESS_METEG_2CHRONICLES_8_11_TITLE = "Meteg in 2 Chronicles 8:11"
 # 2026-08-31, having noticed these two pages staying white on a dark display.
 CSS_HREF = "style.css"
 
-# The accgram stylesheet, linked BESIDE the one above by the four deploy-root pages that show
+# The accgram stylesheet, linked BESIDE the one above by the nine post-stress-meteg pages that show
 # pointed Hebrew and accent-name romanizations. It supplies the
 # lang="hbo" font at the size that makes accents legible, the italic for span.romanized, and
 # the numeric-cell alignment, none of which a page of links has any use for and none of which
