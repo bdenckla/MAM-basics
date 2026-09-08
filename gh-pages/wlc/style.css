@@ -63,6 +63,8 @@ table.post-stress-meteg-cases-table tr.post-stress-meteg-cases-striped-row td {
 /* The next word supplies the context for types 1 and 2.  It remains legible in both color
    schemes while looking secondary to the word whose meteg is surveyed. */
 span.post-stress-meteg-next-word { color: light-dark(#666, #aaa); }
+/* A failed Fit-for-MAS criterion must remain visibly distinct in either color scheme. */
+span.post-stress-meteg-not-fit-failure { color: light-dark(#b00000, #ff9b9b); }
 @font-face {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");

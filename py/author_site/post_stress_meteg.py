@@ -97,6 +97,8 @@ _MISC_FNAME = site_data.POST_STRESS_METEG_MISC_FNAME
 _MISC_TITLE = site_data.POST_STRESS_METEG_MISC_TITLE
 _LACKS_MAS_FNAME = site_data.POST_STRESS_METEG_LACKS_MAS_FNAME
 _LACKS_MAS_TITLE = site_data.POST_STRESS_METEG_LACKS_MAS_TITLE
+_NOT_FIT_FNAME = site_data.POST_STRESS_METEG_NOT_FIT_FNAME
+_NOT_FIT_TITLE = site_data.POST_STRESS_METEG_NOT_FIT_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
@@ -290,6 +292,7 @@ _NEXT_WORD_CLASS = "post-stress-meteg-next-word"
 _LACKS_MAS_TABLE_ID = "post-stress-meteg-lacks-mas-cases"
 _LACKS_MAS_SUBTYPE_FILTER_ID = "post-stress-meteg-lacks-mas-subtype-filter"
 _LACKS_MAS_SELECTED_COUNT_ID = "post-stress-meteg-lacks-mas-selected-count"
+_NOT_FIT_FAILURE_CLASS = "post-stress-meteg-not-fit-failure"
 _HEBREW_SPACING_CHECKBOX_ID = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_BODY_CLASS = "post-stress-meteg-expanded-hebrew"
 _HEBREW_SPACING_STORAGE_KEY = "post-stress-meteg-expanded-hebrew"
@@ -298,6 +301,12 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
 )
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
+_FIT_FOR_MAS_CRITERIA = (
+    "Its word has penultimate stress from a conjunctive accent.",
+    "The next word has initial stress from a disjunctive accent.",
+    "The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
+)
+_RED_X = "\N{CROSS MARK}"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
 __SPACING_TEXT__</label> __TOGGLE_TEXT__</p>
 <script>
@@ -410,8 +419,8 @@ updateLacksMasRows();
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str]:
-    """Write the main page, its Methods page, and the three case pages.
+) -> tuple[str, str, str, str, str, str]:
+    """Write the main page, its Methods page, and the four case pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
@@ -433,8 +442,13 @@ def gen_html_files(
             _LACKS_MAS_TITLE,
             build_lacks_mas_body(survey),
         ),
+        _write_page(
+            top_dir / _NOT_FIT_FNAME,
+            _NOT_FIT_TITLE,
+            build_not_fit_body(survey),
+        ),
     )
-    _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[-1])
+    _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
     return out_paths
 
 
@@ -461,7 +475,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all seven pages and return the main page's path for older callers."""
+    """Write all six post-stress-meteg pages and return the main page's path."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -568,6 +582,11 @@ def _lacks_mas_records(survey: dict) -> list[dict]:
     return [
         record for record in _fit_for_mas(survey)["records"] if not record["has_mas"]
     ]
+
+
+def _not_fit_for_mas_records(survey: dict) -> list[dict]:
+    """Every MAS word not fit for MAS, in corpus order."""
+    return _fit_for_mas(survey)["not_fit_records"]
 
 
 def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
@@ -796,6 +815,20 @@ def pin_claims(survey: dict) -> None:
     assert fit_for_mas["with_mas"] + sum(
         fit_for_mas["mas_not_in_the_table"].values()
     ) == len(post_stress)
+    not_fit_for_mas_records = _not_fit_for_mas_records(survey)
+    assert len(not_fit_for_mas_records) == len(post_stress) - fit_for_mas["with_mas"]
+    assert all(
+        record["chanted_word"]
+        and record["next_chanted_word"]
+        and record["mam_form"]
+        and record["next_mam_form"]
+        and not (
+            record["meets_first_fit_for_mas_criterion"]
+            and record["meets_second_fit_for_mas_criterion"]
+            and record["meets_third_fit_for_mas_criterion"]
+        )
+        for record in not_fit_for_mas_records
+    )
     fitting_records = fit_for_mas["records"]
     assert len(fitting_records) == fit_for_mas["fitting_any_type"]
     assert all(
@@ -1981,6 +2014,75 @@ def build_lacks_mas_body(survey: dict) -> list:
     ]
 
 
+def _not_fit_for_mas_criterion_cell(meets_criterion: bool) -> object:
+    """A blank cell for a met criterion or a red cross for a failed criterion."""
+    return (
+        ""
+        if meets_criterion
+        else mb_html.span(
+            _RED_X,
+            {
+                "class": _NOT_FIT_FAILURE_CLASS,
+                "title": "does not meet this Fit-for-MAS criterion",
+            },
+        )
+    )
+
+
+def _not_fit_for_mas_case_row(record: dict) -> object:
+    """One MAS word, with a result for each Fit-for-MAS criterion."""
+    return mb_html.table_row_of_data(
+        (
+            _ref_link(record["bcv"]),
+            _case_chanted_word_cell(record),
+            _not_fit_for_mas_criterion_cell(
+                record["meets_first_fit_for_mas_criterion"]
+            ),
+            _not_fit_for_mas_criterion_cell(
+                record["meets_second_fit_for_mas_criterion"]
+            ),
+            _not_fit_for_mas_criterion_cell(
+                record["meets_third_fit_for_mas_criterion"]
+            ),
+        ),
+        (
+            None,
+            _HEBREW_CELL,
+            {"class": "centered"},
+            {"class": "centered"},
+            {"class": "centered"},
+        ),
+    )
+
+
+def build_not_fit_body(survey: dict) -> list:
+    """Every MAS word that is not fit for MAS, with each failed criterion marked."""
+    records = _not_fit_for_mas_records(survey)
+    criterion_headers = tuple(
+        mb_html.abbr(str(number), {"title": criterion})
+        for number, criterion in enumerate(_FIT_FOR_MAS_CRITERIA, start=1)
+    )
+    return [
+        mb_html.heading_level_1(_visible_title(_NOT_FIT_TITLE)),
+        _hebrew_spacing_option(),
+        _back_to_fit_for_mas_table(),
+        mb_html.heading_level_2("Every MAS case not fit for MAS"),
+        _para(
+            f"The table lists all {len(records):,} MAS words that are not fit for MAS."
+        ),
+        _para(
+            "Columns 1–3 correspond to the three Fit-for-MAS criteria. A red"
+            f" {_RED_X} marks each criterion that a word does not meet; blank cells mark"
+            " criteria that the word meets."
+        ),
+        _table(
+            ("Verse", "Word", *criterion_headers),
+            [_not_fit_for_mas_case_row(record) for record in records],
+            {"class": "accent-pair-table post-stress-meteg-table"},
+        ),
+    ]
+
+
 def build_misc_body(survey: dict) -> list:
     """The misc cases and the named subsets that remain outside types 1–3."""
     records = _misc_records(survey)
@@ -2633,10 +2735,9 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
 def _fit_for_mas_facts(survey: dict) -> list:
     """Every syllable fit for MAS, including the ones lacking MAS."""
     fit_for_mas = _fit_for_mas(survey)
-    mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
     total_mas = len(survey["post_stress"])
     not_fit_for_mas_count = total_mas - fit_for_mas["with_mas"]
-    assert not_fit_for_mas_count == sum(mas_not_in_the_table.values())
+    assert not_fit_for_mas_count == len(_not_fit_for_mas_records(survey))
     type_3_counts = fit_for_mas["by_fit_type"][psm.FIT_TYPE_3]
     type_3_yield = type_3_counts["with_mas"] / type_3_counts["candidates"]
 
@@ -2671,50 +2772,6 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (None, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL, _NUMERIC_CELL),
         )
     )
-    surprising_mas_rows = (
-        mb_html.table_row_of_data(
-            (
-                "1. Its word does not have penultimate stress from a conjunctive accent.",
-                f"{mas_not_in_the_table['stress_not_penultimate']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "2. The next word has a conjunctive accent, not a disjunctive accent.",
-                f"{mas_not_in_the_table['next_word_not_disjunctive']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "2. The next word's stress is not initial.",
-                f"{mas_not_in_the_table['next_word_not_initially_stressed']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "3. A MAS in the syllable would be type 1C, not (sub)type 1A or 1B.",
-                f"{mas_not_in_the_table['type_1_subtype_C']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "3. A MAS in the syllable would be type 2C, not (sub)type 2A or 2B.",
-                f"{mas_not_in_the_table['type_2_subtype_C']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-        mb_html.table_row_of_data(
-            (
-                "3. A MAS in the syllable would be none of (sub)types 1A, 1B, 2A, 2B, or 3.",
-                f"{mas_not_in_the_table['outside_the_three_types']:,}",
-            ),
-            (None, _NUMERIC_CELL),
-        ),
-    )
     return [
         mb_html.heading_level_2("Fit for MAS", {"id": _FIT_FOR_MAS_SECTION_ID}),
         mb_html.para(
@@ -2735,13 +2792,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 ". We deem a syllable fit for MAS when:",
             )
         ),
-        mb_html.unordered_list(
-            (
-                "Its word has penultimate stress from a conjunctive accent.",
-                "The next word has initial stress from a disjunctive accent.",
-                "The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
-            )
-        ),
+        mb_html.unordered_list(_FIT_FOR_MAS_CRITERIA),
         mb_html.para(
             "The table below records how often MAS does and does not appear in syllables fit for it."
         ),
@@ -2762,18 +2813,16 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 f"{fit_for_mas['with_mas']:,}",
                 f", rather than the total of {total_mas:,} MAS cases, because "
                 f"{not_fit_for_mas_count:,} syllables, though they do have MAS, are deemed"
-                " not fit for MAS by our criteria. Read the table in the order of the three"
-                " criteria above. Each row identifies the first criterion that a MAS syllable"
-                " does not meet, so the table narrows the MAS syllables successively: the"
-                " criterion-2 rows include only syllables that meet criterion 1, and the"
-                " criterion-3 rows include only syllables that meet criteria 1 and 2. Every"
-                " MAS syllable's stress has a conjunctive accent, so the four criterion-1"
-                " failures have nonpenultimate stress.",
+                " not fit for MAS by our criteria.",
             )
         ),
-        _table(
-            ("First Fit-for-MAS criterion not met", "MAS cases"),
-            surprising_mas_rows,
+        mb_html.para(
+            (
+                "This ",
+                mb_html.anchor_h("page", _NOT_FIT_FNAME),
+                f" lists all {not_fit_for_mas_count:,} of those words and why they are"
+                " deemed not fit for MAS.",
+            )
         ),
     ]
 

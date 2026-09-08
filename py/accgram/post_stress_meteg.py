@@ -1409,6 +1409,31 @@ def _fit_for_mas_record(candidate: dict) -> dict:
     }
 
 
+def _not_fit_for_mas_record(candidate: dict) -> dict:
+    """The complete public-data record for one MAS word not fit for MAS."""
+    assert candidate["has_mas"] and not _is_fit_for_mas(candidate), candidate
+    assert candidate["mam_form"] is not None, candidate
+    assert candidate["next_mam_form"] is not None, candidate
+    return {
+        "bcv": candidate["bcv"],
+        "system": candidate["system"],
+        "chanted_word": candidate["chanted_word"],
+        "jta": candidate["jta"],
+        "next_chanted_word": candidate["next_chanted_word"],
+        "intervening_punctuation": candidate["intervening_punctuation"],
+        "mam_form": candidate["mam_form"],
+        "next_mam_form": candidate["next_mam_form"],
+        "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
+        "meets_first_fit_for_mas_criterion": _has_first_fit_for_mas_criterion(
+            candidate
+        ),
+        "meets_second_fit_for_mas_criterion": _has_second_fit_for_mas_criterion(
+            candidate
+        ),
+        "meets_third_fit_for_mas_criterion": _fit_type(candidate) is not None,
+    }
+
+
 def _record_key(record: dict) -> tuple[str, str, str]:
     """The source identity shared by a chanted word's meteg records and candidate."""
     return record["bcv"], record["chanted_word"], record["jta"]
@@ -1717,6 +1742,12 @@ def _fit_for_mas_summary(
         }
     ) == len(excluded_mas), excluded_mas
     assert with_mas + len(excluded_mas) == mas_count, (with_mas, excluded_mas)
+    mas_not_fit_for_mas = [
+        candidate for candidate in mas_candidates if not _is_fit_for_mas(candidate)
+    ]
+    assert len(mas_not_fit_for_mas) == len(excluded_mas)
+    unjoined = _attach_mam_forms(mas_not_fit_for_mas, words_by_bcv, context_by_bcv)
+    assert not unjoined, unjoined
     return {
         "what": (
             "Every syllable immediately after a penultimate primary stress with exactly one"
@@ -1733,6 +1764,11 @@ def _fit_for_mas_summary(
             " post-stress syllable is classified, the next chanted word, the applicable"
             " structural types and Fit-for-MAS class, and whether the first chanted word has"
             " MAS."
+        ),
+        "not_fit_records_what": (
+            "Every MAS word that is not fit for MAS. Each record has the MAS word,"
+            " its next word, and whether it meets each of the three Fit-for-MAS"
+            " criteria."
         ),
         "candidate_chanted_words": len(candidates),
         "non_type_specific_conditions": len(non_type_specific_conditions),
@@ -1760,6 +1796,9 @@ def _fit_for_mas_summary(
             )
         ),
         "records": [_fit_for_mas_record(candidate) for candidate in fitting],
+        "not_fit_records": [
+            _not_fit_for_mas_record(candidate) for candidate in mas_not_fit_for_mas
+        ],
     }
 
 
