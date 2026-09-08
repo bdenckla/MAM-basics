@@ -131,6 +131,10 @@ The phase began with MAM-basics at `25edd2f31e7f344182f754123ca8a8d0e0061967` an
 
 1. Blob identity: all 389 selected source blobs landed as staged MAM-basics blobs with no difference. The 24 temporary `MAM-XML/` blobs became the MAM-native MAM-simple XML files, and the temporary root tree was removed.
 2. Regeneration: the MAM-simple corpus and three documents regenerated into MAM-basics. The 216 core corpus artifacts, 105 example outputs, 24 MAM-OSIS example artifacts, 39 MAM-for-Sefaria CSV artifacts, 39 MAM-for-Sefaria Unicode-name artifacts, and 43 vendored source files all compared byte-identically with their respective oracles.
+
+   **Correction, 2026-09-08:** the landed Phase 1 product has 44 vendored source files, not 43.
+   `MAM-simple/py-examples/mb_cmn/paths.py` was added by the Phase 1 landing commit
+   `cf7c7a35` but omitted from the count above.
 3. Mtime evidence: regeneration changed 407 expected MAM-basics paths and no MAM-simple source path.
 4. Published URLs: MAM-basics Pages deployment `34037896289` and MAM-simple Pages deployment `34038057050` both succeeded. The deployed legacy `index.html` and `versification-and-cantillation.html` stubs contain the expected immediate redirects to the MAM-basics MAM-simple Pages targets.
 

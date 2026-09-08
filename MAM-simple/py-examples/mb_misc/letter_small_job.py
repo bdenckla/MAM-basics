@@ -3,13 +3,21 @@
 
 import xml.etree.ElementTree as ET
 
+from mb_cmn import file_io
 
-def almost_main(xml_path):
+_OUTPUT_PATH = "py-examples-out/letter-small-job.txt"
+
+
+def _write_rows(rows, out_fp):
+    out_fp.writelines(rows)
+
+
+def almost_main(xml_path, output_path=_OUTPUT_PATH):
     """Find <letter-small> elements in the given XML book."""
-    with open(
-        "py-examples-out/letter-small-job.txt", "w", encoding="utf-8", newline=""
-    ) as out_fp:
-        for root_child in ET.parse(xml_path).getroot():
-            for verse in root_child.iter("verse"):
-                for el in verse.iter("letter-small"):
-                    out_fp.write(f"{verse.attrib['osisID']}\t{el.attrib['text']}\n")
+    tree = ET.parse(xml_path)
+    rows = []
+    for root_child in tree.getroot():
+        for verse in root_child.iter("verse"):
+            for el in verse.iter("letter-small"):
+                rows.append(f"{verse.attrib['osisID']}\t{el.attrib['text']}\n")
+    file_io.with_tmp_openw(output_path, {}, _write_rows, rows)

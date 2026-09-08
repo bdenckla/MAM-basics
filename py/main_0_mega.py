@@ -11,6 +11,7 @@ Several other generators still write to sibling repositories through
 
 import argparse
 from dataclasses import dataclass
+import os
 import subprocess
 import sys
 from typing import Callable
@@ -96,9 +97,12 @@ def _run_vendored_mam_osis():
 
 
 def _run_near_aleppo_census():
+    env = os.environ.copy()
+    env["REPO_MAM_PARSED_DIR"] = str(paths.mam_parsed_dir())
     subprocess.run(
         [sys.executable, "near-aleppo/census/run_all.py", "--write"],
         cwd=_REPOS / "MAM-private",
+        env=env,
         check=True,
     )
 
