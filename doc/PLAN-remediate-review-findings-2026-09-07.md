@@ -242,6 +242,36 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_letter_small
 Expected not to change in Wave 1: Cambridge source data and crops, unrelated MAM-simple products,
 post-stress survey data, and any repository outside MAM-basics.
 
+### Wave 1 result — completed 2026-09-08
+
+- Changed `py/py_ac_loc/mam_xml_verses.py` to handle every live `sdt-target` shape and to
+  concatenate the suspended-letter and text children in document order. The current-tree rerun of
+  the frozen `A_08_readonly_oracles.py` probe found 32 targets in five shapes across all 24 XML
+  files; Deuteronomy 32:6 is the sole `slh-word` plus `text` shape, and the repaired reader retains
+  both atoms.
+- Corrected `aleppo/line-breaks/004r.json`, `005v.json`, and `006r.json` from the three reviewed
+  crops. The real Aleppo line-break command changed the report from 92 to 91 issues solely by
+  removing the chanted word after 005v's last line marker; the total chanted-word count increased
+  by one because Deuteronomy 32:6 is complete. The real Cambridge command remained at zero issues,
+  and its tracked report remained byte-identical.
+- Changed `no_marks_comparison_key` to ignore only meteg and rafe. Vowels, dagesh, shin and sin
+  dots, accents, format characters, letters, and punctuation now remain visible to both complete
+  line-break checks.
+- Corrected `py/main_letter_small_job.py` to read
+  `MAM-simple/xml-vtrad-mam/Job.xml`. `py/mb_misc/letter_small_job.py` now parses and computes the
+  report before using `mb_cmn.file_io.with_tmp_openw` to replace the tracked output. Two real
+  entry-point runs produced SHA-256
+  `a0ac8005c65dfe395d01b8d165e0410562b5e8f98a43669acc1287e3138dc071`; an adverse missing-input
+  probe raised `FileNotFoundError` and preserved the output byte-for-byte.
+- Verification: black and ruff passed on the four changed Python files; `git diff --check` passed;
+  the canonical suite reported 976 passed, 5 skipped, and 65 subtests passed. The ignored evidence
+  is under `.novc/remediation-review-2026-09-07-wave1/`.
+- Commit and push: `c76239a5` (`Repair review Wave 1 line-data integrity`) is on `main` and was
+  pushed to `origin/main`. No file outside MAM-basics changed. The 91 remaining Aleppo structural
+  issues predate this wave and remain outside its scope.
+- Next wave: inspect task `01a08138-c643-7082-a7ee-b60c4c6a4a06`, both MAM-basics checkouts, and
+  the post-stress branch heads immediately before beginning Wave 2.
+
 ## Wave 2 — post-stress-meteg model, claims, records, and prose
 
 Goal: make one current model support the survey JSON, every generated page, and every live factual
