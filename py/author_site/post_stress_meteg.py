@@ -290,6 +290,20 @@ _TYPE_2_SUBTYPE_SPECS = (
 _TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP = {
     group: code for group, code, _description in _TYPE_2_SUBTYPE_SPECS
 }
+# Each subtype tooltip restates its visible bullet, as the type tooltips do.  The type-2
+# descriptions are taken from the spec tuple the subtype table itself renders, so those two
+# cannot drift apart; the type-1 bullets carry a romanized span, which a title attribute
+# cannot hold, so their plain-text spellings are written out here.
+_TYPE_1_SUBTYPE_DESCRIPTIONS = {
+    "1A": "1A: The next word has initial stress and an initial vocal shewa.",
+    "1B": "1B: The next word has a pashta stress helper on its first letter.",
+    "1C": "1C: Like 1B, but with some accent other than pashta.",
+    "1D": "1D: The next word does not have initial stress.",
+}
+_SUBTYPE_DESCRIPTIONS = {
+    **_TYPE_1_SUBTYPE_DESCRIPTIONS,
+    **{code: description for _group, code, description in _TYPE_2_SUBTYPE_SPECS},
+}
 _CASE_FILTER_OPTIONS = (
     ("all", "All types"),
     ("1", "Type 1 (all subtypes)"),
@@ -1436,6 +1450,14 @@ def _census_definitions(survey: dict) -> list:
     assert {(record["bcv"], record["mam_form"]) for record in records} == set(
         fit_record_by_bcv_and_mam_form
     )
+    # The (sub)type column shows the structural taxonomy, so the label comes off the
+    # post-stress record rather than off the fit-for-MAS one beside it.
+    post_stress_by_bcv_and_mam_form = {
+        (one["bcv"], one["mam_form"]): one for one in survey["post_stress"]
+    }
+    assert {(record["bcv"], record["mam_form"]) for record in records} <= set(
+        post_stress_by_bcv_and_mam_form
+    )
     return [
         mb_html.heading_level_2("Census definitions"),
         mb_html.para(
@@ -1477,10 +1499,10 @@ def _census_definitions(survey: dict) -> list:
                                 (record["bcv"], record["mam_form"])
                             ]
                         ),
-                        _fit_type_cell(
-                            fit_record_by_bcv_and_mam_form[
+                        _structural_subtype_cell(
+                            post_stress_by_bcv_and_mam_form[
                                 (record["bcv"], record["mam_form"])
-                            ]["fit_type"]
+                            ]
                         ),
                     ),
                     (None, _HEBREW_CELL, None),
@@ -1877,6 +1899,21 @@ def _fit_type_cell(fit_type: str) -> object:
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-voweled.",
     }
     return mb_html.abbr(fit_type, {"title": titles[fit_type]})
+
+
+def _structural_subtype_cell(record: dict) -> object:
+    """One structural (sub)type label, the taxonomy the cases page's Subtype column uses.
+
+    Ben's decision of 2026-09-08, on the Methods page's table of MAS words that also have a
+    meteg before the stress: the fit-for-MAS codes 2Af and 2Bf are reserved for a fit-for-MAS
+    context, and that table sits under Census definitions, which never mentions fitness.  Only
+    1 Samuel 22:17 shows the difference -- the rest of that table is 1A and 3, which read the
+    same in either taxonomy.
+    """
+    subtype = _case_filter_subtype(record)
+    if subtype is None:
+        return _case_type_cell(record["structural_type"], misc_label=True)
+    return mb_html.abbr(subtype, {"title": _SUBTYPE_DESCRIPTIONS[subtype]})
 
 
 def _case_subtype_cell(subtype: str | None) -> object:
