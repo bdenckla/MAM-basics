@@ -27,6 +27,17 @@ generation time. The Fit-for-MAS lack page uses each record's ``mam_form`` and
 ``next_mam_form``; analysis-only annotations are omitted before HTML is written. None is
 typed here.
 
+THESE PAGES SAY PLAIN "word", AND THAT IS A DECISION RATHER THAN AN OVERSIGHT.  The
+``hebrew-prose`` skill's first rule is "Never a loose 'word'"; Ben exempted this document and
+its sub-documents on 2026-09-08, and the skill allows for it -- plain "word" survives "wherever
+the context already settles which sense is meant", and ``_opening``'s second paragraph defines
+both "word" and "atom" before any other sentence uses either.  **Do not qualify "word" as
+"chanted word" in anything these pages render**, prose, heading, tooltip and alt text alike;
+``py/tests/test_post_stress_meteg_plain_word.py`` fails if you do, and its docstring records why
+a lint rather than a comment or a helper function is what defends this.  The survey's own
+vocabulary is untouched by that rule: ``census_chanted_word_summary``,
+``chanted_word_difference`` and ``_case_chanted_word_cell`` keep their names.
+
 THE PAGE QUOTES NEITHER YEIVIN NOR BREUER.  The plan permits bounded excerpts and does not
 require them; the sections are cited by number and their content paraphrased, so no private
 source text reaches a public page.  ``_EXCERPTS`` is empty and ``_excerpt_accounting`` asserts

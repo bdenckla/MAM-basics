@@ -46,6 +46,27 @@ which corpus a claim takes, the banned verbs and framings, where Yeivin and Breu
 verify a page's numbers. It loads on demand rather than every session, so it can hold the full
 statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
 
+## The post-stress-meteg pages say plain "word" — do not qualify it as "chanted"
+
+The skill's first rule is "Never a loose 'word'". **Ben's decision of 2026-09-08 is that
+`gh-pages/post-stress-meteg*.html` and its eight sub-documents are an exception**, and the skill
+itself allows for one: plain "word" survives "wherever the context already settles which sense is
+meant", and these pages settle it in the main page's second paragraph, which defines both "word"
+and "atom" before any other sentence uses either. So plain "word" is the declared term there, in
+visible prose, headings, tooltips and alt text alike.
+
+**This is enforced, not merely advised**, by `py/tests/test_post_stress_meteg_plain_word.py` —
+"chanted" must not appear in any of the nine rendered pages. The lint exists because a comment or
+a helper function would not have prevented what happened: between 2026-09-07 and 2026-09-08 two
+branches fixed the same alt-text defect in opposite directions, one making the alt text say "word"
+and the other making the visible prose say "chanted word" 440 times, and the merge then conflicted
+in 13 files and 32 hunks of `py/author_site/post_stress_meteg.py` alone. Neither side was
+careless; the exception was recorded nowhere a terminology sweep could see it.
+
+**The source is deliberately outside the lint's scope.** `census_chanted_word_summary`,
+`chanted_word_difference` and `_case_chanted_word_cell` are the survey's vocabulary, and the
+skill's rule governs reader-facing prose rather than identifiers and docstrings.
+
 ## The MAM introduction is mirrored at `in/mam-ws-intro/` — read it, do not fetch it
 
 Hebrew Wikisource's introduction to MAM is consulted constantly here, and since 2026-08-31 all
