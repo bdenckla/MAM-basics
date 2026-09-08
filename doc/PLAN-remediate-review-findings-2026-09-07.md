@@ -465,20 +465,21 @@ Goal: make the current repository layout mechanically check the source and gener
 claims to check. This wave covers finding 8, finding 16, and finding 17.3 plus any remaining
 lint-shaped part of finding 17.
 
-- [ ] Re-derive the intended NFC scope from authored source and prose. Do not run duplicate landed
+- [x] Re-derive the intended NFC scope from authored source and prose. Do not run duplicate landed
       test files that accidentally scan the whole MAM-basics tree; move enduring lint coverage into
       the canonical suite and delete or demote misleading duplicate tests.
-- [ ] Make the mark-order lint cover the generator text and generated MAM-simple page named by its
+- [x] Make the mark-order lint cover the generator text and generated MAM-simple page named by its
       docstring.
-- [ ] Give the HTML checker an explicit deploy-root mode for the nine root pages while keeping
+- [x] Give the HTML checker an explicit deploy-root mode for the ten root pages (the review's count
+      of nine was stale) while keeping
       subtree stylesheet resolution local to each site. Do not make undefined classes fatal until
       the ownership model can distinguish shared/external CSS from a defect.
-- [ ] Extend the machine-path lint to program-written Aleppo, Cambridge 1753, MAM-simple, MAM-parsed,
+- [x] Extend the machine-path lint to program-written Aleppo, Cambridge 1753, MAM-simple, MAM-parsed,
       and MAM-for-Sefaria paths, excluding documented machine-neutral commands rather than whole
       product trees.
-- [ ] Convert the 50 inherited wrong-order runs in the two Aleppo pages to MAM mark order and add the
+- [x] Convert the 50 inherited wrong-order runs in the two Aleppo pages to MAM mark order and add the
       owned Aleppo page family to a mechanical check.
-- [ ] Compute legacy-history output paths only after the revisions have been resolved to their
+- [x] Compute legacy-history output paths only after the revisions have been resolved to their
       prefixed legacy identities. An adverse probe must prove that a legacy comparison cannot
       overwrite a tracked named-release report.
 
@@ -487,6 +488,46 @@ These are mechanical lint or adverse differential checks, the two test shapes al
 
 Expected not to change in Wave 4: the semantic content of generated Hebrew, release-report content,
 the source-repository manifests, and any private path.
+
+### Wave 4 execution result — 2026-09-08
+
+- The canonical NFC lint now has ten non-overlapping authored-source and prose scopes. The final
+  inventory measured 1,491 MAM-basics files, 3 UXLC files, 44 holman-ketiv-qere files, 3
+  book-of-job files, 21 Aleppo files, 13 Cambridge 1753 files, 12 MAM-simple files, 4 MAM-with-doc
+  files, 4 MAM-for-Sefaria files, and 7 MAM-parsed files. Four misleading landed-product copies of
+  the NFC test were deleted. MAM-simple's now-empty test runner and package marker were deleted with
+  its test copy; the canonical suite is the sole entry point for the retained coverage.
+- The MAM-simple mark-order scope now comprises 241 tracked text files. Its required-file assertion
+  covers both `py/versification_and_cantillation/doc.py` and
+  `gh-pages/MAM-simple/versification-and-cantillation.html`.
+- The HTML checker now has an explicit `--deploy-root` mode. The review's figure of nine root pages
+  was stale: the current deploy root has 10 HTML files. Deploy-root mode checks those 10 files and
+  root-local CSS without treating any sub-site as part of the root document tree. The mode passed;
+  906 undefined CSS class references were reported informationally rather than made fatal.
+- The machine-path lint now scans 1,435 tracked text files. The added program-written groups measure
+  83 Aleppo files, 71 Cambridge 1753 files, 122 MAM-simple files, 6 MAM-parsed files, and 82
+  MAM-for-Sefaria files. The large verse-text JSON, XML, and CSV families remain outside the scan.
+  The copied `MAM-simple/py-examples/mb_cmn/paths.py` retains two exact historical path examples;
+  those two excerpts are excluded rather than excluding that file or a product tree.
+- The Aleppo page scope comprises all 3 owned HTML files and all 481 Hebrew runs. MAM mark order was
+  applied to 48 runs in `missing_sections_nakh.html` and 2 runs in `missing_sections_torah.html`.
+  Each current page is byte-for-byte equal to `give_std_mark_order` applied to the page at the
+  parent commit; there is zero other content change.
+- `diff_mpp.run_from_args` now prefixes legacy revision identities before it computes the default
+  output path. The adverse test exercises all 5 named releases and proves that no prefixed legacy
+  range selects the corresponding tracked named-release path. The tracked change-log directory did
+  not change.
+- Black left all 8 changed Python files formatted, Ruff passed all 8 files, `git diff --check`
+  passed, all 7 repository checks passed, and the canonical suite reported 981 passed and 5 skipped
+  in 131.51 seconds. The current suite output had no subtest line, so this record does not infer one.
+  The exact inventories and order-only verifier are under
+  `.novc/remediation-review-2026-09-07-wave4/`.
+- Expected unchanged surfaces remained unchanged: no release report, source-repository manifest, or
+  private path changed. MAM-private remained clean at the authorized Wave 3 golden commit.
+- Commit and push: `a42216ee` (`Repair review Wave 4 lint safeguards`) is on `main` and was pushed to
+  `origin/main`.
+- Next wave: resolve Wave 5's five decision gates before applying the public-record, licence,
+  reachability, and remaining prose changes governed by those decisions.
 
 ## Wave 5 — decisions, public records, licences, reachability, and remaining prose
 
