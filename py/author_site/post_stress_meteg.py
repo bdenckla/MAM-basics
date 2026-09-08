@@ -1945,7 +1945,7 @@ def build_lacks_mas_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("Every case fit for MAS that lacks MAS"),
         _para(
-            f"The table lists all {len(records):,} chanted-word pairs fit for MAS that lack"
+            f"The table lists all {len(records):,} word pairs fit for MAS that lack"
             " MAS."
         ),
         _lacks_mas_subtype_filter(len(records)),
@@ -2720,7 +2720,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 "Its word has penultimate stress from a conjunctive accent.",
-                "The next chanted word has initial stress from a disjunctive accent.",
+                "The next word has initial stress from a disjunctive accent.",
                 "If a MAS were present, it would be of (sub)type 1A, 1B, 2A, 2B, or 3.",
             )
         ),
