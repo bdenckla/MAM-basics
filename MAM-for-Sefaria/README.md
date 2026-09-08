@@ -10,7 +10,7 @@ The source of this data is the
 Other versions/formats of MAM (each with their tradeoffs) include:
 
 * [MAM-simple](../MAM-simple/)
-* [MAM-parsed](https://github.com/bdenckla/MAM-parsed)
+* [MAM-parsed](../MAM-parsed/README.md)
 
 MAM-basics publishes the [documentation of the MAM-for-Sefaria encoding](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/).
 

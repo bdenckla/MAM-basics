@@ -1,6 +1,6 @@
 # MAM-simple
 This product contains a version of MAM that is simple but not complete.
-(See [MAM-parsed](https://github.com/bdenckla/MAM-parsed) for complete versions).
+(See [MAM-parsed](../MAM-parsed/README.md) for complete versions).
 This product's simple version of MAM is available in both XML and JSON formats.
 Each of these two formats is, in turn, available in three versifications.
 This yields a total of six flavors of MAM-simple:
@@ -64,7 +64,7 @@ writing output to `py-examples-out/letter-small-job.txt`.
 As I said above, MAM-simple is not complete.
 It is an extract of MAM, not a full version of MAM.
 For versions of MAM that are complete (but therefore far from simple),
-see [MAM-parsed](https://github.com/bdenckla/MAM-parsed).
+see [MAM-parsed](../MAM-parsed/README.md).
 
 MAM-simple is available under CC BY-SA 4.0.
 See [LICENSE.md](LICENSE.md) for the licence text and for the attribution it asks for,

@@ -2,6 +2,19 @@
 
 State: executed 2026-09-04
 
+**CORRECTION, 2026-09-08: THE PROGRAMME REMAINS COMPLETE, BUT ITS 2026-09-04 SURVEY
+FIGURES ARE HISTORICAL.** The current tracked survey counts 232 MAS chanted words: 178 in
+prose verses and 54 in poetic verses. After each qamats-variant MAM chanted word is counted
+once, the prose and poetic denominators are 233,277 and 29,542; the MBS_O chanted-word counts
+are 12,828 and 1,786; and the silluq counts are 18,738 and 4,465. The positional census
+separately counts 12,962 and 1,805 individual pre-stress marks. The qamats census has 370 variant rows
+and 372 duplicate phonetic-reading entries. The current currency comparison finds nine
+differing numbered verses, 38,161 U+05BD in the Phonetic MAM snapshot against 38,170 in
+MAM-simple. The discussion below of 231 MAS, 221 differing verses, 38,379 against 38,170,
+and an oracle that had not been refreshed remains the dated execution record from 2026-09-04;
+none of those figures is current. Ben's 2026-09-04 decision not to refresh the oracle remains
+historical fact; the oracle was refreshed later for another reason.
+
 Written 2026-09-03, consolidating into git a plan that until then existed only
 in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this

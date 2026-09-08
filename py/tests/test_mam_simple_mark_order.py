@@ -13,9 +13,10 @@ places were found in the wrong order:
     XML, and the Ruth.1.1 and Ruth.1.2 examples in the JSON guide. The format
     documentation illustrated the data with bytes the data does not contain, so a
     reader building a fixture by copying an example got a string that never matches.
-  * ``gh-pages/versification-and-cantillation.html`` -- generated, from hand-authored
-    Hebrew in this repo's ``versification_and_cantillation/doc.py``. That generator
-    does not go through ``render_wtseq``, so ``uni_check.check`` never sees it.
+  * ``gh-pages/MAM-simple/versification-and-cantillation.html`` -- generated, from
+    hand-authored Hebrew in this repo's
+    ``py/versification_and_cantillation/doc.py``. That generator does not go through
+    ``render_wtseq``, so ``uni_check.check`` never sees it.
 
 Both were found by a scan someone chose to run, which is exactly the state
 ``MAM-basics/CLAUDE.md`` describes: "There is no lint over hand-authored source here
@@ -23,11 +24,12 @@ Both were found by a scan someone chose to run, which is exactly the state
 
 WHAT IT COVERS, AND WHY NOT THE CORPUS
 
-Every tracked text file under MAM-simple/ except ``xml-vtrad-*`` and ``json-vtrad-*``. Those
-two are excluded on cost, not on trust: the corpus is 84 MB and takes 13 seconds to
-check, against 0.01 seconds for everything else, and it is the one part already
-guaranteed at generation time by the assert named above. Including it would grow this
-repo's suite by a tenth for a second opinion on the only thing already proven.
+Every tracked text file under MAM-simple/ except ``xml-vtrad-*`` and ``json-vtrad-*``,
+plus the generator text and generated page named above. The two corpus families are
+excluded on cost, not on trust: the corpus is 84 MB and takes 13 seconds to check,
+against 0.01 seconds for everything else, and it is the one part already guaranteed at
+generation time by the assert named above. Including it would grow this repo's suite by
+a tenth for a second opinion on the only thing already proven.
 
 ``misc/`` and ``py-examples-out/`` ARE covered, though both are generated: they are
 produced by the vendored copies under ``py-examples/``, which drift from this repo's
@@ -46,7 +48,6 @@ A MISSING LANDED PRODUCT FAILS RATHER THAN SKIPS.
 
 import subprocess
 import unittest
-from pathlib import Path
 
 from mb_cmn import paths
 from mb_cmn import uni_denorm
@@ -62,14 +63,17 @@ _BINARY_EXTENSIONS = {".woff2", ".png", ".jpg", ".jpeg", ".gif", ".ico", ".pdf"}
 # filter that swallowed everything -- not to assert a tree size.
 _FLOOR = 20
 
+_REQUIRED_OUTSIDE_PRODUCT = frozenset(
+    {
+        "py/versification_and_cantillation/doc.py",
+        "gh-pages/MAM-simple/versification-and-cantillation.html",
+    }
+)
 
-def _mam_simple_root() -> Path:
-    return paths.repo_root() / "MAM-simple"
 
-
-def _tracked_text_files(root: Path) -> list[str]:
+def _tracked_text_files() -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "--", "MAM-simple"],
+        ["git", "ls-files", "--", "MAM-simple", *_REQUIRED_OUTSIDE_PRODUCT],
         cwd=paths.repo_root(),
         capture_output=True,
         encoding="utf-8",
@@ -77,12 +81,15 @@ def _tracked_text_files(root: Path) -> list[str]:
     )
     in_scope = []
     for line in result.stdout.splitlines():
-        rel = line.strip().replace("\\", "/").removeprefix("MAM-simple/")
+        rel = line.strip().replace("\\", "/")
         if not rel:
             continue
-        if rel.startswith(_EXCLUDE_DIR_PREFIXES):
+        product_rel = rel.removeprefix("MAM-simple/")
+        if rel.startswith("MAM-simple/") and product_rel.startswith(
+            _EXCLUDE_DIR_PREFIXES
+        ):
             continue
-        full = root / rel
+        full = paths.repo_root() / rel
         if not full.is_file():
             continue
         if full.suffix.lower() in _BINARY_EXTENSIONS:
@@ -96,13 +103,17 @@ class TestMamSimpleMarkOrder(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.root = _mam_simple_root()
-        cls.in_scope = _tracked_text_files(cls.root)
+        cls.root = paths.repo_root()
+        cls.in_scope = _tracked_text_files()
         found = len(cls.in_scope)
         assert found > _FLOOR, (
             f"Only {found} MAM-simple files in scope (floor {_FLOOR}) -- "
             "the exclusion filter may be too broad."
         )
+        missing = _REQUIRED_OUTSIDE_PRODUCT.difference(cls.in_scope)
+        assert (
+            not missing
+        ), f"Required mark-order files are not in scope: {sorted(missing)}"
 
     def test_every_file_is_in_mam_mark_order(self):
         offenders = []

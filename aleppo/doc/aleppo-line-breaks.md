@@ -5,50 +5,48 @@ Determining where manuscript line breaks fall in the Aleppo Codex pages
 that contain the Book of Job. (In manuscript studies this is sometimes
 called "line-by-line alignment" of a text to a manuscript image.)
 
-## Where the code is
+## Where the code and data are
 
-**The five programs this workflow runs left this repo on 2026-08-22** and are now
-under `../MAM-basics/py/`, per Phase 4 of that repo's
-`doc/PLAN-evacuate-python-from-codex-index-trio.md`. The data they read and write
-stayed here. Every command below is spelled with MAM-basics' interpreter and an
-absolute path, because none of them can be run from this repo any more.
+The five programs and the Aleppo data now share the MAM-basics repository. The programs are
+under `py/py_ac_loc/`, their `main_ac_*` entry points are at the top of `py/`, and the data is
+under `aleppo/`. Run every command below from the MAM-basics root.
 
 ## Folder layout
 
-**The data is at this repo's root, not under a `py/`.** This section put
+**The data is under `aleppo/`, not under a `py/`.** This section put
 `line-breaks/`, `codex-index/` and `MAM-simple/` under `py/py_ac_loc/` until
 2026-08-22, where none of them has ever been; the ✗ rows below say what was wrong,
 so that a reader who remembers the old shape does not go looking for it again.
 
 ```
-codex-index-aleppo/            (this repo — the data)
-  line-breaks/          ← flat-stream JSON files, one per page (the data)
-  column-coordinates/   ← per-page column quadrilaterals
-  ds-flat-stream/       ← flat streams with no line markers yet
-  aleppo-pages/         ← the downloaded page images
-  MAM-simple/           ← the landed MAM-simple product
+MAM-basics/
+  aleppo/                      (the data)
+    line-breaks/                ← flat-stream JSON files, one per page
+    column-coordinates/         ← per-page column quadrilaterals
+    ds-flat-stream/             ← flat streams with no line markers yet
+    aleppo-pages/               ← the downloaded page images
+  MAM-simple/                   ← the landed MAM-simple product
+  py/py_ac_loc/                 (the code)
+    gen_flat_stream.py          ← generates initial flat-stream JSON (no line markers)
+    gen_lb_flat_stream.py       ← wrapper: generates flat stream for a page
+    gen_line_break_editor.py    ← generates interactive HTML editor
+    merge_line_markers.py       ← merges edited line markers back, handling NFC normalization
+    mam_xml_verses.py           ← low-level MAM-simple verse extraction (used by gen_flat_stream)
 
-MAM-basics/py/py_ac_loc/       (the sibling repo — the code)
-  gen_flat_stream.py    ← generates initial flat-stream JSON (no line markers)
-  gen_lb_flat_stream.py ← wrapper: generates flat stream for a page
-  gen_line_break_editor.py  ← generates interactive HTML editor
-  merge_line_markers.py ← merges edited line markers back, handling NFC normalization
-  mam_xml_verses.py     ← low-level MAM-simple verse extraction (used by gen_flat_stream)
-
-✗ py/py_ac_loc/line-breaks/    ← never existed; the data is at this repo's root
-✗ py/py_ac_loc/codex-index/    ← never existed; `codex-index` was a sibling repo,
+✗ py/py_ac_loc/line-breaks/    ← never existed; the data is under `aleppo/`
+✗ py/py_ac_loc/codex-index/    ← never existed; `codex-index` was a sibling directory,
                                  left behind by a rename on 2026-03-28
 ✗ py/py_ac_loc/MAM-simple/     ← never existed; the product is at MAM-basics' root
 ```
 
-Each of those five modules is run through a wrapper of its own at MAM-basics'
-`py/` top level — `main_ac_` plus the module's own name, so `gen_lb_flat_stream.py`
+Each of those five modules is run through a wrapper at MAM-basics'
+`py/` top level — `main_ac_` plus the module name, so `gen_lb_flat_stream.py`
 is run as `main_ac_gen_lb_flat_stream.py`. Running a module under `py_ac_loc/`
 directly raises `ModuleNotFoundError`, and did so while the code was here too.
 
 ## Data format
 
-Line-break data lives in `line-breaks/<page>.json`. Each file
+Line-break data lives in `aleppo/line-breaks/<page>.json`. Each file
 is a flat JSON array (a "flat stream") containing:
 
 - **Structural markers:** `{"page-start": "270v"}`, `{"page-end": "270v"}`
@@ -128,17 +126,17 @@ Two pages span book boundaries: 270r (Ps→Job) and 281v (Job→Prov).
 ### 1. Generate the flat stream (if not already present)
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_ac_gen_lb_flat_stream.py 270v
+.venv/Scripts/python.exe py/main_ac_gen_lb_flat_stream.py 270v
 ```
 
-This creates `line-breaks/270v.json` with all words and
+This creates `aleppo/line-breaks/270v.json` with all words and
 structural markers but no line-break markers. The script calls
-`../MAM-basics/py/py_ac_loc/gen_flat_stream.py` internally.
+`py/py_ac_loc/gen_flat_stream.py` internally.
 
 ### 2. Open the interactive editor
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_ac_gen_line_break_editor.py 270v 1
+.venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 270v 1
 ```
 
 Arguments: `<page_id> <col>` where col 1 = right column, col 2 = left
@@ -163,7 +161,7 @@ Editor features:
 Click **Export**. This downloads the updated flat-stream JSON (with
 line-start/line-end markers) as `<page_id>.json` via the browser.
 
-Move the downloaded file into `line-breaks/` to replace the original.
+Move the downloaded file into `aleppo/line-breaks/` to replace the original.
 
 If both columns were done in one session, a single export/download
 covers both. If columns were done separately, export after each
@@ -181,7 +179,7 @@ column (the second export will include both columns’ markers).
 ## Pages with line breaks defined
 
 All 24 Job pages (270r–281v) have line breaks defined for both columns
-(28 lines per column). `line-breaks/` also retains the separately contiguous
+(28 lines per column). `aleppo/line-breaks/` also retains the separately contiguous
 Deuteronomy run 001r–006r. The strict MAM-simple comparison checks those two
 runs separately: no JSON file represents the text between Deuteronomy 34 and
 Psalms 149.
@@ -195,8 +193,7 @@ the comparison does not normalize Hebrew.
 
 When a script in `.novc/` turns out to be part of an ongoing, repeatable workflow
 (not a one-time experiment), promote it immediately rather than re-creating it
-later. **The permanent location is `../MAM-basics/py/py_ac_loc/`, not anywhere in
-this repo** — this repo tracks no Python at all since 2026-08-22, and a promoted
-script belongs beside the rest of the ones this document runs. A module there is
+later. **The permanent location is `py/py_ac_loc/`** so a promoted script belongs beside
+the rest of the programs this document runs. A module there is
 reached through a `main_ac_` wrapper at MAM-basics' `py/` top level, so promoting
 one is two files rather than one.

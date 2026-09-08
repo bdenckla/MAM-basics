@@ -82,10 +82,9 @@ def _scoped_files():
     nobody's business here.  ``repo_scopes``' module docstring says which repos are
     in and why the corpus list is the shorter of the two.
 
-    BOTH ROOTS, and that is not symmetry for its own sake.  This check reads ``.json``
-    as well as ``.py``, and the hand-made ``.json`` stayed in each corpus when the
-    Python left -- 24 line-break files under book-of-job's ``py_ac_loc/`` and 78
-    line-break, column-coordinate and flat-stream files in codex-index-aleppo.
+    BOTH ROOTS, because this check reads ``.json`` as well as ``.py``. The current
+    corpus scope has 7 JSON files under book-of-job, 83 under aleppo, and 72 under
+    cam1753.
     Scanning the code alone would have dropped those from the check while it went on
     reporting success, which is how a lint stops meaning anything.
     """
@@ -115,7 +114,7 @@ def _display_path(path):
     """*path* as a report shows it: relative to whichever in-scope root holds it.
 
     Several roots and not one, because this check spans them all -- the code under
-    this repo's ``py/`` and the corpus in each sibling data repo.  A single
+    this repo's ``py/`` and the three local corpus roots. A single
     ``relative_to`` raises ValueError on every file under any of the others.
     """
     for root in repo_scopes.display_roots():

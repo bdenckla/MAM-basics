@@ -197,7 +197,7 @@ def build_parser():
     subparsers.add_parser(
         "copy-support-files",
         aliases=["copy"],
-        help="Copy support files to the MAM-simple repo.",
+        help="Copy support files to the MAM-simple product directory.",
     )
     return parser
 

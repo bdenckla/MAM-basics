@@ -12,6 +12,51 @@ mismatch as a finding.
 
 ---
 
+## Current scope and task-artifact retirement — corrected 2026-09-08
+
+This section supersedes the old clone counts and clone descriptions in the dated 2026-08-27
+execution record below. The earlier sections remain as records of those runs, not as a current
+roster.
+
+The current repository roster is defined by two declarations in
+`in/repo_maintenance_policy.json`: `gitrepos_setup_rule` supplies the complete ordered rule, and
+`repos_to_keep_absent` names repositories that must not be cloned. Apply every clause, including
+the frozen-repository and keep-absent subtractions and the two added gist clones. The workspace
+file is the input to a sweep, not a substitute for the setup rule. Do not infer that an extra
+clone belongs merely because it exists, and do not infer that a missing unarchived repository
+should be restored. The roster-driven files formerly under `misc/linux-sh/` were retired on
+2026-09-08 because their twelve-name lists contradicted the canonical declaration.
+
+After the mechanical repository actions and the `doc/` sweep, inspect completed task artifacts
+under `C:/Users/BenDe/Documents/Codex`. Preserve
+`C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task
+folder. Do not create another maintenance script for this judgment step.
+
+For a directory presented as a reusable worktree forest, read `review-manifest.json` before any
+repository command. Preserve a forest whose manifest names a future phase or handoff. A missing
+manifest means the directory is not established as a forest: inspect every Git directory instead
+of assuming the directory is reusable. A linked worktree has a `.git` pointer file; a `.git`
+directory is a standalone clone; a proposal snapshot with neither is not a worktree forest.
+
+Before retiring a standalone task clone, establish all of the following from that exact clone:
+
+1. The working tree is clean.
+2. The checked-out commit is preserved in the primary clone or remote.
+3. No local branch, unreachable commit, or other object is the only copy of unmerged work.
+4. `.git/objects/info/alternates`, when present, is accounted for, and `git count-objects -vH`
+   shows whether the task clone itself has unique objects.
+
+Also inspect Claude cache and temporary-data directories outside `Documents/Codex`, without
+assuming a fixed cache path. Report each verified cache or temporary directory by exact path and
+measured size; a verified disposable directory of at least 1 GiB is a maintenance finding.
+Project directories, session transcripts, and `memory/` directories can be durable work, so an
+uncertain directory stays in place.
+
+Move every verified retired task folder or cache directory to the Windows Recycle Bin, never to
+permanent deletion. State the exact path and why the retirement is safe. Leave an ambiguous task
+folder in place and report the question. Recycle Bin contents remain recoverable but continue to
+consume disk space until the Recycle Bin is emptied.
+
 ## EXECUTED 2026-08-27 — the public half, and the process change the private half forced
 
 The second run of this plan. **Read this section and the 2026-08-07 one below it before acting

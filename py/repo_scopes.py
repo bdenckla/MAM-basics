@@ -29,10 +29,9 @@ and closes the one gap a reader would otherwise have to be told about.
 
 CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
 oversight. ``check_mark_order`` reads ``.json`` as well as ``.py``, and the
-hand-made JSON under book-of-job, aleppo, and cam1753 is a large part
-of what the check was ever for -- 24 line-break files in the first, 78 line-break,
-column-coordinate, and flat-stream files in the second, and 27 line-break plus 28
-column-quadrilateral files in the third. The Leningrad tree now holds only two
+Ben-authored JSON under book-of-job, aleppo, and cam1753 is a large part
+of what the check was ever for -- 7 JSON files in book-of-job, 83 in aleppo, and
+72 in cam1753. The Leningrad tree now holds only two
 generated JSON artifacts and no separate corpus root, so it contributes no
 mark-order scope.
 

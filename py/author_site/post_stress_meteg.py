@@ -1,7 +1,7 @@
 r"""MAM's metegs after the stress: the main page and eight supporting pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
-and takes every figure it prints from the survey rather than from a constant of its own.
+and takes every figure it prints from the survey rather than from a separate constant.
 ``pin_claims`` re-derives each figure the prose states and raises on drift, which is the shape
 ``maqaf_nonfinal_accents_page.pin_claims`` established.
 
@@ -12,7 +12,7 @@ onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move 
 and this page's corpus is MAM rather than WLC.
 
 IT LINKS TWO STYLESHEETS, and the second is the accgram one.  ``gh-pages/style.css`` is the
-deploy root's own, whose whole job is the light/dark switching; ``gh-pages/wlc/style.css``
+deploy-root stylesheet, whose whole job is the light/dark switching; ``gh-pages/wlc/style.css``
 supplies the ``lang="hbo"`` font at the size that makes accents legible, the italic for a
 romanized accent name, and the numeric-cell alignment.  A stylesheet's ``@font-face`` URL
 resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font from here too.
@@ -20,7 +20,7 @@ resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font fr
 WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and accents alone.
 ``accents_and_letters`` drops U+05BD along with the vowels, and U+05BD is this page's whole
 subject; and what the page is about is which SYLLABLE a mark falls in, which a reader cannot
-see without the vowels that make the syllables.  Both of the page's three structural types
+see without the vowels that make the syllables.  All three of the page's structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
 the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
 generation time. The Fit-for-MAS lack page uses each record's ``mam_form`` and
@@ -84,7 +84,7 @@ import xml.etree.ElementTree as ET
 from accgram import final_stress
 from accgram import post_stress_meteg as psm
 from accgram import printed_decalogue_strands as pds
-from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
+from accgram.almost_errors_html_shared import cos, itm, ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
 from mb_author import author
@@ -226,8 +226,6 @@ _CHRONICLES_8_11_LENINGRAD_GLOSSES = {
     "L-2": "meteg-merkha interpretation of Leningrad",
 }
 
-_ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
-_COS_GLOSS = "Breuer's The Cantillation of Scripture"
 _ITM_ADAPTATION_URL_BY_SECTION = {
     325: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns325",
     332: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332",
@@ -246,13 +244,9 @@ _EN_DASH = "\N{EN DASH}"
 # and is CoS's alone: ITM states nothing poetic-specific about a gaʿya after the stress, so
 # the ITM column stays as it was and the page claims nothing about ITM in either direction.
 _TYPE_SOURCES = {
-    psm.TYPE_OPEN: ("§332", f"§3(j), §§46{_EN_DASH}47", "optional in both books"),
-    psm.TYPE_GUTTURAL: ("§354", f"§3(b), §§9{_EN_DASH}10", "obligatory in Breuer"),
-    psm.TYPE_CLOSED_TSERE: (
-        "§338",
-        f"§3(a), §§5{_EN_DASH}8",
-        "obligatory in both books",
-    ),
+    psm.TYPE_OPEN: ("§332", f"§3(j), §§46{_EN_DASH}47"),
+    psm.TYPE_GUTTURAL: ("§354", f"§3(b), §§9{_EN_DASH}10"),
+    psm.TYPE_CLOSED_TSERE: ("§338", f"§3(a), §§5{_EN_DASH}8"),
 }
 
 # Each number is the printed page on which the cited Ch. 8 section begins.  How to read one
@@ -381,7 +375,7 @@ _FIT_FOR_MAS_TYPE_CRITERION = (
     "The next word conforms to (sub)type 1A, 1B, 2Af, 2Bf, or 3"
 )
 _FIT_FOR_MAS_CRITERIA = (
-    "Its word has penultimate stress from a conjunctive accent.",
+    "The candidate word has penultimate stress from a conjunctive accent.",
     "The next word has initial stress from a disjunctive accent.",
     f"{_FIT_FOR_MAS_TYPE_CRITERION}.",
 )
@@ -728,7 +722,7 @@ def _lacks_mas_records(survey: dict) -> list[dict]:
 
 
 def _not_fit_for_mas_records(survey: dict) -> list[dict]:
-    """Every MAS word not fit for MAS, in corpus order."""
+    """Every MAS chanted word not fit for MAS, in corpus order."""
     return _fit_for_mas(survey)["not_fit_records"]
 
 
@@ -784,7 +778,7 @@ def _example_of(survey: dict, kind: str) -> dict:
 
 
 def _misc_almost_type_3_only_member(survey: dict) -> dict:
-    """The only word that fits CoS's type (a), but not our tsere-restricted type 3: Job 15:35."""
+    """The only chanted word that fits CoS type (a), but not this survey's tsere-restricted type 3: Job 15:35."""
     records = [
         one
         for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
@@ -815,9 +809,34 @@ def pin_claims(survey: dict) -> None:
         "mbs_only_chanted_words_with_more_than_two_mbs": 0,
     }
     assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12957, "mas": 178},
-        _POETIC: {"mbs_only": 1795, "mas": 54},
+        _PROSE: {"mbs_only": 12828, "mas": 178},
+        _POETIC: {"mbs_only": 1786, "mas": 54},
     }
+    assert survey["qamats_variant_census"]["by_system"] == {
+        _PROSE: {
+            "source_entries": 233586,
+            "variant_rows": 309,
+            "duplicate_phonetic_reading_entries": 309,
+            "mam_chanted_words_counted": 233277,
+        },
+        _POETIC: {
+            "source_entries": 29605,
+            "variant_rows": 61,
+            "duplicate_phonetic_reading_entries": 63,
+            "mam_chanted_words_counted": 29542,
+        },
+    }
+    qamats_grouping_differences = survey["qamats_variant_census"][
+        "distinct_phonetic_groupings"
+    ]
+    assert [record["bcv"] for record in qamats_grouping_differences] == [
+        "ps35:10",
+        "pr19:7",
+    ]
+    assert all(
+        len(record["qamats-dal"]) == 1 and len(record["qamats-sam"]) == 2
+        for record in qamats_grouping_differences
+    )
     assert len(post_stress) == _both(
         survey, "meteg after the stressed syllable"
     ), "the post-stress records and the post-stress count disagree"
@@ -877,8 +896,7 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["fitting_any_type"],
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
-        fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (377, 200, 177, 0)
+    ) == (377, 200, 177)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
@@ -1056,9 +1074,9 @@ def pin_claims(survey: dict) -> None:
     # carries tuples where a JSON round trip carries lists, and this routine has to accept
     # either: gen_html_files reads the tracked JSON only when trust_survey is on.
     assert all(
-        tuple(one.get("intervening_punctuation", ())) == (psm.PASEQ,)
+        tuple(one.get("intervening_punctuation", ())) == (psm.PASOLEG,)
         and list(one.get("intervening_mam_punctuation") or ())
-        == [{"kind": "paseq", "glyph": psm.PASEQ}]
+        == [{"kind": "paseq", "glyph": psm.PASOLEG}]
         and one["next_mam_form"] is not None
         for one in misc_vayomer_records
     )
@@ -1109,7 +1127,7 @@ def pin_claims(survey: dict) -> None:
         and record["vowel"] == "tsere"
         and record["next_chanted_word_is_initially_stressed"]
         for record in type_3_records
-    ), "the type-3 finality or next-word-stress fact has moved"
+    ), "the type-3 finality or next-chanted-word-stress fact has moved"
     type_1_records = [
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
@@ -1160,7 +1178,8 @@ def pin_claims(survey: dict) -> None:
     ), "the post-silluq count and the records disagree"
     post_silluq_forms = dict(_post_silluq_comparison(survey))
     assert post_silluq_forms["MAM"].count(psm.METEG) == 1
-    assert post_silluq_forms["BHS"].count(psm.METEG) == 2
+    assert post_silluq_forms["UXLC 3.9"].count(psm.METEG) == 2
+    assert post_silluq_forms["WLC 4.22"].count(psm.METEG) == 2
     exodus = _dual_cantillation_facts(survey, "ex20:2")
     assert exodus["same_chanted_word_group_count"]
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
@@ -1226,11 +1245,6 @@ def _excerpt_accounting() -> tuple[int, int]:
 # --- rendering helpers ---------------------------------------------------------
 
 
-def itm() -> object:
-    """The abbreviated book name, with Yeivin's title on hover."""
-    return mb_html.abbr("ITM", {"title": _ITM_GLOSS})
-
-
 def itm_sections(reference: str) -> tuple:
     """An ITM reference whose adapted section numbers open the corresponding section."""
     out = []
@@ -1251,11 +1265,6 @@ def itm_sections(reference: str) -> tuple:
         end = match.end()
     out.append(reference[end:])
     return tuple(out)
-
-
-def cos() -> object:
-    """The abbreviated book name, with Breuer's title on hover."""
-    return mb_html.abbr("CoS", {"title": _COS_GLOSS})
 
 
 def _para(text: str) -> object:
@@ -1438,9 +1447,9 @@ def _census(survey: dict) -> list:
             (
                 "So, among words with at least one meteg mark, there are ",
                 f"{mas:,}",
-                " words where one of them is after the stress and ",
+                " words where one of the metegs is after the stress and ",
                 f"{mbs_only:,}",
-                " words where none of them are after the stress. (There is never more"
+                " words where none of the metegs is after the stress. (There is never more"
                 " than one meteg mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page for more details.",
@@ -1502,8 +1511,8 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every one"
-                " of those MBS_O words has exactly"
+                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every"
+                " such MBS_O word has exactly"
                 " two meteg marks.",
             )
         ),
@@ -1559,9 +1568,10 @@ def _mas_facts(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "In every MAS case, the stressed syllable has a conjunctive accent (",
+                    "In every counted MAS case, the stressed syllable has a conjunctive accent."
+                    " A meteg after silluq would follow a disjunctive accent; ",
                     _footnote_callout(1, _POST_SILLUQ_FOOTNOTE_ID),
-                    ").",
+                    " explains the post-silluq cases excluded from this claim.",
                 ),
                 "In every MAS case, the MAS syllable comes right after the stressed syllable.",
                 (
@@ -1596,7 +1606,7 @@ def _by_type(survey: dict) -> list:
     unclassified = psm.TYPE_UNCLASSIFIED
     unclassified_count = _by_type_count(survey, unclassified)
     rows = []
-    for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
+    for kind, (yeivin, breuer) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
         rows.append(
             mb_html.table_row_of_data(
@@ -1689,7 +1699,7 @@ def _sources_for_types_footnote() -> list:
             ),
             (None, None, None, None),
         )
-        for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
+        for kind, (yeivin, breuer) in _TYPE_SOURCES.items()
     ]
     cos_page_rows = [
         mb_html.table_row_of_data(
@@ -1764,8 +1774,7 @@ def _case_list_link(survey: dict) -> list:
                 ),
                 " are listed separately and can be filtered by (sub)type. The ",
                 mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " appear in that large list, but are also further discussed on a page of"
-                " their own.",
+                " appear in that large list and are also discussed on a separate page.",
             )
         )
     ]
@@ -1788,7 +1797,7 @@ def _type_1_example(survey: dict, example_key: dict) -> dict:
 
 
 def _type_1_subtypes(survey: dict) -> list:
-    """The complete structural type-1 MAS population by next-word-stress subtype."""
+    """The complete structural type-1 MAS population by next-chanted-word-stress subtype."""
     type_1_mas = _actual_type_1_mas(survey)
     pattern_counts = type_1_mas["by_initial_stress_pattern"]
     example_keys = type_1_mas["example_keys_by_initial_stress_pattern"]
@@ -1851,7 +1860,7 @@ def _type_1_subtypes(survey: dict) -> list:
 
 
 def _type_2_subtypes(survey: dict) -> list:
-    """The complete structural type-2 MAS population by next-word initial consonant."""
+    """The complete structural type-2 MAS population by next-chanted-word initial consonant."""
     records_by_group = {
         group: [] for group, _code, _description in _TYPE_2_SUBTYPE_SPECS
     }
@@ -1963,7 +1972,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
 def _next_chanted_word_span(
     next_word: str, punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = ()
 ) -> object:
-    """The next word and each preceding native narrow-sense paseq."""
+    """The next chanted word and each preceding native narrow-sense paseq."""
     demoted = []
     for marker in punctuation:
         assert marker["kind"] == "paseq", marker
@@ -2013,7 +2022,7 @@ def _paired_chanted_word_cell(
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
-    """The MAM MAS form followed by its next word."""
+    """The MAM MAS form followed by its next chanted word."""
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
@@ -2226,7 +2235,7 @@ def _not_fit_for_mas_criterion_cell(meets_criterion: bool, criterion: str) -> ob
 
 
 def _not_fit_for_mas_type_codes(record: dict) -> tuple[str, ...]:
-    """Every (sub)type that makes one not-fit-for-MAS word selectable."""
+    """Every (sub)type that makes one not-fit-for-MAS chanted word selectable."""
     structural_types = record["types"]
     codes = []
     if psm.TYPE_OPEN in structural_types:
@@ -2247,7 +2256,7 @@ def _not_fit_for_mas_type_codes(record: dict) -> tuple[str, ...]:
 
 
 def _not_fit_for_mas_case_row(record: dict) -> object:
-    """One MAS word, with a result for each Fit-for-MAS criterion."""
+    """One MAS chanted word, with a result for each Fit-for-MAS criterion."""
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
@@ -2279,7 +2288,7 @@ def _not_fit_for_mas_case_row(record: dict) -> object:
 
 
 def build_not_fit_body(survey: dict) -> list:
-    """Every MAS word that is not fit for MAS, with each failed criterion marked."""
+    """Every MAS chanted word that is not fit for MAS, with each failed criterion marked."""
     records = _not_fit_for_mas_records(survey)
     criterion_headers = tuple(
         mb_html.abbr(str(number), {"title": criterion})
@@ -2373,7 +2382,7 @@ def build_misc_body(survey: dict) -> list:
                 "s" if vayomer_count != 1 else "",
                 ". Each has a ",
                 _ROM_PASEQ,
-                " between the MAS word and the next. This is the ",
+                " between the MAS word and the next word. This is the ",
                 _ROM_GAYA,
                 "-before-",
                 _ROM_PASEQ,
@@ -2500,13 +2509,13 @@ def _uxlc_words(bcv: str) -> list[str]:
 
 def _wlc_words(bcv: str) -> list[str]:
     """The WLC 4.22 atoms at one verse, decoded from its vendored M-C source."""
-    rows_at_verse = []
-    for json_path in (paths.out_dir() / "wlc422").glob("1verses_*.json"):
-        rows = json.loads(json_path.read_text(encoding="utf-8"))
-        assert isinstance(rows, list), f"Expected a list in {json_path}"
-        rows_at_verse.extend(
-            row for row in rows if isinstance(row, dict) and row.get("bcv") == bcv
-        )
+    assert bcv.startswith("1s"), bcv
+    json_path = paths.out_dir() / "wlc422" / "1verses_03_jsju1s.json"
+    rows = json.loads(json_path.read_text(encoding="utf-8"))
+    assert isinstance(rows, list), f"Expected a list in {json_path}"
+    rows_at_verse = [
+        row for row in rows if isinstance(row, dict) and row.get("bcv") == bcv
+    ]
     assert len(rows_at_verse) == 1, f"WLC 4.22: {len(rows_at_verse)} rows for {bcv}"
     vels = rows_at_verse[0].get("vels")
     assert isinstance(vels, list) and all(
@@ -2516,31 +2525,30 @@ def _wlc_words(bcv: str) -> list[str]:
 
 
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
-    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question."""
+    """The MAM, UXLC, and WLC forms relevant to 1 Samuel 17:5."""
     letters = ("נחשת",)
-    bhs_form_from_uxlc = _source_focus_word(
+    uxlc_form = _source_focus_word(
         _uxlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="UXLC 3.9",
     )
-    bhs_form_from_wlc = _source_focus_word(
+    wlc_form = _source_focus_word(
         _wlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="WLC 4.22",
     )
-    assert (
-        bhs_form_from_uxlc == bhs_form_from_wlc
-    ), "the two BHS-derived transcriptions differ at 1 Samuel 17:5"
+    assert uxlc_form == wlc_form, "UXLC 3.9 and WLC 4.22 differ at 1 Samuel 17:5"
     return (
         (
             "MAM",
             _focus_word(survey, _POST_SILLUQ_VERSE, letters, must_have=psm.SOF_PASUQ),
         ),
-        ("BHS", bhs_form_from_uxlc),
+        ("UXLC 3.9", uxlc_form),
+        ("WLC 4.22", wlc_form),
     )
 
 
@@ -2592,9 +2600,9 @@ def _mam_post_silluq_leningrad_crop() -> object:
 
 
 def _post_silluq_leningrad_form(survey: dict) -> str:
-    """The BHS transcription of the Leningrad Codex form at 1 Samuel 17:5."""
+    """WLC 4.22's transcription of the Leningrad Codex form at 1 Samuel 17:5."""
     forms = dict(_post_silluq_comparison(survey))
-    return forms["BHS"]
+    return forms["WLC 4.22"]
 
 
 def _post_silluq_lc_crop() -> object:
@@ -2667,10 +2675,9 @@ def _post_silluq_details(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "This surprising ",
+                "UXLC 3.9 and WLC 4.22 both transcribe this surprising ",
                 _ROM_METEG,
-                " is correctly recorded in BHS, and so in WLC and in UXLC, which derive"
-                " from it:",
+                ":",
             )
         ),
         mb_html.table(
@@ -2955,7 +2962,8 @@ def _footnotes(survey: dict) -> list:
         *_post_silluq_footnote(survey),
         *_nonfinal_mas_syllable_footnote(survey),
         mb_html.heading_level_3(
-            "φ3 — Next word lacking initial stress", {"id": _JEREMIAH_FOOTNOTE_ID}
+            "φ3 — Next word lacking initial stress",
+            {"id": _JEREMIAH_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
@@ -3052,15 +3060,22 @@ def _dually_cantillated_passages(survey: dict) -> list:
         mb_html.heading_level_2("Dually cantillated passages"),
         mb_html.para(
             (
+                "Here ",
+                _cantillation_label(psm.CANT_ALEF),
+                " names the taxton branch of MAM's dual-cantillation template, and ",
+                _cantillation_label(psm.CANT_BET),
+                " names the elyon branch.",
+            )
+        ),
+        mb_html.para(
+            (
                 "The Masoretic tradition records two cantillations for three passages. Those"
                 " three passages are the two Decalogues and Genesis 35:22. The analyses"
                 " presented in this document use only MAM's ",
                 _cantillation_label(psm.CANT_ALEF),
                 " cantillation. The table below shows that this choice has no effect on the"
-                " MAS count and changes the other two counts only by one. (We have not analyzed"
-                f" what effect the choice has on the {author.dquote('fit for MAS')}"
-                " analysis, but we think it is safe to assume that the choice has"
-                " little or no effect.)",
+                " MAS count and changes the other two counts only by 1. The survey has not"
+                " compared the fit-for-MAS results across the two branches.",
             )
         ),
         _table(headers, rows),

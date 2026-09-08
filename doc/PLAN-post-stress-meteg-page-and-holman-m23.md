@@ -2,6 +2,19 @@
 
 State: executed 2026-09-04
 
+**CORRECTION, 2026-09-08: THE EXECUTED PHASE RECORDS BELOW DESCRIBE THEIR DATED OUTPUTS,
+NOT THE CURRENT SURVEY OR PAGE SET.** The current tracked survey counts 232 MAS chanted words,
+178 in prose verses and 54 in poetic verses. Counting each qamats-variant MAM chanted word once
+gives prose and poetic denominators of 233,277 and 29,542, MBS_O chanted-word counts of 12,828
+and 1,786, and silluq counts of 18,738 and 4,465. The positional census separately counts
+12,962 and 1,805 individual pre-stress marks. The qamats census has 370 variant rows and 372 duplicate
+phonetic-reading entries. The current currency comparison finds nine differing numbered verses,
+38,161 U+05BD in the Phonetic MAM snapshot against 38,170 in MAM-simple. `gen-site` now writes
+ten deploy-root pages, including eight post-stress pages. The M23-specific section and the
+`m23-isaiah-23-12` fragment were removed on 2026-09-06; the card now links
+`../post-stress-meteg.html` without a fragment. The 2026-09-04 execution records retain their
+then-current measurements and rendered link as dated history.
+
 Created 2026-09-03. Execute this plan from
 C:/Users/BenDe/GitRepos/MAM-basics. The implementation publishes a generated
 survey of MAM metegs after the primary stress, gives Holman suggestion M23 a
@@ -66,8 +79,9 @@ repository's own authored pages. Six artifacts, all in MAM-basics:
 5. Its title and filename constants go in
    C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/site_data.py beside
    UNICODE_PROPOSALS_FNAME and UNICODE_PROPOSALS_TITLE, with an authored entry
-   so gh-pages/index.html links it. The M23 card's link is then the relative
-   ../post-stress-meteg.html#m23-isaiah-23-12.
+   so gh-pages/index.html links it. The M23 card's current link is the relative
+   ../post-stress-meteg.html; the M23 fragment described in the original phase was retired on
+   2026-09-06.
 6. main_authored.py's gen_site gains a flag that renders the page from the
    tracked JSON instead of recomputing, so the mega pipeline never requires
    MAM-private.
@@ -82,7 +96,8 @@ follow, and each favours the deploy root.
    write to MAM-with-doc would escape the isolation entirely.
 2. main_authored.py's almost_main, which gen-misc calls, is all-or-nothing: it
    regenerates all eighteen miscellaneous documents plus that shelf's
-   index.html and style.css. gen_site regenerates two pages, both here.
+   index.html and style.css. At execution, gen_site regenerated two pages at the deploy root;
+   as of 2026-09-08 it regenerates ten, including eight post-stress pages.
 3. py/tests/test_site_index_links.py checks that every index link pointing into
    this repository's gh-pages/ names a file that exists. Its docstring says why
    the MAM-with-doc half is deliberately unchecked: that would need a sibling
@@ -174,26 +189,24 @@ finding and is not evidence this plan needs.
 
 Before the first edit, load:
 
-1. The hebrew-prose skill, INVOKED BY NAME rather than read as a file, so its
+1. The hebrew-prose skill, invoked by name rather than read only as a file, so its
    four references/ files come with it. references/rendered-prose.md is where
    the dir="rtl" rule this plan depends on is stated in full, and reading only
-   SKILL.md misses it. The live copy is
-   C:/Users/BenDe/.claude/skills/hebrew-prose/, tracked in github-misc at
-   dot-claude/skills/. DO NOT read C:/Users/BenDe/.agents/skills/hebrew-prose/:
-   that copy is a stale mechanical rename of the live one, differing in
-   SKILL.md and in three of the four references/ files, and it says
-   "~/.Codex/AGENTS.md" and "MAM-basics/AGENTS.md" where the live copy says
-   "~/.claude/CLAUDE.md" and "MAM-basics/CLAUDE.md".
+   SKILL.md misses it. **Correction, 2026-09-08:** Codex exposes
+   C:/Users/BenDe/.agents/skills/hebrew-prose/ as the runtime skill, and that is the copy this
+   remediation loaded. The corresponding `.agents` and `.claude` files have identical hashes
+   except for `references/sources-and-corpora.md`; do not substitute the `.claude` copy for the
+   runtime skill or describe the `.agents` copy as a stale mechanical rename.
 2. C:/Users/BenDe/GitRepos/MAM-basics/CLAUDE.md
 3. C:/Users/BenDe/GitRepos/MAM-basics/doc/agent-planning-principles.md
 4. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/CLAUDE.md
 5. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/README.md
 6. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/doc/migration-checklist.md
 
-There is no masorah-books/AGENTS.md and there never has been. This plan asked
-for one until 2026-09-03, having inherited the name from the stale skill copy
-above; the file the live skill actually says to read first is that tree's
-CLAUDE.md, item 4 in the list.
+At execution on 2026-09-03, there was no masorah-books/AGENTS.md. The file the
+then-current skill required was that tree's CLAUDE.md, item 4 in the list. A later executor
+must follow the runtime skill rather than infer a current instruction-file name from this
+historical note.
 
 Use the full Yeivin OCR, not the partial adaptation:
 
@@ -393,7 +406,7 @@ the page uses no excerpts, the helper asserts that the excerpt list is empty.
 
 Use Yeivin sections 308, 332, 338, 354, and 357 and Breuer Chapter 8 sections
 2–10, 46, and 47 as search anchors, then cite only claims the current OCR
-supports. Yeivin section 308 feeds the closed-final-syllable ṣere case in
+supports. Yeivin section 308 feeds the closed-final-syllable tsere case in
 section 338; Breuer sections 5–8 describe the broader big-vowel-in-a-closed-
 syllable type. Keep those scopes distinct in the rendered prose.
 
@@ -404,7 +417,7 @@ commonest worst. The pairing, from the M23 evidence note:
 
 | Type | Yeivin | Breuer Ch. 8 | Marked |
 |---|---|---|---|
-| Closed syllable with ṣere | 338, fed by 308 | 5–8 | obligatory, in manuscripts and printed texts |
+| Closed syllable with tsere | 338, fed by 308 | 5–8 | obligatory, in manuscripts and printed texts |
 | Guttural at word end | 354 | 9–10 | obligatory |
 | Open syllable, the קוּמִי rule | 332 | 46–47 | optional, rarely marked, not in printed texts |
 
@@ -461,9 +474,10 @@ before ref, so the new lookup must read the same field the card does.
 
 The module stores the label “Meteg after the primary stress in MAM” and the
 generated relative destination, which is a sibling-directory hop now that the
-page publishes at the deploy root rather than under gh-pages/wlc/accgram/:
+page publishes at the deploy root rather than under gh-pages/wlc/accgram/. The current
+destination, after the M23-specific section was removed on 2026-09-06, is:
 
-../post-stress-meteg.html#m23-isaiah-23-12
+../post-stress-meteg.html
 
 Thread that data through:
 
@@ -1117,15 +1131,15 @@ sof pasuq ending no chanted verse.
 
 **Post-stress metegs by structural type**, prose verses then poetic:
 open syllable 113 and 13, guttural at the end of the chanted word 33 and 23,
-closed syllable with ṣere 26 and 16, none of the three 5 and 2. The three types'
+closed syllable with tsere 26 and 16, none of the three 5 and 2. The three types'
 mechanical signatures reproduce both books' own examples: Yeivin §338's Numbers
-17:23, Isaiah 40:8 and Isaiah 66:3 come out as the ṣere type, his §354's
+17:23, Isaiah 40:8 and Isaiah 66:3 come out as the tsere type, his §354's
 Deuteronomy 29:19 and Judges 19:25 as the guttural type, and his §332's Genesis
 28:2 פַּדֶּנָה — Breuer's type (j) example too — as the open type.
 
 **Three counts that are 0 and are meant to be**: chanted words where the ``jta``
 and the Hebrew count syllables differently, metegs sharing a letter with a
-stress-bearing accent, and entries with no ``jta`` or ``fva``. A nonzero count in
+accent on the stress letter, and entries with no ``jta`` or ``fva``. A nonzero count in
 any of the three is a finding, as the plan says.
 
 **MAM HAS NO POST-SILLUQ METEG, and this run is what establishes it**: of the 231
@@ -1298,5 +1312,9 @@ Measured in the rendered pages:
 4. **The link resolves**: `gh-pages/holman/../post-stress-meteg.html` is the page
    this plan's Phase 1 published, and the fragment `m23-isaiah-23-12` is that
    page's M23 heading.
+
+**Correction, 2026-09-08: the four points above describe the rendered state on
+2026-09-04.** The M23-specific section and fragment were removed on 2026-09-06. The current
+card link is `../post-stress-meteg.html`, and it resolves to the current main survey page.
 
 Suite after the change: **975 passed, 5 skipped, 65 subtests**.

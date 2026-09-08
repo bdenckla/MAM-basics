@@ -7,7 +7,7 @@ Subcommands:
         classify or that OneDrive has left as a cloud-only placeholder.
     check
         Lint the tracked indexes. Needs the landed MAM-parsed product, and fails rather
-        than skipping without it; from a worktree, set REPOS_ROOT.
+        than skipping without it.
 
 ``lookup`` and ``census`` arrive with Phase 1.
 """

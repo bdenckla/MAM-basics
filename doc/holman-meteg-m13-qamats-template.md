@@ -31,7 +31,7 @@ comparison table gives MAM הׇֽחֳלֵֽיתִי׃ against Aleppo Codex הׇ�
 to drop the meteg under the he from MAM's word.
 
 **That word is not plain text in MAM's Wikisource source. It is the `ד` parameter of a
-`מ:קמץ` template call**, and the same meteg is carried again in the `ס` parameter. The mirrored
+`מ:קמץ` template call**, and the `ס` parameter also has the meteg under he. The mirrored
 wikitext for the verse, at `in/mam-ws/FD-2Chronicles.json` line 641 (searchable anchor:
 `{{מ:פסוק|דברי הימים ב|יח|לג}}`), ends:
 

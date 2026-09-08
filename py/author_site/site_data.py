@@ -1,6 +1,6 @@
 """The landing page's authored content: Ben's index of the documents he has written.
 
-WHERE THIS CAME FROM.  ``document-index/README.md``, a repo of its own until 2026-08-31,
+WHERE THIS CAME FROM.  ``document-index/README.md``, a separate repo until 2026-08-31,
 transcribed entry for entry.  ``doc/PLAN-unify-the-document-index.md`` is the record of the
 move and of the three decisions Ben took when it was proposed.  Two of those decisions are
 visible in the shape of this file:
@@ -13,16 +13,16 @@ visible in the shape of this file:
   the top-level sections instead -- so the four of that page's seven the index did not
   already name were added, and the whole file is authored now, with no derived half.  All
   four went to ``_WLC`` first; the same day Ben moved three of them to ``_MISC``, not
-  being WLC-specific, and that section's own comment has the counts behind it.
+  being WLC-specific, and the comment for that section has the counts behind it.
 * **Flat, then trimmed.**  Ben, 2026-08-31, asked for "a 'misc' section with links to
   those 10 documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that
   reaching any of his documents took one click from here and not two.  Later the same day
   he asked for the section to be trimmed "down to documents not reachable from another,
-  document already listed", which cut eleven of its thirteen entries.  ``_MISC``'s own
-  comment names each of the eleven and the page that reaches it.
+  document already listed", which cut eleven of its thirteen entries.  The comment for ``_MISC``
+  names each of the eleven and the page that reaches it.
 
-THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRIED ``gh-pages/wlc/index.html``'s OWN LINK
-TEXT, verbatim, down to its em dashes -- that hand-written page is where Ben had already
+THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRIED THE LINK TEXT FROM
+``gh-pages/wlc/index.html``, verbatim, down to its em dashes -- that Ben-written page is where Ben had already
 named each of them for a reader, so distributing them was a move rather than a rewrite.
 Only ``almost-errors``, in ``_WLC``, still is on this page: the trim later that day cut the
 other three, ``printed-decalogue``, ``printed-decalogue-uvinkha`` and
@@ -33,8 +33,8 @@ every ``_MISC`` entry copies a ``py/author_misc/`` module's ``_TITLE``.
 THE HEADINGS ARE NOT INVENTED.  document-index's top-level list mixed four category
 bullets with two lone documents.  Rendering categories as ``<h2>`` sections is flatter than
 nesting lists, and the two lone documents get a heading that is the NAME OF THE THING THEY
-POINT AT -- "Unicode and ISO Proposals" is that page's own title, "Taamey D" the font's.
-So every heading here is either document-index's own category name or a name it used.
+POINT AT -- "Unicode and ISO Proposals" is that page's title, "Taamey D" the font's.
+So every heading here is either a category name from document-index or a name it used.
 
 WHAT WAS DELIBERATELY CHANGED, and it is exactly two hrefs.  document-index sent both of
 its gist-hosted reviews to gists that were cut down to forwarding stubs on 2026-08-31, when
@@ -63,6 +63,7 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 _MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
 _MAM_SIMPLE = "https://bdenckla.github.io/MAM-basics/MAM-simple/"
+_MAM_FOR_SEFARIA = "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/"
 _MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
 _PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
 _TAAMEY_D = "https://bdenckla.github.io/Taamey_D/"
@@ -94,13 +95,14 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
     "Meteg after the stress: next words with a conjunctive accent"
 )
 
-# The stylesheet all eleven pages at the deploy root link, hand-written and tracked as
-# gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
+# The stylesheet all eleven pages at the deploy root link, written by Ben and tracked as
+# gh-pages/style.css -- a sibling of every page, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
-# gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face
+# gh-pages/wlc/style.css, which the deploy-root pages cannot simply share: that file's @font-face
 # names woff2/Taamey_D.woff2 relative to itself, and it carries a hundred rules for
 # accgram tables that no link index has any use for.  Ben asked for the switching on
-# 2026-08-31, having noticed these two pages staying white on a dark display.
+# 2026-08-31, having noticed the two deploy-root pages that existed then staying white on a
+# dark display.
 CSS_HREF = "style.css"
 
 # The accgram stylesheet, linked BESIDE the one above by the nine post-stress-meteg pages that show
@@ -316,6 +318,7 @@ _EDITIONS = Section(
     entries=(
         _entry("Phonetic MAM", _PHONETIC),
         _entry("MAM-simple", _MAM_SIMPLE),
+        _entry("MAM-for-Sefaria", _MAM_FOR_SEFARIA),
         _entry("MAM-parsed", _MAM_PARSED),
         _entry("MAM with doc", _MWD),
     ),

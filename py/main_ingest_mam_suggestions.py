@@ -21,7 +21,7 @@ cited, in ``hkq_cmn/mam_suggestion_dispositions.py``.  Both modules' docstrings
 state the boundary.
 
 Verification against the landed ``MAM-parsed/plus/*.json`` is part of the
-ingest rather than a command of its own.  It fails when either quoted form does
+ingest rather than a standalone command.  It fails when either quoted form does
 not locate exactly one atom. A case whose form is not at its stated atom remains
 a fact about Holman's numbering to be read off the extract, not a reason to
 refuse the whole message: the uniquely derived atom replaces the stated index,

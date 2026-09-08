@@ -13,9 +13,9 @@ The programme's “Fourth stage — the five MAM products, total evacuation” s
 | Destination | C:/Users/BenDe/GitRepos/MAM-basics |
 | Interpreter | C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe |
 | Phase 1 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-simple (moved to the Windows Recycle Bin after the redirect-host commit) |
-| Phase 2 source | C:/Users/BenDe/GitRepos/MAM-for-Sefaria |
-| Phase 3 source | C:/Users/BenDe/GitRepos/MAM-parsed |
-| Phase 4 source | C:/Users/BenDe/GitRepos/MAM-with-doc |
+| Phase 2 source — retired 2026-09-08 | C:/Users/BenDe/GitRepos/MAM-for-Sefaria (moved to the Windows Recycle Bin after the separate safety report and Ben's approval) |
+| Phase 3 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-parsed (moved to the Windows Recycle Bin after Phase 3) |
+| Phase 4 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-with-doc (moved to the Windows Recycle Bin after Phase 4) |
 | Phase 5 source | C:/Users/BenDe/GitRepos/MAM-OSIS |
 
 Before every phase, read the user-level AGENTS.md, the MAM-basics CLAUDE.md, this complete plan, the complete public-repository programme, the second-stage lane and oracle sections, the complete third-stage plan, doc/dual-agent-review.md, doc/review-findings-2026-09-04.md, and the relevant source repository's instruction file. Load hebrew-prose before editing prose that makes a Hebrew accentuation claim.
@@ -60,7 +60,7 @@ The fresh 2026-09-05 measurement started from clean trees. The figures below are
 | MAM-with-doc | 0fe406c | 273 | 47,697,350 | 1 | 267 / 113 |
 | MAM-OSIS | 697dc98 | 92 | 29,822,402 | 1 | 30 / 1 |
 
-The product heads remain the 2026-09-04 product heads, and all five product working trees are clean. The example-oracle measurement also still holds: MAM-simple has 47 py-examples files and 105 py-examples-out files, totaling 23,497,110 bytes; MAM-parsed has four py-examples files and one py-examples-out file, totaling 1,522 bytes. The four example entry programs and the 106 outputs total 23,498,632 bytes, or 22.4 MiB.
+The product heads remain the 2026-09-04 product heads, and all five product working trees are clean. A later Git-blob recount corrected the example totals: MAM-simple has 47 `py-examples` files and 105 `py-examples-out` files totaling 23,675,571 bytes; MAM-parsed has four example programs plus one output, and the four entry programs plus all 106 outputs total 23,500,226 bytes. Re-establish these figures from `git ls-tree -r -l HEAD` rather than working-tree sizes.
 
 The canonical suite currently has one baseline failure: py/tests/test_site_index_links.py::test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name reports the unlisted root pages post-stress-meteg-cases.html, post-stress-meteg-misc.html, and post-stress-meteg-type-2.html. The complete result is 1 failed, 971 passed, 5 skipped in 101.92 seconds. The failure is not a fourth-stage result and Phase 0 does not change it. Each product lane must preserve this named baseline until a separately authorized task changes the site index; a new failure or a missing expected test is a lane finding.
 
@@ -129,8 +129,12 @@ Generate the three MAM-simple documents and corpus with the production command, 
 
 The phase began with MAM-basics at `25edd2f31e7f344182f754123ca8a8d0e0061967` and MAM-simple at `7a4f21d0f7882e5c90ae46a5689d016d24528416`, both clean. MAM-basics commit `cf7c7a3509632d87a6432ce0a67cfd39ad0733e4` landed the product. MAM-simple commit `9a350be55f44029cb0349df50fc1246b4e796b38` retained the source repository as its Pages redirect host. Both commits are pushed to `main`.
 
-1. Blob identity: all 389 selected source blobs landed as staged MAM-basics blobs with no difference. The 24 temporary `MAM-XML/` blobs became the MAM-native MAM-simple XML files, and the temporary root tree was removed.
+1. Blob identity: all 389 selected source blobs first landed as staged MAM-basics blobs with no difference. Seven selected files were then deliberately adapted before the landing commit; the execution record's original sentence omitted that post-staging qualification. The 24 temporary `MAM-XML/` blobs became the MAM-native MAM-simple XML files, and the temporary root tree was removed.
 2. Regeneration: the MAM-simple corpus and three documents regenerated into MAM-basics. The 216 core corpus artifacts, 105 example outputs, 24 MAM-OSIS example artifacts, 39 MAM-for-Sefaria CSV artifacts, 39 MAM-for-Sefaria Unicode-name artifacts, and 43 vendored source files all compared byte-identically with their respective oracles.
+
+   **Correction, 2026-09-08:** the landed Phase 1 product has 44 vendored source files, not 43.
+   `MAM-simple/py-examples/mb_cmn/paths.py` was added by the Phase 1 landing commit
+   `cf7c7a35` but omitted from the count above.
 3. Mtime evidence: regeneration changed 407 expected MAM-basics paths and no MAM-simple source path.
 4. Published URLs: MAM-basics Pages deployment `34037896289` and MAM-simple Pages deployment `34038057050` both succeeded. The deployed legacy `index.html` and `versification-and-cantillation.html` stubs contain the expected immediate redirects to the MAM-basics MAM-simple Pages targets.
 
@@ -141,6 +145,10 @@ The focused Phase 1 test set passed 47 tests. The post-removal full suite passed
 Two findings were non-regressions. `py/check_ac_all.py` still reports Aleppo's pre-existing word-finding and line-break JSON-consistency failures with the landed MAM-simple reader; this lane did not change Aleppo's data. The full suite's desktop command bridge discarded its direct exit summary, so the verified result above comes from an ignored UTF-8 recorder that preserved the subprocess exit code and output.
 
 After the source redirect Pages deployment and its live HTML verification, the source clone was clean, its `HEAD` matched `origin/main`, it had one worktree and no unpreserved branch or object, and it was moved to the Windows Recycle Bin. Its contents remain recoverable there.
+
+**Breadcrumb correction, 2026-09-08.** Redirect-host commit `376912a` dates the README's move:
+“On 2026-09-06, MAM-simple became a product tree in MAM-basics.” The temporary shallow clone
+used for that correction was clean after the push and was moved to the Windows Recycle Bin.
 
 ## Phase 2 — MAM-for-Sefaria — DONE 2026-09-06
 
@@ -179,6 +187,14 @@ source's byte-preserved CSV, Unicode-name, and static-page blobs carry
 pre-existing trailing whitespace and final blank lines, so `git diff --check`
 reports them when the files enter MAM-basics; the check passed for every
 Phase 2-authored change.
+
+**Remove completion, 2026-09-08.** Ben accepted the separate clone-safety recommendation.
+Immediately before retirement, the clone was clean on `main`; `HEAD`, local `main`, and
+`origin/main` all equalled `cf23b478f801ca586d227693db9133da54d87f30`; one worktree, no
+stash, only local `main`, and the three remote tags were present. `git fsck --unreachable
+--no-reflogs` found one unreachable commit, `34c94a8`, whose patch-id equals reachable
+ancestor `746d6d2`. The exact clone path `C:/Users/BenDe/GitRepos/MAM-for-Sefaria` was moved
+to the Windows Recycle Bin and remains recoverable until the Recycle Bin is emptied.
 
 ## Phase 3 — MAM-parsed — DONE 2026-09-06
 
@@ -526,9 +542,15 @@ Freeze and verify all 113 legacy HTML paths. The MAM-with-doc Pages citations in
 
 1. **Land and licence.** The frozen source at `0fe406c44c1b51e7c540574475830d6169256e73` contained 273 files totaling 47,697,350 bytes. Land commit `5a28bc0e` copied 272 selected blobs without mismatch into `MAM-with-doc/` and `gh-pages/MAM-with-doc/`; the source Pages workflow remained in the redirect host. `DATA-LICENSES.md` records the product’s CC BY-SA terms, the generated page tree, the scans’ separate rights holders, and the two Taamey font copies’ unknown terms without granting rights. The output inventory has 267 published files.
 
-2. **Repoint and permanent inputs.** Target commit `3c8c9750` moved every Phase 4 writer and reader to the landed tree, corrected the pipeline label to `gh-pages/MAM-with-doc/`, repointed the controlled MAM-with-doc URLs, and removed the retired repository from the workspace and visibility configuration. `in/mam_with_doc_redirect_pages.json` records all 113 legacy HTML paths. MAM-parsed’s permanent historical inputs and the explicit `--legacy-history` sibling remained unchanged. The byte-verbatim `in/mam-ws-intro/` source mirror was not edited.
+2. **Repoint and permanent inputs.** Target commit `3c8c9750` moved every Phase 4 writer and reader to the landed tree, corrected the pipeline label to `gh-pages/MAM-with-doc/`, and repointed the controlled MAM-with-doc URLs. Commit `19df42f3` removed the retired repository from the workspace and visibility configuration. `in/mam_with_doc_redirect_pages.json` records all 113 legacy HTML paths. MAM-parsed’s permanent historical inputs and the explicit `--legacy-history` sibling remained unchanged. The byte-verbatim `in/mam-ws-intro/` source mirror was not edited.
 
 3. **Generation and checks.** The Phase 4 regenerators changed zero source files and 145 target files. A second FOI, MAM-with-doc, MAM-parsed-plus, authored-page, and pipeline-graph generation pass changed zero target output bytes. `py/main_diff.py mpp --all` reports 180 raw changes; the stored latest JSON has `diff_count` 56 and the published page has 58 cards. The frozen redirect manifest built and checked 113 stubs plus `404.html`. The source h-dot-below checker passed its 6 tests. The first full canonical suite exposed a stale generated MAM-simple versification page that still named the retired MAM-with-doc URL. `py/main_mam_simple.py doc-only` changed only that page; its targeted canonical test passed 7 tests and 27 subtests. The target and redirect host passed the HTTPS check, including a legacy page and the custom 404 page; GitHub Pages runs `34061866037` (target) and `34062108606` (redirect host) both succeeded. The final canonical suite passed 976 tests with 5 skipped and 65 subtests in 90.70 seconds.
+
+   **Oracle qualification, recorded 2026-09-08.** Thirteen landed published files differ from
+   their source blobs: ten because controlled URLs were repointed, and three generated
+   change-log files because `change-log/unpinned-latest.json` moved from 24 to 56 records when
+   the source's stale report was regenerated. The Phase 4 generation check established the
+   current product output; it did not preserve all committed source artifacts byte-for-byte.
 
 4. **Empty and remove.** Source commit `904c9fa` retained the dated README, Pages workflow, 113 redirect stubs, and `404.html`, and removed the former product source. Before retirement, the source clone was clean on `main`, `HEAD` equaled `origin/main` at `904c9fa178265dce6fec5704f5c0424fc94f6719`, it had one worktree, and `remediation/mp02-01-extraction-2026-09-02` was an ancestor of `main`. `C:/Users/BenDe/GitRepos/MAM-with-doc` then moved to the Windows Recycle Bin.
 

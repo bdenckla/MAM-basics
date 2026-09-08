@@ -53,6 +53,9 @@ from pathlib import Path
 from author_site import site_data
 from mb_cmn import paths
 
+# Matched against the page text LOWERCASED, so a "Chanted" opening a heading or a table
+# cell is caught too.  The merge of 2026-09-08 left one such table header standing
+# because this counted the word case-sensitively.
 _FORBIDDEN = "chanted"
 
 # Every page the post_stress_meteg generator writes.  Named from site_data rather than by a
@@ -92,7 +95,8 @@ class TestPostStressMetegPlainWord(unittest.TestCase):
             path = _page_path(fname)
             if not path.is_file():
                 continue
-            count = path.read_text(encoding="utf-8").count(_FORBIDDEN)
+            text = path.read_text(encoding="utf-8").lower()
+            count = text.count(_FORBIDDEN)
             if count:
                 offenders.append(f"{fname}: {count}")
         self.assertEqual(

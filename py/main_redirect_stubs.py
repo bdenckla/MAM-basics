@@ -24,7 +24,7 @@ docstring states this and the rest of the design in full.
 Subcommands:
     build
                 Write a stub per frozen old URL plus the 404.html catch-all. ``--repo``
-                selects a table row; --out names the destination and defaults to a
+                is required and selects a table row; --out names the destination and defaults to a
                 gitignored subtree-specific directory, so the safe target is the one
                 received by saying nothing. --publish writes into that source repo's
                 gh-pages/ instead. It deletes nothing.
@@ -37,9 +37,9 @@ Subcommands:
                 non-zero on any problem.
 
 Examples:
-    .venv/Scripts/python.exe py/main_redirect_stubs.py build --out .novc/stubs
-    .venv/Scripts/python.exe py/main_redirect_stubs.py check --dir .novc/stubs
-    .venv/Scripts/python.exe py/main_redirect_stubs.py check
+    .venv/Scripts/python.exe py/main_redirect_stubs.py build --repo wlc-utils --out .novc/stubs
+    .venv/Scripts/python.exe py/main_redirect_stubs.py check --repo wlc-utils --dir .novc/stubs
+    .venv/Scripts/python.exe py/main_redirect_stubs.py check --repo wlc-utils
 """
 
 from __future__ import annotations

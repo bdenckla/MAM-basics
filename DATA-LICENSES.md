@@ -3,16 +3,16 @@
 MAM-basics holds code and data under different terms, so it takes two license declarations.
 
 **The code is GPL-3.0**, declared in [`LICENSE`](LICENSE) at the repository root. That is the
-license of MAM-basics' own work in code and prose: everything under `py/`, the Pages workflow
+license of MAM-basics' work in code and prose: everything under `py/`, the Pages workflow
 under `.github/`, the plans and notes under `doc/` — the font at `doc/woff2/` excepted, since the
 table below covers it — and the generated indexes and reports under `out/` that carry no corpus
 text.
 
 **Most of the data is not MAM-basics' to license.** Nearly every corpus here was prepared
 elsewhere and is reproduced under the terms its preparers set. This file states those terms; over
-that material it grants nothing of its own.
+that material it grants no additional rights.
 
-**The exception is Ben Denckla's own data, which this file does dedicate, under CC0 1.0** — the
+**The exception is Ben Denckla's data, which this file does dedicate, under CC0 1.0** — the
 accent-grammar analyses, the hand transcriptions of printed editions, the generated pages under
 `gh-pages/wlc/`, and the other paths the table marks CC0. That is not a new grant. Those files
 were published under a repository-wide CC0 `LICENSE` in `bdenckla/wlc-utils` until they were
@@ -20,23 +20,26 @@ copied into MAM-basics on 2026-08-12, and restating the dedication path by path 
 move from silently withdrawing it. The full text is at the end of this file, after the MAM
 statement.
 
-**Three things about the shape of these two declarations, recorded so they are not tidied away.**
-The root [`LICENSE`](LICENSE) holds the GPL-3.0 text itself and must not be replaced by a pointer
-to this file: GitHub reads only a root `LICENSE`, `LICENSE.md` or `COPYING` when it reports a
-repository's license, so a pointer there would leave MAM-basics reading as unlicensed. This file
-is named `DATA-LICENSES.md` rather than `LICENSE-DATA.md` for the mirror-image reason — GitHub's
-detector also matches root filenames beginning `LICENSE-`, and would then find two license files
-and report the repository's license ambiguously. And **no CC0 `LICENSE` file sits in any
-subtree**, though Phase 4 of `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` (deleted
-2026-09-03 by `80c9ad85`; in git history)
-expected one at `gh-pages/wlc/` and one over the wlc portions of `in/` and `out/`. Measured on
-2026-08-12, when those trees arrived, none of the three holds only Ben Denckla's own work: 125 of
-the 284 files under `gh-pages/wlc/` are scan crops and a third-party font, `in/` is mostly
-tanach.us and J. Alan Groves Center material, and `out/` carries the Westminster Leningrad Codex
-text itself. A `LICENSE` file at a directory root reads as covering everything below it, so
-placing one in any of those trees would claim for CC0 exactly what the table below withholds. The
-dedication is made in the table instead, path by path, with the CC0 text repeated verbatim at the
-end of this file.
+**Three things about the shape of these two declarations are recorded so they are not tidied
+away:**
+
+1. The root [`LICENSE`](LICENSE) holds the GPL-3.0 text itself and must not be replaced by a
+   pointer to this file. GitHub reads only a root `LICENSE`, `LICENSE.md` or `COPYING` when it
+   reports a repository's license, so a pointer there would leave MAM-basics reading as
+   unlicensed.
+2. This file is named `DATA-LICENSES.md` rather than `LICENSE-DATA.md`. GitHub's detector also
+   matches root filenames beginning `LICENSE-`, and would then find two license files and report
+   the repository's license ambiguously.
+3. **No CC0 `LICENSE` file sits in any subtree**, though Phase 4 of
+   `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` (deleted 2026-09-03 by `80c9ad85`; in git history)
+   expected one at `gh-pages/wlc/` and one over the wlc portions of `in/` and `out/`. Measured on
+   2026-08-12, when those trees arrived, none of the three holds only Ben Denckla's work: 125 of
+   the 284 files under `gh-pages/wlc/` are scan crops and a third-party font, `in/` is mostly
+   tanach.us and J. Alan Groves Center material, and `out/` carries the Westminster Leningrad
+   Codex text. A `LICENSE` file at a directory root reads as covering everything below it, so
+   placing one in any of those trees would claim for CC0 exactly what the table below withholds.
+   The dedication is made in the table instead, path by path, with the CC0 text repeated verbatim
+   at the end of this file.
 
 ## Which terms cover which paths
 
@@ -62,41 +65,39 @@ end of this file.
 | `in/accgram/uxlc_accent_changes.json` | the accent-affecting subset of `in/UXLC-misc/all_changes.json` | tanach.us's, inherited. It carries Kimball's and Greenberg's descriptions verbatim, which is why the NFC lint excludes this file by name |
 | `in/lci_recs.json` | a table of Leningrad Codex folio locations, compiled by Ben Denckla from tanach.us's `LCIndex.xml`, which is itself derived from the West Semitic Research Project's index at the University of Southern California. The file's own header records that chain | CC0 1.0 for the compilation — the dedication at the end of this file |
 | `out/wlc420/`, `out/wlc420-kq/`, `out/wlc420-u/`, `out/wlc420-kq-u/` and their four `wlc422` counterparts; `out/diff_mm_wlc420_wlc422.json`, `out/diff_mx_wlc420_uxlc.json` | the WLC text of `in/wlc420/` and `in/wlc422/` restructured as JSON, with and without ketiv/qere resolution and conversion to Unicode, plus two difference reports | **the WLC's, inherited** — these carry the Groves Center's text, so its "redistributed only with permission" header reaches them. Ben Denckla's structuring of that text is CC0 1.0 |
-| `out/accgram/` | the accent-grammar analyses: the prose and poetic scanner runs, the dual-cantillation and printed-Decalogue outputs, and the run records under `goerwitz-stderr/` — where all 37 captured stderr files are empty, so the C checker's own words are not among them | CC0 1.0 for the analysis — the dedication at the end of this file. The biblical Hebrew each file quotes comes from the WLC and the UXLC and keeps their terms above |
+| `out/accgram/`, except `post-stress-meteg.json` | the accent-grammar analyses: the prose and poetic scanner runs, the dual-cantillation and printed-Decalogue outputs, and the run records under `goerwitz-stderr/` — where all 37 captured stderr files are empty, so the C checker's words are not among them | CC0 1.0 for the analysis — the dedication at the end of this file. The biblical Hebrew each file quotes comes from the WLC and the UXLC and keeps their terms above |
+| `out/accgram/post-stress-meteg.json` | the post-stress-meteg analysis, including forms from Phonetic MAM and MAM-simple | CC0 1.0 for Ben Denckla's analysis — the dedication at the end of this file. MAM's Hebrew text retains the CC-BY-SA 4.0 terms above |
 | `gh-pages/index.html` | the site's landing page: Ben's index of the documents he has written. (A manifest section of what this repository publishes existed for under an hour on 2026-08-31 — added when the page became generated, deleted by Ben the same afternoon — and this row described it until 2026-09-01.) Generated by `py/author_site/site_index.py` from `py/author_site/site_data.py` | MAM-basics' own work, so GPL-3.0. It is not one of the `gh-pages/wlc/` pages the row below dedicates to CC0 — it was written here on 2026-08-13, holds no corpus text, and was never in `bdenckla/wlc-utils`. It was a hand-written list of one item pointing at `wlc/` until 2026-08-31, when it became generated and took over `bdenckla/document-index`'s README |
 | `gh-pages/unicode-proposals.html` | Ben's Unicode and ISO proposals, generated by `py/author_site/unicode_proposals.py`. Arrived 2026-08-31 from `document-index/Unicode-and-ISO-Proposals.md`, which was itself ported from a Google Doc in 2026-05 | MAM-basics' own work, so GPL-3.0, on the same footing as the landing page above. It holds no corpus text: the proposals are named and linked, not reproduced |
+| `gh-pages/post-stress-meteg*.html` | the eight generated post-stress-meteg pages, which present Ben Denckla's analysis and display MAM text | GPL-3.0 for the analysis and page prose. MAM's Hebrew text retains the CC-BY-SA 4.0 terms above; the manuscript crops the pages display are covered by the `gh-pages/img/` row below |
+| `gh-pages/img/` | six crops from photographic facsimiles of the Aleppo and Leningrad codices, showing 1 Samuel 17:5, 1 Kings 7:37, and 2 Chronicles 8:11 | **each rights holder's; no grant is made or implied here.** Reproduced at crop size as manuscript evidence for the post-stress-meteg pages; each filename and page caption identifies the codex and verse |
 | `gh-pages/wlc/`, except the three `img/` directories and `woff2/` | the 154 generated pages, the stylesheet, three scripts, and Ben Denckla's 37 UXLC change proposals in `wlc-a-notes/all_uxlc_change_proposals.xml` | CC0 1.0 — the dedication at the end of this file. The biblical Hebrew the pages display comes from the WLC and the UXLC and keeps their terms above |
 | `gh-pages/wlc/accgram/img/`, `gh-pages/wlc/420422/img/`, `gh-pages/wlc/wlc-a-notes/img/` | 124 crops from photographic facsimiles of manuscripts — the Leningrad and Aleppo codices among them — and from printed editions: Koren, Ginsburg, Heidenheim, Hahn, Da'at Miqra and others, each named in its own filename | **each rights holder's; no grant is made or implied here.** Reproduced at crop size for textual comparison, cited by the page that displays each one. These are the reason no CC0 file sits at `gh-pages/wlc/` |
-| `gh-pages/wlc/woff2/Taamey_D.woff2`, `doc/woff2/Taamey_D.woff2` (byte-identical copies) | the Taamey D Hebrew font, which renders the pointed and accented text on the pages | the font's own — and they are **not recorded anywhere in this repository**, nor in the file, which carries no metadata block. MAM-basics makes no grant over it, and redistributing it means establishing its terms first |
+| `doc/woff2/Taamey_D.woff2` and every `gh-pages/**/woff2/Taamey_D.woff2` (twelve tracked, byte-identical copies in all) | the Taamey D Hebrew font, which renders the pointed and accented text on the pages | the font's terms are **not recorded anywhere in this repository**, nor in the file, which carries no metadata block. MAM-basics makes no grant over it, and redistributing it means establishing its terms first |
 | `MAM-simple/` | MAM-simple's XML and JSON exports, documentation, license, and example programs | MAM's CC-BY-SA 4.0, as `MAM-simple/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-simple/`, except `woff2/Taamey_D.woff2` | MAM-simple's generated index, HTML documentation, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-simple product |
-| `gh-pages/MAM-simple/woff2/Taamey_D.woff2` | the Taamey D Hebrew font copied with MAM-simple's HTML documentation | the font's own — its terms are not recorded in this repository or in the file, which has no metadata block. MAM-basics makes no grant over it |
-| `MAM-for-Sefaria/` | MAM-for-Sefaria's standard and AJF CSV exports, Unicode-name listings, license, README, and source-hygiene test | MAM's CC-BY-SA 4.0, as `MAM-for-Sefaria/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
+| `MAM-for-Sefaria/` | MAM-for-Sefaria's standard and AJF CSV exports, Unicode-name listings, license, README, and source metadata | MAM's CC-BY-SA 4.0, as `MAM-for-Sefaria/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-for-Sefaria/` | MAM-for-Sefaria's generated index and stylesheets | MAM's CC-BY-SA 4.0, inherited from the MAM-for-Sefaria product |
 | `MAM-parsed/` | MAM-parsed's plain and plus JSON, historical release snapshots, documentation, license, and example program | MAM's CC-BY-SA 4.0, as `MAM-parsed/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-parsed/`, except `woff2/Taamey_D.woff2` | MAM-parsed's generated documentation, call graphs, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-parsed product |
-| `gh-pages/MAM-parsed/woff2/Taamey_D.woff2` | the Taamey D Hebrew font copied with MAM-parsed's documentation | the font's own; its terms are not recorded in the source repository. MAM-basics makes no grant over it |
-| `MAM-with-doc/` | MAM's HTML edition, its documentation-note source materials, product README, and license | MAM's CC-BY-SA 4.0, as `MAM-with-doc/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
-| `gh-pages/MAM-with-doc/`, except `misc/img/`, `woff2/Taamey_D.woff2`, and `foi/woff2/Taamey_D.woff2` | MAM-with-doc's generated edition and documentation pages, stylesheets, scripts, and release-difference reports | MAM's CC-BY-SA 4.0, inherited from the MAM-with-doc product |
+| `MAM-with-doc/` | the MAM-with-doc product README, license, repository attributes, ignore rules, and retained source-hygiene test | MAM's CC-BY-SA 4.0, as `MAM-with-doc/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
+| `gh-pages/MAM-with-doc/`, except `misc/img/` and every Taamey D font copy below it | MAM-with-doc's generated edition and documentation pages, stylesheets, scripts, and release-difference reports | MAM's CC-BY-SA 4.0, inherited from the MAM-with-doc product |
 | `gh-pages/MAM-with-doc/misc/img/` | crops from manuscript facsimiles and printed editions, including the Aleppo and Leningrad codices, BHS, BHQ, the Sassoon manuscripts, and Judaica Press | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the corresponding documentation pages |
-| `gh-pages/MAM-with-doc/woff2/Taamey_D.woff2`, `gh-pages/MAM-with-doc/foi/woff2/Taamey_D.woff2` | the Taamey D Hebrew font copies used by the edition and features-of-interest pages | the font's own — its terms are not recorded in this repository or in the files, which have no metadata block. MAM-basics makes no grant over them |
-| `gh-pages/aleppo/` | three hand-authored pages about the Aleppo Codex's missing sections, including Hebrew text from Hebrew Wikisource and an English translation | Ben Denckla's; **no grant is made or implied here.** The Hebrew text retains the terms of its source |
+| `gh-pages/aleppo/` | three Ben-written pages about the Aleppo Codex's missing sections, including Hebrew text from Hebrew Wikisource and an English translation | Ben Denckla's; **no grant is made or implied here.** The Hebrew text retains the terms of its source |
 | `aleppo/aleppo-pages/` | 37 Aleppo Codex page scans, downloaded from the Internet Archive's `aleppo-codex` item; `aleppo/aleppo-pages-provenance.md` records the source and download method | **the Internet Archive item's current terms; no grant is made or implied here.** The scans are reproduced for the page and line-break work, not as material MAM-basics may license |
 | `aleppo/aleppo-wiki/` | J. David Stark's Aleppo Codex index, the tracked source forms, hand corrections, and generated index artifacts | CC-BY 4.0, as `aleppo/aleppo-wiki/LICENSE.txt` states |
-| `aleppo/`, except `aleppo/aleppo-pages/` and `aleppo/aleppo-wiki/` | hand-annotated line and column data, derived reports, procedures, provenance records, and the Book-of-Job test-data extract | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
+| `aleppo/`, except `aleppo/aleppo-pages/` and `aleppo/aleppo-wiki/` | line and column data annotated by Ben Denckla, derived reports, procedures, provenance records, and the Book-of-Job test-data extract | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
 | `cam1753/cam1753-spreads/` and the regenerable, untracked `cam1753/cam1753-pages/` | fourteen two-page scans of Cambridge University Library MS Add. 1753, downloaded from the Internet Archive's `ketuvim-cambridge-ms-add-1753-images` item, and the 28 single-page derivatives | the Cambridge University Library and the Ktiv Project's terms, recorded in `cam1753/cam1753-spreads-provenance.md`: use is for educational and research purposes, source attribution is required, and commercial use is prohibited. **No grant is made or implied here.** |
-| `cam1753/`, except `cam1753/cam1753-spreads/` and the untracked `cam1753/cam1753-pages/` | hand-annotated line and column data, derived reports, procedures, provenance records, and the Book-of-Job test-data extract | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
+| `cam1753/`, except `cam1753/cam1753-spreads/` and the untracked `cam1753/cam1753-pages/` | line and column data annotated by Ben Denckla, derived reports, procedures, provenance records, and the Book-of-Job test-data extract | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
 | `leningrad/lenin-wiki/` | generated forms of J. David Stark's Leningrad Codex index | CC-BY 4.0, inherited from Stark's index; **no broader grant is made or implied here** |
-| `leningrad/page-snips/` | hand-made crops of Leningrad Codex photographs | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the manuscript readings documented beside them |
-| `diffable-pointed-hebrew/`, `py/main_diffable_pointed_hebrew.py` | the former diffable-pointed-hebrew product's samples, product-specific short Unicode-name assignments, and command | MIT, as the former source's [`LICENSE`](diffable-pointed-hebrew/LICENSE) states. The MAM-basics integration remains under this repository's GPL-3.0 license. |
-| `gh-pages/book-of-job/`, except its two image directories and `woff2/` | Ben Denckla's review of *Biblia Hebraica Quinta* Job: the generated HTML reports, stylesheets, and page scripts | Ben Denckla's; **no grant is made or implied here.** The former `bdenckla/book-of-job` repository had no blanket licence, so moving the review pages into this repository does not silently place them under MAM-basics' GPL-3.0 licence |
+| `leningrad/page-snips/` | crops that Ben Denckla made from Leningrad Codex photographs | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the manuscript readings documented beside them |
+| `diffable-pointed-hebrew/` | the former diffable-pointed-hebrew product's samples and product-specific short Unicode-name assignments | MIT, as the former source's [`LICENSE`](diffable-pointed-hebrew/LICENSE) states. The MAM-basics entry point under `py/` remains under this repository's GPL-3.0 license. |
+| `gh-pages/book-of-job/`, except its two image directories and every Taamey D font copy below it | Ben Denckla's review of *Biblia Hebraica Quinta* Job: the generated HTML reports, stylesheets, and page scripts | Ben Denckla's; **no grant is made or implied here.** The former `bdenckla/book-of-job` repository had no blanket licence, so moving the review pages into this repository does not silently place them under MAM-basics' GPL-3.0 licence |
 | `gh-pages/book-of-job/jobn/img/`, `gh-pages/book-of-job/jobn/img-orphans/` | crops from photographic facsimiles of the Aleppo, Leningrad, Cambridge 1753, Sassoon 1053, and Jerusalem Crown manuscripts | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the corresponding Job review pages, not as material MAM-basics may license |
-| `gh-pages/book-of-job/woff2/Taamey_D.woff2` | the Taamey D Hebrew font, copied with the Job pages | the font's own — the same terms position as the byte-identical copies under `gh-pages/wlc/`, `gh-pages/holman/`, and `doc/woff2/`. MAM-basics makes no grant over it |
-| `book-of-job/out/` | the generated enriched quirk records and reports, plus the hand-made Cambridge 1753 crop coordinates | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The JSON records quote and describe manuscript and printed-edition evidence, so they do not acquire a blanket GPL-3.0 grant from their new location |
+| `book-of-job/out/` | the generated enriched quirk records and reports, plus Cambridge 1753 crop coordinates recorded by Ben Denckla | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The JSON records quote and describe manuscript and printed-edition evidence, so they do not acquire a blanket GPL-3.0 grant from their new location |
 | `book-of-job/doc/` | procedures for reading the Job review and its MAM-simple snapshot | Ben Denckla's; **no grant is made or implied here.** The procedures arrived from the unlicensed source repository and are distinct from MAM-basics' own `doc/` prose |
 | `gh-pages/holman/`, except its three image directories and `woff2/` | generated reports presenting Daniel Holman's ketiv/qere review and his suggested corrections to the UXLC and MAM | Holman's; **no grant is made or implied here.** The reports reproduce the review data and the address-free email derivatives under `holman/` below rather than placing either body of work under MAM-basics' GPL-3.0 license |
 | `gh-pages/holman/img/`, `gh-pages/holman/uxlc_img/`, `gh-pages/holman/mam_img/` | 154 images extracted from Holman's ketiv/qere review, the images attached to his UXLC-correction emails, and the 34 crops attached to his MAM-suggestion emails | **each rights holder's; no grant is made or implied here.** The review images and the email attachments are reproduced as evidence for the corresponding reports, not as material MAM-basics may license |
-| `gh-pages/holman/woff2/Taamey_D.woff2` | the Taamey D Hebrew font, copied with the Holman pages | the font's own — the same terms position as the byte-identical `gh-pages/wlc/woff2/Taamey_D.woff2` and `doc/woff2/Taamey_D.woff2` above. MAM-basics makes no grant over it |
 | `holman/docs-not-served/`, `holman/emails/` | the extracted 77-row ketiv/qere review data, Holman's MAM-suggestion extract, the address-free derivatives of his UXLC-correction emails, and the reports' supporting source data | Holman's; **no grant is made or implied here.** The raw `.eml` files are deliberately untracked because their headers contain correspondents' addresses; the stricter MAM-suggestion extraction tracks no message body at all |
 | `holman/data/` | atom locations and canonical forms derived from the UXLC | tanach.us's, inherited from the UXLC data that supplies them; **no grant is made or implied here** |
 | `holman/out/` | phenomenon-search reports over MAM and UXLC data | MAM's CC-BY-SA 4.0 and tanach.us's terms, inherited from the data the reports analyze; **no grant is made or implied here** |
@@ -104,7 +105,6 @@ end of this file.
 | `holman/io/table_row_github_issues.json` | cached state and labels from the `bdenckla/holman-ketiv-qere` issue tracker | the issue tracker records are data about that tracker; **no grant is made or implied here** |
 | `gh-pages/uxlc/`, except `img/`, `amb-early-mtg/img/` and `woff2/` | the generated CLC pages, features-of-interest catalog, and ambiguous-early-meteg survey, with their stylesheets and scripts | Ben Denckla's; **no grant is made or implied here.** The former `bdenckla/UXLC-utils` repository had no blanket licence, so moving these pages does not silently place them under MAM-basics' GPL-3.0 licence. The UXLC text they display keeps tanach.us's terms below |
 | `gh-pages/uxlc/img/`, `gh-pages/uxlc/amb-early-mtg/img/` | crops from the Leningrad Codex and other manuscripts, plus printed editions including BHS and Sassoon 1053 | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the corresponding UXLC pages, not as material MAM-basics may license |
-| `gh-pages/uxlc/woff2/Taamey_D.woff2` | the Taamey D Hebrew font, copied with the UXLC pages | the font's own — the same terms position as the byte-identical copies under `gh-pages/wlc/`, `gh-pages/book-of-job/`, `gh-pages/holman/` and `doc/woff2/`. MAM-basics makes no grant over it |
 | `uxlc/in/`, except `uxlc/in/UXLC-misc/2026.04.01-map-to-book-of-job.json` | UXLC 3.9 XML, related Tanach XML, the tanach.us note pages, change records and hand-corrected overrides | tanach.us's terms, inherited from the UXLC material. The existing `in/UXLC-39/` and `in/UXLC-misc/` rows state the relevant source terms; **no grant is made or implied here** |
 | `uxlc/in/UXLC-misc/2026.04.01-map-to-book-of-job.json`, `uxlc/out/`, `uxlc/data/lci_augrecs.json` | derived UXLC lookup tables, change reports, word lists and the Job-change mapping. Most files are script-regenerable. `uxlc/out/Possible false early meteg marks.code-search` and its CSV result are Ben-written saved-search records; `map-changes-to-book-of-job.md` was deleted on 2026-09-04 after its substance moved into `py/main_map_changes_to_book_of_job.py`'s docstring | tanach.us's terms for material derived from the UXLC; Ben Denckla's terms for the compilation. **No grant is made or implied here** |
 | `uxlc/doc/` | the CLC design document and skeleton plan | Ben Denckla's; **no grant is made or implied here.** The documents arrived from the former unlicensed source repository and are distinct from MAM-basics' own `doc/` prose |
@@ -119,8 +119,8 @@ sentence false.
 ## The MAM statement, repeated verbatim
 
 What follows is the license and attribution statement from the MAM Google spreadsheet, copied
-without change. The same file stands as `LICENSE.md` in the MAM-parsed, MAM-simple, MAM-with-doc,
-MAM-OSIS and MAM-for-Sefaria repositories. Where it says "the data in this GitHub repository",
+without change. The same file stands as `LICENSE.md` in the landed `MAM-parsed/`, `MAM-simple/`,
+`MAM-with-doc/`, and `MAM-for-Sefaria/` product directories and in the MAM-OSIS repository. Where it says "the data in this GitHub repository",
 read it as the MAM paths named in the table above, not as everything in MAM-basics.
 
 ----

@@ -21,6 +21,9 @@ an example command. Such paths outside the declared generated trees are not auto
 defects. The generated trees differ because a program rewrites them. The two saved-search
 files directly under ``uxlc/out/`` are Ben-written records, so the scan names the generated
 ``UXLC-misc`` directory and two generated JSON files instead of all of ``uxlc/out/``.
+The landed MAM products follow the same rule: path-bearing provenance, copied code,
+and analysis products are scanned, while the large verse-text JSON, XML, and CSV
+families are not reread merely because a generator wrote them.
 """
 
 import re
@@ -37,7 +40,7 @@ _MACHINE_PATH_RE = re.compile(
     r"C:[\\/]+Users[\\/]|/home/[a-z][a-z0-9_-]*/|/Users/[A-Za-z][A-Za-z0-9_-]*/"
 )
 
-_SCANNED_PATHS = (
+_ORIGINAL_SCANNED_PATHS = (
     "out",
     "gh-pages",
     "book-of-job/out",
@@ -52,6 +55,48 @@ _SCANNED_PATHS = (
     "uxlc/out/UXLC-misc",
     "uxlc/out/uxlc-words-fragile.json",
     "uxlc/out/uxlc-words.json",
+)
+
+_PROGRAM_WRITTEN_GROUPS = {
+    "Aleppo": (
+        "aleppo/column-coordinates",
+        "aleppo/ds-flat-stream",
+        "aleppo/line-breaks",
+        "aleppo/aleppo-wiki/index-flat.json",
+        "aleppo/aleppo-wiki/index-grouped-by-book.json",
+        "aleppo/aleppo-wiki/index.wiki",
+        "aleppo/check_line_breaks.html",
+        "aleppo/index-flat-annotated.json",
+    ),
+    "Cambridge 1753": (
+        "cam1753/cam1753-col-quads",
+        "cam1753/cam1753-line-breaks",
+        "cam1753/cam1753-spread-splits-doc",
+        "cam1753/check_line_breaks.html",
+    ),
+    "MAM-simple": (
+        "MAM-simple/misc/unicode-names-vtrad-bhs",
+        "MAM-simple/misc/unicode-names-vtrad-mam",
+        "MAM-simple/misc/unicode-names-vtrad-sef",
+        "MAM-simple/py-examples",
+        "MAM-simple/py-examples-out/sefaria/csv/_provenance.md",
+        "MAM-simple/py-examples-out/sefaria/misc/unicode-names/_provenance.md",
+    ),
+    "MAM-parsed": (
+        "MAM-parsed/plain/provenance.md",
+        "MAM-parsed/plus/provenance.md",
+        "MAM-parsed/py-examples",
+        "MAM-parsed/py-examples-out",
+    ),
+    "MAM-for-Sefaria": (
+        "MAM-for-Sefaria/csv/_provenance.md",
+        "MAM-for-Sefaria/csv-ajf/_provenance.md",
+        "MAM-for-Sefaria/misc",
+    ),
+}
+
+_SCANNED_PATHS = _ORIGINAL_SCANNED_PATHS + tuple(
+    path for group_paths in _PROGRAM_WRITTEN_GROUPS.values() for path in group_paths
 )
 
 # A scan that silently matches nothing reports green having checked nothing, which is the
@@ -94,10 +139,21 @@ _BINARY_SUFFIXES = (
 # elsewhere.
 _EXCLUDED = frozenset()
 
+# Exact documentation excerpts, not excluded files or directories. The copied
+# ``paths.py`` records the historical absolute-path defect that this lint prevents;
+# removing that one sentence before matching preserves the explanation while still
+# checking every other byte in the copied module.
+_DOCUMENTED_PATH_EXCERPTS = {
+    "MAM-simple/py-examples/mb_cmn/paths.py": (
+        "C:/Users/BenDe/GitRepos/...",
+        "/home/user/...",
+    ),
+}
 
-def _tracked_text_files() -> list[str]:
+
+def _tracked_text_files(pathspecs=_SCANNED_PATHS) -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "-z", *_SCANNED_PATHS],
+        ["git", "ls-files", "-z", *pathspecs],
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -122,6 +178,33 @@ class TestNoMachinePathsInArtifacts(unittest.TestCase):
             " the enumeration is broken, so the scan below verifies nothing",
         )
 
+    def test_each_program_written_group_has_tracked_text(self):
+        empty_groups = [
+            label
+            for label, pathspecs in _PROGRAM_WRITTEN_GROUPS.items()
+            if not _tracked_text_files(pathspecs)
+        ]
+        self.assertEqual(
+            empty_groups,
+            [],
+            "a declared program-written product group matched no tracked text; "
+            f"coverage silently disappeared: {empty_groups}",
+        )
+
+    def test_documented_path_excerpts_still_name_exact_text(self):
+        missing = []
+        for name, excerpts in _DOCUMENTED_PATH_EXCERPTS.items():
+            text = (paths.repo_root() / name).read_text(encoding="utf-8")
+            for excerpt in excerpts:
+                if excerpt not in text:
+                    missing.append(f"{name}: {excerpt}")
+        self.assertEqual(
+            missing,
+            [],
+            "a documented-path allowlist entry no longer matches exact text; "
+            f"review or remove the entry: {missing}",
+        )
+
     def test_no_generated_artifact_records_a_machine_path(self):
         offenders = []
         for name in _tracked_text_files():
@@ -130,6 +213,8 @@ class TestNoMachinePathsInArtifacts(unittest.TestCase):
                 text = path.read_text(encoding="utf-8")
             except (UnicodeDecodeError, OSError):
                 continue
+            for excerpt in _DOCUMENTED_PATH_EXCERPTS.get(name, ()):
+                text = text.replace(excerpt, "")
             match = _MACHINE_PATH_RE.search(text)
             if match is not None:
                 offenders.append(f"{name}: {match.group(0)}")

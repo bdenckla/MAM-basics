@@ -9,9 +9,9 @@ tree on 2026-08-01.  The vendoring policy still named ``wlc-utils`` with a
 exist``.  Nothing routine ran that program, so nothing reported it; it was found a day
 later by hand, and fixed in ``ea9f199`` by dropping the entry.
 
-The policy is a hand-maintained manifest naming directories in this repo and in nine
-sibling repos, and nothing in those repos knows the manifest exists.  Any rename,
-move or deletion over there breaks it silently.  That makes "does each configured
+The policy is a hand-maintained manifest naming source and destination directories.
+Nothing in those directories knows the manifest exists. Any rename, move or deletion
+there breaks it silently. That makes "does each configured
 path resolve?" a decidable property of the source text -- a mechanical lint over the
 tree, the second of the two test shapes CLAUDE.md sanctions -- and both sides are
 derived, so adding or removing a repo never needs this file edited.

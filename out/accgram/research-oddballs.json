@@ -5,7 +5,7 @@
   "input": "MAM-basics/out/accgram/prose/_oddballs.json",
   "wlc422_kq_u_dir": "MAM-basics/out/wlc422-kq-u",
   "uxlc_dir": "MAM-basics/in/UXLC-39",
-  "mam_simple_dir": "MAM-simple/json-vtrad-bhs",
+  "mam_simple_dir": "MAM-basics/MAM-simple/json-vtrad-bhs",
   "summary": {
     "oddballs": 96
   },

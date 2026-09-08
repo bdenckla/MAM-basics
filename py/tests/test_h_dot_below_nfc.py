@@ -5,7 +5,7 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-SIX SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
+TEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
 procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
 the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere still holds its corpus, while
@@ -18,6 +18,12 @@ one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
 remain sit under the floor of 10 that the scope carried.
+
+The four landed MAM product scopes replace standalone copies of this test that no
+longer had their own repository roots. Those copies asked Git for the enclosing
+repository and therefore scanned most of MAM-basics under a product-specific name;
+three copies had no entry point at all. The canonical scopes below name the authored
+source and prose retained with each product and exclude the large generated corpora.
 
 The UXLC scope arrived with UXLC-utils' Python (Phase 3 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``), replacing that repo's
@@ -177,8 +183,9 @@ _EXCLUDE_MAM_GO_FILES = {
 # with no file extension, so _is_binary's extension test does not catch it and
 # read_text raises UnicodeDecodeError on it; this prefix is what keeps it out.
 # gh-pages/ goes in on the principle out/ is already on: generated, not
-# hand-authored. MAM-simple/ is generated product data, while uxlc/ and aleppo/ each
-# have a scope below rather than being scanned twice through the MAM-basics root.
+# hand-authored. Each landed MAM product has a scope below rather than being scanned
+# twice through the MAM-basics root; uxlc/, aleppo/, and cam1753/ follow the same
+# one-scope rule.
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
@@ -192,10 +199,10 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
+    "MAM-for-Sefaria/",
+    "MAM-parsed/",
     "MAM-simple/",
-    "MAM-parsed/plain/",  # Generated corpus; excluded by the source product's lint.
-    "MAM-parsed/plus/",
-    "MAM-parsed/historical/",  # Verbatim historical source data, never normalized.
+    "MAM-with-doc/",
     "uxlc/",
     "aleppo/",
     "cam1753/",
@@ -257,6 +264,32 @@ _CAM_EXCLUDE_DIR_PREFIXES = (
     "cam1753-pages/",
     "cam1753-spread-splits-doc/",
     "cam1753-spreads/",
+)
+
+# The landed products are not repositories of their own. These exclusions retain
+# authored product metadata, prose, and examples while leaving generated corpus data
+# to the generators that already validate it. MAM-simple's three top-level
+# ``py-examples/main_*`` files are authored examples; the package directories beside
+# them are copied from this repo and are already in the MAM-basics scope.
+_MAM_SIMPLE_EXCLUDE_DIR_PREFIXES = (
+    "json-vtrad-",
+    "misc/",
+    "py/",
+    "py-examples/mb_cmn/",
+    "py-examples/mb_misc/",
+    "py-examples/mb_sefaria/",
+    "py-examples/osis/",
+    "py-examples-out/",
+    "xml-vtrad-",
+)
+_MAM_SIMPLE_EXCLUDE_FILES = frozenset({"py-examples/provenance.md"})
+_MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES = ("py/",)
+_MAM_FOR_SEFARIA_EXCLUDE_DIR_PREFIXES = ("csv/", "csv-ajf/", "misc/", "py/")
+_MAM_PARSED_EXCLUDE_DIR_PREFIXES = (
+    "historical/",
+    "plain/",
+    "plus/",
+    "py-examples-out/",
 )
 
 # The one comment allowed to keep showing a precomposed h-with-dot-below
@@ -381,6 +414,40 @@ def _scopes() -> tuple[_Scope, ...]:
             # a tree size.
             floor=10,
         ),
+        _Scope(
+            label="MAM-simple authored source and prose",
+            root=paths.repo_root() / "MAM-simple",
+            exclude_dir_prefixes=_MAM_SIMPLE_EXCLUDE_DIR_PREFIXES,
+            exclude_files=_MAM_SIMPLE_EXCLUDE_FILES,
+            # Four root metadata files, requirements.txt, four procedures, and
+            # three authored top-level examples measure 12 files.
+            floor=10,
+        ),
+        _Scope(
+            label="MAM-with-doc authored metadata",
+            root=paths.repo_root() / "MAM-with-doc",
+            exclude_dir_prefixes=_MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # The four root metadata files are the complete authored scope.
+            floor=3,
+        ),
+        _Scope(
+            label="MAM-for-Sefaria authored metadata",
+            root=paths.repo_root() / "MAM-for-Sefaria",
+            exclude_dir_prefixes=_MAM_FOR_SEFARIA_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # The four root metadata files are the complete authored scope.
+            floor=3,
+        ),
+        _Scope(
+            label="MAM-parsed authored source and prose",
+            root=paths.repo_root() / "MAM-parsed",
+            exclude_dir_prefixes=_MAM_PARSED_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # Four root metadata files and three product-specific example files
+            # measure seven files after the misleading duplicate test is removed.
+            floor=6,
+        ),
     )
 
 
@@ -478,7 +545,7 @@ def _find_decomposed_latin_clusters(text):
 
 
 class TestHDotBelowNfc(unittest.TestCase):
-    """Hand-authored source in both repos must use precomposed h-with-dot-below,
+    """Hand-authored source in every scope must use precomposed h-with-dot-below,
     never the decomposed sequence, and must never use either Unicode form in a
     real comment (plain ASCII "x"/"X" instead)."""
 

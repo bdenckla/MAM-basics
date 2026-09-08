@@ -7,10 +7,10 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write this repo's own published pages at the deploy root:
-                gh-pages/index.html, gh-pages/unicode-proposals.html and
-                gh-pages/post-stress-meteg.html.  --trust-surveys lets the
-                last of those read the tracked
+                Write the ten published pages at the deploy root:
+                gh-pages/index.html, gh-pages/unicode-proposals.html, and the
+                eight gh-pages/post-stress-meteg*.html pages.
+                --trust-surveys lets the post-stress pages read the tracked
                 out/accgram/post-stress-meteg.json instead of recomputing a
                 survey that needs the MAM-private clone; only main_0_mega.py
                 passes it.
@@ -164,7 +164,7 @@ assert _SURVEY_READING_PAGES <= {
 
 
 def gen_site(*, trust_surveys: bool = False):
-    """Write this repo's own published pages at the deploy root.
+    """Write the pages published by this repository at the deploy root.
 
     ``trust_surveys`` is passed by ``main_0_mega.py``; see ``_SURVEY_READING_PAGES``.  The
     index runs last, so it sees whatever the pages before it have written.
@@ -234,7 +234,7 @@ def build_parser():
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
         "gen-site",
-        help="Generate this repo's own published pages at the gh-pages deploy root.",
+        help="Generate this repository's published pages at the gh-pages deploy root.",
     ).add_argument(
         "--trust-surveys",
         action="store_true",

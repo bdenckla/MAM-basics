@@ -23,22 +23,22 @@ _INTENTIONALLY_NON_VENDORED_ROWS = [
     {
         "repo": "MAM-simple",
         "path": "py-examples/main_mam4sef_example.py",
-        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+        "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
     },
     {
         "repo": "MAM-simple",
         "path": "py-examples/main_mam_osis_example.py",
-        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+        "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
     },
     {
         "repo": "MAM-simple",
         "path": "py-examples/main_letter_small_job_example.py",
-        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+        "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
     },
     {
         "repo": "MAM-parsed",
         "path": "py-examples/main_tmpl_survey_toy_example.py",
-        "notes": "Maintained directly in MAM-basics/MAM-parsed; not copied from another entry program.",
+        "notes": "Maintained in the MAM-parsed product; not copied from another entry program.",
     },
 ]
 

@@ -266,22 +266,22 @@ enforce this rule mechanically" in the testing rule. If it is ever written,
 have it report the unreferenced filenames and nothing else, never a count,
 which would read as a defect tally against repos that have earned their docs.
 
-THE `State:` LINE, added 2026-08-29 to all thirteen of this repo's
-doc/PLAN-*.md.  Line 3 of each file, directly under the H1, one of five words
+THE `State:` LINE, added 2026-08-29 to the plan files then present. At
+2026-09-08, all ten tracked `doc/PLAN-*.md` files carry it. Line 3 of each file,
+directly under the H1, is one of five words
 plus an optional date: `executed <date>`, `paused <date>`, `live`, `runbook`,
 `pointer`.  Sporadic work is `live`, not `paused`, and needs no state of its own:
 Ben, 2026-08-29, on MAM-private's melody compiler -- "I only work on it
 sporadically, but I certainly plan to return to it, and I don't think it is worth
 it ... to introduce some additional state like paused".  What `paused` marks is
 work somebody stopped on a nameable day, which is why it carries one.
-It exists because the inbound-reference screen above is the WRONG
-instrument for a plan, and inverts on one: PLAN-evacuate-the-rest-of-three-repos
-is cited by nothing outside doc/ and is paused work that must not be deleted,
-while PLAN-evacuate-python-from-codex-index-trio is cited from 31 modules and is
-entirely spent.  The evacuations wrote their plan citations into the code they
-produced, so for plans a high reference count reports that the work LANDED, not
-that the file is still wanted.  Keep the screen for other doc/ files; read the
-State line for plans.
+It exists because the inbound-reference screen above is the wrong instrument for
+a plan. `PLAN-evacuate-the-rest-of-three-repos.md` is executed work, and the spent
+`PLAN-evacuate-python-from-codex-index-trio.md` was deleted on 2026-08-29 but remains
+preserved in Git history. The evacuations wrote plan citations into the code they
+produced, so for plans a high reference count can report that the work landed, not
+that the file is still wanted. Keep the screen for other `doc/` files; read the
+`State:` line for plans.
 
 The State line is written by whoever last moves a phase, in the SAME commit as
 the phase work.  `c0d9e21` is why that clause is here: the b2-to-t451 plan's

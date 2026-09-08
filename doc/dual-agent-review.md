@@ -215,19 +215,18 @@ The public-only scope the review series has run under since 2026-08-26 removes t
 Keep Codex inside that scope, and do not give it a private-side lane until the question of where
 that lane's output lives has been settled.
 
-### 2. Keep the Codex reviewer read-only
+### 2. Limit the Codex reviewer to review records
 
-A review agent has no reason to write. Two agents with write access to one working tree stage each
-other's half-written work, and that failure is clean and therefore silent — the collision the
-worktree rules in `~/.claude/CLAUDE.md` exist to prevent, but with no human turn between the two
-agents.
+A Codex reviewer writes only the named findings and reconciliation records. A Codex reviewer does
+not modify source files, generated products, or another reviewer's records. Two agents with write
+access to one working tree can stage each other's half-written work, and that failure is clean and
+therefore silent — the collision the worktree rules in `~/.claude/CLAUDE.md` exist to prevent, but
+with no human turn between the two agents.
 
-**On Windows this is an honour system rather than a sandbox.** Codex's sandboxing is built around
-macOS Seatbelt and Linux Landlock, and its supported Windows path has been WSL; a native Windows run
-is unsandboxed. So the read-only property has to be maintained deliberately rather than assumed from
-a flag. This has not been tested on this machine — see the closing caveat.
+The record-only scope has to be maintained deliberately rather than inferred from a sandbox flag.
+This document does not prescribe or assess current Codex sandbox syntax.
 
-If the Codex reviewer is nevertheless given a working tree, give it its own git worktree rather than
+Give the Codex reviewer its own git worktree rather than
 the primary clone, per `~/.claude/CLAUDE.md`'s worktree section, and note that a worktree runs the
 primary clone's venv by absolute path.
 
@@ -244,11 +243,11 @@ procedure, and it is tracked separately** — Ben's decision, 2026-09-03. It is 
 that a session running a Codex review knows the dependency exists and can check whether it has been
 met.
 
-**It has been met.** `~/.codex/AGENTS.md` exists and is 998 lines, a port of `~/.claude/CLAUDE.md`
+**It has been met.** `~/.codex/AGENTS.md` exists and is 1,077 lines, a port of `~/.claude/CLAUDE.md`
 carrying the same opening convention — its canonical copy is `github-misc`'s `dot-Codex/AGENTS.md`,
 alongside the `dot-claude/` copies, with the same manual write-back and the same drift check.
-Measured 2026-09-03. Note the capital C in `dot-Codex`, which a case-sensitive glob for `dot-codex`
-misses.
+Re-measured 2026-09-08 with `(Get-Content C:\Users\BenDe\.Codex\AGENTS.md).Count`. Note the capital C
+in `dot-Codex`, which a case-sensitive glob for `dot-codex` misses.
 
 ## What this document deliberately does not settle
 
@@ -269,8 +268,8 @@ The recommendation recorded here was made by Claude on 2026-09-01. Design A was 
 2026-09-01 session said so, this document repeated it on 2026-09-03, and a `git worktree list` that
 same day disproved it: four Codex review forests then existed under
 `C:/Users/BenDe/Documents/Codex/ReviewForests/`. Those forests were retired by 2026-09-04;
-`~/.codex/sessions` holds Codex's own history, and
-`~/.codex/AGENTS.md` is 998 lines. Codex ran the staged mega-pipeline review of `py/main_0_mega.py`'s
+`~/.codex/sessions` holds Codex session history, and
+`~/.codex/AGENTS.md` is 1,077 lines as re-measured on 2026-09-08. Codex ran the staged mega-pipeline review of `py/main_0_mega.py`'s
 42 steps, whose output is this repository's `doc/mega-pipeline-review-phase-*-2026-09-01.md` — that
 review names its governing forest and records that the `worktree-forest` and `hebrew-prose` skills
 governed it.
@@ -280,10 +279,8 @@ transcript: **a transcript is evidence about that session, never about the machi
 caveat was accurate about what that session had done and wrong as a claim about this machine, and
 repeating it without checking is how it propagated. Check the machine.
 
-What remains untested is narrower and still worth flagging: nothing here has measured Codex's
-sandboxing behaviour on Windows, so treat the read-only property as an honour system until somebody
-verifies it, and treat any specific flag spelling as the shape of the thing rather than as current
-syntax.
+This document does not assess Codex's current sandboxing behaviour on Windows. The procedural rule
+is independent of that implementation detail: the reviewer writes only the named review records.
 
 **This document is itself a small worked example of the pairing, and converged in two rounds.**
 Claude drafted it on 2026-09-03. Codex then added the "Run the reconciliation as a fresh,

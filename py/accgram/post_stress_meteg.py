@@ -15,8 +15,8 @@ reason: which syllable the stress falls on is not derivable from the pointing wi
 stress model, and al-hatorah's ``py/aht_phon`` has one.  A U+05BD's position is NEVER used to
 infer the stress -- that would make the survey's question answer itself.
 
-THE CORPUS IS PHONETIC MAM'S OWN TEXT, and it is a SNAPSHOT of MAM rather than MAM's current
-state.  Phonetic MAM is regenerated in al-hatorah, on its own schedule, so the standard set
+THE CORPUS IS PHONETIC MAM'S TEXT, and it is a SNAPSHOT of MAM rather than MAM's current
+state.  Phonetic MAM is regenerated on al-hatorah's schedule, so the standard set
 here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the thirty Holman
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
 ``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per numbered verse on
@@ -48,19 +48,14 @@ treated the last parsed entry of a NUMBERED verse as verse-final whether or not 
 pasuq, which is a silluq fallback rather than a test.
 
 A NUMBERED VERSE AND A CHANTED VERSE ARE NOT THE SAME UNIT, and dual-cantillation numbered
-verses are where they come apart -- which is exactly where that fallback could have gone wrong.
-Genesis 35:22 has five duplicate chanted-word groups within its numbered verse. The risk here
-comes from twelve numbered verses in the two Decalogues: each entry list ends with the two
-strands' forms of one chanted word standing adjacent, one with silluq and sof pasuq, whose
-chanted verse ends at the numbered verse's boundary, and one with an ordinary accent and no sof
-pasuq, whose chanted verse runs on into the next numbered verse. Measured 2026-09-04 over all
-twelve such numbered verses -- Exodus 20:2, 3, 4, 7, 8
-and 9 and Deuteronomy 5:6, 7, 8, 11, 12 and 13 in MAM's versification -- the pattern is
-exceptionless: the sof pasuq is on the second-to-last entry every time.  A rule that read
-finality off the position would call that trailing mid-chanted-verse word verse-final, and any
-U+05BD in its stressed syllable a silluq.  ``numbered_verses_whose_last_entry_lacks_sof_pasuq``
-records all twelve, the run fails on a thirteenth that dual cantillation does not account for,
-and no reading of them is needed anyway: none of the twelve has a meteg.
+verses are where the units can differ. The source contains dual structures in eighteen numbered
+verses: Genesis 35:22 and seventeen verses in the two Decalogues. Before classification, the
+survey selects one complete cantillation strand for each such verse and then selects one qamats
+reading for each qamats-variant row. The selected form of every numbered verse ends with sof
+pasuq, measured 2026-09-08. Finality nevertheless comes only from sof pasuq, never from entry
+position. ``numbered_verses_whose_last_entry_lacks_sof_pasuq`` records any future violation;
+the run fails unless every recorded violation is both explained by dual cantillation and free
+of U+05BD.
 
 A METEG AND AN ACCENT ON ONE LETTER HAVE NO DEFINED ORDER (Ben, 2026-09-03), so the run fails
 rather than guessing -- except where the accent sharing the letter marks no stress, since then
@@ -113,7 +108,7 @@ from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 METEG = hpo.MTGOSLQ
 SOF_PASUQ = hpu.SOPA
 MAQAF = hpu.MAQ
-PASEQ = hpu.PASOLEG
+PASOLEG = hpu.PASOLEG
 
 SILLUQ_RULE = (
     "A U+05BD is the silluq when it is in the stressed syllable of a chanted word that"
@@ -126,12 +121,22 @@ SILLUQ_RULE = (
 # atom boundaries inside one chanted word, and neither is a nucleus.
 _BOUNDARIES = frozenset((MAQAF, hpu.NU_GMAQ))
 
-# Phonetic MAM puts this token between the two chanted words at a narrow-sense paseq.  It is
+# Phonetic MAM puts this token between two chanted words at a paseq/legarmeh glyph. It is
 # converted to MAM's U+05C0 only after the survey has located it structurally, never by treating
-# the label as Hebrew text to display.
-_PHONETIC_MAM_PASEQ = (
+# the label as Hebrew text to display. Phonetic MAM does not encode the grammatical distinction;
+# MAM-simple supplies that distinction when the survey attaches the current forms.
+_PHONETIC_MAM_PASOLEG = (
     "\N{HEBREW LETTER MEM}:\N{HEBREW LETTER PE}\N{HEBREW LETTER SAMEKH}"
     "\N{HEBREW LETTER QOF}"
+)
+
+_CB_QAMATS_MARKER = "cb-qamats"
+_PHONETIC_MAM_SETUMA_MARKERS = frozenset(("סס", "ססס"))
+_PHONETIC_MAM_PETUXA_MARKERS = frozenset(("פפ", "פפפ"))
+_PHONETIC_MAM_NON_PUNCTUATION_MATERIAL = (
+    frozenset((None, _CB_QAMATS_MARKER))
+    | _PHONETIC_MAM_SETUMA_MARKERS
+    | _PHONETIC_MAM_PETUXA_MARKERS
 )
 
 _VAV = "\N{HEBREW LETTER VAV}"
@@ -152,8 +157,8 @@ _GUTTURAL_HOSTS = frozenset(
 # The Type 2 page filters every next word into one of these five groups.  The initial
 # letters are named exhaustively rather than putting unexpected initials in a catchall: a
 # changed corpus must stop the survey until its new group has been considered.
-TYPE_2_FOLLOWING_FILTER_GROUPS = ("bet", "guttural", "lamed", "mem", "resh")
-_TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL = {
+TYPE_2_NEXT_WORD_FILTER_GROUPS = ("bet", "guttural", "lamed", "mem", "resh")
+_TYPE_2_NEXT_WORD_FILTER_GROUP_BY_INITIAL = {
     hl.BET: "bet",
     hl.LAMED: "lamed",
     hl.ALEF: "guttural",
@@ -311,7 +316,7 @@ _STRESS_ACCENT_CONJUNCTIVES = {
 }
 
 # The prose scanner exposes token names rather than raw marks.  This set identifies the
-# disjunctive tokens among them; a next word can also have conjunctive or secondary tokens,
+# disjunctive tokens among them; a next chanted word can also have conjunctive or secondary tokens,
 # so the fit-for-MAS screen asks whether at least one of its grammar tokens is disjunctive.
 _PROSE_DISJUNCTIVE_TOKENS = frozenset(
     (
@@ -466,11 +471,11 @@ def type_2_next_filter_group(next_word: str) -> str:
     letters = _letters(next_word)
     assert letters, f"no Hebrew letter in next MAM chanted word: {next_word!r}"
     initial = letters[0][0]
-    assert initial in _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL, (
-        "Type 2 next-word initial is outside the page filters: "
+    assert initial in _TYPE_2_NEXT_WORD_FILTER_GROUP_BY_INITIAL, (
+        "Type 2 next-chanted-word initial is outside the page filters: "
         f"{initial!r} in {next_word!r}"
     )
-    return _TYPE_2_FOLLOWING_FILTER_GROUP_BY_INITIAL[initial]
+    return _TYPE_2_NEXT_WORD_FILTER_GROUP_BY_INITIAL[initial]
 
 
 def _assert_type_2_next_filter_coverage(records: list[dict]) -> None:
@@ -484,7 +489,7 @@ def _assert_type_2_next_filter_coverage(records: list[dict]) -> None:
         assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
         group_count[type_2_next_filter_group(next_word)] += 1
     assert sum(group_count.values()) == len(type_2_records)
-    assert set(group_count) <= set(TYPE_2_FOLLOWING_FILTER_GROUPS)
+    assert set(group_count) <= set(TYPE_2_NEXT_WORD_FILTER_GROUPS)
 
 
 def _has_a_vowel(marks: str) -> bool:
@@ -495,9 +500,9 @@ def _nuclei(letters: list[tuple[str, str, bool]]) -> list[tuple[int, str]]:
     """``(index of the letter with each nucleus, the point that is the nucleus)``.
 
     A FURTIVE PATAX COUNTS, unlike in ``final_stress``: Phonetic MAM has it as a syllable of
-    its own, the two sides' syllable counts are compared here, so it has to count on this
+    separately, the two sides' syllable counts are compared here, so it has to count on this
     side too.  A xolam male and a shuruq are written on a vav that is a mater, so each belongs
-    to the consonant before it -- unless that consonant has a vowel of its own, where the vav
+    to the consonant before it -- unless that consonant already has a vowel, where the vav
     is consonantal and the dagesh doubles it.
     """
     out: list[tuple[int, str]] = []
@@ -654,7 +659,7 @@ def _structural_type(
         return TYPE_OPEN, None
     if chanted_word_is_closed_by_a_guttural:
         return TYPE_GUTTURAL, None
-    if not is_open and vowel == hpo.TSERE:
+    if is_last_syllable and not is_open and vowel == hpo.TSERE:
         return TYPE_CLOSED_TSERE, None
     if is_last_syllable and vowel in (hpo.XOLAM, hpo.XOLAM_XFV):
         return TYPE_UNCLASSIFIED, SUBTYPE_MISC_ALMOST_TYPE_3
@@ -669,7 +674,7 @@ def _misc_subtype(
         structural_type == TYPE_UNCLASSIFIED
         and "".join(letter for letter, _marks, _atom_final in _letters(chanted_word))
         == _VAYOMER_CONSONANTS
-        and intervening_punctuation == (PASEQ,)
+        and intervening_punctuation == (PASOLEG,)
     ):
         return SUBTYPE_MISC_VAYOMER
     return None
@@ -695,8 +700,9 @@ def _chanted_word_events(node: object, out: list[object]) -> None:
 
     ``_chanted_words`` is the broad census walk, intentionally omitting everything other than
     entries. The individual-case page needs narrower context for a post-stress record: an
-    intervening PASEQ is part of the reason its ``vayomer`` cases are distinct. Retaining all
-    other material here makes an unexpected future gap a survey failure rather than an omission.
+    intervening paseq/legarmeh glyph is part of the reason its ``vayomer`` cases are distinct.
+    Retaining all other material here makes an unexpected future gap a survey failure rather than
+    an omission.
     """
     if isinstance(node, dict):
         out.append(node)
@@ -705,6 +711,155 @@ def _chanted_word_events(node: object, out: list[object]) -> None:
             _chanted_word_events(sub, out)
     else:
         out.append(node)
+
+
+def _compound_marker(payload: object) -> str | None:
+    """The marker at the head of a Phonetic MAM compound-bracket payload."""
+    if (
+        isinstance(payload, list)
+        and payload
+        and isinstance(payload[0], list)
+        and len(payload[0]) == 1
+        and isinstance(payload[0][0], str)
+    ):
+        return payload[0][0]
+    return None
+
+
+def _qamats_variant_branches(payload: object) -> list[object]:
+    """The two validated phonetic readings in one qamats-variant row."""
+    assert _compound_marker(payload) == _CB_QAMATS_MARKER, payload
+    assert isinstance(payload, list)
+    branches = payload[1:]
+    assert len(branches) == 2, payload
+    entries_by_branch = []
+    for branch in branches:
+        entries: list[dict] = []
+        _chanted_words(branch, entries)
+        assert entries and all(
+            one.get("fva") and one.get("jta") for one in entries
+        ), payload
+        entries_by_branch.append(entries)
+    assert {one.get("phonrec-qamats") for one in entries_by_branch[0]} == {
+        "qamats-dal"
+    }, payload
+    assert {one.get("phonrec-qamats") for one in entries_by_branch[1]} == {
+        "qamats-sam"
+    }, payload
+    atom_keys_by_branch = [
+        tuple(
+            atom_key
+            for entry in entries
+            for atom_key in _atom_keys(entry["fva"].split(" ")[0])
+        )
+        for entries in entries_by_branch
+    ]
+    assert atom_keys_by_branch[0] == atom_keys_by_branch[1], payload
+    if len(entries_by_branch[0]) == len(entries_by_branch[1]):
+        for first, second in zip(*entries_by_branch, strict=True):
+            first_word = first["fva"].split(" ")[0]
+            second_word = second["fva"].split(" ")[0]
+            assert _fold_qamats_qatan(_join_key(first_word)) == _fold_qamats_qatan(
+                _join_key(second_word)
+            ), payload
+            assert (
+                _jta_syllables(first["jta"])[1] == _jta_syllables(second["jta"])[1]
+            ), payload
+    return branches
+
+
+def _select_qamats_reading(node: object) -> object:
+    """Project each qamats-variant row onto its qamats-dal reading for the MAM census.
+
+    The public Phonetic MAM page presents the two phonetic readings in one row for one MAM
+    chanted-word sequence. The census counts that sequence once. The marker is retained as an
+    event so context handling still knows that an annotation stood between neighboring entries.
+
+    Ben's decision, 2026-09-08: select exactly one of the מ:קמץ parameters, ד or ס, never
+    both. The choice need not receive a separate effect analysis; selecting ד here is
+    acceptable, analogous to selecting cant-alef for dual-cantillation templates.
+    """
+    if not isinstance(node, list):
+        return node
+    if node and node[0] == "cb":
+        out = ["cb"]
+        for payload in node[1:]:
+            if _compound_marker(payload) == _CB_QAMATS_MARKER:
+                first_branch = _qamats_variant_branches(payload)[0]
+                out.append(
+                    [
+                        "cb",
+                        [[_CB_QAMATS_MARKER]],
+                        _select_qamats_reading(first_branch),
+                    ]
+                )
+            else:
+                out.append(_select_qamats_reading(payload))
+        return out
+    return [_select_qamats_reading(one) for one in node]
+
+
+def _qamats_variant_facts(node: object) -> Counter:
+    """Counts that prove qamats alternatives are rows, not additional MAM words."""
+    facts = Counter()
+    if not isinstance(node, list):
+        return facts
+    if node and node[0] == "cb":
+        for payload in node[1:]:
+            if _compound_marker(payload) == _CB_QAMATS_MARKER:
+                branches = _qamats_variant_branches(payload)
+                entries_by_branch = []
+                for branch in branches:
+                    entries: list[dict] = []
+                    _chanted_words(branch, entries)
+                    entries_by_branch.append(entries)
+                facts["rows"] += 1
+                facts["source_entries"] += sum(map(len, entries_by_branch))
+                facts["mam_chanted_words"] += len(entries_by_branch[0])
+                facts["duplicate_entries"] += sum(
+                    len(entries) for entries in entries_by_branch[1:]
+                )
+            else:
+                facts.update(_qamats_variant_facts(payload))
+        return facts
+    for item in node:
+        facts.update(_qamats_variant_facts(item))
+    return facts
+
+
+def _qamats_variant_grouping_differences(node: object) -> list[dict]:
+    """Qamats rows whose two readings divide the atoms into different chanted words."""
+    out = []
+    if not isinstance(node, list):
+        return out
+    if node and node[0] == "cb":
+        for payload in node[1:]:
+            if _compound_marker(payload) == _CB_QAMATS_MARKER:
+                branches = _qamats_variant_branches(payload)
+                entries_by_branch = []
+                for branch in branches:
+                    entries: list[dict] = []
+                    _chanted_words(branch, entries)
+                    entries_by_branch.append(entries)
+                if len(entries_by_branch[0]) != len(entries_by_branch[1]):
+                    out.append(
+                        {
+                            "qamats-dal": [
+                                entry["fva"].split(" ")[0]
+                                for entry in entries_by_branch[0]
+                            ],
+                            "qamats-sam": [
+                                entry["fva"].split(" ")[0]
+                                for entry in entries_by_branch[1]
+                            ],
+                        }
+                    )
+            else:
+                out.extend(_qamats_variant_grouping_differences(payload))
+        return out
+    for item in node:
+        out.extend(_qamats_variant_grouping_differences(item))
+    return out
 
 
 def _accent_grammar_tokens_by_entry(
@@ -732,10 +887,10 @@ def _accent_grammar_tokens_by_entry(
             word = event["fva"].split(" ")[0]
             entries.append(event)
             fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
-        elif event == _PHONETIC_MAM_PASEQ:
+        elif event == _PHONETIC_MAM_PASOLEG:
             assert fragments, (bb, chnu, vrnu)
             prior = fragments[-1]
-            fragments[-1] = cwa.Frag(prior.text, prior.marks + PASEQ, True)
+            fragments[-1] = cwa.Frag(prior.text, prior.marks + PASOLEG, True)
     body, units = cwa._verse_units(fragments)
     assert len(entries) == len(units), (bb, chnu, vrnu, len(entries), len(units))
     tokens = (
@@ -756,41 +911,24 @@ def _accent_grammar_tokens_by_entry(
 def _intervening_punctuation(
     *, bcv: str, chanted_word: str, material: tuple[object, ...]
 ) -> tuple[str, ...]:
-    """The punctuation between one post-stress record and its next chanted word.
+    """The paseq/legarmeh glyphs between two entries, with annotations omitted.
 
-    The current corpus has only Phonetic MAM's narrow-sense paseq token here. A different
-    token is a new display case to classify, not something the page may silently drop.
+    Phonetic MAM's source token does not distinguish paseq from legarmeh. MAM-simple supplies
+    that category later. Setuma and petuxa markers describe layout, while a qamats marker
+    introduces alternative phonetic readings of one MAM template row; none of those
+    three annotation kinds is punctuation between the chanted words. Anything else is a new
+    source shape and remains fatal.
     """
-    if not material:
-        return ()
-    if all(one == _PHONETIC_MAM_PASEQ for one in material):
-        return (PASEQ,) * len(material)
-    raise SurveyProblem(
-        f"{bcv} {chanted_word!r}: intervening material before the next chanted word"
-        f" is not a PASEQ: {material!r}"
-    )
-
-
-_CB_QAMATS_MARKER = "cb-qamats"
-_FIT_FOR_MAS_NON_PUNCTUATION_MATERIAL = frozenset(
-    (None, _CB_QAMATS_MARKER, "סס", "פפ", "ססס", "פפפ")
-)
-
-
-def _fit_for_mas_intervening_punctuation(
-    *, bcv: str, chanted_word: str, material: tuple[object, ...]
-) -> tuple[str, ...]:
-    """The displayed candidate's punctuation, omitting only known non-text metadata."""
-    if not material or all(one == _PHONETIC_MAM_PASEQ for one in material):
-        return _intervening_punctuation(
-            bcv=bcv, chanted_word=chanted_word, material=material
-        )
-    if all(one in _FIT_FOR_MAS_NON_PUNCTUATION_MATERIAL for one in material):
-        return ()
-    raise SurveyProblem(
-        f"{bcv} {chanted_word!r}: unclassified intervening material before a"
-        f" Fit-for-MAS candidate's next chanted word: {material!r}"
-    )
+    punctuation = []
+    for item in material:
+        if item == _PHONETIC_MAM_PASOLEG:
+            punctuation.append(PASOLEG)
+        elif item not in _PHONETIC_MAM_NON_PUNCTUATION_MATERIAL:
+            raise SurveyProblem(
+                f"{bcv} {chanted_word!r}: unclassified material before the next chanted"
+                f" word: {material!r}"
+            )
+    return tuple(punctuation)
 
 
 _DUALCANT_MARKER = "cb-dualcant"
@@ -860,7 +998,7 @@ def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
                 branches = []
                 for branch in payload[1:]:
                     entries: list[dict] = []
-                    _chanted_words(branch, entries)
+                    _chanted_words(_select_qamats_reading(branch), entries)
                     branches.append(entries)
                 out.append(branches)
             else:
@@ -1029,7 +1167,7 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
         punctuation = record.get("intervening_punctuation", ())
         if punctuation:
             if not (
-                record["subtype"] == SUBTYPE_MISC_VAYOMER and punctuation == (PASEQ,)
+                record["subtype"] == SUBTYPE_MISC_VAYOMER and punctuation == (PASOLEG,)
             ):
                 raise SurveyProblem(
                     f"{record['bcv']}: the stress-accent check cannot classify its U+05C0"
@@ -1269,7 +1407,7 @@ def _fit_for_mas_candidate(
         types.append(TYPE_OPEN)
     if _chanted_word_is_closed_by_a_guttural(parsed):
         types.append(TYPE_GUTTURAL)
-    if not is_open and vowel == hpo.TSERE:
+    if stress_is_penultimate and not is_open and vowel == hpo.TSERE:
         types.append(TYPE_CLOSED_TSERE)
     potential_syllable_meteg_count = sum(
         marks.count(METEG)
@@ -1314,7 +1452,7 @@ def _fit_for_mas_candidate(
 
 
 def _has_first_fit_for_mas_criterion(candidate: dict) -> bool:
-    """Whether the word has penultimate stress from a conjunctive accent."""
+    """Whether the chanted word has penultimate stress from a conjunctive accent."""
     return (
         candidate["stress_is_penultimate"]
         and candidate["stress_syllable_has_conjunctive_accent"]
@@ -1322,7 +1460,7 @@ def _has_first_fit_for_mas_criterion(candidate: dict) -> bool:
 
 
 def _has_second_fit_for_mas_criterion(candidate: dict) -> bool:
-    """Whether the next word has initial stress from a disjunctive accent."""
+    """Whether the next chanted word has initial stress from a disjunctive accent."""
     return (
         candidate["next_chanted_word_is_initially_stressed"]
         and candidate["next_chanted_word_has_disjunctive_accent"]
@@ -1426,7 +1564,7 @@ def _fit_for_mas_record(candidate: dict) -> dict:
 
 
 def _not_fit_for_mas_record(candidate: dict) -> dict:
-    """The complete public-data record for one MAS word not fit for MAS."""
+    """The complete public-data record for one MAS chanted word not fit for MAS."""
     assert candidate["has_mas"] and not _is_fit_for_mas(candidate), candidate
     assert candidate["mam_form"] is not None, candidate
     assert candidate["next_mam_form"] is not None, candidate
@@ -1794,8 +1932,8 @@ def _fit_for_mas_summary(
             " MAS."
         ),
         "not_fit_records_what": (
-            "Every MAS word that is not fit for MAS. Each record has the MAS word,"
-            " its next word, and whether it meets each of the three Fit-for-MAS"
+            "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted"
+            " word, its next chanted word, and whether it meets each of the three Fit-for-MAS"
             " criteria."
         ),
         "candidate_chanted_words": len(candidates),
@@ -1805,9 +1943,6 @@ def _fit_for_mas_summary(
         "without_mas": len(fitting) - with_mas,
         "by_type_1_subtype": by_type_1_subtype,
         "by_fit_type": by_fit_type,
-        "candidates_meeting_multiple_types": sum(
-            len(candidate["structural_types"]) > 1 for candidate in fitting
-        ),
         "mas_not_in_the_table": {
             "stress_not_penultimate": len(mas_with_nonpenultimate_stress),
             "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
@@ -1851,6 +1986,11 @@ def _scan(
         "dual_cantillation": {},
         "dual_cantillation_chanted_words": {},
         "dual_template_entries": {},
+        "source_chanted_word_entries_by_system": Counter(),
+        "mam_chanted_words_by_system": Counter(),
+        "qamats_variant_rows_by_system": Counter(),
+        "qamats_variant_duplicate_entries_by_system": Counter(),
+        "qamats_variant_distinct_groupings": [],
         "type_2_type_3_overlap_by_book": Counter(),
         "type_2_type_3_overlap_by_final_letter": Counter(),
         "type_2_type_3_overlap_example": None,
@@ -1866,12 +2006,13 @@ def _scan(
             dual = _has_dual_cantillation(verse)
             if dual_templates_only and not dual:
                 continue
+            cantillation_verse = _select_cantillation_strand(verse, cantillation)
             _one_verse(
                 f"{bb}{chnu}:{vrnu}",
                 bb,
                 chnu,
                 vrnu,
-                _select_cantillation_strand(verse, cantillation),
+                _select_qamats_reading(cantillation_verse),
                 found,
                 has_legarmeh=has_legarmeh,
                 dual_cantillation=dual,
@@ -1881,6 +2022,7 @@ def _scan(
                     if dual_templates_only
                     else None
                 ),
+                source_verse=cantillation_verse,
             )
     return found
 
@@ -1897,6 +2039,7 @@ def _one_verse(
     dual_cantillation: bool | None = None,
     dual_facts: dict | None = None,
     template_entry_ids: set[int] | None = None,
+    source_verse: object | None = None,
 ) -> None:
     system = (
         SYSTEM_POETIC
@@ -1931,6 +2074,36 @@ def _one_verse(
     )
     usable = [one for one in scoped_entries if one.get("jta") and one.get("fva")]
     all_usable = [one for one in entries if one.get("jta") and one.get("fva")]
+    if template_entry_ids is None:
+        assert source_verse is not None
+        source_entries: list[dict] = []
+        _chanted_words(source_verse, source_entries)
+        source_usable = [
+            one for one in source_entries if one.get("jta") and one.get("fva")
+        ]
+        qamats_facts = _qamats_variant_facts(source_verse)
+        assert qamats_facts["source_entries"] == (
+            qamats_facts["mam_chanted_words"] + qamats_facts["duplicate_entries"]
+        )
+        assert qamats_facts["rows"] <= qamats_facts["mam_chanted_words"]
+        assert qamats_facts["rows"] <= qamats_facts["duplicate_entries"]
+        assert len(source_usable) == (
+            len(all_usable) + qamats_facts["duplicate_entries"]
+        )
+        found["source_chanted_word_entries_by_system"][system] += len(source_usable)
+        found["mam_chanted_words_by_system"][system] += len(all_usable)
+        found["qamats_variant_rows_by_system"][system] += qamats_facts["rows"]
+        found["qamats_variant_duplicate_entries_by_system"][system] += qamats_facts[
+            "duplicate_entries"
+        ]
+        found["qamats_variant_distinct_groupings"].extend(
+            {
+                "bcv": bcv,
+                "system": system,
+                **difference,
+            }
+            for difference in _qamats_variant_grouping_differences(source_verse)
+        )
     found["entries_without_jta_or_fva"] += len(scoped_entries) - len(usable)
     if not usable:
         return
@@ -1971,6 +2144,15 @@ def _one_verse(
             next_entry["fva"].split(" ")[0] if next_entry is not None else None
         )
         next_jta = next_entry["jta"] if next_entry is not None else None
+        next_jta_for_analysis = next_jta
+        if next_chanted_word is not None and next_jta is not None:
+            try:
+                _parse(next_chanted_word, next_jta)
+            except SurveyProblem:
+                # The next entry records the mismatch when the scan reaches it. The
+                # current entry remains countable, but no next-word stress claim may use the
+                # mismatched pair.
+                next_jta_for_analysis = None
         next_accent_grammar_tokens = (
             accent_grammar_tokens[id(next_entry)] if next_entry is not None else ()
         )
@@ -2023,10 +2205,10 @@ def _one_verse(
             parsed=parsed,
             before_qere=entry.get("before_qfikq"),
             next_chanted_word=next_chanted_word,
-            next_jta=next_jta,
+            next_jta=next_jta_for_analysis,
             next_accent_grammar_tokens=next_accent_grammar_tokens,
             accent_grammar_tokens=accent_grammar_tokens[id(entry)],
-            intervening_punctuation=_fit_for_mas_intervening_punctuation(
+            intervening_punctuation=_intervening_punctuation(
                 bcv=bcv,
                 chanted_word=word,
                 material=intervening_material,
@@ -2044,7 +2226,7 @@ def _one_verse(
             before_qere=entry.get("before_qfikq"),
             preceding_chanted_word=preceding_chanted_word,
             next_chanted_word=next_chanted_word,
-            next_jta=next_jta,
+            next_jta=next_jta_for_analysis,
             next_chanted_word_accent_classification=(
                 next_chanted_word_accent_classification
             ),
@@ -2127,7 +2309,7 @@ def _fold_qamats_qatan(key: str) -> str:
     """``key`` with U+05C7 read as an ordinary qamats.
 
     MAM spells qamats qatan U+05C7 and Phonetic MAM does not always agree with it about
-    which qamats a word has -- Job 11:17 is where the two spellings stand side by side, as a
+    which qamats a chanted word has -- Job 11:17 is where the two spellings stand side by side, as a
     qamats note offering both.  A fold is tried only after the unfolded key has failed, and
     a record that needed it says so in ``matched_by``.
     """
@@ -2237,10 +2419,10 @@ def _next_mam_context(
         if next_stream_index == len(stream):
             continue
         next_item = stream[next_stream_index]
-        if next_item == PASEQ:
+        if next_item == PASOLEG:
             raise SurveyProblem(
-                f"{record['bcv']} {current!r}: a MAM PASEQ before the next chanted"
-                " word lacks MAM's native paseq/legarmeh category"
+                f"{record['bcv']} {current!r}: a MAM paseq/legarmeh glyph before the next chanted"
+                " chanted word lacks MAM's native paseq/legarmeh category"
             )
         if not isinstance(next_item, str):
             raise SurveyProblem(
@@ -2281,7 +2463,7 @@ def _attach_mam_forms(
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this
-    survey's own subject included, so a chanted word that has GAINED or LOST a meteg since
+    including the survey's subject, so a chanted word that has GAINED or LOST a meteg since
     the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
 
     TWO IDENTICAL CANDIDATES ARE ONE ANSWER, and are accepted: a verse with two byte-identical
@@ -2312,7 +2494,7 @@ def _attach_mam_forms(
         record["next_mam_form"] = next_mam_form
         record["intervening_mam_punctuation"] = intervening_mam_punctuation
         if settled is not None:
-            # Recomputed off MAM's own form, so that every Hebrew string the page can render
+            # Recomputed from MAM's form, so that every Hebrew string the page can render
             # from this record comes from one text rather than two.
             record["accents_and_letters"] = _bare(settled)
         else:
@@ -2335,7 +2517,7 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
     """How far the surveyed snapshot of MAM stands from the MAM-simple beside it.
 
     A per-numbered-verse U+05BD count on each side, in MAM's versification so the verse keys line
-    up, and every verse where the two disagree.  This needs no word-by-word alignment and so
+    up, and every verse where the two disagree.  This needs no chanted-word alignment and so
     survives the places where the two texts group atoms differently.
 
     DUAL-CANTILLATION VERSES ARE LEFT OUT, and would otherwise dominate the list: Phonetic MAM
@@ -2366,7 +2548,7 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
         ),
         "how": (
             "Per NUMBERED verse, in MAM's versification, which is the numbering both"
-            " sides use. Nothing here aligns words, so it survives the places where the two"
+            " sides use. Nothing here aligns chanted words, so it survives the places where the two"
             " texts group atoms differently. Dual-cantillation numbered verses are left out:"
             " Phonetic MAM has both strands where MAM-simple's loader yields the combined"
             " stream once. Every other numbered verse ends on a chanted word with sof pasuq,"
@@ -2708,7 +2890,7 @@ def build_survey() -> dict:
         bcv: [item for item in stream if isinstance(item, str)]
         for bcv, stream in context_by_bcv.items()
     } == {
-        bcv: [word for word in words if word != PASEQ]
+        bcv: [word for word in words if word != PASOLEG]
         for bcv, words in words_by_bcv.items()
     }
     words_by_cantillation = {
@@ -2724,6 +2906,26 @@ def build_survey() -> dict:
     if problems:
         raise SurveyProblem("; ".join(problems))
     counts = found["counts"]
+    qamats_variant_census = {}
+    for system in (SYSTEM_PROSE, SYSTEM_POETIC):
+        source_entries = found["source_chanted_word_entries_by_system"][system]
+        mam_chanted_words = found["mam_chanted_words_by_system"][system]
+        duplicate_entries = found["qamats_variant_duplicate_entries_by_system"][system]
+        variant_rows = found["qamats_variant_rows_by_system"][system]
+        grouping_entry_difference = sum(
+            len(one["qamats-sam"]) - len(one["qamats-dal"])
+            for one in found["qamats_variant_distinct_groupings"]
+            if one["system"] == system
+        )
+        assert source_entries == mam_chanted_words + duplicate_entries
+        assert duplicate_entries == variant_rows + grouping_entry_difference
+        assert mam_chanted_words == counts[(system, "chanted words checked")]
+        qamats_variant_census[system] = {
+            "source_entries": source_entries,
+            "variant_rows": variant_rows,
+            "duplicate_phonetic_reading_entries": duplicate_entries,
+            "mam_chanted_words_counted": mam_chanted_words,
+        }
     post_stress = found["post_stress"]
     _assert_type_2_next_filter_coverage(post_stress)
     mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
@@ -2815,6 +3017,18 @@ def build_survey() -> dict:
         "counts": {
             system: {one: counts[(system, one)] for one in _COUNT_CATEGORIES}
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
+        },
+        "qamats_variant_census": {
+            "what": (
+                "A qamats-variant row contains qamats-dal and qamats-sam readings of one MAM"
+                " template row. The source-entry count includes both readings; the MAM chanted-word"
+                " count selects the qamats-dal sequence once. The fatal survey"
+                " invariants require source entries to equal MAM chanted words counted plus"
+                " duplicate phonetic-reading entries, and connect duplicate entries to row counts"
+                " and measured grouping differences, in each system."
+            ),
+            "by_system": qamats_variant_census,
+            "distinct_phonetic_groupings": found["qamats_variant_distinct_groupings"],
         },
         "census_chanted_word_summary": census_chanted_word_summary,
         "post_stress_by_structural_type": {

@@ -10,9 +10,9 @@ canonical there:
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
 XML under `out/xml-vtrad-mam`, a directory MAM-simple moved to the repo root — so on
 2026-08-03 its content was merged into the canonical guide and this pointer left behind.
-What remains below is what is specific to this repo.
+What remains below is what is specific to the Cambridge 1753 data.
 
-## What this repo has
+## What MAM-basics has for Cambridge 1753
 
 `../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
 landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
@@ -22,15 +22,15 @@ landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pip
 `get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
 dict per verse with `cv`, `words`, `ketiv_indices`, and `parashah_before`.
 
-**The reader is codex-index-aleppo's, and that is deliberate.** codex-index-cam1753 had a copy of
-its own at `py_mam_xml/mam_xml_verses.py` until 2026-08-22; the two were the same tool
+**The shared reader came from codex-index-aleppo, deliberately.** codex-index-cam1753 had a
+separate copy at `py_mam_xml/mam_xml_verses.py` until 2026-08-22; the two were the same tool
 with 43 lines of drift, and a census of every tag in Ps, Job and Prov found exactly one
 they treated differently — `spi-invnun`, the seven inverted nuns of Psalm 107, which
-codex-index-aleppo's copy raised on and this repo's silently skipped. The shared copy was
+the codex-index-aleppo copy raised on and the codex-index-cam1753 copy silently skipped. The shared copy was
 given the missing skip clause and this repo's was deleted, the equivalence having been
 checked over all three books: 4512 verses, 30322 words, 0 mismatches.
 
-Two choices in it belong to these two repos, not to MAM-simple:
+Two choices in the shared reader belong to the Aleppo and Cambridge 1753 workflows, not to MAM-simple:
 
 - **It takes the ketiv, not the qere**, because the point is alignment against what
   Cambridge MS Add. 1753 has on the page, and the ketiv is what is written there.

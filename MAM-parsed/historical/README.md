@@ -17,7 +17,7 @@ From the MAM-basics root, the usual command compares the latest named release
 with committed `MAM-parsed/plus/` at MAM-basics HEAD:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpp
+.venv/Scripts/python.exe py/main_diff.py mpp
 ```
 
 `--all` also regenerates every named release. Explicit `--old` and `--new`
@@ -30,12 +30,11 @@ For an arbitrary pre-migration comparison, supply both revisions and opt
 into the sibling clone:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpp --legacy-history --old 9ce6ee5 --new 51082036e5907991d0d322cb6dfcc6404802099f
+.venv/Scripts/python.exe py/main_diff.py mpp --legacy-history --old 9ce6ee5 --new 51082036e5907991d0d322cb6dfcc6404802099f
 ```
 
-The clone must already exist, normally at
-`C:/Users/BenDe/GitRepos/MAM-parsed`. `REPO_MAM_PARSED_DIR` or `REPOS_ROOT`
-can locate a clone elsewhere. Missing history fails with an error; the
+The clone must already exist. `REPO_MAM_PARSED_DIR` or `REPOS_ROOT` locates it.
+Missing history fails with an error; the
 command never modifies or fetches the clone. Select explicit pre-migration
 commits so comparisons do not depend on the redirect host's current contents.
 An individual `legacy:<ref>` argument permits a comparison between an

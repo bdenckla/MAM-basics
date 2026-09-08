@@ -2,7 +2,7 @@
 
 Evidence for the seven-item programme
 [`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
-and specifically for that programme's item 1, which has a plan of its own,
+and specifically for that programme's item 1, which has a separate plan,
 [`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md).
 
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
@@ -83,8 +83,8 @@ OCR line numbers drift.
    by *shewa*" (lines 66–69: Genesis 28:2 פַּדֶּ֣נָֽה אֲרָ֔ם, Deuteronomy 32:13, Jeremiah 9:18).
    **קוּמִי עֲבֹרִי is this section's case, in its commoner subtype**, since עֲבֹ֔רִי begins with
    a ḥaṭaf. Ben's adaptation: `../MAM-private/al-hatorah/py/itm/my_yeivin_sec_332.py`.
-3. **§338, "Gaʿya on a Closed Syllable with Ṣere after the Accent"** (`N0329.md` line 184;
-   `N0338.md` lines 1–9): where the accent retracts and a final ṣere stays, that ṣere has
+3. **§338, "Gaʿya on a Closed Syllable with Tsere after the Accent"** (`N0329.md` line 184;
+   `N0338.md` lines 1–9): where the accent retracts and a final tsere stays, that tsere has
    gaʿya, "marked both in MSS and in printed texts". Examples: Isaiah 66:3 עֹ֣רֵֽף כֶּ֔לֶב and
    מְבָ֣רֵֽךְ אָ֑וֶן, Isaiah 40:7–8 נָ֣בֵֽל. §308 (`N0304.md` lines 119–164) is the nesiga rule that
    feeds it, adding Isaiah 49:7 לִמְתָ֤עֵֽב and, with furtive pataḥ, Isaiah 63:12 בּ֣וֹקֵֽעַ.
@@ -145,7 +145,15 @@ Neither book says a gaʿya is never marked after the stress; both say the opposi
 discusses a gaʿya after silluq, and the rules for the open-syllable and guttural types each
 require a FOLLOWING chanted word, which excludes a verse-final chanted word by construction.
 
-## The census: MAM has a meteg after the stress on 231 chanted words
+## The historical 2026-09-03 census: 231 post-stress chanted words
+
+**Correction, 2026-09-08: the tracked survey now counts 232 MAS chanted words, 178 in prose
+verses and 54 in poetic verses.** Counting each qamats-variant MAM chanted word once gives
+prose and poetic denominators of 233,277 and 29,542, MBS_O chanted-word counts of 12,828 and
+1,786, and silluq counts of 18,738 and 4,465. The positional census separately counts 12,962
+and 1,805 individual pre-stress marks. The current currency comparison finds nine differing
+numbered verses, 38,161 U+05BD in the Phonetic MAM snapshot against 38,170 in MAM-simple. The
+231 total and tables below remain the historical output of the untracked 2026-09-03 script.
 
 The algorithm is defined by the untracked census script named at the head of this note,
 and its output is
@@ -276,6 +284,10 @@ prefix exists so wlc-utils' 154 frozen redirect stubs can rewrite a prefix onto
 `MAM-basics/wlc/<path>`, a page published here after the 2026-08-17 move earns no stub, and the
 page does not take WLC as its corpus.
 
+**Correction, 2026-09-08: the preceding fragment link is the 2026-09-04 rendered state.** The
+M23-specific section and `m23-isaiah-23-12` identifier were removed on 2026-09-06. The M23
+card now links `../post-stress-meteg.html` without a fragment.
+
 ## What this leaves for Ben to decide about M23
 
 **Correction, 2026-09-03: nothing was left to decide, and this section HAS BEEN
@@ -319,5 +331,5 @@ Nothing here says whether to accept M23. The facts that bear on it:
   `C354-P1-C8-Ga-aya.jpg` is p. 354, where Ch. 8 §46's heading stands. A roman-numbered page
   takes a `B` name, `B16.jpg` being p. xvi. `masorah-books/py/cos/fix_diacritics.py`'s
   `SCAN_REPAIRS` already relies on this convention.
-- Ch. 14 §8's own span: p. 550 is blank, `C551` and `C552` are the Part III title leaves, and
+- The span of Ch. 14 §8: p. 550 is blank, `C551` and `C552` are the Part III title leaves, and
   Ch. 15 opens on p. 553, so §8 ends on p. 549.

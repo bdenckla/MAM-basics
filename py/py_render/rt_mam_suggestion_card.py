@@ -11,7 +11,7 @@ whose every other line asked which kind it had.
 WHAT A CARD SHOWS THAT THE EXTRACT DOES NOT SAY OUTRIGHT.  The comparison table
 puts MAM's form and the comparison edition's on adjacent rows, which is the
 contrast the case is about and is one mark wide; the notes below it carry Holman's
-own description and, where he gave one, his suggestion.  Where the extract
+description and, where he gave one, his suggestion.  Where the extract
 corrected something -- an atom index, or a suggestion -- the card says so and
 names the corrector, because a reader looking at a form has no other way to know
 that the record differs from the message it came from.
@@ -349,7 +349,7 @@ def _corrected_field_label(field: str) -> str:
 def _corrected_form_html(case: dict[str, Any]) -> str:
     """Say that the comparison form shown above is not verbatim Holman.
 
-    The suggestion line carries its attribution inline, appended to its own text.
+    The suggestion line carries its attribution inline, appended to the suggestion text.
     A form cannot: it sits in a Hebrew cell of the comparison table, where an
     English clause does not belong.  So a corrected form gets this line instead,
     and the bare "as sent" line below still holds exactly what Holman sent.
