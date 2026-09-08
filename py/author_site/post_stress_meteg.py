@@ -768,10 +768,11 @@ def pin_claims(survey: dict) -> None:
     }
     assert fit_for_mas["mas_not_in_the_table"] == {
         "outside_the_three_types": 7,
+        "stress_not_penultimate": 4,
         "next_word_not_disjunctive": 15,
         "next_word_not_initially_stressed": 1,
         "type_1_subtype_C": 4,
-        "type_2_subtype_C": 5,
+        "type_2_subtype_C": 1,
     }
     mbs_and_mas = census_chanted_word_summary["mas_chanted_words_with_mbs"]
     assert [record["bcv"] for record in mbs_and_mas] == [
@@ -2657,6 +2658,13 @@ def _fit_for_mas_facts(survey: dict) -> list:
             (
                 "The MAS syllable has none of types 1, 2, or 3.",
                 f"{mas_not_in_the_table['outside_the_three_types']:,}",
+            ),
+            (None, _NUMERIC_CELL),
+        ),
+        mb_html.table_row_of_data(
+            (
+                "The MAS syllable's word does not have penultimate stress.",
+                f"{mas_not_in_the_table['stress_not_penultimate']:,}",
             ),
             (None, _NUMERIC_CELL),
         ),

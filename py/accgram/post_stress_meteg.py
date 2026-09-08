@@ -1249,18 +1249,20 @@ def _fit_for_mas_candidate(
 
     Phonetic MAM's ``jta`` supplies the chanted word's one primary-stress position; a raw
     Unicode accent count cannot supply that information.  The potential syllable is directly
-    after a nonfinal stress.  The table calls it fit for MAS only when the stress syllable has
-    exactly one regular conjunctive accent, the next chanted word has initial stress and a
-    disjunctive accent-grammar token, and the candidate meets one of the Fit-for-MAS types.
+    after a nonfinal stress.  The table calls it fit for MAS only when the stress is penultimate
+    and its syllable has exactly one regular conjunctive accent, the next chanted word has
+    initial stress and a disjunctive accent-grammar token, and the candidate meets one of the
+    Fit-for-MAS types.
     """
     stressed = parsed["stressed"]
     if stressed == len(parsed["syllables"]) - 1:
         return None
     potential_syllable = stressed + 1
+    stress_is_penultimate = potential_syllable == len(parsed["syllables"]) - 1
     is_open = _syllable_is_open(parsed["syllables"][potential_syllable])
     vowel = parsed["nuclei"][potential_syllable][1]
     types = []
-    if is_open and potential_syllable == len(parsed["syllables"]) - 1:
+    if is_open and stress_is_penultimate:
         types.append(TYPE_OPEN)
     if _chanted_word_is_closed_by_a_guttural(parsed):
         types.append(TYPE_GUTTURAL)
@@ -1283,6 +1285,7 @@ def _fit_for_mas_candidate(
         "next_chanted_word": next_chanted_word,
         "intervening_punctuation": intervening_punctuation,
         "structural_types": types,
+        "stress_is_penultimate": stress_is_penultimate,
         "has_u05bd": bool(potential_syllable_meteg_count),
         "word_has_another_meteg": (word.count(METEG) > potential_syllable_meteg_count),
         "next_chanted_word_is_initially_stressed": (
@@ -1307,7 +1310,8 @@ def _fit_for_mas_candidate(
 def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     """Whether a candidate has every Fit-for-MAS property apart from its type criterion."""
     return (
-        candidate["stress_syllable_has_conjunctive_accent"]
+        candidate["stress_is_penultimate"]
+        and candidate["stress_syllable_has_conjunctive_accent"]
         and candidate["next_chanted_word_is_initially_stressed"]
         and candidate["next_chanted_word_has_disjunctive_accent"]
     )
@@ -1609,6 +1613,11 @@ def _fit_for_mas_summary(
         for candidate in candidates
         if candidate["has_mas"] and not candidate["structural_types"]
     ]
+    mas_with_nonpenultimate_stress = [
+        candidate
+        for candidate in candidates
+        if candidate["has_mas"] and not candidate["stress_is_penultimate"]
+    ]
     mas_with_non_disjunctive_next_word = [
         candidate
         for candidate in candidates
@@ -1652,6 +1661,7 @@ def _fit_for_mas_summary(
     ]
     excluded_mas = (
         mas_outside_the_three_types
+        + mas_with_nonpenultimate_stress
         + mas_with_non_disjunctive_next_word
         + mas_with_noninitial_next_word
         + mas_with_type_1_subtype_c
@@ -1666,9 +1676,9 @@ def _fit_for_mas_summary(
     assert with_mas + len(excluded_mas) == mas_count, (with_mas, excluded_mas)
     return {
         "what": (
-            "Every syllable immediately after a nonfinal primary stress with a conjunctive"
-            " accent, with a next chanted word that has initial stress and a"
-            " disjunctive accent-grammar token, classified by the three MAS structural"
+            "Every syllable immediately after a penultimate primary stress with exactly one"
+            " regular conjunctive accent, with a next chanted word that has initial stress"
+            " and a disjunctive accent-grammar token, classified by the three MAS structural"
             " predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable"
             " is checked for U+05BD."
             " Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and"
@@ -1693,6 +1703,7 @@ def _fit_for_mas_summary(
         ),
         "mas_not_in_the_table": {
             "outside_the_three_types": len(mas_outside_the_three_types),
+            "stress_not_penultimate": len(mas_with_nonpenultimate_stress),
             "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),
