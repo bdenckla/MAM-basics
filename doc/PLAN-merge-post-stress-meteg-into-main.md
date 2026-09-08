@@ -81,14 +81,19 @@ for these nine pages and for nothing else.**
 | Fact | Command |
 | --- | --- |
 | merge base `c73a2ad3` | `git merge-base HEAD main` |
-| 7 branch commits `main` lacks | `git log --oneline main..HEAD` |
-| 11 `main` commits the branch lacks | `git log --oneline HEAD..main` |
+| 8 branch commits `main` lacks, ending at `27f729e8` | `git log --oneline main..HEAD` |
+| 12 `main` commits the branch lacks, `main` at `15ec6f4d` | `git log --oneline HEAD..main` |
 | suite on the branch: 978 passed, 5 skipped | `py/main_test.py` |
 | "chanted" in the branch's nine pages: 0 | `grep -c chanted gh-pages/post-stress-meteg*.html` |
 | "chanted" in `main`'s eight pages: 440 | same, against `git show main:...` |
 
-Another session may be live in this repo; `main` was pushed during the session that wrote this
-plan. Re-check `git rev-parse main origin/main` before step 9, and `git fetch` first.
+**`main` is actively moving, so a HIGHER count on the `main` side is expected rather than a
+finding.** It advanced twice on 2026-09-08 while this plan was being written, from `1a489a6e` to
+`975a16c5` to `15ec6f4d`, and was fully pushed each time — another session is at work in the
+primary clone. What must match is the **merge base** and the **branch** side; if the merge base is
+no longer `c73a2ad3`, or the branch head does not contain `27f729e8`, stop and ask Ben. Re-check
+`git rev-parse main origin/main` before step 9, with `git fetch` first, and expect the conflict
+counts below to have grown with `main`.
 
 ## What must not change, and the trap inside it
 
