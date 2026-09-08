@@ -17,13 +17,17 @@ def strip_heb(s):
 
 
 def no_marks_comparison_key(s):
-    """Return the shared Cambridge comparison key without marks or format chars.
+    """Return the shared line-break key without meteg or rafe.
 
-    The key retains punctuation, including maqaf, PASEQ, and sof pasuq.  It is
-    for matching only; callers retain their pointed strings for display and
-    transcription.
+    The manuscript line data deliberately differs from MAM in those two marks.
+    The key retains vowels, dagesh, shin and sin dots, accents, format characters,
+    letters, and punctuation so the line-break checks expose every other change.
     """
-    return strip_heb(s)
+    ignored = {
+        "\N{HEBREW POINT METEG}",
+        "\N{HEBREW POINT RAFE}",
+    }
+    return "".join(ch for ch in s if ch not in ignored)
 
 
 def join_maqaf(words):

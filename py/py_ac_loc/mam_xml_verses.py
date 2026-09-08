@@ -36,6 +36,41 @@ PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 
 
+def _scribal_difference_target_text(sdt, verse_osis):
+    """Return the visible target text, rejecting an unrecognised target shape."""
+    attribute_text = sdt.attrib.get("text", "")
+    if attribute_text.strip():
+        if len(sdt):
+            raise ValueError(
+                f"<sdt-target> has text= and child elements in {verse_osis}"
+            )
+        return attribute_text.strip()
+
+    parts = []
+    for child in sdt:
+        if child.tag == "slh-word":
+            text = child.attrib.get("slhw-desc-0", "")
+            if not text.strip():
+                raise ValueError(
+                    f"<slh-word> under <sdt-target> has no slhw-desc-0 "
+                    f"in {verse_osis}"
+                )
+            parts.append(text)
+        elif child.tag == "text":
+            if "text" not in child.attrib:
+                raise ValueError(
+                    f"<text> under <sdt-target> has no text= in {verse_osis}"
+                )
+            parts.append(child.attrib["text"])
+        elif child.tag == "spi-pe2":
+            pass
+        else:
+            raise ValueError(
+                f"Unhandled <sdt-target> child <{child.tag}> in {verse_osis}"
+            )
+    return "".join(parts).strip()
+
+
 def get_verse_words(verse_el):
     """
     Extract the word list from a MAM-simple XML <verse> element.
@@ -99,15 +134,12 @@ def get_verse_words(verse_el):
                     raw_words.extend(ws)
                     ketiv_flags.extend([False] * len(ws))
             elif tag == "scrdfftar":
-                # Scribal difference target — extract word from sdt-target child
+                # Scribal difference target — extract visible text in document order.
                 sdt = child.find("sdt-target")
                 if sdt is not None:
-                    text = sdt.attrib.get("text", "").strip()
-                    if not text:
-                        # sdt-target may contain slh-word with the word
-                        slh = sdt.find("slh-word")
-                        if slh is not None:
-                            text = slh.attrib.get("slhw-desc-0", "").strip()
+                    text = _scribal_difference_target_text(
+                        sdt, verse_el.attrib.get("osisID", "?")
+                    )
                     if text:
                         ws = text.split()
                         raw_words.extend(ws)
