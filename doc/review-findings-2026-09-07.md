@@ -816,3 +816,58 @@ unselected omission exists.
 The unselected claims are listed in `doc/codex-review-findings-2026-09-07.md` under
 `## Limits of the Codex review`. The Codex review also did not recreate or inspect the absent public
 source clones, and it preserved the Claude report's public-only boundary.
+
+## Reconciliation with the Codex Sol re-review
+
+The additional Design A run is recorded in
+`doc/codex-review-findings-2026-09-07-sol.md`. The Sol report preserves both the Terra report and
+the Terra reconciliation above. The Sol report checked a largely separate selection of claims.
+The Sol reviewer accidentally saw the Terra reconciliation summary before switching to the frozen
+Claude blob, but did not read the Terra report until after freezing the Sol findings; the Sol report
+therefore records an explicit independence caveat.
+
+### Claude claims confirmed by Codex Sol
+
+Codex Sol independently confirmed ten selected claim groups:
+
+1. Finding 2's Deuteronomy 33:29 placement.
+2. Finding 6's census of five stale vendored copies.
+3. Finding 10's checked stale and incorrect review records.
+4. Finding 12's checked stale post-stress-meteg records.
+5. Findings 13.2 and 13.3's residual classifier names and unsupported BHS prose.
+6. Findings 14.3, 14.4, and 14.5's placement, licence, and font-exception gaps.
+7. Finding 16's MAM-mark-order counts.
+8. Findings 17.1 and 17.3's overbroad comparison key and premature output-path calculation.
+9. Finding 19's checked README and licence errors.
+10. Finding 20's 576-page link graph, eleven orphans, and zero dead internal targets.
+
+### Claude claims rejected in part by Codex Sol
+
+1. Finding 3 has the correct core diagnosis and the correct later corpus counts, but its opening
+   phrase gives the wrong unit. The public pages have 368 qamats-variant rows containing 370
+   duplicated chanted words. Psalms 35:10 and Proverbs 19:7 each place two duplicated chanted words
+   in one row.
+2. The scope census correctly gives 99 commits with a co-author trailer, but says the trailers are
+   spelled four ways. The parenthetical list and the independent census have five exact trailer
+   lines. Finding 23.1's narrower statement that the Codex trailer has three spellings remains
+   correct.
+
+### Claude omission found by Codex Sol
+
+`git diff --check b4706759..8bf586a3` reports 210 whitespace errors in landed product artifacts: 21
+trailing-space lines and 189 blank final lines. The errors arrived in `cf7c7a35` and `4195440e`
+from the source products. The result is an artifact-hygiene finding rather than a behavioral
+defect, but the Claude review did not record the failing `git diff --check` result.
+
+### Relation between the Terra and Sol Codex reviews
+
+The Terra report's no-rejection and no-omission conclusion remains accurate for the claims and
+checks selected by Terra. The Sol report adds the two partial corrections and the omitted
+artifact-hygiene finding above; the Sol report does not replace or revise the Terra report.
+
+### Claude claims not independently checked by Codex Sol
+
+The Sol limits are listed in `doc/codex-review-findings-2026-09-07-sol.md` under
+`## Limits of the Sol re-review`. Codex Sol did not rerun the full suite, the mega pipeline,
+artifact generators, GitHub Pages deployments, issue state, mutable worktree state, private-side
+facts, source-clone safety reports, source-book claims, or every code fragility under finding 17.
