@@ -181,6 +181,7 @@ _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
 _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issues/78"
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
+_MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _CHRONICLES_8_11_VERSE = "2c8:11"
 _CHRONICLES_8_11_ALEPPO_CROP_URL = "img/Aleppo-Codex-2Chr-8v11.png"
 _CHRONICLES_8_11_LENINGRAD_CROP_URL = "img/Leningrad-Codex-2Chr-8v11.png"
@@ -572,8 +573,21 @@ def build_methods_body(survey: dict) -> list:
                 ", which marks the stress of every word.",
             )
         ),
+        mb_html.heading_level_2("1 Kings 7:37"),
         mb_html.para(_mam_post_silluq_statement(survey)),
         _mam_post_silluq_aleppo_crop(),
+        mb_html.para(
+            (
+                "At ",
+                _ref_link(_MAM_POST_SILLUQ_VERSE, "1K 7:37"),
+                ", the Leningrad Codex lacks the ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                ".",
+            )
+        ),
+        _mam_post_silluq_leningrad_crop(),
         mb_html.para(
             "In the research we present here, we define “prose” and “poetic” as follows:"
         ),
@@ -2449,9 +2463,21 @@ def _mam_post_silluq_aleppo_crop() -> object:
     """The Aleppo Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        ' alt="Aleppo Codex crop of the verse-final chanted word at 1 Kings 7:37."'
+        ' alt="Aleppo Codex crop of the verse-final chanted word at 1 Kings 7:37; it has'
+        ' a meteg after the silluq."'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo Codex, 1 Kings 7:37.</figcaption></figure>"
+    )
+
+
+def _mam_post_silluq_leningrad_crop() -> object:
+    """The Leningrad Codex crop at the MAM post-silluq site."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_MAM_POST_SILLUQ_LENINGRAD_CROP_URL}"'
+        ' alt="Leningrad Codex crop of the verse-final chanted word at 1 Kings 7:37; it'
+        ' lacks a meteg after the silluq."'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
+        "<figcaption>Leningrad Codex, 1 Kings 7:37.</figcaption></figure>"
     )
 
 
