@@ -365,10 +365,10 @@ _TYPE_1_SUBTYPES = (TYPE_1_SUBTYPE_A, TYPE_1_SUBTYPE_B, TYPE_1_SUBTYPE_C)
 # 3.  The short labels are also the labels used in the reader-facing Fit-for-MAS table.
 FIT_TYPE_1_A = "1A"
 FIT_TYPE_1_B = "1B"
-FIT_TYPE_2_A = "2A"
-FIT_TYPE_2_B = "2B"
+FIT_TYPE_2_AF = "2Af"
+FIT_TYPE_2_BF = "2Bf"
 FIT_TYPE_3 = "3"
-_FIT_TYPES = (FIT_TYPE_1_A, FIT_TYPE_1_B, FIT_TYPE_2_A, FIT_TYPE_2_B, FIT_TYPE_3)
+_FIT_TYPES = (FIT_TYPE_1_A, FIT_TYPE_1_B, FIT_TYPE_2_AF, FIT_TYPE_2_BF, FIT_TYPE_3)
 
 SUBTYPE_MISC_VAYOMER = "misc-vayomer"
 SUBTYPE_MISC_ALMOST_TYPE_3 = "misc-almost-type-3"
@@ -1127,6 +1127,9 @@ def _record(
         "next_chanted_word_is_initially_stressed": (
             _first_syllable_is_stressed(next_jta) if next_jta is not None else None
         ),
+        "next_chanted_word_starts_with_a_vocal_shewa": (
+            _starts_with_a_vocal_shewa(next_jta) if next_jta is not None else None
+        ),
         "next_chanted_word_accent_classification": (
             next_chanted_word_accent_classification
         ),
@@ -1291,6 +1294,9 @@ def _fit_for_mas_candidate(
         "next_chanted_word_is_initially_stressed": (
             next_chanted_word_is_initially_stressed
         ),
+        "next_chanted_word_starts_with_a_vocal_shewa": (
+            _starts_with_a_vocal_shewa(next_jta) if next_jta is not None else None
+        ),
         "next_chanted_word_has_disjunctive_accent": _has_a_disjunctive_accent(
             system, next_accent_grammar_tokens
         ),
@@ -1330,18 +1336,25 @@ def _has_non_type_specific_conditions_for_mas(candidate: dict) -> bool:
     ) and _has_second_fit_for_mas_criterion(candidate)
 
 
-def _type_2_fit_type(next_chanted_word: str | None) -> str | None:
-    """The admitted type-2 Fit-for-MAS class, if the next chanted word has one."""
+def _type_2_fit_type_from_initial(next_chanted_word: str | None) -> str | None:
+    """The type-2 Fit-for-MAS class selected by the next chanted word's initial."""
     if next_chanted_word is None:
         return None
     letters = _letters(next_chanted_word)
     assert letters, f"no Hebrew letter in next chanted word: {next_chanted_word!r}"
     initial = letters[0][0]
     if initial == hl.LAMED:
-        return FIT_TYPE_2_A
+        return FIT_TYPE_2_AF
     if initial in (hl.ALEF, hl.HE, hl.XET, hl.AYIN):
-        return FIT_TYPE_2_B
+        return FIT_TYPE_2_BF
     return None
+
+
+def _type_2_fit_type(candidate: dict) -> str | None:
+    """The 2Af or 2Bf class, including the condition that the next chanted word lacks IVS."""
+    if candidate["next_chanted_word_starts_with_a_vocal_shewa"] is not False:
+        return None
+    return _type_2_fit_type_from_initial(candidate["next_chanted_word"])
 
 
 def _fit_type(candidate: dict) -> str | None:
@@ -1359,7 +1372,7 @@ def _fit_type(candidate: dict) -> str | None:
     ):
         fit_types.append(FIT_TYPE_1_B)
     if TYPE_GUTTURAL in structural_types:
-        type_2_fit_type = _type_2_fit_type(candidate["next_chanted_word"])
+        type_2_fit_type = _type_2_fit_type(candidate)
         if type_2_fit_type is not None:
             fit_types.append(type_2_fit_type)
     if TYPE_CLOSED_TSERE in structural_types:
@@ -1403,6 +1416,9 @@ def _fit_for_mas_record(candidate: dict) -> dict:
         "next_chanted_word_is_initially_stressed": candidate[
             "next_chanted_word_is_initially_stressed"
         ],
+        "next_chanted_word_starts_with_a_vocal_shewa": candidate[
+            "next_chanted_word_starts_with_a_vocal_shewa"
+        ],
         "next_chanted_word_has_disjunctive_accent": candidate[
             "next_chanted_word_has_disjunctive_accent"
         ],
@@ -1426,6 +1442,9 @@ def _not_fit_for_mas_record(candidate: dict) -> dict:
         "intervening_mam_punctuation": candidate["intervening_mam_punctuation"],
         "types": candidate["structural_types"],
         "type_1_subtype": candidate["type_1_subtype"],
+        "next_chanted_word_starts_with_a_vocal_shewa": candidate[
+            "next_chanted_word_starts_with_a_vocal_shewa"
+        ],
         "meets_first_fit_for_mas_criterion": _has_first_fit_for_mas_criterion(
             candidate
         ),
@@ -1649,6 +1668,13 @@ def _fit_for_mas_summary(
         }
     with_mas = sum(candidate["has_mas"] for candidate in fitting)
     mas_candidates = [candidate for candidate in candidates if candidate["has_mas"]]
+    type_2_mas_with_initial_vocal_shewa = [
+        candidate
+        for candidate in mas_candidates
+        if TYPE_GUTTURAL in candidate["structural_types"]
+        and candidate["next_chanted_word_starts_with_a_vocal_shewa"]
+    ]
+    assert not type_2_mas_with_initial_vocal_shewa, type_2_mas_with_initial_vocal_shewa
     mas_after_first_criterion = [
         candidate
         for candidate in mas_candidates
@@ -1714,7 +1740,7 @@ def _fit_for_mas_summary(
         for candidate in mas_after_second_criterion
         if (
             TYPE_GUTTURAL in candidate["structural_types"]
-            and _type_2_fit_type(candidate["next_chanted_word"]) is None
+            and _type_2_fit_type_from_initial(candidate["next_chanted_word"]) is None
         )
     ]
     mas_outside_the_three_types = [
@@ -1757,8 +1783,8 @@ def _fit_for_mas_summary(
             " and a disjunctive accent-grammar token, classified by the three MAS structural"
             " predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable"
             " is checked for U+05BD."
-            " Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and"
-            " Type 3."
+            " Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require"
+            " that the next chanted word not begin with vocal shewa."
             " Primary-stress position comes independently from Phonetic MAM's jta field."
         ),
         "records_what": (

@@ -112,6 +112,7 @@ _SOURCES_FOR_TYPES_FOOTNOTE_ID = "footnote-5"
 _TYPE_2_TYPE_3_FOOTNOTE_ID = "footnote-6"
 _VOCAL_SHEWA_FOOTNOTE_ID = "footnote-7"
 _PASHTA_STRESS_HELPER_FOOTNOTE_ID = "footnote-8"
+_FIT_TYPE_2_NO_IVS_FOOTNOTE_ID = "footnote-9"
 _FIT_FOR_MAS_SECTION_ID = "fit-for-mas"
 
 
@@ -297,8 +298,8 @@ _LACKS_MAS_FILTER_OPTIONS = tuple(
     for fit_type in (
         psm.FIT_TYPE_1_A,
         psm.FIT_TYPE_1_B,
-        psm.FIT_TYPE_2_A,
-        psm.FIT_TYPE_2_B,
+        psm.FIT_TYPE_2_AF,
+        psm.FIT_TYPE_2_BF,
     )
 )
 _NOT_FIT_FILTER_OPTIONS = (
@@ -326,10 +327,13 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
 )
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
+_FIT_FOR_MAS_TYPE_CRITERION = (
+    "The next word conforms to (sub)type 1A, 1B, 2Af, 2Bf, or 3"
+)
 _FIT_FOR_MAS_CRITERIA = (
     "Its word has penultimate stress from a conjunctive accent.",
     "The next word has initial stress from a disjunctive accent.",
-    "The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
+    f"{_FIT_FOR_MAS_TYPE_CRITERION}.",
 )
 _RED_X = "\N{CROSS MARK}"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
@@ -818,7 +822,7 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
         fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (384, 200, 184, 0)
+    ) == (377, 200, 177, 0)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
@@ -854,15 +858,15 @@ def pin_claims(survey: dict) -> None:
             "with_mas": 12,
             "without_mas": 31,
         },
-        psm.FIT_TYPE_2_A: {
-            "candidates": 41,
+        psm.FIT_TYPE_2_AF: {
+            "candidates": 38,
             "with_mas": 35,
-            "without_mas": 6,
+            "without_mas": 3,
         },
-        psm.FIT_TYPE_2_B: {
-            "candidates": 49,
+        psm.FIT_TYPE_2_BF: {
+            "candidates": 45,
             "with_mas": 15,
-            "without_mas": 34,
+            "without_mas": 30,
         },
         psm.FIT_TYPE_3: {
             "candidates": 41,
@@ -918,6 +922,10 @@ def pin_claims(survey: dict) -> None:
         record["stress_syllable_has_conjunctive_accent"]
         and record["next_chanted_word_is_initially_stressed"]
         and record["next_chanted_word_has_disjunctive_accent"]
+        and (
+            record["fit_type"] not in {psm.FIT_TYPE_2_AF, psm.FIT_TYPE_2_BF}
+            or not record["next_chanted_word_starts_with_a_vocal_shewa"]
+        )
         and len(record["types"]) == 1
         and record["chanted_word"]
         and record["next_chanted_word"]
@@ -933,10 +941,10 @@ def pin_claims(survey: dict) -> None:
             (psm.FIT_TYPE_1_A, False): 113,
             (psm.FIT_TYPE_1_B, True): 12,
             (psm.FIT_TYPE_1_B, False): 31,
-            (psm.FIT_TYPE_2_A, True): 35,
-            (psm.FIT_TYPE_2_A, False): 6,
-            (psm.FIT_TYPE_2_B, True): 15,
-            (psm.FIT_TYPE_2_B, False): 34,
+            (psm.FIT_TYPE_2_AF, True): 35,
+            (psm.FIT_TYPE_2_AF, False): 3,
+            (psm.FIT_TYPE_2_BF, True): 15,
+            (psm.FIT_TYPE_2_BF, False): 30,
             (psm.FIT_TYPE_3, True): 41,
         }
     )
@@ -950,8 +958,8 @@ def pin_claims(survey: dict) -> None:
         {
             psm.FIT_TYPE_1_A: 113,
             psm.FIT_TYPE_1_B: 31,
-            psm.FIT_TYPE_2_A: 6,
-            psm.FIT_TYPE_2_B: 34,
+            psm.FIT_TYPE_2_AF: 3,
+            psm.FIT_TYPE_2_BF: 30,
         }
     )
     assert all(record["chanted_word"] for record in lacks_mas_records)
@@ -1003,8 +1011,9 @@ def pin_claims(survey: dict) -> None:
     assert all(
         record["chanted_word_is_closed_by_a_guttural"]
         and record["next_chanted_word_is_initially_stressed"]
+        and not record["next_chanted_word_starts_with_a_vocal_shewa"]
         for record in type_2_records
-    ), "the type-2 guttural or next-word-stress fact has moved"
+    ), "the type-2 guttural, next-word-stress, or no-IVS fact has moved"
     assert all(
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
@@ -1831,13 +1840,13 @@ def _fit_type_cell(fit_type: str) -> object:
             "Type 1B: type 1 with plain initial stress on the next word, "
             "marked by a pashta stress helper."
         ),
-        psm.FIT_TYPE_2_A: (
-            "Type 2A: the word is closed by a guttural, and the next word"
-            " begins with ל (lamed)."
+        psm.FIT_TYPE_2_AF: (
+            "Fit-for-MAS type 2Af: the chanted word is closed by a guttural; the next"
+            " chanted word begins with ל (lamed) and does not begin with vocal shewa."
         ),
-        psm.FIT_TYPE_2_B: (
-            "Type 2B: the word is closed by a guttural, and the next word"
-            " begins with a guttural."
+        psm.FIT_TYPE_2_BF: (
+            "Fit-for-MAS type 2Bf: the chanted word is closed by a guttural; the next"
+            " chanted word begins with a guttural and does not begin with vocal shewa."
         ),
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
     }
@@ -2857,6 +2866,7 @@ def _footnotes(survey: dict) -> list:
         *_type_2_type_3_footnote(survey),
         *_vocal_shewa_footnote(),
         *_pashta_stress_helper_footnote(),
+        *_fit_type_2_no_ivs_footnote(),
     ]
 
 
@@ -3072,6 +3082,31 @@ def _pashta_stress_helper_footnote() -> list:
     ]
 
 
+def _fit_type_2_no_ivs_footnote() -> list:
+    """Footnote 9: how Fit-for-MAS types 2Af and 2Bf differ from 2A and 2B."""
+    return [
+        mb_html.heading_level_3(
+            "φ9 — Fit-for-MAS types 2Af and 2Bf",
+            {"id": _FIT_TYPE_2_NO_IVS_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "For Fit for MAS, 2Af is subtype 2A with an added condition: the next"
+                " chanted word does not begin with vocal ",
+                _ROM_SHEWA,
+                ". For Fit for MAS, 2Bf is subtype 2B with an added condition: the"
+                " next chanted word does not begin with vocal ",
+                _ROM_SHEWA,
+                ". The f stands for “fit for MAS.” Every type-2 MAS case already has a"
+                " next chanted word without vocal ",
+                _ROM_SHEWA,
+                ", so the condition does not distinguish the general type-2 subtypes 2A,"
+                " 2B, and 2C.",
+            )
+        ),
+    ]
+
+
 def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
     """Footnote 2: the four nonfinal MAS syllables."""
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
@@ -3140,7 +3175,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
     rows.append(
         mb_html.table_row_of_data(
             (
-                mb_html.abbr("any", {"title": "any of types 1A, 1B, 2A, 2B, or 3"}),
+                mb_html.abbr("any", {"title": "any of types 1A, 1B, 2Af, 2Bf, or 3"}),
                 f"{fit_for_mas['fitting_any_type']:,}",
                 f"{fit_for_mas['with_mas']:,}",
                 has_mas_percentage(fit_for_mas["with_mas"], fit_for_mas["without_mas"]),
@@ -3169,7 +3204,17 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 ". We deem a syllable fit for MAS when:",
             )
         ),
-        mb_html.unordered_list(_FIT_FOR_MAS_CRITERIA),
+        mb_html.unordered_list(
+            (
+                *_FIT_FOR_MAS_CRITERIA[:2],
+                (
+                    _FIT_FOR_MAS_TYPE_CRITERION,
+                    " (",
+                    _footnote_callout(9, _FIT_TYPE_2_NO_IVS_FOOTNOTE_ID),
+                    ").",
+                ),
+            )
+        ),
         mb_html.para(
             "The table below records how often MAS does and does not appear in syllables fit for it."
         ),
