@@ -1,4 +1,4 @@
-"""Lint: the landing page's own links, and the titles it copies from other pages.
+"""Lint: the landing page's internal links, and the titles it copies from other pages.
 
 WHY THIS EARNS ITS PLACE.  ``doc/agent-planning-principles.md`` allows two test shapes, and
 this is the second: a mechanical lint over the tree, both sides derived from tracked source,
@@ -81,13 +81,13 @@ _PAGES_PREFIX = "gh-pages/"
 _MISC_MODULE_DIR = "py/author_misc"
 _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 
-# document-index carried 25 links and this page carries 31 after the 2026-09-07 index additions;
+# document-index carried 25 links and this page carries 34 after the 2026-09-07 index additions;
 # if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
 # the exact count: it is a floor guarding against a broken walk, not an inventory.
 _MIN_AUTHORED_ANCHORS = 25
 
-# The deploy root holds index.html and unicode-proposals.html as of 2026-09-03, so two is
-# the floor: the index itself, and at least one page it names.  Like the anchor floor
+# The deploy root held index.html and unicode-proposals.html when this floor was set on
+# 2026-09-03. Two remains the floor: the index itself, and at least one page it names. Like the anchor floor
 # above it guards against a broken walk rather than inventorying the root.
 _MIN_DEPLOY_ROOT_PAGES = 2
 
@@ -149,7 +149,7 @@ def _in_site_targets() -> set[str]:
 
 
 def test_every_in_site_link_names_a_tracked_page():
-    """A link into this site's own gh-pages must name a file that is published."""
+    """A link into this site's gh-pages must name a file that is published."""
     anchors = _authored_anchors()
     assert len(anchors) >= _MIN_AUTHORED_ANCHORS, len(anchors)
     tracked = _tracked_pages(paths.repo_root())
@@ -159,9 +159,7 @@ def test_every_in_site_link_names_a_tracked_page():
         for anchor in anchors
         if _in_site_target(anchor.href) is not None
     }
-    assert (
-        targets
-    ), "no link points into this site's own gh-pages: the walk found nothing"
+    assert targets, "no link points into this site's gh-pages: the walk found nothing"
     missing = sorted(
         f"{href} -> {_PAGES_PREFIX}{target}"
         for href, target in targets.items()
@@ -200,7 +198,7 @@ def test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name():
     )
 
 
-def test_the_misc_titles_are_the_pages_own_titles():
+def test_the_misc_titles_match_the_source_pages():
     """Each Misc entry's link text is still the _TITLE of the module that renders it."""
     modules = site_data.MISC_SOURCE_MODULES
     assert len(modules) == 2, modules

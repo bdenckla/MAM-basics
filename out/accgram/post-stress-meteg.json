@@ -246,24 +246,24 @@
   },
   "whole_census_comparison_counts": {
    "cant-alef": {
-    "chanted words checked": 263191,
-    "meteg before the stressed syllable": 14905,
+    "chanted words checked": 262819,
+    "meteg before the stressed syllable": 14767,
     "meteg after the stressed syllable": 232
    },
    "cant-bet": {
-    "chanted words checked": 263190,
-    "meteg before the stressed syllable": 14906,
+    "chanted words checked": 262818,
+    "meteg before the stressed syllable": 14768,
     "meteg after the stressed syllable": 232
    }
   },
   "template_counts": {
    "cant-alef": {
-    "chanted words checked": 130,
+    "chanted words checked": 128,
     "meteg before the stressed syllable": 12,
     "meteg after the stressed syllable": 0
    },
    "cant-bet": {
-    "chanted words checked": 129,
+    "chanted words checked": 127,
     "meteg before the stressed syllable": 13,
     "meteg after the stressed syllable": 0
    }
@@ -300,31 +300,72 @@
  },
  "counts": {
   "prose verses": {
-   "chanted words checked": 233586,
-   "meteg before the stressed syllable": 13091,
+   "chanted words checked": 233277,
+   "meteg before the stressed syllable": 12962,
    "meteg in the stressed syllable, no sof pasuq": 0,
    "meteg after the stressed syllable": 178,
-   "silluq": 18771,
+   "silluq": 18738,
    "meteg sharing a letter with a non-stress-marking accent": 27
   },
   "poetic verses": {
-   "chanted words checked": 29605,
-   "meteg before the stressed syllable": 1814,
+   "chanted words checked": 29542,
+   "meteg before the stressed syllable": 1805,
    "meteg in the stressed syllable, no sof pasuq": 0,
    "meteg after the stressed syllable": 54,
-   "silluq": 4486,
-   "meteg sharing a letter with a non-stress-marking accent": 119
+   "silluq": 4465,
+   "meteg sharing a letter with a non-stress-marking accent": 118
   }
+ },
+ "qamats_variant_census": {
+  "what": "A qamats-variant row contains qamats-dal and qamats-sam readings of one MAM template row. The source-entry count includes both readings; the MAM chanted-word count selects the qamats-dal sequence once. The fatal survey invariants require source entries to equal MAM chanted words counted plus duplicate phonetic-reading entries, and connect duplicate entries to row counts and measured grouping differences, in each system.",
+  "by_system": {
+   "prose verses": {
+    "source_entries": 233586,
+    "variant_rows": 309,
+    "duplicate_phonetic_reading_entries": 309,
+    "mam_chanted_words_counted": 233277
+   },
+   "poetic verses": {
+    "source_entries": 29605,
+    "variant_rows": 61,
+    "duplicate_phonetic_reading_entries": 63,
+    "mam_chanted_words_counted": 29542
+   }
+  },
+  "distinct_phonetic_groupings": [
+   {
+    "bcv": "ps35:10",
+    "system": "poetic verses",
+    "qamats-dal": [
+     "כׇּ֥ל~עַצְמוֹתַ֨י׀"
+    ],
+    "qamats-sam": [
+     "כָּ֥ל",
+     "עַצְמוֹתַ֨י׀"
+    ]
+   },
+   {
+    "bcv": "pr19:7",
+    "system": "poetic verses",
+    "qamats-dal": [
+     "כׇּ֥ל~אֲחֵי־רָ֨שׁ׀"
+    ],
+    "qamats-sam": [
+     "כָּ֥ל",
+     "אֲחֵי־רָ֨שׁ׀"
+    ]
+   }
+  ]
  },
  "census_chanted_word_summary": {
   "what": "MBS_O counts chanted words with one or more U+05BD meteg marks before the stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the stress, irrespective of the number before it.",
   "by_system": {
    "prose verses": {
-    "mbs_only": 12957,
+    "mbs_only": 12828,
     "mas": 178
    },
    "poetic verses": {
-    "mbs_only": 1795,
+    "mbs_only": 1786,
     "mas": 54
    }
   },
@@ -465,8 +506,8 @@
  "fit_for_mas": {
   "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes Type 1 subtypes A and B, Type 2 subtypes A and B, and Type 3. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
-  "not_fit_records_what": "Every MAS word that is not fit for MAS. Each record has the MAS word, its next word, and whether it meets each of the three Fit-for-MAS criteria.",
-  "candidate_chanted_words": 54019,
+  "not_fit_records_what": "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted word, its next chanted word, and whether it meets each of the three Fit-for-MAS criteria.",
+  "candidate_chanted_words": 53964,
   "non_type_specific_conditions": 3380,
   "fitting_any_type": 384,
   "with_mas": 200,
@@ -527,7 +568,6 @@
     "without_mas": 0
    }
   },
-  "candidates_meeting_multiple_types": 0,
   "mas_not_in_the_table": {
    "stress_not_penultimate": 4,
    "next_word_not_disjunctive": 15,
@@ -537,9 +577,8 @@
    "outside_the_three_types": 7
   },
   "accent_grammar_token_counts": {
-   "0": 16,
-   "1": 53194,
-   "2": 809
+   "1": 53157,
+   "2": 807
   },
   "records": [
    {
@@ -20045,7 +20084,7 @@
     "system": "poetic verses",
     "chanted_word": "וּֽ֭מִצׇּׄהֳרַ֭יִם",
     "_preceding_chanted_word": "",
-    "next_chanted_word": "וּֽ֭מִצָּׄהֳרַ֭יִם",
+    "next_chanted_word": "יָק֣וּם",
     "snapshot_before_qere": null,
     "accents_and_letters": "ו֭מצהרים",
     "jta": "u.mits.tso.h0.!ra.yim",
@@ -20067,39 +20106,6 @@
     "atom": 1,
     "mam_form": "וּֽ֭מִצׇּהֳרַיִם",
     "mam_form_matched_by": "as written; one candidate in the verse",
-    "mam_form_candidates": 1,
-    "metegs_in_mam_today": 1,
-    "metegs_in_the_snapshot": 1,
-    "next_mam_form": "יָק֣וּם",
-    "intervening_mam_punctuation": []
-   },
-   {
-    "bcv": "jb11:17",
-    "system": "poetic verses",
-    "chanted_word": "וּֽ֭מִצָּׄהֳרַ֭יִם",
-    "_preceding_chanted_word": "וּֽ֭מִצׇּׄהֳרַ֭יִם",
-    "next_chanted_word": "יָק֣וּם",
-    "snapshot_before_qere": null,
-    "accents_and_letters": "ו֭מצהרים",
-    "jta": "u.mits.tsa.h0.!ra.yim",
-    "syllables_after_the_stress": -4,
-    "syllable": "u",
-    "syllable_is_open": true,
-    "vowel": "shuruq",
-    "is_the_last_syllable": false,
-    "chanted_word_is_closed_by_a_guttural": false,
-    "next_chanted_word_is_initially_stressed": false,
-    "next_chanted_word_accent_classification": "conjunctive",
-    "has_sof_pasuq": false,
-    "shares_its_letter_with": [
-     "deḥi"
-    ],
-    "structural_type": "none of the three",
-    "subtype": null,
-    "type_1_subtype": null,
-    "atom": 1,
-    "mam_form": "וּֽ֭מִצׇּהֳרַיִם",
-    "mam_form_matched_by": "with qamats qatan read as qamats; one candidate in the verse",
     "mam_form_candidates": 1,
     "metegs_in_mam_today": 1,
     "metegs_in_the_snapshot": 1,
@@ -21102,15 +21108,15 @@
     "system": "prose verses",
     "category": "chanted words checked",
     "census_2026_09_03": 233715,
-    "measured": 233586,
-    "difference": -129
+    "measured": 233277,
+    "difference": -438
    },
    {
     "system": "prose verses",
     "category": "meteg before the stressed syllable",
     "census_2026_09_03": 13131,
-    "measured": 13091,
-    "difference": -40
+    "measured": 12962,
+    "difference": -169
    },
    {
     "system": "prose verses",
@@ -21123,14 +21129,42 @@
     "system": "prose verses",
     "category": "silluq",
     "census_2026_09_03": 18779,
-    "measured": 18771,
-    "difference": -8
+    "measured": 18738,
+    "difference": -41
+   },
+   {
+    "system": "poetic verses",
+    "category": "chanted words checked",
+    "census_2026_09_03": 29605,
+    "measured": 29542,
+    "difference": -63
+   },
+   {
+    "system": "poetic verses",
+    "category": "meteg before the stressed syllable",
+    "census_2026_09_03": 1814,
+    "measured": 1805,
+    "difference": -9
+   },
+   {
+    "system": "poetic verses",
+    "category": "silluq",
+    "census_2026_09_03": 4486,
+    "measured": 4465,
+    "difference": -21
+   },
+   {
+    "system": "poetic verses",
+    "category": "meteg sharing a letter with a non-stress-marking accent",
+    "census_2026_09_03": 119,
+    "measured": 118,
+    "difference": -1
    }
   ]
  },
  "currency": {
   "what": "The Phonetic MAM standard set is regenerated when al-hatorah's pipeline runs, so it is a snapshot of MAM rather than MAM's current state. This counts U+05BD per numbered verse on both sides and names every numbered verse where they differ, so the page can say which MAM its figures describe.",
-  "how": "Per NUMBERED verse, in MAM's versification, which is the numbering both sides use. Nothing here aligns words, so it survives the places where the two texts group atoms differently. Dual-cantillation numbered verses are left out: Phonetic MAM has both strands where MAM-simple's loader yields the combined stream once. Every other numbered verse ends on a chanted word with sof pasuq, measured 2026-09-04, so no chanted verse in the comparison runs past a numbered verse's end.",
+  "how": "Per NUMBERED verse, in MAM's versification, which is the numbering both sides use. Nothing here aligns chanted words, so it survives the places where the two texts group atoms differently. Dual-cantillation numbered verses are left out: Phonetic MAM has both strands where MAM-simple's loader yields the combined stream once. Every other numbered verse ends on a chanted word with sof pasuq, measured 2026-09-04, so no chanted verse in the comparison runs past a numbered verse's end.",
   "surveyed_snapshot": "MAM-private/al-hatorah/io/a01-phonetic-std-set",
   "compared_against": "MAM-basics/MAM-simple/json-vtrad-mam",
   "focus_verses": {
@@ -21216,788 +21250,13 @@
   "verses_compared": 23184,
   "verses_on_one_side_only": [],
   "dual_cantillation_verses_left_out": 18,
-  "metegs_in_the_surveyed_snapshot": 38353,
+  "metegs_in_the_surveyed_snapshot": 38161,
   "metegs_in_mam_simple_today": 38170,
-  "verses_differing": 186,
+  "verses_differing": 9,
   "differences": [
-   {
-    "bcv": "1c10:8",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "1c23:28",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "1c29:21",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1k18:27",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "1k18:29",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "1k20:16",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "1k22:34",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1k9:27",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1s11:11",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "1s13:21",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "1s17:54",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "1s18:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1s20:27",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1s28:14",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "1s31:8",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "1s5:3",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "1s5:4",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2c18:33",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2c25:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2c31:12",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "2c31:13",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "2c31:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "2c35:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2k15:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2k4:20",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2k8:15",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2s11:12",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "2s4:5",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "am2:4",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "am8:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ca1:7",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "da2:9",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "da3:32",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "da4:3",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "da4:5",
-    "surveyed_snapshot": 7,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "da5:15",
-    "surveyed_snapshot": 8,
-    "mam_simple_today": 7
-   },
-   {
-    "bcv": "da5:23",
-    "surveyed_snapshot": 12,
-    "mam_simple_today": 11
-   },
-   {
-    "bcv": "da6:19",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "da6:23",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "da7:6",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "da7:7",
-    "surveyed_snapshot": 9,
-    "mam_simple_today": 8
-   },
-   {
-    "bcv": "da9:24",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "dt12:26",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "dt13:3",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "dt28:29",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "dt32:4",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "dt5:26",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ek17:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek23:36",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek23:4",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ek23:44",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek26:2",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ek26:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek29:12",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek30:12",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek45:3",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ek47:12",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "ek8:6",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "er4:15",
-    "surveyed_snapshot": 7,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "er4:18",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ex11:8",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ex18:13",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ex22:19",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex23:24",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "ex29:37",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex30:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex30:29",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex30:36",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ex32:30",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "ex32:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ex33:10",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ex35:11",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex35:34",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex36:2",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex40:10",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ex9:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn13:3",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "gn19:34",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn31:25",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn32:18",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn35:21",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "gn36:18",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn36:2",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "gn36:5",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn43:16",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn43:25",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "gn9:21",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "gn9:27",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "hb3:2",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ho13:14",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ho9:10",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ho9:6",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "is1:5",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "is48:21",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "is58:10",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "is59:10",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "is66:12",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "jb11:17",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "jb15:34",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "jb19:12",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "jb20:26",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "jb22:23",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
    {
     "bcv": "jb29:16",
     "surveyed_snapshot": 1,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "jb29:4",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "jb4:18",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "jb5:14",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "jb7:2",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "jb9:20",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "jb9:21",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "je10:20",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "je15:8",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "je20:16",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "je20:3",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "je37:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "je6:4",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "jn4:7",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "js22:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "js22:8",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "js5:12",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "js7:24",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "ju21:4",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ju4:11",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju6:38",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ju9:42",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lm2:3",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lm4:8",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv10:12",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "lv10:17",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lv12:4",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv12:5",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "lv13:35",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "lv14:13",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lv14:32",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv16:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv19:6",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv23:11",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lv23:16",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv24:9",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lv27:28",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "lv2:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv2:3",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv6:10",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv6:18",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "lv6:22",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv7:1",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv7:16",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "lv7:6",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "mi2:12",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ne12:45",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "nu11:32",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "nu16:27",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "nu17:23",
-    "surveyed_snapshot": 6,
-    "mam_simple_today": 5
-   },
-   {
-    "bcv": "nu17:6",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "nu18:9",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "nu33:3",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "ob1:11",
-    "surveyed_snapshot": 3,
     "mam_simple_today": 2
    },
    {
@@ -22006,39 +21265,9 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "pr20:11",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "pr21:8",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "pr24:12",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 4
-   },
-   {
-    "bcv": "pr24:29",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "pr7:18",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
     "bcv": "ps108:3",
     "surveyed_snapshot": 1,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "ps120:5",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
    },
    {
     "bcv": "ps138:3",
@@ -22048,26 +21277,6 @@
    {
     "bcv": "ps139:7",
     "surveyed_snapshot": 1,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ps16:1",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ps30:4",
-    "surveyed_snapshot": 5,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ps37:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ps38:21",
-    "surveyed_snapshot": 4,
     "mam_simple_today": 2
    },
    {
@@ -22086,69 +21295,9 @@
     "mam_simple_today": 2
    },
    {
-    "bcv": "ps78:51",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ps84:11",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
     "bcv": "ps86:7",
     "surveyed_snapshot": 1,
     "mam_simple_today": 2
-   },
-   {
-    "bcv": "ps91:10",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ps91:6",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ps95:9",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ru1:19",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "ru2:1",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ru2:2",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ru2:6",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
-   },
-   {
-    "bcv": "ru4:14",
-    "surveyed_snapshot": 3,
-    "mam_simple_today": 2
-   },
-   {
-    "bcv": "ru4:9",
-    "surveyed_snapshot": 2,
-    "mam_simple_today": 1
-   },
-   {
-    "bcv": "zp2:4",
-    "surveyed_snapshot": 4,
-    "mam_simple_today": 3
    }
   ]
  }

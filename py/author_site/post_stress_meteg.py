@@ -1,7 +1,7 @@
-r"""MAM's metegs after the stress: the main page, methods page, and five case pages.
+r"""MAM's metegs after the stress: the main page, methods page, and six case pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
-and takes every figure it prints from the survey rather than from a constant of its own.
+and takes every figure it prints from the survey rather than from a separate constant.
 ``pin_claims`` re-derives each figure the prose states and raises on drift, which is the shape
 ``maqaf_nonfinal_accents_page.pin_claims`` established.
 
@@ -12,7 +12,7 @@ onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move 
 and this page's corpus is MAM rather than WLC.
 
 IT LINKS TWO STYLESHEETS, and the second is the accgram one.  ``gh-pages/style.css`` is the
-deploy root's own, whose whole job is the light/dark switching; ``gh-pages/wlc/style.css``
+deploy-root stylesheet, whose whole job is the light/dark switching; ``gh-pages/wlc/style.css``
 supplies the ``lang="hbo"`` font at the size that makes accents legible, the italic for a
 romanized accent name, and the numeric-cell alignment.  A stylesheet's ``@font-face`` URL
 resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font from here too.
@@ -20,7 +20,7 @@ resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font fr
 WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and accents alone.
 ``accents_and_letters`` drops U+05BD along with the vowels, and U+05BD is this page's whole
 subject; and what the page is about is which SYLLABLE a mark falls in, which a reader cannot
-see without the vowels that make the syllables.  Both of the page's three structural types
+see without the vowels that make the syllables.  All three of the page's structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
 the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
 generation time. The Fit-for-MAS lack page uses each record's ``mam_form`` and
@@ -73,7 +73,7 @@ import xml.etree.ElementTree as ET
 from accgram import final_stress
 from accgram import post_stress_meteg as psm
 from accgram import printed_decalogue_strands as pds
-from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
+from accgram.almost_errors_html_shared import cos, itm, ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
 from mb_author import author
@@ -164,11 +164,9 @@ _MAX_WORDS_IN_ALL_EXCERPTS = 300
 
 _PROSE = psm.SYSTEM_PROSE
 _POETIC = psm.SYSTEM_POETIC
-_MBS_O_CENSUS_GLOSS = (
-    "count of words with one or more meteg marks before the stress and none after it"
-)
+_MBS_O_CENSUS_GLOSS = "count of chanted words with one or more meteg marks before the stress and none after it"
 _MAS_CENSUS_GLOSS = (
-    "count of words with one or more meteg marks after the stress and any number"
+    "count of chanted words with one or more meteg marks after the stress and any number"
     " (including zero) before it"
 )
 
@@ -193,8 +191,6 @@ _CHRONICLES_8_11_LENINGRAD_GLOSSES = {
     "L-2": "meteg-merkha interpretation of Leningrad",
 }
 
-_ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
-_COS_GLOSS = "Breuer's The Cantillation of Scripture"
 _ITM_ADAPTATION_URL_BY_SECTION = {
     325: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns325",
     332: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332",
@@ -209,13 +205,9 @@ _ITM_SECTION_REFERENCE = re.compile(r"§(?P<section>[0-9]+)")
 # and is CoS's alone: ITM states nothing poetic-specific about a gaʿya after the stress, so
 # the ITM column stays as it was and the page claims nothing about ITM in either direction.
 _TYPE_SOURCES = {
-    psm.TYPE_OPEN: ("§332", "§3(j), §§46-47", "optional in both books"),
-    psm.TYPE_GUTTURAL: ("§354", "§3(b), §§9-10", "obligatory in Breuer"),
-    psm.TYPE_CLOSED_TSERE: (
-        "§338",
-        "§3(a), §§5-8",
-        "obligatory in both books",
-    ),
+    psm.TYPE_OPEN: ("§332", "§3(j), §§46–47"),
+    psm.TYPE_GUTTURAL: ("§354", "§3(b), §§9–10"),
+    psm.TYPE_CLOSED_TSERE: ("§338", "§3(a), §§5–8"),
 }
 
 # Each number is the printed page on which the cited Ch. 8 section begins.  How to read one
@@ -254,7 +246,7 @@ _COS_CH_14_PAGES_BY_TYPE = {
 
 _TYPE_CODES = {
     psm.TYPE_OPEN: ("1", "the MAS is on an open final syllable"),
-    psm.TYPE_GUTTURAL: ("2", "the word is closed by a guttural"),
+    psm.TYPE_GUTTURAL: ("2", "the chanted word is closed by a guttural"),
     psm.TYPE_CLOSED_TSERE: (
         "3",
         "the MAS is on a closed, final, tsere-vowelled syllable",
@@ -267,12 +259,12 @@ _TYPE_1_SUBTYPE_CODES = {
     None: "1D",
 }
 _TYPE_2_SUBTYPE_SPECS = (
-    ("lamed", "2A", "2A: The next word begins with ל (lamed)."),
-    ("guttural", "2B", "2B: The next word begins with a guttural."),
+    ("lamed", "2A", "2A: The next chanted word begins with ל (lamed)."),
+    ("guttural", "2B", "2B: The next chanted word begins with a guttural."),
     (
         "not-lamed-or-guttural",
         "2C",
-        "2C: The next word begins with neither ל nor a guttural.",
+        "2C: The next chanted word begins with neither ל nor a guttural.",
     ),
 )
 _TYPE_2_SUBTYPE_CODE_BY_FILTER_GROUP = {
@@ -327,9 +319,9 @@ _HEBREW_SPACING_INDIVIDUAL_EXPANDED_CLASS = (
 _HEBREW_SPACING_INDIVIDUAL_NORMAL_CLASS = "post-stress-meteg-individually-normal-hebrew"
 _MISC_TABLE_ID = "post-stress-meteg-misc-cases"
 _FIT_FOR_MAS_CRITERIA = (
-    "Its word has penultimate stress from a conjunctive accent.",
-    "The next word has initial stress from a disjunctive accent.",
-    "The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
+    "The candidate chanted word has penultimate stress from a conjunctive accent.",
+    "The next chanted word has initial stress from a disjunctive accent.",
+    "The next chanted word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.",
 )
 _RED_X = "\N{CROSS MARK}"
 _HEBREW_SPACING_OPTION = f"""<p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="{_HEBREW_SPACING_CHECKBOX_ID}" checked>
@@ -539,7 +531,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
 
 
 def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all seven post-stress-meteg pages and return the main page's path."""
+    """Write all eight post-stress-meteg pages and return the main page's path."""
     return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
@@ -568,10 +560,10 @@ def build_methods_body(survey: dict) -> list:
         mb_html.heading_level_2("Use of Phonetic MAM"),
         mb_html.para(
             (
-                "The location of a word's stress is not always obvious. In the"
+                "The location of a chanted word's stress is not always obvious. In the"
                 " research we present here, we locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
-                ", which marks the stress of every word.",
+                ", which marks the stress of every chanted word.",
             )
         ),
         mb_html.heading_level_2("Prose and poetic verses"),
@@ -668,7 +660,7 @@ def _lacks_mas_records(survey: dict) -> list[dict]:
 
 
 def _not_fit_for_mas_records(survey: dict) -> list[dict]:
-    """Every MAS word not fit for MAS, in corpus order."""
+    """Every MAS chanted word not fit for MAS, in corpus order."""
     return _fit_for_mas(survey)["not_fit_records"]
 
 
@@ -724,7 +716,7 @@ def _example_of(survey: dict, kind: str) -> dict:
 
 
 def _misc_almost_type_3_only_member(survey: dict) -> dict:
-    """The only word that fits CoS's type (a), but not our tsere-restricted type 3: Job 15:35."""
+    """The only chanted word that fits CoS type (a), but not this survey's tsere-restricted type 3: Job 15:35."""
     records = [
         one
         for one in _subtype_records(survey, psm.SUBTYPE_MISC_ALMOST_TYPE_3)
@@ -755,9 +747,34 @@ def pin_claims(survey: dict) -> None:
         "mbs_only_chanted_words_with_more_than_two_mbs": 0,
     }
     assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12957, "mas": 178},
-        _POETIC: {"mbs_only": 1795, "mas": 54},
+        _PROSE: {"mbs_only": 12828, "mas": 178},
+        _POETIC: {"mbs_only": 1786, "mas": 54},
     }
+    assert survey["qamats_variant_census"]["by_system"] == {
+        _PROSE: {
+            "source_entries": 233586,
+            "variant_rows": 309,
+            "duplicate_phonetic_reading_entries": 309,
+            "mam_chanted_words_counted": 233277,
+        },
+        _POETIC: {
+            "source_entries": 29605,
+            "variant_rows": 61,
+            "duplicate_phonetic_reading_entries": 63,
+            "mam_chanted_words_counted": 29542,
+        },
+    }
+    qamats_grouping_differences = survey["qamats_variant_census"][
+        "distinct_phonetic_groupings"
+    ]
+    assert [record["bcv"] for record in qamats_grouping_differences] == [
+        "ps35:10",
+        "pr19:7",
+    ]
+    assert all(
+        len(record["qamats-dal"]) == 1 and len(record["qamats-sam"]) == 2
+        for record in qamats_grouping_differences
+    )
     assert len(post_stress) == _both(
         survey, "meteg after the stressed syllable"
     ), "the post-stress records and the post-stress count disagree"
@@ -817,8 +834,7 @@ def pin_claims(survey: dict) -> None:
         fit_for_mas["fitting_any_type"],
         fit_for_mas["with_mas"],
         fit_for_mas["without_mas"],
-        fit_for_mas["candidates_meeting_multiple_types"],
-    ) == (384, 200, 184, 0)
+    ) == (384, 200, 184)
     assert (
         fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
         == fit_for_mas["fitting_any_type"]
@@ -992,9 +1008,9 @@ def pin_claims(survey: dict) -> None:
     # carries tuples where a JSON round trip carries lists, and this routine has to accept
     # either: gen_html_files reads the tracked JSON only when trust_survey is on.
     assert all(
-        tuple(one.get("intervening_punctuation", ())) == (psm.PASEQ,)
+        tuple(one.get("intervening_punctuation", ())) == (psm.PASOLEG,)
         and list(one.get("intervening_mam_punctuation") or ())
-        == [{"kind": "paseq", "glyph": psm.PASEQ}]
+        == [{"kind": "paseq", "glyph": psm.PASOLEG}]
         and one["next_mam_form"] is not None
         for one in misc_vayomer_records
     )
@@ -1004,7 +1020,7 @@ def pin_claims(survey: dict) -> None:
         record["chanted_word_is_closed_by_a_guttural"]
         and record["next_chanted_word_is_initially_stressed"]
         for record in type_2_records
-    ), "the type-2 guttural or next-word-stress fact has moved"
+    ), "the type-2 guttural or next-chanted-word-stress fact has moved"
     assert all(
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
@@ -1044,7 +1060,7 @@ def pin_claims(survey: dict) -> None:
         and record["vowel"] == "tsere"
         and record["next_chanted_word_is_initially_stressed"]
         for record in type_3_records
-    ), "the type-3 finality or next-word-stress fact has moved"
+    ), "the type-3 finality or next-chanted-word-stress fact has moved"
     type_1_records = [
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
@@ -1095,7 +1111,8 @@ def pin_claims(survey: dict) -> None:
     ), "the post-silluq count and the records disagree"
     post_silluq_forms = dict(_post_silluq_comparison(survey))
     assert post_silluq_forms["MAM"].count(psm.METEG) == 1
-    assert post_silluq_forms["BHS"].count(psm.METEG) == 2
+    assert post_silluq_forms["UXLC 3.9"].count(psm.METEG) == 2
+    assert post_silluq_forms["WLC 4.22"].count(psm.METEG) == 2
     exodus = _dual_cantillation_facts(survey, "ex20:2")
     assert exodus["same_chanted_word_group_count"]
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
@@ -1161,11 +1178,6 @@ def _excerpt_accounting() -> tuple[int, int]:
 # --- rendering helpers ---------------------------------------------------------
 
 
-def itm() -> object:
-    """The abbreviated book name, with Yeivin's title on hover."""
-    return mb_html.abbr("ITM", {"title": _ITM_GLOSS})
-
-
 def itm_sections(reference: str) -> tuple:
     """An ITM reference whose adapted section numbers open the corresponding section."""
     out = []
@@ -1186,11 +1198,6 @@ def itm_sections(reference: str) -> tuple:
         end = match.end()
     out.append(reference[end:])
     return tuple(out)
-
-
-def cos() -> object:
-    """The abbreviated book name, with Breuer's title on hover."""
-    return mb_html.abbr("CoS", {"title": _COS_GLOSS})
 
 
 def _para(text: str) -> object:
@@ -1265,7 +1272,7 @@ def _hebrew_spacing_option() -> object:
             " document.",
         ).replace(
             "__TOGGLE_TEXT__",
-            "Alternately, you can click on an individual Hebrew word to toggle only that word's"
+            "Alternately, you can click on an individual Hebrew chanted word to toggle only that chanted word's"
             " spacing.",
         )
     )
@@ -1283,7 +1290,7 @@ def _opening(survey: dict) -> list:
             (
                 "A ",
                 _ROM_METEG,
-                " almost always comes before the stressed syllable of its word, but it can"
+                " almost always comes before the stressed syllable of its chanted word, but it can"
                 " also come after the stress. MAM has ",
                 f"{total:,} cases of ",
                 _ROM_METEG,
@@ -1293,8 +1300,8 @@ def _opening(survey: dict) -> list:
         _singleton_example_table(example["bcv"], _case_chanted_word_cell(example)),
         mb_html.para(
             (
-                'In this document, by "word" we mean either a simple word (having just one'
-                " atom) or a compound word (having two or more atoms"
+                'In this document, a "chanted word" is either a simple chanted word (having'
+                " just one atom) or a compound chanted word (having two or more atoms"
                 " connected by ",
                 _ROM_MAQAF,
                 ' marks). By "atom", we mean a sequence of pointed letters uninterrupted by'
@@ -1311,7 +1318,7 @@ def _census(survey: dict) -> list:
     census_chanted_word_summary = survey["census_chanted_word_summary"]
     headers = (
         mb_html.abbr("cant-sys", {"title": "cantillation system"}),
-        mb_html.abbr("words", {"title": "count of words"}),
+        mb_html.abbr("chanted words", {"title": "count of chanted words"}),
         mb_html.abbr(
             "MBS_O",
             {"title": _MBS_O_CENSUS_GLOSS},
@@ -1364,11 +1371,11 @@ def _census(survey: dict) -> list:
         _table(headers, rows),
         mb_html.para(
             (
-                "So, among words with at least one meteg mark, there are ",
+                "So, among chanted words with at least one meteg mark, there are ",
                 f"{mas:,}",
-                " words where one of them is after the stress and ",
+                " chanted words where one of the metegs is after the stress and ",
                 f"{mbs_only:,}",
-                " words where none of them are after the stress. (There is never more"
+                " chanted words where none of the metegs is after the stress. (There is never more"
                 " than one meteg mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page for more details.",
@@ -1408,11 +1415,11 @@ def _census_definitions(survey: dict) -> list:
         mb_html.para(
             (
                 mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks before the"
+                " counts chanted words that have one or more meteg marks before the"
                 " stress and none after it. The “O” means “only.” ",
                 mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks after the"
-                " stress, whether the word has zero or more meteg marks"
+                " counts chanted words that have one or more meteg marks after the"
+                " stress, whether the chanted word has zero or more meteg marks"
                 " before the stress.",
             )
         ),
@@ -1421,16 +1428,16 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every one"
-                " of those MBS_O words has exactly"
+                f"{multiple_mbs:,} MBS_O chanted words have more than one meteg mark. Every"
+                " such MBS_O chanted word has exactly"
                 " two meteg marks.",
             )
         ),
         mb_html.para(
-            "No MAS word has more than one meteg mark after the stress: every MAS word has exactly one meteg mark after the stress.",
+            "No MAS chanted word has more than one meteg mark after the stress: every MAS chanted word has exactly one meteg mark after the stress.",
         ),
         mb_html.para(
-            "There are ten MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
+            "There are ten MAS chanted words that also have one meteg mark before the stress. They are listed below. (There are no MAS chanted words with more than one meteg before the stress.)",
         ),
         _table(
             ("", "", "(sub)types"),
@@ -1478,9 +1485,10 @@ def _mas_facts(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "In every MAS case, the stress syllable has a conjunctive accent (",
+                    "In every counted MAS case, the stress syllable has a conjunctive accent."
+                    " A meteg after silluq would follow a disjunctive accent; ",
                     _footnote_callout(1, _POST_SILLUQ_FOOTNOTE_ID),
-                    ").",
+                    " explains the post-silluq cases excluded from this claim.",
                 ),
                 "In every MAS case, the MAS syllable comes right after the stress syllable.",
                 (
@@ -1491,12 +1499,12 @@ def _mas_facts(survey: dict) -> list:
                 (
                     "In every MAS case but one (",
                     _footnote_callout(3, _JEREMIAH_FOOTNOTE_ID),
-                    "), the next word has initial stress.",
+                    "), the next chanted word has initial stress.",
                 ),
                 (
                     f"In {(total - len(next_conjunctive)) / total:.1%} of MAS cases (",
                     _footnote_callout(4, _NEXT_CONJUNCTIVE_FOOTNOTE_ID),
-                    "), the next word has a disjunctive accent.",
+                    "), the next chanted word has a disjunctive accent.",
                 ),
             )
         ),
@@ -1515,7 +1523,7 @@ def _by_type(survey: dict) -> list:
     unclassified = psm.TYPE_UNCLASSIFIED
     unclassified_count = _by_type_count(survey, unclassified)
     rows = []
-    for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items():
+    for kind, (yeivin, breuer) in _TYPE_SOURCES.items():
         example = _example_of(survey, kind)
         rows.append(
             mb_html.table_row_of_data(
@@ -1582,7 +1590,7 @@ def _by_type(survey: dict) -> list:
         mb_html.ordered_list(
             (
                 "The MAS syllable is open and final.",
-                "The MAS word is closed by a guttural.",
+                "The MAS chanted word is closed by a guttural.",
                 (
                     "The MAS syllable is a closed, final, and ",
                     _ROM_TSERE,
@@ -1608,7 +1616,7 @@ def _sources_for_types_footnote() -> list:
             ),
             (None, None, None, None),
         )
-        for kind, (yeivin, breuer, _grading) in _TYPE_SOURCES.items()
+        for kind, (yeivin, breuer) in _TYPE_SOURCES.items()
     ]
     cos_page_rows = [
         mb_html.table_row_of_data(
@@ -1631,8 +1639,8 @@ def _sources_for_types_footnote() -> list:
                 itm(),
                 " and ",
                 cos(),
-                ". Exactly what words are included and excluded in these three types varies"
-                " between ITM, CoS, and our document here, but they broadly agree.",
+                ". The chanted words included in each type differ among ITM, CoS, and this survey,"
+                " but the three classifications broadly agree.",
             )
         ),
         _table(
@@ -1683,8 +1691,7 @@ def _case_list_link(survey: dict) -> list:
                 ),
                 " are listed separately and can be filtered by type. The ",
                 mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " appear in that large list, but are also further discussed on a page of"
-                " their own.",
+                " appear in that large list and are also discussed on a separate page.",
             )
         )
     ]
@@ -1707,7 +1714,7 @@ def _type_1_example(survey: dict, example_key: dict) -> dict:
 
 
 def _type_1_subtypes(survey: dict) -> list:
-    """The complete structural type-1 MAS population by next-word-stress subtype."""
+    """The complete structural type-1 MAS population by next-chanted-word-stress subtype."""
     type_1_mas = _actual_type_1_mas(survey)
     pattern_counts = type_1_mas["by_initial_stress_pattern"]
     example_keys = type_1_mas["example_keys_by_initial_stress_pattern"]
@@ -1742,27 +1749,27 @@ def _type_1_subtypes(survey: dict) -> list:
     return [
         mb_html.heading_level_2("The four subtypes of MAS type 1"),
         mb_html.para(
-            "Based on properties of the next word, all cases of MAS type 1 can be sorted"
+            "Based on properties of the next chanted word, all cases of MAS type 1 can be sorted"
             " into one of the four following subtypes:"
         ),
         mb_html.unordered_list(
             (
                 (
-                    "1A: The next word has initial stress and an initial vocal ",
+                    "1A: The next chanted word has initial stress and an initial vocal ",
                     _ROM_SHEWA,
                     ". (",
                     _footnote_callout(7, _VOCAL_SHEWA_FOOTNOTE_ID),
                     ")",
                 ),
                 (
-                    "1B: The next word has a ",
+                    "1B: The next chanted word has a ",
                     _ROM_PASHTA,
                     " stress helper on its first letter. (",
                     _footnote_callout(8, _PASHTA_STRESS_HELPER_FOOTNOTE_ID),
                     ")",
                 ),
                 ("1C: Like 1B, but with some accent other than ", _ROM_PASHTA, "."),
-                "1D: The next word does not have initial stress.",
+                "1D: The next chanted word does not have initial stress.",
             )
         ),
         _table(headers, rows),
@@ -1770,7 +1777,7 @@ def _type_1_subtypes(survey: dict) -> list:
 
 
 def _type_2_subtypes(survey: dict) -> list:
-    """The complete structural type-2 MAS population by next-word initial consonant."""
+    """The complete structural type-2 MAS population by next-chanted-word initial consonant."""
     records_by_group = {
         group: [] for group, _code, _description in _TYPE_2_SUBTYPE_SPECS
     }
@@ -1797,7 +1804,7 @@ def _type_2_subtypes(survey: dict) -> list:
     return [
         mb_html.heading_level_2("The three subtypes of MAS type 2"),
         mb_html.para(
-            "Based on properties of the next word, all cases of MAS type 2 can be sorted"
+            "Based on properties of the next chanted word, all cases of MAS type 2 can be sorted"
             " into one of the three following subtypes:"
         ),
         mb_html.unordered_list(
@@ -1825,18 +1832,18 @@ def _fit_type_cell(fit_type: str) -> object:
     """One Fit-for-MAS table label, including the two admitted type-1 subtypes."""
     titles = {
         psm.FIT_TYPE_1_A: (
-            "Type 1A: type 1 with non-plain initial stress on the next word."
+            "Type 1A: type 1 with non-plain initial stress on the next chanted word."
         ),
         psm.FIT_TYPE_1_B: (
-            "Type 1B: type 1 with plain initial stress on the next word, "
+            "Type 1B: type 1 with plain initial stress on the next chanted word, "
             "marked by a pashta stress helper."
         ),
         psm.FIT_TYPE_2_A: (
-            "Type 2A: the word is closed by a guttural, and the next word"
+            "Type 2A: the chanted word is closed by a guttural, and the next chanted word"
             " begins with ל (lamed)."
         ),
         psm.FIT_TYPE_2_B: (
-            "Type 2B: the word is closed by a guttural, and the next word"
+            "Type 2B: the chanted word is closed by a guttural, and the next chanted word"
             " begins with a guttural."
         ),
         psm.FIT_TYPE_3: "Type 3: the MAS syllable is closed, final, and tsere-vowelled.",
@@ -1850,7 +1857,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
         return ""
     gloss_by_subtype = {
         psm.SUBTYPE_MISC_VAYOMER: (
-            "A Vayomer case with one intervening paseq before the next word."
+            "A Vayomer case with one intervening paseq before the next chanted word."
         ),
         psm.SUBTYPE_MISC_ALMOST_TYPE_3: (
             "A final closed ḥolam syllable: CoS's long-vowel type (a), but not"
@@ -1866,7 +1873,7 @@ def _case_subtype_cell(subtype: str | None) -> object:
 def _next_chanted_word_span(
     next_word: str, punctuation: tuple[dict[str, str], ...] | list[dict[str, str]] = ()
 ) -> object:
-    """The next word and each preceding native narrow-sense paseq."""
+    """The next chanted word and each preceding native narrow-sense paseq."""
     demoted = []
     for marker in punctuation:
         assert marker["kind"] == "paseq", marker
@@ -1916,7 +1923,7 @@ def _paired_chanted_word_cell(
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
-    """The MAM MAS form followed by its next word."""
+    """The MAM MAS form followed by its next chanted word."""
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
@@ -2100,7 +2107,7 @@ def build_lacks_mas_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("Every case fit for MAS that lacks MAS"),
         _para(
-            f"The table lists all {len(records):,} word pairs fit for MAS that lack"
+            f"The table lists all {len(records):,} chanted-word pairs fit for MAS that lack"
             " MAS."
         ),
         _lacks_mas_subtype_filter(len(records)),
@@ -2132,7 +2139,7 @@ def _not_fit_for_mas_criterion_cell(meets_criterion: bool, criterion: str) -> ob
 
 
 def _not_fit_for_mas_type_codes(record: dict) -> tuple[str, ...]:
-    """Every (sub)type that makes one not-fit-for-MAS word selectable."""
+    """Every (sub)type that makes one not-fit-for-MAS chanted word selectable."""
     structural_types = record["types"]
     codes = []
     if psm.TYPE_OPEN in structural_types:
@@ -2153,7 +2160,7 @@ def _not_fit_for_mas_type_codes(record: dict) -> tuple[str, ...]:
 
 
 def _not_fit_for_mas_case_row(record: dict) -> object:
-    """One MAS word, with a result for each Fit-for-MAS criterion."""
+    """One MAS chanted word, with a result for each Fit-for-MAS criterion."""
     return mb_html.table_row(
         (
             mb_html.table_datum(_ref_link(record["bcv"])),
@@ -2185,7 +2192,7 @@ def _not_fit_for_mas_case_row(record: dict) -> object:
 
 
 def build_not_fit_body(survey: dict) -> list:
-    """Every MAS word that is not fit for MAS, with each failed criterion marked."""
+    """Every MAS chanted word that is not fit for MAS, with each failed criterion marked."""
     records = _not_fit_for_mas_records(survey)
     criterion_headers = tuple(
         mb_html.abbr(str(number), {"title": criterion})
@@ -2197,12 +2204,12 @@ def build_not_fit_body(survey: dict) -> list:
         _back_to_fit_for_mas_table(),
         mb_html.heading_level_2("Every MAS case not fit for MAS"),
         _para(
-            f"The table lists all {len(records):,} MAS words that are not fit for MAS."
+            f"The table lists all {len(records):,} MAS chanted words that are not fit for MAS."
         ),
         _para(
             "Columns 1–3 correspond to the three Fit-for-MAS criteria. A red"
-            f" {_RED_X} marks each criterion that a word does not meet; blank cells mark"
-            " criteria that the word meets."
+            f" {_RED_X} marks each criterion that a chanted word does not meet; blank cells mark"
+            " criteria that the chanted word meets."
         ),
         _not_fit_for_mas_type_filter(len(records)),
         _table(
@@ -2239,11 +2246,11 @@ def build_misc_body(survey: dict) -> list:
         ),
         mb_html.heading_level_2("Every misc case in MAM"),
         _para(
-            "Each word in the table has MAS but does not meet the definition of"
+            "Each chanted word in the table has MAS but does not meet the definition of"
             " types 1, 2, or 3."
         ),
         _table(
-            ("Verse", "Word", "Subtype"),
+            ("Verse", "Chanted word", "Subtype"),
             [_misc_case_row(record) for record in records],
             {
                 "class": f"accent-pair-table post-stress-meteg-table {_CASE_TABLE_CLASS}",
@@ -2254,11 +2261,11 @@ def build_misc_body(survey: dict) -> list:
             (
                 "Within misc, ",
                 psm.SUBTYPE_MISC_ALMOST_TYPE_3,
-                f" has {misc_almost_type_3_count} word",
+                f" has {misc_almost_type_3_count} chanted word",
                 "s" if misc_almost_type_3_count != 1 else "",
                 ". Its only member is ",
                 _ref_link(misc_almost_type_3_only_member["bcv"]),
-                ": its word ",
+                ": its chanted word ",
                 *_case_chanted_word_cell(misc_almost_type_3_only_member),
                 " has a final closed syllable with ",
                 _ROM_HOLAM,
@@ -2274,11 +2281,11 @@ def build_misc_body(survey: dict) -> list:
                 "Within misc, the ",
                 _ROM_VAYOMER,
                 " subset",
-                f" has {vayomer_count} word",
+                f" has {vayomer_count} chanted word",
                 "s" if vayomer_count != 1 else "",
                 ". Each has a ",
                 _ROM_PASEQ,
-                " between the MAS word and the next. This is the ",
+                " between the MAS chanted word and the next chanted word. This is the ",
                 _ROM_GAYA,
                 "-before-",
                 _ROM_PASEQ,
@@ -2394,13 +2401,13 @@ def _uxlc_words(bcv: str) -> list[str]:
 
 def _wlc_words(bcv: str) -> list[str]:
     """The WLC 4.22 atoms at one verse, decoded from its vendored M-C source."""
-    rows_at_verse = []
-    for json_path in (paths.out_dir() / "wlc422").glob("1verses_*.json"):
-        rows = json.loads(json_path.read_text(encoding="utf-8"))
-        assert isinstance(rows, list), f"Expected a list in {json_path}"
-        rows_at_verse.extend(
-            row for row in rows if isinstance(row, dict) and row.get("bcv") == bcv
-        )
+    assert bcv.startswith("1s"), bcv
+    json_path = paths.out_dir() / "wlc422" / "1verses_03_jsju1s.json"
+    rows = json.loads(json_path.read_text(encoding="utf-8"))
+    assert isinstance(rows, list), f"Expected a list in {json_path}"
+    rows_at_verse = [
+        row for row in rows if isinstance(row, dict) and row.get("bcv") == bcv
+    ]
     assert len(rows_at_verse) == 1, f"WLC 4.22: {len(rows_at_verse)} rows for {bcv}"
     vels = rows_at_verse[0].get("vels")
     assert isinstance(vels, list) and all(
@@ -2410,31 +2417,30 @@ def _wlc_words(bcv: str) -> list[str]:
 
 
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
-    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question."""
+    """The MAM, UXLC, and WLC forms relevant to 1 Samuel 17:5."""
     letters = ("נחשת",)
-    bhs_form_from_uxlc = _source_focus_word(
+    uxlc_form = _source_focus_word(
         _uxlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="UXLC 3.9",
     )
-    bhs_form_from_wlc = _source_focus_word(
+    wlc_form = _source_focus_word(
         _wlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="WLC 4.22",
     )
-    assert (
-        bhs_form_from_uxlc == bhs_form_from_wlc
-    ), "the two BHS-derived transcriptions differ at 1 Samuel 17:5"
+    assert uxlc_form == wlc_form, "UXLC 3.9 and WLC 4.22 differ at 1 Samuel 17:5"
     return (
         (
             "MAM",
             _focus_word(survey, _POST_SILLUQ_VERSE, letters, must_have=psm.SOF_PASUQ),
         ),
-        ("BHS", bhs_form_from_uxlc),
+        ("UXLC 3.9", uxlc_form),
+        ("WLC 4.22", wlc_form),
     )
 
 
@@ -2486,9 +2492,9 @@ def _mam_post_silluq_leningrad_crop() -> object:
 
 
 def _post_silluq_leningrad_form(survey: dict) -> str:
-    """The BHS transcription of the Leningrad Codex form at 1 Samuel 17:5."""
+    """WLC 4.22's transcription of the Leningrad Codex form at 1 Samuel 17:5."""
     forms = dict(_post_silluq_comparison(survey))
-    return forms["BHS"]
+    return forms["WLC 4.22"]
 
 
 def _post_silluq_lc_crop() -> object:
@@ -2508,7 +2514,7 @@ def _post_silluq_aleppo_crop() -> object:
     """The Aleppo crop showing no meteg after the silluq in 1 Samuel 17:5."""
     return mb_html.raw_html(
         f'<figure><img src="{_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        ' alt="Aleppo Codex crop of the verse-final word in 1 Samuel 17:5; it has no'
+        ' alt="Aleppo Codex crop of the verse-final chanted word in 1 Samuel 17:5; it has no'
         ' meteg after the silluq." loading="lazy"><figcaption>Aleppo Codex, 1 Samuel'
         " 17:5.</figcaption></figure>"
     )
@@ -2524,7 +2530,7 @@ def _post_silluq_details(survey: dict) -> list:
     return [
         mb_html.para(
             (
-                "In the Leningrad Codex, the last word of 1 Samuel 17:5 seems to"
+                "In the Leningrad Codex, the last chanted word of 1 Samuel 17:5 seems to"
                 " have a ",
                 _ROM_METEG,
                 " after its ",
@@ -2559,10 +2565,9 @@ def _post_silluq_details(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "This surprising ",
+                "UXLC 3.9 and WLC 4.22 both transcribe this surprising ",
                 _ROM_METEG,
-                " is correctly recorded in BHS and in BHS-derived editions such as UXLC and"
-                " WLC:",
+                ":",
             )
         ),
         mb_html.table(
@@ -2596,7 +2601,7 @@ def build_post_silluq_body(survey: dict) -> list:
         *_post_silluq_details(survey),
         mb_html.para(
             (
-                "As one would expect, the Aleppo Codex has this word with no ",
+                "As one would expect, the Aleppo Codex has this chanted word with no ",
                 _ROM_METEG,
                 " after the ",
                 _ROM_SILLUQ,
@@ -2686,7 +2691,7 @@ def build_chronicles_8_11_body(survey: dict) -> list:
             (
                 "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
-                ", in the Leningrad codex, the word after a MAS lacks initial stress, at least"
+                ", in the Leningrad Codex, the chanted word after a MAS lacks initial stress, at least"
                 " according to one interpretation of the ambiguous meteg/silluq marks in the"
                 " manuscript.",
             )
@@ -2811,8 +2816,8 @@ def _oleh_meteg_overlap(survey: dict) -> list:
                 " were not there, because ",
                 _ROM_OLEH,
                 " is not an accent indicating stress, even when it is the last accent in"
-                " the word, as it is in the MAS rows above. In other words, a MAS"
-                " word with a ",
+                " the chanted word, as it is in the MAS rows above. In other words, a MAS"
+                " chanted word with a ",
                 _ROM_METEG,
                 ' might at first look like some weird "',
                 _ROM_METEG,
@@ -2832,13 +2837,14 @@ def _footnotes(survey: dict) -> list:
         *_post_silluq_footnote(survey),
         *_nonfinal_mas_syllable_footnote(survey),
         mb_html.heading_level_3(
-            "φ3 — Next word lacking initial stress", {"id": _JEREMIAH_FOOTNOTE_ID}
+            "φ3 — Next chanted word lacking initial stress",
+            {"id": _JEREMIAH_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
                 "At ",
                 _ref_link(exception["bcv"]),
-                ", the word after the MAS lacks initial stress: ",
+                ", the chanted word after the MAS lacks initial stress: ",
                 *_case_chanted_word_cell(exception),
                 ".",
             )
@@ -2847,7 +2853,7 @@ def _footnotes(survey: dict) -> list:
             (
                 "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
-                ", in the Leningrad codex, the word after a MAS lacks initial stress. See ",
+                ", in the Leningrad Codex, the chanted word after a MAS lacks initial stress. See ",
                 mb_html.anchor_h("this page", _CHRONICLES_8_11_FNAME),
                 ".",
             )
@@ -2874,7 +2880,7 @@ def _dually_cantillated_passages(survey: dict) -> list:
         _cantillation_label(psm.CANT_BET),
     )
     categories = (
-        ("Words", "chanted words checked"),
+        ("Chanted words", "chanted words checked"),
         (
             mb_html.abbr("MBS", {"title": "meteg before the stress"}),
             "meteg before the stressed syllable",
@@ -2930,20 +2936,28 @@ def _dually_cantillated_passages(survey: dict) -> list:
         mb_html.heading_level_2("Dually cantillated passages"),
         mb_html.para(
             (
+                "Here ",
+                _cantillation_label(psm.CANT_ALEF),
+                " names the taxton branch of MAM's dual-cantillation template, and ",
+                _cantillation_label(psm.CANT_BET),
+                " names the elyon branch.",
+            )
+        ),
+        mb_html.para(
+            (
                 "The Masoretic tradition records two cantillations for three passages. Those"
                 " three passages are the two Decalogues and Genesis 35:22. The analyses"
                 " presented in this document use only MAM's ",
                 _cantillation_label(psm.CANT_ALEF),
                 " cantillation. The table below shows that this choice has no effect on the"
-                " MAS count and changes the other two counts only by 1. (We have not analyzed"
-                " what effect the choice has on the “fit for MAS” analysis, but I think it is"
-                " safe to assume that the choice has little or no effect.)",
+                " MAS count and changes the other two counts only by 1. The survey has not"
+                " compared the fit-for-MAS results across the two branches.",
             )
         ),
         _table(headers, rows),
         mb_html.para(
             (
-                "The difference in number of words between ",
+                "The difference in number of chanted words between ",
                 _cantillation_label(psm.CANT_ALEF),
                 " and ",
                 _cantillation_label(psm.CANT_BET),
@@ -2951,9 +2965,9 @@ def _dually_cantillated_passages(survey: dict) -> list:
                 _ref_link(chanted_word_difference["bcv"]),
                 ": ",
                 _cantillation_label(psm.CANT_ALEF),
-                " has two simple words where ",
+                " has two simple chanted words where ",
                 _cantillation_label(psm.CANT_BET),
-                " has one compound word.",
+                " has one compound chanted word.",
             )
         ),
         mb_html.table(
@@ -3010,12 +3024,12 @@ def _type_2_type_3_footnote(survey: dict) -> list:
                 f"{len(nonfinal_mas_syllable_records)} have ",
                 _ROM_TSERE,
                 ", that syllable is not only open but also nonfinal. Thus no type-2 MAS meets the"
-                " type-3 condition. Indeed, words with a final ",
+                " type-3 condition. Indeed, chanted words with a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural are quite rare even without a ",
                 _ROM_METEG,
                 ". Only ",
-                f"{overlap_count:,} words have a final ",
+                f"{overlap_count:,} chanted words have a final ",
                 _ROM_TSERE,
                 " syllable closed by a guttural. All ",
                 f"{overlap_count:,} occur in Aramaic and end in a ",
@@ -3044,7 +3058,7 @@ def _vocal_shewa_footnote() -> list:
             (
                 "We don't consider vocal ",
                 _ROM_SHEWA,
-                " to be a syllable, so a word with an initial vocal ",
+                " to be a syllable, so a chanted word with an initial vocal ",
                 _ROM_SHEWA,
                 " can still have initial stress.",
             )
@@ -3061,7 +3075,7 @@ def _pashta_stress_helper_footnote() -> list:
         ),
         mb_html.para(
             (
-                "Because this word has a ",
+                "Because this chanted word has a ",
                 _ROM_PASHTA,
                 " stress helper on its first letter, we know that it does not have an initial"
                 " vocal ",
@@ -3192,7 +3206,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 f"{not_fit_for_mas_count:,} syllables, though they do have MAS, are deemed"
                 " not fit for MAS by our criteria. This ",
                 mb_html.anchor_h("page", _NOT_FIT_FNAME),
-                f" lists all {not_fit_for_mas_count:,} of those words and why they are"
+                f" lists all {not_fit_for_mas_count:,} of those chanted words and why they are"
                 " deemed not fit for MAS.",
             )
         ),
@@ -3225,11 +3239,11 @@ def _next_conjunctive_footnote(survey: dict) -> list:
     ]
     return [
         mb_html.heading_level_3(
-            "φ4 — Next words with a conjunctive accent",
+            "φ4 — Next chanted words with a conjunctive accent",
             {"id": _NEXT_CONJUNCTIVE_FOOTNOTE_ID},
         ),
         mb_html.para(
-            f"Here are the {len(records):,} cases of MAS in which the next word has a"
+            f"Here are the {len(records):,} cases of MAS in which the next chanted word has a"
             " conjunctive accent:"
         ),
         _table(("", "", mb_html.abbr("(sub)type", {"title": "type or subtype"})), rows),

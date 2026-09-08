@@ -7,10 +7,10 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write this repo's own published pages at the deploy root:
-                gh-pages/index.html, gh-pages/unicode-proposals.html and
-                gh-pages/post-stress-meteg.html.  --trust-surveys lets the
-                last of those read the tracked
+                Write the ten published pages at the deploy root:
+                gh-pages/index.html, gh-pages/unicode-proposals.html, and the
+                eight gh-pages/post-stress-meteg*.html pages.
+                --trust-surveys lets the post-stress pages read the tracked
                 out/accgram/post-stress-meteg.json instead of recomputing a
                 survey that needs the MAM-private clone; only main_0_mega.py
                 passes it.
@@ -131,7 +131,7 @@ def cmd_gen_misc(_args):
 #
 # WHY ANY PAGE NEEDS IT: post-stress-meteg's survey reads Phonetic MAM, which lives in
 # MAM-private, and py/main_0_mega.py must not come to require a private clone.  The mega
-# therefore renders all seven pages from out/accgram/post-stress-meteg.json, which the survey
+# therefore renders all eight pages from out/accgram/post-stress-meteg.json, which the survey
 # subcommand writes and which is tracked; recomputing from the corpus is what a standalone run
 # does.  The JSON's absence FAILS rather than falling back, so a mega that quietly published a
 # page from nothing is not a state this can reach.
@@ -144,6 +144,7 @@ _SURVEY_READING_PAGES = frozenset(
         site_data.POST_STRESS_METEG_LACKS_MAS_FNAME,
         site_data.POST_STRESS_METEG_NOT_FIT_FNAME,
         site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME,
+        site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME,
     }
 )
 
@@ -155,12 +156,13 @@ assert _SURVEY_READING_PAGES <= {
     site_data.POST_STRESS_METEG_LACKS_MAS_FNAME,
     site_data.POST_STRESS_METEG_NOT_FIT_FNAME,
     site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME,
+    site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME,
     site_data.UNICODE_PROPOSALS_FNAME,
 }, "a name here that no deploy-root page has would silently render nothing from its JSON"
 
 
 def gen_site(*, trust_surveys: bool = False):
-    """Write this repo's own published pages at the deploy root.
+    """Write the pages published by this repository at the deploy root.
 
     ``trust_surveys`` is passed by ``main_0_mega.py``; see ``_SURVEY_READING_PAGES``.  The
     index runs last, so it sees whatever the pages before it have written.
@@ -230,7 +232,7 @@ def build_parser():
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
         "gen-site",
-        help="Generate this repo's own published pages at the gh-pages deploy root.",
+        help="Generate this repository's published pages at the gh-pages deploy root.",
     ).add_argument(
         "--trust-surveys",
         action="store_true",

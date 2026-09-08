@@ -10,7 +10,7 @@
 <body class="centered-page post-stress-meteg-page post-stress-meteg-expanded-hebrew">
 <h1><span class="romanized">Meteg</span> after the stress</h1>
 <p class="post-stress-meteg-spacing-control"><label><input type="checkbox" id="post-stress-meteg-expanded-hebrew" checked>
-This checkbox controls whether Hebrew letter spacing is expanded in this document.</label> Alternately, you can click on an individual Hebrew word to toggle only that word's spacing.</p>
+This checkbox controls whether Hebrew letter spacing is expanded in this document.</label> Alternately, you can click on an individual Hebrew chanted word to toggle only that chanted word's spacing.</p>
 <script>
 (() => {
   const checkbox = document.getElementById("post-stress-meteg-expanded-hebrew");
@@ -58,9 +58,9 @@ This checkbox controls whether Hebrew letter spacing is expanded in this documen
 })();
 </script>
 <p>A
-<span class="romanized">meteg</span> almost always comes before the stressed syllable of its word,
-but it can also come after the stress. MAM has 232 cases of <span class="romanized">meteg</span>
-after the stress (MAS). For example:</p>
+<span class="romanized">meteg</span> almost always comes before the stressed syllable of its chanted
+word, but it can also come after the stress. MAM has 232 cases of
+<span class="romanized">meteg</span> after the stress (MAS). For example:</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <td><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c22v7">Gen.
@@ -69,53 +69,55 @@ after the stress (MAS). For example:</p>
 <span class="post-stress-meteg-next-word"><span lang="hbo">בְנִ֑י</span></span></td>
 </tr>
 </table>
-<p>In this document, by "word" we mean either a simple word (having just one atom) or a compound
-word (having two or more atoms connected by <span class="romanized">maqaf</span> marks). By "atom",
-we mean a sequence of pointed letters uninterrupted by space, <span class="romanized">maqaf</span>,
-or any other punctuation.</p>
+<p>In this document, a "chanted word" is either a simple chanted word (having just one atom) or a
+compound chanted word (having two or more atoms connected by <span class="romanized">maqaf</span>
+marks). By "atom", we mean a sequence of pointed letters uninterrupted by space,
+<span class="romanized">maqaf</span>, or any other punctuation.</p>
 <h2>MAS census by cantillation system</h2>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th><abbr title="cantillation system">cant-sys</abbr></th>
-<th><abbr title="count of words">words</abbr></th>
-<th><abbr title="count of words with one or more meteg marks before the stress and none after it">MBS_O</abbr></th>
-<th><abbr title="count of words with one or more meteg marks after the stress and any number (including zero) before it">MAS</abbr></th>
+<th><abbr title="count of chanted words">chanted words</abbr></th>
+<th><abbr title="count of chanted words with one or more meteg marks before the stress and none after it">MBS_O</abbr></th>
+<th><abbr title="count of chanted words with one or more meteg marks after the stress and any number (including zero) before it">MAS</abbr></th>
 <th><abbr title="MAS/(MAS+MBS_O)">% MAS</abbr></th>
 </tr>
 <tr>
 <td>prose</td>
-<td class="numeric">233,586</td>
-<td class="numeric">12,957</td>
+<td class="numeric">233,277</td>
+<td class="numeric">12,828</td>
 <td class="numeric">178</td>
 <td class="numeric">1.4%</td>
 </tr>
 <tr>
 <td>poetic</td>
-<td class="numeric">29,605</td>
-<td class="numeric">1,795</td>
+<td class="numeric">29,542</td>
+<td class="numeric">1,786</td>
 <td class="numeric">54</td>
 <td class="numeric">2.9%</td>
 </tr>
 <tr>
 <td>all</td>
-<td class="numeric">263,191</td>
-<td class="numeric">14,752</td>
+<td class="numeric">262,819</td>
+<td class="numeric">14,614</td>
 <td class="numeric">232</td>
-<td class="numeric">1.5%</td>
+<td class="numeric">1.6%</td>
 </tr>
 </table>
-<p>So, among words with at least one meteg mark, there are 232 words where one of them is after the
-stress and 14,752 words where none of them are after the stress. (There is never more than one meteg
-mark after the stress.) See the <a href="post-stress-meteg-methods.html">Methods</a> page for more
-details.</p>
+<p>So, among chanted words with at least one meteg mark, there are 232 chanted words where one of
+the metegs is after the stress and 14,614 chanted words where none of the metegs is after the
+stress. (There is never more than one meteg mark after the stress.) See the
+<a href="post-stress-meteg-methods.html">Methods</a> page for more details.</p>
 <h2>Facts about MAS</h2>
 <ul>
-<li>In every MAS case, the stress syllable has a conjunctive accent
-(<a href="#footnote-1">φ1</a>).</li>
+<li>In every counted MAS case, the stress syllable has a conjunctive accent. A meteg after silluq
+would follow a disjunctive accent; <a href="#footnote-1">φ1</a> explains the post-silluq cases
+excluded from this claim.</li>
 <li>In every MAS case, the MAS syllable comes right after the stress syllable.</li>
 <li>In every MAS case except four (<a href="#footnote-2">φ2</a>), the MAS syllable is final.</li>
-<li>In every MAS case but one (<a href="#footnote-3">φ3</a>), the next word has initial stress.</li>
-<li>In 93.5% of MAS cases (<a href="#footnote-4">φ4</a>), the next word has a disjunctive
+<li>In every MAS case but one (<a href="#footnote-3">φ3</a>), the next chanted word has initial
+stress.</li>
+<li>In 93.5% of MAS cases (<a href="#footnote-4">φ4</a>), the next chanted word has a disjunctive
 accent.</li>
 </ul>
 <h2>The three types of MAS</h2>
@@ -123,7 +125,7 @@ accent.</li>
 (<a href="#footnote-5">φ5</a>)</p>
 <ol>
 <li>The MAS syllable is open and final.</li>
-<li>The MAS word is closed by a guttural.</li>
+<li>The MAS chanted word is closed by a guttural.</li>
 <li>The MAS syllable is a closed, final, and <span class="romanized">tsere</span>-vowelled.
 (<a href="#footnote-6">φ6</a>)</li>
 </ol>
@@ -144,7 +146,7 @@ accent.</li>
 <span class="post-stress-meteg-next-word"><span lang="hbo">בְנִ֑י</span></span></td>
 </tr>
 <tr>
-<td><abbr title="Type 2: the word is closed by a guttural">2</abbr></td>
+<td><abbr title="Type 2: the chanted word is closed by a guttural">2</abbr></td>
 <td class="numeric">34</td>
 <td class="numeric">26</td>
 <td class="numeric">60</td>
@@ -177,17 +179,17 @@ accent.</li>
 </table>
 <p>The <a href="post-stress-meteg-cases.html">232 individual cases</a> are listed separately and can
 be filtered by type. The <a href="post-stress-meteg-misc.html">7 misc cases</a> appear in that large
-list, but are also further discussed on a page of their own.</p>
+list and are also discussed on a separate page.</p>
 <h2>The four subtypes of MAS type 1</h2>
-<p>Based on properties of the next word, all cases of MAS type 1 can be sorted into one of the four
-following subtypes:</p>
+<p>Based on properties of the next chanted word, all cases of MAS type 1 can be sorted into one of
+the four following subtypes:</p>
 <ul>
-<li>1A: The next word has initial stress and an initial vocal <span class="romanized">shewa</span>.
-(<a href="#footnote-7">φ7</a>)</li>
-<li>1B: The next word has a <span class="romanized">pashta</span> stress helper on its first letter.
-(<a href="#footnote-8">φ8</a>)</li>
+<li>1A: The next chanted word has initial stress and an initial vocal
+<span class="romanized">shewa</span>. (<a href="#footnote-7">φ7</a>)</li>
+<li>1B: The next chanted word has a <span class="romanized">pashta</span> stress helper on its first
+letter. (<a href="#footnote-8">φ8</a>)</li>
 <li>1C: Like 1B, but with some accent other than <span class="romanized">pashta</span>.</li>
-<li>1D: The next word does not have initial stress.</li>
+<li>1D: The next chanted word does not have initial stress.</li>
 </ul>
 <table class="limited-width post-stress-meteg-table">
 <tr>
@@ -231,12 +233,12 @@ following subtypes:</p>
 </tr>
 </table>
 <h2>The three subtypes of MAS type 2</h2>
-<p>Based on properties of the next word, all cases of MAS type 2 can be sorted into one of the three
-following subtypes:</p>
+<p>Based on properties of the next chanted word, all cases of MAS type 2 can be sorted into one of
+the three following subtypes:</p>
 <ul>
-<li>2A: The next word begins with ל (lamed).</li>
-<li>2B: The next word begins with a guttural.</li>
-<li>2C: The next word begins with neither ל nor a guttural.</li>
+<li>2A: The next chanted word begins with ל (lamed).</li>
+<li>2B: The next chanted word begins with a guttural.</li>
+<li>2C: The next chanted word begins with neither ל nor a guttural.</li>
 </ul>
 <table class="limited-width post-stress-meteg-table">
 <tr>
@@ -278,9 +280,9 @@ Notably, the type 3 “yield” is 100%.</p>
 <p>The idea of a syllable "fit for MAS" is part of the broader idea of a syllable fit for a
 <span class="romanized">meteg</span>. We deem a syllable fit for MAS when:</p>
 <ul>
-<li>Its word has penultimate stress from a conjunctive accent.</li>
-<li>The next word has initial stress from a disjunctive accent.</li>
-<li>The next word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.</li>
+<li>The candidate chanted word has penultimate stress from a conjunctive accent.</li>
+<li>The next chanted word has initial stress from a disjunctive accent.</li>
+<li>The next chanted word conforms to (sub)type 1A, 1B, 2A, 2B, or 3.</li>
 </ul>
 <p>The table below records how often MAS does and does not appear in syllables fit for it.</p>
 <table class="limited-width post-stress-meteg-table">
@@ -292,28 +294,28 @@ Notably, the type 3 “yield” is 100%.</p>
 <th>Lacks MAS</th>
 </tr>
 <tr>
-<td><abbr title="Type 1A: type 1 with non-plain initial stress on the next word.">1A</abbr></td>
+<td><abbr title="Type 1A: type 1 with non-plain initial stress on the next chanted word.">1A</abbr></td>
 <td class="numeric">210</td>
 <td class="numeric">97</td>
 <td class="numeric">46.2%</td>
 <td class="numeric">113</td>
 </tr>
 <tr>
-<td><abbr title="Type 1B: type 1 with plain initial stress on the next word, marked by a pashta stress helper.">1B</abbr></td>
+<td><abbr title="Type 1B: type 1 with plain initial stress on the next chanted word, marked by a pashta stress helper.">1B</abbr></td>
 <td class="numeric">43</td>
 <td class="numeric">12</td>
 <td class="numeric">27.9%</td>
 <td class="numeric">31</td>
 </tr>
 <tr>
-<td><abbr title="Type 2A: the word is closed by a guttural, and the next word begins with ל (lamed).">2A</abbr></td>
+<td><abbr title="Type 2A: the chanted word is closed by a guttural, and the next chanted word begins with ל (lamed).">2A</abbr></td>
 <td class="numeric">41</td>
 <td class="numeric">35</td>
 <td class="numeric">85.4%</td>
 <td class="numeric">6</td>
 </tr>
 <tr>
-<td><abbr title="Type 2B: the word is closed by a guttural, and the next word begins with a guttural.">2B</abbr></td>
+<td><abbr title="Type 2B: the chanted word is closed by a guttural, and the next chanted word begins with a guttural.">2B</abbr></td>
 <td class="numeric">49</td>
 <td class="numeric">15</td>
 <td class="numeric">30.6%</td>
@@ -338,8 +340,8 @@ Notably, the type 3 “yield” is 100%.</p>
 separately and can be filtered by (sub)type.</p>
 <p>The final-row "Has MAS" count is 200, rather than the total of 232 MAS cases, because 32
 syllables, though they do have MAS, are deemed not fit for MAS by our criteria. This
-<a href="post-stress-meteg-not-fit.html">page</a> lists all 32 of those words and why they are
-deemed not fit for MAS.</p>
+<a href="post-stress-meteg-not-fit.html">page</a> lists all 32 of those chanted words and why they
+are deemed not fit for MAS.</p>
 <h2>Footnotes</h2>
 <h3 id="footnote-1">φ1 — <span class="romanized">meteg</span> after
 <span class="romanized">silluq</span></h3>
@@ -379,15 +381,16 @@ furtive-<span class="romanized">pataḥ</span> syllable.</p>
 <span class="post-stress-meteg-next-word"><span lang="hbo">מַ֝֗יִם</span></span></td>
 </tr>
 </table>
-<h3 id="footnote-3">φ3 — Next word lacking initial stress</h3>
+<h3 id="footnote-3">φ3 — Next chanted word lacking initial stress</h3>
 <p>At <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c46v14">Jer.
-46:14</a>, the word after the MAS lacks initial stress: <span lang="hbo">וְהַשְׁמִ֣יעֽוּ</span>
+46:14</a>, the chanted word after the MAS lacks initial stress:
+<span lang="hbo">וְהַשְׁמִ֣יעֽוּ</span>
 <span class="post-stress-meteg-next-word"><span lang="hbo">בְמִגְדּ֔וֹל</span></span>.</p>
 <p>At <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c8v11">2 Chr.
-8:11</a>, in the Leningrad codex, the word after a MAS lacks initial stress. See
+8:11</a>, in the Leningrad Codex, the chanted word after a MAS lacks initial stress. See
 <a href="post-stress-meteg-2chr-8-11.html">this page</a>.</p>
-<h3 id="footnote-4">φ4 — Next words with a conjunctive accent</h3>
-<p>Here are the 15 cases of MAS in which the next word has a conjunctive accent:</p>
+<h3 id="footnote-4">φ4 — Next chanted words with a conjunctive accent</h3>
+<p>Here are the 15 cases of MAS in which the next chanted word has a conjunctive accent:</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th></th>
@@ -502,39 +505,38 @@ furtive-<span class="romanized">pataḥ</span> syllable.</p>
 </table>
 <h3 id="footnote-5">φ5 — Sources for types 1–3</h3>
 <p>The three types of MAS are described in both
-<abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr> and
-<abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr>. Exactly what words are
-included and excluded in these three types varies between ITM, CoS, and our document here, but they
-broadly agree.</p>
+<abbr title="Introduction to the Tiberian Masorah">ITM</abbr> and
+<abbr title="The Cantillation of Scripture">CoS</abbr>. The chanted words included in each type
+differ among ITM, CoS, and this survey, but the three classifications broadly agree.</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th>Type</th>
-<th><abbr title="Yeivin&#x27;s Introduction to the Tiberian Masorah">ITM</abbr></th>
-<th><abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr> Ch. 8</th>
-<th><abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr> Ch. 14 §8</th>
+<th><abbr title="Introduction to the Tiberian Masorah">ITM</abbr></th>
+<th><abbr title="The Cantillation of Scripture">CoS</abbr> Ch. 8</th>
+<th><abbr title="The Cantillation of Scripture">CoS</abbr> Ch. 14 §8</th>
 </tr>
 <tr>
 <td><abbr title="Type 1: the MAS is on an open final syllable">1</abbr></td>
 <td>§<a href="https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332" target="_blank" rel="noopener">332</a></td>
-<td>§3(j), §§46-47</td>
+<td>§3(j), §§46–47</td>
 <td></td>
 </tr>
 <tr>
-<td><abbr title="Type 2: the word is closed by a guttural">2</abbr></td>
+<td><abbr title="Type 2: the chanted word is closed by a guttural">2</abbr></td>
 <td>§<a href="https://bdenckla.github.io/phonetic-hbo/yeivin_itm-345_357.html#ns354" target="_blank" rel="noopener">354</a></td>
-<td>§3(b), §§9-10</td>
+<td>§3(b), §§9–10</td>
 <td>(b)</td>
 </tr>
 <tr>
 <td><abbr title="Type 3: the MAS is on a closed, final, tsere-vowelled syllable">3</abbr></td>
 <td>§<a href="https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns338" target="_blank" rel="noopener">338</a></td>
-<td>§3(a), §§5-8</td>
+<td>§3(a), §§5–8</td>
 <td></td>
 </tr>
 </table>
 <p>For those using the Wengrov translation of
-<abbr title="Breuer&#x27;s The Cantillation of Scripture">CoS</abbr>, below is a table of the page
-numbers corresponding to the section identifiers in the table above:</p>
+<abbr title="The Cantillation of Scripture">CoS</abbr>, below is a table of the page numbers
+corresponding to the section identifiers in the table above:</p>
 <table class="limited-width post-stress-meteg-table">
 <tr>
 <th>Type</th>
@@ -549,7 +551,7 @@ Ch. 14 §8 pg</abbr></th>
 <td></td>
 </tr>
 <tr>
-<td><abbr title="Type 2: the word is closed by a guttural">2</abbr></td>
+<td><abbr title="Type 2: the chanted word is closed by a guttural">2</abbr></td>
 <td>299; 308; 309</td>
 <td>547</td>
 </tr>
@@ -563,9 +565,9 @@ Ch. 14 §8 pg</abbr></th>
 <p>Types 2 and 3 could in principle overlap. However, 56 of the 60 type-2 MAS syllables have
 <span class="romanized">pataḥ</span>, and while the other 4 have
 <span class="romanized">tsere</span>, that syllable is not only open but also nonfinal. Thus no
-type-2 MAS meets the type-3 condition. Indeed, words with a final
+type-2 MAS meets the type-3 condition. Indeed, chanted words with a final
 <span class="romanized">tsere</span> syllable closed by a guttural are quite rare even without a
-<span class="romanized">meteg</span>. Only 154 words have a final
+<span class="romanized">meteg</span>. Only 154 chanted words have a final
 <span class="romanized">tsere</span> syllable closed by a guttural. All 154 occur in Aramaic and end
 in a <span class="romanized">mappiq</span> <span class="romanized">he</span>: 136 are in Daniel and
 18 are in Ezra. For example:</p>
@@ -577,10 +579,10 @@ in a <span class="romanized">mappiq</span> <span class="romanized">he</span>: 13
 </tr>
 </table>
 <h3 id="footnote-7">φ7 — Vocal shewa and initial stress</h3>
-<p>We don't consider vocal <span class="romanized">shewa</span> to be a syllable, so a word with an
-initial vocal <span class="romanized">shewa</span> can still have initial stress.</p>
+<p>We don't consider vocal <span class="romanized">shewa</span> to be a syllable, so a chanted word
+with an initial vocal <span class="romanized">shewa</span> can still have initial stress.</p>
 <h3 id="footnote-8">φ8 — A pashta stress helper on the first letter</h3>
-<p>Because this word has a <span class="romanized">pashta</span> stress helper on its first letter,
-we know that it does not have an initial vocal <span class="romanized">shewa</span>.</p>
+<p>Because this chanted word has a <span class="romanized">pashta</span> stress helper on its first
+letter, we know that it does not have an initial vocal <span class="romanized">shewa</span>.</p>
 </body>
 </html>
