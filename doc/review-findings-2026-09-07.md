@@ -1,6 +1,7 @@
 # Findings of the 2026-09-07 review of the public repos since 2026-09-04
 
-State: not yet acted on. Written 2026-09-07 as the Claude half of the second dual-agent review under
+State: acted on 2026-09-08. Finding 23.2's worktree housekeeping is outside remediation and Ben will
+track it separately. Written 2026-09-07 as the Claude half of the second dual-agent review under
 `doc/dual-agent-review.md`, Design A: this file was frozen before any Codex reviewer read it, and the
 Claude session neither read nor sought a Codex half (no file named `codex-review-findings-2026-09-07*`
 exists, and nothing under `~/.codex/` or `Documents/Codex/` was read beyond the directory listings
@@ -874,9 +875,9 @@ facts, source-clone safety reports, source-book claims, or every code fragility 
 
 ## Dispositions after remediation, 2026-09-08
 
-The review remains `not yet acted on` only because finding 23.2 cannot be decided safely while the
-`post-stress-meteg` worktree is active and its branch diverges from `main`. Every other actionable
-finding is fixed, rejected with a reason, recorded, or referred to repository maintenance.
+Every remediation finding is fixed, rejected with a reason, recorded, or referred to repository
+maintenance. Ben's decision on 2026-09-08 decouples finding 23.2's worktree housekeeping from
+remediation completion and tracks it separately.
 
 | Finding | Disposition | Evidence |
 |---:|---|---|
@@ -902,7 +903,7 @@ finding is fixed, rejected with a reason, recorded, or referred to repository ma
 | 20 | fixed | `9cf48863` adds the two accepted navigation links. The complete graph has 577 HTML pages, nine deliberate orphan pages recorded in the remediation plan, and zero dead internal targets. |
 | 21 | fixed | `e91d7358` applies the Hebrew-prose rules to the post-stress analysis; `9cf48863` applies the global prose rules to the remaining current files and disposition. |
 | 22 | record only | No instruction file changed during remediation, so the review's verified identity result requires no remediation or private-content publication. |
-| 23 | needs Ben's decision | Item 23.2 remains deferred: the active worktree is at `c5b170ad`, `main` is nine commits ahead, and `post-stress-meteg` is four commits ahead of `main`; no branch or `d4d1` path was removed. Items 23.3 and 23.4 are referred to repository maintenance. Item 23.5 is a known future `fr-wikisource` diff, and item 23.6 is a cadence census rather than a code defect. Historical trailers remain unchanged. |
+| 23 | referred to maintenance | Item 23.2's unrelated worktree housekeeping is tracked separately by Ben and is not a remediation completion condition. Items 23.3 and 23.4 are referred to repository maintenance. Item 23.5 is a known future `fr-wikisource` diff, and item 23.6 is a cadence census rather than a code defect. Historical trailers remain unchanged. |
 | 24 | record only | Immutable commit subjects and bodies remain unchanged; the corrected facts are preserved in this disposition and the remediation plan. |
 | Sol-1 | fixed | `4afe3ebc` regenerates the affected artifacts and makes the current `git diff --check` pass while preserving byte-verbatim and downloaded inputs. |
 

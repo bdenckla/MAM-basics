@@ -1,14 +1,16 @@
 # PLAN — remediate the 2026-09-07 dual-agent review
 
-State: live
+State: executed 2026-09-08
 
-The planning phase was completed on 2026-09-08; no remediation has been performed.
+The planning phase and all remediation work were completed on 2026-09-08. Ben's decision on
+2026-09-08 places finding 23.2's worktree housekeeping outside remediation; Ben will track that
+housekeeping separately.
 
 Ben requested this planning phase on 2026-09-08, after the Claude review, the Codex Terra review,
-and the Codex Sol re-review were complete. This file turns those three frozen reports into a working
-checklist. A later remediation task executes the checklist, records a disposition for every item,
-and changes `doc/review-findings-2026-09-07.md` from `not yet acted on` to `acted on <date>` only
-after the work has earned that state.
+and the Codex Sol re-review were complete. This file turned those three frozen reports into a working
+checklist. The remediation task executed the checklist, recorded a disposition for every item, and
+changed `doc/review-findings-2026-09-07.md` from `not yet acted on` to `acted on 2026-09-08` after
+the work earned that state.
 
 The review contains 24 numbered Claude findings and one additional Codex Sol finding. The Codex Sol
 review also corrects two statements in the Claude report:
@@ -140,7 +142,7 @@ The full mega pipeline remains unverified for this remediation.
 
 ## Decision gates before implementation
 
-Five finding groups need Ben's decision or authorization. The implementation task may re-establish
+Four finding groups need Ben's decision or authorization. The implementation task may re-establish
 the evidence and give a recommendation, but it must not silently choose.
 
 1. **Finding 7 — redirect command default.** Decide whether a bare redirect command targets
@@ -157,11 +159,10 @@ the evidence and give a recommendation, but it must not silently choose.
    known pages unless Ben changes it. Ask separately whether each of the four newly landed pages
    should gain a link from its product or subtree index, remain deliberately unlinked with a recorded
    reason, or be removed.
-5. **Finding 23.2 — obsolete branch and empty directory.** Re-measure the local and remote
-   `post-stress-meteg` ancestry after the active worktree closes. Deleting
-   `origin/post-stress-meteg` requires Ben's authorization. Moving the exact empty `d4d1` directory
-   to the Windows Recycle Bin belongs in the same decision only after its path and emptiness are
-   reverified.
+
+Finding 23.2's obsolete branch and empty directory were noticed during remediation but are not
+remediation work. Ben's decision, 2026-09-08: track that worktree housekeeping separately and do not
+make it a condition of remediation completion.
 
 Finding 23.3's completed dated task folder and finding 23.4's ignored `.pytest_cache` belong to the
 next repository-maintenance judgment pass, not this code-remediation task. Refer them there; do not
@@ -197,7 +198,7 @@ This table is the working ledger. Every row must receive exactly one final dispo
 | 20 | Ben's decision | Wave 5. Apply decision gate 4 and rerun the complete HTML link graph; every remaining orphan must be deliberate and recorded by exact path. |
 | 21 | Fix prose against the integrated pages | Waves 2 and 5. Apply the `hebrew-prose` skill and global prose rules to the live post-stress pages, source prose, comments, plans, review disposition, and announced counts. Re-scan current files because `f5df191e..c73a2ad3` revised existing post-stress prose and added new 1 Kings 7:37 prose. |
 | 22 | Record only | Wave 6. Reconfirm instruction-file identity if any instruction file changed during remediation; otherwise record that no remediation was required. Do not publish private github-misc content. |
-| 23 | Decisions, maintenance referrals, and census | Waves 5 and 6. Do not rewrite historical trailers; apply decision gate 5; refer items 23.3 and 23.4 to maintenance; treat the next `fr-wikisource` refresh as a known future diff; record item 23.6 as a cadence census rather than a code defect. |
+| 23 | Record and maintenance referrals | Waves 5 and 6. Do not rewrite historical trailers; leave item 23.2 to Ben's separate worktree-housekeeping track; refer items 23.3 and 23.4 to maintenance; treat the next `fr-wikisource` refresh as a known future diff; record item 23.6 as a cadence census rather than a code defect. |
 | 24 | Record only | Wave 6. Reject rewriting immutable commit messages. Preserve the corrected facts in the review and disposition record. |
 | Sol-1 | Fix artifact hygiene after regeneration | Wave 3. Re-run both the frozen-range and current-tree whitespace checks, classify generated versus hand-authored whitespace, repair the canonical sources or generator where possible, and require regenerated artifacts to pass `git diff --check` without a mass unrelated reformat. |
 
@@ -535,8 +536,7 @@ Goal: make current public instructions and records describe the landed repositor
 decision visible. This wave covers findings 7, 9–11, 14–15, 18–21, and the decision-bearing parts of
 finding 23.
 
-- [x] Resolve decision gates 1–4 before making their corresponding edit or deletion. Gate 5 remains
-      deferred until the active `post-stress-meteg` worktree closes.
+- [x] Resolve decision gates 1–4 before making their corresponding edit or deletion.
 - [x] Correct the fourth-stage and third-stage execution records from current Git objects, manifests,
       source-host READMEs, and generated files. Every numeric correction must name the command or
       scratch script that re-established it.
@@ -598,10 +598,8 @@ findings, private instruction content, and an orphan decision Ben has not change
   `doc/post-stress-meteg-method.md`: a `מ:קמץ` row contributes exactly one parameter, never both;
   the current selection is `ד`. The `ס` parameter remains available for grouping-difference
   evidence, and no separate effect analysis is required.
-- Decision gate 5 remains deferred. The live worktree is now at `c5b170ad`; `main` is nine commits
-  ahead and `post-stress-meteg` is four commits ahead of `main`, while
-  `origin/post-stress-meteg` is 128 commits behind the local worktree branch. No branch or `d4d1`
-  path was removed while that worktree is active.
+- Finding 23.2's worktree housekeeping was left untouched. Ben's decision on 2026-09-08 tracks that
+  housekeeping separately, outside remediation completion.
 
 ## Wave 6 — final verification and disposition write-back
 
@@ -625,12 +623,12 @@ Goal: prove the combined tree, record every outcome, and leave no finding silent
       or `needs Ben's decision`, and names commits or verified machine state.
 - [x] Record the Sol correction for finding 3 and the five exact trailer spellings in the disposition
       prose without rewriting the frozen Claude section.
-- [x] Keep the review's `State:` line unchanged until every actionable row is fixed,
-      rejected with a reason, or explicitly deferred by Ben. A mere plan or unresolved decision does
-      not earn `acted on`.
+- [x] Change the review's `State:` line to `acted on 2026-09-08` after every remediation row was
+      fixed, rejected with a reason, recorded, referred to maintenance, or placed outside
+      remediation by Ben.
 - [x] Write the phase result back into this plan after every wave: changed files, commands, generated
       diffs, commits, pushes, unresolved risks, and the exact next wave.
-- [ ] Commit finished work and push `main`. If execution used a secondary worktree, follow the global
+- [x] Commit finished work and push `main`. If execution used a secondary worktree, follow the global
       four-step integration rule immediately before that task is archived: merge `main` into the
       worktree branch, verify in the worktree, fast-forward the primary clone with `--ff-only`, and
       push `main`.
@@ -663,13 +661,10 @@ Goal: prove the combined tree, record every outcome, and leave no finding silent
   `git diff --check` passed.
 - No instruction file changed, so finding 22 remains record only. The dispositions give findings
   1–24 and Sol-1 exactly one row each and record the five exact co-author trailer lines.
-- Wave 5 implementation commit `9cf48863` is local. The push of that 55-file public-record commit
-  was rejected by the approval layer as broader than the earlier four-file MAM-private
-  authorization. The Wave 6 disposition commit and both MAM-basics pushes therefore await Ben's
-  explicit confirmation of the 55-file MAM-basics scope.
-- Finding 23.2 is the only review item still awaiting a later decision. Its branch and empty-path
-  cleanup remains deferred until the active `post-stress-meteg` worktree closes and its divergent
-  branch is reconciled.
+- Wave 5 implementation commit `9cf48863` and Wave 6 disposition commit `975a16c5` are pushed to
+  `origin/main` after Ben explicitly approved the 55-file MAM-basics scope.
+- Finding 23.2's branch and empty-path cleanup is unrelated worktree housekeeping. Ben's decision on
+  2026-09-08 tracks it separately, so it does not delay this remediation's completion.
 
 Run the full suite with:
 
@@ -703,5 +698,5 @@ failure and not a number to overwrite silently.
 6. Do not create example-based tests. Use full generated-output comparisons, independent oracles,
    adverse probes, and mechanical lints.
 
-Planning is complete when this file is committed and pushed. Remediation has not begun merely because
-the findings have been assigned to waves.
+Planning and remediation were completed, committed, and pushed on 2026-09-08. Finding 23.2's
+worktree housekeeping remains separate from this completed process.
