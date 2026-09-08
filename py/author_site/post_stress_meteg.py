@@ -2591,11 +2591,11 @@ def build_chronicles_8_11_body(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "The main MAS page identifies ",
+                "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
-                " as a possible additional Leningrad Codex case whose next chanted word is not"
-                " initially stressed. The table puts MAM's complete chanted word beside two"
-                " interpretations of the Leningrad Codex.",
+                ", in the Leningrad codex, the word after a MAS lacks initial stress, at least"
+                " according to one interpretation of the ambiguous meteg/silluq marks in the"
+                " manuscript.",
             )
         ),
         mb_html.table(
