@@ -328,6 +328,51 @@ Read the regenerated JSON and every generated post-stress page. Treat every unex
 diff as a failure. Expected not to change in Wave 2: unrelated accgram pages, MAM-simple source
 products, Aleppo line data, and the private Phonetic MAM source tree.
 
+### Wave 2 result — completed 2026-09-08
+
+- Re-ran the public Phonetic MAM comparison against the current source. The review-era Sol
+  correction of 368 qamats-variant rows and 370 duplicate entries had become historical: the
+  current source has 370 rows and 372 duplicate entries. The two grouping differences remain
+  Psalms 35:10 and Proverbs 19:7, where the qamats-dal reading forms one MAM chanted word and the
+  qamats-sam reading forms two. No unexplained prose residual remains.
+- Changed `py/accgram/post_stress_meteg.py` so a qamats-variant row contributes one MAM chanted-word
+  sequence to the census while both phonetic readings remain available for validation. Fatal
+  per-system and aggregate invariants now connect source entries, MAM chanted words, qamats rows,
+  duplicate entries, and the two measured grouping differences. The corrected denominators are
+  233,277 prose and 29,542 poetic chanted words; MBS_O is 12,828 and 1,786; MAS is 178 and 54; and
+  silluq is 18,738 and 4,465. The separate positional census has 12,962 and 1,805 pre-stress marks.
+- Re-established the genuine currency differences at `jb29:16`, `pr13:25`, `ps44:27`, `ps57:9`,
+  `ps69:29`, `ps86:7`, `ps108:3`, `ps138:3`, and `ps139:7`. Each current MAM-simple verse has one
+  more U+05BD than the Phonetic MAM snapshot. The complete comparison has 23,184 numbered verses,
+  with 38,161 snapshot U+05BD against 38,170 in MAM-simple.
+- Made finality part of both structural type 3 and Fit-for-MAS type 3, completed the type-2
+  next-chanted-word identifier rename, made parse-mismatch and intervening-material handling follow
+  the survey contract, removed the vacuous multiple-type output and unused source gradings, and
+  limited the WLC lookup to `out/wlc422/1verses_03_jsju1s.json`.
+- Changed `py/author_site/post_stress_meteg.py`, `py/author_site/site_data.py`,
+  `py/main_authored.py`, and `py/tests/test_site_index_links.py`; regenerated
+  `out/accgram/post-stress-meteg.json` and every `gh-pages/post-stress-meteg*.html` page. The rendered
+  prose now identifies UXLC 3.9 and WLC 4.22 as the transcriptions actually read, defines the dual
+  cantillation labels, uses one shared ITM/CoS link implementation, states the current page and
+  sample totals, and applies the Hebrew-prose terminology rules.
+- Corrected `doc/post-stress-meteg-method.md`, `doc/post-stress-meteg-census-2026-09-03.md`,
+  `doc/holman-meteg-m23-isaiah-23-12.md`, `doc/PLAN-holman-meteg-rollout-programme.md`, and
+  `doc/PLAN-post-stress-meteg-page-and-holman-m23.md`. Dated execution facts remain in place with
+  explicit 2026-09-08 corrections; live page counts and the retired M23 fragment now match the
+  generated files.
+- Ran the real survey and `gen-site` twice. The second pass was byte-identical for the JSON, all
+  eight post-stress pages, `unicode-proposals.html`, and `index.html`. Black and ruff passed on every
+  changed Python file, `git diff --check` passed, and the canonical suite reported 976 passed,
+  5 skipped, and 65 subtests passed. The ignored probes and hash evidence are under
+  `.novc/remediation-review-2026-09-07-wave2/`.
+- Commit and push: `e91d7358` (`Repair review Wave 2 post-stress model`) is on `main` and was pushed
+  to `origin/main`. The private Phonetic MAM source tree remained clean. Task
+  `01a08138-c643-7082-a7ee-b60c4c6a4a06` remained idle, and its clean `post-stress-meteg` worktree
+  remained at `c73a2ad3`; Wave 2 did not touch that worktree.
+- Next wave: regenerate every owned product family, make MAM-simple support-file copies LF-stable,
+  reconcile the old-host URL census, and repair generator-owned whitespace without changing
+  byte-verbatim or downloaded inputs.
+
 ## Wave 3 — product regeneration, vendoring, URL migration, and whitespace
 
 Goal: bring generated products back into agreement with their generators after Waves 1 and 2 remove
