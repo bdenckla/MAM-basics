@@ -586,7 +586,9 @@ def build_methods_body(survey: dict) -> list:
                 " of Psalms and Proverbs.",
             )
         ),
-        mb_html.heading_level_2("1 Kings 7:37"),
+        mb_html.heading_level_2(
+            (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, " in 1 Kings 7:37")
+        ),
         mb_html.para(_mam_post_silluq_statement(survey)),
         _mam_post_silluq_aleppo_crop(),
         mb_html.para(
@@ -2478,7 +2480,7 @@ def _mam_post_silluq_leningrad_crop() -> object:
         f'<figure><img src="{_MAM_POST_SILLUQ_LENINGRAD_CROP_URL}"'
         ' alt="Leningrad Codex crop of the verse-final chanted word at 1 Kings 7:37; it'
         ' lacks a meteg after the silluq."'
-        ' loading="lazy" style="max-width: 100%; height: auto;">'
+        ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
         "<figcaption>Leningrad Codex, 1 Kings 7:37.</figcaption></figure>"
     )
 
