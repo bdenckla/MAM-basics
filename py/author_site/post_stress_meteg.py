@@ -2685,18 +2685,24 @@ def build_chronicles_8_11_body(survey: dict) -> list:
             {"class": "limited-width post-stress-meteg-table"},
         ),
         mb_html.para(
-            "The following table lists the printed editions that have each Leningrad"
+            "The following table gives each Leningrad interpretation's MBS/MAS"
+            " classification and lists the printed editions that have that Leningrad"
             " interpretation."
         ),
         mb_html.table(
             [
                 mb_html.table_row_of_data(
-                    (_chronicles_8_11_leningrad_label("L-1"), "BHS")
+                    (
+                        _chronicles_8_11_leningrad_label("L-1"),
+                        _chronicles_8_11_meteg_position_label("MAS"),
+                        "Breuer (Da-at Miqra), Dotan (BHL)",
+                    )
                 ),
                 mb_html.table_row_of_data(
                     (
                         _chronicles_8_11_leningrad_label("L-2"),
-                        "Breuer (Da-at Miqra), Dotan (BHL)",
+                        _chronicles_8_11_meteg_position_label("MBS"),
+                        "BHS",
                     )
                 ),
             ],
