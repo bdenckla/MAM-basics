@@ -2615,6 +2615,23 @@ def _footnotes(survey: dict) -> list:
                 ".",
             )
         ),
+        mb_html.para(
+            (
+                "The Leningrad Codex has an additional case where the next word is not "
+                "initially stressed: at ",
+                _ref_link("2c8:11"),
+                ", ",
+                *_paired_chanted_word_cell("אֲשֶׁר־בָּ֥אָֽה", "אֲלֵיהֶ֖ם"),
+                ". But באה could be argued to be pointed ",
+                *_hebrew_cell("בָּֽאָ֥ה"),
+                " (",
+                _ROM_METEG,
+                "-",
+                rmn("merkha"),
+                ") in the Leningrad Codex, in which case the 2 Chronicles 8:11 word is "
+                "not a MAS case at all.",
+            )
+        ),
         *_next_conjunctive_footnote(survey),
         *_sources_for_types_footnote(),
         *_type_2_type_3_footnote(survey),
