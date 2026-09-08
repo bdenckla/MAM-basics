@@ -565,12 +565,25 @@ def build_methods_body(survey: dict) -> list:
     return [
         mb_html.heading_level_1(_visible_title(_METHODS_TITLE)),
         _hebrew_spacing_option(),
+        mb_html.heading_level_2("Use of Phonetic MAM"),
         mb_html.para(
             (
                 "The location of a word's stress is not always obvious. In the"
                 " research we present here, we locate stress using ",
                 mb_html.anchor_h("Phonetic MAM", _PHONETIC_MAM_URL),
                 ", which marks the stress of every word.",
+            )
+        ),
+        mb_html.heading_level_2("Prose and poetic verses"),
+        mb_html.para(
+            "In the research we present here, we define “prose” and “poetic” as follows:"
+        ),
+        mb_html.unordered_list(
+            (
+                "Prose verses are all verses of the 21 books plus the verses of Job's prose"
+                " frame.",
+                "Poetic verses are the verses of Job's main, poetic section plus all verses"
+                " of Psalms and Proverbs.",
             )
         ),
         mb_html.heading_level_2("1 Kings 7:37"),
@@ -588,17 +601,6 @@ def build_methods_body(survey: dict) -> list:
             )
         ),
         _mam_post_silluq_leningrad_crop(),
-        mb_html.para(
-            "In the research we present here, we define “prose” and “poetic” as follows:"
-        ),
-        mb_html.unordered_list(
-            (
-                "Prose verses are all verses of the 21 books plus the verses of Job's prose"
-                " frame.",
-                "Poetic verses are the verses of Job's main, poetic section plus all verses"
-                " of Psalms and Proverbs.",
-            )
-        ),
         *_census_definitions(survey),
         *_dually_cantillated_passages(survey),
         *_oleh_meteg_overlap(survey),
