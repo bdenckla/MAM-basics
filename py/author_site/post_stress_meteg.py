@@ -2089,8 +2089,8 @@ def build_lacks_mas_body(survey: dict) -> list:
     ]
 
 
-def _not_fit_for_mas_criterion_cell(meets_criterion: bool) -> object:
-    """A blank cell for a met criterion or a red cross for a failed criterion."""
+def _not_fit_for_mas_criterion_cell(meets_criterion: bool, criterion: str) -> object:
+    """A blank cell for a met criterion or a column-specific red-cross gloss."""
     return (
         ""
         if meets_criterion
@@ -2098,7 +2098,7 @@ def _not_fit_for_mas_criterion_cell(meets_criterion: bool) -> object:
             _RED_X,
             {
                 "class": _NOT_FIT_FAILURE_CLASS,
-                "title": "does not meet this Fit-for-MAS criterion",
+                "title": f"does not meet: {criterion}",
             },
         )
     )
@@ -2133,19 +2133,22 @@ def _not_fit_for_mas_case_row(record: dict) -> object:
             mb_html.table_datum(_case_chanted_word_cell(record), _HEBREW_CELL),
             mb_html.table_datum(
                 _not_fit_for_mas_criterion_cell(
-                    record["meets_first_fit_for_mas_criterion"]
+                    record["meets_first_fit_for_mas_criterion"],
+                    _FIT_FOR_MAS_CRITERIA[0],
                 ),
                 {"class": "centered"},
             ),
             mb_html.table_datum(
                 _not_fit_for_mas_criterion_cell(
-                    record["meets_second_fit_for_mas_criterion"]
+                    record["meets_second_fit_for_mas_criterion"],
+                    _FIT_FOR_MAS_CRITERIA[1],
                 ),
                 {"class": "centered"},
             ),
             mb_html.table_datum(
                 _not_fit_for_mas_criterion_cell(
-                    record["meets_third_fit_for_mas_criterion"]
+                    record["meets_third_fit_for_mas_criterion"],
+                    _FIT_FOR_MAS_CRITERIA[2],
                 ),
                 {"class": "centered"},
             ),
