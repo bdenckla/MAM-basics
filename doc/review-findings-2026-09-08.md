@@ -721,3 +721,55 @@ re-derived by the main session as well as by their streams (the JSON and the pag
 rule read for 4, the cells counted for 5.1, the two copies hashed for 5.6, the HTML counted at four
 commits for 6, `git ls-files` for 7.1, the merge dry run for 17(a)). The reconciliation section goes
 below this one, under `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
+
+## Reconciliation with the Codex review
+
+Completed 2026-09-09 under Design A. The companion is
+[`codex-review-findings-2026-09-08.md`](codex-review-findings-2026-09-08.md).
+The review ranges remain MAM-basics `8bf586a3..38a606e2` and MAM-simple
+`9a350be5..376912a7`. The comparison also recognizes the September 9 decisions recorded at
+`3b0225e0` and `becc6f00`. Claude's original findings above remain unchanged.
+
+The commit/trailer/path census reproduces, MAM-simple's sole change is its README date,
+and all fourteen quiet public repositories have no commits in the bounded review interval.
+The suite at the Codex review checkout's starting commit `becc6f00` passed with 983 tests,
+5 skips and 65 subtests; the tracked tree was clean before and after. This run does not
+reconstruct any historical run's output.
+
+"Confirmed" below applies only to the named observations. It does not approve a remedy.
+"Rejected" and "qualified" describe Codex's assessment of a claim, without rewriting the
+claim above. An unfixed finding is not marked fixed because the comparison is complete.
+
+| Claude finding | Codex comparison | Disposition after comparison |
+|---|---|---|
+| 1 | The historical explanation/classification discrepancy is confirmed. The September 9 explanation defines the deliberate interpretation; the classifier did not change. | Settled by Ben on September 9. Preserve the explanation and classification. The full 597-form stress-alignment claim was not repeated. |
+| 2 | Confirmed: all 210 whitespace findings remain in 193 files; none is among `4afe3ebc`'s 390 changed files. A clean-tree diff check does not establish their repair. | Unfixed. The earlier Sol-1 fixed disposition remains unsupported. |
+| 3 | The BHS-labelled form's code provenance is confirmed. Ben's direct BHS inspection is now recorded, and the edition objection was withdrawn. Other reverted wording reflects deliberate decisions. | The BHS and edition questions are settled. The older broad fixed rows still need dated descriptions of the retained and reversed work; those corrections must not reinstate the rejected prose. |
+| 4 | Confirmed: the current maintenance runbook prescribes exclusions and gist clones that its cited policy expressly replaces with the workspace roster. | Unfixed current instruction contradiction. |
+| 5 | Partly confirmed: the 49 plus 1 missing RTL declarations, current sparse-checkout guidance, commit attribution, moved-document referent, argparse-help description and inventory's outside-repo wording reproduce. Later filesystem state does not disprove an earlier dated observation. The named skill copies are identical on September 9. | Confirmed current gaps remain unfixed. Finding 5.6 is resolved. Historical observations and style judgments do not justify wholesale rewriting; the broad claim that all remaining rows hold was not independently repeated. |
+| 6 | Confirmed: 11 deploy-root pages, nine MAS pages, and seven stale 10/8 descriptions. The authored-anchor count is 35. The test comment dates its 34 count to an earlier state, and its floor of 25 still functions. | Current count descriptions remain unfixed. Qualify the claim that the historical 34 count itself is false. |
+| 7 | Confirmed: 13 plans, 11 State lines; the newly written "all ten" was already wrong when 11 plans existed. | State omissions and current record errors remain unfixed. Renaming or deleting plans is not authorized by this review. Exact 381/440 occurrence counts were not repeated. |
+| 8 | Confirmed independently: public Phonetic MAM has 368 ordinary qamats rows and 370 alternate-reading chanted words; the dual-cantillation rows add two to each total, giving 370/372. The difference is scope. The implementation checks structural conditions rather than a retraction analysis. | The source-movement explanation remains a record error. Source-based retraction is not adjudicated; wording requires Ben's decision. |
+| 9 | Confirmed: the retained-test claim is false, and the named provenance details are absent. The Aleppo observation concerns presentation. | Record/provenance gaps remain unfixed. No license violation was established; no manuscript reading or added reader-facing explanation is prescribed. |
+| 10 | Confirmed procedure lag. Codex additionally found the false premise that Codex cannot load the Hebrew prose skill, despite the procedure's account that it already did. | Unfixed record error. The suffix and State conventions remain policy questions, not grounds to invalidate completed reviews. |
+| 11 | Confirmed unchecked completed-wave boxes, 26-versus-25 path wording and findings-versus-files counts. Reject the asserted explanation of Wave 4's missing subtest output line: different runs do not establish its cause. | Current record imprecision remains unfixed. Preserve the historical observation unless evidence from that run supports a correction. The 415/416 scratch count and spell-check side effect were not independently repeated. |
+| 12 | Confirmed: all 44 pinned source/copy pairs are identical LF, while the committed working-tree audit has 25 eol-only rows. The synchronization date is one commit behind. | The date discrepancy remains unfixed. Comparing working-tree bytes is intentional; changing that purpose or checkout handling needs a design decision. No damaged copy was found. |
+| 13 | Mixed. The guards stop on unsupported overlap/multiplicity; the rendering/comment mismatch is latent; the fusion invariant follows from the loop; mismatch documentation omits the fatal-build consequence. Reject the claim that multiplicity guards manufacture agreement and the claim that conjunctive stress is unpinned: adverse probes raise. `_problems` returns the problems; the build raises. | No current MAS output error was established. Keep the working guards. The verified documentation limits remain; 13.6 and the language/edition parts of 13.7 were not independently checked. See Codex C1. |
+| 14 | Mixed. The definition is the second expository paragraph; counting the control makes it the third HTML paragraph. The before-any-earlier-use claim is false. The enumerated lint cannot discover an added page. The context-based permission quoted as skill text is in repository instructions, not the loaded skill's opening. The 32-hunk figure reproduces. | Record/lint-coverage observations remain unfixed. The plain-word and author-gloss exceptions remain valid; registry design is Ben's decision. |
+| 15 | Independently confirmed only 15.1's formatting count: 15 unwrapped mark names, split 4/9/2 across the named pages. | Formatting observation retained without applying edits. Findings 15.2–15.6 were not independently audited; Ben's restored wording and accepted exceptions remain in force. |
+| 16 | Reject the generalized ban on files having text with the verb carry and the blanket ban on hand transcriptions/corrections. The cited rule and `b4706759` do not establish those extensions. Particular enumeration/referent observations remain style observations. | Reject the blanket cleanup premise. No prose sweep is authorized. See Codex C3. |
+| 17 | The 32-versus-36 merge-hunk discrepancy reproduces. Reject 17(b)–(e): the stated census, type names, added page and paragraph all exist in their respective original commits. Later reversals describe history. Unfinished work supports qualifying completion claims independently of those reversals. | Record 17(a) without rewriting history. Reject the error classification for 17(b)–(e); preserve accurate historical messages. The 416 scratch count was not independently established. See Codex C2. |
+| 18 | Trailer and merge-topology census confirmed. The physical housekeeping inventory, historical remote-branch distance and reasons for integration timing were not independently audited. | Census only; housekeeping remains Ben's separate track. No branch, worktree or folder was retired. |
+
+The additional process finding is that the remediation plan at `47edbee6` already gives broad
+MAS editorial instructions without identifying concrete wording approved by Ben. The public
+revert messages establish that those instructions resulted in unrequested rewrites. A later
+remediation checklist must distinguish verified technical defects from proposed changes to
+MAS terminology, organization, scholarly interpretation and source attribution. Present
+unsettled concrete wording changes for Ben's approval; follow decisions already given.
+
+The Codex review changed only its companion findings file and this appended comparison.
+No remediation disposition was newly claimed as fixed. Private-source research, manuscript
+adjudication, the full mega/survey regeneration, historical test reconstruction, and the
+complete set of Claude's negative or soundness claims remain outside the independently
+checked scope. The compaction investigation stays outside these public records.
