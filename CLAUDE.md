@@ -46,6 +46,13 @@ which corpus a claim takes, the banned verbs and framings, where Yeivin and Breu
 verify a page's numbers. It loads on demand rather than every session, so it can hold the full
 statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
 
+**A cloud session does not get that skill from `~/.claude/`, so a hook fetches it.** Nothing under
+`~/.claude/` travels with the clone. `.claude/hooks/install-user-config.sh` fetches the skill, and
+`~/.claude/CLAUDE.md` with it, from `github-misc` at session start, and reports what it did in the
+transcript. If `hebrew-prose` is not in the available-skills list and no such report appeared, say
+so rather than writing accentuation prose without it; `doc/user-level-config-in-cloud-sessions.md`
+has the diagnosis and the fallbacks.
+
 ## The post-stress-meteg pages say plain "word" — do not qualify it as "chanted"
 
 The skill's first rule is "Never a loose 'word'". **Ben's decision of 2026-09-08 is that

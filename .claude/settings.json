@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/install-user-config.sh",
+            "timeout": 120,
+            "statusMessage": "Checking for Ben's user-level Claude configuration"
+          }
+        ]
+      }
+    ]
+  }
+}
