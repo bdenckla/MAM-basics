@@ -72,6 +72,19 @@ So a future capture that arrives as ``.md`` is the one case that needs an entry 
 ``_EXCLUDED``, with the reason it is byte-verbatim. It is NOT a reason to loosen the
 lint, and never a reason to normalize.
 
+A MISSING INPUT FAILS RATHER THAN SKIPS
+
+``CLAUDE.md`` "Writing tests" requires it, and this lint has two ways it could go
+quiet rather than one. ``_FLOOR`` catches a listing that collapsed altogether; the
+separate ``absent`` assertion catches the narrower case of a path ``git ls-files``
+reports that the working tree does not hold. That case cannot arise in an ordinary
+checkout -- 0 of the 203 files in scope at ``5e7f0d6b`` -- but until 2026-09-09 it
+was passed over in silence, which is the shape that section warns about. It is
+deliberately its own assertion rather than another entry in ``offenders``: a file
+that is not there has no Hebrew to be in the wrong order, so reporting it under the
+mark-order message would be a true failure carrying a false reason. Ben's decision,
+2026-09-09.
+
 WHAT MAM'S MARK ORDER IS, AND WHAT IT IS NOT
 
 ``mb_cmn/uni_denorm.py`` is the authority. Four marks come first -- shin dot, sin
@@ -135,10 +148,12 @@ def test_hand_authored_prose_is_in_mam_mark_order():
         " the pathspec or the exclusion set may be too broad."
     )
 
+    absent = []
     offenders = []
     for rel in in_scope:
         full = paths.repo_root() / rel
         if not full.is_file():
+            absent.append(rel)
             continue
         text = full.read_text(encoding="utf-8")
         if uni_denorm.has_std_mark_order(text):
@@ -146,6 +161,15 @@ def test_hand_authored_prose_is_in_mam_mark_order():
         for num, line in enumerate(text.split("\n"), 1):
             if not uni_denorm.has_std_mark_order(line):
                 offenders.append(f"{rel}:{num}")
+
+    # Asserted before the mark-order result, not after: a working tree out of step
+    # with the index makes that result untrustworthy rather than merely incomplete.
+    assert not absent, (
+        "git ls-files lists these prose files and the working tree does not hold"
+        " them, so this lint checked fewer files than it listed. That is a working"
+        " tree out of step with the index, NOT a mark-order defect: restore the"
+        f" files, or narrow the pathspec if they are gone for good. {absent}"
+    )
 
     assert not offenders, (
         "Found hand-authored Hebrew not in MAM's mark order. Do NOT fix this by"
