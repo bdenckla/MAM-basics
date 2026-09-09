@@ -4,6 +4,8 @@
 a lone verse-final atom from having a silluq and two metegs, and the arithmetic puts the expected
 number of such atoms in MAM at about one or below, so an empty group is what the corpus should
 produce with no rule at all. Investigated 2026-09-09 at MAM-basics commit `becc6f00`.
+`py/foi/mtgmtg_explanations.py`'s rendered introduction carries the finding in two paragraphs
+and points here for the citations and the arithmetic.
 
 A note on vocabulary before anything else. This file says **meteg** where it speaks in its voice,
 per the `hebrew-prose` skill's rule for accgram, and says **ga'ya** (Yeivin) and **ga'aya**
@@ -145,9 +147,12 @@ re-derives every figure and presence claim in this file and raises on drift.
    Yeivin §320, which makes a disjunctive accent favour the heavy ga'ya, so whatever produces
    the thinning is strong enough to outweigh that.
 6. **An atom that has a silluq is perfectly free to have a meteg as well.** The 354 members of
-   `1/sopa-y/maq-n` are all of them, הָֽאֲדָמָֽה׃ and לַֽיהֹוָֽה׃ and their like; and in 38 of the 229
-   members of `1/sopa-y/maq-y` the extra meteg is on the final atom, the one that has the silluq, rather than
-   earlier in the compound. Whatever thins the verse end, it is not a bar on the atom itself.
+   `1/sopa-y/maq-n` are exactly that, most with the meteg well before the stress, as הָֽאֲדָמָֽה׃
+   and לַֽיהֹוָֽה׃ have it; and in 38 of the 229 members of `1/sopa-y/maq-y` the extra meteg is on
+   the final atom, the one that has the silluq, rather than earlier in the compound. Nor are all
+   354 of the pre-stress kind: 1 Kings 7:37's לְכֻלָּֽהְנָֽה׃ is one of them, and its meteg
+   follows the mark serving as silluq, which is the case `doc/PLAN-silluq-before-gaya-template.md`
+   is about. Whatever thins the verse end, it is not a bar on the atom itself.
 
 ## Why the fourteen members of `2/sopa-y/maq-y` do not disprove any of this
 
@@ -169,3 +174,12 @@ is 1.49% for mid-verse compounds against 0.255% for mid-verse lone atoms.
    pausal vowel restoration are candidates rather than findings.
 3. **It does not rest on any manuscript reading.** Every count is MAM's, and where Yeivin reports
    what A, L, C or S have, that is Yeivin reporting, not this file.
+4. **It requires no change to `doc/PLAN-silluq-before-gaya-template.md`**, checked 2026-09-09 with
+   `git grep -nE 'mtgmtg|OVERALL_EXPLANATION|unfounded|explanations' -- doc/PLAN-silluq-before-gaya-template.md`,
+   which returns nothing: that plan names neither this survey nor `py/foi/mtgmtg_explanations.py`,
+   and nothing in it becomes false here. One optional addition would help a fresh session
+   executing it. Its validation contract says it "supports a future atom with more than one
+   post-silluq meteg", and the census above establishes that MAM has no atom with more than two
+   U+05BD at all — so that clause is unexercised today, and 1 Kings 7:37's atom is the only one
+   of its kind. Recording that as a measured precondition is proposed, not done, because the
+   plan is the companion work's file to widen.

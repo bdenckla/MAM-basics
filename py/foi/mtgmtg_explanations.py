@@ -56,4 +56,28 @@ OVERALL_EXPLANATION = (
             "maqaf is present or absent, respectively.",
         )
     ),
+    " ".join(
+        (
+            "One cell of that grid is empty: no chanted word without a maqaf, that",
+            "is, no single atom, ends its verse with a silluq and two further",
+            "metegs. The neighbouring cells show what does occur. A single atom that",
+            "ends its verse with a silluq and one meteg is common, and a verse-final",
+            "maqaf compound sometimes spreads a silluq and two metegs across its",
+            "atoms.",
+        )
+    ),
+    " ".join(
+        (
+            "That absence is scarcity rather than a rule. Neither Yeivin's",
+            "Introduction to the Tiberian Masorah nor Breuer's The Cantillation of",
+            "Scripture makes the number of metegs on a word depend on whether that",
+            "word has a silluq, and the few shapes that do have two metegs mid-verse,",
+            "chiefly hitpael forms and theophoric names ending in יה, hardly ever end",
+            "a verse at all. The rate at which a mid-verse single atom has a second",
+            "meteg is low enough to predict fewer than one such verse-final atom in",
+            "the whole corpus, so an empty cell is what MAM should show even with no",
+            "rule behind it. The file doc/foi-mtgmtg-empty-cell.md in MAM-basics",
+            "states the case in full, with the section citations and the arithmetic.",
+        )
+    ),
 )
