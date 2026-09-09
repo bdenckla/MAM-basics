@@ -966,6 +966,36 @@ later sentence beginning "The correction also …".
 - **It applies to commit messages, issue bodies and plan rows too**, not only to chat. A plan
   row saying a figure was wrong should say in the same breath that it now is not.
 
+## Prose: the closing message opens with a HORIZONTAL RULE
+Added 2026-09-09. Same scope as the four Prose sections above: everything you write for me.
+**Begin the final message of every turn with a markdown horizontal rule (`---`), with nothing
+above it.** Always — not only when the message is long or report-shaped.
+- **The problem it solves is that an agentic session's closing message has no top.** A long
+  stream of narration between tool calls has already gone by, so nothing marks where your
+  self-talk ends and the thing I am meant to read begins. Me, 2026-09-09: *"as usual, I'm not
+  totally sure where to start reading, i.e. where your self-talk ends and your summary begins."*
+  That is the same fact the task-chip section above records from the writer's side — "there is
+  no identifiable 'top' of a response in an agentic session" — arrived at again from the
+  reader's.
+- **My workaround was to scroll for the first markdown heading, and it is both subtle and
+  wrong.** Subtle because headings are not that bold. Wrong because a closing message can open
+  with un-headed lines, and one did on 2026-09-09: its first two lines carried the commit result
+  and the deliverable's path, so the heuristic skipped the deliverable and landed three lines
+  late. Me, that day: *"the current system is subtle (looking for not-that-bold headings) and
+  wrong anyway."*
+- **A rule bar is the obvious instrument and does not need defending.** Me, the same day:
+  *"Please use a horizontal bar; isn't that just common sense."* As with the numbering section
+  above, this earns its place by naming a habit of yours rather than a taste of mine — so
+  nothing here is idiosyncratic to me, and "he hasn't asked for it in this context" is never a
+  reason to skip it.
+- **Always, with no judgment call about whether this turn counts as a report.** A rule that asks
+  you to decide first is a rule that decays. A bar above a one-line reply costs nothing, and
+  being able to rely on it without thinking is the whole point.
+- **Nowhere else in the message.** A second rule bar in the body stops the first one marking
+  anything.
+- **A direct answer to a question I asked still goes first**, immediately below the bar. The two
+  rules do not compete: the bar is the message's first line, the answer is its first sentence.
+
 ## Unicode in source code — no orphan combining marks
 - Never write a combining mark (a diacritic/accent/point with no base character) as a
   raw literal in code — e.g. `replace("<U+0323>", "")`, `_CGJ = "<U+034F>"`,
