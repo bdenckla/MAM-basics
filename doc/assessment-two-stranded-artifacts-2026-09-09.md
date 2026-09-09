@@ -86,12 +86,49 @@ each stated reason is incomplete.
    `in/accgram/edition_transcriptions/`** (`koren_dt_elyon`, `koren_ex_elyon`, `simtan_dt_taxton`,
    `simtiq_ex_elyon`), 1 in `uxlc/in/UXLC-misc/` and 6 in `uxlc/out/UXLC-misc/`.
 
-The four in `in/accgram/edition_transcriptions/` are worth Ben's attention on their own account.
-They are Ben-authored transcriptions of printed editions, which `py/tests/test_h_dot_below_nfc.py`
-already calls "hand-authored and belong in scope" for its purposes. They are hand-authored Hebrew
-in the other order, and no check in the repository covers them. This assessment does not propose
-repairing them: whether a transcription of a printed page is hand-authored prose or a capture is a
-question about what those files are for, and it is Ben's.
+### The four edition transcriptions are ordinary hand-authored prose, and the repair is safe
+
+**Disposition: recommended for repair, on the same footing as the branch's other 132 clusters.**
+This assessment first filed them as a judgment call for Ben — whether a transcription of a printed
+page counts as hand-authored prose or as a capture — and that framing was wrong, because the
+offending Hebrew is not in the transcription at all. Ben's questions of 2026-09-09 prompted the
+measurements below.
+
+**They are in Unicode-normal order specifically**, not merely outside MAM-normal order, which the
+predicate alone does not establish. All four satisfy `text == NFC(text)` and `text == NFD(text)`,
+and all seven offending clusters carry the canonical signature — a vowel before the dagesh, which is
+exactly what `CLAUDE.md`'s first section says Unicode-normal order produces. Six are a tav with
+qamats or segol before a dagesh; the seventh is a shin with sheva, dagesh and shin dot, where
+MAM-normal order wants shin dot, dagesh, sheva.
+
+**Not one distinguishing cluster is MAM-normal**, so these are not MAM-normal files carrying a few
+contaminating clusters. Of the 765 clusters across the four files, 758 are indifferent — the two
+orders give identical bytes for them — and all 7 that can tell the orders apart are Unicode-normal.
+An accent transcription rarely stacks a vowel with a dagesh, which is why so few clusters can
+testify at all.
+
+**The capture question never arises, because the transcribed body has no pointing.** The committed
+JSON beside each `.txt` stores accent names in Hebrew abbreviations, `פש מונ זקף` and the like, and
+holds no vowel point anywhere. All 12 JSON files in the directory are in MAM-normal order. So the
+body carries nothing that could distinguish the two orders, and what a transcription of a printed
+page "is" turns out not to bear on the question.
+
+**Every offending cluster sits on a `#` comment line in the hand-written header** — Ben's notes on
+what each printed edition does at a given place, quoting pointed Hebrew. That is hand-authored prose
+pasted through something that normalizes, which is the way in `CLAUDE.md` names, and it is the same
+defect as the other 132 rather than a different kind.
+
+**The repair is safe against the idempotence check.** `py/accgram/transcription_build.py` states
+that "THE HEADER STAYS IN THE .txt AND IS NEVER REWRITTEN. Only the body beneath it is derived", and
+`py/tests/test_edition_transcriptions.py` runs `build --check` to assert that re-deriving the body
+reproduces each file byte for byte. Repairing a header comment therefore survives the next
+`--derive-only` and cannot fail `--check`. A repair inside the derived body would not have been
+safe, and none is needed.
+
+**These four are the first real instance of a weakness the new lint's docstring admits**, that "a
+`.txt` is covered by nothing". A blanket widening to `.txt` remains wrong, since 11 of the 15
+offending `.txt` are genuine captures; a scope naming `in/accgram/edition_transcriptions/*.txt`
+would cover these four without taking in any capture.
 
 ### One silent-skip channel in the lint
 
@@ -486,11 +523,16 @@ Recommended, each with the section that argues it:
    `claude/*` branch is the expected end state of cloud work, and this widening is what would make
    that state visible.
 
+4. **Repair the seven Unicode-normal clusters in the four
+   `in/accgram/edition_transcriptions/*.txt`** (§1). They are hand-authored prose in comment
+   headers, not captures, and the header is never re-derived, so the repair cannot be undone by
+   `build --derive-only` or fail `build --check`.
+
 Left for Ben, because each is a decision rather than a correction:
 
-1. **Whether the four `in/accgram/edition_transcriptions/*.txt` in the other order should be
-   repaired** (§1), which turns on whether a transcription of a printed page counts as
-   hand-authored prose or as a capture.
+1. **Whether the lint's scope gains `in/accgram/edition_transcriptions/*.txt`** (§1), so that
+   recommendation 4's repair is guarded rather than merely done once. A blanket widening to `.txt`
+   is not the way, since 11 of the 15 offending `.txt` are genuine captures.
 2. **Whether the review joins the public periodic series** now that its subject files are public
    (§5), which is the plan's own D16 asked again under changed facts.
 3. **Whether to close the lint's `is_file()` silent-skip channel** (§1).
@@ -508,6 +550,16 @@ venv, `.venv/Scripts/python.exe`, importing `mb_cmn.uni_denorm`, and are untrack
    at `a50da28b`, and against the hypothetical merge tree `af5e8cd7`.
 3. **The scope-claim checks and the plan screen** — the `.html` and `.txt` widening inventories, the
    plan's Hebrew and mark order, and the repointing counts.
+4. **The edition-transcription diagnosis** of §1 — whether each file equals its NFC and NFD forms,
+   the MAM-normal against Unicode-normal cluster tally counting only clusters that can tell the two
+   orders apart, the Hebrew-bearing fields of the committed JSON, and whether every offending line
+   begins with `#`.
+
+**One deliberate use of `unicodedata.normalize` needs stating**, since `CLAUDE.md`'s first section
+bans it. Measurement 4 calls it to ask whether a file already equals its own NFC or NFD form. That
+is a question about the text rather than a change to it: nothing is written back, and no repair
+anywhere in this assessment goes through it. Repairing by normalizing remains the banned act, and
+`give_std_mark_order` remains the only sanctioned repair.
 
 Each is throwaway-grade under `~/.claude/CLAUDE.md` §"Throwaway scripts: the lowest bar of
 software". A fresh session should rewrite rather than hunt for them; the predicates and pathspecs
