@@ -99,9 +99,15 @@ The periodic reviews already provide some delayed feedback: the next Claude revi
 the preceding Codex findings and remediations. The experiment brings an explicit Claude rebuttal
 into the same review window, before disputed findings become remediation instructions.
 
+For this experiment, Claude writes the rebuttal to
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/doc/codex-review-findings-2026-09-08-claude-rebuttal.md`.
+The original Claude review and Codex findings remain intact. Ben gives the next Codex task the
+file path and, if committed, the commit ID; Ben need not paste the rebuttal into chat. The next
+Codex task reads the rebuttal from that file.
+
 This records an experiment and its terminology. Design A remains the default; the additional
-rebuttal round is not a standing requirement. Further rounds and a permanent procedure for
-recording the replies have not been settled. The experiment does not authorize remediation.
+rebuttal round is not a standing requirement. Further rounds and adoption as a permanent
+procedure remain undecided. The experiment does not authorize remediation.
 
 ## Keep the two reviews blind to each other
 
