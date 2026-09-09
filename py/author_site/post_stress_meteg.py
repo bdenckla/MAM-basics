@@ -84,7 +84,7 @@ import xml.etree.ElementTree as ET
 from accgram import final_stress
 from accgram import post_stress_meteg as psm
 from accgram import printed_decalogue_strands as pds
-from accgram.almost_errors_html_shared import cos, itm, ref_abbrev, wrap_hebrew_runs
+from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
 from mb_author import author
@@ -190,6 +190,10 @@ _MAS_CENSUS_GLOSS = (
     "count of words with one or more meteg marks after the stress and any number"
     " (including zero) before it"
 )
+# This page names each book's author in the hover title, where the accgram pages that share
+# ``almost_errors_html_shared``'s ITM_TITLE and COS_TITLE do not.  Ben's decision, 2026-09-08.
+_ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
+_COS_GLOSS = "Breuer's The Cantillation of Scripture"
 
 # The one verse the page names outside its tables.  The survey records its chanted words as MAM
 # has them today, under ``currency.focus_verses``, so the form shown here is lifted like every
@@ -375,7 +379,7 @@ _FIT_FOR_MAS_TYPE_CRITERION = (
     "The next word conforms to (sub)type 1A, 1B, 2Af, 2Bf, or 3"
 )
 _FIT_FOR_MAS_CRITERIA = (
-    "The candidate word has penultimate stress from a conjunctive accent.",
+    "Its word has penultimate stress from a conjunctive accent.",
     "The next word has initial stress from a disjunctive accent.",
     f"{_FIT_FOR_MAS_TYPE_CRITERION}.",
 )
@@ -1178,8 +1182,7 @@ def pin_claims(survey: dict) -> None:
     ), "the post-silluq count and the records disagree"
     post_silluq_forms = dict(_post_silluq_comparison(survey))
     assert post_silluq_forms["MAM"].count(psm.METEG) == 1
-    assert post_silluq_forms["UXLC 3.9"].count(psm.METEG) == 2
-    assert post_silluq_forms["WLC 4.22"].count(psm.METEG) == 2
+    assert post_silluq_forms["BHS"].count(psm.METEG) == 2
     exodus = _dual_cantillation_facts(survey, "ex20:2")
     assert exodus["same_chanted_word_group_count"]
     assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
@@ -1265,6 +1268,16 @@ def itm_sections(reference: str) -> tuple:
         end = match.end()
     out.append(reference[end:])
     return tuple(out)
+
+
+def itm() -> object:
+    """The abbreviated book name, with Yeivin's title on hover."""
+    return mb_html.abbr("ITM", {"title": _ITM_GLOSS})
+
+
+def cos() -> object:
+    """The abbreviated book name, with Breuer's title on hover."""
+    return mb_html.abbr("CoS", {"title": _COS_GLOSS})
 
 
 def _para(text: str) -> object:
@@ -1773,7 +1786,8 @@ def _case_list_link(survey: dict) -> list:
                 ),
                 " are listed separately and can be filtered by (sub)type. The ",
                 mb_html.anchor_h(f"{misc_count:,} misc cases", _MISC_FNAME),
-                " appear in that large list and are also discussed on a separate page.",
+                " appear in that large list, but are also further discussed on a page of"
+                " their own.",
             )
         )
     ]
@@ -2189,7 +2203,8 @@ def _back_to_fit_for_mas_table() -> object:
             mb_html.anchor_h(_visible_title(_TITLE), _FNAME),
             " and the ",
             mb_html.anchor_h(
-                "Fit for MAS table", f"{_FNAME}#{_FIT_FOR_MAS_SECTION_ID}"
+                f"{author.dquote('fit for MAS')} table",
+                f"{_FNAME}#{_FIT_FOR_MAS_SECTION_ID}",
             ),
             ".",
         )
@@ -2302,7 +2317,8 @@ def build_not_fit_body(survey: dict) -> list:
             f"The table lists all {len(records):,} MAS cases that are not fit for MAS."
         ),
         _para(
-            "The columns headed 1–3 correspond to the three Fit for MAS criteria. A red"
+            f"The columns headed 1–3 correspond to the three {author.dquote('fit for MAS')}"
+            " criteria. A red"
             f" {_RED_X} marks each criterion that a word does not meet; blank cells mark"
             " criteria that the word meets."
         ),
@@ -2524,30 +2540,31 @@ def _wlc_words(bcv: str) -> list[str]:
 
 
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
-    """The MAM, UXLC, and WLC forms relevant to 1 Samuel 17:5."""
+    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question."""
     letters = ("נחשת",)
-    uxlc_form = _source_focus_word(
+    bhs_form_from_uxlc = _source_focus_word(
         _uxlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="UXLC 3.9",
     )
-    wlc_form = _source_focus_word(
+    bhs_form_from_wlc = _source_focus_word(
         _wlc_words(_POST_SILLUQ_VERSE),
         _POST_SILLUQ_VERSE,
         letters,
         must_have=psm.SOF_PASUQ,
         source="WLC 4.22",
     )
-    assert uxlc_form == wlc_form, "UXLC 3.9 and WLC 4.22 differ at 1 Samuel 17:5"
+    assert (
+        bhs_form_from_uxlc == bhs_form_from_wlc
+    ), "the two BHS-derived transcriptions differ at 1 Samuel 17:5"
     return (
         (
             "MAM",
             _focus_word(survey, _POST_SILLUQ_VERSE, letters, must_have=psm.SOF_PASUQ),
         ),
-        ("UXLC 3.9", uxlc_form),
-        ("WLC 4.22", wlc_form),
+        ("BHS", bhs_form_from_uxlc),
     )
 
 
@@ -2599,9 +2616,9 @@ def _mam_post_silluq_leningrad_crop() -> object:
 
 
 def _post_silluq_leningrad_form(survey: dict) -> str:
-    """WLC 4.22's transcription of the Leningrad Codex form at 1 Samuel 17:5."""
+    """The BHS transcription of the Leningrad Codex form at 1 Samuel 17:5."""
     forms = dict(_post_silluq_comparison(survey))
-    return forms["WLC 4.22"]
+    return forms["BHS"]
 
 
 def _post_silluq_lc_crop() -> object:
@@ -2674,9 +2691,10 @@ def _post_silluq_details(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                "UXLC 3.9 and WLC 4.22 both transcribe this surprising ",
+                "This surprising ",
                 _ROM_METEG,
-                ":",
+                " is correctly recorded in BHS and in BHS-derived editions such as UXLC and"
+                " WLC:",
             )
         ),
         mb_html.table(
@@ -3059,22 +3077,14 @@ def _dually_cantillated_passages(survey: dict) -> list:
         mb_html.heading_level_2("Dually cantillated passages"),
         mb_html.para(
             (
-                "Here ",
-                _cantillation_label(psm.CANT_ALEF),
-                " names the taxton branch of MAM's dual-cantillation template, and ",
-                _cantillation_label(psm.CANT_BET),
-                " names the elyon branch.",
-            )
-        ),
-        mb_html.para(
-            (
                 "The Masoretic tradition records two cantillations for three passages. Those"
                 " three passages are the two Decalogues and Genesis 35:22. The analyses"
                 " presented in this document use only MAM's ",
                 _cantillation_label(psm.CANT_ALEF),
                 " cantillation. The table below shows that this choice has no effect on the"
-                " MAS count and changes the other two counts only by 1. The survey has not"
-                " compared the fit-for-MAS results across the two branches.",
+                " MAS count and changes the other two counts only by 1. (We have not analyzed"
+                " what effect the choice has on the “fit for MAS” analysis, but I think it is"
+                " safe to assume that the choice has little or no effect.)",
             )
         ),
         _table(headers, rows),
