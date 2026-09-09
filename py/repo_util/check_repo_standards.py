@@ -313,6 +313,19 @@ work somebody must do still files a real issue with a real body, and #233
 is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
 merits.  The test is whether the issue says anything the doc does not.
 
+AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/dual-agent-review.md
+calls the series "doc-only since 2026-09-01" and points here for the
+convention, so the phrase is worth pinning: what became doc-only is where a
+review is WRITTEN DOWN -- the doc alone, the thin issue retired, the State
+line carrying the open/closed state.  It says nothing about which files a
+review may read, and a review reads whatever its window changed in a public
+repository: doc/review-findings-2026-09-08.md is headed "review of the public
+repos" and accounts for 99 commits and 513 changed paths across Python, pages
+and data.  Pinned 2026-09-09, when two documents written that day both read it
+as a limit on READING and so proposed a scope widening for the dot-claude/ and
+dot-Codex/ trees that had just arrived here.  No widening is owed: those trees
+are tracked files in a public repository, which is the whole test.
+
 Deliberately NOT checked -- black version-pinning. `black` is intentionally left
 unpinned in these repos, and a version bump's reformatting is wanted, not a
 hazard to be prevented: when a new black wants to touch files you didn't edit,
