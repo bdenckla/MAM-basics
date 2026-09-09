@@ -509,6 +509,17 @@ Commit only doc/dual-agent-review.md and this plan's execution line on codex-rev
 
 ## Step 4 — Codex writes the remediation plan for a fresh session
 
+Executed 2026-09-09: wrote `doc/PLAN-remediate-review-findings-2026-09-08.md`
+after verifying required commit `83b470da1846fc1c739fcca48762d01627fa354e` and
+merging `main` into the review branch at `dd86c96fd29c4b345ae37ba7252ffe72944cbef3`.
+The plan covers every reconciled finding, retains Ben's settled decisions, and
+separates four implementation waves from exact editorial proposals under D7's
+general scope. The merged-tree suite passed: 987 passed, 5 skipped, 65 subtests
+in 126.54 seconds. Planning changed only the new plan and this dated entry;
+no remediation, primary fast-forward, or push occurred. Step 4 is complete and
+step 5 awaits Ben's approval. The planning commit is recorded in the follow-up
+execution entry after the commit exists.
+
 Actor: Codex, one task. Input: step 3's reported commit; D2–D8. Output:
 `doc/PLAN-remediate-review-findings-2026-09-08.md`, committed on the branch. No page, code or
 record changes in this task.
