@@ -1,4 +1,4 @@
-r"""MAM's metegs after the stress: the main page and eight supporting pages.
+r"""MAM's meteg marks after the stress: the main page and eight supporting pages.
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a separate constant.
@@ -1447,9 +1447,9 @@ def _census(survey: dict) -> list:
             (
                 "So, among words with at least one meteg mark, there are ",
                 f"{mas:,}",
-                " words where one of the metegs is after the stress and ",
+                " words where one of the meteg marks is after the stress and ",
                 f"{mbs_only:,}",
-                " words where none of the metegs is after the stress. (There is never more"
+                " words where none of the meteg marks is after the stress. (There is never more"
                 " than one meteg mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page for more details.",
@@ -1568,10 +1568,9 @@ def _mas_facts(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "In every counted MAS case, the stressed syllable has a conjunctive accent."
-                    " A meteg after silluq would follow a disjunctive accent; ",
+                    "In every MAS case, the stressed syllable has a conjunctive accent (",
                     _footnote_callout(1, _POST_SILLUQ_FOOTNOTE_ID),
-                    " explains the post-silluq cases excluded from this claim.",
+                    ").",
                 ),
                 "In every MAS case, the MAS syllable comes right after the stressed syllable.",
                 (
@@ -3219,14 +3218,15 @@ def _fit_type_2_no_ivs_footnote() -> list:
         ),
         mb_html.para(
             (
-                "For Fit for MAS, 2Af and 2Bf are subtypes 2A and 2B with one added"
+                f"For {author.dquote('fit for MAS')}, 2Af and 2Bf are subtypes 2A and"
+                " 2B with one added"
                 " condition: the next word does not begin with vocal ",
                 _ROM_SHEWA,
-                f". The f stands for {author.dquote('fit for MAS')}. Every type-2 MAS"
+                f". (The f stands for {author.dquote('fit for MAS')}.) Every type-2 MAS"
                 " case already has a next word without vocal ",
                 _ROM_SHEWA,
                 ", so the condition removes no type-2 MAS case, and narrows only the"
-                " count of syllables deemed fit for MAS.",
+                " set of syllables deemed fit for MAS.",
             )
         ),
     ]
