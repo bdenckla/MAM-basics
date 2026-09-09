@@ -27,15 +27,22 @@ missed every one of those 16 files:
 
 WHAT IT COVERS, AND WHY NOT MORE
 
-Every tracked ``.md`` in the repo -- 171 of them on 2026-09-09, one second to check,
-so there is no cost argument for narrowing it -- plus the ``.html`` under ``doc/``.
+Every tracked ``.md`` in the repo, plus the ``.html`` under ``doc/`` -- 191 files at
+``b490988a``, one second to check, so there is no cost argument for narrowing it.
+Re-establish with ``git ls-files -- "*.md" "doc/*.html"`` rather than trusting that
+figure: it rises with every ``.md`` added, so a larger number is growth and not a
+mismatch.
 
-Widening it by file type is what fails, and each way fails for the same reason. All
-``.html`` would take in 67 offenders, every one either generated (``gh-pages/``) or a
-byte-verbatim capture (``misc/*/img-sources/``). ``.txt`` would take in
-``aleppo/aleppo-wiki/Wikisource-manual-*.txt``, snapshots of hand work as it was
-published on Wikisource, and ``misc/zarqa-table-diff/*.txt``, two external sources
-captured so they can be diffed against each other.
+Widening it by file type is what fails, and each way fails for the same reason --
+what the wider type catches is not hand-authored prose. All ``.html`` would take in
+67 offending files: 36 under ``uxlc/in/UXLC-notes/``, an input capture and the
+majority of them; 28 generated under ``gh-pages/``; and 3 byte-verbatim under
+``misc/*/img-sources/``. ``.txt`` would take in 15: 6 under ``uxlc/out/UXLC-misc/``
+and 1 under ``uxlc/in/UXLC-misc/``, the UXLC change lists; 2 under
+``aleppo/aleppo-wiki/``, snapshots of hand work as it was published on Wikisource;
+2 under ``misc/zarqa-table-diff/``, two external sources captured so they can be
+diffed against each other; and 4 under ``in/accgram/edition_transcriptions/``, which
+are Ben-authored comment headers rather than captures.
 
 The data trees carry their source's order by design and must never be repaired:
 ``in/mam-ws/`` is a download that is inherently normalized (Ben, 2026-09-09),
@@ -68,8 +75,10 @@ from mb_cmn import paths, uni_denorm
 # it is verbatim, not merely the fact that it fails.
 _EXCLUDED: frozenset[str] = frozenset()
 
-# Well under the 173 files in scope on 2026-09-09, and here only to catch a pathspec
-# that swallowed everything -- not to assert a tree size.
+# Far below the number of files in scope, and here only to catch a pathspec that
+# swallowed everything -- not to assert a tree size. It deliberately carries no
+# absolute figure, because the scope grows with every .md added; the docstring above
+# gives that count with the revision it was measured at.
 _FLOOR = 100
 
 

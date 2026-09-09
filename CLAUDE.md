@@ -37,9 +37,11 @@ external sources, exempt on the same ground `in/mam-ws-intro/` is: `in/UXLC-39/`
 **The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`
 plus the `.html` under `doc/`. It was added 2026-09-09, when a scan someone chose to run found 132
 such clusters in 16 prose files that no existing check covered. Source outside its file types is
-still yours to check: `py/check_mark_order.py` covers the `.py` and Ben-authored `.json` of the
-four repos `py/repo_scopes.py` names and `py/tests/test_mam_simple_mark_order.py` covers
-MAM-simple's non-corpus tree, but a `.txt` is covered by nothing, and
+still yours to check: `py/check_mark_order.py` covers the `.py` of the four repos
+`py/repo_scopes.py` names and the Ben-authored `.json` of three of them — its `corpus_roots()`
+omits the Leningrad tree, which that module says "contributes no mark-order scope" — and
+`py/tests/test_mam_simple_mark_order.py` covers MAM-simple's non-corpus tree, but a `.txt` is
+covered by nothing, and
 `py/tests/test_aleppo_page_mark_order.py` covers generated pages rather than source. Separately
 `py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
 `py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.
