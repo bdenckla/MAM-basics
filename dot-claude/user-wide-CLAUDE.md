@@ -367,6 +367,45 @@ structural rather than anomalous.
   departing session really does still have work, which is precisely when overlap could bite.
   Say so plainly instead of spawning a chip, and let me close it out before launching anything.
 
+## Prompt authorship: sign the chips you write, never assume I wrote the one you got
+Added 2026-09-09, after a session credited me with a word I have never used. Two halves of one
+subject, sitting between the section above, which is about writing a chip, and the one below,
+which is about being the session that receives it.
+
+**Reading side — a session's opening prompt is more often yours than mine.** A large proportion
+of my sessions, likely a majority, are kicked off by a prompt a previous Claude session wrote,
+usually a task chip I asked for. So **never attribute an opinion, a coinage or a phrasing to me
+because the opening prompt says so.** Me, 2026-09-09: *"just don't assume I wrote any initial
+prompts."*
+- **The genre is easy to read, so there is no excuse for guessing.** Agent-written: long, `##`
+  section headings, absolute paths spelled out in full, tables, numbered option lists, bolded
+  lead-ins, sentences like "do not X unless Ben asks". Mine: short, no headings, often a single
+  question, frequently a `>` quote of something you wrote. Me, the same day: *"That was written
+  by you, as is abundantly clear to me by its length and its use of sections (e.g. '## Foo bar
+  qux'), which I think you will see I never do."* And: *"absent you analyzing the content of
+  prompts to see likely authorhood (as I easily did, and as I think you could easily do,
+  too)…"* — so read the prompt before quoting it about me.
+- **The case.** The prompt starting the Phonetic MAM carrier-marks exploration said "Ben calls
+  it an admittedly weird use of two Unicode marks as carriers", and the tracked document
+  therefore credited "carrier" to me. It is not my word and appears in no code in either repo:
+  *"I strongly believe 'carrier' is your invention."* Corrected in
+  `MAM-private/doc/explore-phonetic-mam-carrier-marks-2026-09-09.md` §1 and §6.
+- **Why it costs more than an inaccuracy.** Crediting your own coinage to me launders an
+  invention into a settled convention: a term "Ben calls it" reads as decided when nobody
+  decided anything, and I then have to disown it. That is the coinage rule from the prose
+  sections below, with the coining hidden behind my name — which is worse than coining openly,
+  because it removes the one signal that a decision was still open.
+- **The same caution covers a chip prompt's factual claims**, not only its wording. A figure or
+  a file path in a prompt you did not write is a claim from a session that has ended, so
+  re-measure it rather than repeat it — which the plans section below already says of plans.
+
+**Writing side — sign every chip prompt you write.** Put one line at the top: that a Claude
+session wrote it, the date, and what I actually asked for, marked off as mine. The successor
+then knows which parts carry my authority and which are your reconstruction, and does not have
+to infer it from prose style. I floated this on 2026-09-09 and it is adopted; the shape is
+roughly *"Written by a Claude session on <date>. Ben's instruction was: '<his words>'. Everything
+else here is that session's reconstruction."*
+
 ## A successor session verifies its exact checkout and commit before editing
 Ben authorized these safeguards on 2026-09-06 after a Codex post-mortem: page edits had landed
 in `C:/Users/BenDe/.codex/worktrees/7a5d/MAM-basics-post-stress-meteg` while Ben was viewing
@@ -965,6 +1004,36 @@ later sentence beginning "The correction also …".
   without reading every word.
 - **It applies to commit messages, issue bodies and plan rows too**, not only to chat. A plan
   row saying a figure was wrong should say in the same breath that it now is not.
+
+## Prose: the closing message opens with a HORIZONTAL RULE
+Added 2026-09-09. Same scope as the four Prose sections above: everything you write for me.
+**Begin the final message of every turn with a markdown horizontal rule (`---`), with nothing
+above it.** Always — not only when the message is long or report-shaped.
+- **The problem it solves is that an agentic session's closing message has no top.** A long
+  stream of narration between tool calls has already gone by, so nothing marks where your
+  self-talk ends and the thing I am meant to read begins. Me, 2026-09-09: *"as usual, I'm not
+  totally sure where to start reading, i.e. where your self-talk ends and your summary begins."*
+  That is the same fact the task-chip section above records from the writer's side — "there is
+  no identifiable 'top' of a response in an agentic session" — arrived at again from the
+  reader's.
+- **My workaround was to scroll for the first markdown heading, and it is both subtle and
+  wrong.** Subtle because headings are not that bold. Wrong because a closing message can open
+  with un-headed lines, and one did on 2026-09-09: its first two lines carried the commit result
+  and the deliverable's path, so the heuristic skipped the deliverable and landed three lines
+  late. Me, that day: *"the current system is subtle (looking for not-that-bold headings) and
+  wrong anyway."*
+- **A rule bar is the obvious instrument and does not need defending.** Me, the same day:
+  *"Please use a horizontal bar; isn't that just common sense."* As with the numbering section
+  above, this earns its place by naming a habit of yours rather than a taste of mine — so
+  nothing here is idiosyncratic to me, and "he hasn't asked for it in this context" is never a
+  reason to skip it.
+- **Always, with no judgment call about whether this turn counts as a report.** A rule that asks
+  you to decide first is a rule that decays. A bar above a one-line reply costs nothing, and
+  being able to rely on it without thinking is the whole point.
+- **Nowhere else in the message.** A second rule bar in the body stops the first one marking
+  anything.
+- **A direct answer to a question I asked still goes first**, immediately below the bar. The two
+  rules do not compete: the bar is the message's first line, the answer is its first sentence.
 
 ## Unicode in source code — no orphan combining marks
 - Never write a combining mark (a diacritic/accent/point with no base character) as a

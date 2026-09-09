@@ -81,11 +81,20 @@ class TestGraphProvenance(unittest.TestCase):
         expected = self._generated_by()
         with TemporaryDirectory() as tmp_dir:
             stem = Path(tmp_dir) / "focused"
-            survey_dot.write_focused_dot_files(
-                stack_counts,
-                str(stem),
-                generator_file=__file__,
-            )
+            # This test is about the .dot files' provenance comments and never
+            # reads an SVG, so the render is stubbed out -- which is what
+            # test_tmpl_survey_focused_targets.py has always done around this
+            # same call. Until 2026-09-09 this test rendered for real and got
+            # away with it, because render_svg returned False when dot was
+            # absent; now that a missing Graphviz raises, rendering here would
+            # make the suite require Graphviz, and it must not -- a cloud
+            # container has none.
+            with mock.patch.object(survey_dot, "render_svg"):
+                survey_dot.write_focused_dot_files(
+                    stack_counts,
+                    str(stem),
+                    generator_file=__file__,
+                )
             dualcant_text = (
                 Path(tmp_dir) / "focused-dualcant-call-graph.dot"
             ).read_text(encoding="utf-8")
