@@ -86,6 +86,23 @@ Design A does not need the blindness rule below, because it is anchored by const
 blindness section applies to Design B only. **Both designs require reconciliation**, but the
 reconciliation section below assigns that work differently for Design A and Design B.
 
+## Experimental Claude rebuttal round (2026-09-09)
+
+Ben proposed trying an additional round for the 2026-09-08 review, with this terminology:
+
+1. **Claude argument:** Claude's initial review.
+2. **Codex counter-argument:** Codex's assessment of Claude's review.
+3. **Claude rebuttal:** Claude's response to Codex's counter-argument. A rebuttal can accept,
+   qualify, or contest Codex's criticisms; it need not defend every original finding.
+
+The periodic reviews already provide some delayed feedback: the next Claude review can examine
+the preceding Codex findings and remediations. The experiment brings an explicit Claude rebuttal
+into the same review window, before disputed findings become remediation instructions.
+
+This records an experiment and its terminology. Design A remains the default; the additional
+rebuttal round is not a standing requirement. Further rounds and a permanent procedure for
+recording the replies have not been settled. The experiment does not authorize remediation.
+
 ## Keep the two reviews blind to each other
 
 Under Design B the two reviews are run **against the same anchors, concurrently, with neither seeing
