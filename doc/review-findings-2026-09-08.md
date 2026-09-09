@@ -10,7 +10,9 @@ the page's claim about BHS rests on that reading, recorded in `_post_silluq_comp
 docstring and under the 2026-09-07 review's disposition table and not on the page (Ben's
 decision); and the objection to "editions" for UXLC and WLC is withdrawn, the skill itself
 calling WLC diplomatic and Ben's account being that WLC became an edition of its own and UXLC
-diverged from both. Written 2026-09-08, late evening, as the Claude half of the third
+diverged from both — an account github-misc `25a8955` (2026-09-09) put into the skill's source
+table, which also brought finding 5.6's diverged `~/.agents` copy back into step. Written
+2026-09-08, late evening, as the Claude half of the third
 dual-agent review under `doc/dual-agent-review.md`, Design A: this file was frozen before any Codex
 reviewer read it, and the Claude session neither read nor sought a Codex half (no file named
 `codex-review-findings-2026-09-08*` exists, and nothing under `~/.codex/` or `Documents/Codex/` was
