@@ -76,7 +76,7 @@ What MAM's text does not speak to is the shewa. Phonetic MAM does, and agrees it
 against `le·’okh·la` for Gen 1:29.
 
 Nor is this verse's pointing simply sparing with meteg: the Leningrad Codex has one on
-בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus the silluq on the verse-final סָבִֽיב׃.
+בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus the silluq on the verse-final סָבִֽיב׃.
 
 ### The correction request quotes UXLC, not MAM
 

@@ -25,9 +25,9 @@ carry a ruling in `py/hkq_cmn/mam_suggestion_dispositions.py`, decided by Seth (
 
 | M | verse.atom | MAM | Jerusalem Crown | Holman's suggestion | Ruling |
 |---|---|---|---|---|---|
-| M17 | 2 Kings 17:15.15 | וַיֵּ֨לְכ֜וּ (geresh over kaf) | וַיֵּ֨לְכוּ֜ (geresh over final vav) | Move geresh to end of word | Not taken. Aleppo is not extant here; against Leningrad, the geresh (erased, per UXLC) still stood over the kaf, not the vav. Same misplacement in BHS and Mechon-Mamre — three editions sharing one source. Avi added a note in MAM rather than moving the accent. |
-| M24 | Joshua 10:12.3 | יְהוֹשֻׁעַ֙ (one pashta) | יְהוֹשֻׁ֙עַ֙ / as sent יְהוֹשֻׁ֨עַ֙ (qadma as helper) | Add helper accent | Taken. Changed on Wikisource 2026-08-28: "MAM now has the pashta repeated over the ש (shin)." |
-| M32 | Judges 10:11.1 | וַיֹּ֥אמֶר (merkha on yod) | וַ֥יֹּאמֶר (merkha on vav) | Place merkha on first syllable | Not taken. The stressed syllable begins with the yod; Aleppo agrees with MAM. JC's placement is an error also in Mechon-Mamre. Avi added documentation in MAM. |
+| M17 | 2 Kings 17:15.15 | וַיֵּ֨לְכ֜וּ (geresh over kaf) | וַיֵּ֨לְכוּ֜ (geresh over final vav) | Move geresh to end of word | Not taken. Aleppo is not extant here; against Leningrad, the geresh (erased, per UXLC) still stood over the kaf, not the vav. Same misplacement in BHS and Mechon-Mamre — three editions sharing one source. Avi added a note in MAM rather than moving the accent. |
+| M24 | Joshua 10:12.3 | יְהוֹשֻׁעַ֙ (one pashta) | יְהוֹשֻׁ֙עַ֙ / as sent יְהוֹשֻׁ֨עַ֙ (qadma as helper) | Add helper accent | Taken. Changed on Wikisource 2026-08-28: "MAM now has the pashta repeated over the ש (shin)." |
+| M32 | Judges 10:11.1 | וַיֹּ֥אמֶר (merkha on yod) | וַ֥יֹּאמֶר (merkha on vav) | Place merkha on first syllable | Not taken. The stressed syllable begins with the yod; Aleppo agrees with MAM. JC's placement is an error also in Mechon-Mamre. Avi added documentation in MAM. |
 | M34 | Zechariah 2:4.11 | זֵר֣וּ (munaḥ on vav-side) | זֵ֣רוּ pattern reversed | Place munaḥ on second syllable | Taken. Changed on Wikisource 2026-08-28: "MAM now has the munaḥ on the ר (resh)." |
 
 So of the four, two are declined (MAM's existing reading stands, Aleppo/Leningrad agrees with
@@ -42,15 +42,15 @@ diff reports alone:
 | stage | M34, Zechariah 2:4 | M24, Joshua 10:12 |
 |---|---|---|
 | Live Hebrew Wikisource | Has the fix (Avi's diff link, 2026-08-28) | Has the fix (Avi's diff link, 2026-08-28) |
-| `MAM-basics/in/mam-ws/` (local copy) | Has the fix — זֵ֣רוּ | **Does not** — יְהוֹשֻׁעַ֙, one pashta |
+| `MAM-basics/in/mam-ws/` (local copy) | Has the fix — זֵ֣רוּ | **Does not** — יְהוֹשֻׁעַ֙, one pashta |
 | `MAM-parsed/plain/` | Has the fix | **Does not** — same, one pashta |
 | mgketer's own parsed JSON | Has the fix — confirms it | Does not — but see below, this is expected regardless |
 
 **Correction, 2026-09-03: the M34 column of the two middle rows above IS WRONG, and both stages
 lacked the fix.** Measured that day while item 4 of the rollout programme ran, immediately before
-the download: `MAM-basics/in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the
+the download: `MAM-basics/in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the
 zayin, and `MAM-parsed/plain/CA-The-12-Minor-Prophets.json` still does. The fix is
-the form אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is what this note's M34 row says the
+the form אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is what this note's M34 row says the
 ruling was — so the table names זֵ֣רוּ as "the fix" when זֵ֣רוּ is the form the fix replaced. The rows are
 left as written, per the convention above, but read the M34 column of both as **Does not**.
 The consequence is that Zechariah 2:4 propagates exactly as Joshua 10:12 does, and the sentence

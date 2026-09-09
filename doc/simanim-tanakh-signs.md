@@ -45,7 +45,7 @@ would inflate a transcription's token count against the reference stream.
 **A small ring above a letter is a chronology marker (ma'ala 4).** The edition marks the point in
 the text where a datable event occurs with a hollow circle set at accent height, with the year in
 the margin opposite. On Joshua 1:1-2 as the introduction itself prints it (p. טו) the ring stands
-above the mem of מֹשֶׁה, clear of the holam dot and looking very like a Masoretic circellus. It
+above the mem of מֹשֶׁה, clear of the holam dot and looking very like a Masoretic circellus. It
 is neither that nor an accent.
 
 ## The sixteen ma'alot
@@ -85,7 +85,7 @@ approximate date carries a geresh (`[3316']`) and a span is written as a range (
 **5. אותיות** (pp. טז-יט). The largest ma'ala, and a font design rather than a single sign: a
 medium-weight letter cut with room inside it for two distinct dageshes, from which several
 letter-level signs are derived. A letter whose pronunciation is at stake is drawn **stretched**
-(אות משוכה) — mappiq he, as in Genesis 2:15 לְעָבְדָהּ וּלְשָׁמְרָהּ, and alef/he/ayin bearing a
+(אות משוכה) — mappiq he, as in Genesis 2:15 לְעָבְדָהּ וּלְשָׁמְרָהּ, and alef/he/ayin bearing a
 shva inside a word, whose colour follows the preceding vowel. Three more follow: **פתח גנובה**,
 where a final ayin, xet or he pointed with patax has the patax shifted to the letter's right side
 as early scribes wrote it; a sin distinguished from a shin by the height of the shin's left leg,
@@ -98,7 +98,7 @@ the ma'ala-5 font work, which reserved room inside the letter for exactly this c
 
 **7. שוא נע** (pp. כ-כא). Shva na is printed **כשני ריבועים מוגדלים** — as two enlarged squares —
 against shva nax, which keeps its ordinary form of two small round dots. The contrast is plainly
-visible in the edition's own example, Joshua 1:3 כַּף־רַגְלְכֶם, where the shva under the gimel
+visible in the edition's own example, Joshua 1:3 כַּף־רַגְלְכֶם, where the shva under the gimel
 is round and small and the one under the lamed is square and large. The edition follows the
 common system, broadly that of *Minxat Shai*; the Aramaic chapters of Daniel and Ezra, where no
 consistent masorah was found, follow the Yemenite reading tradition instead.

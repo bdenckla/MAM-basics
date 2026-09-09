@@ -539,7 +539,7 @@ text is **near-subtractive, with two narrowly-scoped, loudly-flagged charities, 
   the snippet-free prose is the single source for both the main page and the long-notes-page recap,
   the latter staying running prose (its verse recap already shows the word) rather than re-headering.
 - **QUPO vowel split** (ex 20:3, ex 20:4's מתחת, dt 5:7): where the two strands have *different
-  vowels* (patax vs. qamats) on one letter (עַל־פָּנָ֗י's נ), it is the same position-safe subtraction
+  vowels* (patax vs. qamats) on one letter (עַל־פָּנָ֗י's נ), it is the same position-safe subtraction
   bucket as rafe/dagesh — each strand keeps its own vowel, drops the other's. The one subtlety: the
   same vowel *type* can also occur **twice** in one word, once as an unrelated *shared* vowel and once,
   divergently, as the QUPO letter's own — a flat whole-word markset diff cannot tell those two
@@ -593,7 +593,7 @@ one (Exod 20:3, 20:4, 20:8, 20:9, 20:10 = MAM verses 20:2, 20:3, 20:7–20:9), d
 charitable claim that L's taḥton strand ends no verse there. The apparent red-flag verses (MAM shows
 L *carries* the taḥton sof-pasuq at Deut 5:8, 5:9) are consistent: CLC **keeps** UXLC's own sof-pasuq
 there and supplies nothing. MAM's *two-marks-on-one-letter* doc-notes likewise corroborate the QUPO
-vowel assignment — Deut 5:7 עַל־פָּנָי (qamats + silluq taḥton / patax elyon) and Exod 20:4 מתחת
+vowel assignment — Deut 5:7 עַל־פָּנָי (qamats + silluq taḥton / patax elyon) and Exod 20:4 מתחת
 (qamats + etnaḥta taḥton / patax + azla elyon) — and, at Deut 5:8 מתחת, MAM's own text follows the
 witness *without* the extra patax, corroborating CLC's **non-QUPO** treatment of that atom. This is
 **validation only**: MAM is consulted as signal (harvested by hand via a throwaway script,
@@ -731,7 +731,7 @@ Characteristics:
 - **Prose**, not just a feature list — explain *why* charity, and what "least weird" means in
   practice; state plainly that charity is bounded by transparency (every departure is logged).
 - **Pointed Hebrew examples** inline (use the Taamey font already in `gh-pages/woff2/`), ideally
-  the very cases already curated in `amb_early_mtg` (e.g. וַיַּעֲשׂוּ, בְּנֵי־), each shown as
+  the very cases already curated in `amb_early_mtg` (e.g. וַיַּעֲשׂוּ, בְּנֵי־), each shown as
   **UXLC reading vs. CLC reading** so the difference is concrete.
 - **Images**: LC crops — and comparanda (AC, Sassoon 1053, BHS) — beside the examples, so the
   reader sees the ambiguous under-bar with their own eyes. Reuse the image assets/links from §7.6.
@@ -901,11 +901,11 @@ resolution (§7.1, §3): grammar/oracle fixes the identity; every departure from
   throughout the Decalogue, so #42 harvested its calls as a first, pre-made slice of the §7.16 oracle:
   **11 legarmeh** (`מ:לגרמיה-2`) + **4 paseq** (`מ:פסק`), every one landing on a U+05C0 the §7.7 split
   already subtracts positionally. Of the 15: **11** sit on dual-cant divergence atoms — legarmeh on
-  בַּמַּיִם, שַׁבָּת, אַתָּה, צִוְּךָ, הָיִיתָ; paseq on פֶסֶל and בַּשָּׁמַיִם (both Decalogues) — where
+  בַּמַּיִם, שַׁבָּת, אַתָּה, צִוְּךָ, הָיִיתָ; paseq on פֶסֶל and בַּשָּׁמַיִם (both Decalogues) — where
   they stay **display-only** (§7.7 strands carry no ClcNote); **1** (Deut 5:16 לְמַעַן) sits on the
-  folded byte-identical verse, its bar shared by both strands; and **3** (Deut 5:4 פָּנִים, 5:25
-  יֹסְפִים, 5:27 וְאַתְּ) sit on **ordinary single-cant rows** — the natural first surface for a
-  *rendered* `legarmeh-paseq` note, still gated on #37. (Exod 20:4's בַּשָּׁמַיִם carries its `מ:פסק`
+  folded byte-identical verse, its bar shared by both strands; and **3** (Deut 5:4 פָּנִים, 5:25
+  יֹסְפִים, 5:27 וְאַתְּ) sit on **ordinary single-cant rows** — the natural first surface for a
+  *rendered* `legarmeh-paseq` note, still gated on #37. (Exod 20:4's בַּשָּׁמַיִם carries its `מ:פסק`
   tag **nested as the target — param 1 — of a נוסח** note about L's disputed stroke, i.e. tagged one
   level deeper, not untagged; there is no Exod/Deut tagging asymmetry.) accgram's independent grammar
   rule agrees (no Decalogue verse is in its `has_legarmeh` list, so it reduces to *before-revia =
