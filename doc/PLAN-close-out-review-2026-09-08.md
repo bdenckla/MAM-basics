@@ -311,6 +311,29 @@ Status after these approvals: step 2 remains active. D5–D8, D10, and D11's
 naming remain pending; D9 and the substance of D11 retain Ben's earlier
 decisions. This update records choices only; no review record has been changed.
 
+### Ben's decisions, 2026-09-09: D5 and D6 approved
+
+Ben approved D5 and D6 in the step-2 task on 2026-09-09:
+"Yeah, I think the assert suffices; no need to record MAS multiplicity in the
+JSON and derive the page sentence from the data. I approve D5 and D6 as
+recommended."
+
+1. **D5 — leave:** keep the MAS multiplicity assertions and the page sentence
+   unchanged. Do not add a MAS multiplicity field to the JSON and do not derive
+   the page sentence from such a field. The assertion remains the check that
+   stops generation if a future corpus has a MAS chanted word with more than one
+   post-stress meteg mark. Finding 13.2 remains a design note rather than a
+   remediation item.
+2. **D6 — approved clarification:** change `DATA-LICENSES.md`'s
+   `aleppo/aleppo-wiki/` row to say "Ben Denckla's hand corrections." The
+   clarification identifies whose corrections the row includes. Implementation
+   belongs to step 6.
+
+Status after these approvals: step 2 remains active. D7, D8, D10, and D11's
+naming remain pending; D9 and the substance of D11 retain Ben's earlier
+decisions. This update records choices only; no page, code, or license record
+has been changed.
+
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
