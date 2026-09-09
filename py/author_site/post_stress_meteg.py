@@ -191,7 +191,10 @@ _MAS_CENSUS_GLOSS = (
     " (including zero) before it"
 )
 # This page names each book's author in the hover title, where the accgram pages that share
-# ``almost_errors_html_shared``'s ITM_TITLE and COS_TITLE do not.  Ben's decision, 2026-09-08.
+# ``almost_errors_html_shared``'s ITM_TITLE and COS_TITLE do not.  Ben's decision, 2026-09-08,
+# after the divergence was put to him with the option of ending it either way: "that slight
+# divergence (author's names shown in some cases, not shown in other cases) is acceptable to me."
+# So do not unify the four pages on either spelling; the difference is chosen, not overlooked.
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
 
