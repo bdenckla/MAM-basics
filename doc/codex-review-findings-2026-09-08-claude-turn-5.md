@@ -5,7 +5,10 @@ one was written, no earlier record was edited, and nothing was merged or pushed.
 disagreements the Claude rebuttal listed as unresolved are closed by the Codex counter-rebuttal's
 concessions, its treatment of finding 6.8 is accurate, and one sentence of the rebuttal — that the
 nine-page plain-"word" exemption is "in the skill nowhere" — is withdrawn as a statement about the
-skill as it stands on 2026-09-09, on evidence Codex supplied and this document re-derived.
+skill as it stands on 2026-09-09, on evidence Codex supplied and this document re-derived. An
+addendum at the end, added on 2026-09-09 after this file's first commit and at Ben's request,
+dates that paragraph's arrival from github-misc's history; it is the one place this document
+rests on a private repository, and it changes no disposition.
 
 This is the fifth document of the experimental round that `doc/dual-agent-review.md` records under
 "Experimental Claude rebuttal round (2026-09-09)". That section names three turns: the **Claude
@@ -34,7 +37,7 @@ not a claim that any outstanding remediation is done. The three disputes it clos
 | Where code, pages and records were read | Out of the commit objects (`git show <commit>:<path>`), at the commit each citation names, so line numbers match the earlier records'. The counter-rebuttal was read at `ad5d9f43`, the commit that added it (one file, 151 lines; `git show --stat ad5d9f43`), and is unchanged at `a50da28b` |
 | Instructions loaded | `~/.claude/CLAUDE.md`; the repository `CLAUDE.md` at `a50da28b`; the `hebrew-prose` skill at `C:/Users/BenDe/.claude/skills/hebrew-prose/` with its four reference files. No repository `AGENTS.md` exists at `ad5d9f43` or at `da4e40a5` (`git ls-tree` returns nothing), as the counter-rebuttal says |
 | Skill copies | Each of the five skill files is byte-identical across `~/.claude/skills/hebrew-prose/`, `~/.agents/skills/hebrew-prose/` and the copy `74d883d2` began tracking at `dot-claude/skills/hebrew-prose/`, measured 2026-09-09 12:22; the table below |
-| Not done | No suite run; no regeneration; no reading of MAM-private, of github-misc's history, of a manuscript, a printed edition or any task transcript; no adverse probe; no edit to any tracked file but this one; no branch merged or pushed |
+| Not done | No suite run; no regeneration; no reading of MAM-private, of github-misc's history, of a manuscript, a printed edition or any task transcript; no adverse probe; no edit to any tracked file but this one; no branch merged or pushed. True of the document as first committed; the addendum at the end, added on 2026-09-09 at Ben's request, is the one exception, reading github-misc's history for a single date |
 
 | Skill file | Bytes | SHA-256 | Last modified |
 |---|---|---|---|
@@ -121,7 +124,9 @@ Nothing turns on the answer: if the paragraph was there at 10:54, the rebuttal m
 the rebuttal was true when written and is stale now. Either way 14.4's fourth item and #265's
 premise describe the skill as read on 2026-09-08 rather than the skill as it stands, and the gap
 that remains is the one the rebuttal named and Codex retains — `SKILL.md`'s "only" against
-`terminology.md:26` — which is the rebuttal's Choice 2 and Ben's.
+`terminology.md:26` — which is the rebuttal's Choice 2 and Ben's. The addendum at the end of
+this file has the answer, read from github-misc's history at Ben's request after the first
+commit.
 
 Re-establish: `git show 38a606e2:CLAUDE.md` (lines 53–54, 157); `Get-FileHash -Algorithm SHA256`
 over the three copies of each skill file; `Select-String -Path
@@ -254,6 +259,8 @@ reserved for Ben" is the rebuttal's caveat too. Nothing is added, withdrawn or r
    paragraph.** It decides only whether the rebuttal's "in the skill nowhere" was already false at
    10:54 on 2026-09-09 or became stale afterwards. The command in the 14.4 section, against
    github-misc's private history, settles it, and no disposition changes with the answer.
+   Settled on 2026-09-09 after this file's first commit: the addendum below dates the paragraph
+   to 10:06:10 that morning.
 3. **Everything reserved for Ben stays reserved.** The rebuttal's eight "Choices requiring Ben's
    judgment" are not evaluated here, and the findings both reviews left unfixed are as the
    argument, the counter-argument and the rebuttal record them; agreement on the review is not a
@@ -265,3 +272,48 @@ This file is committed on `codex-review-2026-09-08` only, not merged and not pus
 request for this turn specified. When it was written the branch and `main` both stood at
 `a50da28b`, so this commit is the branch's only commit not on `main`; integration is Ben's, on the
 schedule the worktree rule in `~/.claude/CLAUDE.md` gives.
+
+The addendum below was committed second, on 2026-09-09 after the first commit `2b365153` (12:32),
+on the same branch and under the same terms — not merged, not pushed — so the branch is two
+commits ahead of `main`, which stood at `a50da28b` as the addendum was written.
+
+## Addendum of 2026-09-09: the `verifying.md` paragraph arrived at github-misc `9ea78d2`, 10:06 that morning
+
+Added after this file's first commit (`2b365153`, 12:32), at Ben's request. Asked why the command
+the 14.4 section left to him should not be run on his behalf, the session ran it: the rule this
+round set — public evidence only — governs what the record cites, and this addendum is the one
+place the document rests on github-misc, a private repository, marked as such. The clone at
+`C:/Users/BenDe/GitRepos/github-misc` was clean, on `main` at `origin/main`, at
+`cfd5510d016d30be0226757404019e3c8046b83e` when read.
+
+The pickaxe returns two commits for the paragraph's opening words:
+
+1. `9ea78d2` (2026-09-09 10:06:10, "hebrew-prose: a MAM-basics worktree regenerates, and three
+   more stale claims") adds it. Its diff of `dot-claude/skills/hebrew-prose/references/verifying.md`
+   adds the four lines that stand at 47–50 today, verbatim, in the same hunk that withdraws the
+   worktree ban; its message says all five skill files were byte-identical across the three homes
+   at that session's start, and that the live copy was edited and copied verbatim to the other two.
+   The file's previous commit is `c14360d` (2026-09-02 20:29:38), and two later ones, `1956966`
+   (10:12:39) and `3895194` (10:26:13), touched it before the move.
+2. `cfd5510` (2026-09-09 12:03:31, "dot-claude and dot-Codex move to MAM-basics; breadcrumbs
+   stay") deletes the file from github-misc — the move MAM-basics `74d883d2` records from the
+   other side — and appears only because a deletion changes the string's count.
+
+What that settles, in the terms of the 14.4 section:
+
+1. The argument's 14.4 was true when written, on the evening of 2026-09-08: the skill's
+   `verifying.md` then stood at `c14360d`, which has no such paragraph.
+2. The rebuttal's "in the skill nowhere" was true of the skill when the rebuttal's evaluation
+   began at 08:19 and false from 10:06:10, two minutes before its checkout moved to `49609331`
+   (10:08:03) and 48 minutes before it was committed at `da4e40a5` (10:54:55). The rebuttal does
+   not record when it read the skill, so "true when read, stale before it was committed" is what
+   the evidence supports — the second of the two readings offered above, not the first.
+3. Codex's inspection before `ad5d9f43` (11:18) saw the paragraph, as the counter-rebuttal says.
+
+No disposition changes, and item 2 under "Still unresolved" is settled.
+
+Re-establish, all against `C:/Users/BenDe/GitRepos/github-misc`:
+`git log --format="%h %ci %s" -S "Those nine pages are also the one place" -- "*/verifying.md"`;
+`git show --format="%H%n%ci%n%B" 9ea78d2 -- "*/verifying.md"`;
+`git show --name-status --format="%h %ci %s" cfd5510 -- "*/verifying.md"`;
+`git log --format="%h %ci %s" -8 -- "*/verifying.md"`.
