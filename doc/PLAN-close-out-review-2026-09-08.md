@@ -269,6 +269,29 @@ D10:
 D11: naming as proposed, or the branch and path to use
 ```
 
+### Ben's decisions, 2026-09-09: D1 and D2 approved
+
+Ben approved both recommendations in the step-2 task on 2026-09-09:
+"I approve of the recommendation for D1, and the recommendation for D2."
+
+1. **D1 — approved replacement wording:**
+
+   > Codex reads AGENTS.md and can load the hebrew-prose skill from ~/.agents/skills/. Codex does not automatically load ~/.claude/CLAUDE.md.
+
+   This approved wording supersedes the longer D1 proposal quoted above. It corrects
+   the skill-access claim and distinguishes skill loading from automatic loading of
+   an instruction file. Implementation belongs to step 3.
+2. **D2 — approved replacement wording:**
+
+   > Plain ‘word’ survives for an ordinary English word, inside quoted or translated source material, and wherever the context already settles which sense is meant (references/terminology.md).
+
+   The skill's opening rule will include the context exception already stated in
+   `references/terminology.md`. Implementation and deployment belong to step 6.
+
+Status after these approvals: step 2 remains active. D3–D8, D10, and D11's naming
+remain pending; D9 and the substance of D11 retain Ben's earlier decisions. This
+update records choices only; no skill or process document has been changed.
+
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
