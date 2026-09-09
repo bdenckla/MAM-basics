@@ -178,7 +178,7 @@ Process quirkrecs in batches of ~5:
 
 - `py/py_ac_word_image_helper/linebreak_search.py` — `find_word_in_linebreaks()`
   locates a word in line-break data. Handles maqaf-joined consensus words
-  (e.g., `הׇשְׁלְמָה־לָּֽךְ׃`) by joining adjacent maqaf-connected tokens.
+  (e.g., `הׇשְׁלְמָה־לָּֽךְ׃`) by joining adjacent maqaf-connected tokens.
 - `py/py_ac_word_image_helper/codex_page.py` — `download_page()` fetches
   archive.org images with caching in `.novc/book-of-job/`.
 - `py/py_ac_word_image_helper/hebrew_metrics.py` — `strip_heb()` strips

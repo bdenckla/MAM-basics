@@ -1118,7 +1118,7 @@ strands, so its entry list ends with the two strands' forms of one chanted word
 standing adjacent — one with silluq and sof pasuq, whose chanted verse ends at
 the numbered verse's boundary, and one with an ordinary accent and no sof pasuq,
 whose chanted verse runs on into the next numbered verse. Exodus 20:2 ends
-`עַל־פָּנָֽי׃` and then `עַל־פָּנַ֗י`, which is that pair.
+`עַל־פָּנָֽי׃` and then `עַל־פָּנַ֗י`, which is that pair.
 
 **The pattern is exceptionless over all twelve, measured 2026-09-04: the sof
 pasuq is on the second-to-last entry every time.** So these twelve are exactly
@@ -1135,7 +1135,7 @@ closed syllable with tsere 26 and 16, none of the three 5 and 2. The three types
 mechanical signatures reproduce both books' own examples: Yeivin §338's Numbers
 17:23, Isaiah 40:8 and Isaiah 66:3 come out as the tsere type, his §354's
 Deuteronomy 29:19 and Judges 19:25 as the guttural type, and his §332's Genesis
-28:2 פַּדֶּנָה — Breuer's type (j) example too — as the open type.
+28:2 פַּדֶּנָה — Breuer's type (j) example too — as the open type.
 
 **Three counts that are 0 and are meant to be**: chanted words where the ``jta``
 and the Hebrew count syllables differently, metegs sharing a letter with a

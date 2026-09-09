@@ -36,7 +36,7 @@ wikitext for the verse, at `in/mam-ws/FD-2Chronicles.json` line 641 (searchable 
 `{{מ:פסוק|דברי הימים ב|יח|לג}}`), ends:
 
 ```
-כִּ֥י {{מ:קמץ|ד=הׇֽחֳלֵֽיתִי|ס=הָֽחֳלֵֽיתִי}}׃
+כִּ֥י {{מ:קמץ|ד=הׇֽחֳלֵֽיתִי|ס=הָֽחֳלֵֽיתִי}}׃
 ```
 
 1. The `ד` parameter is הׇֽחֳלֵֽיתִי, with qamats qatan (U+05C7) under the he. That is the
@@ -53,7 +53,7 @@ something other than the qamats, which is the only thing the template exists to 
 edited call would read:
 
 ```
-כִּ֥י {{מ:קמץ|ד=הׇחֳלֵֽיתִי|ס=הָחֳלֵֽיתִי}}׃
+כִּ֥י {{מ:קמץ|ד=הׇחֳלֵֽיתִי|ס=הָחֳלֵֽיתִי}}׃
 ```
 
 The meteg under the lamed stays in both parameters; M13 says nothing about it and the
@@ -85,7 +85,7 @@ note is [`holman-meteg-m23-isaiah-23-12.md`](holman-meteg-m23-isaiah-23-12.md).
 `in/mam-ws/BC-1Kings.json` line 1132 (anchor `{{מ:פסוק|מלכים א|כב|לד}}`) ends:
 
 ```
-כִּ֥י {{מ:קמץ|ד=הׇחֳלֵֽיתִי|ס=הָחֳלֵֽיתִי}}׃
+כִּ֥י {{מ:קמץ|ד=הׇחֳלֵֽיתִי|ס=הָחֳלֵֽיתִי}}׃
 ```
 
 The 1 Kings word has **no meteg under the he**; the 2 Chronicles word has one. Both verses
