@@ -334,6 +334,31 @@ naming remain pending; D9 and the substance of D11 retain Ben's earlier
 decisions. This update records choices only; no page, code, or license record
 has been changed.
 
+### Ben's decisions, 2026-09-09: D7 broadened and D8 approved
+
+Ben approved D7 and D8 in the step-2 task on 2026-09-09, and broadened D7:
+"I approve of D7 and D8 but I don't see why D7's language is limited to the MAS
+pages. I would think the MAS pages would be given as an example, not given as
+what seem to be the only case needing this protection."
+
+1. **D7 — standing practice, with general scope:** for any remediation
+   proposal, separate a reproducible data or code defect from a proposed
+   editorial change to terminology, organization, interpretation, or
+   attribution. Present each proposed editorial change with concrete wording
+   for Ben's approval before applying it. Where Ben has already decided, record
+   and follow that decision rather than asking again. Record this standing
+   practice in `doc/dual-agent-review.md`. The September 8 MAS-page reversals
+   are the worked example, not the scope boundary. Implementation belongs to
+   step 3.
+2. **D8 — approved:** change the stale descriptive count in
+   `py/tests/test_site_index_links.py` from 34 to 35. Leave
+   `_MIN_AUTHORED_ANCHORS = 25` unchanged; the edit changes no test behavior.
+   Implementation belongs to step 6.
+
+Status after these approvals: step 2 remains active. D10 and D11's naming
+remain pending; D9 and the substance of D11 retain Ben's earlier decisions.
+This update records choices only; no process document or test has been changed.
+
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
