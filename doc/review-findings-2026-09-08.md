@@ -1,6 +1,16 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: not yet acted on. Written 2026-09-08, late evening, as the Claude half of the third
+State: not yet acted on, except findings 1 and 3, which Ben settled on 2026-09-09 before the
+Codex half ran. Finding 1: the Methods page and footnote φ1 now define "ignore" in Ben's words
+— treat the word as a meteg-then-silluq word, i.e. deliberately misinterpret the marks, which
+has little effect on the census and none on the bulk of the results — and the survey module's
+comment says the same; the survey's classification is unchanged. Finding 3: Ben read the
+printed BHS at 1 Samuel 17:5 on 2026-09-09 and confirms the two marks, meteg after silluq, so
+the page's claim about BHS rests on that reading, recorded in `_post_silluq_comparison`'s
+docstring and under the 2026-09-07 review's disposition table and not on the page (Ben's
+decision); and the objection to "editions" for UXLC and WLC is withdrawn, the skill itself
+calling WLC diplomatic and Ben's account being that WLC became an edition of its own and UXLC
+diverged from both. Written 2026-09-08, late evening, as the Claude half of the third
 dual-agent review under `doc/dual-agent-review.md`, Design A: this file was frozen before any Codex
 reviewer read it, and the Claude session neither read nor sought a Codex half (no file named
 `codex-review-findings-2026-09-08*` exists, and nothing under `~/.codex/` or `Documents/Codex/` was

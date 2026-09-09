@@ -2239,7 +2239,9 @@ def _one_verse(
 # as MAM has them TODAY rather than as the surveyed snapshot has them.  Isaiah 23:12 is
 # where the two differ -- suggestion M23 added a meteg there after the snapshot was taken --
 # and 1 Samuel 17:5 is the Leningrad Codex post-silluq case, where the page's claim is about
-# what MAM lacks.  First Kings 7:37 is MAM's post-silluq case, which the research ignores.
+# what MAM lacks.  First Kings 7:37 is MAM's post-silluq case, which the research ignores
+# in the sense the Methods page defines (Ben, 2026-09-09): the word is deliberately read as
+# meteg-then-silluq, as the stress oracle reads it, so it counts as MBS_O.
 # 2 Chronicles 8:11 supplies MAM's form beside a possible different interpretation of the
 # Leningrad Codex.  Named here rather than in the page module so the form is lifted from the
 # corpus at generation time and reaches the page through the tracked JSON, as every other form

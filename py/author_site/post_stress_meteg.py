@@ -2543,7 +2543,15 @@ def _wlc_words(bcv: str) -> list[str]:
 
 
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
-    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question."""
+    """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question.
+
+    The row labelled "BHS" is UXLC 3.9's form, asserted equal to WLC 4.22's; no BHS
+    text is read here. The page's claim that BHS has the form rests on Ben's reading of
+    the printed BHS on 2026-09-09, which confirms the two marks, meteg after silluq.
+    Ben's decision, the same day: the page's wording stands and takes no "checked"
+    clause; this docstring and the review records are where the reading is recorded
+    (doc/review-findings-2026-09-08.md, finding 3 and its State line).
+    """
     letters = ("נחשת",)
     bhs_form_from_uxlc = _source_focus_word(
         _uxlc_words(_POST_SILLUQ_VERSE),
@@ -2582,7 +2590,12 @@ def _mam_post_silluq_form(survey: dict) -> str:
 
 
 def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) -> tuple:
-    """The 1 Kings 7:37 MAM case that this research excludes."""
+    """The 1 Kings 7:37 MAM case, and what "ignore" means there.
+
+    The definition is Ben's wording of 2026-09-09: the research deliberately reads the
+    word as meteg-then-silluq, which is what the survey's stress oracle does, so the
+    word counts as MBS_O and ``post_silluq.in_mam`` stays 0.
+    """
     return (
         "At " if starts_sentence else "at ",
         _ref_link(_MAM_POST_SILLUQ_VERSE),
@@ -2592,7 +2605,17 @@ def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) ->
         _ROM_SILLUQ,
         " in ",
         wrap_hebrew_runs(_mam_post_silluq_form(survey)),
-        ". We ignore it for the purposes of this research.",
+        ". We ignore it for the purposes of this research. ",
+        author.dquote("Ignore"),
+        " means treat this word as a ",
+        _ROM_METEG,
+        "-then-",
+        _ROM_SILLUQ,
+        " word, i.e. deliberately misinterpret the marks. How we treat this mark has"
+        " little effect on our census and no effect on the bulk of the results of this"
+        " research, since they concern ",
+        _ROM_METEG,
+        " immediately after a conjunctive on the primary stress of the word.",
     )
 
 

@@ -915,3 +915,13 @@ review-window commits with a co-author trailer has five exact lines:
 3. `Co-authored-by: Codex <noreply@openai.com>` — 2 commits;
 4. `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` — 1 commit; and
 5. `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` — 1 commit.
+
+**Rows 13 and 21, revisited 2026-09-09.** Ben's reverts of 2026-09-08 (`1095f029`, `a9edd4f9`)
+restored the post-silluq page's one "BHS" row and its sentence, removed the "cant-alef" /
+"cant-bet" gloss again, brought back the local ITM and CoS glosses and "on a page of their
+own", so row 13's "identifies UXLC 3.9 and WLC 4.22 as the inputs actually read" and that part
+of row 21 describe the tree at `975a16c5`, not at `38a606e2`. On 2026-09-09 Ben read the printed
+BHS at 1 Samuel 17:5 and confirms the two marks, meteg after silluq, so the page's claim about
+BHS rests on that reading; by Ben's decision it is recorded in `_post_silluq_comparison`'s
+docstring and in `doc/review-findings-2026-09-08.md`, whose finding 3 has the details, and not
+on the page.
