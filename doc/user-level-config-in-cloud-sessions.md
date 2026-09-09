@@ -107,9 +107,17 @@ The answer has three parts.
 
 ### If a clone is refused anyway
 
-Point 3 is a reading of the documented restriction rather than a promise, so the hook is built to
-announce a refusal rather than to assume one cannot happen. If a `403` or an authentication
-failure ever appears in the hook's banner, there are three fallbacks, in order of preference:
+**As of 2026-09-09 this clone has not been measured in a cloud container, only derived from the
+three documented facts above.** Point 3 in particular is a reading of what the documented
+restriction covers rather than a promise. The hook is therefore built to announce a refusal rather
+than to assume one cannot happen, and the first cloud session to run it settles the question in
+either direction: a success message names both installed paths, and a failure banner quotes
+`git clone`'s own stderr. **A clone run on Ben's own machine proves nothing here** — it
+authenticates with his local credentials rather than through the session proxy, so it looks like
+proxy success while testing something else entirely.
+
+If a `403` or an authentication failure ever appears in the hook's banner, there are three
+fallbacks, in order of preference:
 
 1. **Attach `bdenckla/github-misc` to the session** from the web interface, which makes it a
    scoped repository and removes the question. This is per-session.
@@ -192,3 +200,15 @@ failing `git`, covering all six paths: local no-op, unreachable `github-misc`, e
 both files already present, one file already present, and a reorganized `github-misc`. That harness
 was a throwaway under `.novc/` and is not tracked; the six cases are listed here so they can be
 rebuilt.
+
+**The local guard was also exercised against the live `~/.claude/` rather than a fake one**, which
+is better evidence than the harness for the one failure that would actually cost something. On
+2026-09-09 an agent ran `bash .claude/hooks/install-user-config.sh` twice on Ben's own machine,
+pointed at his real `~/.claude/` holding a 99,744-byte `CLAUDE.md`. Both runs printed nothing and
+exited 0, and that `CLAUDE.md` kept its byte count and its `Sep 9 10:24` modification time. Gate 1
+returned before `mktemp` or `git clone` was reached.
+
+**Two things remain unmeasured, both of them only answerable from a cloud session**: whether the
+private clone succeeds through the GitHub proxy, and the skills-list question in the section above.
+Neither can be settled on a local machine, because gate 1 exits first there by design — so an
+attempt to test the hook locally measures the guard, never the fetch.
