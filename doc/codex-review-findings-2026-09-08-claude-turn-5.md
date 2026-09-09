@@ -317,3 +317,9 @@ Re-establish, all against `C:/Users/BenDe/GitRepos/github-misc`:
 `git show --format="%H%n%ci%n%B" 9ea78d2 -- "*/verifying.md"`;
 `git show --name-status --format="%h %ci %s" cfd5510 -- "*/verifying.md"`;
 `git log --format="%h %ci %s" -8 -- "*/verifying.md"`.
+
+Noted 2026-09-09 about 13:50: MAM-basics `63ac5b84` (13:39) records Ben's request of that day to
+retire the github-misc clone and removes it from the workspace roster as the step that precedes
+the removal. The clone was still on disk when this note was written
+(`Test-Path -LiteralPath C:/Users/BenDe/GitRepos/github-misc`); once it is gone, the commands
+above need a fresh clone of the private remote.

@@ -1,6 +1,7 @@
 # Plan: close out the 2026-09-08 review, every step on Codex — turn 5 handed off, Ben's decisions taken, the procedure recorded, the findings remediated, the worktree retired
 
-State: live 2026-09-09; no step started.
+State: live 2026-09-09; no step started; the starting state was re-measured the same afternoon
+after `main` moved, and the dated notes below supersede the table where they differ.
 
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
@@ -20,7 +21,7 @@ Re-measure before step 1 and treat a mismatch as a finding.
 | Item | State |
 |---|---|
 | Review worktree | `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, a linked worktree of `C:/Users/BenDe/GitRepos/MAM-basics` (`git rev-parse --git-common-dir`), branch `codex-review-2026-09-08`, clean (`git status --porcelain`) |
-| Branch against `main` | `main` and `origin/main` at `a50da28b`; the branch holds `2b365153` (turn 5), `7c4416cd` (its addendum) and the commit that adds this plan, and nothing else (`git log --format="%h %s" main..codex-review-2026-09-08`) |
+| Branch against `main` | `main` and `origin/main` at `a50da28b`; the branch holds `2b365153` (turn 5), `7c4416cd` (its addendum) and the commit that adds this plan, and nothing else (`git log --format="%h %s" main..codex-review-2026-09-08`). Superseded the same afternoon: see the re-measurement below the five documents |
 | Disputes between the reviewers | None. Turn 5 closes the three the rebuttal listed: 1. finding 14.4; 2. C1 / finding 13.2; 3. C2 / finding 17(b)–(e). It also accepts Codex's treatment of finding 6.8 |
 | Decisions already taken | `3b0225e0` and `becc6f00` (findings 1, 3 and 5.6, 2026-09-09), and Ben's request that this plan assume Codex for every step |
 | Decisions pending | D1–D10 under step 2, all Ben's |
@@ -38,6 +39,27 @@ The round's five documents, each read at the commit named:
    `ad5d9f43`.
 5. Claude turn 5, `doc/codex-review-findings-2026-09-08-claude-turn-5.md`, `2b365153`, with its
    addendum at `7c4416cd`.
+
+**Re-measured 2026-09-09 about 13:50, after the table above was written: `main` and
+`origin/main` had moved to `63ac5b84`**, by seven commits of 13:03–13:39 authored Ben Denckla from
+the primary clone (`847862f9` … `63ac5b84`; `git log --format="%h %ci %s" a50da28b..63ac5b84`),
+none of them on this branch, so the branch no longer contains `main` and step 0's merge is a real
+merge. What they change, and what it means for the steps:
+
+1. `doc/dual-agent-review.md` gains the paragraph pinning "doc-only" to the record rather than
+   the reading, the paragraph declaring the github-misc byte-compare exception spent, and the
+   `dot-Codex/user-wide-AGENTS.md` canonical location. Its "will never load" sentence is line
+   274 and its "Eight such files" census line 25 at `63ac5b84`, unfixed, so step 3's targets
+   stand; step 3 works on the merged file.
+2. Two records arrive, `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md`
+   (`State: live`, nothing acted on) and `doc/assessment-two-stranded-artifacts-2026-09-09.md`.
+   The first bears on D1 and D2 as noted under each; it edits neither of step 3's sentences.
+3. github-misc leaves `all-repos.code-workspace` and `repo_visibility` (`63ac5b84`), the step its
+   message says precedes retiring the clone at Ben's request; the clone was still on disk at
+   13:50. Nothing in this plan reads that clone.
+4. Three docstrings change (`check_repo_standards.py`, `report_destination.py`,
+   `test_prose_conventions.py`), with no change to what any test checks; `63ac5b84`'s message
+   records the suite at 983 passed, 5 skipped at that head, so the baseline stands.
 
 ## Rules every Codex task in this plan follows
 
@@ -83,7 +105,9 @@ Actor: Ben, then that session. Ben asks the session to archive. By the worktree 
 integration procedure above — with `main` at `a50da28b` the merge is a no-op, the suite runs,
 `main` fast-forwards to the commit that adds this plan and is pushed — and reports `main`'s head.
 That head is step 1's required commit. Output: `main` equal to the branch head, no Claude session
-live in the worktree.
+live in the worktree. Re-measured 2026-09-09 about 13:50: with `main` at `63ac5b84` the merge is
+a real merge of seven commits touching none of the branch's files, the suite then runs on the
+merged tree, and `main` fast-forwards to the merge commit, which is step 1's required commit.
 
 ## Step 1 — Codex reads turn 5 and records its acknowledgment: the handoff
 
@@ -122,14 +146,19 @@ below. Where the two reviewers converge the convergence is stated; nothing here 
    `~/.agents/skills/` — which is why that copy exists, and why finding 5.6 of the 2026-09-08
    review compares it byte for byte." Approve it or give other wording. Since `74d883d2` the
    skill's canonical copy is `dot-claude/skills/hebrew-prose/` in MAM-basics, which the wording
-   may name. Executed in step 3.
+   may name. Executed in step 3. Noted 2026-09-09: the instruction-file plan's D3 cites this
+   sentence's `CLAUDE.md` half — Codex does not load `~/.claude/CLAUDE.md` — as the fact deciding
+   its structural question; that half is true and the rebuttal's wording keeps it, so the two
+   plans do not collide.
 2. **D2 — `SKILL.md:19–20`'s "only"**, against `references/terminology.md:26` (finding 14.4). The
    rebuttal's proposed sentence: "Plain 'word' survives for an ordinary English word, inside quoted
    or translated source material, and wherever the context already settles which sense is meant
    (`references/terminology.md`)." Approve, amend or leave. A yes is a MAM-basics change now: edit
    the live `~/.claude/skills/hebrew-prose/SKILL.md`, copy it to `dot-claude/skills/hebrew-prose/`
    and to `~/.agents/skills/hebrew-prose/`, and run `dot-claude/README.md`'s two comparisons. It
-   bears on #265's registry proposal. Executed in step 6.
+   bears on #265's registry proposal. Executed in step 6. Noted 2026-09-09: the instruction-file
+   plan's D6 also edits `SKILL.md`, its frontmatter description; the two edits touch different
+   lines, and whichever executes second re-runs the comparisons.
 3. **D3 — where the rebuttal's accepted corrections are recorded**: a dated addendum under
    `doc/review-findings-2026-09-08.md`, or the rebuttal file alone. The corrections: 13.2's filing,
    13.5, 13.7, 14.1, 16's eight withdrawn sites, 17's heading and 17(e)'s count, 11.1's clause,
