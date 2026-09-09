@@ -45,7 +45,7 @@ The 12 fall into three groups (Ben's classification, 2026-09-09):
 
 1. Six with a pataḥ or a segol under a guttural standing where a sheva would, all of them stress retraction before a following chanted word stressed on its first syllable.
 2. Four furtive-pataḥ cases, the same stress retraction.
-3. Two readings of a deḥi as the stress, which look like a Phonetic MAM defect.
+3. Two readings of a deḥi as the stress, and the two are not alike. At Psalms 4:3 MAM writes one deḥi, at the chanted word's start, and nothing marks a stress elsewhere, so Phonetic MAM's stress on that first syllable rests on the prepositive mark alone. At Psalms 71:9 MAM's source is a `מ:דחי` call, whose second parameter carries a second deḥi on the very letter Phonetic MAM stresses, so there Phonetic MAM is following a stress that MAM's source itself marks. `py/explicit_xataf/extract.py` names `מ:דחי` and `מ:צינור` the stress-variant templates and takes parameter 1, "since the second arg is the same word with different stress"; MAM-simple renders parameter 1 throughout, so MAM-simple carries no deḥi stress helper anywhere. That is a policy of MAM-simple and not a defect at this verse, and MAM-simple is therefore not the text to consult about a deḥi stress helper (Ben Denckla, 2026-09-09). This file said of both verses that they "look like a Phonetic MAM defect" until that day.
 
 | Group | Reference | MAM's form | Phonetic MAM's syllables (`jta`) |
 | --- | --- | --- | --- |
