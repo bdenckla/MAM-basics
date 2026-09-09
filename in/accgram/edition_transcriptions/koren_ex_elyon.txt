@@ -32,7 +32,7 @@
 #     words.  The reference joins the last two as one compound יהיה־לך (telisha qetana), so
 #     יהיה carries only a meteg there and no accent.  The insertion is the munax on יהיה.
 #     Ben confirmed munax (not meteg) and NO maqaf on a boxed zoom of יהיה.
-#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat commandment): Koren accents ובנך(munax) and ובתך(telisha
+#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat commandment): Koren accents ובנך(munax) and ובתך(telisha
 #     gedola) as two words.  The reference joins them as one compound ובנך־ובתך (telisha
 #     gedola).  The insertion is the munax on ובנך.  Ben confirmed munax (not meteg) and NO
 #     maqaf on a boxed zoom of ובנך.

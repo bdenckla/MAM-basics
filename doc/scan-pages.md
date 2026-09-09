@@ -190,7 +190,7 @@ The body-page filename shapes:
   each is drawn from. `V` ×83 is the מאורעות התנ״ך supplement, כולל סדר ההפטרות — apparatus,
   not biblical text, so out of lookup (`V-1463.jpg` its title page, `V-1500.jpg` a topical
   index under the running head נושאי המאורעות בכתובים). `W-1552.jpg`, the last numbered
-  leaf, has the publisher's back-cover artwork over וְעַתָּה כִּתְבוּ לָכֶם אֶת־הַשִּׁירָה הַזֹּאת, with the
+  leaf, has the publisher's back-cover artwork over וְעַתָּה כִּתְבוּ לָכֶם אֶת־הַשִּׁירָה הַזֹּאת, with the
   scanned back cover proper filed separately as `X-back-cover.jpg`.
 - **bhl**: `NNNN-<bk>.jpg` with continuous scan numbering (`0296-D.jpg`,
   `0620-Isaiah.jpg`) — but the book token is *mixed-convention*: mostly the short family

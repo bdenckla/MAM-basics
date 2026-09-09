@@ -140,8 +140,8 @@ answers 200.
 have no orphan combining marks and no decomposed Latin, and their rendered pages exist in
 MAM-with-doc with the eleven screenshots referenced one-to-one (two of the eleven re-fetched from
 the gist CDN today, byte-identical). **The accent correction `43a07d5` is right against both data
-sources**: in Exodus 20:1 the fourth chanted word, the maqaf compound כׇּל־הַדְּבָרִ֥ים, has
-merkha (U+05A5, on its second atom), and the next chanted word הָאֵ֖לֶּה has tipeha (U+0596) —
+sources**: in Exodus 20:1 the fourth chanted word, the maqaf compound כׇּל־הַדְּבָרִ֥ים, has
+merkha (U+05A5, on its second atom), and the next chanted word הָאֵ֖לֶּה has tipeha (U+0596) —
 MAM-parsed plus and `in/mam-ws` agree atom for atom, and four further accent claims on the pages
 spot-verify, including the meteg/silluq treatment, which applies the verse-final rule exactly.
 `e55b6dc`'s mid-dot (U+00B7, count 10 → 11 in the rendered page) and mark-order repair verify
@@ -240,8 +240,8 @@ lands this doc; findings 1 and 5 are Ben's; the rest are immutable-message recor
 
 6. **The Hebrew World module's docstring held three clusters in Unicode-normal mark order at
    HEAD — the defect class `e55b6dc` repaired in the same file's literals, surviving one screen
-   above the repair.** In the docstring's כׇּל־הַדְּבָרִ֥ים the kaf and dalet clusters had the
-   dagesh after the vowel, and in its הָאֵ֖לֶּה the lamed cluster did; `_hbo_checked` guards only
+   above the repair.** In the docstring's כׇּל־הַדְּבָרִ֥ים the kaf and dalet clusters had the
+   dagesh after the vowel, and in its הָאֵ֖לֶּה the lamed cluster did; `_hbo_checked` guards only
    the rendered literals and no test reads docstrings, so the porting session's normalizing paste
    survived exactly where the guard cannot see. Fixed in the commit landing this doc by applying
    `give_std_mark_order` to the docstring (6 character positions moved; rendered output

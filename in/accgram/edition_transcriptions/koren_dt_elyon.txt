@@ -24,7 +24,7 @@
 #     as ws/dt/elyon/printed has it.  No vendored strand anywhere -- taxton or elyon, manuscript or
 #     printed -- separates יהיה from לך as its own word, so a split here would have been
 #     Koren-alone; Koren does not split it.
-#   * אַתָּה וּבִנְךָ־וּבִתֶּךָ (Shabbat): Koren joins ובנך־ובתך (munax), as ws/dt/elyon/printed has it.
+#   * אַתָּה וּבִנְךָ־וּבִתֶּךָ (Shabbat): Koren joins ובנך־ובתך (munax), as ws/dt/elyon/printed has it.
 #     Note the corroboration is REVERSED from Exodus: there the two ex/taxton strands split ובנך,
 #     which is what corroborated the koren_ex_elyon split; in DEUTERONOMY all four dt strands
 #     (elyon+taxton, manuscript+printed) JOIN ובנך־ובתך, so no strand splits it and a split would

@@ -177,7 +177,7 @@ The census also surfaced Metsudah-side quirks the plan did not know, all catalog
 - Lam 5:22 and Eccl 12:14 each have the liturgically repeated verse a second time, in
   parentheses; CTR lacks the repeats.
 - A prepositive accent can stand as the first character of its chanted word: Metsudah has
-  ֚בָּאוּ at Ruth 1:22 where CTR has בָּ֚אוּ — the same yetiv, logically before the whole
+  ֚בָּאוּ at Ruth 1:22 where CTR has בָּ֚אוּ — the same yetiv, logically before the whole
   word against logically after the vowel.
 
 ### Phase 1 — the aligned diff
@@ -322,7 +322,7 @@ for CTR.
   the mutual-loss argument above. CTR's 29 are 23 pre-vowel, 3 pre-ḥolam, 3 bare — the
   pre-vowel convention, here on a genuine prose yetiv. Metsudah's 14 all have the yetiv as
   the first character of the chanted word, the same placement as 10 of Metsudah's telisha
-  gedolas. Lam 2:3 is one of the 24 CTR-only instances: CTR has כֹּ֚ל — the yetiv
+  gedolas. Lam 2:3 is one of the 24 CTR-only instances: CTR has כֹּ֚ל — the yetiv
   logically before the ḥolam — where Metsudah has כֹּל with no accent, matching the
   quotation in the ms-snips correction thread.
 - **R5 — pashta/qadma, per-instance nondeterminism.** At the atom-final letter, where CTR

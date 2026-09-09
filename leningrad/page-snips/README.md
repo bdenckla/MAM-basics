@@ -30,7 +30,7 @@ there, as does Mikraot Gedolot Haketer; Metsudah (Lakewood 2001) has one. This c
 what the Leningrad Codex has, which is what MAM follows.
 
 Two further facts about the same verse, from `../../in/UXLC-39/Lamentations.xml`
-rather than from the image: the verse has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus
+rather than from the image: the verse has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus
 the silluq on the verse-final סָבִֽיב׃. So the absence on אָכְלָ֖ה sits among three marks
 present, not on a page sparing with them.
 

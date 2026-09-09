@@ -303,7 +303,7 @@ worth stating because the arithmetic that produced them is so easy to redo.
    not 30**: 28 records at one entry each, plus M13's second.
 3. **Four more records sit inside a template, not one.** M3, M20, M21 and M25
    all name ירושלם, which the wikitext writes across a `{{מ:ירושלם|…|…}}` call
-   — `יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃` — with the meteg in the plain-text part
+   — `יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃` — with the meteg in the plain-text part
    before it. Their `old` is the whole word as written, template call included.
    Note that in M3, M20 and M21 that call's second parameter is **itself a
    U+05BD**, the silluq of a verse-final word, so `old` holds two of them and
@@ -469,15 +469,15 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py 
 said otherwise.** That paragraph read: "Zechariah 2:4's local copy already had
 the corrected form, so downloading it is consistency rather than repair."
 Measured 2026-09-03, immediately before this download,
-`in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the zayin, and
+`in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the zayin, and
 `MAM-parsed/plain/CA-The-12-Minor-Prophets.json` still does; the download
-replaced it with אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is M34 and has
+replaced it with אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is M34 and has
 been live on Hebrew Wikisource since 2026-08-28. So **both** extra chapters
 were stale locally, on the same footing, and item 5's `wsgo` diff includes two
 accent-placement corrections to the Google Sheet rather than Joshua's alone.
 `holman-accent-placement-four.md`'s stage table says the same wrong thing and
 now carries a correction beside it. Joshua 10:12 was stale as stated, with one
-pashta יְהוֹשֻׁעַ֙ before the download and two יְהוֹשֻׁ֙עַ֙ after it.
+pashta יְהוֹשֻׁעַ֙ before the download and two יְהוֹשֻׁ֙עַ֙ after it.
 
 **Joshua 10:12 is not expected to go quiet downstream**, and this is the
 programme's other standing trap. The mark added there is a stress helper, a MAM
@@ -615,7 +615,7 @@ Between 2026-08-30 and 2026-08-31 Seth (Avi) Kadish made **twelve** meteg edits
 to MAM on Hebrew Wikisource, each credited in the MAM change log to Daniel
 Holman. **Exactly one of the twelve is a record of this programme**: 2 Kings
 21:12, which is M18. Its log row reads "Removed 2 metegs
-from עַל־יְרוּשָׁלַ֖͏ִם וִיהוּדָ֑ה following AC", which is what item 2's finding 2
+from עַל־יְרוּשָׁלַ֖͏ִם וִיהוּדָ֑ה following AC", which is what item 2's finding 2
 met as an already-applied suggestion, second meteg and all.
 
 **The other eleven are a different Holman batch and are in no ingest here.**

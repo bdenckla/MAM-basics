@@ -74,7 +74,7 @@ list survives.
 Neither is a stray file. Each is a crop of exactly the atom its filename names, and each atom is
 the shape of the cases its message is made of.
 
-- `Ps 140.4.1.png` shows שָֽׁנֲנ֣וּ, which is what the UXLC has at Psalms 140:4 atom 1: a meteg
+- `Ps 140.4.1.png` shows שָֽׁנֲנ֣וּ, which is what the UXLC has at Psalms 140:4 atom 1: a meteg
   under the shin. That is the meteg-against-merkha question the whole of Psalms Part 2 is about.
 - `Ezek 10.3.2.png` shows עֹֽמְדִ֛ים, the UXLC's Ezekiel 10:3 atom 2: a meteg under the ayin and
   a tevir on the dalet. That is precisely the template of the ten cases in its own message whose
@@ -150,7 +150,7 @@ any of it.
    > would like to check which way each mismatch runs before filing them.
    >
    > 1. "28 Suggested Corrections (Psalms Part 2 of 2)" of 11 August has 29 images attached. The
-   > extra one is "Ps 140.4.1.png", a crop of שָֽׁנֲנ֣וּ. The message writes up 28 cases, numbered
+   > extra one is "Ps 140.4.1.png", a crop of שָֽׁנֲנ֣וּ. The message writes up 28 cases, numbered
    > 1 to 28 and ending at Ps 143:10.2, and Psalm 140 is not mentioned anywhere in it. Was a
    > Ps 140:4.1 case meant to be there, or was the image attached in error?
    >
