@@ -27,22 +27,37 @@ missed every one of those 16 files:
 
 WHAT IT COVERS, AND WHY NOT MORE
 
-Every tracked ``.md`` in the repo, plus the ``.html`` under ``doc/`` -- 191 files at
-``b490988a``, one second to check, so there is no cost argument for narrowing it.
-Re-establish with ``git ls-files -- "*.md" "doc/*.html"`` rather than trusting that
-figure: it rises with every ``.md`` added, so a larger number is growth and not a
-mismatch.
+Every tracked ``.md`` in the repo, the ``.html`` under ``doc/``, and the ``.txt``
+under ``in/accgram/edition_transcriptions/`` -- 203 files at ``5e7f0d6b``, one second
+to check, so there is no cost argument for narrowing it. Re-establish with
+``git ls-files -- "*.md" "doc/*.html" "in/accgram/edition_transcriptions/*.txt"``
+rather than trusting that figure: it rises with every ``.md`` added, so a larger
+number is growth and not a mismatch.
 
-Widening it by file type is what fails, and each way fails for the same reason --
-what the wider type catches is not hand-authored prose. All ``.html`` would take in
-67 offending files: 36 under ``uxlc/in/UXLC-notes/``, an input capture and the
-majority of them; 28 generated under ``gh-pages/``; and 3 byte-verbatim under
-``misc/*/img-sources/``. ``.txt`` would take in 15: 6 under ``uxlc/out/UXLC-misc/``
-and 1 under ``uxlc/in/UXLC-misc/``, the UXLC change lists; 2 under
-``aleppo/aleppo-wiki/``, snapshots of hand work as it was published on Wikisource;
-2 under ``misc/zarqa-table-diff/``, two external sources captured so they can be
-diffed against each other; and 4 under ``in/accgram/edition_transcriptions/``, which
-are Ben-authored comment headers rather than captures.
+Widening BY FILE TYPE is what fails, and each way fails for the same reason -- what
+the wider type catches is not hand-authored prose. All ``.html`` would take in 67
+offending files: 36 under ``uxlc/in/UXLC-notes/``, an input capture and the majority
+of them; 28 generated under ``gh-pages/``; and 3 byte-verbatim under
+``misc/*/img-sources/``. All ``.txt`` would take in 15 offending files, and 11 of
+those are genuine captures: 6 under ``uxlc/out/UXLC-misc/`` and 1 under
+``uxlc/in/UXLC-misc/``, the UXLC change lists; 2 under ``aleppo/aleppo-wiki/``,
+snapshots of hand work as it was published on Wikisource; and 2 under
+``misc/zarqa-table-diff/``, two external sources captured so they can be diffed
+against each other.
+
+THE TRANSCRIPTION DIRECTORY IS A NAMED EXCEPTION, AND NOT THAT BLANKET WIDENING.
+The remaining 4 of those 15 are the ``in/accgram/edition_transcriptions/*.txt``
+whose hand-written ``#`` headers carry Ben's notes on what each printed edition does
+at a given place, quoting pointed Hebrew -- prose pasted through something that
+normalized it, the same defect as the 132 clusters above rather than a different
+kind. Ben's decision, 2026-09-09, was to cover them, and the pathspec names that one
+directory rather than the file type. It takes in no capture: all 12 ``.txt`` there
+are Ben-authored, and the derived body beneath each header is built from the
+``.json`` beside it by ``py/main_edition_transcription.py``, which stores accent
+names in Hebrew abbreviations and no vowel point at all -- so a derived body holds no
+cluster that could tell the two orders apart. The argument above therefore stands
+unweakened: 11 of the 15 offending ``.txt`` are captures, and this pathspec reaches
+none of them.
 
 The data trees carry their source's order by design and must never be repaired:
 ``in/mam-ws/`` is a download that is inherently normalized (Ben, 2026-09-09),
@@ -83,13 +98,22 @@ _FLOOR = 100
 
 
 def _tracked_prose_files() -> list[str]:
-    """Every tracked ``.md``, plus the ``.html`` under ``doc/``.
+    """Every tracked ``.md``, the ``.html`` under ``doc/``, the transcription ``.txt``.
 
     A git pathspec's ``*`` crosses ``/``, so ``*.md`` reaches every depth and
-    ``doc/*.html`` reaches every depth under ``doc/``.
+    ``doc/*.html`` reaches every depth under ``doc/``. The third element names one
+    directory outright; the docstring above says why that directory and no other
+    ``.txt``.
     """
     result = subprocess.run(
-        ["git", "ls-files", "--", "*.md", "doc/*.html"],
+        [
+            "git",
+            "ls-files",
+            "--",
+            "*.md",
+            "doc/*.html",
+            "in/accgram/edition_transcriptions/*.txt",
+        ],
         cwd=paths.repo_root(),
         capture_output=True,
         encoding="utf-8",

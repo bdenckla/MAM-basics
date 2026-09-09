@@ -15,7 +15,7 @@
 # land on their exact reference positions (tokens 16 פסל, 19 בשמים, 25 במים, 75 שבת).
 #
 # THE TWO DIVERGENCES, each adjudicated by re-reading the page:
-#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat, p. 84 line 6): SimTiq prints NO maqaf after ובנך and accents
+#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat, p. 84 line 6): SimTiq prints NO maqaf after ובנך and accents
 #     it munax, so it sets as two chanted words what ws/ex/elyon/printed joins under the single
 #     telisha gedola of ובנך־ובתך (where ובנך takes a meteg and no accent).  Corroborated twice
 #     over: the two ex/taxton strands separate ובנך with a munax too, and koren_ex_elyon -- an

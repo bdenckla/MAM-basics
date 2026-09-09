@@ -26,7 +26,7 @@
 #     taxton's zaqef qatan there.  So what the page has is one elyon accent inside an otherwise
 #     taxton-conforming Decalogue.
 #   * The resulting pair, qadma immediately before zaqef qatan, is NOT a metigah-zaqef, and is
-#     no well-formed zaqef phrase at all.  וְי֨וֹם is one chanted word and הַשְּׁבִיעִ֔י another, with a
+#     no well-formed zaqef phrase at all.  וְי֨וֹם is one chanted word and הַשְּׁבִיעִ֔י another, with a
 #     space and not a maqaf between them, and both primaries restrict the metigah to the chanted
 #     word of the zaqef: ITM §223 "the word bearing zaqef", CoS Ch. 5 §4 "A methiga will appear in
 #     the word of the small zakef".  §223's leading example, Ex 35:9 ואבני־שהם, is a maqaf
