@@ -2,7 +2,8 @@
 
 State: live 2026-09-09; no step started; the starting state was re-measured the same afternoon
 after `main` moved, the dated notes below supersede the table where they differ, and the design
-was revised that afternoon on Ben's decision to keep the work on the branch until the end.
+was revised that afternoon on Ben's decision to keep the work on the branch until the end, and D9 and
+the substance of D11 were decided the same afternoon (step 2).
 
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
@@ -30,7 +31,7 @@ Re-measure before step 1 and treat a mismatch as a finding.
 | Branch against `main` | `main` and `origin/main` at `a50da28b`; the branch holds `2b365153` (turn 5), `7c4416cd` (its addendum) and the commit that adds this plan, and nothing else (`git log --format="%h %s" main..codex-review-2026-09-08`). Superseded the same afternoon: see the re-measurement below the five documents |
 | Disputes between the reviewers | None. Turn 5 closes the three the rebuttal listed: 1. finding 14.4; 2. C1 / finding 13.2; 3. C2 / finding 17(b)–(e). It also accepts Codex's treatment of finding 6.8 |
 | Decisions already taken | `3b0225e0` and `becc6f00` (findings 1, 3 and 5.6, 2026-09-09), and Ben's request that this plan assume Codex for every step |
-| Decisions pending | D1–D10 under step 2, all Ben's |
+| Decisions pending | D1–D11 under step 2, all Ben's; D9 and the substance of D11 were decided on 2026-09-09 and are recorded there, and D11's naming is proposed there for Ben's yes or amendment |
 | Suite baseline | 983 passed, 5 skipped, 65 subtests passed, Codex's run at `becc6f00` in the review worktree (`doc/codex-review-findings-2026-09-08.md` §"Scope and verification"); turn 5 ran no suite |
 | Other sessions | A Claude session may be live in the primary clone; integration touches that clone only by fast-forward. No Codex task is live in the review worktree when step 1 starts, step 0 having ended the Claude session there |
 | Turn-5 scripts | `turn5_verify.py`, `turn5_verify2.py`, `turn5_addendum_edit.py` and the two reports, untracked at `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-2026-09-08/` and copied to `C:/Users/BenDe/GitRepos/MAM-basics/.novc/review-2026-09-08/`, which survives step 7 |
@@ -145,11 +146,12 @@ Append one dated section to doc/codex-review-findings-2026-09-08-codex-counter-r
 Public evidence only. Review only: no remediation, no process changes, no edits to earlier records. Commit only that edited document and this plan's execution line on codex-review-2026-09-08. Do not fast-forward main and do not push. Reply with the full file path, the commit ID, the branch head, and anything still unresolved.
 ```
 
-## Step 2 — Ben decides D1–D10
+## Step 2 — Ben decides D1–D11
 
-Actor: Ben. Input: the rebuttal's "Choices requiring Ben's judgment", finding 10 and the Codex
-reconciliation. Output: ten decisions, pasted into the prompts of steps 3 and 4 with the template
-below. Where the two reviewers converge the convergence is stated; nothing here is a decision.
+Actor: Ben. Input: the rebuttal's "Choices requiring Ben's judgment", finding 10, the Codex
+reconciliation, and Ben's two decisions of 2026-09-09 recorded under D9 and D11. Output: eleven
+decisions, pasted into the prompts of steps 3 and 4 with the template below. Where the two
+reviewers converge the convergence is stated; apart from D9 and D11, nothing here is a decision.
 
 1. **D1 — the "will never load" sentence in `doc/dual-agent-review.md`** (line 258 at `49609331`;
    finding 10 with C5). The rebuttal's proposed wording: "Codex reads `AGENTS.md`, not
@@ -191,14 +193,46 @@ below. Where the two reviewers converge the convergence is stated; nothing here 
    Recorded in step 3 when its home is `doc/dual-agent-review.md`, and as a step-6 item otherwise.
 8. **D8 — `py/tests/test_site_index_links.py:84`**: "34" to "35", one word. Yes or no. Executed in
    step 6.
-9. **D9 — the rebuttal round's status**: a one-off experiment, an optional extra round, or the
-   standing shape of a review. `doc/dual-agent-review.md` says adoption is undecided. Recorded in
-   step 3.
-10. **D10 — the Codex review files' naming and `State:` vocabulary** (finding 10): whether the
-    `-sol` suffix is a convention to record, whether Codex files keep "completed <date>" beside the
-    Claude files' "not yet acted on" and "acted on <date>", and whether the doc standard's glob
-    `doc/review-findings-*.md` should match the Codex names. Codex's reconciliation calls these
-    policy questions. Recorded in step 3.
+9. **D9 — the rebuttal round's status. DECIDED, Ben, 2026-09-09, afternoon: the turn-taking
+   round is the standard dual-agent review.** His words: "let's make this iterative (taking
+   turns, argument, counter-argument, rebuttal, etc.) process the standard dual agent review
+   process; I think it has worked well". `doc/dual-agent-review.md` still says adoption is
+   undecided and names Design A as the default; step 3 rewrites it so that the standard review is
+   the round this window ran — Claude argument; Codex counter-argument, with the reconciliation
+   table appended to the argument; Claude rebuttal; Codex counter-rebuttal; further turns
+   alternating as needed — each turn a tracked file the next task reads from its path and commit,
+   which Ben supplies, ending when a turn accepts everything and lists no unresolved
+   disagreement, which the other agent's next task reads and acknowledges (step 1 of this plan is
+   the worked case). Every turn is review only, on public evidence, with no remediation and no
+   edit to an earlier turn; a correction lives in the turn that accepts it. Design A becomes the
+   default that held from 2026-09-07 to 2026-09-09 and Design B stays the blind alternative, both
+   kept as descriptions. Recorded in step 3.
+10. **D10 — the review files' naming and `State:` vocabulary** (finding 10): whether the `-sol`
+    suffix is a convention to record; whether Codex files keep "completed <date>" beside the
+    Claude files' "not yet acted on" and "acted on <date>"; whether the doc standard's glob
+    `doc/review-findings-*.md` should match the Codex names; and, now that turns beyond the second
+    are standard (D9), how turn files are named — this round put `-claude-rebuttal`,
+    `-codex-counter-rebuttal` and `-claude-turn-5` after the Codex file's stem. Codex's
+    reconciliation calls these policy questions. Recorded in step 3.
+11. **D11 — a shared worktree for the whole round. DECIDED in substance, Ben, 2026-09-09,
+    afternoon; the naming is proposed here for his yes or amendment.** This round's worktree,
+    `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on `codex-review-2026-09-08`,
+    was created by Codex in turn 2 without instruction — Ben's recollection, borne out by the
+    branch's reflog, which starts "Created from becc6f00" with the counter-argument `5636d38a`
+    as its first commit — and every later turn of both agents and this close-out ran in it. Ben's
+    judgment: "it turns out to have been a good idea, so let's record that as part of the
+    standard dual-agent review plan", named so that "it is clear from path and/or branch alone
+    that this is a *shared* worktree, not a worktree belonging to whatever agent created it",
+    and created by Claude, "since, somewhat arbitrarily, the dual-agent review process starts
+    with Claude". So the standard is: the Claude session that writes the argument creates the
+    worktree and its branch at the round's start; every turn of both agents and the close-out
+    use it directly; no task fast-forwards `main` or pushes; one integration at the end; then the
+    worktree and branch are retired. Proposed naming, for D11's line in the template: branch
+    `dual-agent-review-<date>` and worktree
+    `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-<date>` — the parent
+    is where a Claude-made worktree goes, and the leaf and the branch say what it is. This
+    round's worktree keeps its name; renaming a live worktree mid-round is churn for nothing.
+    Recorded in step 3.
 
 Template for the prompts of steps 3 and 4. Fill every line; "as proposed", "yes", "no" and
 "leave" are answers:
@@ -212,13 +246,14 @@ D5:
 D6:
 D7:
 D8:
-D9:
+D9: standing, decided 2026-09-09
 D10:
+D11: naming as proposed, or the branch and path to use
 ```
 
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
-Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9 and D10. Output:
+Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
 `doc/dual-agent-review.md` edited and committed on the branch. This is the close-out's one
 process-record change, kept apart from the remediation so that step 4's plan lists finding 10 and
 C5 as done here rather than scheduling them twice.
@@ -238,16 +273,19 @@ Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose 
 Ben's decisions, 2026-09-DD:
 D1: <...>
 D7: <...>
-D9: <...>
+D9: standing, decided 2026-09-09 (the plan's step 2 has Ben's words and what the standard consists of)
 D10: <...>
+D11: <naming>
 
-Do four things in doc/dual-agent-review.md, and nothing else:
+Do six things in doc/dual-agent-review.md, and nothing else:
 1. Under "Experimental Claude rebuttal round (2026-09-09)", add a dated outcome paragraph: the five documents with their commits (the plan's state section lists them), the step-1 acknowledgment with its commit, the three disputes closed, the corrections each side accepted, and Ben's D9 decision stated as a decision with its date.
 2. Replace the sentence saying Codex "will never load" the hebrew-prose skill with Ben's D1 wording, dated.
 3. Correct the stale statements finding 10 of doc/review-findings-2026-09-08.md lists — the review census ("Eight such files exist ... the 2026-09-04 file has the first Codex counterpart"), the calibration section's coverage, and the backslash path — re-measuring each before writing: count doc/review-findings-*.md and doc/codex-review-findings-*.md at HEAD and read their State lines.
 4. Record Ben's D10 decisions in the naming section, and Ben's D7 decision if its home is this file.
+5. Make the turn-taking round the standard review, per D9: state it as the default where the document now names Design A as the default; describe the turns (Claude argument; Codex counter-argument, with the reconciliation table appended to the argument; Claude rebuttal; Codex counter-rebuttal; further alternating turns as needed), each turn a tracked file the next task reads from its path and commit, which Ben supplies; the stopping rule (a turn that accepts everything and lists no unresolved disagreement ends the round, and the other agent's next task reads it and records an acknowledgment or an objection); what a turn may do (review only, public evidence only, no remediation, no edit to an earlier turn, corrections in the accepting turn); and the close-out that follows (decisions, procedure record, remediation plan, remediation, one integration, retirement), citing this plan as the worked case. Keep Design A as the default that held from 2026-09-07 to 2026-09-09 and Design B as the blind alternative, both as descriptions, dated.
+6. Record D11 as standing practice, with Ben's naming: the Claude session that writes the argument creates the shared worktree and branch at the round's start; every turn of both agents and the close-out use it directly; no task fast-forwards main or pushes; one integration at the end; then it is retired. Say that this round's worktree was created by Codex in turn 2 without instruction, that it worked, and that its path and branch read as Codex's, which the naming fixes.
 
-What is not expected to change: the substance of the Design A and Design B sections, the blindness rule, the reconciliation rules, and any review record.
+What is not expected to change: the descriptions of Design A and Design B beyond their status, the blindness rule within Design B, the reconciliation rules of the two earlier designs, and any review record.
 
 Commit only doc/dual-agent-review.md and this plan's execution line on codex-review-2026-09-08. Do not fast-forward main and do not push. Reply with the full file path, the commit ID, the branch head, and anything still unresolved.
 ```
@@ -343,7 +381,8 @@ clone. If it refuses anyway, read `git -C <worktree> status --porcelain` before 
 
 ## What this plan does not do
 
-1. It decides nothing: D1–D10 and the step-5 approvals are Ben's.
+1. It decides nothing: D1–D11 and the step-5 approvals are Ben's; D9 and the substance of D11 are
+   his decisions of 2026-09-09, recorded under step 2.
 2. It remediates nothing: no page, code or record changes before step 6.
 3. It uses Claude for nothing after step 0.
 4. It touches `main` once, at the end of step 6; until then every commit is on the branch.
