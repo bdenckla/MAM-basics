@@ -359,6 +359,37 @@ Status after these approvals: step 2 remains active. D10 and D11's naming
 remain pending; D9 and the substance of D11 retain Ben's earlier decisions.
 This update records choices only; no process document or test has been changed.
 
+### Ben's decision, 2026-09-09: D10 approved
+
+Ben approved D10 in the step-2 task on 2026-09-09: "I approve approve D10 as
+recommended."
+
+**D10 — approved:** record these four rules in `doc/dual-agent-review.md`:
+
+1. The standard Codex file has no model suffix. Use a model suffix such as
+   `-sol` only for an exceptional additional review whose purpose is to compare
+   or repeat the same role with a named model. The existing `-sol` file is the
+   worked example.
+2. The initial `review-findings-<date>.md` file owns remediation state:
+   `not yet acted on` or `acted on <date>`. Every later review turn uses
+   `completed <date>; review only`. "Completed" says that the review turn is
+   finished; "acted on" says that the findings were remediated.
+3. The document standard recognizes the initial Claude files, the Codex
+   counter-arguments, and the later dual-agent turns. Existing historical
+   `State:` lines and filenames remain unchanged.
+4. The first two filenames remain `review-findings-<date>.md` and
+   `codex-review-findings-<date>.md`. Later turns use neutral, numbered names:
+   `dual-agent-review-<date>-turn-03-claude.md`,
+   `dual-agent-review-<date>-turn-04-codex.md`, and the corresponding name for
+   each further turn. The neutral stem identifies the shared exchange; the
+   number identifies its sequence without an indefinitely lengthening chain of
+   rebuttal labels.
+
+Implementation belongs to step 3. Status after this approval: step 2 remains
+active, with only D11's naming pending among the D1–D11 entries currently in
+this plan. D9 and the substance of D11 retain Ben's earlier decisions. This
+update records a choice only; no process document has been changed.
+
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
