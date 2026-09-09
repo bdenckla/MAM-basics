@@ -593,18 +593,30 @@ def _ensure_svg_comment(svg_path, comment_text):
 
 
 def render_svg(dot_path, svg_path, generator_file=None):
-    """Render a .dot file to SVG, or raise. Returns True on success.
+    """Render a .dot file to SVG. Returns True if rendered, False if skipped.
 
-    A missing Graphviz raises rather than returning False, and a Graphviz that is
-    not the pinned one raises before anything is written. Until 2026-09-09 this
-    returned False when dot was absent, and both callers below discarded that --
-    so on a machine without Graphviz the .dot files were rewritten, the .svg
-    files left stale, and nothing said a word. Only pipeline_graph.render_svg
-    checked the flag. The True is kept because it reads as "rendered", and
-    because the alternative is a bare None that says nothing at a call site.
+    A Graphviz that is not the pinned one always raises, before anything is
+    written. A MISSING Graphviz depends on where we are, which is Ben's decision
+    of 2026-09-09 and is explained at length in mb_cmn/graphviz_pin.py:
+
+      * In a cloud container, the render is skipped and recorded. Returning
+        False rather than raising is what lets main_0_mega.py's tmpl-survey
+        step -- step 5 of its 41 -- complete there instead of killing the
+        remaining 36 steps.
+      * Anywhere else, it raises. Until 2026-09-09 it returned False everywhere
+        and both callers below discarded that, so a machine without Graphviz
+        rewrote the .dot files, left the .svg files stale, and said nothing.
+
+    So the False is meaningful again, but it is now always announced by
+    note_cloud_skip and reported at the end of a mega run. The callers below
+    still ignore it deliberately: there is nothing for them to do about a skip
+    that has already been recorded.
     """
     dot = _find_dot()
     if dot is None:
+        if graphviz_pin.in_cloud_session():
+            graphviz_pin.note_cloud_skip(svg_path)
+            return False
         raise FileNotFoundError(
             "Graphviz dot executable was not found, so "
             f"{svg_path} cannot be rendered. Looked on PATH and at "
