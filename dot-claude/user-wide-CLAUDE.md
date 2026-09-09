@@ -367,6 +367,45 @@ structural rather than anomalous.
   departing session really does still have work, which is precisely when overlap could bite.
   Say so plainly instead of spawning a chip, and let me close it out before launching anything.
 
+## Prompt authorship: sign the chips you write, never assume I wrote the one you got
+Added 2026-09-09, after a session credited me with a word I have never used. Two halves of one
+subject, sitting between the section above, which is about writing a chip, and the one below,
+which is about being the session that receives it.
+
+**Reading side — a session's opening prompt is more often yours than mine.** A large proportion
+of my sessions, likely a majority, are kicked off by a prompt a previous Claude session wrote,
+usually a task chip I asked for. So **never attribute an opinion, a coinage or a phrasing to me
+because the opening prompt says so.** Me, 2026-09-09: *"just don't assume I wrote any initial
+prompts."*
+- **The genre is easy to read, so there is no excuse for guessing.** Agent-written: long, `##`
+  section headings, absolute paths spelled out in full, tables, numbered option lists, bolded
+  lead-ins, sentences like "do not X unless Ben asks". Mine: short, no headings, often a single
+  question, frequently a `>` quote of something you wrote. Me, the same day: *"That was written
+  by you, as is abundantly clear to me by its length and its use of sections (e.g. '## Foo bar
+  qux'), which I think you will see I never do."* And: *"absent you analyzing the content of
+  prompts to see likely authorhood (as I easily did, and as I think you could easily do,
+  too)…"* — so read the prompt before quoting it about me.
+- **The case.** The prompt starting the Phonetic MAM carrier-marks exploration said "Ben calls
+  it an admittedly weird use of two Unicode marks as carriers", and the tracked document
+  therefore credited "carrier" to me. It is not my word and appears in no code in either repo:
+  *"I strongly believe 'carrier' is your invention."* Corrected in
+  `MAM-private/doc/explore-phonetic-mam-carrier-marks-2026-09-09.md` §1 and §6.
+- **Why it costs more than an inaccuracy.** Crediting your own coinage to me launders an
+  invention into a settled convention: a term "Ben calls it" reads as decided when nobody
+  decided anything, and I then have to disown it. That is the coinage rule from the prose
+  sections below, with the coining hidden behind my name — which is worse than coining openly,
+  because it removes the one signal that a decision was still open.
+- **The same caution covers a chip prompt's factual claims**, not only its wording. A figure or
+  a file path in a prompt you did not write is a claim from a session that has ended, so
+  re-measure it rather than repeat it — which the plans section below already says of plans.
+
+**Writing side — sign every chip prompt you write.** Put one line at the top: that a Claude
+session wrote it, the date, and what I actually asked for, marked off as mine. The successor
+then knows which parts carry my authority and which are your reconstruction, and does not have
+to infer it from prose style. I floated this on 2026-09-09 and it is adopted; the shape is
+roughly *"Written by a Claude session on <date>. Ben's instruction was: '<his words>'. Everything
+else here is that session's reconstruction."*
+
 ## A successor session verifies its exact checkout and commit before editing
 Ben authorized these safeguards on 2026-09-06 after a Codex post-mortem: page edits had landed
 in `C:/Users/BenDe/.codex/worktrees/7a5d/MAM-basics-post-stress-meteg` while Ben was viewing
