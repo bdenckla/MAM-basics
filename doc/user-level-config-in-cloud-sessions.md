@@ -1,214 +1,199 @@
-# Getting `~/.claude/` into a cloud session, and how it reaches private `github-misc`
+# Getting `~/.claude/` into a cloud session
 
 A cloud session — Claude Code on the web, `claude --cloud`, a routine, a Claude Tag session —
 starts from a fresh clone of `bdenckla/MAM-basics` on an Anthropic-managed Ubuntu VM. Everything
 tracked in this repository travels with that clone. **Nothing under `~/.claude/` does**, and until
 2026-09-09 nothing said so.
 
-`.claude/hooks/install-user-config.sh`, wired in by `.claude/settings.json` as a `SessionStart`
-hook, closes the gap by cloning `bdenckla/github-misc` inside the container and copying two things
-out of its `dot-claude/` directory. This file records why, what the hook does and does not fetch,
-how it reaches a **private** repository the session was not scoped to, and what to do when it
-fails.
+Since 2026-09-09 the fix has two halves. `dot-claude/` and `dot-Codex/` hold the
+version-controlled originals of Ben's user-level Claude and Codex configuration, so they arrive
+with the clone; and `.claude/hooks/install-user-config.sh`, wired in by `.claude/settings.json` as
+a `SessionStart` hook, copies two of them into `~/.claude/` when that directory lacks them.
+
+This file records the gap and how it was measured, why the configuration is stored here rather
+than in `github-misc`, the one sentence that was redacted on the way in, and how the hook is
+gated.
 
 ## The gap, and how it was measured
 
 Verified in a remote session on 2026-09-09, before the hook existed:
 
-1. `find / -name CLAUDE.md` returned nothing outside `/home/user/MAM-basics`. The user-level
+1. `find / -name CLAUDE.md` returned nothing outside the checkout. The user-level
    `~/.claude/CLAUDE.md` was simply absent.
-2. `~/.claude/skills/` held only `session-start-hook` and the synced Anthropic document skills
-   (`docx`, `pdf`, `pptx`, `xlsx` and the rest). `hebrew-prose` was not among them.
+2. `~/.claude/skills/` held only `session-start-hook/` and the synced Anthropic document skills.
+   `hebrew-prose` was not among them.
 
 This is documented behaviour rather than a defect. Anthropic's cloud-environments page carries a
 table headed "What carries over from your setup" whose rows for `~/.claude/CLAUDE.md` and for
 `~/.claude/skills/` both read **No**, with the reason that they live on the machine and not in the
-repository; its advice is to commit the configuration to the repository, which
-[the design constraints](#what-is-fetched-and-what-is-deliberately-not) below rule out for the
-skill.
+repository, and with the advice to commit the configuration to the repository — which is what
+`dot-claude/` now is.
 
 **The gap was silent, and that is the part worth fixing.** The 2026-09-09 session had been told to
 read the `hebrew-prose` skill before editing, and nothing signalled that the skill was missing —
-it was found only by going to look. So the hook's failure paths are loud by design; see
-[When the hook cannot fetch anything](#when-the-hook-cannot-fetch-anything).
+it was found only by going to look. So the hook's failure path is loud by design.
 
-## Why these two files and not others
+## Why the configuration is stored here and not in `github-misc`
 
-`C:/Users/BenDe/GitRepos/MAM-basics/CLAUDE.md` depends on both by name:
+It was tracked in `bdenckla/github-misc`, at `dot-claude/` and `dot-Codex/`, from 2026-07-25 until
+2026-09-09. Two findings moved it.
 
-1. Its section **"Invoke the `hebrew-prose` skill before writing or editing prose about
-   accentuation"** calls that skill "the canonical, single home" for the accentuation-prose rules,
-   and says a rule change goes into the skill first. Search that heading rather than a line number.
-2. Its section on `doc/boj-*.md` says that where one of those procedures conflicts with
-   `~/.claude/CLAUDE.md` — a `python -c` one-liner, a bare `python`, `PYTHONIOENCODING`, a
-   `Start-Process` — "the global conventions win". Search **"the global conventions win"**.
-3. Its testing section cites `~/.claude/CLAUDE.md`'s **"No `sys.path` surgery"** section as the
-   cross-repo rule this repository is the worked example for.
+### A session's git credential is scoped to its attached repositories, and that covers `git clone`
 
-A cloud session therefore reads a `CLAUDE.md` that defers three times to documents it cannot open.
+Measured 2026-09-09 in a cloud session on `bdenckla/MAM-basics`, container `cc 2.1.266`:
 
-## What is fetched, and what is deliberately not
+| repo | public? | attached to the session? | result |
+| --- | --- | --- | --- |
+| `bdenckla/MAM-basics` | yes | yes | exit 0, returns `refs/heads/main` |
+| `bdenckla/github-misc` | no | **no** | exit 128, `Invalid username or token` |
 
-`bdenckla/github-misc`'s `dot-claude/` directory holds four things. The hook fetches two:
+`GH_TOKEN` and `GITHUB_TOKEN` are both set in the container and git has no `credential.helper`, so
+a plain clone offers neither and dies with `could not read Username for 'https://github.com'`.
+Supplying the token explicitly through an inline `x-access-token` helper does not help: the token
+is a per-repository installation token, and `github-misc` is not in its set. **No credential
+wiring inside a hook can reach an unattached repository** — a credential helper, a token in the
+URL, and `gh auth` all reach the same refusal.
 
-| Source in `github-misc` | Installed to | Why |
-| --- | --- | --- |
-| `dot-claude/CLAUDE.md` | `~/.claude/CLAUDE.md` | The global cross-repo conventions, cited three times as above |
-| `dot-claude/skills/hebrew-prose/` | `~/.claude/skills/hebrew-prose/` | The canonical accentuation-prose rules |
+**This corrects what this file said between `6d19c34a` and `d8a0fdae`**, which was that the
+proxy's repository scoping restricts the GitHub API rather than `git clone`. That was a
+misreading, twice over, and both halves are worth naming so the next reader does not repeat them:
 
-and leaves two alone:
+1. The cloud-environments page's **push-protection** bullet reads "`git push` works only against
+   the session's current working branch; cloning, fetching, and PR operations work normally." Its
+   subject is the *branch* restriction on push. "Work normally" means "are not subject to that
+   branch restriction", not "cloning is unscoped." The adjacent **Git credentials** bullet says
+   the client uses "a scoped credential" and never says scoped to what; that was the question to
+   ask, and it went unasked.
+2. The Claude Code on the web page's line that a session can access any repository the connecting
+   account can see sits in the section contrasting the GitHub App with `/web-setup`. It is about
+   which repositories a session may be **started on**, not what a running session's token reaches.
 
-| Source in `github-misc` | Why it is not fetched |
-| --- | --- |
-| `dot-claude/README.md` | Documentation about keeping the three copies of this configuration in step, whose procedure is PowerShell against a Windows disk. Nothing loads `~/.claude/README.md`, and a container that is discarded has no second copy to keep in step |
-| `dot-claude/skills/prune-claude-state/` | It reads `~/.claude/plans/` and the per-repo auto-memory directory, neither of which reaches a cloud container, so it would have nothing to work on. It also declares `disable-model-invocation: true`, so it runs only when Ben names it |
+The framing to avoid is "cloud sessions cannot use private repositories". They can: a session
+started **on** a private repository clones it. What fails is a *second* repository that is not
+attached, and one cell is still unmeasured — whether an unattached **public** repository is
+reachable, which `git ls-remote https://github.com/github/gitignore.git` from a cloud session
+would settle. Nothing here depends on the answer any more.
 
-**The `hebrew-prose` skill is fetched rather than vendored, and that is deliberate.** A tracked
-copy under this repository's `.claude/skills/` would travel with the clone and need no hook at all
-— and it would be exactly the second home that `CLAUDE.md`'s "canonical, single home" sentence
-exists to prevent. `github-misc`'s `dot-claude/README.md` already records that this skill has three
-homes and that the third one has silently fallen behind twice; a fourth would be worse. Fetching at
-session start into `~/.claude/skills/`, which is untracked and discarded with the container, keeps
-the count where it is.
+### `github-misc` was chosen for precedent, not for privacy
 
-**`~/.claude/CLAUDE.md` is fetched whole, Windows paths and all.** Much of it names
-`C:/Users/BenDe/...` paths and PowerShell commands that mean nothing on an Ubuntu VM. That is
-noise a session can read past; the alternative — an edited, portable subset — would be a second
-home for the conventions with the same drift problem, and the rules that actually bind (no
-`python -c`, no heredocs, black, the terminology sections, the prose sections, no `sys.path`
-surgery) are platform-independent.
+Ben's hypothesis, 2026-09-09, and it holds. The commit that created the directory, `f1078d5` of
+2026-07-25, gives its reasons outright: "Follows the existing dot-emacs / dot-gitconfig
+convention, but as a directory, so `~/.claude`'s other authored config can join it later", and it
+notes that `CLAUDE.md` "until now … was the one such file under no version control at all."
+Precedent and the absence of version control. Privacy appears nowhere in that message, and
+`github-misc` is private because of its other contents rather than because of these trees.
 
-## How the hook reaches a private repository the session was not scoped to
+A scan of all twelve files on 2026-09-09 agreed: no email addresses, no tokens, no keys, no
+passwords — the one `PAT` match is Ben weighing whether to use one. Of twenty phrases that could
+plausibly have needed to stay private, nineteen were already public in this repository, most of
+them heavily: `MAM-private` in 66 tracked files, `mgketer.org` in 56, `mgketer` in 89, and
+"mgketer comparison" in 5, two of which are module names.
 
-**This is the question that decides whether the hook can work at all**, since `bdenckla/github-misc`
-is private and a session started against `bdenckla/MAM-basics` is scoped to that repository.
-The answer has three parts.
+### The one sentence that was redacted on the way in
 
-1. **Session access follows the connected GitHub account, not the repositories the Claude GitHub
-   App is installed on.** Anthropic's Claude Code on the web page states this directly: a cloud
-   session can reach any repository the connecting GitHub account can see, and installing the App
-   on a repository enables PR webhooks for auto-fix rather than acting as a session-level access
-   control. So no extra step is needed to make `github-misc` visible: it is Ben's own private
-   repository under the same account.
-2. **Git traffic is authenticated by a proxy outside the sandbox, over HTTPS.** In an
-   Anthropic-hosted environment the real GitHub credentials never enter the VM; the git client
-   inside uses a scoped credential that a dedicated GitHub proxy swaps for the real token, and
-   that proxy is used whatever the environment's network access level is — even **None**. This is
-   why the hook clones `https://github.com/bdenckla/github-misc.git` and **not** the
-   `git@github.com:bdenckla/github-misc.git` remote Ben uses locally: SSH keys are among the
-   things deliberately kept outside the sandbox.
-3. **The proxy's repository scoping restricts the GitHub API, not `git clone`.** Its documented
-   restriction is that GitHub API and release-asset requests reach only repositories attached to
-   the session, so a setup script downloading a release asset from an unattached repository gets
-   a 403. Cloning and fetching are called out separately as working normally; only `git push` is
-   restricted, and then only to the session's own working branch. **So the hook clones and does
-   not use `gh` or the REST API** — an API-based fetch of the same files would be the one shape
-   that scoping blocks.
+Filtering for a private project named *together with* its mechanics left one sentence that
+mattered, in three files — `dot-claude/user-wide-CLAUDE.md`, `dot-Codex/user-wide-AGENTS.md`, and
+the skill's `references/verifying.md`. It described a MAM-private project's self-test as diffing
+against "the source HTML", which says what that project's input is.
 
-### If a clone is refused anyway
+**No new policy was invented for it.** `doc/agent-planning-principles.md` already carries the
+public form of the same sentence, and the three copies were rewritten to match it: "a MAM-private
+project", "the project's own input", and a `private annex §5` citation. `doc/sigil-decoding.md`
+states the convention — public text cites `private annex §N`, and
+`MAM-private/doc/mam-basics-annex.md` "is the annex for the whole repo". The live `~/.claude/`,
+`~/.codex/` and `~/.agents/` copies carry the redacted wording too.
 
-**As of 2026-09-09 this clone has not been measured in a cloud container, only derived from the
-three documented facts above.** Point 3 in particular is a reading of what the documented
-restriction covers rather than a promise. The hook is therefore built to announce a refusal rather
-than to assume one cannot happen, and the first cloud session to run it settles the question in
-either direction: a success message names both installed paths, and a failure banner quotes
-`git clone`'s own stderr. **A clone run on Ben's own machine proves nothing here** — it
-authenticates with his local credentials rather than through the session proxy, so it looks like
-proxy success while testing something else entirely.
+## Storage is not load scope, and the layout says so
 
-If a `403` or an authentication failure ever appears in the hook's banner, there are three
-fallbacks, in order of preference:
+`dot-claude/` and `dot-Codex/` are **storage**. This repository loads neither, exactly as
+`github-misc` loaded neither. The live copies under `~/.claude/`, `~/.codex/` and `~/.agents/` are
+what the two agents read, and `dot-claude/README.md` §"Shared-skill deployment to Claude and
+Codex" is the deployment procedure of record. Edit the live copy, copy outwards, run both
+comparisons.
 
-1. **Attach `bdenckla/github-misc` to the session** from the web interface, which makes it a
-   scoped repository and removes the question. This is per-session.
-2. **Set the environment's network access to Custom** and include `github.com`. This only helps if
-   the refusal turns out to come from the security proxy rather than the GitHub proxy; GitHub
-   traffic is documented as bypassing the network allowlist, so try point 1 first.
-3. **Move the fetch into the environment's setup script** at claude.ai/code, which runs as root
-   before Claude Code launches. This is also the fix to reach for if the skill turns out not to be
-   picked up when written after startup — see the open question below.
+Two naming decisions follow from that, and both are mechanical rather than cosmetic:
 
-## Why the hook is gated twice
+1. **The instruction files are tracked as `user-wide-CLAUDE.md` and `user-wide-AGENTS.md`.**
+   Claude Code auto-loads a nested `CLAUDE.md` from a directory being worked in, so a file of that
+   name inside `dot-claude/` would begin loading itself beside this repository's own `CLAUDE.md`
+   the moment anyone edited a file beside it. The live copies keep the names their loaders
+   require; only the tracked copies are renamed.
+2. **`hebrew-prose` is kept out of `.claude/skills/`.** Putting it there would make it a project
+   skill, auto-loaded with no hook at all — but the skills precedence is enterprise, then
+   **personal**, then project, so `~/.claude/skills/hebrew-prose/`, which has to exist anyway for
+   MAM-private and for Codex, would shadow it on every one of Ben's machines. The tracked copy
+   would then be inert locally and exercised only in the cloud: the copy nobody sees being the
+   one that runs. Keeping the skill user-wide also keeps it loaded in MAM-private, which with
+   this repository is one of only two repositories in the roster where the accentuation work
+   still happens.
 
-The hook runs everywhere, local sessions included, so it has two independent guards. Both are in
-the script's comments as well, at greater length.
+## How the hook is gated
+
+It runs everywhere, local sessions included, so it has two independent guards. Both are in the
+script's comments at greater length.
 
 1. **`CLAUDE_CODE_REMOTE = true`** is the documented discriminator: the cloud VM sets it and it is
    never true locally. This is what keeps the script from touching `~/.claude/` on Ben's own
    machines, where that directory is the live configuration and a copy over it would be
    destructive. On a local machine the script exits before reading anything.
-2. **Write only what is absent.** This is not redundant with the first guard. A self-hosted runner
-   also reports `CLAUDE_CODE_REMOTE=true`, and Anthropic's documentation says such a runner can
-   seed a session from the runner host's own `~/.claude/`. "Remote" therefore does not by itself
-   mean "`~/.claude/` is empty". The second guard also makes a resumed or compacted session a
-   no-op rather than a re-copy.
+2. **Write only what is absent.** Not redundant with the first guard: a self-hosted runner also
+   reports `CLAUDE_CODE_REMOTE=true`, and Anthropic's documentation says such a runner can seed a
+   session from the runner host's own `~/.claude/`. "Remote" therefore does not by itself mean
+   "`~/.claude/` is empty". It also makes a resumed or compacted session a no-op.
 
-The hook clones into a `mktemp -d` directory outside the checkout and deletes it on exit, so no
-copy of a private repository is left where a later `git add` could reach it.
+**Every path exits 0.** A `SessionStart` hook that exits 2 blocks the session from starting and
+resumes the previous one, which is far too severe a response to a missing prose reference. Failure
+is reported by printing a banner instead: `SessionStart` is one of the few hook events whose
+plain-text stdout Claude Code adds to the session as context, so the banner reaches Ben's
+transcript **and** the model. Two failures get their own banner — the files being absent from the
+checkout, and only one of the two landing — and each tells the session to say so to Ben before
+starting work, rather than to proceed as though the rules had been read.
 
-## When the hook cannot fetch anything
+**The hook installs two of the tracked trees and not the rest.**
+`dot-claude/skills/prune-claude-state/` reads `~/.claude/plans/` and the per-repo auto-memory
+directory, neither of which reaches a cloud container, and it declares
+`disable-model-invocation: true`. `dot-claude/README.md` and all of `dot-Codex/` are not loaded by
+a Claude cloud session at all, and are readable in the checkout when wanted.
 
-**Every path through the hook exits 0.** A `SessionStart` hook that exits 2 blocks the session from
-starting and resumes the previous one, which is far too severe a response to a missing prose
-reference. Failure is reported instead by printing a banner: `SessionStart` is one of the few hook
-events whose plain-text stdout Claude Code adds to the session as context, so the banner reaches
-Ben's transcript **and** the model.
+## Is a skill written after Claude Code launches picked up?
 
-Three distinct failures each get their own banner, and each tells the session to say so to Ben
-before starting work, rather than to proceed as though the rules had been read:
+**Yes, on the documentation, and the container satisfies the one caveat.** Claude Code watches
+skill directories and picks up a skill added under `~/.claude/skills/` within the session, without
+a restart. The caveat is that creating a *top-level skills directory that did not exist when the
+session started* needs a restart before it is watched — and the 2026-09-09 diagnostic session
+found `~/.claude/skills/` already present in the container, holding `session-start-hook/` and
+`synced/`. So the hook writes into a directory that is already being watched.
 
-1. **The clone failed** — the banner names both missing documents and quotes `git clone`'s own
-   stderr.
-2. **The clone succeeded but `dot-claude/` did not hold what was expected** — the banner lists what
-   `dot-claude/` actually contains. This fires if `github-misc` is ever reorganized, and means both
-   the hook and this file need updating.
-3. **Only one of the two landed** — the banner says which.
-
-## Open question: is a skill written after startup picked up?
-
-**This is unresolved and needs a remote session to settle.** A `SessionStart` hook runs *after*
-Claude Code launches, so `~/.claude/skills/hebrew-prose/` and `~/.claude/CLAUDE.md` appear on disk
-after whatever scan Claude Code does of those locations. Whether the skill then shows up in the
-available-skills list, and whether the user-level `CLAUDE.md` is loaded into context, is not
-documented either way.
-
-The hook does not depend on the answer: its success message names both absolute paths and tells the
-session to read `SKILL.md` directly if `hebrew-prose` is not in its available-skills list. That
-delivers the rules regardless. But if the answer turns out to be no, the tidier fix is fallback 3
-above — the same fetch in the environment's setup script, which runs before Claude Code launches.
+This has not been confirmed empirically, and the hook does not depend on it: its success message
+names both absolute paths and tells the session to read `SKILL.md` directly if `hebrew-prose` is
+not in its available-skills list.
 
 ## One consequence worth knowing about session sharing
 
-`bdenckla/MAM-basics` is public and `bdenckla/github-misc` is private, and this hook puts content
-from the private repository into every cloud session on the public one. Sessions are private by
-default. On a Pro or Max account the sharing toggle offers **Public**, which makes a session
-visible to anyone logged in to claude.ai, and Anthropic's own note on that toggle warns that
-sessions may contain content from private repositories. So a MAM-basics cloud session should not be
-shared publicly without a look at what is in it.
+`bdenckla/MAM-basics` is public, and it now holds Ben's user-level configuration, which is
+personal without being secret. Sessions are private by default. On a Pro or Max account the
+sharing toggle offers **Public**, which makes a session visible to anyone logged in to claude.ai.
+The scan above is why that is a note rather than a warning, but a session should still be looked
+at before it is shared publicly.
 
 ## Re-establishing the facts in this file
 
-Every claim above about cloud-session behaviour comes from Anthropic's documentation as it stood on
+The claims about cloud-session behaviour come from Anthropic's documentation as it stood on
 2026-09-09, at `https://code.claude.com/docs/en/cloud-environments` (the carry-over table, the
 GitHub proxy, network access levels, setup scripts versus `SessionStart` hooks, and
-`CLAUDE_CODE_REMOTE`) and `https://code.claude.com/docs/en/claude-code-on-the-web` (GitHub
-authentication and session isolation). Re-read those two pages rather than trusting this summary if
-something here stops matching what a session observes.
+`CLAUDE_CODE_REMOTE`), `https://code.claude.com/docs/en/claude-code-on-the-web` (GitHub
+authentication and session isolation) and `https://code.claude.com/docs/en/skills` (precedence and
+live reload). The credential-scope table is a measurement rather than a reading, taken in the
+session named there.
 
-The hook's own behaviour was exercised on 2026-09-09 against fake `HOME` directories and a stubbed
-failing `git`, covering all six paths: local no-op, unreachable `github-misc`, empty `~/.claude/`,
-both files already present, one file already present, and a reorganized `github-misc`. That harness
-was a throwaway under `.novc/` and is not tracked; the six cases are listed here so they can be
-rebuilt.
+The hook was exercised on 2026-09-09 against fake `HOME` directories, covering six paths: local
+no-op; empty `~/.claude/`; both files already present; one file already present; `dot-claude/`
+absent from the checkout; and the hook invoked with no `CLAUDE_PROJECT_DIR`, which must still find
+the repository from the script's own location. The harness was a throwaway under `.novc/` and is
+not tracked; the six cases are listed here so they can be rebuilt.
 
 **The local guard was also exercised against the live `~/.claude/` rather than a fake one**, which
-is better evidence than the harness for the one failure that would actually cost something. On
-2026-09-09 an agent ran `bash .claude/hooks/install-user-config.sh` twice on Ben's own machine,
-pointed at his real `~/.claude/` holding a 99,744-byte `CLAUDE.md`. Both runs printed nothing and
-exited 0, and that `CLAUDE.md` kept its byte count and its `Sep 9 10:24` modification time. Gate 1
-returned before `mktemp` or `git clone` was reached.
-
-**Two things remain unmeasured, both of them only answerable from a cloud session**: whether the
-private clone succeeds through the GitHub proxy, and the skills-list question in the section above.
-Neither can be settled on a local machine, because gate 1 exits first there by design — so an
-attempt to test the hook locally measures the guard, never the fetch.
+is better evidence than the harness for the one failure that would actually cost something. An
+agent ran the hook twice on Ben's own machine, pointed at his real `~/.claude/`. Both runs printed
+nothing and exited 0, and that `CLAUDE.md` kept its byte count and its modification time. Gate 1
+returned before anything was read.
