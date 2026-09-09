@@ -123,6 +123,8 @@ worktree.
 
 ## Step 1 — Codex reads turn 5 and records its acknowledgment: the handoff
 
+Executed 2026-09-09: commit `:/^Acknowledge turn 5 of September 8 review with a timing objection$` (Git revision selector for the commit containing this line); objection recorded; step 1 stops for Ben's decision.
+
 Actor: Codex, one task. Input: the required commit from step 0. Output: a dated section appended to
 the Codex counter-rebuttal, committed on the branch. If that section records an
 objection, the plan stops here: Ben decides how the objection is handled before step 2.
