@@ -129,6 +129,64 @@ removal fail -- true on Windows, but it fails LATE.  Git deletes the worktree's
 contents and only then cannot unlink the directory, which is exactly how the
 husk that ``_sweep_empty_dirs`` now collects came to exist.  A held handle turns
 a silent removal into a noisy one; it does not prevent it.
+
+ONE CHECK REPORTS RATHER THAN REMOVES, and it is the only one that looks at the
+remote.  A cloud session has no primary clone, so it cannot merge its branch into
+the default branch: it can only push the ``claude/*`` branch it worked on.  Ben's
+decision of 2026-09-09 is that this stays so, which makes a remote-only agent
+branch the EXPECTED end state of cloud work rather than an anomaly.  Nothing
+local records one -- a cloud session leaves no worktree and no local head -- so
+``_agent_branches``, reading ``refs/heads/claude/``, cannot see it.  On
+2026-09-09 ``claude/charming-mayer-xknwcw`` sat on the remote holding two commits
+of real work and no sweep anywhere could have named it.
+
+``_stranded_remote_branches`` closes that, and REPORTS ONLY.  It never deletes a
+remote branch and no flag makes it.  What keeps the local deletion above safe is
+that ``git branch -d`` refuses an unmerged branch on its own; a remote deletion
+has no such refusal behind it, so the caution the rest of this module spends on
+worktrees would have nothing to rest on.  A remote branch already merged into the
+default branch is an undeleted ref rather than stranded work, so only the unmerged
+ones are named -- each with its tip and how many commits it holds, since a bare
+branch name is not enough to decide whether to go and look.  Merged-ness is
+measured against the LOCAL default branch, exactly as the local-branch loop
+measures it, so "stranded" means "holds work this clone has not got".
+
+``_refresh_remote_refs`` fetches first, and is this module's only network call.
+Ben chose that on 2026-09-09 over reading the remote-tracking refs as they stood,
+on a measurement taken that day: nothing on the machine schedules a fetch -- no
+``git maintenance`` config, no scheduled task, no editor autofetch -- and across
+the six workspace clones the last fetch ranged from 19 minutes to 9 days earlier,
+with Taamey_D never having fetched at all.  Those refs are therefore freshest in
+the repo being worked in, where a stray branch would be noticed anyway, and
+stalest in the quiet ones, where it would not.  The fetch also brings the objects,
+without which neither figure can be computed at all: ``merge-base --is-ancestor``
+and ``rev-list --count`` both die with "Not a valid commit name" on a tip the
+object store has never seen.
+
+A FAILED FETCH IS NOT AN ERROR.  It leaves the check reading whatever the last
+fetch left, and the report says so in as many words, because a reader cannot
+otherwise tell "none stranded" from "not looked" -- which is the shape of silent
+green.  The sweep therefore still works offline.  Three further details keep the
+one network call from costing anything else: it runs AFTER every removal above,
+which makes it structurally unable to change what was deleted rather than merely
+unlikely to; it refuses to ask anybody for a credential, on which more below; and
+its refspec is confined to ``claude/*``, so it leaves ``origin/main`` exactly
+where a concurrent session left it.  The ``--prune`` in it drops remote-tracking
+refs whose branch is gone from the remote, which is discarding a stale local cache
+entry, not deleting anything of anyone's.
+
+TWO SETTINGS AND A TIMEOUT KEEP THE FETCH FROM HANGING, and all three are needed
+-- measured 2026-09-09, because the obvious one alone is not enough.
+``GIT_TERMINAL_PROMPT=0`` stops git's own terminal prompt and does nothing
+whatever about a credential HELPER's window; this machine's helper is Git
+Credential Manager, which answers a 401 by opening one, and a test fetch carrying
+only that variable was still running after two minutes with a live
+``git-credential-manager.exe`` behind it.  Adding ``credential.interactive=false``
+makes the same fetch fail in about a second with "Cannot prompt because user
+interactivity has been disabled", and costs nothing legitimate: a stored
+credential is still used, so a private remote still fetches.
+``_FETCH_TIMEOUT_SECONDS`` then stays as the backstop for whatever neither
+setting anticipated, which is what a sweep that may run unattended wants.
 """
 
 from __future__ import annotations
@@ -164,6 +222,22 @@ _WORKTREE_PARENT = Path(".claude") / "worktrees"
 # answer for anyone who wants a guarantee rather than a heuristic.
 _ACTIVITY_GRACE_SECONDS = 60 * 60
 
+# How long the one network call gets before the sweep stops waiting on it and
+# reports that it read stale refs. Generous for a ref exchange -- the surgical
+# refspec makes it 0.5 s against a warm remote -- and short enough that an
+# unreachable one costs a maintenance run seconds rather than stalling it.
+_FETCH_TIMEOUT_SECONDS = 30.0
+
+
+@dataclass(frozen=True)
+class StrandedBranch:
+    """A remote agent branch with no local head and commits the default lacks."""
+
+    name: str  # the branch's own short name, e.g. "claude/charming-mayer-xknwcw"
+    tip: str  # abbreviated tip commit
+    commits: int | None  # commits it holds that ``unmerged_into`` does not
+    unmerged_into: str  # the default branch it was measured against
+
 
 @dataclass
 class CleanupReport:
@@ -174,6 +248,17 @@ class CleanupReport:
     kept_worktrees: list[tuple[str, str]] = field(default_factory=list)
     deleted_branches: list[str] = field(default_factory=list)
     kept_branches: list[tuple[str, str]] = field(default_factory=list)
+    # Reported, never removed -- see "ONE CHECK REPORTS RATHER THAN REMOVES" in
+    # this module's docstring. Deliberately NOT in ``errors``: a stranded branch
+    # is information, and ``errors`` is reserved for a worktree or branch that
+    # would not delete, which is what sets the sweep's exit status.
+    stranded_branches: list[StrandedBranch] = field(default_factory=list)
+    # Which refs that check read, as a clause for the report line, and whether a
+    # zero from it can be trusted. ``remote_refs_stale`` is true only when a
+    # fetch was attempted and failed; a repo with nothing to check is a true zero
+    # and does not set it.
+    remote_basis: str = "not checked"
+    remote_refs_stale: bool = False
     errors: list[str] = field(default_factory=list)
 
 
@@ -430,6 +515,152 @@ def _agent_branches(repo_dir: Path) -> list[str]:
     return [line.strip() for line in result.stdout.splitlines() if line.strip()]
 
 
+def _has_origin(repo_dir: Path) -> bool:
+    result = _git(repo_dir, "remote")
+    return result.returncode == 0 and "origin" in result.stdout.split()
+
+
+def _refresh_remote_refs(repo_dir: Path) -> str | None:
+    """Fetch the remote's agent branches, or say why the local refs are stale.
+
+    Returns None once ``refs/remotes/origin/claude/`` is current, else one clause
+    naming what stopped it.  Failing is not an error: the caller falls back to
+    whatever the last fetch left and says so.
+
+    Deliberately not routed through ``_git``.  This is the module's only network
+    call and the only one that needs a timeout and an environment that cannot
+    stop to ask for a password; giving the shared helper those would offer them
+    to every other call in the module, none of which may ever use them.
+
+    The refspec is confined to the agent prefix on purpose -- see "A FAILED FETCH
+    IS NOT AN ERROR" in this module's docstring.  With a refspec given on the
+    command line, ``--prune`` prunes only within it, so ``origin/main`` is neither
+    moved nor pruned.
+
+    ``credential.interactive=false`` is not redundant beside ``GIT_TERMINAL_PROMPT``
+    and must not be dropped as though it were: the variable suppresses git's own
+    terminal prompt and says nothing about a credential HELPER's window.  Neither
+    setting disables the helper, so a private remote still fetches on a stored
+    credential; what they refuse is asking a human for one.
+    """
+    refspec = (
+        f"+refs/heads/{_AGENT_BRANCH_PREFIX}*:"
+        f"refs/remotes/origin/{_AGENT_BRANCH_PREFIX}*"
+    )
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "-C",
+                str(repo_dir),
+                "-c",
+                "credential.interactive=false",
+                "fetch",
+                "--prune",
+                "origin",
+                refspec,
+            ],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            env=os.environ | {"GIT_TERMINAL_PROMPT": "0"},
+            timeout=_FETCH_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        return f"fetch gave up after {int(_FETCH_TIMEOUT_SECONDS)}s"
+    except OSError as exc:
+        return f"fetch could not run ({exc})"
+    if result.returncode != 0:
+        return f"fetch failed ({_last_line(result.stderr) or 'no message'})"
+    return None
+
+
+def _last_line(text: str) -> str:
+    """The last non-blank line, which is where git puts its ``fatal:``."""
+    for line in reversed(text.splitlines()):
+        if line.strip():
+            return line.strip()
+    return ""
+
+
+def _stranded_remote_branches(repo_dir: Path, default: str) -> list[StrandedBranch]:
+    """Remote agent branches with no local head and work ``default`` lacks.
+
+    ``lstrip=3`` drops ``refs``, ``remotes`` and ``origin``, so what comes back is
+    the branch's own name and is directly comparable with ``_agent_branches``'
+    local ones.  Reading the tip as a full object name rather than as
+    ``origin/<name>`` keeps the two figures below measuring the same commit even
+    if the ref moves under a concurrent fetch.
+    """
+    result = _git(
+        repo_dir,
+        "for-each-ref",
+        "--format=%(refname:lstrip=3) %(objectname) %(objectname:short)",
+        f"refs/remotes/origin/{_AGENT_BRANCH_PREFIX}",
+    )
+    if result.returncode != 0:
+        return []
+    local = set(_agent_branches(repo_dir))
+    stranded: list[StrandedBranch] = []
+    for line in result.stdout.splitlines():
+        fields = line.split()
+        if len(fields) != 3:
+            continue
+        name, tip, short_tip = fields
+        if name in local or _is_ancestor(repo_dir, tip, default):
+            continue
+        stranded.append(
+            StrandedBranch(
+                name, short_tip, _commits_ahead(repo_dir, tip, default), default
+            )
+        )
+    return stranded
+
+
+def _commits_ahead(repo_dir: Path, commit: str, of: str) -> int | None:
+    """Commits ``commit`` holds that ``of`` does not, or None if unmeasurable.
+
+    None rather than 0 when the count cannot be taken: 0 would read as "already
+    merged", which is the one thing the caller has just established is false.
+    """
+    result = _git(repo_dir, "rev-list", "--count", f"{of}..{commit}")
+    if result.returncode != 0:
+        return None
+    try:
+        return int(result.stdout.strip())
+    except ValueError:
+        return None
+
+
+def _check_remote_branches(
+    repo_dir: Path, default: str | None, report: CleanupReport
+) -> None:
+    """Name the remote agent branches holding work ``default`` lacks.
+
+    Reports; removes nothing.  Its caller runs it last, after every removal, so
+    the fetch it makes cannot bear on what was deleted even in principle --
+    ``_default_branch`` names a LOCAL branch, which no fetch moves, but the
+    ordering means nobody has to go and check that.
+    """
+    if default is None:
+        report.remote_basis = "not checked (no default branch to compare against)"
+        return
+    if not _has_origin(repo_dir):
+        report.remote_basis = "not checked (no origin remote)"
+        return
+    failure = _refresh_remote_refs(repo_dir)
+    if failure is None:
+        report.remote_basis = "origin refs refreshed"
+    else:
+        report.remote_refs_stale = True
+        report.remote_basis = (
+            f"local refs as last fetched -- {failure}, "
+            f"so a branch pushed since then is invisible here"
+        )
+    report.stranded_branches = _stranded_remote_branches(repo_dir, default)
+
+
 def _self_worktree(worktrees: list[_Worktree]) -> Path | None:
     """The worktree this module is executing from, if it is one of ``worktrees``.
 
@@ -680,7 +911,15 @@ def clean_worktrees(
         else:
             report.errors.append(f"branch -d {branch}: {result.stderr.strip()}")
 
+    _check_remote_branches(repo_dir, default, report)
     return report
+
+
+def _held_commits(stranded: StrandedBranch) -> str:
+    if stranded.commits is None:
+        return f"commit count unavailable; not in {stranded.unmerged_into}"
+    plural = "" if stranded.commits == 1 else "s"
+    return f"{stranded.commits} commit{plural} not in {stranded.unmerged_into}"
 
 
 def print_report(report: CleanupReport) -> None:
@@ -693,6 +932,14 @@ def print_report(report: CleanupReport) -> None:
         print(f"worktrees: deleted branch {branch}")
     for branch, reason in report.kept_branches:
         print(f"worktrees: kept branch {branch} ({reason})")
+    # Printed on every pass, found or not: what this line reports is the basis,
+    # and without it a reader cannot tell a true "none stranded" from a stale one.
+    print(f"worktrees: remote {_AGENT_BRANCH_PREFIX} branches: {report.remote_basis}")
+    for stranded in report.stranded_branches:
+        print(
+            f"worktrees: stranded remote branch {stranded.name} "
+            f"({stranded.tip}, {_held_commits(stranded)})"
+        )
     for error in report.errors:
         print(f"worktrees: ERROR {error}")
     if not (
@@ -700,6 +947,14 @@ def print_report(report: CleanupReport) -> None:
         or report.kept_worktrees
         or report.deleted_branches
         or report.kept_branches
+        or report.stranded_branches
         or report.errors
     ):
         print("worktrees: nothing to clean")
+
+
+def _held_commits(stranded: StrandedBranch) -> str:
+    if stranded.commits is None:
+        return f"commit count unavailable; not in {stranded.unmerged_into}"
+    plural = "" if stranded.commits == 1 else "s"
+    return f"{stranded.commits} commit{plural} not in {stranded.unmerged_into}"
