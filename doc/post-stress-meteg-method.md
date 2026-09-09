@@ -87,8 +87,34 @@ The fatal invariants connect all three quantities per verse system: source entri
 chanted words plus duplicate phonetic-reading entries, and duplicate entries equal variant rows
 plus the two measured grouping differences. The resulting MAM denominators are 233,277 prose
 chanted words and 29,542 poetic chanted words. The corresponding MBS_O chanted-word counts are
-12,828 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
+12,849 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
 positional census separately counts 12,962 and 1,805 individual pre-stress marks.
+
+## A census chanted word is identified by position, not by form
+
+The census counts chanted words, and one numbered verse can hold the same form twice. So a
+chanted word is identified by its numbered verse and by its position among that verse's parsed
+entries. Keying it by form instead — the numbered verse, the chanted word and its `jta` — makes
+each such pair read as a single chanted word carrying both occurrences' meteg marks.
+
+The census was keyed by form until 2026-09-09, and reported 12,828 prose MBS_O chanted words
+and 143 MBS_O chanted words with more than one meteg. Twenty-one of those 143 were one form
+counted against itself, each occurrence carrying one meteg, so the MBS_O counts were 21 short
+of the chanted words they are described as counting and the multiple-meteg count was 21 too
+many. All 21 are in prose verses. The corrected figures are 12,849 prose MBS_O chanted words
+and 122 with more than one meteg. The poetic MBS_O count, both MAS counts and every positional
+count are unaffected: no MAS chanted word shares a numbered verse with another chanted word of
+the same form.
+
+The independent oracle is `py/foi/foiz_wt_mtgmtg.py`, which counts U+05BD per chanted word
+straight from MAM-parsed-plus with no stress oracle at all. Its tracked output
+`gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` has 135 chanted words carrying two meteg marks
+beside any verse-final silluq: the groups `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102 and
+`2/sopa-y/maq-y` 14. Those 135 reconcile against the census as the 122 MBS_O chanted words, the
+ten MAS chanted words that also carry one meteg before the stress, and three cant-bet Decalogue
+forms — לֹֽא־יִהְיֶֽה־לְךָ֩ at Exodus 20:2 and לֹֽא־תַעֲשֶֽׂה־לְךָ֣ at Exodus 20:3 and Deuteronomy 5:7 — which the
+features-of-interest survey counts because its `מ:כפול` handler concatenates both cantillation
+strands where the census counts cant-alef alone.
 
 ## Snapshot currency is not source-form alignment
 

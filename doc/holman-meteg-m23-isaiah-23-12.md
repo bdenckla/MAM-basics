@@ -149,8 +149,12 @@ require a FOLLOWING chanted word, which excludes a verse-final chanted word by c
 
 **Correction, 2026-09-08: the tracked survey now counts 232 MAS chanted words, 178 in prose
 verses and 54 in poetic verses.** Counting each qamats-variant MAM chanted word once gives
-prose and poetic denominators of 233,277 and 29,542, MBS_O chanted-word counts of 12,828 and
-1,786, and silluq counts of 18,738 and 4,465. The positional census separately counts 12,962
+prose and poetic denominators of 233,277 and 29,542, MBS_O chanted-word counts of 12,849 and
+1,786, and silluq counts of 18,738 and 4,465. (The prose MBS_O count read 12,828 until
+2026-09-09, when the census stopped identifying a chanted word by its form: 21 prose forms
+occur twice in one numbered verse with one meteg on each occurrence, and each such pair had
+been counted as one chanted word carrying two. `doc/post-stress-meteg-method.md` has the
+correction in full.) The positional census separately counts 12,962
 and 1,805 individual pre-stress marks. The current currency comparison finds nine differing
 numbered verses, 38,161 U+05BD in the Phonetic MAM snapshot against 38,170 in MAM-simple. The
 231 total and tables below remain the historical output of the untracked 2026-09-03 script.
