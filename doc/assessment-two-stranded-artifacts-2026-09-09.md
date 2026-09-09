@@ -127,8 +127,33 @@ safe, and none is needed.
 
 **These four are the first real instance of a weakness the new lint's docstring admits**, that "a
 `.txt` is covered by nothing". A blanket widening to `.txt` remains wrong, since 11 of the 15
-offending `.txt` are genuine captures; a scope naming `in/accgram/edition_transcriptions/*.txt`
-would cover these four without taking in any capture.
+offending `.txt` are genuine captures.
+
+**Ben's decision, 2026-09-09: the lint's scope gains `in/accgram/edition_transcriptions/*.txt`.**
+That pathspec covers all 12 transcription `.txt` and takes in no capture, so it closes the gap
+without weakening the file-type argument the docstring makes for everything else. The change is one
+pathspec element:
+
+    ["git", "ls-files", "--", "*.md", "doc/*.html",
+     "in/accgram/edition_transcriptions/*.txt"]
+
+Three consequences for whoever applies it:
+
+1. **The widening and the repair must land together.** The four files are unrepaired on `main`, so
+   adding the pathspec without repairing them makes the lint fail on arrival. Recommendation 4 and
+   this widening are one change, not two.
+2. **The docstring's "WHAT IT COVERS, AND WHY NOT MORE" section needs rewriting**, since it argues
+   against widening to `.txt` and now carries a named exception. It should say why this pathspec is
+   not the blanket widening it rejects: 12 files, all Ben-authored, none a capture.
+3. **The file counts move again, by exactly +12**, the transcription directory holding 12 `.txt`.
+   The absolute figure is not worth pinning, because every `.md` added to the repository moves it —
+   it was 189 at `a50da28b` and 190 once this assessment was committed. Re-measure with
+   `git ls-files -- "*.md" "doc/*.html" "in/accgram/edition_transcriptions/*.txt"` rather than
+   copying a number. `_FLOOR = 100` holds with room either way.
+
+**This decision is recorded rather than applied**, because `py/tests/test_prose_mark_order.py` does
+not exist on `main` — it is on the unmerged branch. There is nothing on `main` whose scope could be
+widened, so the change belongs to the merge described in §3 and §8's recommendation 1.
 
 ### One silent-skip channel in the lint
 
@@ -524,18 +549,17 @@ Recommended, each with the section that argues it:
    that state visible.
 
 4. **Repair the seven Unicode-normal clusters in the four
-   `in/accgram/edition_transcriptions/*.txt`** (§1). They are hand-authored prose in comment
-   headers, not captures, and the header is never re-derived, so the repair cannot be undone by
-   `build --derive-only` or fail `build --check`.
+   `in/accgram/edition_transcriptions/*.txt`, and widen the lint's scope to cover them** (§1). They
+   are hand-authored prose in comment headers, not captures, and the header is never re-derived, so
+   the repair cannot be undone by `build --derive-only` or fail `build --check`. The widening is
+   Ben's decision of 2026-09-09; it must land in the same change as the repair, because the pathspec
+   without the repair makes the lint fail on arrival. Recommendation 1's merge is where both belong.
 
 Left for Ben, because each is a decision rather than a correction:
 
-1. **Whether the lint's scope gains `in/accgram/edition_transcriptions/*.txt`** (§1), so that
-   recommendation 4's repair is guarded rather than merely done once. A blanket widening to `.txt`
-   is not the way, since 11 of the 15 offending `.txt` are genuine captures.
-2. **Whether the review joins the public periodic series** now that its subject files are public
+1. **Whether the review joins the public periodic series** now that its subject files are public
    (§5), which is the plan's own D16 asked again under changed facts.
-3. **Whether to close the lint's `is_file()` silent-skip channel** (§1).
+2. **Whether to close the lint's `is_file()` silent-skip channel** (§1).
 
 ## 9. How the figures here were measured
 
