@@ -53,34 +53,34 @@ meteg" cases.
 
 | M | verse.atom | MAM | Aleppo per Holman | Holman's note | mgketer record | mgketer's subcat |
 |---|---|---|---|---|---|---|
-| M1 | 1Kings 7:24.17 | בִּיצֻֽקָתֽוֹ׃ | בִּיצֻקָתֽוֹ׃ | no Meteg under Tzadi | `1K7:24#8701a1ff` | MAM adds meteg on tsadi |
-| M2 | 1Kings 11:1.13 | צֵֽדְנִיֹּ֖ת | צֵדְנִיֹּ֖ת | no Meteg under Tzadi | `1K11:1#89ecc089` | MAM adds meteg on tsadi |
-| M3 | 1Kings 12:18.21 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `1K12:18#47bf0ab0` | MAM adds meteg on resh |
-| M4 | 1Kings 15:5.19 | הַֽחִתִּֽי׃ | הַחִתִּֽי׃ | no Meteg under Hey | `1K15:5#5db01408` | MAM adds meteg on he |
+| M1 | 1Kings 7:24.17 | בִּיצֻֽקָתֽוֹ׃ | בִּיצֻקָתֽוֹ׃ | no Meteg under Tzadi | `1K7:24#8701a1ff` | MAM adds meteg on tsadi |
+| M2 | 1Kings 11:1.13 | צֵֽדְנִיֹּ֖ת | צֵדְנִיֹּ֖ת | no Meteg under Tzadi | `1K11:1#89ecc089` | MAM adds meteg on tsadi |
+| M3 | 1Kings 12:18.21 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `1K12:18#47bf0ab0` | MAM adds meteg on resh |
+| M4 | 1Kings 15:5.19 | הַֽחִתִּֽי׃ | הַחִתִּֽי׃ | no Meteg under Hey | `1K15:5#5db01408` | MAM adds meteg on he |
 | M5 | 1Kings 15:19.23 | מֵֽעָלָֽי׃ | מֵעָלָֽי׃ | no Meteg under Mem | `1K15:19#cafc8dde` | MAM adds meteg on mem |
-| M6 | 1Kings 17:16.14 | אֵֽלִיָּֽהוּ׃ | אֵלִיָּֽהוּ׃ | no Meteg under Alef | `1K17:16#8fc59827` | MAM adds meteg on alef |
+| M6 | 1Kings 17:16.14 | אֵֽלִיָּֽהוּ׃ | אֵלִיָּֽהוּ׃ | no Meteg under Alef | `1K17:16#8fc59827` | MAM adds meteg on alef |
 | M7 | 1Kings 18:1.20 | הָֽאֲדָמָֽה׃ | הָאֲדָמָֽה׃ | no Meteg under Hey | `1K18:1#09622a75` | MAM adds meteg on 1st he |
 | M8 | 1Kings 22:7.6 | לַֽיהֹוָ֖ה | לַיהֹוָ֖ה | no Meteg under Lamed | `1K22:7#1401a557` | MAM adds meteg on lamed |
 | M9 | 1Samuel 18:9.6 | מֵֽהַיּ֥וֹם | מֵהַיּ֥וֹם | no Meteg under Mem | `1S18:9#489fce9c` | MAM adds meteg on mem |
 | M10 | 1Samuel 27:3.15 | וַֽאֲבִיגַ֥יִל | וַאֲבִיגַ֥יִל | no Meteg under Vav | `1S27:3#672abe3f` | MAM adds meteg on vav |
-| M11 | 2Chronicles 6:27.17 | וְנָֽתַתָּ֤ה | וְנָתַתָּ֤ה | no Meteg under Nun | `2C6:27#bd6775e1` | MAM adds meteg on nun |
+| M11 | 2Chronicles 6:27.17 | וְנָֽתַתָּ֤ה | וְנָתַתָּ֤ה | no Meteg under Nun | `2C6:27#bd6775e1` | MAM adds meteg on nun |
 | M12 | 2Chronicles 6:28.9 | וְיֵֽרָק֜וֹן | וְיֵרָק֜וֹן | no Meteg under Yod | `2C6:28#cdca1a8e` | MAM adds meteg on yod |
 | M13 | 2Chronicles 18:33.21 | הׇֽחֳלֵֽיתִי׃ | הׇחֳלֵֽיתִי׃ | no Meteg under Hey | `2C18:33#8e58aa4c` | MAM adds meteg on he |
 | M14 | 2Chronicles 24:25.13 | יְהֽוֹיָדָ֣ע | יְהוֹיָדָ֣ע | no Meteg under Hey | `2C24:25#afdff6fe` | MAM adds meteg on he |
 | M15 | 2Chronicles 32:7.18 | מֵֽעִמּֽוֹ׃ | מֵעִמּֽוֹ׃ | no Meteg under first Mem | `2C32:7#10b8f3ac` | MAM adds meteg on 1st mem |
-| M16 | 2Kings 7:12.19 | וַיֵּֽצְא֤וּ | וַיֵּצְא֤וּ | no Meteg under Yod | `2K7:12#e4463df0` | MAM adds meteg on yod |
-| M18 | 2Kings 21:12.11 | עַל־יְרֽוּשָׁלַ֖͏ִם | עַל־יְרוּשָׁלַ֖͏ִם | no Meteg under Resh | `2K21:12#65ca7700` | MAM adds meteg on resh |
-| M19 | 2Samuel 11:3.14 | הַֽחִתִּֽי׃ | הַחִתִּֽי׃ | no Meteg under Hey | `2S11:3#5db01408` | MAM adds meteg on he |
-| M20 | 2Samuel 12:31.25 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `2S12:31#47bf0ab0` | MAM adds meteg on resh |
-| M21 | 2Samuel 15:37.8 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `2S15:37#47bf0ab0` | MAM adds meteg on resh |
-| M22 | 2Samuel 18:3.9 | לֹֽא־יָשִׂ֧ימוּ | לֹא־יָשִׂ֧ימוּ | no Meteg under Lamed | `2S18:3#df68039b` | MAM adds meteg on lamed |
+| M16 | 2Kings 7:12.19 | וַיֵּֽצְא֤וּ | וַיֵּצְא֤וּ | no Meteg under Yod | `2K7:12#e4463df0` | MAM adds meteg on yod |
+| M18 | 2Kings 21:12.11 | עַל־יְרֽוּשָׁלַ֖͏ִם | עַל־יְרוּשָׁלַ֖͏ִם | no Meteg under Resh | `2K21:12#65ca7700` | MAM adds meteg on resh |
+| M19 | 2Samuel 11:3.14 | הַֽחִתִּֽי׃ | הַחִתִּֽי׃ | no Meteg under Hey | `2S11:3#5db01408` | MAM adds meteg on he |
+| M20 | 2Samuel 12:31.25 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `2S12:31#47bf0ab0` | MAM adds meteg on resh |
+| M21 | 2Samuel 15:37.8 | יְרֽוּשָׁלָֽ͏ִם׃ | יְרוּשָׁלָֽ͏ִם׃ | no Meteg under Resh | `2S15:37#47bf0ab0` | MAM adds meteg on resh |
+| M22 | 2Samuel 18:3.9 | לֹֽא־יָשִׂ֧ימוּ | לֹא־יָשִׂ֧ימוּ | no Meteg under Lamed | `2S18:3#df68039b` | MAM adds meteg on lamed |
 | M23 | Isaiah 23:12.11 | ק֣וּמִי | ק֣וּמִֽי | Aleppo HAS a Meteg under Mem | `I23:12#e5e7ccd9` | mgketer adds meteg on mem |
-| M25 | Judges 1:7.21 | יְרֽוּשָׁלַ֖͏ִם | יְרוּשָׁלַ֖͏ִם | no Meteg under Resh | `Ju1:7#65ca7700` | MAM adds meteg on resh |
-| M26 | Judges 1:32.9 | הֽוֹרִישֽׁוֹ׃ | הוֹרִישֽׁוֹ׃ | no Meteg under Hey | `Ju1:32#0c7fe116` | MAM adds meteg on he |
+| M25 | Judges 1:7.21 | יְרֽוּשָׁלַ֖͏ִם | יְרוּשָׁלַ֖͏ִם | no Meteg under Resh | `Ju1:7#65ca7700` | MAM adds meteg on resh |
+| M26 | Judges 1:32.9 | הֽוֹרִישֽׁוֹ׃ | הוֹרִישֽׁוֹ׃ | no Meteg under Hey | `Ju1:32#0c7fe116` | MAM adds meteg on he |
 | M27 | Judges 5:6.7 | חָֽדְל֖וּ | חָדְל֖וּ | no Meteg under Chet | `Ju5:6#07a4411d` | MAM adds meteg on het |
 | M28 | Judges 5:11.13 | יָֽרְד֥וּ | יָרְד֥וּ | no Meteg under Yod | `Ju5:11#c33f86f3` | MAM adds meteg on yod |
-| M29 | Judges 6:1.2 | בְנֵֽי־יִשְׂרָאֵ֛ל | בְנֵי־יִשְׂרָאֵ֛ל | no Meteg under Nun | `Ju6:1#9abe09f1` | MAM adds meteg on nun |
-| M30 | Judges 6:4.1 | וַיַּֽחֲנ֣וּ | וַיַּחֲנ֣וּ | no Meteg under Yod | `Ju6:4#fafbb459` | MAM adds meteg on yod |
+| M29 | Judges 6:1.2 | בְנֵֽי־יִשְׂרָאֵ֛ל | בְנֵי־יִשְׂרָאֵ֛ל | no Meteg under Nun | `Ju6:1#9abe09f1` | MAM adds meteg on nun |
+| M30 | Judges 6:4.1 | וַיַּֽחֲנ֣וּ | וַיַּחֲנ֣וּ | no Meteg under Yod | `Ju6:4#fafbb459` | MAM adds meteg on yod |
 | M31 | Judges 6:5.4 | יַֽעֲל֜וּ | יַעֲל֜וּ | no Meteg under Yod | `Ju6:5#24c3e32f` | MAM adds meteg on yod |
 | M33 | Judges 21:16.3 | הָֽעֵדָ֔ה | הָעֵדָ֔ה | no Meteg under Hey | `Ju21:16#00d8d510` | MAM adds meteg on 1st he |
 
@@ -94,11 +94,11 @@ Ben's observation, 2026-09-03, recorded here as an aside and not verified in thi
 the Aleppo Codex, the atom of each of these five records lacks the expected sof pasuq mark (׃).
 **There are no plans to reflect that lack in MAM.** The five, all verse-final:
 
-1. M1, 1 Kings 7:24, בִּיצֻֽקָתֽוֹ׃
-2. M4, 1 Kings 15:5, הַֽחִתִּֽי׃
+1. M1, 1 Kings 7:24, בִּיצֻֽקָתֽוֹ׃
+2. M4, 1 Kings 15:5, הַֽחִתִּֽי׃
 3. M5, 1 Kings 15:19, מֵֽעָלָֽי׃
-4. M20, 2 Samuel 12:31, יְרֽוּשָׁלָֽ͏ִם׃
-5. M26, Judges 1:32, הֽוֹרִישֽׁוֹ׃
+4. M20, 2 Samuel 12:31, יְרֽוּשָׁלָֽ͏ִם׃
+5. M26, Judges 1:32, הֽוֹרִישֽׁוֹ׃
 
 Neither Holman's page nor the mgketer reports record the missing sof pasuq: Holman's Aleppo
 column has ׃ on all five, and mgketer's `mgk-side` has it too, so mgketer's transcription of
@@ -141,10 +141,10 @@ to read at those spots than at the other 27.
    the `מ:קמץ` template this same atom sits in.)
 2. **M22, 2 Samuel 18:3, is one of two look-alike compounds in one verse, filed in opposite
    categories.** The verse has לא־ישימו twice. `2S18:3#df68039b` (`by-book/BB-2Samuel/diffs.html`
-   near line 212) is Holman's M22: MAM לֹֽא־יָשִׂ֧ימוּ, mgketer לֹא־יָשִׂ֧ימוּ, "MAM adds meteg on
+   near line 212) is Holman's M22: MAM לֹֽא־יָשִׂ֧ימוּ, mgketer לֹא־יָשִׂ֧ימוּ, "MAM adds meteg on
    lamed", atom 9 with a darga. `2S18:3#d300caba` (near line 232, and in
-   `by-type/mgketer-adds-meteg.html`) is the other compound: MAM לֹא־יָשִׂ֤ימוּ, mgketer
-   לֹֽא־יָשִׂ֤ימוּ, "mgketer adds meteg on lamed", with a mahpakh, and **no Holman record covers
+   `by-type/mgketer-adds-meteg.html`) is the other compound: MAM לֹא־יָשִׂ֤ימוּ, mgketer
+   לֹֽא־יָשִׂ֤ימוּ, "mgketer adds meteg on lamed", with a mahpakh, and **no Holman record covers
    it**. Only the accent tells the two apart, so anything matching on letters alone will
    conflate them.
 

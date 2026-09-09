@@ -45,7 +45,7 @@ So the suggestion is to add a meteg on the mem, the syllable after the stress. T
 MAM (`MAM-parsed/plain/C1-Isaiah.json` line 8052; `plus/` line 4780 has no note on the atom):
 
 ```
-ק֣וּמִי עֲבֹ֔רִי גַּם־שָׁ֖ם לֹא־יָנ֥וּחַֽ לָֽךְ׃
+ק֣וּמִי עֲבֹ֔רִי גַּם־שָׁ֖ם לֹא־יָנ֥וּחַֽ לָֽךְ׃
 ```
 
 The munaḥ on the qof is a retracted accent (nesiga): the next chanted word, עֲבֹ֔רִי, is
@@ -76,25 +76,25 @@ OCR line numbers drift.
 2. **§332, "Gaʿya on an Open Syllable after the Accent"** (`N0329.md`, heading line 48, body
    lines 50–73). A chanted word stressed on the penult and ending in an open syllable,
    followed by a chanted word accented on its first syllable, may have gaʿya on that final
-   open syllable. Examples: Isaiah 14:31 הֵילִ֤ילִֽי שַׁ֙עַר֙, 2 Kings 1:13 עֲבָדֶ֥יךָֽ, Jeremiah 9:20
+   open syllable. Examples: Isaiah 14:31 הֵילִ֤ילִֽי שַׁ֙עַר֙, 2 Kings 1:13 עֲבָדֶ֥יךָֽ, Jeremiah 9:20
    עָ֤לָֽה מָ֙וֶת֙, Isaiah 52:11 ס֤וּרֽוּ. "Only rarely marked. It is most common in early MSS", even
    there "only in scattered places", and not marked in printed texts (lines 64, 71–73). It
    "occurs more often where the vowel of the stress syllable of the second word is preceded
-   by *shewa*" (lines 66–69: Genesis 28:2 פַּדֶּ֣נָֽה אֲרָ֔ם, Deuteronomy 32:13, Jeremiah 9:18).
+   by *shewa*" (lines 66–69: Genesis 28:2 פַּדֶּ֣נָֽה אֲרָ֔ם, Deuteronomy 32:13, Jeremiah 9:18).
    **קוּמִי עֲבֹרִי is this section's case, in its commoner subtype**, since עֲבֹ֔רִי begins with
    a ḥaṭaf. Ben's adaptation: `../MAM-private/al-hatorah/py/itm/my_yeivin_sec_332.py`.
 3. **§338, "Gaʿya on a Closed Syllable with Tsere after the Accent"** (`N0329.md` line 184;
    `N0338.md` lines 1–9): where the accent retracts and a final tsere stays, that tsere has
-   gaʿya, "marked both in MSS and in printed texts". Examples: Isaiah 66:3 עֹ֣רֵֽף כֶּ֔לֶב and
+   gaʿya, "marked both in MSS and in printed texts". Examples: Isaiah 66:3 עֹ֣רֵֽף כֶּ֔לֶב and
    מְבָ֣רֵֽךְ אָ֑וֶן, Isaiah 40:7–8 נָ֣בֵֽל. §308 (`N0304.md` lines 119–164) is the nesiga rule that
    feeds it, adding Isaiah 49:7 לִמְתָ֤עֵֽב and, with furtive pataḥ, Isaiah 63:12 בּ֣וֹקֵֽעַ.
 4. **§354** (`N0345.md` line 208): phonetic gaʿya "on the last syllable of a word with
    penultimate stress if it ends with a guttural and the following word begins with *lamed*
    or *nun*", extended to furtive pataḥ at lines 214–216. **This is the rule behind
-   יָנ֥וּחַֽ לָֽךְ in the same verse** and behind Isaiah 59:16 וַתּ֤וֹשַֽׁע־לוֹ֙.
+   יָנ֥וּחַֽ לָֽךְ in the same verse** and behind Isaiah 59:16 וַתּ֤וֹשַֽׁע־לוֹ֙.
 5. **§357, "Maqqef after Gaʿya"** (`N0345.md` lines 281–286) enumerates the three contexts as
    one class; `chanted_word_accents.py` already cites it for the maqaf-compound case.
-6. **§325** (`N0309.md` line 376): gaʿya before paseq, 1 Kings 2:30 וַיֹּ֥אמֶֽר ׀, "only marked in
+6. **§325** (`N0309.md` line 376): gaʿya before paseq, 1 Kings 2:30 וַיֹּ֥אמֶֽר ׀, "only marked in
    this position in early MSS, and is rare even there".
 
 §342 (`N0342.md` lines 1–30): closed-syllable gaʿya, which covers §338, is marked carefully
@@ -197,7 +197,7 @@ Post-stress metegs by the accent on the stressed letter: prose munaḥ 72, mahpa
 and the postpositive); poetic munaḥ 34, merkha 13, atnaḥ hafukh 2, mahpakh 2, ṭarḥa 1, yeraḥ
 ben yomo 1, illuy 1. Every case is listed by book in the report, with its Phonetic MAM form,
 so the Yeivin type of each is readable off the list; the Isaiah 15 are all §332, §338 or
-§354 cases, and the poetic 54 are overwhelmingly §338 and §354 shapes (שֹׁמֵ֣עַֽ, אֹ֣הֵֽב, ח֣וֹלֵֽל).
+§354 cases, and the poetic 54 are overwhelmingly §338 and §354 shapes (שֹׁמֵ֣עַֽ, אֹ֣הֵֽב, ח֣וֹלֵֽל).
 
 Three things about the count worth knowing:
 
@@ -210,7 +210,7 @@ Three things about the count worth knowing:
 3. **The exact shape of M23 occurs in MAM once**: Daniel 7:5 ק֥וּמִֽי אֲכֻ֖לִי, merkha on the qof,
    meteg on the final מִי, next chanted word ḥaṭaf-initial and stressed on its first full
    syllable, Breuer's first tier. Of the other 14 atoms in MAM matching ק + accent + וּמִי,
-   none has the meteg; Lamentations 2:19's ק֣וּמִי ׀ רֹ֣נִּי, with munaḥ legarmeh, is the nearest.
+   none has the meteg; Lamentations 2:19's ק֣וּמִי ׀ רֹ֣נִּי, with munaḥ legarmeh, is the nearest.
 
 MAM is selective within the optional §332 type: of Yeivin's examples it has 2 Kings 1:13
 עֲבָדֶ֥יךָֽ, Jeremiah 9:20 עָ֤לָֽה, Isaiah 14:31 and Isaiah 48:6, and lacks the meteg on Isaiah
@@ -231,7 +231,7 @@ MAM is selective within the optional §332 type: of Yeivin's examples it has 2 K
 A meteg on a syllable after the silluq would complicate telling meteg from silluq, which
 share U+05BD. The record on this:
 
-1. **The one case is 1 Samuel 17:5's verse-final נְחֹֽשֶֽׁת׃**, stressed on the penult, so the
+1. **The one case is 1 Samuel 17:5's verse-final נְחֹֽשֶֽׁת׃**, stressed on the penult, so the
    first U+05BD is the silluq and the second, on the final syllable, is a meteg after it. The
    source is Jacobson, *Chanting the Hebrew Bible*, page 31, which reports it as the only case.
 2. **Where it is written down.** `bdenckla/MAM-for-JPS#19` "distinguish meteg from silluq?"
@@ -249,7 +249,7 @@ share U+05BD. The record on this:
 4. **What the code encodes.** Nothing names 1 Samuel 17:5. `py/foi/mtgmtg_explanations.py`
    lines 41–49 records the concern as unfounded for MAM. `py/accgram/meteg_silluq_context.py`'s
    `u05bd_is_silluq()` decides by token position only, never by syllable, so run over UXLC or
-   WLC it would call both marks of נְחֹֽשֶֽׁת׃ silluq. Safe today because grammatical claims take
+   WLC it would call both marks of נְחֹֽשֶֽׁת׃ silluq. Safe today because grammatical claims take
    MAM as their corpus; worth knowing if that function is ever pointed at a diplomatic text.
 5. **This is a different question from M23's.** Yeivin's and Breuer's post-stress gaʿya rules
    require a following chanted word, so a post-silluq meteg has no grammatical home in either
