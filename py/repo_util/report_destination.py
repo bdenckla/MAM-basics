@@ -2,8 +2,10 @@
 
 MAM-basics is public and is where every cross-repo sweep is RUN, so the path of
 least resistance for a report is a file under this repo -- which is exactly the
-path that publishes a private repo's internals. Three of the repos
-all-repos.code-workspace lists are private (MAM-private, github-misc, hbofonts),
+path that publishes a private repo's internals. Two of the repos
+all-repos.code-workspace lists are private (MAM-private and hbofonts; github-misc
+was a third until its clone was retired on 2026-09-09, its user-level Claude and
+Codex configuration having become canonical here at dot-claude/ and dot-Codex/),
 and MAM-private in particular holds six whole evacuated trees, so its findings
 name paths like ``near-aleppo/census/adonai_census.py:21``. A repo NAME is not
 private (Ben's decision, 2026-08-27); a path inside one is.
