@@ -204,8 +204,12 @@ is still an ancestor. Three other worktrees stood clean at the same time, two
 Claude worktrees at `becc6f00` and the Codex worktree
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` at `5636d38a`, so
 expect a co-present session and prove non-collision rather than serializing
-against it. Use whichever checkout is named when this plan is launched; a fresh
-worktree is correct if none is.
+against it. Within the hour that co-present session integrated its review record
+and `main` moved again, to `5636d38a` at 08:19 that same morning, with `becc6f00`
+still an ancestor. Two measurements of `main` inside one session is why the
+instruction below is to re-measure rather than to trust any revision written here.
+Use whichever checkout is named when this plan is launched; a fresh worktree is
+correct if none is.
 
 Re-establish the state rather than trusting either revision, and do not begin
 implementation in a dirty checkout.
