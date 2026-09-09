@@ -2,6 +2,14 @@
 
 State: executed 2026-09-08
 
+**CORRECTION, 2026-09-09: ONE FIGURE IN THE WAVE 2 RESULT BELOW IS HISTORICAL.** The prose
+MBS_O count it records as 12,828 is 12,849 in the current tracked survey. The census stopped
+identifying a chanted word by its form on 2026-09-09: 21 prose forms occur twice in one
+numbered verse with one meteg on each occurrence, and each such pair had been counted as one
+chanted word carrying two, which also put the count of MBS_O chanted words with more than one
+meteg at 143 rather than 122. Every other figure in that result stands.
+`doc/post-stress-meteg-method.md` has the correction in full.
+
 The planning phase and all remediation work were completed on 2026-09-08. Ben's decision on
 2026-09-08 places finding 23.2's worktree housekeeping outside remediation; Ben will track that
 housekeeping separately.
