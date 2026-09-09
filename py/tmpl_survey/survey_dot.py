@@ -5,6 +5,7 @@ import os
 import shutil
 import subprocess
 
+from mb_cmn import graphviz_pin
 from mb_cmn import provenance
 from mb_cmn import uni_heb as uh
 from tmpl_survey import dot_node_collapse
@@ -592,10 +593,24 @@ def _ensure_svg_comment(svg_path, comment_text):
 
 
 def render_svg(dot_path, svg_path, generator_file=None):
-    """Render a .dot file to SVG. Returns True on success, False if dot is unavailable."""
+    """Render a .dot file to SVG, or raise. Returns True on success.
+
+    A missing Graphviz raises rather than returning False, and a Graphviz that is
+    not the pinned one raises before anything is written. Until 2026-09-09 this
+    returned False when dot was absent, and both callers below discarded that --
+    so on a machine without Graphviz the .dot files were rewritten, the .svg
+    files left stale, and nothing said a word. Only pipeline_graph.render_svg
+    checked the flag. The True is kept because it reads as "rendered", and
+    because the alternative is a bare None that says nothing at a call site.
+    """
     dot = _find_dot()
     if dot is None:
-        return False
+        raise FileNotFoundError(
+            "Graphviz dot executable was not found, so "
+            f"{svg_path} cannot be rendered. Looked on PATH and at "
+            f"{_DOT_FALLBACK}."
+        )
+    graphviz_pin.check_installed(dot)
     subprocess.run(
         [dot, "-Tsvg", "-o", svg_path, dot_path],
         check=True,

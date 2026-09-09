@@ -151,9 +151,12 @@ def write_dot_file(dot_path=_OUT_DOT_PATH, generator_file=None):
 
 
 def render_svg(dot_path=_OUT_DOT_PATH, svg_path=_OUT_SVG_PATH, generator_file=None):
-    rendered = survey_dot.render_svg(dot_path, svg_path, generator_file=generator_file)
-    if not rendered:
-        raise FileNotFoundError("Graphviz dot executable was not found")
+    # survey_dot.render_svg raises on a missing or unpinned Graphviz as of
+    # 2026-09-09, so the "if not rendered" guard that stood here is gone rather
+    # than kept as unreachable code. This function was the ONLY caller that
+    # checked that flag; the two call-graph writers discarded it and rendered
+    # nothing in silence, which is why the flag became an exception.
+    survey_dot.render_svg(dot_path, svg_path, generator_file=generator_file)
 
 
 def write_pipeline_files(

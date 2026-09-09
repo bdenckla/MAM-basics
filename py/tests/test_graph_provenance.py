@@ -203,8 +203,17 @@ class TestGraphProvenance(unittest.TestCase):
                     encoding="utf-8",
                 )
 
+            # render_svg asks graphviz_pin what the dot executable is before it
+            # renders, as of 2026-09-09. There is no real dot here, so the reading
+            # is stubbed to report the pinned stamp -- which leaves check_installed
+            # doing its own real comparison rather than being stubbed out whole.
             with (
                 mock.patch.object(survey_dot, "_find_dot", return_value="dot"),
+                mock.patch.object(
+                    survey_dot.graphviz_pin,
+                    "installed_stamp",
+                    return_value=survey_dot.graphviz_pin.PINNED_STAMP,
+                ),
                 mock.patch(
                     "tmpl_survey.survey_dot.subprocess.run", side_effect=fake_run
                 ),
