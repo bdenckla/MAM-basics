@@ -18,7 +18,7 @@
     },
     "github-misc": {
       "visibility": "private",
-      "comment": "Tracks the canonical copies of the dotfiles, ~/.claude/CLAUDE.md and the hebrew-prose skill among them."
+      "comment": "Tracks dot-emacs and dot-gitconfig. Its dot-claude/ and dot-Codex/ have been breadcrumb READMEs since 2026-09-09, when the user-level Claude and Codex configuration -- ~/.claude/CLAUDE.md and the hebrew-prose skill among it -- became canonical in MAM-basics' own dot-claude/ and dot-Codex/."
     },
     "hbofonts": {
       "visibility": "private",
