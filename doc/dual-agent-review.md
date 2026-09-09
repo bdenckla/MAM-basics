@@ -27,7 +27,13 @@ writes `doc/review-findings-<date>.md`. Eight such files exist, from 2026-07-29 
 
 Two properties of the series matter to everything below.
 
-1. **The series is doc-only since 2026-09-01** (`5b89033`). Each file carries a `State:` line at
+1. **The series is doc-only since 2026-09-01** (`5b89033`). **"Doc-only" says where a review is
+   RECORDED, never what it may READ** — a distinction worth spelling out, because two documents
+   written on 2026-09-09 both took it the other way, and either reading would send a session to Ben
+   for a scope decision he does not owe. A review reads whatever the window changed in a public
+   repository: `doc/review-findings-2026-09-08.md` is headed "review of the public repos" and
+   accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
+   is the RECORD. Each file carries a `State:` line at
    line 3 directly under the H1, reading `acted on <date>` plus any clause naming what is not. The
    thin tracking issue every review used to file — wlc-utils#87, then MAM-basics #219, #228, #231,
    #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
@@ -35,6 +41,16 @@ Two properties of the series matter to everything below.
    must do still files a real issue with a real body; #233 is that shape.
 2. **The series is public-only since 2026-08-26.** It does not read MAM-private. This is load-bearing
    for the Codex scoping rule below, not incidental.
+
+   **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
+   the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future
+   review should apply it.** The twelve files it reached became canonical in this public repository
+   that day, at `dot-claude/` and `dot-Codex/`, so the ordinary sweep reads them like any other
+   tracked file; and github-misc's clone was retired the same day, so performing the byte-compare
+   would now mean re-cloning a private remote to compare a file against itself. It is recorded as
+   spent rather than deleted so that a reader of finding 5.6 can still see why it existed. Nothing
+   replaces it: **no scope widening and no new exception is owed for `dot-claude/` or `dot-Codex/`**,
+   which point 1 above is what settles.
 
 The convention of record for both properties is the "The doc/ directory standard" section of
 `py/repo_util/check_repo_standards.py`'s module docstring. Read it there rather than re-deriving it.
@@ -267,8 +283,10 @@ that a session running a Codex review knows the dependency exists and can check 
 met.
 
 **It has been met.** `~/.codex/AGENTS.md` exists and is 1,077 lines, a port of `~/.claude/CLAUDE.md`
-carrying the same opening convention — its canonical copy is `github-misc`'s `dot-Codex/AGENTS.md`,
-alongside the `dot-claude/` copies, with the same manual write-back and the same drift check.
+carrying the same opening convention — its canonical copy is **this repository's**
+`dot-Codex/user-wide-AGENTS.md` since 2026-09-09, alongside the `dot-claude/` copies, with the same
+manual write-back and the same drift check. It was `github-misc`'s `dot-Codex/AGENTS.md` until that
+day; the rename is so that a nested `CLAUDE.md` does not load itself inside MAM-basics.
 Re-measured 2026-09-08 with `(Get-Content C:\Users\BenDe\.Codex\AGENTS.md).Count`. Note the capital C
 in `dot-Codex`, which a case-sensitive glob for `dot-codex` misses.
 

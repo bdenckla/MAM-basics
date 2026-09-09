@@ -8,8 +8,8 @@ behavior: does this line contain a phrase Ben has banned?
 
 The rules themselves are not defined here.  Their canonical home is the
 user-level ``hebrew-prose`` skill (``~/.claude/skills/hebrew-prose/``, tracked
-in ``github-misc`` at ``dot-claude/skills/``); ``CLAUDE.md``'s opening section
-points at it.  This file only enforces the subset that is mechanically
+in THIS repository at ``dot-claude/skills/`` since 2026-09-09, and in
+``github-misc`` before that); ``CLAUDE.md``'s opening section points at it.  This file only enforces the subset that is mechanically
 checkable, and each row cites the rule it comes from.
 
 Any single line may opt out with an inline ``# prose-ok`` pragma (cf.
