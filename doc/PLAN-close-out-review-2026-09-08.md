@@ -5,6 +5,10 @@ after `main` moved, the dated notes below supersede the table where they differ,
 was revised that afternoon on Ben's decision to keep the work on the branch until the end, and D9 and
 the substance of D11 were decided the same afternoon (step 2).
 
+Status updated 2026-09-09 after step 1: Ben closed the review exchange with the
+skill-reading time left unknown. Step 1 is complete; step 2 is active. Ben's exact
+decision is recorded below, beside step 1's earlier execution line.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -125,6 +129,14 @@ worktree.
 
 Executed 2026-09-09: commit `8c49cdd2666382fe838d50affdff432e381c2694`; objection recorded; step 1 stops for Ben's decision.
 
+**Ben's decision closing the review exchange, 2026-09-09:**
+
+> Leave Claude’s skill-reading time unknown. The uncertainty does not affect the review’s conclusions. Close the review exchange and proceed to step 2.
+
+The timing objection no longer blocks close-out. Step 1 is complete and the review
+exchange is closed. The original review conclusions stand; the earlier acknowledgment
+remains a dated record of the objection Ben has now disposed of.
+
 Actor: Codex, one task. Input: the required commit from step 0. Output: a dated section appended to
 the Codex counter-rebuttal, committed on the branch. If that section records an
 objection, the plan stops here: Ben decides how the objection is handled before step 2.
@@ -149,6 +161,10 @@ Public evidence only. Review only: no remediation, no process changes, no edits 
 ```
 
 ## Step 2 — Ben decides D1–D11
+
+Started 2026-09-09 on Ben's instruction above. D9 and the substance of D11 remain
+decided. D1–D8, D10, and D11's naming await Ben's choices; the review-closure
+decision settles the timing objection rather than those separate choices.
 
 Actor: Ben. Input: the rebuttal's "Choices requiring Ben's judgment", finding 10, the Codex
 reconciliation, and Ben's two decisions of 2026-09-09 recorded under D9 and D11. Output: eleven
