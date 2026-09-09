@@ -98,7 +98,7 @@ MAM-with-doc apparatus note.
 
 `gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` is published at
 `https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-mtgmtg.html` and linked from
-`gh-pages/MAM-with-doc/foi/index.html`. Its two introductory paragraphs come from
+`gh-pages/MAM-with-doc/foi/index.html`. Its four introductory paragraphs come from
 `OVERALL_EXPLANATION` in `py/foi/mtgmtg_explanations.py`, and the parenthesis under each
 group heading comes from `_mtg_count_description` in the same module. The first paragraph
 says the concern "turns out to be unfounded": that a verse-final word might contain a
@@ -170,6 +170,25 @@ Five decisions, Ben's finding of 2026-09-09 applied to this page:
    raising unless exactly one record has `bcv_short` `1K7:37` and an `r` equal to the typed
    form. Copy the shape of `maqaf_nonfinal_accents_page.pin_claims`: re-derive and raise,
    never warn.
+
+**Two of those four introductory paragraphs arrived on 2026-09-09, after the five decisions
+above were written, and this plan does not touch them.** Commit `9f851c2f` appended a third
+and fourth element to `OVERALL_EXPLANATION`, saying that the empty `2/sopa-y/maq-n` group is
+scarcity rather than a rule and pointing at `doc/foi-mtgmtg-empty-cell.md`, which carries the
+Yeivin and Breuer citations and the arithmetic. They were appended rather than woven in, so
+decision 1 still edits the first element alone and decision 2 still edits
+`_mtg_count_description` alone; the added paragraphs never call the concern unfounded and
+never locate the silluq, so acceptance criteria 8 and 9 are unaffected, and the regeneration
+left `foi-mtgmtg.json` byte-identical. This section said "two introductory paragraphs" until
+this note was added.
+
+**One question for Ben that decision 4 did not face: the page is now mixed on "word".** Those
+two added paragraphs say "chanted word" and "atom", glossed inline at first use, because the
+empty group is about a lone atom and plain "word" cannot say that; the older paragraphs say
+plain "word". Decision 4 bans a terminology *sweep* and settles that plain "word" stands, but
+it was written against a two-paragraph page and does not say what to do about a mixed one.
+Rewording the added paragraphs down to "word", rewording the older ones up, and leaving the
+page mixed are all open; none of them is done here.
 
 `doc/holman-meteg-m23-isaiah-23-12.md` vouches for the false sentence and is corrected with
 it. Its item 4 under "The post-silluq meteg: one case, in the Leningrad Codex, not in MAM"

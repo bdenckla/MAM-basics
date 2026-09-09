@@ -39,12 +39,30 @@ a hand-authored file here. That is why it is worth the tokens.
 
 ## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
 
-That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in `github-misc` at
-`dot-claude/skills/`) is the canonical, single home for the rules the sections below and
+That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in **this repository** at
+`dot-claude/skills/hebrew-prose/`) is the canonical, single home for the rules the sections below and
 `printed_decalogue_strands.py`'s docstring state — atom vs chanted word, the one-scale maqaf rule,
 which corpus a claim takes, the banned verbs and framings, where Yeivin and Breuer live, how to
 verify a page's numbers. It loads on demand rather than every session, so it can hold the full
 statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
+
+**`dot-claude/` and `dot-Codex/` are storage, and this repository loads neither.** They hold the
+version-controlled originals of Ben's user-level Claude and Codex configuration — the skill above,
+`user-wide-CLAUDE.md`, `user-wide-AGENTS.md` and the Codex-only skills. The live copies under
+`~/.claude/`, `~/.codex/` and `~/.agents/` are what the two agents actually load, and
+`dot-claude/README.md` is the deployment procedure of record. **Do not edit a tracked copy
+directly**: edit the live one, then copy outwards, and run that README's two comparisons. The
+trees lived in `github-misc` until 2026-09-09, so a `github-misc <sha>` citation inside them is
+right as written and must not be repointed.
+
+**A cloud session does not get any of it from `~/.claude/`, so a hook installs it.** Nothing under
+`~/.claude/` travels with the clone, while `dot-claude/` does.
+`.claude/hooks/install-user-config.sh` copies `dot-claude/user-wide-CLAUDE.md` and
+`dot-claude/skills/hebrew-prose/` into `~/.claude/` at session start, touching neither the network
+nor any other repository, and reports what it did in the transcript. On Ben's own machines it
+exits before reading anything. If `hebrew-prose` is not in the available-skills list and no such
+report appeared, say so rather than writing accentuation prose without it;
+`doc/user-level-config-in-cloud-sessions.md` has the diagnosis.
 
 ## The post-stress-meteg pages say plain "word" — do not qualify it as "chanted"
 
