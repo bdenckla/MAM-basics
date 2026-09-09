@@ -21,11 +21,28 @@ something compares bytes.
 
 MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_std_mark_order` true
 for all 87 files of `MAM-parsed/plus/`, `MAM-parsed/plain/` and `MAM-for-Sefaria/csv/`. So a cluster
-in the other order is always something hand-authored, and **the way in is a paste through anything
-that normalizes, a browser above all**. Hebrew you did not lift from the data is the thing to
-suspect. There is no lint over hand-authored source here — `py/py_misc/uni_check.py` and
-`py/py_misc/check_mpplus.py` check data, and `py/foi/foiz_wt_unicode.py` reports
-`NON_STANDARD_MARK_ORDER` as a feature of interest — so the check is yours to run.
+in the other order is either hand-authored — and **the way in is a paste through anything that
+normalizes, a browser above all** — or it sits upstream of the denormalizing step and belongs
+exactly as it is. Hebrew you did not lift from the data is the thing to suspect.
+
+**Never "repair" the second kind.** A tree-wide scan finds some 200,000 clusters in the other order
+and every one is expected: `in/mam-ws/` is a download that is inherently normalized (Ben,
+2026-09-09), `out/mam-ws-bot/proto/` and `out/mam-ws-parsed-fmt-2/` are its faithful intermediates
+— their per-book counts match it exactly — and the pipeline denormalizes downstream, which is why
+`MAM-parsed/` and `MAM-for-Sefaria/` come out clean. The rest are byte-verbatim captures of
+external sources, exempt on the same ground `in/mam-ws-intro/` is: `in/UXLC-39/`,
+`aleppo/aleppo-wiki/Wikisource-manual-*.txt`, `misc/zarqa-table-diff/`, `misc/*/img-sources/`.
+`py/repo_scopes.py` records why a repo-wide mark-order sweep has no meaning here.
+
+**The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`
+plus the `.html` under `doc/`. It was added 2026-09-09, when a scan someone chose to run found 132
+such clusters in 16 prose files that no existing check covered. Source outside its file types is
+still yours to check: `py/check_mark_order.py` covers the `.py` and Ben-authored `.json` of the
+four repos `py/repo_scopes.py` names and `py/tests/test_mam_simple_mark_order.py` covers
+MAM-simple's non-corpus tree, but a `.txt` is covered by nothing, and
+`py/tests/test_aleppo_page_mark_order.py` covers generated pages rather than source. Separately
+`py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
+`py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.
 
 Scope: only those four marks have a declared place. A vowel and an accent pass in either order, so
 `has_std_mark_order` says nothing about which of them comes first.

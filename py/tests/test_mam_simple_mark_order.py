@@ -19,8 +19,11 @@ places were found in the wrong order:
     ``render_wtseq``, so ``uni_check.check`` never sees it.
 
 Both were found by a scan someone chose to run, which is exactly the state
-``MAM-basics/CLAUDE.md`` describes: "There is no lint over hand-authored source here
-... so the check is yours to run." This file is that lint.
+``MAM-basics/CLAUDE.md`` described until 2026-09-09: "There is no lint over hand-authored
+source here ... so the check is yours to run." This file was that lint, and is no longer
+the only one: ``test_prose_mark_order.py`` covers every tracked ``.md`` in the repo, which
+is where another 132 clusters were found that day, in 16 prose files this file's
+MAM-simple scope leaves out.
 
 WHAT IT COVERS, AND WHY NOT THE CORPUS
 
