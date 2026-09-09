@@ -520,6 +520,14 @@ no remediation, primary fast-forward, or push occurred. Step 4 is complete and
 step 5 awaits Ben's approval. The planning commit is recorded in the follow-up
 execution entry after the commit exists.
 
+Execution commit recorded 2026-09-09: `154921c9` contains the remediation plan
+and the preceding step-4 entry. Plan links, referenced paths, Markdown tables,
+and changed-line whitespace checks passed. The existing prose mark-order lint
+passed after staging the planning documents (1 passed, 991 deselected).
+No tracked Python file changed. Step 5 is the required next phase: Ben approves
+or amends the waves and P1-P3 proposals, with separate dispositions for E1-E8
+and N1-N9. No step-6 task has been started.
+
 Actor: Codex, one task. Input: step 3's reported commit; D2–D8. Output:
 `doc/PLAN-remediate-review-findings-2026-09-08.md`, committed on the branch. No page, code or
 record changes in this task.
