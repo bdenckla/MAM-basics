@@ -17,6 +17,7 @@ import subprocess
 import sys
 from typing import Callable
 
+from mb_cmn import graphviz_pin
 from mb_cmn import paths
 
 import main_explicit_xataf
@@ -423,6 +424,45 @@ _STEPS = [
 _STEP_NAMES = [step.step_id for step in _STEPS]
 
 
+def _report_cloud_skipped_renders():
+    """Announce, once and at the end, any SVG this run did not render.
+
+    A cloud container has no Graphviz, so the tmpl-survey step skips its renders
+    rather than killing the run -- Ben's decision, 2026-09-09; graphviz_pin's
+    docstring has the reasoning. Such a run is CLOUD-COMPLETE, meaning every step
+    ran and none failed while some SVGs went unrendered. It is deliberately not
+    called incomplete, and the exit status stays 0.
+
+    The banner exists because the skips are printed beside whichever step
+    produced them, thousands of lines up by the time a 41-step run ends. It also
+    names the one hazard a skip leaves behind, which is not obvious: the .dot
+    beside an unrendered .svg IS rewritten, so committing a .dot change without
+    its .svg would put the tracked pair out of step -- the very drift the
+    Graphviz pin exists to prevent.
+    """
+    skipped = graphviz_pin.cloud_skipped_renders()
+    if not skipped:
+        return
+    print()
+    print("=" * 80)
+    print(
+        f"  MEGA RUN IS CLOUD-COMPLETE: all {len(_STEPS)} steps ran; "
+        f"{len(skipped)} SVG render(s) skipped"
+    )
+    print("=" * 80)
+    print("Every step ran and none failed. This container has no Graphviz, so the")
+    print("SVG files below were not re-rendered. Their .dot sources WERE rewritten.")
+    print()
+    print("  DO NOT COMMIT A CHANGED .dot WITHOUT ITS .svg. The two are a matched")
+    print("  pair in the tracked tree, and letting them drift apart is what the")
+    print("  Graphviz pin exists to prevent. If `git status` shows no .dot change,")
+    print("  nothing was lost and this notice is informational.")
+    print()
+    for svg_path in skipped:
+        print(f"    {svg_path}")
+    print("=" * 80)
+
+
 def main():
     """Run various mains"""
     # The wlc steps emit Hebrew.  Their own `if __name__ == "__main__"` blocks called
@@ -454,6 +494,7 @@ def main():
             step.runner()
     finally:
         sys.argv = old_argv
+    _report_cloud_skipped_renders()
     #
     # Download of ws (Wikisource) can be accomplished by running:
     #    py/main_download.py fr-wikisource

@@ -37,6 +37,24 @@ TWO READINGS, AND NEITHER ONE COVERS THE OTHER'S GROUND.
     file committed from a machine that skipped the check. It needs no Graphviz
     installed, so it runs in a container that has none.
 
+A MISSING GRAPHVIZ IN THE CLOUD IS A SKIP, AND EVERYWHERE ELSE IS FATAL. Ben's
+decision, 2026-09-09, and the reason is ``py/main_0_mega.py``: its ``tmpl-survey``
+step is step 5 of 41, and it reaches ``survey_dot.render_svg``. When a missing
+Graphviz raised unconditionally, a cloud container ran four steps and then died,
+and the remaining 36 -- the whole accgram block, ``mam-simple``, ``mam-osis``,
+``near-aleppo-census``, ``gen-site`` -- never ran at all. That is far too high a
+price for an artifact a container cannot produce anyway. So ``in_cloud_session``
+gates the choice: in a container the render is skipped, recorded by
+``note_cloud_skip`` and reported once at the end of the mega run; anywhere else
+it raises, exactly as before.
+
+A skipped run is CLOUD-COMPLETE, which means every step ran and none failed while
+some SVGs went unrendered. It is deliberately not called incomplete -- Ben's
+wording, the same day. The one hazard it leaves is that the ``.dot`` beside a
+skipped ``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's
+end-of-run banner says so, and says not to commit a changed ``.dot`` without its
+``.svg``.
+
 RAISING THE PIN IS ONE EDIT HERE, then a regeneration of every tracked SVG,
 committed on its own rather than riding along with unrelated work -- the same
 discipline ``~/.claude/CLAUDE.md`` states for a black version bump, and for the
@@ -48,12 +66,55 @@ deliberately NOT wired together, since a vendoring relationship governed by
 Raising the pin means editing both.
 """
 
+import os
 import re
 import subprocess
+import sys
 
 # The Graphviz that every tracked SVG in this repo was rendered by. Raising this
 # is a deliberate act; see this module's docstring for what else it obliges.
 PINNED_STAMP = "16.0.0 (20260814.1018)"
+
+# Ben's decision, 2026-09-09: a missing Graphviz is FATAL on his own machines and
+# a recorded SKIP in a cloud container -- see this module's docstring, section
+# "A MISSING GRAPHVIZ IN THE CLOUD IS A SKIP".
+#
+# CLAUDE_CODE_REMOTE is an EXISTING variable, not one invented for this, and it
+# is the discriminator this repository already relies on: .claude/hooks/
+# install-user-config.sh gates on it so that it never touches ~/.claude/ on Ben's
+# own machines, and doc/user-level-config-in-cloud-sessions.md calls it "the
+# documented discriminator: the cloud VM sets it and it is never true locally",
+# measured in a container on 2026-09-09. Verified unset in a local session the
+# same day. Platform is deliberately NOT used as a proxy -- Ben's instruction was
+# explicit that "not Windows" must not stand in for "cloud", and it would be
+# wrong in both directions: a Linux machine of his is not a container, and a
+# container could be any platform.
+_CLOUD_ENV_VAR = "CLAUDE_CODE_REMOTE"
+
+# Every SVG this process decided not to render, in order. Read by main_0_mega.py
+# so that one run reports its skips once at the end rather than only in the
+# scroll-back beside whichever step produced them.
+_CLOUD_SKIPPED_RENDERS = []
+
+
+def in_cloud_session():
+    """True when running in a Claude Code cloud container."""
+    return os.environ.get(_CLOUD_ENV_VAR) == "true"
+
+
+def note_cloud_skip(svg_path):
+    """Record and announce one SVG left unrendered for want of Graphviz."""
+    _CLOUD_SKIPPED_RENDERS.append(svg_path)
+    print(
+        f"SVG NOT RENDERED, no Graphviz in this cloud container: {svg_path}",
+        file=sys.stderr,
+    )
+
+
+def cloud_skipped_renders():
+    """The SVGs skipped so far in this process, oldest first."""
+    return tuple(_CLOUD_SKIPPED_RENDERS)
+
 
 # The stamp as it appears in a rendered SVG. Graphviz breaks the comment across
 # two lines -- the closing "-->" sits on the next line -- so the pattern stops at
