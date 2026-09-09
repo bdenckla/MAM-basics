@@ -260,9 +260,11 @@ to notice. §6 gives the full account, which has a second half.
 
 ## 5. Whether the review plan can move to MAM-basics: it can, and it needs no redaction
 
-**Disposition: the privacy screen is clean — the file can move into the public repository as it
-stands. Ben's stated premise for the move does not hold, but a stronger reason does.** The move is
-not free: it needs a repointing pass, costed below.
+**Disposition: the privacy screen is clean — the file can move into the public repository with no
+redaction.** The move is not free: it needs a repointing pass over wording the plan already
+contains, costed below. Ben's premise for the move holds as a claim about ongoing work, though the
+tree does still hold dormant Hebrew Bible material, and both halves are recorded so a later session
+does not mistake one for the other.
 
 ### The privacy screen found nothing that bars publication
 
@@ -297,24 +299,45 @@ section's boundary exists because the raw material carries mail headers and mess
 plan has no counterpart to either, so the question of a redacted derivative does not arise. Nothing
 would have to be omitted, and the remainder question is moot.
 
-### Ben's premise does not hold, and should not be the reason recorded
+### Ben's premise holds on the reading that matters, and Hebrew Bible bytes remain anyway
 
 Ben's reasoning was that github-misc "no longer holds anything of relevance to MAM-basics,
-MAM-private, or related Hebrew Bible work". Tested against `git -C
-C:/Users/BenDe/GitRepos/github-misc ls-files` at `cfd5510`, that is false on two counts.
+MAM-private, or related Hebrew Bible work". Read as a claim about **ongoing** work, which is what
+"relevance to MAM-basics, MAM-private" makes it, the premise holds. Read as a claim that no Hebrew
+Bible material is tracked there, it does not. Both halves are worth recording, because a later
+session running `git -C C:/Users/BenDe/GitRepos/github-misc ls-files` will find the second half and
+could mistake it for the first.
 
-1. **`Dead Sea Scrolls/` is Hebrew Bible work**, and it is Ben's writing rather than a stray asset:
-   five essays titled "Qumran, Isaiah, and the NJPS", "More on Qumran, Isaiah, and the NJPS",
-   "Qumran, Isaiah, and Stern", and "The daleth and the resh" in two parts, plus a 2,021-byte
-   comment on Isaiah 2:9–10 and the minus at that point in 1QIsa-a. The daleth-and-resh material is
-   Hebrew palaeography, which is the same kind of question the Aleppo and Leningrad work turns on.
-2. **One tracked image names MAM in its filename**, `Ps 19v15 MAM doc-note.png`, beside
-   `Ps 137v9.png`. Both were uploaded on 2026-09-20 and 2026-09-21 of 2022.
+**What is tracked there**, at `cfd5510`:
 
-So Ben will plausibly open github-misc in a Hebrew Bible context again, and a decision recorded on
-the premise that he will not would be recorded on a false one.
+1. **`Dead Sea Scrolls/`**, Ben's writing rather than a stray asset: five essays titled "Qumran,
+   Isaiah, and the NJPS", "More on Qumran, Isaiah, and the NJPS", "Qumran, Isaiah, and Stern", and
+   "The daleth and the resh" in two parts, plus a 2,021-byte comment on Isaiah 2:9–10 and the minus
+   at that point in 1QIsa-a.
+2. **Two images**, `Ps 19v15 MAM doc-note.png` and `Ps 137v9.png`, the first naming MAM outright.
 
-### The stronger reason, which does hold
+**Why none of it is ongoing work.** Ben's assessment, 2026-09-09: this material is ancient and
+predates the phase of his work that the `trope` repository opened and MAM-basics later replaced; he
+does not expect MAM-basics or MAM-private ever to reference the image, and does not expect further
+images to be added there for either repository to reference. Three measurements bear him out.
+
+1. **The dates.** Every commit touching `Dead Sea Scrolls/` falls between 2012-08-21 ("initial
+   commit of Isaiah/NJPS/Qumran work") and 2012-11-07, fourteen years ago. The two images were
+   uploaded on 2022-09-20 and 2022-09-21, both as bare "Add files via upload".
+2. **Nothing references them.** No file in MAM-basics or MAM-private cites the `Dead Sea Scrolls/`
+   tree or either image. The topic words do appear in both — Yeivin and Breuer discuss Qumran, and
+   MAM-basics' `py/author_misc/urwotm_1_tale_of_the_qadma.py` and `urwotm_3_extra_verses.py` do too
+   — but each of those reaches the subject on its own, with no dependency on github-misc.
+3. **Every citation of github-misc in both repositories is about something else.** The 32 files in
+   MAM-basics and 5 in MAM-private that name github-misc concern the tracked agent configuration,
+   repo maintenance and the review series — which is precisely the relationship the 2026-09-09 move
+   ended.
+
+So the premise is sound as a reason not to keep the plan in github-misc. What it does not support is
+the stronger sentence "github-misc holds nothing of Hebrew Bible interest", which the tree
+contradicts; the material is simply dormant rather than absent.
+
+### The reason that does not rest on the premise at all
 
 **The plan is stranded because its subject left, not because its host became irrelevant.** All
 twelve files the plan reviews are now tracked in MAM-basics, at `dot-claude/` and `dot-Codex/`; what
@@ -325,7 +348,8 @@ independent of whatever else github-misc holds.
 ### What the move costs: a repointing pass, and one new ambiguity
 
 The file cannot move verbatim, because the move that stranded it also renamed two of its subjects.
-Measured on the file at `cfd5510`:
+**Every item below is an edit to wording the plan already contains — text to change, never text to
+add.** Six kinds of site, measured on the file at `cfd5510`:
 
 1. **`dot-claude/CLAUDE.md` → `dot-claude/user-wide-CLAUDE.md`**, 3 occurrences on 3 lines.
 2. **`dot-Codex/AGENTS.md` → `dot-Codex/user-wide-AGENTS.md`**, 3 occurrences on 3 lines.
@@ -334,12 +358,14 @@ Measured on the file at `cfd5510`:
 4. **`C:/Users/BenDe/GitRepos/github-misc` as the checkout to work in**, 5 occurrences, including
    §1 item 1's instruction to prefer that primary clone and §5 item 8's integration step.
 5. **`github-misc` in any role**, 14 occurrences on 13 lines.
+6. **Bare `CLAUDE.md`, on 20 lines.** Each of those 20 lines already stands in the plan, and each
+   means the user-level file. Inside MAM-basics a bare `CLAUDE.md` names this repository's project
+   instruction file instead, so each of the 20 needs `user-wide-CLAUDE.md` written in place of what
+   it says now.
 
-**And a bare `CLAUDE.md` becomes ambiguous on 20 lines.** Inside MAM-basics a bare `CLAUDE.md`
-already names this repository's project instruction file, so each of those 20 sites would need
-`user-wide-CLAUDE.md`. This is the same defect class as the plan's own M12, which exists to prefix
-18 bare issue numbers that collide across trackers; moving the file without the repointing pass
-would introduce 20 sites of the identical ambiguity into the file that documents the fix for it.
+Item 6 is the same defect class as the plan's own M12, which exists to prefix 18 bare issue numbers
+that collide across trackers. Moving the plan without changing those 20 lines would carry 20 sites
+of the identical ambiguity into the file that documents the fix for it.
 
 ### Recommendation on destination
 
