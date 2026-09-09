@@ -106,6 +106,33 @@ for the steps:
    unresolved. The report is the next step's input, and the branch head is the next step's
    required commit.
 
+### Ben's phase-handoff instruction, 2026-09-09
+
+Ben extended the instruction to suggest the next phase:
+
+> In fact, not only suggest a next phase, but if it doesn't need my approval, just start the next phase!
+
+After completing a phase, explain the next phase and start it in a fresh task when it is already
+authorized and requires no new decision or approval. Step 3 therefore starts step 4 automatically
+after committing the procedure update and its execution record. Step 4 writes the concrete
+remediation plan and presents it for Ben's step-5 approval; it waits for that approval before
+starting dependent step-6 work. Once Ben approves execution, hand off automatically between
+authorized remediation waves unless a new decision is required. Carry this dated instruction into
+every successor's prompt.
+
+Before creating a successor, finish the phase's writes, commit its write-back locally, and verify
+the exact checkout, branch head and clean working tree. Use `list_projects` and
+`environment.type = local` for the saved project at
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`; create no additional worktree.
+The successor prompt names that verified path, branch `codex-review-2026-09-08`, required source
+commit, applicable decisions and phase scope. Verify the actual successor task and its checkout.
+Transfer writing responsibility and stop editing after the successor starts.
+
+This instruction supersedes the earlier handoff restriction against creating step 4 without
+another request. The integration schedule remains unchanged: no intermediate fast-forward of
+`main` or push, including at archival; integrate once after the final step-6 wave, verified in
+the worktree first.
+
 ## Integration, once, at the end of the final step-6 wave
 
 The four steps of `~/.claude/CLAUDE.md` §"Git & commits", which `~/.codex/AGENTS.md` shares, run
