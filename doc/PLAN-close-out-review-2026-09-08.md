@@ -292,6 +292,25 @@ Status after these approvals: step 2 remains active. D3–D8, D10, and D11's nam
 remain pending; D9 and the substance of D11 retain Ben's earlier decisions. This
 update records choices only; no skill or process document has been changed.
 
+### Ben's decisions, 2026-09-09: D3 and D4 approved
+
+Ben approved both recommendations in the step-2 task on 2026-09-09:
+"Sure, I approve D3 and D4 as recommended."
+
+1. **D3 — approved:** add a dated addendum to
+   `doc/review-findings-2026-09-08.md` recording the corrections accepted in
+   the later turns. Preserve the original findings and cite the review turns
+   that accepted each correction. Implementation belongs to step 6.
+2. **D4 — approved:** add dated notes recording that the Wave 4 command is
+   unrecorded, so the cause of the missing subtest line remains unknown; the
+   Wave 6 run at 981 tests reported 65 subtests. Also add a dated correction to
+   the separate claim that the suite "no longer prints a subtest line."
+   Implementation belongs to step 6.
+
+Status after these approvals: step 2 remains active. D5–D8, D10, and D11's
+naming remain pending; D9 and the substance of D11 retain Ben's earlier
+decisions. This update records choices only; no review record has been changed.
+
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9, D10 and D11. Output:
