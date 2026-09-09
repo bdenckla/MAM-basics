@@ -9,6 +9,10 @@ Status updated 2026-09-09 after step 1: Ben closed the review exchange with the
 skill-reading time left unknown. Step 1 is complete; step 2 is active. Ben's exact
 decision is recorded below, beside step 1's earlier execution line.
 
+Status updated 2026-09-09 after Ben's D11 naming approval: step 2 is complete.
+All D1-D11 decisions are recorded under step 2; no later D-numbered entry exists
+in this plan. Step 3 is next, with no decision still pending for its handoff.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -389,6 +393,38 @@ Implementation belongs to step 3. Status after this approval: step 2 remains
 active, with only D11's naming pending among the D1–D11 entries currently in
 this plan. D9 and the substance of D11 retain Ben's earlier decisions. This
 update records a choice only; no process document has been changed.
+
+### Ben's decision, 2026-09-09: D11 naming approved; step 2 complete
+
+Ben approved the proposed branch and worktree naming on 2026-09-09:
+
+> I approve of the proposed branch naming scheme and worktree naming scheme, namely dual-agent-review-\<date>.
+
+**D11 — naming approved:** future dual-agent review rounds use branch
+`dual-agent-review-<date>` and shared worktree
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-<date>`.
+The branch and worktree folder have the same name. Claude creates the shared
+worktree and branch at the round's start; every turn of both agents and the
+close-out uses that checkout. No task fast-forwards `main` or pushes during the
+exchange. The final remediation wave integrates once at the end; the worktree
+and branch are retired after the final task ends. This is the D11 substance
+Ben had already decided, now with the naming approved. Implementation belongs
+to step 3.
+
+The September 8 round keeps branch `codex-review-2026-09-08` and worktree
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`.
+
+Step 2 is complete: D1-D8 and D10 retain the approvals recorded above, D9
+retains Ben's standing-process decision, and D11 is approved in substance and
+naming. Inspection of this plan on 2026-09-09 found only D1-D11; no D12 or later
+entry exists. There are no remaining decision questions for the step-3 handoff.
+The step-3 task takes the branch head reported with this decision record as
+its required source commit and follows the dated approvals under step 2.
+The earlier step-3 input line naming step 1's commit predates these approvals;
+the completed step-2 record is the source for the handoff.
+
+This update records decisions only. Earlier dated records are preserved. No
+remediation, skill edit, or process-document edit has been performed in step 2.
 
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
