@@ -166,6 +166,10 @@ Public evidence only. Review only: no remediation, no process changes, no edits 
 
 ## Step 2 — Ben decides D1–D11
 
+Executed 2026-09-09: commit `414a20f9`; D11 naming approved, all D1-D11
+decisions recorded, and step 2 complete. The dated decisions below supersede
+the earlier pending-status records.
+
 Started 2026-09-09 on Ben's instruction above. D9 and the substance of D11 remain
 decided. D1–D8, D10, and D11's naming await Ben's choices; the review-closure
 decision settles the timing objection rather than those separate choices.
