@@ -1291,6 +1291,7 @@ def _classify_one_word(
     *,
     bcv: str,
     system: str,
+    entry_index: int,
     word: str,
     jta: str,
     parsed: dict,
@@ -1302,9 +1303,19 @@ def _classify_one_word(
     next_chanted_word_accent_classification: str | None,
     intervening_material: tuple[object, ...],
 ) -> None:
-    """Classify every U+05BD of one chanted word, filling the tallies and the lists."""
+    """Classify every U+05BD of one chanted word, filling the tallies and the lists.
+
+    Also groups this chanted word's own pre-stress and post-stress records into one
+    ``chanted_word_occurrences`` entry, which is what the census counts.  ``entry_index``
+    is the chanted word's position among its numbered verse's usable entries, and
+    ``(bcv, entry_index)`` is therefore an OCCURRENCE identity where the chanted word's
+    form is not: one form can occur twice in one numbered verse, and 21 forms do, each
+    time carrying one meteg on each occurrence.
+    """
     counts = found["counts"]
     stressed = parsed["stressed"]
+    pre_stress: list[dict] = []
+    post_stress: list[dict] = []
     for letter_index, (_letter, marks, _atom_final) in enumerate(parsed["letters"]):
         if METEG not in marks:
             continue
@@ -1364,18 +1375,31 @@ def _classify_one_word(
         if syllable_index < stressed:
             counts[(system, "meteg before the stressed syllable")] += 1
             found["pre_stress"].append(record)
+            pre_stress.append(record)
         elif syllable_index == stressed:
             counts[(system, "meteg in the stressed syllable, no sof pasuq")] += 1
             found["in_stressed"].append(record)
         else:
             counts[(system, "meteg after the stressed syllable")] += 1
             found["post_stress"].append(record)
+            post_stress.append(record)
+    if pre_stress or post_stress:
+        found["chanted_word_occurrences"].append(
+            {
+                "bcv": bcv,
+                "entry_index": entry_index,
+                "system": system,
+                "pre_stress": pre_stress,
+                "post_stress": post_stress,
+            }
+        )
 
 
 def _fit_for_mas_candidate(
     *,
     bcv: str,
     system: str,
+    entry_index: int,
     word: str,
     jta: str,
     parsed: dict,
@@ -1420,6 +1444,10 @@ def _fit_for_mas_candidate(
     candidate = {
         "bcv": bcv,
         "system": system,
+        # Not emitted: every public candidate record is built field by field below.  It is
+        # here so that a candidate can be matched to its own chanted word rather than to
+        # every chanted word of that form in the numbered verse.
+        "entry_index": entry_index,
         "chanted_word": word,
         "jta": jta,
         "snapshot_before_qere": before_qere,
@@ -1593,47 +1621,35 @@ def _not_fit_for_mas_record(candidate: dict) -> dict:
     }
 
 
-def _record_key(record: dict) -> tuple[str, str, str]:
-    """The source identity shared by a chanted word's meteg records and candidate."""
-    return record["bcv"], record["chanted_word"], record["jta"]
+def _occurrence_key(occurrence: dict) -> tuple[str, int]:
+    """One chanted word of one numbered verse, identified by position and not by form.
+
+    A form is not an identity.  Twenty-one forms occur twice in one numbered verse with
+    one meteg on each occurrence -- Exodus 26:5's לֻֽלָאֹ֗ת and Judges 1:33's בֵֽית־שֶׁ֙מֶשׁ֙
+    among them -- so a key of (bcv, chanted word, jta) read each such pair as one chanted
+    word carrying two metegs.  That is what put
+    ``mbs_only_chanted_words_with_multiple_mbs`` at 143 rather than 122, and the MBS_O
+    counts 21 above the chanted words they were described as counting, until 2026-09-09.
+    The independent oracle is the features-of-interest survey ``foi/foiz_wt_mtgmtg.py``,
+    which counts U+05BD per chanted word straight from MAM-parsed-plus with no stress
+    oracle at all.
+    """
+    return occurrence["bcv"], occurrence["entry_index"]
 
 
-def _census_chanted_word_summary(
-    pre_stress: list[dict], post_stress: list[dict]
-) -> dict:
+def _census_chanted_word_summary(occurrences: list[dict]) -> dict:
     """The MBS_O and MAS census categories, which count chanted words."""
-    pre_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
-    post_records_by_key: dict[tuple[str, str, str], list[dict]] = {}
-    for record in pre_stress:
-        pre_records_by_key.setdefault(_record_key(record), []).append(record)
-    for record in post_stress:
-        post_records_by_key.setdefault(_record_key(record), []).append(record)
-    all_keys = pre_records_by_key.keys() | post_records_by_key.keys()
-    system_by_key = {
-        key: (pre_records_by_key.get(key) or post_records_by_key[key])[0]["system"]
-        for key in all_keys
-    }
-    assert all(
-        {
-            record["system"]
-            for record in pre_records_by_key.get(key, [])
-            + post_records_by_key.get(key, [])
-        }
-        == {system_by_key[key]}
-        for key in all_keys
-    )
-    mbs_only_keys = [
-        key for key in pre_records_by_key if key not in post_records_by_key
+    assert len({_occurrence_key(one) for one in occurrences}) == len(occurrences)
+    mbs_only = [
+        one for one in occurrences if one["pre_stress"] and not one["post_stress"]
     ]
-    mas_keys = list(post_records_by_key)
-    mas_with_mbs_keys = [key for key in mas_keys if key in pre_records_by_key]
+    mas = [one for one in occurrences if one["post_stress"]]
+    mas_with_mbs_occurrences = [one for one in mas if one["pre_stress"]]
     assert all(
-        len(pre_records_by_key[key]) == 1 for key in mas_with_mbs_keys
-    ), mas_with_mbs_keys
-    assert all(
-        len(post_records_by_key[key]) == 1 for key in mas_keys
-    ), post_records_by_key
-    mas_with_mbs = [post_records_by_key[key][0] for key in mas_with_mbs_keys]
+        len(one["pre_stress"]) == 1 for one in mas_with_mbs_occurrences
+    ), mas_with_mbs_occurrences
+    assert all(len(one["post_stress"]) == 1 for one in mas), mas
+    mas_with_mbs = [one["post_stress"][0] for one in mas_with_mbs_occurrences]
     assert all(record["mam_form"] is not None for record in mas_with_mbs)
     return {
         "what": (
@@ -1644,16 +1660,16 @@ def _census_chanted_word_summary(
         ),
         "by_system": {
             system: {
-                "mbs_only": sum(system_by_key[key] == system for key in mbs_only_keys),
-                "mas": sum(system_by_key[key] == system for key in mas_keys),
+                "mbs_only": sum(one["system"] == system for one in mbs_only),
+                "mas": sum(one["system"] == system for one in mas),
             }
             for system in (SYSTEM_PROSE, SYSTEM_POETIC)
         },
         "mbs_only_chanted_words_with_multiple_mbs": sum(
-            len(pre_records_by_key[key]) > 1 for key in mbs_only_keys
+            len(one["pre_stress"]) > 1 for one in mbs_only
         ),
         "mbs_only_chanted_words_with_more_than_two_mbs": sum(
-            len(pre_records_by_key[key]) > 2 for key in mbs_only_keys
+            len(one["pre_stress"]) > 2 for one in mbs_only
         ),
         "mas_chanted_words_with_mbs": [
             {
@@ -1666,19 +1682,28 @@ def _census_chanted_word_summary(
     }
 
 
-def _mark_candidates_with_mas(candidates: list[dict], post_stress: list[dict]) -> int:
-    """Mark each candidate according to whether it has a MAS, and return the MAS count."""
+def _mark_candidates_with_mas(candidates: list[dict], occurrences: list[dict]) -> int:
+    """Mark each candidate according to whether it has a MAS, and return the MAS count.
+
+    Keyed by ``_occurrence_key`` for the reason that function gives: a candidate is one
+    chanted word, and matching it on its form would give every chanted word of that form
+    in the numbered verse the MAS that one of them has.  No MAS chanted word shares a
+    numbered verse with another of the same form today, so this key changes no count; the
+    form-based key was the same defect as the census's, unfired.
+    """
     mas_keys = {
-        (record["bcv"], record["chanted_word"], record["jta"])
-        for record in post_stress
-        if record["syllables_after_the_stress"] == 1
+        _occurrence_key(one)
+        for one in occurrences
+        if any(
+            record["syllables_after_the_stress"] == 1 for record in one["post_stress"]
+        )
     }
     for candidate in candidates:
-        key = (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        key = (candidate["bcv"], candidate["entry_index"])
         candidate["has_mas"] = key in mas_keys
         assert candidate["has_u05bd"] == candidate["has_mas"], candidate
     assert {
-        (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
+        (candidate["bcv"], candidate["entry_index"])
         for candidate in candidates
         if candidate["has_mas"]
     } == mas_keys
@@ -1902,10 +1927,7 @@ def _fit_for_mas_summary(
         + mas_failing_third_criterion
     )
     assert len(
-        {
-            (candidate["bcv"], candidate["chanted_word"], candidate["jta"])
-            for candidate in excluded_mas
-        }
+        {(candidate["bcv"], candidate["entry_index"]) for candidate in excluded_mas}
     ) == len(excluded_mas), excluded_mas
     assert with_mas + len(excluded_mas) == mas_count, (with_mas, excluded_mas)
     mas_not_fit_for_mas = [
@@ -1995,6 +2017,7 @@ def _scan(
         "type_2_type_3_overlap_by_final_letter": Counter(),
         "type_2_type_3_overlap_example": None,
         "fit_for_mas_candidates": [],
+        "chanted_word_occurrences": [],
     }
     bb_of_stem = _bb_of_stem()
     for path in sorted(phon_dir.glob("*.json")):
@@ -2024,6 +2047,15 @@ def _scan(
                 ),
                 source_verse=cantillation_verse,
             )
+    # The per-chanted-word grouping holds every pre-stress and post-stress record once, so
+    # a census counting occurrences and a census counting records read the same scan.
+    occurrences = found["chanted_word_occurrences"]
+    assert sum(len(one["pre_stress"]) for one in occurrences) == len(
+        found["pre_stress"]
+    )
+    assert sum(len(one["post_stress"]) for one in occurrences) == len(
+        found["post_stress"]
+    )
     return found
 
 
@@ -2200,6 +2232,7 @@ def _one_verse(
         fit_for_mas_candidate = _fit_for_mas_candidate(
             bcv=bcv,
             system=system,
+            entry_index=index,
             word=word,
             jta=jta,
             parsed=parsed,
@@ -2219,6 +2252,7 @@ def _one_verse(
         _classify_one_word(
             bcv=bcv,
             system=system,
+            entry_index=index,
             word=word,
             jta=jta,
             parsed=parsed,
@@ -2930,10 +2964,9 @@ def build_survey() -> dict:
         }
     post_stress = found["post_stress"]
     _assert_type_2_next_filter_coverage(post_stress)
-    mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], post_stress)
-    census_chanted_word_summary = _census_chanted_word_summary(
-        found["pre_stress"], post_stress
-    )
+    occurrences = found["chanted_word_occurrences"]
+    mas_count = _mark_candidates_with_mas(found["fit_for_mas_candidates"], occurrences)
+    census_chanted_word_summary = _census_chanted_word_summary(occurrences)
     mas_candidates_with_another_meteg = [
         candidate
         for candidate in found["fit_for_mas_candidates"]

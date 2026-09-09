@@ -812,11 +812,15 @@ def pin_claims(survey: dict) -> None:
             "mbs_only_chanted_words_with_more_than_two_mbs"
         ],
     } == {
-        "mbs_only_chanted_words_with_multiple_mbs": 143,
+        "mbs_only_chanted_words_with_multiple_mbs": 122,
         "mbs_only_chanted_words_with_more_than_two_mbs": 0,
     }
+    # 122 and 12,849 were 143 and 12,828 until 2026-09-09, when the census stopped keying a
+    # chanted word by its form: 21 forms occur twice in one numbered verse with one meteg on
+    # each occurrence, so each such pair read as one chanted word carrying two metegs.  All
+    # 21 are in prose verses, which is why the poetic MBS_O count did not move.
     assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12828, "mas": 178},
+        _PROSE: {"mbs_only": 12849, "mas": 178},
         _POETIC: {"mbs_only": 1786, "mas": 54},
     }
     assert survey["qamats_variant_census"]["by_system"] == {

@@ -361,7 +361,7 @@
   "what": "MBS_O counts chanted words with one or more U+05BD meteg marks before the stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the stress, irrespective of the number before it.",
   "by_system": {
    "prose verses": {
-    "mbs_only": 12828,
+    "mbs_only": 12849,
     "mas": 178
    },
    "poetic verses": {
@@ -369,7 +369,7 @@
     "mas": 54
    }
   },
-  "mbs_only_chanted_words_with_multiple_mbs": 143,
+  "mbs_only_chanted_words_with_multiple_mbs": 122,
   "mbs_only_chanted_words_with_more_than_two_mbs": 0,
   "mas_chanted_words_with_mbs": [
    {

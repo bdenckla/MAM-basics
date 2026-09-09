@@ -11,8 +11,17 @@ docstring and under the 2026-09-07 review's disposition table and not on the pag
 decision); and the objection to "editions" for UXLC and WLC is withdrawn, the skill itself
 calling WLC diplomatic and Ben's account being that WLC became an edition of its own and UXLC
 diverged from both — an account github-misc `25a8955` (2026-09-09) put into the skill's source
-table, which also brought finding 5.6's diverged `~/.agents` copy back into step. Written
-2026-09-08, late evening, as the Claude half of the third
+table, which also brought finding 5.6's diverged `~/.agents` copy back into step. Separately
+from the findings, three census figures this review re-derived below have since been
+corrected, on 2026-09-09: 12,828 prose MBS_O chanted words and 14,614 in all are 12,849 and
+14,635, and the Methods page's 143 two-meteg MBS_O words are 122. The census identified a
+chanted word by its form until that day, so 21 prose forms occurring twice in one numbered
+verse, each occurrence carrying one meteg, read as one chanted word carrying two. **This
+review could not have caught it**: the arithmetic it checked, 12,962 + 1,805 less 143 and 10
+= 14,614, is internal to the census and closes under either key, as 12,962 + 1,805 less 122
+and 10 = 14,635 does now. The independent oracle that does catch it is
+`py/foi/foiz_wt_mtgmtg.py`; `doc/post-stress-meteg-method.md` has the correction in full.
+Written 2026-09-08, late evening, as the Claude half of the third
 dual-agent review under `doc/dual-agent-review.md`, Design A: this file was frozen before any Codex
 reviewer read it, and the Claude session neither read nor sought a Codex half (no file named
 `codex-review-findings-2026-09-08*` exists, and nothing under `~/.codex/` or `Documents/Codex/` was
