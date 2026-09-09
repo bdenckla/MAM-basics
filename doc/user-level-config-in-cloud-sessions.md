@@ -155,18 +155,32 @@ directory, neither of which reaches a cloud container, and it declares
 `disable-model-invocation: true`. `dot-claude/README.md` and all of `dot-Codex/` are not loaded by
 a Claude cloud session at all, and are readable in the checkout when wanted.
 
-## Is a skill written after Claude Code launches picked up?
+## Is a skill written after Claude Code launches picked up? Yes, measured
 
-**Yes, on the documentation, and the container satisfies the one caveat.** Claude Code watches
-skill directories and picks up a skill added under `~/.claude/skills/` within the session, without
-a restart. The caveat is that creating a *top-level skills directory that did not exist when the
-session started* needs a restart before it is watched — and the 2026-09-09 diagnostic session
-found `~/.claude/skills/` already present in the container, holding `session-start-hook/` and
-`synced/`. So the hook writes into a directory that is already being watched.
+**Confirmed in a cloud container on 2026-09-09**, on this repository's `main` at `74d883d2`,
+`CLAUDE_CODE_REMOTE=true` and `HOME=/root`. The hook fired on its own at session start and printed
+its install banner, which the harness delivered as `SessionStart:startup hook success:`. On the
+very next turn:
 
-This has not been confirmed empirically, and the hook does not depend on it: its success message
-names both absolute paths and tells the session to read `SKILL.md` directly if `hebrew-prose` is
-not in its available-skills list.
+1. **`hebrew-prose` was in the available-skills list**, first of 25. The fallback path in the
+   hook's success message — read `SKILL.md` directly — was not needed.
+2. **`~/.claude/CLAUDE.md` was in context**, presented as the user's global instructions, before
+   the verifying session had run a single command. So the instruction file is picked up late as
+   well as the skill.
+3. Both installed copies were byte-identical to the tracked originals: `diff -q` on the two
+   `CLAUDE.md` files and `diff -r -q` on the two `hebrew-prose` trees each exited 0 with no output.
+4. A second, manual run took the already-in-place branch, printed that banner, exited 0, changed
+   the installed file's byte count not at all, and left `git status --porcelain` empty.
+
+The documented mechanism is that Claude Code watches skill directories and picks up an addition
+under `~/.claude/skills/` without a restart, the one caveat being that a *top-level skills
+directory that did not exist when the session started* needs a restart before it is watched. The
+container satisfies that caveat: `~/.claude/skills/` is already present, and in the verified
+container held `session-start-hook/` — stamped two and a half hours earlier, so from the image
+rather than from this hook — beside a `synced/` directory holding the account-level skills.
+
+The hook still does not depend on the answer. Its success message names both absolute paths and
+tells the session to read `SKILL.md` directly if `hebrew-prose` is absent from its list.
 
 ## One consequence worth knowing about session sharing
 
@@ -191,6 +205,12 @@ no-op; empty `~/.claude/`; both files already present; one file already present;
 absent from the checkout; and the hook invoked with no `CLAUDE_PROJECT_DIR`, which must still find
 the repository from the script's own location. The harness was a throwaway under `.novc/` and is
 not tracked; the six cases are listed here so they can be rebuilt.
+
+**The whole path was then exercised in a real cloud container**, on `main` at `74d883d2`; the
+section above records what that run measured. It also settles the one thing the harness cannot:
+that the hook makes no network call. The script invokes `cp`, `echo`, `ls`, `mkdir`, and `cd` /
+`dirname` / `pwd` in its repository-root fallback, and nothing else — no `git`, no `curl`, no
+`gh`.
 
 **The local guard was also exercised against the live `~/.claude/` rather than a fake one**, which
 is better evidence than the harness for the one failure that would actually cost something. An

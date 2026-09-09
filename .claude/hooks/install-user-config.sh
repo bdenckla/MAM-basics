@@ -104,9 +104,11 @@ if [ "$want_conventions" = no ] && [ "$want_skill" = no ]; then
     # what a resumed or compacted session hits, and after a compaction the notice
     # printed at startup may no longer be in context.
     echo "MAM-basics SessionStart hook: Ben's user-level Claude configuration is already in place."
-    echo "  $HOME/.claude/CLAUDE.md            -- global cross-repo conventions."
-    echo "  $HOME/.claude/skills/hebrew-prose/ -- the canonical accentuation-prose rules;"
-    echo "    if it is not in your available-skills list, read its SKILL.md directly."
+    echo "  $HOME/.claude/CLAUDE.md"
+    echo "      -- global cross-repo conventions."
+    echo "  $HOME/.claude/skills/hebrew-prose/"
+    echo "      -- the canonical accentuation-prose rules; if hebrew-prose is not in your"
+    echo "         available-skills list, read its SKILL.md directly."
     exit 0
 fi
 
@@ -152,12 +154,19 @@ ok_skill=no
 [ -f "$DEST/skills/hebrew-prose/SKILL.md" ] && ok_skill=yes
 
 if [ "$ok_conventions" = yes ] && [ "$ok_skill" = yes ]; then
+    # Both banners spell these paths the same way, expanded. They did not until
+    # 2026-09-09, when the cloud verification reported that this branch wrote a
+    # literal ~ while the already-in-place branch above wrote the expanded form; an
+    # agent that has to open the file is better served by the expanded one.
     echo "MAM-basics SessionStart hook: installed Ben's user-level Claude configuration from this checkout."
-    echo "  ~/.claude/CLAUDE.md            -- global cross-repo conventions, cited by name in MAM-basics' CLAUDE.md."
-    echo "  ~/.claude/skills/hebrew-prose/ -- the canonical accentuation-prose rules."
-    echo "Claude Code watches ~/.claude/skills/ and picks up a skill added to it without a"
-    echo "restart, and that directory already exists in a cloud container, so hebrew-prose"
-    echo "should appear in the available-skills list. If it does not, read"
+    echo "  $HOME/.claude/CLAUDE.md"
+    echo "      -- global cross-repo conventions, cited by name in MAM-basics' CLAUDE.md."
+    echo "  $HOME/.claude/skills/hebrew-prose/"
+    echo "      -- the canonical accentuation-prose rules."
+    echo "Claude Code watches ~/.claude/skills/ and picks a skill added to it up without a"
+    echo "restart. Measured 2026-09-09 in a cloud container: hebrew-prose was in the"
+    echo "available-skills list, and these instructions were in context, on the turn after"
+    echo "this hook ran. If hebrew-prose is nonetheless absent from your list, read"
     echo "$HOME/.claude/skills/hebrew-prose/SKILL.md directly before writing or editing any"
     echo "prose about accentuation, and read $HOME/.claude/CLAUDE.md before your first edit."
 else
