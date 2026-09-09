@@ -1,7 +1,8 @@
 # Plan: close out the 2026-09-08 review, every step on Codex — turn 5 handed off, Ben's decisions taken, the procedure recorded, the findings remediated, the worktree retired
 
 State: live 2026-09-09; no step started; the starting state was re-measured the same afternoon
-after `main` moved, and the dated notes below supersede the table where they differ.
+after `main` moved, the dated notes below supersede the table where they differ, and the design
+was revised that afternoon on Ben's decision to keep the work on the branch until the end.
 
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
@@ -9,9 +10,14 @@ everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09
 for any step below; the one Claude act left is the archival of the session that wrote this plan,
 which is step 0. Every step names its actor, its input, its output and its commit discipline. A
 Codex step is one Codex task, launched by Ben with the prompt given under it, run in the review
-worktree on the review branch, and ended with the integration procedure below, so that `main`
-stays current with the branch as it did after turns 2, 3 and 4. Nothing in this plan is
-remediation: the remediation is planned in step 4, approved in step 5 and executed in step 6.
+worktree on the review branch. **Ben's decision, 2026-09-09, afternoon: the work stays on the
+review branch in the review worktree throughout.** No task fast-forwards `main` or pushes, the
+archival in step 0 does not integrate, each task merges `main` into the branch before it edits,
+and the four-step integration runs once, at the end of step 6, before the worktree is retired.
+That replaces this plan's first design of the same day, which integrated at step 0 and at the
+end of every task; Ben's question was why the work should not simply continue on the branch,
+and there was no reason. Nothing in this plan is remediation: the remediation is planned in
+step 4, approved in step 5 and executed in step 6.
 
 ## The state this plan starts from
 
@@ -43,8 +49,9 @@ The round's five documents, each read at the commit named:
 **Re-measured 2026-09-09 about 13:50, after the table above was written: `main` and
 `origin/main` had moved to `63ac5b84`**, by seven commits of 13:03–13:39 authored Ben Denckla from
 the primary clone (`847862f9` … `63ac5b84`; `git log --format="%h %ci %s" a50da28b..63ac5b84`),
-none of them on this branch, so the branch no longer contains `main` and step 0's merge is a real
-merge. What they change, and what it means for the steps:
+none of them on this branch, so the branch no longer contains `main`; under rule 3 the step-1 task
+merges `main` into the branch before it reads anything else. What they change, and what it means
+for the steps:
 
 1. `doc/dual-agent-review.md` gains the paragraph pinning "doc-only" to the record rather than
    the reading, the paragraph declaring the github-misc byte-compare exception spent, and the
@@ -73,22 +80,28 @@ merge. What they change, and what it means for the steps:
    that writes prose about accentuation, the `hebrew-prose` skill at
    `C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md` with its four `references/` files. No
    repository `AGENTS.md` exists.
-3. **Commit on the branch only**, the files the prompt names and nothing else, with the message
-   written to a temp file and passed with `git commit -F`. Each task also appends one line,
-   "Executed <date>: commit <id>", under its step's heading in this plan, in the same commit.
+3. **Merge `main` into the branch first; then commit on the branch only.** After verifying the
+   checkout, `git merge --no-edit main` in the worktree, any conflict resolved on the branch, so
+   that the task edits files as `main` has them. Commit the files the prompt names and nothing
+   else, with the message written to a temp file and passed with `git commit -F`; each task also
+   appends one line, "Executed <date>: commit <id>", under its step's heading in this plan, in
+   the same commit. No task fast-forwards `main` or pushes: the integration below runs once, at
+   the end of the final step-6 wave.
 4. **Never rewrite a dated record.** A correction to any review record or plan record is a dated
    note beside the text it corrects; the five documents of the round keep their text.
 5. **Any Hebrew written into a file goes through `has_std_mark_order` before the commit**
    (repository `CLAUDE.md`, first section); Python touched means black on those files
    (`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black <files>`); no
    `python -c`, no heredocs. A task that touches no Python says so.
-6. **Report** the full path of every file written, every commit ID, `main`'s head after
-   integration, and anything unresolved. The report is the next step's input.
+6. **Report** the full path of every file written, every commit ID, the branch head, and anything
+   unresolved. The report is the next step's input, and the branch head is the next step's
+   required commit.
 
-## Integration, at the end of every Codex task
+## Integration, once, at the end of the final step-6 wave
 
 The four steps of `~/.claude/CLAUDE.md` §"Git & commits", which `~/.codex/AGENTS.md` shares, run
-from the review worktree with the primary clone's interpreter:
+from the review worktree with the primary clone's interpreter, by the task that executes the
+remediation plan's final wave and by no other task:
 
 1. `git merge --no-edit main` in the worktree; resolve any conflict on the branch.
 2. The suite on the merged tree, after `$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"`:
@@ -99,20 +112,18 @@ from the review worktree with the primary clone's interpreter:
    refuses, `main` moved: return to 1.
 4. `git -C C:/Users/BenDe/GitRepos/MAM-basics push`.
 
-## Step 0 — Ben archives the Claude session that wrote this plan
+## Step 0 — Ben archives the Claude session that wrote this plan, without integration
 
-Actor: Ben, then that session. Ben asks the session to archive. By the worktree rule it runs the
-integration procedure above — with `main` at `a50da28b` the merge is a no-op, the suite runs,
-`main` fast-forwards to the commit that adds this plan and is pushed — and reports `main`'s head.
-That head is step 1's required commit. Output: `main` equal to the branch head, no Claude session
-live in the worktree. Re-measured 2026-09-09 about 13:50: with `main` at `63ac5b84` the merge is
-a real merge of seven commits touching none of the branch's files, the suite then runs on the
-merged tree, and `main` fast-forwards to the merge commit, which is step 1's required commit.
+Actor: Ben, then that session. Ben asks the session to archive. By Ben's decision of 2026-09-09 it
+does not run the integration procedure — the worktree rule's archival clause is set aside for this
+branch, which continues under Codex — and it reports the branch head, which is step 1's required
+commit. Output: the branch clean at that head, `main` untouched, no Claude session live in the
+worktree.
 
 ## Step 1 — Codex reads turn 5 and records its acknowledgment: the handoff
 
 Actor: Codex, one task. Input: the required commit from step 0. Output: a dated section appended to
-the Codex counter-rebuttal, committed on the branch, integrated. If that section records an
+the Codex counter-rebuttal, committed on the branch. If that section records an
 objection, the plan stops here: Ben decides how the objection is handled before step 2.
 
 Prompt to paste, with the required commit filled in:
@@ -123,7 +134,7 @@ Acknowledge turn 5 of the experimental September 8 dual-agent review.
 Use this existing worktree directly:
 C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
 
-Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding.
+Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding. Then merge main into the branch with git merge --no-edit main, resolving any conflict on the branch, before reading further.
 
 Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. No repository AGENTS.md exists. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 1 and follows its rules.
 
@@ -131,7 +142,7 @@ Read doc/codex-review-findings-2026-09-08-claude-turn-5.md, including its addend
 
 Append one dated section to doc/codex-review-findings-2026-09-08-codex-counter-rebuttal.md, headed with its outcome: "Turn 5 read 2026-09-DD: no objection", or "Turn 5 read 2026-09-DD: objection", quoting each disputed claim exactly and naming the decisive evidence. Change nothing else in that file and nothing in any other record.
 
-Public evidence only. Review only: no remediation, no process changes, no edits to earlier records. Commit only that edited document and this plan's execution line on codex-review-2026-09-08, then run the plan's Integration section. Reply with the full file path, the commit ID, main's head after the fast-forward, and anything still unresolved.
+Public evidence only. Review only: no remediation, no process changes, no edits to earlier records. Commit only that edited document and this plan's execution line on codex-review-2026-09-08. Do not fast-forward main and do not push. Reply with the full file path, the commit ID, the branch head, and anything still unresolved.
 ```
 
 ## Step 2 — Ben decides D1–D10
@@ -208,9 +219,9 @@ D10:
 ## Step 3 — Codex brings `doc/dual-agent-review.md` up to date
 
 Actor: Codex, one task. Input: step 1's reported commit; D1, D7, D9 and D10. Output:
-`doc/dual-agent-review.md` edited, committed, integrated. This is the close-out's one process-record
-change, kept apart from the remediation so that step 4's plan lists finding 10 and C5 as done here
-rather than scheduling them twice.
+`doc/dual-agent-review.md` edited and committed on the branch. This is the close-out's one
+process-record change, kept apart from the remediation so that step 4's plan lists finding 10 and
+C5 as done here rather than scheduling them twice.
 
 Prompt to paste, with the required commit and the decisions filled in:
 
@@ -220,7 +231,7 @@ Bring doc/dual-agent-review.md up to date with the experimental rebuttal round's
 Use this existing worktree directly:
 C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
 
-Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding.
+Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding. Then merge main into the branch with git merge --no-edit main, resolving any conflict on the branch, before reading further.
 
 Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 3 and follows its rules.
 
@@ -238,14 +249,14 @@ Do four things in doc/dual-agent-review.md, and nothing else:
 
 What is not expected to change: the substance of the Design A and Design B sections, the blindness rule, the reconciliation rules, and any review record.
 
-Commit only doc/dual-agent-review.md and this plan's execution line on codex-review-2026-09-08, then run the plan's Integration section. Reply with the full file path, the commit ID, main's head after the fast-forward, and anything still unresolved.
+Commit only doc/dual-agent-review.md and this plan's execution line on codex-review-2026-09-08. Do not fast-forward main and do not push. Reply with the full file path, the commit ID, the branch head, and anything still unresolved.
 ```
 
 ## Step 4 — Codex writes the remediation plan for a fresh session
 
 Actor: Codex, one task. Input: step 3's reported commit; D2–D8. Output:
-`doc/PLAN-remediate-review-findings-2026-09-08.md`, committed, integrated. No page, code or record
-changes in this task.
+`doc/PLAN-remediate-review-findings-2026-09-08.md`, committed on the branch. No page, code or
+record changes in this task.
 
 Prompt to paste, with the required commit and the decisions filled in:
 
@@ -255,7 +266,7 @@ Write doc/PLAN-remediate-review-findings-2026-09-08.md, the remediation plan for
 Use this existing worktree directly:
 C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
 
-Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding.
+Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding. Then merge main into the branch with git merge --no-edit main, resolving any conflict on the branch, before reading further.
 
 Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 4 and follows its rules. Read doc/PLAN-remediate-review-findings-2026-09-07.md for the shape to take: a State line at line 3, decision gates, waves, a per-wave execution record, the verification commands, and the commit discipline.
 
@@ -276,7 +287,7 @@ Apply Codex's process rule from doc/codex-review-findings-2026-09-08.md, "MAS de
 
 State each wave's regeneration commands (the real CLI commands), the suite baseline of 983 passed, 5 skipped, 65 subtests at becc6f00 with the instruction to re-measure, and each wave's preconditions: which files are expected to change and which are not.
 
-Write no page, no code and no record change. Commit only the new plan and this plan's execution line on codex-review-2026-09-08, then run the Integration section. Reply with the full file path, the commit ID, main's head after the fast-forward, and anything still unresolved.
+Write no page, no code and no record change. Commit only the new plan and this plan's execution line on codex-review-2026-09-08. Do not fast-forward main and do not push. Reply with the full file path, the commit ID, the branch head, and anything still unresolved.
 ```
 
 ## Step 5 — Ben approves the remediation plan
@@ -291,8 +302,8 @@ edits anything else, so the plan carries its approvals.
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
-`doc/review-findings-2026-09-08.md` (the section `doc/dual-agent-review.md` prescribes), and
-integration.
+`doc/review-findings-2026-09-08.md` (the section `doc/dual-agent-review.md` prescribes); the final
+wave's task also runs the integration procedure above, once for the whole close-out.
 
 Prompt to paste, once per wave:
 
@@ -302,18 +313,19 @@ Execute wave <N> of doc/PLAN-remediate-review-findings-2026-09-08.md.
 Use this existing worktree directly:
 C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
 
-Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding.
+Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding. Then merge main into the branch with git merge --no-edit main, resolving any conflict on the branch, before reading further.
 
 Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 6 for wave <N> and follows its rules. Read the remediation plan in full before editing.
 
 Ben's approvals, 2026-09-DD: wave <N> approved. MAS items: <item: approved wording / rejected / amended to "...">.
 
-Record the approvals in the remediation plan as dated decisions before editing anything else. Execute the wave's items in order. Regenerate tracked artifacts with the real commands and read the diff; an unexplained diff is a failure. Do not touch an item of another wave, an unapproved MAS item, or the text of any dated record except by a dated note beside it. After the wave: write its execution record in the remediation plan; add a dated row per settled finding under "## Dispositions after remediation" in doc/review-findings-2026-09-08.md; run black on any Python touched; run the suite. Commit as the remediation plan says, then run the close-out plan's Integration section. Reply with every file path, every commit ID, main's head after the fast-forward, and anything still unresolved.
+Record the approvals in the remediation plan as dated decisions before editing anything else. Execute the wave's items in order. Regenerate tracked artifacts with the real commands and read the diff; an unexplained diff is a failure. Do not touch an item of another wave, an unapproved MAS item, or the text of any dated record except by a dated note beside it. After the wave: write its execution record in the remediation plan; add a dated row per settled finding under "## Dispositions after remediation" in doc/review-findings-2026-09-08.md; run black on any Python touched; run the suite. Commit as the remediation plan says. If this is the remediation plan's final wave, run the close-out plan's Integration section after the commit; otherwise do not fast-forward main and do not push. Reply with every file path, every commit ID, the branch head, main's head after the fast-forward if this was the final wave, and anything still unresolved.
 ```
 
 ## Step 7 — Ben retires the worktree and its branch
 
-After the last step-6 task has ended, since a task cannot remove the worktree it runs in:
+After the final step-6 task has integrated and ended, since a task cannot remove the worktree it
+runs in:
 
 ```powershell
 git -C C:/Users/BenDe/GitRepos/MAM-basics worktree remove C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
@@ -334,3 +346,4 @@ clone. If it refuses anyway, read `git -C <worktree> status --porcelain` before 
 1. It decides nothing: D1–D10 and the step-5 approvals are Ben's.
 2. It remediates nothing: no page, code or record changes before step 6.
 3. It uses Claude for nothing after step 0.
+4. It touches `main` once, at the end of step 6; until then every commit is on the branch.
