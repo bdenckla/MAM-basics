@@ -34,7 +34,13 @@ passed over in silence:
 
 - The main worktree (the repo clone itself) is never a candidate.
 - Neither is whichever worktree is running this code -- an agent housekeeping
-  its own checkout must not delete the ground it stands on.
+  its own checkout must not delete the ground it stands on.  ``_self_worktree``
+  takes the MOST SPECIFIC containing worktree rather than the first one it
+  finds, because a harness worktree sits INSIDE the main worktree: the first
+  containing match is then the main worktree, which is never a removal
+  candidate anyway, so until 2026-09-09 this condition did nothing whatever for
+  the harness's own default location and the activity check below was the only
+  thing sparing a session's own checkout.
 - A worktree locked with ``git worktree lock`` is skipped.  That is git's own
   sanctioned "leave this alone" flag and the right way to protect a worktree
   indefinitely; ``git worktree remove`` refuses a locked one, so never passing
@@ -425,15 +431,32 @@ def _agent_branches(repo_dir: Path) -> list[str]:
 
 
 def _self_worktree(worktrees: list[_Worktree]) -> Path | None:
-    """The worktree this module is executing from, if it is one of ``worktrees``."""
+    """The worktree this module is executing from, if it is one of ``worktrees``.
+
+    THE MOST SPECIFIC containing worktree, never merely the first one found.
+    A worktree at the harness default ``<repo>/.claude/worktrees/<name>`` is
+    NESTED INSIDE the main worktree, so a run from one is contained by two
+    records at once and the first of them is always the main worktree -- which
+    ``clean_worktrees`` never considers for removal in any case, so returning it
+    left the caller comparing every linked worktree against a path that cannot
+    match.  Measured 2026-09-09 from ``.claude/worktrees/eloquent-ritchie-0e4c6c``
+    and again from ``.claude/worktrees/zen-babbage-2d6583``: the answer was the
+    main clone both times and all three linked worktrees compared unequal to it,
+    so a session's own checkout was reaching the activity check below rather than
+    being spared here.  The sibling placement this module's docstring describes,
+    ``GitRepos/<repo>-<topic>``, is not nested and so was never affected, which
+    is why the defect survived unnoticed.
+    """
     here = Path(__file__).resolve()
+    containing: list[Path] = []
     for worktree in worktrees:
         try:
-            if here.is_relative_to(worktree.path.resolve()):
-                return worktree.path.resolve()
+            resolved = worktree.path.resolve()
         except OSError:
             continue
-    return None
+        if here.is_relative_to(resolved):
+            containing.append(resolved)
+    return max(containing, key=lambda path: len(path.parts), default=None)
 
 
 def _holds_no_file(directory: Path) -> bool:
