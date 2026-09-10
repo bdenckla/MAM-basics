@@ -234,7 +234,7 @@ on 2026-09-10:
 4. Verify: the affected steps' outputs byte-identical, the ctr-vs-mam diff excepted as explained;
    the full suite.
 
-## Phase 6 — delete the dead and redundant programs, and retire `check_ac_word_finding.py`
+## Phase 6 — delete the dead and redundant programs, and retire `check_ac_word_finding.py`: DONE, in sessions 6a and 6b
 
 Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence. **Run it as two sessions**,
 for size. **6a** is items 1–9, the deletions of dead and redundant code, plus finding 1 of phase
@@ -260,6 +260,21 @@ left only dated execution records: plans under `doc/`, among them
 both of which say "State: executed 2026-09-04"; two review-findings files; and `CLAUDE.md`'s history
 of the book-of-job move. The phase's report raised two more points, which items 16 and 17 carry
 into 6b.
+
+**6b: DONE, `26962cb4`, `7fa58d73`, `8fd9fb18`, `e820ca4e` and `15822344`.** `26962cb4` fixes
+`py/check_ac_word_finding.py`'s column comparison, taking it from `PASS: 0`, `FAIL: 160` to
+`PASS: 160`, and `7fa58d73` retires it, with its fixture and J David Stark's CSV. The "Aleppo
+data" scope of `py/tests/test_h_dot_below_nfc.py` went from 18 files to 16, and its floor from 17
+to 15. `8fd9fb18` corrects the runbook's `lenin_paths` bullet, with a dated correction beside the
+2026-08-27 record, and the stale "sibling UXLC-utils" wording: the plan's four places, and three
+more that the sweep found in `py/hkq_cmn/uxlc_atom_locations.py`'s module docstring and in
+`py/hkq_cmn/uxlc_standard_atoms.py`. Of the files that the two rerun Holman steps wrote, only the
+`note` lines of the two `holman/data/` JSON files changed. `e820ca4e` deletes `make-dph-files.ps1`
+and the `uxlc/out/UXLC-misc/` copy of `lci_augrecs.json`, which `py/main_write_page_break_info.py`
+no longer writes; the rerun step's three outputs were byte-identical, and the deleted copy did not
+come back. `15822344` corrects `aleppo/doc/aleppo-line-breaks.md` to `270v 1of2`, and deletes all
+nine unused names, none of which turned out to be used. The suite gave 988 passed, 5 skipped
+before each commit. One more stale sentence came to light, and phase 8's item 1 carries it.
 
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
@@ -388,11 +403,17 @@ its dead-entry check.
 
 ## Phase 8 — full verification
 
-1. From a throwaway script, run every step of `_STEPS` except `near-aleppo-census`, in order, with
+1. **Correct the last "sibling UXLC-utils" sentence, which phase 6b found.**
+   `py/hkq_cmn/uxlc_change_records.py`'s module docstring says that Gen 14:17.9, Ex 5:22.11 and
+   2Sam 3:30.10 "are the instances in the change files on disk in the sibling UXLC-utils". Find
+   where those change files are now, confirm that the same three instances are the ones there, or
+   report the difference, and name the path in the sentence. Commit this before item 2's run, so
+   that the run verifies the finished tree.
+2. From a throwaway script, run every step of `_STEPS` except `near-aleppo-census`, in order, with
    nothing exported.
-2. `git status` must be clean. Any diff is explained and committed on its own, or reported.
-3. Run the full suite.
-4. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, which
+3. `git status` must be clean. Any diff is explained and committed on its own, or reported.
+4. Run the full suite.
+5. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, which
    also retires its §3 and §5 rows for the post-stress-meteg survey, and report the branch head for
    the orchestrating session to integrate.
 
