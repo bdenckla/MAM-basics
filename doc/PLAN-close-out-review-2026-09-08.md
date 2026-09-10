@@ -724,6 +724,13 @@ append and reconciliation. The next task is authorized after the clean committed
 using the same saved project with `environment.type = local`. The predecessor stops editing
 after dispatch. Integration and push still occur only after final Wave 4.
 
+Executed 2026-09-09: Wave 1C1 implementation commit
+`9241107ba5c3438a8b51c3032bfdce0bd7b4d070`. The worktree was clean after the commit.
+Final scope verification passed, and V6 passed before implementation and again at that
+commit before this record-only checkpoint, always with zero changed locations. The
+remediation plan gives the exact evidence paths. The following record commit supplies
+the required clean source for Wave 1C2; no integration or push is due.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

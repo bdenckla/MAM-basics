@@ -867,6 +867,21 @@ The successor uses the same saved project directly with `environment.type = loca
 the implementation and write-back are committed and clean. No intermediate integration,
 push, or automatic archival is due.
 
+Executed 2026-09-09: Wave 1C1 implementation commit
+`9241107ba5c3438a8b51c3032bfdce0bd7b4d070`. The worktree was clean after that commit.
+The final scope report is `wave1c1-01a08940-20260910T031639Z-scope.json`: all changed
+paths are the seven named Markdown files, all original historical lines are preserved,
+and mark order and changed-line whitespace pass. V6 also passed at both checkpoints:
+
+1. Before implementation commit: `v6-runs/20260910T031544Z-wave1c1-before-commit-3d3395df/`.
+2. At `9241107b`, before record commit: `v6-runs/20260910T031635Z-wave1c1-before-record-commit-7af62954/`.
+
+All Wave 1C1 actual comparisons had zero changed locations; no real stop occurred.
+This following record-only commit supplies Wave 1C2's required clean source; the final
+hash and actual successor ID are reported at handoff. The saved project was verified as
+`51e16ebd-373a-41f7-833e-9def3ef72b81`, with the exact review-worktree path and Git enabled;
+use `environment.type = local`. No new decision blocks the bounded Wave 1C2 task.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
