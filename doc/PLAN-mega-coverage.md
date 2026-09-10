@@ -104,29 +104,18 @@ banner, so a cloud run of the mega now needs no MAM-private. `f7fb6a62` made ste
 byte-identical to their committed blobs, `in/UXLC-misc/all_changes.json` included. Suite before
 each commit: 988 passed, 5 skipped.
 
-## Phase 5a — add the UXLC, Holman, CLC and book-of-job generators
+## Phase 5a — add the UXLC, Holman, CLC and book-of-job generators: DONE, `e4cf78e6`
 
-Ben agreed, 2026-09-10, to "add the other offline generators of tracked files". Read each program's
-entry point before wiring it; call the function its command line reaches.
-
-1. `py/main_clc.py all`, as a step `clc`.
-2. `py/main_estimate_uxlc_locations.py` and then `py/main_render_uxlc_corrections.py`, as two steps
-   in that order: the renderer raises on incomplete coverage. Correct both docstrings' stale
-   reasons, which say the UXLC XML is not tracked here and name a "sibling UXLC-utils clone".
-3. `py/main_verify_and_render_table.py`, as a step. It raises on a verification failure, which is
-   wanted.
-4. book-of-job's site generator, `py/main_gen_misc_authored_english_documents.py`, as a new step
-   `book-of-job-site`; then `py/main_map_changes_to_book_of_job.py` after it, since it reads that
-   generator's pages. **Rename the existing step `gen-misc-authored-english-documents` to
-   `gen-misc`**, the `main_authored.py` subcommand it actually runs, so that the step and the
-   book-of-job file stop sharing a name. The generator ends in a spell check that calls `exit(1)`
-   on any finding, so from now on a spelling finding fails the mega. That is intended; say so in
-   the step's note.
-5. In `doc/PLAN-evacuate-the-rest-of-three-repos.md`, the sentence "book-of-job's oracle is the one
-   that is also a mega step" has been false since `3e3b6e0b` (2026-05-06). Add a dated correction
-   beside it rather than rewriting the record.
-6. Verify as in phase 4: run the new steps from a throwaway script, explain every diff, then the
-   full suite.
+Ben agreed, 2026-09-10, to "add the other offline generators of tracked files". Six steps, 39–44 of
+53, between `uxlc-word-list` and `find-uxlc-accent-changes`: `clc`, `estimate-uxlc-locations`,
+`render-uxlc-corrections`, `verify-and-render-table`, `book-of-job-site` and
+`map-changes-to-book-of-job`. The step that ran `main_authored.almost_main` under the name
+`gen-misc-authored-english-documents` is now `gen-misc`, so book-of-job's site generator no longer
+shares a name with a step that does not run it; `doc/PLAN-evacuate-the-rest-of-three-repos.md` has
+a dated correction beside its false sentence. The six steps regenerated 207 tracked files, all
+byte-identical to their committed blobs; book-of-job's spell check found nothing. Since this phase,
+importing the mega needs `pyspellchecker` and Pillow, which book-of-job's generator imports and
+`requirements.txt` names. Suite: 988 passed, 5 skipped.
 
 ## Phase 5b — add the MAM-side and remaining generators, the mpplus check, and the warnings fix
 
@@ -207,7 +196,15 @@ Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
     so set its floor once, after both deletions.
 12. `doc/PLAN-repo-maintenance-across-GitRepos.md`, a live runbook, still names `py/lenin_paths.py`,
     which phase 3 deleted, in a bullet that was already stale before then. Correct it.
-13. Verify: the reference sweep for every deleted name, the full suite.
+13. **The stale "sibling UXLC-utils" wording that phase 5a left in four places.** The `NOTE` and
+    `STANDARD_ATOMS_NOTE` constants in `py/main_estimate_uxlc_locations.py` still say the UXLC XML
+    is in "the sibling UXLC-utils", and both are written into the tracked
+    `holman/data/uxlc_atom_locations.json` and `uxlc_standard_atoms.json`. Two error messages in
+    `py/hkq_cmn/uxlc_atom_locations.py` still say the estimator needs the sibling clone, and so
+    does `data_dir()`'s docstring in `py/hkq_paths.py`. Correct all four, then rerun the
+    `estimate-uxlc-locations` and `render-uxlc-corrections` steps. The only diffs allowed are those
+    note strings, in the two JSON files and anywhere the renderer carries them on.
+14. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check
 
@@ -227,6 +224,8 @@ its dead-entry check.
    include these thumbnail-generator-programs in mega") and the line-break reports ("it served its
    purpose for the book-of-job project"). Add whatever phases 2–6 leave out. Where the mega runs
    one flag-selected mode of a program and not another, declare the other mode by hand.
+   `py/main_clc.py` is one: its `main()` reads its mode from `sys.argv`, and with the mega's
+   blanked argv it runs its default, which is `all`, so its per-book mode is declared by hand.
 4. **Failures:** a program neither run nor declared; a declaration whose program is gone; a
    declaration whose program the mega now runs.
 5. Name the check in `py/main_repo_maintenance.py`'s docstring, whose step 5 runs the suite before
