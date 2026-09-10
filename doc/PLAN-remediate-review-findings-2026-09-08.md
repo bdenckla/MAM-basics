@@ -1,6 +1,6 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; step 5 complete; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained; no remediation started.
+State: live 2026-09-09; Wave 1A complete, Wave 1B next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
 
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
@@ -492,6 +492,40 @@ record's later correction is a dated note beside that record, never a rewritten 
 
 ## Wave 1 — dated records, current instructions, and settled dispositions
 
+### Smaller execution tasks, recorded 2026-09-09
+
+Ben's instruction, 2026-09-09: size remediation tasks to avoid compaction, and certainly
+multiple compactions. Codex's initial Wave 1 task compacted during preparation. The execution
+units below replace the earlier one-task-per-wave expectation without changing approved scope,
+wave order, V6, or the single integration after Wave 4:
+
+1. **Wave 1A: V6 and D2.** Establish and prove V6, back-merge and recheck, deploy the exact D2
+   sentence, verify, and commit. Required source `6e15a648ac292760b6bf623cca2d5e43442aabd4`;
+   merged source `bd5d9e56fdafb47617c38ce98bc9c98d8337448f`. The Step-5 approval above
+   authorizes D2 and the remaining Wave 1 work; no additional approval is needed.
+2. **Wave 1B: current documentation and P2.** Apply the current-file corrections in W1's
+   crosswalk and N proposals, create the six-file crop-provenance inventory and its license
+   link, and add finding 4's dated maintenance-scope correction. Leave historical review and
+   execution-record corrections for Wave 1C, including the standards docstring's dated
+   census correction. Record dispositions only for work completed in Wave 1B.
+3. **Wave 1C: earlier historical records.** Add the approved dated corrections to the
+   September 4/7 reviews and named execution plans, including the merge plan's State line
+   and N8 notes and the standards docstring's census correction. Keep original records.
+4. **Wave 1D: September 8 accepted corrections and completion.** Append the complete
+   accepted-corrections section, reconcile all W1 and already-settled dispositions, verify
+   Wave 1's full completion, and then hand off Wave 2. W2-W4 and editorial work remain pending.
+
+The next task reads the governing approval, V6, checkout, and handoff requirements and its
+assigned crosswalk/proposal entries. Read original and accepting source paragraphs for those
+entries; do not reload every complete historical turn for an unrelated item. This scoped
+reading instruction supersedes the earlier requirement to reread both plans in full in every
+execution task. Applicable global, repository, and skill instructions still apply. A task
+needing a smaller boundary records completed and remaining items before a clean commit and
+handoff; it does not mark its wave complete prematurely. Ben's existing automatic phase-handoff
+authorization applies to these smaller execution tasks. No predecessor is archived automatically.
+
+Wave 1A execution record follows the wave's original execution placeholder below.
+
 **Step-5 handoff, 2026-09-09:** Wave 1, P2/P3, and N1-N2/N4-N9 are approved. The next
 fresh task first implements and proves V6 in ignored scratch files, checks the original
 checkout and fresh scratch render, and only then back-merges `main` and checks V6 again.
@@ -563,6 +597,82 @@ git diff --no-index -- C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09
 Execution record: **Not started.** Record date, approval, starting and merged HEADs, changed
 paths, measurements, suite output, both skill comparisons, dispositions, implementation
 commit, and final record commit. No integration or push.
+
+### Wave 1A execution record, 2026-09-09
+
+The preceding placeholder describes the original full-wave execution record. Wave 1 is
+partially complete: Wave 1A is complete, and Wave 1B is next. Codex task
+`01a0891a-4362-7891-bf6f-84b76900164c` verified the exact clean required source
+`6e15a648ac292760b6bf623cca2d5e43442aabd4` in the named review worktree, on
+`codex-review-2026-09-08`. Ben's Step-5 approval authorizes the implemented D2 sentence.
+
+V6 was implemented in the ignored worktree file
+`.novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py`, SHA-256
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+The script recovered all nine HTML blobs and the survey JSON from the fixed `c2f238f2` commit
+using binary Git output, wrote an immutable baseline with hashes, and proved nonzero failure
+on separately labelled changed-byte, missing-page, and extra-page probes. All three deliberate
+probe runs exited 17. The probes were separate from the actual checkout and render checks.
+The actual checkout and a fresh render both passed before the merge, with exact membership
+and bytes, unchanged JSON, normal assertions and annotation validation, input read/hashes,
+and imported worktree-module hashes recorded. No private source was read by the renderer.
+
+The clean back-merge of `main` completed without conflicts at
+`bd5d9e56fdafb47617c38ce98bc9c98d8337448f`, incorporating `4ee7ec7c`'s Graphviz work.
+V6 passed immediately afterward. The reviewed HTML baseline remains `c2f238f2`, not the merge.
+The evidence directories below are relative to the worktree's
+`.novc/review-remediation-2026-09-08/v6-runs/`:
+
+1. Before merge and deliberate failure proofs: `20260910T022130Z-wave1-before-merge-29831f6c/`.
+2. Immediately after merge: `20260910T022214Z-wave1-after-merge-e1800160/`.
+3. After the Wave 1A suite: `20260910T023336Z-wave1a-after-suite-3826fb4e/`.
+4. Before the checkpoint commit: `20260910T023548Z-wave1a-before-commit-653351d3/`.
+
+Each actual check passed for nine checkout pages and nine freshly rendered pages, with zero
+changed locations. The pinned JSON SHA-256 remains
+`9b2ebdf41ab1a211a728b2f025fcbc101f8c33338007f9ea2fbe0b50c775fad2`.
+No real V6 stop occurred. A future missing script or baseline requires inspecting or rebuilding
+the gate from the fixed Git blobs and the full V6 specification; it does not permit skipping V6.
+Never clear a real `V6-STOP-REQUIRES-BEN.json` record to continue without Ben's renewed approval.
+
+To reuse the gate after verifying the script, baseline, and absence of a real stop, run from
+**C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08** with a fresh identifying label:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py check --label wave1b-before-merge
+```
+
+D2 changed only the approved opening sentence. All three skill directories were byte-identical
+before editing and were backed up under
+`.novc/review-remediation-2026-09-08/d2-wave1-01a0891a/`. Codex edited the live Claude copy,
+verified the exact resolved destination paths and absence of reparse points, then copied whole
+directories to the tracked worktree and live Codex homes in the prescribed order. Both required
+`git diff --no-index` comparisons passed with empty output. An independent SHA-256 inventory
+confirmed identical bytes for all five files in each home and proved that only the exact D2
+sentence changed. The existing references and MAS exception were preserved.
+
+The skill-creator `quick_validate.py` could not run in the primary clone's interpreter:
+`yaml` is not installed. The same missing dependency prevents validation of the backed-up
+pre-edit skill. No dependency or frontmatter change was made for this sentence correction;
+the exact-edit and whole-directory checks above passed.
+
+The canonical suite ran in the worktree with `REPOS_ROOT=C:/Users/BenDe/GitRepos`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B py/main_test.py -q -p no:cacheprovider
+```
+
+Result: **987 passed, 5 skipped, 65 subtests passed in 110.21 seconds**. The log is
+`.novc/review-remediation-2026-09-08/wave1a-01a0891a-suite.log`; the invocation and environment
+are preserved in `verify_wave1a_01a0891a.py` beside it. V6 ran immediately after the suite.
+The changed-line whitespace check passed. No tracked Python file changed, so black was not
+required. The existing prose mark-order lint passed after the record additions (1 passed in
+0.16 seconds). No generated HTML, survey JSON, image, corpus, or generator behavior changed.
+
+Tracked changes are confined to this plan, the close-out plan, the D2 sentence in
+`dot-claude/skills/hebrew-prose/SKILL.md`, and the Wave 1A disposition in
+`doc/review-findings-2026-09-08.md`. The implementation and subsequent record commit are
+recorded after their hashes exist. No integration, push, or archival occurred.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 

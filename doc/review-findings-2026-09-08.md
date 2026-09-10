@@ -773,3 +773,14 @@ No remediation disposition was newly claimed as fixed. Private-source research, 
 adjudication, the full mega/survey regeneration, historical test reconstruction, and the
 complete set of Claude's negative or soundness claims remain outside the independently
 checked scope. The compaction investigation stays outside these public records.
+
+## Dispositions after remediation
+
+Wave 1A checkpoint, 2026-09-09, recorded by Codex. The original findings and reconciliation
+above remain historical records. Ben's approved work is being completed in smaller tasks;
+this section records only completed work and does not declare Wave 1 complete.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 14.4 / D2; fresh deployment check for 5.6 | Applied Ben's exact approved sentence to the live Claude skill, then copied the entire skill directory to the tracked review-worktree copy and live Codex copy. Both required whole-directory Git comparisons are empty; an independent SHA-256 inventory confirms identical bytes for all five files in each home. Only the approved opening sentence changed. The contextual permission and explicit MAS-page exception remain intact. The review-exchange correction about where permission already existed remains for Wave 1D. |
+| 2026-09-09 | Remaining Wave 1, Waves 2-4, and the separate editorial phase | Pending under the approved remediation plan. D2 does not complete the dated historical corrections, crop-provenance inventory, accepted-corrections section, technical remedies, or editorial work. |

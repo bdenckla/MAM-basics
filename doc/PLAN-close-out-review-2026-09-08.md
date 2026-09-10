@@ -630,6 +630,24 @@ edits anything else, so the plan carries its approvals.
 
 ## Step 6 — Codex executes the remediation plan, one task per wave
 
+Execution-size update, 2026-09-09: Ben asked that remediation tasks be sized to avoid
+compaction, and certainly multiple compactions. Wave 1's preparation had already compacted.
+The remediation plan's "Smaller execution tasks, recorded 2026-09-09" now divides Wave 1
+into bounded tasks and defines scoped source reading. That execution structure supersedes
+the one-task-per-wave wording below. Approvals, wave order, the V6 stop, automatic clean
+phase handoff, and the single integration after Wave 4 remain in force. Intermediate task
+archival does not trigger integration.
+
+Wave 1A completed 2026-09-09: Codex established and proved the V6 gate before remediation,
+back-merged `main` at `bd5d9e56fdafb47617c38ce98bc9c98d8337448f`, rechecked V6, and applied
+D2's exact shared-skill opening sentence to all three homes. Both whole-directory comparisons
+and an independent byte inventory passed. The worktree suite passed with 987 tests, 5 skips,
+and 65 subtests in 110.21 seconds; V6 passed again with zero changed HTML locations.
+The remediation plan's Wave 1A execution record identifies the scripts, hashes, and evidence.
+The remaining Wave 1 work starts with Wave 1B's current documentation and crop inventory.
+The implementation and record commit hashes will be recorded after creation. Wave 1 is
+not complete; no integration, push, or automatic archival occurred.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
