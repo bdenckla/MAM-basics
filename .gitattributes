@@ -25,3 +25,4 @@
 *.jpg  binary
 *.pdf  binary
 *.woff2 binary
+MAM-parsed/historical/*.zip binary

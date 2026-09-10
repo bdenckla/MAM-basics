@@ -13,8 +13,8 @@ The file-count estimate is not a prediction of the timing improvement.
 | --- | --- | --- |
 | 1 | Inventory and verification preparation | Complete; evidence and plan are in the Phase 1 commit identified below |
 | 2 | UXLC notes | Complete in the Phase 2 branch head identified below |
-| 3 | Historical snapshots | Next task; created only after the Phase 2 commit |
-| 4 | Job records | Pending Phase 3 |
+| 3 | Historical snapshots | Complete in the Phase 3 branch described below; result commit is identified by the Phase 4 handoff |
+| 4 | Job records | Next task; create only after the Phase 3 commit is clean |
 | 5 | Combined verification | Pending Phase 4 |
 | 6 | Benchmark and close-out | Pending Phase 5 |
 
@@ -518,6 +518,111 @@ relevant checks, Black on changed Python, and the full suite. Update this plan,
 commit locally, verify clean status and ancestry, then create only Phase 3 last.
 
 ## Phase 3: historical release archives
+
+### Phase 3 execution receipt
+
+Phase 3 task: `01a08c92-d999-70f1-8809-72c8a1c4406f`. Its verified
+development checkout is
+`C:/Users/BenDe/.codex/worktrees/3169/MAM-basics`, on branch
+`codex-worktree-3169`. The checkout started clean and detached at the exact
+Phase 2 commit `09d008809cd0a79267ea790b0b126e9f2af98f3c`; the branch did not
+exist elsewhere and was created at that commit before implementation. The
+required Phase 1 commit `b080a01a87f29f2140144a1247c45c654d240224` is an
+ancestor. The Phase 2 predecessor remained HEAD through implementation and all
+pre-documentation verification. At the startup measurement, `main` and
+`origin/main` were both `31318dd4b68065efe515b478e10d4bff2c72053e`.
+
+The Phase 3 result commit is necessarily not self-identifying inside the commit
+that contains this receipt. The Phase 4 creation prompt and Phase 3 final
+response carry its full hash, and the Phase 4 executor records the verified
+predecessor hash here. Re-establish the result without relying on that later
+write-back with:
+
+```powershell
+git -C C:/Users/BenDe/.codex/worktrees/3169/MAM-basics log -1 --format=%H -- MAM-parsed/historical py/mb_diff_mpu/mpplus_revisions.py
+```
+
+The immutable evidence file retained SHA-256
+`f04b2d9f0e60ed35794218c444bb88ea4ec5245302efcbe71c049d413d60c3fa`.
+The historical manifest remained byte-identical to Phase 1, with SHA-256
+`235bb25d08280667a0d2f9b2097524a2f58bc9a9d4d0e3683959385dadcc908c`.
+Its complete revision order, member order, dates, paths, sizes, Git blob
+identifiers, commit distances, source repository, and migration object are
+unchanged.
+
+Startup remeasurement found 5,208 tracked files. The historical tree had 146
+tracked files: `README.md`, `manifest.json`, and 144 data files in six source
+commit directories. Each source commit had 24 manifest-listed files. Every
+source file matched the size and Git blob named by the Phase 1 manifest. Phase 3
+replaces the 144 data files with six archives, producing 5,070 tracked files: a
+reduction of 138 from Phase 2, 578 from the Phase 1 tree, and 576 from the
+original 5,646-file baseline.
+
+Each archive was built twice before the source directories were removed, and
+the two complete byte strings matched. An independent post-removal build from
+the Phase 1 Git blobs also matched each archive byte for byte. All 144 archive
+members retain their original `plus/...` names, ordering from the manifest at
+the reader boundary, and exact bytes. The six archives contain 84,572,003 member
+bytes and 84,589,095 total archive bytes. The archive members use `ZIP_STORED`,
+sorted names, the fixed timestamp 1980-01-01 00:00:00, Unix creator metadata,
+mode 100644, and empty comments and extra fields.
+
+| Source commit | Members | Archive bytes | Archive SHA-256 |
+| --- | ---: | ---: | --- |
+| `b5e8f942c62574647a7ec14b15fdeba52107e840` | 24 | 12,724,353 | `66f7ddcbe383b3dbedf97229a0e45f4d89358e54c7edca2bba7e3050e05a3ed9` |
+| `3d5ecfd83f9a6e943f51e3d316b8345b762aa483` | 24 | 15,329,458 | `4277e65a695db890064ed1ee66d719e34c47feb79820c605acd959a67e36c8e1` |
+| `049e636beeaee721f64fd958f670ffe29a9f1e5c` | 24 | 15,238,479 | `235e313ead3b027e7a95d2d5f204b8b202272071774c5df19042086a496c3b9a` |
+| `cc43fe04ebc01122de1082cd4ea849fb657d528f` | 24 | 15,298,161 | `2d80271e019d70588e40a9d06e7af991fa6b3e434871c52e1bf76a3bb6544179` |
+| `1880cbbda9a769c90126f74cf4c406452af5b209` | 24 | 12,993,464 | `eaebf98a9e3b7d38cad791da84315a5bcc3d3cff5b9a835fe9ed7db905fb74fb` |
+| `9ce6ee5d2d611f034208bd2a72d8acb064dd5f19` | 24 | 13,005,180 | `73b17cbc962d2b08185ef63eafa60cae7dab88aacc47bd8d5750eae7a383a0dc` |
+
+`Revision` now reads stored members directly from the archives without
+extraction. It preserves manifest filename order, returned UTF-8 text, source
+dates, stored-revision abbreviation resolution, the migration-source mapping,
+current MAM-basics refs, and explicit `legacy:` reads. Archive validation rejects
+a missing archive, a corrupt archive or member, duplicate members, unlisted
+members, manifest-listed missing members, duplicate manifest paths, unsorted
+members, and noncanonical archive metadata. A scratch Git repository verified
+the actual read-only `legacy:` path, date, filenames, text, and commit-distance
+behavior. No external MAM-parsed clone was required or read.
+
+The real `py/main_diff.py mpp --all` command completed in 5.43 seconds with the same five named
+release comparisons and the same unpinned comparison. All 13 change-log outputs
+matched the saved Phase 1 sizes and SHA-256 values, and Git status was unchanged.
+The relevant tests passed 30 of 30. `py/check_all.py` reported all 7 checks
+passed. The prose mark-order and Latin-diacritic hygiene selection passed 7 of
+7. The full suite reported **989 passed, 5 skipped, 65 subtests passed** in
+109.72 seconds; the five skips remain the expected edition-transcription
+differences. Python was 3.13.15 and Git was 2.43.0.windows.1.
+
+Commands ran from the verified Phase 3 worktree. Commands that invoked Git from
+Python used a process-local `safe.directory` entry for that worktree. The exact
+commands were:
+
+| Purpose | Command |
+| --- | --- |
+| Build every archive twice from the verified source directories | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/build_historical_archives_phase3.py` |
+| Verify members, metadata, deterministic reconstruction, failures, current refs, and legacy reads | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_historical_archives_phase3.py` |
+| Regenerate and compare every change-log output | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/run_and_verify_mpp_phase3.py` |
+| Run the focused MPP tests | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_mpplus_extract.py py/tests/test_diff_mpp_unpinned_latest.py` |
+| Run all source and HTML checks | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py` |
+| Check changed prose and Latin-diacritic hygiene | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py` |
+| Run the full suite | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider` |
+
+The shared interpreter and linked-worktree Git metadata required scoped
+elevation in the desktop sandbox. Scratch-verifier assumptions were
+corrected without tracked-data consequences: the evidence names its historical
+count `verified_members`, and the longstanding current-ref Git reader strips
+surrounding whitespace. A repeated verifier run could not delete an earlier
+elevated scratch Git repository because Windows assigned its object files to the
+desktop owner account; later runs use unique task-local scratch directories.
+These are execution-environment findings, not repository defects.
+
+No published path, product layout, image collection, Wikisource input, format 1
+output, Pages workflow, or MAM-private input changed. Phase 3 did not read
+MAM-private. The Phase 4 task must record its returned task ID, allocated
+checkout, branch, and exact Phase 3 predecessor in this receipt after verifying
+them; Phase 3 creates that task only after its result is committed and clean.
 
 Replace each historical commit directory with
 `MAM-parsed/historical/<full-source-commit>.zip`. Use uncompressed ZIP storage,
