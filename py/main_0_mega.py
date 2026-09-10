@@ -22,6 +22,10 @@ They write into ``gh-pages/uxlc/clc/``, ``holman/``, ``gh-pages/holman/``,
 Three of them fail the run on purpose, as their notes say:
 ``render-uxlc-corrections``, ``verify-and-render-table`` and
 ``book-of-job-site``, the last on any spelling finding in book-of-job's pages.
+
+Also since 2026-09-10, the ``check-mpplus`` step checks MAM-parsed's plus JSON
+as soon as ``parse-go`` has written it, and fails the run on any error it
+finds.
 """
 
 import argparse
@@ -31,8 +35,10 @@ import subprocess
 import sys
 from typing import Callable
 
+from mb_cmn import bib_locales as tbn
 from mb_cmn import graphviz_pin
 from mb_cmn import paths
+from py_misc import check_mpplus
 
 import main_explicit_xataf
 
@@ -124,6 +130,31 @@ def _run_vendored_mam_osis():
         cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
+
+
+def _run_check_mpplus():
+    # Added 2026-09-10.  Until then check_mpplus ran only in py/main_download.py fr-google,
+    # after a Google download, while parse-go runs the same parse on every mega run and
+    # skipped the check that follows it on the download path.  So a change to the parser,
+    # or to the check's own rules, reached the plus JSON with nothing checking it.  Ben,
+    # 2026-09-10: running it in the mega "also 'checks the check', i.e. makes sure the
+    # check itself is still working."  The download path keeps its own call, which exits
+    # 1; this one raises, so an error fails the mega run.  The paths are the 24 that
+    # parse-go writes, one per book24, so a missing file fails here too.
+    plus_dir = paths.mam_parsed_plus_dir()
+    plus_paths = [
+        plus_dir / f"{tbn.ordered_short_dash_full_24(bk24id)}.json"
+        for bk24id in tbn.ALL_BK24_IDS
+    ]
+    errors = check_mpplus.check_mpplus(plus_paths)
+    if errors:
+        for plus_path, error in errors:
+            print(f"  {error[0]} in {plus_path}: {error[1]!r}")
+        raise RuntimeError(
+            f"check_mpplus found {len(errors)} error(s) in MAM-parsed's plus/ tree;"
+            " each is printed above"
+        )
+    print(f"check_mpplus: no errors in the {len(plus_paths)} files of {plus_dir}")
 
 
 # Every step this run skipped because it is running in a cloud session, in order, each with
@@ -235,6 +266,13 @@ _STEPS = [
         "parse-go",
         parse_go.almost_main,
         "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
+    ),
+    StepRecord(
+        "check-mpplus",
+        _run_check_mpplus,
+        "must come immediately after parse-go, whose MAM-parsed plus/ JSON it checks:"
+        " the mark order of every string, and the arguments of every doc-note"
+        " template; raises on any error, so a bad parse fails the mega; writes nothing",
     ),
     StepRecord(
         "foi-features-of-interest",
