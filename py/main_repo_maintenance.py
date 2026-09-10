@@ -49,12 +49,17 @@ Six independent steps, in order:
    later steps.
 5. Run ``py/main_test.py``, this repo's canonical test entrypoint (see
    CLAUDE.md) -- a ``pytest.main()`` wrapper over the whole ``py/tests`` tree.
-6. Run ``py/main_0_mega.py``, the routine downstream rebuild -- every
-   parameterless, non-download rebuild step (parse, mam-with-doc,
-   tmpl-survey, mam-simple, mam4sef/ajf, mam-osis, letter-small-job,
-   decnreub, multimark, wordlist, explicit-xataf, the authored docs, the
-   wlc steps -- vendor-uxlc, WLC JSON/Unicode, accgram, the 4.20/4.22
-   diffs and the a-notes build -- and the closing vendoring audit).
+   Among its tests is ``py/tests/test_mega_coverage.py``, which fails unless
+   every program in the tree is either run by step 6 or declared in that file
+   with the reason it is left out and where that reason is recorded.  It is the
+   check Ben asked on 2026-09-10 to have in maintenance: "that the only
+   programs not part of mega are those that have documented justifications for
+   why they are not part of mega".
+6. Run ``py/main_0_mega.py``, the routine downstream rebuild: every step of
+   its ``_STEPS``, in order, from ``parse-go`` to the closing
+   ``vendoring-audit``.  ``_STEPS`` is the only list of those steps: a copy
+   kept here went stale, naming a step the mega does not have and missing
+   several that it has.
 
 The rebuild step is skipped if the test step failed, unless
 ``--continue-on-test-failure`` is given.

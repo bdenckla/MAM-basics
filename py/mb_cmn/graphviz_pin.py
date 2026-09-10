@@ -42,10 +42,10 @@ TWO READINGS, AND NEITHER ONE COVERS THE OTHER'S GROUND.
 
 A MISSING GRAPHVIZ IN THE CLOUD IS A SKIP, AND EVERYWHERE ELSE IS FATAL. Ben's
 decision, 2026-09-09, and the reason is ``py/main_0_mega.py``: its ``tmpl-survey``
-step is step 5 of 41, and it reaches ``survey_dot.render_svg``. When a missing
-Graphviz raised unconditionally, a cloud container ran four steps and then died,
-and the remaining 36 -- the whole accgram block, ``mam-simple``, ``mam-osis``,
-``near-aleppo-census``, ``gen-site`` -- never ran at all. That is far too high a
+step reaches ``survey_dot.render_svg``. When a missing Graphviz raised
+unconditionally, a cloud container died at that step, and no step after it ran
+at all -- not the whole accgram block, nor ``mam-simple``, ``mam-osis``,
+``near-aleppo-census`` or ``gen-site``. That is far too high a
 price for an artifact a container cannot produce anyway. So ``in_cloud_session``
 gates the choice: in a container the render is skipped, recorded by
 ``note_cloud_skip`` and reported once at the end of the mega run; anywhere else
