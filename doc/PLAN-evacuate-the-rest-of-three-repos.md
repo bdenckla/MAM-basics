@@ -898,7 +898,13 @@ just writes less. Phase 3's record names the renamed command.
 
 **book-of-job's oracle is the one that is also a mega step** — `gen-misc-authored-english-documents`
 — so a mega run covers book-of-job's 183 and nothing else of these three repos'. Do not read a
-clean mega as a clean move.
+clean mega as a clean move. (Dated correction, 2026-09-10: this paragraph's first sentence was
+false from `3e3b6e0b` (2026-05-06), when the step it names began running
+`main_authored.almost_main`, MAM-basics' own misc documents, until phase 5a of
+`doc/PLAN-mega-coverage.md` made book-of-job's generator the step `book-of-job-site` and renamed
+the other step `gen-misc`. book-of-job's generator had arrived on 2026-08-19, `ef8e384c`, under the
+module name `main_authored.py` gave up. So Layer 2's "exactly one of them" was false too: none
+was, as that paragraph said before its 2026-08-22 correction.)
 
 **Two of holman-ketiv-qere's six commands need something a fresh clone does not have**, and both
 are named in that repo's plan: `main_ingest_uxlc_emails` needs the untracked mailbox at

@@ -14,6 +14,14 @@ Since 2026-09-10 the sequence also runs the five UXLC steps that
 ``py/main_uxlc_mega.py`` ran until it was folded in here, from
 ``uxlc-check-changes`` to ``uxlc-word-list``. They write into ``uxlc/``,
 ``gh-pages/uxlc/`` and ``in/UXLC-misc/``.
+
+Six more steps joined on 2026-09-10, when Ben agreed to add the other offline
+generators of tracked files, from ``clc`` to ``map-changes-to-book-of-job``.
+They write into ``gh-pages/uxlc/clc/``, ``holman/``, ``gh-pages/holman/``,
+``gh-pages/book-of-job/``, ``book-of-job/out/`` and ``uxlc/in/UXLC-misc/``.
+Three of them fail the run on purpose, as their notes say:
+``render-uxlc-corrections``, ``verify-and-render-table`` and
+``book-of-job-site``, the last on any spelling finding in book-of-job's pages.
 """
 
 import argparse
@@ -67,6 +75,14 @@ import main_fois
 import main_uxlc_check_changes
 import main_uxlc_word_list
 import main_write_page_break_info
+
+# The other offline generators of tracked files, added on 2026-09-10.
+import main_clc
+import main_estimate_uxlc_locations
+import main_gen_misc_authored_english_documents
+import main_map_changes_to_book_of_job
+import main_render_uxlc_corrections
+import main_verify_and_render_table
 
 _REPOS = paths.repos_root()
 
@@ -318,10 +334,18 @@ _STEPS = [
         ws_bot_proto.almost_main,
         "relies on download of ws",
     ),
+    # Named gen-misc since 2026-09-10, after the py/main_authored.py subcommand it runs.
+    # Until then it was gen-misc-authored-english-documents, the file name main_authored.py
+    # had until eb18bb71 (2026-05-05).  book-of-job's site generator arrived under that
+    # freed module name on 2026-08-19 (ef8e384c), and the shared name let
+    # doc/PLAN-evacuate-the-rest-of-three-repos.md count that generator as a mega step when
+    # no step ran it.  book-of-job-site, further down, runs it now.
     StepRecord(
-        "gen-misc-authored-english-documents",
+        "gen-misc",
         main_authored.almost_main,
-        None,
+        "runs py/main_authored.py gen-misc, which writes the authored documents under"
+        " gh-pages/MAM-with-doc/; not py/main_gen_misc_authored_english_documents.py,"
+        " which book-of-job-site runs",
     ),
     # The wlc steps, in the order wlc-utils' own mega ran them until it was
     # absorbed here on 2026-08-01.  They are LAST rather than free-standing because
@@ -347,12 +371,13 @@ _STEPS = [
         _run_accgram_test_fixes,
         "must come after accgram-run-prose; also reads out/wlc422-kq-u, in/UXLC-39 and MAM-simple",
     ),
-    # The six steps below, and the two entry points after the UXLC steps, joined the mega on
-    # 2026-08-04 for the reason accgram-test-fixes did the same morning (#219): each writes a
-    # git-tracked artifact, and until now nothing routine rewrote any of them.  Two were already
-    # stale when the wiring was done -- out/accgram/_grammaticality.txt since 2026-06-29 and
-    # out/accgram/uxlc_grammar_test.txt since the METHIGAZAQEF change of #218 -- which is the
-    # channel doing exactly what it did to fix-tester.  ~12 s for all eight together.
+    # The six steps below, and find-uxlc-accent-changes and uxlc-grammar-test further down,
+    # joined the mega on 2026-08-04 for the reason accgram-test-fixes did the same morning
+    # (#219): each writes a git-tracked artifact, and until now nothing routine rewrote any
+    # of them.  Two were already stale when the wiring was done --
+    # out/accgram/_grammaticality.txt since 2026-06-29 and out/accgram/uxlc_grammar_test.txt
+    # since the METHIGAZAQEF change of #218 -- which is the channel doing exactly what it did
+    # to fix-tester.  ~12 s for all eight together.
     StepRecord(
         "accgram-run-dual-cant",
         _run_accgram_dual_cant,
@@ -435,6 +460,63 @@ _STEPS = [
         main_uxlc_word_list.main,
         "reads in/UXLC-39; writes uxlc/out/uxlc-words.json and"
         " uxlc/out/uxlc-words-fragile.json",
+    ),
+    # The six steps below joined the mega on 2026-09-10, when Ben agreed to add the other
+    # offline generators of tracked files (phase 5a of doc/PLAN-mega-coverage.md); until
+    # then nothing routine rewrote what they write.  They sit after the UXLC steps because
+    # clc, estimate-uxlc-locations, verify-and-render-table and map-changes-to-book-of-job
+    # read the committed UXLC inputs, though none of the six reads what those five steps
+    # write.  Where one of the six must follow another step, its note says so.  Three of
+    # them fail the mega on purpose: render-uxlc-corrections, verify-and-render-table and
+    # book-of-job-site, each for the reason its note gives.
+    StepRecord(
+        "clc",
+        main_clc.main,
+        "py/main_clc.py all, which is also its default with no argument: reads"
+        " in/UXLC-39 and the note pages and change logs under uxlc/in/; writes the"
+        " five pilot jobs' pages, notes JSON and long-notes pages under"
+        " gh-pages/uxlc/clc/",
+    ),
+    StepRecord(
+        "estimate-uxlc-locations",
+        main_estimate_uxlc_locations.main,
+        "reads the derivative of Holman's UXLC-correction emails under holman/emails/,"
+        " in/UXLC-39 and in/lci_recs.json; writes holman/data/uxlc_atom_locations.json"
+        " and holman/data/uxlc_standard_atoms.json; must come before"
+        " render-uxlc-corrections",
+    ),
+    StepRecord(
+        "render-uxlc-corrections",
+        main_render_uxlc_corrections.main,
+        "must come after estimate-uxlc-locations, whose two JSON files it reads, and"
+        " raises unless they cover exactly the cases in holman/emails/; writes"
+        " gh-pages/holman/uxlc_corrections.html with its CSS and JS, and"
+        " holman/docs-not-served/uxlc_corrections.json",
+    ),
+    StepRecord(
+        "verify-and-render-table",
+        main_verify_and_render_table.main,
+        "must come after parse-go: checks Holman's ketiv/qere review table against"
+        " MAM-parsed's plus/ tree and in/UXLC-39, and raises on any verification"
+        " failure; writes its summary into holman/docs-not-served/table_data.json"
+        " and the gh-pages/holman/table_data_findings* pages with their CSS and JS",
+    ),
+    StepRecord(
+        "book-of-job-site",
+        main_gen_misc_authored_english_documents.main,
+        "book-of-job's site generator: reads only committed inputs; deletes and"
+        " rewrites the HTML and CSS under gh-pages/book-of-job/ and the generated JSON"
+        " under book-of-job/out/; ends in a spell check of those pages that exits 1 on"
+        " any spelling, apostrophe or period finding, so such a finding fails the"
+        " mega, as doc/PLAN-mega-coverage.md intends",
+    ),
+    StepRecord(
+        "map-changes-to-book-of-job",
+        main_map_changes_to_book_of_job.main,
+        "must come after book-of-job-site, whose gh-pages/book-of-job/jobn-details/"
+        " pages and book-of-job/out/enriched-quirkrecs.json it reads, with"
+        " uxlc/in/UXLC-misc/2026.04.01 - Changes.xml; writes"
+        " uxlc/in/UXLC-misc/2026.04.01-map-to-book-of-job.json",
     ),
     StepRecord(
         "find-uxlc-accent-changes",

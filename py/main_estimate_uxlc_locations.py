@@ -1,19 +1,21 @@
-"""What the sibling UXLC-utils clone says about each of Holman's atoms.
+"""What the UXLC says about each of Holman's atoms.
 
 Run from repo root:
     .venv/Scripts/python.exe py/main_estimate_uxlc_locations.py
 
-Two facts, both wanting ~11 MB of UXLC core XML this repo does not track, both
-written out for the render step to read: where the atom sits in the Leningrad
-Codex (data/uxlc_atom_locations.json) and what the UXLC numbers it
-(data/uxlc_standard_atoms.json). The render step needs only what is tracked, so
-a fresh clone can render the page but not redo either -- the same division the
-.eml ingest step already draws.
+Two facts, both written out for the render step to read: where the atom sits in
+the Leningrad Codex (holman/data/uxlc_atom_locations.json) and what the UXLC
+numbers it (holman/data/uxlc_standard_atoms.json). The location is worked out
+from the UXLC core XML at in/UXLC-39/ and the Leningrad Codex page index at
+in/lci_recs.json, and the number from the XML alone. Everything this program
+reads is tracked, so a fresh clone can redo both, and py/main_0_mega.py runs it
+as its estimate-uxlc-locations step, immediately before its
+render-uxlc-corrections step.
 
-The estimator itself is MAM-basics' uxlc_misc.my_uxlc_location, vendored into
-py/uxlc_misc/ and py/uxlc_lci/ by py/main_update_vendored_files.py. It takes a
-(book, chapter, verse, atom) quad, so no word matching is involved and none of
-the CLI's ambiguity cases arise.
+The estimator itself is uxlc_misc.my_uxlc_location, in py/uxlc_misc/, which uses
+the Leningrad Codex index modules in py/uxlc_lci/. It takes a (book, chapter,
+verse, atom) quad, so no word matching is involved and none of the CLI's
+ambiguity cases arise.
 
 What it does NOT take is the atom number CaseRef holds, and until 2026-08-12 it
 was handed exactly that. Three numberings are in play here and no two of them
