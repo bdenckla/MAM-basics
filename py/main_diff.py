@@ -16,6 +16,7 @@ Examples:
 """
 
 import argparse
+import sys
 
 from subcommands import diff_ctr_vs_mam
 from subcommands import diff_mpp
@@ -34,9 +35,18 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main() -> None:
-    args = build_parser().parse_args()
+def almost_main(argv: list[str]) -> None:
+    """Run one subcommand with the given arguments.
+
+    ``main_0_mega.py`` calls this with an explicit ``argv``, since it runs its steps
+    in one process and blanks ``sys.argv`` while they run.
+    """
+    args = build_parser().parse_args(argv)
     args.func(args)
+
+
+def main() -> None:
+    almost_main(sys.argv[1:])
 
 
 def _add_subcommands(subparsers) -> None:

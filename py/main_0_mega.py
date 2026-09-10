@@ -33,6 +33,10 @@ it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
 ``diffable-pointed-hebrew``, ``ac-gen-index-flat-annotated`` and
 ``pipeline-graph``, whose inputs no step writes, between ``gen-site`` and
 ``vendoring-audit``.
+
+The ``diff-ctr-vs-mam`` step joined the same day, after ``diff-mpp``, once
+``py/diff_ctr_vs_mam/massage_mpu_verse.py`` could handle the narrow-sense paseq
+template that Proverbs 8:34 has had in MAM-parsed since 2026-03-16.
 """
 
 import argparse
@@ -53,6 +57,7 @@ import main_explicit_xataf
 # main_download_mam_fr_wikisource.py
 import main_authored
 import main_decnreub
+import main_diff
 import main_foi_features_of_interest
 import main_multimark
 import main_sigil_inventory
@@ -169,6 +174,10 @@ def _run_check_mpplus():
             " each is printed above"
         )
     print(f"check_mpplus: no errors in the {len(plus_paths)} files of {plus_dir}")
+
+
+def _run_diff_ctr_vs_mam():
+    main_diff.almost_main(["ctr-vs-mam"])
 
 
 # Every step this run skipped because it is running in a cloud session, in order, each with
@@ -322,6 +331,20 @@ _STEPS = [
         "diff-mpp",
         diff_mpp.run_all,
         "every named release from releases.json, plus unpinned-latest and index.html",
+    ),
+    # Added 2026-09-10, in phase 5c of doc/PLAN-mega-coverage.md.  Until then nothing
+    # routine ran py/main_diff.py ctr-vs-mam, and the only commit of
+    # out/diff_ctr_mam.json was d86e5779 (2026-03-09).  From 2026-03-16 on, ctr-vs-mam
+    # could not complete: Proverbs 8:34 has had the narrow-sense paseq template since
+    # MAM-parsed revision 1880cbbd of that day, and
+    # py/diff_ctr_vs_mam/massage_mpu_verse.py raised a KeyError on that template until
+    # the commit that added this step gave the template a handler.
+    StepRecord(
+        "diff-ctr-vs-mam",
+        _run_diff_ctr_vs_mam,
+        "py/main_diff.py ctr-vs-mam: compares Psalms and Proverbs in MAM-parsed's"
+        " plus/ tree with the committed CTR JSON under in/chabad-ctr/, and writes"
+        " out/diff_ctr_mam.json; must come after parse-go",
     ),
     StepRecord(
         "tmpl-survey",
