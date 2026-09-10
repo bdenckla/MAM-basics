@@ -13,6 +13,13 @@ Status updated 2026-09-09 after Ben's D11 naming approval: step 2 is complete.
 All D1-D11 decisions are recorded under step 2; no later D-numbered entry exists
 in this plan. Step 3 is next, with no decision still pending for its handoff.
 
+Status updated 2026-09-09 after Step 5: steps 1-5 are complete. Ben approved all waves,
+P1-P3, E1-E8 and N1-N9 as amended. Step 6, Wave 1, is next in a fresh task. Its V6 setup
+and proof precede any remediation edit or back-merge. The technical unchanged-HTML condition
+remains in force; the approved E items have a separate editorial phase after the technical
+phase passes. See Step 5 and the remediation plan's dated approval record for the current
+dispositions; earlier status entries remain historical.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -96,6 +103,11 @@ for the steps:
    appends one line, "Executed <date>: commit <id>", under its step's heading in this plan, in
    the same commit. No task fast-forwards `main` or pushes: the integration below runs once, at
    the end of the final step-6 wave.
+   **Ordering clarification, 2026-09-09:** the Step-5 approval write-back is plan-only and
+   does not back-merge. For Step 6, read the instructions and complete plans, then establish
+   and prove the remediation plan's V6 gate before any remediation edit or back-merge.
+   Run V6 before and after each merge. Its stop rule supersedes any instruction here to
+   resolve, continue, commit completed remediation, or integrate after a real HTML difference.
 4. **Never rewrite a dated record.** A correction to any review record or plan record is a dated
    note beside the text it corrects; the five documents of the round keep their text.
 5. **Any Hebrew written into a file goes through `has_std_mark_order` before the commit**
@@ -579,6 +591,33 @@ Record the approved HTML editorial work as a separate phase, with its exact
 intended differences and output contract addressed before that phase begins.
 The approval is not a waiver of the technical stop condition.
 
+**Step 5 completed 2026-09-09:** the fresh task verified clean source commit
+`e2693d9a3fbd43981f81c70e21ef6ec66ba41d4c` in the named review worktree and recorded Ben's
+approval consistently in `doc/PLAN-remediate-review-findings-2026-09-08.md`, under
+"Step-5 approval record and next execution phase". Wave 1, Wave 2, Wave 3, Wave 4,
+P1-P3, E1-E8, and N1-N9 are approved as amended. E2 uses a coalesced italic
+`meteg/merkha` span, including the slash. No listed proposal needs approval again.
+
+The technical phase keeps the fixed `c2f238f2c253d7b00b2d22dc262fe95c81a82401` HTML baseline
+and full V6 stop contract. The remediation plan identifies the exact intended E2/E3/E8
+differences and the output-contract preparation required before the separate editorial phase.
+The editorial output contract must be resolved and recorded before those HTML edits; a
+genuinely unresolved contract revision goes to Ben as a specific decision, without reopening
+the item approvals. No decision blocks Wave 1's handoff.
+
+The Step-5 task changes only these plans and commits locally. It performs no remediation,
+generator run, V6 implementation, back-merge, integration, or push. After verification and a
+clean local commit, start Step 6, Wave 1, automatically under Ben's phase-handoff instruction.
+The successor uses the same worktree directly and establishes V6 before touching remediation.
+No intermediate archival changes the final-wave integration schedule.
+
+Verification recorded 2026-09-09: only the close-out and remediation plans changed.
+`git diff --check` passed. The existing prose mark-order lint passed with
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B py/main_test.py py/tests/test_prose_mark_order.py -q -p no:cacheprovider`
+(1 passed). No tracked Python changed, so black was not required. No full suite or product
+generation was run for this planning-only update. The execution commit is recorded below
+after the commit exists.
+
 Actor: Ben. Input: the plan from step 4. Output: an approval for each wave's code and data items,
 and for each MAS wording item an approval, a rejection or an amended wording, pasted into the
 step-6 prompt for that wave. The step-6 task records them in the plan as dated decisions before it
@@ -600,9 +639,9 @@ Execute wave <N> of doc/PLAN-remediate-review-findings-2026-09-08.md.
 Use this existing worktree directly:
 C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08
 
-Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding. Then merge main into the branch with git merge --no-edit main, resolving any conflict on the branch, before reading further.
+Before reading, verify the checkout path, branch, HEAD, and working-tree status. The branch is codex-review-2026-09-08. The required commit is <required commit>. A newer HEAD must contain that commit as an ancestor. Inspect any mismatch before proceeding.
 
-Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 6 for wave <N> and follows its rules. Read the remediation plan in full before editing.
+Read applicable global instructions, repository CLAUDE.md, and the hebrew-prose skill with its references. Read doc/PLAN-close-out-review-2026-09-08.md; this task is its step 6 for wave <N> and follows its rules. Read the remediation plan in full before editing. Establish and prove its V6 gate before any remediation edit or back-merge, then run V6 before and after git merge --no-edit main in the worktree. A real MAS HTML difference stops the entire process for Ben's renewed explicit decision; read-only diagnosis is allowed, but do not fix forward or continue another wave. Failed or incomplete checks also block progress.
 
 Ben's approvals, 2026-09-DD: wave <N> approved. MAS items: <item: approved wording / rejected / amended to "...">.
 

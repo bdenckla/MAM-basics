@@ -1,6 +1,6 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; MAS technical work conditionally approved only with unchanged HTML; other step-5 approvals remain pending; no remediation started.
+State: live 2026-09-09; step 5 complete; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained; no remediation started.
 
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
@@ -23,6 +23,12 @@ recorded in [dual-agent-review.md](dual-agent-review.md), under "Present remedia
 public-facing risk". This preference records no additional approval of the proposed work.
 
 ## Conditional approval: changed MAS HTML stops remediation
+
+**Step-5 update, 2026-09-09:** Ben's approval of all waves and P/E/N proposals is recorded
+under "Step-5 approval record and next execution phase" below. That decision supersedes
+the pending-approval statements in this plan, including the earlier statements in this
+section. The technical unchanged-HTML condition, fixed baseline, and mandatory stop remain
+in force. Approval of E2/E3/E8 does not permit their execution during technical remediation.
 
 Ben's decision, 2026-09-09, after the displayed-mark simulation and review of newer Phonetic
 MAM work: the discussed technical changes are approved **only on the assumption that no
@@ -303,6 +309,10 @@ its consequences. No actual before/after Hebrew snippet changed in the simulatio
 
 ## Decisions already taken and proposals awaiting step 5
 
+**Status correction, 2026-09-09:** step 5 is complete. The heading and earlier conditional
+phrasing below predate the final approval. The dated step-5 record gives the current
+dispositions; no listed wave, P, E, or N item needs its proposal approved again.
+
 Ben's decisions, 2026-09-09:
 
 1. **D2:** replace the skill opening's restrictive sentence with exactly: `Plain ‘word’
@@ -367,6 +377,11 @@ Ben's step-5 decision, 2026-09-09: amend E2 to coalesce the spans around slash-j
 names, including the slash in the italic span. Ben's reason: "I think it looks better to
 coalesce such spans, since that makes the slash be in italics as well." This settles the
 slash formatting in E2; the remaining proposal and wave approvals are still pending.
+
+**Later decision, 2026-09-09:** Ben approved E1-E8 in full, including the amended E2 above.
+The preceding paragraph remains the record of the earlier slash-formatting decision.
+E1-E8 execute in the separate Wave 3 editorial phase after the technical phase passes V6;
+the phase's output-contract preparation is specified below.
 
 ## Exact editorial proposals outside the MAS text
 
@@ -476,6 +491,13 @@ record's later correction is a dated note beside that record, never a rewritten 
 | 18.1-18.3 | Review's trailer, housekeeping, and merge-cadence census | H original review and reconciliation limits | Record only; housekeeping remains Ben's separate track. Do not remove branches, worktrees, folders, or caches, or rewrite trailers. This review worktree retires only under close-out step 7. |
 
 ## Wave 1 — dated records, current instructions, and settled dispositions
+
+**Step-5 handoff, 2026-09-09:** Wave 1, P2/P3, and N1-N2/N4-N9 are approved. The next
+fresh task first implements and proves V6 in ignored scratch files, checks the original
+checkout and fresh scratch render, and only then back-merges `main` and checks V6 again.
+No remediation edit precedes that gate, including D2 or a dated correction. After those
+checks pass, execute only Wave 1. The approvals are already recorded; cite the dated
+step-5 decision in the wave record instead of asking Ben again.
 
 Preconditions: Ben has approved Wave 1 and P2/P3 and disposed of N1-N2/N4-N9; the merged starting tree is clean. Read the
 original and accepting paragraphs for each W1 row before editing. Record the approvals in this
@@ -684,6 +706,41 @@ hashes, all-nine-page byte comparisons, V6 command and result, and suite output.
 failed check and Ben's subsequent explicit decision; a later pass must not erase a stop.
 Commit completed, passing technical work locally with its record. No integration or push.
 Record separately approved editorial work separately if Ben later authorizes that phase.
+
+### Wave 3 editorial phase: approved items and output-contract preparation
+
+**Step-5 decision recorded 2026-09-09:** E1-E8 are approved as specified in their table,
+including E2's coalesced italic `meteg/merkha` span. This supersedes Wave 3's earlier
+pending-item language. Finish and commit the passing technical phase before preparing
+the separate editorial execution. Preserve its fixed baseline, evidence, and any stop record.
+
+The intended MAS HTML differences are confined to these approved items:
+
+| Item | Intended difference | Preserved content |
+|---|---|---|
+| E2 | Wrap the specified visible mark names in existing `romanized` spans on the main, Methods, and 2 Chronicles pages; use one span around `meteg/merkha`, including the slash. | All visible characters and spaces; titles and attributes. Re-measure the listed occurrences before editing. |
+| E3 | Change only the main page's Fit-for-MAS criteria list from `ul` to `ol`. | The criteria entries and their order; every other list. |
+| E8 | Add the approved sentence below the Aleppo 1 Kings 7:37 crop on the Methods page, with romanized mark names. | The crop, alt text, MAM paragraph, and existing attribution. |
+
+E1/E4/E5/E6/E7 have no intended generated-HTML difference. Apply only their approved source
+and documentation edits, including the dated-note treatment of historical records. Survey
+JSON, numerical claims, displayed Hebrew forms, images, and MAS page membership stay unchanged
+through editorial work too.
+
+Before the editorial phase begins, document the exact intended byte differences, the
+technical phase's passing commit, and the proposed editorial comparison baseline and gate.
+Resolve that output contract against Ben's recorded approval; do not silently replace V6's
+technical baseline or treat an unexpected technical difference as an editorial change. If
+an explicit revision to the output contract still requires Ben's decision, present only that
+specific revision with the concrete differences. Do not ask again whether E1-E8 are approved.
+Until the editorial output contract is resolved and recorded, retain V6's original contract
+and do not execute the HTML edits or advance to final integration. A real V6 stop always
+requires Ben's renewed explicit approval, even when a proposed repair is already known.
+
+Keep the editorial execution record and commit separate from the technical phase. Use a
+fresh task for the editorial phase, then hand off to Wave 4 only after the approved editorial
+work and its output verification are complete. Wave 4's final checks must use the explicitly
+resolved editorial contract while retaining the technical result and original V6 evidence.
 
 ## Wave 4 — vendoring records, final dispositions, and one integration
 
@@ -970,3 +1027,53 @@ This update changes only this plan, with no back-merge, production-code edit, ge
 edit, remediation execution, primary integration, or push. The earlier planning execution
 record above remains historical; the conditional approval here supersedes its wholly-pending
 description only for the discussed technical work. Other wave/P/E/N dispositions are unchanged.
+
+## Step-5 approval record and next execution phase
+
+**Ben's decision, 2026-09-09:** after the plan update at
+`961554d4ffb9e4ee7d849c4620083bd93f170ffb`, Ben answered the original question,
+"Do you approve the waves and P1–P3 recommendations, including the exact editorial proposals
+E1–E8 and N1–N9?", with "I can now say yes". Ben requested Step 5 in a fresh task. The
+predecessor recorded that approval in close-out-plan commit
+`e2693d9a3fbd43981f81c70e21ef6ec66ba41d4c`; the Step-5 task verified that exact clean HEAD
+and branch `codex-review-2026-09-08` in
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`.
+
+| Items | Disposition |
+|---|---|
+| Wave 1, Wave 2, Wave 3, Wave 4 | Approved in the stated order and scope, subject to V6 and the separate editorial phase. |
+| P1, P2, P3 | Approved as recommended, including their limits and explicitly deferred investigation. |
+| E1, E2, E3, E4, E5, E6, E7, E8 | Approved exactly as amended; E2 includes the italic slash. Execute separately from the technical phase, as specified above. |
+| N1, N2, N3, N4, N5, N6, N7, N8, N9 | Approved exactly as proposed, in their assigned waves. |
+
+These dispositions supersede every earlier pending-approval statement and satisfy every
+"if approved" prerequisite for the listed proposals. The earlier records are preserved as
+history. For example, the former line-3 State was:
+
+> State: live 2026-09-09; MAS technical work conditionally approved only with unchanged HTML; other step-5 approvals remain pending; no remediation started.
+
+The approval does not waive the technical unchanged-HTML condition. V6 still compares
+complete bytes and exact page membership against
+`c2f238f2c253d7b00b2d22dc262fe95c81a82401`, preserves its pinned JSON, and halts the entire
+remediation process on a real difference. Failed or incomplete rendering/checking blocks
+progress too. The simulation establishes only its stated display-preservation result; it
+does not validate revised `rep` selection, matching, or annotation validation. The bounded
+technical-source read permission and restrictions on private regeneration and scholarly
+investigation remain unchanged.
+
+Ben's presentation order remains public-facing wording, including HTML and reader-facing
+Markdown, then published corpus data, then broad categories of lower-risk changes. Internal
+`doc/` Markdown and MAS analysis JSON are generally lower risk; Phonetic MAM JSON without a
+resulting HTML change is also lower risk. Classification does not expand the approved scope.
+
+**Next authorized execution phase:** Step 6, Wave 1, in a fresh task using the same saved
+worktree directly. Its first work is V6 setup and proof, before any remediation back-merge
+or edit. No new decision blocks that handoff. The later editorial output contract must be
+addressed before the separate Wave 3 editorial phase begins, as specified above.
+
+Step 5 performs planning/approval write-back only. No remediation, generator run, V6
+implementation, back-merge, integration, or push has been performed. No tracked Python file
+changed. The Step-5 completion record in the close-out plan records verification and the local
+commit. Integration remains scheduled once, at the end of Wave 4, including across intermediate
+task archival. Ben's phase-handoff instruction of 2026-09-09 authorizes starting each next
+fresh task once the preceding phase is committed and clean and no new decision is needed.
