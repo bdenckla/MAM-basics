@@ -26,6 +26,27 @@ had reported as not.
 
 ## 1. Decisions for Ben, with recommendations
 
+**Ben answered all six on 2026-09-10**, and `doc/PLAN-mega-coverage.md` carries the answers out:
+
+1. The survey joins the mega, on two conditions: in a worktree it looks for MAM-private "next to the
+   worktree's 'home clone'" rather than relying on `REPOS_ROOT`, and in the cloud "it skips the MAS
+   survey altogether".
+2. Fold `py/main_uxlc_mega.py` into the mega: agreed.
+3. Add the other offline generators: agreed. The three gaps after §5's table were not part of the
+   answer and stay open.
+4. The four judgment calls:
+   - (a) The two Wikisource index generators "were one-off programs generating wikitext to get a
+     human started, and will never be run again": remove them and their outputs.
+   - (b) The column-coordinate plots "were one-time experiments": remove them.
+   - (c) The line-break reports stay out of the mega. The fine-grained indexing "served its purpose
+     for the book-of-job project".
+   - (d) The slide thumbnails stay out of the mega.
+5. Delete the dead and redundant programs: agreed. `py/check_ac_word_finding.py`, which the
+   recommendation left to Ben, is still open.
+6. Build the check: agreed.
+
+The recommendations as they were put to Ben:
+
 1. **Put the post-stress-meteg survey in the mega?** Recommended: yes, as a step before `gen-site`.
    The cost is that the mega would need MAM-private for good, not only until the near-Aleppo census
    leaves it. That is the opposite direction from the vendoring decision of 2026-09-04, recorded in
