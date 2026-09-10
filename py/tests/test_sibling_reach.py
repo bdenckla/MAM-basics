@@ -121,6 +121,10 @@ from mb_cmn import paths, provenance
 # shrink as the fourth stage's remaining product lanes land.
 # ---------------------------------------------------------------------------
 SIBLINGS_REACHED: dict[str, str] = {
+    "MAM-OSIS": (
+        "redirect_stubs/stubs.py only, to publish or check the frozen redirect stubs."
+        " Product generation uses the local MAM-OSIS directory."
+    ),
     "MAM-simple": (
         "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
         " source repository's frozen redirect stubs."
