@@ -1,6 +1,6 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; planning complete, awaiting Ben's step-5 approval; no remediation started.
+State: live 2026-09-09; MAS technical work conditionally approved only with unchanged HTML; other step-5 approvals remain pending; no remediation started.
 
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
@@ -21,6 +21,59 @@ with the documents; ordinary `doc/` records do not. The E/N labels and implement
 below remain references and execution structure, not risk categories. The standing rule is
 recorded in [dual-agent-review.md](dual-agent-review.md), under "Present remediation by
 public-facing risk". This preference records no additional approval of the proposed work.
+
+## Conditional approval: changed MAS HTML stops remediation
+
+Ben's decision, 2026-09-09, after the displayed-mark simulation and review of newer Phonetic
+MAM work: the discussed technical changes are approved **only on the assumption that no
+generated/public HTML changes**. This updates the proposed remediation itself: reassess the
+use of annotated forms where an unannotated form is available, preserve legitimate displayed
+marks, and revise annotation validation accordingly. Approval is conditional on the measured
+output, not permission for any consequences of those code changes. The request to update this
+plan authorizes documentation work now; it does not start a remediation wave or approve the
+other pending proposals.
+
+**A single changed byte in any of the nine MAS HTML files invalidates this conditional
+approval and stops the entire remediation process for interactive discussion with Ben.**
+Markup, whitespace, line endings, attributes, and Unicode mark order count just as visible
+text does. A missing or additional MAS page also fails. Other HTML is not expected to change
+from the discussed technical work; any such change is also a scope failure. Separately
+approved Holman/whitespace work in W2 keeps its declared output contract.
+
+Before any remediation edit or back-merge, establish V6's executable check against the nine
+reviewed HTML blobs at `c2f238f2c253d7b00b2d22dc262fe95c81a82401`. Keep that baseline fixed
+through the remediation waves and final integration. Run V6 before and after back-merges,
+after rendering and validation, and before committing completed remediation or integrating.
+An earlier passing simulation or suite is never a substitute for the current comparison.
+
+On a difference, the check must exit nonzero and print prominently:
+
+```text
+STOP: MAS HTML CHANGED. BEN'S CONDITIONAL APPROVAL NO LONGER APPLIES.
+REMEDIATION HALTED; INTERACTIVE DECISION REQUIRED.
+```
+
+Preserve the changed output, baseline, hashes, and readable diffs. Report the exact files,
+changed locations, and relevant Unicode names to Ben. Stop all remaining remediation edits,
+waves, completion commits, integration, and pushes; read-only diagnosis to prepare that
+discussion is permitted. Do not normalize away the difference, update the baseline, add an
+exception, filter the marks back out, mix in an editorial change, or fix forward and resume
+without Ben. Do not discard existing work. Even if a later diagnosis identifies a correction
+that would restore identical HTML, **Ben must explicitly renew or revise the agreement before
+remediation resumes**. A failed or incomplete comparison likewise prevents proceeding; it
+cannot establish the approval's prerequisite.
+
+E2, E3, and E8 would deliberately change MAS HTML. Those proposals remain separately pending
+and are excluded from this conditionally approved technical work. Ben's earlier preference
+for coalesced E2 slash spans settles the proposed formatting only. Any later approval of an
+HTML-changing E item must name the intended diff and explicitly revise the no-change contract
+for a separate editorial phase, after the technical result has passed V6. An executor cannot
+use an E item as an explanation that permits an unexpected technical diff. Other E/N items
+and wave approvals retain their existing individual dispositions.
+
+This condition takes precedence over any instruction below to explain a diff, update scope,
+continue after verification, or carry out final integration. It applies to this remediation
+process; it is not a permanent prohibition on future separately approved page development.
 
 ## Checkout, sources, and measured starting state
 
@@ -52,8 +105,12 @@ git -C C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08 status --por
 git -C C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08 merge-base --is-ancestor <required-commit> HEAD
 ```
 
-Inspect a mismatch before proceeding. With a clean tree, merge `main` into the branch before
-reading further or editing; resolve conflicts here and verify the merged tree here.
+Inspect a mismatch before proceeding. For remediation execution, establish and run V6
+before the required clean-tree merge of `main` into the branch. Run V6 immediately after the
+merge, resolve conflicts in the worktree, and verify the merged tree here. An incoming MAS
+HTML difference also triggers the conditional-approval stop; do not silently choose a newer
+baseline. The 2026-09-09 simulation and this follow-up plan-only update retain the named
+review checkout and commit without a back-merge; they do not execute these waves.
 
 ```powershell
 git -C C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08 merge --no-edit main
@@ -89,8 +146,9 @@ unknown by Ben's decision; it has no remaining effect on a finding's disposition
 Planning began clean at required commit `83b470da1846fc1c739fcca48762d01627fa354e`.
 The required back-merge produced `dd86c96fd29c4b345ae37ba7252ffe72944cbef3`, bringing in
 `222883dd`'s cloud Graphviz handling. Measurements below are at `dd86c96f`, before adding
-this plan. Re-measure at each wave's merged starting HEAD; a difference requires an
-explanation and an updated scope, not an attempt to restore these numbers.
+this plan. Re-measure at each wave's merged starting HEAD. Ordinary census changes require
+an explanation and a scoped update. MAS HTML differences instead invoke the mandatory stop
+above; neither re-measurement nor an agent-written scope update renews Ben's approval.
 
 | Measurement | Result at `dd86c96f` | Re-establishment |
 |---|---|---|
@@ -109,18 +167,139 @@ explanation and an updated scope, not an attempt to restore these numbers.
 The planning task ran no product, survey, or page generator. Complete artifact synchronization
 is therefore **not** asserted as a planning baseline. The first approved task for each generator
 records a before-edit regeneration and its diff. Known baseline changes, especially the
-vendoring audit, must be named separately from remediation changes.
+vendoring audit, must be named separately from remediation changes. The later simulation
+below establishes synchronization for the nine MAS pages only, at its stated commit.
 
 The public Phonetic MAM pages, if needed to repeat finding 8.1, are under
 `C:/Users/BenDe/GitRepos/phonetic-hbo`, historically at `7322b665`; record that clone's actual
-HEAD before use. This plan needs no private scholarly sources, private history, or private
-survey regeneration. Render MAS pages from the tracked JSON with `--trust-surveys`.
-Do not run a mega, refresh Wikisource, or write MAM-OSIS as a side effect of these waves.
+HEAD before use. Ben separately authorized looking beyond the review window at the newer
+Phonetic MAM technical implementation and documentation named below, including that bounded
+MAM-private history. Those read-only sources inform the remedy; no private scholarly-source
+research, private survey regeneration, or publication of private source text is authorized.
+Render MAS pages from the tracked JSON with `--trust-surveys`. Do not run a mega, refresh
+Wikisource, or write MAM-OSIS as a side effect of these waves.
 
 Another task may be live in the primary clone. That does not block this worktree. Keep one
 writer in this exact worktree; compare HEAD and status immediately before staging. The final
 integration requires both checkout trees clean and uses only a fast-forward in the primary
 clone. Intermediate task archival does not integrate or push.
+
+## Displayed marks: simulation and newer technical evidence
+
+Measured 2026-09-09 in the required worktree, branch `codex-review-2026-09-08`, at
+`c2f238f2c253d7b00b2d22dc262fe95c81a82401`: the real nine-page renderer reproduced every
+tracked MAS HTML file byte for byte. Replacing only `_hebrew_cell` in memory to retain marks
+also produced byte-identical HTML. This is a latent deletion risk, not an observed loss of
+marks in the current pages.
+
+`py/accgram/post_stress_meteg.py::_PHONETIC_MAM_ANNOTATIONS` deletes these marks in the
+comparison helper `_as_mam_would_write_it`; `_hebrew_cell` currently reuses that helper:
+
+| Code point | Unicode name | Relation to the Phonetic MAM annotations |
+|---|---|---|
+| U+05AF | HEBREW MARK MASORA CIRCLE | After HEBREW POINT SHEVA, annotates vocal shewa |
+| U+05C4 | HEBREW MARK UPPER DOT | After HEBREW POINT DAGESH OR MAPIQ, annotates strong dagesh |
+| U+05C5 | HEBREW MARK LOWER DOT | Not either of those two annotation encodings; the old deletion set is broader |
+| U+FB1E | HEBREW POINT JUDEO-SPANISH VARIKA | Not either of those two annotation encodings; the old deletion set is broader |
+
+The helper also converts ASCII `~`, the gray-maqaf placeholder `hpu.NU_GMAQ`, to U+05BE
+HEBREW PUNCTUATION MAQAF. The simulated display behavior retained only that conversion;
+it did not insert any mark absent from its input.
+
+All protected files are under the worktree's `gh-pages/`. Counts below include repeated
+helper calls and punctuation. Re-establish them with the targeted simulation recipe below.
+
+| HTML filename | Helper calls at `c2f238f2` | Changed locations |
+|---|---:|---:|
+| `post-stress-meteg.html` | 35 | 0 |
+| `post-stress-meteg-methods.html` | 32 | 0 |
+| `post-stress-meteg-cases.html` | 468 | 0 |
+| `post-stress-meteg-misc.html` | 20 | 0 |
+| `post-stress-meteg-lacks-mas.html` | 357 | 0 |
+| `post-stress-meteg-not-fit.html` | 68 | 0 |
+| `post-stress-meteg-post-silluq.html` | 2 | 0 |
+| `post-stress-meteg-2chr-8-11.html` | 5 | 0 |
+| `post-stress-meteg-next-conjunctive.html` | 30 | 0 |
+
+The run captured 1,017 calls and 674 distinct input strings. No input contained any of the
+four deleted marks or the gray-maqaf placeholder. Both full output sets and all helper
+results were identical. The input `out/accgram/post-stress-meteg.json` had SHA-256
+`9b2ebdf41ab1a211a728b2f025fcbc101f8c33338007f9ea2fbe0b50c775fad2`.
+
+The real call was `author_site.post_stress_meteg.gen_html_files(out_dir, trust_survey=True)`,
+twice, with separate scratch destinations, normal claim checks and serializer, and unchanged
+survey JSON. The simulated `_hebrew_cell` returned
+`wrap_hebrew_runs((form or "").replace(psm.hpu.NU_GMAQ, psm.MAQAF))`. The run took 1.147
+seconds and changed no tracked files. The command actually run was:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B C:/Users/BenDe/Documents/Codex/2026-09-09/referenced-chatgpt-conversation-this-is-an/work/simulate_preserve_displayed_marks.py
+```
+
+The script, report, helper-call trace, input hashes, and summary were saved under
+`C:/Users/BenDe/Documents/Codex/2026-09-09/referenced-chatgpt-conversation-this-is-an/outputs/`
+as `simulate_preserve_displayed_marks.py`, `preserve-marks-simulation-report.md`,
+`preserve-marks-helper-calls.json`, `preserve-marks-input-hashes.json`, and
+`preserve-marks-summary.json`. The script sets the worktree as its working directory and
+requires the exact measured HEAD, so it will reject the later plan-update commit. Do not
+weaken that historical check and present a later run as the original measurement. A fresh
+executor should reproduce the two-pass method in a new, uniquely named scratch script,
+record the actual HEAD, retain V6's fixed HTML baseline, and fail on missing inputs.
+
+The provenance inspection found selected MAM forms, next MAM forms, and punctuation; no
+observed record call used the `mam_form or chanted_word` fallback. A BHS-labelled comparison
+form comes from vendored UXLC 3.9, with an equality assertion against WLC 4.22. The
+dual-cantillation comparison path uses selected MAM forms through `_template_mam_forms` and
+`_mam_forms_for_dual_cantillation_difference`; involvement of Phonetic MAM records does not
+make those displayed strings annotated `fva` text. Do not describe every helper input as a
+current MAM form, or every Phonetic MAM comparison as annotated text needing deletion.
+
+Newer evidence, inspected read-only with Ben's permission on 2026-09-09:
+
+1. MAM-basics `b865b7c8fd9cb95e6a3a850fadcb9f852299c2a4`,
+   `py/mb_cmn/paths.py::al_hatorah_phonetic_dir`, documents `READ rep FOR MAM'S SPELLING OF A
+   CHANTED WORD, NOT fva`. That documentation commit was absent from the measured review
+   branch. Inspect it with `git show` from the worktree's shared Git history; its presence
+   on newer main is not evidence that consumers were migrated.
+2. At `C:/Users/BenDe/GitRepos/MAM-private`, commit
+   `e21306165707f9500ea19540d04af3e1918b563d`, read
+   `al-hatorah/io/a01-phonetic-std-set/README.md`, anchor `To get MAM's spelling of a chanted
+   word, read rep, not fva`, and
+   `doc/explore-phonetic-mam-carrier-marks-2026-09-09.md`, sections 3.3, 3.4 and 6. A record's
+   first `rep` form supplies its unannotated snapshot spelling when annotations are present;
+   otherwise the first `fva` form suffices: `(record.get("rep") or record["fva"]).split(" ")[0]`.
+   This establishes an alternative to stripping annotations, not equivalence to current MAM.
+   The snapshot preparation had already removed native extraordinary dots; `rep` cannot
+   recover those dots. Keep current-MAM selection and edition distinctions where needed.
+3. The same MAM-private commit adds
+   `al-hatorah/py/aht_phon/carrier_guard.py::write_published_page` and
+   `assert_no_carriers`. The guard fails after writing a published page if MASORA CIRCLE or
+   UPPER DOT occurs; it never repairs a source literal. This is generated-output validation,
+   not a Python-literal linter, and it does not cover MAM-basics MAS pages. The related
+   `a9cae00964cd24785564b8632aad7717695c48e7` explicitly removed accidentally pasted UPPER DOT
+   from two literals at `testrecs_jacobson_notes.py::EX_24_11_GAYA_MV`. Existing consumers
+   still include `fva`-plus-removal display paths; documentation and the guard did not perform
+   a general migration to `rep`.
+4. MAM-basics already calls
+   `_assert_no_phonetic_mam_annotations_in_lacks_mas_page` after generation. Its forbidden
+   set is the entire old translation table, including LOWER DOT, VARIKA and the placeholder.
+   That blanket check covers only the lacks-MAS page. It must be reassessed alongside display
+   preservation: merely removing display filtering leaves a guard that rejects legitimate
+   source marks. The newer private guard is useful precedent for failing visibly, but its
+   blanket UPPER DOT ban cannot be copied into general MAM display validation.
+
+The revised remedy must select unannotated text from the appropriate source, preserve that
+source's marks, and fail accidental Phonetic MAM annotations using source/context evidence.
+An accidentally annotated Python literal is a source defect to report and correct explicitly,
+not a reason to silently sanitize all display strings. Audit the existing matching uses of
+`_as_mam_would_write_it` against `rep` availability; do not assume they are all necessary or
+all removable. These are substantive changes to the proposed repair and validation.
+
+Confidence is high for the simulated display rule at the measured inputs. The simulation
+did not change `rep` selection, matching, or validation, rerun the survey, regenerate the
+whole site, or inspect the live deployment. The broader revised implementation therefore
+needs fresh differential evidence and V6; the original zero-diff result does not preapprove
+its consequences. No actual before/after Hebrew snippet changed in the simulation.
 
 ## Decisions already taken and proposals awaiting step 5
 
@@ -169,7 +348,9 @@ Each E item requires an explicit step-5 disposition. These are the complete prop
 permission for a grammar pass. Apply the approved wording in the authored source and regenerate;
 do not edit generated MAS HTML directly. Plain `word`, BHS attribution, UXLC/WLC edition names,
 local ITM/CoS glosses, the phi-1 callout, and Ben's restored first-person wording remain intact.
-All E items belong to Wave 3.
+All E items remain associated with Wave 3 but require a separately authorized editorial
+phase. They are not bundled into the conditionally approved technical changes. E2/E3/E8
+cannot run under the present no-HTML-change contract; see the conditional-approval section.
 
 | ID / finding | File and searchable anchor; before | Proposed after |
 |---|---|---|
@@ -235,7 +416,7 @@ git show 38a606e2:DATA-LICENSES.md
 ```
 
 `H` means read the named accepting turn or commit with `git show <commit> -- <path>`; the
-later acceptance determines the disposition. `V1`-`V5` are the concrete verification recipes
+later acceptance determines the disposition. `V1`-`V6` are the concrete verification recipes
 below. Do not rely on an ignored script from a previous task being present. A historical
 record's later correction is a dated note beside that record, never a rewritten finding.
 
@@ -273,7 +454,7 @@ record's later correction is a dated note beside that record, never a rewritten 
 | 12 | `out/vendoring_compare_out.txt`, `eol-only` / `paths.py`; comparator `_identity` | V4; P1 | W4 regenerate after committing copies; preserve comparator purpose. Final report must distinguish observed LF identity from any guarantee about another checkout. |
 | 13.1 | Survey 1518, `assert len(fit_types) <= 1` | R; accepting turns | W1 record latent unsupported overlap, keep the guard. No observed candidate or fit count changes. |
 | 13.2 | Survey 1630-1644, `_census_chanted_word_summary` | R; C1, rebuttal, turn 5; D5 | Settled design note. Keep multiplicity guards, page statement, JSON schema, and counts. |
-| 13.3 | Author module 1296-1298, `_hebrew_cell`; survey 2319-2324, `never to build a displayed form` | R; V3 display check | W3 technical repair: preserve all marks in an already-selected display form, translating only the existing gray-maqaf representation to maqaf. Keep comparison normalization for joining records. Current rendered text must remain identical across the full corpus. |
+| 13.3 | Author module 1296-1298, `_hebrew_cell`; survey 2319-2324, `never to build a displayed form` | R; newer technical evidence above; V3; V6 | W3: use available unannotated source forms where appropriate; reassess comparison normalization against `rep`; preserve legitimate displayed marks and revise annotation validation together. No silent display sanitization or changed survey JSON. All nine complete HTML files must remain byte-identical; any difference stops the entire remediation for Ben's renewed decision. |
 | 13.4 | `py/accgram/poetic_scanner.py`, `_fuse_cross_chanted_word_yored`; author `pin_claims`, `in_mam` | R; finding 1 acceptance | W1 record validation limits; keep the fusion invariant and chosen post-silluq interpretation. No extra behavioral test or assertion removal. |
 | 13.5 | Survey 37-40, `MISMATCH`; `_problems` and `build_survey` | R; rebuttal correction | `_problems` returns; the build raises. W3 E4 addresses the remaining docstring omission; no code behavior change. |
 | 13.6 | XML reader, `scrdfftar`; `spi-pe2` targets in `MAM-simple/xml-vtrad-mam/` | `rg -n -e scrdfftar -e spi-pe2 MAM-simple/xml-vtrad-mam py` followed by XML parsing of all targets | W1 record valid empty outputs and the review's 3+2 census as a bounded observation. Do not make valid empty targets fail. Recheck the whole target set if the input changed. |
@@ -419,7 +600,8 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_just_render_
 ```
 
 Do not pass `--update-issue-metadata`. If a generator changes an unrelated artifact, explain
-the change before staging; do not silently include it or discard another task's work.
+the change before staging; do not silently include it or discard another task's work. Any
+MAS HTML difference triggers the mandatory V6 stop instead of this explain-before-staging rule.
 
 Expected tracked changes: the producing Python files and their declared MAM-simple support
 copies; the 193 whitespace files, subject to a freshly measured scope; the two Holman table
@@ -436,60 +618,83 @@ Execution record: **Not started.** Record approval, HEADs, exact changed paths, 
 final offending sets, CSV/text comparisons, RTL counts, generator commands, repeat-generation
 result, suite output, implementation commit, and final record commit. No integration or push.
 
-## Wave 3 — preserve displayed marks and apply approved MAS editorial items
+## Wave 3 — select unannotated forms, preserve displayed marks, and validate annotations
 
-Preconditions: Wave 2 complete; Ben has approved the technical repair and separately disposed
-of E1-E8. Record every E disposition before editing. Save the tracked JSON's hash and baseline
-HTML/text for all nine pages. Render once with the command below; any baseline diff must be
-explained before the technical repair or editorial changes begin.
+Preconditions: Wave 2 complete; its own approval and execution record are present. Ben's
+2026-09-09 approval of the discussed technical work is conditional as stated above. Establish
+V6 before any technical edit. Check both the checkout and a fresh scratch render against the
+fixed reviewed HTML baseline; an initial difference stops remediation just as a later
+difference does. Record the actual starting HEAD, input hashes, and every input's provenance.
 
-1. Repair `_hebrew_cell`'s use of comparison normalization. Display already-selected MAM forms
-   without deleting U+05AF, U+05C4, U+05C5, or U+FB1E. Preserve the existing gray-maqaf-to-maqaf
-   display conversion using the named constants. Do not change `_as_mam_would_write_it` for
-   matching, add a new corpus rule, or alter the JSON. Check every display call's argument
-   provenance; if a call supplies comparison text rather than the promised MAM form, resolve
-   that call before claiming the general repair.
-2. Before applying any E item, regenerate and compare the complete nine-page output with the
-   baseline. Current HTML should be byte-identical; the observed forms contain none of the
-   removable marks. Compare the helper's recovered text with its input, allowing only the
-   declared maqaf conversion, across the complete current form set. Also use an exhaustive
-   Hebrew-mark preservation probe against that simple independent rule; do not pin a single
-   hand-picked verse. A future mark must survive even though current pages do not exercise it.
-3. Apply only approved E items. E2 changes markup without text; E3 changes a list tag; E8 adds
-   its approved sentence. E1/E4/E5/E6/E7 are limited to the exact source/documentation changes
-   specified above. A rejected item gets a dated rejected disposition and no edit.
-4. Regenerate from the same tracked JSON and inspect each page diff, including text, title,
-   alt, href, IDs, images, list order, table content, and Hebrew mark order. All numerical
-   claims, candidate records, Hebrew forms, and JSON bytes must remain unchanged. No MAS
-   multiplicity count, new source attribution, or new terminology policy is added.
+1. Trace `_hebrew_cell`, `mam_form or chanted_word` fallbacks, comparison/prose inputs,
+   `_attach_mam_forms`, and `_as_mam_would_write_it`'s matching callers. Where a Phonetic MAM
+   snapshot form is sufficient, use the first `rep` form when present, otherwise the first
+   unannotated `fva` form, rather than reconstructing that spelling by deletion. Retain
+   current MAM forms and the BHS-labelled source where those are the intended editions.
+   Establish which matching transformations remain necessary; do not keep or remove every
+   use merely by rule. A change affecting record matching requires differential evidence
+   that selected records and the complete existing survey are unchanged. If that evidence
+   requires private survey regeneration or another run outside this plan's scope, stop for
+   Ben's decision before changing the matching path. Do not alter JSON to accommodate it.
+2. Remove comparison normalization from rendering selected display text. Preserve its Hebrew
+   marks; retain only the existing `hpu.NU_GMAQ` to `MAQAF` display conversion. This changes
+   the technical design without predicting a change in the current page bytes. No new marks,
+   corpus rule, normalization policy, or edition substitution are introduced.
+3. Revise annotation validation at the same time. Cover all nine MAS pages and the routes
+   that supply their displayed forms, including authored literals and fallback paths.
+   Detect unintended Phonetic MAM annotations using source/context evidence, and report the
+   source and output location without deleting characters. Preserve valid source upper/lower
+   dots and VARIKA; neither a blanket character ban nor disabling the existing guard is an
+   adequate replacement. Retain the existing normal claim checks. Correct an accidentally
+   annotated literal explicitly only after applying the conditional-approval stop whenever
+   the finding implies changed current HTML; no automatic sanitizer hides the defect.
+4. Render all nine pages from the same tracked JSON into scratch output and run V6 immediately.
+   Compare every helper result with its selected source, permitting only the declared maqaf
+   conversion. Use an exhaustive mark-preservation differential probe and a mechanical
+   annotation check, with legitimate source marks distinguished from annotated inputs; no
+   hand-picked verse fixture or blanket mark deletion. The original simulation measured
+   only step 2's display behavior; it does not validate steps 1 or 3.
+5. After the scratch result passes, run the normal authored-site command below and V6 again.
+   Black on touched Python, V1/V3, the existing MAS lint, and the canonical suite must pass.
+   Check V6 after validation and immediately before committing. Survey JSON, classifier
+   behavior, candidate selection, numerical claims, images, and all generated/public HTML
+   must remain unchanged by this technical work. An unexpected non-MAS HTML diff also stops
+   technical remediation; the authored command generates the index and Unicode-proposals
+   page as well. Do not open a browser or start a server.
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_authored.py gen-site --trust-surveys
 ```
 
-Expected tracked changes: `py/author_site/post_stress_meteg.py`; approved documentation edits
-in `py/accgram/post_stress_meteg.py`, `doc/post-stress-meteg-method.md`, and `CLAUDE.md`; dated
-merge-plan note; only the MAS pages affected by approved E items; records. The index and
-Unicode-proposals page are generated by the command but should remain identical. The survey
-JSON, classifier behavior, manuscript images, BHS row, numerical tables, and all sibling trees
-remain unchanged.
+Expected tracked changes for the technical phase: bounded producing/validation Python and
+necessary documentation of that behavior, mechanical/differential checks, and execution
+records. No generated/public HTML, survey JSON, manuscript image, or sibling-tree changes.
+Record the actual touched source paths, rather than assuming a display-only helper edit
+implements the revised remedy. Any broader source proposal requires a separate disposition.
 
-Validation: black on touched Python; the full display-text comparison; V1/V3; MAS page lint;
-canonical suite; read the generated HTML diff. The mark-order check must cover Hebrew added
-to any record as well as generated pages. Do not open a browser or start a server.
+Do not apply E items during this technical phase. A later editorial phase requires Ben's
+explicit item dispositions; HTML-changing items additionally require his explicit revised
+output contract, concrete expected diffs, and a distinct baseline after the technical result
+has passed. Until that decision, leave the pending items pending and do not render their
+proposed HTML. The technical approval alone does not permit continuing into editorial work.
 
-Execution record: **Not started.** Record technical and E approvals separately, retained/rejected
-items, baseline synchronization, display comparison, exact visible-text and markup changes,
-unchanged JSON hash, suite output, implementation commit, and final record commit. No integration
-or push.
+Execution record: **Not started.** Record the conditional approval, starting and final HEADs,
+unannotated-form and matching decisions, source/validation coverage, baseline and final input
+hashes, all-nine-page byte comparisons, V6 command and result, and suite output. Record any
+failed check and Ben's subsequent explicit decision; a later pass must not erase a stop.
+Commit completed, passing technical work locally with its record. No integration or push.
+Record separately approved editorial work separately if Ben later authorizes that phase.
 
 ## Wave 4 — vendoring records, final dispositions, and one integration
 
 Preconditions: Waves 1-3 have complete local execution records and clean commits; Ben has
-approved Wave 4 and P1 and disposed of N3. All source/copy changes are committed before auditing. Merge current
-`main` into the worktree branch and inspect any new input or instruction changes. Re-run a
-relevant generator only if the merge changes its source or input; report new work rather than
-assuming earlier validation covered the merged version.
+approved Wave 4 and P1 and disposed of N3. All source/copy changes are committed before
+auditing. Run V6, merge current `main` into the worktree branch, and run V6 again; any changed
+MAS HTML stops the entire process for Ben, including changes arriving from main. Inspect new
+input or instruction changes. If the merge changes MAS source or input, repeat the targeted
+render and V6 before proceeding. Re-run other relevant generators only when the merge changes
+their source or input; earlier validation does not cover a changed implementation. A separate
+editorial baseline is valid only if Ben explicitly approved that revised output contract.
 
 1. Implement N3's exact inventory introduction if approved and format that Python file.
 2. Run the full vendoring audit. Compare all declared public source/copy pairs as working-tree
@@ -501,15 +706,17 @@ assuming earlier validation covered the merged version.
    crosswalk. Distinguish fixed, settled by prior decision, rejected, deferred, and record-only.
    Identify which E items were approved and which were not. No source-identification deferral
    or unverified scholarly assertion becomes a claim of completed investigation.
-4. Re-run V1-V4 and the canonical suite. Read all generated diffs against the implementation
-   commits. Run the public repository-standards check below, using its reported current
+4. Re-run V1-V4, V6, and the canonical suite; run V6 again after the suite. Read all generated
+   diffs against the implementation commits. Run the public repository-standards check below, using its reported current
    workspace roster; inspect every failure instead of treating an unchanged historical result
    as success. Do not run a maintenance sweep, spell check, or mega merely for a familiar
    completion checklist.
 5. Commit the audit and the records locally, then perform the close-out plan's Integration
    section exactly once. The suite must pass on the final merged tree before the primary
-   clone is fast-forwarded. If `main` moves meanwhile, merge it into the worktree again,
-   resolve and verify there, then retry the fast-forward. Push only `main`; do not push the
+   clone is fast-forwarded, with V6 passing on that exact tree and no unresolved approval
+   stop. If `main` moves meanwhile, run V6 before and after merging it into the worktree again,
+   then resolve and verify there. A V6 failure stops integration; it does not permit an
+   automatic fix-and-retry. After a passing final check, push only `main`; do not push the
    worktree branch. Record the worktree head and pushed main head in the final response.
 
 ```powershell
@@ -524,14 +731,15 @@ Expected tracked changes before the final merge: `py/vendoring/gen_inventory.py`
 `out/vendoring_compare_out.txt`, `out/vendoring_provenance_out.txt` if its measured data changes,
 `doc/vendoring-inventory.md`, and execution/disposition records. No copied source, corpus,
 image, page text, policy, or sibling source change. The final merge's additional changes are
-identified separately and verified before integration.
+identified separately and verified before integration; changed MAS HTML still requires
+Ben's renewed interactive decision under the conditional-approval rule.
 
 After all source/copy commits, a second audit must produce no additional artifact difference;
 this is the check that the dates were not generated before the commits they describe. Do not
 make a source/copy commit after that audit without refreshing the affected audit records.
 
 Final integration commands, after both checkout trees are clean and the merged worktree has
-passed the suite:
+passed the suite and V6, with no unresolved conditional-approval stop:
 
 ```powershell
 git -C C:/Users/BenDe/GitRepos/MAM-basics merge --ff-only codex-review-2026-09-08
@@ -580,7 +788,8 @@ These numbers are locators only; scan whole files again after edits. Also scan e
 changed generated file for the same problems.
 
 Compare each output with its pre-edit bytes after applying only the intended whitespace
-removal to the baseline. Compare parsed CSV rows/fields to distinguish a field change from
+removal to the baseline. This normalization is confined to W2's declared whitespace
+outputs; V6 never normalizes MAS HTML. Compare parsed CSV rows/fields to distinguish a field change from
 a quoting or line-ending change. Require exactly the intended final-line/trailing-space
 differences and no Hebrew-text or internal-spacing difference. The historical offending set
 can also be recovered with:
@@ -600,7 +809,8 @@ them onto the stack. Compare cell text and table row order against the baseline 
 regeneration. For MAS pages, compare all Hebrew text and markup before/after, with the
 display-helper preservation rule described in W3. Count the unwrapped mark-name occurrences
 in visible text nodes only; exclude titles and attributes. Verify E2's 4/9/2 distribution
-before editing and zero of those unwrapped occurrences afterwards if E2 is approved.
+before editing and zero of those unwrapped occurrences afterwards only in a separately
+authorized E2 phase. V3's parsed-text checks supplement V6; they never replace the byte gate.
 
 **V4 — vendoring.** Read the current policy's source/copy declarations and compare every public
 pair's bytes, separately reporting EOL-only differences; no missing path is silently skipped.
@@ -640,6 +850,56 @@ count conflict markers within the author module only. Never merge these historic
 into a checkout or rewrite the historical commit. An inability to reconstruct the old scratch
 folder census leaves 11.5/17h unverified; it is not repaired by guessing.
 
+**V6 — mandatory unchanged-MAS-HTML gate.** Implement this execution check in a uniquely
+named real scratch script before remediation begins. It is an approval check for this
+remediation process, not a permanent snapshot test forbidding unrelated future page work.
+
+1. Read the protected filename set from the nine-row table above and recover each baseline
+   with binary `git show c2f238f2c253d7b00b2d22dc262fe95c81a82401:gh-pages/<filename>`.
+   Use `subprocess.run(..., check=True, stdout=PIPE)` without text decoding for those bytes.
+   Save immutable baseline files and a SHA-256 manifest in
+   `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/mas-html-baseline/`.
+   Verify the manifest against the pinned Git blobs on subsequent runs; never refresh it
+   from a changed checkout. Capture the pinned survey JSON as well and require identical
+   JSON bytes throughout the technical work. An absent baseline/input is a failure.
+2. Compare the protected set with both renderer-declared filenames and every actual
+   `post-stress-meteg*.html` in the target output directory. Fail any missing or additional
+   file, including an untracked file. Compare complete bytes, with no whitespace, line-ending,
+   Unicode, or HTML normalization. Check both the worktree `gh-pages` files and the fresh
+   scratch render. A clean Git status alone proves neither output identity nor reproducibility.
+3. Reproduce the real MAS renderer with `trust_survey=True` in a fresh scratch destination,
+   using the worktree's modules and primary clone's absolute interpreter with `-B`. Retain
+   normal claim checks and annotation validation. Record every input actually read and its
+   hash so changed inputs cannot be mistaken for the previously simulated state. On future
+   technical implementation runs, render the real changed code without the simulation's
+   monkeypatch. Compare the full output with step 1's fixed baseline. Before the normal
+   authored-site run, also save the other generated HTML's bytes and filenames and require
+   unchanged output from the technical work. Missing or newly emitted HTML fails that scope
+   check; do not restrict inspection to Git's tracked changed-file list.
+4. Fail with an explicit nonzero exit, not a Python `assert` that `-O` can disable. Print the
+   prominent STOP message above, every changed/missing/additional path, before/after hashes,
+   and evidence paths; save byte-preserving outputs and UTF-8 textual/Unicode diffs. Preserve
+   a stop record so a later pass cannot be treated as renewed approval. Invoke the gate with
+   `subprocess.run(..., check=True)` or equivalent command failure propagation. No wrapper
+   may catch failure and proceed to the next wave, commit, merge, or push. Any incomplete
+   rendering/check likewise blocks continuation and must be reported.
+5. Before relying on the gate, deliberately alter a byte in a scratch output copy and prove
+   the check exits nonzero; also prove a missing file and an extra matching file fail. These
+   are disposable differential checks of the gate, not edits to public HTML. Label those
+   deliberate gate probes separately from real remediation results. Then require the
+   untouched scratch render and checkout to pass. An unexpected failure is never a probe.
+6. Run the gate before and after every back-merge, immediately after each affected generation,
+   after validation/suite runs, before completed-remediation commits, and on the exact final
+   tree before integration and push. Record the real script path, command, HEAD, manifest,
+   output hashes, and result in the wave record. Preserve any failure record and Ben's
+   subsequent explicit renewed/revised approval. If Ben later authorizes a separate editorial
+   phase, document its specific allowed diff and baseline before executing that phase; do
+   not let an agent replace the technical baseline retroactively.
+
+The outcome required by the current approval is **zero changed HTML files and zero changed
+locations**, regardless of passing tests or unchanged visible text. Any real difference
+triggers the conditional-approval section's stop of the entire remediation process.
+
 Set the sibling root before each canonical suite run:
 
 ```powershell
@@ -674,9 +934,11 @@ fresh task, the worktree and records must already be committed and clean.
 
 The silluq-template implementation, MAM-OSIS evacuation, Holman/Wikisource refresh, issue #265's
 general exception registry, manuscript/edition adjudication, photograph-source investigation,
-private-source research, broad prose cleanup, and repository/task-folder maintenance remain
-separate work. The plan does not authorize posting comments or changing issues. The final
-review worktree integration and retirement follow the close-out plan's final-wave/step-7
+private scholarly-source research, broad prose cleanup, and repository/task-folder
+maintenance remain separate work. The newer Phonetic MAM technical sources explicitly named
+above are the bounded read-only exception, not permission for a private corpus refresh.
+The plan does not authorize posting comments or changing issues. The final review worktree
+integration and retirement follow the close-out plan's final-wave/step-7
 schedule, not the archival of an intermediate task.
 
 ## Step-4 planning execution record
@@ -690,3 +952,21 @@ deselected). No tracked Python file changed, so no Python formatting was require
 No remediation, generator run, primary fast-forward, or push occurred. Planning changes are
 limited to this file and the close-out plan's dated step-4 execution entry. Step 5 remains Ben's
 approval of the waves, P1-P3, and the individual E1-E8 and N1-N9 proposals.
+
+## Follow-up planning record: displayed marks and conditional approval
+
+2026-09-09: at review worktree HEAD `c2f238f2c253d7b00b2d22dc262fe95c81a82401`, the targeted
+two-pass simulation measured byte-identical HTML in all nine pages and no differing helper
+results, as recorded above. Later read-only inspection established the `rep` alternative,
+the limits of snapshot spelling, the newer output guard and explicit literal repair, and the
+existing MAS guard's broader forbidden set. Those findings change the proposed remediation
+and its validation, rather than merely changing the explanation of a display-only fix.
+
+Ben then conditionally approved the discussed technical work on unchanged HTML and requested
+this plan update. The plan now requires an executable byte gate and a stop of all remediation
+for interactive discussion if that condition fails. E2/E3/E8 remain separate pending changes;
+the slash-span preference is preserved without turning it into unconditional HTML approval.
+This update changes only this plan, with no back-merge, production-code edit, generated-product
+edit, remediation execution, primary integration, or push. The earlier planning execution
+record above remains historical; the conditional approval here supersedes its wholly-pending
+description only for the discussed technical work. Other wave/P/E/N dispositions are unchanged.
