@@ -618,6 +618,11 @@ Verification recorded 2026-09-09: only the close-out and remediation plans chang
 generation was run for this planning-only update. The execution commit is recorded below
 after the commit exists.
 
+Executed 2026-09-09: commit `10458a3eed434ee8f4556e3f7e3fea3169afdeaa` records the
+Step-5 approval and Wave 1 handoff requirements in both plans. The following record commit
+adds this hash without amending the approval commit. The successor's required source is
+the clean branch head reported after this record commit, containing `10458a3e` as an ancestor.
+
 Actor: Ben. Input: the plan from step 4. Output: an approval for each wave's code and data items,
 and for each MAS wording item an approval, a rejection or an amended wording, pasted into the
 step-6 prompt for that wave. The step-6 task records them in the plan as dated decisions before it
