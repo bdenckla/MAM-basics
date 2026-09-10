@@ -1,6 +1,10 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; Waves 1A-1B and 1C1-1C3 complete, Wave 1D next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Waves 1A-1B, 1C1-1C3 and 1D1 complete; Wave 1D2 owns the remaining reconciliation; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 after Wave 1D1: the accepted-corrections append is complete;
+verification and the local checkpoint are recorded below. Wave 1D2 owns the remaining
+record-only dispositions and full Wave 1 reconciliation. Wave 1 remains incomplete.
 
 Status updated 2026-09-09 after Wave 1C3: the assigned MAS-plan and standards
 historical corrections are complete. Wave 1D is next; Wave 1 remains incomplete.
@@ -1114,6 +1118,95 @@ At `26cf55dd`, V6 passed before the record commit at
 `v6-runs/20260910T035618Z-wave1c3-before-record-commit-8bb4c854/`.
 All five actual Wave 1C3 V6 runs passed with zero changed locations and unchanged
 pinned survey JSON; no real stop occurred.
+
+### Wave 1D1 execution record, 2026-09-10
+
+Codex task `01a08977-c847-7f41-887f-7b1891162ef1` verified the exact development
+checkout `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`0ee34bea8ac36f058543d7f757c97f66e6b562cd`, containing `26cf55dd`.
+The required back-merge of `main` reported `Already up to date.`; HEAD stayed at
+`0ee34bea8`. All edits and verification use that worktree. The primary clone supplies
+only `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
+
+The inspected gate `v6_gate_wave1_01a0891a.py` has SHA-256
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+Its immutable nine-page and survey baseline remains `c2f238f2`. Evidence paths below
+are relative to the worktree's `.novc/review-remediation-2026-09-08/`. Invoke the
+primary interpreter with `-B`, that gate's path, `check`, and the recorded `--label`:
+
+1. `wave1d-before-merge`: `v6-runs/20260910T035943Z-wave1d-before-merge-2ada0d8b/`.
+2. `wave1d-after-merge`: `v6-runs/20260910T040030Z-wave1d-after-merge-7495629f/`.
+
+Both passed with zero changed locations, nine checkout pages, nine fresh-render pages,
+and unchanged survey JSON. The first check preceded local midnight; execution/write-back
+is dated September 10. Wave 1A's three deliberate probes remain the failure-propagation
+proof. No real stop occurred.
+
+Under the permitted smaller-task boundary, Wave 1D1 completes original Wave 1 step 4:
+the full `Corrections accepted in the review exchange` append, with citations to the
+accepting turns, exact finding-16 withdrawals, 17b-17e's historical-message distinction,
+D3's three-sentence/two-table correction, and the static-index/CSS planning correction.
+The review now has a current State above its preserved September 9 State. A dated D3
+disposition records only this completed append. Existing disposition rows are retained.
+Only the September 8 review and these two plans change; no tracked Python file changes.
+
+`wave1d_01a08977_evidence.py`, run with the primary interpreter and `-B`, captures bounded
+original/accepting Git excerpts in `wave1d-01a08977-accepted-source-evidence.json` and the
+exact rebuttal list in `wave1d-01a08977-withdrawn-exact.md`. Its pinned phi-5 HTML at
+`38a606e2` confirms three sentences and two tables. These are record checks, not new
+language/edition validation. The static filenames are the approved Wave 2 targets
+`gh-pages/MAM-for-Sefaria/index.html` and `style-color-scheme-light.css`.
+
+The former current State at source `0ee34bea8` is preserved here:
+
+> State: live 2026-09-09; Waves 1A-1B and 1C1-1C3 complete, Wave 1D next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+
+**Next execution boundary: Wave 1D2.** Complete original Wave 1 step 5: reconcile the
+entire crosswalk and all settled decisions against the Wave 1A/1B/1C1/1C2/1C3/1D1
+records and dated disposition rows. Add only remaining record-only dispositions,
+including 10/C5, 11.5/17h, 13.1-13.2, 13.4, 13.6-13.7, 15.3, 15.6, 17b-17e,
+18.1-18.3, and any qualification still required by the full crosswalk. Do not repeat
+completed repairs or the accepted-corrections append. Preserve 13.1's overlap guard,
+13.2's multiplicity guards, 13.4's fusion invariant and chosen post-silluq interpretation.
+For 13.6, recheck all named XML targets if the input changed, keeping valid empty outputs.
+Attribute language/edition assertions without inventing an oracle. The reviewer's
+415/416 scratch count remains unverified by Codex; no filesystem census is authorized.
+
+Keep W2-W4 technical findings and every E item pending, P2 source/rights-holder
+identification deferred, and the rejected blanket cleanup rejected. D6 and N8 are already
+complete. Mark Wave 1 complete only after full reconciliation; then define Wave 2's scope
+and output contract for its fresh task. Read only governing sections, completed records,
+assigned crosswalk rows, and original/accepting paragraphs needed for this reconciliation.
+Preserve the historical State text while updating each document's current status.
+
+Wave 1D2 uses the same saved project `51e16ebd-373a-41f7-833e-9def3ef72b81` directly,
+with `environment.type = local`, after Wave 1D1's verified clean local commit. Verify the
+source path, commit, branch, clean status, and actual task ID. Run the unchanged V6 gate
+before and after the required back-merge, the canonical suite, and V6 immediately afterward.
+Inspect diffs and complete both plans' write-back before committing and handing off.
+No new decision is needed. No predecessor is automatically archived. Integration and
+push occur once after final Wave 4, including across intermediate archival.
+
+Verification completed 2026-09-10 at `0ee34bea8` plus Wave 1D1's record edits:
+the canonical suite reported **987 passed, 5 skipped, and 65 subtests passed in
+108.80 seconds**. The command was
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider`,
+from the exact review worktree with `REPOS_ROOT=C:/Users/BenDe/GitRepos`.
+`wave1d_01a08977_verify.py suite` saved full output to
+`wave1d1-01a08977-20260910T040907Z-suite.txt` and invocation metadata to the matching
+`-suite.json`, then ran V6 immediately. V6 passed at
+`v6-runs/20260910T041058Z-wave1d1-after-suite-3bcbdb71/`: zero changed locations,
+unchanged page membership and pinned survey JSON.
+
+The same script's `scope` mode checks the exact three-path scope against `0ee34bea8`,
+preservation of the original historical lines except the explicitly replaced current
+remediation State (quoted above), exact reproduction of the eight withdrawals, Hebrew
+mark order, diff whitespace, and both whole-skill comparisons. All passed; the pre-suite
+report is `wave1d1-01a08977-20260910T040907Z-scope.json`. The actual review/plan diffs
+were read. No new tests were added; no tracked Python changed, so black was not required.
+No generated HTML, corpus, JSON, image, behavior, or sibling-checkout change occurred.
+Final scope, pre-commit V6, and local commit evidence follow.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 

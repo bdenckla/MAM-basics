@@ -1,5 +1,14 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
+State: remediation in progress 2026-09-10; Waves 1A-1B and 1C1-1C3 complete; Wave 1D1 records the accepted corrections, with full Wave 1 reconciliation still pending in Wave 1D2.
+
+Current status, recorded by Codex on 2026-09-10: the dated dispositions below describe
+completed work. Waves 2-4 technical work and all E items remain pending under the approved
+remediation plan. The historical State below is preserved, including Ben's September 9
+decisions; its opening is superseded by this current State.
+
+Historical State, recorded 2026-09-09:
+
 State: not yet acted on, except findings 1 and 3, which Ben settled on 2026-09-09 before the
 Codex half ran. Finding 1: the Methods page and footnote φ1 now define "ignore" in Ben's words
 — treat the word as a meteg-then-silluq word, i.e. deliberately misinterpret the marks, which
@@ -836,3 +845,78 @@ Wave 1D retains the complete accepted-corrections append and disposition reconci
 | 2026-09-09 | 7, standards docstring census / D10 pointer | Replaced only the false current plan census with a dated correction: `9cf48863` had eleven plans with State lines and omitted the September 7 remediation plan from its claim of ten; `38a606e2` had thirteen plans with eleven State lines. Preserved the State format rule and added the procedure pointer for D10's review naming/State rules. No standards behavior or gate changed. |
 | 2026-09-09 | 16 / N8 | Added the exact approved numbered commit list and direction-neutral quotation-mark note, preserving the original records. The fixed `c73a2ad3..a3e3f6eb` non-merge log reproduces the seven entries. The blanket cleanup premise remains rejected; no withdrawn stylistic site was swept. D6's separate attribution is preserved. |
 | 2026-09-09 | 14.3 / 17a | Recorded that the merge plan already gives 32 author-module hunks and 13 conflicted files, independently established in the review and reconciliation. The merge message's 36-hunk claim is retained as an immutable historical error; no message amendment, issue communication, or historical checkout merge occurred. |
+
+Wave 1D1 checkpoint, 2026-09-10, recorded by Codex under Ben's D3 and Step-5 approval.
+The accepted-corrections append below completes original Wave 1 step 4. Wave 1D2 still
+owns original step 5's full reconciliation and remaining record-only dispositions.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-10 | D3 / accepted-corrections append | Recorded all corrections named in Wave 1 step 4, citing the accepting turns and preserving the earlier records. The eight withdrawn finding-16 items reproduce the rebuttal verbatim. The pinned `38a606e2` phi-5 HTML confirms three sentences and two tables. This completes the append, not the full disposition reconciliation. |
+| 2026-09-10 | Remaining Wave 1; Waves 2-4; all E items; P2 investigation | Wave 1D2 must reconcile the complete crosswalk before declaring Wave 1 complete. Waves 2-4 technical remedies and the separate editorial phase remain pending. P2's inventory is complete; photograph-source and rights-holder identification remains deferred. |
+
+## Corrections accepted in the review exchange
+
+Recorded by Codex on 2026-09-10 under Ben's D3 decision of 2026-09-09 and Step-5
+approval. These corrections supersede the identified conclusions in the original findings
+and reconciliation without rewriting their dated text. The accepting sources are Claude's
+[rebuttal](codex-review-findings-2026-09-08-claude-rebuttal.md) at `da4e40a5`, Codex's
+[counter-rebuttal](codex-review-findings-2026-09-08-codex-counter-rebuttal.md) at `ad5d9f43`,
+and [Claude turn 5](codex-review-findings-2026-09-08-claude-turn-5.md) at `2b365153`.
+The review exchange is closed; Ben left Claude's skill-reading time unknown on September 9.
+
+| Finding or claim | Accepted correction and accepting source |
+|---|---|
+| C1 / 13.2, MAS multiplicity | The original finding explicitly said a counterexample aborts the run. Codex withdrew “without checking it”, “manufacture agreement”, and the implication that Claude proposed removing the guards. Claude refiled 13.2 as a design note: the definition allows multiplicity, while the assertions check the narrower property and abort if it fails. No present MAS output defect was established. Rebuttal, “C1 — finding 13.2”; counter-rebuttal, disputed characterization 2; turn 5, “C1 / 13.2”. Ben's D5 decision keeps both guards, the page sentence, JSON schema, and counts unchanged. |
+| 13.5, mismatch handling | `_problems` returns the problem list; `build_survey` raises when that list is nonempty. The stated fatal-build behavior was correct, but the finding named the wrong function. Rebuttal, “Reconciliation on 13.5”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. E4's module-docstring clarification remains for the separate editorial phase. |
+| C1 / 13.7, conjunctive stress | `stress_accent_classification` checks each MAS record's stress-letter accent and raises `SurveyProblem` unless the accent is an allowed conjunctive. The returned counts follow that check; the claim is pinned by the per-record raise. Rebuttal, “C1 — finding 13.7”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. This check uses the survey's stress oracle and does not independently adjudicate finding 1's chosen interpretation. The language and edition claims in 13.7 are not newly verified by this correction. |
+| 14.1, paragraph qualification | The definition is the second expository paragraph and the third HTML `p`, because the spacing control occupies a `p`. The earlier sentence already uses “word”, so the before-any-use assertion is false; the second-expository-paragraph description is accurate. Rebuttal, “Reconciliation on 14.1”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. E6 corrects the false assertion in the separate editorial phase; the plain-“word” permission remains valid. |
+| C4 / 11.1, missing subtest line | The Wave 4 record names no command, so the cause of its missing subtest line cannot be established. The later Wave 6 run reported the line at the same passing-test count; that does not explain Wave 4's output. Claude withdrew the asserted “reporting artifact” cause. Rebuttal, “C4”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. D4's earlier-record notes are completed in Waves 1C1/1C2; no historical invocation is reconstructed. |
+| 6.8, historical anchor count | The original finding said “true then”; Codex withdrew its attribution of a claim that the historical 34 was false. The self-dated comment and floor of 25 were valid. Turn 5, “6.8”, also qualifies finding 6's heading: item 8 became stale at `9cf48863`, before merge `825cef66`, rather than at the merge. Rebuttal, “Reconciliation on 6.8”; counter-rebuttal's following 6.8 paragraph; turn 5, “6.8”. D8/N9's current comment update was completed in Wave 1B. |
+| 14.4, location of the permission | The context permission already existed in `references/terminology.md`, part of the skill. Codex withdrew “the inaccurate attribution” and the implication that the permission was absent from the skill. The narrower inconsistency was the opening's “only”, which omitted that permission. Turn 5 also withdrew “in the skill nowhere” for the inspected September 9 skill: `references/verifying.md` already named the nine-page exception. Counter-rebuttal, disputed characterization 1; turn 5, “14.4” and its qualification. Ben's later decision leaves the reading time unknown; no reading chronology is inferred. D2's opening correction is complete in all three homes. The explicit MAS vocabulary and accepted local ITM/CoS glosses remain valid. |
+| C5 / 10, omitted skill-loading premise | Finding 10 omitted the false absolute claim that Codex “will never load” the Hebrew prose skill. The procedure also recorded an earlier Codex review governed by that skill. Skill availability and automatic loading of Claude's instruction file are distinct. Rebuttal, “C5”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. Ben's D1 wording was implemented in Step 3; this append records the omission without another procedure edit. |
+| Omitted editorial instructions at `47edbee6` | Claude accepted Codex's additional process finding: the September 7 remediation plan already directed broad prose corrections, type-3 decisions, and source-attribution changes without identifying concrete MAS wording approved by Ben. A request to execute that checklist did not establish separate approval of every embedded editorial choice. Rebuttal, “Codex's MAS-decisions section”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. Ben's decisions at `1095f029`, `a9edd4f9`, `3b0225e0`, and `becc6f00` stand. Deliberate reversals do not make the reverted wording unfinished remediation awaiting reinstatement. |
+| Planning correction for finding 2 | `gh-pages/MAM-for-Sefaria/index.html` and `gh-pages/MAM-for-Sefaria/style-color-scheme-light.css` are static files, not generator outputs. Their whitespace repair is direct editing in Wave 2, as the approved remediation plan's finding-2 crosswalk and Wave 2 instructions specify. This is the Step-4 planning correction carried into the accepted record; it is not a claim that a review turn established a generator for those files. |
+
+### Finding 16: the eight withdrawn items
+
+Claude withdrew the following eight items in the rebuttal's “C3” section. The list is
+verbatim from `da4e40a5`; the paths and line numbers are the rebuttal's historical locations.
+Codex accepted the withdrawal in the counter-rebuttal; turn 5 accepted that account.
+
+1. `DATA-LICENSES.md:38` ("carry").
+2. `DATA-LICENSES.md:76` ("carries").
+3. `README.md:138` ("carries").
+4. `py/py_render/rt_mam_suggestion_card.py:352` ("carries").
+5. `py/repo_util/check_repo_standards.py:270` ("carry").
+6. `DATA-LICENSES.md:16` ("hand transcriptions", in a sentence opening "Ben Denckla's data").
+7. `DATA-LICENSES.md:63` ("Ben Denckla's hand transcriptions").
+8. The characterization "against the script-regenerable / Ben-written vocabulary `b4706759`
+   adopted": that commit adopted the vocabulary for one site and declined a sweep.
+
+The rebuttal retained the merge plan's unnumbered commit list and unclear quote-conversion
+referent, plus the Aleppo license row's unattributed hand corrections, for individual
+decisions. Its remaining-items paragraph did not retain “hand-authored whitespace” as a
+remediation item; that wording stays. D6's attribution was completed in Wave 1B and N8's
+dated merge-plan notes in Wave 1C3. Those specific corrections do not authorize a blanket
+cleanup of the withdrawn sites. The broader cleanup premise is rejected.
+
+### Findings 17b-17e: accurate messages and subsequent changes
+
+The rebuttal's “C2” section, the counter-rebuttal's disputed characterization 3, and turn
+5's “C2 / 17(b)–(e)” agree: the “Immutable-message slips” heading misclassified these
+messages. The individual items already described later changes; Codex withdrew the
+implication that those items called the messages false when written. Preserve the messages.
+
+| Finding | Accurate historical message | Subsequent change named in the accepting turns |
+|---|---|---|
+| 17b | `fe4e602f` described the census present in that commit's HTML. | `825cef66` brought the changed census onto that line. |
+| 17c | `bdcdc5e2` introduced 2A and 2B. | `97a1b46f` refined the names to 2Af and 2Bf. |
+| 17d | `24f1e4a3` added the type-1 page. | `3a698b71` deleted that page during consolidation. |
+| 17e | `95c457c2` had the explanatory paragraph its message described. | `6a45cd72` deleted that paragraph. |
+
+D3 also includes the rebuttal's correction to 17e: the phi-5 section at `38a606e2` has
+three sentences and two tables, not the original finding's “two sentences and two tables”.
+Reading that pinned HTML confirms the accepted count. The message-error observations in
+17a and 17h remain separate: 17a is recorded in Wave 1C3; the reviewer's 415/416 scratch
+count in 11.5/17h remains unverified by Codex. This append performs no filesystem census.

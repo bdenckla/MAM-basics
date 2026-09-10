@@ -822,6 +822,36 @@ gate runs passed with zero changed locations; the remediation plan gives the pat
 The following record-only checkpoint supplies the required clean source for Wave 1D,
 on the same saved project. No integration or push is due at this checkpoint.
 
+Wave 1D1 execution, 2026-09-10: Codex task `01a08977-c847-7f41-887f-7b1891162ef1`
+verified the exact review worktree and `codex-review-2026-09-08`, clean at required source
+`0ee34bea8ac36f058543d7f757c97f66e6b562cd`. The required back-merge was already up to date.
+The inspected V6 gate passed before and immediately after the merge against fixed baseline
+`c2f238f2`, with zero changed locations and unchanged pinned survey JSON. No real stop occurred.
+
+The approved split into Wave 1D1/1D2 keeps each task bounded. Wave 1D1 writes the complete
+accepted-corrections append under D3, preserves the original dated text and disposition rows,
+and adds the review's current State above its historical State. The append includes the exact
+eight finding-16 withdrawals and D3's three-sentence/two-table correction. D6 and N8 remain
+completed individual corrections, with the blanket cleanup rejected. Only the September 8
+review and both plans change. No tracked Python or generated artifact changes.
+
+Wave 1D2 next owns the remaining record-only dispositions and full crosswalk reconciliation,
+as precisely bounded in the remediation plan's Wave 1D1 record. Wave 1 remains incomplete.
+Waves 2-4 technical findings and all E items remain pending; P2's source/rights-holder
+identification remains deferred. After the verified clean local checkpoint, create the
+authorized successor on the same saved project with `environment.type = local`, verify
+its actual ID and checkout, and stop editing at dispatch. Integration and push occur once,
+after final Wave 4. Verification and local commit evidence follow.
+
+Wave 1D1 verification completed 2026-09-10: the canonical suite with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos` reported **987 passed, 5 skipped, and 65 subtests
+passed in 108.80 seconds**. V6 passed immediately afterward with zero changed locations,
+unchanged page membership and pinned survey JSON. The scope check confirms only the
+three authorized record paths changed, the original historical lines remain, the eight
+withdrawals match the rebuttal verbatim, Hebrew mark order and diff whitespace pass,
+and both whole-skill comparisons are empty. No tracked Python changed; no new tests were
+added. The remediation plan records the exact script, command and evidence paths.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
