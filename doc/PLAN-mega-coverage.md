@@ -180,14 +180,16 @@ byte-identical. The mega has 61 steps. Suite before each commit: 988 passed, 5 s
 
 The phase's report raised four more points, and each is disposed of here:
 
-1. **The new order has a cost, which phase 6a's session is to fix.** A doc-note template with the
+1. **The new order had a cost, and `18ded998` in phase 6a has fixed it.** A doc-note template with the
    wrong number of arguments now stops the run inside `foi-features-of-interest`, at the bare
    `assert wtp.template_len(tmpl) == 3` in `label_args_of_doc` (`py/foi/foi_wikitext_helpers.py`),
    before `check-mpplus` can name the template. A message on that assert naming the template and
    its argument count means a bad template is still named, while foi's report of malformed
    Unicode still comes first. The orchestrating session chose that over splitting
    `check-mpplus`'s two tests either side of `foi-features-of-interest`, which would add a step
-   and no information.
+   and no information. Ben, 2026-09-10: "That cost is acceptable to me, i.e. that decision is okay
+   by me." Since `18ded998`, a three-argument נוסח template raises
+   `doc-note template 'נוסח' has 3 argument(s), not 2:` followed by the template.
 2. **`577fb455` changes behaviour on purpose.** Arguments the old code ignored now get argparse's
    usage error and exit status 2: a third positional argument to `py/main_clc.py` or
    `py/main_ac_gen_index_flat_annotated.py`, a chapter after `all` to `py/main_clc.py`, and
@@ -235,15 +237,29 @@ on 2026-09-10:
 ## Phase 6 — delete the dead and redundant programs, and retire `check_ac_word_finding.py`
 
 Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence. **Run it as two sessions**,
-for size. **6a** is items 1–9, the deletions of dead and redundant code. **6b** is items 10–15:
-the retirement of the word-finding check, the Stark CSV, the runbook, the stale wording, the
-redundant PowerShell script and the second copy of `lci_augrecs.json`. Each session ends with item
-16's verification, run over its own items.
+for size. **6a** is items 1–9, the deletions of dead and redundant code, plus finding 1 of phase
+5c's record. **6b** is items 10–17: the retirement of the word-finding check, the Stark CSV, the
+runbook, the stale wording, the redundant PowerShell script, the second copy of
+`lci_augrecs.json`, and two points from 6a's report. Each session ends with item 18's
+verification, run over its own items.
 
-The 6a session also carries finding 1 of phase 5c's record. Give the bare
-`assert wtp.template_len(tmpl) == 3` in `label_args_of_doc` (`py/foi/foi_wikitext_helpers.py`) a
-message naming the template and its argument count, and correct the comment above the
-`check-mpplus` step in `py/main_0_mega.py`, which records the cost that the message removes.
+**6a: DONE, `5295fdea`, `5f35dea3`, `625a00ef` and `18ded998`.** `5295fdea` deletes the
+`__main__` blocks of items 1–3: those of the fifteen `py/accgram/` modules, of six `py/py_ac_loc/`
+and five `py/py_cam1753_loc/` modules, and `ws_tmpl_parser`'s self-test. The seventh `py_ac_loc`
+module, `kraken_seg_baselines.py`, went whole under item 4. `5f35dea3` deletes the five dead
+programs of items 4–8, and four pieces of library code that had no caller once those programs were
+gone: `py/hkq_cmn/verify_meteg_suggestions_vs_mgketer.py`; `py/hkq_cmn/mam_meteg_suggestions.py`,
+a roster derived from the tracked MAM-suggestions JSON, which stays, as do the two Holman edit
+specs in `in/mam-ws-bot-edits/`; `repo_hygiene.source_hygiene.run`; and
+`codex_page.find_page_for_verse`. `625a00ef` deletes item 9's dead code. `18ded998` gives foi's
+doc-note assert its message, finding 1 of phase 5c's record, and corrects the comment above the
+`check-mpplus` step. The `foi-features-of-interest` step, rerun alone, left every tracked file
+byte-identical, and the suite gave 988 passed, 5 skipped before each commit. The reference sweep
+left only dated execution records: plans under `doc/`, among them
+`doc/PLAN-holman-meteg-rollout-programme.md` and `doc/PLAN-post-stress-meteg-page-and-holman-m23.md`,
+both of which say "State: executed 2026-09-04"; two review-findings files; and `CLAUDE.md`'s history
+of the book-of-job move. The phase's report raised two more points, which items 16 and 17 carry
+into 6b.
 
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
@@ -323,7 +339,20 @@ message naming the template and its argument count, and correct the comment abov
     `uxlc/out/UXLC-misc/lci_recs.xml` must come out byte-identical, and the deleted copy must not
     come back: `git status --porcelain` must not list `uxlc/out/UXLC-misc/lci_augrecs.json` as
     untracked.
-16. Verify: the reference sweep for every deleted name, the full suite.
+16. **`aleppo/doc/aleppo-line-breaks.md` still documents `270v 1`**, which `main()` in
+    `py/py_ac_loc/gen_line_break_editor.py` rejects. `5295fdea` corrected that module's docstring
+    to the NofM form, `270v 1of2`, which is half of the analysis's §8 finding 8. Correct the doc the
+    same way. The other half, the `--status` and `--batch` that
+    `py/main_gen_cam1753_crop_editor.py` documents and lacks, is recorded in #269 and stays out of
+    this plan.
+17. **Nine pieces of code that phase 6a found unused, all of them unused before it began:**
+    `gen_html_file`, `_post_stress` and `_book_name` in `py/author_site/post_stress_meteg.py`;
+    `image_relpath` and `_leaf_to_page_n` in `py/py_ac_word_image_helper/codex_page.py`;
+    `_KOREN_PAGE` in `py/accgram/printed_decalogue_page.py`; `_occurrence` in
+    `py/accgram/maqaf_nonfinal_accents_page.py`; `write_stream` in `py/py_ac_loc/gen_flat_stream.py`;
+    and `IMG_DIR` in `py/py_cam1753_loc/gen_line_break_editor.py`. Delete each after confirming, as
+    item 9 did, that nothing calls or reads it. Keep any that turns out to be used, and report it.
+18. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check
 
