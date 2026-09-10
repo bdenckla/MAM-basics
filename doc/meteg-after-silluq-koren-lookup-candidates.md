@@ -1,6 +1,6 @@
 # Koren lookup candidates for a meteg after the silluq in MAM
 
-**What this list is for.** When this file was written, MAM had one known verse-final chanted word in which a meteg follows the silluq: 1 Kings 7:37, לְכֻלָּֽהְנָֽה׃ — the silluq is the U+05BD on letter 3 of 6, the meteg is the U+05BD on letter 5, and the stress is penultimate. This file ranks every other verse-final chanted word of MAM whose final atom has two U+05BD by how plausible the same reading is there, so that Ben can look the likeliest ones up in the Koren edition first. The reading being graded is called the **post-silluq reading** below: it takes the FIRST U+05BD of the final atom as the silluq, that is, it puts the stress on that syllable. Written 2026-09-09 by a Claude session (Task C of the meteg-after-silluq investigation) at MAM-basics commit `30fb7681`, from the tracked `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json`, and revised the same day on the three decisions listed next. Ben has looked 3 of the 392 up in Koren so far, beginning 2026-09-09; the section "Koren readings so far" below lists them, the Koren column has each reading at its row, and the column is empty wherever he has not yet looked.
+**What this list is for.** When this file was written, MAM had one known verse-final chanted word in which a meteg follows the silluq: 1 Kings 7:37, לְכֻלָּֽהְנָֽה׃ — the silluq is the U+05BD on letter 3 of 6, the meteg is the U+05BD on letter 5, and the stress is penultimate. This file ranks every other verse-final chanted word of MAM whose final atom has two U+05BD by how plausible the same reading is there, so that Ben can look the likeliest ones up in the Koren edition first. The reading being graded is called the **post-silluq reading** below: it takes the FIRST U+05BD of the final atom as the silluq, that is, it puts the stress on that syllable. Written 2026-09-09 by a Claude session (Task C of the meteg-after-silluq investigation) at MAM-basics commit `30fb7681`, from the tracked `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json`, and revised the same day on the three decisions listed next. Ben has looked 4 of the 392 up in Koren so far, beginning 2026-09-09; the section "Koren readings so far" below lists them, the Koren column has each reading at its row, and the column is empty wherever he has not yet looked.
 
 **Three decisions of Ben's, 2026-09-09, each of which overruled the first version of this file:**
 
@@ -14,15 +14,18 @@
 2. Koren having one mark on the LATER letter means MAM's earlier mark is an ordinary meteg before the stress.
 3. Koren having both marks means MAM has no mark later than Koren's (Ben, 2026-09-10, at Psalms 35:10). Until that day this item said that both marks tell nothing.
 
-## Koren readings so far: 3 of 392, in rank order
+## Koren readings so far: 4 of 392, in rank order
 
-Each row is one of Ben's readings of the Koren edition, recorded in `in/meteg_after_silluq_koren_readings.json`. "What Koren has" says which of the two U+05BD on MAM's final atom Koren has, and "What it means" applies the three rules just above. So far 2 of the 3 are the signal, Koren having the first mark only: 1 Kings 7:37 and Job 4:12.
+Each row is one of Ben's readings of the Koren edition, recorded in `in/meteg_after_silluq_koren_readings.json`. "What Koren has" says which of the two U+05BD on MAM's final atom Koren has, and "What it means" applies the three rules just above. So far 2 of the 4 are the signal, Koren having the first mark only: 1 Kings 7:37 and Job 4:12.
 
-| Rank | Reference | MAM's form | What Koren has | Reported | What it means |
-| --- | --- | --- | --- | --- | --- |
-| 1 | 1 Kings 7:37 | לְכֻלָּֽהְנָֽה׃ | first mark only | 2026-09-09 | the signal: MAM has a mark later than Koren's |
-| 2 | Psalms 35:10 | מִגֹּֽזְלֽוֹ׃ | both marks | 2026-09-10 | MAM has no mark later than Koren's |
-| 3 | Job 4:12 | מֶֽנְהֽוּ׃ | first mark only | 2026-09-10 | the signal: MAM has a mark later than Koren's |
+The last column puts Phonetic MAM's resolution of the simple sheva after the first mark, the resolution in the sheva column of the tables below, beside Koren's where Ben has noted it. He first did so at Isaiah 7:6, on 2026-09-10: "Koren considers the simple shewa in that word to be vocal." It bears on the ranking, which puts "long vowel + silent sheva" first within a class. So far Koren's sheva is noted at 4 of the 4, and Koren agrees with Phonetic MAM at 3 (1 Kings 7:37, Job 4:12 and Isaiah 7:6) and disagrees at 1 (Psalms 35:10).
+
+| Rank | Reference | MAM's form | What Koren has | Reported | What it means | Sheva after the first mark (Phonetic MAM; Koren) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 Kings 7:37 | לְכֻלָּֽהְנָֽה׃ | first mark only | 2026-09-09 | the signal: MAM has a mark later than Koren's | silent; silent |
+| 2 | Psalms 35:10 | מִגֹּֽזְלֽוֹ׃ | both marks | 2026-09-10 | MAM has no mark later than Koren's | silent; vocal |
+| 3 | Job 4:12 | מֶֽנְהֽוּ׃ | first mark only | 2026-09-10 | the signal: MAM has a mark later than Koren's | silent; silent |
+| 4 | Isaiah 7:6 | בֶּן־טָֽבְאַֽל׃ | both marks | 2026-09-10 | MAM has no mark later than Koren's | vocal; vocal |
 
 ## How to read the columns
 
@@ -83,7 +86,7 @@ These are the candidates worth looking up first. Class B follows them at ranks 2
 | 1 | A | 1 Kings 7:37 | prose | לְכֻלָּֽהְנָֽה׃ | לְכֻלָּֽהְנָה׃ | לְכֻלָּהְנָֽה׃ | plausible: one syllable after the first mark | long vowel (qamats) + silent sheva | no exact twin; suffix-2 1461: first 392, last 1069 | דֹּתָ֑יְנָה | Genesis 37:17 (suffix-2, first) | first mark only (Ben, 2026-09-09) |
 | 2 | A | Psalms 35:10 | poetic | מִגֹּֽזְלֽוֹ׃ | מִגֹּֽזְלוֹ׃ | מִגֹּזְלֽוֹ׃ | plausible: one syllable after the first mark | long vowel (holam) + silent sheva | no exact twin; suffix-2 990: first 1, last 989 | אֲכָ֣לוֹ | Job 13:28 (suffix-2, first) | both marks (Ben, 2026-09-10) |
 | 3 | A | Job 4:12 | poetic | מֶֽנְהֽוּ׃ | מֶֽנְהוּ׃ | מֶנְהֽוּ׃ | plausible: one syllable after the first mark | short vowel (segol) + silent sheva | no exact twin; suffix-3 2: first 2 | יַעַבְרֶ֑נְהוּ | Jeremiah 5:22 (suffix-3, first) | first mark only (Ben, 2026-09-10) |
-| 4 | A | Isaiah 7:6 | prose | בֶּן־טָֽבְאַֽל׃ | בֶּן־טָֽבְאַל׃ | בֶּן־טָבְאַֽל׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-2 60: first 1, last 59 | וְשָׁ֥אַל | Numbers 27:21 (suffix-2, first) |  |
+| 4 | A | Isaiah 7:6 | prose | בֶּן־טָֽבְאַֽל׃ | בֶּן־טָֽבְאַל׃ | בֶּן־טָבְאַֽל׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-2 60: first 1, last 59 | וְשָׁ֥אַל | Numbers 27:21 (suffix-2, first) | both marks (Ben, 2026-09-10) |
 | 5 | A | Zechariah 13:3 | prose | בְּהִנָּֽבְאֽוֹ׃ | בְּהִנָּֽבְאוֹ׃ | בְּהִנָּבְאֽוֹ׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-2 327: first 1, last 326 | כִּֽי־מְצָ֥אוֹ | Job 31:29 (suffix-2, first) |  |
 | 6 | A | 1 Chronicles 2:53 | prose | וְהָאֶשְׁתָּ֖אֻֽלִֽי׃ | וְהָאֶשְׁתָּ֖אֻֽלִי׃ | וְהָאֶשְׁתָּ֖אֻלִֽי׃ | plausible: one syllable after the first mark | short vowel (qubuts); next letter has no sheva | no exact twin; suffix-2 778: first 27, last 751 | כׇּל־חֹ֑לִי | Deuteronomy 7:15 (suffix-2, first) |  |
 | 7 | A | Genesis 5:2 | prose | הִבָּֽרְאָֽם׃ | הִבָּֽרְאָם׃ | הִבָּרְאָֽם׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-3 7: last 7 | בְּהִבָּֽרְאָ֑ם | Genesis 2:4 (suffix-3, last) |  |
@@ -501,7 +504,7 @@ All 38 come from `1/sopa-y/maq-y`; in every one of the 14 members of `2/sopa-y/m
 | 326 | C | Judges 8:7 | prose | וְאֶת־הַֽבַּרְקֳנִֽים׃ | וְאֶת־הַֽבַּרְקֳנִים׃ | וְאֶת־הַבַּרְקֳנִֽים׃ | implausible: 2 syllables after the first mark | short vowel (pataḥ); next letter has no sheva | exact 1: last 1 (atnach 1: last 1); suffix-3 1077: last 1077 | וְאֶת־הַֽבַּרְקֳנִ֑ים | Judges 8:16 (exact, last) |  |
 | 121 | C | Judges 20:32 | prose | אֶל־הַֽמְﬞסִלּֽוֹת׃ | אֶל־הַֽמְﬞסִלּוֹת׃ | אֶל־הַמְﬞסִלּֽוֹת׃ | implausible: 2 syllables after the first mark | short vowel (pataḥ) + vocal sheva | no exact twin; suffix-3 49: last 49 | חַלּ֑וֹת | Leviticus 24:5 (suffix-3, last) |  |
 | 329 | C | 1 Samuel 4:6 | prose | אֶל־הַֽמַּחֲנֶֽה׃ | אֶל־הַֽמַּחֲנֶה׃ | אֶל־הַמַּחֲנֶֽה׃ | implausible: 2 syllables after the first mark | short vowel (pataḥ); next letter has no sheva | exact 49: last 49 (atnach 12: last 12); verse-final two-mark 12; suffix-3 44: last 44 | אֶת־הַֽמַּחֲנֶ֑ה | Exodus 16:13 (exact, last) |  |
-| 4 | A | Isaiah 7:6 | prose | בֶּן־טָֽבְאַֽל׃ | בֶּן־טָֽבְאַל׃ | בֶּן־טָבְאַֽל׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-2 60: first 1, last 59 | וְשָׁ֥אַל | Numbers 27:21 (suffix-2, first) |  |
+| 4 | A | Isaiah 7:6 | prose | בֶּן־טָֽבְאַֽל׃ | בֶּן־טָֽבְאַל׃ | בֶּן־טָבְאַֽל׃ | plausible: one syllable after the first mark | long vowel (qamats) + vocal sheva | no exact twin; suffix-2 60: first 1, last 59 | וְשָׁ֥אַל | Numbers 27:21 (suffix-2, first) | both marks (Ben, 2026-09-10) |
 | 345 | C | Isaiah 46:6 | prose | אַף־יִֽשְׁתַּחֲוֽוּ׃ | אַף־יִֽשְׁתַּחֲווּ׃ | אַף־יִשְׁתַּחֲוֽוּ׃ | implausible: 2 syllables after the first mark | short vowel (hiriq) + silent sheva | exact 4: last 3, other 1; suffix-3 34: last 34 | יִשְׁתַּחֲו֥וּ | Genesis 49:8 (exact, last) |  |
 | 143 | C | Jeremiah 48:19 | prose | מַה־נִּֽהְיָֽתָה׃ | מַה־נִּֽהְיָתָה׃ | מַה־נִּהְיָֽתָה׃ | implausible: 2 syllables after the first mark | short vowel (hiriq) + silent sheva | no exact twin; suffix-3 7: last 7 | הָיָ֑תָה | Lamentations 1:8 (suffix-3, last) |  |
 | 61 | B | Ezekiel 40:17 | prose | אֶל־הָרִֽצְפָֽה׃ | אֶל־הָרִֽצְפָה׃ | אֶל־הָרִצְפָֽה׃ | plausible: one syllable after the first mark | short vowel (hiriq) + silent sheva | exact 1: last 1; suffix-3 4: last 4 | הָרִֽצְפָ֖ה | Ezekiel 40:18 (exact, last) |  |
