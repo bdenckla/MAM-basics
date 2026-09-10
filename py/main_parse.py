@@ -3,7 +3,7 @@
 
 Subcommands:
     go
-                Parse downloaded Google Sheets data into MAM-parsed outputs within MAM-basics.
+                Parse downloaded Google Sheets data into Google/plain/plus outputs.
     ws
                 Parse downloaded Wikisource data into local parsed JSON outputs.
     ws-products
@@ -47,7 +47,7 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     go_parser = subparsers.add_parser(
         "go",
-        help="Parse downloaded Google Sheets data into MAM-parsed outputs.",
+        help="Parse Google Sheets data into Google/plain/plus MAM-parsed outputs.",
     )
     go_parser.set_defaults(func=_run_go)
 

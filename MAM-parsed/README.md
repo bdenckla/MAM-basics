@@ -2,13 +2,17 @@
 
 This MAM-basics product directory contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
-in two parsed formats: "plain" and "plus."
+in two primary parsed formats, "plain" and "plus," plus a Google-derived
+comparison product in `google/` that uses the plain schema.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-Each format contains a JSON file for each of the 24 books of the Miqra.
+Each directory contains a JSON file for each of the 24 books of the Miqra.
 
-The source of this data is the
-[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745).
+During the source-migration intermediate state, the
+[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745) supplies all
+three directories. The `google/` files are the independent Google input to
+`py/main_diff.py wsgo`. Phase 4 of the migration will make Wikisource supply
+`plain/` and `plus/`, while Google continues to supply only `google/`.
 
 Each JSON file represents its corresponding book in a format that is easier to read than the format of the Google Sheet.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
@@ -61,8 +65,8 @@ a sibling MAM-parsed clone and the explicit `--legacy-history` mode.
 
 ## Regeneration and the example
 
-From the MAM-basics root, regenerate plain/plus data, the example support file,
-and the published documentation:
+From the MAM-basics root, regenerate Google/plain/plus data, the example support
+file, and the published documentation:
 
 ```powershell
 .venv/Scripts/python.exe py/main_parse.py go

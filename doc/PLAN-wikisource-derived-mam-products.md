@@ -703,3 +703,114 @@ local commit, create Phase 3 as a fresh task using `ws-direct` with
 Phase 5. The Phase 2 task stops writing before Phase 3 starts. Integration remains
 scheduled for archival, serialized with the successor writer; no worktree-branch
 push or immediate integration is part of this handoff.
+
+### Phase 3 completion, 2026-09-10
+
+Task `01a08c47-b5d5-7193-b500-480af9d9d427` verified the exact development
+checkout, branch `codex-worktree-3a6b`, clean status and starting HEAD
+`8fac2d2a493b67e331bef09774550ffa4d07b3e2`. Both that commit and Phase 2 commit
+`eab3baddc73dcb2533973d85d8dc0074f563127d` were present in the checked-out
+history. The checkout receipt is
+`.novc/ws-products-phase3-checkout-20260910.json`.
+
+`MAM-parsed/google/` now contains the 24 Google-derived files, using the current
+plain schema and filenames. `parse_go` writes Google alongside plain and plus
+during this intermediate phase. The new
+`py/py_misc/read_books_from_mam_parsed_google.py:read_parsed_google_bk39s`
+uses `paths.require_mam_parsed_google_dir()` and the shared plain-schema reader;
+it does not call `mam_parsed_path()` or require the plus directory.
+`read_books_from_mam_parsed_plain.py:read_parsed_plain_bk39s` remains the ordinary
+plain-product reader. Only `py/subcommands/diff_wsgo.py` calls the Google reader;
+the Wikisource side still parses `in/mam-ws` directly.
+
+The immediate command documentation in `py/main_parse.py`, `MAM-parsed/README.md`
+and `doc/process-documentation/auto-edits-process.md` now states the Phase 3
+writer and comparator boundaries. Phase 4 must remove the temporary Google writes
+to plain and plus and replace the intermediate source description.
+
+The Google regeneration used the real workflow command through the existing
+receipt wrapper:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase3-google-regeneration py/main_parse.py go
+```
+
+The command returned zero in 9.9 seconds. All 24 Google files are byte-identical
+to their plain baselines. Plain, plus, generated MAM-parsed documentation and
+`doc/mp-claims.md` remained unchanged. Documentation verification reported 79
+passed, zero failed and the same one pending claim,
+`mp.plain.docs.book39-skeleton.common`.
+
+Before the comparator verification, `wsgo_go._massage_wtel` stopped applying NFC
+to whole strings. The first replacement, which normalized only non-Hebrew
+clusters, exposed Hebrew canonical mark-order differences that the previous NFC
+call had also reordered; refinement then asserted in Genesis. The completed
+comparator keeps the previous comparison equivalence without Unicode-normalizing
+Hebrew: it orders marks in a Hebrew cluster directly by combining class and calls
+NFC only for a cluster containing no Hebrew code point. The source strings used
+to construct Google search strings and Wikisource replacement strings remain on
+their existing sides of the comparison. No product converter imports or copies
+this comparator-only handling.
+
+The real comparator command then returned zero in 10.13 seconds:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase3-diff-wsgo py/main_diff.py wsgo
+```
+
+Both `out/diff_mamws_mamgo.json` and
+`out/diff_mamws_mamgo-auto-edits.json` remain the baseline empty arrays. The
+focused differential/source-boundary harness used:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase3-verification .novc/ws_products_phase3_verify_20260910.py
+```
+
+The initial run returned zero in 13.59 seconds; the final run after the reviewed
+helper-name and docstring cleanup returned zero in 19.98 seconds. The harness
+checked all six sections while
+rejecting any normalization call whose input contained Hebrew. A Google-only
+in-memory mutation produced a column-E difference and auto-edit; the search
+string was a substring of the mutated Google source and the replacement string
+was a substring of the direct Wikisource source. Blocking every read under
+`MAM-parsed/plain/` left the baseline Torah comparison empty, establishing that a
+production-plain change cannot affect the comparator. A source audit found the
+Google reader symbol only in its definition and in `diff_wsgo`. The scratch
+receipt is `.novc/ws-products-phase3-verification-20260910.json`; the compact
+committed receipt is `doc/wikisource-derived-mam-products-phase3-validation.json`.
+
+The first staged-source scan classified the newly tracked `google/` corpus as
+authored MAM-parsed prose and therefore flagged the intentionally preserved
+decomposed Latin specimen in 2 Samuel 22:40. The identical `plain/` and `plus/`
+corpora were already excluded because generated product data is verified by its
+generator rather than by the authored-prose NFC lint. The MAM-parsed product-data
+exclusion now includes `google/` alongside `historical/`, `plain/` and `plus/`.
+This keeps all 24 Google files byte-identical to the baseline plain files; it does
+not weaken the lint for authored source, metadata, prose or examples.
+
+Formatting ran on all eight changed or new tracked Python files with the shared
+interpreter's `-m black`. The affected path, entry-point, prose and Unicode checks
+passed **43 tests in 13.49 seconds**. After staging, the final source checks passed
+**29 tests in 26.26 seconds**, including the new Google reader and committed receipt.
+The final full suite passed **990 tests with 5 semantic skips in 104.53 seconds**;
+all skips remain the transcription controls at
+`py/tests/test_edition_transcriptions.py:1168`.
+
+Raw Google CSVs, raw Wikisource input, format 2, bot captures, production plain
+and plus, comparator artifacts, historical releases, generated MAM-parsed
+documentation and primary-clone source files are unchanged. No download, live
+Sheet write, live Wikisource edit or private generator ran. No unresolved Phase 3
+finding remains.
+
+The next task owns Phase 4 only: make Wikisource parsing write format 2 plus
+production plain/plus with complete grouped-book rebuilding; make Google parsing
+and Google downloads write only `MAM-parsed/google`; move validation,
+documentation and support copying to the Wikisource product writer; update the
+Wikisource download and bot refresh hooks; switch ordinary mega generation to
+Wikisource without a Google parse/comparison dependency; and update and render
+the source documentation and pipeline diagrams. After its verified local commit,
+Phase 4 must start Phase 5 as a fresh task in `ws-direct` with explicit model
+`gpt-5.6-sol` and `environment.type = local`. Phase 3 stops writing before Phase 4
+starts. Integration remains scheduled for archival and must be serialized with
+the successor writer; no worktree-branch push or immediate integration is part
+of this handoff.

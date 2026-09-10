@@ -52,7 +52,7 @@ def _massage_wt_tuple(wt_tuple):
 
 def _massage_wtel(wtel):
     if isinstance(wtel, str):
-        norm = unicodedata.normalize("NFC", wtel)
+        norm = _make_comparison_equivalent_clusters(wtel)
         if norm == "׆__":  # inverted nun then double underscore
             norm = "׆ "
         return norm
@@ -62,6 +62,33 @@ def _massage_wtel(wtel):
     assert isinstance(tels, list)
     new_tels = list(_massage_wt_list(tel) for tel in tels)
     return wtp1.mktmpl(new_tels)
+
+
+def _make_comparison_equivalent_clusters(text):
+    """Derive the comparator's established composition and mark-order equivalence.
+
+    NFC makes composed and decomposed non-Hebrew text equivalent. Hebrew clusters
+    keep their source code points and are ordered directly by combining class; no
+    call to ``unicodedata.normalize`` receives a cluster containing Hebrew.
+    """
+    clusters = []
+    cluster = []
+    for char in text:
+        if cluster and unicodedata.combining(char) == 0:
+            clusters.append(_make_comparison_equivalent_cluster("".join(cluster)))
+            cluster = []
+        cluster.append(char)
+    if cluster:
+        clusters.append(_make_comparison_equivalent_cluster("".join(cluster)))
+    return "".join(clusters)
+
+
+def _make_comparison_equivalent_cluster(cluster):
+    if any("\u0590" <= char <= "\u05ff" for char in cluster):
+        starter = cluster[:1]
+        marks = cluster[1:]
+        return starter + "".join(sorted(marks, key=unicodedata.combining))
+    return unicodedata.normalize("NFC", cluster)
 
 
 _BDISPATCH = {

@@ -47,9 +47,15 @@ def _do_light_books_in_bk24(outfolder, bk24id, light_books):
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     out_path_plain = f"{outfolder}/plain/{osdf24}.json"
     out_path_plus = f"{outfolder}/plus/{osdf24}.json"
+    out_path_google = f"{outfolder}/google/{osdf24}.json"
     file_io.json_dump_to_file_path(lb_with_hdr, out_path_plain)
     file_io.json_dump_to_file_path(lb_with_hdr_plus, out_path_plus)
-    return {"plus": out_path_plus, "plain": out_path_plain}
+    file_io.json_dump_to_file_path(lb_with_hdr, out_path_google)
+    return {
+        "google": out_path_google,
+        "plus": out_path_plus,
+        "plain": out_path_plain,
+    }
 
 
 def almost_main():

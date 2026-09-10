@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-10",
+  "task_id": "01a08c47-b5d5-7193-b500-480af9d9d427",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "starting_commit": "8fac2d2a493b67e331bef09774550ffa4d07b3e2",
+  "google_generation": {
+    "command": "py/main_parse.py go",
+    "files": 24,
+    "files_byte_identical_to_plain": 24,
+    "documentation_checks_passed": 79,
+    "documentation_checks_failed": 0,
+    "documentation_checks_pending": 1
+  },
+  "production_plain_plus_changes": [],
+  "nfc_lint_product_directories": [
+    "google/",
+    "historical/",
+    "plain/",
+    "plus/"
+  ],
+  "comparator": {
+    "command": "py/main_diff.py wsgo",
+    "differences": 0,
+    "auto_edits": 0,
+    "google_only_mutation_produced_difference": true,
+    "google_search_string_verified": true,
+    "wikisource_replacement_string_verified": true,
+    "production_plain_accesses": 0,
+    "normalization_calls_with_hebrew": 0,
+    "google_reader_consumers": [
+      "py/subcommands/diff_wsgo.py"
+    ]
+  },
+  "targeted_tests": {
+    "passed": 43,
+    "seconds": 13.49
+  },
+  "staged_source_tests": {
+    "passed": 29,
+    "seconds": 26.26
+  },
+  "suite": {
+    "passed": 990,
+    "skipped": 5,
+    "seconds": 104.53,
+    "command": "py/main_test.py -rs",
+    "skip_site": "py/tests/test_edition_transcriptions.py:1168"
+  },
+  "raw_input_changes": [],
+  "comparator_artifact_changes": [],
+  "primary_clone_source_changes": []
+}
