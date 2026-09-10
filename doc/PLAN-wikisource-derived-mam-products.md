@@ -16,11 +16,12 @@ The accepted design is:
 3. MAM-parsed-google supplies only the Google input of `diff wsgo`. Ordinary
    MAM product generation does not depend on Google downloads or Sheet synchronization.
 
-Status on 2026-09-10: the phase plan and local generation baseline are complete.
-No production code or generated product has changed. The initial suite found a
-Latin-composition lint failure in the review evidence; escaping its combining mark
-preserves the decoded JSON and repairs the evidence. The corrected suite result
-is recorded under "Execution log". Phase 1 is the next writing task.
+Status on 2026-09-10: Phase 1 is complete. Wikisource download planning now uses
+independent chapter counts and existing book metadata. Ordered coverage and
+selector behavior match the pre-edit capture and raw corpus. Production plain/plus
+generation remains Google-derived, and raw inputs and generated products are
+unchanged. Phase 2, the Wikisource product adapter and representation accounting,
+is the next writing task. Verification receipts are under "Execution log".
 Implementation is authorized; another approval is not needed.
 
 ## Exact development location and handoff
@@ -423,3 +424,93 @@ are not expected to change. Fresh downloads and live edits are outside this task
 - 2026-09-10: Phase 1 is ready for dispatch after this plan and the evidence fix
   are committed locally. The planning task stops writing when Phase 1 starts.
   Integration remains scheduled for archival, serialized with the successor.
+
+### Phase 1 completion, 2026-09-10
+
+Task `01a08c2c-001e-7c51-bd21-abc6c7e036f9` verified the development checkout
+`C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`, branch `codex-worktree-3a6b`,
+clean status and starting HEAD `491cb6b84639a8235941e7ad63dd1d8127b82c67` before
+editing. The required commit was HEAD. The checkout receipt is
+`.novc/ws-products-phase1-checkout-20260910.json`; `read_thread` confirmed the
+task ID and checkout, and `list_projects` confirmed the saved `ws-direct` path.
+
+`py/py_misc/get_wikisource_plan.py` now constructs book plans from the existing
+`bib_locales` roster and sections, existing MAM book names and existing Hebrew
+numerals. The new `py/ws/ws_chapter_counts.py:BOOK39_CHAPTER_COUNTS` supplies
+chapter counts. Inspection of `py/py_misc/vtrad_data.py` and
+`py/clc/clc_versification.py` found verse mappings rather than complete chapter
+counts; `bib_locales` supplies book metadata and a limited chapter-width grouping.
+The new declaration is checked independently against every raw Wikisource book
+by `py/tests/test_wikisource_plan_corpus.py`. The selector and downloader modules
+are unchanged.
+
+All commands below ran from the exact development checkout with the absolute
+shared interpreter and approved elevated execution. Before editing the planner,
+the following command captured its ordered book/chapter/title results, all book
+and section selections, every single-chapter selection, and JSON selector results:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_phase1_20260910.py capture
+```
+
+The capture is `.novc/ws-products-phase1-old-planner-20260910.json`, tied to
+starting commit `491cb6b84639a8235941e7ad63dd1d8127b82c67`. The capture command
+refuses to overwrite that file. Do not recapture a replacement planner as the old
+baseline. Verification of the replacement used:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_phase1_20260910.py check
+```
+
+The comparison returned zero and wrote
+`.novc/ws-products-phase1-verification-20260910.json`. Its results were:
+
+1. All 39 ordered book plans, 6 section selections, 929 single-chapter selections,
+   and page titles equal the pre-edit results. All raw chapter keys equal the
+   planned chapter keys in order, and the planned raw paths cover every raw file.
+2. All 156 invalid-chapter cases and 237 JSON selector cases equal the pre-edit
+   results. The JSON cases include reversed corpus order, duplicated chapter pairs,
+   interleaved book pairs, empty input and invalid chapter values. Book order follows
+   first appearance; chapter order follows the complete book plan.
+3. All 70 request batches retain chapter order and the existing maximum of 20
+   titles. All full-book plans are recognized as full; single-chapter plans are
+   recognized as partial exactly when the book has additional chapters. All 77
+   in-memory first/last-chapter merges retain every unselected chapter and the
+   complete book order. No merged data was written to raw input.
+4. The complete planner/selector comparison passes while Google CSV reads raise.
+   A fresh planner import and full planning also pass with file opens blocked.
+   Planning needs no CSV, parsed product or previous download.
+
+Formatting ran successfully on every changed tracked Python file:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black py/py_misc/get_wikisource_plan.py py/ws/ws_chapter_counts.py py/tests/test_wikisource_plan_corpus.py
+```
+
+The existing downloader checks and new corpus comparison ran through the baseline
+wrapper, which sets explicit cwd, `REPOS_ROOT` and command-local Git configuration:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase1-downloader py/main_test.py py/tests/test_main_download_fr_wikisource.py py/tests/test_wikisource_plan_corpus.py
+```
+
+Result: **15 passed in 0.39 seconds**, comprising 14 existing downloader checks
+and the corpus comparison. The log and command receipt are
+`.novc/ws-products-baseline-20260910/phase1-downloader.log` and
+`.novc/ws-products-baseline-20260910/phase1-downloader.json`. The suite has automatic
+discovery; the new test requires no registry entry. The full suite was not repeated
+in Phase 1; the last full result remains the baseline above.
+
+The Phase 1 diff contains only the planner, chapter-count module, corpus comparison
+and this plan. Raw downloads, format 2, plain/plus, bot intermediates, historical
+releases and generated documentation are unchanged. Phase 1 ran no downloads or
+product generators and wrote no primary-clone source files. No unresolved Phase 1
+finding remains.
+
+The next task owns Phase 2 only: implement candidate `ws-products --output-dir`
+generation, account for all representation differences and validate the complete
+candidate corpus while leaving production outputs unchanged. After its verified
+local commit, Phase 2 must start Phase 3 as a fresh task in `ws-direct` using
+`environment.type = local`, and pass the same sequential handoff rule forward.
+The Phase 1 task stops writing before Phase 2 starts. Integration remains scheduled
+for archival and must be serialized with the successor writer.
