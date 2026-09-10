@@ -852,6 +852,17 @@ withdrawals match the rebuttal verbatim, Hebrew mark order and diff whitespace p
 and both whole-skill comparisons are empty. No tracked Python changed; no new tests were
 added. The remediation plan records the exact script, command and evidence paths.
 
+Executed 2026-09-10: Wave 1D1 implementation commit
+`b829a6aaf45d3b92e594da462f0012241c5aece6`; the worktree was clean afterward.
+The remediation plan records the final scope report and passing pre-commit V6 evidence.
+The following record-only commit supplies Wave 1D2's clean source in the verified saved
+project. Wave 1 remains incomplete; full reconciliation is Wave 1D2's responsibility.
+No integration, push, or automatic archival occurred.
+
+V6 passed again at `b829a6aa` before the record commit; the remediation plan records
+the exact evidence path. Every actual Wave 1D1 V6 run passed with zero changed locations
+and unchanged survey JSON. No real stop occurred.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

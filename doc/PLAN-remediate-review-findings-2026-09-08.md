@@ -1208,6 +1208,23 @@ were read. No new tests were added; no tracked Python changed, so black was not 
 No generated HTML, corpus, JSON, image, behavior, or sibling-checkout change occurred.
 Final scope, pre-commit V6, and local commit evidence follow.
 
+Executed 2026-09-10: Wave 1D1 implementation commit
+`b829a6aaf45d3b92e594da462f0012241c5aece6`. The worktree was clean afterward.
+Final implementation scope evidence is `wave1d1-01a08977-20260910T041158Z-scope.json`;
+V6 passed before that commit at
+`v6-runs/20260910T041201Z-wave1d1-before-commit-c2ba956f/`.
+The following record-only commit supplies Wave 1D2's clean required source, containing
+`b829a6aa`. The handoff reports its exact hash and the actual successor ID. Saved project
+`51e16ebd-373a-41f7-833e-9def3ef72b81` names the verified worktree directly. Wave 1D2
+is authorized without a new decision; writing responsibility transfers at dispatch.
+Wave 1 remains incomplete. No integration, push, or automatic archival occurred.
+
+At `b829a6aa`, final record scope passed in
+`wave1d1-01a08977-20260910T041323Z-scope.json`; V6 passed before the record commit at
+`v6-runs/20260910T041327Z-wave1d1-before-record-commit-01692ee6/`.
+Every actual Wave 1D1 gate run passed with zero changed locations and unchanged survey
+JSON. No real stop occurred.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
