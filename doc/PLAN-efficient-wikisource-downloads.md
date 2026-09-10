@@ -16,12 +16,14 @@ The programme has three sequential phases:
 3. Verify the complete live corpus, measure the improvement, and seed committed
    metadata only from fetched content equal to the committed raw chapters.
 
-Phase 1 and Phase 2 are complete, including implementation, offline checks,
-full regeneration, and suite verification. Phase 3 remains.
-Live content differs from the baseline in 20 chapters, so
-complete metadata seeding cannot silently refresh those chapters.
-Each phase runs in a fresh task, commits its result locally, verifies clean status,
-then creates its successor last. Keep one writer in the shared checkout. An open
+All three phases are complete. Phase 3 verified all 929 chapter arrays,
+all 39 raw serializations, and 628 regenerated product files against an
+independent retrieval of the same exact revisions. Metadata is seeded for
+909 chapters. The 20 unequal chapters retain their committed raw text and
+have no seeded record; a production refresh remains a separate decision.
+Each phase runs in a fresh task, commits its result locally, and verifies clean
+status. Phases 1 and 2 create their successors last; Phase 3 creates none.
+Keep one writer in the shared checkout. An open
 predecessor task is expected; simultaneous staging or editing is not.
 
 - Development checkout: `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`.
@@ -591,6 +593,148 @@ unequal data has trustworthy metadata.
 Run the complete local regeneration scope below, inspect all generated diffs,
 run the full suite, Black changed Python, finish this execution record, and
 commit. Phase 3 creates no successor. Integrate only under the archival procedure.
+
+### Phase 3 execution record (2026-09-10)
+
+Task `01a08d5d-48ae-75c2-8c4c-888047b3fd87` verified the exact development
+checkout and `codex-worktree-3a6b` branch, clean status, and Phase 2 starting
+commit `1ca7c3f903806d15bd82aec7136ff6e36e97b6a3`. The required-commit ancestry
+check passed. The private input remained at
+`55252b834d28a6c241e75758aff5d15836621f56`. The shared interpreter required
+approved elevated execution; all commands and writes stayed in the development
+worktree. No worktree or virtual environment was created.
+
+The durable receipt is
+[efficient-wikisource-downloads-phase3-validation.json](efficient-wikisource-downloads-phase3-validation.json).
+Its command receipts, response hashes, per-book hashes, revision IDs, exact
+upstream edits, product comparisons, and protected-tree hashes establish the
+figures below. Captures and scripts are under
+`C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics/.novc/`.
+
+The forced download retrieved paired IDs/content for every chapter. The
+equality gate compared each fetched array with the corresponding committed
+`HEAD` array and admitted 909 records. An incremental scratch run started
+from copies of the committed books and that partial manifest: 909 chapters
+were reused and 20 were fetched. The forced, incremental, and unchanged
+manifests contain exactly the same 929 identities and content hashes.
+
+A separate full retrieval requested those frozen revision IDs, decoded the
+responses with independently written validation, and serialized the books
+without `ChapterClient`, `download_books`, or the production JSON writer.
+All 929 arrays and 39 serialized books matched. API `maxlag` interruptions
+remained visible and their responses were preserved. The incremental run
+was repeated from the baseline. The first independent run was preserved
+and repeated; after the independent retry stopped, its 53 successful
+response pairs were hash-verified and decoded again, and the remaining
+17 content batches were fetched. The completed independent retrieval has
+70 unique content batches, 71 logical query invocations, and 71 transport
+attempts, including the interrupted query. The earlier abandoned independent
+run is recorded separately. No failed response supplied chapter content.
+The production throttle, timeout, retries, User-Agent, and `maxlag=1` stayed
+unchanged throughout.
+
+The implemented download measurements were:
+
+| Run, all 929 chapters | Reused / fetched | Metadata / content logical batches | Metadata / content attempts | Compressed body bytes | Download seconds |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Forced full download | 0 / 929 | 0 / 70 | 0 / 70 | 2,065,356 | 224.76 |
+| Migration from the 909-record seed | 909 / 20 | 19 / 11 | 19 / 11 | 95,505 | 96.02 |
+| Unchanged repeat with complete scratch metadata | 929 / 0 | 19 / 0 | 19 / 0 | 24,940 | 67.15 |
+
+Relative to the forced run, the unchanged repeat used **72.9% fewer requests**,
+**98.8% fewer compressed body bytes**, and **70.1% less elapsed download time**.
+Those are separate observations from single runs with the original random
+throttle. They do not establish a fixed speedup. Each measured run used a
+fresh session. Timing includes throttling, response decoding/capture recording,
+hashing, book/metadata persistence, and a Git HEAD read; it excludes process
+startup, scratch setup, and parsing/products. No product regeneration ran
+during these performance samples. Compressed body bytes were read before
+decompression and exclude headers, TLS, and chunk framing. Every successful
+measurement response was HTTP 200 with gzip encoding. Chapter requests used
+`allow_cache=False`; no generic cache files supplied responses.
+
+The unchanged repeat preserved raw and metadata bytes and modification times.
+The production manifest covers 909 chapters, so the 929-chapter unchanged
+sample describes a fully populated scratch corpus. A normal all-book run
+against the committed partial seed would fetch the 20 excluded chapters.
+
+Both live retrievals independently regenerated format-2, plain/plus, support
+files, documentation, MAM-with-doc, MAM-simple, Sefaria/AJF, and OSIS. All
+628 product paths and hashes matched:
+
+| Product root | Matched files |
+| --- | ---: |
+| `out` | 39 |
+| `MAM-parsed` | 50 |
+| `MAM-simple` | 262 |
+| `MAM-for-Sefaria` | 160 |
+| `MAM-OSIS` | 25 |
+| `gh-pages` | 91 |
+| `doc` | 1 |
+
+The scratch driver used the original worktree modules with explicit raw input
+and scratch output paths. A file-write guard confined generation to each
+scratch product directory. The guard exposed the claims index's relative
+destination; scratch setup also needed the MAM-with-doc and OSIS page
+directories. The scratch driver was corrected and the complete product chain
+rerun. Documentation and assets whose generators verified identical bytes
+without rewriting were included in both product manifests.
+
+Compared with production, the live scratch products differ in 129 files;
+their paths and hashes are recorded in the receipt. Those differences come
+from the 20 upstream chapter differences, whose local/live hashes and exact
+edits still match Phase 1. The production raw books were never replaced to
+make the gate pass. Only the 909 equality-backed records were atomically
+written to `in/mam-ws-revisions.json`, using real Phase 3 revision IDs.
+No synthetic fixture ID or ID-less Phase 1 response supplied a seed record.
+
+The seeded production selection then ran through the real
+`download_wikisource.run` and its mandatory hook. All 909 selected chapters
+were reused after 19 live metadata attempts; no content request occurred.
+The download took 46.42 seconds and transferred 24,323 compressed body bytes.
+The hook separately took 15.55 seconds, rebuilt all 39 format-2 books and
+24 complete product groups, and passed documentation verification: 79 passed,
+zero failed, and the existing pending claim
+`mp.plain.docs.book39-skeleton.common`. Production raw bytes/modification
+times and metadata bytes were unchanged by that run.
+
+All 38 maintained local mega steps passed in 293.88 seconds; only the private
+writer `near-aleppo-census` was omitted. The separate documentation, diagrams,
+Google parse, and WS/Google comparison commands passed. An independently
+generated candidate matched all 48 production plain/plus files. Protected
+Wikisource raw, Google raw, bot-output, and historical-input hashes remained
+unchanged. The only regenerated tracked differences were the same vendoring
+reports with exactly the Phase 1/2 hashes; generated copies were preserved
+and committed report bytes restored.
+
+The full suite passed: **990 passed, 5 skipped, and 65 subtests passed in
+112.97 seconds**. The skips are the same semantic controls recorded in
+Phase 1. The staged prose/Unicode/sibling-reach lints passed **9 tests in
+21.15 seconds**, and `git diff --cached --check` passed. No tracked Python
+or test file changed in Phase 3; Black at defaults formatted the scratch
+verification scripts. The final tracked changes are the partial metadata seed,
+the Phase 3 receipt, and this execution record. No production raw book,
+product, Google file, bot output, or historical input has a tracked difference.
+
+For a new measurement, retain the earlier captures, adapt the scratch drivers
+to a fresh output directory and the executor's verified starting commit, and
+remeasure against that commit. The commands recorded in the receipt ran
+`.novc/ws_efficiency_phase3_live_20260910.py` in this order: `forced`,
+`candidate`, `incremental`, `unchanged`, `independent`, and `seed`.
+`independent-resume` completed the interrupted exact-revision retrieval;
+it accepts only hash-verified responses from that independent retrieval.
+`.novc/ws_efficiency_phase3_products_20260910.py` generated each live product
+set, and `.novc/ws_efficiency_phase3_compare_20260910.py all` compared every
+array, serialization, and product manifest. The seeded-hook driver, local
+mega driver, extras driver, and full-suite command are recorded separately.
+The drivers refuse to overwrite earlier run directories unless an explicit
+continuation is selected. Reusing a receipt is not a new measurement.
+
+The programme has no remaining implementation phase and creates no successor.
+The unresolved production-text decision concerns the 20 excluded chapters.
+Chapter revisions establish raw wikitext freshness, not transcluded-template
+freshness or one simultaneous whole-corpus snapshot. Commit locally; main
+integration remains scheduled for the archival procedure below.
 
 ## Regeneration, suite, and handoff commands
 
