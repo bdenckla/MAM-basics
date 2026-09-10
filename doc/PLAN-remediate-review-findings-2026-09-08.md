@@ -1343,6 +1343,24 @@ follow below. The actual review/plan diff was read. No tracked Python changed, s
 was not required; no new tests or generated-artifact changes occurred. No real V6 stop
 occurred. Implementation and final record commits are recorded after their hashes exist.
 
+Executed 2026-09-10: Wave 1D2 implementation commit
+`f7360667f2cd00ea5453757c81921b31b4b2d859`. The worktree was clean afterward.
+Final implementation scope passed in `wave1d2-01a08987-20260910T043045Z-scope.json`;
+V6 passed before that commit at
+`v6-runs/20260910T043054Z-wave1d2-before-commit-ce5a4167/`.
+The following record-only commit supplies Wave 2's clean required source, containing
+`f7360667`. Its full hash and actual successor ID are reported at handoff. Saved project
+`51e16ebd-373a-41f7-833e-9def3ef72b81` was verified as the exact review worktree with
+`isGitRepository=true`; the successor uses that path directly with `environment.type = local`.
+Wave 1 is complete and Wave 2 is authorized without another decision. Writing responsibility
+transfers at dispatch. No integration, push or automatic archival occurred.
+
+At `f7360667`, record scope passed in
+`wave1d2-01a08987-20260910T043230Z-scope.json`; V6 passed before the record commit at
+`v6-runs/20260910T043233Z-wave1d2-before-record-commit-23c37abc/`.
+Every actual Wave 1D2 gate run passed with zero changed locations and unchanged survey
+JSON. No real stop occurred.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a

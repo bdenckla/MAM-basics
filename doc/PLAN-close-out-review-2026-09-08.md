@@ -906,6 +906,17 @@ passes Hebrew mark order, diff whitespace and both whole-skill comparisons. Only
 three authorized Markdown files changed. The remediation plan records the exact
 commands and evidence paths; local commit evidence follows after creation.
 
+Executed 2026-09-10: Wave 1D2 implementation commit
+`f7360667f2cd00ea5453757c81921b31b4b2d859`; the worktree was clean afterward.
+The remediation plan gives the final implementation scope and passing pre-commit V6
+evidence. The following record-only commit supplies Wave 2's clean required source in
+the verified saved project. Wave 1 is complete. The exact handoff head and actual successor
+ID are reported at dispatch; no integration, push or automatic archival occurred.
+
+V6 passed again at `f7360667` before the record commit. The remediation plan names
+that evidence and the passing record-scope report. Every actual Wave 1D2 V6 check
+passed with zero changed locations and unchanged survey JSON; no real stop occurred.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
