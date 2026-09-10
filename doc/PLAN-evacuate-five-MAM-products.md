@@ -1365,13 +1365,16 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
-Task **6A is complete, 2026-09-10**; 6B–6F remain. The finalized
+Tasks **6A and 6B are complete, 2026-09-10**; 6C–6F remain. Ben requested a
+pause before creating 6C so he can choose its model. The finalized
 [command map](mam-products-phase6-command-map.md) and
 [Git-blob baseline](../in/mam_products_phase6_baseline.json) specify the commands,
 dependencies, exact path sets and comparison partners for the remaining tasks.
 The [6A verification record](../in/mam_products_phase6a_verification.json) preserves
-the preflight, suite result and source-host evidence. Product synchronization
-outside the preceding OSIS checks still awaits the assigned regeneration tasks.
+the preflight, suite result and source-host evidence. The
+[6B verification record](../in/mam_products_phase6b_verification.json) establishes
+current parsing, FOI, template-survey, documentation and MAM-simple synchronization.
+The remaining product and independent-example runs retain their assigned tasks.
 
 ### Phase 6 session boundaries — Ben's decision, 2026-09-10
 
@@ -1615,3 +1618,92 @@ Git filters. Two prior reports have existing CRLF checkout bytes; the report rec
 those raw hashes and the exact CRLF-only differences rather than normalizing the
 original files. Ordinary whitespace checks passed. No tracked Python changed,
 so no Black invocation was required.
+
+### Phase 6B parsing, surveys and MAM-simple record — 2026-09-10
+
+Task `01a08c3c-557c-73c0-92aa-bf632c4a40d2` verified its actual cwd as
+`C:/Users/BenDe/GitRepos` and developed directly in
+`C:/Users/BenDe/GitRepos/MAM-basics`. Primary `main`, `origin/main` and live
+remote `main` all matched `11edc15e73cc39f1b6cc2e8c5778ea6a06a399ca` at startup;
+the checkout and index were clean. Every production command retained that HEAD
+and index. No worktree was created or moved.
+
+The permanent evidence is `in/mam_products_phase6b_verification.json`. It records
+full command arrays, input/output memberships and accepted commits, raw hashes,
+Git identities, before/after nanosecond mtimes, exact observed path sets, conditional
+untouched outputs, complete-snapshot digests and embedded command logs. All commands
+ran sequentially from the development root with interpreter
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`:
+
+| Arguments after the interpreter | Expected paths | Primary paths with changed mtimes | Raw byte changes | Result |
+| --- | ---: | ---: | ---: | --- |
+| `py/main_parse.py go` | 74 | 74 | 0 | Passed; claims: 79 passed, 0 failed, 1 pending |
+| `py/main_foi_features_of_interest.py` | 49 | 49 | 0 | Passed |
+| `py/main_tmpl_survey.py` | 26 | 26 | 0 | Passed, including all 12 SVGs |
+| `py/main_authored.py gen-mam-parsed-docs` | 24 | 24 | 0 | Passed after fresh surveys; claims: 79 passed, 0 failed, 1 pending |
+| `py/main_mam_simple.py` | 266 | 261 | 0 | Passed; five conditional documentation/assets paths already current |
+
+The commands cover **415 distinct outputs / 116,606,861 bytes**, all exactly
+matching the frozen baseline's raw bytes and Git blobs. The accepted output-content
+commit remains `11edc15e`; no production source or generated file needed an edit.
+The documentation check still names `mp.plain.docs.book39-skeleton.common` as
+pending, exactly as the preceding lane did. No verification bypass was used.
+Graphviz reported the required `16.0.0 (20260814.1018)` stamp at
+`C:/Program Files/Graphviz/bin/dot.exe`; both grammar locks remained unchanged.
+
+The initial physical-root snapshot included **22,400 files**, of which **5,645**
+were tracked by the primary checkout. Recursive traversal retained non-cache
+working files and the separate nested Claude worktrees. Before support copying,
+all five exact support directories were checked for independent untracked files
+and reparse points; none were found. Python cache files were identified separately.
+All five retired source siblings had `os.path.lexists == False` before and after
+every production command.
+
+The broad parse recorder initially stopped on observations in the separate
+`.claude/worktrees/mega-coverage` checkout: `py/mb_cmn/paths.py` and the copied
+`mb_cmn/paths.py` and `mb_cmn/provenance.py` under its MAM-simple examples.
+Read-only worktree, status and diff checks established concurrent development
+there. The parse command itself exited successfully, and its 74 primary outputs
+and every primary input matched the baseline. The evidence retains the nested
+observations, distinguishes raw capture from later filtered capture, and does not
+attribute nested-worktree changes to production. Subsequent records separate
+the verified nested checkout paths from the primary checkout. Each command's
+primary files outside its expected output set have identical before/after states.
+
+The original-source and Land comparisons remain distinct from current output
+identity. Of the current outputs mapped by the original inventories, MAM-simple
+has 265 compared paths, 180 matching the original source and 183 matching Land;
+MAM-parsed has 85 compared paths, 79 matching both; the FOI subset has 49 compared
+paths, 48 matching both. Every compared path retains its frozen Phase 6 identity;
+earlier adaptations were neither reversed nor presented as original bytes.
+
+All **144 historical parsed JSONs / 84,572,003 bytes** still match their original
+permanent manifest. All 188 protected static paths, historical OSIS inputs, example
+entries and outputs, input CSVs, grammar locks and 1,225 implementation files kept
+their initial raw bytes and mtimes. All 11 prior JSON evidence files are unchanged.
+The whole-baseline preflight differences were limited to the plan updates already
+accepted in 6A's `11edc15e` commit. All 45 copied support modules match their source
+Git blobs: 20 pairs also have identical raw working bytes, while 25 canonical source
+files have existing CRLF bytes and the production copies have LF. The exact
+CRLF-only differences were checked in memory, with every copy still matching its
+frozen bytes. Existing CSV and prior-report EOL differences are recorded separately;
+no input or prior evidence file was normalized.
+
+The affected command was `py/main_test.py` with the exact file list in the permanent
+record: MAM-simple CLI, mark-order and loader checks, both documentation checks,
+all three `test_tmpl_survey_*.py` files, Graphviz pin, machine-path and sibling-reach
+checks, followed by `-q`. Result: **74 passed, 27 subtests passed in 7.95 seconds**.
+The staged Unicode/prose hygiene command, `py/main_test.py` with
+`py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py -q`, passed
+**7 tests in 13.08 seconds**. `git diff --cached --check` passed. Independent
+record validation rechecked all 415 current outputs, 144 historical inputs,
+45 support pairs, 11 prior JSON evidence files, the unchanged 6A baseline and
+verification record, and all five source absences.
+Tracked Python was unchanged, so Black was not required. Full mega, downloads,
+Phase 6C commands, independent examples, MAM-private writes, source-clone recreation
+and directory recycling were not performed.
+
+**Ben's handoff decision, 2026-09-10:** finish, commit and push 6B, then pause before
+creating **6C — MAM-with-doc and historical comparisons**, allowing Ben to choose
+the next task's model. The remaining bounded chain is still authorized. No successor
+has been created; the model-choice pause supersedes automatic dispatch from 6B.
