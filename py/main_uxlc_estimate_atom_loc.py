@@ -84,8 +84,6 @@ def main():
 
     Usage: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py <book_id> <c:v> <word>
     Example: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py Genesis 27:7 "צַ֛יִד"
-
-    That example is the same location example_run() reports: Genesis 27:7, atom 3.
     """
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -116,18 +114,6 @@ def main():
     if match_method != "exact":
         print(f"  (matched via {match_method}; UXLC has {uxlc_word!r})")
     std_bcvp_quad = book_id, chapter, verse, atom
-    pg = my_uxlc_location.page_and_guesses(uxlc, pbi, std_bcvp_quad)
-    print(pg)
-
-
-def example_run():
-    """Do an example run of the program.  Nothing calls it."""
-    std_bcvp_quad = tbn.BK_GENESIS, 27, 7, 3
-    _main2(std_bcvp_quad)
-
-
-def _main2(std_bcvp_quad):
-    uxlc, pbi = my_uxlc_location.prep()
     pg = my_uxlc_location.page_and_guesses(uxlc, pbi, std_bcvp_quad)
     print(pg)
 

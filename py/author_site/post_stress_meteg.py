@@ -3572,30 +3572,3 @@ def _next_conjunctive_footnote(survey: dict) -> list:
             )
         ),
     ]
-
-
-def add_args(parser, *, repo_root: Path) -> None:
-    del repo_root
-    parser.add_argument(
-        "--html-out-dir",
-        type=Path,
-        default=None,
-        help="Directory to write the page into (default: this repo's gh-pages).",
-    )
-    parser.add_argument(
-        "--trust-survey",
-        action="store_true",
-        help=(
-            "Read out/accgram/post-stress-meteg.json instead of recomputing the survey."
-            " Only for a caller that cannot reach the MAM-private clone."
-        ),
-    )
-
-
-def run(args) -> None:
-    out_paths = gen_html_files(
-        getattr(args, "html_out_dir", None),
-        trust_survey=bool(getattr(args, "trust_survey", False)),
-    )
-    for out_path in out_paths:
-        print(f"Generated {out_path}")
