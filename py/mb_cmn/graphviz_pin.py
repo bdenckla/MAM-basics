@@ -55,6 +55,30 @@ skipped ``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's
 end-of-run banner says so, and says not to commit a changed ``.dot`` without its
 ``.svg``.
 
+PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
+on 2026-09-09 whether a pip install could provide it, which would be a better
+design than this one: a pinned entry in ``requirements.txt`` would make the
+version reproducible on every machine and container automatically, satisfying the
+pin BY CONSTRUCTION instead of by a rule people must follow. As of that date no
+package delivers it, measured against PyPI rather than recalled:
+
+  * ``graphviz`` is a 38-file pure-Python wrapper, 138 KB unpacked, with zero
+    executables. It shells out to a ``dot`` you must already have. The name
+    invites the opposite conclusion, which is why this bullet is first.
+  * ``pygraphviz`` bundles the Graphviz libraries and eight auxiliary tools, but
+    ``dot`` is NOT among them; it lays out through the C library. Adopting it
+    would mean rewriting every generator away from ``subprocess``.
+  * ``graphviz-static`` genuinely does ship static ``dot`` binaries for every
+    platform -- and still is not the answer. It bundles Graphviz 14.1.1, two
+    majors behind this pin, so adopting it would drag all 16 tracked SVGs
+    backwards; and all eight of its releases landed inside a three-day window in
+    December 2025 with nothing since, while Graphviz shipped 15.x and 16.x.
+
+Do not re-derive this. The non-pip routes that do work are the OS package manager
+in a container image and conda-forge, and both pin to whatever that channel
+ships. If a maintained binary-shipping wheel ever appears it is worth revisiting,
+because a pinned dependency beats a pinned constant.
+
 RAISING THE PIN IS ONE EDIT HERE, then a regeneration of every tracked SVG,
 committed on its own rather than riding along with unrelated work -- the same
 discipline ``~/.claude/CLAUDE.md`` states for a black version bump, and for the
