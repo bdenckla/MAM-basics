@@ -1080,6 +1080,15 @@ technical record names all seven paths and complete evidence. The technical phas
 complete; its local commit and final pre-commit gate are recorded in the checkpoint
 append before dispatch.
 
+Wave 3 technical checkpoint, recorded 2026-09-10: implementation commit
+`f11660576e440523e944598331e8ecc339dcdb26` contains the passing technical remedy and
+records. Its immediate pre-commit V6 evidence is
+`v6-runs/20260910T124233Z-wave3-before-technical-commit-01a08b34-47c17bdc/`.
+The following record-only commit supplies the clean source for the automatically
+created editorial task in the same saved worktree, with the exact commit and actual
+successor ID reported at dispatch. The editorial output contract must be resolved
+and recorded before HTML edits. E1-E8 approval is already settled.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

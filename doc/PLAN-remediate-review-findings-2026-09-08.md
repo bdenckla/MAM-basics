@@ -2078,6 +2078,27 @@ and Wave 4 remain pending; P2 source/rights-holder identification and the unveri
 415/416 scratch count remain deferred. No intermediate integration, push, issue
 action or automatic archival is authorized by this technical checkpoint.
 
+Wave 3 technical checkpoint, recorded 2026-09-10: implementation commit
+`f11660576e440523e944598331e8ecc339dcdb26` contains the complete passing remedy and
+execution record. V6 passed immediately before that commit at
+`v6-runs/20260910T124233Z-wave3-before-technical-commit-01a08b34-47c17bdc/`.
+The seven committed paths, relative to the verified review worktree, are:
+
+1. `py/accgram/post_stress_meteg.py`.
+2. `py/author_site/post_stress_meteg.py`.
+3. `py/author_site/post_stress_meteg_annotations.py`.
+4. `py/tests/test_post_stress_meteg_annotations.py`.
+5. `doc/PLAN-remediate-review-findings-2026-09-08.md`.
+6. `doc/PLAN-close-out-review-2026-09-08.md`.
+7. `doc/review-findings-2026-09-08.md`.
+
+The following record-only commit supplies the clean required source for the editorial
+successor, including this implementation commit as an ancestor. The saved project is
+`51e16ebd-373a-41f7-833e-9def3ef72b81`, whose actual path is the review worktree above;
+use `environment.type = local`. The creation result and final response record the actual
+successor ID. Writing responsibility transfers at dispatch. Integration and push remain
+scheduled once after final Wave 4; the technical task does not archive any task.
+
 ### Wave 3 editorial phase: approved items and output-contract preparation
 
 **Step-5 decision recorded 2026-09-09:** E1-E8 are approved as specified in their table,

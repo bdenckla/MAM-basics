@@ -1063,6 +1063,14 @@ dated dispositions and the complete accepted-corrections section below are prese
 |---|---|---|
 | 2026-09-10 | 13.3 | The revised source-selection, mark-preservation and annotation-validation remedy is complete. Exhaustive matching and serialized-display differentials pass; all survey fields, JSON bytes and 1,074 HTML files remain unchanged. The final canonical suite passed 988 tests, 5 skips and 65 subtests in 109.92 seconds; V6 passed immediately afterward. The remediation plan's Wave 3 technical record preserves commands, source hashes, the synthetic diagnostic failure and its verified correction, full logs and local checkpoint evidence. E1-E8 remain separate. |
 
+Wave 3 technical checkpoint, recorded 2026-09-10: finding 13.3's complete revised
+technical remedy and evidence are committed at
+`f11660576e440523e944598331e8ecc339dcdb26`. V6 passed immediately before the commit
+at `v6-runs/20260910T124233Z-wave3-before-technical-commit-01a08b34-47c17bdc/` under
+the remediation scratch root. The following record-only commit provides the clean
+handoff source; the approved editorial phase remains separate. All earlier finding
+and correction text is retained.
+
 ## Corrections accepted in the review exchange
 
 Recorded by Codex on 2026-09-10 under Ben's D3 decision of 2026-09-09 and Step-5
