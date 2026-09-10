@@ -17,6 +17,11 @@ from py_ac_word_image_helper.linebreak_search import find_word_in_linebreaks
 TEST_DATA = ac_paths.word_finding_test_data_path()
 
 
+def _col_number(col):
+    """The number in a line-break column identifier: 1 for ``"1of2"``, or for ``1``."""
+    return col if isinstance(col, int) else int(col.split("of")[0])
+
+
 def main():
     data = json.loads(TEST_DATA.read_text("utf-8"))
     pages = load_index("Job")
@@ -97,9 +102,11 @@ def main():
         # For maqaf words that span tokens, some locs have "word2"
         has_word2 = "word2" in loc
 
-        # Compare
+        # Compare.  The finder returns the column as line-breaks/*.json spells it,
+        # "1of2" since codex-index-aleppo's eb4bcaf (2026-03-14), while the test
+        # data keeps the bare column number, so only the number is compared.
         mismatches = []
-        if col != expected_col:
+        if _col_number(col) != expected_col:
             mismatches.append(f"col: found={col} expected={expected_col}")
         if line_num != expected_line:
             mismatches.append(f"line: found={line_num} expected={expected_line}")
