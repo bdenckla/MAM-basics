@@ -578,6 +578,35 @@ so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
 
+## MAM-OSIS belongs on no machine except for explicit stub publication
+
+Ben's decision, 2026-09-10: the completed Phase 5 lane of
+`doc/PLAN-evacuate-five-MAM-products.md` makes MAM-OSIS a local product under
+`MAM-OSIS/`, with published documentation under `gh-pages/MAM-OSIS/`. The source
+clone is absent from both workspace rosters and `repo_visibility`; under
+`gitrepos_setup_rule`, no machine should restore it during setup or maintenance.
+A surviving clone is residue to inspect for recoverable work before recycling.
+No `frozen_repos` or `repos_to_keep_absent` entry is needed. The unarchived
+`bdenckla/MAM-OSIS` repository remains the Pages redirect host and preserves its
+history; new product issues belong in MAM-basics.
+
+The frozen legacy set is the single `index.html` in
+`in/mam_osis_redirect_pages.json`. Production, the independent MAM-simple OSIS
+example, and the canonical suite run without a source clone. Keep the redirect-only
+MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
+publication still requires a temporary source host. Only when that work is selected:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git C:/Users/BenDe/GitRepos/MAM-OSIS
+```
+
+From MAM-basics, run `py/main_redirect_stubs.py build --repo MAM-OSIS --publish`
+and `check --repo MAM-OSIS`, commit and push the host changes, verify the source
+Pages deployment, then safety-check and recycle the temporary clone again. Keep
+the clone out of the workspace rosters. A local preview needs no clone: use
+`build --repo MAM-OSIS --out <scratch-directory>` and
+`check --repo MAM-OSIS --dir <scratch-directory>`.
+
 ## codex-index-aleppo is a redirect host
 
 **codex-index-aleppo is not in the roster**, so `gitrepos_setup_rule` does not put a clone on
