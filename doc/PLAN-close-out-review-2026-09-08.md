@@ -954,6 +954,14 @@ editorial phase, subject to Ben's pending exact-label decision; P2 source/rights
 identification remains deferred. No new task, automatic archival, integration or push
 occurs while that decision is pending. One integration remains scheduled after final Wave 4.
 
+Executed 2026-09-10: Wave 2 partial implementation commit
+`ce833525f517eab97958141f7380a2da2267656e` commits 202 authorized whitespace,
+support-copy, lint and record paths. Repeat generation produced no additional bytes.
+V6 passed immediately before the commit; the remediation plan names its evidence and
+the exact scope inventory. The four Holman source/page paths remain uncommitted pending
+Ben's label decision, so the worktree is not clean and no successor was created. A
+record-only commit follows to preserve this hash; the final response reports its head.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

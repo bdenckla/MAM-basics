@@ -1560,6 +1560,28 @@ The previous current State, preserved from `efeb9fd4`, was:
 
 > State: live 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
 
+Executed 2026-09-10: partial implementation commit
+`ce833525f517eab97958141f7380a2da2267656e` includes the 193 whitespace files,
+three support copies, three producing-source/lint files and three records: 202 paths.
+The full working-tree scope is 206 paths. Exact absolute paths and the pending/committed
+split are in `wave2-01a08999/20260910T045822Z-scope.json`; the readable inventory is
+`wave2-01a08999/changed-paths.md`, relative to the remediation scratch directory.
+`scope_wave2_01a08999.py` verifies all 44 support copies, exact changed-path membership,
+preservation of all prior record text apart from the quoted current States, Hebrew mark
+order and diff whitespace. V6 passed immediately before the partial commit at
+`v6-runs/20260910T050034Z-wave2-before-partial-commit-05abf168/`.
+
+Staging initially found an empty `index.lock` last written at 00:42 local. A Windows
+process query found no running Git process; the index was empty and HEAD remained
+`efeb9fd4`. The stale zero-byte lock was preserved as
+`wave2-01a08999/stale-empty-index-lock-20260910T0500Z`, after which staging and commit
+succeeded. No source work or Git history was discarded.
+
+The remaining uncommitted paths are exactly the active and suppressed Holman HTML
+pages and `py/py_render/rt_comparison_table.py` / `py/py_render/rt_summary.py`.
+The worktree is deliberately not a clean handoff checkpoint. A following record-only
+commit records this implementation hash; the final response supplies its exact head.
+
 **Next execution boundary:** resolve the exact Holman label question with Ben, then
 finish Wave 2's applicable verification, records and local commits before any successor.
 The whitespace and page-lint checkpoint does not complete Wave 2. All E items remain
