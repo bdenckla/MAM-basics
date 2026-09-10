@@ -14,6 +14,7 @@ from py_render.rt_issue_tags import (
 )
 from py_render.rt_render_utils import (
     as_text,
+    contains_hebrew_char,
     finding_display_text,
 )
 from py_render.rt_suggestion_kinds import (
@@ -142,9 +143,10 @@ def summary_rows_html(categories: list[FilterCategory]) -> str:
 
 
 def _summary_row_html(category: FilterCategory) -> str:
+    direction = ' dir="rtl"' if contains_hebrew_char(category.label) else ""
     return (
         f'<tr data-filter-id="{escape(category.filter_id)}">\n'
-        f'<td><span class="cat-swatch cat-{escape(category.filter_id)}"></span>{escape(category.label)}</td>\n'
+        f'<td{direction}><span class="cat-swatch cat-{escape(category.filter_id)}"></span>{escape(category.label)}</td>\n'
         f"<td>{category.count}</td>\n</tr>"
     )
 

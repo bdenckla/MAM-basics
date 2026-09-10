@@ -39,6 +39,10 @@ Wave 2 is next and has not started. Waves 2-4 technical work and all E items rem
 pending; P2 source/rights-holder identification remains deferred. This update supersedes
 the earlier incomplete-Wave-1 status entries, which remain historical records.
 
+Status updated 2026-09-10 after Ben's exact Holman label approval: Wave 2 is complete.
+Its completion record under Step 6 supersedes the earlier pending-label status. The
+next authorized fresh task is Wave 3 technical work, after a clean local checkpoint.
+
 Status updated 2026-09-10 during Wave 2: whitespace and existing page-membership
 lint repairs are verified for a local partial checkpoint. Holman RTL is implemented
 and verified as a working-tree draft, but a pre-existing generated background-link
@@ -961,6 +965,25 @@ V6 passed immediately before the commit; the remediation plan names its evidence
 the exact scope inventory. The four Holman source/page paths remain uncommitted pending
 Ben's label decision, so the worktree is not clean and no successor was created. A
 record-only commit follows to preserve this hash; the final response reports its head.
+
+Wave 2 completion, 2026-09-10: Ben explicitly approved dropping `primary` from the
+Holman background-link label, making the exact new label `Meteg after the stress`.
+The approval adds only that generated label change to the original direction-only
+Holman contract. It does not revise V6 or the separate E-item editorial phase.
+
+Codex resumed from `059511e856933a7274e8e23af35bff622cbbd14f` in the same review
+worktree. V6 passed on resumption. The now-approved full-byte verification finds zero
+whitespace defects and zero Holman RTL omissions. All 930 output hashes and the complete
+technical diff match the previously tested, twice-generated draft, so the recorded suite
+result of **987 tests, 5 skips and 65 subtests in 111.22 seconds** remains applicable.
+No technical change followed approval. The remediation plan's "Wave 2 completion record,
+2026-09-10" names the exact verification commands, evidence and final commit sequence.
+
+Wave 2 is complete. Create Wave 3's fresh technical task only after the local completion
+checkpoint is committed and clean; use the same saved review-worktree project directly.
+E1-E8 remain for the separate editorial phase after passing technical verification,
+and P2 source/rights-holder identification remains deferred. No integration, push or
+automatic archival occurs here; one integration remains scheduled after final Wave 4.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

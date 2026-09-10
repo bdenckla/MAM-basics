@@ -1,6 +1,11 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's decision on a pre-existing generated label difference; Wave 2 completion pending; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 after Ben's label approval: Wave 2 is complete. The dated
+completion record below supersedes the partial checkpoint's pending-label status.
+Wave 3 technical work is the next authorized fresh task; E1-E8 remain for the separate
+editorial phase after passing technical verification.
 
 Status updated 2026-09-10 during Wave 2: the whitespace and existing page-membership
 lint repairs are ready for a local partial checkpoint. Holman RTL is implemented and
@@ -1588,6 +1593,54 @@ The whitespace and page-lint checkpoint does not complete Wave 2. All E items re
 for the separate editorial phase after Wave 3 technical verification unless Ben explicitly
 amends the contract for this label. P2 source/rights-holder identification stays deferred.
 No new task, archival, integration or push occurs while the decision is pending.
+
+### Wave 2 completion record, 2026-09-10
+
+Ben's exact decision on 2026-09-10 was: "Yes, I authorize the dropping of \"primary\"
+from that label." The selected question named `Meteg after the primary stress` to
+`Meteg after the stress`. This approval adds only that existing generated background-link
+change in `gh-pages/holman/table_data_findings_suppressed.html` to Wave 2's output
+contract. The approval does not change V6, its fixed baseline, or the E-item boundary.
+The exact decision is saved as `wave2-01a08999/holman-label-approval.json` under
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/`.
+
+Codex resumed task `01a08999-29a0-7b60-aa25-1454c9b49084` at partial-record commit
+`059511e856933a7274e8e23af35bff622cbbd14f`, with exactly the four recorded Holman
+source/page paths uncommitted. The checkout remains
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`. V6 passed on resumption at
+`v6-runs/20260910T113422Z-wave2-approved-label-resume-9acb3e06/` with all nine
+checkout pages and fresh renders unchanged. Survey JSON remains unchanged.
+
+The real-file command `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B
+.novc/review-remediation-2026-09-08/verify_wave2_01a08999.py repaired`, run from the
+review worktree, passed the approved full-byte comparison. Its `repaired-verification.json`
+records zero whitespace findings, exactly nine changed CSV final fields, and zero Holman
+RTL omissions. All 1,302 cell texts and their order are preserved; the only Holman byte
+differences are the 50 required direction attributes and the approved label.
+
+`final_scope_wave2_01a08999.py`, run with the same interpreter and working directory,
+compares all 930 approved output hashes against the tested, twice-generated draft and
+compares the entire technical diff against the saved post-verification patch. This
+establishes that the prior canonical suite result, **987 tests, 5 skips and 65 subtests
+in 111.22 seconds**, and the repeat-generation result apply to the approved implementation.
+No technical edit was needed after approval, so the suite and generators were not rerun.
+The same final check verifies all 44 support copies, the exact 206-path Wave 2 scope,
+record preservation against both `efeb9fd4` and `059511e8`, Hebrew mark order and
+`git diff --check`. The evidence is `wave2-01a08999/final-scope.json`; the absolute
+path inventory is `wave2-01a08999/changed-paths.md`. Final commit evidence follows.
+
+The previous current State at `059511e8`, preserved here, was:
+
+> State: live 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's decision on a pre-existing generated label difference; Wave 2 completion pending; technical unchanged-HTML condition retained.
+
+Wave 2 is complete. The next authorized phase is Wave 3 technical work, using saved
+project `51e16ebd-373a-41f7-833e-9def3ef72b81` with `environment.type = local`
+at the exact review worktree. Create the fresh task only after a clean local checkpoint,
+and put that checkpoint's full hash in its prompt. Transfer writing responsibility at
+dispatch. E1-E8 stay in the separate editorial phase; P2 source/rights-holder identification
+remains deferred, and the 415/416 scratch count remains unverified. No primary integration,
+push or automatic archival occurs here; integration remains scheduled after final Wave 4.
 
 ## Wave 3 — select unannotated forms, preserve displayed marks, and validate annotations
 

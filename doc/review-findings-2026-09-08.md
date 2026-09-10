@@ -1,6 +1,10 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's exact label decision; Wave 2 completion and Waves 3-4 remain pending.
+State: remediation in progress 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; Waves 3-4 remain pending.
+
+Status updated by Codex on 2026-09-10 after Ben's exact label approval: Wave 2 is
+complete. The dated completion disposition below supersedes the pending Holman decision;
+all earlier review and execution records are retained.
 
 Status updated by Codex on 2026-09-10 during Wave 2: the new dated dispositions below
 supersede the earlier status and crosswalk entries for findings 2, 5.1b and 14.2.
@@ -976,6 +980,25 @@ while the Holman label question is pending, and no integration or push occurred.
 The previous current State at `efeb9fd4`, preserved here, was:
 
 > State: remediation in progress 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; Waves 2-4 technical work and all E items remain pending.
+
+Wave 2 completion, 2026-09-10, recorded by Codex after Ben explicitly authorized dropping
+`primary` from the selected Holman label. The approved label is `Meteg after the stress`;
+the exception is confined to that generated background link. V6 and the separate editorial
+phase remain unchanged. The remediation plan's "Wave 2 completion record, 2026-09-10"
+contains the exact approval, commands, evidence paths and local commit record.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 5.1b | Complete: all 50 missing Holman direction attributes are repaired, and Ben approved the exact pre-existing label update. The full-byte comparison permits only those changes; all 1,302 cell texts and their order remain unchanged. This supersedes the uncommitted-draft disposition above. |
+| 2026-09-10 | 2 and 14.2 | Complete: the whitespace and existing page-lint repairs retain their verified partial-checkpoint results. The approved output hashes and entire technical diff equal the tested, twice-generated draft; the recorded canonical suite result remains applicable. |
+
+All actual V6 runs passed; no MAS HTML or survey JSON changed. Wave 3 technical work
+is next, after a clean local commit. E1-E8 remain for the separate editorial phase;
+P2 source/rights-holder identification stays deferred. No integration or push occurred.
+
+The previous current State at `059511e8`, preserved here, was:
+
+> State: remediation in progress 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's exact label decision; Wave 2 completion and Waves 3-4 remain pending.
 
 ## Corrections accepted in the review exchange
 
