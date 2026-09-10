@@ -27,9 +27,8 @@ MS Word, etc.), but the process just changed, so here goes.
 
 7. **Run `py/main_download.py fr-google`.** Auto-edits will be reflected in
    changes to CSV files in the `MAM-basics` repo and JSON files in the
-   `MAM-parsed/google/` product directory in MAM-basics. During the migration's
-   intermediate Phase 3 state, the same command also refreshes `plain/` and
-   `plus/`; Phase 4 removes those temporary writes.
+   `MAM-parsed/google/` product directory in MAM-basics. The command does not
+   rewrite the Wikisource-derived `plain/` or `plus/` products.
 
 8. **Run `py/main_diff.py wsgo`** again to verify that the diffs go empty.
 

@@ -192,7 +192,7 @@ def s_intro():
         author.para(
             [
                 "The $MAM-parsed-plus JSON files are formed by:"
-                " (a) parsing the Wikitext in the $MAM Google Sheet"
+                " (a) parsing the Wikitext downloaded from Hebrew Wikisource,"
                 " (b) adding some conveniences and"
                 " (c) removing some inconveniences."
                 " Of course, what is considered an inconvenience and what is considered a convenience"

@@ -3,9 +3,9 @@
 
 Subcommands:
     go
-                Parse downloaded Google Sheets data into Google/plain/plus outputs.
+                Parse downloaded Google Sheets data into the Google comparison product.
     ws
-                Parse downloaded Wikisource data into local parsed JSON outputs.
+                Parse downloaded Wikisource data into format 2 and production plain/plus.
     ws-products
                 Write candidate Wikisource-derived plain/plus JSON to an explicit directory.
 
@@ -47,13 +47,13 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     go_parser = subparsers.add_parser(
         "go",
-        help="Parse Google Sheets data into Google/plain/plus MAM-parsed outputs.",
+        help="Parse Google Sheets data into the MAM-parsed Google comparison product.",
     )
     go_parser.set_defaults(func=_run_go)
 
     ws_parser = subparsers.add_parser(
         "ws",
-        help="Parse downloaded Wikisource data into per-book parsed outputs (fmt-2 by default).",
+        help="Parse Wikisource data into format 2 and production plain/plus outputs.",
     )
     mutex = ws_parser.add_mutually_exclusive_group()
     mutex.add_argument("--book39")

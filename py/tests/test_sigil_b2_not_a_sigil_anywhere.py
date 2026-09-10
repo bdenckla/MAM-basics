@@ -18,14 +18,12 @@ parameter -- rather than trying to describe the sigil, which is what makes it
 decidable from the source text alone. That is the second of the two sanctioned
 test shapes: a mechanical lint over a decidable property of the corpus.
 
-WHY BOTH DIRECTORIES, and why the Sheet half is the half that matters. in/mam-ws/
-is the Wikisource download and in/mam-go/ the Google Sheet download, and MAM-parsed
-derives from the Sheet, not from Wikisource (main_0_mega.py's first step is
-parse-go). So a Wikisource edit that the Sheet never receives changes nothing that
-is published, and the Sheet holds its own copy of these cells, which arrives again
-on every download -- finding 1 of doc/review-findings-2026-08-26.md is the standing
-example of exactly that recurrence channel. Scanning in/mam-go/ is what would catch
-the replacement being undone from the Sheet side later.
+WHY BOTH DIRECTORIES. in/mam-ws/ is the Wikisource download and the source of
+production MAM-parsed plain/plus; in/mam-go/ is the Google Sheet download and the
+source of the independent ``MAM-parsed/google/`` comparison product. Scanning both
+directories catches the replacement being undone in either source. The Google Sheet
+copy arrives again on every Google download -- finding 1 of
+doc/review-findings-2026-08-26.md is the standing example of that recurrence channel.
 
 The 216 aliyah parameters across the five Torah books are asserted present as
 well as unflagged, so that a filter which quietly stopped reading the Torah

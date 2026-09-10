@@ -22,15 +22,15 @@ The accepted design is:
 3. MAM-parsed-google supplies only the Google input of `diff wsgo`. Ordinary
    MAM product generation does not depend on Google downloads or Sheet synchronization.
 
-Status on 2026-09-10: Phases 1 and 2 are complete. Wikisource download planning
-is independent of Google, and `parse ws-products --output-dir` generates complete
-candidate plain/plus products. Corpus, serialization, rendering and independence
-checks passed. Each candidate product differs from production in two explained
-fields: Latin composition in 2 Samuel 22:40 and lower-dot order in Psalm 27:13.
-Production plain/plus generation remains Google-derived; production artifacts and
-raw inputs are unchanged. Phase 3, the Google product and independent comparator
-input, is the next writing task. Verification receipts are under "Execution log".
-Implementation is authorized; another approval is not needed.
+Status on 2026-09-10: Phases 1 through 4 are complete. Wikisource download
+planning is independent of Google. `parse ws` writes format 2 and complete
+Wikisource-derived plain/plus products; `parse go` writes only
+`MAM-parsed/google/`, the independent Google input to `diff wsgo`. The production
+cutover has the two explained field changes established in Phase 2: Latin
+composition in 2 Samuel 22:40 and lower-dot order in Psalm 27:13. Raw inputs and
+bot captures are unchanged. Phase 5 is the next writing task. Verification
+receipts are under "Execution log". Implementation is authorized; another
+approval is not needed.
 
 ## Exact development location and handoff
 
@@ -771,8 +771,11 @@ helper-name and docstring cleanup returned zero in 19.98 seconds. The harness
 checked all six sections while
 rejecting any normalization call whose input contained Hebrew. A Google-only
 in-memory mutation produced a column-E difference and auto-edit; the search
-string was a substring of the mutated Google source and the replacement string
-was a substring of the direct Wikisource source. Blocking every read under
+string was a substring of the mutated Google source. The replacement was the
+structurally converted Wikisource text after MAM mark ordering, not a substring
+of the direct Wikisource spelling. Phase 4 separates comparison values, exact
+Google search text and intended standard-ordered replacement text explicitly.
+Blocking every read under
 `MAM-parsed/plain/` left the baseline Torah comparison empty, establishing that a
 production-plain change cannot affect the comparator. A source audit found the
 Google reader symbol only in its definition and in `diff_wsgo`. The scratch
@@ -814,3 +817,73 @@ Phase 4 must start Phase 5 as a fresh task in `ws-direct` with explicit model
 starts. Integration remains scheduled for archival and must be serialized with
 the successor writer; no worktree-branch push or immediate integration is part
 of this handoff.
+
+### Phase 4 completion, 2026-09-10
+
+Task `01a08c5e-a681-70a0-a0d3-f22d2d6736f3` verified the exact development
+checkout, branch `codex-worktree-3a6b`, clean status and starting HEAD
+`05cfc018ee63da5bcb25dd2d3152157f75029584`. The checkout receipt is
+`.novc/ws-products-phase4-checkout-20260910.json`.
+
+`parse ws` now writes format 2 and production plain/plus. A selected source book
+rebuilds its complete 24-book group from committed Wikisource input. The selected
+`1Samuel` check retained both Samuel sub-books, and the full run wrote 24 plain
+and 24 plus files. Plain/plus validation, generated MAM-parsed documentation,
+claims verification and support-file copying now run from WS product generation.
+The real full WS parse reported 79 documentation claims passed, zero failed and
+the existing one pending claim, `mp.plain.docs.book39-skeleton.common`.
+
+`parse go` and the Google download hook now write only `MAM-parsed/google/`.
+Hash checks around the real Google parser found all 48 production plain/plus files
+unchanged. The Wikisource download hook and `ws_bot_real` continue through
+`parse_ws.almost_main`, so each refresh receives the same grouped production
+rebuild. Ordinary `main_0_mega` now begins with one `parse-ws` step and contains
+no `parse-go`, `diff-wsgo`, or second WS parse. A scratch run of that ordinary
+first step succeeded while every attempted read under both `in/mam-go/` and
+`MAM-parsed/google/` raised.
+
+The comparator now maintains separate comparison values and auto-edit payloads.
+Google search text is exact Google Wikitext. Wikisource replacement text has the
+Google Sheet's required MAM mark order, independently of comparison equivalence.
+No Unicode normalization call receives Hebrew from either U+0590-U+05FF or
+U+FB1D-U+FB4F, and Hebrew presentation forms remain unchanged. Standalone text
+beginning with a combining mark is rejected. The committed Google parse contains
+zero such raw text strings; its 644 mark-first cases are template arguments such
+as the vowel and accent arguments of `מ:ירושלם`, whose template supplies the
+letter. Those mark-only template arguments are handled only in template context.
+The real `py/main_diff.py wsgo` run returned zero and left both comparator outputs
+unchanged.
+
+A fresh independent `parse ws-products --output-dir` candidate matched all 24
+production plain files and all 24 production plus files byte for byte. Relative
+to the starting commit, only `BA-Samuel.json` and `D1-Psalms.json` changed in each
+product. The eight changed leaves are exactly the Phase 2 receipt's two verse
+fields: one leaf for Latin composition in 2 Samuel 22:40 and three leaves for
+lower-dot order in Psalm 27:13 in each product. Raw Wikisource files (39), bot
+capture files (80), and format-2 files (39) were byte-identical before and after
+the boundary checks.
+
+Source descriptions now identify Wikisource as the source of plain/plus and
+Google as comparison-only. The command help, current runbooks, product READMEs,
+support provenance, authored MAM-parsed pages, pipeline specification and authored
+process diagram carry the same source boundary. `py/main_pipeline_graph.py`
+rendered both SVGs through the pinned Graphviz workflow.
+
+Black checked all 17 changed Python files. The affected downloader, entry-point,
+bot, path, diagram, prose and Unicode checks passed **82 tests in 20.68 seconds**.
+The final full suite passed **990 tests with 5 semantic skips in 160.59 seconds**;
+all skips remain the transcription controls at
+`py/tests/test_edition_transcriptions.py:1168`. The compact durable receipt is
+`doc/wikisource-derived-mam-products-phase4-validation.json`; detailed command
+receipts and logs are under `.novc/ws-products-baseline-20260910/`.
+
+The next task owns Phase 5 only: run every local downstream mega step in order,
+omitting only `near-aleppo-census`; run diagram and documentation CLIs separately
+where needed; compare every artifact with the baseline and Phase 2 accounting;
+repeat the explicit Google parse and WS/Google comparison; verify stability and
+source independence; and run the full suite. The private census writer remains
+outside local completion unless Phase 5 follows the plan's disposable-clone
+procedure. After its verified local commit, Phase 5 stops creating successors.
+Integration remains scheduled for archival and must be serialized with the
+successor writer; no worktree-branch push or immediate integration is part of
+this handoff.

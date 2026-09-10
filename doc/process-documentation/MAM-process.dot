@@ -13,9 +13,11 @@ digraph "MAM process" {
     Ws_downloads    [label="Ws downloads"]
 
     // Parsed
+    parsed_google   [label="parsed-google"]
     parsed_plain    [label="parsed-plain"]
     parsed_plus     [label="parsed-plus"]
-    {rank=same parsed_plain parsed_plus}
+    {rank=same parsed_google parsed_plain parsed_plus}
+    parsed_google -> parsed_plain [style=invis]
     parsed_plain -> parsed_plus [style=invis]
 
     // Diffs (dashed = pure sinks, broken from feedback loops)
@@ -39,12 +41,13 @@ digraph "MAM process" {
     MAM_Ws -> Ws_downloads
 
     // Download -> Parsed
-    Go_downloads -> parsed_plain
-    Go_downloads -> parsed_plus
+    Go_downloads -> parsed_google
+    Ws_downloads -> parsed_plain
+    Ws_downloads -> parsed_plus
 
     // Parsed -> Diffs
     parsed_plain -> AHT_MAM_diff
-    parsed_plain -> Ws_Go_diff
+    parsed_google -> Ws_Go_diff
     AHT_downloads -> AHT_MAM_diff
     Ws_downloads -> Ws_Go_diff
 

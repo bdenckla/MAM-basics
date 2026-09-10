@@ -15,7 +15,9 @@ from diff_wsgo import reduce_make_comparable as make_comparable
 from ws import ws_unparse
 
 
-def get_book_diffs_ws_go(sebk, ws_book, go_book):
+def get_book_diffs_ws_go(
+    sebk, ws_book, go_book, *, edit_ws_book=None, edit_go_book=None
+):
     """
     This function is given:
         sebk:
@@ -30,9 +32,19 @@ def get_book_diffs_ws_go(sebk, ws_book, go_book):
     """
     assert _num_verses_are_equal(ws_book, go_book)
     ws_chapters = ws_book
+    edit_ws_book = ws_book if edit_ws_book is None else edit_ws_book
+    edit_go_book = go_book if edit_go_book is None else edit_go_book
     book_diffs = diffs_struct_mk()
     for he_chnu, ws_chapter in ws_chapters.items():
-        _get_diffs_for_chapter(book_diffs, sebk, he_chnu, ws_chapter, go_book)
+        _get_diffs_for_chapter(
+            book_diffs,
+            sebk,
+            he_chnu,
+            ws_chapter,
+            go_book,
+            edit_ws_book[he_chnu],
+            edit_go_book,
+        )
     return book_diffs
 
 
@@ -65,24 +77,59 @@ def diffs_struct_extend(accum_ds, new_ds):
     accum_ds["srrps_list"].extend(new_ds["srrps_list"])
 
 
-def _get_chap_body_diffs(io_book_diffs, sebk, he_chnu, ws_body, go_book):
+def _get_chap_body_diffs(
+    io_book_diffs, sebk, he_chnu, ws_body, go_book, edit_ws_body, edit_go_book
+):
     go_verses = go_book["verses_plain"]
+    edit_go_verses = edit_go_book["verses_plain"]
     for he_vrnu, ws_verse in ws_body.items():
-        ws_cvb = he_chnu, he_vrnu, ws_verse  # c, v, & body
-        _get_verse_diffs(io_book_diffs, sebk, go_verses, ws_cvb)
+        ws_cvb = he_chnu, he_vrnu, ws_verse, edit_ws_body[he_vrnu]
+        _get_verse_diffs(io_book_diffs, sebk, go_verses, edit_go_verses, ws_cvb)
 
 
-def _get_chap_prefix_diffs(io_book_diffs, sebk, he_chnu, ws_golike_cp, go_book):
+def _get_chap_prefix_diffs(
+    io_book_diffs,
+    sebk,
+    he_chnu,
+    ws_golike_cp,
+    go_book,
+    edit_ws_golike_cp,
+    edit_go_book,
+):
     int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
     go_ni_header = go_book["chapter_prefixes"][int_chnu]
-    ni_header_diffs = _get_nonverse_diff(sebk, he_chnu, "0", ws_golike_cp, go_ni_header)
+    ni_header_diffs = _get_nonverse_diff(
+        sebk,
+        he_chnu,
+        "0",
+        ws_golike_cp,
+        go_ni_header,
+        edit_ws_golike_cp,
+        edit_go_book["chapter_prefixes"][int_chnu],
+    )
     diffs_struct_extend(io_book_diffs, ni_header_diffs)
 
 
-def _get_chap_suffix_diffs(io_book_diffs, sebk, he_chnu, ws_golike_cs, go_book):
+def _get_chap_suffix_diffs(
+    io_book_diffs,
+    sebk,
+    he_chnu,
+    ws_golike_cs,
+    go_book,
+    edit_ws_golike_cs,
+    edit_go_book,
+):
     int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
     go_cs = go_book["chapter_suffixes"][int_chnu]
-    ni_footer_diffs = _get_nonverse_diff(sebk, he_chnu, "תתת", ws_golike_cs, go_cs)
+    ni_footer_diffs = _get_nonverse_diff(
+        sebk,
+        he_chnu,
+        "תתת",
+        ws_golike_cs,
+        go_cs,
+        edit_ws_golike_cs,
+        edit_go_book["chapter_suffixes"][int_chnu],
+    )
     diffs_struct_extend(io_book_diffs, ni_footer_diffs)
 
 
@@ -98,25 +145,54 @@ diff_fns_for_ws_chapter_keys = {
 }
 
 
-def _get_diffs_for_chapter(io_book_diffs, sebk, he_chnu, ws_chapter, go_book):
+def _get_diffs_for_chapter(
+    io_book_diffs,
+    sebk,
+    he_chnu,
+    ws_chapter,
+    go_book,
+    edit_ws_chapter,
+    edit_go_book,
+):
     for key in ws_chapter:
         diff_fnq = diff_fns_for_ws_chapter_keys[key]
         if diff_fnq is not None:
-            diff_fnq(io_book_diffs, sebk, he_chnu, ws_chapter[key], go_book)
+            diff_fnq(
+                io_book_diffs,
+                sebk,
+                he_chnu,
+                ws_chapter[key],
+                go_book,
+                edit_ws_chapter[key],
+                edit_go_book,
+            )
 
 
-def _get_nonverse_diff(sebk, he_chnu, zot, ws_ni_header_or_footer, go_prefix_or_suffix):
+def _get_nonverse_diff(
+    sebk,
+    he_chnu,
+    zot,
+    ws_ni_header_or_footer,
+    go_prefix_or_suffix,
+    edit_ws_ni_header_or_footer=None,
+    edit_go_prefix_or_suffix=None,
+):
     int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
     cvt = int_chnu, zot  # zot: zero or triple-tav
     field = "prefix"  # i.e. column C
     cvt_af = cvt, field
     return _get_labeled_diffs_struct(
-        sebk, cvt_af, ws_ni_header_or_footer, go_prefix_or_suffix
+        sebk,
+        cvt_af,
+        ws_ni_header_or_footer,
+        go_prefix_or_suffix,
+        edit_ws_ni_header_or_footer,
+        edit_go_prefix_or_suffix,
     )
 
 
-def _get_verse_diffs(io_book_diffs, sebk, go_verses, ws_cvb):
-    he_chnu, he_vrnu, ws_verse = ws_cvb
+def _get_verse_diffs(io_book_diffs, sebk, go_verses, edit_go_verses, ws_cvb):
+    he_chnu, he_vrnu, ws_verse, edit_ws_verse = ws_cvb
     int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
     int_vrnu = hvn.STR_TO_INT_DIC[he_vrnu]
     cvt = tbn.mk_cvtmam(int_chnu, int_vrnu)
@@ -124,7 +200,12 @@ def _get_verse_diffs(io_book_diffs, sebk, go_verses, ws_cvb):
     for field in ("prefix", "location", "verse-body"):
         cvt_af = cvt, field
         verse_diffs = _get_labeled_diffs_struct(
-            sebk, cvt_af, ws_verse[field], go_verse[field]
+            sebk,
+            cvt_af,
+            ws_verse[field],
+            go_verse[field],
+            edit_ws_verse[field],
+            edit_go_verses[cvt][field],
         )
         diffs_struct_extend(io_book_diffs, verse_diffs)
 
@@ -176,10 +257,21 @@ def _get_diff_label(sebk, cvt_af):
     return {"sena": sebk[0], "bkid": sebk[1], "cvt": cvt_af[0], "field": cvt_af[1]}
 
 
-def _get_labeled_diffs_struct(sebk, cvt_af, wtseq_mama, wtseq_mamb):
+def _get_labeled_diffs_struct(
+    sebk,
+    cvt_af,
+    wtseq_mama,
+    wtseq_mamb,
+    edit_wtseq_mama=None,
+    edit_wtseq_mamb=None,
+):
     sbcv = _get_diff_label(sebk, cvt_af)
     diffs = _get_wtseq_diffs(wtseq_mama, wtseq_mamb)
-    srrps = diffs and auto_edits.get_srrps(wtseq_mama, wtseq_mamb)
+    if edit_wtseq_mama is None:
+        edit_wtseq_mama = wtseq_mama
+    if edit_wtseq_mamb is None:
+        edit_wtseq_mamb = wtseq_mamb
+    srrps = diffs and auto_edits.get_srrps(edit_wtseq_mama, edit_wtseq_mamb)
     return diffs_struct_mk(
         [{**sbcv, **diff} for diff in diffs], [{**sbcv, **srrp} for srrp in srrps]
     )

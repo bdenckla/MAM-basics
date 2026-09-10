@@ -2,37 +2,35 @@
 
 This MAM-basics product directory contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
-in two primary parsed formats, "plain" and "plus," plus a Google-derived
-comparison product in `google/` that uses the plain schema.
+in two Wikisource-derived primary parsed formats, `plain/` and `plus/`, plus a
+Google-derived comparison product in `google/` that uses the plain schema.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-Each directory contains a JSON file for each of the 24 books of the Miqra.
+Each of `plain/`, `plus/`, and `google/` contains a JSON file for each of the 24
+books of the Miqra.
 
-During the source-migration intermediate state, the
-[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745) supplies all
-three directories. The `google/` files are the independent Google input to
-`py/main_diff.py wsgo`. Phase 4 of the migration will make Wikisource supply
-`plain/` and `plus/`, while Google continues to supply only `google/`.
+Hebrew Wikisource supplies `plain/` and `plus/`. The
+[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745) supplies only
+`google/`, the independent Google input to `py/main_diff.py wsgo`.
 
-Each JSON file represents its corresponding book in a format that is easier to read than the format of the Google Sheet.
+Each JSON file represents its corresponding book in a format that is easier for a program to read than the source Wikitext.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
 
 The format of the JSON files is easier to read because it is a *parsed* format.
-The cells of the C and E columns of the tabs of the Google Sheet are just big Wikitext strings,
-including Wikitext templates, e.g. `{{f|a|b|c}}`.
+The source data contains Wikitext strings, including Wikitext templates such as
+`{{f|a|b|c}}`.
 In contrast, the JSON files represent the C and E column data as
 parse trees that "know" about the Wikitext template format.
 
-The contents of the "plain" format files is quite close to
-the contents of the corresponding tabs of the Google Sheet.
-In contrast, the contents of the "plus" format files diverge
-from the Google Sheet in the following ways:
+The contents of the `plain/` files stay close to the Wikisource Wikitext after
+the source-page structure is converted to the 24-book schema. The `plus/` files
+diverge from `plain/` in the following ways:
 
-* Compared to the Google Sheet, the "plus" format adds:
+* Compared to `plain/`, the `plus/` format adds:
     * A `good_ending_plus` key to the `book39` header.
     * A targeted version of each מ:הערה template call.
     * A template marking each word with special letters.
-* Compared to the Google Sheet, the "plus" format removes:
+* Compared to `plain/`, the `plus/` format removes:
     * custom XML tags
     * 0 (zero) and תתת (triple-tav) pseudo-verses
 
@@ -65,8 +63,14 @@ a sibling MAM-parsed clone and the explicit `--legacy-history` mode.
 
 ## Regeneration and the example
 
-From the MAM-basics root, regenerate Google/plain/plus data, the example support
-file, and the published documentation:
+From the MAM-basics root, regenerate Wikisource-derived `plain/` and `plus/`, the
+example support file, and the published documentation:
+
+```powershell
+.venv/Scripts/python.exe py/main_parse.py ws
+```
+
+Regenerate the independent Google comparison product separately:
 
 ```powershell
 .venv/Scripts/python.exe py/main_parse.py go

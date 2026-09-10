@@ -1,4 +1,4 @@
-"""Write candidate plain/plus products from committed Wikisource downloads."""
+"""Write plain/plus products from committed Wikisource downloads."""
 
 from pathlib import Path
 
@@ -6,7 +6,9 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as names
 from mb_cmn import paths
+import main_authored
 from py_misc import check_mpplus
+from py_misc import mam_parsed_copy_py_files
 from py_misc import mam_parsed_plain
 from py_misc import mam_parsed_plus
 from ws import ws_get_bk_in_both_fmts as wsin
@@ -33,11 +35,26 @@ def run(args):
     return generate(output_dir)
 
 
-def generate(output_dir):
-    """Write every complete book24 group and return its product paths."""
+def generate_production(bkids, parsed_books):
+    """Write affected production groups, support files, and documentation."""
+    out_paths = generate(paths.mam_parsed_dir(), bkids, parsed_books)
+    mam_parsed_copy_py_files.copy_support_files()
+    main_authored.cmd_gen_mam_parsed_docs(None)
+    return out_paths
+
+
+def generate(output_dir, bkids=None, parsed_books=None):
+    """Write complete affected book24 groups and return their product paths."""
+    selected_bkids = tuple(tbn.ALL_BK39_IDS if bkids is None else bkids)
+    affected_bk24ids = {tbn.bk24id(bkid) for bkid in selected_bkids}
+    parsed_books = parsed_books or {}
     grouped = {}
     for bkid in tbn.ALL_BK39_IDS:
-        book = wsin.get_bk_in_fmt_2(paths.repo_root() / "in/mam-ws", bkid)
+        if tbn.bk24id(bkid) not in affected_bk24ids:
+            continue
+        book = parsed_books.get(bkid)
+        if book is None:
+            book = wsin.get_bk_in_fmt_2(paths.repo_root() / "in/mam-ws", bkid)
         light_book = ws_plain.convert_book(book)
         grouped.setdefault(tbn.bk24id(bkid), {})[
             names.BK39ID_TO_MAM_HBNP[bkid]
@@ -56,5 +73,5 @@ def generate(output_dir):
     errors = check_mpplus.check_mpplus([book["plus"] for book in out_paths])
     if errors:
         raise ValueError(errors)
-    print(f"Validated {len(out_paths)} candidate plus books.", flush=True)
+    print(f"Validated {len(out_paths)} Wikisource-derived plus books.", flush=True)
     return out_paths

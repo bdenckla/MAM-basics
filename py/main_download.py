@@ -54,7 +54,7 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     google_parser = subparsers.add_parser(
         "fr-google",
-        help="Download MAM data from Google Sheets and optionally parse it.",
+        help="Download Google Sheet data and optionally refresh the comparison product.",
     )
     google_parser.add_argument(
         "--section",
@@ -64,12 +64,12 @@ def _add_subcommands(subparsers) -> None:
     google_parser.add_argument(
         "--skip-download",
         action="store_true",
-        help="Skip downloading; just parse and check existing CSVs",
+        help="Skip downloading; just parse existing CSVs into MAM-parsed/google/",
     )
     google_parser.add_argument(
         "--download-only",
         action="store_true",
-        help="Download requested CSVs and exit without parsing or checking",
+        help="Download requested CSVs and exit without parsing",
     )
     google_parser.set_defaults(func=_run_google)
 
@@ -84,7 +84,7 @@ def _add_subcommands(subparsers) -> None:
 
     ws_parser = subparsers.add_parser(
         "fr-wikisource",
-        help="Download MAM chapters from Hebrew Wikisource and reparse affected books.",
+        help="Download Wikisource chapters and rebuild affected production products.",
     )
     wsds.add_selector_opts(ws_parser)
     ws_parser.set_defaults(func=_run_wikisource)

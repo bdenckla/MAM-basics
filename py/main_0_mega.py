@@ -2,8 +2,11 @@
 
 The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
-five MAM product generators write into this repository after the fourth-stage
-Repoint steps completed on 2026-09-10. The near-Aleppo census still runs in the
+ordinary sequence begins by deriving MAM-parsed plain/plus from committed
+Wikisource input; Google parsing and the Wikisource/Google comparison remain
+explicit commands outside this sequence. The five downstream MAM product
+generators write into this repository after the fourth-stage Repoint steps
+completed on 2026-09-10. The near-Aleppo census still runs in the
 MAM-private sibling through ``mb_cmn.paths.repos_root()``. A worktree run therefore
 still needs ``REPOS_ROOT`` for that subprocess.
 """
@@ -48,8 +51,6 @@ import main_wlc_a_notes
 import main_wlc_diffs_420422
 import main_wlc_json_and_unicode
 from subcommands import diff_mpp
-from subcommands import diff_wsgo
-from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import ws_bot_proto
 from wlc_cmn.utf8_io import force_utf8_io
@@ -161,8 +162,8 @@ def _run_accgram_generate_html():
 
 _STEPS = [
     StepRecord(
-        "parse-go",
-        parse_go.almost_main,
+        "parse-ws",
+        parse_ws.almost_main,
         "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
     ),
     StepRecord(
@@ -197,12 +198,12 @@ _STEPS = [
     StepRecord(
         "tmpl-survey-toy",
         main_tmpl_survey_toy.almost_main,
-        "must come after parse-go",
+        "must come after parse-ws",
     ),
     StepRecord(
         "vendored-tmpl-survey-toy",
         _run_vendored_tmpl_survey_toy,
-        "runs MAM-parsed/py-examples/main_tmpl_survey_toy_example.py as subprocess; must come after parse-go",
+        "runs MAM-parsed/py-examples/main_tmpl_survey_toy_example.py as subprocess; must come after parse-ws",
     ),
     StepRecord(
         "mam-simple",
@@ -247,16 +248,6 @@ _STEPS = [
         "explicit-xataf",
         main_explicit_xataf.almost_main,
         None,
-    ),
-    StepRecord(
-        "diff-wsgo",
-        diff_wsgo.almost_main,
-        "relies on download of ws",
-    ),
-    StepRecord(
-        "parse-ws",
-        parse_ws.almost_main,
-        "relies on download of ws",
     ),
     StepRecord(
         "ws-bot-proto",
@@ -357,7 +348,7 @@ _STEPS = [
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
     # The sigil inventory reads MAM-parsed's plus/ tree too, so it takes the same placement
-    # argument the near-aleppo comment just below makes: after parse-go and after everything
+    # argument the near-aleppo comment just below makes: after parse-ws and after everything
     # else that writes MAM-parsed.  Added 2026-08-27, for the reason accgram-test-fixes was
     # added on 2026-08-04 and near-aleppo-census on 2026-08-26 -- py/main_sigil_inventory.py
     # was imported by nothing, so nothing routine rewrote its tracked artifact.  This one had
@@ -374,7 +365,7 @@ _STEPS = [
         "reads MAM-parsed's plus/ tree; writes the tracked out/sigil-inventory.json",
     ),
     # The near-aleppo censuses read MAM-parsed's plus/ tree, so this belongs after
-    # parse-go and after everything else that writes it.  --write regenerates their
+    # parse-ws and after everything else that writes it.  --write regenerates their
     # tracked goldens under near-aleppo/census/expected/, which is a build and not an
     # audit: run_all.py's own default mode diffs instead, and that mode is for a human
     # asking "what moved?", not for a rebuild.  Without a step here the goldens go

@@ -1,6 +1,7 @@
 """Exports massage_ws_book"""
 
 from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import uni_denorm
 from mb_cmn import hebrew_accents as ha
 from mb_cmn.my_utils import dv_dispatch
 from mb_cmn.my_utils import dv_map
@@ -14,6 +15,23 @@ def massage_ws_book(wsf2_book):
     comparison with a book from Google.
     """
     return dv_map(_massage_ws_chapter, wsf2_book)
+
+
+def massage_ws_book_for_google_edit(wsf2_book):
+    """Return Google-shaped Wikisource text in the Sheet's MAM mark order."""
+    return _give_std_mark_order(massage_ws_book(wsf2_book))
+
+
+def _give_std_mark_order(obj):
+    if isinstance(obj, str):
+        return uni_denorm.give_std_mark_order(obj)
+    if isinstance(obj, dict):
+        return {key: _give_std_mark_order(value) for key, value in obj.items()}
+    if isinstance(obj, list):
+        return [_give_std_mark_order(value) for value in obj]
+    if isinstance(obj, tuple):
+        return tuple(_give_std_mark_order(value) for value in obj)
+    return obj
 
 
 def _massage_ws_chapter(ws_chapter):
