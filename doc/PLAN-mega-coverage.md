@@ -369,7 +369,25 @@ before each commit. One more stale sentence came to light, and phase 8's item 1 
     item 9 did, that nothing calls or reads it. Keep any that turns out to be used, and report it.
 18. Verify: the reference sweep for every deleted name, the full suite.
 
-## Phase 7 — build the check
+## Phase 7 — build the check: DONE, `3f27b33f` and `d2acfaea`
+
+`3f27b33f` adds `py/tests/test_mega_coverage.py`. `d2acfaea` names it in
+`py/main_repo_maintenance.py`'s docstring, whose step 6 now points at `_STEPS` instead of copying a
+list of steps, and drops the stated step positions from `py/mb_cmn/graphviz_pin.py` and
+`py/tmpl_survey/survey_dot.py`. The check finds 140 programs, 80 whole programs and 60
+subcommands, and the mega runs 62 of them. `NOT_IN_MEGA` has 100 entries: 78 declare the programs
+the mega does not run, and 22 declare modes it does not run. Two tables the design did not name
+let the check attribute calls it could not otherwise resolve, each with a dead-entry check:
+`_RUNNER_CALLS`, 10 entries, and `_EXTERNAL_SCRIPTS`, 1 entry. The suite gave 991 passed, 5
+skipped before each commit, the three new tests included. Uncommitted, each failure mode was shown
+to fire, with a message saying what to do.
+
+**Awaiting Ben: 28 of the reasons are Claude-written proposals.** Each begins "Claude-written
+proposal, not yet reviewed by Ben". 25 come from the analysis's §4, and 3 are phase 7's own.
+Phase 7b rewords three of them and drops two. Ben reviews the rest, and each one he accepts loses
+its prefix.
+
+The instructions as they were given for phase 7:
 
 Ben agreed, 2026-09-10. Build `py/tests/test_mega_coverage.py` to the design in
 `doc/mega-coverage-2026-09-10.md` §7, reusing `py/tests/test_sibling_reach.py`'s AST approach and
@@ -401,6 +419,77 @@ its dead-entry check.
 6. Verify: the full suite green; then, uncommitted, delete one declaration and see the check fail
    naming that program, and restore it.
 
+## Phase 7b — merge `main` into the branch, so that phase 8 verifies the merged tree
+
+A trial merge on 2026-09-10 (`git merge-tree --write-tree claude/mega-coverage main`) found four
+conflicts: `doc/process-documentation/pipeline.dot`, `doc/process-documentation/pipeline.svg`,
+`out/vendoring_compare_out.txt` and `py/main_0_mega.py`. `main` had gained 27 commits since the
+branch left it. Among them is `426fa229`, a Codex session's cutover of MAM-parsed to Wikisource.
+It made `parse-ws` the mega's first step, moved `check_mpplus` inside it
+(`py/subcommands/parse_ws_products.py` raises on any error), and took `parse-go` and `diff-wsgo`
+out of the mega. This phase is step 1 of `~/.claude/CLAUDE.md`'s four-step integration, done early.
+The orchestrating session does steps 2–4 after phase 8.
+
+Ben's decisions, 2026-09-10:
+- **`check_mpplus` stays inside `parse-ws`, and the branch's separate `check-mpplus` step goes.**
+  Ben: "Sure, let's follow your recommendation."
+- **`parse-go` and `diff-wsgo` come back into the mega.** Ben: "Although Google is certainly
+  demoted in this new world, that seems a step too far, to demote it out of mega!" And: "the Google
+  Sheet is a MAM dataset derived from Wikisource, one of many datasets (e.g. MAM-simple) and
+  editions (e.g. MAM with doc) derived from Wikisource." Two Google Apps Script scripts update the
+  Sheet from `diff-wsgo`'s `out/diff_mamws_mamgo-auto-edits.json`, as
+  `doc/process-documentation/auto-edits-process.md` describes. So the wsgo diff is as much part
+  of production as the steps that make MAM-simple and MAM-with-doc, and it is not to be ranked
+  below them.
+
+1. **Merge.** In the worktree, `git merge -F <message file> main`. This phase alone may merge, and
+   only `main` into the branch. Resolve `py/main_0_mega.py` from `main`'s sequence, which starts
+   with `parse-ws` and has no `parse-go` or `diff-wsgo`, and re-apply everything the branch added,
+   with these differences:
+   - no `check-mpplus` step, and no `_run_check_mpplus`;
+   - `parse-go` and then `diff-wsgo`, straight after `foi-features-of-interest`. foi runs first
+     because it reports malformed Unicode in the Wikisource data before a later step can fail
+     less informatively. The note on `parse-go` says it regenerates `MAM-parsed/google/` from the
+     committed CSVs under `in/mam-go/`, the Sheet's current state for the comparison. The note on
+     `diff-wsgo` says it writes the auto-edits the Sheet is updated from;
+   - every note that says "after parse-go" says "after parse-ws";
+   - the module docstring drops the branch's paragraph about the `check-mpplus` step. It replaces
+     `main`'s sentence that Google parsing and the Wikisource/Google comparison "remain explicit
+     commands outside this sequence" with the two steps above, described in Ben's terms.
+
+   For the three generated files, take `main`'s side; items 4 and 5 regenerate them. Commit the
+   merge once `py/main_0_mega.py` is resolved. Fix whatever the suite then finds in further
+   commits, never by amending.
+2. **The comment above the assert in `label_args_of_doc`** (`py/foi/foi_wikitext_helpers.py`)
+   names `py/subcommands/parse_ws_products.py` as where `check_mpplus` runs.
+3. **Make `py/tests/test_mega_coverage.py` pass on the merged tree.**
+   - `_RUNNER_CALLS`' `parse_go.almost_main` entry counts `gen-mam-parsed-docs` as run. On `main`,
+     `parse_go.almost_main` writes only `MAM-parsed/google/`, and
+     `parse_ws_products.generate_production` runs the docs. Attribute the entry to the call that
+     runs them.
+   - Reword the three proposals that cite `parse-go` or the `check-mpplus` step:
+     `py/main_download.py fr-google --skip-download`, `py/main_authored.py gen-mp-claims-index` and
+     `py/main_authored.py verify-mp`.
+   - Drop the declarations of `py/main_foi_features_of_interest.py --foi` and `--single-threaded`.
+     The test's docstring states a rule that narrowing and debugging flags are not modes, and
+     they were declared only because phase 7's brief said to take every §4 row.
+   - For each program or subcommand `main` added that the mega does not run, declare it with a
+     reason that cites where the reason is recorded. Mark it a Claude-written proposal where
+     nothing records one. Delete declarations whose programs `main` removed.
+4. **Regenerate the pipeline graph** by the `pipeline-graph` step, and commit it if it changed.
+5. **Add a dated correction to `doc/PLAN-wikisource-derived-mam-products.md`**, beside its record
+   that the mega "contains no `parse-go`, `diff-wsgo`": Ben reversed that on 2026-09-10, and this
+   phase put the two steps back. Leave the rest of that plan as written.
+6. **Verify.**
+   - The full suite, green on the merged tree.
+   - Run `parse-ws`, `foi-features-of-interest`, `parse-go`, `diff-wsgo` and `diff-ctr-vs-mam`
+     from a throwaway script. Every tracked file they write must come out byte-identical, or its
+     diff must be explained and reported before anything is committed.
+   - Then run `py/main_vendoring.py --all`, after the last commit that changes a copied support
+     file, and commit its refreshed outputs.
+   - Report whether `py/main_verify_notes_zip.py`, which `main` changed and which #269 lists,
+     still reads `sys.argv` by hand.
+
 ## Phase 8 — full verification
 
 1. **Correct the last "sibling UXLC-utils" sentence, which phase 6b found.**
@@ -428,3 +517,7 @@ its dead-entry check.
    `py_uxlc`, and `py/main_write_page_break_info.py` imports `uxlc_misc` and `uxlc_lci`. They are
    library modules rather than programs, so they are outside this plan's scope. Nobody has yet
    checked which set should remain.
+3. **Two stale names that phase 7 found.** The `--uxlc-utils-path` option of
+   `py/main_verify_and_render_table.py` still has the evacuated repository's name, though its help
+   text says MAM-basics. `py/check_all.py`'s docstring and `py/check_spelling_in_html.py`'s usage
+   line name `spellcheck_quirkrecs` files that are not what runs.
