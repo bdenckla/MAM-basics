@@ -90,42 +90,19 @@ exactly the Sefaria node and edge, and Graphviz re-laid out the `.svg` around th
 `py/tests/test_h_dot_below_nfc.py`'s "Aleppo data" floor went from 19 to 17, that scope having lost
 three files. Suite: 988 passed, 5 skipped.
 
-## Phase 4 — skip the census in the cloud, then fold `py/main_uxlc_mega.py` into the mega
+## Phase 4 — skip the census in the cloud, then fold `py/main_uxlc_mega.py` into the mega: DONE, `bf6316a2` and `f7fb6a62`
 
-Two commits, in this order.
+Ben's decisions, 2026-09-10: "the near-aleppo census should be skipped if mega detects that mega
+is running in the cloud", and folding `py/main_uxlc_mega.py` into the mega: "agreed".
 
-**First commit: skip `near-aleppo-census` in a cloud session.** Ben's decision, 2026-09-10: "the
-near-aleppo census should be skipped if mega detects that mega is running in the cloud." A cloud
-run without MAM-private otherwise dies at that step, one step before the survey that phase 2
-taught to skip.
-1. In `_run_near_aleppo_census` in `py/main_0_mega.py`, do what phase 2 did for the survey: when
-   `graphviz_pin.in_cloud_session()` is true, append the step and its reason to
-   `_CLOUD_SKIPPED_STEPS`, print the notice to stderr, and return before the subprocess.
-2. Update the module docstring and `_report_cloud_skips`' docstring, which name only the survey as
-   skipped, and the census step's note.
-3. Verify with a throwaway script that sets `CLAUDE_CODE_REMOTE=true`, replaces `subprocess.run`
-   with a stub that raises, so that the census cannot run, calls the step's runner and then
-   `_report_cloud_skips`, and shows the step skipped and listed. Never run the census itself. Then
-   the full suite, and commit.
-
-**Second commit: fold `py/main_uxlc_mega.py` into the mega.** Ben agreed, 2026-09-10. That
-orchestrator runs five programs in this order: `main_uxlc_check_changes`, `main_fois`,
-`main_write_page_break_info`, `main_amb_early_mtg` and `main_uxlc_word_list`. Each is called
-through its `main()`.
-1. Add the five as steps of `_STEPS`, in that order, immediately before `find-uxlc-accent-changes`.
-   That position matters: `main_uxlc_check_changes` writes `in/UXLC-misc/all_changes.json`, which
-   `find-uxlc-accent-changes` reads and nothing in the mega rebuilds today. Give each a note naming
-   what it reads and writes, as the existing steps have.
-2. Make `py/main_uxlc_download_changes.py` download only: its default mode ends by calling
-   `main_uxlc_mega.main()`, which goes, leaving a line telling the user to run the mega.
-3. Delete `py/main_uxlc_mega.py`, and update what names it: `uxlc/README.md`, and any live
-   docstring. Dated records under `doc/` stay.
-4. Verify: run the five new steps' runners from a throwaway script, then read `git status`. The
-   analysis found that `in/UXLC-misc/all_changes.json` was last committed on 2026-08-12, so a diff
-   there is possible. Explain any diff before committing it; if it cannot be explained, stop and
-   report. Then run the full suite.
-
-**Not expected to change:** anything outside the five programs' outputs.
+`bf6316a2` skips `near-aleppo-census` in a cloud session the way phase 2 skips the survey. A
+simulated cloud run, with `subprocess.run` stubbed to raise, listed both steps in the end-of-run
+banner, so a cloud run of the mega now needs no MAM-private. `f7fb6a62` made steps 34–38 of 47 of
+`uxlc-check-changes`, `uxlc-fois`, `uxlc-write-page-break-info`, `uxlc-amb-early-mtg` and
+`uxlc-word-list`, before `find-uxlc-accent-changes`. It deleted `py/main_uxlc_mega.py`, and made
+`py/main_uxlc_download_changes.py` download only. The five steps regenerated 113 tracked files, all
+byte-identical to their committed blobs, `in/UXLC-misc/all_changes.json` included. Suite before
+each commit: 988 passed, 5 skipped.
 
 ## Phase 5a — add the UXLC, Holman, CLC and book-of-job generators
 
@@ -253,7 +230,9 @@ its dead-entry check.
 4. **Failures:** a program neither run nor declared; a declaration whose program is gone; a
    declaration whose program the mega now runs.
 5. Name the check in `py/main_repo_maintenance.py`'s docstring, whose step 5 runs the suite before
-   step 6 runs the mega, and correct that docstring's stale list of mega steps.
+   step 6 runs the mega, and correct that docstring's stale list of mega steps. Also correct
+   `py/mb_cmn/graphviz_pin.py`'s docstring, which says `tmpl-survey` is "step 5 of 41": the mega
+   had 47 steps after phase 4, and phases 5a and 5b add more. Grep for any other stated step count.
 6. Verify: the full suite green; then, uncommitted, delete one declaration and see the check fail
    naming that program, and restore it.
 
