@@ -168,9 +168,40 @@ The instructions as they were given for phase 5b:
    pin edit payloads on purpose (`CLAUDE.md`), so read them before changing the edits context.
 9. Verify as in phase 4.
 
-## Phase 5c — the check-mpplus position, the ctr-vs-mam step, and argparse for the mega's hand-parsers
+## Phase 5c — the check-mpplus position, the ctr-vs-mam step, and argparse for the mega's hand-parsers: DONE, `7509c388`, `9fa80e11` and `577fb455`
 
-Ben answered both of the questions this phase raised on 2026-09-10, so every item is ready to run.
+`7509c388` moves `check-mpplus` after `foi-features-of-interest`, and changes no output.
+`9fa80e11` gives the template מ:פסק a handler, U+05C0 and then a space, gives `py/main_diff.py` an
+`almost_main(argv)`, and adds `diff-ctr-vs-mam` after `diff-mpp`. `out/diff_ctr_mam.json` changed
+in exactly the five entries item 2 explains, in their `refined` field only, and still has 84
+entries. `577fb455` gives the three hand-parsers argparse and an `almost_main(argv)`, and the mega
+passes them `["all"]`, `[]` and `[]`; the 14 tracked files the three steps wrote are
+byte-identical. The mega has 61 steps. Suite before each commit: 988 passed, 5 skipped.
+
+The phase's report raised four more points, and each is disposed of here:
+
+1. **The new order has a cost, which phase 6a's session is to fix.** A doc-note template with the
+   wrong number of arguments now stops the run inside `foi-features-of-interest`, at the bare
+   `assert wtp.template_len(tmpl) == 3` in `label_args_of_doc` (`py/foi/foi_wikitext_helpers.py`),
+   before `check-mpplus` can name the template. A message on that assert naming the template and
+   its argument count means a bad template is still named, while foi's report of malformed
+   Unicode still comes first. The orchestrating session chose that over splitting
+   `check-mpplus`'s two tests either side of `foi-features-of-interest`, which would add a step
+   and no information.
+2. **`577fb455` changes behaviour on purpose.** Arguments the old code ignored now get argparse's
+   usage error and exit status 2: a third positional argument to `py/main_clc.py` or
+   `py/main_ac_gen_index_flat_annotated.py`, a chapter after `all` to `py/main_clc.py`, and
+   anything but `--audit` to `py/main_find_uxlc_accent_changes.py`. So `main_clc.py all 5`, which
+   used to build every pilot page, now exits 2. The documented forms are unchanged.
+3. **Two stale docstrings have been fixed on the way.** `py/main_clc.py` named `gh-pages/clc/` for
+   pages that are in `gh-pages/uxlc/clc/`, and `py/main_ac_gen_index_flat_annotated.py` gave its
+   default paths relative to `aleppo/`. That program's `main()` also sets UTF-8 stdio now, since
+   its new `--help` prints em dashes.
+4. **§8 item 4 of the analysis had gone stale, and has been corrected** in the commit that records
+   this phase: it listed "diff ctr-vs-mam" among the graph's nodes that are not steps.
+
+The instructions as they were given for phase 5c, once Ben had answered both of its open questions
+on 2026-09-10:
 
 1. **Move `check-mpplus` after `foi-features-of-interest`.** Phase 5b put it straight after
    `parse-go`, as this plan said. But the mega runs `foi-features-of-interest` early precisely so
@@ -208,6 +239,11 @@ for size. **6a** is items 1–9, the deletions of dead and redundant code. **6b*
 the retirement of the word-finding check, the Stark CSV, the runbook, the stale wording, the
 redundant PowerShell script and the second copy of `lci_augrecs.json`. Each session ends with item
 16's verification, run over its own items.
+
+The 6a session also carries finding 1 of phase 5c's record. Give the bare
+`assert wtp.template_len(tmpl) == 3` in `label_args_of_doc` (`py/foi/foi_wikitext_helpers.py`) a
+message naming the template and its argument count, and correct the comment above the
+`check-mpplus` step in `py/main_0_mega.py`, which records the cost that the message removes.
 
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
@@ -284,7 +320,9 @@ redundant PowerShell script and the second copy of `lci_augrecs.json`. Each sess
       wants them that way rather than built on the fly as the two estimators build them.
 
     Rerun the step: `uxlc/data/lci_augrecs.json`, `uxlc/out/UXLC-misc/page_counts.json` and
-    `uxlc/out/UXLC-misc/lci_recs.xml` must come out byte-identical.
+    `uxlc/out/UXLC-misc/lci_recs.xml` must come out byte-identical, and the deleted copy must not
+    come back: `git status --porcelain` must not list `uxlc/out/UXLC-misc/lci_augrecs.json` as
+    untracked.
 16. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check

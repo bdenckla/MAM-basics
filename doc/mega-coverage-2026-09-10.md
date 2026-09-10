@@ -262,9 +262,11 @@ uncalled `add_args` and `run` at the end of `py/author_site/post_stress_meteg.py
    finding skips the other six checks.
 3. The mega steps listed in `py/main_repo_maintenance.py`'s docstring include "vendor-uxlc", which
    is not a step, and leave out `sigil-inventory`, `near-aleppo-census` and `gen-site`.
-4. `py/pipeline_graph/pipeline_graph_spec.py` has drifted from `_STEPS`. It draws "ws_bot real",
-   "osis_split_mapm" and "diff ctr-vs-mam", none of which is a step, and has no node for the wlc
-   and accgram steps, `sigil-inventory`, `near-aleppo-census`, `gen-site` or `vendoring-audit`.
+4. `py/pipeline_graph/pipeline_graph_spec.py` has drifted from `_STEPS`. It draws "ws_bot real"
+   and "osis_split_mapm", neither of which is a step, and has no node for the wlc and accgram
+   steps, `sigil-inventory`, `near-aleppo-census`, `gen-site` or `vendoring-audit`. It also draws
+   "diff ctr-vs-mam", which was not a step when this was written, and has been one since phase 5c
+   of `doc/PLAN-mega-coverage.md` added `diff-ctr-vs-mam` the same day.
 5. Docstrings that still describe the layout from before the evacuations:
    - `py/main_uxlc_mega.py`, "the sibling UXLC-utils'";
    - `py/main_estimate_uxlc_locations.py`, and its NOTE constant, which is written into a tracked
