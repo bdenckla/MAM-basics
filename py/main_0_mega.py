@@ -24,7 +24,6 @@ from mb_cmn import paths
 import main_explicit_xataf
 
 # main_download_mam_fr_google.py
-# main_download_mam_fr_sefaria.py
 # main_download_mam_fr_wikisource.py
 import main_authored
 import main_decnreub

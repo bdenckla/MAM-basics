@@ -19,7 +19,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 - [`MAM-OSIS/`](MAM-OSIS/README.md) — OSIS MAM exports for conversion to SWORD format, with configuration and documentation
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data and photographed-page records
 - [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data and source scans
-- [`leningrad/`](leningrad/) — Leningrad Codex index data and page-image evidence
+- [`leningrad/`](leningrad/) — Leningrad Codex page-image evidence
 - [`book-of-job/`](book-of-job/) — data and reading procedures for the BHQ Job review
 - [`holman/`](holman/) — data and rendered reports from Daniel Holman's three review/correction bodies
 - [`uxlc/`](uxlc/) — UXLC data and documentation for the planned CLC edition
@@ -34,7 +34,6 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 ### Downloading
 
 - `main_download.py fr-google` — from Google Sheets
-- `main_download.py fr-sefaria` — from Sefaria
 - `main_download.py fr-wikisource` — the MAM books, from Hebrew Wikisource
 - `main_download.py fr-ws-intro` — the MAM introduction's thirteen pages, from Hebrew Wikisource, mirrored as verbatim wikitext in `in/mam-ws-intro/`
 

@@ -23,17 +23,19 @@ repos shared one committed copy of the four checks, while book-of-job held the o
 Keeping their code linted is a restoration, not an expansion.
 UXLC-utils and holman-ketiv-qere never had these lints, and adding their code here
 would surface violations that are nobody's current business; they are deliberately
-absent. codex-index-leningrad never had them either and IS included, because its
-eight small modules pass both checks as they stand, so including them costs nothing
-and closes the one gap a reader would otherwise have to be told about.
+absent. codex-index-leningrad never had them either, and its eight small modules were
+included anyway while they lasted, since they passed both checks as they stood. They
+went on 2026-09-10 with the Wikisource index generator they served, by Ben's decision
+that day; phase 3 of ``doc/PLAN-mega-coverage.md`` names every file removed. None of
+that repository's Python remains.
 
-CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
-oversight. ``check_mark_order`` reads ``.json`` as well as ``.py``, and the
-Ben-authored JSON under book-of-job, aleppo, and cam1753 is a large part
-of what the check was ever for -- 7 JSON files in book-of-job, 83 in aleppo, and
-72 in cam1753. The Leningrad tree now holds only two
-generated JSON artifacts and no separate corpus root, so it contributes no
-mark-order scope.
+CORPUS ROOTS AND CODE PATHS COVER THE SAME THREE REPOS. ``check_mark_order`` reads
+``.json`` as well as ``.py``, and the Ben-authored JSON under book-of-job, aleppo,
+and cam1753 is a large part of what the check was ever for -- measured 2026-09-10,
+7 JSON files in book-of-job, 81 in aleppo, and 72 in cam1753. Until that day the
+Leningrad code made ``code_paths()`` the longer list, while the Leningrad tree held
+only two generated JSON artifacts and no separate corpus root; it contributes no
+mark-order scope now, holding neither code nor JSON.
 
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in
@@ -49,7 +51,6 @@ from pathlib import Path
 import ac_paths
 import boj_paths
 import cam1753_paths
-import lenin_paths
 from mb_cmn import paths
 
 
@@ -62,7 +63,6 @@ def code_paths() -> list[Path]:
     return [
         *boj_paths.code_paths(),
         *ac_paths.code_paths(),
-        *lenin_paths.code_paths(),
         *cam1753_paths.code_paths(),
     ]
 
@@ -70,7 +70,8 @@ def code_paths() -> list[Path]:
 def corpus_roots() -> list[Path]:
     """The data roots whose ``.json`` the mark-order check reads.
 
-    See the module docstring for why this is shorter than ``code_paths()``.
+    One for each repo that ``code_paths()`` covers; the module docstring says why the
+    two lists differed until 2026-09-10.
     """
     return [
         paths.repo_root() / "book-of-job",

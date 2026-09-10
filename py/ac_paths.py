@@ -13,12 +13,12 @@ from pathlib import Path
 
 from mb_cmn import paths
 
-AC_PACKAGES = ("py_ac_loc", "ac_wiki")
-"""The two packages codex-index-aleppo's code landed in under this repo's ``py/``.
+AC_PACKAGES = ("py_ac_loc",)
+"""The package codex-index-aleppo's code landed in under this repo's ``py/``.
 
-``py_ac_loc`` kept its name; ``ac_wiki`` was ``aleppo-wiki/py/``, which could not
-keep a name it never had -- a directory called ``py`` inside a data directory,
-importable as ``py.<module>`` only because that repo was entered two ways.
+``py_ac_loc`` kept its name.  A second package held the Wikisource index generator's
+modules until 2026-09-10, when Ben's decision that day removed the generator and its
+outputs; phase 3 of ``doc/PLAN-mega-coverage.md`` names every file removed.
 ``py_ac_word_image_helper`` is NOT listed: it arrived here with book-of-job on
 2026-08-19 and is one committed blob with codex-index-aleppo's copy, so it belongs
 to ``boj_paths.BOJ_PACKAGES``, which lists it, and listing it twice would lint it
@@ -39,10 +39,11 @@ AC_TOP_LEVEL_MODULES = (
     "main_ac_gen_line_break_editor.py",
     "main_ac_kraken_seg_baselines.py",
     "main_ac_merge_line_markers.py",
-    "main_ac_plot_col_coords.py",
-    "main_ac_wikisource_page.py",
 )
-"""codex-index-aleppo's fifteen modules at the top of this repo's ``py/``.
+"""codex-index-aleppo's modules at the top of this repo's ``py/``: thirteen of the
+fifteen that landed here.  The other two, the Wikisource index generator and the
+column-coordinate plots, were removed on 2026-09-10 by Ben's decision that day; phase
+3 of ``doc/PLAN-mega-coverage.md`` names them.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the
@@ -125,12 +126,6 @@ def ds_flat_stream_dir() -> Path:
     return ac_data_root() / "ds-flat-stream"
 
 
-def plot_col_coords_out_dir() -> Path:
-    """The three tracked PNGs ``py_ac_loc.plot_col_coords`` keeps, as against the
-    throwaway copies it also writes into ``novc_dir()``."""
-    return ac_data_root() / "plot_col_coords-out"
-
-
 def novc_dir() -> Path:
     """Gitignored scratch tree, where the two editors and the word previewer write
     the HTML they open in a browser."""
@@ -138,54 +133,17 @@ def novc_dir() -> Path:
 
 
 def wiki_dir() -> Path:
-    """``aleppo-wiki/`` -- J David Stark's index, its three derived artifacts, and the
-    hand-corrected ``index-flat-corrected.json`` that
-    ``main_ac_gen_index_flat_annotated`` reads.
-
-    The moved pipeline and the other Aleppo modules use this accessor rather than
-    constructing another spelling of the data root.
-    """
+    """``aleppo-wiki/`` -- J David Stark's index in its source forms, two snapshots of
+    the Wikisource page built by hand from it, and the hand-corrected
+    ``index-flat-corrected.json`` that ``main_ac_gen_index_flat_annotated`` reads."""
     return ac_data_root() / "aleppo-wiki"
-
-
-def wiki_index_csv_path() -> Path:
-    """``aleppo-wiki/J David Stark Aleppo Codex Index.csv``, the wikisource
-    pipeline's one input.
-
-    Hand-made and written by no program: J David Stark's index of the Aleppo Codex,
-    under the licence in ``LICENSE.txt`` beside it.
-    """
-    return wiki_dir() / "J David Stark Aleppo Codex Index.csv"
-
-
-def wiki_index_flat_path() -> Path:
-    """``aleppo-wiki/index-flat.json``, the pipeline's first artifact: the CSV's rows
-    as JSON.
-
-    Distinct from ``flat_index_corrected_path()``, which is this file with
-    corrections applied by hand and is the annotator's input rather than this
-    pipeline's output.
-    """
-    return wiki_dir() / "index-flat.json"
-
-
-def wiki_index_grouped_path() -> Path:
-    """``aleppo-wiki/index-grouped-by-book.json``, the pipeline's second artifact:
-    those rows grouped by book."""
-    return wiki_dir() / "index-grouped-by-book.json"
-
-
-def wiki_index_wikitext_path() -> Path:
-    """``aleppo-wiki/index.wiki``, the pipeline's third artifact and its point -- the
-    wikitext of the Wikisource page."""
-    return wiki_dir() / "index.wiki"
 
 
 def flat_index_corrected_path() -> Path:
     """Hand-corrected flat index (``<wiki_dir>/index-flat-corrected.json``).
 
-    Written by no program: it is ``index-flat.json`` with corrections applied by
-    hand, and it is the input to ``gen_index_flat_annotated``.
+    Written by no program: it is J David Stark's index as flat JSON, with corrections
+    applied by hand, and it is the input to ``gen_index_flat_annotated``.
     """
     return wiki_dir() / "index-flat-corrected.json"
 

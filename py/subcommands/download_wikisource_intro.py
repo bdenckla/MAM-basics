@@ -24,19 +24,17 @@ can be ASCII and stable, and ``_assert_declared_set_is_live_set`` then FAILS if 
 live set has gained or lost a page -- which is a finding about the introduction, and
 wants a human to choose a slug for the new page, not a silently-widened mirror.
 
-THE TWO MIRRORED MANUSCRIPT INDEX PAGES ARE NOT THE GENERATORS' OUTPUT, AND ARE NOT
-MEANT TO MATCH IT. ``py/main_ac_wikisource_page.py`` writes ``index.wiki`` at
-``aleppo/aleppo-wiki/index.wiki``, and ``py/main_lenin_wikisource_page.py`` writes
-the Leningrad index at ``leningrad/lenin-wiki/index.wiki``. Ben, 2026-08-31, on
-those two files:
-they "were only ever intended to be starting
-points for manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here
-are that manual work as published.  So the difference between generator and page is the
-intended transformation rather than drift; there is no sync to maintain in either
-direction, and NOTHING SHOULD COMPARE THE TWO -- an earlier draft of this docstring
-called the mirror a drift check between them, which was wrong.  The scale settles it:
-26 of the Aleppo generator's 700 lines reach the live page (4%), and 94 of the
-Leningrad generator's 1,135 (8%).
+THE TWO MIRRORED MANUSCRIPT INDEX PAGES ARE HAND WORK, AND NOTHING HERE GENERATES
+THEM.  Each began as wikitext from a one-off generator, and Ben said on 2026-08-31 of
+those generated files that they "were only ever intended to be starting points for
+manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here are that
+manual work as published.  Ben's decision of 2026-09-10 removed both generators and
+their outputs from this repository, since they "will never be run again"; phase 3 of
+``doc/PLAN-mega-coverage.md`` names every file removed.  So the mirror is a drift
+check against nothing -- an earlier draft of this docstring called it a drift check
+between generator and page, which was wrong even while the generators existed: 26 of
+the Aleppo generator's 700 lines reached the live page (4%), and 94 of the Leningrad
+generator's 1,135 (8%).
 
 WHAT IS WRITTEN.  One ``<slug>.mediawiki`` per page, holding the page's wikitext
 VERBATIM -- no normalization of any kind, which for Hebrew is the standing rule of

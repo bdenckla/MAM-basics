@@ -21,9 +21,10 @@ missed every one of those 16 files:
   * ``test_mam_simple_mark_order.py`` -- MAM-simple's non-corpus tree, plus
     ``py/versification_and_cantillation/doc.py`` and the page it generates.
   * ``check_mark_order.py`` -- the ``.py`` of the four repos ``py/repo_scopes.py``
-    names, and the Ben-authored ``.json`` of three of them, that module's
+    named then, and the Ben-authored ``.json`` of three of them, that module's
     ``corpus_roots()`` omitting the Leningrad tree, which "contributes no mark-order
-    scope".
+    scope". Since 2026-09-10, when the Leningrad code was deleted, both lists name
+    the same three repos.
   * ``test_aleppo_page_mark_order.py`` -- ``gh-pages/aleppo/*.html``, which
     ``main_ac_gen_index_flat_annotated.py`` generates, so output rather than source.
 

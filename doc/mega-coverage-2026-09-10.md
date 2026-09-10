@@ -11,7 +11,10 @@ analysis.
 **Measured against** `main` at `a2e883f1` (2026-09-10 12:04), in the worktree branch
 `claude/mega-coverage`. That branch's first commit, `3a1ab7f0`, is the one code change made so far:
 the post-stress-meteg page renderer now raises instead of looking a spelling up in MAM-private.
-**Re-measure before relying on a row**; the tree moves.
+**Re-measure before relying on a row**; the tree moves. Rows for the programs that phase 3 of
+`doc/PLAN-mega-coverage.md` removed on 2026-09-10 say so where they stand: the two Wikisource
+index generators and the Aleppo column-coordinate plots in §5, and `py/main_download.py
+fr-sefaria` in §3 and in §5's third gap.
 
 **Method.** A *program* here is a tracked `.py` with an `if __name__ == "__main__":` block outside
 `py/tests/`, plus the four example scripts the mega runs as subprocesses. An entry point's argparse
@@ -120,7 +123,7 @@ The recommendations as they were put to Ben:
 | `py/main_edition_transcription.py build --derive-only` | re-derives each stem's tracked `.txt` from its tracked JSON, and the suite already fails on any drift between the two | `py/accgram/transcription_build.py` docstring |
 | `py/main_verify_meteg_vs_mgketer.py` | a one-time check of Holman's meteg suggestions against MAM-private's mgketer | its docstring, quoting Ben's decision of 2026-09-03: "run it once as a one-time check". Also in §6 |
 | `py/main_diff.py mpp --legacy-history` | reads a sibling MAM-parsed clone that belongs on no machine | `py/subcommands/diff_mpp.py` docstring; `CLAUDE.md` |
-| `py/main_download.py` `fr-google`, `fr-google --download-only`, `fr-sefaria`, `fr-wikisource` and `fr-ws-intro` | network downloads, run when the upstream moves | `doc/process-documentation/pipeline.dot`, "External prerequisites (not part of _STEPS)"; the closing comment of `py/main_0_mega.py`; `CLAUDE.md` for `fr-ws-intro` |
+| `py/main_download.py` `fr-google`, `fr-google --download-only`, `fr-wikisource` and `fr-ws-intro` | network downloads, run when the upstream moves. A fifth, `fr-sefaria`, was removed on 2026-09-10 with the directory it wrote (§5's third gap) | `doc/process-documentation/pipeline.dot`, "External prerequisites (not part of _STEPS)"; the closing comment of `py/main_0_mega.py`; `CLAUDE.md` for `fr-ws-intro` |
 | `py/main_ws_bot.py real --no-save` | reads live Wikisource pages through the bot's login | `doc/PLAN-holman-meteg-rollout-programme.md` |
 | `py/main_ws_bot.py proto --edits <file>` | a rehearsal of one edit file before a real save | the same plan |
 | `py/main_ws_bot.py holman-meteg-spec`, with and without `--write` | a one-shot check designed to stop passing | `py/ws/holman_meteg_edit_spec.py`, "THIS CHECK IS ONE-SHOT, AND IS MEANT TO STOP PASSING". Also in §6 |
@@ -187,8 +190,8 @@ The reasons in this table are Claude-written proposals for Ben to accept or chan
 | `py/main_pipeline_graph.py` | `doc/process-documentation/pipeline.dot`, `pipeline.svg`, `MAM-process.dot.svg` | its one tool, Graphviz, is one the mega already needs; its hand-maintained spec has drifted from `_STEPS` (§8) | add |
 | `py/main_diffable_pointed_hebrew.py` | the `diffable-pointed-hebrew/*sample-output.json` samples and `misc/zarqa-table-diff/*.dph.txt` | input and output are positional, so a step names four fixed pairs; `diffable-pointed-hebrew/README.md` calls the samples "the differential artifacts for the command" | add, with the four pairs |
 | `py/main_ac_gen_index_flat_annotated.py` | `aleppo/index-flat-annotated.json` | a deterministic transform of a tracked, hand-corrected file; it once stayed broken for five months without anyone noticing | add |
-| `py/main_lenin_wikisource_page.py` and `py/main_ac_wikisource_page.py` | `leningrad/lenin-wiki/`; `aleppo/aleppo-wiki/index-flat.json`, `index-grouped-by-book.json`, `index.wiki` | Deterministic from tracked input. The recorded sentence, "a starting point for manual work … never intended to stay in sync", is about the live Wikisource page, not about regenerating these files | **Decision 4a**: add both, or record both as frozen |
-| `py/main_ac_plot_col_coords.py` | `aleppo/plot_col_coords-out/*.png` | matplotlib output; the Cambridge 1753 gutter chart is kept frozen for exactly that reason | **Decision 4b**: record as frozen, like the gutter chart |
+| `py/main_lenin_wikisource_page.py` and `py/main_ac_wikisource_page.py` | `leningrad/lenin-wiki/`; `aleppo/aleppo-wiki/index-flat.json`, `index-grouped-by-book.json`, `index.wiki` | Deterministic from tracked input. The recorded sentence, "a starting point for manual work … never intended to stay in sync", is about the live Wikisource page, not about regenerating these files | **Decision 4a**: add both, or record both as frozen. Ben chose neither: **removed on 2026-09-10**, with their outputs, by phase 3 of `doc/PLAN-mega-coverage.md` |
+| `py/main_ac_plot_col_coords.py` | `aleppo/plot_col_coords-out/*.png` | matplotlib output; the Cambridge 1753 gutter chart is kept frozen for exactly that reason | **Decision 4b**: record as frozen, like the gutter chart. Ben chose otherwise: **removed on 2026-09-10**, with its PNGs, by phase 3 of `doc/PLAN-mega-coverage.md` |
 | `py/main_ac_check_line_breaks.py` and `py/main_cam1753_check_line_breaks.py` | `aleppo/check_line_breaks.html`, `cam1753/check_line_breaks.html` | Reports that check the hand-annotated line breaks against MAM-simple's XML, which the mega rewrites. The Cambridge 1753 report says "All checks passed". The Aleppo report says "91 issue(s) found", and that program exits 1 | **Decision 4c**: add the Cambridge 1753 one; the Aleppo one would fail the mega until its 91 issues are dealt with |
 | `py/main_slide_generator.py make-thumbs` | `misc/<deck>/img/thumb-*.png` | thumbnails of slides that `render-slides` makes by hand, with Playwright | **Decision 4d**: record it as left out along with `render-slides` |
 | `py/main_accgram.py survey-post-stress-meteg` | `out/accgram/post-stress-meteg.json` | reads MAM-private; §3 has the recorded reason. A fresh run into a scratch file on 2026-09-10 was byte-identical to the tracked JSON | **Decision 1** |
@@ -201,7 +204,10 @@ Three gaps inside steps the mega already runs:
    `52aa7b8c` (2026-08-27).
 2. **`check_mpplus`, a read-only check of the parsed data, runs only inside
    `py/main_download.py fr-google`**, so only after a Google download.
-3. **Nothing reads `in/mam-from-sefaria/`**, which `py/main_download.py fr-sefaria` writes.
+3. **Nothing reads `in/mam-from-sefaria/`**, which `py/main_download.py fr-sefaria` wrote.
+   **Removed on 2026-09-10**, the directory and the subcommand both, by phase 3 of
+   `doc/PLAN-mega-coverage.md`: Ben was "no longer interested in tracking what sefaria does with
+   what we give them".
 
 ## 6. Dead or redundant programs
 

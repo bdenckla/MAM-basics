@@ -23,7 +23,6 @@ digraph mam_pipeline {
     // ── External prerequisites (not part of _STEPS) ──
     node [shape=box, style=dashed, color=gray, fontcolor=gray];
     download_go      [label="download fr-google"];
-    download_sef     [label="download fr-sefaria"];
     download_ws      [label="download fr-wikisource", style="", color="", fontcolor=""];
 
     // ── Pipeline steps ──
@@ -85,8 +84,5 @@ digraph mam_pipeline {
     ws_bot          -> src_ws_live;
     ws_bot          -> ds_ws;
     ws_bot          -> ds_out [tooltip="via automatic post-download reparse"];
-
-    // Sefaria download (standalone)
-    download_sef    -> ds_out;
 
 }
