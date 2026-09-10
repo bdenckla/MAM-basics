@@ -1,6 +1,12 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Waves 1-3 complete, including E1-E8 in the separate editorial phase; Wave 4 remains pending.
+State: remediated 2026-09-10; all approved waves and E/N items complete within scope; retained as a review record with explicit deferrals and verification limits.
+
+Status updated by Codex on 2026-09-10 at the final local checkpoint: Wave 4's
+vendoring audit and complete finding dispositions are committed at
+`24bac86bd905c31990cc09328de4b769b51090a4`. The repeat audit leaves every artifact
+byte unchanged. The remediation plan records validation and the final committed-tree
+integration procedure. Historical findings, accepted corrections and deferrals remain.
 
 Status updated by Codex on 2026-09-10 after Wave 3 editorial verification: all E1-E8
 edits and their exact output checks are complete. The suite and editorial gate pass.

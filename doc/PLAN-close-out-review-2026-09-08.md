@@ -1,9 +1,19 @@
 # Plan: close out the 2026-09-08 review, every step on Codex — turn 5 handed off, Ben's decisions taken, the procedure recorded, the findings remediated, the worktree retired
 
-State: live 2026-09-09; no step started; the starting state was re-measured the same afternoon
-after `main` moved, the dated notes below supersede the table where they differ, and the design
-was revised that afternoon on Ben's decision to keep the work on the branch until the end, and D9 and
-the substance of D11 were decided the same afternoon (step 2).
+State: remediation executed 2026-09-10; Steps 1-6 implementation complete; final integration evidence recorded separately; Step 7 remains Ben's task after the final task ends.
+
+Status updated 2026-09-10 at the final local checkpoint: Waves 1-4 and all E/N
+items are complete within approved scope. The suite and editorial gate pass, and
+the post-commit audit is byte-identical. The final task retains responsibility for
+the committed-tree verification, sole fast-forward/push, and evidence archive
+described below. P2 and the recorded independent-verification limits remain.
+
+The original State paragraph is preserved as history:
+
+> State: live 2026-09-09; no step started; the starting state was re-measured the same afternoon
+> after `main` moved, the dated notes below supersede the table where they differ, and the design
+> was revised that afternoon on Ben's decision to keep the work on the branch until the end, and D9 and
+> the substance of D11 were decided the same afternoon (step 2).
 
 Status updated 2026-09-10 after Wave 3 editorial verification: Waves 1-3 are complete.
 E1-E8 match the pre-recorded exact editorial contract; the canonical suite passed
@@ -1156,6 +1166,18 @@ immediately afterward, and the final crosswalk has all 52 rows in order. The
 local implementation checkpoint precedes the repeat audit and final committed-tree
 suite; the primary checkout remains untouched. Exact evidence is in the remediation
 plan's Wave 4 record.
+
+Executed 2026-09-10: Wave 4 implementation commit
+`24bac86bd905c31990cc09328de4b769b51090a4`. The repeat full audit after the commit
+changed no artifact bytes and left the tree clean; the editorial gate passed again.
+This record-only checkpoint is the final local write. Final committed-tree checks
+and the sole integration follow the Integration section, with the canonical
+988-test/5-skip/65-subtest baseline established above replacing that section's
+historical 983-test expectation. The final response and
+`.novc/review-remediation-2026-09-08/wave4-01a08b71/integration-receipt.json`
+record the actual final commit, suite, gate, fast-forward, push and remote-head
+results without introducing a second integration merely to record its commit hash.
+The receipt is preserved in Step 7's archive. Ben retains archival and retirement.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

@@ -1,6 +1,11 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Waves 1-3 complete, including the separate approved editorial phase; Wave 4 next; original technical V6 evidence and exact editorial contract retained.
+State: executed 2026-09-10; Waves 1-4 complete within approved scope; retained as a review record, with explicit deferrals and original technical/editorial evidence.
+
+Status updated 2026-09-10 at the final local checkpoint: all approved remediation
+is complete. The repeat vendoring audit is byte-identical after the implementation
+commit. Final integration uses the committed-tree procedure and evidence receipt
+recorded in the Wave 4 checkpoint below. Earlier State/status entries remain history.
 
 Status updated 2026-09-10 after Wave 3 editorial verification: E1-E8 are complete.
 The exact pre-recorded editorial bytes match normal generation and a fresh render;
@@ -2525,6 +2530,38 @@ after the records were added. The changed copy dates all identify copy commit
 `b865b7c8fd9cb95e6a3a850fadcb9f852299c2a4`. Complete per-pair commits are in the
 V4 report. The local implementation checkpoint precedes the required repeat audit
 and final committed-tree validation.
+
+Wave 4 local completion checkpoint, recorded 2026-09-10: implementation commit
+`24bac86bd905c31990cc09328de4b769b51090a4` contains exactly these six paths:
+
+1. `py/vendoring/gen_inventory.py`.
+2. `doc/vendoring-inventory.md`.
+3. `out/vendoring_compare_out.txt`.
+4. `doc/PLAN-remediate-review-findings-2026-09-08.md`.
+5. `doc/PLAN-close-out-review-2026-09-08.md`.
+6. `doc/review-findings-2026-09-08.md`.
+
+The full repeat audit after that commit produced identical bytes for all four
+audit artifacts and left the worktree clean. Evidence is
+`wave4-01a08b71/20260910T132843Z-repeat-audit-after-commit.txt`, with the immediate
+passing gate at
+`wave3-editorial-01a08b5a/runs/20260910T132845Z-wave4-after-repeat-audit-after-commit-01a08b71-7b7bbc98/`.
+All 52 finding dispositions are complete within their stated limits. No E/N item
+remains pending; P2 source/rights-holder identification remains deferred, 415/416
+remains unverified, and the recorded linguistic/edition and historical limits remain.
+
+The following record-only checkpoint is the final local write. The final task runs
+the editorial gate before/after merging current main into that committed branch,
+then the canonical suite and V1-V4 on the exact final tree, followed by the gate
+before integration and push. Only a clean, passing branch may fast-forward primary
+main. No source/copy change follows the repeat audit without refreshing that audit.
+The actual final commit, suite log, gate paths, primary fast-forward, push output
+and independently read remote head are recorded in
+`wave4-01a08b71/integration-receipt.json` and the final task response, so recording
+the pushed commit does not itself require another integration commit. That receipt
+is included in the evidence archive identified in close-out Step 7. The archive's
+adjacent manifest records the verified file hashes and archive hash outside the
+worktree. No archive or retirement is asserted complete before those checks succeed.
 
 ## Verification recipes and commit discipline
 
