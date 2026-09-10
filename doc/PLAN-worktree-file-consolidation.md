@@ -14,9 +14,9 @@ The file-count estimate is not a prediction of the timing improvement.
 | 1 | Inventory and verification preparation | Complete; evidence and plan are in the Phase 1 commit identified below |
 | 2 | UXLC notes | Complete in the Phase 2 branch head identified below |
 | 3 | Historical snapshots | Complete at `32fa7da66ef6174f2459e23afc2d28baab5c6f07` in the Phase 3 branch described below |
-| 4 | Job records | Complete in the Phase 4 branch described below; result commit is identified by the Phase 5 handoff |
-| 5 | Combined verification | Next task; create only after the Phase 4 commit is clean |
-| 6 | Benchmark and close-out | Pending Phase 5 |
+| 4 | Job records | Complete at `f5d060d2faa32e4d1f7de36aee5922562a4d0e8d` in the Phase 4 branch described below |
+| 5 | Combined verification | Complete in the Phase 5 branch described below; result commit is identified by the Phase 6 handoff |
+| 6 | Benchmark and close-out | Next task; create only after the Phase 5 commit is clean |
 
 Phase 1 task: `01a08c68-10a6-7442-8ff7-1e5ac0303211`.
 Its verified development checkout is
@@ -659,11 +659,13 @@ Phase 2 commit `09d008809cd0a79267ea790b0b126e9f2af98f3c` and Phase 1 commit
 `main` and `origin/main` were both
 `31318dd4b68065efe515b478e10d4bff2c72053e`.
 
-The Phase 4 result commit is necessarily not self-identifying inside the
-commit that contains this receipt. The Phase 5 creation prompt and Phase 4
-final response carry its full hash, and the Phase 5 executor records the
-verified predecessor hash here. Re-establish the result without relying on
-that later write-back with:
+The Phase 4 result commit is
+`f5d060d2faa32e4d1f7de36aee5922562a4d0e8d`. Phase 5 task
+`01a08cd3-ea1e-7ac0-89c9-470efdb93ee2`, titled **Verify combined file
+consolidation**, verified that exact commit as its clean detached starting HEAD
+in `C:/Users/BenDe/.codex/worktrees/3f2e/MAM-basics`, then created branch
+`codex-worktree-3f2e` at that commit. Re-establish the Phase 4 result
+independently with:
 
 ```powershell
 git -C C:/Users/BenDe/.codex/worktrees/ffc9/MAM-basics log -1 --format=%H -- py/author_boj_qr py/author_boj_util/job_quirkrecs.py py/check_qr_consistency.py
@@ -775,6 +777,180 @@ full suite. Apply hebrew-prose to any prose change. Update this plan, commit
 locally, verify clean status and ancestry, then create only Phase 5 last.
 
 ## Phase 5: combined verification from a fresh checkout
+
+### Phase 5 execution receipt
+
+Phase 5 task: `01a08cd3-ea1e-7ac0-89c9-470efdb93ee2`, titled **Verify
+combined file consolidation**. Its verified development checkout is
+`C:/Users/BenDe/.codex/worktrees/3f2e/MAM-basics`, on branch
+`codex-worktree-3f2e`. The checkout started clean and detached at the exact
+Phase 4 commit `f5d060d2faa32e4d1f7de36aee5922562a4d0e8d`; the branch did not
+exist elsewhere and was created at that commit before verification. Phase 3
+`32fa7da66ef6174f2459e23afc2d28baab5c6f07`, Phase 2
+`09d008809cd0a79267ea790b0b126e9f2af98f3c`, and Phase 1
+`b080a01a87f29f2140144a1247c45c654d240224` are ancestors. At the
+pre-receipt measurement, `main`, `origin/main`, and the primary checkout were
+all `3e3a93ef82615710a2520bd85a3086e9ae4fbc9d`. The primary checkout's
+three in-progress paths belong to the unrelated Phase 6E publication and
+vendoring task; Phase 5 left them untouched. The declared MAM-private sibling
+input was clean at `55252b834d28a6c241e75758aff5d15836621f56`.
+
+The immutable evidence file is 154,023 bytes and retains compressed SHA-256
+`f04b2d9f0e60ed35794218c444bb88ea4ec5245302efcbe71c049d413d60c3fa`.
+The baseline commit contains 5,646 tracked files and 831,571,756 Git blob
+bytes. The Phase 4 commit contains 4,949 tracked files and 831,863,819 Git blob
+bytes: 697 fewer files than the baseline. The compact-JSON SHA-256 of the
+sorted tracked path list is
+`17c0ca43ef4a15a5e33ba72e94d78d78882b5f666ecca439eb7313a5c6a4f40d`
+at the baseline and
+`c1e10f7d9933d530e198c7e3a1836d39bdd9280e672193c954d2cfd754fbd4eb`
+at Phase 4. Directory prefixes fell from 356 to 308. The removed set is
+exactly the 36 old UXLC note-book directories and the twelve historical
+revision/`plus` directories. The compact-JSON SHA-256 values of the sorted
+directory-path sets are
+`f8ccdbbff161d3bf32ea9702017991f67c6d462368d34f04b6c22e6e73cac319`
+and `4d686e010dc06e5f45f36a55e931f171f7f9eef28be7a1d95c3001e684353499`.
+
+All 881 baseline-to-Phase-4 path changes are accounted for:
+
+| Change group | Paths |
+| --- | ---: |
+| Deleted UXLC note pages | 477 |
+| Added per-book UXLC note objects | 36 |
+| Deleted historical JSON members | 144 |
+| Added historical ZIP archives | 6 |
+| Deleted per-record Job modules | 160 |
+| Added Job chapter modules | 39 |
+| Added plan, evidence, and note-storage support files | 3 |
+| Modified files named below | 16 |
+
+The modified files divide by consolidation phase:
+
+| Phase | Modified paths |
+| --- | --- |
+| 2 | `py/clc/clc_collect.py`, `py/clc/clc_note_pages.py`, `py/main_clc_download_notes.py`, `py/main_verify_notes_zip.py`, `py/tests/clc_note_pages_test.py`, `py/tests/test_prose_mark_order.py`, `py/uxlc_misc/my_uxlc.py`, `py/uxlc_paths.py` |
+| 3 | `.gitattributes`, `MAM-parsed/historical/README.md`, `py/mb_diff_mpu/mpplus_revisions.py` |
+| 4 | `doc/boj-quirkrec-comments.md`, `py/author_boj_util/job_quirkrecs.py`, `py/boj_paths.py`, `py/check_all.py`, `py/check_qr_consistency.py` |
+
+The 36 note JSON objects reconstruct the complete 477-path corpus and all
+925,517 source bytes. Every size, SHA-256, Git blob identity, and extracted
+prose string matches the immutable evidence. The compact-JSON SHA-256 of the
+sorted `[path, size, SHA-256]` rows is
+`d131832ed3b052757877f5d9c3d9c6cf1bdd6d2e5b30b349c97ad2ed2b73f7e0`.
+Two reads through one operation loaded their book once. An existing page made
+zero requests; a successful addition made one request, retained an unrelated
+entry, preserved CRLF-bearing non-ASCII HTML and sorted keys, and was visible
+to a fresh operation; its repeat made zero requests. A failed request and a
+simulated atomic-write failure left bytes and cache unchanged. Six malformed
+or unexpected storage shapes failed, while an absent key returned `None`.
+The production ZIP verifier, run against a fresh replay archive made from the
+committed objects, reported 477 `IDENTICAL` and zero
+`NO-PROSE-EXTRACTED`.
+
+The historical manifest retains SHA-256
+`235bb25d08280667a0d2f9b2097524a2f58bc9a9d4d0e3683959385dadcc908c`
+and matches the complete evidence object. The six archives contain all 144
+declared members and 84,572,003 member bytes in 84,589,095 archive bytes.
+Every name, manifest order at the reader boundary, sorted archive order, size,
+Git blob identity, byte string, timestamp, storage method, creator platform,
+permission mode, and empty metadata field matches. Independently rebuilding
+every archive from the baseline Git blobs produced the exact committed bytes:
+
+| Source commit | Members | Archive bytes | Archive SHA-256 |
+| --- | ---: | ---: | --- |
+| `b5e8f942c62574647a7ec14b15fdeba52107e840` | 24 | 12,724,353 | `66f7ddcbe383b3dbedf97229a0e45f4d89358e54c7edca2bba7e3050e05a3ed9` |
+| `3d5ecfd83f9a6e943f51e3d316b8345b762aa483` | 24 | 15,329,458 | `4277e65a695db890064ed1ee66d719e34c47feb79820c605acd959a67e36c8e1` |
+| `049e636beeaee721f64fd958f670ffe29a9f1e5c` | 24 | 15,238,479 | `235e313ead3b027e7a95d2d5f204b8b202272071774c5df19042086a496c3b9a` |
+| `cc43fe04ebc01122de1082cd4ea849fb657d528f` | 24 | 15,298,161 | `2d80271e019d70588e40a9d06e7af991fa6b3e434871c52e1bf76a3bb6544179` |
+| `1880cbbda9a769c90126f74cf4c406452af5b209` | 24 | 12,993,464 | `eaebf98a9e3b7d38cad791da84315a5bcc3d3cff5b9a835fe9ed7db905fb74fb` |
+| `9ce6ee5d2d611f034208bd2a72d8acb064dd5f19` | 24 | 13,005,180 | `73b17cbc962d2b08185ef63eafa60cae7dab88aacc47bd8d5750eae7a383a0dc` |
+
+Eleven independent negative probes rejected a missing or corrupt archive,
+duplicate, missing, unlisted or unsorted members, noncanonical member metadata,
+an archive comment, duplicate manifest paths, an unlisted read, and invalid
+UTF-8. All six stored revisions resolved by full and abbreviated commit,
+reported their declared dates and commit distances, and returned all 24 files'
+exact bytes. `HEAD` resolved to the Phase 4 commit with 24 current files. The
+migration source `51082036e5907991d0d322cb6dfcc6404802099f` resolved to landing
+commit `63cf6c98b8c4daba7d0f90c6fa9b0a10b72d9a96` with source date
+2026-09-04. A fresh task-local two-commit Git repository verified an explicit
+`legacy:` resolution, filename and byte read, and one-newer-commit distance;
+no external MAM-parsed clone was read.
+
+The 39 Job chapter modules retain all 160 records in exact
+`RAW_QUIRKRECS` order. All 278 original top-level assignment source segments
+and all 74 comment tokens match in sequence after the seven recorded helper
+renames. The 91 original import statements reduce to 67 grouped statements
+with the exact same imported binding set. The recursively typed value tree,
+every individual record hash, dictionary key/value order, list and tuple order,
+value, and Python type match. The whole sequence retains SHA-256
+`380d32bc7114735166e07cc77bdcab11eebff6500d5106d138ef99ae6efff95b`.
+The remeasured recursive totals are 21 booleans, 870 dictionaries, 1,005
+integers, 393 lists, 5,897 strings, and 4 tuples. All 160 original Job detail
+page paths remain present; their sorted path-list SHA-256 is
+`244a97e5a7a3160d69939771283a67a2d14d6d867f26ad3933e36e557aa8a0da`.
+
+Every one of the baseline's 1,859 published `gh-pages/` paths and Git blobs is
+unchanged. The compact-JSON SHA-256 of sorted `[path, Git blob]` rows is
+`000b2896e9980df1a5e06dd6d710db91b4143b85b9d599821b6e72a961e6828e`.
+The real generators reproduced the complete output path and SHA-256 maps from
+Phase 1. The table's combined hashes are SHA-256 values of compact UTF-8 JSON
+arrays of sorted `[path, size, SHA-256]` rows:
+
+| Generator or check | Outputs | Combined hash | Wall seconds |
+| --- | ---: | --- | ---: |
+| `py/main_clc.py all` | 12 | `b2b2372538120680c226575bfd0bcd66e8d99dd8da01e0f95a932c1b6fa98f8e` | 1.059 |
+| `py/main_diff.py mpp --all` | 13 | `a8b309adf2676626b10b94c1c9c69f3bcf0fe14522014ca2d210c739a82b0381` | 6.337 |
+| `py/main_gen_misc_authored_english_documents.py` | 183 | `91412f37f10f864ca3f0d9501732a1db3c199b1aa10c8e93def5ca2639bf7e5b` | 4.594 |
+| `py/check_all.py` | 2 | `e495aee301c42d008482513fda2588e631664e3aba4058975fb2ed69d583d07b` | 2.588 |
+
+The exact commands ran from the Phase 5 worktree with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`, Python 3.13.15, and Git
+2.43.0.windows.1. Every row began and ended with empty
+`git status --porcelain=v1 --untracked-files=all`; every command exited zero.
+
+| Purpose | Exact command after the worktree cwd | Wall seconds | Result |
+| --- | --- | ---: | --- |
+| Static corpus, source, inventory, failure, path, and URL verification | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_worktree_file_consolidation_phase5.py static` | 35.264 | passed |
+| Regenerate CLC | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_clc.py all` | 1.059 | 12 outputs match |
+| Exercise the production notes ZIP verifier | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_notes_zip.py C:/Users/BenDe/.codex/worktrees/3f2e/MAM-basics/.novc/worktree-file-consolidation-phase5/Notes-phase5-replay.zip` | 0.289 | 477 identical; 0 without prose |
+| Focused CLC tests | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/clc_attribution_test.py py/tests/clc_collect_test.py py/tests/clc_dual_cant_test.py py/tests/clc_kq_test.py py/tests/clc_note_pages_test.py py/tests/clc_versification_test.py` | 1.794 | 45 passed |
+| Regenerate MPP change logs | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpp --all` | 6.337 | 13 outputs match |
+| Focused MPP tests | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_mpplus_extract.py py/tests/test_diff_mpp_unpinned_latest.py` | 0.698 | 30 passed |
+| Regenerate authored English documents | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py` | 4.594 | 183 outputs match |
+| Check Job chapter and record consistency | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_qr_consistency.py` | 0.120 | 39 modules and 160 records pass |
+| Check Job record relations | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_qr_relations.py` | 0.299 | 1 relation passes |
+| Check tracked sibling-path reach | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_sibling_reach.py` | 8.285 | 2 passed |
+| Run all source and HTML checks | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py` | 2.588 | all 7 checks passed |
+| Check prose mark order and Latin-diacritic hygiene | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py` | 21.599 | 7 passed |
+| Run the full suite | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider` | 113.721 | 989 passed, 5 skipped, 65 subtests passed |
+| Recheck all output maps, HEAD, inventory, and status | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_worktree_file_consolidation_phase5.py post` | 0.221 | passed |
+
+Black 26.5.1 formatted the task-local verifier. Phase 5 changed no tracked
+Python file, so no tracked Python file required formatting.
+
+Verification found no repository defect and required no consolidation fix.
+Three task-local verifier assumptions failed before the final passing run:
+
+1. The evidence stores populated chapter identifiers as zero-padded strings;
+   the first draft converted current filenames to integers. The verifier now
+   compares the zero-padded identifiers.
+2. The evidence's source-blob object is keyed lexicographically, while the
+   explicit 160-record list defines loader order. The verifier now orders
+   original sources by that explicit list.
+3. Git quoted the ḥ in one historical filename and reported 14 deleted Job
+   modules as similarity-based renames. The verifier now uses
+   `core.quotepath=false` and `--no-renames` for exact path accounting.
+
+No published path, generated output, product layout, image collection,
+Wikisource input, historical member, Job record value or prose, format 1
+output, Pages workflow, or MAM-private content was expected to change; none
+changed. Phase 5 used only committed inputs plus fresh task-local probes, did
+not read earlier phase scratch, did not extract a historical archive, and did
+not begin Phase 6 benchmarking. Phase 5 performed no integration or push.
+The Phase 5 result commit is necessarily not self-identifying inside the commit
+that contains this receipt. The Phase 6 creation prompt and Phase 5 final
+response carry its full hash, and Phase 6 must verify that exact predecessor.
 
 Start from a fresh checkout containing the committed result of Phases 2 through
 4. Verify the source commit and ancestry before work. Run without migration
