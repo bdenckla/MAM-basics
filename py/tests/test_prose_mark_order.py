@@ -37,10 +37,13 @@ rather than trusting that figure: it rises with every ``.md`` added, so a larger
 number is growth and not a mismatch.
 
 Widening BY FILE TYPE is what fails, and each way fails for the same reason -- what
-the wider type catches is not hand-authored prose. All ``.html`` would take in 67
-offending files: 36 under ``uxlc/in/UXLC-notes/``, an input capture and the majority
-of them; 28 generated under ``gh-pages/``; and 3 byte-verbatim under
-``misc/*/img-sources/``. All ``.txt`` would take in 15 offending files, and 11 of
+the wider type catches is not hand-authored prose. The UXLC note captures formerly
+accounted for 36 offending ``.html`` files; Phase 2 of
+``doc/PLAN-worktree-file-consolidation.md`` stores those exact strings in 36
+per-book JSON objects under ``uxlc/in/UXLC-notes/``. The container changed, but the
+strings remain external input rather than hand-authored prose. Generated
+``.html`` remains under ``gh-pages/``; byte-verbatim ``.html`` captures remain
+under ``misc/*/img-sources/``. All ``.txt`` would take in 15 offending files, and 11 of
 those are genuine captures: 6 under ``uxlc/out/UXLC-misc/`` and 1 under
 ``uxlc/in/UXLC-misc/``, the UXLC change lists; 2 under ``aleppo/aleppo-wiki/``,
 snapshots of hand work as it was published on Wikisource; and 2 under

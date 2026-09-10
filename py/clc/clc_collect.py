@@ -152,12 +152,15 @@ def collect_for_book(book_id, codes=NOTED_CODES, chapters=None):
     book = clc_read.read_book(book_id)
     pending_change_originals = _apply_pending_uxlc_changes(book, book_id)
     descriptions = clc_changes.load_descriptions()
+    note_storage = clc_note_pages.NoteStorageOperation()
     notes = []
     page_prose_count = 0
     for ch, v, position, atom, code in iter_noted_atoms(book, codes):
         if chapters is not None and ch not in chapters:
             continue
-        prose = clc_note_pages.local_note_prose(book_id, ch, v, position, code)
+        prose = clc_note_pages.local_note_prose(
+            book_id, ch, v, position, code, storage=note_storage
+        )
         page_prose_count += prose is not None
         notes.append(
             _make_note(

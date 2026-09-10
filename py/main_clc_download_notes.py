@@ -14,8 +14,9 @@ Usage (run from the repo root, network required, NOT part of the default build):
 Fetches from my_uxlc.UXLC_DOWNLOAD_HOST -- hcanat.us, not tanach.us.  READ THAT
 CONSTANT BEFORE RUNNING THIS: hcanat.us' /Books/ and /Changes/ match tanach.us byte
 for byte, but its note pages come from a NEWER TEMPLATE than the 477 already
-committed here, so a run against the default mixes two templates under in/UXLC-notes/
-for clc_note_pages to parse.  Whether to accept that is undecided as of 2026-08-12.
+committed here, so a run against the default adds newer-template strings to the
+existing per-book JSON objects under ``uxlc/in/UXLC-notes/``. Whether to accept
+that is undecided as of 2026-08-12.
 
 For every atom carrying a UXLC ``<x>`` code -- every code, not just the note-
 surfacing seed the build reads (clc_collect.NOTED_CODES); issue UXLC-utils#25 wants the
@@ -24,10 +25,11 @@ to have no page at all -- fetch
 ``https://<host>/Notes/<name>/<name>.<ch>.<v>.<position>-<code>.html`` -- where
 ``<name>`` is the canonical UXLC book name (my_uxlc.book_basename; e.g. id
 "2Samuel" -> "Samuel_2"), the part that the build path historically got wrong --
-and write the HTML to the committed
-``in/UXLC-notes/<book_id>/<book_id>.<ch>.<v>.<position>-<code>.html``. A page
-already present locally is left alone and not re-fetched -- this run is resumable
-and re-runnable without re-hitting the host for pages already on hand.
+and store the complete HTML string under
+``uxlc/in/UXLC-notes/<book_id>.json``, keyed by
+``<book_id>.<ch>.<v>.<position>-<code>.html``. A page already present locally is
+left alone and not re-fetched -- this run is resumable and re-runnable without
+re-hitting the host for pages already on hand.
 
 (The pages reference detail images, e.g. ``.../images/.../2-Detail.jpg``; pulling
 those down can be added here later -- see the note in the loop.)
@@ -39,17 +41,23 @@ import sys
 import requests
 
 from mb_cmn import polite_download
-import mb_cmn.file_io as my_open
 import mb_cmn.bib_locales as tbn
 import uxlc_misc.my_uxlc as my_uxlc
 import clc.clc_collect as clc_collect
-import clc.clc_note_pages as clc_note_pages
+import clc.clc_note_storage as clc_note_storage
 import clc.clc_read as clc_read
 import uxlc_paths
 
 
 def _download_one(
-    session, book_id, ch, v, position, code, host=my_uxlc.UXLC_DOWNLOAD_HOST
+    session,
+    storage,
+    book_id,
+    ch,
+    v,
+    position,
+    code,
+    host=my_uxlc.UXLC_DOWNLOAD_HOST,
 ):
     """Fetch one note page and write it locally; return True if now present.
 
@@ -57,26 +65,24 @@ def _download_one(
     Returns False if the page is missing (404 -- the note predates the change log,
     or the host has none) or the request fails after retries.
     """
-    out_path = clc_note_pages.local_page_path(book_id, ch, v, position, code)
-    if out_path.exists():
+    if storage.has_page(book_id, ch, v, position, code):
         return True
     url = my_uxlc.note_page_url(book_id, ch, v, position, code, host)
     try:
         text = session.get_text(url, timeout=20, encoding="utf-8")
     except requests.RequestException:
         return False
-    _show_progress(out_path)
-    my_open.with_tmp_openw(out_path, {"newline": ""}, _write_callback, text)
+    storage.add_page(book_id, ch, v, position, code, text)
+    _show_progress(
+        storage.book_path(book_id),
+        clc_note_storage.note_filename(book_id, ch, v, position, code),
+    )
     # (Future) parse <img src> from `text` and download referenced detail images.
     return True
 
 
-def _write_callback(text, out_fp):
-    out_fp.write(text)
-
-
-def _show_progress(path):
-    print(path)
+def _show_progress(path, filename):
+    print(f"{path}: {filename}")
 
 
 def main():
@@ -95,6 +101,7 @@ def main():
     else:
         book_ids = tbn.ALL_BK39_IDS
     total_found = total_missing = 0
+    note_storage = clc_note_storage.NoteStorageOperation()
     with polite_download.PoliteDownloader(_NOTES_CONFIG) as session:
         for book_id in book_ids:
             book = clc_read.read_book(book_id)
@@ -102,7 +109,16 @@ def main():
             for ch, v, position, _atom, code in clc_collect.iter_noted_atoms(
                 book, codes=None
             ):
-                if _download_one(session, book_id, ch, v, position, code, args.host):
+                if _download_one(
+                    session,
+                    note_storage,
+                    book_id,
+                    ch,
+                    v,
+                    position,
+                    code,
+                    args.host,
+                ):
                     found += 1
                 else:
                     missing += 1

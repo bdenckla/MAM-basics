@@ -12,8 +12,8 @@ The file-count estimate is not a prediction of the timing improvement.
 | Phase | Scope | Status on 2026-09-10 |
 | --- | --- | --- |
 | 1 | Inventory and verification preparation | Complete; evidence and plan are in the Phase 1 commit identified below |
-| 2 | UXLC notes | Next task; implementation has not started in Phase 1 |
-| 3 | Historical snapshots | Pending Phase 2 |
+| 2 | UXLC notes | Complete in the Phase 2 branch head identified below |
+| 3 | Historical snapshots | Next task; created only after the Phase 2 commit |
 | 4 | Job records | Pending Phase 3 |
 | 5 | Combined verification | Pending Phase 4 |
 | 6 | Benchmark and close-out | Pending Phase 5 |
@@ -393,6 +393,98 @@ against the baseline evidence. Never interpret an empty old-layout discovery as
 successful preservation.
 
 ## Phase 2: UXLC note storage
+
+### Phase 2 execution receipt
+
+Phase 2 task: `01a08c7b-59b5-7e43-ab66-570e4c651ba0`. Its verified
+development checkout is
+`C:/Users/BenDe/.codex/worktrees/4378/MAM-basics`, on branch
+`codex-worktree-4378`. The checkout started clean and detached at the required
+Phase 1 commit `b080a01a87f29f2140144a1247c45c654d240224`; the branch did not
+exist elsewhere and was created at that commit before any edit. The required
+Phase 1 commit remained HEAD through implementation and the pre-staging checks.
+At the last receipt measurement, `main` and `origin/main` were both
+`d612f71c9794d8d480c7bbc3b18768d7d7003838`. The sibling MAM-private
+checkout was clean at `55252b834d28a6c241e75758aff5d15836621f56`.
+
+The implementation replaces the 477 raw HTML paths with 36 per-book JSON
+objects and adds `py/clc/clc_note_storage.py`. `NoteStorageOperation` is the
+single storage interface used by the reader, downloader, and ZIP verifier. One
+operation loads a book once. A successful addition atomically replaces the
+book JSON before updating the operation cache; an operation created afterward
+reads the new value. There is no process-global cache. Missing keys still
+produce `None` for `local_note_prose`, while malformed JSON, duplicate keys,
+non-object roots, invalid filenames, non-string page values, and unexpected
+storage entries fail.
+
+The immutable evidence file retained its compressed SHA-256
+`f04b2d9f0e60ed35794218c444bb88ea4ec5245302efcbe71c049d413d60c3fa`.
+The offline migration read every source byte string from the Git blob recorded
+by that evidence rather than from a network source. Production-code readback
+then verified the complete reconstructed path/key set, all 477 sizes and
+SHA-256 hashes, and all 477 `local_note_prose` strings. Every per-book object has
+sorted keys; subsequent additions use the same ordering and the repository's
+atomic temporary-file replacement helper.
+
+The downloader replay used a task-local copy of the complete committed corpus.
+Calling the real `_download_one` path for all 477 stored entries made zero
+requests. One simulated successful download added a CRLF-bearing non-ASCII HTML
+string, kept every unrelated entry unchanged, left sorted keys, and was visible
+to a fresh operation. Repeating the successful page through the writing
+operation and through the fresh operation made zero requests. Two simulated
+failed requests left the containing JSON bytes unchanged. Two reads through one
+operation invoked the book loader once. Six malformed/missing-storage cases
+had the required failure or missing-key result.
+
+The frozen `C:/Users/BenDe/Downloads/Notes.zip` was absent. No download or
+replacement-data refresh was attempted. The production ZIP verifier was instead
+run against the explicitly identified scratch replay archive
+`C:/Users/BenDe/.codex/worktrees/4378/MAM-basics/.novc/uxlc-note-storage-phase2-fxko1ywz/Notes-phase2-replay.zip`.
+That replay reported 477 `IDENTICAL` and zero `NO-PROSE-EXTRACTED`. This result
+exercises the verifier against the consolidated store; it is not the historical
+ZIP comparison.
+
+`py/main_clc.py all` rewrote the same 12 paths Phase 1 recorded. Every path,
+size, and SHA-256 matched the immutable evidence, and no generated file appeared
+in `git status`. The existing CLC tests passed 45 of 45. `py/check_all.py`
+reported all 7 checks passed. The full suite reported **989 passed, 5 skipped,
+65 subtests passed** in 121.72 seconds; the five skips remain the expected
+edition-transcription differences. The prose mark-order and Latin-diacritic
+hygiene selection passed 7 of 7 in 15.83 seconds. Python was 3.13.15 and Git was
+2.43.0.windows.1.
+
+Commands ran from the verified Phase 2 worktree. Commands that read sibling
+inputs used `REPOS_ROOT=C:/Users/BenDe/GitRepos`. The exact commands were:
+
+| Purpose | Command |
+| --- | --- |
+| Migrate committed blobs and verify before removing legacy paths | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/migrate_uxlc_note_storage_phase2.py` |
+| Verify corpus, downloader behavior, operation lifetime, and malformed storage | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_uxlc_note_storage_phase2.py` |
+| Exercise ZIP verifier with the scratch replay archive | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_notes_zip.py C:/Users/BenDe/.codex/worktrees/4378/MAM-basics/.novc/uxlc-note-storage-phase2-fxko1ywz/Notes-phase2-replay.zip` |
+| Regenerate CLC | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_clc.py all` |
+| Compare the 12 regenerated outputs with Phase 1 | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_worktree_file_consolidation_phase2_outputs.py` |
+| Run the existing CLC tests | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/clc_attribution_test.py py/tests/clc_collect_test.py py/tests/clc_dual_cant_test.py py/tests/clc_kq_test.py py/tests/clc_note_pages_test.py py/tests/clc_versification_test.py` |
+| Run all source and HTML checks | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py` |
+| Run the full suite | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider` |
+| Check changed prose and Latin-diacritic hygiene | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py` |
+| Measure the prospective tracked-file inventory | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/measure_worktree_file_consolidation_phase2_inventory.py` |
+
+The Phase 1 tree has 5,648 tracked files: the 5,646-file baseline plus the plan
+and compressed evidence. Phase 2 removes 477 legacy HTML files, adds 36 JSON
+files, and adds one support module. The resulting 5,208-file tree is a net
+reduction of 440 files from Phase 1 and 438 files from the original baseline.
+No published path, product layout, image collection, Wikisource input, format 1
+output, or Pages workflow changed.
+
+Unexpected findings were limited to the missing optional historical ZIP, the
+now-stale prose-lint explanation that classified the 36 captures by their old
+HTML container, and the sandbox's inability to write linked-worktree Git
+metadata or execute the shared interpreter without scoped elevation. The lint
+explanation and downloader host warning now describe the JSON storage. The
+execution environment used command-local `safe.directory` settings only; no
+global Git configuration changed.
+
+### Phase 2 authorized scope
 
 Replace `uxlc/in/UXLC-notes/<book>/<page>.html` with one JSON object per populated
 book at `uxlc/in/UXLC-notes/<book>.json`, mapping each existing HTML filename to
