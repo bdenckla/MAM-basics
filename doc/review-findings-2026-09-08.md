@@ -784,3 +784,19 @@ this section records only completed work and does not declare Wave 1 complete.
 |---|---|---|
 | 2026-09-09 | 14.4 / D2; fresh deployment check for 5.6 | Applied Ben's exact approved sentence to the live Claude skill, then copied the entire skill directory to the tracked review-worktree copy and live Codex copy. Both required whole-directory Git comparisons are empty; an independent SHA-256 inventory confirms identical bytes for all five files in each home. Only the approved opening sentence changed. The contextual permission and explicit MAS-page exception remain intact. The review-exchange correction about where permission already existed remains for Wave 1D. |
 | 2026-09-09 | Remaining Wave 1, Waves 2-4, and the separate editorial phase | Pending under the approved remediation plan. D2 does not complete the dated historical corrections, crop-provenance inventory, accepted-corrections section, technical remedies, or editorial work. |
+
+Wave 1B checkpoint, 2026-09-09, recorded by Codex under Ben's Step-5 approval. The rows below
+update the completed current-documentation items only. Wave 1C's historical corrections and
+Wave 1D's complete accepted-corrections section and disposition reconciliation remain pending.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 4 | Added the exact approved dated correction immediately after the maintenance runbook's old scope paragraph, linking the workspace roster and its setup policy. The current roster has six folders after `63ac5b84` removed `github-misc`; no roster or policy changed, and no maintenance ran. |
+| 2026-09-09 | 5.3 / N1 | Applied the exact named-referent correction in `cam1753/doc/reading-mam-simple.md`: codex-index-cam1753's copy was deleted. The historical equivalence figures and comparison rule are unchanged. |
+| 2026-09-09 | 5.4a / N2 | Changed the test docstring to say the argparse help formerly said the quoted text. The current help says `Stored release or MAM-basics revision`; the test's behavior is unchanged. Finding 5.4b remains assigned to Wave 4. |
+| 2026-09-09 | 5.5 / N4-N6 | Applied only the approved current fragments in `doc/dual-agent-review.md`, `CLAUDE.md`, and the `in/scan-pages/` license row. The dated programme wording is preserved. No procedure redesign or license grant changed. |
+| 2026-09-09 | 6.1-6.5; 6.8 / D8 and N9 | Updated current descriptions to the measured eleven deploy-root pages and nine MAS pages. The real `_authored_anchors()` walker returns 35; the comment now says 35 after the 2026-09-08 additions, with floor 25 and test behavior preserved. The historical 34 was true when written, as turn 5 confirms. Findings 6.6-6.7 remain for Wave 1C. |
+| 2026-09-09 | 9.1 | Removed the nonexistent retained source-hygiene test from the MAM-with-doc inventory. `git ls-files MAM-with-doc` gives `.gitattributes`, `.gitignore`, `LICENSE.md`, and `README.md`; license terms are unchanged. |
+| 2026-09-09 | 9.2 / P2 | Added `doc/post-stress-meteg-image-provenance.md` and linked it from the `gh-pages/img/` row. The inventory names exactly the six tracked crops and records unrecorded photograph sources and rights holders. Only the already-captioned Leningrad 1 Samuel 17:5 crop has F159A, column 3, line 8. The missing inventory is supplied; source and rights-holder identification remains deferred. All crop bytes and no-grant terms are unchanged. |
+| 2026-09-09 | 15.4 / N7, Misc-title sentence only | Applied `THE MISC TITLES MATCH THE PAGES' TITLES.` in `py/author_site/site_data.py`. The remaining survey/module editorial items are deferred to the separate editorial phase. |
+| 2026-09-09 | 16 / D6, Aleppo attribution only | Attributed the `aleppo/aleppo-wiki/` hand corrections to Ben Denckla exactly as approved. The withdrawn carry/hand-transcription sites and unrelated wording are unchanged; N8 and the accepted-corrections reconciliation remain assigned to later Wave 1 tasks. |

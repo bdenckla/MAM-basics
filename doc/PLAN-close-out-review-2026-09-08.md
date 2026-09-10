@@ -20,6 +20,11 @@ remains in force; the approved E items have a separate editorial phase after the
 phase passes. See Step 5 and the remediation plan's dated approval record for the current
 dispositions; earlier status entries remain historical.
 
+Status updated 2026-09-09 after Wave 1B: Step 6 is active; Waves 1A and 1B are complete.
+Wave 1C starts with the bounded evacuation-record and September 4 correction task described
+in the remediation plan's Wave 1B execution record. Wave 1 remains incomplete. The V6 stop
+and single integration after Wave 4 remain in force, including across intermediate archival.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -652,6 +657,30 @@ Wave 1A implementation commit recorded 2026-09-09: `d5616b8f`. The subsequent re
 commit provides the clean required source for the automatically created Wave 1B task.
 The successor uses the same saved worktree directly. The original task stops editing after
 handoff and remains available for Ben to archive; that archival does not trigger integration.
+
+Wave 1B completed 2026-09-09 by Codex task `01a0892f-1dac-7811-9662-8554324cbafc` in
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, starting clean at `85dcf63dc1a0aef83cca8cedbacc95365743f6f9`.
+The required back-merge reported `Already up to date.` V6 passed before and immediately after
+the merge, then after the suite: nine checkout and nine fresh-render pages, zero changed
+locations, unchanged pinned survey JSON. The existing gate and baseline were inspected and
+preserved. The remediation plan's Wave 1B record gives the evidence paths and exact commands.
+
+Wave 1B applied the approved current-documentation fragments, eleven/nine page counts,
+35-anchor comment with floor 25 unchanged, corrected MAM-with-doc inventory, Ben Denckla
+attribution, and dated maintenance-scope correction. P2 now has an individual six-crop
+inventory linked from DATA-LICENSES; source and rights-holder identification remains deferred,
+and no grant changed. Black left all six touched Python files unchanged; the canonical suite
+passed **987 tests, 5 skips, and 65 subtests in 108.36 seconds**. Only completed Wave 1B
+findings received disposition rows. No generated artifact, test behavior, or sibling checkout
+changed; no integration, push, or archival occurred.
+
+Wave 1 is not complete. The next task is Wave 1C1 on the same saved project with
+`environment.type = local`, for findings 5.1a/5.2 in the evacuation records and September 4
+review. The remaining historical corrections stay for subsequent Wave 1C work; Wave 1D owns
+the accepted-corrections append and complete reconciliation. The implementation hash and
+final checkpoint verification are recorded in a following local record commit. Creation of
+the successor waits for that clean checkpoint; the predecessor stops editing after dispatch.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

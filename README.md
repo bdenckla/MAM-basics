@@ -64,7 +64,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 ### Utilities
 
-- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes the ten deploy-root pages: `gh-pages/index.html`, `gh-pages/unicode-proposals.html`, and the eight `gh-pages/post-stress-meteg*.html` pages
+- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes the eleven deploy-root pages: `gh-pages/index.html`, `gh-pages/unicode-proposals.html`, and the nine `gh-pages/post-stress-meteg*.html` pages
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 - `main_repo_maintenance.py` — routine repo maintenance: clean `.novc/`, run `main_test.py`, run `main_0_mega.py`
 

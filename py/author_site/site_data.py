@@ -43,7 +43,7 @@ link reached a page whose only content was a pointer.  Both now name the generat
 directly, and no gist link survives on this page.  Everything else is document-index's,
 including its ordering, its parentheticals and its two lead-in sentences.
 
-THE MISC TITLES ARE THE PAGES' OWN.  They are copies of ``_TITLE`` in the matching
+THE MISC TITLES MATCH THE PAGES' TITLES.  They are copies of ``_TITLE`` in the matching
 ``py/author_misc/`` module, and ``py/tests/test_site_index_links.py`` fails if a copy drifts
 from its original.  Do not edit one here without editing the module -- and do not retype
 one: the two that survived the trim carry no Hebrew, but the modules' titles elsewhere in

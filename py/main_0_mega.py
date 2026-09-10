@@ -402,8 +402,8 @@ _STEPS = [
     StepRecord(
         "gen-site",
         _run_gen_site,
-        "writes the ten deploy-root pages: gh-pages/index.html,"
-        " gh-pages/unicode-proposals.html, and eight post-stress-meteg pages from the"
+        "writes the eleven deploy-root pages: gh-pages/index.html,"
+        " gh-pages/unicode-proposals.html, and nine post-stress-meteg pages from the"
         " tracked survey JSON",
     ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than

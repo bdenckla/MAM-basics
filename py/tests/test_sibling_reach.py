@@ -32,7 +32,7 @@ useless and gets deleted, so this one is an AST pass with three deliberate narro
    and ``../al-hatorah`` citation CLAUDE.md leaves standing on purpose.
 2. A CWD-RELATIVE LITERAL IS CONSIDERED ONLY WHEN IT STARTS WITH ``../``.  Prose
    mentions a sibling mid-sentence (``argparse`` help in ``subcommands/diff_mpp.py``
-   says "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
+   formerly said "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
    deliberately misses is a path built as ``f"{x}/../MAM-parsed"``, which nothing here
    writes.
 3. THE VOCABULARY IS DERIVED, NOT DECLARED.  ``../img/``, ``../svg/``, ``../misc/``

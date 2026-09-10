@@ -27,6 +27,12 @@ clone belongs merely because it exists, and do not infer that a missing unarchiv
 should be restored. The roster-driven files formerly under `misc/linux-sh/` were retired on
 2026-09-08 because their twelve-name lists contradicted the canonical declaration.
 
+Correction 2026-09-09: GitRepos setup follows the folders listed in
+[all-repos.code-workspace](../all-repos.code-workspace), as specified by
+`gitrepos_setup_rule` in [in/repo_maintenance_policy.json](../in/repo_maintenance_policy.json).
+Do not enumerate GitHub repositories and subtract exclusion lists, and do not add gist clones.
+The earlier scope paragraph's subtraction and gist instructions are superseded.
+
 After the mechanical repository actions and the `doc/` sweep, inspect completed task artifacts
 under `C:/Users/BenDe/Documents/Codex`. Preserve
 `C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task

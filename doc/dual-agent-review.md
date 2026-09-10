@@ -477,7 +477,7 @@ Four reasons the rename was rejected, none of which the growing count changes.
 A Codex agent that reads MAM-private and then writes `doc/codex-review-findings-<date>.md` into
 MAM-basics publishes private material permanently, and no mechanism prevents it.
 `py/repo_util/report_destination.py`'s guard makes it mechanically impossible for
-`main_repo_util.py` to write a private-covering report into a public tree, but that guard's own
+`main_repo_util.py` to write a private-covering report into a public tree, but that guard's
 docstring names what it deliberately does not cover: "what a human or an agent later types into a
 `doc/` file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
 

@@ -114,7 +114,7 @@ have unrelated refresh rhythms, and nothing downstream reparses when the introdu
 
 | File under `in/mam-ws-intro/` | Wikisource subpage |
 |---|---|
-| `root.mediawiki` | the introduction's own root page |
+| `root.mediawiki` | the introduction's root page |
 | `summary.mediawiki` | `/תקציר` |
 | `ch1` … `ch5.mediawiki` | `/פרק א` … `/פרק ה` |
 | `appendices.mediawiki` | `/נספחים` — the sigil roster `doc/sigil-decoding.md` leans on |

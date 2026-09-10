@@ -7,9 +7,9 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write the ten published pages at the deploy root:
+                Write the eleven published pages at the deploy root:
                 gh-pages/index.html, gh-pages/unicode-proposals.html, and the
-                eight gh-pages/post-stress-meteg*.html pages.
+                nine gh-pages/post-stress-meteg*.html pages.
                 --trust-surveys lets the post-stress pages read the tracked
                 out/accgram/post-stress-meteg.json instead of recomputing a
                 survey that needs the MAM-private clone; only main_0_mega.py

@@ -1,6 +1,6 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; Wave 1A complete, Wave 1B next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+State: live 2026-09-09; Waves 1A-1B complete, Wave 1C next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
 
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
@@ -681,6 +681,91 @@ Wave 1B uses the same saved worktree directly and starts from this implementatio
 ancestor. The final handoff reply and task creation result identify that source head and
 the successor task. No remaining decision blocks Wave 1B; later editorial output-contract
 preparation remains assigned to the separate editorial phase.
+
+### Wave 1B execution record, 2026-09-09
+
+Codex task `01a0892f-1dac-7811-9662-8554324cbafc` completed the approved current-documentation
+corrections and P2 inventory under Ben's Step-5 decision. The verified checkout was
+**C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08**, branch
+`codex-review-2026-09-08`, clean at required source
+`85dcf63dc1a0aef83cca8cedbacc95365743f6f9`. The required `git merge --no-edit main` reported
+`Already up to date.`; the source HEAD therefore remained unchanged.
+
+Before the back-merge, Codex inspected the existing V6 script and immutable manifest. The
+script's SHA-256 matched the Wave 1A record, and the gate verified every baseline file against
+the fixed `c2f238f2` Git blobs. The earlier deliberate failure proofs remain applicable; no
+baseline or gate code changed. Actual V6 checks all passed for nine checkout pages and nine
+freshly rendered pages, with zero changed locations and unchanged pinned survey JSON:
+
+1. Before merge: `v6-runs/20260910T024255Z-wave1b-before-merge-c4fc1a74/`.
+2. Immediately after merge: `v6-runs/20260910T024313Z-wave1b-after-merge-ddfad623/`.
+3. Immediately after the suite: `v6-runs/20260910T025056Z-wave1b-after-suite-c2cf23c6/`.
+
+These evidence paths are under the worktree's `.novc/review-remediation-2026-09-08/`.
+Each directory records the actual input reads, hashes, imported worktree modules, complete
+output hashes, and comparison result. The invocation used the absolute primary interpreter
+with `-B`, `v6_gate_wave1_01a0891a.py check --label <named-check>`. No real V6 stop occurred.
+
+`measure_wave1b_01a0892f.py` wrote `wave1b-01a0892f-measurements.json` in the same scratch
+directory. Re-establish from the named checkout using:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/measure_wave1b_01a0892f.py
+```
+
+The first report is preserved; later measurements use timestamped filenames rather than
+overwrite the recorded evidence. At `85dcf63d`, the tracked deploy root had eleven HTML
+pages, including nine MAS pages. The site's real `_authored_anchors()` walker returned 35,
+with floor 25. MAM-with-doc retained `.gitattributes`, `.gitignore`, `LICENSE.md`, and
+`README.md`. The crop inventory matched all six tracked files and their recorded captions.
+The workspace roster now had six entries: `63ac5b841ba7896acff8a5bd4c7a248d5609478c` removed
+`github-misc` after the review's seven-folder measurement. The workspace and policy were read
+together; neither changed and no maintenance operation ran.
+
+Changed paths, all relative to the verified checkout:
+
+| Paths | Completed scope |
+|---|---|
+| `README.md`; `DATA-LICENSES.md`; `py/main_authored.py`; `py/main_0_mega.py`; `py/check_html_syntax_and_sanity.py` | Findings 6.1-6.5: current eleven/nine wording. DATA-LICENSES also has finding 9.1's corrected retained-file inventory, N6's exact phrase, D6's Ben Denckla attribution, and P2's inventory link. |
+| `CLAUDE.md`; `cam1753/doc/reading-mam-simple.md`; `doc/dual-agent-review.md`; `py/tests/test_sibling_reach.py`; `py/author_site/site_data.py`; `py/tests/test_site_index_links.py` | Exact N1/N2/N4/N5/N7/N9 fragments and D8's 35-anchor comment; floor 25 preserved. |
+| `doc/PLAN-repo-maintenance-across-GitRepos.md` | Finding 4's exact dated correction immediately after the old scope paragraph, with links to the policy and workspace. |
+| `doc/post-stress-meteg-image-provenance.md` | P2's six-file inventory; photograph sources and rights holders unrecorded, with only the already-captioned F159A/column 3/line 8 location. Source identification remains deferred. |
+| `doc/review-findings-2026-09-08.md`; `doc/PLAN-remediate-review-findings-2026-09-08.md`; `doc/PLAN-close-out-review-2026-09-08.md` | Dated dispositions only for completed Wave 1B work and execution/checkpoint records. |
+
+Black at defaults left all six touched Python files unchanged. The scratch
+`verify_wave1b_01a0892f.py` compared Python ASTs against the source commit: only docstrings and
+the approved `gen-site` description differ. The same check verified the allowed changed paths,
+unchanged license terms, unchanged crop hashes, exact inventory membership, unknown-source
+fields, the sole captioned folio, and changed-line whitespace. This is disposable verification;
+no test was added or changed in behavior. D2's three deployed skill homes were preserved.
+
+The canonical suite ran with `REPOS_ROOT=C:/Users/BenDe/GitRepos` in the verified worktree:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B py/main_test.py -q -p no:cacheprovider
+```
+
+Result: **987 passed, 5 skipped, 65 subtests passed in 108.36 seconds**; the wrapper's elapsed
+time was 109.32 seconds. The complete log is `wave1b-01a0892f-suite.log`; invocation, cwd,
+environment, HEAD, exit code, and elapsed time are in `wave1b-01a0892f-suite.json`. Both are
+under the scratch directory above. The new provenance note was staged before the suite so the
+existing tracked-prose lint included it. V6 passed immediately afterward.
+
+No generated page, corpus, survey JSON, image, generator behavior, test behavior, license grant,
+or sibling checkout was changed by Wave 1B. No private research, source refresh, survey
+regeneration, mega, issue communication, cleanup, integration, push, or archival ran. E6 and
+all other E items remain assigned to the separate editorial phase. Wave 1 is not complete.
+
+**Next execution boundary:** Wave 1C begins with a smaller Wave 1C1 task for findings 5.1a
+and 5.2: the evacuation records and September 4 review. Its targets are
+`doc/PLAN-evacuate-the-rest-of-three-repos.md`, `doc/review-findings-2026-09-04.md`,
+`doc/PLAN-evacuate-public-repos-programme.md`, and `doc/PLAN-evacuate-five-MAM-products.md`,
+plus the required disposition and plan records. The three-repos plan's subtest correction
+uses D4's command-unrecorded/cause-unknown limit. Remaining September 7 and MAS-plan historical
+corrections, N8, and the standards docstring correction stay for a subsequent Wave 1C task,
+split again if needed. Wave 1D still owns the September 8 accepted-corrections append and
+complete disposition reconciliation. Ben's automatic handoff authorization applies after
+the verified clean checkpoint; integration and push occur once after Wave 4.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
