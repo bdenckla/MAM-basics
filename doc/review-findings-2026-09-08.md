@@ -1,6 +1,11 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; Waves 3-4 remain incomplete.
+State: remediation in progress 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 remain incomplete.
+
+Status updated by Codex on 2026-09-10 after Wave 3 technical verification: finding
+13.3's revised technical remedy is complete. Source and matching differentials, normal
+generation, the final suite and V6 pass. The separate approved editorial phase follows
+the clean local technical checkpoint; all earlier findings and corrections are retained.
 
 Status updated by Codex on 2026-09-10 after Wave 3 preparation: finding 13.3 now has
 complete snapshot-form evidence and a displayed-route trace. Technical implementation
@@ -1021,6 +1026,42 @@ The fresh technical implementation task must complete the full revised remedy an
 verification before finding 13.3 can be marked fixed. All E items remain in the separate
 editorial phase. Earlier dispositions and the accepted-corrections section below remain
 unchanged. No integration, push, issue action or automatic archival occurred.
+
+### Wave 3 technical disposition, 2026-09-10
+
+The preceding current State is preserved here as a historical preparation checkpoint:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; Waves 3-4 remain incomplete.
+
+Recorded by Codex task `01a08b34-edc5-74b3-9c56-b10d169ae862`, after required source
+`67d180ae4aca456c135862c4f19b391c80851f3d` and back-merge
+`c36f5baa3eed464877f0b0c9ac34b9b6dedf268a` in the exact review worktree.
+
+The complete revised technical remedy for finding 13.3 is implemented and its
+source/display/annotation differentials pass. Matching selects first `rep` or first
+unannotated `fva`, retaining the necessary VARIKA removal and gray-maqaf conversion.
+The display helper retains source marks and only converts gray maqaf; both fallback sites select
+unannotated source text. Annotation validation covers complete output from every MAS
+page and uses independent source forms to preserve legitimate upper/lower dots and
+VARIKA. Current-MAM and BHS-labelled sources remain distinct.
+
+The complete input-domain proof and complete existing-survey differential preserve
+matching decisions, every serialized survey field and the original JSON bytes.
+Raw classifier inputs and the existing classifier/record/summary function bodies are
+unchanged. No private survey was regenerated. Every actual V6 check passed, and
+normal authored generation preserved all 1,074 HTML files in the actual saved inventory.
+The independent serialized-mark check found and verified a correction to source-location
+reporting after gray-maqaf conversion; its synthetic failure remains recorded.
+The remediation plan's technical record names all verification evidence. Final suite,
+disposition and local commit evidence follow there before the clean handoff.
+
+E1-E8 remain for their separate fresh editorial task, with its output contract resolved
+before HTML edits. Wave 4 and the single final integration remain pending. All prior
+dated dispositions and the complete accepted-corrections section below are preserved.
+
+| Date | Finding | Completed technical disposition |
+|---|---|---|
+| 2026-09-10 | 13.3 | The revised source-selection, mark-preservation and annotation-validation remedy is complete. Exhaustive matching and serialized-display differentials pass; all survey fields, JSON bytes and 1,074 HTML files remain unchanged. The final canonical suite passed 988 tests, 5 skips and 65 subtests in 109.92 seconds; V6 passed immediately afterward. The remediation plan's Wave 3 technical record preserves commands, source hashes, the synthetic diagnostic failure and its verified correction, full logs and local checkpoint evidence. E1-E8 remain separate. |
 
 ## Corrections accepted in the review exchange
 

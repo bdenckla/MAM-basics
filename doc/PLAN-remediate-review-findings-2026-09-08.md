@@ -1,6 +1,12 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 pending; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 after Wave 3 technical verification: finding 13.3's revised
+technical remedy is complete. Full-domain matching, serialized mark preservation,
+annotation validation, normal generation and the final suite pass. The separate fresh
+editorial task prepares its output contract under the existing E1-E8 approval after
+the clean local checkpoint. Earlier status entries remain historical.
 
 Status updated 2026-09-10 after Wave 3 preparation: the complete snapshot-form
 differential and displayed-form trace are recorded below. The matching-only VARIKA
@@ -1890,6 +1896,187 @@ technical phase passes and is committed. P2 source/rights-holder identification 
 deferred, and the 415/416 scratch count remains unverified. There is no new approval
 request in this preparation record. Integration and push remain scheduled once, after
 final Wave 4.
+
+### Wave 3 technical implementation record, 2026-09-10
+
+The preceding current State is preserved here as a historical preparation checkpoint:
+
+> State: live 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; technical unchanged-HTML condition retained.
+
+Codex task `01a08b34-edc5-74b3-9c56-b10d169ae862` verified the exact checkout
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`67d180ae4aca456c135862c4f19b391c80851f3d`. The required back-merge produced
+`c36f5baa3eed464877f0b0c9ac34b9b6dedf268a`, with second parent
+`5e61a2d1b5af1803ec4390a411bcbcf1b48bff86`. Incoming changes were confined to
+`doc/meteg-after-silluq-koren-lookup-candidates.md` and
+`in/meteg_after_silluq_koren_readings.json`. V6 passed before and immediately after
+the merge. No primary integration or push occurred.
+
+The technical implementation, source differential, complete existing-survey
+comparison, fallback checks and normal generation have passed. Final suite and local
+commit evidence are recorded below after completion. Ben's original conditional
+approval remains in force; E1-E8 have not been applied.
+
+The technical source changes are:
+
+1. `py/accgram/post_stress_meteg.py` selects the snapshot's first `rep`, otherwise its
+   first unannotated `fva`, through a lazy source index. The index checks the complete
+   book-file set, reports source file/JSON pointers, and refuses ambiguous raw-to-selected
+   mappings or an annotated `fva` lacking `rep`. The classifier still receives raw
+   `fva`; record construction, candidate selection, both matching callers, the attachment
+   logic and summary construction retain their executable bodies. Matching retains
+   VARIKA removal and gray-maqaf conversion; display retains only gray-maqaf conversion.
+   An actual display fallback requires the
+   snapshot to be available; ordinary trusted rendering, whose displayed records all
+   have MAM forms, needs no private source.
+2. `py/author_site/post_stress_meteg.py` preserves all selected display marks, with only
+   the existing gray-maqaf conversion. Both `mam_form or chanted_word` sites now select
+   the snapshot's unannotated form when the MAM form is absent. Current-MAM selection,
+   the dual-cantillation routes, the BHS-labelled UXLC form with its WLC equality check,
+   and the authored 2 Chronicles interpretation constants remain in place.
+3. `py/author_site/post_stress_meteg_annotations.py` validates complete output pages,
+   including prose, cells, literals, fallback forms, inline compositions and attributes.
+   MASORA CIRCLE or UPPER DOT needs an exact independently sourced Hebrew form, rather
+   than failing because of the codepoint alone. Current-MAM forms from all cantillation
+   projections and the explicitly supplied comparison source provide that evidence.
+   Every expected MAM book input is required. LOWER DOT and VARIKA remain intact.
+   Survey pointers and Python literal lines locate rejected inputs; those inputs do not
+   authorize themselves. The validator reports output path, line, column, context and
+   Unicode names, and never repairs displayed text. All normal claim checks remain active.
+4. `py/tests/test_post_stress_meteg_annotations.py` adds a mechanical check of every
+   actual MAS HTML page through that source/context validator. The existing MAS
+   terminology/membership lint remains active. No example-based verse test was added.
+
+Evidence is under
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/wave3-01a08b34/`.
+Every command below uses the absolute interpreter
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, with the working
+directory at the exact review worktree. Run the named scratch scripts with `-B`.
+The preparation evidence under `wave3-01a08b1f/` was read and preserved; its source
+trace and VARIKA-necessity probe were not repeated.
+
+1. **Before changing matching:** `prove_matching_invariance.py` produced
+   `matching-invariance.json`. All 263,320 prepared source records have identical old
+   and proposed matching strings. All 525,637 usable entries in the actual strand/qamats
+   projections belong to that verified domain. Every one of 789,960 settlement
+   comparisons, across the full snapshot and all current-MAM projections, agrees.
+   Reattaching all 786 complete serialized attachment records within copies of the
+   complete survey preserves every persisted field and the complete survey tree;
+   there are no differences against the existing survey either.
+2. **Why that establishes complete-survey invariance without regeneration:** the only
+   substituted value is the matching helper's string result. `_settle` and
+   `_next_mam_context` are its only callers. Their raw inputs originate in the covered
+   first-`fva` domain, including template records and next-word contexts. Equality of
+   that value for every possible input preserves every candidate-subset and context
+   decision. Raw classifier inputs, record construction and summary logic are unchanged.
+   This is a complete input-domain substitution proof plus a differential of the complete
+   existing serialized survey; it is **not** a regenerated new survey. No classifier,
+   `_scan`, `_one_verse` or `build_survey` was run. The first scratch comparison reached
+   its final report and failed because its walker handled lists but not tuples returned
+   by the existing attachment code; the corrected walker completed the comparison.
+3. **Actual implementation:** `verify_implementation.py` compares against the preserved
+   pre-edit module `baseline_post_stress_meteg.py`. Its AST comparison confirms that
+   the only changed existing executable function body in the survey module is the
+   matching helper. Actual source selection and all 789,960 settlement comparisons
+   pass; all 786 serialized attachment records and the complete survey remain equal.
+   All 263,320 selected source records and 124,451 distinct current-MAM forms pass the
+   display differential. All 784 eligible serialized case fallbacks and all six actual
+   oleh-record fallbacks equal independently selected source forms. The report is
+   `implementation-verification.json`; the complete compared survey copy is
+   `implemented-existing-survey.json`.
+4. **Every display route:** `implementation-display-trace.json` preserves the 1,017
+   helper calls, the direct `_mam_post_silluq_statement`, `_post_silluq_footnote`,
+   `_type_2_type_3_footnote` and `_para` calls, their source lines and output pages.
+   The helper's nine per-page counts equal preparation. Complete-page validation
+   checks 41/36/468/20/359/68/2/5/30 Hebrew tokens respectively in the nine pages'
+   declared order; these include attribute tokens. All fresh page bytes equal V6.
+5. **Independent serialized-text differential:** `verify_serialized_marks.py` passes
+   each distinct selected snapshot/current-MAM form through the real helper and HTML
+   serializer, decodes the result with `HTMLParser`, and compares exact text against
+   the source with only gray-maqaf conversion. All 128,823 forms agree, including 570
+   distinct VARIKA forms, 17 upper-dot forms and one lower-dot form. Every one of
+   67,654 distinct annotated snapshot forms is rejected through actual helper markup,
+   through inline markup split at every character, and through an attribute. Each
+   diagnostic includes the original source pointer. All nine deliberately incomplete
+   page sets are rejected. `serialized-mark-verification.json` records the results.
+6. **A defect found by that synthetic check:** the initial diagnostic lookup omitted
+   the original source pointer when the gray-maqaf conversion changed a raw form.
+   `serialized-mark-source-location-failure.json` preserves the failing synthetic input
+   and diagnostic. Source-location indexing now recognizes both the raw and permitted
+   display spelling. The full serialized-text/annotation check then passed. These were
+   deliberately synthetic annotation checks, not changed public output or V6 failures.
+7. **Normal generation:** `run_site_and_suite.py site` saved the complete bytes and
+   actual membership of all 1,074 HTML files under non-hidden worktree directories,
+   including untracked HTML, before running
+   `py/main_authored.py gen-site --trust-surveys`. Both runs preserved all 1,074 files,
+   totaling 18,091,494 bytes, and all membership. This includes the index and Unicode
+   proposals. Hidden scratch/metadata and `__pycache__` directories are excluded from
+   this inventory. Final normal-generation output is `20260910T123046Z-site.txt`;
+   `all-html-before-manifest.json` and `all-html-after-comparison.json` name the saved
+   bytes and report zero differences. The earlier `20260910T122506Z-site.txt` and its
+   timestamped command/manifest/comparison records remain preserved.
+
+The tracked survey's SHA256 remains
+`9b2ebdf41ab1a211a728b2f025fcbc101f8c33338007f9ea2fbe0b50c775fad2`.
+All 39 private snapshot hashes still equal preparation and the technical-source pin
+`e21306165707f9500ea19540d04af3e1918b563d`. No private source was regenerated,
+refreshed, edited or published. V6's `actual-read-inputs.json` and
+`worktree-module-hashes.json` preserve each real render's input/source hashes.
+
+The immutable V6 script remains
+`.novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py`, SHA256
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`, with fixed
+baseline `c2f238f2c253d7b00b2d22dc262fe95c81a82401`. Run it with the absolute
+interpreter, `-B`, then the script and `check --label <unique-label>`.
+Passing evidence under `.novc/review-remediation-2026-09-08/v6-runs/` includes:
+
+1. Entry: `20260910T120554Z-wave3-entry-01a08b34-c83e5a99/`.
+2. After merge: `20260910T120911Z-wave3-after-backmerge-01a08b34-2b0902d8/`.
+3. Before source edits: `20260910T121317Z-wave3-after-invariance-proof-01a08b34-29706d28/`.
+4. First technical render: `20260910T121852Z-wave3-first-technical-render-01a08b34-1e20137d/`.
+5. Complete display trace: `20260910T122342Z-wave3-after-implementation-trace-01a08b34-4c3b8957/`.
+6. First normal generation: `20260910T122517Z-wave3-after-site-01a08b34-7e66b997/`.
+7. First suite: `20260910T122753Z-wave3-after-suite-01a08b34-bd4b56d1/`.
+8. Final serialized-mark check: `20260910T122952Z-wave3-after-serialized-mark-check-01a08b34-7f061f6c/`.
+9. Final normal generation: `20260910T123053Z-wave3-after-site-01a08b34-29f7f3bf/`.
+
+Every actual V6 check passed; no real stop occurred and no deliberate V6 gate probe
+was repeated. The first canonical suite passed **988 tests, 5 skips and 65 subtests
+in 117.23 seconds**, before the diagnostic-index correction; full output is
+`20260910T122555Z-suite.txt`. The one-test increase is the new mechanical annotation
+lint. Final verification and commit evidence follow below.
+
+Final technical verification, recorded 2026-09-10: after the diagnostic correction,
+all four changed Python files passed Black at its defaults. The new source and lint
+files were staged before the final canonical suite so tracked-source checks included
+them. `run_site_and_suite.py suite` ran
+`py/main_test.py -q -p no:cacheprovider` with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`: **988 passed, 5 skipped, 65 subtests passed in
+109.92 seconds**. Full output is `20260910T123821Z-suite.txt`, with exact invocation,
+working directory, starting HEAD and timing in `20260910T123821Z-suite-command.json`.
+V6 passed immediately afterward at
+`v6-runs/20260910T124012Z-wave3-after-suite-01a08b34-af6d298d/`.
+
+`check_final_scope.py` and `final-scope.json` verify the seven changed paths, all
+prior dated record lines, the complete accepted-corrections section, standard Hebrew
+mark order and `git diff --check`. V1 has nine matching declared/tracked/actual MAS
+pages, 11 deploy-root HTML pages and 16 direct plan files with State lines. V3 preserves
+both Holman pages byte for byte: 578 suppressed-table cells and 724 active-table cells,
+with zero Hebrew-cell RTL omissions. The vendoring policy gives none of the changed
+Python paths a source-package copy obligation. All 39 snapshot hashes and V6's script
+hash still match their recorded pins. No real stop record exists.
+
+Wave 3 technical implementation is complete. The local commit and final pre-commit
+V6 evidence are recorded in the following checkpoint append.
+
+After the technical work and records are committed cleanly, Ben's existing automatic
+handoff instruction starts a separate fresh editorial task. That task resolves and
+records the editorial output contract against the existing E1-E8 approval before any
+HTML edit. It preserves V6's technical baseline and evidence. Wave 3 editorial work
+and Wave 4 remain pending; P2 source/rights-holder identification and the unverified
+415/416 scratch count remain deferred. No intermediate integration, push, issue
+action or automatic archival is authorized by this technical checkpoint.
 
 ### Wave 3 editorial phase: approved items and output-contract preparation
 

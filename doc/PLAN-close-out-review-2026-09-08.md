@@ -48,6 +48,12 @@ matching-necessity probe and displayed-route trace are complete. Wave 3 technica
 implementation remains pending and will use a fresh task after the clean local
 preparation checkpoint. The remediation plan records the precise evidence and its limits.
 
+Status updated 2026-09-10 after Wave 3 technical verification: the technical remedy is
+complete, with 988 tests, 5 skips and 65 subtests passing. Every actual V6 check passed
+and all 1,074 generated/public HTML files remain unchanged. The separate approved
+editorial phase prepares its output contract after the clean local technical checkpoint;
+Wave 4 and the single final integration remain pending.
+
 Status updated 2026-09-10 during Wave 2: whitespace and existing page-membership
 lint repairs are verified for a local partial checkpoint. Holman RTL is implemented
 and verified as a working-tree draft, but a pre-existing generated background-link
@@ -1035,6 +1041,44 @@ Executed 2026-09-10: preparation commit
 V6 passed immediately before the commit. The following record-only commit preserves
 the hash and becomes the required clean source for the fresh technical implementation
 task. The final response and task-creation result identify the exact successor.
+
+Wave 3 technical implementation, recorded 2026-09-10 by Codex task
+`01a08b34-edc5-74b3-9c56-b10d169ae862`: the exact review worktree and branch were
+clean at required source `67d180ae4aca456c135862c4f19b391c80851f3d`.
+Back-merge `c36f5baa3eed464877f0b0c9ac34b9b6dedf268a` incorporated main
+`5e61a2d1b5af1803ec4390a411bcbcf1b48bff86`; V6 passed before and after the merge.
+The source selection, matching-only VARIKA transformation, both display fallbacks,
+mark-preserving helper and all-page source/context annotation validator are implemented.
+The complete input-domain substitution proof and comparison of the complete existing
+survey passed before matching changed; the actual implementation passed the same
+full-domain comparison. No private survey or classifier was run.
+
+The independent serialized-text check preserves every selected mark and detects
+annotated forms through cells, inline markup and attributes. Its synthetic source-location
+failure exposed the need to index the permitted gray-maqaf display spelling; the corrected
+diagnostics passed the full check. Every real V6 check passed. Normal authored generation
+preserved all 1,074 saved HTML files in bytes and membership. The first suite passed
+988 tests, 5 skips and 65 subtests in 117.23 seconds; final verification follows the
+diagnostic correction. The remediation plan's technical record preserves the complete
+commands, hashes, differential reports, failure evidence, full output and V6 paths.
+
+Only the bounded source/validation files, the new mechanical annotation lint and these
+three progress records change. E1-E8 are still approved for a separate fresh editorial
+task. Resolve and record that task's output contract before HTML changes, retaining the
+technical V6 baseline. Finish final verification and the local clean checkpoint before
+dispatch. Integration and push remain scheduled once after final Wave 4; no automatic
+archival occurs.
+
+Final Wave 3 technical verification, recorded 2026-09-10: the final canonical suite
+after the diagnostic correction passed **988 tests, 5 skips and 65 subtests in
+109.92 seconds**. The full log is `wave3-01a08b34/20260910T123821Z-suite.txt` under
+the remediation scratch root; V6 passed immediately afterward at
+`v6-runs/20260910T124012Z-wave3-after-suite-01a08b34-af6d298d/`.
+Black, V1/V3, mark order, historical-line preservation, accepted-corrections preservation,
+source hashes, copy obligations and `git diff --check` pass. The remediation plan's
+technical record names all seven paths and complete evidence. The technical phase is
+complete; its local commit and final pre-commit gate are recorded in the checkpoint
+append before dispatch.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

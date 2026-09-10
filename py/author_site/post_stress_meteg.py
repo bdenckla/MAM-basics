@@ -87,6 +87,7 @@ from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
+from author_site import post_stress_meteg_annotations
 from mb_author import author
 from mb_cmn import paths
 from mb_cmn import provenance
@@ -572,16 +573,32 @@ def gen_html_files(
             build_next_conjunctive_body(survey),
         ),
     )
-    _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
+    assert_no_phonetic_mam_annotations(out_paths, survey)
     return out_paths
 
 
-def _assert_no_phonetic_mam_annotations_in_lacks_mas_page(path_string: str) -> None:
-    """Prevent Phonetic MAM's analysis-only marks from reaching the reader page."""
-    forbidden = {chr(code_point) for code_point in psm._PHONETIC_MAM_ANNOTATIONS}
-    path = Path(path_string)
-    present = forbidden & set(path.read_text(encoding="utf-8"))
-    assert not present, (path, present)
+def assert_no_phonetic_mam_annotations(page_paths, survey):
+    """Validate every complete page against current MAM and the comparison source."""
+    expected = {
+        value
+        for name, value in vars(site_data).items()
+        if name.startswith("POST_STRESS_METEG") and name.endswith("_FNAME")
+    }
+    if (
+        len(page_paths) != len(expected)
+        or {Path(path).name for path in page_paths} != expected
+    ):
+        raise ValueError("MAS annotation validation requires every declared page")
+    bhs_form = dict(_post_silluq_comparison(survey))["BHS"]
+    return post_stress_meteg_annotations.validate_pages(
+        page_paths,
+        survey,
+        Path(__file__),
+        extra_sources={
+            f"{paths.in_dir() / 'UXLC-39'} {_POST_SILLUQ_VERSE}; BHS-labelled form, "
+            "asserted equal to WLC 4.22": bhs_form,
+        },
+    )
 
 
 def _write_page(path: Path, title: str, body: list) -> str:
@@ -1299,7 +1316,7 @@ def _spelled(count: int) -> str:
 
 def _hebrew_cell(form: str | None) -> tuple:
     """A pointed reader-facing Hebrew form wrapped as an hbo run for an RTL table cell."""
-    return wrap_hebrew_runs(psm._as_mam_would_write_it(form or ""))
+    return wrap_hebrew_runs((form or "").replace(psm.hpu.NU_GMAQ, psm.MAQAF))
 
 
 def _ref_link(bcv: str, text: str | None = None) -> object:
@@ -2046,7 +2063,7 @@ def _case_chanted_word_cell(record: dict) -> tuple:
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
-        record["mam_form"] or record["chanted_word"],
+        record["mam_form"] or psm.snapshot_unannotated_form(record["chanted_word"]),
         next_word,
         record.get("intervening_mam_punctuation", ()),
     )
@@ -2054,7 +2071,9 @@ def _case_chanted_word_cell(record: dict) -> tuple:
 
 def _oleh_chanted_word_cell(record: dict) -> tuple:
     """The oleh context, extending into the next chanted word only for a yored there."""
-    current_form = record["mam_form"] or record["chanted_word"]
+    current_form = record["mam_form"] or psm.snapshot_unannotated_form(
+        record["chanted_word"]
+    )
     if ha.MER in current_form:
         return _hebrew_cell(current_form)
     next_word = record["next_mam_form"]

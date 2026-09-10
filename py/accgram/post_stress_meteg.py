@@ -84,6 +84,7 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter
+from functools import cache
 from pathlib import Path
 
 from accgram import maqaf_nonfinal_accents as mna
@@ -2352,25 +2353,73 @@ def _fold_qamats_qatan(key: str) -> str:
     return key.replace(hpo.QAMATS_Q, hpo.QAMATS)
 
 
-# The marks Phonetic MAM adds that MAM's text does not have: a masora circle where it has
-# resolved a sheva, an upper dot on a dagesh it takes as xazaq, and a varika where it reads an
-# implicit xataf.  Dropped only to ask whether a candidate is the very chanted word the
-# snapshot has -- never to build a displayed form, which is always MAM's.  U+05C5 goes with
-# U+05C4 because the two puncta are one notation; a chanted word with a genuine extraordinary
-# point simply fails this test and is settled by the test after it.
-_PHONETIC_MAM_ANNOTATIONS = str.maketrans(
-    {
-        hpu.MCIRC: None,
-        hpu.UPDOT: None,
-        hpu.LODOT: None,
-        hpo.VARIKA: None,
-        hpu.NU_GMAQ: MAQAF,
-    }
-)
+@cache
+def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
+    """Index first fva forms to their selected snapshot spelling and source locations.
+
+    Matching and a displayed fallback need the snapshot's first rep, or its first
+    unannotated fva. The raw classifier inputs and serialized survey stay intact.
+    This lazy lookup requires the snapshot only for matching or an actual fallback;
+    rendering a survey whose displayed records all have MAM forms needs no private input.
+    """
+    directory = paths.require_al_hatorah_phonetic_dir()
+    files = sorted(directory.glob("*.json"))
+    if {path.stem for path in files} != set(_bb_of_stem()):
+        raise SurveyProblem(f"{directory}: incomplete or unexpected snapshot file set")
+    forms = {}
+
+    def visit(node: object, location: str) -> None:
+        if isinstance(node, dict):
+            if node.get("fva"):
+                raw = node["fva"].split(" ")[0]
+                field = "rep" if node.get("rep") else "fva"
+                selected = node[field].split(" ")[0]
+                source = f"{location}/{field} (first form)"
+                if field == "fva" and (
+                    hpo.SHEVA + hpu.MCIRC in selected
+                    or hpo.DAGOMOSD + hpu.UPDOT in selected
+                ):
+                    raise SurveyProblem(f"{source}: annotated fva has no rep")
+                if raw in forms:
+                    previous, sources = forms[raw]
+                    if previous != selected:
+                        raise SurveyProblem(
+                            f"{source}: ambiguous snapshot spelling; also {sources}"
+                        )
+                    sources.append(source)
+                else:
+                    forms[raw] = (selected, [source])
+            for key, value in node.items():
+                escaped = str(key).replace("~", "~0").replace("/", "~1")
+                visit(value, f"{location}/{escaped}")
+        elif isinstance(node, list):
+            for index, value in enumerate(node):
+                visit(value, f"{location}/{index}")
+
+    for path in files:
+        visit(json.loads(path.read_text(encoding="utf-8")), f"{path}#")
+    return forms
+
+
+def snapshot_unannotated_form(word: str) -> str:
+    """Select the source spelling; never reconstruct it by deleting Hebrew marks."""
+    forms = _snapshot_forms()
+    if word not in forms:
+        raise SurveyProblem(f"No snapshot source for first fva form {word!r}")
+    return forms[word][0]
 
 
 def _as_mam_would_write_it(word: str) -> str:
-    return word.translate(_PHONETIC_MAM_ANNOTATIONS)
+    """The selected snapshot form with the transformations needed only for matching.
+
+    VARIKA removal remains necessary to reproduce the existing record matching.
+    Displayed selected text retains VARIKA and every other Hebrew mark.
+    """
+    return (
+        snapshot_unannotated_form(word)
+        .replace(hpo.VARIKA, "")
+        .replace(hpu.NU_GMAQ, MAQAF)
+    )
 
 
 def _settle(matches: list[str], snapshot: str) -> tuple[str | None, str]:
@@ -2508,7 +2557,7 @@ def _attach_mam_forms(
     are refused, since then the form is a choice.
 
     A record with no form is named in ``records_without_a_mam_form``, and the page falls back
-    to the snapshot's spelling for it, marked as such.
+    to the snapshot's first rep or first unannotated fva spelling for it.
     """
     context_by_bcv = context_by_bcv or {}
     out = []
