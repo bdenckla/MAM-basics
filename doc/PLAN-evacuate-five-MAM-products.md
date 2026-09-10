@@ -1,6 +1,6 @@
 # Total evacuation: the five MAM products
 
-State: live
+State: complete
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 
@@ -1363,9 +1363,10 @@ record, the permanent Remove report, this plan, and Programme Status. MAM-privat
 was not modified, and the full mega was not run. The authorized 5A–5F task chain
 ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
-## Phase 6 — cross-repository bookkeeping and fourth-stage close
+## Phase 6 — cross-repository bookkeeping and fourth-stage close — **DONE 2026-09-10**
 
-Tasks **6A–6E are complete, 2026-09-10**; 6F remains. Ben selected
+Tasks **6A–6F are complete, 2026-09-10**. Phase 6, the fourth stage and
+the public-repository evacuation programme are complete. Ben selected
 `gpt-5.6-sol` with `xhigh` reasoning for 6D and every later implementation
 task in this chain. The finalized
 [command map](mam-products-phase6-command-map.md) and
@@ -1375,8 +1376,8 @@ The [6A verification record](../in/mam_products_phase6a_verification.json) prese
 the preflight, suite result and source-host evidence. The
 [6B verification record](../in/mam_products_phase6b_verification.json) establishes
 current parsing, FOI, template-survey, documentation and MAM-simple synchronization.
-The final verification, inventories and programme completion retain their
-assignment to 6F.
+The final verification, inventories and programme completion are recorded
+under the Phase 6F completion record below.
 
 ### Phase 6 session boundaries — Ben's decision, 2026-09-10
 
@@ -1988,3 +1989,83 @@ programme completion** in the saved GitRepos project, using Local mode, model
 `gpt-5.6-sol` and `xhigh` reasoning. Phase 6F must verify its exact checkout
 and required Phase 6E commit before editing, must complete and push the final
 programme record, and must not create a successor.
+
+### Phase 6F final verification, inventories and programme completion record — 2026-09-10
+
+Task `01a08cee-8158-7ad0-ba35-43bf5ea5516a` ran in the primary checkout
+`C:/Users/BenDe/GitRepos/MAM-basics`, on `main`, with no worktree. The starting
+commit was the required Phase 6E commit
+`40b8ea4b011d4b97977d07596868e906b803b56e`; local `HEAD`, tracking
+`origin/main` and the live remote main all named that commit, and the checkout
+was clean. Phase 6F did not edit MAM-private: its clean head remained
+`55252b834d28a6c241e75758aff5d15836621f56`.
+
+The final invalidation audit covered all **29** recorded commands from Phases
+6B–6E. For every command, its implementation paths, direct input paths and
+declared output paths have unchanged Git blobs after the command's accepted
+commit. All 2,450 Phase 6A baseline entries also match. The accepted results
+therefore remain current, and no product generator, independent example,
+vendoring generator, graph generator, site generator or redirect-stub builder
+needed a Phase 6F rerun. The retained output sets are 415 MAM-parsed/MAM-simple
+files / 116,606,861 bytes, 99 MAM-with-doc/history files / 12,554,923 bytes and
+295 Sefaria/OSIS/example files / 69,525,330 bytes. The Phase 6E vendoring,
+pipeline and site sets also have zero mismatches.
+
+The independent oracle still has 106 pairs: 104 raw-byte matches and the two
+declared one-line Sefaria provenance differences. All 45 support pairs match
+as filtered Git blobs. All 144 historical parsed JSON files / 84,572,003 bytes
+and all 27 historical OSIS files / 15,546,207 bytes remain exact.
+
+The final Git-blob inventories at `40b8ea4b` are:
+
+| Product | Product files / bytes | Published files / bytes | Combined files / bytes |
+| --- | ---: | ---: | ---: |
+| MAM-simple | 383 / 107,664,118 | 4 / 52,543 | 387 / 107,716,661 |
+| MAM-for-Sefaria | 164 / 32,470,400 | 3 / 74,642 | 167 / 32,545,042 |
+| MAM-parsed | 204 / 114,290,462 | 36 / 233,181 | 240 / 114,523,643 |
+| MAM-with-doc | 4 / 2,723 | 267 / 47,728,889 | 271 / 47,731,612 |
+| MAM-OSIS | 59 / 29,027,840 | 30 / 782,189 | 89 / 29,810,029 |
+
+The five product/published pairs total 1,154 files / 332,326,987 bytes. The
+complete tested repository holds 5,649 files / 834,533,018 Git bytes.
+`MAM-basics.code-workspace` contains only `.`. `all-repos.code-workspace`
+contains `../hbofonts`, `.`, `../MAM-private`, `../phonetic-hbo` and
+`../Taamey_D`. `repo_visibility` contains those same five repositories. All
+three declarations exclude all five products, and all five actual source
+checkout paths remain absent.
+
+The Phase 6E source-reference classifications remain operationally unchanged.
+The final tracked sweep is larger because committed Phase 6 evidence contains
+dated names and URLs: the five product names occur 23,488 times in 828 files,
+sibling-path constructions occur 127 times in 41 files, and old remote URLs
+occur 619 times in 61 files. `git grep` and `rg` agree exactly. Product sibling
+declarations are redirect-only; MAM-parsed history remains explicitly
+optional; old product URLs in operational Python are redirect definitions;
+the published tree and current product READMEs contain no old product URL.
+
+All five redirect hosts retain the exact heads, trees and successful
+deployments verified in Phase 6E: MAM-simple `376912a758443bb0c015bd77dfca5bef3e97f9c9`
+with run `34276914395`; MAM-for-Sefaria
+`cf23b478f801ca586d227693db9133da54d87f30` with run `34049004202`;
+MAM-parsed `c9e04c496920b1c423069dfbc4b31078efa0b0a0` with run
+`34055284061`; MAM-with-doc `904c9fa178265dce6fec5704f5c0424fc94f6719`
+with run `34062108606`; and MAM-OSIS
+`8df241b3bb43e6f8ecf76ee35175380689fbcb68` with run `34496487629`.
+Fresh HTTP requests returned every source index byte-identically to its source
+Git blob. MAM-basics `40b8ea4b` was deployed successfully by run
+`34524282028`; fresh requests for every target product index returned HTTP 200
+and matched that commit. No `gh-pages` path changed after the Phase 6E public
+content commit, so the complete Phase 6E census of 144 source redirect objects
+and 484 live responses remains applicable.
+
+The canonical suite collected 994 tests and passed **989 with 5 skipped in
+110.36 seconds**. The redirect-manifest check passed 10 tests in 0.39 seconds;
+the complete affected set passed 60 tests in 25.07 seconds. The final staged
+Unicode/prose hygiene and whitespace results are retained in
+`in/mam_products_phase6f_verification.json`. Tracked Python was unchanged, so
+Black was not required.
+
+No unresolved finding remains. The full mega, downloads, optional legacy
+history, source-clone recreation and directory recycling were not performed.
+Phase 6 is complete, the fourth stage is complete, and the public-repository
+evacuation programme is complete. No successor was created.
