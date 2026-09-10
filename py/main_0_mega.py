@@ -321,10 +321,11 @@ _STEPS = [
     # any string out of standard mark order, and such a string is malformed Unicode,
     # which foi-features-of-interest reports as the feature NON_STANDARD_MARK_ORDER;
     # run before foi-features-of-interest, check-mpplus would stop the run before that
-    # report was written.  The order has a cost for check-mpplus's doc-note template
-    # test: a doc-note template with the wrong number of arguments stops the run
-    # inside foi-features-of-interest, at the bare assert in label_args_of_doc
-    # (py/foi/foi_wikitext_helpers.py), before check-mpplus can print the template.
+    # report was written.  So a doc-note template with the wrong number of arguments
+    # stops the run inside foi-features-of-interest, before check-mpplus can report
+    # it, at the assert in label_args_of_doc (py/foi/foi_wikitext_helpers.py).  Since
+    # phase 6a of the same plan, that assert's message names the template and its
+    # argument count, so the order costs no information.
     StepRecord(
         "check-mpplus",
         _run_check_mpplus,
