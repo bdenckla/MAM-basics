@@ -1,5 +1,5 @@
 {
-  "note": "Estimated column and line for each atom Holman's emails raise, from MAM-basics' uxlc_misc.my_uxlc_location over the UXLC core XML and LC page index in the sibling UXLC-utils. Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the render step; folio is the LC leaf in the DDDA form the manuscript image URLs use, line counts down from the top of the named column, and flat_line counts down the whole page across all three columns.",
+  "note": "Estimated column and line for each atom Holman's emails raise, from MAM-basics' uxlc_misc.my_uxlc_location over the UXLC core XML in MAM-basics/in/UXLC-39/ and the LC page index in MAM-basics/in/lci_recs.json. Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the render step; folio is the LC leaf in the DDDA form the manuscript image URLs use, line counts down from the top of the named column, and flat_line counts down the whole page across all three columns.",
   "locations": {
     "Exodus 7:20.19": {
       "folio": "035A",
