@@ -9,6 +9,11 @@ its Phonetic MAM. A cloud session skips both steps (Ben's decisions,
 2026-09-10). Elsewhere both find the sibling through
 ``mb_cmn.paths.repos_root()``, which in a worktree looks beside the worktree's
 home clone, so a worktree run needs no ``REPOS_ROOT``.
+
+Since 2026-09-10 the sequence also runs the five UXLC steps that
+``py/main_uxlc_mega.py`` ran until it was folded in here, from
+``uxlc-check-changes`` to ``uxlc-word-list``. They write into ``uxlc/``,
+``gh-pages/uxlc/`` and ``in/UXLC-misc/``.
 """
 
 import argparse
@@ -55,6 +60,13 @@ from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import ws_bot_proto
 from wlc_cmn.utf8_io import force_utf8_io
+
+# The UXLC steps, folded in from py/main_uxlc_mega.py on 2026-09-10.
+import main_amb_early_mtg
+import main_fois
+import main_uxlc_check_changes
+import main_uxlc_word_list
+import main_write_page_break_info
 
 _REPOS = paths.repos_root()
 
@@ -335,7 +347,7 @@ _STEPS = [
         _run_accgram_test_fixes,
         "must come after accgram-run-prose; also reads out/wlc422-kq-u, in/UXLC-39 and MAM-simple",
     ),
-    # The six steps below, and the two entry points after generate-html, joined the mega on
+    # The six steps below, and the two entry points after the UXLC steps, joined the mega on
     # 2026-08-04 for the reason accgram-test-fixes did the same morning (#219): each writes a
     # git-tracked artifact, and until now nothing routine rewrote any of them.  Two were already
     # stale when the wiring was done -- out/accgram/_grammaticality.txt since 2026-06-29 and
@@ -385,11 +397,51 @@ _STEPS = [
         "must come after accgram-run-prose, accgram-run-poetic and"
         " accgram-survey-chanted-word-accents",
     ),
+    # The five UXLC steps, in the order py/main_uxlc_mega.py ran them until Ben agreed on
+    # 2026-09-10 to fold that program in here.  It was UXLC-utils' own mega, renamed on
+    # arrival, and its reason for standing apart -- that it rebuilt the sibling
+    # UXLC-utils' trees -- stopped being true when uxlc/ landed here on 2026-09-03.  The
+    # five read only committed inputs, so no step above feeds them.  They sit here because
+    # uxlc-check-changes rewrites the in/UXLC-misc/all_changes.json that
+    # find-uxlc-accent-changes filters, and until then nothing in the mega rebuilt it.
+    StepRecord(
+        "uxlc-check-changes",
+        main_uxlc_check_changes.main,
+        "reads the UXLC change logs under uxlc/in/, in/UXLC-39 and in/lci_recs.json;"
+        " writes the canonical in/UXLC-misc/all_changes.json and its derivatives under"
+        " uxlc/out/UXLC-misc/; must come before uxlc-fois and find-uxlc-accent-changes",
+    ),
+    StepRecord(
+        "uxlc-fois",
+        main_fois.main,
+        "reads in/UXLC-39 and in/UXLC-misc/all_changes.json; writes the UXLC features"
+        " of interest, JSON and HTML, under gh-pages/uxlc/fois/; must come after"
+        " uxlc-check-changes",
+    ),
+    StepRecord(
+        "uxlc-write-page-break-info",
+        main_write_page_break_info.main,
+        "reads in/UXLC-39 and in/lci_recs.json; writes uxlc/data/lci_augrecs.json, and"
+        " lci_augrecs.json, page_counts.json and lci_recs.xml under uxlc/out/UXLC-misc/",
+    ),
+    StepRecord(
+        "uxlc-amb-early-mtg",
+        main_amb_early_mtg.main,
+        "reads the records in py/uxlc_amb_early_mtg/amb_early_mtg.py, in/UXLC-39 and"
+        " in/lci_recs.json; writes the HTML pages under gh-pages/uxlc/amb-early-mtg/",
+    ),
+    StepRecord(
+        "uxlc-word-list",
+        main_uxlc_word_list.main,
+        "reads in/UXLC-39; writes uxlc/out/uxlc-words.json and"
+        " uxlc/out/uxlc-words-fragile.json",
+    ),
     StepRecord(
         "find-uxlc-accent-changes",
         main_find_uxlc_accent_changes.main,
-        "filters the committed canonical in/UXLC-misc/all_changes.json and writes"
-        " the tracked in/accgram/uxlc_accent_changes.json",
+        "must come after uxlc-check-changes, which rewrites the"
+        " in/UXLC-misc/all_changes.json this step filters; writes the tracked"
+        " in/accgram/uxlc_accent_changes.json",
     ),
     StepRecord(
         "uxlc-grammar-test",

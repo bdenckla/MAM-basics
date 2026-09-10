@@ -121,7 +121,7 @@ def main():
 
 
 def example_run():
-    """Do an example run of the program, for main_uxlc_mega.py."""
+    """Do an example run of the program.  Nothing calls it."""
     std_bcvp_quad = tbn.BK_GENESIS, 27, 7, 3
     _main2(std_bcvp_quad)
 
