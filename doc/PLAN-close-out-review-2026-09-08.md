@@ -566,6 +566,19 @@ Write no page, no code and no record change. Commit only the new plan and this p
 
 ## Step 5 — Ben approves the remediation plan
 
+Approval received 2026-09-09, after the remediation plan's update at `961554d4`:
+Ben answered the original question, "Do you approve the waves and P1-P3
+recommendations, including the exact editorial proposals E1-E8 and N1-N9?",
+with "I can now say yes", and requested Step 5 in a fresh task because the
+planning task had accumulated too much context. E2 includes Ben's previously
+recorded coalesced slash-span amendment. The fresh task records the approval
+and prepares execution from the updated plan; the planning task performs no
+remediation. Preserve the technical phase's unchanged-HTML condition and V6,
+including the mandatory stop and renewed-approval requirement on a difference.
+Record the approved HTML editorial work as a separate phase, with its exact
+intended differences and output contract addressed before that phase begins.
+The approval is not a waiver of the technical stop condition.
+
 Actor: Ben. Input: the plan from step 4. Output: an approval for each wave's code and data items,
 and for each MAS wording item an approval, a rejection or an amended wording, pasted into the
 step-6 prompt for that wave. The step-6 task records them in the plan as dated decisions before it
