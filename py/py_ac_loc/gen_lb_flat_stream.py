@@ -119,7 +119,3 @@ def main():
     word_count = sum(1 for x in stream if isinstance(x, str))
     verse_count = sum(1 for x in stream if isinstance(x, dict) and "verse-start" in x)
     print(f"  -> {out_path.name}: {verse_count} verses, {word_count} words")
-
-
-if __name__ == "__main__":
-    main()

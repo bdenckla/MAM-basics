@@ -7,7 +7,7 @@ so the verse range must be specified manually.  After line-break
 marking, the endpoint of each page seeds the starting point of the next.
 
 Usage:
-    .venv/Scripts/python.exe gen_cam1753_flat_stream.py 0072B Ps 149:7 Job 2:10
+    .venv/Scripts/python.exe py/main_cam1753_gen_flat_stream.py 0072B Ps 149:7 Job 2:10
 
 The range arguments are: <start_book> <start_c:v> <end_book> <end_c:v>
 Both endpoints are inclusive.  The stream will contain all words from
@@ -355,7 +355,3 @@ def main():
         newline="",
     )
     print(f"  -> {out_path.name}: {verse_count} verses, {word_count} words")
-
-
-if __name__ == "__main__":
-    main()

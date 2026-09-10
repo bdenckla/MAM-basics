@@ -12,6 +12,9 @@ instead.  The three wrappers that already existed --
 ``main_ac_gen_lb_flat_stream.py`` -- were written for the same reason in its earlier
 form: those three modules import a sibling as ``py_ac_loc.<name>``, so they had
 stopped being directly runnable long before this.
+
+Since 2026-09-10 the module has no ``__main__`` block of its own: phase 6a of
+``doc/PLAN-mega-coverage.md`` deleted it, and this wrapper is its only entry point.
 """
 
 from py_ac_loc.gen_col_quad_editor import main

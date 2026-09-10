@@ -43,7 +43,6 @@ from accgram import rtms_report
 from accgram.almost_errors_html import REPORT_TITLE, render_body_contents
 from accgram.prose_ply_grammar import build_parser
 from accgram.prose_scanner import HasLegarmeh
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
@@ -88,15 +87,3 @@ def run(args: argparse.Namespace) -> None:
         path_to_style=rtms_report.path_to_gh_pages_style(html_out),
     )
     print(f"HTML: {html_out}")
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

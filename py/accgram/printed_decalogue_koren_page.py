@@ -116,7 +116,6 @@ from accgram import rtms_report
 from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
 from accgram.almost_errors_html_shared import accents_and_letters, hbo, link
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import paths
 from mb_cmn import provenance
 
@@ -865,15 +864,3 @@ def run(args: argparse.Namespace) -> None:
         path_to_style=rtms_report.path_to_gh_pages_style(html_out),
     )
     print(f"HTML: {html_out}")
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

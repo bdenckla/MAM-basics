@@ -32,16 +32,3 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
 
 def run(args: argparse.Namespace) -> None:
     ps17v14_replay.write_replayed(args.html_out, _body, __file__)
-
-
-def main() -> None:
-    ps17v14_replay.main_for(
-        body_module=_body,
-        out_name=_OUT_NAME,
-        generator_file=__file__,
-        description=__doc__,
-    )
-
-
-if __name__ == "__main__":
-    main()

@@ -403,7 +403,3 @@ def main():
         newline="",
     )
     print(f"  -> {out_path.name}: {verse_count} verses, {word_count} words")
-
-
-if __name__ == "__main__":
-    main()

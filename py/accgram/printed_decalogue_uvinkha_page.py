@@ -39,7 +39,6 @@ from accgram import printed_decalogue_strands as pds
 from accgram import rtms_report
 from accgram.almost_errors_html_shared import link
 from accgram.uni_to_marks import is_accent
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn import paths
@@ -743,15 +742,3 @@ def run(args: argparse.Namespace) -> None:
     n_editions = sum(len(group.editions) for group in _groups())
     n_crops = sum(len(ed.crops) for group in _groups() for ed in group.editions)
     print(f"HTML: {html_out} ({n_editions} editions, {n_crops} crops)")
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

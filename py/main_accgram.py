@@ -487,7 +487,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate_html_parser.set_defaults(func=_run_generate_html)
 
     # One `generate-html-<name>` subcommand per report, generating that file alone.  Each exposes
-    # its module's own arguments (e.g. --html-out), same as the module's standalone entry point.
+    # its module's own arguments (e.g. --html-out); the modules have no entry point of their own.
     for name, module in _HTML_GENERATORS:
         one_parser = subparsers.add_parser(
             f"generate-html-{name}",
