@@ -1,0 +1,8 @@
+{
+  "about": "Ben Denckla's readings of the Koren edition at the candidates listed in doc/meteg-after-silluq-koren-lookup-candidates.md, one per reference, in the order he reported them. 'koren' says which of the two U+05BD on MAM's final atom Koren has: 'first' (the first mark only), 'last' (the last mark only) or 'both'. 'date' is the day Ben reported the reading. The primary clone's .novc/mas_c_write_doc.py fills that file's Koren column from this list.",
+  "readings": [
+    {"ref": "1 Kings 7:37", "koren": "first", "date": "2026-09-09"},
+    {"ref": "Psalms 35:10", "koren": "both", "date": "2026-09-10"},
+    {"ref": "Job 4:12", "koren": "first", "date": "2026-09-10"}
+  ]
+}
