@@ -6,9 +6,9 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc are landed products under
-this repository, so their paths chain directly from ``repo_root()``. Cross-repo
-dependencies such as MAM-OSIS and MAM-private, and temporary redirect-host clones,
+MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are landed products
+under this repository, so their paths chain directly from ``repo_root()``. Cross-repo
+dependencies such as MAM-private, and temporary redirect-host clones,
 are by default looked up as siblings of this repo
 under a common parent directory.  That convention breaks when the repo is checked out
 somewhere the siblings are not co-located -- most notably a git worktree, whose root is

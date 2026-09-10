@@ -712,7 +712,7 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 ```
 
 **In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** The suite
-reads MAM-private, while MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc
+reads MAM-private, while MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS
 are local products. `paths.repos_root()` otherwise resolves the remaining sibling
 repos under the worktree's parent, where none of them is. A fresh primary-checkout
 run passed **976 passed, 5 skipped** on 2026-09-07.
@@ -725,12 +725,12 @@ $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
-Sibling-repo paths for MAM-OSIS, MAM-private, temporary redirect hosts, and optional
+Sibling-repo paths for MAM-private, temporary redirect hosts, and optional
 MAM-parsed legacy history are built from `mb_cmn.paths.repo_root()` / `repos_root()` /
 `sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
 literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc products
+code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS products
 do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
 `MAM-parsed/historical/` inputs and MAM-basics revisions; only explicit
 `--legacy-history` comparisons require read access to a sibling MAM-parsed

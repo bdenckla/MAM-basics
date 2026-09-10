@@ -2,12 +2,10 @@
 
 The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
-MAM-simple and MAM-for-Sefaria product trees became local paths in the 2026-09-06
-fourth-stage evacuation, so their generators no longer depend on a sibling clone.
-Two jobs still reach sibling repositories through ``mb_cmn.paths``: the OSIS
-generator writes MAM-OSIS, and the near-Aleppo census runs in MAM-private. A
-worktree run therefore still needs the documented ``REPOS_ROOT`` and
-``REPO_<NAME>_DIR`` routing.
+five MAM product generators write into this repository after the fourth-stage
+Repoint steps completed on 2026-09-10. The near-Aleppo census still runs in the
+MAM-private sibling through ``mb_cmn.paths.repos_root()``. A worktree run therefore
+still needs ``REPOS_ROOT`` for that subprocess.
 """
 
 import argparse

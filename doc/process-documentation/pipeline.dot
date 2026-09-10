@@ -17,7 +17,7 @@ digraph mam_pipeline {
     ds_simple        [label="MAM-simple/"];
     ds_with_doc      [label="gh-pages/MAM-with-doc/"];
     ds_sefaria       [label="MAM-for-Sefaria/"];
-    ds_osis          [label="../MAM-OSIS/"];
+    ds_osis          [label="MAM-OSIS/"];
     ds_out           [label="out/\n(local outputs)"];
 
     // ── External prerequisites (not part of _STEPS) ──

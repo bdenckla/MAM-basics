@@ -5,7 +5,7 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-TEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
+ELEVEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
 procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
 the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere still holds its corpus, while
@@ -19,11 +19,15 @@ one of them until 2026-08-17, when Phase 10 of
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
 remain sit under the floor of 10 that the scope carried.
 
-The four landed MAM product scopes replace standalone copies of this test that no
+The five landed MAM product scopes replace standalone copies of this test that no
 longer had their own repository roots. Those copies asked Git for the enclosing
 repository and therefore scanned most of MAM-basics under a product-specific name;
 three copies had no entry point at all. The canonical scopes below name the authored
 source and prose retained with each product and exclude the large generated corpora.
+
+The MAM-OSIS scope retains the source checker's generated-output and historical
+snapshot exclusions. Its binary-extension set is a subset of this checker's set;
+no extension needed adding when the duplicate was removed on 2026-09-10.
 
 The UXLC scope arrived with UXLC-utils' Python (Phase 3 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``), replacing that repo's
@@ -199,6 +203,7 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
+    "MAM-OSIS/",
     "MAM-for-Sefaria/",
     "MAM-parsed/",
     "MAM-simple/",
@@ -291,6 +296,9 @@ _MAM_PARSED_EXCLUDE_DIR_PREFIXES = (
     "plus/",
     "py-examples-out/",
 )
+
+_MAM_OSIS_EXCLUDE_DIR_PREFIXES = ("MAPM-24/", "MAPM-orig/", "MAPM-orig-24/")
+_MAM_OSIS_EXCLUDE_FILES = frozenset({"mapm.osis.xml"})
 
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
@@ -446,6 +454,16 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_files=frozenset(),
             # Four root metadata files and three product-specific example files
             # measure seven files after the misleading duplicate test is removed.
+            floor=6,
+        ),
+        _Scope(
+            label="MAM-OSIS authored metadata",
+            root=paths.repo_root() / "MAM-OSIS",
+            exclude_dir_prefixes=_MAM_OSIS_EXCLUDE_DIR_PREFIXES,
+            exclude_files=_MAM_OSIS_EXCLUDE_FILES,
+            # Seven files remain: README, license, attributes, ignore rules, header,
+            # SWORD configuration, and command example. Published output lives under
+            # gh-pages/MAM-OSIS/, already excluded by the main scope.
             floor=6,
         ),
     )

@@ -4,4 +4,4 @@ In directory
     C:/Users/BenDe/AppData/Roaming/Sword/modules/texts/ztext/mapm
 
 issue the PowerShell command
-    & "C:/Program Files/Crosswire/xiphos/bin/osis2mod.exe" . C:/Users/BenDe/GitRepos/MAM-OSIS/mapm.osis.xml -v MT -z z
+    & "C:/Program Files/Crosswire/xiphos/bin/osis2mod.exe" . C:/Users/BenDe/GitRepos/MAM-basics/MAM-OSIS/mapm.osis.xml -v MT -z z

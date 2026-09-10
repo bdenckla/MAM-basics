@@ -146,7 +146,7 @@ def render_dot_text(generator_file=None):
 
 
 def write_dot_file(dot_path=_OUT_DOT_PATH, generator_file=None):
-    with open(dot_path, "w", encoding="utf-8") as out_file:
+    with open(dot_path, "w", encoding="utf-8", newline="") as out_file:
         out_file.write(render_dot_text(generator_file=generator_file))
 
 
