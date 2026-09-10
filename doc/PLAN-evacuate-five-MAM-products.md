@@ -2065,6 +2065,14 @@ Unicode/prose hygiene and whitespace results are retained in
 `in/mam_products_phase6f_verification.json`. Tracked Python was unchanged, so
 Black was not required.
 
+Programme-completion commit
+`12070fc63b527a8f8de7cbfd040f2f17a146ed9a` was pushed to `origin/main` and
+deployed successfully by Pages run `34527262663`. Fresh checks at that exact
+commit again found the five source heads and trees unchanged, matched every
+live source index to its source Git blob, and matched every live target product
+index to MAM-basics. No published path changed after `3e3a93ef`, so the Phase
+6E census remains applicable.
+
 No unresolved finding remains. The full mega, downloads, optional legacy
 history, source-clone recreation and directory recycling were not performed.
 Phase 6 is complete, the fourth stage is complete, and the public-repository

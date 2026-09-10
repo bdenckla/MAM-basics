@@ -8,6 +8,25 @@
   "branch": "main",
   "tested_commit": "40b8ea4b011d4b97977d07596868e906b803b56e",
   "record_commit_note": "The commit containing this report changes permanent evidence and plans only. The tested and deployed pre-record commit is 40b8ea4b. The containing commit is verified, pushed and deployed after its identity exists.",
+  "programme_completion_commit_and_deployment": {
+    "commit": "12070fc63b527a8f8de7cbfd040f2f17a146ed9a",
+    "pushed_to": "origin/main",
+    "deployment": {
+      "id": 34527262663,
+      "url": "https://github.com/bdenckla/MAM-basics/actions/runs/34527262663",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-10T20:35:11Z",
+      "updated_at": "2026-09-10T20:36:07Z"
+    },
+    "fresh_verification_utc": "2026-09-10T20:37:14.427238+00:00",
+    "source_heads_and_trees_unchanged": true,
+    "source_deployments_successful": true,
+    "source_live_indexes_matching_git": 5,
+    "target_live_product_indexes_matching_git": 5,
+    "published_changes_after_phase6e_public_commit": 0,
+    "phase6e_full_484_response_census_still_applies": true
+  },
   "starting_identity": {
     "root": "C:/Users/BenDe/GitRepos/MAM-basics",
     "head": "40b8ea4b011d4b97977d07596868e906b803b56e",
