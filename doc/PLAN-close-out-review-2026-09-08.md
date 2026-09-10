@@ -648,6 +648,11 @@ The remaining Wave 1 work starts with Wave 1B's current documentation and crop i
 The implementation and record commit hashes will be recorded after creation. Wave 1 is
 not complete; no integration, push, or automatic archival occurred.
 
+Wave 1A implementation commit recorded 2026-09-09: `d5616b8f`. The subsequent record-only
+commit provides the clean required source for the automatically created Wave 1B task.
+The successor uses the same saved worktree directly. The original task stops editing after
+handoff and remains available for Ben to archive; that archival does not trigger integration.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

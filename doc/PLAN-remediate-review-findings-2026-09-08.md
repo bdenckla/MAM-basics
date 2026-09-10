@@ -674,6 +674,14 @@ Tracked changes are confined to this plan, the close-out plan, the D2 sentence i
 `doc/review-findings-2026-09-08.md`. The implementation and subsequent record commit are
 recorded after their hashes exist. No integration, push, or archival occurred.
 
+Implementation commit recorded 2026-09-09: `d5616b8f` contains the Wave 1A changes and
+execution record. The subsequent record-only commit supplies this hash without amending
+the implementation commit. Its clean branch head is the required source for Wave 1B.
+Wave 1B uses the same saved worktree directly and starts from this implementation as an
+ancestor. The final handoff reply and task creation result identify that source head and
+the successor task. No remaining decision blocks Wave 1B; later editorial output-contract
+preparation remains assigned to the separate editorial phase.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
