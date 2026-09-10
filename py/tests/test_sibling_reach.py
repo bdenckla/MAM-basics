@@ -147,7 +147,8 @@ SIBLINGS_REACHED: dict[str, str] = {
         " survey-post-stress-meteg, which main_0_mega runs as its"
         " accgram-survey-post-stress-meteg step except in a cloud session, and"
         " survey-breuer-zaqef-units -- and of the test of accgram.final_stress."
-        "  And main_0_mega runs the near-aleppo census in MAM-private.  Its"
+        "  And main_0_mega runs the near-aleppo census in MAM-private, except in a"
+        " cloud session.  Its"
         " vendoring audit was given up on 2026-09-04 (abb03ec4), which removed a"
         " third route but not these two."
     ),

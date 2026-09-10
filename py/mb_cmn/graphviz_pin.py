@@ -54,11 +54,12 @@ it raises, exactly as before.
 A skipped run is CLOUD-COMPLETE, which means no step failed and every step either
 ran or was skipped for the cloud, while some SVGs went unrendered. It is
 deliberately not called incomplete -- Ben's wording, 2026-09-09. Since 2026-09-10
-the mega also skips a whole step in a cloud session, its post-stress-meteg
-survey, and ``py/main_0_mega.py``'s ``_report_cloud_skips`` reports both kinds
-of skip. The one hazard an SVG skip leaves is that the ``.dot`` beside a skipped
-``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's end-of-run
-banner says so, and says not to commit a changed ``.dot`` without its ``.svg``.
+the mega also skips two whole steps in a cloud session, the near-Aleppo census
+and the post-stress-meteg survey, and ``py/main_0_mega.py``'s
+``_report_cloud_skips`` reports both kinds of skip. The one hazard an SVG skip
+leaves is that the ``.dot`` beside a skipped ``.svg`` IS rewritten, so the
+tracked pair can drift apart; the mega's end-of-run banner says so, and says not
+to commit a changed ``.dot`` without its ``.svg``.
 
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better

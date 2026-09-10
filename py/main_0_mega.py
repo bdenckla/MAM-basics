@@ -5,8 +5,8 @@ that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
 five MAM product generators write into this repository after the fourth-stage
 Repoint steps completed on 2026-09-10. Two steps use the MAM-private sibling:
 the near-Aleppo census still runs there, and the post-stress-meteg survey reads
-its Phonetic MAM, except in a cloud session, where that step is skipped (Ben's
-decision, 2026-09-10). Both find the sibling through
+its Phonetic MAM. A cloud session skips both steps (Ben's decisions,
+2026-09-10). Elsewhere both find the sibling through
 ``mb_cmn.paths.repos_root()``, which in a worktree looks beside the worktree's
 home clone, so a worktree run needs no ``REPOS_ROOT``.
 """
@@ -98,7 +98,28 @@ def _run_vendored_mam_osis():
     )
 
 
+# Every step this run skipped because it is running in a cloud session, in order, each with
+# the reason it was skipped.  Read by _report_cloud_skips, which reports them once at the
+# end of the run, beside graphviz_pin's list of unrendered SVGs.
+_CLOUD_SKIPPED_STEPS: list[tuple[str, str]] = []
+
+
 def _run_near_aleppo_census():
+    # Skipped in a cloud session, whether or not MAM-private is attached there.  Ben's
+    # decision, 2026-09-10: "the near-aleppo census should be skipped if mega detects
+    # that mega is running in the cloud."  Until then a cloud run without MAM-private
+    # died here, one step before the post-stress-meteg survey that was already skipped.
+    if graphviz_pin.in_cloud_session():
+        step_id = "near-aleppo-census"
+        reason = (
+            "it runs in MAM-private and rewrites that clone's tracked"
+            " near-aleppo/census/expected/ goldens, which no later step reads"
+        )
+        _CLOUD_SKIPPED_STEPS.append((step_id, reason))
+        print(
+            f"STEP SKIPPED in this cloud session: {step_id}: {reason}", file=sys.stderr
+        )
+        return
     env = os.environ.copy()
     env["REPO_MAM_PARSED_DIR"] = str(paths.mam_parsed_dir())
     subprocess.run(
@@ -143,12 +164,6 @@ def _run_accgram_grammaticality():
 
 def _run_accgram_survey_chanted_word_accents():
     main_accgram.almost_main(["survey-chanted-word-accents"])
-
-
-# Every step this run skipped because it is running in a cloud session, in order, each with
-# the reason it was skipped.  Read by _report_cloud_skips, which reports them once at the
-# end of the run, beside graphviz_pin's list of unrendered SVGs.
-_CLOUD_SKIPPED_STEPS: list[tuple[str, str]] = []
 
 
 def _run_accgram_survey_post_stress_meteg():
@@ -411,13 +426,16 @@ _STEPS = [
     # a Google Sheet download moved plus/ and 24 of the 82 censuses went red at once.
     # TEMPORARY, by Ben's decision the same day -- at some point the censuses stop
     # running here and this step becomes the real generator of the near-aleppo
-    # edition.  MAM-private is a private clone, so a checkout without it beside this
-    # one fails here rather than skipping, which is the choice mb_cmn/paths.py's
-    # require_sibling already makes for the other private trees.
+    # edition.  MAM-private is a private clone, so outside a cloud session a checkout
+    # without it beside this one fails here rather than skipping, which is the choice
+    # mb_cmn/paths.py's require_sibling already makes for the other private trees.  A
+    # cloud session skips the step, attached clone or not, by Ben's decision of
+    # 2026-09-10 that _run_near_aleppo_census quotes.
     StepRecord(
         "near-aleppo-census",
         _run_near_aleppo_census,
-        "regenerates near-aleppo/census/expected/ in MAM-private; needs that private sibling",
+        "regenerates near-aleppo/census/expected/ in MAM-private; needs that private"
+        " sibling; skipped in a cloud session",
     ),
     # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
     # worktree run finds MAM-private beside its home clone with no REPOS_ROOT (516a4a1a), and
@@ -470,11 +488,14 @@ def _report_cloud_skips():
     Two kinds of thing are skipped in a cloud session, which
     graphviz_pin.in_cloud_session detects. A cloud container has no Graphviz, so
     the tmpl-survey step skips its renders rather than killing the run -- Ben's
-    decision, 2026-09-09; graphviz_pin's docstring has the reasoning. And the
-    accgram-survey-post-stress-meteg step, which reads MAM-private, is skipped
-    altogether -- Ben's decision, 2026-09-10, on that precedent -- so gen-site
-    renders the nine post-stress-meteg pages from the tracked
-    out/accgram/post-stress-meteg.json, unchanged.
+    decision, 2026-09-09; graphviz_pin's docstring has the reasoning. And the two
+    steps that use MAM-private are skipped altogether, each by a decision of
+    Ben's on 2026-09-10. The near-aleppo-census step runs in MAM-private and
+    rewrites that clone's census goldens, which no later step reads. The
+    accgram-survey-post-stress-meteg step reads MAM-private's Phonetic MAM and
+    is skipped on the precedent of the SVG renders, so gen-site renders the nine
+    post-stress-meteg pages from the tracked out/accgram/post-stress-meteg.json,
+    unchanged.
 
     Such a run is CLOUD-COMPLETE, meaning that no step failed, and that every step
     either ran or was skipped for the cloud, while some SVGs may have gone
