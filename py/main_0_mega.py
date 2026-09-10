@@ -26,6 +26,13 @@ Three of them fail the run on purpose, as their notes say:
 Also since 2026-09-10, the ``check-mpplus`` step checks MAM-parsed's plus JSON
 as soon as ``parse-go`` has written it, and fails the run on any error it
 finds.
+
+Six more generators of tracked files joined the same day, each placed by what
+it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
+``mam-simple``; the two Holman corpus searches after ``wordlist``; and
+``diffable-pointed-hebrew``, ``ac-gen-index-flat-annotated`` and
+``pipeline-graph``, whose inputs no step writes, between ``gen-site`` and
+``vendoring-audit``.
 """
 
 import argparse
@@ -89,6 +96,13 @@ import main_gen_misc_authored_english_documents
 import main_map_changes_to_book_of_job
 import main_render_uxlc_corrections
 import main_verify_and_render_table
+
+# The MAM-side and remaining offline generators, added the same day.
+import main_ac_gen_index_flat_annotated
+import main_diffable_pointed_hebrew
+import main_pipeline_graph
+import main_search_final_hiriq_verse_text
+import main_search_holam_he_qere
 
 _REPOS = paths.repos_root()
 
@@ -318,6 +332,19 @@ _STEPS = [
         main_mam_simple.almost_main,
         "must come after mam_parsed",
     ),
+    # Added 2026-09-10.  The mam-simple step above runs almost_main, the export and the
+    # support-file copy, which never reaches the doc half of py/main_mam_simple.py, so
+    # until then nothing routine rewrote these docs.  doc/mega-coverage-2026-09-10.md,
+    # section 5, records that they had gone stale once.
+    StepRecord(
+        "mam-simple-docs",
+        main_mam_simple.write_generated_docs,
+        "py/main_mam_simple.py doc-only: reads MAM-parsed's plus/ tree and rewrites,"
+        " each only where its content changed,"
+        " MAM-simple/doc/versification-differences.md,"
+        " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and"
+        " font, and gh-pages/MAM-simple/index.html; must come after parse-go",
+    ),
     # mam_simple must come before mam4sef-and-ajf and mam_osis
     StepRecord(
         "mam4sef-and-ajf",
@@ -352,6 +379,22 @@ _STEPS = [
     StepRecord("decnreub", main_decnreub.almost_main, None),
     StepRecord("multimark", main_multimark.almost_main, None),
     StepRecord("wordlist", main_wordlist.almost_main, None),
+    # The two Holman corpus searches, added 2026-09-10; until then nothing routine
+    # rewrote their tracked reports.  They sit after wordlist because
+    # search-holam-he-qere compares its hits with the qere word list that wordlist
+    # writes.
+    StepRecord(
+        "search-final-hiriq-verse-text",
+        main_search_final_hiriq_verse_text.main,
+        "reads MAM-parsed's plus/ tree; writes"
+        " holman/out/final_hiriq_verse_text_report.json",
+    ),
+    StepRecord(
+        "search-holam-he-qere",
+        main_search_holam_he_qere.main,
+        "must come after wordlist, whose out/mam-qere-words.json it reads with"
+        " MAM-parsed's plus/ tree; writes holman/out/holam_he_qere_report.json",
+    ),
     StepRecord(
         "explicit-xataf",
         main_explicit_xataf.almost_main,
@@ -635,6 +678,36 @@ _STEPS = [
         "writes the eleven deploy-root pages: gh-pages/index.html,"
         " gh-pages/unicode-proposals.html, and nine post-stress-meteg pages from the"
         " survey JSON; must come after accgram-survey-post-stress-meteg",
+    ),
+    # The three steps below joined on 2026-09-10, with the other offline generators of
+    # tracked files that Ben agreed to add; until then nothing routine rewrote what they
+    # write.  Each reads only committed inputs that no step writes, so nothing orders
+    # them against the steps above: they sit together after gen-site and before the
+    # closing audit.
+    StepRecord(
+        "diffable-pointed-hebrew",
+        main_diffable_pointed_hebrew.write_tracked_expansions,
+        "reads only committed inputs: expands the two sample inputs under"
+        " diffable-pointed-hebrew/ and the two zarqa tables under"
+        " misc/zarqa-table-diff/ into the four tracked outputs beside them, the pairs"
+        " in py/main_diffable_pointed_hebrew.py's TRACKED_EXPANSIONS",
+    ),
+    StepRecord(
+        "ac-gen-index-flat-annotated",
+        main_ac_gen_index_flat_annotated.main,
+        "py/main_ac_gen_index_flat_annotated.py with its default paths, which the"
+        " mega's blanked argv gives it: reads only the committed, hand-corrected"
+        " aleppo/aleppo-wiki/index-flat-corrected.json; writes"
+        " aleppo/index-flat-annotated.json",
+    ),
+    StepRecord(
+        "pipeline-graph",
+        main_pipeline_graph.almost_main,
+        "writes doc/process-documentation/pipeline.dot and pipeline.svg from the"
+        " hand-maintained py/pipeline_graph/pipeline_graph_spec.py, and renders the"
+        " hand-written MAM-process.dot to MAM-process.dot.svg; needs the pinned"
+        " Graphviz, and a cloud session skips its two SVG renders as it does"
+        " tmpl-survey's",
     ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
     # builds, reading the copied .py files under MAM-simple/py-examples/, and a
