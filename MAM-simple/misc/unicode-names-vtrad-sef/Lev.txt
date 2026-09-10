@@ -21260,4 +21260,3 @@ SPACE
 b,·,:,h,_,(tip),r
 SPACE
 σ,i,y,n,a,(mos),y,(sopa)
-

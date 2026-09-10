@@ -39,6 +39,12 @@ Wave 2 is next and has not started. Waves 2-4 technical work and all E items rem
 pending; P2 source/rights-holder identification remains deferred. This update supersedes
 the earlier incomplete-Wave-1 status entries, which remain historical records.
 
+Status updated 2026-09-10 during Wave 2: whitespace and existing page-membership
+lint repairs are verified for a local partial checkpoint. Holman RTL is implemented
+and verified as a working-tree draft, but a pre-existing generated background-link
+label update needs Ben's exact decision under Wave 2's direction-only output contract.
+Wave 2 remains incomplete; no successor is dispatched while that decision is pending.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -916,6 +922,37 @@ ID are reported at dispatch; no integration, push or automatic archival occurred
 V6 passed again at `f7360667` before the record commit. The remediation plan names
 that evidence and the passing record-scope report. Every actual Wave 1D2 V6 check
 passed with zero changed locations and unchanged survey JSON; no real stop occurred.
+
+Wave 2 partial execution, 2026-09-10: task `01a08999-29a0-7b60-aa25-1454c9b49084`
+verified clean source `efeb9fd44c9ebd244a81a4d54377aa04de2264df` in the exact review
+worktree, on `codex-review-2026-09-08`. The merge of `main` was already up to date.
+The inspected fixed V6 gate passed before and after the merge, after generation and
+after the canonical suite. All nine checkout pages and fresh renders match the fixed
+baseline; survey JSON is unchanged. No real V6 stop occurred.
+
+The independent Wave 2 verifier saved complete byte baselines and reproduced all 210
+whitespace findings in 193 paths. The repairs now leave zero findings and change only
+the measured whitespace, with nine CSV final-field changes and all internal text and
+spacing preserved. The existing MAS membership lint now detects unlisted rendered and
+declared pages as well as missing expected pages; scratch probes prove those failures.
+The full support copier also synchronizes the existing `mb_cmn/paths.py` documentation,
+an explained pre-existing support-copy difference. No new tracked test was added.
+
+The Holman draft fixes the measured 49+1 missing direction attributes and preserves all
+1,302 cell texts and their order. Its pre-edit generation also replaces the background-link
+label `Meteg after the primary stress` with `Meteg after the stress`, from the existing
+site title constant. Codex presented that exact difference to Ben because the original
+Wave 2 output contract permits only direction changes. The response is pending; the
+Holman sources/pages remain an uncommitted draft and Wave 2 remains incomplete.
+
+The suite passed **987 tests, 5 skips and 65 subtests in 111.22 seconds**, followed
+immediately by V6. Black and both whole-skill comparisons passed. The remediation plan's
+Wave 2 partial record names the complete evidence, the failed Windows Holman file-open
+attempt and successful isolated retry, and the precise remaining boundary. Repeat-generation
+and local partial-commit evidence follow there. All E items remain for the separate
+editorial phase, subject to Ben's pending exact-label decision; P2 source/rights-holder
+identification remains deferred. No new task, automatic archival, integration or push
+occurs while that decision is pending. One integration remains scheduled after final Wave 4.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

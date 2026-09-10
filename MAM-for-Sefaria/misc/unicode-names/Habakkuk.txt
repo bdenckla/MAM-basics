@@ -1344,4 +1344,3 @@ SPACE
 l,_,m,:,n,_,c,·,‥,(tip),x,_
 SPACE
 b,·,i,n,:,g,i,y,n,v,o,τ,a,(mos),y,(sopa)
-

@@ -1,6 +1,12 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's decision on a pre-existing generated label difference; Wave 2 completion pending; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 during Wave 2: the whitespace and existing page-membership
+lint repairs are ready for a local partial checkpoint. Holman RTL is implemented and
+verified in the working tree, but its generator also updates an existing background-link
+label outside the original direction-only contract. Ben's decision is pending; Wave 2
+is incomplete and no successor is dispatched. Earlier status entries remain historical.
 
 Status updated 2026-09-10 after Wave 1D2: all Wave 1 crosswalk rows and settled
 decisions have explicit dispositions. Wave 2's whitespace, Holman RTL and page-lint
@@ -1436,6 +1442,130 @@ Commit the source, copies, and regenerated products before W4 computes synchroni
 Execution record: **Not started.** Record approval, HEADs, exact changed paths, baseline and
 final offending sets, CSV/text comparisons, RTL counts, generator commands, repeat-generation
 result, suite output, implementation commit, and final record commit. No integration or push.
+
+### Wave 2 partial execution record, 2026-09-10
+
+Codex task `01a08999-29a0-7b60-aa25-1454c9b49084` verified the exact checkout
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`efeb9fd44c9ebd244a81a4d54377aa04de2264df`. The required merge of `main` reported
+`Already up to date.` Ben's Step-5 approval authorizes the original Wave 2 work.
+Every script, edit, generation, validation and commit uses this worktree, with the
+primary clone's absolute interpreter. No primary fast-forward or push occurred.
+
+The unchanged `v6_gate_wave1_01a0891a.py` has SHA-256
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c` and verifies the
+fixed nine-page and survey-JSON baseline at `c2f238f2c253d7b00b2d22dc262fe95c81a82401`.
+The before/after-merge evidence is
+`v6-runs/20260910T043609Z-wave2-before-merge-a7005410/` and
+`v6-runs/20260910T043807Z-wave2-after-merge-1448a5ee/`, relative to
+`.novc/review-remediation-2026-09-08/`. Both passed with zero changed locations.
+All actual Wave 2 V6 checks have passed; no real stop occurred.
+
+The independently written scratch verifier is
+`.novc/review-remediation-2026-09-08/verify_wave2_01a08999.py`. Run it with the primary
+interpreter and `-B`. Its `baseline` mode, run before edits, saved complete bytes for
+930 named product/support/input files, totaling 182,324,171 bytes, under
+`.novc/review-remediation-2026-09-08/wave2-01a08999/baseline/`. The adjacent
+`baseline.json` records hashes, the complete offending path/line sets and Holman cells.
+It independently reproduced 210 findings in 193 distinct files: 189 blank final lines
+and 21 trailing-space lines, with no overlap. This is an output verification inventory,
+not the unrelated 415/416 scratch-folder census, which remains unverified by Codex.
+
+`trace_wave2_01a08999.py` and `producer-trace.json` trace every blank final line:
+
+1. `MAM-simple/misc/unicode-names-vtrad-bhs/`: 24 files.
+2. `MAM-simple/misc/unicode-names-vtrad-mam/`: 24 files.
+3. `MAM-simple/misc/unicode-names-vtrad-sef/`: 24 files.
+4. `MAM-simple/py-examples-out/sefaria/misc/unicode-names/`: 39 files.
+5. `MAM-for-Sefaria/misc/unicode-names/`: 39 files.
+6. `MAM-for-Sefaria/misc/unicode-names-ajf/`: 39 files.
+
+The core exporter calls `write_bkg_in_un_fmt` through `_finish_one_book_group`;
+the Sefaria/AJF exporter and example call it through `_do_one_book_group` in
+`mb_sefaria/mam4sef_or_ajf.py`. `_write_callback` in `mb_misc/write_utils.py` now
+emits the blank separator before each verse after the first. `_write_verse_un` no
+longer emits a blank line after the last verse. Every affected output equals its
+baseline with exactly one final LF removed; internal separators and one terminating
+newline remain. No XML or JSON content changes.
+
+`write_utils_sef_or_ajf.py` now trims ASCII space/tab only from the final CSV field
+at the record boundary. The baseline has 3,509 whitespace-ending fields, of which
+only nine are final fields; all other fields remain unchanged. Full byte comparisons
+and parsed comparisons of every saved CSV establish only the nine measured removals,
+preserving quoting, field counts, verse text, internal whitespace and mark order.
+`repair_static_wave2_01a08999.py` removed the measured 11 HTML and one CSS trailing
+spaces from the named static files; `static-repair.json` records those changes.
+
+The pre-edit `generate before` run used all five commands specified in Wave 2,
+including the example's exact `MAM-simple` cwd, and V6 immediately after each command.
+The copier's recursive targets were first resolved and checked within the declared
+worktree child directory; `before-copier-targets.json` records them. The full comparison
+identified these pre-existing differences, saved separately under `pre-edit-generation/`:
+
+1. `MAM-simple/py-examples/mb_cmn/paths.py` receives the existing documentation from
+   source commit `b865b7c8fd9cb95e6a3a850fadcb9f852299c2a4`. This is an exact declared
+   support copy, included with the required copier output. The source is unchanged.
+2. `gh-pages/holman/table_data_findings_suppressed.html` changes one background-link
+   label from `Meteg after the primary stress` to `Meteg after the stress`.
+   `rt_suggestion_context._POST_STRESS_METEG` uses the existing
+   `site_data.POST_STRESS_METEG_TITLE`. No source wording was edited in Wave 2.
+   The exact generated label update exceeds Wave 2's original direction-only contract;
+   Codex asked Ben whether to include it or defer Holman to the editorial phase.
+   No response has been recorded. The label difference is not a MAS HTML difference,
+   and no V6 baseline or exception changed.
+
+The existing `test_every_page_is_present` now compares `_PAGE_FNAMES` with both actual
+`post-stress-meteg*.html` files and the `POST_STRESS_METEG` filename constants in
+`author_site.site_data`. Missing-page failure and the forbidden-word scan remain.
+`check_lint_wave2_01a08999.py` proves missing, additional rendered and additional declared
+pages fail, using only disposable scratch fixtures; `membership-probes.json` retains
+the results. No new tracked test or exception registry was added.
+
+The Holman draft uses `contains_hebrew_char` at the producing cells. The suppressed
+page's 32 comparison-name and 17 comparison-symbol-value cells come from
+`rt_comparison_table._comparison_row_html`; the active page's separate summary cell
+comes from `rt_summary._summary_row_html`. V3 uses `HTMLParser` with an inherited
+direction stack and correct void-element handling. Both pages now have zero offenders.
+All 724 active-page cells and 578 suppressed-page cells retain their text and order;
+the proposed output differs only by 50 direction attributes and the pending label.
+Holman data, issue metadata, CSS and JavaScript are byte-identical to the baseline.
+
+`generate repaired` regenerated the products. The Holman command failed opening the
+suppressed output with Windows `OSError: [Errno 22] Invalid argument`; its log is
+`20260910T044759Z-repaired-holman.txt`. V6 passed immediately after the failure at
+`v6-runs/20260910T044907Z-wave2-after-holman-failure-c012023f/`. The isolated `holman`
+retry succeeded (`20260910T044931Z-holman-retry.txt`), followed by a passing V6.
+The failed generation was not called a passing verification or a deliberate probe.
+
+`draft-verification.json` records zero whitespace findings, nine changed CSV fields,
+and zero Holman RTL omissions. Its Holman comparison explicitly treats the exact label
+update as a pending proposal; a draft pass is not approval or Wave 2 completion.
+All changed tracked Python passed black at defaults; both whole-skill Git comparisons
+with the worktree's canonical directory and the live Claude/Codex directories exited 0.
+The canonical suite, with `REPOS_ROOT=C:/Users/BenDe/GitRepos`, passed **987 tests,
+5 skips and 65 subtests in 111.22 seconds**. Full output and command/HEAD/time metadata
+are `20260910T045041Z-suite.txt` and `.json`; V6 ran immediately afterward, with its
+log at `20260910T045233Z-suite-v6.txt`. Repeat-generation and commit evidence follow.
+
+Repeat generation completed: `generate repeat` reran every required product/Holman
+command and V6 after each. The second `draft` comparison found all 930 saved paths
+byte-identical to `draft-hashes.json`; no additional output diff occurred. The repeat
+logs run from `20260910T045251Z-repeat-copy.txt` through
+`20260910T045322Z-repeat-holman-v6.txt`. `draft-verification.json` preserves the full
+post-repeat comparison. This proves reproducibility of the draft; it does not approve
+the pending label update. Final scope and partial-commit evidence follow.
+
+The previous current State, preserved from `efeb9fd4`, was:
+
+> State: live 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+
+**Next execution boundary:** resolve the exact Holman label question with Ben, then
+finish Wave 2's applicable verification, records and local commits before any successor.
+The whitespace and page-lint checkpoint does not complete Wave 2. All E items remain
+for the separate editorial phase after Wave 3 technical verification unless Ben explicitly
+amends the contract for this label. P2 source/rights-holder identification stays deferred.
+No new task, archival, integration or push occurs while the decision is pending.
 
 ## Wave 3 — select unannotated forms, preserve displayed marks, and validate annotations
 

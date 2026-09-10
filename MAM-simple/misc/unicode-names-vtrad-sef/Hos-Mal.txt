@@ -26651,4 +26651,3 @@ h,g,d,v,l
 SPACE
 v,h,n,v,r,α
 STOP good-ending
-

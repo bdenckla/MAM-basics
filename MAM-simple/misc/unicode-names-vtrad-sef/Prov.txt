@@ -13510,4 +13510,3 @@ SPACE
 b,_,$,·sh,·,:,3,a,r,i,(mun),y,m.
 SPACE
 m,_,3,:_,$,·si,∵,(mos),y,h,a,(sopa)
-

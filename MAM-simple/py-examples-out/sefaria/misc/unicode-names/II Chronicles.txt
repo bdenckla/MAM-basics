@@ -25576,4 +25576,3 @@ SPACE
 3,i,m,·,(tip),v,o
 SPACE
 v,:,y,a,(mos),3,_,l,(sopa)
-

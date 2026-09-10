@@ -52,4 +52,4 @@ def _write_callback(variant, bkid, contents, file_handle):
         chnu = tbn.bcvt_get_chnu(bcvt)
         vrnu = tbn.bcvt_get_vrnu(bcvt)
         bcv_str = f"{sef_bkna} {chnu}:{vrnu}"
-        writer.writerow((bcv_str, *verse))
+        writer.writerow((bcv_str, *verse[:-1], verse[-1].rstrip(" \t")))

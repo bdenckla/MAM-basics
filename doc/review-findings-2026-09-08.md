@@ -1,6 +1,11 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; Waves 2-4 technical work and all E items remain pending.
+State: remediation in progress 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's exact label decision; Wave 2 completion and Waves 3-4 remain pending.
+
+Status updated by Codex on 2026-09-10 during Wave 2: the new dated dispositions below
+supersede the earlier status and crosswalk entries for findings 2, 5.1b and 14.2.
+Wave 2 is incomplete. All E items retain their separate editorial phase; the exact
+pre-existing Holman label difference has been presented to Ben as a contract question.
 
 Current status, recorded by Codex on 2026-09-10: the dated dispositions below describe
 completed work. Waves 2-4 technical work and all E items remain pending under the approved
@@ -946,6 +951,31 @@ and one integration after final Wave 4 remain in force, including across interme
 The previous current State at `f60aa426` is preserved here:
 
 > State: remediation in progress 2026-09-10; Waves 1A-1B and 1C1-1C3 complete; Wave 1D1 records the accepted corrections, with full Wave 1 reconciliation still pending in Wave 1D2.
+
+Wave 2 partial checkpoint, 2026-09-10, recorded by Codex under Ben's Step-5 approval.
+The full baseline, commands, comparisons and pending decision are in the remediation
+plan's "Wave 2 partial execution record, 2026-09-10". Prior dispositions and the entire
+accepted-corrections section below remain historical records.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 2 | Repaired and verified for the partial checkpoint: all 189 blank final lines and all 21 trailing-space lines in 193 files. Complete baseline-byte comparisons preserve internal verse separators and a terminating newline, and all CSV quoting, field counts and text apart from the nine measured final-field spaces. The named static HTML/CSS whitespace was edited directly. The real generators reproduce the repaired output. This supersedes the technical-pending disposition; the earlier false fixed claim retains its dated Wave 1C2 correction. |
+| 2026-09-10 | 14.2 | Repaired and verified for the partial checkpoint: the existing membership lint checks the expected tuple against both rendered filenames and declared MAS filename constants. Disposable scratch probes demonstrate failure for an extra rendered page, extra declared page and missing expected page. The forbidden-word scan is unchanged; no new tracked test or exception registry was added. |
+| 2026-09-10 | 5.1b | Implemented and verified as an uncommitted Holman draft, pending Ben's label decision. The comparison-cell constructor fixes all 49 suppressed-page omissions; a separately traced summary-cell constructor fixes the active page's one omission. All 1,302 cell texts and their order are unchanged. The pre-edit generator also changes a background-link label from `Meteg after the primary stress` to `Meteg after the stress`, matching the existing source. That exact wording difference exceeds the original direction-only output contract and awaits Ben's response. Wave 2 is not complete. |
+
+All actual Wave 2 V6 runs passed against the unchanged fixed baseline, including after
+the canonical suite: **987 tests, 5 skips and 65 subtests in 111.22 seconds**. No MAS
+HTML or survey JSON changed. No issue metadata, XML, parsed corpus, downloaded input,
+Holman assets or sibling output changed. The complete support copier additionally
+synchronized `MAM-simple/py-examples/mb_cmn/paths.py` with its existing source
+documentation; this pre-existing difference is recorded separately from the repairs.
+Both whole-skill comparisons passed. The 415/416 scratch count remains unverified;
+P2 source/rights-holder identification remains deferred. No successor is dispatched
+while the Holman label question is pending, and no integration or push occurred.
+
+The previous current State at `efeb9fd4`, preserved here, was:
+
+> State: remediation in progress 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; Waves 2-4 technical work and all E items remain pending.
 
 ## Corrections accepted in the review exchange
 

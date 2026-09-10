@@ -38026,4 +38026,3 @@ SPACE
 y,a,(rev),h,·
 SPACE
 h,_,(mos),l,:,l,v,·,-,y,a,(mos),h,·,(sopa)
-

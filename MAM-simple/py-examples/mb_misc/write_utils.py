@@ -118,7 +118,9 @@ def _write_callback(
     if generator_file is not None:
         out_fp.write(f"# {provenance.generated_by_text(generator_file)}\n")
     out_fp.write(f"{title}\n")
-    for bcvt, _verse_body in verses[rv_cant_that_covers]:
+    for verse_index, (bcvt, _verse_body) in enumerate(verses[rv_cant_that_covers]):
+        if verse_index:
+            out_fp.write("\n")
         multiverse = {
             roca: verses_dicts[roca].get(bcvt)
             for roca in verses.keys()
@@ -137,7 +139,6 @@ def _write_verse_un(out_fp, bcvt, multiverse):
             _write_segments(out_fp, body, rv_cant)
         else:
             _write_segments(out_fp, body, None)
-    out_fp.write("\n")
 
 
 def _write_segments(out_fp, some_kind_of_verse, cant_dab=None, indent=""):

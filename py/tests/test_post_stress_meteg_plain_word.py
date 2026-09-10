@@ -58,8 +58,8 @@ from mb_cmn import paths
 # because this counted the word case-sensitively.
 _FORBIDDEN = "chanted"
 
-# Every page the post_stress_meteg generator writes.  Named from site_data rather than by a
-# glob, so a page added there without a decision about its vocabulary fails here.
+# Every page covered by the terminology decision. The membership check compares this tuple
+# with both the rendered filenames and the filename constants declared in site_data.
 _PAGE_FNAMES = (
     site_data.POST_STRESS_METEG_FNAME,
     site_data.POST_STRESS_METEG_METHODS_FNAME,
@@ -88,6 +88,19 @@ class TestPostStressMetegPlainWord(unittest.TestCase):
             "post-stress-meteg pages are missing, so this lint would check nothing: "
             f"{missing}",
         )
+        expected = set(_PAGE_FNAMES)
+        rendered = {
+            path.name
+            for path in (paths.repo_root() / "gh-pages").glob("post-stress-meteg*.html")
+            if path.is_file()
+        }
+        declared = {
+            value
+            for name, value in vars(site_data).items()
+            if name.startswith("POST_STRESS_METEG") and name.endswith("_FNAME")
+        }
+        self.assertEqual(rendered, expected, "Rendered MAS page membership differs")
+        self.assertEqual(declared, expected, "Declared MAS page membership differs")
 
     def test_no_page_qualifies_word_as_chanted(self):
         offenders = []
