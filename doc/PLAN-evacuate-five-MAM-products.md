@@ -1365,8 +1365,8 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
-Tasks **6A and 6B are complete, 2026-09-10**; 6C–6F remain. Ben requested a
-pause before creating 6C so he can choose its model. The finalized
+Tasks **6A–6C are complete, 2026-09-10**; 6D–6F remain. Ben requested a
+pause before creating 6D so he can choose its model. The finalized
 [command map](mam-products-phase6-command-map.md) and
 [Git-blob baseline](../in/mam_products_phase6_baseline.json) specify the commands,
 dependencies, exact path sets and comparison partners for the remaining tasks.
@@ -1707,3 +1707,86 @@ and directory recycling were not performed.
 creating **6C — MAM-with-doc and historical comparisons**, allowing Ben to choose
 the next task's model. The remaining bounded chain is still authorized. No successor
 has been created; the model-choice pause supersedes automatic dispatch from 6B.
+
+### Phase 6C MAM-with-doc and historical-comparison record — 2026-09-10
+
+Task `01a08c58-22b9-7080-a555-c25e7f49b860` verified its actual cwd as
+`C:/Users/BenDe/GitRepos` and developed directly in
+`C:/Users/BenDe/GitRepos/MAM-basics`. Primary `main`, `origin/main` and live
+remote `main` all matched `dc043165f98b8a75ee3faa34314b70d0b2171a8f` at
+startup; the checkout and index were clean. Every production command retained
+that HEAD and index. No worktree was created or moved.
+
+The permanent evidence is `in/mam_products_phase6c_verification.json`. It records
+the three complete command arrays, exact input/output memberships, raw hashes,
+Git identities, before/after nanosecond mtimes, physical-root snapshot digests,
+full command logs and all conditional output states. Each command ran sequentially
+from the development root with interpreter
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`:
+
+| Arguments after the interpreter | Expected paths | Primary paths with changed mtimes | Raw byte changes | Result |
+| --- | ---: | ---: | ---: | --- |
+| `py/main_mam_with_doc.py` | 62 | 62 | 0 | Passed; all corpus and conditional big-document pages remain current |
+| `py/main_authored.py gen-misc` | 21 | 21 | 0 | Passed; all 20 direct miscellaneous pages and the retained redirect page remain current |
+| `py/main_diff.py mpp --all` | 16 | 13 | 0 | Passed; five named comparisons, the unpinned comparison and index regenerated; three shared assets were already current |
+
+The three commands cover **99 distinct outputs / 12,554,923 bytes**. Every
+output matches the frozen baseline's raw bytes and Git blob. The accepted
+output-content commit remains `dc043165`; no production source or generated
+file required an edit. The historical command left `filter.js`, `style.css`
+and `change-log/woff2/Taamey_D.woff2` untouched. An independent byte comparison
+proved that the 21,148-byte change-log font and its source font have identical
+SHA-256
+`5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474`;
+the production routine's size-only copy guard is not the evidence for that claim.
+
+`MAM-parsed/historical/manifest.json` still verifies all **144 permanent JSON
+files / 84,572,003 bytes** against their original Git IDs and sizes. The files'
+raw bytes and mtimes did not change. The authoritative release table produced:
+
+| Report | Boundary | Raw changes | Serialized JSON differences |
+| --- | --- | ---: | ---: |
+| `2025-03-19a` | `b5e8f94` → `3d5ecfd` | 76 | 76 |
+| `2025-03-19b` | `3d5ecfd` → `049e636` | 557 | 565 |
+| `2026-03-06` | `049e636` → `cc43fe0` | 19 | 19 |
+| `2026-03-16` | `cc43fe0` → `1880cbb` | 139 | 139 |
+| `2026-04-14` | `1880cbb` → `9ce6ee5` | 33 | 33 |
+| `unpinned-latest` | `9ce6ee5` → committed `dc043165` (`HEAD`) | 180 | 56 |
+
+No `--legacy-history`, download, source clone or refreshed oracle participated.
+The original MAM-with-doc source, immutable Land and current product identities
+remain separate. Of 271 mapped paths, 256 still match original source and Land
+blobs. The remaining 15 comprise the adapted product README, the accepted Phase
+6B FOI page and the 13 published paths documented by Phase 4's oracle
+qualification. All 13 Phase 4 published adaptations remain at their frozen
+Phase 6 identities.
+
+The physical-root preflight recorded **22,402 files**, including three separate
+Claude worktrees under `.claude/worktrees/`. Each nested checkout's HEAD, branch
+and clean status were independently checked before and after every command. No
+nested file changed during the three commands. Every primary file outside each
+command's expected output set retained an identical before/after state. All five
+retired source sibling paths had `os.path.lexists == False` before and after every
+command.
+
+The 188 protected static paths, all historical OSIS inputs, examples, grammar
+locks, parser CSV inputs, 1,225 implementation files and preceding permanent
+evidence remained unchanged. The six parser CSVs and the two earlier JSON reports
+with existing CRLF working bytes were compared explicitly against their LF Git
+blobs in memory and were not normalized. The affected command used
+`py/main_test.py` with the exact file list in the permanent record: all
+`test_mpplus_*.py` files, the unpinned-latest check, site-link and authored-page
+differential checks, machine-path and sibling-reach checks, and relevant source
+hygiene. Result: **57 passed in 20.89 seconds**. The staged Unicode/prose
+hygiene command, `py/main_test.py py/tests/test_h_dot_below_nfc.py
+py/tests/test_prose_mark_order.py -q`, passed **7 tests in 19.15 seconds**.
+`git diff --cached --check` passed. Tracked Python was unchanged, so Black was
+not required. Full mega, downloads, Phase 6D commands, independent
+examples, MAM-private writes, source-clone recreation and directory recycling
+were not performed.
+
+**Ben's handoff decision, 2026-09-10:** finish, commit and push 6C, then pause
+before creating **6D — Sefaria, OSIS and independent examples**, allowing Ben to
+choose the next task's model. The remaining bounded chain is still authorized.
+No 6D successor has been created; the model-choice pause supersedes automatic
+dispatch from 6C.
