@@ -1,0 +1,285 @@
+[
+  {
+    "book24": "Samuel",
+    "sub_book": "שמ\"ב",
+    "chapter": "22",
+    "verse": "40",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/2/0",
+        "NFC_equal": true,
+        "segments": [
+          {
+            "old_segment": "í",
+            "new_segment": "í",
+            "old_codepoints": [
+              "U+0069 LATIN SMALL LETTER I",
+              "U+0301 COMBINING ACUTE ACCENT"
+            ],
+            "new_codepoints": [
+              "U+00ED LATIN SMALL LETTER I WITH ACUTE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "27",
+    "verse": "13",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": true,
+        "segments": [
+          {
+            "old_segment": "",
+            "new_segment": "ׅ",
+            "old_codepoints": [],
+            "new_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ]
+          },
+          {
+            "old_segment": "ׅ",
+            "new_segment": "",
+            "old_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ],
+            "new_codepoints": []
+          }
+        ]
+      },
+      {
+        "path": "/0/tmpl_params/2/2",
+        "NFC_equal": true,
+        "segments": [
+          {
+            "old_segment": "",
+            "new_segment": "ׅ",
+            "old_codepoints": [],
+            "new_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ]
+          },
+          {
+            "old_segment": "ׅ",
+            "new_segment": "",
+            "old_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ],
+            "new_codepoints": []
+          }
+        ]
+      },
+      {
+        "path": "/0/tmpl_params/2/4",
+        "NFC_equal": true,
+        "segments": [
+          {
+            "old_segment": "",
+            "new_segment": "ׅ",
+            "old_codepoints": [],
+            "new_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ]
+          },
+          {
+            "old_segment": "ׅ",
+            "new_segment": "",
+            "old_codepoints": [
+              "U+05C5 HEBREW MARK LOWER DOT"
+            ],
+            "new_codepoints": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "23",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "24",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "25",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "26",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "27",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "28",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "book24": "Psalms",
+    "sub_book": null,
+    "chapter": "107",
+    "verse": "40",
+    "field": "E",
+    "differences": [
+      {
+        "path": "/0/tmpl_params/1",
+        "NFC_equal": false,
+        "segments": [
+          {
+            "old_segment": "__",
+            "new_segment": " ",
+            "old_codepoints": [
+              "U+005F LOW LINE",
+              "U+005F LOW LINE"
+            ],
+            "new_codepoints": [
+              "U+0020 SPACE"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
