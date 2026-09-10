@@ -10,6 +10,7 @@
     {"ref": "1 Chronicles 2:53", "koren": "last", "note": "also one on the he, which MAM lacks, and a vocal sheva under the shin, before MAM's first U+05BD", "date": "2026-09-10"},
     {"ref": "Genesis 5:2", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
     {"ref": "Exodus 21:35", "koren": "both", "date": "2026-09-10"},
-    {"ref": "Leviticus 26:31", "koren": "both", "date": "2026-09-10"}
+    {"ref": "Leviticus 26:31", "koren": "both", "date": "2026-09-10"},
+    {"ref": "Deuteronomy 1:12", "koren": "both", "sheva": "vocal", "date": "2026-09-10"}
   ]
 }
