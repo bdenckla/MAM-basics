@@ -31,6 +31,15 @@ for a fresh session that has no other context.
   phrase-unqualified verse (both in Decisions below); and "phrase" is used in its broad
   sense throughout this undertaking — a run of one or more consecutive atoms, so a lone
   chanted word or even a lone atom counts.
+- 2026-09-10: one design change from Ben, and no code touched. Finding the page is
+  separated from showing it — `lookup` returns records and prints a link per edition on
+  stdout, and the generated HTML bring-up is out. In Decisions below, the bring-up bullet
+  becomes two — the new design and what it replaces — and the cwd-independence bullet's
+  stdout clause is rewritten. **Phase 1 has still not started**: `py/main_scan_pages.py` has `survey` and
+  `check` and no `lookup` or `census`, and all 156 records across the four full-Tanakh
+  editions are still unread seeds — every one has a null `start_phrase`, none has a
+  `stop_phrase`, and no edition has a segment. Measured that day from
+  `in/scan-pages/*.json`.
 
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 
@@ -114,19 +123,41 @@ for a fresh session that has no other context.
   the candidate neighborhood (Ben's "verse-unique phrase" requirement). The stored phrase
   keeps every record independently re-verifiable, against the image and against the
   text, forever after.
-- **The bring-up is one generated HTML page, opened by the program.** Written under
-  `.novc/scan-pages/` (gitignored), one section per edition: the page image(s) the
-  records give, inline via `file:///` URLs into the scans folder (`loading="lazy"` —
-  these JPGs run 1–18 MB), prev/next links, and the record behind the answer, phrases
-  included. Default behavior when *Ben*
-  runs it: open via `os.startfile`, because "bring up" is the ask. A Claude session runs
-  it with `--no-open` and hands Ben the `file:///` link, per the global
-  don't-launch rule.
+- **Finding the page is separated from showing it, and `lookup` prints its answer on
+  stdout (Ben's decision, 2026-09-10).** The resolution — a bcv, an optional strand suffix
+  and an optional phrase in; a page record or records out — is a library function under
+  `py/scan_pages/` that renders nothing, writes nothing and opens nothing. Ben's reason,
+  2026-09-10: *"the main point is to find the page, and that part of the code should be
+  totally abstracted from what you do with the page, which might have multiple answers
+  depending on the application."* **The first use of that library is deliberately a very
+  short `main`** (Ben, 2026-09-10) that prints one `file:///` link into the scans folder
+  per edition and nothing else. Its shortness is the test that the separation holds:
+  anything the resolution left for its caller to do would show up as length right here. An
+  edition whose range is not censused gets an honest refusal naming what is censused,
+  never a guess. Everything beyond the link rides along later, in a JSON output shape some
+  second application asks for — the record behind each answer, its phrases, the neighboring
+  pages — and none of it is built until an application wants it. **The program opens
+  nothing**, for Ben and for a session alike.
+- **What that replaces, and why.** From 2026-08-06 to 2026-09-10 the bullet above
+  specified one generated HTML page under `.novc/scan-pages/`, one section per edition,
+  the page images inline via `file:///` URLs with `loading="lazy"` because the JPGs run
+  1–18 MB, prev/next links, and `os.startfile` as the default when Ben ran it. Ben's
+  objection, 2026-09-10: with no UI being added, an HTML page is a wrapper around links
+  that an external image viewer already handles, and its one real cost — the
+  lazy-loading — existed only because that page embedded the images. The three things it
+  bought all survive as printed text: several editions at once become several lines,
+  prev/next become two more links, and the record reads more easily as text than inside a
+  generated page. What is genuinely lost is seeing several editions side by side in one
+  scroll, which is thin at 5100×7100, where one page at a time is what fits. The
+  `os.startfile` default went with it, against the standing rule that a link costs one
+  click when the page is not already open and a duplicate window when it is.
 - **The program is cwd-independent.** Scans root and repo paths are anchored in code
   (`Path.home() / "OneDrive" / "Documents" / "ScansOfBooks"`; `mb_cmn/paths.py` for
   siblings), never cwd-relative, so it runs from anywhere. UTF-8 stdio reconfigure first
-  thing in `main()`, per the global rules — though real output goes to the HTML file, and
-  stdout gets only short ASCII progress.
+  thing in `main()`, per the global rules — and load-bearing rather than precautionary
+  since 2026-09-10, because the answer itself now goes to stdout: a JSON ride-along that
+  holds the page-edge phrases puts Hebrew there. Until that day this clause said real
+  output went to the HTML file and stdout got only short ASCII progress.
 - **Edition ids** (used in filenames, JSON, and the CLI):
 
   | id | folder under ScansOfBooks | files |
@@ -487,7 +518,9 @@ the tables that encode it in `py/scan_pages/classify.py`. In edition order: jc1
 see at a glance what has been looked at and what has only been inferred.
 
 **Phase 1 — tooling, proven on one small book.** Implement
-`lookup <bk39> <ch>:<v>[t|e] [<phrase>]` (exact-or-refuse) → HTML bring-up, and `census` (page-edge phrases in, atoms out,
+`lookup <bk39> <ch>:<v>[t|e] [<phrase>]` (exact-or-refuse) as a library resolution returning
+records, behind a very short `main` printing one `file:///` link per edition on stdout, and
+`census` (page-edge phrases in, atoms out,
 contiguity checked against the previous record as each new one lands). Then census one
 small book end to end in one edition and verify: `check` clean, and
 spot-read several lookups against the page images, straddling verses included, confirming
