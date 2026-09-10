@@ -587,7 +587,7 @@ complete Phase 5 end to end describes their combined result, not one task's scop
    preserve and compare the frozen source artifacts, record exact source and
    destination mtime changes, and explain every changed byte. Run the canonical
    suite and affected lints. The next task is 5D.
-4. **5D — Stubs and published URLs.** Freeze every actual legacy HTML path,
+4. **5D — Stubs and published URLs: DONE 2026-09-10.** Freeze every actual legacy HTML path,
    register the redirect host, add the authored site-index entry, generate and
    test the stubs, and deploy the destination before flipping the source pages.
    Verify every legacy/target URL pair, query/fragment preservation, and custom
@@ -963,6 +963,134 @@ the actual-absent-source oracle. Commit/push and verify both primary trees befor
 creating each successor, using the saved GitRepos project directly in Local mode.
 MAM-private, the full mega, and Phase 6 remain outside this task chain's scope.
 
+
+### Phase 5D Stubs and published URLs record — 2026-09-10
+
+Task `01a08bd3-7610-7ac1-9c22-fc7c95898562`, titled “MAM-OSIS 5D — Stubs
+and published URLs”, used the saved GitRepos project directly in Local mode.
+`read_thread` verified its actual cwd as `C:/Users/BenDe/GitRepos`. Before editing,
+the exact primary roots, HEAD, branch, clean status, `origin/main`, and live
+remote `main` were verified independently:
+
+| Primary checkout | Starting commit, equal to tracking and live remote `main` |
+| --- | --- |
+| `C:/Users/BenDe/GitRepos/MAM-basics` | `2d82bcbb7bd8a0967093d2b6ef09fbccf8a87dfa` |
+| `C:/Users/BenDe/GitRepos/MAM-OSIS` | `697dc98a904a52ed81bb105772f002d3efb360e3` |
+
+Target preparation **`d61c3472981f927d69a5a7452690d5130078a1c5`** and source
+Pages flip **`26a7e85f8cb211043c33ef2badfddb4ac69d5ee9`** were committed and
+pushed directly to primary `main`, in that order. The permanent evidence is
+[`in/mam_osis_stubs_verification.json`](../in/mam_osis_stubs_verification.json).
+The original Land manifest remains unchanged.
+
+The legacy set was re-measured from `git -C C:/Users/BenDe/GitRepos/MAM-OSIS
+ls-tree -r -l -z 697dc98a904a52ed81bb105772f002d3efb360e3` and independently
+compared with every actual file under the source `gh-pages/`. Both sets contain
+**30 files / 782,189 bytes: one HTML page, 28 PNGs, and one stylesheet**. The
+only legacy HTML path is `index.html`.
+[`in/mam_osis_redirect_pages.json`](../in/mam_osis_redirect_pages.json) freezes
+that complete set, the source commit, date, and the lane's reason for retaining
+the host. Do not rebuild this historical set from current destination files.
+
+The implementation and source dispositions are:
+
+1. `py/redirect_stubs/stubs.py` gains the MAM-OSIS row, preserving the existing
+   pure prefix rewrite, query/fragment JavaScript, canonical link, meta refresh,
+   visible fallback, and custom 404. `py/tests/test_sibling_reach.py` gains the
+   corresponding redirect-only declaration. The canonical manifest test already
+   parametrizes directly over `REDIRECT_REPOS`; the new row therefore adds its
+   test case without a duplicate registration or test-file edit.
+2. `py/author_site/site_data.py` adds MAM-OSIS under “Editions of MAM”. After
+   inspecting `py/main_authored.py` and `author_site/site_index.py`, the scratch
+   command `.novc/phase5d_evidence.py site-index` called the actual
+   `author_site.site_index.gen_html_file()` function. Its before/after tracked-file
+   mtime check records exactly one write, `gh-pages/index.html`, and zero source
+   writes. The complete generated diff is one added link. No unrelated root page
+   was regenerated.
+3. The real CLI built and checked a preview, then `build --repo MAM-OSIS
+   --publish` modified the source `gh-pages/index.html` in place and added
+   `404.html`. After target deployment and HTTP verification, `git rm` removed
+   exactly the 29 source published assets preserved at the destination. The
+   source commit changes only `gh-pages/` and now has **64 tracked files**.
+   All **62 non-published source blobs**, including the README, workflow,
+   historical XML, current product, and tracked scratch message, are unchanged.
+4. Both workspace files, `repo_visibility`, and the whole maintenance policy are
+   unchanged. Both destination OSIS subtrees are also byte-identical to their
+   5C commits. Empty and source-clone retirement remain assigned to 5E and 5F.
+
+Deployment and URL evidence:
+
+1. The preceding target run
+   [`34492296511`](https://github.com/bdenckla/MAM-basics/actions/runs/34492296511)
+   succeeded at `2d82bcbb`. Target preparation run
+   [`34493549562`](https://github.com/bdenckla/MAM-basics/actions/runs/34493549562)
+   succeeded at `d61c3472` **before the source flip**. Every target file returned
+   HTTP 200, the expected content type, and the frozen source SHA-256: all
+   **30 files / 782,189 bytes**, including percent-encoded PNG names. The live
+   site index matched the generated file and linked the target.
+2. Source run
+   [`34493924015`](https://github.com/bdenckla/MAM-OSIS/actions/runs/34493924015)
+   succeeded at `26a7e85`. The **33 HTTP checks** cover the root URL, the explicit
+   index with an encoded query, `404.html`, a missing nested path, and every
+   removed asset. The root and index return the exact generated stub with HTTP
+   200; the explicit `404.html` returns 200; the missing path and removed assets
+   return HTTP 404 with the exact generated custom-404 body.
+3. Live browser navigation verified the index and root redirects with exact
+   query/fragment preservation, and the custom 404 with a missing nested path
+   and all three percent-encoded PNG names. The target document loaded all 28
+   images. The PNG navigations reached loaded target images with their encoded
+   paths, queries, and fragments intact. The missing path remained a missing
+   target, as expected. Exact input/output URLs are in the permanent report.
+4. The source page has no authored anchor IDs or named anchors, so the fragment
+   check proves URL preservation rather than scrolling to a nonexistent anchor.
+   The query surviving proves execution of the page stub's JavaScript: the meta
+   refresh uses a fixed URL. An optional direct stylesheet browser navigation
+   timed out with the custom-404 document still selected and is not counted as
+   browser proof; the independent HTTP checks verify the source response and
+   exact target CSS bytes. The temporary browser tab was closed.
+
+The legacy Pages URL sweep ran before and after the changes with `git grep -n
+-I -F bdenckla.github.io/MAM-OSIS` in every primary Git clone under
+`C:/Users/BenDe/GitRepos`, including a read-only scan of MAM-private. No additional
+operational citation needs repointing. MAM-basics has the dated programme source
+URL record and, after preparation, the deliberate redirect-manifest description.
+MAM-OSIS retains its README and `mapm.conf` links for 5E. The remaining clones
+have zero hits. These editable links are not the reason for retaining the host.
+
+Validation used `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`
+from `C:/Users/BenDe/GitRepos/MAM-basics`:
+
+1. `py/main_test.py`: **989 passed, 5 skipped in 93.90 seconds**. No subtest
+   total was printed. The increase from 988 is the new MAM-OSIS manifest case.
+2. `py/main_test.py py/tests/test_redirect_manifest.py
+   py/tests/test_site_index_links.py py/tests/test_sibling_reach.py -q`:
+   **15 passed in 3.45 seconds**.
+3. `py/main_redirect_stubs.py check --repo MAM-OSIS` passed against the source
+   tree; `check --repo MAM-OSIS --dir .novc/phase5-mam-osis/phase5d-stubs`
+   passed against the preview. Both report one stub and `404.html`, all correct.
+4. Black left all three changed tracked Python files unchanged; Ruff passed
+   those files. Both repositories passed the ordinary staged and unstaged
+   whitespace checks.
+5. After staging the permanent report and plan write-back,
+   `py/main_test.py py/tests/test_h_dot_below_nfc.py
+   py/tests/test_prose_mark_order.py -q`: **7 passed in 12.02 seconds**.
+
+Convenience evidence and command logs are under `.novc/phase5-mam-osis/`.
+Inspect `.novc/phase5d_evidence.py` before reuse: `freeze` is a one-time capture,
+`target-http <run-id>` and `source-http <run-id>` require that run's head to equal
+the current checkout, and `verify-source-scope` intentionally stops applying
+after 5E. The tracked manifests and verification reports are the permanent
+evidence; none depends on keeping the ignored scratch files.
+
+**Next task: 5E only.** Verify the preceding oracle evidence, replace the source
+product with the dated redirect-host README and retained host files, and remove
+MAM-OSIS from both workspace files and `repo_visibility` together. Preserve the
+generated stubs and source workflow, push and verify deployment, and keep the
+local source clone for 5F. Create 5F only after 5E's write-back is committed and
+pushed and both primary trees are clean and remote-aligned. The saved GitRepos
+project's absolute path remains `C:/Users/BenDe/GitRepos`, selected in Local
+mode. No MAM-private modification, full mega, 5F execution, or Phase 6 work
+occurred in 5D. Do not begin or create Phase 6.
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
