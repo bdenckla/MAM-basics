@@ -580,7 +580,7 @@ complete Phase 5 end to end describes their combined result, not one task's scop
    before adapting any copied text. Commit the scoped licence rows separately.
    Verify the deployed target page and its assets. Keep source files, writers,
    redirect configuration, and roster entries unchanged. The next task is 5C.
-3. **5C — Repoint and product verification.** Repoint writers, readers,
+3. **5C — Repoint and product verification: DONE 2026-09-10.** Repoint writers, readers,
    documentation, product URLs, and pipeline labels. Merge the source hygiene
    check's scope into the canonical checker, rather than retaining an independently
    runnable duplicate. Regenerate the real product and its independent example,
@@ -835,6 +835,134 @@ Keep the source product, workflow, redirect configuration, workspace roster,
 and source README until their assigned 5D/5E tasks. Create 5D only after 5C's
 write-back is committed and pushed and both primary trees are clean and
 remote-aligned. No MAM-private change, full mega run, or Phase 6 work is authorized.
+
+### Phase 5C Repoint and product verification record — 2026-09-10
+
+Task `01a08bc0-2276-7052-a792-11c049d7ded9`, titled “MAM-OSIS 5C — Repoint
+and product verification”, ran from `C:/Users/BenDe/GitRepos` in the saved
+GitRepos project's Local mode. The primary checkouts were independently verified
+with `rev-parse --show-toplevel`, `rev-parse HEAD`, `branch --show-current`,
+`status --porcelain`, `rev-parse origin/main`, and live
+`ls-remote origin refs/heads/main`. Both were clean on `main`, with matching
+local, tracking, and live remote heads:
+
+| Repository | Starting commit |
+| --- | --- |
+| `C:/Users/BenDe/GitRepos/MAM-basics` | `b7684e5500a6546611b5f442f28a1ec18c708b32` |
+| `C:/Users/BenDe/GitRepos/MAM-OSIS` | `697dc98a904a52ed81bb105772f002d3efb360e3` |
+
+Repoint commit **`ef570b8c745c40e28f8594bdceac6bdea5d3f818`** contains the
+implementation and permanent
+[`in/mam_osis_repoint_verification.json`](../in/mam_osis_repoint_verification.json).
+The frozen Land manifest is unchanged. No source commit was made.
+
+The file dispositions are:
+
+1. `py/main_mam_osis.py` resolves the book directory, header, and combined file
+   under `paths.repo_root() / "MAM-OSIS"`, and the page directory under
+   `paths.repo_root() / "gh-pages" / "MAM-OSIS"`. Its MAM-simple input was
+   already local. The existing OSIS conversion and local-schema validation code
+   needed no change.
+2. `MAM-OSIS/README.md` keeps all three source paragraphs: the OSIS extract,
+   SWORD/STEPBible/CrossWire purpose, and documentation URL. The source and landed
+   README were read side by side. The first paragraph now says product directory;
+   the documentation paragraph links to the MAM-basics Pages target. The purpose
+   paragraph is unchanged. Root `README.md` adds the concise product README link.
+   No substantive paragraph was dropped.
+3. `MAM-OSIS/mapm.conf` changes only its operational Pages URL and GitHub
+   `TextSource` URL. `MAM-OSIS/osis2mod example command.txt` adds `MAM-basics/`
+   to the absolute combined-file path. Historical dates, source notices, snapshots,
+   and pre-existing accentuation claims are unchanged; `hebrew-prose` was loaded.
+4. `py/tests/test_h_dot_below_nfc.py` gains the MAM-OSIS scope and excludes the
+   product from its general root scope. The new scope retains `MAPM-24/`,
+   `MAPM-orig/`, `MAPM-orig-24/`, and `mapm.osis.xml` exclusions. Published
+   output is already excluded under the canonical root's `gh-pages/` prefix.
+   The scope measures seven files with a floor of six: `.gitattributes`,
+   `.gitignore`, `LICENSE.md`, `README.md`, `header.xml`, `mapm.conf`, and
+   `osis2mod example command.txt`. The source's 16 binary extensions are a subset
+   of the canonical 21; the canonical-only entries are `.docx`, `.man`,
+   `.md5sum`, `.wts`, and `.xlsx`. No extension was lost. The copied
+   `MAM-OSIS/py/tests/test_h_dot_below_nfc.py` was explicitly removed, and
+   `DATA-LICENSES.md` no longer inventories that duplicate.
+5. `py/pipeline_graph/pipeline_graph_spec.py` changes both `../MAM-OSIS/`
+   display labels to `MAM-OSIS/`. `py/tests/test_sibling_reach.py` removes the
+   obsolete label suppression and the production-writer sibling declaration.
+   Task 5D must add a declaration for the newly registered redirect host; no
+   MAM-OSIS redirect registration exists in 5C.
+6. `CLAUDE.md`, `py/main_0_mega.py`, and `py/mb_cmn/paths.py` now describe the
+   local OSIS product. The shared path-helper docstring was copied into
+   `MAM-simple/py-examples/mb_cmn/paths.py`. All 44 declared support files were
+   compared with their canonical sources, allowing only checkout CRLF/LF
+   conversion; all matched. The OSIS example entry point and the mega's example
+   subprocess already use the landed MAM-simple cwd. The mega was inspected but
+   not run. Dated execution records were preserved.
+
+The real commands below used
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. Run from
+`C:/Users/BenDe/GitRepos/MAM-basics`, except the example command, which requires
+`C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple`:
+
+| Command after the interpreter | Result and exact write scope |
+| --- | --- |
+| `py/main_mam_osis.py` | 24 `MAM-OSIS/MAPM-24/*.xml` files, `MAM-OSIS/mapm.osis.xml`, `gh-pages/MAM-OSIS/index.html`, and `gh-pages/MAM-OSIS/two_col_style.css`: 27 changed destination mtimes, all bytes identical to the frozen Land blobs. Combined XML passed OSIS XSD validation with the local XML namespace schema. |
+| `py-examples/main_mam_osis_example.py` | 24 changed mtimes under `MAM-simple/py-examples-out/osis/`; every file equals its committed example and the frozen Land book blob byte for byte. |
+| `py/main_pipeline_graph.py` | Rewrites `doc/process-documentation/pipeline.dot`, `pipeline.svg`, and `MAM-process.dot.svg`. The last file remains byte-identical. The final DOT diff is only the shortened OSIS label; the SVG diff is that label, its narrower cylinder, and the paths and arrowheads of its two incoming edges. |
+
+**Graph newline finding and fix:** the first graph run emitted CRLF from
+`pipeline_graph.write_dot_file`, whose `open()` omitted `newline`. The writer
+now passes `newline=""`; Black ran, and the canonical graph command was rerun.
+The final DOT uses LF. The verification report preserves both graph runs rather
+than replacing the first run's evidence. Each graph run changed the same three
+mtimes, with no source write. No historical XML whitespace was normalized.
+
+Before and after each command, snapshots covered all tracked files plus recursively
+enumerated working files, including ignored outputs. Traversal omitted Git metadata,
+venvs, scratch, and interpreter/lint caches; tracked files inside omitted directories
+remained included. Each snapshot covered **16,748 destination files and 92 source
+files**. Every source comparison returned **zero changed mtimes**. The tracked
+verification report records every changed destination path, nanosecond mtime before
+and after, byte count, Git blob hash, SHA-256, and comparison result. Its four
+command records include the first graph run and its corrected rerun. The header,
+historical snapshots, and PNG assets were not rewritten.
+
+All 90 Land destinations were rechecked against their frozen blob hashes, sizes,
+and SHA-256 values. Of those destinations, **86 remain byte-identical**, three
+have the documented README/URL/path adaptations, and the duplicate checker is
+removed. The 27 historical files, all 30 published files, current book and combined
+exports, header, license, and product dotfiles are preserved. Independently,
+`.novc/phase5b_land.py verify 1c817b5307ca535a5fc04ede8cd98add4a79a6f6`
+passed for all 90 committed Land files and all 24 committed example blobs. No
+generated OSIS blob difference needs an exception; none occurred.
+
+Validation, through the canonical interpreter from the primary MAM-basics root:
+
+1. `py/main_test.py`: **988 passed, 5 skipped in 91.35 seconds**; no subtest
+   total was printed.
+2. `py/main_test.py py/tests/test_h_dot_below_nfc.py py/tests/test_sibling_reach.py
+   py/tests/test_vendoring_policy_paths.py py/tests/test_graphviz_version_pin.py
+   py/tests/test_prose_mark_order.py -q`: **24 passed in 17.02 seconds**.
+3. Black and Ruff passed for all eight changed tracked Python files; ordinary
+   `git diff --check` and `git diff --cached --check` passed without exclusions.
+4. After adding the permanent report and plan write-back,
+   `py/main_test.py py/tests/test_h_dot_below_nfc.py
+   py/tests/test_prose_mark_order.py -q`: **7 passed in 11.99 seconds**.
+
+The OSIS published subtree is byte-identical to the deployed 5B tree. 5B's target
+deployment evidence remains applicable; legacy redirects, query/fragment behavior,
+and custom 404 checks remain 5D work. Ignored convenience snapshots and command logs
+are in `.novc/phase5-mam-osis/`; the tracked Land manifest and Repoint report are
+the permanent evidence.
+
+**Next task: 5D only.** Freeze the source's actual legacy HTML set, register the
+MAM-OSIS redirect host and its manifest tests, add the authored site-index entry,
+generate and deploy targets before flipping the source Pages tree, and verify
+every legacy/target URL pair plus query, fragment, and custom 404 behavior. Keep
+the remaining source product, README, workflow, both workspace rosters, and
+`repo_visibility` until their assigned 5E work. 5F owns source retirement and
+the actual-absent-source oracle. Commit/push and verify both primary trees before
+creating each successor, using the saved GitRepos project directly in Local mode.
+MAM-private, the full mega, and Phase 6 remain outside this task chain's scope.
+
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
