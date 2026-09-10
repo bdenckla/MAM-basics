@@ -1,0 +1,2559 @@
+{
+  "schema_version": 1,
+  "measured_date": "2026-09-10",
+  "measured_at": "2026-09-10T15:57:06.594509+00:00",
+  "task": "5F - Remove and Phase 5 completion",
+  "target_root": "C:/Users/BenDe/GitRepos/MAM-basics",
+  "source_root": "C:/Users/BenDe/GitRepos/MAM-OSIS",
+  "task_cwd": "C:/Users/BenDe/GitRepos",
+  "target_verified_base_commit": "a04a4cd9e3051b7152e50905be357627349e36d7",
+  "source_deployed_host_commit": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+  "starting_state": "Both exact primary roots independently verified clean on main; HEAD equaled origin/main and live remote main. No worktree was allocated. Target HEAD was rechecked after the canonical suite and before writing this report.",
+  "source_safety": {
+    "measured_at": "2026-09-10T15:51:45.651347+00:00",
+    "exact_root": "C:/Users/BenDe/GitRepos/MAM-OSIS",
+    "head": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+    "tracking_main": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+    "live_remote_refs": {
+      "HEAD": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+      "refs/heads/main": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+      "refs/tags/v2023-07-24": "f4553c2dbcff0ea814794fdd2fe2311ffb4c0ce9",
+      "refs/tags/v2023-07-24-2": "f4553c2dbcff0ea814794fdd2fe2311ffb4c0ce9",
+      "refs/tags/v2023-07-24-3": "dc98667a6fd5bc84cdd17d062d1b159c75451e96",
+      "refs/tags/v2023-08-15": "5470a8affbd90586949eef57b1a46e7fc434fe0b",
+      "refs/tags/v2023-08-15-2": "3241e28afc0eadfd416997a36371307d449eb17a"
+    },
+    "local_refs": [
+      "refs/heads/main 8df241b3bb43e6f8ecf76ee35175380689fbcb68 commit refs/remotes/origin/main",
+      "refs/remotes/origin/HEAD 8df241b3bb43e6f8ecf76ee35175380689fbcb68 commit ",
+      "refs/remotes/origin/main 8df241b3bb43e6f8ecf76ee35175380689fbcb68 commit ",
+      "refs/tags/v2023-07-24 f4553c2dbcff0ea814794fdd2fe2311ffb4c0ce9 commit ",
+      "refs/tags/v2023-07-24-2 f4553c2dbcff0ea814794fdd2fe2311ffb4c0ce9 commit ",
+      "refs/tags/v2023-07-24-3 dc98667a6fd5bc84cdd17d062d1b159c75451e96 commit ",
+      "refs/tags/v2023-08-15 5470a8affbd90586949eef57b1a46e7fc434fe0b commit ",
+      "refs/tags/v2023-08-15-2 3241e28afc0eadfd416997a36371307d449eb17a commit"
+    ],
+    "unpushed_branch_commits": [],
+    "stashes": [],
+    "status_including_ignored": [],
+    "worktrees": [
+      "worktree C:/Users/BenDe/GitRepos/MAM-OSIS",
+      "HEAD 8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+      "branch refs/heads/main"
+    ],
+    "linked_worktrees": 0,
+    "shallow": "false",
+    "alternates": null,
+    "object_storage": "count: 375\nsize: 89.06 MiB\nin-pack: 1245\npacks: 1\nsize-pack: 12.19 MiB\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0 bytes",
+    "all_object_count": 1620,
+    "live_remote_reachable_object_count": 1620,
+    "live_remote_reachable_objects_sha256": "6248c7d4af6bf3cba993cd87e2fa1696e51f2799ec5f1f2d397d4f14e4df1662",
+    "objects_not_reachable_from_live_remote_refs": [],
+    "object_counts_by_type": {
+      "blob": 1091,
+      "commit": 181,
+      "tree": 348
+    },
+    "fsck": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "reparse_points": [],
+    "working_files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 118,
+        "sha256": "06a5470a00376e20ebf3f1aa3b1fdecf9d9e8bb1af967774114ccfa737a7e331"
+      },
+      {
+        "path": ".gitignore",
+        "bytes": 88,
+        "sha256": "89e99679aed05f6fce2e3e8b38e6dd604d7beaf051f5e59ef8102d13fc61fe6c"
+      },
+      {
+        "path": "README.md",
+        "bytes": 1227,
+        "sha256": "799895021d6def9b42ba2f5d95a9a678cc26c417725418167e811c37071184aa"
+      },
+      {
+        "path": ".github/workflows/pages.yml",
+        "bytes": 686,
+        "sha256": "d7d67eedaa4176198d31d4ddaaa2ca160c2a3e1c0284ee82d6cd20e99e124802"
+      },
+      {
+        "path": "gh-pages/404.html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "path": "gh-pages/index.html",
+        "bytes": 713,
+        "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438"
+      }
+    ],
+    "total_files_including_git": 414,
+    "total_bytes_including_git": 106239364,
+    "reflog": [
+      "8df241b3bb43e6f8ecf76ee35175380689fbcb68 origin/main@{2026-09-10T11:34:05-04:00} update by push",
+      "8df241b3bb43e6f8ecf76ee35175380689fbcb68 main@{2026-09-10T11:33:56-04:00} commit: Empty MAM-OSIS to its generated redirect host",
+      "8df241b3bb43e6f8ecf76ee35175380689fbcb68 HEAD@{2026-09-10T11:33:56-04:00} commit: Empty MAM-OSIS to its generated redirect host",
+      "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9 origin/main@{2026-09-10T11:11:08-04:00} update by push",
+      "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9 main@{2026-09-10T11:11:02-04:00} commit: Redirect published MAM-OSIS pages to MAM-basics",
+      "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9 HEAD@{2026-09-10T11:11:02-04:00} commit: Redirect published MAM-OSIS pages to MAM-basics",
+      "697dc98a904a52ed81bb105772f002d3efb360e3 origin@{2026-09-06T07:52:03-04:00} remote set-head",
+      "697dc98a904a52ed81bb105772f002d3efb360e3 origin/main@{2026-09-04T07:17:44-04:00} update by push",
+      "697dc98a904a52ed81bb105772f002d3efb360e3 main@{2026-09-04T07:13:45-04:00} commit: Carry the Holman meteg rollout into MAM-OSIS: 29 metegs off, one on",
+      "697dc98a904a52ed81bb105772f002d3efb360e3 HEAD@{2026-09-04T07:13:45-04:00} commit: Carry the Holman meteg rollout into MAM-OSIS: 29 metegs off, one on",
+      "ab2de80ec749bb6583ff9082138be9d383c9a3c0 origin/main@{2026-09-02T20:29:53-04:00} update by push",
+      "ab2de80ec749bb6583ff9082138be9d383c9a3c0 main@{2026-09-02T20:29:51-04:00} commit: Use forward slashes in the example commands",
+      "ab2de80ec749bb6583ff9082138be9d383c9a3c0 HEAD@{2026-09-02T20:29:51-04:00} commit: Use forward slashes in the example commands",
+      "2f783d1d0b1294491e8187c9016eb904a1acff49 main@{2026-08-31T08:54:57-04:00} pull --ff-only: Fast-forward",
+      "2f783d1d0b1294491e8187c9016eb904a1acff49 origin/main@{2026-08-31T08:54:57-04:00} pull --ff-only: fast-forward",
+      "2f783d1d0b1294491e8187c9016eb904a1acff49 HEAD@{2026-08-31T08:54:57-04:00} pull --ff-only: Fast-forward",
+      "eed69417018ea1ff5e894aefea2a47643167150f origin/main@{2026-05-19T09:22:04-04:00} update by push",
+      "eed69417018ea1ff5e894aefea2a47643167150f main@{2026-05-19T08:58:01-04:00} commit: use decomposed form for h\u0323, phase 2",
+      "eed69417018ea1ff5e894aefea2a47643167150f HEAD@{2026-05-19T08:58:01-04:00} commit: use decomposed form for h\u0323, phase 2",
+      "f5e55fd47e1cd7ee604cbfe7a166c63b1ae69037 origin/main@{2026-05-13T08:36:59-04:00} update by push",
+      "f5e55fd47e1cd7ee604cbfe7a166c63b1ae69037 main@{2026-05-13T08:28:56-04:00} commit: Regenerate gh-pages index provenance comment with MAM-basics path",
+      "f5e55fd47e1cd7ee604cbfe7a166c63b1ae69037 HEAD@{2026-05-13T08:28:56-04:00} commit: Regenerate gh-pages index provenance comment with MAM-basics path",
+      "9559f5ddfcb409638ae74abcd5f2fb64396c39c2 origin/main@{2026-05-09T22:03:33-04:00} update by push",
+      "9559f5ddfcb409638ae74abcd5f2fb64396c39c2 main@{2026-05-09T17:51:49-04:00} commit: py/osis/osis_runner.py",
+      "9559f5ddfcb409638ae74abcd5f2fb64396c39c2 HEAD@{2026-05-09T17:51:49-04:00} commit: py/osis/osis_runner.py",
+      "e219fc68fbba42c2f03ba61b6147cf37c7db4a07 origin/main@{2026-05-03T07:41:42-04:00} update by push",
+      "e219fc68fbba42c2f03ba61b6147cf37c7db4a07 main@{2026-05-03T06:40:17-04:00} commit: wrap previous addition in HTML comment syntax",
+      "e219fc68fbba42c2f03ba61b6147cf37c7db4a07 HEAD@{2026-05-03T06:40:17-04:00} commit: wrap previous addition in HTML comment syntax",
+      "e3a20c67b6cfa267be9e7dde898b2dc8b33161a0 main@{2026-05-03T06:37:19-04:00} commit: There is only a Dovi path for some URLs",
+      "e3a20c67b6cfa267be9e7dde898b2dc8b33161a0 HEAD@{2026-05-03T06:37:19-04:00} commit: There is only a Dovi path for some URLs",
+      "acfa242ea67d7f48441d578c86d56a45b220792b main@{2026-05-03T06:32:17-04:00} commit: de-Dovi the MAM URL",
+      "acfa242ea67d7f48441d578c86d56a45b220792b HEAD@{2026-05-03T06:32:17-04:00} commit: de-Dovi the MAM URL",
+      "e6cff5627bedd473751bbd690325e8f6b74b010c origin/main@{2026-05-02T15:35:09-04:00} update by push",
+      "e6cff5627bedd473751bbd690325e8f6b74b010c main@{2026-05-02T15:35:03-04:00} commit: propagate rafeh additions and trivial k/q tag changes",
+      "e6cff5627bedd473751bbd690325e8f6b74b010c HEAD@{2026-05-02T15:35:03-04:00} commit: propagate rafeh additions and trivial k/q tag changes",
+      "0e420c8e6a13c81e3665d97f701b29aa2bd10e8c origin/main@{2026-04-26T16:40:18-04:00} update by push",
+      "0e420c8e6a13c81e3665d97f701b29aa2bd10e8c main@{2026-04-26T16:39:47-04:00} commit: Annotate generated gh-pages index with provenance comment",
+      "0e420c8e6a13c81e3665d97f701b29aa2bd10e8c HEAD@{2026-04-26T16:39:47-04:00} commit: Annotate generated gh-pages index with provenance comment",
+      "47bc352e44be6e4a1f9b84e35638da92925ecbf0 origin@{2026-04-26T16:04:49-04:00} remote set-head",
+      "47bc352e44be6e4a1f9b84e35638da92925ecbf0 origin/main@{2026-04-17T14:50:24-04:00} update by push",
+      "47bc352e44be6e4a1f9b84e35638da92925ecbf0 main@{2026-04-17T14:50:06-04:00} commit: Jer 2 & 51",
+      "47bc352e44be6e4a1f9b84e35638da92925ecbf0 HEAD@{2026-04-17T14:50:06-04:00} commit: Jer 2 & 51",
+      "8aa4e8ed0854ba83c743299b16175e185634ff52 origin@{2026-04-17T11:47:39-04:00} remote set-head",
+      "8aa4e8ed0854ba83c743299b16175e185634ff52 origin/main@{2026-04-15T14:01:49-04:00} update by push",
+      "8aa4e8ed0854ba83c743299b16175e185634ff52 main@{2026-04-15T14:01:44-04:00} commit: main 0 mega Joshua, Ezekiel, Tsefaniah",
+      "8aa4e8ed0854ba83c743299b16175e185634ff52 HEAD@{2026-04-15T14:01:44-04:00} commit: main 0 mega Joshua, Ezekiel, Tsefaniah",
+      "46df2bbade8831e82e2c0a195fff790ab9ea3ad4 origin/main@{2026-04-14T17:08:27-04:00} update by push",
+      "46df2bbade8831e82e2c0a195fff790ab9ea3ad4 main@{2026-04-14T17:08:21-04:00} commit: reflect recent changes in 2S, Ee, & La",
+      "46df2bbade8831e82e2c0a195fff790ab9ea3ad4 HEAD@{2026-04-14T17:08:21-04:00} commit: reflect recent changes in 2S, Ee, & La",
+      "7ddf9e88483a1de638e62ded340b50987732cd7f origin/main@{2026-04-10T18:18:47-04:00} update by push",
+      "7ddf9e88483a1de638e62ded340b50987732cd7f main@{2026-04-10T18:18:35-04:00} commit: gh-pages",
+      "7ddf9e88483a1de638e62ded340b50987732cd7f HEAD@{2026-04-10T18:18:35-04:00} commit: gh-pages",
+      "7bf6ebc7da39dd03a58c423872c77c7134232d4c origin@{2026-04-08T10:33:24-04:00} remote set-head",
+      "7bf6ebc7da39dd03a58c423872c77c7134232d4c origin@{2026-04-06T22:09:09-04:00} remote set-head",
+      "7bf6ebc7da39dd03a58c423872c77c7134232d4c origin/main@{2026-04-02T13:41:26-04:00} update by push",
+      "7bf6ebc7da39dd03a58c423872c77c7134232d4c main@{2026-04-02T13:41:15-04:00} commit: 1Chr changes propagated",
+      "7bf6ebc7da39dd03a58c423872c77c7134232d4c HEAD@{2026-04-02T13:41:15-04:00} commit: 1Chr changes propagated",
+      "64c4e1c78e71689579e734b634534e765f4f2bd9 origin@{2026-04-02T12:15:12-04:00} remote set-head",
+      "64c4e1c78e71689579e734b634534e765f4f2bd9 origin/main@{2026-03-31T12:39:49-04:00} update by push",
+      "64c4e1c78e71689579e734b634534e765f4f2bd9 main@{2026-03-30T17:18:52-04:00} commit: Ezekiel auto-edits",
+      "64c4e1c78e71689579e734b634534e765f4f2bd9 HEAD@{2026-03-30T17:18:52-04:00} commit: Ezekiel auto-edits",
+      "bb47fc162e6af90c051b10e98d3e1b94929e92db origin/main@{2026-03-29T22:36:25-04:00} update by push",
+      "bb47fc162e6af90c051b10e98d3e1b94929e92db main@{2026-03-29T22:36:10-04:00} commit: mega removing space",
+      "bb47fc162e6af90c051b10e98d3e1b94929e92db HEAD@{2026-03-29T22:36:10-04:00} commit: mega removing space",
+      "38dea1f476f72544b796523f99724914df2714ba main@{2026-03-29T22:26:29-04:00} commit: mega",
+      "38dea1f476f72544b796523f99724914df2714ba HEAD@{2026-03-29T22:26:29-04:00} commit: mega",
+      "90caea06edad1a4cdb2f88560ddd1a82e2395f67 origin/main@{2026-03-23T15:41:42-04:00} update by push",
+      "90caea06edad1a4cdb2f88560ddd1a82e2395f67 main@{2026-03-23T15:41:24-04:00} commit: Regenerate: SLH_WORD desc0/desc1 now include legarmeh",
+      "90caea06edad1a4cdb2f88560ddd1a82e2395f67 HEAD@{2026-03-23T15:41:24-04:00} commit: Regenerate: SLH_WORD desc0/desc1 now include legarmeh",
+      "b685ad9a62a925f239a98773f687947b246e6b01 origin/main@{2026-03-16T20:09:22-04:00} update by push",
+      "b685ad9a62a925f239a98773f687947b246e6b01 main@{2026-03-16T20:09:09-04:00} commit: Download Joshua from Wikisource and regenerate",
+      "b685ad9a62a925f239a98773f687947b246e6b01 HEAD@{2026-03-16T20:09:09-04:00} commit: Download Joshua from Wikisource and regenerate",
+      "fbc0068ce0255f06c42d84c72408d1df36b2bf5f origin/main@{2026-03-16T14:43:42-04:00} update by push",
+      "fbc0068ce0255f06c42d84c72408d1df36b2bf5f main@{2026-03-16T14:43:26-04:00} commit: regenerate OSIS XML after upstream changes",
+      "fbc0068ce0255f06c42d84c72408d1df36b2bf5f HEAD@{2026-03-16T14:43:26-04:00} commit: regenerate OSIS XML after upstream changes",
+      "3db3a0d903a3a278e731843dc088ce63596e19b5 origin@{2026-03-09T21:01:16-04:00} remote set-head",
+      "3db3a0d903a3a278e731843dc088ce63596e19b5 origin/main@{2026-03-08T19:14:29-04:00} update by push",
+      "3db3a0d903a3a278e731843dc088ce63596e19b5 main@{2026-03-08T19:14:08-04:00} commit: Regenerate OSIS XML after upstream pipeline changes",
+      "3db3a0d903a3a278e731843dc088ce63596e19b5 HEAD@{2026-03-08T19:14:08-04:00} commit: Regenerate OSIS XML after upstream pipeline changes",
+      "95bf75d0e663d53dc86e85ca3abc45a973794bbd origin@{2026-01-23T08:41:42-05:00} remote set-head",
+      "95bf75d0e663d53dc86e85ca3abc45a973794bbd origin/main@{2025-12-01T22:09:54-05:00} update by push",
+      "95bf75d0e663d53dc86e85ca3abc45a973794bbd main@{2025-12-01T22:09:47-05:00} commit: 2Sam leg; 4 gray mqf",
+      "95bf75d0e663d53dc86e85ca3abc45a973794bbd HEAD@{2025-12-01T22:09:47-05:00} commit: 2Sam leg; 4 gray mqf",
+      "8f4815799459395cceeb026f468c5e3ae26d4ef6 origin/main@{2025-11-18T21:36:52-05:00} update by push",
+      "8f4815799459395cceeb026f468c5e3ae26d4ef6 main@{2025-11-18T21:36:46-05:00} commit: propagate recent changes on Wikisource",
+      "8f4815799459395cceeb026f468c5e3ae26d4ef6 HEAD@{2025-11-18T21:36:46-05:00} commit: propagate recent changes on Wikisource",
+      "6615c5e84d8692e78e013abf790a1d8ea1c7af5c origin/main@{2025-11-18T11:42:19-05:00} update by push",
+      "6615c5e84d8692e78e013abf790a1d8ea1c7af5c main@{2025-11-18T11:42:15-05:00} commit: whitespace changes to CSS",
+      "6615c5e84d8692e78e013abf790a1d8ea1c7af5c HEAD@{2025-11-18T11:42:15-05:00} commit: whitespace changes to CSS",
+      "683a6d720a121be256a236b2f9ae36ccb11d509c origin/main@{2025-10-28T20:03:18-04:00} update by push",
+      "683a6d720a121be256a236b2f9ae36ccb11d509c main@{2025-10-28T19:48:46-04:00} commit: light-dark",
+      "683a6d720a121be256a236b2f9ae36ccb11d509c HEAD@{2025-10-28T19:48:46-04:00} commit: light-dark",
+      "24934ff52fb8f04664f82be2a99067df7436810c origin/main@{2025-10-27T15:23:14-04:00} update by push",
+      "24934ff52fb8f04664f82be2a99067df7436810c main@{2025-10-27T15:23:09-04:00} commit: ltrim two_col_style.css",
+      "24934ff52fb8f04664f82be2a99067df7436810c HEAD@{2025-10-27T15:23:09-04:00} commit: ltrim two_col_style.css",
+      "8a3c226fe14d1ec64e27f366e45c87ebfcb65395 origin/main@{2025-10-27T15:19:51-04:00} update by push",
+      "8a3c226fe14d1ec64e27f366e45c87ebfcb65395 main@{2025-10-27T11:14:46-04:00} commit: two_col_style.css",
+      "8a3c226fe14d1ec64e27f366e45c87ebfcb65395 HEAD@{2025-10-27T11:14:46-04:00} commit: two_col_style.css",
+      "454d34214647240fda7770849cc7c82eb4fb086a origin/main@{2025-10-15T11:21:46-04:00} update by push",
+      "454d34214647240fda7770849cc7c82eb4fb086a main@{2025-10-15T11:21:41-04:00} commit: line break and <br> fallout",
+      "454d34214647240fda7770849cc7c82eb4fb086a HEAD@{2025-10-15T11:21:41-04:00} commit: line break and <br> fallout",
+      "0968349ada9d9ea0e5dc5297aeb2cac797ab9e37 origin/main@{2025-09-25T13:04:07-04:00} update by push",
+      "0968349ada9d9ea0e5dc5297aeb2cac797ab9e37 main@{2025-09-25T13:03:37-04:00} commit: Pick up Job 16:14 and Ps 32:5 changes",
+      "0968349ada9d9ea0e5dc5297aeb2cac797ab9e37 HEAD@{2025-09-25T13:03:37-04:00} commit: Pick up Job 16:14 and Ps 32:5 changes",
+      "b0ef1eebb6977a135a0c08670426927b5e09c842 origin/main@{2025-09-13T20:24:40-04:00} update by push",
+      "b0ef1eebb6977a135a0c08670426927b5e09c842 main@{2025-09-13T19:44:47-04:00} commit: wrap index.html",
+      "b0ef1eebb6977a135a0c08670426927b5e09c842 HEAD@{2025-09-13T19:44:47-04:00} commit: wrap index.html",
+      "00fd04c4a0a999358e6841e51e2da80c71b4c72e origin/main@{2025-05-17T16:14:33-04:00} update by push",
+      "00fd04c4a0a999358e6841e51e2da80c71b4c72e main@{2025-05-17T16:14:29-04:00} commit: Micah 2:10 \u05d8\u05c7\u05de\u05b0\u05d0\u05b8\u059b\u05d4, Proverbs 11:12 \u05d1\u05bc\u05b8\u05d6\u05be\u05dc\u05b0\u05e8\u05b5\u05e2\u05b5\u05a5\u05d4\u05d5\u05bc",
+      "00fd04c4a0a999358e6841e51e2da80c71b4c72e HEAD@{2025-05-17T16:14:29-04:00} commit: Micah 2:10 \u05d8\u05c7\u05de\u05b0\u05d0\u05b8\u059b\u05d4, Proverbs 11:12 \u05d1\u05bc\u05b8\u05d6\u05be\u05dc\u05b0\u05e8\u05b5\u05e2\u05b5\u05a5\u05d4\u05d5\u05bc",
+      "2d88519bfc8cbb058f5eefa68d3ab6bd65f06b26 origin/main@{2025-03-18T21:34:08-04:00} update by push",
+      "2d88519bfc8cbb058f5eefa68d3ab6bd65f06b26 main@{2025-03-18T21:34:03-04:00} commit: Job 21:24 change.",
+      "2d88519bfc8cbb058f5eefa68d3ab6bd65f06b26 HEAD@{2025-03-18T21:34:03-04:00} commit: Job 21:24 change.",
+      "ab9c5443e2e885140c3f0363c0221114bd397cd3 origin/main@{2025-02-24T10:01:38-05:00} update by push",
+      "ab9c5443e2e885140c3f0363c0221114bd397cd3 main@{2025-02-24T10:01:32-05:00} commit: add LICENSE.md",
+      "ab9c5443e2e885140c3f0363c0221114bd397cd3 HEAD@{2025-02-24T10:01:32-05:00} commit: add LICENSE.md",
+      "43e025830c92628458fdd08787e6c0acead51151 origin/main@{2025-02-17T09:08:00-05:00} update by push",
+      "43e025830c92628458fdd08787e6c0acead51151 main@{2025-02-17T09:07:51-05:00} commit: reflect \"\u05dc\u05e9\u05d9\u05dd \u05dc\u05d2\u05e8\u05de\u05d9\u05d4 \u05d1\u05ea\u05d5\u05da \u05e0\u05d5\u05e1\u05d7\"",
+      "43e025830c92628458fdd08787e6c0acead51151 HEAD@{2025-02-17T09:07:51-05:00} commit: reflect \"\u05dc\u05e9\u05d9\u05dd \u05dc\u05d2\u05e8\u05de\u05d9\u05d4 \u05d1\u05ea\u05d5\u05da \u05e0\u05d5\u05e1\u05d7\"",
+      "c9307c211f7ea2030ea2f388910ad0f48337e796 origin/main@{2025-02-04T14:01:08-05:00} update by push",
+      "c9307c211f7ea2030ea2f388910ad0f48337e796 main@{2025-02-04T14:00:56-05:00} commit: Reflect change to Je42:2.",
+      "c9307c211f7ea2030ea2f388910ad0f48337e796 HEAD@{2025-02-04T14:00:56-05:00} commit: Reflect change to Je42:2.",
+      "cb5aa5f7a56cf6579273b081416498da194710d9 origin/main@{2025-01-16T20:01:01-05:00} update by push",
+      "cb5aa5f7a56cf6579273b081416498da194710d9 main@{2025-01-16T20:00:53-05:00} commit: propagate changes from auto-edits",
+      "cb5aa5f7a56cf6579273b081416498da194710d9 HEAD@{2025-01-16T20:00:53-05:00} commit: propagate changes from auto-edits",
+      "89814e330b530f3eb28f9b870e3355d0c0a73a9a origin/main@{2025-01-06T15:20:39-05:00} update by push",
+      "89814e330b530f3eb28f9b870e3355d0c0a73a9a main@{2025-01-06T15:20:35-05:00} commit: new dualcant terminology",
+      "89814e330b530f3eb28f9b870e3355d0c0a73a9a HEAD@{2025-01-06T15:20:35-05:00} commit: new dualcant terminology",
+      "ac4241f8d81615cbfcf68b014986e957135bf98c origin/main@{2025-01-06T10:43:18-05:00} update by push",
+      "ac4241f8d81615cbfcf68b014986e957135bf98c main@{2025-01-06T10:43:13-05:00} commit: xataf",
+      "ac4241f8d81615cbfcf68b014986e957135bf98c HEAD@{2025-01-06T10:43:13-05:00} commit: xataf",
+      "9aacdef0c73e4db37852514c5550592b0d63f91a origin/main@{2025-01-02T18:49:42-05:00} update by push",
+      "9aacdef0c73e4db37852514c5550592b0d63f91a main@{2025-01-02T18:49:36-05:00} commit: qk becomes normal kq in 2K4:7",
+      "9aacdef0c73e4db37852514c5550592b0d63f91a HEAD@{2025-01-02T18:49:36-05:00} commit: qk becomes normal kq in 2K4:7",
+      "65ffe65e38bf7b05c6d5ef64b9bb2a07f01293da origin/main@{2024-12-31T23:58:42-05:00} update by push",
+      "65ffe65e38bf7b05c6d5ef64b9bb2a07f01293da main@{2024-12-31T23:58:36-05:00} commit: propagate G12:11 fix",
+      "65ffe65e38bf7b05c6d5ef64b9bb2a07f01293da HEAD@{2024-12-31T23:58:36-05:00} commit: propagate G12:11 fix",
+      "4dfff0d4481ba8b54ddcda4344f05fdb04bb5dbf origin/main@{2024-12-31T23:30:39-05:00} update by push",
+      "4dfff0d4481ba8b54ddcda4344f05fdb04bb5dbf main@{2024-12-31T23:30:33-05:00} commit: propagate auto-edits",
+      "4dfff0d4481ba8b54ddcda4344f05fdb04bb5dbf HEAD@{2024-12-31T23:30:33-05:00} commit: propagate auto-edits",
+      "20e22aeebef27fcf3735a8d2583937c5ee5ea9de origin/main@{2024-10-13T16:30:53-04:00} update by push",
+      "20e22aeebef27fcf3735a8d2583937c5ee5ea9de main@{2024-10-13T16:30:48-04:00} commit: reflect dexnor fixes incl. stress helpers that leaked thru",
+      "20e22aeebef27fcf3735a8d2583937c5ee5ea9de HEAD@{2024-10-13T16:30:48-04:00} commit: reflect dexnor fixes incl. stress helpers that leaked thru",
+      "46a71cfd0a7908d232665a470244a635358d8763 origin/main@{2024-10-13T14:31:55-04:00} update by push",
+      "46a71cfd0a7908d232665a470244a635358d8763 main@{2024-10-13T14:31:49-04:00} commit: Recent Sifrei Emet changes including some stress helpers that leaked through",
+      "46a71cfd0a7908d232665a470244a635358d8763 HEAD@{2024-10-13T14:31:49-04:00} commit: Recent Sifrei Emet changes including some stress helpers that leaked through",
+      "d5b71fe02f32ca84f800015b17d2de250201c48c origin/main@{2024-10-09T14:26:30-04:00} update by push",
+      "d5b71fe02f32ca84f800015b17d2de250201c48c main@{2024-10-09T14:24:18-04:00} commit: \u05dc\u05b7\u05d4\u05b2\u05e8\u05b8\u05d2\u05b0\u05da\u05b8\u0596",
+      "d5b71fe02f32ca84f800015b17d2de250201c48c HEAD@{2024-10-09T14:24:18-04:00} commit: \u05dc\u05b7\u05d4\u05b2\u05e8\u05b8\u05d2\u05b0\u05da\u05b8\u0596",
+      "4e4f3cc8677e28d19947c22eb14761bc605e69df origin/main@{2024-09-18T10:31:28-04:00} update by push",
+      "4e4f3cc8677e28d19947c22eb14761bc605e69df main@{2024-09-18T10:31:21-04:00} commit: run mega after auto-edits (18 gray maqafim added)",
+      "4e4f3cc8677e28d19947c22eb14761bc605e69df HEAD@{2024-09-18T10:31:21-04:00} commit: run mega after auto-edits (18 gray maqafim added)",
+      "d22be9dc3d8b8343596af093249ee9f43b0a0892 origin/main@{2024-09-12T09:00:45-04:00} update by push",
+      "d22be9dc3d8b8343596af093249ee9f43b0a0892 main@{2024-09-12T09:00:40-04:00} commit: reflect changes to sources",
+      "d22be9dc3d8b8343596af093249ee9f43b0a0892 HEAD@{2024-09-12T09:00:40-04:00} commit: reflect changes to sources",
+      "89721007cd0e87f00ba04093923c6a99b29cfae9 origin/main@{2024-09-09T06:42:29-04:00} update by push",
+      "89721007cd0e87f00ba04093923c6a99b29cfae9 main@{2024-09-09T06:42:24-04:00} commit: run mega, getting mostly additions of gray maqaf",
+      "89721007cd0e87f00ba04093923c6a99b29cfae9 HEAD@{2024-09-09T06:42:24-04:00} commit: run mega, getting mostly additions of gray maqaf",
+      "1f54ac02ddcf63051d55ef74e894ba0cef9063a2 origin/main@{2024-09-04T10:33:36-04:00} update by push",
+      "1f54ac02ddcf63051d55ef74e894ba0cef9063a2 main@{2024-09-04T10:33:30-04:00} commit: reflect run of mega",
+      "1f54ac02ddcf63051d55ef74e894ba0cef9063a2 HEAD@{2024-09-04T10:33:30-04:00} commit: reflect run of mega",
+      "2e11f09a7d3891bd5484e548f2784f317b8f9f6b main@{2024-09-04T09:10:43-04:00} pull --tags origin main: Fast-forward",
+      "2e11f09a7d3891bd5484e548f2784f317b8f9f6b HEAD@{2024-09-04T09:10:43-04:00} pull --tags origin main: Fast-forward",
+      "2e11f09a7d3891bd5484e548f2784f317b8f9f6b origin/main@{2024-09-04T09:10:42-04:00} pull --tags origin main: fast-forward",
+      "526e8fc20f4241015a0447b52b6f7bfe1f8256a7 origin/main@{2024-05-23T12:47:07-04:00} update by push",
+      "526e8fc20f4241015a0447b52b6f7bfe1f8256a7 main@{2024-05-23T12:46:59-04:00} commit: Added meteg in \"\u05d0\u05b6\u05bd\u05ea\u05be\u05de\u05b9\u05e2\u05b2\u05d3\u05b5\u0596\u05d9\" in Lev 23:44.",
+      "526e8fc20f4241015a0447b52b6f7bfe1f8256a7 HEAD@{2024-05-23T12:46:59-04:00} commit: Added meteg in \"\u05d0\u05b6\u05bd\u05ea\u05be\u05de\u05b9\u05e2\u05b2\u05d3\u05b5\u0596\u05d9\" in Lev 23:44.",
+      "558dff91620e418b359ff10a4ff96c217df42814 origin/main@{2024-04-03T09:57:18-04:00} update by push",
+      "558dff91620e418b359ff10a4ff96c217df42814 main@{2024-04-03T09:57:13-04:00} commit: \u05d3\u05e0\u05d9\u05d0\u05dc and \u05e2\u05d6\u05e8\u05d0 qamats-yod-fkhaf changes",
+      "558dff91620e418b359ff10a4ff96c217df42814 HEAD@{2024-04-03T09:57:13-04:00} commit: \u05d3\u05e0\u05d9\u05d0\u05dc and \u05e2\u05d6\u05e8\u05d0 qamats-yod-fkhaf changes",
+      "f80061fbd958a92c032b95a9a2e792811d52abc2 origin/main@{2024-03-14T12:36:51-04:00} update by push",
+      "f80061fbd958a92c032b95a9a2e792811d52abc2 main@{2024-03-14T12:36:46-04:00} commit: E14: move two ga\u02bfya marks from 2nd to 1st letter",
+      "f80061fbd958a92c032b95a9a2e792811d52abc2 HEAD@{2024-03-14T12:36:46-04:00} commit: E14: move two ga\u02bfya marks from 2nd to 1st letter",
+      "8bf0693a9e5a5ed161c8683f20015f557395186d origin/main@{2024-03-13T12:45:45-04:00} update by push",
+      "8bf0693a9e5a5ed161c8683f20015f557395186d main@{2024-03-13T12:45:09-04:00} commit: Reflect updates to 2Sam, Ezek 16:4, & Prov 14:10.",
+      "8bf0693a9e5a5ed161c8683f20015f557395186d HEAD@{2024-03-13T12:45:09-04:00} commit: Reflect updates to 2Sam, Ezek 16:4, & Prov 14:10.",
+      "6feeaf072ed84edaff331eb39aff6aa697d1d5c1 origin/main@{2024-02-22T14:59:16-05:00} update by push",
+      "6feeaf072ed84edaff331eb39aff6aa697d1d5c1 main@{2024-02-22T14:59:11-05:00} commit: E12:50 2K6:25",
+      "6feeaf072ed84edaff331eb39aff6aa697d1d5c1 HEAD@{2024-02-22T14:59:11-05:00} commit: E12:50 2K6:25",
+      "7444aa0649d2443e25884186fa748d14e4107a2a origin/main@{2024-02-15T11:32:35-05:00} update by push",
+      "7444aa0649d2443e25884186fa748d14e4107a2a main@{2024-02-15T11:32:31-05:00} commit: Updates to Ex 24",
+      "7444aa0649d2443e25884186fa748d14e4107a2a HEAD@{2024-02-15T11:32:31-05:00} commit: Updates to Ex 24",
+      "94697721a95d3e9e0c1153ba0b5c9a39c9a18d1c main@{2024-02-15T07:17:06-05:00} clone: from https://github.com/bdenckla/MAM-OSIS.git",
+      "94697721a95d3e9e0c1153ba0b5c9a39c9a18d1c origin@{2024-02-15T07:17:06-05:00} clone: from https://github.com/bdenckla/MAM-OSIS.git",
+      "94697721a95d3e9e0c1153ba0b5c9a39c9a18d1c HEAD@{2024-02-15T07:17:06-05:00} clone: from https://github.com/bdenckla/MAM-OSIS.git"
+    ],
+    "safe_to_recycle": true
+  },
+  "recycling": {
+    "measured_at": "2026-09-10T15:52:09.5138332+00:00",
+    "exact_source_path": "C:/Users/BenDe/GitRepos/MAM-OSIS",
+    "cwd": "C:/Users/BenDe/GitRepos",
+    "source_head": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+    "method": "Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory with SendToRecycleBin",
+    "actual_source_absent": true,
+    "recycle_bin_items": [
+      {
+        "name": "MAM-OSIS",
+        "deleted_from": "C:\\Users\\BenDe\\GitRepos",
+        "date_deleted": "09/10/2026 15:52:08"
+      }
+    ],
+    "landed_product_present": true,
+    "permanent_deletion": false
+  },
+  "safety_reproduction": "Before recycling, git ls-remote origin supplied live heads and tags. git cat-file --batch-all-objects --batch-check enumerated every available object; git rev-list --objects --no-object-names over those live ref tips supplied the independent reachable set. All 1,620 objects are in both sets. git fsck --full --unreachable --no-reflogs returned no findings. for-each-ref, branch comparison against live tips, stash list, status --porcelain=v1 --ignored --untracked-files=all, worktree list --porcelain, object alternates and a recursive file/reparse-point census completed the audit. No history, branch or stash was changed to satisfy a check.",
+  "prior_present": {
+    "measured_at": "2026-09-10T15:50:18.190530+00:00",
+    "actual_source_present": true,
+    "source_inventory_remeasured": true,
+    "land_commit": "1c817b5307ca535a5fc04ede8cd98add4a79a6f6",
+    "selected_blobs_verified": 90,
+    "independent_example_blobs_verified": 24,
+    "repoint_dispositions_verified": 90,
+    "support_files_verified": 44,
+    "previous_generator_mtime_reports_verified": true,
+    "previous_deployment_http_reports_verified": true,
+    "preserved": {
+      "baseline": "a04a4cd9e3051b7152e50905be357627349e36d7",
+      "count": 172,
+      "paths": [
+        "DATA-LICENSES.md",
+        "MAM-OSIS/.gitattributes",
+        "MAM-OSIS/.gitignore",
+        "MAM-OSIS/LICENSE.md",
+        "MAM-OSIS/MAPM-24/1Chr-2Chr.xml",
+        "MAM-OSIS/MAPM-24/1Kgs-2Kgs.xml",
+        "MAM-OSIS/MAPM-24/1Sam-2Sam.xml",
+        "MAM-OSIS/MAPM-24/Dan.xml",
+        "MAM-OSIS/MAPM-24/Deut.xml",
+        "MAM-OSIS/MAPM-24/Eccl.xml",
+        "MAM-OSIS/MAPM-24/Esth.xml",
+        "MAM-OSIS/MAPM-24/Exod.xml",
+        "MAM-OSIS/MAPM-24/Ezek.xml",
+        "MAM-OSIS/MAPM-24/Ezra-Neh.xml",
+        "MAM-OSIS/MAPM-24/Gen.xml",
+        "MAM-OSIS/MAPM-24/Hos-Mal.xml",
+        "MAM-OSIS/MAPM-24/Isa.xml",
+        "MAM-OSIS/MAPM-24/Jer.xml",
+        "MAM-OSIS/MAPM-24/Job.xml",
+        "MAM-OSIS/MAPM-24/Josh.xml",
+        "MAM-OSIS/MAPM-24/Judg.xml",
+        "MAM-OSIS/MAPM-24/Lam.xml",
+        "MAM-OSIS/MAPM-24/Lev.xml",
+        "MAM-OSIS/MAPM-24/Num.xml",
+        "MAM-OSIS/MAPM-24/Prov.xml",
+        "MAM-OSIS/MAPM-24/Ps.xml",
+        "MAM-OSIS/MAPM-24/Ruth.xml",
+        "MAM-OSIS/MAPM-24/Song.xml",
+        "MAM-OSIS/MAPM-orig-24/1Chr-2Chr.xml",
+        "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+        "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+        "MAM-OSIS/MAPM-orig-24/Dan.xml",
+        "MAM-OSIS/MAPM-orig-24/Deut.xml",
+        "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+        "MAM-OSIS/MAPM-orig-24/Esth.xml",
+        "MAM-OSIS/MAPM-orig-24/Exod.xml",
+        "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+        "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+        "MAM-OSIS/MAPM-orig-24/Gen.xml",
+        "MAM-OSIS/MAPM-orig-24/Hos-Mal.xml",
+        "MAM-OSIS/MAPM-orig-24/Isa.xml",
+        "MAM-OSIS/MAPM-orig-24/Jer.xml",
+        "MAM-OSIS/MAPM-orig-24/Job.xml",
+        "MAM-OSIS/MAPM-orig-24/Josh.xml",
+        "MAM-OSIS/MAPM-orig-24/Judg.xml",
+        "MAM-OSIS/MAPM-orig-24/Lam.xml",
+        "MAM-OSIS/MAPM-orig-24/Lev.xml",
+        "MAM-OSIS/MAPM-orig-24/Num.xml",
+        "MAM-OSIS/MAPM-orig-24/Prov.xml",
+        "MAM-OSIS/MAPM-orig-24/Ps.xml",
+        "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+        "MAM-OSIS/MAPM-orig-24/Song.xml",
+        "MAM-OSIS/MAPM-orig/MAPM.xml",
+        "MAM-OSIS/MAPM-orig/provenance.txt",
+        "MAM-OSIS/MAPM-orig/readme.txt",
+        "MAM-OSIS/README.md",
+        "MAM-OSIS/header.xml",
+        "MAM-OSIS/mapm.conf",
+        "MAM-OSIS/mapm.osis.xml",
+        "MAM-OSIS/osis2mod example command.txt",
+        "MAM-basics.code-workspace",
+        "MAM-simple/py-examples-out/osis/1Chr-2Chr.xml",
+        "MAM-simple/py-examples-out/osis/1Kgs-2Kgs.xml",
+        "MAM-simple/py-examples-out/osis/1Sam-2Sam.xml",
+        "MAM-simple/py-examples-out/osis/Dan.xml",
+        "MAM-simple/py-examples-out/osis/Deut.xml",
+        "MAM-simple/py-examples-out/osis/Eccl.xml",
+        "MAM-simple/py-examples-out/osis/Esth.xml",
+        "MAM-simple/py-examples-out/osis/Exod.xml",
+        "MAM-simple/py-examples-out/osis/Ezek.xml",
+        "MAM-simple/py-examples-out/osis/Ezra-Neh.xml",
+        "MAM-simple/py-examples-out/osis/Gen.xml",
+        "MAM-simple/py-examples-out/osis/Hos-Mal.xml",
+        "MAM-simple/py-examples-out/osis/Isa.xml",
+        "MAM-simple/py-examples-out/osis/Jer.xml",
+        "MAM-simple/py-examples-out/osis/Job.xml",
+        "MAM-simple/py-examples-out/osis/Josh.xml",
+        "MAM-simple/py-examples-out/osis/Judg.xml",
+        "MAM-simple/py-examples-out/osis/Lam.xml",
+        "MAM-simple/py-examples-out/osis/Lev.xml",
+        "MAM-simple/py-examples-out/osis/Num.xml",
+        "MAM-simple/py-examples-out/osis/Prov.xml",
+        "MAM-simple/py-examples-out/osis/Ps.xml",
+        "MAM-simple/py-examples-out/osis/Ruth.xml",
+        "MAM-simple/py-examples-out/osis/Song.xml",
+        "MAM-simple/py-examples/main_letter_small_job_example.py",
+        "MAM-simple/py-examples/main_mam4sef_example.py",
+        "MAM-simple/py-examples/main_mam_osis_example.py",
+        "MAM-simple/py-examples/mb_cmn/bib_locales.py",
+        "MAM-simple/py-examples/mb_cmn/cantsys.py",
+        "MAM-simple/py-examples/mb_cmn/file_io.py",
+        "MAM-simple/py-examples/mb_cmn/he_wikisource_url.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_accents.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_letters.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_points.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_punctuation.py",
+        "MAM-simple/py-examples/mb_cmn/my_utils.py",
+        "MAM-simple/py-examples/mb_cmn/paths.py",
+        "MAM-simple/py-examples/mb_cmn/provenance.py",
+        "MAM-simple/py-examples/mb_cmn/shrink.py",
+        "MAM-simple/py-examples/mb_cmn/str_defs.py",
+        "MAM-simple/py-examples/mb_cmn/template_names.py",
+        "MAM-simple/py-examples/mb_cmn/uni_heb.py",
+        "MAM-simple/py-examples/mb_cmn/url_percent.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl1.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl2.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl_named_params.py",
+        "MAM-simple/py-examples/mb_misc/hebrew_letter_names.py",
+        "MAM-simple/py-examples/mb_misc/hebrew_letter_words.py",
+        "MAM-simple/py-examples/mb_misc/letter_small_job.py",
+        "MAM-simple/py-examples/mb_misc/mb_html.py",
+        "MAM-simple/py-examples/mb_misc/mb_html_get_lines.py",
+        "MAM-simple/py-examples/mb_misc/my_utils_for_mainish.py",
+        "MAM-simple/py-examples/mb_misc/osis_book_abbrevs.py",
+        "MAM-simple/py-examples/mb_misc/slh_description.py",
+        "MAM-simple/py-examples/mb_misc/styles_authored.py",
+        "MAM-simple/py-examples/mb_misc/styles_mam_parsed.py",
+        "MAM-simple/py-examples/mb_misc/styles_mam_with_doc.py",
+        "MAM-simple/py-examples/mb_misc/verse_and_friends.py",
+        "MAM-simple/py-examples/mb_misc/write_utils.py",
+        "MAM-simple/py-examples/mb_misc/ws_urls.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4ajf_handlers.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_handlers.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_or_ajf.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_runners.py",
+        "MAM-simple/py-examples/mb_sefaria/sef_cmn.py",
+        "MAM-simple/py-examples/mb_sefaria/sef_header.py",
+        "MAM-simple/py-examples/mb_sefaria/write_utils_sef_or_ajf.py",
+        "MAM-simple/py-examples/osis/osis_handlers.py",
+        "MAM-simple/py-examples/osis/osis_index_html.py",
+        "MAM-simple/py-examples/osis/osis_namespace.py",
+        "MAM-simple/py-examples/osis/osis_runner.py",
+        "MAM-simple/py-examples/provenance.md",
+        "all-repos.code-workspace",
+        "gh-pages/MAM-OSIS/index.html",
+        "gh-pages/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/abcant-present-WS.png",
+        "gh-pages/MAM-OSIS/png/good-ending.png",
+        "gh-pages/MAM-OSIS/png/hung.png",
+        "gh-pages/MAM-OSIS/png/impmaq-absent.png",
+        "gh-pages/MAM-OSIS/png/impmaq-present.png",
+        "gh-pages/MAM-OSIS/png/invnun-numbers-10.png",
+        "gh-pages/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "gh-pages/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "gh-pages/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-1.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-2.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-2.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-2.png",
+        "gh-pages/MAM-OSIS/png/paseq.png",
+        "gh-pages/MAM-OSIS/png/scrdff.png",
+        "gh-pages/MAM-OSIS/png/shirah-space.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-present-WS.png",
+        "gh-pages/MAM-OSIS/two_col_style.css",
+        "in/mam_osis_empty_verification.json",
+        "in/mam_osis_land_manifest.json",
+        "in/mam_osis_redirect_pages.json",
+        "in/mam_osis_repoint_verification.json",
+        "in/mam_osis_stubs_verification.json",
+        "in/repo_maintenance_policy.json",
+        "py/redirect_stubs/stubs.py",
+        "py/tests/test_sibling_reach.py"
+      ]
+    },
+    "prior_evidence": [
+      {
+        "path": "in/mam_osis_land_manifest.json",
+        "bytes": 52206,
+        "git_blob": "f703600529deb62732fe47b4a80c0a406a2be869",
+        "sha256": "629c39e04ea3dafcf8a089868473651a1aadce086de7f3f77a0207a2ab72a0c6"
+      },
+      {
+        "path": "in/mam_osis_repoint_verification.json",
+        "bytes": 122663,
+        "git_blob": "86737a29740d38de3ff947f939365dc1ae008e8e",
+        "sha256": "d50794d172948b3e2da25d74d1c880abfbc02f38b0c12b9ce5763bfc524d490f"
+      },
+      {
+        "path": "in/mam_osis_redirect_pages.json",
+        "bytes": 741,
+        "git_blob": "b7055942a295f1252d1b9834a1fd173ac5cc01aa",
+        "sha256": "4dac8cd2263b00d1b6ce30bb0e21e83e72bde91beb22b627d1601ca9612116c0"
+      },
+      {
+        "path": "in/mam_osis_stubs_verification.json",
+        "bytes": 40865,
+        "git_blob": "6b3a201d9aec55dbc33d8c11e1a5aa13a00874cd",
+        "sha256": "28602b2558f808ddf607c7bc21c2e1db63ef4a8ac1546c010f8d1f9b14d6cdee"
+      },
+      {
+        "path": "in/mam_osis_empty_verification.json",
+        "bytes": 85463,
+        "git_blob": "69e8f13414f063cf14bdea5765460866e705c277",
+        "sha256": "f7b7416b05ec29c0fb4991cbaf95ca3b5165ca279eee327734e4fbe291b93b59"
+      }
+    ]
+  },
+  "prior_absent": {
+    "measured_at": "2026-09-10T15:54:20.760152+00:00",
+    "actual_source_present": false,
+    "source_inventory_remeasured": false,
+    "land_commit": "1c817b5307ca535a5fc04ede8cd98add4a79a6f6",
+    "selected_blobs_verified": 90,
+    "independent_example_blobs_verified": 24,
+    "repoint_dispositions_verified": 90,
+    "support_files_verified": 44,
+    "previous_generator_mtime_reports_verified": true,
+    "previous_deployment_http_reports_verified": true,
+    "preserved": {
+      "baseline": "a04a4cd9e3051b7152e50905be357627349e36d7",
+      "count": 172,
+      "paths": [
+        "DATA-LICENSES.md",
+        "MAM-OSIS/.gitattributes",
+        "MAM-OSIS/.gitignore",
+        "MAM-OSIS/LICENSE.md",
+        "MAM-OSIS/MAPM-24/1Chr-2Chr.xml",
+        "MAM-OSIS/MAPM-24/1Kgs-2Kgs.xml",
+        "MAM-OSIS/MAPM-24/1Sam-2Sam.xml",
+        "MAM-OSIS/MAPM-24/Dan.xml",
+        "MAM-OSIS/MAPM-24/Deut.xml",
+        "MAM-OSIS/MAPM-24/Eccl.xml",
+        "MAM-OSIS/MAPM-24/Esth.xml",
+        "MAM-OSIS/MAPM-24/Exod.xml",
+        "MAM-OSIS/MAPM-24/Ezek.xml",
+        "MAM-OSIS/MAPM-24/Ezra-Neh.xml",
+        "MAM-OSIS/MAPM-24/Gen.xml",
+        "MAM-OSIS/MAPM-24/Hos-Mal.xml",
+        "MAM-OSIS/MAPM-24/Isa.xml",
+        "MAM-OSIS/MAPM-24/Jer.xml",
+        "MAM-OSIS/MAPM-24/Job.xml",
+        "MAM-OSIS/MAPM-24/Josh.xml",
+        "MAM-OSIS/MAPM-24/Judg.xml",
+        "MAM-OSIS/MAPM-24/Lam.xml",
+        "MAM-OSIS/MAPM-24/Lev.xml",
+        "MAM-OSIS/MAPM-24/Num.xml",
+        "MAM-OSIS/MAPM-24/Prov.xml",
+        "MAM-OSIS/MAPM-24/Ps.xml",
+        "MAM-OSIS/MAPM-24/Ruth.xml",
+        "MAM-OSIS/MAPM-24/Song.xml",
+        "MAM-OSIS/MAPM-orig-24/1Chr-2Chr.xml",
+        "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+        "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+        "MAM-OSIS/MAPM-orig-24/Dan.xml",
+        "MAM-OSIS/MAPM-orig-24/Deut.xml",
+        "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+        "MAM-OSIS/MAPM-orig-24/Esth.xml",
+        "MAM-OSIS/MAPM-orig-24/Exod.xml",
+        "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+        "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+        "MAM-OSIS/MAPM-orig-24/Gen.xml",
+        "MAM-OSIS/MAPM-orig-24/Hos-Mal.xml",
+        "MAM-OSIS/MAPM-orig-24/Isa.xml",
+        "MAM-OSIS/MAPM-orig-24/Jer.xml",
+        "MAM-OSIS/MAPM-orig-24/Job.xml",
+        "MAM-OSIS/MAPM-orig-24/Josh.xml",
+        "MAM-OSIS/MAPM-orig-24/Judg.xml",
+        "MAM-OSIS/MAPM-orig-24/Lam.xml",
+        "MAM-OSIS/MAPM-orig-24/Lev.xml",
+        "MAM-OSIS/MAPM-orig-24/Num.xml",
+        "MAM-OSIS/MAPM-orig-24/Prov.xml",
+        "MAM-OSIS/MAPM-orig-24/Ps.xml",
+        "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+        "MAM-OSIS/MAPM-orig-24/Song.xml",
+        "MAM-OSIS/MAPM-orig/MAPM.xml",
+        "MAM-OSIS/MAPM-orig/provenance.txt",
+        "MAM-OSIS/MAPM-orig/readme.txt",
+        "MAM-OSIS/README.md",
+        "MAM-OSIS/header.xml",
+        "MAM-OSIS/mapm.conf",
+        "MAM-OSIS/mapm.osis.xml",
+        "MAM-OSIS/osis2mod example command.txt",
+        "MAM-basics.code-workspace",
+        "MAM-simple/py-examples-out/osis/1Chr-2Chr.xml",
+        "MAM-simple/py-examples-out/osis/1Kgs-2Kgs.xml",
+        "MAM-simple/py-examples-out/osis/1Sam-2Sam.xml",
+        "MAM-simple/py-examples-out/osis/Dan.xml",
+        "MAM-simple/py-examples-out/osis/Deut.xml",
+        "MAM-simple/py-examples-out/osis/Eccl.xml",
+        "MAM-simple/py-examples-out/osis/Esth.xml",
+        "MAM-simple/py-examples-out/osis/Exod.xml",
+        "MAM-simple/py-examples-out/osis/Ezek.xml",
+        "MAM-simple/py-examples-out/osis/Ezra-Neh.xml",
+        "MAM-simple/py-examples-out/osis/Gen.xml",
+        "MAM-simple/py-examples-out/osis/Hos-Mal.xml",
+        "MAM-simple/py-examples-out/osis/Isa.xml",
+        "MAM-simple/py-examples-out/osis/Jer.xml",
+        "MAM-simple/py-examples-out/osis/Job.xml",
+        "MAM-simple/py-examples-out/osis/Josh.xml",
+        "MAM-simple/py-examples-out/osis/Judg.xml",
+        "MAM-simple/py-examples-out/osis/Lam.xml",
+        "MAM-simple/py-examples-out/osis/Lev.xml",
+        "MAM-simple/py-examples-out/osis/Num.xml",
+        "MAM-simple/py-examples-out/osis/Prov.xml",
+        "MAM-simple/py-examples-out/osis/Ps.xml",
+        "MAM-simple/py-examples-out/osis/Ruth.xml",
+        "MAM-simple/py-examples-out/osis/Song.xml",
+        "MAM-simple/py-examples/main_letter_small_job_example.py",
+        "MAM-simple/py-examples/main_mam4sef_example.py",
+        "MAM-simple/py-examples/main_mam_osis_example.py",
+        "MAM-simple/py-examples/mb_cmn/bib_locales.py",
+        "MAM-simple/py-examples/mb_cmn/cantsys.py",
+        "MAM-simple/py-examples/mb_cmn/file_io.py",
+        "MAM-simple/py-examples/mb_cmn/he_wikisource_url.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_accents.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_letters.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_points.py",
+        "MAM-simple/py-examples/mb_cmn/hebrew_punctuation.py",
+        "MAM-simple/py-examples/mb_cmn/my_utils.py",
+        "MAM-simple/py-examples/mb_cmn/paths.py",
+        "MAM-simple/py-examples/mb_cmn/provenance.py",
+        "MAM-simple/py-examples/mb_cmn/shrink.py",
+        "MAM-simple/py-examples/mb_cmn/str_defs.py",
+        "MAM-simple/py-examples/mb_cmn/template_names.py",
+        "MAM-simple/py-examples/mb_cmn/uni_heb.py",
+        "MAM-simple/py-examples/mb_cmn/url_percent.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl1.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl2.py",
+        "MAM-simple/py-examples/mb_cmn/ws_tmpl_named_params.py",
+        "MAM-simple/py-examples/mb_misc/hebrew_letter_names.py",
+        "MAM-simple/py-examples/mb_misc/hebrew_letter_words.py",
+        "MAM-simple/py-examples/mb_misc/letter_small_job.py",
+        "MAM-simple/py-examples/mb_misc/mb_html.py",
+        "MAM-simple/py-examples/mb_misc/mb_html_get_lines.py",
+        "MAM-simple/py-examples/mb_misc/my_utils_for_mainish.py",
+        "MAM-simple/py-examples/mb_misc/osis_book_abbrevs.py",
+        "MAM-simple/py-examples/mb_misc/slh_description.py",
+        "MAM-simple/py-examples/mb_misc/styles_authored.py",
+        "MAM-simple/py-examples/mb_misc/styles_mam_parsed.py",
+        "MAM-simple/py-examples/mb_misc/styles_mam_with_doc.py",
+        "MAM-simple/py-examples/mb_misc/verse_and_friends.py",
+        "MAM-simple/py-examples/mb_misc/write_utils.py",
+        "MAM-simple/py-examples/mb_misc/ws_urls.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4ajf_handlers.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_handlers.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_or_ajf.py",
+        "MAM-simple/py-examples/mb_sefaria/mam4sef_runners.py",
+        "MAM-simple/py-examples/mb_sefaria/sef_cmn.py",
+        "MAM-simple/py-examples/mb_sefaria/sef_header.py",
+        "MAM-simple/py-examples/mb_sefaria/write_utils_sef_or_ajf.py",
+        "MAM-simple/py-examples/osis/osis_handlers.py",
+        "MAM-simple/py-examples/osis/osis_index_html.py",
+        "MAM-simple/py-examples/osis/osis_namespace.py",
+        "MAM-simple/py-examples/osis/osis_runner.py",
+        "MAM-simple/py-examples/provenance.md",
+        "all-repos.code-workspace",
+        "gh-pages/MAM-OSIS/index.html",
+        "gh-pages/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/abcant-present-WS.png",
+        "gh-pages/MAM-OSIS/png/good-ending.png",
+        "gh-pages/MAM-OSIS/png/hung.png",
+        "gh-pages/MAM-OSIS/png/impmaq-absent.png",
+        "gh-pages/MAM-OSIS/png/impmaq-present.png",
+        "gh-pages/MAM-OSIS/png/invnun-numbers-10.png",
+        "gh-pages/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "gh-pages/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "gh-pages/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-1.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-2.png",
+        "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-2.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "gh-pages/MAM-OSIS/png/par-setumah-type-2.png",
+        "gh-pages/MAM-OSIS/png/paseq.png",
+        "gh-pages/MAM-OSIS/png/scrdff.png",
+        "gh-pages/MAM-OSIS/png/shirah-space.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "gh-pages/MAM-OSIS/png/sm-lett-present-WS.png",
+        "gh-pages/MAM-OSIS/two_col_style.css",
+        "in/mam_osis_empty_verification.json",
+        "in/mam_osis_land_manifest.json",
+        "in/mam_osis_redirect_pages.json",
+        "in/mam_osis_repoint_verification.json",
+        "in/mam_osis_stubs_verification.json",
+        "in/repo_maintenance_policy.json",
+        "py/redirect_stubs/stubs.py",
+        "py/tests/test_sibling_reach.py"
+      ]
+    },
+    "prior_evidence": [
+      {
+        "path": "in/mam_osis_land_manifest.json",
+        "bytes": 52206,
+        "git_blob": "f703600529deb62732fe47b4a80c0a406a2be869",
+        "sha256": "629c39e04ea3dafcf8a089868473651a1aadce086de7f3f77a0207a2ab72a0c6"
+      },
+      {
+        "path": "in/mam_osis_repoint_verification.json",
+        "bytes": 122663,
+        "git_blob": "86737a29740d38de3ff947f939365dc1ae008e8e",
+        "sha256": "d50794d172948b3e2da25d74d1c880abfbc02f38b0c12b9ce5763bfc524d490f"
+      },
+      {
+        "path": "in/mam_osis_redirect_pages.json",
+        "bytes": 741,
+        "git_blob": "b7055942a295f1252d1b9834a1fd173ac5cc01aa",
+        "sha256": "4dac8cd2263b00d1b6ce30bb0e21e83e72bde91beb22b627d1601ca9612116c0"
+      },
+      {
+        "path": "in/mam_osis_stubs_verification.json",
+        "bytes": 40865,
+        "git_blob": "6b3a201d9aec55dbc33d8c11e1a5aa13a00874cd",
+        "sha256": "28602b2558f808ddf607c7bc21c2e1db63ef4a8ac1546c010f8d1f9b14d6cdee"
+      },
+      {
+        "path": "in/mam_osis_empty_verification.json",
+        "bytes": 85463,
+        "git_blob": "69e8f13414f063cf14bdea5765460866e705c277",
+        "sha256": "f7b7416b05ec29c0fb4991cbaf95ca3b5165ca279eee327734e4fbe291b93b59"
+      }
+    ]
+  },
+  "land_commit": "1c817b5307ca535a5fc04ede8cd98add4a79a6f6",
+  "original_source_commit": "697dc98a904a52ed81bb105772f002d3efb360e3",
+  "immutable_manifest_policy": "The original Land manifest was read and compared, never regenerated. All 92 source entries were remeasured before retirement; all 90 selected blobs / 29,821,603 bytes and 24 committed examples were reverified from the Land commit before and after removal. The 90 current Repoint dispositions remain 86 identical, three documented adaptations, and the removed duplicate checker.",
+  "protected_destination": {
+    "baseline": "a04a4cd9e3051b7152e50905be357627349e36d7",
+    "count": 172,
+    "paths": [
+      "DATA-LICENSES.md",
+      "MAM-OSIS/.gitattributes",
+      "MAM-OSIS/.gitignore",
+      "MAM-OSIS/LICENSE.md",
+      "MAM-OSIS/MAPM-24/1Chr-2Chr.xml",
+      "MAM-OSIS/MAPM-24/1Kgs-2Kgs.xml",
+      "MAM-OSIS/MAPM-24/1Sam-2Sam.xml",
+      "MAM-OSIS/MAPM-24/Dan.xml",
+      "MAM-OSIS/MAPM-24/Deut.xml",
+      "MAM-OSIS/MAPM-24/Eccl.xml",
+      "MAM-OSIS/MAPM-24/Esth.xml",
+      "MAM-OSIS/MAPM-24/Exod.xml",
+      "MAM-OSIS/MAPM-24/Ezek.xml",
+      "MAM-OSIS/MAPM-24/Ezra-Neh.xml",
+      "MAM-OSIS/MAPM-24/Gen.xml",
+      "MAM-OSIS/MAPM-24/Hos-Mal.xml",
+      "MAM-OSIS/MAPM-24/Isa.xml",
+      "MAM-OSIS/MAPM-24/Jer.xml",
+      "MAM-OSIS/MAPM-24/Job.xml",
+      "MAM-OSIS/MAPM-24/Josh.xml",
+      "MAM-OSIS/MAPM-24/Judg.xml",
+      "MAM-OSIS/MAPM-24/Lam.xml",
+      "MAM-OSIS/MAPM-24/Lev.xml",
+      "MAM-OSIS/MAPM-24/Num.xml",
+      "MAM-OSIS/MAPM-24/Prov.xml",
+      "MAM-OSIS/MAPM-24/Ps.xml",
+      "MAM-OSIS/MAPM-24/Ruth.xml",
+      "MAM-OSIS/MAPM-24/Song.xml",
+      "MAM-OSIS/MAPM-orig-24/1Chr-2Chr.xml",
+      "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+      "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+      "MAM-OSIS/MAPM-orig-24/Dan.xml",
+      "MAM-OSIS/MAPM-orig-24/Deut.xml",
+      "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+      "MAM-OSIS/MAPM-orig-24/Esth.xml",
+      "MAM-OSIS/MAPM-orig-24/Exod.xml",
+      "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+      "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+      "MAM-OSIS/MAPM-orig-24/Gen.xml",
+      "MAM-OSIS/MAPM-orig-24/Hos-Mal.xml",
+      "MAM-OSIS/MAPM-orig-24/Isa.xml",
+      "MAM-OSIS/MAPM-orig-24/Jer.xml",
+      "MAM-OSIS/MAPM-orig-24/Job.xml",
+      "MAM-OSIS/MAPM-orig-24/Josh.xml",
+      "MAM-OSIS/MAPM-orig-24/Judg.xml",
+      "MAM-OSIS/MAPM-orig-24/Lam.xml",
+      "MAM-OSIS/MAPM-orig-24/Lev.xml",
+      "MAM-OSIS/MAPM-orig-24/Num.xml",
+      "MAM-OSIS/MAPM-orig-24/Prov.xml",
+      "MAM-OSIS/MAPM-orig-24/Ps.xml",
+      "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+      "MAM-OSIS/MAPM-orig-24/Song.xml",
+      "MAM-OSIS/MAPM-orig/MAPM.xml",
+      "MAM-OSIS/MAPM-orig/provenance.txt",
+      "MAM-OSIS/MAPM-orig/readme.txt",
+      "MAM-OSIS/README.md",
+      "MAM-OSIS/header.xml",
+      "MAM-OSIS/mapm.conf",
+      "MAM-OSIS/mapm.osis.xml",
+      "MAM-OSIS/osis2mod example command.txt",
+      "MAM-basics.code-workspace",
+      "MAM-simple/py-examples-out/osis/1Chr-2Chr.xml",
+      "MAM-simple/py-examples-out/osis/1Kgs-2Kgs.xml",
+      "MAM-simple/py-examples-out/osis/1Sam-2Sam.xml",
+      "MAM-simple/py-examples-out/osis/Dan.xml",
+      "MAM-simple/py-examples-out/osis/Deut.xml",
+      "MAM-simple/py-examples-out/osis/Eccl.xml",
+      "MAM-simple/py-examples-out/osis/Esth.xml",
+      "MAM-simple/py-examples-out/osis/Exod.xml",
+      "MAM-simple/py-examples-out/osis/Ezek.xml",
+      "MAM-simple/py-examples-out/osis/Ezra-Neh.xml",
+      "MAM-simple/py-examples-out/osis/Gen.xml",
+      "MAM-simple/py-examples-out/osis/Hos-Mal.xml",
+      "MAM-simple/py-examples-out/osis/Isa.xml",
+      "MAM-simple/py-examples-out/osis/Jer.xml",
+      "MAM-simple/py-examples-out/osis/Job.xml",
+      "MAM-simple/py-examples-out/osis/Josh.xml",
+      "MAM-simple/py-examples-out/osis/Judg.xml",
+      "MAM-simple/py-examples-out/osis/Lam.xml",
+      "MAM-simple/py-examples-out/osis/Lev.xml",
+      "MAM-simple/py-examples-out/osis/Num.xml",
+      "MAM-simple/py-examples-out/osis/Prov.xml",
+      "MAM-simple/py-examples-out/osis/Ps.xml",
+      "MAM-simple/py-examples-out/osis/Ruth.xml",
+      "MAM-simple/py-examples-out/osis/Song.xml",
+      "MAM-simple/py-examples/main_letter_small_job_example.py",
+      "MAM-simple/py-examples/main_mam4sef_example.py",
+      "MAM-simple/py-examples/main_mam_osis_example.py",
+      "MAM-simple/py-examples/mb_cmn/bib_locales.py",
+      "MAM-simple/py-examples/mb_cmn/cantsys.py",
+      "MAM-simple/py-examples/mb_cmn/file_io.py",
+      "MAM-simple/py-examples/mb_cmn/he_wikisource_url.py",
+      "MAM-simple/py-examples/mb_cmn/hebrew_accents.py",
+      "MAM-simple/py-examples/mb_cmn/hebrew_letters.py",
+      "MAM-simple/py-examples/mb_cmn/hebrew_points.py",
+      "MAM-simple/py-examples/mb_cmn/hebrew_punctuation.py",
+      "MAM-simple/py-examples/mb_cmn/my_utils.py",
+      "MAM-simple/py-examples/mb_cmn/paths.py",
+      "MAM-simple/py-examples/mb_cmn/provenance.py",
+      "MAM-simple/py-examples/mb_cmn/shrink.py",
+      "MAM-simple/py-examples/mb_cmn/str_defs.py",
+      "MAM-simple/py-examples/mb_cmn/template_names.py",
+      "MAM-simple/py-examples/mb_cmn/uni_heb.py",
+      "MAM-simple/py-examples/mb_cmn/url_percent.py",
+      "MAM-simple/py-examples/mb_cmn/ws_tmpl1.py",
+      "MAM-simple/py-examples/mb_cmn/ws_tmpl2.py",
+      "MAM-simple/py-examples/mb_cmn/ws_tmpl_named_params.py",
+      "MAM-simple/py-examples/mb_misc/hebrew_letter_names.py",
+      "MAM-simple/py-examples/mb_misc/hebrew_letter_words.py",
+      "MAM-simple/py-examples/mb_misc/letter_small_job.py",
+      "MAM-simple/py-examples/mb_misc/mb_html.py",
+      "MAM-simple/py-examples/mb_misc/mb_html_get_lines.py",
+      "MAM-simple/py-examples/mb_misc/my_utils_for_mainish.py",
+      "MAM-simple/py-examples/mb_misc/osis_book_abbrevs.py",
+      "MAM-simple/py-examples/mb_misc/slh_description.py",
+      "MAM-simple/py-examples/mb_misc/styles_authored.py",
+      "MAM-simple/py-examples/mb_misc/styles_mam_parsed.py",
+      "MAM-simple/py-examples/mb_misc/styles_mam_with_doc.py",
+      "MAM-simple/py-examples/mb_misc/verse_and_friends.py",
+      "MAM-simple/py-examples/mb_misc/write_utils.py",
+      "MAM-simple/py-examples/mb_misc/ws_urls.py",
+      "MAM-simple/py-examples/mb_sefaria/mam4ajf_handlers.py",
+      "MAM-simple/py-examples/mb_sefaria/mam4sef_handlers.py",
+      "MAM-simple/py-examples/mb_sefaria/mam4sef_or_ajf.py",
+      "MAM-simple/py-examples/mb_sefaria/mam4sef_runners.py",
+      "MAM-simple/py-examples/mb_sefaria/sef_cmn.py",
+      "MAM-simple/py-examples/mb_sefaria/sef_header.py",
+      "MAM-simple/py-examples/mb_sefaria/write_utils_sef_or_ajf.py",
+      "MAM-simple/py-examples/osis/osis_handlers.py",
+      "MAM-simple/py-examples/osis/osis_index_html.py",
+      "MAM-simple/py-examples/osis/osis_namespace.py",
+      "MAM-simple/py-examples/osis/osis_runner.py",
+      "MAM-simple/py-examples/provenance.md",
+      "all-repos.code-workspace",
+      "gh-pages/MAM-OSIS/index.html",
+      "gh-pages/MAM-OSIS/png/abcant-absent-OSIS.png",
+      "gh-pages/MAM-OSIS/png/abcant-present-WS.png",
+      "gh-pages/MAM-OSIS/png/good-ending.png",
+      "gh-pages/MAM-OSIS/png/hung.png",
+      "gh-pages/MAM-OSIS/png/impmaq-absent.png",
+      "gh-pages/MAM-OSIS/png/impmaq-present.png",
+      "gh-pages/MAM-OSIS/png/invnun-numbers-10.png",
+      "gh-pages/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+      "gh-pages/MAM-OSIS/png/invnun-psalm-107-v40.png",
+      "gh-pages/MAM-OSIS/png/kq-ketiv-qere-1.png",
+      "gh-pages/MAM-OSIS/png/kq-ketiv-qere-2.png",
+      "gh-pages/MAM-OSIS/png/kq-ketiv-qere-3.png",
+      "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+      "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+      "gh-pages/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+      "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-1.png",
+      "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-1-number-2.png",
+      "gh-pages/MAM-OSIS/png/par-petu\u1e25ah-type-2.png",
+      "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+      "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+      "gh-pages/MAM-OSIS/png/par-setumah-type-2.png",
+      "gh-pages/MAM-OSIS/png/paseq.png",
+      "gh-pages/MAM-OSIS/png/scrdff.png",
+      "gh-pages/MAM-OSIS/png/shirah-space.png",
+      "gh-pages/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+      "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+      "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+      "gh-pages/MAM-OSIS/png/sm-lett-present-WS.png",
+      "gh-pages/MAM-OSIS/two_col_style.css",
+      "in/mam_osis_empty_verification.json",
+      "in/mam_osis_land_manifest.json",
+      "in/mam_osis_redirect_pages.json",
+      "in/mam_osis_repoint_verification.json",
+      "in/mam_osis_stubs_verification.json",
+      "in/repo_maintenance_policy.json",
+      "py/redirect_stubs/stubs.py",
+      "py/tests/test_sibling_reach.py"
+    ]
+  },
+  "commands": {
+    "production": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_mam_osis.py"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T15:52:22.917467+00:00",
+      "seconds": 0.85,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result_lines": [],
+      "scanned_destination_files_before": 16752,
+      "scanned_destination_files_after": 16752,
+      "changes": [
+        {
+          "path": "MAM-OSIS/MAPM-24/1Chr-2Chr.xml",
+          "before": {
+            "mtime_ns": 1789054225693925500,
+            "bytes": 563494
+          },
+          "after": {
+            "mtime_ns": 1789055542558862500,
+            "bytes": 563494
+          },
+          "current": {
+            "bytes": 563494,
+            "git_blob": "6c9caa7d5bc889fb4adc887599c237d830e977d2",
+            "sha256": "352e568d2652b8f7d3ef62fce86b27e35d29bd346e999767c5f3c3fa2bbade0d"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/1Kgs-2Kgs.xml",
+          "before": {
+            "mtime_ns": 1789054225259756000,
+            "bytes": 529008
+          },
+          "after": {
+            "mtime_ns": 1789055542367269600,
+            "bytes": 529008
+          },
+          "current": {
+            "bytes": 529008,
+            "git_blob": "b78393a462d2fa42bf1aaf70a382ad184c8daa63",
+            "sha256": "272ac3ac7adb169796a0e3f7f5d14f82173a7fd3151ef50cc3be4370ceea0845"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/1Sam-2Sam.xml",
+          "before": {
+            "mtime_ns": 1789054225239770500,
+            "bytes": 523373
+          },
+          "after": {
+            "mtime_ns": 1789055542349256700,
+            "bytes": 523373
+          },
+          "current": {
+            "bytes": 523373,
+            "git_blob": "59243ef2162d346999290ee0d10ed643ce8cf4e2",
+            "sha256": "edf77c151ef49235f8d2e097742490f7e42aa5be3b6a22176d4a3f1a88b6c776"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Dan.xml",
+          "before": {
+            "mtime_ns": 1789054225652553300,
+            "bytes": 127065
+          },
+          "after": {
+            "mtime_ns": 1789055542521434600,
+            "bytes": 127065
+          },
+          "current": {
+            "bytes": 127065,
+            "git_blob": "d03dfa36638299318f814832f57b9b894a6a4a33",
+            "sha256": "1cfa0ca6ea237e439559c0af36bd97d578a4c5c066c77328db37dcda99978490"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Deut.xml",
+          "before": {
+            "mtime_ns": 1789054225192090900,
+            "bytes": 307626
+          },
+          "after": {
+            "mtime_ns": 1789055542310860400,
+            "bytes": 307626
+          },
+          "current": {
+            "bytes": 307626,
+            "git_blob": "b26c40ca25e37484e33ce41ebd5f3c7ffedae039",
+            "sha256": "582fc551a394ce7255969051d9e7b9b37502aa928738175b0b9e0628ca8ac774"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Eccl.xml",
+          "before": {
+            "mtime_ns": 1789054225640044900,
+            "bytes": 60965
+          },
+          "after": {
+            "mtime_ns": 1789055542508421400,
+            "bytes": 60965
+          },
+          "current": {
+            "bytes": 60965,
+            "git_blob": "178d4acf373904b1716de36ad16701d4edc34c3f",
+            "sha256": "747d87eec6babc98ed1ad838ec77098e44e31e0e7529bd66c571c3acefe0c35d"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Esth.xml",
+          "before": {
+            "mtime_ns": 1789054225644555700,
+            "bytes": 66441
+          },
+          "after": {
+            "mtime_ns": 1789055542512441100,
+            "bytes": 66441
+          },
+          "current": {
+            "bytes": 66441,
+            "git_blob": "d43f8b99f22dad34e6094dde24a4413daf5fd7b9",
+            "sha256": "b40f43acc596925e1cbfa627747816fcb384d4927d49b9f8997e50fcbf271a43"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Exod.xml",
+          "before": {
+            "mtime_ns": 1789054225144002000,
+            "bytes": 355675
+          },
+          "after": {
+            "mtime_ns": 1789055542277055300,
+            "bytes": 355675
+          },
+          "current": {
+            "bytes": 355675,
+            "git_blob": "4a3187cf9aa45be19c3a3d5cab0a61de2758397e",
+            "sha256": "4c151ba04a66166f51f77a16f5a1261aacd429d6e90cc69a57094a54a3f9b98d"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Ezek.xml",
+          "before": {
+            "mtime_ns": 1789054225524869000,
+            "bytes": 402232
+          },
+          "after": {
+            "mtime_ns": 1789055542419024200,
+            "bytes": 402232
+          },
+          "current": {
+            "bytes": 402232,
+            "git_blob": "2c9e976b0fa69f153862b096b25dc3af79ba2b34",
+            "sha256": "54a4b5bb2a987027c9a1ad9ed210cc57b5e26c6ef837b5f7a7e35196f9fb8359"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Ezra-Neh.xml",
+          "before": {
+            "mtime_ns": 1789054225671592500,
+            "bytes": 220300
+          },
+          "after": {
+            "mtime_ns": 1789055542532453500,
+            "bytes": 220300
+          },
+          "current": {
+            "bytes": 220300,
+            "git_blob": "f2933a02584fe63fe2b748ff583cb21a1ee5c2a6",
+            "sha256": "10de70e1655e32078d6e8f3682a55d9d302e2f1591d9115270151db5a20504bc"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Gen.xml",
+          "before": {
+            "mtime_ns": 1789054225129356200,
+            "bytes": 422805
+          },
+          "after": {
+            "mtime_ns": 1789055542263518800,
+            "bytes": 422805
+          },
+          "current": {
+            "bytes": 422805,
+            "git_blob": "691bc88a481d563e16c9a3c65031c690ede5cb98",
+            "sha256": "f72e2c465686af4e82b4bd0d3b73901d53be32566316615fb7dc4aae2414ac16"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Hos-Mal.xml",
+          "before": {
+            "mtime_ns": 1789054225544056900,
+            "bytes": 308549
+          },
+          "after": {
+            "mtime_ns": 1789055542435049100,
+            "bytes": 308549
+          },
+          "current": {
+            "bytes": 308549,
+            "git_blob": "eab8dcfeea06ddb114f3b939489a704354e8fb70",
+            "sha256": "d0fd415b302aa0f5709f60f42195147a424fa9d502ff11ee9858a885ad4d113e"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Isa.xml",
+          "before": {
+            "mtime_ns": 1789054225415349600,
+            "bytes": 371849
+          },
+          "after": {
+            "mtime_ns": 1789055542382384000,
+            "bytes": 371849
+          },
+          "current": {
+            "bytes": 371849,
+            "git_blob": "66ca429fecfdc17c2a759f893fef0b5faf11aa09",
+            "sha256": "d873d9e8928dc012b14d288267a9774c2510d38928e70a914f8bc0eba07f2185"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Jer.xml",
+          "before": {
+            "mtime_ns": 1789054225508845700,
+            "bytes": 458857
+          },
+          "after": {
+            "mtime_ns": 1789055542402382700,
+            "bytes": 458857
+          },
+          "current": {
+            "bytes": 458857,
+            "git_blob": "77b91983947dfe907082ee3741541148b3ecb20f",
+            "sha256": "8d2a2c5a3ebc5aa8b90b40e12e2009dcbcea7c09aae6f31f30dcdb219a7aa8eb"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Job.xml",
+          "before": {
+            "mtime_ns": 1789054225609219900,
+            "bytes": 191852
+          },
+          "after": {
+            "mtime_ns": 1789055542484586300,
+            "bytes": 191852
+          },
+          "current": {
+            "bytes": 191852,
+            "git_blob": "817c024004739c1595387cf60e928d9bef90cd56",
+            "sha256": "f014a6711f252d9ba4dba86b9a893ed14ac4dce385e9fac8340260554e8a7450"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Josh.xml",
+          "before": {
+            "mtime_ns": 1789054225209220700,
+            "bytes": 214913
+          },
+          "after": {
+            "mtime_ns": 1789055542319188400,
+            "bytes": 214913
+          },
+          "current": {
+            "bytes": 214913,
+            "git_blob": "0c4d62f64d06664e4eac36bc9828ddbd5f07a512",
+            "sha256": "419f995c3aa0822817a9c225785e523dc823356633f2b962e366ef271a3faa92"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Judg.xml",
+          "before": {
+            "mtime_ns": 1789054225218235200,
+            "bytes": 211519
+          },
+          "after": {
+            "mtime_ns": 1789055542328182200,
+            "bytes": 211519
+          },
+          "current": {
+            "bytes": 211519,
+            "git_blob": "d68f9cabef5a1c430c7bd4bdddf0251bb792e9fa",
+            "sha256": "03167e2e4b5fc089bf3f8a679178a3bc6b40a0acc009827bcaf14fd669dfa9ee"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Lam.xml",
+          "before": {
+            "mtime_ns": 1789054225633670400,
+            "bytes": 45128
+          },
+          "after": {
+            "mtime_ns": 1789055542500444400,
+            "bytes": 45128
+          },
+          "current": {
+            "bytes": 45128,
+            "git_blob": "8332c4e7265fcdeecd1ec9c4d2e74bb17339d869",
+            "sha256": "80b0205da856a8d1f8d54218e25eca52b88662b231e563a5f7d3d701b72185ff"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Lev.xml",
+          "before": {
+            "mtime_ns": 1789054225163002100,
+            "bytes": 245410
+          },
+          "after": {
+            "mtime_ns": 1789055542285054800,
+            "bytes": 245410
+          },
+          "current": {
+            "bytes": 245410,
+            "git_blob": "e442358a3206caf807bdca7dc48b3a93959152eb",
+            "sha256": "f1f21a6afedd8bab0b2347ecdd2de1567685317febe1f63f1b91ec11a4844875"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Num.xml",
+          "before": {
+            "mtime_ns": 1789054225177994500,
+            "bytes": 351791
+          },
+          "after": {
+            "mtime_ns": 1789055542298068100,
+            "bytes": 351791
+          },
+          "current": {
+            "bytes": 351791,
+            "git_blob": "67a44970af5f2036382321dadf482205cb565c04",
+            "sha256": "766b8424588837ae42ea5a131f78db1588c78cad8b0c39c832563a461b61dc72"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Prov.xml",
+          "before": {
+            "mtime_ns": 1789054225591460700,
+            "bytes": 162221
+          },
+          "after": {
+            "mtime_ns": 1789055542473599500,
+            "bytes": 162221
+          },
+          "current": {
+            "bytes": 162221,
+            "git_blob": "ed2e636f4ce10da37bd5c72a72023077ab80e569",
+            "sha256": "8f033fea6c318fca5223470c25e8d6cfbb71822c48bf794887ba94aa68bafbac"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Ps.xml",
+          "before": {
+            "mtime_ns": 1789054225580451600,
+            "bytes": 475806
+          },
+          "after": {
+            "mtime_ns": 1789055542463672100,
+            "bytes": 475806
+          },
+          "current": {
+            "bytes": 475806,
+            "git_blob": "c2b9d7c3742ad2786fb0567e7c35da59b8272b19",
+            "sha256": "e44c5da262fcf598930d26a52132a22bc17c62f0133fbcd990563582285976b0"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Ruth.xml",
+          "before": {
+            "mtime_ns": 1789054225625160100,
+            "bytes": 26530
+          },
+          "after": {
+            "mtime_ns": 1789055542494444300,
+            "bytes": 26530
+          },
+          "current": {
+            "bytes": 26530,
+            "git_blob": "bf4ed09391d5748191a89edcebf328fd8f0782a9",
+            "sha256": "ff206fd465a1391456d4683015cbd73b024d27345cf284adf4b9ab7e4a7332b2"
+          }
+        },
+        {
+          "path": "MAM-OSIS/MAPM-24/Song.xml",
+          "before": {
+            "mtime_ns": 1789054225617088500,
+            "bytes": 30369
+          },
+          "after": {
+            "mtime_ns": 1789055542490925500,
+            "bytes": 30369
+          },
+          "current": {
+            "bytes": 30369,
+            "git_blob": "79dceb9d30c49d568e72547bf69b13d26b2f6114",
+            "sha256": "f9a96520bdd1c7a27d7edb10a6edac9f2e06b6c5182887196bc0e935a98ed087"
+          }
+        },
+        {
+          "path": "MAM-OSIS/mapm.osis.xml",
+          "before": {
+            "mtime_ns": 1789054225780316800,
+            "bytes": 6800731
+          },
+          "after": {
+            "mtime_ns": 1789055542663922400,
+            "bytes": 6800731
+          },
+          "current": {
+            "bytes": 6800731,
+            "git_blob": "212ee32383a57b50ac854e19ee6e006aabdc48e7",
+            "sha256": "9136eb85906a59a4511fa8e29a8d30773e81065fd451fb24f29be7af4201207b"
+          }
+        },
+        {
+          "path": "gh-pages/MAM-OSIS/index.html",
+          "before": {
+            "mtime_ns": 1789054225095352900,
+            "bytes": 11592
+          },
+          "after": {
+            "mtime_ns": 1789055542245506600,
+            "bytes": 11592
+          },
+          "current": {
+            "bytes": 11592,
+            "git_blob": "843a5d82099e2c2fe6749fffd7771bf8f1421261",
+            "sha256": "3fb2191b56f8375861ce97a7a528d2c31bd42ebc1a1f5c2c23e542ce11cf48ca"
+          }
+        },
+        {
+          "path": "gh-pages/MAM-OSIS/two_col_style.css",
+          "before": {
+            "mtime_ns": 1789054225091351800,
+            "bytes": 1601
+          },
+          "after": {
+            "mtime_ns": 1789055542241979300,
+            "bytes": 1601
+          },
+          "current": {
+            "bytes": 1601,
+            "git_blob": "1019edf532cdd118234264e38756ab2d7c4b5f5a",
+            "sha256": "b3ceb8dbbffb3910de986508d7acf36c63c2b0121bb9167af5846f91b4979a02"
+          }
+        }
+      ],
+      "every_output_matches_frozen_land_and_committed_target": true
+    },
+    "example": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py-examples/main_mam_osis_example.py"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple",
+      "measured_at": "2026-09-10T15:52:42.388993+00:00",
+      "seconds": 0.44,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result_lines": [],
+      "scanned_destination_files_before": 16752,
+      "scanned_destination_files_after": 16752,
+      "changes": [
+        {
+          "path": "MAM-simple/py-examples-out/osis/1Chr-2Chr.xml",
+          "before": {
+            "mtime_ns": 1789054266126539100,
+            "bytes": 563494
+          },
+          "after": {
+            "mtime_ns": 1789055562369202500,
+            "bytes": 563494
+          },
+          "current": {
+            "bytes": 563494,
+            "git_blob": "6c9caa7d5bc889fb4adc887599c237d830e977d2",
+            "sha256": "352e568d2652b8f7d3ef62fce86b27e35d29bd346e999767c5f3c3fa2bbade0d"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/1Kgs-2Kgs.xml",
+          "before": {
+            "mtime_ns": 1789054265929216600,
+            "bytes": 529008
+          },
+          "after": {
+            "mtime_ns": 1789055562210791100,
+            "bytes": 529008
+          },
+          "current": {
+            "bytes": 529008,
+            "git_blob": "b78393a462d2fa42bf1aaf70a382ad184c8daa63",
+            "sha256": "272ac3ac7adb169796a0e3f7f5d14f82173a7fd3151ef50cc3be4370ceea0845"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/1Sam-2Sam.xml",
+          "before": {
+            "mtime_ns": 1789054265909217100,
+            "bytes": 523373
+          },
+          "after": {
+            "mtime_ns": 1789055562193020000,
+            "bytes": 523373
+          },
+          "current": {
+            "bytes": 523373,
+            "git_blob": "59243ef2162d346999290ee0d10ed643ce8cf4e2",
+            "sha256": "edf77c151ef49235f8d2e097742490f7e42aa5be3b6a22176d4a3f1a88b6c776"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Dan.xml",
+          "before": {
+            "mtime_ns": 1789054266091019800,
+            "bytes": 127065
+          },
+          "after": {
+            "mtime_ns": 1789055562337107800,
+            "bytes": 127065
+          },
+          "current": {
+            "bytes": 127065,
+            "git_blob": "d03dfa36638299318f814832f57b9b894a6a4a33",
+            "sha256": "1cfa0ca6ea237e439559c0af36bd97d578a4c5c066c77328db37dcda99978490"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Deut.xml",
+          "before": {
+            "mtime_ns": 1789054265866957600,
+            "bytes": 307626
+          },
+          "after": {
+            "mtime_ns": 1789055562157003800,
+            "bytes": 307626
+          },
+          "current": {
+            "bytes": 307626,
+            "git_blob": "b26c40ca25e37484e33ce41ebd5f3c7ffedae039",
+            "sha256": "582fc551a394ce7255969051d9e7b9b37502aa928738175b0b9e0628ca8ac774"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Eccl.xml",
+          "before": {
+            "mtime_ns": 1789054266070415700,
+            "bytes": 60965
+          },
+          "after": {
+            "mtime_ns": 1789055562326108000,
+            "bytes": 60965
+          },
+          "current": {
+            "bytes": 60965,
+            "git_blob": "178d4acf373904b1716de36ad16701d4edc34c3f",
+            "sha256": "747d87eec6babc98ed1ad838ec77098e44e31e0e7529bd66c571c3acefe0c35d"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Esth.xml",
+          "before": {
+            "mtime_ns": 1789054266075930100,
+            "bytes": 66441
+          },
+          "after": {
+            "mtime_ns": 1789055562330113100,
+            "bytes": 66441
+          },
+          "current": {
+            "bytes": 66441,
+            "git_blob": "d43f8b99f22dad34e6094dde24a4413daf5fd7b9",
+            "sha256": "b40f43acc596925e1cbfa627747816fcb384d4927d49b9f8997e50fcbf271a43"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Exod.xml",
+          "before": {
+            "mtime_ns": 1789054265827927800,
+            "bytes": 355675
+          },
+          "after": {
+            "mtime_ns": 1789055562122410100,
+            "bytes": 355675
+          },
+          "current": {
+            "bytes": 355675,
+            "git_blob": "4a3187cf9aa45be19c3a3d5cab0a61de2758397e",
+            "sha256": "4c151ba04a66166f51f77a16f5a1261aacd429d6e90cc69a57094a54a3f9b98d"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Ezek.xml",
+          "before": {
+            "mtime_ns": 1789054265981922200,
+            "bytes": 402232
+          },
+          "after": {
+            "mtime_ns": 1789055562255506300,
+            "bytes": 402232
+          },
+          "current": {
+            "bytes": 402232,
+            "git_blob": "2c9e976b0fa69f153862b096b25dc3af79ba2b34",
+            "sha256": "54a4b5bb2a987027c9a1ad9ed210cc57b5e26c6ef837b5f7a7e35196f9fb8359"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Ezra-Neh.xml",
+          "before": {
+            "mtime_ns": 1789054266103027700,
+            "bytes": 220300
+          },
+          "after": {
+            "mtime_ns": 1789055562347187800,
+            "bytes": 220300
+          },
+          "current": {
+            "bytes": 220300,
+            "git_blob": "f2933a02584fe63fe2b748ff583cb21a1ee5c2a6",
+            "sha256": "10de70e1655e32078d6e8f3682a55d9d302e2f1591d9115270151db5a20504bc"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Gen.xml",
+          "before": {
+            "mtime_ns": 1789054265812922000,
+            "bytes": 422805
+          },
+          "after": {
+            "mtime_ns": 1789055562108771600,
+            "bytes": 422805
+          },
+          "current": {
+            "bytes": 422805,
+            "git_blob": "691bc88a481d563e16c9a3c65031c690ede5cb98",
+            "sha256": "f72e2c465686af4e82b4bd0d3b73901d53be32566316615fb7dc4aae2414ac16"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Hos-Mal.xml",
+          "before": {
+            "mtime_ns": 1789054265996080000,
+            "bytes": 308549
+          },
+          "after": {
+            "mtime_ns": 1789055562267525100,
+            "bytes": 308549
+          },
+          "current": {
+            "bytes": 308549,
+            "git_blob": "eab8dcfeea06ddb114f3b939489a704354e8fb70",
+            "sha256": "d0fd415b302aa0f5709f60f42195147a424fa9d502ff11ee9858a885ad4d113e"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Isa.xml",
+          "before": {
+            "mtime_ns": 1789054265945814200,
+            "bytes": 371849
+          },
+          "after": {
+            "mtime_ns": 1789055562224998500,
+            "bytes": 371849
+          },
+          "current": {
+            "bytes": 371849,
+            "git_blob": "66ca429fecfdc17c2a759f893fef0b5faf11aa09",
+            "sha256": "d873d9e8928dc012b14d288267a9774c2510d38928e70a914f8bc0eba07f2185"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Jer.xml",
+          "before": {
+            "mtime_ns": 1789054265965107800,
+            "bytes": 458857
+          },
+          "after": {
+            "mtime_ns": 1789055562241510700,
+            "bytes": 458857
+          },
+          "current": {
+            "bytes": 458857,
+            "git_blob": "77b91983947dfe907082ee3741541148b3ecb20f",
+            "sha256": "8d2a2c5a3ebc5aa8b90b40e12e2009dcbcea7c09aae6f31f30dcdb219a7aa8eb"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Job.xml",
+          "before": {
+            "mtime_ns": 1789054266048409000,
+            "bytes": 191852
+          },
+          "after": {
+            "mtime_ns": 1789055562313028700,
+            "bytes": 191852
+          },
+          "current": {
+            "bytes": 191852,
+            "git_blob": "817c024004739c1595387cf60e928d9bef90cd56",
+            "sha256": "f014a6711f252d9ba4dba86b9a893ed14ac4dce385e9fac8340260554e8a7450"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Josh.xml",
+          "before": {
+            "mtime_ns": 1789054265876022900,
+            "bytes": 214913
+          },
+          "after": {
+            "mtime_ns": 1789055562165011600,
+            "bytes": 214913
+          },
+          "current": {
+            "bytes": 214913,
+            "git_blob": "0c4d62f64d06664e4eac36bc9828ddbd5f07a512",
+            "sha256": "419f995c3aa0822817a9c225785e523dc823356633f2b962e366ef271a3faa92"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Judg.xml",
+          "before": {
+            "mtime_ns": 1789054265887021900,
+            "bytes": 211519
+          },
+          "after": {
+            "mtime_ns": 1789055562173275400,
+            "bytes": 211519
+          },
+          "current": {
+            "bytes": 211519,
+            "git_blob": "d68f9cabef5a1c430c7bd4bdddf0251bb792e9fa",
+            "sha256": "03167e2e4b5fc089bf3f8a679178a3bc6b40a0acc009827bcaf14fd669dfa9ee"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Lam.xml",
+          "before": {
+            "mtime_ns": 1789054266065201600,
+            "bytes": 45128
+          },
+          "after": {
+            "mtime_ns": 1789055562322095700,
+            "bytes": 45128
+          },
+          "current": {
+            "bytes": 45128,
+            "git_blob": "8332c4e7265fcdeecd1ec9c4d2e74bb17339d869",
+            "sha256": "80b0205da856a8d1f8d54218e25eca52b88662b231e563a5f7d3d701b72185ff"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Lev.xml",
+          "before": {
+            "mtime_ns": 1789054265839178500,
+            "bytes": 245410
+          },
+          "after": {
+            "mtime_ns": 1789055562131857200,
+            "bytes": 245410
+          },
+          "current": {
+            "bytes": 245410,
+            "git_blob": "e442358a3206caf807bdca7dc48b3a93959152eb",
+            "sha256": "f1f21a6afedd8bab0b2347ecdd2de1567685317febe1f63f1b91ec11a4844875"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Num.xml",
+          "before": {
+            "mtime_ns": 1789054265854445000,
+            "bytes": 351791
+          },
+          "after": {
+            "mtime_ns": 1789055562145996500,
+            "bytes": 351791
+          },
+          "current": {
+            "bytes": 351791,
+            "git_blob": "67a44970af5f2036382321dadf482205cb565c04",
+            "sha256": "766b8424588837ae42ea5a131f78db1588c78cad8b0c39c832563a461b61dc72"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Prov.xml",
+          "before": {
+            "mtime_ns": 1789054266037358400,
+            "bytes": 162221
+          },
+          "after": {
+            "mtime_ns": 1789055562302376900,
+            "bytes": 162221
+          },
+          "current": {
+            "bytes": 162221,
+            "git_blob": "ed2e636f4ce10da37bd5c72a72023077ab80e569",
+            "sha256": "8f033fea6c318fca5223470c25e8d6cfbb71822c48bf794887ba94aa68bafbac"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Ps.xml",
+          "before": {
+            "mtime_ns": 1789054266025365600,
+            "bytes": 475806
+          },
+          "after": {
+            "mtime_ns": 1789055562292377800,
+            "bytes": 475806
+          },
+          "current": {
+            "bytes": 475806,
+            "git_blob": "c2b9d7c3742ad2786fb0567e7c35da59b8272b19",
+            "sha256": "e44c5da262fcf598930d26a52132a22bc17c62f0133fbcd990563582285976b0"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Ruth.xml",
+          "before": {
+            "mtime_ns": 1789054266060418200,
+            "bytes": 26530
+          },
+          "after": {
+            "mtime_ns": 1789055562318024000,
+            "bytes": 26530
+          },
+          "current": {
+            "bytes": 26530,
+            "git_blob": "bf4ed09391d5748191a89edcebf328fd8f0782a9",
+            "sha256": "ff206fd465a1391456d4683015cbd73b024d27345cf284adf4b9ab7e4a7332b2"
+          }
+        },
+        {
+          "path": "MAM-simple/py-examples-out/osis/Song.xml",
+          "before": {
+            "mtime_ns": 1789054266056414600,
+            "bytes": 30369
+          },
+          "after": {
+            "mtime_ns": 1789055562315024100,
+            "bytes": 30369
+          },
+          "current": {
+            "bytes": 30369,
+            "git_blob": "79dceb9d30c49d568e72547bf69b13d26b2f6114",
+            "sha256": "f9a96520bdd1c7a27d7edb10a6edac9f2e06b6c5182887196bc0e935a98ed087"
+          }
+        }
+      ],
+      "every_output_matches_frozen_land_and_committed_target": true
+    }
+  },
+  "mtime_scope": "Before and after each real command, snapshot all tracked destination files and recursively enumerated working files. Exclude .git, .venv, .novc, __pycache__, .pytest_cache, .ruff_cache and symlink directories from traversal; tracked files in excluded directories remain included. Compare Windows st_mtime_ns and byte counts. Assert the exact actual sibling path is absent before and after each command. No hidden, renamed or replacement sibling was used.",
+  "checks": {
+    "canonical": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T15:54:29.176647+00:00",
+      "seconds": 99.13,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "f9efa137a0cd4ac3d54025407e7c9078180c64ca118cbd8b2ac190b0d09d12df",
+      "result_lines": [
+        "py\\tests\\test_ws_bot_kq_triv_add_type.py .......                         [ 96%]",
+        "py\\tests\\test_ws_bot_kq_triv_rename_extra_alef_sug.py ..                 [ 96%]",
+        "py\\tests\\test_ws_bot_kuk_special_callsite_migration.py .....             [ 97%]",
+        "py\\tests\\test_ws_bot_real_diff_links.py .........                        [ 98%]",
+        "py\\tests\\test_ws_bot_sigil_b2_to_t451.py .............                   [ 99%]",
+        "py\\tests\\test_ws_urls_encoding.py ...                                    [100%]",
+        "",
+        "================== 989 passed, 5 skipped in 98.10s (0:01:38) =================="
+      ]
+    },
+    "affected": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py",
+        "py/tests/test_repo_visibility_declared.py",
+        "py/tests/test_redirect_manifest.py",
+        "py/tests/test_site_index_links.py",
+        "py/tests/test_sibling_reach.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T15:55:26.792419+00:00",
+      "seconds": 17.35,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "73c09de82acdfc0b51692613dfe62d323a59604dc62a2cde1198bf4e233bdf9e",
+      "result_lines": [
+        ".................................                                        [100%]",
+        "33 passed in 16.93s"
+      ]
+    },
+    "redirect-build": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_redirect_stubs.py",
+        "build",
+        "--repo",
+        "MAM-OSIS",
+        "--out",
+        ".novc/phase5-mam-osis/phase5f-stubs"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T15:53:49.716470+00:00",
+      "seconds": 0.13,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "dd592b9febf5644892e44d8994689a0e29bc8528fc2ad26a537c7c0306ee8116",
+      "result_lines": [
+        "Wrote 2 files to .novc\\phase5-mam-osis\\phase5f-stubs",
+        "  1 page stubs and 404.html",
+        "Deleted nothing. Run `check` to find a stub whose page has since gone."
+      ]
+    },
+    "redirect-check": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_redirect_stubs.py",
+        "check",
+        "--repo",
+        "MAM-OSIS",
+        "--dir",
+        ".novc/phase5-mam-osis/phase5f-stubs"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T15:53:52.700375+00:00",
+      "seconds": 0.16,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "3a0b4c08380b1ee2b2201222ec2e49fba514ca43ae9ee145dd19c8bcea4c1d90",
+      "result_lines": [
+        ".novc\\phase5-mam-osis\\phase5f-stubs: 1 stubs and 404.html, all correct"
+      ]
+    },
+    "staged_hygiene": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T16:03:09.035463+00:00",
+      "seconds": 13.22,
+      "exit_code": 0,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "e321c638aa88fd50113fb09c106516c85c1d8e2c13f7c1b49e0a6b16b162f471",
+      "result_lines": [
+        ".......                                                                  [100%]",
+        "7 passed in 12.85s"
+      ]
+    }
+  },
+  "command_reproduction": {
+    "interpreter": "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+    "production": {
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "arguments": [
+        "py/main_mam_osis.py"
+      ]
+    },
+    "independent_example": {
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple",
+      "arguments": [
+        "py-examples/main_mam_osis_example.py"
+      ]
+    },
+    "canonical_suite": {
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "arguments": [
+        "py/main_test.py"
+      ]
+    },
+    "redirect_preview": "Build into an explicit scratch --out; check with explicit --dir. Neither command creates a sibling clone."
+  },
+  "target_http": {
+    "measured_at": "2026-09-10T15:50:46.277018+00:00",
+    "deployment": {
+      "conclusion": "success",
+      "databaseId": 34497273777,
+      "headSha": "a04a4cd9e3051b7152e50905be357627349e36d7",
+      "status": "completed",
+      "url": "https://github.com/bdenckla/MAM-basics/actions/runs/34497273777"
+    },
+    "checks": [
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 11592,
+        "git_blob": "843a5d82099e2c2fe6749fffd7771bf8f1421261",
+        "sha256": "3fb2191b56f8375861ce97a7a528d2c31bd42ebc1a1f5c2c23e542ce11cf48ca"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 14999,
+        "git_blob": "7e3f2c39ff2c22d9d69a909fc2e53e5700908adb",
+        "sha256": "5c704a3a3345b5a44359121596a77aae193208fd389d9cccf0edaed7871ddd6a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 31274,
+        "git_blob": "42c52cddc54ed6874eb594b0e55548893f130411",
+        "sha256": "c74d742e9bc45c983723556526510755df7160c68cff3a41cf67bd52f43c1ee8"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/good-ending.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/good-ending.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 64042,
+        "git_blob": "d830ae224d0957d35f26b8b80150df2eb4a56843",
+        "sha256": "1defa070024e8bab7cd5692310728fdfc01cbc4cf37660f593ce0f322b6b7a3f"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/hung.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/hung.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 41177,
+        "git_blob": "a1835c8e876dc05f65f3532a91ad9905630070e5",
+        "sha256": "a728265c20be3df56dbb2652899b6b8839561cb2fc004d22b0237e258f298c1f"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-absent.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-absent.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3383,
+        "git_blob": "656f105dfe7d143d99fa60e8cd55439a0bf34b30",
+        "sha256": "7ae3ed3f8cafc8bb8bfa623646efd3d2c8ce6e844b9b12e67a7af2ff2b117a6a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-present.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-present.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 6603,
+        "git_blob": "9e041d3dd9e755f65bff231d47420b3d6da3179a",
+        "sha256": "db3762284c27c82ce88ffe6363d7e9225876a57f0373bd28109884af228a31f3"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-numbers-10.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-numbers-10.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49338,
+        "git_blob": "bab0ee9f0773f24a9913d0ad4760df0810ec5207",
+        "sha256": "d1a5f34ec07bfcce84c85192309e0b8e168f299377f221ec0a06d84c19d99c69"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 59070,
+        "git_blob": "9966797524f244b1ecf8db4eaaf07ab322e4c1fd",
+        "sha256": "61f5319da84c0f3f21fe92f2e4b57e5372e5543ee108dae8fe2b204c1c0b62d4"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 19004,
+        "git_blob": "1fd85e746a445555b27ff4caa0538dc8809ad817",
+        "sha256": "28c3da388b8c5f0d88ecf67853262a11df5e42f2e1c76e64572a1c616a0b8ad2"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 2123,
+        "git_blob": "e4fe243a844f48cedef8a8db3de23fd14c62c563",
+        "sha256": "9d773eeb1f404f2c36715401330bae66aeaa7d612846d30d6cd9293fbdcafd43"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3469,
+        "git_blob": "0373ec49c4b4035655881f36a588841e19873d24",
+        "sha256": "2a7389f1a40d84a53a161a0d05637901ec4133954938b7acdca0cabcf823a7c1"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3595,
+        "git_blob": "b5ae8c110ee47ae51a391a8e5a0695f314664231",
+        "sha256": "3ad4e4fe2cd927c6db61394f45ad643bfc263963de65ca120c0cf2cbba3325d8"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 7042,
+        "git_blob": "d3db95e444059d3f6aa032be161dbd41b689fe22",
+        "sha256": "4677b5b23b8bcad6c77d196ed8035ea8bd9979bde44cde3ff3de5906eddccbaa"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 5412,
+        "git_blob": "eefe293583176717d2e7894bd15c2e7e697204af",
+        "sha256": "a60eaa58ff0b15d8c526a85baf4fd15a5ad0974040227d1f61fef06236739c19"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 4247,
+        "git_blob": "61aa362fc9c5966a756cad93f4f7e6a9b5359a94",
+        "sha256": "29e3e8c746c200504abeaea01658b12c0ee21d0046f357a375f857c9a35df97b"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 24880,
+        "git_blob": "71e2d2d0b63a87a9d80a47f5960b64dcf2c0955f",
+        "sha256": "9032a589472b26883160ba09acbd8dd0f1ea2aaf362b66b8da37fffb8a560805"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 76308,
+        "git_blob": "408a06ff7c0dfafbe51fc52f669ee97281dff5ee",
+        "sha256": "ffc385ebcff11c4896cec1b8e2d550e1316f742295026c0c8e2e62c538ed867b"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 10806,
+        "git_blob": "2d587f184bb121f1c3937223365f3d346f18a61c",
+        "sha256": "6b6694a46c20e7878ed4736a5ba77fcc08e44300e8c52504828549a1dcbaa11a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 9077,
+        "git_blob": "41131629cb4f2aefd2307890d329fcfd9c4a57ec",
+        "sha256": "72bc235fed9700c86f3997c93c4118e93d2907a112df6854d202b32a9b236f15"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 57986,
+        "git_blob": "b0c22ecf4d092392250af3184ca3ac13c045ee03",
+        "sha256": "958343ac31fbff8445854b445660f44e104ec89ded3d02dc4a8cda34059e62a9"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 55375,
+        "git_blob": "e9a554d663d968928751c31352aca2cd9a3c7324",
+        "sha256": "04f143436ac4fd9194b73512ab22ec1db12f35ec466570128b83ce79ce4fc215"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/paseq.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/paseq.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 31887,
+        "git_blob": "e0bb2a1560fe104318611010fbb617c78c1692d1",
+        "sha256": "5d40db8880c4f36601f003a72b4f1bcb11239b4c2549f63568c7dc93e5fe91a1"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/scrdff.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/scrdff.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 24709,
+        "git_blob": "b20d012ecae1479ebef7e6950fa0fbed242b07e1",
+        "sha256": "bc003c5cf79afb6bbaac407363d111765f049539a8db7098d9f05e27a791ec16"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/shirah-space.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/shirah-space.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 97724,
+        "git_blob": "eca78aa03ccce73cff15f57726b88e1b07e7157e",
+        "sha256": "4e8d65bd88aac476acd70547c92c36f6b803abf7c2c66d2d0fc2c8114669c757"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 21318,
+        "git_blob": "96d81f904567b75531e221deb27f5f27caaab0f4",
+        "sha256": "d5e3c1ea918e3322ae944607cbe76f1c5587ce0bd5f185138e7a42cf87e9b481"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 28961,
+        "git_blob": "fadfa25633c55e8969e886b0d98177ea16f52a47",
+        "sha256": "a0b3c9c2541b79d8fddb9b6bed559ac6ec3346801a057bc9a3ca796dc3270ff2"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 8469,
+        "git_blob": "08c6716d9e9d3a2d9eb2b586b6aee212640f808d",
+        "sha256": "6d31ac2fccd698c73560d6bff4a7f5fcc6e5a99b4cc0bf360334bc78d930fd7e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 6718,
+        "git_blob": "80083990080c63af556f37f3d82928b3efd1a0c5",
+        "sha256": "0853d3d3e63b80bf8dff937cd256d6b57229ac0e0e9a4b2030ac5e630a949280"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/two_col_style.css",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/two_col_style.css",
+        "status": 200,
+        "content_type": "text/css",
+        "bytes": 1601,
+        "git_blob": "1019edf532cdd118234264e38756ab2d7c4b5f5a",
+        "sha256": "b3ceb8dbbffb3910de986508d7acf36c63c2b0121bb9167af5846f91b4979a02"
+      }
+    ]
+  },
+  "source_http": {
+    "measured_at": "2026-09-10T15:50:49.127432+00:00",
+    "deployment": {
+      "conclusion": "success",
+      "databaseId": 34496487629,
+      "headSha": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+      "status": "completed",
+      "url": "https://github.com/bdenckla/MAM-OSIS/actions/runs/34496487629"
+    },
+    "checks": [
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 713,
+        "git_blob": "8f8a956ae1b5b223d372debea5fc84e29b206548",
+        "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/index.html?phase=5F&encoded=a%2Bb",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/index.html?phase=5F&encoded=a%2Bb",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 713,
+        "git_blob": "8f8a956ae1b5b223d372debea5fc84e29b206548",
+        "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/404.html",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/404.html",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/phase5f-missing/deep.html?phase=5F",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/phase5f-missing/deep.html?phase=5F",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/good-ending.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/good-ending.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/hung.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/hung.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-absent.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-absent.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-present.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-present.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-numbers-10.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-numbers-10.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/paseq.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/paseq.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/scrdff.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/scrdff.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/shirah-space.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/shirah-space.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/two_col_style.css",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/two_col_style.css",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "git_blob": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      }
+    ]
+  },
+  "browser_evidence": {
+    "source": "in/mam_osis_stubs_verification.json",
+    "checks_revalidated": 6,
+    "repeated_browser_navigation": false,
+    "unchanged_deployed_bytes": "Fresh 5F HTTP checks verified every source response against generated stubs and all 30 target files against the frozen source. The deployed scripts and assets retain the six successful 5D query/fragment/custom-404 browser cases, including all three percent-encoded PNG names.",
+    "limits": "The target has no authored anchors; fragment preservation is URL preservation. The optional 5D CSS browser-navigation timeout remains outside browser proof, while independent HTTP checks verify CSS responses and bytes."
+  },
+  "source_repository": {
+    "hasIssuesEnabled": true,
+    "isArchived": false,
+    "url": "https://github.com/bdenckla/MAM-OSIS"
+  },
+  "source_live_remote_main_at_report": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+  "roster_decision": "MAM-OSIS remains absent from both workspace rosters and repo_visibility, as decided in 5E commit 1510fc2d1fef6d2520c4a8b0a31a56618e8f5615. Counts remain five and one workspace folders and five repository entries (six map keys including the comment). No frozen_repos or repos_to_keep_absent entry was added. CLAUDE.md records the cross-machine rule and the explicit temporary-clone stub-publication procedure. The redirect-only sibling declaration remains unchanged.",
+  "readme_disposition": "The dated source README and complete landed product README were read side by side. The landed README retains the OSIS extract, SWORD/STEPBible/CrossWire purpose, and current documentation URL. The root README indexes the landed product. No README bytes changed in 5F.",
+  "completion": "All four oracle layers and the actual-absent-source canonical and affected checks passed. Phase 5 is complete. Phase 6 is not begun or authorized by the bounded 5A-5F chain; no successor was created.",
+  "scope": "Only CLAUDE.md, this Remove verification report, the dedicated plan and Programme Status are changed. Product bytes, historical notices and inherited whitespace, frozen evidence, source remote, and roster files remain unchanged. MAM-private was not modified and the full mega was not run. No tracked Python changed. Recycle Bin contents remain recoverable and continue to occupy disk space until emptied.",
+  "staged_report_hygiene_finding": {
+    "initial_check": {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+      "measured_at": "2026-09-10T16:01:04.773857+00:00",
+      "seconds": 14.66,
+      "exit_code": 1,
+      "source_absent_before": true,
+      "source_absent_after": true,
+      "log_sha256": "9248a1f0103a291c2c3fc6592d5514747e1e016f49e8c3ad5b9bbde8ba9a7bbc",
+      "result_lines": [
+        "E       - ['MAM-basics/in/mam_osis_remove_verification.json:115',",
+        "E       -  'MAM-basics/in/mam_osis_remove_verification.json:116'] : Found decomposed Latin base+diacritic clusters that have a precomposed NFC form; run the NFC-Latin migration: ['MAM-basics/in/mam_osis_remove_verification.json:115', 'MAM-basics/in/mam_osis_remove_verification.json:116']",
+        "",
+        "py\\tests\\test_h_dot_below_nfc.py:625: AssertionError",
+        "=========================== short test summary info ===========================",
+        "FAILED py/tests/test_h_dot_below_nfc.py::TestHDotBelowNfc::test_no_decomposed_h_dot_below_in_hand_authored_files",
+        "FAILED py/tests/test_h_dot_below_nfc.py::TestHDotBelowNfc::test_no_decomposed_latin_diacritic_cluster",
+        "2 failed, 5 passed in 14.26s"
+      ]
+    },
+    "cause": "The copied historical source reflog messages contain decomposed Latin diacritics. The staged hand-authored-file lint rejected their raw serialization in the new JSON report; this was a report-format finding, not a product or source-removal failure.",
+    "resolution": "Serialize non-ASCII characters using JSON Unicode escapes. Parsed JSON values, including historical reflog messages, are unchanged. No historical source text or frozen artifact was normalized."
+  }
+}

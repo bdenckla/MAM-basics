@@ -560,7 +560,7 @@ in item 4 omits `.gitattributes` and `.gitignore`. MAM-with-doc's historical tre
 Pages workflow, redirect stubs, and `404.html` already listed. This corrects the
 historical file inventory; the recorded retirement is unchanged.
 
-## Phase 5 — MAM-OSIS
+## Phase 5 — MAM-OSIS — DONE 2026-09-10
 
 The fifth product lane. Land the source tree under MAM-OSIS/ and its published tree under gh-pages/MAM-OSIS/. Repoint py/main_mam_osis.py, its MAM-simple XML input, output directory, header, combined OSIS file, index page, documentation, and pipeline-graph labels to the two landed product directories. Generate the 24 OSIS book files and compare the result to the MAM-simple example's 24 OSIS blobs.
 
@@ -598,7 +598,7 @@ complete Phase 5 end to end describes their combined result, not one task's scop
    Remove MAM-OSIS from both workspace files and `repo_visibility` together.
    Push and verify the source deployment and clean remote-aligned heads. Keep
    the local source clone until 5F. The next task is 5F.
-6. **5F — Remove and Phase 5 completion.** Re-measure source branches, tags,
+6. **5F — Remove and Phase 5 completion: DONE 2026-09-10.** Re-measure source branches, tags,
    objects, stashes, ignored/untracked files, and worktrees; recycle only the
    verified safe exact source clone. Run the product/example oracle, redirect
    checks, and canonical suite with the actual sibling absent. Record exact
@@ -1236,6 +1236,132 @@ bytes. Commit/push the write-back and verify the final states. The chain ends
 at 5F: do not begin or create Phase 6. MAM-private modification and the full mega
 remain outside scope.
 
+
+### Phase 5F Remove and Phase 5 completion record — 2026-09-10
+
+Task 5F used the primary checkouts directly from `C:/Users/BenDe/GitRepos`.
+Before editing or recycling, the exact roots, branch, HEAD, clean status,
+`origin/main`, and live remote `main` were independently verified:
+
+| Primary checkout | Verified starting commit, equal to tracking and live remote `main` |
+| --- | --- |
+| `C:/Users/BenDe/GitRepos/MAM-basics` | `a04a4cd9e3051b7152e50905be357627349e36d7` |
+| `C:/Users/BenDe/GitRepos/MAM-OSIS` | `8df241b3bb43e6f8ecf76ee35175380689fbcb68` |
+
+Both branches were `main`. No worktree was allocated. The target HEAD remained
+`a04a4cd9` through verification and the start of write-back. Permanent evidence is
+[`in/mam_osis_remove_verification.json`](../in/mam_osis_remove_verification.json).
+
+The source safety audit established:
+
+1. Local `main` and all five local tags match the live remote refs. Comparing
+   local branches against the live ref tips found no unpushed commits; the stash
+   list is empty. The audit used `git ls-remote origin`, not only tracking refs.
+2. `git cat-file --batch-all-objects --batch-check` enumerated **1,620 objects**.
+   `git rev-list --objects --no-object-names` over the live remote ref tips
+   enumerated exactly the same set. No local object lacks remote preservation.
+   `git fsck --full --unreachable --no-reflogs` exited zero with no output.
+   The full clone has no alternate object store. Object storage is 375 loose
+   objects and 1,245 packed objects, with no garbage.
+3. `git status --porcelain=v1 --ignored --untracked-files=all` is empty. A
+   recursive filesystem census found exactly the six tracked working files,
+   no ignored/untracked working files, and no reparse points. Including Git
+   metadata, the directory contains 414 files / 106,239,364 bytes.
+4. `git worktree list --porcelain` names only the exact primary source checkout.
+   No retained linked worktree needs its Git metadata. No branch, stash, history,
+   or object was removed or rewritten to make a safety check pass.
+
+The complete safety audit was refreshed immediately before recycling. At
+**2026-09-10 15:52:09 UTC**, only `C:/Users/BenDe/GitRepos/MAM-OSIS` was moved
+through `Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory` with
+`SendToRecycleBin`, from cwd `C:/Users/BenDe/GitRepos`. The resolved absolute
+target and parent were checked before the operation. The matching Recycle Bin
+directory, its original parent, and the absence of the actual sibling path were
+verified afterwards. `C:/Users/BenDe/GitRepos/MAM-basics/MAM-OSIS` remains present.
+No hidden, renamed, or replacement sibling was used. Recycling preserves recovery;
+the recycled directory continues to occupy disk space until the bin is emptied.
+
+All four oracle layers passed:
+
+1. Blob identity: the original source inventory, immutable Land commit, and
+   documented current file dispositions match their permanent manifests.
+2. Regeneration: production and independent example outputs remain byte-identical
+   to frozen Land and committed example blobs with the actual sibling absent.
+3. Write locations: mtime snapshots identify exactly the expected destination
+   writes, and the actual sibling remains absent before and after each command.
+4. Published URLs: fresh source and target HTTP checks match the deployed bytes
+   whose query/fragment and custom-404 browser behavior was proved in 5D.
+
+Before retirement, the original source
+still measured **92 blobs / 29,822,402 bytes**, and all manifest entries matched.
+Before and after retirement, target Git objects reverified all **90 selected
+Land blobs / 29,821,603 bytes**, all 24 committed independent examples, all 90
+current Repoint dispositions, and all 44 example support files. The five prior
+manifests/reports were preserved, never regenerated. All 172 protected destination
+paths remained unchanged, including historical files, published files, example
+sources and outputs, licences, roster declarations, and redirect registration.
+
+Fresh commands used `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`:
+
+| Command after the interpreter | Required cwd | Result with the actual source absent |
+| --- | --- | --- |
+| `py/main_mam_osis.py` | `C:/Users/BenDe/GitRepos/MAM-basics` | Exactly 27 destination writes; every output matches its frozen Land and committed target blob. |
+| `py-examples/main_mam_osis_example.py` | `C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple` | Exactly 24 destination writes; every output matches its frozen Land and committed example blob. |
+| `py/main_test.py` | `C:/Users/BenDe/GitRepos/MAM-basics` | **989 passed, 5 skipped in 98.10 seconds**; no subtest total printed. |
+
+Destination snapshots around each generator covered tracked files plus recursively
+enumerated non-cache working files; the permanent report records each changed
+path, before/after nanosecond mtime, size, Git blob and SHA-256. The exact sibling
+path was asserted absent before and after each command. No generator byte
+difference, unexpected write, manifest mismatch, or source-removal test failure occurred.
+
+Further checks from the MAM-basics root:
+
+1. `py/main_test.py py/tests/test_repo_visibility_declared.py
+   py/tests/test_redirect_manifest.py py/tests/test_site_index_links.py
+   py/tests/test_sibling_reach.py py/tests/test_h_dot_below_nfc.py
+   py/tests/test_prose_mark_order.py -q`: **33 passed in 16.93 seconds**, after
+   removal and the instruction update.
+2. `py/main_redirect_stubs.py build --repo MAM-OSIS --out
+   .novc/phase5-mam-osis/phase5f-stubs`, then `check --repo MAM-OSIS --dir
+   .novc/phase5-mam-osis/phase5f-stubs`: **one stub and `404.html`, all correct**,
+   with the actual source absent. No source clone was recreated.
+3. The ordinary whitespace check passed. No tracked Python changed, so no
+   tracked Python formatting was required.
+
+**Staged-report hygiene finding:** the new report initially serialized historical
+source reflog messages containing decomposed Latin diacritics as raw JSON text;
+the staged hygiene run reported **2 failed, 5 passed in 14.26 seconds**. The
+report now uses JSON Unicode escapes for non-ASCII characters. Parsed JSON values,
+including those historical messages, were proved unchanged; no source text or
+frozen artifact was normalized. The commit check prevented a commit of the failing
+report. The final staged rerun of `py/main_test.py
+py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py -q` passed:
+**7 passed in 12.85 seconds**. Both check records remain in the permanent report.
+
+The source remains unarchived at deployed host commit `8df241b3`; source Pages
+run [`34496487629`](https://github.com/bdenckla/MAM-OSIS/actions/runs/34496487629)
+is successful. Target run
+[`34497273777`](https://github.com/bdenckla/MAM-basics/actions/runs/34497273777)
+is successful at `a04a4cd9`. Fresh 5F HTTP checks verified all **33 source
+responses** against generated index/custom-404 bytes and all **30 target files /
+782,189 bytes** against frozen source SHA-256 values. No published file changed.
+The six successful 5D browser cases retain their scope: query/fragment and
+custom-404 forwarding, including the three percent-encoded PNG names. No browser
+navigation was repeated. The target still has no authored anchors, and the
+optional 5D CSS browser timeout remains separate from the successful CSS HTTP proof.
+
+The source and landed READMEs were read side by side; all substantive product
+paragraphs remain in `MAM-OSIS/README.md`, indexed by the root README. The new
+`CLAUDE.md` section states the roster decision across machines and explains the
+temporary shallow clone needed only for explicitly selected future stub publication.
+The MAM-OSIS redirect-only sibling declaration remains. Both workspaces and
+`repo_visibility` retain 5E's subtraction; no freeze or keep-absent entry was added.
+
+**Phase 5 is complete.** The only tracked changes in 5F are the instruction
+record, the permanent Remove report, this plan, and Programme Status. MAM-private
+was not modified, and the full mega was not run. The authorized 5A–5F task chain
+ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
