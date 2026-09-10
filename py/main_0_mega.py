@@ -284,6 +284,23 @@ def _run_accgram_generate_html():
     main_accgram.almost_main(["generate-html", "--trust-survey"])
 
 
+# The three runners below pass their programs' argument lists explicitly, as the
+# main_accgram.py runners above do.  Until 2026-09-10 (phase 5c of
+# doc/PLAN-mega-coverage.md) each of the three programs read sys.argv by hand, and the
+# mega got the mode it runs only because this module's main() blanks sys.argv while the
+# steps run.
+def _run_clc():
+    main_clc.almost_main(["all"])
+
+
+def _run_find_uxlc_accent_changes():
+    main_find_uxlc_accent_changes.almost_main([])
+
+
+def _run_ac_gen_index_flat_annotated():
+    main_ac_gen_index_flat_annotated.almost_main([])
+
+
 _STEPS = [
     StepRecord(
         "parse-go",
@@ -586,11 +603,10 @@ _STEPS = [
     # book-of-job-site, each for the reason its note gives.
     StepRecord(
         "clc",
-        main_clc.main,
-        "py/main_clc.py all, which is also its default with no argument: reads"
-        " in/UXLC-39 and the note pages and change logs under uxlc/in/; writes the"
-        " five pilot jobs' pages, notes JSON and long-notes pages under"
-        " gh-pages/uxlc/clc/",
+        _run_clc,
+        "py/main_clc.py all: reads in/UXLC-39 and the note pages and change logs"
+        " under uxlc/in/; writes the five pilot jobs' pages, notes JSON and"
+        " long-notes pages under gh-pages/uxlc/clc/",
     ),
     StepRecord(
         "estimate-uxlc-locations",
@@ -635,10 +651,10 @@ _STEPS = [
     ),
     StepRecord(
         "find-uxlc-accent-changes",
-        main_find_uxlc_accent_changes.main,
-        "must come after uxlc-check-changes, which rewrites the"
-        " in/UXLC-misc/all_changes.json this step filters; writes the tracked"
-        " in/accgram/uxlc_accent_changes.json",
+        _run_find_uxlc_accent_changes,
+        "py/main_find_uxlc_accent_changes.py without --audit; must come after"
+        " uxlc-check-changes, which rewrites the in/UXLC-misc/all_changes.json this"
+        " step filters; writes the tracked in/accgram/uxlc_accent_changes.json",
     ),
     StepRecord(
         "uxlc-grammar-test",
@@ -728,9 +744,9 @@ _STEPS = [
     ),
     StepRecord(
         "ac-gen-index-flat-annotated",
-        main_ac_gen_index_flat_annotated.main,
-        "py/main_ac_gen_index_flat_annotated.py with its default paths, which the"
-        " mega's blanked argv gives it: reads only the committed, hand-corrected"
+        _run_ac_gen_index_flat_annotated,
+        "py/main_ac_gen_index_flat_annotated.py with no arguments, so with its"
+        " default paths: reads only the committed, hand-corrected"
         " aleppo/aleppo-wiki/index-flat-corrected.json; writes"
         " aleppo/index-flat-annotated.json",
     ),
