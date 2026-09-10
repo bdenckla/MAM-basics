@@ -1365,8 +1365,9 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
-Tasks **6A–6C are complete, 2026-09-10**; 6D–6F remain. Ben requested a
-pause before creating 6D so he can choose its model. The finalized
+Tasks **6A–6D are complete, 2026-09-10**; 6E–6F remain. Ben selected
+`gpt-5.6-sol` with `xhigh` reasoning for 6D and every later implementation
+task in this chain. The finalized
 [command map](mam-products-phase6-command-map.md) and
 [Git-blob baseline](../in/mam_products_phase6_baseline.json) specify the commands,
 dependencies, exact path sets and comparison partners for the remaining tasks.
@@ -1790,3 +1791,92 @@ before creating **6D — Sefaria, OSIS and independent examples**, allowing Ben 
 choose the next task's model. The remaining bounded chain is still authorized.
 No 6D successor has been created; the model-choice pause supersedes automatic
 dispatch from 6C.
+
+### Phase 6D Sefaria, OSIS and independent-examples record — 2026-09-10
+
+Task `01a08c78-1b03-78e2-922a-9f3772e5801b`, created by task
+`01a08c58-22b9-7080-a555-c25e7f49b860` with model `gpt-5.6-sol` and
+`xhigh` reasoning, verified its actual cwd as `C:/Users/BenDe/GitRepos` and
+developed directly in `C:/Users/BenDe/GitRepos/MAM-basics`. Primary `main`,
+`origin/main` and live remote `main` all matched
+`d612f71c9794d8d480c7bbc3b18768d7d7003838` immediately before
+implementation; the full checkout and index were clean. No worktree was
+created or moved.
+
+The permanent evidence is `in/mam_products_phase6d_verification.json`. It
+records the eight complete command arrays, exact input/output memberships,
+before/after raw hashes and nanosecond mtimes, filtered Git identities,
+complete physical-root snapshot digests and command logs. The commands ran in
+the command-map order, from the root except for the two product-local cwds:
+
+| Arguments after the interpreter | Cwd | Expected paths | Paths with changed mtimes | Raw byte changes | Result |
+| --- | --- | ---: | ---: | ---: | --- |
+| `py/main_mam4sef.py --both-sef-and-ajf` | root | 160 | 160 | 0 | Passed; 156 data files and four provenance files |
+| `py/main_mam_osis.py` | root | 27 | 27 | 0 | Passed; 24 books, combined XML, index and CSS |
+| `py/main_tmpl_survey_toy.py` | root | 1 | 1 | 0 | Passed |
+| `py/main_letter_small_job.py` | root | 1 | 1 | 0 | Passed |
+| `py-examples/main_tmpl_survey_toy_example.py` | `MAM-parsed` | 1 | 1 | 0 | Passed |
+| `py-examples/main_letter_small_job_example.py` | `MAM-simple` | 1 | 1 | 0 | Passed |
+| `py-examples/main_mam4sef_example.py` | `MAM-simple` | 80 | 80 | 0 | Passed |
+| `py-examples/main_mam_osis_example.py` | `MAM-simple` | 24 | 24 | 0 | Passed |
+
+The commands cover **295 distinct outputs**: 69,525,330 raw working bytes and
+69,455,315 frozen Git bytes. Every command rewrote every declared output and
+reproduced the initial raw working bytes exactly; every path filters to its
+frozen Git blob. The 70,015-byte difference is entirely the existing checkout
+representation of **117 CSVs**: 78 production Sefaria/AJF CSVs and 39
+independent-example Sefaria CSVs use CRLF working bytes while the frozen Git
+blobs use LF. The other 178 outputs match the frozen raw bytes directly. No
+file was normalized after generation.
+
+All **106 canonical/independent comparison pairs** retain the frozen
+relationship: 104 are byte-identical. The two differences are
+`csv/_provenance.md` and `misc/unicode-names/_provenance.md`. In each pair,
+only line 5 differs: production correctly names
+`MAM-basics/py/mb_sefaria/mam4sef_or_ajf.py`, while the product-local example
+correctly names
+`MAM-simple/py-examples/mb_sefaria/mam4sef_or_ajf.py`. Each provenance file
+also matches its own frozen blob. All **45 support pairs** have identical
+filtered Git blobs; 20 pairs also have identical raw working bytes, and the
+remaining 25 retain the existing source-CRLF/copy-LF working-tree difference.
+
+The OSIS generator read all 24 `MAM-simple/xml-vtrad-bhs/` inputs,
+`MAM-OSIS/header.xml`, `in/osisCore.2.1.1-cw6.xsd` and `in/xml.xsd`. The
+combined `MAM-OSIS/mapm.osis.xml` also passed a separate validation against
+both local schemas with no network access. All **27 protected historical OSIS
+files / 15,546,207 raw bytes** remained unchanged: three under
+`MAM-OSIS/MAPM-orig/` and 24 under `MAM-OSIS/MAPM-orig-24/`. Their mtimes,
+raw bytes and frozen Git blobs all match the initial snapshot. The current
+product's CC-BY-SA 4.0 row and the historical snapshots' separate CC-BY-SA 3.0
+Unported row in `DATA-LICENSES.md` are unchanged.
+
+Original-source, Land and current Phase 6 identities remain separate. The
+record compares 167 current MAM-for-Sefaria paths with source `ce1e04c7` and
+Land `4195440e`; 45 retain the original and Land blob. It compares 89 current
+MAM-OSIS paths with source `697dc98a` and Land `1c817b53`; 86 retain the
+original and Land blob. Every compared path retains its declared Phase 6
+identity; no accepted adaptation was reversed or described as an original
+source blob.
+
+The initial physical-root snapshot included **22,339 files**, of which
+**5,647** were tracked by the primary checkout. The same three nested Claude
+worktrees recorded by 6C remained independently identified, and no nested
+mtime or raw-byte change was observed during any command. Every primary file
+outside each command's expected output set retained an identical before/after
+state. All five retired source sibling paths had `os.path.lexists == False`
+before and after every command.
+
+The affected command ran the MAM-simple non-corpus mark-order check, generated
+artifact machine-path check, sibling-reach check and prose-conventions check;
+it passed **9 tests in 28.76 seconds**. The staged Unicode/prose hygiene
+command, `py/main_test.py py/tests/test_h_dot_below_nfc.py
+py/tests/test_prose_mark_order.py -q`, passed **7 tests in 17.82 seconds**. `git diff --cached --check`
+passed. Tracked Python was unchanged, so Black was not required. Full mega,
+downloads, Phase 6E commands, source-clone
+recreation, directory recycling and MAM-private writes were not performed.
+
+After this record and both plans are committed, pushed and the complete
+primary status is clean, create only **6E — publication, vendoring and source
+references** in the saved GitRepos project, using Local mode, model
+`gpt-5.6-sol` and `xhigh` reasoning. Phase 6E must create only Phase 6F after
+its own clean pushed completion, with the same model and reasoning setting.
