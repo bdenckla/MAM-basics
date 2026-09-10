@@ -1,6 +1,6 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Waves 1A-1B and 1C1-1C3 complete; Wave 1D1 records the accepted corrections, with full Wave 1 reconciliation still pending in Wave 1D2.
+State: remediation in progress 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; Waves 2-4 technical work and all E items remain pending.
 
 Current status, recorded by Codex on 2026-09-10: the dated dispositions below describe
 completed work. Waves 2-4 technical work and all E items remain pending under the approved
@@ -854,6 +854,98 @@ owns original step 5's full reconciliation and remaining record-only disposition
 |---|---|---|
 | 2026-09-10 | D3 / accepted-corrections append | Recorded all corrections named in Wave 1 step 4, citing the accepting turns and preserving the earlier records. The eight withdrawn finding-16 items reproduce the rebuttal verbatim. The pinned `38a606e2` phi-5 HTML confirms three sentences and two tables. This completes the append, not the full disposition reconciliation. |
 | 2026-09-10 | Remaining Wave 1; Waves 2-4; all E items; P2 investigation | Wave 1D2 must reconcile the complete crosswalk before declaring Wave 1 complete. Waves 2-4 technical remedies and the separate editorial phase remain pending. P2's inventory is complete; photograph-source and rights-holder identification remains deferred. |
+
+Wave 1D2 reconciliation, 2026-09-10, recorded by Codex under Ben's Step-5 approval.
+The complete crosswalk below reconciles the Wave 1A/1B/1C1/1C2/1C3/1D1 records and
+the remaining settled decisions. Earlier dated rows retain their historical status;
+the rows below supersede their statements that Wave 1 remains incomplete. The accepted
+corrections in the following section are preserved verbatim.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-10 | 10 / C5; D1, D7, D9-D11 | Complete in Step 3, implementation `2cddb893` and record `83b470da`. The procedure records skill availability separately from automatic instruction loading, the review census and calibration, naming and State rules, the alternating review procedure, concrete editorial approval, and the shared-worktree/single-integration practice. The rebuttal's C5 acceptance and turn 5's accepted-corrections list establish the omitted premise; Wave 1D1 records it. No procedure redesign was repeated. D10's standards pointer is complete in Wave 1C3. |
+| 2026-09-10 | 11.5 / 17h | Record only. Claude reports that a commit-message file was added after `9e6e9e17`'s 415-file count, producing 416. Codex has not independently established that timing or count. Today's scratch contents cannot falsify the earlier measurement. No filesystem census or message amendment was performed. |
+| 2026-09-10 | 13.1 / P3 | Retained the overlap guard in `_fit_type`. Unsupported simultaneous fit classes remain a latent limit; the reviewed overlap did not establish an observed candidate or incorrect fit count. The reconciliation's qualified finding and approved P3 prescribe retention. No classifier or count changed. |
+| 2026-09-10 | 13.2 / D5 and P3 | Settled design note. The original finding already said that multiplicity aborts the run; the rebuttal, counter-rebuttal and turn 5 agree on that mechanism. Ben's D5 keeps both multiplicity guards, the Methods sentence, the JSON schema and all counts. No MAS-multiplicity field or replacement page derivation was added. Wave 1D1's accepted-corrections row supplies the accepting-turn citations. |
+| 2026-09-10 | 13.4 / P3 | Retained the fusion invariant. The token count follows from the present loop; it is not independent evidence that the fusion's linguistic analysis is correct. The zero post-silluq result uses the research's chosen interpretation, settled by Ben for finding 1, rather than independently proving that interpretation. No assertion was removed and no behavioral test added. |
+| 2026-09-10 | 13.6 / P3 | Retained valid empty outputs. Bounded inspection at `f60aa426` confirms that the reader and all 24 files in `MAM-simple/xml-vtrad-mam/` are byte-identical to `38a606e2`. Parsing the complete set of 32 targets and applying the current reader reproduces three empty results for lone `spi-pe2` children and two for empty targets. The review's 3+2 observation is confirmed for that named input set; no new error condition or broader page-range claim is introduced. |
+| 2026-09-10 | 13.7 / P3 | The conjunctive-stress check is settled and retained: `stress_accent_classification` raises for an unsupported stress-letter accent before returning its counts. The accepted correction and its sources remain in Wave 1D1's append. The Aramaic assertion and 2 Chronicles 8:11 language/edition evidence remain outside independent verification by Codex in this remediation; those claims are retained without a new oracle, transcription, or scholarly investigation. |
+| 2026-09-10 | 15.3; retained part of 15.4 | Retained Ben's mixed voice and unexpanded cant-alef/cant-bet wording restored by `a9edd4f9`. Retained the meaningful survey-versus-pages contrast in `survey's own vocabulary`. N7's separate heading correction is complete in Wave 1B; E5's named survey wording remains pending in the separate editorial phase. |
+| 2026-09-10 | 15.6 | Retained the source phenomenon name `gaʿya-before-paseq` under the source-name exception. No meteg terminology sweep is prescribed. |
+| 2026-09-10 | 17b-17e; completion qualifications in 17f-17g | The original messages accurately described their commits, and the individual review items described subsequent changes. The heading's error classification is rejected, as the accepting turns agree; Wave 1D1 preserves the detailed chronology and D3's three-sentence/two-table correction. Wave 1C2's completion qualifications and Wave 1C1/1C3's related records complete the remaining historical qualifications: actual omissions and defects required correction, while Ben's deliberate reversals remain decisions. No message rewrite or reinstatement follows. |
+| 2026-09-10 | 18.1-18.3 | Record only. The bounded trailer and merge-topology census was confirmed in the review reconciliation; physical housekeeping, historical remote-branch distance and reasons for integration timing were not independently audited. Housekeeping remains Ben's separate track. No trailer rewrite, branch/worktree/folder/cache retirement, or new filesystem census occurred. Retirement of this review worktree belongs only to close-out Step 7, after the single final integration. |
+
+The complete finding crosswalk uses the remediation plan's row labels. A completed
+checkpoint means its dated disposition and implementation record above; a pending entry
+means execution is still required under the approved later phase. No completed record
+correction makes its separate technical or editorial remedy complete.
+
+| Crosswalk row | Wave 1 outcome or later execution boundary |
+|---|---|
+| 1 | Settled interpretation retained; older-plan correction complete in 1C3. |
+| 2 | Historical fixed-claim correction complete in 1C2; all whitespace repairs pending in Wave 2. |
+| 3 | BHS/edition decisions retained; historical qualifications complete in 1C2. |
+| 4 | Maintenance-scope correction complete in 1B. |
+| 5.1a | Historical evacuation and September 4 corrections complete in 1C1. |
+| 5.1b | Holman RTL repair pending in Wave 2. |
+| 5.2 | Sparse instructions, attribution and host-list corrections complete in 1C1. |
+| 5.3 | N1 complete in 1B. |
+| 5.4a | N2 complete in 1B. |
+| 5.4b | N3 and inventory regeneration pending in Wave 4. |
+| 5.5 | N4-N6 complete in 1B; dated programme wording retained; branch enumeration complete in 1C1. |
+| 5.6 | Resolved before remediation; fresh D2 deployment comparisons complete in 1A and repeated at checkpoints. |
+| 6.1-6.5 | Current eleven/nine descriptions complete in 1B. |
+| 6.6-6.7 | Historical page-count notes complete in 1C3. |
+| 6.8 | D8/N9 complete in 1B; historical qualification complete in 1D1. |
+| 7.1 | Executed State and occurrence-count note complete in 1C3; prior census correction retained. |
+| 7.2 | Already-landed State/decisions retained; baseline and original-proposal notes complete in 1C3; product plan not executed. |
+| 7 standard | Historical census correction and D10 pointer complete in 1C3; standards behavior retained. |
+| 8.1 | Ordinary/dual scope correction complete in 1C2. |
+| 8.2 | E1 pending in the separate editorial phase. |
+| 9.1 | Retained-file inventory correction complete in 1B. |
+| 9.2 | P2 inventory complete in 1B; photograph-source and rights-holder identification deferred. |
+| 9.3 | E8 pending in the separate editorial phase. |
+| 10 / C5 | Step 3 complete; omission correction complete in 1D1; disposition recorded in 1D2. |
+| 11.1 | D4 notes complete in 1C1/1C2; cause remains unknown; acceptance recorded in 1D1. |
+| 11.2 | Dated checklist-status notes complete in 1C2; original checkboxes retained. |
+| 11.3 | Python-path and spell-check-output qualifications complete in 1C2. |
+| 11.4 | Finding-versus-file corrections complete in 1C2. |
+| 11.5 / 17h | Record-only limit complete in 1D2; 415/416 remains unverified by Codex. |
+| 12 | P1 vendoring report regeneration and committed-copy dates pending in Wave 4. |
+| 13.1 | Overlap guard retained; latent limit recorded in 1D2. |
+| 13.2 | D5 design-note disposition complete in 1D2; guards, sentence, schema and counts retained. |
+| 13.3 | Display/source selection and annotation-validation work pending in Wave 3 technical phase under V6. |
+| 13.4 | Fusion invariant and chosen interpretation retained; validation limits recorded in 1D2. |
+| 13.5 | Function-attribution correction complete in 1D1; E4 pending in the separate editorial phase. |
+| 13.6 | Complete named XML target check and valid-empty-output disposition complete in 1D2. |
+| 13.7 | Conjunctive-stress correction complete in 1D1; independent language/edition limits recorded in 1D2. |
+| 14.1 | Paragraph qualification complete in 1D1; E6 pending in the separate editorial phase. |
+| 14.2 | MAS lint membership coverage pending in Wave 2. |
+| 14.3 | Historical merge-hunk disposition complete in 1C3. |
+| 14.4 | D2 complete in 1A; actual permission location corrected in 1D1; reading time remains unknown. |
+| 15.1 | E2, including the italic slash, pending in the separate editorial phase. |
+| 15.2 | E3 pending in the separate editorial phase. |
+| 15.3 | Ben's restored wording retained; disposition complete in 1D2. |
+| 15.4 | N7 complete in 1B; survey-versus-pages contrast retained in 1D2; E5 pending in the separate editorial phase. |
+| 15.5 | E1/E7 pending in the separate editorial phase; JSON category retained. |
+| 15.6 | Source phenomenon name retained; disposition complete in 1D2. |
+| 16 | Blanket cleanup rejected and exact withdrawals recorded in 1D1; D6 complete in 1B and N8 complete in 1C3; hand-authored-whitespace wording retained. |
+| 17a | Historical error recorded in 1C3; immutable message retained. |
+| 17b-17e | Accurate-message distinction and D3 correction complete in 1D1; disposition complete in 1D2. |
+| 17f-17g | Completion qualifications complete in 1C2 with related 1C1/1C3 records; final reconciliation complete in 1D2. |
+| 18.1-18.3 | Census and verification limits recorded in 1D2; housekeeping remains separate. |
+
+Wave 1 is complete. D1-D11 have their approved outcomes: D1/D7/D9-D11 in Step 3,
+D2 in 1A, D3 in 1D1, D4 in 1C1/1C2, D5 in 1D2, and D6/D8 in 1B. P3's
+record-only dispositions are complete. N1/N2/N4-N9 are complete; N3 remains for Wave 4.
+P1 remains for Wave 4, and P2's source/rights-holder investigation remains deferred.
+Every E item, E1-E8, is approved but pending in the separate editorial phase after
+Wave 3 technical verification. Wave 2 has not started. The unchanged-HTML V6 condition
+and one integration after final Wave 4 remain in force, including across intermediate archival.
+
+The previous current State at `f60aa426` is preserved here:
+
+> State: remediation in progress 2026-09-10; Waves 1A-1B and 1C1-1C3 complete; Wave 1D1 records the accepted corrections, with full Wave 1 reconciliation still pending in Wave 1D2.
 
 ## Corrections accepted in the review exchange
 

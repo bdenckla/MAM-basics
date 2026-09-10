@@ -33,6 +33,12 @@ Status updated 2026-09-09 after Wave 1C2: findings 2, 3, 8.1 and 11.1–11.4 now
 dated September 7 record corrections, with their assigned 17f–17g completion qualifications.
 Wave 1C3 handles the remaining MAS-plan and standards notes. Wave 1 remains incomplete.
 
+Status updated 2026-09-10 after Wave 1D2: Step 6 remains active; Wave 1 is complete.
+The September 8 review now reconciles every Wave 1 crosswalk row and settled decision.
+Wave 2 is next and has not started. Waves 2-4 technical work and all E items remain
+pending; P2 source/rights-holder identification remains deferred. This update supersedes
+the earlier incomplete-Wave-1 status entries, which remain historical records.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -862,6 +868,43 @@ No integration, push, or automatic archival occurred.
 V6 passed again at `b829a6aa` before the record commit; the remediation plan records
 the exact evidence path. Every actual Wave 1D1 V6 run passed with zero changed locations
 and unchanged survey JSON. No real stop occurred.
+
+Wave 1D2 reconciliation completed 2026-09-10 by Codex task
+`01a08987-8ee2-7372-9104-7cfb7f224d5a`, directly in
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on
+`codex-review-2026-09-08`, clean at required source
+`f60aa4260c24cfff726c590613abd72b88fdfd4d`, containing `b829a6aa`.
+The required back-merge was already up to date. V6 passed before and immediately after
+the merge against fixed baseline `c2f238f2`, with zero changed locations and unchanged
+survey JSON. The original gate hash and failure-propagation proof remain valid.
+
+The remaining record-only dispositions and complete crosswalk reconciliation are in
+`doc/review-findings-2026-09-08.md`. Wave 1D1's complete accepted-corrections section and
+all earlier disposition rows remain unchanged. The complete named XML target check
+reproduces valid empty outputs and confirms unchanged inputs; it does not establish
+independent language/edition claims or the reviewer's 415/416 scratch count. The
+remediation plan names the bounded evidence and every completed/remaining boundary.
+Only the September 8 review and these two plans change; no tracked Python or generated
+artifact changes. No new test is added.
+
+Wave 1 is complete. The next authorized fresh task is Wave 2 for whitespace outputs,
+Holman RTL and existing MAS lint membership coverage, under its V2/V3/V6 output
+contract. Wave 2 has not started. Its source is the verified clean local checkpoint
+reported at handoff, using saved project `51e16ebd-373a-41f7-833e-9def3ef72b81` with
+`environment.type = local`. Verify the actual successor ID and exact checkout; stop
+editing when writing responsibility transfers. All E items remain for the separate
+editorial phase after Wave 3 technical verification. P2 source/rights-holder
+identification stays deferred. No integration, push or automatic archival occurs here;
+the single integration remains scheduled after final Wave 4.
+
+Wave 1D2 verification completed 2026-09-10: the canonical suite with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos` passed **987 tests, 5 skips, and 65 subtests in
+102.78 seconds**. V6 passed immediately afterward with zero changed locations and
+unchanged survey JSON. The independent Wave 1D2 scope check matches all 52 crosswalk
+rows, preserves the historical records and entire accepted-corrections section, and
+passes Hebrew mark order, diff whitespace and both whole-skill comparisons. Only the
+three authorized Markdown files changed. The remediation plan records the exact
+commands and evidence paths; local commit evidence follows after creation.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

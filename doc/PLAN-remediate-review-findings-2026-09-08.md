@@ -1,6 +1,11 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Waves 1A-1B, 1C1-1C3 and 1D1 complete; Wave 1D2 owns the remaining reconciliation; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 after Wave 1D2: all Wave 1 crosswalk rows and settled
+decisions have explicit dispositions. Wave 2's whitespace, Holman RTL and page-lint
+work is next. Waves 2-4 technical work and all E items remain pending; P2 source and
+rights-holder identification remains deferred. The dated records below are preserved.
 
 Status updated 2026-09-10 after Wave 1D1: the accepted-corrections append is complete;
 verification and the local checkpoint are recorded below. Wave 1D2 owns the remaining
@@ -1224,6 +1229,119 @@ At `b829a6aa`, final record scope passed in
 `v6-runs/20260910T041327Z-wave1d1-before-record-commit-01692ee6/`.
 Every actual Wave 1D1 gate run passed with zero changed locations and unchanged survey
 JSON. No real stop occurred.
+
+### Wave 1D2 execution record, 2026-09-10
+
+Codex task `01a08987-8ee2-7372-9104-7cfb7f224d5a` verified the exact development
+checkout `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`f60aa4260c24cfff726c590613abd72b88fdfd4d`, containing Wave 1D1 implementation
+`b829a6aaf45d3b92e594da462f0012241c5aece6`. Command-local `safe.directory` and
+authorized escalation resolved sandbox access restrictions. The required back-merge
+reported `Already up to date.`; HEAD stayed at `f60aa426`. Every edit and verification
+uses that worktree; the primary clone supplies only its absolute venv interpreter.
+
+The inspected gate `v6_gate_wave1_01a0891a.py` retains SHA-256
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c` and the immutable
+nine-page/survey baseline at `c2f238f2c253d7b00b2d22dc262fe95c81a82401`.
+Evidence paths below are relative to the worktree's `.novc/review-remediation-2026-09-08/`.
+Run the primary interpreter with `-B`, that gate path, `check`, and the named `--label`:
+
+1. `wave1d2-before-merge`: `v6-runs/20260910T041706Z-wave1d2-before-merge-8f92da85/`.
+2. `wave1d2-after-merge`: `v6-runs/20260910T041749Z-wave1d2-after-merge-9e7f3b74/`.
+
+Both passed with zero changed locations, exact checkout and fresh-render membership,
+and unchanged survey JSON. Wave 1A's labelled deliberate probes remain the successful
+failure-propagation proof. No real stop occurred.
+
+`wave1d2_01a08987_evidence.py`, run with the primary interpreter and `-B`, wrote
+`wave1d2-01a08987-20260910T042203Z-evidence.json`. The report preserves bounded pinned
+original/accepting excerpts, verifies completed implementation ancestry, and records
+every file hash and target in the named XML input set. The reader and all 24
+`MAM-simple/xml-vtrad-mam/` files are unchanged from `38a606e2`. Parsing all 32 targets
+and applying the real reader reproduces valid empty outputs at these locations:
+
+1. Empty target: `Deut.xml`, `Deut.27.19`.
+2. Empty target: `Exod.xml`, `Exod.26.6`.
+3. Lone `spi-pe2`: `Exod.xml`, `Exod.33.23`.
+4. Lone `spi-pe2`: `Lev.xml`, `Lev.7.21`.
+5. Lone `spi-pe2`: `Lev.xml`, `Lev.7.27`.
+
+The report checks the complete named set, without a new page-range assertion or any
+unrelated filesystem census. The reviewer's 415/416 scratch-folder account remains
+unverified by Codex. Independent language/edition claims remain outside the remediation's
+verification; no new oracle or scholarly investigation is implied.
+
+The review's Wave 1D2 rows record only the remaining settled dispositions and limits:
+10/C5, 11.5/17h, 13.1/13.2/13.4/13.6/13.7, 15.3, the retained part of 15.4, 15.6,
+17b-17g, and 18.1-18.3. Its full crosswalk table assigns every original row to a completed
+Wave 1 checkpoint or an explicit later-phase boundary. D1-D11 and P/N outcomes are also
+reconciled. Completed repairs and the entire Wave 1D1 accepted-corrections section are
+preserved. Wave 1 is complete; no Wave 2 work has started.
+
+Only `doc/review-findings-2026-09-08.md`, this plan, and
+`doc/PLAN-close-out-review-2026-09-08.md` change. Their earlier records remain intact;
+the review and remediation plan have updated current States with their prior States
+quoted in the dated records. The previous remediation State at `f60aa426` was:
+
+> State: live 2026-09-10; Waves 1A-1B, 1C1-1C3 and 1D1 complete; Wave 1D2 owns the remaining reconciliation; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+
+**Next execution boundary: Wave 2.** A fresh task uses saved project
+`51e16ebd-373a-41f7-833e-9def3ef72b81` directly with `environment.type = local`, at the
+exact worktree above and the verified clean source commit reported at handoff. Verify
+the actual task ID, checkout, branch, HEAD, status and required ancestry before reading.
+Inspect the unchanged gate and immutable baseline; run V6 before the required back-merge
+and immediately afterward. No additional approval is needed under Ben's Step-5 decision.
+
+Wave 2 covers finding 2's complete whitespace set, 5.1b's Holman RTL declarations and
+14.2's existing MAS lint membership coverage. Read its full section below and V2/V3/V6,
+the governing approval/checkout/handoff rules, and only the assigned original/accepting
+paragraphs. Save before-edit baselines and run the real product/Holman commands before
+source edits. Trace the Unicode-name separators, AJF CSV boundaries, both Holman pages
+and declared/rendered MAS filename sets. The MAM-for-Sefaria index and
+`gh-pages/MAM-for-Sefaria/style-color-scheme-light.css` are static direct-edit targets.
+Re-measure the complete offending set; Wave 1C2 preserved the original 210 findings in
+193 files. Do not infer repair from a clean-tree diff check.
+
+Wave 2's output contract allows only the measured final-line/trailing-space removals,
+Holman direction attributes, source/support-copy repairs and the existing membership
+lint, plus records. Preserve corpus text, internal spacing, parsed CSV fields apart from
+the specifically intended trailing-space removal, Holman cell text/order and issue
+metadata. No MAS HTML, survey JSON, XML, parsed corpus, downloaded input or sibling output
+change is authorized. Compare all outputs and reproduce the repaired output with the
+required second generation. Format touched Python, verify support copies, run the canonical
+suite and V6 immediately afterward, write both plans' records and commit locally. Split
+at a precise clean boundary if necessary to avoid compaction; do not declare Wave 2
+complete with outstanding items.
+
+Waves 3-4 and every E item remain pending. All E items execute in the separate editorial
+phase after Wave 3 technical verification, under its explicit output contract. P2's
+source/rights-holder identification stays deferred. A real changed byte/membership
+difference or failed/incomplete V6 stops the entire remediation for Ben's renewed decision.
+No cleanup, source refresh, survey regeneration, mega, issue communication, integration,
+push or automatic archival belongs to Wave 2. There is one integration and push after
+final Wave 4, including across intermediate archival. Transfer writing responsibility
+only after the committed clean checkpoint; stop editing at dispatch.
+
+Verification completed 2026-09-10 at `f60aa426` plus the Wave 1D2 record edits.
+The canonical suite reported **987 passed, 5 skipped, and 65 subtests passed in
+102.78 seconds**, using
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider`
+from the exact review worktree with `REPOS_ROOT=C:/Users/BenDe/GitRepos`.
+`wave1d2_01a08987_verify.py suite` saves full output in
+`wave1d2-01a08987-20260910T042803Z-suite.txt` and invocation metadata in the matching
+`-suite.json`, then invokes V6 immediately. The passing post-suite evidence is
+`v6-runs/20260910T042947Z-wave1d2-after-suite-28e2f03f/`.
+
+The new scratch verifier's default mode uses Wave 1D2's source and exact three-file
+scope. It checks every historical line except the replaced-and-quoted current States,
+the byte-for-byte preservation of Wave 1D1's accepted-corrections section, exact matching
+of all 52 original crosswalk row labels, Hebrew mark order, changed-line whitespace and
+both whole-skill comparisons. All checks passed in
+`wave1d2-01a08987-20260910T042756Z-scope.json`; final scope and pre-commit V6 evidence
+follow below. The actual review/plan diff was read. No tracked Python changed, so black
+was not required; no new tests or generated-artifact changes occurred. No real V6 stop
+occurred. Implementation and final record commits are recorded after their hashes exist.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
