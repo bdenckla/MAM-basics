@@ -43,9 +43,9 @@ Subcommands:
                 before, in, or after the chanted word's primary stress, with
                 Phonetic MAM as the stress oracle, and write
                 out/accgram/post-stress-meteg.json.  Needs the MAM-private
-                clone; py/author_site/post_stress_meteg.py renders the page
-                from the JSON this writes, which is how main_0_mega.py stays
-                clear of that clone.
+                clone.  main_0_mega.py runs it as a step, except in a cloud
+                session, and py/author_site/post_stress_meteg.py renders the
+                page from the JSON it writes.
     survey-breuer-zaqef-units
                 Measure how well Breuer's long/short/tiny (CoS Instructions for the
                 Reader) predicts whether a two-chanted-word zaqef realm is divided by

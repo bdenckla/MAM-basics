@@ -142,10 +142,14 @@ SIBLINGS_REACHED: dict[str, str] = {
         "publishing the source repository's frozen redirect stubs."
     ),
     "MAM-private": (
-        "paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's Phonetic MAM"
-        " as the oracle for accgram.final_stress, and main_0_mega runs the"
-        " near-aleppo census there.  Its vendoring audit was given up on"
-        " 2026-09-04 (abb03ec4), which removed a third route but not these two."
+        "Two routes.  paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's"
+        " Phonetic MAM, the oracle of main_accgram.py's two surveys --"
+        " survey-post-stress-meteg, which main_0_mega runs as its"
+        " accgram-survey-post-stress-meteg step except in a cloud session, and"
+        " survey-breuer-zaqef-units -- and of the test of accgram.final_stress."
+        "  And main_0_mega runs the near-aleppo census in MAM-private.  Its"
+        " vendoring audit was given up on 2026-09-04 (abb03ec4), which removed a"
+        " third route but not these two."
     ),
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."

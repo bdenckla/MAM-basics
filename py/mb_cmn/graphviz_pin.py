@@ -51,12 +51,14 @@ gates the choice: in a container the render is skipped, recorded by
 ``note_cloud_skip`` and reported once at the end of the mega run; anywhere else
 it raises, exactly as before.
 
-A skipped run is CLOUD-COMPLETE, which means every step ran and none failed while
-some SVGs went unrendered. It is deliberately not called incomplete -- Ben's
-wording, the same day. The one hazard it leaves is that the ``.dot`` beside a
-skipped ``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's
-end-of-run banner says so, and says not to commit a changed ``.dot`` without its
-``.svg``.
+A skipped run is CLOUD-COMPLETE, which means no step failed and every step either
+ran or was skipped for the cloud, while some SVGs went unrendered. It is
+deliberately not called incomplete -- Ben's wording, 2026-09-09. Since 2026-09-10
+the mega also skips a whole step in a cloud session, its post-stress-meteg
+survey, and ``py/main_0_mega.py``'s ``_report_cloud_skips`` reports both kinds
+of skip. The one hazard an SVG skip leaves is that the ``.dot`` beside a skipped
+``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's end-of-run
+banner says so, and says not to commit a changed ``.dot`` without its ``.svg``.
 
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better

@@ -10,7 +10,7 @@ hebrew_points.py                           MAM-basics                 MAM-simple
 hebrew_punctuation.py                      MAM-basics                 MAM-simple/py-examples/mb_cmn/hebrew_punctuation.py     identical      2026-09-06   generated
 my_utils.py                                MAM-basics                 MAM-simple/py-examples/mb_cmn/my_utils.py               identical      2026-09-06   generated
 paths.py                                   MAM-basics                 MAM-simple/py-examples/mb_cmn/paths.py                  identical      2026-09-10   generated
-provenance.py                              MAM-basics                 MAM-simple/py-examples/mb_cmn/provenance.py             identical      2026-09-07   generated
+provenance.py                              MAM-basics                 MAM-simple/py-examples/mb_cmn/provenance.py             identical      2026-09-10   generated
 shrink.py                                  MAM-basics                 MAM-simple/py-examples/mb_cmn/shrink.py                 identical      2026-09-06   generated
 str_defs.py                                MAM-basics                 MAM-simple/py-examples/mb_cmn/str_defs.py               identical      2026-09-06   generated
 template_names.py                          MAM-basics                 MAM-simple/py-examples/mb_cmn/template_names.py         identical      2026-09-07   generated

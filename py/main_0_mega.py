@@ -3,9 +3,12 @@
 The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
 five MAM product generators write into this repository after the fourth-stage
-Repoint steps completed on 2026-09-10. The near-Aleppo census still runs in the
-MAM-private sibling through ``mb_cmn.paths.repos_root()``, which in a worktree looks
-beside the worktree's home clone, so a worktree run needs no ``REPOS_ROOT``.
+Repoint steps completed on 2026-09-10. Two steps use the MAM-private sibling:
+the near-Aleppo census still runs there, and the post-stress-meteg survey reads
+its Phonetic MAM, except in a cloud session, where that step is skipped (Ben's
+decision, 2026-09-10). Both find the sibling through
+``mb_cmn.paths.repos_root()``, which in a worktree looks beside the worktree's
+home clone, so a worktree run needs no ``REPOS_ROOT``.
 """
 
 import argparse
@@ -143,11 +146,37 @@ def _run_accgram_survey_chanted_word_accents():
     main_accgram.almost_main(["survey-chanted-word-accents"])
 
 
+# Every step this run skipped because it is running in a cloud session, in order, each with
+# the reason it was skipped.  Read by _report_cloud_skips, which reports them once at the
+# end of the run, beside graphviz_pin's list of unrendered SVGs.
+_CLOUD_SKIPPED_STEPS: list[tuple[str, str]] = []
+
+
+def _run_accgram_survey_post_stress_meteg():
+    # Skipped altogether in a cloud session, whether or not MAM-private is attached there:
+    # Ben's decision, 2026-09-10, on the precedent of the SVG renders graphviz_pin skips in a
+    # cloud container.  gen-site then renders from the tracked JSON unchanged.
+    if graphviz_pin.in_cloud_session():
+        step_id = "accgram-survey-post-stress-meteg"
+        reason = (
+            "it reads MAM-private's Phonetic MAM; gen-site renders the nine"
+            " post-stress-meteg pages from the tracked out/accgram/post-stress-meteg.json,"
+            " unchanged"
+        )
+        _CLOUD_SKIPPED_STEPS.append((step_id, reason))
+        print(
+            f"STEP SKIPPED in this cloud session: {step_id}: {reason}", file=sys.stderr
+        )
+        return
+    main_accgram.almost_main(["survey-post-stress-meteg"])
+
+
 def _run_gen_site():
-    # --trust-surveys because gh-pages/post-stress-meteg.html is rendered from the tracked
-    # out/accgram/post-stress-meteg.json rather than from the Phonetic MAM standard set that
-    # survey reads.  That set lives in MAM-private, and the mega must not come to require a
-    # private clone; the survey is run by hand, from main_accgram.py, when the corpus moves.
+    # --trust-surveys because accgram-survey-post-stress-meteg ran directly above and wrote
+    # out/accgram/post-stress-meteg.json, so recomputing the survey here would walk the corpus
+    # a second time -- the reason accgram-generate-html is passed --trust-survey.  In a cloud
+    # session that step is skipped, and the flag is what keeps gen-site from rebuilding the
+    # survey there itself: the nine pages render from the tracked JSON unchanged.
     main_authored.gen_site(trust_surveys=True)
 
 
@@ -391,18 +420,32 @@ _STEPS = [
         _run_near_aleppo_census,
         "regenerates near-aleppo/census/expected/ in MAM-private; needs that private sibling",
     ),
-    # ORDER-INDEPENDENT since 2026-08-31, and left here anyway.  It sat after the wlc steps
-    # because the landing page ended in a manifest section DERIVED from the set of tracked
-    # gh-pages/<subtree>/index.html, which wanted every subtree that was going to exist to
-    # exist first.  Ben deleted that section, and py/author_site/published_subtrees.py with
-    # it, so this step now reads nothing but py/author_site/site_data.py's authored entries
-    # and could run anywhere in this list.  Moving it would make a diff that says nothing.
+    # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
+    # worktree run finds MAM-private beside its home clone with no REPOS_ROOT (516a4a1a), and
+    # a cloud run skips the survey altogether, which its runner does.  Until then nothing
+    # routine rewrote out/accgram/post-stress-meteg.json; the survey was run by hand from
+    # main_accgram.py when the corpus moved.  Placed immediately before gen-site, which
+    # renders from the JSON it writes, and so after every step that writes MAM-simple, whose
+    # xml-vtrad-mam it reads.
+    StepRecord(
+        "accgram-survey-post-stress-meteg",
+        _run_accgram_survey_post_stress_meteg,
+        "reads MAM-private's Phonetic MAM and MAM-simple's xml-vtrad-mam, and writes the"
+        " tracked out/accgram/post-stress-meteg.json; skipped in a cloud session; must"
+        " come before gen-site",
+    ),
+    # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
+    # post-stress-meteg pages from the JSON that step writes.  Nothing else it reads is
+    # written by a step.  That has been so since 2026-08-31, when Ben deleted the landing
+    # page's manifest section, DERIVED from the set of tracked gh-pages/<subtree>/index.html,
+    # and py/author_site/published_subtrees.py with it; that section was why the step sat
+    # after every step writing a subtree.
     StepRecord(
         "gen-site",
         _run_gen_site,
         "writes the eleven deploy-root pages: gh-pages/index.html,"
         " gh-pages/unicode-proposals.html, and nine post-stress-meteg pages from the"
-        " tracked survey JSON",
+        " survey JSON; must come after accgram-survey-post-stress-meteg",
     ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
     # builds, reading the copied .py files under MAM-simple/py-examples/, and a
@@ -422,42 +465,60 @@ _STEPS = [
 _STEP_NAMES = [step.step_id for step in _STEPS]
 
 
-def _report_cloud_skipped_renders():
-    """Announce, once and at the end, any SVG this run did not render.
+def _report_cloud_skips():
+    """Announce, once and at the end, every step and SVG render skipped for the cloud.
 
-    A cloud container has no Graphviz, so the tmpl-survey step skips its renders
-    rather than killing the run -- Ben's decision, 2026-09-09; graphviz_pin's
-    docstring has the reasoning. Such a run is CLOUD-COMPLETE, meaning every step
-    ran and none failed while some SVGs went unrendered. It is deliberately not
-    called incomplete, and the exit status stays 0.
+    Two kinds of thing are skipped in a cloud session, which
+    graphviz_pin.in_cloud_session detects. A cloud container has no Graphviz, so
+    the tmpl-survey step skips its renders rather than killing the run -- Ben's
+    decision, 2026-09-09; graphviz_pin's docstring has the reasoning. And the
+    accgram-survey-post-stress-meteg step, which reads MAM-private, is skipped
+    altogether -- Ben's decision, 2026-09-10, on that precedent -- so gen-site
+    renders the nine post-stress-meteg pages from the tracked
+    out/accgram/post-stress-meteg.json, unchanged.
+
+    Such a run is CLOUD-COMPLETE, meaning that no step failed, and that every step
+    either ran or was skipped for the cloud, while some SVGs may have gone
+    unrendered. It is deliberately not called incomplete, and the exit status
+    stays 0.
 
     The banner exists because the skips are printed beside whichever step
-    produced them, thousands of lines up by the time a 41-step run ends. It also
-    names the one hazard a skip leaves behind, which is not obvious: the .dot
-    beside an unrendered .svg IS rewritten, so committing a .dot change without
-    its .svg would put the tracked pair out of step -- the very drift the
-    Graphviz pin exists to prevent.
+    produced them, thousands of lines up by the time a full run ends. It also
+    names the one hazard an SVG skip leaves behind, which is not obvious: the
+    .dot beside an unrendered .svg IS rewritten, so committing a .dot change
+    without its .svg would put the tracked pair out of step -- the very drift
+    the Graphviz pin exists to prevent.
     """
-    skipped = graphviz_pin.cloud_skipped_renders()
-    if not skipped:
+    skipped_steps = tuple(_CLOUD_SKIPPED_STEPS)
+    skipped_svgs = graphviz_pin.cloud_skipped_renders()
+    if not skipped_steps and not skipped_svgs:
         return
     print()
     print("=" * 80)
     print(
-        f"  MEGA RUN IS CLOUD-COMPLETE: all {len(_STEPS)} steps ran; "
-        f"{len(skipped)} SVG render(s) skipped"
+        f"  MEGA RUN IS CLOUD-COMPLETE: {len(skipped_steps)} step(s) and "
+        f"{len(skipped_svgs)} SVG render(s) skipped for the cloud"
     )
     print("=" * 80)
-    print("Every step ran and none failed. This container has no Graphviz, so the")
-    print("SVG files below were not re-rendered. Their .dot sources WERE rewritten.")
-    print()
-    print("  DO NOT COMMIT A CHANGED .dot WITHOUT ITS .svg. The two are a matched")
-    print("  pair in the tracked tree, and letting them drift apart is what the")
-    print("  Graphviz pin exists to prevent. If `git status` shows no .dot change,")
-    print("  nothing was lost and this notice is informational.")
-    print()
-    for svg_path in skipped:
-        print(f"    {svg_path}")
+    print("No step failed. This is a cloud session, so what is listed below was")
+    print("skipped rather than run.")
+    if skipped_steps:
+        print()
+        print("STEPS SKIPPED:")
+        for step_id, reason in skipped_steps:
+            print(f"    {step_id}: {reason}")
+    if skipped_svgs:
+        print()
+        print("SVG RENDERS SKIPPED. This container has no Graphviz, so the SVG files")
+        print("below were not re-rendered. Their .dot sources WERE rewritten.")
+        print()
+        print("  DO NOT COMMIT A CHANGED .dot WITHOUT ITS .svg. The two are a matched")
+        print("  pair in the tracked tree, and letting them drift apart is what the")
+        print("  Graphviz pin exists to prevent. If `git status` shows no .dot change,")
+        print("  nothing was lost and this notice is informational.")
+        print()
+        for svg_path in skipped_svgs:
+            print(f"    {svg_path}")
     print("=" * 80)
 
 
@@ -492,7 +553,7 @@ def main():
             step.runner()
     finally:
         sys.argv = old_argv
-    _report_cloud_skipped_renders()
+    _report_cloud_skips()
     #
     # Download of ws (Wikisource) can be accomplished by running:
     #    py/main_download.py fr-wikisource

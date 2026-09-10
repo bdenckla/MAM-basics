@@ -534,9 +534,10 @@ def gen_html_files(
     """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
-    recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
-    clone the survey needs.  Off by hand, so a standalone run still derives the page from the
-    corpus rather than from a file.
+    recomputing.  ``main_0_mega.py`` passes it because its survey step has just written that
+    JSON, or in a cloud session has skipped the survey and left the tracked JSON unchanged.
+    Off by hand, so a standalone run still derives the page from the corpus rather than from a
+    file.
     """
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
