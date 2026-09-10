@@ -40,11 +40,6 @@ def local_image_path(page_id):
     return IMG_DIR / f"{page_id}.jpg"
 
 
-def image_relpath(page_id):
-    """Return a relative path suitable for HTML generated into .novc/."""
-    return f"../aleppo-pages/{page_id}.jpg"
-
-
 def load_index(book="Job"):
     """Load page index for *book* by scanning line-break files.
 
@@ -174,12 +169,6 @@ def load_page_image(page_id):
         print("  Run download_aleppo_pages.py to fetch the images.")
         sys.exit(1)
     return Image.open(path)
-
-
-def _leaf_to_page_n(page_id):
-    num = int(page_id[:-1])
-    side = page_id[-1]
-    return (num - 1) * 2 + 2 + (0 if side == "r" else 1)
 
 
 def _parse_verse_label(label):

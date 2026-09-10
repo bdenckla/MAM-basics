@@ -97,7 +97,6 @@ from py_html.my_html_span_romanized import rmn
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-from mb_cmn import bib_locales as tbn
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
@@ -617,11 +616,6 @@ def _write_page(path: Path, title: str, body: list) -> str:
     return str(path)
 
 
-def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all nine post-stress-meteg pages and return the main page's path."""
-    return gen_html_files(out_dir, trust_survey=trust_survey)[0]
-
-
 def build_body(survey: dict) -> list:
     """The page, section by section, every figure in it read off ``survey``."""
     return [
@@ -703,14 +697,6 @@ def build_methods_body(survey: dict) -> list:
 
 def _count(survey: dict, system: str, category: str) -> int:
     return survey["counts"][system][category]
-
-
-def _post_stress(survey: dict, system: str | None = None) -> list[dict]:
-    return [
-        one
-        for one in survey["post_stress"]
-        if system is None or one["system"] == system
-    ]
 
 
 def _both(survey: dict, category: str) -> int:
@@ -1348,10 +1334,6 @@ def _split(bcv: str) -> tuple[str, int, int]:
     bb = bcv[:2]
     chnu, _colon, vrnu = bcv[2:].partition(":")
     return bb, int(chnu), int(vrnu)
-
-
-def _book_name(bcv: str) -> str:
-    return tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bcv[:2]))[3:]
 
 
 def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:

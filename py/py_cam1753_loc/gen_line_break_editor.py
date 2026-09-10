@@ -30,7 +30,6 @@ import cam1753_paths
 
 LB_DIR = cam1753_paths.line_breaks_dir()
 QUAD_DIR = cam1753_paths.col_quads_dir()
-IMG_DIR = cam1753_paths.pages_dir()
 OUT_DIR = cam1753_paths.novc_dir()
 
 LOCAL_IMG_BASE = "http://localhost:8119/cam1753-pages"

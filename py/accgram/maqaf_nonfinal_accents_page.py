@@ -352,21 +352,6 @@ def _occurrences(survey: dict, corpus: str, genre: str) -> list[dict]:
     return survey["corpora"][corpus][genre]["occurrences"]
 
 
-def _occurrence(survey: dict, corpus: str, genre: str, bcv: str) -> dict:
-    """The single occurrence record a sentence names, or a build failure.
-
-    The two worked examples splice their oracle counts out of these records, so a corpus bump
-    that drops the verse -- or that splits it in two -- must stop the build rather than leave
-    a sentence standing beside a number that no longer describes it.
-    """
-    found = [o for o in _occurrences(survey, corpus, genre) if o["bcv"] == bcv]
-    if len(found) != 1:
-        raise AssertionError(
-            f"{corpus}/{genre} {bcv}: expected exactly one occurrence, found {len(found)}"
-        )
-    return found[0]
-
-
 def _pair_of(shape: str) -> tuple[str, str]:
     """The two accents a shape holds, as romanized names, non-final atom's first.
 

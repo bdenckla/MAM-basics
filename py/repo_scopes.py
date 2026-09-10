@@ -40,7 +40,7 @@ mark-order scope now, holding neither code nor JSON.
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in
 ``check_all.py``, which is book-of-job's register, and codex-index-aleppo's
-``check_ac_all.py`` lists four checks that do not include it.  Widening it would
+``check_ac_all.py`` lists three checks that do not include it.  Widening it would
 turn a passing check into a failing one over code that has never been held to it,
 which is a decision rather than a restoration, so it still reads
 ``boj_paths.code_paths()`` directly.

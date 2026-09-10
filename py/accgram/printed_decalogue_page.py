@@ -69,9 +69,9 @@ REPORT_TITLE = "In the printed tradition, are the accents of the Decalogue gramm
 _GOERWITZ_URL = "goerwitz.html"
 _SOURCE_URL = "https://he.wikisource.org/wiki/עשרת_הדברות_בסיס/טעמים"
 
-# The two satellite pages, which document the per-Decalogue verdicts this page only totals.
+# The Simanim satellite page, one of the two that document the per-Decalogue verdicts
+# this page only totals.
 _SIMANIM_PAGE = "printed-decalogue-simanim.html"
-_KOREN_PAGE = "printed-decalogue-koren.html"
 
 # Not a satellite: it reports no verdict of this repo's, only the editions MAM-basics issue #208
 # cites at ובנך, where the two satellites' editions and the Wikisource p-trad עליון disagree.
