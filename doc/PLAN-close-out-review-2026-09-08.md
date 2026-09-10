@@ -772,6 +772,14 @@ reconciliation. The successor starts automatically after the clean committed che
 using the same saved project directly with `environment.type = local`; writing
 responsibility transfers at dispatch. Integration and push occur once after final Wave 4.
 
+Executed 2026-09-09: Wave 1C2 implementation commit
+`4cc94bef9251b4677c7ea918875c913e17ca5c31`. The worktree was clean afterward.
+All original lines in the six authorized Markdown files passed preservation checks;
+V6 passed before implementation and at that commit before this record-only checkpoint.
+The remediation plan names all five passing V6 runs and the final scope report.
+The following record commit supplies the clean source for Wave 1C3's automatic handoff
+on the same saved project. No integration or push is due at this checkpoint.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

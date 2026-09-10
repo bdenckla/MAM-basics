@@ -984,6 +984,23 @@ Wave 2 and all E items remain pending. The next authorized task uses saved proje
 `51e16ebd-373a-41f7-833e-9def3ef72b81` with `environment.type = local` after a clean
 committed checkpoint. No intermediate integration, push, or automatic archival is due.
 
+Executed 2026-09-09: Wave 1C2 implementation commit
+`4cc94bef9251b4677c7ea918875c913e17ca5c31`. The worktree was clean after the commit.
+The final pre-commit scope report is `wave1c2-01a08953-20260910T033638Z-scope.json`:
+all six changed files are authorized Markdown, every original line is preserved,
+Hebrew mark order and changed-line whitespace pass, and the complete frozen/current
+offending sets are identical. V6 also passed at both final checkpoints:
+
+1. Before implementation commit: `v6-runs/20260910T033642Z-wave1c2-before-commit-9b8f3e2e/`.
+2. At `4cc94bef`, before record commit: `v6-runs/20260910T033742Z-wave1c2-before-record-commit-c552fbf0/`.
+
+All five actual Wave 1C2 V6 runs passed with zero changed locations; no real stop occurred.
+The following record-only commit supplies Wave 1C3's required clean source; its hash
+and actual successor ID are reported at handoff. Saved project
+`51e16ebd-373a-41f7-833e-9def3ef72b81` was rechecked against the exact worktree path
+with Git enabled. The successor uses `environment.type = local`. No new decision blocks
+Wave 1C3, and no intermediate integration, push, or archival is due.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
