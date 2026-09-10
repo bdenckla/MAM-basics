@@ -1,0 +1,1208 @@
+{
+  "schema_version": 1,
+  "measured_date": "2026-09-10",
+  "source_repository": "https://github.com/bdenckla/MAM-OSIS",
+  "source_commit": "697dc98a904a52ed81bb105772f002d3efb360e3",
+  "target_repository": "https://github.com/bdenckla/MAM-basics",
+  "target_base_commit": "dc0e60edf6aab7fec6cc45b42002ce7541b12498",
+  "inventory_command": "git -C C:/Users/BenDe/GitRepos/MAM-OSIS ls-tree -r -l -z 697dc98a904a52ed81bb105772f002d3efb360e3",
+  "proof": "Before the Land commit, every selected destination index entry must equal its source Git blob and mode; its blob size and SHA-256 must also match. This freezes Land identity, not a claim that later repointing leaves every file unchanged.",
+  "source_files": 92,
+  "source_bytes": 29822402,
+  "selected_files": 90,
+  "selected_bytes": 29821603,
+  "excluded_files": 2,
+  "excluded_bytes": 799,
+  "files": [
+    {
+      "source_path": ".gitattributes",
+      "mode": "100644",
+      "git_blob": "147d57306e3aa6792d17a8308e64adedfe657879",
+      "bytes": 118,
+      "destination_path": "MAM-OSIS/.gitattributes",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "06a5470a00376e20ebf3f1aa3b1fdecf9d9e8bb1af967774114ccfa737a7e331"
+    },
+    {
+      "source_path": ".github/workflows/pages.yml",
+      "mode": "100644",
+      "git_blob": "eb491d4fcd1fa251e445faad4e01e828137602f2",
+      "bytes": 686,
+      "destination_path": null,
+      "disposition": "retained-source-host",
+      "reason": "Pages workflow remains at the source host.",
+      "sha256": "d7d67eedaa4176198d31d4ddaaa2ca160c2a3e1c0284ee82d6cd20e99e124802"
+    },
+    {
+      "source_path": ".gitignore",
+      "mode": "100644",
+      "git_blob": "33796272c68f5ab8a58b4173b23108b36e6b4b82",
+      "bytes": 88,
+      "destination_path": "MAM-OSIS/.gitignore",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "89e99679aed05f6fce2e3e8b38e6dd604d7beaf051f5e59ef8102d13fc61fe6c"
+    },
+    {
+      "source_path": ".novc/commit_msg_regen.txt",
+      "mode": "100644",
+      "git_blob": "1bad1b9102b40e72996ae3f346fbe51867ecb513",
+      "bytes": 113,
+      "destination_path": null,
+      "disposition": "excluded-obsolete-scratch",
+      "reason": "Obsolete 113-byte commit message; not product data; preserved in source history.",
+      "sha256": "93ded83dd3d8370aa6cc5e5d85d76c47ca0e27645197ad9f1ff6b1c84757397e"
+    },
+    {
+      "source_path": "LICENSE.md",
+      "mode": "100644",
+      "git_blob": "51094acf66a695d0c28b35fe2e5bbd3a7489a57e",
+      "bytes": 1964,
+      "destination_path": "MAM-OSIS/LICENSE.md",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "31ca3d6ebc0554973d378b4d3dbd60122f95a5928dbda912edcab1e3fe278dce"
+    },
+    {
+      "source_path": "MAPM-24/1Chr-2Chr.xml",
+      "mode": "100644",
+      "git_blob": "6c9caa7d5bc889fb4adc887599c237d830e977d2",
+      "bytes": 563494,
+      "destination_path": "MAM-OSIS/MAPM-24/1Chr-2Chr.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "352e568d2652b8f7d3ef62fce86b27e35d29bd346e999767c5f3c3fa2bbade0d"
+    },
+    {
+      "source_path": "MAPM-24/1Kgs-2Kgs.xml",
+      "mode": "100644",
+      "git_blob": "b78393a462d2fa42bf1aaf70a382ad184c8daa63",
+      "bytes": 529008,
+      "destination_path": "MAM-OSIS/MAPM-24/1Kgs-2Kgs.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "272ac3ac7adb169796a0e3f7f5d14f82173a7fd3151ef50cc3be4370ceea0845"
+    },
+    {
+      "source_path": "MAPM-24/1Sam-2Sam.xml",
+      "mode": "100644",
+      "git_blob": "59243ef2162d346999290ee0d10ed643ce8cf4e2",
+      "bytes": 523373,
+      "destination_path": "MAM-OSIS/MAPM-24/1Sam-2Sam.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "edf77c151ef49235f8d2e097742490f7e42aa5be3b6a22176d4a3f1a88b6c776"
+    },
+    {
+      "source_path": "MAPM-24/Dan.xml",
+      "mode": "100644",
+      "git_blob": "d03dfa36638299318f814832f57b9b894a6a4a33",
+      "bytes": 127065,
+      "destination_path": "MAM-OSIS/MAPM-24/Dan.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "1cfa0ca6ea237e439559c0af36bd97d578a4c5c066c77328db37dcda99978490"
+    },
+    {
+      "source_path": "MAPM-24/Deut.xml",
+      "mode": "100644",
+      "git_blob": "b26c40ca25e37484e33ce41ebd5f3c7ffedae039",
+      "bytes": 307626,
+      "destination_path": "MAM-OSIS/MAPM-24/Deut.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "582fc551a394ce7255969051d9e7b9b37502aa928738175b0b9e0628ca8ac774"
+    },
+    {
+      "source_path": "MAPM-24/Eccl.xml",
+      "mode": "100644",
+      "git_blob": "178d4acf373904b1716de36ad16701d4edc34c3f",
+      "bytes": 60965,
+      "destination_path": "MAM-OSIS/MAPM-24/Eccl.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "747d87eec6babc98ed1ad838ec77098e44e31e0e7529bd66c571c3acefe0c35d"
+    },
+    {
+      "source_path": "MAPM-24/Esth.xml",
+      "mode": "100644",
+      "git_blob": "d43f8b99f22dad34e6094dde24a4413daf5fd7b9",
+      "bytes": 66441,
+      "destination_path": "MAM-OSIS/MAPM-24/Esth.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "b40f43acc596925e1cbfa627747816fcb384d4927d49b9f8997e50fcbf271a43"
+    },
+    {
+      "source_path": "MAPM-24/Exod.xml",
+      "mode": "100644",
+      "git_blob": "4a3187cf9aa45be19c3a3d5cab0a61de2758397e",
+      "bytes": 355675,
+      "destination_path": "MAM-OSIS/MAPM-24/Exod.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "4c151ba04a66166f51f77a16f5a1261aacd429d6e90cc69a57094a54a3f9b98d"
+    },
+    {
+      "source_path": "MAPM-24/Ezek.xml",
+      "mode": "100644",
+      "git_blob": "2c9e976b0fa69f153862b096b25dc3af79ba2b34",
+      "bytes": 402232,
+      "destination_path": "MAM-OSIS/MAPM-24/Ezek.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "54a4b5bb2a987027c9a1ad9ed210cc57b5e26c6ef837b5f7a7e35196f9fb8359"
+    },
+    {
+      "source_path": "MAPM-24/Ezra-Neh.xml",
+      "mode": "100644",
+      "git_blob": "f2933a02584fe63fe2b748ff583cb21a1ee5c2a6",
+      "bytes": 220300,
+      "destination_path": "MAM-OSIS/MAPM-24/Ezra-Neh.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "10de70e1655e32078d6e8f3682a55d9d302e2f1591d9115270151db5a20504bc"
+    },
+    {
+      "source_path": "MAPM-24/Gen.xml",
+      "mode": "100644",
+      "git_blob": "691bc88a481d563e16c9a3c65031c690ede5cb98",
+      "bytes": 422805,
+      "destination_path": "MAM-OSIS/MAPM-24/Gen.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "f72e2c465686af4e82b4bd0d3b73901d53be32566316615fb7dc4aae2414ac16"
+    },
+    {
+      "source_path": "MAPM-24/Hos-Mal.xml",
+      "mode": "100644",
+      "git_blob": "eab8dcfeea06ddb114f3b939489a704354e8fb70",
+      "bytes": 308549,
+      "destination_path": "MAM-OSIS/MAPM-24/Hos-Mal.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "d0fd415b302aa0f5709f60f42195147a424fa9d502ff11ee9858a885ad4d113e"
+    },
+    {
+      "source_path": "MAPM-24/Isa.xml",
+      "mode": "100644",
+      "git_blob": "66ca429fecfdc17c2a759f893fef0b5faf11aa09",
+      "bytes": 371849,
+      "destination_path": "MAM-OSIS/MAPM-24/Isa.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "d873d9e8928dc012b14d288267a9774c2510d38928e70a914f8bc0eba07f2185"
+    },
+    {
+      "source_path": "MAPM-24/Jer.xml",
+      "mode": "100644",
+      "git_blob": "77b91983947dfe907082ee3741541148b3ecb20f",
+      "bytes": 458857,
+      "destination_path": "MAM-OSIS/MAPM-24/Jer.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "8d2a2c5a3ebc5aa8b90b40e12e2009dcbcea7c09aae6f31f30dcdb219a7aa8eb"
+    },
+    {
+      "source_path": "MAPM-24/Job.xml",
+      "mode": "100644",
+      "git_blob": "817c024004739c1595387cf60e928d9bef90cd56",
+      "bytes": 191852,
+      "destination_path": "MAM-OSIS/MAPM-24/Job.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "f014a6711f252d9ba4dba86b9a893ed14ac4dce385e9fac8340260554e8a7450"
+    },
+    {
+      "source_path": "MAPM-24/Josh.xml",
+      "mode": "100644",
+      "git_blob": "0c4d62f64d06664e4eac36bc9828ddbd5f07a512",
+      "bytes": 214913,
+      "destination_path": "MAM-OSIS/MAPM-24/Josh.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "419f995c3aa0822817a9c225785e523dc823356633f2b962e366ef271a3faa92"
+    },
+    {
+      "source_path": "MAPM-24/Judg.xml",
+      "mode": "100644",
+      "git_blob": "d68f9cabef5a1c430c7bd4bdddf0251bb792e9fa",
+      "bytes": 211519,
+      "destination_path": "MAM-OSIS/MAPM-24/Judg.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "03167e2e4b5fc089bf3f8a679178a3bc6b40a0acc009827bcaf14fd669dfa9ee"
+    },
+    {
+      "source_path": "MAPM-24/Lam.xml",
+      "mode": "100644",
+      "git_blob": "8332c4e7265fcdeecd1ec9c4d2e74bb17339d869",
+      "bytes": 45128,
+      "destination_path": "MAM-OSIS/MAPM-24/Lam.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "80b0205da856a8d1f8d54218e25eca52b88662b231e563a5f7d3d701b72185ff"
+    },
+    {
+      "source_path": "MAPM-24/Lev.xml",
+      "mode": "100644",
+      "git_blob": "e442358a3206caf807bdca7dc48b3a93959152eb",
+      "bytes": 245410,
+      "destination_path": "MAM-OSIS/MAPM-24/Lev.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "f1f21a6afedd8bab0b2347ecdd2de1567685317febe1f63f1b91ec11a4844875"
+    },
+    {
+      "source_path": "MAPM-24/Num.xml",
+      "mode": "100644",
+      "git_blob": "67a44970af5f2036382321dadf482205cb565c04",
+      "bytes": 351791,
+      "destination_path": "MAM-OSIS/MAPM-24/Num.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "766b8424588837ae42ea5a131f78db1588c78cad8b0c39c832563a461b61dc72"
+    },
+    {
+      "source_path": "MAPM-24/Prov.xml",
+      "mode": "100644",
+      "git_blob": "ed2e636f4ce10da37bd5c72a72023077ab80e569",
+      "bytes": 162221,
+      "destination_path": "MAM-OSIS/MAPM-24/Prov.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "8f033fea6c318fca5223470c25e8d6cfbb71822c48bf794887ba94aa68bafbac"
+    },
+    {
+      "source_path": "MAPM-24/Ps.xml",
+      "mode": "100644",
+      "git_blob": "c2b9d7c3742ad2786fb0567e7c35da59b8272b19",
+      "bytes": 475806,
+      "destination_path": "MAM-OSIS/MAPM-24/Ps.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "e44c5da262fcf598930d26a52132a22bc17c62f0133fbcd990563582285976b0"
+    },
+    {
+      "source_path": "MAPM-24/Ruth.xml",
+      "mode": "100644",
+      "git_blob": "bf4ed09391d5748191a89edcebf328fd8f0782a9",
+      "bytes": 26530,
+      "destination_path": "MAM-OSIS/MAPM-24/Ruth.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "ff206fd465a1391456d4683015cbd73b024d27345cf284adf4b9ab7e4a7332b2"
+    },
+    {
+      "source_path": "MAPM-24/Song.xml",
+      "mode": "100644",
+      "git_blob": "79dceb9d30c49d568e72547bf69b13d26b2f6114",
+      "bytes": 30369,
+      "destination_path": "MAM-OSIS/MAPM-24/Song.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "f9a96520bdd1c7a27d7edb10a6edac9f2e06b6c5182887196bc0e935a98ed087"
+    },
+    {
+      "source_path": "MAPM-orig-24/1Chr-2Chr.xml",
+      "mode": "100644",
+      "git_blob": "fd05ac25f516edac161bbedc12f0def6c721f60c",
+      "bytes": 615083,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/1Chr-2Chr.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "144f3735f66d40d05f7833bb18999dec67e908aee5bbe52150f36b9f477c7be4"
+    },
+    {
+      "source_path": "MAPM-orig-24/1Kgs-2Kgs.xml",
+      "mode": "100644",
+      "git_blob": "c27d5c8679ae578a13d94415ce202a3672650750",
+      "bytes": 590179,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "712ae316874119c3805d6aa826b6a6cab2eeb153e6aefcbcd9395c79c5dea74b"
+    },
+    {
+      "source_path": "MAPM-orig-24/1Sam-2Sam.xml",
+      "mode": "100644",
+      "git_blob": "a711c4fa9d0a455a40b890261b212da8e4ecb2bb",
+      "bytes": 572837,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "5464f696ef9a5e9dd613bdfc55bc3f4ab0ccb285103ca66847b73bb4e0099968"
+    },
+    {
+      "source_path": "MAPM-orig-24/Dan.xml",
+      "mode": "100644",
+      "git_blob": "27eafbb01e3ee0dc4acb89380840b5b2702e494e",
+      "bytes": 143808,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Dan.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "1029d95bcf078a018fedc3de79ac097cb11ed845d45f53ab4d9adff58fd350d7"
+    },
+    {
+      "source_path": "MAPM-orig-24/Deut.xml",
+      "mode": "100644",
+      "git_blob": "f1ed30986c69b55a7f4d46fcf96cc3cdfef38d2d",
+      "bytes": 344870,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Deut.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "9e1a70b153ce1cda39f9873f53d351ad7cb12a8f790cf467f8630e79a4fcffc2"
+    },
+    {
+      "source_path": "MAPM-orig-24/Eccl.xml",
+      "mode": "100644",
+      "git_blob": "512d60b6da25a9fa963b07d0c99d3e3f16bd674e",
+      "bytes": 71341,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "9e774946ed504aa75af89b9b3c400aa8d9020c82b8ff6341599f5d712f5000d9"
+    },
+    {
+      "source_path": "MAPM-orig-24/Esth.xml",
+      "mode": "100644",
+      "git_blob": "e9c110a8283c5ee33a9a6d89b1e0c0e5f6c9e0c7",
+      "bytes": 71835,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Esth.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "0b440465526fcbc2159815a9cad6fe8b765aa0caf3750329fca3ddad48078473"
+    },
+    {
+      "source_path": "MAPM-orig-24/Exod.xml",
+      "mode": "100644",
+      "git_blob": "b4df3ab3aa95c628f7ffc170b37538edcf2274bb",
+      "bytes": 405759,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Exod.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "c2e6e6302ab1fd37c4a7ef6decefff830daa153b90600090c294fe42fea7969d"
+    },
+    {
+      "source_path": "MAPM-orig-24/Ezek.xml",
+      "mode": "100644",
+      "git_blob": "b44073f707e0c96f2545f8f7bd5a630ca902e769",
+      "bytes": 451515,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "049f745c7c9f2f5d4bdf9e9cdf7adf79a646f63cbb7d29ac9f794aa321a09459"
+    },
+    {
+      "source_path": "MAPM-orig-24/Ezra-Neh.xml",
+      "mode": "100644",
+      "git_blob": "cdd67a0874874254ec22a771412b14920bd8e678",
+      "bytes": 235229,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "54712fee54a88abeb119b5e2a80dce35410bc348d1bb9e20a7ec72ec079beb4a"
+    },
+    {
+      "source_path": "MAPM-orig-24/Gen.xml",
+      "mode": "100644",
+      "git_blob": "789494b4a5a1a1dc2a54ad9d32c8be8bbd3650e2",
+      "bytes": 489032,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Gen.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "4f2656c5b136a9b83503ac5a6eddd832bfa3378a2f466c643514c617b82eaa19"
+    },
+    {
+      "source_path": "MAPM-orig-24/Hos-Mal.xml",
+      "mode": "100644",
+      "git_blob": "6a98e136befa8364d47a9fd77dec27652dbd0eaa",
+      "bytes": 350099,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Hos-Mal.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "49f7a2f3229a73ff4a47b0f40432b0c31540c8b593257f23221bb884bc419b3e"
+    },
+    {
+      "source_path": "MAPM-orig-24/Isa.xml",
+      "mode": "100644",
+      "git_blob": "9e588c431e33f1172ac46c2f07e63a44514ac27c",
+      "bytes": 415547,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Isa.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "5274e3bb0363b94df9ae69032077e50689e3db1271c4a278126ff5567feca643"
+    },
+    {
+      "source_path": "MAPM-orig-24/Jer.xml",
+      "mode": "100644",
+      "git_blob": "9cf54577b7743b79403dfca2f88e3f6c74f107fc",
+      "bytes": 504396,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Jer.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "8b528a4bad4964c3abd4eebf176edf70bea6461eb326c69133c00ee949684f7f"
+    },
+    {
+      "source_path": "MAPM-orig-24/Job.xml",
+      "mode": "100644",
+      "git_blob": "3f4a1ce0e0e25dc1481a100e6557a9141ca6c4ce",
+      "bytes": 299843,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Job.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "315ff5a783154a0301ac9b89bda43ba7def423aa1ea38bb2824a4f4953d0dad1"
+    },
+    {
+      "source_path": "MAPM-orig-24/Josh.xml",
+      "mode": "100644",
+      "git_blob": "f11604a472b8e5fa92f3d5ac2e9dd29077b159f5",
+      "bytes": 240475,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Josh.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "d07d7b87885b9eb09c5ccc0d34f092db86aa863f9c032a66a1d02014252b1793"
+    },
+    {
+      "source_path": "MAPM-orig-24/Judg.xml",
+      "mode": "100644",
+      "git_blob": "ba705c3ebac7d46c637264b925197e9aac27fda6",
+      "bytes": 235625,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Judg.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "3b7847ce9d8ab01b27c5c4c1d9e942dbbd0a30dc22bcbd0b428fa0dda0d34747"
+    },
+    {
+      "source_path": "MAPM-orig-24/Lam.xml",
+      "mode": "100644",
+      "git_blob": "8bd620241b56b22e956c4f28e6787844f800ab7a",
+      "bytes": 42473,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Lam.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "1526d770ef370f6622463f21af4e29096ed792a50865d95bbec1545844d1e379"
+    },
+    {
+      "source_path": "MAPM-orig-24/Lev.xml",
+      "mode": "100644",
+      "git_blob": "9fb13382fdc84d78a3b79c3084de39f8dcabd5a4",
+      "bytes": 280384,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Lev.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "662f25b95a148c2cfc5d960e21de2b2f196287579fca1c937f33d8b965f22eb7"
+    },
+    {
+      "source_path": "MAPM-orig-24/Num.xml",
+      "mode": "100644",
+      "git_blob": "9bfcfc52ff142561835e82ba1cd99d670b27c344",
+      "bytes": 403576,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Num.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "717cf03fdf9cba1028c73087bbb1b1767e171f99a7f59931d77b95bd4536f2f4"
+    },
+    {
+      "source_path": "MAPM-orig-24/Prov.xml",
+      "mode": "100644",
+      "git_blob": "c40882c938c1561f0de4742386065fa478e372ea",
+      "bytes": 258928,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Prov.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "d4be9bb8da22bd75642f7d27fe188053dfd877df1f81bfe055de2449616588c8"
+    },
+    {
+      "source_path": "MAPM-orig-24/Ps.xml",
+      "mode": "100644",
+      "git_blob": "8433ebf213b3eda4843f61fc91e67850587139ec",
+      "bytes": 766282,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Ps.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "2e3b6930c390e6ce4281fc91ee10bba2a923781276c6392fbbb61eafe6506153"
+    },
+    {
+      "source_path": "MAPM-orig-24/Ruth.xml",
+      "mode": "100644",
+      "git_blob": "2d5e9982b21f5e204d7072ef968bdfcc8512ef8a",
+      "bytes": 30394,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "54c72f6598308fe390704de1f6008fcd6d321db30c8e3fb186c90d99fc510024"
+    },
+    {
+      "source_path": "MAPM-orig-24/Song.xml",
+      "mode": "100644",
+      "git_blob": "45e47eed6b67cf7743addfff92b4639adde17aec",
+      "bytes": 34082,
+      "destination_path": "MAM-OSIS/MAPM-orig-24/Song.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "fe442b4a1d354079f84a924780757205be3efa72b55f0380f3fad52c200a9da7"
+    },
+    {
+      "source_path": "MAPM-orig/MAPM.xml",
+      "mode": "100644",
+      "git_blob": "fca9934145808294a8dc9ec2a6befe1d400b71c8",
+      "bytes": 7691165,
+      "destination_path": "MAM-OSIS/MAPM-orig/MAPM.xml",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "2cfda0e0f9babcbe0bfac95d5b6d5d7271e2d0b8b1d6bc4b131eb082150768d0"
+    },
+    {
+      "source_path": "MAPM-orig/provenance.txt",
+      "mode": "100644",
+      "git_blob": "6156170c4a961733561d8c446845bc31dacd1780",
+      "bytes": 59,
+      "destination_path": "MAM-OSIS/MAPM-orig/provenance.txt",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "752062a8391a4c347a5bd683f46272193a82eab3eac8892dbb0ac727e94b59c6"
+    },
+    {
+      "source_path": "MAPM-orig/readme.txt",
+      "mode": "100644",
+      "git_blob": "9ed5b47665e75cef10550c3b52b5a3a4e307a090",
+      "bytes": 1391,
+      "destination_path": "MAM-OSIS/MAPM-orig/readme.txt",
+      "disposition": "land-historical",
+      "reason": "Historical openscriptures/morphhb snapshot or split snapshot; retain bytes and separate CC BY-SA 3.0 source notice.",
+      "sha256": "62ad5e2d5772ccec017bd9fef34feacd011c0f79f3d89e5b4a26b9fba235276f"
+    },
+    {
+      "source_path": "README.md",
+      "mode": "100644",
+      "git_blob": "3b2b18988ba9d61536a014e0af0f741116c2f7ca",
+      "bytes": 266,
+      "destination_path": "MAM-OSIS/README.md",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "e835f60e17cc6f810dfbcc27501ea5771e46fe7233bc555673ab9cd51fcce3ab"
+    },
+    {
+      "source_path": "gh-pages/index.html",
+      "mode": "100644",
+      "git_blob": "843a5d82099e2c2fe6749fffd7771bf8f1421261",
+      "bytes": 11592,
+      "destination_path": "gh-pages/MAM-OSIS/index.html",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "3fb2191b56f8375861ce97a7a528d2c31bd42ebc1a1f5c2c23e542ce11cf48ca"
+    },
+    {
+      "source_path": "gh-pages/png/abcant-absent-OSIS.png",
+      "mode": "100644",
+      "git_blob": "7e3f2c39ff2c22d9d69a909fc2e53e5700908adb",
+      "bytes": 14999,
+      "destination_path": "gh-pages/MAM-OSIS/png/abcant-absent-OSIS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "5c704a3a3345b5a44359121596a77aae193208fd389d9cccf0edaed7871ddd6a"
+    },
+    {
+      "source_path": "gh-pages/png/abcant-present-WS.png",
+      "mode": "100644",
+      "git_blob": "42c52cddc54ed6874eb594b0e55548893f130411",
+      "bytes": 31274,
+      "destination_path": "gh-pages/MAM-OSIS/png/abcant-present-WS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "c74d742e9bc45c983723556526510755df7160c68cff3a41cf67bd52f43c1ee8"
+    },
+    {
+      "source_path": "gh-pages/png/good-ending.png",
+      "mode": "100644",
+      "git_blob": "d830ae224d0957d35f26b8b80150df2eb4a56843",
+      "bytes": 64042,
+      "destination_path": "gh-pages/MAM-OSIS/png/good-ending.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "1defa070024e8bab7cd5692310728fdfc01cbc4cf37660f593ce0f322b6b7a3f"
+    },
+    {
+      "source_path": "gh-pages/png/hung.png",
+      "mode": "100644",
+      "git_blob": "a1835c8e876dc05f65f3532a91ad9905630070e5",
+      "bytes": 41177,
+      "destination_path": "gh-pages/MAM-OSIS/png/hung.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "a728265c20be3df56dbb2652899b6b8839561cb2fc004d22b0237e258f298c1f"
+    },
+    {
+      "source_path": "gh-pages/png/impmaq-absent.png",
+      "mode": "100644",
+      "git_blob": "656f105dfe7d143d99fa60e8cd55439a0bf34b30",
+      "bytes": 3383,
+      "destination_path": "gh-pages/MAM-OSIS/png/impmaq-absent.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "7ae3ed3f8cafc8bb8bfa623646efd3d2c8ce6e844b9b12e67a7af2ff2b117a6a"
+    },
+    {
+      "source_path": "gh-pages/png/impmaq-present.png",
+      "mode": "100644",
+      "git_blob": "9e041d3dd9e755f65bff231d47420b3d6da3179a",
+      "bytes": 6603,
+      "destination_path": "gh-pages/MAM-OSIS/png/impmaq-present.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "db3762284c27c82ce88ffe6363d7e9225876a57f0373bd28109884af228a31f3"
+    },
+    {
+      "source_path": "gh-pages/png/invnun-numbers-10.png",
+      "mode": "100644",
+      "git_blob": "bab0ee9f0773f24a9913d0ad4760df0810ec5207",
+      "bytes": 49338,
+      "destination_path": "gh-pages/MAM-OSIS/png/invnun-numbers-10.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "d1a5f34ec07bfcce84c85192309e0b8e168f299377f221ec0a06d84c19d99c69"
+    },
+    {
+      "source_path": "gh-pages/png/invnun-psalm-107-v23-to-v28.png",
+      "mode": "100644",
+      "git_blob": "9966797524f244b1ecf8db4eaaf07ab322e4c1fd",
+      "bytes": 59070,
+      "destination_path": "gh-pages/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "61f5319da84c0f3f21fe92f2e4b57e5372e5543ee108dae8fe2b204c1c0b62d4"
+    },
+    {
+      "source_path": "gh-pages/png/invnun-psalm-107-v40.png",
+      "mode": "100644",
+      "git_blob": "1fd85e746a445555b27ff4caa0538dc8809ad817",
+      "bytes": 19004,
+      "destination_path": "gh-pages/MAM-OSIS/png/invnun-psalm-107-v40.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "28c3da388b8c5f0d88ecf67853262a11df5e42f2e1c76e64572a1c616a0b8ad2"
+    },
+    {
+      "source_path": "gh-pages/png/kq-ketiv-qere-1.png",
+      "mode": "100644",
+      "git_blob": "e4fe243a844f48cedef8a8db3de23fd14c62c563",
+      "bytes": 2123,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-ketiv-qere-1.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "9d773eeb1f404f2c36715401330bae66aeaa7d612846d30d6cd9293fbdcafd43"
+    },
+    {
+      "source_path": "gh-pages/png/kq-ketiv-qere-2.png",
+      "mode": "100644",
+      "git_blob": "0373ec49c4b4035655881f36a588841e19873d24",
+      "bytes": 3469,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-ketiv-qere-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "2a7389f1a40d84a53a161a0d05637901ec4133954938b7acdca0cabcf823a7c1"
+    },
+    {
+      "source_path": "gh-pages/png/kq-ketiv-qere-3.png",
+      "mode": "100644",
+      "git_blob": "b5ae8c110ee47ae51a391a8e5a0695f314664231",
+      "bytes": 3595,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-ketiv-qere-3.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "3ad4e4fe2cd927c6db61394f45ad643bfc263963de65ca120c0cf2cbba3325d8"
+    },
+    {
+      "source_path": "gh-pages/png/kq-ketiv-velo-qere-1.png",
+      "mode": "100644",
+      "git_blob": "d3db95e444059d3f6aa032be161dbd41b689fe22",
+      "bytes": 7042,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "4677b5b23b8bcad6c77d196ed8035ea8bd9979bde44cde3ff3de5906eddccbaa"
+    },
+    {
+      "source_path": "gh-pages/png/kq-ketiv-velo-qere-2.png",
+      "mode": "100644",
+      "git_blob": "eefe293583176717d2e7894bd15c2e7e697204af",
+      "bytes": 5412,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "a60eaa58ff0b15d8c526a85baf4fd15a5ad0974040227d1f61fef06236739c19"
+    },
+    {
+      "source_path": "gh-pages/png/kq-qere-velo-ketiv.png",
+      "mode": "100644",
+      "git_blob": "61aa362fc9c5966a756cad93f4f7e6a9b5359a94",
+      "bytes": 4247,
+      "destination_path": "gh-pages/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "29e3e8c746c200504abeaea01658b12c0ee21d0046f357a375f857c9a35df97b"
+    },
+    {
+      "source_path": "gh-pages/png/par-petuḥah-type-1-number-1.png",
+      "mode": "100644",
+      "git_blob": "71e2d2d0b63a87a9d80a47f5960b64dcf2c0955f",
+      "bytes": 24880,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-petuḥah-type-1-number-1.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "9032a589472b26883160ba09acbd8dd0f1ea2aaf362b66b8da37fffb8a560805"
+    },
+    {
+      "source_path": "gh-pages/png/par-petuḥah-type-1-number-2.png",
+      "mode": "100644",
+      "git_blob": "408a06ff7c0dfafbe51fc52f669ee97281dff5ee",
+      "bytes": 76308,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-petuḥah-type-1-number-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "ffc385ebcff11c4896cec1b8e2d550e1316f742295026c0c8e2e62c538ed867b"
+    },
+    {
+      "source_path": "gh-pages/png/par-petuḥah-type-2.png",
+      "mode": "100644",
+      "git_blob": "2d587f184bb121f1c3937223365f3d346f18a61c",
+      "bytes": 10806,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-petuḥah-type-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "6b6694a46c20e7878ed4736a5ba77fcc08e44300e8c52504828549a1dcbaa11a"
+    },
+    {
+      "source_path": "gh-pages/png/par-setumah-type-1-number-1.png",
+      "mode": "100644",
+      "git_blob": "41131629cb4f2aefd2307890d329fcfd9c4a57ec",
+      "bytes": 9077,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "72bc235fed9700c86f3997c93c4118e93d2907a112df6854d202b32a9b236f15"
+    },
+    {
+      "source_path": "gh-pages/png/par-setumah-type-1-number-2.png",
+      "mode": "100644",
+      "git_blob": "b0c22ecf4d092392250af3184ca3ac13c045ee03",
+      "bytes": 57986,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "958343ac31fbff8445854b445660f44e104ec89ded3d02dc4a8cda34059e62a9"
+    },
+    {
+      "source_path": "gh-pages/png/par-setumah-type-2.png",
+      "mode": "100644",
+      "git_blob": "e9a554d663d968928751c31352aca2cd9a3c7324",
+      "bytes": 55375,
+      "destination_path": "gh-pages/MAM-OSIS/png/par-setumah-type-2.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "04f143436ac4fd9194b73512ab22ec1db12f35ec466570128b83ce79ce4fc215"
+    },
+    {
+      "source_path": "gh-pages/png/paseq.png",
+      "mode": "100644",
+      "git_blob": "e0bb2a1560fe104318611010fbb617c78c1692d1",
+      "bytes": 31887,
+      "destination_path": "gh-pages/MAM-OSIS/png/paseq.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "5d40db8880c4f36601f003a72b4f1bcb11239b4c2549f63568c7dc93e5fe91a1"
+    },
+    {
+      "source_path": "gh-pages/png/scrdff.png",
+      "mode": "100644",
+      "git_blob": "b20d012ecae1479ebef7e6950fa0fbed242b07e1",
+      "bytes": 24709,
+      "destination_path": "gh-pages/MAM-OSIS/png/scrdff.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "bc003c5cf79afb6bbaac407363d111765f049539a8db7098d9f05e27a791ec16"
+    },
+    {
+      "source_path": "gh-pages/png/shirah-space.png",
+      "mode": "100644",
+      "git_blob": "eca78aa03ccce73cff15f57726b88e1b07e7157e",
+      "bytes": 97724,
+      "destination_path": "gh-pages/MAM-OSIS/png/shirah-space.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "4e8d65bd88aac476acd70547c92c36f6b803abf7c2c66d2d0fc2c8114669c757"
+    },
+    {
+      "source_path": "gh-pages/png/sm-lett-absent-OSIS.png",
+      "mode": "100644",
+      "git_blob": "96d81f904567b75531e221deb27f5f27caaab0f4",
+      "bytes": 21318,
+      "destination_path": "gh-pages/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "d5e3c1ea918e3322ae944607cbe76f1c5587ce0bd5f185138e7a42cf87e9b481"
+    },
+    {
+      "source_path": "gh-pages/png/sm-lett-and-lg-lett-absent-OSIS.png",
+      "mode": "100644",
+      "git_blob": "fadfa25633c55e8969e886b0d98177ea16f52a47",
+      "bytes": 28961,
+      "destination_path": "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "a0b3c9c2541b79d8fddb9b6bed559ac6ec3346801a057bc9a3ca796dc3270ff2"
+    },
+    {
+      "source_path": "gh-pages/png/sm-lett-and-lg-lett-present-WS.png",
+      "mode": "100644",
+      "git_blob": "08c6716d9e9d3a2d9eb2b586b6aee212640f808d",
+      "bytes": 8469,
+      "destination_path": "gh-pages/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "6d31ac2fccd698c73560d6bff4a7f5fcc6e5a99b4cc0bf360334bc78d930fd7e"
+    },
+    {
+      "source_path": "gh-pages/png/sm-lett-present-WS.png",
+      "mode": "100644",
+      "git_blob": "80083990080c63af556f37f3d82928b3efd1a0c5",
+      "bytes": 6718,
+      "destination_path": "gh-pages/MAM-OSIS/png/sm-lett-present-WS.png",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "0853d3d3e63b80bf8dff937cd256d6b57229ac0e0e9a4b2030ac5e630a949280"
+    },
+    {
+      "source_path": "gh-pages/two_col_style.css",
+      "mode": "100644",
+      "git_blob": "1019edf532cdd118234264e38756ab2d7c4b5f5a",
+      "bytes": 1601,
+      "destination_path": "gh-pages/MAM-OSIS/two_col_style.css",
+      "disposition": "land-published",
+      "reason": "Published page and static assets; pure prefix copy.",
+      "sha256": "b3ceb8dbbffb3910de986508d7acf36c63c2b0121bb9167af5846f91b4979a02"
+    },
+    {
+      "source_path": "header.xml",
+      "mode": "100644",
+      "git_blob": "aaf424404c3c9e34e0e1be569784fadde19ebf2d",
+      "bytes": 1503,
+      "destination_path": "MAM-OSIS/header.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "c75324f5b433fe57127b7790433f6df9e036eb8568fd44772719bc6da88bfa8c"
+    },
+    {
+      "source_path": "mapm.conf",
+      "mode": "100644",
+      "git_blob": "c059c7fab7e66ed8dcaf6715f128833d4f7dcbbc",
+      "bytes": 2825,
+      "destination_path": "MAM-OSIS/mapm.conf",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "de1f75071e44cb0efae7451f6a9b89b2d9b2fd373041487df14ee259a8113589"
+    },
+    {
+      "source_path": "mapm.osis.xml",
+      "mode": "100644",
+      "git_blob": "212ee32383a57b50ac854e19ee6e006aabdc48e7",
+      "bytes": 6800731,
+      "destination_path": "MAM-OSIS/mapm.osis.xml",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "9136eb85906a59a4511fa8e29a8d30773e81065fd451fb24f29be7af4201207b"
+    },
+    {
+      "source_path": "osis2mod example command.txt",
+      "mode": "100644",
+      "git_blob": "cf358fa0efb3baa2a981afc29b85b9b325fc1681",
+      "bytes": 291,
+      "destination_path": "MAM-OSIS/osis2mod example command.txt",
+      "disposition": "land-product",
+      "reason": "Current product, metadata, documentation, or product attributes; pure prefix copy.",
+      "sha256": "7f411fe3ae5462b042eaf5b4647b90647576b6f0055f5b446190b40fd7df9979"
+    },
+    {
+      "source_path": "py/tests/test_h_dot_below_nfc.py",
+      "mode": "100644",
+      "git_blob": "553884f14fec25553be4bc5609178ce1cacc415d",
+      "bytes": 11643,
+      "destination_path": "MAM-OSIS/py/tests/test_h_dot_below_nfc.py",
+      "disposition": "land-checker-for-later-merge",
+      "reason": "Preserve the initial source blob only. Git-root discovery does not provide product scope here. Task 5C merges scope into the canonical checker and disposes of this duplicate.",
+      "sha256": "365396ad0bbfaad824299c2eabbaf07d2cf9a371b92192d52c827fd404b18ea8"
+    }
+  ],
+  "inherited_whitespace": {
+    "explanation": "The last line of each file is two tabs inherited exactly from the source blob. No source whitespace is changed during Land.",
+    "diagnostics": 42,
+    "files": 21,
+    "findings": [
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+        "line": 2035,
+        "problem": "trailing whitespace.",
+        "source_blob": "c27d5c8679ae578a13d94415ce202a3672650750"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/1Kgs-2Kgs.xml",
+        "line": 2035,
+        "problem": "new blank line at EOF.",
+        "source_blob": "c27d5c8679ae578a13d94415ce202a3672650750"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+        "line": 2410,
+        "problem": "trailing whitespace.",
+        "source_blob": "a711c4fa9d0a455a40b890261b212da8e4ecb2bb"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/1Sam-2Sam.xml",
+        "line": 2410,
+        "problem": "new blank line at EOF.",
+        "source_blob": "a711c4fa9d0a455a40b890261b212da8e4ecb2bb"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Dan.xml",
+        "line": 472,
+        "problem": "trailing whitespace.",
+        "source_blob": "27eafbb01e3ee0dc4acb89380840b5b2702e494e"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Dan.xml",
+        "line": 472,
+        "problem": "new blank line at EOF.",
+        "source_blob": "27eafbb01e3ee0dc4acb89380840b5b2702e494e"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+        "line": 409,
+        "problem": "trailing whitespace.",
+        "source_blob": "512d60b6da25a9fa963b07d0c99d3e3f16bd674e"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Eccl.xml",
+        "line": 409,
+        "problem": "new blank line at EOF.",
+        "source_blob": "512d60b6da25a9fa963b07d0c99d3e3f16bd674e"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Esth.xml",
+        "line": 306,
+        "problem": "trailing whitespace.",
+        "source_blob": "e9c110a8283c5ee33a9a6d89b1e0c0e5f6c9e0c7"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Esth.xml",
+        "line": 306,
+        "problem": "new blank line at EOF.",
+        "source_blob": "e9c110a8283c5ee33a9a6d89b1e0c0e5f6c9e0c7"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Exod.xml",
+        "line": 1747,
+        "problem": "trailing whitespace.",
+        "source_blob": "b4df3ab3aa95c628f7ffc170b37538edcf2274bb"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Exod.xml",
+        "line": 1747,
+        "problem": "new blank line at EOF.",
+        "source_blob": "b4df3ab3aa95c628f7ffc170b37538edcf2274bb"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+        "line": 1765,
+        "problem": "trailing whitespace.",
+        "source_blob": "b44073f707e0c96f2545f8f7bd5a630ca902e769"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ezek.xml",
+        "line": 1765,
+        "problem": "new blank line at EOF.",
+        "source_blob": "b44073f707e0c96f2545f8f7bd5a630ca902e769"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+        "line": 997,
+        "problem": "trailing whitespace.",
+        "source_blob": "cdd67a0874874254ec22a771412b14920bd8e678"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ezra-Neh.xml",
+        "line": 997,
+        "problem": "new blank line at EOF.",
+        "source_blob": "cdd67a0874874254ec22a771412b14920bd8e678"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Gen.xml",
+        "line": 1838,
+        "problem": "trailing whitespace.",
+        "source_blob": "789494b4a5a1a1dc2a54ad9d32c8be8bbd3650e2"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Gen.xml",
+        "line": 1838,
+        "problem": "new blank line at EOF.",
+        "source_blob": "789494b4a5a1a1dc2a54ad9d32c8be8bbd3650e2"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Isa.xml",
+        "line": 1909,
+        "problem": "trailing whitespace.",
+        "source_blob": "9e588c431e33f1172ac46c2f07e63a44514ac27c"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Isa.xml",
+        "line": 1909,
+        "problem": "new blank line at EOF.",
+        "source_blob": "9e588c431e33f1172ac46c2f07e63a44514ac27c"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Jer.xml",
+        "line": 1981,
+        "problem": "trailing whitespace.",
+        "source_blob": "9cf54577b7743b79403dfca2f88e3f6c74f107fc"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Jer.xml",
+        "line": 1981,
+        "problem": "new blank line at EOF.",
+        "source_blob": "9cf54577b7743b79403dfca2f88e3f6c74f107fc"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Job.xml",
+        "line": 4579,
+        "problem": "trailing whitespace.",
+        "source_blob": "3f4a1ce0e0e25dc1481a100e6557a9141ca6c4ce"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Job.xml",
+        "line": 4579,
+        "problem": "new blank line at EOF.",
+        "source_blob": "3f4a1ce0e0e25dc1481a100e6557a9141ca6c4ce"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Josh.xml",
+        "line": 1053,
+        "problem": "trailing whitespace.",
+        "source_blob": "f11604a472b8e5fa92f3d5ac2e9dd29077b159f5"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Josh.xml",
+        "line": 1053,
+        "problem": "new blank line at EOF.",
+        "source_blob": "f11604a472b8e5fa92f3d5ac2e9dd29077b159f5"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Judg.xml",
+        "line": 1162,
+        "problem": "trailing whitespace.",
+        "source_blob": "ba705c3ebac7d46c637264b925197e9aac27fda6"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Judg.xml",
+        "line": 1162,
+        "problem": "new blank line at EOF.",
+        "source_blob": "ba705c3ebac7d46c637264b925197e9aac27fda6"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Lam.xml",
+        "line": 280,
+        "problem": "trailing whitespace.",
+        "source_blob": "8bd620241b56b22e956c4f28e6787844f800ab7a"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Lam.xml",
+        "line": 280,
+        "problem": "new blank line at EOF.",
+        "source_blob": "8bd620241b56b22e956c4f28e6787844f800ab7a"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Lev.xml",
+        "line": 1124,
+        "problem": "trailing whitespace.",
+        "source_blob": "9fb13382fdc84d78a3b79c3084de39f8dcabd5a4"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Lev.xml",
+        "line": 1124,
+        "problem": "new blank line at EOF.",
+        "source_blob": "9fb13382fdc84d78a3b79c3084de39f8dcabd5a4"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Num.xml",
+        "line": 1672,
+        "problem": "trailing whitespace.",
+        "source_blob": "9bfcfc52ff142561835e82ba1cd99d670b27c344"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Num.xml",
+        "line": 1672,
+        "problem": "new blank line at EOF.",
+        "source_blob": "9bfcfc52ff142561835e82ba1cd99d670b27c344"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Prov.xml",
+        "line": 4045,
+        "problem": "trailing whitespace.",
+        "source_blob": "c40882c938c1561f0de4742386065fa478e372ea"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Prov.xml",
+        "line": 4045,
+        "problem": "new blank line at EOF.",
+        "source_blob": "c40882c938c1561f0de4742386065fa478e372ea"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ps.xml",
+        "line": 12065,
+        "problem": "trailing whitespace.",
+        "source_blob": "8433ebf213b3eda4843f61fc91e67850587139ec"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ps.xml",
+        "line": 12065,
+        "problem": "new blank line at EOF.",
+        "source_blob": "8433ebf213b3eda4843f61fc91e67850587139ec"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+        "line": 108,
+        "problem": "trailing whitespace.",
+        "source_blob": "2d5e9982b21f5e204d7072ef968bdfcc8512ef8a"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Ruth.xml",
+        "line": 108,
+        "problem": "new blank line at EOF.",
+        "source_blob": "2d5e9982b21f5e204d7072ef968bdfcc8512ef8a"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Song.xml",
+        "line": 177,
+        "problem": "trailing whitespace.",
+        "source_blob": "45e47eed6b67cf7743addfff92b4639adde17aec"
+      },
+      {
+        "path": "MAM-OSIS/MAPM-orig-24/Song.xml",
+        "line": 177,
+        "problem": "new blank line at EOF.",
+        "source_blob": "45e47eed6b67cf7743addfff92b4639adde17aec"
+      }
+    ],
+    "remaining_staged_diff_check": "Passed after excluding exactly these 21 source-identical historical paths."
+  },
+  "staged_identity_verification": {
+    "verified": true,
+    "selected_files": 90,
+    "selected_bytes": 29821603,
+    "method": "Compare git ls-files --stage -z against every selected source row; read each staged blob with git cat-file blob and compare mode, Git blob ID, byte count, and SHA-256. Require the complete destination path set to equal the selected path set.",
+    "osis_example_files": 24,
+    "osis_example_path": "MAM-simple/py-examples-out/osis/",
+    "osis_example_commit": "dc0e60edf6aab7fec6cc45b42002ce7541b12498",
+    "osis_example_result": "All 24 MAPM-24 book blobs match the committed example blobs by filename and Git object ID."
+  }
+}
