@@ -231,10 +231,11 @@ _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 # What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
 # its published pages, its downloaded page scans, and its derived trees -- four of
 # them until 2026-09-10, when phase 3 of doc/PLAN-mega-coverage.md deleted one with
-# the program that wrote it. Its aleppo-wiki/ is deliberately NOT excluded -- the CSV
-# there is J David Stark's hand-made index and the .docx and .xlsx precursors beside
-# it are the same index in Office form, which is why both extensions are in
-# _BINARY_EXTENSIONS above.
+# the program that wrote it. Its aleppo-wiki/ is deliberately NOT excluded -- J David
+# Stark's hand-made index is there in the forms under precursors/, and the .docx and
+# .xlsx among them are the same index in Office form, which is why both extensions
+# are in _BINARY_EXTENSIONS above. A CSV form of the index sat beside precursors/
+# until 2026-09-10, when phase 6b of the same plan deleted it.
 _AC_EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
     "aleppo-pages/",
@@ -390,13 +391,16 @@ def _scopes() -> tuple[_Scope, ...]:
             # dotfile went with that last one, .claude/ having held nothing else.
             # On 2026-09-10 phase 3 of doc/PLAN-mega-coverage.md deleted the three
             # generated index files under aleppo-wiki/ with the program that wrote
-            # them, taking the scope from 21 files to 18, measured that day. So the
-            # floor is 17,
+            # them, taking the scope from 21 files to 18, measured that day. Phase 6b
+            # of the same plan then deleted test-data-from-book-of-job.json, with the
+            # word-finding check that read it, and J David Stark's CSV under
+            # aleppo-wiki/, taking the scope to 16, measured the same day. So the
+            # floor is 15,
             # which keeps meaning "an exclusion filter swallowed everything" rather
             # than asserting a tree size, and is what would catch this scope
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
             # binary; the .docx beside it is excluded the same way.
-            floor=17,
+            floor=15,
         ),
         _Scope(
             label="Cambridge 1753 data",

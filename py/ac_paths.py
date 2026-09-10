@@ -28,7 +28,6 @@ twice.
 AC_TOP_LEVEL_MODULES = (
     "ac_paths.py",
     "check_ac_all.py",
-    "check_ac_word_finding.py",
     "main_ac_check_line_breaks.py",
     "main_ac_download_pages.py",
     "main_ac_find_word_in_images.py",
@@ -39,11 +38,12 @@ AC_TOP_LEVEL_MODULES = (
     "main_ac_gen_line_break_editor.py",
     "main_ac_merge_line_markers.py",
 )
-"""codex-index-aleppo's modules at the top of this repo's ``py/``: twelve of the
-fifteen that landed here.  The other three were removed on 2026-09-10: the Wikisource
+"""codex-index-aleppo's modules at the top of this repo's ``py/``: eleven of the
+fifteen that landed here.  The other four were removed on 2026-09-10: the Wikisource
 index generator and the column-coordinate plots by Ben's decision that day, which
-phase 3 of ``doc/PLAN-mega-coverage.md`` records, and the kraken baseline-segmentation
-wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the same plan.
+phase 3 of ``doc/PLAN-mega-coverage.md`` records, the kraken baseline-segmentation
+wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the same plan, and
+``check_ac_word_finding.py`` by phase 6b, which first made it pass again.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the
@@ -133,9 +133,10 @@ def novc_dir() -> Path:
 
 
 def wiki_dir() -> Path:
-    """``aleppo-wiki/`` -- J David Stark's index in its source forms, two snapshots of
-    the Wikisource page built by hand from it, and the hand-corrected
-    ``index-flat-corrected.json`` that ``main_ac_gen_index_flat_annotated`` reads."""
+    """``aleppo-wiki/`` -- J David Stark's index in its source forms under
+    ``precursors/``, two snapshots of the Wikisource page built by hand from it, and
+    the hand-corrected ``index-flat-corrected.json`` that
+    ``main_ac_gen_index_flat_annotated`` reads."""
     return ac_data_root() / "aleppo-wiki"
 
 
@@ -158,9 +159,3 @@ def check_line_breaks_html_path() -> Path:
     """The line-break check's HTML report (``<data_root>/check_line_breaks.html``),
     tracked, and rewritten by every run of ``py_ac_loc.check_line_breaks``."""
     return ac_data_root() / "check_line_breaks.html"
-
-
-def word_finding_test_data_path() -> Path:
-    """``<data_root>/test-data-from-book-of-job.json`` -- the minimal extract of
-    book-of-job's enriched quirk records that ``check_word_finding`` runs against."""
-    return ac_data_root() / "test-data-from-book-of-job.json"
