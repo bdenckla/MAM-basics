@@ -11,10 +11,11 @@ Terms. An **atom** is one written word between spaces or maqafs; a **chanted wor
 3. **UXLC 3.9 and WLC record both U+05BD: established for the transcriptions. The Leningrad Codex itself was not consulted.** Section 2.
 4. **The photograph of Cambridge University Library MS Add. 1753 shows two strokes, one under the mem and one under the he: established at the resolution of the derived page image.** Section 3.
 5. **mgketer's transcription of Mikra'ot Gedolot ha-Keter records both U+05BD: established.** Section 2.
-6. **Koren has only the U+05BD on the mem: Ben's reading, 2026-09-10.** Koren's text is not on disk, so the reading is Ben's alone.
-7. **Phonetic MAM stresses the last syllable, which it does by construction and which therefore decides nothing.** Its `jta` for the atom is `men.!hu`. It takes the last U+05BD of every verse-final chanted word as the silluq (`doc/meteg-after-silluq-koren-lookup-candidates.md`, figure 7 of its section on the figures).
-8. **The evidence on disk favours penultimate stress, which makes the U+05BD on the he a meteg after the silluq, as at 1 Kings 7:37: favoured, not proven, and raised for Ben in section 4.** Koren, at this verse and at Psalms 72:15, and MAM's parallels with the same suffix favour it. Against it there is only that Yeivin and Breuer both describe, in other words, a meteg of the shape the U+05BD on the mem would have if the stress were on the last syllable.
-9. **Neither Yeivin nor Breuer mentions Job 4:12, this form, or where the stress of its suffix falls: not found.** Section 5.
+6. **Koren has only the U+05BD on the mem: Ben's reading, 2026-09-10.** Koren's text is not on disk, so the reading is Ben's alone. Ben also reported Koren's simple sheva under the nun as silent (`in/meteg_after_silluq_koren_readings.json`).
+7. **The Simanim Tanakh has both U+05BD, on the mem and on the he, and its simple sheva under the nun is silent: Ben's reading, 2026-09-10, on its page 1172.** Its base text is the Aleppo Codex (`doc/simanim-tanakh-signs.md`, ma'ala 1). It prints a vocal sheva as two enlarged squares and a silent one as two small round dots (ma'ala 7), so on the sheva it agrees with Koren and with Phonetic MAM. It also supplies metegs the manuscripts omit, chiefly before a vocal sheva and before a hataf (ma'ala 12); neither of its two marks here stands before either. Having both marks, it does not bear on which one is the silluq.
+8. **Phonetic MAM stresses the last syllable, which it does by construction and which therefore decides nothing.** Its `jta` for the atom is `men.!hu`. It takes the last U+05BD of every verse-final chanted word as the silluq (`doc/meteg-after-silluq-koren-lookup-candidates.md`, figure 7 of its section on the figures).
+9. **The evidence on disk favours penultimate stress, which makes the U+05BD on the he a meteg after the silluq, as at 1 Kings 7:37: favoured, not proven, and raised for Ben in section 4.** Koren, at this verse and at Psalms 72:15, and MAM's parallels with the same suffix favour it. Against it there is only that Yeivin and Breuer both describe, in other words, a meteg of the shape the U+05BD on the mem would have if the stress were on the last syllable.
+10. **Neither Yeivin nor Breuer mentions Job 4:12, this form, or where the stress of its suffix falls: not found.** Section 5.
 
 ## 2. What each transcription and edition has at Job 4:12
 
@@ -25,6 +26,7 @@ Terms. An **atom** is one written word between spaces or maqafs; a **chanted wor
 | WLC 4.22 and WLC 4.20 | the same letters and marks as UXLC 3.9's form, without its U+034F | on the mem and on the he | line 1242 of `out/wlc422-u/1verses_09_jbpr.json` and of `out/wlc420-u/1verses_09_jbpr.json` |
 | mgketer (Mikra'ot Gedolot ha-Keter) | מֶֽנְהֽוּ | on the mem and on the he | `C:/Users/BenDe/GitRepos/MAM-private/mgketer/out/D3-Job/mgketer-json-massaged/D3-Job_04.json` line 445; the unmassaged token, line 457 of `chapters-json-phase-2/D3-Job_04.json`, has the same marks |
 | Koren | מֶֽנְהוּ׃ | on the mem only | Ben, 2026-09-10; the form is the "First mark only" cell of rank 3 in `doc/meteg-after-silluq-koren-lookup-candidates.md` |
+| The Simanim Tanakh | not shown: Ben's report names the marks, not the whole pointing | on the mem and on the he | Ben, 2026-09-10, page 1172; its simple sheva under the nun is silent |
 
 UXLC's form has U+034F COMBINING GRAPHEME JOINER between the meteg and the segol on the mem, which is UXLC's coding of what its header calls a leading meteg (`uxlc/in/UXLC-rest/TanachHeader.xml` line 939); the WLC conversions have the meteg ahead of the segol with no joiner. Where a meteg stands relative to its vowel is not evidence here (section 4). Every transcription has MAM's two letter positions, so under the definitions of the screen of MAM against UXLC, WLC and mgketer (`doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md`) Job 4:12 falls in its class (i) against all four, which is why that screen lists it nowhere. This is Claude's inference from the forms, not a figure the screen reports.
 
@@ -67,7 +69,7 @@ The meteg is then on a short vowel in a closed syllable immediately before the s
 
 1. **Both books describe such a meteg, in other words.** Breuer's irregular heavy ga'aya can stand on the first syllable before the accent, and he takes its cause to be phonetic where the next syllable begins with a guttural, a labial or a soft bgdkpt letter (CoS chapter 8 §25). Yeivin's phonetic gaʿya includes a short vowel before a syllable beginning with a guttural (ITM §350), and he counts about 60 closed-syllable gaʿyas immediately before the accent (§324). Against it: Yeivin calls such a closed syllable generally unsuitable for gaʿya in the poetic system (§374), and Breuer's poetic-system section puts a first-before-the-accent irregular heavy ga'aya mostly in a merkha word serving revia' mugrash, naming no siluk word (CoS chapter 14 §8c).
 2. **Breuer's note names only 1 Kings 7:37.** If his editions have both strokes at Job 4:12, the note did not count the one on the he as a type-j ga'aya after the siluk, which it would be under penultimate stress. This is Claude's inference; his editions were not consulted.
-3. **Phonetic MAM's stress on the last syllable is no evidence**, since it follows by construction (section 1, item 7).
+3. **Phonetic MAM's stress on the last syllable is no evidence**, since it follows by construction (section 1, item 8).
 
 ### Stroke position is not evidence, and the argument from it is withdrawn
 
