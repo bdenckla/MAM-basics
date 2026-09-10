@@ -77,74 +77,41 @@ accgram-survey-post-stress-meteg` rewrote 16 tracked files: 15 byte-identical, a
 `out/vendoring_compare_out.txt`, whose LAST_SYNCED date for the `provenance.py` copy moved because
 phase 1 recommitted that copy. Suite: 988 passed, 5 skipped.
 
-## Phase 3 — remove the Wikisource index generators, the plots, and the Sefaria download
+## Phase 3 — remove the Wikisource index generators, the plots, and the Sefaria download: DONE, `985262e2`
 
-Ben's decisions, 2026-09-10: the Wikisource index generators "were one-off programs generating
-wikitext to get a human started, and will never be run again. So not only don't make them part of
-mega, remove them (and their outputs) from the repo entirely!"; of the plots, "remove them from the
-repo entirely. They were one-time experiments."; and "Let's get rid of in/mam-from-sefaria. I think
-I occasionally used it interactively, as a reference, but I have no plans to use it again." The
-outputs of the first two go too, and so does the download that writes the third: "Yeah, you can
-ditch the command, too. I'm no longer interested in tracking what sefaria does with what we give
-them (which was the point of this command, and that directory of this command's output)."
+Ben's decisions, 2026-09-10: the two Wikisource index generators "will never be run again", so
+"remove them (and their outputs) from the repo entirely!"; the column-coordinate plots "were
+one-time experiments"; and "Let's get rid of in/mam-from-sefaria", with its download command,
+since "I'm no longer interested in tracking what sefaria does with what we give them".
 
-**Delete** (`git rm`):
-- `py/main_ac_wikisource_page.py`, the package `py/ac_wiki/`, and its three outputs
-  `aleppo/aleppo-wiki/index-flat.json`, `index-grouped-by-book.json` and `index.wiki`;
-- `py/main_lenin_wikisource_page.py`, the package `py/lenin_wiki/`, `py/lenin_paths.py`, and
-  `leningrad/lenin-wiki/` with its three files;
-- `py/main_ac_plot_col_coords.py`, `py/py_ac_loc/plot_col_coords.py`, and
-  `aleppo/plot_col_coords-out/` with its three PNGs;
-- `in/mam-from-sefaria/`, its 39 CSVs, and the `fr-sefaria` subcommand of `py/main_download.py`,
-  together with any module only that subcommand uses.
+64 files deleted and 20 edited, `CLAUDE.md`, `py/ac_paths.py` and `py/repo_scopes.py` among them;
+no Leningrad code remains. The pipeline graph was regenerated with Graphviz 16.0.0: its `.dot` lost
+exactly the Sefaria node and edge, and Graphviz re-laid out the `.svg` around the gap.
+`py/tests/test_h_dot_below_nfc.py`'s "Aleppo data" floor went from 19 to 17, that scope having lost
+three files. Suite: 988 passed, 5 skipped.
 
-**Keep:** the rest of `aleppo/aleppo-wiki/`: J David Stark's CSV, `LICENSE.txt`,
-`Wikisource-URL.txt`, the two `Wikisource-manual-*.txt` snapshots of the hand work,
-`index-flat-corrected.json` (which `py/main_ac_gen_index_flat_annotated.py` reads), `precursors/`
-and `provenance.md`. Keep `leningrad/README.md` and `leningrad/page-snips/`.
+## Phase 4 — skip the census in the cloud, then fold `py/main_uxlc_mega.py` into the mega
 
-**Edit**, and re-run the reference sweep afterwards; only dated records under `doc/` may still
-name what was removed:
-- `py/ac_paths.py`: `AC_PACKAGES` and `AC_TOP_LEVEL_MODULES` lose the removed modules, their
-  docstrings' counts follow, and the accessors that only the removed programs used go:
-  `plot_col_coords_out_dir`, `wiki_index_csv_path`, `wiki_index_flat_path`,
-  `wiki_index_grouped_path` and `wiki_index_wikitext_path`. `wiki_dir`'s and
-  `flat_index_corrected_path`'s docstrings stop describing a pipeline.
-- `py/repo_scopes.py`: drop `lenin_paths` from the imports and from `code_paths()`, and rewrite the
-  docstring's sentences about codex-index-leningrad's modules and the Leningrad tree.
-- `CLAUDE.md`: the two paragraphs in §"The MAM introduction is mirrored at `in/mam-ws-intro/`"
-  about the two generators; and the current-state sentences of §"codex-index-leningrad has been
-  evacuated".
-- `leningrad/README.md`, whose `lenin-wiki/` bullet goes; and `leningrad/page-snips/README.md`,
-  whose sentence "`lenin-wiki/index.wiki` has both links for every folio" must point at the
-  published page instead. Before rewording, check that
-  `in/mam-ws-intro/index-leningrad.mediawiki` has both kinds of image link.
-- `DATA-LICENSES.md`'s `leningrad/lenin-wiki/` row, and any row naming the other removed outputs.
-- `py/subcommands/download_wikisource_intro.py`'s docstring paragraph about the two generators.
-- `py/tests/test_no_machine_paths_in_artifacts.py` (entries for `leningrad/lenin-wiki` and the three
-  `aleppo/aleppo-wiki/` outputs) and `py/tests/test_h_dot_below_nfc.py` (`plot_col_coords-out/`
-  in `_AC_EXCLUDE_DIR_PREFIXES` and the comment above it that counts the derived trees; and its
-  listing of `in/mam-from-sefaria`).
-- `py/hkq_cmn/uxlc_manuscript_page.py`, whose docstring cites `py/lenin_wiki/image_urls.py`: state
-  the URL pattern there instead.
-- `py/pipeline_graph/pipeline_graph_spec.py`, which draws the Sefaria download (with an edge to
-  `out/`, though it wrote to `in/`): remove it, and regenerate the tracked graph with
-  `py/main_pipeline_graph.py`.
-- `doc/mega-coverage-2026-09-10.md`: the rows for all of these programs.
+Two commits, in this order.
 
-**Raise, do not act:** `uxlc/data/lci_augrecs.json` and J David Stark's CSV each lose their only
-reader. Report both.
+**First commit: skip `near-aleppo-census` in a cloud session.** Ben's decision, 2026-09-10: "the
+near-aleppo census should be skipped if mega detects that mega is running in the cloud." A cloud
+run without MAM-private otherwise dies at that step, one step before the survey that phase 2
+taught to skip.
+1. In `_run_near_aleppo_census` in `py/main_0_mega.py`, do what phase 2 did for the survey: when
+   `graphviz_pin.in_cloud_session()` is true, append the step and its reason to
+   `_CLOUD_SKIPPED_STEPS`, print the notice to stderr, and return before the subprocess.
+2. Update the module docstring and `_report_cloud_skips`' docstring, which name only the survey as
+   skipped, and the census step's note.
+3. Verify with a throwaway script that sets `CLAUDE_CODE_REMOTE=true`, replaces `subprocess.run`
+   with a stub that raises, so that the census cannot run, calls the step's runner and then
+   `_report_cloud_skips`, and shows the step skipped and listed. Never run the census itself. Then
+   the full suite, and commit.
 
-**Not expected to change:** any generated file other than the deleted ones and the pipeline graph.
-The suite must stay green, since `ac_paths.code_paths()` fails loudly on a listed file that is
-gone.
-
-## Phase 4 — fold `py/main_uxlc_mega.py` into the mega
-
-Ben agreed, 2026-09-10. That orchestrator runs five programs in this order:
-`main_uxlc_check_changes`, `main_fois`, `main_write_page_break_info`, `main_amb_early_mtg` and
-`main_uxlc_word_list`. Each is called through its `main()`.
-
+**Second commit: fold `py/main_uxlc_mega.py` into the mega.** Ben agreed, 2026-09-10. That
+orchestrator runs five programs in this order: `main_uxlc_check_changes`, `main_fois`,
+`main_write_page_break_info`, `main_amb_early_mtg` and `main_uxlc_word_list`. Each is called
+through its `main()`.
 1. Add the five as steps of `_STEPS`, in that order, immediately before `find-uxlc-accent-changes`.
    That position matters: `main_uxlc_check_changes` writes `in/UXLC-misc/all_changes.json`, which
    `find-uxlc-accent-changes` reads and nothing in the mega rebuilds today. Give each a note naming
@@ -204,11 +171,10 @@ entry point before wiring it; call the function its command line reaches.
    `parse-go`, failing the mega on any error, as `py/subcommands/download_google.py`'s `run` does;
    that download path keeps its own call. Today the check runs only there, inside
    `py/main_download.py fr-google`, while the mega's `parse-go` step runs the same parse and skips
-   the check that follows it on the download path. Ben,
-   2026-09-10: running it in the mega "checks the check", making sure the check itself still
-   works. It also covers the other way the plus JSON changes: `parse-go` regenerates it from the
-   tracked CSVs on every mega run, so a change to the parser, or to the check's own rules, reaches
-   the data with no download at all.
+   the check that follows it on the download path. Ben, 2026-09-10: running it in the mega "checks
+   the check", making sure the check itself still works. It also covers the other way the plus
+   JSON changes: `parse-go` regenerates it from the tracked CSVs on every mega run, so a change to
+   the parser, or to the check's own rules, reaches the data with no download at all.
 8. **Fix `ws-bot-proto`'s `warnings.json`.** Warnings are collected only for an edit file. The
    mega's run has none: `no_edits()` in `py/ws/ws_bot_edit.py` returns a context with no
    `get-warnings` key, so `write_warnings` returns without writing, and the tracked
@@ -226,7 +192,8 @@ Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
 2. The `__main__` blocks of the eight `py/py_ac_loc/` and five `py/py_cam1753_loc/` modules. Keep
-   each `main()` that a `main_ac_*` or `main_cam1753_*` wrapper calls.
+   each `main()` that a `main_ac_*` or `main_cam1753_*` wrapper calls. (Phase 3 already deleted
+   `py/py_ac_loc/plot_col_coords.py`, one of the eight.)
 3. `py/ws/ws_tmpl_parser.py`'s `__main__` block, with `_do_quick_test` and the test-case tables only
    it uses.
 4. `py/main_ac_kraken_seg_baselines.py` and `py/py_ac_loc/kraken_seg_baselines.py`, and their entry
@@ -251,8 +218,19 @@ Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
       `ac_paths.word_finding_test_data_path()`. Remove its import, list entry and docstring line
       from `py/check_ac_all.py`, and its entry from `ac_paths.AC_TOP_LEVEL_MODULES`.
       `py/check_cam1753_all.py`'s docstring compares its own check with this one, so update that
-      sentence.
-11. Verify: the reference sweep for every deleted name, the full suite.
+      sentence. Deleting the fixture shrinks `py/tests/test_h_dot_below_nfc.py`'s "Aleppo data"
+      scope again, so lower its floor again, by the file's own convention of one below the count.
+11. **J David Stark's `aleppo/aleppo-wiki/J David Stark Aleppo Codex Index.csv`.** Ben,
+    2026-09-10: "That Stark CSV file can be removed." Nothing has read it since phase 3 removed the
+    Aleppo index generator. Keep `LICENSE.txt`, which still covers `index-flat-corrected.json`, a
+    hand-corrected form of the same index, and keep `precursors/`, which Ben's answer did not name.
+    Update what describes the CSV: `aleppo/aleppo-wiki/provenance.md`, `DATA-LICENSES.md`,
+    `ac_paths.wiki_dir()`'s docstring, and the comment in `py/tests/test_h_dot_below_nfc.py` that
+    explains why `aleppo-wiki/` is in its scope. That deletion shrinks the "Aleppo data" scope too,
+    so set its floor once, after both deletions.
+12. `doc/PLAN-repo-maintenance-across-GitRepos.md`, a live runbook, still names `py/lenin_paths.py`,
+    which phase 3 deleted, in a bullet that was already stale before then. Correct it.
+13. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check
 
@@ -291,7 +269,9 @@ its dead-entry check.
 
 ## Not in this plan, raised for Ben
 
-1. **A cloud run without MAM-private still stops at `near-aleppo-census`**, the step immediately
-   before the survey that phase 2 taught to skip, so the survey's skip is never reached there. Ben
-   has not been asked whether the census should skip in the cloud too.
+1. **`uxlc/data/lci_augrecs.json` has had no reader since phase 3** removed the Leningrad index
+   generator, its only reader. `py/main_write_page_break_info.py` still writes it, beside an
+   identical `uxlc/out/UXLC-misc/lci_augrecs.json`, and becomes a mega step in phase 4.
+   `py/uxlc_paths.py`'s `data_dir()` docstring still calls that directory data "other repos
+   consume".
 2. The incidental findings of the analysis's §8, except those a phase above fixes on its way past.
