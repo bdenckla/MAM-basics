@@ -1078,10 +1078,17 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -
 ```
 
 The programme is complete. Phase 6 changes only this plan, creates no successor
-task, and performs no merge or push. Phase 5 task
-`01a08cd3-ea1e-7ac0-89c9-470efdb93ee2` retains archival-time integration
-responsibility for merging current `main` into `codex-worktree-3f2e`, verifying
-the merged tree there, fast-forwarding primary `main`, and pushing.
+task, and performs no merge or push before archival-time integration. Ben's
+corrected handoff decision, 2026-09-10: Phase 6 task
+`01a08cf3-20c2-7e91-a4d8-b4430c96c195` owns archival-time integration of
+the complete Phase 6 branch. When Ben asks whether Phase 6 can be archived,
+merge current `main` into `codex-worktree-3f99`, run the required suite in the
+Phase 6 worktree with `REPOS_ROOT=C:/Users/BenDe/GitRepos`, fast-forward
+primary `main` to the verified Phase 6 branch, and push `main`. If `main`
+advances before the fast-forward, return to the merge-and-verification step.
+Report the clean Phase 6 worktree, Phase 6 branch head, and pushed `main` head.
+Phase 5 task `01a08cd3-ea1e-7ac0-89c9-470efdb93ee2` no longer owns
+integration and may be archived after this correction.
 
 Use baseline `dc043165f98b8a75ee3faa34314b70d0b2171a8f` and the exact completed
 commit verified by Phase 5. Create three fresh detached benchmark worktrees per
