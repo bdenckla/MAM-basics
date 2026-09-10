@@ -7,6 +7,7 @@
     {"ref": "Isaiah 7:6", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
     {"ref": "Isaiah 8:13", "koren": "both", "sheva": "vocal", "note": "also one on the mem, which MAM lacks", "date": "2026-09-10"},
     {"ref": "Zechariah 13:3", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
-    {"ref": "1 Chronicles 2:53", "koren": "last", "note": "also one on the he, which MAM lacks, and a vocal sheva under the shin, before the first mark", "date": "2026-09-10"}
+    {"ref": "1 Chronicles 2:53", "koren": "last", "note": "also one on the he, which MAM lacks, and a vocal sheva under the shin, before MAM's first U+05BD", "date": "2026-09-10"},
+    {"ref": "Genesis 5:2", "koren": "both", "sheva": "vocal", "date": "2026-09-10"}
   ]
 }
