@@ -83,6 +83,9 @@ away:**
 | `MAM-with-doc/` | the MAM-with-doc product README, license, repository attributes, and ignore rules | MAM's CC-BY-SA 4.0, as `MAM-with-doc/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-with-doc/`, except `misc/img/` and every Taamey D font copy below it | MAM-with-doc's generated edition and documentation pages, stylesheets, scripts, and release-difference reports | MAM's CC-BY-SA 4.0, inherited from the MAM-with-doc product |
 | `gh-pages/MAM-with-doc/misc/img/` | crops from manuscript facsimiles and printed editions, including the Aleppo and Leningrad codices, BHS, BHQ, the Sassoon manuscripts, and Judaica Press | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the corresponding documentation pages |
+| `MAM-OSIS/`, except `MAPM-orig/` and `MAPM-orig-24/` | current OSIS book and combined exports, header, SWORD configuration and command example, README, license, repository attributes and ignore rules, and the retained original source-hygiene checker | MAM's CC-BY-SA 4.0, as `MAM-OSIS/LICENSE.md` states. The product landed here from its source repository on 2026-09-10 |
+| `MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` | the historical `MAPM.xml` snapshot, its provenance and readme, and its split book files; `MAPM-orig/provenance.txt` names openscriptures/morphhb as the source | CC-BY-SA **3.0 Unported**, as the preserved `MAM-OSIS/MAPM-orig/readme.txt`, dated 2014-02-19, states. These historical files retain their separate source terms; the current product's CC-BY-SA 4.0 statement does not replace that notice |
+| `gh-pages/MAM-OSIS/` | the generated MAM OSIS documentation page, stylesheet, and PNG screen captures | MAM's CC-BY-SA 4.0, inherited from the current MAM-OSIS product |
 | `gh-pages/aleppo/` | three Ben-written pages about the Aleppo Codex's missing sections, including Hebrew text from Hebrew Wikisource and an English translation | Ben Denckla's; **no grant is made or implied here.** The Hebrew text retains the terms of its source |
 | `aleppo/aleppo-pages/` | 37 Aleppo Codex page scans, downloaded from the Internet Archive's `aleppo-codex` item; `aleppo/aleppo-pages-provenance.md` records the source and download method | **the Internet Archive item's current terms; no grant is made or implied here.** The scans are reproduced for the page and line-break work, not as material MAM-basics may license |
 | `aleppo/aleppo-wiki/` | J. David Stark's Aleppo Codex index, the tracked source forms, Ben Denckla's hand corrections, and generated index artifacts | CC-BY 4.0, as `aleppo/aleppo-wiki/LICENSE.txt` states |
@@ -120,7 +123,9 @@ sentence false.
 
 What follows is the license and attribution statement from the MAM Google spreadsheet, copied
 without change. The same file stands as `LICENSE.md` in the landed `MAM-parsed/`, `MAM-simple/`,
-`MAM-with-doc/`, and `MAM-for-Sefaria/` product directories and in the MAM-OSIS repository. Where it says "the data in this GitHub repository",
+`MAM-with-doc/`, `MAM-for-Sefaria/`, and `MAM-OSIS/` product directories. The historical
+`MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` files retain the separate CC-BY-SA 3.0
+notice recorded above. Where the statement says "the data in this GitHub repository",
 read it as the MAM paths named in the table above, not as everything in MAM-basics.
 
 ----
