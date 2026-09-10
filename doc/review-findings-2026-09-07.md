@@ -860,6 +860,19 @@ trailing-space lines and 189 blank final lines. The errors arrived in `cf7c7a35`
 from the source products. The result is an artifact-hygiene finding rather than a behavioral
 defect, but the Claude review did not record the failing `git diff --check` result.
 
+**Finding-count clarification, 2026-09-09 (Codex; September 8 finding 11.4).** The
+Sol report's distribution of 87 / 111 / 12 describes findings, not distinct paths:
+
+| Product path | Whitespace findings | Distinct files |
+|---|---:|---:|
+| `MAM-for-Sefaria/` | 87 | 80 |
+| `MAM-simple/` | 111 | 111 |
+| `gh-pages/MAM-for-Sefaria/` | 12 | 2 |
+| Total | 210 | 193 |
+
+The frozen diff and the bounded current-file scan at `8d6c4df8` reproduce this
+distribution. The 189 blank-final-line files and four trailing-space files do not overlap.
+
 ### Relation between the Terra and Sol Codex reviews
 
 The Terra report's no-rejection and no-omission conclusion remains accurate for the claims and
@@ -878,6 +891,13 @@ facts, source-clone safety reports, source-book claims, or every code fragility 
 Every remediation finding is fixed, rejected with a reason, recorded, or referred to repository
 maintenance. Ben's decision on 2026-09-08 decouples finding 23.2's worktree housekeeping from
 remediation completion and tracks it separately.
+
+**Completion qualification, 2026-09-09 (Codex; September 8 findings 17f–17g).** The
+original dispositions below remain the `975a16c5` record. The continuing Sol-1 whitespace
+defects and row 3's incorrect source-movement explanation qualify the broad completion
+claim recorded by `15ec6f4d`. Ben's later deliberate prose reversals are subsequent
+decisions, not evidence that `e91d7358` misdescribed its original work. The following
+dated notes distinguish remaining defects from retained model fixes and accepted wording.
 
 | Finding | Disposition | Evidence |
 |---:|---|---|
@@ -907,6 +927,19 @@ remediation completion and tracks it separately.
 | 24 | record only | Immutable commit subjects and bodies remain unchanged; the corrected facts are preserved in this disposition and the remediation plan. |
 | Sol-1 | fixed | `4afe3ebc` regenerates the affected artifacts and makes the current `git diff --check` pass while preserving byte-verbatim and downloaded inputs. |
 
+**Sol-1 correction, 2026-09-09 (Codex; September 8 finding 2).** Sol-1 remains
+unfixed. The bounded scan at `8d6c4df8` finds all 210 whitespace findings in 193 files,
+and none of those files changed in `4afe3ebc`. The clean-tree diff check cited by the
+original row did not verify the offending files. Repair remains assigned to Wave 2 of
+the September 8 remediation plan; no artifact was repaired or regenerated for this note.
+
+**Row 3 scope correction, 2026-09-09 (Codex; September 8 finding 8.1).** Sol's
+368 rows / 370 duplicated chanted words are the ordinary scope. The additional
+dual-cantillation rows for תעבדם in Exodus 20:4 and Deuteronomy 5:8 give 370 rows /
+372 duplicate entries. Both scopes reproduce from public Phonetic MAM at `7322b665`.
+Source movement did not cause the difference. The grouping differences and the
+single-parameter census decision in the original row remain unchanged.
+
 Finding 23.1's narrower count of three Codex spellings is correct. The complete set among the 99
 review-window commits with a co-author trailer has five exact lines:
 
@@ -925,3 +958,11 @@ BHS at 1 Samuel 17:5 and confirms the two marks, meteg after silluq, so the page
 BHS rests on that reading; by Ben's decision it is recorded in `_post_silluq_comparison`'s
 docstring and in `doc/review-findings-2026-09-08.md`, whose finding 3 has the details, and not
 on the page.
+
+**Rows 13 and 21, additional status clarification, 2026-09-09 (Codex; September 8
+finding 3).** The retained `e91d7358` model fixes remain distinct from the editorial
+changes Ben reversed. `38a606e2` explicitly records acceptance of the local ITM/CoS
+glosses, including the authors' names; their divergence is not unfinished work. In
+addition to the BHS inspection already recorded above, `3b0225e0` records withdrawal
+of the objection to calling UXLC and WLC editions. The BHS and edition questions are
+settled, and no reversed prose is awaiting reinstatement.

@@ -29,6 +29,10 @@ Status updated 2026-09-09 after Wave 1C1: findings 5.1a/5.2 have dated correctio
 evacuation records and September 4 review. Wave 1C2 is next for the September 7 historical
 records, as bounded in the remediation plan. Wave 1 remains incomplete.
 
+Status updated 2026-09-09 after Wave 1C2: findings 2, 3, 8.1 and 11.1–11.4 now have
+dated September 7 record corrections, with their assigned 17f–17g completion qualifications.
+Wave 1C3 handles the remaining MAS-plan and standards notes. Wave 1 remains incomplete.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -730,6 +734,43 @@ Final scope verification passed, and V6 passed before implementation and again a
 commit before this record-only checkpoint, always with zero changed locations. The
 remediation plan gives the exact evidence paths. The following record commit supplies
 the required clean source for Wave 1C2; no integration or push is due.
+
+Wave 1C2 executed 2026-09-09 by Codex task `01a08953-8231-70f1-859c-663cb8c29a72`
+directly in `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, from clean source
+`8d6c4df8bac66367aa4519b633cf450a558b27c8`. The back-merge was already up to date.
+The inspected V6 gate passed before and immediately after the merge against the fixed
+`c2f238f2` baseline; no real approval stop occurred.
+
+Dated notes in the September 7 review, remediation plan, and Sol review now distinguish
+the continuing 210 whitespace findings in 193 files, retained model fixes, Ben's
+editorial reversals, accepted local glosses, settled BHS/edition questions, ordinary
+368/370 versus combined 370/372 scope, the unrecorded Wave 4 invocation and unknown
+missing-line cause, completed implementations behind unchecked boxes, 25 formatted
+sources plus one copied Python file, and the spell check's tracked frequency outputs.
+Only the corresponding 17f–17g completion qualifications and completed September 8
+disposition rows were added. Original records and checkboxes remain intact.
+
+The remediation plan's Wave 1C2 record names the bounded measurement reports and exact
+public Phonetic MAM source commit. No tracked Python, generated artifact, license grant,
+behavior, or sibling checkout changed; no spell checker, survey, maintenance, or cleanup
+ran. Suite, final V6, and local commit evidence follow after verification.
+
+Verification completed 2026-09-09: the canonical worktree suite, with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`, reported **987 passed, 5 skipped, and 65 subtests
+passed in 107.46 seconds**. V6 passed immediately afterward for all nine checkout
+pages and all nine fresh-render pages, with zero changed locations and unchanged
+survey JSON. The scope check confirms all original lines are preserved in the six
+authorized Markdown files, valid Hebrew mark order and diff whitespace, and identical
+frozen/current whitespace finding sets. No tracked Python changed, so black was not
+needed. The remediation plan names the exact evidence files; local commit evidence follows.
+
+Wave 1C3 next handles the named MAS plans, merge-plan State/N8 notes, and standards
+docstring census under the remediation plan's precise boundary. Wave 1D still owns
+remaining record-only dispositions, the accepted-corrections append and full
+reconciliation. The successor starts automatically after the clean committed checkpoint,
+using the same saved project directly with `environment.type = local`; writing
+responsibility transfers at dispatch. Integration and push occur once after final Wave 4.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

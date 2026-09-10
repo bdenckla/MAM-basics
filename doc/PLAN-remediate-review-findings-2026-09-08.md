@@ -2,6 +2,9 @@
 
 State: live 2026-09-09; Waves 1A-1B and 1C1 complete, Wave 1C2 next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
 
+Status updated 2026-09-09 after Wave 1C2: the assigned September 7 historical records
+now have dated corrections. Wave 1C3 is next; Wave 1 remains incomplete.
+
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
 editorial proposals below; step 6 executes one wave per fresh Codex task. Approval of a wave
@@ -881,6 +884,105 @@ This following record-only commit supplies Wave 1C2's required clean source; the
 hash and actual successor ID are reported at handoff. The saved project was verified as
 `51e16ebd-373a-41f7-833e-9def3ef72b81`, with the exact review-worktree path and Git enabled;
 use `environment.type = local`. No new decision blocks the bounded Wave 1C2 task.
+
+### Wave 1C2 execution record, 2026-09-09
+
+Codex task `01a08953-8231-70f1-859c-663cb8c29a72` executed the bounded September 7
+historical-record corrections under Ben's Step-5 approval, directly in
+**C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08**, branch
+`codex-review-2026-09-08`. The required clean source was
+`8d6c4df8bac66367aa4519b633cf450a558b27c8`, containing Wave 1C1 implementation
+`9241107ba5c3438a8b51c3032bfdce0bd7b4d070`. Exact path, branch, HEAD, clean status,
+required ancestry, and actual task ID were verified before reading; the required
+back-merge reported `Already up to date.`
+
+The existing `.novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py` was
+inspected and its SHA-256 matched
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+The script verified the immutable nine-page and survey baseline against `c2f238f2`.
+The initial sandbox invocation could not launch Python; the escalated invocation
+succeeded before any edit or merge. No actual gate comparison failed and no real stop
+occurred. The unchanged gate passed for nine checkout pages and nine fresh-render
+pages with zero changed locations at both initial checkpoints, under
+`.novc/review-remediation-2026-09-08/`:
+
+1. Before merge: `v6-runs/20260910T032021Z-wave1c2-before-merge-83d96703/`.
+2. Immediately after merge: `v6-runs/20260910T032130Z-wave1c2-after-merge-7933f3ad/`.
+
+Historical facts were re-established without regeneration by:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/measure_wave1c2_01a08953.py
+```
+
+The final measurement report is `wave1c2-01a08953-20260910T032641Z-measurements.json`,
+beside that script; the earlier `20260910T032547Z` report is preserved. The report
+records the exact offending paths/lines and input hashes, 210 findings in 193 files,
+189 blank final lines and 21 trailing-space lines with no file overlap, and no
+offending path among `4afe3ebc`'s 390 changed files. The saved frozen-range output is
+`wave1c2-01a08953-20260910T032641Z-frozen-whitespace.txt`.
+It also records 26 Python paths in `9cf48863` (25 source files plus one identical
+copy), historical spell-check code and tracked output paths, and the named commit
+messages and changed paths. No spell checker ran.
+
+Public Phonetic MAM was read at fixed commit `7322b665`; the clone's actual HEAD was
+`10de797098dab454b5b92e1d4f479fba68f6674b`. Reading the fixed chapter-page Git blobs
+reproduced 368 ordinary qamats rows / 370 duplicated chanted words, plus the two
+dual-cantillation rows, giving 370/372. The report retains the matched rows and the
+Psalms 35 / Proverbs 19 grouping differences. No private scholarly research, survey
+regeneration, or sibling-checkout write occurred.
+
+| Changed path | Completed scope |
+|---|---|
+| `doc/PLAN-remediate-review-findings-2026-09-07.md` | Dated completion, checklist, scope, editorial-status, whitespace, subtest-record, Python-count, and spell-check-output corrections. |
+| `doc/review-findings-2026-09-07.md` | Dated Sol-1, count/scope, completion, and retained-versus-reversed status notes, preserving the existing BHS inspection note. |
+| `doc/codex-review-findings-2026-09-07-sol.md` | Dated ordinary/dual scope and findings-versus-files corrections. |
+| `doc/review-findings-2026-09-08.md` | Disposition rows for work actually completed in Wave 1C2 only. |
+| This plan and `doc/PLAN-close-out-review-2026-09-08.md` | Execution evidence and next bounded task. |
+
+All original historical lines and checkboxes are preserved. No tracked Python changed,
+so black was unnecessary; no tests were added. No generated HTML, corpus, JSON, image,
+behavior, license grant, or sibling checkout changed. D2's deployed copies and the
+completed Wave 1B/1C1 edits remain intact. Verification and local commit evidence are
+recorded below after the checks complete.
+
+Verification completed 2026-09-09 at `8d6c4df8` plus the Wave 1C2 documentation edits.
+The canonical suite ran with `REPOS_ROOT=C:/Users/BenDe/GitRepos`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B py/main_test.py -q -p no:cacheprovider
+```
+
+It reported **987 passed, 5 skipped, and 65 subtests passed in 107.46 seconds**.
+`verify_wave1c2_01a08953.py suite` saves the full output in
+`wave1c2-01a08953-20260910T033358Z-suite.txt`, with invocation, HEAD, return code,
+and elapsed time in the adjacent `.json`. V6 ran immediately after the suite and passed:
+`v6-runs/20260910T033547Z-wave1c2-after-suite-ab6adb65/`, zero changed locations.
+
+The same verifier's `scope` mode requires only the six named Markdown files, exact
+preservation of every original line in all six, Hebrew mark order through
+`has_std_mark_order`, and `git diff --check` against the required source. It also
+compares the complete frozen and current whitespace path/line/kind sets: they are
+identical. The pre-suite scope report is
+`wave1c2-01a08953-20260910T033346Z-scope.json`; final scope and commit evidence follow.
+
+**Next execution boundary:** Wave 1C3 covers the remaining named MAS-plan and standards
+historical corrections: findings 1, 6.6–6.7, 7.1, 7.2, the finding-7 standards docstring
+census, and 16 / N8 with the corresponding 17a merge-hunk record. Target only
+`doc/PLAN-post-stress-meteg-page-and-holman-m23.md`,
+`doc/PLAN-merge-post-stress-meteg-into-main.md`,
+`doc/PLAN-silluq-before-gaya-template.md`, and
+`py/repo_util/check_repo_standards.py`, plus completed disposition rows and both plans'
+write-back. Verify exact filenames against the approved crosswalk before editing.
+Keep original dated records, add the approved State line/dated notes and exact N8
+wording, preserve standards behavior, and do not execute those product plans.
+Split further at a clean checkpoint if needed to avoid compaction.
+
+Wave 1D owns the remaining record-only dispositions, the complete September 8
+accepted-corrections append, and full Wave 1 reconciliation. Wave 1 is incomplete;
+Wave 2 and all E items remain pending. The next authorized task uses saved project
+`51e16ebd-373a-41f7-833e-9def3ef72b81` with `environment.type = local` after a clean
+committed checkpoint. No intermediate integration, push, or automatic archival is due.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 

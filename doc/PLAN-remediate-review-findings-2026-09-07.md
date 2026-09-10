@@ -14,6 +14,16 @@ The planning phase and all remediation work were completed on 2026-09-08. Ben's 
 2026-09-08 places finding 23.2's worktree housekeeping outside remediation; Ben will track that
 housekeeping separately.
 
+**Completion qualification, 2026-09-09 (Codex; September 8 findings 2, 3, 8.1 and
+17f–17g).** The completion recorded by `15ec6f4d` and the dispositions in `975a16c5`
+overstate the completed work: all 210 Sol-1 whitespace findings remain in 193 files,
+and the Wave 2 result's source-movement explanation needs the scope correction below.
+Those remaining defects qualify completion independently of Ben's later prose reversals.
+`e91d7358` accurately describes its original implementation; its model fixes remain, while
+`1095f029` and `a9edd4f9` record subsequent editorial decisions. Reversed wording is not
+unfinished work awaiting reinstatement. The dated notes below correct only these assigned
+historical claims; whitespace repair belongs to Wave 2 of the September 8 remediation plan.
+
 Ben requested this planning phase on 2026-09-08, after the Claude review, the Codex Terra review,
 and the Codex Sol re-review were complete. This file turned those three frozen reports into a working
 checklist. The remediation task executed the checklist, recorded a disposition for every item, and
@@ -232,6 +242,12 @@ before failing. Findings 1, 2, 4, and 17.1 share that integrity boundary.
 - [ ] Run the letter-small-job entry point twice. The second run must be byte-identical, and an
       ignored adverse probe with a bad input must leave the tracked output unchanged.
 
+**Checklist status, 2026-09-09 (Codex; September 8 finding 11.2).** `c76239a5`
+implemented Wave 1's line-data, XML-reader, comparison, and fail-before-write work; the
+completed result below records its verification. The seven unchecked boxes above are an
+execution-record inconsistency, not evidence that the implementation is absent. The original
+boxes are preserved; this dated note supersedes their implied pending status.
+
 Use the real line-break entry points:
 
 ```powershell
@@ -322,6 +338,14 @@ part of finding 21.
       undefined reader-facing abbreviations, section-range punctuation, and tsere spelling. Rebuild
       shared ITM/CoS links by reuse rather than preserving duplicate local helpers.
 
+**Checklist status, 2026-09-09 (Codex; September 8 finding 11.2).** `e91d7358`
+implemented Wave 2 and its result below records the run, despite the twelve unchecked boxes.
+The original boxes are preserved. Implementation does not establish that every checklist
+claim was achieved: the source-movement explanation remains wrong, and the broad prose
+instructions produced changes Ben later reversed. The dated corrections below distinguish
+the retained model work, failed record correction, and deliberately reversed editorial work;
+they do not retroactively mark every item successful or authorize another prose sweep.
+
 Run the real survey before rendering the pages:
 
 ```powershell
@@ -344,6 +368,14 @@ products, Aleppo line data, and the private Phonetic MAM source tree.
   current source has 370 rows and 372 duplicate entries. The two grouping differences remain
   Psalms 35:10 and Proverbs 19:7, where the qamats-dal reading forms one MAM chanted word and the
   qamats-sam reading forms two. No unexplained prose residual remains.
+
+  **Scope correction, 2026-09-09 (Codex; September 8 finding 8.1).** The difference is
+  scope, not source movement. Public Phonetic MAM at `7322b665` has 368 ordinary
+  qamats-variant rows containing 370 duplicated chanted words. Adding the dual-cantillation
+  rows for תעבדם in Exodus 20:4 and Deuteronomy 5:8 gives 370 rows and 372 duplicate
+  entries. Both totals were correct for their scopes. A bounded reread of that fixed
+  public HTML reproduces both totals; no survey was regenerated or changed.
+
 - Changed `py/accgram/post_stress_meteg.py` so a qamats-variant row contributes one MAM chanted-word
   sequence to the census while both phonetic readings remain available for validation. Fatal
   per-system and aggregate invariants now connect source entries, MAM chanted words, qamats rows,
@@ -364,6 +396,16 @@ products, Aleppo line data, and the private Phonetic MAM source tree.
   prose now identifies UXLC 3.9 and WLC 4.22 as the transcriptions actually read, defines the dual
   cantillation labels, uses one shared ITM/CoS link implementation, states the current page and
   sample totals, and applies the Hebrew-prose terminology rules.
+
+  **Editorial status, 2026-09-09 (Codex; September 8 findings 3 and 17f).** The paragraph
+  above describes `e91d7358`'s output. Ben subsequently reversed unrequested prose changes
+  in `1095f029` and `a9edd4f9`, including the separate UXLC/WLC rows, the cant-alef/cant-bet
+  gloss, and the shared ITM/CoS glosses. The local author-naming ITM/CoS glosses are an
+  accepted choice, explicitly recorded by `38a606e2`. The qamats census and model fixes
+  remain. `3b0225e0` records Ben's direct BHS inspection at 1 Samuel 17:5 and withdrawal
+  of the objection to calling UXLC and WLC editions; those questions are settled. The
+  restored wording remains in force and is not a pending repair.
+
 - Corrected `doc/post-stress-meteg-method.md`, `doc/post-stress-meteg-census-2026-09-03.md`,
   `doc/holman-meteg-m23-isaiah-23-12.md`, `doc/PLAN-holman-meteg-rollout-programme.md`, and
   `doc/PLAN-post-stress-meteg-page-and-holman-m23.md`. Dated execution facts remain in place with
@@ -457,6 +499,14 @@ the disposition record.
   with 210 findings, comprising 21 trailing-whitespace findings and 189 new-blank-line-at-EOF
   findings. The current `git diff --check` exits 0. Byte-verbatim Wikisource input and downloaded
   Sefaria input did not change.
+
+  **Whitespace correction, 2026-09-09 (Codex; September 8 finding 2).** The zero exit
+  above did not establish a repair of Sol-1. A bounded scan at `8d6c4df8` still finds
+  189 blank final lines and 21 trailing-space lines in 193 distinct files; none of those
+  files is among `4afe3ebc`'s 390 changed files. A clean-tree `git diff --check` cannot
+  detect unchanged offending lines. Sol-1 remains unfixed and is assigned to Wave 2 of
+  the September 8 remediation plan. This correction changes no output bytes.
+
 - The final old-host census has zero occurrences in owned generated output. The surviving deliberate
   occurrences are one documentation file with 3 hits, 39 downloaded Sefaria input files with 39
   hits, and 5 byte-verbatim Wikisource introduction files with 5 hits.
@@ -531,6 +581,14 @@ the source-repository manifests, and any private path.
   in 131.51 seconds. The current suite output had no subtest line, so this record does not infer one.
   The exact inventories and order-only verifier are under
   `.novc/remediation-review-2026-09-07-wave4/`.
+
+  **Verification-record note, 2026-09-09 (Codex; September 8 finding 11.1 / D4).**
+  The Wave 4 observation above is retained. Its invocation was not recorded, so the
+  cause of the missing subtest line is unknown. Wave 6 recorded 65 subtests with the
+  same 981 passing-test count, in 120.45 seconds; that later run does not explain
+  Wave 4's output. This note follows the accepted C4 correction and Ben's D4 decision;
+  no historical invocation has been reconstructed.
+
 - Expected unchanged surfaces remained unchanged: no release report, source-repository manifest, or
   private path changed. MAM-private remained clean at the authorized Wave 3 golden commit.
 - Commit and push: `a42216ee` (`Repair review Wave 4 lint safeguards`) is on `main` and was pushed to
@@ -646,6 +704,14 @@ Goal: prove the combined tree, record every outcome, and leave no finding silent
 - Black left all 25 Python files changed in Wave 5 unchanged, and Ruff passed the same 25-file
   scope. The final canonical suite reported 981 passed, 5 skipped, and 65 subtests passed in 120.45
   seconds.
+
+  **Python-file count correction, 2026-09-09 (Codex; September 8 finding 11.3).**
+  `9cf48863` changed 26 Python files: the 25 source files under `py/` in the recorded
+  formatting scope, plus the copied `MAM-simple/py-examples/mb_cmn/paths.py`.
+  The copied file is byte-identical to `py/mb_cmn/paths.py` in that commit. The
+  formatting and suite results above stand; the phrase “all 25 Python files changed”
+  omitted the copied file from the total.
+
 - The public repository-standards sweep passed across the current public workspace repositories:
   MAM-basics, MAM-OSIS, phonetic-hbo, and Taamey_D. MAM-basics reported one linked
   worktree, zero agent branches, zero `sys.path` mutations, zero orphan combining marks, 80 allowed
@@ -661,6 +727,17 @@ Goal: prove the combined tree, record every outcome, and leave no finding silent
   5. Hebrew mark order over 459 files;
   6. unnecessary Unicode escapes over 296 Python files; and
   7. HTML output lint.
+
+  **Spell-check output note, 2026-09-09 (Codex; September 8 finding 11.3).** The
+  successful run above included a writing command. `py/check_all.py::_run_spellcheck`
+  calls `check_spelling_in_html.main`, which writes these tracked frequency reports:
+
+  1. `book-of-job/out/custom-dict-freqs-ordered-by-entry.json`;
+  2. `book-of-job/out/custom-dict-freqs-ordered-by-count.json`.
+
+  A run leaving no diff does not make that command read-only. This note follows code
+  inspection at `975a16c5` and the current checkout; the spell checker was not rerun.
+
 - The full HTML graph measured 577 pages, nine deliberate orphan pages, and zero dead internal
   targets. The old MAM-with-doc host census found only three deliberate categories:
   1. one documentation file with 3 hits;
