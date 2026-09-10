@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "endpoint": "https://he.wikisource.org/w/api.php",
+  "books": {}
+}

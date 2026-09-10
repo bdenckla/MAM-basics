@@ -25,6 +25,7 @@ Examples:
 """
 
 import argparse
+import sys
 
 from mb_cmn import bib_locales as tbn
 from subcommands import download_google
@@ -47,6 +48,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     args = build_parser().parse_args()
     args.func(args)
 
@@ -87,6 +90,11 @@ def _add_subcommands(subparsers) -> None:
         help="Download Wikisource chapters and rebuild affected production products.",
     )
     wsds.add_selector_opts(ws_parser)
+    ws_parser.add_argument(
+        "--force-download",
+        action="store_true",
+        help="Fetch every selected chapter even when its revision is unchanged.",
+    )
     ws_parser.set_defaults(func=_run_wikisource)
 
     ws_intro_parser = subparsers.add_parser(

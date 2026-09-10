@@ -16,8 +16,9 @@ The programme has three sequential phases:
 3. Verify the complete live corpus, measure the improvement, and seed committed
    metadata only from fetched content equal to the committed raw chapters.
 
-Phase 1 is complete; its execution is recorded below. Phase 2 and Phase 3 remain
-to be implemented. Live content differs from the baseline in 20 chapters, so
+Phase 1 and Phase 2 are complete, including implementation, offline checks,
+full regeneration, and suite verification. Phase 3 remains.
+Live content differs from the baseline in 20 chapters, so
 complete metadata seeding cannot silently refresh those chapters.
 Each phase runs in a fresh task, commits its result locally, verifies clean status,
 then creates its successor last. Keep one writer in the shared checkout. An open
@@ -430,6 +431,138 @@ products through the real commands below, inspect all diffs, and run the full
 suite. Write results and remaining Phase 3 work into this plan, commit locally,
 verify clean status, then create Phase 3 in `ws-direct` with a local environment
 and the actual handoff commit. Stop editing after dispatch.
+
+### Phase 2 execution record (2026-09-10)
+
+The implementation ran in task `01a08d41-612e-7aa3-9312-2eecd9e9b881`, in the
+verified checkout and branch above, starting from Phase 1 commit
+`0beade0bac7794437dd35e5d54d95802f08c874e`. The private input remained at
+`55252b834d28a6c241e75758aff5d15836621f56`.
+
+The implementation has these module boundaries:
+
+1. `py/ws/ws_revision_metadata.py` validates and persists schema version 1.
+   Its top-level fields are `schema_version`, `endpoint`, and `books`.
+   `books[book39][chapter]` contains `requested_title`, `resolved_title`,
+   `page_id`, `revision_id`, and `sha256`. Digests follow Required behavior 7.
+   Duplicate JSON keys invalidate the manifest; invalid individual records
+   cannot authorize reuse, while valid unselected records survive.
+2. `py/ws/ws_revision_api.py` validates title normalization and redirect chains,
+   unique page/revision identities within and across batches, complete responses,
+   and accessible exact revision content. `CountingSession.request` counts
+   actual transport attempts; `ChapterClient` counts logical batches separately.
+   Every chapter request passes `allow_cache=False`.
+3. `py/ws/ws_chapter_download.py` checks reusable titles across books in batches
+   of 50, retrieves direct or checked-revision content in per-book batches of
+   20, validates complete books, and writes changed books before metadata.
+   Equality avoids book replacement; metadata serialization has no timestamps.
+4. `py/subcommands/download_wikisource.py:run` materializes selections, reports
+   download counts/time before parsing, and always invokes the affected-book
+   production hook. `main_download.py fr-wikisource --force-download` and
+   `run(..., force_download=True)` bypass reuse. The bot's modified-chapter
+   refresh passes that keyword; its suppression modes remain unchanged.
+
+`in/mam-ws-revisions.json` is tracked with the version and endpoint but an empty
+`books` object. No production chapter was downloaded or seeded in Phase 2.
+An empty manifest makes the first actual download use direct content retrieval;
+fresh-checkout reuse becomes available for records seeded in Phase 3 or written
+by a later download. No synthetic identity appears in tracked metadata.
+The generic HTTP downloader, introduction downloads, raw chapter arrays,
+selectors, product schemas, and published URLs have no implementation changes.
+
+Offline verification is recorded in
+`doc/efficient-wikisource-downloads-phase2-validation.json`. The main matrix ran
+51 checks across all 39 books and 929 chapters. Synthetic IDs were attached only
+inside explicitly labelled offline response fixtures; frozen Phase 1 text and
+the independent Phase 1 book files supplied the content/serialization oracle.
+Real captured paired-content responses, exact-revision responses, and redirects
+were also replayed without adding IDs to them.
+
+| Verified condition | Observed result |
+| --- | --- |
+| Initial corpus retrieval | 929 fetched, 70 content attempts, no metadata pass; all 39 serialized books byte-identical to independently downloaded Phase 1 books. |
+| Unchanged repeat and fresh-checkout fixture | 929 reused, 19 metadata attempts, zero content attempts; bytes and modification times unchanged. Metadata batches crossed book boundaries. |
+| Forced corpus | 929 fetched in 70 content attempts, no metadata pass; unchanged books and manifest were not rewritten. |
+| Changed remote revisions | Every 37th corpus chapter was changed: 26 fetched by checked IDs, 903 reused. Independent content and manifest comparison passed. |
+| Local modifications and record corruption | Full-corpus sweeps of local edits, hashes, requested/resolved titles, page/revision IDs, invalid digests, and boolean IDs prevented incorrect reuse. |
+| Unusable manifest | Missing, malformed, unsupported, wrong-endpoint, and boolean-version manifests caused direct retrieval with no metadata pass. |
+| Selectors and preservation | All-book, book39, section6, chapter, and JSON selectors passed reuse and force paths; full corpus content/metadata survived partial selection. Missing/incomplete/invalid partial books failed before network access. |
+| Title resolution | Reversed normalization and redirect chains worked across the entire corpus; converging titles and duplicate identities across batches failed visibly. |
+| Response failures | Missing pages, duplicate pages, incomplete responses, HTTP-200 maxlag errors, warnings, continuation, invalid IDs, cyclic aliases, moved pages, wrong exact revisions, and unavailable content failed without accepting the affected book. |
+| Interruption | A fault after book replacement and before metadata replacement left old metadata. The next run detected the local hash mismatch and fetched directly. |
+| Revision race | Changed chapters used `revids`; a later title value could not satisfy the earlier checked revision. |
+| Attempts versus batches | An injected timeout and HTTP 503 retry produced 21 metadata attempts for 19 logical batches. The transport policy was unchanged; only sleeps were suppressed for offline replay. |
+| Bot and CLI | Force-mode forwarding, empty modified lists, no-save, identity mode, no-post-download, and CLI wiring passed without wiki writes. |
+
+The additional verification script passed 9 checks. A mixed Genesis selection
+reused 48 chapters, fetched one directly after rejecting its invalid record, and
+fetched one by checked revision ID, preserving every unselected book. Direct
+response faults also covered hidden-content flags, multiple revisions, boolean
+revision IDs, duplicate page IDs, and `badrevids`.
+
+The real production hook ran after an entirely reused partial selection in
+`2Samuel`, `Joel`, `Ezra`, and `2Chronicles`. It regenerated and validated the
+complete affected book24 products:
+
+1. Samuel, including both source sub-books.
+2. The Twelve, including all source sub-books.
+3. Ezra-Nehemiah, including both source sub-books.
+4. Chronicles, including both source sub-books.
+
+All resulting raw/format-2/plain/plus/Google/protected JSON bytes remained
+unchanged. Documentation verification reported 79 passed, zero failed, and
+the existing pending claim `mp.plain.docs.book39-skeleton.common`.
+The existing downloader fixture file was adapted to the production interfaces;
+no tracked test cases or path configuration were added.
+
+Reproduce the matrix from the development checkout with a new scratch label
+on each run (the scripts preserve earlier case directories):
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_efficiency_phase2_offline_20260910.py offline-recheck
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_efficiency_phase2_hooks_20260910.py hooks-recheck
+```
+
+The measured labels were `offline-2` and `hooks`; the first matrix invocation
+stopped at a scratch-script syntax error before execution. The initial adapted
+fixture run exposed a progress-message `Path`/string mismatch, corrected before
+the corpus matrix. Final command logs live under
+`.novc/ws-efficiency-phase2-20260910/`; the durable receipt records their paths
+and the verification scripts' hashes. The old Phase 1 measuring script calls
+helpers replaced in Phase 2: retain its captures as evidence, and adapt live
+measurement to `ws_revision_api`/`ws_chapter_download` in Phase 3 instead of
+restoring obsolete downloader helpers.
+
+All 38 maintained local mega steps passed in 314.33 seconds, with only the
+private writer `near-aleppo-census` omitted. The independent `ws-products`
+candidate matched all 48 production plain/plus JSON files byte for byte.
+The separate documentation, diagrams, Google parse, and WS/Google comparison
+commands also passed. Their exact commands and logs are in the durable receipt;
+`.novc/ws_efficiency_phase2_extras_20260910.py` runs those commands in sequence
+and asserts candidate equality.
+
+The full suite passed: **990 passed, 5 skipped, 65 subtests passed in 125.42
+seconds**. The skips remain the Phase 1 semantic controls. Black at defaults
+left all changed Python files formatted. After staging the new files, the
+prose/Unicode/sibling-reach lints passed 9 tests in 22.88 seconds; their exact
+command is in the receipt. `git diff --cached --check` also passed.
+No raw book, production product,
+Google input/product, bot output, or historical input has a tracked difference.
+The only regenerated report differences were the same vendoring reports and
+exact hashes recorded in Phase 1. Their generated versions are preserved under
+`.novc/ws-efficiency-phase2-20260910/preserved-generated/`; the committed versions
+were restored. The mega receipt's broad changed-file comparison also includes
+the execution-plan edits made while generators ran; those are authored Phase 2
+changes, not generator output.
+
+The Phase 3 successor must verify the actual Phase 2 commit supplied in its
+handoff, then perform the live equality and performance work below. Phase 2
+does not authorize a production refresh to eliminate the known upstream
+differences. Commit locally before dispatch, keep `ws-direct` on this exact
+worktree, and reserve main integration for the archival procedure.
 
 ## Phase 3: complete-corpus equality and performance
 
