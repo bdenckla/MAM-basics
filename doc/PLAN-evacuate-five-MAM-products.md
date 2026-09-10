@@ -1365,6 +1365,149 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
+### Phase 6 session boundaries — Ben's decision, 2026-09-10
+
+After Phase 5 completion at `a2e883f1227e11691ce51f95ba77a9ac4192e55a`, Ben
+authorized starting Phase 6 in fresh sessions, divided to reduce the likelihood
+of context compaction. This authorization supersedes the earlier 5A–5F chain's
+instruction to stop before Phase 6; the earlier dated records remain unchanged.
+The scope is the final paragraph requirements below, carried through these six
+sequential tasks:
+
+1. **6A — preflight, command map, and baseline evidence.** Verify the exact primary
+   checkout and remote heads, the absence of all five actual source siblings, the
+   five live redirect hosts and successful deployments, and the preceding lane
+   records for all four oracle layers. Read the relevant generator entry points
+   and dependency order in `py/main_0_mega.py` without running the mega. Record
+   the exact commands, required cwds, inputs, expected output paths, comparison
+   partners, and ownership by 6B–6E. Freeze a dated Phase 6 target-blob baseline
+   in `in/mam_products_phase6_baseline.json`, identifying the precise input and
+   generated-output sets and commit; keep earlier manifests unchanged. Run the
+   canonical suite. Do not run the product generators yet. Record findings and
+   verify that the later task boundaries cover every Phase 6 requirement. Commit,
+   push, verify the clean state, then create only 6B.
+2. **6B — MAM-parsed and MAM-simple regeneration.** Run the real local parsing
+   and MAM-simple generation commands, including necessary local prerequisites,
+   documentation, and example-support copying. Compare every output with the
+   6A baseline and the relevant immutable lane evidence, recording mtime changes
+   and actual source absence. Inspect every difference; do not silently refresh
+   an oracle to make a comparison pass. Resolve bounded migration findings,
+   run affected checks, commit/push the evidence and any justified fixes, then
+   create only 6C.
+3. **6C — MAM-with-doc and historical comparisons.** Regenerate the MAM-with-doc
+   product and its required documentation generators from the 6A command map.
+   Run all named-release and unpinned MAM-parsed-plus comparisons using the
+   permanent local historical inputs. Verify bytes, write locations, links, and
+   unchanged historical inputs; do not invoke `--legacy-history` or recreate
+   a source clone. Run affected checks, write back, commit/push, then create only 6D.
+4. **6D — Sefaria, OSIS, and independent examples.** Regenerate the Sefaria/AJF
+   and OSIS products after 6B, then run all four independent examples and any
+   corresponding canonical example generators required for byte comparisons.
+   Include the MAM-parsed template-survey example and all three MAM-simple
+   examples. Verify every expected artifact and mtime set against the preserved
+   baselines with the source siblings absent. Run affected checks, write back,
+   commit/push, then create only 6E.
+5. **6E — publication, vendoring, and source references.** Run all redirect-manifest
+   tests; build and check each product's frozen stubs in separate scratch
+   directories, using explicit `--repo`, `--out`, and `--dir`. Verify the frozen
+   legacy/target URL sets, deployed source and target heads, and breadcrumb
+   contents. Reuse earlier browser proof only when freshly verified deployed
+   script and target bytes establish its continued applicability; repeat changed
+   cases. Run the vendoring regeneration and compare its outputs and support
+   files. Perform the source-reference sweep, distinguishing operational paths
+   from dated records and intentional redirect/optional-history references.
+   Resolve bounded public-side migration findings; keep private content out of
+   public reports. Commit/push and verify completed work, then create only 6F.
+6. **6F — final verification, inventories, and programme completion.** Review
+   the committed 6A–6E evidence and account for every required generator, example,
+   URL, and source-reference check. Verify tested inputs and outputs still match
+   their recorded commits; rerun any result invalidated by a later change rather
+   than treating an older green result as proof. Run the final canonical suite,
+   redirect-manifest and affected checks, and ordinary whitespace checks.
+   Re-measure Git-blob totals, workspace folders, `repo_visibility`, the five
+   local product/published subtrees, actual source absence, and live source-host
+   state. Record final heads, deployments, results, and remaining findings in
+   this plan and Programme Status. Mark Phase 6, the fourth stage, and the
+   programme complete only when their requirements pass. Commit/push, verify
+   the final clean and deployed state, and stop without creating a successor.
+
+**Execution location and handoff.** Use the saved `GitRepos` project directly in
+Local mode, absolute path `C:/Users/BenDe/GitRepos`. Development and all target
+Git operations use `C:/Users/BenDe/GitRepos/MAM-basics` on primary `main`; no
+worktree or review checkout is requested. Python is
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. Ordinary commands
+run from the MAM-basics root. The template-survey example runs from
+`C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed`; the remaining examples run from
+`C:/Users/BenDe/GitRepos/MAM-basics/MAM-simple`. `C:/Users/BenDe/GitRepos/MAM-private`
+may be read by existing checks and the source-reference audit, but must not be
+modified. Do not run the full mega or a `--resume-from` suffix: the mega includes
+a write into MAM-private, and a suffix is not a bounded selection of Phase 6 jobs.
+Do not refresh downloaded corpus inputs or recreate retired source clones merely
+to make checks run.
+
+Before editing, each task verifies `git rev-parse --show-toplevel`, `HEAD`,
+branch, `git status --porcelain`, `origin/main`, and live remote `main` against
+the predecessor's verified handoff. A newer starting point must contain the
+required commit; inspect its changes before accepting its evidence. Other tasks
+may be live, including worktree tasks that later integrate; compare HEAD and the
+index immediately before each commit. Do not infer a collision from a task's
+presence. Commit finished work directly to primary `main` and push normally.
+Create only the next task after all write-back is committed/pushed and the tree
+is clean. Pass the actual checkout, required commit, completed evidence, remaining
+scope and source task ID; verify the successor's actual task ID and cwd. The
+predecessor does no further writing after the successor starts. No user approval
+is needed again for this authorized chain. If an unexpected finding needs a
+decision or substantial repair, preserve the evidence and state the concrete
+issue before creating a dependent successor; do not pass half-applied work.
+
+**Targeted reading and baseline.** Every task reads current user-wide instructions,
+MAM-basics `CLAUDE.md`, this plan's common lane/README rules, the complete Phase 6
+section, and its immediate predecessor's record. Consult the earlier product
+records, programme fourth-stage decisions, and second-stage oracle/Remove rules
+only where the assigned work needs them; do not reload every completed stage's
+history. Load `hebrew-prose` before editing accentuation prose. Preserve the
+historical plans, licence notices, immutable manifests and original source bytes.
+No unrelated editorial remediation is authorized.
+
+The primary command spellings inspected at `a2e883f1` are below. Prefix each with
+the absolute interpreter above. 6A must inspect dependencies and required auxiliary
+documentation writers before finalizing the per-task command map; this table does
+not assert that these commands alone regenerate every published product file.
+
+| Task | Arguments after the interpreter | Cwd relative to the verified MAM-basics root |
+| --- | --- | --- |
+| 6A and 6F | `py/main_test.py` | root |
+| 6B | `py/main_parse.py go` | root |
+| 6B | `py/main_foi_features_of_interest.py` | root |
+| 6B | `py/main_mam_simple.py` | root |
+| 6C | `py/main_mam_with_doc.py` | root |
+| 6C | `py/main_diff.py mpp --all` | root |
+| 6D | `py/main_mam4sef.py --both-sef-and-ajf` | root |
+| 6D | `py/main_mam_osis.py` | root |
+| 6D | `py/main_tmpl_survey_toy.py` | root |
+| 6D | `py/main_letter_small_job.py` | root |
+| 6D | `py-examples/main_tmpl_survey_toy_example.py` | `MAM-parsed` |
+| 6D | `py-examples/main_letter_small_job_example.py` | `MAM-simple` |
+| 6D | `py-examples/main_mam4sef_example.py` | `MAM-simple` |
+| 6D | `py-examples/main_mam_osis_example.py` | `MAM-simple` |
+| 6E | `py/main_vendoring.py --all` | root |
+
+At `a2e883f1`, the latest measured canonical result is **989 passed, 5 skipped
+in 98.10 seconds**, established by `py/main_test.py` in 5F. Repeat that command
+in 6A and treat a mismatch as a finding. The 5F affected run passed 33 tests and
+the final staged hygiene run passed 7; exact commands are in the 5F record.
+Only OSIS production and its example were freshly regenerated in 5F; synchronization
+of every other product at the Phase 6 baseline must be measured, not assumed.
+The intended Phase 6 result is unchanged generated bytes and no product write
+outside MAM-basics. Explain and resolve any departure before claiming completion.
+Record exact commands, commits, blob hashes and measured results permanently;
+ignored scratch helpers and logs are convenience evidence. Format changed tracked
+Python with Black, run the affected checks and `git diff --check`, and preserve
+any deliberate historical whitespace. Escape non-ASCII historical metadata in
+JSON reports when necessary, preserving parsed values rather than normalizing them.
+
+### Phase 6 completion requirements
+
 After all five product lanes. Do not begin Phase 6 until every source is a pushed, deployed redirect host and every lane records all four oracle layers. Re-run the canonical suite, every MAM product generator, all four examples, all redirect-manifest tests, the vendoring regeneration, git diff --check, and the source-reference sweep. Re-measure the MAM-basics Git-blob count and bytes, the workspace folder count, repo_visibility, and the five source repositories' breadcrumb state. The expected structural result is five landed top-level product directories, five landed published subtrees, five source redirect hosts, and no MAM-basics product write outside MAM-basics.
 
 Update the programme Status table and this plan with actual heads, manifest totals, deployment checks, and the exact suite result. Keep doc/PLAN-evacuate-public-repos-programme.md, doc/PLAN-evacuate-the-rest-of-three-repos.md, and doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md. The earlier planning documents are execution records and this plan cites the second-stage lane and Decision F.
