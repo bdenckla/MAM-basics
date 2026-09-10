@@ -12,8 +12,13 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import zipfile
 
 from mb_cmn import paths
+
+_ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
+_ZIP_CREATE_SYSTEM = 3
+_ZIP_EXTERNAL_ATTR = 0o100644 << 16
 
 
 def _git(repo, *args):
@@ -37,6 +42,90 @@ def _manifest():
         return json.load(stream)
 
 
+def _listed_archive_members(prefix, stored_files):
+    members = tuple(f"{prefix}/{name}" for name in stored_files)
+    duplicates = sorted({name for name in members if members.count(name) > 1})
+    if duplicates:
+        raise ValueError(
+            "Historical manifest has duplicate release inputs: " + ", ".join(duplicates)
+        )
+    return members
+
+
+def _archive_members(archive_path, expected):
+    try:
+        stat = archive_path.stat()
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(
+            f"Stored MAM-parsed release archive is absent: {archive_path}"
+        ) from exc
+    return _validated_archive_members(
+        str(archive_path), expected, stat.st_size, stat.st_mtime_ns
+    )
+
+
+@lru_cache(maxsize=32)
+def _validated_archive_members(archive_name, expected, _size, _mtime_ns):
+    archive_path = Path(archive_name)
+    try:
+        with zipfile.ZipFile(archive_path) as archive:
+            infos = archive.infolist()
+            names = tuple(info.filename for info in infos)
+            duplicates = sorted({name for name in names if names.count(name) > 1})
+            if duplicates:
+                raise RuntimeError(
+                    f"Stored MAM-parsed release archive {archive_path} has duplicate"
+                    f" members: {', '.join(duplicates)}"
+                )
+            missing = sorted(set(expected) - set(names))
+            unlisted = sorted(set(names) - set(expected))
+            if missing or unlisted:
+                details = []
+                if missing:
+                    details.append("missing " + ", ".join(missing))
+                if unlisted:
+                    details.append("unlisted " + ", ".join(unlisted))
+                raise RuntimeError(
+                    f"Stored MAM-parsed release archive {archive_path} differs from"
+                    f" its manifest: {'; '.join(details)}"
+                )
+            if names != tuple(sorted(names)):
+                raise RuntimeError(
+                    f"Stored MAM-parsed release archive has unsorted members:"
+                    f" {archive_path}"
+                )
+            if archive.comment:
+                raise RuntimeError(
+                    f"Stored MAM-parsed release archive has a comment: {archive_path}"
+                )
+            for info in infos:
+                if (
+                    info.is_dir()
+                    or info.compress_type != zipfile.ZIP_STORED
+                    or info.date_time != _ZIP_TIMESTAMP
+                    or info.create_system != _ZIP_CREATE_SYSTEM
+                    or info.external_attr != _ZIP_EXTERNAL_ATTR
+                    or info.internal_attr != 0
+                    or info.extra
+                    or info.comment
+                ):
+                    raise RuntimeError(
+                        f"Stored MAM-parsed release archive member has unexpected"
+                        f" metadata: {archive_path}!{info.filename}"
+                    )
+            bad_member = archive.testzip()
+            if bad_member is not None:
+                raise RuntimeError(
+                    f"Stored MAM-parsed release archive has a corrupt member:"
+                    f" {archive_path}!{bad_member}"
+                )
+    except (OSError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
+        raise RuntimeError(
+            f"Stored MAM-parsed release archive is corrupt: {archive_path}"
+        ) from exc
+    return names
+
+
 @dataclass(frozen=True)
 class Revision:
     """A resolved plus tree, its source commit, and its content date."""
@@ -46,16 +135,20 @@ class Revision:
     directory: Path
     prefix: str
     stored_files: tuple[str, ...] | None = None
+    archive: Path | None = None
+
+    def _validate_archive(self):
+        if self.archive is None:
+            raise RuntimeError(
+                f"Stored MAM-parsed release has no archive path: {self.commit}"
+            )
+        expected = _listed_archive_members(self.prefix, self.stored_files or ())
+        _archive_members(self.archive, expected)
 
     def filenames(self):
         if self.stored_files is not None:
             names = list(self.stored_files)
-            for name in names:
-                if not (self.directory / self.prefix / name).is_file():
-                    raise FileNotFoundError(
-                        f"Stored MAM-parsed release input is absent:"
-                        f" {self.directory / self.prefix / name}"
-                    )
+            self._validate_archive()
         else:
             names = _git(
                 self.directory,
@@ -83,7 +176,16 @@ class Revision:
         if self.stored_files is not None:
             if filename not in self.stored_files:
                 raise ValueError(f"Unlisted release input: {filename}")
-            return (self.directory / self.prefix / filename).read_text(encoding="utf-8")
+            self._validate_archive()
+            member = f"{self.prefix}/{filename}"
+            try:
+                with zipfile.ZipFile(self.archive) as archive:
+                    return archive.read(member).decode("utf-8")
+            except (OSError, UnicodeDecodeError, zipfile.BadZipFile) as exc:
+                raise RuntimeError(
+                    f"Stored MAM-parsed release input is corrupt:"
+                    f" {self.archive}!{member}"
+                ) from exc
         return _git(self.directory, "show", f"{self.commit}:{self.prefix}/{filename}")
 
 
@@ -108,12 +210,14 @@ def resolve(rev):
         if matches:
             commit = matches[0]
             entry = manifest["revisions"][commit]
+            archive = paths.repo_root() / "MAM-parsed" / "historical" / f"{commit}.zip"
             return Revision(
                 commit,
                 entry["date"],
-                paths.repo_root() / "MAM-parsed" / "historical" / commit,
+                archive.parent,
                 "plus",
                 tuple(row["path"].removeprefix("plus/") for row in entry["files"]),
+                archive,
             )
 
     migration = manifest["migration"]
