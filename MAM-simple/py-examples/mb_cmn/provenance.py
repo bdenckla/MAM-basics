@@ -145,6 +145,25 @@ def repo_name_of(root: Path) -> str:
     return root.name
 
 
+def home_clone_dir(root: Path) -> Path | None:
+    """The clone whose working tree ``root`` is, directly or as a linked worktree.
+
+    ``root`` itself in an ordinary clone.  In a linked worktree, the clone the worktree
+    was made from: the parent of the common git dir that ``_common_git_dir`` reads out of
+    git's ``commondir`` file.  ``None`` when that common dir is not literally named
+    ``.git`` -- a submodule's, or a bare repository's -- since no clone directory then
+    holds it, and ``None`` when git's files cannot be read, so that a caller falls back to
+    what it did before this existed, as ``repo_name_of`` does.
+    """
+    try:
+        common = _common_git_dir(root)
+    except (OSError, ValueError):
+        return None
+    if common is None or common.name != ".git":
+        return None
+    return common.parent
+
+
 def _common_git_dir(root: Path) -> Path | None:
     """The git dir shared by ``root`` and its worktrees, or ``None``.
 

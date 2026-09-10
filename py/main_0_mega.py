@@ -4,8 +4,8 @@ The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
 five MAM product generators write into this repository after the fourth-stage
 Repoint steps completed on 2026-09-10. The near-Aleppo census still runs in the
-MAM-private sibling through ``mb_cmn.paths.repos_root()``. A worktree run therefore
-still needs ``REPOS_ROOT`` for that subprocess.
+MAM-private sibling through ``mb_cmn.paths.repos_root()``, which in a worktree looks
+beside the worktree's home clone, so a worktree run needs no ``REPOS_ROOT``.
 """
 
 import argparse

@@ -756,15 +756,14 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-**In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** The suite
-reads MAM-private, while MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS
-are local products. `paths.repos_root()` otherwise resolves the remaining sibling
-repos under the worktree's parent, where none of them is. A fresh primary-checkout
-run passed **976 passed, 5 skipped** on 2026-09-07.
-
-```powershell
-$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
-```
+**A worktree needs no `REPOS_ROOT`.** The suite reads MAM-private, while MAM-simple,
+MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are local products. Since 2026-09-10
+`paths.repos_root()` reads a linked worktree's home clone out of git's own files and looks for
+siblings beside it (Ben's decision that day), so a run in `.claude/worktrees/<name>` finds
+`C:/Users/BenDe/GitRepos/MAM-private` with nothing exported; before then every worktree run
+had to set `REPOS_ROOT`. The variable still overrides the default, for a layout where the
+siblings sit somewhere else. A worktree run with nothing exported passed **988 passed, 5
+skipped** on 2026-09-10.
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
