@@ -566,6 +566,161 @@ The fifth product lane. Land the source tree under MAM-OSIS/ and its published t
 
 Freeze and verify the one legacy HTML path. Retain the MAM-OSIS source as a Pages redirect host. Do not contact STEPBible or CrossWire; an external client that uses an old raw MAM-OSIS URL follows the decision for a loud one-time failure.
 
+### Phase 5 session boundaries — Ben's decision, 2026-09-10
+
+Ben requested “bite-sized” chained tasks to avoid or minimize context compaction.
+Phase 5 therefore spans the following bounded tasks. The original instruction to
+complete Phase 5 end to end describes their combined result, not one task's scope.
+
+1. **5A — checkout verification and preflight record: DONE 2026-09-10.** Record
+   the exact starting trees, source inventory, committed example oracle, canonical
+   suite, README disposition, and findings for the implementation tasks.
+2. **5B — Land and Licence.** Freeze a tracked source-to-destination Git-blob
+   manifest, copy the selected source blobs, prove staged identity, and commit Land
+   before adapting any copied text. Commit the scoped licence rows separately.
+   Verify the deployed target page and its assets. Keep source files, writers,
+   redirect configuration, and roster entries unchanged. The next task is 5C.
+3. **5C — Repoint and product verification.** Repoint writers, readers,
+   documentation, product URLs, and pipeline labels. Merge the source hygiene
+   check's scope into the canonical checker, rather than retaining an independently
+   runnable duplicate. Regenerate the real product and its independent example,
+   preserve and compare the frozen source artifacts, record exact source and
+   destination mtime changes, and explain every changed byte. Run the canonical
+   suite and affected lints. The next task is 5D.
+4. **5D — Stubs and published URLs.** Freeze every actual legacy HTML path,
+   register the redirect host, add the authored site-index entry, generate and
+   test the stubs, and deploy the destination before flipping the source pages.
+   Verify every legacy/target URL pair, query/fragment preservation, and custom
+   404 behavior. Keep the remaining source product files until 5E. The next task
+   is 5E.
+5. **5E — Empty.** After checking all preceding oracle evidence, replace the
+   source product with its dated redirect-host README and retained host files.
+   Remove MAM-OSIS from both workspace files and `repo_visibility` together.
+   Push and verify the source deployment and clean remote-aligned heads. Keep
+   the local source clone until 5F. The next task is 5F.
+6. **5F — Remove and Phase 5 completion.** Re-measure source branches, tags,
+   objects, stashes, ignored/untracked files, and worktrees; recycle only the
+   verified safe exact source clone. Run the product/example oracle, redirect
+   checks, and canonical suite with the actual sibling absent. Record exact
+   commits, deployments, and results in this plan and Programme Status, then
+   push and verify the final clean states. Do not begin or create Phase 6.
+
+Each task reads the current user-wide instructions and MAM-basics `CLAUDE.md`,
+this plan's common lane and README-disposition rules, the complete Phase 5 section,
+and the source files and review sections relevant to its bounded work. The
+programme's fourth-stage decision section and the second-stage “The oracle” and
+“The per-repo lane” sections remain the authorities; consult their relevant
+sections rather than repeatedly loading every completed stage's full history.
+This changes repeated reading and task boundaries, not the migration's obligations.
+Load `hebrew-prose` before changing accentuation prose. Ordinary URL/path
+adaptations and the licence scoping already authorized by the lane do not authorize
+unrelated editorial changes from the reviews.
+
+Before creating a successor, write back the completed chunk and remaining work,
+commit and push the finished changes, verify both primary checkouts, and leave
+no pending edits for the successor to inherit. Create only the next bounded task,
+using the saved `GitRepos` project directly (`environment.type = local`, actual
+path `C:/Users/BenDe/GitRepos`); that is the available saved project containing
+the required primary checkouts. Put the verified MAM-basics commit and unchanged
+or deliberately advanced source commit in the successor prompt. The successor
+must verify the exact repo roots, heads, branches, status, and remote ancestry
+before editing. Do not substitute the saved September 8 review worktree.
+
+### Phase 5A preflight record — 2026-09-10
+
+Task `01a08ba3-f988-7e52-bae1-36f17b21875f`, titled “Execute Phase 5 — MAM-OSIS”,
+ran from `C:/Users/BenDe/GitRepos`. Both required primary checkouts were clean
+on `main`; `git rev-parse --show-toplevel`, `git rev-parse HEAD`,
+`git branch --show-current`, `git status --porcelain`, `git rev-parse origin/main`,
+and live `git ls-remote origin refs/heads/main` verified the exact paths and heads:
+
+| Repository | Starting commit | Tracked files | Git-blob bytes | Python files | Published files / HTML |
+| --- | --- | ---: | ---: | ---: | ---: |
+| MAM-basics | `9d1de07404bd9257c3e4cafc0acc1c46b87264c9` | 5,547 | 798,180,091 | 1,221 | 1,829 / 578 |
+| MAM-OSIS | `697dc98a904a52ed81bb105772f002d3efb360e3` | 92 | 29,822,402 | 1 | 30 / 1 |
+
+Re-establish the inventory from `git -C <absolute-repo-path> ls-tree -r -l -z
+<starting-commit>`, parsing the NUL-delimited records and summing committed blob
+sizes. The destination has advanced since Phase 0 through the earlier landings
+and subsequent work; its old figures are not the Phase 5 baseline. Every source
+inventory figure still matches Phase 0 because the source commit is unchanged.
+
+| Source tree or file | Files | Git-blob bytes |
+| --- | ---: | ---: |
+| `MAPM-24/` | 24 | 6,673,778 |
+| `MAPM-orig-24/` | 24 | 7,853,592 |
+| `MAPM-orig/` | 3 | 7,692,615 |
+| `gh-pages/` | 30 | 782,189 |
+| `mapm.osis.xml` | 1 | 6,800,731 |
+| `header.xml` | 1 | 1,503 |
+| `mapm.conf` | 1 | 2,825 |
+| `osis2mod example command.txt` | 1 | 291 |
+| `README.md` | 1 | 266 |
+| `LICENSE.md` | 1 | 1,964 |
+| `py/tests/test_h_dot_below_nfc.py` | 1 | 11,643 |
+| `.gitattributes`, `.gitignore`, Pages workflow, tracked scratch message | 4 | 1,005 |
+
+The complete source HTML set is `gh-pages/index.html`. The workflow is
+`.github/workflows/pages.yml`, publishes only `gh-pages/`, and already has
+`github-pages` concurrency with cancellation. Existing successful deployments
+are MAM-basics run `34484135686` at `9d1de074` and MAM-OSIS run `33867262435`
+at `697dc98`. These are pre-migration deployments, not proof of the future
+destination or redirects. Re-establish with `gh run list --repo bdenckla/<repo>
+--workflow pages.yml --limit 1 --json databaseId,headSha,status,conclusion,url`.
+
+The canonical baseline command, run from the primary MAM-basics root with
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py`,
+passed **988 tests and skipped 5 in 99.30 seconds**. The log prints no subtest
+total. The old Phase 0 site-index failure is absent; a new failure must be
+investigated, not accepted under that historical exception. All 24 committed
+`MAM-simple/py-examples-out/osis/*.xml` blobs equal the corresponding source
+`MAPM-24/*.xml` blobs by filename and Git object ID. This is a committed-input
+comparison; no production or example generator was run in 5A. The real
+regeneration and mtime oracles belong to 5C.
+
+The source has no `AGENTS.md` or `CLAUDE.md`; MAM-basics' sole repository
+instruction file is `CLAUDE.md`. The complete source README has three substantive
+paragraphs: the OSIS extract, its SWORD/STEPBible/CrossWire purpose, and its
+documentation URL. Preserve all three in `MAM-OSIS/README.md`, adapting repository
+wording and the Pages URL after Land identity is proved. No substantive README
+paragraph is to be dropped. Add the concise root-README link in 5C.
+
+The remaining implementation findings are:
+
+1. The source tracks `.novc/commit_msg_regen.txt` (113 bytes), an obsolete commit
+   message, not product data. Record its exclusion from Land; it remains in
+   source Git history. Retain the source workflow at the host.
+2. `MAPM-orig/readme.txt` states CC BY-SA **3.0** for the historical external
+   snapshot; `MAPM-orig/provenance.txt` names openscriptures/morphhb. Preserve
+   that historical attribution and its separate terms. The current root
+   `LICENSE.md` is byte-identical to landed `MAM-simple/LICENSE.md` and states
+   CC BY-SA **4.0**. Do not apply one undifferentiated licence row to both trees.
+3. The source hygiene test finds its root through Git, so a copied runnable test
+   would scan MAM-basics with source-relative exclusions. Carry its generated
+   and historical-data exclusions into the canonical checker in 5C; explicitly
+   record the duplicate test's disposition rather than claiming it remains.
+4. `py/main_mam_osis.py` already reads local `MAM-simple/xml-vtrad-bhs/`, but its
+   book output, header, combined output, and page output still resolve the sibling.
+   Repoint those paths. `mapm.conf` contains both an old Pages URL and an old
+   GitHub data-source URL; the SWORD example command contains the old absolute
+   combined-file path. The pipeline specification has two `../MAM-OSIS/` labels;
+   remove the corresponding obsolete sibling-lint suppression when repointing.
+5. `all-repos.code-workspace` has 6 folders and `MAM-basics.code-workspace` has
+   2; both name `../MAM-OSIS`. `repo_visibility` has 7 entries, including public
+   MAM-OSIS. MAM-OSIS is in neither `frozen_repos` nor `repos_to_keep_absent`.
+   Re-measure these values in 5E, then remove the source from both workspaces
+   and `repo_visibility` together. No replacement freeze or keep-absent entry
+   is owed.
+
+Ignored local evidence is under `C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase5-mam-osis/`:
+the two baseline blob inventories, the two grouped inventory reports, and
+`baseline-suite.log`. The UTF-8 measurement runner is
+`C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase5_mam_osis_run.py`; its `inventory`
+command rebuilds the inventories, and its `run <log-name> <command>...` command
+saves a command's log. These are convenience evidence, not permanent oracles;
+5B must commit the Land manifest. Source-retirement safety and live redirect
+verification remain unperformed. No product file or MAM-private file changed.
+
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
 After all five product lanes. Do not begin Phase 6 until every source is a pushed, deployed redirect host and every lane records all four oracle layers. Re-run the canonical suite, every MAM product generator, all four examples, all redirect-manifest tests, the vendoring regeneration, git diff --check, and the source-reference sweep. Re-measure the MAM-basics Git-blob count and bytes, the workspace folder count, repo_visibility, and the five source repositories' breadcrumb state. The expected structural result is five landed top-level product directories, five landed published subtrees, five source redirect hosts, and no MAM-basics product write outside MAM-basics.
