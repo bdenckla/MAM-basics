@@ -25,10 +25,12 @@ _SHORT_NAME_OVERRIDES_PATH = _DPH_DIR / "short_unicode_name_overrides.json"
 
 # The command's four tracked outputs, each after the source it expands.  The first
 # two are the product's samples, which diffable-pointed-hebrew/README.md calls the
-# differential artifacts for the command; the other two are the zarqa tables that
-# misc/zarqa-table-diff/make-dph-files.ps1 expands.  tiny-sample-output-normalized.json
-# is not among them: the README calls it preserved historical data rather than a
-# current command output.
+# differential artifacts for the command; the other two are the two zarqa tables in
+# misc/zarqa-table-diff/.  A PowerShell script beside those tables also expanded them
+# until 2026-09-10, when phase 6b of doc/PLAN-mega-coverage.md deleted it, the mega's
+# diffable-pointed-hebrew step having made it redundant.
+# tiny-sample-output-normalized.json is not among them: the README calls it
+# preserved historical data rather than a current command output.
 TRACKED_EXPANSIONS = (
     (_DPH_DIR / "sample-input.txt", _DPH_DIR / "sample-output.json"),
     (_DPH_DIR / "tiny-sample-input.txt", _DPH_DIR / "tiny-sample-output.json"),

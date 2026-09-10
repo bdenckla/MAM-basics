@@ -580,7 +580,7 @@ _STEPS = [
         "uxlc-write-page-break-info",
         main_write_page_break_info.main,
         "reads in/UXLC-39 and in/lci_recs.json; writes uxlc/data/lci_augrecs.json, and"
-        " lci_augrecs.json, page_counts.json and lci_recs.xml under uxlc/out/UXLC-misc/",
+        " page_counts.json and lci_recs.xml under uxlc/out/UXLC-misc/",
     ),
     StepRecord(
         "uxlc-amb-early-mtg",
