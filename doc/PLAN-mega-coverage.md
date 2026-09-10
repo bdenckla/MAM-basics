@@ -5,8 +5,9 @@ is and isn't part of mega should be made", "Everything that is not part of mega 
 recorded justification as to why it is not in mega", and "It should be part of repo maintenance
 (if it is not already) to check that the only programs not part of mega are those that have
 documented justifications for why they are not part of mega." His answers to the six decisions in
-`doc/mega-coverage-2026-09-10.md` §1 are recorded there, quoted. Everything else here is that
-session's reconstruction.
+`doc/mega-coverage-2026-09-10.md` §1 are recorded there, quoted, and his later decisions of the
+same day are quoted in the phases they changed. Everything else here is that session's
+reconstruction.
 
 ## How this plan is executed
 
@@ -23,8 +24,7 @@ session's reconstruction.
   - `git -C C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/mega-coverage rev-parse --abbrev-ref HEAD`
     prints `claude/mega-coverage`;
   - `git -C … status --porcelain` prints nothing;
-  - `git -C … log --oneline -1` is the commit the previous phase reported, which for phase 2 is
-    the commit that added this plan.
+  - `git -C … log --oneline -1` is the commit the orchestrating session names in the phase's brief.
   Stop and report on any mismatch.
 - **Read before the first edit:** `CLAUDE.md` in the worktree, `~/.claude/CLAUDE.md`, and
   `doc/mega-coverage-2026-09-10.md`, which is the analysis this plan executes and names every
@@ -32,22 +32,28 @@ session's reconstruction.
 - **The interpreter is the primary clone's venv, by absolute path:**
   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, with the worktree as the current
   directory. Since phase 1 (`516a4a1a`) no `REPOS_ROOT` is needed in this worktree.
+- **The Glob tool finds nothing inside `.claude/`, where this worktree lives.** Use
+  `git -C <worktree> ls-files <path>`, or Grep with an explicit path.
 - **Never run the `near-aleppo-census` step.** It rewrites tracked goldens in MAM-private's primary
   clone, and its `gershayim_contexts.py` output will change on the next real mega run because the
   MAM-OSIS clone is gone; Ben has acknowledged that change, and that run is his, not this plan's.
-  To exercise mega steps, run their runners from a throwaway script in the session scratchpad
-  (import `main_0_mega`, pick steps from `_STEPS` by `step_id`), never `py/main_0_mega.py` whole,
-  and never `--resume-from` a step that the census follows.
+  To exercise mega steps, run their runners from a throwaway script (import `main_0_mega`, pick
+  steps from `_STEPS` by `step_id`), never `py/main_0_mega.py` whole, and never `--resume-from` a
+  step that the census follows.
 - **Do not modify MAM-private at all.**
 - **Commit discipline:** black on every changed `.py`
   (`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black <files>`); the full suite
   (`… py/main_test.py -q -p no:cacheprovider`, from the worktree root) green before committing;
   commit messages in a temp file passed with `git commit -F`; `git commit -- <paths>` naming
-  exactly the phase's files; commit on the branch and do not push, do not merge. The orchestrating
-  session integrates once, at the end, by `~/.claude/CLAUDE.md`'s four-step integration.
+  exactly the phase's files; commit on the branch and do not push, do not merge. Throwaway scripts
+  and message files go under the worktree's gitignored `.novc/mega-coverage-phase<N>/`. The
+  orchestrating session integrates once, at the end, by `~/.claude/CLAUDE.md`'s four-step
+  integration.
 - **Generated output is the test.** When a new step regenerates a tracked file, the file must come
   out byte-identical, or the diff must be explained before it is committed. An unexplained diff is
-  a finding to report, not a thing to commit.
+  a finding to report, not a thing to commit. A vendored copy's LAST_SYNCED date in
+  `out/vendoring_compare_out.txt` is its last commit date, so re-run `py/main_vendoring.py --all`
+  AFTER committing a change to a copied support file, not before.
 - **Report, at the end of the phase:** the commit hash; the files changed; the suite's result line;
   every regenerated file and whether it was byte-identical; and anything left undecided.
 
@@ -57,46 +63,30 @@ session's reconstruction.
 `provenance.home_clone_dir()`. A worktree run finds MAM-private with nothing exported. Suite in
 the worktree with nothing exported: 988 passed, 5 skipped.
 
-## Phase 2 — run the post-stress-meteg survey in the mega, skipped in the cloud
+## Phase 2 — run the post-stress-meteg survey in the mega, skipped in the cloud: DONE, `9657a081`
 
 Ben's decision, 2026-09-10: the survey "should join mega as long as" a worktree run finds
 MAM-private next to its home clone (phase 1), and "when it detects it is running in the cloud, it
 skips the MAS survey altogether (there is already precedent for this with respect to anything
 needing graphviz)".
 
-1. In `py/main_0_mega.py`, add a step `accgram-survey-post-stress-meteg` immediately before
-   `gen-site`, whose runner calls `main_accgram.almost_main(["survey-post-stress-meteg"])`.
-2. The runner skips when `graphviz_pin.in_cloud_session()` is true (`CLAUDE_CODE_REMOTE=true`, the
-   repository's one cloud discriminator; `py/mb_cmn/graphviz_pin.py` documents it). Record the
-   skipped step in a module-level list, print a notice to stderr, and extend
-   `_report_cloud_skipped_renders` so that its end-of-run banner reports skipped steps as well as
-   skipped SVGs. Its docstring defines CLOUD-COMPLETE as "every step ran and none failed"; reword
-   it to cover a step skipped for the cloud, and say that `gen-site` then renders from the tracked
-   JSON unchanged.
-3. Update the comments that say the mega must not require MAM-private: `_run_gen_site`'s comment
-   and the "ORDER-INDEPENDENT" comment above `gen-site` in `py/main_0_mega.py`, since `gen-site`
-   now depends on the survey step; the module docstring, which should say the survey reads
-   MAM-private except in the cloud; the comment above `_SURVEY_READING_PAGES` in
-   `py/main_authored.py`; `gen_html_files`' docstring in `py/author_site/post_stress_meteg.py`;
-   and `SIBLINGS_REACHED["MAM-private"]` in `py/tests/test_sibling_reach.py`, which should name the
-   two surveys and the mega's survey step.
-4. Verify, all three:
-   - `py/main_0_mega.py --resume-from accgram-survey-post-stress-meteg`, which runs the survey,
-     `gen-site` and `vendoring-audit` and nothing before them, with nothing exported. `git status`
-     must then be clean: `out/accgram/post-stress-meteg.json` and the eleven `gen-site` pages
-     byte-identical. (A fresh survey run was byte-identical to the tracked JSON on 2026-09-10.)
-   - A throwaway script that sets `CLAUDE_CODE_REMOTE=true`, calls the survey step's runner and then
-     the banner function, and shows the step skipped and reported.
-   - The full suite.
+`accgram-survey-post-stress-meteg` is step 40 of 42, immediately before `gen-site`. In a cloud
+session it is recorded as skipped, and the end-of-run banner, renamed `_report_cloud_skips`,
+reports skipped steps beside skipped SVG renders. `py/main_0_mega.py --resume-from
+accgram-survey-post-stress-meteg` rewrote 16 tracked files: 15 byte-identical, and
+`out/vendoring_compare_out.txt`, whose LAST_SYNCED date for the `provenance.py` copy moved because
+phase 1 recommitted that copy. Suite: 988 passed, 5 skipped.
 
-**Not expected to change:** any generated file.
-
-## Phase 3 — remove the two Wikisource index generators and the column-coordinate plots
+## Phase 3 — remove the Wikisource index generators, the plots, and the Sefaria download
 
 Ben's decisions, 2026-09-10: the Wikisource index generators "were one-off programs generating
 wikitext to get a human started, and will never be run again. So not only don't make them part of
-mega, remove them (and their outputs) from the repo entirely!"; and of the plots, "remove them from
-the repo entirely. They were one-time experiments." Their outputs go too.
+mega, remove them (and their outputs) from the repo entirely!"; of the plots, "remove them from the
+repo entirely. They were one-time experiments."; and "Let's get rid of in/mam-from-sefaria. I think
+I occasionally used it interactively, as a reference, but I have no plans to use it again." The
+outputs of the first two go too, and so does the download that writes the third: "Yeah, you can
+ditch the command, too. I'm no longer interested in tracking what sefaria does with what we give
+them (which was the point of this command, and that directory of this command's output)."
 
 **Delete** (`git rm`):
 - `py/main_ac_wikisource_page.py`, the package `py/ac_wiki/`, and its three outputs
@@ -104,7 +94,9 @@ the repo entirely. They were one-time experiments." Their outputs go too.
 - `py/main_lenin_wikisource_page.py`, the package `py/lenin_wiki/`, `py/lenin_paths.py`, and
   `leningrad/lenin-wiki/` with its three files;
 - `py/main_ac_plot_col_coords.py`, `py/py_ac_loc/plot_col_coords.py`, and
-  `aleppo/plot_col_coords-out/` with its three PNGs.
+  `aleppo/plot_col_coords-out/` with its three PNGs;
+- `in/mam-from-sefaria/`, its 39 CSVs, and the `fr-sefaria` subcommand of `py/main_download.py`,
+  together with any module only that subcommand uses.
 
 **Keep:** the rest of `aleppo/aleppo-wiki/`: J David Stark's CSV, `LICENSE.txt`,
 `Wikisource-URL.txt`, the two `Wikisource-manual-*.txt` snapshots of the hand work,
@@ -131,16 +123,21 @@ name what was removed:
 - `py/subcommands/download_wikisource_intro.py`'s docstring paragraph about the two generators.
 - `py/tests/test_no_machine_paths_in_artifacts.py` (entries for `leningrad/lenin-wiki` and the three
   `aleppo/aleppo-wiki/` outputs) and `py/tests/test_h_dot_below_nfc.py` (`plot_col_coords-out/`
-  in `_AC_EXCLUDE_DIR_PREFIXES`, and the comment above it that counts the derived trees).
+  in `_AC_EXCLUDE_DIR_PREFIXES` and the comment above it that counts the derived trees; and its
+  listing of `in/mam-from-sefaria`).
 - `py/hkq_cmn/uxlc_manuscript_page.py`, whose docstring cites `py/lenin_wiki/image_urls.py`: state
   the URL pattern there instead.
-- `doc/mega-coverage-2026-09-10.md`: the rows for these programs.
+- `py/pipeline_graph/pipeline_graph_spec.py`, which draws the Sefaria download (with an edge to
+  `out/`, though it wrote to `in/`): remove it, and regenerate the tracked graph with
+  `py/main_pipeline_graph.py`.
+- `doc/mega-coverage-2026-09-10.md`: the rows for all of these programs.
 
 **Raise, do not act:** `uxlc/data/lci_augrecs.json` and J David Stark's CSV each lose their only
 reader. Report both.
 
-**Not expected to change:** any generated file other than the deleted ones. The suite must stay
-green, since `ac_paths.code_paths()` fails loudly on a listed file that is gone.
+**Not expected to change:** any generated file other than the deleted ones and the pipeline graph.
+The suite must stay green, since `ac_paths.code_paths()` fails loudly on a listed file that is
+gone.
 
 ## Phase 4 — fold `py/main_uxlc_mega.py` into the mega
 
@@ -187,7 +184,7 @@ entry point before wiring it; call the function its command line reaches.
 6. Verify as in phase 4: run the new steps from a throwaway script, explain every diff, then the
    full suite.
 
-## Phase 5b — add the MAM-side and remaining generators
+## Phase 5b — add the MAM-side and remaining generators, the mpplus check, and the warnings fix
 
 1. The doc half of `py/main_mam_simple.py`: a step `mam-simple-docs` after `mam-simple`, running
    what `_write_generated_docs` runs. Give it a public name.
@@ -203,12 +200,28 @@ entry point before wiring it; call the function its command line reaches.
    pairs; `diffable-pointed-hebrew/README.md` and `misc/zarqa-table-diff/make-dph-files.ps1` name
    them.
 6. `py/main_ac_gen_index_flat_annotated.py`, as a step.
-7. Verify as in phase 4.
+7. **`check_mpplus`** (`py/py_misc/check_mpplus.py`), as a step `check-mpplus` immediately after
+   `parse-go`, failing the mega on any error, as `py/subcommands/download_google.py`'s `run` does;
+   that download path keeps its own call. Today the check runs only there, inside
+   `py/main_download.py fr-google`, while the mega's `parse-go` step runs the same parse and skips
+   the check that follows it on the download path. Ben,
+   2026-09-10: running it in the mega "checks the check", making sure the check itself still
+   works. It also covers the other way the plus JSON changes: `parse-go` regenerates it from the
+   tracked CSVs on every mega run, so a change to the parser, or to the check's own rules, reaches
+   the data with no download at all.
+8. **Fix `ws-bot-proto`'s `warnings.json`.** Warnings are collected only for an edit file. The
+   mega's run has none: `no_edits()` in `py/ws/ws_bot_edit.py` returns a context with no
+   `get-warnings` key, so `write_warnings` returns without writing, and the tracked
+   `out/mam-ws-bot/proto-misc/warnings.json` keeps whatever the last `proto --edits` rehearsal
+   wrote while the proto files beside it are overwritten without edits. Ben, 2026-09-10: "that
+   seems bad, let's fix that." Make every proto run write the file, in its empty form when there
+   are no edits, so that it always belongs to the same run as its neighbours. The `ws_bot` tests
+   pin edit payloads on purpose (`CLAUDE.md`), so read them before changing the edits context.
+9. Verify as in phase 4.
 
-## Phase 6 — delete the dead and redundant programs
+## Phase 6 — delete the dead and redundant programs, and retire `check_ac_word_finding.py`
 
-Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence. **`py/check_ac_word_finding.py`
-is excluded**: that recommendation left it to Ben, and he has not settled it.
+Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
 
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
@@ -226,7 +239,20 @@ is excluded**: that recommendation left it to Ben, and he has not settled it.
 8. `py/main_source_hygiene.py`; `py/tests/source_hygiene_test.py` runs the same scan.
 9. The dead code in live modules: `example_run()` in `py/main_uxlc_estimate_atom_loc.py`, and the
    uncalled `add_args` and `run` at the end of `py/author_site/post_stress_meteg.py`.
-10. Verify: the reference sweep for every deleted name, the full suite.
+10. **`py/check_ac_word_finding.py`: fix it, then retire it, in two commits.** Ben, 2026-09-10:
+    "why not fix it and then delete it, i.e. retire it in good working form."
+    - **The fix, committed first.** codex-index-aleppo's `eb4bcaf` (2026-03-14, "Add Deut support
+      and migrate column IDs to NofM format") changed every `line-breaks/*.json` from `"col": 1` to
+      `"col": "1of2"`, so the finder has returned `"NofM"` strings since, while the expected values
+      in `aleppo/test-data-from-book-of-job.json` keep the bare column number. Compare the number
+      only, and show the check passing: `PASS: 160`.
+    - **The retirement, committed second.** Delete the check; its fixture
+      `aleppo/test-data-from-book-of-job.json`, which nothing else reads; and
+      `ac_paths.word_finding_test_data_path()`. Remove its import, list entry and docstring line
+      from `py/check_ac_all.py`, and its entry from `ac_paths.AC_TOP_LEVEL_MODULES`.
+      `py/check_cam1753_all.py`'s docstring compares its own check with this one, so update that
+      sentence.
+11. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check
 
@@ -259,13 +285,13 @@ its dead-entry check.
    nothing exported.
 2. `git status` must be clean. Any diff is explained and committed on its own, or reported.
 3. Run the full suite.
-4. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, and
-   report the branch head for the orchestrating session to integrate.
+4. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, which
+   also retires its §3 and §5 rows for the post-stress-meteg survey, and report the branch head for
+   the orchestrating session to integrate.
 
 ## Not in this plan, raised for Ben
 
-1. The three gaps after the analysis's §5 table: `ws-bot-proto`'s `warnings.json`, `check_mpplus`
-   running only after a Google download, and `in/mam-from-sefaria/` read by nothing. They were not
-   part of Ben's answer.
-2. `py/check_ac_word_finding.py`: fix the comparison or delete.
-3. The incidental findings of the analysis's §8, except those a phase above fixes on its way past.
+1. **A cloud run without MAM-private still stops at `near-aleppo-census`**, the step immediately
+   before the survey that phase 2 taught to skip, so the survey's skip is never reached there. Ben
+   has not been asked whether the census should skip in the cloud too.
+2. The incidental findings of the analysis's §8, except those a phase above fixes on its way past.
