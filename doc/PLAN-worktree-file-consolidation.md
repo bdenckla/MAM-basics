@@ -16,7 +16,7 @@ The file-count estimate is not a prediction of the timing improvement.
 | 3 | Historical snapshots | Complete at `32fa7da66ef6174f2459e23afc2d28baab5c6f07` in the Phase 3 branch described below |
 | 4 | Job records | Complete at `f5d060d2faa32e4d1f7de36aee5922562a4d0e8d` in the Phase 4 branch described below |
 | 5 | Combined verification | Complete in the Phase 5 branch described below; result commit is identified by the Phase 6 handoff |
-| 6 | Benchmark and close-out | Next task; create only after the Phase 5 commit is clean |
+| 6 | Benchmark and close-out | Complete in the Phase 6 branch described below; the timing did not demonstrate a speedup |
 
 Phase 1 task: `01a08c68-10a6-7442-8ff7-1e5ac0303211`.
 Its verified development checkout is
@@ -966,6 +966,122 @@ Verify clean status and ancestry, then create only Phase 6 last. The Phase 6
 prompt must identify the exact verified combined commit for benchmarking.
 
 ## Phase 6: benchmark and close-out
+
+### Phase 6 execution receipt
+
+Phase 6 task: `01a08cf3-20c2-7e91-a4d8-b4430c96c195`. Its verified
+development checkout is
+`C:/Users/BenDe/.codex/worktrees/3f99/MAM-basics`, on branch
+`codex-worktree-3f99`. The checkout started clean and detached at the exact
+Phase 5 commit `dbef49317ec91cac1e792e94a9140f7522b38efe`; the required branch
+name was unused and was created at that commit before benchmarking. The Phase
+4 commit `f5d060d2faa32e4d1f7de36aee5922562a4d0e8d` and baseline
+`dc043165f98b8a75ee3faa34314b70d0b2171a8f` are ancestors of the Phase 5
+commit.
+
+The benchmark ran on 2026-09-10 under Git 2.43.0.windows.1. All six trials
+used the same disk and the resolved task-owned parent
+`C:/Users/BenDe/.codex/worktrees/3f99/MAM-basics/.novc/worktree-file-benchmark`.
+The task-local driver was
+`C:/Users/BenDe/.codex/worktrees/3f99/MAM-basics/.novc/benchmark_worktree_file_consolidation_phase6.py`.
+The driver used `time.perf_counter()` immediately around only
+`subprocess.run(["git", "worktree", "add", "--detach", fresh_path,
+commit], ...)`, captured both output streams, and wrote the complete record
+after every trial. It did not clear caches, change persistent Git
+configuration, run a generator, extract an archive, or create a `.venv` path.
+
+The baseline commit has 5,646 tracked files. The Phase 5 commit has 4,949
+tracked files, including the programme's plan, compact baseline evidence, and
+note-storage support module. The completed layout therefore has 697 fewer
+tracked files, a 12.3% reduction. Updating this already tracked plan does not
+change the 4,949-file count.
+
+The trials alternated baseline and completed revisions. Every child path was
+fresh, every command exited zero, and the commands ran in the order shown:
+
+| Order | Revision | Exact child path under the benchmark parent | Seconds |
+| ---: | --- | --- | ---: |
+| 1 | baseline `dc043165f98b8a75ee3faa34314b70d0b2171a8f` | `baseline-1` | 15.599635 |
+| 2 | completed `dbef49317ec91cac1e792e94a9140f7522b38efe` | `completed-1` | 14.537181 |
+| 3 | baseline `dc043165f98b8a75ee3faa34314b70d0b2171a8f` | `baseline-2` | 12.721164 |
+| 4 | completed `dbef49317ec91cac1e792e94a9140f7522b38efe` | `completed-2` | 15.715834 |
+| 5 | baseline `dc043165f98b8a75ee3faa34314b70d0b2171a8f` | `baseline-3` | 20.357231 |
+| 6 | completed `dbef49317ec91cac1e792e94a9140f7522b38efe` | `completed-3` | 21.053379 |
+
+Each exact command was `git worktree add --detach <absolute-child-path>
+<full-commit>`, with `<absolute-child-path>` equal to the benchmark parent plus
+the child name in the table. Baseline stdout was exactly `HEAD is now at
+dc043165 Verify Phase 6B parsing, surveys and MAM-simple regeneration`; its
+stderr began with `Preparing worktree (detached HEAD dc043165)` and ended with
+`Updating files: 100% (5646/5646), done.` Completed stdout was exactly `HEAD
+is now at dbef4931 Verify combined worktree file consolidation`; its stderr
+began with `Preparing worktree (detached HEAD dbef4931)` and ended with
+`Updating files: 100% (4949/4949), done.` The task-local result file retains
+every intermediate progress line, exact command array, revision, absolute
+path, output stream, return code, and unrounded duration. After verified
+cleanup its SHA-256 is
+`e5d20129bbf87c509ddf64d540f0e39be67a2741d5b929f2926eaaad55b5d311`.
+
+| Revision | Individual seconds | Median seconds | Range seconds |
+| --- | --- | ---: | --- |
+| baseline | 15.599635, 12.721164, 20.357231 | 15.599635 | 12.721164–20.357231 |
+| completed | 14.537181, 15.715834, 21.053379 | 15.715834 | 14.537181–21.053379 |
+
+The completed median is 0.116199 seconds, or 0.7%, slower than the baseline
+median. The ranges overlap from 14.537181 through 20.357231 seconds and the
+within-revision variation is much larger than the median difference. These six
+trials do not demonstrate either a speedup or a regression. The tracked-file
+reduction is established independently, but it is not a substitute for the
+timing result.
+
+Relevant Git configuration stayed fixed: system `core.autocrlf=true`, system
+`core.fscache=true`, repository `core.filemode=false`, repository
+`core.ignorecase=true`, system and repository `core.symlinks=false`, and
+repository `extensions.worktreeconfig=true`. The selected `core.eol`,
+`core.safecrlf`, `core.longpaths`, `core.preloadindex`,
+`core.untrackedcache`, `core.sparsecheckout`, `core.sparsecheckoutcone`,
+`index.threads`, `checkout.workers`, `checkout.thresholdforparallelism`,
+`feature.manyfiles`, and `submodule.recurse` values were unset. A process-local
+`safe.directory` value named only the verified Phase 6 checkout because the
+desktop sandbox account could not otherwise use the linked repository; no
+global Git configuration changed.
+
+No trial failed or had a user-driven interruption. The before/after worktree
+records nevertheless show concurrent activity in two unrelated worktrees:
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/eloquent-ritchie-0e4c6c`
+advanced from `a8c9fe619409466560a1823847c1e4c4e7ed96d5` to
+`29bcdbe023f3b42f1bb7405db666737470b071f6`, and
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/mega-coverage` advanced
+from `9dba5d4ff579ea56ed5566a13f5a00988eca3772` to
+`7509c388462f5f7f9ab02d38a8a5516c9018062b`. That concurrent repository and
+disk activity, the deliberately uncontrolled filesystem cache, and the sample
+of only three trials per revision limit the timing conclusion.
+
+Before cleanup, the driver resolved each recorded child and required the path
+to be a direct child of the recorded benchmark parent. It verified the exact
+trial commit, empty `git status --porcelain=v1 --untracked-files=all`, and the
+absence of any `.venv` path. It then ran plain `git worktree remove
+<exact-absolute-path>` from the Phase 6 checkout, without `--force`. All six
+removals exited zero with empty stdout and stderr. Each child path was absent
+and each registration was absent immediately after removal; the final `git
+worktree list --porcelain` names no benchmark child. The cleanup command
+completed in 14.604 seconds. No live task worktree or branch was removed or
+modified.
+
+After the receipt edit, the applicable prose mark-order and Latin-diacritic
+hygiene selection passed 7 of 7 in 53.25 seconds reported by pytest and
+54.707450 wall seconds. The command ran from the Phase 6 checkout with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py
+```
+
+The programme is complete. Phase 6 changes only this plan, creates no successor
+task, and performs no merge or push. Phase 5 task
+`01a08cd3-ea1e-7ac0-89c9-470efdb93ee2` retains archival-time integration
+responsibility for merging current `main` into `codex-worktree-3f2e`, verifying
+the merged tree there, fast-forwarding primary `main`, and pushing.
 
 Use baseline `dc043165f98b8a75ee3faa34314b70d0b2171a8f` and the exact completed
 commit verified by Phase 5. Create three fresh detached benchmark worktrees per
