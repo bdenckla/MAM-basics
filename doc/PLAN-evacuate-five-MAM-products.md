@@ -1365,7 +1365,7 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
-Tasks **6A–6D are complete, 2026-09-10**; 6E–6F remain. Ben selected
+Tasks **6A–6E are complete, 2026-09-10**; 6F remains. Ben selected
 `gpt-5.6-sol` with `xhigh` reasoning for 6D and every later implementation
 task in this chain. The finalized
 [command map](mam-products-phase6-command-map.md) and
@@ -1375,7 +1375,8 @@ The [6A verification record](../in/mam_products_phase6a_verification.json) prese
 the preflight, suite result and source-host evidence. The
 [6B verification record](../in/mam_products_phase6b_verification.json) establishes
 current parsing, FOI, template-survey, documentation and MAM-simple synchronization.
-The remaining product and independent-example runs retain their assigned tasks.
+The final verification, inventories and programme completion retain their
+assignment to 6F.
 
 ### Phase 6 session boundaries — Ben's decision, 2026-09-10
 
@@ -1880,3 +1881,110 @@ primary status is clean, create only **6E — publication, vendoring and source
 references** in the saved GitRepos project, using Local mode, model
 `gpt-5.6-sol` and `xhigh` reasoning. Phase 6E must create only Phase 6F after
 its own clean pushed completion, with the same model and reasoning setting.
+
+### Phase 6E publication, vendoring and source-reference record — 2026-09-10
+
+Task `01a08c94-01be-73d0-9d6a-29a5664a9585`, created by task
+`01a08c78-1b03-78e2-922a-9f3772e5801b` with model `gpt-5.6-sol` and
+`xhigh` reasoning, verified its actual cwd as `C:/Users/BenDe/GitRepos` and
+developed directly in `C:/Users/BenDe/GitRepos/MAM-basics`. Primary `main`,
+`origin/main` and live remote `main` all matched
+`31318dd4b68065efe515b478e10d4bff2c72053e` at startup; the checkout and
+index were clean. No worktree was created or moved.
+
+The permanent evidence is `in/mam_products_phase6e_verification.json`. It
+contains the exact command arrays, scratch stub hashes, complete 139-pair
+legacy URL census, all 484 HTTP results, source-host Git objects and
+breadcrumbs, deployment records, vendoring states, source-reference
+classifications, bounded resolutions and command logs.
+
+The redirect-manifest command passed **10 tests in 0.52 seconds**. Each product's
+frozen redirect stubs were then built and checked in a separate ignored directory
+with explicit `--repo`, `--out` and `--dir` arguments. The ten commands passed
+and produced exactly **144 files**: 3 for MAM-simple, 2 for MAM-for-Sefaria,
+23 for MAM-parsed, 114 for MAM-with-doc and 2 for MAM-OSIS. No expected file
+was absent, no extra file appeared, each check left its scratch tree unchanged,
+and no primary-checkout file changed.
+
+Fresh GitHub API and HTTP checks verified the five unarchived source hosts at
+their current heads and successful Pages deployments:
+
+| Source host | Remote commit | Successful Pages run |
+| --- | --- | --- |
+| MAM-simple | `376912a758443bb0c015bd77dfca5bef3e97f9c9` | `34276914395`, `static.yml` |
+| MAM-for-Sefaria | `cf23b478f801ca586d227693db9133da54d87f30` | `34049004202`, `pages.yml` |
+| MAM-parsed | `c9e04c496920b1c423069dfbc4b31078efa0b0a0` | `34055284061`, `pages.yml` |
+| MAM-with-doc | `904c9fa178265dce6fec5704f5c0424fc94f6719` | `34062108606`, `pages.yml` |
+| MAM-OSIS | `8df241b3bb43e6f8ecf76ee35175380689fbcb68` | `34496487629`, `pages.yml` |
+
+All **144 source redirect Git objects** match the newly generated scratch
+files. The 139 frozen legacy/target pairs produced 278 responses; five custom
+404 routes and all 340 target files were also checked. All **484 unique HTTP
+requests** returned the required status and bytes. Of the target responses,
+339 matched accepted Git blobs directly and one matched its declared CRLF
+checkout representation. URL encoding was exercised by 117 target paths.
+Every breadcrumb names its product, target repository and published location,
+and all five actual source sibling paths remain absent.
+
+The Phase 5D browser proof was reused only after fresh byte checks established
+that every deployed source script and every deployed MAM-OSIS target still
+matched the objects covered by that proof. The reused scope is the six successful
+query/fragment and custom-404 cases, including three percent-encoded PNG names.
+The MAM-OSIS target has no authored anchors, so fragment preservation still does not
+prove scrolling; the earlier optional direct-CSS browser timeout remains
+separate from the successful CSS HTTP comparison.
+
+Vendoring regeneration rewrote all four declared report paths. The provenance
+JSON and text retained identical bytes; `doc/vendoring-inventory.md` and
+`out/vendoring_compare_out.txt` changed because the audit now reports the
+working-byte identity exactly. Of the **44 audited MAM-simple support copies**,
+19 have identical raw bytes and 25 differ only by CRLF versus LF. All 44 have
+identical filtered Git blobs. The separate support check includes one additional
+MAM-parsed copy: all **45 pairs** match as Git blobs, 20 match as raw bytes and
+25 differ only by line endings. MAM-private remained excluded by the vendoring
+policy and was not modified.
+
+The pipeline generator rewrote the three declared paths and reproduced all
+three bytes exactly. The site-index generator rewrote the eleven declared
+paths and reproduced all eleven bytes exactly. Both commands had no unexpected
+write and retained the Phase 6A baseline identities.
+
+The source-reference sweep used both `git grep` and `rg` over the same tracked
+set and obtained identical results: **20,313 matches in 826 files** for the five
+product names, **121 matches in 39 files** for sibling-path constructions and
+**306 matches in 59 files** for old remote URLs. Every match was classified.
+Both workspace rosters and `repo_visibility` exclude the five products.
+Operational Python references occur in six named paths; the five product
+sibling declarations are redirect-only, and the MAM-parsed historical fallback
+is explicitly optional. No old product URL remains in the published tree or a
+current product README. Old product URLs in operational Python are redirect
+definitions.
+
+The sweep found two bounded public findings. First, the shared Hebrew-prose
+verification guidance still called landed MAM-OSIS a sibling. The tracked
+guidance, the Claude live copy and the Codex live copy now list all five products
+inside MAM-basics and retain only MAM-private and a temporary redirect-host clone
+as siblings; both
+required whole-skill comparisons passed with no difference. Second, the
+manually maintained MAM-with-doc sigil page still linked source issues 6 and 8
+and called the landed tree a repository. Commit
+`3e3a93ef82615710a2520bd85a3086e9ae4fbc9d` links open MAM-basics issues 257
+and 259 and calls the tree a product. Pages run `34523189844` deployed that
+commit successfully; a fresh HTTP request returned 9,613 bytes exactly matching
+the commit, with both current links present and both old links absent.
+
+The affected command ran redirect, vendoring, Graphviz/provenance, site-link,
+machine-path, sibling-reach, roster, prose-convention and sigil checks; it
+passed **60 tests in 27.22 seconds**. The final staged Unicode/prose hygiene
+command, `py/main_test.py py/tests/test_h_dot_below_nfc.py
+py/tests/test_prose_mark_order.py -q`, passed **7 tests**. `git diff --cached
+--check` passed. Tracked Python was unchanged, so Black was not required.
+Full mega, downloads, optional legacy history, source-clone recreation,
+directory recycling and MAM-private writes were not performed.
+
+After the Phase 6E record and both programme plans are committed, pushed and the
+complete primary status is clean, create only **6F — final verification, inventories and
+programme completion** in the saved GitRepos project, using Local mode, model
+`gpt-5.6-sol` and `xhigh` reasoning. Phase 6F must verify its exact checkout
+and required Phase 6E commit before editing, must complete and push the final
+programme record, and must not create a successor.
