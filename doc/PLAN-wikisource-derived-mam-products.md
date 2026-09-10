@@ -8,6 +8,12 @@ before implementation where needed. Execute the work in fresh, small Codex tasks
 that are unlikely to require context compaction. All tasks use the same worktree
 and branch, with one writer at a time.
 
+Ben's decision, 2026-09-10, during Phase 2: use `gpt-5.6-sol` for subsequent
+implementation tasks. The Codex task-creation tool accepts an explicit `model`
+argument, so create Phase 3 and each subsequent implementation successor with
+`model = gpt-5.6-sol`; do not rely on inheriting the coordinator's Astra model.
+No manual model change in the predecessor is necessary.
+
 The accepted design is:
 
 1. Wikisource downloads produce MAM-parsed-plain and MAM-parsed-plus.
