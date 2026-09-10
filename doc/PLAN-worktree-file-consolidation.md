@@ -13,9 +13,9 @@ The file-count estimate is not a prediction of the timing improvement.
 | --- | --- | --- |
 | 1 | Inventory and verification preparation | Complete; evidence and plan are in the Phase 1 commit identified below |
 | 2 | UXLC notes | Complete in the Phase 2 branch head identified below |
-| 3 | Historical snapshots | Complete in the Phase 3 branch described below; result commit is identified by the Phase 4 handoff |
-| 4 | Job records | Next task; create only after the Phase 3 commit is clean |
-| 5 | Combined verification | Pending Phase 4 |
+| 3 | Historical snapshots | Complete at `32fa7da66ef6174f2459e23afc2d28baab5c6f07` in the Phase 3 branch described below |
+| 4 | Job records | Complete in the Phase 4 branch described below; result commit is identified by the Phase 5 handoff |
+| 5 | Combined verification | Next task; create only after the Phase 4 commit is clean |
 | 6 | Benchmark and close-out | Pending Phase 5 |
 
 Phase 1 task: `01a08c68-10a6-7442-8ff7-1e5ac0303211`.
@@ -532,11 +532,10 @@ ancestor. The Phase 2 predecessor remained HEAD through implementation and all
 pre-documentation verification. At the startup measurement, `main` and
 `origin/main` were both `31318dd4b68065efe515b478e10d4bff2c72053e`.
 
-The Phase 3 result commit is necessarily not self-identifying inside the commit
-that contains this receipt. The Phase 4 creation prompt and Phase 3 final
-response carry its full hash, and the Phase 4 executor records the verified
-predecessor hash here. Re-establish the result without relying on that later
-write-back with:
+The Phase 3 result commit is
+`32fa7da66ef6174f2459e23afc2d28baab5c6f07`. Phase 4 verified that exact
+commit as its clean starting HEAD and verified the Phase 2 and Phase 1 commits
+as ancestors. Re-establish the Phase 3 result independently with:
 
 ```powershell
 git -C C:/Users/BenDe/.codex/worktrees/3169/MAM-basics log -1 --format=%H -- MAM-parsed/historical py/mb_diff_mpu/mpplus_revisions.py
@@ -646,6 +645,113 @@ Update the historical README to describe the final storage. Update this plan,
 commit locally, verify clean status and ancestry, then create only Phase 4 last.
 
 ## Phase 4: Job chapter modules
+
+### Phase 4 execution receipt
+
+Phase 4 task: `01a08cb2-16f0-7520-9ae4-67b1e8dae669`, titled
+**Consolidate Job record modules**. Its verified development checkout is
+`C:/Users/BenDe/.codex/worktrees/ffc9/MAM-basics`, on branch
+`codex-worktree-ffc9`. The checkout started clean and detached at the exact
+Phase 3 commit `32fa7da66ef6174f2459e23afc2d28baab5c6f07`; the branch did not
+exist elsewhere and was created at that commit before implementation. The
+Phase 2 commit `09d008809cd0a79267ea790b0b126e9f2af98f3c` and Phase 1 commit
+`b080a01a87f29f2140144a1247c45c654d240224` are ancestors. At startup,
+`main` and `origin/main` were both
+`31318dd4b68065efe515b478e10d4bff2c72053e`.
+
+The Phase 4 result commit is necessarily not self-identifying inside the
+commit that contains this receipt. The Phase 5 creation prompt and Phase 4
+final response carry its full hash, and the Phase 5 executor records the
+verified predecessor hash here. Re-establish the result without relying on
+that later write-back with:
+
+```powershell
+git -C C:/Users/BenDe/.codex/worktrees/ffc9/MAM-basics log -1 --format=%H -- py/author_boj_qr py/author_boj_util/job_quirkrecs.py py/check_qr_consistency.py
+```
+
+The immutable Phase 1 evidence retained SHA-256
+`f04b2d9f0e60ed35794218c444bb88ea4ec5245302efcbe71c049d413d60c3fa`.
+Phase 4 replaced 160 per-record modules with 39 populated-chapter modules.
+The replacement preserves all 160 `RECORD_*` assignments in exact loader
+order. It preserves all 278 original top-level assignment source segments and
+all 74 comment tokens in source order, apart from the seven necessary helper
+renames named below. Import consolidation reduced 91 original import statements
+to 67 equivalent grouped imports.
+
+Seven colliding helpers in four records gained record-qualified names:
+
+1. Record `1916_BMV0PY` uses `_GENCOM_PARA_1_1916_BMV0PY`,
+   `_GENCOM_PARA_2_1916_BMV0PY`, and `_GENCOM_PARA_3_1916_BMV0PY`.
+2. Record `3422` uses `_COMMENT_PARA1_3422`.
+3. Record `3433_HM3M5` uses `_COMMENT_PARA2_3433_HM3M5` and
+   `_COMMENT_PARA3_3433_HM3M5`.
+4. Record `3913` uses `_COMMENT_3913`.
+
+The complete recursively type-tagged runtime sequence has SHA-256
+`380d32bc7114735166e07cc77bdcab11eebff6500d5106d138ef99ae6efff95b`,
+the Phase 1 value. Every individual record hash, dictionary key and value order,
+list and tuple order, value, and Python type matches Phase 1. The aggregate
+recursive value counts remain 21 booleans, 870 dictionaries, 1,005 integers,
+393 lists, 5,897 strings, and 4 tuples.
+
+`job_quirkrecs.py` now imports the 39 chapter modules and constructs
+`RAW_QUIRKRECS` in the original record order. `check_qr_consistency.py` now
+discovers only exact `qr_CC.py` chapter names and inspects every record
+assignment for identifier, chapter, verse, and word-ID agreement. It also
+rejects empty discovery, duplicate file discovery, duplicate record identifiers,
+and malformed filenames. Four independent negative probes exercised those four
+failure classes. The existing cross-record relation remained valid.
+
+The real `py/main_gen_misc_authored_english_documents.py` command completed in
+5.34 seconds. All 183 declared outputs matched the Phase 1 path set and SHA-256
+values, including all 160 Job detail pages, and Git status was unchanged. The
+QR consistency check passed all 39 chapter modules and 160 records in 0.15
+seconds. The one relation passed in 0.40 seconds. `py/check_all.py` reported all
+7 checks passed in 3.82 seconds. The prose mark-order and Latin-diacritic hygiene
+selection passed 7 of 7 both before and after the receipt edit; one
+post-receipt run took 14.91 seconds. Black 26.5.1 left all 43 changed Python
+files unchanged.
+
+The first full-suite run occurred before the replacement directory was staged.
+The sibling-reach lint obtains its path set from `git ls-files`, so that run
+passed 987 tests and then reported two `FileNotFoundError` failures while the
+index still named the deleted per-record files. This was a verification-order
+finding, not a source defect: staging only `py/author_boj_qr/` made the index
+describe the intended tree. The focused sibling-reach selection then passed 2
+of 2 in 4.20 seconds. The complete rerun reported **989 passed, 5 skipped, 65
+subtests passed** in 100.47 seconds, with unchanged Git status.
+
+The staged tree contains 4,949 tracked files. That is 121 fewer than Phase 3,
+699 fewer than Phase 1, and 697 fewer than the original 5,646-file baseline.
+The three consolidation phases themselves removed the estimated 700 storage
+files; the programme added three durable support files: the plan, immutable
+evidence, and `py/clc/clc_note_storage.py`.
+
+Commands ran from the verified Phase 4 worktree with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`. The exact principal commands were:
+
+| Purpose | Command |
+| --- | --- |
+| Compare sources, comments, imports, runtime values and failure probes | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/verify_job_records_phase4.py` |
+| Regenerate and compare all authored-English outputs | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py` |
+| Check every chapter module and record | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_qr_consistency.py` |
+| Check cross-record relations | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_qr_relations.py` |
+| Run all source and HTML checks | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py` |
+| Check changed prose and Latin-diacritic hygiene | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py` |
+| Recheck the tracked-file scanner after staging the replacement directory | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider py/tests/test_sibling_reach.py` |
+| Run the full suite | `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -p no:cacheprovider` |
+
+The shared interpreter and linked-worktree Git metadata required scoped
+elevation in the desktop sandbox. Git commands also used a process-local
+`safe.directory` entry for this worktree. At the pre-receipt check, the primary
+clone carried four in-progress paths owned by the unrelated Phase 6E publication
+and vendoring task `01a08c94-01be-73d0-9d6a-29a5664a9585`; Phase 4 left all
+four paths untouched. No published path, generated output, product layout,
+image collection, Wikisource input, historical archive, Pages workflow, or
+MAM-private content changed. Phase 4 performed no integration or push. The
+Phase 5 task must record its returned task ID, allocated checkout, branch, and
+exact Phase 4 predecessor in this receipt after verifying them; Phase 4 creates
+that task only after its result is committed and clean.
 
 Replace the individual `py/author_boj_qr/qr_*.py` record modules with chapter
 modules `qr_CC.py` for the populated chapters. Preserve every `RECORD_*`
