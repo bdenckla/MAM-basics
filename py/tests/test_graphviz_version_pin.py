@@ -7,19 +7,18 @@ change was actually wanted. `py/mb_cmn/graphviz_pin.py`'s docstring records the
 case that prompted this and Ben's decision of 2026-09-09; what that module leaves
 to this file is the half its `check_installed` cannot reach:
 
-  * `doc/process-documentation/MAM-process.dot.svg` HAS NO GENERATOR. The
-    provenance note beside it calls `MAM-process.dot` "the definitive source",
-    but nothing under `py/` renders it -- grepping the `.py` for
-    "process-documentation" finds only `pipeline_graph.py`, which writes
-    `pipeline.dot` and `pipeline.svg`. It sat at 14.1.2 (20260124.0452) until
-    `a254d450` of 2026-09-09. No generator-side check could ever have caught it,
-    and none can keep it right. Re-render it by hand:
-
-      & "C:/Program Files/Graphviz/bin/dot.exe" -Tsvg -o doc/process-documentation/MAM-process.dot.svg doc/process-documentation/MAM-process.dot
-
   * A file committed from a machine that never ran the generator-side check --
     another checkout, another machine, a container -- is caught here and nowhere
     else.
+
+  * A file that no generator owns is caught here and nowhere else, which is what
+    this lint was written for. `doc/process-documentation/MAM-process.dot.svg`
+    WAS such a file: nothing under `py/` rendered it, so it sat at
+    14.1.2 (20260124.0452) while every other tracked SVG here moved to 16.0.0,
+    and `a254d450` of 2026-09-09 re-rendered it by hand. THAT GAP HAS BEEN
+    CLOSED -- `py/main_pipeline_graph.py` renders it now, so `check_installed`
+    fires for it like any other -- but the reading stays, because nothing
+    guarantees the next tracked SVG to arrive will have an owner either.
 
 It also needs no Graphviz installed, reading only tracked bytes, so it runs
 wherever the suite runs.
