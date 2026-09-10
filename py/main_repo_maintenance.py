@@ -56,7 +56,7 @@ Six independent steps, in order:
    programs not part of mega are those that have documented justifications for
    why they are not part of mega".
 6. Run ``py/main_0_mega.py``, the routine downstream rebuild: every step of
-   its ``_STEPS``, in order, from ``parse-go`` to the closing
+   its ``_STEPS``, in order, from ``parse-ws`` to the closing
    ``vendoring-audit``.  ``_STEPS`` is the only list of those steps: a copy
    kept here went stale, naming a step the mega does not have and missing
    several that it has.

@@ -51,10 +51,12 @@ runs one mode of a program and not another, the other mode is declared by hand, 
 flag the mega passes.  A mode's program must exist, and each ``--flag`` its key names
 must still be defined by an ``add_argument`` call in the program's file or in a module
 that file imports, or the entry is dead.  The modes declared are those sections 3 and 4
-of the analysis name.  A flag that only narrows a job the mega runs whole (``--book39``,
-``--section6``, ``--book``, ``--target``), points it at other paths (``--emails-dir``,
-``INPUT OUTPUT``), or changes only what it prints (``--verbose``) is not declared as a
-mode.  Whether the mega has begun to run a declared mode is checked only where a step
+of the analysis name, except the two of ``py/main_foi_features_of_interest.py``, which
+the next sentence excludes.  A flag that only narrows a job the mega runs whole
+(``--book39``, ``--section6``, ``--book``, ``--target``, ``--foi``), points it at other
+paths (``--emails-dir``, ``INPUT OUTPUT``), or changes only what it prints
+(``--verbose``) or how it runs (``--single-threaded``) is not declared as a mode.
+Whether the mega has begun to run a declared mode is checked only where a step
 spells out the program's arguments.
 
 WHAT FAILS
@@ -391,11 +393,11 @@ NOT_IN_MEGA: dict[str, str] = {
         "  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_download.py fr-google --skip-download": (
-        "Claude-written proposal, not yet reviewed by Ben: it runs the parse the parse-go"
-        " step runs, then the check the check-mpplus step has run since phase 5b of"
-        " doc/PLAN-mega-coverage.md; the comment on _run_check_mpplus in"
-        " py/main_0_mega.py records that overlap.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4, before that step existed."
+        "Claude-written proposal, not yet reviewed by Ben: it skips the download and"
+        " runs only parse_go.almost_main, the parse that the parse-go step runs; see"
+        " run in py/subcommands/download_google.py.  Proposed in"
+        " doc/mega-coverage-2026-09-10.md §4, when that form also ran check_mpplus,"
+        " which runs inside the parse-ws step now."
     ),
     "py/main_ws_bot.py real": (
         "Claude-written proposal, not yet reviewed by Ben: it saves edits to live Hebrew"
@@ -416,16 +418,6 @@ NOT_IN_MEGA: dict[str, str] = {
         "Claude-written proposal, not yet reviewed by Ben: a lookup that prints and"
         " writes nothing; --find-stack-path-verbose is the same lookup with more"
         " context.  Proposed in doc/mega-coverage-2026-09-10.md §4."
-    ),
-    "py/main_foi_features_of_interest.py --foi <name>": (
-        "Claude-written proposal, not yet reviewed by Ben: a subset of the"
-        " foi-features-of-interest step's full run.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4."
-    ),
-    "py/main_foi_features_of_interest.py --single-threaded": (
-        "Claude-written proposal, not yet reviewed by Ben: a debugging variant of the"
-        " foi-features-of-interest step's full run.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_vendoring.py --compare": _VENDORING_PART,
     "py/main_vendoring.py --provenance": _VENDORING_PART,
@@ -476,17 +468,31 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_authored.py gen-mp-claims-index": (
         "Claude-written proposal, not yet reviewed by Ben: it rewrites doc/mp-claims.md"
-        " alone, and the parse-go step already rewrites that file, since the step runs"
+        " alone, and the parse-ws step already rewrites that file, since the step runs"
         " gen-mam-parsed-docs, which writes the claims index too.  The overlap is"
         " recorded in py/main_authored.py's docstring and in the Method paragraph of"
-        " doc/mega-coverage-2026-09-10.md."
+        " doc/mega-coverage-2026-09-10.md, which names parse-go as the step that ran"
+        " gen-mam-parsed-docs; the Phase 4 record of"
+        " doc/PLAN-wikisource-derived-mam-products.md records its move to the"
+        " Wikisource product generation that the parse-ws step runs."
     ),
     "py/main_authored.py verify-mp": (
         "Claude-written proposal, not yet reviewed by Ben: it runs the MAM-parsed claim"
-        " verification alone, and the parse-go step already runs it, since the step runs"
+        " verification alone, and the parse-ws step already runs it, since the step runs"
         " gen-mam-parsed-docs, which verifies the claims too.  The overlap is recorded in"
         " py/main_authored.py's docstring and in the Method paragraph of"
-        " doc/mega-coverage-2026-09-10.md."
+        " doc/mega-coverage-2026-09-10.md, which names parse-go as the step that ran"
+        " gen-mam-parsed-docs; the Phase 4 record of"
+        " doc/PLAN-wikisource-derived-mam-products.md records its move to the"
+        " Wikisource product generation that the parse-ws step runs."
+    ),
+    "py/main_parse.py ws-products": (
+        "A second parse of the Wikisource input, which writes candidate plain/ and"
+        " plus/ JSON to an --output-dir outside MAM-parsed/, for an independent check"
+        " of the products that the parse-ws step writes.  Recorded in"
+        ' doc/PLAN-wikisource-derived-mam-products.md, whose Phase 4 says to "Avoid'
+        ' parsing WS twice in one run", and whose Phase 2 record says that ws-products'
+        " rejects a production-tree destination."
     ),
     "py/main_mam_simple.py all": (
         "The mega runs its two halves as two steps, mam-simple for the export and"
@@ -520,15 +526,16 @@ NOT_IN_MEGA: dict[str, str] = {
 # key are the arguments that run passes, which is what the mode check reads.
 # ---------------------------------------------------------------------------
 _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
-    # The function `py/main_parse.py go` calls.  It ends by calling
-    # main_authored.cmd_gen_mam_parsed_docs(None), which is exactly what
+    # The function `py/main_parse.py go` calls, which writes only MAM-parsed/google/.
+    "parse_go.almost_main": ("py/main_parse.py go",),
+    # The function `py/main_parse.py ws` calls, here with no book named.  It calls
+    # parse_ws_products.generate_production, which ends by calling
+    # main_authored.cmd_gen_mam_parsed_docs(None), which is what
     # `py/main_authored.py gen-mam-parsed-docs` runs.
-    "parse_go.almost_main": (
-        "py/main_parse.py go",
+    "parse_ws.almost_main": (
+        "py/main_parse.py ws",
         "py/main_authored.py gen-mam-parsed-docs",
     ),
-    # The function `py/main_parse.py ws` calls, here with no book named.
-    "parse_ws.almost_main": ("py/main_parse.py ws",),
     # What `py/main_diff.py mpp --all` runs.
     "diff_mpp.run_all": ("py/main_diff.py mpp --all",),
     # py/subcommands/diff_wsgo.py binds almost_main to run, the function `wsgo` calls.

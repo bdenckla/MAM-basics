@@ -32,11 +32,13 @@ def find_fois_in_slh_word_arg_1(foilers, stack, tmpl):
 
 def label_args_of_doc(foilers, stack, tmpl):
     """Label the arguments of the doc template."""
-    # Also checked by check_mpplus, which py/main_download.py fr-google runs after a
-    # download, and which py/main_0_mega.py's check-mpplus step runs after its
-    # foi-features-of-interest step.  So in the mega a doc-note template with the
-    # wrong number of arguments stops the run here first, and the message has to
-    # name it.  template_len counts the template's name as 1, hence the subtraction.
+    # Also checked by check_mpplus, which py/subcommands/parse_ws_products.py runs on
+    # every plus book it writes, raising on any error.  So in the mega a doc-note
+    # template with the wrong number of arguments stops the run in the parse-ws step,
+    # before the foi-features-of-interest step reaches this assert.  The assert's
+    # message names the template, for plus JSON that reaches this function without
+    # passing that check.  template_len counts the template's name as 1, hence the
+    # subtraction.
     n_args = wtp.template_len(tmpl) - 1
     assert n_args == 2, (
         f"doc-note template {wtp.template_name(tmpl)!r} has {n_args} argument(s),"
