@@ -24,8 +24,8 @@ Three of them fail the run on purpose, as their notes say:
 ``book-of-job-site``, the last on any spelling finding in book-of-job's pages.
 
 Also since 2026-09-10, the ``check-mpplus`` step checks MAM-parsed's plus JSON
-as soon as ``parse-go`` has written it, and fails the run on any error it
-finds.
+once ``parse-go`` has written it and ``foi-features-of-interest`` has reported
+on it, and fails the run on any error it finds.
 
 Six more generators of tracked files joined the same day, each placed by what
 it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
@@ -281,22 +281,33 @@ _STEPS = [
         parse_go.almost_main,
         "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
     ),
-    StepRecord(
-        "check-mpplus",
-        _run_check_mpplus,
-        "must come immediately after parse-go, whose MAM-parsed plus/ JSON it checks:"
-        " the mark order of every string, and the arguments of every doc-note"
-        " template; raises on any error, so a bad parse fails the mega; writes nothing",
-    ),
+    # We run "features of interest" early, straight after parse-go, since it
+    # provides information about any malformed Unicode.
+    # On later "main" functions, such malformed Unicode will cause
+    # asserts that provide little information.
     StepRecord(
         "foi-features-of-interest",
         main_foi_features_of_interest.almost_main,
         None,
     ),
-    # We run "features of interest" early since it
-    # provides information about any malformed Unicode.
-    # On later "main" functions, such malformed Unicode will cause
-    # asserts that provide little information.
+    # Since 2026-09-10 (phase 5c of doc/PLAN-mega-coverage.md), check-mpplus follows
+    # foi-features-of-interest rather than parse-go directly.  check-mpplus raises on
+    # any string out of standard mark order, and such a string is malformed Unicode,
+    # which foi-features-of-interest reports as the feature NON_STANDARD_MARK_ORDER;
+    # run before foi-features-of-interest, check-mpplus would stop the run before that
+    # report was written.  The order has a cost for check-mpplus's doc-note template
+    # test: a doc-note template with the wrong number of arguments stops the run
+    # inside foi-features-of-interest, at the bare assert in label_args_of_doc
+    # (py/foi/foi_wikitext_helpers.py), before check-mpplus can print the template.
+    StepRecord(
+        "check-mpplus",
+        _run_check_mpplus,
+        "must come after parse-go, whose MAM-parsed plus/ JSON it checks, and after"
+        " foi-features-of-interest, whose report on malformed Unicode it would"
+        " otherwise pre-empt: checks the mark order of every string, and the"
+        " arguments of every doc-note template; raises on any error, so a bad parse"
+        " fails the mega; writes nothing",
+    ),
     StepRecord("mam-with-doc", main_mam_with_doc.almost_main, None),
     # run_all, not almost_main, since 2026-08-25.  almost_main is only
     # run_unpinned_latest, so for four months the mega refreshed unpinned-latest on
