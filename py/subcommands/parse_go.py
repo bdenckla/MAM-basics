@@ -13,30 +13,8 @@ from mb_misc import my_utils_for_mainish as my_utils_fm
 import main_authored
 from py_misc import mam_csv_in
 from py_misc import mam_parsed_copy_py_files
+from py_misc import mam_parsed_plain
 from py_misc import mam_parsed_plus
-
-
-def _add_header(light_books):
-    he_bns = {}  # we use a dict as a set that preserves insertion order
-    # We now emit the plain header in the same shape as plus for shared fields.
-    # This simplification matches current one-file-per-book24 output practice.
-    he_sbns = []
-    chap_cnts = []
-    book39s = []
-    for (he_bn, he_sbn), chapters in light_books.items():
-        he_bns[he_bn] = True  # True is a dummy ("don't care") value
-        if he_sbn is not None:
-            he_sbns.append(he_sbn)
-        basic = {"book24_name": he_bn, "sub_book_name": he_sbn}
-        chap_cnts.append({"sub_book_name": he_sbn, "chapter_count": len(chapters)})
-        book39s.append(dict(basic, chapters=chapters))
-    assert len(he_bns) == 1
-    header = {
-        "book24_name": tuple(he_bns.keys())[0],
-        "sub_book_names": he_sbns,
-        "chapter_counts": chap_cnts,
-    }
-    return {"header": header, "book39s": book39s}
 
 
 def do_one_section(secid, outfolder, mam_info=None):
@@ -64,7 +42,7 @@ def do_one_section(secid, outfolder, mam_info=None):
 
 
 def _do_light_books_in_bk24(outfolder, bk24id, light_books):
-    lb_with_hdr = _add_header(light_books)
+    lb_with_hdr = mam_parsed_plain.add_header(light_books)
     lb_with_hdr_plus = mam_parsed_plus.add_plus_stuff(lb_with_hdr)
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     out_path_plain = f"{outfolder}/plain/{osdf24}.json"

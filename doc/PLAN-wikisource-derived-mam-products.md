@@ -16,12 +16,14 @@ The accepted design is:
 3. MAM-parsed-google supplies only the Google input of `diff wsgo`. Ordinary
    MAM product generation does not depend on Google downloads or Sheet synchronization.
 
-Status on 2026-09-10: Phase 1 is complete. Wikisource download planning now uses
-independent chapter counts and existing book metadata. Ordered coverage and
-selector behavior match the pre-edit capture and raw corpus. Production plain/plus
-generation remains Google-derived, and raw inputs and generated products are
-unchanged. Phase 2, the Wikisource product adapter and representation accounting,
-is the next writing task. Verification receipts are under "Execution log".
+Status on 2026-09-10: Phases 1 and 2 are complete. Wikisource download planning
+is independent of Google, and `parse ws-products --output-dir` generates complete
+candidate plain/plus products. Corpus, serialization, rendering and independence
+checks passed. Each candidate product differs from production in two explained
+fields: Latin composition in 2 Samuel 22:40 and lower-dot order in Psalm 27:13.
+Production plain/plus generation remains Google-derived; production artifacts and
+raw inputs are unchanged. Phase 3, the Google product and independent comparator
+input, is the next writing task. Verification receipts are under "Execution log".
 Implementation is authorized; another approval is not needed.
 
 ## Exact development location and handoff
@@ -514,3 +516,184 @@ local commit, Phase 2 must start Phase 3 as a fresh task in `ws-direct` using
 `environment.type = local`, and pass the same sequential handoff rule forward.
 The Phase 1 task stops writing before Phase 2 starts. Integration remains scheduled
 for archival and must be serialized with the successor writer.
+
+### Phase 2 completion, 2026-09-10
+
+Task `01a08c34-8c06-75d1-9623-cfad5aac6b5a`, `Build Wikisource product adapter`,
+verified the exact development checkout, branch `codex-worktree-3a6b`, clean
+status and starting HEAD `ee7ee2a05502e944162e34711da8210b50e2604f`. The
+checkout receipt is `.novc/ws-products-phase2-checkout-20260910.json`.
+`read_thread` confirmed the task ID and checkout; `list_projects` confirmed that
+`ws-direct` still resolves to the development worktree.
+
+The implementation adds `py/ws/ws_plain.py:convert_book`, a recursive format-2
+adapter with no comparison-package import and no unparse/reparse round trip.
+`py/py_misc/mam_parsed_plain.py:add_header` now supplies the shared header;
+`parse_go` uses that function with unchanged output. The command module
+`py/subcommands/parse_ws_products.py` groups every source book into complete
+24-book files, reuses `mam_parsed_plus.add_plus_stuff`, writes the candidate
+`plain/` and `plus/` directories and validates plus output. `py/main_parse.py`
+exposes `ws-products` with required `--output-dir`. A production-tree destination
+is rejected. Candidate generation writes no documentation or support copies.
+`parse go` remains the production plain/plus writer; `parse ws` remains the
+format-2 writer.
+
+#### Representation rules and complete accounting
+
+The adapter was checked against the meaning and consumers of each relevant
+conversion in `py/diff_wsgo/wsgo_ws.py`:
+
+1. Format-2 `¶` represents a source line boundary (`ws_get_bk_in_fmt_2` appends
+   it after each input line). The plain spelling is `//`. Coalesce adjacent
+   strings recursively, and use the existing template constructor for plain's
+   `stmpl`/`tmpl` forms. An isolated `//` in a verse prefix becomes `__` only
+   when the prefix lacks a spacing template; a documented spacing target counts
+   as spacing. The explicit prefix template table fails on an unknown name.
+2. A standalone `&#32;` becomes `__` in prefix context and a space in generic
+   context. The inverted-nun template's argument has a separate established
+   contract: its trailing space becomes `__`. This rule uses the template's
+   name and argument, never a verse location. `render_wikitext_handlers.py`,
+   anchor `_handle_inverted_nun`, requires the `__` spelling; the trial's plain
+   space would fail its assertion. All seven Psalm 107 fields now equal
+   production, and the two Numbers templates retain their lack of trailing space.
+3. Apply `give_std_mark_order` to product strings. Preserve the existing
+   adjacent-pair spelling `ha.GER_M + ha.REV`. The committed format-2 corpus
+   contains 236 occurrences of the opposite adjacent order. Omitting the pair
+   conversion produced 232 additional changed fields per product across Psalms,
+   Proverbs and Job. The consumer `foiz_wt_rev_mug.py:_get_features` explicitly
+   recognizes `GER_M` followed by `REV`, so the conversion preserves behavior
+   beyond the comparison package. All those additional fields equal production
+   after the general pair rule. No Unicode normalization is used in the adapter.
+4. Reconstruct the noinclude wrappers in chapter rows `0` and `תתת`, and place
+   each good ending with its `////` and section wrappers before the footer.
+   Preserve verse prefixes, location templates and bodies. The category remains
+   source-page metadata and is not a product row. All chapter boundary rows,
+   locations, headers, book grouping and the four good endings equal production.
+
+The final candidate and production files have the same serialization convention:
+UTF-8, two-space JSON indentation, insertion order and a final LF. Comparing
+parsed structures and comparing bytes independently both give 22 identical files
+out of 24 per product. There are two changed verse fields and four changed string
+leaves per product, completely accounted for below.
+
+| Field | Candidate behavior | Rendering effect |
+| --- | --- | --- |
+| 2 Samuel 22:40, E | Preserve source `í` (U+00ED) in the note instead of Google's `i` plus U+0301. | The documented renderer retains this composition difference in the note. MAM-simple omits the note, so its output has no corresponding difference. |
+| Psalm 27:13, E | Preserve source lower-dot order outside MAM's declared mark priorities; three string leaves differ. | The documented renderer retains the order difference in the text, lemma and note; MAM-simple retains the order difference in the verse text. Direct cluster comparison confirms identical base characters and identical mark multisets, with no spacing or character-content change. |
+
+There is no unresolved product representation choice. The compact durable receipt
+is `doc/wikisource-derived-mam-products-phase2-validation.json`, including exact
+codepoint differences, renderer differences, counts and all inverted-nun results.
+Its JSON escapes preserve the diagnostic strings without introducing decomposed
+Latin specimens into hand-authored source. The old inspector's `NFC_equal`
+calculation was removed before its `walk` helper was reused. No Hebrew
+normalization was added to, or called by, the candidate comparison or renderer
+checks.
+
+#### Phase 2 verification commands
+
+Every command ran from `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics` with the
+absolute shared interpreter and approved elevated execution. The baseline wrapper
+supplied the already-documented cwd, `REPOS_ROOT` and command-local Git settings.
+The candidate generation command is the Phase 2 command above. Complete structure,
+key-order, row-length, coverage, mark-order and serialization comparison used:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_phase2_verify_20260910.py
+```
+
+Result: 39 source books, 929 chapters, 23,202 verses, 24 files per product, zero
+plus validation errors and zero candidate files outside MAM mark order. All
+metadata and collection shapes match production; only the fields in the table
+differ. Detailed receipt: `.novc/ws-products-phase2-verification-20260910.json`.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase2-render .novc/ws_products_phase2_render_20260910.py
+```
+
+Result: all 39 books and 23,202 verses rendered with the MAM-with-doc options and
+the MAM-simple XML renderer. The documented rendering differs only at the two
+locations in the table; the simple rendering differs only at Psalm 27:13.
+All nine inverted-nun elements match production. Their actual simple elements
+were also passed through the Sefaria, AJF and OSIS handlers: the seven trailing
+spaces remain NBSP in Sefaria/OSIS and ordinary space in AJF; Numbers retains no
+added space. Detailed receipt: `.novc/ws-products-phase2-rendering-20260910.json`.
+Initial scratch harness attempts omitted the documented-renderer options and
+used the wrong AJF dispatch level; both harness errors were corrected before the
+successful whole-corpus run. No renderer implementation changed.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase2-independence .novc/ws_products_phase2_independence_20260910.py
+```
+
+Result: the real candidate CLI succeeds while every open under `in/mam-go` and
+production `MAM-parsed` raises, comparison-package imports raise, and file writes
+are confined to the scratch candidate directory. All 39 reparsed format-2 books
+equal the committed format-2 artifacts and remain unmodified after conversion.
+All 48 candidate files equal the first candidate byte for byte. The input census
+records four good endings, 62,499 templates, 33,555 line boundaries, nine standalone
+space entities and the 236 adjacent pairs described above. Detailed receipt:
+`.novc/ws-products-phase2-independence-20260910.json`.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_phase2_receipt_20260910.py
+```
+
+Result: the CLI rejects a missing destination and a production destination before
+generation. The script also writes the compact durable receipt from the measured
+scratch reports; it does not generate products.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase2-google-regeneration py/main_parse.py go
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase2-format2-regeneration py/main_parse.py ws
+```
+
+Both returned zero with no generated changes. Google regeneration's documentation
+checks reported 79 passed, zero failed and the same one pending claim. Default WS
+parsing wrote only unchanged format-2 artifacts. Comparator code and its existing
+empty output artifacts were unchanged; Phase 2 did not rerun `diff wsgo`.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black py/main_parse.py py/subcommands/parse_go.py py/subcommands/parse_ws_products.py py/py_misc/mam_parsed_plain.py py/ws/ws_plain.py
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_baseline_20260910.py phase2-suite py/main_test.py -rs
+```
+
+Formatting passed. The full suite passed **990 tests, with 5 semantic skips in
+107.19 seconds**. The skips are the same transcription controls at
+`test_edition_transcriptions.py:1168` as the baseline. Phase 2 added no tests.
+Logs and command receipts use the labels above under
+`.novc/ws-products-baseline-20260910/`.
+
+After staging the new source and receipt, the wrapper label `phase2-source-lints`
+ran `py/main_test.py py/tests/test_prose_mark_order.py
+py/tests/test_h_dot_below_nfc.py py/tests/test_entry_point_subcommands.py`:
+**29 passed in 20.07 seconds**. This check includes the new files in scans based
+on Git's tracked-file list. `git diff --cached --check` also passed.
+
+#### Phase 3 handoff boundary
+
+The next task owns Phase 3 only: add the Google product and explicit reader,
+temporarily retain coherent Google/plain/plus writing, rewire the comparator's
+Google input, and verify source independence and search/replacement payloads.
+Production cutover remains Phase 4. One existing comparator implementation detail
+requires attention before Phase 3 runs the comparator: `wsgo_go.py:_massage_wtel`
+still calls `unicodedata.normalize("NFC", wtel)` on strings that include Hebrew.
+The candidate code does not share that helper. Honor the Hebrew-normalization ban
+when verifying the comparator, while preserving its comparison equivalences and
+original source strings for search/replacement. A direct cluster comparison is
+available in the Phase 2 scratch rendering check.
+
+Raw downloads, production plain/plus, format 2, bot intermediates, historical
+releases, generated documentation and primary-clone source files are unchanged.
+Phase 2 ran no downloads, live edits or private generators. After the verified
+local commit, create Phase 3 as a fresh task using `ws-direct` with
+`environment.type = local`, and pass the sequential handoff rule forward through
+Phase 5. The Phase 2 task stops writing before Phase 3 starts. Integration remains
+scheduled for archival, serialized with the successor writer; no worktree-branch
+push or immediate integration is part of this handoff.
