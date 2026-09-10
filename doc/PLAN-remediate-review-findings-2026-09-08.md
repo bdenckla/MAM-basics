@@ -1873,7 +1873,15 @@ The exact V6 invocation uses the unchanged script with `check --label <unique-la
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py check --label wave3-before-preparation-commit-01a08b1f
 ```
 
-Local checkpoint evidence follows after creation. Only this plan,
+Executed 2026-09-10: preparation commit
+`cef81ec984ca3a8772c9264608a572b2f4a7ab0e` contains the three progress records.
+The worktree was clean afterward. V6 passed immediately before the commit at
+`v6-runs/20260910T120203Z-wave3-before-preparation-commit-01a08b1f-cbda7ddb/`.
+The following record-only commit preserves this hash and supplies the fresh technical
+implementation task's required clean source. The final response and task-creation result
+record the exact handoff head and actual successor ID. Wave 3 remains incomplete.
+
+Only this plan,
 the close-out plan and the September 8 review receive progress records. Their historical
 content, including the complete accepted-corrections section, remains intact. After a
 clean committed checkpoint, start a fresh Wave 3 technical implementation task directly

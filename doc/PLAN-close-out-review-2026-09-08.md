@@ -1028,7 +1028,13 @@ Preparation verification passed: **987 tests, 5 skips and 65 subtests in 121.00 
 followed immediately by passing V6. The independent record-scope check preserves all
 historical lines and the entire accepted-corrections section, checks Hebrew mark order
 and diff whitespace, and verifies V1/V3. No tracked Python changed. The remediation plan
-names all commands, full output and evidence paths; local checkpoint evidence follows.
+names all commands, full output and evidence paths.
+
+Executed 2026-09-10: preparation commit
+`cef81ec984ca3a8772c9264608a572b2f4a7ab0e`; the worktree was clean afterward.
+V6 passed immediately before the commit. The following record-only commit preserves
+the hash and becomes the required clean source for the fresh technical implementation
+task. The final response and task-creation result identify the exact successor.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
