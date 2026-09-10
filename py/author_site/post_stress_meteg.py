@@ -2093,12 +2093,35 @@ def _paired_chanted_word_cell(
     )
 
 
+def _mam_form(record: dict) -> str:
+    """The record's MAM form, from the survey and from nowhere else.
+
+    RENDERING NEVER READS MAM-PRIVATE, so a displayed record with no ``mam_form`` stops the
+    render instead of being given a substitute spelling.  The survey lists such records under
+    ``diagnostics.records_without_a_mam_form``.  Until 2026-09-10 this module looked a spelling
+    up in MAM-private's Phonetic MAM for them, which made a render from the tracked survey
+    depend on the private clone whenever such a record was displayed.  CLAUDE.md's section "A
+    code path reads MAM-private every time it runs, or never" states the rule that retired it.
+    """
+    mam_form = record["mam_form"]
+    if not mam_form:
+        raise psm.SurveyProblem(
+            f"{record['bcv']}: a displayed record has no mam_form (listed under the survey's"
+            " diagnostics.records_without_a_mam_form); the page does not look one up in"
+            " MAM-private"
+        )
+    return mam_form
+
+
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The MAM MAS form followed by its next chanted word."""
+    # _mam_form first: a record with no MAM form has no next MAM form either, so the
+    # assertion below would otherwise fire first and name the wrong cause.
+    mam_form = _mam_form(record)
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
-        record["mam_form"] or psm.snapshot_unannotated_form(record["chanted_word"]),
+        mam_form,
         next_word,
         record.get("intervening_mam_punctuation", ()),
     )
@@ -2106,9 +2129,7 @@ def _case_chanted_word_cell(record: dict) -> tuple:
 
 def _oleh_chanted_word_cell(record: dict) -> tuple:
     """The oleh context, extending into the next chanted word only for a yored there."""
-    current_form = record["mam_form"] or psm.snapshot_unannotated_form(
-        record["chanted_word"]
-    )
+    current_form = _mam_form(record)
     if ha.MER in current_form:
         return _hebrew_cell(current_form)
     next_word = record["next_mam_form"]

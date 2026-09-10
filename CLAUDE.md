@@ -732,6 +732,22 @@ before treating one as a peer whose files need syncing.
 disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
 and because all wlc work now happens in this repo.)
 
+## A code path reads MAM-private every time it runs, or never
+
+Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private
+unconditionally, and all other code paths should not use MAM-private. If those other code paths
+find they need something from MAM-private, they should fail loudly rather than be clever and reach
+out to MAM-private." A path that reaches into the private clone only when its data calls for it
+works everywhere until the first time that data meets a machine or a cloud session without the
+clone, and nothing before then shows that the dependency exists.
+
+The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
+mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
+spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
+record lacked one, so the lookup never ran. The renderer raises instead now, and only the survey
+build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
+`al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:

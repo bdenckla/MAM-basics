@@ -322,6 +322,13 @@ def al_hatorah_phonetic_dir() -> Path:
     ``_settle`` already handles that case with a second test.  al-hatorah's
     ``io/a01-phonetic-std-set/README.md`` is the fuller statement of all three paragraphs.
 
+    A CODE PATH CALLS THIS EVERY TIME IT RUNS, OR NEVER.  Ben's rule, 2026-09-10, stated in
+    CLAUDE.md's section of that name: a path that finds it needs something from MAM-private
+    fails loudly instead of reaching for it.  A survey builder that needs Phonetic MAM's data
+    calls this unconditionally; a renderer working from a tracked survey never calls it.  The
+    post-stress-meteg renderer broke the rule until 2026-09-10: a displayed record with no MAM
+    form made it look up a spelling here, under ``--trust-surveys`` as well.
+
     A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
     private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``
     under ``MAM-private/al-hatorah/`` and empties that repo to a breadcrumb README

@@ -2358,10 +2358,11 @@ def _fold_qamats_qatan(key: str) -> str:
 def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
     """Index first fva forms to their selected snapshot spelling and source locations.
 
-    Matching and a displayed fallback need the snapshot's first rep, or its first
-    unannotated fva. The raw classifier inputs and serialized survey stay intact.
-    This lazy lookup requires the snapshot only for matching or an actual fallback;
-    rendering a survey whose displayed records all have MAM forms needs no private input.
+    Matching needs the snapshot's first rep, or its first unannotated fva. The raw
+    classifier inputs and serialized survey stay intact. Nothing outside this module calls
+    it: the page renderer raises on a displayed record that has no MAM form rather than look
+    a spelling up here (CLAUDE.md, "A code path reads MAM-private every time it runs, or
+    never").
     """
     directory = paths.require_al_hatorah_phonetic_dir()
     files = sorted(directory.glob("*.json"))
@@ -2402,7 +2403,7 @@ def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
     return forms
 
 
-def snapshot_unannotated_form(word: str) -> str:
+def _snapshot_unannotated_form(word: str) -> str:
     """Select the source spelling; never reconstruct it by deleting Hebrew marks."""
     forms = _snapshot_forms()
     if word not in forms:
@@ -2414,10 +2415,11 @@ def _as_mam_would_write_it(word: str) -> str:
     """The selected snapshot form with the transformations needed only for matching.
 
     VARIKA removal remains necessary to reproduce the existing record matching.
-    Displayed selected text retains VARIKA and every other Hebrew mark.
+    The selected form itself keeps VARIKA and every other Hebrew mark; only this copy,
+    made for matching, loses VARIKA.
     """
     return (
-        snapshot_unannotated_form(word)
+        _snapshot_unannotated_form(word)
         .replace(hpo.VARIKA, "")
         .replace(hpu.NU_GMAQ, MAQAF)
     )
@@ -2557,8 +2559,9 @@ def _attach_mam_forms(
     ambiguous and the FORM certain, which is all the page shows.  Two candidates that differ
     are refused, since then the form is a choice.
 
-    A record with no form is named in ``records_without_a_mam_form``, and the page falls back
-    to the snapshot's first rep or first unannotated fva spelling for it.
+    A record with no form is named in ``records_without_a_mam_form``.  The page renderer
+    raises if it is asked to display one, rather than look up a substitute spelling in
+    MAM-private (CLAUDE.md, "A code path reads MAM-private every time it runs, or never").
     """
     context_by_bcv = context_by_bcv or {}
     out = []
