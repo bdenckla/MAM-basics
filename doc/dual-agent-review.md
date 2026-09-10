@@ -199,6 +199,45 @@ require dated corrections to the earlier remediation records, not reinstatement 
 prose. The counter-argument's "MAS decisions and the scope of future remediation" section and
 the close-out plan's D7 decision record the evidence and Ben's generalization of the rule.
 
+### Present remediation by public-facing risk — Ben's decision, 2026-09-09
+
+For future remediations (actions based on review findings), Ben wants proposed changes
+presented in the following order and at the following level of detail. The categories
+express the risk Ben assigns to changing what readers see or consumers receive.
+
+1. **Public-facing documents — high risk.** Present changes to rendered HTML and to
+   Markdown intended for readers, such as README and license pages. Show the current and
+   proposed wording; identify formatting changes separately. Ordinary plans and review
+   records under `doc/` do not enter this category merely because the repository is public.
+2. **Public-facing data — high risk.** Present changes to published corpus data, such as
+   MAM-parsed-plus JSON, with the affected text, values, or structure. Trace generated
+   effects: an analysis JSON change and a Phonetic MAM JSON change that produces no change
+   in Phonetic MAM HTML belong with the lower-risk changes in Ben's distinction. Say when
+   no public-facing data change is proposed, and distinguish an unchanged regenerated
+   file from a proposed content change.
+3. **All remaining changes — lower risk.** Start with a summary by type, at the granularity
+   of "wording changes to Markdown files in doc directories", "Python comments and
+   docstrings", "agent instructions", "code and tests", or "vendoring reports". Ben will
+   ask for finer detail where he wants it; do not begin by requiring him to inspect every
+   internal wording replacement.
+
+Classify a change by its effect on the published document or data, including effects of
+edits in a generator. A Python filename does not make a change lower risk if the change
+alters published HTML or corpus JSON. A public Git repository does not make every file
+public-facing in the sense Ben means here.
+
+Use these categories for the approval presentation even when the written plan also has
+finding-number references, separate editorial and technical items, and implementation waves
+ordered by dependencies. Keep that execution detail available in the plan. The presentation
+preference does not itself approve a proposed change or alter a decision already recorded.
+
+The worked case is Ben's September 9 inspection of the September 8 remediation plan: he
+first requested the HTML and reader-facing Markdown changes, then the public JSON changes,
+then a summary of the remaining change types. The earlier presentation grouped editorial
+proposals by MAS versus non-MAS subject matter and led with implementation waves, mixing
+reader-facing wording with internal documentation. Future presentations use Ben's risk
+categories first.
+
 ## Earlier designs — Design A was the default, 2026-09-07 to 2026-09-09; Design B is the blind alternative
 
 **Design A, Codex reviews the finished Claude review.** Point Codex at the completed

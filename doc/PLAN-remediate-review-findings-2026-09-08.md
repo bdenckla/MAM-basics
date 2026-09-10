@@ -14,6 +14,14 @@ The plan retains the review's historical findings and adds dated corrections. In
 the plan does not reinstate the MAS prose Ben reverted on 2026-09-08. A finding called
 confirmed by a reviewer establishes an observation, not approval of a remedy.
 
+Ben's presentation preference, 2026-09-09: present proposals first as high-risk changes to
+public-facing documents, then high-risk changes to public-facing data, then a summary by
+type of the remaining, lower-risk changes. README and other reader-facing Markdown belong
+with the documents; ordinary `doc/` records do not. The E/N labels and implementation waves
+below remain references and execution structure, not risk categories. The standing rule is
+recorded in [dual-agent-review.md](dual-agent-review.md), under "Present remediation by
+public-facing risk". This preference records no additional approval of the proposed work.
+
 ## Checkout, sources, and measured starting state
 
 Run from **C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08**, on
