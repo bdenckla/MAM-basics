@@ -16,10 +16,12 @@ The accepted design is:
 3. MAM-parsed-google supplies only the Google input of `diff wsgo`. Ordinary
    MAM product generation does not depend on Google downloads or Sheet synchronization.
 
-Status on 2026-09-10: design review and an in-memory corpus experiment are complete.
-No production code or generated product has changed. The next task must finish
-the phased plan, establish the baseline, commit the plan, and dispatch the first
-implementation task. Implementation is authorized; another approval is not needed.
+Status on 2026-09-10: the phase plan and local generation baseline are complete.
+No production code or generated product has changed. The initial suite found a
+Latin-composition lint failure in the review evidence; escaping its combining mark
+preserves the decoded JSON and repairs the evidence. The corrected suite result
+is recorded under "Execution log". Phase 1 is the next writing task.
+Implementation is authorized; another approval is not needed.
 
 ## Exact development location and handoff
 
@@ -160,9 +162,10 @@ Run from `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`:
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/review_ws_primary_pipeline_20260910.py
 ```
 
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/inspect_ws_primary_review_20260910.py
-```
+The saved inspector records codepoint differences. Before rerunning that inspector,
+remove its `NFC_equal` calculation: the Hebrew-normalization ban covers diagnostics
+too. Use direct codepoint/cluster comparisons; the corpus experiment above does not
+normalize Hebrew.
 
 These scripts are untracked and are available because every successor uses the
 same checkout. Remeasure; do not trust copied figures. Promote only useful
@@ -172,79 +175,251 @@ The compact difference evidence is committed beside this plan as
 does not justify trusting the figures: reconstruct the bounded check from the
 method above or its coordinator task before using the figures as acceptance evidence.
 
-## Proposed small implementation phases
+## Implementation phases
 
-The fresh planning task must refine these boundaries and write concrete commands,
-dependencies, and acceptance checks before dispatch. Each implementation task
-completes only its named phase and commits before creating the next fresh task.
-Split a phase further if its scope grows; do not use context compaction as the
-intended handoff mechanism.
+Run these phases sequentially. Each task finishes its phase, records results here,
+commits locally, verifies clean status, and creates the next fresh task using
+`ws-direct` directly. Ben's 2026-09-10 request for fresh tasks supersedes the
+context-compaction suggestion in `doc/agent-planning-principles.md`. Keep one
+writer per checkout. Split an unexpectedly large phase at a coherent, verified
+boundary and record the remaining scope before handing off.
 
-1. **Independent Wikisource download planning.** Replace the Google-derived
-   book/chapter roster and verify unchanged selection/coverage against independent
-   committed input. Keep production plain/plus generation unchanged in this phase.
-2. **Wikisource-to-product conversion and differential verification.** Build a
-   reusable adapter to the existing plain schema, reuse plus generation, and settle
-   the measured representation differences. Exercise alternate output paths so
-   the current production products remain the comparison reference until cutover.
-3. **MAM-parsed-google and comparison input separation.** Add the Google product
-   and an explicit reader, rewire `diff wsgo`, and prove that the comparator still
-   distinguishes independent Google and Wikisource inputs. Arrange the transition
-   so intermediate commits still have coherent writers; the planning task may
-   combine a small part of phase 4 here if required.
-4. **Production cutover and documentation.** Switch default product generation,
-   download/refresh hooks, orchestration, paths and checks; update source claims,
-   provenance, runbooks, and both process diagrams. Keep existing downstream
-   public paths and schemas unless a separately justified change is necessary.
-5. **Downstream verification and completion.** Regenerate the downstream products
-   from committed input, account for all differences, rerun affected generation
-   for stability where needed, and run the full suite. Record completion and
-   remaining archival integration responsibility. Do not create another task if
-   all authorized implementation work is complete.
+### Phase 1: independent Wikisource download planning
 
-## Baseline and verification requirements for the planning task
+Replace the CSV reads in `py/py_misc/get_wikisource_plan.py`, preserving the return
+shape and ordering consumed by `py/ws/ws_download_selector.py` and
+`py/subcommands/download_wikisource.py`. Reuse `bib_locales`' book/section roster,
+`mam_bknas_and_std_bknas`' names, and `hebrew_verse_numerals`' spelling. The planning
+inspection found no complete independent chapter-count declaration in those
+modules. Check existing versification metadata before adding a small chapter-count
+table, and verify any new declaration against the committed raw corpus. The runtime
+planner must need neither CSVs, parsed products, nor previous downloads.
 
-The baseline full test count and generated-output synchronization were **not
-measured by the design review**. Establish both before implementation and record
-the actual commands, source HEAD, results, and any unexplained differences.
-The old count quoted in `CLAUDE.md` is not a new measurement.
+Before editing, capture the old planner's ordered book/chapter/title result in
+scratch. Compare the replacement with that result and every chapter key in
+`in/mam-ws`. Exercise all books and sections, every single-chapter selection, the
+JSON selector's grouping/deduplication/order, and invalid chapters. Use differential
+or lint-shaped verification; do not add example tests merely to pin the new table.
+Make CSV reads raise during a scratch check to establish independence without
+moving inputs. Run the existing downloader checks for batching and partial merging:
 
-Set the sibling-input location in the shell used for the suite:
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py py/tests/test_main_download_fr_wikisource.py
+```
+
+Acceptance: unchanged ordered coverage, selectors, titles and partial-download
+merging; no raw or generated artifact changes; the corpus check and existing
+downloader checks pass. Record the corpus check's exact command, commit, and start
+Phase 2. Production plain/plus generation stays Google-derived during Phase 1.
+
+### Phase 2: Wikisource adapter and representation accounting
+
+Build a focused module converting format 2 to the existing plain schema, including
+chapter prefix/suffix rows, good endings, templates, verse locations, and complete
+39-to-24-book grouping. Extract shared plain-header construction from `parse_go`
+where needed; reuse `mam_parsed_plus.add_plus_stuff`. Product conversion must not
+import the comparison package. Raw parsing and bot format 2 remain faithful captures.
+
+Expose candidate generation through `py/main_parse.py ws-products --output-dir`,
+requiring an explicit output directory during this phase. The directory contains
+`plain/` and `plus/`; candidate generation must not rewrite production documentation.
+Default `parse ws` still writes format 2 only, and `parse go` stays the production
+plain/plus writer until Phase 4.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_parse.py ws-products --output-dir .novc/ws-products-candidate-20260910
+```
+
+Compare every candidate JSON structure with production and compare serialization
+separately. Run plus validation and MAM mark-order checks over the whole candidate.
+Trace each relevant `wsgo_ws` conversion before sharing its meaning: comparison
+equivalence is insufficient for a product's spacing contract. Resolve the nine
+recorded fields through general rules, never verse-specific patches. Check spacing
+after inverted nun through downstream renderers; retain source Latin composition
+and distinguish Hebrew mark-order variation from text changes. Do not normalize
+Hebrew, even diagnostically. The old scratch inspector's `NFC_equal` field is
+historical diagnostic evidence, not an operation to copy into production.
+
+Acceptance: complete corpus/schema coverage, successful validation, zero unexplained
+differences, and production outputs unchanged. Record each justified representation
+change and its rendering effect. If a consequential choice remains, present concrete
+alternatives to Ben before cutover. Commit and start Phase 3.
+
+### Phase 3: Google product and independent comparator input
+
+Add `MAM-parsed/google/` using the current plain schema and filenames. This is
+MAM-parsed-google's storage path, following the existing plain/plus naming scheme.
+Reuse the CSV parser and preserve today's Google-derived plain contents. Add an
+explicit Google accessor and reader, independent of `mam_parsed_path()`'s plus-tree
+precondition. Keep the plain reader for ordinary plain-product consumers.
+
+Temporarily let `parse go` write Google alongside existing plain/plus so the
+intermediate commit has coherent writers. Rewire only `diff_wsgo`'s Google input;
+Wikisource input stays a direct parse of `in/mam-ws`. Update immediate command
+documentation to describe the intermediate state; Phase 4 removes the temporary
+plain/plus writes.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_parse.py go
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py wsgo
+```
+
+Acceptance: every Google file equals the baseline plain file, plain/plus stay
+unchanged, and comparator artifacts match the empty baseline. Use scratch or
+in-memory inputs to show a Google-only change produces a difference and a
+production-plain change does not affect the comparator. Verify Google search
+strings and Wikisource replacement strings without writing to the Sheet. Audit
+production Google-reader consumers: only `diff wsgo` may consume this product.
+Commit and start Phase 4.
+
+### Phase 4: production cutover and source documentation
+
+Make `parse ws` produce format 2 and Wikisource-derived plain/plus. A selected
+source book must rebuild its complete 24-book group from committed WS input so
+sibling sub-books remain present. Make `parse go` and Google downloads write
+Google only. Move plain/plus validation, generated docs and support copying to
+WS product generation. Check the WS download hook and `ws_bot_real` refresh.
+
+Start ordinary `main_0_mega` generation with WS parsing and remove its Google
+parse/comparison dependency. Google parsing and `diff wsgo` remain explicit commands;
+ordinary product generation must not depend on Sheet synchronization. Avoid parsing
+WS twice in one run. Update source claims in authored plain/plus docs, command help,
+support provenance, current runbooks and product READMEs. Update the pipeline spec
+and authored `MAM-process.dot`; render both diagrams with `py/main_pipeline_graph.py`.
+Leave historical release explanations and captures unchanged.
+
+Acceptance: ordinary generation works with Google input access made to fail in a
+scratch harness; Google generation leaves plain/plus untouched; selected WS refresh
+preserves complete grouped books; raw and bot captures are unchanged; generated
+differences match Phase 2's accounting and the source documentation. Run the local
+commands below plus affected downloader, bot, path and documentation checks. Commit
+and start Phase 5. No private generator runs in the primary clone.
+
+### Phase 5: downstream verification and completion
+
+Regenerate all local downstream steps, including examples, surveys, release reports
+and accgram output. Use a scratch driver over maintained `main_0_mega._STEPS`, run
+every local step in order, and omit only `near-aleppo-census`. Record the actual
+step list and failures. Run doc/diagram CLIs separately where the mega invokes only
+a core generator. A subset run is not a full mega run; no additional permanent
+pipeline entry point is needed for this migration.
+
+Compare artifacts against the baseline commit and Phase 2's report. Explain text
+and spacing changes individually; identify routine provenance/timestamp changes
+separately. Run Google parsing and `diff wsgo` explicitly, verify source independence,
+and repeat affected generators for stability. Run the full suite with the environment
+below; record its count and skip reasons. A baseline count never excuses a new failure.
+
+The private census writer may stay outside local completion, with that limitation
+stated. If private-effect verification is needed, read the private instructions and
+create a disposable standalone clone of the committed private tree inside this
+worktree's `.novc/`. Use a real Git clone because `run_all.py:tracked_scripts` uses
+`git ls-files`. Pin and record its commit. Run from the disposable clone with
+`REPO_MAM_PARSED_DIR` set to this worktree's `MAM-parsed` and `REPOS_ROOT` set to
+`C:/Users/BenDe/GitRepos` for remaining read-only inputs. `census_paths.py` anchors
+private writes to the clone containing the script. Verify resolved paths first.
+Compare with private goldens before any `--write`; write goldens only in the clone.
+Private primary-checkout files are not migration outputs to integrate here.
+
+Acceptance: local generation and full suite pass; no unexplained generated changes;
+Google/WS provenance is independent; raw inputs, historical releases and primary
+source files stay unchanged. Record completion and archival integration responsibility,
+commit cleanly, and stop creating successors when authorized implementation is complete.
+Do not archive automatically.
+
+## Baseline commands and scope
+
+Measured HEAD: `67cb3ecc17931732d2cd1f9bbafee1976a322a2e` on
+`codex-worktree-3a6b`. The checkout was clean before generation. The read-only
+private input checkout was at `55252b834d28a6c241e75758aff5d15836621f56`.
+Recheck both commits when repeating a measurement and record changed inputs.
+
+All commands run from `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics` using
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. For the full suite:
 
 ```powershell
 $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
 ```
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -rs
 ```
 
-Use a real scratch script with an explicit environment and captured UTF-8 log if
-the execution tool does not preserve shell environment across calls. No inline
-Python, shell here-documents, or PowerShell here-strings. Format changed tracked
-Python files with the shared interpreter's `-m black` before committing. New
-maintained verification must be differential or mechanical lint, never a global
-import-path adjustment or a test that merely repeats the implementation.
+Use `.novc/ws_products_baseline_20260910.py` when the execution tool does not preserve
+shell environment. It sets cwd/environment and captures UTF-8 logs. Successful runs
+used approved elevated execution because the restricted sandbox could not launch
+the shared interpreter. Sandbox Git reads used a command-local `safe.directory`
+exception for the exact worktree; the wrapper passes that exception to child Git
+processes through environment. No global Git configuration changed.
 
-Important execution boundary: `py/main_0_mega.py:_run_near_aleppo_census` writes to
-`MAM-private/near-aleppo/census/expected` through a subprocess. A worktree mega run
-with `REPOS_ROOT` pointing at `GitRepos` would therefore modify the primary private
-checkout. Do not do that. The planning task must name the local-product regeneration
-commands and either verify the private writer in an isolated scratch copy or
-explicitly keep that writer outside the local regeneration run. Report the actual
-scope; do not claim a full mega run if a step was omitted. This project does not
-authorize development writes in `C:/Users/BenDe/GitRepos/MAM-private`.
+The driver `.novc/ws_products_regenerate_local_20260910.py` ran eight commands in
+order, each prefixed by the absolute shared interpreter above:
 
-During implementation, expected changes are parser/reader/orchestration code, the
-new Google parsed product, source/provenance documentation, process diagrams, and
-only explained generated differences. Raw downloads, historical releases, external
-datasets, credentials, live Wikisource, the live Google Sheet, primary-clone source
-files, and unrelated formatting are not expected to change. Perform the migration
-against committed downloads; live edits and fresh downloads are unnecessary for
-the design and are not part of this authorization.
+1. `py/main_parse.py go` — plain/plus, documentation, claims and support copying.
+2. `py/main_parse.py ws` — all format-2 books.
+3. `py/main_diff.py wsgo` — comparison and auto-edit JSON.
+4. `py/main_mam_with_doc.py` — all text-with-documentation pages.
+5. `py/main_mam_simple.py` — all variants, support copies and documentation.
+6. `py/main_mam4sef.py --both-sef-and-ajf` — both export variants.
+7. `py/main_mam_osis.py` — OSIS export and validation.
+8. `py/main_pipeline_graph.py` — pipeline DOT/SVG and authored-process SVG.
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/ws_products_regenerate_local_20260910.py
+```
+
+All eight returned zero. After regeneration, `git diff --stat` showed only the
+manually escaped review-evidence field; no generated file changed. Both
+`out/diff_mamws_mamgo.json` and `out/diff_mamws_mamgo-auto-edits.json` stayed empty
+arrays. Documentation verification reported 79 passed, 0 failed and 1 pending
+(`mp.plain.docs.book39-skeleton.common`), a baseline pending claim rather than a
+skipped product build.
+
+Logs and JSON command receipts are in `.novc/ws-products-baseline-20260910/`:
+`suite.json` is the initial run, `suite-after-evidence-escape.json` the corrected
+run, and `experiment.json` the corpus experiment. These files persist for successors
+in the shared checkout; the commands and results here are the durable record.
+
+The baseline excluded the private census writer entirely and created no private
+clone. It did not run the remaining mega steps, including accgram regeneration,
+release comparisons and vendoring audit. The baseline establishes synchronization
+for the eight commands above, not the whole mega pipeline. In particular,
+`main_0_mega.py:_run_near_aleppo_census` with `REPOS_ROOT=GitRepos` would write into
+the private primary clone and must not be invoked that way.
+
+Format changed tracked Python files with the shared interpreter's `-m black`
+before committing. No inline scripts, shell here-documents or PowerShell here-strings.
+Maintained verification must be differential or lint-shaped, without import-path
+configuration. Raw downloads, historical releases, external datasets, credentials,
+live Wikisource, the live Sheet, primary-clone source files and unrelated formatting
+are not expected to change. Fresh downloads and live edits are outside this task.
 
 ## Execution log
 
-- 2026-09-10: coordinator prepared this handoff at source `5c0016b0`, verified
-  the exact saved worktree project and clean branch, and retained the corpus
-  experiment under `.novc`. Fresh planning and implementation tasks are pending.
+- 2026-09-10: coordinator prepared the handoff at source `5c0016b0`, verified the
+  saved project and clean branch, and retained the scratch corpus experiment.
+- 2026-09-10: planning task `01a08c1d-40bc-7140-99a8-a060900b109f` verified the exact
+  checkout, branch, clean status and required source `67cb3ecc`. `list_projects`
+  confirmed `ws-direct`'s path; `CODEX_THREAD_ID` and `read_thread` confirmed the
+  planning task's ID and checkout.
+- 2026-09-10: the initial full suite returned **1 failed, 988 passed, 5 skipped**
+  in 138.23 seconds. `TestHDotBelowNfc.test_no_decomposed_latin_diacritic_cluster`
+  named the review-evidence JSON's decomposed Latin specimen. The specimen now uses
+  the JSON escape `i\u0301`, preserving its decoded value and codepoint evidence.
+- 2026-09-10: the full-corpus experiment rerun at `67cb3ecc` found 39 source books,
+  929 chapters and 23,202 verses; 22 equal plain books and 22 equal plus books out
+  of 24 each; nine changed fields in each product; zero plus validation errors;
+  zero comparator records and zero auto-edits. No production candidate was written.
+- 2026-09-10: all eight local regeneration commands passed with no generated
+  differences. The corrected full suite (`py/main_test.py -rs`) passed:
+  **989 passed, 5 skipped in 126.03 seconds**. All skips came from
+  `test_edition_transcriptions.py:1168`: those controls require a page agreeing
+  with its Wikisource strand. The JSON escape was checked against the committed
+  evidence with `json.loads`; all decoded values are identical. No production
+  Python changed, so no tracked Python required formatting.
+- 2026-09-10: Phase 1 is ready for dispatch after this plan and the evidence fix
+  are committed locally. The planning task stops writing when Phase 1 starts.
+  Integration remains scheduled for archival, serialized with the successor.

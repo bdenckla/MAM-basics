@@ -11,7 +11,7 @@
         "NFC_equal": true,
         "segments": [
           {
-            "old_segment": "í",
+            "old_segment": "i\u0301",
             "new_segment": "í",
             "old_codepoints": [
               "U+0069 LATIN SMALL LETTER I",
