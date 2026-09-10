@@ -36,8 +36,9 @@ holds the two steady against each other.
 
 THE TWO SIDES ARE CHECKED AGAINST EACH OTHER, per chanted word: the number of nuclei found in
 the Hebrew must equal the number of non-sheva syllables in the ``jta``.  A chanted word where
-they disagree is recorded as a MISMATCH and left out of every count, rather than being
-classified against a syllable division the two sides do not share.
+they disagree is recorded as a MISMATCH and left out of the provisional counts. At the end,
+_problems returns the collected problems and build_survey raises if any remain, so no survey
+with a mismatch is emitted.
 
 THE SILLUQ BOUNDARY IS TWO CONDITIONS, BOTH OF THEM, AND NO THIRD.  A U+05BD is the silluq
 when it is in the stressed syllable of a chanted word that has sof pasuq. Sof pasuq identifies
@@ -943,8 +944,8 @@ def _has_dual_cantillation(node: object) -> bool:
 
     Structural rather than a list of references: both strands' chanted words reach one entry
     list. The two Decalogues have most of the dual-cantillation numbered verses, and Genesis
-    35:22 has the other one. A last entry need not be the one with sof pasuq -- one strand's
-    chanted verse can end at the numbered verse's boundary and the other can run on past it.
+    35:22 has the other one. A last entry need not have sof pasuq: the numbered-verse boundary
+    need not end both chanted verses.
     """
     if isinstance(node, str):
         return node == _DUALCANT_MARKER
@@ -2544,7 +2545,7 @@ def _attach_mam_forms(
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
     THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``, and this is where the difference is
-    made.  Phonetic MAM's text has two annotations MAM does not write -- a masora
+    made.  Phonetic MAM's text has two annotations absent from MAM -- a masora
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this

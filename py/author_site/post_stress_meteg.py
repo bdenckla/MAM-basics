@@ -30,8 +30,8 @@ typed here.
 THESE PAGES SAY PLAIN "word", AND THAT IS A DECISION RATHER THAN AN OVERSIGHT.  The
 ``hebrew-prose`` skill's first rule is "Never a loose 'word'"; Ben exempted this document and
 its sub-documents on 2026-09-08, and the skill allows for it -- plain "word" survives "wherever
-the context already settles which sense is meant", and ``_opening``'s second paragraph defines
-both "word" and "atom" before any other sentence uses either.  **Do not qualify "word" as
+the context already settles which sense is meant". The main page defines both "word" and "atom"
+in its second expository paragraph; the opening sentence already uses "word". **Do not qualify "word" as
 "chanted word" in anything these pages render**, prose, heading, tooltip and alt text alike;
 ``py/tests/test_post_stress_meteg_plain_word.py`` fails if you do, and its docstring records why
 a lint rather than a comment or a helper function is what defends this.  The survey's own
@@ -140,6 +140,7 @@ def _author_romanization(key: str) -> object:
 # italicizes it.  Existing ``ROM_*`` spellings stay single-sourced; the author-wide dollar
 # substitutions supply the additional standard spellings this page needs.
 _ROM_METEG = rmn(pds.ROM_METEG)
+_ROM_METEG_MERKHA = rmn(f"{pds.ROM_METEG}/{pds.ROM_MERKHA}")
 _ROM_METEG_CAP = rmn(pds.ROM_METEG.capitalize())
 _ROM_SILLUQ = rmn(pds.ROM_SILLUQ)
 _ROM_PASEQ = rmn(pds.ROM_PASEQ)
@@ -669,6 +670,15 @@ def build_methods_body(survey: dict) -> list:
         ),
         mb_html.para(_mam_post_silluq_statement(survey)),
         _mam_post_silluq_aleppo_crop(),
+        mb_html.para(
+            (
+                "The Aleppo Codex has a ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                f" in {_MAM_POST_SILLUQ_REF}.",
+            )
+        ),
         mb_html.para(
             (
                 "At ",
@@ -1482,12 +1492,19 @@ def _census(survey: dict) -> list:
         _table(headers, rows),
         mb_html.para(
             (
-                "So, among words with at least one meteg mark, there are ",
+                "So, among words with at least one ",
+                _ROM_METEG,
+                " mark, there are ",
                 f"{mas:,}",
-                " words where one of the meteg marks is after the stress and ",
+                " words where one of the ",
+                _ROM_METEG,
+                " marks is after the stress and ",
                 f"{mbs_only:,}",
-                " words where none of the meteg marks is after the stress. (There is never more"
-                " than one meteg mark after the stress.) See the ",
+                " words where none of the ",
+                _ROM_METEG,
+                " marks is after the stress. (There is never more than one ",
+                _ROM_METEG,
+                " mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page for more details.",
             )
@@ -1534,13 +1551,17 @@ def _census_definitions(survey: dict) -> list:
         mb_html.para(
             (
                 mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks before the"
+                " counts words that have one or more ",
+                _ROM_METEG,
+                " marks before the"
                 f" stress and none after it. The {author.dquote('O')} means"
                 f" {author.dquote('only')}. ",
                 mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks after the"
-                " stress, whether the word has zero or more meteg marks"
-                " before the stress.",
+                " counts words that have one or more ",
+                _ROM_METEG,
+                " marks after the stress, whether the word has zero or more ",
+                _ROM_METEG,
+                " marks before the stress.",
             )
         ),
         mb_html.para(
@@ -1548,16 +1569,30 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every"
-                " such MBS_O word has exactly"
-                " two meteg marks.",
+                f"{multiple_mbs:,} MBS_O words have more than one ",
+                _ROM_METEG,
+                " mark. Every such MBS_O word has exactly two ",
+                _ROM_METEG,
+                " marks.",
             )
         ),
         mb_html.para(
-            "No MAS word has more than one meteg mark after the stress: every MAS word has exactly one meteg mark after the stress.",
+            (
+                "No MAS word has more than one ",
+                _ROM_METEG,
+                " mark after the stress: every MAS word has exactly one ",
+                _ROM_METEG,
+                " mark after the stress.",
+            ),
         ),
         mb_html.para(
-            f"There are {_spelled(len(records))} MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
+            (
+                f"There are {_spelled(len(records))} MAS words that also have one ",
+                _ROM_METEG,
+                " mark before the stress. They are listed below. (There are no MAS words with more than one ",
+                _ROM_METEG,
+                " before the stress.)",
+            ),
         ),
         _table(
             ("", "", "(sub)types"),
@@ -2881,8 +2916,9 @@ def build_chronicles_8_11_body(survey: dict) -> list:
                 "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
                 ", in the Leningrad Codex, the word after a MAS lacks initial stress, at least"
-                " according to one interpretation of the ambiguous meteg/merkha marks in the"
-                " manuscript.",
+                " according to one interpretation of the ambiguous ",
+                _ROM_METEG_MERKHA,
+                " marks in the manuscript.",
             )
         ),
         mb_html.table(
@@ -3398,7 +3434,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 ". We deem a syllable fit for MAS when:",
             )
         ),
-        mb_html.unordered_list(
+        mb_html.ordered_list(
             (
                 *_FIT_FOR_MAS_CRITERIA[:2],
                 (

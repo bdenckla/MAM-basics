@@ -11,9 +11,10 @@ immediately after that stress. The table includes the pair only when the stress 
 conjunctive accent and the next chanted word has initial stress and a disjunctive accent. The
 candidate syllable must be type 1A, 1B, 2Af, 2Bf, or 3. Types 2Af and 2Bf are the
 Fit-for-MAS versions of the general type-2 subtypes 2A and 2B; both additionally require
-that the next chanted word not begin with vocal shewa. Type 3 is a closed, final,
-tsere-vowelled syllable after a retracted stress. Another meteg in the first chanted word
-does not disqualify the candidate.
+that the next chanted word not begin with vocal shewa. The Fit-for-MAS implementation requires
+a closed, final, tsere-voweled syllable for type 3; its common criteria require penultimate
+stress with a conjunctive accent. Another meteg in the first chanted word does not disqualify
+the candidate.
 The types are Yeivin's §332 open-syllable type, §354 guttural type, and §338 closed-tsere type,
 with Breuer's corresponding Ch. 8 types (j), (b), and (a). Breuer's Ch. 14 §8 lists only the
 types where the poetic system's rule differs from the prose system, and item (b) there is the
@@ -32,9 +33,7 @@ section accounts for every difference between the table's "Has MAS" count and th
 In particular, ten chanted words have two distinct metegs: an MBS before the primary stress and a
 MAS immediately after it. The MBS_O census category counts chanted words with one or more MBS
 marks and no MAS, while the MAS category counts chanted words with a MAS regardless of whether a
-chanted word also has an MBS. The ten chanted words therefore appear only in the MAS census category. Another
-meteg in the first chanted word does not exclude the candidate from the
-Fit-for-MAS table.
+chanted word also has an MBS. The ten chanted words therefore appear only in the MAS census category.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
 initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a

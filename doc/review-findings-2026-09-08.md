@@ -1,6 +1,11 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 remain incomplete.
+State: remediation in progress 2026-09-10; Waves 1-3 complete, including E1-E8 in the separate editorial phase; Wave 4 remains pending.
+
+Status updated by Codex on 2026-09-10 after Wave 3 editorial verification: all E1-E8
+edits and their exact output checks are complete. The suite and editorial gate pass.
+The dated dispositions below preserve every earlier finding and accepted correction.
+Wave 4 owns the remaining audit, final reconciliation and single integration.
 
 Status updated by Codex on 2026-09-10 after Wave 3 technical verification: finding
 13.3's revised technical remedy is complete. Source and matching differentials, normal
@@ -1070,6 +1075,37 @@ at `v6-runs/20260910T124233Z-wave3-before-technical-commit-01a08b34-47c17bdc/` u
 the remediation scratch root. The following record-only commit provides the clean
 handoff source; the approved editorial phase remains separate. All earlier finding
 and correction text is retained.
+
+### Wave 3 editorial dispositions, 2026-09-10
+
+Recorded by Codex task `01a08b5a-ee53-7952-8b9d-7f2ded7b65e4` under Ben's
+existing Step-5 approval. The remediation plan's "Wave 3 editorial output contract,
+recorded 2026-09-10" resolves the exact E2/E3/E8 output contract before source edits;
+its editorial completion record preserves the commands and full evidence. These rows
+supersede only the corresponding pending editorial dispositions above.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 8.2 | Complete, E1: the maintainer document now describes the implementation's type-3 and common criteria in the approved words. No classifier or new source interpretation changed. |
+| 2026-09-10 | 9.3 | Complete, E8: the exact approved Aleppo sentence appears below the existing 1 Kings 7:37 crop, with romanized mark names. The image, alt text, caption and existing MAM paragraph are preserved. No new manuscript reading was undertaken. |
+| 2026-09-10 | 13.5 | Complete, E4: the docstring now records provisional counts and the final build rejection. An AST comparison confirms that the survey module's executable code is unchanged. |
+| 2026-09-10 | 14.1 | Complete, E6: the repository instruction and author docstring now distinguish the definition's second expository paragraph from the opening use of "word". A dated note corrects the merge plan while preserving its historical text. The page exception, lint docstring, immutable commit and issue #265 are unchanged. |
+| 2026-09-10 | 15.1 | Complete, E2: the visible-node count was re-measured as 4/9/2 across main/Methods/2 Chronicles; those unwrapped occurrences are now zero. The slash remains inside a single italic `meteg/merkha` span. Visible text and rendered spaces, titles and existing attributes are preserved. |
+| 2026-09-10 | 15.2 | Complete, E3: only the main Fit-for-MAS criteria list has changed from `ul` to `ol`; its entries and order are unchanged. |
+| 2026-09-10 | 15.4 | Complete, E5: the approved numbered-boundary sentence and `two annotations absent from MAM` fragment replace the specified docstring passages. The following annotation descriptions and the survey-versus-pages contrast remain. |
+| 2026-09-10 | 15.5 | Complete, E1/E7: the documentation spelling is `tsere-voweled`, the later duplicate sentence is removed, and the earlier non-disqualification sentence remains. The JSON category spelling is unchanged. |
+
+The normal authored-site command reproduced the exact pre-recorded expected bytes;
+only the approved main, Methods and 2 Chronicles pages changed among 1,074 actual
+HTML files. The suite passed **988 tests, 5 skips and 65 subtests in 140.02 seconds**;
+the editorial gate passed immediately afterward. Survey bytes, displayed Hebrew and
+existing numerical claims are unchanged. Original technical V6 evidence is preserved;
+no real technical or editorial gate stop occurred. Wave 4, P1 and N3 remain pending.
+P2 source/rights-holder identification and the 415/416 count remain deferred/unverified.
+
+The replaced current State at `23ee0fd0` is preserved as dated history:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 remain incomplete.
 
 ## Corrections accepted in the review exchange
 

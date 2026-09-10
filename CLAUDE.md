@@ -88,8 +88,8 @@ report appeared, say so rather than writing accentuation prose without it;
 The skill's first rule is "Never a loose 'word'". **Ben's decision of 2026-09-08 is that
 `gh-pages/post-stress-meteg*.html` and its eight sub-documents are an exception**, and the skill
 itself allows for one: plain "word" survives "wherever the context already settles which sense is
-meant", and these pages settle it in the main page's second paragraph, which defines both "word"
-and "atom" before any other sentence uses either. So plain "word" is the declared term there, in
+meant". The main page defines both "word" and "atom" in its second expository paragraph; the
+opening sentence already uses "word". So plain "word" is the declared term there, in
 visible prose, headings, tooltips and alt text alike.
 
 **This is enforced, not merely advised**, by `py/tests/test_post_stress_meteg_plain_word.py` —

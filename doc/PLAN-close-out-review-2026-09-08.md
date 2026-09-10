@@ -5,6 +5,12 @@ after `main` moved, the dated notes below supersede the table where they differ,
 was revised that afternoon on Ben's decision to keep the work on the branch until the end, and D9 and
 the substance of D11 were decided the same afternoon (step 2).
 
+Status updated 2026-09-10 after Wave 3 editorial verification: Waves 1-3 are complete.
+E1-E8 match the pre-recorded exact editorial contract; the canonical suite passed
+988 tests, 5 skips and 65 subtests in 140.02 seconds. The separate editorial gate
+passed afterward. Wave 4 starts automatically after the clean local checkpoint and
+owns the single final integration. The earlier State and status entries remain historical.
+
 Status updated 2026-09-09 after step 1: Ben closed the review exchange with the
 skill-reading time left unknown. Step 1 is complete; step 2 is active. Ben's exact
 decision is recorded below, beside step 1's earlier execution line.
@@ -1088,6 +1094,32 @@ The following record-only commit supplies the clean source for the automatically
 created editorial task in the same saved worktree, with the exact commit and actual
 successor ID reported at dispatch. The editorial output contract must be resolved
 and recorded before HTML edits. E1-E8 approval is already settled.
+
+Wave 3 editorial output contract, recorded 2026-09-10 by Codex task
+`01a08b5a-ee53-7952-8b9d-7f2ded7b65e4`: the existing E1-E8 approval is resolved
+against the passing technical commit `f11660576e440523e944598331e8ecc339dcdb26`.
+Before source/public-HTML edits, the remediation plan's "Wave 3 editorial output
+contract, recorded 2026-09-10" records exact E2/E3/E8 expected bytes derived from
+the fixed original baseline, the re-measured occurrences, and the separate executable
+gate. The original V6 baseline/script/evidence remain intact. That editorial gate
+governs subsequent checkpoints and Wave 4 integration; every unexpected difference,
+missing/additional page, required-input failure or incomplete comparison still stops
+the whole remediation for Ben. The required back-merge produced
+`23ee0fd051883c9afec21697d8750ef49a9ac89a`, with original V6 passing before and after.
+Editorial implementation and verification remain pending at this contract record.
+
+Wave 3 editorial completion, recorded 2026-09-10: E1-E8 are complete in the exact
+saved review worktree. Normal generation changed only the approved main, Methods
+and 2 Chronicles pages among 1,074 actual HTML files; all expected page bytes match.
+Survey JSON, Hebrew text, existing attributes and numerical claims are preserved.
+The suite passed **988 tests, 5 skips and 65 subtests in 140.02 seconds**, with the
+editorial gate passing immediately afterward. The remediation plan's "Wave 3 editorial
+completion, recorded 2026-09-10" gives full commands and evidence. Historical records
+and the entire accepted-corrections section remain intact. No real gate stop occurred.
+The local editorial commit and record checkpoint precede automatic Wave 4 dispatch;
+the successor's actual ID and required source are reported at dispatch. No intermediate
+primary integration, push or automatic archival occurs. P2 source/rights-holder work
+and the 415/416 count remain deferred/unverified. Wave 4 has not yet executed.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

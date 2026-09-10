@@ -57,6 +57,11 @@ a deliberate exception to the `hebrew-prose` skill's "Never a loose 'word'" rule
 skill's own clause that plain "word" survives wherever context settles the sense — the main page's
 second paragraph defines both "word" and "atom" before any other sentence uses either.
 
+**Dated correction, 2026-09-10 (approved E6; recorded by Codex):** The main page defines
+both "word" and "atom" in its second expository paragraph; the opening sentence already
+uses "word". The historical paragraph above remains intact. Ben's plain-"word" exception
+is unchanged; the paragraph's before-any-use claim is the corrected point.
+
 `main`'s review-remediation Waves 2 and 5 went the other way and introduced "chanted word" into
 these pages, 440 times across the eight pages `main` has. **That part of `main`'s work is reversed
 for these nine pages and for nothing else.**

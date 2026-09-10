@@ -1,6 +1,11 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 pending; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Waves 1-3 complete, including the separate approved editorial phase; Wave 4 next; original technical V6 evidence and exact editorial contract retained.
+
+Status updated 2026-09-10 after Wave 3 editorial verification: E1-E8 are complete.
+The exact pre-recorded editorial bytes match normal generation and a fresh render;
+the canonical suite passes. Wave 4 starts after the clean local editorial checkpoint.
+The dated output contract and completion record below govern its verification.
 
 Status updated 2026-09-10 after Wave 3 technical verification: finding 13.3's revised
 technical remedy is complete. Full-domain matching, serialized mark preservation,
@@ -61,6 +66,15 @@ recorded in [dual-agent-review.md](dual-agent-review.md), under "Present remedia
 public-facing risk". This preference records no additional approval of the proposed work.
 
 ## Conditional approval: changed MAS HTML stops remediation
+
+**Editorial contract recorded 2026-09-10:** after the passing technical checkpoint,
+the separate editorial phase uses the exact E2/E3/E8 comparison specified under
+"Wave 3 editorial output contract, recorded 2026-09-10" below. Ben's existing
+Step-5 approval supplies those exceptions. The original V6 baseline, script and
+technical evidence remain unchanged. Every difference outside that exact contract,
+missing/additional page, required-input failure or incomplete check still stops the
+entire remediation for Ben's renewed explicit decision. Final Wave 4 uses that
+editorial gate before/after merges, generation, validation and integration.
 
 **Step-5 update, 2026-09-09:** Ben's approval of all waves and P/E/N proposals is recorded
 under "Step-5 approval record and next execution phase" below. That decision supersedes
@@ -2133,6 +2147,181 @@ Keep the editorial execution record and commit separate from the technical phase
 fresh task for the editorial phase, then hand off to Wave 4 only after the approved editorial
 work and its output verification are complete. Wave 4's final checks must use the explicitly
 resolved editorial contract while retaining the technical result and original V6 evidence.
+
+### Wave 3 editorial output contract, recorded 2026-09-10
+
+Codex task `01a08b5a-ee53-7952-8b9d-7f2ded7b65e4` verified the exact saved checkout
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required commit
+`24f59322cdbc18a21310e4308e677e1bac8ec46c`. The actual task ID was read from
+`CODEX_THREAD_ID` and confirmed through `read_thread`; the saved project path agrees.
+The passing technical implementation is `f11660576e440523e944598331e8ecc339dcdb26`.
+The required back-merge of main `78d630323956aad83ce0cadd85f5fe85ebe712b0` produced
+`23ee0fd051883c9afec21697d8750ef49a9ac89a`. Its incoming paths are only
+`doc/meteg-after-silluq-koren-lookup-candidates.md` and
+`in/meteg_after_silluq_koren_readings.json`. Original V6 passed before and immediately
+after that merge, at `v6-runs/20260910T124804Z-wave3-editorial-before-merge-01a08b5a-3d18b678/`
+and `v6-runs/20260910T124857Z-wave3-editorial-after-merge-01a08b5a-c3c13f69/`.
+No real V6 stop occurred.
+
+**Resolution before source or public-HTML edits:** the recorded Step-5 approval names
+the complete E2/E3/E8 differences and assigns them to the separate editorial phase
+after passing technical verification. That prerequisite is now satisfied. Codex applies
+the existing approval to precisely those differences; no broader HTML change or new
+editorial approval is inferred. The technical no-change contract remains the record of
+what the technical implementation had to preserve. Its baseline is not replaced by a
+newly generated result or by a later commit's output.
+
+The executable editorial comparison starts from the original nine complete Git blobs
+at `c2f238f2c253d7b00b2d22dc262fe95c81a82401`, verifies the immutable original V6
+baseline and survey, and derives expected bytes by only these transformations:
+
+1. **E2:** the visible-text parser re-measured 4 mark names in the main page, 9 in
+   Methods, and 2 in the 2 Chronicles page. Add 4, 9 and 1 `romanized` spans respectively;
+   the last span contains the complete `meteg/merkha`, including the slash. The Methods
+   count includes the final `meteg before the stress` occurrence. All visible characters
+   and rendered spaces remain equal; no attribute or title changes.
+2. **E3:** change only the opening and closing tags of the main Fit-for-MAS criteria
+   list from `ul` to `ol`. Its three entries and their order remain byte-identical.
+3. **E8:** insert a paragraph immediately below the existing Aleppo 1 Kings 7:37 crop:
+   `The Aleppo Codex has a meteg after the silluq in 1 Kgs. 7:37.` The mark names use
+   the existing romanized helpers. The crop, alt text, caption, attribution and existing
+   MAM/Leningrad paragraphs retain their content. The new paragraph separates the
+   Leningrad paragraph from the raw figure, changing that paragraph's serialized wrapping.
+
+Only the existing serializer's exact space-to-LF wrapping in those changed paragraphs
+is included. The comparison never normalizes actual HTML. Before any product edit,
+an independent fragment wrapper reproduced every affected original paragraph exactly
+and calculated the full proposed replacement bytes, including E8's following paragraph.
+No source-selection code or renderer output supplied the expected changed text.
+The eight replacement regions and complete expected page hashes are frozen in
+`.novc/review-remediation-2026-09-08/wave3-editorial-01a08b5a/contract.json`;
+`expected/` holds all nine immutable expected pages, and `proposed-diffs/` holds the
+complete before/after bytes, readable diffs and Unicode diagnostics for the changed pages.
+The expected changed-page SHA256 values are:
+
+| Page | Expected SHA256 |
+|---|---|
+| `post-stress-meteg.html` | `f824f997b7929828aa129f9af928bd1039554fdb93325f8769af671dd20cccc9` |
+| `post-stress-meteg-methods.html` | `6ce6a127625b09d9f751b698b1ae5b87289134d2674938ab9ec1e52f2bc776c2` |
+| `post-stress-meteg-2chr-8-11.html` | `b8e8a9ac3b2c57df06e31c323c6907266d74a5349ab051f3cf0dc0874437c7ce` |
+
+The remaining six MAS pages retain their original V6 hashes. E1/E4/E5/E6/E7 have no
+generated-HTML allowance. Survey JSON, existing numerical claims, displayed Hebrew,
+images, page membership, titles and attributes stay fixed. E8's approved reference is
+the sole added numerical text. All non-MAS HTML retains its pre-editorial bytes.
+
+Run the separate gate from the exact review checkout with the absolute interpreter:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/wave3-editorial-01a08b5a/editorial_contract.py check --label <unique-label>
+```
+
+The gate verifies the original V6 script's SHA256, original fixed blobs and survey,
+technical-commit ancestry, exact checkout/branch, expected-page membership and hashes,
+actual checkout bytes and a fresh nine-page render with normal claim and annotation
+validation. It preserves input/source hashes through the original render helper.
+`--scratch-only` is confined to the first authored-source verification, before normal
+generation updates public HTML; subsequent checkpoints require both comparisons.
+The expected bytes are reconstructed from the original baseline at every invocation
+and must equal the frozen contract. There is no general whitespace or markup exception.
+
+The original gate is preserved at its original path and hash; running that original
+unchanged-output command on approved editorial output would test the superseded
+editorial expectation. Use the explicit editorial gate for the remaining remediation
+and Wave 4 integration. A real difference or incomplete editorial comparison writes
+`V6-EDITORIAL-STOP-REQUIRES-BEN.json` beside the original stop path, preserves evidence,
+and halts the entire process. Both stop paths are checked. No stop can be cleared,
+baseline adjusted, repair applied, further item executed or integration advanced without
+Ben's renewed explicit decision. No deliberate V6 probes are repeated.
+
+### Wave 3 editorial completion, recorded 2026-09-10
+
+Codex task `01a08b5a-ee53-7952-8b9d-7f2ded7b65e4` completed all E1-E8 in the
+verified review worktree. E1 corrects the implementation description and documentation
+spelling; E7 removes only the later duplicate. E4 records the final mismatch rejection;
+E5 applies the approved boundary sentence and annotation fragment. E6 corrects the
+current instruction and author docstring, with a dated note beside the merge plan's
+unchanged historical claim. The plain-"word" exception, lint docstring, immutable
+commit and issue #265 remain unchanged. E2/E3/E8 produce exactly the expected bytes
+recorded before source edits. No classifier, private regeneration, scholarly reading,
+source refresh, licensing research, issue action or maintenance ran.
+
+Evidence is under
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/wave3-editorial-01a08b5a/`.
+Every Python command uses `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`,
+with the review worktree as cwd. `editorial_contract.py` SHA256 is
+`4717ca00dfbe12adb893e20ed1ece32bc12f77c322125ab9503c8f0d9618ca3f`.
+Keep that script, its frozen `contract.json`/`expected/`, and its original-V6 dependency
+for the Wave 4 checks. The original script remains at its recorded SHA256.
+
+1. The final original V6 check before product edits passed at
+   `v6-runs/20260910T125747Z-wave3-editorial-contract-recorded-01a08b5a-7c1ced1f/`.
+2. Both touched Python files passed Black at its defaults. The first scratch-only
+   editorial render passed at `runs/20260910T125915Z-first-editorial-source-render-3a269109/`.
+3. `verify_editorial.py snapshot` saved every actual HTML file in non-hidden worktree
+   directories, including untracked HTML: 1,074 files, 18,091,494 bytes. Hidden metadata,
+   scratch and `__pycache__` directories are excluded. The saved bytes are in
+   `all-html-before/`, with hashes and sizes in `all-html-before.json`.
+4. `verify_editorial.py site` ran `py/main_authored.py gen-site --trust-surveys`.
+   `20260910T125938Z-site.txt` and its `.json` record the command and successful exit.
+   Both checkout and fresh-render comparisons passed immediately afterward at
+   `runs/20260910T125943Z-after-site-8910af7f/`. All 1,074 paths remain present;
+   only the approved main, Methods and 2 Chronicles HTML changed. Every remaining
+   HTML file, including both Holman pages, is byte-identical to its saved baseline.
+5. `verify_editorial.py suite` ran `py/main_test.py -q -p no:cacheprovider` with
+   `REPOS_ROOT=C:/Users/BenDe/GitRepos`: **988 passed, 5 skipped, 65 subtests passed
+   in 140.02 seconds**. Full output is `20260910T125955Z-suite.txt`; the adjacent
+   `.json` records the exact command, cwd and environment override. The editorial
+   gate passed immediately afterward at `runs/20260910T130217Z-after-suite-c9375a18/`.
+6. `verify_editorial.py scope` records V1's deploy-root/page/plan census, complete
+   HTML membership and bytes, Hebrew/attribute preservation, and equality of the
+   survey module's executable AST after removing docstrings. The historical-record
+   check preserves every original line in order, apart from a replaced current State
+   quoted as history; the entire accepted-corrections section remains byte-identical.
+   The exact byte gate and E2 parser establish the MAS portion of V3. Full findings
+   and changed paths are in `final-scope.json`.
+
+The survey remains SHA256
+`9b2ebdf41ab1a211a728b2f025fcbc101f8c33338007f9ea2fbe0b50c775fad2`.
+The technical phase's complete source-selection and annotation evidence remains
+applicable and was not repeated. No real technical or editorial gate stop occurred;
+no deliberate V6 probes were repeated. Final record checks and commit evidence follow.
+
+The replaced current State at `23ee0fd0` is preserved as dated history:
+
+> State: live 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 pending; technical unchanged-HTML condition retained.
+
+Wave 4 remains pending. Its authorized work is the exact N3/P1 vendoring inventory,
+final dated dispositions and required final checks, followed by the single integration
+specified in the close-out plan. P2 source/rights-holder identification and the 415/416
+scratch count remain deferred/unverified. The clean local commit is the successor's
+required source. Use saved project `51e16ebd-373a-41f7-833e-9def3ef72b81` with
+`environment.type = local`; create no additional worktree. Verify the successor's
+actual ID and exact checkout. Writing responsibility transfers at dispatch, with no
+further predecessor edits, intermediate integration, push or automatic archival.
+
+Final editorial record checks, 2026-09-10: the targeted canonical invocation
+`py/main_test.py -q -p no:cacheprovider py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py`
+passed **7 tests in 12.29 seconds** after the completion records were added. V3 also
+parsed both complete Holman pages: the active page has 724 cells, including 119 with
+Hebrew; the suppressed page has 578 cells, including 163 with Hebrew. No Hebrew cell
+lacks effective RTL, and all 1,302 cell texts and row order equal the saved baseline.
+Changed-line whitespace passes. HEAD remained `23ee0fd051883c9afec21697d8750ef49a9ac89a`
+from the passing back-merge through the pre-staging check; the index was empty and
+the working tree contained only these eleven editorial/record paths:
+
+1. `CLAUDE.md`.
+2. `doc/PLAN-close-out-review-2026-09-08.md`.
+3. `doc/PLAN-merge-post-stress-meteg-into-main.md`.
+4. `doc/PLAN-remediate-review-findings-2026-09-08.md`.
+5. `doc/post-stress-meteg-method.md`.
+6. `doc/review-findings-2026-09-08.md`.
+7. `gh-pages/post-stress-meteg-2chr-8-11.html`.
+8. `gh-pages/post-stress-meteg-methods.html`.
+9. `gh-pages/post-stress-meteg.html`.
+10. `py/accgram/post_stress_meteg.py`.
+11. `py/author_site/post_stress_meteg.py`.
 
 ## Wave 4 — vendoring records, final dispositions, and one integration
 
