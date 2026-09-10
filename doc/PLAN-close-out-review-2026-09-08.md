@@ -43,6 +43,11 @@ Status updated 2026-09-10 after Ben's exact Holman label approval: Wave 2 is com
 Its completion record under Step 6 supersedes the earlier pending-label status. The
 next authorized fresh task is Wave 3 technical work, after a clean local checkpoint.
 
+Status updated 2026-09-10 after Wave 3 preparation: the full snapshot-form differential,
+matching-necessity probe and displayed-route trace are complete. Wave 3 technical
+implementation remains pending and will use a fresh task after the clean local
+preparation checkpoint. The remediation plan records the precise evidence and its limits.
+
 Status updated 2026-09-10 during Wave 2: whitespace and existing page-membership
 lint repairs are verified for a local partial checkpoint. Holman RTL is implemented
 and verified as a working-tree draft, but a pre-existing generated background-link
@@ -992,6 +997,38 @@ worktree was clean afterward. The following record-only commit preserves that ha
 and becomes the required clean source in Wave 3's prompt. The remediation plan records
 the full local commit sequence and evidence. Writing responsibility transfers at dispatch;
 the task-creation result and final response record the actual successor ID.
+
+Wave 3 preparation, 2026-09-10: Codex task
+`01a08b1f-acc9-7e22-984d-b1f1333f3f38` verified the exact review worktree and branch,
+clean at required source `d4068b79066e9f0f741fc3c1a099980b8e969f0f`. The required
+back-merge produced `32969e0e86c18d0ca577f86fde38a3b5479f269f`, bringing in only
+`doc/scan-pages.md`. The unchanged V6 script passed before and immediately after the
+merge, after the source trace's scratch render, and after the matching probe.
+
+The complete 39-file snapshot differential establishes first-`rep`/first-unannotated-`fva`
+selection and isolates VARIKA as the necessary remaining matching transformation.
+A counterfactual without that transformation changes five serialized attachment records;
+the actual survey JSON and all nine HTML files remain unchanged. The normal renderer's
+complete helper trace identifies the direct prose routes, authored interpretation constants,
+BHS-labelled input and latent fallback sites that annotation validation must cover.
+The remediation plan's "Wave 3 preparation record, 2026-09-10" records the measurements,
+exact source hashes, scratch commands and limits. No private survey was regenerated.
+This preparation does not establish completion of the actual implementation's complete-survey
+comparison, mark-preservation probe or annotation validation; those remain mandatory.
+
+The bounded-task authorization is used for this preparation checkpoint and a fresh Wave 3
+technical implementation task. Only the September 8 review and these two plans change;
+no tracked Python or generated artifact changes. Preserve the existing V6 baseline and
+stop rule. Verify a clean local checkpoint before creating the successor directly in the
+saved review-worktree project; put the exact full source commit in the prompt and stop
+writing at dispatch. Wave 3 remains incomplete. E1-E8 follow in their separate fresh
+editorial task, with output-contract preparation before HTML edits. No primary integration,
+push or automatic archival occurs; one integration remains scheduled after final Wave 4.
+Preparation verification passed: **987 tests, 5 skips and 65 subtests in 121.00 seconds**,
+followed immediately by passing V6. The independent record-scope check preserves all
+historical lines and the entire accepted-corrections section, checks Hebrew mark order
+and diff whitespace, and verifies V1/V3. No tracked Python changed. The remediation plan
+names all commands, full output and evidence paths; local checkpoint evidence follows.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

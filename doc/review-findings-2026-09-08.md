@@ -1,6 +1,11 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
-State: remediation in progress 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; Waves 3-4 remain pending.
+State: remediation in progress 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; Waves 3-4 remain incomplete.
+
+Status updated by Codex on 2026-09-10 after Wave 3 preparation: finding 13.3 now has
+complete snapshot-form evidence and a displayed-route trace. Technical implementation
+remains pending. The dated disposition below preserves the original finding and all
+accepted corrections; no page or survey JSON changed.
 
 Status updated by Codex on 2026-09-10 after Ben's exact label approval: Wave 2 is
 complete. The dated completion disposition below supersedes the pending Holman decision;
@@ -999,6 +1004,23 @@ P2 source/rights-holder identification stays deferred. No integration or push oc
 The previous current State at `059511e8`, preserved here, was:
 
 > State: remediation in progress 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's exact label decision; Wave 2 completion and Waves 3-4 remain pending.
+
+### Wave 3 preparation disposition, 2026-09-10
+
+Recorded by Codex task `01a08b1f-acc9-7e22-984d-b1f1333f3f38` after required source
+`d4068b79` and back-merge `32969e0e86c18d0ca577f86fde38a3b5479f269f` in the
+review worktree. The previous current State was:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; Waves 3-4 remain pending.
+
+| Finding | Dated disposition |
+|---|---|
+| 13.3 | Preparation complete; technical repair still pending. The complete snapshot differential supports first-`rep`/first-unannotated-`fva` selection, with the existing VARIKA and gray-maqaf transformations retained for matching only. Omitting the VARIKA transformation changes five serialized attachment records in the bounded counterfactual. The actual survey and all nine rendered pages remain unchanged. The complete display-helper trace identifies direct prose routes, authored interpretation constants, edition-specific comparison inputs and latent fallbacks for the new annotation validation. The remediation plan's Wave 3 preparation record names all source hashes, commands, measurements and remaining verification. Neither a full new survey nor an implemented repair has been verified. |
+
+The fresh technical implementation task must complete the full revised remedy and its
+verification before finding 13.3 can be marked fixed. All E items remain in the separate
+editorial phase. Earlier dispositions and the accepted-corrections section below remain
+unchanged. No integration, push, issue action or automatic archival occurred.
 
 ## Corrections accepted in the review exchange
 

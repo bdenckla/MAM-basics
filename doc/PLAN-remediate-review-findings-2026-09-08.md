@@ -1,6 +1,12 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; technical unchanged-HTML condition retained.
+State: live 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; technical unchanged-HTML condition retained.
+
+Status updated 2026-09-10 after Wave 3 preparation: the complete snapshot-form
+differential and displayed-form trace are recorded below. The matching-only VARIKA
+transformation is necessary for compatibility. No technical implementation or editorial
+change has been made; Wave 3 remains incomplete. A fresh implementation task follows
+the clean local preparation checkpoint under the existing bounded-task authorization.
 
 Status updated 2026-09-10 after Ben's label approval: Wave 2 is complete. The dated
 completion record below supersedes the partial checkpoint's pending-label status.
@@ -1720,6 +1726,162 @@ hashes, all-nine-page byte comparisons, V6 command and result, and suite output.
 failed check and Ben's subsequent explicit decision; a later pass must not erase a stop.
 Commit completed, passing technical work locally with its record. No integration or push.
 Record separately approved editorial work separately if Ben later authorizes that phase.
+
+### Wave 3 preparation record, 2026-09-10
+
+Codex task `01a08b1f-acc9-7e22-984d-b1f1333f3f38` verified the exact development
+checkout `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`d4068b79066e9f0f741fc3c1a099980b8e969f0f`. The required merge of `main` produced
+`32969e0e86c18d0ca577f86fde38a3b5479f269f`, with second parent
+`f92c061c21eb76ffc00a6347e53fcb04e65c02a6`. Its only incoming path was
+`doc/scan-pages.md`; it changed no MAS source, input or HTML. Primary integration and
+push did not occur.
+
+Ben's Step-5 technical approval, its unchanged-HTML condition, and the separate
+editorial-phase boundary remain in force. The smaller-task rule under Wave 1 permits
+this preparation checkpoint and fresh implementation task. Wave 3's original
+"Execution record: Not started" above is retained as history: preparation is now
+complete, but technical implementation and all E items remain pending.
+
+The previous current State, preserved from `d4068b79`, was:
+
+> State: live 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; technical unchanged-HTML condition retained.
+
+The existing V6 script was inspected unchanged and its SHA256 matched
+`286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+The fixed baseline remains `c2f238f2c253d7b00b2d22dc262fe95c81a82401`.
+V6 passed on the initial checkout, immediately after the back-merge, after the source
+trace's scratch render, and after the matching probe. Every comparison found the nine
+pages unchanged in bytes and membership, with unchanged pinned survey JSON. No real
+V6 stop occurred and no deliberate gate probe was repeated.
+
+All preparation scripts and detailed evidence are under
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/wave3-01a08b1f/`.
+The interpreter for every command below is
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`; the working directory is
+the exact review worktree. Run a named scratch script with `-B` and its path. The
+scripts read source data and write only ignored evidence. Neither `_scan`, `_one_verse`,
+the classifiers nor `build_survey` was called by the source or matching probe.
+
+1. **Source selection: `inspect_sources.py`.** The read-only inspection covered all
+   39 expected snapshot JSON files, with exact filename membership checked against
+   `_bb_of_stem`. The inspected MAM-private checkout was
+   `55252b834d28a6c241e75758aff5d15836621f56`; every snapshot file's bytes equal its
+   Git blob at the plan's technical-source pin
+   `e21306165707f9500ea19540d04af3e1918b563d`. The technical README and exploration
+   were read at that pin. `snapshot-form-differential.json` records every input hash;
+   `snapshot-form-provenance.json` records every form's source file and JSON pointer.
+   No private source was refreshed or regenerated.
+2. **Complete snapshot differential.** The source contains 263,320 records with `fva`:
+   122,555 select first `rep`, and 140,765 select first unannotated `fva`. Every selected
+   form lacks the snapshot's MASORA CIRCLE and UPPER DOT annotations. Both join-key
+   equality and meteg-count equality hold for every raw/selected pair. The selected
+   form, with only the gray-maqaf conversion, equals the old matching string for
+   262,650 records. All 670 differences are VARIKA, which the selected source form
+   retains and the old helper deletes. No raw full form has LOWER DOT; 113 have a
+   gray-maqaf placeholder. There are zero ambiguous mappings from `(bcv, first fva)`
+   to the selected form, and zero even when keyed by first `fva` alone. These are
+   measurements of this snapshot, not a general source-schema guarantee.
+3. **Matching necessity: `probe_matching.py`.** For every VARIKA-affected source
+   record, the probe compares `_settle` against combined current MAM, cant-alef and
+   cant-bet: 2,010 comparisons. It also compares `_next_mam_context` over every
+   current-form/native-punctuation context in each affected numbered verse: 9,377
+   comparisons. Using the selected form without the matching-only VARIKA transformation
+   changes 81 settlement results and four next-context results in those domains.
+   Re-attaching both ways to every complete serialized attachment record gives 786
+   comparisons and five changed records. The changed serialized records are all under
+   `diagnostics/sharing_a_letter_with_a_non_stress_marking_accent`: indices 76, 82,
+   87, 92 and 93. Indices 82 and 87 lose a selected MAM form; indices 76, 92 and 93
+   change `mam_form_matched_by`. These are counterfactual scratch results, not changed
+   survey JSON or a V6 failure. `matching-differential.json` preserves the full results.
+4. **Compatible matching expression.** Selecting first `rep` or first unannotated
+   `fva`, then applying the existing VARIKA removal and gray-maqaf conversion for
+   matching only, equals `_as_mam_would_write_it` for every full snapshot form. This
+   establishes why the VARIKA transformation must remain in matching. It does not
+   authorize deleting VARIKA from displayed text, changing `_join_key`, replacing
+   classifier inputs, or substituting snapshot spelling for current MAM. The probe
+   does not regenerate or compare a complete new survey. The implementation task must
+   establish the plan's complete-survey invariance requirement for its actual data
+   flow before changing matching; it must stop for Ben if that requires prohibited
+   survey regeneration. Do not describe the bounded probe as that completed check.
+5. **Displayed routes: `inspect_sources.py`.** The normal nine-page renderer, with
+   normal checks and traced helpers, made 1,017 `_hebrew_cell` calls on 674 distinct
+   input strings. Each helper result equals `wrap_hebrew_runs` of its selected input
+   with only the permitted gray-maqaf conversion. The per-page counts reproduce the
+   earlier nine-row simulation table exactly, and all nine fresh HTML files equal
+   the fixed baseline. `display-route-trace.json` records each call, caller, source
+   line, matching survey pointers and output page. Calls bypassing `_hebrew_cell`
+   include `_mam_post_silluq_statement` twice, `_post_silluq_footnote` once,
+   `_type_2_type_3_footnote` once, and `_para` four times. These routes must participate
+   in annotation validation too.
+6. **Source distinctions and fallback coverage.** The trace's forms without an exact
+   survey-string pointer comprise joined dual-cantillation forms, the BHS-labelled
+   form selected from UXLC with the existing WLC equality assertion, and the authored
+   L-1/L-2/next-word constants for 2 Chronicles 8:11. Preserve those source distinctions
+   and interpretations. Both `mam_form or chanted_word` fallback sites remain latent
+   on current displayed inputs. The survey has 797 objects with a `mam_form` field,
+   including two null forms in diagnostics; neither reaches the traced display helper.
+   The 1,578 occurrences counted for the specifically inspected `chanted_word`,
+   `next_chanted_word` and `preceding_chanted_word` fields all have snapshot mappings;
+   22 differ from the old matching string because of VARIKA. This field census is not
+   a census of every string or annotation occurrence in the JSON.
+
+The traced source paths are `py/author_site/post_stress_meteg.py` and
+`py/accgram/post_stress_meteg.py`, with their existing MAM-simple, UXLC and WLC readers.
+No tracked Python was changed. The future implementation must handle unannotated
+snapshot selection, both fallback sites, all matching callers, every displayed route,
+and all nine pages' annotation validation together. In particular, replacing the
+single-page guard with a blanket UPPER DOT ban would reject legitimate MAM forms.
+Source and context must distinguish those forms from snapshot annotations and
+accidentally annotated literals, with source/output locations in diagnostics. The
+exhaustive mark-preservation probe and mechanical annotation-coverage checks remain
+implementation work, as does normal `gen-site --trust-surveys` generation with the
+all-public-HTML byte contract.
+
+Preparation verification completed 2026-09-10. `run_checks.py` captured the canonical
+`py/main_test.py -q -p no:cacheprovider` invocation with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`: **987 passed, 5 skipped, 65 subtests passed in
+121.00 seconds** at merged HEAD `32969e0e`. Full output is
+`wave3-01a08b1f/20260910T115453Z-preparation-suite.txt`; command, environment, HEAD,
+exit code and elapsed time are in `wave3-01a08b1f/preparation-suite.json`. V6 ran
+immediately afterward and passed at
+`v6-runs/20260910T115655Z-wave3-after-preparation-suite-01a08b1f-090b4639/`.
+
+`check_preparation_scope.py` independently verifies that only the three record paths
+changed, all historical lines remain in order, each replaced State is preserved as a
+quotation, and the entire accepted-corrections section is byte-identical as UTF-8 text.
+Hebrew mark order and `git diff --check` pass. V1 reports 11 deploy-root pages, nine
+MAS pages with exact actual/declared membership, and 16 direct plans with State lines.
+V3 reports zero RTL omissions in the unchanged Holman pages, with 578 and 724 cells
+respectively. The full report is `wave3-01a08b1f/preparation-scope.json`. No tracked
+Python changed, so black was not applicable. No normal authored-site generation was
+run for this record-only checkpoint; the technical implementation task still owes that
+command and its all-public-HTML comparison.
+
+V6 also passed at the following evidence directories under the remediation scratch root:
+
+1. Initial: `v6-runs/20260910T114251Z-wave3-initial-01a08b1f-b3e3faab/`.
+2. After merge: `v6-runs/20260910T114500Z-wave3-after-backmerge-01a08b1f-c51d711a/`.
+3. After source trace: `v6-runs/20260910T115021Z-wave3-after-source-trace-01a08b1f-c1fe63ba/`.
+4. After matching probe: `v6-runs/20260910T115447Z-wave3-after-matching-probe-01a08b1f-16f0ca76/`.
+5. After record-scope validation: `v6-runs/20260910T115932Z-wave3-after-preparation-scope-01a08b1f-4ba4ea9f/`.
+
+The exact V6 invocation uses the unchanged script with `check --label <unique-label>`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/v6_gate_wave1_01a0891a.py check --label wave3-before-preparation-commit-01a08b1f
+```
+
+Local checkpoint evidence follows after creation. Only this plan,
+the close-out plan and the September 8 review receive progress records. Their historical
+content, including the complete accepted-corrections section, remains intact. After a
+clean committed checkpoint, start a fresh Wave 3 technical implementation task directly
+in the same saved project. E1-E8 remain for a separate fresh editorial task after the
+technical phase passes and is committed. P2 source/rights-holder identification remains
+deferred, and the 415/416 scratch count remains unverified. There is no new approval
+request in this preparation record. Integration and push remain scheduled once, after
+final Wave 4.
 
 ### Wave 3 editorial phase: approved items and output-contract preparation
 
