@@ -117,7 +117,24 @@ byte-identical to their committed blobs; book-of-job's spell check found nothing
 importing the mega needs `pyspellchecker` and Pillow, which book-of-job's generator imports and
 `requirements.txt` names. Suite: 988 passed, 5 skipped.
 
-## Phase 5b — add the MAM-side and remaining generators, the mpplus check, and the warnings fix
+## Phase 5b — add the MAM-side and remaining generators, the mpplus check, and the warnings fix: DONE except item 2, `2e3a7189`, `c42089e2` and `a153ccb5`
+
+`2e3a7189` makes `write_warnings` write `out/mam-ws-bot/proto-misc/warnings.json` on every proto
+run, `[]` when there are no edits: the file went from the six entries of the `52aa7b8c` rehearsal
+to `[]`, and the other 79 files under `out/mam-ws-bot/` came out byte-identical. `c42089e2` adds
+`check-mpplus` after `parse-go`, raising on any error; on a spoiled scratch copy it named both
+injected errors. `a153ccb5` adds `mam-simple-docs`, `search-final-hiriq-verse-text`,
+`search-holam-he-qere`, `diffable-pointed-hebrew`, `ac-gen-index-flat-annotated` and
+`pipeline-graph`; all 32 tracked files under their outputs are byte-identical. The mega has 60
+steps. Suite: 988 passed, 5 skipped.
+
+**Item 2, `py/main_diff.py ctr-vs-mam`, was not added, because it crashes.** The `_HANDLERS` table
+in `py/diff_ctr_vs_mam/massage_mpu_verse.py` has no entry for the narrow-sense paseq template
+מ:פסק, which Proverbs 8:34 has had in MAM-parsed since 2026-03-16 (`1880cbbd`), in place of the
+legarmeh template מ:לגרמיה-2 it had before. The generator has failed on every snapshot since,
+which is why its output was never regenerated. Phase 5c item 2 carries it.
+
+The instructions as they were given for phase 5b:
 
 1. The doc half of `py/main_mam_simple.py`: a step `mam-simple-docs` after `mam-simple`, running
    what `_write_generated_docs` runs. Give it a public name.
@@ -151,9 +168,46 @@ importing the mega needs `pyspellchecker` and Pillow, which book-of-job's genera
    pin edit payloads on purpose (`CLAUDE.md`), so read them before changing the edits context.
 9. Verify as in phase 4.
 
+## Phase 5c — the check-mpplus position, the ctr-vs-mam step, and argparse for the mega's hand-parsers
+
+Ben answered both of the questions this phase raised on 2026-09-10, so every item is ready to run.
+
+1. **Move `check-mpplus` after `foi-features-of-interest`.** Phase 5b put it straight after
+   `parse-go`, as this plan said. But the mega runs `foi-features-of-interest` early precisely so
+   that it reports malformed Unicode before a later step stops the run with an assertion that says
+   less, as the comment above that step says, and `check-mpplus` at step 2 pre-empts that report.
+2. **The `ctr-vs-mam` step, with a handler for מ:פסק.** Ben approved the fix on 2026-09-10: "Sure go
+   ahead with the fix that adds support for מ:פסק." Phase 5b's candidate fix, tried in scratch only,
+   maps the template מ:פסק to U+05C0 PASEQ followed by a space, as
+   `py/accgram/printed_decalogue_fetch.py` does. With it the run gives 84 entries, as the committed
+   file has, and Proverbs 8:34's entry comes out exactly as committed, the committed one having been
+   made when that verse had the legarmeh template. The five entries that differ, at Psalms 2:7, 32:4
+   and 32:5, differ only in their `refined` field: the committed file has `≁` and `~` where the
+   current `py/mb_cmn/uni_heb.py` names U+0598 and U+05AE `(zarshit)` and `(zarnor)`, and those
+   names were already in `d86e5779`, so the committed file was stale when it was committed. Add the
+   handler to `_HANDLERS` in `py/diff_ctr_vs_mam/massage_mpu_verse.py`, add a `diff-ctr-vs-mam` step
+   after `diff-mpp`, and commit the five-entry diff of `out/diff_ctr_mam.json` with that
+   explanation. Any other diff is a finding to report, not to commit. The scratch evidence is in the
+   worktree's `.novc/mega-coverage-phase5b/ctr/`.
+3. **argparse for the three hand-parsers the mega runs.** `py/main_clc.py`,
+   `py/main_find_uxlc_accent_changes.py` and `py/main_ac_gen_index_flat_annotated.py` read
+   `sys.argv` by hand, and the mega gets their default mode only because it blanks `sys.argv`. Ben,
+   2026-09-10, of `main_clc.py`: "It directly parses sys.argv? Gross." Give each argparse and an
+   `almost_main(argv)`, and have the mega pass an explicit argument list, as it does for
+   `main_accgram.py`'s subcommands. The other 20 hand-parsers, mostly the interactive Aleppo and
+   Cambridge 1753 tools, stay as they are. Ben, 2026-09-10: "just leave the other 20 alone, but file
+   a MAM-basics GitHub issue regarding their direct use of sys.argv". That issue is #269, which
+   lists the 20.
+4. Verify: the affected steps' outputs byte-identical, the ctr-vs-mam diff excepted as explained;
+   the full suite.
+
 ## Phase 6 — delete the dead and redundant programs, and retire `check_ac_word_finding.py`
 
-Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
+Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence. **Run it as two sessions**,
+for size. **6a** is items 1–9, the deletions of dead and redundant code. **6b** is items 10–15:
+the retirement of the word-finding check, the Stark CSV, the runbook, the stale wording, the
+redundant PowerShell script and the second copy of `lci_augrecs.json`. Each session ends with item
+16's verification, run over its own items.
 
 1. The `__main__` blocks of the fifteen `py/accgram/` library modules §6 lists. Where a function
    exists only for its `__main__` block, it goes too; check `py/tests/` first.
@@ -204,7 +258,34 @@ Ben agreed, 2026-09-10. The analysis's §6 has each with its evidence.
     does `data_dir()`'s docstring in `py/hkq_paths.py`. Correct all four, then rerun the
     `estimate-uxlc-locations` and `render-uxlc-corrections` steps. The only diffs allowed are those
     note strings, in the two JSON files and anywhere the renderer carries them on.
-14. Verify: the reference sweep for every deleted name, the full suite.
+14. **`misc/zarqa-table-diff/make-dph-files.ps1`.** It runs `py/main_diffable_pointed_hebrew.py`
+    over the two zarqa tables beside it, and those two pairs are among the four in that module's
+    `TRACKED_EXPANSIONS`, which the mega's `diffable-pointed-hebrew` step has regenerated since
+    phase 5b. Delete the script, and reword the comment above `TRACKED_EXPANSIONS`, the only live
+    text that names it. `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md`
+    names it in an execution record, which stays as written, as does this plan's phase 5b record.
+15. **Keep one copy of `lci_augrecs.json`, the one in `uxlc/data/`.** Ben, 2026-09-10: "just
+    choose one and delete the other. I think the idea is some external client might want to use it
+    in a way unlike the estimator program (or programs) work, i.e. instead of forming augrecs on
+    the fly they might want them pre-formed." `py/main_write_page_break_info.py`, which the mega
+    runs as `uxlc-write-page-break-info`, writes the same flattened records to
+    `uxlc/out/UXLC-misc/lci_augrecs.json` and to `uxlc/data/lci_augrecs.json`, and nothing in the
+    repository reads either: `py/main_estimate_uxlc_locations.py` and
+    `py/main_uxlc_estimate_atom_loc.py` build the augmented records in memory from
+    `in/lci_recs.json` and `in/UXLC-39/`. The `uxlc/data/` copy stays, because it is the copy that
+    `uxlc/doc/clc-design.md`, `doc/scan-pages.md`, `DATA-LICENSES.md` and a comment in
+    `in/vendoring_policy.json` name, while the other is named only by its writer and by the step's
+    note. Of the other path Ben said, the same day, that it "seems a little worse to me because
+    this is nobody's output (not any more at least) yet there is 'out' in the path". So:
+    - stop writing the `uxlc/out/UXLC-misc/` copy, and `git rm` it;
+    - correct the `uxlc-write-page-break-info` step's note in `py/main_0_mega.py`;
+    - reword `uxlc_paths.data_dir()`'s docstring, which says "Generated UXLC data other repos
+      consume", to give the purpose Ben gave: the augmented records pre-formed, for a client that
+      wants them that way rather than built on the fly as the two estimators build them.
+
+    Rerun the step: `uxlc/data/lci_augrecs.json`, `uxlc/out/UXLC-misc/page_counts.json` and
+    `uxlc/out/UXLC-misc/lci_recs.xml` must come out byte-identical.
+16. Verify: the reference sweep for every deleted name, the full suite.
 
 ## Phase 7 — build the check
 
@@ -224,14 +305,17 @@ its dead-entry check.
    include these thumbnail-generator-programs in mega") and the line-break reports ("it served its
    purpose for the book-of-job project"). Add whatever phases 2–6 leave out. Where the mega runs
    one flag-selected mode of a program and not another, declare the other mode by hand.
-   `py/main_clc.py` is one: its `main()` reads its mode from `sys.argv`, and with the mega's
-   blanked argv it runs its default, which is `all`, so its per-book mode is declared by hand.
+   `py/main_clc.py` is one: the mega runs its `all` mode, so its per-book mode is declared by hand.
 4. **Failures:** a program neither run nor declared; a declaration whose program is gone; a
    declaration whose program the mega now runs.
 5. Name the check in `py/main_repo_maintenance.py`'s docstring, whose step 5 runs the suite before
-   step 6 runs the mega, and correct that docstring's stale list of mega steps. Also correct
-   `py/mb_cmn/graphviz_pin.py`'s docstring, which says `tmpl-survey` is "step 5 of 41": the mega
-   had 47 steps after phase 4, and phases 5a and 5b add more. Grep for any other stated step count.
+   step 6 runs the mega, and correct that docstring's stale list of mega steps. Also correct the
+   two docstrings that give `tmpl-survey`'s position among the mega's steps:
+   `py/mb_cmn/graphviz_pin.py`'s says "step 5 of 41", and `py/tmpl_survey/survey_dot.py`'s says
+   "step 5 of its 41" and "the remaining 36 steps". Every phase since phase 2 has added steps, and
+   `check-mpplus` now runs before `tmpl-survey`, so neither figure is right any more. Name the step
+   by its id and state no position or count, since any figure goes stale with the next step added.
+   Grep for any other stated step position or count.
 6. Verify: the full suite green; then, uncommitted, delete one declaration and see the check fail
    naming that program, and restore it.
 
@@ -247,9 +331,12 @@ its dead-entry check.
 
 ## Not in this plan, raised for Ben
 
-1. **`uxlc/data/lci_augrecs.json` has had no reader since phase 3** removed the Leningrad index
-   generator, its only reader. `py/main_write_page_break_info.py` still writes it, beside an
-   identical `uxlc/out/UXLC-misc/lci_augrecs.json`, and becomes a mega step in phase 4.
-   `py/uxlc_paths.py`'s `data_dir()` docstring still calls that directory data "other repos
-   consume".
-2. The incidental findings of the analysis's §8, except those a phase above fixes on its way past.
+1. The incidental findings of the analysis's §8, except those a phase above fixes on its way past.
+2. **Two UXLC library packages hold near-copies of the same modules**, found on 2026-09-10 while
+   tracing `lci_augrecs.json`. `py/py_uxlc/my_uxlc_page_break_info.py` and
+   `py/uxlc_misc/my_uxlc_page_break_info.py` differ in 4 lines of each file, `my_uxlc_location.py`
+   in those two packages in 6, and `py/py_uxlc/my_uxlc_lci_augrec.py` and
+   `py/uxlc_lci/uxlc_lci_augrec.py` in 4, by `git diff --no-index --stat`. Seventeen files import
+   `py_uxlc`, and `py/main_write_page_break_info.py` imports `uxlc_misc` and `uxlc_lci`. They are
+   library modules rather than programs, so they are outside this plan's scope. Nobody has yet
+   checked which set should remain.
