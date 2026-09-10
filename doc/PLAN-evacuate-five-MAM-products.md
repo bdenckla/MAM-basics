@@ -16,7 +16,7 @@ The programme's “Fourth stage — the five MAM products, total evacuation” s
 | Phase 2 source — retired 2026-09-08 | C:/Users/BenDe/GitRepos/MAM-for-Sefaria (moved to the Windows Recycle Bin after the separate safety report and Ben's approval) |
 | Phase 3 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-parsed (moved to the Windows Recycle Bin after Phase 3) |
 | Phase 4 source — retired 2026-09-06 | C:/Users/BenDe/GitRepos/MAM-with-doc (moved to the Windows Recycle Bin after Phase 4) |
-| Phase 5 source | C:/Users/BenDe/GitRepos/MAM-OSIS |
+| Phase 5 source — retired 2026-09-10 | C:/Users/BenDe/GitRepos/MAM-OSIS (moved to the Windows Recycle Bin after Phase 5F) |
 
 Before every phase, read the user-level AGENTS.md, the MAM-basics CLAUDE.md, this complete plan, the complete public-repository programme, the second-stage lane and oracle sections, the complete third-stage plan, doc/dual-agent-review.md, doc/review-findings-2026-09-04.md, and the relevant source repository's instruction file. Load hebrew-prose before editing prose that makes a Hebrew accentuation claim.
 
@@ -1365,6 +1365,14 @@ ends here: **Phase 6 has not begun, and no Phase 6 successor was created.**
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
+Task **6A is complete, 2026-09-10**; 6B–6F remain. The finalized
+[command map](mam-products-phase6-command-map.md) and
+[Git-blob baseline](../in/mam_products_phase6_baseline.json) specify the commands,
+dependencies, exact path sets and comparison partners for the remaining tasks.
+The [6A verification record](../in/mam_products_phase6a_verification.json) preserves
+the preflight, suite result and source-host evidence. Product synchronization
+outside the preceding OSIS checks still awaits the assigned regeneration tasks.
+
 ### Phase 6 session boundaries — Ben's decision, 2026-09-10
 
 After Phase 5 completion at `a2e883f1227e11691ce51f95ba77a9ac4192e55a`, Ben
@@ -1513,3 +1521,97 @@ After all five product lanes. Do not begin Phase 6 until every source is a pushe
 Update the programme Status table and this plan with actual heads, manifest totals, deployment checks, and the exact suite result. Keep doc/PLAN-evacuate-public-repos-programme.md, doc/PLAN-evacuate-the-rest-of-three-repos.md, and doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md. The earlier planning documents are execution records and this plan cites the second-stage lane and Decision F.
 
 Commit each finished MAM-basics change directly to main in the primary clone, or merge a completed worktree branch into the primary clone's main during the same session. Commit and push every finished source breadcrumb and MAM-basics commit. Do not push a routine worktree branch; merge it into main and push main. Ask before a force-push, a rebase, an amend, a reset, branch deletion, or any source-clone deletion whose clean and linked-worktree checks do not settle its safety.
+
+### Phase 6A preflight, command map and baseline record — 2026-09-10
+
+Task `01a08c21-6520-7493-b9a5-8ec6ee5abf5f` verified its actual cwd as
+`C:/Users/BenDe/GitRepos`. The development checkout was exactly
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on primary `main`, with HEAD,
+`origin/main` and live remote `main` all at
+`9ea4e39abf6ceae3e52f0cb37a3ba4abf470b05f`. No worktree was allocated.
+
+All five actual source paths under `C:/Users/BenDe/GitRepos` are absent. Fresh
+GitHub API checks verified these unarchived redirect hosts, their exact remaining
+blob sets, dated breadcrumbs and successful deployments at current heads:
+
+| Source host | Current remote commit | Files / Git bytes | Successful Pages run |
+| --- | --- | ---: | --- |
+| MAM-simple | `376912a758443bb0c015bd77dfca5bef3e97f9c9` | 7 / 4,850 | `34276914395`, `static.yml` |
+| MAM-for-Sefaria | `cf23b478f801ca586d227693db9133da54d87f30` | 6 / 3,714 | `34049004202`, `pages.yml` |
+| MAM-parsed | `c9e04c496920b1c423069dfbc4b31078efa0b0a0` | 27 / 21,201 | `34055284061`, `pages.yml` |
+| MAM-with-doc | `904c9fa178265dce6fec5704f5c0424fc94f6719` | 118 / 94,177 | `34062108606`, `pages.yml` |
+| MAM-OSIS | `8df241b3bb43e6f8ecf76ee35175380689fbcb68` | 6 / 3,475 | `34496487629`, `pages.yml` |
+
+All five live index responses returned HTTP 200, matched their current source Git
+blobs exactly and named the MAM-basics product target. MAM-basics run
+`34501575014` succeeded at baseline `9ea4e39a`. The permanent record includes
+workflow names, source file modes/IDs/sizes, breadcrumb contents, HTTP hashes and
+reproduction commands. MAM-with-doc's breadcrumb links to the MAM-basics repository
+root and published product; the remaining breadcrumbs also link directly to the
+product source directory. No source was cloned or modified.
+
+The prior lane records supply all four oracle layers, with their original scope
+qualifications retained. The short Phase 4 record enumerates neither all 113 live
+old/target pairs nor a complete HTTP result list; 6E must perform the full fresh
+census. No prior representative HTTP check is presented as complete coverage.
+
+The frozen target baseline contains **2,450 files / 351,416,216 bytes** at
+`9ea4e39a`; the whole target tree contains **5,642 files / 828,491,627 bytes**.
+Every selected file has mode, blob ID, byte count and SHA-256. The complete product
+and published set contains **1,154 files / 332,326,974 bytes**. Historical source
+trees were read at their original commits through GitHub's tree API; no current
+redirect-host tree was substituted for original source data. The recorded Land
+commits preserve the distinction between initial staging identity and adaptations
+committed during or after Land. All existing manifests remain unchanged.
+
+Fresh checks of permanent inputs and comparisons established:
+
+1. All **144 historical MAM-parsed JSONs / 84,572,003 bytes** match the original
+   source IDs and sizes in `MAM-parsed/historical/manifest.json`.
+2. All **92 original OSIS entries** agree with the unchanged Land manifest,
+   including the 90 selected entries and the source-only exclusions.
+3. All **106 independent output pairs** are accounted for: 104 exact matches and
+   the two intentional Sefaria provenance differences. All 45 support module pairs
+   match: 44 MAM-simple copies and one MAM-parsed copy.
+
+The finalized command map adds template surveys and their diagrams to 6B, an
+explicit parsed-documentation check after fresh surveys, authored miscellaneous
+MAM-with-doc pages to 6C, and the graph/site bookkeeping commands to 6E. The
+vendoring output set has four files, including its JSON provenance report; the
+mega's old three-artifact comment is not the inventory. Pinned Graphviz
+`16.0.0 (20260814.1018)` is available at the production fallback path
+`C:/Program Files/Graphviz/bin/dot.exe`. No generator ran to establish this map.
+
+The baseline explicitly protects **188 static product paths**, in addition to
+historical inputs. Examples include `sigil-decoding.html`, `foi/poetic-verlen.csv`,
+`misc/aliyot-styles.css`, scans, fonts and product notices. These files have frozen
+byte evidence; untouched mtimes must not be called regeneration. Expected output
+sets and future measured write sets remain separate. The map covers every final
+Phase 6 generator, example, redirect, vendoring, source-reference and inventory
+requirement, with 6F responsible for invalidating results after intervening changes.
+
+From the verified primary root, the canonical command was:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+```
+
+It passed **989 tests and skipped 5 in 117.70 seconds**, with no subtest total
+printed. The counts match 5F. The task-specific UTF-8 log and its SHA-256 are named
+in the permanent verification record; the result and exact command do not require
+that ignored log to interpret. All product generation, mtime and full URL work
+remains assigned to 6B–6E. Downloaded inputs, MAM-private, the five retired source
+paths and product bytes were not modified. Task 6A changes only the frozen
+baseline, permanent verification, command-map documentation, this plan and
+Programme Status. After committed/pushed write-back and clean-head verification,
+the authorized immediate successor is **6B — MAM-parsed and MAM-simple**.
+
+The staged Unicode/prose hygiene command, `py/main_test.py
+py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py -q`, passed
+**7 tests in 15.21 seconds**. Baseline validation checked all 2,450 entries,
+48 named sets and 29 mapped commands, complete product coverage with no protected
+output overlap, and all 11 prior JSON evidence files unchanged under their declared
+Git filters. Two prior reports have existing CRLF checkout bytes; the report records
+those raw hashes and the exact CRLF-only differences rather than normalizing the
+original files. Ordinary whitespace checks passed. No tracked Python changed,
+so no Black invocation was required.
