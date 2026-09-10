@@ -985,6 +985,14 @@ E1-E8 remain for the separate editorial phase after passing technical verificati
 and P2 source/rights-holder identification remains deferred. No integration, push or
 automatic archival occurs here; one integration remains scheduled after final Wave 4.
 
+Executed 2026-09-10: Holman completion commit
+`f709e0b87d6f8b0e82250374263a00a7b1150cb3` includes the remaining four source/page
+paths and three completion records. V6 passed immediately before the commit, and the
+worktree was clean afterward. The following record-only commit preserves that hash
+and becomes the required clean source in Wave 3's prompt. The remediation plan records
+the full local commit sequence and evidence. Writing responsibility transfers at dispatch;
+the task-creation result and final response record the actual successor ID.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

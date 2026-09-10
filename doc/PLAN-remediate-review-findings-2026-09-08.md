@@ -1642,6 +1642,18 @@ dispatch. E1-E8 stay in the separate editorial phase; P2 source/rights-holder id
 remains deferred, and the 415/416 scratch count remains unverified. No primary integration,
 push or automatic archival occurs here; integration remains scheduled after final Wave 4.
 
+Executed 2026-09-10: Holman completion commit
+`f709e0b87d6f8b0e82250374263a00a7b1150cb3` contains the four remaining source/page
+paths and the three completion records. The worktree was clean after that commit.
+Together with whitespace/lint implementation `ce833525f517eab97958141f7380a2da2267656e`
+and partial-record commit `059511e856933a7274e8e23af35bff622cbbd14f`, the local
+history contains all completed Wave 2 work. Final scope verification passed at
+`wave2-01a08999/20260910T113815Z-final-scope.json`, and V6 passed immediately before
+the Holman commit at
+`v6-runs/20260910T113855Z-wave2-before-approved-holman-commit-363246e9/`.
+The following record-only commit supplies the clean required source for Wave 3's
+prompt; the task-creation result and final response record the actual successor ID.
+
 ## Wave 3 — select unannotated forms, preserve displayed marks, and validate annotations
 
 Preconditions: Wave 2 complete; its own approval and execution record are present. Ben's
