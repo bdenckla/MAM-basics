@@ -682,6 +682,13 @@ the accepted-corrections append and complete reconciliation. The implementation 
 final checkpoint verification are recorded in a following local record commit. Creation of
 the successor waits for that clean checkpoint; the predecessor stops editing after dispatch.
 
+Executed 2026-09-09: Wave 1B implementation commit
+`42520d05ad004e99c0fff68bcf634a763ad22b15`. The worktree was clean after that commit. Final
+scope and prose-lint checks passed; V6 passed before the implementation commit and again at
+`42520d05` before the record-only checkpoint, with zero changed locations. The remediation
+plan records the evidence directories. The record-only commit supplies the clean required
+source for Wave 1C1's automatic handoff; no integration or push is due at this checkpoint.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

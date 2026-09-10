@@ -767,6 +767,19 @@ split again if needed. Wave 1D still owns the September 8 accepted-corrections a
 complete disposition reconciliation. Ben's automatic handoff authorization applies after
 the verified clean checkpoint; integration and push occur once after Wave 4.
 
+Wave 1B implementation commit recorded 2026-09-09:
+`42520d05ad004e99c0fff68bcf634a763ad22b15`. The implementation commit left the worktree clean.
+Final disposable scope checks passed in `wave1b-01a0892f-final-verification.json`, and the
+post-record prose mark-order lint passed (1 test in 0.16 seconds). The pre-implementation-commit
+V6 evidence is `v6-runs/20260910T025358Z-wave1b-before-commit-9fd8bb6c/`; V6 also passed at
+`42520d05` before the record commit, in
+`v6-runs/20260910T025612Z-wave1b-before-record-commit-04f763c5/`. Both checks had zero changed
+locations. Paths are relative to the scratch directory identified above. The following
+record-only commit provides Wave 1C1's required clean source; its hash and actual successor
+task ID are reported at handoff. The saved project was verified as
+`51e16ebd-373a-41f7-833e-9def3ef72b81`, at the exact review-worktree path; use it directly
+with `environment.type = local`. No new decision blocks Wave 1C1.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
