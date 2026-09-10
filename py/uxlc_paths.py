@@ -75,7 +75,7 @@ def uxlc_misc_fixed_dir() -> Path:
 
 
 def uxlc_notes_dir() -> Path:
-    """The downloaded tanach.us note pages under ``uxlc/in/UXLC-notes/``."""
+    """The per-book tanach.us note-page JSON under ``uxlc/in/UXLC-notes/``."""
     return in_dir() / "UXLC-notes"
 
 

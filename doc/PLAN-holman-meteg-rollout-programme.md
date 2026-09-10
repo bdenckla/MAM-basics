@@ -643,13 +643,17 @@ added**, 2 Chronicles 28:19 and Isaiah 24:18.
 **Nothing is inconsistent, and that is what makes the gap cheap to defer.**
 Both sides of the wsgo comparison lack the eleven equally, so item 5 step 5
 reads empty for them whether or not they are picked up. MAM simply keeps the
-pre-edit form at those eleven verses until a download reaches them, and item 5
-step 6's mega run propagates that pre-edit form to every generated repository.
+pre-edit form at those eleven verses until a Wikisource download reaches them.
+Under the production pipeline adopted on 2026-09-10, that download updates
+MAM-parsed directly; the ordinary mega run propagates the same form to every
+downstream product.
 
 **What closes it**, whenever it is taken up: a chapter-targeted download naming
 those eleven chapters — Joshua 19, 1 Samuel 1 and 22, 2 Kings 6, 2 Chronicles
-26 and 28, Isaiah 22, 24, 42 and 50, Zephaniah 3 — then `py/main_diff.py wsgo`,
-then a Google Sheet import-and-apply round of its own, then the mega run. A
+26 and 28, Isaiah 22, 24, 42 and 50, Zephaniah 3 — which updates MAM-parsed from
+Wikisource; then `py/main_diff.py wsgo`, a Google Sheet import-and-apply round,
+a Google download to refresh `MAM-parsed/google/`, a second empty `wsgo` diff,
+and the ordinary mega run. A
 full `py/main_download.py fr-wikisource` closes it too, and closes the whole
 2026-08-26 gap with it, at the price of bringing down a week of edits nobody
 here has reviewed. The chapter-targeted route also includes 2 Chronicles 28, so

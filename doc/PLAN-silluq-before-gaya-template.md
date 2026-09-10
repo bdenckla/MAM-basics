@@ -278,8 +278,10 @@ old and new source strings and must change only the target atom; run the bot's
 no-save mode before the live edit. Apply the identical source call to the
 corresponding Google Sheet cell. Do not hand-edit downloaded Google CSV files.
 
-After both sources are updated, refresh the Wikisource books, the MAM
-introduction, and the Google Sheet; then require `main_diff.py wsgo` to report no
+After both sources are updated, refresh the Wikisource books and the MAM
+introduction. The Wikisource book refresh updates production MAM-parsed plain and
+plus. Refresh the Google Sheet download separately to update only
+`MAM-parsed/google/`; then require `main_diff.py wsgo` to report no
 Wikisource-versus-Google difference. If the source-sync work must land before
 the implementation because the Google download reads remote `main`, make the
 source synchronization a separate commit and integrate it using the worktree

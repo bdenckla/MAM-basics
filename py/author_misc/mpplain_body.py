@@ -158,9 +158,9 @@ def s_intro():
         author.para(
             [
                 "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
-                " in the $MAM Google Sheet with minimal post-processing."
+                " downloaded from Hebrew Wikisource with minimal post-processing."
                 " Use plain when you want a format that stays close to the"
-                " $MAM Google Sheet."
+                " Wikisource source pages."
                 " Use ",
                 # Normally we avoid mentioning "plus" in "plain" and vice versa,
                 # but this is an intentional exception to the rule.

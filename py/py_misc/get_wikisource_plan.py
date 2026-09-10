@@ -1,11 +1,12 @@
+"""Plan Wikisource chapter downloads from book metadata without reading inputs."""
+
 from mb_cmn import bib_locales as tbn
-from py_misc import mam_csv_in
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn import mam_bknas
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn.my_utils import sum_of_map
 from mb_cmn.my_utils import sl_map
-from mb_cmn.my_utils import dv_map
+from ws.ws_chapter_counts import BOOK39_CHAPTER_COUNTS
 
 
 def get_chapter_plans(book_plan):
@@ -18,10 +19,7 @@ def get_book_plans(args_bkid=None, args_secid=None):
     if args_bkid:
         assert args_secid is None, args_secid
         assert args_bkid in tbn.ALL_BK39_IDS, args_bkid
-        mam_he_book_name_pair = mbkn_a_sbkn.BK39ID_TO_MAM_HBNP[args_bkid]
-        plan = sum_of_map((_get_zoo_book_plans, mam_he_book_name_pair), tbn.ALL_SECIDS)
-        assert plan, args_bkid
-        return plan
+        return [_get_book_plan(args_bkid)]
     if args_secid:
         assert args_secid in tbn.ALL_SECIDS, args_secid
         secids = [args_secid]
@@ -30,27 +28,17 @@ def get_book_plans(args_bkid=None, args_secid=None):
     return sum_of_map(_get_book_plans_for_one_section, secids)
 
 
-def _get_zoo_book_plans(mam_he_book_name_pair, secid):  # zero or one
-    light_books = mam_csv_in.read_section_from_csv_lightly(secid)
-    if light_book := light_books.get(mam_he_book_name_pair):
-        return [(mam_he_book_name_pair, _get_he_chnus(light_book))]
-    return []
-
-
 def _get_book_plans_for_one_section(secid):
-    light_books = mam_csv_in.read_section_from_csv_lightly(secid)
-    out = dv_map(_get_he_chnus, light_books)
-    return out.items()
+    return sl_map(_get_book_plan, tbn.bk39s_of_sec(secid))
 
 
-def _get_he_chnus(light_book):
-    out_he_chnus = []
-    for chapter_id in light_book.keys():
-        if chapter_id.isdigit():
-            out_he_chnus.append(hvn.INT_TO_STR_DIC[int(chapter_id)])
-        else:
-            out_he_chnus.append(chapter_id)
-    return out_he_chnus
+def _get_book_plan(bk39id):
+    he_bn_sbn = mbkn_a_sbkn.BK39ID_TO_MAM_HBNP[bk39id]
+    he_chnus = [
+        hvn.INT_TO_STR_DIC[chapter]
+        for chapter in range(1, BOOK39_CHAPTER_COUNTS[bk39id] + 1)
+    ]
+    return he_bn_sbn, he_chnus
 
 
 def _get_chapter_plan(he_bn_sbn, he_chnu):

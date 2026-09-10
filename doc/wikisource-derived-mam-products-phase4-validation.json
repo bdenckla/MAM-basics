@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-10",
+  "task_id": "01a08c5e-a681-70a0-a0d3-f22d2d6736f3",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "branch": "codex-worktree-3a6b",
+  "starting_commit": "05cfc018ee63da5bcb25dd2d3152157f75029584",
+  "source_boundary": {
+    "parse_ws": "format 2 plus production plain/plus",
+    "parse_go": "MAM-parsed/google only",
+    "diff_wsgo": "committed WS format 2 versus MAM-parsed/google",
+    "ordinary_first_step": "parse-ws",
+    "ordinary_excluded_steps": [
+      "parse-go",
+      "diff-wsgo"
+    ],
+    "ordinary_ws_parse_count": 1
+  },
+  "product_verification": {
+    "plain_files_matching_fresh_ws_candidate": 24,
+    "plus_files_matching_fresh_ws_candidate": 24,
+    "changed_files": [
+      "MAM-parsed/plain/BA-Samuel.json",
+      "MAM-parsed/plain/D1-Psalms.json",
+      "MAM-parsed/plus/BA-Samuel.json",
+      "MAM-parsed/plus/D1-Psalms.json"
+    ],
+    "changed_verse_fields_per_product": 2,
+    "changed_leaves_per_product": 4,
+    "matches_phase2_receipt_exactly": true,
+    "selected_1Samuel_refresh_retained_both_subbooks": true,
+    "parse_go_left_all_plain_plus_files_unchanged": true
+  },
+  "comparator_verification": {
+    "normalization_calls_with_hebrew_or_presentation_forms": 0,
+    "hebrew_ranges_excluded_from_normalization": [
+      "U+0590-U+05FF",
+      "U+FB1D-U+FB4F"
+    ],
+    "standalone_initial_combining_mark_rejected": true,
+    "raw_google_strings_beginning_with_combining_mark": 0,
+    "mark_only_google_template_arguments": 644,
+    "comparison_values_separate_from_edit_payloads": true,
+    "google_search_is_exact_source_substring": true,
+    "wikisource_replacement_has_google_mam_mark_order": true,
+    "real_comparator_returncode": 0,
+    "tracked_comparator_output_changes": 0
+  },
+  "unchanged_captures": {
+    "raw_wikisource_files": 39,
+    "bot_capture_files": 80,
+    "format2_files_after_repeated_parse": 39
+  },
+  "ordinary_google_access_blocked": {
+    "in/mam-go": true,
+    "MAM-parsed/google": true,
+    "first_parse_ws_step_returned_normally": true
+  },
+  "commands": {
+    "production_ws": "py/main_parse.py ws",
+    "selected_ws": "py/main_parse.py ws --book39 1Samuel",
+    "google": "py/main_parse.py go",
+    "comparator": "py/main_diff.py wsgo",
+    "candidate": "py/main_parse.py ws-products --output-dir .novc/ws-products-candidate-20260910",
+    "diagrams": "py/main_pipeline_graph.py",
+    "full_suite": "py/main_test.py -rs"
+  },
+  "tests": {
+    "targeted_passed": 82,
+    "targeted_failed": 0,
+    "targeted_seconds": 20.68,
+    "full_passed": 990,
+    "full_skipped": 5,
+    "full_failed": 0,
+    "full_seconds": 160.59,
+    "skip_site": "py/tests/test_edition_transcriptions.py:1168"
+  },
+  "detailed_receipts": ".novc/ws-products-baseline-20260910/"
+}

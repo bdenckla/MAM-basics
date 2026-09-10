@@ -11,6 +11,9 @@ MS Word, etc.), but the process just changed, so here goes.
 
 2. **Run `py/main_diff.py wsgo`.**
 
+   The command reads its Google input from `MAM-parsed/google/` and parses its
+   Wikisource input directly from `in/mam-ws`.
+
 3. **The differences** (in auto-edit form) are written to
    `out/diff_mamws_mamgo-auto-edits.json` in this repo. Commit and push
    that file so the Google Apps Script can fetch it from GitHub.
@@ -24,7 +27,8 @@ MS Word, etc.), but the process just changed, so here goes.
 
 7. **Run `py/main_download.py fr-google`.** Auto-edits will be reflected in
    changes to CSV files in the `MAM-basics` repo and JSON files in the
-   `MAM-parsed/` product directory in MAM-basics.
+   `MAM-parsed/google/` product directory in MAM-basics. The command does not
+   rewrite the Wikisource-derived `plain/` or `plus/` products.
 
 8. **Run `py/main_diff.py wsgo`** again to verify that the diffs go empty.
 

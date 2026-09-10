@@ -6,12 +6,14 @@ Run from the repo root:
 Both tanach.us note-page formats are exercised as synthetic HTML strings (not
 files under in/UXLC-notes/, so this test does not depend on the corpus):
 
-  * NoteMaker (newer) -- modeled on in/UXLC-notes/Deuter/Deuter.5.13.2-t.html --
+  * NoteMaker (newer) -- modeled on key Deuter.5.13.2-t.html in the committed
+    Deuter note-book JSON object --
     asserts the <h2> change-summary line is now the first paragraph (issue #30),
     the <h1> citation text is absent, and the author/change-link text is absent.
 
   * Hand-authored (older) -- modeled on
-    in/UXLC-notes/2Kings/2Kings.21.26.1-c.html -- asserts unchanged behavior:
+    key 2Kings.21.26.1-c.html in the committed 2Kings JSON object -- asserts
+    unchanged behavior:
     the <h4> lead line is still the first paragraph.
 """
 

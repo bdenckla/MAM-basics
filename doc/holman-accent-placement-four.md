@@ -59,9 +59,10 @@ both. `PLAN-holman-meteg-rollout-programme.md`'s item 4 inherited the same error
 table and now carries the measurement.
 
 So Phase "download the chapters" in the larger rollout plan is not just hygiene for Joshua:
-this repo's local Wikisource snapshot is genuinely stale there, and the standard pipeline
-(wsgo diff, Google Sheet, mega) needs to run for Joshua chapter 10 before MAM-parsed reflects
-Avi's correction.
+this repo's local Wikisource snapshot is genuinely stale there. Under the production
+pipeline adopted on 2026-09-10, downloading Joshua chapter 10 reparses its complete
+24-book group and updates MAM-parsed directly from Wikisource. The Google Sheet and
+`wsgo` comparison then synchronize the independent comparison source.
 
 ## Ben's expectation, 2026-09-05: mgketer is not expected to ever agree at M24, even after the fix propagates
 
@@ -74,8 +75,8 @@ have this helper at all — the helper is a MAM notational addition, not a manus
 mgketer inherits.
 
 **Consequence for the rollout plan's later phases:** once the Wikisource fix propagates
-through the standard pipeline into `MAM-parsed/plain/` (the rollout's Phase "download the
-chapters" through the mega run), MAM's text at Joshua 10:12 will have TWO pashta marks where
+through a Wikisource download into `MAM-parsed/plain/`, MAM's text at Joshua 10:12
+will have TWO pashta marks where
 mgketer's own scrape has one. At that point mgketer's comparison is **expected to show a new
 diff at this word**, not silence — and that new diff is correct, not a regression or a sign
 anything went wrong. It is the ordinary case of MAM adding a stress helper the source

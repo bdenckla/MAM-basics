@@ -10,7 +10,6 @@ from mb_cmn import file_io
 from mb_cmn import polite_download
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_csv_in
-from py_misc.check_mpplus import check_mpplus
 from subcommands import parse_go
 
 
@@ -36,7 +35,7 @@ def _write_callback(text, out_fp):
 
 
 def run(section=None, skip_download=False, download_only=False):
-    """Download all 6 MAM sections from its Google Sheet, then parse and check."""
+    """Download MAM sections from the Google Sheet, then parse the Google product."""
     if not skip_download:
         secids = (section,) if section else tbn.ALL_SECIDS
         with polite_download.PoliteDownloader(_GOOGLE_DOWNLOAD_CONFIG) as downloader:
@@ -46,13 +45,7 @@ def run(section=None, skip_download=False, download_only=False):
                 _download_tmpl_doc(downloader)
     if download_only:
         return
-    all_plus_paths = parse_go.almost_main()
-    errors = check_mpplus(all_plus_paths)
-    if errors:
-        print(f"check_mpplus found {len(errors)} error(s):")
-        for plus_path, error in errors:
-            print(f"  {error[0]} in {plus_path}: {error[1]!r}")
-        raise SystemExit(1)
+    parse_go.almost_main()
 
 
 # GURL: Google URL

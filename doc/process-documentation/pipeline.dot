@@ -9,80 +9,89 @@ digraph mam_pipeline {
 
     // ── Data stores ──
     node [shape=cylinder];
-    ds_go_csv        [label="in/mam-go/\n(Google CSV)"];
-    ds_parsed_plus   [label="MAM-parsed/plus/"];
-    ds_parsed_plain  [label="MAM-parsed/plain/"];
-    ds_ws            [label="in/mam-ws/\n(Wikisource JSON)"];
-    src_ws_live      [label="Hebrew Wikisource"];
-    ds_simple        [label="MAM-simple/"];
-    ds_with_doc      [label="gh-pages/MAM-with-doc/"];
-    ds_sefaria       [label="MAM-for-Sefaria/"];
-    ds_osis          [label="MAM-OSIS/"];
-    ds_out           [label="out/\n(local outputs)"];
+    ds_go_csv         [label="in/mam-go/\n(Google CSV)"];
+    ds_parsed_google  [label="MAM-parsed/google/"];
+    ds_parsed_plus    [label="MAM-parsed/plus/"];
+    ds_parsed_plain   [label="MAM-parsed/plain/"];
+    ds_ws             [label="in/mam-ws/\n(Wikisource JSON)"];
+    src_ws_live       [label="Hebrew Wikisource"];
+    ds_simple         [label="MAM-simple/"];
+    ds_with_doc       [label="gh-pages/MAM-with-doc/"];
+    ds_sefaria        [label="MAM-for-Sefaria/"];
+    ds_osis           [label="MAM-OSIS/"];
+    ds_out            [label="out/\n(local outputs)"];
 
     // ── External prerequisites (not part of _STEPS) ──
     node [shape=box, style=dashed, color=gray, fontcolor=gray];
-    download_go      [label="download fr-google"];
-    download_ws      [label="download fr-wikisource", style="", color="", fontcolor=""];
+    download_go       [label="download fr-google"];
+    download_sef      [label="download fr-sefaria"];
+    download_ws       [label="download fr-wikisource", style="", color="", fontcolor=""];
 
     // ── Pipeline steps ──
     node [shape=box, style="", color="", fontcolor=""];
-    parse_go         [label="parse go"];
-    foi              [label="foi_features_of_interest"];
-    mam_with_doc     [label="mam_with_doc"];
-    tmpl_survey      [label="tmpl_survey"];
-    mam_simple       [label="mam_simple"];
-    misc_2           [label="misc-2"];
-    osis             [label="osis"];
-    misc_1           [label="misc-1", tooltip="decnreub\nmultimark\nwordlist\nexplicit_xataf\ndiff ctr-vs-mam"];
-    diff_wsgo        [label="diff wsgo"];
-    misc_3           [label="misc-3", tooltip="parse ws\nws_bot proto"];
-    ws_bot           [label="ws_bot real"];
-    gen_docs         [label="...english_documents"];
-    osis_split       [label="osis_split_mapm"];
+    parse_go          [label="parse go"];
+    parse_ws          [label="parse ws"];
+    foi               [label="foi_features_of_interest"];
+    mam_with_doc      [label="mam_with_doc"];
+    tmpl_survey       [label="tmpl_survey"];
+    mam_simple        [label="mam_simple"];
+    misc_2            [label="misc-2"];
+    osis              [label="osis"];
+    misc_1            [label="misc-1", tooltip="decnreub\nmultimark\nwordlist\nexplicit_xataf\ndiff ctr-vs-mam"];
+    diff_wsgo         [label="diff wsgo"];
+    misc_3            [label="misc-3"];
+    ws_bot            [label="ws_bot real"];
+    gen_docs          [label="...english_documents"];
+    osis_split        [label="osis_split_mapm"];
 
     // ── Edges ──
 
     // Google pipeline
-    download_go     -> ds_go_csv;
-    ds_go_csv       -> parse_go;
-    parse_go        -> ds_parsed_plus;
-    parse_go        -> ds_parsed_plain;
+    download_go      -> ds_go_csv;
+    ds_go_csv        -> parse_go;
+    parse_go         -> ds_parsed_google;
+    ds_parsed_google -> diff_wsgo;
 
     // MAM-parsed consumers
-    ds_parsed_plus  -> foi;
-    ds_parsed_plus  -> mam_with_doc;
-    ds_parsed_plus  -> mam_simple;
-    ds_parsed_plus  -> misc_1;
-    ds_parsed_plain -> tmpl_survey;
-    ds_parsed_plain -> diff_wsgo;
+    ds_parsed_plus   -> foi;
+    ds_parsed_plus   -> mam_with_doc;
+    ds_parsed_plus   -> mam_simple;
+    ds_parsed_plus   -> misc_1;
+    ds_parsed_plain  -> tmpl_survey;
 
     // MAM-with-doc outputs
-    foi             -> ds_with_doc;
-    mam_with_doc    -> ds_with_doc;
-    gen_docs        -> ds_with_doc;
+    foi              -> ds_with_doc;
+    mam_with_doc     -> ds_with_doc;
+    gen_docs         -> ds_with_doc;
 
     // MAM-simple pipeline
-    mam_simple      -> ds_simple;
-    ds_simple       -> misc_2;
-    ds_simple       -> osis;
-    misc_2          -> ds_sefaria;
-    osis            -> ds_osis;
-    osis_split      -> ds_osis;
+    mam_simple       -> ds_simple;
+    ds_simple        -> misc_2;
+    ds_simple        -> osis;
+    misc_2           -> ds_sefaria;
+    osis             -> ds_osis;
+    osis_split       -> ds_osis;
 
     // Local out/ outputs
-    tmpl_survey     -> ds_out;
-    misc_1          -> ds_out;
-    diff_wsgo       -> ds_out;
-    misc_3          -> ds_out;
+    tmpl_survey      -> ds_out;
+    misc_1           -> ds_out;
+    diff_wsgo        -> ds_out;
+    parse_ws         -> ds_out;
+    misc_3           -> ds_out;
 
     // Wikisource pipeline
-    src_ws_live     -> download_ws;
-    download_ws     -> ds_ws;
-    ds_ws           -> diff_wsgo;
-    ds_ws           -> misc_3;
-    ws_bot          -> src_ws_live;
-    ws_bot          -> ds_ws;
-    ws_bot          -> ds_out [tooltip="via automatic post-download reparse"];
+    src_ws_live      -> download_ws;
+    download_ws      -> ds_ws;
+    ds_ws            -> diff_wsgo;
+    ds_ws            -> parse_ws;
+    parse_ws         -> ds_parsed_plain;
+    parse_ws         -> ds_parsed_plus;
+    ds_ws            -> misc_3;
+    ws_bot           -> src_ws_live;
+    ws_bot           -> ds_ws;
+    ws_bot           -> ds_out [tooltip="via automatic post-download reparse"];
+
+    // Sefaria download (standalone)
+    download_sef     -> ds_out;
 
 }

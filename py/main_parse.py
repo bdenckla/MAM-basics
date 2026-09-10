@@ -3,9 +3,11 @@
 
 Subcommands:
     go
-                Parse downloaded Google Sheets data into MAM-parsed outputs within MAM-basics.
+                Parse downloaded Google Sheets data into the Google comparison product.
     ws
-                Parse downloaded Wikisource data into local parsed JSON outputs.
+                Parse downloaded Wikisource data into format 2 and production plain/plus.
+    ws-products
+                Write candidate Wikisource-derived plain/plus JSON to an explicit directory.
 
 Examples:
     .venv/Scripts/python.exe py/main_parse.py go
@@ -15,10 +17,12 @@ Examples:
 """
 
 import argparse
+import sys
 
 from mb_cmn import bib_locales as tbn
 from subcommands import parse_go
 from subcommands import parse_ws
+from subcommands import parse_ws_products
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -34,6 +38,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     args = build_parser().parse_args()
     args.func(args)
 
@@ -41,13 +47,13 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     go_parser = subparsers.add_parser(
         "go",
-        help="Parse downloaded Google Sheets data into MAM-parsed outputs.",
+        help="Parse Google Sheets data into the MAM-parsed Google comparison product.",
     )
     go_parser.set_defaults(func=_run_go)
 
     ws_parser = subparsers.add_parser(
         "ws",
-        help="Parse downloaded Wikisource data into per-book parsed outputs (fmt-2 by default).",
+        help="Parse Wikisource data into format 2 and production plain/plus outputs.",
     )
     mutex = ws_parser.add_mutually_exclusive_group()
     mutex.add_argument("--book39")
@@ -58,6 +64,12 @@ def _add_subcommands(subparsers) -> None:
         help="Also write fmt-1 debugging output to .novc/mam-ws-parsed-fmt-1.",
     )
     ws_parser.set_defaults(func=_run_ws)
+
+    products_parser = subparsers.add_parser(
+        "ws-products",
+        help="Generate candidate Wikisource-derived plain/plus JSON.",
+    )
+    parse_ws_products.add_args(products_parser)
 
 
 def _bkids_from_args(args):

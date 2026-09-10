@@ -140,9 +140,10 @@ def code_dir() -> Path:
 
 
 def qr_package_dir() -> Path:
-    """The quirk-record package (``<code_dir>/author_boj_qr``), 160 one-dict modules.
+    """The quirk-record package, with 39 chapter modules containing 160 records.
 
-    ``check_qr_consistency`` scans it for filename/``RECORD_*``/word-id agreement.
+    ``check_qr_consistency`` scans ``<code_dir>/author_boj_qr`` for chapter,
+    ``RECORD_*``, verse, and word-ID agreement.
     """
     return code_dir() / "author_boj_qr"
 

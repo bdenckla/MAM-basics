@@ -39,8 +39,8 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 ### Parsing
 
-- `main_parse.py go` — parses downloaded Google Sheets data into structured form
-- `main_parse.py ws` — parses downloaded Wikisource data into structured form
+- `main_parse.py go` — parses downloaded Google Sheets data into the independent comparison product
+- `main_parse.py ws` — parses downloaded Wikisource data into format 2 and the production plain/plus products
 
 ### Diffing and comparison
 

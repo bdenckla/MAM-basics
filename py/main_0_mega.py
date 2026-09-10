@@ -2,13 +2,25 @@
 
 The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
-five MAM product generators write into this repository after the fourth-stage
-Repoint steps completed on 2026-09-10. Two steps use the MAM-private sibling:
-the near-Aleppo census still runs there, and the post-stress-meteg survey reads
-its Phonetic MAM. A cloud session skips both steps (Ben's decisions,
-2026-09-10). Elsewhere both find the sibling through
+ordinary sequence begins by deriving MAM-parsed plain/plus from committed
+Wikisource input. The five downstream MAM product generators write into this
+repository after the fourth-stage Repoint steps completed on 2026-09-10. Two
+steps use the MAM-private sibling: the near-Aleppo census still runs there, and
+the post-stress-meteg survey reads its Phonetic MAM. A cloud session skips both
+steps (Ben's decisions, 2026-09-10). Elsewhere both find the sibling through
 ``mb_cmn.paths.repos_root()``, which in a worktree looks beside the worktree's
 home clone, so a worktree run needs no ``REPOS_ROOT``.
+
+Straight after ``foi-features-of-interest`` come ``parse-go`` and ``diff-wsgo``,
+the two steps of the Google Sheet, which Ben described on 2026-09-10 as "a MAM
+dataset derived from Wikisource, one of many datasets (e.g. MAM-simple) and
+editions (e.g. MAM with doc) derived from Wikisource". ``parse-go`` regenerates
+``MAM-parsed/google/`` from the committed CSVs under ``in/mam-go/``, which
+``py/main_download.py fr-google`` downloads from the Sheet. ``diff-wsgo``
+compares that with the committed Wikisource input and writes
+``out/diff_mamws_mamgo-auto-edits.json``, the auto-edits from which two Google
+Apps Script scripts update the Sheet, as
+``doc/process-documentation/auto-edits-process.md`` describes.
 
 Since 2026-09-10 the sequence also runs the five UXLC steps that
 ``py/main_uxlc_mega.py`` ran until it was folded in here, from
@@ -22,10 +34,6 @@ They write into ``gh-pages/uxlc/clc/``, ``holman/``, ``gh-pages/holman/``,
 Three of them fail the run on purpose, as their notes say:
 ``render-uxlc-corrections``, ``verify-and-render-table`` and
 ``book-of-job-site``, the last on any spelling finding in book-of-job's pages.
-
-Also since 2026-09-10, the ``check-mpplus`` step checks MAM-parsed's plus JSON
-once ``parse-go`` has written it and ``foi-features-of-interest`` has reported
-on it, and fails the run on any error it finds.
 
 Six more generators of tracked files joined the same day, each placed by what
 it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
@@ -46,10 +54,8 @@ import subprocess
 import sys
 from typing import Callable
 
-from mb_cmn import bib_locales as tbn
 from mb_cmn import graphviz_pin
 from mb_cmn import paths
-from py_misc import check_mpplus
 
 import main_explicit_xataf
 
@@ -149,31 +155,6 @@ def _run_vendored_mam_osis():
         cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
-
-
-def _run_check_mpplus():
-    # Added 2026-09-10.  Until then check_mpplus ran only in py/main_download.py fr-google,
-    # after a Google download, while parse-go runs the same parse on every mega run and
-    # skipped the check that follows it on the download path.  So a change to the parser,
-    # or to the check's own rules, reached the plus JSON with nothing checking it.  Ben,
-    # 2026-09-10: running it in the mega "also 'checks the check', i.e. makes sure the
-    # check itself is still working."  The download path keeps its own call, which exits
-    # 1; this one raises, so an error fails the mega run.  The paths are the 24 that
-    # parse-go writes, one per book24, so a missing file fails here too.
-    plus_dir = paths.mam_parsed_plus_dir()
-    plus_paths = [
-        plus_dir / f"{tbn.ordered_short_dash_full_24(bk24id)}.json"
-        for bk24id in tbn.ALL_BK24_IDS
-    ]
-    errors = check_mpplus.check_mpplus(plus_paths)
-    if errors:
-        for plus_path, error in errors:
-            print(f"  {error[0]} in {plus_path}: {error[1]!r}")
-        raise RuntimeError(
-            f"check_mpplus found {len(errors)} error(s) in MAM-parsed's plus/ tree;"
-            " each is printed above"
-        )
-    print(f"check_mpplus: no errors in the {len(plus_paths)} files of {plus_dir}")
 
 
 def _run_diff_ctr_vs_mam():
@@ -303,37 +284,50 @@ def _run_ac_gen_index_flat_annotated():
 
 _STEPS = [
     StepRecord(
-        "parse-go",
-        parse_go.almost_main,
+        "parse-ws",
+        parse_ws.almost_main,
         "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
     ),
-    # We run "features of interest" early, straight after parse-go, since it
+    # We run "features of interest" early, straight after parse-ws, since it
     # provides information about any malformed Unicode.
     # On later "main" functions, such malformed Unicode will cause
     # asserts that provide little information.
+    #
+    # parse-ws itself checks every plus book it writes with check_mpplus, and raises on
+    # any error (py/subcommands/parse_ws_products.py).  So a string out of standard mark
+    # order, or a doc-note template with the wrong arguments, stops the run in parse-ws,
+    # before this step can report it.  Ben's decision, 2026-09-10, keeps the check inside
+    # parse-ws, rather than in the separate check-mpplus step that phases 5b and 5c of
+    # doc/PLAN-mega-coverage.md had placed after this one.
     StepRecord(
         "foi-features-of-interest",
         main_foi_features_of_interest.almost_main,
         None,
     ),
-    # Since 2026-09-10 (phase 5c of doc/PLAN-mega-coverage.md), check-mpplus follows
-    # foi-features-of-interest rather than parse-go directly.  check-mpplus raises on
-    # any string out of standard mark order, and such a string is malformed Unicode,
-    # which foi-features-of-interest reports as the feature NON_STANDARD_MARK_ORDER;
-    # run before foi-features-of-interest, check-mpplus would stop the run before that
-    # report was written.  So a doc-note template with the wrong number of arguments
-    # stops the run inside foi-features-of-interest, before check-mpplus can report
-    # it, at the assert in label_args_of_doc (py/foi/foi_wikitext_helpers.py).  Since
-    # phase 6a of the same plan, that assert's message names the template and its
-    # argument count, so the order costs no information.
+    # The Google Sheet's two steps.  426fa229 (2026-09-10) took them out of the mega when
+    # it cut MAM-parsed's plain/ and plus/ over to Wikisource, and Ben put them back the
+    # same day: "Although Google is certainly demoted in this new world, that seems a step
+    # too far, to demote it out of mega!"  And: "the Google Sheet is a MAM dataset derived
+    # from Wikisource, one of many datasets (e.g. MAM-simple) and editions (e.g. MAM with
+    # doc) derived from Wikisource."  Two Google Apps Script scripts update the Sheet from
+    # the auto-edits that diff-wsgo writes (doc/process-documentation/auto-edits-process.md),
+    # so these two steps are as much part of production as the steps that make MAM-simple
+    # and MAM-with-doc.  Phase 7b of doc/PLAN-mega-coverage.md put them back, straight
+    # after foi-features-of-interest.
     StepRecord(
-        "check-mpplus",
-        _run_check_mpplus,
-        "must come after parse-go, whose MAM-parsed plus/ JSON it checks, and after"
-        " foi-features-of-interest, whose report on malformed Unicode it would"
-        " otherwise pre-empt: checks the mark order of every string, and the"
-        " arguments of every doc-note template; raises on any error, so a bad parse"
-        " fails the mega; writes nothing",
+        "parse-go",
+        parse_go.almost_main,
+        "py/main_parse.py go: regenerates MAM-parsed/google/ from the committed CSVs"
+        " under in/mam-go/, the Google Sheet's current state as py/main_download.py"
+        " fr-google last downloaded it, for diff-wsgo to compare with Wikisource",
+    ),
+    StepRecord(
+        "diff-wsgo",
+        diff_wsgo.almost_main,
+        "py/main_diff.py wsgo: must come after parse-go, whose MAM-parsed/google/ it"
+        " compares with the committed Wikisource input under in/mam-ws/; writes"
+        " out/diff_mamws_mamgo.json and out/diff_mamws_mamgo-auto-edits.json, the"
+        " auto-edits the Google Sheet is updated from",
     ),
     StepRecord("mam-with-doc", main_mam_with_doc.almost_main, None),
     # run_all, not almost_main, since 2026-08-25.  almost_main is only
@@ -362,7 +356,7 @@ _STEPS = [
         _run_diff_ctr_vs_mam,
         "py/main_diff.py ctr-vs-mam: compares Psalms and Proverbs in MAM-parsed's"
         " plus/ tree with the committed CTR JSON under in/chabad-ctr/, and writes"
-        " out/diff_ctr_mam.json; must come after parse-go",
+        " out/diff_ctr_mam.json; must come after parse-ws",
     ),
     StepRecord(
         "tmpl-survey",
@@ -372,12 +366,12 @@ _STEPS = [
     StepRecord(
         "tmpl-survey-toy",
         main_tmpl_survey_toy.almost_main,
-        "must come after parse-go",
+        "must come after parse-ws",
     ),
     StepRecord(
         "vendored-tmpl-survey-toy",
         _run_vendored_tmpl_survey_toy,
-        "runs MAM-parsed/py-examples/main_tmpl_survey_toy_example.py as subprocess; must come after parse-go",
+        "runs MAM-parsed/py-examples/main_tmpl_survey_toy_example.py as subprocess; must come after parse-ws",
     ),
     StepRecord(
         "mam-simple",
@@ -395,7 +389,7 @@ _STEPS = [
         " each only where its content changed,"
         " MAM-simple/doc/versification-differences.md,"
         " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and"
-        " font, and gh-pages/MAM-simple/index.html; must come after parse-go",
+        " font, and gh-pages/MAM-simple/index.html; must come after parse-ws",
     ),
     # mam_simple must come before mam4sef-and-ajf and mam_osis
     StepRecord(
@@ -451,16 +445,6 @@ _STEPS = [
         "explicit-xataf",
         main_explicit_xataf.almost_main,
         None,
-    ),
-    StepRecord(
-        "diff-wsgo",
-        diff_wsgo.almost_main,
-        "relies on download of ws",
-    ),
-    StepRecord(
-        "parse-ws",
-        parse_ws.almost_main,
-        "relies on download of ws",
     ),
     StepRecord(
         "ws-bot-proto",
@@ -628,7 +612,7 @@ _STEPS = [
     StepRecord(
         "verify-and-render-table",
         main_verify_and_render_table.main,
-        "must come after parse-go: checks Holman's ketiv/qere review table against"
+        "must come after parse-ws: checks Holman's ketiv/qere review table against"
         " MAM-parsed's plus/ tree and in/UXLC-39, and raises on any verification"
         " failure; writes its summary into holman/docs-not-served/table_data.json"
         " and the gh-pages/holman/table_data_findings* pages with their CSS and JS",
@@ -666,7 +650,7 @@ _STEPS = [
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
     # The sigil inventory reads MAM-parsed's plus/ tree too, so it takes the same placement
-    # argument the near-aleppo comment just below makes: after parse-go and after everything
+    # argument the near-aleppo comment just below makes: after parse-ws and after everything
     # else that writes MAM-parsed.  Added 2026-08-27, for the reason accgram-test-fixes was
     # added on 2026-08-04 and near-aleppo-census on 2026-08-26 -- py/main_sigil_inventory.py
     # was imported by nothing, so nothing routine rewrote its tracked artifact.  This one had
@@ -683,7 +667,7 @@ _STEPS = [
         "reads MAM-parsed's plus/ tree; writes the tracked out/sigil-inventory.json",
     ),
     # The near-aleppo censuses read MAM-parsed's plus/ tree, so this belongs after
-    # parse-go and after everything else that writes it.  --write regenerates their
+    # parse-ws and after everything else that writes it.  --write regenerates their
     # tracked goldens under near-aleppo/census/expected/, which is a build and not an
     # audit: run_all.py's own default mode diffs instead, and that mode is for a human
     # asking "what moved?", not for a rebuild.  Without a step here the goldens go

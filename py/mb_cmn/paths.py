@@ -300,6 +300,19 @@ def require_mam_parsed_plus_dir() -> Path:
     return path
 
 
+def mam_parsed_google_dir() -> Path:
+    """MAM-parsed's ``google`` subtree: Google-derived plain-schema JSON."""
+    return mam_parsed_dir() / "google"
+
+
+def require_mam_parsed_google_dir() -> Path:
+    """``mam_parsed_google_dir()``, checked before a Google-product read."""
+    path = mam_parsed_google_dir()
+    if not path.is_dir():
+        raise FileNotFoundError(f"MAM-parsed's landed Google JSON is absent: {path}")
+    return path
+
+
 def al_hatorah_phonetic_dir() -> Path:
     """al-hatorah's ``io/a01-phonetic-std-set``: Phonetic MAM, one JSON per book.
 

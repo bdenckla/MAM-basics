@@ -292,6 +292,7 @@ _MAM_SIMPLE_EXCLUDE_FILES = frozenset({"py-examples/provenance.md"})
 _MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES = ("py/",)
 _MAM_FOR_SEFARIA_EXCLUDE_DIR_PREFIXES = ("csv/", "csv-ajf/", "misc/", "py/")
 _MAM_PARSED_EXCLUDE_DIR_PREFIXES = (
+    "google/",
     "historical/",
     "plain/",
     "plus/",
