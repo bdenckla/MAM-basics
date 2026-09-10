@@ -32,10 +32,13 @@ TWO READINGS, AND NEITHER ONE COVERS THE OTHER'S GROUND.
     It reaches only files some generator actually renders.
   * ``stamp_in_svg_text`` reads the stamp back out of a file that already exists,
     for ``py/tests/test_graphviz_version_pin.py`` to hold every tracked SVG to
-    the pin. This is what catches a file no generator owns --
-    ``doc/process-documentation/MAM-process.dot.svg`` has none at all -- and a
-    file committed from a machine that skipped the check. It needs no Graphviz
-    installed, so it runs in a container that has none.
+    the pin. This is what catches a file no generator owns, and a file committed
+    from a machine that skipped the check. It needs no Graphviz installed, so it
+    runs in a container that has none.
+    ``doc/process-documentation/MAM-process.dot.svg`` was the worked example of
+    the first kind and is no longer: ``py/main_pipeline_graph.py`` renders it as
+    of 2026-09-09, so ``check_installed`` reaches it too. The reading stays for
+    the next unowned file, whenever one arrives.
 
 A MISSING GRAPHVIZ IN THE CLOUD IS A SKIP, AND EVERYWHERE ELSE IS FATAL. Ben's
 decision, 2026-09-09, and the reason is ``py/main_0_mega.py``: its ``tmpl-survey``
