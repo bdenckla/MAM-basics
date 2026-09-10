@@ -22,15 +22,15 @@ The accepted design is:
 3. MAM-parsed-google supplies only the Google input of `diff wsgo`. Ordinary
    MAM product generation does not depend on Google downloads or Sheet synchronization.
 
-Status on 2026-09-10: Phases 1 through 4 are complete. Wikisource download
+Status on 2026-09-10: Phases 1 through 5 are complete. Wikisource download
 planning is independent of Google. `parse ws` writes format 2 and complete
 Wikisource-derived plain/plus products; `parse go` writes only
 `MAM-parsed/google/`, the independent Google input to `diff wsgo`. The production
 cutover has the two explained field changes established in Phase 2: Latin
 composition in 2 Samuel 22:40 and lower-dot order in Psalm 27:13. Raw inputs and
-bot captures are unchanged. Phase 5 is the next writing task. Verification
-receipts are under "Execution log". Implementation is authorized; another
-approval is not needed.
+bot captures are unchanged. Authorized implementation is complete; no successor
+task remains. Verification receipts are under "Execution log". Integration into
+`main` remains scheduled for archival under the instructions below.
 
 ## Exact development location and handoff
 
@@ -887,3 +887,99 @@ procedure. After its verified local commit, Phase 5 stops creating successors.
 Integration remains scheduled for archival and must be serialized with the
 successor writer; no worktree-branch push or immediate integration is part of
 this handoff.
+
+### Phase 5 completion, 2026-09-10
+
+Task `01a08c89-93f4-75d1-9c27-75f6cf017597` verified the exact checkout,
+branch `codex-worktree-3a6b`, clean status and starting HEAD
+`426fa229c69aad6168cf2ec5217b105088d6293f`. Baseline commit
+`67cb3ecc17931732d2cd1f9bbafee1976a322a2e` is an ancestor of the starting
+commit. The checkout receipt is
+`.novc/ws-products-phase5-preflight-20260910.json`.
+
+The scratch driver imported the maintained `main_0_mega._STEPS`, recorded all
+39 maintained step IDs, omitted only `near-aleppo-census`, and ran the remaining
+38 steps in maintained order. Every step returned zero. The complete ordered
+list, return codes, timings and log paths are in
+`doc/wikisource-derived-mam-products-phase5-validation.json`; detailed logs are
+under `.novc/ws-products-baseline-20260910/phase5-mega/`. A second complete
+38-step run also returned zero. Hash comparison before and after the second run
+found all 30 changed artifacts byte-identical.
+
+The separate documentation and diagram commands also returned zero.
+`py/main_mam_simple.py doc-only` reported all three outputs already current.
+`py/main_authored.py gen-mam-parsed-docs` reported 79 passed, zero failed and
+the existing one pending claim, `mp.plain.docs.book39-skeleton.common`.
+`py/main_pipeline_graph.py` completed both pinned graph workflows without a new
+Phase 5 diff.
+
+The 30 regenerated artifacts fall into five fully accounted groups:
+
+1. Twenty-four artifacts propagate only the lower-dot ordering from Psalm 27:13.
+   Removing U+05C5 from both baseline and current values, and removing the
+   corresponding `HMA LOWER DOT` token from Unicode-name reports, leaves the
+   values identical. No space or other character changes.
+2. `gh-pages/MAM-with-doc/BB-2Samuel-big-doc.html` propagates only the source
+   Latin composition from 2 Samuel 22:40: `i` plus U+0301 becomes U+00ED.
+3. `out/sigil-inventory.json` propagates only those same two representation
+   changes across its repeated classifications. Representation-neutral
+   comparison leaves the whole file identical.
+4. The three unpinned change-log artifacts add only the Psalm 27:13 lower-dot
+   record. The JSON diff count changes from 56 to 57; the rendered body-text
+   count changes from 58 to 59. The generated report date changes routinely
+   from 2026-09-04 to 2026-09-10. No other timestamp or provenance-only artifact
+   changed.
+5. `MAM-simple/py-examples/mb_cmn/paths.py` is the copied support-file update and
+   equals `py/mb_cmn/paths.py` byte for byte. Black left the copied file
+   unchanged.
+
+The production plain/plus comparison against baseline matches Phase 2 exactly:
+only `BA-Samuel.json` and `D1-Psalms.json` change in each product, with two verse
+fields and four string leaves per product at Phase 2's exact paths. The final
+artifact audit reports no spacing change, no provenance-only change and no
+unexplained change. Its scratch receipt is
+`.novc/ws-products-phase5-artifact-audit-20260910.json`.
+
+The explicit `py/main_parse.py go` and `py/main_diff.py wsgo` commands returned
+zero. Both comparator outputs remain empty arrays. The independence harness
+showed that ordinary `parse ws` succeeds with both Google trees blocked, `parse
+go` leaves plain/plus unchanged, and the comparator succeeds with production
+plain blocked. A Google-only in-memory mutation still produces a difference and
+an exact Google search payload; the replacement is the standard-ordered
+Wikisource payload. Only the Google reader and `diff_wsgo` name the Google-reader
+symbol. No Unicode normalization call received Hebrew or Hebrew presentation
+forms.
+
+Hash checks before and after both ordered runs and the independence harness kept
+all nine raw Google files, 39 raw Wikisource files, 80 bot-capture files and 146
+historical files byte-identical. Repeated WS parsing left all 39 tracked format-2
+files unchanged. No download, live Sheet write, live Wikisource edit or private
+generator ran.
+
+The full suite command `py/main_test.py -rs` passed **990 tests with 5 semantic
+skips in 206.32 seconds**. All skips remain the transcription controls at
+`py/tests/test_edition_transcriptions.py:1168`: `koren_ex_elyon`,
+`simtan_dt_taxton`, `simtiq_dt_taxton`, `simtiq_ex_elyon` and
+`simtiq_ex_taxton` diverge from the corresponding Wikisource strand and need an
+agreeing page for the control. After staging the new plan and receipt, the prose
+mark-order, Latin-diacritic, post-stress-meteg vocabulary and entry-point lints
+passed **31 tests in 29.91 seconds**. `git diff --cached --check` also passed.
+
+The primary-clone preflight found `main` at `d612f71c` with three unrelated dirty
+paths. During Phase 5, another task committed exactly those three paths and
+fast-forwarded clean `main` and `origin/main` to `31318dd4`. That commit contains
+none of Phase 5's generated paths. Every Phase 5 command used this worktree as
+its cwd and output root; Phase 5 wrote no primary-clone file. The exact before
+and after states are in `.novc/ws-products-phase5-postcheck-20260910.json`.
+
+The private census writer remains outside local completion, as Phase 5 permits.
+No private effect required the disposable-clone procedure. The compact durable
+receipt is `doc/wikisource-derived-mam-products-phase5-validation.json`; all
+detailed logs and command receipts remain under
+`.novc/ws-products-baseline-20260910/`.
+
+Authorized implementation is complete. Phase 5 creates no successor. After this
+local commit, the checkout must remain clean and this task must stop editing.
+Integration remains scheduled for archival: serialize the writer, merge `main`
+into `codex-worktree-3a6b`, run the full suite on the merged tree here,
+fast-forward the primary clone's `main`, and push `main`.
