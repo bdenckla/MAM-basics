@@ -575,7 +575,7 @@ complete Phase 5 end to end describes their combined result, not one task's scop
 1. **5A — checkout verification and preflight record: DONE 2026-09-10.** Record
    the exact starting trees, source inventory, committed example oracle, canonical
    suite, README disposition, and findings for the implementation tasks.
-2. **5B — Land and Licence.** Freeze a tracked source-to-destination Git-blob
+2. **5B — Land and Licence: DONE 2026-09-10.** Freeze a tracked source-to-destination Git-blob
    manifest, copy the selected source blobs, prove staged identity, and commit Land
    before adapting any copied text. Commit the scoped licence rows separately.
    Verify the deployed target page and its assets. Keep source files, writers,
@@ -720,6 +720,121 @@ command rebuilds the inventories, and its `run <log-name> <command>...` command
 saves a command's log. These are convenience evidence, not permanent oracles;
 5B must commit the Land manifest. Source-retirement safety and live redirect
 verification remain unperformed. No product file or MAM-private file changed.
+
+### Phase 5B Land and Licence record — 2026-09-10
+
+Task `01a08bae-f414-76d1-a070-66b97c7eab16` used the primary checkouts directly:
+`C:/Users/BenDe/GitRepos/MAM-basics` at
+`dc0e60edf6aab7fec6cc45b42002ce7541b12498` and
+`C:/Users/BenDe/GitRepos/MAM-OSIS` at
+`697dc98a904a52ed81bb105772f002d3efb360e3`. Root, HEAD, branch, clean status,
+`origin/main`, and live remote `main` were independently verified before Land.
+Both branches were `main`; no worktree was allocated.
+
+Land commit **`1c817b5307ca535a5fc04ede8cd98add4a79a6f6`** contains the pure
+prefix copies and the permanent tracked manifest
+[`in/mam_osis_land_manifest.json`](../in/mam_osis_land_manifest.json).
+Licence commit **`c39b6dd69e91eacd7f2ab878fe771db89972e214`** changes only
+`DATA-LICENSES.md`. Both commits were pushed to primary `main` before the target
+deployment check. No source commit was made.
+
+The source was re-measured with `git -C C:/Users/BenDe/GitRepos/MAM-OSIS ls-tree
+-r -l -z 697dc98a904a52ed81bb105772f002d3efb360e3`: **92 blobs / 29,822,402
+bytes**. The manifest records every selected and excluded source path, source
+Git blob, mode, size, SHA-256, destination, and disposition. All source modes are
+`100644`; no source `AGENTS.md` or `CLAUDE.md` exists.
+
+| Disposition | Files | Source Git-blob bytes |
+| --- | ---: | ---: |
+| Current product, metadata, README, license, attributes and ignore rules, under `MAM-OSIS/` | 32 | 13,481,564 |
+| Historical `MAPM-orig/` and `MAPM-orig-24/`, under `MAM-OSIS/` | 27 | 15,546,207 |
+| Original source-hygiene checker, under `MAM-OSIS/py/tests/`, pending 5C | 1 | 11,643 |
+| Complete published tree, under `gh-pages/MAM-OSIS/` | 30 | 782,189 |
+| **Selected total** | **90** | **29,821,603** |
+| `.github/workflows/pages.yml`, retained at the source host | 1 | 686 |
+| `.novc/commit_msg_regen.txt`, obsolete commit message excluded from Land | 1 | 113 |
+| **Source total** | **92** | **29,822,402** |
+
+The complete source README landed unchanged. Its OSIS-extract paragraph,
+SWORD/STEPBible/CrossWire purpose paragraph, and documentation-URL paragraph all
+remain in `MAM-OSIS/README.md`; no paragraph was dropped. Repository wording,
+the operational URL, and the root README index entry remain 5C work. Both source
+dotfiles were selected; the source workflow was not copied into the product.
+The excluded scratch message remains in source history.
+
+Every selected destination index entry was compared with the immutable source
+using `git ls-files --stage -z`, then `git cat-file blob` verified the byte count
+and SHA-256. The complete destination path set equaled the selected manifest
+set. All **90** copies, including the README, matched. The same comparison
+passed against Land commit `1c817b53` using `git ls-tree -r -l -z`. All **24**
+`MAM-OSIS/MAPM-24/*.xml` blobs also matched the committed
+`MAM-simple/py-examples-out/osis/*.xml` oracle by filename and Git object ID.
+No production or example regeneration ran; regeneration and both-tree mtime
+checks remain 5C work.
+
+**Inherited whitespace:** full Land `git diff --cached --check` reported 42
+diagnostics in 21 files under `MAM-OSIS/MAPM-orig-24/`. Each affected file ends
+with a line containing two tabs, producing trailing-whitespace and blank-at-EOF
+diagnostics. Every affected line was verified in the immutable source blob and
+preserved. The manifest's `inherited_whitespace.findings` records all paths,
+line numbers, diagnostics, and source blobs. The staged check passed after
+excluding exactly those 21 proven source-identical paths. No whitespace rule
+or historical file was changed. Licence and execution-record diffs pass the
+ordinary `git diff --check` without exclusions.
+
+The copied `MAM-OSIS/py/tests/test_h_dot_below_nfc.py` remains the original
+11,643-byte blob. Its Git-root discovery would scan MAM-basics from the new
+location; 5B does **not** claim that it runs with product scope. The canonical
+runner collects `py/tests/`, not that copied test. Landing expands the canonical
+root scan, so verification ran through
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, from the primary
+MAM-basics root:
+
+1. `py/main_test.py py/tests/test_h_dot_below_nfc.py -q`: **6 passed in 22.48
+   seconds**. No narrow canonical scope adjustment was required in 5B.
+2. `py/main_test.py`: **988 passed, 5 skipped in 129.93 seconds**. No subtest
+   total was printed; the 5A test inventory is unchanged.
+3. `-m black MAM-OSIS/py/tests/test_h_dot_below_nfc.py`: file left unchanged,
+   preserving Land blob identity.
+
+Licence scopes are separate: current product and published files use MAM's
+CC BY-SA 4.0 statement, whose source blob was verified byte-identical to
+`MAM-simple/LICENSE.md`. `MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/`
+retain the CC BY-SA **3.0 Unported** notice in `MAPM-orig/readme.txt`, dated
+2014-02-19, with openscriptures/morphhb provenance from
+`MAPM-orig/provenance.txt`. The shared quoted statement and historical notices
+were not edited. The current licence inventory describes the retained source
+checker; **5C must update that description when removing the duplicate**.
+
+Target Pages run [`34489367085`](https://github.com/bdenckla/MAM-basics/actions/runs/34489367085)
+succeeded at `c39b6dd6`. HTTPS verification fetched every selected published path
+at `https://bdenckla.github.io/MAM-basics/MAM-OSIS/`: **30 files / 782,189
+bytes**, each HTTP 200 with the expected content type and the source SHA-256.
+The copied HTML references all 28 PNGs and its stylesheet by relative path;
+every PNG header and dimension was valid. Percent-encoded image filenames were
+checked too. The deployed
+[index page](https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html) and all
+assets therefore match the frozen source. This is destination deployment
+evidence; legacy redirects are still 5D work.
+
+Convenience logs and reports are under `.novc/phase5-mam-osis/`, including
+`phase5b-land-suite.log`, `phase5b-land-hygiene.log`,
+`phase5b-inherited-whitespace.json`, and `phase5b-deployed-assets.json`.
+The permanent oracle is the tracked manifest and Land commit, not these ignored
+files. `.novc/phase5b_land.py verify 1c817b5307ca535a5fc04ede8cd98add4a79a6f6`
+repeats the committed copy and 24-book checks from the target Git objects.
+
+**Next task: 5C only.** Repoint the output/header/combined/page paths, preserve
+and adapt the README paragraphs, fix `mapm.conf` and the SWORD command URLs and
+paths, and update the pipeline labels. Merge the source checker's generated and
+historical exclusions and binary-extension coverage into the canonical checker,
+then explicitly dispose of the copied checker and update its licence-inventory
+description. Run real production and example regeneration, both-tree mtime
+snapshots, frozen-blob comparisons, affected lints, and the canonical suite.
+Keep the source product, workflow, redirect configuration, workspace roster,
+and source README until their assigned 5D/5E tasks. Create 5D only after 5C's
+write-back is committed and pushed and both primary trees are clean and
+remote-aligned. No MAM-private change, full mega run, or Phase 6 work is authorized.
 
 ## Phase 6 — cross-repository bookkeeping and fourth-stage close
 
