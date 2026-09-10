@@ -2404,6 +2404,128 @@ worktree head, primary fast-forward, push result, and remote head verification. 
 and branch deletion are Ben's close-out step 7 after the final task ends; do not attempt them
 from the live worktree.
 
+### Wave 4 execution record, 2026-09-10
+
+Codex task `01a08b71-0f3a-7ca2-b088-8dc432526ba8` verified the exact checkout
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at required source
+`d2e86ac981fe8e89422c112c06c70df66b5a18e0`. The task ID was read from
+`CODEX_THREAD_ID`. Ben's Step-5 approval of Wave 4, P1 and exact N3 already applied;
+no approval was requested again. The live Hebrew prose skill and its references,
+repository instructions, governing contract and scoped execution records were read.
+
+The editorial gate's SHA256 was verified as
+`4717ca00dfbe12adb893e20ed1ece32bc12f77c322125ab9503c8f0d9618ca3f`; the original
+gate remains `286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+Every Wave 4 gate uses the explicit editorial contract, checks both stop records,
+and compares checkout plus fresh render without normalization or `--scratch-only`.
+No real gate stop or deliberate probe occurred.
+
+Initial main `e2ec3aaba4439e037304bc4cbbbe996ff1c6cd55` changed only
+`doc/meteg-after-silluq-koren-lookup-candidates.md` and
+`in/meteg_after_silluq_koren_readings.json`. The incoming Koren record was inspected;
+no MAS renderer, survey or input used by that renderer changed. The approved
+back-merge produced `2125bb87bdb0cc3b2dd98242fe7afd1305787233`. The editorial gate
+passed immediately before and after, at these directories under
+`.novc/review-remediation-2026-09-08/wave3-editorial-01a08b5a/runs/`:
+
+1. `20260910T131216Z-wave4-before-initial-main-merge-01a08b71-d0394e3e/`.
+2. `20260910T131316Z-wave4-after-initial-main-merge-01a08b71-e483eb3c/`.
+
+Wave 4 evidence is under
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/wave4-01a08b71/`.
+Its `verify_wave4.py` saves command, cwd, HEAD, environment, elapsed time and complete
+UTF-8 output for each run. All commands use
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, with the review
+worktree as cwd and `REPOS_ROOT=C:/Users/BenDe/GitRepos`. Git and interpreter
+execution use Ben's normal account because the sandbox account cannot use the
+checkout ownership/interpreter; no global ownership setting changed.
+
+N3's exact approved sentence is implemented in `py/vendoring/gen_inventory.py`.
+Black at defaults left that file unchanged. `py/main_vendoring.py --all` completed
+in `20260910T131753Z-first-audit.txt`, followed immediately by a passing editorial
+gate. The inventory now groups all 44 files in four identical-package rows; its
+provenance TXT and JSON remain byte-identical. No source/copy file or policy was
+changed to obtain that result.
+
+**P1/V4:** the independent comparison derives every public source/copy pair from
+the policy and requires existing inputs, equal working-tree bytes, committed source
+and copy bytes, complete report membership, and dates equal to the last commit
+touching each copy. All 44 pairs pass. The earlier 25 `eol-only` rows become
+`identical`. This is an observation about this LF worktree, not a promise about
+another checkout; the comparator still measures working-tree bytes. The changed
+copy dates are September 10 for `mb_cmn/paths.py`, `mb_misc/write_utils.py` and
+`mb_sefaria/write_utils_sef_or_ajf.py`. All remaining dates retain their measured
+values. `20260910T131819Z-initial-final-checks-scope.json` records the full source
+and copy commit IDs, dates and SHA256 values for every pair. The index/working-tree
+EOL report shows LF throughout the inspected source and example directories.
+MAM-private is skipped before traversing its vendoring entries; the foreign-vendored
+section remains outside the audit by its stated policy.
+
+**V1-V3:** that same scope report enumerates eleven deploy-root HTML files, nine
+MAS pages and sixteen direct plans, each with State on line 3. The existing MAS
+lint passes expected/declared/actual membership and terminology. V2 finds zero
+remaining blank-final/trailing-space findings and compares all 930 product files
+against Wave 2's approved repaired hashes, with the exact whitespace and CSV-field
+checks repeated against its original baseline. The active Holman page has 724 cells,
+119 with Hebrew; the suppressed page has 578 cells, 163 with Hebrew. Both have zero
+RTL omissions and unchanged cell text/order. All 1,074 actual HTML files preserve
+the Wave 4 starting bytes and membership. Historical records remain ordered,
+replaced States are quoted, and the entire accepted-corrections section is intact.
+
+**Public standards:** `20260910T132125Z-public-standards-detailed.txt` and
+`public-standards-detailed-details.json`/`.txt` record a successful completed
+inspection of MAM-basics, MAM-OSIS, phonetic-hbo and Taamey_D. The command adds
+`--repos-root C:/Users/BenDe/GitRepos/MAM-basics` because the workspace's sibling
+paths begin with `../`; its `.` entry still selects the review worktree. This
+argument resolves paths and does not run code or write source in the primary clone.
+
+The standards program reports measurements rather than turning every absent
+convention into an error. Its file findings were inspected individually in
+`standards-inspection.json`, including comparison with original review anchor
+`38a606e2`. Every reported source line already existed there. The findings are
+retained, not described as a zero-finding standards result:
+
+1. The 80 hexadecimal-escape locations comprise existing ranges, string values and
+   descriptions. Their escape spelling remains outside the approved repairs.
+2. The 29 decomposed-het locations are external input/derived captures. The sole
+   apparent comment finding is WLC markup's `#` inside a string at
+   `py/py_wlc_a_notes/my_wlc_a_notes.py`; the authoritative lint uses COMMENT
+   tokens and explicitly documents that false positive.
+3. The 49 Latin-NFC locations are retained external inputs, their derived captures,
+   and MAM-parsed corpus/history data. The authoritative corpus exclusions remain;
+   no normalization or source refresh is authorized here.
+4. The missing maintenance entrypoints outside MAM-basics are explicitly settled
+   informational results. The sibling path-utility absences and Taamey_D's absent
+   LF rule remain the review's existing out-of-scope measurements. The reported
+   worktree/branch counts are not evidence of disposable work. No cleanup ran.
+
+All repositories report zero path mutations and zero orphan combining marks.
+The editorial gate passed after the standards inspection. The complete final
+finding table is under "Final finding dispositions, recorded 2026-09-10" in the
+September 8 review. It distinguishes completed repairs, prior decisions, rejected
+premises, record-only qualifications and the continuing P2/unverified limits.
+The canonical suite, repeat audit, local commit and exact final integration results
+are recorded in the checkpoint append below and the final task response.
+
+The earlier current State is preserved as history:
+
+> State: live 2026-09-10; Waves 1-3 complete, including the separate approved editorial phase; Wave 4 next; original technical V6 evidence and exact editorial contract retained.
+
+Wave 4 pre-commit validation, recorded 2026-09-10: the canonical command
+`py/main_test.py -q -p no:cacheprovider` passed **988 tests, 5 skips and 65 subtests
+in 110.41 seconds**. Full output is
+`wave4-01a08b71/20260910T132433Z-wave4-suite-before-commit.txt` under the remediation
+scratch root. The editorial gate passed immediately afterward at
+`wave3-editorial-01a08b5a/runs/20260910T132625Z-wave4-after-wave4-suite-before-commit-01a08b71-fd90eb79/`.
+`check_records.py` verifies exact ordered coverage of all 52 crosswalk rows.
+`20260910T132622Z-records-before-commit-scope.json` confirms V1-V4 and preservation
+after the records were added. The changed copy dates all identify copy commit
+`ce833525f517eab97958141f7380a2da2267656e`; the unchanged `paths.py` source is
+`b865b7c8fd9cb95e6a3a850fadcb9f852299c2a4`. Complete per-pair commits are in the
+V4 report. The local implementation checkpoint precedes the required repeat audit
+and final committed-tree validation.
+
 ## Verification recipes and commit discipline
 
 Use uniquely named real scripts under `.novc/review-remediation-2026-09-08/` when a check needs

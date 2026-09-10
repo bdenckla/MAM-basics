@@ -1128,6 +1128,35 @@ record-only commit is Wave 4's required clean source in the exact saved review w
 Its hash and actual successor ID are reported at dispatch; writing responsibility
 transfers then. Wave 4 alone performs the final integration, after its required checks.
 
+Wave 4 execution, recorded 2026-09-10 by Codex task
+`01a08b71-0f3a-7ca2-b088-8dc432526ba8`: required source
+`d2e86ac981fe8e89422c112c06c70df66b5a18e0` was clean in the exact saved review
+worktree. Initial main `e2ec3aaba4439e037304bc4cbbbe996ff1c6cd55` changed only
+the Koren lookup record and its JSON. Back-merge
+`2125bb87bdb0cc3b2dd98242fe7afd1305787233` passed the verified editorial gate
+before and immediately after. Exact approved N3 and the real vendoring audit are
+complete: all 44 public pairs are byte-identical, the earlier EOL-only rows are
+gone, and source/copy dates agree with commits. Provenance artifacts are unchanged.
+
+V1-V4 pass, including zero remaining whitespace findings, all 930 approved Wave 2
+product hashes, Holman RTL/text/order, all 1,074 unchanged Wave 4 HTML files, and
+historical/accepted-correction preservation. The public standards inspection ran
+against the current public roster and its individual reported locations were
+inspected; the remediation plan records its retained informational findings and
+scope limits. The final finding table now covers the entire crosswalk. All E/N
+items have been implemented under the recorded approval; P2 source/rights-holder
+work, the 415/416 scratch count, and the other recorded independent-verification
+limits remain deferred/unverified. No maintenance, issue action or private audit ran.
+Suite, repeat-audit and local checkpoint evidence follow before the sole final
+integration. The remediation plan's Wave 4 record gives exact commands and logs.
+
+Wave 4 pre-commit verification, recorded 2026-09-10: the canonical suite passed
+988 tests, 5 skips and 65 subtests in 110.41 seconds. The editorial gate passed
+immediately afterward, and the final crosswalk has all 52 rows in order. The
+local implementation checkpoint precedes the repeat audit and final committed-tree
+suite; the primary checkout remains untouched. Exact evidence is in the remediation
+plan's Wave 4 record.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
@@ -1152,6 +1181,18 @@ Record the approvals in the remediation plan as dated decisions before editing a
 ```
 
 ## Step 7 — Ben retires the worktree and its branch
+
+Evidence-preservation requirement recorded 2026-09-10 for final Wave 4: the newer
+ignored `.novc/review-remediation-2026-09-08/` evidence is separate from the older
+turn-5 material named below. Preserve its original gate, editorial gate, baselines,
+contracts, full logs and proofs before removing the worktree. The final task writes
+and verifies an archive outside the worktree at
+`C:/Users/BenDe/.codex/visualizations/2026/09/10/01a08b71-0f3a-7ca2-b088-8dc432526ba8/review-remediation-2026-09-08-evidence.zip`,
+with an adjacent `review-remediation-2026-09-08-evidence-manifest.json`. Verify that
+the final task reports that archive complete before running the removal command.
+The archive retains the final integration receipt as well as the earlier wave
+evidence. Archival and worktree/branch retirement remain Ben's actions after the
+task ends; no removal is part of Wave 4.
 
 After the final step-6 task has integrated and ended, since a task cannot remove the worktree it
 runs in:

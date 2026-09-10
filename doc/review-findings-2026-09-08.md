@@ -1114,6 +1114,77 @@ scope/historical-preservation check passed at the clean checkpoint. The followin
 record-only commit precedes automatic Wave 4 dispatch; final integration remains
 Wave 4's responsibility. Original technical V6 evidence and accepted corrections remain.
 
+### Final finding dispositions, recorded 2026-09-10
+
+Codex task `01a08b71-0f3a-7ca2-b088-8dc432526ba8` records the final outcome of
+every row in the remediation plan's finding crosswalk. The earlier checkpoints and
+the entire accepted-corrections section remain historical records. All E1-E8 and
+N1-N9 were approved as amended; none was rejected or left unimplemented. P1 and
+P3 are complete within their approved limits. P2's inventory is complete, while
+source and rights-holder identification remains deferred.
+
+| Date | Crosswalk row | Final disposition and retained qualification |
+|---|---|---|
+| 2026-09-10 | 1 | Settled by Ben's prior decision. Wave 1C3 qualifies the older plan's overclaim as the research's chosen interpretation. The classifier, census and separate silluq-template work are unchanged. |
+| 2026-09-10 | 2 | Fixed in Wave 2; the earlier fixed-claim correction is recorded in 1C2. V2 now finds zero of the original 210 findings in 193 files and verifies the exact approved output bytes and CSV fields. |
+| 2026-09-10 | 3 | Settled by Ben's BHS/edition decisions; Wave 1C2 records the completion qualifications. Retained model fixes and Ben's deliberate reversals remain distinct; reverted prose is not reinstated. |
+| 2026-09-10 | 4 | Fixed in 1B by the dated maintenance-scope correction. The roster and policy are unchanged; no maintenance was run. |
+| 2026-09-10 | 5.1a | Record-only corrections complete in 1C1. The dated evacuation and September 4 observations, six named branches, and later filesystem state remain explicitly distinguished. No housekeeping followed. |
+| 2026-09-10 | 5.1b | Fixed in Wave 2, including Ben's separately approved background-link label. V3 confirms zero RTL omissions and unchanged cell text/order in both Holman pages. Issue metadata is unchanged. |
+| 2026-09-10 | 5.2 | Record-only corrections complete in 1C1: sparse instructions, workspace-removal attribution, recorded retirement and host file list. No evacuation or filesystem safety audit was repeated. |
+| 2026-09-10 | 5.3 | Fixed by approved N1 in 1B; the historical equivalence measurements remain. |
+| 2026-09-10 | 5.4a | Fixed by approved N2 in 1B; test behavior is unchanged. |
+| 2026-09-10 | 5.4b | Fixed by exact approved N3 in Wave 4. The real vendoring audit regenerated the inventory introduction; policy and file ownership are unchanged. |
+| 2026-09-10 | 5.5 | Fixed by N4-N6 in 1B and the branch enumeration in 1C1. The dated programme sentence remains as written; no license grant or broad style sweep followed. |
+| 2026-09-10 | 5.6 | Settled before remediation; D2's subsequent edit and whole-skill deployment comparisons are complete in 1A and its checkpoints. No retired private instruction repository was inspected. |
+| 2026-09-10 | 6.1-6.5 | Fixed in 1B. V1 confirms eleven deploy-root HTML files, including nine MAS pages; no page or checker scope was added. |
+| 2026-09-10 | 6.6-6.7 | Record-only page-count corrections complete in 1C3. The earlier execution counts remain dated history. |
+| 2026-09-10 | 6.8 | Fixed by D8/N9 in 1B. The current comment says 35 and the corrected date; floor 25 remains. The historical 34 was true at its date, as 1D1 records. |
+| 2026-09-10 | 7.1 | Fixed in 1C3: executed State and occurrence-versus-line-count correction. The prior census correction, filename and historical instructions remain. |
+| 2026-09-10 | 7.2 | Record-only baseline/proposal corrections complete in 1C3; already-landed State and decisions retained. The separate product plan was not executed or revised by this remediation. |
+| 2026-09-10 | 7 standard | Fixed in 1C3 by the dated census correction and D10 procedure pointer. Standards behavior is unchanged; V1 confirms every current direct plan has its State. |
+| 2026-09-10 | 8.1 | Record-only scope correction complete in 1C2: ordinary 368/370 and combined 370/372. Source movement did not explain the difference; no survey count changed. |
+| 2026-09-10 | 8.2 | Fixed by approved E1 in the separate Wave 3 editorial phase. The maintainer document describes the implementation; no classifier or scholarly-source interpretation changed. |
+| 2026-09-10 | 9.1 | Fixed in 1B by removing the nonexistent retained test from the license inventory. License terms remain. |
+| 2026-09-10 | 9.2 | P2 inventory fixed in 1B; photograph-source and rights-holder identification deferred. Unknown fields remain unrecorded, the no-grant statement remains, and no new folio or licensing conclusion was supplied. |
+| 2026-09-10 | 9.3 | Fixed by exact approved E8 in the separate editorial phase. The Aleppo sentence is present; the crop, alt text and caption remain. No new manuscript reading was undertaken. |
+| 2026-09-10 | 10 / C5 | Fixed in Step 3, with the omitted premise corrected in 1D1 and disposition in 1D2. D1/D7/D9-D11 remain the procedure's governing decisions. No procedure redesign was repeated. |
+| 2026-09-10 | 11.1 | Record-only D4 notes complete in 1C1/1C2. The historical command was not recorded and the cause of the missing subtest line remains unknown; a later passing run cannot supply that cause. |
+| 2026-09-10 | 11.2 | Record-only checklist-status notes complete in 1C2. Original boxes remain; failed or reversed editorial items were not retroactively marked successful. |
+| 2026-09-10 | 11.3 | Record-only qualifications complete in 1C2: 25 formatted sources plus one copy, and the spell check's tracked frequency outputs. The earlier successful run is retained; no spell check ran in Wave 4. |
+| 2026-09-10 | 11.4 | Record-only finding-versus-file corrections complete in 1C2. The historical total remains 210 findings in 193 files. |
+| 2026-09-10 | 11.5 / 17h | Record only; the 415/416 count and reported timing remain independently unverified by Codex. No contemporary scratch census or commit amendment substitutes for the missing historical evidence. |
+| 2026-09-10 | 12 | Fixed by approved P1 in Wave 4: all 44 public pairs are byte-identical, no EOL-only rows remain, and dates match committed copies. This measures the LF review worktree; another checkout can again have EOL-only differences. The comparator is unchanged. |
+| 2026-09-10 | 13.1 | Settled under P3 with the overlap guard retained. Unsupported simultaneous fit classes remain a latent limit, without an observed candidate or incorrect fit count. |
+| 2026-09-10 | 13.2 | Settled design note under D5/P3. Both multiplicity guards, Methods sentence, JSON schema and counts remain; the original finding already described the abort. |
+| 2026-09-10 | 13.3 | Fixed in the Wave 3 technical phase at `f11660576e440523e944598331e8ecc339dcdb26`. Unannotated selection, matching and annotation validation pass the retained technical proofs. Survey bytes and legitimate displayed marks remain; later editorial changes follow only the exact approved E2/E3/E8 contract. |
+| 2026-09-10 | 13.4 | Record-only validation limit under P3. Fusion invariants remain; their token counts do not independently establish the linguistic analysis or chosen post-silluq interpretation. |
+| 2026-09-10 | 13.5 | Fixed by approved E4 in the separate editorial phase. The accepted correction distinguishes `_problems` returning from `build_survey` raising; executable survey code is unchanged by E4. |
+| 2026-09-10 | 13.6 | Settled under P3. The 1D2 check of all 32 targets confirms the bounded 3+2 empty-result observation. V2 confirms the XML product bytes still match that checked set; valid empty targets remain valid. |
+| 2026-09-10 | 13.7 | Conjunctive-stress checking is settled and retained. Independent verification of the Aramaic and 2 Chronicles language/edition assertions remains outside remediation; no new scholarly verification is claimed. |
+| 2026-09-10 | 14.1 | Fixed by approved E6 in the separate editorial phase. The definition's second expository paragraph and earlier use are distinguished; the plain-word exception, lint docstring, immutable commit and issue remain. |
+| 2026-09-10 | 14.2 | Fixed in Wave 2. V1 and the existing lint compare expected, declared and actual MAS page membership and retain missing-page failure. No general exception registry was introduced. |
+| 2026-09-10 | 14.3 | Record-only merge-hunk correction complete in 1C3, as for 17a. Issue #265 and history are unchanged. |
+| 2026-09-10 | 14.4 | Fixed by D2 in 1A and the accepted location correction in 1D1. The contextual permission already existed in the skill; the skill-reading time remains unknown. Explicit local exceptions and accepted ITM/CoS glosses remain. |
+| 2026-09-10 | 15.1 | Fixed by approved E2 in the separate editorial phase: the specified 4/9/2 unwrapped names are wrapped, including the slash in the single `meteg/merkha` span. The exact editorial byte gate passes. |
+| 2026-09-10 | 15.2 | Fixed by approved E3 in the separate editorial phase. Only the main criteria list's `ul`/`ol` tags change; entries and order remain. |
+| 2026-09-10 | 15.3 | Settled by Ben's restored wording. Mixed voice and unexpanded cant-alef/cant-bet labels remain. |
+| 2026-09-10 | 15.4 | Fixed by N7 in 1B and approved E5 in the separate editorial phase. The meaningful survey-versus-pages contrast and actual titles remain. |
+| 2026-09-10 | 15.5 | Fixed by approved E1/E7 in the separate editorial phase. Documentation spelling and the named duplicate are corrected; the earlier non-disqualification sentence and JSON category remain. |
+| 2026-09-10 | 15.6 | Settled source-name exception. The established phenomenon name remains; no terminology sweep followed. |
+| 2026-09-10 | 16 | Blanket cleanup rejected; the eight withdrawn items remain untouched. D6's specific attribution is fixed in 1B and N8's dated notes in 1C3. The accepted-corrections section retains every withdrawal and the hand-authored-whitespace qualification. |
+| 2026-09-10 | 17a | Record-only correction complete in 1C3: 32 author-module hunks in 13 conflicted files. The immutable merge message is preserved. |
+| 2026-09-10 | 17b-17e | Error classification rejected: the messages accurately described their commits. The accepted chronology and D3's three-sentence/two-table correction are preserved; no message rewrite followed. |
+| 2026-09-10 | 17f-17g | Record-only completion qualifications complete in 1C2 with related 1C1/1C3 records. Actual omitted work has its completed remedy; Ben's reversals remain decisions. |
+| 2026-09-10 | 18.1-18.3 | Record only. The bounded census and its verification limits remain; housekeeping stays separate. Worktree retirement is Ben's Step 7 after the final task ends, with the remediation evidence preserved first. |
+
+The final V1-V4 evidence is recorded in the remediation plan's Wave 4 execution
+record, together with suite, standards, gate and commit results. The original
+technical evidence is retained; no real technical or editorial gate stop has occurred.
+The earlier current State is preserved as history:
+
+> State: remediation in progress 2026-09-10; Waves 1-3 complete, including E1-E8 in the separate editorial phase; Wave 4 remains pending.
+
 ## Corrections accepted in the review exchange
 
 Recorded by Codex on 2026-09-10 under Ben's D3 decision of 2026-09-09 and Step-5
