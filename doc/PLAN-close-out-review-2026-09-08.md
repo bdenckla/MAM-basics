@@ -814,6 +814,14 @@ mark order, clean diff whitespace, and both skill comparisons empty. No new test
 generated artifact, or sibling file changed. The remediation plan names the exact
 scripts and reports; local commit evidence follows.
 
+Executed 2026-09-09: Wave 1C3 implementation commit
+`26cf55dd354ae2afdeaa8ef352a94278d2372eab`. The worktree was clean afterward.
+The remediation plan names the final scope report and passing pre-commit V6 evidence.
+V6 passed again at `26cf55dd` before the record commit. All five actual Wave 1C3
+gate runs passed with zero changed locations; the remediation plan gives the paths.
+The following record-only checkpoint supplies the required clean source for Wave 1D,
+on the same saved project. No integration or push is due at this checkpoint.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

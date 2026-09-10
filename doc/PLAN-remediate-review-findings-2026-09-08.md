@@ -1100,6 +1100,21 @@ whole-skill comparisons are empty. Its latest pre-commit scope evidence is
 No new tests were added. No generated HTML, corpus, JSON, image, or sibling file
 changed. The existing 210 whitespace findings remain assigned to Wave 2.
 
+Executed 2026-09-09: Wave 1C3 implementation commit
+`26cf55dd354ae2afdeaa8ef352a94278d2372eab`. The worktree was clean after the commit.
+The final implementation scope report is
+`wave1c3-01a08967-20260910T035453Z-scope.json`. V6 passed before that commit at
+`v6-runs/20260910T035458Z-wave1c3-before-commit-01863dd5/`. The following
+record-only commit supplies Wave 1D's required clean source; the handoff reports
+its hash and the actual successor ID. The saved project's exact path and Git status
+were rechecked. No new decision blocks Wave 1D, and no intermediate integration,
+push, or automatic archival is due.
+
+At `26cf55dd`, V6 passed before the record commit at
+`v6-runs/20260910T035618Z-wave1c3-before-record-commit-8bb4c854/`.
+All five actual Wave 1C3 V6 runs passed with zero changed locations and unchanged
+pinned survey JSON; no real stop occurred.
+
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 
 Preconditions: Wave 1 complete; Ben has approved Wave 2; clean merged starting tree. Write a
