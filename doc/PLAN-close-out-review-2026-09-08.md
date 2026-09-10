@@ -25,6 +25,10 @@ Wave 1C starts with the bounded evacuation-record and September 4 correction tas
 in the remediation plan's Wave 1B execution record. Wave 1 remains incomplete. The V6 stop
 and single integration after Wave 4 remain in force, including across intermediate archival.
 
+Status updated 2026-09-09 after Wave 1C1: findings 5.1a/5.2 have dated corrections in the
+evacuation records and September 4 review. Wave 1C2 is next for the September 7 historical
+records, as bounded in the remediation plan. Wave 1 remains incomplete.
+
 Written 2026-09-09 by the Claude session that wrote turn 5, at Ben's request of that day for "a
 concrete plan of steps that includes this handoff of turn 5", assuming, in his words, "arbitrarily,
 everything that can be run on Codex is run on Codex". Ben's decision, 2026-09-09: Claude is not used
@@ -688,6 +692,37 @@ scope and prose-lint checks passed; V6 passed before the implementation commit a
 `42520d05` before the record-only checkpoint, with zero changed locations. The remediation
 plan records the evidence directories. The record-only commit supplies the clean required
 source for Wave 1C1's automatic handoff; no integration or push is due at this checkpoint.
+
+Wave 1C1 completed 2026-09-09 by Codex task `01a08940-ef16-7b02-b00b-a99f8e9048c7`,
+using the saved project directly at
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`. The verified source was clean at
+`d4dacdbaea8f57cd23012840fa9a0a30e378a950`; the back-merge reported `Already up to date.`
+The unchanged V6 gate passed before and immediately after the merge. Its fixed HTML and
+survey baseline remains `c2f238f2`; no real approval stop occurred.
+
+The approved dated notes now cover D4's no-subtest-line correction, the historical
+directory observation, six numbered branch names and tips from the retained September 7
+deletion-output record, `4195440e`'s removed constant, the landed sparse instructions,
+`19df42f3`'s workspace/visibility removal, `9cf48863`'s recorded clone retirement, and both
+omitted MAM-with-doc host dotfiles. No original historical line was rewritten, no tracked
+Python changed, and no cleanup, evacuation, generated-artifact edit, or sibling write ran.
+The remediation plan's Wave 1C1 record gives the historical evidence and verification paths.
+Only completed 5.1a/5.2 work received September 8 disposition rows.
+
+The canonical worktree suite, with `REPOS_ROOT=C:/Users/BenDe/GitRepos`, passed
+**987 tests, 5 skips, and 65 subtests in 106.01 seconds**. V6 passed immediately afterward
+for all nine checkout and nine freshly rendered pages, with zero changed locations and
+unchanged survey JSON. The full output and gate evidence are recorded in the remediation
+plan. No tracked Python changed, so no black invocation was needed.
+
+Wave 1C2 next handles the September 7 historical records for findings 2, 3, 8.1, and
+11.1–11.4, including the Sol review's count correction and the related 17f–17g completion
+qualifications. MAS-plan notes, N8, the standards census, and remaining record-only
+dispositions stay for later Wave 1 work; Wave 1D still owns the complete accepted-corrections
+append and reconciliation. The next task is authorized after the clean committed checkpoint,
+using the same saved project with `environment.type = local`. The predecessor stops editing
+after dispatch. Integration and push still occur only after final Wave 4.
 
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the

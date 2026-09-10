@@ -1,6 +1,6 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
-State: live 2026-09-09; Waves 1A-1B complete, Wave 1C next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
+State: live 2026-09-09; Waves 1A-1B and 1C1 complete, Wave 1C2 next; all waves, P1-P3, E1-E8 and N1-N9 approved as amended; technical unchanged-HTML condition retained.
 
 This is step 4 of [PLAN-close-out-review-2026-09-08.md](PLAN-close-out-review-2026-09-08.md).
 Ben's decisions D1-D11 were recorded on 2026-09-09. Step 5 approves the waves and the concrete
@@ -779,6 +779,93 @@ record-only commit provides Wave 1C1's required clean source; its hash and actua
 task ID are reported at handoff. The saved project was verified as
 `51e16ebd-373a-41f7-833e-9def3ef72b81`, at the exact review-worktree path; use it directly
 with `environment.type = local`. No new decision blocks Wave 1C1.
+
+### Wave 1C1 execution record, 2026-09-09
+
+Codex task `01a08940-ef16-7b02-b00b-a99f8e9048c7` applied findings 5.1a and 5.2 under
+Ben's Step-5 approval in **C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08**,
+branch `codex-review-2026-09-08`. The required clean source was
+`d4dacdbaea8f57cd23012840fa9a0a30e378a950`, containing Wave 1B implementation
+`42520d05ad004e99c0fff68bcf634a763ad22b15`. The required back-merge reported
+`Already up to date.`; HEAD remained at the required source.
+
+The existing `v6_gate_wave1_01a0891a.py` was inspected before editing or merging. Its
+SHA-256 remained `286e1aa5410ed39b6851c7f94d64476bb826a460909ca27f00de5289eb6e4f9c`.
+The gate verified its immutable baseline against the fixed `c2f238f2` Git blobs and passed
+for nine checkout pages and nine fresh-render pages, with zero changed locations and
+unchanged survey JSON. Evidence under `.novc/review-remediation-2026-09-08/`:
+
+1. Before merge: `v6-runs/20260910T030021Z-wave1c1-before-merge-7b488862/`.
+2. Immediately after merge: `v6-runs/20260910T030117Z-wave1c1-after-merge-3f06fc43/`.
+
+The sandbox initially prevented the shared interpreter from launching; the escalated
+invocation executed successfully. No gate comparison failed, and no real V6 stop occurred.
+The script, baseline, and earlier labelled failure probes are preserved.
+
+Historical evidence was re-established with bounded scratch scripts in the same directory:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/measure_wave1c1_01a08940.py
+```
+
+The resulting `wave1c1-01a08940-20260910T030751Z-measurements.json` records the HEAD,
+landed README instructions, named historical commit diffs, and the fixed public MAM-with-doc
+Git tree at `904c9fa178265dce6fec5704f5c0424fc94f6719`. That host tree includes
+`.gitattributes` and `.gitignore`. The earlier `20260910T030550Z` report is preserved.
+Neither measurement found original branch-deletion tool-output events in the bounded
+September 4–7 session files. A narrower extraction then found the quoted deletion output
+in the retained checkpoint of September 7 task `01a07c08-5db6-7833-a7ce-d96a397fd77e`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B .novc/review-remediation-2026-09-08/extract_branch_outputs_wave1c1_01a08940.py
+```
+
+`wave1c1-01a08940-branch-output-extract.json` identifies the source, timestamp, and matched
+deletion lines. Only the matching fields were extracted; full historical conversations were
+not loaded. The September 4 review now numbers the six names and recorded tips from that
+checkpoint, explicitly as historical evidence. No current branch census or cleanup ran.
+
+| Changed path | Completed scope |
+|---|---|
+| `doc/PLAN-evacuate-the-rest-of-three-repos.md` | Dated correction beside the no-subtest-line claim, preserving D4's command-unrecorded/cause-unknown limit and citing the later Wave 6 output. |
+| `doc/review-findings-2026-09-04.md` | Dated directory-state distinction, numbered historical branch list, and the superseding `4195440e` removal of `_PRIMARY_CLONE`. |
+| `doc/PLAN-evacuate-public-repos-programme.md` | Dated sparse-instruction correction and adjacent table notes for `19df42f3`'s workspace/visibility removal and `9cf48863`'s recorded clone retirement. The dated `its own docstring` sentence remains unchanged. |
+| `doc/PLAN-evacuate-five-MAM-products.md` | Dated correction naming both omitted host dotfiles. |
+| `doc/review-findings-2026-09-08.md` | Disposition rows for completed 5.1a/5.2 work only. |
+| This plan and `doc/PLAN-close-out-review-2026-09-08.md` | Execution evidence and the next bounded task. |
+
+All original lines in the historical records are retained. No tracked Python changed,
+so black was not needed. No generated HTML, corpus, JSON, image, behavior, license grant,
+or sibling checkout changed. D2's three deployed homes and Wave 1B's work are preserved.
+The canonical suite ran at `d4dacdba` plus the Wave 1C1 edits, with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`, using:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -B py/main_test.py -q -p no:cacheprovider
+```
+
+It reported **987 passed, 5 skipped, and 65 subtests passed in 106.01 seconds**.
+`verify_wave1c1_01a08940.py suite` preserves the complete output in
+`wave1c1-01a08940-20260910T031242Z-suite.txt`, with invocation and elapsed time in the
+adjacent `.json`. The script propagated command failure and ran V6 immediately afterward:
+`v6-runs/20260910T031429Z-wave1c1-after-suite-4e8cf93b/` passed with zero changed locations.
+The same verification script's `scope` mode checks the allowed Markdown paths, exact
+preservation of every original historical line, Hebrew mark order through
+`has_std_mark_order`, and `git diff --check` against the required source. No test was added.
+The implementation commit is recorded below after creation.
+
+**Next execution boundary:** Wave 1C2 covers the September 7 historical review and
+remediation records, including the Sol review's finding-versus-file counts: findings 2,
+3, 8.1, and 11.1–11.4, with only the corresponding historical completion qualifications
+from 17f–17g. Add dated notes beside original and accepting paragraphs; do not reinstate
+reverted prose, repair whitespace outputs, reconstruct a historical suite run, or run the
+spell checker. Preserve the original checkboxes. Split again if needed to avoid compaction.
+The MAS-plan notes, N8, standards docstring census, and remaining record-only dispositions
+remain for later Wave 1 work. Wave 1D owns the September 8 accepted-corrections append and
+full disposition reconciliation. Wave 1 is incomplete; Wave 2 and all E items remain pending.
+The successor uses the same saved project directly with `environment.type = local`, after
+the implementation and write-back are committed and clean. No intermediate integration,
+push, or automatic archival is due.
 
 ## Wave 2 — whitespace outputs, Holman RTL, and page-lint coverage
 

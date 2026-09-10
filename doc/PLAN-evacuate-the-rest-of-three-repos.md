@@ -1856,6 +1856,16 @@ from whether the plugin is installed.
 `ruff check` and `black --check` passed on every changed Python file; both MAM-basics and
 wlc-utils passed `git diff --check`.
 
+**Correction, 2026-09-09 (September 8 review, finding 5.1a; Ben's D4 decision):**
+the current-tense claim above that the suite "no longer prints a subtest line" is
+superseded. [The September 7 remediation plan](PLAN-remediate-review-findings-2026-09-07.md),
+under "Wave 6 verification result — 2026-09-08", records 981 passed, 5 skipped, and
+65 subtests. That plan's Wave 4 record reports the same passing-test count with no
+subtest line, but records no command; the cause of Wave 4's missing line is unknown.
+The Wave 6 result does not explain the earlier run. The original measured output above
+is retained. This correction follows the accepted C4 correction in
+[Claude's rebuttal](codex-review-findings-2026-09-08-claude-rebuttal.md#c4--finding-111-wave-4s-missing-subtest-line).
+
 ---
 
 ## Phase 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page

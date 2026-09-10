@@ -554,6 +554,12 @@ Freeze and verify all 113 legacy HTML paths. The MAM-with-doc Pages citations in
 
 4. **Empty and remove.** Source commit `904c9fa` retained the dated README, Pages workflow, 113 redirect stubs, and `404.html`, and removed the former product source. Before retirement, the source clone was clean on `main`, `HEAD` equaled `origin/main` at `904c9fa178265dce6fec5704f5c0424fc94f6719`, it had one worktree, and `remediation/mp02-01-extraction-2026-09-02` was an ancestor of `main`. `C:/Users/BenDe/GitRepos/MAM-with-doc` then moved to the Windows Recycle Bin.
 
+**Correction, 2026-09-09 (September 8 review, finding 5.2):** the retained-host list
+in item 4 omits `.gitattributes` and `.gitignore`. MAM-with-doc's historical tree at
+`904c9fa178265dce6fec5704f5c0424fc94f6719` retains both dotfiles alongside the README,
+Pages workflow, redirect stubs, and `404.html` already listed. This corrects the
+historical file inventory; the recorded retirement is unchanged.
+
 ## Phase 5 — MAM-OSIS
 
 The fifth product lane. Land the source tree under MAM-OSIS/ and its published tree under gh-pages/MAM-OSIS/. Repoint py/main_mam_osis.py, its MAM-simple XML input, output directory, header, combined OSIS file, index page, documentation, and pipeline-graph labels to the two landed product directories. Generate the 24 OSIS book files and compare the result to the MAM-simple example's 24 OSIS blobs.
