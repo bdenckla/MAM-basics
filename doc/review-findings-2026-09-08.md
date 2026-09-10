@@ -1107,6 +1107,13 @@ The replaced current State at `23ee0fd0` is preserved as dated history:
 
 > State: remediation in progress 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 remain incomplete.
 
+Wave 3 editorial checkpoint, recorded 2026-09-10: E1-E8 and their completed
+dispositions are committed at `931d6762ba9d4cd9e2df5682b264bc0ac8efcc26`.
+The exact editorial byte gate passed immediately before the commit, and the complete
+scope/historical-preservation check passed at the clean checkpoint. The following
+record-only commit precedes automatic Wave 4 dispatch; final integration remains
+Wave 4's responsibility. Original technical V6 evidence and accepted corrections remain.
+
 ## Corrections accepted in the review exchange
 
 Recorded by Codex on 2026-09-10 under Ben's D3 decision of 2026-09-09 and Step-5

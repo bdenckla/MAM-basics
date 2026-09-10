@@ -2323,6 +2323,18 @@ the working tree contained only these eleven editorial/record paths:
 10. `py/accgram/post_stress_meteg.py`.
 11. `py/author_site/post_stress_meteg.py`.
 
+Wave 3 editorial checkpoint, recorded 2026-09-10: implementation commit
+`931d6762ba9d4cd9e2df5682b264bc0ac8efcc26` contains the eleven paths above and
+the complete editorial contract/dispositions. Its immediate pre-commit gate evidence is
+`wave3-editorial-01a08b5a/runs/20260910T130658Z-before-editorial-commit-85c48775/`
+under the remediation scratch root. The implementation checkpoint is clean, and the
+complete scope/historical-preservation check passed again at that commit.
+The following record-only commit supplies the clean required source for Wave 4;
+the exact source hash and actual successor ID are reported at dispatch. The successor
+must verify the editorial gate SHA256 and use that explicitly resolved contract,
+preserving the immutable original V6 baseline and evidence. No intermediate integration
+or push occurred; no task was automatically archived.
+
 ## Wave 4 — vendoring records, final dispositions, and one integration
 
 Preconditions: Waves 1-3 have complete local execution records and clean commits; Ben has

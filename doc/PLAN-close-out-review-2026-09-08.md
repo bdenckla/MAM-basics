@@ -1121,6 +1121,13 @@ the successor's actual ID and required source are reported at dispatch. No inter
 primary integration, push or automatic archival occurs. P2 source/rights-holder work
 and the 415/416 count remain deferred/unverified. Wave 4 has not yet executed.
 
+Wave 3 editorial checkpoint, recorded 2026-09-10: the complete approved E1-E8 work
+and records are committed at `931d6762ba9d4cd9e2df5682b264bc0ac8efcc26`, with
+a clean working tree and passing pre-commit gate and final scope checks. The following
+record-only commit is Wave 4's required clean source in the exact saved review worktree.
+Its hash and actual successor ID are reported at dispatch; writing responsibility
+transfers then. Wave 4 alone performs the final integration, after its required checks.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in
