@@ -37,13 +37,13 @@ AC_TOP_LEVEL_MODULES = (
     "main_ac_gen_index_flat_annotated.py",
     "main_ac_gen_lb_flat_stream.py",
     "main_ac_gen_line_break_editor.py",
-    "main_ac_kraken_seg_baselines.py",
     "main_ac_merge_line_markers.py",
 )
-"""codex-index-aleppo's modules at the top of this repo's ``py/``: thirteen of the
-fifteen that landed here.  The other two, the Wikisource index generator and the
-column-coordinate plots, were removed on 2026-09-10 by Ben's decision that day; phase
-3 of ``doc/PLAN-mega-coverage.md`` names them.
+"""codex-index-aleppo's modules at the top of this repo's ``py/``: twelve of the
+fifteen that landed here.  The other three were removed on 2026-09-10: the Wikisource
+index generator and the column-coordinate plots by Ben's decision that day, which
+phase 3 of ``doc/PLAN-mega-coverage.md`` records, and the kraken baseline-segmentation
+wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the same plan.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the

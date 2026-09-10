@@ -59,10 +59,9 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py
 |---|---|
 | `py/main_gen_misc_authored_english_documents.py` | The 183 regenerable Book-of-Job artifacts: 175 HTML, 2 CSS, and 6 JSON files |
 | `py/main_apply_cam1753_crops.py` | Cambridge 1753 PNGs and appended crop coordinates in `book-of-job/out/cam1753-crops.json`; this is a manual ingest step, not a full regenerator |
-| `py/main_gen_aleppo_crop_editor.py` | Only `MAM-basics/.novc/book-of-job/` |
 | `py/main_gen_cam1753_crop_editor.py` | Only `MAM-basics/.novc/book-of-job/` |
 | `py/main_list_missing_aleppo_imgs.py` | Console output only |
 
-The last three entry points read `book-of-job/out/enriched-quirkrecs.json` at
+The last two entry points read `book-of-job/out/enriched-quirkrecs.json` at
 module import time. Run the site generator first. The location cross-check reads
 the UXLC data now held under `uxlc/` in MAM-basics.

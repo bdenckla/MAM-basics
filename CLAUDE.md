@@ -407,8 +407,9 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
 
 - **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
   shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours —
-  `py/main_gen_aleppo_crop_editor.py` and `py/main_gen_cam1753_crop_editor.py` hold 46 between
-  them — and `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those
+  `py/main_gen_cam1753_crop_editor.py` holds 23, as its Aleppo counterpart did until phase 6a of
+  `doc/PLAN-mega-coverage.md` deleted it on 2026-09-10 — and `poetic_ply_grammar.py` numbers the
+  accents of Ps 17:14 as `#7`–`#10`. None of those
   take a prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
   number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
   the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
