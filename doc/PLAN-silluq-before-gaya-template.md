@@ -25,6 +25,14 @@ is not duplicated across their timelines.
 
 ## Decisions and public contracts
 
+**Attribution note, 2026-09-09 (review finding 7.2):** the original template,
+MAM-simple, and product contracts below are proposals in the September 8 plan
+introduced by `772545d5`; that provenance does not establish Ben's approval of
+every contract. Commit `7f0e4bdd` already added `State: live` and the dated FOI-page
+decisions on September 9. Commits `527011b7` and `2de7a969` added the later checkout
+and page-scope notes. Those records and this filename are retained. The September 8
+review remediation neither executes nor revises this plan's product contracts.
+
 ### Template name and source call
 
 Use the exact name `מ:סילוק לפני געיה`. The spelling `סילוק` is established
@@ -447,6 +455,18 @@ Acceptance requires all of the following:
     5 skipped, and 65 subtests on 2026-09-06 in
     `doc/PLAN-evacuate-five-MAM-products.md`; remeasure and treat any mismatch as
     a finding rather than trusting that figure.
+
+    **Correction, 2026-09-09 (finding 7.2):** the cited 976/5/65 result is the
+    evacuation plan's dated Phase 4 result on September 6, not the last recorded
+    baseline when this plan was written on September 8. `CLAUDE.md` records a
+    976/5 run on September 7; the September 7 remediation plan records 976/5/65
+    at `5dfbd7bd` on September 8, and merge `825cef66` records 983/5 later that
+    day. The original `825cef66` checkout baseline was already historical when
+    `772545d5` introduced this plan; the September 9 precondition notes above
+    already record later measurements. Re-establish the exact checkout and run
+    the canonical suite before implementation; none of these dated results is
+    a current-baseline guarantee.
+
 12. Every changed Python file has been formatted together with Black from the
     primary clone's venv, and all unexplained generated diffs are resolved before
     commit.

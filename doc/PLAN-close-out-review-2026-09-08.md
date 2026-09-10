@@ -780,6 +780,40 @@ The remediation plan names all five passing V6 runs and the final scope report.
 The following record commit supplies the clean source for Wave 1C3's automatic handoff
 on the same saved project. No integration or push is due at this checkpoint.
 
+Wave 1C3 executed 2026-09-09 by Codex task `01a08967-0bc1-7f01-b9e0-2776b5403ef2`
+directly in `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, from clean source `1b86afa85af9566032eb839d941bac057121da99`.
+The required back-merge was already up to date. The inspected V6 gate passed before
+and immediately after the merge against the fixed `c2f238f2` baseline, with zero
+changed locations and unchanged survey JSON. No real approval stop occurred.
+
+The assigned MAS plans now have dated notes for the chosen post-silluq interpretation,
+the ninth-page arrival, matching lines versus occurrences, original proposal attribution,
+and historical suite baselines. The merge plan has the approved executed State and exact
+N8 notes. Existing census, State, dated-decision, and 32-hunk/13-file corrections were
+retained; the merge-message discrepancy is recorded without amendment. The standards
+docstring has the dated historical census correction and D10 procedure pointer, with
+behavior unchanged. Only completed findings received disposition rows. Black left the
+sole touched Python file unchanged. The remediation plan records bounded measurements;
+suite, final V6 and commit evidence follow after verification.
+
+Wave 1D next owns the remaining record-only dispositions, complete September 8
+accepted-corrections append, and full Wave 1 reconciliation. Its exact boundary is in
+the remediation plan's Wave 1C3 record. Wave 1 is incomplete; Wave 2 and the E items
+remain pending. After the clean committed checkpoint, the authorized successor uses
+the same saved project directly with `environment.type = local`; writing responsibility
+transfers at dispatch. Integration and push occur once after final Wave 4.
+
+Wave 1C3 verification completed 2026-09-09: the canonical worktree suite, with
+`REPOS_ROOT=C:/Users/BenDe/GitRepos`, reported **987 passed, 5 skipped, and 65
+subtests passed in 103.43 seconds**. V6 passed immediately afterward with zero
+changed locations for the nine checkout and nine fresh-render pages and unchanged
+survey JSON. The seven-file scope check confirms preservation of original dated
+records, unchanged standards behavior, sixteen line-3 State entries, valid Hebrew
+mark order, clean diff whitespace, and both skill comparisons empty. No new test,
+generated artifact, or sibling file changed. The remediation plan names the exact
+scripts and reports; local commit evidence follows.
+
 Actor: Codex, one task per wave, in the plan's order. Input: the previous task's reported commit;
 Ben's step-5 approvals for the wave. Output: the wave's commits, the wave's execution record in the
 remediation plan, a dated row per settled finding under `## Dispositions after remediation` in

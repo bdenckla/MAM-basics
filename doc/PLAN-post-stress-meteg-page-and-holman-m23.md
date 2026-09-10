@@ -19,6 +19,13 @@ ten deploy-root pages, including eight post-stress pages. The M23-specific secti
 `../post-stress-meteg.html` without a fragment. The 2026-09-04 execution records retain their
 then-current measurements and rendered link as dated history.
 
+**Correction, 2026-09-09 (review findings 6.6-6.7):** merge `825cef66` brought
+`post-stress-meteg-next-conjunctive.html` onto `main` on 2026-09-08. The deploy-root
+set then became eleven HTML pages, including nine post-stress-meteg pages. A bounded
+Git-tree census reproduces ten/eight at `15ec6f4d` and eleven/nine at `825cef66` and
+the review-remediation source `1b86afa8`. The earlier dated execution counts remain
+historical; the ten/eight description above does not describe the post-merge set.
+
 Created 2026-09-03. Execute this plan from
 C:/Users/BenDe/GitRepos/MAM-basics. The implementation publishes a generated
 survey of MAM metegs after the primary stress, gives Holman suggestion M23 a
@@ -102,6 +109,11 @@ follow, and each favours the deploy root.
    regenerates all eighteen miscellaneous documents plus that shelf's
    index.html and style.css. At execution, gen_site regenerated two pages at the deploy root;
    as of 2026-09-08 it regenerates ten, including eight post-stress pages.
+
+   **Correction, 2026-09-09 (finding 6.7):** the ninth post-stress-meteg page arrived
+   on `main` with merge `825cef66` on 2026-09-08, making eleven deploy-root pages.
+   The two-page execution count and the pre-merge ten/eight count remain dated history.
+
 3. py/tests/test_site_index_links.py checks that every index link pointing into
    this repository's gh-pages/ names a file that exists. Its docstring says why
    the MAM-with-doc half is deliberately unchecked: that would need a sibling
@@ -1152,6 +1164,15 @@ claim the M23 evidence note withdrew on 2026-09-03 — "zero metegs after the
 stress on any chanted word with sof pasuq" — because the census script's
 position-based verse-final test could not support it. The strict boundary can,
 and the page's 1 Samuel 17:5 section rests on it.
+
+**Correction, 2026-09-09 (finding 1):** the zero post-silluq count above is a result
+of the research's chosen interpretation, not an independent demonstration that MAM
+has no meteg after silluq. Ben settled the interpretation on 2026-09-09, recorded in
+`3b0225e0`: at 1 Kings 7:37 the research deliberately treats the chanted word as
+meteg-then-silluq, following the stress oracle, although MAM's documented order is
+silluq then meteg. The Methods page and footnote phi-1 now define that choice. The
+classifier, census, and approved page wording remain unchanged; the separate
+`PLAN-silluq-before-gaya-template.md` is not executed by this correction.
 
 #### THE PROGRAMME'S TWO PREDICTIONS DID NOT COME TRUE, AND THE REASON IS MEASURED
 
