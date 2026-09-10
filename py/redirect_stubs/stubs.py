@@ -135,6 +135,13 @@ class RedirectRepo:
 # source repo's flip.
 REDIRECT_REPOS = (
     RedirectRepo(
+        source_repo="MAM-OSIS",
+        site_subtree="MAM-OSIS",
+        old_path_prefix="/MAM-OSIS/",
+        manifest_path="in/mam_osis_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/MAM-OSIS.git",
+    ),
+    RedirectRepo(
         source_repo="MAM-simple",
         site_subtree="MAM-simple",
         old_path_prefix="/MAM-simple/",
