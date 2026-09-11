@@ -154,10 +154,30 @@ After the exchange closes, close-out proceeds in this order, as worked in
 3. Write a remediation plan for a fresh task, including concrete editorial wording for Ben's
    approval; obtain the required approvals before execution.
 4. Execute the approved remediation, recording each finding's disposition under a dated
-   `## Dispositions after remediation` section in the initial review. Preserve earlier records;
-   add dated corrections beside any record that needs correction.
+   `## Dispositions after remediation` section in the initial review. Leave every finished dated
+   document as written; a correction to one goes in a sibling `<stem>-update.md`, as the section
+   below sets out.
 5. Integrate once after the final remediation wave, using the worktree procedure below.
 6. Retire the shared worktree and branch after the final task ends.
+
+### Correcting a finished dated document — Ben's decision, 2026-09-11
+
+A finished dated document — a review, a remediation plan, a completed plan, an execution record —
+is left as written, like a pushed commit under a "never amend pushed commits" discipline. Ben's
+reason, 2026-09-11: keeping such documents current is maintenance without end, and it also makes
+them more confusing rather than less, since a reader cannot tell how the writer could have known
+at the time what the document now says.
+
+A correction, an update or a later measurement therefore goes in a sibling file named
+`<stem>-update.md`, and the document it corrects is not touched. The first four are
+`doc/review-findings-2026-09-08-update.md`,
+`doc/PLAN-remediate-review-findings-2026-09-08-update.md`,
+`doc/PLAN-efficient-wikisource-downloads-update.md` and
+`doc/PLAN-wikisource-derived-mam-products-update.md`. Each names the passage it corrects by that
+passage's own words, since line numbers drift. An update file is itself live, so it is kept true.
+
+A document that describes the present is the opposite case and is kept true in place: `CLAUDE.md`,
+the READMEs, the docstrings, this file, and a plan still being executed.
 
 ### The shared worktree — Ben's decision, 2026-09-09 (D11)
 
