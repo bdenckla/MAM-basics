@@ -15,42 +15,25 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
             (diff_mpp.UNPINNED_LATEST_HTML, diff_mpp.UNPINNED_LATEST_JSON),
         )
 
-    def test_no_new_commits_writes_empty_unpinned_latest_artifacts(self):
-        with (
-            mock.patch.object(
-                diff_mpp, "_latest_release_entry", return_value={"new": "v1"}
-            ),
-            mock.patch.object(diff_mpp, "_count_newer_commits", return_value=0),
-            mock.patch.object(
-                diff_mpp,
-                "generate_report",
-                return_value=(0, "2026-05-13"),
-            ) as generate_mock,
-            mock.patch("subcommands.diff_mpp.os.remove") as remove_mock,
-        ):
-            result = diff_mpp.run_unpinned_latest()
-
-        self.assertIsNone(result)
-        generate_mock.assert_called_once_with(
-            "v1",
-            "HEAD",
-            diff_mpp.UNPINNED_LATEST_HTML,
-            write_when_empty=True,
-        )
-        remove_mock.assert_not_called()
-
     def test_zero_diffs_writes_empty_unpinned_latest_artifacts(self):
+        """One test where there were two, the pair having asserted one fact twice.
+
+        ``test_no_new_commits_writes_empty_unpinned_latest_artifacts`` stood beside this one
+        until 2026-09-11, differing only in the value stubbed into ``_count_newer_commits`` --
+        0 there, 2 here -- and asserting the identical ``generate_report`` call and the
+        identical None.  That the two agreed was the evidence that the branch they were
+        covering did no work of its own; ``run_unpinned_latest``'s docstring says the rest.
+        With the count gone there is one path, so there is one test.
+        """
         with (
             mock.patch.object(
                 diff_mpp, "_latest_release_entry", return_value={"new": "v1"}
             ),
-            mock.patch.object(diff_mpp, "_count_newer_commits", return_value=2),
             mock.patch.object(
                 diff_mpp,
                 "generate_report",
                 return_value=(0, "2026-05-13"),
             ) as generate_mock,
-            mock.patch("subcommands.diff_mpp.os.remove") as remove_mock,
         ):
             result = diff_mpp.run_unpinned_latest()
 
@@ -61,7 +44,30 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
             diff_mpp.UNPINNED_LATEST_HTML,
             write_when_empty=True,
         )
-        remove_mock.assert_not_called()
+
+    def test_latest_release_entry_is_the_chain_end_and_needs_no_git(self):
+        """The terminal entry is read off releases.json, which is what a shallow clone needs.
+
+        Lint-shaped rather than example-based: it asserts a decidable property of the tracked
+        file -- that it is one unbroken chain -- and that ``_latest_release_entry`` returns the
+        end of it.  A second terminal entry would mean the file had stopped being a chain, and
+        is what the function raises on.
+        """
+        with open(diff_mpp.RELEASES_JSON, encoding="utf-8") as in_fp:
+            releases = json.load(in_fp)["releases"]
+
+        continued = {entry["old"] for entry in releases}
+        started = {entry["new"] for entry in releases}
+        terminal = [entry for entry in releases if entry["new"] not in continued]
+        initial = [entry for entry in releases if entry["old"] not in started]
+
+        self.assertEqual(
+            len(terminal), 1, "releases.json must end in exactly one entry"
+        )
+        self.assertEqual(
+            len(initial), 1, "releases.json must begin at exactly one entry"
+        )
+        self.assertEqual(diff_mpp._latest_release_entry(), terminal[0])
 
     def test_legacy_history_never_reuses_a_named_release_output(self):
         with open(diff_mpp.RELEASES_JSON, encoding="utf-8") as in_fp:
