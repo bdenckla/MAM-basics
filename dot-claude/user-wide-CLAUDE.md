@@ -862,6 +862,17 @@ There is no default template behavior.
   the template and explicitly deciding that every branch belongs in that operation. Name that
   scope in the module and output; "all branches" is a decision for a named template, never the
   fallback for an unknown template.
+- **A deep dive diagnoses; Ben decides semantic policy.** A request to inspect, audit, or
+  deep-dive template handling does not authorize choosing a projection, edition display, or
+  survey population. Choices among ketiv, qere, pointed ketiv, selected or all alternatives,
+  body-text, and doc-note-text depend on the consumer's goals and usually require Ben's judgment.
+  Separate the consumer-visible change types, report the existing behavior, examples, and counts,
+  and ask Ben which behavior to retain before implementing or recommending a policy change.
+- **An invalid representation does not select its replacement.** Concatenating ketiv and qere
+  into one form is objectively wrong, but that diagnosis establishes only what must not remain.
+  The consumer may need ketiv, qere, both as separate alternatives, or another explicit
+  projection. Apply an existing explicit policy; if none exists, ask Ben rather than inferring the
+  replacement from the diagnosis.
 - **Make every decision reviewable.** Keep template choices in a named policy or explicit
   call-site dispatch, record a generated survey's projection in metadata or documentation where
   practical, and verify regenerated outputs as differential tests. Ben's instruction,
