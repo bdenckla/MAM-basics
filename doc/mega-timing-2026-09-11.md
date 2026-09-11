@@ -31,7 +31,8 @@ now prints its step times, and §8 gives the commands behind every other figure.
 3. **Two steps fail on `main`, so a full run takes three invocations** (§2). The failure of the
    `diff-mpp` step (since renamed `diff-mpplus`), the mpplus diff, was already known. The failure
    of `gen-site` was new, is raised here and not fixed, because fixing it changes figures in the
-   post-stress-meteg pages' prose, and is now recorded in `CLAUDE.md` too.
+   post-stress-meteg pages' prose, and is now recorded in `CLAUDE.md` too. Both were fixed
+   later that day; §2 has the note.
 4. **Running independent steps at the same time is the largest remaining saving, and the largest
    change** (§7, item 1). The longest chain of steps that must follow one another took about 78 s
    in the pinned run, against 303 s for all the steps one after another.
@@ -98,6 +99,13 @@ a slower mega.
    Another session found the same failure the same morning while checking the integration of
    `claude/loving-ptolemy-1i4seh`, which reached `main` as `478bdae6` all the same, and
    `CLAUDE.md` has recorded it since `8109fb58` as the mega's second known failure.
+
+**Both have been fixed since this section was written, later on 2026-09-11.** `f11ecaf8` fixed
+`diff-mpplus`, and `aedac688` fixed `gen-site` by committing the regenerated survey, whose bytes
+are blob `e15cad57`, the bytes §6 item 1 records, and by moving `pin_claims` and the main page's
+figures with it. One full run on a tree merged with `main` at `56132dfd` then passed all 59
+steps in 285.7 s and left no diff, so the three invocations below record how the runs here were
+made, not how a run is made now.
 
 Until both are fixed, a full run is three invocations, the second resuming after `diff-mpp`. The
 runs measured here resumed the third time after `gen-site`, skipping it:
@@ -208,8 +216,10 @@ seconds are run 1's. "Under cProfile" figures come from running the one step und
 profiler, which inflates small Python calls, so they give shares rather than times.
 
 1. **`accgram-survey-post-stress-meteg`, 58.5 s.** Reads MAM-private's Phonetic MAM and
-   MAM-simple's `xml-vtrad-mam`, and writes `out/accgram/post-stress-meteg.json`; skipped in a
-   cloud session. Under cProfile, 132.9 of its 150.9 s are four passes of `_scan`, which call
+   MAM-simple's `json-vtrad-mam`, and writes `out/accgram/post-stress-meteg.json`; skipped in a
+   cloud session. (This item said `xml-vtrad-mam`, after the mega's step description, until
+   `4b9fb4f5` corrected that description later on 2026-09-11.) Under cProfile, 132.9 of its
+   150.9 s are four passes of `_scan`, which call
    the prose scanner on 37,510 verse bodies (54.1 s, 36%) and the poetic scanner on 8,930
    (6.7 s). MAM-simple is loaded four times, by four calls of `load_mam_simple_for_refs`
    (11.1 s).

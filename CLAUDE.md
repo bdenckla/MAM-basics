@@ -779,20 +779,14 @@ through git rather than from the working tree, so only a run made after the comm
 commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
 suite takes about two.
 
-**Known failure, recorded 2026-09-11: every run on a tree containing `209b4c05` stops at
-`gen-site`.** The step before it, `accgram-survey-post-stress-meteg`, rewrites
-`out/accgram/post-stress-meteg.json` to include the refresh's metegs: Isaiah 24:18 gains a record,
-and prose `mbs_only` falls from 12,849 to 12,842. `pin_claims` in
-`py/author_site/post_stress_meteg.py` still pins 12,849, so `gen-site` raises an
-`AssertionError`. The survey, those pins and the post-stress-meteg pages that state the figures
-have to move together; do not move them on an unrelated branch. Until they move, restore
-`out/accgram/post-stress-meteg.json` rather than commit it, since committing it would make
-`gen-site` fail on the tracked survey too. Then finish the check with a second run,
-`py/main_0_mega.py --resume-from gen-site`, which renders the pages from the tracked survey, and
-report the failure as known. It was found at the integration of `claude/stoic-jennings-15ce11`,
-which changes nothing the survey reads, as a second failure: until `f11ecaf8` fixed finding 1, a
-run reached the survey only by resuming past `diff-mpplus`. Ben's decision that day was to record
-the failure here and integrate.
+**A second defect stopped every run on a tree containing `209b4c05` at `gen-site`, until
+`aedac688` fixed it on 2026-09-11.** The step before it, `accgram-survey-post-stress-meteg`,
+regenerated `out/accgram/post-stress-meteg.json` with the eleven meteg edits the refresh brought
+in, and prose `mbs_only` fell from 12,849 to 12,842, which `pin_claims` in
+`py/author_site/post_stress_meteg.py` still pinned. `aedac688` committed the regenerated survey and
+moved the pins and the main page with it; `doc/post-stress-meteg-method.md` names the eleven edits.
+With both fixes, one full run on a tree merged with `main` at `56132dfd` passed all 59 steps and
+left no diff, so the check is a single run again.
 
 **The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
 rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
