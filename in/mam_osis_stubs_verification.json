@@ -1,0 +1,953 @@
+{
+  "task": "5D - Stubs and published URLs",
+  "date": "2026-09-10",
+  "task_id": "01a08bd3-7610-7ac1-9c22-fc7c95898562",
+  "target_root": "C:\\Users\\BenDe\\GitRepos\\MAM-basics",
+  "source_root": "C:\\Users\\BenDe\\GitRepos\\MAM-OSIS",
+  "target_start": "2d82bcbb7bd8a0967093d2b6ef09fbccf8a87dfa",
+  "source_before_flip": "697dc98a904a52ed81bb105772f002d3efb360e3",
+  "target_preparation_commit": "d61c3472981f927d69a5a7452690d5130078a1c5",
+  "source_redirect_commit": "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9",
+  "frozen_manifests": [
+    {
+      "path": "in/mam_osis_land_manifest.json",
+      "mode": "100644",
+      "blob": "f703600529deb62732fe47b4a80c0a406a2be869",
+      "bytes": 52206,
+      "sha256": "629c39e04ea3dafcf8a089868473651a1aadce086de7f3f77a0207a2ab72a0c6"
+    },
+    {
+      "path": "in/mam_osis_redirect_pages.json",
+      "mode": "100644",
+      "blob": "b7055942a295f1252d1b9834a1fd173ac5cc01aa",
+      "bytes": 741,
+      "sha256": "4dac8cd2263b00d1b6ce30bb0e21e83e72bde91beb22b627d1601ca9612116c0"
+    }
+  ],
+  "source_published_baseline": {
+    "source_commit": "697dc98a904a52ed81bb105772f002d3efb360e3",
+    "files": [
+      {
+        "path": "gh-pages/index.html",
+        "mode": "100644",
+        "blob": "843a5d82099e2c2fe6749fffd7771bf8f1421261",
+        "bytes": 11592,
+        "sha256": "3fb2191b56f8375861ce97a7a528d2c31bd42ebc1a1f5c2c23e542ce11cf48ca"
+      },
+      {
+        "path": "gh-pages/png/abcant-absent-OSIS.png",
+        "mode": "100644",
+        "blob": "7e3f2c39ff2c22d9d69a909fc2e53e5700908adb",
+        "bytes": 14999,
+        "sha256": "5c704a3a3345b5a44359121596a77aae193208fd389d9cccf0edaed7871ddd6a"
+      },
+      {
+        "path": "gh-pages/png/abcant-present-WS.png",
+        "mode": "100644",
+        "blob": "42c52cddc54ed6874eb594b0e55548893f130411",
+        "bytes": 31274,
+        "sha256": "c74d742e9bc45c983723556526510755df7160c68cff3a41cf67bd52f43c1ee8"
+      },
+      {
+        "path": "gh-pages/png/good-ending.png",
+        "mode": "100644",
+        "blob": "d830ae224d0957d35f26b8b80150df2eb4a56843",
+        "bytes": 64042,
+        "sha256": "1defa070024e8bab7cd5692310728fdfc01cbc4cf37660f593ce0f322b6b7a3f"
+      },
+      {
+        "path": "gh-pages/png/hung.png",
+        "mode": "100644",
+        "blob": "a1835c8e876dc05f65f3532a91ad9905630070e5",
+        "bytes": 41177,
+        "sha256": "a728265c20be3df56dbb2652899b6b8839561cb2fc004d22b0237e258f298c1f"
+      },
+      {
+        "path": "gh-pages/png/impmaq-absent.png",
+        "mode": "100644",
+        "blob": "656f105dfe7d143d99fa60e8cd55439a0bf34b30",
+        "bytes": 3383,
+        "sha256": "7ae3ed3f8cafc8bb8bfa623646efd3d2c8ce6e844b9b12e67a7af2ff2b117a6a"
+      },
+      {
+        "path": "gh-pages/png/impmaq-present.png",
+        "mode": "100644",
+        "blob": "9e041d3dd9e755f65bff231d47420b3d6da3179a",
+        "bytes": 6603,
+        "sha256": "db3762284c27c82ce88ffe6363d7e9225876a57f0373bd28109884af228a31f3"
+      },
+      {
+        "path": "gh-pages/png/invnun-numbers-10.png",
+        "mode": "100644",
+        "blob": "bab0ee9f0773f24a9913d0ad4760df0810ec5207",
+        "bytes": 49338,
+        "sha256": "d1a5f34ec07bfcce84c85192309e0b8e168f299377f221ec0a06d84c19d99c69"
+      },
+      {
+        "path": "gh-pages/png/invnun-psalm-107-v23-to-v28.png",
+        "mode": "100644",
+        "blob": "9966797524f244b1ecf8db4eaaf07ab322e4c1fd",
+        "bytes": 59070,
+        "sha256": "61f5319da84c0f3f21fe92f2e4b57e5372e5543ee108dae8fe2b204c1c0b62d4"
+      },
+      {
+        "path": "gh-pages/png/invnun-psalm-107-v40.png",
+        "mode": "100644",
+        "blob": "1fd85e746a445555b27ff4caa0538dc8809ad817",
+        "bytes": 19004,
+        "sha256": "28c3da388b8c5f0d88ecf67853262a11df5e42f2e1c76e64572a1c616a0b8ad2"
+      },
+      {
+        "path": "gh-pages/png/kq-ketiv-qere-1.png",
+        "mode": "100644",
+        "blob": "e4fe243a844f48cedef8a8db3de23fd14c62c563",
+        "bytes": 2123,
+        "sha256": "9d773eeb1f404f2c36715401330bae66aeaa7d612846d30d6cd9293fbdcafd43"
+      },
+      {
+        "path": "gh-pages/png/kq-ketiv-qere-2.png",
+        "mode": "100644",
+        "blob": "0373ec49c4b4035655881f36a588841e19873d24",
+        "bytes": 3469,
+        "sha256": "2a7389f1a40d84a53a161a0d05637901ec4133954938b7acdca0cabcf823a7c1"
+      },
+      {
+        "path": "gh-pages/png/kq-ketiv-qere-3.png",
+        "mode": "100644",
+        "blob": "b5ae8c110ee47ae51a391a8e5a0695f314664231",
+        "bytes": 3595,
+        "sha256": "3ad4e4fe2cd927c6db61394f45ad643bfc263963de65ca120c0cf2cbba3325d8"
+      },
+      {
+        "path": "gh-pages/png/kq-ketiv-velo-qere-1.png",
+        "mode": "100644",
+        "blob": "d3db95e444059d3f6aa032be161dbd41b689fe22",
+        "bytes": 7042,
+        "sha256": "4677b5b23b8bcad6c77d196ed8035ea8bd9979bde44cde3ff3de5906eddccbaa"
+      },
+      {
+        "path": "gh-pages/png/kq-ketiv-velo-qere-2.png",
+        "mode": "100644",
+        "blob": "eefe293583176717d2e7894bd15c2e7e697204af",
+        "bytes": 5412,
+        "sha256": "a60eaa58ff0b15d8c526a85baf4fd15a5ad0974040227d1f61fef06236739c19"
+      },
+      {
+        "path": "gh-pages/png/kq-qere-velo-ketiv.png",
+        "mode": "100644",
+        "blob": "61aa362fc9c5966a756cad93f4f7e6a9b5359a94",
+        "bytes": 4247,
+        "sha256": "29e3e8c746c200504abeaea01658b12c0ee21d0046f357a375f857c9a35df97b"
+      },
+      {
+        "path": "gh-pages/png/par-petuḥah-type-1-number-1.png",
+        "mode": "100644",
+        "blob": "71e2d2d0b63a87a9d80a47f5960b64dcf2c0955f",
+        "bytes": 24880,
+        "sha256": "9032a589472b26883160ba09acbd8dd0f1ea2aaf362b66b8da37fffb8a560805"
+      },
+      {
+        "path": "gh-pages/png/par-petuḥah-type-1-number-2.png",
+        "mode": "100644",
+        "blob": "408a06ff7c0dfafbe51fc52f669ee97281dff5ee",
+        "bytes": 76308,
+        "sha256": "ffc385ebcff11c4896cec1b8e2d550e1316f742295026c0c8e2e62c538ed867b"
+      },
+      {
+        "path": "gh-pages/png/par-petuḥah-type-2.png",
+        "mode": "100644",
+        "blob": "2d587f184bb121f1c3937223365f3d346f18a61c",
+        "bytes": 10806,
+        "sha256": "6b6694a46c20e7878ed4736a5ba77fcc08e44300e8c52504828549a1dcbaa11a"
+      },
+      {
+        "path": "gh-pages/png/par-setumah-type-1-number-1.png",
+        "mode": "100644",
+        "blob": "41131629cb4f2aefd2307890d329fcfd9c4a57ec",
+        "bytes": 9077,
+        "sha256": "72bc235fed9700c86f3997c93c4118e93d2907a112df6854d202b32a9b236f15"
+      },
+      {
+        "path": "gh-pages/png/par-setumah-type-1-number-2.png",
+        "mode": "100644",
+        "blob": "b0c22ecf4d092392250af3184ca3ac13c045ee03",
+        "bytes": 57986,
+        "sha256": "958343ac31fbff8445854b445660f44e104ec89ded3d02dc4a8cda34059e62a9"
+      },
+      {
+        "path": "gh-pages/png/par-setumah-type-2.png",
+        "mode": "100644",
+        "blob": "e9a554d663d968928751c31352aca2cd9a3c7324",
+        "bytes": 55375,
+        "sha256": "04f143436ac4fd9194b73512ab22ec1db12f35ec466570128b83ce79ce4fc215"
+      },
+      {
+        "path": "gh-pages/png/paseq.png",
+        "mode": "100644",
+        "blob": "e0bb2a1560fe104318611010fbb617c78c1692d1",
+        "bytes": 31887,
+        "sha256": "5d40db8880c4f36601f003a72b4f1bcb11239b4c2549f63568c7dc93e5fe91a1"
+      },
+      {
+        "path": "gh-pages/png/scrdff.png",
+        "mode": "100644",
+        "blob": "b20d012ecae1479ebef7e6950fa0fbed242b07e1",
+        "bytes": 24709,
+        "sha256": "bc003c5cf79afb6bbaac407363d111765f049539a8db7098d9f05e27a791ec16"
+      },
+      {
+        "path": "gh-pages/png/shirah-space.png",
+        "mode": "100644",
+        "blob": "eca78aa03ccce73cff15f57726b88e1b07e7157e",
+        "bytes": 97724,
+        "sha256": "4e8d65bd88aac476acd70547c92c36f6b803abf7c2c66d2d0fc2c8114669c757"
+      },
+      {
+        "path": "gh-pages/png/sm-lett-absent-OSIS.png",
+        "mode": "100644",
+        "blob": "96d81f904567b75531e221deb27f5f27caaab0f4",
+        "bytes": 21318,
+        "sha256": "d5e3c1ea918e3322ae944607cbe76f1c5587ce0bd5f185138e7a42cf87e9b481"
+      },
+      {
+        "path": "gh-pages/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "mode": "100644",
+        "blob": "fadfa25633c55e8969e886b0d98177ea16f52a47",
+        "bytes": 28961,
+        "sha256": "a0b3c9c2541b79d8fddb9b6bed559ac6ec3346801a057bc9a3ca796dc3270ff2"
+      },
+      {
+        "path": "gh-pages/png/sm-lett-and-lg-lett-present-WS.png",
+        "mode": "100644",
+        "blob": "08c6716d9e9d3a2d9eb2b586b6aee212640f808d",
+        "bytes": 8469,
+        "sha256": "6d31ac2fccd698c73560d6bff4a7f5fcc6e5a99b4cc0bf360334bc78d930fd7e"
+      },
+      {
+        "path": "gh-pages/png/sm-lett-present-WS.png",
+        "mode": "100644",
+        "blob": "80083990080c63af556f37f3d82928b3efd1a0c5",
+        "bytes": 6718,
+        "sha256": "0853d3d3e63b80bf8dff937cd256d6b57229ac0e0e9a4b2030ac5e630a949280"
+      },
+      {
+        "path": "gh-pages/two_col_style.css",
+        "mode": "100644",
+        "blob": "1019edf532cdd118234264e38756ab2d7c4b5f5a",
+        "bytes": 1601,
+        "sha256": "b3ceb8dbbffb3910de986508d7acf36c63c2b0121bb9167af5846f91b4979a02"
+      }
+    ]
+  },
+  "source_change": {
+    "removed_published_assets": [
+      "gh-pages/png/abcant-absent-OSIS.png",
+      "gh-pages/png/abcant-present-WS.png",
+      "gh-pages/png/good-ending.png",
+      "gh-pages/png/hung.png",
+      "gh-pages/png/impmaq-absent.png",
+      "gh-pages/png/impmaq-present.png",
+      "gh-pages/png/invnun-numbers-10.png",
+      "gh-pages/png/invnun-psalm-107-v23-to-v28.png",
+      "gh-pages/png/invnun-psalm-107-v40.png",
+      "gh-pages/png/kq-ketiv-qere-1.png",
+      "gh-pages/png/kq-ketiv-qere-2.png",
+      "gh-pages/png/kq-ketiv-qere-3.png",
+      "gh-pages/png/kq-ketiv-velo-qere-1.png",
+      "gh-pages/png/kq-ketiv-velo-qere-2.png",
+      "gh-pages/png/kq-qere-velo-ketiv.png",
+      "gh-pages/png/par-petuḥah-type-1-number-1.png",
+      "gh-pages/png/par-petuḥah-type-1-number-2.png",
+      "gh-pages/png/par-petuḥah-type-2.png",
+      "gh-pages/png/par-setumah-type-1-number-1.png",
+      "gh-pages/png/par-setumah-type-1-number-2.png",
+      "gh-pages/png/par-setumah-type-2.png",
+      "gh-pages/png/paseq.png",
+      "gh-pages/png/scrdff.png",
+      "gh-pages/png/shirah-space.png",
+      "gh-pages/png/sm-lett-absent-OSIS.png",
+      "gh-pages/png/sm-lett-and-lg-lett-absent-OSIS.png",
+      "gh-pages/png/sm-lett-and-lg-lett-present-WS.png",
+      "gh-pages/png/sm-lett-present-WS.png",
+      "gh-pages/two_col_style.css"
+    ],
+    "modified_published_pages": [
+      "gh-pages/index.html"
+    ],
+    "added_published_pages": [
+      "gh-pages/404.html"
+    ],
+    "unchanged_non_published_files": 62,
+    "retained_tracked_files": 64,
+    "remaining_for_5E": "Replace source product files with the dated redirect-host README and retain host files; remove source from both workspace files and repo_visibility together. Keep source clone until 5F."
+  },
+  "site_index": {
+    "generator": "author_site.site_index.gen_html_file",
+    "written": "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\gh-pages\\index.html",
+    "changed_mtimes": [
+      {
+        "path": "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\gh-pages\\index.html",
+        "before_ns": 1788954664560860600,
+        "after_ns": 1789052615817528800
+      }
+    ],
+    "source_changes": 0
+  },
+  "target_http": {
+    "target_commit": "d61c3472981f927d69a5a7452690d5130078a1c5",
+    "deployment": {
+      "conclusion": "success",
+      "databaseId": 34493549562,
+      "headSha": "d61c3472981f927d69a5a7452690d5130078a1c5",
+      "status": "completed",
+      "url": "https://github.com/bdenckla/MAM-basics/actions/runs/34493549562"
+    },
+    "published": [
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 11592,
+        "sha256": "3fb2191b56f8375861ce97a7a528d2c31bd42ebc1a1f5c2c23e542ce11cf48ca"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 14999,
+        "sha256": "5c704a3a3345b5a44359121596a77aae193208fd389d9cccf0edaed7871ddd6a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/abcant-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 31274,
+        "sha256": "c74d742e9bc45c983723556526510755df7160c68cff3a41cf67bd52f43c1ee8"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/good-ending.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/good-ending.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 64042,
+        "sha256": "1defa070024e8bab7cd5692310728fdfc01cbc4cf37660f593ce0f322b6b7a3f"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/hung.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/hung.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 41177,
+        "sha256": "a728265c20be3df56dbb2652899b6b8839561cb2fc004d22b0237e258f298c1f"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-absent.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-absent.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3383,
+        "sha256": "7ae3ed3f8cafc8bb8bfa623646efd3d2c8ce6e844b9b12e67a7af2ff2b117a6a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-present.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/impmaq-present.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 6603,
+        "sha256": "db3762284c27c82ce88ffe6363d7e9225876a57f0373bd28109884af228a31f3"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-numbers-10.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-numbers-10.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49338,
+        "sha256": "d1a5f34ec07bfcce84c85192309e0b8e168f299377f221ec0a06d84c19d99c69"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 59070,
+        "sha256": "61f5319da84c0f3f21fe92f2e4b57e5372e5543ee108dae8fe2b204c1c0b62d4"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 19004,
+        "sha256": "28c3da388b8c5f0d88ecf67853262a11df5e42f2e1c76e64572a1c616a0b8ad2"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 2123,
+        "sha256": "9d773eeb1f404f2c36715401330bae66aeaa7d612846d30d6cd9293fbdcafd43"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3469,
+        "sha256": "2a7389f1a40d84a53a161a0d05637901ec4133954938b7acdca0cabcf823a7c1"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 3595,
+        "sha256": "3ad4e4fe2cd927c6db61394f45ad643bfc263963de65ca120c0cf2cbba3325d8"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 7042,
+        "sha256": "4677b5b23b8bcad6c77d196ed8035ea8bd9979bde44cde3ff3de5906eddccbaa"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 5412,
+        "sha256": "a60eaa58ff0b15d8c526a85baf4fd15a5ad0974040227d1f61fef06236739c19"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 4247,
+        "sha256": "29e3e8c746c200504abeaea01658b12c0ee21d0046f357a375f857c9a35df97b"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 24880,
+        "sha256": "9032a589472b26883160ba09acbd8dd0f1ea2aaf362b66b8da37fffb8a560805"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 76308,
+        "sha256": "ffc385ebcff11c4896cec1b8e2d550e1316f742295026c0c8e2e62c538ed867b"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 10806,
+        "sha256": "6b6694a46c20e7878ed4736a5ba77fcc08e44300e8c52504828549a1dcbaa11a"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 9077,
+        "sha256": "72bc235fed9700c86f3997c93c4118e93d2907a112df6854d202b32a9b236f15"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 57986,
+        "sha256": "958343ac31fbff8445854b445660f44e104ec89ded3d02dc4a8cda34059e62a9"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-setumah-type-2.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 55375,
+        "sha256": "04f143436ac4fd9194b73512ab22ec1db12f35ec466570128b83ce79ce4fc215"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/paseq.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/paseq.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 31887,
+        "sha256": "5d40db8880c4f36601f003a72b4f1bcb11239b4c2549f63568c7dc93e5fe91a1"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/scrdff.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/scrdff.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 24709,
+        "sha256": "bc003c5cf79afb6bbaac407363d111765f049539a8db7098d9f05e27a791ec16"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/shirah-space.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/shirah-space.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 97724,
+        "sha256": "4e8d65bd88aac476acd70547c92c36f6b803abf7c2c66d2d0fc2c8114669c757"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 21318,
+        "sha256": "d5e3c1ea918e3322ae944607cbe76f1c5587ce0bd5f185138e7a42cf87e9b481"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 28961,
+        "sha256": "a0b3c9c2541b79d8fddb9b6bed559ac6ec3346801a057bc9a3ca796dc3270ff2"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 8469,
+        "sha256": "6d31ac2fccd698c73560d6bff4a7f5fcc6e5a99b4cc0bf360334bc78d930fd7e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/sm-lett-present-WS.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 6718,
+        "sha256": "0853d3d3e63b80bf8dff937cd256d6b57229ac0e0e9a4b2030ac5e630a949280"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/two_col_style.css",
+        "final_url": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/two_col_style.css",
+        "status": 200,
+        "content_type": "text/css",
+        "bytes": 1601,
+        "sha256": "b3ceb8dbbffb3910de986508d7acf36c63c2b0121bb9167af5846f91b4979a02"
+      }
+    ],
+    "site_index": {
+      "url": "https://bdenckla.github.io/MAM-basics/index.html",
+      "final_url": "https://bdenckla.github.io/MAM-basics/index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 5273,
+      "sha256": "6a4775bcb9a9aa82cb4c38151c2ab69aa45dfd7eae488f6216e2d16acd130500"
+    }
+  },
+  "source_http": {
+    "source_commit": "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9",
+    "deployment": {
+      "conclusion": "success",
+      "databaseId": 34493924015,
+      "headSha": "26a7e85f8cb211043c33ef2badfddb4ac69d5ee9",
+      "status": "completed",
+      "url": "https://github.com/bdenckla/MAM-OSIS/actions/runs/34493924015"
+    },
+    "checks": [
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 713,
+        "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/index.html?phase=5D&encoded=a%2Bb",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/index.html?phase=5D&encoded=a%2Bb",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 713,
+        "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/404.html",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/404.html",
+        "status": 200,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/phase5d-missing/deep.html?phase=5D",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/phase5d-missing/deep.html?phase=5D",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/abcant-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/good-ending.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/good-ending.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/hung.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/hung.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-absent.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-absent.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-present.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/impmaq-present.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-numbers-10.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-numbers-10.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v23-to-v28.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/invnun-psalm-107-v40.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-qere-3.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-ketiv-velo-qere-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/kq-qere-velo-ketiv.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-1.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-1-number-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-2.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/par-setumah-type-2.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/paseq.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/paseq.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/scrdff.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/scrdff.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/shirah-space.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/shirah-space.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-absent-OSIS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-and-lg-lett-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-present-WS.png",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/png/sm-lett-present-WS.png",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      },
+      {
+        "url": "https://bdenckla.github.io/MAM-OSIS/two_col_style.css",
+        "final_url": "https://bdenckla.github.io/MAM-OSIS/two_col_style.css",
+        "status": 404,
+        "content_type": "text/html",
+        "bytes": 643,
+        "sha256": "04fb2d74bf7c49d2bef8e344c07e71954029531cc532d88f9f543d2069d2558e"
+      }
+    ]
+  },
+  "browser": {
+    "method": "Live browser navigation and read-only DOM inspection through cua_repl; temporary background tab closed after verification.",
+    "target_title": "MAM OSIS: features present and features absent",
+    "target_images_loaded": 28,
+    "authored_anchor_count": 0,
+    "anchor_note": "Source HTML has no id or named-anchor attributes. The sole DOM id was injected by the browser tool. Fragment tests therefore verify exact URL preservation, without claiming a scroll to a nonexistent content anchor.",
+    "javascript_evidence": "The page stub's meta refresh uses a fixed target URL and drops the query. The live browser preserved the query and fragment, proving that the JavaScript redirect executed. The custom 404 has no meta refresh and also forwarded the missing path and all three percent-encoded PNG paths.",
+    "checks": [
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/index.html?phase=5D&encoded=a%2Bb#phase5d-fragment%20check",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html?phase=5D&encoded=a%2Bb#phase5d-fragment%20check",
+        "result": "Target document loaded with all 28 images; exact query and fragment preserved."
+      },
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/?phase=5D-root#root-fragment",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/index.html?phase=5D-root#root-fragment",
+        "result": "Legacy directory URL reached the target document with exact query and fragment."
+      },
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/phase5d-missing/deep.html?phase=5D#missing-fragment",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/phase5d-missing/deep.html?phase=5D#missing-fragment",
+        "result": "Custom 404 forwarded the complete missing path, query and fragment. The target correctly remained absent and showed GitHub Pages File not found."
+      },
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png?phase=5D#asset-fragment",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-1.png?phase=5D#asset-fragment",
+        "loaded": true,
+        "width": 642,
+        "height": 165
+      },
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png?phase=5D#asset-fragment",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-1-number-2.png?phase=5D#asset-fragment",
+        "loaded": true,
+        "width": 320,
+        "height": 708
+      },
+      {
+        "input": "https://bdenckla.github.io/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png?phase=5D#asset-fragment",
+        "actual": "https://bdenckla.github.io/MAM-basics/MAM-OSIS/png/par-petu%E1%B8%A5ah-type-2.png?phase=5D#asset-fragment",
+        "loaded": true,
+        "width": 606,
+        "height": 158
+      }
+    ],
+    "optional_stylesheet_navigation": {
+      "input": "https://bdenckla.github.io/MAM-OSIS/two_col_style.css?phase=5D#css-fragment",
+      "result": "Browser navigation wait timed out. Read-only DOM inspection showed the complete custom-404 script at the legacy URL; no target navigation result was available. This attempt is not used as browser redirect proof. Separate source and target HTTP checks verified the custom-404 body and exact target CSS bytes."
+    }
+  },
+  "validations": [
+    {
+      "command": "py/main_test.py py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py -q",
+      "scope": "Permanent report and plan write-back staged before running",
+      "passed": 7,
+      "seconds": 12.02
+    },
+    {
+      "command": "py/main_test.py",
+      "passed": 989,
+      "skipped": 5,
+      "seconds": 93.9,
+      "subtest_total_printed": false
+    },
+    {
+      "command": "py/main_test.py py/tests/test_redirect_manifest.py py/tests/test_site_index_links.py py/tests/test_sibling_reach.py -q",
+      "passed": 15,
+      "seconds": 3.45
+    },
+    {
+      "command": "py/main_redirect_stubs.py check --repo MAM-OSIS",
+      "result": "1 stub and 404.html, all correct; checked preview and committed source tree"
+    },
+    {
+      "command": "-m black py/redirect_stubs/stubs.py py/author_site/site_data.py py/tests/test_sibling_reach.py",
+      "result": "3 files left unchanged"
+    },
+    {
+      "command": "-m ruff check py/redirect_stubs/stubs.py py/author_site/site_data.py py/tests/test_sibling_reach.py",
+      "result": "All checks passed"
+    },
+    {
+      "command": "git diff --check; git diff --cached --check",
+      "result": "Both repositories passed; commands executed separately"
+    }
+  ],
+  "unchanged_boundaries": [
+    "MAM-OSIS product and published target blobs",
+    "Land manifest",
+    "all-repos.code-workspace",
+    "MAM-basics.code-workspace",
+    "in/repo_maintenance_policy.json",
+    "source non-published product files, README and Pages workflow"
+  ],
+  "citations": [
+    {
+      "repo": "hbofonts",
+      "hits": 0
+    },
+    {
+      "repo": "MAM-basics",
+      "hits": 2
+    },
+    {
+      "repo": "MAM-OSIS",
+      "hits": 2
+    },
+    {
+      "repo": "MAM-private",
+      "hits": 0
+    },
+    {
+      "repo": "phonetic-hbo",
+      "hits": 0
+    },
+    {
+      "repo": "Taamey_D",
+      "hits": 0
+    }
+  ],
+  "citation_disposition": "No additional operational citation needs repointing. MAM-basics has only the dated programme source URL record; MAM-OSIS README and mapm.conf retain source URLs until 5E. The new redirect manifest describes the legacy URL deliberately."
+}

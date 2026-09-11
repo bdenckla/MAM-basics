@@ -6,26 +6,29 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc are landed products under
-this repository, so their paths chain directly from ``repo_root()``. Cross-repo
-dependencies such as MAM-OSIS and MAM-private, and temporary redirect-host clones,
-are by default looked up as siblings of this repo
-under a common parent directory.  That convention breaks when the repo is checked out
-somewhere the siblings are not co-located -- most notably a git worktree, whose root is
-nested under ``.../.claude/worktrees/`` rather than next to the sibling repos.  This was
-not hypothetical: until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics
-worktree resolved to ``.claude/worktrees/MAM-parsed``, a directory that has never existed.
+MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are landed products
+under this repository, so their paths chain directly from ``repo_root()``. Cross-repo
+dependencies such as MAM-private, and temporary redirect-host clones, are by default
+looked up as siblings of this checkout's HOME CLONE, under a common parent directory.
+The home clone is the checkout itself in an ordinary clone, and in a git worktree the
+clone the worktree was made from.  Until 2026-09-10 the default was
+``repo_root().parent``, which breaks in exactly that worktree case, the worktree's root
+being nested under ``.../.claude/worktrees/`` rather than next to the sibling repos:
+until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics worktree resolved to
+``.claude/worktrees/MAM-parsed``, a directory that has never existed, and from then
+until 2026-09-10 a worktree run had to export ``REPOS_ROOT``.
 
-To make sibling lookups overridable without changing default behavior, two kinds
-of environment variable are honored, resolved per dependency in this order:
+Resolution, per dependency, in this order:
 
   1. per-repo ``REPO_<NAME>_DIR`` (NAME = the sibling dir name uppercased with
      each run of non-alphanumeric characters replaced by ``_``); else
   2. ``REPOS_ROOT`` joined with the sibling name; else
-  3. ``repo_root().parent`` joined with the sibling name (the historical default).
+  3. the home clone's parent joined with the sibling name -- ``repo_root().parent`` in
+     an ordinary clone, the historical default, and in a worktree the directory holding
+     the clone it was made from (Ben's decision, 2026-09-10; see ``repos_root``).
 
-With no environment variables set, resolution is byte-identical to the previous
-``repo_root().parent / <name>`` behavior.
+With no environment variables set, resolution in an ordinary clone is byte-identical to
+the historical ``repo_root().parent / <name>``.
 
 The override chain and ``require_sibling`` came from wlc-utils' ``repo_paths.py``,
 which was written to fix exactly this and had it working while the module every
@@ -116,14 +119,25 @@ def scans_dir() -> Path:
 def repos_root() -> Path:
     """Base directory under which sibling repos are looked up.
 
-    ``REPOS_ROOT`` if set, else ``repo_root().parent`` -- historically the GitRepos/
-    directory holding the sibling MAM-* repos, which is still what it resolves to when
-    nothing is set and the checkout is not a worktree.
+    ``REPOS_ROOT`` if set; otherwise the parent of this checkout's home clone.  In an
+    ordinary clone that is ``repo_root().parent``, the GitRepos/ directory holding the
+    sibling repos.  In a linked worktree it is the parent of the clone the worktree was
+    made from, read from git's own files by ``provenance.home_clone_dir`` rather than
+    inferred from the path, so a worktree under ``.claude/worktrees/`` or
+    ``~/.codex/worktrees/`` resolves the same way.
+
+    THE WORKTREE CASE NEEDS NO VARIABLE.  Ben's decision, 2026-09-10, made when the
+    post-stress-meteg survey joined the mega: a worktree run finds MAM-private beside the
+    worktree's home clone, so that "it doesn't rely on the program being run with
+    REPOS_ROOT set".  Where the home clone cannot be read -- a submodule, a bare
+    repository's worktree, a tree with no ``.git`` -- this falls back to
+    ``repo_root().parent``.
     """
     override = os.environ.get("REPOS_ROOT")
     if override:
         return Path(override)
-    return repo_root().parent
+    home = provenance.home_clone_dir(repo_root())
+    return (home if home is not None else repo_root()).parent
 
 
 def _env_name(name: str) -> str:
@@ -286,6 +300,19 @@ def require_mam_parsed_plus_dir() -> Path:
     return path
 
 
+def mam_parsed_google_dir() -> Path:
+    """MAM-parsed's ``google`` subtree: Google-derived plain-schema JSON."""
+    return mam_parsed_dir() / "google"
+
+
+def require_mam_parsed_google_dir() -> Path:
+    """``mam_parsed_google_dir()``, checked before a Google-product read."""
+    path = mam_parsed_google_dir()
+    if not path.is_dir():
+        raise FileNotFoundError(f"MAM-parsed's landed Google JSON is absent: {path}")
+    return path
+
+
 def al_hatorah_phonetic_dir() -> Path:
     """al-hatorah's ``io/a01-phonetic-std-set``: Phonetic MAM, one JSON per book.
 
@@ -293,6 +320,41 @@ def al_hatorah_phonetic_dir() -> Path:
     syllable, which is what makes this an independent oracle for ``accgram.final_stress``.  The
     engine behind it is al-hatorah's ``py/aht_phon``, which cannot be imported here -- issue wlc-utils#48
     calls consuming these outputs its second path, and this is that path.
+
+    READ ``rep`` FOR MAM'S SPELLING OF A CHANTED WORD, NOT ``fva``.  A record's ``fva`` is
+    three space-separated forms -- full, vowels-only, accents-only -- and the full one has
+    Phonetic MAM's annotations on it, which MAM's text does not have.  An annotation is a
+    second Unicode mark after the point it is about: U+05AF MASORA CIRCLE after U+05B0 SHEVA
+    says the sheva is vocal, and U+05C4 UPPER DOT after U+05BC DAGESH says the dagesh is
+    xazaq.  ``rep``, where a record has one, is two space-separated forms whose first is
+    exactly that full form with those marks removed -- so MAM's Hebrew is already in the
+    record and needs no stripping.  Measured 2026-09-09 across all 39 books, 263,320 records:
+    a record has a non-null ``rep`` exactly when its ``fva`` full form is annotated (122,555
+    either way), and no record contradicts either half.  A session that read ``fva`` and took
+    an upper dot for an extraordinary point is why this paragraph is here.
+
+    DO NOT PASTE A FORM OUT OF THIS DATA -- lift it.  These files are in al-hatorah's mark
+    order, not NFC: the carrier mark sits immediately after the point it annotates, and
+    NFC's canonical ordering moves whatever else is on that letter in between the two, which
+    silently breaks every match on the pair.  So a form quoted into prose, an issue body or a
+    code literal must come from the data unnormalized.  Copying through anything that
+    normalizes is how two of these marks reached a published page in September 2026.
+
+    PHONETIC MAM CANNOT REPRESENT AN EXTRAORDINARY POINT, which matters to any join against
+    this data.  ``aht_read_handlers_cmn.phon_s_han_for_str`` deletes every U+05C4 the AHT
+    source has before the annotation is applied, precisely so that from there on an upper dot
+    means a xazaq dagesh and nothing else -- 98 of them, at the 15 classical loci.  So
+    Phonetic MAM's Hebrew differs from MAM's at those sites, and a chanted word with a genuine
+    extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg``'s
+    ``_settle`` already handles that case with a second test.  al-hatorah's
+    ``io/a01-phonetic-std-set/README.md`` is the fuller statement of all three paragraphs.
+
+    A CODE PATH CALLS THIS EVERY TIME IT RUNS, OR NEVER.  Ben's rule, 2026-09-10, stated in
+    CLAUDE.md's section of that name: a path that finds it needs something from MAM-private
+    fails loudly instead of reaching for it.  A survey builder that needs Phonetic MAM's data
+    calls this unconditionally; a renderer working from a tracked survey never calls it.  The
+    post-stress-meteg renderer broke the rule until 2026-09-10: a displayed record with no MAM
+    form made it look up a spelling here, under ``--trust-surveys`` as well.
 
     A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
     private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``

@@ -347,7 +347,7 @@ def main(refresh_live_inputs: bool = True) -> None:
         "",
         "## Intentionally non-vendored",
         "",
-        "These Python files live outside MAM-basics and are intentionally maintained in their destination repos.",
+        "These Python files are intentionally maintained at the listed paths rather than copied from the vendoring source.",
         "",
         "| repo | path | notes |",
         "|---|---|---|",

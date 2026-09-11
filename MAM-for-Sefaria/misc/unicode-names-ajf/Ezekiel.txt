@@ -34638,4 +34638,3 @@ SPACE
 m,i,y,·,(tip),v,o,m.
 SPACE
 y,:,h,o,v,a,(mer),h,|,|,$,·sh,a,(mos),m,·,a,h,(sopa)
-

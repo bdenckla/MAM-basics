@@ -16,9 +16,10 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 - [`MAM-simple/`](MAM-simple/) — XML and JSON MAM exports in three versifications
 - [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV MAM export suitable for Sefaria import; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
 - [`MAM-with-doc/`](MAM-with-doc/README.md) — MAM's HTML edition with documentation notes; its [published edition](https://bdenckla.github.io/MAM-basics/MAM-with-doc/) is in the site tree
+- [`MAM-OSIS/`](MAM-OSIS/README.md) — OSIS MAM exports for conversion to SWORD format, with configuration and documentation
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data and photographed-page records
 - [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data and source scans
-- [`leningrad/`](leningrad/) — Leningrad Codex index data and page-image evidence
+- [`leningrad/`](leningrad/) — Leningrad Codex page-image evidence
 - [`book-of-job/`](book-of-job/) — data and reading procedures for the BHQ Job review
 - [`holman/`](holman/) — data and rendered reports from Daniel Holman's three review/correction bodies
 - [`uxlc/`](uxlc/) — UXLC data and documentation for the planned CLC edition
@@ -33,14 +34,13 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 ### Downloading
 
 - `main_download.py fr-google` — from Google Sheets
-- `main_download.py fr-sefaria` — from Sefaria
 - `main_download.py fr-wikisource` — the MAM books, from Hebrew Wikisource
 - `main_download.py fr-ws-intro` — the MAM introduction's thirteen pages, from Hebrew Wikisource, mirrored as verbatim wikitext in `in/mam-ws-intro/`
 
 ### Parsing
 
-- `main_parse.py go` — parses downloaded Google Sheets data into structured form
-- `main_parse.py ws` — parses downloaded Wikisource data into structured form
+- `main_parse.py go` — parses downloaded Google Sheets data into the independent comparison product
+- `main_parse.py ws` — parses downloaded Wikisource data into format 2 and the production plain/plus products
 
 ### Diffing and comparison
 
@@ -64,7 +64,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 ### Utilities
 
-- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes the ten deploy-root pages: `gh-pages/index.html`, `gh-pages/unicode-proposals.html`, and the eight `gh-pages/post-stress-meteg*.html` pages
+- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes the eleven deploy-root pages: `gh-pages/index.html`, `gh-pages/unicode-proposals.html`, and the nine `gh-pages/post-stress-meteg*.html` pages
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 - `main_repo_maintenance.py` — routine repo maintenance: clean `.novc/`, run `main_test.py`, run `main_0_mega.py`
 

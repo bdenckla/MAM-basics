@@ -1,5 +1,7 @@
 # Merge `main` into `post-stress-meteg`, then integrate and push
 
+State: executed 2026-09-08; merge 825cef66; retained as a review record.
+
 Written 2026-09-08 for a fresh session. The branch is finished; only its integration remains,
 and that integration is a real two-way merge rather than a closing step, because both sides
 rewrote the same generator after they diverged.
@@ -55,6 +57,11 @@ a deliberate exception to the `hebrew-prose` skill's "Never a loose 'word'" rule
 skill's own clause that plain "word" survives wherever context settles the sense — the main page's
 second paragraph defines both "word" and "atom" before any other sentence uses either.
 
+**Dated correction, 2026-09-10 (approved E6; recorded by Codex):** The main page defines
+both "word" and "atom" in its second expository paragraph; the opening sentence already
+uses "word". The historical paragraph above remains intact. Ben's plain-"word" exception
+is unchanged; the paragraph's before-any-use claim is the corrected point.
+
 `main`'s review-remediation Waves 2 and 5 went the other way and introduced "chanted word" into
 these pages, 440 times across the eight pages `main` has. **That part of `main`'s work is reversed
 for these nine pages and for nothing else.**
@@ -85,6 +92,9 @@ for these nine pages and for nothing else.**
    quote. Do not touch `author.std_anchor`: it hardcodes period-inside quoting, this generator
    does not use it, and other pages do.
 
+   **Clarification, 2026-09-09 (finding 16 / N8):** The recorded problem was a change
+   between straight and curly quotation marks; the record does not establish the direction.
+
 ## Preconditions — re-measure each, and treat a mismatch as a finding
 
 | Fact | Command |
@@ -95,6 +105,14 @@ for these nine pages and for nothing else.**
 | suite on the branch: 978 passed, 5 skipped | `py/main_test.py` |
 | "chanted" in the branch's nine pages: 0 | `grep -c chanted gh-pages/post-stress-meteg*.html` |
 | "chanted" in `main`'s eight pages: 440 | same, against `git show main:...` |
+
+**Correction, 2026-09-09 (finding 7.1):** the eight MAS HTML blobs at `15ec6f4d`
+contain 440 case-sensitive occurrences of `chanted` on 381 matching lines, remeasured
+from all eight blobs. `grep -c` counts matching lines; it does not establish the
+occurrence total in the table. Re-establish both totals by summing `text.count("chanted")`
+and, separately, the number of lines containing `chanted` across those fixed blobs.
+The earlier census correction at the top of this plan already records the merge's
+changed survey figures; that correction remains intact.
 
 **`main` is actively moving, so a HIGHER count on the `main` side is expected rather than a
 finding.** It advanced twice on 2026-09-08 while this plan was being written, from `1a489a6e` to
@@ -133,6 +151,13 @@ The eighth and ninth pages, `post-stress-meteg-next-conjunctive.html` (from `391
   `py/author_site/site_data.py` (2), `py/main_authored.py` (3),
   `doc/post-stress-meteg-method.md` (1). `CLAUDE.md` may also conflict, the branch having added
   its plain-"word" section in `a3e3f6eb`; keep both sides' sections.
+
+**Record, 2026-09-09 (finding 17a):** the 13 conflicted files and 32 author-module
+hunks above already give the corrected counts. The September 8 review's read-only
+merge calculation and Codex's reconciliation independently established those counts
+for the parents of `825cef66`. The merge message's "36 hunks" is an immutable
+historical error; this note records the correction without amending that message
+or repeating the historical merge in a checkout.
 
 **The hazard is a file that does NOT conflict.** `py/accgram/post_stress_meteg.py` auto-merges,
 and both sides changed it: the branch's `97a1b46f` added `FIT_TYPE_2_AF`/`FIT_TYPE_2_BF` and the
@@ -184,6 +209,20 @@ Seven commits past `c73a2ad3`: `97a1b46f` (the 2Af/2Bf fit model), `39133db0` (t
 five from 2026-09-08 — the 38-item grammar and spelling pass, the Methods table's structural
 subtype, the derived references and four follow-ups, the predictor paragraph closing the Fit for
 MAS section, and the plain-"word" lint. Each commit message states its own decisions and evidence.
+
+**Clarification, 2026-09-09 (finding 16 / N8):** The seven non-merge commits from
+`c73a2ad3` to `a3e3f6eb` were:
+
+1. `97a1b46f`: type-2 Fit-for-MAS criteria.
+2. `39133db0`: next-conjunctive page.
+3. `fe4e602f`: grammar and spelling.
+4. `c5b170ad`: Methods structural subtype.
+5. `d7049855`: derived references and Ben's follow-ups.
+6. `0afbae68`: Fit-for-MAS predictor paragraph.
+7. `a3e3f6eb`: plain-word lint.
+
+Re-established with `git log --reverse --no-merges --format='%h %s' c73a2ad3..a3e3f6eb`.
+The original paragraph remains as the dated branch record.
 
 **The branch's rendered pages at `a3e3f6eb` are the specification for this merge's prose.** The
 merge does not need to re-derive those decisions; it needs to keep those nine pages' wording

@@ -303,18 +303,3 @@ def run(args) -> None:
         f"{s['transcription_chanted_verses']} chanted verses, "
         f"{s['transcription_departures']} departing from Wikisource -> {out_path}"
     )
-
-
-def main() -> None:
-    import argparse
-
-    from wlc_cmn.utf8_io import force_utf8_io
-
-    force_utf8_io()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=paths.repo_root())
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

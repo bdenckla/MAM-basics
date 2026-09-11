@@ -14,8 +14,8 @@ clipboard/browser/chat pipeline.  This script:
 7. Writes the result back to the original file.
 
 Usage:
-    python py_ac_loc/merge_line_markers.py 270v
-    python py_ac_loc/merge_line_markers.py 270v .novc/edited_270v.json
+    .venv/Scripts/python.exe py/main_ac_merge_line_markers.py 270v
+    .venv/Scripts/python.exe py/main_ac_merge_line_markers.py 270v .novc/edited_270v.json
 """
 
 import json
@@ -183,7 +183,10 @@ def merge(orig_stream, edited_stream):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python py_ac_loc/merge_line_markers.py <page_id> [edited.json]")
+        print(
+            "Usage: .venv/Scripts/python.exe py/main_ac_merge_line_markers.py"
+            " <page_id> [edited.json]"
+        )
         sys.exit(1)
 
     page_id = sys.argv[1]
@@ -221,7 +224,3 @@ def main():
     line_ends = sum(1 for x in merged if isinstance(x, dict) and "line-end" in x)
     print(f"Wrote {orig_path}")
     print(f"  {line_starts} line-start markers, {line_ends} line-end markers")
-
-
-if __name__ == "__main__":
-    main()

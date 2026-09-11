@@ -5716,4 +5716,3 @@ SPACE
 α,i,m.,-,θ,(tip),v,o,b
 SPACE
 v,:,α,i,m.,-,r,a,(mos),3,(sopa)
-

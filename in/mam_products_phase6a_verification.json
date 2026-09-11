@@ -1,0 +1,1821 @@
+{
+  "schema_version": 1,
+  "measured_utc": "2026-09-10T16:39:51.709089+00:00",
+  "task_id": "01a08c21-6520-7493-b9a5-8ec6ee5abf5f",
+  "task_cwd": "C:/Users/BenDe/GitRepos",
+  "target_root": "C:/Users/BenDe/GitRepos/MAM-basics",
+  "starting_commit": "9ea4e39abf6ceae3e52f0cb37a3ba4abf470b05f",
+  "starting_branch": "main",
+  "starting_clean": true,
+  "starting_head_tracking_and_live_remote_equal": true,
+  "baseline_file": "in/mam_products_phase6_baseline.json",
+  "baseline_sha256": "eca97d25d9da5350d0277e5bcc6a8b343efef38f95e720a39de89d744e85872c",
+  "canonical_suite": {
+    "command": [
+      "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+      "py/main_test.py"
+    ],
+    "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+    "started_utc": "2026-09-10T16:25:56.975919+00:00",
+    "elapsed_seconds": 118.74,
+    "exit_code": 0,
+    "summary": [
+      "py\\tests\\test_ws_bot_kq_triv_add_type.py .......                         [ 96%]",
+      "py\\tests\\test_ws_bot_kq_triv_rename_extra_alef_sug.py ..                 [ 96%]",
+      "py\\tests\\test_ws_bot_kuk_special_callsite_migration.py .....             [ 97%]",
+      "py\\tests\\test_ws_bot_real_diff_links.py .........                        [ 98%]",
+      "py\\tests\\test_ws_bot_sigil_b2_to_t451.py .............                   [ 99%]",
+      "py\\tests\\test_ws_urls_encoding.py ...                                    [100%]",
+      "",
+      "================= 989 passed, 5 skipped in 117.70s (0:01:57) =================="
+    ],
+    "log": "C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase6a_suite_20260910.log",
+    "log_sha256": "0be120e6acfd27fb534e4303887e3b87e73057a2d5e53799ce261575e0ba426c",
+    "reported_result": {
+      "passed": 989,
+      "skipped": 5,
+      "seconds": 117.7,
+      "subtest_total_printed": false
+    },
+    "baseline_count_match": true
+  },
+  "host_preflight": {
+    "checked_utc": "2026-09-10T16:27:36.219602+00:00",
+    "commands": [
+      "gh api repos/bdenckla/<repo>",
+      "gh api repos/bdenckla/<repo>/branches/main",
+      "gh api repos/bdenckla/<repo>/git/trees/<head>?recursive=1",
+      "gh api repos/bdenckla/<repo>/actions/workflows",
+      "gh api repos/bdenckla/<repo>/actions/runs?head_sha=<head>&per_page=20",
+      "gh api repos/bdenckla/<repo>/git/blobs/<blob>",
+      "HTTP GET https://bdenckla.github.io/<repo>/index.html"
+    ],
+    "hosts": [
+      {
+        "repo": "MAM-simple",
+        "head": "376912a758443bb0c015bd77dfca5bef3e97f9c9",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/static.yml",
+        "workflows": [
+          {
+            "id": 308118100,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/static.yml",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34276914395,
+          "html_url": "https://github.com/bdenckla/MAM-simple/actions/runs/34276914395",
+          "head_sha": "376912a758443bb0c015bd77dfca5bef3e97f9c9",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/static.yml",
+          "created_at": "2026-09-08T20:48:08Z",
+          "updated_at": "2026-09-08T20:48:30Z"
+        },
+        "source_path": "C:/Users/BenDe/GitRepos/MAM-simple",
+        "source_absent": true,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "524eedcdab934ce2e95511a935c004e0e85cdba8",
+            "size": 944,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/524eedcdab934ce2e95511a935c004e0e85cdba8"
+          },
+          {
+            "path": ".github/workflows/static.yml",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "55e835bac2c6ec3e3dd730a034d313c4f1efb397",
+            "size": 910,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/55e835bac2c6ec3e3dd730a034d313c4f1efb397"
+          },
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "11049d623e565278aa3401410479b551b3e4b34f",
+            "size": 37,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/11049d623e565278aa3401410479b551b3e4b34f"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "66cda9226408f7f7edadbf58c7dd1a8fb397322b",
+            "size": 712,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/66cda9226408f7f7edadbf58c7dd1a8fb397322b"
+          },
+          {
+            "path": "gh-pages/404.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "1db33b9d3c92692da60b4316f5ae2d1b2646db6a",
+            "size": 651,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/1db33b9d3c92692da60b4316f5ae2d1b2646db6a"
+          },
+          {
+            "path": "gh-pages/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "018605dec805951361d6de30c704d96570082b9e",
+            "size": 723,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/018605dec805951361d6de30c704d96570082b9e"
+          },
+          {
+            "path": "gh-pages/versification-and-cantillation.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "08c04ac52bc7fa149a869dda77bf03589f034505",
+            "size": 873,
+            "url": "https://api.github.com/repos/bdenckla/MAM-simple/git/blobs/08c04ac52bc7fa149a869dda77bf03589f034505"
+          }
+        ],
+        "readme": "# MAM-simple\n\nOn 2026-09-06, MAM-simple became a product tree in\n[MAM-basics](https://github.com/bdenckla/MAM-basics/tree/main/MAM-simple).\nThe MAM-simple data, documentation, example programs, and generated example\noutput are maintained there.\n\nRead the product from the\n[MAM-basics MAM-simple source tree](https://github.com/bdenckla/MAM-basics/tree/main/MAM-simple)\nor its [published MAM-simple pages](https://bdenckla.github.io/MAM-basics/MAM-simple/).\n\nThis repository remains only as a redirect host for legacy GitHub Pages URLs.\nIts `gh-pages/index.html`, `gh-pages/versification-and-cantillation.html`, and\n`gh-pages/404.html` are generated redirect stubs. Do not add product content to\nthis repository.\n",
+        "workflow_text": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v7\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v6\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v5\n        with:\n          # Serve only the gh-pages/ dir (matches the MAM-with-doc convention), so\n          # generated pages get root-level URLs, e.g.\n          # https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html\n          path: gh-pages\n\n      - name: Deploy\n        id: deployment\n        uses: actions/deploy-pages@v5\n",
+        "root_http": {
+          "url": "https://bdenckla.github.io/MAM-simple/index.html",
+          "status": 200,
+          "bytes": 723,
+          "sha256": "e1a72ab56b528844ec9b8e8fc0a4a974caf4baff9c354510526742ce6fad84e6",
+          "matches_remote_blob": true,
+          "has_target_url": true
+        },
+        "direct_product_tree_readme_link": true,
+        "frozen_legacy_html_count": 2,
+        "source_blob_totals": {
+          "files": 7,
+          "bytes": 4850
+        },
+        "exact_breadcrumb_tree_verified": true
+      },
+      {
+        "repo": "MAM-for-Sefaria",
+        "head": "cf23b478f801ca586d227693db9133da54d87f30",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/pages.yml",
+        "workflows": [
+          {
+            "id": 259218406,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/pages.yml",
+            "state": "active"
+          },
+          {
+            "id": 78412340,
+            "name": "pages-build-deployment",
+            "path": "dynamic/pages/pages-build-deployment",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34049004202,
+          "html_url": "https://github.com/bdenckla/MAM-for-Sefaria/actions/runs/34049004202",
+          "head_sha": "cf23b478f801ca586d227693db9133da54d87f30",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/pages.yml",
+          "created_at": "2026-09-06T17:34:06Z",
+          "updated_at": "2026-09-06T17:34:21Z"
+        },
+        "source_path": "C:/Users/BenDe/GitRepos/MAM-for-Sefaria",
+        "source_absent": true,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "9300fa1efe2762c872cb5feaefe4dccd89be3572",
+            "size": 597,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/9300fa1efe2762c872cb5feaefe4dccd89be3572"
+          },
+          {
+            "path": ".github/workflows/pages.yml",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eb491d4fcd1fa251e445faad4e01e828137602f2",
+            "size": 686,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/eb491d4fcd1fa251e445faad4e01e828137602f2"
+          },
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "23c52b5a79bff83ef58ffcb4d5c580574df4abca",
+            "size": 63,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/23c52b5a79bff83ef58ffcb4d5c580574df4abca"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "ea3bfbc3908863e1a5dc530f5d22ba16b569d0bd",
+            "size": 949,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/ea3bfbc3908863e1a5dc530f5d22ba16b569d0bd"
+          },
+          {
+            "path": "gh-pages/404.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c4ec807a338d0398894eca03ba5a2186c8e070c8",
+            "size": 671,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/c4ec807a338d0398894eca03ba5a2186c8e070c8"
+          },
+          {
+            "path": "gh-pages/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "5734c1f2322b78800e54dce339c141b1de085b73",
+            "size": 748,
+            "url": "https://api.github.com/repos/bdenckla/MAM-for-Sefaria/git/blobs/5734c1f2322b78800e54dce339c141b1de085b73"
+          }
+        ],
+        "readme": "# MAM-for-Sefaria\n\nThis repository is a GitHub Pages redirect host. On 2026-09-06, the\nMAM-for-Sefaria product moved into MAM-basics:\n\n* [MAM-for-Sefaria product data and documentation](https://github.com/bdenckla/MAM-basics/tree/main/MAM-for-Sefaria)\n* [Published documentation of the MAM-for-Sefaria encoding](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/)\n\nThe product remains an extract of MAM (Miqra According to the Masorah) suitable\nfor Sefaria import. Its source is the\n[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745).\n\nThe legacy published URL,\nhttps://bdenckla.github.io/MAM-for-Sefaria/, redirects to the published\nMAM-basics documentation. The redirect preserves cited HTML pages; it does not\npreserve raw-data URLs or establish that any Sefaria client fetches this\nrepository automatically.\n\nThe repository retains its history and the redirect because citations may still\nrefer to the legacy published URL.\n",
+        "workflow_text": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v7\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v6\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v5\n        with:\n          path: gh-pages\n\n      - name: Deploy\n        id: deployment\n        uses: actions/deploy-pages@v5",
+        "root_http": {
+          "url": "https://bdenckla.github.io/MAM-for-Sefaria/index.html",
+          "status": 200,
+          "bytes": 748,
+          "sha256": "a2765cde44b71b9fd504da4b1c96e200ead363157e4675412eb367cdf668c071",
+          "matches_remote_blob": true,
+          "has_target_url": true
+        },
+        "direct_product_tree_readme_link": true,
+        "frozen_legacy_html_count": 1,
+        "source_blob_totals": {
+          "files": 6,
+          "bytes": 3714
+        },
+        "exact_breadcrumb_tree_verified": true
+      },
+      {
+        "repo": "MAM-parsed",
+        "head": "c9e04c496920b1c423069dfbc4b31078efa0b0a0",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/pages.yml",
+        "workflows": [
+          {
+            "id": 259218512,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/pages.yml",
+            "state": "active"
+          },
+          {
+            "id": 244277269,
+            "name": "pages-build-deployment",
+            "path": "dynamic/pages/pages-build-deployment",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34055284061,
+          "html_url": "https://github.com/bdenckla/MAM-parsed/actions/runs/34055284061",
+          "head_sha": "c9e04c496920b1c423069dfbc4b31078efa0b0a0",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/pages.yml",
+          "created_at": "2026-09-06T19:33:51Z",
+          "updated_at": "2026-09-06T19:34:12Z"
+        },
+        "source_path": "C:/Users/BenDe/GitRepos/MAM-parsed",
+        "source_absent": true,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "75c989b998492d673f8de67b074484e4a632a753",
+            "size": 120,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/75c989b998492d673f8de67b074484e4a632a753"
+          },
+          {
+            "path": ".github/workflows/pages.yml",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eb491d4fcd1fa251e445faad4e01e828137602f2",
+            "size": 686,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/eb491d4fcd1fa251e445faad4e01e828137602f2"
+          },
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "5f757f76727601f5c4cccb534173d380610b4bbf",
+            "size": 48,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/5f757f76727601f5c4cccb534173d380610b4bbf"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "73c2943604f009b2354d88dca6dec7dbb0356c70",
+            "size": 880,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/73c2943604f009b2354d88dca6dec7dbb0356c70"
+          },
+          {
+            "path": "gh-pages/404.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "74f8a25e9d0936e4567d456f4a01a360a444064f",
+            "size": 651,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/74f8a25e9d0936e4567d456f4a01a360a444064f"
+          },
+          {
+            "path": "gh-pages/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8fd6bfdb977ec74dbfad5e1710b9fa15b36c435d",
+            "size": 723,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/8fd6bfdb977ec74dbfad5e1710b9fa15b36c435d"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "70821afc7a0e7bd23f8d629240f979355cbb4793",
+            "size": 801,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/70821afc7a0e7bd23f8d629240f979355cbb4793"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_docnote.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "dea3bbe7479122feca855256e2f20cb1096aec59",
+            "size": 849,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/dea3bbe7479122feca855256e2f20cb1096aec59"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_dualcant.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6e71518bd1f232425c5b289602c45079ec6fd4ab",
+            "size": 855,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/6e71518bd1f232425c5b289602c45079ec6fd4ab"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_good_ending_tmpl.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "df009a6c807a4260eb400a725dadf36e852a8fa6",
+            "size": 903,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/df009a6c807a4260eb400a725dadf36e852a8fa6"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_kq_am2.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "15d9f6fd17ea8ca0b66e910d2665d609327297db",
+            "size": 843,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/15d9f6fd17ea8ca0b66e910d2665d609327297db"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_kq_special.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "804c384891465efa3b8e60b3a33f6bdb3039ff1a",
+            "size": 867,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/804c384891465efa3b8e60b3a33f6bdb3039ff1a"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_multimark.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "bdc0da84b4c83065d12699bfcd0d4ac9070dab99",
+            "size": 861,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/bdc0da84b4c83065d12699bfcd0d4ac9070dab99"
+          },
+          {
+            "path": "gh-pages/plain/html/mpplain_poetic_spacing.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2cd1d009aa2ef645250a1ad2f8f4f0cdf20c17cd",
+            "size": 891,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/2cd1d009aa2ef645250a1ad2f8f4f0cdf20c17cd"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus-template-call-graphs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "3df4f9dc36cbceafc402ea642e555effa356e135",
+            "size": 915,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/3df4f9dc36cbceafc402ea642e555effa356e135"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "d26d9e48a2256951f58ed96a23e90a183135a27c",
+            "size": 789,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/d26d9e48a2256951f58ed96a23e90a183135a27c"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_aot.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7937c5098ace6c1b164240386d98014b0f894b9b",
+            "size": 813,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/7937c5098ace6c1b164240386d98014b0f894b9b"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_diff_from_plain.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6233ac8bc4d14ca80fe61ec6d3450fc87ab17ca5",
+            "size": 885,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/6233ac8bc4d14ca80fe61ec6d3450fc87ab17ca5"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_docnote.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b59ddef7c13b33dfa4bb5cb72fd50326b27c3617",
+            "size": 837,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/b59ddef7c13b33dfa4bb5cb72fd50326b27c3617"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_dualcant.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "9297c3447247ace1f339c0660607967f73070006",
+            "size": 843,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/9297c3447247ace1f339c0660607967f73070006"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_good_ending_plus_field.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6e27cf2af0ffade4fced22df4538c47d04251880",
+            "size": 927,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/6e27cf2af0ffade4fced22df4538c47d04251880"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_good_ending_tmpl.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "d37084fa687a3216cc7e1f32e93c474159ce1646",
+            "size": 891,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/d37084fa687a3216cc7e1f32e93c474159ce1646"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_haarah_2.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "08d1d2bc2b11fc18e5bf46afb2143f4b3b946ba0",
+            "size": 843,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/08d1d2bc2b11fc18e5bf46afb2143f4b3b946ba0"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_kq_am2.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "218514d8a6932c6adc76bdb9997d0be3faf9b061",
+            "size": 831,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/218514d8a6932c6adc76bdb9997d0be3faf9b061"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_kq_special.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "02ce0b4777613d618fe557fa75875419d97574b1",
+            "size": 855,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/02ce0b4777613d618fe557fa75875419d97574b1"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_plain_only_templates.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "23dccaca2468892fb8574e8f08f9f66edf259575",
+            "size": 915,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/23dccaca2468892fb8574e8f08f9f66edf259575"
+          },
+          {
+            "path": "gh-pages/plus/html/mpplus_poetic_spacing.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4bebdf320872d1d5c101363f2ce4cf1a5f177e1a",
+            "size": 879,
+            "url": "https://api.github.com/repos/bdenckla/MAM-parsed/git/blobs/4bebdf320872d1d5c101363f2ce4cf1a5f177e1a"
+          }
+        ],
+        "readme": "# MAM-parsed has moved to MAM-basics\n\nOn 2026-09-06, the MAM-parsed product, documentation, and example program moved to [MAM-basics/MAM-parsed](https://github.com/bdenckla/MAM-basics/tree/main/MAM-parsed). The published pages are at [MAM-basics/MAM-parsed](https://bdenckla.github.io/MAM-basics/MAM-parsed/).\n\nThis repository remains a Pages redirect host. Current JSON data and the historical versions needed for ordinary change-log generation are maintained in MAM-basics. See the [product README](https://github.com/bdenckla/MAM-basics/blob/main/MAM-parsed/README.md) for usage and sparse-checkout instructions.\n\nThe Git history remains available for rare comparisons of arbitrary pre-migration revisions. That comparison mode requires read access to a sibling clone of this repository and explicit historical refs. Current data is no longer stored at this repository's HEAD.\n",
+        "workflow_text": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v7\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v6\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v5\n        with:\n          path: gh-pages\n\n      - name: Deploy\n        id: deployment\n        uses: actions/deploy-pages@v5",
+        "root_http": {
+          "url": "https://bdenckla.github.io/MAM-parsed/index.html",
+          "status": 200,
+          "bytes": 723,
+          "sha256": "62c41d0933c550488938525caab3dfb8b488f2f03433dba49731f792baa170e3",
+          "matches_remote_blob": true,
+          "has_target_url": true
+        },
+        "direct_product_tree_readme_link": true,
+        "frozen_legacy_html_count": 22,
+        "source_blob_totals": {
+          "files": 27,
+          "bytes": 21201
+        },
+        "exact_breadcrumb_tree_verified": true
+      },
+      {
+        "repo": "MAM-with-doc",
+        "head": "904c9fa178265dce6fec5704f5c0424fc94f6719",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/pages.yml",
+        "workflows": [
+          {
+            "id": 259218439,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/pages.yml",
+            "state": "active"
+          },
+          {
+            "id": 51090955,
+            "name": "pages-build-deployment",
+            "path": "dynamic/pages/pages-build-deployment",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34062108606,
+          "html_url": "https://github.com/bdenckla/MAM-with-doc/actions/runs/34062108606",
+          "head_sha": "904c9fa178265dce6fec5704f5c0424fc94f6719",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/pages.yml",
+          "created_at": "2026-09-06T21:47:21Z",
+          "updated_at": "2026-09-06T21:47:38Z"
+        },
+        "source_path": "C:/Users/BenDe/GitRepos/MAM-with-doc",
+        "source_absent": true,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "87b3a1bb23a5aa3fde20fbfb5f82c41844ebf637",
+            "size": 281,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/87b3a1bb23a5aa3fde20fbfb5f82c41844ebf637"
+          },
+          {
+            "path": ".github/workflows/pages.yml",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eb491d4fcd1fa251e445faad4e01e828137602f2",
+            "size": 686,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/eb491d4fcd1fa251e445faad4e01e828137602f2"
+          },
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "1aabc6bb9eaf623622ae8499af700993b329b736",
+            "size": 7,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/1aabc6bb9eaf623622ae8499af700993b329b736"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a9f04ff7149922181176b59bd40a36540ccd0ec5",
+            "size": 651,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a9f04ff7149922181176b59bd40a36540ccd0ec5"
+          },
+          {
+            "path": "gh-pages/404.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "cb73140fb27cffe87a57122820db543ce607c322",
+            "size": 659,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/cb73140fb27cffe87a57122820db543ce607c322"
+          },
+          {
+            "path": "gh-pages/A1-Genesis-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "cd5607858b21d944e99821ddf4319efd300453b9",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/cd5607858b21d944e99821ddf4319efd300453b9"
+          },
+          {
+            "path": "gh-pages/A1-Genesis.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "3e09f34db3024f07ada324b0abba6fe5a130f5df",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/3e09f34db3024f07ada324b0abba6fe5a130f5df"
+          },
+          {
+            "path": "gh-pages/A2-Exodus-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2e3ca83d4bc42e41dc3f1decc0bf72daa524889f",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2e3ca83d4bc42e41dc3f1decc0bf72daa524889f"
+          },
+          {
+            "path": "gh-pages/A2-Exodus.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "95c812117ca21467a2c69f3a726ba16de532d712",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/95c812117ca21467a2c69f3a726ba16de532d712"
+          },
+          {
+            "path": "gh-pages/A3-Levit-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "e9f8fc6cd313bc5e28cecacc10ac7327b55661a1",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/e9f8fc6cd313bc5e28cecacc10ac7327b55661a1"
+          },
+          {
+            "path": "gh-pages/A3-Levit.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "9174097648492564faf1fe6a8fe1eb46fe7be361",
+            "size": 751,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/9174097648492564faf1fe6a8fe1eb46fe7be361"
+          },
+          {
+            "path": "gh-pages/A4-Numbers-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6e1d92d5022c84865d21edcdadadaa6faee5dcae",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/6e1d92d5022c84865d21edcdadadaa6faee5dcae"
+          },
+          {
+            "path": "gh-pages/A4-Numbers.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c201c6a7345e0738fe659e913dcd0c9a3a428a20",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c201c6a7345e0738fe659e913dcd0c9a3a428a20"
+          },
+          {
+            "path": "gh-pages/A5-Deuter-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4b3fd89be3853a5f4022b2b3f48d254da6c4d86c",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4b3fd89be3853a5f4022b2b3f48d254da6c4d86c"
+          },
+          {
+            "path": "gh-pages/A5-Deuter.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "870338bdbf435da59cd7de03a3317a622bdb30bd",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/870338bdbf435da59cd7de03a3317a622bdb30bd"
+          },
+          {
+            "path": "gh-pages/B1-Joshua-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4522d1299bd42285a787c699028dd8159976b932",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4522d1299bd42285a787c699028dd8159976b932"
+          },
+          {
+            "path": "gh-pages/B1-Joshua.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c7cd674bb01d8788ba1998686122236006d8e391",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c7cd674bb01d8788ba1998686122236006d8e391"
+          },
+          {
+            "path": "gh-pages/B2-Judges.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2cf0d0803f34b9910d72b2d6d48d9ac44e484748",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2cf0d0803f34b9910d72b2d6d48d9ac44e484748"
+          },
+          {
+            "path": "gh-pages/BA-1Samuel.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7732be6669846bfefa3fe166ec9034b164792fb2",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/7732be6669846bfefa3fe166ec9034b164792fb2"
+          },
+          {
+            "path": "gh-pages/BB-2Samuel-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7896cd2c1cf9e142443dbc26de0e14bcb84661d0",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/7896cd2c1cf9e142443dbc26de0e14bcb84661d0"
+          },
+          {
+            "path": "gh-pages/BB-2Samuel.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2a24f4c83c607360a5455ecbe97e6d49129e3594",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2a24f4c83c607360a5455ecbe97e6d49129e3594"
+          },
+          {
+            "path": "gh-pages/BC-1Kings.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2034e815bd02dd72f6729770e0d6e3552dbfd65b",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2034e815bd02dd72f6729770e0d6e3552dbfd65b"
+          },
+          {
+            "path": "gh-pages/BD-2Kings-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c04dd0308045170683ac4d9fb6992b8b374ad0a8",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c04dd0308045170683ac4d9fb6992b8b374ad0a8"
+          },
+          {
+            "path": "gh-pages/BD-2Kings.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "0fa27e5ddab763ed0ae4c2304a5fac1ac3c61bed",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/0fa27e5ddab763ed0ae4c2304a5fac1ac3c61bed"
+          },
+          {
+            "path": "gh-pages/C1-Isaiah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "93dc6314ed33a14ffbf49b899adc67dc4351dfd2",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/93dc6314ed33a14ffbf49b899adc67dc4351dfd2"
+          },
+          {
+            "path": "gh-pages/C2-Jeremiah-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8e44cb1622634ed2354f89c5336d51609ab421c1",
+            "size": 817,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8e44cb1622634ed2354f89c5336d51609ab421c1"
+          },
+          {
+            "path": "gh-pages/C2-Jeremiah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6fb9c2470652f28161e27e612d87aa6e0e32f1c7",
+            "size": 769,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/6fb9c2470652f28161e27e612d87aa6e0e32f1c7"
+          },
+          {
+            "path": "gh-pages/C3-Ezekiel.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "31bfbed9a1c80305245347995320ceebab66cb2b",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/31bfbed9a1c80305245347995320ceebab66cb2b"
+          },
+          {
+            "path": "gh-pages/CA-Hosea.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7f20f0f52d089b4a1eb40c85d284238161cd5c8a",
+            "size": 751,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/7f20f0f52d089b4a1eb40c85d284238161cd5c8a"
+          },
+          {
+            "path": "gh-pages/CB-Joel.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b799536d174294566e7ce0cb8ee15ec9f95d325a",
+            "size": 745,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/b799536d174294566e7ce0cb8ee15ec9f95d325a"
+          },
+          {
+            "path": "gh-pages/CC-Amos.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "0e5910344cba58bd4bbb532cf4ec2bb8fe93bc9a",
+            "size": 745,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/0e5910344cba58bd4bbb532cf4ec2bb8fe93bc9a"
+          },
+          {
+            "path": "gh-pages/CD-Obadiah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "80a36d4ee6173eea161287abbe4b1dd59a9eb442",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/80a36d4ee6173eea161287abbe4b1dd59a9eb442"
+          },
+          {
+            "path": "gh-pages/CE-Jonah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "25afe184be68ad8497f5ab37392ccd78a5a29742",
+            "size": 751,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/25afe184be68ad8497f5ab37392ccd78a5a29742"
+          },
+          {
+            "path": "gh-pages/CF-Micah-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2a6156b2118dd297144753290253dcbc3a00804d",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2a6156b2118dd297144753290253dcbc3a00804d"
+          },
+          {
+            "path": "gh-pages/CF-Micah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "fbc7b442872460ef7030cb345926a3c31e5d0b7b",
+            "size": 751,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/fbc7b442872460ef7030cb345926a3c31e5d0b7b"
+          },
+          {
+            "path": "gh-pages/CG-Nahum.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b6ef07f055a2754594f63b67b4f2ed0e2a3be83c",
+            "size": 751,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/b6ef07f055a2754594f63b67b4f2ed0e2a3be83c"
+          },
+          {
+            "path": "gh-pages/CH-Habakkuk.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a85b19795923191652f96029786e02e338059fa5",
+            "size": 769,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a85b19795923191652f96029786e02e338059fa5"
+          },
+          {
+            "path": "gh-pages/CI-Tsefaniah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "476141f7ba7a7e2ab3ac577bc23758f9d70a1e7e",
+            "size": 775,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/476141f7ba7a7e2ab3ac577bc23758f9d70a1e7e"
+          },
+          {
+            "path": "gh-pages/CJ-Haggai.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "36bf997d8a1ab34b283bdac63cd464f1a7e97ce5",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/36bf997d8a1ab34b283bdac63cd464f1a7e97ce5"
+          },
+          {
+            "path": "gh-pages/CK-Zechariah-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "43df59c88b5ee5a4373a14eb9302920fe5a4dd1e",
+            "size": 823,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/43df59c88b5ee5a4373a14eb9302920fe5a4dd1e"
+          },
+          {
+            "path": "gh-pages/CK-Zechariah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4973a9cc5822f085734568d2600e401abe6630bd",
+            "size": 775,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4973a9cc5822f085734568d2600e401abe6630bd"
+          },
+          {
+            "path": "gh-pages/CL-Malachi-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "964a8c6ada09a665608680fef2866bcdf532759a",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/964a8c6ada09a665608680fef2866bcdf532759a"
+          },
+          {
+            "path": "gh-pages/CL-Malachi.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c2692b8d5055b400f4640ef4c68a3905c3327e41",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c2692b8d5055b400f4640ef4c68a3905c3327e41"
+          },
+          {
+            "path": "gh-pages/D1-Psalms-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "808962cdc6c1a7ead35e37e2c5ec6358468d7e0b",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/808962cdc6c1a7ead35e37e2c5ec6358468d7e0b"
+          },
+          {
+            "path": "gh-pages/D1-Psalms.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c693389c8e18dbb640372520affa1cf205d88ba9",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c693389c8e18dbb640372520affa1cf205d88ba9"
+          },
+          {
+            "path": "gh-pages/D2-Proverbs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "499b6cfcb6f97dea91a5371f81df805e748f129b",
+            "size": 769,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/499b6cfcb6f97dea91a5371f81df805e748f129b"
+          },
+          {
+            "path": "gh-pages/D3-Job-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "91eeded8c29571db6d93e1bbd7e1fdbe95c3b7c7",
+            "size": 787,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/91eeded8c29571db6d93e1bbd7e1fdbe95c3b7c7"
+          },
+          {
+            "path": "gh-pages/D3-Job.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "73256dad495f256a3076669fb761d7c878038d74",
+            "size": 739,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/73256dad495f256a3076669fb761d7c878038d74"
+          },
+          {
+            "path": "gh-pages/E1-Song of Songs-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c9483f5e59b0a5f39616049847a45f015230aa50",
+            "size": 867,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c9483f5e59b0a5f39616049847a45f015230aa50"
+          },
+          {
+            "path": "gh-pages/E1-Song of Songs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "44d20d3bfbd2cce7e74d782802271aa2f04331bf",
+            "size": 819,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/44d20d3bfbd2cce7e74d782802271aa2f04331bf"
+          },
+          {
+            "path": "gh-pages/E2-Ruth.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "82a21ae930f816dd22a2014c95fd4907d074c8d7",
+            "size": 745,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/82a21ae930f816dd22a2014c95fd4907d074c8d7"
+          },
+          {
+            "path": "gh-pages/E3-Lamentations-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "282ffd8f9bd9421b84853a35dccc9be2db790e80",
+            "size": 841,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/282ffd8f9bd9421b84853a35dccc9be2db790e80"
+          },
+          {
+            "path": "gh-pages/E3-Lamentations.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c0ae217fa6385c97dccb68c9c62a565ba8f3ec5c",
+            "size": 793,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c0ae217fa6385c97dccb68c9c62a565ba8f3ec5c"
+          },
+          {
+            "path": "gh-pages/E4-Ecclesiastes-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4273c8a4841d7a395f51d06117475659abb2e0ec",
+            "size": 841,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4273c8a4841d7a395f51d06117475659abb2e0ec"
+          },
+          {
+            "path": "gh-pages/E4-Ecclesiastes.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "55efffcbac153cad7999720d60ee5227498ed4e8",
+            "size": 793,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/55efffcbac153cad7999720d60ee5227498ed4e8"
+          },
+          {
+            "path": "gh-pages/E5-Esther-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "0c317c6edde58142b844b9fd261ddc088f113a75",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/0c317c6edde58142b844b9fd261ddc088f113a75"
+          },
+          {
+            "path": "gh-pages/E5-Esther.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "271c1d8223791c13f8b7535a8f9826e018ff0bed",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/271c1d8223791c13f8b7535a8f9826e018ff0bed"
+          },
+          {
+            "path": "gh-pages/F1-Daniel-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "3132a2d0c4ecc931bf58ea891da3f074e597dc0d",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/3132a2d0c4ecc931bf58ea891da3f074e597dc0d"
+          },
+          {
+            "path": "gh-pages/F1-Daniel.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "50d0141253ce9b17b23305a0a5f326aa518a98fc",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/50d0141253ce9b17b23305a0a5f326aa518a98fc"
+          },
+          {
+            "path": "gh-pages/FA-Ezra.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "326dae47704f0295a134e7ed2394819ba05043ec",
+            "size": 745,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/326dae47704f0295a134e7ed2394819ba05043ec"
+          },
+          {
+            "path": "gh-pages/FB-Nehemiah-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "26742cdf41227e48780d8ae80b1921fcfe0d0dc2",
+            "size": 817,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/26742cdf41227e48780d8ae80b1921fcfe0d0dc2"
+          },
+          {
+            "path": "gh-pages/FB-Nehemiah.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a1c6410c3ae210de7779e1e1e77879186812f237",
+            "size": 769,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a1c6410c3ae210de7779e1e1e77879186812f237"
+          },
+          {
+            "path": "gh-pages/FC-1Chronicles-big-doc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "77d33d20f8f89fa6bb670cf2ac493d607268d3bc",
+            "size": 835,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/77d33d20f8f89fa6bb670cf2ac493d607268d3bc"
+          },
+          {
+            "path": "gh-pages/FC-1Chronicles.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "802903c18348381ba76bde64de0515e537b5aebc",
+            "size": 787,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/802903c18348381ba76bde64de0515e537b5aebc"
+          },
+          {
+            "path": "gh-pages/FD-2Chronicles.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b1b68c884c34c50055db734e96b474e931a0dc8a",
+            "size": 787,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/b1b68c884c34c50055db734e96b474e931a0dc8a"
+          },
+          {
+            "path": "gh-pages/change-log/2025-03-19a.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eb11b7b9e73e60872ca5faa6a5cefb28df729408",
+            "size": 835,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/eb11b7b9e73e60872ca5faa6a5cefb28df729408"
+          },
+          {
+            "path": "gh-pages/change-log/2025-03-19b.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eece69a9ffc5930a49fc00d96ca67c257c126a13",
+            "size": 835,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/eece69a9ffc5930a49fc00d96ca67c257c126a13"
+          },
+          {
+            "path": "gh-pages/change-log/2026-03-06.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c8fda1884c0b2c263b2f995f8c935488459ad033",
+            "size": 829,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c8fda1884c0b2c263b2f995f8c935488459ad033"
+          },
+          {
+            "path": "gh-pages/change-log/2026-03-16.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "fa3b4ee8f0ccb4aff2f595f7da4be06415641d9c",
+            "size": 829,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/fa3b4ee8f0ccb4aff2f595f7da4be06415641d9c"
+          },
+          {
+            "path": "gh-pages/change-log/2026-04-14.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "6ac604e71b00b36ada40edf659755e82c031c1e9",
+            "size": 829,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/6ac604e71b00b36ada40edf659755e82c031c1e9"
+          },
+          {
+            "path": "gh-pages/change-log/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "3610e582aa099780889cf17cf57453ca22ed3b00",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/3610e582aa099780889cf17cf57453ca22ed3b00"
+          },
+          {
+            "path": "gh-pages/change-log/unpinned-latest.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "907d2514e4075bd916720db52607a62f82f94d0e",
+            "size": 859,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/907d2514e4075bd916720db52607a62f82f94d0e"
+          },
+          {
+            "path": "gh-pages/foi/foi-alef-dual-ml-alef-first.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a759da26d10d0ab31847335bd2a42c613715584a",
+            "size": 889,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a759da26d10d0ab31847335bd2a42c613715584a"
+          },
+          {
+            "path": "gh-pages/foi/foi-alef-dual-ml-alef-second.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "63c5763ac83b333b2f5143949e2560160a8023b2",
+            "size": 895,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/63c5763ac83b333b2f5143949e2560160a8023b2"
+          },
+          {
+            "path": "gh-pages/foi/foi-kq-complex.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c68871fc657838fe674085dd364c4149a9be29f8",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c68871fc657838fe674085dd364c4149a9be29f8"
+          },
+          {
+            "path": "gh-pages/foi/foi-kq-simple.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "83a261ae5683bc5c9646a0fa2ee367b670bb38be",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/83a261ae5683bc5c9646a0fa2ee367b670bb38be"
+          },
+          {
+            "path": "gh-pages/foi/foi-mtgmtg.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "919c92d6abc048bd8ddb47abf50d7f9108819955",
+            "size": 787,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/919c92d6abc048bd8ddb47abf50d7f9108819955"
+          },
+          {
+            "path": "gh-pages/foi/foi-oleh-yored.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "91b96682ed370c6a2955b5b391dd854e816fe7e5",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/91b96682ed370c6a2955b5b391dd854e816fe7e5"
+          },
+          {
+            "path": "gh-pages/foi/foi-pasoleg-1.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b8749b380681be23c017a4b81e4e32ace558999a",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/b8749b380681be23c017a4b81e4e32ace558999a"
+          },
+          {
+            "path": "gh-pages/foi/foi-pasoleg-2.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "142be25016fd596b25e9e77d8c68f7d7b09ae51e",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/142be25016fd596b25e9e77d8c68f7d7b09ae51e"
+          },
+          {
+            "path": "gh-pages/foi/foi-poetic-stress-helpers.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8e6344d59674f43eb0ec1edcc81f2a813538553f",
+            "size": 877,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8e6344d59674f43eb0ec1edcc81f2a813538553f"
+          },
+          {
+            "path": "gh-pages/foi/foi-poetic-verlen.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8befbdd580b88ccca418ad40b693db5ef129925f",
+            "size": 829,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8befbdd580b88ccca418ad40b693db5ef129925f"
+          },
+          {
+            "path": "gh-pages/foi/foi-qamats-variants.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a0a7170c7ed69473bafed8f4f1797a4f5418d204",
+            "size": 841,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a0a7170c7ed69473bafed8f4f1797a4f5418d204"
+          },
+          {
+            "path": "gh-pages/foi/foi-quick-brown-fox.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "74aca634564dc4b7d1315d7c4f223cb09b64c827",
+            "size": 841,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/74aca634564dc4b7d1315d7c4f223cb09b64c827"
+          },
+          {
+            "path": "gh-pages/foi/foi-rare-tmpls.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "82828eac646d5d4bba48e054ffce04eb725bd30b",
+            "size": 811,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/82828eac646d5d4bba48e054ffce04eb725bd30b"
+          },
+          {
+            "path": "gh-pages/foi/foi-revia-mugrash.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "235b7256e2844733493d27c0590e2285582cab65",
+            "size": 829,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/235b7256e2844733493d27c0590e2285582cab65"
+          },
+          {
+            "path": "gh-pages/foi/foi-sec-merk-shewa.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "9df45f5f3a3928fee2cbcce5ced86940a0d827ec",
+            "size": 835,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/9df45f5f3a3928fee2cbcce5ced86940a0d827ec"
+          },
+          {
+            "path": "gh-pages/foi/foi-sec-merk.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "b6211271dac36c7c4149837282f0312956e2ccbc",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/b6211271dac36c7c4149837282f0312956e2ccbc"
+          },
+          {
+            "path": "gh-pages/foi/foi-sec-misc-shewa.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8ce930ddc016e5cabf1e16a1e88cf5a62fd89411",
+            "size": 835,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8ce930ddc016e5cabf1e16a1e88cf5a62fd89411"
+          },
+          {
+            "path": "gh-pages/foi/foi-sec-misc.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4dd417ca1184c2f63af4a9c2b05662b7f6712aa1",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4dd417ca1184c2f63af4a9c2b05662b7f6712aa1"
+          },
+          {
+            "path": "gh-pages/foi/foi-sec-star-breuer-cos.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "a61c31be0ecf8c9753c2ceaf38ea72950620958c",
+            "size": 865,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/a61c31be0ecf8c9753c2ceaf38ea72950620958c"
+          },
+          {
+            "path": "gh-pages/foi/foi-slh-word.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4baf7cf1b0d779f7dab1b861de3c023f746da2f8",
+            "size": 799,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4baf7cf1b0d779f7dab1b861de3c023f746da2f8"
+          },
+          {
+            "path": "gh-pages/foi/foi-tsinnorit.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "0e099e2f10930599a6e4ab4e7ef27a403b6f1ccc",
+            "size": 805,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/0e099e2f10930599a6e4ab4e7ef27a403b6f1ccc"
+          },
+          {
+            "path": "gh-pages/foi/foi-unicode.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "5a0e686f5ed27e9014589b2e4e7ab293773a841d",
+            "size": 793,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/5a0e686f5ed27e9014589b2e4e7ab293773a841d"
+          },
+          {
+            "path": "gh-pages/foi/foi-xataf-qamats.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8c3809b99410b090f745395f8ffca9f6dabd8f7a",
+            "size": 823,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8c3809b99410b090f745395f8ffca9f6dabd8f7a"
+          },
+          {
+            "path": "gh-pages/foi/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "0bcb2ced8dfc44302ad46b3d41e12ef99cccdae7",
+            "size": 757,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/0bcb2ced8dfc44302ad46b3d41e12ef99cccdae7"
+          },
+          {
+            "path": "gh-pages/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8c355e7e533826d74c6da4088b8b24b41331af06",
+            "size": 733,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8c355e7e533826d74c6da4088b8b24b41331af06"
+          },
+          {
+            "path": "gh-pages/misc/he_ws_intro_to_mam_gray_maqaf_1.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "c9975ac5f288660d49effe8ed2dac490bcaf2b2a",
+            "size": 919,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/c9975ac5f288660d49effe8ed2dac490bcaf2b2a"
+          },
+          {
+            "path": "gh-pages/misc/he_ws_intro_to_mam_pasleg.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "48058797fb0c369da1612a5ca37f33c4796fb59b",
+            "size": 883,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/48058797fb0c369da1612a5ca37f33c4796fb59b"
+          },
+          {
+            "path": "gh-pages/misc/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8cbd464b7b295d70b4a60099750627116079db22",
+            "size": 763,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8cbd464b7b295d70b4a60099750627116079db22"
+          },
+          {
+            "path": "gh-pages/misc/notes_on_aliyot.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "090681c4ab88211f75083354f2f6440e651c5fe4",
+            "size": 823,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/090681c4ab88211f75083354f2f6440e651c5fe4"
+          },
+          {
+            "path": "gh-pages/misc/review_of_artscroll_transliterated_linear_siddur.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "182791416560847087ba31858da147e5b67d8bd5",
+            "size": 1021,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/182791416560847087ba31858da147e5b67d8bd5"
+          },
+          {
+            "path": "gh-pages/misc/review_of_hebrew_worlds_phonetic_bible.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "54a312c86eb8015c76389b0fe30e90b534b85152",
+            "size": 961,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/54a312c86eb8015c76389b0fe30e90b534b85152"
+          },
+          {
+            "path": "gh-pages/misc/rocc_0_review_of_ctr.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "d786029c9696a58ec858b71ba392109adde23a09",
+            "size": 853,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/d786029c9696a58ec858b71ba392109adde23a09"
+          },
+          {
+            "path": "gh-pages/misc/rocc_1_on_the_provenance_of_ctr.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "be8702a00dc7847b8d780280ad1a04c2fec05252",
+            "size": 919,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/be8702a00dc7847b8d780280ad1a04c2fec05252"
+          },
+          {
+            "path": "gh-pages/misc/rocc_2_pre_vowel_accents_in_ctr.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "2c3d74a2dc3143593ce500c16c0bb262ad0113bf",
+            "size": 919,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/2c3d74a2dc3143593ce500c16c0bb262ad0113bf"
+          },
+          {
+            "path": "gh-pages/misc/rocc_3_where_other_sources_stand.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7fe4a1f1503d891af664bb47ab10df77a629afd2",
+            "size": 925,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/7fe4a1f1503d891af664bb47ab10df77a629afd2"
+          },
+          {
+            "path": "gh-pages/misc/rocc_4_mid_word_ga3ya_with_shewa.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "86e999256d35a85823978b0c1fad3311b2448fab",
+            "size": 925,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/86e999256d35a85823978b0c1fad3311b2448fab"
+          },
+          {
+            "path": "gh-pages/misc/tsinnorit_and_oleh_facts.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "471bd85c9a7df8007b3d07d47715381e55963343",
+            "size": 877,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/471bd85c9a7df8007b3d07d47715381e55963343"
+          },
+          {
+            "path": "gh-pages/misc/tsinnorit_and_oleh_on_ivs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "465f52206269a1563f80304156234a69d7be3c45",
+            "size": 883,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/465f52206269a1563f80304156234a69d7be3c45"
+          },
+          {
+            "path": "gh-pages/misc/tsinnorit_and_the_xxd_in_bhs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "aa547d9a4edb7a03cbbdfe2768058b4414d1490a",
+            "size": 901,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/aa547d9a4edb7a03cbbdfe2768058b4414d1490a"
+          },
+          {
+            "path": "gh-pages/misc/tsinnorit_in_psalm_32v5.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8f219bdae16dd986ba2a9cb19a2bf147c179bcfe",
+            "size": 871,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/8f219bdae16dd986ba2a9cb19a2bf147c179bcfe"
+          },
+          {
+            "path": "gh-pages/misc/urwotm_1_tale_of_the_qadma.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "7456afe3a67db51af9049dfb0364a841928ad18f",
+            "size": 889,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/7456afe3a67db51af9049dfb0364a841928ad18f"
+          },
+          {
+            "path": "gh-pages/misc/urwotm_2_saying_the_quiet_part_out_loud.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "4e6275cbb50aae62b6a9c4dd54a695e80cedcb0b",
+            "size": 967,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/4e6275cbb50aae62b6a9c4dd54a695e80cedcb0b"
+          },
+          {
+            "path": "gh-pages/misc/urwotm_3_extra_verses.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "bb5527aea945f6c64d19c7eca75e546aa8e7c085",
+            "size": 859,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/bb5527aea945f6c64d19c7eca75e546aa8e7c085"
+          },
+          {
+            "path": "gh-pages/misc/urwotm_4_atnax_hafukh.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "78086ac798f9d776ab0cf1c2cac99a993abe3c8a",
+            "size": 859,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/78086ac798f9d776ab0cf1c2cac99a993abe3c8a"
+          },
+          {
+            "path": "gh-pages/sigil-decoding.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "5a7a1d6f12be60f5f10e9109c6b7b35d4c09fe3d",
+            "size": 787,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/5a7a1d6f12be60f5f10e9109c6b7b35d4c09fe3d"
+          },
+          {
+            "path": "gh-pages/tsinnorit_oleh/tsinnorit_and_oleh_on_ivs.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "64e3570f8225913b29e072528a6eae7dfa676571",
+            "size": 943,
+            "url": "https://api.github.com/repos/bdenckla/MAM-with-doc/git/blobs/64e3570f8225913b29e072528a6eae7dfa676571"
+          }
+        ],
+        "readme": "# MAM-with-doc redirect host\n\nOn 2026-09-06, Phase 4 moved the MAM-with-doc product and its published Pages tree to\n[`MAM-basics`](https://github.com/bdenckla/MAM-basics). The current edition is published at\nhttps://bdenckla.github.io/MAM-basics/MAM-with-doc/.\n\nThis repository remains published only to redirect its frozen legacy HTML paths. Each old\n`https://bdenckla.github.io/MAM-with-doc/<path>` URL redirects to\n`https://bdenckla.github.io/MAM-basics/MAM-with-doc/<path>`, preserving the path suffix.\n\nNew source, generated output, documentation, and release-difference work belongs in MAM-basics.\nThe repository history remains available here.\n",
+        "workflow_text": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v7\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v6\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v5\n        with:\n          path: gh-pages\n\n      - name: Deploy\n        id: deployment\n        uses: actions/deploy-pages@v5",
+        "root_http": {
+          "url": "https://bdenckla.github.io/MAM-with-doc/index.html",
+          "status": 200,
+          "bytes": 733,
+          "sha256": "5914e108b7c2d9f4f015158fc1273c12eadc47005a9511540180c9d10d102f55",
+          "matches_remote_blob": true,
+          "has_target_url": true
+        },
+        "direct_product_tree_readme_link": false,
+        "frozen_legacy_html_count": 113,
+        "source_blob_totals": {
+          "files": 118,
+          "bytes": 94177
+        },
+        "exact_breadcrumb_tree_verified": true
+      },
+      {
+        "repo": "MAM-OSIS",
+        "head": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/pages.yml",
+        "workflows": [
+          {
+            "id": 259218498,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/pages.yml",
+            "state": "active"
+          },
+          {
+            "id": 63949154,
+            "name": "pages-build-deployment",
+            "path": "dynamic/pages/pages-build-deployment",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34496487629,
+          "html_url": "https://github.com/bdenckla/MAM-OSIS/actions/runs/34496487629",
+          "head_sha": "8df241b3bb43e6f8ecf76ee35175380689fbcb68",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/pages.yml",
+          "created_at": "2026-09-10T15:34:06Z",
+          "updated_at": "2026-09-10T15:34:58Z"
+        },
+        "source_path": "C:/Users/BenDe/GitRepos/MAM-OSIS",
+        "source_absent": true,
+        "source_files": [
+          {
+            "path": ".gitattributes",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "147d57306e3aa6792d17a8308e64adedfe657879",
+            "size": 118,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/147d57306e3aa6792d17a8308e64adedfe657879"
+          },
+          {
+            "path": ".github/workflows/pages.yml",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "eb491d4fcd1fa251e445faad4e01e828137602f2",
+            "size": 686,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/eb491d4fcd1fa251e445faad4e01e828137602f2"
+          },
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "33796272c68f5ab8a58b4173b23108b36e6b4b82",
+            "size": 88,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/33796272c68f5ab8a58b4173b23108b36e6b4b82"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "5f185908806d8f117cfea5a4f52b82b5ec089672",
+            "size": 1227,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/5f185908806d8f117cfea5a4f52b82b5ec089672"
+          },
+          {
+            "path": "gh-pages/404.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3",
+            "size": 643,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/e92e014b3ebb2e2c7a38c2df3241f6dadc3f24d3"
+          },
+          {
+            "path": "gh-pages/index.html",
+            "mode": "100644",
+            "type": "blob",
+            "sha": "8f8a956ae1b5b223d372debea5fc84e29b206548",
+            "size": 713,
+            "url": "https://api.github.com/repos/bdenckla/MAM-OSIS/git/blobs/8f8a956ae1b5b223d372debea5fc84e29b206548"
+          }
+        ],
+        "readme": "# MAM-OSIS redirect host\n\nOn 2026-09-10, the MAM-OSIS product moved to\n[MAM-basics/MAM-OSIS](https://github.com/bdenckla/MAM-basics/tree/main/MAM-OSIS).\nThe [product README](https://github.com/bdenckla/MAM-basics/blob/main/MAM-OSIS/README.md)\ncontains the product documentation; the\n[published documentation](https://bdenckla.github.io/MAM-basics/MAM-OSIS/)\nis served by MAM-basics.\n\nThis repository remains a live GitHub Pages redirect host. The URL mapping is a\npure prefix rewrite from `https://bdenckla.github.io/MAM-OSIS/<path>` to\n`https://bdenckla.github.io/MAM-basics/MAM-OSIS/<path>`, preserving the path,\nquery, and fragment. The old URLs are cited in places Ben cannot reach, including\nposts and sent email; there is no citation list.\n\nThe pre-evacuation history remains intact in this repository. The\n[source issue tracker](https://github.com/bdenckla/MAM-OSIS/issues) remains\nenabled and contains no issues as of 2026-09-10. File new product issues in\n[MAM-basics](https://github.com/bdenckla/MAM-basics/issues).\n\nOnly the redirect-host files remain here. The `gh-pages/` stubs are generated;\ndo not hand-edit them. Regenerate them from MAM-basics with\n`py/main_redirect_stubs.py build --repo MAM-OSIS --publish`.\n",
+        "workflow_text": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v7\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v6\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v5\n        with:\n          path: gh-pages\n\n      - name: Deploy\n        id: deployment\n        uses: actions/deploy-pages@v5",
+        "root_http": {
+          "url": "https://bdenckla.github.io/MAM-OSIS/index.html",
+          "status": 200,
+          "bytes": 713,
+          "sha256": "d40bbc5b18a3124c1ae54a0c775cb2ff9723b90e337ca4ccfa7c743f297da438",
+          "matches_remote_blob": true,
+          "has_target_url": true
+        },
+        "direct_product_tree_readme_link": true,
+        "frozen_legacy_html_count": 1,
+        "source_blob_totals": {
+          "files": 6,
+          "bytes": 3475
+        },
+        "exact_breadcrumb_tree_verified": true
+      },
+      {
+        "repo": "MAM-basics",
+        "head": "9ea4e39abf6ceae3e52f0cb37a3ba4abf470b05f",
+        "archived": false,
+        "default_branch": "main",
+        "workflow_path": ".github/workflows/pages.yml",
+        "workflows": [
+          {
+            "id": 333067556,
+            "name": "Deploy GitHub Pages",
+            "path": ".github/workflows/pages.yml",
+            "state": "active"
+          },
+          {
+            "id": 276669905,
+            "name": "Copilot cloud agent",
+            "path": "dynamic/copilot-swe-agent/copilot",
+            "state": "active"
+          }
+        ],
+        "deployment": {
+          "id": 34501575014,
+          "html_url": "https://github.com/bdenckla/MAM-basics/actions/runs/34501575014",
+          "head_sha": "9ea4e39abf6ceae3e52f0cb37a3ba4abf470b05f",
+          "status": "completed",
+          "conclusion": "success",
+          "name": "Deploy GitHub Pages",
+          "path": ".github/workflows/pages.yml",
+          "created_at": "2026-09-10T16:21:28Z",
+          "updated_at": "2026-09-10T16:22:31Z"
+        }
+      }
+    ]
+  },
+  "preceding_oracle_layers": [
+    {
+      "product": "MAM-simple",
+      "record_anchor": "Phase 1 execution record",
+      "blob_identity": "389 original selected blobs; seven adaptations entered the Land commit after initial staging identity; their exact paths are preserved in the Phase 6 baseline.",
+      "regeneration": "216 core outputs, 105 examples and support copies were verified by the prior lane; 6B/6D freshly remeasure.",
+      "write_locations": "Prior lane recorded 407 destination writes and no source writes.",
+      "published_urls": "Prior lane verified both frozen old HTML pages and successful source/target deployments; current host root/deploy reverified in 6A."
+    },
+    {
+      "product": "MAM-for-Sefaria",
+      "record_anchor": "Phase 2 execution record",
+      "blob_identity": "168 selected original blobs; index and source hygiene checker adapted within Land commit; current README/checker dispositions are later adaptations.",
+      "regeneration": "Prior standard export had zero Git content diff; 39 CSVs match example and provenance differs by generator path. 6D includes AJF and Unicode-name outputs.",
+      "write_locations": "Prior generator changed zero source paths and wrote in MAM-basics.",
+      "published_urls": "Prior lane verified its one old HTML and target with successful deployments; current host root/deploy reverified in 6A."
+    },
+    {
+      "product": "MAM-parsed",
+      "record_anchor": "Phase 3 Empty and Remove",
+      "blob_identity": "95 Land blobs byte-identical; six historical boundaries preserve 144 JSON blobs / 84,572,003 bytes, freshly checked against permanent manifest.",
+      "regeneration": "Prior post-removal parse, surveys, docs, example and history comparisons had zero content differences after recorded adaptations; 79 claim checks passed and one named check remained pending.",
+      "write_locations": "Prior post-removal products changed 111 destination mtimes with actual source absent.",
+      "published_urls": "Prior removal record verified all 22 legacy/target pairs and source deployment; current host root/deploy reverified in 6A."
+    },
+    {
+      "product": "MAM-with-doc",
+      "record_anchor": "Phase 4 execution record",
+      "blob_identity": "272 Land blobs byte-identical. Thirteen published files later differed: ten controlled-URL adaptations and three refreshed change-log outputs; these are distinct from Land identity.",
+      "regeneration": "Prior second generation pass had zero output differences against the adapted target; source-byte identity was not claimed for the thirteen adaptations.",
+      "write_locations": "Prior lane recorded 145 target files and zero source writes.",
+      "published_urls": "Frozen 113-stub build/check passed; recorded live checks include a legacy page and custom 404 plus successful deployments. The short record does not enumerate 113 live HTTP pairs. 6E must perform the complete fresh URL census."
+    },
+    {
+      "product": "MAM-OSIS",
+      "record_anchor": "Phase 5F Remove and Phase 5 completion record",
+      "blob_identity": "Permanent Land manifest reverified at original source and immutable Land; 90 selected blobs / 29,821,603 bytes, with subsequent dispositions separate.",
+      "regeneration": "5F verified 27 production and 24 example files exactly against frozen bytes after actual source removal.",
+      "write_locations": "5F recorded exact 27/24 destination mtime changes and actual source absence.",
+      "published_urls": "5F verified 33 source HTTP responses and all 30 target files / 782,189 bytes. Six unchanged-script browser cases retain the recorded authored-anchor and optional CSS-browser-timeout limits; 6E checks fresh bytes before reuse."
+    }
+  ],
+  "historical_manifest_check": {
+    "files": 144,
+    "bytes": 84572003,
+    "all_match": true
+  },
+  "osis_original_manifest_check": {
+    "files": 92,
+    "all_match": true
+  },
+  "existing_manifests_preserved": [
+    "MAM-parsed/historical/manifest.json",
+    "in/mam_for_sefaria_redirect_pages.json",
+    "in/mam_osis_empty_verification.json",
+    "in/mam_osis_land_manifest.json",
+    "in/mam_osis_redirect_pages.json",
+    "in/mam_osis_remove_verification.json",
+    "in/mam_osis_repoint_verification.json",
+    "in/mam_osis_stubs_verification.json",
+    "in/mam_parsed_redirect_pages.json",
+    "in/mam_simple_redirect_pages.json",
+    "in/mam_with_doc_redirect_pages.json"
+  ],
+  "baseline_pairs": {
+    "exact_matches": 104,
+    "intentional_provenance_differences": 2,
+    "support_matches": 45
+  },
+  "coverage": {
+    "6B": "Parse, copied support, parsed docs, full template survey and diagrams, FOI, simple corpus and all simple docs/assets.",
+    "6C": "MWD core and authored pages, every named and unpinned history comparison; protect all static and historical files.",
+    "6D": "Both Sefaria/AJF exports, OSIS including XSD, both canonical example generators and all four independent examples.",
+    "6E": "All frozen scratch stubs and redirect tests, full source/target HTTP sets and required browser cases, vendoring outputs/copies, graph/site bookkeeping and source-reference audit.",
+    "6F": "Invalidate stale evidence after intervening commits, final canonical/affected/redirect/whitespace checks, full Git/roster/product/source-host inventories and final deployed clean main."
+  },
+  "findings": [
+    "The starter table omitted template-survey/diagram generation and authored miscellaneous MAM-with-doc generation; the finalized map assigns them explicitly.",
+    "main_vendoring.py --all currently owns four artifacts, including out/vendoring_provenance_out.json; the mega comment saying three artifacts is historical wording, not the output census.",
+    "A current product baseline does not prove fresh synchronization. No product generator was run in 6A; 6B-6E establish current regeneration and mtime evidence.",
+    "The prior MAM-with-doc prose records representative live URL checks, not an enumerated complete 113-pair HTTP census; 6E owns the full census.",
+    "The Graphviz executable is available through the production Program Files fallback and matches the pinned stamp despite dot not being on the shell PATH."
+  ],
+  "scope": {
+    "product_generators_run": false,
+    "mega_run": false,
+    "source_clones_recreated": false,
+    "directories_recycled": false,
+    "downloaded_inputs_refreshed": false,
+    "MAM_private_modified": false
+  },
+  "baseline_validation": {
+    "baseline_entries_verified": 2450,
+    "set_count": 48,
+    "commands_verified": 29,
+    "all_product_paths_classified": true,
+    "protected_output_overlap": 0,
+    "prior_json_evidence_unchanged": 11,
+    "source_siblings_absent": 5,
+    "only_expected_paths_changed": [
+      "doc/PLAN-evacuate-five-MAM-products.md",
+      "doc/PLAN-evacuate-public-repos-programme.md",
+      "doc/mam-products-phase6-command-map.md",
+      "in/mam_products_phase6_baseline.json",
+      "in/mam_products_phase6a_verification.json"
+    ],
+    "result": "pass",
+    "prior_evidence_working_eol": [
+      {
+        "path": "in/mam_osis_land_manifest.json",
+        "working_bytes": 53414,
+        "git_bytes": 52206,
+        "working_sha256": "f8296cc96f62f79b658baac7615cae516d19cba228bd9c20ae63d7650d381dcb",
+        "attributes": [
+          "in/mam_osis_land_manifest.json: text: auto",
+          "in/mam_osis_land_manifest.json: eol: lf"
+        ],
+        "difference": "Existing CRLF checkout versus LF Git blob; filtered Git object equals baseline. The working file was not rewritten."
+      },
+      {
+        "path": "in/mam_with_doc_redirect_pages.json",
+        "working_bytes": 3891,
+        "git_bytes": 3773,
+        "working_sha256": "458e762cfb8f315628c684e13dbe3fefcbf7350ae699b3e22102e8756ff1fc8e",
+        "attributes": [
+          "in/mam_with_doc_redirect_pages.json: text: auto",
+          "in/mam_with_doc_redirect_pages.json: eol: lf"
+        ],
+        "difference": "Existing CRLF checkout versus LF Git blob; filtered Git object equals baseline. The working file was not rewritten."
+      }
+    ]
+  },
+  "staged_hygiene": {
+    "command": [
+      "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+      "py/main_test.py",
+      "py/tests/test_h_dot_below_nfc.py",
+      "py/tests/test_prose_mark_order.py",
+      "-q"
+    ],
+    "cwd": "C:/Users/BenDe/GitRepos/MAM-basics",
+    "exit_code": 0,
+    "summary": [
+      ".......                                                                  [100%]",
+      "7 passed in 15.21s"
+    ],
+    "log": "C:/Users/BenDe/GitRepos/MAM-basics/.novc/phase6a_staged_hygiene_20260910.log",
+    "log_sha256": "37701683807ca9a4a75957e29e827e982f8611a411ef858bfbd299395651e3ae"
+  },
+  "whitespace_check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "result": "pass",
+    "tracked_python_changed": false
+  },
+  "report_validation_notes": [
+    "The initial raw-file comparison of prior JSON reports encountered existing CRLF checkout bytes. Declared Git-filter identity and explicit CRLF-only differences are recorded in baseline_validation; no prior report was rewritten.",
+    "The initial uniform breadcrumb assertion expected a direct product-tree link in every README. The MAM-with-doc README instead links to the MAM-basics repository root and the product Pages URL. Its exact existing wording was inspected and preserved."
+  ]
+}

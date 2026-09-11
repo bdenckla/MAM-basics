@@ -9,10 +9,10 @@
 <body>
 <h1>Reading MAM-parsed-plain</h1>
 <p>The <abbr class="small-caps">MAM</abbr>-parsed-plain JSON files are formed by parsing the
-Wikitext in the <abbr class="small-caps">MAM</abbr> Google Sheet with minimal post-processing. Use
-plain when you want a format that stays close to the <abbr class="small-caps">MAM</abbr> Google
-Sheet. Use <a href="../../plus/html/mpplus.html">plus</a> when you want conveniences intended to
-simplify most application code. This document covers:</p>
+Wikitext downloaded from Hebrew Wikisource with minimal post-processing. Use plain when you want a
+format that stays close to the Wikisource source pages. Use
+<a href="../../plus/html/mpplus.html">plus</a> when you want conveniences intended to simplify most
+application code. This document covers:</p>
 <ul>
 <li>File naming</li>
 <li>Structure of the top level and its header</li>
@@ -201,7 +201,8 @@ Custom XML tag (custom_tag)</h3>
 <span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;/noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Verse
 structure</h2>
 <p>(This section documents both normal verses and pseudo-verses.)</p>
-<p>Each verse is a 3-element array corresponding to the C, D, and E columns of the Google Sheet.</p>
+<p>Each verse is a 3-element array for the separator, verse label, and verse proper. These positions
+retain the C, D, and E names used by <abbr class="small-caps">MAM</abbr>'s tabular data.</p>
 <ul>
 <li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
 break</li>

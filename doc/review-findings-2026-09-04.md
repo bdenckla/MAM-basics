@@ -571,6 +571,13 @@ files the Aleppo lane has since edited will have drifted, so search for the quot
     is drift. github-misc is private; this is the series' standing exception, and only the copies'
     identity was compared.
 
+    **Correction, 2026-09-09 (September 8 review, finding 5.1a):** the absence of
+    `~/.Codex/plans/` was a filesystem observation made for the September 4 review.
+    [The September 8 review](review-findings-2026-09-08.md), finding 5.1, later recorded
+    four entries in that directory. The later recorded state supersedes the description
+    for later readers; it does not show that the September 4 observation was false.
+    No current directory census is claimed here.
+
 18. **Process and hygiene, recorded for Ben's decisions:**
     1. Trailers: 26 non-merge MAM-basics commits carry no `Co-Authored-By` at all (the whole Holman
        lane `3c5dc796` … `e3882ea1`, the whole book-of-job lane `050c7bb8` … `48b9c55b`, ten UXLC-utils
@@ -742,6 +749,25 @@ repair code that a later evacuation removed.
 | 17 | **Fixed** | github-misc `d961120` tracks the Codex state-pruning skill variant and documents its deployment. |
 | 18 | **Fixed / rejected where historical** | Six merged local MAM-basics branches and merged remote `review/mega-pipeline-2026-09-01` were deleted on 2026-09-07; the retired MAM-with-doc clone no longer has a local branch to clean. `GitRepos/.pytest_cache`, the empty `GitRepos/.codex/worktrees` container, and the verification-created MAM-basics pytest cache were moved to the Windows Recycle Bin. `887f7fb8` adds the 2 Chronicles 28:23 warning to both Holman download routes. **Rejected:** rewriting old trailers or the 38-minute JSON history, changing the deliberate primary-clone constant, or deleting honest historical process notes. |
 | 19 | **Rejected** | These are immutable commit-message slips. Their corrected measurements remain in finding 19; history was not rewritten. |
+
+**Correction, 2026-09-09, to disposition row 18 (September 8 review, finding 5.1a):**
+the six local MAM-basics branches named in the September 7 remediation task's retained
+deletion-output record were:
+
+1. `codex/correct-fitformas-analysis` — recorded tip `83c3044a`.
+2. `codex/plan-five-mam-products` — recorded tip `2471d69a`.
+3. `remediation/change-log-fail-closed-2026-09-02` — recorded tip `da117b1d`.
+4. `remediation/mp02-01-extraction-2026-09-02` — recorded tip `4439077e`.
+5. `review/holman-meteg-comments-2026-09-04` — recorded tip `463e47c0`.
+6. `review/mega-pipeline-2026-09-01` — recorded tip `1635b846`.
+
+The source is the retained checkpoint of Codex task
+`01a07c08-5db6-7833-a7ce-d96a397fd77e`, whose quoted deletion output supplies these names
+and tips. This enumerates the historical record; it makes no current branch-count or
+cleanup-safety claim. Separately, row 18's rejection of "changing the deliberate
+primary-clone constant" was already moot: `4195440e` removed `_PRIMARY_CLONE` and its
+guard from `py/main_0_mega.py` on 2026-09-06. Finding 18.5 was superseded by that
+removal. The original finding and disposition remain above.
 
 The Codex-only redirect-manifest omission is **fixed** by `726daafd` and is also recorded in the
 reconciliation above.

@@ -17791,4 +17791,3 @@ SPACE
 b,·,:,3,‥,y,n,a,(tip),y,v
 SPACE
 y,_,3,:_,$,·si,∵,(mos),h,(sopa)
-

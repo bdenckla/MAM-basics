@@ -32,7 +32,7 @@ useless and gets deleted, so this one is an AST pass with three deliberate narro
    and ``../al-hatorah`` citation CLAUDE.md leaves standing on purpose.
 2. A CWD-RELATIVE LITERAL IS CONSIDERED ONLY WHEN IT STARTS WITH ``../``.  Prose
    mentions a sibling mid-sentence (``argparse`` help in ``subcommands/diff_mpp.py``
-   says "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
+   formerly said "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
    deliberately misses is a path built as ``f"{x}/../MAM-parsed"``, which nothing here
    writes.
 3. THE VOCABULARY IS DERIVED, NOT DECLARED.  ``../img/``, ``../svg/``, ``../misc/``
@@ -121,6 +121,10 @@ from mb_cmn import paths, provenance
 # shrink as the fourth stage's remaining product lanes land.
 # ---------------------------------------------------------------------------
 SIBLINGS_REACHED: dict[str, str] = {
+    "MAM-OSIS": (
+        "redirect_stubs/stubs.py only, to publish or check the frozen redirect stubs."
+        " Product generation uses the local MAM-OSIS directory."
+    ),
     "MAM-simple": (
         "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
         " source repository's frozen redirect stubs."
@@ -133,16 +137,20 @@ SIBLINGS_REACHED: dict[str, str] = {
         "redirect_stubs/stubs.py only, to create a temporary clone while publishing the"
         " source repository's frozen redirect stubs."
     ),
-    "MAM-OSIS": "Written by the OSIS generators through paths.sibling_repo.",
     "MAM-with-doc": (
         "redirect_stubs/stubs.py uses this only to create a temporary clone while "
         "publishing the source repository's frozen redirect stubs."
     ),
     "MAM-private": (
-        "paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's Phonetic MAM"
-        " as the oracle for accgram.final_stress, and main_0_mega runs the"
-        " near-aleppo census there.  Its vendoring audit was given up on"
-        " 2026-09-04 (abb03ec4), which removed a third route but not these two."
+        "Two routes.  paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's"
+        " Phonetic MAM, the oracle of main_accgram.py's two surveys --"
+        " survey-post-stress-meteg, which main_0_mega runs as its"
+        " accgram-survey-post-stress-meteg step except in a cloud session, and"
+        " survey-breuer-zaqef-units -- and of the test of accgram.final_stress."
+        "  And main_0_mega runs the near-aleppo census in MAM-private, except in a"
+        " cloud session.  Its"
+        " vendoring audit was given up on 2026-09-04 (abb03ec4), which removed a"
+        " third route but not these two."
     ),
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
@@ -164,13 +172,6 @@ SIBLINGS_REACHED: dict[str, str] = {
 # (file, literal) -> reason.  Keyed by the literal, not the line, so an edit above
 # it does not move the key; one entry covers every occurrence in that file.
 _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
-    **{
-        ("py/pipeline_graph/pipeline_graph_spec.py", label): (
-            "a DisplayNode/RawNode label -- the pipeline graph draws these strings,"
-            " and nothing opens them"
-        )
-        for label in ("../MAM-OSIS/",)
-    },
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),

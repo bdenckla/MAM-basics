@@ -232,8 +232,9 @@ def verse_structure_prelude(
                 emit_claim_payload(
                     claims,
                     claim_id,
-                    "Each verse is a 3-element array corresponding to the C, D, and E"
-                    " columns of the Google Sheet.",
+                    "Each verse is a 3-element array for the separator, verse label,"
+                    " and verse proper. These positions retain the C, D, and E names"
+                    " used by $MAM's tabular data.",
                     kind="struct",
                     subject=subject,
                     data={"shape": ["sep", "label", "text"], "length": 3},

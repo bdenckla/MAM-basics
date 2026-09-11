@@ -11,7 +11,7 @@ coordinates (both relative and pixel).
 The image is loaded from a local file (cam1753-pages/<page>.jpg).
 
 Usage:
-    .venv/Scripts/python.exe gen_col_quad_editor.py 0073B
+    .venv/Scripts/python.exe py/main_cam1753_gen_col_quad_editor.py 0073B
 """
 
 import json
@@ -696,7 +696,3 @@ def main():
         )
         sys.exit(1)
     generate_editor(sys.argv[1])
-
-
-if __name__ == "__main__":
-    main()

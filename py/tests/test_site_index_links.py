@@ -81,7 +81,7 @@ _PAGES_PREFIX = "gh-pages/"
 _MISC_MODULE_DIR = "py/author_misc"
 _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 
-# document-index carried 25 links and this page carries 34 after the 2026-09-07 index additions;
+# document-index carried 25 links and this page carries 35 after the 2026-09-08 index additions;
 # if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
 # the exact count: it is a floor guarding against a broken walk, not an inventory.
 _MIN_AUTHORED_ANCHORS = 25

@@ -7,6 +7,8 @@ from unittest import mock
 
 from subcommands import download_wikisource as dlws
 from ws import ws_download_selector as wsds
+from ws import ws_revision_api as api
+from ws import ws_chapter_download as chapters
 
 
 class _FakeDownloader:
@@ -21,8 +23,10 @@ class _FakeDownloader:
 
 def _page(title, content):
     return {
-        "pageid": hash(title),
-        "revisions": [{"slots": {"main": {"content": content}}}],
+        "pageid": abs(hash(title)) + 1,
+        "revisions": [
+            {"revid": abs(hash(title)) + 1, "slots": {"main": {"content": content}}}
+        ],
         "title": title,
     }
 
@@ -41,12 +45,15 @@ class WikisourceDownloadTests(unittest.TestCase):
             }
         )
 
-        chapter_lines = dlws._download_chapter_batch(chapter_plans, downloader)
+        results = api.ChapterClient(downloader, dlws._WIKISOURCE_API_PHP).by_titles(
+            [title for _chapter, title in chapter_plans], content=True
+        )
+        chapter_lines = {chapter: results[title][1] for chapter, title in chapter_plans}
 
         self.assertEqual(dlws._WIKISOURCE_API_PHP, downloader.calls[0]["url"])
         self.assertEqual("query", downloader.calls[0]["params"]["action"])
         self.assertEqual("revisions", downloader.calls[0]["params"]["prop"])
-        self.assertEqual("content", downloader.calls[0]["params"]["rvprop"])
+        self.assertEqual("ids|content", downloader.calls[0]["params"]["rvprop"])
         self.assertEqual("main", downloader.calls[0]["params"]["rvslots"])
         self.assertEqual(
             "יהושע_א/טעמים|יהושע_ב/טעמים", downloader.calls[0]["params"]["titles"]
@@ -64,9 +71,10 @@ class WikisourceDownloadTests(unittest.TestCase):
             }
         }
 
-        chapter_lines = dlws._chapter_lines_from_response_json(
-            response_json, chapter_plans
+        results = api.title_results(
+            response_json, [title for _chapter, title in chapter_plans], content=True
         )
+        chapter_lines = {chapter: results[title][1] for chapter, title in chapter_plans}
 
         self.assertEqual(["א", "ב"], list(chapter_lines))
         self.assertEqual(["line a", "line b"], chapter_lines["א"])
@@ -92,9 +100,10 @@ class WikisourceDownloadTests(unittest.TestCase):
             }
         }
 
-        chapter_lines = dlws._chapter_lines_from_response_json(
-            response_json, chapter_plans
+        results = api.title_results(
+            response_json, [title for _chapter, title in chapter_plans], content=True
         )
+        chapter_lines = {chapter: results[title][1] for chapter, title in chapter_plans}
 
         self.assertEqual({"יא": ["line a"]}, chapter_lines)
 
@@ -111,8 +120,12 @@ class WikisourceDownloadTests(unittest.TestCase):
             }
         }
 
-        with self.assertRaises(AssertionError):
-            dlws._chapter_lines_from_response_json(response_json, chapter_plans)
+        with self.assertRaises(api.ChapterResponseError):
+            api.title_results(
+                response_json,
+                [title for _chapter, title in chapter_plans],
+                content=True,
+            )
 
     def test_selected_book_plans_selects_requested_chapter(self):
         args = mock.Mock(
@@ -191,13 +204,18 @@ class WikisourceDownloadTests(unittest.TestCase):
             )
 
         with mock.patch.object(
-            dlws, "_full_book_plan", return_value=(("ספר יהושע", None), ["א", "יא"])
-        ), mock.patch.object(
-            dlws, "_chapter_plan_batches", return_value=[[("יא", "יהושע_יא/טעמים")]]
-        ), mock.patch.object(
-            dlws, "_download_chapter_batch", return_value={"יא": ["new yod aleph"]}
+            chapters, "_full_book_plan", return_value=(("ספר יהושע", None), ["א", "יא"])
         ):
-            dlws._download_book(book_plan, out_path, downloader=mock.Mock())
+            chapters.download_books(
+                [book_plan],
+                _FakeDownloader(
+                    {"query": {"pages": [_page("יהושע_יא/טעמים", "new yod aleph")]}}
+                ),
+                endpoint=dlws._WIKISOURCE_API_PHP,
+                out_path=out_path,
+                metadata_path=os.path.join(out_path, "revisions.json"),
+                force_download=False,
+            )
 
         with open(book_path, "r", encoding="utf-8") as json_in_fp:
             merged_book = json.load(json_in_fp)
@@ -208,15 +226,15 @@ class WikisourceDownloadTests(unittest.TestCase):
         book_plan = (("ספר יהושע", None), ["יא"])
         out_path = tempfile.mkdtemp()
 
-        with mock.patch.object(
-            dlws, "_full_book_plan", return_value=(("ספר יהושע", None), ["א", "יא"])
-        ), mock.patch.object(
-            dlws, "_chapter_plan_batches", return_value=[[("יא", "יהושע_יא/טעמים")]]
-        ), mock.patch.object(
-            dlws, "_download_chapter_batch", return_value={"יא": ["new yod aleph"]}
-        ):
-            with self.assertRaises(AssertionError):
-                dlws._download_book(book_plan, out_path, downloader=mock.Mock())
+        with self.assertRaises(ValueError):
+            chapters.download_books(
+                [book_plan],
+                mock.Mock(),
+                endpoint=dlws._WIKISOURCE_API_PHP,
+                out_path=out_path,
+                metadata_path=os.path.join(out_path, "revisions.json"),
+                force_download=False,
+            )
 
     def test_selected_book_plans_rejects_invalid_json_schema(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -235,7 +253,11 @@ class WikisourceDownloadTests(unittest.TestCase):
 
     def test_main_reparses_only_affected_books_for_json_selector(self):
         args = mock.Mock(
-            book39=None, book_chapters_json="pairs.json", chapter=None, section6=None
+            book39=None,
+            book_chapters_json="pairs.json",
+            chapter=None,
+            section6=None,
+            force_download=False,
         )
         book_plans = [(("ספר יהושע", None), ["יא"]), (("ספר שמואל", 'שמ"א'), ["ג"])]
 
@@ -244,7 +266,15 @@ class WikisourceDownloadTests(unittest.TestCase):
         ), mock.patch.object(
             wsds, "selected_book_plans", return_value=book_plans
         ), mock.patch.object(
-            dlws, "_download_book"
+            chapters,
+            "download_books",
+            return_value={
+                "selected": 2,
+                "reused": 0,
+                "fetched": 2,
+                "metadata_batches": 0,
+                "content_batches": 2,
+            },
         ) as mock_download_book, mock.patch.object(
             dlws.parse_ws, "almost_main"
         ) as mock_almost_main, mock.patch.object(
@@ -254,12 +284,14 @@ class WikisourceDownloadTests(unittest.TestCase):
 
             dlws.run_from_args(args)
 
-        self.assertEqual(2, mock_download_book.call_count)
+        self.assertEqual(1, mock_download_book.call_count)
         self.assertEqual(
             mock.call(["Joshua", "1Samuel"]),
             mock_almost_main.call_args,
         )
-        self.assertIs(mock_downloader, mock_download_book.call_args_list[0].args[2])
+        self.assertIs(mock_downloader, mock_download_book.call_args.args[1])
+        self.assertEqual(book_plans, mock_download_book.call_args.args[0])
+        self.assertFalse(mock_download_book.call_args.kwargs["force_download"])
 
 
 if __name__ == "__main__":

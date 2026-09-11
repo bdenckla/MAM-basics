@@ -9594,7 +9594,7 @@ v,·,m,:,b,v,·,σ,a,(ger),h
 SPACE
 v,·,m,:,b,v,·,k,a,(rev),h
 SPACE
-l,_,(mos),α,d,o,n,a,(dar),y
+l,_,α,d,o,n,a,(dar),y
 SPACE
 y,:∵,h,o,v,i,(tev),h
 SPACE
@@ -10839,7 +10839,7 @@ SPACE
 h,a,α,a,(mos),r,∵,c.,(sopa)
 
 Isaiah 24:18 in vtrad vtmam
-v,:,(tel_g),h,a,y,a,(tel_g),h
+v,:,(mos),(tel_g),h,a,y,a,(tel_g),h
 SPACE
 h,_,n,·,a,(ger_2),σ
 SPACE
@@ -20634,7 +20634,7 @@ SPACE
 l,:,α,a,x,(mos),v,o,r,(sopa)
 
 Isaiah 42:24 in vtrad vtmam
-m,i,(mos),y,-,n,a,τ,_,(qom),n.
+m,i,y,-,n,a,τ,_,(qom),n.
 SPACE
 START kq
 START kq-k
@@ -24825,7 +24825,7 @@ v,_,α,d,o,n,a,(mah),y
 SPACE
 y,:∵,h,o,v,i,h,(pash)
 SPACE
-y,_,(mos),3,:_,z,oa,r,-,l,i,(zaq_q),y
+y,_,3,:_,z,oa,r,-,l,i,(zaq_q),y
 SPACE
 3,_,l,-,k,·,‥,(tip),n.
 SPACE
@@ -32192,4 +32192,3 @@ SPACE
 SPACE
 y,h,v,h
 STOP good-ending
-

@@ -5066,7 +5066,7 @@ v,_,(mos),y,:,$,·sh,_,l,·,:,x,‥,(zaq_q),m.
 SPACE
 v,_,y,·,‥,l,:,k,(tip),v,·
 SPACE
-α,∵,l,-,α,:_,d,o,(mos),n,‥,y,h,∵,(atn),m.
+α,∵,l,-,α,:_,d,o,n,‥,y,h,∵,(atn),m.
 SPACE
 v,:,l,o,α,-,y,a,(mah),σ,:,p,v,·
 SPACE
@@ -22661,4 +22661,3 @@ SPACE
 y,:,m,‥,(mer),y
 SPACE
 x,_,y,·,a,(mos),v,(sopa)
-

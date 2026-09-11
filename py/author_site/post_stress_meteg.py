@@ -30,8 +30,8 @@ typed here.
 THESE PAGES SAY PLAIN "word", AND THAT IS A DECISION RATHER THAN AN OVERSIGHT.  The
 ``hebrew-prose`` skill's first rule is "Never a loose 'word'"; Ben exempted this document and
 its sub-documents on 2026-09-08, and the skill allows for it -- plain "word" survives "wherever
-the context already settles which sense is meant", and ``_opening``'s second paragraph defines
-both "word" and "atom" before any other sentence uses either.  **Do not qualify "word" as
+the context already settles which sense is meant". The main page defines both "word" and "atom"
+in its second expository paragraph; the opening sentence already uses "word". **Do not qualify "word" as
 "chanted word" in anything these pages render**, prose, heading, tooltip and alt text alike;
 ``py/tests/test_post_stress_meteg_plain_word.py`` fails if you do, and its docstring records why
 a lint rather than a comment or a helper function is what defends this.  The survey's own
@@ -87,6 +87,7 @@ from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
 from author_site import site_data
+from author_site import post_stress_meteg_annotations
 from mb_author import author
 from mb_cmn import paths
 from mb_cmn import provenance
@@ -96,7 +97,6 @@ from py_html.my_html_span_romanized import rmn
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-from mb_cmn import bib_locales as tbn
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
@@ -139,6 +139,7 @@ def _author_romanization(key: str) -> object:
 # italicizes it.  Existing ``ROM_*`` spellings stay single-sourced; the author-wide dollar
 # substitutions supply the additional standard spellings this page needs.
 _ROM_METEG = rmn(pds.ROM_METEG)
+_ROM_METEG_MERKHA = rmn(f"{pds.ROM_METEG}/{pds.ROM_MERKHA}")
 _ROM_METEG_CAP = rmn(pds.ROM_METEG.capitalize())
 _ROM_SILLUQ = rmn(pds.ROM_SILLUQ)
 _ROM_PASEQ = rmn(pds.ROM_PASEQ)
@@ -532,9 +533,10 @@ def gen_html_files(
     """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
-    recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
-    clone the survey needs.  Off by hand, so a standalone run still derives the page from the
-    corpus rather than from a file.
+    recomputing.  ``main_0_mega.py`` passes it because its survey step has just written that
+    JSON, or in a cloud session has skipped the survey and left the tracked JSON unchanged.
+    Off by hand, so a standalone run still derives the page from the corpus rather than from a
+    file.
     """
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
@@ -572,16 +574,32 @@ def gen_html_files(
             build_next_conjunctive_body(survey),
         ),
     )
-    _assert_no_phonetic_mam_annotations_in_lacks_mas_page(out_paths[4])
+    assert_no_phonetic_mam_annotations(out_paths, survey)
     return out_paths
 
 
-def _assert_no_phonetic_mam_annotations_in_lacks_mas_page(path_string: str) -> None:
-    """Prevent Phonetic MAM's analysis-only marks from reaching the reader page."""
-    forbidden = {chr(code_point) for code_point in psm._PHONETIC_MAM_ANNOTATIONS}
-    path = Path(path_string)
-    present = forbidden & set(path.read_text(encoding="utf-8"))
-    assert not present, (path, present)
+def assert_no_phonetic_mam_annotations(page_paths, survey):
+    """Validate every complete page against current MAM and the comparison source."""
+    expected = {
+        value
+        for name, value in vars(site_data).items()
+        if name.startswith("POST_STRESS_METEG") and name.endswith("_FNAME")
+    }
+    if (
+        len(page_paths) != len(expected)
+        or {Path(path).name for path in page_paths} != expected
+    ):
+        raise ValueError("MAS annotation validation requires every declared page")
+    bhs_form = dict(_post_silluq_comparison(survey))["BHS"]
+    return post_stress_meteg_annotations.validate_pages(
+        page_paths,
+        survey,
+        Path(__file__),
+        extra_sources={
+            f"{paths.in_dir() / 'UXLC-39'} {_POST_SILLUQ_VERSE}; BHS-labelled form, "
+            "asserted equal to WLC 4.22": bhs_form,
+        },
+    )
 
 
 def _write_page(path: Path, title: str, body: list) -> str:
@@ -596,11 +614,6 @@ def _write_page(path: Path, title: str, body: list) -> str:
     )
     mb_html.write_html_to_file(body, write_ctx)
     return str(path)
-
-
-def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all nine post-stress-meteg pages and return the main page's path."""
-    return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
 def build_body(survey: dict) -> list:
@@ -654,6 +667,15 @@ def build_methods_body(survey: dict) -> list:
         _mam_post_silluq_aleppo_crop(),
         mb_html.para(
             (
+                "The Aleppo Codex has a ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                f" in {_MAM_POST_SILLUQ_REF}.",
+            )
+        ),
+        mb_html.para(
+            (
                 "At ",
                 _ref_link(_MAM_POST_SILLUQ_VERSE),
                 ", the Leningrad Codex lacks the ",
@@ -675,14 +697,6 @@ def build_methods_body(survey: dict) -> list:
 
 def _count(survey: dict, system: str, category: str) -> int:
     return survey["counts"][system][category]
-
-
-def _post_stress(survey: dict, system: str | None = None) -> list[dict]:
-    return [
-        one
-        for one in survey["post_stress"]
-        if system is None or one["system"] == system
-    ]
 
 
 def _both(survey: dict, category: str) -> int:
@@ -1299,7 +1313,7 @@ def _spelled(count: int) -> str:
 
 def _hebrew_cell(form: str | None) -> tuple:
     """A pointed reader-facing Hebrew form wrapped as an hbo run for an RTL table cell."""
-    return wrap_hebrew_runs(psm._as_mam_would_write_it(form or ""))
+    return wrap_hebrew_runs((form or "").replace(psm.hpu.NU_GMAQ, psm.MAQAF))
 
 
 def _ref_link(bcv: str, text: str | None = None) -> object:
@@ -1320,10 +1334,6 @@ def _split(bcv: str) -> tuple[str, int, int]:
     bb = bcv[:2]
     chnu, _colon, vrnu = bcv[2:].partition(":")
     return bb, int(chnu), int(vrnu)
-
-
-def _book_name(bcv: str) -> str:
-    return tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bcv[:2]))[3:]
 
 
 def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
@@ -1465,12 +1475,19 @@ def _census(survey: dict) -> list:
         _table(headers, rows),
         mb_html.para(
             (
-                "So, among words with at least one meteg mark, there are ",
+                "So, among words with at least one ",
+                _ROM_METEG,
+                " mark, there are ",
                 f"{mas:,}",
-                " words where one of the meteg marks is after the stress and ",
+                " words where one of the ",
+                _ROM_METEG,
+                " marks is after the stress and ",
                 f"{mbs_only:,}",
-                " words where none of the meteg marks is after the stress. (There is never more"
-                " than one meteg mark after the stress.) See the ",
+                " words where none of the ",
+                _ROM_METEG,
+                " marks is after the stress. (There is never more than one ",
+                _ROM_METEG,
+                " mark after the stress.) See the ",
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page for more details.",
             )
@@ -1517,13 +1534,17 @@ def _census_definitions(survey: dict) -> list:
         mb_html.para(
             (
                 mb_html.abbr("MBS_O", {"title": _MBS_O_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks before the"
+                " counts words that have one or more ",
+                _ROM_METEG,
+                " marks before the"
                 f" stress and none after it. The {author.dquote('O')} means"
                 f" {author.dquote('only')}. ",
                 mb_html.abbr("MAS", {"title": _MAS_CENSUS_GLOSS}),
-                " counts words that have one or more meteg marks after the"
-                " stress, whether the word has zero or more meteg marks"
-                " before the stress.",
+                " counts words that have one or more ",
+                _ROM_METEG,
+                " marks after the stress, whether the word has zero or more ",
+                _ROM_METEG,
+                " marks before the stress.",
             )
         ),
         mb_html.para(
@@ -1531,16 +1552,30 @@ def _census_definitions(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"{multiple_mbs:,} MBS_O words have more than one meteg mark. Every"
-                " such MBS_O word has exactly"
-                " two meteg marks.",
+                f"{multiple_mbs:,} MBS_O words have more than one ",
+                _ROM_METEG,
+                " mark. Every such MBS_O word has exactly two ",
+                _ROM_METEG,
+                " marks.",
             )
         ),
         mb_html.para(
-            "No MAS word has more than one meteg mark after the stress: every MAS word has exactly one meteg mark after the stress.",
+            (
+                "No MAS word has more than one ",
+                _ROM_METEG,
+                " mark after the stress: every MAS word has exactly one ",
+                _ROM_METEG,
+                " mark after the stress.",
+            ),
         ),
         mb_html.para(
-            f"There are {_spelled(len(records))} MAS words that also have one meteg mark before the stress. They are listed below. (There are no MAS words with more than one meteg before the stress.)",
+            (
+                f"There are {_spelled(len(records))} MAS words that also have one ",
+                _ROM_METEG,
+                " mark before the stress. They are listed below. (There are no MAS words with more than one ",
+                _ROM_METEG,
+                " before the stress.)",
+            ),
         ),
         _table(
             ("", "", "(sub)types"),
@@ -2041,12 +2076,35 @@ def _paired_chanted_word_cell(
     )
 
 
+def _mam_form(record: dict) -> str:
+    """The record's MAM form, from the survey and from nowhere else.
+
+    RENDERING NEVER READS MAM-PRIVATE, so a displayed record with no ``mam_form`` stops the
+    render instead of being given a substitute spelling.  The survey lists such records under
+    ``diagnostics.records_without_a_mam_form``.  Until 2026-09-10 this module looked a spelling
+    up in MAM-private's Phonetic MAM for them, which made a render from the tracked survey
+    depend on the private clone whenever such a record was displayed.  CLAUDE.md's section "A
+    code path reads MAM-private every time it runs, or never" states the rule that retired it.
+    """
+    mam_form = record["mam_form"]
+    if not mam_form:
+        raise psm.SurveyProblem(
+            f"{record['bcv']}: a displayed record has no mam_form (listed under the survey's"
+            " diagnostics.records_without_a_mam_form); the page does not look one up in"
+            " MAM-private"
+        )
+    return mam_form
+
+
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The MAM MAS form followed by its next chanted word."""
+    # _mam_form first: a record with no MAM form has no next MAM form either, so the
+    # assertion below would otherwise fire first and name the wrong cause.
+    mam_form = _mam_form(record)
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
-        record["mam_form"] or record["chanted_word"],
+        mam_form,
         next_word,
         record.get("intervening_mam_punctuation", ()),
     )
@@ -2054,7 +2112,7 @@ def _case_chanted_word_cell(record: dict) -> tuple:
 
 def _oleh_chanted_word_cell(record: dict) -> tuple:
     """The oleh context, extending into the next chanted word only for a yored there."""
-    current_form = record["mam_form"] or record["chanted_word"]
+    current_form = _mam_form(record)
     if ha.MER in current_form:
         return _hebrew_cell(current_form)
     next_word = record["next_mam_form"]
@@ -2862,8 +2920,9 @@ def build_chronicles_8_11_body(survey: dict) -> list:
                 "At ",
                 _ref_link(_CHRONICLES_8_11_VERSE),
                 ", in the Leningrad Codex, the word after a MAS lacks initial stress, at least"
-                " according to one interpretation of the ambiguous meteg/merkha marks in the"
-                " manuscript.",
+                " according to one interpretation of the ambiguous ",
+                _ROM_METEG_MERKHA,
+                " marks in the manuscript.",
             )
         ),
         mb_html.table(
@@ -3379,7 +3438,7 @@ def _fit_for_mas_facts(survey: dict) -> list:
                 ". We deem a syllable fit for MAS when:",
             )
         ),
-        mb_html.unordered_list(
+        mb_html.ordered_list(
             (
                 *_FIT_FOR_MAS_CRITERIA[:2],
                 (
@@ -3495,30 +3554,3 @@ def _next_conjunctive_footnote(survey: dict) -> list:
             )
         ),
     ]
-
-
-def add_args(parser, *, repo_root: Path) -> None:
-    del repo_root
-    parser.add_argument(
-        "--html-out-dir",
-        type=Path,
-        default=None,
-        help="Directory to write the page into (default: this repo's gh-pages).",
-    )
-    parser.add_argument(
-        "--trust-survey",
-        action="store_true",
-        help=(
-            "Read out/accgram/post-stress-meteg.json instead of recomputing the survey."
-            " Only for a caller that cannot reach the MAM-private clone."
-        ),
-    )
-
-
-def run(args) -> None:
-    out_paths = gen_html_files(
-        getattr(args, "html_out_dir", None),
-        trust_survey=bool(getattr(args, "trust_survey", False)),
-    )
-    for out_path in out_paths:
-        print(f"Generated {out_path}")

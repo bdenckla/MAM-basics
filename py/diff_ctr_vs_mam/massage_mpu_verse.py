@@ -56,6 +56,12 @@ _HANDLERS = {
     "מ:אות-ג": _massage_arg_1,
     "מ:מקף אפור": lambda _wtel: " ",
     "מ:לגרמיה-2": lambda _wtel: hpu.PASOLEG,
+    # The narrow-sense paseq template: U+05C0 and then a space, as
+    # py/accgram/printed_decalogue_fetch.py resolves it.  Unlike the legarmeh template
+    # above, it needs the space: at Proverbs 8:34 the text after it begins with no
+    # space, where the text after the legarmeh template that verse had before
+    # MAM-parsed revision 1880cbbd (2026-03-16) began with one.  Added 2026-09-10.
+    "מ:פסק": lambda _wtel: hpu.PASOLEG + " ",
     "ר0": lambda _wtel: " ",
     "ר1": lambda _wtel: " ",
     "ר2": lambda _wtel: " ",

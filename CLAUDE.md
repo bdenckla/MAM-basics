@@ -37,9 +37,8 @@ external sources, exempt on the same ground `in/mam-ws-intro/` is: `in/UXLC-39/`
 **The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`
 plus the `.html` under `doc/`. It was added 2026-09-09, when a scan someone chose to run found 132
 such clusters in 16 prose files that no existing check covered. Source outside its file types is
-still yours to check: `py/check_mark_order.py` covers the `.py` of the four repos
-`py/repo_scopes.py` names and the Ben-authored `.json` of three of them — its `corpus_roots()`
-omits the Leningrad tree, which that module says "contributes no mark-order scope" — and
+still yours to check: `py/check_mark_order.py` covers the `.py` and the Ben-authored `.json` of
+the three repos `py/repo_scopes.py` names, and
 `py/tests/test_mam_simple_mark_order.py` covers MAM-simple's non-corpus tree, but a `.txt` is
 covered by nothing, and
 `py/tests/test_aleppo_page_mark_order.py` covers generated pages rather than source. Separately
@@ -88,8 +87,8 @@ report appeared, say so rather than writing accentuation prose without it;
 The skill's first rule is "Never a loose 'word'". **Ben's decision of 2026-09-08 is that
 `gh-pages/post-stress-meteg*.html` and its eight sub-documents are an exception**, and the skill
 itself allows for one: plain "word" survives "wherever the context already settles which sense is
-meant", and these pages settle it in the main page's second paragraph, which defines both "word"
-and "atom" before any other sentence uses either. So plain "word" is the declared term there, in
+meant". The main page defines both "word" and "atom" in its second expository paragraph; the
+opening sentence already uses "word". So plain "word" is the declared term there, in
 visible prose, headings, tooltips and alt text alike.
 
 **This is enforced, not merely advised**, by `py/tests/test_post_stress_meteg_plain_word.py` —
@@ -114,7 +113,7 @@ have unrelated refresh rhythms, and nothing downstream reparses when the introdu
 
 | File under `in/mam-ws-intro/` | Wikisource subpage |
 |---|---|
-| `root.mediawiki` | the introduction's own root page |
+| `root.mediawiki` | the introduction's root page |
 | `summary.mediawiki` | `/תקציר` |
 | `ch1` … `ch5.mediawiki` | `/פרק א` … `/פרק ה` |
 | `appendices.mediawiki` | `/נספחים` — the sigil roster `doc/sigil-decoding.md` leans on |
@@ -140,27 +139,23 @@ Three things about it are worth knowing before you touch it:
    pages records each one's revision id
    and timestamp, so staleness is checkable without a network call.
 
-**`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what
-`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` generate — do not treat
-the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in
-MAM-basics' `aleppo/aleppo-wiki/` and `leningrad/lenin-wiki/`, "were only ever intended to
-be starting points for manual work on Wikisource." The published pages are that manual work. So
-the gap is the intended transformation, there is no sync to maintain in either direction, and
-**no test or lint should compare the two.**
+**`index-aleppo.mediawiki` and `index-leningrad.mediawiki` are hand work, and nothing in this
+repository generates them.** Each page began as wikitext from a one-off generator. Ben,
+2026-08-31: those generated files "were only ever intended to be starting points for manual work
+on Wikisource." The published pages are that manual work. On Ben's decision of 2026-09-10 both
+generators and their outputs were removed from the repository — they "will never be run again"
+— so there is no generated form left to compare a mirrored page against. Phase 3 of
+`doc/PLAN-mega-coverage.md` names every file removed, and git history keeps them.
 
-The measurements say the same thing, and are worth quoting because the gap is much wider than
-"a wrapper around a generated body" — re-establish them with
-`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py`, then compare their
-output against this mirror. Of the Aleppo generator's 700 lines, **26 (4%)** survive into the
-live page; of the Leningrad generator's 1,135 lines, **94 (8%)** do. The
-`aleppo/aleppo-wiki/` tree also keeps two snapshots of the hand work itself,
-`Wikisource-manual-initial.txt` (63
-lines, carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose
-lines are in the live page) — which is the pipeline written down: generate raw material, then
-build the page by hand from it. The generated file's overlap with the hand-made line is the
-same 26 lines whether measured against the initial snapshot, the final snapshot or today's live
-page, so the hand work left the generated form immediately and has never gone back to it.
-The Leningrad generator keeps no snapshot of the hand work.
+Measured before the removal, **26 (4%)** of the Aleppo generator's 700 lines survived into the
+live page, and **94 (8%)** of the Leningrad generator's 1,135. The `aleppo/aleppo-wiki/` tree
+also keeps two snapshots of the hand work itself, `Wikisource-manual-initial.txt` (63 lines,
+carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose lines are
+in the live page) — which is the pipeline written down: generate raw material, then build the
+page by hand from it. The generated Aleppo file's overlap with the hand-made line was the same 26
+lines whether measured against the initial snapshot, the final snapshot or the live page, so the
+hand work left the generated form immediately and never went back to it. No snapshot of the
+Leningrad hand work was kept.
 
 ## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
 
@@ -412,8 +407,9 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
 
 - **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
   shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours —
-  `py/main_gen_aleppo_crop_editor.py` and `py/main_gen_cam1753_crop_editor.py` hold 46 between
-  them — and `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those
+  `py/main_gen_cam1753_crop_editor.py` holds 23, as its Aleppo counterpart did until phase 6a of
+  `doc/PLAN-mega-coverage.md` deleted it on 2026-09-10 — and `poetic_ply_grammar.py` numbers the
+  accents of Ps 17:14 as `#7`–`#10`. None of those
   take a prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
   number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
   the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
@@ -578,6 +574,35 @@ so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
 
+## MAM-OSIS belongs on no machine except for explicit stub publication
+
+Ben's decision, 2026-09-10: the completed Phase 5 lane of
+`doc/PLAN-evacuate-five-MAM-products.md` makes MAM-OSIS a local product under
+`MAM-OSIS/`, with published documentation under `gh-pages/MAM-OSIS/`. The source
+clone is absent from both workspace rosters and `repo_visibility`; under
+`gitrepos_setup_rule`, no machine should restore it during setup or maintenance.
+A surviving clone is residue to inspect for recoverable work before recycling.
+No `frozen_repos` or `repos_to_keep_absent` entry is needed. The unarchived
+`bdenckla/MAM-OSIS` repository remains the Pages redirect host and preserves its
+history; new product issues belong in MAM-basics.
+
+The frozen legacy set is the single `index.html` in
+`in/mam_osis_redirect_pages.json`. Production, the independent MAM-simple OSIS
+example, and the canonical suite run without a source clone. Keep the redirect-only
+MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
+publication still requires a temporary source host. Only when that work is selected:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git C:/Users/BenDe/GitRepos/MAM-OSIS
+```
+
+From MAM-basics, run `py/main_redirect_stubs.py build --repo MAM-OSIS --publish`
+and `check --repo MAM-OSIS`, commit and push the host changes, verify the source
+Pages deployment, then safety-check and recycle the temporary clone again. Keep
+the clone out of the workspace rosters. A local preview needs no clone: use
+`build --repo MAM-OSIS --out <scratch-directory>` and
+`check --repo MAM-OSIS --dir <scratch-directory>`.
+
 ## codex-index-aleppo is a redirect host
 
 **codex-index-aleppo is not in the roster**, so `gitrepos_setup_rule` does not put a clone on
@@ -665,16 +690,17 @@ missing directory.
 
 **codex-index-leningrad is not in the roster.** Phase 1 of
 `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
-five retained files into `leningrad/`, repointed
-`py/main_lenin_wikisource_page.py` to MAM-basics' canonical
-`uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
+five retained files into `leningrad/`, repointed its Wikisource index generator to MAM-basics'
+canonical `uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
 The archived repository keeps its history and closed issue tracker; new public-side issues belong
 in MAM-basics. No source Pages site or redirect manifest exists.
 
-Nothing in the ordinary suite resolves a Leningrad sibling. The Leningrad generator writes the
-three `leningrad/lenin-wiki/` artifacts, while the `page-snips/` crop is hand-maintained. The
-former repository's eight Python modules remain in MAM-basics' `py/` and stay in the source-lint
-scope through `py/lenin_paths.py`.
+Nothing in the ordinary suite resolves a Leningrad sibling. `leningrad/` holds only its
+`README.md` and the hand-maintained `page-snips/` crop with its evidence note. On Ben's decision
+of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
+used and its three generated files, since it "will never be run again"; phase 3 of
+`doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
+`py/repo_scopes.py` lists none.
 
 Phase 5 on 2026-09-04 confirmed that the clean primary clone's `HEAD` and `origin/main` were both
 `86f88c0`, and that `git worktree list` named only the primary checkout. The review forest was no
@@ -703,6 +729,22 @@ before treating one as a peer whose files need syncing.
 disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
 and because all wlc work now happens in this repo.)
 
+## A code path reads MAM-private every time it runs, or never
+
+Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private
+unconditionally, and all other code paths should not use MAM-private. If those other code paths
+find they need something from MAM-private, they should fail loudly rather than be clever and reach
+out to MAM-private." A path that reaches into the private clone only when its data calls for it
+works everywhere until the first time that data meets a machine or a cloud session without the
+clone, and nothing before then shows that the dependency exists.
+
+The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
+mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
+spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
+record lacked one, so the lookup never ran. The renderer raises instead now, and only the survey
+build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
+`al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:
@@ -711,26 +753,25 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-**In a worktree, set `REPOS_ROOT` for the remaining sibling inputs.** The suite
-reads MAM-private, while MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc
-are local products. `paths.repos_root()` otherwise resolves the remaining sibling
-repos under the worktree's parent, where none of them is. A fresh primary-checkout
-run passed **976 passed, 5 skipped** on 2026-09-07.
-
-```powershell
-$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
-```
+**A worktree needs no `REPOS_ROOT`.** The suite reads MAM-private, while MAM-simple,
+MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are local products. Since 2026-09-10
+`paths.repos_root()` reads a linked worktree's home clone out of git's own files and looks for
+siblings beside it (Ben's decision that day), so a run in `.claude/worktrees/<name>` finds
+`C:/Users/BenDe/GitRepos/MAM-private` with nothing exported; before then every worktree run
+had to set `REPOS_ROOT`. The variable still overrides the default, for a layout where the
+siblings sit somewhere else. A worktree run with nothing exported passed **988 passed, 5
+skipped** on 2026-09-10.
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
-Sibling-repo paths for MAM-OSIS, MAM-private, temporary redirect hosts, and optional
+Sibling-repo paths for MAM-private, temporary redirect hosts, and optional
 MAM-parsed legacy history are built from `mb_cmn.paths.repo_root()` / `repos_root()` /
 `sibling_repo(name)` — a
 single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
 literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, and MAM-with-doc products
+code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS products
 do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
 `MAM-parsed/historical/` inputs and MAM-basics revisions; only explicit
 `--legacy-history` comparisons require read access to a sibling MAM-parsed

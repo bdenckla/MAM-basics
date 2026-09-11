@@ -4,15 +4,15 @@ Holman cites the scan he worked from by its file name and a rough position on
 it -- ``366_2Sa_23.29b-24.16a (Col. 3 top)`` -- and the page shows an estimate
 of the column and line instead. The estimate comes from MAM-basics'
 ``uxlc_misc.my_uxlc_location``, which interpolates by word count between the
-page breaks the UXLC's LC index records, so it wants ~11 MB of UXLC XML from
-the sibling UXLC-utils clone that a fresh clone of this repo does not have.
+page breaks the UXLC's LC index records, so it reads ~11 MB of UXLC core XML,
+at ``in/UXLC-39/``.
 
 Hence two steps and this module in the middle. ``py/main_estimate_uxlc_locations.py``
 runs the estimator and writes ``data/uxlc_atom_locations.json``, which is
-tracked; the render step reads that file through ``read_locations`` below and
-needs nothing but the clone. It is the same division the emails already use:
-one step needs more than the checkout, everything downstream reads its tracked
-derivative.
+tracked; the render step reads that file through ``read_locations`` below. The
+split was drawn when that XML was in a sibling UXLC-utils clone, outside the
+checkout, and it is the division the emails still draw: one step needs more than
+the checkout, everything downstream reads its tracked derivative.
 
 ``require_full_coverage`` is why a new email cannot render with a missing
 estimate: it raises both on a case with no entry and on an entry naming no
@@ -61,8 +61,7 @@ def read_locations(data_dir: Path) -> dict[str, AtomLocation]:
     path = data_dir / LOCATIONS_FILE_NAME
     if not path.is_file():
         raise FileNotFoundError(
-            f"{path} is missing; run py/main_estimate_uxlc_locations.py, which "
-            "needs the sibling UXLC-utils clone"
+            f"{path} is missing; run py/main_estimate_uxlc_locations.py"
         )
     payload = json.loads(path.read_text(encoding="utf-8"))
     return {
@@ -109,8 +108,7 @@ def require_full_coverage(
     if missing:
         raise ValueError(
             f"no manuscript-location estimate for {missing}; rerun "
-            "py/main_estimate_uxlc_locations.py, which needs the sibling "
-            "UXLC-utils clone"
+            "py/main_estimate_uxlc_locations.py"
         )
     unmatched = sorted(set(locations) - set(ref_keys))
     if unmatched:

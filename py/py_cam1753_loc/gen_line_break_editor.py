@@ -18,8 +18,8 @@ Requires a local HTTP server for images:
     python -m http.server 8119
 
 Usage:
-    .venv/Scripts/python.exe gen_cam1753_line_break_editor.py 0072B 1
-    .venv/Scripts/python.exe gen_cam1753_line_break_editor.py 0072B 2
+    .venv/Scripts/python.exe py/main_cam1753_gen_line_break_editor.py 0072B 1
+    .venv/Scripts/python.exe py/main_cam1753_gen_line_break_editor.py 0072B 2
 """
 
 import json
@@ -30,7 +30,6 @@ import cam1753_paths
 
 LB_DIR = cam1753_paths.line_breaks_dir()
 QUAD_DIR = cam1753_paths.col_quads_dir()
-IMG_DIR = cam1753_paths.pages_dir()
 OUT_DIR = cam1753_paths.novc_dir()
 
 LOCAL_IMG_BASE = "http://localhost:8119/cam1753-pages"
@@ -1041,7 +1040,7 @@ document.addEventListener('keydown', (e) => {{
 def main():
     if len(sys.argv) < 3:
         print(
-            "Usage: .venv/Scripts/python.exe gen_cam1753_line_break_editor.py"
+            "Usage: .venv/Scripts/python.exe py/main_cam1753_gen_line_break_editor.py"
             " <page_id> <col>"
         )
         print("  e.g. ... 0072B 1")
@@ -1051,7 +1050,3 @@ def main():
     col = int(sys.argv[2])
     out_path = generate_editor_html(page_id, col)
     webbrowser.open(str(out_path))
-
-
-if __name__ == "__main__":
-    main()

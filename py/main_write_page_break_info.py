@@ -12,8 +12,6 @@ import uxlc_paths
 def _write_page_break_info(pbi):
     lciars = page_break_info.get_lci_augrecs(pbi)
     lciars_f = lci_augrec.flatten_many2(lciars)
-    json_output_path1 = uxlc_paths.out_uxlc_misc_dir() / "lci_augrecs.json"
-    my_open.json_dump_to_file_path(lciars_f, json_output_path1)
     my_open.json_dump_to_file_path(lciars_f, uxlc_paths.data_dir() / "lci_augrecs.json")
     #
     pg_lens = page_break_info.get_page_lengths(pbi)

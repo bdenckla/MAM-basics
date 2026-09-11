@@ -31,6 +31,7 @@ Notes / deliberate scope decisions:
     real change is in *_gen; we use `*_gen or *` for each side.
 """
 
+import argparse
 import json
 import collections
 import sys
@@ -201,7 +202,27 @@ def prose_st_uxlc_change_keys():
     return keys
 
 
-def main():
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "--audit",
+        action="store_true",
+        help="print coverage counts to stdout instead of writing"
+        " in/accgram/uxlc_accent_changes.json",
+    )
+    return parser
+
+
+def almost_main(argv: list[str]) -> None:
+    """Write in/accgram/uxlc_accent_changes.json, or with ``--audit`` print counts.
+
+    ``main_0_mega.py`` calls this with an explicit ``argv``, since it runs its steps
+    in one process and blanks ``sys.argv`` while they run.
+    """
+    args = _build_parser().parse_args(argv)
     src = paths.in_dir() / "UXLC-misc" / "all_changes.json"
     out = paths.in_dir() / "accgram" / "uxlc_accent_changes.json"
     data = json.load(open(src, encoding="utf-8"))
@@ -216,7 +237,7 @@ def main():
             rec["prose_st_ref"] = ref
             rec["prose_st_pending"] = pending
             result.append(rec)
-    if "--audit" in sys.argv:
+    if args.audit:
         print("total records:", len(data))
         print("flagged:", len(result))
         print(
@@ -250,6 +271,10 @@ def main():
     with open(out, "w", encoding="utf-8", newline="") as out_fp:
         json.dump(result, out_fp, ensure_ascii=False, indent=2)
     print(f"Wrote {len(result)} accent-change records to {out}")
+
+
+def main():
+    almost_main(sys.argv[1:])
 
 
 if __name__ == "__main__":

@@ -2,11 +2,20 @@
 
 These snapshots are permanent, tracked inputs to the change-log generator.
 They contain the plus JSON at each boundary of the named pre-migration
-releases. Each directory is named by its full original MAM-parsed commit.
+releases. Each snapshot is an uncompressed ZIP archive named by its full
+original MAM-parsed commit. Members retain their original `plus/...` names and
+exact bytes.
 `manifest.json` records the source repository, commit dates, source blob
 identifiers, and migration information. Preserve the JSON bytes, including
 historical schema and filename differences; the reader handles those
 differences without rewriting these inputs.
+
+The archives are deterministic: member names are sorted, timestamps are fixed
+at 1980-01-01 00:00:00, the creating platform is fixed to Unix, regular-file
+permissions are 0644, and members use `ZIP_STORED`. Archive and member comments
+and extra fields are empty. The reader checks the complete manifest/archive
+member set, rejects duplicate or unlisted members, validates this metadata and
+member CRCs, and reads members directly without extraction.
 
 Ben's decision, 2026-09-06: common change-log generation must not require a
 sibling MAM-parsed clone. Arbitrary historical comparisons remain available

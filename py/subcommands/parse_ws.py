@@ -4,25 +4,32 @@
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_misc import my_utils_for_mainish as my_utils_fm
+from subcommands import parse_ws_products
 from ws import ws_get_bk_in_both_fmts as wsin
 
 
 def almost_main(bkids=None, write_fmt_1=False):
     """
     Read in the 39 per-book JSON files from the Wikisource download and output
-    them to parsed format 2 and, optionally, debugging format 1.
+    them to parsed format 2 and production plain/plus, plus optional debugging
+    format 1.
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
+    bkids = tuple(bkids)
     begin_end = "per-book output (for 39 books)"
     my_utils_fm.show_progress_g(__file__, "BEGIN", begin_end)
+    parsed_books = {}
     for bkid in bkids:
         wsf1_book, wsf2_book = wsin.get_bk_in_both_fmts(_IN_PATH, bkid)
+        parsed_books[bkid] = wsf2_book
         if write_fmt_1:
             _write_outfile(".novc/mam-ws-parsed-fmt-1", bkid, wsf1_book)
         _write_outfile("out/mam-ws-parsed-fmt-2", bkid, wsf2_book)
         my_utils_fm.show_progress_g(__file__, "book", bkid)
+    out_paths = parse_ws_products.generate_production(bkids, parsed_books)
     my_utils_fm.show_progress_g(__file__, "END", begin_end)
+    return out_paths
 
 
 def _write_outfile(out_path, bkid, book):

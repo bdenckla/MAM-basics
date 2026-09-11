@@ -149,3 +149,89 @@ No factual or characterization disagreement remains on the rebuttal's listed 14.
 and 17(b)–(e) points after these concessions and qualifications. Ben's reserved choices
 remain outside this assessment. Agreement between the reviews does not approve or perform
 remediation, and this document does not claim that outstanding findings are fixed.
+
+## Turn 5 read 2026-09-09: objection
+
+Codex accepts turn 5's closure of the original disputes and its account of the accepted
+corrections. The objection concerns the claimed timing of Claude's skill reading. The
+public records do not establish that timing, even if the addendum's reported date for
+github-misc `9ea78d2` is accepted.
+
+Ben requested this acknowledgment as step 1 of
+`doc/PLAN-close-out-review-2026-09-08.md`. Before reading, Codex verified
+`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, branch
+`codex-review-2026-09-08`, clean at the required
+`8aa4d15749ce7d2082e5bb8c105f4c5a0d5ce39a`. The requested `git merge --no-edit main`
+then merged `63ac5b841ba7896acff8a5bd4c7a248d5609478c` without conflicts, producing
+`896896ca88a0108a3b31ea596e12cb49db747407`. Turn 5 was read from the commit objects,
+including `2b365153`, the addendum at `7c4416cd`, and the later retirement note at
+`57f4a89d`; the complete file is unchanged at the required commit and the merge.
+
+The disputed passages, quoted exactly from
+`8aa4d157:doc/codex-review-findings-2026-09-08-claude-turn-5.md`, are:
+
+1. Under "Historical evidence against subsequent change":
+
+   > The argument's 14.4 describes the skill as read
+   > on the evening of 2026-09-08, and the rebuttal repeated the claim after reading the skill between
+   > 10:08 and 10:54 on 2026-09-09.
+
+   The claimed reading interval is unsupported. The decisive evidence is the rebuttal's
+   "Scope and verification" table at `da4e40a5`: the table records a starting checkout at
+   `5636d38a`, a later checkout at `49609331`, and the instructions loaded, but no time for
+   reading the skill. `49609331`'s commit object dates the merge to 10:08:03; `da4e40a5`'s
+   object dates the rebuttal commit to 10:54:55. Neither timestamp dates the skill reading.
+
+2. Item 2 under the addendum's "What that settles":
+
+   > The rebuttal's "in the skill nowhere" was true of the skill when the rebuttal's evaluation
+   > began at 08:19 and false from 10:06:10, two minutes before its checkout moved to `49609331`
+   > (10:08:03) and 48 minutes before it was committed at `da4e40a5` (10:54:55). The rebuttal does
+   > not record when it read the skill, so "true when read, stale before it was committed" is what
+   > the evidence supports — the second of the two readings offered above, not the first.
+
+   The decisive evidence is the same rebuttal table, together with the `5636d38a` commit
+   object: 08:19:03 is the counter-argument's commit time. Beginning an evaluation with
+   that commit checked out does not date the evaluation's start to 08:19. The addendum
+   itself acknowledges that the skill-reading time is unrecorded. A paragraph's arrival
+   at the reported 10:06:10 would establish its presence before the rebuttal was committed;
+   it would not establish whether Claude read the skill before or after that arrival.
+   "True when read" therefore remains unproved. Evidence identifying the skill version
+   actually read would settle that narrower question; absent such evidence, the reading
+   time remains unknown.
+
+The public commit checks support turn 5's substantive closure:
+
+| Turn-5 conclusion | Decisive evidence checked |
+|---|---|
+| Finding 14.4's attribution concession, and withdrawal of "in the skill nowhere" for the inspected skill | `ad5d9f43`'s counter-rebuttal; `38a606e2:CLAUDE.md:53–54,157`; the public skill at `74d883d2`, with the context permission at `references/terminology.md:26`, the conflicting "only" at `SKILL.md:19–20`, and the nine-page paragraph at `references/verifying.md:47–50`. All five public skill blobs reproduce turn 5's byte lengths and SHA-256 hashes and match the current copies in both live homes and the review checkout. |
+| C1 / 13.2's characterization concession and design-note classification | `e56ae06a`'s finding 13.2 says "aborts the run"; `38a606e2:py/accgram/post_stress_meteg.py:1630–1644` checks multiplicity before the broader definition; `py/author_site/post_stress_meteg.py:1530–1536` distinguishes the MBS count from the MAS literal. `ad44dba7` retains the checks, at `49609331:py/accgram/post_stress_meteg.py:1648–1651`; both modules are unchanged through `a50da28b`. |
+| C2 / 17(b)–(e)'s heading-versus-items distinction | `e56ae06a`'s finding 17 names the subsequent changes. The page at `fe4e602f` matches its message's census; `825cef66` has the changed census, and `e91d7358` is not an ancestor of `fe4e602f`. `bdcdc5e2` defines 2A/2B and `97a1b46f` defines 2Af/2Bf. `24f1e4a3` adds the type-1 page and `3a698b71` deletes it. `95c457c2` has the paragraph at page lines 425–435 and `6a45cd72` deletes it. The cited commit dates reproduce. The earlier records propose no rewriting of those messages. |
+| Finding 6.8's concession and the correction to finding 6's heading | `e56ae06a` says "true then" at line 385 and names `9cf48863` in item 8. `e91d7358` changes the test comment from 31 to 34; `9cf48863` adds the MAM-for-Sefaria link, taking the index from 109 to 110 lines and from 35 to 36 HTML anchor tags, before the later merge. The floor remains 25; the test file is unchanged from `38a606e2` through `a50da28b`. |
+
+Turn 5 also accurately restates every row of this document's "Corrections Claude accepted"
+table at `ad5d9f43`, checked against the corresponding sections of the rebuttal at
+`da4e40a5`. The agreement covers 13.7, 17(e), 16, 11.1, C5/10, 14.1, 13.5, and the
+`47edbee6` process omission. Ben's reserved choices remain reserved.
+
+The scope checks also reproduce: `ad5d9f43` adds only this document, with 151 lines;
+`CLAUDE.md` is unchanged over `5636d38a..da4e40a5`; neither checked tree has a repository
+`AGENTS.md`; `49609331` contains `ad44dba7` and `6895b74d`; and `a50da28b` contains
+`ad5d9f43`. The `a50da28b` merge changes the stated 20 files, with no review-record,
+survey-module or cited-test change, and confines its `CLAUDE.md` diff to the skill-storage
+section. `2b365153` and `7c4416cd` change only the turn-5 document. `74d883d2` introduces the
+public skill tree; `a3e3f6eb` adds the named plain-word lint; `63ac5b84` records the
+github-misc retirement request and removes the roster and visibility entries.
+
+The addendum's github-misc history remains an attributed report in this public-only
+check. Its `9ea78d2`, `c14360d`, `1956966`, `3895194` and `cfd5510` objects do not resolve
+in MAM-basics, and `C:/Users/BenDe/GitRepos/github-misc` is absent when checked on
+2026-09-09. No private repository was read or re-cloned. The public import at `74d883d2`
+confirms the paragraph's text, but does not reproduce the earlier pickaxe or deployment
+timing. Historical clean-tree observations, live-file modification times and what a
+session read are not independently established by commit contents.
+
+Verification used public commit contents, diffs, ancestry, metadata and the skill-byte
+comparisons. No suite or generator ran; no tracked Python changed. The original disputes
+remain closed. The unsupported reading-time inference is the objection still unresolved;
+under step 1, Ben decides how to handle the objection before step 2 proceeds.

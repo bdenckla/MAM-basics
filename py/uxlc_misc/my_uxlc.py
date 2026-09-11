@@ -35,11 +35,11 @@ relabeling:
     .gitattributes normalizes.
 
   * ``/Notes/`` does NOT.  hcanat.us builds note pages from a newer template than the
-    477 committed under in/UXLC-notes/ -- attribution and change-log link in a
-    <table>, links ending .html rather than .xml, a trailing "auto" marker -- so
-    main_clc_download_notes run against this default adds pages that do not match the
-    ones already on disk.  clc_note_pages parses what is committed; a mixed tree is a
-    decision nobody has made yet.
+    477 stored under ``uxlc/in/UXLC-notes/*.json`` -- attribution and change-log
+    link in a <table>, links ending .html rather than .xml, a trailing "auto"
+    marker -- so main_clc_download_notes run against this default adds pages that
+    do not match the existing entries.  clc_note_pages parses what is committed;
+    mixing the two templates remains a decision nobody has made.
 """
 
 

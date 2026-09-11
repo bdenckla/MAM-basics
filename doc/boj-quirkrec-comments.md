@@ -2,7 +2,7 @@
 # Procedure: Adding or Updating Quirkrec Comments
 
 This describes how to add or update comments on quirkrec entries
-(the Python dicts in `py/author_boj_qr/qr_XXXX.py` files).
+(the Python dicts in `py/author_boj_qr/qr_CC.py` chapter modules).
 
 ## Where comments live
 
@@ -29,12 +29,15 @@ to the `qr-generic-comment` list.
 
 ## Procedure
 
-1. **Find the quirkrec file.** Files are named `py/author_boj_qr/qr_XXYY.py`
-   where XX is the chapter (zero-padded) and YY is the verse. Some verses
-   have multiple quirkrecs, distinguished by suffixes
-   (e.g., `qr_0816_HVA.py`, `qr_0816_YNQFV.py`).
+1. **Find the chapter module and record.** Chapter modules are named
+   `py/author_boj_qr/qr_CC.py`, where CC is the zero-padded chapter. Records
+   are named `RECORD_CCVV` for a single record at a verse. Multiple records
+   at one verse have word-ID suffixes, such as `RECORD_0816_HVA` and
+   `RECORD_0816_YNQFV` in `qr_08.py`.
 
-2. **Read the file** to see the existing comment style and content.
+2. **Read the record and its helpers** to see the existing comment style and
+   content. A helper used by one record includes that record's ID when another
+   helper in the chapter would otherwise have the same name.
 
 3. **Edit the comment.** If `qr-generic-comment` is a list of strings,
    add a new string element. If it is a plain string, consider converting

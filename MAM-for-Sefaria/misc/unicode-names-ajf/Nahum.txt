@@ -1094,4 +1094,3 @@ SPACE
 r,a,3,a,τ,:,k.,a,(tip)
 SPACE
 τ,·,a,m,i,(mos),y,d,(sopa)
-

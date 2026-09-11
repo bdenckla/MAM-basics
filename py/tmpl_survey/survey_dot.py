@@ -601,8 +601,7 @@ def render_svg(dot_path, svg_path, generator_file=None):
 
       * In a cloud container, the render is skipped and recorded. Returning
         False rather than raising is what lets main_0_mega.py's tmpl-survey
-        step -- step 5 of its 41 -- complete there instead of killing the
-        remaining 36 steps.
+        step complete there instead of killing every step after it.
       * Anywhere else, it raises. Until 2026-09-09 it returned False everywhere
         and both callers below discarded that, so a machine without Graphviz
         rewrote the .dot files, left the .svg files stale, and said nothing.

@@ -87,6 +87,19 @@ stale copy, and nothing warns it, so those two comparisons are the only detector
   bans branching as the **default for ordinary work**; it does not ban a branch a
   worktree requires. (Added 2026-07-31 — the original bullet predates my knowing what a
   worktree was.)
+- **Name new Codex-managed worktree branches `codex-worktree-<worktree-id>`.**
+  Ben's decision, 2026-09-10: when starting work in a new Codex-managed worktree, verify
+  the actual checkout path. If HEAD is detached, create and switch to a branch at the
+  current HEAD named `codex-worktree-<worktree-id>` before editing. For example,
+  `.../worktrees/a3ff/MAM-basics` gets branch `codex-worktree-a3ff`. Use the singular
+  `worktree`, dashes, and no repository name: the branch already belongs to that repository.
+  This replaces the slash-separated
+  naming chosen earlier on 2026-09-10, after Ben observed that the Windows desktop app's
+  hover label showed only `MAM-basics` for branch `codex/worktrees/a3ff/MAM-basics`.
+  Preserve an existing checked-out branch unless Ben asks to rename it. If the proposed
+  branch name already exists, inspect its commit and worktree association before proceeding;
+  do not overwrite it. The app creates the worktree before the agent starts; this instruction
+  governs branch creation after startup.
 - **The scheduled final integration is verified in the worktree and reaches the primary clone
   only as a fast-forward.** Ben's decision, 2026-09-07, reversing the order this bullet gave
   until that day — merge in the primary clone first, run the suite there second: *"if there

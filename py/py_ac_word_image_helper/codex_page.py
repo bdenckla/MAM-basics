@@ -15,9 +15,10 @@ import ac_paths
 # it was right in codex-index-aleppo and inert here: this repo's root holds no
 # ``line-breaks``, ``column-coordinates`` or ``aleppo-pages``, so every consumer in
 # MAM-basics composed a correct root with a missing target.  That is why
-# ``main_gen_aleppo_crop_editor.py`` -- book-of-job's tool, which imports LB_DIR and
-# CC_DIR from here -- has been broken since book-of-job's own Phase 3 landed this
-# package on 2026-08-19.  Naming the data root is what repairs it.
+# ``main_gen_aleppo_crop_editor.py`` -- book-of-job's tool, which imported LB_DIR and
+# CC_DIR from here -- was broken from the day book-of-job's own Phase 3 landed this
+# package, 2026-08-19, and naming the data root is what repaired that.  Phase 6a of
+# ``doc/PLAN-mega-coverage.md`` deleted the tool on 2026-09-10.
 #
 # ONE COMMITTED BLOB WITH codex-index-aleppo's COPY UNTIL THIS EDIT, and the fork is
 # deliberate rather than an oversight: that copy is deleted by Phase 4 of the same
@@ -37,11 +38,6 @@ _PAGE_RE = re.compile(r"^(\d+[rv])\.json$")
 def local_image_path(page_id):
     """Return the absolute Path to the local image for *page_id*."""
     return IMG_DIR / f"{page_id}.jpg"
-
-
-def image_relpath(page_id):
-    """Return a relative path suitable for HTML generated into .novc/."""
-    return f"../aleppo-pages/{page_id}.jpg"
 
 
 def load_index(book="Job"):
@@ -77,12 +73,6 @@ def load_index(book="Job"):
             ch_e, v_e = 99, 99
         pages.append((leaf, ch_s, v_s, ch_e, v_e))
     return pages
-
-
-def find_page_for_verse(pages, ch, v):
-    """Find which page a verse is on (returns the first matching page)."""
-    result = find_pages_for_verse(pages, ch, v)
-    return result[0] if result else None
 
 
 def find_pages_for_verse(pages, ch, v):
@@ -179,12 +169,6 @@ def load_page_image(page_id):
         print("  Run download_aleppo_pages.py to fetch the images.")
         sys.exit(1)
     return Image.open(path)
-
-
-def _leaf_to_page_n(page_id):
-    num = int(page_id[:-1])
-    side = page_id[-1]
-    return (num - 1) * 2 + 2 + (0 if side == "r" else 1)
 
 
 def _parse_verse_label(label):

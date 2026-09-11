@@ -1,0 +1,36 @@
+<header>
+	<revisionDesc resp="bd">
+	<date>2023.08.15</date>
+	<p>Add notes on the 52 words with at least one small, large, or hung letter.</p>
+	</revisionDesc>
+	<revisionDesc resp="bd">
+		<date>2023.06.16</date>
+		<p>Generate from MAM Google Sheet sources.</p>
+	</revisionDesc>
+	<revisionDesc resp="dt">
+		<date>2014.02.19</date>
+		<p>Finished the correction pass.</p>
+	</revisionDesc>
+	<revisionDesc resp="dt">
+		<date>2014.01.20</date>
+		<p>Normalized the text.</p>
+	</revisionDesc>
+	<revisionDesc resp="dt">
+		<date>2014.01.03</date>
+		<p>Begin converting Miqra according to the Mesorah content to OSIS book files.</p>
+	</revisionDesc>
+	<work osisWork="MapM" xml:lang="he">
+		<title>Miqra according to the Mesorah</title>
+		<contributor role="edt">Ben Denckla</contributor>
+		<contributor role="edt">David Troidl</contributor>
+		<creator role="edt">Seth (Avi) Kadish</creator>
+		<date>2013.8.16</date>
+		<description>Miqra `al pi ha-Mesorah is an edition of the Tanakh in digital online format, available as a carefully corrected draft of the entire Tanakh. It is based on the Aleppo Codex and related manuscripts, and consults the full range of masoretic scholarship.</description>
+		<identifier type="URL">http://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Mesorah</identifier>
+		<rights type="x-CC_BY-SA_4.0">Creative Commons Attribution-ShareAlike 4.0</rights>
+		<refSystem>MT</refSystem>
+	</work>
+	<work osisWork="MT" xml:lang="he">
+		<title>Masoretic Text</title>
+	</work>
+</header>

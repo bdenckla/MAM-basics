@@ -515,4 +515,3 @@ SPACE
 l,_,(mos),y,h,o,v,a,(tip),h
 SPACE
 h,_,m,·,:,l,v,·,k,a,(mos),h,(sopa)
-

@@ -23,13 +23,16 @@ def read_parsed_plain_bk39s(bk39ids=None, mam_parsed_path=None):
     # would be a second spelling of one dependency.
     if mam_parsed_path is None:
         mam_parsed_path = paths.mam_parsed_path()
+    return read_parsed_plain_bk39s_from_dir(f"{mam_parsed_path}/plain", bk39ids=bk39ids)
+
+
+def read_parsed_plain_bk39s_from_dir(plain_dir, bk39ids=None):
+    """Read plain-schema bk24 files from ``plain_dir`` into bk39 records."""
     real_bk39ids = bk39ids or tbn.ALL_BK39_IDS
     books_out = {}
-    # Can we get rid of this "for" loop?
     for bk24id in _bk24ids(real_bk39ids):
-        folder = f"{mam_parsed_path}/plain"
         osdf24 = tbn.ordered_short_dash_full_24(bk24id)
-        in_path = f"{folder}/{osdf24}.json"
+        in_path = f"{plain_dir}/{osdf24}.json"
         read_parsed_plain_bk24(in_path, books_out)
     return books_out
 

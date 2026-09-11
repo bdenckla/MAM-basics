@@ -16,8 +16,7 @@ REPO-WIDE — and tell Ben about the conflict.
 a maqaf joins to the next. A **chanted word** is a lone atom *or* a whole maqaf compound: the
 unit cantillation operates on, normally with one accent. Say which you mean. Name a compound
 whole — על־פני, לא־תעשה — never a bare half of one with an apology ("פני, maqaf-joined as
-על־פני" was rejected outright; the hedge is the error, not the wording). Plain "word" survives
-only for an ordinary English word and inside quoted or translated source material.
+על־פני" was rejected outright; the hedge is the error, not the wording). Plain ‘word’ survives for an ordinary English word, inside quoted or translated source material, and wherever the context already settles which sense is meant (references/terminology.md).
 
 **"Chanted word" is MECHANICAL, and an analysis never takes the name away.** What makes a chanted
 word is the writing: atoms joined by maqafs, bounded by spaces. So **never write that a maqaf

@@ -1,5 +1,5 @@
 {
-  "note": "The UXLC's atom number for each atom Holman's emails raise, worked out from the UXLC core XML in the sibling UXLC-utils. The UXLC counts every child element of the verse, so a ketiv and its qere are two atoms and a mid-verse samekh is one; Holman counts a ketiv/qere pair once and does not count a samekh, so the key here, which is his, disagrees with the value on the few cases where the verse has either before the atom. Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the render step; MAM-basics/py/hkq_cmn/uxlc_standard_atoms.py sets out the evidence.",
+  "note": "The UXLC's atom number for each atom Holman's emails raise, worked out from the UXLC core XML in MAM-basics/in/UXLC-39/. The UXLC counts every child element of the verse, so a ketiv and its qere are two atoms and a mid-verse samekh is one; Holman counts a ketiv/qere pair once and does not count a samekh, so the key here, which is his, disagrees with the value on the few cases where the verse has either before the atom. Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the render step; MAM-basics/py/hkq_cmn/uxlc_standard_atoms.py sets out the evidence.",
   "standard_atoms": {
     "Exodus 7:20.19": 19,
     "Exodus 11:6.1": 1,

@@ -14,9 +14,8 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from mb_cmn import uni_denorm as ud
 from mb_misc import my_utils_for_mainish as my_utils_fm
-from py_misc import read_books_from_mam_parsed_plain as plain
+from py_misc import read_books_from_mam_parsed_google as google
 from ws import ws_get_bk_in_both_fmts as wsin
 
 
@@ -40,7 +39,7 @@ def _make_dump_diff(diff):
 def _do_one_section_of_tanakh(secid):
     sec_diffs = red.diffs_struct_mk()
     books_of_sec = tbn.bk39s_of_sec(secid)
-    go_books_raw = plain.read_parsed_plain_bk39s(books_of_sec)
+    go_books_raw = google.read_parsed_google_bk39s(books_of_sec)
     for bkid in books_of_sec:
         my_utils_fm.show_progress_g(__file__, "book", bkid)
         wsf2_book = wsin.get_bk_in_fmt_2(_IN_PATH, bkid)
@@ -48,7 +47,15 @@ def _do_one_section_of_tanakh(secid):
         go_book_raw = go_books_raw[bkid]
         ws_book = wsgo_ws.massage_ws_book(ws_book_raw)
         go_book = wsgo_go.massage_go_book(go_book_raw)
-        bds = red.get_book_diffs_ws_go((secid, bkid), ws_book, go_book)
+        edit_ws_book = wsgo_ws.massage_ws_book_for_google_edit(ws_book_raw)
+        edit_go_book = wsgo_go.massage_go_book_for_google_edit(go_book_raw)
+        bds = red.get_book_diffs_ws_go(
+            (secid, bkid),
+            ws_book,
+            go_book,
+            edit_ws_book=edit_ws_book,
+            edit_go_book=edit_go_book,
+        )
         red.diffs_struct_extend(sec_diffs, bds)
     return sec_diffs
 
@@ -79,8 +86,8 @@ def _bk24na_slash_chap_id(bk39id, chnu):
 def _make_auto_edit(diff):
     secid, bk39id, field = diff["sena"], diff["bkid"], diff["field"]
     chnu, int_vrnu_or_zot = diff["cvt"][0:2]
-    dws = ud.give_std_mark_order("".join(diff["ws"]))
-    dgo = ud.give_std_mark_order("".join(diff["go"]))
+    dws = "".join(diff["ws"])
+    dgo = "".join(diff["go"])
     assert dws != dgo
     auto_edit = {
         "sena": _TAB_NAMES_IN_GOOGLE_SHEET[secid],

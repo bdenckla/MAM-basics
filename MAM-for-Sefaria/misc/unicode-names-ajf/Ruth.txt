@@ -2340,4 +2340,3 @@ SPACE
 h,v,o,l,i,(mer),y,d
 SPACE
 α,∵,τ,-,d,·,a,v,i,(mos),d,(sopa)
-

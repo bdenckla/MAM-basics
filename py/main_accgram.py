@@ -43,9 +43,9 @@ Subcommands:
                 before, in, or after the chanted word's primary stress, with
                 Phonetic MAM as the stress oracle, and write
                 out/accgram/post-stress-meteg.json.  Needs the MAM-private
-                clone; py/author_site/post_stress_meteg.py renders the page
-                from the JSON this writes, which is how main_0_mega.py stays
-                clear of that clone.
+                clone.  main_0_mega.py runs it as a step, except in a cloud
+                session, and py/author_site/post_stress_meteg.py renders the
+                page from the JSON it writes.
     survey-breuer-zaqef-units
                 Measure how well Breuer's long/short/tiny (CoS Instructions for the
                 Reader) predicts whether a two-chanted-word zaqef realm is divided by
@@ -487,7 +487,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate_html_parser.set_defaults(func=_run_generate_html)
 
     # One `generate-html-<name>` subcommand per report, generating that file alone.  Each exposes
-    # its module's own arguments (e.g. --html-out), same as the module's standalone entry point.
+    # its module's own arguments (e.g. --html-out); the modules have no entry point of their own.
     for name, module in _HTML_GENERATORS:
         one_parser = subparsers.add_parser(
             f"generate-html-{name}",

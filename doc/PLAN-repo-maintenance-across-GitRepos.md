@@ -27,6 +27,12 @@ clone belongs merely because it exists, and do not infer that a missing unarchiv
 should be restored. The roster-driven files formerly under `misc/linux-sh/` were retired on
 2026-09-08 because their twelve-name lists contradicted the canonical declaration.
 
+Correction 2026-09-09: GitRepos setup follows the folders listed in
+[all-repos.code-workspace](../all-repos.code-workspace), as specified by
+`gitrepos_setup_rule` in [in/repo_maintenance_policy.json](../in/repo_maintenance_policy.json).
+Do not enumerate GitHub repositories and subtract exclusion lists, and do not add gist clones.
+The earlier scope paragraph's subtraction and gist instructions are superseded.
+
 After the mechanical repository actions and the `doc/` sweep, inspect completed task artifacts
 under `C:/Users/BenDe/Documents/Codex`. Preserve
 `C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task
@@ -182,6 +188,13 @@ abbreviation it looks for, with zero hits.
   `DATA_REPO_NAME` in `py/ac_paths.py`, `py/boj_paths.py`, `py/cam1753_paths.py`,
   `py/hkq_paths.py` and `py/lenin_paths.py`, and UXLC-utils through `sibling_repo("UXLC-utils")`
   at four sites. Removing any of those clones would break a generator.
+  **Correction 2026-09-10: this bullet went stale on 2026-09-03 and 2026-09-04,
+  when the remaining data of all six moved into MAM-basics**, under `book-of-job/`,
+  `uxlc/`, `holman/`, `aleppo/`, `cam1753/` and `leningrad/`. No paths module holds a
+  `DATA_REPO_NAME` now, no `sibling_repo("UXLC-utils")` call remains, and none of
+  the six is in `all-repos.code-workspace`, so none belongs on a machine.
+  `py/lenin_paths.py`, which the bullet names, was deleted on 2026-09-10 by phase 3
+  of `doc/PLAN-mega-coverage.md`.
 - **No GitHub repo is an archiving candidate either**, and the reason is uniform: archiving makes
   a tracker read-only, and every candidate still has open issues — UXLC-utils 27,
   holman-ketiv-qere 60, book-of-job 19, wlc-utils 21, and on the private side the four counted in

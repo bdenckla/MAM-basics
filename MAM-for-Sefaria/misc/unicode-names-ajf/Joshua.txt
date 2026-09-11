@@ -13075,7 +13075,7 @@ n,_,x,:_,l,_,(tev),τ
 SPACE
 m,_,θ,·,‥,(mer),h
 SPACE
-b,:,n,‥,(mos),y,-,$,·sh,i,m,:,3,(tip),v,o,n.
+b,:,n,‥,y,-,$,·sh,i,m,:,3,(tip),v,o,n.
 SPACE
 l,:,m,i,$,·sh,:,p,·,:,x,o,τ,a,(mos),m.,(sopa)
 
@@ -17854,4 +17854,3 @@ SPACE
 b,·,:,h,_,(mer),r
 SPACE
 α,∵,p,:,r,a,(mos),y,i,m.,(sopa)
-

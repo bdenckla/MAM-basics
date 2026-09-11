@@ -13,9 +13,10 @@ survives only as the atom-letter consistency guard
 (``clc_collect._check_atom_consistency``).
 
 To keep the CLC build deterministic and offline, those pages are downloaded as a
-separate, non-default step (``main_clc_download_notes``) into committed files
-under ``in/UXLC-notes/``; this module only *reads* that local copy and extracts
-its prose. No network here -- a page missing locally just returns ``None``.
+separate, non-default step (``main_clc_download_notes``) into per-book JSON
+objects under ``uxlc/in/UXLC-notes/``; this module only *reads* that local copy
+and extracts its prose. No network here -- a page missing locally just returns
+``None``.
 
 Two page formats are in the wild and must both be handled:
 
@@ -38,22 +39,12 @@ text, ``<p>`` text, ``<h4>`` text, and bare text -- is note prose.
 import html.parser
 import re
 
-import uxlc_paths
+from clc.clc_note_storage import NoteStorageOperation
 
 _WS_RE = re.compile(r"\s+")
 
 
-def local_page_path(book_id, ch, v, position, code):
-    """Committed local path of one (atom, code) note page.
-
-    Keyed by the CLC bk39 ``book_id`` (the downloader maps it to the canonical
-    tanach.us name for the remote URL; locally we keep the CLC id for uniformity).
-    """
-    filename = f"{book_id}.{ch}.{v}.{position}-{code}.html"
-    return uxlc_paths.uxlc_notes_dir() / book_id / filename
-
-
-def local_note_prose(book_id, ch, v, position, code):
+def local_note_prose(book_id, ch, v, position, code, storage=None):
     """Return the downloaded note page's prose (paragraphs joined), or None.
 
     None means no usable local page -- it was never downloaded (not yet fetched,
@@ -61,11 +52,11 @@ def local_note_prose(book_id, ch, v, position, code):
     then shows a bare ``[note not yet downloaded]`` placeholder, never a
     fabricated substitute (clc_collect; issue UXLC-utils#19).
     """
-    path = local_page_path(book_id, ch, v, position, code)
-    if not path.exists():
+    operation = storage or NoteStorageOperation()
+    page_text = operation.page_text(book_id, ch, v, position, code)
+    if page_text is None:
         return None
-    with open(path, encoding="utf-8") as page_fp:
-        paragraphs = _extract_prose_paragraphs(page_fp.read())
+    paragraphs = _extract_prose_paragraphs(page_text)
     return " ".join(paragraphs) if paragraphs else None
 
 

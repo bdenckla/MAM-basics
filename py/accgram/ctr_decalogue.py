@@ -3,7 +3,7 @@ edition rather than a hand transcription.
 
 CTR (``ctr_decalogue_fetch.py``) is a VENDORED STRAND: digital, accent-exact Hebrew, so its
 marks are compared mechanically against the reference ``printed_decalogue_teamim.json`` rather
-than read off a page.  What it turns out to follow is the surprise this module reports:
+than read off a page.  What it turns out to follow is the surprise this module finds:
 
 * CTR's **Exodus 20** has the ta'am **elyon** accents (not the taxton the running text was
   expected to hold) under a punctuation that is NEITHER strand's: sixteen sof pasuqs, the exact
@@ -88,7 +88,6 @@ cases, which are primary observation off a page and do carry weight.
 
 from __future__ import annotations
 
-import argparse
 import dataclasses
 import difflib
 import json
@@ -97,7 +96,6 @@ from pathlib import Path
 from mb_cmn import paths
 
 from accgram import edition_transcription as et
-from accgram import printed_decalogue as pd
 from accgram import printed_decalogue_strands as pds
 
 COLON = "\N{COLON}"
@@ -108,9 +106,9 @@ PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 # ``_has_silluq`` is this module's context rule; ``meteg_silluq_context`` is the corpus-wide one.
 MTGOSLQ = "\N{HEBREW POINT METEG}"
 
-# Which reference strand each book is compared against first, and which is the cross-strand
-# re-run whose collapse is the evidence.  Both are the PRINTED tradition (the p-trad edition).
-PRIMARY = {"ex": "elyon", "dt": "taxton"}
+# The cross-strand re-run for each book: the strand CTR does NOT follow, whose collapse of
+# agreement is the evidence.  It is the PRINTED tradition (the p-trad edition), as is the strand
+# CTR does follow, which ``py/tests/test_ctr_decalogue.py`` pins as each book's ``primary``.
 CROSS = {"ex": "taxton", "dt": "elyon"}
 
 # Fold each lookalike pair onto one glyph label (the label is arbitrary; only the grouping
@@ -350,86 +348,3 @@ def strand_chanted_verse_count(source: dict, book: str, reading: str) -> int:
         if v["book"] == book and v["reading"] == reading and v["tradition"] == "printed"
     )
     return sum(1 for cv in version["chanted_verses"] if cv.rstrip().endswith(SOF_PASUQ))
-
-
-def _report_book(ctr: dict, source: dict, book: str) -> None:
-    primary, cross = PRIMARY[book], CROSS[book]
-    cmp_primary = compare(ctr, source, book, primary)
-    cmp_cross = compare(ctr, source, book, cross)
-    spans = span_silluq_status(ctr, book)
-    n_cv = len(spans)
-    chanted = [s for s in spans if s.is_chanted_verse]
-
-    print(f"\n===== CTR {book.upper()} =====")
-    print(f"  sof pasuq spans: CTR {n_cv}")
-    print(
-        f"     of which chanted verses (silluq before the mark): {len(chanted)}"
-        f" -- {n_cv - len(chanted)} span(s) close on no silluq"
-    )
-    for s in spans:
-        if not s.is_chanted_verse:
-            print(f"        {s.skeleton:26s} closes on {s.final_glyphs}, no silluq")
-    for reading in (primary, cross):
-        print(
-            f"     strand {book}/{reading}/printed chanted verses: "
-            f"{strand_chanted_verse_count(source, book, reading)}"
-        )
-    for label, cmp in (
-        (f"PRIMARY {primary}", cmp_primary),
-        (f"cross {cross}", cmp_cross),
-    ):
-        total = cmp.agree + len(cmp.diffs)
-        print(
-            f"  vs {label:16s}: glyph-agree {cmp.agree}/{total}"
-            f"  ({len(cmp.diffs)} word diffs)"
-        )
-    print(
-        f"  disjunctive skeleton intact vs {primary}: {cmp_primary.disjunctive_skeleton_intact}"
-    )
-    print(f"  the {len(cmp_primary.diffs)} residual difference(s) vs {primary}:")
-    for d in cmp_primary.diffs:
-        kind = "conjunctive-only" if d.conjunctive_only else "TOUCHES DISJUNCTIVE"
-        print(f"     {d.skeleton:26s} CTR={d.ctr}  {primary}={d.strand}  [{kind}]")
-
-    total = cmp_primary.agree + len(cmp_primary.diffs)
-    strand_cv = strand_chanted_verse_count(source, book, primary)
-    # The Exodus branch is the finding: same accents, MORE sof pasuqs, and the surplus ones with
-    # no silluq under them.  Say punctuation, not "its own verse division" -- CTR did not divide
-    # the text a third way, it laid the union of both strands' marks over one strand's accents.
-    division = (
-        "same chanted verse division"
-        if n_cv == strand_cv
-        else (
-            f"but its own punctuation ({n_cv} sof pasuq spans over the strand's"
-            f" {strand_cv} chanted verses, {n_cv - len(chanted)} of them closing on no silluq)"
-        )
-    )
-    print(
-        f"  VERDICT: CTR {book} follows {book}/{primary}/printed at the glyph level "
-        f"({cmp_primary.agree}/{total} words, disjunctive skeleton intact, "
-        f"{len(cmp_primary.diffs)} conjunctive residual(s)), {division}."
-    )
-
-
-def main() -> None:
-    import sys
-
-    sys.stdout.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(
-        description="Report CTR's Decalogues against the strands."
-    )
-    parser.add_argument("--ctr", type=Path, default=None)
-    parser.add_argument("--source", type=Path, default=None)
-    args = parser.parse_args()
-
-    ctr = load_ctr(args.ctr)
-    source = pd.load_source(args.source or pd.default_source_path())
-    print(
-        f"CTR retrieved {ctr['provenance']['retrieved']} -- {ctr['provenance']['edition']}"
-    )
-    for book in ("ex", "dt"):
-        _report_book(ctr, source, book)
-
-
-if __name__ == "__main__":
-    main()

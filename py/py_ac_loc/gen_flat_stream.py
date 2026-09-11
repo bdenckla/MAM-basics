@@ -281,23 +281,6 @@ def build_flat_stream(page_id, verses, skip_first_n_words=0):
     return stream
 
 
-def write_stream(page_id, stream):
-    """Write the flat stream JSON file.
-
-    Args:
-        page_id: leaf identifier, e.g. "270r".
-        stream: flat stream list to serialize.
-    """
-    OUT_DIR.mkdir(exist_ok=True)
-    out_path = OUT_DIR / f"{page_id}.json"
-    out_path.write_text(
-        json.dumps(stream, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-        newline="",
-    )
-    return out_path
-
-
 def main():
     # Check for --force flag anywhere in args
     force = "--force" in sys.argv
@@ -403,7 +386,3 @@ def main():
         newline="",
     )
     print(f"  -> {out_path.name}: {verse_count} verses, {word_count} words")
-
-
-if __name__ == "__main__":
-    main()
