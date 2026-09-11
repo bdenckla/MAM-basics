@@ -248,9 +248,9 @@ NOT_IN_MEGA: dict[str, str] = {
         "  Recorded in py/main_edition_transcription.py's docstring and"
         " doc/mega-coverage-2026-09-10.md §3."
     ),
-    "py/main_diff.py mpp --legacy-history": (
+    "py/main_diff.py mpplus --legacy-history": (
         "Reads a sibling MAM-parsed clone that belongs on no machine.  Recorded in"
-        " py/subcommands/diff_mpp.py's docstring, CLAUDE.md, and"
+        " py/subcommands/diff_mpplus.py's docstring, CLAUDE.md, and"
         " doc/mega-coverage-2026-09-10.md §3."
     ),
     "py/main_download.py fr-google": (
@@ -393,10 +393,10 @@ NOT_IN_MEGA: dict[str, str] = {
         " the tracked half of the run is the parse-ws step's.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
-    "py/main_diff.py mpp --old A --new B": (
+    "py/main_diff.py mpplus --old A --new B": (
         "Claude-written, accepted by Ben on 2026-09-10: a one-off comparison of two"
-        " revisions someone picks, where the diff-mpp step rebuilds every named release."
-        "  Proposed in doc/mega-coverage-2026-09-10.md §4."
+        " revisions someone picks, where the diff-mpplus step rebuilds every named"
+        " release.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_download.py fr-google --skip-download": (
         "Claude-written, accepted by Ben on 2026-09-10: it skips the download and"
@@ -550,8 +550,8 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
         "py/main_parse.py ws",
         "py/main_authored.py gen-mam-parsed-docs",
     ),
-    # What `py/main_diff.py mpp --all` runs.
-    "diff_mpp.run_all": ("py/main_diff.py mpp --all",),
+    # What `py/main_diff.py mpplus --all` runs.
+    "diff_mpplus.run_all": ("py/main_diff.py mpplus --all",),
     # py/subcommands/diff_wsgo.py binds almost_main to run, the function `wsgo` calls.
     "diff_wsgo.almost_main": ("py/main_diff.py wsgo",),
     # The function `py/main_ws_bot.py proto` calls, here with no edit file.
@@ -577,12 +577,9 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
 
 # Scripts a step runs by subprocess that are not programs of this repository.  Naming
 # them here is what keeps a script path the scan cannot match a failure everywhere else.
-_EXTERNAL_SCRIPTS: dict[str, str] = {
-    "near-aleppo/census/run_all.py": (
-        "MAM-private's census runner, which the near-aleppo-census step runs in that"
-        " clone: a program of MAM-private, not of this repository."
-    ),
-}
+# Empty since 2026-09-11, when the near-aleppo-census step, which ran MAM-private's
+# near-aleppo/census/run_all.py in that clone, was deleted from the mega.
+_EXTERNAL_SCRIPTS: dict[str, str] = {}
 
 _MEGA = "py/main_0_mega.py"
 _SUBPROCESS_FUNCTIONS = frozenset(

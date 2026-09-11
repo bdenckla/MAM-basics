@@ -3,9 +3,9 @@
 diff report with category filtering.
 
 Usage:
-    .venv/Scripts/python.exe py/main_diff.py mpp
-    .venv/Scripts/python.exe py/main_diff.py mpp --old <rev> --new <rev>
-    .venv/Scripts/python.exe py/main_diff.py mpp --all
+    .venv/Scripts/python.exe py/main_diff.py mpplus
+    .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
+    .venv/Scripts/python.exe py/main_diff.py mpplus --all
 
 Named historical releases read tracked MAM-parsed/historical/ snapshots.
 HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
@@ -100,7 +100,7 @@ def _latest_release_entry():
     ``MAM-parsed/historical/manifest.json``'s ``migration.landing_commit`` to be reachable.
     In a shallow clone it is not: measured in a cloud container on 2026-09-11, that clone held
     221 commits, ``git cat-file -t 63cf6c98`` could not find the landing commit, and the count
-    died with ``fatal: Invalid revision range``.  So ``diff-mpp``, step 6 of the mega's 60,
+    died with ``fatal: Invalid revision range``.  So ``diff-mpplus``, step 6 of the mega's 60,
     could not run in the cloud at all.
 
     Ben's decision, 2026-09-11, on being told what the count was for: do the proposed work to

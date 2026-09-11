@@ -46,7 +46,7 @@ Each landed product keeps its detailed README beside the files it describes. Thi
 
 - `main_diff.py wsgo` — diffs Wikisource vs. Google Sheets versions
 - `main_diff.py ctr-vs-mam` — compares CTR data against MAM verse data
-- `main_diff.py mpp` — compares MAM-parsed plus revisions and writes release diff reports
+- `main_diff.py mpplus` — compares MAM-parsed plus revisions and writes release diff reports
 
 ### Analysis and surveys
 

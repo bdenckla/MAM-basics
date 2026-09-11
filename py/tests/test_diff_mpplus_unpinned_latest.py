@@ -5,14 +5,14 @@ import json
 import unittest
 from unittest import mock
 
-from subcommands import diff_mpp
+from subcommands import diff_mpplus
 
 
-class TestDiffMppUnpinnedLatest(unittest.TestCase):
+class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
     def test_preserved_artifact_allowlist_covers_html_and_json(self):
         self.assertEqual(
-            diff_mpp.PRESERVED_CHANGE_LOG_ARTIFACTS,
-            (diff_mpp.UNPINNED_LATEST_HTML, diff_mpp.UNPINNED_LATEST_JSON),
+            diff_mpplus.PRESERVED_CHANGE_LOG_ARTIFACTS,
+            (diff_mpplus.UNPINNED_LATEST_HTML, diff_mpplus.UNPINNED_LATEST_JSON),
         )
 
     def test_zero_diffs_writes_empty_unpinned_latest_artifacts(self):
@@ -27,21 +27,21 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
         """
         with (
             mock.patch.object(
-                diff_mpp, "_latest_release_entry", return_value={"new": "v1"}
+                diff_mpplus, "_latest_release_entry", return_value={"new": "v1"}
             ),
             mock.patch.object(
-                diff_mpp,
+                diff_mpplus,
                 "generate_report",
                 return_value=(0, "2026-05-13"),
             ) as generate_mock,
         ):
-            result = diff_mpp.run_unpinned_latest()
+            result = diff_mpplus.run_unpinned_latest()
 
         self.assertIsNone(result)
         generate_mock.assert_called_once_with(
             "v1",
             "HEAD",
-            diff_mpp.UNPINNED_LATEST_HTML,
+            diff_mpplus.UNPINNED_LATEST_HTML,
             write_when_empty=True,
         )
 
@@ -53,7 +53,7 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
         end of it.  A second terminal entry would mean the file had stopped being a chain, and
         is what the function raises on.
         """
-        with open(diff_mpp.RELEASES_JSON, encoding="utf-8") as in_fp:
+        with open(diff_mpplus.RELEASES_JSON, encoding="utf-8") as in_fp:
             releases = json.load(in_fp)["releases"]
 
         continued = {entry["old"] for entry in releases}
@@ -67,10 +67,10 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
         self.assertEqual(
             len(initial), 1, "releases.json must begin at exactly one entry"
         )
-        self.assertEqual(diff_mpp._latest_release_entry(), terminal[0])
+        self.assertEqual(diff_mpplus._latest_release_entry(), terminal[0])
 
     def test_legacy_history_never_reuses_a_named_release_output(self):
-        with open(diff_mpp.RELEASES_JSON, encoding="utf-8") as in_fp:
+        with open(diff_mpplus.RELEASES_JSON, encoding="utf-8") as in_fp:
             releases = json.load(in_fp)["releases"]
 
         self.assertTrue(releases, "releases.json must name at least one release")
@@ -82,13 +82,13 @@ class TestDiffMppUnpinnedLatest(unittest.TestCase):
                 legacy_history=True,
                 output=None,
             )
-            named_output = f"{diff_mpp.CHANGE_LOG_DIR}/{entry['name']}.html"
-            with mock.patch.object(diff_mpp, "generate_report") as generate_mock:
-                diff_mpp.run_from_args(args)
+            named_output = f"{diff_mpplus.CHANGE_LOG_DIR}/{entry['name']}.html"
+            with mock.patch.object(diff_mpplus, "generate_report") as generate_mock:
+                diff_mpplus.run_from_args(args)
 
             old_rev = f"legacy:{entry['old']}"
             new_rev = f"legacy:{entry['new']}"
-            legacy_output = diff_mpp.default_output_path(old_rev, new_rev)
+            legacy_output = diff_mpplus.default_output_path(old_rev, new_rev)
             self.assertNotEqual(legacy_output, named_output)
             generate_mock.assert_called_once_with(old_rev, new_rev, legacy_output)
 
