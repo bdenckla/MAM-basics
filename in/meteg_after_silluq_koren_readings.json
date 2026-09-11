@@ -1,10 +1,16 @@
 {
-  "about": "Ben Denckla's readings of the Koren edition at the candidates listed in doc/meteg-after-silluq-koren-lookup-candidates.md, one per reference, in the order he reported them. 'koren' says which of the two U+05BD on MAM's final atom Koren has: 'first' (the first mark only), 'last' (the last mark only) or 'both'. 'sheva', present only where Ben gave it, is how Koren treats the simple sheva after the first mark: 'vocal' or 'silent'. 'note', present only where needed, records a mark Koren has that MAM lacks. 'date' is the day Ben reported the reading. The primary clone's .novc/mas_c_write_doc.py fills that file's Koren column from this list.",
+  "about": "Ben Denckla's readings of the Koren edition at the candidates listed in doc/meteg-after-silluq-koren-lookup-candidates.md, one per reference, in the order he reported them. 'koren' says which of the two U+05BD on MAM's final atom Koren has: 'first' (the first mark only), 'last' (the last mark only) or 'both'. 'sheva', present only where Ben gave it, is how Koren treats the simple sheva after the first mark: 'vocal' or 'silent'. 'note', present only where needed, records a mark Koren has that MAM lacks, or Koren's treatment of a sheva other than the one after the first mark. 'date' is the day Ben reported the reading. The primary clone's .novc/mas_c_write_doc.py fills that file's Koren column from this list.",
   "readings": [
     {"ref": "1 Kings 7:37", "koren": "first", "sheva": "silent", "date": "2026-09-09"},
     {"ref": "Psalms 35:10", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
     {"ref": "Job 4:12", "koren": "first", "sheva": "silent", "date": "2026-09-10"},
     {"ref": "Isaiah 7:6", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
-    {"ref": "Isaiah 8:13", "koren": "both", "sheva": "vocal", "note": "also one on the mem, which MAM lacks", "date": "2026-09-10"}
+    {"ref": "Isaiah 8:13", "koren": "both", "sheva": "vocal", "note": "also one on the mem, which MAM lacks", "date": "2026-09-10"},
+    {"ref": "Zechariah 13:3", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
+    {"ref": "1 Chronicles 2:53", "koren": "last", "note": "also one on the he, which MAM lacks, and a vocal sheva under the shin, before MAM's first U+05BD", "date": "2026-09-10"},
+    {"ref": "Genesis 5:2", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
+    {"ref": "Exodus 21:35", "koren": "both", "date": "2026-09-10"},
+    {"ref": "Leviticus 26:31", "koren": "both", "date": "2026-09-10"},
+    {"ref": "Deuteronomy 1:12", "koren": "both", "sheva": "vocal", "date": "2026-09-10"}
   ]
 }
