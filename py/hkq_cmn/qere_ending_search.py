@@ -17,12 +17,14 @@ from hkq_cmn.qere_projection import (
 # mpu = MAM-parsed-plus.
 #
 # The path defaults below are None sentinels resolved at CALL time, not module-level
-# constants: hkq_paths.out_dir() goes through require_sibling and RAISES when the
-# holman-ketiv-qere sibling is missing, and this module is imported by
-# py/tests/test_qere_ending_search.py, so an eager default made the suite
-# uncollectable without that sibling.  The MAM-parsed and qere-words defaults only
-# compose a path, but they take the same sentinel so the signatures read one way.
-# Same sentinel and same reason as read_books_from_mam_parsed_plain.py's (0314c6e).
+# constants.  The reason was hkq_paths.out_dir(), which went through require_sibling
+# and RAISED when no holman-ketiv-qere clone sat beside this one: this module is
+# imported by py/tests/test_qere_ending_search.py, so an eager default made the suite
+# uncollectable without that sibling.  That reason lapsed with ae663ff2 (2026-09-03),
+# since when out_dir() has named this repo's holman/out/ and reaches no sibling.  The
+# MAM-parsed and qere-words defaults only compose a path, but they take the same
+# sentinel so the signatures read one way.  Same sentinel, and the same reason while
+# it held, as read_books_from_mam_parsed_plain.py's (0314c6e).
 
 
 @dataclass(frozen=True)

@@ -1632,4 +1632,3 @@ SPACE
 α,∵,τ,-,h,a,α,a,(tip),r,∵,c.
 SPACE
 x,‥,(mos),r,∵,m.,(sopa)
-

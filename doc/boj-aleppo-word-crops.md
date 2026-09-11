@@ -5,6 +5,16 @@ This describes the workflow for supplying μA (Aleppo Codex) word-level
 image crops to quirkrecs that lack them. It uses the column-coordinate
 and line-break data already captured for all 24 Job pages (270r–281v).
 
+**The crop editor that step 2 names, `py/main_gen_aleppo_crop_editor.py`, was deleted
+on 2026-09-10** by phase 6a of `doc/PLAN-mega-coverage.md`. It raised `TypeError` on
+every page, `image_size` being a list, and all 160 Aleppo crops that book-of-job needs
+already exist; section 6 of `doc/mega-coverage-2026-09-10.md` has the evidence. The
+steps below describe the procedure as it ran.
+`git show c3417599:py/main_gen_aleppo_crop_editor.py` recovers the editor, which would
+need that repair before it could run again. For a single word,
+`py/main_ac_find_word_in_images.py` previews it by book, verse and word, and its crop
+mode downloads a PNG with provenance metadata; it takes no quirk-record SID.
+
 ## Overview
 
 Each quirkrec that is missing a `qr-aleppo-img` needs a cropped PNG
@@ -45,7 +55,8 @@ or it already has a `qr-aleppo-img` key.
 
 ### `py/main_gen_aleppo_crop_editor.py`
 
-Generates an interactive HTML crop editor at `.novc/book-of-job/word_crop_editor.html`.
+Deleted on 2026-09-10, as the note at the top of this file says. It generated an
+interactive HTML crop editor at `.novc/book-of-job/word_crop_editor.html`.
 
 ```
 .venv/Scripts/python.exe py/main_gen_aleppo_crop_editor.py 0417 0505 0520    # specific SIDs

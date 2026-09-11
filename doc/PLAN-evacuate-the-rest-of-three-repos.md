@@ -898,7 +898,13 @@ just writes less. Phase 3's record names the renamed command.
 
 **book-of-job's oracle is the one that is also a mega step** — `gen-misc-authored-english-documents`
 — so a mega run covers book-of-job's 183 and nothing else of these three repos'. Do not read a
-clean mega as a clean move.
+clean mega as a clean move. (Dated correction, 2026-09-10: this paragraph's first sentence was
+false from `3e3b6e0b` (2026-05-06), when the step it names began running
+`main_authored.almost_main`, MAM-basics' own misc documents, until phase 5a of
+`doc/PLAN-mega-coverage.md` made book-of-job's generator the step `book-of-job-site` and renamed
+the other step `gen-misc`. book-of-job's generator had arrived on 2026-08-19, `ef8e384c`, under the
+module name `main_authored.py` gave up. So Layer 2's "exactly one of them" was false too: none
+was, as that paragraph said before its 2026-08-22 correction.)
 
 **Two of holman-ketiv-qere's six commands need something a fresh clone does not have**, and both
 are named in that repo's plan: `main_ingest_uxlc_emails` needs the untracked mailbox at
@@ -1855,6 +1861,16 @@ future records should preserve the output actually measured rather than infer a 
 from whether the plugin is installed.
 `ruff check` and `black --check` passed on every changed Python file; both MAM-basics and
 wlc-utils passed `git diff --check`.
+
+**Correction, 2026-09-09 (September 8 review, finding 5.1a; Ben's D4 decision):**
+the current-tense claim above that the suite "no longer prints a subtest line" is
+superseded. [The September 7 remediation plan](PLAN-remediate-review-findings-2026-09-07.md),
+under "Wave 6 verification result — 2026-09-08", records 981 passed, 5 skipped, and
+65 subtests. That plan's Wave 4 record reports the same passing-test count with no
+subtest line, but records no command; the cause of Wave 4's missing line is unknown.
+The Wave 6 result does not explain the earlier run. The original measured output above
+is retained. This correction follows the accepted C4 correction in
+[Claude's rebuttal](codex-review-findings-2026-09-08-claude-rebuttal.md#c4--finding-111-wave-4s-missing-subtest-line).
 
 ---
 

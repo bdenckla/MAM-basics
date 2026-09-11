@@ -26670,4 +26670,3 @@ SPACE
 l,:,3,‥,y,n,‥,(tip),y
 SPACE
 k,·,oa,l,-,y,i,$,·si,:,r,a,α,‥,(mos),l,(sopa)
-

@@ -11,12 +11,14 @@ optional 1-based chapter number to limit output to that chapter (e.g.
 ``python py/main_clc.py Exodus 20`` for the Decalogue) — handy for focusing on a
 dual-cant chapter without the rest of the book.
 
-Writes (``<label>`` is ``<book>`` for a whole book, ``<book>-<chapter>`` if limited):
-    gh-pages/clc/<label>.html             the 3-column always-link page
-    gh-pages/clc/<label>-notes.json       the CLC notes as plain data (feeds §7.9 later)
-    gh-pages/clc/<label>-long-notes.html  this job's long notes (§7.3), only if it has any
+Writes, under ``gh-pages/uxlc/clc/`` (``<label>`` is ``<book>`` for a whole book,
+``<book>-<chapter>`` if limited):
+    <label>.html             the 3-column always-link page
+    <label>-notes.json       the CLC notes as plain data (feeds §7.9 later)
+    <label>-long-notes.html  this job's long notes (§7.3), only if it has any
 """
 
+import argparse
 import sys
 
 import mb_cmn.file_io as my_open
@@ -58,18 +60,51 @@ def _build_one(book_id, chapters):
         print(f"  wrote {long_notes_path} ({len(long_notes)} long note(s))")
 
 
-def main():
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "book_id",
+        nargs="?",
+        default="all",
+        metavar="BookId",
+        help="a bk39 id such as Psalms, Job or Genesis; or all, the default, for"
+        " every pilot page",
+    )
+    parser.add_argument(
+        "chapter",
+        nargs="?",
+        type=int,
+        help="a 1-based chapter number, to limit the page to that chapter",
+    )
+    return parser
+
+
+def almost_main(argv: list[str]) -> None:
     """Build the CLC skeleton page(s) + notes JSON, then each job's own long-notes
-    page (design doc §7.3) for whatever long notes it opted into."""
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
-    if len(sys.argv) <= 1 or sys.argv[1] == "all":
+    page (design doc §7.3) for whatever long notes it opted into.
+
+    ``main_0_mega.py`` calls this with an explicit ``argv``, since it runs its steps
+    in one process and blanks ``sys.argv`` while they run.
+    """
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    if args.book_id == "all":
+        if args.chapter is not None:
+            parser.error("a chapter number needs a BookId; the all form takes none")
         for book_id, chapters in _ALL_JOBS:
             _build_one(book_id, chapters)
     else:
-        book_id = sys.argv[1]
-        chapters = {int(sys.argv[2])} if len(sys.argv) > 2 else None
-        _build_one(book_id, chapters)
+        chapters = {args.chapter} if args.chapter is not None else None
+        _build_one(args.book_id, chapters)
+
+
+def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+    almost_main(sys.argv[1:])
 
 
 if __name__ == "__main__":

@@ -12,8 +12,8 @@ Supports 2-column (poetic, e.g. Job) and 3-column (prose, e.g. Deut)
 layouts via the ncols argument.
 
 Usage:
-    .venv/Scripts/python.exe py_ac_loc/gen_col_quad_editor.py 270r
-    .venv/Scripts/python.exe py_ac_loc/gen_col_quad_editor.py 001v 3
+    .venv/Scripts/python.exe py/main_ac_gen_col_quad_editor.py 270r
+    .venv/Scripts/python.exe py/main_ac_gen_col_quad_editor.py 001v 3
 """
 
 import functools
@@ -789,9 +789,12 @@ updateStatus();
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python py_ac_loc/gen_col_quad_editor.py <page_id> [ncols]")
-        print("  e.g.: python py_ac_loc/gen_col_quad_editor.py 270r")
-        print("        python py_ac_loc/gen_col_quad_editor.py 001v 3")
+        print(
+            "Usage: .venv/Scripts/python.exe py/main_ac_gen_col_quad_editor.py"
+            " <page_id> [ncols]"
+        )
+        print("  e.g.: ... 270r")
+        print("        ... 001v 3")
         sys.exit(1)
     page_id = sys.argv[1]
     ncols = int(sys.argv[2]) if len(sys.argv) > 2 else 2
@@ -799,7 +802,3 @@ def main():
         print(f"Error: ncols must be 1, 2, or 3, got {ncols}")
         sys.exit(1)
     generate_editor(page_id, ncols)
-
-
-if __name__ == "__main__":
-    main()

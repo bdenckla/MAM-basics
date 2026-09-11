@@ -10,7 +10,7 @@ MAM-basics contains the programs that read and write this product directory. The
 - `ds-flat-stream/` holds generated per-page word streams.
 - `line-breaks/` holds line-break data annotated by Ben Denckla.
 - `column-coordinates/` holds column geometry annotated by Ben Denckla.
-- `aleppo-wiki/` holds J. David Stark's index material and the Wikisource page derived from it.
+- `aleppo-wiki/` holds J. David Stark's index material and two snapshots of the Wikisource page built by hand from it.
 - `doc/` holds procedures for the Aleppo page-location work.
 - `page-snips/` holds crops of the Codex's pages, each kept as the evidence behind a stated fact about the manuscript; its README names them.
 

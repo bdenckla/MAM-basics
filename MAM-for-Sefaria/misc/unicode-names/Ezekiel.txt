@@ -36588,4 +36588,3 @@ START small
 |
 STOP small
 THIN SPACE,$,·sh,a,(mos),m,·,a,h,(sopa)
-

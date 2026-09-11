@@ -1,0 +1,9 @@
+{
+  "comment": "Every HTML path published by bdenckla.github.io/MAM-OSIS, frozen from the source commit and working published tree immediately before the 2026-09-10 Phase 5D redirect flip. Ben's 2026-09-05 fourth-stage decision carries forward the 2026-08-22 decision 8: old URLs are cited in places Ben cannot reach, including posts and sent email, and no citation list exists. Preserve the full published HTML set; citations Ben controls are links to repoint, not the reason for keeping this host. The unchanged index.html suffix is a pure prefix rewrite to MAM-basics/MAM-OSIS/.",
+  "source_repo": "MAM-OSIS",
+  "source_commit": "697dc98a904a52ed81bb105772f002d3efb360e3",
+  "frozen_on": "2026-09-10",
+  "pages": [
+    "index.html"
+  ]
+}

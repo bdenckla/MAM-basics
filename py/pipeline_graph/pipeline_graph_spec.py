@@ -33,6 +33,7 @@ class RawEdge:
 
 DISPLAY_NODES = [
     DisplayNode("ds_go_csv", "in/mam-go/\n(Google CSV)", DATA_STORES),
+    DisplayNode("ds_parsed_google", "MAM-parsed/google/", DATA_STORES),
     DisplayNode("ds_parsed_plus", "MAM-parsed/plus/", DATA_STORES),
     DisplayNode("ds_parsed_plain", "MAM-parsed/plain/", DATA_STORES),
     DisplayNode("ds_ws", "in/mam-ws/\n(Wikisource JSON)", DATA_STORES),
@@ -40,10 +41,9 @@ DISPLAY_NODES = [
     DisplayNode("ds_simple", "MAM-simple/", DATA_STORES),
     DisplayNode("ds_with_doc", "gh-pages/MAM-with-doc/", DATA_STORES),
     DisplayNode("ds_sefaria", "MAM-for-Sefaria/", DATA_STORES),
-    DisplayNode("ds_osis", "../MAM-OSIS/", DATA_STORES),
+    DisplayNode("ds_osis", "MAM-OSIS/", DATA_STORES),
     DisplayNode("ds_out", "out/\n(local outputs)", DATA_STORES),
     DisplayNode("download_go", "download fr-google", PREREQUISITES),
-    DisplayNode("download_sef", "download fr-sefaria", PREREQUISITES),
     DisplayNode(
         "download_ws",
         "download fr-wikisource",
@@ -51,6 +51,7 @@ DISPLAY_NODES = [
         attrs=(("style", ""), ("color", ""), ("fontcolor", "")),
     ),
     DisplayNode("parse_go", "parse go", PIPELINE_STEPS),
+    DisplayNode("parse_ws", "parse ws", PIPELINE_STEPS),
     DisplayNode("foi", "foi_features_of_interest", PIPELINE_STEPS),
     DisplayNode("mam_with_doc", "mam_with_doc", PIPELINE_STEPS),
     DisplayNode("tmpl_survey", "tmpl_survey", PIPELINE_STEPS),
@@ -67,6 +68,7 @@ DISPLAY_NODES = [
 
 RAW_NODES = [
     RawNode("in_mam_go_csv", "in/mam-go/\n(Google CSV)", "ds_go_csv"),
+    RawNode("mpu_google", "MAM-parsed/google/", "ds_parsed_google"),
     # mpu = MAM-parsed-plus (short internal ID)
     RawNode("mpu_plus", "MAM-parsed/plus/", "ds_parsed_plus"),
     RawNode("mpu_plain", "MAM-parsed/plain/", "ds_parsed_plain"),
@@ -75,10 +77,9 @@ RAW_NODES = [
     RawNode("out_mam_simple", "MAM-simple/", "ds_simple"),
     RawNode("out_with_doc", "gh-pages/MAM-with-doc/", "ds_with_doc"),
     RawNode("out_sefaria", "MAM-for-Sefaria/", "ds_sefaria"),
-    RawNode("out_osis", "../MAM-OSIS/", "ds_osis"),
+    RawNode("out_osis", "MAM-OSIS/", "ds_osis"),
     RawNode("out_local", "out/\n(local outputs)", "ds_out"),
     RawNode("main_download__fr_google", "download fr-google", "download_go"),
-    RawNode("main_download__fr_sefaria", "download fr-sefaria", "download_sef"),
     RawNode(
         "main_download__fr_wikisource",
         "download fr-wikisource",
@@ -97,7 +98,7 @@ RAW_NODES = [
     RawNode("main_explicit_xataf", "explicit_xataf", "misc_1"),
     RawNode("main_diff__ctr_vs_mam", "diff ctr-vs-mam", "misc_1"),
     RawNode("main_diff__wsgo", "diff wsgo", "diff_wsgo"),
-    RawNode("main_parse__ws", "parse ws", "misc_3"),
+    RawNode("main_parse__ws", "parse ws", "parse_ws"),
     RawNode("main_ws_bot__proto", "ws_bot proto", "misc_3"),
     RawNode("main_ws_bot__real", "ws_bot real", "ws_bot"),
     RawNode(
@@ -111,8 +112,8 @@ RAW_NODES = [
 RAW_EDGES = [
     RawEdge("main_download__fr_google", "in_mam_go_csv", "Google pipeline"),
     RawEdge("in_mam_go_csv", "main_parse__go", "Google pipeline"),
-    RawEdge("main_parse__go", "mpu_plus", "Google pipeline"),
-    RawEdge("main_parse__go", "mpu_plain", "Google pipeline"),
+    RawEdge("main_parse__go", "mpu_google", "Google pipeline"),
+    RawEdge("mpu_google", "main_diff__wsgo", "Google pipeline"),
     RawEdge(
         "mpu_plus",
         "main_foi_features_of_interest",
@@ -126,7 +127,6 @@ RAW_EDGES = [
     RawEdge("mpu_plus", "main_explicit_xataf", "MAM-parsed consumers"),
     RawEdge("mpu_plus", "main_diff__ctr_vs_mam", "MAM-parsed consumers"),
     RawEdge("mpu_plain", "main_tmpl_survey", "MAM-parsed consumers"),
-    RawEdge("mpu_plain", "main_diff__wsgo", "MAM-parsed consumers"),
     RawEdge(
         "main_foi_features_of_interest",
         "out_with_doc",
@@ -161,6 +161,8 @@ RAW_EDGES = [
     RawEdge("main_download__fr_wikisource", "in_mam_ws", "Wikisource pipeline"),
     RawEdge("in_mam_ws", "main_diff__wsgo", "Wikisource pipeline"),
     RawEdge("in_mam_ws", "main_parse__ws", "Wikisource pipeline"),
+    RawEdge("main_parse__ws", "mpu_plain", "Wikisource pipeline"),
+    RawEdge("main_parse__ws", "mpu_plus", "Wikisource pipeline"),
     RawEdge("in_mam_ws", "main_ws_bot__proto", "Wikisource pipeline"),
     RawEdge("main_ws_bot__real", "src_hebrew_wikisource", "Wikisource pipeline"),
     RawEdge("main_ws_bot__real", "in_mam_ws", "Wikisource pipeline"),
@@ -170,7 +172,6 @@ RAW_EDGES = [
         "Wikisource pipeline",
         attrs=(("tooltip", "via automatic post-download reparse"),),
     ),
-    RawEdge("main_download__fr_sefaria", "out_local", "Sefaria download (standalone)"),
 ]
 
 SECTION_ORDER = [
@@ -180,5 +181,4 @@ SECTION_ORDER = [
     "MAM-simple pipeline",
     "Local out/ outputs",
     "Wikisource pipeline",
-    "Sefaria download (standalone)",
 ]

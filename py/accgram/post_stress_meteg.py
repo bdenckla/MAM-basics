@@ -36,8 +36,9 @@ holds the two steady against each other.
 
 THE TWO SIDES ARE CHECKED AGAINST EACH OTHER, per chanted word: the number of nuclei found in
 the Hebrew must equal the number of non-sheva syllables in the ``jta``.  A chanted word where
-they disagree is recorded as a MISMATCH and left out of every count, rather than being
-classified against a syllable division the two sides do not share.
+they disagree is recorded as a MISMATCH and left out of the provisional counts. At the end,
+_problems returns the collected problems and build_survey raises if any remain, so no survey
+with a mismatch is emitted.
 
 THE SILLUQ BOUNDARY IS TWO CONDITIONS, BOTH OF THEM, AND NO THIRD.  A U+05BD is the silluq
 when it is in the stressed syllable of a chanted word that has sof pasuq. Sof pasuq identifies
@@ -84,6 +85,7 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter
+from functools import cache
 from pathlib import Path
 
 from accgram import maqaf_nonfinal_accents as mna
@@ -942,8 +944,8 @@ def _has_dual_cantillation(node: object) -> bool:
 
     Structural rather than a list of references: both strands' chanted words reach one entry
     list. The two Decalogues have most of the dual-cantillation numbered verses, and Genesis
-    35:22 has the other one. A last entry need not be the one with sof pasuq -- one strand's
-    chanted verse can end at the numbered verse's boundary and the other can run on past it.
+    35:22 has the other one. A last entry need not have sof pasuq: the numbered-verse boundary
+    need not end both chanted verses.
     """
     if isinstance(node, str):
         return node == _DUALCANT_MARKER
@@ -2352,25 +2354,75 @@ def _fold_qamats_qatan(key: str) -> str:
     return key.replace(hpo.QAMATS_Q, hpo.QAMATS)
 
 
-# The marks Phonetic MAM adds that MAM's text does not have: a masora circle where it has
-# resolved a sheva, an upper dot on a dagesh it takes as xazaq, and a varika where it reads an
-# implicit xataf.  Dropped only to ask whether a candidate is the very chanted word the
-# snapshot has -- never to build a displayed form, which is always MAM's.  U+05C5 goes with
-# U+05C4 because the two puncta are one notation; a chanted word with a genuine extraordinary
-# point simply fails this test and is settled by the test after it.
-_PHONETIC_MAM_ANNOTATIONS = str.maketrans(
-    {
-        hpu.MCIRC: None,
-        hpu.UPDOT: None,
-        hpu.LODOT: None,
-        hpo.VARIKA: None,
-        hpu.NU_GMAQ: MAQAF,
-    }
-)
+@cache
+def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
+    """Index first fva forms to their selected snapshot spelling and source locations.
+
+    Matching needs the snapshot's first rep, or its first unannotated fva. The raw
+    classifier inputs and serialized survey stay intact. Nothing outside this module calls
+    it: the page renderer raises on a displayed record that has no MAM form rather than look
+    a spelling up here (CLAUDE.md, "A code path reads MAM-private every time it runs, or
+    never").
+    """
+    directory = paths.require_al_hatorah_phonetic_dir()
+    files = sorted(directory.glob("*.json"))
+    if {path.stem for path in files} != set(_bb_of_stem()):
+        raise SurveyProblem(f"{directory}: incomplete or unexpected snapshot file set")
+    forms = {}
+
+    def visit(node: object, location: str) -> None:
+        if isinstance(node, dict):
+            if node.get("fva"):
+                raw = node["fva"].split(" ")[0]
+                field = "rep" if node.get("rep") else "fva"
+                selected = node[field].split(" ")[0]
+                source = f"{location}/{field} (first form)"
+                if field == "fva" and (
+                    hpo.SHEVA + hpu.MCIRC in selected
+                    or hpo.DAGOMOSD + hpu.UPDOT in selected
+                ):
+                    raise SurveyProblem(f"{source}: annotated fva has no rep")
+                if raw in forms:
+                    previous, sources = forms[raw]
+                    if previous != selected:
+                        raise SurveyProblem(
+                            f"{source}: ambiguous snapshot spelling; also {sources}"
+                        )
+                    sources.append(source)
+                else:
+                    forms[raw] = (selected, [source])
+            for key, value in node.items():
+                escaped = str(key).replace("~", "~0").replace("/", "~1")
+                visit(value, f"{location}/{escaped}")
+        elif isinstance(node, list):
+            for index, value in enumerate(node):
+                visit(value, f"{location}/{index}")
+
+    for path in files:
+        visit(json.loads(path.read_text(encoding="utf-8")), f"{path}#")
+    return forms
+
+
+def _snapshot_unannotated_form(word: str) -> str:
+    """Select the source spelling; never reconstruct it by deleting Hebrew marks."""
+    forms = _snapshot_forms()
+    if word not in forms:
+        raise SurveyProblem(f"No snapshot source for first fva form {word!r}")
+    return forms[word][0]
 
 
 def _as_mam_would_write_it(word: str) -> str:
-    return word.translate(_PHONETIC_MAM_ANNOTATIONS)
+    """The selected snapshot form with the transformations needed only for matching.
+
+    VARIKA removal remains necessary to reproduce the existing record matching.
+    The selected form itself keeps VARIKA and every other Hebrew mark; only this copy,
+    made for matching, loses VARIKA.
+    """
+    return (
+        _snapshot_unannotated_form(word)
+        .replace(hpo.VARIKA, "")
+        .replace(hpu.NU_GMAQ, MAQAF)
+    )
 
 
 def _settle(matches: list[str], snapshot: str) -> tuple[str | None, str]:
@@ -2495,7 +2547,7 @@ def _attach_mam_forms(
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
     THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``, and this is where the difference is
-    made.  Phonetic MAM's text has two annotations MAM does not write -- a masora
+    made.  Phonetic MAM's text has two annotations absent from MAM -- a masora
     circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
     showing its forms verbatim would put marks in front of a reader that MAM's text does not
     have.  The join key drops exactly what the two sides may legitimately differ in, this
@@ -2507,8 +2559,9 @@ def _attach_mam_forms(
     ambiguous and the FORM certain, which is all the page shows.  Two candidates that differ
     are refused, since then the form is a choice.
 
-    A record with no form is named in ``records_without_a_mam_form``, and the page falls back
-    to the snapshot's spelling for it, marked as such.
+    A record with no form is named in ``records_without_a_mam_form``.  The page renderer
+    raises if it is asked to display one, rather than look up a substitute spelling in
+    MAM-private (CLAUDE.md, "A code path reads MAM-private every time it runs, or never").
     """
     context_by_bcv = context_by_bcv or {}
     out = []

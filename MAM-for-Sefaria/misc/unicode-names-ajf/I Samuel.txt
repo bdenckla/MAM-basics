@@ -149,7 +149,7 @@ b,·,_,3,:_,b,(tip),v,·,r
 SPACE
 h,_,r,·,:,3,i,m,a,(atn),h,·
 SPACE
-k,·,i,(mos),y,-,σ,a,g,_,(mer),r
+k,·,i,y,-,σ,a,g,_,(mer),r
 SPACE
 y,:,h,o,v,a,(tip),h
 SPACE
@@ -17570,7 +17570,7 @@ b,·,_,y,·,(mah),v,o,m.
 SPACE
 h,_,h,v,·,α,(pash)
 SPACE
-k,·,i,(mos),y,-,$,·sh,a,m.,(pash)
+k,·,i,y,-,$,·sh,a,m.,(pash)
 SPACE
 LEFT PARENTHESIS,d,v,y,g,RIGHT PARENTHESIS
 SPACE
@@ -24133,4 +24133,3 @@ y,a,m,i,(mos),y,m.,(sopa)
 SPACE
 LEFT CURLY BRACKET,p,RIGHT CURLY BRACKET
 SPACE
-

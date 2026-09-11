@@ -279,9 +279,9 @@ LC-index data. The repository evacuations settled the question:
   augments the LCI records with word counts and start/stop line numbers.
 - The former sparse-vendoring relationship was retired when `codex-index-leningrad` landed under
   `leningrad/`. The former `shared-with-codex-index-leningrad.md` was deliberately deleted because
-  its claim that UXLC-utils was canonical had expired. The current Leningrad generator reads
-  `uxlc/data/lci_augrecs.json` directly through
-  [`lenin_paths.lci_augrecs_path`](../../py/lenin_paths.py#L44).
+  its claim that UXLC-utils was canonical had expired. The Leningrad Wikisource index generator
+  then read `uxlc/data/lci_augrecs.json` directly, until Ben's decision of 2026-09-10 removed
+  that generator ([`doc/PLAN-mega-coverage.md`](../../doc/PLAN-mega-coverage.md), phase 3).
 
 The CLC image-guessing machinery and its LCI input therefore live in this repository; no sibling
 clone or sparse copy is required.

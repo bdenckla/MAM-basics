@@ -266,8 +266,13 @@ enforce this rule mechanically" in the testing rule. If it is ever written,
 have it report the unreferenced filenames and nothing else, never a count,
 which would read as a defect tally against repos that have earned their docs.
 
-THE `State:` LINE, added 2026-08-29 to the plan files then present. At
-2026-09-08, all ten tracked `doc/PLAN-*.md` files carry it. Line 3 of each file,
+THE `State:` LINE, added 2026-08-29 to the plan files then present.
+Correction, 2026-09-09: the "all ten" census written at `9cf48863` omitted
+`doc/PLAN-remediate-review-findings-2026-09-07.md`, added earlier on September 8.
+That commit had eleven direct tracked `doc/PLAN-*.md` files, all with State lines.
+The reviewed `38a606e2` tree had thirteen plans and eleven State lines: the new
+merge and silluq-template plans lacked them. These are dated Git-tree counts,
+not a current census. Line 3 of each file,
 directly under the H1, is one of five words
 plus an optional date: `executed <date>`, `paused <date>`, `live`, `runbook`,
 `pointer`.  Sporadic work is `live`, not `paused`, and needs no state of its own:
@@ -282,6 +287,12 @@ preserved in Git history. The evacuations wrote plan citations into the code the
 produced, so for plans a high reference count can report that the work landed, not
 that the file is still wanted. Keep the screen for other `doc/` files; read the
 `State:` line for plans.
+
+For the current review-file naming and State rules, see `doc/dual-agent-review.md`,
+"Review filenames and State lines" (Ben's decision, 2026-09-09, D10). That procedure
+covers the initial reviews, Codex counterparts and exceptional additional reviews,
+and later numbered turns; the historical review glob below names only the initial
+Claude series. This pointer adds no mechanical standards check.
 
 The State line is written by whoever last moves a phase, in the SAME commit as
 the phase work.  `c0d9e21` is why that clause is here: the b2-to-t451 plan's

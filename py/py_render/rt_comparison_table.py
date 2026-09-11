@@ -57,20 +57,7 @@ def build_comparison_rows(
 
 
 def comparison_table_html(rows: list[dict[str, str]]) -> str:
-    body_rows_html = "\n".join(
-        (
-            "<tr>\n"
-            f'<td class="comparison-name-col">{_comparison_label_html(row["name"])}<'
-            "/td>\n"
-            f'<td class="comparison-value-col" dir="rtl">{_comparison_literal_value_html(row["value"])}<'
-            "/td>\n"
-            f'<td class="comparison-symval-col">{_comparison_symval_html(row["symval"])}<'
-            "/td>\n"
-            "<"
-            "/tr>"
-        )
-        for row in rows
-    )
+    body_rows_html = "\n".join(_comparison_row_html(row) for row in rows)
     return (
         '<table class="comparison-table">\n'
         "<thead>\n<tr>\n<th>name<"
@@ -82,6 +69,22 @@ def comparison_table_html(rows: list[dict[str, str]]) -> str:
         f"<tbody>\n{body_rows_html}\n<"
         "/tbody>\n<"
         "/table>"
+    )
+
+
+def _comparison_row_html(row: dict[str, str]) -> str:
+    name_dir = ' dir="rtl"' if contains_hebrew_char(row["name"]) else ""
+    symval_dir = ' dir="rtl"' if contains_hebrew_char(row["symval"]) else ""
+    return (
+        "<tr>\n"
+        f'<td class="comparison-name-col"{name_dir}>{_comparison_label_html(row["name"])}<'
+        "/td>\n"
+        f'<td class="comparison-value-col" dir="rtl">{_comparison_literal_value_html(row["value"])}<'
+        "/td>\n"
+        f'<td class="comparison-symval-col"{symval_dir}>{_comparison_symval_html(row["symval"])}<'
+        "/td>\n"
+        "<"
+        "/tr>"
     )
 
 

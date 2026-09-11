@@ -39,6 +39,13 @@ post-stress-meteg records, with 178 in prose verses and 54 in poetic verses, and
 record's stress position. The finding should say that the survey double counts 370 chanted words
 from 368 qamats-variant rows, not “MAM's 368 `מ:קמץ` words.”
 
+**Scope clarification, 2026-09-09 (Codex; September 8 finding 8.1).** This public-page
+count is the ordinary scope: 368 rows and 370 duplicated chanted words. Including the
+dual-cantillation rows for תעבדם in Exodus 20:4 and Deuteronomy 5:8 gives 370 rows and
+372 duplicate entries. A bounded reread of public Phonetic MAM at `7322b665` reproduces
+both scopes. The difference is not source movement, and the original count remains
+correct for the ordinary scope.
+
 ## The scope census lists five exact trailer spellings, not four
 
 The scope section correctly reports 220 non-merge commits, 121 without a `Co-Authored-By` trailer,
@@ -60,6 +67,20 @@ and 189 blank final lines. The errors are distributed across 87 `MAM-for-Sefaria
 `MAM-simple/` paths, and 12 `gh-pages/MAM-for-Sefaria/` paths. The 189 blank final lines are in the
 generated Unicode-name listings. The 21 trailing-space lines are in nine AJF CSV rows and twelve
 MAM-for-Sefaria HTML or CSS lines.
+
+**Finding-count correction, 2026-09-09 (Codex; September 8 finding 11.4).** The
+87 / 111 / 12 figures above count findings. The distinct-file counts are:
+
+| Product path | Whitespace findings | Distinct files |
+|---|---:|---:|
+| `MAM-for-Sefaria/` | 87 | 80 |
+| `MAM-simple/` | 111 | 111 |
+| `gh-pages/MAM-for-Sefaria/` | 12 | 2 |
+| Total | 210 | 193 |
+
+The frozen diff and the bounded current-file scan at `8d6c4df8` reproduce this
+distribution. The total remains 189 blank-final-line findings plus 21 trailing-space
+findings. No whitespace output was changed for this correction.
 
 The errors arrived with the landed product artifacts in `cf7c7a35` and `4195440e`; the landing
 commits preserved them from the source products. This is an artifact-hygiene finding, not evidence

@@ -5,7 +5,7 @@ Run all check scripts for this project.
 Checks run:
   1. pyspellcheck/spellcheck_quirkrecs.py  (spell check quirk records)
   2. check_function_ordering.py            (public-before-private ordering)
-  3. check_qr_consistency.py               (qr filename/record/word-id sync)
+  3. check_qr_consistency.py               (QR chapter/record/verse/word-ID sync)
   4. check_qr_relations.py                 (cross-record relation validity)
   5. check_mark_order.py                   (Hebrew combining-mark order)
   6. check_escape_sequences.py             (unnecessary \\uXXXX escapes)
@@ -56,7 +56,7 @@ def main():
     checks = [
         ("Spell check (HTML output)", _run_spellcheck),
         ("Function ordering", _run_function_ordering),
-        ("QR filename/record consistency", _run_qr_consistency),
+        ("QR chapter/record consistency", _run_qr_consistency),
         ("Cross-record relation validity", _run_qr_relations),
         ("Hebrew combining-mark order", _run_mark_order),
         ("Unnecessary \\uXXXX escapes", _run_escape_sequences),

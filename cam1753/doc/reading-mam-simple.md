@@ -27,7 +27,7 @@ separate copy at `py_mam_xml/mam_xml_verses.py` until 2026-08-22; the two were t
 with 43 lines of drift, and a census of every tag in Ps, Job and Prov found exactly one
 they treated differently — `spi-invnun`, the seven inverted nuns of Psalm 107, which
 the codex-index-aleppo copy raised on and the codex-index-cam1753 copy silently skipped. The shared copy was
-given the missing skip clause and this repo's was deleted, the equivalence having been
+given the missing skip clause and codex-index-cam1753's copy was deleted, the equivalence having been
 checked over all three books: 4512 verses, 30322 words, 0 mismatches.
 
 Two choices in the shared reader belong to the Aleppo and Cambridge 1753 workflows, not to MAM-simple:

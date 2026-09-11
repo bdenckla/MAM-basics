@@ -49,6 +49,7 @@ Tracked so far:
 | --- | --- |
 | `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the scattered copies in `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — those stay as pointers, and a rule change goes into the skill first. |
 | `prune-claude-state` | A manual hygiene pass over Claude Code's *own* persisted state for the current repo — the per-repo auto-memory directory and that repo's slice of the global `~/.claude/plans/`. Cross-checks each file against live GitHub issue state and proposes stale ones for deletion, never deleting without explicit confirmation. Both directories live outside git, so there is no undo. |
+| `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
 ## This is the canonical copy; `~/.claude/` is the live working copy
 

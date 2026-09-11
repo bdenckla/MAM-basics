@@ -43,7 +43,7 @@ link reached a page whose only content was a pointer.  Both now name the generat
 directly, and no gist link survives on this page.  Everything else is document-index's,
 including its ordering, its parentheticals and its two lead-in sentences.
 
-THE MISC TITLES ARE THE PAGES' OWN.  They are copies of ``_TITLE`` in the matching
+THE MISC TITLES MATCH THE PAGES' TITLES.  They are copies of ``_TITLE`` in the matching
 ``py/author_misc/`` module, and ``py/tests/test_site_index_links.py`` fails if a copy drifts
 from its original.  Do not edit one here without editing the module -- and do not retype
 one: the two that survived the trim carry no Hebrew, but the modules' titles elsewhere in
@@ -65,6 +65,7 @@ _MWD_MISC = f"{_MWD}misc/"
 _MAM_SIMPLE = "https://bdenckla.github.io/MAM-basics/MAM-simple/"
 _MAM_FOR_SEFARIA = "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/"
 _MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
+_MAM_OSIS = "https://bdenckla.github.io/MAM-basics/MAM-OSIS/"
 _PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
 _TAAMEY_D = "https://bdenckla.github.io/Taamey_D/"
 _GDOC = "https://docs.google.com/document/d/e"
@@ -321,6 +322,7 @@ _EDITIONS = Section(
         _entry("MAM-for-Sefaria", _MAM_FOR_SEFARIA),
         _entry("MAM-parsed", _MAM_PARSED),
         _entry("MAM with doc", _MWD),
+        _entry("MAM-OSIS", _MAM_OSIS),
     ),
 )
 

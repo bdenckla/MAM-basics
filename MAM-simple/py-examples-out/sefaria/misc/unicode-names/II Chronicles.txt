@@ -17106,7 +17106,7 @@ l,:,h,‥,3,a,z,‥,(tip),r
 SPACE
 3,_,(mer),d
 SPACE
-k,·,i,(mos),y,-,x,a,z,a,(mos),q,(sopa)
+k,·,i,y,-,x,a,z,a,(mos),q,(sopa)
 
 2Chronicles 26:16 in vtrad vtsef
 v,·,k,:,x,∵,z,:,q,a,τ,(rev),v,o
@@ -18225,7 +18225,7 @@ b,·,_,3,:_,b,(tip),v,·,r
 SPACE
 α,a,x,a,(mun),z
 SPACE
-m,∵,l,∵,k.,:,-,y,i,$,·si,:,r,a,α,‥,(atn),l
+m,∵,(mos),l,∵,k.,:,-,y,i,$,·si,:,r,a,α,‥,(atn),l
 SPACE
 k,·,i,(mah),y
 SPACE
@@ -25576,4 +25576,3 @@ SPACE
 3,i,m,·,(tip),v,o
 SPACE
 v,:,y,a,(mos),3,_,l,(sopa)
-

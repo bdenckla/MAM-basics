@@ -3,7 +3,7 @@
 
 The support files in this directory (`mb_misc/`) are vendored copies generated
 by `MAM-basics/py/py_misc/mam_parsed_copy_py_files.py` in this MAM-basics repository.
-They are overwritten on each run of `parse_go`.
+They are overwritten on each run of `py/main_parse.py ws`.
 
 **Not vendored — do not overwrite:**
 

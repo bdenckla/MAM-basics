@@ -45,7 +45,8 @@ def emails_dir() -> Path:
 
 
 def data_dir() -> Path:
-    """Tracked atom-location data derived from the UXLC source clone."""
+    """Tracked atom-location data, derived from the UXLC core XML at ``in/UXLC-39/``
+    and the Leningrad Codex page index at ``in/lci_recs.json``."""
     return hkq_data_root() / "data"
 
 

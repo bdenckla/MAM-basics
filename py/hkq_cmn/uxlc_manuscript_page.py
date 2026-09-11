@@ -17,7 +17,10 @@ index, which is presumably where Holman's ordinals come from too. To
 re-establish the check, decode an ordinal here and compare against the
 ``page`` row of that JSON.
 
-The Sefaria image URL follows ``py/lenin_wiki/image_urls.py``.
+The Sefaria image URL is
+``https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F<DDDA>.jpg``, where
+``<DDDA>`` is the folio label: three digits for the folio, then its side, as in
+``035A``.
 
 The rest of a citation, ``Col. 2 middle``, is Holman's own placing of the atom
 on that page. ``manuscript_position`` parses it so that the page can compare his

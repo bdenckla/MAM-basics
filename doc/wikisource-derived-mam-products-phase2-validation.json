@@ -1,0 +1,735 @@
+{
+  "date": "2026-09-10",
+  "task_id": "01a08c34-8c06-75d1-9623-cfad5aac6b5a",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "starting_commit": "ee7ee2a05502e944162e34711da8210b50e2604f",
+  "candidate_command": "py/main_parse.py ws-products --output-dir .novc/ws-products-candidate-20260910",
+  "verification_script": ".novc/ws_products_phase2_verify_20260910.py",
+  "representation_rules": "py/ws/ws_plain.py",
+  "comparison_counts": {
+    "plain": {
+      "files": 24,
+      "structure_equal": 22,
+      "bytes_equal": 22,
+      "changed_fields": 2,
+      "changed_leaves": 4,
+      "books39": 39,
+      "chapters": 929,
+      "verses": 23202
+    },
+    "plus": {
+      "files": 24,
+      "structure_equal": 22,
+      "bytes_equal": 22,
+      "changed_fields": 2,
+      "changed_leaves": 4,
+      "books39": 39,
+      "chapters": 929,
+      "verses": 23202
+    }
+  },
+  "all_files_use_same_serialization": true,
+  "all_candidate_files_have_mam_mark_order": true,
+  "plus_validation_errors": [],
+  "changed_files": [
+    {
+      "product": "plain",
+      "filename": "BA-Samuel.json",
+      "changed_fields": [
+        "/book39s/1/chapters/22/40/2"
+      ],
+      "differences": [
+        {
+          "path": "/book39s/1/chapters/22/40/2/0/tmpl/2/0",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "i\u0301",
+                  "new_segment": "\u00ed",
+                  "old_codepoints": [
+                    "U+0069 LATIN SMALL LETTER I",
+                    "U+0301 COMBINING ACUTE ACCENT"
+                  ],
+                  "new_codepoints": [
+                    "U+00ED LATIN SMALL LETTER I WITH ACUTE"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product": "plain",
+      "filename": "D1-Psalms.json",
+      "changed_fields": [
+        "/book39s/0/chapters/27/13/2"
+      ],
+      "differences": [
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl/1/0/stmpl",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl/2/2",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl/2/4",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product": "plus",
+      "filename": "BA-Samuel.json",
+      "changed_fields": [
+        "/book39s/1/chapters/22/40/2"
+      ],
+      "differences": [
+        {
+          "path": "/book39s/1/chapters/22/40/2/0/tmpl_params/2/0",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "i\u0301",
+                  "new_segment": "\u00ed",
+                  "old_codepoints": [
+                    "U+0069 LATIN SMALL LETTER I",
+                    "U+0301 COMBINING ACUTE ACCENT"
+                  ],
+                  "new_codepoints": [
+                    "U+00ED LATIN SMALL LETTER I WITH ACUTE"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product": "plus",
+      "filename": "D1-Psalms.json",
+      "changed_fields": [
+        "/book39s/0/chapters/27/13/2"
+      ],
+      "differences": [
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl_params/1",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl_params/2/2",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/book39s/0/chapters/27/13/2/0/tmpl_params/2/4",
+          "segments": [
+            {
+              "path": "",
+              "segments": [
+                {
+                  "old_segment": "",
+                  "new_segment": "\u05c5",
+                  "old_codepoints": [],
+                  "new_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ]
+                },
+                {
+                  "old_segment": "\u05c5",
+                  "new_segment": "",
+                  "old_codepoints": [
+                    "U+05C5 HEBREW MARK LOWER DOT"
+                  ],
+                  "new_codepoints": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rendering": {
+    "default_render": [
+      {
+        "bcvt": [
+          "_bcvt",
+          "2Samuel",
+          22,
+          40,
+          "vtmam"
+        ],
+        "differences": [
+          {
+            "path": "/verse/0/doc_parts/0/0",
+            "segments": [
+              {
+                "old_segment": "i\u0301",
+                "new_segment": "\u00ed",
+                "old_codepoints": [
+                  "U+0069 LATIN SMALL LETTER I",
+                  "U+0301 COMBINING ACUTE ACCENT"
+                ],
+                "new_codepoints": [
+                  "U+00ED LATIN SMALL LETTER I WITH ACUTE"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          27,
+          13,
+          "vtmam"
+        ],
+        "differences": [
+          {
+            "path": "/verse/0/contents/0",
+            "segments": [
+              {
+                "old_segment": "",
+                "new_segment": "\u05c5",
+                "old_codepoints": [],
+                "new_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ]
+              },
+              {
+                "old_segment": "\u05c5",
+                "new_segment": "",
+                "old_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ],
+                "new_codepoints": []
+              }
+            ]
+          },
+          {
+            "path": "/verse/0/doc_lemma/0",
+            "segments": [
+              {
+                "old_segment": "",
+                "new_segment": "\u05c5",
+                "old_codepoints": [],
+                "new_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ]
+              },
+              {
+                "old_segment": "\u05c5",
+                "new_segment": "",
+                "old_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ],
+                "new_codepoints": []
+              }
+            ]
+          },
+          {
+            "path": "/verse/0/doc_parts/1/0",
+            "segments": [
+              {
+                "old_segment": "",
+                "new_segment": "\u05c5",
+                "old_codepoints": [],
+                "new_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ]
+              },
+              {
+                "old_segment": "\u05c5",
+                "new_segment": "",
+                "old_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ],
+                "new_codepoints": []
+              }
+            ]
+          },
+          {
+            "path": "/verse/0/doc_parts/2/0",
+            "segments": [
+              {
+                "old_segment": "",
+                "new_segment": "\u05c5",
+                "old_codepoints": [],
+                "new_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ]
+              },
+              {
+                "old_segment": "\u05c5",
+                "new_segment": "",
+                "old_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ],
+                "new_codepoints": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "simple_xml_render": [
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          27,
+          13,
+          "vtmam"
+        ],
+        "differences": [
+          {
+            "path": "/verse/0",
+            "segments": [
+              {
+                "old_segment": "",
+                "new_segment": "\u05c5",
+                "old_codepoints": [],
+                "new_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ]
+              },
+              {
+                "old_segment": "\u05c5",
+                "new_segment": "",
+                "old_codepoints": [
+                  "U+05C5 HEBREW MARK LOWER DOT"
+                ],
+                "new_codepoints": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "inverted_nuns": [
+      {
+        "bcvt": [
+          "_bcvt",
+          "Numbers",
+          10,
+          35,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          }
+        ],
+        "ajf": [
+          "\u05c6"
+        ],
+        "osis": [
+          "\u05c6"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Numbers",
+          10,
+          36,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          }
+        ],
+        "ajf": [
+          "\u05c6"
+        ],
+        "osis": [
+          "\u05c6"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          23,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          24,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          25,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          26,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          27,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          28,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      },
+      {
+        "bcvt": [
+          "_bcvt",
+          "Psalms",
+          107,
+          40,
+          "vtmam"
+        ],
+        "simple_node": {
+          "type": "spi-invnun",
+          "class": "including-trailing-space"
+        },
+        "sefaria": [
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "mam-spi-invnun"
+            },
+            "contents": [
+              "\u05c6"
+            ]
+          },
+          "\u00a0"
+        ],
+        "ajf": [
+          "\u05c6 "
+        ],
+        "osis": [
+          "\u05c6\u00a0"
+        ]
+      }
+    ],
+    "books39": 39,
+    "verses": 23202
+  },
+  "independence": {
+    "counts": {
+      "format2_books_equal": 39,
+      "chapters": 929,
+      "good_endings": 4,
+      "templates": 62499,
+      "adjacent_revia_geresh_muqdam_pairs": 236,
+      "line_boundaries": 33555,
+      "space_entities": 9,
+      "input_books_unmodified": 39,
+      "candidate_files_byte_identical": 48
+    },
+    "google_and_production_access_blocked": true,
+    "comparison_imports_blocked": true,
+    "writes_confined_to_candidate": true
+  },
+  "missing_destination_rejected": true,
+  "production_destination_rejected": true,
+  "suite": {
+    "passed": 990,
+    "skipped": 5,
+    "seconds": 107.19,
+    "command": "py/main_test.py -rs",
+    "skip_site": "py/tests/test_edition_transcriptions.py:1168"
+  },
+  "production_changes": []
+}

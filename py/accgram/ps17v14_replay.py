@@ -5,8 +5,8 @@ Python data modules (``TITLE`` + ``BODY``, migrated byte-exactly from the origin
 JSON sidecars), and these generators replay that body through the shared
 (style.css + provenance) shell so the pages match the look and feel of the other
 accgram reports.  The per-page modules (``ps17v14_doc_notes``,
-``ps17v14_double_tsinnor``) are thin CLI shells over ``write_replayed`` here, each
-passing its own body module.
+``ps17v14_double_tsinnor``) are thin shells over ``write_replayed`` here, each
+passing its own body module, and ``py/main_accgram.py`` is their command line.
 """
 
 from __future__ import annotations
@@ -15,8 +15,6 @@ import argparse
 from pathlib import Path
 
 from accgram import rtms_report
-from wlc_cmn.utf8_io import force_utf8_io
-from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
 
@@ -47,14 +45,3 @@ def write_replayed(html_out: Path, body_module, generator_file: str) -> None:
         path_to_style=rtms_report.path_to_gh_pages_style(html_out),
     )
     print(f"HTML: {html_out}")
-
-
-def main_for(
-    *, body_module, out_name: str, generator_file: str, description: str
-) -> None:
-    force_utf8_io()
-    default_out = paths.wlc_pages_dir() / "accgram" / out_name
-    parser = argparse.ArgumentParser(description=description)
-    add_html_out_arg(parser, default_out)
-    args = parser.parse_args()
-    write_replayed(args.html_out, body_module, generator_file)

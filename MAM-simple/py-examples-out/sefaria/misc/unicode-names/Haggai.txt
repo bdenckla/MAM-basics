@@ -1073,4 +1073,3 @@ SPACE
 y,:,h,o,v,a,(mer),h
 SPACE
 c,:,b,a,α,(mos),v,o,τ,(sopa)
-

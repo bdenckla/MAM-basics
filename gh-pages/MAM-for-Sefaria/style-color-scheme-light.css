@@ -1,6 +1,6 @@
 :root {
     /* Below we use CSS variables to centralize the definition of colors,
-    since colors usually need to be changed together, i.e. colors are not 
+    since colors usually need to be changed together, i.e. colors are not
     independent of one another. */
     --color-background: white;
     --color-normal: black;

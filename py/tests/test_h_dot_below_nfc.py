@@ -5,7 +5,7 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-TEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
+ELEVEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
 procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
 the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere still holds its corpus, while
@@ -19,11 +19,15 @@ one of them until 2026-08-17, when Phase 10 of
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
 remain sit under the floor of 10 that the scope carried.
 
-The four landed MAM product scopes replace standalone copies of this test that no
+The five landed MAM product scopes replace standalone copies of this test that no
 longer had their own repository roots. Those copies asked Git for the enclosing
 repository and therefore scanned most of MAM-basics under a product-specific name;
 three copies had no entry point at all. The canonical scopes below name the authored
 source and prose retained with each product and exclude the large generated corpora.
+
+The MAM-OSIS scope retains the source checker's generated-output and historical
+snapshot exclusions. Its binary-extension set is a subset of this checker's set;
+no extension needed adding when the duplicate was removed on 2026-09-10.
 
 The UXLC scope arrived with UXLC-utils' Python (Phase 3 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``), replacing that repo's
@@ -189,7 +193,6 @@ _EXCLUDE_MAM_GO_FILES = {
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
-    "in/mam-from-sefaria/",
     "in/mam-ws/",
     "in/mam-ws-bot-edits/",
     "in/chabad-ctr/",
@@ -199,6 +202,7 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
+    "MAM-OSIS/",
     "MAM-for-Sefaria/",
     "MAM-parsed/",
     "MAM-simple/",
@@ -225,17 +229,19 @@ _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 
 # What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
-# its published pages, its downloaded page scans, and the four derived trees. Its
-# aleppo-wiki/ is deliberately NOT excluded -- the CSV there is J David Stark's
-# hand-made index and the .docx and .xlsx precursors beside it are the same index in
-# Office form, which is why both extensions are in _BINARY_EXTENSIONS above.
+# its published pages, its downloaded page scans, and its derived trees -- four of
+# them until 2026-09-10, when phase 3 of doc/PLAN-mega-coverage.md deleted one with
+# the program that wrote it. Its aleppo-wiki/ is deliberately NOT excluded -- J David
+# Stark's hand-made index is there in the forms under precursors/, and the .docx and
+# .xlsx among them are the same index in Office form, which is why both extensions
+# are in _BINARY_EXTENSIONS above. A CSV form of the index sat beside precursors/
+# until 2026-09-10, when phase 6b of the same plan deleted it.
 _AC_EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
     "aleppo-pages/",
     "column-coordinates/",
     "ds-flat-stream/",
     "line-breaks/",
-    "plot_col_coords-out/",
 )
 
 # The one loose file codex-index-aleppo's own copy excluded by name: the annotator's
@@ -286,11 +292,15 @@ _MAM_SIMPLE_EXCLUDE_FILES = frozenset({"py-examples/provenance.md"})
 _MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES = ("py/",)
 _MAM_FOR_SEFARIA_EXCLUDE_DIR_PREFIXES = ("csv/", "csv-ajf/", "misc/", "py/")
 _MAM_PARSED_EXCLUDE_DIR_PREFIXES = (
+    "google/",
     "historical/",
     "plain/",
     "plus/",
     "py-examples-out/",
 )
+
+_MAM_OSIS_EXCLUDE_DIR_PREFIXES = ("MAPM-24/", "MAPM-orig/", "MAPM-orig-24/")
+_MAM_OSIS_EXCLUDE_FILES = frozenset({"mapm.osis.xml"})
 
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
@@ -373,20 +383,25 @@ def _scopes() -> tuple[_Scope, ...]:
             # 2026-08-22. 40 did not survive that phase: 50 of the 79 were the .py
             # this repo's Phase 3 took, and 26 remained immediately after the
             # deletion rather than predicted. The MAM-simple landing on 2026-09-06
-            # removed the two no-longer-live MAM-XML provenance files, and the
-            # current scope measures 20 files. The count fell 29 -> 28 -> 27 -> 26
-            # across that phase as Ben
+            # removed the two no-longer-live MAM-XML provenance files. The count fell
+            # 29 -> 28 -> 27 -> 26 across that phase as Ben
             # settled its three orphan candidates one at a time on 2026-08-22:
             # requirements.txt and codex-index-aleppo.code-workspace as orphaned by
             # the move, and .claude/settings.json for a reason that has nothing to do
             # with it -- it predates Claude Code's "auto" permission mode. The fourth
-            # dotfile went with that last one, .claude/ having held nothing else. So
-            # the floor is 19,
+            # dotfile went with that last one, .claude/ having held nothing else.
+            # On 2026-09-10 phase 3 of doc/PLAN-mega-coverage.md deleted the three
+            # generated index files under aleppo-wiki/ with the program that wrote
+            # them, taking the scope from 21 files to 18, measured that day. Phase 6b
+            # of the same plan then deleted test-data-from-book-of-job.json, with the
+            # word-finding check that read it, and J David Stark's CSV under
+            # aleppo-wiki/, taking the scope to 16, measured the same day. So the
+            # floor is 15,
             # which keeps meaning "an exclusion filter swallowed everything" rather
             # than asserting a tree size, and is what would catch this scope
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
             # binary; the .docx beside it is excluded the same way.
-            floor=19,
+            floor=15,
         ),
         _Scope(
             label="Cambridge 1753 data",
@@ -446,6 +461,16 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_files=frozenset(),
             # Four root metadata files and three product-specific example files
             # measure seven files after the misleading duplicate test is removed.
+            floor=6,
+        ),
+        _Scope(
+            label="MAM-OSIS authored metadata",
+            root=paths.repo_root() / "MAM-OSIS",
+            exclude_dir_prefixes=_MAM_OSIS_EXCLUDE_DIR_PREFIXES,
+            exclude_files=_MAM_OSIS_EXCLUDE_FILES,
+            # Seven files remain: README, license, attributes, ignore rules, header,
+            # SWORD configuration, and command example. Published output lives under
+            # gh-pages/MAM-OSIS/, already excluded by the main scope.
             floor=6,
         ),
     )

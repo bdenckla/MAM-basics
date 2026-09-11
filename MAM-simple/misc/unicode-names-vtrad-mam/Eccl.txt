@@ -5503,4 +5503,3 @@ k,l
 SPACE
 h,α,d,m.
 STOP good-ending
-

@@ -9,10 +9,10 @@
 <body>
 <h1>Reading MAM-parsed-plus</h1>
 <p>The <abbr class="small-caps">MAM</abbr>-parsed-plus JSON files are formed by: (a) parsing the
-Wikitext in the <abbr class="small-caps">MAM</abbr> Google Sheet (b) adding some conveniences and
-(c) removing some inconveniences. Of course, what is considered an inconvenience and what is
-considered a convenience can only be determined relative to a particular application. Nonetheless,
-we believe that for most applications, the plus format is more convenient to work with than the
+Wikitext downloaded from Hebrew Wikisource, (b) adding some conveniences and (c) removing some
+inconveniences. Of course, what is considered an inconvenience and what is considered a convenience
+can only be determined relative to a particular application. Nonetheless, we believe that for most
+applications, the plus format is more convenient to work with than the
 <a href="../../plain/html/mpplain.html">plain</a> format. This document covers:</p>
 <ul>
 <li>File naming</li>
@@ -203,7 +203,8 @@ a נוסח:</p>
 <span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Verse
 structure</h2>
-<p>Each verse is a 3-element array corresponding to the C, D, and E columns of the Google Sheet.</p>
+<p>Each verse is a 3-element array for the separator, verse label, and verse proper. These positions
+retain the C, D, and E names used by <abbr class="small-caps">MAM</abbr>'s tabular data.</p>
 <ul>
 <li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
 break</li>

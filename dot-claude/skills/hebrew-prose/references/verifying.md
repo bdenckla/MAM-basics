@@ -244,8 +244,8 @@ until the policy reversed to NFC. This is advice a reviewer can override.
   moved out of wlc-utils into MAM-basics; `py/tests/test_mb_cmn_paths.py`'s module docstring
   records the rename and its reason, that "a module six repos vendor should not advertise a
   seventh repo's name". **The example this bullet gave, `../MAM-simple`, has been corrected as
-  well**: MAM-simple, MAM-parsed, MAM-for-Sefaria and MAM-with-doc are landed products inside
-  MAM-basics, so the siblings the override still serves are MAM-OSIS, MAM-private and a temporary
+  well**: MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc and MAM-OSIS are landed products
+  inside MAM-basics, so the siblings the override still serves are MAM-private and a temporary
   redirect-host clone. `WLC_SCANS_DIR` is a different variable and is still live —
   `py/accgram/scan_page.py` reads it for the personal scan archive outside the repo, which is no
   repo of Ben's — so do not sweep it up with the two that were renamed.

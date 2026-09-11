@@ -1,5 +1,44 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
+State: remediated 2026-09-10; all approved waves and E/N items complete within scope; retained as a review record with explicit deferrals and verification limits.
+
+Status updated by Codex on 2026-09-10 at the final local checkpoint: Wave 4's
+vendoring audit and complete finding dispositions are committed at
+`24bac86bd905c31990cc09328de4b769b51090a4`. The repeat audit leaves every artifact
+byte unchanged. The remediation plan records validation and the final committed-tree
+integration procedure. Historical findings, accepted corrections and deferrals remain.
+
+Status updated by Codex on 2026-09-10 after Wave 3 editorial verification: all E1-E8
+edits and their exact output checks are complete. The suite and editorial gate pass.
+The dated dispositions below preserve every earlier finding and accepted correction.
+Wave 4 owns the remaining audit, final reconciliation and single integration.
+
+Status updated by Codex on 2026-09-10 after Wave 3 technical verification: finding
+13.3's revised technical remedy is complete. Source and matching differentials, normal
+generation, the final suite and V6 pass. The separate approved editorial phase follows
+the clean local technical checkpoint; all earlier findings and corrections are retained.
+
+Status updated by Codex on 2026-09-10 after Wave 3 preparation: finding 13.3 now has
+complete snapshot-form evidence and a displayed-route trace. Technical implementation
+remains pending. The dated disposition below preserves the original finding and all
+accepted corrections; no page or survey JSON changed.
+
+Status updated by Codex on 2026-09-10 after Ben's exact label approval: Wave 2 is
+complete. The dated completion disposition below supersedes the pending Holman decision;
+all earlier review and execution records are retained.
+
+Status updated by Codex on 2026-09-10 during Wave 2: the new dated dispositions below
+supersede the earlier status and crosswalk entries for findings 2, 5.1b and 14.2.
+Wave 2 is incomplete. All E items retain their separate editorial phase; the exact
+pre-existing Holman label difference has been presented to Ben as a contract question.
+
+Current status, recorded by Codex on 2026-09-10: the dated dispositions below describe
+completed work. Waves 2-4 technical work and all E items remain pending under the approved
+remediation plan. The historical State below is preserved, including Ben's September 9
+decisions; its opening is superseded by this current State.
+
+Historical State, recorded 2026-09-09:
+
 State: not yet acted on, except findings 1 and 3, which Ben settled on 2026-09-09 before the
 Codex half ran. Finding 1: the Methods page and footnote φ1 now define "ignore" in Ben's words
 — treat the word as a meteg-then-silluq word, i.e. deliberately misinterpret the marks, which
@@ -773,3 +812,447 @@ No remediation disposition was newly claimed as fixed. Private-source research, 
 adjudication, the full mega/survey regeneration, historical test reconstruction, and the
 complete set of Claude's negative or soundness claims remain outside the independently
 checked scope. The compaction investigation stays outside these public records.
+
+## Dispositions after remediation
+
+Wave 1A checkpoint, 2026-09-09, recorded by Codex. The original findings and reconciliation
+above remain historical records. Ben's approved work is being completed in smaller tasks;
+this section records only completed work and does not declare Wave 1 complete.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 14.4 / D2; fresh deployment check for 5.6 | Applied Ben's exact approved sentence to the live Claude skill, then copied the entire skill directory to the tracked review-worktree copy and live Codex copy. Both required whole-directory Git comparisons are empty; an independent SHA-256 inventory confirms identical bytes for all five files in each home. Only the approved opening sentence changed. The contextual permission and explicit MAS-page exception remain intact. The review-exchange correction about where permission already existed remains for Wave 1D. |
+| 2026-09-09 | Remaining Wave 1, Waves 2-4, and the separate editorial phase | Pending under the approved remediation plan. D2 does not complete the dated historical corrections, crop-provenance inventory, accepted-corrections section, technical remedies, or editorial work. |
+
+Wave 1B checkpoint, 2026-09-09, recorded by Codex under Ben's Step-5 approval. The rows below
+update the completed current-documentation items only. Wave 1C's historical corrections and
+Wave 1D's complete accepted-corrections section and disposition reconciliation remain pending.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 4 | Added the exact approved dated correction immediately after the maintenance runbook's old scope paragraph, linking the workspace roster and its setup policy. The current roster has six folders after `63ac5b84` removed `github-misc`; no roster or policy changed, and no maintenance ran. |
+| 2026-09-09 | 5.3 / N1 | Applied the exact named-referent correction in `cam1753/doc/reading-mam-simple.md`: codex-index-cam1753's copy was deleted. The historical equivalence figures and comparison rule are unchanged. |
+| 2026-09-09 | 5.4a / N2 | Changed the test docstring to say the argparse help formerly said the quoted text. The current help says `Stored release or MAM-basics revision`; the test's behavior is unchanged. Finding 5.4b remains assigned to Wave 4. |
+| 2026-09-09 | 5.5 / N4-N6 | Applied only the approved current fragments in `doc/dual-agent-review.md`, `CLAUDE.md`, and the `in/scan-pages/` license row. The dated programme wording is preserved. No procedure redesign or license grant changed. |
+| 2026-09-09 | 6.1-6.5; 6.8 / D8 and N9 | Updated current descriptions to the measured eleven deploy-root pages and nine MAS pages. The real `_authored_anchors()` walker returns 35; the comment now says 35 after the 2026-09-08 additions, with floor 25 and test behavior preserved. The historical 34 was true when written, as turn 5 confirms. Findings 6.6-6.7 remain for Wave 1C. |
+| 2026-09-09 | 9.1 | Removed the nonexistent retained source-hygiene test from the MAM-with-doc inventory. `git ls-files MAM-with-doc` gives `.gitattributes`, `.gitignore`, `LICENSE.md`, and `README.md`; license terms are unchanged. |
+| 2026-09-09 | 9.2 / P2 | Added `doc/post-stress-meteg-image-provenance.md` and linked it from the `gh-pages/img/` row. The inventory names exactly the six tracked crops and records unrecorded photograph sources and rights holders. Only the already-captioned Leningrad 1 Samuel 17:5 crop has F159A, column 3, line 8. The missing inventory is supplied; source and rights-holder identification remains deferred. All crop bytes and no-grant terms are unchanged. |
+| 2026-09-09 | 15.4 / N7, Misc-title sentence only | Applied `THE MISC TITLES MATCH THE PAGES' TITLES.` in `py/author_site/site_data.py`. The remaining survey/module editorial items are deferred to the separate editorial phase. |
+| 2026-09-09 | 16 / D6, Aleppo attribution only | Attributed the `aleppo/aleppo-wiki/` hand corrections to Ben Denckla exactly as approved. The withdrawn carry/hand-transcription sites and unrelated wording are unchanged; N8 and the accepted-corrections reconciliation remain assigned to later Wave 1 tasks. |
+
+Wave 1C1 checkpoint, 2026-09-09, recorded by Codex under Ben's Step-5 approval. These
+rows cover only the evacuation records and September 4 review. Wave 1 remains incomplete.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 5.1a / D4, three-repos record and September 4 review | Added dated notes superseding the claim that the suite no longer prints a subtest line, while preserving Wave 4's command-unrecorded/cause-unknown limit and citing Wave 6's recorded 65 subtests. The September 4 review now distinguishes its historical absent-directory observation from the September 8 recorded state, enumerates the six branches and tips from the retained September 7 deletion-output record, and records that `4195440e` had already removed the primary-clone constant. Original records remain intact; no current branch census or cleanup was performed. Finding 11.1's separate September 7 record and the accepted-corrections append remain for later Wave 1 work. |
+| 2026-09-09 | 5.2 | Added dated notes linking the landed MAM-simple and MAM-parsed sparse-checkout instructions, attributing workspace/visibility removal to `19df42f3`, and citing `9cf48863`'s recorded MAM-for-Sefaria retirement. The historical MAM-with-doc host list now has a dated note naming `.gitattributes` and `.gitignore`, verified in the fixed `904c9fa` public Git tree. No evacuation, filesystem safety audit, or retirement was repeated. |
+
+Wave 1C2 checkpoint, 2026-09-09, recorded by Codex under Ben's Step-5 approval.
+These rows cover only the assigned September 7 historical records; Wave 1 is incomplete.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 2, historical fixed claim only | Corrected the September 7 Sol-1 disposition and Wave 3 record by dated notes. The bounded current-file scan reproduces 210 findings in 193 files, with no overlap against the 390 files changed by `4afe3ebc`. All whitespace defects remain assigned to Wave 2; no output was repaired. |
+| 2026-09-09 | 3 | Added dated status notes to the September 7 Wave 2 result and the existing rows 13/21 clarification. Retained model fixes are distinguished from `1095f029`/`a9edd4f9`'s reversals, `38a606e2`'s accepted local ITM/CoS glosses, and `3b0225e0`'s settled BHS/edition questions. No prose was reinstated. |
+| 2026-09-09 | 8.1 | Added dated scope corrections to the September 7 review, remediation plan, and Sol review. Fixed public Phonetic MAM HTML at `7322b665` reproduces 368 ordinary rows / 370 duplicated chanted words, plus two dual-cantillation rows giving 370/372. Source movement did not cause the difference; no survey changed. |
+| 2026-09-09 | 11.1 / D4, September 7 record | Added the command-unrecorded/cause-unknown note beside Wave 4's preserved output observation. Wave 6 recorded 65 subtests with the same 981 passing-test count. The separate three-repos correction completed in Wave 1C1 is preserved; no historical invocation was reconstructed. |
+| 2026-09-09 | 11.2 | Added dated status notes naming `c76239a5` and `e91d7358` beside their original unchecked checklists. Original boxes remain; the notes distinguish implemented work, failed record correction, and deliberately reversed editorial work. |
+| 2026-09-09 | 11.3 | Corrected Wave 6's count to 25 formatted source files plus the copied Python file in `9cf48863`; the source and copied `paths.py` blobs are identical there. Code inspection confirms that the spell-check call writes both tracked custom-dictionary frequency reports. The recorded successful run remains; the spell checker was not rerun. |
+| 2026-09-09 | 11.4 | Added dated finding-versus-file corrections in the Sol review and September 7 reconciliation: 87/111/12 findings correspond to 80/111/2 distinct files, totaling 210 findings in 193 files. The bounded scan preserves the exact offending set and confirms no overlap between blank-final-line and trailing-space files. |
+| 2026-09-09 | 17f–17g, assigned completion qualifications only | Qualified the September 7 completion statements by the continuing Sol-1 defects and incorrect scope explanation. Later deliberate prose reversals do not falsify `e91d7358`'s original message. Other completion/disposition reconciliation remains with later Wave 1 work. |
+
+Wave 1C3 checkpoint, 2026-09-09, recorded by Codex under Ben's Step-5 approval.
+These rows cover only the assigned MAS-plan and standards historical corrections.
+Wave 1D retains the complete accepted-corrections append and disposition reconciliation.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-09 | 1, older-plan overclaim | Added a dated note identifying the zero post-silluq count as the research's chosen interpretation, settled by Ben in `3b0225e0`. The classifier, census, and approved pages are unchanged; no silluq-template implementation ran. |
+| 2026-09-09 | 6.6-6.7 | Added dated notes beside both old ten/eight descriptions. The Git trees reproduce ten deploy-root/eight MAS pages at `15ec6f4d`, eleven/nine at `825cef66`, and eleven/nine at `1b86afa8`. The ninth MAS page reached main with that merge; earlier execution counts remain intact. |
+| 2026-09-09 | 7.1 | Added the approved executed State line to the merge plan. Retained `ad44dba7`'s already-landed census correction. All eight MAS HTML blobs at `15ec6f4d` reproduce 440 occurrences of `chanted` on 381 lines; the dated note distinguishes occurrence counting from `grep -c`. |
+| 2026-09-09 | 7.2 | Recorded the already-landed State and later dated notes from `7f0e4bdd`, `527011b7`, and `2de7a969`. Attributed the original contracts to the September 8 plan `772545d5` without inventing approval of every contract. Added a dated baseline correction distinguishing the September 6 result from later recorded runs. Filename and product contracts are retained; the plan remains unexecuted by this remediation. |
+| 2026-09-09 | 7, standards docstring census / D10 pointer | Replaced only the false current plan census with a dated correction: `9cf48863` had eleven plans with State lines and omitted the September 7 remediation plan from its claim of ten; `38a606e2` had thirteen plans with eleven State lines. Preserved the State format rule and added the procedure pointer for D10's review naming/State rules. No standards behavior or gate changed. |
+| 2026-09-09 | 16 / N8 | Added the exact approved numbered commit list and direction-neutral quotation-mark note, preserving the original records. The fixed `c73a2ad3..a3e3f6eb` non-merge log reproduces the seven entries. The blanket cleanup premise remains rejected; no withdrawn stylistic site was swept. D6's separate attribution is preserved. |
+| 2026-09-09 | 14.3 / 17a | Recorded that the merge plan already gives 32 author-module hunks and 13 conflicted files, independently established in the review and reconciliation. The merge message's 36-hunk claim is retained as an immutable historical error; no message amendment, issue communication, or historical checkout merge occurred. |
+
+Wave 1D1 checkpoint, 2026-09-10, recorded by Codex under Ben's D3 and Step-5 approval.
+The accepted-corrections append below completes original Wave 1 step 4. Wave 1D2 still
+owns original step 5's full reconciliation and remaining record-only dispositions.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-10 | D3 / accepted-corrections append | Recorded all corrections named in Wave 1 step 4, citing the accepting turns and preserving the earlier records. The eight withdrawn finding-16 items reproduce the rebuttal verbatim. The pinned `38a606e2` phi-5 HTML confirms three sentences and two tables. This completes the append, not the full disposition reconciliation. |
+| 2026-09-10 | Remaining Wave 1; Waves 2-4; all E items; P2 investigation | Wave 1D2 must reconcile the complete crosswalk before declaring Wave 1 complete. Waves 2-4 technical remedies and the separate editorial phase remain pending. P2's inventory is complete; photograph-source and rights-holder identification remains deferred. |
+
+Wave 1D2 reconciliation, 2026-09-10, recorded by Codex under Ben's Step-5 approval.
+The complete crosswalk below reconciles the Wave 1A/1B/1C1/1C2/1C3/1D1 records and
+the remaining settled decisions. Earlier dated rows retain their historical status;
+the rows below supersede their statements that Wave 1 remains incomplete. The accepted
+corrections in the following section are preserved verbatim.
+
+| Date | Finding or decision | Disposition and verification |
+|---|---|---|
+| 2026-09-10 | 10 / C5; D1, D7, D9-D11 | Complete in Step 3, implementation `2cddb893` and record `83b470da`. The procedure records skill availability separately from automatic instruction loading, the review census and calibration, naming and State rules, the alternating review procedure, concrete editorial approval, and the shared-worktree/single-integration practice. The rebuttal's C5 acceptance and turn 5's accepted-corrections list establish the omitted premise; Wave 1D1 records it. No procedure redesign was repeated. D10's standards pointer is complete in Wave 1C3. |
+| 2026-09-10 | 11.5 / 17h | Record only. Claude reports that a commit-message file was added after `9e6e9e17`'s 415-file count, producing 416. Codex has not independently established that timing or count. Today's scratch contents cannot falsify the earlier measurement. No filesystem census or message amendment was performed. |
+| 2026-09-10 | 13.1 / P3 | Retained the overlap guard in `_fit_type`. Unsupported simultaneous fit classes remain a latent limit; the reviewed overlap did not establish an observed candidate or incorrect fit count. The reconciliation's qualified finding and approved P3 prescribe retention. No classifier or count changed. |
+| 2026-09-10 | 13.2 / D5 and P3 | Settled design note. The original finding already said that multiplicity aborts the run; the rebuttal, counter-rebuttal and turn 5 agree on that mechanism. Ben's D5 keeps both multiplicity guards, the Methods sentence, the JSON schema and all counts. No MAS-multiplicity field or replacement page derivation was added. Wave 1D1's accepted-corrections row supplies the accepting-turn citations. |
+| 2026-09-10 | 13.4 / P3 | Retained the fusion invariant. The token count follows from the present loop; it is not independent evidence that the fusion's linguistic analysis is correct. The zero post-silluq result uses the research's chosen interpretation, settled by Ben for finding 1, rather than independently proving that interpretation. No assertion was removed and no behavioral test added. |
+| 2026-09-10 | 13.6 / P3 | Retained valid empty outputs. Bounded inspection at `f60aa426` confirms that the reader and all 24 files in `MAM-simple/xml-vtrad-mam/` are byte-identical to `38a606e2`. Parsing the complete set of 32 targets and applying the current reader reproduces three empty results for lone `spi-pe2` children and two for empty targets. The review's 3+2 observation is confirmed for that named input set; no new error condition or broader page-range claim is introduced. |
+| 2026-09-10 | 13.7 / P3 | The conjunctive-stress check is settled and retained: `stress_accent_classification` raises for an unsupported stress-letter accent before returning its counts. The accepted correction and its sources remain in Wave 1D1's append. The Aramaic assertion and 2 Chronicles 8:11 language/edition evidence remain outside independent verification by Codex in this remediation; those claims are retained without a new oracle, transcription, or scholarly investigation. |
+| 2026-09-10 | 15.3; retained part of 15.4 | Retained Ben's mixed voice and unexpanded cant-alef/cant-bet wording restored by `a9edd4f9`. Retained the meaningful survey-versus-pages contrast in `survey's own vocabulary`. N7's separate heading correction is complete in Wave 1B; E5's named survey wording remains pending in the separate editorial phase. |
+| 2026-09-10 | 15.6 | Retained the source phenomenon name `gaʿya-before-paseq` under the source-name exception. No meteg terminology sweep is prescribed. |
+| 2026-09-10 | 17b-17e; completion qualifications in 17f-17g | The original messages accurately described their commits, and the individual review items described subsequent changes. The heading's error classification is rejected, as the accepting turns agree; Wave 1D1 preserves the detailed chronology and D3's three-sentence/two-table correction. Wave 1C2's completion qualifications and Wave 1C1/1C3's related records complete the remaining historical qualifications: actual omissions and defects required correction, while Ben's deliberate reversals remain decisions. No message rewrite or reinstatement follows. |
+| 2026-09-10 | 18.1-18.3 | Record only. The bounded trailer and merge-topology census was confirmed in the review reconciliation; physical housekeeping, historical remote-branch distance and reasons for integration timing were not independently audited. Housekeeping remains Ben's separate track. No trailer rewrite, branch/worktree/folder/cache retirement, or new filesystem census occurred. Retirement of this review worktree belongs only to close-out Step 7, after the single final integration. |
+
+The complete finding crosswalk uses the remediation plan's row labels. A completed
+checkpoint means its dated disposition and implementation record above; a pending entry
+means execution is still required under the approved later phase. No completed record
+correction makes its separate technical or editorial remedy complete.
+
+| Crosswalk row | Wave 1 outcome or later execution boundary |
+|---|---|
+| 1 | Settled interpretation retained; older-plan correction complete in 1C3. |
+| 2 | Historical fixed-claim correction complete in 1C2; all whitespace repairs pending in Wave 2. |
+| 3 | BHS/edition decisions retained; historical qualifications complete in 1C2. |
+| 4 | Maintenance-scope correction complete in 1B. |
+| 5.1a | Historical evacuation and September 4 corrections complete in 1C1. |
+| 5.1b | Holman RTL repair pending in Wave 2. |
+| 5.2 | Sparse instructions, attribution and host-list corrections complete in 1C1. |
+| 5.3 | N1 complete in 1B. |
+| 5.4a | N2 complete in 1B. |
+| 5.4b | N3 and inventory regeneration pending in Wave 4. |
+| 5.5 | N4-N6 complete in 1B; dated programme wording retained; branch enumeration complete in 1C1. |
+| 5.6 | Resolved before remediation; fresh D2 deployment comparisons complete in 1A and repeated at checkpoints. |
+| 6.1-6.5 | Current eleven/nine descriptions complete in 1B. |
+| 6.6-6.7 | Historical page-count notes complete in 1C3. |
+| 6.8 | D8/N9 complete in 1B; historical qualification complete in 1D1. |
+| 7.1 | Executed State and occurrence-count note complete in 1C3; prior census correction retained. |
+| 7.2 | Already-landed State/decisions retained; baseline and original-proposal notes complete in 1C3; product plan not executed. |
+| 7 standard | Historical census correction and D10 pointer complete in 1C3; standards behavior retained. |
+| 8.1 | Ordinary/dual scope correction complete in 1C2. |
+| 8.2 | E1 pending in the separate editorial phase. |
+| 9.1 | Retained-file inventory correction complete in 1B. |
+| 9.2 | P2 inventory complete in 1B; photograph-source and rights-holder identification deferred. |
+| 9.3 | E8 pending in the separate editorial phase. |
+| 10 / C5 | Step 3 complete; omission correction complete in 1D1; disposition recorded in 1D2. |
+| 11.1 | D4 notes complete in 1C1/1C2; cause remains unknown; acceptance recorded in 1D1. |
+| 11.2 | Dated checklist-status notes complete in 1C2; original checkboxes retained. |
+| 11.3 | Python-path and spell-check-output qualifications complete in 1C2. |
+| 11.4 | Finding-versus-file corrections complete in 1C2. |
+| 11.5 / 17h | Record-only limit complete in 1D2; 415/416 remains unverified by Codex. |
+| 12 | P1 vendoring report regeneration and committed-copy dates pending in Wave 4. |
+| 13.1 | Overlap guard retained; latent limit recorded in 1D2. |
+| 13.2 | D5 design-note disposition complete in 1D2; guards, sentence, schema and counts retained. |
+| 13.3 | Display/source selection and annotation-validation work pending in Wave 3 technical phase under V6. |
+| 13.4 | Fusion invariant and chosen interpretation retained; validation limits recorded in 1D2. |
+| 13.5 | Function-attribution correction complete in 1D1; E4 pending in the separate editorial phase. |
+| 13.6 | Complete named XML target check and valid-empty-output disposition complete in 1D2. |
+| 13.7 | Conjunctive-stress correction complete in 1D1; independent language/edition limits recorded in 1D2. |
+| 14.1 | Paragraph qualification complete in 1D1; E6 pending in the separate editorial phase. |
+| 14.2 | MAS lint membership coverage pending in Wave 2. |
+| 14.3 | Historical merge-hunk disposition complete in 1C3. |
+| 14.4 | D2 complete in 1A; actual permission location corrected in 1D1; reading time remains unknown. |
+| 15.1 | E2, including the italic slash, pending in the separate editorial phase. |
+| 15.2 | E3 pending in the separate editorial phase. |
+| 15.3 | Ben's restored wording retained; disposition complete in 1D2. |
+| 15.4 | N7 complete in 1B; survey-versus-pages contrast retained in 1D2; E5 pending in the separate editorial phase. |
+| 15.5 | E1/E7 pending in the separate editorial phase; JSON category retained. |
+| 15.6 | Source phenomenon name retained; disposition complete in 1D2. |
+| 16 | Blanket cleanup rejected and exact withdrawals recorded in 1D1; D6 complete in 1B and N8 complete in 1C3; hand-authored-whitespace wording retained. |
+| 17a | Historical error recorded in 1C3; immutable message retained. |
+| 17b-17e | Accurate-message distinction and D3 correction complete in 1D1; disposition complete in 1D2. |
+| 17f-17g | Completion qualifications complete in 1C2 with related 1C1/1C3 records; final reconciliation complete in 1D2. |
+| 18.1-18.3 | Census and verification limits recorded in 1D2; housekeeping remains separate. |
+
+Wave 1 is complete. D1-D11 have their approved outcomes: D1/D7/D9-D11 in Step 3,
+D2 in 1A, D3 in 1D1, D4 in 1C1/1C2, D5 in 1D2, and D6/D8 in 1B. P3's
+record-only dispositions are complete. N1/N2/N4-N9 are complete; N3 remains for Wave 4.
+P1 remains for Wave 4, and P2's source/rights-holder investigation remains deferred.
+Every E item, E1-E8, is approved but pending in the separate editorial phase after
+Wave 3 technical verification. Wave 2 has not started. The unchanged-HTML V6 condition
+and one integration after final Wave 4 remain in force, including across intermediate archival.
+
+The previous current State at `f60aa426` is preserved here:
+
+> State: remediation in progress 2026-09-10; Waves 1A-1B and 1C1-1C3 complete; Wave 1D1 records the accepted corrections, with full Wave 1 reconciliation still pending in Wave 1D2.
+
+Wave 2 partial checkpoint, 2026-09-10, recorded by Codex under Ben's Step-5 approval.
+The full baseline, commands, comparisons and pending decision are in the remediation
+plan's "Wave 2 partial execution record, 2026-09-10". Prior dispositions and the entire
+accepted-corrections section below remain historical records.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 2 | Repaired and verified for the partial checkpoint: all 189 blank final lines and all 21 trailing-space lines in 193 files. Complete baseline-byte comparisons preserve internal verse separators and a terminating newline, and all CSV quoting, field counts and text apart from the nine measured final-field spaces. The named static HTML/CSS whitespace was edited directly. The real generators reproduce the repaired output. This supersedes the technical-pending disposition; the earlier false fixed claim retains its dated Wave 1C2 correction. |
+| 2026-09-10 | 14.2 | Repaired and verified for the partial checkpoint: the existing membership lint checks the expected tuple against both rendered filenames and declared MAS filename constants. Disposable scratch probes demonstrate failure for an extra rendered page, extra declared page and missing expected page. The forbidden-word scan is unchanged; no new tracked test or exception registry was added. |
+| 2026-09-10 | 5.1b | Implemented and verified as an uncommitted Holman draft, pending Ben's label decision. The comparison-cell constructor fixes all 49 suppressed-page omissions; a separately traced summary-cell constructor fixes the active page's one omission. All 1,302 cell texts and their order are unchanged. The pre-edit generator also changes a background-link label from `Meteg after the primary stress` to `Meteg after the stress`, matching the existing source. That exact wording difference exceeds the original direction-only output contract and awaits Ben's response. Wave 2 is not complete. |
+
+All actual Wave 2 V6 runs passed against the unchanged fixed baseline, including after
+the canonical suite: **987 tests, 5 skips and 65 subtests in 111.22 seconds**. No MAS
+HTML or survey JSON changed. No issue metadata, XML, parsed corpus, downloaded input,
+Holman assets or sibling output changed. The complete support copier additionally
+synchronized `MAM-simple/py-examples/mb_cmn/paths.py` with its existing source
+documentation; this pre-existing difference is recorded separately from the repairs.
+Both whole-skill comparisons passed. The 415/416 scratch count remains unverified;
+P2 source/rights-holder identification remains deferred. No successor is dispatched
+while the Holman label question is pending, and no integration or push occurred.
+
+The previous current State at `efeb9fd4`, preserved here, was:
+
+> State: remediation in progress 2026-09-10; Wave 1 complete through Wave 1D2 reconciliation; Wave 2 is next and has not started; Waves 2-4 technical work and all E items remain pending.
+
+Wave 2 completion, 2026-09-10, recorded by Codex after Ben explicitly authorized dropping
+`primary` from the selected Holman label. The approved label is `Meteg after the stress`;
+the exception is confined to that generated background link. V6 and the separate editorial
+phase remain unchanged. The remediation plan's "Wave 2 completion record, 2026-09-10"
+contains the exact approval, commands, evidence paths and local commit record.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 5.1b | Complete: all 50 missing Holman direction attributes are repaired, and Ben approved the exact pre-existing label update. The full-byte comparison permits only those changes; all 1,302 cell texts and their order remain unchanged. This supersedes the uncommitted-draft disposition above. |
+| 2026-09-10 | 2 and 14.2 | Complete: the whitespace and existing page-lint repairs retain their verified partial-checkpoint results. The approved output hashes and entire technical diff equal the tested, twice-generated draft; the recorded canonical suite result remains applicable. |
+
+All actual V6 runs passed; no MAS HTML or survey JSON changed. Wave 3 technical work
+is next, after a clean local commit. E1-E8 remain for the separate editorial phase;
+P2 source/rights-holder identification stays deferred. No integration or push occurred.
+
+The previous current State at `059511e8`, preserved here, was:
+
+> State: remediation in progress 2026-09-10; Wave 1 complete; Wave 2 whitespace and page-lint repairs verified, Holman draft awaits Ben's exact label decision; Wave 2 completion and Waves 3-4 remain pending.
+
+### Wave 3 preparation disposition, 2026-09-10
+
+Recorded by Codex task `01a08b1f-acc9-7e22-984d-b1f1333f3f38` after required source
+`d4068b79` and back-merge `32969e0e86c18d0ca577f86fde38a3b5479f269f` in the
+review worktree. The previous current State was:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 complete; Ben approved the exact Holman label change; Wave 3 technical work is next; Waves 3-4 remain pending.
+
+| Finding | Dated disposition |
+|---|---|
+| 13.3 | Preparation complete; technical repair still pending. The complete snapshot differential supports first-`rep`/first-unannotated-`fva` selection, with the existing VARIKA and gray-maqaf transformations retained for matching only. Omitting the VARIKA transformation changes five serialized attachment records in the bounded counterfactual. The actual survey and all nine rendered pages remain unchanged. The complete display-helper trace identifies direct prose routes, authored interpretation constants, edition-specific comparison inputs and latent fallbacks for the new annotation validation. The remediation plan's Wave 3 preparation record names all source hashes, commands, measurements and remaining verification. Neither a full new survey nor an implemented repair has been verified. |
+
+The fresh technical implementation task must complete the full revised remedy and its
+verification before finding 13.3 can be marked fixed. All E items remain in the separate
+editorial phase. Earlier dispositions and the accepted-corrections section below remain
+unchanged. No integration, push, issue action or automatic archival occurred.
+
+### Wave 3 technical disposition, 2026-09-10
+
+The preceding current State is preserved here as a historical preparation checkpoint:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 complete; Wave 3 source-and-matching preparation complete, technical implementation pending; Waves 3-4 remain incomplete.
+
+Recorded by Codex task `01a08b34-edc5-74b3-9c56-b10d169ae862`, after required source
+`67d180ae4aca456c135862c4f19b391c80851f3d` and back-merge
+`c36f5baa3eed464877f0b0c9ac34b9b6dedf268a` in the exact review worktree.
+
+The complete revised technical remedy for finding 13.3 is implemented and its
+source/display/annotation differentials pass. Matching selects first `rep` or first
+unannotated `fva`, retaining the necessary VARIKA removal and gray-maqaf conversion.
+The display helper retains source marks and only converts gray maqaf; both fallback sites select
+unannotated source text. Annotation validation covers complete output from every MAS
+page and uses independent source forms to preserve legitimate upper/lower dots and
+VARIKA. Current-MAM and BHS-labelled sources remain distinct.
+
+The complete input-domain proof and complete existing-survey differential preserve
+matching decisions, every serialized survey field and the original JSON bytes.
+Raw classifier inputs and the existing classifier/record/summary function bodies are
+unchanged. No private survey was regenerated. Every actual V6 check passed, and
+normal authored generation preserved all 1,074 HTML files in the actual saved inventory.
+The independent serialized-mark check found and verified a correction to source-location
+reporting after gray-maqaf conversion; its synthetic failure remains recorded.
+The remediation plan's technical record names all verification evidence. Final suite,
+disposition and local commit evidence follow there before the clean handoff.
+
+E1-E8 remain for their separate fresh editorial task, with its output contract resolved
+before HTML edits. Wave 4 and the single final integration remain pending. All prior
+dated dispositions and the complete accepted-corrections section below are preserved.
+
+| Date | Finding | Completed technical disposition |
+|---|---|---|
+| 2026-09-10 | 13.3 | The revised source-selection, mark-preservation and annotation-validation remedy is complete. Exhaustive matching and serialized-display differentials pass; all survey fields, JSON bytes and 1,074 HTML files remain unchanged. The final canonical suite passed 988 tests, 5 skips and 65 subtests in 109.92 seconds; V6 passed immediately afterward. The remediation plan's Wave 3 technical record preserves commands, source hashes, the synthetic diagnostic failure and its verified correction, full logs and local checkpoint evidence. E1-E8 remain separate. |
+
+Wave 3 technical checkpoint, recorded 2026-09-10: finding 13.3's complete revised
+technical remedy and evidence are committed at
+`f11660576e440523e944598331e8ecc339dcdb26`. V6 passed immediately before the commit
+at `v6-runs/20260910T124233Z-wave3-before-technical-commit-01a08b34-47c17bdc/` under
+the remediation scratch root. The following record-only commit provides the clean
+handoff source; the approved editorial phase remains separate. All earlier finding
+and correction text is retained.
+
+### Wave 3 editorial dispositions, 2026-09-10
+
+Recorded by Codex task `01a08b5a-ee53-7952-8b9d-7f2ded7b65e4` under Ben's
+existing Step-5 approval. The remediation plan's "Wave 3 editorial output contract,
+recorded 2026-09-10" resolves the exact E2/E3/E8 output contract before source edits;
+its editorial completion record preserves the commands and full evidence. These rows
+supersede only the corresponding pending editorial dispositions above.
+
+| Date | Finding | Current disposition and evidence |
+|---|---|---|
+| 2026-09-10 | 8.2 | Complete, E1: the maintainer document now describes the implementation's type-3 and common criteria in the approved words. No classifier or new source interpretation changed. |
+| 2026-09-10 | 9.3 | Complete, E8: the exact approved Aleppo sentence appears below the existing 1 Kings 7:37 crop, with romanized mark names. The image, alt text, caption and existing MAM paragraph are preserved. No new manuscript reading was undertaken. |
+| 2026-09-10 | 13.5 | Complete, E4: the docstring now records provisional counts and the final build rejection. An AST comparison confirms that the survey module's executable code is unchanged. |
+| 2026-09-10 | 14.1 | Complete, E6: the repository instruction and author docstring now distinguish the definition's second expository paragraph from the opening use of "word". A dated note corrects the merge plan while preserving its historical text. The page exception, lint docstring, immutable commit and issue #265 are unchanged. |
+| 2026-09-10 | 15.1 | Complete, E2: the visible-node count was re-measured as 4/9/2 across main/Methods/2 Chronicles; those unwrapped occurrences are now zero. The slash remains inside a single italic `meteg/merkha` span. Visible text and rendered spaces, titles and existing attributes are preserved. |
+| 2026-09-10 | 15.2 | Complete, E3: only the main Fit-for-MAS criteria list has changed from `ul` to `ol`; its entries and order are unchanged. |
+| 2026-09-10 | 15.4 | Complete, E5: the approved numbered-boundary sentence and `two annotations absent from MAM` fragment replace the specified docstring passages. The following annotation descriptions and the survey-versus-pages contrast remain. |
+| 2026-09-10 | 15.5 | Complete, E1/E7: the documentation spelling is `tsere-voweled`, the later duplicate sentence is removed, and the earlier non-disqualification sentence remains. The JSON category spelling is unchanged. |
+
+The normal authored-site command reproduced the exact pre-recorded expected bytes;
+only the approved main, Methods and 2 Chronicles pages changed among 1,074 actual
+HTML files. The suite passed **988 tests, 5 skips and 65 subtests in 140.02 seconds**;
+the editorial gate passed immediately afterward. Survey bytes, displayed Hebrew and
+existing numerical claims are unchanged. Original technical V6 evidence is preserved;
+no real technical or editorial gate stop occurred. Wave 4, P1 and N3 remain pending.
+P2 source/rights-holder identification and the 415/416 count remain deferred/unverified.
+
+The replaced current State at `23ee0fd0` is preserved as dated history:
+
+> State: remediation in progress 2026-09-10; Waves 1-2 and Wave 3 technical implementation complete; separate Wave 3 editorial phase and Wave 4 remain incomplete.
+
+Wave 3 editorial checkpoint, recorded 2026-09-10: E1-E8 and their completed
+dispositions are committed at `931d6762ba9d4cd9e2df5682b264bc0ac8efcc26`.
+The exact editorial byte gate passed immediately before the commit, and the complete
+scope/historical-preservation check passed at the clean checkpoint. The following
+record-only commit precedes automatic Wave 4 dispatch; final integration remains
+Wave 4's responsibility. Original technical V6 evidence and accepted corrections remain.
+
+### Final finding dispositions, recorded 2026-09-10
+
+Codex task `01a08b71-0f3a-7ca2-b088-8dc432526ba8` records the final outcome of
+every row in the remediation plan's finding crosswalk. The earlier checkpoints and
+the entire accepted-corrections section remain historical records. All E1-E8 and
+N1-N9 were approved as amended; none was rejected or left unimplemented. P1 and
+P3 are complete within their approved limits. P2's inventory is complete, while
+source and rights-holder identification remains deferred.
+
+| Date | Crosswalk row | Final disposition and retained qualification |
+|---|---|---|
+| 2026-09-10 | 1 | Settled by Ben's prior decision. Wave 1C3 qualifies the older plan's overclaim as the research's chosen interpretation. The classifier, census and separate silluq-template work are unchanged. |
+| 2026-09-10 | 2 | Fixed in Wave 2; the earlier fixed-claim correction is recorded in 1C2. V2 now finds zero of the original 210 findings in 193 files and verifies the exact approved output bytes and CSV fields. |
+| 2026-09-10 | 3 | Settled by Ben's BHS/edition decisions; Wave 1C2 records the completion qualifications. Retained model fixes and Ben's deliberate reversals remain distinct; reverted prose is not reinstated. |
+| 2026-09-10 | 4 | Fixed in 1B by the dated maintenance-scope correction. The roster and policy are unchanged; no maintenance was run. |
+| 2026-09-10 | 5.1a | Record-only corrections complete in 1C1. The dated evacuation and September 4 observations, six named branches, and later filesystem state remain explicitly distinguished. No housekeeping followed. |
+| 2026-09-10 | 5.1b | Fixed in Wave 2, including Ben's separately approved background-link label. V3 confirms zero RTL omissions and unchanged cell text/order in both Holman pages. Issue metadata is unchanged. |
+| 2026-09-10 | 5.2 | Record-only corrections complete in 1C1: sparse instructions, workspace-removal attribution, recorded retirement and host file list. No evacuation or filesystem safety audit was repeated. |
+| 2026-09-10 | 5.3 | Fixed by approved N1 in 1B; the historical equivalence measurements remain. |
+| 2026-09-10 | 5.4a | Fixed by approved N2 in 1B; test behavior is unchanged. |
+| 2026-09-10 | 5.4b | Fixed by exact approved N3 in Wave 4. The real vendoring audit regenerated the inventory introduction; policy and file ownership are unchanged. |
+| 2026-09-10 | 5.5 | Fixed by N4-N6 in 1B and the branch enumeration in 1C1. The dated programme sentence remains as written; no license grant or broad style sweep followed. |
+| 2026-09-10 | 5.6 | Settled before remediation; D2's subsequent edit and whole-skill deployment comparisons are complete in 1A and its checkpoints. No retired private instruction repository was inspected. |
+| 2026-09-10 | 6.1-6.5 | Fixed in 1B. V1 confirms eleven deploy-root HTML files, including nine MAS pages; no page or checker scope was added. |
+| 2026-09-10 | 6.6-6.7 | Record-only page-count corrections complete in 1C3. The earlier execution counts remain dated history. |
+| 2026-09-10 | 6.8 | Fixed by D8/N9 in 1B. The current comment says 35 and the corrected date; floor 25 remains. The historical 34 was true at its date, as 1D1 records. |
+| 2026-09-10 | 7.1 | Fixed in 1C3: executed State and occurrence-versus-line-count correction. The prior census correction, filename and historical instructions remain. |
+| 2026-09-10 | 7.2 | Record-only baseline/proposal corrections complete in 1C3; already-landed State and decisions retained. The separate product plan was not executed or revised by this remediation. |
+| 2026-09-10 | 7 standard | Fixed in 1C3 by the dated census correction and D10 procedure pointer. Standards behavior is unchanged; V1 confirms every current direct plan has its State. |
+| 2026-09-10 | 8.1 | Record-only scope correction complete in 1C2: ordinary 368/370 and combined 370/372. Source movement did not explain the difference; no survey count changed. |
+| 2026-09-10 | 8.2 | Fixed by approved E1 in the separate Wave 3 editorial phase. The maintainer document describes the implementation; no classifier or scholarly-source interpretation changed. |
+| 2026-09-10 | 9.1 | Fixed in 1B by removing the nonexistent retained test from the license inventory. License terms remain. |
+| 2026-09-10 | 9.2 | P2 inventory fixed in 1B; photograph-source and rights-holder identification deferred. Unknown fields remain unrecorded, the no-grant statement remains, and no new folio or licensing conclusion was supplied. |
+| 2026-09-10 | 9.3 | Fixed by exact approved E8 in the separate editorial phase. The Aleppo sentence is present; the crop, alt text and caption remain. No new manuscript reading was undertaken. |
+| 2026-09-10 | 10 / C5 | Fixed in Step 3, with the omitted premise corrected in 1D1 and disposition in 1D2. D1/D7/D9-D11 remain the procedure's governing decisions. No procedure redesign was repeated. |
+| 2026-09-10 | 11.1 | Record-only D4 notes complete in 1C1/1C2. The historical command was not recorded and the cause of the missing subtest line remains unknown; a later passing run cannot supply that cause. |
+| 2026-09-10 | 11.2 | Record-only checklist-status notes complete in 1C2. Original boxes remain; failed or reversed editorial items were not retroactively marked successful. |
+| 2026-09-10 | 11.3 | Record-only qualifications complete in 1C2: 25 formatted sources plus one copy, and the spell check's tracked frequency outputs. The earlier successful run is retained; no spell check ran in Wave 4. |
+| 2026-09-10 | 11.4 | Record-only finding-versus-file corrections complete in 1C2. The historical total remains 210 findings in 193 files. |
+| 2026-09-10 | 11.5 / 17h | Record only; the 415/416 count and reported timing remain independently unverified by Codex. No contemporary scratch census or commit amendment substitutes for the missing historical evidence. |
+| 2026-09-10 | 12 | Fixed by approved P1 in Wave 4: all 44 public pairs are byte-identical, no EOL-only rows remain, and dates match committed copies. This measures the LF review worktree; another checkout can again have EOL-only differences. The comparator is unchanged. |
+| 2026-09-10 | 13.1 | Settled under P3 with the overlap guard retained. Unsupported simultaneous fit classes remain a latent limit, without an observed candidate or incorrect fit count. |
+| 2026-09-10 | 13.2 | Settled design note under D5/P3. Both multiplicity guards, Methods sentence, JSON schema and counts remain; the original finding already described the abort. |
+| 2026-09-10 | 13.3 | Fixed in the Wave 3 technical phase at `f11660576e440523e944598331e8ecc339dcdb26`. Unannotated selection, matching and annotation validation pass the retained technical proofs. Survey bytes and legitimate displayed marks remain; later editorial changes follow only the exact approved E2/E3/E8 contract. |
+| 2026-09-10 | 13.4 | Record-only validation limit under P3. Fusion invariants remain; their token counts do not independently establish the linguistic analysis or chosen post-silluq interpretation. |
+| 2026-09-10 | 13.5 | Fixed by approved E4 in the separate editorial phase. The accepted correction distinguishes `_problems` returning from `build_survey` raising; executable survey code is unchanged by E4. |
+| 2026-09-10 | 13.6 | Settled under P3. The 1D2 check of all 32 targets confirms the bounded 3+2 empty-result observation. V2 confirms the XML product bytes still match that checked set; valid empty targets remain valid. |
+| 2026-09-10 | 13.7 | Conjunctive-stress checking is settled and retained. Independent verification of the Aramaic and 2 Chronicles language/edition assertions remains outside remediation; no new scholarly verification is claimed. |
+| 2026-09-10 | 14.1 | Fixed by approved E6 in the separate editorial phase. The definition's second expository paragraph and earlier use are distinguished; the plain-word exception, lint docstring, immutable commit and issue remain. |
+| 2026-09-10 | 14.2 | Fixed in Wave 2. V1 and the existing lint compare expected, declared and actual MAS page membership and retain missing-page failure. No general exception registry was introduced. |
+| 2026-09-10 | 14.3 | Record-only merge-hunk correction complete in 1C3, as for 17a. Issue #265 and history are unchanged. |
+| 2026-09-10 | 14.4 | Fixed by D2 in 1A and the accepted location correction in 1D1. The contextual permission already existed in the skill; the skill-reading time remains unknown. Explicit local exceptions and accepted ITM/CoS glosses remain. |
+| 2026-09-10 | 15.1 | Fixed by approved E2 in the separate editorial phase: the specified 4/9/2 unwrapped names are wrapped, including the slash in the single `meteg/merkha` span. The exact editorial byte gate passes. |
+| 2026-09-10 | 15.2 | Fixed by approved E3 in the separate editorial phase. Only the main criteria list's `ul`/`ol` tags change; entries and order remain. |
+| 2026-09-10 | 15.3 | Settled by Ben's restored wording. Mixed voice and unexpanded cant-alef/cant-bet labels remain. |
+| 2026-09-10 | 15.4 | Fixed by N7 in 1B and approved E5 in the separate editorial phase. The meaningful survey-versus-pages contrast and actual titles remain. |
+| 2026-09-10 | 15.5 | Fixed by approved E1/E7 in the separate editorial phase. Documentation spelling and the named duplicate are corrected; the earlier non-disqualification sentence and JSON category remain. |
+| 2026-09-10 | 15.6 | Settled source-name exception. The established phenomenon name remains; no terminology sweep followed. |
+| 2026-09-10 | 16 | Blanket cleanup rejected; the eight withdrawn items remain untouched. D6's specific attribution is fixed in 1B and N8's dated notes in 1C3. The accepted-corrections section retains every withdrawal and the hand-authored-whitespace qualification. |
+| 2026-09-10 | 17a | Record-only correction complete in 1C3: 32 author-module hunks in 13 conflicted files. The immutable merge message is preserved. |
+| 2026-09-10 | 17b-17e | Error classification rejected: the messages accurately described their commits. The accepted chronology and D3's three-sentence/two-table correction are preserved; no message rewrite followed. |
+| 2026-09-10 | 17f-17g | Record-only completion qualifications complete in 1C2 with related 1C1/1C3 records. Actual omitted work has its completed remedy; Ben's reversals remain decisions. |
+| 2026-09-10 | 18.1-18.3 | Record only. The bounded census and its verification limits remain; housekeeping stays separate. Worktree retirement is Ben's Step 7 after the final task ends, with the remediation evidence preserved first. |
+
+The final V1-V4 evidence is recorded in the remediation plan's Wave 4 execution
+record, together with suite, standards, gate and commit results. The original
+technical evidence is retained; no real technical or editorial gate stop has occurred.
+The earlier current State is preserved as history:
+
+> State: remediation in progress 2026-09-10; Waves 1-3 complete, including E1-E8 in the separate editorial phase; Wave 4 remains pending.
+
+## Corrections accepted in the review exchange
+
+Recorded by Codex on 2026-09-10 under Ben's D3 decision of 2026-09-09 and Step-5
+approval. These corrections supersede the identified conclusions in the original findings
+and reconciliation without rewriting their dated text. The accepting sources are Claude's
+[rebuttal](codex-review-findings-2026-09-08-claude-rebuttal.md) at `da4e40a5`, Codex's
+[counter-rebuttal](codex-review-findings-2026-09-08-codex-counter-rebuttal.md) at `ad5d9f43`,
+and [Claude turn 5](codex-review-findings-2026-09-08-claude-turn-5.md) at `2b365153`.
+The review exchange is closed; Ben left Claude's skill-reading time unknown on September 9.
+
+| Finding or claim | Accepted correction and accepting source |
+|---|---|
+| C1 / 13.2, MAS multiplicity | The original finding explicitly said a counterexample aborts the run. Codex withdrew “without checking it”, “manufacture agreement”, and the implication that Claude proposed removing the guards. Claude refiled 13.2 as a design note: the definition allows multiplicity, while the assertions check the narrower property and abort if it fails. No present MAS output defect was established. Rebuttal, “C1 — finding 13.2”; counter-rebuttal, disputed characterization 2; turn 5, “C1 / 13.2”. Ben's D5 decision keeps both guards, the page sentence, JSON schema, and counts unchanged. |
+| 13.5, mismatch handling | `_problems` returns the problem list; `build_survey` raises when that list is nonempty. The stated fatal-build behavior was correct, but the finding named the wrong function. Rebuttal, “Reconciliation on 13.5”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. E4's module-docstring clarification remains for the separate editorial phase. |
+| C1 / 13.7, conjunctive stress | `stress_accent_classification` checks each MAS record's stress-letter accent and raises `SurveyProblem` unless the accent is an allowed conjunctive. The returned counts follow that check; the claim is pinned by the per-record raise. Rebuttal, “C1 — finding 13.7”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. This check uses the survey's stress oracle and does not independently adjudicate finding 1's chosen interpretation. The language and edition claims in 13.7 are not newly verified by this correction. |
+| 14.1, paragraph qualification | The definition is the second expository paragraph and the third HTML `p`, because the spacing control occupies a `p`. The earlier sentence already uses “word”, so the before-any-use assertion is false; the second-expository-paragraph description is accurate. Rebuttal, “Reconciliation on 14.1”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. E6 corrects the false assertion in the separate editorial phase; the plain-“word” permission remains valid. |
+| C4 / 11.1, missing subtest line | The Wave 4 record names no command, so the cause of its missing subtest line cannot be established. The later Wave 6 run reported the line at the same passing-test count; that does not explain Wave 4's output. Claude withdrew the asserted “reporting artifact” cause. Rebuttal, “C4”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. D4's earlier-record notes are completed in Waves 1C1/1C2; no historical invocation is reconstructed. |
+| 6.8, historical anchor count | The original finding said “true then”; Codex withdrew its attribution of a claim that the historical 34 was false. The self-dated comment and floor of 25 were valid. Turn 5, “6.8”, also qualifies finding 6's heading: item 8 became stale at `9cf48863`, before merge `825cef66`, rather than at the merge. Rebuttal, “Reconciliation on 6.8”; counter-rebuttal's following 6.8 paragraph; turn 5, “6.8”. D8/N9's current comment update was completed in Wave 1B. |
+| 14.4, location of the permission | The context permission already existed in `references/terminology.md`, part of the skill. Codex withdrew “the inaccurate attribution” and the implication that the permission was absent from the skill. The narrower inconsistency was the opening's “only”, which omitted that permission. Turn 5 also withdrew “in the skill nowhere” for the inspected September 9 skill: `references/verifying.md` already named the nine-page exception. Counter-rebuttal, disputed characterization 1; turn 5, “14.4” and its qualification. Ben's later decision leaves the reading time unknown; no reading chronology is inferred. D2's opening correction is complete in all three homes. The explicit MAS vocabulary and accepted local ITM/CoS glosses remain valid. |
+| C5 / 10, omitted skill-loading premise | Finding 10 omitted the false absolute claim that Codex “will never load” the Hebrew prose skill. The procedure also recorded an earlier Codex review governed by that skill. Skill availability and automatic loading of Claude's instruction file are distinct. Rebuttal, “C5”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. Ben's D1 wording was implemented in Step 3; this append records the omission without another procedure edit. |
+| Omitted editorial instructions at `47edbee6` | Claude accepted Codex's additional process finding: the September 7 remediation plan already directed broad prose corrections, type-3 decisions, and source-attribution changes without identifying concrete MAS wording approved by Ben. A request to execute that checklist did not establish separate approval of every embedded editorial choice. Rebuttal, “Codex's MAS-decisions section”; counter-rebuttal's accepted-corrections table; turn 5's accepted-corrections list. Ben's decisions at `1095f029`, `a9edd4f9`, `3b0225e0`, and `becc6f00` stand. Deliberate reversals do not make the reverted wording unfinished remediation awaiting reinstatement. |
+| Planning correction for finding 2 | `gh-pages/MAM-for-Sefaria/index.html` and `gh-pages/MAM-for-Sefaria/style-color-scheme-light.css` are static files, not generator outputs. Their whitespace repair is direct editing in Wave 2, as the approved remediation plan's finding-2 crosswalk and Wave 2 instructions specify. This is the Step-4 planning correction carried into the accepted record; it is not a claim that a review turn established a generator for those files. |
+
+### Finding 16: the eight withdrawn items
+
+Claude withdrew the following eight items in the rebuttal's “C3” section. The list is
+verbatim from `da4e40a5`; the paths and line numbers are the rebuttal's historical locations.
+Codex accepted the withdrawal in the counter-rebuttal; turn 5 accepted that account.
+
+1. `DATA-LICENSES.md:38` ("carry").
+2. `DATA-LICENSES.md:76` ("carries").
+3. `README.md:138` ("carries").
+4. `py/py_render/rt_mam_suggestion_card.py:352` ("carries").
+5. `py/repo_util/check_repo_standards.py:270` ("carry").
+6. `DATA-LICENSES.md:16` ("hand transcriptions", in a sentence opening "Ben Denckla's data").
+7. `DATA-LICENSES.md:63` ("Ben Denckla's hand transcriptions").
+8. The characterization "against the script-regenerable / Ben-written vocabulary `b4706759`
+   adopted": that commit adopted the vocabulary for one site and declined a sweep.
+
+The rebuttal retained the merge plan's unnumbered commit list and unclear quote-conversion
+referent, plus the Aleppo license row's unattributed hand corrections, for individual
+decisions. Its remaining-items paragraph did not retain “hand-authored whitespace” as a
+remediation item; that wording stays. D6's attribution was completed in Wave 1B and N8's
+dated merge-plan notes in Wave 1C3. Those specific corrections do not authorize a blanket
+cleanup of the withdrawn sites. The broader cleanup premise is rejected.
+
+### Findings 17b-17e: accurate messages and subsequent changes
+
+The rebuttal's “C2” section, the counter-rebuttal's disputed characterization 3, and turn
+5's “C2 / 17(b)–(e)” agree: the “Immutable-message slips” heading misclassified these
+messages. The individual items already described later changes; Codex withdrew the
+implication that those items called the messages false when written. Preserve the messages.
+
+| Finding | Accurate historical message | Subsequent change named in the accepting turns |
+|---|---|---|
+| 17b | `fe4e602f` described the census present in that commit's HTML. | `825cef66` brought the changed census onto that line. |
+| 17c | `bdcdc5e2` introduced 2A and 2B. | `97a1b46f` refined the names to 2Af and 2Bf. |
+| 17d | `24f1e4a3` added the type-1 page. | `3a698b71` deleted that page during consolidation. |
+| 17e | `95c457c2` had the explanatory paragraph its message described. | `6a45cd72` deleted that paragraph. |
+
+D3 also includes the rebuttal's correction to 17e: the phi-5 section at `38a606e2` has
+three sentences and two tables, not the original finding's “two sentences and two tables”.
+Reading that pinned HTML confirms the accepted count. The message-error observations in
+17a and 17h remain separate: 17a is recorded in Wave 1C3; the reviewer's 415/416 scratch
+count in 11.5/17h remains unverified by Codex. This append performs no filesystem census.

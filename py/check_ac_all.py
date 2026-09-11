@@ -3,10 +3,12 @@
 Run all check scripts for codex-index-aleppo, whose code now lives in this repo.
 
 Checks run:
-  1. check_ac_word_finding   (word-finding against book-of-job quirkrecs)
-  2. check_escape_sequences  (literal chars instead of \\uXXXX escapes)
-  3. check_mark_order        (Hebrew combining-mark order, SBL2)
-  4. check_line_breaks       (line-break JSON consistency)
+  1. check_escape_sequences  (literal chars instead of \\uXXXX escapes)
+  2. check_mark_order        (Hebrew combining-mark order, SBL2)
+  3. check_line_breaks       (line-break JSON consistency)
+
+A fourth ran first until 2026-09-10: ``check_ac_word_finding``, which phase 6b of
+``doc/PLAN-mega-coverage.md`` fixed and then retired.
 
 ONE OF THREE REGISTERS, AND THAT IS BY DECISION RATHER THAN BY DRIFT.  Ben settled
 2026-08-19 that ``check_all`` stays per-repo permanently: it is the statement of
@@ -16,7 +18,7 @@ including ``check_function_ordering`` and ``check_html_syntax_and_sanity``, whic
 this code has never been held to; codex-index-cam1753's register arrives with its
 Phase 3 and runs four against a different manuscript.
 
-Checks 2 and 3 are shared with those registers rather than copied: this repo holds
+Checks 1 and 2 are shared with those registers rather than copied: this repo holds
 one ``check_escape_sequences.py`` and one ``check_mark_order.py``, and they take
 their scope from ``repo_scopes``, which unions the per-repo lists.
 codex-index-aleppo's own copies of those two -- one committed blob with
@@ -34,7 +36,6 @@ import sys
 
 import check_escape_sequences
 import check_mark_order
-import check_ac_word_finding
 from py_ac_loc import check_line_breaks
 
 _SEPARATOR = "─" * 60
@@ -57,7 +58,6 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
     checks = [
-        ("Word finding (book-of-job quirkrecs)", check_ac_word_finding.main),
         ("Escape sequences (literal chars)", check_escape_sequences.main),
         ("Hebrew mark order (SBL2)", check_mark_order.main),
         ("Line-break JSON consistency", _run_line_breaks),

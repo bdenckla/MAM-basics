@@ -37,7 +37,15 @@ def gh_pages_dir() -> Path:
 
 
 def data_dir() -> Path:
-    """Generated UXLC data other repos consume, currently ``lci_augrecs.json``."""
+    """``uxlc/data/``, holding ``lci_augrecs.json``: the Leningrad Codex index's
+    records, augmented with word counts and start and stop lines, pre-formed.
+
+    Nothing in this repository reads the file.  The two estimators,
+    ``py/main_estimate_uxlc_locations.py`` and ``py/main_uxlc_estimate_atom_loc.py``,
+    build the same records in memory.  The file is for a client that wants them
+    pre-formed rather than built on the fly: the purpose Ben gave it on 2026-09-10,
+    when he chose this copy over the one ``uxlc/out/UXLC-misc/`` held.
+    """
     return uxlc_data_root() / "data"
 
 
@@ -67,7 +75,7 @@ def uxlc_misc_fixed_dir() -> Path:
 
 
 def uxlc_notes_dir() -> Path:
-    """The downloaded tanach.us note pages under ``uxlc/in/UXLC-notes/``."""
+    """The per-book tanach.us note-page JSON under ``uxlc/in/UXLC-notes/``."""
     return in_dir() / "UXLC-notes"
 
 

@@ -55,7 +55,6 @@ from accgram import printed_decalogue_taxton_diff as pdt
 from accgram import rtms_report
 from accgram import transcription_parse as tp
 from accgram.almost_errors_html_shared import hbo, link
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpunc
@@ -70,9 +69,9 @@ REPORT_TITLE = "In the printed tradition, are the accents of the Decalogue gramm
 _GOERWITZ_URL = "goerwitz.html"
 _SOURCE_URL = "https://he.wikisource.org/wiki/עשרת_הדברות_בסיס/טעמים"
 
-# The two satellite pages, which document the per-Decalogue verdicts this page only totals.
+# The Simanim satellite page, one of the two that document the per-Decalogue verdicts
+# this page only totals.
 _SIMANIM_PAGE = "printed-decalogue-simanim.html"
-_KOREN_PAGE = "printed-decalogue-koren.html"
 
 # Not a satellite: it reports no verdict of this repo's, only the editions MAM-basics issue #208
 # cites at ובנך, where the two satellites' editions and the Wikisource p-trad עליון disagree.
@@ -1526,15 +1525,3 @@ def run(args: argparse.Namespace) -> None:
     )
     n_bad = sum(len(vr.ungrammatical) for vr in results)
     print(f"HTML: {html_out} ({len(results)} versions, {n_bad} ungrammatical)")
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

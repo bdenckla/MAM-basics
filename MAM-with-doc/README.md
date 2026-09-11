@@ -1,6 +1,9 @@
 # MAM-with-doc
 Miqra According to the Masorah in HTML, with its documentation notes
 
+Its source is MAM's Hebrew Wikisource text, through the Wikisource-derived
+`MAM-parsed/plus/` product in this repository.
+
 MAM-basics publishes this edition at
 https://bdenckla.github.io/MAM-basics/MAM-with-doc/.
 

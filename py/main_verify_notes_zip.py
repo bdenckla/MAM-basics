@@ -1,18 +1,19 @@
 """Exports main: confirm the committed UXLC note pages against the frozen Notes.zip.
 
 Started for the 3-book pilot (issue #24); extended unchanged to the full 39-book
-corpus (issue #25) -- it already walks whatever is committed under
-``in/UXLC-notes/``, so no book-specific logic needed to change.
+corpus (issue #25) -- it walks every entry stored under
+``uxlc/in/UXLC-notes/``, so no book-specific logic is needed.
 
 http/download is the source of truth; ``Notes.zip`` (a ~1.1 MB snapshot of the
 tanach.us ``/Notes`` tree, captured 2026-06-30) is only a verification aid -- a
 re-runnable offline cross-check, not an independent authority. This script never
 edits anything; it just reports.
 
-For every committed ``in/UXLC-notes/<book_id>/<book_id>.c.v.pos-code.html`` it
-finds the matching zip entry (the zip keys notes by the canonical tanach.us
-basename, e.g. ``Notes/Samuel_2/Samuel_2.…`` for book id ``2Samuel``; the mapping
-is ``my_uxlc.book_basename``) and classifies the pair:
+For every committed ``<book_id>.c.v.pos-code.html`` key in
+``uxlc/in/UXLC-notes/<book_id>.json``, the verifier finds the matching zip entry
+(the zip keys notes by the canonical tanach.us basename, e.g.
+``Notes/Samuel_2/Samuel_2.…`` for book id ``2Samuel``; the mapping is
+``my_uxlc.book_basename``) and classifies the pair:
 
   * IDENTICAL     -- byte-for-byte equal.
   * PROSE-EQUAL   -- differ only in tanach.us template chrome (title text,
@@ -38,12 +39,12 @@ frozen snapshot; override with an argument)::
     python py/main_verify_notes_zip.py [path/to/Notes.zip]
 """
 
-import os
 import sys
 import zipfile
 from pathlib import Path
 
 import clc.clc_note_pages as cnp
+from clc.clc_note_storage import NoteStorageOperation
 import uxlc_misc.my_uxlc as my_uxlc
 import uxlc_paths
 
@@ -73,42 +74,30 @@ def _classify(local_bytes, zip_bytes):
     return ("PROSE-EQUAL" if lp == zp else "PROSE-DIFFERS"), lp
 
 
-def _iter_committed():
-    notes_dir = uxlc_paths.uxlc_notes_dir()
-    for book_id in sorted(os.listdir(notes_dir)):
-        book_dir = notes_dir / book_id
-        if not book_dir.is_dir():
-            continue
-        for fname in sorted(os.listdir(book_dir)):
-            if fname.endswith(".html"):
-                yield book_id, fname
-
-
 def main():
     """Classify every committed note page against the zip; write the report."""
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
     zip_path = Path(sys.argv[1]) if len(sys.argv) > 1 else _DEFAULT_ZIP
-    zf = zipfile.ZipFile(zip_path)
-    zip_names = set(zf.namelist())
-
     counts = {}
     prose_differs = []
     no_prose = []
     lines = [f"Notes.zip verification (issues #24, #25) -- zip: {zip_path}", ""]
 
-    for book_id, fname in _iter_committed():
-        with open(uxlc_paths.uxlc_notes_dir() / book_id / fname, "rb") as fp:
-            local_bytes = fp.read()
-        entry = _zip_entry_for(book_id, fname)
-        zip_bytes = zf.read(entry) if entry in zip_names else None
-        verdict, local_prose = _classify(local_bytes, zip_bytes)
-        counts[verdict] = counts.get(verdict, 0) + 1
-        lines.append(f"{verdict:<14} {book_id}/{fname}")
-        if verdict == "PROSE-DIFFERS":
-            prose_differs.append((book_id, fname, local_bytes, zip_bytes))
-        if not local_prose:
-            no_prose.append((book_id, fname))
+    note_storage = NoteStorageOperation()
+    with zipfile.ZipFile(zip_path) as zf:
+        zip_names = set(zf.namelist())
+        for book_id, fname, page_text in note_storage.iter_pages():
+            local_bytes = page_text.encode("utf-8")
+            entry = _zip_entry_for(book_id, fname)
+            zip_bytes = zf.read(entry) if entry in zip_names else None
+            verdict, local_prose = _classify(local_bytes, zip_bytes)
+            counts[verdict] = counts.get(verdict, 0) + 1
+            lines.append(f"{verdict:<14} {book_id}/{fname}")
+            if verdict == "PROSE-DIFFERS":
+                prose_differs.append((book_id, fname, local_bytes, zip_bytes))
+            if not local_prose:
+                no_prose.append((book_id, fname))
 
     lines.append("")
     lines.append("Summary:")

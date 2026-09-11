@@ -42,21 +42,24 @@ TWO READINGS, AND NEITHER ONE COVERS THE OTHER'S GROUND.
 
 A MISSING GRAPHVIZ IN THE CLOUD IS A SKIP, AND EVERYWHERE ELSE IS FATAL. Ben's
 decision, 2026-09-09, and the reason is ``py/main_0_mega.py``: its ``tmpl-survey``
-step is step 5 of 41, and it reaches ``survey_dot.render_svg``. When a missing
-Graphviz raised unconditionally, a cloud container ran four steps and then died,
-and the remaining 36 -- the whole accgram block, ``mam-simple``, ``mam-osis``,
-``near-aleppo-census``, ``gen-site`` -- never ran at all. That is far too high a
+step reaches ``survey_dot.render_svg``. When a missing Graphviz raised
+unconditionally, a cloud container died at that step, and no step after it ran
+at all -- not the whole accgram block, nor ``mam-simple``, ``mam-osis``,
+``near-aleppo-census`` or ``gen-site``. That is far too high a
 price for an artifact a container cannot produce anyway. So ``in_cloud_session``
 gates the choice: in a container the render is skipped, recorded by
 ``note_cloud_skip`` and reported once at the end of the mega run; anywhere else
 it raises, exactly as before.
 
-A skipped run is CLOUD-COMPLETE, which means every step ran and none failed while
-some SVGs went unrendered. It is deliberately not called incomplete -- Ben's
-wording, the same day. The one hazard it leaves is that the ``.dot`` beside a
-skipped ``.svg`` IS rewritten, so the tracked pair can drift apart; the mega's
-end-of-run banner says so, and says not to commit a changed ``.dot`` without its
-``.svg``.
+A skipped run is CLOUD-COMPLETE, which means no step failed and every step either
+ran or was skipped for the cloud, while some SVGs went unrendered. It is
+deliberately not called incomplete -- Ben's wording, 2026-09-09. Since 2026-09-10
+the mega also skips two whole steps in a cloud session, the near-Aleppo census
+and the post-stress-meteg survey, and ``py/main_0_mega.py``'s
+``_report_cloud_skips`` reports both kinds of skip. The one hazard an SVG skip
+leaves is that the ``.dot`` beside a skipped ``.svg`` IS rewritten, so the
+tracked pair can drift apart; the mega's end-of-run banner says so, and says not
+to commit a changed ``.dot`` without its ``.svg``.
 
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better

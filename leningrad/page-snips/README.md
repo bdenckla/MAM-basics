@@ -5,13 +5,15 @@ manuscript. One file per fact, named `<folio><side>-col<N>-line<N>-<ref>-<slug>.
 has been read off the image, and `<folio><side>-<ref>-<slug>.png` when it has not, which is the
 usual case: Ben does not report lines and columns (2026-09-10).
 
-Images come from the two sets the wiki index links, which are the same photographs:
+Images come from the two sets that the Leningrad Codex index on Hebrew Wikisource links, which
+are the same photographs:
 
 - <https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F430B.jpg> (direct JPEG)
 - <https://archive.org/details/Leningrad_Codex_Color_Images/page/n859/mode/1up?view=theater>
 
-`lenin-wiki/index.wiki` has both links for every folio, so it is the way to get from a folio
-number to an image. <https://www.masoretica.org/> is the other way, and covers 187
+That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
+for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
+to an image. <https://www.masoretica.org/> is the other way, and covers 187
 manuscripts rather than this one — `?book=Lamentations&chapter=2&verse=3&manuscript=leningrad`
 addresses a verse directly and answers with the page, the folio and the Internet Archive scan
 number.

@@ -6,8 +6,8 @@ Checks each file in cam1753-line-breaks/*.json for structural
 consistency and reports summary statistics.
 
 Usage:
-    python check_line_breaks.py          # check all files
-    python check_line_breaks.py 0073A    # check one file
+    .venv/Scripts/python.exe py/main_cam1753_check_line_breaks.py          # check all files
+    .venv/Scripts/python.exe py/main_cam1753_check_line_breaks.py 0073A    # check one file
 """
 
 import json
@@ -668,7 +668,3 @@ def main():
         webbrowser.open(out_path.as_uri())
 
     sys.exit(0 if passed else 1)
-
-
-if __name__ == "__main__":
-    main()

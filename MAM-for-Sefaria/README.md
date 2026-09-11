@@ -4,8 +4,8 @@ This product directory contains an extract of MAM (Miqra According to the Masora
 
 The extract usually differs from the edition published on the Sefaria web site because Sefaria does not take updates as frequently as this product directory receives them.
 
-The source of this data is the
-[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745).
+The source of this data is MAM's Hebrew Wikisource text, through the
+Wikisource-derived `MAM-parsed/plus/` and `MAM-simple/` products in this repository.
 
 Other versions/formats of MAM (each with their tradeoffs) include:
 

@@ -1,0 +1,219 @@
+{
+  "date": "2026-09-10",
+  "task_id": "01a08c89-93f4-75d1-9c27-75f6cf017597",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "branch": "codex-worktree-3a6b",
+  "starting_commit": "426fa229c69aad6168cf2ec5217b105088d6293f",
+  "baseline_commit": "67cb3ecc17931732d2cd1f9bbafee1976a322a2e",
+  "local_mega": {
+    "maintained_step_count": 39,
+    "local_step_count": 38,
+    "omitted_steps": [
+      "near-aleppo-census"
+    ],
+    "step_results": [
+      {"position": 1, "step": "parse-ws", "returncode": 0, "seconds": 15.77},
+      {"position": 2, "step": "foi-features-of-interest", "returncode": 0, "seconds": 5.19},
+      {"position": 3, "step": "mam-with-doc", "returncode": 0, "seconds": 7.07},
+      {"position": 4, "step": "diff-mpp", "returncode": 0, "seconds": 7.16},
+      {"position": 5, "step": "tmpl-survey", "returncode": 0, "seconds": 10.23},
+      {"position": 6, "step": "tmpl-survey-toy", "returncode": 0, "seconds": 1.38},
+      {"position": 7, "step": "vendored-tmpl-survey-toy", "returncode": 0, "seconds": 1.44},
+      {"position": 8, "step": "mam-simple", "returncode": 0, "seconds": 13.87},
+      {"position": 9, "step": "mam4sef-and-ajf", "returncode": 0, "seconds": 5.36},
+      {"position": 10, "step": "mam-osis", "returncode": 0, "seconds": 2.1},
+      {"position": 11, "step": "letter-small-job", "returncode": 0, "seconds": 1.4},
+      {"position": 12, "step": "vendored-letter-small-job", "returncode": 0, "seconds": 1.45},
+      {"position": 13, "step": "vendored-mam4sef", "returncode": 0, "seconds": 3.23},
+      {"position": 14, "step": "vendored-mam-osis", "returncode": 0, "seconds": 1.81},
+      {"position": 15, "step": "decnreub", "returncode": 0, "seconds": 1.42},
+      {"position": 16, "step": "multimark", "returncode": 0, "seconds": 15.72},
+      {"position": 17, "step": "wordlist", "returncode": 0, "seconds": 2.22},
+      {"position": 18, "step": "explicit-xataf", "returncode": 0, "seconds": 1.67},
+      {"position": 19, "step": "ws-bot-proto", "returncode": 0, "seconds": 5.28},
+      {"position": 20, "step": "gen-misc-authored-english-documents", "returncode": 0, "seconds": 2.17},
+      {"position": 21, "step": "wlc-json-and-unicode", "returncode": 0, "seconds": 21.38},
+      {"position": 22, "step": "accgram-run-prose", "returncode": 0, "seconds": 18.87},
+      {"position": 23, "step": "accgram-test-fixes", "returncode": 0, "seconds": 3.12},
+      {"position": 24, "step": "accgram-run-dual-cant", "returncode": 0, "seconds": 1.73},
+      {"position": 25, "step": "accgram-run-poetic", "returncode": 0, "seconds": 3.35},
+      {"position": 26, "step": "accgram-xcheck-poetic", "returncode": 0, "seconds": 2.76},
+      {"position": 27, "step": "accgram-servi-xcheck", "returncode": 0, "seconds": 4.28},
+      {"position": 28, "step": "accgram-grammaticality", "returncode": 0, "seconds": 3.18},
+      {"position": 29, "step": "accgram-run-printed-decalogue", "returncode": 0, "seconds": 2.05},
+      {"position": 30, "step": "accgram-survey-chanted-word-accents", "returncode": 0, "seconds": 49.12},
+      {"position": 31, "step": "accgram-generate-html", "returncode": 0, "seconds": 14.84},
+      {"position": 32, "step": "find-uxlc-accent-changes", "returncode": 0, "seconds": 1.6},
+      {"position": 33, "step": "uxlc-grammar-test", "returncode": 0, "seconds": 2.44},
+      {"position": 34, "step": "wlc-diffs-420422", "returncode": 0, "seconds": 1.85},
+      {"position": 35, "step": "wlc-a-notes", "returncode": 0, "seconds": 1.61},
+      {"position": 36, "step": "sigil-inventory", "returncode": 0, "seconds": 2.29},
+      {"position": 37, "step": "gen-site", "returncode": 0, "seconds": 7.09},
+      {"position": 38, "step": "vendoring-audit", "returncode": 0, "seconds": 3.62}
+    ],
+    "failures": [],
+    "detailed_logs": ".novc/ws-products-baseline-20260910/phase5-mega/"
+  },
+  "stability_run": {
+    "local_step_count": 38,
+    "all_returncodes_zero": true,
+    "changed_artifact_count_before": 30,
+    "changed_artifact_count_after": 30,
+    "all_changed_artifacts_byte_identical_before_and_after": true,
+    "detailed_logs": ".novc/ws-products-baseline-20260910/phase5-stability/"
+  },
+  "separate_documentation_and_diagram_commands": [
+    {
+      "command": "py/main_mam_simple.py doc-only",
+      "returncode": 0,
+      "result": "all three documentation outputs already up to date"
+    },
+    {
+      "command": "py/main_authored.py gen-mam-parsed-docs",
+      "returncode": 0,
+      "result": "79 passed, 0 failed, 1 pending"
+    },
+    {
+      "command": "py/main_pipeline_graph.py",
+      "returncode": 0,
+      "result": "both pinned graph workflows completed with no new Phase 5 diff"
+    }
+  ],
+  "artifact_accounting": {
+    "changed_artifact_count": 30,
+    "psalm_27_13_lower_dot_order_only": [
+      "MAM-OSIS/MAPM-24/Ps.xml",
+      "MAM-OSIS/mapm.osis.xml",
+      "MAM-for-Sefaria/csv-ajf/Psalms.csv",
+      "MAM-for-Sefaria/csv/Psalms.csv",
+      "MAM-for-Sefaria/misc/unicode-names-ajf/Psalms.txt",
+      "MAM-for-Sefaria/misc/unicode-names/Psalms.txt",
+      "MAM-simple/json-vtrad-bhs/Ps.json",
+      "MAM-simple/json-vtrad-mam/Ps.json",
+      "MAM-simple/json-vtrad-sef/Ps.json",
+      "MAM-simple/misc/unicode-names-vtrad-bhs/Ps.txt",
+      "MAM-simple/misc/unicode-names-vtrad-mam/Ps.txt",
+      "MAM-simple/misc/unicode-names-vtrad-sef/Ps.txt",
+      "MAM-simple/py-examples-out/osis/Ps.xml",
+      "MAM-simple/py-examples-out/sefaria/csv/Psalms.csv",
+      "MAM-simple/py-examples-out/sefaria/misc/unicode-names/Psalms.txt",
+      "MAM-simple/xml-vtrad-bhs/Ps.xml",
+      "MAM-simple/xml-vtrad-mam/Ps.xml",
+      "MAM-simple/xml-vtrad-sef/Ps.xml",
+      "gh-pages/MAM-with-doc/D1-Psalms-big-doc.html",
+      "gh-pages/MAM-with-doc/D1-Psalms.html",
+      "gh-pages/MAM-with-doc/foi/foi-poetic-verlen.json",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.html",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.json",
+      "out/mam-qere-words.json"
+    ],
+    "second_samuel_22_40_latin_composition_only": [
+      "gh-pages/MAM-with-doc/BB-2Samuel-big-doc.html"
+    ],
+    "both_phase2_representation_changes_only": [
+      "out/sigil-inventory.json"
+    ],
+    "change_log_files": [
+      "gh-pages/MAM-with-doc/change-log/index.html",
+      "gh-pages/MAM-with-doc/change-log/unpinned-latest.html",
+      "gh-pages/MAM-with-doc/change-log/unpinned-latest.json"
+    ],
+    "change_log_effect": {
+      "only_added_record": "Psalms 27:13 lower-dot order",
+      "json_diff_count": [56, 57],
+      "rendered_body_text_count": [58, 59],
+      "routine_generated_date": ["2026-09-04", "2026-09-10"]
+    },
+    "support_copy": {
+      "path": "MAM-simple/py-examples/mb_cmn/paths.py",
+      "equals": "py/mb_cmn/paths.py"
+    },
+    "phase2_product_accounting": {
+      "changed_files": [
+        "MAM-parsed/plain/BA-Samuel.json",
+        "MAM-parsed/plain/D1-Psalms.json",
+        "MAM-parsed/plus/BA-Samuel.json",
+        "MAM-parsed/plus/D1-Psalms.json"
+      ],
+      "changed_verse_fields_per_product": 2,
+      "changed_string_leaves_per_product": 4,
+      "matches_exact_phase2_leaf_paths": true
+    },
+    "spacing_changes": [],
+    "provenance_only_changes": [],
+    "unexplained_changes": []
+  },
+  "explicit_google_and_comparator_commands": {
+    "parse_go": {"command": "py/main_parse.py go", "returncode": 0, "seconds": 3.3},
+    "diff_wsgo": {"command": "py/main_diff.py wsgo", "returncode": 0, "seconds": 14.93},
+    "comparator_differences": 0,
+    "comparator_auto_edits": 0
+  },
+  "source_independence": {
+    "ordinary_parse_ws_succeeded_with_raw_and_parsed_google_blocked": true,
+    "parse_go_left_plain_and_plus_unchanged": true,
+    "comparator_succeeded_with_production_plain_blocked": true,
+    "google_only_mutation_produced_difference_and_exact_search_payload": true,
+    "replacement_used_standard_ordered_wikisource_payload": true,
+    "normalization_calls_with_hebrew_or_presentation_forms": 0,
+    "google_reader_consumers": [
+      "py/py_misc/read_books_from_mam_parsed_google.py",
+      "py/subcommands/diff_wsgo.py"
+    ]
+  },
+  "protected_trees": {
+    "in/mam-go": {"files": 9, "sha256": "79d984c5ed02c7aa0012d0e70afc2f25190c73c545beccc1f8b75247d18cd20e"},
+    "in/mam-ws": {"files": 39, "sha256": "9cc3feb4f46aab6c6044d6c5452738953977333abfa4008cbadab36973af40bc"},
+    "out/mam-ws-bot": {"files": 80, "sha256": "ba4986fe7ddaa431cd7d2f27b3cbfc60ac0c75187239085615cc689f3ad4cf10"},
+    "MAM-parsed/historical": {"files": 146, "sha256": "8ecd3a7ddc2f046bc8c8a0503d4caae316f32e123f3cace60dc19702e918174c"},
+    "all_byte_identical_before_and_after": true,
+    "format2_tracked_changes": 0,
+    "primary_checkout_writes_by_phase5": 0
+  },
+  "primary_checkout_observation": {
+    "preflight_head": "d612f71c9794d8d480c7bbc3b18768d7d7003838",
+    "postcheck_head": "31318dd4b68065efe515b478e10d4bff2c72053e",
+    "change": "concurrent fast-forward commit of exactly the three paths dirty at preflight",
+    "concurrent_commit_paths": [
+      "doc/PLAN-evacuate-five-MAM-products.md",
+      "doc/PLAN-evacuate-public-repos-programme.md",
+      "in/mam_products_phase6d_verification.json"
+    ],
+    "phase5_generated_paths_in_concurrent_commit": []
+  },
+  "black": {
+    "command": "python -m black MAM-simple/py-examples/mb_cmn/paths.py",
+    "returncode": 0,
+    "result": "1 file left unchanged"
+  },
+  "full_suite": {
+    "command": "py/main_test.py -rs",
+    "passed": 990,
+    "skipped": 5,
+    "failed": 0,
+    "seconds": 206.32,
+    "skip_site": "py/tests/test_edition_transcriptions.py:1168",
+    "skip_cases": [
+      "koren_ex_elyon",
+      "simtan_dt_taxton",
+      "simtiq_dt_taxton",
+      "simtiq_ex_elyon",
+      "simtiq_ex_taxton"
+    ]
+  },
+  "staged_source_lints": {
+    "command": "py/main_test.py py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py py/tests/test_post_stress_meteg_plain_word.py py/tests/test_entry_point_subcommands.py",
+    "passed": 31,
+    "failed": 0,
+    "seconds": 29.91
+  },
+  "corrected_verification_harness_attempts": [
+    "The first artifact-audit canonicalizer did not account for generated CRLF checkout bytes or textual HMA LOWER DOT labels; the corrected audit passed without changing an artifact.",
+    "The first Black wrapper command passed the interpreter path as a Python script; it failed before touching a file, and the corrected Black command passed."
+  ],
+  "private_census": {
+    "ran": false,
+    "reason": "The plan permits the private census writer to remain outside local completion; no private-effect verification was needed."
+  },
+  "detailed_receipts": ".novc/ws-products-baseline-20260910/"
+}

@@ -158,7 +158,15 @@ def almost_main(bkids=None):
     mam_simple_copy_py_files.copy_support_files()
 
 
-def _write_generated_docs():
+def write_generated_docs():
+    """Rewrite each doc this program generates, only where its content changed.
+
+    The doc-only half of this program: MAM-simple/doc/versification-differences.md,
+    gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and font,
+    and gh-pages/MAM-simple/index.html.  Public since 2026-09-10, when
+    py/main_0_mega.py's mam-simple-docs step began calling it; that module's
+    mam-simple step runs almost_main, which does not reach these docs.
+    """
     # Named for the docs generally rather than for versification: mam_simple_index
     # writes the gh-pages root pointer, which is about neither versification nor
     # cantillation.
@@ -248,7 +256,7 @@ def _bkids_from_args(args):
 def main():
     args = _parse_args()
     if args.command in {"doc-only", "doc"}:
-        _write_generated_docs()
+        write_generated_docs()
         return
     if args.command in {"copy-support-files", "copy"}:
         mam_simple_copy_py_files.copy_support_files()
@@ -256,7 +264,7 @@ def main():
     bkids = _bkids_from_args(args)
     almost_main(bkids)
     if args.command == "all":
-        _write_generated_docs()
+        write_generated_docs()
 
 
 if __name__ == "__main__":

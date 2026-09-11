@@ -9,4 +9,4 @@ This product directory holds data and documentation around UXLC (the Unicode/XML
 
 The canonical UXLC book XML, `in/UXLC-39/`, and the canonical shared change-log inputs remain at the MAM-basics root rather than being duplicated under `uxlc/`. The published pages are under [`../gh-pages/uxlc/`](../gh-pages/uxlc/) and are served at [bdenckla.github.io/MAM-basics/uxlc/](https://bdenckla.github.io/MAM-basics/uxlc/).
 
-Run [`../py/main_uxlc_mega.py`](../py/main_uxlc_mega.py) and [`../py/main_clc.py`](../py/main_clc.py) from the MAM-basics root to regenerate their respective output. An unexplained generated diff is a failure.
+From the MAM-basics root, [`../py/main_0_mega.py`](../py/main_0_mega.py) regenerates the UXLC output, in its five steps from `uxlc-check-changes` to `uxlc-word-list`, and [`../py/main_clc.py`](../py/main_clc.py) regenerates the CLC output. An unexplained generated diff is a failure.

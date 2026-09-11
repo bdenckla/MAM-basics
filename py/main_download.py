@@ -4,8 +4,6 @@
 Subcommands:
     fr-google
                 Download MAM data from Google Sheets.
-    fr-sefaria
-                Download MAM CSVs from Sefaria.
     fr-wikisource
                 Download MAM JSON from Hebrew Wikisource.
     fr-ws-intro
@@ -19,16 +17,15 @@ when the introduction moves, and a chapter-scoped fr-wikisource run should not p
 Examples:
     .venv/Scripts/python.exe py/main_download.py fr-google
     .venv/Scripts/python.exe py/main_download.py fr-google --section Torah
-    .venv/Scripts/python.exe py/main_download.py fr-sefaria --book39 1Kings
     .venv/Scripts/python.exe py/main_download.py fr-wikisource --book39 Joshua --chapter 11
     .venv/Scripts/python.exe py/main_download.py fr-ws-intro
 """
 
 import argparse
+import sys
 
 from mb_cmn import bib_locales as tbn
 from subcommands import download_google
-from subcommands import download_sefaria
 from subcommands import download_wikisource
 from subcommands import download_wikisource_intro
 from ws import ws_download_selector as wsds
@@ -47,6 +44,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     args = build_parser().parse_args()
     args.func(args)
 
@@ -54,7 +53,7 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     google_parser = subparsers.add_parser(
         "fr-google",
-        help="Download MAM data from Google Sheets and optionally parse it.",
+        help="Download Google Sheet data and optionally refresh the comparison product.",
     )
     google_parser.add_argument(
         "--section",
@@ -64,29 +63,25 @@ def _add_subcommands(subparsers) -> None:
     google_parser.add_argument(
         "--skip-download",
         action="store_true",
-        help="Skip downloading; just parse and check existing CSVs",
+        help="Skip downloading; just parse existing CSVs into MAM-parsed/google/",
     )
     google_parser.add_argument(
         "--download-only",
         action="store_true",
-        help="Download requested CSVs and exit without parsing or checking",
+        help="Download requested CSVs and exit without parsing",
     )
     google_parser.set_defaults(func=_run_google)
 
-    sefaria_parser = subparsers.add_parser(
-        "fr-sefaria",
-        help="Download MAM CSVs from Sefaria.",
-    )
-    sefaria_mutex = sefaria_parser.add_mutually_exclusive_group()
-    sefaria_mutex.add_argument("--book39")
-    sefaria_mutex.add_argument("--section6")
-    sefaria_parser.set_defaults(func=_run_sefaria)
-
     ws_parser = subparsers.add_parser(
         "fr-wikisource",
-        help="Download MAM chapters from Hebrew Wikisource and reparse affected books.",
+        help="Download Wikisource chapters and rebuild affected production products.",
     )
     wsds.add_selector_opts(ws_parser)
+    ws_parser.add_argument(
+        "--force-download",
+        action="store_true",
+        help="Fetch every selected chapter even when its revision is unchanged.",
+    )
     ws_parser.set_defaults(func=_run_wikisource)
 
     ws_intro_parser = subparsers.add_parser(
@@ -96,24 +91,12 @@ def _add_subcommands(subparsers) -> None:
     ws_intro_parser.set_defaults(func=_run_wikisource_intro)
 
 
-def _bkids_from_args(args):
-    if getattr(args, "book39", None):
-        return (args.book39,)
-    if getattr(args, "section6", None):
-        return tbn.bk39s_of_sec(args.section6)
-    return tbn.ALL_BK39_IDS
-
-
 def _run_google(args: argparse.Namespace) -> None:
     download_google.run(
         section=args.section,
         skip_download=args.skip_download,
         download_only=args.download_only,
     )
-
-
-def _run_sefaria(args: argparse.Namespace) -> None:
-    download_sefaria.run(_bkids_from_args(args))
 
 
 def _run_wikisource(args: argparse.Namespace) -> None:

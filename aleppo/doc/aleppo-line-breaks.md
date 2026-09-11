@@ -136,12 +136,13 @@ structural markers but no line-break markers. The script calls
 ### 2. Open the interactive editor
 
 ```powershell
-.venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 270v 1
+.venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 270v 1of2
 ```
 
-Arguments: `<page_id> <col>` where col 1 = right column, col 2 = left
-column. This generates `.novc/lb_editor_270v_col1.html` and opens it in
-the browser. The editor shows:
+Arguments: `<page_id> <col_spec>`, the column in NofM form: on a two-column
+page `1of2` is the right column and `2of2` the left, and a three-column page
+takes `1of3` to `3of3`. This generates `aleppo/.novc/lb_editor_270v_1of2.html`
+and opens it in the browser. The editor shows:
 
 - **Left panel (RTL):** Clickable Hebrew words with verse-start
   indicators and any pre-existing line-end markers.

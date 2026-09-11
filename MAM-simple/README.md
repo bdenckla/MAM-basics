@@ -1,6 +1,8 @@
 # MAM-simple
 This product contains a version of MAM that is simple but not complete.
 (See [MAM-parsed](../MAM-parsed/README.md) for complete versions).
+Its source is MAM's Hebrew Wikisource text, through the Wikisource-derived
+`MAM-parsed/plus/` product in this repository.
 This product's simple version of MAM is available in both XML and JSON formats.
 Each of these two formats is, in turn, available in three versifications.
 This yields a total of six flavors of MAM-simple:

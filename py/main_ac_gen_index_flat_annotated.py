@@ -30,9 +30,9 @@ Usage
 -----
     .venv/Scripts/python.exe py/main_ac_gen_index_flat_annotated.py [INPUT [OUTPUT]]
 
-Defaults:
-    INPUT  = aleppo-wiki/index-flat-corrected.json
-    OUTPUT = index-flat-annotated.json
+Defaults, as paths from this repository's root:
+    INPUT  = aleppo/aleppo-wiki/index-flat-corrected.json
+    OUTPUT = aleppo/index-flat-annotated.json
 
 Both defaults were wrong until 2026-08-22, and in two different ways.  The Usage
 block named ``../codex-index/aleppo/`` for each -- a sibling repo whose ``aleppo/``
@@ -40,9 +40,13 @@ directory became this repo's ``aleppo-wiki/`` in ``9025037`` (2026-03-28).  Of t
 two, only DEFAULT_INPUT was really spelled that way in the code, so the input was as
 dead as the four literals in ``aleppo-wiki/main_make_wikisource_page.py``, dead the
 same way and since the same day.  DEFAULT_OUTPUT was already this repo's root, so
-there the Usage block was simply describing something the code did not do.
+there the Usage block was simply describing something the code did not do.  This
+paragraph predates 2026-09-04, when the Aleppo corpus moved from codex-index-aleppo
+into this repository's ``aleppo/``, so where it says this repo, it means
+codex-index-aleppo.
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -154,9 +158,39 @@ def annotate(records):
     return out
 
 
-def main():
-    in_path = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_INPUT
-    out_path = Path(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_OUTPUT
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "in_path",
+        nargs="?",
+        type=Path,
+        default=DEFAULT_INPUT,
+        metavar="INPUT",
+        help="the corrected flat index to read (default: %(default)s)",
+    )
+    parser.add_argument(
+        "out_path",
+        nargs="?",
+        type=Path,
+        default=DEFAULT_OUTPUT,
+        metavar="OUTPUT",
+        help="where to write the annotated flat index (default: %(default)s)",
+    )
+    return parser
+
+
+def almost_main(argv: list[str]) -> None:
+    """Annotate INPUT's page records and write the result to OUTPUT.
+
+    ``main_0_mega.py`` calls this with an explicit ``argv``, since it runs its steps
+    in one process and blanks ``sys.argv`` while they run.
+    """
+    args = _build_parser().parse_args(argv)
+    in_path = args.in_path
+    out_path = args.out_path
 
     data = json.loads(in_path.read_text(encoding="utf-8"))
     data["body"] = annotate(data["body"])
@@ -168,6 +202,12 @@ def main():
         newline="",
     )
     print(f"Wrote {out_path}")
+
+
+def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+    almost_main(sys.argv[1:])
 
 
 if __name__ == "__main__":
