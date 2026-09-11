@@ -1,5 +1,7 @@
 # PLAN — make the mega run everything it should, and record why the rest does not
 
+State: executed 2026-09-10, every phase done.
+
 Written by a Claude session on 2026-09-10. Ben's instructions that day were: "An analysis of what
 is and isn't part of mega should be made", "Everything that is not part of mega should have a
 recorded justification as to why it is not in mega", and "It should be part of repo maintenance
@@ -510,7 +512,17 @@ Ben's decisions, 2026-09-10:
    - Report whether `py/main_verify_notes_zip.py`, which `main` changed and which #269 lists,
      still reads `sys.argv` by hand.
 
-## Phase 8 — full verification
+## Phase 8 — full verification: DONE, `8309a8b4`, `6fc8ddaa`, `c9e99dcb` and `1bed3efb`
+
+`8309a8b4` corrects the last "sibling UXLC-utils" sentence. The change files are under
+`uxlc/in/UXLC-misc/`, and all three instances are there, Gen 14:17.9 in two records. Two more
+records of `2022.12.07 - Changes.xml`, at 2Sam 6:7.1 and 2Sam 8:1.2, also quote a maqaf compound
+whole and cite the atom it starts at, but they remove the maqaf, and the sentence now gives both
+groups. `6fc8ddaa` marks the 26 accepted proposals, quoting Ben, and `c9e99dcb` finishes the
+Wikisource plan's dated correction. The full run passed all 59 steps, every step but
+`near-aleppo-census`, in 377 s of wall time, and rewrote 1,611 tracked files, every one
+byte-identical. `1bed3efb` adds the analysis's closing record, its §9. The suite gave 992 passed,
+5 skipped before each commit and after the run.
 
 1. **Correct the last "sibling UXLC-utils" sentence, which phase 6b found.**
    `py/hkq_cmn/uxlc_change_records.py`'s module docstring says that Gen 14:17.9, Ex 5:22.11 and
@@ -553,9 +565,16 @@ Ben's decisions, 2026-09-10:
    `py/main_verify_and_render_table.py` still has the evacuated repository's name, though its help
    text says MAM-basics. `py/check_all.py`'s docstring and `py/check_spelling_in_html.py`'s usage
    line name `spellcheck_quirkrecs` files that are not what runs.
-4. **The vendoring audit's verdict depends on which checkout runs it**, as phase 7b found. In the
-   primary clone the sources under `py/` still have CRLF line endings on disk, 640 carriage
-   returns in `py/mb_cmn/bib_locales.py` for one, so the audit there reports `eol-only` where this
-   worktree reports `identical`: 8 inventory rows against 4. The committed audit outputs are the
-   worktree's. A run in the primary clone after integration will flip them back, unless its
-   working-tree files are renormalized.
+4. **The vendoring audit's verdict depended on which checkout ran it, and that has been fixed.**
+   Phase 7b found that in the primary clone the sources under `py/` still had CRLF line endings on
+   disk, 640 carriage returns in `py/mb_cmn/bib_locales.py` for one. So the audit there reported
+   `eol-only` where this worktree reported `identical`: 8 inventory rows against 4. The cause: a
+   checkout writes LF under `* text=auto eol=lf`, but git rewrites a file on disk only when its
+   blob changes, so files untouched since the LF migration kept their old CRLF bytes while git
+   called them clean. On 2026-09-10, at Ben's request ("Please make it end"), the orchestrating
+   session rewrote every such file in the primary clones of MAM-basics, MAM-private, hbofonts and
+   phonetic-hbo to its committed LF blob: 785 files, none with uncommitted changes. It then
+   re-recorded their index entries with `git update-index`, because git reports a file whose size
+   differs from the recorded size as modified without comparing content. git status read the same
+   afterwards. The CR bytes left in those clones are there on purpose: the CSVs, which
+   `*.csv text eol=crlf` checks out with CRLF, binaries, and blobs that themselves hold CR.
