@@ -247,12 +247,12 @@
   "whole_census_comparison_counts": {
    "cant-alef": {
     "chanted words checked": 262819,
-    "meteg before the stressed syllable": 14767,
+    "meteg before the stressed syllable": 14760,
     "meteg after the stressed syllable": 232
    },
    "cant-bet": {
     "chanted words checked": 262818,
-    "meteg before the stressed syllable": 14768,
+    "meteg before the stressed syllable": 14761,
     "meteg after the stressed syllable": 232
    }
   },
@@ -301,11 +301,11 @@
  "counts": {
   "prose verses": {
    "chanted words checked": 233277,
-   "meteg before the stressed syllable": 12962,
+   "meteg before the stressed syllable": 12955,
    "meteg in the stressed syllable, no sof pasuq": 0,
    "meteg after the stressed syllable": 178,
    "silluq": 18738,
-   "meteg sharing a letter with a non-stress-marking accent": 27
+   "meteg sharing a letter with a non-stress-marking accent": 28
   },
   "poetic verses": {
    "chanted words checked": 29542,
@@ -361,7 +361,7 @@
   "what": "MBS_O counts chanted words with one or more U+05BD meteg marks before the stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the stress, irrespective of the number before it.",
   "by_system": {
    "prose verses": {
-    "mbs_only": 12849,
+    "mbs_only": 12842,
     "mas": 178
    },
    "poetic verses": {
@@ -507,7 +507,7 @@
   "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require that the next word not begin with vocal shewa. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
   "not_fit_records_what": "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted word, its next chanted word, and whether it meets each of the three Fit-for-MAS criteria.",
-  "candidate_chanted_words": 53964,
+  "candidate_chanted_words": 53963,
   "non_type_specific_conditions": 3380,
   "fitting_any_type": 377,
   "with_mas": 200,
@@ -577,7 +577,7 @@
    "outside_the_three_types": 7
   },
   "accent_grammar_token_counts": {
-   "1": 53157,
+   "1": 53156,
    "2": 807
   },
   "records": [
@@ -17257,6 +17257,40 @@
     "intervening_mam_punctuation": []
    },
    {
+    "bcv": "is24:18",
+    "system": "prose verses",
+    "chanted_word": "וְֽ֯֠הָיָ֠ה",
+    "_preceding_chanted_word": "",
+    "next_chanted_word": "הַנָּׄ֞ס",
+    "snapshot_before_qere": null,
+    "accents_and_letters": "ו֠הי֠ה",
+    "jta": "v^.ha.!ya",
+    "syllables_after_the_stress": -1,
+    "syllable": "ha",
+    "syllable_is_open": true,
+    "vowel": "qamats",
+    "is_the_last_syllable": false,
+    "chanted_word_is_closed_by_a_guttural": false,
+    "next_chanted_word_is_initially_stressed": false,
+    "next_chanted_word_starts_with_a_vocal_shewa": false,
+    "next_chanted_word_accent_classification": "disjunctive",
+    "has_sof_pasuq": false,
+    "shares_its_letter_with": [
+     "telisha gedolah"
+    ],
+    "structural_type": "none of the three",
+    "subtype": null,
+    "type_1_subtype": null,
+    "atom": 1,
+    "mam_form": "וְֽ֠הָיָ֠ה",
+    "mam_form_matched_by": "as written; one candidate in the verse",
+    "mam_form_candidates": 1,
+    "metegs_in_mam_today": 1,
+    "metegs_in_the_snapshot": 1,
+    "next_mam_form": "הַנָּ֞ס",
+    "intervening_mam_punctuation": []
+   },
+   {
     "bcv": "is29:4",
     "system": "prose verses",
     "chanted_word": "וְֽ֯֠הָיָ֠ה",
@@ -21754,8 +21788,8 @@
     "system": "prose verses",
     "category": "meteg before the stressed syllable",
     "census_2026_09_03": 13131,
-    "measured": 12962,
-    "difference": -169
+    "measured": 12955,
+    "difference": -176
    },
    {
     "system": "prose verses",
@@ -21770,6 +21804,13 @@
     "census_2026_09_03": 18779,
     "measured": 18738,
     "difference": -41
+   },
+   {
+    "system": "prose verses",
+    "category": "meteg sharing a letter with a non-stress-marking accent",
+    "census_2026_09_03": 27,
+    "measured": 28,
+    "difference": 1
    },
    {
     "system": "poetic verses",
@@ -21889,8 +21930,8 @@
   "verses_compared": 23184,
   "verses_on_one_side_only": [],
   "dual_cantillation_verses_left_out": 18,
-  "metegs_in_the_surveyed_snapshot": 38161,
-  "metegs_in_mam_simple_today": 38170,
+  "metegs_in_the_surveyed_snapshot": 38154,
+  "metegs_in_mam_simple_today": 38163,
   "verses_differing": 9,
   "differences": [
    {

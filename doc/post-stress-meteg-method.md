@@ -86,8 +86,10 @@ The fatal invariants connect all three quantities per verse system: source entri
 chanted words plus duplicate phonetic-reading entries, and duplicate entries equal variant rows
 plus the two measured grouping differences. The resulting MAM denominators are 233,277 prose
 chanted words and 29,542 poetic chanted words. The corresponding MBS_O chanted-word counts are
-12,849 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
-positional census separately counts 12,962 and 1,805 individual pre-stress marks.
+12,842 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
+positional census separately counts 12,955 and 1,805 individual pre-stress marks. The two prose
+figures were 12,849 and 12,962 until 2026-09-11; "Eleven meteg edits reached the survey on
+2026-09-11" below says why.
 
 ## A census chanted word is identified by position, not by form
 
@@ -100,8 +102,10 @@ The census was keyed by form until 2026-09-09, and reported 12,828 prose MBS_O c
 and 143 MBS_O chanted words with more than one meteg. Twenty-one of those 143 were one form
 counted against itself, each occurrence carrying one meteg, so the MBS_O counts were 21 short
 of the chanted words they are described as counting and the multiple-meteg count was 21 too
-many. All 21 are in prose verses. The corrected figures are 12,849 prose MBS_O chanted words
-and 122 with more than one meteg. The poetic MBS_O count, both MAS counts and every positional
+many. All 21 are in prose verses. The corrected figures were 12,849 prose MBS_O chanted words
+and 122 with more than one meteg. (The 12,849 has been 12,842 since 2026-09-11, for a reason
+that has nothing to do with the key: "Eleven meteg edits reached the survey on 2026-09-11"
+below.) The poetic MBS_O count, both MAS counts and every positional
 count are unaffected: no MAS chanted word shares a numbered verse with another chanted word of
 the same form.
 
@@ -125,6 +129,66 @@ target. The 2026-09-08 measurement compares 23,184 numbered verses and finds nin
 all cases where MAM-simple has one more U+05BD than the snapshot. When Phonetic MAM is regenerated,
 `currency` is regenerated too; it is not evidence against the template-aware source-form result
 above.
+
+## Eleven meteg edits reached the survey on 2026-09-11
+
+The tracked survey had last been regenerated on 2026-09-09, in `ad44dba7`. Regenerated on
+2026-09-11, it found both of its inputs moved. The Wikisource refresh of 2026-09-10, MAM-basics
+`209b4c05`, brought into `in/mam-ws/` and MAM-simple the eleven meteg edits made on Hebrew
+Wikisource on 2026-08-30 and 2026-08-31, which `doc/PLAN-holman-meteg-rollout-programme.md`
+recorded on 2026-09-03 as not yet downloaded. That evening, MAM-private `65ee486` brought the
+same eleven into the Phonetic MAM snapshot the survey reads. All eleven are in prose verses,
+and each changes one chanted word by one meteg and nothing else. Nine removed the chanted
+word's one meteg before the stress, and two added one:
+
+| Verse | Before the edit | After the edit |
+| --- | --- | --- |
+| Joshua 19:8 | בְנֵֽי־שִׁמְע֖וֹן | בְנֵי־שִׁמְע֖וֹן |
+| 1 Samuel 1:6 | כִּֽי־סָגַ֥ר | כִּי־סָגַ֥ר |
+| 1 Samuel 22:22 | כִּֽי־שָׁם֙ | כִּי־שָׁם֙ |
+| 2 Kings 6:23 | אֶל־אֲדֹֽנֵיהֶ֑ם | אֶל־אֲדֹנֵיהֶ֑ם |
+| Isaiah 22:5 | לַֽאדֹנָ֧י | לַאדֹנָ֧י |
+| Isaiah 24:18 | וְ֠הָיָ֠ה | וְֽ֠הָיָ֠ה |
+| Isaiah 42:24 | מִֽי־נָתַ֨ן | מִי־נָתַ֨ן |
+| Isaiah 50:7 | יַֽעֲזׇר־לִ֔י | יַעֲזׇר־לִ֔י |
+| Zephaniah 3:13 | וְלֹֽא־יִמָּצֵ֥א | וְלֹא־יִמָּצֵ֥א |
+| 2 Chronicles 26:15 | כִּֽי־חָזָֽק׃ | כִּי־חָזָֽק׃ |
+| 2 Chronicles 28:19 | מֶלֶךְ־יִשְׂרָאֵ֑ל | מֶֽלֶךְ־יִשְׂרָאֵ֑ל |
+
+At 2 Chronicles 26:15 the chanted word still has its silluq. The eleven account for every survey
+figure that moved except the two in item 6:
+
+1. Prose metegs before the stressed syllable went from 12,962 to 12,955: nine fewer and two
+   more. The dual-cantillation section's whole-census counts, which total both verse systems
+   for each strand, moved by the same seven, from 14,767 to 14,760 for cant-alef and from
+   14,768 to 14,761 for cant-bet.
+2. Prose MBS_O chanted words went from 12,849 to 12,842. None of the eleven chanted words has a
+   meteg after the stress, so the nine left MBS_O and the two joined it.
+3. Prose metegs sharing a letter with a non-stress-marking accent went from 27 to 28, and the
+   JSON's diagnostics list of them gained Isaiah 24:18's record. The meteg added there is on
+   the vav that has the telisha gedolah, whose place on the first letter does not mark the
+   stress. As "Primary stress and accent parsing" below says, such a meteg is classified by its
+   syllable, so it is counted among the metegs before the stress as well as here.
+4. The comparison with the 2026-09-03 census moved with items 1 and 3. The prose difference in
+   metegs before the stressed syllable went from −169 to −176, and a prose row for metegs
+   sharing a letter, 27 in the census against 28 measured, appeared, since the comparison lists
+   only the categories that differ.
+5. `currency` went from 38,161 U+05BD in the snapshot against 38,170 in MAM-simple to 38,154
+   against 38,163. Both texts have the same eleven edits, so the same nine numbered verses
+   differ.
+6. Two fit-for-MAS figures moved because of an edit in a poetic verse that is not a meteg edit.
+   At Psalms 4:3, MAM's לִ֭כְלִמָּה now stands in a `מ:דחי` template whose stress-helped form,
+   לִ֭כְלִמָּ֭ה, has the deḥi's stress helper on the last syllable (issue #266). Phonetic MAM has
+   the stress-helped form, as "Phonetic MAM source-form alignment" above says, and its `jta`
+   now has the chanted word's stress on that last syllable rather than on its first. No
+   syllable follows the stress, so the chanted word is no longer a fit-for-MAS candidate:
+   `candidate_chanted_words` went from 53,964 to 53,963, and the one-token row of
+   `accent_grammar_token_counts` from 53,157 to 53,156. MAM-simple has the template's other
+   form, לִ֭כְלִמָּה, and did not change there.
+
+Re-establish these with `py/main_accgram.py survey-post-stress-meteg` and the diff of
+`out/accgram/post-stress-meteg.json` against `ad44dba7`. The main page's MBS_O cells moved with
+item 2, and `pin_claims` in `py/author_site/post_stress_meteg.py` states 12,842.
 
 ## Primary stress and accent parsing
 

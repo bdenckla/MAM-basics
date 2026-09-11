@@ -24,9 +24,17 @@ the exit status. ``STRANDED_CHECK_STALE_REPOS=`` follows it when a repo's fetch
 failed, because a zero read off refs that could not be refreshed is not the same
 fact as a zero read off current ones. Both appear only when they have something to
 say; the per-repo lines say which refs each check read either way.
+
+``sessions_ended`` goes to every repo's pass unchanged. Each pass applies it to
+its own linked worktrees only, so one list naming worktrees in several repos
+needs no splitting; ``unknown_worktrees`` is what refuses a name matching none of
+them, and its caller runs it before any repo is touched.
 """
 
 from __future__ import annotations
+
+from collections.abc import Sequence
+from pathlib import Path
 
 from repo_util import git_worktree_cleanup
 from repo_util.repo_selection import RepoInfo
@@ -37,8 +45,20 @@ def problem_repos(reports: list[tuple[str, list[str]]]) -> list[str]:
     return [name for name, errors in reports if errors]
 
 
+def unknown_worktrees(repo_infos: list[RepoInfo], named: Sequence[Path]) -> list[Path]:
+    """The named paths that are no linked worktree of any repo in ``repo_infos``."""
+    return [
+        path
+        for path in named
+        if not any(
+            git_worktree_cleanup.is_linked_worktree(info.path, path)
+            for info in repo_infos
+        )
+    ]
+
+
 def run_clean_worktrees_across_repos(
-    repo_infos: list[RepoInfo],
+    repo_infos: list[RepoInfo], *, sessions_ended: Sequence[Path] = ()
 ) -> list[tuple[str, list[str]]]:
     reports: list[tuple[str, list[str]]] = []
     # One entry per stranded remote branch, holding the repo it is in: the count
@@ -68,7 +88,9 @@ def run_clean_worktrees_across_repos(
         # REPO_COUNT= since long before the other four followed.
         print(f"=== {repo_info.name} ===", flush=True)
         try:
-            report = git_worktree_cleanup.clean_worktrees(repo_info.path)
+            report = git_worktree_cleanup.clean_worktrees(
+                repo_info.path, sessions_ended=sessions_ended
+            )
         except (RuntimeError, OSError) as exc:
             # An unreadable repo is reported like any other failure rather than
             # ending the sweep: one wedged repo must not stop the rest.

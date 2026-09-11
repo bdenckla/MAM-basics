@@ -82,19 +82,23 @@ The reference implementation is `repo_util/git_worktree_cleanup.py`, wired as a
 step in this repo's `py/main_repo_maintenance.py` and, across every repo in a
 workspace file, as `py/main_repo_util.py --clean-worktrees`. Copy its conservatism
 along with its code: never `--force`; spare and REPORT any worktree that is
-dirty (untracked files included), unmerged, locked, recently active, or
-currently running the code; restrict branch deletion to the `claude/` prefix so
-a hand-made topic branch is never a candidate; and remove worktrees before
-branches, since a branch held by a worktree cannot be deleted while that
-worktree exists.
+dirty (untracked files included), unmerged, locked, recently active, placed in
+use by Claude Code's own session records, or currently running the code;
+restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
+never a candidate; and remove worktrees before branches, since a branch held by
+a worktree cannot be deleted while that worktree exists.
 
-Two of those spare a worktree another session is using right now, which git
+Three of those spare a worktree another session is using right now, which git
 gives no way to detect outright. `git worktree lock` is the sanctioned,
 exact answer, and comes free: `git worktree remove` refuses a locked worktree,
 so merely never passing `--force` honours it. The heuristic beside it times the
 per-worktree `index`, which every git command rewrites, and skips anything
 touched within the hour -- it must be read BEFORE the dirty check, whose own
-`git status` refreshes that very index. Do not treat the OS as a third layer: a
+`git status` refreshes that very index. The third reads Claude Code's own
+records of its running sessions and of the worktrees its desktop app has leased,
+and outranks the heuristic, because an hour without git is not rare in a live
+session (measured 2026-09-10; see that module's "AN HOUR WITHOUT GIT IS NOT AN
+ABANDONED SESSION"). Do not treat the OS as a further layer: a
 held file handle makes removal fail only AFTER git has emptied the directory,
 so it makes a wrong removal noisy, not survivable.
 

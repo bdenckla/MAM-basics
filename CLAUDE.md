@@ -745,6 +745,59 @@ record lacked one, so the lookup never ran. The renderer raises instead now, and
 build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
 `al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
 
+## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
+
+**In this repo, step 2 of the user-level worktree integration is a mega run, not a suite run.**
+Ben's decision, 2026-09-11. After `git merge --no-edit main` in the worktree (step 1), run the
+mega on the merged tree from the worktree root, then read the `git diff` it leaves:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+```
+
+1. **A failing step is a failure**, fixed by a further commit on the branch, never on `main`.
+2. **Every change the run makes to a tracked file must be explained.** An explained change is
+   committed on the branch before the fast-forward: for example, the change log under
+   `gh-pages/MAM-with-doc/change-log/` catching up with a commit that changed
+   `MAM-parsed/plus/`. An unexplained change is a failure.
+3. **Running `py/main_test.py` as well is optional.** The user-level step 2 says "Run the repo's
+   suite"; for this repo, this section replaces that.
+4. **A branch that changes only instruction files** (`CLAUDE.md`, `dot-claude/`, `dot-Codex/`)
+   **needs no mega run**, since nothing the mega reads has changed.
+
+**Why a mega run, and why after the commit.** The committed outputs are the goldens, and
+reproducing them is the test of this code (§"Writing tests — differential and lint-shaped only"
+below). The case that produced the rule: the Wikisource refresh `209b4c05` of 2026-09-10 was
+integrated as `a0a2e3ab` after a suite run passed 992 tests, on a tree where the mega's
+`diff-mpplus` step raised, because the mpplus diff could not reconstruct the meteg that the
+refresh added at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is
+on branch `dual-agent-review-2026-09-10` until that review round integrates, and which calls the
+step `diff-mpp`, its name until 2026-09-11. Every mega run on a tree containing `209b4c05` stopped
+at that step until `f11ecaf8` fixed the defect on 2026-09-11. A mega run before the commit could
+not have caught it: `diff-mpplus` compares committed revisions, reading `MAM-parsed/plus/` at HEAD
+through git rather than from the working tree, so only a run made after the commit sees the
+commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
+suite takes about two.
+
+**A second defect stopped every run on a tree containing `209b4c05` at `gen-site`, until
+`aedac688` fixed it on 2026-09-11.** The step before it, `accgram-survey-post-stress-meteg`,
+regenerated `out/accgram/post-stress-meteg.json` with the eleven meteg edits the refresh brought
+in, and prose `mbs_only` fell from 12,849 to 12,842, which `pin_claims` in
+`py/author_site/post_stress_meteg.py` still pinned. `aedac688` committed the regenerated survey and
+moved the pins and the main page with it; `doc/post-stress-meteg-method.md` names the eleven edits.
+With both fixes, one full run on a tree merged with `main` at `56132dfd` passed all 59 steps and
+left no diff, so the check is a single run again.
+
+**The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
+rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
+in MAM-private, and this paragraph said to commit that diff there, as the 2026-09-10 refresh did
+(MAM-private `ecab726`). Ben had the step deleted that day. MAM-private's own mega runs the census
+now, so a change to `MAM-parsed/plus/` leaves MAM-private's census for MAM-private to refresh,
+and an integration here has nothing to commit in any other repository.
+
+**Codex does not load this file**, so the same rule is written into `~/.codex/AGENTS.md`, which
+is tracked here as `dot-Codex/user-wide-AGENTS.md`.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:
@@ -761,6 +814,16 @@ siblings beside it (Ben's decision that day), so a run in `.claude/worktrees/<na
 had to set `REPOS_ROOT`. The variable still overrides the default, for a layout where the
 siblings sit somewhere else. A worktree run with nothing exported passed **988 passed, 5
 skipped** on 2026-09-10.
+
+**In a cloud container the suite reads MAM-private nowhere, and that is the one exception to the
+sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
+and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
+`graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
+`py/main_0_mega.py` gives its MAM-private step (it had two until `near-aleppo-census` was deleted
+later that day). On any machine of Ben's nothing changes: a
+missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
+these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
+the reason strings are what tell the two kinds apart under `-rs`.
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py

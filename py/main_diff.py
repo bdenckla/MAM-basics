@@ -4,14 +4,14 @@
 Subcommands:
     ctr-vs-mam
                 Compare CTR verse data against MAM verse data.
-    mpp
+    mpplus
                 Compare MAM-parsed-plus revisions and generate HTML reports.
     wsgo
                 Diff Wikisource against Google Sheets and emit auto-edits output.
 
 Examples:
     .venv/Scripts/python.exe py/main_diff.py ctr-vs-mam
-    .venv/Scripts/python.exe py/main_diff.py mpp --old <rev> --new <rev>
+    .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
     .venv/Scripts/python.exe py/main_diff.py wsgo
 """
 
@@ -19,7 +19,7 @@ import argparse
 import sys
 
 from subcommands import diff_ctr_vs_mam
-from subcommands import diff_mpp
+from subcommands import diff_mpplus
 from subcommands import diff_wsgo
 
 
@@ -56,12 +56,12 @@ def _add_subcommands(subparsers) -> None:
     )
     ctr_parser.set_defaults(func=_run_ctr_vs_mam)
 
-    mpp_parser = subparsers.add_parser(
-        "mpp",
+    mpplus_parser = subparsers.add_parser(
+        "mpplus",
         help="Compare MAM-parsed-plus revisions and write HTML diff reports.",
     )
-    diff_mpp.add_arguments(mpp_parser)
-    mpp_parser.set_defaults(func=_run_mpp)
+    diff_mpplus.add_arguments(mpplus_parser)
+    mpplus_parser.set_defaults(func=_run_mpplus)
 
     wsgo_parser = subparsers.add_parser(
         "wsgo",
@@ -74,8 +74,8 @@ def _run_ctr_vs_mam(_args: argparse.Namespace) -> None:
     diff_ctr_vs_mam.run()
 
 
-def _run_mpp(args: argparse.Namespace) -> None:
-    diff_mpp.run_from_args(args)
+def _run_mpplus(args: argparse.Namespace) -> None:
+    diff_mpplus.run_from_args(args)
 
 
 def _run_wsgo(_args: argparse.Namespace) -> None:

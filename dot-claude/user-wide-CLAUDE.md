@@ -830,6 +830,45 @@ this session" and "since reverted" with no date, and gave no repo paths.
   stranded copies were the reason a global entry was wanted; kept because the reason has
   outlived them.
 
+## Template dispatch is closed — no defaults, guesses, or blind dives
+
+Every dispatch on a template name is **closed**. This applies to parsers, renderers,
+generators, surveys, transformations, and shared helpers—not only to Bible-text surveys.
+Every recognized template has an explicit decision, and an unrecognized template raises.
+There is no default template behavior.
+
+- **Name every recognized template.** An explicit dispatch table, match arm, or deliberately
+  enumerated set may route several named templates to the same handler. What is forbidden is
+  a catch-all arm that flattens, preserves, drops, renders, or recursively visits an
+  unrecognized template. Recursion into a template's children begins only after that template
+  has been recognized and the handler has named which children have which roles.
+- **Never guess semantics from shape.** Parameter count, parameter names, the presence of Hebrew
+  letters or accents, or similarity to another template do not determine behavior for an
+  unrecognized template. A recognized handler validates the shape it expects and raises when
+  the shape changes. Adding a source template requires an explicit decision everywhere that
+  can reach the new template.
+- **A blind dive is one forbidden default.** Generic recursion that treats every parameter as
+  ordinary text silently merges Scripture, documentation, apparatus, formatting, and
+  alternatives. A Bible-text path excludes documentation bodies while retaining any parameter
+  explicitly classified as Scripture. A note path reads the exact note fields it needs.
+- **Edition display and survey population are separate decisions.** Most editions include both
+  ketiv and qere, but that does not make both relevant to every survey: a consonantal survey
+  may need the ketiv, a pronunciation or pointing survey may need the qere, and a layout or
+  apparatus survey may need both. Likewise, a survey of one selected Scripture stream normally
+  chooses one cantillation strand, one qamats alternative, and one form from a deḥi or tsinnor
+  stress-helper template. Each caller states the choices its question requires.
+- **Walking every branch is still closed dispatch.** A template inventory, schema audit, or
+  survey of the dataset may deliberately inspect every alternative, but only after recognizing
+  the template and explicitly deciding that every branch belongs in that operation. Name that
+  scope in the module and output; "all branches" is a decision for a named template, never the
+  fallback for an unknown template.
+- **Make every decision reviewable.** Keep template choices in a named policy or explicit
+  call-site dispatch, record a generated survey's projection in metadata or documentation where
+  practical, and verify regenerated outputs as differential tests. Ben's instruction,
+  2026-09-10, restores a rule abandoned with earlier user-wide instruction files after a stale
+  doubled-pashta report prompted an audit that found surveys visiting unselected template
+  branches.
+
 ## Tests: differential and lint-shaped only
 An audit of git history, code comments, and issues across all twenty repos (2026-07-25) found
 exactly **four** occasions where a test demonstrably found something, and **zero** recorded
@@ -1005,10 +1044,12 @@ later sentence beginning "The correction also …".
 - **It applies to commit messages, issue bodies and plan rows too**, not only to chat. A plan
   row saying a figure was wrong should say in the same breath that it now is not.
 
-## Prose: the closing message opens with a HORIZONTAL RULE
-Added 2026-09-09. Same scope as the four Prose sections above: everything you write for me.
-**Begin the final message of every turn with a markdown horizontal rule (`---`), with nothing
-above it.** Always — not only when the message is long or report-shaped.
+## Prose: the closing message opens with an H1 HEADING that names the report
+Added 2026-09-09 with a horizontal rule as the marker; the marker became an H1 heading on
+2026-09-11. Same scope as the four Prose sections above: everything you write for me. **Begin
+the final message of every turn with a level-1 markdown heading, `# Report: <subject>`, with
+nothing above it, and make it the only level-1 heading in the turn.** Always — not only when
+the message is long or report-shaped. Headings inside the report are `##` or smaller.
 - **The problem it solves is that an agentic session's closing message has no top.** A long
   stream of narration between tool calls has already gone by, so nothing marks where your
   self-talk ends and the thing I am meant to read begins. Me, 2026-09-09: *"as usual, I'm not
@@ -1016,24 +1057,40 @@ above it.** Always — not only when the message is long or report-shaped.
   That is the same fact the task-chip section above records from the writer's side — "there is
   no identifiable 'top' of a response in an agentic session" — arrived at again from the
   reader's.
-- **My workaround was to scroll for the first markdown heading, and it is both subtle and
-  wrong.** Subtle because headings are not that bold. Wrong because a closing message can open
-  with un-headed lines, and one did on 2026-09-09: its first two lines carried the commit result
-  and the deliverable's path, so the heuristic skipped the deliverable and landed three lines
-  late. Me, that day: *"the current system is subtle (looking for not-that-bold headings) and
-  wrong anyway."*
-- **A rule bar is the obvious instrument and does not need defending.** Me, the same day:
-  *"Please use a horizontal bar; isn't that just common sense."* As with the numbering section
-  above, this earns its place by naming a habit of yours rather than a taste of mine — so
-  nothing here is idiosyncratic to me, and "he hasn't asked for it in this context" is never a
-  reason to skip it.
+- **The horizontal rule (`---`) this section prescribed until 2026-09-11 was too faint to
+  find.** Me, that day: *"it is barely visible and we need to do something else to indicate
+  where 'self-talk' ends and a final report for the turn starts."* A session then rendered three
+  candidates in my window: this heading; a heavy bar typed as text, U+2501 BOX DRAWINGS HEAVY
+  HORIZONTAL, with the word REPORT in it; and the two together. It recommended the heading if
+  the heading stood out clearly, and I answered *"Sure, let's go with candidate 1."*
+- **This turns my old workaround into a guarantee.** Before 2026-09-09 I scrolled for the first
+  markdown heading, and that was both subtle and wrong. Subtle because headings are not that
+  bold. Wrong because a closing message can open with un-headed lines, and one did on
+  2026-09-09: its first two lines carried the commit result and the deliverable's path, so the
+  heuristic skipped the deliverable and landed three lines late. Me, that day: *"the current
+  system is subtle (looking for not-that-bold headings) and wrong anyway."* A level-1 heading
+  is the largest heading markdown has, and putting it on the first line and nowhere else makes
+  "the first H1" exact rather than a guess.
+- **The heading names the report's subject**, as every heading must — see the section above on
+  cute or coy titles. `# Report: full hashes in the mpplus change log` is the shape I chose; a
+  bare `# Report` is the coy title that section forbids.
+- **No other H1 in the turn — not lower in the closing message, and not in the narration
+  between tool calls.** A second H1 stops the first one marking anything, and an H1 in the
+  narration recreates the old failure: a place that looks like the start of the report and is
+  not.
+- **Nothing above the heading, a rule bar included.** A `---` above it would push the heading to
+  the second line, and the bar was retired for being too faint to find.
 - **Always, with no judgment call about whether this turn counts as a report.** A rule that asks
-  you to decide first is a rule that decays. A bar above a one-line reply costs nothing, and
-  being able to rely on it without thinking is the whole point.
-- **Nowhere else in the message.** A second rule bar in the body stops the first one marking
-  anything.
-- **A direct answer to a question I asked still goes first**, immediately below the bar. The two
-  rules do not compete: the bar is the message's first line, the answer is its first sentence.
+  you to decide first is a rule that decays. A heading above a one-line reply costs one line,
+  and being able to rely on it without thinking is the whole point.
+- **This earns its place by naming a habit of yours rather than a taste of mine**, as with the
+  numbering section above — so nothing here is idiosyncratic to me, and "he hasn't asked for it
+  in this context" is never a reason to skip it. Me, 2026-09-09, of the bar: *"Please use a
+  horizontal bar; isn't that just common sense."* The marker changed on 2026-09-11; the common
+  sense did not.
+- **A direct answer to a question I asked still goes first**, immediately below the heading. The
+  two rules do not compete: the heading is the message's first line, the answer is its first
+  sentence.
 
 ## Unicode in source code — no orphan combining marks
 - Never write a combining mark (a diacritic/accent/point with no base character) as a

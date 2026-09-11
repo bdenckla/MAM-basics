@@ -833,8 +833,14 @@ def pin_claims(survey: dict) -> None:
     # chanted word by its form: 21 forms occur twice in one numbered verse with one meteg on
     # each occurrence, so each such pair read as one chanted word carrying two metegs.  All
     # 21 are in prose verses, which is why the poetic MBS_O count did not move.
+    # 12,842 was 12,849 until 2026-09-11, when the survey was first regenerated after the
+    # eleven meteg edits made on Hebrew Wikisource on 2026-08-30 and 2026-08-31 reached its
+    # two inputs, MAM-simple in MAM-basics 209b4c05 and Phonetic MAM in MAM-private 65ee486,
+    # both of 2026-09-10.  All eleven are in prose verses: nine removed a chanted word's one
+    # meteg before the stress, and two, at 2 Chronicles 28:19 and Isaiah 24:18, added one.
+    # doc/post-stress-meteg-method.md names all eleven.
     assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12849, "mas": 178},
+        _PROSE: {"mbs_only": 12842, "mas": 178},
         _POETIC: {"mbs_only": 1786, "mas": 54},
     }
     assert survey["qamats_variant_census"]["by_system"] == {

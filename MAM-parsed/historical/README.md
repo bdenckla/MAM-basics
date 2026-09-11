@@ -26,7 +26,7 @@ From the MAM-basics root, the usual command compares the latest named release
 with committed `MAM-parsed/plus/` at MAM-basics HEAD:
 
 ```powershell
-.venv/Scripts/python.exe py/main_diff.py mpp
+.venv/Scripts/python.exe py/main_diff.py mpplus
 ```
 
 `--all` also regenerates every named release. Explicit `--old` and `--new`
@@ -39,7 +39,7 @@ For an arbitrary pre-migration comparison, supply both revisions and opt
 into the sibling clone:
 
 ```powershell
-.venv/Scripts/python.exe py/main_diff.py mpp --legacy-history --old 9ce6ee5 --new 51082036e5907991d0d322cb6dfcc6404802099f
+.venv/Scripts/python.exe py/main_diff.py mpplus --legacy-history --old 9ce6ee5 --new 51082036e5907991d0d322cb6dfcc6404802099f
 ```
 
 The clone must already exist. `REPO_MAM_PARSED_DIR` or `REPOS_ROOT` locates it.

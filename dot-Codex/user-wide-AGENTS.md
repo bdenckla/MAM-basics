@@ -112,6 +112,16 @@ stale copy, and nothing warns it, so those two comparisons are the only detector
   2. Run the repo's suite in the worktree on the merged tree, with `REPOS_ROOT` set where the
      repo's instructions say a worktree needs it. A failure is fixed by a further commit on the
      branch, never on `main`.
+     **In MAM-basics, step 2 is a mega run instead of the suite.** Ben's decision, 2026-09-11.
+     From the worktree root, run
+     `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` on the
+     merged tree and read the `git diff` it leaves. Commit each explained change on the branch
+     before the fast-forward; an unexplained change is a failure. Running the suite as well is
+     optional, and a branch that changes only instruction files needs no mega run. Since
+     2026-09-11 the mega writes nothing outside MAM-basics, its `near-aleppo-census` step
+     having been deleted, so there is no MAM-private diff to commit. MAM-basics' `CLAUDE.md`
+     §"Integrating a worktree branch here" gives the reasons, and the rule is restated here
+     because Codex does not load that file.
   3. In the primary clone, `git -C <main clone> merge --ff-only <worktree branch>`. The
      `--ff-only` is the check that `main` did not move between steps 1 and 3; if it refuses,
      go back to step 1 rather than let a second merge happen in the primary clone.
@@ -708,6 +718,45 @@ this session" and "since reverted" with no date, and gave no repo paths.
   used) nothing was moved into `AGENTS.md` to replace them. Written 2026-07-15, when those
   stranded copies were the reason a global entry was wanted; kept because the reason has
   outlived them.
+
+## Template dispatch is closed — no defaults, guesses, or blind dives
+
+Every dispatch on a template name is **closed**. This applies to parsers, renderers,
+generators, surveys, transformations, and shared helpers—not only to Bible-text surveys.
+Every recognized template has an explicit decision, and an unrecognized template raises.
+There is no default template behavior.
+
+- **Name every recognized template.** An explicit dispatch table, match arm, or deliberately
+  enumerated set may route several named templates to the same handler. What is forbidden is
+  a catch-all arm that flattens, preserves, drops, renders, or recursively visits an
+  unrecognized template. Recursion into a template's children begins only after that template
+  has been recognized and the handler has named which children have which roles.
+- **Never guess semantics from shape.** Parameter count, parameter names, the presence of Hebrew
+  letters or accents, or similarity to another template do not determine behavior for an
+  unrecognized template. A recognized handler validates the shape it expects and raises when
+  the shape changes. Adding a source template requires an explicit decision everywhere that
+  can reach the new template.
+- **A blind dive is one forbidden default.** Generic recursion that treats every parameter as
+  ordinary text silently merges Scripture, documentation, apparatus, formatting, and
+  alternatives. A Bible-text path excludes documentation bodies while retaining any parameter
+  explicitly classified as Scripture. A note path reads the exact note fields it needs.
+- **Edition display and survey population are separate decisions.** Most editions include both
+  ketiv and qere, but that does not make both relevant to every survey: a consonantal survey
+  may need the ketiv, a pronunciation or pointing survey may need the qere, and a layout or
+  apparatus survey may need both. Likewise, a survey of one selected Scripture stream normally
+  chooses one cantillation strand, one qamats alternative, and one form from a deḥi or tsinnor
+  stress-helper template. Each caller states the choices its question requires.
+- **Walking every branch is still closed dispatch.** A template inventory, schema audit, or
+  survey of the dataset may deliberately inspect every alternative, but only after recognizing
+  the template and explicitly deciding that every branch belongs in that operation. Name that
+  scope in the module and output; "all branches" is a decision for a named template, never the
+  fallback for an unknown template.
+- **Make every decision reviewable.** Keep template choices in a named policy or explicit
+  call-site dispatch, record a generated survey's projection in metadata or documentation where
+  practical, and verify regenerated outputs as differential tests. Ben's instruction,
+  2026-09-10, restores a rule abandoned with earlier user-wide instruction files after a stale
+  doubled-pashta report prompted an audit that found surveys visiting unselected template
+  branches.
 
 ## Tests: differential and lint-shaped only
 An audit of git history, code comments, and issues across all twenty repos (2026-07-25) found

@@ -2,7 +2,7 @@ FILE                                       DEST_REPO                  DEST_PATH 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bib_locales.py                             MAM-basics                 MAM-simple/py-examples/mb_cmn/bib_locales.py            identical      2026-09-06   generated
 cantsys.py                                 MAM-basics                 MAM-simple/py-examples/mb_cmn/cantsys.py                identical      2026-09-06   generated
-file_io.py                                 MAM-basics                 MAM-simple/py-examples/mb_cmn/file_io.py                identical      2026-09-06   generated
+file_io.py                                 MAM-basics                 MAM-simple/py-examples/mb_cmn/file_io.py                identical      2026-09-11   generated
 he_wikisource_url.py                       MAM-basics                 MAM-simple/py-examples/mb_cmn/he_wikisource_url.py      identical      2026-09-06   generated
 hebrew_accents.py                          MAM-basics                 MAM-simple/py-examples/mb_cmn/hebrew_accents.py         identical      2026-09-06   generated
 hebrew_letters.py                          MAM-basics                 MAM-simple/py-examples/mb_cmn/hebrew_letters.py         identical      2026-09-06   generated

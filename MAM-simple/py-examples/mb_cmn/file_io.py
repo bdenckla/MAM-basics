@@ -83,5 +83,11 @@ def _json_dump_to_file_pointer(dumpable, indent, out_fp):
     # prose and poetic corpora at indent=0 and two surveys at indent=1). Callers
     # wanting any other indent were otherwise forced to open the file themselves,
     # giving up the temp-file-plus-retry this module exists to provide.
-    json.dump(dumpable, out_fp, ensure_ascii=False, indent=indent)
+    #
+    # json.dumps and one write, not json.dump, which writes the same text in pieces: on
+    # the Python this repo runs (3.13), json.dump always encodes in pure Python, while
+    # json.dumps hands the indented encoding to the C encoder. The bytes are identical;
+    # the time is not -- 4.47 s against 1.38 s for the twelve largest tracked JSON files
+    # at indents 0, 1 and 2, measured 2026-09-11 (doc/mega-timing-2026-09-11.md).
+    out_fp.write(json.dumps(dumpable, ensure_ascii=False, indent=indent))
     out_fp.write("\n")
