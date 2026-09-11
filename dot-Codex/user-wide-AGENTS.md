@@ -121,7 +121,11 @@ stale copy, and nothing warns it, so those two comparisons are the only detector
      finding 1 of the 2026-09-10 review is fixed, every run on a tree containing `209b4c05`
      stops at the `diff-mpplus` step (`diff-mpp` until 2026-09-11, the name the finding uses):
      do not fix it on an unrelated branch, but finish the check with
-     `py/main_0_mega.py --resume-from diff-ctr-vs-mam`. Since 2026-09-11 the mega
+     `py/main_0_mega.py --resume-from diff-ctr-vs-mam`. That run then stops at `gen-site`,
+     because `pin_claims` in `py/author_site/post_stress_meteg.py` still pins the
+     post-stress-meteg figures from before the refresh: restore
+     `out/accgram/post-stress-meteg.json` rather than commit it, and finish with
+     `--resume-from diffable-pointed-hebrew` (recorded 2026-09-11). Since 2026-09-11 the mega
      writes nothing outside MAM-basics, its `near-aleppo-census` step having been deleted, so
      there is no MAM-private diff to commit. MAM-basics' `CLAUDE.md` §"Integrating a worktree
      branch here" gives the reasons, and the rule is restated here because Codex does not load

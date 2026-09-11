@@ -142,7 +142,18 @@ def default_output_path(old_rev, new_rev):
 
 
 def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
-    """Generate one diff report. Returns the expanded diff count."""
+    """Generate one diff report. Returns the expanded diff count.
+
+    The report records each side's full commit hash, never the revision as given.
+    Until 2026-09-11 it recorded ``old_rev`` and ``new_rev`` verbatim, so
+    unpinned-latest said "HEAD", which names nothing once the report is committed; Ben
+    decided that day that "a true hash should be recorded". A stored release or a
+    legacy:<ref> records the full hash of its MAM-parsed commit, and a MAM-basics ref
+    records its content commit, which ``mpplus_revisions.resolve`` defines. The log
+    need not keep up with every commit -- Ben, the same day: "I want the diff to be
+    able to run as sparsely or as frequently as the user wants" -- so a report that
+    lags only has to say exactly what it describes, and the recorded hashes say it.
+    """
     print(f"Comparing {old_rev} -> {new_rev} ...")
     diffs = mpplus_extract.diff_all_books(old_rev, new_rev)
     print(f"  {len(diffs)} raw changes found")
@@ -160,12 +171,14 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
         )
     old_date = _commit_date(old_rev)
     new_date = _commit_date(new_rev)
+    old_commit = mpplus_revisions.resolve(old_rev).commit
+    new_commit = mpplus_revisions.resolve(new_rev).commit
     os.makedirs(os.path.dirname(output), exist_ok=True)
     json_path = output.removesuffix(".html") + ".json"
-    mpplus_json.write_json(diffs, old_rev, new_rev, json_path)
+    mpplus_json.write_json(diffs, old_commit, new_commit, json_path)
     print(f"  JSON written to {json_path}")
     total = mpplus_html.write_report(
-        diffs, old_rev, new_rev, output, old_date, new_date
+        diffs, old_commit, new_commit, output, old_date, new_date
     )
     print(f"  Report written to {output}")
     return total, old_date

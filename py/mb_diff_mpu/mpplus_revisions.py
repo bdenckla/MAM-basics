@@ -128,7 +128,12 @@ def _validated_archive_members(archive_name, expected, _size, _mtime_ns):
 
 @dataclass(frozen=True)
 class Revision:
-    """A resolved plus tree, its source commit, and its content date."""
+    """A resolved plus tree, its source commit, and its content date.
+
+    ``commit`` is always the full 40-character hash of the commit the tree is read from,
+    never the revision as given, so a report can record it as the source of its inputs.
+    For a MAM-basics ref it is the ref's content commit, which ``resolve`` defines.
+    """
 
     commit: str
     date: str
@@ -191,7 +196,16 @@ class Revision:
 
 @lru_cache(maxsize=64)
 def resolve(rev):
-    """Resolve a stored release, a MAM-basics ref, or explicit legacy:<ref>."""
+    """Resolve a stored release, a MAM-basics ref, or explicit legacy:<ref>.
+
+    A MAM-basics ref resolves to its content commit: the last commit at or before the
+    ref that changed MAM-parsed/plus. MAM-parsed/plus is the same at both commits, so
+    the inputs read are the same, and the content commit is the hash a report records.
+    HEAD therefore resolves to one hash until a commit changes MAM-parsed/plus, and a
+    report regenerated over unchanged inputs is byte-identical. Ben's decision,
+    2026-09-11, was that the change log records "a true hash" rather than the literal
+    HEAD, which names nothing once the report is committed.
+    """
     if rev.startswith("legacy:"):
         legacy_ref = rev.removeprefix("legacy:")
         repo = paths.sibling_repo("MAM-parsed")
@@ -235,15 +249,16 @@ def resolve(rev):
             " Arbitrary old MAM-parsed revisions require --legacy-history"
             " (or legacy:<ref>) and read access to a sibling MAM-parsed clone."
         ) from exc
-    content_commit = _git(
-        repo, "log", "-1", "--format=%H", commit, "--", "MAM-parsed/plus"
+    content_commit = (
+        _git(repo, "log", "-1", "--format=%H", commit, "--", "MAM-parsed/plus")
+        or commit
     )
     date = (
         migration["source_date"]
         if content_commit == migration["landing_commit"]
-        else _git(repo, "show", "-s", "--format=%cs", content_commit or commit)
+        else _git(repo, "show", "-s", "--format=%cs", content_commit)
     )
-    return Revision(commit, date, repo, "MAM-parsed/plus")
+    return Revision(content_commit, date, repo, "MAM-parsed/plus")
 
 
 # ``count_newer_commits`` stood here until 2026-09-11, counting the commits between a revision
