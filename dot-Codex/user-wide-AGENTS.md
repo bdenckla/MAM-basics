@@ -120,10 +120,11 @@ stale copy, and nothing warns it, so those two comparisons are the only detector
      optional, and a branch that changes only instruction files needs no mega run. Until
      finding 1 of the 2026-09-10 review is fixed, every run on a tree containing `209b4c05`
      stops at the `diff-mpp` step: do not fix it on an unrelated branch, but finish the check
-     with `py/main_0_mega.py --resume-from diff-ctr-vs-mam`. The `near-aleppo-census` step
-     can leave a diff in MAM-private; read it the same way and commit it there. MAM-basics'
-     `CLAUDE.md` §"Integrating a worktree branch here" gives the reasons, and the rule is
-     restated here because Codex does not load that file.
+     with `py/main_0_mega.py --resume-from diff-ctr-vs-mam`. Since 2026-09-11 the mega
+     writes nothing outside MAM-basics, its `near-aleppo-census` step having been deleted, so
+     there is no MAM-private diff to commit. MAM-basics' `CLAUDE.md` §"Integrating a worktree
+     branch here" gives the reasons, and the rule is restated here because Codex does not load
+     that file.
   3. In the primary clone, `git -C <main clone> merge --ff-only <worktree branch>`. The
      `--ff-only` is the check that `main` did not move between steps 1 and 3; if it refuses,
      go back to step 1 rather than let a second merge happen in the primary clone.

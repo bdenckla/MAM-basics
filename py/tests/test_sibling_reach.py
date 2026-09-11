@@ -73,7 +73,9 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
   without importing the module or tracing data flow.
 * ``repos_root() / "X"``, which honours ``REPOS_ROOT`` but bypasses both the per-repo
   ``REPO_<NAME>_DIR`` override and ``require_sibling``'s message.  ``main_0_mega.py``
-  builds the MAM-private subprocess ``cwd`` this way.
+  built the MAM-private subprocess ``cwd`` this way until its near-aleppo-census step
+  was deleted on 2026-09-11, and no site spells a repo name this way since; the
+  recognizer stays for the next one.
 * A name arriving from a tracked data file, which no in-file lookup can resolve:
   ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
   ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those two sites.
@@ -142,15 +144,15 @@ SIBLINGS_REACHED: dict[str, str] = {
         "publishing the source repository's frozen redirect stubs."
     ),
     "MAM-private": (
-        "Two routes.  paths.al_hatorah_phonetic_dir reads MAM-private/al-hatorah's"
-        " Phonetic MAM, the oracle of main_accgram.py's two surveys --"
-        " survey-post-stress-meteg, which main_0_mega runs as its"
+        "One route, and it reads.  paths.al_hatorah_phonetic_dir reads"
+        " MAM-private/al-hatorah's Phonetic MAM, the oracle of main_accgram.py's two"
+        " surveys -- survey-post-stress-meteg, which main_0_mega runs as its"
         " accgram-survey-post-stress-meteg step except in a cloud session, and"
         " survey-breuer-zaqef-units -- and of the test of accgram.final_stress."
-        "  And main_0_mega runs the near-aleppo census in MAM-private, except in a"
-        " cloud session.  Its"
-        " vendoring audit was given up on 2026-09-04 (abb03ec4), which removed a"
-        " third route but not these two."
+        "  Two other routes are gone: the vendoring audit's, given up on 2026-09-04"
+        " (abb03ec4), and main_0_mega's near-aleppo-census step, which ran the census"
+        " in MAM-private and rewrote that clone's goldens until Ben had it deleted on"
+        " 2026-09-11."
     ),
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
