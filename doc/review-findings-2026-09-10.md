@@ -1,6 +1,6 @@
 # Findings of the 2026-09-10 review of the public repos since 2026-09-08
 
-State: not yet acted on, except findings 1 to 5, fixed on 2026-09-11 at Ben's direction before the Codex counter-argument ran; see `## Dispositions after remediation` at the end
+State: not yet acted on, except findings 1 to 6, fixed on 2026-09-11 at Ben's direction before the Codex counter-argument ran; see `## Dispositions after remediation` at the end
 
 Written 2026-09-10, late evening, as the Claude argument, turn 1 of the standard alternating
 dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09): this file was
@@ -849,5 +849,6 @@ the anchor `0354b6cc`, where all three findings still stand as written above.
 | 2026-09-11 | 3 | Has been fixed by the commit that adds this section. It puts dated corrections beside the three records the finding names: the Wave 3 technical paragraph and the 13.3 row of the final disposition table in `doc/review-findings-2026-09-08.md`, and items 1 and 2 of the Wave 3 technical source changes in `doc/PLAN-remediate-review-findings-2026-09-08.md`. Each correction says that `3a1ab7f0` retired the display fallback. |
 | 2026-09-11 | 4 | Has been fixed by the commit that adds this row, by making `CLAUDE.md`'s mark-order section state only what was measured. Re-measured at `2bb94060` with the same counting as `D_04_treewide_scan.py`: 699,940 clusters; 688,072 in the four mam-ws trees, `out/mam-ws-bot/proto-fmt-2/` now named among them; 4,621 in the named captures; and 7,247 in 152 files, now stated as unclassified rather than expected. At Ben's direction, whether each unclassified cluster is deliberate was not judged, so the two trees item 4 calls captures are counted among the unclassified. Item 3's two figures are both true of different sets: 656 clusters are in the 65 files under `py/`, and 369 of them are in the 51 `.py` files. |
 | 2026-09-11 | 5 | Has been fixed by the same commit. `CLAUDE.md` now names the prose lint's third pathspec element, the `.txt` under `in/accgram/edition_transcriptions/`, and says that any other `.txt` is covered by nothing. |
+| 2026-09-11 | 6 | Has been fixed by `89c1d7cf` on `main`, made on its own branch `fix-review-2026-09-10-finding-6` rather than this one, at Ben's direction that fix-now remediation lands outside the review branch. `doc/PLAN-efficient-wikisource-downloads.md` gains the section "Production refresh of the 20 chapters, 2026-09-10", recording what `209b4c05` changed against its parent `b2052ab9`, and dated corrections beside its three stale passages; `doc/PLAN-wikisource-derived-mam-products.md` and `doc/PLAN-evacuate-five-MAM-products.md` each gain one beside the passage items 2 and 4 name. The Phase 3 validation JSON stays as written, as a receipt. Re-measured from `209b4c05` alone, item 1's "21 verses changed in every product" holds for MAM-parsed plus and plain; `MAM-simple/xml-vtrad-mam/` changed in 11, the meteg changes. |
 
-Findings 6 to 21 are not yet acted on.
+Findings 7 to 21 are not yet acted on.
