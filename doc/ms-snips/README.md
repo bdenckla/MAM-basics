@@ -126,13 +126,12 @@ verse, the meteg the correction request asked for is in both digital texts — M
 אָֽכְלָ֭ה, CTR has אָֽכְלָ֖ה — though the three manuscripts above lack it; and CTR has the
 yetiv, logically before its ḥolam, that the Metsudah quotation lacks.
 
-## second-rabbinic-bible-vol4-Job4v12-menhu.png
+## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
 
 Job 4:12, the verse-final atom, מֶֽנְהֽוּ׃ in MAM, in **the Second Rabbinic Bible, volume IV**:
 the Venice Mikra'ot Gedolot of 1524–25, edited by Jacob ben Hayyim. Ben cropped it on 2026-09-11
-from a scan titled "The Second Rabbinic Bible (Mikraot Gedolot) (מקראות גדולות) Volume IV".
-The page is not recorded, so the file name has the volume in the page's place, and where the scan
-is from is not recorded either.
+from a scan titled "The Second Rabbinic Bible (Mikraot Gedolot) (מקראות גדולות) Volume IV",
+on the page marked with a 99 in pencil, which is the `pencil99` in the file name.
 
 **The Second Rabbinic Bible appears to have one meteg/silluq on this atom, under the mem, and none
 under the he** — Ben's reading of this image; diacritics, he says, do not come through well in
