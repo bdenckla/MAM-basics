@@ -23,7 +23,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 
 ## The run
 
-1. **Inputs, as in the screen** (its section 11, item 1): MAM from `MAM-simple/json-vtrad-bhs` through `accgram.mam_simple_verse`; UXLC 3.9 from `in/UXLC-39/*.xml`; WLC 4.22 from its Unicode conversion `out/wlc422-u/`, with `out/wlc420-u/` as a second run; all keyed by WLC's compact bcv. The screen's throwaway `.novc/mas_b_screen.py`, in the worktree `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/zen-babbage-2d6583`, already loads and aligns all three. It was there on 2026-09-10, but it is gitignored and may be gone; the screen's section 11 is the method of record.
+1. **Inputs, as in the screen** (its section 11, item 1): MAM from `MAM-simple/json-vtrad-bhs` through `accgram.mam_simple_verse`; UXLC 3.9 from `in/UXLC-39/*.xml`; WLC 4.22 from its Unicode conversion `out/wlc422-u/`, with `out/wlc420-u/` as a second run; all keyed by WLC's compact bcv. The screen's section 11 is the method of record for loading and aligning all three.
 2. **The verse-final chanted word and the alignment, as in the screen**: the last atom holding sof pasuq plus every atom maqaf-joined to it; a verse whose verse-final chanted words differ in letters is compared by its final atom when only the grouping differs, and is otherwise skipped and counted.
 3. **The criterion, Ben's**: a hit is a verse-final chanted word whose last U+05BD in the source is at a later position than MAM's last U+05BD, or which has a U+05BD in the source and none in MAM.
 4. **Every hit is put in one of three classes**, using positions and syllables counted the Masoretic way (the screen's section 1, finding 2):
@@ -42,7 +42,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 
 ## Preconditions, and what is not expected to change
 
-1. Re-measure the screen's class (v) before relying on it: run `.novc/mas_b_screen.py` from the root of the worktree named in step 1, or read the `mas_b_screen_results.json` it writes there, and expect 4 members against UXLC 3.9 and 3 against WLC 4.22. A mismatch is a finding.
+1. Re-measure the screen's class (v) before relying on it, by the method of the screen's section 11, and expect 4 members against UXLC 3.9 and 3 against WLC 4.22. A mismatch is a finding.
 2. Work in a secondary worktree of `C:/Users/BenDe/GitRepos/MAM-basics` whose branch contains this plan. On 2026-09-10 that was the worktree `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/eloquent-ritchie-0e4c6c` on the branch `claude/interesting-taussig-6aa52b`, which another session shared, so commit there with named paths only. Run `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, and set `$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"` for anything that reads MAM-private, which holds Phonetic MAM.
 3. Nothing tracked changes but the new findings file: MAM's text, the screen's file and the post-stress-meteg pages are left alone.
 4. Commit the findings file on the worktree's branch. While that branch is shared with other sessions it is integrated once, when its work ends, at Ben's word, and not at this run's archival; once it has been merged into `main`, the user-level four-step procedure applies as usual.

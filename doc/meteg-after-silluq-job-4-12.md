@@ -144,15 +144,14 @@ A background search of both books' OCR exports, made for this file, found the fo
 2. **Yeivin's study of the Aleppo Codex**, *כתר ארם צובה: ניקודו וטעמיו* (Jerusalem: Magnes, 5729; `in/mam-ws-intro/appendices.mediawiki` line 234), which MAM's introduction cites, chapter 11.3, pages 90–91, for where a meteg is written (`in/mam-ws-intro/ch3.mediawiki` line 1371): not on disk. It may say how often the Aleppo Codex has a meteg to the right of its vowel, which bears on Ben's question whether the placement is commoner in the Leningrad Codex.
 3. **`doc/PLAN-silluq-before-gaya-template.md`** (phonetic-hbo#78) plans a template identifying the silluq at 1 Kings 7:37. Job 4:12 would be a candidate for it if its stress is penultimate. Raised for Ben, not acted on.
 
-## 7. Scripts and commands that re-establish every figure
+## 7. How the figures were made
 
-All are throwaway scripts, gitignored under `.novc/` in the worktree named at the top, run from its root on `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`; each writes its Hebrew to a file, not to stdout.
+The scripts below are throwaway scripts, which are not tracked; each wrote its Hebrew to a file, not to stdout.
 
-1. `.novc/job412_spell.py` spells out the atom with the letters מנהו, Job 4:12's and Psalms 68:24's, codepoint by codepoint in every source above and in Phonetic MAM, and writes `.novc/job412_spell_report.txt`.
-2. `.novc/job412_spell2.py` does the same for Psalms 72:15's atom and writes `.novc/job412_spell2_report.txt`.
-3. `.novc/job412_crops.py`, `.novc/job412_zoom.py` and `.novc/job412_cam_line.py` (the last with the arguments `550 1268 660 1372`) make the crops and ruled enlargements of section 3.
-4. `.novc/job412_write_doc.py` writes this file from `.novc/job412_doc_template.md`, lifting every pointed form and every `jta` from the data with a uniqueness assertion, and checks the result with `has_std_mark_order`.
-5. `.novc/lookup_links.py` estimates the Leningrad Codex's column and line for the verse-final atom and builds the links of section 3.
-6. The counts of MAM's notes in section 4's subsection on stroke position are ripgrep line counts (the Grep tool's count mode) over `in/mam-ws/*.json`, which has a line per verse: `בגעיה ימנית|געיה ימנית`, and `א[?!]*=ב?געיה ימנית` for the notes naming the Aleppo Codex. The counts of UXLC 3.9's leading metegs come from `.novc/uxlc_leading_meteg_count.py`, which writes `.novc/uxlc_leading_meteg_report.txt` with every verse-final atom that section 4's item 3 counts, and `.novc/uxlc_early_silluq_table.md`, section 4's table of the 31 early silluqs, lifted from `in/UXLC-39/*.xml` and put into MAM-normal mark order with `give_std_mark_order`; `.novc/job412_patch_early_silluqs.py` put that table into the template.
+1. One spelled out the atom with the letters מנהו, Job 4:12's and Psalms 68:24's, codepoint by codepoint in every source above and in Phonetic MAM, and another did the same for Psalms 72:15's atom.
+2. Three made the crops and ruled enlargements of section 3. The crops kept in the repository are under `aleppo/page-snips/` and `leningrad/page-snips/`.
+3. One wrote this file from a template, lifting every pointed form and every `jta` from the data with a uniqueness assertion, and checked the result with `has_std_mark_order`.
+4. One estimated the Leningrad Codex's column and line for the verse-final atom and built the links of section 3. The tracked `py/main_verse_links.py` builds links of the same kinds.
+5. The counts of MAM's notes in section 4's subsection on stroke position are ripgrep line counts (the Grep tool's count mode) over `in/mam-ws/*.json`, which has a line per verse: `בגעיה ימנית|געיה ימנית`, and `א[?!]*=ב?געיה ימנית` for the notes naming the Aleppo Codex. The counts of UXLC 3.9's leading metegs came from one more script, which listed every verse-final atom that section 4's item 3 counts and made section 4's table of the 31 early silluqs, lifted from `in/UXLC-39/*.xml` and put into MAM-normal mark order with `give_std_mark_order`.
 
 The literature search of section 5 ran as a throwaway script in the session's scratchpad, which does not outlast the session; the patterns in section 5 are its durable record.

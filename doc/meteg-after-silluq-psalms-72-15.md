@@ -35,10 +35,10 @@ Pages are named as in the scan-pages index (`doc/scan-pages.md`). Koren's page D
 
 1. **The complete run** over every verse-final chanted word, in `doc/PLAN-meteg-after-silluq-in-uxlc-and-wlc.md`.
 
-## 4. Scripts and commands that re-establish every figure
+## 4. How the figures were made
 
-All are throwaway scripts, gitignored under `.novc/` in the worktree named at the top, run from its root on `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
+The scripts below are throwaway scripts, which are not tracked.
 
-1. `.novc/job412_spell2.py` spells out this atom codepoint by codepoint in every source above and in Phonetic MAM, and writes `.novc/job412_spell2_report.txt`.
-2. `.novc/ps7215_write_doc.py` writes this file from `.novc/ps7215_doc_template.md`. It lifts every pointed form and the `jta` from the data; asserts that the note's and the introduction's quotations of the Aleppo Codex agree, that UXLC 3.9 and both WLC conversions have the same codepoints, and how many U+05BD each form has; and checks the result with `has_std_mark_order`.
-3. `.novc/lookup_links.py` estimates the Leningrad Codex's column and line for the verse-final atom and builds the Sefaria, tanach.us and mgketer.org links in section 1.
+1. One spelled out this atom codepoint by codepoint in every source above and in Phonetic MAM.
+2. One wrote this file from a template. It lifted every pointed form and the `jta` from the data; asserted that the note's and the introduction's quotations of the Aleppo Codex agree, that UXLC 3.9 and both WLC conversions have the same codepoints, and how many U+05BD each form has; and checked the result with `has_std_mark_order`.
+3. One estimated the Leningrad Codex's column and line for the verse-final atom and built the Sefaria, tanach.us and mgketer.org links in section 1. The tracked `py/main_verse_links.py` builds links of the same kinds.
