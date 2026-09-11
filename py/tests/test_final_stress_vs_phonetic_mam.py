@@ -44,14 +44,15 @@ clone is REQUIRED rather than skipped around, and a missing MAM-private fails he
 always did.
 
 IN A CLOUD CONTAINER THE WHOLE MODULE IS SKIPPED.  Ben's decision, 2026-09-11, extending to these
-two tests the treatment ``py/main_0_mega.py`` already gives its two MAM-private steps,
-``near-aleppo-census`` and ``accgram-survey-post-stress-meteg``.  Until then the mega was
+two tests the treatment ``py/main_0_mega.py`` already gave its two MAM-private steps,
+``near-aleppo-census`` and ``accgram-survey-post-stress-meteg``; the first of them was deleted
+from the mega later that day, and the second is skipped the same way still.  Until then the mega was
 MAM-private-free in the cloud and the suite was not, so a cloud session could not verify its own
 work against a green suite: measured in a container on 2026-09-11, these two were the only failures
 in 992, both raising ``FileNotFoundError`` from ``paths.require_sibling``.  The discriminator is
 ``graphviz_pin.in_cloud_session()``, the same predicate the mega and ``survey_dot`` use, and it
 reads ``CLAUDE_CODE_REMOTE`` alone -- so the module is skipped in a container WHETHER OR NOT
-MAM-private is attached there, which is how the mega's two steps read too.  What it costs is that a
+MAM-private is attached there, which is how the mega's survey step reads too.  What it costs is that a
 cloud run reports these 2 skips beside the semantic skips of ``test_edition_transcriptions.py``;
 the reason string below is what tells the two kinds apart under ``-rs``.
 

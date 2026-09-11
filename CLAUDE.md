@@ -813,7 +813,8 @@ skipped** on 2026-09-10.
 sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
 and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
 `graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
-`py/main_0_mega.py` gives its two MAM-private steps. On any machine of Ben's nothing changes: a
+`py/main_0_mega.py` gives its MAM-private step (it had two until `near-aleppo-census` was deleted
+later that day). On any machine of Ben's nothing changes: a
 missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
 these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
 the reason strings are what tell the two kinds apart under `-rs`.
