@@ -769,20 +769,15 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 reproducing them is the test of this code (§"Writing tests — differential and lint-shaped only"
 below). The case that produced the rule: the Wikisource refresh `209b4c05` of 2026-09-10 was
 integrated as `a0a2e3ab` after a suite run passed 992 tests, on a tree where the mega's
-`diff-mpplus` step raises, because the mpplus diff cannot reconstruct the meteg that the refresh
-added at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is on branch
-`dual-agent-review-2026-09-10` until that review round integrates. A mega run before the commit
-could not have caught it: `diff-mpplus` compares committed revisions, reading `MAM-parsed/plus/`
-at HEAD through git rather than from the working tree, so only a run made after the commit sees the
+`diff-mpplus` step raised, because the mpplus diff could not reconstruct the meteg that the
+refresh added at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is
+on branch `dual-agent-review-2026-09-10` until that review round integrates, and which calls the
+step `diff-mpp`, its name until 2026-09-11. Every mega run on a tree containing `209b4c05` stopped
+at that step until `f11ecaf8` fixed the defect on 2026-09-11. A mega run before the commit could
+not have caught it: `diff-mpplus` compares committed revisions, reading `MAM-parsed/plus/` at HEAD
+through git rather than from the working tree, so only a run made after the commit sees the
 commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
 suite takes about two.
-
-**Known failure, recorded 2026-09-11: until that defect is fixed, every run on a tree containing
-`209b4c05` stops at `diff-mpplus`.** Do not fix it on an unrelated branch; the remediation of the
-2026-09-10 review owns the fix. Finish the check with a second run that starts at the next step,
-`py/main_0_mega.py --resume-from diff-ctr-vs-mam`, and report the `diff-mpplus` failure as known.
-The step was named `diff-mpp` until 2026-09-11, and finding 1 of
-`doc/review-findings-2026-09-10.md` uses that name.
 
 **The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
 rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
