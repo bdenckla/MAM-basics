@@ -26,7 +26,10 @@ Faithfulness notes (flex semantics reproduced):
     only `r` is consumed, exactly as flex consumes only the left part;
   - flex's `{TEXT}` (= `[^ \r\n\-]*`) is greedy and stays within one
     maqqef/space-delimited atom; Python `re` greediness reproduces the longest
-    match (backtracking to the rightmost terminator).
+    match (backtracking to the rightmost terminator);
+  - the rule loop is skipped only at a position where no rule but the final
+    catch-all can match, which changes how long a scan takes and never a token
+    (the comment above `_build_alternation`).
 
 Divergence from the goerwitz C oracle (metigah-zaqef): the C lexer's methiga-zaqef body class
 `[^01234680]*` excludes no literal space, so its qadma...zaqef span runs across a space as
@@ -345,6 +348,64 @@ class HasLegarmeh:
         return self._count == 2
 
 
+# --- the fast path of scan_accents ------------------------------------------------
+# At most positions of a body -- a ``LETTER`` placeholder, a space, a maqaf -- no rule but the
+# catch-all at the end of _GG_RULES can match, and trying every rule in turn at such positions
+# was most of the scanner's time: 179 million ``match`` calls in one mega run's chanted-word
+# survey, measured 2026-09-11 (doc/mega-timing-2026-09-11.md).  So every rule but the catch-all
+# is also compiled into one alternation, which matches at a position if and only if one of those
+# rules matches there.  Where it does not, the flex loop in scan_accents could pick nothing but
+# the catch-all's one-character match, which emits no token, so scan_accents takes that match
+# without running the loop.  Where it does, the loop runs exactly as before, so the longest match
+# still wins and rule order still breaks ties.  The fast path changes how long a scan takes and
+# never a token it emits.
+#
+# The alternation is built from the rule list scan_accents is about to read, never once at
+# import: almost_errors_trees._no_mahapakh_qadma_fuse rebinds _GG_RULES to a shorter list for one
+# exhibit, and an alternation built from any list but the one the loop reads is the one way the
+# fast path could emit a different token.  A rule list that does not end in the catch-all, or
+# whose other rules cannot be joined safely, gets no alternation, and the loop then runs at every
+# position.
+
+
+def _build_alternation(rules: tuple) -> re.Pattern[str] | None:
+    """One regex matching wherever any rule of ``rules`` but its final catch-all matches.
+
+    None when no such regex can be built safely: when ``rules`` does not end in the catch-all
+    (``.`` with DOTALL, emitting no token), or when some other rule has a capturing group, whose
+    number the joining would shift, or flags other than the default, which the joined regex could
+    not give that rule alone.
+    """
+    if not rules:
+        return None
+    catch_all, catch_all_type = rules[-1]
+    if not (
+        catch_all.pattern == "."
+        and catch_all.flags & re.DOTALL
+        and catch_all_type is None
+    ):
+        return None
+    others = rules[:-1]
+    default_flags = re.compile("").flags
+    if any(regex.groups or regex.flags != default_flags for regex, _ttype in others):
+        return None
+    return re.compile("|".join(f"(?:{regex.pattern})" for regex, _ttype in others))
+
+
+# The rule list the alternation was last built from, kept as a tuple so that a list changed in
+# place is caught as surely as a list rebound, and the alternation built from it.
+_ALTERNATION_CACHE: dict[str, object] = {"rules": (), "alternation": None}
+
+
+def _alternation_for(rules: list) -> re.Pattern[str] | None:
+    """The fast path's alternation for ``rules``, rebuilt only when ``rules`` has changed."""
+    snapshot = tuple(rules)
+    if snapshot != _ALTERNATION_CACHE["rules"]:
+        _ALTERNATION_CACHE["rules"] = snapshot
+        _ALTERNATION_CACHE["alternation"] = _build_alternation(snapshot)
+    return _ALTERNATION_CACHE["alternation"]
+
+
 def scan_accents(
     body: str, bb: str, chnu: int, vrnu: int, has_legarmeh: HasLegarmeh
 ) -> list[Token]:
@@ -353,6 +414,9 @@ def scan_accents(
     Emits accent tokens followed by a terminating SOFPASUQ.  Mirrors flex:
     at each position pick the longest match; break ties by rule order.  Stops
     after the first 00 (sof pasuq), which in flex returns to the EE state.
+    Where no rule but the final catch-all can match, the catch-all's match is
+    taken without trying the other rules; the comment above `_build_alternation`
+    says why that emits exactly the tokens the full loop would.
 
     The structured book ref `(bb, chnu, vrnu)` and `has_legarmeh` resolve the
     74{TEXT}05-not-before-revia rule to LEGARMEH or MUNAX.
@@ -366,19 +430,28 @@ def scan_accents(
     # meteg/silluq code (35|75|95) is swallowed; reset whenever any later accent is
     # emitted, so only a trailing (verse-final) silluq survives.
     pending_silluq: tuple[int, int] | None = None
+    # Read once, so that the loop and its alternation come from the same list.
+    rules = _GG_RULES
+    alternation = _alternation_for(rules)
     while pos < n:
         best_len = 0
         best_type: str | None = None
         best_is_rule = False
-        for regex, ttype in _GG_RULES:
-            m = regex.match(body, pos)
-            if m is None:
-                continue
-            length = m.end() - m.start()
-            if length > best_len:
-                best_len = length
-                best_type = ttype
-                best_is_rule = True
+        if alternation is not None and alternation.match(body, pos) is None:
+            # No rule but the catch-all matches here, so the loop below could pick only the
+            # catch-all's one-character match, which emits no token.
+            best_len = 1
+            best_is_rule = True
+        else:
+            for regex, ttype in rules:
+                m = regex.match(body, pos)
+                if m is None:
+                    continue
+                length = m.end() - m.start()
+                if length > best_len:
+                    best_len = length
+                    best_type = ttype
+                    best_is_rule = True
         # The catch-all `.` guarantees best_is_rule is always True for pos < n.
         assert best_is_rule, f"no rule matched at position {pos} in {body!r}"
         advance = max(best_len, 1)
