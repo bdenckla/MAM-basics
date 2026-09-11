@@ -92,10 +92,11 @@ a slower mega.
    `metegs_in_the_surveyed_snapshot` falls from 38,161 to 38,154. **It is not fixed here**
    because the fix changes figures that the nine post-stress-meteg pages state in prose, which is
    an editorial decision rather than a timing one; the regenerated JSON is not committed either.
-   A session in another worktree hit the same assertion at 10:14 the same morning.
+   Another session found the same failure the same morning while checking the integration of
+   `claude/loving-ptolemy-1i4seh`, which reached `main` as `478bdae6` all the same.
 
-Until both are fixed, a full run is these three invocations, the second resuming after `diff-mpp`
-and the third after `gen-site`:
+Until both are fixed, a full run is three invocations, the second resuming after `diff-mpp`. The
+runs measured here resumed the third time after `gen-site`, skipping it:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
@@ -109,8 +110,20 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --resume-from diffable-pointed-hebrew
 ```
 
-`gen-site`'s time does not appear in such a run. Run alone on the committed survey JSON, it
-took 4.1 s.
+A better third invocation for an integration check, which the other session used, puts the
+committed survey JSON back and resumes *from* `gen-site`, so that `gen-site` and the four steps
+after it are checked too:
+
+```powershell
+git restore out/accgram/post-stress-meteg.json
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --resume-from gen-site
+```
+
+`gen-site`'s time does not appear in the runs measured here. Run alone on the committed survey
+JSON, it took 4.1 s.
 
 ## 3. Where the time goes: all 60 steps
 
