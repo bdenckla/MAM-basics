@@ -830,36 +830,43 @@ this session" and "since reverted" with no date, and gave no repo paths.
   stranded copies were the reason a global entry was wanted; kept because the reason has
   outlived them.
 
-## Surveys must declare their template projection — no blind dives
+## Template dispatch is closed — no defaults, guesses, or blind dives
 
-A **blind dive** is generic recursion that treats every parameter of every template as
-ordinary text. Do not write one for a Bible-text survey. A template parameter can be
-Scripture, documentation, apparatus, formatting, or one of several alternatives, and those
-roles cannot be recovered by flattening the structure after the fact.
+Every dispatch on a template name is **closed**. This applies to parsers, renderers,
+generators, surveys, transformations, and shared helpers—not only to Bible-text surveys.
+Every recognized template has an explicit decision, and an unrecognized template raises.
+There is no default template behavior.
 
-- **Classify every reachable template explicitly.** A survey declares which parameter or
-  parameters answer its question, which parameters it ignores, and which wrappers contribute
-  only a separator or structure. There is no "walk all values" fallback. A new or unclassified
-  template raises, so a source-schema change cannot silently enlarge the survey's population.
+- **Name every recognized template.** An explicit dispatch table, match arm, or deliberately
+  enumerated set may route several named templates to the same handler. What is forbidden is
+  a catch-all arm that flattens, preserves, drops, renders, or recursively visits an
+  unrecognized template. Recursion into a template's children begins only after that template
+  has been recognized and the handler has named which children have which roles.
+- **Never guess semantics from shape.** Parameter count, parameter names, the presence of Hebrew
+  letters or accents, or similarity to another template do not determine behavior for an
+  unrecognized template. A recognized handler validates the shape it expects and raises when
+  the shape changes. Adding a source template requires an explicit decision everywhere that
+  can reach the new template.
+- **A blind dive is one forbidden default.** Generic recursion that treats every parameter as
+  ordinary text silently merges Scripture, documentation, apparatus, formatting, and
+  alternatives. A Bible-text path excludes documentation bodies while retaining any parameter
+  explicitly classified as Scripture. A note path reads the exact note fields it needs.
 - **Edition display and survey population are separate decisions.** Most editions include both
   ketiv and qere, but that does not make both relevant to every survey: a consonantal survey
   may need the ketiv, a pronunciation or pointing survey may need the qere, and a layout or
-  apparatus survey may need both. Likewise, an ordinary survey of one selected Scripture
-  stream normally chooses one cantillation strand, one qamats alternative, and one form from
-  a deḥi or tsinnor stress-helper template. State the choices for that survey; do not hide
-  them in generic recursion or infer them from what an edition usually displays.
-- **Documentation needs the same discipline.** A Bible-text survey excludes documentation-note
-  bodies while retaining any parameter that is actually Scripture. A survey of notes reads
-  the exact note fields it needs. The presence of Hebrew letters or accents in a documentation
-  parameter never makes that parameter Bible text.
-- **Walking every branch is specialized behavior.** A template inventory, schema audit, or
-  survey of the dataset may deliberately inspect every alternative. Name that scope in the
-  module and output, keep it distinct from a survey of a real or implied edition, and still
-  classify the templates rather than relying on an accidental recursive walk.
-- **Make the projection reviewable.** Keep the choices in one named policy or explicit call-site
-  dispatch, record them in a generated survey's metadata or documentation where practical, and
-  verify regenerated outputs as differential tests. Ben's instruction, 2026-09-10, after a
-  stale doubled-pashta report prompted an audit that found surveys visiting unselected template
+  apparatus survey may need both. Likewise, a survey of one selected Scripture stream normally
+  chooses one cantillation strand, one qamats alternative, and one form from a deḥi or tsinnor
+  stress-helper template. Each caller states the choices its question requires.
+- **Walking every branch is still closed dispatch.** A template inventory, schema audit, or
+  survey of the dataset may deliberately inspect every alternative, but only after recognizing
+  the template and explicitly deciding that every branch belongs in that operation. Name that
+  scope in the module and output; "all branches" is a decision for a named template, never the
+  fallback for an unknown template.
+- **Make every decision reviewable.** Keep template choices in a named policy or explicit
+  call-site dispatch, record a generated survey's projection in metadata or documentation where
+  practical, and verify regenerated outputs as differential tests. Ben's instruction,
+  2026-09-10, restores a rule abandoned with earlier user-wide instruction files after a stale
+  doubled-pashta report prompted an audit that found surveys visiting unselected template
   branches.
 
 ## Tests: differential and lint-shaped only
