@@ -514,6 +514,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " whose recommendation Ben agreed to on 2026-09-10 and phase 5a of"
         " doc/PLAN-mega-coverage.md carried out."
     ),
+    "py/main_verse_links.py": (
+        "Claude-written proposal, not yet reviewed by Ben: an on-demand lookup that"
+        " prints the links for a verse, and an atom of it, named on its command line,"
+        " and writes nothing.  Its module docstring and"
+        " dot-claude/skills/verse-links/SKILL.md describe that use.  Declared when the"
+        " integration of doc/PLAN-mega-coverage.md merged main at 225ea3f2, which had"
+        " gained the program in 5aae8465."
+    ),
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"
         " of seven checks, run by hand, and each of the seven is accounted for on its"
