@@ -853,6 +853,12 @@ with the one `parse-ws` step, and still has no second WS parse. The same decisio
 supersedes the instruction in "Phase 4: production cutover and source
 documentation" that Google parsing and `diff wsgo` "remain explicit commands".
 Added by the Claude session that executed phase 7b.
+The acceptance in that same Phase 4 section, that "ordinary generation works with
+Google input access made to fail in a scratch harness", now holds for the
+`parse-ws` step alone: with Google input access made to fail, `parse-go` raises,
+and a failure in `parse-go` or `diff-wsgo` stops every step after it, as any
+step's failure does. Added by the Claude session that executed phase 8 of
+`doc/PLAN-mega-coverage.md`.
 
 The comparator now maintains separate comparison values and auto-edit payloads.
 Google search text is exact Google Wikitext. Wikisource replacement text has the
