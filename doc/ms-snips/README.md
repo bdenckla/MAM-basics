@@ -5,7 +5,7 @@ manuscript MAM cites actually has. One file per fact, named
 `<manuscript>-<page>-<ref>-<slug>.png`.
 
 **Where a snip goes.** A manuscript with its own page-snips folder keeps its snips there —
-`../../leningrad/page-snips/`, `../../aleppo/`, `../../cam1753/page-snips/`. This folder
+`../../leningrad/page-snips/`, `../../aleppo/page-snips/`, `../../cam1753/page-snips/`. This folder
 is for the rest, which is why the Leningrad half of the Lamentations 2:3 question below
 lives in the Leningrad folder rather than here.
 MAM-basics is the fallback because it is where MAM's sigla are decoded — see

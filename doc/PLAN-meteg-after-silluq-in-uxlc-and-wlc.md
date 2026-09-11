@@ -19,7 +19,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 
    Ben's criterion compares MAM's last U+05BD with the source's last U+05BD directly, so neither exclusion applies to it.
 3. **The post-stress-meteg survey's post-silluq page treats one verse of the Leningrad Codex.** `gh-pages/post-stress-meteg-post-silluq.html` is about 1 Samuel 17:5, with crops of the Leningrad Codex and the Aleppo Codex; the survey's count of post-silluq metegs (`post_silluq` in `py/accgram/post_stress_meteg.py`) is of MAM's side only.
-4. **Psalms 72:15 was looked at on its own on 2026-09-10**, in `doc/meteg-after-silluq-psalms-72-15.md`. Ben confirmed from Sefaria's image the same day that the Leningrad Codex has both strokes there, and from mgketer.org's that the Aleppo Codex has only the one under the kaf, so that calibration case is a fact about the manuscript and not only about the transcriptions.
+4. **Psalms 72:15 was looked at on its own on 2026-09-10**, in `doc/meteg-after-silluq-psalms-72-15.md`. Ben confirmed from Sefaria's image the same day that the Leningrad Codex has both strokes there, and from an image of the Aleppo Codex that it has only the one under the kaf, so that calibration case is a fact about the manuscript and not only about the transcriptions.
 
 ## The run
 

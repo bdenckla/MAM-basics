@@ -12,6 +12,7 @@ MAM-basics contains the programs that read and write this product directory. The
 - `column-coordinates/` holds column geometry annotated by Ben Denckla.
 - `aleppo-wiki/` holds J. David Stark's index material and the Wikisource page derived from it.
 - `doc/` holds procedures for the Aleppo page-location work.
+- `page-snips/` holds crops of the Codex's pages, each kept as the evidence behind a stated fact about the manuscript; its README names them.
 
 The published scholarly pages are under [`../gh-pages/aleppo/`](../gh-pages/aleppo/) and are served at [bdenckla.github.io/MAM-basics/aleppo/](https://bdenckla.github.io/MAM-basics/aleppo/).
 
