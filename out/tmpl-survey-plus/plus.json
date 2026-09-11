@@ -71,7 +71,7 @@
       "wtel_subtype": "מ:דחי",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 2316
+      "count_E": 2317
     },
     {
       "wtel_type": "tmpl",
@@ -211,7 +211,7 @@
       "wtel_subtype": "נוסח",
       "count_C": 274,
       "count_D": 35,
-      "count_E": 3589
+      "count_E": 3592
     },
     {
       "wtel_type": "tmpl",
@@ -295,7 +295,7 @@
       "wtel_subtype": "ש",
       "count_C": 16,
       "count_D": 1,
-      "count_E": 3280
+      "count_E": 3282
     }
   ],
   "stack_counts": [
@@ -453,7 +453,7 @@
     },
     {
       "stack": "E/מ:דחי",
-      "count": 2250
+      "count": 2251
     },
     {
       "stack": "E/מ:הערה-2",
@@ -569,7 +569,7 @@
     },
     {
       "stack": "E/נוסח",
-      "count": 3547
+      "count": 3550
     },
     {
       "stack": "E/נוסח/כו״ק",
@@ -737,7 +737,7 @@
     },
     {
       "stack": "E/נוסח/ש",
-      "count": 3222
+      "count": 3224
     },
     {
       "stack": "E/סס",
@@ -848,7 +848,7 @@
     {
       "wtel_subtype": "מ:דחי",
       "arg_count": 2,
-      "count": 2316,
+      "count": 2317,
       "variations": 1
     },
     {
@@ -1016,7 +1016,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3898,
+      "count": 3901,
       "variations": 1
     },
     {
@@ -1112,7 +1112,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3297,
+      "count": 3299,
       "variations": 1
     }
   ],
@@ -1130,10 +1130,10 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 4190,
+      "fully_checked": 4192,
       "partially_checked": 0,
       "totally_unchecked": 0,
-      "total": 4190
+      "total": 4192
     }
   },
   "normal_order_cov_top_paths_by_case": {
@@ -1209,7 +1209,7 @@
       "fully_checked": [
         {
           "stack": "E/נוסח/ש",
-          "count": 3222
+          "count": 3224
         },
         {
           "stack": "E/נוסח/כו״ק",

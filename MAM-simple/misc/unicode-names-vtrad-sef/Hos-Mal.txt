@@ -18004,7 +18004,7 @@ v,:,l,o,(mos),α,-,y,:,d,_,b,·,:,r,(mun),v,·
 SPACE
 k,a,z,a,(zaq_q),b
 SPACE
-v,:,l,o,(mos),α,-,y,i,m,·,a,c,‥,(mer),α
+v,:,l,o,α,-,y,i,m,·,a,c,‥,(mer),α
 SPACE
 b,·,:,p,i,y,h,∵,(tip),m.
 SPACE
