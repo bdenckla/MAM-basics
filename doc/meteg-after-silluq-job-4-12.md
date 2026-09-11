@@ -82,7 +82,43 @@ Later the same day Ben read both codices at this verse (section 3). In the Alepp
 
 1. **Yeivin says both codices keep a gaʿya to the left of a vowel under the same letter, with very few exceptions, which he puts down mostly to correction or to lack of space in the usual position; C, S and S1, in his sigla, often have it to the right for no particular reason** (ITM §314; section 5, item 7). The possible erasure Ben sees in the Leningrad Codex fits the first of those two causes. Against the second, at Psalms 72:15, where a kaf with a segol and a stroke stands before a nun with a sheva as the mem does here, UXLC 3.9 records the Leningrad Codex's stroke after the segol, with no leading meteg. Both are Claude's observations.
 2. **MAM's introduction says the Leningrad Codex has a meteg to the right of its vowel in dozens of places, most of them in the first part of Genesis, and that the placement has no meaning** (`in/mam-ws-intro/ch3.mediawiki` line 1371, the section `געיה ימנית`). MAM puts every meteg to the left, and where the Aleppo Codex is missing it records the Leningrad Codex's right-side meteg in a note. Of the 259 verses whose notes in MAM's source name a right-side meteg, 228 are in the Torah, and 3 name the Aleppo Codex, Job 8:3 among them; Job 4:12's atom has no note. The introduction's source for where a meteg stands is Yeivin's study of the Aleppo Codex (section 6).
-3. **UXLC 3.9 records a leading meteg in 727 atoms, 243 of them in Genesis and 10 in Job, out of the 40,709 atoms with a U+05BD.** A leading meteg is counted here as a U+05BD U+034F with no vowel between its letter and it and a vowel after it. UXLC has U+05BD U+034F in 146 further atoms, 144 forms of Jerusalem and the Decalogue's פני at Exodus 20:3 and Deuteronomy 5:7, where the U+034F comes before a second vowel on the same letter; UXLC's header names Jerusalem and the Decalogue beside leading metegs as the U+034F's uses (`uxlc/in/UXLC-rest/TanachHeader.xml` line 939). By the vowel after it, the 727 are patah 412, qamats 184, segol 59, tsere 37, hiriq 28, sheva 4, hataf patah 2 and qubuts 1, and 623 are on the atom's first letter. In 31 verse-final atoms the leading meteg is the atom's last U+05BD, so in UXLC's record a silluq, 29 of them in Psalms, Proverbs and Job and two on a segol, at Job 7:9 and Proverbs 22:7; in 50, Job 4:12 among them, it stands before another U+05BD. No transcription on disk records where the Aleppo Codex puts a meteg, so there is no count to set beside these, which fits Ben's suspicion that he sees the Leningrad Codex's more because the editions keep them. This is Claude's inference.
+3. **UXLC 3.9 records a leading meteg in 727 atoms, 243 of them in Genesis and 10 in Job, out of the 40,709 atoms with a U+05BD.** A leading meteg is counted here as a U+05BD U+034F with no vowel between its letter and it and a vowel after it. UXLC has U+05BD U+034F in 146 further atoms, 144 forms of Jerusalem and the Decalogue's פני at Exodus 20:3 and Deuteronomy 5:7, where the U+034F comes before a second vowel on the same letter; UXLC's header names Jerusalem and the Decalogue beside leading metegs as the U+034F's uses (`uxlc/in/UXLC-rest/TanachHeader.xml` line 939). By the vowel after it, the 727 are patah 412, qamats 184, segol 59, tsere 37, hiriq 28, sheva 4, hataf patah 2 and qubuts 1. 623 are on the atom's first letter, among them 371 of the 412 on a patah, the letter being a vav 157 times, a he 69 times and a lamed 33 times, and 52 of the 59 on a segol, Job 4:12's mem among them. In 31 verse-final atoms the leading meteg is the atom's last U+05BD, so in UXLC's record a silluq, 29 of them in Psalms, Proverbs and Job and two on a segol, at Job 7:9 and Proverbs 22:7 (the table below); in 50, Job 4:12 among them, it stands before another U+05BD. No transcription on disk records where the Aleppo Codex puts a meteg, so there is no count to set beside these, which fits Ben's suspicion that he sees the Leningrad Codex's more because the editions keep them. This is Claude's inference.
+
+The 31 verse-final atoms whose leading meteg is their last U+05BD, and so in UXLC's record an early silluq, are these. Ben, 2026-09-10: "I find those observations pretty interesting and pretty relevant to our Job 4:12 word." They show that in UXLC's record of the Leningrad Codex an early stroke can be the silluq: three times in Job, and twice on a segol, once of those at Job 7:9. So the early position of Job 4:12's stroke on the mem does not mark it as a meteg rather than a silluq; this is Claude's observation.
+
+| Reference | UXLC 3.9's form | Vowel after the leading meteg |
+| --- | --- | --- |
+| 1 Samuel 15:22 | אֵילֽ͏ִים׃ | hiriq |
+| Isaiah 33:15 | בְּרֽ͏ָע׃ | qamats |
+| Psalms 7:10 | צַדּֽ͏ִיק׃ | hiriq |
+| Psalms 9:13 | עֲנָוֽ͏ִים׃ | hiriq |
+| Psalms 10:1 | בַּצָּרֽ͏ָה׃ | qamats |
+| Psalms 10:12 | עֲנָוֽ͏ִים׃ | hiriq |
+| Psalms 16:6 | עָלֽ͏ָי׃ | qamats |
+| Psalms 17:12 | בְּמִסְתָּרֽ͏ִים׃ | hiriq |
+| Psalms 18:10 | רַגְלֽ͏ָיו׃ | qamats |
+| Psalms 49:5 | חִידָתֽ͏ִי׃ | hiriq |
+| Psalms 57:1 | בַּמְּעָרֽ͏ָה׃ | qamats |
+| Psalms 68:10 | כֽוֹנַנְתּֽ͏ָהּ׃ | qamats |
+| Psalms 83:7 | וְהַגְרֽ͏ִים׃ | hiriq |
+| Psalms 86:13 | תַּחְתִּיּֽ͏ָה׃ | qamats |
+| Psalms 95:9 | פָעֳלֽ͏ִי׃ | hiriq |
+| Psalms 137:5 | יְמִינֽ͏ִי׃ | hiriq |
+| Psalms 137:6 | שִׂמְחָתֽ͏ִי׃ | hiriq |
+| Psalms 142:8 | עָלֽ͏ָי׃ | qamats |
+| Psalms 148:12 | נְעָרֽ͏ִים׃ | hiriq |
+| Proverbs 5:6 | תֵדֽ͏ָע׃ | qamats |
+| Proverbs 5:10 | נָכְרֽ͏ִי׃ | hiriq |
+| Proverbs 7:22 | אֱוֽ͏ִיל׃ | hiriq |
+| Proverbs 12:10 | אַכְזָרֽ͏ִי׃ | hiriq |
+| Proverbs 14:32 | צַדּֽ͏ִיק׃ | hiriq |
+| Proverbs 18:12 | עֲנָוֽ͏ָה׃ | qamats |
+| Proverbs 22:7 | מַלְוֽ͏ֶה׃ | segol |
+| Proverbs 25:19 | צָרֽ͏ָה׃ | qamats |
+| Proverbs 29:13 | יְהוֽ͏ָה׃ | qamats |
+| Job 7:9 | יַעֲלֽ͏ֶה׃ | segol |
+| Job 29:19 | בִּקְצִירֽ͏ִי׃ | hiriq |
+| Job 31:5 | רַגְלֽ͏ִי׃ | hiriq |
 
 Ben's view, the same day: that the two codices agree on both strokes was expected, since MAM, which follows the Aleppo Codex's metegs, has both, and UXLC and WLC record both for the Leningrad Codex. The only surprising information is that they agree on the earliness of the first stroke, and nobody knows how to interpret that, or whether it should be interpreted at all. It therefore leaves the disposition below as it was.
 
@@ -117,6 +153,6 @@ All are throwaway scripts, gitignored under `.novc/` in the worktree named at th
 3. `.novc/job412_crops.py`, `.novc/job412_zoom.py` and `.novc/job412_cam_line.py` (the last with the arguments `550 1268 660 1372`) make the crops and ruled enlargements of section 3.
 4. `.novc/job412_write_doc.py` writes this file from `.novc/job412_doc_template.md`, lifting every pointed form and every `jta` from the data with a uniqueness assertion, and checks the result with `has_std_mark_order`.
 5. `.novc/lookup_links.py` estimates the Leningrad Codex's column and line for the verse-final atom and builds the links of section 3.
-6. The counts of MAM's notes in section 4's subsection on stroke position are ripgrep line counts (the Grep tool's count mode) over `in/mam-ws/*.json`, which has a line per verse: `בגעיה ימנית|געיה ימנית`, and `א[?!]*=ב?געיה ימנית` for the notes naming the Aleppo Codex. The counts of UXLC 3.9's leading metegs come from `.novc/uxlc_leading_meteg_count.py`, which writes `.novc/uxlc_leading_meteg_report.txt` with every verse-final atom that section 4's item 3 counts.
+6. The counts of MAM's notes in section 4's subsection on stroke position are ripgrep line counts (the Grep tool's count mode) over `in/mam-ws/*.json`, which has a line per verse: `בגעיה ימנית|געיה ימנית`, and `א[?!]*=ב?געיה ימנית` for the notes naming the Aleppo Codex. The counts of UXLC 3.9's leading metegs come from `.novc/uxlc_leading_meteg_count.py`, which writes `.novc/uxlc_leading_meteg_report.txt` with every verse-final atom that section 4's item 3 counts, and `.novc/uxlc_early_silluq_table.md`, section 4's table of the 31 early silluqs, lifted from `in/UXLC-39/*.xml` and put into MAM-normal mark order with `give_std_mark_order`; `.novc/job412_patch_early_silluqs.py` put that table into the template.
 
 The literature search of section 5 ran as a throwaway script in the session's scratchpad, which does not outlast the session; the patterns in section 5 are its durable record.
