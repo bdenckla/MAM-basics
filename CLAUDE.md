@@ -745,6 +745,52 @@ record lacked one, so the lookup never ran. The renderer raises instead now, and
 build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
 `al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
 
+## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
+
+**In this repo, step 2 of the user-level worktree integration is a mega run, not a suite run.**
+Ben's decision, 2026-09-11. After `git merge --no-edit main` in the worktree (step 1), run the
+mega on the merged tree from the worktree root, then read the `git diff` it leaves:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+```
+
+1. **A failing step is a failure**, fixed by a further commit on the branch, never on `main`.
+2. **Every change the run makes to a tracked file must be explained.** An explained change is
+   committed on the branch before the fast-forward: for example, the change log under
+   `gh-pages/MAM-with-doc/change-log/` catching up with a commit that changed
+   `MAM-parsed/plus/`. An unexplained change is a failure.
+3. **Running `py/main_test.py` as well is optional.** The user-level step 2 says "Run the repo's
+   suite"; for this repo, this section replaces that.
+4. **A branch that changes only instruction files** (`CLAUDE.md`, `dot-claude/`, `dot-Codex/`)
+   **needs no mega run**, since nothing the mega reads has changed.
+
+**Why a mega run, and why after the commit.** The committed outputs are the goldens, and
+reproducing them is the test of this code (§"Writing tests — differential and lint-shaped only"
+below). The case that produced the rule: the Wikisource refresh `209b4c05` of 2026-09-10 was
+integrated as `a0a2e3ab` after a suite run passed 992 tests, on a tree where the mega's
+`diff-mpp` step raises, because the mpplus diff cannot reconstruct the meteg that the refresh added
+at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is on branch
+`dual-agent-review-2026-09-10` until that review round integrates. A mega run before the commit
+could not have caught it: `diff-mpp` compares committed revisions, reading `MAM-parsed/plus/` at
+HEAD through git rather than from the working tree, so only a run made after the commit sees the
+commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
+suite takes about two.
+
+**Known failure, recorded 2026-09-11: until that defect is fixed, every run on a tree containing
+`209b4c05` stops at `diff-mpp`.** Do not fix it on an unrelated branch; the remediation of the
+2026-09-10 review owns the fix. Finish the check with a second run that starts at the next step,
+`py/main_0_mega.py --resume-from diff-ctr-vs-mam`, and report the `diff-mpp` failure as known.
+
+**The mega writes one thing outside this repo.** Its `near-aleppo-census` step rewrites
+MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run can leave a diff in
+MAM-private as well. Read that diff the same way, and commit it in MAM-private, as the 2026-09-10
+refresh did (MAM-private `ecab726`). Ben wants that cross-repo write removed (2026-09-11); until
+it is, this is the procedure.
+
+**Codex does not load this file**, so the same rule is written into `~/.codex/AGENTS.md`, which
+is tracked here as `dot-Codex/user-wide-AGENTS.md`.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:
