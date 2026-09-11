@@ -387,17 +387,17 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
    untouched (they last changed in `321b2eeb`); the commit message "regenerate the complete
    pipeline" is therefore not true of the change log, and finding 1 now blocks regenerating it.
 
-3. **Stale disposition, unfixed: finding 13.3's "Fixed" record describes a display fallback that
-   `3a1ab7f0` retired three hours after the fast-forward at `9d1de074`, and no dated note says
-   so.**
+3. **Outdated written account, unfixed: finding 13.3's "Fixed" disposition describes a display
+   fallback that `3a1ab7f0` retired three hours after the fast-forward at `9d1de074`, and no
+   dated note says so.**
    `doc/review-findings-2026-09-08.md:1054` ("both fallback sites select unannotated source
    text") and `doc/PLAN-remediate-review-findings-2026-09-08.md:1952–1956` ("Both `mam_form or
    chanted_word` sites now select the snapshot's unannotated form when the MAM form is absent")
    describe `f1166057`'s design, and the final table at `:1166` calls 13.3 "Fixed … Unannotated
    selection, matching and annotation validation pass the retained technical proofs." At
    `0354b6cc` the author module has no `mam_form or chanted_word` site: `_mam_form`
-   (`py/author_site/post_stress_meteg.py:2079–2096`) raises `SurveyProblem` on a displayed record
-   with no `mam_form`, its docstring saying "RENDERING NEVER READS MAM-PRIVATE";
+   (`py/author_site/post_stress_meteg.py:2079–2096`) raises `SurveyProblem` on a displayed survey
+   entry with no `mam_form`, its docstring saying "RENDERING NEVER READS MAM-PRIVATE";
    `_snapshot_unannotated_form`'s docstring (`py/accgram/post_stress_meteg.py:2361–2365`) says
    nothing outside that module calls it; and `CLAUDE.md`'s section "A code path reads MAM-private
    every time it runs, or never" names this fallback as the case that produced the rule
@@ -847,7 +847,7 @@ the anchor `0354b6cc`, where all three findings still stand as written above.
 |---|---|---|
 | 2026-09-11 | 1 | Has been fixed by `f11ecaf8` on `main`. Every op that places a mark now records the index the mark has among its cluster's marks in the new text, and `change_ops_apply` places it there, so the mpplus diff rebuilds Isaiah 24:18 and the mega's step, now named `diff-mpplus`, no longer stops. The finding's command re-establishes it with the subcommand renamed: `py/main_diff.py mpplus --old 9ce6ee5 --new HEAD`. |
 | 2026-09-11 | 2 | Has been fixed by `6b45ad0f` on `main`. `gh-pages/MAM-with-doc/change-log/unpinned-latest.json` has 69 records, the 57 it had plus the twelve verses the refresh `209b4c05` changed; `unpinned-latest.html` and `index.html` were regenerated with it. |
-| 2026-09-11 | 3 | Has been fixed by the commit that adds this section. It puts dated corrections beside the three records the finding names: the Wave 3 technical paragraph and the 13.3 row of the final disposition table in `doc/review-findings-2026-09-08.md`, and items 1 and 2 of the Wave 3 technical source changes in `doc/PLAN-remediate-review-findings-2026-09-08.md`. Each correction says that `3a1ab7f0` retired the display fallback. |
+| 2026-09-11 | 3 | Has been fixed by the commit that adds this section. It puts dated corrections beside the three written accounts the finding names: the Wave 3 technical paragraph and the 13.3 row of the final disposition table in `doc/review-findings-2026-09-08.md`, and items 1 and 2 of the Wave 3 technical source changes in `doc/PLAN-remediate-review-findings-2026-09-08.md`. Each correction says that `3a1ab7f0` retired the display fallback. |
 | 2026-09-11 | 4 | Has been fixed by the commit that adds this row, by making `CLAUDE.md`'s mark-order section state only what was measured. Re-measured at `2bb94060` with the same counting as `D_04_treewide_scan.py`: 699,940 clusters; 688,072 in the four mam-ws trees, `out/mam-ws-bot/proto-fmt-2/` now named among them; 4,621 in the named captures; and 7,247 in 152 files, now stated as unclassified rather than expected. At Ben's direction, whether each unclassified cluster is deliberate was not judged, so the two trees item 4 calls captures are counted among the unclassified. Item 3's two figures are both true of different sets: 656 clusters are in the 65 files under `py/`, and 369 of them are in the 51 `.py` files. |
 | 2026-09-11 | 5 | Has been fixed by the same commit. `CLAUDE.md` now names the prose lint's third pathspec element, the `.txt` under `in/accgram/edition_transcriptions/`, and says that any other `.txt` is covered by nothing. |
 | 2026-09-11 | 6 | Has been fixed by `89c1d7cf` on `main`, made on its own branch `fix-review-2026-09-10-finding-6` rather than this one, at Ben's direction that fix-now remediation lands outside the review branch. `doc/PLAN-efficient-wikisource-downloads.md` gains the section "Production refresh of the 20 chapters, 2026-09-10", recording what `209b4c05` changed against its parent `b2052ab9`, and dated corrections beside its three stale passages; `doc/PLAN-wikisource-derived-mam-products.md` and `doc/PLAN-evacuate-five-MAM-products.md` each gain one beside the passage items 2 and 4 name. The Phase 3 validation JSON stays as written, as a receipt. Re-measured from `209b4c05` alone, item 1's "21 verses changed in every product" holds for MAM-parsed plus and plain; `MAM-simple/xml-vtrad-mam/` changed in 11, the meteg changes. |
