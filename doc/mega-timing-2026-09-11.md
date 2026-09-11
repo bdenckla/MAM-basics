@@ -391,9 +391,10 @@ and the closing table are new lines on standard output, and nothing else in the 
 None of these is made on the branch; item 2 has since been made on `main`. Each saving is an
 estimate from the measurements named with it, after the two changes of §5.
 
-1. **Run independent steps at the same time.** The mega runs one step at a time, in one process,
-   on one of 20 logical processors. Most steps read only committed inputs or the output of one or
-   two earlier steps, and most of the notes in `_STEPS` say which. Two chains are long: the MAM
+1. **Run independent steps at the same time**, filed as #272. The mega runs one step at a time,
+   in one process, on one of 20 logical processors. Most steps read only committed inputs or the
+   output of one or two earlier steps, and most of the notes in `_STEPS` say which. Two chains
+   are long: the MAM
    chain, `parse-ws`, then `mam-simple`, then `accgram-survey-post-stress-meteg`, then
    `gen-site`; and the WLC chain, `wlc-json-and-unicode` (with `mam-simple`), then
    `accgram-run-prose`, then `accgram-survey-chanted-word-accents`, then `accgram-generate-html`.
@@ -414,8 +415,9 @@ estimate from the measurements named with it, after the two changes of §5.
    (2026-09-11 10:19, after the runs measured here), for the other reason Ben wanted it, the
    write into MAM-private. **Saving: the step's 17.6 s in run 1, 19.4 s pinned.** MAM-private's
    census goldens now need a trigger of their own.
-3. **Give the poetic scanner change 1's fast path.** `poetic_scanner.scan_accent_tokens` runs
-   the same loop over its 35 rules, ending in the same catch-all, and five steps call it, four of
+3. **Give the poetic scanner change 1's fast path**, filed as #273.
+   `poetic_scanner.scan_accent_tokens` runs the same loop over its 35 rules, ending in the same
+   catch-all, and five steps call it, four of
    them on the same 4,465 or so poetic verse bodies: 1.32 s in `accgram-run-poetic`, 1.15 s in
    `accgram-xcheck-poetic`, 1.41 s in `accgram-servi-xcheck`, 1.52 s in `accgram-generate-html`
    and 2.14 s in `accgram-survey-post-stress-meteg`, 7.54 s in all. **Expected saving: about
