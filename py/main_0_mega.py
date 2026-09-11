@@ -655,13 +655,14 @@ _STEPS = [
     # routine rewrote out/accgram/post-stress-meteg.json; the survey was run by hand from
     # main_accgram.py when the corpus moved.  Placed immediately before gen-site, which
     # renders from the JSON it writes, and so after every step that writes MAM-simple, whose
-    # xml-vtrad-mam it reads.
+    # json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  This comment and the
+    # description below said xml-vtrad-mam until 2026-09-11.
     StepRecord(
         "accgram-survey-post-stress-meteg",
         _run_accgram_survey_post_stress_meteg,
-        "reads MAM-private's Phonetic MAM and MAM-simple's xml-vtrad-mam, and writes the"
-        " tracked out/accgram/post-stress-meteg.json; skipped in a cloud session; must"
-        " come before gen-site",
+        "reads MAM-private's Phonetic MAM and MAM-simple's json-vtrad-mam, and writes"
+        " the tracked out/accgram/post-stress-meteg.json; skipped in a cloud session;"
+        " must come before gen-site",
     ),
     # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
     # post-stress-meteg pages from the JSON that step writes.  Nothing else it reads is
