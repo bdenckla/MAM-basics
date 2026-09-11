@@ -160,7 +160,7 @@ After the exchange closes, close-out proceeds in this order, as worked in
 5. Integrate once after the final remediation wave, using the worktree procedure below.
 6. Retire the shared worktree and branch after the final task ends.
 
-### Correcting a finished dated document — Ben's decision, 2026-09-11
+### Correcting a finished dated document — Ben's decision, 2026-09-11 (D12)
 
 A finished dated document — a review, a remediation plan, a completed plan, an execution record —
 is left as written, like a pushed commit under a "never amend pushed commits" discipline. Ben's
