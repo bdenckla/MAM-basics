@@ -1056,20 +1056,6 @@ unannotated source text. Annotation validation covers complete output from every
 page and uses independent source forms to preserve legitimate upper/lower dots and
 VARIKA. Current-MAM and BHS-labelled sources remain distinct.
 
-Correction recorded by a Claude session on 2026-09-11, for finding 3 of
-`doc/review-findings-2026-09-10.md`: the paragraph above says both fallback sites select
-unannotated source text, and that describes `f1166057`'s design, which no longer exists.
-`3a1ab7f0` (2026-09-10 12:21, the same day as `f1166057` at 08:42) removed both
-`mam_form or chanted_word` sites from `py/author_site/post_stress_meteg.py`. That module's
-`_mam_form` now raises `SurveyProblem` for a displayed record with no `mam_form`, instead of
-looking a substitute spelling up in MAM-private's Phonetic MAM, so no render path reaches the
-snapshot. The snapshot lookup is now `_snapshot_unannotated_form`, private to
-`py/accgram/post_stress_meteg.py` and called only from inside it. `CLAUDE.md`'s section "A code
-path reads MAM-private every time it runs, or never" names this fallback as the case that
-produced that rule. The other three parts of the 13.3 remedy hold: first-`rep`/first-unannotated-`fva`
-matching, preservation of the selected display marks, and annotation validation. Re-establish:
-`git show 3a1ab7f0 --stat`, and Grep `mam_form or chanted_word` over `py/` (no match).
-
 The complete input-domain proof and complete existing-survey differential preserve
 matching decisions, every serialized survey field and the original JSON bytes.
 Raw classifier inputs and the existing classifier/record/summary function bodies are
@@ -1178,7 +1164,6 @@ source and rights-holder identification remains deferred.
 | 2026-09-10 | 13.1 | Settled under P3 with the overlap guard retained. Unsupported simultaneous fit classes remain a latent limit, without an observed candidate or incorrect fit count. |
 | 2026-09-10 | 13.2 | Settled design note under D5/P3. Both multiplicity guards, Methods sentence, JSON schema and counts remain; the original finding already described the abort. |
 | 2026-09-10 | 13.3 | Fixed in the Wave 3 technical phase at `f11660576e440523e944598331e8ecc339dcdb26`. Unannotated selection, matching and annotation validation pass the retained technical proofs. Survey bytes and legitimate displayed marks remain; later editorial changes follow only the exact approved E2/E3/E8 contract. |
-| 2026-09-11 | 13.3 | Correction recorded by a Claude session, for finding 3 of `doc/review-findings-2026-09-10.md`. The row above's "Fixed" still holds for unannotated selection, matching and annotation validation. The display fallback that `f1166057` made select unannotated source text was removed by `3a1ab7f0` on 2026-09-10: a displayed record with no `mam_form` now stops the render with `SurveyProblem`. The dated correction under "Wave 3 technical disposition, 2026-09-10" gives the detail. |
 | 2026-09-10 | 13.4 | Record-only validation limit under P3. Fusion invariants remain; their token counts do not independently establish the linguistic analysis or chosen post-silluq interpretation. |
 | 2026-09-10 | 13.5 | Fixed by approved E4 in the separate editorial phase. The accepted correction distinguishes `_problems` returning from `build_survey` raising; executable survey code is unchanged by E4. |
 | 2026-09-10 | 13.6 | Settled under P3. The 1D2 check of all 32 targets confirms the bounded 3+2 empty-result observation. V2 confirms the XML product bytes still match that checked set; valid empty targets remain valid. |
