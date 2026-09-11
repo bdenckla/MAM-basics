@@ -10,6 +10,25 @@ describe.  Two families:
 The ChangeOps serve as the single intermediate representation between
 raw diffing and English rendering, and are also consumed by the
 roundtrip verifier (change_ops_apply → mpplus_verify).
+
+EVERY OP THAT PLACES A MARK RECORDS WHERE IN ITS CLUSTER THE MARK GOES.
+A position is the index the mark has among the combining marks of its
+letter's grapheme cluster in the new text, counting every combining mark
+there, not only the marks of the class being compared.  The English
+rendering never reads a position; change_ops_apply needs one, because
+MAM-normal order (mb_cmn.uni_denorm.give_std_mark_order) fixes the place
+of only four marks, the shin dot, the sin dot, the dagesh or mapiq, and
+the rafe, so where any other placed mark goes is data that nothing else
+can recover.  Until 2026-09-11 no op recorded it, and every placement
+appended the mark to the end of its cluster.  Isaiah 24:18 is the case
+that showed it.  Since MAM-basics 209b4c05 the verse's first cluster has
+U+05BD HEBREW POINT METEG between U+05B0 HEBREW POINT SHEVA and U+05A0
+HEBREW ACCENT TELISHA GEDOLA.  Appending put the meteg after the accent,
+the roundtrip verifier rejected the result, and every mega run stopped
+at its mpplus diff step.  That is finding 1 of the 2026-09-10 review.
+
+A removal records no position: it takes the first occurrence of its mark
+in the cluster, which is exact for every cluster that has no mark twice.
 """
 
 from dataclasses import dataclass
@@ -34,6 +53,7 @@ class MarkAdded:
     char: str
     on_letter: str
     letter_occurrence: int
+    position: int  # the mark's index in its cluster in the new text
 
 
 @dataclass(frozen=True)
@@ -45,6 +65,7 @@ class MarkMoved:
     from_occurrence: int
     to_letter: str
     to_occurrence: int
+    to_position: int  # the mark's index in its cluster in the new text
 
 
 @dataclass(frozen=True)
@@ -55,6 +76,7 @@ class MarkReplaced:
     letter_occurrence: int
     old_char: str
     new_char: str
+    new_position: int  # new_char's index in its cluster in the new text
 
 
 @dataclass(frozen=True)
@@ -63,8 +85,11 @@ class GenericReplace:
 
     old_char: str
     old_letter: str
+    old_occurrence: int
     new_char: str
     new_letter: str
+    new_occurrence: int
+    new_position: int  # new_char's index in its cluster in the new text
 
 
 @dataclass(frozen=True)
@@ -73,6 +98,7 @@ class ComplexReplace:
 
     old_qualified: tuple  # tuple of (char, letter, occ) triples
     new_qualified: tuple
+    new_positions: tuple  # each new_qualified mark's index in its new cluster
 
 
 @dataclass(frozen=True)
@@ -82,6 +108,7 @@ class MarkReordered:
     chars: tuple  # tuple of mark characters in old order
     on_letter: str
     letter_occurrence: int
+    new_positions: tuple  # each of chars' index in the cluster in the new text
 
 
 @dataclass(frozen=True)
