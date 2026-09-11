@@ -382,10 +382,12 @@ let the check attribute calls it could not otherwise resolve, each with a dead-e
 skipped before each commit, the three new tests included. Uncommitted, each failure mode was shown
 to fire, with a message saying what to do.
 
-**Awaiting Ben: 28 of the reasons are Claude-written proposals.** Each begins "Claude-written
-proposal, not yet reviewed by Ben". 25 come from the analysis's §4, and 3 are phase 7's own.
-Phase 7b rewords three of them and drops two. Ben reviews the rest, and each one he accepts loses
-its prefix.
+**Ben accepted all 28 of the reasons that were Claude-written proposals, on 2026-09-10.** Each
+began "Claude-written proposal, not yet reviewed by Ben"; 25 came from the analysis's §4, and 3
+were phase 7's own. Ben: "They are all fine. The most important thing is to get a baseline so that
+*new* programs that are added to the repo either need to be added to mega or given a justification
+as to why they should not be added to mega." Phase 7b reworded three of them and dropped two, and
+phase 8's item 2 marks the remaining 26 as accepted.
 
 The instructions as they were given for phase 7:
 
@@ -419,7 +421,25 @@ its dead-entry check.
 6. Verify: the full suite green; then, uncommitted, delete one declaration and see the check fail
    naming that program, and restore it.
 
-## Phase 7b — merge `main` into the branch, so that phase 8 verifies the merged tree
+## Phase 7b — merge `main` into the branch, so that phase 8 verifies the merged tree: DONE, `8f5c1c96`, `9e2a3cd0`, `82f3a097`, `4dfed791` and `9b288705`
+
+`8f5c1c96` merges `main` at `7d0888b3`, and resolves `py/main_0_mega.py` by Ben's two decisions:
+`parse-ws` first, then `foi-features-of-interest`, then `parse-go` and `diff-wsgo`, and no
+`check-mpplus` step. The mega has 60 steps. The three generated files took `main`'s side, and
+`82f3a097` and `9b288705` regenerate them. The pipeline graph loses the `fr-sefaria` node that
+phase 3 had removed from its spec. On the merge commit the suite found the one failure expected:
+`py/main_parse.py ws-products`, a subcommand `main` added. `9e2a3cd0` declares it, citing
+`doc/PLAN-wikisource-derived-mam-products.md`. The same commit attributes `gen-mam-parsed-docs`
+to `parse_ws.almost_main` in `_RUNNER_CALLS`, rewords the three proposals, drops the `--foi` and
+`--single-threaded` declarations, and points foi's comment at `parse_ws_products.py`. `4dfed791`
+adds the dated correction to the Wikisource plan. Every tracked file that `parse-ws`,
+`foi-features-of-interest`, `parse-go`, `diff-wsgo` and `diff-ctr-vs-mam` wrote came out
+byte-identical, and the suite gave 992 passed, 5 skipped before each later commit.
+`py/main_verify_notes_zip.py` still reads `sys.argv` by hand, so #269 stands as filed. `main`
+then gained three Wikisource-download commits, up to `b2052ab9`, and the orchestrating session
+merged them too, with no conflicts, before phase 8.
+
+The instructions as they were given for phase 7b:
 
 A trial merge on 2026-09-10 (`git merge-tree --write-tree claude/mega-coverage main`) found four
 conflicts: `doc/process-documentation/pipeline.dot`, `doc/process-documentation/pipeline.svg`,
@@ -496,15 +516,27 @@ Ben's decisions, 2026-09-10:
    `py/hkq_cmn/uxlc_change_records.py`'s module docstring says that Gen 14:17.9, Ex 5:22.11 and
    2Sam 3:30.10 "are the instances in the change files on disk in the sibling UXLC-utils". Find
    where those change files are now, confirm that the same three instances are the ones there, or
-   report the difference, and name the path in the sentence. Commit this before item 2's run, so
+   report the difference, and name the path in the sentence. Commit this before item 4's run, so
    that the run verifies the finished tree.
-2. From a throwaway script, run every step of `_STEPS` except `near-aleppo-census`, in order, with
+2. **Mark the 26 accepted proposals.** Ben accepted all 28 of phase 7's Claude-written proposals
+   on 2026-09-10: "They are all fine." Phase 7b dropped two. In `py/tests/test_mega_coverage.py`,
+   replace each remaining reason's "Claude-written proposal, not yet reviewed by Ben" with a
+   prefix saying that the reason is Claude-written and that Ben accepted it on 2026-09-10, and
+   quote him once in the module docstring. Commit before item 4.
+3. **Finish the Wikisource plan's dated correction.** The correction that `4dfed791` added to
+   `doc/PLAN-wikisource-derived-mam-products.md` should also say that its Phase 4 acceptance,
+   that ordinary generation works with Google input made to fail, now holds for `parse-ws` alone:
+   a failure in `parse-go` or `diff-wsgo` stops the steps after them, as any step's failure does.
+   Commit before item 4.
+4. From a throwaway script, run every step of `_STEPS` except `near-aleppo-census`, in order, with
    nothing exported.
-3. `git status` must be clean. Any diff is explained and committed on its own, or reported.
-4. Run the full suite.
-5. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, which
-   also retires its §3 and §5 rows for the post-stress-meteg survey, and report the branch head for
-   the orchestrating session to integrate.
+5. `git status` must be clean. Any diff is explained and committed on its own, or reported.
+6. Run the full suite.
+7. Update `doc/mega-coverage-2026-09-10.md` with a closing record of what the mega now runs, which
+   also retires its §3 and §5 rows for the post-stress-meteg survey. With dated notes, correct the
+   text that phase 7b found stale: the Method paragraph and row 1 of §2's step table say that
+   `parse-go` runs `gen-mam-parsed-docs`, and §4's `fr-google --skip-download` row mentions
+   `check_mpplus`. Report the branch head for the orchestrating session to integrate.
 
 ## Not in this plan, raised for Ben
 
@@ -521,3 +553,9 @@ Ben's decisions, 2026-09-10:
    `py/main_verify_and_render_table.py` still has the evacuated repository's name, though its help
    text says MAM-basics. `py/check_all.py`'s docstring and `py/check_spelling_in_html.py`'s usage
    line name `spellcheck_quirkrecs` files that are not what runs.
+4. **The vendoring audit's verdict depends on which checkout runs it**, as phase 7b found. In the
+   primary clone the sources under `py/` still have CRLF line endings on disk, 640 carriage
+   returns in `py/mb_cmn/bib_locales.py` for one, so the audit there reports `eol-only` where this
+   worktree reports `identical`: 8 inventory rows against 4. The committed audit outputs are the
+   worktree's. A run in the primary clone after integration will flip them back, unless its
+   working-tree files are renormalized.
