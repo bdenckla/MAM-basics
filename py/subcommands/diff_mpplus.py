@@ -18,12 +18,15 @@ otherwise the sanitised hash range is used.
 The --all flag generates reports for every named release in releases.json
 and regenerates index.html, including unpinned-latest when unreleased diffs exist.
 
-When run with no arguments, the script compares the latest named release
-(the release boundary closest to HEAD) against HEAD. If commits exist beyond
-that release and produce diffs, it writes
-gh-pages/MAM-with-doc/change-log/unpinned-latest.html.
-When unreleased diffs are absent, unpinned-latest artifacts are rewritten as
-empty reports so stale content is not left behind.
+When run with no arguments, the script compares the latest named release against
+HEAD and writes gh-pages/MAM-with-doc/change-log/unpinned-latest.html when that
+comparison produces diffs. When unreleased diffs are absent, the unpinned-latest
+artifacts are rewritten as empty reports so stale content is not left behind.
+
+WHICH RELEASE IS THE LATEST IS READ OFF releases.json RATHER THAN OUT OF GIT,
+and that is what lets this program run in a shallow clone -- see
+_latest_release_entry for the chain walk that replaced a commit count, and
+Ben's decision of 2026-09-11 behind it.
 """
 
 import argparse
@@ -51,7 +54,18 @@ PRESERVED_CHANGE_LOG_ARTIFACTS = (
 
 
 def _commit_date(rev):
-    """Return the stored source date or the landed product's commit date."""
+    """Return the stored source date or the landed product's commit date.
+
+    THE ONE GIT READING LEFT IN A ``--all`` RUN, and the one place a shallow clone could still
+    mislead rather than fail.  A named release resolves out of the tracked manifest with no git
+    at all; ``HEAD`` resolves through ``git log -1 -- MAM-parsed/plus``, which walks only as far
+    as the clone goes.  If no commit inside the window touched ``MAM-parsed/plus``, that walk
+    finds nothing and the date falls back to HEAD's own, which would be later than the truth --
+    a wrong date in a published report rather than a wrong diff.  Measured in a cloud container
+    on 2026-09-11: 3 commits inside a 221-commit window touch ``MAM-parsed/plus``, the newest
+    being ``209b4c0``, so the fallback did not fire there.  Recorded rather than guarded,
+    because guarding it means raising, which is what 2026-09-11's work removed.
+    """
     return mpplus_revisions.resolve(rev).date
 
 
@@ -79,22 +93,42 @@ def _lookup_release_name(old_rev, new_rev):
 
 
 def _latest_release_entry():
-    """Return the release entry whose `new` boundary is closest to HEAD."""
+    """The terminal entry of releases.json's chain: the one no other entry continues.
+
+    NO GIT AT ALL, WHICH IS THE POINT.  Until 2026-09-11 this counted, for each entry, the
+    commits between its ``new`` boundary and HEAD, and took the smallest -- which needed
+    ``MAM-parsed/historical/manifest.json``'s ``migration.landing_commit`` to be reachable.
+    In a shallow clone it is not: measured in a cloud container on 2026-09-11, that clone held
+    221 commits, ``git cat-file -t 63cf6c98`` could not find the landing commit, and the count
+    died with ``fatal: Invalid revision range``.  So ``diff-mpp``, step 6 of the mega's 60,
+    could not run in the cloud at all.
+
+    Ben's decision, 2026-09-11, on being told what the count was for: do the proposed work to
+    make this compatible with a shallow clone.  The chain walk is that work.  ``releases.json``
+    already declares itself a chain -- its own header says "Consecutive releases share a
+    boundary: the 'new' of one release equals the 'old' of the next" -- so the latest release
+    is the entry whose ``new`` is no other entry's ``old``, which is a property of the file
+    rather than of the checkout.  Measured the same day, the five entries form one unbroken
+    chain from ``2025-03-19a`` to ``2026-04-14``, with exactly one terminal entry.
+
+    This is also the more faithful reading of "latest".  A commit count answers "whose boundary
+    is nearest HEAD", which is the same answer only while the file is a chain; the chain walk
+    answers the question actually being asked, and says so loudly when the file stops being one.
+    """
     with open(RELEASES_JSON, "r", encoding="utf-8") as in_fp:
-        data = json.load(in_fp)
-    best_entry = None
-    best_distance = None
-    for entry in data["releases"]:
-        distance = _count_newer_commits(entry["new"])
-        if best_distance is None or distance < best_distance:
-            best_distance = distance
-            best_entry = entry
-    return best_entry
-
-
-def _count_newer_commits(base_rev):
-    """Count source commits to migration and subsequent landed product commits."""
-    return mpplus_revisions.count_newer_commits(base_rev)
+        releases = json.load(in_fp)["releases"]
+    if not releases:
+        return None
+    continued = {entry["old"] for entry in releases}
+    terminal = [entry for entry in releases if entry["new"] not in continued]
+    if len(terminal) != 1:
+        raise RuntimeError(
+            f"releases.json is not a single chain: {len(terminal)} of its"
+            f" {len(releases)} entries end one"
+            f" ({', '.join(entry['name'] for entry in terminal) or 'none'})."
+            " Exactly one entry's 'new' must be no other entry's 'old'."
+        )
+    return terminal[0]
 
 
 def default_output_path(old_rev, new_rev):
@@ -155,25 +189,21 @@ def run_all():
 
 
 def run_unpinned_latest():
-    """Generate unpinned-latest report and return its index entry, else None."""
+    """Generate unpinned-latest report and return its index entry, else None.
+
+    ONE BRANCH, NOT TWO.  Until 2026-09-11 a commit count was taken first and a zero sent the
+    run down a separate path -- which called ``generate_report`` with byte-identical arguments
+    and also returned None after writing the same empty artifacts.  The count therefore bought
+    nothing but which of two "wrote empty artifacts" messages was printed, since the diff was
+    computed either way; the two tests that covered the two paths asserted the same call and
+    the same result, which is the same fact stated twice.  Ben's decision, 2026-09-11: remove
+    it.  ``count``, which ``generate_report`` returns, is the honest test of "is there anything
+    to report", and it is measured rather than predicted.
+    """
     latest_release = _latest_release_entry()
     if latest_release is None:
         raise RuntimeError("releases.json has no release entries")
     old_rev = latest_release["new"]
-    commit_count = _count_newer_commits(old_rev)
-    if commit_count == 0:
-        generate_report(
-            old_rev,
-            "HEAD",
-            UNPINNED_LATEST_HTML,
-            write_when_empty=True,
-        )
-        print(
-            f"No commits after latest named release ({old_rev}); "
-            "wrote empty unpinned-latest artifacts: "
-            f"{', '.join(PRESERVED_CHANGE_LOG_ARTIFACTS)}"
-        )
-        return None
     count, old_date = generate_report(
         old_rev,
         "HEAD",
@@ -182,8 +212,8 @@ def run_unpinned_latest():
     )
     if count == 0:
         print(
-            "No diffs in unreleased commit range; wrote empty "
-            "unpinned-latest artifacts"
+            f"No diffs after the latest named release ({old_rev}); wrote empty "
+            f"unpinned-latest artifacts: {', '.join(PRESERVED_CHANGE_LOG_ARTIFACTS)}"
         )
         return None
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
