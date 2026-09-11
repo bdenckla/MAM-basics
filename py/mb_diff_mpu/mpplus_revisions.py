@@ -246,27 +246,12 @@ def resolve(rev):
     return Revision(commit, date, repo, "MAM-parsed/plus")
 
 
-def count_newer_commits(rev):
-    """Count source commits to migration, then commits changing landed plus data."""
-    resolved = resolve(rev)
-    if rev.startswith("legacy:"):
-        return int(
-            _git(resolved.directory, "rev-list", "--count", f"{resolved.commit}..HEAD")
-        )
-    manifest = _manifest()
-    if resolved.stored_files is not None:
-        distance = manifest["revisions"][resolved.commit]["commits_to_migration"]
-        boundary = manifest["migration"]["landing_commit"]
-    else:
-        distance = 0
-        boundary = resolved.commit
-    return distance + int(
-        _git(
-            paths.repo_root(),
-            "rev-list",
-            "--count",
-            f"{boundary}..HEAD",
-            "--",
-            "MAM-parsed/plus",
-        )
-    )
+# ``count_newer_commits`` stood here until 2026-09-11, counting the commits between a revision
+# and HEAD by walking from the manifest's ``migration.landing_commit``. Its two callers were
+# both in ``py/subcommands/diff_mpp.py``, and both are gone: ``_latest_release_entry`` now walks
+# ``releases.json``'s chain, and ``run_unpinned_latest``'s zero-count branch was doing the same
+# work as the branch beside it. Deleted rather than kept, because the walk it needed is exactly
+# what a shallow clone cannot do -- in a cloud container the landing commit is outside the
+# window and the count died, taking the mega's ``diff-mpp`` step with it. Ben's decision,
+# 2026-09-11. Nothing now reads ``manifest["revisions"][<sha>]["commits_to_migration"]``; the
+# key is left in the tracked manifest rather than migrated out of it.
