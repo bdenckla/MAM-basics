@@ -44,7 +44,6 @@ DISPLAY_NODES = [
     DisplayNode("ds_osis", "MAM-OSIS/", DATA_STORES),
     DisplayNode("ds_out", "out/\n(local outputs)", DATA_STORES),
     DisplayNode("download_go", "download fr-google", PREREQUISITES),
-    DisplayNode("download_sef", "download fr-sefaria", PREREQUISITES),
     DisplayNode(
         "download_ws",
         "download fr-wikisource",
@@ -81,7 +80,6 @@ RAW_NODES = [
     RawNode("out_osis", "MAM-OSIS/", "ds_osis"),
     RawNode("out_local", "out/\n(local outputs)", "ds_out"),
     RawNode("main_download__fr_google", "download fr-google", "download_go"),
-    RawNode("main_download__fr_sefaria", "download fr-sefaria", "download_sef"),
     RawNode(
         "main_download__fr_wikisource",
         "download fr-wikisource",
@@ -174,7 +172,6 @@ RAW_EDGES = [
         "Wikisource pipeline",
         attrs=(("tooltip", "via automatic post-download reparse"),),
     ),
-    RawEdge("main_download__fr_sefaria", "out_local", "Sefaria download (standalone)"),
 ]
 
 SECTION_ORDER = [
@@ -184,5 +181,4 @@ SECTION_ORDER = [
     "MAM-simple pipeline",
     "Local out/ outputs",
     "Wikisource pipeline",
-    "Sefaria download (standalone)",
 ]

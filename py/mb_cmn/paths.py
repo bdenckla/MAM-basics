@@ -8,24 +8,27 @@ repos_root() instead.
 
 MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are landed products
 under this repository, so their paths chain directly from ``repo_root()``. Cross-repo
-dependencies such as MAM-private, and temporary redirect-host clones,
-are by default looked up as siblings of this repo
-under a common parent directory.  That convention breaks when the repo is checked out
-somewhere the siblings are not co-located -- most notably a git worktree, whose root is
-nested under ``.../.claude/worktrees/`` rather than next to the sibling repos.  This was
-not hypothetical: until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics
-worktree resolved to ``.claude/worktrees/MAM-parsed``, a directory that has never existed.
+dependencies such as MAM-private, and temporary redirect-host clones, are by default
+looked up as siblings of this checkout's HOME CLONE, under a common parent directory.
+The home clone is the checkout itself in an ordinary clone, and in a git worktree the
+clone the worktree was made from.  Until 2026-09-10 the default was
+``repo_root().parent``, which breaks in exactly that worktree case, the worktree's root
+being nested under ``.../.claude/worktrees/`` rather than next to the sibling repos:
+until 2026-08-01 ``sibling_repo("MAM-parsed")`` in a MAM-basics worktree resolved to
+``.claude/worktrees/MAM-parsed``, a directory that has never existed, and from then
+until 2026-09-10 a worktree run had to export ``REPOS_ROOT``.
 
-To make sibling lookups overridable without changing default behavior, two kinds
-of environment variable are honored, resolved per dependency in this order:
+Resolution, per dependency, in this order:
 
   1. per-repo ``REPO_<NAME>_DIR`` (NAME = the sibling dir name uppercased with
      each run of non-alphanumeric characters replaced by ``_``); else
   2. ``REPOS_ROOT`` joined with the sibling name; else
-  3. ``repo_root().parent`` joined with the sibling name (the historical default).
+  3. the home clone's parent joined with the sibling name -- ``repo_root().parent`` in
+     an ordinary clone, the historical default, and in a worktree the directory holding
+     the clone it was made from (Ben's decision, 2026-09-10; see ``repos_root``).
 
-With no environment variables set, resolution is byte-identical to the previous
-``repo_root().parent / <name>`` behavior.
+With no environment variables set, resolution in an ordinary clone is byte-identical to
+the historical ``repo_root().parent / <name>``.
 
 The override chain and ``require_sibling`` came from wlc-utils' ``repo_paths.py``,
 which was written to fix exactly this and had it working while the module every
@@ -116,14 +119,25 @@ def scans_dir() -> Path:
 def repos_root() -> Path:
     """Base directory under which sibling repos are looked up.
 
-    ``REPOS_ROOT`` if set, else ``repo_root().parent`` -- historically the GitRepos/
-    directory holding the sibling MAM-* repos, which is still what it resolves to when
-    nothing is set and the checkout is not a worktree.
+    ``REPOS_ROOT`` if set; otherwise the parent of this checkout's home clone.  In an
+    ordinary clone that is ``repo_root().parent``, the GitRepos/ directory holding the
+    sibling repos.  In a linked worktree it is the parent of the clone the worktree was
+    made from, read from git's own files by ``provenance.home_clone_dir`` rather than
+    inferred from the path, so a worktree under ``.claude/worktrees/`` or
+    ``~/.codex/worktrees/`` resolves the same way.
+
+    THE WORKTREE CASE NEEDS NO VARIABLE.  Ben's decision, 2026-09-10, made when the
+    post-stress-meteg survey joined the mega: a worktree run finds MAM-private beside the
+    worktree's home clone, so that "it doesn't rely on the program being run with
+    REPOS_ROOT set".  Where the home clone cannot be read -- a submodule, a bare
+    repository's worktree, a tree with no ``.git`` -- this falls back to
+    ``repo_root().parent``.
     """
     override = os.environ.get("REPOS_ROOT")
     if override:
         return Path(override)
-    return repo_root().parent
+    home = provenance.home_clone_dir(repo_root())
+    return (home if home is not None else repo_root()).parent
 
 
 def _env_name(name: str) -> str:
@@ -334,6 +348,13 @@ def al_hatorah_phonetic_dir() -> Path:
     extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg``'s
     ``_settle`` already handles that case with a second test.  al-hatorah's
     ``io/a01-phonetic-std-set/README.md`` is the fuller statement of all three paragraphs.
+
+    A CODE PATH CALLS THIS EVERY TIME IT RUNS, OR NEVER.  Ben's rule, 2026-09-10, stated in
+    CLAUDE.md's section of that name: a path that finds it needs something from MAM-private
+    fails loudly instead of reaching for it.  A survey builder that needs Phonetic MAM's data
+    calls this unconditionally; a renderer working from a tracked survey never calls it.  The
+    post-stress-meteg renderer broke the rule until 2026-09-10: a displayed record with no MAM
+    form made it look up a spelling here, under ``--trust-surveys`` as well.
 
     A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
     private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``

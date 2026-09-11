@@ -37,10 +37,10 @@ The probes are ``UXLC-utils/.novc/atom_scheme_final.py`` and
 runs.
 
 Two steps and this module in the middle, the same division
-``uxlc_atom_locations`` already draws: the derivation wants ~11 MB of UXLC core
-XML from the sibling clone, so ``py/main_estimate_uxlc_locations.py`` works the
+``uxlc_atom_locations`` already draws: the derivation reads ~11 MB of UXLC core
+XML, at ``in/UXLC-39/``, so ``py/main_estimate_uxlc_locations.py`` works the
 numbers out and writes the tracked ``data/uxlc_standard_atoms.json``, and the
-render step reads that file and needs nothing but this checkout.
+render step reads that file.
 """
 
 from __future__ import annotations
@@ -56,8 +56,7 @@ def read_standard_atoms(data_dir: Path) -> dict[str, int]:
     path = data_dir / STANDARD_ATOMS_FILE_NAME
     if not path.is_file():
         raise FileNotFoundError(
-            f"{path} is missing; run py/main_estimate_uxlc_locations.py, which "
-            "needs the sibling UXLC-utils clone"
+            f"{path} is missing; run py/main_estimate_uxlc_locations.py"
         )
     payload = json.loads(path.read_text(encoding="utf-8"))
     return dict(payload["standard_atoms"])
@@ -83,8 +82,7 @@ def require_full_coverage(standard_atoms: dict[str, int], ref_keys: list[str]) -
     if missing:
         raise ValueError(
             f"no UXLC atom number for {missing}; rerun "
-            "py/main_estimate_uxlc_locations.py, which needs the sibling "
-            "UXLC-utils clone"
+            "py/main_estimate_uxlc_locations.py"
         )
     unmatched = sorted(set(standard_atoms) - set(ref_keys))
     if unmatched:

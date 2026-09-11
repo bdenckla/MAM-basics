@@ -97,7 +97,6 @@ from py_html.my_html_span_romanized import rmn
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-from mb_cmn import bib_locales as tbn
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
@@ -534,9 +533,10 @@ def gen_html_files(
     """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
-    recomputing, which is how ``main_0_mega.py`` renders this page without the MAM-private
-    clone the survey needs.  Off by hand, so a standalone run still derives the page from the
-    corpus rather than from a file.
+    recomputing.  ``main_0_mega.py`` passes it because its survey step has just written that
+    JSON, or in a cloud session has skipped the survey and left the tracked JSON unchanged.
+    Off by hand, so a standalone run still derives the page from the corpus rather than from a
+    file.
     """
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
@@ -614,11 +614,6 @@ def _write_page(path: Path, title: str, body: list) -> str:
     )
     mb_html.write_html_to_file(body, write_ctx)
     return str(path)
-
-
-def gen_html_file(out_dir: Path | None = None, *, trust_survey: bool = False) -> str:
-    """Write all nine post-stress-meteg pages and return the main page's path."""
-    return gen_html_files(out_dir, trust_survey=trust_survey)[0]
 
 
 def build_body(survey: dict) -> list:
@@ -702,14 +697,6 @@ def build_methods_body(survey: dict) -> list:
 
 def _count(survey: dict, system: str, category: str) -> int:
     return survey["counts"][system][category]
-
-
-def _post_stress(survey: dict, system: str | None = None) -> list[dict]:
-    return [
-        one
-        for one in survey["post_stress"]
-        if system is None or one["system"] == system
-    ]
 
 
 def _both(survey: dict, category: str) -> int:
@@ -1347,10 +1334,6 @@ def _split(bcv: str) -> tuple[str, int, int]:
     bb = bcv[:2]
     chnu, _colon, vrnu = bcv[2:].partition(":")
     return bb, int(chnu), int(vrnu)
-
-
-def _book_name(bcv: str) -> str:
-    return tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bcv[:2]))[3:]
 
 
 def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
@@ -2093,12 +2076,35 @@ def _paired_chanted_word_cell(
     )
 
 
+def _mam_form(record: dict) -> str:
+    """The record's MAM form, from the survey and from nowhere else.
+
+    RENDERING NEVER READS MAM-PRIVATE, so a displayed record with no ``mam_form`` stops the
+    render instead of being given a substitute spelling.  The survey lists such records under
+    ``diagnostics.records_without_a_mam_form``.  Until 2026-09-10 this module looked a spelling
+    up in MAM-private's Phonetic MAM for them, which made a render from the tracked survey
+    depend on the private clone whenever such a record was displayed.  CLAUDE.md's section "A
+    code path reads MAM-private every time it runs, or never" states the rule that retired it.
+    """
+    mam_form = record["mam_form"]
+    if not mam_form:
+        raise psm.SurveyProblem(
+            f"{record['bcv']}: a displayed record has no mam_form (listed under the survey's"
+            " diagnostics.records_without_a_mam_form); the page does not look one up in"
+            " MAM-private"
+        )
+    return mam_form
+
+
 def _case_chanted_word_cell(record: dict) -> tuple:
     """The MAM MAS form followed by its next chanted word."""
+    # _mam_form first: a record with no MAM form has no next MAM form either, so the
+    # assertion below would otherwise fire first and name the wrong cause.
+    mam_form = _mam_form(record)
     next_word = record["next_mam_form"]
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
-        record["mam_form"] or psm.snapshot_unannotated_form(record["chanted_word"]),
+        mam_form,
         next_word,
         record.get("intervening_mam_punctuation", ()),
     )
@@ -2106,9 +2112,7 @@ def _case_chanted_word_cell(record: dict) -> tuple:
 
 def _oleh_chanted_word_cell(record: dict) -> tuple:
     """The oleh context, extending into the next chanted word only for a yored there."""
-    current_form = record["mam_form"] or psm.snapshot_unannotated_form(
-        record["chanted_word"]
-    )
+    current_form = _mam_form(record)
     if ha.MER in current_form:
         return _hebrew_cell(current_form)
     next_word = record["next_mam_form"]
@@ -3550,30 +3554,3 @@ def _next_conjunctive_footnote(survey: dict) -> list:
             )
         ),
     ]
-
-
-def add_args(parser, *, repo_root: Path) -> None:
-    del repo_root
-    parser.add_argument(
-        "--html-out-dir",
-        type=Path,
-        default=None,
-        help="Directory to write the page into (default: this repo's gh-pages).",
-    )
-    parser.add_argument(
-        "--trust-survey",
-        action="store_true",
-        help=(
-            "Read out/accgram/post-stress-meteg.json instead of recomputing the survey."
-            " Only for a caller that cannot reach the MAM-private clone."
-        ),
-    )
-
-
-def run(args) -> None:
-    out_paths = gen_html_files(
-        getattr(args, "html_out_dir", None),
-        trust_survey=bool(getattr(args, "trust_survey", False)),
-    )
-    for out_path in out_paths:
-        print(f"Generated {out_path}")

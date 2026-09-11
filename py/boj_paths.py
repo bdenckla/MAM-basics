@@ -93,16 +93,17 @@ BOJ_TOP_LEVEL_MODULES = (
     "fix_escape_sequences.py",
     "fix_mark_order.py",
     "main_apply_cam1753_crops.py",
-    "main_gen_aleppo_crop_editor.py",
     "main_gen_cam1753_crop_editor.py",
     "main_gen_misc_authored_english_documents.py",
     "main_list_missing_aleppo_imgs.py",
 )
-"""book-of-job's sixteen runnable modules, which sat at that repo's root and sit at
-the top of this repo's ``py/``.
+"""Fifteen of book-of-job's sixteen runnable modules, which sat at that repo's root
+and sit at the top of this repo's ``py/``.  The sixteenth,
+``main_gen_aleppo_crop_editor.py``, was deleted on 2026-09-10 by phase 6a of
+``doc/PLAN-mega-coverage.md``.
 
 They stay top-level rather than going into a package because every one of them is
-an entry point: five ``main_*``, and the ``check_*``/``fix_*`` family that
+an entry point: four ``main_*``, and the ``check_*``/``fix_*`` family that
 ``check_all`` imports by bare name and that are also run singly.  A package would
 make ``python py/<pkg>/check_mark_order.py`` put the package directory on
 ``sys.path`` instead of ``py/``, which is the import surgery this repo has none of.

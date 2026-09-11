@@ -26,7 +26,6 @@ from accgram import dual_cant_detangle as dcd
 from accgram import rtms_data
 from accgram.mam_simple_verse import default_mam_simple_dir, load_mam_simple_for_refs
 from accgram.prose_ply_grammar import build_parser
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import file_io
 from mb_cmn import paths
 from mb_cmn import provenance
@@ -179,15 +178,3 @@ def _anomaly_obj(a: dcd.Anomaly) -> dict[str, object]:
         "found": a.found,
         "found_name": a.found_name,
     }
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

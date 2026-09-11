@@ -39,11 +39,11 @@ Enforces two rules over hand-authored ``py/`` + ``tools/`` + ``doc/``:
 Shared harness: file discovery + a pluggable tuple of ``Check``s, each yielding
 ``Offense(relpath, line, codepoint, uname, detail)``.
 
-Two entry points, one scanner -- this module is a library and is not itself
-runnable:
-  * ``py/main_test.py py/tests/source_hygiene_test.py`` -- the guard test.
-  * ``python py/main_source_hygiene.py`` -- the CLI, which prints each offender
-    and exits non-zero when the tree is dirty.
+One entry point -- this module is a library and is not itself runnable:
+``py/main_test.py py/tests/source_hygiene_test.py``, the guard test, which lists
+each offender when it fails.  ``py/main_source_hygiene.py``, a CLI running the same
+scan, was deleted on 2026-09-10 by phase 6a of ``doc/PLAN-mega-coverage.md``, and
+``run``, which only that CLI called, went with it.
 
 Escape hatch: a trailing ``# combining-ok`` on the offending line suppresses rule
 1, for the rare case where a bare combining mark is genuinely the clearest form.
@@ -214,16 +214,3 @@ def format_offense(offense):
         f"{offense.relpath}:{offense.line}  {offense.codepoint} {offense.uname}"
         f" -- {offense.detail}"
     )
-
-
-def run(repo_root):
-    """Scan and report; return the process exit code (0 clean, 1 dirty)."""
-    offenses = scan(repo_root)
-    if offenses:
-        print("source hygiene offenses (see GitHub issues #22, #26):")
-        for offense in offenses:
-            print("  " + format_offense(offense))
-        print(f"\n{len(offenses)} offender(s).")
-        return 1
-    print("source_hygiene: OK")
-    return 0

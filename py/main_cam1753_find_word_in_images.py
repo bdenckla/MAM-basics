@@ -12,6 +12,9 @@ instead.
 The name is the rule codex-index-aleppo's Phase 3 settled the day before:
 ``main_cam1753_`` plus the module stem.  ``py_ac_loc``'s counterpart of this module,
 where there is one, is reached as ``main_ac_`` plus the same stem.
+
+Since 2026-09-10 the module has no ``__main__`` block of its own: phase 6a of
+``doc/PLAN-mega-coverage.md`` deleted it, and this wrapper is its only entry point.
 """
 
 from py_cam1753_loc.find_word_in_images import main

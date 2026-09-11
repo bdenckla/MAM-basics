@@ -716,7 +716,3 @@ def main():
         webbrowser.open(out_path.as_uri())
 
     sys.exit(0 if passed else 1)
-
-
-if __name__ == "__main__":
-    main()

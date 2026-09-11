@@ -61,7 +61,6 @@ from accgram.printed_decalogue_strands import (
     TAHTON,
 )
 from accgram.uni_to_marks import is_base_letter
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import my_html_for_img as mhi
@@ -351,21 +350,6 @@ def _gray(survey: dict, kind: str | None = None) -> int:
 
 def _occurrences(survey: dict, corpus: str, genre: str) -> list[dict]:
     return survey["corpora"][corpus][genre]["occurrences"]
-
-
-def _occurrence(survey: dict, corpus: str, genre: str, bcv: str) -> dict:
-    """The single occurrence record a sentence names, or a build failure.
-
-    The two worked examples splice their oracle counts out of these records, so a corpus bump
-    that drops the verse -- or that splits it in two -- must stop the build rather than leave
-    a sentence standing beside a number that no longer describes it.
-    """
-    found = [o for o in _occurrences(survey, corpus, genre) if o["bcv"] == bcv]
-    if len(found) != 1:
-        raise AssertionError(
-            f"{corpus}/{genre} {bcv}: expected exactly one occurrence, found {len(found)}"
-        )
-    return found[0]
 
 
 def _pair_of(shape: str) -> tuple[str, str]:
@@ -2663,15 +2647,3 @@ def run(args: argparse.Namespace) -> None:
     prose_hits = _n(survey, _CORPUS, "prose", "hits")
     print(f"JSON: {args.json_out}")
     print(f"HTML: {html_out} (MAM prose hits: {prose_hits})")
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

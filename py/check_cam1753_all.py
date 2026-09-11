@@ -12,14 +12,17 @@ THE THIRD OF THE THREE REGISTERS, AND THAT IS BY DECISION RATHER THAN BY DRIFT.
 Ben settled 2026-08-19 that ``check_all`` stays per-repo permanently: it is the
 statement of which checks a given body of code is held to, and the three bodies are
 held to different ones.  ``check_all.py`` beside this file is book-of-job's and runs
-seven; ``check_ac_all.py`` is codex-index-aleppo's and runs the same four this one
-does, against a different manuscript.
+seven; ``check_ac_all.py`` is codex-index-aleppo's and runs three of this one's
+four, all but the word-finding check, against a different manuscript.
 
 ``check_cam1753_word_finding`` is the OTHER file Ben settled as per-repo the same
-day, and the reason is visible in its results rather than in its text: it is
-structurally identical to ``check_ac_word_finding`` and passes 160 of 160 where that
-one fails 160 of 160, because this manuscript's line-break JSON keeps ``"col": 1``
-where codex-index-aleppo's migrated to an N-of-M column identifier in 2026-03.
+day, and the reason was visible in its results rather than in its text: it was
+structurally identical to codex-index-aleppo's ``check_ac_word_finding``, and passed
+160 of 160 where that one failed 160 of 160, because this manuscript's line-break
+JSON keeps ``"col": 1`` where codex-index-aleppo's migrated to an N-of-M column
+identifier in 2026-03.  On 2026-09-10 phase 6b of ``doc/PLAN-mega-coverage.md`` made
+that check compare the column number only, so that it passed 160 of 160 too, and
+then deleted it: Ben's decision that day was to retire it in good working form.
 
 Checks 2 and 3 are shared with the other two registers rather than copied: this repo
 holds one ``check_escape_sequences.py`` and one ``check_mark_order.py``, and they

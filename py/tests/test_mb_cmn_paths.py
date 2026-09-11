@@ -19,6 +19,7 @@ vendor should not advertise a seventh repo's name.
 """
 
 import os
+import subprocess
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -45,20 +46,44 @@ def _clean_env(**overrides: str) -> dict:
     return env
 
 
+def _home_clone_by_git() -> Path:
+    """This checkout's home clone, as git itself reports it: the independent oracle.
+
+    ``git rev-parse --git-common-dir`` names the main clone's ``.git`` in a linked
+    worktree and ``.git`` itself in an ordinary clone, so its parent is the home clone in
+    both.  ``mb_cmn.provenance`` reads the same fact out of git's files without running
+    git, which is what makes the tests below a comparison rather than a restatement.
+    """
+    out = subprocess.run(
+        ["git", "-C", str(paths.repo_root()), "rev-parse", "--git-common-dir"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=True,
+    ).stdout.strip()
+    common = Path(out)
+    if not common.is_absolute():
+        common = paths.repo_root() / common
+    return common.resolve().parent
+
+
 class TestMbCmnPaths(unittest.TestCase):
     def test_repo_root_is_module_anchored(self):
         # py/mb_cmn/paths.py -> mb_cmn -> py -> repo root; the repo root contains py/.
         self.assertTrue((paths.repo_root() / "py" / "mb_cmn" / "paths.py").is_file())
 
-    def test_default_repos_root_is_repo_parent(self):
+    def test_default_repos_root_is_the_home_clones_parent(self):
+        # Ben's decision, 2026-09-10: a worktree finds its siblings beside its home clone
+        # with nothing exported.  In an ordinary clone the home clone is the checkout
+        # itself, so there this is the historical repo_root().parent.
         with mock.patch.dict(os.environ, _clean_env(), clear=True):
-            self.assertEqual(paths.repos_root(), paths.repo_root().parent)
+            self.assertEqual(paths.repos_root(), _home_clone_by_git().parent)
 
-    def test_default_sibling_is_repo_parent(self):
+    def test_default_sibling_is_beside_the_home_clone(self):
         with mock.patch.dict(os.environ, _clean_env(), clear=True):
             self.assertEqual(
                 paths.sibling_repo("MAM-parsed"),
-                paths.repo_root().parent / "MAM-parsed",
+                _home_clone_by_git().parent / "MAM-parsed",
             )
 
     def test_repos_root_env_honored(self):
@@ -104,13 +129,6 @@ class TestMbCmnPaths(unittest.TestCase):
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("MAM-private"), Path("/mp"))
 
-    def test_default_matches_legacy_repo_root_parent_formula(self):
-        # Byte-identical to the old `repo_root().parent / "MAM-parsed"`, which is what
-        # makes adding the override chain a no-op for every unconfigured caller.
-        with mock.patch.dict(os.environ, _clean_env(), clear=True):
-            legacy = paths.repo_root().parent / "MAM-parsed"
-            self.assertEqual(paths.sibling_repo("MAM-parsed"), legacy)
-
     def test_require_sibling_returns_a_present_directory(self):
         # Any directory that certainly exists; the check is is_dir, not the name.
         root = paths.repo_root()
@@ -148,13 +166,14 @@ class TestMbCmnPaths(unittest.TestCase):
                     paths.require_sibling("MAM-parsed", resolved)
             self.assertIn("nowhere", str(ctx.exception))
 
-    def test_repos_root_override_fixes_the_worktree_case(self):
-        """The whole point of the chain, stated as the case that motivated it.
+    def test_repos_root_override_wins_over_the_home_clone_default(self):
+        """``REPOS_ROOT`` still wins over the default, whatever the checkout.
 
-        In a git worktree ``repo_root()`` is ``.../.claude/worktrees/<name>``, so the
-        default ``repo_root().parent`` is the worktrees directory and every sibling lookup
-        resolves under it -- to paths that have never existed.  ``REPOS_ROOT`` is what
-        makes such a checkout able to find the real clones.
+        Until 2026-09-10 this was the only way a worktree found its siblings: the default
+        was ``repo_root().parent``, which in a worktree is the worktrees directory, where no
+        sibling has ever been.  The default now looks beside the worktree's home clone
+        (``test_default_repos_root_is_the_home_clones_parent``), so the variable is for a
+        layout where the siblings sit somewhere else entirely.
         """
         with TemporaryDirectory() as tmp:
             real_clones = Path(tmp) / "GitRepos"

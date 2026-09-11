@@ -16,12 +16,14 @@ from hkq_cmn.mam_plus_verse_data import verse_texts_by_location
 TARGET_VERSE = ("Tsefaniah", 2, 9)
 
 # The plus-dir and output paths are resolved at CALL time, in find_final_hiriq_hits
-# and main, not as module constants: hkq_paths.out_dir() goes through require_sibling
-# and RAISES when the holman-ketiv-qere sibling is missing, and this module is
-# imported by py/tests/test_search_final_hiriq_verse_text.py, so an eager constant
-# made the suite uncollectable without that sibling.  Same reasoning as
-# hkq_cmn/qere_ending_search.py's sentinels and
-# read_books_from_mam_parsed_plain.py's (0314c6e).
+# and main, not as module constants.  The reason was hkq_paths.out_dir(), which went
+# through require_sibling and RAISED when no holman-ketiv-qere clone sat beside this
+# one: this module is imported by py/tests/test_search_final_hiriq_verse_text.py, so
+# an eager constant made the suite uncollectable without that sibling.  That reason
+# lapsed with ae663ff2 (2026-09-03), since when out_dir() has named this repo's
+# holman/out/ and reaches no sibling.  Same reasoning, while it held, as
+# hkq_cmn/qere_ending_search.py's sentinels and read_books_from_mam_parsed_plain.py's
+# (0314c6e).
 
 
 def book_names_for_plus_file(path: Path, plus_json: dict[str, object]) -> list[str]:

@@ -193,7 +193,6 @@ _EXCLUDE_MAM_GO_FILES = {
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
-    "in/mam-from-sefaria/",
     "in/mam-ws/",
     "in/mam-ws-bot-edits/",
     "in/chabad-ctr/",
@@ -230,17 +229,19 @@ _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 
 # What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
-# its published pages, its downloaded page scans, and the four derived trees. Its
-# aleppo-wiki/ is deliberately NOT excluded -- the CSV there is J David Stark's
-# hand-made index and the .docx and .xlsx precursors beside it are the same index in
-# Office form, which is why both extensions are in _BINARY_EXTENSIONS above.
+# its published pages, its downloaded page scans, and its derived trees -- four of
+# them until 2026-09-10, when phase 3 of doc/PLAN-mega-coverage.md deleted one with
+# the program that wrote it. Its aleppo-wiki/ is deliberately NOT excluded -- J David
+# Stark's hand-made index is there in the forms under precursors/, and the .docx and
+# .xlsx among them are the same index in Office form, which is why both extensions
+# are in _BINARY_EXTENSIONS above. A CSV form of the index sat beside precursors/
+# until 2026-09-10, when phase 6b of the same plan deleted it.
 _AC_EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
     "aleppo-pages/",
     "column-coordinates/",
     "ds-flat-stream/",
     "line-breaks/",
-    "plot_col_coords-out/",
 )
 
 # The one loose file codex-index-aleppo's own copy excluded by name: the annotator's
@@ -382,20 +383,25 @@ def _scopes() -> tuple[_Scope, ...]:
             # 2026-08-22. 40 did not survive that phase: 50 of the 79 were the .py
             # this repo's Phase 3 took, and 26 remained immediately after the
             # deletion rather than predicted. The MAM-simple landing on 2026-09-06
-            # removed the two no-longer-live MAM-XML provenance files, and the
-            # current scope measures 20 files. The count fell 29 -> 28 -> 27 -> 26
-            # across that phase as Ben
+            # removed the two no-longer-live MAM-XML provenance files. The count fell
+            # 29 -> 28 -> 27 -> 26 across that phase as Ben
             # settled its three orphan candidates one at a time on 2026-08-22:
             # requirements.txt and codex-index-aleppo.code-workspace as orphaned by
             # the move, and .claude/settings.json for a reason that has nothing to do
             # with it -- it predates Claude Code's "auto" permission mode. The fourth
-            # dotfile went with that last one, .claude/ having held nothing else. So
-            # the floor is 19,
+            # dotfile went with that last one, .claude/ having held nothing else.
+            # On 2026-09-10 phase 3 of doc/PLAN-mega-coverage.md deleted the three
+            # generated index files under aleppo-wiki/ with the program that wrote
+            # them, taking the scope from 21 files to 18, measured that day. Phase 6b
+            # of the same plan then deleted test-data-from-book-of-job.json, with the
+            # word-finding check that read it, and J David Stark's CSV under
+            # aleppo-wiki/, taking the scope to 16, measured the same day. So the
+            # floor is 15,
             # which keeps meaning "an exclusion filter swallowed everything" rather
             # than asserting a tree size, and is what would catch this scope
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
             # binary; the .docx beside it is excluded the same way.
-            floor=19,
+            floor=15,
         ),
         _Scope(
             label="Cambridge 1753 data",

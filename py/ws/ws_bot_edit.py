@@ -216,11 +216,21 @@ def edit_page_text(edits_ctx, bk39id, he_chnu, page_text):
 
 
 def write_warnings(edits_ctx, path):
-    """Write accumulated warnings to a JSON file, if any."""
+    """Write the run's accumulated warnings to a JSON file, on every run.
+
+    Only an untargeted edit kind collects warnings. Any other run -- a
+    chapter-targeted kind, or a run with no edit file, which is how
+    py/main_0_mega.py's ws-bot-proto step runs -- writes the file in its empty
+    form, an empty JSON list. Until 2026-09-10 such a run wrote nothing, so the
+    tracked out/mam-ws-bot/proto-misc/warnings.json kept whatever the last
+    `proto --edits` rehearsal had written, while every proto file beside it was
+    rewritten by a later run without edits. Ben, that day: "that seems bad, let's
+    fix that." A real run writes into its own timestamped directory, where the
+    change only makes the file's presence unconditional, as
+    py/ws/pywikibot-setup.md's list of a real run's artifacts already has it.
+    """
     get_warnings = edits_ctx.get("get-warnings")
-    if get_warnings is None:
-        return
-    warnings = get_warnings()
+    warnings = [] if get_warnings is None else get_warnings()
     file_io.json_dump_to_file_path(warnings, path)
 
 

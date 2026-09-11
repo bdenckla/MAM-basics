@@ -109,11 +109,19 @@ Save downloaded images to `C:/Users/BenDe/OneDrive/Pictures/Aleppo-from-mgketer/
 
 ## Baseline Segmentation / Line Detection
 
+**The code this section describes was deleted on 2026-09-10**, by phase 6a of
+MAM-basics' `doc/PLAN-mega-coverage.md`, for the reasons section 6 of
+`doc/mega-coverage-2026-09-10.md` gives: the wrapper imported a `main` that the module
+did not define, kraken is in no venv on this machine, and the module read
+column-coordinate keys that no data file has. The section stays as a record of the
+method. `git show c3417599:py/py_ac_loc/kraken_seg_baselines.py` recovers the module,
+and `git show c3417599:py/main_ac_kraken_seg_baselines.py` its wrapper.
+
 ### Purpose
 
-`../MAM-basics/py/py_ac_loc/kraken_seg_baselines.py` runs kraken's baseline
-segmentation on Aleppo Codex pages and matches detected baselines to the 28-line
-manual grid from this repo's `column-coordinates/`.  This produces
+`../MAM-basics/py/py_ac_loc/kraken_seg_baselines.py` ran kraken's baseline
+segmentation on Aleppo Codex pages and matched detected baselines to the 28-line
+manual grid from this repo's `column-coordinates/`.  This produced
 per-line baseline polylines aligned to known grid positions — useful
 for locating individual text lines without full OCR.
 
@@ -138,10 +146,9 @@ ever had.
 
 ### Running
 
-Run from `C:/Users/BenDe/GitRepos/MAM-basics`, which is where the code is now, and
-name the wrapper rather than the module: `py/py_ac_loc/kraken_seg_baselines.py`
-imports a sibling as `py_ac_loc.<name>`, so invoking it directly raises
-`ModuleNotFoundError`.
+These were the commands, run from `C:/Users/BenDe/GitRepos/MAM-basics` and naming the
+wrapper rather than the module. Neither file exists now; see the note at the top of
+this section.
 
 ```bash
 # All 24 Job pages (270r – 281v):
@@ -151,12 +158,12 @@ wsl -- ~/.local/share/kraken-env/bin/python py/main_ac_kraken_seg_baselines.py
 wsl -- ~/.local/share/kraken-env/bin/python py/main_ac_kraken_seg_baselines.py 270r 275v
 ```
 
-**Neither command above has been run since the move, and neither can be run here.**
-kraken is in no venv on this machine — not this repo's, and not MAM-basics' — so
-`main_ac_kraken_seg_baselines.py` is the one entry point of the eleven that does not
-even import. The WSL interpreter named above is a separate environment that was never
-part of either repo. Treat the two commands as the shape to restore rather than as
-something known to work today.
+**Neither command was run after the move, and neither could be run here.** kraken
+was in no venv on this machine — not codex-index-aleppo's, and not MAM-basics' —
+so `main_ac_kraken_seg_baselines.py` was the one entry point of the eleven that did
+not even import. The WSL interpreter named above is a separate environment that was
+never part of either repo. Treat the two commands as the shape to restore, from git
+history, rather than as something known to have worked in MAM-basics.
 
 ### Output (in `.novc/`)
 
@@ -177,8 +184,9 @@ something known to work today.
 
 ### Image source
 
-Page images come from archive.org at scale=2.  The URL formula is in
-the script's `_image_url()` function.  Page number =
+Page images come from archive.org at scale=2.  The URL formula is
+`_archive_image_url()` in `py/main_ac_download_pages.py`, which fetches the images
+into `aleppo/aleppo-pages/`, where the deleted module read them.  Page number =
 `(leaf − 1) × 2 + 2 + (0 if recto else 1)`.
 
 ## Output Quality Notes

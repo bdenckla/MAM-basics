@@ -842,6 +842,24 @@ no `parse-go`, `diff-wsgo`, or second WS parse. A scratch run of that ordinary
 first step succeeded while every attempted read under both `in/mam-go/` and
 `MAM-parsed/google/` raised.
 
+**Correction, 2026-09-10: `parse-go` and `diff-wsgo` are back in the mega.** Ben
+reversed their removal the same day: "Although Google is certainly demoted in
+this new world, that seems a step too far, to demote it out of mega!" And: "the
+Google Sheet is a MAM dataset derived from Wikisource, one of many datasets (e.g.
+MAM-simple) and editions (e.g. MAM with doc) derived from Wikisource." Phase 7b
+of `doc/PLAN-mega-coverage.md` put the two steps back, `parse-go` and then
+`diff-wsgo`, straight after `foi-features-of-interest`. The mega still begins
+with the one `parse-ws` step, and still has no second WS parse. The same decision
+supersedes the instruction in "Phase 4: production cutover and source
+documentation" that Google parsing and `diff wsgo` "remain explicit commands".
+Added by the Claude session that executed phase 7b.
+The acceptance in that same Phase 4 section, that "ordinary generation works with
+Google input access made to fail in a scratch harness", now holds for the
+`parse-ws` step alone: with Google input access made to fail, `parse-go` raises,
+and a failure in `parse-go` or `diff-wsgo` stops every step after it, as any
+step's failure does. Added by the Claude session that executed phase 8 of
+`doc/PLAN-mega-coverage.md`.
+
 The comparator now maintains separate comparison values and auto-edit payloads.
 Google search text is exact Google Wikitext. Wikisource replacement text has the
 Google Sheet's required MAM mark order, independently of comparison equivalence.

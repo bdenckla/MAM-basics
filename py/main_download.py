@@ -4,8 +4,6 @@
 Subcommands:
     fr-google
                 Download MAM data from Google Sheets.
-    fr-sefaria
-                Download MAM CSVs from Sefaria.
     fr-wikisource
                 Download MAM JSON from Hebrew Wikisource.
     fr-ws-intro
@@ -19,7 +17,6 @@ when the introduction moves, and a chapter-scoped fr-wikisource run should not p
 Examples:
     .venv/Scripts/python.exe py/main_download.py fr-google
     .venv/Scripts/python.exe py/main_download.py fr-google --section Torah
-    .venv/Scripts/python.exe py/main_download.py fr-sefaria --book39 1Kings
     .venv/Scripts/python.exe py/main_download.py fr-wikisource --book39 Joshua --chapter 11
     .venv/Scripts/python.exe py/main_download.py fr-ws-intro
 """
@@ -29,7 +26,6 @@ import sys
 
 from mb_cmn import bib_locales as tbn
 from subcommands import download_google
-from subcommands import download_sefaria
 from subcommands import download_wikisource
 from subcommands import download_wikisource_intro
 from ws import ws_download_selector as wsds
@@ -76,15 +72,6 @@ def _add_subcommands(subparsers) -> None:
     )
     google_parser.set_defaults(func=_run_google)
 
-    sefaria_parser = subparsers.add_parser(
-        "fr-sefaria",
-        help="Download MAM CSVs from Sefaria.",
-    )
-    sefaria_mutex = sefaria_parser.add_mutually_exclusive_group()
-    sefaria_mutex.add_argument("--book39")
-    sefaria_mutex.add_argument("--section6")
-    sefaria_parser.set_defaults(func=_run_sefaria)
-
     ws_parser = subparsers.add_parser(
         "fr-wikisource",
         help="Download Wikisource chapters and rebuild affected production products.",
@@ -104,24 +91,12 @@ def _add_subcommands(subparsers) -> None:
     ws_intro_parser.set_defaults(func=_run_wikisource_intro)
 
 
-def _bkids_from_args(args):
-    if getattr(args, "book39", None):
-        return (args.book39,)
-    if getattr(args, "section6", None):
-        return tbn.bk39s_of_sec(args.section6)
-    return tbn.ALL_BK39_IDS
-
-
 def _run_google(args: argparse.Namespace) -> None:
     download_google.run(
         section=args.section,
         skip_download=args.skip_download,
         download_only=args.download_only,
     )
-
-
-def _run_sefaria(args: argparse.Namespace) -> None:
-    download_sefaria.run(_bkids_from_args(args))
 
 
 def _run_wikisource(args: argparse.Namespace) -> None:

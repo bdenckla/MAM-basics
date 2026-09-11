@@ -175,7 +175,7 @@ infrastructure has changed enough to make them misleading examples:
 - **A selector is mandatory:** a bare `--book39` selects a whole book, and
   `assert_book_plans_within_target_set` then refuses every chapter the spec does
   not name, exiting before a page is fetched.
-  `main_ws_bot.py holman-meteg-spec --selector-dir .novc` writes the selector,
+  `main_ws_bot.py holman-meteg-spec --selector-dir .novc` wrote the selector,
   one file per spec.
 - **One record was already applied:** M18, 2 Kings 21:12, whose meteg was gone
   from Hebrew Wikisource before the files were built. `_ALREADY_APPLIED`
@@ -183,12 +183,16 @@ infrastructure has changed enough to make them misleading examples:
   records — M13 being the one record with two, its `{{מ:קמץ}}` call's ד and ס
   parameters each holding the atom.
 - **One-shot:** every `old` describes the pre-edit corpus, so
-  `holman-meteg-spec` raises after the live edit's re-download rather than doing
-  nothing. Confirmed 2026-09-03, immediately after the run: it raises on M1.
+  `holman-meteg-spec` raised after the live edit's re-download rather than doing
+  nothing. Confirmed 2026-09-03, immediately after the run: it raised on M1.
 - **Edit level:** Raw page text string replacement, chapter-targeted.
 - **JSON files:** `in/mam-ws-bot-edits/holman-meteg-removal.json`,
   `in/mam-ws-bot-edits/holman-meteg-add-isaiah-23-12.json`
 - **Plan:** `doc/PLAN-holman-meteg-rollout-programme.md`, item 3
+- **Removed 2026-09-10:** the `holman-meteg-spec` subcommand and
+  `py/ws/holman_meteg_edit_spec.py`, by phase 6a of `doc/PLAN-mega-coverage.md`. The
+  two JSON files stay as records, and
+  `git show c3417599:py/ws/holman_meteg_edit_spec.py` recovers the builder.
 
 ## How to look up the original code
 

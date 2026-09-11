@@ -17,9 +17,9 @@ Supports 2-column (poetic) and 3-column (prose) layouts. Use the
 col toggle button to cycle between columns (1 → 2 → 3 → 1).
 
 Usage:
-    python py_ac_loc/gen_line_break_editor.py 270v 1   # column 1 (right)
-    python py_ac_loc/gen_line_break_editor.py 270v 2   # column 2 (left)
-    python py_ac_loc/gen_line_break_editor.py 001r 1   # 3-col prose page
+    .venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 270v 1of2   # column 1 (right)
+    .venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 270v 2of2   # column 2 (left)
+    .venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py 001r 1of3   # 3-col prose page
 """
 
 import json
@@ -1123,9 +1123,12 @@ document.addEventListener('keydown', (e) => {{
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python py_ac_loc/gen_line_break_editor.py <page_id> <col_spec>")
-        print("  e.g. python py_ac_loc/gen_line_break_editor.py 270v 1of2")
-        print("       python py_ac_loc/gen_line_break_editor.py 001r 1of3")
+        print(
+            "Usage: .venv/Scripts/python.exe py/main_ac_gen_line_break_editor.py"
+            " <page_id> <col_spec>"
+        )
+        print("  e.g. ... 270v 1of2")
+        print("       ... 001r 1of3")
         print("  NofM format: N=column number, M=total columns on page")
         print("  2-col (poetic): 1of2=right, 2of2=left")
         print("  3-col (prose):  1of3=right, 2of3=center, 3of3=left")
@@ -1142,7 +1145,3 @@ def main():
     import webbrowser
 
     webbrowser.open(str(out_path))
-
-
-if __name__ == "__main__":
-    main()

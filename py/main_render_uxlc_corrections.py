@@ -1,17 +1,21 @@
-"""Render the suggested-UXLC-corrections report from the emails under emails/.
+"""Render the suggested-UXLC-corrections report from the emails under holman/emails/.
 
 Run from repo root:
     .venv/Scripts/python.exe py/main_render_uxlc_corrections.py
 
-Writes gh-pages/uxlc_corrections.{html,css,js}, the extracted attachments under
-gh-pages/uxlc_img/, and the extract itself to
-docs-not-served/uxlc_corrections.json. The JSON is tracked so that regenerating
-and reading the diff is the test: a parse that changes silently cannot.
+Writes gh-pages/holman/uxlc_corrections.{html,css,js} and the extract itself to
+holman/docs-not-served/uxlc_corrections.json. The JSON is tracked so that
+regenerating and reading the diff is the test: a parse that changes silently
+cannot. The attachments the page shows, under gh-pages/holman/uxlc_img/, are
+written by the ingest step, py/main_ingest_uxlc_emails.py; this program reads
+them and does not write them.
 
 Reads only what is tracked, so a fresh clone can run it. The manuscript
-locations it shows come from data/uxlc_atom_locations.json, which
-py/main_estimate_uxlc_locations.py writes and which needs the sibling
-UXLC-utils clone.
+locations it shows come from holman/data/uxlc_atom_locations.json, which
+py/main_estimate_uxlc_locations.py writes, also from tracked input, and this
+program raises unless those locations cover exactly the cases in the emails.
+py/main_0_mega.py runs the two programs in that order, as its
+estimate-uxlc-locations and render-uxlc-corrections steps.
 """
 
 from __future__ import annotations

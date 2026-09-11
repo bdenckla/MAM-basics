@@ -154,6 +154,9 @@ starting work, rather than to proceed as though the rules had been read.
 directory, neither of which reaches a cloud container, and it declares
 `disable-model-invocation: true`. `dot-claude/README.md` and all of `dot-Codex/` are not loaded by
 a Claude cloud session at all, and are readable in the checkout when wanted.
+`dot-claude/skills/verse-links/`, added 2026-09-10, names its interpreter and
+`py/main_verse_links.py` by the absolute Windows paths of Ben's own machines, which a cloud
+container does not have; the command itself needs only the checkout.
 
 ## Is a skill written after Claude Code launches picked up? Yes, measured
 

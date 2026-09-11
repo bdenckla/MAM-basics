@@ -1,6 +1,7 @@
-# Leningrad Codex index data in MAM-basics
+# Leningrad Codex page-image evidence in MAM-basics
 
-This product directory holds data for the Leningrad Codex index. MAM-basics owns the generator; this directory holds its input-adjacent artifacts and the hand-made image evidence.
+This directory holds hand-made evidence from photographs of the Leningrad Codex.
 
-- [`lenin-wiki/`](lenin-wiki/) holds the generated Wikisource-page index files. [`../py/main_lenin_wikisource_page.py`](../py/main_lenin_wikisource_page.py) reads MAM-basics' canonical `uxlc/data/lci_augrecs.json` and writes the three files in `lenin-wiki/`. Its wikitext is a starting point for manual Wikisource work, not a mirror of the page that Wikisource now publishes.
 - [`page-snips/`](page-snips/) holds hand-made crops of Leningrad Codex page images, one crop for each fact established from a manuscript image. [`page-snips/README.md`](page-snips/README.md) describes the naming convention, sources, and evidence for every crop.
+
+Until 2026-09-10 this directory also held the output of a one-off generator of Leningrad Codex index wikitext. That wikitext was only ever a starting point for the index page built by hand on Hebrew Wikisource, which [`../in/mam-ws-intro/index-leningrad.mediawiki`](../in/mam-ws-intro/index-leningrad.mediawiki) mirrors. Ben's decision of 2026-09-10 removed the generator and its output from this repository; phase 3 of [`../doc/PLAN-mega-coverage.md`](../doc/PLAN-mega-coverage.md) names every file removed.

@@ -45,7 +45,6 @@ from accgram.almost_errors_html_shared import (
 )
 from accgram.mam_simple_verse import default_mam_simple_dir
 from accgram import rtms_data
-from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import my_html_for_img
@@ -450,15 +449,3 @@ def run(args: argparse.Namespace) -> None:
         f"HTML: {html_out} ({len(supplies)} supplied marks, "
         f"{len(punctuation_changes)} punctuation changes)"
     )
-
-
-def main() -> None:
-    force_utf8_io()
-    repo_root = paths.repo_root()
-    parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=repo_root)
-    run(parser.parse_args())
-
-
-if __name__ == "__main__":
-    main()

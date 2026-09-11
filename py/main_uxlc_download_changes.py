@@ -2,9 +2,12 @@
 Base Usage:
 .venv/Scripts/python.exe py/main_uxlc_download_changes.py
 
+Downloads only.  py/main_0_mega.py is what rebuilds from these inputs, and a
+default run ends by saying so.
+
 Fetches from my_uxlc.UXLC_DOWNLOAD_HOST -- hcanat.us, not tanach.us, and see that
 constant for why.  ``--host`` fetches from somewhere else again, and a run with it
-does NOT go on to rebuild: see main().
+ends without that line: see main().
 """
 
 import argparse
@@ -12,7 +15,6 @@ import sys
 from pathlib import Path
 import zipfile
 
-import main_uxlc_mega
 from mb_cmn import polite_download
 from mb_cmn.uxlc_change_url import uxlc_release_xml_filename, uxlc_release_xml_url
 import mb_cmn.file_io as my_open
@@ -88,17 +90,19 @@ def _show_progress(path):
 
 
 def main():
-    """Download UXLC inputs, then rebuild downstream derived outputs.
+    """Download UXLC inputs, and rebuild nothing.
 
-    The default run fetches from my_uxlc.UXLC_DOWNLOAD_HOST and DOES rebuild.  A
-    ``--host`` run naming any other host stops after downloading and does not:
-    what a third host serves under ``/Books/`` and ``/Changes/`` is that host's,
-    and rebuilding from it would put those bytes into the tracked outputs
-    silently.
+    A default run fetches from my_uxlc.UXLC_DOWNLOAD_HOST and ends by telling the
+    user to run py/main_0_mega.py, which rebuilds from what was downloaded.  Until
+    2026-09-10 it rebuilt by calling main_uxlc_mega.main(), whose five steps
+    became steps of the mega that day.  A ``--host`` run naming any other host
+    ends without that line: what a third host serves under ``/Books/`` and
+    ``/Changes/`` is that host's, and rebuilding from it would put those bytes
+    into the tracked outputs silently.
 
-    Until 2026-08-12 this guard read ``!= UXLC_HOST``, and the rebuilding host was
-    the publishing host, tanach.us.  Those are two hosts now -- see
-    UXLC_DOWNLOAD_HOST -- and it is the DOWNLOAD host a default run rebuilds from.
+    Until 2026-08-12 this guard read ``!= UXLC_HOST``, and the host a default run
+    rebuilt from was the publishing host, tanach.us.  Those are two hosts now --
+    see UXLC_DOWNLOAD_HOST -- and the guard compares against the DOWNLOAD host.
     """
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -113,7 +117,10 @@ def main():
     if args.host != my_uxlc.UXLC_DOWNLOAD_HOST:
         print(f"--host {args.host}: downloaded only, not rebuilding")
         return
-    main_uxlc_mega.main()
+    print(
+        "Downloaded only; nothing was rebuilt.  To rebuild from these inputs, run"
+        " .venv/Scripts/python.exe py/main_0_mega.py"
+    )
 
 
 def _parse_args():
