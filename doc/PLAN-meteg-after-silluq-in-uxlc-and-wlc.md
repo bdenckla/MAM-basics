@@ -1,6 +1,6 @@
 # Survey the verse-final chanted words where UXLC or WLC has a U+05BD later than MAM's last
 
-State: live. Proposed 2026-09-10 at Ben's request; nothing run. Ben asked the same day for it to be run at once, by a session of its own started from a task chip.
+State: executed 2026-09-10, by a session started from a task chip, at this branch's head `5f996d0e`. The findings are `doc/meteg-after-silluq-in-uxlc-and-wlc.md`, whose section 10 gives the scripts and commands. The run added one thing to the steps below: a supplementary pass over the 121 verses that step 2 skips, which found Psalms 60:10. What remains is Ben's look at the Leningrad Codex for the three class 1 members not yet read from an image, 1 Kings 14:14, Psalms 60:10 and Psalms 70:2; section 6 of the findings file has the links. Proposed 2026-09-10 at Ben's request, and run the same day, also at Ben's request.
 
 ## Why this plan exists
 
