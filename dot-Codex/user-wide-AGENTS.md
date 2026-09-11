@@ -709,6 +709,38 @@ this session" and "since reverted" with no date, and gave no repo paths.
   stranded copies were the reason a global entry was wanted; kept because the reason has
   outlived them.
 
+## Surveys must declare their template projection — no blind dives
+
+A **blind dive** is generic recursion that treats every parameter of every template as
+ordinary text. Do not write one for a Bible-text survey. A template parameter can be
+Scripture, documentation, apparatus, formatting, or one of several alternatives, and those
+roles cannot be recovered by flattening the structure after the fact.
+
+- **Classify every reachable template explicitly.** A survey declares which parameter or
+  parameters answer its question, which parameters it ignores, and which wrappers contribute
+  only a separator or structure. There is no "walk all values" fallback. A new or unclassified
+  template raises, so a source-schema change cannot silently enlarge the survey's population.
+- **Edition display and survey population are separate decisions.** Most editions include both
+  ketiv and qere, but that does not make both relevant to every survey: a consonantal survey
+  may need the ketiv, a pronunciation or pointing survey may need the qere, and a layout or
+  apparatus survey may need both. Likewise, an ordinary survey of one selected Scripture
+  stream normally chooses one cantillation strand, one qamats alternative, and one form from
+  a deḥi or tsinnor stress-helper template. State the choices for that survey; do not hide
+  them in generic recursion or infer them from what an edition usually displays.
+- **Documentation needs the same discipline.** A Bible-text survey excludes documentation-note
+  bodies while retaining any parameter that is actually Scripture. A survey of notes reads
+  the exact note fields it needs. The presence of Hebrew letters or accents in a documentation
+  parameter never makes that parameter Bible text.
+- **Walking every branch is specialized behavior.** A template inventory, schema audit, or
+  survey of the dataset may deliberately inspect every alternative. Name that scope in the
+  module and output, keep it distinct from a survey of a real or implied edition, and still
+  classify the templates rather than relying on an accidental recursive walk.
+- **Make the projection reviewable.** Keep the choices in one named policy or explicit call-site
+  dispatch, record them in a generated survey's metadata or documentation where practical, and
+  verify regenerated outputs as differential tests. Ben's instruction, 2026-09-10, after a
+  stale doubled-pashta report prompted an audit that found surveys visiting unselected template
+  branches.
+
 ## Tests: differential and lint-shaped only
 An audit of git history, code comments, and issues across all twenty repos (2026-07-25) found
 exactly **four** occasions where a test demonstrably found something, and **zero** recorded
