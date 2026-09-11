@@ -577,12 +577,9 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
 
 # Scripts a step runs by subprocess that are not programs of this repository.  Naming
 # them here is what keeps a script path the scan cannot match a failure everywhere else.
-_EXTERNAL_SCRIPTS: dict[str, str] = {
-    "near-aleppo/census/run_all.py": (
-        "MAM-private's census runner, which the near-aleppo-census step runs in that"
-        " clone: a program of MAM-private, not of this repository."
-    ),
-}
+# Empty since 2026-09-11, when the near-aleppo-census step, which ran MAM-private's
+# near-aleppo/census/run_all.py in that clone, was deleted from the mega.
+_EXTERNAL_SCRIPTS: dict[str, str] = {}
 
 _MEGA = "py/main_0_mega.py"
 _SUBPROCESS_FUNCTIONS = frozenset(
