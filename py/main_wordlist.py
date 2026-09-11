@@ -1,4 +1,8 @@
-"""Generate a JSON list of the qere (read-aloud) words in MAM."""
+"""Generate the MAM qere-word list from one declared Scripture projection.
+
+The projection selects qere, canonical deḥi/tsinnor text, qamats parameter
+dalet, and combined cantillation.
+"""
 
 from mb_cmn import file_io
 from mb_cmn import paths

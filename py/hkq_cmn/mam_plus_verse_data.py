@@ -18,6 +18,9 @@ _NO_ATOM_CMP = {
 _IN_WORD_CMP = {
     canonical_template_name(name) for name in template_names.IN_WORD_TMPL_NAMES
 }
+_STD_KQ_CMP = {
+    canonical_template_name(name) for name in template_names.STD_KQ_TMPL_NAMES
+}
 
 
 def _no_rule_error(tmpl_name: object, tmpl_params: object) -> ValueError:
@@ -276,7 +279,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             # string (e.g. "א-קרי=..."), not verse text.
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return
-        if 'כו"ק' in (cmp_name or "") or 'קו"כ' in (cmp_name or ""):
+        if cmp_name in _STD_KQ_CMP:
             # Ketiv-qere: param 1 is ketiv (written), param 2 is qere (read).
             _collect_text_fragments(tmpl_params.get("2"), out_parts)
             return
@@ -322,104 +325,85 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return
         raise _no_rule_error(tmpl_name, tmpl_params)
+    raise TypeError(f"unclassified plus verse payload node: {type(node).__name__}")
 
 
-def _render_template_like_text(node: object) -> str:
-    if isinstance(node, str):
-        return node
+def _argument_keys_for_table_word_verifier(tmpl_name: str) -> tuple[str, ...]:
+    """Parameters that can answer the Holman-table word/wrapper question.
 
-    if isinstance(node, list):
-        return "".join(_render_template_like_text(item) for item in node)
-
-    if isinstance(node, dict):
-        tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_name, str) and isinstance(tmpl_params, dict):
-            return _render_template_call(tmpl_name, tmpl_params)
-
-        # Fallback for non-template container nodes.
-        return "".join(_render_template_like_text(value) for value in node.values())
-
-    return ""
-
-
-def _render_template_call(tmpl_name: str, tmpl_params: dict[object, object]) -> str:
-    rendered_args: list[str] = []
-    for key, value in tmpl_params.items():
-        rendered_value = _render_template_like_text(value)
-        if isinstance(key, str) and key.isdigit():
-            rendered_args.append(rendered_value)
-        else:
-            rendered_args.append(f"{key}={rendered_value}")
-
-    if not rendered_args:
-        return f"{{{{{tmpl_name}}}}}"
-
-    return f"{{{{{tmpl_name}|{'|'.join(rendered_args)}}}}}"
-
-
-def _collect_nusach_targets(node: object, out_targets: list[str]) -> None:
-    if isinstance(node, list):
-        for item in node:
-            _collect_nusach_targets(item, out_targets)
-        return
-
-    if isinstance(node, dict):
-        tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_params, dict):
-            if tmpl_name == "נוסח":
-                target_text = _render_template_like_text(tmpl_params.get("1")).strip()
-                if target_text:
-                    out_targets.append(target_text)
-
-                # Skip param 2 because it is documentation, not verse text.
-                for key, value in tmpl_params.items():
-                    if key in {"1", "2"}:
-                        continue
-                    _collect_nusach_targets(value, out_targets)
-                return
-
-            for value in tmpl_params.values():
-                _collect_nusach_targets(value, out_targets)
+    The verifier needs both sides of a ketiv/qere wrapper so it can identify the
+    wrapper, but it otherwise follows the selected qere Scripture stream used by
+    ``_collect_text_fragments``: the clean stress-helper form, dikduk qamats form,
+    combined dual cantillation, and note target.  Documentation and apparatus
+    fields cannot make a table word count as present.
+    """
+    cmp_name = canonical_template_name(tmpl_name)
+    if cmp_name in _STD_KQ_CMP or tmpl_name == "קרי ולא כתיב":
+        return ("1", "2")
+    if tmpl_name == "כתיב ולא קרי":
+        return ("1",)
+    if cmp_name == canonical_template_name(template_names.TRIVIAL_QERE):
+        return ("1", "3")
+    if tmpl_name in {"נוסח", template_names.SCRDFF_TAR}:
+        return ("1",)
+    if tmpl_name in template_names.STRESS_HELPER_TMPL_NAMES:
+        return ("1",)
+    if tmpl_name == template_names.QAMATS_VARIANT:
+        return ("ד",)
+    if tmpl_name == template_names.DUAL_CANTILLATION:
+        return ("כפול",)
+    if tmpl_name in template_names.IN_WORD_TMPL_NAMES | {"מודגש", "מ:סיום בטוב"}:
+        return ("1",)
+    if cmp_name in _NO_ATOM_CMP or tmpl_name in {
+        template_names.INVERTED_NUN,
+        template_names.SCRDFF_NO_TAR,
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        "ש",
+    }:
+        return ()
+    raise ValueError(f"unclassified table-word template: {tmpl_name!r}")
 
 
-def verse_nusach_targets_by_location(
-    plus_json: object,
-) -> dict[tuple[int, int, int], list[str]]:
-    out: dict[tuple[int, int, int], list[str]] = {}
-    for (
-        book39_index,
-        chapter_num,
-        verse_num,
-        verse_payload,
-    ) in _iter_plus_verse_payloads(plus_json):
-        targets: list[str] = []
-        _collect_nusach_targets(verse_payload, targets)
-        out[(book39_index, chapter_num, verse_num)] = targets
-    return out
+def _selected_argument_text(node: object) -> str:
+    parts: list[str] = []
+    _collect_text_fragments(node, parts)
+    return "".join(parts).strip()
 
 
 def _collect_template_argument_records(
     node: object,
     out_records: list[dict[str, str]],
 ) -> None:
+    """Collect classified Scripture arguments for the Holman-table verifier."""
     if isinstance(node, list):
         for item in node:
             _collect_template_argument_records(item, out_records)
         return
 
+    if isinstance(node, str):
+        return
+
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
         tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_name, str) and isinstance(tmpl_params, dict):
-            for key, value in tmpl_params.items():
-                argument_key = str(key)
-                # In plus JSON, נוסח param 2 is documentation, not verse text.
-                if tmpl_name == "נוסח" and argument_key == "2":
-                    continue
-
-                argument_text = _render_template_like_text(value).strip()
+        if isinstance(tmpl_name, str):
+            argument_keys = _argument_keys_for_table_word_verifier(tmpl_name)
+            if tmpl_params is None:
+                if argument_keys:
+                    raise ValueError(
+                        f"{tmpl_name!r} lacks required verifier arguments {argument_keys!r}"
+                    )
+                return
+            if not isinstance(tmpl_params, dict):
+                raise ValueError(f"{tmpl_name!r} has non-mapping parameters")
+            for argument_key in argument_keys:
+                if argument_key not in tmpl_params:
+                    raise ValueError(
+                        f"{tmpl_name!r} lacks required verifier argument {argument_key!r}"
+                    )
+                value = tmpl_params[argument_key]
+                argument_text = _selected_argument_text(value)
                 if argument_text:
                     out_records.append(
                         {
@@ -432,8 +416,12 @@ def _collect_template_argument_records(
                 _collect_template_argument_records(value, out_records)
             return
 
-        for value in node.values():
-            _collect_template_argument_records(value, out_records)
+        raise ValueError(
+            "unclassified non-template mapping in plus verse payload: "
+            f"keys={sorted(str(key) for key in node)}"
+        )
+
+    raise TypeError(f"unclassified plus verse payload node: {type(node).__name__}")
 
 
 def verse_template_argument_records_by_location(

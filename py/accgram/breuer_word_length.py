@@ -425,17 +425,75 @@ def accents_of(word: str) -> str:
     return "".join(_ACCENT.findall(word))
 
 
-def _flatten(node: object, out: list[dict]) -> None:
-    """Every chanted-word entry of one verse, Phonetic MAM's ``cb`` brackets flattened.
+_PHONETIC_MAM_LAYOUT_MARKERS = frozenset((None, "סס", "ססס", "פפ", "פפפ", "מ:פסק"))
+_CB_QAMATS = "cb-qamats"
+_CB_DUAL_CANTILLATION = "cb-dualcant"
+_SELECTED_PHONETIC_MAM_CANTILLATION = "cant-alef"
+_PHONETIC_MAM_CANTILLATION_BRANCH_INDEX = {"cant-alef": 0, "cant-bet": 1}
 
-    A ``cb`` brackets something other than a plain run of chanted words -- a paseq, a setuma, a
-    qamats note, a dual-cantillation span -- and holds chanted words like any other branch.
+
+def _qamats_branch_labels(node: object) -> set[str]:
+    """Read the declared qamats label throughout one qamats alternative branch."""
+    if isinstance(node, dict):
+        label = node.get("phonrec-qamats")
+        return {label} if isinstance(label, str) else set()
+    if isinstance(node, list):
+        labels: set[str] = set()
+        for child in node:
+            labels.update(_qamats_branch_labels(child))
+        return labels
+    if isinstance(node, str) or node is None:
+        return set()
+    raise TypeError(f"unclassified Phonetic MAM qamats node: {type(node).__name__}")
+
+
+def _flatten(node: object, out: list[dict]) -> None:
+    """Select one Phonetic MAM stream for Breuer's word-length comparison.
+
+    The survey compares one sequence of chanted words with WLC.  A qamats bracket
+    therefore contributes the named ``qamats-dal`` reading, and a dual-cantillation
+    bracket contributes the named ``cant-alef`` branch (the first branch in Phonetic
+    MAM's declared ordering).  Layout and paseq/legarmeh markers contribute no word.
+    Every bracket marker is classified here; a new marker fails the survey.
     """
     if isinstance(node, dict):
         out.append(node)
-    elif isinstance(node, list):
-        for sub in node[1:] if node and node[0] == "cb" else node:
+        return
+    if isinstance(node, str):
+        if node in _PHONETIC_MAM_LAYOUT_MARKERS:
+            return
+        raise ValueError(f"unclassified Phonetic MAM marker: {node!r}")
+    if node is None:
+        return
+    if not isinstance(node, list):
+        raise TypeError(f"unclassified Phonetic MAM node: {type(node).__name__}")
+    if not node:
+        return
+    if node[0] == "cb":
+        for sub in node[1:]:
             _flatten(sub, out)
+        return
+    if node[0] == [_CB_QAMATS]:
+        selected = [
+            branch
+            for branch in node[1:]
+            if _qamats_branch_labels(branch) == {"qamats-dal"}
+        ]
+        if len(selected) != 1:
+            raise ValueError(f"unexpected {_CB_QAMATS} branches: {node!r}")
+        _flatten(selected[0], out)
+        return
+    if node[0] == [_CB_DUAL_CANTILLATION]:
+        branches = node[1:]
+        if len(branches) != 2:
+            raise ValueError(f"unexpected {_CB_DUAL_CANTILLATION} branches: {node!r}")
+        branch_index = _PHONETIC_MAM_CANTILLATION_BRANCH_INDEX[
+            _SELECTED_PHONETIC_MAM_CANTILLATION
+        ]
+        _flatten(branches[branch_index], out)
+        return
+    for sub in node:
+        _flatten(sub, out)
 
 
 def load_phonetic_book(bb: str, cache: dict) -> dict:

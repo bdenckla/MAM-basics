@@ -26,29 +26,12 @@ WHITESPACE_TEMPLATE_NAMES = {
 # the mirroring the header comment below requires is structural rather than
 # asserted; this module held its own copy of the four until 2026-09-02.
 IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
-# ---------------------------------------------------------------------------
-# VARIANT-TEMPLATE MULTIPLICITY WARNING
-#
-# The four templates below store multiple textual variants as separate params.
-# When word_atoms_from_qere_atoms() processes them it recurses into EVERY param
-# list, so a single word that appears inside one of these templates will produce
-# MULTIPLE word-atom hits — one per variant param — that are otherwise
-# INDISTINGUISHABLE in the output (same word text, same sources list).
-#
-# Known templates and their variant params:
-#   מ:דחי   — "1" (canonical accent) + "2" (stress-helper duplicate accent)
-#   מ:צינור — "1" (canonical accent) + "2" (stress-helper duplicate accent)
-#   מ:קמץ   — "ד" (qamats gadol/qatan, Ashkenazic) + "ס" (Sephardic)
-#   מ:כפול  — "כפול" (combined) + "א" (alef cantillation) + "ב" (bet cantillation)
-#              (applies to dual-cantillation verses: Decalogue, Saga of Reuben)
-#
-# Additionally, the fall-through path at the bottom of project_qere_atoms()
-# recurses into ALL params of any template not explicitly recognised here,
-# so future novel multi-param templates would silently exhibit the same
-# multiplicity.
-#
-# Callers that count or deduplicate hits must account for this behaviour.
-# ---------------------------------------------------------------------------
+
+
+# This search projection is one coherent MAM reading: qere, parameter 1 of a
+# dexi/tsinnor stress-helper template, qamats parameter dalet, and combined
+# cantillation.  The alternative branches are data, but they are not additional
+# qere-word occurrences for this survey.
 # Per-template extraction rules below mirror those in:
 #   gh-pages/MAM-parsed/plus/html/mpplus.html and its siblings, the rendered
 #     structure reference, whose source is this repo's py/author_misc/
@@ -60,20 +43,6 @@ IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
 # MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example),
 # and that whole directory is gone.
 #
-# THIS MODULE STILL COLLECTS EVERY PARAMETER OF AN UNRECOGNISED TEMPLATE, where
-# mam_plus_verse_data raises instead as of 2026-09-02.  The difference is
-# deliberate: this projection is a tolerate-and-skip one, feeding a search for
-# ketiv/qere words rather than a count of atoms, so an unrecognised template
-# costs it a spurious hit and not a wrong index.  The fall-through warning below
-# is the standing statement of that cost.
-PARAM_BOUNDARY_TEMPLATE_NAMES = {
-    "מ:דחי",
-    "מ:צינור",
-    "מ:קמץ",
-    "מ:כפול",
-}
-
-
 def to_vowel_only_form(text: str) -> str:
     no_joiners = CGJ_AND_JOINERS_RE.sub("", text)
     return ACCENTS_AND_METEG_RE.sub("", no_joiners)
@@ -86,13 +55,15 @@ def strip_accents_and_meteg(text: str) -> str:
 
 def qere_arg_key_for_template(template_name: str) -> str | None:
     name = canonical_template_name(template_name)
-    if name == 'מ:קו"כ-אם-2':
+    if name == canonical_template_name(template_names.TRIVIAL_QERE):
         return "1"
     if name == "קרי ולא כתיב":
         return "2"
     if name == "כתיב ולא קרי":
         return None
-    if 'כו"ק' in name or 'קו"כ' in name:
+    if name in {
+        canonical_template_name(item) for item in template_names.STD_KQ_TMPL_NAMES
+    }:
         return "2"
     return None
 
@@ -119,15 +90,16 @@ def _text_atom(text: str, source: dict[str, object] | None) -> dict[str, object]
     }
 
 
-def _template_atom(
-    template_name: str,
-    param_atom_lists: list[list[dict[str, object]]],
-) -> dict[str, object]:
-    return {
-        "kind": "template",
-        "template_name": template_name,
-        "param_atom_lists": param_atom_lists,
-    }
+def _required_param(
+    tmpl_name: str,
+    tmpl_params: dict[object, object],
+    key: str,
+) -> object:
+    if key not in tmpl_params:
+        raise ValueError(
+            f"Template {tmpl_name!r} is missing required parameter {key!r}"
+        )
+    return tmpl_params[key]
 
 
 def project_qere_atoms(
@@ -145,62 +117,71 @@ def project_qere_atoms(
         return out
 
     if not isinstance(node, dict):
-        return []
+        raise TypeError(f"Unclassified qere-projection node: {type(node).__name__}")
 
     tmpl_name = node.get("tmpl_name")
-    tmpl_params = node.get("tmpl_params")
-    if not isinstance(tmpl_name, str) or not isinstance(tmpl_params, dict):
-        return []
+    tmpl_params = node.get("tmpl_params", {})
+    if not isinstance(tmpl_name, str):
+        raise ValueError(f"Qere-projection mapping has no template name: {node!r}")
+    if not isinstance(tmpl_params, dict):
+        raise ValueError(f"Template {tmpl_name!r} has non-mapping parameters")
 
-    if tmpl_name in {"נוסח", "מ:הערה-2"}:
-        return project_qere_atoms(tmpl_params.get("1"), source=source)
+    cmp_name = canonical_template_name(tmpl_name)
 
-    if canonical_template_name(tmpl_name) in {"מ:הערה", "כתיב ולא קרי", 'מ:נו"ן הפוכה'}:
+    if cmp_name in {"נוסח", canonical_template_name(template_names.SCRDFF_TAR)}:
+        return project_qere_atoms(
+            _required_param(tmpl_name, tmpl_params, "1"), source=source
+        )
+
+    if cmp_name in {
+        canonical_template_name(template_names.SCRDFF_NO_TAR),
+        "כתיב ולא קרי",
+        canonical_template_name(template_names.INVERTED_NUN),
+    }:
         return []
 
     qere_arg_key = qere_arg_key_for_template(tmpl_name)
     if qere_arg_key is not None:
         return project_qere_atoms(
-            tmpl_params.get(qere_arg_key),
+            _required_param(tmpl_name, tmpl_params, qere_arg_key),
             source=_with_source(source, tmpl_name, qere_arg_key),
         )
 
-    if tmpl_name in WHITESPACE_TEMPLATE_NAMES:
+    if cmp_name in WHITESPACE_TEMPLATE_NAMES or cmp_name == "ש":
         return [_text_atom(" ", source)]
 
-    if tmpl_name in {"מ:פסק", "מ:לגרמיה-2"}:
+    if cmp_name in {"מ:פסק", "מ:לגרמיה-2"}:
         return [_text_atom(PASOLEG, source)]
 
-    if tmpl_name == "מ:מקף אפור":
+    if cmp_name == "מ:מקף אפור":
         return [_text_atom(MAQ, source)]
 
-    if tmpl_name in IN_WORD_RECURSE_TEMPLATE_NAMES:
-        return project_qere_atoms(tmpl_params.get("1"), source=source)
+    selected_key = None
+    if cmp_name in {
+        canonical_template_name(item) for item in IN_WORD_RECURSE_TEMPLATE_NAMES
+    } | {
+        canonical_template_name(item)
+        for item in template_names.STRESS_HELPER_TMPL_NAMES
+    }:
+        selected_key = "1"
+    elif cmp_name == canonical_template_name(template_names.QAMATS_VARIANT):
+        selected_key = "ד"
+    elif cmp_name == canonical_template_name(template_names.DUAL_CANTILLATION):
+        selected_key = "כפול"
+    elif cmp_name in {"מ:סיום בטוב", "מודגש"}:
+        selected_key = "1"
 
-    if tmpl_name in PARAM_BOUNDARY_TEMPLATE_NAMES:
-        # NOTE: all variant params are projected and returned as separate atom
-        # lists.  word_atoms_from_qere_atoms() will recurse into every one of
-        # them, producing one hit per variant (see VARIANT-TEMPLATE MULTIPLICITY
-        # WARNING above).  The template name is recorded in the _template_atom
-        # wrapper but NOT propagated into the per-word sources chain.
-        return [
-            _template_atom(
-                tmpl_name,
-                [
-                    project_qere_atoms(value, source=source)
-                    for value in tmpl_params.values()
-                ],
-            )
-        ]
+    if selected_key is not None:
+        return project_qere_atoms(
+            _required_param(tmpl_name, tmpl_params, selected_key), source=source
+        )
 
-    # Fall-through: unrecognised template — recurse into all param values.
-    # WARNING: if an unrecognised template stores multiple textual variants as
-    # separate params this will silently produce multiple word-atom hits in the
-    # same way as PARAM_BOUNDARY_TEMPLATE_NAMES (see warning above).
-    out: list[dict[str, object]] = []
-    for value in tmpl_params.values():
-        out.extend(project_qere_atoms(value, source=source))
-    return out
+    if cmp_name in {
+        canonical_template_name(item) for item in template_names.NO_ATOM_TMPL_NAMES
+    } | {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
+        return [_text_atom(" ", source)]
+
+    raise ValueError(f"Unclassified template {tmpl_name!r} in qere-word projection")
 
 
 def flatten_sources(source: dict[str, object] | None) -> list[dict[str, object]]:

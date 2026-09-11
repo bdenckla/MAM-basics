@@ -1,4 +1,11 @@
-"""Survey Wikisource template usage patterns in MAM-parsed-plus data."""
+"""Survey every template branch in MAM-parsed-plus as dataset structure.
+
+This is deliberately not a Scripture projection.  The inventory visits every
+parameter of every template so documentation, apparatus, formatting, ketiv/qere,
+qamats, dual-cantillation, and stress-helper branches all contribute to the schema
+and nesting counts.  The generated grammar locks classify the complete template
+and nesting inventory and fail when the dataset introduces an unclassified shape.
+"""
 
 import json
 import collections
@@ -265,6 +272,13 @@ def survey(plain_mpasuq, case_rank_maps):
     )
     plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])
     result = {
+        "projection": {
+            "kind": "all-classified-template-branches",
+            "description": (
+                "Dataset-structure inventory over every parameter, including "
+                "documentation, apparatus, formatting, and alternative branches."
+            ),
+        },
         "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
         "column_counts": _flatten_col_counts(accum),

@@ -1,6 +1,16 @@
-"""Exports make_comparable"""
+"""Make MAM Wikisource and Google-Docs trees structurally comparable.
+
+The diff asks about the complete source structure, not one Scripture stream.  It
+therefore emits every template argument as a stack-qualified comparison element,
+including documentation, apparatus, formatting, and alternative branches.  The
+argument labels in the diff output make that deliberate all-branch projection
+visible rather than flattening the branches into anonymous text.
+
+Exports ``make_comparable``.
+"""
 
 import re
+
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_misc import hebrew_letter_words as hlw

@@ -7,36 +7,28 @@
     ]
   },
   "notes": [
-    "VARIANT-TEMPLATE MULTIPLICITY: certain MAM-plus templates store multiple",
-    "textual variants as separate params, and the search path recurses into ALL",
-    "of them. A word inside such a template therefore produces multiple",
-    "indistinguishable hits — one per variant param. Known templates:",
-    "  מ:דחי   — 2 params: canonical accent (used) + stress-helper duplicate (ignored for dedup)",
-    "  מ:צינור — 2 params: canonical accent (used) + stress-helper duplicate (ignored for dedup)",
-    "  מ:קמץ  — 2 params: Ashkenazic qamats (used) + Sephardic (ignored for dedup)",
-    "  מ:כפול — 3 params: combined/alef/bet — dual-cantillation verses only",
-    "           (Decalogue, Saga of Reuben)",
-    "Additionally, any unrecognised template encountered at runtime will also",
-    "produce one hit per param, silently."
+    "MAM-plus projection: qere; parameter 1 of deḥi and tsinnor",
+    "stress-helper templates; qamats parameter dalet; combined",
+    "cantillation. Documentation and unselected alternatives do not enter",
+    "the search population. An unclassified template raises."
   ],
   "summary": {
     "mpu": {
-      "hit_count": 1393,
-      "unique_vowel_only_form_count": 113,
-      "trivq_arg1_hit_count": 19,
-      "trivq_arg1_unique_vowel_only_form_count": 16,
-      "other_hit_count": 1374,
-      "other_unique_vowel_only_form_count": 101,
-      "plain_text_hit_count": 1373,
+      "hit_count": 1387,
+      "unique_vowel_only_form_count": 112,
+      "trivq_arg1_hit_count": 18,
+      "trivq_arg1_unique_vowel_only_form_count": 15,
+      "other_hit_count": 1369,
+      "other_unique_vowel_only_form_count": 100,
+      "plain_text_hit_count": 1368,
       "templated_non_trivq_hit_count": 1,
       "source_template_hit_counts": {
         "כו״ק": 1,
-        "מ:קו״כ-אם-2": 19
+        "מ:קו״כ-אם-2": 18
       },
       "vowel_only_form_counts": {
         "אֵיכֹה": 1,
         "אֵיפֹה": 9,
-        "אָהֳלֹה": 4,
         "אָלֹה": 1,
         "אׇהֳלֹה": 4,
         "בְסֻכֹּה": 1,
@@ -72,7 +64,7 @@
         "וְעָשֹׂה": 3,
         "וְרָאֹה": 1,
         "וְשׂוֹכֹה": 1,
-        "וַאֲבַדֹּה": 2,
+        "וַאֲבַדֹּה": 1,
         "וָכֹה": 1,
         "וּבְנֻחֹה": 1,
         "וּבָכֹה": 4,
@@ -113,7 +105,7 @@
         "נִדְמֹה": 1,
         "נָקֹה": 1,
         "סוּתֹה": 1,
-        "עֲשֹׂה": 4,
+        "עֲשֹׂה": 3,
         "עִירֹה": 1,
         "עֶזְרֹה": 1,
         "עָטֹה": 1,
@@ -149,14 +141,13 @@
         "תְּבוּאָתֹה": 1
       }
     },
-    "mam_basics_wordlist_hit_count": 302,
-    "mam_basics_wordlist_unique_vowel_only_form_count": 113,
+    "mam_basics_wordlist_hit_count": 296,
+    "mam_basics_wordlist_unique_vowel_only_form_count": 112,
     "vowel_only_forms_only_in_mpu": [],
     "vowel_only_forms_only_in_wordlist": [],
     "vowel_only_forms_in_both": [
       "אֵיכֹה",
       "אֵיפֹה",
-      "אָהֳלֹה",
       "אָלֹה",
       "אׇהֳלֹה",
       "בְסֻכֹּה",
@@ -279,24 +270,6 @@
       "verse": 3,
       "word": "אׇֽהֳלֹה֙",
       "vowel_only_form": "אׇהֳלֹה",
-      "is_trivq_arg1": true,
-      "source_templates": [
-        "מ:קו״כ-אם-2"
-      ],
-      "source_argument_keys": [
-        "1"
-      ],
-      "is_plain_text_hit": false
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
-      "chapter": 13,
-      "verse": 3,
-      "word": "אָֽהֳלֹה֙",
-      "vowel_only_form": "אָהֳלֹה",
       "is_trivq_arg1": true,
       "source_templates": [
         "מ:קו״כ-אם-2"
@@ -633,38 +606,10 @@
       "book39_index": 0,
       "book24_name": "ספר בראשית",
       "sub_book_name": null,
-      "chapter": 9,
-      "verse": 21,
-      "word": "אָהֳלֹֽה",
-      "vowel_only_form": "אָהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
       "chapter": 12,
       "verse": 8,
       "word": "אׇהֳלֹ֑ה",
       "vowel_only_form": "אׇהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
-      "chapter": 12,
-      "verse": 8,
-      "word": "אָהֳלֹ֑ה",
-      "vowel_only_form": "אָהֳלֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -903,20 +848,6 @@
       "verse": 21,
       "word": "אׇֽהֳלֹ֔ה",
       "vowel_only_form": "אׇהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
-      "chapter": 35,
-      "verse": 21,
-      "word": "אָֽהֳלֹ֔ה",
-      "vowel_only_form": "אָהֳלֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -17325,20 +17256,6 @@
       "book39_index": 0,
       "book24_name": "ספר משלי",
       "sub_book_name": null,
-      "chapter": 21,
-      "verse": 3,
-      "word": "עֲ֭שֹׂ֭ה",
-      "vowel_only_form": "עֲשֹׂה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "D2-Proverbs.json",
-      "book39_index": 0,
-      "book24_name": "ספר משלי",
-      "sub_book_name": null,
       "chapter": 23,
       "verse": 5,
       "word": "עָשֹׂ֣ה",
@@ -17370,20 +17287,6 @@
       "chapter": 27,
       "verse": 20,
       "word": "וַ֭אֲבַדֹּה",
-      "vowel_only_form": "וַאֲבַדֹּה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "D2-Proverbs.json",
-      "book39_index": 0,
-      "book24_name": "ספר משלי",
-      "sub_book_name": null,
-      "chapter": 27,
-      "verse": 20,
-      "word": "וַ֭אֲבַדֹּ֭ה",
       "vowel_only_form": "וַאֲבַדֹּה",
       "is_trivq_arg1": false,
       "source_templates": [],
@@ -19875,38 +19778,10 @@
       "book39_index": 0,
       "book24_name": "ספר בראשית",
       "sub_book_name": null,
-      "chapter": 9,
-      "verse": 21,
-      "word": "אָהֳלֹֽה",
-      "vowel_only_form": "אָהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
       "chapter": 12,
       "verse": 8,
       "word": "אׇהֳלֹ֑ה",
       "vowel_only_form": "אׇהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
-      "chapter": 12,
-      "verse": 8,
-      "word": "אָהֳלֹ֑ה",
-      "vowel_only_form": "אָהֳלֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -20145,20 +20020,6 @@
       "verse": 21,
       "word": "אׇֽהֳלֹ֔ה",
       "vowel_only_form": "אׇהֳלֹה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "A1-Genesis.json",
-      "book39_index": 0,
-      "book24_name": "ספר בראשית",
-      "sub_book_name": null,
-      "chapter": 35,
-      "verse": 21,
-      "word": "אָֽהֳלֹ֔ה",
-      "vowel_only_form": "אָהֳלֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -36549,20 +36410,6 @@
       "book39_index": 0,
       "book24_name": "ספר משלי",
       "sub_book_name": null,
-      "chapter": 21,
-      "verse": 3,
-      "word": "עֲ֭שֹׂ֭ה",
-      "vowel_only_form": "עֲשֹׂה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "D2-Proverbs.json",
-      "book39_index": 0,
-      "book24_name": "ספר משלי",
-      "sub_book_name": null,
       "chapter": 23,
       "verse": 5,
       "word": "עָשֹׂ֣ה",
@@ -36594,20 +36441,6 @@
       "chapter": 27,
       "verse": 20,
       "word": "וַ֭אֲבַדֹּה",
-      "vowel_only_form": "וַאֲבַדֹּה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "D2-Proverbs.json",
-      "book39_index": 0,
-      "book24_name": "ספר משלי",
-      "sub_book_name": null,
-      "chapter": 27,
-      "verse": 20,
-      "word": "וַ֭אֲבַדֹּ֭ה",
       "vowel_only_form": "וַאֲבַדֹּה",
       "is_trivq_arg1": false,
       "source_templates": [],
@@ -39094,13 +38927,6 @@
           "source_category": "plain_text",
           "source_templates": [],
           "source_argument_keys": []
-        },
-        {
-          "word": "אָהֳלֹֽה",
-          "vowel_only_form": "אָהֳלֹה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
         }
       ]
     },
@@ -39115,13 +38941,6 @@
         {
           "word": "אׇהֳלֹ֑ה",
           "vowel_only_form": "אׇהֳלֹה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
-        },
-        {
-          "word": "אָהֳלֹ֑ה",
-          "vowel_only_form": "אָהֳלֹה",
           "source_category": "plain_text",
           "source_templates": [],
           "source_argument_keys": []
@@ -39221,17 +39040,6 @@
         {
           "word": "אׇֽהֳלֹה֙",
           "vowel_only_form": "אׇהֳלֹה",
-          "source_category": "trivq_arg1",
-          "source_templates": [
-            "מ:קו״כ-אם-2"
-          ],
-          "source_argument_keys": [
-            "1"
-          ]
-        },
-        {
-          "word": "אָֽהֳלֹה֙",
-          "vowel_only_form": "אָהֳלֹה",
           "source_category": "trivq_arg1",
           "source_templates": [
             "מ:קו״כ-אם-2"
@@ -39393,13 +39201,6 @@
         {
           "word": "אׇֽהֳלֹ֔ה",
           "vowel_only_form": "אׇהֳלֹה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
-        },
-        {
-          "word": "אָֽהֳלֹ֔ה",
-          "vowel_only_form": "אָהֳלֹה",
           "source_category": "plain_text",
           "source_templates": [],
           "source_argument_keys": []
@@ -58200,13 +58001,6 @@
           "source_category": "plain_text",
           "source_templates": [],
           "source_argument_keys": []
-        },
-        {
-          "word": "עֲ֭שֹׂ֭ה",
-          "vowel_only_form": "עֲשֹׂה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
         }
       ]
     },
@@ -58254,13 +58048,6 @@
       "hits": [
         {
           "word": "וַ֭אֲבַדֹּה",
-          "vowel_only_form": "וַאֲבַדֹּה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
-        },
-        {
-          "word": "וַ֭אֲבַדֹּ֭ה",
           "vowel_only_form": "וַאֲבַדֹּה",
           "source_category": "plain_text",
           "source_templates": [],
@@ -61141,17 +60928,6 @@
           "source_argument_keys": [
             "1"
           ]
-        },
-        {
-          "word": "אָֽהֳלֹה֙",
-          "vowel_only_form": "אָהֳלֹה",
-          "source_category": "trivq_arg1",
-          "source_templates": [
-            "מ:קו״כ-אם-2"
-          ],
-          "source_argument_keys": [
-            "1"
-          ]
         }
       ]
     },
@@ -61526,22 +61302,6 @@
   ],
   "mam_basics_wordlist_hits": [
     {
-      "word": "אָֽהֳלֹ֔ה",
-      "vowel_only_form": "אָהֳלֹה"
-    },
-    {
-      "word": "אָֽהֳלֹה֙",
-      "vowel_only_form": "אָהֳלֹה"
-    },
-    {
-      "word": "אָהֳלֹ֑ה",
-      "vowel_only_form": "אָהֳלֹה"
-    },
-    {
-      "word": "אָהֳלֹֽה",
-      "vowel_only_form": "אָהֳלֹה"
-    },
-    {
       "word": "אׇֽהֳלֹ֔ה",
       "vowel_only_form": "אׇהֳלֹה"
     },
@@ -61732,10 +61492,6 @@
     {
       "word": "הָרֹ֣ה",
       "vowel_only_form": "הָרֹה"
-    },
-    {
-      "word": "וַ֭אֲבַדֹּ֭ה",
-      "vowel_only_form": "וַאֲבַדֹּה"
     },
     {
       "word": "וַ֭אֲבַדֹּה",
@@ -62300,10 +62056,6 @@
     {
       "word": "עָלֹ֤ה",
       "vowel_only_form": "עָלֹה"
-    },
-    {
-      "word": "עֲ֭שֹׂ֭ה",
-      "vowel_only_form": "עֲשֹׂה"
     },
     {
       "word": "עֲ֭שֹׂה",

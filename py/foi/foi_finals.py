@@ -41,7 +41,10 @@ def write(args_foi, all_fois):
     provenance.write_directory_provenance(
         _OUT_DIR_PATH,
         __file__,
-        "FOI JSON and HTML outputs",
+        "FOI JSON and HTML outputs. MAM-parsed-plus FOI inventories deliberately "
+        "inspect every parameter of every recognized template, including "
+        "documentation, apparatus, and alternative branches; question-specific "
+        "handlers label or exclude those fields.",
     )
     if not args_foi:
         _write_index_dot_html(auto_outspecs)

@@ -28,6 +28,9 @@ Names with no quote mark are spelled identically everywhere and raise none of th
 # as well as here; see the quote-mark note above for how each name is spelled.
 INVERTED_NUN = "מ:נו״ן הפוכה"
 TRIVIAL_QERE = "מ:קו״כ-אם-2"
+QAMATS_VARIANT = "מ:קמץ"
+DUAL_CANTILLATION = "מ:כפול"
+STRESS_HELPER_TMPL_NAMES = frozenset(("מ:דחי", "מ:צינור"))
 
 TWO_ACCENTS_OF_QUPO = "שני טעמים באות אחת קמץ-תחתון-פתח-עליון"
 NO_PAR_AT_STA_OF_CHAP21 = "מ:אין פרשה בתחילת פרק"
@@ -122,3 +125,55 @@ IN_WORD_TMPL_NAMES = {
     "מ:אות תלויה",
     SLH_WORD,
 }
+
+# Every template name present in the current MAM-parsed-plus corpus.  This is
+# the closed roster for whole-dataset inventories and structure-preserving
+# transformations.  A caller that walks every parameter still has to opt into
+# that scope explicitly; membership here does not decide which parameters a
+# Scripture projection should select.
+CURRENT_PLUS_TMPL_NAMES = frozenset(
+    {
+        "כו״ק",
+        "כתיב ולא קרי",
+        "מ:אות תלויה",
+        "מ:אות-ג",
+        SLH_WORD,
+        "מ:אות-ק",
+        NO_PAR_AT_STA_OF_CHAP21,
+        NO_PAR_AT_STA_OF_CHAP03,
+        NO_PAR_AT_STA_OF_WEEKLY,
+        *STRESS_HELPER_TMPL_NAMES,
+        SCRDFF_TAR,
+        "מ:כו״ק מיוחד",
+        DUAL_CANTILLATION,
+        "מ:לגרמיה-2",
+        "מ:מקף אפור",
+        INVERTED_NUN,
+        "מ:סיום בטוב",
+        "מ:ספר חדש",
+        "מ:עלייה",
+        "מ:פסוק",
+        "מ:פסק",
+        TRIVIAL_QERE,
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        QAMATS_VARIANT,
+        "מ:רווח בתרי עשר בפסוק הראשון",
+        "מ:רווח לספר בתהלים בפסוק הראשון",
+        "מ:ששש",
+        "מודגש",
+        "נוסח",
+        "סס",
+        "ססס",
+        "פפ",
+        "פפפ",
+        "קו״כ",
+        "קרי ולא כתיב",
+        "ר0",
+        "ר1",
+        "ר2",
+        "ר3",
+        "ר4",
+        "ש",
+    }
+)

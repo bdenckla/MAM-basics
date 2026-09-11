@@ -1443,7 +1443,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וּבֵנָ֔יו|ובניו|וּבֵינָ֔יו|מקורות=ל-קרי}}"
+          "argument_text": "וּבֵנָ֔יו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -1452,18 +1452,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ובניו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וּבֵינָ֔יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1473,6 +1463,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -1499,7 +1494,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{כו״ק|ההלכוא|הֶהָלְכ֣וּ}}"
+          "argument_text": "הֶהָלְכ֣וּ"
         },
         {
           "template_name": "כו״ק",
@@ -1519,6 +1514,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "הֶהָלְכ֣וּ"
+        },
         {
           "template_name": "כו״ק",
           "argument_key": "2",
@@ -1581,23 +1581,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "תחתו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "תַּחְתָּ֑יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1637,23 +1622,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ויראו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וַיֹּר֨וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -1662,23 +1632,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "המוראים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "הַמּוֹרִ֤ים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1718,23 +1673,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ויראו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וַיֹּר֨וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -1743,23 +1683,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "המוראים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "הַמּוֹרִ֤ים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1796,11 +1721,6 @@
           "template_name": "מ:דחי",
           "argument_key": "1",
           "argument_text": "בִּ֭קְדֹשָׁו"
-        },
-        {
-          "template_name": "מ:דחי",
-          "argument_key": "2",
-          "argument_text": "בִּ֭קְדֹשָׁ֭ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": null,
@@ -1833,11 +1753,6 @@
           "template_name": "מ:דחי",
           "argument_key": "1",
           "argument_text": "וַ֭אֲבַדֹּה"
-        },
-        {
-          "template_name": "מ:דחי",
-          "argument_key": "2",
-          "argument_text": "וַ֭אֲבַדֹּ֭ה"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": null,
@@ -1873,18 +1788,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "רפאנו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "רִפִּ֤ינוּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1924,23 +1829,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "פארתו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "פֹארֹתָ֛יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -1980,23 +1870,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "במעלותו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "בְּמַעֲלוֹתָ֑יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2032,7 +1907,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|אֵילָו֙|אילו|אֵילָיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "אֵילָו֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2041,28 +1916,13 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "אילו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "אֵילָיו֙"
         },
         {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
-        },
-        {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וְאֵ֣ילַמָּ֔ו|ואילמו|וְאֵ֣ילַמָּ֔יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וְאֵ֣ילַמָּ֔ו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2071,23 +1931,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ואילמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְאֵ֣ילַמָּ֔יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2097,6 +1942,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -2123,7 +1973,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וּלְאֵֽילַמָּו֙|ולאילמו|וּלְאֵֽילַמָּיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וּלְאֵֽילַמָּו֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2132,23 +1982,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ולאילמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וּלְאֵֽילַמָּיו֙"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2158,6 +1993,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -2188,28 +2028,13 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "עלותו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "עֹֽלוֹתָ֔יו"
         },
         {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
-        },
-        {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וְאֵלַמָּ֖ו|ואלמו|וְאֵלַמָּ֖יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וְאֵלַמָּ֖ו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2218,23 +2043,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ואלמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְאֵלַמָּ֖יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2244,6 +2054,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -2274,23 +2089,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "מעלו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "מַעֲלָֽיו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2330,23 +2130,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ונרפאו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְנִרְפּ֥וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2382,7 +2167,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|תְבֽוּאָתֹה֙|תבואתה|תְבֽוּאָתוֹ֙|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}"
+          "argument_text": "תְבֽוּאָתֹה֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2391,23 +2176,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "תבואתה"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "תְבֽוּאָתוֹ֙"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב ה\"א בסיומת של חולם"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2417,6 +2187,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -2447,23 +2222,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "בתוכה"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "בְּתוֹכֽוֹ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב ה\"א בסיומת של חולם"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2499,7 +2259,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{כו״ק|גוי|גּוֹיִ֖י}}"
+          "argument_text": "גּוֹיִ֖י"
         },
         {
           "template_name": "כו״ק",
@@ -2519,6 +2279,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "גּוֹיִ֖י"
+        },
         {
           "template_name": "כו״ק",
           "argument_key": "2",
@@ -2558,7 +2323,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וּבֵנָ֔יו|ובניו|וּבֵינָ֔יו|מקורות=ל-קרי}}"
+          "argument_text": "וּבֵנָ֔יו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2567,18 +2332,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ובניו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וּבֵינָ֔יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2588,6 +2343,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -2614,7 +2374,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{כו״ק|ההלכוא|הֶהָלְכ֣וּ}}"
+          "argument_text": "הֶהָלְכ֣וּ"
         },
         {
           "template_name": "כו״ק",
@@ -2634,6 +2394,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "הֶהָלְכ֣וּ"
+        },
         {
           "template_name": "כו״ק",
           "argument_key": "2",
@@ -2664,23 +2429,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "תחתו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "תַּחְתָּ֑יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2720,23 +2470,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ויראו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וַיֹּר֨וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2745,23 +2480,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "המוראים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "הַמּוֹרִ֤ים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2801,23 +2521,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ויראו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וַיֹּר֨וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -2826,23 +2531,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "המוראים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "הַמּוֹרִ֤ים"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2882,18 +2572,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "רפאנו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "רִפִּ֤ינוּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2933,23 +2613,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "פארתו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "פֹארֹתָ֛יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -2989,23 +2654,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "במעלותו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "בְּמַעֲלוֹתָ֑יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3041,7 +2691,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|אֵילָו֙|אילו|אֵילָיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "אֵילָו֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -3050,28 +2700,13 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "אילו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "אֵילָיו֙"
         },
         {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
-        },
-        {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וְאֵ֣ילַמָּ֔ו|ואילמו|וְאֵ֣ילַמָּ֔יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וְאֵ֣ילַמָּ֔ו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -3080,23 +2715,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ואילמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְאֵ֣ילַמָּ֔יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3106,6 +2726,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -3132,7 +2757,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וּלְאֵֽילַמָּו֙|ולאילמו|וּלְאֵֽילַמָּיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וּלְאֵֽילַמָּו֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -3141,23 +2766,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ולאילמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וּלְאֵֽילַמָּיו֙"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3167,6 +2777,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -3197,28 +2812,13 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "עלותו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "עֹֽלוֹתָ֔יו"
         },
         {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "א-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
-        },
-        {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|וְאֵלַמָּ֖ו|ואלמו|וְאֵלַמָּ֖יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+          "argument_text": "וְאֵלַמָּ֖ו"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -3227,23 +2827,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ואלמו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְאֵלַמָּ֖יו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3253,6 +2838,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -3283,23 +2873,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "מעלו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "מַעֲלָֽיו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3339,23 +2914,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "ונרפאו"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "וְנִרְפּ֥וּ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3391,7 +2951,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{מ:קו״כ-אם-2|תְבֽוּאָתֹה֙|תבואתה|תְבֽוּאָתוֹ֙|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}"
+          "argument_text": "תְבֽוּאָתֹה֙"
         },
         {
           "template_name": "מ:קו״כ-אם-2",
@@ -3400,23 +2960,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "תבואתה"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "תְבֽוּאָתוֹ֙"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב ה\"א בסיומת של חולם"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3426,6 +2971,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        },
         {
           "template_name": "מ:קו״כ-אם-2",
           "argument_key": "1",
@@ -3456,23 +3006,8 @@
         },
         {
           "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "2",
-          "argument_text": "בתוכה"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
           "argument_key": "3",
           "argument_text": "בְּתוֹכֽוֹ"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "מקורות",
-          "argument_text": "ל-קרי"
-        },
-        {
-          "template_name": "מ:קו״כ-אם-2",
-          "argument_key": "סוג",
-          "argument_text": "כתיב ה\"א בסיומת של חולם"
         }
       ],
       "supported_qere_wrapper_in_mpu_verse": {
@@ -3508,7 +3043,7 @@
         {
           "template_name": "נוסח",
           "argument_key": "1",
-          "argument_text": "{{כו״ק|גוי|גּוֹיִ֖י}}"
+          "argument_text": "גּוֹיִ֖י"
         },
         {
           "template_name": "כו״ק",
@@ -3528,6 +3063,11 @@
       },
       "found_in_mpu_verse_template_arg": true,
       "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "גּוֹיִ֖י"
+        },
         {
           "template_name": "כו״ק",
           "argument_key": "2",

@@ -107,16 +107,18 @@ def _acc_qqc(accent, foi_qualifier):
 # The accent is geresh muqdam (without a coincident revia).
 
 
-_FOILERS = {
-    "מ:קמץ": _record_qamats_variation_as_foi,
-    str: _record_xataf_qamats,
-    #
-    "מ:כפול": fwh.label_args_of_dualcant,
-    "נוסח": fwh.label_args_of_doc,
-    "מ:קו״כ-אם-2": fwh.label_args_of_kq_triv,
-    tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-}
+_FOILERS = fwh.all_branch_foilers(
+    {
+        "מ:קמץ": _record_qamats_variation_as_foi,
+        str: _record_xataf_qamats,
+        #
+        "מ:כפול": fwh.label_args_of_dualcant,
+        "נוסח": fwh.label_args_of_doc,
+        "מ:קו״כ-אם-2": fwh.label_args_of_kq_triv,
+        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+    }
+)
 _STACK_SUMMARIES = {
     tuple(): None,
     ("כו״ק", "מ:דחי"): -1,

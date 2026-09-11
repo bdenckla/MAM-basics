@@ -1,8 +1,9 @@
 """
 Write dual-cantillation (Decalogues and Reuben) data to JSON.
 
-Reads MAM-parsed-plus and records, for each verse that has it, the
-dual-cantillation information.
+Reads MAM-parsed-plus and records, for each verse that has it, all three
+declared cantillation representations. Within each representation the survey
+selects qamats parameter dalet rather than concatenating qamats alternatives.
 """
 
 from decnreub.decnreub import do_one_book

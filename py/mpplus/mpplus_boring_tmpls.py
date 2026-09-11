@@ -9,10 +9,16 @@ from mb_cmn import str_defs as sd
 
 
 def evaluate(wtel):
-    """
-    Evaluate boring templates.
+    """Evaluate boring templates in every branch of a recognized container.
+
     "Boring" templates are ones that all editions treat the same.
     So there's no point in preserving them.
+
+    This is a structure-preserving edition transformation, not a Scripture
+    survey: a preserved template deliberately retains and transforms every one
+    of its parameters, including documentation and alternative branches.  The
+    preserved-name roster is closed so a new template cannot become a
+    transparent recursive container by default.
     """
     if isinstance(wtel, str):
         return wtel
@@ -20,6 +26,9 @@ def evaluate(wtel):
         return _flatten_then_shrink(list(map(evaluate, wtel)))
     handler = _HANDLERS.get(wtp.template_name(wtel))
     if handler is None:
+        name = wtp.template_name(wtel)
+        if name not in PRESERVED_TEMPLATE_NAMES:
+            raise ValueError(f"unclassified template in boring-template pass: {name!r}")
         return wtp.mktmpl_mp(evaluate, wtel)
     if isinstance(handler, str):
         return handler
@@ -133,3 +142,9 @@ _HANDLERS = {
     # Other candidates for "pre-evaluation"
     # 'מ:נו"ן הפוכה': {_MASK_EL: _handle_inverted_nun},
 }
+
+
+PRESERVED_TEMPLATE_NAMES = (
+    tmpln.CURRENT_PLUS_TMPL_NAMES | {tmpln.SCRDFF_NO_TAR, "מ:לגרמיה", "קו״כ-אם"}
+) - set(_HANDLERS)
+RECOGNIZED_TEMPLATE_NAMES = PRESERVED_TEMPLATE_NAMES | set(_HANDLERS)

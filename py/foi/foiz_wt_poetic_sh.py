@@ -61,7 +61,9 @@ def _stringify_tmpl(wtel):
     return wtp.template_name(wtel)
 
 
-_FOILERS = {
-    "מ:דחי": _handle_dexi,
-    "מ:צינור": _handle_tsinnor,
-}
+_FOILERS = fwh.all_branch_foilers(
+    {
+        "מ:דחי": _handle_dexi,
+        "מ:צינור": _handle_tsinnor,
+    }
+)

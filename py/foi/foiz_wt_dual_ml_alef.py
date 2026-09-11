@@ -47,13 +47,15 @@ def _stack_summary(stack):
     return None
 
 
-_FOILERS = {
-    str: _find_fois_in_string,
-    tmpln.SLH_WORD: fwh.find_fois_in_slh_word_arg_1,
-    "נוסח": fwh.label_args_of_doc,
-    tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-}
+_FOILERS = fwh.all_branch_foilers(
+    {
+        str: _find_fois_in_string,
+        tmpln.SLH_WORD: fwh.find_fois_in_slh_word_arg_1,
+        "נוסח": fwh.label_args_of_doc,
+        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+    }
+)
 _NOTE_STACK_PARTS = {"doc-part-n", "scrdfftar-note", tmpln.SLH_WORD}
 _STACK_SUMMARIES = {
     tuple(): None,

@@ -1,10 +1,16 @@
+"""Build the qere lexicon from one coherent MAM Scripture projection.
+
+The projection selects qere, parameter 1 of deḥi/tsinnor stress helpers,
+qamats parameter dalet, and combined cantillation.  Alternative parameters are
+not additional word occurrences.
+"""
+
 from py_misc import wt_qere
 from mb_misc import hebrew_letter_words as hlw
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
 from mb_cmn.my_utils import sum_of_map
-from mb_cmn.my_utils import sum_of_seqs
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import first_and_only_and_str
 from py_misc.split import my_re_split
@@ -56,15 +62,27 @@ def _hnd_slh_word(tmpl):
     return [tuple(quad2)]
 
 
-def _hnd_recurse_on_param_vals(tmpl):
-    return sum_of_seqs(wtp.map_params(_do_one_wtseq, tmpl))
+def _recurse_on_param(tmpl, key):
+    return _do_one_wtseq(wtp.template_param_val(tmpl, key))
+
+
+def _hnd_recurse_on_param_1(tmpl):
+    return _recurse_on_param(tmpl, "1")
+
+
+def _hnd_recurse_on_param_dalet(tmpl):
+    return _recurse_on_param(tmpl, "ד")
+
+
+def _hnd_recurse_on_param_combined(tmpl):
+    return _recurse_on_param(tmpl, "כפול")
 
 
 _HANDLERS_FOR_STAGE_2 = {
-    "מ:דחי": _hnd_recurse_on_param_vals,
-    "מ:צינור": _hnd_recurse_on_param_vals,
-    "מ:קמץ": _hnd_recurse_on_param_vals,
-    "מ:כפול": _hnd_recurse_on_param_vals,
+    "מ:דחי": _hnd_recurse_on_param_1,
+    "מ:צינור": _hnd_recurse_on_param_1,
+    "מ:קמץ": _hnd_recurse_on_param_dalet,
+    "מ:כפול": _hnd_recurse_on_param_combined,
     tmpln.SLH_WORD: _hnd_slh_word,
     "מ:פסק": _hnd_return_empty_list,
 }

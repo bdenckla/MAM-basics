@@ -1,4 +1,7 @@
-"""Record information about letters that carry multiple diacritical marks."""
+"""Record multimarked letters in the combined-cantillation MAM qere stream.
+
+The survey selects canonical deḥi/tsinnor text and qamats parameter dalet.
+"""
 
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import file_io

@@ -1,5 +1,11 @@
 """Template-structure helpers for MAM-parsed-plus diffing.
 
+This is a deliberate whole-structure inventory, not a selected Scripture-text
+projection.  Every classified structural parameter is included so a change inside a
+ketiv/qere, qamats, dual-cantillation, or stress-helper alternative remains visible.
+The documentation field of each note template is excluded; the note target is
+included.  New template names fail until their parameter roles are classified.
+
 Exports:
     collect_template_names      — gather relevant template names from an EP tree
     template_name_counter       — count template-name multiplicities
@@ -13,25 +19,32 @@ Private helpers:
 from collections import Counter
 
 from mb_cmn import retired_kq_special_templates as rkqst
+from mb_cmn import template_names
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 
 def collect_template_names(obj):
-    """Recursively collect template names relevant to body text."""
+    """Collect names in all classified structural branches, excluding note prose."""
     names = []
     if isinstance(obj, dict):
         if "tmpl_name" in obj:
             if obj["tmpl_name"] == "נוסח":
-                p1 = get_param(obj, "1")
-                if p1 is not MISSING:
-                    names.extend(collect_template_names(p1))
+                for _key, value in _classified_param_items_for_structure(obj):
+                    names.extend(collect_template_names(value))
                 return names
             names.append(_canonical_template_name_for_structure(obj))
-        for value in obj.values():
-            names.extend(collect_template_names(value))
+            for _key, value in _classified_param_items_for_structure(obj):
+                names.extend(collect_template_names(value))
+            return names
+        for key in sorted(obj):
+            names.extend(collect_template_names(obj[key]))
     elif isinstance(obj, list):
         for item in obj:
             names.extend(collect_template_names(item))
+    elif not isinstance(obj, str):
+        raise TypeError(
+            f"unclassified MAM-parsed-plus structure node: {type(obj).__name__}"
+        )
     return names
 
 
@@ -120,6 +133,25 @@ def _normalized_param_items_for_structure(tmpl):
     return items
 
 
+_HISTORICAL_TEMPLATE_NAMES = frozenset(
+    ("מ:לגרמיה", "קו״כ-אם", template_names.SCRDFF_NO_TAR)
+)
+
+
+def _classified_param_items_for_structure(tmpl):
+    name = tmpl["tmpl_name"]
+    if not (
+        name in template_names.CURRENT_PLUS_TMPL_NAMES
+        or name in _HISTORICAL_TEMPLATE_NAMES
+        or rkqst.is_special_kq_template_name(name)
+    ):
+        raise ValueError(f"unclassified MAM-parsed-plus structure template: {name!r}")
+    items = _normalized_param_items_for_structure(tmpl)
+    if name in {"נוסח", template_names.SCRDFF_TAR, template_names.SCRDFF_NO_TAR}:
+        return [(key, value) for key, value in items if key == "1"]
+    return items
+
+
 def _structure_occurrences(obj, path=()):
     """Collect template occurrences with semantic ancestry and content order."""
     if isinstance(obj, str):
@@ -130,7 +162,9 @@ def _structure_occurrences(obj, path=()):
             occurrences.extend(_structure_occurrences(item, path))
         return occurrences
     if not isinstance(obj, dict):
-        return []
+        raise TypeError(
+            f"unclassified MAM-parsed-plus structure node: {type(obj).__name__}"
+        )
     if "tmpl_name" not in obj:
         occurrences = []
         for key in sorted(obj):
@@ -140,13 +174,14 @@ def _structure_occurrences(obj, path=()):
         return occurrences
 
     name = _canonical_template_name_for_structure(obj)
-    if name == "נוסח":
-        p1 = get_param(obj, "1")
-        return [] if p1 is MISSING else _structure_occurrences(p1, path)
-
+    if obj["tmpl_name"] == "נוסח":
+        occurrences = []
+        for _key, value in _classified_param_items_for_structure(obj):
+            occurrences.extend(_structure_occurrences(value, path))
+        return occurrences
     occurrences = [(path, name)]
     child_path = path + (("tmpl", name),)
-    for key, value in _normalized_param_items_for_structure(obj):
+    for key, value in _classified_param_items_for_structure(obj):
         occurrences.extend(
             _structure_occurrences(value, child_path + (("param", key),))
         )

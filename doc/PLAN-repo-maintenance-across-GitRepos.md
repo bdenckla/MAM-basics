@@ -33,8 +33,8 @@ Correction 2026-09-09: GitRepos setup follows the folders listed in
 Do not enumerate GitHub repositories and subtract exclusion lists, and do not add gist clones.
 The earlier scope paragraph's subtraction and gist instructions are superseded.
 
-After the mechanical repository actions and the `doc/` sweep, inspect completed task artifacts
-under `C:/Users/BenDe/Documents/Codex`. Preserve
+After the mechanical repository actions, the `doc/` sweep, and the template-projection audit in
+step 7, inspect completed task artifacts under `C:/Users/BenDe/Documents/Codex`. Preserve
 `C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task
 folder. Do not create another maintenance script for this judgment step.
 
@@ -430,7 +430,49 @@ against repos that have earned their docs. For doc/ files that are *not* plans, 
 the inbound-reference one that same section of `check_repo_standards.py` describes; note that
 the screen inverts on plans and must not be used on them.
 
-**7. Retire completed Codex task folders under
+**7. Audit recursive template and node walkers for undeclared projections — judgment work, not
+a `main_repo_util.py` action.** The same recursion syntax serves two opposite purposes: a
+template inventory correctly visits every classified branch, while a Scripture survey normally
+selects one ketiv/qere, qamats, cantillation, or stress-helper branch. A mechanical rule cannot
+decide which purpose a walker serves. Shared helpers also hide the decisive recursion from the
+caller's question. Do not add a low-confidence check to `check_repo_standards.py` merely because
+`.values()` or `template_param_vals` is easy to find.
+
+Run this search from `C:/Users/BenDe/GitRepos/MAM-basics`; repeat equivalent searches in any repo
+that has gained its own MAM/Wikisource consumer since the preceding maintenance run:
+
+```
+git -C C:/Users/BenDe/GitRepos/MAM-basics grep -n -E "tmpl_params|template_param_vals|template_param_keys|\.values\(\)|\.items\(\)|flatten|extract|walk|visit|contents|render|text" -- "*.py"
+```
+
+The exact anchors are `tmpl_params`, `template_param_vals`, `template_param_keys`, dict
+`.values()` and `.items()` loops, recursive `walk`/`_walk`/`visit` functions, and helpers named
+`flatten`, `extract`, `render`, `text`, or `contents`. Search names are only the first pass:
+follow each shared helper to every caller and inspect the output the caller generates or reports.
+
+Ask these eight classification questions for every reachable recursive walker:
+
+1. What exact survey, transformation, inventory, or rendering question does the caller answer,
+   and which tracked or reported output records the answer?
+2. Which template and node names can reach the walker, what parameter shape does each name
+   require, and does an unknown name raise before recursion begins?
+3. Which named parameters are Scripture, documentation, apparatus, formatting, or alternatives?
+4. Does the question require ketiv, qere, or both, rather than inheriting an edition-wide choice?
+5. Which dual-cantillation, qamats, deḥi, and tsinnor alternative answers the question?
+6. If the task is a dataset inventory or structure-preserving transformation, does the module and
+   output state explicitly that every classified branch is traversed?
+7. Can documentation prose or an unselected alternative satisfy a word, accent, atom, or feature
+   search that claims to inspect one Scripture stream?
+8. Which canonical generator recreates each affected artifact, and does the regenerated diff
+   contain only the changes explained by the corrected projection?
+
+A confirmed blind dive is fixed with named, fail-fast dispatch in the owning semantic consumer.
+Raw parser and unparser layers may remain lossless structural recursion when the parser does not
+claim that the traversed values are Scripture. Record the files and functions reviewed, including
+walkers found valid, so the next maintenance run can distinguish a repeated review from a missed
+area.
+
+**8. Retire completed Codex task folders under
 `C:/Users/BenDe/Documents/Codex` — judgment work outside the Python CLI.** This is normal
 repository maintenance even though the folder is outside `GitRepos`, but it deliberately is **not**
 a new `main_repo_util.py` action: an automatic process cannot determine whether a task is active,
@@ -464,9 +506,10 @@ recoverable, but it does not free disk space until emptied. Do not delete the `D
 root while an active task folder or the `ReviewForests` root remains.
 
 **The `doc/` sweep was added 2026-08-29, so neither of the two runs recorded above included the
-`doc/` sweep** — the 2026-08-07 and 2026-08-27 records describe steps 1–5 only. **The
-`Documents/Codex` task-folder step was added 2026-09-04, so neither historic run assessed those
-folders either.**
+`doc/` sweep** — the 2026-08-07 and 2026-08-27 records describe steps 1–5 only.
+**The `Documents/Codex` task-folder step was added 2026-09-04, so neither historic run assessed
+those folders either.** **The template-projection audit was added 2026-09-11, so neither historic
+run included that audit.**
 
 ---
 

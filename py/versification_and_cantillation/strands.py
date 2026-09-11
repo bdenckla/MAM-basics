@@ -2,8 +2,8 @@
 straight from the upstream MAM-parsed-plus data, so the generated doc is
 byte-faithful to the source (nothing hand-typed).
 
-The Decalogue verses carry the מ:כפול (dual-trope) template, whose named params
-are ["כפול","א","ב"] = (combined, taxton/lower, elyon/upper). Where the two
+The Decalogue verses carry the מ:כפול (dual-cantillation) template, whose named
+parameters are ["כפול", "א", "ב"] = (combined, תחתון, עליון). Where the two
 cantillations agree (e.g. the 4th short commandment), the text is a plain string,
 not a מ:כפול. See MAM-basics/py/author_misc/mp_dualcant_common.py.
 """
@@ -17,8 +17,8 @@ from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 
 _DUALCANT = "מ:כפול"
-_TAXTON = "א"  # lower / תחתון
-_ELYON = "ב"  # upper / עליון
+_TAXTON = "א"  # תחתון
+_ELYON = "ב"  # עליון
 
 # A ketiv/qere (כו״ק) template stores the ketiv (written form) as arg "1" and the qere
 # (the pointed *read* form) as arg "2"; every strand here reads a verse the way it is
@@ -28,12 +28,10 @@ _KQ_QERE = "2"
 
 
 def _strand_str(unit, param):
-    """The strand string of a מ:כפול unit, or None when that strand is not a plain
-    string — e.g. a pisqah-be'emtsa-pasuq separator unit whose strand is a template."""
+    """The selected text of a מ:כפול unit, or None for a separator-only unit."""
     val = wtp.template_param_val(unit, param)
-    if len(val) == 1 and isinstance(val[0], str):
-        return val[0]
-    return None
+    text = "".join(_el_text(element) for element in val)
+    return text if text.strip() else None
 
 
 def _cells(minirow, param):
@@ -64,36 +62,58 @@ def _cells(minirow, param):
 
 
 def _el_text(el):
-    """Best-effort plain text of one strand element, for reading off word boundaries.
-    A plain run is itself; a ketiv/qere (כו״ק) template contributes its *qere* — the
-    pointed read form the cantillation strands display, never the ketiv (issue #199); a
-    nested qamats (מ:קמץ) template contributes its word variant; a paseq/legarmeh separator
-    contributes only a space (a word break)."""
+    """Selected qere text of one strand element for word-boundary analysis.
+
+    The projection uses qamats parameter dalet and parameter 1 of deḥi/tsinnor
+    stress-helper templates. Documentation prose and unselected alternatives do
+    not contribute; an unclassified template raises.
+    """
     if isinstance(el, str):
         return el
     if wtp.is_template_with_name_in(el, tmpln.STD_KQ_TMPL_NAMES):
         return "".join(_el_text(sub) for sub in wtp.template_param_val(el, _KQ_QERE))
-    if wtp.is_template(el):
-        for val in wtp.template_param_vals(el):
-            if len(val) == 1 and isinstance(val[0], str):
-                return val[0]
+    if not wtp.is_template(el):
+        raise TypeError(f"Unexpected strand element: {el!r}")
+
+    name = wtp.template_name(el)
+    if name in {"נוסח", tmpln.SCRDFF_TAR}:
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
+    if name in tmpln.STRESS_HELPER_TMPL_NAMES:
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
+    if name == tmpln.QAMATS_VARIANT:
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "ד"))
+    if name in tmpln.IN_WORD_TMPL_NAMES or name in {"מודגש", "מ:סיום בטוב"}:
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
+    if name == "קרי ולא כתיב":
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "2"))
+    if name == tmpln.TRIVIAL_QERE:
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
+    if name == "מ:מקף אפור":
+        return hpunc.MAQ
+    if name in {"מ:לגרמיה-2", "מ:פסק"}:
         return " "
-    return ""
+    if name in tmpln.NO_ATOM_TMPL_NAMES or name in {
+        tmpln.SCRDFF_NO_TAR,
+        tmpln.INVERTED_NUN,
+        "כתיב ולא קרי",
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        "ש",
+    }:
+        return " "
+    raise ValueError(f"Unclassified template {name!r} in cantillation-strand text")
 
 
 def _word_template_text(wtel):
-    """The word text a *top-level* template (one sitting directly in EP, neither a מ:כפול
-    strand unit nor a plain string) contributes to a strand. Only a ketiv/qere carries one —
-    its qere, the read form the strands display; issue #199 is that dropping such a top-level
-    כו״ק deleted Deut 5:9's last word מִצְוֺתָֽי and left first/last-word extraction seeing the
-    bare ׃ that follows it. Every other top-level template contributes no word and is dropped,
-    exactly as before this branch existed: e.g. a נוסח documentation/scroll-difference wrapper
-    whose payload is only a petuxah separator (Num 26:1). This is deliberately narrower than
-    _el_text — routing a נוסח through _el_text's generic first-plain-string heuristic would
-    wrongly splice its description text into the strand."""
-    if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
-        return "".join(_el_text(sub) for sub in wtp.template_param_val(wtel, _KQ_QERE))
-    return ""
+    """Return the selected qere text of a template sitting directly in EP.
+
+    Issue #199 arose when dropping a top-level ketiv/qere deleted Deut 5:9's
+    last word מִצְוֺתָֽי and left first/last-word extraction seeing the bare ׃
+    that follows it. The same closed projection used inside a cantillation
+    strand applies here, so a note target can contribute Scripture but note
+    prose cannot.
+    """
+    return _el_text(wtel)
 
 
 def _strand_word_text(minirow, param):
@@ -127,7 +147,7 @@ def _first_word(text):
     return text.split()[0]
 
 
-# Diacritic-stripping for the early-split ("taxton / elyon / MAM / BHS") table cells.
+# Diacritic-stripping for the early-split ("תחתון / עליון / MAM / BHS") table cells.
 # The table is about *where each cantillation ends its verse*, so it keeps only the
 # marks that carry that signal — the accents (te'amim) and the
 # accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — and drops the rest (vowel

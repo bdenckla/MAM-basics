@@ -143,7 +143,9 @@ _DROP_TYPES = frozenset(
 )
 _KETIV_TYPES = frozenset({"ketiv", "kq-k", "kq-k-velo-q"})
 _QERE_TYPES = frozenset({"qere", "kq-q", "kq-trivial", "kq-q-velo-k"})
-_KQ_TYPES = frozenset({"kq", "kq-trivial", "kq-q-velo-k"})
+_DIRECT_QERE_TYPES = _QERE_TYPES
+_TEXT_TYPES = frozenset({"text", "letter-large", "letter-small", "letter-hung"})
+_TRANSPARENT_TYPES = frozenset({"verse", "slh-word", "scrdfftar", "sdt-target"})
 
 _POETIC_DISJUNCTIVES = pan.POETIC_DISJUNCTIVES
 
@@ -254,58 +256,68 @@ def _walk(node: object, events: list[_Event]) -> None:
     Ketiv halves of a qere/ketiv pair are skipped (the qere is what is read).
     """
     if not isinstance(node, dict):
-        return
+        raise TypeError(f"Expected MAM-simple poetic node object, got {node!r}")
     node_type = node.get("type")
-    if isinstance(node_type, str):
-        if node_type == "lp-legarmeih":
-            events.append(("LP_LEG", None, None, None, None, None))
-            return
-        if node_type == "lp-paseq":
-            events.append(("LP_PASEQ", None, None, None, None, None))
-            return
-        if node_type in _KETIV_TYPES:
-            return
-        if node_type in _DROP_TYPES:
-            return
-        if node_type in _KQ_TYPES:
-            _walk_kq(node, events)
-            return
+    if not isinstance(node_type, str):
+        raise ValueError(f"MAM-simple poetic node has no string type: {node!r}")
+    if node_type == "lp-legarmeih":
+        events.append(("LP_LEG", None, None, None, None, None))
+        return
+    if node_type == "lp-paseq":
+        events.append(("LP_PASEQ", None, None, None, None, None))
+        return
+    if node_type in _KETIV_TYPES | {"kq-k-velo-q-maq", "sdt-note"}:
+        return
+    if node_type in _DROP_TYPES:
+        return
+    if node_type == "kq":
+        _walk_kq(node, events)
+        return
+    if node_type == "cant-all-three":
+        raise ValueError(
+            "Poetic accent projection has no classified dual-cantillation branch"
+        )
 
     contents = node.get("contents")
-    if isinstance(contents, list):
+    if node_type in _TRANSPARENT_TYPES | _DIRECT_QERE_TYPES:
+        if contents is None:
+            text = node.get("text")
+            if isinstance(text, str):
+                _emit_word_events(text, events)
+                return
+            raise ValueError(
+                f"MAM-simple poetic {node_type!r} node has neither text nor contents"
+            )
+        if not isinstance(contents, list):
+            raise ValueError(f"MAM-simple poetic {node_type!r} contents is not a list")
         for child in contents:
             _walk(child, events)
         return
 
-    text = node.get("text")
-    if isinstance(text, str):
+    if node_type in _TEXT_TYPES:
+        text = node.get("text")
+        if not isinstance(text, str):
+            raise ValueError(f"MAM-simple poetic {node_type!r} node has no text")
         _emit_word_events(text, events)
+        return
+
+    raise ValueError(f"Unclassified MAM-simple poetic node type {node_type!r}")
 
 
 def _walk_kq(node: dict, events: list[_Event]) -> None:
     """Walk a ketiv/qere node, reading only its qere half (the accented reading)."""
     contents = node.get("contents")
     if not isinstance(contents, list):
-        text = node.get("text")
-        if isinstance(text, str):
-            _emit_word_events(text, events)
-        return
+        raise ValueError("MAM-simple poetic kq node has no contents list")
 
     qere_children = [
         child
         for child in contents
         if isinstance(child, dict) and child.get("type") in _QERE_TYPES
     ]
-    chosen = (
-        qere_children
-        if qere_children
-        else [
-            child
-            for child in contents
-            if not (isinstance(child, dict) and child.get("type") in _KETIV_TYPES)
-        ]
-    )
-    for child in chosen:
+    if not qere_children:
+        raise ValueError("MAM-simple poetic kq node has no recognized qere child")
+    for child in qere_children:
         _walk(child, events)
 
 
@@ -500,6 +512,10 @@ def _mam_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
 
 
 def _iter_verse_nodes(value: object):
+    """Locate every verse in the complete MAM-simple book structure.
+
+    This structural inventory does not flatten text or choose an alternative.
+    """
     if isinstance(value, dict):
         if value.get("type") == "verse":
             yield value

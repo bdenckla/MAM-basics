@@ -1511,8 +1511,8 @@
     "chnu": 2,
     "vrnu": 3,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XAA_S",
@@ -1571,8 +1571,8 @@
     "chnu": 9,
     "vrnu": 8,
     "ndualcant": 0,
-    "npoetcant": 30,
-    "ni": 30
+    "npoetcant": 15,
+    "ni": 15
   },
   {
     "mmcat": "XUN",
@@ -1586,8 +1586,8 @@
     "chnu": 10,
     "vrnu": 8,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",
@@ -1646,8 +1646,8 @@
     "chnu": 16,
     "vrnu": 2,
     "ndualcant": 0,
-    "npoetcant": 6,
-    "ni": 6
+    "npoetcant": 3,
+    "ni": 3
   },
   {
     "mmcat": "XAA_S",
@@ -1841,8 +1841,8 @@
     "chnu": 24,
     "vrnu": 7,
     "ndualcant": 0,
-    "npoetcant": 42,
-    "ni": 42
+    "npoetcant": 21,
+    "ni": 21
   },
   {
     "mmcat": "XOO",
@@ -2006,8 +2006,8 @@
     "chnu": 37,
     "vrnu": 34,
     "ndualcant": 0,
-    "npoetcant": 4,
-    "ni": 4
+    "npoetcant": 2,
+    "ni": 2
   },
   {
     "mmcat": "XUN",
@@ -2021,8 +2021,8 @@
     "chnu": 37,
     "vrnu": 38,
     "ndualcant": 0,
-    "npoetcant": 14,
-    "ni": 14
+    "npoetcant": 6,
+    "ni": 6
   },
   {
     "mmcat": "XOO",
@@ -2066,8 +2066,8 @@
     "chnu": 41,
     "vrnu": 14,
     "ndualcant": 0,
-    "npoetcant": 4,
-    "ni": 4
+    "npoetcant": 2,
+    "ni": 2
   },
   {
     "mmcat": "XAA_S",
@@ -2231,8 +2231,8 @@
     "chnu": 55,
     "vrnu": 4,
     "ndualcant": 0,
-    "npoetcant": 6,
-    "ni": 6
+    "npoetcant": 5,
+    "ni": 5
   },
   {
     "mmcat": "XOO",
@@ -2321,8 +2321,8 @@
     "chnu": 64,
     "vrnu": 6,
     "ndualcant": 0,
-    "npoetcant": 8,
-    "ni": 8
+    "npoetcant": 4,
+    "ni": 4
   },
   {
     "mmcat": "XOO",
@@ -2441,8 +2441,8 @@
     "chnu": 68,
     "vrnu": 27,
     "ndualcant": 0,
-    "npoetcant": 12,
-    "ni": 12
+    "npoetcant": 6,
+    "ni": 6
   },
   {
     "mmcat": "XOO",
@@ -2531,8 +2531,8 @@
     "chnu": 77,
     "vrnu": 8,
     "ndualcant": 0,
-    "npoetcant": 16,
-    "ni": 16
+    "npoetcant": 8,
+    "ni": 8
   },
   {
     "mmcat": "XOO",
@@ -2561,8 +2561,8 @@
     "chnu": 78,
     "vrnu": 4,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",
@@ -2726,8 +2726,8 @@
     "chnu": 89,
     "vrnu": 49,
     "ndualcant": 0,
-    "npoetcant": 4,
-    "ni": 4
+    "npoetcant": 2,
+    "ni": 2
   },
   {
     "mmcat": "XOO",
@@ -2786,8 +2786,8 @@
     "chnu": 105,
     "vrnu": 3,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XUN",
@@ -2801,8 +2801,8 @@
     "chnu": 105,
     "vrnu": 12,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",
@@ -2831,8 +2831,8 @@
     "chnu": 106,
     "vrnu": 30,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XAA_S",
@@ -2906,8 +2906,8 @@
     "chnu": 115,
     "vrnu": 4,
     "ndualcant": 0,
-    "npoetcant": 4,
-    "ni": 4
+    "npoetcant": 2,
+    "ni": 2
   },
   {
     "mmcat": "XOO",
@@ -2981,8 +2981,8 @@
     "chnu": 119,
     "vrnu": 91,
     "ndualcant": 0,
-    "npoetcant": 6,
-    "ni": 6
+    "npoetcant": 3,
+    "ni": 3
   },
   {
     "mmcat": "XOO",
@@ -3071,8 +3071,8 @@
     "chnu": 135,
     "vrnu": 2,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",
@@ -3142,21 +3142,6 @@
     "r": "שָׁלִַם",
     "rs": null,
     "sa": "לַיִ",
-    "bkna": "Psalms",
-    "chnu": 147,
-    "vrnu": 12,
-    "ndualcant": 0,
-    "npoetcant": 1,
-    "ni": 1
-  },
-  {
-    "mmcat": "LaUi",
-    "Vow": "_i",
-    "Acc": "(dex)",
-    "Spe": null,
-    "r": "שָׁלִַ֭ם",
-    "rs": "שָׁלַ֭͏ִם",
-    "sa": "לַי֭יִ",
     "bkna": "Psalms",
     "chnu": 147,
     "vrnu": 12,
@@ -3356,8 +3341,8 @@
     "chnu": 26,
     "vrnu": 18,
     "ndualcant": 0,
-    "npoetcant": 6,
-    "ni": 6
+    "npoetcant": 3,
+    "ni": 3
   },
   {
     "mmcat": "XOO",
@@ -3446,8 +3431,8 @@
     "chnu": 7,
     "vrnu": 11,
     "ndualcant": 0,
-    "npoetcant": 4,
-    "ni": 4
+    "npoetcant": 2,
+    "ni": 2
   },
   {
     "mmcat": "XAA_S",
@@ -3506,8 +3491,8 @@
     "chnu": 13,
     "vrnu": 12,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",
@@ -3611,8 +3596,8 @@
     "chnu": 22,
     "vrnu": 4,
     "ndualcant": 0,
-    "npoetcant": 10,
-    "ni": 10
+    "npoetcant": 5,
+    "ni": 5
   },
   {
     "mmcat": "XOO",
@@ -3701,8 +3686,8 @@
     "chnu": 32,
     "vrnu": 13,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2
+    "npoetcant": 1,
+    "ni": 1
   },
   {
     "mmcat": "XOO",

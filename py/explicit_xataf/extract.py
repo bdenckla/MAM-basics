@@ -194,13 +194,23 @@ def has_varika(wtel):
 
 
 def find_docnote_tmpls(wt_seq):
-    """Recursively find all נוסח templates in a wikitext sequence."""
+    """Find every topmost נוסח call in all recognized dataset branches.
+
+    Documentation-note discovery is a whole-dataset inventory, so every
+    parameter of every recognized non-note template is deliberately searched.
+    A new template raises until its fields have been classified.
+    """
     results = []
     for wtel in wt_seq:
         if isinstance(wtel, dict):
             if wtp.is_doc_template(wtel):
                 results.append(wtel)
             elif wtp.is_template(wtel):
+                tmpl_name = wtp.template_name(wtel)
+                if tmpl_name not in tmpln.CURRENT_PLUS_TMPL_NAMES:
+                    raise RuntimeError(
+                        f"Unclassified template {tmpl_name!r} in documentation-note inventory"
+                    )
                 for arg in wtp.template_param_vals(wtel):
                     if isinstance(arg, list):
                         results.extend(find_docnote_tmpls(arg))
