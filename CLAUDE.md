@@ -769,24 +769,41 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 reproducing them is the test of this code (§"Writing tests — differential and lint-shaped only"
 below). The case that produced the rule: the Wikisource refresh `209b4c05` of 2026-09-10 was
 integrated as `a0a2e3ab` after a suite run passed 992 tests, on a tree where the mega's
-`diff-mpp` step raises, because the mpplus diff cannot reconstruct the meteg that the refresh added
-at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is on branch
+`diff-mpplus` step raises, because the mpplus diff cannot reconstruct the meteg that the refresh
+added at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is on branch
 `dual-agent-review-2026-09-10` until that review round integrates. A mega run before the commit
-could not have caught it: `diff-mpp` compares committed revisions, reading `MAM-parsed/plus/` at
-HEAD through git rather than from the working tree, so only a run made after the commit sees the
+could not have caught it: `diff-mpplus` compares committed revisions, reading `MAM-parsed/plus/`
+at HEAD through git rather than from the working tree, so only a run made after the commit sees the
 commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
 suite takes about two.
 
 **Known failure, recorded 2026-09-11: until that defect is fixed, every run on a tree containing
-`209b4c05` stops at `diff-mpp`.** Do not fix it on an unrelated branch; the remediation of the
+`209b4c05` stops at `diff-mpplus`.** Do not fix it on an unrelated branch; the remediation of the
 2026-09-10 review owns the fix. Finish the check with a second run that starts at the next step,
-`py/main_0_mega.py --resume-from diff-ctr-vs-mam`, and report the `diff-mpp` failure as known.
+`py/main_0_mega.py --resume-from diff-ctr-vs-mam`, and report the `diff-mpplus` failure as known.
+The step was named `diff-mpp` until 2026-09-11, and finding 1 of
+`doc/review-findings-2026-09-10.md` uses that name.
 
-**The mega writes one thing outside this repo.** Its `near-aleppo-census` step rewrites
-MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run can leave a diff in
-MAM-private as well. Read that diff the same way, and commit it in MAM-private, as the 2026-09-10
-refresh did (MAM-private `ecab726`). Ben wants that cross-repo write removed (2026-09-11); until
-it is, this is the procedure.
+**A second known failure, recorded 2026-09-11: the second run stops at `gen-site`.** The step
+before it, `accgram-survey-post-stress-meteg`, joined the mega on 2026-09-10 and runs after
+`diff-mpplus`, so on a tree containing `209b4c05` a run reaches it only by resuming past that
+step. There it rewrites `out/accgram/post-stress-meteg.json` to include the refresh's metegs:
+Isaiah 24:18 gains a record, and prose `mbs_only` falls from 12,849 to 12,842. `pin_claims` in
+`py/author_site/post_stress_meteg.py` still pins 12,849, so `gen-site` raises an
+`AssertionError`. The survey, those pins and the post-stress-meteg pages that state the figures
+have to move together; do not move them on an unrelated branch. Until they move, restore
+`out/accgram/post-stress-meteg.json` rather than commit it, since committing it would make
+`gen-site` fail on the tracked survey too. Then finish the check with a third run,
+`py/main_0_mega.py --resume-from diffable-pointed-hebrew`, and report both failures as known.
+Found at the integration of `claude/stoic-jennings-15ce11`, which changes nothing the survey
+reads; Ben's decision that day was to record the failure here and integrate.
+
+**The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
+rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
+in MAM-private, and this paragraph said to commit that diff there, as the 2026-09-10 refresh did
+(MAM-private `ecab726`). Ben had the step deleted that day. MAM-private's own mega runs the census
+now, so a change to `MAM-parsed/plus/` leaves MAM-private's census for MAM-private to refresh,
+and an integration here has nothing to commit in any other repository.
 
 **Codex does not load this file**, so the same rule is written into `~/.codex/AGENTS.md`, which
 is tracked here as `dot-Codex/user-wide-AGENTS.md`.
@@ -807,6 +824,16 @@ siblings beside it (Ben's decision that day), so a run in `.claude/worktrees/<na
 had to set `REPOS_ROOT`. The variable still overrides the default, for a layout where the
 siblings sit somewhere else. A worktree run with nothing exported passed **988 passed, 5
 skipped** on 2026-09-10.
+
+**In a cloud container the suite reads MAM-private nowhere, and that is the one exception to the
+sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
+and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
+`graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
+`py/main_0_mega.py` gives its MAM-private step (it had two until `near-aleppo-census` was deleted
+later that day). On any machine of Ben's nothing changes: a
+missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
+these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
+the reason strings are what tell the two kinds apart under `-rs`.
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
