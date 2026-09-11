@@ -69,9 +69,15 @@ WHAT FAILS
 WHERE THE REASONS COME FROM
 
 Each reason says why the mega leaves the program out, and where that is recorded.  A
-reason beginning "Claude-written proposal, not yet reviewed by Ben" has no record but
-the proposal: most were proposed in section 4 of the analysis.  When Ben accepts or
-changes one, delete that marker and cite his decision.
+reason beginning "Claude-written, accepted by Ben on 2026-09-10" was proposed by a
+Claude session, most of them in section 4 of the analysis and the rest in phase 7 of
+doc/PLAN-mega-coverage.md, and Ben accepted every one of those proposals that day, as
+phase 7's record in that plan says: "They are all fine. The most important thing is
+to get a baseline so that *new* programs that are added to the repo either need to be
+added to mega or given a justification as to why they should not be added to mega."
+A reason that a Claude session proposes later, before Ben has reviewed it, begins
+"Claude-written proposal, not yet reviewed by Ben"; when he accepts or changes one,
+replace that marker and cite his decision.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_mega_coverage.py
@@ -138,16 +144,16 @@ _REDIRECT_STUBS = (
 
 # ---------------------------------------------------------------------------
 # Reasons shared by several programs, second group: section 4 of the analysis,
-# proposals with no other record.
+# Claude-written proposals that Ben accepted on 2026-09-10.
 # ---------------------------------------------------------------------------
 _CHECK_WRITES_NOTHING = (
-    "Claude-written proposal, not yet reviewed by Ben: a check that writes nothing;"
+    "Claude-written, accepted by Ben on 2026-09-10: a check that writes nothing;"
     " py/check_all.py runs it by hand, and the suite runs the deploy-root mode of"
     " py/check_html_syntax_and_sanity.py.  Proposed in doc/mega-coverage-2026-09-10.md"
     " §4."
 )
 _VENDORING_PART = (
-    "Claude-written proposal, not yet reviewed by Ben: one part of the --all audit"
+    "Claude-written, accepted by Ben on 2026-09-10: one part of the --all audit"
     " that the vendoring-audit step runs.  Proposed in doc/mega-coverage-2026-09-10.md"
     " §4."
 )
@@ -364,58 +370,58 @@ NOT_IN_MEGA: dict[str, str] = {
         ' fix_escape_sequences.py to replace these") and doc/mega-coverage-2026-09-10.md'
         " §3."
     ),
-    # --- Section 4 of the analysis: Claude-written proposals, not yet reviewed by Ben.
+    # --- Section 4 of the analysis: Claude-written, accepted by Ben on 2026-09-10.
     "py/main_find_uxlc_accent_changes.py --audit": (
-        "Claude-written proposal, not yet reviewed by Ben: it prints coverage counts and"
+        "Claude-written, accepted by Ben on 2026-09-10: it prints coverage counts and"
         " writes nothing, where the find-uxlc-accent-changes step runs the form that"
         " writes in/accgram/uxlc_accent_changes.json.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4; phase 7 of doc/PLAN-mega-coverage.md"
         " names this mode."
     ),
     "py/main_scan_pages.py survey": (
-        "Claude-written proposal, not yet reviewed by Ben: it reads the personal scan"
+        "Claude-written, accepted by Ben on 2026-09-10: it reads the personal scan"
         " archive, which is on no other machine, so it is rerun by hand when a scan"
         " folder changes.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_scan_pages.py check": (
-        "Claude-written proposal, not yet reviewed by Ben: it writes nothing, and"
+        "Claude-written, accepted by Ben on 2026-09-10: it writes nothing, and"
         " py/tests/test_scan_pages_index.py runs the same check.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_parse.py ws --write-fmt-1": (
-        "Claude-written proposal, not yet reviewed by Ben: debugging output to .novc/;"
+        "Claude-written, accepted by Ben on 2026-09-10: debugging output to .novc/;"
         " the tracked half of the run is the parse-ws step's.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_diff.py mpp --old A --new B": (
-        "Claude-written proposal, not yet reviewed by Ben: a one-off comparison of two"
+        "Claude-written, accepted by Ben on 2026-09-10: a one-off comparison of two"
         " revisions someone picks, where the diff-mpp step rebuilds every named release."
         "  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_download.py fr-google --skip-download": (
-        "Claude-written proposal, not yet reviewed by Ben: it skips the download and"
+        "Claude-written, accepted by Ben on 2026-09-10: it skips the download and"
         " runs only parse_go.almost_main, the parse that the parse-go step runs; see"
         " run in py/subcommands/download_google.py.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4, when that form also ran check_mpplus,"
         " which runs inside the parse-ws step now."
     ),
     "py/main_ws_bot.py real": (
-        "Claude-written proposal, not yet reviewed by Ben: it saves edits to live Hebrew"
+        "Claude-written, accepted by Ben on 2026-09-10: it saves edits to live Hebrew"
         " Wikisource under Ben's bot account, so every run is a deliberate act."
         "  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_ws_bot.py real --identity-run": (
-        "Claude-written proposal, not yet reviewed by Ben: it exercises the live-wiki"
+        "Claude-written, accepted by Ben on 2026-09-10: it exercises the live-wiki"
         " plumbing, and needs the network and the bot login.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_tmpl_survey.py --write-expanded-stack-grammar-lock": (
-        "Claude-written proposal, not yet reviewed by Ben: every survey run is checked"
+        "Claude-written, accepted by Ben on 2026-09-10: every survey run is checked"
         " against the locks, so rewriting them on every run would make that check pass"
         " by construction.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_tmpl_survey.py --find-stack-path": (
-        "Claude-written proposal, not yet reviewed by Ben: a lookup that prints and"
+        "Claude-written, accepted by Ben on 2026-09-10: a lookup that prints and"
         " writes nothing; --find-stack-path-verbose is the same lookup with more"
         " context.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
@@ -423,17 +429,17 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_vendoring.py --provenance": _VENDORING_PART,
     "py/main_vendoring.py --gen-inventory": _VENDORING_PART,
     "py/main_slide_generator.py make-pptx": (
-        "Claude-written proposal, not yet reviewed by Ben: it builds an untracked"
+        "Claude-written, accepted by Ben on 2026-09-10: it builds an untracked"
         " presentation file for giving a talk.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_uxlc_estimate_atom_loc.py": (
-        "Claude-written proposal, not yet reviewed by Ben: a lookup that prints one"
+        "Claude-written, accepted by Ben on 2026-09-10: a lookup that prints one"
         " estimated folio, column and line.  Proposed in doc/mega-coverage-2026-09-10.md"
         " §4."
     ),
     "py/main_just_render_table.py --update-issue-metadata": (
-        "Claude-written proposal, not yet reviewed by Ben: it refreshes a snapshot of"
+        "Claude-written, accepted by Ben on 2026-09-10: it refreshes a snapshot of"
         " the live GitHub tracker through gh.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
@@ -443,12 +449,12 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/check_escape_sequences.py": _CHECK_WRITES_NOTHING,
     "py/check_function_ordering.py": _CHECK_WRITES_NOTHING,
     "py/main_ac_gen_flat_stream.py": (
-        "Claude-written proposal, not yet reviewed by Ben: it seeds one page from a"
+        "Claude-written, accepted by Ben on 2026-09-10: it seeds one page from a"
         " hand-chosen verse range, and refuses to overwrite.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_ac_merge_line_markers.py": (
-        "Claude-written proposal, not yet reviewed by Ben: it merges line markers from a"
+        "Claude-written, accepted by Ben on 2026-09-10: it merges line markers from a"
         " hand edit, so it has no input until a person edits a page.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
@@ -467,7 +473,7 @@ NOT_IN_MEGA: dict[str, str] = {
         "  Recorded in the docstrings of both."
     ),
     "py/main_authored.py gen-mp-claims-index": (
-        "Claude-written proposal, not yet reviewed by Ben: it rewrites doc/mp-claims.md"
+        "Claude-written, accepted by Ben on 2026-09-10: it rewrites doc/mp-claims.md"
         " alone, and the parse-ws step already rewrites that file, since the step runs"
         " gen-mam-parsed-docs, which writes the claims index too.  The overlap is"
         " recorded in py/main_authored.py's docstring and in the Method paragraph of"
@@ -477,7 +483,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " Wikisource product generation that the parse-ws step runs."
     ),
     "py/main_authored.py verify-mp": (
-        "Claude-written proposal, not yet reviewed by Ben: it runs the MAM-parsed claim"
+        "Claude-written, accepted by Ben on 2026-09-10: it runs the MAM-parsed claim"
         " verification alone, and the parse-ws step already runs it, since the step runs"
         " gen-mam-parsed-docs, which verifies the claims too.  The overlap is recorded in"
         " py/main_authored.py's docstring and in the Method paragraph of"
@@ -509,7 +515,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " doc/PLAN-mega-coverage.md carried out."
     ),
     "py/check_all.py": (
-        "Claude-written proposal, not yet reviewed by Ben: it is book-of-job's register"
+        "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"
         " of seven checks, run by hand, and each of the seven is accounted for on its"
         " own: its spell check runs at the end of the book-of-job-site step, and the"
         " other six are declared here.  That it is book-of-job's register is recorded in"
