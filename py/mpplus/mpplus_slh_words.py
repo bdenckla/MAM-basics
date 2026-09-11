@@ -3,19 +3,19 @@
 from mb_misc import slh_description
 from mpplus import mpplus_boring_tmpls
 from mb_cmn import ws_tmpl2 as wtp
-from mb_cmn import ws_tmpl_named_params as wtnp
 from mb_cmn import template_names as tmpln
 from mb_cmn import shrink
 
 
 def mark(wtseq):
-    """Mark small-, large-, and hung-letter words in classified Scripture branches.
+    """Eliminate standalone small-, large-, and hung-letter templates.
 
-    MAM-parsed-plus retains ketiv and qere and every cantillation, qamats, and
-    stress-helper alternative for edition display, so each named Scripture branch
-    is visited.  Note prose and descriptive parameters are preserved without being
-    searched for letters to mark.  A new template raises until its parameter roles
-    are classified.
+    Every occurrence of מ:אות-ק, מ:אות-ג, or מ:אות תלויה in MAM-parsed-plus is
+    nested under מ:אות-מיוחדת-במילה, which supplies the uninterrupted chanted
+    word and identifies each special letter outside that chanted word.  The
+    normalization covers every template parameter, including documentation text:
+    documentation can quote a Scripture chanted word with a special letter.  A new
+    template raises until its name and parameter shape are classified.
     """
     assert isinstance(wtseq, tuple)
     return tuple(_mark_list(list(wtseq)))
@@ -35,40 +35,7 @@ def _recurse_down_into_tmpls(wtel):
         mpplus_boring_tmpls.validate_current_handler_input_template(wtel)
     else:
         tmpln.validate_current_plus_template(wtel)
-    selected_keys = _slh_scripture_param_keys(name)
-    if not selected_keys:
-        return wtel
-    params = dict(wtel.get("tmpl_params", {}))
-    for key in selected_keys:
-        if key not in params:
-            raise ValueError(f"{name!r} lacks required Scripture parameter {key!r}")
-        marked = _mark_list(wtp.template_param_val(wtel, key))
-        params[key] = wtnp.simplify_singleton(marked)
-    return {"tmpl_name": name, "tmpl_params": params}
-
-
-def _slh_scripture_param_keys(name):
-    if name in tmpln.STD_KQ_TMPL_NAMES:
-        return ("1", "2")
-    if name == tmpln.TRIVIAL_QERE:
-        return ("1", "3")
-    if name == "קרי ולא כתיב":
-        return ("1", "2")
-    if name == "כתיב ולא קרי":
-        return ("1",)
-    if name in {"נוסח", tmpln.SCRDFF_TAR}:
-        return ("1",)
-    if name in tmpln.STRESS_HELPER_TMPL_NAMES:
-        return ("1", "2")
-    if name == tmpln.QAMATS_VARIANT:
-        return ("ד", "ס")
-    if name == tmpln.DUAL_CANTILLATION:
-        return ("כפול", "א", "ב")
-    if name in tmpln.IN_WORD_TMPL_NAMES | {"מודגש", "מ:סיום בטוב", "מ:אות מנוקדת"}:
-        return ("1",)
-    if name not in mpplus_boring_tmpls.RECOGNIZED_TEMPLATE_NAMES:
-        raise ValueError(f"unclassified template in special-letter pass: {name!r}")
-    return ()
+    return wtp.mktmpl_mp(_mark_list, wtel)
 
 
 def _mark_slh_words_shallowly(wtseq):

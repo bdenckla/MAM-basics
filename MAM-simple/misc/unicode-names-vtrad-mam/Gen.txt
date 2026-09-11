@@ -2639,10 +2639,12 @@ b,σ,p,r,y
 SPACE
 τ,y,m,n.
 SPACE
+START slh-word slhw-desc-0=סֵ֔פֶר slhw-desc-1=ס.. slhw-desc-2=ג slhw-desc-3=ס/ג
 START letter-large
 σ,‥,(zaq_q)
 STOP letter-large
 p,∵,r
+STOP slh-word slhw-desc-0=סֵ֔פֶר slhw-desc-1=ס.. slhw-desc-2=ג slhw-desc-3=ס/ג
 SPACE
 b,σ,m,HPU GERSHAYIM,k.
 SPACE

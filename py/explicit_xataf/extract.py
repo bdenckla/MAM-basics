@@ -68,6 +68,7 @@ def join_arg1_strings(arg1):
         "מ:אות-ג",
         "מ:אות-ק",
         "מ:אות תלויה",
+        tmpln.SLH_WORD,
     }:
         return join_arg1_strings(wtp.template_param_val(arg1, "1"))
     if tmpl_name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:

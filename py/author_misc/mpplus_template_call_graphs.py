@@ -117,28 +117,25 @@ _EDGE_COUNTS_ARE_LOW = [
         [
             "The edge counts in the graph above are quite low."
             " This shows that, ignoring נוסח and מ:כפול, nesting in column E is rare."
-            " The highest edge count, 53, joins מ:אות-מיוחדת-במילה to the grouped"
-            " large- and small-letter templates. In Scripture text, the special-letter"
-            " templates must be nested under מ:אות-מיוחדת-במילה. The six direct calls"
-            " from מ:הערה-2 to the grouped large- and small-letter templates are"
-            " documentation examples, where the note marks a letter without wrapping"
-            " a whole Scripture word. The special-letter templates are מ:אות-ק"
-            " (small), מ:אות-ג (large), and מ:אות תלויה (hung)."
+            " Though it is still low, the highest count, 97, is somewhat misleading."
+            " It is somewhat misleading since the special letter templates, by definition,"
+            " must be nested under מ:אות-מיוחדת-במילה."
+            " (The special letter templates are מ:אות-ק (small), מ:אות-ג (large), and מ:אות תלויה (hung).)"
         ]
     )
 ]
 # Top 10 non-trivial stacks in stack_counts (with depth (> 2), counting the column segment) are:
 
-# E/נוסח/ש = 3224 (depth 3)
+# E/נוסח/ש = 3215 (depth 3)
 # D/מ:פסוק/מ:עלייה = 521 (depth 3)
 # E/נוסח/כו״ק = 143 (depth 3)
 # C/נוסח/פפ = 94 (depth 3)
-# E/נוסח/מ:לגרמיה-2 = 80 (depth 3)
+# E/נוסח/מ:לגרמיה-2 = 78 (depth 3)
+# E/נוסח/מ:אות-מיוחדת-במילה = 75 (depth 3)
 # C/נוסח/סס = 69 (depth 3)
 # E/מ:כפול/נוסח/ש = 58 (depth 4)
+# E/נוסח/מ:אות-מיוחדת-במילה/מ:אות-ג = 52 (depth 4)
 # E/נוסח/ר3 = 47 (depth 3)
-# E/מ:כפול/נוסח = 42 (depth 3)
-# E/נוסח/מ:אות-מיוחדת-במילה = 41 (depth 3)
 _CALL_GRAPH_FOR_COLUMN_D = [
     author.para(
         "The call graph below, for column D, is, as expected, much simpler than the one for column E."

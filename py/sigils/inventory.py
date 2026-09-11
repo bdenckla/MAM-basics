@@ -170,6 +170,7 @@ def _note_node_to_text(node):
         "מ:אות-ג",
         "מ:אות-ק",
         "מ:אות תלויה",
+        template_names.SLH_WORD,
     }:
         return _note_node_to_text(wtp.template_param_val(node, "1"))
     if name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:

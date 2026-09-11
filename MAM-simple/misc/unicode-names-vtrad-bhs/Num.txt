@@ -20983,11 +20983,13 @@ n,h,v,g
 SPACE
 l,k,τ,v,b
 SPACE
+START slh-word slhw-desc-0=פִּֽינְחָ֨ס slhw-desc-1=.י... slhw-desc-2=ק slhw-desc-3=י/ק
 p,·,i,(mos)
 START letter-small
 y
 STOP letter-small
 n,:,x,a,(qom),σ
+STOP slh-word slhw-desc-0=פִּֽינְחָ֨ס slhw-desc-1=.י... slhw-desc-2=ק slhw-desc-3=י/ק
 SPACE
 b,y,v,HPU GERSHAYIM,d
 SPACE

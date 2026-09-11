@@ -71,7 +71,10 @@ _STACK_SUMMARIES = {
     ("doc-target", "scrdfftar-tar"): None,
     ("doc-target", "מ:דחי", "1"): None,
     ("doc-target", "מ:דחי", "2"): None,
+    ("doc-target", "scrdfftar-note"): -1,
     ("doc-target", "kq-ketiv"): -1,
+    ("scrdfftar-note",): -1,
+    ("doc-part-n",): -1,
 }
 _STACK_INDICATES_A_NOTE = {
     tuple(): False,
@@ -79,5 +82,8 @@ _STACK_INDICATES_A_NOTE = {
     ("doc-target", "scrdfftar-tar"): False,
     ("doc-target", "מ:דחי", "1"): False,
     ("doc-target", "מ:דחי", "2"): False,
+    ("doc-target", "scrdfftar-note"): True,
     ("doc-target", "kq-ketiv"): False,
+    ("scrdfftar-note",): True,
+    ("doc-part-n",): True,
 }

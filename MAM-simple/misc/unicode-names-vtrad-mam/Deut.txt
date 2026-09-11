@@ -9715,10 +9715,12 @@ b,σ,p,r,y
 SPACE
 τ,y,m,n.
 SPACE
+START slh-word slhw-desc-0=הָאָֽרֶץ slhw-desc-1=...ץ slhw-desc-2=ג slhw-desc-3=ץ/ג
 h,a,α,a,(mos),r,∵
 START letter-large
 c.
 STOP letter-large
+STOP slh-word slhw-desc-0=הָאָֽרֶץ slhw-desc-1=...ץ slhw-desc-2=ג slhw-desc-3=ץ/ג
 SPACE
 b,c,d,HPU GERSHAYIM,y
 SPACE
@@ -16608,10 +16610,12 @@ b,σ,p,r,y
 SPACE
 τ,y,m,n.
 SPACE
+START slh-word slhw-desc-0=קַן slhw-desc-1=ק. slhw-desc-2=ג slhw-desc-3=ק/ג
 START letter-large
 q,_
 STOP letter-large
 n.
+STOP slh-word slhw-desc-0=קַן slhw-desc-1=ק. slhw-desc-2=ג slhw-desc-3=ק/ג
 SPACE
 b,q,v,HPU GERSHAYIM,p.
 SPACE
@@ -24502,10 +24506,12 @@ b,σ,p,r,y
 SPACE
 τ,y,m,n.
 SPACE
+START slh-word slhw-desc-0=הַֽלְיהֹוָה֙ slhw-desc-1=ה..... slhw-desc-2=ג slhw-desc-3=ה/ג
 START letter-large
 h,_,(mos)
 STOP letter-large
 l,:,y,h,o,v,a,h,(pash)
+STOP slh-word slhw-desc-0=הַֽלְיהֹוָה֙ slhw-desc-1=ה..... slhw-desc-2=ג slhw-desc-3=ה/ג
 SPACE
 b,τ,y,b,h
 SPACE
@@ -26241,10 +26247,12 @@ b,σ,p,r,y
 SPACE
 τ,y,m,n.
 SPACE
+START slh-word slhw-desc-0=אַשְׁרֶ֨יךָ slhw-desc-1=א.... slhw-desc-2=ג slhw-desc-3=א/ג
 START letter-large
 α,_
 STOP letter-large
 $,·sh,:,r,∵,(qom),y,k.,a
+STOP slh-word slhw-desc-0=אַשְׁרֶ֨יךָ slhw-desc-1=א.... slhw-desc-2=ג slhw-desc-3=א/ג
 SPACE
 b,α,l,HPU GERSHAYIM,p.
 SPACE
