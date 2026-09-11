@@ -18,6 +18,8 @@ now prints its step times, and §8 gives the commands behind every other figure.
 
 1. **A full run spends 327 s in its 60 steps, and 15 steps account for 86% of that** (§3, run
    1). The two accgram surveys alone take 105 s, 32% of the run. 45 steps take under 5 s each.
+   Since these runs, `main` has deleted one of the 60, `near-aleppo-census` (`d32a17b8`), which
+   takes about 18 s more off a run (§7, item 2).
 2. **Two output-neutral speedups have been made on the branch** (§5), each measured inside one
    process with the old code and the new running alternately, call by call. The prose scanner now
    skips its rule loop wherever only its catch-all rule can match, which cuts its time by 72%,
@@ -222,7 +224,8 @@ profiler, which inflates small Python calls, so they give shares rather than tim
    subprocess, `near-aleppo/census/run_all.py --write` in MAM-private, which runs 102 census
    scripts as child processes through a pool of 6 threads and rewrites their goldens under
    `near-aleppo/census/expected/`. Reads MAM-parsed's `plus/` tree through
-   `REPO_MAM_PARSED_DIR`, and this repository's `aleppo/`. Skipped in a cloud session.
+   `REPO_MAM_PARSED_DIR`, and this repository's `aleppo/`. Skipped in a cloud session. Deleted
+   from the mega by `d32a17b8`, after these runs.
 5. **`diff-wsgo`, 16.1 s.** Parses all 39 books of the Wikisource input `in/mam-ws/` again (the
    parse that `parse-ws` has just done), reads `MAM-parsed/google/`, and compares the two,
    writing `out/diff_mamws_mamgo.json` and `out/diff_mamws_mamgo-auto-edits.json`. The parse is
@@ -385,8 +388,8 @@ and the closing table are new lines on standard output, and nothing else in the 
 
 ## 7. Speedups proposed for Ben, largest first
 
-None of these is made on the branch. Each saving is an estimate from the measurements named with
-it, after the two changes of §5.
+None of these is made on the branch; item 2 has since been made on `main`. Each saving is an
+estimate from the measurements named with it, after the two changes of §5.
 
 1. **Run independent steps at the same time.** The mega runs one step at a time, in one process,
    on one of 20 logical processors. Most steps read only committed inputs or the output of one or
@@ -407,11 +410,10 @@ it, after the two changes of §5.
    deletes and rewrites `MAM-simple/py-examples/`, which three `vendored-*` steps run and
    `vendoring-audit` reads). It needs a declared read and write list per step, one process per
    running step, and a rule for stopping the other steps when one fails.
-2. **Take `near-aleppo-census` out of the mega**, which Ben already wants for a different reason,
-   the write into MAM-private (another chip is looking into it). **Expected saving: the step's
-   17.6 s in run 1, 19.4 s pinned. Risk: low for this repository**; MAM-private's census goldens
-   then need a separate trigger. A smaller alternative: its pool of 6 threads could be wider
-   on a 20-processor machine.
+2. **Take `near-aleppo-census` out of the mega: this has been done on `main`**, in `d32a17b8`
+   (2026-09-11 10:19, after the runs measured here), for the other reason Ben wanted it, the
+   write into MAM-private. **Saving: the step's 17.6 s in run 1, 19.4 s pinned.** MAM-private's
+   census goldens now need a trigger of their own.
 3. **Give the poetic scanner change 1's fast path.** `poetic_scanner.scan_accent_tokens` runs
    the same loop over its 35 rules, ending in the same catch-all, and five steps call it, four of
    them on the same 4,465 or so poetic verse bodies: 1.32 s in `accgram-run-poetic`, 1.15 s in
