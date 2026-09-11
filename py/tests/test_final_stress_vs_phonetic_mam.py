@@ -39,8 +39,22 @@ survey reads one strand of MAM-simple, and which one is not a fact this test is 
 A word Phonetic MAM has no entry for FAILS, and none does: the join over the prose measured set is
 exceptionless since issue wlc-utils#91, whose fix is why -- see the test's own docstring for the one word
 that used to be pinned here.  A skip is this suite's semantic channel and an environment skip mixed
-into it reports green having verified nothing; the same is why the sibling clone is required rather
-than skipped around.
+into it reports green having verified nothing; the same is why, on any machine of Ben's, the sibling
+clone is REQUIRED rather than skipped around, and a missing MAM-private fails here exactly as it
+always did.
+
+IN A CLOUD CONTAINER THE WHOLE MODULE IS SKIPPED.  Ben's decision, 2026-09-11, extending to these
+two tests the treatment ``py/main_0_mega.py`` already gave its two MAM-private steps,
+``near-aleppo-census`` and ``accgram-survey-post-stress-meteg``; the first of them was deleted
+from the mega later that day, and the second is skipped the same way still.  Until then the mega was
+MAM-private-free in the cloud and the suite was not, so a cloud session could not verify its own
+work against a green suite: measured in a container on 2026-09-11, these two were the only failures
+in 992, both raising ``FileNotFoundError`` from ``paths.require_sibling``.  The discriminator is
+``graphviz_pin.in_cloud_session()``, the same predicate the mega and ``survey_dot`` use, and it
+reads ``CLAUDE_CODE_REMOTE`` alone -- so the module is skipped in a container WHETHER OR NOT
+MAM-private is attached there, which is how the mega's survey step reads too.  What it costs is that a
+cloud run reports these 2 skips beside the semantic skips of ``test_edition_transcriptions.py``;
+the reason string below is what tells the two kinds apart under ``-rs``.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_final_stress_vs_phonetic_mam.py
@@ -53,6 +67,8 @@ import re
 from collections import defaultdict
 from functools import lru_cache
 
+import pytest
+
 from accgram import final_stress as fs
 from accgram import mam_simple_verse
 from accgram import maqaf_nonfinal_accents as mpa
@@ -60,7 +76,22 @@ from accgram import prose_filter
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
+from mb_cmn import graphviz_pin
 from mb_cmn import paths
+
+# Both tests read MAM-private's Phonetic MAM through ``_oracle``, so both are skipped in a cloud
+# container and neither is skipped anywhere else -- see this module's docstring, "IN A CLOUD
+# CONTAINER THE WHOLE MODULE IS SKIPPED", for Ben's decision of 2026-09-11 and the mega precedent
+# it follows.  ``in_cloud_session`` lives in ``graphviz_pin`` because that is where the cloud
+# skip was first needed; it is the repository's one cloud predicate, and a second one named for
+# this use would be exactly the alias that ``~/.claude/CLAUDE.md`` forbids.
+pytestmark = pytest.mark.skipif(
+    graphviz_pin.in_cloud_session(),
+    reason=(
+        "cloud container: this module reads MAM-private's Phonetic MAM, which is not"
+        " attached here -- an environment skip, not this suite's semantic skip"
+    ),
+)
 
 # What a join key drops: the accents (U+0591..U+05AE), the masora circle (U+05AF) Phonetic MAM
 # writes to mark a sheva or dagesh it has resolved, meteg (U+05BD), rafe (U+05BF), the punctuation
