@@ -1,6 +1,6 @@
 # Findings of the 2026-09-10 review of the public repos since 2026-09-08
 
-State: not yet acted on
+State: not yet acted on, except findings 1, 2 and 3, fixed on 2026-09-11 at Ben's direction before the Codex counter-argument ran; see `## Dispositions after remediation` at the end
 
 Written 2026-09-10, late evening, as the Claude argument, turn 1 of the standard alternating
 dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09): this file was
@@ -833,3 +833,19 @@ rescanned for 4.3; the two `def _held_commits` lines grepped at both commits for
 tree health figures, the census and finding 21 are the main session's own. The reconciliation
 section goes below this one, under `## Reconciliation with the Codex review`, per
 `doc/dual-agent-review.md`.
+
+## Dispositions after remediation
+
+Recorded by a Claude session on 2026-09-11. Findings 1, 2 and 3 were fixed at Ben's direction
+before the Codex counter-argument had run, so this section exists ahead of the reconciliation
+section that `doc/dual-agent-review.md` places above it. That section goes between "Inputs for the
+reconciliation with the Codex review" and this one. The counter-argument reviews the window at
+the anchor `0354b6cc`, where all three findings still stand as written above.
+
+| Date | Finding | Disposition |
+|---|---|---|
+| 2026-09-11 | 1 | Has been fixed by `f11ecaf8` on `main`. Every op that places a mark now records the index the mark has among its cluster's marks in the new text, and `change_ops_apply` places it there, so the mpplus diff rebuilds Isaiah 24:18 and the mega's step, now named `diff-mpplus`, no longer stops. The finding's command re-establishes it with the subcommand renamed: `py/main_diff.py mpplus --old 9ce6ee5 --new HEAD`. |
+| 2026-09-11 | 2 | Has been fixed by `6b45ad0f` on `main`. `gh-pages/MAM-with-doc/change-log/unpinned-latest.json` has 69 records, the 57 it had plus the twelve verses the refresh `209b4c05` changed; `unpinned-latest.html` and `index.html` were regenerated with it. |
+| 2026-09-11 | 3 | Has been fixed by the commit that adds this section. It puts dated corrections beside the three records the finding names: the Wave 3 technical paragraph and the 13.3 row of the final disposition table in `doc/review-findings-2026-09-08.md`, and items 1 and 2 of the Wave 3 technical source changes in `doc/PLAN-remediate-review-findings-2026-09-08.md`. Each correction says that `3a1ab7f0` retired the display fallback. |
+
+Findings 4 to 21 are not yet acted on.

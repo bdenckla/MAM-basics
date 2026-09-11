@@ -1967,6 +1967,17 @@ The technical source changes are:
    actual MAS HTML page through that source/context validator. The existing MAS
    terminology/membership lint remains active. No example-based verse test was added.
 
+Correction recorded by a Claude session on 2026-09-11, for finding 3 of
+`doc/review-findings-2026-09-10.md`: items 1 and 2 above describe a display fallback that no
+longer exists. `3a1ab7f0` (2026-09-10 12:21) removed both `mam_form or chanted_word` sites from
+`py/author_site/post_stress_meteg.py`. That module's `_mam_form` now raises `SurveyProblem` for a
+displayed record with no `mam_form`, so no render path reaches the snapshot, and item 1's
+sentence "An actual display fallback requires the snapshot to be available" no longer applies.
+The snapshot lookup is now `_snapshot_unannotated_form`, private to
+`py/accgram/post_stress_meteg.py`. Item 1's matching selection, item 2's mark preservation, and
+items 3 and 4 are unaffected. `CLAUDE.md`'s section "A code path reads MAM-private every time it
+runs, or never" records the rule that retired the fallback.
+
 Evidence is under
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/.novc/review-remediation-2026-09-08/wave3-01a08b34/`.
 Every command below uses the absolute interpreter
