@@ -782,11 +782,12 @@ suite takes about two.
 2026-09-10 review owns the fix. Finish the check with a second run that starts at the next step,
 `py/main_0_mega.py --resume-from diff-ctr-vs-mam`, and report the `diff-mpp` failure as known.
 
-**The mega writes one thing outside this repo.** Its `near-aleppo-census` step rewrites
-MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run can leave a diff in
-MAM-private as well. Read that diff the same way, and commit it in MAM-private, as the 2026-09-10
-refresh did (MAM-private `ecab726`). Ben wants that cross-repo write removed (2026-09-11); until
-it is, this is the procedure.
+**The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
+rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
+in MAM-private, and this paragraph said to commit that diff there, as the 2026-09-10 refresh did
+(MAM-private `ecab726`). Ben had the step deleted that day. MAM-private's own mega runs the census
+now, so a change to `MAM-parsed/plus/` leaves MAM-private's census for MAM-private to refresh,
+and an integration here has nothing to commit in any other repository.
 
 **Codex does not load this file**, so the same rule is written into `~/.codex/AGENTS.md`, which
 is tracked here as `dot-Codex/user-wide-AGENTS.md`.
@@ -812,7 +813,8 @@ skipped** on 2026-09-10.
 sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
 and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
 `graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
-`py/main_0_mega.py` gives its two MAM-private steps. On any machine of Ben's nothing changes: a
+`py/main_0_mega.py` gives its MAM-private step (it had two until `near-aleppo-census` was deleted
+later that day). On any machine of Ben's nothing changes: a
 missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
 these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
 the reason strings are what tell the two kinds apart under `-rs`.

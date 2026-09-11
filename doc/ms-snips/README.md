@@ -11,6 +11,10 @@ lives in the Leningrad folder rather than here.
 MAM-basics is the fallback because it is where MAM's sigla are decoded — see
 [sigil-decoding.md](../sigil-decoding.md).
 
+**A printed edition's crops come here too**, the first being the Second Rabbinic Bible's at
+Job 4:12, below, on 2026-09-11. They are named the same way, the edition in the manuscript's
+place; the folder's name predates them.
+
 ## masoretica.org is how to find a page
 
 <https://www.masoretica.org/> serves 187 manuscripts — Masoretic, Samaritan and Greek —
@@ -121,3 +125,27 @@ conversions of one shared digital ancestor, neither a transform of the other. At
 verse, the meteg the correction request asked for is in both digital texts — Metsudah has
 אָֽכְלָ֭ה, CTR has אָֽכְלָ֖ה — though the three manuscripts above lack it; and CTR has the
 yetiv, logically before its ḥolam, that the Metsudah quotation lacks.
+
+## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
+
+Job 4:12, the verse-final atom, מֶֽנְהֽוּ׃ in MAM, in **the Second Rabbinic Bible, volume IV**:
+the Venice Mikra'ot Gedolot of 1524–25, edited by Jacob ben Hayyim. Ben cropped it on 2026-09-11
+from a scan titled "The Second Rabbinic Bible (Mikraot Gedolot) (מקראות גדולות) Volume IV",
+on the page marked with a 99 in pencil, which is the `pencil99` in the file name.
+
+**The Second Rabbinic Bible appears to have one meteg/silluq on this atom, under the mem, and none
+under the he** — Ben's reading of this image; diacritics, he says, do not come through well in
+the scan. MAM has one under the mem and one under the he, and so do both codices, in
+`../../aleppo/page-snips/271r-col2-line5-Job4v12-menhu.png` and
+`../../leningrad/page-snips/398A-Job4v12-menhu.png`. At the crop's resolution Claude sees what Ben
+sees: under the mem a short stroke beside the segol, under the nun a sheva, and under the he
+nothing; the one dark mark below the he is the top of a lamed of the next line.
+
+**The crop is of Job 4:12 and not of Psalms 68:24**, whose last atom, מִנֵּֽהוּ׃, is the only other
+atom in MAM with the letters מנהו. Here the atom comes after the ץ of שמץ, and the next line has
+the לילה of Job 4:13; in Psalms 68:24 the atom comes after מאיבים.
+
+The question the crop was made for is which of MAM's two meteg/silluq marks on this atom is the
+silluq. [meteg-after-silluq-job-4-12.md](../meteg-after-silluq-job-4-12.md) has the evidence, and
+counts the Second Rabbinic Bible with Koren, which also has only the mark under the mem, as
+evidence that the stress is penultimate.
