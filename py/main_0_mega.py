@@ -52,6 +52,7 @@ from dataclasses import dataclass
 import os
 import subprocess
 import sys
+import time
 from typing import Callable
 
 from mb_cmn import graphviz_pin
@@ -822,6 +823,69 @@ def _report_cloud_skips():
     print("=" * 80)
 
 
+@dataclass(frozen=True)
+class StepTime:
+    step_id: str
+    seconds: float
+    # None when the step returned, else the name of the exception it raised.
+    raised: str | None
+
+
+# Every step this run timed, in the order run.  Appended to by _time_step and read by
+# _report_step_times.
+_STEP_TIMES: list[StepTime] = []
+
+
+def _time_step(step):
+    """Run one step, print how long it took, and record that in _STEP_TIMES.
+
+    The line is printed and the StepTime recorded even when the step raises, so a
+    run that stops at a failing step still says how long the failure took.
+    """
+    start = time.perf_counter()
+    raised = None
+    try:
+        step.runner()
+    except BaseException as exc:
+        raised = type(exc).__name__
+        raise
+    finally:
+        seconds = time.perf_counter() - start
+        suffix = "" if raised is None else f", then raised {raised}"
+        print(f"STEP TIME: {step.step_id}: {seconds:.1f} s{suffix}", flush=True)
+        _STEP_TIMES.append(StepTime(step.step_id, seconds, raised))
+
+
+def _report_step_times(run_seconds):
+    """Print every timed step, slowest first, with its share of the step loop's time.
+
+    Added 2026-09-11, when a mega run became the check on every integration of a
+    worktree branch (CLAUDE.md, "Integrating a worktree branch here"), so that each
+    run shows where its time goes. Printed even when a step raises; the traceback
+    then follows it.
+    """
+    if not _STEP_TIMES:
+        return
+    cloud_skipped = {step_id for step_id, _reason in _CLOUD_SKIPPED_STEPS}
+    print()
+    print("=" * 80)
+    print(
+        f"  MEGA STEP TIMES: {len(_STEP_TIMES)} step(s) in {run_seconds:.1f} s,"
+        " slowest first"
+    )
+    print("=" * 80)
+    for step_time in sorted(_STEP_TIMES, key=lambda st: st.seconds, reverse=True):
+        share = 100 * step_time.seconds / run_seconds if run_seconds else 0.0
+        notes = []
+        if step_time.raised is not None:
+            notes.append(f"raised {step_time.raised}")
+        if step_time.step_id in cloud_skipped:
+            notes.append("skipped for the cloud")
+        note = f"  ({'; '.join(notes)})" if notes else ""
+        print(f"  {step_time.seconds:7.1f} s  {share:5.1f}%  {step_time.step_id}{note}")
+    print("=" * 80)
+
+
 def main():
     """Run various mains"""
     # The wlc steps emit Hebrew.  Their own `if __name__ == "__main__"` blocks called
@@ -840,6 +904,7 @@ def main():
     args = parser.parse_args()
     resuming = args.resume_from is not None
     old_argv = sys.argv
+    run_start = time.perf_counter()
     try:
         # Isolate mega CLI flags from child parsers in step scripts.
         sys.argv = [old_argv[0]]
@@ -850,9 +915,10 @@ def main():
                 else:
                     print(f"Skipping {step.step_id}")
                     continue
-            step.runner()
+            _time_step(step)
     finally:
         sys.argv = old_argv
+        _report_step_times(time.perf_counter() - run_start)
     _report_cloud_skips()
     #
     # Download of ws (Wikisource) can be accomplished by running:
