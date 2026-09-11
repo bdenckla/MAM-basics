@@ -27,8 +27,10 @@ Four things the table records that a derivation would have got wrong:
     atoms of the maqaf compound מַה־נֹּאכַ֤֖ל: the list's 3 is מַה־ and Holman's
     4 is נֹּאכַ֤֖ל, the atom whose mahapakh his case asks to remove. The change
     list does this elsewhere too, quoting a maqaf compound whole and citing the
-    atom it starts at -- Gen 14:17.9, Ex 5:22.11 and 2Sam 3:30.10 are the
-    instances in the change files on disk in the sibling UXLC-utils.
+    atom it starts at. In the change files under ``uxlc/in/UXLC-misc/`` the
+    instances are Gen 14:17.9, Ex 5:22.11 and 2Sam 3:30.10, whose records ask
+    for a maqaf between the compound's two atoms, and 2Sam 6:7.1 and
+    2Sam 8:1.2, whose descriptions begin "Remove maqaf, merging 2 words to 1".
 
     The keys below are Holman's, because a key is how a case in ``emails/`` is
     named, and ``data/uxlc_standard_atoms.json`` is keyed the same way.
