@@ -93,7 +93,7 @@ A background search of both books' OCR exports, made for this file, found the fo
 ## 6. Not consulted, and what would bear on the question
 
 1. **Breuer's editions**, the Horev edition and the Jerusalem Crown, at Job 4:12: not on disk. MAM's introduction says Breuer prints the ga'ayot written in the manuscripts as long ga'ayot, to distinguish them (`in/mam-ws-intro/ch3.mediawiki` line 1328). If his print makes one of the two strokes a long ga'aya, that would show which stroke he read as the silluq.
-2. **The Leningrad Codex, folio 398A**, from Sefaria (section 3). It would turn UXLC's record of two strokes into a reading of the manuscript; it cannot show which stroke is the silluq. A download, which needs Ben's approval.
+2. **The Leningrad Codex, folio 398A**: Sefaria's image, `https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F398A.jpg`, where the verse-final atom, the verse's seventh, is estimated at column 2, line 4.0 (`page_and_guesses` in `py/py_uxlc/my_uxlc_location.py`); tanach.us's page for the verse is `https://tanach.us/Tanach.xml?Job4:12`. It would turn UXLC's record of two strokes into a reading of the manuscript; it cannot show which stroke is the silluq.
 3. **`doc/PLAN-silluq-before-gaya-template.md`** (phonetic-hbo#78) plans a template identifying the silluq at 1 Kings 7:37. Job 4:12 would be a candidate for it if its stress is penultimate. Raised for Ben, not acted on.
 
 ## 7. Scripts and commands that re-establish every figure
@@ -104,5 +104,6 @@ All are throwaway scripts, gitignored under `.novc/` in the worktree named at th
 2. `.novc/job412_spell2.py` does the same for Psalms 72:15's atom and writes `.novc/job412_spell2_report.txt`.
 3. `.novc/job412_crops.py`, `.novc/job412_zoom.py` and `.novc/job412_cam_line.py` (the last with the arguments `550 1268 660 1372`) make the crops and ruled enlargements of section 3.
 4. `.novc/job412_write_doc.py` writes this file from `.novc/job412_doc_template.md`, lifting every pointed form and every `jta` from the data with a uniqueness assertion, and checks the result with `has_std_mark_order`.
+5. `.novc/lookup_links.py` estimates the Leningrad Codex's column and line for the verse-final atom and builds the links of section 6.
 
 The literature search of section 5 ran as a throwaway script in the session's scratchpad, which does not outlast the session; the patterns in section 5 are its durable record.

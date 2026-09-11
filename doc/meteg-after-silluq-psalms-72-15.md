@@ -31,8 +31,8 @@ Pages are named as in the scan-pages index (`doc/scan-pages.md`). Koren's page D
 
 ## 3. Not consulted, and what would bear on it
 
-1. **The Leningrad Codex, folio 380A**, at `https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F380A.jpg`, the URL pattern of `doc/boj-leningrad-word-crops.md`: whether the manuscript has the stroke on the he that UXLC and WLC record. A download, which needs Ben's approval.
-2. **The Aleppo Codex, leaf 253v**, whose image MAM's index links at `https://barhama.com/aleppocodex/?image=ALEPPO_CODEX_253v`: whether it has the one stroke that MAM's text and quotations imply. Also a download.
+1. **The Leningrad Codex, folio 380A**: Sefaria's image, `https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F380A.jpg`, where the verse-final atom, the verse's eleventh, is estimated at column 2, line 5.5 (`page_and_guesses` in `py/py_uxlc/my_uxlc_location.py`); tanach.us's page for the verse, `https://tanach.us/Tanach.xml?Ps72:15`, links the same image with its own estimate. It would show whether the manuscript has the stroke on the he that UXLC and WLC record.
+2. **The Aleppo Codex, leaf 253v**: the mgketer.org page for Psalms 72, `https://www.mgketer.org/mikra/27/72/1/mg/106`, the link `verse_external_links` in `py/py_render/rt_external_links.py` builds. It would show whether the Codex has the one stroke that MAM's text and quotations imply.
 3. **The complete run** over every verse-final chanted word, in `doc/PLAN-meteg-after-silluq-in-uxlc-and-wlc.md`.
 
 ## 4. Scripts and commands that re-establish every figure
@@ -41,3 +41,4 @@ All are throwaway scripts, gitignored under `.novc/` in the worktree named at th
 
 1. `.novc/job412_spell2.py` spells out this atom codepoint by codepoint in every source above and in Phonetic MAM, and writes `.novc/job412_spell2_report.txt`.
 2. `.novc/ps7215_write_doc.py` writes this file from `.novc/ps7215_doc_template.md`. It lifts every pointed form and the `jta` from the data; asserts that the note's and the introduction's quotations of the Aleppo Codex agree, that UXLC 3.9 and both WLC conversions have the same codepoints, and how many U+05BD each form has; and checks the result with `has_std_mark_order`.
+3. `.novc/lookup_links.py` estimates the Leningrad Codex's column and line for the verse-final atom and builds the Sefaria, tanach.us and mgketer.org links of section 3.
