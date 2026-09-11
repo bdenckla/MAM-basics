@@ -31,6 +31,10 @@ def _recurse_down_into_tmpls(wtel):
     if not wtp.is_template(wtel):
         return wtel
     name = wtp.template_name(wtel)
+    if name in mpplus_boring_tmpls._HANDLERS:
+        mpplus_boring_tmpls.validate_current_handler_input_template(wtel)
+    else:
+        tmpln.validate_current_plus_template(wtel)
     selected_keys = _slh_scripture_param_keys(name)
     if not selected_keys:
         return wtel
@@ -201,7 +205,10 @@ def _flatten_targ(wtseq):
         elif wtp.template_name(wtel) in slh_description.PASOLEG_DESC0:
             parts.append(slh_description.PASOLEG_DESC0[wtp.template_name(wtel)])
         else:
-            parts.append(f"<{wtp.template_name(wtel)}>")
+            raise ValueError(
+                f"unclassified template in special-letter target:"
+                f" {wtp.template_name(wtel)!r}"
+            )
     return "".join(parts)
 
 

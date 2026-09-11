@@ -11,7 +11,8 @@ Exports:
 
 import re
 
-from mb_diff_mpu.mpplus_param_access import MISSING, get_param
+from mb_cmn import hebrew_punctuation as hpu
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param, param_items
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 
@@ -38,7 +39,11 @@ def docnote_body_to_html(body):
 
       ``{ש}``       → ``<br>``
       ``{מודגש}``   → ``<strong>…</strong>``
-      others        → param text rendered inline
+      note links    → escaped links whose visible label is param 2
+      marked letters and punctuation → their explicitly named content
+
+    Every reachable note-body template is classified.  An unfamiliar template or
+    parameter shape raises instead of guessing that parameter 1 is visible prose.
 
     Pointed Hebrew spans are wrapped in ``<span class="pointed-heb">``
     so CSS can size them for legibility.
@@ -68,28 +73,66 @@ def _to_raw_html(obj):
         return _render_template(obj)
     if isinstance(obj, list):
         return "".join(_to_raw_html(item) for item in obj)
-    return _esc(str(obj))
+    raise TypeError(f"unclassified MAM note-body node: {type(obj).__name__}")
+
+
+def _require_param_keys(tmpl, expected):
+    name = tmpl.get("tmpl_name")
+    actual = tuple(key for key, _value in param_items(tmpl))
+    if set(actual) != set(expected) or len(actual) != len(expected):
+        raise ValueError(
+            f"unexpected parameters for MAM note-body template {name!r}: "
+            f"expected {sorted(expected)!r}, got {list(actual)!r}"
+        )
+
+
+def _required_param(tmpl, key):
+    value = get_param(tmpl, key)
+    if value is MISSING:
+        raise ValueError(
+            f"missing parameter {key!r} in MAM note-body template "
+            f"{tmpl.get('tmpl_name')!r}"
+        )
+    return value
+
+
+def _plain_link_target(value, template_name):
+    if isinstance(value, str):
+        return value
+    if isinstance(value, list) and len(value) == 1 and isinstance(value[0], str):
+        return value[0]
+    raise ValueError(
+        f"non-text link target in MAM note-body template {template_name!r}: {value!r}"
+    )
 
 
 def _render_template(tmpl):
-    name = tmpl.get("tmpl_name", "")
+    name = tmpl.get("tmpl_name")
+    if not isinstance(name, str):
+        raise ValueError(f"MAM note-body mapping lacks tmpl_name: {tmpl!r}")
     if name == "ש":
+        _require_param_keys(tmpl, ())
         return "<br>"
-    p1 = get_param(tmpl, "1")
     if name == "מודגש":
-        inner = _to_raw_html(p1) if p1 is not MISSING else ""
+        _require_param_keys(tmpl, ("1",))
+        inner = _to_raw_html(_required_param(tmpl, "1"))
         return f"<strong>{inner}</strong>"
-    if name == "מ:קישור פנימי בהערה":
-        return _to_raw_html(p1) if p1 is not MISSING else ""
+    if name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
+        _require_param_keys(tmpl, ("1", "2"))
+        target = _plain_link_target(_required_param(tmpl, "1"), name)
+        label = _to_raw_html(_required_param(tmpl, "2"))
+        return f'<a href="{_esc(target)}">{label}</a>'
     if name == "מ:אות-מיוחדת-במילה":
-        return _to_raw_html(p1) if p1 is not MISSING else ""
+        _require_param_keys(tmpl, ("1",))
+        return _to_raw_html(_required_param(tmpl, "1"))
     if name in _SLH_CSS_CLASS:
-        inner = _to_raw_html(p1) if p1 is not MISSING else ""
+        _require_param_keys(tmpl, ("1",))
+        inner = _to_raw_html(_required_param(tmpl, "1"))
         return f'<span class="{_SLH_CSS_CLASS[name]}">{inner}</span>'
-    # Unknown template: render param "1" or all params
-    if p1 is not MISSING:
-        return _to_raw_html(p1)
-    return ""
+    if name in {"מ:לגרמיה-2", "מ:פסק"}:
+        _require_param_keys(tmpl, ())
+        return hpu.PASOLEG
+    raise ValueError(f"unclassified MAM note-body template: {name!r}")
 
 
 # ── Pointed-Hebrew wrapping ──────────────────────────────────────

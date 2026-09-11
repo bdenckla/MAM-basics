@@ -3,6 +3,7 @@
 import re
 
 from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
@@ -50,17 +51,30 @@ def flatten_arg1_strings(arg1):
 
 
 def join_arg1_strings(arg1):
-    """Join adjacent strings in arg[1], collapsing across template separators.
-    This handles cases where angle brackets span multiple list elements."""
+    """Join the visible note text, collapsing across explicit line separators."""
     if isinstance(arg1, str):
         return arg1
-    parts = []
-    for item in arg1:
-        if isinstance(item, str):
-            parts.append(item)
-        else:
-            parts.append("")
-    return "".join(parts)
+    if isinstance(arg1, list):
+        return "".join(join_arg1_strings(item) for item in arg1)
+    if not isinstance(arg1, dict) or not wtp.is_template(arg1):
+        raise TypeError(f"unclassified MAM note-body node: {type(arg1).__name__}")
+
+    tmpln.validate_current_plus_template(arg1)
+    tmpl_name = wtp.template_name(arg1)
+    if tmpl_name == "ש":
+        return ""
+    if tmpl_name in {
+        "מודגש",
+        "מ:אות-ג",
+        "מ:אות-ק",
+        "מ:אות תלויה",
+    }:
+        return join_arg1_strings(wtp.template_param_val(arg1, "1"))
+    if tmpl_name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
+        return join_arg1_strings(wtp.template_param_val(arg1, "2"))
+    if tmpl_name in {"מ:לגרמיה-2", "מ:פסק"}:
+        return hpu.PASOLEG
+    raise ValueError(f"unclassified MAM note-body template: {tmpl_name!r}")
 
 
 def _has_xataf(word):
@@ -153,6 +167,7 @@ def flatten_text(wtel):
     if isinstance(wtel, list):
         return "".join(flatten_text(x) for x in wtel)
     if isinstance(wtel, dict) and wtp.is_template(wtel):
+        tmpln.validate_current_plus_template(wtel)
         tmpl_name = wtp.template_name(wtel)
         if kqst.is_special_kq_template_name(tmpl_name):
             assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
@@ -172,8 +187,8 @@ def flatten_text(wtel):
             return ""
         if wtp.is_template_with_name_in(wtel, _ZERO_CONTENT_TMPL_NAMES):
             return ""
-        assert False, f"Unexpected template in flatten_text: {wtel}"
-    return ""
+        raise ValueError(f"Unexpected template in flatten_text: {wtel}")
+    raise TypeError(f"Unexpected node in flatten_text: {type(wtel).__name__}")
 
 
 def _validate_special_kq_if_needed(tmpl):
@@ -206,14 +221,13 @@ def find_docnote_tmpls(wt_seq):
             if wtp.is_doc_template(wtel):
                 results.append(wtel)
             elif wtp.is_template(wtel):
-                tmpl_name = wtp.template_name(wtel)
-                if tmpl_name not in tmpln.CURRENT_PLUS_TMPL_NAMES:
-                    raise RuntimeError(
-                        f"Unclassified template {tmpl_name!r} in documentation-note inventory"
-                    )
-                for arg in wtp.template_param_vals(wtel):
-                    if isinstance(arg, list):
-                        results.extend(find_docnote_tmpls(arg))
+                params = tmpln.validate_current_plus_template(wtel)
+                for _param_name, arg in params.items():
+                    results.extend(find_docnote_tmpls([arg]))
         elif isinstance(wtel, list):
             results.extend(find_docnote_tmpls(wtel))
+        elif not isinstance(wtel, str):
+            raise TypeError(
+                f"Unexpected node in plus documentation-note inventory: {type(wtel).__name__}"
+            )
     return results

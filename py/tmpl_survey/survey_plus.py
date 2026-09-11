@@ -18,6 +18,7 @@ from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
+from mb_cmn import template_names
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
@@ -25,6 +26,7 @@ _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
 
 def _wtel_type_and_subtype(wtel):
     assert wtp2.is_template(wtel), wtel
+    template_names.validate_current_plus_template(wtel)
     tmpl_name = wtp2.template_name(wtel)
     return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
 

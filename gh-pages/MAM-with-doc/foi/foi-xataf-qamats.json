@@ -1,10 +1,122 @@
 [
   {
+    "bcv_short": "G9:21",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֹֽה׃"
+  },
+  {
+    "bcv_short": "G9:27",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇֽהֳלֵי־שֵׁ֑ם"
+  },
+  {
+    "bcv_short": "G12:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֹ֑ה"
+  },
+  {
+    "bcv_short": "G13:3",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇֽהֳלֹוֹ֙"
+  },
+  {
     "bcv_short": "G16:13",
     "stack_str": null,
     "lett": "ר",
     "fp": "",
     "r": "רֳאִ֑י"
+  },
+  {
+    "bcv_short": "G19:34",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "G26:25",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "G31:25",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶֽת־אׇהֳלוֹ֙"
+  },
+  {
+    "bcv_short": "G33:19",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳל֔וֹ"
+  },
+  {
+    "bcv_short": "G35:21",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇֽהֳלֹ֔ה"
+  },
+  {
+    "bcv_short": "G36:2",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶת־אׇהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:14",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָמָ֧ה"
+  },
+  {
+    "bcv_short": "G36:18",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִֽיבָמָה֙"
+  },
+  {
+    "bcv_short": "G36:18",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִֽיבָמָ֛ה"
+  },
+  {
+    "bcv_short": "G36:25",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇהֳלִיבָמָ֖ה"
+  },
+  {
+    "bcv_short": "G36:41",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָמָ֛ה"
   },
   {
     "bcv_short": "G38:24",
@@ -91,6 +203,20 @@
     "r": "צֳרִי֙"
   },
   {
+    "bcv_short": "G43:16",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָֽיִם׃"
+  },
+  {
+    "bcv_short": "G43:25",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָ֑יִם"
+  },
+  {
     "bcv_short": "G49:13",
     "stack_str": null,
     "lett": "א",
@@ -126,11 +252,46 @@
     "r": "חֳמָרִ֑ם"
   },
   {
+    "bcv_short": "E9:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E11:8",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרִי־אָֽף׃"
+  },
+  {
     "bcv_short": "E12:2",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "E16:16",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E18:13",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E22:19",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "יׇֽחֳרָ֑ם"
   },
   {
     "bcv_short": "E26:33",
@@ -168,11 +329,88 @@
     "r": "כֻּתֳּנֹֽת׃"
   },
   {
+    "bcv_short": "E31:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיאָ֞ב"
+  },
+  {
+    "bcv_short": "E32:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E32:30",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "E33:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "E33:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֽוֹ׃"
+  },
+  {
+    "bcv_short": "E35:11",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶֽת־אׇהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "E35:34",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇֽהֳלִיאָ֥ב"
+  },
+  {
+    "bcv_short": "E36:1",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇהֳלִיאָ֜ב"
+  },
+  {
+    "bcv_short": "E36:2",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶל־אׇֽהֳלִיאָב֒"
+  },
+  {
+    "bcv_short": "E38:23",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיאָ֞ב"
+  },
+  {
     "bcv_short": "E40:14",
     "stack_str": null,
     "lett": "תּ",
     "fp": "",
     "r": "כֻּתֳּנֹֽת׃"
+  },
+  {
+    "bcv_short": "L7:16",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וּמִֽמׇּחֳרָ֔ת"
   },
   {
     "bcv_short": "L8:13",
@@ -189,6 +427,55 @@
     "r": "בְּכֻתֳּנֹתָ֔ם"
   },
   {
+    "bcv_short": "L12:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָ֑הֿ"
+  },
+  {
+    "bcv_short": "L12:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָֽהּ׃"
+  },
+  {
+    "bcv_short": "L12:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָֽהֿ׃"
+  },
+  {
+    "bcv_short": "L12:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָ֗הּ"
+  },
+  {
+    "bcv_short": "L13:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְטׇהֳרָת֑וֹ"
+  },
+  {
+    "bcv_short": "L13:35",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָתֽוֹ׃"
+  },
+  {
+    "bcv_short": "L14:2",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָת֑וֹ"
+  },
+  {
     "bcv_short": "L14:4",
     "stack_str": null,
     "lett": "פּ",
@@ -196,11 +483,53 @@
     "r": "שְׁתֵּֽי־צִפֳּרִ֥ים"
   },
   {
+    "bcv_short": "L14:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "L14:23",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְטׇהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L14:32",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּטׇהֳרָתֽוֹ׃"
+  },
+  {
     "bcv_short": "L14:49",
     "stack_str": null,
     "lett": "פּ",
     "fp": "",
     "r": "צִפֳּרִ֑ים"
+  },
+  {
+    "bcv_short": "L15:13",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְטׇהֳרָת֖וֹ"
+  },
+  {
+    "bcv_short": "L16:10",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "יׇֽעֳמַד־חַ֛י"
+  },
+  {
+    "bcv_short": "L19:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וּמִֽמׇּחֳרָ֑ת"
   },
   {
     "bcv_short": "L21:22",
@@ -252,6 +581,34 @@
     "r": "הַקֳּדָשִׁ֖ים"
   },
   {
+    "bcv_short": "L23:11",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרַת֙"
+  },
+  {
+    "bcv_short": "L23:15",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִמׇּחֳרַ֣ת"
+  },
+  {
+    "bcv_short": "L23:16",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "L27:29",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "יׇחֳרַ֛ם"
+  },
+  {
     "bcv_short": "N4:4",
     "stack_str": null,
     "lett": "קּ",
@@ -273,11 +630,60 @@
     "r": "אֶת־קֳדָשָׁ֖יו"
   },
   {
+    "bcv_short": "N6:9",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָת֔וֹ"
+  },
+  {
+    "bcv_short": "N11:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "N11:32",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הַֽמׇּחֳרָ֗ת"
+  },
+  {
     "bcv_short": "N11:32",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳמָרִ֑ים"
+  },
+  {
+    "bcv_short": "N16:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֨י"
+  },
+  {
+    "bcv_short": "N16:27",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇֽהֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "N17:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "N17:23",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֗ת"
   },
   {
     "bcv_short": "N18:9",
@@ -315,11 +721,46 @@
     "r": "אֶל־קֳבָתָ֑הּ"
   },
   {
+    "bcv_short": "N33:3",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרַ֣ת"
+  },
+  {
     "bcv_short": "N35:20",
     "stack_str": null,
     "lett": "דּ",
     "fp": "",
     "r": "יֶהְדֳּפֶ֑נּוּ"
+  },
+  {
+    "bcv_short": "D1:27",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְאׇהֳלֵיכֶם֙"
+  },
+  {
+    "bcv_short": "D5:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳלֵיכֶֽם׃"
+  },
+  {
+    "bcv_short": "D11:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶת־אׇהֳלֵיהֶ֑ם"
+  },
+  {
+    "bcv_short": "D28:29",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרַ֗יִם"
   },
   {
     "bcv_short": "D28:35",
@@ -329,11 +770,25 @@
     "r": "קׇדְקֳדֶֽךָ׃"
   },
   {
+    "bcv_short": "D28:59",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וׇחֳלָיִ֖ם"
+  },
+  {
     "bcv_short": "D28:61",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "כׇּל־חֳלִי֙"
+  },
+  {
+    "bcv_short": "D28:68",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳנִיּוֹת֒"
   },
   {
     "bcv_short": "D29:23",
@@ -343,11 +798,60 @@
     "r": "חֳרִ֛י"
   },
   {
+    "bcv_short": "D32:4",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּֽעֳל֔וֹ"
+  },
+  {
     "bcv_short": "D32:13",
     "stack_str": null,
     "lett": "מ",
     "fp": "",
-    "r": "בָּ֣מֳתֵי"
+    "r": "עַל־בָּ֣מֳתֵי"
+  },
+  {
+    "bcv_short": "Js3:14",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "מֵאׇ֣הֳלֵיהֶ֔ם"
+  },
+  {
+    "bcv_short": "Js5:11",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִמׇּחֳרַ֥ת"
+  },
+  {
+    "bcv_short": "Js5:12",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "Js7:21",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "הָאׇהֳלִ֖י"
+  },
+  {
+    "bcv_short": "Js7:22",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳל֖וֹ"
+  },
+  {
+    "bcv_short": "Js7:24",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶֽת־אׇהֳלוֹ֙"
   },
   {
     "bcv_short": "Js19:38",
@@ -357,11 +861,46 @@
     "r": "חֳרֵ֥ם"
   },
   {
+    "bcv_short": "Js22:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳלֵיכֶ֗ם"
+  },
+  {
+    "bcv_short": "Js22:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶל־אׇהֳלֵיהֶֽם׃"
+  },
+  {
+    "bcv_short": "Js22:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶל־אׇהֳלֵיהֶ֖ם"
+  },
+  {
+    "bcv_short": "Js22:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶל־אׇֽהֳלֵיכֶם֙"
+  },
+  {
     "bcv_short": "Js23:5",
     "stack_str": null,
     "lett": "דּ",
     "fp": "",
     "r": "יֶהְדֳּפֵ֣ם"
+  },
+  {
+    "bcv_short": "Ju4:11",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇֽהֳל֔וֹ"
   },
   {
     "bcv_short": "Ju5:6",
@@ -385,11 +924,32 @@
     "r": "אֳנִיּ֑וֹת"
   },
   {
+    "bcv_short": "Ju6:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ju6:38",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
     "bcv_short": "Ju8:7",
     "stack_str": null,
     "lett": "ק",
     "fp": "",
     "r": "וְאֶת־הַֽבַּרְקֳנִֽים׃"
+  },
+  {
+    "bcv_short": "Ju8:11",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇאֳהָלִ֔ים"
   },
   {
     "bcv_short": "Ju8:16",
@@ -420,6 +980,13 @@
     "r": "הֶחֳדַ֙לְתִּי֙"
   },
   {
+    "bcv_short": "Ju9:42",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
     "bcv_short": "Ju11:37",
     "stack_str": null,
     "lett": "ח",
@@ -448,6 +1015,13 @@
     "r": "חֳדָשִֽׁים׃"
   },
   {
+    "bcv_short": "Ju20:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳל֔וֹ"
+  },
+  {
     "bcv_short": "Ju20:47",
     "stack_str": null,
     "lett": "ח",
@@ -455,11 +1029,81 @@
     "r": "חֳדָשִֽׁים׃"
   },
   {
+    "bcv_short": "Ju21:4",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S1:11",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בׇּעֳנִ֣י"
+  },
+  {
+    "bcv_short": "1S5:3",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "1S5:4",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָת֒"
+  },
+  {
     "bcv_short": "1S6:1",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשִֽׁים׃"
+  },
+  {
+    "bcv_short": "1S11:11",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S15:1",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לִמְשׇׁחֳךָ֣"
+  },
+  {
+    "bcv_short": "1S17:54",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֽוֹ׃"
+  },
+  {
+    "bcv_short": "1S18:10",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֗ת"
+  },
+  {
+    "bcv_short": "1S20:27",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרַ֤ת"
+  },
+  {
+    "bcv_short": "1S20:34",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרִי־אָ֑ף"
   },
   {
     "bcv_short": "1S23:1",
@@ -483,11 +1127,46 @@
     "r": "חֳדָשִֽׁים׃"
   },
   {
+    "bcv_short": "1S28:8",
+    "stack_str": null,
+    "lett": "ס",
+    "fp": "",
+    "r": "קׇסֳמִי־נָ֥א"
+  },
+  {
+    "bcv_short": "1S28:14",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "מַֽה־תׇּאֳר֔וֹ"
+  },
+  {
+    "bcv_short": "1S30:17",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לְמׇחֳרָתָ֑ם"
+  },
+  {
+    "bcv_short": "1S31:8",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
     "bcv_short": "2S2:11",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשִֽׁים׃"
+  },
+  {
+    "bcv_short": "2S4:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "הַֽצׇּהֳרָֽיִם׃"
   },
   {
     "bcv_short": "2S5:5",
@@ -502,6 +1181,13 @@
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "2S11:12",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וּמִֽמׇּחֳרָֽת׃"
   },
   {
     "bcv_short": "2S14:25",
@@ -553,6 +1239,27 @@
     "r": "הַקֳּדָשִׁ֑ים"
   },
   {
+    "bcv_short": "1K8:66",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "1K9:26",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "וׇאֳנִ֡י"
+  },
+  {
+    "bcv_short": "1K9:27",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּֽאֳנִי֙"
+  },
+  {
     "bcv_short": "1K9:27",
     "stack_str": null,
     "lett": "א",
@@ -602,6 +1309,48 @@
     "r": "חֳדָשִׁ֛ים"
   },
   {
+    "bcv_short": "1K18:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְעַד־הַצׇּהֳרַ֤יִם"
+  },
+  {
+    "bcv_short": "1K18:27",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַֽצׇּהֳרַ֜יִם"
+  },
+  {
+    "bcv_short": "1K18:29",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "הַֽצׇּהֳרַ֔יִם"
+  },
+  {
+    "bcv_short": "1K20:16",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "1K22:34",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הׇחֳלֵֽיתִי׃"
+  },
+  {
+    "bcv_short": "1K22:35",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "מׇעֳמָ֛ד"
+  },
+  {
     "bcv_short": "1K22:49",
     "stack_str": null,
     "lett": "א",
@@ -616,11 +1365,39 @@
     "r": "אֳנִיּ֖וֹת"
   },
   {
+    "bcv_short": "1K22:50",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳנִיּ֑וֹת"
+  },
+  {
     "bcv_short": "2K1:2",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "מֵחֳלִ֥י"
+  },
+  {
+    "bcv_short": "2K3:23",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הׇחֳרֵ֤ב"
+  },
+  {
+    "bcv_short": "2K4:20",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "עַד־הַֽצׇּהֳרַ֖יִם"
+  },
+  {
+    "bcv_short": "2K7:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶת־אׇהֳלֵיהֶ֗ם"
   },
   {
     "bcv_short": "2K8:8",
@@ -635,6 +1412,13 @@
     "lett": "ח",
     "fp": "",
     "r": "מֵחֳלִ֥י"
+  },
+  {
+    "bcv_short": "2K8:15",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֗ת"
   },
   {
     "bcv_short": "2K12:5",
@@ -656,6 +1440,13 @@
     "lett": "ק",
     "fp": "",
     "r": "וְאֶת־קֳדָשָׁ֔יו"
+  },
+  {
+    "bcv_short": "2K13:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֵיהֶ֖ם"
   },
   {
     "bcv_short": "2K14:26",
@@ -686,11 +1477,25 @@
     "r": "חֳדָשִׁ֔ים"
   },
   {
+    "bcv_short": "I1:5",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לׇֽחֳלִ֔י"
+  },
+  {
     "bcv_short": "I2:16",
     "stack_str": null,
     "lett": "א",
     "fp": "",
     "r": "כׇּל־אֳנִיּ֣וֹת"
+  },
+  {
+    "bcv_short": "I7:4",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרִי־אַ֛ף"
   },
   {
     "bcv_short": "I9:3",
@@ -719,6 +1524,13 @@
     "lett": "בּ",
     "fp": "",
     "r": "וְסֻ֨בֳּל֔וֹ"
+  },
+  {
+    "bcv_short": "I16:3",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "צׇהֳרָ֑יִם"
   },
   {
     "bcv_short": "I17:5",
@@ -777,11 +1589,25 @@
     "r": "אֳנִי־שַׁ֔יִט"
   },
   {
+    "bcv_short": "I40:12",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בְּשׇׁעֳל֜וֹ"
+  },
+  {
     "bcv_short": "I43:14",
     "stack_str": null,
     "lett": "א",
     "fp": "",
     "r": "בָּאֳנִיּ֥וֹת"
+  },
+  {
+    "bcv_short": "I44:13",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "יְתׇאֳרֵ֑הוּ"
   },
   {
     "bcv_short": "I44:27",
@@ -798,6 +1624,13 @@
     "r": "לֶחֳדָשִׁ֔ים"
   },
   {
+    "bcv_short": "I48:21",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּֽחֳרָבוֹת֙"
+  },
+  {
     "bcv_short": "I53:4",
     "stack_str": null,
     "lett": "ח",
@@ -805,11 +1638,39 @@
     "r": "חֳלָיֵ֙נוּ֙"
   },
   {
+    "bcv_short": "I54:2",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֗ךְ"
+  },
+  {
+    "bcv_short": "I58:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "כַּֽצׇּהֳרָֽיִם׃"
+  },
+  {
     "bcv_short": "I58:14",
     "stack_str": null,
     "lett": "מ",
     "fp": "",
-    "r": "בָּ֣מֳתֵי"
+    "r": "עַל־בָּ֣מֳתֵי"
+  },
+  {
+    "bcv_short": "I59:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַֽצׇּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "I60:9",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "וׇאֳנִיּ֤וֹת"
   },
   {
     "bcv_short": "I62:2",
@@ -833,6 +1694,20 @@
     "r": "דֳמִ֖י"
   },
   {
+    "bcv_short": "I66:12",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "תְּשׇׁעֳשָֽׁעוּ׃"
+  },
+  {
+    "bcv_short": "Je6:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַֽצׇּהֳרָ֑יִם"
+  },
+  {
     "bcv_short": "Je6:7",
     "stack_str": null,
     "lett": "ח",
@@ -854,6 +1729,76 @@
     "r": "חֳלִ֖י"
   },
   {
+    "bcv_short": "Je10:20",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִ֣י"
+  },
+  {
+    "bcv_short": "Je10:20",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇֽהֳלִ֔י"
+  },
+  {
+    "bcv_short": "Je15:8",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָ֑יִם"
+  },
+  {
+    "bcv_short": "Je20:3",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
+  },
+  {
+    "bcv_short": "Je20:16",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "צׇהֳרָֽיִם׃"
+  },
+  {
+    "bcv_short": "Je25:14",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "כְּפׇעֳלָ֖ם"
+  },
+  {
+    "bcv_short": "Je30:18",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Je35:7",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳהָלִ֤ים"
+  },
+  {
+    "bcv_short": "Je35:10",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳהָלִ֑ים"
+  },
+  {
+    "bcv_short": "Je37:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇֽהֳלוֹ֙"
+  },
+  {
     "bcv_short": "Je46:11",
     "stack_str": null,
     "lett": "צ",
@@ -861,11 +1806,39 @@
     "r": "צֳרִ֔י"
   },
   {
+    "bcv_short": "Je49:29",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵיהֶ֤ם"
+  },
+  {
+    "bcv_short": "Je50:29",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "כְּפׇעֳלָ֔הּ"
+  },
+  {
     "bcv_short": "Je51:8",
     "stack_str": null,
     "lett": "צ",
     "fp": "",
     "r": "צֳרִי֙"
+  },
+  {
+    "bcv_short": "Ee8:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לְרׇֽחֳקָה֙"
+  },
+  {
+    "bcv_short": "Ee13:4",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרָב֑וֹת"
   },
   {
     "bcv_short": "Ee16:33",
@@ -880,6 +1853,104 @@
     "lett": "תּ",
     "fp": "",
     "r": "אֶשְׁתֳּלֶ֔נּוּ"
+  },
+  {
+    "bcv_short": "Ee20:5",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרִ֣י"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלָ֤ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאׇהֳלִיבָ֣ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָֽה׃"
+  },
+  {
+    "bcv_short": "Ee23:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:11",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee23:22",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָ֗ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶֽת־אׇהֳלָ֖ה"
+  },
+  {
+    "bcv_short": "Ee23:36",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶת־אׇהֳלִיבָ֑ה"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶֽל־אׇהֳלָה֙"
+  },
+  {
+    "bcv_short": "Ee23:44",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְאֶל־אׇ֣הֳלִיבָ֔ה"
+  },
+  {
+    "bcv_short": "Ee26:2",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הׇחֳרָֽבָה׃"
+  },
+  {
+    "bcv_short": "Ee26:20",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "כׇּחֳרָב֤וֹת"
   },
   {
     "bcv_short": "Ee27:9",
@@ -901,6 +1972,13 @@
     "lett": "א",
     "fp": "",
     "r": "מֵאֳנִיּֽוֹתֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ee29:12",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מׇֽחֳרָבוֹת֙"
   },
   {
     "bcv_short": "Ee33:24",
@@ -1001,6 +2079,13 @@
     "r": "הַקֳּדָשִׁ֑ים"
   },
   {
+    "bcv_short": "Ee44:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "טׇהֳרָת֑וֹ"
+  },
+  {
     "bcv_short": "Ee45:17",
     "stack_str": null,
     "lett": "ח",
@@ -1015,6 +2100,27 @@
     "r": "וּבֶחֳדָשִׁ֑ים"
   },
   {
+    "bcv_short": "Ee47:12",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לׇֽחֳדָשָׁיו֙"
+  },
+  {
+    "bcv_short": "Ho9:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֵיהֶֽם׃"
+  },
+  {
+    "bcv_short": "Ho9:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "כְּאׇהֳבָֽם׃"
+  },
+  {
     "bcv_short": "Ho10:10",
     "stack_str": null,
     "lett": "סּ",
@@ -1022,11 +2128,25 @@
     "r": "וְאֶסֳּרֵ֑ם"
   },
   {
+    "bcv_short": "Ho12:10",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇאֳהָלִ֖ים"
+  },
+  {
     "bcv_short": "Jl2:24",
     "stack_str": null,
     "lett": "גּ",
     "fp": "",
     "r": "הַגֳּרָנ֖וֹת"
+  },
+  {
+    "bcv_short": "A2:4",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "עַֽל־מׇאֳסָ֞ם"
   },
   {
     "bcv_short": "A4:7",
@@ -1043,11 +2163,18 @@
     "r": "עַל־בָּ֣מֳתֵי"
   },
   {
+    "bcv_short": "A8:9",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָ֑יִם"
+  },
+  {
     "bcv_short": "Jn1:3",
     "stack_str": null,
     "lett": "א",
     "fp": "",
-    "r": "אֳנִיָּ֣ה"
+    "r": "אֳנִיָּ֣ה׀"
   },
   {
     "bcv_short": "Jn1:4",
@@ -1064,11 +2191,39 @@
     "r": "בָּֽאֳנִיָּה֙"
   },
   {
+    "bcv_short": "Jn4:7",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לַֽמׇּחֳרָ֑ת"
+  },
+  {
     "bcv_short": "Mi1:3",
     "stack_str": null,
     "lett": "מ",
     "fp": "",
-    "r": "בָּ֥מֳתֵי"
+    "r": "עַל־בָּ֥מֳתֵי"
+  },
+  {
+    "bcv_short": "Hb3:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ts2:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרַ֙יִם֙"
+  },
+  {
+    "bcv_short": "Zc12:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶת־אׇהֳלֵ֥י"
   },
   {
     "bcv_short": "Ma1:4",
@@ -1076,6 +2231,13 @@
     "lett": "ח",
     "fp": "",
     "r": "חֳרָב֔וֹת"
+  },
+  {
+    "bcv_short": "Ma2:12",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "מֵאׇהֳלֵ֖י"
   },
   {
     "bcv_short": "Ps7:17",
@@ -1092,6 +2254,41 @@
     "r": "חֳרָב֗וֹת"
   },
   {
+    "bcv_short": "Ps15:1",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps27:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps27:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְ֭אׇהֳלוֹ"
+  },
+  {
+    "bcv_short": "Ps28:4",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "כְּפׇעֳלָם֮"
+  },
+  {
+    "bcv_short": "Ps37:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "כַּֽצׇּהֳרָֽיִם׃"
+  },
+  {
     "bcv_short": "Ps48:8",
     "stack_str": null,
     "lett": "א",
@@ -1099,11 +2296,102 @@
     "r": "אֳנִיּ֥וֹת"
   },
   {
+    "bcv_short": "Ps55:18",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְ֭צׇהֳרַיִם"
+  },
+  {
+    "bcv_short": "Ps69:3",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "מׇעֳמָ֑ד"
+  },
+  {
+    "bcv_short": "Ps69:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּ֝אׇהֳלֵיהֶ֗ם"
+  },
+  {
+    "bcv_short": "Ps77:13",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בְכׇל־פׇּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps78:51",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֵי־חָֽם׃"
+  },
+  {
+    "bcv_short": "Ps78:55",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּ֝אׇהֳלֵיהֶ֗ם"
+  },
+  {
     "bcv_short": "Ps83:2",
     "stack_str": null,
     "lett": "דּ",
     "fp": "",
     "r": "אַל־דֳּמִי־לָ֑ךְ"
+  },
+  {
+    "bcv_short": "Ps83:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "Ps84:11",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֵי־רֶֽשַׁע׃"
+  },
+  {
+    "bcv_short": "Ps90:16",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps91:6",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "צׇהֳרָֽיִם׃"
+  },
+  {
+    "bcv_short": "Ps91:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֶֽךָ׃"
+  },
+  {
+    "bcv_short": "Ps92:5",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בְּפׇעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Ps95:9",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇעֳלִֽי׃"
   },
   {
     "bcv_short": "Ps102:7",
@@ -1127,11 +2415,25 @@
     "r": "צִפֳּרִ֣ים"
   },
   {
+    "bcv_short": "Ps104:23",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "לְפׇעֳל֑וֹ"
+  },
+  {
     "bcv_short": "Ps104:26",
     "stack_str": null,
     "lett": "א",
     "fp": "",
     "r": "אֳנִיּ֣וֹת"
+  },
+  {
+    "bcv_short": "Ps106:25",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְאׇהֳלֵיהֶ֑ם"
   },
   {
     "bcv_short": "Ps107:10",
@@ -1141,11 +2443,88 @@
     "r": "עֳנִ֣י"
   },
   {
+    "bcv_short": "Ps107:23",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳנִיּ֑וֹת"
+  },
+  {
+    "bcv_short": "Ps111:3",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Ps118:15",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps120:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "עִֽם־אׇהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "Ps143:5",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בְכׇל־פׇּעֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Pr7:18",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "בׇּאֳהָבִֽים׃"
+  },
+  {
+    "bcv_short": "Pr20:11",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּעֳלֽוֹ׃"
+  },
+  {
+    "bcv_short": "Pr21:8",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּעֳלֽוֹ׃"
+  },
+  {
+    "bcv_short": "Pr24:12",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "כְּפׇעֳלֽוֹ׃"
+  },
+  {
+    "bcv_short": "Pr24:29",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "כְּפׇעֳלֽוֹ׃"
+  },
+  {
     "bcv_short": "Pr30:19",
     "stack_str": null,
     "lett": "א",
     "fp": "",
     "r": "דֶּרֶךְ־אֳנִיָּ֥ה"
+  },
+  {
+    "bcv_short": "Pr31:14",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "כׇּאֳנִיּ֣וֹת"
   },
   {
     "bcv_short": "Jb2:7",
@@ -1162,6 +2541,34 @@
     "r": "חֳרָב֣וֹת"
   },
   {
+    "bcv_short": "Jb4:18",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "תׇּהֳלָֽה׃"
+  },
+  {
+    "bcv_short": "Jb5:14",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַֽצׇּהֳרָֽיִם׃"
+  },
+  {
+    "bcv_short": "Jb5:24",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֶ֑ךָ"
+  },
+  {
+    "bcv_short": "Jb7:2",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇעֳלֽוֹ׃"
+  },
+  {
     "bcv_short": "Jb9:8",
     "stack_str": null,
     "lett": "מ",
@@ -1176,6 +2583,13 @@
     "r": "עִם־אֳנִיּ֣וֹת"
   },
   {
+    "bcv_short": "Jb11:17",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וּֽ֭מִצׇּהֳרַיִם"
+  },
+  {
     "bcv_short": "Jb14:5",
     "stack_str": null,
     "lett": "ח",
@@ -1183,18 +2597,53 @@
     "r": "מִֽסְפַּר־חֳדָשָׁ֥יו"
   },
   {
+    "bcv_short": "Jb15:34",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵי־שֹֽׁחַד׃"
+  },
+  {
     "bcv_short": "Jb16:16",
-    "stack_str": "מ:דחי",
+    "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳ֭מַרְמְרוּ"
   },
   {
-    "bcv_short": "Jb16:16",
-    "stack_str": "מ:דחי",
-    "lett": "ח",
+    "bcv_short": "Jb18:6",
+    "stack_str": null,
+    "lett": "ה",
     "fp": "",
-    "r": "חֳ֭מַרְמְר֭וּ"
+    "r": "בְּאׇהֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb18:14",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "מֵ֭אׇהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb18:15",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּ֭אׇהֳלוֹ"
+  },
+  {
+    "bcv_short": "Jb19:12",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳלִֽי׃"
+  },
+  {
+    "bcv_short": "Jb20:26",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇהֳלֽוֹ׃"
   },
   {
     "bcv_short": "Jb21:21",
@@ -1202,6 +2651,69 @@
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשָׁ֣יו"
+  },
+  {
+    "bcv_short": "Jb22:23",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "מֵאׇהֳלֶֽךָ׃"
+  },
+  {
+    "bcv_short": "Jb24:5",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "בְּ֭פׇעֳלָם"
+  },
+  {
+    "bcv_short": "Jb29:4",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִֽי׃"
+  },
+  {
+    "bcv_short": "Jb31:31",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִ֑י"
+  },
+  {
+    "bcv_short": "Jb36:9",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "Jb36:24",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇעֳל֑וֹ"
+  },
+  {
+    "bcv_short": "Jb37:12",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "לְפׇעֳלָ֑ם"
+  },
+  {
+    "bcv_short": "S1:5",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "כְּאׇהֳלֵ֣י"
+  },
+  {
+    "bcv_short": "S1:7",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בַּֽצׇּהֳרָ֑יִם"
   },
   {
     "bcv_short": "S4:5",
@@ -1218,6 +2730,83 @@
     "r": "עֳפָרִ֖ים"
   },
   {
+    "bcv_short": "S7:4",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "תׇּאֳמֵ֥י"
+  },
+  {
+    "bcv_short": "R1:2",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R1:3",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:8",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:11",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִי֙"
+  },
+  {
+    "bcv_short": "R1:19",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִֽי׃"
+  },
+  {
+    "bcv_short": "R1:20",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R1:21",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R1:22",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:1",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "וּֽלְנׇעֳמִ֞י"
+  },
+  {
+    "bcv_short": "R2:2",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "אֶֽל־נׇעֳמִ֗י"
+  },
+  {
     "bcv_short": "R2:2",
     "stack_str": null,
     "lett": "קּ",
@@ -1230,6 +2819,13 @@
     "lett": "בּ",
     "fp": "",
     "r": "בַֽשִּׁבֳּלִ֔ים"
+  },
+  {
+    "bcv_short": "R2:6",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "עִֽם־נׇעֳמִ֖י"
   },
   {
     "bcv_short": "R2:7",
@@ -1246,11 +2842,53 @@
     "r": "בָעֳמָרִ֔ים"
   },
   {
+    "bcv_short": "R2:12",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "פׇּעֳלֵ֑ךְ"
+  },
+  {
     "bcv_short": "R2:15",
     "stack_str": null,
     "lett": "ע",
     "fp": "",
     "r": "הָעֳמָרִ֛ים"
+  },
+  {
+    "bcv_short": "R2:20",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֜י"
+  },
+  {
+    "bcv_short": "R2:20",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֗י"
+  },
+  {
+    "bcv_short": "R2:22",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֖י"
+  },
+  {
+    "bcv_short": "R3:1",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֣י"
+  },
+  {
+    "bcv_short": "R3:13",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "לְגׇאֳלֵ֛ךְ"
   },
   {
     "bcv_short": "R3:15",
@@ -1260,11 +2898,60 @@
     "r": "וְאֶחֳזִי־בָ֖הּ"
   },
   {
+    "bcv_short": "R4:3",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:5",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֑י"
+  },
+  {
+    "bcv_short": "R4:9",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִֽי׃"
+  },
+  {
+    "bcv_short": "R4:14",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "אֶֽל־נׇעֳמִ֔י"
+  },
+  {
+    "bcv_short": "R4:16",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "נׇעֳמִ֤י"
+  },
+  {
+    "bcv_short": "R4:17",
+    "stack_str": null,
+    "lett": "ע",
+    "fp": "",
+    "r": "לְנׇעֳמִ֑י"
+  },
+  {
     "bcv_short": "La1:20",
     "stack_str": null,
     "lett": "ח",
     "fp": "",
     "r": "חֳמַרְמָ֔רוּ"
+  },
+  {
+    "bcv_short": "La2:3",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּֽחֳרִי־אַ֗ף"
   },
   {
     "bcv_short": "La2:11",
@@ -1279,6 +2966,20 @@
     "lett": "ע",
     "fp": "",
     "r": "עֳנִ֔י"
+  },
+  {
+    "bcv_short": "La4:8",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "תׇּֽאֳרָ֔ם"
+  },
+  {
+    "bcv_short": "Ec6:2",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וׇחֳלִ֥י"
   },
   {
     "bcv_short": "Ec9:12",
@@ -1738,6 +3439,13 @@
   {
     "bcv_short": "Da2:11",
     "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וְאׇחֳרָן֙"
+  },
+  {
+    "bcv_short": "Da2:11",
+    "stack_str": null,
     "lett": "ק",
     "fp": "",
     "r": "קֳדָ֣ם"
@@ -1799,6 +3507,20 @@
     "r": "קֳדָם־מַלְכָּֽא׃"
   },
   {
+    "bcv_short": "Da2:39",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרִ֖י"
+  },
+  {
+    "bcv_short": "Da2:39",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרִי֙"
+  },
+  {
     "bcv_short": "Da2:40",
     "stack_str": null,
     "lett": "ק",
@@ -1813,11 +3535,25 @@
     "r": "כׇּל־קֳבֵל֙"
   },
   {
+    "bcv_short": "Da2:44",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרָ֖ן"
+  },
+  {
     "bcv_short": "Da2:45",
     "stack_str": null,
     "lett": "ק",
     "fp": "",
     "r": "כׇּל־קֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da3:3",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "לׇקֳבֵ֣ל"
   },
   {
     "bcv_short": "Da3:7",
@@ -1855,6 +3591,13 @@
     "r": "כׇּל־קֳבֵ֗ל"
   },
   {
+    "bcv_short": "Da3:29",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרָ֔ן"
+  },
+  {
     "bcv_short": "Da4:4",
     "stack_str": null,
     "lett": "ק",
@@ -1862,11 +3605,39 @@
     "r": "קֳדָ֣מֵיה֔וֹן"
   },
   {
+    "bcv_short": "Da4:5",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרֵ֡ין"
+  },
+  {
     "bcv_short": "Da4:15",
     "stack_str": null,
     "lett": "ק",
     "fp": "",
     "r": "כׇּל־קֳבֵל֙"
+  },
+  {
+    "bcv_short": "Da5:1",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "וְלׇקֳבֵ֥ל"
+  },
+  {
+    "bcv_short": "Da5:5",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "לׇקֳבֵ֣ל"
+  },
+  {
+    "bcv_short": "Da5:10",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "לׇקֳבֵ֨ל"
   },
   {
     "bcv_short": "Da5:12",
@@ -1888,6 +3659,13 @@
     "lett": "ק",
     "fp": "",
     "r": "קֳדָ֣ם"
+  },
+  {
+    "bcv_short": "Da5:17",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לְאׇחֳרָ֣ן"
   },
   {
     "bcv_short": "Da5:19",
@@ -2004,16 +3782,37 @@
   {
     "bcv_short": "Da7:5",
     "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרִ֨י"
+  },
+  {
+    "bcv_short": "Da7:5",
+    "stack_str": null,
     "lett": "ה",
     "fp": "",
     "r": "הֳקִמַ֔ת"
+  },
+  {
+    "bcv_short": "Da7:6",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇֽחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:8",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "אׇחֳרִ֤י"
   },
   {
     "bcv_short": "Da7:8",
     "stack_str": null,
     "lett": "ק",
     "fp": "",
-    "r": "קֳדָמַ֑הּ"
+    "r": "מִן־קֳדָמַ֑הּ"
   },
   {
     "bcv_short": "Da7:10",
@@ -2025,9 +3824,37 @@
   {
     "bcv_short": "Da7:20",
     "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וְאׇחֳרִי֙"
+  },
+  {
+    "bcv_short": "Da7:20",
+    "stack_str": null,
     "lett": "ק",
     "fp": "",
-    "r": "קֳדָמַ֖הּ"
+    "r": "מִן־קֳדָמַ֖הּ"
+  },
+  {
+    "bcv_short": "Da7:24",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "וְאׇחֳרָ֞ן"
+  },
+  {
+    "bcv_short": "Da11:40",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "וּבׇאֳנִיּ֖וֹת"
+  },
+  {
+    "bcv_short": "Da11:45",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלֵ֣י"
   },
   {
     "bcv_short": "Er2:2",
@@ -2072,11 +3899,25 @@
     "r": "כׇּל־קֳבֵל֙"
   },
   {
+    "bcv_short": "Er4:16",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "לׇקֳבֵ֣ל"
+  },
+  {
     "bcv_short": "Er4:23",
     "stack_str": null,
     "lett": "ק",
     "fp": "",
     "r": "קֳדָם־רְח֛וּם"
+  },
+  {
+    "bcv_short": "Er6:13",
+    "stack_str": null,
+    "lett": "ק",
+    "fp": "",
+    "r": "לׇקֳבֵ֗ל"
   },
   {
     "bcv_short": "Er7:14",
@@ -2112,6 +3953,13 @@
     "lett": "ק",
     "fp": "",
     "r": "וָאֶשְׁקֳלָ֣ה"
+  },
+  {
+    "bcv_short": "Er10:8",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "יׇחֳרַ֖ם"
   },
   {
     "bcv_short": "Ne5:18",
@@ -2163,6 +4011,13 @@
     "r": "וְלַקֳּדָשִׁים֙"
   },
   {
+    "bcv_short": "Ne12:45",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "הַֽטׇּהֳרָ֔ה"
+  },
+  {
     "bcv_short": "Ne13:23",
     "stack_str": null,
     "lett": "דּ",
@@ -2177,6 +4032,20 @@
     "r": "עַמֳּנִיּ֖וֹת"
   },
   {
+    "bcv_short": "Ne13:29",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "גׇּאֳלֵ֣י"
+  },
+  {
+    "bcv_short": "1C1:52",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אׇהֳלִיבָמָ֛ה"
+  },
+  {
     "bcv_short": "1C3:4",
     "stack_str": null,
     "lett": "ח",
@@ -2184,11 +4053,32 @@
     "r": "חֳדָשִׁ֑ים"
   },
   {
+    "bcv_short": "1C4:41",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "אֶת־אׇהֳלֵיהֶ֜ם"
+  },
+  {
+    "bcv_short": "1C5:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "בְּאׇ֣הֳלֵיהֶ֔ם"
+  },
+  {
     "bcv_short": "1C6:34",
     "stack_str": null,
     "lett": "קּ",
     "fp": "",
     "r": "הַקֳּדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "1C10:8",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "מִֽמׇּחֳרָ֔ת"
   },
   {
     "bcv_short": "1C13:14",
@@ -2203,6 +4093,13 @@
     "lett": "ח",
     "fp": "",
     "r": "חֳדָשִׁ֜ים"
+  },
+  {
+    "bcv_short": "1C23:28",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְעַֽל־טׇהֳרַ֖ת"
   },
   {
     "bcv_short": "1C23:31",
@@ -2231,6 +4128,13 @@
     "lett": "קּ",
     "fp": "",
     "r": "הַקֳּדָשִֽׁים׃"
+  },
+  {
+    "bcv_short": "1C29:21",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לְֽמׇחֳרַת֮"
   },
   {
     "bcv_short": "2C2:3",
@@ -2268,6 +4172,13 @@
     "r": "הַקֳּדָשִׁ֑ים"
   },
   {
+    "bcv_short": "2C7:10",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "לְאׇהֳלֵיהֶ֑ם"
+  },
+  {
     "bcv_short": "2C8:13",
     "stack_str": null,
     "lett": "ח",
@@ -2282,6 +4193,13 @@
     "r": "אֳנִיּ֗וֹת"
   },
   {
+    "bcv_short": "2C9:18",
+    "stack_str": null,
+    "lett": "א",
+    "fp": "",
+    "r": "מׇאֳחָזִ֔ים"
+  },
+  {
     "bcv_short": "2C9:21",
     "stack_str": null,
     "lett": "א",
@@ -2294,6 +4212,20 @@
     "lett": "א",
     "fp": "",
     "r": "אֳנִיּ֣וֹת"
+  },
+  {
+    "bcv_short": "2C14:14",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "וְגַם־אׇהֳלֵ֥י"
+  },
+  {
+    "bcv_short": "2C18:33",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הׇחֳלֵֽיתִי׃"
   },
   {
     "bcv_short": "2C20:36",
@@ -2317,6 +4249,27 @@
     "r": "אֳנִיּ֔וֹת"
   },
   {
+    "bcv_short": "2C21:15",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳלָיִ֥ים"
+  },
+  {
+    "bcv_short": "2C21:18",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "לׇחֳלִ֖י"
+  },
+  {
+    "bcv_short": "2C25:10",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "בׇּחֳרִי־אָֽף׃"
+  },
+  {
     "bcv_short": "2C27:4",
     "stack_str": null,
     "lett": "ח",
@@ -2329,6 +4282,13 @@
     "lett": "קּ",
     "fp": "",
     "r": "וְֽהַקֳּדָשִׁ֑ים"
+  },
+  {
+    "bcv_short": "2C30:19",
+    "stack_str": null,
+    "lett": "ה",
+    "fp": "",
+    "r": "כְּטׇהֳרַ֥ת"
   },
   {
     "bcv_short": "2C31:3",
@@ -2357,6 +4317,13 @@
     "lett": "קּ",
     "fp": "",
     "r": "וְהַקֳּדָשִׁ֣ים"
+  },
+  {
+    "bcv_short": "2C35:23",
+    "stack_str": null,
+    "lett": "ח",
+    "fp": "",
+    "r": "הׇחֳלֵ֖יתִי"
   },
   {
     "bcv_short": "2C36:2",

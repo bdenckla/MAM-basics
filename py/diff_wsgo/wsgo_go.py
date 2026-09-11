@@ -5,6 +5,7 @@ import unicodedata
 from mb_cmn.my_utils import dv_map
 from mb_cmn.my_utils import dv_dispatch
 from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import plain_template_schema
 
 
 def massage_go_book(go_book):
@@ -72,7 +73,9 @@ def _massage_wtel(wtel, *, allow_mark_only=False):
             norm = "׆ "
         return norm
     if wtp1.is_abtag(wtel):
+        plain_template_schema.validate_current_plain_custom_tag(wtel)
         return wtel
+    plain_template_schema.validate_current_plain_template(wtel)
     tels = wtp1.template_elements(wtel)
     assert isinstance(tels, list)
     new_tels = list(_massage_wt_list(tel, allow_mark_only=True) for tel in tels)

@@ -4,6 +4,7 @@ from collections.abc import Callable
 
 from accgram import rtms_focus_highlight
 from accgram import rtmsr_sat
+from accgram.rtms_token_like import text_from_one_token_like
 from py_html import wlc_utils_html
 
 _GOERWITZ_TMS_VERSE_CLASS = "goerwitz-tms-verse"
@@ -193,16 +194,4 @@ def _wlc_verse_text(row: dict[str, object]) -> str:
 
 
 def _token_text(token: object) -> str:
-    if isinstance(token, str):
-        return token
-
-    if isinstance(token, dict):
-        word = token.get("word")
-        if isinstance(word, str):
-            return word
-
-        text = token.get("text")
-        if isinstance(text, str):
-            return text
-
-    return rtmsr_sat.render_sat_value(token)
+    return text_from_one_token_like(token)

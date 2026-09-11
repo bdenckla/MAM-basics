@@ -3,6 +3,7 @@ from decnreub import decnreub_diff as dr_diff
 from decnreub import decnreub_for_one_cant as dr_for_one_cant
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import bib_locales as tbn
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import sum_of_map
@@ -39,14 +40,17 @@ def _do_one_wtseq(wtseq):
 def _do_one_wtel(wtel):
     if isinstance(wtel, str):
         return _HANDLERS_FOR_TOP["string"](wtel)
+    tmpln.validate_current_plus_template(wtel)
     if tmpl_name := wtp.template_name(wtel):
         return _HANDLERS_FOR_TOP[tmpl_name](wtel)
-    assert False, wtel
+    raise TypeError(f"not a MAM-parsed-plus template: {wtel!r}")
 
 
 def _hnd_top_dualcant(tmpl):
-    triple = wtp.map_params(_do_one_wtseq_for_one_cant, tmpl)
-    assert len(triple) == 3
+    triple = tuple(
+        _do_one_wtseq_for_one_cant(wtp.template_param_val(tmpl, key))
+        for key in ("כפול", "א", "ב")
+    )
     b_xx = zip_longest(*triple)
     b_xx_neq = filter(_bxx_item_neq, b_xx)
     return sl_map(_mk_rec, b_xx_neq)

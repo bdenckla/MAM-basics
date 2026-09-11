@@ -6,9 +6,7 @@ parameter dalet, and combined cantillation before stripping to letters and
 maqafs.
 """
 
-from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
-from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import sum_of_seqs
 from mb_misc import hebrew_letter_words as hlw
 from py_misc import wt_qere
@@ -132,17 +130,10 @@ def _hnd_return_empty(_tmpl):
     return tuple()
 
 
-def _hnd_slh_word(tmpl):
-    quad1 = [wtp.template_param_val(tmpl, key) for key in ("2", "3", "4", "5")]
-    quad2 = sl_map(lambda seq: "".join(seq), quad1)
-    return ("".join(quad2),)
-
-
 _STAGE_2_HANDLERS = {
     "מ:דחי": _recurse_on_param_1,
     "מ:צינור": _recurse_on_param_1,
     "מ:קמץ": _recurse_on_param_dalet,
     "מ:כפול": _recurse_on_param_combined,
-    tmpln.SLH_WORD: _hnd_slh_word,
     "מ:פסק": _hnd_return_empty,
 }

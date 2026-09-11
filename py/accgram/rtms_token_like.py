@@ -3,6 +3,14 @@ from __future__ import annotations
 from accgram.mam_simple_verse import MAMNativePaseq
 
 
+def text_from_one_token_like(token: object) -> str:
+    """Return one selected token's text, rejecting multi-token containers."""
+    texts = texts_from_token_like_payload(token)
+    if len(texts) > 1:
+        raise ValueError(f"expected one token-like value, got {len(texts)}: {token!r}")
+    return texts[0] if texts else ""
+
+
 def texts_from_token_like_payload(payload: object) -> list[str]:
     """Project a selected Scripture token stream out of the RTMS input shapes.
 
@@ -27,25 +35,33 @@ def texts_from_token_like_payload(payload: object) -> list[str]:
 
     if isinstance(payload, dict):
         if "vels" in payload:
+            unexpected = set(payload) - {
+                "vels",
+                "vels_cant_alef",
+                "vels_cant_bet",
+                "bcv",
+            }
+            if unexpected:
+                raise ValueError(
+                    f"unclassified RTMS verse fields: {sorted(unexpected)!r}"
+                )
             return texts_from_token_like_payload(payload["vels"])
 
         tag = payload.get("tag")
         if tag == "x":
             return []
-        if tag is not None and tag not in {"w", "s"}:
+        if tag is not None:
             raise ValueError(f"unclassified RTMS XML-ish node tag: {tag!r}")
 
-        text = payload.get("text")
-        if isinstance(text, str):
-            return [text]
-
-        word = payload.get("word")
-        if isinstance(word, str):
-            return [word]
-
-        children = payload.get("children")
-        if tag in {"w", "s"} and isinstance(children, list):
-            return texts_from_token_like_payload(children)
+        keys = set(payload)
+        if keys in ({"text"}, {"text", "note"}, {"text", "notes"}):
+            text = payload["text"]
+            if isinstance(text, str):
+                return [text]
+        if keys in ({"word"}, {"word", "notes"}):
+            word = payload["word"]
+            if isinstance(word, str):
+                return [word]
 
         raise ValueError(
             "unclassified RTMS token-like mapping: "

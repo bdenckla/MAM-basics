@@ -874,25 +874,12 @@
                           "text": "בספרי תימן "
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "סֵ֔פֶר",
-                          "slhw-desc-1": "ס..",
-                          "slhw-desc-2": "ג",
-                          "slhw-desc-3": "ס/ג",
-                          "contents": [
-                            {
-                              "type": "letter-large",
-                              "text": "סֵ֔"
-                            },
-                            {
-                              "type": "text",
-                              "text": "פֶר"
-                            }
-                          ]
+                          "type": "letter-large",
+                          "text": "סֵ֔"
                         },
                         {
                           "type": "text",
-                          "text": " בסמ״ך גדולה"
+                          "text": "פֶר בסמ״ך גדולה"
                         }
                       ]
                     }

@@ -13,6 +13,7 @@ import re
 
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import plain_template_schema
 from mb_misc import hebrew_letter_words as hlw
 from diff_wsgo import separators as seps
 from mb_cmn.my_utils import sum_of_map
@@ -31,10 +32,12 @@ def _make_comparable(stack_ctx, obj):
     if isinstance(obj, str):
         return _make_comparable_str(obj, stack_ctx)
     if wtp1.is_template(obj):
+        plain_template_schema.validate_current_plain_template(obj)
         return _make_comparable_tmpl(obj, stack_ctx)
     if wtp1.is_abtag(obj):
+        plain_template_schema.validate_current_plain_custom_tag(obj)
         return _make_comparable_abtag(obj, stack_ctx)
-    assert False, obj
+    raise TypeError(f"unclassified current MAM-parsed-plain node: {obj!r}")
 
 
 def _make_comparable_tmpl(tmpl, stack_ctx):

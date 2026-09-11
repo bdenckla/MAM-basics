@@ -9,6 +9,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import template_names as tmpln
 from mb_cmn import uni_denorm as udn
 from mb_cmn import ws_tmpl2 as wtp
+from hkq_cmn.qere_projection import project_qere_atoms
 
 MISC = "misc"
 XOLAM_HE = "xolam-he"
@@ -116,22 +117,8 @@ def _is_extra_alef(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
 
 
 def _flatten_text(wtel):
-    if isinstance(wtel, str):
-        return wtel
-    if isinstance(wtel, list):
-        return "".join(_flatten_text(item) for item in wtel)
-    assert wtp.is_template(wtel), wtel
-    if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
-        return _flatten_text(wtp.template_element(wtel, 2))
-    if wtp.is_template_with_name(wtel, "מ:דחי"):
-        return _flatten_text(wtp.template_element(wtel, 1))
-    if wtp.is_template_with_name(wtel, "מ:קמץ"):
-        return _flatten_text(wtp.template_param_val(wtel, "ד"))
-    if wtp.is_template_with_name_in(
-        wtel, {"מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור", *tmpln.WHITESPACE_TMPL_NAMES}
-    ):
-        return ""
-    return _flatten_text(wtp.template_element(wtel, 1))
+    atoms = project_qere_atoms(wtel, source=None)
+    return "".join(atom["text"] for atom in atoms)
 
 
 _STRIP_PATT = re.compile(

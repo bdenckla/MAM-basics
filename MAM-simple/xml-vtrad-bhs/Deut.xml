@@ -677,11 +677,8 @@
         <scrdfftar sdt-starpos="after-word">
           <sdt-target text="עַל־הָאָֽרֶץ" />
           <sdt-note>
-            <text text="בספרי תימן " />
-            <slh-word slhw-desc-0="הָאָֽרֶץ" slhw-desc-1="...ץ" slhw-desc-2="ג" slhw-desc-3="ץ/ג">
-              <text text="הָאָֽרֶ" />
-              <letter-large text="ץ" />
-            </slh-word>
+            <text text="בספרי תימן הָאָֽרֶ" />
+            <letter-large text="ץ" />
             <text text=" בצד״י גדולה" />
           </sdt-note>
         </scrdfftar>
@@ -1077,11 +1074,8 @@
           <sdt-target text="קַן־צִפּ֣וֹר" />
           <sdt-note>
             <text text="בספרי תימן " />
-            <slh-word slhw-desc-0="קַן" slhw-desc-1="ק." slhw-desc-2="ג" slhw-desc-3="ק/ג">
-              <letter-large text="קַ" />
-              <text text="ן" />
-            </slh-word>
-            <text text=" בקו״ף גדולה" />
+            <letter-large text="קַ" />
+            <text text="ן בקו״ף גדולה" />
           </sdt-note>
         </scrdfftar>
         <lp-paseq />
@@ -1682,11 +1676,8 @@
           </sdt-target>
           <sdt-note>
             <text text="בספרי תימן " />
-            <slh-word slhw-desc-0="הַֽלְיהֹוָה֙" slhw-desc-1="ה....." slhw-desc-2="ג" slhw-desc-3="ה/ג">
-              <letter-large text="הַֽ" />
-              <text text="לְיהֹוָה֙" />
-            </slh-word>
-            <text text=" בתיבה אחת" />
+            <letter-large text="הַֽ" />
+            <text text="לְיהֹוָה֙ בתיבה אחת" />
           </sdt-note>
         </scrdfftar>
         <text text=" תִּגְמְלוּ־זֹ֔את" />
@@ -1975,11 +1966,8 @@
           <sdt-target text="אַשְׁרֶ֨יךָ" />
           <sdt-note>
             <text text="בספרי תימן " />
-            <slh-word slhw-desc-0="אַשְׁרֶ֨יךָ" slhw-desc-1="א...." slhw-desc-2="ג" slhw-desc-3="א/ג">
-              <letter-large text="אַ" />
-              <text text="שְׁרֶ֨יךָ" />
-            </slh-word>
-            <text text=" באל״ף גדולה" />
+            <letter-large text="אַ" />
+            <text text="שְׁרֶ֨יךָ באל״ף גדולה" />
           </sdt-note>
         </scrdfftar>
         <text text=" יִשְׂרָאֵ֜ל מִ֣י כָמ֗וֹךָ עַ֚ם נוֹשַׁ֣ע בַּֽיהֹוָ֔ה מָגֵ֣ן עֶזְרֶ֔ךָ וַאֲשֶׁר־חֶ֖רֶב גַּאֲוָתֶ֑ךָ וְיִכָּחֲשׁ֤וּ אֹיְבֶ֙יךָ֙ לָ֔ךְ וְאַתָּ֖ה עַל־בָּמוֹתֵ֥ימוֹ תִדְרֹֽךְ׃" />

@@ -4,6 +4,7 @@ from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import uni_heb as uh
 from mb_cmn import hebrew_points as hpo
 from py_misc import analyze_qamats_variant as aqv
+from hkq_cmn.qere_projection import project_qere_atoms
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
@@ -12,7 +13,14 @@ from mb_cmn.my_utils import sl_map
 
 def find_fois_wt(mroge):
     """Find מ:קמץ template uses: they are the feature of interest."""
-    return fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    structural = fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    minirow = mroge.get("mroge-minirow")
+    if minirow is None:
+        return structural
+    selected_text = "".join(
+        atom["text"] for atom in project_qere_atoms(minirow.EP, source=None)
+    )
+    return structural + _record_xataf_qamats(tuple(), selected_text)
 
 
 def _record_qamats_variation_as_foi(_foilers, stack, tmpl):
@@ -110,7 +118,6 @@ def _acc_qqc(accent, foi_qualifier):
 _FOILERS = fwh.all_branch_foilers(
     {
         "מ:קמץ": _record_qamats_variation_as_foi,
-        str: _record_xataf_qamats,
         #
         "מ:כפול": fwh.label_args_of_dualcant,
         "נוסח": fwh.label_args_of_doc,
@@ -121,16 +128,12 @@ _FOILERS = fwh.all_branch_foilers(
 )
 _STACK_SUMMARIES = {
     tuple(): None,
-    ("כו״ק", "מ:דחי"): -1,
     ("kq-triv-pketiv",): None,
     ("doc-target",): None,
     ("doc-target", "kq-triv-pketiv"): None,
     ("doc-target", "kq-triv-pqere"): -1,
-    ("doc-target", "כו״ק"): None,
-    ("doc-target", "קו״כ"): None,
-    ("מ:קו״כ-אם-2",): None,
-    ("כו״ק",): None,
-    ("קו״כ",): None,
+    ("doc-target", "כו״ק", "2"): None,
+    ("כו״ק", "2"): None,
     (fwh.DUALCANT_ARG_COMBINED, "doc-target"): -2,
     (fwh.DUALCANT_ARG_ALEF,): -1,
     (fwh.DUALCANT_ARG_BET,): -1,

@@ -6076,32 +6076,15 @@
                       "contents": [
                         {
                           "type": "text",
-                          "text": "בספרי ספרד ואשכנז נהוג לכתוב "
+                          "text": "בספרי ספרד ואשכנז נהוג לכתוב פִּֽ"
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "פִּֽינְחָ֨ס",
-                          "slhw-desc-1": ".י...",
-                          "slhw-desc-2": "ק",
-                          "slhw-desc-3": "י/ק",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "פִּֽ"
-                            },
-                            {
-                              "type": "letter-small",
-                              "text": "י"
-                            },
-                            {
-                              "type": "text",
-                              "text": "נְחָ֨ס"
-                            }
-                          ]
+                          "type": "letter-small",
+                          "text": "י"
                         },
                         {
                           "type": "text",
-                          "text": " ביו״ד זעירא"
+                          "text": "נְחָ֨ס ביו״ד זעירא"
                         }
                       ]
                     }

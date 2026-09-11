@@ -507,9 +507,8 @@
       "book": "Psalms",
       "chapter": 18,
       "verse": 51,
-      "category": "template-change",
+      "category": "tsinnor-removal",
       "templates_removed": [
-        "מ:צינור",
         "מ:צינור"
       ]
     },
@@ -707,8 +706,6 @@
       "verse": 4,
       "category": "template-change",
       "templates_removed": [
-        "מ:צינור",
-        "מ:צינור",
         "מ:צינור",
         "מ:צינור"
       ]
@@ -5161,8 +5158,6 @@
       "verse": 21,
       "category": "template-change",
       "templates_removed": [
-        "מ:דחי",
-        "מ:דחי",
         "מ:דחי",
         "מ:דחי"
       ]

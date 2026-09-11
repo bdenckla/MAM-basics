@@ -1,3 +1,10 @@
+"""First-stage qere projection for MAM-parsed-plus FOI consumers.
+
+The base handlers select qere for ketiv/qere templates, but deliberately retain
+stress-helper, qamats, and dual-cantillation templates.  Each survey extends the
+handler table with the named branch required by its own question.
+"""
+
 from mb_cmn import str_defs as sd
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
@@ -5,8 +12,6 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn.shrink import shrink
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn.my_utils import sum_of_map
-from mb_cmn.my_utils import sum_of_seqs
-from mb_cmn.my_utils import intersperse
 from py_misc.split import my_re_split
 
 
@@ -47,6 +52,10 @@ def hnd_recurse_on_param_bet(hnds, tmpl):
     return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "ב"))
 
 
+def hnd_recurse_on_param_combined(hnds, tmpl):
+    return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "כפול"))
+
+
 def hnd_identity(_1, tmpl):
     return [tmpl]
 
@@ -57,12 +66,6 @@ def hnd_return_plain_space(_1, _2):
 
 def hnd_return_doub_vert_line_plus_space(_1, _2):
     return [sd.DOUB_VERT_LINE + " "]
-
-
-def hnd_recurse_on_param_vals_and_ca(hnds, tmpl):
-    """ca: concatenate alternatives (separated by plain space)"""
-    mapped = sum_of_seqs(wtp.map_params((do_one_wtseq, hnds), tmpl))
-    return intersperse(" ", mapped)
 
 
 def mktmpl_mp(hnds, tmpl):
@@ -77,11 +80,23 @@ def _do_one_wtel(hnds, wtel):
     if isinstance(wtel, str):
         return [wtel]
     tmpl_name = wtp.template_name(wtel)
-    return hnds[tmpl_name](hnds, wtel)
+    try:
+        handler = hnds[tmpl_name]
+    except KeyError as exc:
+        raise ValueError(
+            f"unclassified template in qere projection: {tmpl_name!r}"
+        ) from exc
+    if tmpl_name in tmpln.CURRENT_PLUS_TMPL_NAMES:
+        tmpln.validate_current_plus_template(wtel)
+    return handler(hnds, wtel)
 
 
 def _hnd_recurse_on_arg_1(hnds, tmpl):
     return do_one_wtseq(hnds, wtp.template_element(tmpl, 2))
+
+
+def _hnd_recurse_on_param_3(hnds, tmpl):
+    return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "3"))
 
 
 def _hnd_recurse_on_params(hnds, tmpl):
@@ -110,7 +125,7 @@ def _hnd_return_maq_str(_1, tmpl):
 HANDLERS = {
     "נוסח": hnd_recurse_on_arg_0,
     tmpln.SCRDFF_TAR: hnd_recurse_on_arg_0,
-    "מ:קו״כ-אם-2": hnd_recurse_on_arg_0,
+    "מ:קו״כ-אם-2": _hnd_recurse_on_param_3,
     #
     "קרי ולא כתיב": _hnd_recurse_on_arg_1,  # {{קרי ולא כתיב|[בְּנֵ֣י]|בְּנֵ֣י}}
     "מ:דחי": _hnd_recurse_on_params,

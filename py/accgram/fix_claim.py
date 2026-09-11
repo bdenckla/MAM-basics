@@ -11,6 +11,8 @@ to the mechanical result and lets a human adjudicate disagreements.
 
 from __future__ import annotations
 
+from py_html import wlc_utils_html
+
 # Substrings (case-insensitive) that mark a claim as genuinely speculative /
 # hedged.  Deliberately excludes "rather than" and "as a ": those appear in the
 # confident descriptive templates (SOMEWHERE, BHS_TRANSCRIBES) and are not hedges.
@@ -95,12 +97,17 @@ def _collect_strings(value: object, out: list[str]) -> None:
     their visible text is not needed for keyword matching, and the surrounding
     plain-string fragments carry the claim's wording.
     """
+    if (
+        isinstance(value, dict)
+        and "_htel_tag" in value
+        and wlc_utils_html.is_htel(value)
+    ):
+        return
     if isinstance(value, str):
         if value:
             out.append(value)
     elif isinstance(value, (list, tuple)):
         for item in value:
             _collect_strings(item, out)
-    elif isinstance(value, dict):
-        for item in value.values():
-            _collect_strings(item, out)
+    elif value is not None:
+        raise TypeError(f"unclassified claim prose node: {value!r}")

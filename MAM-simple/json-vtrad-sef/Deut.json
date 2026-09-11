@@ -2837,24 +2837,11 @@
                       "contents": [
                         {
                           "type": "text",
-                          "text": "בספרי תימן "
+                          "text": "בספרי תימן הָאָֽרֶ"
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "הָאָֽרֶץ",
-                          "slhw-desc-1": "...ץ",
-                          "slhw-desc-2": "ג",
-                          "slhw-desc-3": "ץ/ג",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "הָאָֽרֶ"
-                            },
-                            {
-                              "type": "letter-large",
-                              "text": "ץ"
-                            }
-                          ]
+                          "type": "letter-large",
+                          "text": "ץ"
                         },
                         {
                           "type": "text",
@@ -4634,25 +4621,12 @@
                           "text": "בספרי תימן "
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "קַן",
-                          "slhw-desc-1": "ק.",
-                          "slhw-desc-2": "ג",
-                          "slhw-desc-3": "ק/ג",
-                          "contents": [
-                            {
-                              "type": "letter-large",
-                              "text": "קַ"
-                            },
-                            {
-                              "type": "text",
-                              "text": "ן"
-                            }
-                          ]
+                          "type": "letter-large",
+                          "text": "קַ"
                         },
                         {
                           "type": "text",
-                          "text": " בקו״ף גדולה"
+                          "text": "ן בקו״ף גדולה"
                         }
                       ]
                     }
@@ -7196,25 +7170,12 @@
                           "text": "בספרי תימן "
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "הַֽלְיהֹוָה֙",
-                          "slhw-desc-1": "ה.....",
-                          "slhw-desc-2": "ג",
-                          "slhw-desc-3": "ה/ג",
-                          "contents": [
-                            {
-                              "type": "letter-large",
-                              "text": "הַֽ"
-                            },
-                            {
-                              "type": "text",
-                              "text": "לְיהֹוָה֙"
-                            }
-                          ]
+                          "type": "letter-large",
+                          "text": "הַֽ"
                         },
                         {
                           "type": "text",
-                          "text": " בתיבה אחת"
+                          "text": "לְיהֹוָה֙ בתיבה אחת"
                         }
                       ]
                     }
@@ -8263,25 +8224,12 @@
                           "text": "בספרי תימן "
                         },
                         {
-                          "type": "slh-word",
-                          "slhw-desc-0": "אַשְׁרֶ֨יךָ",
-                          "slhw-desc-1": "א....",
-                          "slhw-desc-2": "ג",
-                          "slhw-desc-3": "א/ג",
-                          "contents": [
-                            {
-                              "type": "letter-large",
-                              "text": "אַ"
-                            },
-                            {
-                              "type": "text",
-                              "text": "שְׁרֶ֨יךָ"
-                            }
-                          ]
+                          "type": "letter-large",
+                          "text": "אַ"
                         },
                         {
                           "type": "text",
-                          "text": " באל״ף גדולה"
+                          "text": "שְׁרֶ֨יךָ באל״ף גדולה"
                         }
                       ]
                     }

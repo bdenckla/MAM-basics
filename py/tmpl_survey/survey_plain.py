@@ -19,6 +19,7 @@ from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import kq_special_templates as kqst
+from mb_cmn import plain_template_schema
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}
@@ -33,11 +34,14 @@ def _wtel_type_and_subtype(wtel):
     if wtp1.is_template(wtel):
         # template_name() intentionally normalizes ASCII quote shorthand to
         # gershayim, and this applies to both stmpl and tmpl template forms.
-        tmpl_name = wtp1.template_name(wtel)
+        tmpl_name = plain_template_schema.validate_current_plain_template(wtel)
         return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
     if wtp1.is_abtag(wtel):
-        return "custom_tag", wtel["custom_tag"]
-    assert False, wtel
+        return (
+            "custom_tag",
+            plain_template_schema.validate_current_plain_custom_tag(wtel),
+        )
+    raise TypeError(f"unclassified current MAM-parsed-plain node: {wtel!r}")
 
 
 def _survey_tmpl_subtype(tmpl_name, tmpl1):

@@ -6,6 +6,7 @@ from typing import Callable
 
 from author_misc import mp_cmn as cmn
 from mb_author.claim import ClaimRecord
+from mb_cmn import ws_tmpl1 as wtp1
 from verify_mp import survey_artifact
 from verify_mp.corpus import (
     Context,
@@ -18,30 +19,6 @@ from verify_mp.corpus import (
 VerifierFn = Callable[[ClaimRecord, Context], None]
 
 _NORM_QUOTES = str.maketrans({'"': "״"})
-
-
-def _plain_node_has_label_template(node, label_template: str) -> bool:
-    """Return whether label_template appears in node as stmpl/tmpl content."""
-    label_template = label_template.translate(_NORM_QUOTES)
-    if isinstance(node, str):
-        return node.translate(_NORM_QUOTES) == label_template
-    if isinstance(node, dict):
-        stmpl = node.get("stmpl")
-        if isinstance(stmpl, str):
-            name = stmpl.split("|", 1)[0].translate(_NORM_QUOTES)
-            if name == label_template:
-                return True
-        for value in node.values():
-            if _plain_node_has_label_template(value, label_template):
-                return True
-    elif isinstance(node, list):
-        if len(node) == 1 and isinstance(node[0], str):
-            if node[0].translate(_NORM_QUOTES) == label_template:
-                return True
-        for item in node:
-            if _plain_node_has_label_template(item, label_template):
-                return True
-    return False
 
 
 def _plain_top_level_tmpl_name(item: dict) -> str | None:
@@ -57,31 +34,27 @@ def _plain_top_level_tmpl_name(item: dict) -> str | None:
     return None
 
 
-def _iter_plain_template_occurrences(node):
-    """Yield (kind, template_name, args) for plain stmpl/tmpl template objects."""
-    if isinstance(node, dict):
-        if isinstance(node.get("stmpl"), str):
-            parts = node["stmpl"].split("|")
-            if parts:
-                yield "stmpl", parts[0], parts[1:]
-            return
+def _plain_template_kind_name_args(item):
+    """Return one direct plain template's kind, normalized name, and arguments."""
+    assert isinstance(item, dict) and wtp1.dic_is_template(
+        item
+    ), f"not a direct plain template: {item!r}"
+    if "stmpl" in item:
+        parts = item["stmpl"].split("|")
+        return "stmpl", wtp1.template_name(item), parts[1:]
+    return "tmpl", wtp1.template_name(item), wtp1.template_arguments(item)
 
-        tmpl_tree = node.get("tmpl")
-        if isinstance(tmpl_tree, list) and tmpl_tree:
-            first = tmpl_tree[0]
-            if isinstance(first, list) and first and isinstance(first[0], str):
-                yield "tmpl", first[0], tmpl_tree[1:]
-            for arg_node in tmpl_tree[1:]:
-                yield from _iter_plain_template_occurrences(arg_node)
-            return
 
-        for value in node.values():
-            yield from _iter_plain_template_occurrences(value)
-        return
-
-    if isinstance(node, list):
-        for item in node:
-            yield from _iter_plain_template_occurrences(item)
+def _only_direct_plain_template(wtseq, description):
+    """Return the only direct template in a selected plain parameter."""
+    assert (
+        isinstance(wtseq, list) and len(wtseq) == 1
+    ), f"{description} must contain one direct template: {wtseq!r}"
+    item = wtseq[0]
+    assert isinstance(item, dict) and wtp1.dic_is_template(
+        item
+    ), f"{description} is not a direct template: {wtseq!r}"
+    return item
 
 
 def _named_params_from_plain_template(kind: str, args) -> set[str]:
@@ -432,23 +405,31 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
         )
         if top_name.translate(_NORM_QUOTES) == docnote_norm:
             saw_wrapped = True
-            assert _plain_node_has_label_template(item, label_template), (
-                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" {docnote_wrapper!r}-wrapped D column missing {label_template!r}: {item!r}"
+            wrapper_kind, wrapper_name, wrapper_args = _plain_template_kind_name_args(
+                item
+            )
+            assert wrapper_name == docnote_norm and len(wrapper_args) == 2, item
+            label_item = _only_direct_plain_template(
+                wtp1.template_element(item, 1),
+                f"{docnote_wrapper!r} parameter 1",
             )
         else:
             saw_direct = True
-        for kind, tmpl_name, args in _iter_plain_template_occurrences(item):
-            if tmpl_name.translate(_NORM_QUOTES) != label_norm:
-                continue
-            named_params = _named_params_from_plain_template(kind, args)
-            observed_named_params.update(named_params)
-            unexpected = named_params - allowed_named_params
-            assert not unexpected, (
-                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" unexpected D-label named params {sorted(unexpected)}"
-                f" (allowed {sorted(allowed_named_params)})"
-            )
+            label_item = item
+        kind, tmpl_name, args = _plain_template_kind_name_args(label_item)
+        assert tmpl_name == label_norm, (
+            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+            f" selected D-column template is {tmpl_name!r}, not {label_norm!r}:"
+            f" {item!r}"
+        )
+        named_params = _named_params_from_plain_template(kind, args)
+        observed_named_params.update(named_params)
+        unexpected = named_params - allowed_named_params
+        assert not unexpected, (
+            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+            f" unexpected D-label named params {sorted(unexpected)}"
+            f" (allowed {sorted(allowed_named_params)})"
+        )
     assert saw_direct, "never observed direct מ:פסוק in D column"
     assert saw_wrapped, "never observed נוסח-wrapped מ:פסוק in D column"
     assert observed_named_params <= allowed_named_params, (

@@ -3,6 +3,7 @@ from __future__ import annotations
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpunc
+from accgram.mam_simple_verse import MAMNativePaseq
 
 _HEBREW_LETTER_START = ord("\u05d0")
 _HEBREW_LETTER_END = ord("\u05ea")
@@ -26,7 +27,7 @@ def sanitize_verse_text_payload(
 ) -> object:
     mutable = _deep_clone_jsonish(payload)
     slots: list[tuple[list[object] | dict[str, object], int | str]] = []
-    _collect_hebrew_string_slots(mutable, slots)
+    _collect_scripture_string_slots(mutable, slots)
 
     # Preserve Unicode METEG only on the final Hebrew token in the verse payload.
     last_hebrew_slot: tuple[list[object] | dict[str, object], int | str] | None = None
@@ -63,17 +64,11 @@ def _deep_clone_jsonish(value: object) -> object:
     return value
 
 
-def _collect_hebrew_string_slots(
+def _collect_scripture_string_slots(
     value: object,
     out: list[tuple[list[object] | dict[str, object], int | str]],
 ) -> None:
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if isinstance(child, str):
-                if _has_hebrew_block_char(child):
-                    out.append((value, key))
-            else:
-                _collect_hebrew_string_slots(child, out)
+    if isinstance(value, MAMNativePaseq):
         return
 
     if isinstance(value, list):
@@ -82,7 +77,34 @@ def _collect_hebrew_string_slots(
                 if _has_hebrew_block_char(child):
                     out.append((value, idx))
             else:
-                _collect_hebrew_string_slots(child, out)
+                _collect_scripture_string_slots(child, out)
+        return
+
+    if not isinstance(value, dict):
+        raise TypeError(f"unclassified verse-text payload node: {value!r}")
+
+    if "vels" in value:
+        vels = value["vels"]
+        if not isinstance(vels, list):
+            raise TypeError(f"verse payload vels is not a list: {vels!r}")
+        _collect_scripture_string_slots(vels, out)
+        return
+
+    if value.get("tag") == "x":
+        return
+
+    for key in ("word", "text"):
+        if key in value:
+            text = value[key]
+            if not isinstance(text, str):
+                raise TypeError(f"token field {key!r} is not text: {value!r}")
+            if _has_hebrew_block_char(text):
+                out.append((value, key))
+            return
+
+    raise ValueError(
+        "unclassified verse-text mapping: " f"keys={sorted(str(key) for key in value)}"
+    )
 
 
 def _has_hebrew_block_char(text: str) -> bool:

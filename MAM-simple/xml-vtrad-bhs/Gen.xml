@@ -205,11 +205,8 @@
           <sdt-target text="סֵ֔פֶר" />
           <sdt-note>
             <text text="בספרי תימן " />
-            <slh-word slhw-desc-0="סֵ֔פֶר" slhw-desc-1="ס.." slhw-desc-2="ג" slhw-desc-3="ס/ג">
-              <letter-large text="סֵ֔" />
-              <text text="פֶר" />
-            </slh-word>
-            <text text=" בסמ״ך גדולה" />
+            <letter-large text="סֵ֔" />
+            <text text="פֶר בסמ״ך גדולה" />
           </sdt-note>
         </scrdfftar>
         <text text=" תּוֹלְדֹ֖ת אָדָ֑ם בְּי֗וֹם בְּרֹ֤א אֱלֹהִים֙ אָדָ֔ם בִּדְמ֥וּת אֱלֹהִ֖ים עָשָׂ֥ה אֹתֽוֹ׃" />

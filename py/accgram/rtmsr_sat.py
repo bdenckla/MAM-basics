@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import string
 from collections.abc import Callable
 
@@ -109,6 +108,24 @@ def row_has_rendered_bracket_note(
     notes column when it is shown), so the flag agrees with the visible
     bracket-note spans. A bracket note sitting on some other word of the verse,
     one the SAT table does not display, deliberately does not count."""
+    return bool(
+        rendered_bracket_note_codes(
+            row,
+            row_ref=row_ref,
+            structured_text_lookup=structured_text_lookup,
+            wlc_tokens=wlc_tokens,
+        )
+    )
+
+
+def rendered_bracket_note_codes(
+    row: dict[str, object],
+    *,
+    row_ref: str,
+    structured_text_lookup: StructuredTextLookup,
+    wlc_tokens: list[object],
+) -> list[str]:
+    """Return bracket-note codes displayed by this row's SAT table."""
     sat_rows = _build_sat_rows(
         row,
         row_ref=row_ref,
@@ -123,14 +140,14 @@ def row_has_rendered_bracket_note(
             wlc_tokens=wlc_tokens,
         ),
     )
+    codes: list[str] = []
     for value, notes_value, _middle_description, _key in notes_column_plan.render_rows:
-        if rtmsr_bracket_notes.parse_bracket_note_codes(value):
-            return True
+        codes.extend(rtmsr_bracket_notes.parse_bracket_note_codes(value))
         if notes_column_plan.include_notes_column and (
-            rtmsr_bracket_notes.parse_bracket_note_codes(notes_value)
+            note_codes := rtmsr_bracket_notes.parse_bracket_note_codes(notes_value)
         ):
-            return True
-    return False
+            codes.extend(note_codes)
+    return list(dict.fromkeys(codes))
 
 
 def derive_summary_from_sat_descriptors(
@@ -326,17 +343,21 @@ def render_sat_value(value: object) -> str:
         token_like = _render_token_like_dict(value)
         if token_like is not None:
             return token_like
+        keys = set(value)
+        if keys in (
+            {"wlc422", "uxlc"},
+            {"wlc422", "mam_simple"},
+            {"wlc_adds_notes"},
+            {"uxlc_adds_note"},
+        ):
+            parts = []
+            for key, val in value.items():
+                rendered = render_sat_value(val)
+                parts.append(f"{key}: {rendered}" if rendered else str(key))
+            return "; ".join(parts)
+        raise ValueError(f"unclassified SAT mapping: {value!r}")
 
-        parts = []
-        for key, val in value.items():
-            rendered = render_sat_value(val)
-            parts.append(f"{key}: {rendered}" if rendered else str(key))
-        return "; ".join(parts)
-
-    try:
-        return json.dumps(value, ensure_ascii=False, sort_keys=True)
-    except TypeError:
-        return str(value)
+    raise TypeError(f"unclassified SAT value: {value!r}")
 
 
 def _sat_row_from_source(
@@ -391,10 +412,13 @@ def _sat_row_key(row: SatRow) -> str:
 
 def _render_token_like_dict(value: dict[str, object]) -> str | None:
     token_text: str | None = None
+    allowed_keys: set[str] | None = None
     if isinstance(value.get("word"), str):
         token_text = str(value["word"])
+        allowed_keys = {"word", "notes"}
     elif isinstance(value.get("text"), str):
         token_text = str(value["text"])
+        allowed_keys = {"text", "note", "notes"}
 
     if token_text is None:
         return None
@@ -411,14 +435,9 @@ def _render_token_like_dict(value: dict[str, object]) -> str | None:
         if note_text:
             out = f"{out} ({note_key}: {note_text})"
 
-    extras: list[str] = []
-    for key, val in value.items():
-        if key in {"word", "text", "notes", "note"}:
-            continue
-        rendered = render_sat_value(val)
-        extras.append(f"{key}: {rendered}" if rendered else str(key))
-
-    if extras:
-        out = f"{out} ({'; '.join(extras)})"
+    assert allowed_keys is not None
+    unexpected = set(value) - allowed_keys
+    if unexpected:
+        raise ValueError(f"unclassified token-like SAT fields: {sorted(unexpected)!r}")
 
     return out

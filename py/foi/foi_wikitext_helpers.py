@@ -143,6 +143,7 @@ def _find_fois_in_wtel(foilers, stack, wtel):
     if isinstance(wtel, str):
         str_handler = foilers.get(str) or _ignore_str
         return str_handler(stack, wtel)
+    tmpln.validate_current_plus_template(wtel)
     tmpl_name = wtp.template_name(wtel)
     try:
         handler = foilers[tmpl_name]
@@ -173,9 +174,15 @@ def _stack_make_empty():
 
 def _foiler_for_all_named_params(foilers, stack, tmpl):
     """Inspect every parameter of one explicitly recognized dataset template."""
-    new_stack = _stack_push(stack, wtp.template_name(tmpl))
-    lis_wtseq = wtp.template_param_vals(tmpl)
-    return sum_of_map((_sum_map_find_in_wtel, foilers, new_stack), lis_wtseq)
+    tmpl_name = wtp.template_name(tmpl)
+    params = tmpln.validate_current_plus_template(tmpl)
+    new_stack = _stack_push(stack, tmpl_name)
+    out = []
+    for param_name in params:
+        labelled_stack = _stack_push(new_stack, param_name)
+        param_wtseq = wtp.template_param_val(tmpl, param_name)
+        out += _sum_map_find_in_wtel(foilers, labelled_stack, param_wtseq)
+    return out
 
 
 def _sum_map_find_in_wtel(foilers, stack, wtseq):

@@ -28,6 +28,9 @@ Names with no quote mark are spelled identically everywhere and raise none of th
 # as well as here; see the quote-mark note above for how each name is spelled.
 INVERTED_NUN = "מ:נו״ן הפוכה"
 TRIVIAL_QERE = "מ:קו״כ-אם-2"
+QAMATS_VARIANT = "מ:קמץ"
+DUAL_CANTILLATION = "מ:כפול"
+STRESS_HELPER_TMPL_NAMES = frozenset(("מ:דחי", "מ:צינור"))
 
 TWO_ACCENTS_OF_QUPO = "שני טעמים באות אחת קמץ-תחתון-פתח-עליון"
 NO_PAR_AT_STA_OF_CHAP21 = "מ:אין פרשה בתחילת פרק"
@@ -122,3 +125,182 @@ IN_WORD_TMPL_NAMES = {
     "מ:אות תלויה",
     SLH_WORD,
 }
+
+# Every template name present in the current MAM-parsed-plus corpus.  This is
+# the closed roster for whole-dataset inventories and structure-preserving
+# transformations.  A caller that walks every parameter still has to opt into
+# that scope explicitly; membership here does not decide which parameters a
+# Scripture projection should select.
+CURRENT_PLUS_TMPL_NAMES = frozenset(
+    {
+        "כו״ק",
+        "כתיב ולא קרי",
+        "מ:אות תלויה",
+        "מ:אות-ג",
+        SLH_WORD,
+        "מ:אות-ק",
+        NO_PAR_AT_STA_OF_CHAP21,
+        NO_PAR_AT_STA_OF_CHAP03,
+        NO_PAR_AT_STA_OF_WEEKLY,
+        *STRESS_HELPER_TMPL_NAMES,
+        SCRDFF_TAR,
+        "מ:כו״ק מיוחד",
+        DUAL_CANTILLATION,
+        "מ:לגרמיה-2",
+        "מ:מקף אפור",
+        INVERTED_NUN,
+        "מ:סיום בטוב",
+        "מ:ספר חדש",
+        "מ:עלייה",
+        "מ:פסוק",
+        "מ:פסק",
+        TRIVIAL_QERE,
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        QAMATS_VARIANT,
+        "מ:רווח בתרי עשר בפסוק הראשון",
+        "מ:רווח לספר בתהלים בפסוק הראשון",
+        "מ:ששש",
+        "מודגש",
+        "נוסח",
+        "סס",
+        "ססס",
+        "פפ",
+        "פפפ",
+        "קו״כ",
+        "קרי ולא כתיב",
+        "ר0",
+        "ר1",
+        "ר2",
+        "ר3",
+        "ר4",
+        "ש",
+    }
+)
+
+
+# Closed parameter schemas for the CURRENT MAM-parsed-plus corpus.  Each entry is
+# ``(required keys, allowed keys)``.  Whole-structure inventories may visit every
+# allowed key only after this validation; Scripture projections still choose among
+# the named keys according to their own question.
+_NO_PARAM_PLUS_TEMPLATES = frozenset(
+    {
+        NO_PAR_AT_STA_OF_CHAP21,
+        NO_PAR_AT_STA_OF_CHAP03,
+        NO_PAR_AT_STA_OF_WEEKLY,
+        "מ:לגרמיה-2",
+        "מ:מקף אפור",
+        "מ:פסק",
+        "מ:ששש",
+        "ר0",
+        "ר1",
+        "ר2",
+        "ר3",
+        "ר4",
+        "ש",
+    }
+)
+_OPTIONAL_PARAM1_PLUS_TEMPLATES = frozenset({"סס", "ססס", "פפ", "פפפ"})
+CURRENT_PLUS_PARAM_POLICY = {
+    **{name: (frozenset(), frozenset()) for name in _NO_PARAM_PLUS_TEMPLATES},
+    **{
+        name: (frozenset(), frozenset({"1"}))
+        for name in _OPTIONAL_PARAM1_PLUS_TEMPLATES
+    },
+    "כו״ק": (frozenset({"1", "2"}), frozenset({"1", "2"})),
+    "קו״כ": (frozenset({"1", "2"}), frozenset({"1", "2"})),
+    "מ:כו״ק מיוחד": (
+        frozenset({"1", "2", "סוג"}),
+        frozenset({"1", "2", "סוג"}),
+    ),
+    TRIVIAL_QERE: (
+        frozenset({"1", "2", "3"}),
+        frozenset({"1", "2", "3", "מקורות", "סוג"}),
+    ),
+    "כתיב ולא קרי": (
+        frozenset({"1", "2"}),
+        frozenset({"1", "2", "3"}),
+    ),
+    "קרי ולא כתיב": (frozenset({"1", "2"}), frozenset({"1", "2"})),
+    **{name: (frozenset({"1"}), frozenset({"1"})) for name in IN_WORD_TMPL_NAMES},
+    SLH_WORD: (
+        frozenset({"1", "2", "3", "4", "5"}),
+        frozenset({"1", "2", "3", "4", "5"}),
+    ),
+    **{
+        name: (frozenset({"1", "2"}), frozenset({"1", "2"}))
+        for name in STRESS_HELPER_TMPL_NAMES
+    },
+    SCRDFF_TAR: (
+        frozenset({"1", "2", "3"}),
+        frozenset({"1", "2", "3"}),
+    ),
+    DUAL_CANTILLATION: (
+        frozenset({"כפול", "א", "ב"}),
+        frozenset({"כפול", "א", "ב"}),
+    ),
+    INVERTED_NUN: (frozenset({"1"}), frozenset({"1"})),
+    "מ:סיום בטוב": (frozenset({"1"}), frozenset({"1"})),
+    "מ:ספר חדש": (frozenset({"1"}), frozenset({"1"})),
+    "מ:רווח בתרי עשר בפסוק הראשון": (
+        frozenset({"1"}),
+        frozenset({"1"}),
+    ),
+    "מ:רווח לספר בתהלים בפסוק הראשון": (
+        frozenset({"1"}),
+        frozenset({"1"}),
+    ),
+    "מ:עלייה": (
+        frozenset({"א", "ב0"}),
+        frozenset({"א", "ב0", "ב1", "ב2", "ב3", "ג0", "ג1", "ג2", "ג3"}),
+    ),
+    "מ:פסוק": (
+        frozenset({"1", "2", "3"}),
+        frozenset({"1", "2", "3", "סדר", "עלייה"}),
+    ),
+    "מ:קישור בהערה": (
+        frozenset({"1", "2"}),
+        frozenset({"1", "2"}),
+    ),
+    "מ:קישור פנימי בהערה": (
+        frozenset({"1", "2"}),
+        frozenset({"1", "2"}),
+    ),
+    QAMATS_VARIANT: (
+        frozenset({"ד", "ס"}),
+        frozenset({"ד", "ס"}),
+    ),
+    "מודגש": (frozenset({"1"}), frozenset({"1"})),
+    "נוסח": (frozenset({"1", "2"}), frozenset({"1", "2"})),
+}
+assert frozenset(CURRENT_PLUS_PARAM_POLICY) == CURRENT_PLUS_TMPL_NAMES
+
+
+def validate_current_plus_template(tmpl):
+    """Return a current plus template's params after closed name/shape validation."""
+    if not isinstance(tmpl, dict) or not isinstance(tmpl.get("tmpl_name"), str):
+        raise TypeError(f"not a current MAM-parsed-plus template: {tmpl!r}")
+    name = tmpl["tmpl_name"]
+    policy = CURRENT_PLUS_PARAM_POLICY.get(name)
+    if policy is None:
+        raise ValueError(f"unclassified current MAM-parsed-plus template: {name!r}")
+    extra_object_keys = set(tmpl) - {"tmpl_name", "tmpl_params"}
+    if extra_object_keys:
+        raise ValueError(
+            f"unexpected object keys for current plus template {name!r}: "
+            f"{sorted(extra_object_keys)!r}"
+        )
+    params = tmpl.get("tmpl_params", {})
+    if not isinstance(params, dict):
+        raise TypeError(
+            f"non-mapping params for current plus template {name!r}: {params!r}"
+        )
+    required, allowed = policy
+    actual = frozenset(params)
+    if not required <= actual or not actual <= allowed:
+        raise ValueError(
+            f"unexpected parameters for current plus template {name!r}: "
+            f"required {sorted(required)!r}, allowed {sorted(allowed)!r}, "
+            f"got {sorted(actual)!r}"
+        )
+    return params

@@ -21,6 +21,7 @@ from mb_diff_mpu.mpplus_flatten import (
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
+    selected_body_tail,
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
@@ -312,13 +313,15 @@ def collect_paseq_types(obj, types):
             if pk is not MISSING:
                 collect_paseq_types(pk, types)
             return
-        p1 = get_param(obj, "1")
-        if p1 is not MISSING:
-            collect_paseq_types(p1, types)
+        role, value = selected_body_tail(obj)
+        if role == "param" and value is not MISSING:
+            collect_paseq_types(value, types)
         return
     if isinstance(obj, list):
         for item in obj:
             collect_paseq_types(item, types)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus paseq node: {type(obj).__name__}")
 
 
 def _describe_paseq_change(old_text, new_text, old_ep=None, new_ep=None):

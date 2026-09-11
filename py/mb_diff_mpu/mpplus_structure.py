@@ -3,8 +3,11 @@
 This is a deliberate whole-structure inventory, not a selected Scripture-text
 projection.  Every classified structural parameter is included so a change inside a
 ketiv/qere, qamats, dual-cantillation, or stress-helper alternative remains visible.
-The documentation field of each note template is excluded; the note target is
-included.  New template names fail until their parameter roles are classified.
+The ``נוסח`` wrapper and its documentation parameter 2 are excluded while its
+Scripture target in parameter 1 is included.  ``מ:הערה-2`` and its historical
+predecessor likewise contribute only their target in parameter 1: parameter 2 is
+note prose and parameter 3 is mark-position metadata.  New template names fail
+until their parameter roles are classified.
 
 Exports:
     collect_template_names      — gather relevant template names from an EP tree

@@ -8,7 +8,7 @@ from accgram import rtms_focus_highlight
 from accgram.hebrew_verse_sanitize import sanitize_verse_text_payload
 from accgram import rtms_meteg_witness
 from accgram.mam_simple_diff import diff_wlc_mam
-from accgram.mam_simple_verse import load_mam_simple_for_refs
+from accgram.mam_simple_verse import load_mam_simple_for_refs, MAMNativePaseq
 from accgram.wlc_uxlc_diff import diff_wlc_uxlc
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from py_uxlc import my_uxlc
@@ -17,7 +17,6 @@ from accgram import rtms_rows
 
 from mb_cmn import paths
 
-_DIFF_NOTE_KEYS = {"note", "notes"}
 _IGNORED_WLC_MAM_DIFF_TOKEN_PAIRS: set[tuple[tuple[str, ...], tuple[str, ...]]] = {
     (("אחר֑יש",), ("אחר֑ש",)),
     (("רב־", "שק֨ה"), ("רבשק֨ה",)),
@@ -185,31 +184,26 @@ def _normalize_payload_for_diff_ignoring_notes(payload: object) -> object:
     if isinstance(payload, list):
         return [_normalize_payload_for_diff_ignoring_notes(item) for item in payload]
 
-    if isinstance(payload, dict):
-        had_note_key = any(key in _DIFF_NOTE_KEYS for key in payload.keys())
-        out_payload: dict[str, object] = {}
-        for key, value in payload.items():
-            if key in _DIFF_NOTE_KEYS:
-                continue
-            out_payload[key] = _normalize_payload_for_diff_ignoring_notes(value)
+    if isinstance(payload, (str, MAMNativePaseq)):
+        return payload
 
-        # Collapse only dicts that were explicitly note-bearing wrappers.
-        if (
-            had_note_key
-            and set(out_payload.keys()) == {"word"}
-            and isinstance(out_payload.get("word"), str)
-        ):
-            return out_payload["word"]
-        if (
-            had_note_key
-            and set(out_payload.keys()) == {"text"}
-            and isinstance(out_payload.get("text"), str)
-        ):
-            return out_payload["text"]
+    if not isinstance(payload, dict):
+        raise TypeError(f"unclassified RTMS diff payload: {payload!r}")
 
-        return out_payload
+    if set(payload) == {"vels"}:
+        return {"vels": _normalize_payload_for_diff_ignoring_notes(payload["vels"])}
 
-    return payload
+    keys = set(payload)
+    if keys == {"word", "notes"} and isinstance(payload["word"], str):
+        return payload["word"]
+    if keys in ({"text", "note"}, {"text", "notes"}) and isinstance(
+        payload["text"], str
+    ):
+        return payload["text"]
+
+    raise ValueError(
+        "unclassified RTMS diff mapping: " f"keys={sorted(str(key) for key in payload)}"
+    )
 
 
 def _expand_subset_diff_to_wlc_focus(
@@ -406,58 +400,47 @@ def _load_uxlc_for_refs(
 
 
 def _to_xmlish_verse_child(element: ET.Element) -> dict[str, object] | str | None:
-    if element.tag in {"k", "pe", "samekh"}:
+    if element.tag in {"k", "pe", "samekh", "reversednun", "x"}:
         return None
+    if element.tag not in {"w", "q"}:
+        raise ValueError(f"unclassified UXLC verse child tag: {element.tag!r}")
+    if element.attrib:
+        raise ValueError(
+            f"unexpected attributes on UXLC {element.tag!r}: {element.attrib!r}"
+        )
 
-    tag = "w" if element.tag == "q" else element.tag
-    node: dict[str, object] = {"tag": tag}
-
-    # Preserve direct text plus tail text after inline children (e.g. <x>...</x>tail).
-    # Do not include inline child text here; it is represented separately in children.
     text_parts = [element.text or ""]
+    notes: list[str] = []
     for child in element:
+        if child.tag == "s":
+            if (
+                child.attrib.get("t") not in {"large", "small", "suspended"}
+                or set(child.attrib) != {"t"}
+                or list(child)
+            ):
+                raise ValueError(
+                    f"unexpected UXLC inline s shape: {ET.tostring(child)!r}"
+                )
+            text_parts.append(child.text or "")
+        elif child.tag == "x":
+            if child.attrib or list(child):
+                raise ValueError(
+                    f"unexpected UXLC inline x shape: {ET.tostring(child)!r}"
+                )
+            note = child.text or ""
+            if note:
+                notes.append(note)
+        else:
+            raise ValueError(
+                f"unclassified inline tag {child.tag!r} in UXLC {element.tag!r}"
+            )
         text_parts.append(child.tail or "")
+
     text = "".join(text_parts).strip()
-    if text:
-        node["text"] = text
-
-    if element.attrib:
-        node["attrs"] = dict(element.attrib)
-
-    if tag == "w":
-        children = [
-            _to_xmlish_inline(child) for child in element if child.tag in {"s", "x"}
-        ]
-        if children:
-            node["children"] = children
-
-    # Compact the common simple case to keep uxlc_verse readable.
-    if set(node.keys()) == {"tag", "text"} and node["tag"] == "w":
-        return str(node["text"])
-
-    # Flatten the common word+single-note shape.
-    if set(node.keys()) == {"tag", "text", "children"} and node["tag"] == "w":
-        children = node["children"]
-        if (
-            isinstance(children, list)
-            and len(children) == 1
-            and isinstance(children[0], dict)
-            and set(children[0].keys()) == {"tag", "text"}
-            and children[0]["tag"] == "x"
-        ):
-            return {"text": str(node["text"]), "note": str(children[0]["text"])}
-
-    return node
-
-
-def _to_xmlish_inline(element: ET.Element) -> dict[str, object]:
-    node: dict[str, object] = {"tag": element.tag}
-
-    text = "".join(element.itertext()).strip()
-    if text:
-        node["text"] = text
-
-    if element.attrib:
-        node["attrs"] = dict(element.attrib)
-
-    return node
+    if not text:
+        raise ValueError(f"UXLC {element.tag!r} has no selected Scripture text")
+    if not notes:
+        return text
+    if len(notes) == 1:
+        return {"text": text, "note": notes[0]}
+    return {"text": text, "notes": notes}

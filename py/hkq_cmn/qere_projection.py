@@ -56,7 +56,7 @@ def strip_accents_and_meteg(text: str) -> str:
 def qere_arg_key_for_template(template_name: str) -> str | None:
     name = canonical_template_name(template_name)
     if name == canonical_template_name(template_names.TRIVIAL_QERE):
-        return "1"
+        return "3"
     if name == "קרי ולא כתיב":
         return "2"
     if name == "כתיב ולא קרי":
@@ -76,8 +76,8 @@ def _with_source(
     return {
         "template_name": template_name,
         "argument_key": argument_key,
-        "is_trivq_arg1": canonical_template_name(template_name) == 'מ:קו"כ-אם-2'
-        and argument_key == "1",
+        "is_trivial_qere": canonical_template_name(template_name) == 'מ:קו"כ-אם-2'
+        and argument_key == "3",
         "parent_source": source,
     }
 
@@ -110,7 +110,7 @@ def project_qere_atoms(
     if isinstance(node, str):
         return [_text_atom(node, source)]
 
-    if isinstance(node, list):
+    if isinstance(node, (list, tuple)):
         out: list[dict[str, object]] = []
         for item in node:
             out.extend(project_qere_atoms(item, source=source))
@@ -125,6 +125,7 @@ def project_qere_atoms(
         raise ValueError(f"Qere-projection mapping has no template name: {node!r}")
     if not isinstance(tmpl_params, dict):
         raise ValueError(f"Template {tmpl_name!r} has non-mapping parameters")
+    template_names.validate_current_plus_template(node)
 
     cmp_name = canonical_template_name(tmpl_name)
 
@@ -192,7 +193,7 @@ def flatten_sources(source: dict[str, object] | None) -> list[dict[str, object]]
             {
                 "template_name": current.get("template_name"),
                 "argument_key": current.get("argument_key"),
-                "is_trivq_arg1": bool(current.get("is_trivq_arg1")),
+                "is_trivial_qere": bool(current.get("is_trivial_qere")),
             }
         )
         current = current.get("parent_source")
@@ -202,7 +203,7 @@ def flatten_sources(source: dict[str, object] | None) -> list[dict[str, object]]
 def _word_atoms_from_text_atom(atom: dict[str, object]) -> list[dict[str, object]]:
     text = atom.get("text")
     if not isinstance(text, str):
-        return []
+        raise TypeError(f"projected text atom has no string text: {atom!r}")
 
     source = atom.get("source")
     sources = flatten_sources(source if isinstance(source, dict) else None)
@@ -221,18 +222,13 @@ def word_atoms_from_qere_atoms(
 ) -> list[dict[str, object]]:
     out: list[dict[str, object]] = []
     for atom in atoms:
+        if not isinstance(atom, dict):
+            raise TypeError(f"unclassified projected atom: {atom!r}")
         kind = atom.get("kind")
         if kind == "text":
             out.extend(_word_atoms_from_text_atom(atom))
             continue
-        if kind == "template":
-            param_atom_lists = atom.get("param_atom_lists")
-            if not isinstance(param_atom_lists, list):
-                continue
-            for param_atoms in param_atom_lists:
-                if not isinstance(param_atoms, list):
-                    continue
-                out.extend(word_atoms_from_qere_atoms(param_atoms))
+        raise ValueError(f"unclassified projected atom kind {kind!r}: {atom!r}")
     return out
 
 
@@ -243,32 +239,38 @@ def iter_plus_verses(
     # MAM-parsed plus JSON keys chapters/verses by plain numeric strings and no
     # longer carries a header.he_to_int decode map. Non-numeric keys (the
     # "0"/total-row sentinels are a plain-file concern, absent from plus) are
-    # skipped, matching this projection's tolerate-and-skip posture.
+    # invalid here rather than silently omitted from the survey.
     book39s = plus_json.get("book39s")
     if not isinstance(book39s, list):
         raise ValueError("plus JSON missing book39s")
 
     for book39_index, book39 in enumerate(book39s):
         if not isinstance(book39, dict):
-            continue
+            raise TypeError(f"book39 entry {book39_index} is not a mapping: {book39!r}")
         book_name = book39.get("book24_name")
         sub_book_name = book39.get("sub_book_name")
         chapters = book39.get("chapters")
         if not isinstance(chapters, dict):
-            continue
+            raise ValueError(f"book39 entry {book39_index} has no chapter mapping")
 
         for chapter_key, verses in chapters.items():
             if not isinstance(chapter_key, str) or not chapter_key.isdigit():
-                continue
+                raise ValueError(f"invalid plus chapter key: {chapter_key!r}")
             if not isinstance(verses, dict):
-                continue
+                raise TypeError(f"plus chapter {chapter_key!r} is not a mapping")
             chapter_num = int(chapter_key)
 
             for verse_key, verse_payload in verses.items():
                 if not isinstance(verse_key, str) or not verse_key.isdigit():
-                    continue
-                if not isinstance(verse_payload, list) or len(verse_payload) < 3:
-                    continue
+                    raise ValueError(f"invalid plus verse key: {verse_key!r}")
+                if not isinstance(verse_payload, list) or len(verse_payload) != 3:
+                    raise ValueError(
+                        f"plus verse {chapter_key}:{verse_key} is not a C/D/E triple"
+                    )
+                if not isinstance(verse_payload[2], list):
+                    raise TypeError(
+                        f"plus verse {chapter_key}:{verse_key} E column is not a list"
+                    )
                 verse_num = int(verse_key)
 
                 yield {

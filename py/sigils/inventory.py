@@ -3,16 +3,18 @@ import re
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import template_names
 from mb_cmn import ws_tmpl2 as wtp
 from explicit_xataf import extract as doc_extract
 
-_CLAUSE_BOUNDARY_RE = re.compile(r"(?:^|[;:.])\s*")
+_CLAUSE_BOUNDARY_RE = re.compile(r"(?:^|[;:.\n])\s*")
 _LEADING_EQUALS_RE = re.compile(
-    r"(?:^|[;:.])\s*=\s*([^<(\s][^<(]{0,120}?)\s*(?=[(<]|$)"
+    r"(?:^|[;:.\n])\s*=\s*([^<(\s][^<(\n=]{0,120}?)\s*(?=[(<\n=]|$)"
 )
-_LHS_EQUALS_RE = re.compile(r"(?:^|[;:.])\s*([^=<>\n]{1,120}?)\s*=")
+_LHS_EQUALS_RE = re.compile(r"(?:^|[;:.\n])\s*([^=<>\n]{1,120}?)\s*=")
 _PROSE_ABBREV_RE = re.compile(
     r"(?:כתי[\"״']?[א-ת0-9]+(?:-[א-ת0-9]+)?|"
     r"[א-ת]+[\"״'][א-ת0-9]+(?:-[א-ת0-9]+)?|"
@@ -23,6 +25,10 @@ _PROSE_ABBREV_RE = re.compile(
     r"[א-ת])"
 )
 _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
+_HEBREW_CLUSTER_RE = re.compile(
+    r"[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u05be\ufb1e]+"
+)
+_HAS_POINT_RE = re.compile(r"[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\ufb1e]")
 
 
 def build_inventory(mam_parsed_path=None):
@@ -89,7 +95,8 @@ def build_inventory(mam_parsed_path=None):
                                 "lhs-equals-token",
                             )
                         found_any = True
-                    for token in _prose_abbreviation_tokens(note_text):
+                    prose_scan_text = _without_pointed_hebrew(note_text)
+                    for token in _prose_abbreviation_tokens(prose_scan_text):
                         _add_example(
                             prose_examples,
                             token,
@@ -112,8 +119,8 @@ def build_inventory(mam_parsed_path=None):
                 "distinct_prose_tokens": len(prose_examples),
             },
             "categories": {
-                "expressions": "Raw authority expressions captured near = in note text.",
-                "expression_tokens": "Individual sigil-like tokens split from those expressions.",
+                "expressions": "Raw candidate authority expressions captured near = in note text.",
+                "expression_tokens": "Candidate sigil-like tokens split from those expressions.",
                 "prose_tokens": 'Sigil-like abbreviations found in prose contexts, such as כתי"ק-מ.',
             },
         },
@@ -142,7 +149,44 @@ def _bcvt_to_ref(bcvt):
 
 def _note_text(tmpl):
     arg2 = wtp.template_param_val(tmpl, "2")
-    return doc_extract.join_arg1_strings(arg2)
+    return _note_node_to_text(arg2)
+
+
+def _note_node_to_text(node):
+    """Render the visible text of a current MAM documentation-note body."""
+    if isinstance(node, str):
+        return node
+    if isinstance(node, list):
+        return "".join(_note_node_to_text(item) for item in node)
+    if not isinstance(node, dict) or not wtp.is_template(node):
+        raise TypeError(f"unclassified MAM note-body node: {type(node).__name__}")
+
+    template_names.validate_current_plus_template(node)
+    name = wtp.template_name(node)
+    if name == "ש":
+        return "\n"
+    if name in {
+        "מודגש",
+        "מ:אות-ג",
+        "מ:אות-ק",
+        "מ:אות תלויה",
+    }:
+        return _note_node_to_text(wtp.template_param_val(node, "1"))
+    if name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
+        return _note_node_to_text(wtp.template_param_val(node, "2"))
+    if name in {"מ:לגרמיה-2", "מ:פסק"}:
+        return hpu.PASOLEG
+    raise ValueError(f"unclassified MAM note-body template: {name!r}")
+
+
+def _without_pointed_hebrew(text):
+    """Remove pointed Hebrew quotations before scanning note prose for sigils."""
+
+    def replace_cluster(match):
+        cluster = match.group(0)
+        return "" if _HAS_POINT_RE.search(cluster) else cluster
+
+    return _HEBREW_CLUSTER_RE.sub(replace_cluster, text)
 
 
 def _leading_equals_expressions(note_text):
@@ -212,7 +256,7 @@ def _looks_authority_like_expression(expression):
 
 def _split_expression_tokens(expression):
     tokens = []
-    for token in _TOKEN_SPLIT_RE.split(expression):
+    for token in _TOKEN_SPLIT_RE.split(_without_pointed_hebrew(expression)):
         cleaned = token.strip()
         if cleaned == "":
             continue

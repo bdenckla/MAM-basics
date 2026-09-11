@@ -2,6 +2,7 @@
 """Shared סוג mapping and reconciliation for trivial ketiv/qere templates."""
 
 from foi import kq_trivial_types as ktt
+from hkq_cmn.qere_projection import project_qere_atoms
 from mb_cmn import ws_tmpl2 as wtp
 
 DISAGREE = "disagree"
@@ -88,9 +89,5 @@ def _unrecognized_sug_cat(sug_text):
 
 
 def _flatten_text(wtel):
-    if isinstance(wtel, str):
-        return wtel
-    if isinstance(wtel, list):
-        return "".join(_flatten_text(item) for item in wtel)
-    assert wtp.is_template(wtel), wtel
-    return _flatten_text(wtp.template_element(wtel, 1))
+    atoms = project_qere_atoms(wtel, source=None)
+    return "".join(atom["text"] for atom in atoms)
