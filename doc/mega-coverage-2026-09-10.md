@@ -16,6 +16,11 @@ the post-stress-meteg page renderer now raises instead of looking a spelling up 
 index generators and the Aleppo column-coordinate plots in §5, and `py/main_download.py
 fr-sefaria` in §3 and in §5's third gap.
 
+**§9 is the closing record, 2026-09-10**, of what the mega runs once `doc/PLAN-mega-coverage.md` had
+been carried out, and of what became of each recommendation here. The sections before it are the
+analysis as it was measured. Dated notes mark, where they stand, the sentences and rows that the
+plan's phases made false; where a sentence below has gone stale without one, §9 is the later word.
+
 **Method.** A *program* here is a tracked `.py` with an `if __name__ == "__main__":` block outside
 `py/tests/`, plus the four example scripts the mega runs as subprocesses. An entry point's argparse
 subcommands are programs of their own, and so is a flag-selected mode when the mega runs one mode
@@ -26,6 +31,15 @@ down. The session re-checked the claims that §1's decisions rest on, and correc
 `parse-go` calls `main_authored.cmd_gen_mam_parsed_docs(None)`, so the MAM-parsed documents,
 `doc/mp-claims.md` and the MAM-parsed claim verification all run in the mega, which that inventory
 had reported as not.
+
+**Correction, 2026-09-10: `parse-ws`, not `parse-go`, is the step that runs `gen-mam-parsed-docs`.**
+The sentence above was true at `a2e883f1`. `426fa229`, a Codex session's cutover of MAM-parsed to
+Wikisource, which phase 7b of `doc/PLAN-mega-coverage.md` merged in `8f5c1c96`, made
+`parse_go.almost_main` write only `MAM-parsed/google/`. `parse_ws.almost_main`, which the `parse-ws`
+step runs, now calls `main_authored.cmd_gen_mam_parsed_docs(None)` through
+`parse_ws_products.generate_production`, so the MAM-parsed documents, `doc/mp-claims.md` and the
+claim verification still run on every mega run, in that step. Row 1 of §2's table has the same
+correction.
 
 ## 1. Decisions for Ben, with recommendations
 
@@ -76,7 +90,7 @@ The recommendations as they were put to Ben:
 
 | # | Step | Program it runs |
 |---|---|---|
-| 1 | `parse-go` | `py/main_parse.py go`, which also regenerates the MAM-parsed documents and `doc/mp-claims.md` and runs the claim verification, through `main_authored.cmd_gen_mam_parsed_docs` |
+| 1 | `parse-go` | `py/main_parse.py go`, which also regenerates the MAM-parsed documents and `doc/mp-claims.md` and runs the claim verification, through `main_authored.cmd_gen_mam_parsed_docs`. **Stale since `426fa229`; see the correction below this table.** |
 | 2 | `foi-features-of-interest` | `py/main_foi_features_of_interest.py` |
 | 3 | `mam-with-doc` | `py/main_mam_with_doc.py` |
 | 4 | `diff-mpp` | `py/main_diff.py mpp --all` |
@@ -109,11 +123,17 @@ The recommendations as they were put to Ben:
 | 40 | `gen-site` | `py/main_authored.py gen-site --trust-surveys` |
 | 41 | `vendoring-audit` | `py/main_vendoring.py --all` |
 
+**Correction, 2026-09-10, to row 1.** Since `426fa229`, a Codex session's cutover of MAM-parsed to
+Wikisource, which phase 7b of `doc/PLAN-mega-coverage.md` merged in `8f5c1c96`, `parse-go` writes
+only `MAM-parsed/google/`, and it is the `parse-ws` step, row 20 here, that runs
+`gen-mam-parsed-docs`, as the correction under the Method paragraph says. The mega now runs
+`parse-ws` first; §9 has its steps as they are now.
+
 ## 3. Left out of the mega, with the reason already written down
 
 | Program | Why it is left out | Where that is written |
 |---|---|---|
-| `py/main_accgram.py survey-post-stress-meteg`, and `py/main_authored.py gen-site` without `--trust-surveys`, which rebuilds the same survey | reads MAM-private's Phonetic MAM; the mega renders the pages from the tracked JSON instead | `py/main_0_mega.py`, the comment in `_run_gen_site`; `py/main_authored.py`, the comment above `_SURVEY_READING_PAGES`; commit `deb80472`. **Decision 1** |
+| `py/main_accgram.py survey-post-stress-meteg`, and `py/main_authored.py gen-site` without `--trust-surveys`, which rebuilds the same survey | reads MAM-private's Phonetic MAM; the mega renders the pages from the tracked JSON instead | `py/main_0_mega.py`, the comment in `_run_gen_site`; `py/main_authored.py`, the comment above `_SURVEY_READING_PAGES`; commit `deb80472`. **Decision 1**. **Retired on 2026-09-10**: since phase 2 of `doc/PLAN-mega-coverage.md` (`9657a081`), the survey is the mega step `accgram-survey-post-stress-meteg`, which a cloud session skips. `gen-site` without `--trust-surveys` stays out, now because it would rebuild the survey that step has just written (§9) |
 | `py/main_accgram.py survey-breuer-zaqef-units` | a measurement written only to `.novc/`; it also reads MAM-private | `py/accgram/breuer_word_length.py` docstring, "WRITES TO .novc/, not to out/" |
 | `py/main_accgram.py vendor-printed-decalogue` and `vendor-ctr-decalogue` | network: they refresh vendored snapshots from Wikisource and chabad.org | `py/main_accgram.py` docstring, "NETWORK AUTHOR TOOL, run by hand" |
 | `py/main_accgram.py generate-html` without `--trust-survey`, and its fourteen `generate-html-<name>` singles | the `accgram-generate-html` step runs the same batch | `doc/review-findings-2026-08-03.md`, "What is left outside the mega on purpose" |
@@ -150,6 +170,8 @@ The recommendations as they were put to Ben:
 ## 4. Left out, no reason written down, and plainly not mega work
 
 The reasons in this table are Claude-written proposals for Ben to accept or change.
+**On 2026-09-10 Ben accepted every one of them that `py/tests/test_mega_coverage.py` took in**;
+§9 says which rows were settled another way.
 
 | Program | Proposed reason |
 |---|---|
@@ -158,7 +180,7 @@ The reasons in this table are Claude-written proposals for Ben to accept or chan
 | `py/main_scan_pages.py check` | writes nothing; `py/tests/test_scan_pages_index.py` runs the same check |
 | `py/main_parse.py ws --write-fmt-1` | debugging output to `.novc/`; the tracked half of the run is `parse-ws`'s |
 | `py/main_diff.py mpp --old A --new B` | a one-off comparison of two revisions someone picks; `diff-mpp` already rebuilds every named release |
-| `py/main_download.py fr-google --skip-download` | `parse-go` plus a read-only `check_mpplus`; but see the second gap after §5's table |
+| `py/main_download.py fr-google --skip-download` | `parse-go` plus a read-only `check_mpplus`; but see the second gap after §5's table. **Correction, 2026-09-10**: since `426fa229`, a Codex session's cutover of MAM-parsed to Wikisource, which phase 7b of `doc/PLAN-mega-coverage.md` merged in `8f5c1c96`, this form runs only `parse_go.almost_main`, the parse that the `parse-go` step runs, and `check_mpplus` runs inside the `parse-ws` step instead |
 | `py/main_ws_bot.py real` | saves edits to live Hebrew Wikisource under Ben's bot account, so every run is a deliberate act |
 | `py/main_ws_bot.py real --identity-run` | exercises the live-wiki plumbing, and needs the network and the bot login |
 | `py/main_tmpl_survey.py --write-expanded-stack-grammar-lock` | the locks are what every survey run is checked against, so rewriting them on every run would make that check pass by construction |
@@ -194,7 +216,7 @@ The reasons in this table are Claude-written proposals for Ben to accept or chan
 | `py/main_ac_plot_col_coords.py` | `aleppo/plot_col_coords-out/*.png` | matplotlib output; the Cambridge 1753 gutter chart is kept frozen for exactly that reason | **Decision 4b**: record as frozen, like the gutter chart. Ben chose otherwise: **removed on 2026-09-10**, with its PNGs, by phase 3 of `doc/PLAN-mega-coverage.md` |
 | `py/main_ac_check_line_breaks.py` and `py/main_cam1753_check_line_breaks.py` | `aleppo/check_line_breaks.html`, `cam1753/check_line_breaks.html` | Reports that check the hand-annotated line breaks against MAM-simple's XML, which the mega rewrites. The Cambridge 1753 report says "All checks passed". The Aleppo report says "91 issue(s) found", and that program exits 1 | **Decision 4c**: add the Cambridge 1753 one; the Aleppo one would fail the mega until its 91 issues are dealt with |
 | `py/main_slide_generator.py make-thumbs` | `misc/<deck>/img/thumb-*.png` | thumbnails of slides that `render-slides` makes by hand, with Playwright | **Decision 4d**: record it as left out along with `render-slides` |
-| `py/main_accgram.py survey-post-stress-meteg` | `out/accgram/post-stress-meteg.json` | reads MAM-private; §3 has the recorded reason. A fresh run into a scratch file on 2026-09-10 was byte-identical to the tracked JSON | **Decision 1** |
+| `py/main_accgram.py survey-post-stress-meteg` | `out/accgram/post-stress-meteg.json` | reads MAM-private; §3 has the recorded reason. A fresh run into a scratch file on 2026-09-10 was byte-identical to the tracked JSON | **Decision 1**. Ben chose yes: **added on 2026-09-10**, as the step `accgram-survey-post-stress-meteg` immediately before `gen-site`, by phase 2 of `doc/PLAN-mega-coverage.md` (`9657a081`), once phase 1 (`516a4a1a`) let a worktree run find MAM-private beside its home clone. A cloud session skips it |
 
 Three gaps inside steps the mega already runs:
 
@@ -202,8 +224,14 @@ Three gaps inside steps the mega already runs:
    `--edits`, the edits context `no_edits()` returns has no `get-warnings` key, so `write_warnings`
    returns early. The inventory found the file was last written by a `proto --edits` rehearsal,
    `52aa7b8c` (2026-08-27).
+   **Fixed on 2026-09-10** by `2e3a7189`, in phase 5b of `doc/PLAN-mega-coverage.md`: every proto
+   run writes the file, `[]` when there are no edits.
 2. **`check_mpplus`, a read-only check of the parsed data, runs only inside
    `py/main_download.py fr-google`**, so only after a Google download.
+   **Closed on 2026-09-10**: since `426fa229`, `check_mpplus` runs inside the `parse-ws` step, over
+   every plus book it writes, and raises on any error. Phases 5b and 5c of
+   `doc/PLAN-mega-coverage.md` had given the check a step of its own, `check-mpplus`; Ben's decision
+   of the same day kept it inside `parse-ws`, and phase 7b dropped the step.
 3. **Nothing reads `in/mam-from-sefaria/`**, which `py/main_download.py fr-sefaria` wrote.
    **Removed on 2026-09-10**, the directory and the subcommand both, by phase 3 of
    `doc/PLAN-mega-coverage.md`: Ben was "no longer interested in tracking what sefaria does with
@@ -293,3 +321,132 @@ uncalled `add_args` and `run` at the end of `py/author_site/post_stress_meteg.py
    MAM-simple and MAM-for-Sefaria from that same list, and regenerating the golden.
 10. `py/main_accgram.py` defines 28 subcommands, while
     `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md` says 34.
+
+## 9. Closing record, 2026-09-10: the mega's 60 steps, and the check that keeps the rest declared
+
+Written by the Claude session that executed phase 8 of `doc/PLAN-mega-coverage.md`, the plan that
+carried out §1's six decisions. **Measured on** the branch `claude/mega-coverage` at `c9e99dcb`,
+before its integration into `main`. `_STEPS` in `py/main_0_mega.py` is the authority on the steps
+from then on.
+
+**The mega has 60 steps**, where §2 counted 41. The program each runs is the one that
+`py/tests/test_mega_coverage.py` reads from its runner:
+
+| # | Step | Program it runs |
+|---|---|---|
+| 1 | `parse-ws` | `py/main_parse.py ws`, which also runs what `py/main_authored.py gen-mam-parsed-docs` runs, the MAM-parsed documents, `doc/mp-claims.md` and the claim verification, and checks every plus book it writes with `check_mpplus` |
+| 2 | `foi-features-of-interest` | `py/main_foi_features_of_interest.py` |
+| 3 | `parse-go` | `py/main_parse.py go`, which writes only `MAM-parsed/google/` |
+| 4 | `diff-wsgo` | `py/main_diff.py wsgo` |
+| 5 | `mam-with-doc` | `py/main_mam_with_doc.py` |
+| 6 | `diff-mpp` | `py/main_diff.py mpp --all` |
+| 7 | `diff-ctr-vs-mam` | `py/main_diff.py ctr-vs-mam` |
+| 8 | `tmpl-survey` | `py/main_tmpl_survey.py` |
+| 9 | `tmpl-survey-toy` | `py/main_tmpl_survey_toy.py` |
+| 10 | `vendored-tmpl-survey-toy` | `MAM-parsed/py-examples/main_tmpl_survey_toy_example.py`, as a subprocess |
+| 11 | `mam-simple` | `py/main_mam_simple.py core-only`, which ends by running what `copy-support-files` runs |
+| 12 | `mam-simple-docs` | `py/main_mam_simple.py doc-only` |
+| 13 | `mam4sef-and-ajf` | `py/main_mam4sef.py --both-sef-and-ajf` |
+| 14 | `mam-osis` | `py/main_mam_osis.py` |
+| 15 | `letter-small-job` | `py/main_letter_small_job.py` |
+| 16 | `vendored-letter-small-job` | `MAM-simple/py-examples/main_letter_small_job_example.py`, as a subprocess |
+| 17 | `vendored-mam4sef` | `MAM-simple/py-examples/main_mam4sef_example.py`, as a subprocess |
+| 18 | `vendored-mam-osis` | `MAM-simple/py-examples/main_mam_osis_example.py`, as a subprocess |
+| 19 | `decnreub` | `py/main_decnreub.py` |
+| 20 | `multimark` | `py/main_multimark.py` |
+| 21 | `wordlist` | `py/main_wordlist.py` |
+| 22 | `search-final-hiriq-verse-text` | `py/main_search_final_hiriq_verse_text.py` |
+| 23 | `search-holam-he-qere` | `py/main_search_holam_he_qere.py` |
+| 24 | `explicit-xataf` | `py/main_explicit_xataf.py` |
+| 25 | `ws-bot-proto` | `py/main_ws_bot.py proto`, without `--edits` |
+| 26 | `gen-misc` | `py/main_authored.py gen-misc` |
+| 27 | `wlc-json-and-unicode` | `py/main_wlc_json_and_unicode.py` |
+| 28 | `accgram-run-prose` | `py/main_accgram.py run-prose` |
+| 29 | `accgram-test-fixes` | `py/main_accgram.py test-fixes` |
+| 30 | `accgram-run-dual-cant` | `py/main_accgram.py run-dual-cant` |
+| 31 | `accgram-run-poetic` | `py/main_accgram.py run-poetic` |
+| 32 | `accgram-xcheck-poetic` | `py/main_accgram.py xcheck-poetic` |
+| 33 | `accgram-servi-xcheck` | `py/main_accgram.py servi-xcheck` |
+| 34 | `accgram-grammaticality` | `py/main_accgram.py grammaticality` |
+| 35 | `accgram-run-printed-decalogue` | `py/main_accgram.py run-printed-decalogue` |
+| 36 | `accgram-survey-chanted-word-accents` | `py/main_accgram.py survey-chanted-word-accents` |
+| 37 | `accgram-generate-html` | `py/main_accgram.py generate-html --trust-survey` |
+| 38 | `uxlc-check-changes` | `py/main_uxlc_check_changes.py` |
+| 39 | `uxlc-fois` | `py/main_fois.py` |
+| 40 | `uxlc-write-page-break-info` | `py/main_write_page_break_info.py` |
+| 41 | `uxlc-amb-early-mtg` | `py/main_amb_early_mtg.py` |
+| 42 | `uxlc-word-list` | `py/main_uxlc_word_list.py` |
+| 43 | `clc` | `py/main_clc.py all` |
+| 44 | `estimate-uxlc-locations` | `py/main_estimate_uxlc_locations.py` |
+| 45 | `render-uxlc-corrections` | `py/main_render_uxlc_corrections.py` |
+| 46 | `verify-and-render-table` | `py/main_verify_and_render_table.py` |
+| 47 | `book-of-job-site` | `py/main_gen_misc_authored_english_documents.py`, which ends by running `py/check_spelling_in_html.py` |
+| 48 | `map-changes-to-book-of-job` | `py/main_map_changes_to_book_of_job.py` |
+| 49 | `find-uxlc-accent-changes` | `py/main_find_uxlc_accent_changes.py`, without `--audit` |
+| 50 | `uxlc-grammar-test` | `py/main_uxlc_grammar_test.py` |
+| 51 | `wlc-diffs-420422` | `py/main_wlc_diffs_420422.py` |
+| 52 | `wlc-a-notes` | `py/main_wlc_a_notes.py` |
+| 53 | `sigil-inventory` | `py/main_sigil_inventory.py` |
+| 54 | `near-aleppo-census` | MAM-private's `near-aleppo/census/run_all.py --write`, as a subprocess; skipped in a cloud session |
+| 55 | `accgram-survey-post-stress-meteg` | `py/main_accgram.py survey-post-stress-meteg`; skipped in a cloud session |
+| 56 | `gen-site` | `py/main_authored.py gen-site --trust-surveys` |
+| 57 | `diffable-pointed-hebrew` | `py/main_diffable_pointed_hebrew.py`, over the four input and output pairs of its `TRACKED_EXPANSIONS` |
+| 58 | `ac-gen-index-flat-annotated` | `py/main_ac_gen_index_flat_annotated.py` |
+| 59 | `pipeline-graph` | `py/main_pipeline_graph.py` |
+| 60 | `vendoring-audit` | `py/main_vendoring.py`, its `--all` audit |
+
+Two steps use MAM-private, and a cloud session skips both, by Ben's decisions of 2026-09-10:
+`near-aleppo-census`, which runs in that clone and rewrites its tracked goldens, and
+`accgram-survey-post-stress-meteg`, which reads its Phonetic MAM. `parse-go` and `diff-wsgo`, the
+Google Sheet's two steps, left the mega in `426fa229` and came back the same day, by Ben's
+decision, in phase 7b of the plan.
+
+**Every other program is declared, and a check keeps it so.** `py/tests/test_mega_coverage.py`
+finds 141 programs: the tracked `.py` files outside `py/tests/` with a `__main__` block, 91 of
+them, a file with argparse subcommands counting once per subcommand. The mega runs 62 of the 141.
+`NOT_IN_MEGA` in that file declares the other 79, and 20 modes that the mega does not run of
+programs it does run, 99 entries in all, each with the reason the mega leaves it out and where
+that reason is recorded. 26 of the reasons are Claude-written proposals, most of them from §4,
+and Ben accepted them all on 2026-09-10. The check fails the suite on a program neither run nor
+declared, on a declaration whose program, subcommand or flag is gone, and on a declaration of
+something the mega now runs. So it keeps true what this section claims, that every program is
+run by the mega or declared with a reason. MAM-basics' maintenance runs the suite at step 5 of
+`py/main_repo_maintenance.py`, before its step 6 runs the mega. The check does not keep the table
+above current, and `_STEPS` is where to look for the steps as they are. To re-count, run the
+check and read its `_programs()`, `_scan_mega()` and `NOT_IN_MEGA`.
+
+**What became of the recommendations.** The plan's phase records have the detail and the
+commits.
+
+1. Decision 1: phase 1 (`516a4a1a`) lets a worktree run find MAM-private beside its home clone,
+   and phase 2 (`9657a081`) made the survey a step. That retires §3's first row and §5's last
+   row, each now marked.
+2. Decision 2: phase 4 (`f7fb6a62`) folded `py/main_uxlc_mega.py`'s five steps into the mega,
+   and deleted it.
+3. Decision 3: phases 5a, 5b and 5c added every generator that §5 marks "add", the last of them
+   `py/main_diff.py ctr-vs-mam`, once `9fa80e11` gave its template table the narrow-sense paseq
+   template. §5's three gaps are closed, each marked where it stands.
+4. Decision 4: phase 3 (`985262e2`) removed the two Wikisource index generators, the
+   column-coordinate plots and the Sefaria download. The line-break reports and the slide
+   thumbnails stay out, declared with Ben's decisions.
+5. Decision 5: phases 6a and 6b deleted everything in §6. `py/check_ac_word_finding.py` was
+   first fixed and then retired, as Ben chose (`26962cb4`, `7fa58d73`).
+6. Decision 6: phase 7 built the check (`3f27b33f`, `d2acfaea`), and phase 8 marked the 26
+   accepted reasons (`6fc8ddaa`).
+
+Of §4's rows, two name programs that phase 6a deleted, `py/main_source_hygiene.py` and the
+`__main__` block of `py/accgram/ctr_decalogue.py`. Phase 7b dropped the declarations of
+`py/main_foi_features_of_interest.py --foi` and `--single-threaded`, since the check counts a
+flag that narrows a job or changes how it runs as no mode. Every other reason in §4 is one that
+Ben accepted.
+
+**Verified by a full run.** On 2026-09-10 every step except `near-aleppo-census` ran in order, as
+the mega runs them, from a throwaway script that imports `py/main_0_mega.py` and picks the steps
+from `_STEPS`: all 59 passed, in 377 seconds, and though they wrote 1,611 tracked files, `git status
+--porcelain` was empty afterwards, every one of those files having come out byte-identical. The
+census was left out because it rewrites tracked goldens in MAM-private, and its next run is Ben's.
+The suite then gave 992 passed, 5 skipped.
+
+**Still open, and outside the plan:** §8's findings, except where a phase record of the plan says
+that phase fixed one, and the four items of the plan's section "Not in this plan, raised for
+Ben".
