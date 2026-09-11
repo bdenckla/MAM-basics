@@ -27,11 +27,15 @@ Sixth review under the public-repos-only scope. It covers committed work from th
 review's anchor through the moment this review started, 2026-09-10 about 22:43 local, when
 MAM-basics' HEAD was **`0354b6cc`** (2026-09-10 22:20, "meteg-after-silluq-in-uxlc-and-wlc: NO
 POINTER INTO ANY .novc DIR REMAINS, at Ben's word"), the primary clone's tree was clean and
-`origin/main` stood at the same commit. **The tree moved under the review, once, and outside the
-window**: at 22:56 `e7a1736b` ("Worktree sweep: read Claude Code's session records; override per
-worktree only", five files, 336 insertions) landed on `main` and `origin/main` from the primary
-clone. It is the first commit of the next window and was not reviewed; the shared worktree stayed at
-`0354b6cc` throughout, and every figure below is measured there. The sweep that commit describes
+`origin/main` stood at the same commit. **The tree moved under the review, five times by 23:40,
+all outside the window**: at 22:56 `e7a1736b` ("Worktree sweep: read Claude Code's session
+records; override per worktree only", five files, 336 insertions) landed on `main` and
+`origin/main` from the primary clone, and between 23:13 and 23:38 `a7586b4b`, `44479798`,
+`9dd066ad` and `e84e2c70` followed (the Wikisource–Google Sheet differences refreshed, the Sheet
+refreshed after the auto-edits, surveys declaring template projections, every template dispatch
+made closed; 18 files against `e7a1736b`). They are the first commits of the next window and were
+not reviewed; the shared worktree stayed at `0354b6cc` throughout, and every figure below is
+measured there. The sweep `e7a1736b` describes
 also retired, at about 22:56, the two Codex worktrees that were live and clean at the start —
 `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics` on `codex-worktree-3a6b` at `a0a2e3ab` and
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on `codex-review-2026-09-08` at
@@ -775,9 +779,10 @@ phonetic-hbo#78 (open), and its criterion 9 now mismatches for the reason findin
 lamed-anchored template arguments are filed and open. `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md`
 is `live` with nothing acted on, accurately. The September 8 review's remediation is complete and
 integrated, its worktree retired after the window (finding 21.2); the Codex counter-argument of
-this window has not been run. `main` and `origin/main` stand at `e7a1736b`, one commit past this
-review's anchor, and that commit's 250-line rewrite of `git_worktree_cleanup.py` falls to the next
-review.
+this window has not been run. `main` and `origin/main` stood at `e84e2c70` when this file was
+committed, five commits past this review's anchor, and those commits — `e7a1736b`'s 250-line
+rewrite of `git_worktree_cleanup.py` and the four Google Sheet and template-dispatch commits that
+followed it — fall to the next review.
 
 ## What this review did not check
 
