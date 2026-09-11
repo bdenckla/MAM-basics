@@ -3,9 +3,9 @@
 diff report with category filtering.
 
 Usage:
-    .venv/Scripts/python.exe py/main_diff.py mpp
-    .venv/Scripts/python.exe py/main_diff.py mpp --old <rev> --new <rev>
-    .venv/Scripts/python.exe py/main_diff.py mpp --all
+    .venv/Scripts/python.exe py/main_diff.py mpplus
+    .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
+    .venv/Scripts/python.exe py/main_diff.py mpplus --all
 
 Named historical releases read tracked MAM-parsed/historical/ snapshots.
 HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.

@@ -42,7 +42,7 @@ it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
 ``pipeline-graph``, whose inputs no step writes, between ``gen-site`` and
 ``vendoring-audit``.
 
-The ``diff-ctr-vs-mam`` step joined the same day, after ``diff-mpp``, once
+The ``diff-ctr-vs-mam`` step joined the same day, after ``diff-mpplus``, once
 ``py/diff_ctr_vs_mam/massage_mpu_verse.py`` could handle the narrow-sense paseq
 template that Proverbs 8:34 has had in MAM-parsed since 2026-03-16.
 """
@@ -86,7 +86,7 @@ import main_uxlc_grammar_test
 import main_wlc_a_notes
 import main_wlc_diffs_420422
 import main_wlc_json_and_unicode
-from subcommands import diff_mpp
+from subcommands import diff_mpplus
 from subcommands import diff_wsgo
 from subcommands import parse_go
 from subcommands import parse_ws
@@ -339,9 +339,16 @@ _STEPS = [
     # is the test in this repo (CLAUDE.md), and that check was simply not running on
     # these eleven files: the giveaway was a committed index.html advertising "11 body
     # text changes" for an unpinned-latest.json that said 0.  ~40s.
+    #
+    # Named diff-mpplus since 2026-09-11, when py/main_diff.py's subcommand and
+    # py/subcommands/diff_mpplus.py were renamed with it, by Ben's decision that day: "mpp"
+    # fits MAM-parsed's plain/ as well as its plus/.  Issue #63 had retired that
+    # abbreviation, and fc0dc027 named the module main_diff_mpplus.py in April; 9d5693d0
+    # brought it back in May as the diff-mpp step, the mpp subcommand and diff_mpp.py.
+    # Dated records under doc/ and in/ keep those names.
     StepRecord(
-        "diff-mpp",
-        diff_mpp.run_all,
+        "diff-mpplus",
+        diff_mpplus.run_all,
         "every named release from releases.json, plus unpinned-latest and index.html",
     ),
     # Added 2026-09-10, in phase 5c of doc/PLAN-mega-coverage.md.  Until then nothing
