@@ -9,11 +9,15 @@ Job leaves through `../line-breaks/`.
 Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section says whose crop it is
 and which image it was read from.
 
+mgketer.org presents the Codex a chapter at a time, a psalm at a time in Psalms, as what looks like
+a single image, often several pages long; whether it is one image or pages joined by the page's
+script, Ben does not know (2026-09-10).
+
 ## 253v-Ps72v15-yevarkhenhu.png
 
 Psalms 72:15, the verse-final word, on **leaf 253v**, which has Psalms 71:18–73:10 (MAM's index of
 the Aleppo Codex, `../../in/mam-ws-intro/index-aleppo.mediawiki` line 613). Ben's crop,
-2026-09-10; the site it was read from is not yet recorded.
+2026-09-10, from mgketer.org's image of Psalm 72.
 
 **The Aleppo Codex has one meteg/silluq stroke on this word, under the kaf** — confirmed by Ben
 from this image on 2026-09-10. The stroke slants like a merkha, but reading it as a merkha is

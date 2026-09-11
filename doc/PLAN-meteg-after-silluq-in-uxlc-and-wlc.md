@@ -19,7 +19,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 
    Ben's criterion compares MAM's last U+05BD with the source's last U+05BD directly, so neither exclusion applies to it.
 3. **The post-stress-meteg survey's post-silluq page treats one verse of the Leningrad Codex.** `gh-pages/post-stress-meteg-post-silluq.html` is about 1 Samuel 17:5, with crops of the Leningrad Codex and the Aleppo Codex; the survey's count of post-silluq metegs (`post_silluq` in `py/accgram/post_stress_meteg.py`) is of MAM's side only.
-4. **Psalms 72:15 was looked at on its own on 2026-09-10**, in `doc/meteg-after-silluq-psalms-72-15.md`. Ben confirmed from Sefaria's image the same day that the Leningrad Codex has both strokes there, and from an image of the Aleppo Codex that it has only the one under the kaf, so that calibration case is a fact about the manuscript and not only about the transcriptions.
+4. **Psalms 72:15 was looked at on its own on 2026-09-10**, in `doc/meteg-after-silluq-psalms-72-15.md`. Ben confirmed from an image of the Leningrad Codex the same day that it has both strokes there, and from mgketer.org's image of the Aleppo Codex that it has only the one under the kaf, so that calibration case is a fact about the manuscript and not only about the transcriptions.
 
 ## The run
 
@@ -36,7 +36,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 ## Rules for the run
 
 1. Load the `hebrew-prose` skill before writing the findings file.
-2. A claim about the Leningrad Codex made from UXLC or WLC is written as "UXLC 3.9 records" or "WLC 4.22 records"; this run does not consult the manuscript. Looking at the Leningrad Codex's images for the first class is a follow-up that needs downloads from Sefaria, each approved by Ben; `doc/boj-leningrad-word-crops.md` gives the URL pattern.
+2. A claim about the Leningrad Codex made from UXLC or WLC is written as "UXLC 3.9 records" or "WLC 4.22 records"; this run does not consult the manuscript. Looking at the Leningrad Codex's images for the first class is a follow-up for Ben, who reads them himself: give him links, not downloaded images, namely Sefaria's image of the folio with the atom's estimated column and line and tanach.us's page for the verse, built by the user-level `verse-links` skill.
 3. Where a meteg stands relative to its vowel plays no part in the run: Ben judged it scribal whim on 2026-09-10, and his later finding that day, that the two codices agree on an early stroke at Job 4:12, is raised in `doc/meteg-after-silluq-job-4-12.md` section 4 rather than here. Positions are letter ordinals, and the order of the marks on a letter, including UXLC's U+034F coding of a leading meteg, plays no part.
 4. Pointed Hebrew in the findings file is lifted from the data by script and checked with `mb_cmn.uni_denorm.has_std_mark_order`, because the Write and Edit tools put Hebrew into Unicode-normal order.
 
