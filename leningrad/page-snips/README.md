@@ -79,3 +79,37 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 
 The folio is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
+
+## 398A-col2-line4-Job4v12-menhu.png
+
+Job 4:12, the verse-final word מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
+2026-09-10. The column and line in this file's name are the estimator's (below), not a reading.
+
+**The Leningrad Codex has a meteg/silluq stroke under the mem and another under the he** —
+confirmed by Ben from this image on 2026-09-10. UXLC 3.9 and WLC record the same two marks.
+
+The stroke under the mem stands to the right of its segol, which UXLC records as a leading meteg.
+Ben calls it an early metsil, metsil being his shorthand for meteg/silluq, because at this word
+whether it is a meteg or a silluq is exactly what is in question. His impression is that the
+placement is common with a sheva, uncommon with a segol, and commonest on a word's first letter,
+where it causes no confusion; this one is on the first letter. He also sees signs of a possible
+erasure after the segol and around the stroke under the he. The Aleppo Codex has the stroke under
+the mem in the same place (`../../aleppo/page-snips/271r-col2-line5-Job4v12-menhu.png`); Ben had
+taken the placement for scribal whim, and finds that agreement unlikely to be chance.
+
+Why it was cropped: MAM has מֶֽנְהֽוּ׃, with both U+05BD, and Koren has only the one on the mem, so
+which of the two is the silluq is the open question; this crop settles what the Leningrad Codex
+has, which until then only UXLC and WLC recorded. The whole account is
+`../../doc/meteg-after-silluq-job-4-12.md`.
+
+### No calibration point for the atom-location estimator
+
+`page_and_guesses` in `MAM-basics/py/py_uxlc/my_uxlc_location.py` put this word at folio 398A,
+column 2, line 4.0:
+
+```
+{'page': '398A', 'fline-guess': '31.0', 'line-guess': '4.0', 'column-guess': 2}
+```
+
+Ben read neither the column nor the line off the image, so the file name carries the
+estimator's, and this crop gives no calibration point.

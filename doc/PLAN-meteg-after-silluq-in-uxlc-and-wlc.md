@@ -37,7 +37,7 @@ Terms, as the `hebrew-prose` skill defines them: an **atom** is one written word
 
 1. Load the `hebrew-prose` skill before writing the findings file.
 2. A claim about the Leningrad Codex made from UXLC or WLC is written as "UXLC 3.9 records" or "WLC 4.22 records"; this run does not consult the manuscript. Looking at the Leningrad Codex's images for the first class is a follow-up that needs downloads from Sefaria, each approved by Ben; `doc/boj-leningrad-word-crops.md` gives the URL pattern.
-3. Where a meteg stands relative to its vowel is not evidence (Ben, 2026-09-10). Positions are letter ordinals, and the order of the marks on a letter, including UXLC's U+034F coding of a leading meteg, plays no part.
+3. Where a meteg stands relative to its vowel plays no part in the run: Ben judged it scribal whim on 2026-09-10, and his later finding that day, that the two codices agree on an early stroke at Job 4:12, is raised in `doc/meteg-after-silluq-job-4-12.md` section 4 rather than here. Positions are letter ordinals, and the order of the marks on a letter, including UXLC's U+034F coding of a leading meteg, plays no part.
 4. Pointed Hebrew in the findings file is lifted from the data by script and checked with `mb_cmn.uni_denorm.has_std_mark_order`, because the Write and Edit tools put Hebrew into Unicode-normal order.
 
 ## Preconditions, and what is not expected to change
