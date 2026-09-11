@@ -47,8 +47,13 @@ passed over in silence:
   ``--force`` honours it automatically.  It is still checked explicitly, so a
   deliberately locked worktree reports as a considered decision instead of
   failing noisily every single run.
+- A worktree that Claude Code's own records show a session in -- the working
+  directory of a running session, or a worktree the desktop app has leased to
+  one -- is skipped, and nothing overrides that.  See "AN HOUR WITHOUT GIT IS
+  NOT AN ABANDONED SESSION" below.
 - A worktree with recent git activity is skipped -- see
-  ``_seconds_since_activity``.
+  ``_seconds_since_activity`` -- unless the caller names it in
+  ``sessions_ended``.
 - A worktree with any uncommitted change, tracked or untracked, is left alone,
   as is one whose HEAD is not an ancestor of the default branch.  Untracked
   files count deliberately: git's own ``worktree remove`` refuses on them too,
@@ -130,6 +135,60 @@ contents and only then cannot unlink the directory, which is exactly how the
 husk that ``_sweep_empty_dirs`` now collects came to exist.  A held handle turns
 a silent removal into a noisy one; it does not prevent it.
 
+AN HOUR WITHOUT GIT IS NOT AN ABANDONED SESSION, but the activity check cannot
+tell the two apart: it times git, not a session.  On 2026-09-10 the session
+running in ``friendly-volhard-77bb64`` was 57 minutes past its last git command
+when a sweep read its stamp.  Found 24 minutes later, still on the commit it had
+held while its session ran, that worktree was clean, merged and holding nothing
+of its own, so the activity check was all that stood between it and removal.
+The override this module offered until that day widened the exposure:
+``activity_grace_seconds`` switched the activity check off for EVERY worktree
+in the repo at once, and a call with it set to 0 was the recovery that hazard
+H1 of ``doc/PLAN-repo-maintenance-across-GitRepos.md`` prescribed for stamps
+poisoned by hand inspection.
+
+TWO RECORDS THAT CLAUDE CODE KEEPS answer the question the activity check only
+estimates, and they are consulted first.  Each running Claude Code process
+writes ``~/.claude/sessions/<pid>.json`` and deletes it on exit, and its
+``cwd`` names where that session works.  The desktop app keeps
+``%APPDATA%/Claude/git-worktrees.json`` for the worktrees it creates, where
+``leasedBy`` names the session holding each one; the app releases the lease
+when that session is archived and pools the worktree, from which it may lease
+it to a new session at any moment.  A worktree that is, or contains, a running
+session's working directory, or that is leased, is spared, and nothing
+overrides that: a record that a session is there outweighs any idle time.
+Both behaved so on 2026-09-10 -- a process's record vanished when its session
+ended, and a lease was released about a minute after its session was archived.
+
+NEITHER FILE IS A DOCUMENTED INTERFACE, which is why both are read in the
+sparing direction only.  A change of format can make them find less, never
+more, and finding less returns the sweep to the activity check alone, its
+behaviour before 2026-09-10.  The report's ``session records`` line, printed on
+every pass, says what was read, so that a fallback shows as one instead of
+passing for "no session anywhere".  Nor is a released lease taken as licence
+to skip the activity check: the absence of a lease is only an absence of
+evidence.
+
+WHAT THE RECORDS DO NOT COVER.  A Codex thread writes neither, so a Codex
+worktree is judged by the activity check alone -- a better proxy there than for
+Claude, since Codex runs git constantly, but not an exact one.  A session that
+moves to another worktree IS followed, observed once on 2026-09-10: a session
+started in ``eloquent-ritchie-0e4c6c`` moved to ``dual-agent-review-2026-09-10``,
+its process record's ``cwd`` then named the new worktree, with an ``updatedAt``
+beside it, and its lease on the old one stayed held, so both were spared.
+``git worktree lock`` remains the exact answer for a worktree that must survive.
+
+THE OVERRIDE IS PER WORKTREE, and the repo-wide one is gone.  A caller who has
+seen a session end -- archived in the desktop app, say -- names that session's
+worktree in ``sessions_ended``, and the activity check is skipped for that
+worktree alone; the session records and every condition after the activity
+check still apply to it, and every worktree not named keeps the full check.
+``activity_grace_seconds`` was removed from ``clean_worktrees`` rather than
+documented as dangerous, so that the recovery which exposed every live
+session's checkout at once can no longer be written.  ``py/main_repo_util.py
+--clean-worktrees --session-ended <worktree>`` is the same override from the
+command line.
+
 ONE CHECK REPORTS RATHER THAN REMOVES, and it is the only one that looks at the
 remote.  A cloud session has no primary clone, so it cannot merge its branch into
 the default branch: it can only push the ``claude/*`` branch it worked on.  Ben's
@@ -192,9 +251,11 @@ setting anticipated, which is what a sweep that may run unattended wants.
 from __future__ import annotations
 
 import filecmp
+import json
 import os
 import subprocess
 import time
+from collections.abc import Collection
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
 
@@ -217,9 +278,10 @@ _WORKTREE_PARENT = Path(".claude") / "worktrees"
 # How long after its last git command a worktree is presumed still in use. An
 # hour is deliberately generous: the cost of waiting is one more maintenance run
 # before an abandoned worktree goes, while the cost of being wrong is deleting a
-# live session's checkout. A session idling on a prompt for over an hour and
-# holding a clean tree is the residual case, and `git worktree lock` is the
-# answer for anyone who wants a guarantee rather than a heuristic.
+# live session's checkout. An hour without git is not rare in a live session,
+# though -- see "AN HOUR WITHOUT GIT IS NOT AN ABANDONED SESSION" in this
+# module's docstring -- so Claude Code's own session records are read first,
+# and `git worktree lock` stays the answer for anyone who wants a guarantee.
 _ACTIVITY_GRACE_SECONDS = 60 * 60
 
 # How long the one network call gets before the sweep stops waiting on it and
@@ -227,6 +289,12 @@ _ACTIVITY_GRACE_SECONDS = 60 * 60
 # refspec makes it 0.5 s against a warm remote -- and short enough that an
 # unreachable one costs a maintenance run seconds rather than stalling it.
 _FETCH_TIMEOUT_SECONDS = 30.0
+
+# Claude Code's own records of where its sessions are. See "TWO RECORDS THAT
+# CLAUDE CODE KEEPS" in this module's docstring. Neither is a documented
+# interface, so both are read only to spare a worktree, never to remove one.
+_CLAUDE_SESSIONS_DIR = Path.home() / ".claude" / "sessions"
+_DESKTOP_WORKTREE_REGISTER = Path("Claude") / "git-worktrees.json"  # in %APPDATA%
 
 
 @dataclass(frozen=True)
@@ -259,6 +327,10 @@ class CleanupReport:
     # and does not set it.
     remote_basis: str = "not checked"
     remote_refs_stale: bool = False
+    # What Claude Code's session records held, as a clause for the report line.
+    # Printed on every pass, so that a record which could not be read shows as
+    # such instead of passing for "no session anywhere".
+    session_basis: str = "not read"
     errors: list[str] = field(default_factory=list)
 
 
@@ -690,6 +762,102 @@ def _self_worktree(worktrees: list[_Worktree]) -> Path | None:
     return max(containing, key=lambda path: len(path.parts), default=None)
 
 
+@dataclass(frozen=True)
+class _SessionRecords:
+    """What Claude Code's own records say is in use, keyed by ``_path_key``."""
+
+    running: list[tuple[str, str]]  # (pid, working-directory key) per session
+    leases: dict[str, str]  # worktree key -> the session leasing it
+    basis: str  # what was read, as a clause for the report line
+
+
+def _path_key(path: Path | str) -> str:
+    """The one spelling of a path that comparisons here use.
+
+    Absolute, with native separators and, on Windows, folded case: git prints
+    forward slashes where both of Claude Code's records write backslashes, and
+    a drive letter's case is not reliable from one tool to the next (see
+    ``repo_util/check_memory_health.py``'s docstring).
+    """
+    return os.path.normcase(os.path.abspath(path))
+
+
+def _read_session_records() -> _SessionRecords:
+    """Read both of Claude Code's records, tolerating either being absent.
+
+    Nothing here raises.  A record that cannot be read leaves the sweep with the
+    activity check alone, which is safe only if the report says so, so every
+    failure lands in ``basis`` instead.
+    """
+    running: list[tuple[str, str]] = []
+    unreadable = 0
+    if _CLAUDE_SESSIONS_DIR.is_dir():
+        for record in sorted(_CLAUDE_SESSIONS_DIR.glob("*.json")):
+            try:
+                data = json.loads(record.read_text(encoding="utf-8"))
+                pid = str(data.get("pid", record.stem))
+                running.append((pid, _path_key(data["cwd"])))
+            except (OSError, ValueError, KeyError, TypeError, AttributeError):
+                unreadable += 1
+        sessions = f"{len(running)} running session(s) in {_CLAUDE_SESSIONS_DIR}"
+        if unreadable:
+            sessions += f", {unreadable} record(s) unreadable"
+    else:
+        sessions = f"no {_CLAUDE_SESSIONS_DIR}"
+
+    leases: dict[str, str] = {}
+    appdata = os.environ.get("APPDATA")
+    register = None if appdata is None else Path(appdata) / _DESKTOP_WORKTREE_REGISTER
+    if register is None or not register.is_file():
+        desktop = "no desktop worktree register"
+    else:
+        try:
+            entries = json.loads(register.read_text(encoding="utf-8"))["worktrees"]
+            for entry in entries.values():
+                if entry.get("leasedBy"):
+                    leases[_path_key(entry["path"])] = str(entry["leasedBy"])
+            desktop = f"{len(leases)} of {len(entries)} desktop worktree(s) leased"
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            desktop = f"desktop worktree register unreadable ({type(exc).__name__})"
+    return _SessionRecords(running, leases, f"{sessions}; {desktop}")
+
+
+def _session_in(worktree: Path, records: _SessionRecords) -> str | None:
+    """Why Claude Code's records put a session in ``worktree``, or None.
+
+    A running session counts when its working directory is the worktree or lies
+    inside it -- never the other way round, since a session started in
+    ``GitRepos`` itself would then contain, and spare, every harness worktree
+    beneath it.
+    """
+    key = _path_key(worktree)
+    leased_by = records.leases.get(key)
+    if leased_by is not None:
+        return f"leased by Claude session {leased_by}"
+    for pid, cwd in records.running:
+        if cwd == key or cwd.startswith(key + os.sep):
+            return f"a running Claude Code session (pid {pid}) works in it"
+    return None
+
+
+def is_linked_worktree(repo_dir: Path, path: Path) -> bool:
+    """Whether ``path`` names one of ``repo_dir``'s linked worktrees.
+
+    For a caller checking ``sessions_ended`` before a sweep: a name matching no
+    worktree would otherwise be ignored, and the worktree its author meant would
+    be spared as "may be in use" with nothing saying that the override missed it.
+    A repo whose worktrees cannot be listed answers False, the same failure the
+    sweep itself reports for that repo, rather than ending the run with a
+    traceback before any repo is reached.
+    """
+    key = _path_key(path)
+    try:
+        worktrees = _list_worktrees(repo_dir)
+    except (RuntimeError, OSError):
+        return False
+    return any(_path_key(worktree.path) == key for worktree in worktrees[1:])
+
+
 def _holds_no_file(directory: Path) -> bool:
     """True if ``directory`` contains no file at any depth, only directories.
 
@@ -731,12 +899,7 @@ def _rmdir_tree(directory: Path) -> None:
     directory.rmdir()
 
 
-def _sweep_empty_dirs(
-    checkout_root: Path,
-    report: CleanupReport,
-    *,
-    activity_grace_seconds: float = _ACTIVITY_GRACE_SECONDS,
-) -> None:
+def _sweep_empty_dirs(checkout_root: Path, report: CleanupReport) -> None:
     """Delete empty directories left under ``.claude/worktrees/``, then the parent.
 
     ``checkout_root`` is the root of a checkout whose ``.claude/worktrees/`` is
@@ -767,9 +930,10 @@ def _sweep_empty_dirs(
     since a live worktree holds a checkout within moments of being created.
     "No file at any depth" widens the window to include a checkout whose
     directories exist but whose files are not yet written, so the WIDER CASE
-    ALONE is gated on ``activity_grace_seconds`` -- the same hour the linked
-    worktree loop uses, and overridable the same way.  A literally empty
-    directory is still removed on sight, exactly as before.
+    ALONE is gated on ``_ACTIVITY_GRACE_SECONDS`` -- the same hour the linked
+    worktree loop uses.  ``sessions_ended`` does not reach it: a husk has no
+    session to name.  A literally empty directory is still removed on sight,
+    exactly as before.
 
     A husk that does hold a file is left alone and unreported, deliberately: it
     is either a live worktree that ``clean_worktrees``' own loop has already
@@ -791,7 +955,7 @@ def _sweep_empty_dirs(
             continue
         if any(child.iterdir()):
             idle = time.time() - _newest_mtime(child)
-            if idle < activity_grace_seconds:
+            if idle < _ACTIVITY_GRACE_SECONDS:
                 report.kept_worktrees.append(
                     (
                         str(child),
@@ -814,15 +978,23 @@ def _sweep_empty_dirs(
 
 
 def clean_worktrees(
-    repo_dir: Path, *, activity_grace_seconds: float = _ACTIVITY_GRACE_SECONDS
+    repo_dir: Path, *, sessions_ended: Collection[Path] = ()
 ) -> CleanupReport:
     """Prune, remove finished agent worktrees, then delete their merged branches.
+
+    ``sessions_ended`` names worktrees whose sessions the caller has seen end:
+    for those alone the activity check is skipped, and every other condition
+    still applies.  See "THE OVERRIDE IS PER WORKTREE" in this module's
+    docstring.
 
     Nothing here raises on a per-item failure: a worktree that will not remove
     or a branch that will not delete lands in ``report.errors`` and the pass
     continues, so one wedged leftover cannot block the rest of the cleanup.
     """
     report = CleanupReport()
+    ended = {_path_key(path) for path in sessions_ended}
+    records = _read_session_records()
+    report.session_basis = records.basis
 
     prune = _git(repo_dir, "worktree", "prune")
     report.pruned = prune.returncode == 0
@@ -845,17 +1017,28 @@ def clean_worktrees(
         if worktree.locked:
             report.kept_worktrees.append((name, "locked via `git worktree lock`"))
             continue
-        # Before _worktree_status, whose probe refreshes the index this reads
-        # (its mtime restore is only best-effort). See _seconds_since_activity.
-        idle = _seconds_since_activity(worktree.path)
-        if idle is None:
-            report.kept_worktrees.append((name, "cannot read its git activity stamp"))
+        # Before the activity check, and beyond the reach of sessions_ended: a
+        # record that a session is here outweighs any idle time, and any
+        # caller's belief that the session has ended.
+        session = _session_in(worktree.path, records)
+        if session is not None:
+            report.kept_worktrees.append((name, session))
             continue
-        if idle < activity_grace_seconds:
-            report.kept_worktrees.append(
-                (name, f"git activity {int(idle // 60)} min ago; may be in use")
-            )
-            continue
+        named_ended = _path_key(worktree.path) in ended
+        if not named_ended:
+            # Before _worktree_status, whose probe refreshes the index this reads
+            # (its mtime restore is only best-effort). See _seconds_since_activity.
+            idle = _seconds_since_activity(worktree.path)
+            if idle is None:
+                report.kept_worktrees.append(
+                    (name, "cannot read its git activity stamp")
+                )
+                continue
+            if idle < _ACTIVITY_GRACE_SECONDS:
+                report.kept_worktrees.append(
+                    (name, f"git activity {int(idle // 60)} min ago; may be in use")
+                )
+                continue
         dirty, ignored = _worktree_status(worktree.path)
         if dirty:
             report.kept_worktrees.append((name, "has uncommitted or untracked changes"))
@@ -874,20 +1057,20 @@ def clean_worktrees(
             continue
         result = _git(repo_dir, "worktree", "remove", str(worktree.path))
         if result.returncode == 0:
-            report.removed_worktrees.append(name)
+            report.removed_worktrees.append(
+                f"{name} (named as ended, so its activity was not timed)"
+                if named_ended
+                else name
+            )
         else:
             report.errors.append(f"worktree remove {name}: {result.stderr.strip()}")
 
     # Sweep the MAIN worktree's husks (worktrees[0] -- see _list_worktrees),
     # wherever the tool is running from; keep sweeping the running checkout's
     # own .claude/worktrees/ too when that is a different place.
-    _sweep_empty_dirs(
-        worktrees[0].path, report, activity_grace_seconds=activity_grace_seconds
-    )
+    _sweep_empty_dirs(worktrees[0].path, report)
     if repo_dir.resolve() != worktrees[0].path.resolve():
-        _sweep_empty_dirs(
-            repo_dir, report, activity_grace_seconds=activity_grace_seconds
-        )
+        _sweep_empty_dirs(repo_dir, report)
 
     # Re-list: a branch held by a worktree removed above is only now deletable.
     still_checked_out = {
@@ -932,6 +1115,9 @@ def print_report(report: CleanupReport) -> None:
         print(f"worktrees: deleted branch {branch}")
     for branch, reason in report.kept_branches:
         print(f"worktrees: kept branch {branch} ({reason})")
+    # Printed on every pass for the reason the remote line below is: a record
+    # that could not be read must not pass for "no session anywhere".
+    print(f"worktrees: session records: {report.session_basis}")
     # Printed on every pass, found or not: what this line reports is the basis,
     # and without it a reader cannot tell a true "none stranded" from a stale one.
     print(f"worktrees: remote {_AGENT_BRANCH_PREFIX} branches: {report.remote_basis}")

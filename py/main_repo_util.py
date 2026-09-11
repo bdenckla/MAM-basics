@@ -7,12 +7,21 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --repos MAM-basics
     .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
+    .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --session-ended <worktree path>
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
 
 ``--workspace-file all-repos.code-workspace`` is what widens any of these past the
 handful of repos ``MAM-basics.code-workspace`` lists, and is worth spelling out for
 ``--clean-worktrees``: the repos most in need of it are the ones with no Python and
 so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
+
+``--session-ended <worktree>`` belongs to ``--clean-worktrees`` alone. It says the
+session in that worktree has ended, so the sweep skips the activity check for that
+worktree and no other; every other condition still applies, Claude Code's own
+records of running sessions included. A path that is no linked worktree of the
+selected repos is refused before anything runs. See "THE OVERRIDE IS PER
+WORKTREE" in ``repo_util/git_worktree_cleanup.py`` for why this replaced a
+repo-wide switch.
 
 Three of the repos that file lists are private, so a sweep over all of them
 produces findings that must not land in this public repo's tracked tree.
@@ -41,6 +50,7 @@ from repo_util.check_repo_standards import run_check_repo_standards_across_repos
 from repo_util.clean_worktrees import (
     problem_repos as worktree_problem_repos,
     run_clean_worktrees_across_repos,
+    unknown_worktrees,
 )
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util import maintenance_policy
@@ -90,6 +100,17 @@ def build_parser() -> argparse.ArgumentParser:
             "Keep only repos of this visibility, per in/repo_maintenance_policy.json."
             " Use it to split a report in two so the private half never reaches this"
             " public repo's tree (default: all)"
+        ),
+    )
+
+    parser.add_argument(
+        "--session-ended",
+        nargs="+",
+        default=[],
+        metavar="WORKTREE",
+        help=(
+            "With --clean-worktrees: linked worktree(s) whose sessions you have"
+            " seen end. The activity check is skipped for these alone"
         ),
     )
 
@@ -189,6 +210,9 @@ def build_parser() -> argparse.ArgumentParser:
 def _validate_action_specific_args(
     parser: argparse.ArgumentParser, args: argparse.Namespace
 ) -> None:
+    if args.session_ended and not args.clean_worktrees:
+        parser.error("--session-ended only applies to --clean-worktrees")
+
     if args.commit_across_repos:
         if args.message is None and args.message_file is None:
             parser.error(
@@ -334,10 +358,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
 
     if args.clean_worktrees:
+        ended = [Path(path) for path in args.session_ended]
+        unknown = unknown_worktrees(repo_infos, ended)
+        if unknown:
+            # Refused before anything runs: a name matching nothing would be
+            # ignored, and the worktree meant would be spared as "may be in use"
+            # with nothing saying that the override missed it.
+            parser.error(
+                "--session-ended names no linked worktree of the selected repos: "
+                + ", ".join(str(path) for path in unknown)
+            )
         # Same contract as --run-black: a repo the sweep could not clean fails
         # the run rather than being passed over. A worktree deliberately spared
         # is not a failure -- see repo_util/clean_worktrees.py.
-        reports = run_clean_worktrees_across_repos(repo_infos)
+        reports = run_clean_worktrees_across_repos(repo_infos, sessions_ended=ended)
         return 1 if worktree_problem_repos(reports) else 0
 
     run_commit_across_repos(

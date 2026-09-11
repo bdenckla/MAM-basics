@@ -286,7 +286,9 @@ tree stayed still. What was verified then:
   worktree removed. Removing it needed the `activity_grace_seconds=0` override of H1: the
   session had ended 15 minutes earlier, inside the sweep's one-hour grace, so the sweep spared
   it as "may be in use". Only the activity heuristic was overridden; every other condition
-  still ran.
+  still ran. **Correction 2026-09-10: that override no longer exists.** It switched the
+  activity check off for every worktree in the repo at once; `--session-ended` is its
+  per-worktree replacement. See H1.
 - MAM-basics: 0 worktrees, 0 `claude/*` branches, `main` at `4afa1e8`.
 - Every repo in GitRepos clean and pushed.
 
@@ -336,7 +338,7 @@ Six actions, mutually exclusive, one per invocation:
 
 | Action | Writes? | Notes |
 |---|---|---|
-| `--clean-worktrees` | yes | removes finished worktrees + merged `claude/*` branches |
+| `--clean-worktrees` | yes | removes finished worktrees + merged `claude/*` branches; `--session-ended` names worktrees whose sessions ended |
 | `--check-repo-standards` | no | |
 | `--check-memory-health` | no | |
 | `--audit-line-terms` | no | |
@@ -374,7 +376,8 @@ the workspace file rather than typing it.
 .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
 ```
 Read every `kept ... (reason)` line. A spared worktree is not a failure; it is a question.
-`WORKTREE_PROBLEM_COUNT` is the failure signal.
+`WORKTREE_PROBLEM_COUNT` is the failure signal. Read the `worktrees: session records:` line
+too, and before the run go through H8's three checks, which the sweep cannot make for you.
 
 **2–4. The three read-only checks**, in any order:
 ```
@@ -533,9 +536,22 @@ over an hour earlier. **Run the sweep first; investigate only what it spares.** 
 restores the index mtime around its OWN probe; a probe you run from the shell gets no such
 restore. If you have already poisoned the stamps, do not reach for a force flag — the module
 documents that a `--force` reaches none of its conditions, since all are decided in Python
-before git runs. Confirm the real times from the index mtimes, then call
-`git_worktree_cleanup.clean_worktrees(repo, activity_grace_seconds=0)` from a throwaway
-`.novc/` script, which is the documented parameter rather than an override of its judgement.
+before git runs. Establish that each spared worktree's session has ended — in the desktop
+app, `mcp__ccd_session_mgmt__list_sessions` with `include_archived` gives each session's `cwd`
+and whether it `isArchived` — then name exactly those worktrees:
+
+```
+.venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace --repos <repo> --session-ended <worktree path>
+```
+
+**Correction 2026-09-10: this paragraph used to end by prescribing
+`clean_worktrees(repo, activity_grace_seconds=0)` from a throwaway script, and that call
+switched the activity check off for every worktree in the repo at once.** That day the session
+running in `friendly-volhard-77bb64` had a worktree that was found, 24 minutes later and on the
+same commit, to be clean, merged and holding nothing of its own, so such a call would have
+removed it from under that session. The parameter was removed the same day, and
+`--session-ended` skips the activity check for the named worktrees alone. H8 is the other half
+of the same risk.
 
 **H2 — A spared worktree holding gitignored content is a review task, not a bug.** The sweep
 spares a worktree whose gitignored files exist nowhere else, naming them. Check each is
@@ -580,6 +596,32 @@ explicitly.
 **H7 — Repo-wide reformatting is its own commit.** If black touches files unrelated to any
 other change, that is pre-existing drift (usually a black version bump) and must not ride
 along and make a small change look like a formatting commit.
+
+**H8 — The activity check times git, not a session, so an idle live session looks
+abandoned.** Measured 2026-09-10: the session running in `friendly-volhard-77bb64` was 57
+minutes past its last git command when a sweep read its stamp, and a sweep a few minutes later
+would have been free to remove its worktree. Since that day the sweep first reads two records
+Claude Code keeps — `~/.claude/sessions/<pid>.json`, one per running process, and the desktop
+app's `%APPDATA%/Claude/git-worktrees.json`, whose `leasedBy` names the session holding each
+worktree the app made — and spares any worktree they place a session in, whatever its idle
+time. Read the `worktrees: session records:` line on every run: it says what was read, and a
+record reported missing or unreadable means the sweep is back to the activity check alone.
+`py/repo_util/git_worktree_cleanup.py`'s "AN HOUR WITHOUT GIT IS NOT AN ABANDONED SESSION"
+has the fuller statement. Three things those records do not cover, so check them before a
+sweep:
+
+1. **A Codex thread writes neither record**, so a Codex worktree is judged by its git activity
+   alone. Ask Ben which Codex worktrees to keep, and `git worktree lock` any whose thread is
+   live. On 2026-09-10 his answer was the one named `0e63`, which holds `MAM-private` and
+   `phonetic-hbo`.
+2. **A session that moves to another worktree leaves its lease behind.** Observed once, on
+   2026-09-10: a session started in `eloquent-ritchie-0e4c6c` moved to
+   `dual-agent-review-2026-09-10`, and its process record's `cwd` followed it there, but the
+   desktop lease on `eloquent-ritchie-0e4c6c` stayed held. Both were spared, which is right;
+   the old worktree becomes removable only once that session is archived.
+3. **The desktop app pools a released worktree and may lease it to a new session at any
+   time.** A worktree reported as `leased by Claude session …` is in use even when the session
+   that first made it is archived.
 
 ---
 
