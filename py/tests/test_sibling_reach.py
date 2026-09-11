@@ -31,7 +31,7 @@ useless and gets deleted, so this one is an AST pass with three deliberate narro
    46 of the 109 ``../`` constants in the tree, and every stale ``../masorah-books``
    and ``../al-hatorah`` citation CLAUDE.md leaves standing on purpose.
 2. A CWD-RELATIVE LITERAL IS CONSIDERED ONLY WHEN IT STARTS WITH ``../``.  Prose
-   mentions a sibling mid-sentence (``argparse`` help in ``subcommands/diff_mpp.py``
+   mentions a sibling mid-sentence (``argparse`` help in ``subcommands/diff_mpplus.py``
    formerly said "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
    deliberately misses is a path built as ``f"{x}/../MAM-parsed"``, which nothing here
    writes.
