@@ -26,6 +26,13 @@ status. Phases 1 and 2 create their successors last; Phase 3 creates none.
 Keep one writer in the shared checkout. An open
 predecessor task is expected; simultaneous staging or editing is not.
 
+Correction recorded by a Claude session on 2026-09-11, for finding 6 of the 2026-09-10 review:
+the production refresh that the paragraph above calls a separate decision has been made and
+carried out. `209b4c05` (2026-09-10 20:53) downloaded the 20 unequal chapters, and
+`in/mam-ws-revisions.json` has held 929 records, one per chapter, since then. The section
+"Production refresh of the 20 chapters, 2026-09-10" below records what the refresh changed. The
+paragraph above stays as the record of Phase 3's result.
+
 - Development checkout: `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`.
 - Existing branch: `codex-worktree-3a6b`.
 - Saved project: `ws-direct`, ID `3f065f8d-6225-4734-b84d-ec5d68aad18e`.
@@ -658,6 +665,12 @@ The production manifest covers 909 chapters, so the 929-chapter unchanged
 sample describes a fully populated scratch corpus. A normal all-book run
 against the committed partial seed would fetch the 20 excluded chapters.
 
+Correction recorded 2026-09-11, for finding 6 of the 2026-09-10 review: since `209b4c05` the
+production manifest covers all 929 chapters, so the partial seed this paragraph describes no
+longer exists; see "Production refresh of the 20 chapters, 2026-09-10" below.
+`doc/efficient-wikisource-downloads-phase3-validation.json` still says "20 unequal chapters have
+no seeded record"; it is Phase 3's receipt and stays as written.
+
 Both live retrievals independently regenerated format-2, plain/plus, support
 files, documentation, MAM-with-doc, MAM-simple, Sefaria/AJF, and OSIS. All
 628 product paths and hashes matched:
@@ -735,6 +748,44 @@ The unresolved production-text decision concerns the 20 excluded chapters.
 Chapter revisions establish raw wikitext freshness, not transcluded-template
 freshness or one simultaneous whole-corpus snapshot. Commit locally; main
 integration remains scheduled for the archival procedure below.
+
+Correction recorded 2026-09-11, for finding 6 of the 2026-09-10 review: that production-text
+decision was taken and carried out on 2026-09-10, in `209b4c05`; the next section records it.
+
+## Production refresh of the 20 chapters, 2026-09-10
+
+Recorded by a Claude session on 2026-09-11, for finding 6 of the 2026-09-10 review
+(`doc/review-findings-2026-09-10.md`, on branch `dual-agent-review-2026-09-10` until that review
+round integrates). Until this section, the refresh was recorded only in its commit message,
+"Refresh Wikisource products. Download current Wikisource data and regenerate the complete
+pipeline." No document records who decided to make it, or when.
+
+The refresh is `209b4c05` (2026-09-10 20:53, co-authored by Codex), whose parent is `b2052ab9`,
+the Phase 3 seed commit. It reached `main` through the merge `a0a2e3ab` at 21:22. Every figure
+below compares `209b4c05` with its parent; re-establish each with the command given, and treat a
+mismatch as a finding.
+
+1. **All 20 chapters Phase 3 left unseeded were downloaded**, in 11 books: Genesis 43;
+   Deuteronomy 28 and 32; Joshua 19; Judges 10; 1 Samuel 1 and 22; 2 Kings 6 and 17; Isaiah 22,
+   24, 42 and 50; Zephaniah 3; Psalms 4, 71 and 84; Daniel 3; 2 Chronicles 26 and 28.
+   `in/mam-ws-revisions.json` went from 909 records to 929
+   (`git diff --stat 209b4c05^ 209b4c05 -- in/mam-ws/ in/mam-ws-revisions.json`).
+2. **The same 11 books changed in the three intermediates written from `in/mam-ws/`**:
+   `out/mam-ws-bot/proto/`, `out/mam-ws-bot/proto-fmt-2/` and `out/mam-ws-parsed-fmt-2/`.
+3. **21 verses changed in `MAM-parsed/plus/`, and the same 21 in `MAM-parsed/plain/`**, all in
+   those chapters:
+   1. eleven meteg changes, nine removals (Joshua 19:8, 1 Samuel 1:6 and 22:22, 2 Kings 6:23,
+      Isaiah 22:5, 42:24 and 50:7, Zephaniah 3:13, 2 Chronicles 26:15) and two additions
+      (Isaiah 24:18, 2 Chronicles 28:19);
+   2. ten changes to notes and templates (Genesis 43:28, Deuteronomy 28:30 and 32:18, Judges
+      10:11, 2 Kings 17:15, Psalms 4:3, 71:9 and 84:4, Daniel 3:5, 2 Chronicles 28:23).
+4. **Only the eleven meteg changes reached `MAM-simple/xml-vtrad-mam/`**
+   (`git diff 209b4c05^ 209b4c05 -- MAM-simple/xml-vtrad-mam/`), and `MAM-for-Sefaria/csv/` and
+   `MAM-OSIS/MAPM-24/` changed only in the six books holding those eleven verses.
+5. **Two downstream outputs were left stale and caught up on 2026-09-11**: the mpplus change log
+   under `gh-pages/MAM-with-doc/change-log/`, in `6b45ad0f`, once `f11ecaf8` had fixed the diff
+   defect that the Isaiah 24:18 meteg exposed (findings 1 and 2 of the same review); and the
+   post-stress-meteg survey, in `aedac688`, which also moved the page's pinned counts.
 
 ## Regeneration, suite, and handoff commands
 

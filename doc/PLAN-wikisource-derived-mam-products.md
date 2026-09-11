@@ -32,6 +32,13 @@ bot captures are unchanged. Authorized implementation is complete; no successor
 task remains. Verification receipts are under "Execution log". Integration into
 `main` remains scheduled for archival under the instructions below.
 
+Correction recorded by a Claude session on 2026-09-11, for finding 6 of the 2026-09-10 review:
+"Raw inputs and bot captures are unchanged" was true when this programme completed and stopped
+being true later the same day. The production refresh `209b4c05` (2026-09-10 20:53) changed 11
+books of `in/mam-ws/` and the same 11 books of `out/mam-ws-bot/proto/`, and with them 21 verses
+of the Wikisource-derived plain and plus products. `doc/PLAN-efficient-wikisource-downloads.md`
+§"Production refresh of the 20 chapters, 2026-09-10" records the refresh.
+
 ## Exact development location and handoff
 
 - Development checkout: `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`.
