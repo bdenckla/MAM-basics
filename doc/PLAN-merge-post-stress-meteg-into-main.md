@@ -9,11 +9,13 @@ rewrote the same generator after they diverged.
 **CORRECTION, 2026-09-09: THE MERGE THIS PLAN DESCRIBES WAS EXECUTED, AND THE CENSUS FIGURES
 IN "WHAT MUST NOT CHANGE" ARE HISTORICAL.** The 263,191 words and 14,752 MBS_O chanted words
 were the branch's, before the merge brought `main`'s qamats-variant fix in; the tracked survey
-counts 262,819 words and, since 2026-09-09, 14,635 MBS_O chanted words — 14,614 between the
-merge and that date, the census having identified a chanted word by its form until then, so
-that 21 prose forms occurring twice in one numbered verse each read as one chanted word.
+counts 262,819 words and, since 2026-09-11, 14,628 MBS_O chanted words. It counted 14,635
+from 2026-09-09 until then, when the survey first counted the eleven meteg edits that reached
+MAM-basics in the 2026-09-10 Wikisource refresh, and 14,614 between the merge and 2026-09-09,
+the census having identified a chanted word by its form until then, so that 21 prose forms
+occurring twice in one numbered verse each read as one chanted word.
 The MAS figures the section names, 232 as 178 prose and 54 poetic, and the type and fit-model
-figures are current. `doc/post-stress-meteg-method.md` has the correction in full.
+figures are current. `doc/post-stress-meteg-method.md` has both changes in full.
 
 ## Checkout, and how to verify it
 

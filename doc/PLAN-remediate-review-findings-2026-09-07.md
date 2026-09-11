@@ -10,6 +10,16 @@ chanted word carrying two, which also put the count of MBS_O chanted words with 
 meteg at 143 rather than 122. Every other figure in that result stands.
 `doc/post-stress-meteg-method.md` has the correction in full.
 
+**CORRECTION, 2026-09-11: THREE MORE FIGURES IN THE WAVE 2 RESULT ARE HISTORICAL, AND THE PROSE
+MBS_O COUNT HAS MOVED AGAIN.** The survey regenerated on 2026-09-11 counts the eleven meteg
+edits that reached MAM-basics in the 2026-09-10 Wikisource refresh, all in prose verses. So
+the prose MBS_O count is 12,842 rather than the 12,849 the note above gives, the positional
+census's prose figure is 12,955 rather than 12,962, and the currency comparison has 38,154
+snapshot U+05BD against 38,163 in MAM-simple rather than 38,161 against 38,170, with the same
+nine differing numbered verses. The result's other figures stand.
+`doc/post-stress-meteg-method.md`'s section "Eleven meteg edits reached the survey on
+2026-09-11" lists the eleven.
+
 The planning phase and all remediation work were completed on 2026-09-08. Ben's decision on
 2026-09-08 places finding 23.2's worktree housekeeping outside remediation; Ben will track that
 housekeeping separately.

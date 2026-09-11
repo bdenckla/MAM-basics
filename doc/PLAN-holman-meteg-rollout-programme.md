@@ -6,15 +6,18 @@ State: executed 2026-09-04
 FIGURES ARE HISTORICAL.** The current tracked survey counts 232 MAS chanted words: 178 in
 prose verses and 54 in poetic verses. After each qamats-variant MAM chanted word is counted
 once, the prose and poetic denominators are 233,277 and 29,542; the MBS_O chanted-word counts
-are 12,849 and 1,786; and the silluq counts are 18,738 and 4,465. (The prose MBS_O count read
+are 12,842 and 1,786; and the silluq counts are 18,738 and 4,465. (The prose MBS_O count read
 12,828 until 2026-09-09, when the census stopped identifying a chanted word by its form: 21
 prose forms occur twice in one numbered verse with one meteg on each occurrence, and each such
-pair had been counted as one chanted word carrying two. `doc/post-stress-meteg-method.md` has
-the correction in full.) The positional census
-separately counts 12,962 and 1,805 individual pre-stress marks. The qamats census has 370 variant rows
-and 372 duplicate phonetic-reading entries. The current currency comparison finds nine
-differing numbered verses, 38,161 U+05BD in the Phonetic MAM snapshot against 38,170 in
-MAM-simple. The discussion below of 231 MAS, 221 differing verses, 38,379 against 38,170,
+pair had been counted as one chanted word carrying two. It read 12,849 from then until
+2026-09-11, when the survey first counted the eleven meteg edits of the section "Eleven other
+Holman meteg edits" below, which reached MAM-basics in the 2026-09-10 Wikisource refresh.
+`doc/post-stress-meteg-method.md` has both changes in full.) The positional census separately
+counts 12,955 and 1,805 individual pre-stress marks, the prose figure having been 12,962 until
+2026-09-11. The qamats census has 370 variant rows and 372 duplicate phonetic-reading entries.
+The current currency comparison finds nine differing numbered verses, 38,154 U+05BD in the
+Phonetic MAM snapshot against 38,163 in MAM-simple, which were 38,161 against 38,170 until
+2026-09-11. The discussion below of 231 MAS, 221 differing verses, 38,379 against 38,170,
 and an oracle that had not been refreshed remains the dated execution record from 2026-09-04;
 none of those figures is current. Ben's 2026-09-04 decision not to refresh the oracle remains
 historical fact; the oracle was refreshed later for another reason.
@@ -37,6 +40,15 @@ later date, by either of the two routes that section gives. Nothing here waits o
 them, and a session should not offer to start them. This block said "What remains of this programme is item 1's Phase 1, the
 post-stress meteg survey page, and its Phase 2, the M23 card link" until item 1's
 plan recorded both as done.
+
+**DOWNLOADED 2026-09-10: ALL ELEVEN ARE IN `in/mam-ws/` NOW, SO THE BLOCK ABOVE IS A RECORD
+OF 2026-09-04.** `209b4c05` ("Refresh Wikisource products") downloaded current Wikisource
+data and brought all eleven in, and MAM-private `65ee486` brought them into the Phonetic MAM
+snapshot that evening. Checked 2026-09-11, verse by verse: at each of the eleven verses,
+`in/mam-ws/`, MAM-simple and the Phonetic MAM snapshot changed by exactly the one meteg the
+section below names and by nothing else. The post-stress-meteg survey regenerated that day
+counts all eleven; `doc/post-stress-meteg-method.md`'s section "Eleven meteg edits reached the
+survey on 2026-09-11" lists them.
 
 **Item 1's Phase 1 raised one data-currency finding, and Ben has SETTLED it: the
 staleness stands.** His words, 2026-09-04: *"I can tolerate that staleness."* The
@@ -594,6 +606,11 @@ from a worktree, check `.claude/worktrees/` for stray sibling directories
 afterwards, every time.
 
 ### Eleven other Holman meteg edits are live on Wikisource and absent from this snapshot — their DOWNLOAD deferred 2026-09-03
+
+**DOWNLOADED 2026-09-10, SO THIS SECTION IS NOW A RECORD.** `209b4c05` brought all eleven into
+`in/mam-ws/`, and so into MAM-simple, and MAM-private `65ee486` brought them into the Phonetic
+MAM snapshot. The note "DOWNLOADED 2026-09-10" near the top of this file has the check. The
+rest of this section is as it stood on 2026-09-04.
 
 **Ben's decision, 2026-09-03: leave their download for later.** They are
 recorded here so the gap is not lost. Nothing in items 5 through 7 waits on
