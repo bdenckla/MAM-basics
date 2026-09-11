@@ -9,9 +9,10 @@ Job leaves through `../line-breaks/`.
 Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section says whose crop it is
 and which image it was read from.
 
-mgketer.org presents the Codex a chapter at a time, a psalm at a time in Psalms, as what looks like
-a single image, often several pages long; whether it is one image or pages joined by the page's
-script, Ben does not know (2026-09-10).
+Ben's crops are from mgketer.org unless he says otherwise (Ben, 2026-09-10). mgketer.org presents
+the Codex a chapter at a time, a psalm at a time in Psalms, as what looks like a single image,
+often several pages long; whether it is one image or pages joined by the page's script, Ben does
+not know.
 
 ## 253v-Ps72v15-yevarkhenhu.png
 
@@ -33,15 +34,15 @@ manuscript agrees. The whole account is `../../doc/meteg-after-silluq-psalms-72-
 ## 271r-col2-line5-Job4v12-menhu.png
 
 Job 4:12, the verse-final word, which ends **line 5 of column 2 of leaf 271r**
-(`../line-breaks/271r.json` lines 814–836). Ben's crop, 2026-09-10. Which site it was read from
-is not yet recorded.
+(`../line-breaks/271r.json` lines 814–836). Ben's crop, 2026-09-10, from
+mgketer.org's image of Job 4.
 
 **The Aleppo Codex has two meteg/silluq strokes on this word, one under the mem and one under the
 he** — confirmed by Ben from this image on 2026-09-10. The Internet Archive's photograph of the
 leaf, `../aleppo-pages/271r.jpg`, has the same two strokes at its resolution.
 
 The stroke under the mem stands to the right of its segol, in the same place as the Leningrad
-Codex's (`../../leningrad/page-snips/398A-col2-line4-Job4v12-menhu.png`). Ben calls it an early
+Codex's (`../../leningrad/page-snips/398A-Job4v12-menhu.png`). Ben calls it an early
 metsil, metsil being his shorthand for meteg/silluq, because at this word whether it is a meteg or
 a silluq is exactly what is in question. He had taken the placement for scribal whim, and finds
 the two manuscripts' agreement on it unlikely to be chance. Yeivin says that both manuscripts keep

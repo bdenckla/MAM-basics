@@ -1,7 +1,9 @@
 # page-snips
 
 Crops of Leningrad Codex page images, kept as the evidence behind a stated fact about the
-manuscript. One file per fact, named `<folio><side>-col<N>-line<N>-<ref>-<slug>.png`.
+manuscript. One file per fact, named `<folio><side>-col<N>-line<N>-<ref>-<slug>.png` when the line
+has been read off the image, and `<folio><side>-<ref>-<slug>.png` when it has not, which is the
+usual case: Ben does not report lines and columns (2026-09-10).
 
 Images come from the two sets the wiki index links, which are the same photographs:
 
@@ -80,10 +82,10 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 The folio is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
 
-## 398A-col2-line4-Job4v12-menhu.png
+## 398A-Job4v12-menhu.png
 
 Job 4:12, the verse-final word מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
-2026-09-10. The column and line in this file's name are the estimator's (below), not a reading.
+2026-09-10.
 
 **The Leningrad Codex has a meteg/silluq stroke under the mem and another under the he** —
 confirmed by Ben from this image on 2026-09-10. UXLC 3.9 and WLC record the same two marks.
@@ -111,5 +113,4 @@ column 2, line 4.0:
 {'page': '398A', 'fline-guess': '31.0', 'line-guess': '4.0', 'column-guess': 2}
 ```
 
-Ben read neither the column nor the line off the image, so the file name carries the
-estimator's, and this crop gives no calibration point.
+Ben did not read the column or the line off the image, so this crop gives no calibration point.
