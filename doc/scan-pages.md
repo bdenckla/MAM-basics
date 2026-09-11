@@ -40,6 +40,12 @@ for a fresh session that has no other context.
   editions are still unread seeds — every one has a null `start_phrase`, none has a
   `stop_phrase`, and no edition has a segment. Measured that day from
   `in/scan-pages/*.json`.
+- 2026-09-10, later that day, a worktree session at `f92c061c`: **a ten-page cost probe
+  ran on koren's Genesis, and Phase 1 has still not started.** Ben asked how slow the
+  page-edge method is before the census commits to it, and the answer — about 29 seconds
+  of session wall-clock a page, with all 20 edges located exactly — is recorded under
+  Phase 1 below, in the paragraphs headed "Cost probe, 2026-09-10". The probe built no
+  tooling, and none of its ten records entered `in/scan-pages/koren.json`.
 
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 
@@ -427,7 +433,11 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   2026-08-01 — so treat the count here as the baseline and `doc/metsudah-vs-ctr.md`'s as
   a historical note. Phase 0 took it to **919**: two tests in the new lint file, and two
   more because `test_entry_point_subcommands.py` parametrizes over the entry points and
-  there is now one more.
+  there is now one more. **Re-measured 2026-09-10 at `f92c061c`, in a worktree with
+  `REPOS_ROOT` set: 987 passed, 5 skipped, of 992 collected**, so 919 is a historical figure
+  now, the suite having gained 68 tests since Phase 0's 924. Re-establish it from the repo
+  root with `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py`,
+  and re-measure rather than trust it.
 - **A worktree now runs the suite green, as of 2026-08-07 — same 919 passed, 5 skipped,
   with `REPOS_ROOT=C:/Users/BenDe/GitRepos` set.** Until that day it could not, and this
   bullet said so and told a future session to expect the failures. Two separate defects
@@ -544,6 +554,164 @@ Three things Phase 0 established that bear on how Phase 1 starts:
   2Samuel and has the whole of 1Samuel 31 first. So `census` must not assume the page's
   `bkids` is its complete contents, and the contiguity lint must tolerate two records on one
   page — which `check` already does, keying records by book rather than by page.
+
+**Cost probe, 2026-09-10: ten koren pages took 29 seconds each of session wall-clock, and
+all 20 page edges located exactly, every page meeting the next at adjacent atoms.** Ben's
+ask that day: *"a test run of the analysis of perhaps 10 pages of Koren, to see how slow
+this process is, where by 'process' I mean identifying what content each page starts and
+stops with."* A worktree session running Claude Opus 5, at MAM-basics `f92c061c`, ran the
+method below on koren's `A1-G-001.jpg` to `A1-G-010.jpg`, which have Genesis 1:1 to 8:11
+between them, one page at a time and deliberately unpipelined, so that each part of a page's
+cost could be timed apart. It built no Phase 1 tooling and wrote no record into
+`in/scan-pages/koren.json`: these paragraphs and their two tables are its whole tracked
+output. Its timing and locating scripts were throwaway, in that worktree's `.novc/`, and went
+with it, so each figure is stated with what re-establishes it.
+
+The method, per page, has three steps:
+
+1. **Render the two edge bands** with the tracked renderer, one command per band, run from
+   the repo root:
+   ```
+   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.03 0.95 0.19 --name koren-probe-A1-G-002-top
+   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.80 0.95 0.96 --name koren-probe-A1-G-002-bottom
+   ```
+   Each band comes out 1400 × 364 pixels: the running head and about four text lines at the
+   top, about four text lines and the footer at the bottom. The fractions were chosen once,
+   from a full-page render of `A1-G-001.jpg`, and fit all ten pages; that render was setup
+   and is in no figure below.
+2. **Read both bands with the `Read` tool and transcribe six atoms at each edge**, letters
+   only, the atoms of a maqaf compound taken separately.
+3. **Locate each phrase among Genesis's 20,613 atoms, demanding a position unique in the
+   book.** The atoms are the repo's: each verse's text cell, read by
+   `mb_cmn/read_books_from_mam_parsed_plus.py` from `mb_cmn.paths.mam_parsed_path()`,
+   flattened by `hkq_cmn/mam_plus_verse_data._collect_text_fragments`, split by
+   `hkq_cmn/qere_projection.TOKEN_SPLIT_RE` and stripped to the letters alef to tav. That
+   collector takes the qere at a ketiv/qere, so the probe matched the ketiv too, from a copy
+   of each verse tree with every ketiv/qere choice flipped. Genesis's one ketiv/qere whose
+   two sides differ in atom count, at 30:11, the ketiv בגד against the qere בא גד, is far
+   outside these pages.
+
+**Per page, in seconds**, from timestamps the probe's scripts logged at the start and end of
+each render and each locate:
+
+| page | cloud-only | render | read and transcribe | locate | turn between pages | wall |
+| --- | --- | --- | --- | --- | --- | --- |
+| `A1-G-001.jpg` | no | 0.7 | 13.4 | 0.2 | 7.3 | 21.6 |
+| `A1-G-002.jpg` | yes | 1.4 | 19.1 | 0.2 | 6.7 | 27.3 |
+| `A1-G-003.jpg` | yes | 1.3 | 11.8 | 0.2 | 6.3 | 19.6 |
+| `A1-G-004.jpg` | yes | 1.5 | 15.0 | 0.2 | 6.0 | 22.7 |
+| `A1-G-005.jpg` | yes | 1.2 | 14.5 | 0.2 | 7.3 | 23.1 |
+| `A1-G-006.jpg` | yes | 1.1 | 17.9 | 0.2 | 7.4 | 26.6 |
+| `A1-G-007.jpg` | yes | 1.0 | 22.3 | 0.2 | 14.4 | 37.9 |
+| `A1-G-008.jpg` | yes | 1.1 | 17.4 | 18.9 | 9.2 | 46.6 |
+| `A1-G-009.jpg` | yes | 1.2 | 17.4 | 0.2 | 11.3 | 30.1 |
+| `A1-G-010.jpg` | yes | 1.2 | 67.7 | 0.2 | — | — |
+
+The five timed columns:
+
+1. **render**: the render step's run — a full read of the JPG's bytes, which on a cloud-only
+   OneDrive placeholder is the download (0.2–0.6 s, mean 0.4 s over the nine cloud-only
+   pages), then the two `scan-page` subprocesses (0.8 s together).
+2. **read and transcribe**: from the render's end to the first locate's start — the two band
+   reads and the transcription, with the model turns and tool-call round trips they take.
+3. **locate**: from the first locate's start to the last locate's end. The script's run is
+   0.2 s a round; `A1-G-008.jpg`'s 18.9 s is one lengthening round, almost all of it the
+   model turn between its two rounds.
+4. **turn between pages**: from the last locate's end to the next render's start — the model
+   reading the locate result and issuing the next page's render.
+5. **wall**: from one render's start to the next — the four above together.
+
+Two rows stay out of every mean below: (1) `A1-G-001.jpg`, whose content had been seen in the
+setup render before its timed run, and (2) `A1-G-010.jpg`, whose read-and-transcribe figure
+includes the model writing the probe's analysis script in the same turn — a contamination the
+probe session introduced and could not undo — and which has no successor to end its wall.
+
+**The model's turns dominate, at about 95% of a page's cost; rendering is 4% of it.** Over
+the eight clean pages, `A1-G-002.jpg` to `A1-G-009.jpg`, the wall averages 29.2 s (median
+27.0 s, range 19.6–46.6 s): render 1.2 s (4%), read and transcribe 16.9 s (58%), locate
+2.5 s (9%, nearly all of it `A1-G-008.jpg`'s lengthening turn) and the turn between pages
+8.6 s (29%). The two scripts together run about 1.4 s a page, so making rendering or
+locating faster buys almost nothing; a speed-up has to cut the number or the length of the
+model's turns per page. Nine of the ten scans were cloud-only OneDrive placeholders when the
+probe began, each downloaded by its first read and left local, and none failed. A census
+therefore brings every page it reads onto the local disk: koren's 1,332 files total 2.2 GB,
+measured 2026-09-10 with
+`Get-ChildItem -LiteralPath "C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/Koren Classic Tanakh" -File | Measure-Object -Property Length -Sum`.
+
+**Accuracy, beside the speed — nothing wrong was found:**
+
+1. **Every transcription was letter-exact.** All 20 phrases matched MAM as first
+   transcribed: 124 atoms in all, and one wrong letter in any of them would have made its
+   phrase match nowhere.
+2. **All nine neighbouring pairs meet at adjacent atoms**, each shown in the last column of
+   the table below.
+3. **The seeded start record re-derived**: `A1-G-001.jpg`'s start phrase located at 1:1
+   atom 1, the start `survey` had seeded.
+4. **No page needed a second image read.** Letters were legible at 1400 pixels in all 20
+   bands.
+5. **One phrase of the 20 needed lengthening, and more atoms from the same band did it.**
+   The six start atoms of `A1-G-008.jpg`, את שם את חם ואת יפת, are in Genesis at 6:10 as
+   well as at 5:32; two more atoms pinned it, at the cost of one extra locate round and no
+   second image read. Counted from a first try of three atoms instead of six, two of the 20
+   would have needed lengthening — that one, to seven atoms, and the stop of
+   `A1-G-009.jpg`, to four, its last three atoms אל נח אל being at 7:9 as well as at 7:15.
+   The shortest unique phrase at the 20 edges was one atom 4 times, two 9 times, three 5
+   times, four once and seven once. Book-wide uniqueness is a stricter demand than a start
+   edge needs: the stop of `A1-G-007.jpg` already fixes the start of `A1-G-008.jpg` at the
+   next atom, so a census that checks each start against the previous record's stop needs
+   the start phrase only as verification.
+
+**The ten records, for Phase 1 to re-derive.** Each phrase is as transcribed, letters only.
+Once `census` exists, feeding it these phrases must give back these positions, and a mismatch
+is a finding:
+
+| page | start phrase | start | stop phrase | stop | atoms | meets the previous page |
+| --- | --- | --- | --- | --- | --- | --- |
+| `A1-G-001.jpg` | בראשית ברא אלהים את השמים ואת | 1:1 atom 1 | רקיע השמים ויברא אלהים את התנינם | 1:21 atom 4 | 247 | — |
+| `A1-G-002.jpg` | הגדלים ואת כל נפש החיה הרמשת | 1:21 atom 5 | את האדמה ואד יעלה מן הארץ והשקה | 2:6 atom 5 | 261 | adjacent |
+| `A1-G-003.jpg` | את כל פני האדמה וייצר יהוה | 2:6 atom 6 | עשה יהוה אלהים ויאמר אל האשה אף | 3:1 atom 14 | 268 | adjacent |
+| `A1-G-004.jpg` | כי אמר אלהים לא תאכלו מכל | 3:1 atom 15 | אל האדמה כי ממנה לקחת כי | 3:19 atom 12 | 258 | adjacent |
+| `A1-G-005.jpg` | עפר אתה ואל עפר תשוב ויקרא | 3:19 atom 13 | יקם וישם יהוה לקין אות לבלתי | 4:15 atom 14 | 263 | adjacent |
+| `A1-G-006.jpg` | הכות אתו כל מצאו ויצא קין | 4:15 atom 15 | בנים ובנות ויהיו כל ימי אנוש | 5:11 atom 4 | 273 | adjacent |
+| `A1-G-007.jpg` | חמש שנים ותשע מאות שנה וימת | 5:11 atom 5 | בן חמש מאות שנה ויולד נח | 5:32 atom 8 | 239 | adjacent |
+| `A1-G-008.jpg` | את שם את חם ואת יפת ויהי כי | 5:32 atom 9 | רוח חיים מתחת השמים כל אשר | 6:17 atom 19 | 246 | adjacent |
+| `A1-G-009.jpg` | בארץ יגוע והקמתי את בריתי אתך | 6:17 atom 20 | כל כנף ויבאו אל נח אל | 7:15 atom 4 | 270 | adjacent |
+| `A1-G-010.jpg` | התבה שנים שנים מכל הבשר אשר | 7:15 atom 5 | היונה מן התבה ותבא אליו היונה | 8:11 atom 3 | 262 | adjacent |
+
+Atoms per page run 239–273, mean 259: a first measurement for the atoms-per-page band that
+the Design's last lint wants. Three of the nine page breaks fall inside a maqaf compound:
+(1) between `A1-G-004.jpg` and `A1-G-005.jpg`, the compound כי־עפר; (2) between
+`A1-G-008.jpg` and `A1-G-009.jpg`, אשר־בארץ; (3) between `A1-G-009.jpg` and `A1-G-010.jpg`,
+אל־התבה. The records' atom-level positions express those three edges, where positions
+counted in chanted words could not.
+
+**Extrapolated at the clean mean of 29.2 s a page, koren's 1,240 body pages take 10.1 hours
+of session wall-clock, and the five editions' ~5,100 pages take 41.4 hours** — about 9.3 and
+38 hours at the median. So a census of koren alone is well past an afternoon and far short of
+a month, and all five editions come to about a working week of session time. Three things
+bound how far those figures travel:
+
+1. **These ten pages are a best case.** They are one-column prose in koren's plainest
+   layout, from Genesis 1–8, which a model knows about as well as any text, and the
+   letter-exact result above may owe something to that. The layouts of the poetic verses and
+   of the specially laid-out songs, pages holding two books, the Decalogue pages and the
+   other four editions' layouts are all still to come, and each can only raise the figure.
+2. **One session cannot hold a whole edition.** Each page put two band images into the
+   session's context, about 680 tokens each by the width × height / 750 estimate for a
+   1400 × 364 image, so koren's 1,240 pages would put some 1.7 million tokens of images
+   alone into one session. Phase 2's book-sized chunks therefore also bound a session's
+   context, and each chunk adds a session's start-up to the hours above.
+3. **Two levers were not tried.** The turn between pages exists because the probe ran
+   unpipelined for timing: rendering a whole book's bands up front, at about 1.2 s a page and
+   off the critical path, and reading several pages' bands in each model turn would remove
+   most of it. Parallel sessions divide the elapsed time, though not the total. Phase 1
+   should time a batched loop before Phase 2 is planned around the hours above.
+
+**Re-measure rather than trust any figure here.** Each depends on the model, the machine and
+OneDrive's state on 2026-09-10. The timings are re-measured by running the three steps on any
+ten pages with a timestamp at the start and end of each render and each locate; the
+positions, by locating the records table's phrases under step 3's atom definition, or, once
+`census` exists, by feeding it the phrases.
 
 **Phase 2 — the censuses, edition by edition.** For each of jc1, bhl, koren,
 simanim-tanakh: read every body page's edges, one book-sized chunk at a time — lints, a
