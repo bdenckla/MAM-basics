@@ -77,71 +77,103 @@ def _find_letter_occurrence(clusters, letter, occurrence):
 
 # ── Text-level apply ─────────────────────────────────────────
 
-
-def _apply_mark_removed(clusters, op):
-    idx = _find_letter_occurrence(clusters, op.on_letter, op.letter_occurrence)
-    if idx is None:
-        return
-    base, marks = _split_cluster(clusters[idx])
-    if op.char in marks:
-        marks.remove(op.char)
-    clusters[idx] = _join_cluster(base, marks)
-
-
-def _apply_mark_added(clusters, op):
-    idx = _find_letter_occurrence(clusters, op.on_letter, op.letter_occurrence)
-    if idx is None:
-        return
-    base, marks = _split_cluster(clusters[idx])
-    marks.append(op.char)
-    clusters[idx] = _join_cluster(base, marks)
+_MARK_OPS = (
+    MarkRemoved,
+    MarkAdded,
+    MarkMoved,
+    MarkReplaced,
+    GenericReplace,
+    ComplexReplace,
+    MarkReordered,
+)
 
 
-def _apply_mark_moved(clusters, op):
-    # Remove from source
-    src = _find_letter_occurrence(clusters, op.from_letter, op.from_occurrence)
-    if src is not None:
-        base, marks = _split_cluster(clusters[src])
-        if op.char in marks:
-            marks.remove(op.char)
-        clusters[src] = _join_cluster(base, marks)
-    # Add to target
-    dst = _find_letter_occurrence(clusters, op.to_letter, op.to_occurrence)
-    if dst is not None:
-        base, marks = _split_cluster(clusters[dst])
-        marks.append(op.char)
-        clusters[dst] = _join_cluster(base, marks)
+def _mark_edits(op):
+    """Split a mark-level op into its removals and its placements.
+
+    A removal is (letter, occurrence, mark).  A placement is (letter,
+    occurrence, position, mark), *position* being the index the mark has
+    among its cluster's marks in the new text.  MarkReplaced is a removal
+    and a placement on one cluster, and MarkReordered takes its marks out
+    and puts them back where the new text has them.
+    """
+    if isinstance(op, MarkRemoved):
+        return [(op.on_letter, op.letter_occurrence, op.char)], []
+    if isinstance(op, MarkAdded):
+        return [], [(op.on_letter, op.letter_occurrence, op.position, op.char)]
+    if isinstance(op, MarkMoved):
+        return (
+            [(op.from_letter, op.from_occurrence, op.char)],
+            [(op.to_letter, op.to_occurrence, op.to_position, op.char)],
+        )
+    if isinstance(op, MarkReplaced):
+        return (
+            [(op.on_letter, op.letter_occurrence, op.old_char)],
+            [(op.on_letter, op.letter_occurrence, op.new_position, op.new_char)],
+        )
+    if isinstance(op, GenericReplace):
+        return (
+            [(op.old_letter, op.old_occurrence, op.old_char)],
+            [(op.new_letter, op.new_occurrence, op.new_position, op.new_char)],
+        )
+    if isinstance(op, ComplexReplace):
+        return (
+            [(letter, occ, mark) for mark, letter, occ in op.old_qualified],
+            [
+                (letter, occ, position, mark)
+                for (mark, letter, occ), position in zip(
+                    op.new_qualified, op.new_positions, strict=True
+                )
+            ],
+        )
+    if isinstance(op, MarkReordered):
+        return (
+            [(op.on_letter, op.letter_occurrence, mark) for mark in op.chars],
+            [
+                (op.on_letter, op.letter_occurrence, position, mark)
+                for mark, position in zip(op.chars, op.new_positions, strict=True)
+            ],
+        )
+    raise TypeError(f"not a mark-level op: {op!r}")
 
 
-def _apply_mark_replaced(clusters, op):
-    idx = _find_letter_occurrence(clusters, op.on_letter, op.letter_occurrence)
-    if idx is None:
-        return
-    base, marks = _split_cluster(clusters[idx])
-    try:
-        pos = marks.index(op.old_char)
-        marks[pos] = op.new_char
-    except ValueError:
-        marks.append(op.new_char)
-    clusters[idx] = _join_cluster(base, marks)
+def _apply_mark_ops(clusters, ops):
+    """Apply a run of consecutive mark-level ops as one edit.
 
-
-def _apply_generic_replace(clusters, op):
-    # Remove old_char from old_letter, add new_char to new_letter
-    # Find old_letter (any occurrence) and remove old_char
-    for i, cluster in enumerate(clusters):
-        base, marks = _split_cluster(cluster)
-        if base == op.old_letter and op.old_char in marks:
-            marks.remove(op.old_char)
-            clusters[i] = _join_cluster(base, marks)
-            break
-    # Find new_letter (any occurrence) and add new_char
-    for i, cluster in enumerate(clusters):
-        base, marks = _split_cluster(cluster)
-        if base == op.new_letter:
-            marks.append(op.new_char)
-            clusters[i] = _join_cluster(base, marks)
-            break
+    Every removal runs first, and then every placement, lowest position
+    first.  That order is what lets a placement's position, an index in
+    the new text's cluster, name the right place.  Once the removals have
+    run, a cluster holds the marks no op touches, and when those marks
+    have the same order in both texts they are exactly the new cluster's
+    marks that no placement puts there.  Placing marks from the lowest
+    position up then puts each one after every mark that precedes it in
+    the new cluster.  So several ops on one cluster, a removal plus an
+    addition or two additions, need no particular order among themselves.
+    A cluster comes out wrong if its ops leave a change undescribed, or if
+    its untouched marks change their order, which ops comparing one class
+    of mark cannot say; either way the roundtrip verifier says so.
+    """
+    removals = []
+    placements = []
+    for op in ops:
+        op_removals, op_placements = _mark_edits(op)
+        removals.extend(op_removals)
+        placements.extend(op_placements)
+    for letter, occurrence, mark in removals:
+        idx = _find_letter_occurrence(clusters, letter, occurrence)
+        if idx is None:
+            continue
+        base, marks = _split_cluster(clusters[idx])
+        if mark in marks:
+            marks.remove(mark)
+        clusters[idx] = _join_cluster(base, marks)
+    for letter, occurrence, position, mark in sorted(placements, key=lambda p: p[2]):
+        idx = _find_letter_occurrence(clusters, letter, occurrence)
+        if idx is None:
+            continue
+        base, marks = _split_cluster(clusters[idx])
+        marks.insert(position, mark)
+        clusters[idx] = _join_cluster(base, marks)
 
 
 def _apply_paseq_word_op(clusters, op, *, add):
@@ -199,30 +231,16 @@ def apply_text_ops(old_text, ops):
     # For mark-level ops, work on grapheme clusters
     clusters = grapheme_clusters(old_text)
 
+    # A run of consecutive mark-level ops is one edit (_apply_mark_ops);
+    # any other op ends the run.
+    mark_run = []
     for op in text_ops:
-        if isinstance(op, MarkRemoved):
-            _apply_mark_removed(clusters, op)
-        elif isinstance(op, MarkAdded):
-            _apply_mark_added(clusters, op)
-        elif isinstance(op, MarkMoved):
-            _apply_mark_moved(clusters, op)
-        elif isinstance(op, MarkReplaced):
-            _apply_mark_replaced(clusters, op)
-        elif isinstance(op, GenericReplace):
-            _apply_generic_replace(clusters, op)
-        elif isinstance(op, ComplexReplace):
-            # For complex replaces, we fall back to just removing old marks
-            # and adding new marks
-            for mark, letter, occ in op.old_qualified:
-                _apply_mark_removed(clusters, MarkRemoved(mark, letter, occ))
-            for mark, letter, occ in op.new_qualified:
-                _apply_mark_added(clusters, MarkAdded(mark, letter, occ))
-        elif isinstance(op, MarkReordered):
-            # Reordering does not change the set of marks, just their order.
-            # The result text should have the same marks in the new order,
-            # which happens automatically since we don't alter anything.
-            pass
-        elif isinstance(op, GrayMaqafAdded):
+        if isinstance(op, _MARK_OPS):
+            mark_run.append(op)
+            continue
+        _apply_mark_ops(clusters, mark_run)
+        mark_run = []
+        if isinstance(op, GrayMaqafAdded):
             # A space becomes a gray maqaf (tilde) in flattened text
             for i, c in enumerate(clusters):
                 if c == " ":
@@ -261,6 +279,7 @@ def apply_text_ops(old_text, ops):
             text = "".join(clusters)
             text = text.replace(op.old_fragment, op.new_fragment, 1)
             clusters = grapheme_clusters(text)
+    _apply_mark_ops(clusters, mark_run)
 
     return "".join(clusters)
 

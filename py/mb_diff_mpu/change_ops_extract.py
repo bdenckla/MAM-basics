@@ -41,9 +41,44 @@ from mb_diff_mpu.describe_diff import (
     is_mark,
     qualify,
 )
+from mb_diff_mpu.grapheme_diff import grapheme_clusters
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 
 # ── Mark / accent extraction ────────────────────────────────
+
+
+def _cluster_positions(text, pred, qualified):
+    """Each of *qualified*'s marks' index among its cluster's marks.
+
+    *qualified* is qualify(text, pred), and the result runs parallel to
+    it: one index per qualified mark, in the same order.  An index counts
+    every combining mark of the grapheme cluster, not only the marks
+    *pred* selects, because that is the index change_ops_apply places a
+    mark at (see the change_ops module docstring).
+    """
+    positions = []
+    seen_letter = False
+    for cluster in grapheme_clusters(text):
+        seen_letter = seen_letter or is_letter(cluster[0])
+        for position, ch in enumerate(cluster[1:]):
+            if seen_letter and pred(ch):
+                positions.append(position)
+    assert len(positions) == len(qualified), (text, len(positions), len(qualified))
+    return positions
+
+
+def _reordered_positions(chars, new_region, new_region_positions):
+    """Each of *chars*' index in its cluster in the new text.
+
+    *chars* are the reordered marks in old order; *new_region* is the same
+    stretch of the new text's qualified marks, with its positions.  Equal
+    marks are paired in order, the first in the old text with the first
+    in the new.
+    """
+    unpaired = {}
+    for (char, _, _), position in zip(new_region, new_region_positions):
+        unpaired.setdefault(char, []).append(position)
+    return tuple(unpaired[char].pop(0) for char in chars)
 
 
 def _extract_mark_ops(old_text, new_text, pred):
@@ -60,6 +95,7 @@ def _extract_mark_ops(old_text, new_text, pred):
         return None
     old_qualified = qualify(old_text, pred)
     new_qualified = qualify(new_text, pred)
+    new_positions = _cluster_positions(new_text, pred, new_qualified)
 
     # Pure reorder: same items in a different order on the same letter
     if (
@@ -73,11 +109,24 @@ def _extract_mark_ops(old_text, new_text, pred):
         while old_qualified[end] == new_qualified[end]:
             end -= 1
         region = old_qualified[start : end + 1]
-        letters = {ltr for _, ltr, _ in region}
-        if len(letters) == 1:
+        # One letter occurrence, not merely one letter: the op names a
+        # single cluster.
+        clusters = {(ltr, occ) for _, ltr, occ in region}
+        if len(clusters) == 1:
             chars = tuple(a for a, _, _ in region)
             _, letter, occ = region[0]
-            return [MarkReordered(chars=chars, on_letter=letter, letter_occurrence=occ)]
+            return [
+                MarkReordered(
+                    chars=chars,
+                    on_letter=letter,
+                    letter_occurrence=occ,
+                    new_positions=_reordered_positions(
+                        chars,
+                        new_qualified[start : end + 1],
+                        new_positions[start : end + 1],
+                    ),
+                )
+            ]
 
     sm = SequenceMatcher(None, old_qualified, new_qualified, autojunk=False)
     opcodes = [op for op in sm.get_opcodes() if op[0] != "equal"]
@@ -96,6 +145,7 @@ def _extract_mark_ops(old_text, new_text, pred):
         if tag == "replace" and len(old_chunk) == 1 and len(new_chunk) == 1:
             o_mark, o_let, o_occ = old_chunk[0]
             n_mark, n_let, n_occ = new_chunk[0]
+            n_pos = new_positions[j1]
             if o_mark == n_mark:
                 # Same mark, different letter → moved
                 ops.append(
@@ -105,6 +155,7 @@ def _extract_mark_ops(old_text, new_text, pred):
                         from_occurrence=o_occ,
                         to_letter=n_let,
                         to_occurrence=n_occ,
+                        to_position=n_pos,
                     )
                 )
             elif o_let == n_let and o_occ == n_occ:
@@ -115,6 +166,7 @@ def _extract_mark_ops(old_text, new_text, pred):
                         letter_occurrence=o_occ,
                         old_char=o_mark,
                         new_char=n_mark,
+                        new_position=n_pos,
                     )
                 )
             else:
@@ -122,22 +174,26 @@ def _extract_mark_ops(old_text, new_text, pred):
                     GenericReplace(
                         old_char=o_mark,
                         old_letter=o_let,
+                        old_occurrence=o_occ,
                         new_char=n_mark,
                         new_letter=n_let,
+                        new_occurrence=n_occ,
+                        new_position=n_pos,
                     )
                 )
         elif tag == "delete":
             for mark, let, occ in old_chunk:
                 deletes.append((mark, let, occ))
         elif tag == "insert":
-            for mark, let, occ in new_chunk:
-                inserts.append((mark, let, occ))
+            for (mark, let, occ), pos in zip(new_chunk, new_positions[j1:j2]):
+                inserts.append((mark, let, occ, pos))
         else:
             # Complex replace
             ops.append(
                 ComplexReplace(
                     old_qualified=tuple(old_chunk),
                     new_qualified=tuple(new_chunk),
+                    new_positions=tuple(new_positions[j1:j2]),
                 )
             )
 
@@ -145,7 +201,7 @@ def _extract_mark_ops(old_text, new_text, pred):
     used_inserts = set()
     for d_mark, d_let, d_occ in deletes:
         paired = False
-        for idx, (i_mark, i_let, i_occ) in enumerate(inserts):
+        for idx, (i_mark, i_let, i_occ, i_pos) in enumerate(inserts):
             if idx not in used_inserts and i_mark == d_mark:
                 ops.append(
                     MarkMoved(
@@ -154,6 +210,7 @@ def _extract_mark_ops(old_text, new_text, pred):
                         from_occurrence=d_occ,
                         to_letter=i_let,
                         to_occurrence=i_occ,
+                        to_position=i_pos,
                     )
                 )
                 used_inserts.add(idx)
@@ -167,13 +224,14 @@ def _extract_mark_ops(old_text, new_text, pred):
                     letter_occurrence=d_occ,
                 )
             )
-    for idx, (i_mark, i_let, i_occ) in enumerate(inserts):
+    for idx, (i_mark, i_let, i_occ, i_pos) in enumerate(inserts):
         if idx not in used_inserts:
             ops.append(
                 MarkAdded(
                     char=i_mark,
                     on_letter=i_let,
                     letter_occurrence=i_occ,
+                    position=i_pos,
                 )
             )
 
