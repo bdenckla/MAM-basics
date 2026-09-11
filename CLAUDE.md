@@ -809,6 +809,15 @@ had to set `REPOS_ROOT`. The variable still overrides the default, for a layout 
 siblings sit somewhere else. A worktree run with nothing exported passed **988 passed, 5
 skipped** on 2026-09-10.
 
+**In a cloud container the suite reads MAM-private nowhere, and that is the one exception to the
+sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
+and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
+`graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
+`py/main_0_mega.py` gives its two MAM-private steps. On any machine of Ben's nothing changes: a
+missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
+these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
+the reason strings are what tell the two kinds apart under `-rs`.
+
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
