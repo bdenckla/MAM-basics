@@ -1,0 +1,1092 @@
+{
+  "phase": 2,
+  "date": "2026-09-10",
+  "task_id": "01a08d41-612e-7aa3-9312-2eecd9e9b881",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "branch": "codex-worktree-3a6b",
+  "starting_commit": "0beade0bac7794437dd35e5d54d95802f08c874e",
+  "private_input_commit": "55252b834d28a6c241e75758aff5d15836621f56",
+  "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+  "corpus": {
+    "books": 39,
+    "chapters": 929
+  },
+  "offline_fixture_scope": "All corpus replay IDs are synthetic offline fixtures; no production metadata seeding.",
+  "offline_checks_passed": 60,
+  "checks": [
+    {
+      "name": "full corpus direct fetch and independent serialization equality",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.8805059999867808,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "unchanged corpus, no cache, no writes, materialized hook",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 929,
+        "fetched": 0,
+        "metadata_batches": 19,
+        "content_batches": 0,
+        "download_seconds": 0.28752740001073107,
+        "metadata_requests": 19,
+        "content_requests": 0
+      }
+    },
+    {
+      "name": "fresh-checkout reuse",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 929,
+        "fetched": 0,
+        "metadata_batches": 19,
+        "content_batches": 0,
+        "download_seconds": 0.8153395999979693,
+        "metadata_requests": 19,
+        "content_requests": 0
+      }
+    },
+    {
+      "name": "forced corpus, stable bytes and mtimes",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 0.8700301999924704,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "changed revisions across corpus fetched by checked IDs",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 903,
+        "fetched": 26,
+        "metadata_batches": 19,
+        "content_batches": 21,
+        "download_seconds": 1.7244710999948438,
+        "metadata_requests": 19,
+        "content_requests": 21
+      }
+    },
+    {
+      "name": "metadata-field-sha256-00000000",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.5773955999757163,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-requested_title-wrong",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.039036100002704,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-resolved_title-wrong",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 19,
+        "content_batches": 70,
+        "download_seconds": 2.2521750000014435,
+        "metadata_requests": 19,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-page_id-1",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 19,
+        "content_batches": 70,
+        "download_seconds": 2.3800375999999233,
+        "metadata_requests": 19,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-revision_id-1",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 19,
+        "content_batches": 70,
+        "download_seconds": 2.5268244999751914,
+        "metadata_requests": 19,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-page_id-True",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.095117200020468,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-revision_id-False",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.0652128999936394,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "metadata-field-sha256-invalid",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.9650032999925315,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "missing",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.975867199973436,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "malformed",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.9681519999867305,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "unsupported",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.9944110999931581,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "wrong-endpoint",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.1064255999808665,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "bool-version",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 2.3734900999988895,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "local modifications of every chapter",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 1.7692845999845304,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "selector 0, reuse and force preserve full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 0,
+        "fetched": 929,
+        "metadata_batches": 0,
+        "content_batches": 70,
+        "download_seconds": 0.7585617000004277,
+        "metadata_requests": 0,
+        "content_requests": 70
+      }
+    },
+    {
+      "name": "selector 1, reuse and force preserve full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 24,
+        "reused": 0,
+        "fetched": 24,
+        "metadata_batches": 0,
+        "content_batches": 2,
+        "download_seconds": 0.03684349998366088,
+        "metadata_requests": 0,
+        "content_requests": 2
+      }
+    },
+    {
+      "name": "selector 2, reuse and force preserve full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 187,
+        "reused": 0,
+        "fetched": 187,
+        "metadata_batches": 0,
+        "content_batches": 11,
+        "download_seconds": 0.2376331000123173,
+        "metadata_requests": 0,
+        "content_requests": 11
+      }
+    },
+    {
+      "name": "selector 3, reuse and force preserve full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 1,
+        "reused": 0,
+        "fetched": 1,
+        "metadata_batches": 0,
+        "content_batches": 1,
+        "download_seconds": 0.014146900008199736,
+        "metadata_requests": 0,
+        "content_requests": 1
+      }
+    },
+    {
+      "name": "selector 4, reuse and force preserve full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 5,
+        "reused": 0,
+        "fetched": 5,
+        "metadata_batches": 0,
+        "content_batches": 4,
+        "download_seconds": 0.027588500001002103,
+        "metadata_requests": 0,
+        "content_requests": 4
+      }
+    },
+    {
+      "name": "missing-book prerequisite",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "incomplete-book prerequisite",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "invalid-lines prerequisite",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "reversed normalization/redirect chains across full corpus",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 929,
+        "fetched": 0,
+        "metadata_batches": 19,
+        "content_batches": 0,
+        "download_seconds": 0.4080780000076629,
+        "metadata_requests": 19,
+        "content_requests": 0
+      }
+    },
+    {
+      "name": "interruption between book and metadata forces direct retrieval",
+      "result": "passed",
+      "detail": {
+        "selected": 1,
+        "reused": 0,
+        "fetched": 1,
+        "metadata_batches": 0,
+        "content_batches": 1,
+        "download_seconds": 0.04891219999990426,
+        "metadata_requests": 0,
+        "content_requests": 1
+      }
+    },
+    {
+      "name": "later title revision cannot replace checked revision content",
+      "result": "passed",
+      "detail": {
+        "selected": 1,
+        "reused": 0,
+        "fetched": 1,
+        "metadata_batches": 1,
+        "content_batches": 1,
+        "download_seconds": 0.061093099997378886,
+        "metadata_requests": 1,
+        "content_requests": 1
+      }
+    },
+    {
+      "name": "visible failure: missing-page",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: duplicate-page",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: incomplete",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: api-maxlag",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: warning",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: continuation",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: bool-page-id",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: zero-revision",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible failure: alias-cycle",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible exact failure: moved-page",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible exact failure: wrong-page-id",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible exact failure: wrong-revision",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible exact failure: hidden-content",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "visible exact failure: bool-revision",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "converging-title",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "duplicate-across-batches",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "actual attempt counts include timeout and HTTP retry",
+      "result": "passed",
+      "detail": {
+        "selected": 929,
+        "reused": 929,
+        "fetched": 0,
+        "metadata_batches": 19,
+        "content_batches": 0,
+        "download_seconds": 0.9229637000244111,
+        "metadata_requests": 21,
+        "content_requests": 0
+      }
+    },
+    {
+      "name": "unmodified captured real paired content, exact revisions, and redirects",
+      "result": "passed",
+      "detail": {
+        "direct": 20,
+        "exact": 20,
+        "redirects": 6
+      }
+    },
+    {
+      "name": "bot force, empty modifications, no-save, identity, no-post-download",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "force CLI wiring",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "production raw and metadata untouched",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "real all-reused partial hook regenerates complete Samuel, Twelve, Ezra-Nehemiah, Chronicles groups",
+      "result": "passed",
+      "detail": {
+        "selected": 4,
+        "reused": 4,
+        "fetched": 0,
+        "metadata_batches": 1,
+        "content_batches": 0,
+        "download_seconds": 0.018502599996281788,
+        "metadata_requests": 1,
+        "content_requests": 0
+      }
+    },
+    {
+      "name": "mixed valid, invalid, reused, direct, exact records preserve unselected books",
+      "result": "passed",
+      "detail": {
+        "selected": 50,
+        "reused": 48,
+        "fetched": 2,
+        "metadata_batches": 1,
+        "content_batches": 2,
+        "download_seconds": 0.04634590001660399,
+        "metadata_requests": 1,
+        "content_requests": 2
+      }
+    },
+    {
+      "name": "direct response hidden-flag-with-string",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response hidden-slot-with-string",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response no-content",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response multiple-revisions",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response boolean-content-revision",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response duplicate-pageid",
+      "result": "passed",
+      "detail": null
+    },
+    {
+      "name": "direct response badrevids",
+      "result": "passed",
+      "detail": null
+    }
+  ],
+  "production_metadata_records": 0,
+  "production_raw_changes": 0,
+  "full_suite": {
+    "passed": 990,
+    "skipped": 5,
+    "subtests_passed": 65,
+    "pytest_seconds": 125.42,
+    "summary": "990 passed, 5 skipped, 65 subtests passed in 125.42s",
+    "skips": "The same five semantic controls documented in Phase 1; no missing-input skip."
+  },
+  "generated_artifacts": {
+    "local_steps": [
+      {
+        "position": 1,
+        "step_id": "parse-ws",
+        "returncode": 0,
+        "seconds": 21.4,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/01-parse-ws.log"
+      },
+      {
+        "position": 2,
+        "step_id": "foi-features-of-interest",
+        "returncode": 0,
+        "seconds": 6.45,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/02-foi-features-of-interest.log"
+      },
+      {
+        "position": 3,
+        "step_id": "mam-with-doc",
+        "returncode": 0,
+        "seconds": 10.47,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/03-mam-with-doc.log"
+      },
+      {
+        "position": 4,
+        "step_id": "diff-mpp",
+        "returncode": 0,
+        "seconds": 9.66,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/04-diff-mpp.log"
+      },
+      {
+        "position": 5,
+        "step_id": "tmpl-survey",
+        "returncode": 0,
+        "seconds": 11.62,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/05-tmpl-survey.log"
+      },
+      {
+        "position": 6,
+        "step_id": "tmpl-survey-toy",
+        "returncode": 0,
+        "seconds": 2.37,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/06-tmpl-survey-toy.log"
+      },
+      {
+        "position": 7,
+        "step_id": "vendored-tmpl-survey-toy",
+        "returncode": 0,
+        "seconds": 2.29,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/07-vendored-tmpl-survey-toy.log"
+      },
+      {
+        "position": 8,
+        "step_id": "mam-simple",
+        "returncode": 0,
+        "seconds": 22.03,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/08-mam-simple.log"
+      },
+      {
+        "position": 9,
+        "step_id": "mam4sef-and-ajf",
+        "returncode": 0,
+        "seconds": 9.97,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/09-mam4sef-and-ajf.log"
+      },
+      {
+        "position": 10,
+        "step_id": "mam-osis",
+        "returncode": 0,
+        "seconds": 3.19,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/10-mam-osis.log"
+      },
+      {
+        "position": 11,
+        "step_id": "letter-small-job",
+        "returncode": 0,
+        "seconds": 2.0,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/11-letter-small-job.log"
+      },
+      {
+        "position": 12,
+        "step_id": "vendored-letter-small-job",
+        "returncode": 0,
+        "seconds": 2.1,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/12-vendored-letter-small-job.log"
+      },
+      {
+        "position": 13,
+        "step_id": "vendored-mam4sef",
+        "returncode": 0,
+        "seconds": 4.87,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/13-vendored-mam4sef.log"
+      },
+      {
+        "position": 14,
+        "step_id": "vendored-mam-osis",
+        "returncode": 0,
+        "seconds": 2.76,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/14-vendored-mam-osis.log"
+      },
+      {
+        "position": 15,
+        "step_id": "decnreub",
+        "returncode": 0,
+        "seconds": 2.03,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/15-decnreub.log"
+      },
+      {
+        "position": 16,
+        "step_id": "multimark",
+        "returncode": 0,
+        "seconds": 24.31,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/16-multimark.log"
+      },
+      {
+        "position": 17,
+        "step_id": "wordlist",
+        "returncode": 0,
+        "seconds": 2.8,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/17-wordlist.log"
+      },
+      {
+        "position": 18,
+        "step_id": "explicit-xataf",
+        "returncode": 0,
+        "seconds": 2.19,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/18-explicit-xataf.log"
+      },
+      {
+        "position": 19,
+        "step_id": "ws-bot-proto",
+        "returncode": 0,
+        "seconds": 9.16,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/19-ws-bot-proto.log"
+      },
+      {
+        "position": 20,
+        "step_id": "gen-misc-authored-english-documents",
+        "returncode": 0,
+        "seconds": 2.78,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/20-gen-misc-authored-english-documents.log"
+      },
+      {
+        "position": 21,
+        "step_id": "wlc-json-and-unicode",
+        "returncode": 0,
+        "seconds": 28.97,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/21-wlc-json-and-unicode.log"
+      },
+      {
+        "position": 22,
+        "step_id": "accgram-run-prose",
+        "returncode": 0,
+        "seconds": 22.7,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/22-accgram-run-prose.log"
+      },
+      {
+        "position": 23,
+        "step_id": "accgram-test-fixes",
+        "returncode": 0,
+        "seconds": 3.21,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/23-accgram-test-fixes.log"
+      },
+      {
+        "position": 24,
+        "step_id": "accgram-run-dual-cant",
+        "returncode": 0,
+        "seconds": 1.97,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/24-accgram-run-dual-cant.log"
+      },
+      {
+        "position": 25,
+        "step_id": "accgram-run-poetic",
+        "returncode": 0,
+        "seconds": 4.11,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/25-accgram-run-poetic.log"
+      },
+      {
+        "position": 26,
+        "step_id": "accgram-xcheck-poetic",
+        "returncode": 0,
+        "seconds": 3.61,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/26-accgram-xcheck-poetic.log"
+      },
+      {
+        "position": 27,
+        "step_id": "accgram-servi-xcheck",
+        "returncode": 0,
+        "seconds": 3.55,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/27-accgram-servi-xcheck.log"
+      },
+      {
+        "position": 28,
+        "step_id": "accgram-grammaticality",
+        "returncode": 0,
+        "seconds": 3.09,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/28-accgram-grammaticality.log"
+      },
+      {
+        "position": 29,
+        "step_id": "accgram-run-printed-decalogue",
+        "returncode": 0,
+        "seconds": 2.06,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/29-accgram-run-printed-decalogue.log"
+      },
+      {
+        "position": 30,
+        "step_id": "accgram-survey-chanted-word-accents",
+        "returncode": 0,
+        "seconds": 42.83,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/30-accgram-survey-chanted-word-accents.log"
+      },
+      {
+        "position": 31,
+        "step_id": "accgram-generate-html",
+        "returncode": 0,
+        "seconds": 13.86,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/31-accgram-generate-html.log"
+      },
+      {
+        "position": 32,
+        "step_id": "find-uxlc-accent-changes",
+        "returncode": 0,
+        "seconds": 1.65,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/32-find-uxlc-accent-changes.log"
+      },
+      {
+        "position": 33,
+        "step_id": "uxlc-grammar-test",
+        "returncode": 0,
+        "seconds": 2.96,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/33-uxlc-grammar-test.log"
+      },
+      {
+        "position": 34,
+        "step_id": "wlc-diffs-420422",
+        "returncode": 0,
+        "seconds": 2.1,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/34-wlc-diffs-420422.log"
+      },
+      {
+        "position": 35,
+        "step_id": "wlc-a-notes",
+        "returncode": 0,
+        "seconds": 2.04,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/35-wlc-a-notes.log"
+      },
+      {
+        "position": 36,
+        "step_id": "sigil-inventory",
+        "returncode": 0,
+        "seconds": 2.47,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/36-sigil-inventory.log"
+      },
+      {
+        "position": 37,
+        "step_id": "gen-site",
+        "returncode": 0,
+        "seconds": 7.62,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/37-gen-site.log"
+      },
+      {
+        "position": 38,
+        "step_id": "vendoring-audit",
+        "returncode": 0,
+        "seconds": 3.69,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase2-mega/38-vendoring-audit.log"
+      }
+    ],
+    "all_local_steps_passed": true,
+    "omitted_steps": [
+      "near-aleppo-census"
+    ],
+    "protected_trees_before": {
+      "in/mam-go": {
+        "files": 9,
+        "sha256": "79d984c5ed02c7aa0012d0e70afc2f25190c73c545beccc1f8b75247d18cd20e"
+      },
+      "in/mam-ws": {
+        "files": 39,
+        "sha256": "9cc3feb4f46aab6c6044d6c5452738953977333abfa4008cbadab36973af40bc"
+      },
+      "out/mam-ws-bot": {
+        "files": 80,
+        "sha256": "ba4986fe7ddaa431cd7d2f27b3cbfc60ac0c75187239085615cc689f3ad4cf10"
+      },
+      "MAM-parsed/historical": {
+        "files": 8,
+        "sha256": "905f6ecccb2f5efec088364d7b1e5c5779907b41a070180db1b9e95de675d0db"
+      }
+    },
+    "protected_trees_after": {
+      "in/mam-go": {
+        "files": 9,
+        "sha256": "79d984c5ed02c7aa0012d0e70afc2f25190c73c545beccc1f8b75247d18cd20e"
+      },
+      "in/mam-ws": {
+        "files": 39,
+        "sha256": "9cc3feb4f46aab6c6044d6c5452738953977333abfa4008cbadab36973af40bc"
+      },
+      "out/mam-ws-bot": {
+        "files": 80,
+        "sha256": "ba4986fe7ddaa431cd7d2f27b3cbfc60ac0c75187239085615cc689f3ad4cf10"
+      },
+      "MAM-parsed/historical": {
+        "files": 8,
+        "sha256": "905f6ecccb2f5efec088364d7b1e5c5779907b41a070180db1b9e95de675d0db"
+      }
+    },
+    "independent_candidate_equal_files": 48,
+    "documentation_verification": {
+      "passed": 79,
+      "failed": 0,
+      "pending": "mp.plain.docs.book39-skeleton.common"
+    },
+    "preserved_vendoring_reports": {
+      "doc/vendoring-inventory.md": {
+        "generated_sha256": "be9368cd8111a8f838fb11eafd49ec4d3366cb5771d4fca14fdc2ac0edd595cd",
+        "baseline_sha256": "f1c51e9ca3251fbd42cae4851fffd1b93803a24b333f6d171ed81cb5fe9dc86a",
+        "saved_copy": ".novc/ws-efficiency-phase2-20260910/preserved-generated/doc/vendoring-inventory.md"
+      },
+      "out/vendoring_compare_out.txt": {
+        "generated_sha256": "7af90531734b27ce008cd3eba40c68fadb415840bf571e6172283076d8c79a5d",
+        "baseline_sha256": "3a974c2d9d170219076c1e2cb7341f0dea076aeacca3869bca0b7d3ee6bb0760",
+        "saved_copy": ".novc/ws-efficiency-phase2-20260910/preserved-generated/out/vendoring_compare_out.txt"
+      }
+    },
+    "report_difference_explanation": "Same hashes as Phase 1: 24 eol-only classifications become identical, and inventory groups combine from 8 to 4. Generated reports preserved in scratch; committed report versions restored.",
+    "other_generated_differences": []
+  },
+  "commands": [
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        ".novc/ws_efficiency_phase2_offline_20260910.py",
+        "offline-2"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 76.62011749998783,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\offline-2.log"
+    },
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        ".novc/ws_efficiency_phase2_hooks_20260910.py"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 16.159586800000397,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\real-hooks.log"
+    },
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        ".novc/ws_products_phase5_mega_20260910.py",
+        "--run-label",
+        "ws-efficiency-phase2-mega"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 314.3345532999956,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\local-mega.log"
+    },
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        ".novc/ws_efficiency_phase2_extras_20260910.py"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 36.192928900010884,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\extras.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_parse.py",
+        "ws-products",
+        "--output-dir",
+        ".novc/ws-efficiency-phase2-20260910/candidate-products"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 10.301405100006377,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\candidate-products.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_mam_simple.py",
+        "doc-only"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 0.3469987999997102,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\doc-only.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_authored.py",
+        "gen-mam-parsed-docs"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 5.7756438000069465,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\parsed-docs.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_pipeline_graph.py"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 1.3379883999878075,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\pipeline-graphs.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_parse.py",
+        "go"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 2.7957269999897107,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\parse-go.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_diff.py",
+        "wsgo"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 14.432128100015689,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\diff-wsgo.log"
+    },
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_test.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 126.55321809998713,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\full-suite.log"
+    },
+    {
+      "command": [
+        "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_test.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "py/tests/test_sibling_reach.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "returncode": 0,
+      "seconds": 23.313079000014113,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase2-20260910\\staged-lints.log"
+    }
+  ],
+  "source_sha256": {
+    "py/main_download.py": "24faadd33296587493daf8f6dd39f562a6c7b873c50bd80002e5db3f7e4726b2",
+    "py/subcommands/download_wikisource.py": "9ea156592ce42f2c5b21cda58aab3e540f95e4a77715fa1bc163b413192677c1",
+    "py/subcommands/ws_bot_real.py": "5042eb3a8ab2331ab6ca771051819314e8a3126df4b45ee90084d7c53a3700ed",
+    "py/tests/test_main_download_fr_wikisource.py": "a6c73d222e354decc1e024a955034c6a4bb6d77739508a52951046d0106b89e4",
+    "py/ws/ws_chapter_download.py": "fe97e233a14f1b4606995df87f8cf211b0136488050a8b8de20b9770bd69f8b9",
+    "py/ws/ws_revision_api.py": "d2154a367f8329db994f3f630e41d156402faad9f0d7308a5a903057b2cc8b4a",
+    "py/ws/ws_revision_metadata.py": "9940d2511c870a7c341fdef509f9dfd8e5caef64cc6bc416246d1b2e83f80002",
+    "in/mam-ws-revisions.json": "8ff36ef6b483a08fee4fc1891529b23cfa96ecf32379d98b2c0ba8da9e60d19c"
+  },
+  "scratch_sha256": {
+    ".novc/ws_efficiency_phase2_offline_20260910.py": "c14d7e918b6f79800508e10fd7568589bce2d2939476f352da657a48b72ab4d7",
+    ".novc/ws_efficiency_phase2_hooks_20260910.py": "c4d29e1e22fd5a21d4ef867268d1133dc2f00d1f93630b9a41b765125df3338f",
+    ".novc/ws_efficiency_phase2_command_20260910.py": "a3737fc7d274ecda23b797ec28b980f999ec2356f89c163499dfe6c96f840e60",
+    ".novc/ws_efficiency_phase2_extras_20260910.py": "2cbb68d8fb061373f4696212be6b992139f9923e34668e0f697af1073e7473fe",
+    ".novc/ws_efficiency_phase2_preserve_reports_20260910.py": "eac2cb03e539ee4372f67a7c955aef093e3a996829d786a56bb890c87b2003e7",
+    ".novc/ws_products_phase5_mega_20260910.py": "662d527d5b8ae15e9d371657f2869420a6dfd53664f10e4c0bc7d8db15b6545e"
+  },
+  "remaining_phase3": "Live same-revision independent complete-corpus comparison, unchanged/forced request and compressed-byte measurements, equality-gated real metadata seeding, full regeneration and suite. Do not refresh the 20 known unequal raw chapters without a separate production-update decision."
+}

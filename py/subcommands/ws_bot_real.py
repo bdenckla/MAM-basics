@@ -266,7 +266,7 @@ def _download_modified_chapters(modified_chapters_path):
         "post-download",
         modified_chapters_path,
     )
-    download_wikisource.run(modified_book_plans)
+    download_wikisource.run(modified_book_plans, force_download=True)
 
 
 _REAL_RUNS_ROOT = ".novc/mam-ws-bot-real-runs"

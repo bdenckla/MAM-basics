@@ -1,0 +1,1681 @@
+{
+  "phase": 1,
+  "measurement_date": "2026-09-10",
+  "checkout": "C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics",
+  "branch": "codex-worktree-3a6b",
+  "baseline_commit": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+  "private_input_commit": "55252b834d28a6c241e75758aff5d15836621f56",
+  "book_count": 39,
+  "chapter_count": 929,
+  "raw_bytes": 10312149,
+  "current_content_requests": 70,
+  "proposed_info_requests": 19,
+  "live_measurements": {
+    "measured_utc": "2026-09-10T21:28:55.184876+00:00",
+    "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+    "groups": {
+      "current-full-content": {
+        "requests": 70,
+        "elapsed_seconds": 204.20488579999073,
+        "request_seconds": 9.343446999962907,
+        "compressed_body_bytes": 2051127,
+        "decoded_body_bytes": 10330082,
+        "status_counts": {
+          "200": 70
+        },
+        "header_values": {
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Cache-Control": [
+            "private, must-revalidate, max-age=0"
+          ],
+          "ETag": [
+            "None"
+          ],
+          "Last-Modified": [
+            "None"
+          ]
+        }
+      },
+      "current-warm-repeat-first-batch": {
+        "requests": 1,
+        "elapsed_seconds": 2.4944366999843623,
+        "request_seconds": 0.11988689997815527,
+        "compressed_body_bytes": 46094,
+        "decoded_body_bytes": 242128,
+        "status_counts": {
+          "200": 1
+        },
+        "header_values": {
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Cache-Control": [
+            "private, must-revalidate, max-age=0"
+          ],
+          "ETag": [
+            "None"
+          ],
+          "Last-Modified": [
+            "None"
+          ]
+        }
+      },
+      "info-all-50": {
+        "requests": 19,
+        "elapsed_seconds": 53.807565399998566,
+        "request_seconds": 1.931828199973097,
+        "compressed_body_bytes": 24940,
+        "decoded_body_bytes": 299641,
+        "status_counts": {
+          "200": 19
+        },
+        "header_values": {
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Cache-Control": [
+            "private, must-revalidate, max-age=0"
+          ],
+          "ETag": [
+            "None"
+          ],
+          "Last-Modified": [
+            "None"
+          ]
+        }
+      },
+      "exact-revisions-20": {
+        "requests": 1,
+        "elapsed_seconds": 4.092024200013839,
+        "request_seconds": 0.14557600000989623,
+        "compressed_body_bytes": 46177,
+        "decoded_body_bytes": 240937,
+        "status_counts": {
+          "200": 1
+        },
+        "header_values": {
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Cache-Control": [
+            "private, must-revalidate, max-age=0"
+          ],
+          "ETag": [
+            "None"
+          ],
+          "Last-Modified": [
+            "None"
+          ]
+        }
+      }
+    },
+    "upstream_differences": [
+      {
+        "book39": "Genesis",
+        "chapter": "\u05de\u05d2",
+        "local_sha256": "99aa99c5ae67d5eb9e824e14e5e4cb7f0d77c165965014cb1268a65bb3298155",
+        "live_sha256": "2da7ad9125ec3a249d118fb8f7b48979b97440dd10d6d456b073080fd6aed0d4"
+      },
+      {
+        "book39": "Deuter",
+        "chapter": "\u05db\u05d7",
+        "local_sha256": "448431a0b41254a7fb682e92399d7c7cccfce0a765a63915fde7d82e1016a8af",
+        "live_sha256": "f01802e5dad051f53f50e01af3f46f590d5257438a840681b2689a16f844aa9e"
+      },
+      {
+        "book39": "Deuter",
+        "chapter": "\u05dc\u05d1",
+        "local_sha256": "30d0a06eae44c5f0b9191d4d8e8d628088422089d2c804af0659e86719432233",
+        "live_sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+      },
+      {
+        "book39": "Joshua",
+        "chapter": "\u05d9\u05d8",
+        "local_sha256": "dd12dfbb27d9975e2fd29b220f54e88b5e5e51e8be3afb202b1f22f1cdda8854",
+        "live_sha256": "c6a443448e4aa5a092d13a178c5d9351ea1d1694406a8e56661fcbb2bce313e7"
+      },
+      {
+        "book39": "Judges",
+        "chapter": "\u05d9",
+        "local_sha256": "e935280a27798600575518b28b9953b40c5de1b16c99c97634e2165f2f25671c",
+        "live_sha256": "5563b4e66adb7fd62c11f242bab8bb19020fa14b21a0df12ca5dedae01e3ff9d"
+      },
+      {
+        "book39": "1Samuel",
+        "chapter": "\u05d0",
+        "local_sha256": "25e0d2e37b08d9e12a284782970f51e9beb60d4fdeaa10a94c1a8a1314daa072",
+        "live_sha256": "582ba51afc8ea33079f9ced5e14fdbc4cfb33667476f2ccb35513e7e7debd26e"
+      },
+      {
+        "book39": "1Samuel",
+        "chapter": "\u05db\u05d1",
+        "local_sha256": "2ce9ef365b6b153ccbdcea457879b7c7050f8ffbf9a67e09f094119065afad90",
+        "live_sha256": "2765ccf65441d5de388ab1c3128c6aea8abbd9ab3e38aaa49b5b303a6d3f658c"
+      },
+      {
+        "book39": "2Kings",
+        "chapter": "\u05d5",
+        "local_sha256": "8d219bc97e10cebd3f2f36d2984960cfe48b047ca631f637d2ea0862d0961768",
+        "live_sha256": "c29f6d63a9c40625e6bfa5994ed407e906439b28e6acd97dbb80deb2dc397b08"
+      },
+      {
+        "book39": "2Kings",
+        "chapter": "\u05d9\u05d6",
+        "local_sha256": "a85a6262710310d4fe91a61a8cacc9247f50ca870c96ebf24c94df999589586f",
+        "live_sha256": "b2a730f4db12dac5d7c6aa4585f70170107d72303614e37ffbaf2b375bad99ef"
+      },
+      {
+        "book39": "Isaiah",
+        "chapter": "\u05db\u05d1",
+        "local_sha256": "3abe7915ef08e980451d854afcbd43eb860359f6f9622b41586c8307d24da2f9",
+        "live_sha256": "962ec7ab2c98c8954bd6b5b52e0e8ccea09211bde4f3073a3c5b84730e75b516"
+      },
+      {
+        "book39": "Isaiah",
+        "chapter": "\u05db\u05d3",
+        "local_sha256": "6eaa4e755f3f3af161e556f0d6a6c3a73a6c3b85f1b4080c29335020fc11e07a",
+        "live_sha256": "4d02018beba74ca2ca6e220920506fe413fec2fb1b2be9ad5001578cc27e7f5e"
+      },
+      {
+        "book39": "Isaiah",
+        "chapter": "\u05de\u05d1",
+        "local_sha256": "43c1fa42258b7642df3b886f0c1000efa37ed9fc7a6a6c6a2024af2ad1b0b1cc",
+        "live_sha256": "818b7666ec0bc460a1f715b425c8b4734223a359ebe5b2ffdef00d0e61d5cef8"
+      },
+      {
+        "book39": "Isaiah",
+        "chapter": "\u05e0",
+        "local_sha256": "4dc1bd95b6a82c66361450a40c25bcaa5103f128eb3e844b8b7672ff1e710aca",
+        "live_sha256": "55acf5ff92f5d40dc75cdb1435b49aadedea8bc2036d9c94d808f447085b525e"
+      },
+      {
+        "book39": "Tsefaniah",
+        "chapter": "\u05d2",
+        "local_sha256": "cd7b0a083e7d5f75d530fb5efd4b3102910b2134c1ff8f601e08717c1101e45a",
+        "live_sha256": "01a0bdf12895d488cdb22bff27a390fb7a892ecbbecd3d9fcd8171bbac34d1d5"
+      },
+      {
+        "book39": "Psalms",
+        "chapter": "\u05d3",
+        "local_sha256": "38d94bb367c55e8ff76dfb22c35d09a5c8a4adc4457507bcb3ee29c29ca604cd",
+        "live_sha256": "5bd7df9b191fb53c0bc9808721bc6104ae6c36feaa10e14bfff08bc7f077ea34"
+      },
+      {
+        "book39": "Psalms",
+        "chapter": "\u05e2\u05d0",
+        "local_sha256": "e10328ec3dd6ce856ccbadf5edfee6df699ecdc9888c7125fa3a4dc0b5404631",
+        "live_sha256": "a06932fdf6f832d0b35a4e8c7644ab493754bff2d16719a09b255490ef58a29a"
+      },
+      {
+        "book39": "Psalms",
+        "chapter": "\u05e4\u05d3",
+        "local_sha256": "225b72d8c9a6fb082dcf83f7b715c9a72512b5b7508bb0e2593c65f98a5e1102",
+        "live_sha256": "c9e1d0937e36861a1f3535001674a7fd7bbdb6a53cf37e5849c459e500dd62aa"
+      },
+      {
+        "book39": "Daniel",
+        "chapter": "\u05d2",
+        "local_sha256": "53b5116d4a97cae27c9388f5c858b4ddbf29d24581558ed9461a918d337f82ea",
+        "live_sha256": "7b616fcaea642d2d0ec7b2e95758de15de7e381865cd4e192929342fa385dbd4"
+      },
+      {
+        "book39": "2Chronicles",
+        "chapter": "\u05db\u05d5",
+        "local_sha256": "8b66392394ac27ab5ff062c6313b657c94cbee2bafe747136a8e450943571c9a",
+        "live_sha256": "d04cb53a8b258b7971768dd7ffbf2d91d62c2f59a757c053b34ff4cecd100b1d"
+      },
+      {
+        "book39": "2Chronicles",
+        "chapter": "\u05db\u05d7",
+        "local_sha256": "183871523dc2f15c9accae188058e95e8823eb3ac1cd4de80346549d614f6640",
+        "live_sha256": "ff3c300f5ae1a96e99d4880ee625b1ed0b67c8ebb67d2d62274226556849f6fb"
+      }
+    ],
+    "exact_revision_matches": 20,
+    "info_identity_count": 929,
+    "normalization_count": 929,
+    "redirect_count": 0
+  },
+  "api_probes": {
+    "direct_content_matches": 20,
+    "historical_exact_revision": {
+      "pageid": 235906,
+      "latest": 2987209,
+      "requested_and_returned": 2907537
+    },
+    "redirect_probe": {
+      "requested_titles": 6,
+      "normalizations": 6,
+      "redirect_mappings": 6,
+      "returned_pages": 6,
+      "missing_pages": 0
+    }
+  },
+  "failed_initial_measurement": {
+    "requests": 63,
+    "successful_content_requests": 62,
+    "http_status": 200,
+    "api_error": "maxlag",
+    "lag_seconds": 1.000879,
+    "failed_book39": "Esther",
+    "action": "Kept evidence and repeated the same downloader with a fresh scratch cache; no policy change."
+  },
+  "measurement_method": {
+    "content_path": "download_wikisource._download_book into scratch; generic cache enabled and initially empty",
+    "info_path": "PoliteDownloader.get_json allow_cache=False, 50 requested titles across books",
+    "transport": "One requests.Session, serial, gzip/deflate, original throttle/timeouts/retries/maxlag and User-Agent",
+    "compressed_bytes": "HTTP response-body bytes read from response.raw before decompression; excludes headers, TLS, and chunk framing",
+    "timing_scope": "Wall time per request group includes throttle, JSON handling, scratch recording and raw-book writing/comparison; excludes parsing/products. Groups share one downloader so a group can include its initial inter-request throttle.",
+    "wire_headers": {
+      "Accept-Encoding": "gzip, deflate",
+      "User-Agent": "Denckla-Dowload-MAM-Bot/1.1 (https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Bdenckla)",
+      "If-None-Match": null,
+      "If-Modified-Since": null
+    },
+    "requests_json_sha256": "f54744e8ce94e076af193fba52ad276312ef5409a87bb6afc44af12a89d94271",
+    "limitations": [
+      "Current title-content responses omit revision IDs; later info IDs cannot seed metadata for those responses.",
+      "Only the exact-revision probe and direct-content-with-IDs probe establish paired IDs/text, for their measured subsets.",
+      "No incremental implementation or production speedup is measured in Phase 1.",
+      "Elapsed time is a single run with the original random throttle; do not infer a fixed speedup."
+    ]
+  },
+  "corpus_byte_equality": [
+    {
+      "book39": "Genesis",
+      "chapters": 50,
+      "equal_chapters": 49,
+      "byte_equal": false,
+      "raw_bytes": 698185,
+      "current_requests": 3,
+      "local_sha256": "4fa000ea1a465d381ca7932193df4121e197853580773d9bc81b123019f23227",
+      "live_sha256": "7222c3909090470205a1cf8af174ed549d73b1500b4cf0d4310d5171e1366516"
+    },
+    {
+      "book39": "Exodus",
+      "chapters": 40,
+      "equal_chapters": 40,
+      "byte_equal": true,
+      "raw_bytes": 554362,
+      "current_requests": 2,
+      "local_sha256": "b56c0eb32ea1ece7a06f8dfbdb898e402e29489ac61c935c9874e4a184679eca",
+      "live_sha256": "b56c0eb32ea1ece7a06f8dfbdb898e402e29489ac61c935c9874e4a184679eca"
+    },
+    {
+      "book39": "Levit",
+      "chapters": 27,
+      "equal_chapters": 27,
+      "byte_equal": true,
+      "raw_bytes": 387327,
+      "current_requests": 2,
+      "local_sha256": "faed887e85727e61fc71877bbe7fb59d2500fca58410828f626ae20e6af93a98",
+      "live_sha256": "faed887e85727e61fc71877bbe7fb59d2500fca58410828f626ae20e6af93a98"
+    },
+    {
+      "book39": "Numbers",
+      "chapters": 36,
+      "equal_chapters": 36,
+      "byte_equal": true,
+      "raw_bytes": 557679,
+      "current_requests": 2,
+      "local_sha256": "dc20d1e91f1ca251a4e6b21351059d986407c79d5def7359938546c70ba050c5",
+      "live_sha256": "dc20d1e91f1ca251a4e6b21351059d986407c79d5def7359938546c70ba050c5"
+    },
+    {
+      "book39": "Deuter",
+      "chapters": 34,
+      "equal_chapters": 32,
+      "byte_equal": false,
+      "raw_bytes": 502871,
+      "current_requests": 2,
+      "local_sha256": "3eab24332239c1defcfff56580a10f8da1ab6de885d725fec8719e0ccd1e5f18",
+      "live_sha256": "9d671b52b7950fb02f8d2d711c704159e1a255e1ff76f3e54a84549942b67ec8"
+    },
+    {
+      "book39": "Joshua",
+      "chapters": 24,
+      "equal_chapters": 23,
+      "byte_equal": false,
+      "raw_bytes": 298977,
+      "current_requests": 2,
+      "local_sha256": "5a177d8f9af55d22b210b8a34417faf904fed97bb83391b661924345246b54a3",
+      "live_sha256": "1ed18168d5daee82bfc5b6153425fcf1e16c9c69f8f410d4619a41d46b0cec06"
+    },
+    {
+      "book39": "Judges",
+      "chapters": 21,
+      "equal_chapters": 20,
+      "byte_equal": false,
+      "raw_bytes": 284826,
+      "current_requests": 2,
+      "local_sha256": "65c0c8d09960774f5405762f81db5396e9fbb5e0e9d9afd5c3c3d82686befe24",
+      "live_sha256": "e74b375798e6dcfe2286b52775d1f6467e88cc5c2686d3c4576e81d3a4434797"
+    },
+    {
+      "book39": "1Samuel",
+      "chapters": 31,
+      "equal_chapters": 29,
+      "byte_equal": false,
+      "raw_bytes": 384586,
+      "current_requests": 2,
+      "local_sha256": "64eea4476f8276dabf781700f124fba466bab7e4fb5d1b058b87c80a624f0f43",
+      "live_sha256": "27a510f6c7ac7d6cf28e6698ff4f582cf2383491ed4de5dd54ccc0b3a2a1fd91"
+    },
+    {
+      "book39": "2Samuel",
+      "chapters": 24,
+      "equal_chapters": 24,
+      "byte_equal": true,
+      "raw_bytes": 324121,
+      "current_requests": 2,
+      "local_sha256": "081f57e99dfa159093b82be4660500466dc6f1d425c409a956a79d7699e9e3fb",
+      "live_sha256": "081f57e99dfa159093b82be4660500466dc6f1d425c409a956a79d7699e9e3fb"
+    },
+    {
+      "book39": "1Kings",
+      "chapters": 22,
+      "equal_chapters": 22,
+      "byte_equal": true,
+      "raw_bytes": 372268,
+      "current_requests": 2,
+      "local_sha256": "5536fb0c50ab2d992e1089b6ae688f6d3cef81044551663d003f904be96c86cf",
+      "live_sha256": "5536fb0c50ab2d992e1089b6ae688f6d3cef81044551663d003f904be96c86cf"
+    },
+    {
+      "book39": "2Kings",
+      "chapters": 25,
+      "equal_chapters": 23,
+      "byte_equal": false,
+      "raw_bytes": 356413,
+      "current_requests": 2,
+      "local_sha256": "ae4c90b3175c5b95c160216e555e9f21a400e63f5c32cd1a6160557db7651038",
+      "live_sha256": "bb916da076eaea88c02d7ffd7632e93ce980dd748274fee2934cd3eb3d21c1d0"
+    },
+    {
+      "book39": "Isaiah",
+      "chapters": 66,
+      "equal_chapters": 62,
+      "byte_equal": false,
+      "raw_bytes": 540664,
+      "current_requests": 4,
+      "local_sha256": "c50b4a62dd8cb7a7c81a546a1fdc63c0fc2f5b86082d08cf72f8a69aea7cc6fa",
+      "live_sha256": "6533167793289f2baa590103ec4de345678b39240f7f3ad0aefb57e8a03472cf"
+    },
+    {
+      "book39": "Jeremiah",
+      "chapters": 52,
+      "equal_chapters": 52,
+      "byte_equal": true,
+      "raw_bytes": 632202,
+      "current_requests": 3,
+      "local_sha256": "4c09816b8602ce309598b884dbe49218a5f0eb81c2ea388690e7bfb65b923459",
+      "live_sha256": "4c09816b8602ce309598b884dbe49218a5f0eb81c2ea388690e7bfb65b923459"
+    },
+    {
+      "book39": "Ezekiel",
+      "chapters": 48,
+      "equal_chapters": 48,
+      "byte_equal": true,
+      "raw_bytes": 571581,
+      "current_requests": 3,
+      "local_sha256": "78845b5aa42e2c4173abb3af5074ce285d2d39c8cdff862e42a1bedefae06bf4",
+      "live_sha256": "78845b5aa42e2c4173abb3af5074ce285d2d39c8cdff862e42a1bedefae06bf4"
+    },
+    {
+      "book39": "Hosea",
+      "chapters": 14,
+      "equal_chapters": 14,
+      "byte_equal": true,
+      "raw_bytes": 78666,
+      "current_requests": 1,
+      "local_sha256": "db0f080144ceaa3f119562257bbfc72fb50961cd87f9660b42d0153f42dd6dee",
+      "live_sha256": "db0f080144ceaa3f119562257bbfc72fb50961cd87f9660b42d0153f42dd6dee"
+    },
+    {
+      "book39": "Joel",
+      "chapters": 4,
+      "equal_chapters": 4,
+      "byte_equal": true,
+      "raw_bytes": 29805,
+      "current_requests": 1,
+      "local_sha256": "be0f752f82b93a9832f47c2fde5c9dbcec101e83381e141100924901b8a2880f",
+      "live_sha256": "be0f752f82b93a9832f47c2fde5c9dbcec101e83381e141100924901b8a2880f"
+    },
+    {
+      "book39": "Amos",
+      "chapters": 9,
+      "equal_chapters": 9,
+      "byte_equal": true,
+      "raw_bytes": 63644,
+      "current_requests": 1,
+      "local_sha256": "47c57e1f91ab44e5349c33f9d58f2414fdeb337b9c57b31eb8ca598cbc2c90f6",
+      "live_sha256": "47c57e1f91ab44e5349c33f9d58f2414fdeb337b9c57b31eb8ca598cbc2c90f6"
+    },
+    {
+      "book39": "Obadiah",
+      "chapters": 1,
+      "equal_chapters": 1,
+      "byte_equal": true,
+      "raw_bytes": 10675,
+      "current_requests": 1,
+      "local_sha256": "c729acd094d1bd84be53e2e009b55eb3aef302c0becceeb23418c7762231b845",
+      "live_sha256": "c729acd094d1bd84be53e2e009b55eb3aef302c0becceeb23418c7762231b845"
+    },
+    {
+      "book39": "Jonah",
+      "chapters": 4,
+      "equal_chapters": 4,
+      "byte_equal": true,
+      "raw_bytes": 22722,
+      "current_requests": 1,
+      "local_sha256": "bde801521cb169c93bfc2928e2852db4f0dbb116b2c3cf52350d1aa16c11c4cc",
+      "live_sha256": "bde801521cb169c93bfc2928e2852db4f0dbb116b2c3cf52350d1aa16c11c4cc"
+    },
+    {
+      "book39": "Micah",
+      "chapters": 7,
+      "equal_chapters": 7,
+      "byte_equal": true,
+      "raw_bytes": 49624,
+      "current_requests": 1,
+      "local_sha256": "beed220191b74d1c4fa050f8f504d2dbc28c7d131891dcffaa86283ced41c7ed",
+      "live_sha256": "beed220191b74d1c4fa050f8f504d2dbc28c7d131891dcffaa86283ced41c7ed"
+    },
+    {
+      "book39": "Nahum",
+      "chapters": 3,
+      "equal_chapters": 3,
+      "byte_equal": true,
+      "raw_bytes": 19407,
+      "current_requests": 1,
+      "local_sha256": "7e4e5fd44039e35d52c492ae21996cd552133bb70f3650c667ae48a541648421",
+      "live_sha256": "7e4e5fd44039e35d52c492ae21996cd552133bb70f3650c667ae48a541648421"
+    },
+    {
+      "book39": "Habakkuk",
+      "chapters": 3,
+      "equal_chapters": 3,
+      "byte_equal": true,
+      "raw_bytes": 21910,
+      "current_requests": 1,
+      "local_sha256": "a61d3401ef7dc4b8d6fc2425184f608d2514804e6fca226173aab1457a469bd9",
+      "live_sha256": "a61d3401ef7dc4b8d6fc2425184f608d2514804e6fca226173aab1457a469bd9"
+    },
+    {
+      "book39": "Tsefaniah",
+      "chapters": 3,
+      "equal_chapters": 2,
+      "byte_equal": false,
+      "raw_bytes": 25336,
+      "current_requests": 1,
+      "local_sha256": "a171736373a6f682640d83f65a75a58f7f84125e53e7e0ad99196de08763d3a9",
+      "live_sha256": "87ab0a931094aa2bbb683d5d0bfa67bf8d6c79b15617c8ebb649cfb066c9d3ad"
+    },
+    {
+      "book39": "Haggai",
+      "chapters": 2,
+      "equal_chapters": 2,
+      "byte_equal": true,
+      "raw_bytes": 18372,
+      "current_requests": 1,
+      "local_sha256": "a5d585a1aef435abada3ef5e6d66675f1bfc5fdcd87ac4f5248ce5b7f3e607da",
+      "live_sha256": "a5d585a1aef435abada3ef5e6d66675f1bfc5fdcd87ac4f5248ce5b7f3e607da"
+    },
+    {
+      "book39": "Zechariah",
+      "chapters": 14,
+      "equal_chapters": 14,
+      "byte_equal": true,
+      "raw_bytes": 102022,
+      "current_requests": 1,
+      "local_sha256": "41c05a49059a39d74059207c1be1d895936008e58ce2391cf04d6157207346c4",
+      "live_sha256": "41c05a49059a39d74059207c1be1d895936008e58ce2391cf04d6157207346c4"
+    },
+    {
+      "book39": "Malachi",
+      "chapters": 3,
+      "equal_chapters": 3,
+      "byte_equal": true,
+      "raw_bytes": 26535,
+      "current_requests": 1,
+      "local_sha256": "3fd4bed37c231916e75c83bbc809a9cae24cfda5c61ba876e8de22696016e11b",
+      "live_sha256": "3fd4bed37c231916e75c83bbc809a9cae24cfda5c61ba876e8de22696016e11b"
+    },
+    {
+      "book39": "Psalms",
+      "chapters": 150,
+      "equal_chapters": 147,
+      "byte_equal": false,
+      "raw_bytes": 981751,
+      "current_requests": 8,
+      "local_sha256": "7bca4379784e7f032be241957f5ca52cce077208c9526559847fef43f8181cf0",
+      "live_sha256": "1d487fd2f11f68f211eb09f807da532678894fa8e0e0b70aa913821fe05343ee"
+    },
+    {
+      "book39": "Proverbs",
+      "chapters": 31,
+      "equal_chapters": 31,
+      "byte_equal": true,
+      "raw_bytes": 315119,
+      "current_requests": 2,
+      "local_sha256": "d4d44ac4f480bd1b328fbf56b9b1c00ba15db012f963baee3ecebf0e634b92ed",
+      "live_sha256": "d4d44ac4f480bd1b328fbf56b9b1c00ba15db012f963baee3ecebf0e634b92ed"
+    },
+    {
+      "book39": "Job",
+      "chapters": 42,
+      "equal_chapters": 42,
+      "byte_equal": true,
+      "raw_bytes": 378805,
+      "current_requests": 3,
+      "local_sha256": "6477ef48bb4661a715708c918753ca465cebf1e65868d250c593b0a1068435ae",
+      "live_sha256": "6477ef48bb4661a715708c918753ca465cebf1e65868d250c593b0a1068435ae"
+    },
+    {
+      "book39": "Song of Songs",
+      "chapters": 8,
+      "equal_chapters": 8,
+      "byte_equal": true,
+      "raw_bytes": 61326,
+      "current_requests": 1,
+      "local_sha256": "f5ed53311fe108abc50292bd6aefa996f5f73590c72ba836ebe12c9167a03b6f",
+      "live_sha256": "f5ed53311fe108abc50292bd6aefa996f5f73590c72ba836ebe12c9167a03b6f"
+    },
+    {
+      "book39": "Ruth",
+      "chapters": 4,
+      "equal_chapters": 4,
+      "byte_equal": true,
+      "raw_bytes": 44975,
+      "current_requests": 1,
+      "local_sha256": "34825175883f8e978665e12ff98c620a5c31fbea955bb8fb9c8d9301c1451f7f",
+      "live_sha256": "34825175883f8e978665e12ff98c620a5c31fbea955bb8fb9c8d9301c1451f7f"
+    },
+    {
+      "book39": "Lamentations",
+      "chapters": 5,
+      "equal_chapters": 5,
+      "byte_equal": true,
+      "raw_bytes": 63144,
+      "current_requests": 1,
+      "local_sha256": "6abd8024cebb84d3dc8df7563adcf405af1380e2763d1afa3ad0f3bbb051f768",
+      "live_sha256": "6abd8024cebb84d3dc8df7563adcf405af1380e2763d1afa3ad0f3bbb051f768"
+    },
+    {
+      "book39": "Ecclesiastes",
+      "chapters": 12,
+      "equal_chapters": 12,
+      "byte_equal": true,
+      "raw_bytes": 107203,
+      "current_requests": 1,
+      "local_sha256": "9a0ca3254ac5157db63e8239230add255fb85c9a1325c3f597c35a55f1b8cd19",
+      "live_sha256": "9a0ca3254ac5157db63e8239230add255fb85c9a1325c3f597c35a55f1b8cd19"
+    },
+    {
+      "book39": "Esther",
+      "chapters": 10,
+      "equal_chapters": 10,
+      "byte_equal": true,
+      "raw_bytes": 106218,
+      "current_requests": 1,
+      "local_sha256": "bf60c40fbdfb49e560c7837b54a7c312640629f7ab23fd2664c493db97e0e651",
+      "live_sha256": "bf60c40fbdfb49e560c7837b54a7c312640629f7ab23fd2664c493db97e0e651"
+    },
+    {
+      "book39": "Daniel",
+      "chapters": 12,
+      "equal_chapters": 11,
+      "byte_equal": false,
+      "raw_bytes": 212749,
+      "current_requests": 1,
+      "local_sha256": "87b775d728e9ea6ace7db0afd9f56168e1ed653b774b495b015e19f226a953b5",
+      "live_sha256": "85064c68a4d2ecd55ac9ecaf9774bb13cdcef673ab9e3471ae5c659ed33067e0"
+    },
+    {
+      "book39": "Ezra",
+      "chapters": 10,
+      "equal_chapters": 10,
+      "byte_equal": true,
+      "raw_bytes": 133908,
+      "current_requests": 1,
+      "local_sha256": "c1cd11300f256b0dd93b1000a56c268d029d417feef96652611fa5e68c4e9a54",
+      "live_sha256": "c1cd11300f256b0dd93b1000a56c268d029d417feef96652611fa5e68c4e9a54"
+    },
+    {
+      "book39": "Nehemiah",
+      "chapters": 13,
+      "equal_chapters": 13,
+      "byte_equal": true,
+      "raw_bytes": 187870,
+      "current_requests": 1,
+      "local_sha256": "9c17a84b44eeab4e20d2c3325f83d2c94b76dc57f32a5cc44e297c62af83fb45",
+      "live_sha256": "9c17a84b44eeab4e20d2c3325f83d2c94b76dc57f32a5cc44e297c62af83fb45"
+    },
+    {
+      "book39": "1Chronicles",
+      "chapters": 29,
+      "equal_chapters": 29,
+      "byte_equal": true,
+      "raw_bytes": 378675,
+      "current_requests": 2,
+      "local_sha256": "8a7ed63742113ae213379966fd50a02e172df5bbba11929fd5cd5b7ee4c0d3ff",
+      "live_sha256": "8a7ed63742113ae213379966fd50a02e172df5bbba11929fd5cd5b7ee4c0d3ff"
+    },
+    {
+      "book39": "2Chronicles",
+      "chapters": 36,
+      "equal_chapters": 34,
+      "byte_equal": false,
+      "raw_bytes": 405626,
+      "current_requests": 2,
+      "local_sha256": "54bbbc9df282eb47b5b9e0134453f7c71c49efd7fa9b14723ec60722a10ffec8",
+      "live_sha256": "4737d2b8702faa5b077c503777a14f42f9b156ea6b2cc385cf50ae1abebb3008"
+    }
+  ],
+  "upstream_differences_exact_edits": [
+    {
+      "book39": "Genesis",
+      "chapter_number": 43,
+      "local_sha256": "99aa99c5ae67d5eb9e824e14e5e4cb7f0d77c165965014cb1268a65bb3298155",
+      "live_sha256": "2da7ad9125ec3a249d118fb8f7b48979b97440dd10d6d456b073080fd6aed0d4",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 32,
+          "local_line_count": 1,
+          "live_line_start_1based": 32,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": " (\u05db\u05ea\u05d9\u05d1 \u05d7\u05e1\u05e8 \u05d5\u05d9\"\u05d5, \u05d5\u05e0\u05e7\u05d5\u05d3\u05ea \u05e9\u05d5\u05e8\u05d5\u05e7 \u05d1\u05dc\u05d1\u05d3 \u05d1\u05d0\u05d5\u05ea \u05d5\u05d9\"\u05d5 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4); \u05dc\u05db\u05df \u05d1,\u05e9,\u05e91,\u05d5=\u05d5\u05b7\u05d9\u05b4\u05bc\u05bd\u05e9\u05b0\u05c1\u05ea\u05b7\u05bc\u05d7\u05b2\u05d5\u05bd\u05d5\u05bc \u05e7\u05e8\u05d9 (\u05d0\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d1\u05d5\u05d9\"\u05d5 \u05e2\u05d9\u05e6\u05d5\u05e8\u05d9\u05ea), \u05d5\u05db\u05de\u05d5 \u05db\u05df \u05d1\u05d3\u05e4\u05d5\u05e1\u05d9\u05dd."
+            },
+            {
+              "operation": "delete",
+              "old": "-\u05db\u05ea\u05d9\u05d1",
+              "new": ""
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": " (\u05db\u05ea\u05d9\u05d1 \u05d7\u05e1\u05e8 \u05d5\u05d9\"\u05d5, \u05d5\u05e0\u05d9\u05e7\u05d5\u05d3 \u05e9\u05dc \u05e7\u05d5\u05d1\u05d5\u05e5 \u05d5\u05e0\u05e7\u05d5\u05d3\u05ea \u05e9\u05d5\u05e8\u05d5\u05e7 \u05d1\u05d9\u05d7 \u05d1\u05d0\u05d5\u05ea \u05d5\u05d9\"\u05d5 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4)"
+            },
+            {
+              "operation": "delete",
+              "old": "-\u05e7\u05e8\u05d9",
+              "new": ""
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": " \u05e7\u05e8\u05d9"
+            },
+            {
+              "operation": "delete",
+              "old": "; \u05d1\u05db\u05d5\u05dc\u05dd \u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d1\u05d0\u05d5\u05ea \u05d5\u05d9\"\u05d5 \u05d1\u05db\u05ea\u05d9\u05d1 \u05d1\u05e1\u05d5\u05e3 \u05d4\u05ea\u05d9\u05d1\u05d4 \u05d5\u05d2\u05dd \u05e9\u05d5\u05e8\u05d5\u05e7 \u05de\u05ea\u05d7\u05ea\u05d9\u05d4",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Deuter",
+      "chapter_number": 28,
+      "local_sha256": "448431a0b41254a7fb682e92399d7c7cccfce0a765a63915fde7d82e1016a8af",
+      "live_sha256": "f01802e5dad051f53f50e01af3f46f590d5257438a840681b2689a16f844aa9e",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 36,
+          "local_line_count": 1,
+          "live_line_start_1based": 36,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "-\u05db\u05ea\u05d9\u05d1",
+              "new": ""
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": " \u05d1\u05db\u05ea\u05d9\u05d1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Deuter",
+      "chapter_number": 32,
+      "local_sha256": "30d0a06eae44c5f0b9191d4d8e8d628088422089d2c804af0659e86719432233",
+      "live_sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 48,
+          "local_line_count": 1,
+          "live_line_start_1based": 48,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": " (\u05d0\u05d5\u05ea \u05d9\u05d5\"\u05d3 \u05e7\u05d8\u05e0\u05d4)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Joshua",
+      "chapter_number": 19,
+      "local_sha256": "dd12dfbb27d9975e2fd29b220f54e88b5e5e51e8be3afb202b1f22f1cdda8854",
+      "live_sha256": "c6a443448e4aa5a092d13a178c5d9351ea1d1694406a8e56661fcbb2bce313e7",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 13,
+          "local_line_count": 1,
+          "live_line_start_1based": 13,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Judges",
+      "chapter_number": 10,
+      "local_sha256": "e935280a27798600575518b28b9953b40c5de1b16c99c97634e2165f2f25671c",
+      "live_sha256": "5563b4e66adb7fd62c11f242bab8bb19020fa14b21a0df12ca5dedae01e3ff9d",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 19,
+          "local_line_count": 1,
+          "live_line_start_1based": 19,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "{{\u05e0\u05d5\u05e1\u05d7|"
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "|2==\u05d0,\u05dc (\u05de\u05e8\u05db\u05d0 \u05d1\u05d0\u05d5\u05ea \u05d9\u05d5\"\u05d3). \u05d9\u05e9 \u05ea\u05e7\u05dc\u05d3\u05d4 \u05de\u05e9\u05d5\u05ea\u05e4\u05ea \u05d0\u05e6\u05dc \u05d1\u05e8\u05d5\u05d9\u05d0\u05e8 (\u05db\u05ea\u05e8 \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd) \u05d5\u05d1\u05de\u05db\u05d5\u05df \u05de\u05de\u05e8\u05d0: \u05d5\u05b7\u05a5\u05d9\u05b9\u05bc\u05d0\u05de\u05b6\u05e8 (\u05de\u05e8\u05db\u05d0 \u05d1\u05d0\u05d5\u05ea \u05d9\u05d5\"\u05d3). \u05de\u05e7\u05d5\u05e8 \u05d4\u05d8\u05e2\u05d5\u05ea \u05db\u05e0\u05e8\u05d0\u05d4 \u05d1\u05d2\u05e8\u05e1\u05d0\u05d5\u05ea \u05d9\u05e9\u05e0\u05d5\u05ea \u05e9\u05dc \u05d4\u05d4\u05e7\u05dc\u05d3\u05d4, \u05e9\u05d4\u05e2\u05ea\u05d9\u05e7\u05d4 \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea \u05de-BHS.}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "1Samuel",
+      "chapter_number": 1,
+      "local_sha256": "25e0d2e37b08d9e12a284782970f51e9beb60d4fdeaa10a94c1a8a1314daa072",
+      "live_sha256": "582ba51afc8ea33079f9ced5e14fdbc4cfb33667476f2ccb35513e7e7debd26e",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 10,
+          "local_line_count": 1,
+          "live_line_start_1based": 10,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "1Samuel",
+      "chapter_number": 22,
+      "local_sha256": "2ce9ef365b6b153ccbdcea457879b7c7050f8ffbf9a67e09f094119065afad90",
+      "live_sha256": "2765ccf65441d5de388ab1c3128c6aea8abbd9ab3e38aaa49b5b303a6d3f658c",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 27,
+          "local_line_count": 1,
+          "live_line_start_1based": 27,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "2Kings",
+      "chapter_number": 6,
+      "local_sha256": "8d219bc97e10cebd3f2f36d2984960cfe48b047ca631f637d2ea0862d0961768",
+      "live_sha256": "c29f6d63a9c40625e6bfa5994ed407e906439b28e6acd97dbb80deb2dc397b08",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 28,
+          "local_line_count": 1,
+          "live_line_start_1based": 28,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "2Kings",
+      "chapter_number": 17,
+      "local_sha256": "a85a6262710310d4fe91a61a8cacc9247f50ca870c96ebf24c94df999589586f",
+      "live_sha256": "b2a730f4db12dac5d7c6aa4585f70170107d72303614e37ffbaf2b375bad99ef",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 21,
+          "local_line_count": 1,
+          "live_line_start_1based": 21,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "{{\u05e0\u05d5\u05e1\u05d7|"
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "|2==\u05dc?,\u05e7,\u05e91 (\u05e7\u05d3\u05de\u05d0 \u05d5\u05d0\u05d6\u05dc\u05d0 [\u05d2\u05e8\u05e9]), \u05d5\u05db\u05da \u05d9\u05e9 \u05d2\u05e8\u05e9 \u05d0\u05e6\u05dc \u05d3\u05d5\u05ea\u05df \u05d5\u05d1\u05e8\u05d5\u05d9\u05d0\u05e8 \u05d5\u05de\u05d2\"\u05d4, \u05d5\u05db\u05de\u05d5 \u05db\u05df \u05d1\u05e7\u05d5\u05e8\u05df \u05d5\u05d1\u05d3\u05e4\u05d5\u05e1\u05d9\u05dd.{{\u05e9}}\u05dc?!=\u05d5\u05b7\u05d9\u05b5\u05bc\u05a8\u05dc\u05b0\u05db\u05d5\u05bc (\u05d7\u05e1\u05e8 \u05d8\u05e2\u05dd \u05d4\u05d0\u05d6\u05dc\u05d0 [\u05d2\u05e8\u05e9] \u05d1\u05d0\u05d5\u05ea \u05db\"\u05e3), \u05d5\u05db\u05da \u05d1\u05d4\u05e7\u05dc\u05d3\u05d4; \u05d1\u05db\u05ea\u05d9\"\u05dc \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d1\u05d7\u05d9\u05df \u05d1\u05e8\u05d5\u05e9\u05dd \u05e9\u05dc \u05d4\u05d2\u05e8\u05e9, \u05d0\u05da \u05d4\u05d5\u05d0 \u05de\u05d8\u05d5\u05e9\u05d8\u05e9 \u05d0\u05d5 \u05de\u05d7\u05d5\u05e7.{{\u05e9}}BHS!=\u05d5\u05b7\u05d9\u05b5\u05bc\u05a8\u05dc\u05b0\u05db\u05d5\u05bc\u059c (\u05d2\u05e8\u05e9 \u05d1\u05d0\u05d5\u05ea \u05d5\u05d9\"\u05d5), \u05d5\u05db\u05da \u05d4\u05d9\u05d4 \u05d1\u05d2\u05e8\u05e1\u05d0\u05d5\u05ea \u05d9\u05e9\u05e0\u05d5\u05ea \u05e9\u05dc \u05d4\u05d4\u05e7\u05dc\u05d3\u05d4; \u05de\u05e9\u05dd \u05d4\u05d5\u05e2\u05ea\u05e7\u05d4 \u05d4\u05d8\u05e2\u05d5\u05ea \u05d4\u05d6\u05d0\u05ea \u05d1\u05de\u05db\u05d5\u05df \u05de\u05de\u05e8\u05d0 \u05d5\u05d0\u05e6\u05dc \u05d1\u05e8\u05d5\u05d9\u05d0\u05e8 (\u05db\u05ea\u05e8 \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd).}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Isaiah",
+      "chapter_number": 22,
+      "local_sha256": "3abe7915ef08e980451d854afcbd43eb860359f6f9622b41586c8307d24da2f9",
+      "live_sha256": "962ec7ab2c98c8954bd6b5b52e0e8ccea09211bde4f3073a3c5b84730e75b516",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 9,
+          "local_line_count": 1,
+          "live_line_start_1based": 9,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Isaiah",
+      "chapter_number": 24,
+      "local_sha256": "6eaa4e755f3f3af161e556f0d6a6c3a73a6c3b85f1b4080c29335020fc11e07a",
+      "live_sha256": "4d02018beba74ca2ca6e220920506fe413fec2fb1b2be9ad5001578cc27e7f5e",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 23,
+          "local_line_count": 1,
+          "live_line_start_1based": 23,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "\u05bd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Isaiah",
+      "chapter_number": 42,
+      "local_sha256": "43c1fa42258b7642df3b886f0c1000efa37ed9fc7a6a6c6a2024af2ad1b0b1cc",
+      "live_sha256": "818b7666ec0bc460a1f715b425c8b4734223a359ebe5b2ffdef00d0e61d5cef8",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 32,
+          "local_line_count": 1,
+          "live_line_start_1based": 32,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Isaiah",
+      "chapter_number": 50,
+      "local_sha256": "4dc1bd95b6a82c66361450a40c25bcaa5103f128eb3e844b8b7672ff1e710aca",
+      "live_sha256": "55acf5ff92f5d40dc75cdb1435b49aadedea8bc2036d9c94d808f447085b525e",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 12,
+          "local_line_count": 1,
+          "live_line_start_1based": 12,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Tsefaniah",
+      "chapter_number": 3,
+      "local_sha256": "cd7b0a083e7d5f75d530fb5efd4b3102910b2134c1ff8f601e08717c1101e45a",
+      "live_sha256": "01a0bdf12895d488cdb22bff27a390fb7a892ecbbecd3d9fcd8171bbac34d1d5",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 18,
+          "local_line_count": 1,
+          "live_line_start_1based": 18,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Psalms",
+      "chapter_number": 4,
+      "local_sha256": "38d94bb367c55e8ff76dfb22c35d09a5c8a4adc4457507bcb3ee29c29ca604cd",
+      "live_sha256": "5bd7df9b191fb53c0bc9808721bc6104ae6c36feaa10e14bfff08bc7f077ea34",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 8,
+          "local_line_count": 1,
+          "live_line_start_1based": 8,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "{{\u05de:\u05d3\u05d7\u05d9|"
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "|\u05dc\u05b4\u05ad\u05db\u05b0\u05dc\u05b4\u05de\u05b8\u05bc\u05ad\u05d4}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Psalms",
+      "chapter_number": 71,
+      "local_sha256": "e10328ec3dd6ce856ccbadf5edfee6df699ecdc9888c7125fa3a4dc0b5404631",
+      "live_sha256": "a06932fdf6f832d0b35a4e8c7644ab493754bff2d16719a09b255490ef58a29a",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 14,
+          "local_line_count": 1,
+          "live_line_start_1based": 14,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05ad",
+              "new": ""
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "\u05ad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Psalms",
+      "chapter_number": 84,
+      "local_sha256": "225b72d8c9a6fb082dcf83f7b715c9a72512b5b7508bb0e2593c65f98a5e1102",
+      "live_sha256": "c9e1d0937e36861a1f3535001674a7fd7bbdb6a53cf37e5849c459e500dd62aa",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 9,
+          "local_line_count": 1,
+          "live_line_start_1based": 9,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "\u05dc-\u05d2\u05d3\u05d5\u05dc\u05d5\u05ea,"
+            },
+            {
+              "operation": "delete",
+              "old": ",\u05dc-\u05d2\u05d3\u05d5\u05dc\u05d5\u05ea",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "Daniel",
+      "chapter_number": 3,
+      "local_sha256": "53b5116d4a97cae27c9388f5c858b4ddbf29d24581558ed9461a918d337f82ea",
+      "live_sha256": "7b616fcaea642d2d0ec7b2e95758de15de7e381865cd4e192929342fa385dbd4",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 10,
+          "local_line_count": 1,
+          "live_line_start_1based": 10,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "-\u05db\u05ea\u05d9\u05d1",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "2Chronicles",
+      "chapter_number": 26,
+      "local_sha256": "8b66392394ac27ab5ff062c6313b657c94cbee2bafe747136a8e450943571c9a",
+      "live_sha256": "d04cb53a8b258b7971768dd7ffbf2d91d62c2f59a757c053b34ff4cecd100b1d",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 20,
+          "local_line_count": 1,
+          "live_line_start_1based": 20,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "delete",
+              "old": "\u05bd",
+              "new": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "book39": "2Chronicles",
+      "chapter_number": 28,
+      "local_sha256": "183871523dc2f15c9accae188058e95e8823eb3ac1cd4de80346549d614f6640",
+      "live_sha256": "ff3c300f5ae1a96e99d4880ee625b1ed0b67c8ebb67d2d62274226556849f6fb",
+      "line_edits": [
+        {
+          "operation": "replace",
+          "local_line_start_1based": 25,
+          "local_line_count": 1,
+          "live_line_start_1based": 25,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "\u05bd"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "local_line_start_1based": 29,
+          "local_line_count": 1,
+          "live_line_start_1based": 29,
+          "live_line_count": 1,
+          "character_changes": [
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "{{\u05e0\u05d5\u05e1\u05d7|"
+            },
+            {
+              "operation": "insert",
+              "old": "",
+              "new": "|2==\u05d0 (\u05d8\u05e2\u05dd \u05db\u05e4\u05d5\u05dc \u05d1\u05db\u05ea\u05d1\u05be\u05d4\u05d9\u05d3)}}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suite": {
+    "passed": 990,
+    "skipped": 5,
+    "subtests_passed": 65,
+    "pytest_seconds": 108.33,
+    "log_tail": "990 passed, 5 skipped, 65 subtests passed in 108.33s (0:01:48)"
+  },
+  "generated_artifacts": {
+    "local_steps": [
+      {
+        "position": 1,
+        "step_id": "parse-ws",
+        "returncode": 0,
+        "seconds": 17.08,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/01-parse-ws.log"
+      },
+      {
+        "position": 2,
+        "step_id": "foi-features-of-interest",
+        "returncode": 0,
+        "seconds": 6.03,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/02-foi-features-of-interest.log"
+      },
+      {
+        "position": 3,
+        "step_id": "mam-with-doc",
+        "returncode": 0,
+        "seconds": 8.56,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/03-mam-with-doc.log"
+      },
+      {
+        "position": 4,
+        "step_id": "diff-mpp",
+        "returncode": 0,
+        "seconds": 8.43,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/04-diff-mpp.log"
+      },
+      {
+        "position": 5,
+        "step_id": "tmpl-survey",
+        "returncode": 0,
+        "seconds": 13.4,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/05-tmpl-survey.log"
+      },
+      {
+        "position": 6,
+        "step_id": "tmpl-survey-toy",
+        "returncode": 0,
+        "seconds": 1.85,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/06-tmpl-survey-toy.log"
+      },
+      {
+        "position": 7,
+        "step_id": "vendored-tmpl-survey-toy",
+        "returncode": 0,
+        "seconds": 1.91,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/07-vendored-tmpl-survey-toy.log"
+      },
+      {
+        "position": 8,
+        "step_id": "mam-simple",
+        "returncode": 0,
+        "seconds": 23.95,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/08-mam-simple.log"
+      },
+      {
+        "position": 9,
+        "step_id": "mam4sef-and-ajf",
+        "returncode": 0,
+        "seconds": 9.25,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/09-mam4sef-and-ajf.log"
+      },
+      {
+        "position": 10,
+        "step_id": "mam-osis",
+        "returncode": 0,
+        "seconds": 3.01,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/10-mam-osis.log"
+      },
+      {
+        "position": 11,
+        "step_id": "letter-small-job",
+        "returncode": 0,
+        "seconds": 1.83,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/11-letter-small-job.log"
+      },
+      {
+        "position": 12,
+        "step_id": "vendored-letter-small-job",
+        "returncode": 0,
+        "seconds": 1.9,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/12-vendored-letter-small-job.log"
+      },
+      {
+        "position": 13,
+        "step_id": "vendored-mam4sef",
+        "returncode": 0,
+        "seconds": 4.84,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/13-vendored-mam4sef.log"
+      },
+      {
+        "position": 14,
+        "step_id": "vendored-mam-osis",
+        "returncode": 0,
+        "seconds": 2.56,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/14-vendored-mam-osis.log"
+      },
+      {
+        "position": 15,
+        "step_id": "decnreub",
+        "returncode": 0,
+        "seconds": 1.91,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/15-decnreub.log"
+      },
+      {
+        "position": 16,
+        "step_id": "multimark",
+        "returncode": 0,
+        "seconds": 15.21,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/16-multimark.log"
+      },
+      {
+        "position": 17,
+        "step_id": "wordlist",
+        "returncode": 0,
+        "seconds": 2.46,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/17-wordlist.log"
+      },
+      {
+        "position": 18,
+        "step_id": "explicit-xataf",
+        "returncode": 0,
+        "seconds": 1.94,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/18-explicit-xataf.log"
+      },
+      {
+        "position": 19,
+        "step_id": "ws-bot-proto",
+        "returncode": 0,
+        "seconds": 6.87,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/19-ws-bot-proto.log"
+      },
+      {
+        "position": 20,
+        "step_id": "gen-misc-authored-english-documents",
+        "returncode": 0,
+        "seconds": 3.12,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/20-gen-misc-authored-english-documents.log"
+      },
+      {
+        "position": 21,
+        "step_id": "wlc-json-and-unicode",
+        "returncode": 0,
+        "seconds": 24.08,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/21-wlc-json-and-unicode.log"
+      },
+      {
+        "position": 22,
+        "step_id": "accgram-run-prose",
+        "returncode": 0,
+        "seconds": 24.18,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/22-accgram-run-prose.log"
+      },
+      {
+        "position": 23,
+        "step_id": "accgram-test-fixes",
+        "returncode": 0,
+        "seconds": 4.35,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/23-accgram-test-fixes.log"
+      },
+      {
+        "position": 24,
+        "step_id": "accgram-run-dual-cant",
+        "returncode": 0,
+        "seconds": 2.12,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/24-accgram-run-dual-cant.log"
+      },
+      {
+        "position": 25,
+        "step_id": "accgram-run-poetic",
+        "returncode": 0,
+        "seconds": 4.25,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/25-accgram-run-poetic.log"
+      },
+      {
+        "position": 26,
+        "step_id": "accgram-xcheck-poetic",
+        "returncode": 0,
+        "seconds": 3.33,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/26-accgram-xcheck-poetic.log"
+      },
+      {
+        "position": 27,
+        "step_id": "accgram-servi-xcheck",
+        "returncode": 0,
+        "seconds": 3.03,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/27-accgram-servi-xcheck.log"
+      },
+      {
+        "position": 28,
+        "step_id": "accgram-grammaticality",
+        "returncode": 0,
+        "seconds": 3.36,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/28-accgram-grammaticality.log"
+      },
+      {
+        "position": 29,
+        "step_id": "accgram-run-printed-decalogue",
+        "returncode": 0,
+        "seconds": 2.06,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/29-accgram-run-printed-decalogue.log"
+      },
+      {
+        "position": 30,
+        "step_id": "accgram-survey-chanted-word-accents",
+        "returncode": 0,
+        "seconds": 44.03,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/30-accgram-survey-chanted-word-accents.log"
+      },
+      {
+        "position": 31,
+        "step_id": "accgram-generate-html",
+        "returncode": 0,
+        "seconds": 16.0,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/31-accgram-generate-html.log"
+      },
+      {
+        "position": 32,
+        "step_id": "find-uxlc-accent-changes",
+        "returncode": 0,
+        "seconds": 1.79,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/32-find-uxlc-accent-changes.log"
+      },
+      {
+        "position": 33,
+        "step_id": "uxlc-grammar-test",
+        "returncode": 0,
+        "seconds": 2.84,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/33-uxlc-grammar-test.log"
+      },
+      {
+        "position": 34,
+        "step_id": "wlc-diffs-420422",
+        "returncode": 0,
+        "seconds": 2.08,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/34-wlc-diffs-420422.log"
+      },
+      {
+        "position": 35,
+        "step_id": "wlc-a-notes",
+        "returncode": 0,
+        "seconds": 1.95,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/35-wlc-a-notes.log"
+      },
+      {
+        "position": 36,
+        "step_id": "sigil-inventory",
+        "returncode": 0,
+        "seconds": 2.39,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/36-sigil-inventory.log"
+      },
+      {
+        "position": 37,
+        "step_id": "gen-site",
+        "returncode": 0,
+        "seconds": 6.82,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/37-gen-site.log"
+      },
+      {
+        "position": 38,
+        "step_id": "vendoring-audit",
+        "returncode": 0,
+        "seconds": 3.69,
+        "log": ".novc/ws-products-baseline-20260910/ws-efficiency-phase1-mega/38-vendoring-audit.log"
+      }
+    ],
+    "omitted_steps": [
+      "near-aleppo-census"
+    ],
+    "protected_trees_before": {
+      "in/mam-go": {
+        "files": 9,
+        "sha256": "79d984c5ed02c7aa0012d0e70afc2f25190c73c545beccc1f8b75247d18cd20e"
+      },
+      "in/mam-ws": {
+        "files": 39,
+        "sha256": "9cc3feb4f46aab6c6044d6c5452738953977333abfa4008cbadab36973af40bc"
+      },
+      "out/mam-ws-bot": {
+        "files": 80,
+        "sha256": "ba4986fe7ddaa431cd7d2f27b3cbfc60ac0c75187239085615cc689f3ad4cf10"
+      },
+      "MAM-parsed/historical": {
+        "files": 8,
+        "sha256": "905f6ecccb2f5efec088364d7b1e5c5779907b41a070180db1b9e95de675d0db"
+      }
+    },
+    "protected_trees_after": {
+      "in/mam-go": {
+        "files": 9,
+        "sha256": "79d984c5ed02c7aa0012d0e70afc2f25190c73c545beccc1f8b75247d18cd20e"
+      },
+      "in/mam-ws": {
+        "files": 39,
+        "sha256": "9cc3feb4f46aab6c6044d6c5452738953977333abfa4008cbadab36973af40bc"
+      },
+      "out/mam-ws-bot": {
+        "files": 80,
+        "sha256": "ba4986fe7ddaa431cd7d2f27b3cbfc60ac0c75187239085615cc689f3ad4cf10"
+      },
+      "MAM-parsed/historical": {
+        "files": 8,
+        "sha256": "905f6ecccb2f5efec088364d7b1e5c5779907b41a070180db1b9e95de675d0db"
+      }
+    },
+    "all_local_steps_passed": true,
+    "full_parse_seconds": 17.08,
+    "expected_documentation_pending": "mp.plain.docs.book39-skeleton.common",
+    "generated_report_differences": {
+      "paths": [
+        "doc/vendoring-inventory.md",
+        "out/vendoring_compare_out.txt"
+      ],
+      "explanation": "24 eol-only entries became identical; all 44 support copies are byte-identical in this checkout. Inventory groups collapse from 8 to 4. No substantive source/content difference.",
+      "preserved_outputs": {
+        "doc/vendoring-inventory.md": {
+          "generated_sha256": "be9368cd8111a8f838fb11eafd49ec4d3366cb5771d4fca14fdc2ac0edd595cd",
+          "baseline_sha256": "f1c51e9ca3251fbd42cae4851fffd1b93803a24b333f6d171ed81cb5fe9dc86a",
+          "saved_copy": ".novc/ws-efficiency-phase1-20260910/preserved-generated/doc/vendoring-inventory.md"
+        },
+        "out/vendoring_compare_out.txt": {
+          "generated_sha256": "7af90531734b27ce008cd3eba40c68fadb415840bf571e6172283076d8c79a5d",
+          "baseline_sha256": "3a974c2d9d170219076c1e2cb7341f0dea076aeacca3869bca0b7d3ee6bb0760",
+          "saved_copy": ".novc/ws-efficiency-phase1-20260910/preserved-generated/out/vendoring_compare_out.txt"
+        }
+      },
+      "disposition": "Generated versions retained in scratch; committed baseline reports restored so the Phase 1 commit contains only plan and compact evidence."
+    },
+    "other_tracked_differences": [],
+    "comparator_records": 0,
+    "auto_edits": 0
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 109.489751599991,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\baseline-suite.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        ".novc/ws_products_phase5_mega_20260910.py",
+        "--run-label",
+        "ws-efficiency-phase1-mega"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 295.6772862999933,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\local-mega.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_mam_simple.py",
+        "doc-only"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 0.3014371999888681,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\doc-only.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_authored.py",
+        "gen-mam-parsed-docs"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 6.138078499992844,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\parsed-docs.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_pipeline_graph.py"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 1.7162641000177246,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\pipeline-graphs.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_parse.py",
+        "go"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 3.2790309000120033,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\parse-go.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_diff.py",
+        "wsgo"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 11.36930220000795,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\diff-wsgo.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        ".novc/ws_efficiency_phase1_20260910.py",
+        "live",
+        "ws-efficiency-phase1-20260910-retry"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 266.15404940000735,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\live-retry.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        ".novc/ws_efficiency_api_probes_20260910.py"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 12.310863299993798,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\api-probes.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\BenDe\\GitRepos\\MAM-basics\\.venv\\Scripts\\python.exe",
+        "py/main_test.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics",
+      "REPOS_ROOT": "C:/Users/BenDe/GitRepos",
+      "head": "7d0888b374c51c2c81aa5b461cbeabd15628d17b",
+      "returncode": 0,
+      "seconds": 20.77862849997473,
+      "log": "C:\\Users\\BenDe\\.codex\\worktrees\\3a6b\\MAM-basics\\.novc\\ws-efficiency-phase1-20260910\\staged-prose-lints.log"
+    }
+  ],
+  "scratch_source_sha256": {
+    ".novc/ws_efficiency_phase1_20260910.py": "9c82db04c587e54c3a24a35957f7d4ab7c8f2f16fed9138d6be481fa65a8a0c0",
+    ".novc/ws_efficiency_api_probes_20260910.py": "2eabb302915b00735289b681bf7a06e22032ebc24154e98db59da0b90114342c",
+    ".novc/ws_efficiency_extras_20260910.py": "ae3bad9da5615176671220be11f0198aba5c81c6f5258f799e79db861d125064",
+    ".novc/ws_efficiency_preserve_reports_20260910.py": "2160e079fe2de4da938487e2694cd0c2dd682405b11b210f1ad0753c0b343057",
+    ".novc/ws_efficiency_upstream_diff_20260910.py": "9329003755a013cfdc724bf1be2684ed7ce57b6c32c29bf53dbbba4cb47f9660",
+    ".novc/ws_products_phase5_mega_20260910.py": "662d527d5b8ae15e9d371657f2869420a6dfd53664f10e4c0bc7d8db15b6545e"
+  }
+}
