@@ -388,7 +388,8 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
    pipeline" is therefore not true of the change log, and finding 1 now blocks regenerating it.
 
 3. **Stale disposition, unfixed: finding 13.3's "Fixed" record describes a display fallback that
-   `3a1ab7f0` retired three hours after the fast-forward, and no dated note says so.**
+   `3a1ab7f0` retired three hours after the fast-forward at `9d1de074`, and no dated note says
+   so.**
    `doc/review-findings-2026-09-08.md:1054` ("both fallback sites select unannotated source
    text") and `doc/PLAN-remediate-review-findings-2026-09-08.md:1952–1956` ("Both `mam_form or
    chanted_word` sites now select the snapshot's unannotated form when the MAM form is absent")
