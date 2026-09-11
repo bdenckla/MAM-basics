@@ -25,22 +25,35 @@ in the other order is either hand-authored — and **the way in is a paste throu
 normalizes, a browser above all** — or it sits upstream of the denormalizing step and belongs
 exactly as it is. Hebrew you did not lift from the data is the thing to suspect.
 
-**Never "repair" the second kind.** A tree-wide scan finds some 200,000 clusters in the other order
-and every one is expected: `in/mam-ws/` is a download that is inherently normalized (Ben,
-2026-09-09), `out/mam-ws-bot/proto/` and `out/mam-ws-parsed-fmt-2/` are its faithful intermediates
-— their per-book counts match it exactly — and the pipeline denormalizes downstream, which is why
-`MAM-parsed/` and `MAM-for-Sefaria/` come out clean. The rest are byte-verbatim captures of
-external sources, exempt on the same ground `in/mam-ws-intro/` is: `in/UXLC-39/`,
-`aleppo/aleppo-wiki/Wikisource-manual-*.txt`, `misc/zarqa-table-diff/`, `misc/*/img-sources/`.
-`py/repo_scopes.py` records why a repo-wide mark-order sweep has no meaning here.
+**Never "repair" the second kind, and know which clusters are the second kind.** A scan of every
+tracked file on 2026-09-11, at review-branch commit `2bb94060`, counted **699,940** clusters in the
+other order, a cluster counting when `give_std_mark_order` changes it. Two groups, 692,693
+clusters between them, are known to be expected:
 
-**The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`
-plus the `.html` under `doc/`. It was added 2026-09-09, when a scan someone chose to run found 132
-such clusters in 16 prose files that no existing check covered. Source outside its file types is
-still yours to check: `py/check_mark_order.py` covers the `.py` and the Ben-authored `.json` of
-the three repos `py/repo_scopes.py` names, and
-`py/tests/test_mam_simple_mark_order.py` covers MAM-simple's non-corpus tree, but a `.txt` is
-covered by nothing, and
+- **688,072 are the Wikisource download and three faithful intermediates of it**, 172,018 in each
+  tree. `in/mam-ws/` is a download that is inherently normalized (Ben, 2026-09-09);
+  `out/mam-ws-bot/proto/`, `out/mam-ws-bot/proto-fmt-2/` and `out/mam-ws-parsed-fmt-2/` are
+  written from it, and their per-book counts match it exactly. The pipeline denormalizes
+  downstream, which is why `MAM-parsed/` and `MAM-for-Sefaria/` come out clean.
+- **4,621 are byte-verbatim captures of external sources**: `in/mam-ws-intro/`, `in/UXLC-39/`,
+  `aleppo/aleppo-wiki/Wikisource-manual-*.txt`, `misc/zarqa-table-diff/`, `misc/*/img-sources/`.
+
+**The other 7,247 clusters, in 152 files, are unclassified.** Nobody has established, file by
+file, whether each is a capture, an upstream intermediate, or a paste that should have been in
+MAM-normal order. The largest shares are in `uxlc/in/` and `uxlc/out/` (3,890), `in/accgram/`
+(1,431), `out/accgram/` (702), files under `py/` (656 in 65 files, 369 of those in 51 `.py`
+files) and `gh-pages/` (334). So do not repair one of them, and do not cite one as expected,
+without first finding out which it is. `py/repo_scopes.py` records why a repo-wide mark-order
+sweep has no meaning here.
+
+**The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`,
+the `.html` under `doc/`, and the `.txt` under `in/accgram/edition_transcriptions/`, the last by
+Ben's decision of 2026-09-09, which the lint's docstring records. It was added 2026-09-09, when a
+scan someone chose to run found 132 such clusters in 16 prose files that no existing check
+covered. Source outside its scope is still yours to check: `py/check_mark_order.py` covers the
+`.py` and the Ben-authored `.json` of the three repos `py/repo_scopes.py` names, and
+`py/tests/test_mam_simple_mark_order.py` covers MAM-simple's non-corpus tree, but any other
+`.txt` is covered by nothing, and
 `py/tests/test_aleppo_page_mark_order.py` covers generated pages rather than source. Separately
 `py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
 `py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.

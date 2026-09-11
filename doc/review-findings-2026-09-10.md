@@ -1,6 +1,6 @@
 # Findings of the 2026-09-10 review of the public repos since 2026-09-08
 
-State: not yet acted on, except findings 1, 2 and 3, fixed on 2026-09-11 at Ben's direction before the Codex counter-argument ran; see `## Dispositions after remediation` at the end
+State: not yet acted on, except findings 1 to 5, fixed on 2026-09-11 at Ben's direction before the Codex counter-argument ran; see `## Dispositions after remediation` at the end
 
 Written 2026-09-10, late evening, as the Claude argument, turn 1 of the standard alternating
 dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09): this file was
@@ -847,5 +847,7 @@ the anchor `0354b6cc`, where all three findings still stand as written above.
 | 2026-09-11 | 1 | Has been fixed by `f11ecaf8` on `main`. Every op that places a mark now records the index the mark has among its cluster's marks in the new text, and `change_ops_apply` places it there, so the mpplus diff rebuilds Isaiah 24:18 and the mega's step, now named `diff-mpplus`, no longer stops. The finding's command re-establishes it with the subcommand renamed: `py/main_diff.py mpplus --old 9ce6ee5 --new HEAD`. |
 | 2026-09-11 | 2 | Has been fixed by `6b45ad0f` on `main`. `gh-pages/MAM-with-doc/change-log/unpinned-latest.json` has 69 records, the 57 it had plus the twelve verses the refresh `209b4c05` changed; `unpinned-latest.html` and `index.html` were regenerated with it. |
 | 2026-09-11 | 3 | Has been fixed by the commit that adds this section. It puts dated corrections beside the three records the finding names: the Wave 3 technical paragraph and the 13.3 row of the final disposition table in `doc/review-findings-2026-09-08.md`, and items 1 and 2 of the Wave 3 technical source changes in `doc/PLAN-remediate-review-findings-2026-09-08.md`. Each correction says that `3a1ab7f0` retired the display fallback. |
+| 2026-09-11 | 4 | Has been fixed by the commit that adds this row, by making `CLAUDE.md`'s mark-order section state only what was measured. Re-measured at `2bb94060` with the same counting as `D_04_treewide_scan.py`: 699,940 clusters; 688,072 in the four mam-ws trees, `out/mam-ws-bot/proto-fmt-2/` now named among them; 4,621 in the named captures; and 7,247 in 152 files, now stated as unclassified rather than expected. At Ben's direction, whether each unclassified cluster is deliberate was not judged, so the two trees item 4 calls captures are counted among the unclassified. Item 3's two figures are both true of different sets: 656 clusters are in the 65 files under `py/`, and 369 of them are in the 51 `.py` files. |
+| 2026-09-11 | 5 | Has been fixed by the same commit. `CLAUDE.md` now names the prose lint's third pathspec element, the `.txt` under `in/accgram/edition_transcriptions/`, and says that any other `.txt` is covered by nothing. |
 
-Findings 4 to 21 are not yet acted on.
+Findings 6 to 21 are not yet acted on.
