@@ -29,8 +29,9 @@ now prints its step times, and §8 gives the commands behind every other figure.
    runs only 15 to 24 s less, because the other 52 steps varied by 30 s between runs with no
    change to their code.
 3. **Two steps fail on `main`, so a full run takes three invocations** (§2). The failure of the
-   `diff-mpp` step, the mpplus diff, is known. The failure of `gen-site` is new, and is raised
-   here and not fixed, because fixing it changes figures in the post-stress-meteg pages' prose.
+   `diff-mpp` step (since renamed `diff-mpplus`), the mpplus diff, was already known. The failure
+   of `gen-site` was new, is raised here and not fixed, because fixing it changes figures in the
+   post-stress-meteg pages' prose, and is now recorded in `CLAUDE.md` too.
 4. **Running independent steps at the same time is the largest remaining saving, and the largest
    change** (§7, item 1). The longest chain of steps that must follow one another took about 78 s
    in the pinned run, against 303 s for all the steps one after another.
@@ -77,8 +78,8 @@ a slower mega.
    five named releases' reports, then fails on the unpinned-latest report at Isaiah 24:18. This is
    finding 1 of `doc/review-findings-2026-09-10.md`, which is on branch
    `dual-agent-review-2026-09-10`, and `CLAUDE.md`'s integration section records it; the
-   remediation of that review owns the fix. A branch under way on 2026-09-11 renames the step
-   `diff-mpplus`.
+   remediation of that review owns the fix. Later on 2026-09-11 `main` renamed the step
+   `diff-mpplus`; this file keeps the name it had at `132f2f3e`.
 2. **`gen-site` raises `AssertionError`, which is new, and is raised here and not fixed.**
    `pin_claims` in `py/author_site/post_stress_meteg.py`, at the assertion beginning
    `assert census_chanted_word_summary["by_system"] == {`, pins the prose `mbs_only` count at
@@ -95,7 +96,8 @@ a slower mega.
    because the fix changes figures that the nine post-stress-meteg pages state in prose, which is
    an editorial decision rather than a timing one; the regenerated JSON is not committed either.
    Another session found the same failure the same morning while checking the integration of
-   `claude/loving-ptolemy-1i4seh`, which reached `main` as `478bdae6` all the same.
+   `claude/loving-ptolemy-1i4seh`, which reached `main` as `478bdae6` all the same, and
+   `CLAUDE.md` has recorded it since `8109fb58` as the mega's second known failure.
 
 Until both are fixed, a full run is three invocations, the second resuming after `diff-mpp`. The
 runs measured here resumed the third time after `gen-site`, skipping it:
@@ -112,9 +114,9 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --resume-from diffable-pointed-hebrew
 ```
 
-A better third invocation for an integration check, which the other session used, puts the
-committed survey JSON back and resumes *from* `gen-site`, so that `gen-site` and the four steps
-after it are checked too:
+`CLAUDE.md`'s procedure for an integration check puts the committed survey JSON back and resumes
+from `diffable-pointed-hebrew`. Resuming *from* `gen-site` after putting it back, as the other
+session did, checks `gen-site` and the four steps after it:
 
 ```powershell
 git restore out/accgram/post-stress-meteg.json
