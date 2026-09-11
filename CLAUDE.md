@@ -784,6 +784,20 @@ suite takes about two.
 The step was named `diff-mpp` until 2026-09-11, and finding 1 of
 `doc/review-findings-2026-09-10.md` uses that name.
 
+**A second known failure, recorded 2026-09-11: the second run stops at `gen-site`.** The step
+before it, `accgram-survey-post-stress-meteg`, joined the mega on 2026-09-10 and runs after
+`diff-mpplus`, so on a tree containing `209b4c05` a run reaches it only by resuming past that
+step. There it rewrites `out/accgram/post-stress-meteg.json` to include the refresh's metegs:
+Isaiah 24:18 gains a record, and prose `mbs_only` falls from 12,849 to 12,842. `pin_claims` in
+`py/author_site/post_stress_meteg.py` still pins 12,849, so `gen-site` raises an
+`AssertionError`. The survey, those pins and the post-stress-meteg pages that state the figures
+have to move together; do not move them on an unrelated branch. Until they move, restore
+`out/accgram/post-stress-meteg.json` rather than commit it, since committing it would make
+`gen-site` fail on the tracked survey too. Then finish the check with a third run,
+`py/main_0_mega.py --resume-from diffable-pointed-hebrew`, and report both failures as known.
+Found at the integration of `claude/stoic-jennings-15ce11`, which changes nothing the survey
+reads; Ben's decision that day was to record the failure here and integrate.
+
 **The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
 rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
 in MAM-private, and this paragraph said to commit that diff there, as the 2026-09-10 refresh did
