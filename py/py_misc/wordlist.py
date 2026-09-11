@@ -1,8 +1,11 @@
-"""Build the qere lexicon from one coherent MAM Scripture projection.
+"""Build the MAM qere-word list under its explicit per-template policy.
 
-The projection selects qere, parameter 1 of deḥi/tsinnor stress helpers,
-qamats parameter dalet, and combined cantillation.  Alternative parameters are
-not additional word occurrences.
+For ketiv/qere templates, stage 1 includes only qere, except that
+``מ:קו״כ-אם-2`` retains parameter 1, its historical pointed-ketiv form.  For
+alternative-bearing templates other than ketiv/qere, stage 2 is deliberately
+maximal: the list includes parameters 1 and 2 of ``מ:דחי`` and ``מ:צינור``,
+parameters ד and ס of ``מ:קמץ``, and parameters כפול, א, and ב of ``מ:כפול``.
+The resulting lexicon is not one coherent Scripture projection.
 """
 
 from py_misc import wt_qere
@@ -11,6 +14,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
 from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sum_of_seqs
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import first_and_only_and_str
 from py_misc.split import my_re_split
@@ -62,27 +66,29 @@ def _hnd_slh_word(tmpl):
     return [tuple(quad2)]
 
 
-def _recurse_on_param(tmpl, key):
-    return _do_one_wtseq(wtp.template_param_val(tmpl, key))
+def _recurse_on_params(tmpl, keys):
+    return sum_of_seqs(
+        [_do_one_wtseq(wtp.template_param_val(tmpl, key)) for key in keys]
+    )
 
 
-def _hnd_recurse_on_param_1(tmpl):
-    return _recurse_on_param(tmpl, "1")
+def _hnd_recurse_on_stress_helper_params(tmpl):
+    return _recurse_on_params(tmpl, ("1", "2"))
 
 
-def _hnd_recurse_on_param_dalet(tmpl):
-    return _recurse_on_param(tmpl, "ד")
+def _hnd_recurse_on_qamats_params(tmpl):
+    return _recurse_on_params(tmpl, ("ד", "ס"))
 
 
-def _hnd_recurse_on_param_combined(tmpl):
-    return _recurse_on_param(tmpl, "כפול")
+def _hnd_recurse_on_dual_cantillation_params(tmpl):
+    return _recurse_on_params(tmpl, ("כפול", "א", "ב"))
 
 
 _HANDLERS_FOR_STAGE_2 = {
-    "מ:דחי": _hnd_recurse_on_param_1,
-    "מ:צינור": _hnd_recurse_on_param_1,
-    "מ:קמץ": _hnd_recurse_on_param_dalet,
-    "מ:כפול": _hnd_recurse_on_param_combined,
+    "מ:דחי": _hnd_recurse_on_stress_helper_params,
+    "מ:צינור": _hnd_recurse_on_stress_helper_params,
+    "מ:קמץ": _hnd_recurse_on_qamats_params,
+    "מ:כפול": _hnd_recurse_on_dual_cantillation_params,
     tmpln.SLH_WORD: _hnd_slh_word,
     "מ:פסק": _hnd_return_empty_list,
 }

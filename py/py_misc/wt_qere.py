@@ -1,8 +1,9 @@
 """First-stage qere projection for MAM-parsed-plus FOI consumers.
 
-The base handlers select qere for ketiv/qere templates, but deliberately retain
-stress-helper, qamats, and dual-cantillation templates.  Each survey extends the
-handler table with the named branch required by its own question.
+The base handlers include qere for non-trivial ketiv/qere templates.  The
+historical ``מ:קו״כ-אם-2`` handler instead includes parameter 1, its
+pointed-ketiv form.  Stress-helper, qamats, and dual-cantillation templates stay
+intact for each consumer's explicit second-stage policy.
 """
 
 from mb_cmn import str_defs as sd
@@ -95,10 +96,6 @@ def _hnd_recurse_on_arg_1(hnds, tmpl):
     return do_one_wtseq(hnds, wtp.template_element(tmpl, 2))
 
 
-def _hnd_recurse_on_param_3(hnds, tmpl):
-    return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "3"))
-
-
 def _hnd_recurse_on_params(hnds, tmpl):
     return [wtp.mktmpl_mp((do_one_wtseq, hnds), tmpl)]
 
@@ -125,7 +122,7 @@ def _hnd_return_maq_str(_1, tmpl):
 HANDLERS = {
     "נוסח": hnd_recurse_on_arg_0,
     tmpln.SCRDFF_TAR: hnd_recurse_on_arg_0,
-    "מ:קו״כ-אם-2": _hnd_recurse_on_param_3,
+    "מ:קו״כ-אם-2": hnd_recurse_on_arg_0,
     #
     "קרי ולא כתיב": _hnd_recurse_on_arg_1,  # {{קרי ולא כתיב|[בְּנֵ֣י]|בְּנֵ֣י}}
     "מ:דחי": _hnd_recurse_on_params,

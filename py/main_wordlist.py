@@ -1,7 +1,7 @@
-"""Generate the MAM qere-word list from one declared Scripture projection.
+"""Generate the MAM qere-word list under its explicit per-template policy.
 
-The projection selects qere, canonical deḥi/tsinnor text, qamats parameter
-dalet, and combined cantillation.
+``py_misc.wordlist`` records the deliberately maximal treatment of
+alternative-bearing templates and the two ketiv/qere exceptions.
 """
 
 from mb_cmn import file_io
