@@ -101,12 +101,12 @@ def reference_forms(extra_sources: dict[str, str]) -> dict[str, set[str]]:
     directory = paths.require_mam_simple_dir()
     source_files = {}
     for bb in psm.wlc_bb_codes():
-        path = mam_simple_verse._mam_simple_json_path(
+        # The public resolver since 2026-09-12, and it raises for itself now, so the
+        # None check that stood here is gone.  It reached into the private name until
+        # that day.
+        source_files[bb] = mam_simple_verse.mam_simple_json_path(
             directory, psm.wlc_bb_to_bk39id(bb)
         )
-        if path is None:
-            raise FileNotFoundError(f"{directory}: missing MAM source for {bb}")
-        source_files[bb] = path
     for cantillation in (None, psm.CANT_ALEF, psm.CANT_BET):
         for bcv, words in psm._mam_words_by_bcv(cantillation).items():
             for word in words:

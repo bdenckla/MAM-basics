@@ -163,7 +163,16 @@ def _has_wlc_note(row: dict[str, object], ref: str) -> bool:
 
 def _build_body_contents(entries: list[_Entry]) -> tuple[object, ...]:
     counts = _counts(entries)
-    all_rows = [entry.row for entry in entries]
+    rendered_bracket_note_codes = []
+    for entry in entries:
+        rendered_bracket_note_codes.extend(
+            rtmsr_sat.rendered_bracket_note_codes(
+                entry.row,
+                row_ref=entry.ref,
+                structured_text_lookup=entry.structured_text_lookup,
+                wlc_tokens=rtmsr_verse.wlc_verse_vels(entry.row),
+            )
+        )
 
     descriptor = ob_page.CorpusDescriptor(
         heading_blocks=(
@@ -178,7 +187,9 @@ def _build_body_contents(entries: list[_Entry]) -> tuple[object, ...]:
             for index, entry in enumerate(entries)
         ),
         tail_blocks=tuple(
-            rtmsr_bracket_notes.build_wlc_bracket_notes_section(all_rows)
+            rtmsr_bracket_notes.build_wlc_bracket_notes_section(
+                rendered_bracket_note_codes
+            )
         ),
         filter_script_name=_FILTER_SCRIPT_NAME,
     )

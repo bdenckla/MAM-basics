@@ -1,4 +1,12 @@
-"""Survey Wikisource template usage patterns in MAM-parsed plain data."""
+"""Survey every template branch in MAM-parsed plain as dataset structure.
+
+This is deliberately not a Scripture projection.  The inventory visits every
+template argument and custom-tag branch so documentation, apparatus, formatting,
+ketiv/qere, qamats, dual-cantillation, and stress-helper branches all contribute to
+the schema and nesting counts.  The generated grammar locks classify the complete
+template and nesting inventory and fail when the dataset introduces an unclassified
+shape.
+"""
 
 import json
 import collections
@@ -11,6 +19,7 @@ from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import kq_special_templates as kqst
+from mb_cmn import plain_template_schema
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}
@@ -25,11 +34,14 @@ def _wtel_type_and_subtype(wtel):
     if wtp1.is_template(wtel):
         # template_name() intentionally normalizes ASCII quote shorthand to
         # gershayim, and this applies to both stmpl and tmpl template forms.
-        tmpl_name = wtp1.template_name(wtel)
+        tmpl_name = plain_template_schema.validate_current_plain_template(wtel)
         return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
     if wtp1.is_abtag(wtel):
-        return "custom_tag", wtel["custom_tag"]
-    assert False, wtel
+        return (
+            "custom_tag",
+            plain_template_schema.validate_current_plain_custom_tag(wtel),
+        )
+    raise TypeError(f"unclassified current MAM-parsed-plain node: {wtel!r}")
 
 
 def _survey_tmpl_subtype(tmpl_name, tmpl1):
@@ -284,6 +296,13 @@ def survey(case_rank_maps):
         case_rank_maps=case_rank_maps,
     )
     result = {
+        "projection": {
+            "kind": "all-classified-template-branches",
+            "description": (
+                "Dataset-structure inventory over every argument, including "
+                "documentation, apparatus, formatting, and alternative branches."
+            ),
+        },
         "mpasuq": cdp.process_all_mpasuq_calls(accum["mpasuq"]),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
         "empty_col_c": accum["empty_col_c"],

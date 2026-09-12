@@ -128,6 +128,7 @@ def _tracked_prose_files() -> list[str]:
         [
             "git",
             "ls-files",
+            "-z",
             "--",
             "*.md",
             "doc/*.html",
@@ -138,13 +139,7 @@ def _tracked_prose_files() -> list[str]:
         encoding="utf-8",
         check=True,
     )
-    return [
-        rel
-        for rel in (
-            line.strip().replace("\\", "/") for line in result.stdout.split("\n")
-        )
-        if rel and rel not in _EXCLUDED
-    ]
+    return [rel for rel in result.stdout.split("\0") if rel and rel not in _EXCLUDED]
 
 
 def test_hand_authored_prose_is_in_mam_mark_order():

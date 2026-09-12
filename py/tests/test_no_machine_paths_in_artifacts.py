@@ -71,12 +71,8 @@ _PROGRAM_WRITTEN_GROUPS = {
         "cam1753/check_line_breaks.html",
     ),
     "MAM-simple": (
-        "MAM-simple/misc/unicode-names-vtrad-bhs",
         "MAM-simple/misc/unicode-names-vtrad-mam",
-        "MAM-simple/misc/unicode-names-vtrad-sef",
         "MAM-simple/py-examples",
-        "MAM-simple/py-examples-out/sefaria/csv/_provenance.md",
-        "MAM-simple/py-examples-out/sefaria/misc/unicode-names/_provenance.md",
     ),
     "MAM-parsed": (
         "MAM-parsed/plain/provenance.md",
@@ -135,16 +131,17 @@ _BINARY_SUFFIXES = (
 # elsewhere.
 _EXCLUDED = frozenset()
 
-# Exact documentation excerpts, not excluded files or directories. The copied
-# ``paths.py`` records the historical absolute-path defect that this lint prevents;
-# removing that one sentence before matching preserves the explanation while still
-# checking every other byte in the copied module.
-_DOCUMENTED_PATH_EXCERPTS = {
-    "MAM-simple/py-examples/mb_cmn/paths.py": (
-        "C:/Users/BenDe/GitRepos/...",
-        "/home/user/...",
-    ),
-}
+# Exact documentation excerpts, not excluded files or directories: a scanned artifact
+# that quotes a machine path on purpose names the exact quoted text here, and the
+# scan removes it before matching.
+#
+# Empty since 2026-09-12, and deliberately so rather than deleted. Its one entry was
+# ``MAM-simple/py-examples/mb_cmn/paths.py``, the copied module whose docstring
+# records the historical absolute-path defect this lint prevents with the excerpts
+# "C:/Users/BenDe/GitRepos/..." and "/home/user/...". That copy went with the Sefaria
+# and OSIS example programs, which were the only readers that pulled ``paths.py`` into
+# ``py-examples/``. The mechanism stays because the next such artifact will need it.
+_DOCUMENTED_PATH_EXCERPTS: dict[str, tuple[str, ...]] = {}
 
 
 def _tracked_text_files(pathspecs=_SCANNED_PATHS) -> list[str]:

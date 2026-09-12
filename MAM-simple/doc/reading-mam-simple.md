@@ -14,8 +14,45 @@ folder | format | versification
 `json-vtrad-sef` | JSON | Sefaria
 `json-vtrad-mam` | JSON | MAM native
 
-Each folder contains one file per `book24` (e.g., `1Sam-2Sam.xml`, `Gen.xml`, `Hos-Mal.xml`).
+Each file is named for one `book24` (e.g., `1Sam-2Sam.xml`, `Gen.xml`, `Hos-Mal.xml`).
 A `book24` corresponds to one of the 24 books of the Hebrew Bible; some of them span more than one `book39`, i.e. some of them span more than one book in the system that divides the Hebrew Bible up into 39 rather than 24 books.
+
+### The BHS and Sefaria folders are incremental, with the MAM ones as the base
+
+Since 2026-09-12, the two `-vtrad-mam` folders hold all 24 book-group files and the four
+others hold only the book groups whose cv-labels that versification places somewhere
+other than where MAM places them. That is six of the 24 for BHS — `1Sam-2Sam`, `Deut`,
+`Exod`, `Jer`, `Josh`, `Num` — and the same five less `Num` for Sefaria. The change
+removed 24.3 MB of near-duplicate files, taking the product from 63.3 MB to 39.0 MB.
+
+**To read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it is not
+there, read `<fmt>-vtrad-mam/X` instead.** In Python, that is one `try`:
+
+```python
+from pathlib import Path
+
+
+def book_group_path(fmt: str, vtrad: str, stem: str) -> Path:
+    """The file to read for one book group in one versification.
+
+    fmt is "xml" or "json"; vtrad is "mam", "bhs" or "sef"; stem is a book24
+    name such as "Gen" or "1Sam-2Sam".
+    """
+    suffix = "." + fmt
+    asked = Path(f"{fmt}-vtrad-{vtrad}") / (stem + suffix)
+    if asked.exists():
+        return asked
+    return Path(f"{fmt}-vtrad-mam") / (stem + suffix)
+```
+
+Every cv-label and every byte of text in the file the fallback returns is what
+versification `V` calls for, which is exactly why it is not stored twice. **And the file
+says so itself**: its root's `versification-tradition` holds a comma-separated set naming
+every tradition it is correct for, so a `Ruth` read this way says
+`versification-tradition="vtmam,vtbhs,vtsef"` and a `Num` says
+`versification-tradition="vtmam,vtsef"`. A reader can therefore check the file it landed
+on rather than trust the fallback rule — see
+[the XML guide's root element](reading-mam-simple-xml.md#xml-element-hierarchy).
 
 For a full description of where and how the three versifications differ, see [Versification Differences](versification-differences.md).
 
@@ -84,25 +121,38 @@ Three points in it are easy to get wrong:
 For the element and attribute names the program relies on, see
 [the XML format](reading-mam-simple-xml.md).
 
-## The `py-examples/` Programs
+## The `py-examples/` Program, and the Two That Were Retired
 
-The `py-examples/` directory contains three complete working examples:
+The `py-examples/` directory contains one complete working example:
 
 <!-- sync: bullet list of example programs also appears in README.md -->
-- **[`main_mam4sef_example.py`](../py-examples/main_mam4sef_example.py)** — creates the Sefaria edition of MAM, using the JSON format as its input.
-- **[`main_mam_osis_example.py`](../py-examples/main_mam_osis_example.py)** — creates the OSIS edition of MAM, using the XML format as its input.
 - **[`main_letter_small_job_example.py`](../py-examples/main_letter_small_job_example.py)** — reports all of the `<letter-small>` elements in `Job.xml`, writing output to `py-examples-out/letter-small-job.txt`.
 
-The example programs [`main_mam4sef_example.py`](../py-examples/main_mam4sef_example.py) and [`main_mam_osis_example.py`](../py-examples/main_mam_osis_example.py) both use a recursive handler
-pattern where each element type has a registered handler function. For
-[`main_mam4sef_example.py`](../py-examples/main_mam4sef_example.py) the relevant modules are:
+It iterates directly over XML elements, without the handler pattern described below.
 
-- **[`mam4sef_or_ajf.py`](../py-examples/mb_sefaria/mam4sef_or_ajf.py)** — reads JSON, walks the tree with `_handle()`
-- **[`mam4sef_handlers.py`](../py-examples/mb_sefaria/mam4sef_handlers.py)** — handler functions for every element type, keyed by `(tag, class)` tuple
+Two further examples, `main_mam4sef_example.py` and `main_mam_osis_example.py`, were
+retired on 2026-09-12. They created the Sefaria and OSIS editions of MAM from this
+product — the first from the JSON format, the second from the XML format — and they were
+written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories. Both
+editions are still produced, by MAM-basics' own `py/main_mam4sef.py` and
+`py/main_mam_osis.py`, which read this product exactly as the retired examples did.
 
-The program [`main_mam_osis_example.py`](../py-examples/main_mam_osis_example.py) uses the same pattern over XML elements, with handler
-functions in [`osis/osis_handlers.py`](../py-examples/osis/osis_handlers.py) and the walk itself in
-[`osis/osis_runner.py`](../py-examples/osis/osis_runner.py). Its `_handle()` is where to look to see the pattern
+## The Recursive Handler Pattern
+
+The Sefaria and OSIS generators both use a recursive handler pattern, in which each
+element type has a registered handler function. It remains the fullest worked answer to
+"how do I process the full range of MAM-simple element types", so it is described here,
+and the modules named are in
+[MAM-basics](https://github.com/bdenckla/MAM-basics) rather than in this product.
+
+For the Sefaria generator the relevant modules are:
+
+- **`py/mb_sefaria/mam4sef_or_ajf.py`** — reads JSON, walks the tree with `_handle()`
+- **`py/mb_sefaria/mam4sef_handlers.py`** — handler functions for every element type, keyed by `(tag, class)` tuple
+
+The OSIS generator uses the same pattern over XML elements, with handler
+functions in `py/osis/osis_handlers.py` and the walk itself in
+`py/osis/osis_runner.py`. Its `_handle()` is where to look to see the pattern
 whole. It processes one element by first processing that element's children, and then
 calling the element's handler with three arguments:
 
@@ -116,8 +166,5 @@ because a `text` attribute and children never co-occur. Handlers are keyed by
 The `ofc2` argument is what lets a handler choose among its children rather than take
 them all: `<scrdfftar>`'s handler uses it to tell the target from the note.
 
-Together, [`main_mam4sef_example.py`](../py-examples/main_mam4sef_example.py) and [`main_mam_osis_example.py`](../py-examples/main_mam_osis_example.py) are the canonical
+Together, MAM-basics' Sefaria and OSIS generators are the canonical
 reference for how to process the full range of MAM-simple element types.
-
-The program [`main_letter_small_job_example.py`](../py-examples/main_letter_small_job_example.py) is a simpler example that iterates directly
-over XML elements without the handler pattern.

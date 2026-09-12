@@ -682,6 +682,67 @@ def _misc_subtype(
     return None
 
 
+_PHONETIC_WORD_REQUIRED_FIELDS = frozenset({"fva", "jta", "udl"})
+_PHONETIC_WORD_STRING_FIELDS = frozenset(
+    {
+        "adl",
+        "before_qfikq",
+        "before_rm_kol_cgj",
+        "before_rm_misc",
+        "fva",
+        "jta",
+        "phi",
+        "phonrec-musical-gaya",
+        "phonrec-musical-gaya-acc",
+        "phonrec-musical-gaya-fine",
+        "phonrec-qamats",
+        "phonrec-shureq-xxx-shewa",
+        "rep",
+        "udl",
+    }
+)
+_PHONETIC_WORD_ALLOWED_FIELDS = _PHONETIC_WORD_STRING_FIELDS | {
+    "phonrec-musical-gaya-ogc",
+    "phonrec-varika-but-silent",
+}
+
+
+def _validate_phonetic_word(node: dict) -> None:
+    """Validate one current Phonetic MAM chanted-word record."""
+    actual = set(node)
+    if not _PHONETIC_WORD_REQUIRED_FIELDS <= actual:
+        missing = sorted(_PHONETIC_WORD_REQUIRED_FIELDS - actual)
+        raise SurveyProblem(
+            f"Phonetic MAM chanted word lacks fields {missing}: {node!r}"
+        )
+    if not actual <= _PHONETIC_WORD_ALLOWED_FIELDS:
+        unexpected = sorted(actual - _PHONETIC_WORD_ALLOWED_FIELDS)
+        raise SurveyProblem(
+            f"Phonetic MAM chanted word has unclassified fields {unexpected}: {node!r}"
+        )
+    for field in actual & _PHONETIC_WORD_STRING_FIELDS:
+        if not isinstance(node[field], str):
+            raise SurveyProblem(
+                f"Phonetic MAM chanted-word field {field!r} is not text: {node!r}"
+            )
+    if (
+        "phonrec-musical-gaya-ogc" in node
+        and type(node["phonrec-musical-gaya-ogc"]) is not int
+    ):
+        raise SurveyProblem(
+            "Phonetic MAM chanted-word field 'phonrec-musical-gaya-ogc' is not an"
+            f" integer: {node!r}"
+        )
+    if (
+        "phonrec-varika-but-silent" in node
+        and node["phonrec-varika-but-silent"] is not True
+    ):
+        raise SurveyProblem(
+            "Phonetic MAM chanted-word field 'phonrec-varika-but-silent' is not true:"
+            f" {node!r}"
+        )
+
+
 def _chanted_words(node: object, out: list[dict]) -> None:
     """Every chanted-word entry of one verse, the ``cb`` structures flattened.
 
@@ -691,10 +752,16 @@ def _chanted_words(node: object, out: list[dict]) -> None:
     ``test_final_stress_vs_phonetic_mam._chanted_words`` makes.
     """
     if isinstance(node, dict):
+        _validate_phonetic_word(node)
         out.append(node)
     elif isinstance(node, list):
         for sub in node[1:] if node and node[0] == "cb" else node:
             _chanted_words(sub, out)
+    elif node is None:
+        # Phonetic MAM uses null as named non-punctuation material between entries.
+        return
+    elif not isinstance(node, str):
+        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
 
 
 def _chanted_word_events(node: object, out: list[object]) -> None:
@@ -707,12 +774,15 @@ def _chanted_word_events(node: object, out: list[object]) -> None:
     an omission.
     """
     if isinstance(node, dict):
+        _validate_phonetic_word(node)
         out.append(node)
     elif isinstance(node, list):
         for sub in node[1:] if node and node[0] == "cb" else node:
             _chanted_word_events(sub, out)
-    else:
+    elif isinstance(node, str) or node is None:
         out.append(node)
+    else:
+        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
 
 
 def _compound_marker(payload: object) -> str | None:
@@ -952,8 +1022,11 @@ def _has_dual_cantillation(node: object) -> bool:
     if isinstance(node, list):
         return any(_has_dual_cantillation(sub) for sub in node)
     if isinstance(node, dict):
-        return any(_has_dual_cantillation(value) for value in node.values())
-    return False
+        _validate_phonetic_word(node)
+        return False
+    if node is None:
+        return False
+    raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
 
 
 def _select_cantillation_strand(node: object, cantillation: str) -> object:
@@ -964,8 +1037,15 @@ def _select_cantillation_strand(node: object, cantillation: str) -> object:
     anonymous positional convention in this census.
     """
     branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
-    if not isinstance(node, list):
+    if isinstance(node, dict):
+        _validate_phonetic_word(node)
         return node
+    if isinstance(node, str):
+        return node
+    if node is None:
+        return None
+    if not isinstance(node, list):
+        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
     if node and node[0] == "cb":
         out = ["cb"]
         for payload in node[1:]:
@@ -2372,34 +2452,44 @@ def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
 
     def visit(node: object, location: str) -> None:
         if isinstance(node, dict):
-            if node.get("fva"):
-                raw = node["fva"].split(" ")[0]
-                field = "rep" if node.get("rep") else "fva"
-                selected = node[field].split(" ")[0]
-                source = f"{location}/{field} (first form)"
-                if field == "fva" and (
-                    hpo.SHEVA + hpu.MCIRC in selected
-                    or hpo.DAGOMOSD + hpu.UPDOT in selected
-                ):
-                    raise SurveyProblem(f"{source}: annotated fva has no rep")
-                if raw in forms:
-                    previous, sources = forms[raw]
-                    if previous != selected:
-                        raise SurveyProblem(
-                            f"{source}: ambiguous snapshot spelling; also {sources}"
-                        )
-                    sources.append(source)
-                else:
-                    forms[raw] = (selected, [source])
-            for key, value in node.items():
-                escaped = str(key).replace("~", "~0").replace("/", "~1")
-                visit(value, f"{location}/{escaped}")
+            _validate_phonetic_word(node)
+            raw = node["fva"].split(" ")[0]
+            field = "rep" if node.get("rep") else "fva"
+            selected = node[field].split(" ")[0]
+            source = f"{location}/{field} (first form)"
+            if field == "fva" and (
+                hpo.SHEVA + hpu.MCIRC in selected
+                or hpo.DAGOMOSD + hpu.UPDOT in selected
+            ):
+                raise SurveyProblem(f"{source}: annotated fva has no rep")
+            if raw in forms:
+                previous, sources = forms[raw]
+                if previous != selected:
+                    raise SurveyProblem(
+                        f"{source}: ambiguous snapshot spelling; also {sources}"
+                    )
+                sources.append(source)
+            else:
+                forms[raw] = (selected, [source])
         elif isinstance(node, list):
             for index, value in enumerate(node):
                 visit(value, f"{location}/{index}")
+        elif node is None:
+            return
+        elif not isinstance(node, str):
+            raise TypeError(f"{location}: unclassified Phonetic MAM node: {node!r}")
 
     for path in files:
-        visit(json.loads(path.read_text(encoding="utf-8")), f"{path}#")
+        root = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(root, dict):
+            raise SurveyProblem(f"{path}: Phonetic MAM book root is not an object")
+        for bcv, payload in root.items():
+            if not isinstance(bcv, str):
+                raise SurveyProblem(
+                    f"{path}: Phonetic MAM verse key is not text: {bcv!r}"
+                )
+            escaped_bcv = bcv.replace("~", "~0").replace("/", "~1")
+            visit(payload, f"{path}#/{escaped_bcv}")
     return forms
 
 

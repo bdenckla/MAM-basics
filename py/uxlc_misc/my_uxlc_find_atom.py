@@ -21,7 +21,9 @@ Shared conventions:
   - CLI argument order: <book> <c:v> <word>  (c:v colon-separated)
   - Match strategy: exact first, then stripped (vowels/accents removed
     via unicodedata category, same logic as hebrew_metrics.strip_heb
-    in those packages)
+    in those packages).  Only Mn and Cf go, so a sof pasuq (Po) or a
+    maqaf (Pd) survives the stripping: a bare consonantal form matches
+    a mid-verse atom and not a verse-final or maqaf-final one.
   - Ambiguity: raises ValueError("Ambiguous: N matches ...") when a
     word matches more than one position, rather than silently picking
     one.  The caller must disambiguate.

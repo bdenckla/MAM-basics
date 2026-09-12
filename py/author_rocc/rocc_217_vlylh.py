@@ -6,7 +6,7 @@ from mb_author import author
 # author.pasoleg_qm("וָלַ֨יְלָה׀"),
 
 _CPARA = "Now let’s look at ולילה in Psalm 32:4 (ignoring $CTR):"
-_IMG_217_PATH = "img/rocc Judaica Press Psalm 32v4 ולילה floating azla.jpg"
+_IMG_217_PATH = "img/rocc Judaica Press Psalm 32v4 VLYLH floating azla.jpg"
 _IMG_217 = mb_html.img({"src": _IMG_217_PATH, "class": "width5em"})
 TD_CTR = ("וָ֨לַיְלָה׀", "$azla on $vav (!)")
 TD_MAM_KCT_ETC = ("וָלַיְלָה֮", "$tsinnor")

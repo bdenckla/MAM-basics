@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 
 from accgram import rtms_focus_highlight
+from accgram.rtms_token_like import text_from_one_token_like
 
 _MAQAF = "־"
 
@@ -20,11 +21,11 @@ def structured_wlc_focus(structured_text: object) -> str | None:
 
 def normalized_wlc_verse_text_from_payload(wlc422_kq_u_verse: object) -> str:
     if not isinstance(wlc422_kq_u_verse, dict):
-        return ""
+        raise TypeError(f"WLC verse payload is not a mapping: {wlc422_kq_u_verse!r}")
 
     vels = wlc422_kq_u_verse.get("vels")
     if not isinstance(vels, list):
-        return ""
+        raise TypeError(f"WLC verse payload has no vels list: {wlc422_kq_u_verse!r}")
 
     text_parts = [_token_text(token) for token in vels]
     compact = " ".join(part for part in text_parts if part)
@@ -179,19 +180,7 @@ def _replace_subset_words_in_focus(
 
 
 def _token_text(token: object) -> str:
-    if isinstance(token, str):
-        return token
-
-    if isinstance(token, dict):
-        word = token.get("word")
-        if isinstance(word, str):
-            return word
-
-        text = token.get("text")
-        if isinstance(text, str):
-            return text
-
-    return ""
+    return text_from_one_token_like(token)
 
 
 def _normalize_focus_for_match(wlc_focus: str) -> str:

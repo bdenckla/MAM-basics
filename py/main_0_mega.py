@@ -76,8 +76,6 @@ import main_vendoring
 import main_wordlist
 import main_mam_with_doc
 import main_mam_simple
-import main_mam4sef
-import main_mam_osis
 import main_letter_small_job
 import main_tmpl_survey_toy
 
@@ -138,22 +136,6 @@ def _run_vendored_tmpl_survey_toy():
 def _run_vendored_letter_small_job():
     subprocess.run(
         [sys.executable, "py-examples/main_letter_small_job_example.py"],
-        cwd=paths.repo_root() / "MAM-simple",
-        check=True,
-    )
-
-
-def _run_vendored_mam4sef():
-    subprocess.run(
-        [sys.executable, "py-examples/main_mam4sef_example.py"],
-        cwd=paths.repo_root() / "MAM-simple",
-        check=True,
-    )
-
-
-def _run_vendored_mam_osis():
-    subprocess.run(
-        [sys.executable, "py-examples/main_mam_osis_example.py"],
         cwd=paths.repo_root() / "MAM-simple",
         check=True,
     )
@@ -374,17 +356,18 @@ _STEPS = [
         " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and"
         " font, and gh-pages/MAM-simple/index.html; must come after parse-ws",
     ),
-    # mam_simple must come before mam4sef-and-ajf and mam_osis
-    StepRecord(
-        "mam4sef-and-ajf",
-        main_mam4sef.run_both_sef_and_ajf,
-        "must come after mam_simple",
-    ),
-    StepRecord(
-        "mam-osis",
-        main_mam_osis.almost_main,
-        "must come after mam_simple",
-    ),
+    # The mam4sef-and-ajf and mam-osis steps stood here until 2026-09-12, when Ben
+    # took both out: "I know of no reason to be supplying constantly-updated versions
+    # of these; as far as I know those two versions would only take on update if I did
+    # it (in the case of StepBible (OSIS)) or if I asked them to do it (Sefaria)."  The
+    # other reason to keep a program in the mega, that running it keeps its code
+    # working, he weighed and rejected for these two: "that code is unlikely to break
+    # (or if it does, would be easy to fix) because the code isn't that 'interesting',
+    # because IMO these editions are pretty close to MAM-simple.  So it is really
+    # MAM-simple's code and data that needs to be kept up to date, which they
+    # presumably will be kept, by keeping MAM-simple's code run in 'mega'."  So the
+    # mam-simple step below is what now stands behind both products, and the two
+    # programs are declared in py/tests/test_mega_coverage.py's NOT_IN_MEGA.
     StepRecord(
         "letter-small-job",
         main_letter_small_job.almost_main,
@@ -394,16 +377,6 @@ _STEPS = [
         "vendored-letter-small-job",
         _run_vendored_letter_small_job,
         "runs the landed MAM-simple py-examples/main_letter_small_job_example.py as a subprocess; must come after mam_simple",
-    ),
-    StepRecord(
-        "vendored-mam4sef",
-        _run_vendored_mam4sef,
-        "runs the landed MAM-simple py-examples/main_mam4sef_example.py as a subprocess; must come after mam_simple",
-    ),
-    StepRecord(
-        "vendored-mam-osis",
-        _run_vendored_mam_osis,
-        "runs the landed MAM-simple py-examples/main_mam_osis_example.py as a subprocess; must come after mam_simple",
     ),
     StepRecord("decnreub", main_decnreub.almost_main, None),
     StepRecord("multimark", main_multimark.almost_main, None),
@@ -702,8 +675,8 @@ _STEPS = [
         "pipeline-graph",
         main_pipeline_graph.almost_main,
         "writes doc/process-documentation/pipeline.dot and pipeline.svg from the"
-        " hand-maintained py/pipeline_graph/pipeline_graph_spec.py, and renders the"
-        " hand-written MAM-process.dot to MAM-process.dot.svg; needs the pinned"
+        " py/pipeline_graph/pipeline_graph_spec.py spec, and renders the Ben-written"
+        " MAM-process.dot to MAM-process.dot.svg; needs the pinned"
         " Graphviz, and a cloud session skips its two SVG renders as it does"
         " tmpl-survey's",
     ),

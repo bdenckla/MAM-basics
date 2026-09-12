@@ -40,6 +40,7 @@ Usage (run from repo root):
 
 import argparse
 import sys
+from pathlib import Path
 
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
@@ -73,18 +74,38 @@ _VARIANT_VTBHS = {
     **_VARIANT_COMMON,
     "variant-convert-vtrad": vtrad.convert_to_bhs,
     "variant-path-qual": "vpq-vtrad-bhs",
+    "variant-vtrad": tbn.VT_BHS,
 }
 _VARIANT_VTSEF = {
     **_VARIANT_COMMON,
     "variant-convert-vtrad": vtrad.convert_to_sef,
     "variant-path-qual": "vpq-vtrad-sef",
+    "variant-vtrad": tbn.VT_SEF,
 }
 _VARIANT_VTMAM = {
     **_VARIANT_COMMON,
     "variant-convert-vtrad": _do_not_convert,
     "variant-path-qual": "vpq-vtrad-mam",
-    "variant-alt-id": "variant-alt-id-value-yeivin",
+    "variant-vtrad": tbn.VT_MAM,
+    # The only variant that gets a Unicode-names rendering, and the only one that
+    # ever did after 2026-09-12.  Ben's decision that day: "ditch the -bhs and -sef
+    # versions of this 'unicode names' pseudo-edition", and, on being asked whether
+    # that meant the data alone, "by 'ditch' I mean not only remove the data, but
+    # make the code cease to generate them".  The two retired trees were
+    # MAM-simple/misc/unicode-names-vtrad-bhs/ and -sef/, 9.78 MB each.  They were
+    # near-duplicates of the -mam tree: measured that day, 18 of the 24 bhs book
+    # groups and 19 of the 24 sef ones were identical to their -mam counterpart but
+    # for the vtrad token in each verse's header line.
+    "variant-writes-unicode-names": True,
 }
+# NO ORDER IS LOAD-BEARING.  For a few hours on 2026-09-12 vtmam had to come first,
+# because the incremental storage below was implemented by writing every bhs and sef
+# file and then deleting the ones a comparison with the vtmam file showed to be
+# redundant.  Ben rejected that: "It feels like your plan generates entire editions and
+# asks where they differ in terms of versification, whereas the only question that needs
+# answering is how the versifications differ."  vtrad.bk24s_differing_from_mam answers
+# that question from the versification tables, so each variant now knows its own file
+# list before anything is written and no variant reads another's output.
 _VARIANTS = _VARIANT_VTBHS, _VARIANT_VTSEF, _VARIANT_VTMAM
 
 
@@ -104,26 +125,100 @@ def _do_one_book_group(bkg, books_mpu, variant):
 
 def _finish_one_book_group(bkg, bkg_rendered, variant):
     bksams = xml_sampe.distribute_sampe(bkg_rendered)
-    vtrad_val = _get_vtrad(bkg_rendered)
-    xml_root = xml_root_from_bksams.root(bksams, vtrad_val, variant)
+    # The variant declares its vtrad and the rendered verses carry it; a mismatch would
+    # mean variant-convert-vtrad and variant-vtrad had come apart.
+    assert _get_vtrad(bkg_rendered) == variant["variant-vtrad"]
     xml_path = write_utils.bkg_path(variant, bkg["bkg-name"], out_subdir="")
-    write_utils_xml.write_root_in_xml_fmt(xml_path, xml_root, generator_file=__file__)
-    json_root = json_root_from_bksams.root(bksams, vtrad_val, variant)
     json_path = write_utils.bkg_path(
         variant, bkg["bkg-name"], fmt_override="vff-json", out_subdir=""
     )
-    write_utils_json.write_root_in_json_fmt(
-        json_path, json_root, generator_file=__file__
-    )
-    verses_for_write = {"rv-cant-all-three": bkg_rendered}
-    write_utils.write_bkg_in_un_fmt(
-        variant,
-        bkg["bkg-name"],
-        verses_for_write,
-        "rv-cant-all-three",
-        out_subdir="misc",
-        generator_file=__file__,
-    )
+    if _stores_own_file(bkg, variant):
+        vtrads = _vtrads_served(bkg, variant)
+        write_utils_xml.write_root_in_xml_fmt(
+            xml_path,
+            xml_root_from_bksams.root(bksams, vtrads, variant),
+            generator_file=__file__,
+        )
+        write_utils_json.write_root_in_json_fmt(
+            json_path,
+            json_root_from_bksams.root(bksams, vtrads, variant),
+            generator_file=__file__,
+        )
+    else:
+        _remove_stale(xml_path)
+        _remove_stale(json_path)
+    if variant.get("variant-writes-unicode-names"):
+        verses_for_write = {"rv-cant-all-three": bkg_rendered}
+        write_utils.write_bkg_in_un_fmt(
+            variant,
+            bkg["bkg-name"],
+            verses_for_write,
+            "rv-cant-all-three",
+            out_subdir="misc",
+            generator_file=__file__,
+        )
+
+
+def _stores_own_file(bkg, variant):
+    """Whether this variant keeps this book group in a file of its own.
+
+    THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY AGAINST THE MAM ONE, on Ben's
+    instruction of 2026-09-12: "move to a system where -bhs and -sef versions only exist
+    for books whose files differ from the -mam version.  I.e. move to an 'incremental'
+    storage system, with -mam as the base."  A book group absent from xml-vtrad-bhs/ or
+    json-vtrad-sef/ is one whose cv-labels that tradition places exactly where MAM
+    places them, and the vtmam file is the one to read; MAM-simple's README and
+    doc/reading-mam-simple.md state that reading rule for a consumer.
+    """
+    vtrad_val = variant["variant-vtrad"]
+    if vtrad_val == tbn.VT_MAM:
+        return True
+    return _bk24id(bkg) in vtrad.bk24s_differing_from_mam(vtrad_val)
+
+
+def _vtrads_served(bkg, variant):
+    """The root's versification-tradition value: every tradition these labels are right for.
+
+    A COMMA-SEPARATED SET, not a single tradition, since 2026-09-12.  Ben's decision that
+    day, on being told that a consumer falling back to a vtmam file would find it saying
+    versification-tradition="vtmam" rather than naming the versification it asked for:
+    "What do you think of, for these files, being clear about what they are by saying
+    versification-tradition='vtmam,vtbhs,vtsef'?"
+
+    So 18 of the 24 vtmam files say vtmam,vtbhs,vtsef; Numbers says vtmam,vtsef, Sefaria
+    agreeing with MAM there where BHS does not; and the five whose labels both other
+    traditions place differently say vtmam alone.  A bhs or sef file says its own
+    tradition, which is the same rule with a one-element answer.
+
+    EVERY VALUE EVER WRITTEN STAYS TRUTHFUL under this reading, which is why it is a
+    widening rather than a redefinition: before the incremental storage each variant had
+    its own file for every book group, and "vtmam" did then mean {vtmam} for that file.
+    """
+    vtrad_val = variant["variant-vtrad"]
+    if vtrad_val != tbn.VT_MAM:
+        return vtrad_val
+    bk24id = _bk24id(bkg)
+    also_served = [
+        other
+        for other in (tbn.VT_BHS, tbn.VT_SEF)
+        if bk24id not in vtrad.bk24s_differing_from_mam(other)
+    ]
+    return ",".join([tbn.VT_MAM, *also_served])
+
+
+def _bk24id(bkg):
+    return tbn.bk24id(bkg["bkg-bkids"][0])
+
+
+def _remove_stale(path):
+    """Remove a file this variant no longer stores, if an earlier run left one.
+
+    Not a write-then-delete: nothing here writes the path first.  It fires only when the
+    versification tables have changed such that a book group this variant used to differ
+    on now agrees with MAM, which would otherwise leave a stale file that no diff would
+    show, the file being unchanged.
+    """
+    Path(path).unlink(missing_ok=True)
 
 
 def _get_vtrad(verses):

@@ -1,4 +1,8 @@
-"""Record information about letters that carry multiple diacritical marks."""
+"""Record multimarked letters in every historically surveyed MAM alternative.
+
+The replacement population awaits the decision recorded in
+``doc/PLAN-deferred-template-projection-decisions.md``.
+"""
 
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import file_io

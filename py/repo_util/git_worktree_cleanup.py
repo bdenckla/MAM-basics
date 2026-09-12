@@ -353,12 +353,12 @@ def _git(repo_dir: Path, *args: str) -> subprocess.CompletedProcess[str]:
 
 
 def _list_worktrees(repo_dir: Path) -> list[_Worktree]:
-    """Parse ``git worktree list --porcelain``.
+    """Parse ``git worktree list --porcelain -z``.
 
     The main worktree is always the first record, which is how the caller
     identifies it -- there is no per-record flag saying so.
     """
-    result = _git(repo_dir, "worktree", "list", "--porcelain")
+    result = _git(repo_dir, "worktree", "list", "--porcelain", "-z")
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or "git worktree list failed")
 
@@ -367,7 +367,7 @@ def _list_worktrees(repo_dir: Path) -> list[_Worktree]:
     head: str | None = None
     branch: str | None = None
     locked = False
-    for line in result.stdout.splitlines():
+    for line in result.stdout.split("\0"):
         if line.startswith("worktree "):
             path = Path(line[len("worktree ") :])
             head = None
@@ -488,7 +488,7 @@ def _worktree_status(worktree: Path) -> tuple[bool, list[str]]:
         before = None if index is None else index.stat()
     except OSError:
         before = None
-    result = _git(worktree, "status", "--porcelain", "--ignored")
+    result = _git(worktree, "status", "--porcelain", "--ignored", "-z")
     if before is not None:
         try:
             os.utime(index, ns=(before.st_atime_ns, before.st_mtime_ns))
@@ -498,8 +498,8 @@ def _worktree_status(worktree: Path) -> tuple[bool, list[str]]:
         return True, []
     dirty = False
     ignored: list[str] = []
-    for line in result.stdout.splitlines():
-        if not line.strip():
+    for line in result.stdout.split("\0"):
+        if not line:
             continue
         if line.startswith("!!"):
             ignored.append(line[3:])
@@ -1137,10 +1137,3 @@ def print_report(report: CleanupReport) -> None:
         or report.errors
     ):
         print("worktrees: nothing to clean")
-
-
-def _held_commits(stranded: StrandedBranch) -> str:
-    if stranded.commits is None:
-        return f"commit count unavailable; not in {stranded.unmerged_into}"
-    plural = "" if stranded.commits == 1 else "s"
-    return f"{stranded.commits} commit{plural} not in {stranded.unmerged_into}"

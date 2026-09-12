@@ -1,4 +1,10 @@
-"""Exports functions that help create and use templates"""
+"""Parse and manipulate the MAM-parsed-plus template representation.
+
+The generic parameter helpers in this module preserve template structure; they
+do not decide which parameters belong to Scripture.  A Scripture collector must
+first recognize the template name and select the named parameters that answer
+its question.
+"""
 
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl_named_params as wtnp

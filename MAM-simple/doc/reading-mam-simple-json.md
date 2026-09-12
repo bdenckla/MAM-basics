@@ -9,12 +9,17 @@ For the element types and verse attributes, see [reading-mam-simple-xml.md](read
 
 ```json
 {
-  "versification-tradition": "vtmam",
+  "versification-tradition": "vtmam,vtbhs,vtsef",
   "contents": [ "...", "...", "..." ]
 }
 ```
 
-The `versification-tradition` field is one of `"vtbhs"`, `"vtsef"`, or `"vtmam"`.
+The `versification-tradition` field is a **string** holding a comma-separated set: every
+versification tradition whose cv-labels this file carries, drawn from `vtmam`, `vtbhs`
+and `vtsef`, in that order. It is a string rather than a JSON array so that it stays
+identical to the XML format's attribute of the same name, where
+[the XML guide](reading-mam-simple-xml.md) sets out the three values and which book
+groups take each.
 The `contents` array contains `book39` objects and parashah-marker objects.
 (Throughout this section, `["...", "...", "..."]` is used to express "one or more elements" while still being valid JSON.)
 
@@ -50,7 +55,6 @@ Simple verses (no special markup) have a `text` field directly:
 {
   "type": "verse",
   "osisID": "Ruth.1.1",
-  "yeivinID": "Rut 1:1",
   "text": "וַיְהִ֗י בִּימֵי֙ ..."
 }
 ```
@@ -61,7 +65,6 @@ Complex verses (with legarmeih, ketiv/qere, etc.) have a `contents` array instea
 {
   "type": "verse",
   "osisID": "Ruth.1.2",
-  "yeivinID": "Rut 1:2",
   "contents": [
     { "type": "text", "text": "וְשֵׁ֣ם הָאִ֣ישׁ ..." },
     { "type": "lp-legarmeih" },

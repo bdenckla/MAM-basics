@@ -18,11 +18,23 @@ import difflib
 
 from mb_cmn.hebrew_punctuation import NU_GMAQ
 from mb_cmn import retired_kq_special_templates as rkqst
+from mb_cmn import template_names
 from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_cmn.template_names import STD_KQ_TMPL_NAMES
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
+_PARAM1_BODY_NAMES = (
+    template_names.IN_WORD_TMPL_NAMES
+    | template_names.STRESS_HELPER_TMPL_NAMES
+    | {template_names.SCRDFF_TAR, "מודגש", "מ:סיום בטוב"}
+)
+_DROPPED_BODY_NAMES = {
+    template_names.INVERTED_NUN,
+    template_names.SCRDFF_NO_TAR,
+    "מ:קישור בהערה",
+    "מ:קישור פנימי בהערה",
+}
 _STD_KQ_TEMPLATE_NAMES = frozenset(STD_KQ_TMPL_NAMES)
 
 
@@ -51,6 +63,28 @@ def is_ketiv_velo_qere_template(name):
     return name == "כתיב ולא קרי"
 
 
+def selected_body_tail(tmpl):
+    """Classify a template left after the question-specific body-text cases.
+
+    The MAM-parsed-plus change log displays the qere body stream.  Templates in
+    ``_PARAM1_BODY_NAMES`` therefore contribute their named Scripture target,
+    no-atom templates contribute a boundary, and editorial-only templates
+    contribute nothing.  A caller must handle ketiv/qere and alternative-bearing
+    templates before reaching this function.  An unfamiliar template raises.
+    """
+    name = tmpl["tmpl_name"]
+    if name in _PARAM1_BODY_NAMES:
+        value = get_param(tmpl, "1")
+        if value is MISSING:
+            raise ValueError(f"Template {name!r} lacks required body parameter '1'")
+        return "param", value
+    if name in template_names.NO_ATOM_TMPL_NAMES or name == "ש":
+        return "literal", " "
+    if name in _DROPPED_BODY_NAMES:
+        return "drop", None
+    raise ValueError(f"unclassified MAM-parsed-plus body template: {name!r}")
+
+
 def flatten_ep_for_diff(ep):
     """Flatten an EP column to diff-friendly body text.
 
@@ -71,7 +105,7 @@ def flatten_element(el):
         return _flatten_template(el)
     if isinstance(el, list):
         return "".join(flatten_element(x) for x in el)
-    return ""
+    raise TypeError(f"unclassified MAM-parsed-plus body element: {type(el).__name__}")
 
 
 def flatten_ep_words_only_for_diff(ep):
@@ -166,6 +200,8 @@ def _flatten_diff_element(el, buf):
     if isinstance(el, list):
         for item in el:
             _flatten_diff_element(item, buf)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus body element: {type(el).__name__}")
 
 
 def _append_diff_special_punctuation(name, buf):
@@ -219,9 +255,11 @@ def _flatten_diff_template(tmpl, buf):
         if pk is not MISSING:
             _flatten_diff_element(pk, buf)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _flatten_diff_element(p1, buf)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _flatten_diff_element(value, buf)
+    elif role == "literal":
+        _append_diff_text(buf, value)
 
 
 def _flatten_diff_element_words_only(el, buf):
@@ -234,6 +272,8 @@ def _flatten_diff_element_words_only(el, buf):
     if isinstance(el, list):
         for item in el:
             _flatten_diff_element_words_only(item, buf)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus body element: {type(el).__name__}")
 
 
 def _flatten_diff_template_words_only(tmpl, buf):
@@ -276,9 +316,11 @@ def _flatten_diff_template_words_only(tmpl, buf):
         if pk is not MISSING:
             _flatten_diff_element_words_only(pk, buf)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _flatten_diff_element_words_only(p1, buf)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _flatten_diff_element_words_only(value, buf)
+    elif role == "literal":
+        _append_diff_text(buf, value)
 
 
 def _flatten_template(tmpl):
@@ -309,9 +351,11 @@ def _flatten_template(tmpl):
     if name == "מ:כפול":
         pk = get_param(tmpl, "כפול")
         return flatten_element(pk) if pk is not MISSING else ""
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        return flatten_element(p1)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        return flatten_element(value)
+    if role == "literal":
+        return value
     return ""
 
 
@@ -341,6 +385,10 @@ def _flatten_tracking(obj, parts, notes):
     elif isinstance(obj, list):
         for item in obj:
             _flatten_tracking(item, parts, notes)
+    else:
+        raise TypeError(
+            f"unclassified MAM-parsed-plus body element: {type(obj).__name__}"
+        )
 
 
 def _flatten_tracking_for_diff(obj, buf, notes):
@@ -351,6 +399,10 @@ def _flatten_tracking_for_diff(obj, buf, notes):
     elif isinstance(obj, list):
         for item in obj:
             _flatten_tracking_for_diff(item, buf, notes)
+    else:
+        raise TypeError(
+            f"unclassified MAM-parsed-plus body element: {type(obj).__name__}"
+        )
 
 
 def _flatten_template_tracking(tmpl, parts, notes):
@@ -397,9 +449,11 @@ def _flatten_template_tracking(tmpl, parts, notes):
         if pk is not MISSING:
             _flatten_tracking(pk, parts, notes)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _flatten_tracking(p1, parts, notes)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _flatten_tracking(value, parts, notes)
+    elif role == "literal":
+        parts.append(value)
 
 
 def _flatten_template_tracking_for_diff(tmpl, buf, notes):
@@ -445,9 +499,11 @@ def _flatten_template_tracking_for_diff(tmpl, buf, notes):
         if pk is not MISSING:
             _flatten_tracking_for_diff(pk, buf, notes)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _flatten_tracking_for_diff(p1, buf, notes)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _flatten_tracking_for_diff(value, buf, notes)
+    elif role == "literal":
+        _append_diff_text(buf, value)
 
 
 def _changed_new_positions(old_text, new_text):

@@ -78,7 +78,7 @@ def _same_count_reorder_new_ep():
 def _nested_relocation_old_ep():
     return [
         {
-            "tmpl_name": "עטיפה",
+            "tmpl_name": "מודגש",
             "tmpl_params": {
                 "1": [
                     "א",
@@ -93,7 +93,7 @@ def _nested_relocation_old_ep():
 def _nested_relocation_new_ep():
     return [
         {
-            "tmpl_name": "עטיפה",
+            "tmpl_name": "מודגש",
             "tmpl_params": {
                 "1": [
                     "א",
@@ -108,7 +108,7 @@ def _nested_relocation_new_ep():
 def _format_equivalent_old_ep():
     return [
         {
-            "tmpl_name": "עטיפה",
+            "tmpl_name": "מודגש",
             "tmpl_params": {
                 "1": {"tmpl_name": "מ:פסק", "tmpl_params": {}},
             },
@@ -119,7 +119,7 @@ def _format_equivalent_old_ep():
 def _format_equivalent_new_ep():
     return [
         {
-            "tmpl_name": "עטיפה",
+            "tmpl_name": "מודגש",
             "tmpl_args": [
                 {"tmpl_name": "מ:פסק", "tmpl_params": {}},
             ],

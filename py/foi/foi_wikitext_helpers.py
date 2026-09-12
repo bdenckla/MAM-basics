@@ -1,4 +1,5 @@
 from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
 from mb_cmn.my_utils import sum_of_map
 
 
@@ -114,6 +115,21 @@ def fail_on_unexpected_template_in_plus(_foilers, stack, tmpl):
     )
 
 
+def all_branch_foilers(overrides):
+    """Return a closed handler map for a whole-plus-dataset FOI inventory.
+
+    Every current template is recognized by name.  Unless ``overrides`` gives a
+    template a question-specific handler, every parameter is deliberately part
+    of the inventory population.  A new template name therefore raises in
+    ``_find_fois_in_wtel`` until the inventory classifies it.
+    """
+    handlers = {
+        name: _foiler_for_all_named_params for name in tmpln.CURRENT_PLUS_TMPL_NAMES
+    }
+    handlers.update(overrides)
+    return handlers
+
+
 ######################################################################
 ######################################################################
 
@@ -127,8 +143,14 @@ def _find_fois_in_wtel(foilers, stack, wtel):
     if isinstance(wtel, str):
         str_handler = foilers.get(str) or _ignore_str
         return str_handler(stack, wtel)
+    tmpln.validate_current_plus_template(wtel)
     tmpl_name = wtp.template_name(wtel)
-    handler = foilers.get(tmpl_name) or _foiler_for_misc
+    try:
+        handler = foilers[tmpl_name]
+    except KeyError as exc:
+        raise RuntimeError(
+            f"Unclassified template {tmpl_name!r} in plus FOI traversal"
+        ) from exc
     return handler(foilers, stack, wtel)
 
 
@@ -150,10 +172,17 @@ def _stack_make_empty():
     return tuple()
 
 
-def _foiler_for_misc(foilers, stack, tmpl):
-    new_stack = _stack_push(stack, wtp.template_name(tmpl))
-    lis_wtseq = wtp.template_param_vals(tmpl)
-    return sum_of_map((_sum_map_find_in_wtel, foilers, new_stack), lis_wtseq)
+def _foiler_for_all_named_params(foilers, stack, tmpl):
+    """Inspect every parameter of one explicitly recognized dataset template."""
+    tmpl_name = wtp.template_name(tmpl)
+    params = tmpln.validate_current_plus_template(tmpl)
+    new_stack = _stack_push(stack, tmpl_name)
+    out = []
+    for param_name in params:
+        labelled_stack = _stack_push(new_stack, param_name)
+        param_wtseq = wtp.template_param_val(tmpl, param_name)
+        out += _sum_map_find_in_wtel(foilers, labelled_stack, param_wtseq)
+    return out
 
 
 def _sum_map_find_in_wtel(foilers, stack, wtseq):

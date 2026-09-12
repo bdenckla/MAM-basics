@@ -68,6 +68,28 @@ and `codex-index-cam1753` carry near-verbatim copies of the deleted wording, bot
 implementation. On 2026-08-04, one day after the deletion, three NFC-ordered clusters were found in
 a hand-authored file here. That is why it is worth the tokens.
 
+## Tracked filenames do not use Hebrew letters; Git filename output is NUL-delimited
+
+**No tracked filename contains a Hebrew letter.** When Hebrew identifies a file, convert the
+Hebrew portion with `heb_alef_bet_to_ascii` from
+`py/py_ac_word_image_helper/alef_bet_to_ascii.py`; do not invent a second transliteration. The
+one-time migration on 2026-09-12 applied that established conversion to all 69 tracked filenames
+that then contained Hebrew letters and updated controlled references. The two Holman pages were
+renamed without compatibility stubs, by Ben's decision of 2026-09-12; external references to the
+old URLs were deliberately left to break.
+
+**Filenames without Hebrew letters do not make line-delimited Git output safe.** Every programmatic
+Git command that returns filenames requests NUL delimiters with `-z` and splits on `"\0"`, never
+on lines.
+Spaces, tabs, newlines, quoting characters and future non-ASCII filenames remain possible even
+when Hebrew letters are forbidden. The filename rule is the preventive policy; NUL-delimited Git
+parsing is the independent safeguard.
+
+`py/tests/test_tracked_filenames.py` enforces both rules. The case that prompted them was finding
+18.2 of `doc/review-findings-2026-09-10.md`: two tracked Holman pages were reported as untracked
+because line-based parsing treated Git's quoted path output as paths. The finding was false, but
+the failure mode was real.
+
 ## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
 
 That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in **this repository** at
@@ -247,13 +269,14 @@ as he chose the same answer for UXLC.
 answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10, and
 al-hatorah is in no workspace file, so no machine clones it — `../al-hatorah/…` names nothing on
 either count. (A clone of it turning up on some machine is residue, per "Repo locations are
-decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Seven
-sites**, named here so nobody re-derives them: `chanted_word_accents.py:638`, `final_stress.py:5`
-and `maqaf_nonfinal_accents.py:112` write `../al-hatorah/py/itm/` and
-`../al-hatorah/py/aht_phon…`, which want `../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`,
-`:43`, `:106` and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write "al-hatorah's
-`io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want `MAM-private/al-hatorah/`
-in front of the in-repo path. Two further mentions name the repo with no path in them —
+decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Eight
+sites**, named here so nobody re-derives them and re-measured 2026-09-12:
+`chanted_word_accents.py:696`, `final_stress.py:5` and `maqaf_nonfinal_accents.py:112`
+write `../al-hatorah/py/itm/` and `../al-hatorah/py/aht_phon…`, which want
+`../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`, `:43` and `:105`,
+`post_stress_meteg.py:15`, and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write
+"al-hatorah's `io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want
+`MAM-private/al-hatorah/` in front of the in-repo path. Two further mentions name the repo with no path in them —
 `edition_transcription.py:67` and `final_stress.py:16` — and read correctly as written.
 Search the full OCR before concluding Yeivin is silent on something;
 a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
@@ -463,10 +486,10 @@ prefix would imply that the citation was ambiguous.
 
 **holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
 Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
-`#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes once, in the one backtick
-span `gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` that names the two pages sharing
-that stem (this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
-`git grep -c '#19' -- CLAUDE.md` there is 1), and that is a JC Edition article number
+`#NN` in any of its tracked prose was the `#19` its `CLAUDE.md` quoted once. The pages now share
+the stem `gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-Z` in this repository
+(this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
+`git grep -c '#19' -- CLAUDE.md` there was 1), and that is a JC Edition article number
 rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
 just been added.
 
@@ -481,14 +504,14 @@ standing exceptions in this repository, and holman-ketiv-qere and book-of-job ne
 
 ## An unprefixed `doc/review-findings-<date>.md` is the Claude series
 
-The periodic review series has been Claude-only since 2026-07-29, and its files are named
-`doc/review-findings-<date>.md` with no agent name in them. Should a Codex counterpart ever be run,
-it takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
+The periodic review series is `doc/review-findings-<date>.md`, with no agent name in the file
+name, and `doc/periodic-review.md` describes it. When Codex reviews the same window, its file
+takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
 renamed to match** — measured 2026-09-01, the rename cost 41 lines across 18 files to buy an
 asymmetry one sentence fixes, and the file it would churn most, `doc/review-findings-2026-07-29.md`,
-is both the most-cited of the seven and not natively this repo's file. So the unprefixed name is the
-incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md` is the fuller
-statement, including the four reasons the rename was rejected; nothing in it has been run.
+is both the most-cited in the series and not natively this repo's file. So the unprefixed name is
+the incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md`'s D10 is
+the fuller statement, including the four reasons the rename was rejected.
 
 ## A finished dated document is corrected in `<stem>-update.md`, never edited
 
@@ -630,8 +653,9 @@ No `frozen_repos` or `repos_to_keep_absent` entry is needed. The unarchived
 history; new product issues belong in MAM-basics.
 
 The frozen legacy set is the single `index.html` in
-`in/mam_osis_redirect_pages.json`. Production, the independent MAM-simple OSIS
-example, and the canonical suite run without a source clone. Keep the redirect-only
+`in/mam_osis_redirect_pages.json`. Production and the canonical suite run without a
+source clone. (This sentence also named "the independent MAM-simple OSIS example" until
+2026-09-12, when that example was retired along with the Sefaria one.) Keep the redirect-only
 MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
 publication still requires a temporary source host. Only when that work is selected:
 
@@ -739,7 +763,8 @@ The archived repository keeps its history and closed issue tracker; new public-s
 in MAM-basics. No source Pages site or redirect manifest exists.
 
 Nothing in the ordinary suite resolves a Leningrad sibling. `leningrad/` holds only its
-`README.md` and the hand-maintained `page-snips/` crop with its evidence note. On Ben's decision
+`README.md` and the `page-snips/` directory, which holds three crops Ben made and a
+`README.md` carrying an evidence note for each. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
 used and its three generated files, since it "will never be run again"; phase 3 of
 `doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
@@ -772,6 +797,49 @@ before treating one as a peer whose files need syncing.
 disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
 and because all wlc work now happens in this repo.)
 
+## What this repository's products are, and which check a change owes
+
+`py/product_scopes.py` is the declaration of record and `py/tests/test_product_scopes.py` keeps
+it true. Ben asked for the definition on 2026-09-12, having asked which of a list of review
+findings were "risky", "where 'risky' includes things like code changes that could (or will!)
+change MAM-parsed, MAM-with-doc, MAM-simple, gh-pages, or other things you deem 'public facing'";
+answering that took about fifteen separate measurements, because nothing here said what the
+products were. Three tiers:
+
+1. **Published** — `gh-pages/`, which a push to `main` deploys.
+2. **Distributed data** — `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/` and
+   `MAM-OSIS/`, consumed by git URL whether or not Pages serves them. "Not published" is
+   therefore not the same as "not distributed".
+3. **Generators** — the 47 entry points that the step table of `py/main_0_mega.py` runs across
+   its 59 steps, measured 2026-09-12. This is the tier that matters, being the only routine
+   route into tiers 1 and 2 other than editing those trees by hand.
+
+**A change that can reach tier 3 owes a mega run and a reading of the `git diff` it leaves; a
+change that cannot owes the suite.** The section below, "Integrating a worktree branch here",
+states that rule and the four conditions on reading the diff.
+
+**Tier 3 is not every route into a product.** The hand-run interactive programs — the Aleppo and
+Cambridge 1753 word-image and crop work above all — write tracked images that are published under
+`gh-pages/book-of-job/jobn/img/`, and `py/tests/test_mega_coverage.py` declares each of them, with
+its reason, in `NOT_IN_MEGA`. So "this is not a mega step" answers a different question from "this
+reaches no product", and a change to a hand-run generator owes regenerating what it generates,
+which a mega run will not do for it.
+
+**A change can cross tiers by name rather than by path.** Three unrelated functions here are
+called `strip_heb`. Measured 2026-09-12: the two in `py/py_ac_word_image_helper/hebrew_metrics.py`
+and `py/py_cam1753_word_image/hebrew_metrics.py` reach those crop generators through each
+package's `linebreak_search.py`, while the one in `py/uxlc_misc/my_uxlc_find_atom.py` is read by
+`py/main_verse_links.py` and `py/main_uxlc_estimate_atom_loc.py`, two interactive lookups that
+write nothing tracked. All three sit in programs the mega does not run, and two of the three
+reach a published product anyway.
+
+**"Outside tier 3" is not "safe".** Whether a change reaches a product is one axis of risk. The
+other has nothing to do with products — outward-facing acts, destructive local acts, writes
+outside the repository, records that are receipts, and code paths that cannot be exercised on
+this machine — and it is stated in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, tracked here
+as `dot-claude/user-wide-CLAUDE.md` and `dot-Codex/user-wide-AGENTS.md`, under "Two axes of
+risk".
+
 ## A code path reads MAM-private every time it runs, or never
 
 Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private
@@ -783,9 +851,13 @@ clone, and nothing before then shows that the dependency exists.
 
 The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
 mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
-spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
-record lacked one, so the lookup never ran. The renderer raises instead now, and only the survey
-build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
+spelling in MAM-private's Phonetic MAM for any displayed survey entry with no `mam_form`. No
+displayed survey entry lacked one, so the lookup never ran. The renderer raises instead now, and
+`py/accgram/post_stress_meteg.py`'s survey build is the only post-stress-meteg code that
+reads Phonetic MAM. Two other code paths read it, both unconditionally:
+`py/accgram/breuer_word_length.py`'s `survey-breuer-zaqef-units` and
+`py/tests/test_final_stress_vs_phonetic_mam.py`, each through
+`require_al_hatorah_phonetic_dir`. `py/mb_cmn/paths.py`'s
 `al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
 
 ## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
@@ -883,7 +955,10 @@ do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
 `--legacy-history` comparisons require read access to a sibling MAM-parsed
 clone. No command fetches or creates that optional clone. Some files copied into
 `MAM-simple/py-examples/` keep cwd-relative or self-contained `__file__`-relative logic for
-portable example use; `mb_cmn/paths.py` is among the copied support files.
+portable example use. `mb_cmn/paths.py` was among the copied support files until
+2026-09-12, when retiring the Sefaria and OSIS example programs cut the copied set from 44
+modules to the three the surviving `main_letter_small_job_example.py` imports:
+`mb_cmn/file_io.py`, `mb_cmn/provenance.py` and `mb_misc/letter_small_job.py`.
 
 Even so, still run from the repo root, never from `py/`: some in-repo paths (e.g.
 `in/mam-ws-bot-edits/...`) remain cwd-relative by design, and the venv itself

@@ -17,6 +17,25 @@ folder | format | versification
 `json-vtrad-sef` | JSON | Sefaria
 `json-vtrad-mam` | JSON | MAM native
 
+**The BHS and Sefaria folders are stored incrementally against the MAM one, and are
+therefore far from complete.**
+The MAM folders hold all 24 book-group files.
+A BHS or Sefaria folder holds only the book groups whose cv-labels that versification
+places somewhere other than where MAM places them — six for BHS, five for Sefaria:
+`1Sam-2Sam`, `Deut`, `Exod`, `Jer`, `Josh`, and, for BHS alone, `Num`.
+
+**So, to read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it
+is not there, read `<fmt>-vtrad-mam/X` instead.**
+Every cv-label and every byte of text in that file is what versification `V` calls for,
+which is exactly why the file is not stored twice.
+**And the file says so itself**: its root's `versification-tradition` names every
+tradition it is correct for, so a `Ruth` read this way says
+`versification-tradition="vtmam,vtbhs,vtsef"` and a `Num` says
+`versification-tradition="vtmam,vtsef"`.
+
+This replaced six complete folders on 2026-09-12 and removed 24.3 MB, taking the
+product from 63.3 MB to 39.0 MB.
+
 The JSON format mirrors the XML structure: it has the same hierarchy and element types.
 
 For a detailed guide to the hierarchy and element types of both formats,
@@ -52,16 +71,20 @@ nothing to show for it until something compares bytes.
 For the full statement, including what the guarantee does and does not cover, see
 [Three invariants worth relying on](doc/reading-mam-simple-xml.md#three-invariants-worth-relying-on).
 
-This product also has example programs. They are found under `py-examples/`:
+This product also has an example program. It is found under `py-examples/`:
 
 <!-- sync: bullet list of example programs also appears in doc/reading-mam-simple.md ##The-py-examples-Programs -->
-* The [`main_mam4sef_example.py`](py-examples/main_mam4sef_example.py) program
-creates the Sefaria edition of MAM, using the JSON format as its input.
-* The [`main_mam_osis_example.py`](py-examples/main_mam_osis_example.py) program
-creates the OSIS edition of MAM, using the XML format as its input.
 * The [`main_letter_small_job_example.py`](py-examples/main_letter_small_job_example.py) program
 reports all of the `<letter-small>` elements in `Job.xml`,
 writing output to `py-examples-out/letter-small-job.txt`.
+
+Two further example programs, `main_mam4sef_example.py` and `main_mam_osis_example.py`,
+were retired on 2026-09-12.
+They created the Sefaria and OSIS editions of MAM from this product,
+and they were written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories.
+Both editions are still produced, by
+[MAM-basics](https://github.com/bdenckla/MAM-basics)'s own `py/main_mam4sef.py` and
+`py/main_mam_osis.py`, and the retired programs remain in that repository's history.
 
 As I said above, MAM-simple is not complete.
 It is an extract of MAM, not a full version of MAM.

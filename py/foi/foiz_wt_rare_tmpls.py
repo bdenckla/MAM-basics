@@ -106,25 +106,29 @@ def _html_for_wtseq(wtseq, column="E"):
     return hfr.html_for_ren_el(hfr_ctx, renseq)
 
 
-_FOILERS_FOR_COLUMN_E = {
-    tmpln.SCRDFF_TAR: _record_scrdff_in_col_e,
-    "מ:נו״ן הפוכה": _record_inverted_nun,
-    "מ:סיום בטוב": _record_good_ending,
-    "מ:מקף אפור": _record_implicit_maqaf,
-    "סס": _record_sampe_in_col_e,
-    "ססס": _record_sampe_in_col_e,
-    "פפ": _record_sampe_in_col_e,
-    "פפפ": _record_sampe_in_col_e,
-    #
-    "מ:כפול": fwh.label_args_of_dualcant,
-    "נוסח": fwh.label_args_of_doc,
-    # label_args_of_scrdfftar is called in _record_scrdff_in_col_x
-    # tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-}
-_FOILERS_FOR_COLUMN_C = {
-    tmpln.SCRDFF_TAR: _record_scrdff_in_col_c,
-}
+_FOILERS_FOR_COLUMN_E = fwh.all_branch_foilers(
+    {
+        tmpln.SCRDFF_TAR: _record_scrdff_in_col_e,
+        "מ:נו״ן הפוכה": _record_inverted_nun,
+        "מ:סיום בטוב": _record_good_ending,
+        "מ:מקף אפור": _record_implicit_maqaf,
+        "סס": _record_sampe_in_col_e,
+        "ססס": _record_sampe_in_col_e,
+        "פפ": _record_sampe_in_col_e,
+        "פפפ": _record_sampe_in_col_e,
+        #
+        "מ:כפול": fwh.label_args_of_dualcant,
+        "נוסח": fwh.label_args_of_doc,
+        # label_args_of_scrdfftar is called in _record_scrdff_in_col_x
+        # tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+    }
+)
+_FOILERS_FOR_COLUMN_C = fwh.all_branch_foilers(
+    {
+        tmpln.SCRDFF_TAR: _record_scrdff_in_col_c,
+    }
+)
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,

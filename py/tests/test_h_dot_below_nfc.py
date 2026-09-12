@@ -274,17 +274,17 @@ _CAM_EXCLUDE_DIR_PREFIXES = (
 
 # The landed products are not repositories of their own. These exclusions retain
 # authored product metadata, prose, and examples while leaving generated corpus data
-# to the generators that already validate it. MAM-simple's three top-level
-# ``py-examples/main_*`` files are authored examples; the package directories beside
-# them are copied from this repo and are already in the MAM-basics scope.
+# to the generators that already validate it. MAM-simple's top-level
+# ``py-examples/main_*`` file is an authored example; the package directories beside
+# it are copied from this repo and are already in the MAM-basics scope. The
+# ``py-examples/mb_sefaria/`` and ``py-examples/osis/`` prefixes left on 2026-09-12
+# with the Sefaria and OSIS example programs.
 _MAM_SIMPLE_EXCLUDE_DIR_PREFIXES = (
     "json-vtrad-",
     "misc/",
     "py/",
     "py-examples/mb_cmn/",
     "py-examples/mb_misc/",
-    "py-examples/mb_sefaria/",
-    "py-examples/osis/",
     "py-examples-out/",
     "xml-vtrad-",
 )
@@ -353,11 +353,10 @@ def _scopes() -> tuple[_Scope, ...]:
             # before that deletion and 45 are after it -- doc/ (2), README.md,
             # CLAUDE.md, docs-not-served/ (4), emails/ (26), data/ (2), io/ (1),
             # assets/ (4) and four dotfiles. This comment said 154 and 47 from
-            # 2026-08-18 until the 2026-08-22 review's follow-up, counting in the two
-            # "JC3 ..." pages, whose non-ASCII names git ls-files returns quoted, so
-            # the leading quote keeps them past the gh-pages/ prefix filter -- but
-            # the quoted name is not a path, so _tracked_files_in_scope's is_file()
-            # drops both, and 45 is what it returns, re-measured 2026-08-22. The
+            # 2026-08-18 until the 2026-08-22 review's follow-up, counting in two
+            # non-ASCII "JC3 ..." paths that line-based parsing silently dropped.
+            # The parser has used NUL-delimited output since 2026-09-12, and the two
+            # paths have ASCII names now; 45 is the correctly measured count. The
             # comment predicted 48 before the phase ran; the one file between that
             # and the 47 it then recorded is .vscode/settings.json, which Phase 4
             # deleted as well. Comfortably above 40, so the floor keeps meaning "an
@@ -434,9 +433,13 @@ def _scopes() -> tuple[_Scope, ...]:
             root=paths.repo_root() / "MAM-simple",
             exclude_dir_prefixes=_MAM_SIMPLE_EXCLUDE_DIR_PREFIXES,
             exclude_files=_MAM_SIMPLE_EXCLUDE_FILES,
-            # Four root metadata files, requirements.txt, four procedures, and
-            # three authored top-level examples measure 12 files.
-            floor=10,
+            # Four root metadata files, requirements.txt, four procedures, and one
+            # authored top-level example measure 10 files. It was 12 against a floor
+            # of 10 until 2026-09-12, when the Sefaria and OSIS example programs were
+            # retired and the scope came to exactly its own floor, which fails. The
+            # floor is 8 now, and still means "an exclusion filter swallowed
+            # everything" rather than asserting a tree size.
+            floor=8,
         ),
         _Scope(
             label="MAM-with-doc authored metadata",
@@ -482,15 +485,14 @@ def _is_binary(path: Path) -> bool:
 
 def _tracked_files_in_scope(scope: _Scope) -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files"],
+        ["git", "ls-files", "-z"],
         cwd=scope.root,
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     in_scope = []
-    for line in result.stdout.splitlines():
-        rel = line.strip()
+    for rel in result.stdout.split("\0"):
         if not rel:
             continue
         posix_rel = rel.replace("\\", "/")

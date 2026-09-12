@@ -91,14 +91,16 @@ _FOILERS_FOR_KETIV_QERE = {
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,
 }
-_FOILERS = {
-    **_FOILERS_FOR_KETIV_QERE,
-    #
-    "מ:כפול": fwh.label_args_of_dualcant,
-    "נוסח": fwh.label_args_of_doc,
-    tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-}
+_FOILERS = fwh.all_branch_foilers(
+    {
+        **_FOILERS_FOR_KETIV_QERE,
+        #
+        "מ:כפול": fwh.label_args_of_dualcant,
+        "נוסח": fwh.label_args_of_doc,
+        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+    }
+)
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,

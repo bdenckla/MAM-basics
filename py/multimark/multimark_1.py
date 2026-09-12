@@ -1,12 +1,19 @@
+"""Find multimarked letters in every historically surveyed MAM alternative.
+
+The replacement population is deferred in
+``doc/PLAN-deferred-template-projection-decisions.md``.  Until Ben decides it,
+the closed dispatch below explicitly preserves the behavior on main.
+"""
+
 from multimark import multimark_uni as splhu
 from multimark import multimark_char as splhc
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import bib_locales as tbn
 from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
 from py_misc import wt_qere
 from mb_misc.my_utils_for_mainish import show_progress_g
 from mb_cmn.my_utils import sum_of_map
-from mb_cmn.my_utils import sum_of_seqs
 from py_misc.split import my_re_split
 
 
@@ -37,6 +44,7 @@ def _do_one_wtseq(wtseq):
 def _do_one_wtel(wtel):
     if isinstance(wtel, str):
         return _do_one_string(wtel)
+    tmpln.validate_current_plus_template(wtel)
     tmpl_name = wtp.template_name(wtel)
     return _HANDLERS[tmpl_name](wtel)
 
@@ -45,8 +53,23 @@ def _hnd_return_empty_list(_1):
     return []
 
 
-def _hnd_recurse_on_param_vals(tmpl):
-    return sum_of_seqs(wtp.map_params(_do_one_wtseq, tmpl))
+def _recurse_on_keys(tmpl, keys):
+    out = []
+    for key in keys:
+        out.extend(_do_one_wtseq(wtp.template_param_val(tmpl, key)))
+    return out
+
+
+def _hnd_recurse_on_stress_helper_params(tmpl):
+    return _recurse_on_keys(tmpl, ("1", "2"))
+
+
+def _hnd_recurse_on_qamats_params(tmpl):
+    return _recurse_on_keys(tmpl, ("ד", "ס"))
+
+
+def _hnd_recurse_on_dual_cantillation_params(tmpl):
+    return _recurse_on_keys(tmpl, ("כפול", "א", "ב"))
 
 
 def _do_one_string(string):
@@ -81,10 +104,10 @@ def _pre(seq, i):
 
 
 _HANDLERS = {
-    "מ:דחי": _hnd_recurse_on_param_vals,
-    "מ:צינור": _hnd_recurse_on_param_vals,
-    "מ:קמץ": _hnd_recurse_on_param_vals,
-    "מ:כפול": _hnd_recurse_on_param_vals,
+    "מ:דחי": _hnd_recurse_on_stress_helper_params,
+    "מ:צינור": _hnd_recurse_on_stress_helper_params,
+    "מ:קמץ": _hnd_recurse_on_qamats_params,
+    "מ:כפול": _hnd_recurse_on_dual_cantillation_params,
     #
     "מ:פסק": _hnd_return_empty_list,
 }

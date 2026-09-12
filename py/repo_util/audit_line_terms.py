@@ -79,12 +79,12 @@ def _tracked_files(repo_dir: Path, include_pattern: str) -> list[str]:
     if not patterns:
         patterns = ["*.py"]
 
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", *patterns])
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", *patterns])
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files for {repo_dir}"
         )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    return [path for path in result.stdout.split("\0") if path]
 
 
 def _is_excluded(

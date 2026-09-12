@@ -6,8 +6,10 @@ import json
 from pathlib import Path
 
 import hkq_paths
-from mb_cmn import paths
+from mb_cmn import paths, template_names
+from hkq_cmn.template_name_quotes import canonical_template_name
 from hkq_cmn.qere_projection import (
+    HOLAM_HE_MAIN_COMPATIBLE_POLICY,
     iter_plus_verses,
     project_qere_atoms,
     to_vowel_only_form,
@@ -54,7 +56,11 @@ def load_mpu_hits_for_spec(
             plus_json = json.load(handle)
 
         for verse_info in iter_plus_verses(plus_json, plus_path.name):
-            qere_atoms = project_qere_atoms(verse_info["ep_payload"], source=None)
+            qere_atoms = project_qere_atoms(
+                verse_info["ep_payload"],
+                source=None,
+                policy=HOLAM_HE_MAIN_COMPATIBLE_POLICY,
+            )
             tokens = word_atoms_from_qere_atoms(qere_atoms)
 
             for token in tokens:
@@ -81,7 +87,9 @@ def load_mpu_hits_for_spec(
                     }
                 )
                 is_trivq_arg1 = any(
-                    bool(item.get("is_trivq_arg1"))
+                    canonical_template_name(str(item.get("template_name")))
+                    == canonical_template_name(template_names.TRIVIAL_QERE)
+                    and item.get("argument_key") == "1"
                     for item in sources
                     if isinstance(item, dict)
                 )
@@ -239,17 +247,12 @@ def build_ending_pattern_report(
             "vowel_only_suffixes": list(spec.vowel_only_suffixes),
         },
         "notes": [
-            "VARIANT-TEMPLATE MULTIPLICITY: certain MAM-plus templates store multiple",
-            "textual variants as separate params, and the search path recurses into ALL",
-            "of them. A word inside such a template therefore produces multiple",
-            "indistinguishable hits — one per variant param. Known templates:",
-            "  מ:דחי   — 2 params: canonical accent (used) + stress-helper duplicate (ignored for dedup)",
-            "  מ:צינור — 2 params: canonical accent (used) + stress-helper duplicate (ignored for dedup)",
-            "  מ:קמץ  — 2 params: Ashkenazic qamats (used) + Sephardic (ignored for dedup)",
-            "  מ:כפול — 3 params: combined/alef/bet — dual-cantillation verses only",
-            "           (Decalogue, Saga of Reuben)",
-            "Additionally, any unrecognised template encountered at runtime will also",
-            "produce one hit per param, silently.",
+            "DEFERRED PROJECTION: this report explicitly preserves the behavior on main.",
+            "It uses parameter 1 of the trivial ketiv/qere template and every",
+            "declared branch of deḥi, tsinnor, qamats, and dual-cantillation",
+            "templates. The replacement population requires Ben's decision; see",
+            "doc/PLAN-deferred-template-projection-decisions.md. An unclassified",
+            "template or parameter shape raises.",
         ],
         "summary": {
             "mpu": summarize_mpu_hits(mpu_hits),

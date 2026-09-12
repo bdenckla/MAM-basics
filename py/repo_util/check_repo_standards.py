@@ -292,8 +292,9 @@ produced, so for plans a high reference count can report that the work landed, n
 that the file is still wanted. Keep the screen for other `doc/` files; read the
 `State:` line for plans.
 
-For the current review-file naming and State rules, see `doc/dual-agent-review.md`,
-"Review filenames and State lines" (Ben's decision, 2026-09-09, D10). That procedure
+For the current review-file naming and State rules, see `doc/periodic-review.md` for
+the series and `doc/dual-agent-review.md`, "Review filenames and State lines" (Ben's
+decision, 2026-09-09, D10), for the files of a two-agent window. D10
 covers the initial reviews, Codex counterparts and exceptional additional reviews,
 and later numbered turns; the historical review glob below names only the initial
 Claude series. This pointer adds no mechanical standards check.
@@ -323,12 +324,30 @@ that the doc did not, and the State line is that, in the file a reader is
 already in.  #261 and #263 were closed on 2026-09-01 with a comment saying
 why; the other five were already closed.
 
+THE `State:` LINE ON doc/*-update.md, declared 2026-09-12: line 3, directly
+under the H1, the word `open` plus a first-entry date -- the position and
+shape the two declarations above use.  The declaration follows the practice
+rather than founding it.  All eight update files already carried the line,
+several sessions having reached the same wording with nothing to copy from:
+measured 2026-09-12, six on `main` and two arriving with the 2026-09-10
+review round, five reading "first entry" and three "first entries".  Nothing
+checks it, here or anywhere else.
+
+`open` IS NOT `live`, and the difference is which thing the word describes.
+`live` describes the WORK: a plan is `live` while the work it names is still
+being done, which is why it has a terminal state, `executed <date>`.  `open`
+describes the FILE.  An update file's entries are each finished and dated the
+moment they are written, so nothing in one is ever pending; it is `open`
+because more entries are expected, and it has no terminal state for as long as
+the document it corrects exists.  Reusing `live` would import a life cycle the
+genre does not have.
+
 What is retired is the THIN POINTER, not issue-filing.  A review that finds
 work somebody must do still files a real issue with a real body, and #233
 is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
 merits.  The test is whether the issue says anything the doc does not.
 
-AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/dual-agent-review.md
+AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/periodic-review.md
 calls the series "doc-only since 2026-09-01" and points here for the
 convention, so the phrase is worth pinning: what became doc-only is where a
 review is WRITTEN DOWN -- the doc alone, the thin issue retired, the State
@@ -525,11 +544,14 @@ def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
             except (UnicodeDecodeError, OSError):
                 script_covers = False
 
-    worktree_list = run_cmd(["git", "-C", str(repo_dir), "worktree", "list"])
+    worktree_list = run_cmd(
+        ["git", "-C", str(repo_dir), "worktree", "list", "--porcelain", "-z"]
+    )
     linked = None
     if worktree_list.returncode == 0:
-        lines = [line for line in worktree_list.stdout.splitlines() if line.strip()]
-        linked = max(len(lines) - 1, 0)  # the first entry is the main worktree
+        records = worktree_list.stdout.split("\0")
+        worktrees = [record for record in records if record.startswith("worktree ")]
+        linked = max(len(worktrees) - 1, 0)  # the first entry is the main worktree
 
     branch_list = run_cmd(
         [
@@ -614,12 +636,12 @@ def _find_sys_path_mutations(text: str) -> list[int]:
 
 
 def _tracked_py_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "*.py"])
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", "*.py"])
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"
         )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    return [path for path in result.stdout.split("\0") if path]
 
 
 def _is_excluded_from_scan(
@@ -792,12 +814,12 @@ def _scan_py_files(
 
 
 def _tracked_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files"])
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z"])
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files in {repo_dir}"
         )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    return [path for path in result.stdout.split("\0") if path]
 
 
 def _is_excluded_from_nfc_scan(

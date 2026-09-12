@@ -1,5 +1,8 @@
-from mb_cmn.my_utils import intersperse, sum_of_seqs, sum_of_map
+"""Flatten one named cantillation with qamats parameter dalet selected."""
+
+from mb_cmn.my_utils import sum_of_map
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 
 
@@ -10,6 +13,7 @@ def do_one_wtseq(wtseq):
 def _do_one_wtel(wtel):
     if isinstance(wtel, str):
         return _HANDLERS_INSIDE_ONE_CANT["string"](wtel)
+    tmpln.validate_current_plus_template(wtel)
     if tmpl_name := wtp.template_name(wtel):
         return _HANDLERS_INSIDE_ONE_CANT[tmpl_name](wtel)
     assert False, wtel
@@ -19,9 +23,8 @@ def _hnd_ioc_recurse_on_arg_0(tmpl):
     return do_one_wtseq(wtp.template_element(tmpl, 1))
 
 
-def _hnd_ioc_recurse_on_param_vals(tmpl):
-    mapped = sum_of_seqs(wtp.map_params(do_one_wtseq, tmpl))
-    return intersperse(" ", mapped)  # pretend alternatives are sequential
+def _hnd_ioc_recurse_on_param_dalet(tmpl):
+    return do_one_wtseq(wtp.template_param_val(tmpl, "ד"))
 
 
 def _hnd_ioc_return_leg_str(_1):
@@ -34,7 +37,7 @@ def _hnd_ioc_identity(wtel):
 
 _HANDLERS_INSIDE_ONE_CANT = {
     "נוסח": _hnd_ioc_recurse_on_arg_0,
-    "מ:קמץ": _hnd_ioc_recurse_on_param_vals,
+    "מ:קמץ": _hnd_ioc_recurse_on_param_dalet,
     "מ:לגרמיה-2": _hnd_ioc_return_leg_str,
     #
     "string": _hnd_ioc_identity,

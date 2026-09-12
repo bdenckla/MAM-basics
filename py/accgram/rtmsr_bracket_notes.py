@@ -21,9 +21,9 @@ def _bracket_notes_heading() -> object:
 
 
 def build_wlc_bracket_notes_section(
-    enriched_rows: list[dict[str, object]],
+    rendered_codes: list[str],
 ) -> tuple[object, ...]:
-    codes = sorted(_collect_page_bracket_note_codes(enriched_rows))
+    codes = sorted(set(rendered_codes))
     if not codes:
         return (
             _bracket_notes_heading(),
@@ -88,31 +88,3 @@ def manual422_definition_for_code(code: str) -> str:
     if isinstance(definition, str) and definition.strip():
         return definition.strip()
     return f"No manual422 definition available for {code}."
-
-
-def _collect_page_bracket_note_codes(
-    enriched_rows: list[dict[str, object]],
-) -> list[str]:
-    page_codes: list[str] = []
-    for row in enriched_rows:
-        _append_bracket_note_codes_from_value(row, out_codes=page_codes)
-
-    # Preserve first-seen order before optional downstream ordering.
-    return list(dict.fromkeys(page_codes))
-
-
-def _append_bracket_note_codes_from_value(
-    value: object, *, out_codes: list[str]
-) -> None:
-    if isinstance(value, str):
-        out_codes.extend(parse_bracket_note_codes(value))
-        return
-
-    if isinstance(value, list):
-        for item in value:
-            _append_bracket_note_codes_from_value(item, out_codes=out_codes)
-        return
-
-    if isinstance(value, dict):
-        for nested_value in value.values():
-            _append_bracket_note_codes_from_value(nested_value, out_codes=out_codes)

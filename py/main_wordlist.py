@@ -1,4 +1,8 @@
-"""Generate a JSON list of the qere (read-aloud) words in MAM."""
+"""Generate the MAM qere-word list under its explicit per-template policy.
+
+``py_misc.wordlist`` records the deliberately maximal treatment of
+alternative-bearing templates and the two ketiv/qere exceptions.
+"""
 
 from mb_cmn import file_io
 from mb_cmn import paths

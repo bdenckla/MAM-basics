@@ -21,8 +21,30 @@ You can get a feel for the hierarchy from this schematic overview of how the boo
 ```
 
 The root element is always `<book24>`, and its one attribute is
-`versification-tradition`, whose value is `vtmam`, `vtbhs`, or `vtsef`
-according to which of the six folders the file came from.
+`versification-tradition`.
+
+**Its value is a comma-separated set: every versification tradition whose cv-labels this
+file carries**, drawn from `vtmam`, `vtbhs` and `vtsef`, in that order.
+Most often that is more than one, because the three traditions place the same cv-labels
+in most of the Bible, and the file is then correct for each of them.
+An `xml-vtrad-bhs` or `xml-vtrad-sef` file always names its own tradition and nothing
+else, those folders holding only the book groups where that tradition parts company with
+MAM.
+An `xml-vtrad-mam` file names every tradition that agrees with MAM for that book group:
+
+| Value | Book groups | Meaning |
+|---|---|---|
+| `vtmam,vtbhs,vtsef` | 18 of 24 | all three traditions agree here |
+| `vtmam,vtsef` | `Num` | Sefaria agrees with MAM; BHS does not, and has its own file |
+| `vtmam` | `1Sam-2Sam`, `Deut`, `Exod`, `Jer`, `Josh` | both other traditions differ, and both have their own files |
+
+So a reader that fell back to an `xml-vtrad-mam` file, because the folder it asked for
+did not hold that book group, can confirm from the file itself that the file is right for
+the versification it wanted.
+
+The value was a single tradition until 2026-09-12, naming the folder the file came from.
+Every value written before that date is still true under the reading above, a single
+value being a one-element set.
 
 A parashah element (`spi-pe2`, `spi-pe3`, `spi-samekh2`, `spi-samekh3`)
 can appear:
@@ -88,7 +110,7 @@ through some other sort.
 A `<verse>` element without any special features stores its full, plain text in a `text` attribute, e.g.:
 
 ```xml
-<verse osisID="Job.34.2" yeivinID="Job 34:2"
+<verse osisID="Job.34.2"
        text="שִׁמְע֣וּ חֲכָמִ֣ים מִלָּ֑י וְ֝יֹדְעִ֗ים הַאֲזִ֥ינוּ לִֽי׃"/>
 ```
 
@@ -103,7 +125,7 @@ Instead, the plain text between special features is in `<text>` child elements,
 interspersed with elements encoding special features, e.g.:
 
 ```xml
-<verse osisID="Job.1.1" yeivinID="Job 1:1">
+<verse osisID="Job.1.1">
   <text text="אִ֛ישׁ הָיָ֥ה בְאֶֽרֶץ־ע֖וּץ אִיּ֣וֹב שְׁמ֑וֹ וְהָיָ֣ה"/>
   <lp-legarmeih/>
   <text text=" הָאִ֣ישׁ הַה֗וּא תָּ֧ם וְיָשָׁ֛ר וִירֵ֥א אֱלֹהִ֖ים וְסָ֥ר מֵרָֽע׃"/>
@@ -278,16 +300,22 @@ Three elements take an optional `class` attribute:
 | Attribute | Meaning |
 |-----------|---------|
 | `osisID` | OSIS-format reference (e.g., `Job.34.24`) |
-| `yeivinID` | Yeivin-format reference (e.g., `Job 34:24`) |
 | `text` | Full verse text (only present for simple verses) |
 | `starts-with-sampe` | Verse starts after a parashah marker (`pe2`, `samekh2`, etc.) |
 | `ends-with-sampe` | Verse ends with a parashah marker |
 | `contents-corresponds-to` | Versification note |
 | `osisID-of-MAM-src` | Source verse in MAM's native versification |
 
-`osisID` is on every verse. `yeivinID` is on every verse of the `vtmam` files and on no
-verse of the `vtbhs` or `vtsef` ones, so a reader that wants it should read `vtmam`.
-The last two attributes are the other way about: they never appear in `vtmam`.
+`osisID` is on every verse. The last two attributes never appear in `vtmam`.
+
+A `yeivinID` attribute sat beside `osisID` until 2026-09-12, on every verse of the
+`vtmam` files and on no verse of the `vtbhs` or `vtsef` ones. It gave Yeivin's spelling
+of the very same chapter and verse — `Job 34:24` beside `osisID` `Job.34.24` — and it
+was retired because that is all it ever was: checked across all 23,202 of them, the
+chapter and verse always matched, and the book abbreviation came from a fixed one-to-one
+table of the 39 books, which is still at `py/py_misc/yeivin_book_abbrevs.py` in
+MAM-basics. A reader that wants Yeivin-format references can build them from the
+`osisID` and that table.
 
 `starts-with-sampe` and `ends-with-sampe` take a bare marker name — `pe2`, `pe3`,
 `samekh2`, `samekh3` — rather than the `spi-` prefixed element name.

@@ -5,6 +5,8 @@ import collections
 import json
 import os
 
+from mb_cmn import template_names
+
 _MINIROW = collections.namedtuple("Minirow", "C, D, E")
 
 
@@ -29,7 +31,7 @@ def _param_val_as_list(val):
 def _record(survey, wtel, column_letter):
     if isinstance(wtel, str):
         return
-    assert isinstance(wtel, dict) and "tmpl_name" in wtel
+    template_names.validate_current_plus_template(wtel)
     tmpl_name = wtel["tmpl_name"]
     survey.add((tmpl_name, column_letter))
     for val in wtel.get("tmpl_params", {}).values():

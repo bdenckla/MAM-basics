@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import os
 import shutil
 import subprocess
+import time
 
 from mb_cmn import graphviz_pin
 from mb_cmn import provenance
@@ -622,12 +623,31 @@ def render_svg(dot_path, svg_path, generator_file=None):
             f"{_DOT_FALLBACK}."
         )
     graphviz_pin.check_installed(dot)
-    subprocess.run(
-        [dot, "-Tsvg", "-o", svg_path, dot_path],
-        check=True,
-        encoding="utf-8",
-        capture_output=True,
-    )
+    command = [dot, "-Tsvg", "-o", svg_path, dot_path]
+    for attempt in range(2):
+        try:
+            completed = subprocess.run(
+                command,
+                check=True,
+                encoding="utf-8",
+                capture_output=True,
+            )
+        except subprocess.CalledProcessError as error:
+            if attempt == 0:
+                time.sleep(2)
+                continue
+            raise RuntimeError(
+                f"Graphviz failed twice while rendering {svg_path} from {dot_path}: "
+                f"stdout={error.stdout!r}; stderr={error.stderr!r}"
+            ) from error
+        else:
+            stderr = getattr(completed, "stderr", "") or ""
+            if "couldn't load font" in stderr:
+                raise RuntimeError(
+                    f"Graphviz substituted a fallback font while rendering {svg_path} "
+                    f"from {dot_path}: stderr={stderr!r}"
+                )
+            break
     generated_by = _generated_by_text(generator_file)
     if generated_by is not None:
         _ensure_svg_comment(svg_path, generated_by)

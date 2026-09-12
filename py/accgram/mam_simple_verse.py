@@ -72,10 +72,7 @@ def load_mam_simple_for_refs(
     by_bcv: dict[str, dict[str, object]] = {}
     for bb, ref_pairs in refs_by_book.items():
         bk39id = wlc_bb_to_bk39id(bb)
-        json_path = _mam_simple_json_path(mam_simple_dir, bk39id)
-        if json_path is None:
-            continue
-
+        json_path = mam_simple_json_path(mam_simple_dir, bk39id)
         root = _read_json(json_path)
         if not isinstance(root, dict):
             raise ValueError(f"Expected root object in MAM-simple file: {json_path}")
@@ -125,9 +122,7 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     refs: dict[str, set[tuple[int, int]]] = {}
     for bb in wlc_bb_codes():
         bk39id = wlc_bb_to_bk39id(bb)
-        json_path = _mam_simple_json_path(mam_simple_dir, bk39id)
-        if json_path is None:
-            continue
+        json_path = mam_simple_json_path(mam_simple_dir, bk39id)
         osis_prefix = oba.BOOK_ABBREVS.get(bk39id)
         if osis_prefix is None:
             continue
@@ -143,13 +138,59 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     return refs
 
 
-def _mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
+def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
+    """The MAM-simple JSON file holding one bk39's book group.
+
+    THE ONE RESOLVER.  ``mam_poetic_accents`` had a second one, ``_mam_json_path``,
+    until 2026-09-12, and the duplicate is what made the incremental storage below a
+    silent failure rather than a loud one: that copy knew nothing of the fallback and
+    returned None, and its caller skipped the book.  One mega run then reported
+    "ps: 0/0 verses agree (0.00%)" for the poetic cross-check, having checked nothing.
+    So this raises where it used to return None, per CLAUDE.md's "A missing input must
+    FAIL, never skip".
+
+    THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY against the MAM one, on Ben's
+    instruction of 2026-09-12, so ``json-vtrad-bhs/`` holds six of the 24 book groups
+    and ``json-vtrad-sef/`` five: those whose cv-labels the tradition places somewhere
+    other than where MAM places them.  A book group absent from one of those two is one
+    whose labels that tradition and MAM agree on, and ``json-vtrad-mam/`` holds the
+    file to read -- identical but for the root's versification-tradition value, which
+    this loader does not read.  That is the reading rule MAM-simple's README and
+    ``doc/reading-mam-simple.md`` state, implemented here because this is the one
+    function that turns a bk39 id into a file for every accgram caller, and those
+    callers ask for ``json-vtrad-bhs`` (the surveys are keyed to WLC's refs).
+
+    The fallback fires only for a directory named ``json-vtrad-bhs`` or
+    ``json-vtrad-sef``, and only towards its own sibling: a caller that passed
+    ``--mam-simple-dir`` pointing somewhere else gets no silent substitution.
+    """
     candidate_names = [_mam_simple_json_file_for_bk39id(bk39id), f"{bk39id}.json"]
-    for candidate_name in candidate_names:
-        candidate_path = mam_simple_dir / candidate_name
-        if candidate_path.is_file():
-            return candidate_path
-    return None
+    directories = _mam_simple_dirs_in_fallback_order(mam_simple_dir)
+    for directory in directories:
+        for candidate_name in candidate_names:
+            candidate_path = directory / candidate_name
+            if candidate_path.is_file():
+                return candidate_path
+    tried = ", ".join(
+        str(directory / name) for directory in directories for name in candidate_names
+    )
+    raise FileNotFoundError(f"No MAM-simple file for {bk39id}; tried {tried}")
+
+
+_INCREMENTAL_JSON_DIR_NAMES = ("json-vtrad-bhs", "json-vtrad-sef")
+
+
+def _mam_simple_dirs_in_fallback_order(mam_simple_dir: Path) -> list[Path]:
+    if mam_simple_dir.name not in _INCREMENTAL_JSON_DIR_NAMES:
+        return [mam_simple_dir]
+    base_dir = mam_simple_dir.parent / "json-vtrad-mam"
+    if not base_dir.is_dir():
+        raise FileNotFoundError(
+            f"{mam_simple_dir} is stored incrementally against {base_dir}, which is"
+            " absent.  See MAM-simple/doc/reading-mam-simple.md, 'The BHS and Sefaria"
+            " folders are incremental, with the MAM ones as the base'."
+        )
+    return [mam_simple_dir, base_dir]
 
 
 def _mam_simple_json_file_for_bk39id(bk39id: str) -> str:
@@ -174,6 +215,11 @@ def _read_json(path: Path):
 
 
 def _iter_dict_nodes(value: object):
+    """Yield every dictionary in the complete MAM-simple structure.
+
+    This is deliberately an all-node corpus inventory used only to locate
+    verse objects; it does not select or flatten Scripture text.
+    """
     if isinstance(value, dict):
         yield value
         contents = value.get("contents")
@@ -265,6 +311,19 @@ _DROPPED_NODE_TYPES = frozenset(
         "shirah-space",
     )
 )
+_TRANSPARENT_CONTENT_NODE_TYPES = frozenset(
+    {
+        "verse",
+        "slh-word",
+        "scrdfftar",
+        "sdt-target",
+        CANT_COMBINED,
+        CANT_ALEF,
+        CANT_BET,
+    }
+)
+_TEXT_NODE_TYPES = frozenset({"text", "letter-large", "letter-small", "letter-hung"})
+_DIRECT_QERE_NODE_TYPES = frozenset({"qere", "kq-trivial", "kq-q-velo-k", "kq-q"})
 
 
 def _normalize_mam_simple_node(
@@ -306,9 +365,10 @@ def _mam_simple_fragments(
     * ``letter-large`` / ``letter-small`` / ``letter-hung`` -- a letter written large,
       small or suspended, wrapped with the rest of its atom in an ``slh-word``.  Genesis
       1:1 came out as בְּ and רֵאשִׁ֖ית, Leviticus 13:33 as וְהִ֨תְ, גַּ and לָּ֔ח.  These
-      need no case below: the fall-through concatenates their text, which is what
-      MAM-simple's own reference handlers do with them (``py-examples/osis/
-      osis_handlers.py`` passes each straight into the surrounding run).
+      are named text-bearing node types below, matching what the OSIS generator's
+      handlers do with them (``py/osis/osis_handlers.py`` passes each straight into the
+      surrounding run; this cited the vendored copy at ``py-examples/osis/`` until that
+      copy was retired on 2026-09-12).
     * ``implicit-maqaf`` -- MAM's gray maqaf, which belongs on the END of the atom before
       it.  Emitted as a token of its own it reached ``_join_on_maqaf`` after that atom had
       been closed, and so attached FORWARD: Psalms 106:1 came out as הַ֥לְלוּ and ־יָ֨הּ,
@@ -323,57 +383,78 @@ def _mam_simple_fragments(
     reference handlers map ``sdt-note`` to empty as well.
     """
     if not isinstance(node, dict):
-        return []
+        raise TypeError(f"Expected MAM-simple node object, got {node!r}")
 
     node_type = node.get("type")
-    if isinstance(node_type, str):
-        if node_type in _DROPPED_NODE_TYPES:
-            return [_BOUNDARY]
-        if node_type == "sdt-note":
-            # Nothing, and NOT a boundary: a scroll-difference note is an editorial
-            # aside written inside the running text rather than between two atoms, and
-            # at Genesis 4:13, Numbers 1:17, Numbers 25:12 and Deuteronomy 11:21 the
-            # ``text`` run right after it holds that verse's sof pasuq alone -- which
-            # belongs to the atom the note interrupted.  Every other note is followed by
-            # a run that opens with a space, so dropping it outright fuses nothing.
-            return []
-        if node_type in {"lp-paseq", "lp-legarmeih"}:
-            # A token of its own, as it has always been: the mark stands between two
-            # atoms rather than inside either.
-            marker: object = hpunc.PASOLEG
-            if include_native_paseq_roles:
-                marker = MAMNativePaseq(
-                    "legarmeh" if node_type == "lp-legarmeih" else "paseq"
-                )
-            return [_BOUNDARY, marker, _BOUNDARY]
-        if node_type == "implicit-maqaf":
-            # No boundary before it, so it lands on the atom it follows.
-            return [hpunc.MAQ]
-        if node_type == _CANT_ALL_THREE:
-            # A dual-cantillation span: descend into the requested strand only, so each
-            # projection (combined / alef / bet) is a complete, position-correct word
-            # sequence interleaved with the surrounding single-cant ``text``.
-            contents = node.get("contents")
-            if isinstance(contents, list):
-                for child in contents:
-                    if isinstance(child, dict) and child.get("type") == cant_strand:
-                        return _mam_simple_fragments(
-                            child,
-                            cant_strand,
-                            include_native_paseq_roles=include_native_paseq_roles,
-                        )
-            return []
-        if node_type in {"kq", "kq-trivial", "kq-q-velo-k"}:
-            return _mam_simple_kq_qere_fragments(
-                node,
-                cant_strand,
-                include_native_paseq_roles=include_native_paseq_roles,
+    if not isinstance(node_type, str):
+        raise ValueError(f"MAM-simple node has no string type: {node!r}")
+
+    if node_type in _DROPPED_NODE_TYPES:
+        return [_BOUNDARY]
+    if node_type == "sdt-note":
+        # Nothing, and NOT a boundary: a scroll-difference note is an editorial
+        # aside written inside the running text rather than between two atoms, and
+        # at Genesis 4:13, Numbers 1:17, Numbers 25:12 and Deuteronomy 11:21 the
+        # ``text`` run right after it holds that verse's sof pasuq alone -- which
+        # belongs to the atom the note interrupted.  Every other note is followed by
+        # a run that opens with a space, so dropping it outright fuses nothing.
+        return []
+    if node_type in {"lp-paseq", "lp-legarmeih"}:
+        # A token of its own, as it has always been: the mark stands between two
+        # atoms rather than inside either.
+        marker: object = hpunc.PASOLEG
+        if include_native_paseq_roles:
+            marker = MAMNativePaseq(
+                "legarmeh" if node_type == "lp-legarmeih" else "paseq"
             )
-        if node_type in {"kq-k", "ketiv", "kq-k-velo-q"}:
-            return [_BOUNDARY]
+        return [_BOUNDARY, marker, _BOUNDARY]
+    if node_type == "implicit-maqaf":
+        # No boundary before it, so it lands on the atom it follows.
+        return [hpunc.MAQ]
+    if node_type == _CANT_ALL_THREE:
+        # A dual-cantillation span: descend into the requested strand only, so each
+        # projection (combined / alef / bet) is a complete, position-correct word
+        # sequence interleaved with the surrounding single-cant ``text``.
+        contents = node.get("contents")
+        if not isinstance(contents, list):
+            raise ValueError(f"MAM-simple {node_type!r} node has no contents list")
+        matching_children = [
+            child
+            for child in contents
+            if isinstance(child, dict) and child.get("type") == cant_strand
+        ]
+        if len(matching_children) != 1:
+            raise ValueError(
+                f"MAM-simple {node_type!r} node has {len(matching_children)} "
+                f"children for {cant_strand!r}"
+            )
+        return _mam_simple_fragments(
+            matching_children[0],
+            cant_strand,
+            include_native_paseq_roles=include_native_paseq_roles,
+        )
+    if node_type == "kq":
+        return _mam_simple_kq_qere_fragments(
+            node,
+            cant_strand,
+            include_native_paseq_roles=include_native_paseq_roles,
+        )
+    if node_type in {"kq-k", "ketiv", "kq-k-velo-q"}:
+        return [_BOUNDARY]
+    if node_type == "kq-k-velo-q-maq":
+        return []
 
     contents = node.get("contents")
-    if isinstance(contents, list):
+    if node_type in _TRANSPARENT_CONTENT_NODE_TYPES | _DIRECT_QERE_NODE_TYPES:
+        if contents is None:
+            text = node.get("text")
+            if isinstance(text, str):
+                return [text]
+            raise ValueError(
+                f"MAM-simple {node_type!r} node has neither text nor contents"
+            )
+        if not isinstance(contents, list):
+            raise ValueError(f"MAM-simple {node_type!r} contents is not a list")
         out_fragments: list[object] = []
         for child in contents:
             out_fragments.extend(
@@ -385,11 +466,13 @@ def _mam_simple_fragments(
             )
         return out_fragments
 
-    text = node.get("text")
-    if isinstance(text, str):
+    if node_type in _TEXT_NODE_TYPES:
+        text = node.get("text")
+        if not isinstance(text, str):
+            raise ValueError(f"MAM-simple {node_type!r} node has no string text")
         return [text]
 
-    return []
+    raise ValueError(f"Unclassified MAM-simple node type {node_type!r}")
 
 
 def _mam_simple_kq_qere_fragments(
@@ -414,19 +497,15 @@ def _mam_simple_kq_qere_fragments(
     """
     contents = node.get("contents")
     if not isinstance(contents, list):
-        text = node.get("text")
-        return [text] if isinstance(text, str) else []
+        raise ValueError("MAM-simple kq node has no contents list")
 
     qere_nodes = [
         child for child in contents if isinstance(child, dict) and _is_qere_node(child)
     ]
-    chosen = qere_nodes or [
-        child
-        for child in contents
-        if not (isinstance(child, dict) and _is_ketiv_node(child))
-    ]
+    if not qere_nodes:
+        raise ValueError("MAM-simple kq node has no recognized qere child")
     out_fragments: list[object] = []
-    for child in chosen:
+    for child in qere_nodes:
         out_fragments.extend(
             _mam_simple_fragments(
                 child,
@@ -471,11 +550,6 @@ def _is_qere_node(node: dict[str, object]) -> bool:
         "kq-trivial",
         "kq-q-velo-k",
     }
-
-
-def _is_ketiv_node(node: dict[str, object]) -> bool:
-    node_type = node.get("type")
-    return isinstance(node_type, str) and node_type in {"ketiv", "kq-k", "kq-k-velo-q"}
 
 
 def _split_mam_simple_text(text: str) -> list[object]:

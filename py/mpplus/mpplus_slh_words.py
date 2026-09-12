@@ -1,13 +1,22 @@
 """Exports mark"""
 
 from mb_misc import slh_description
+from mpplus import mpplus_boring_tmpls
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
 from mb_cmn import shrink
 
 
 def mark(wtseq):
-    """Mark slh words. (slh: small, large, and/or hung)"""
+    """Eliminate standalone small-, large-, and hung-letter templates.
+
+    Every occurrence of מ:אות-ק, מ:אות-ג, or מ:אות תלויה in MAM-parsed-plus is
+    nested under מ:אות-מיוחדת-במילה, which supplies the uninterrupted chanted
+    word and identifies each special letter outside that chanted word.  The
+    normalization covers every template parameter, including documentation text:
+    documentation can quote a Scripture chanted word with a special letter.  A new
+    template raises until its name and parameter shape are classified.
+    """
     assert isinstance(wtseq, tuple)
     return tuple(_mark_list(list(wtseq)))
 
@@ -21,6 +30,11 @@ def _mark_list(wtseq):
 def _recurse_down_into_tmpls(wtel):
     if not wtp.is_template(wtel):
         return wtel
+    name = wtp.template_name(wtel)
+    if name in mpplus_boring_tmpls._HANDLERS:
+        mpplus_boring_tmpls.validate_current_handler_input_template(wtel)
+    else:
+        tmpln.validate_current_plus_template(wtel)
     return wtp.mktmpl_mp(_mark_list, wtel)
 
 
@@ -158,7 +172,10 @@ def _flatten_targ(wtseq):
         elif wtp.template_name(wtel) in slh_description.PASOLEG_DESC0:
             parts.append(slh_description.PASOLEG_DESC0[wtp.template_name(wtel)])
         else:
-            parts.append(f"<{wtp.template_name(wtel)}>")
+            raise ValueError(
+                f"unclassified template in special-letter target:"
+                f" {wtp.template_name(wtel)!r}"
+            )
     return "".join(parts)
 
 

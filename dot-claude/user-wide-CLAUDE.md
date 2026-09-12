@@ -26,7 +26,10 @@ storing it there is what makes a cloud session able to read it.
 **The history stayed behind, so a `github-misc <sha>` citation below is right as written.** The
 files were copied rather than filtered out with their commits, so every commit that touched this
 file before 2026-09-09 is still a `github-misc` commit and is still cited as one — `1925699`,
-`7780489`, `14a53df`, `56737b6`. Commits from 2026-09-09 onward are MAM-basics commits. Do not
+`7780489`, `14a53df`, `56737b6`. The boundary is the move itself, `74d883d2` at 12:02 on
+2026-09-09, and not the date: `25a8955` and `560239c`, cited below, are github-misc commits of
+that same morning and resolve in neither MAM-basics nor anywhere else here. Commits from the move
+onward are MAM-basics commits. Do not
 "correct" an old citation to name MAM-basics: it would then resolve to nothing.
 
 **The tracked name is `user-wide-CLAUDE.md`, not `CLAUDE.md`, and that is deliberate.** Claude
@@ -51,6 +54,47 @@ github-misc `1925699` of 2026-09-07 — finding 5.6 of
 2026-09-09. It then fell behind again **that same day**, when `560239c` reached the canonical and
 Claude homes and not the Codex one. Nothing warns, and the Codex home is tracked nowhere of its
 own, so those two comparisons are the only detector there is.
+
+## Two axes of risk: does the change reach a product, and is the act hard to undo
+
+Risk here has two unrelated axes, and clearing one says nothing about the other. Ben,
+2026-09-12, asking which of a list of review findings were risky: "where 'risky' includes
+things like code changes that could (or will!) change MAM-parsed, MAM-with-doc, MAM-simple,
+gh-pages, or other things you deem 'public facing'". The answer that followed addressed only
+the first axis, which is what this section exists to stop.
+
+**Axis one, whether the change reaches something published or distributed, is a
+per-repository question, and the repository answers it.** In MAM-basics that is
+`py/product_scopes.py`, with the `CLAUDE.md` section "What this repository's products are,
+and which check a change owes". A repo carrying no such declaration has not defined its
+products, which is a thing to say plainly rather than to guess at.
+
+**Axis two is whether the ACT is hard to undo, whatever it touches.** Five kinds. Each is
+already ruled on, in this file or in a repo's own, so what follows points rather than
+restates — the whole content of this list is that the five are one axis:
+
+1. **Outward-facing acts**: a GitHub issue's state, a remote branch, a Wikisource edit, and a
+   push to `main`, which deploys Pages. §"Never change an issue's state without a comment
+   saying why" also requires the comment that says why.
+2. **Destructive local acts**: worktree removal, branch deletion, history rewrite, recycling
+   a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
+   §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
+   follows a junction and empties the real venv without warning.
+3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.codex/`. They change
+   what every future session loads, nothing version-controls them, and drift is silent, which
+   is why the preamble above requires the two `git diff --no-index` comparisons after any
+   change to a shared skill.
+4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
+   document. Editing one rewrites the record rather than fixing a defect. §"A finished dated
+   document is corrected in `<stem>-update.md`, never edited" below is the rule; MAM-basics'
+   `CLAUDE.md` is the fullest statement of it, and `~/.codex/AGENTS.md` carries it for Codex.
+5. **Code paths that cannot be exercised on this machine**, the cloud-session hook above all.
+   A fix there is unverifiable locally and lands in an environment nobody here is in, so
+   report it as unverified rather than as working.
+
+**Say which axes a piece of work touches, rather than a bare "low risk".** A change that
+reaches no product can still be an act on the list above, and a change that reaches a product
+can be entirely ordinary.
 
 ## Git & commits — commit at will; integrate worktrees at archival
 Rewritten 2026-09-07 from Ben's Codex instructions — `~/.codex/AGENTS.md`'s section of the same
@@ -737,6 +781,35 @@ this session" and "since reverted" with no date, and gave no repo paths.
   black on the files touched, and commit-and-push per the Git section above — so the fresh
   session does not have to infer them from these global rules alone.
 
+## A finished dated document is corrected in `<stem>-update.md`, never edited
+
+Ben's decision, 2026-09-11, with the naming settled 2026-09-12, and it holds in **every** repo. A
+finished dated document — a review, a remediation plan, a completed plan, an execution record — is
+left as written, like a pushed commit under a "never amend pushed commits" discipline. Keeping such
+documents current is maintenance without end, and it makes them more confusing rather than less,
+since a reader cannot tell how the writer could have known at the time what the document now says.
+
+So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
+small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes in
+`doc/PLAN-foo-update-2.md`, a third in `doc/PLAN-foo-update-3.md`, and so on. An update file names
+the passage it corrects by that passage's own words, since line numbers drift, and it is itself
+live, so it is kept true.
+
+**A document that describes the present is the opposite case and is kept true in place**: this
+file, a repo's own `CLAUDE.md`, the READMEs, the docstrings, and a plan still being executed.
+
+**This section reached this file a day late, on 2026-09-12, and the delay is the point of saying
+so here.** The rule was written on 2026-09-11 into MAM-basics' `CLAUDE.md` and into
+`doc/dual-agent-review.md` as that procedure's decision D12, and on 2026-09-12 into
+`~/.codex/AGENTS.md` — so for a day a Codex session in any repo carried the rule while a Claude
+session outside MAM-basics did not, and this file's own §"Two axes of risk" item 4 pointed at a
+statement most sessions cannot load. A review of the MAM-basics review branch's edits raised the
+asymmetry as possibly deliberate, on the reading that the rule might be specific to that
+repository. Ben, 2026-09-12: *"it is not such a policy; it should apply to all repos."* MAM-basics'
+own statement is the fuller one and stays there, because it names the update files that exist in
+that repository; this one is the rule itself. That fuller statement reaches MAM-basics' `main` with
+the 2026-09-10 review round, so until then it is findable only on that round's branch.
+
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
   on it before committing — mandatory, not optional.
@@ -862,6 +935,17 @@ There is no default template behavior.
   the template and explicitly deciding that every branch belongs in that operation. Name that
   scope in the module and output; "all branches" is a decision for a named template, never the
   fallback for an unknown template.
+- **A deep dive diagnoses; Ben decides semantic policy.** A request to inspect, audit, or
+  deep-dive template handling does not authorize choosing a projection, edition display, or
+  survey population. Choices among ketiv, qere, pointed ketiv, selected or all alternatives,
+  body-text, and doc-note-text depend on the consumer's goals and usually require Ben's judgment.
+  Separate the consumer-visible change types, report the existing behavior, examples, and counts,
+  and ask Ben which behavior to retain before implementing or recommending a policy change.
+- **An invalid representation does not select its replacement.** Concatenating ketiv and qere
+  into one form is objectively wrong, but that diagnosis establishes only what must not remain.
+  The consumer may need ketiv, qere, both as separate alternatives, or another explicit
+  projection. Apply an existing explicit policy; if none exists, ask Ben rather than inferring the
+  replacement from the diagnosis.
 - **Make every decision reviewable.** Keep template choices in a named policy or explicit
   call-site dispatch, record a generated survey's projection in metadata or documentation where
   practical, and verify regenerated outputs as differential tests. Ben's instruction,

@@ -42,6 +42,48 @@ and `~/.agents` fell behind anyway, because nothing loads that README.
 `560239c` reached both Claude-side homes and not this one. Codex is the agent that then reads the
 stale copy, and nothing warns it, so those two comparisons are the only detector there is.
 
+## Two axes of risk: does the change reach a product, and is the act hard to undo
+
+Risk here has two unrelated axes, and clearing one says nothing about the other. Ben,
+2026-09-12, asking which of a list of review findings were risky: "where 'risky' includes
+things like code changes that could (or will!) change MAM-parsed, MAM-with-doc, MAM-simple,
+gh-pages, or other things you deem 'public facing'". The answer that followed addressed only
+the first axis, which is what this section exists to stop.
+
+**Axis one, whether the change reaches something published or distributed, is a
+per-repository question, and the repository answers it.** In MAM-basics that is
+`py/product_scopes.py`, with the `CLAUDE.md` section "What this repository's products are,
+and which check a change owes" — a file Codex does not load, so read it when the question
+comes up. A repo carrying no such declaration has not defined its products, which is a thing
+to say plainly rather than to guess at.
+
+**Axis two is whether the ACT is hard to undo, whatever it touches.** Five kinds. Each is
+already ruled on, in this file or in a repo's own, so what follows points rather than
+restates — the whole content of this list is that the five are one axis:
+
+1. **Outward-facing acts**: a GitHub issue's state, a remote branch, a Wikisource edit, and a
+   push to `main`, which deploys Pages. §"Never change an issue's state without a comment
+   saying why" also requires the comment that says why.
+2. **Destructive local acts**: worktree removal, branch deletion, history rewrite, recycling
+   a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
+   §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
+   follows a junction and empties the real venv without warning.
+3. **Writes outside the repository**: `~/.agents/`, `~/.codex/`, `~/.claude/`. They change
+   what every future session loads, nothing version-controls them, and drift is silent, which
+   is why the preamble above requires both of the shared-skill comparisons — and `~/.agents/`
+   is the home that has twice fallen behind.
+4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
+   document. Editing one rewrites the record rather than fixing a defect; §"A finished dated
+   document is corrected in `<stem>-update.md`, never edited" is the rule for the last of
+   those.
+5. **Code paths that cannot be exercised on this machine**, a cloud session's own hook above
+   all. A fix there is unverifiable locally and lands in an environment nobody here is in, so
+   report it as unverified rather than as working.
+
+**Say which axes a piece of work touches, rather than a bare "low risk".** A change that
+reaches no product can still be an act on the list above, and a change that reaches a product
+can be entirely ordinary.
+
 ## Git & commits — commit at will; integrate worktrees at archival
 - **Commit finished work without asking.** A commit is an ordinary step of doing the work, not
   an outward-facing action needing its own yes. This reverses the old rule that left finished
@@ -633,6 +675,40 @@ this session" and "since reverted" with no date, and gave no repo paths.
   black on the files touched, and commit-and-push per the Git section above — so the fresh
   session does not have to infer them from these global rules alone.
 
+## A finished dated document is corrected in `<stem>-update.md`, never edited
+
+Ben's decision, 2026-09-11, with the naming settled 2026-09-12. A finished dated document — a
+review, a remediation plan, a completed plan, an execution record — is left as written, like a
+pushed commit under a "never amend pushed commits" discipline. Keeping such documents current is
+maintenance without end, and it makes them more confusing rather than less, since a reader cannot
+tell how the writer could have known at the time what the document now says.
+
+So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
+small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes
+in `doc/PLAN-foo-update-2.md`, and so on. An update file names the passage it corrects by that
+passage's own words, since line numbers drift, and it is itself live, so it is kept true.
+
+A document that describes the present is the opposite case and is kept true in place: this file,
+a repo's own instruction file, the READMEs, the docstrings, and a plan still being executed. In
+MAM-basics the fuller statement is `doc/dual-agent-review.md`'s section "Correcting a finished
+dated document" (D12), and that repo's `CLAUDE.md` carries the same rule; this section exists
+because Codex loads neither of those files.
+
+## In MAM-basics, an unprefixed `doc/review-findings-<date>.md` is the Claude review series
+
+MAM-basics' periodic review series is `doc/review-findings-<date>.md`, with no agent name in the
+file name, and that repo's `doc/periodic-review.md` describes it. When Codex reviews the same
+window, its file takes the prefixed name `doc/codex-review-findings-<date>.md`, and the Claude
+series is not renamed to match: the unprefixed name is the incumbent and the prefixed name
+announces its difference. `doc/dual-agent-review.md`'s D10 there is the fuller statement,
+including the four reasons the rename was rejected.
+
+**So a Codex review file never takes the unprefixed name.** `doc/blind-dive-into-template-params.md`
+is the case that produced this section: Codex wrote it (`fa07fd8f`) as a current-state review of
+template projection, under the name `doc/review-findings-2026-09-11.md`, and Ben renamed it on
+2026-09-12. MAM-basics' `CLAUDE.md` §"An unprefixed `doc/review-findings-<date>.md` is the Claude
+series" carries the same rule; it is restated here because Codex does not load that file.
+
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
   on it before committing — mandatory, not optional.
@@ -751,6 +827,17 @@ There is no default template behavior.
   the template and explicitly deciding that every branch belongs in that operation. Name that
   scope in the module and output; "all branches" is a decision for a named template, never the
   fallback for an unknown template.
+- **A deep dive diagnoses; Ben decides semantic policy.** A request to inspect, audit, or
+  deep-dive template handling does not authorize choosing a projection, edition display, or
+  survey population. Choices among ketiv, qere, pointed ketiv, selected or all alternatives,
+  body-text, and doc-note-text depend on the consumer's goals and usually require Ben's judgment.
+  Separate the consumer-visible change types, report the existing behavior, examples, and counts,
+  and ask Ben which behavior to retain before implementing or recommending a policy change.
+- **An invalid representation does not select its replacement.** Concatenating ketiv and qere
+  into one form is objectively wrong, but that diagnosis establishes only what must not remain.
+  The consumer may need ketiv, qere, both as separate alternatives, or another explicit
+  projection. Apply an existing explicit policy; if none exists, ask Ben rather than inferring the
+  replacement from the diagnosis.
 - **Make every decision reviewable.** Keep template choices in a named policy or explicit
   call-site dispatch, record a generated survey's projection in metadata or documentation where
   practical, and verify regenerated outputs as differential tests. Ben's instruction,

@@ -120,9 +120,9 @@ The main sources currently identified are:
    `כתי"` stem is what a summary drops. Should the mirror ever be too stale to trust, the
    fallback is the same wikitext by another route, never a summary:
    `https://he.wikisource.org/w/index.php?title=<url-encoded title>&action=raw`.
-2. JC3 sigil list in the holman-ketiv-qere material:
-   `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז - English.html`
-   `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז.html`
+2. JC3 sigil list in the Holman material:
+   `../gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-Z - English.html`
+   `../gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-Z.html`
 3. MAM-for-Acc Accordance header:
    `../MAM-for-Acc/in/01.Aleppo Codex Apparatus.header.html`
 4. MAM-for-Acc translation/support code:

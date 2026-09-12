@@ -7,6 +7,41 @@ from py_misc import vtrad_data
 from mb_cmn.minirow import MinirowExt
 
 
+def bk24s_differing_from_mam(vtrad):
+    """The bk24 ids whose cv-labels ``vtrad`` places other than where MAM places them.
+
+    A PROPERTY OF THE VERSIFICATION TABLES, NOT OF ANY GENERATED EDITION.  Every MAM
+    bcvt absent from both tables below goes through ``_identity``, which is exactly the
+    statement that this tradition puts that label where MAM puts it; so the books named
+    by the tables' keys are the whole of where the two traditions part company.
+
+    MAM-simple stores its bhs and sef corpora incrementally against its mam one and asks
+    this which book groups it must write.  Ben's instruction, 2026-09-12, rejecting an
+    earlier design that generated all three editions and diffed them: "It feels like
+    your plan generates entire editions and asks where they differ in terms of
+    versification, whereas the only question that needs answering is how the
+    versifications differ."  It also supplies the ``versification-tradition`` value for
+    a mam file, which names every tradition that file's labels are correct for.
+
+    Checked against that earlier design's output on the day it replaced it: the answer
+    here is the same six book groups for bhs -- 1Sam-2Sam, Deut, Exod, Jer, Josh, Num --
+    and the same five for sef, Num being the one book group where Sefaria agrees with
+    MAM and BHS does not.
+
+    Both tables are read, not just ``BCV_DIC_FROM_MAM_TO_YYY``: ``NUMBERS_25_18_MAM`` is
+    a key of ``_SPLITTERS_AND_FRIENDS[VT_BHS]`` and of no ``BCV_DIC``.  It changes no
+    answer today, Numbers being in the bhs set already through ``NUMBERS_26_1_MAM``, but
+    a later entry could name a book the other table does not.
+    """
+    return _BK24S_DIFFERING_FROM_MAM[vtrad]
+
+
+def _bk24s_differing_from_mam(vtrad):
+    bcvtmams = set(vtrad_data.BCV_DIC_FROM_MAM_TO_YYY[vtrad])
+    bcvtmams |= set(_SPLITTERS_AND_FRIENDS[vtrad])
+    return frozenset(tbn.bk24id(tbn.bcvt_get_bk39id(bcvtmam)) for bcvtmam in bcvtmams)
+
+
 def convert_to_bhs(bkids, books_mpu):
     """Run convert_from_mam targeting the BHS vtrad"""
     return _convert_from_mam(bkids, books_mpu, tbn.VT_BHS)
@@ -170,6 +205,12 @@ _SPLITTERS_AND_FRIENDS_BHS = {
 _SPLITTERS_AND_FRIENDS = {
     tbn.VT_SEF: _SPLITTERS_AND_FRIENDS_SEF,
     tbn.VT_BHS: _SPLITTERS_AND_FRIENDS_BHS,
+}
+
+# Built once at import, the two tables above them being fixed.  bk24s_differing_from_mam
+# is the public reader; see its docstring.
+_BK24S_DIFFERING_FROM_MAM = {
+    vt: _bk24s_differing_from_mam(vt) for vt in (tbn.VT_SEF, tbn.VT_BHS)
 }
 
 

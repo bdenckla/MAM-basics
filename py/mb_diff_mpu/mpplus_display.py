@@ -23,6 +23,7 @@ from mb_diff_mpu.mpplus_flatten import (
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
+    selected_body_tail,
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
@@ -109,13 +110,15 @@ def _collect_paseq_types(obj, types):
             if pk is not MISSING:
                 _collect_paseq_types(pk, types)
             return
-        p1 = get_param(obj, "1")
-        if p1 is not MISSING:
-            _collect_paseq_types(p1, types)
+        role, value = selected_body_tail(obj)
+        if role == "param" and value is not MISSING:
+            _collect_paseq_types(value, types)
         return
     if isinstance(obj, list):
         for item in obj:
             _collect_paseq_types(item, types)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus body element: {type(obj).__name__}")
 
 
 def _collect_gray_maqaf_positions(ep):
@@ -135,6 +138,10 @@ def _gray_maqaf_walk(obj, pos, positions):
     elif isinstance(obj, list):
         for item in obj:
             _gray_maqaf_walk(item, pos, positions)
+    else:
+        raise TypeError(
+            f"unclassified MAM-parsed-plus body element: {type(obj).__name__}"
+        )
 
 
 def _gray_maqaf_walk_template(tmpl, pos, positions):
@@ -176,9 +183,11 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
         if pk is not MISSING:
             _gray_maqaf_walk(pk, pos, positions)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _gray_maqaf_walk(p1, pos, positions)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _gray_maqaf_walk(value, pos, positions)
+    elif role == "literal":
+        pos[0] += len(value)
 
 
 def _collect_kq_positions(ep):
@@ -198,6 +207,10 @@ def _kq_position_walk(obj, pos, positions):
     elif isinstance(obj, list):
         for item in obj:
             _kq_position_walk(item, pos, positions)
+    else:
+        raise TypeError(
+            f"unclassified MAM-parsed-plus body element: {type(obj).__name__}"
+        )
 
 
 def _kq_position_walk_template(tmpl, pos, positions):
@@ -236,9 +249,11 @@ def _kq_position_walk_template(tmpl, pos, positions):
         if pk is not MISSING:
             _kq_position_walk(pk, pos, positions)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _kq_position_walk(p1, pos, positions)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _kq_position_walk(value, pos, positions)
+    elif role == "literal":
+        pos[0] += len(value)
 
 
 def display_text(text, ep):

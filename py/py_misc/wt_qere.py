@@ -1,3 +1,11 @@
+"""First-stage qere projection for MAM-parsed-plus FOI consumers.
+
+The base handlers include qere for non-trivial ketiv/qere templates.  The
+historical ``מ:קו״כ-אם-2`` handler instead includes parameter 1, its
+pointed-ketiv form.  Stress-helper, qamats, and dual-cantillation templates stay
+intact for each consumer's explicit second-stage policy.
+"""
+
 from mb_cmn import str_defs as sd
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
@@ -5,7 +13,6 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn.shrink import shrink
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn.my_utils import sum_of_map
-from mb_cmn.my_utils import sum_of_seqs
 from mb_cmn.my_utils import intersperse
 from py_misc.split import my_re_split
 
@@ -47,6 +54,31 @@ def hnd_recurse_on_param_bet(hnds, tmpl):
     return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "ב"))
 
 
+def hnd_recurse_on_param_combined(hnds, tmpl):
+    return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "כפול"))
+
+
+_ALTERNATIVE_ARGUMENT_KEYS = {
+    "מ:דחי": ("1", "2"),
+    "מ:צינור": ("1", "2"),
+    "מ:קמץ": ("ד", "ס"),
+    "מ:כפול": ("כפול", "א", "ב"),
+}
+
+
+def hnd_recurse_on_all_declared_alternatives(hnds, tmpl):
+    """Preserve the historical concatenation pending each consumer's decision."""
+    name = wtp.template_name(tmpl)
+    try:
+        keys = _ALTERNATIVE_ARGUMENT_KEYS[name]
+    except KeyError as exc:
+        raise ValueError(f"no declared alternative order for {name!r}") from exc
+    mapped = []
+    for key in keys:
+        mapped.extend(do_one_wtseq(hnds, wtp.template_param_val(tmpl, key)))
+    return intersperse(" ", mapped)
+
+
 def hnd_identity(_1, tmpl):
     return [tmpl]
 
@@ -57,12 +89,6 @@ def hnd_return_plain_space(_1, _2):
 
 def hnd_return_doub_vert_line_plus_space(_1, _2):
     return [sd.DOUB_VERT_LINE + " "]
-
-
-def hnd_recurse_on_param_vals_and_ca(hnds, tmpl):
-    """ca: concatenate alternatives (separated by plain space)"""
-    mapped = sum_of_seqs(wtp.map_params((do_one_wtseq, hnds), tmpl))
-    return intersperse(" ", mapped)
 
 
 def mktmpl_mp(hnds, tmpl):
@@ -77,7 +103,15 @@ def _do_one_wtel(hnds, wtel):
     if isinstance(wtel, str):
         return [wtel]
     tmpl_name = wtp.template_name(wtel)
-    return hnds[tmpl_name](hnds, wtel)
+    try:
+        handler = hnds[tmpl_name]
+    except KeyError as exc:
+        raise ValueError(
+            f"unclassified template in qere projection: {tmpl_name!r}"
+        ) from exc
+    if tmpl_name in tmpln.CURRENT_PLUS_TMPL_NAMES:
+        tmpln.validate_current_plus_template(wtel)
+    return handler(hnds, wtel)
 
 
 def _hnd_recurse_on_arg_1(hnds, tmpl):

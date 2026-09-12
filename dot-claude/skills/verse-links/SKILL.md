@@ -25,8 +25,11 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRe
    `Tsefaniah`, `1Samuel`, `2Kings`, `1Chronicles`, and `"Song of Songs"`, quoted for its spaces.
    An unknown id is refused with the full list.
 2. **Name the atom by its Hebrew text or by `--atom N`.** The Hebrew is matched against the UXLC
-   exactly, then by its letters alone, so MAM's pointed form and a bare consonantal one both
-   work. With neither, the Leningrad Codex line gives where the verse starts and ends.
+   exactly, then by its letters alone, and "letters alone" drops marks and format characters only.
+   A sof pasuq or a maqaf in the UXLC's atom survives that, so it has to be in what you give: a
+   bare consonantal form matches a mid-verse atom and fails for a verse-final or maqaf-final one,
+   where MAM's pointed form, which carries the mark, works. With neither, the Leningrad Codex line
+   gives where the verse starts and ends.
 3. **`--atom` counts the UXLC's atoms, not MAM's**: one per `<w>` and per `<q>` of the UXLC core
    XML, a ketiv not counted. When the Hebrew given matches none of the verse's atoms, or more than
    one, the command lists the atoms numbered in exactly that count and exits 1; rerun with

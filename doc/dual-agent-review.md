@@ -19,11 +19,14 @@ the **periodic** review — the `doc/review-findings-<date>.md` series. That ser
 through 2026-09-01; the 2026-09-04 window is its first paired review. Do not read the earlier
 Claude-only history more broadly than that.
 
-## What the periodic review is, and what Codex joined
+**The periodic review itself is described in `doc/periodic-review.md`**, split out of this
+document on 2026-09-12: the series, its two standing properties, what a review file contains,
+and the remediation rules D7 and the risk ordering. A citation written before that date may
+name this document for material that is now there.
 
-Every four to eight days one Claude session reads a commit range across the public repositories and
-writes `doc/review-findings-<date>.md`. Re-measured on 2026-09-09 at `9ac147cc`, the review
-files and their line-3 `State:` entries are:
+## What Codex joined
+
+Re-measured on 2026-09-09 at `9ac147cc`, the review files and their line-3 `State:` entries are:
 
 | Filename pattern | Files at the measured commit | Recorded states |
 |---|---|---|
@@ -44,36 +47,9 @@ git ls-files -- "doc/review-findings-*.md" "doc/codex-review-findings-*.md"
 git grep -n "^State:" HEAD -- "doc/review-findings-*.md" "doc/codex-review-findings-*.md"
 ```
 
-Two properties of the series matter to everything below.
-
-1. **The series is doc-only since 2026-09-01** (`5b89033`). **"Doc-only" says where a review is
-   RECORDED, never what it may READ** — a distinction worth spelling out, because two documents
-   written on 2026-09-09 both took it the other way, and either reading would send a session to Ben
-   for a scope decision he does not owe. A review reads whatever the window changed in a public
-   repository: `doc/review-findings-2026-09-08.md` is headed "review of the public repos" and
-   accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
-   is the RECORD. Each file carries a `State:` line at
-   line 3 directly under the H1. The initial review records remediation state; later turns record
-   review completion, under D10 in the naming section below. The
-   thin tracking issue every review used to file — wlc-utils#87, then MAM-basics #219, #228, #231,
-   #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
-   account and only #219 was ever adopted as a citation handle. A review that finds work somebody
-   must do still files a real issue with a real body; #233 is that shape.
-2. **The series is public-only since 2026-08-26.** It does not read MAM-private. This is load-bearing
-   for the Codex scoping rule below, not incidental.
-
-   **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
-   the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future
-   review should apply it.** The twelve files it reached became canonical in this public repository
-   that day, at `dot-claude/` and `dot-Codex/`, so the ordinary sweep reads them like any other
-   tracked file; and github-misc's clone was retired the same day, so performing the byte-compare
-   would now mean re-cloning a private remote to compare a file against itself. It is recorded as
-   spent rather than deleted so that a reader of finding 5.6 can still see why it existed. Nothing
-   replaces it: **no scope widening and no new exception is owed for `dot-claude/` or `dot-Codex/`**,
-   which point 1 above is what settles.
-
-The convention of record for both properties is the "The doc/ directory standard" section of
-`py/repo_util/check_repo_standards.py`'s module docstring. Read it there rather than re-deriving it.
+Both properties that make the series safe to pair, doc-only since 2026-09-01 and public-only
+since 2026-08-26, are stated in `doc/periodic-review.md`. The Codex scoping rule below depends on
+the second.
 
 ## Calibrate before adopting a standing parallel track
 
@@ -208,58 +184,11 @@ of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that 
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
 
-### Separate defects from editorial proposals — Ben's decision, 2026-09-09 (D7)
+### Remediation approvals: D7 and the risk ordering
 
-For every remediation proposal, separate reproducible data or code defects from proposed
-editorial changes to terminology, organization, interpretation or attribution. Present concrete
-wording for each editorial change for Ben's approval before applying it. Follow already-recorded
-decisions without asking again. Agreement between reviewers does not approve an editorial change.
-
-The September 8 MAS-page reversals are the worked example, not the scope boundary. The broad
-instructions at `47edbee6` made editorial rewrites executable without identifying approved
-wording; `1095f029` and `a9edd4f9` record Ben's reversal of unrequested rewrites. Those decisions
-require dated corrections to the earlier remediation records, not reinstatement of the reversed
-prose. The counter-argument's "MAS decisions and the scope of future remediation" section and
-the close-out plan's D7 decision record the evidence and Ben's generalization of the rule.
-
-### Present remediation by public-facing risk — Ben's decision, 2026-09-09
-
-For future remediations (actions based on review findings), Ben wants proposed changes
-presented in the following order and at the following level of detail. The categories
-express the risk Ben assigns to changing what readers see or consumers receive.
-
-1. **Public-facing documents — high risk.** Present changes to rendered HTML and to
-   Markdown intended for readers, such as README and license pages. Show the current and
-   proposed wording; identify formatting changes separately. Ordinary plans and review
-   records under `doc/` do not enter this category merely because the repository is public.
-2. **Public-facing data — high risk.** Present changes to published corpus data, such as
-   MAM-parsed-plus JSON, with the affected text, values, or structure. Trace generated
-   effects: an analysis JSON change and a Phonetic MAM JSON change that produces no change
-   in Phonetic MAM HTML belong with the lower-risk changes in Ben's distinction. Say when
-   no public-facing data change is proposed, and distinguish an unchanged regenerated
-   file from a proposed content change.
-3. **All remaining changes — lower risk.** Start with a summary by type, at the granularity
-   of "wording changes to Markdown files in doc directories", "Python comments and
-   docstrings", "agent instructions", "code and tests", or "vendoring reports". Ben will
-   ask for finer detail where he wants it; do not begin by requiring him to inspect every
-   internal wording replacement.
-
-Classify a change by its effect on the published document or data, including effects of
-edits in a generator. A Python filename does not make a change lower risk if the change
-alters published HTML or corpus JSON. A public Git repository does not make every file
-public-facing in the sense Ben means here.
-
-Use these categories for the approval presentation even when the written plan also has
-finding-number references, separate editorial and technical items, and implementation waves
-ordered by dependencies. Keep that execution detail available in the plan. The presentation
-preference does not itself approve a proposed change or alter a decision already recorded.
-
-The worked case is Ben's September 9 inspection of the September 8 remediation plan: he
-first requested the HTML and reader-facing Markdown changes, then the public JSON changes,
-then a summary of the remaining change types. The earlier presentation grouped editorial
-proposals by MAS versus non-MAS subject matter and led with implementation waves, mixing
-reader-facing wording with internal documentation. Future presentations use Ben's risk
-categories first.
+Close-out step 3's approvals follow D7, "Separate defects from editorial proposals", and Ben's
+ordering of remediation by public-facing risk. Both moved to `doc/periodic-review.md` on
+2026-09-12, since they apply to every review and not only to a two-agent window.
 
 ## Earlier designs — Design A was the default, 2026-09-07 to 2026-09-09; Design B is the blind alternative
 

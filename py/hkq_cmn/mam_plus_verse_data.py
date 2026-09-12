@@ -18,6 +18,9 @@ _NO_ATOM_CMP = {
 _IN_WORD_CMP = {
     canonical_template_name(name) for name in template_names.IN_WORD_TMPL_NAMES
 }
+_STD_KQ_CMP = {
+    canonical_template_name(name) for name in template_names.STD_KQ_TMPL_NAMES
+}
 
 
 def _no_rule_error(tmpl_name: object, tmpl_params: object) -> ValueError:
@@ -195,10 +198,10 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
         return
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
+        tmpl_params = template_names.validate_current_plus_template(node)
         # Folded to ASCII quotes for matching the quote-bearing literals below;
         # tmpl_name itself (gershayim) is never stored from this function.
         cmp_name = canonical_template_name(tmpl_name)
-        tmpl_params = node.get("tmpl_params")
         if cmp_name in _NO_ATOM_CMP:
             # A TEMPLATE THAT CONTRIBUTES NO ATOM SEPARATES THE ATOMS AROUND IT,
             # so it contributes a space, whether or not it has parameters.  The
@@ -276,7 +279,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             # string (e.g. "א-קרי=..."), not verse text.
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return
-        if 'כו"ק' in (cmp_name or "") or 'קו"כ' in (cmp_name or ""):
+        if cmp_name in _STD_KQ_CMP:
             # Ketiv-qere: param 1 is ketiv (written), param 2 is qere (read).
             _collect_text_fragments(tmpl_params.get("2"), out_parts)
             return
@@ -322,103 +325,60 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return
         raise _no_rule_error(tmpl_name, tmpl_params)
+    raise TypeError(f"unclassified plus verse payload node: {type(node).__name__}")
 
 
 def _render_template_like_text(node: object) -> str:
+    """Render one classified template argument as the verifier historically did."""
     if isinstance(node, str):
         return node
-
     if isinstance(node, list):
         return "".join(_render_template_like_text(item) for item in node)
-
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_name, str) and isinstance(tmpl_params, dict):
-            return _render_template_call(tmpl_name, tmpl_params)
-
-        # Fallback for non-template container nodes.
-        return "".join(_render_template_like_text(value) for value in node.values())
-
-    return ""
-
-
-def _render_template_call(tmpl_name: str, tmpl_params: dict[object, object]) -> str:
-    rendered_args: list[str] = []
-    for key, value in tmpl_params.items():
-        rendered_value = _render_template_like_text(value)
-        if isinstance(key, str) and key.isdigit():
-            rendered_args.append(rendered_value)
-        else:
-            rendered_args.append(f"{key}={rendered_value}")
-
-    if not rendered_args:
-        return f"{{{{{tmpl_name}}}}}"
-
-    return f"{{{{{tmpl_name}|{'|'.join(rendered_args)}}}}}"
-
-
-def _collect_nusach_targets(node: object, out_targets: list[str]) -> None:
-    if isinstance(node, list):
-        for item in node:
-            _collect_nusach_targets(item, out_targets)
-        return
-
-    if isinstance(node, dict):
-        tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_params, dict):
-            if tmpl_name == "נוסח":
-                target_text = _render_template_like_text(tmpl_params.get("1")).strip()
-                if target_text:
-                    out_targets.append(target_text)
-
-                # Skip param 2 because it is documentation, not verse text.
-                for key, value in tmpl_params.items():
-                    if key in {"1", "2"}:
-                        continue
-                    _collect_nusach_targets(value, out_targets)
-                return
-
-            for value in tmpl_params.values():
-                _collect_nusach_targets(value, out_targets)
-
-
-def verse_nusach_targets_by_location(
-    plus_json: object,
-) -> dict[tuple[int, int, int], list[str]]:
-    out: dict[tuple[int, int, int], list[str]] = {}
-    for (
-        book39_index,
-        chapter_num,
-        verse_num,
-        verse_payload,
-    ) in _iter_plus_verse_payloads(plus_json):
-        targets: list[str] = []
-        _collect_nusach_targets(verse_payload, targets)
-        out[(book39_index, chapter_num, verse_num)] = targets
-    return out
+        if not isinstance(tmpl_name, str):
+            raise ValueError(f"unclassified non-template mapping: {node!r}")
+        tmpl_params = template_names.validate_current_plus_template(node)
+        rendered_args: list[str] = []
+        for key, value in tmpl_params.items():
+            rendered_value = _render_template_like_text(value)
+            if isinstance(key, str) and key.isdigit():
+                rendered_args.append(rendered_value)
+            else:
+                rendered_args.append(f"{key}={rendered_value}")
+        if not rendered_args:
+            return f"{{{{{tmpl_name}}}}}"
+        return f"{{{{{tmpl_name}|{'|'.join(rendered_args)}}}}}"
+    raise TypeError(f"unclassified template-argument node: {type(node).__name__}")
 
 
 def _collect_template_argument_records(
     node: object,
     out_records: list[dict[str, str]],
 ) -> None:
+    """Collect the historical all-argument Holman-verifier population explicitly.
+
+    The replacement population is deferred in MAM-basics #276.  Until that
+    decision, every declared argument remains searchable except documentation
+    parameter 2 of ``נוסח``, matching the behavior on main.  Closed shape
+    validation prevents an added argument from entering this population silently.
+    """
     if isinstance(node, list):
         for item in node:
             _collect_template_argument_records(item, out_records)
         return
 
+    if isinstance(node, str):
+        return
+
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_name, str) and isinstance(tmpl_params, dict):
+        if isinstance(tmpl_name, str):
+            tmpl_params = template_names.validate_current_plus_template(node)
             for key, value in tmpl_params.items():
                 argument_key = str(key)
-                # In plus JSON, נוסח param 2 is documentation, not verse text.
                 if tmpl_name == "נוסח" and argument_key == "2":
                     continue
-
                 argument_text = _render_template_like_text(value).strip()
                 if argument_text:
                     out_records.append(
@@ -432,8 +392,12 @@ def _collect_template_argument_records(
                 _collect_template_argument_records(value, out_records)
             return
 
-        for value in node.values():
-            _collect_template_argument_records(value, out_records)
+        raise ValueError(
+            "unclassified non-template mapping in plus verse payload: "
+            f"keys={sorted(str(key) for key in node)}"
+        )
+
+    raise TypeError(f"unclassified plus verse payload node: {type(node).__name__}")
 
 
 def verse_template_argument_records_by_location(

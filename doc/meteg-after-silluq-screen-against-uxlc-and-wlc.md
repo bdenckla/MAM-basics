@@ -549,4 +549,3 @@ were skipped.
 | 1 Chronicles 25:4 | מַחֲזִיאֹֽת׃ | מַחֲזִיאֽוֹת׃ | מַחֲזִיאֽוֹת׃ | UXLC: skipped; WLC: skipped |
 | 2 Chronicles 3:5 | וְשַׁרְשְׁרֹֽת׃ | וְשַׁרְשְׁרֽוֹת׃ | וְשַׁרְשְׁרֽוֹת׃ | UXLC: skipped; WLC: skipped |
 | 2 Chronicles 32:28 | לָאֲוֵרֹֽת׃ | לָאֲוֵרֽוֹת׃ | לָאֲוֵרֽוֹת׃ | UXLC: skipped; WLC: skipped |
-

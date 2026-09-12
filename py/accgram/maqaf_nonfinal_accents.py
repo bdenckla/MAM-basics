@@ -519,7 +519,20 @@ def uxlc_words(uxlc_dir: Path) -> dict[str, list[str]]:
             chnu = int(chapter.get("n"))
             for verse in chapter.iter("v"):
                 vrnu = int(verse.get("n"))
-                atoms = [uxlc_text(el) for el in verse if el.tag in ("w", "q")]
+                atoms = []
+                for element in verse:
+                    if element.tag in {"w", "q"}:
+                        atoms.append(uxlc_text(element))
+                    elif element.tag not in {
+                        "k",
+                        "pe",
+                        "samekh",
+                        "reversednun",
+                        "x",
+                    }:
+                        raise ValueError(
+                            f"unclassified UXLC verse child tag: {element.tag!r}"
+                        )
                 out[f"{bb}{chnu}:{vrnu}"] = _join_on_maqaf(atoms)
     return out
 
@@ -530,10 +543,30 @@ def uxlc_text(el) -> str:
     An ``<x>`` holds a Latin note letter, not text; left in, it lands mid-word and splits an
     atom that has no business being split.
     """
+    if el.tag not in {"w", "q", "s"}:
+        raise ValueError(f"unclassified UXLC Scripture tag: {el.tag!r}")
+    if el.tag in {"w", "q"} and el.attrib:
+        raise ValueError(f"unexpected attributes on UXLC {el.tag!r}: {el.attrib!r}")
+    if el.tag == "s":
+        if el.attrib.get("t") not in {"large", "small", "suspended"} or set(
+            el.attrib
+        ) != {"t"}:
+            raise ValueError(f"unexpected attributes on UXLC 's': {el.attrib!r}")
+        if list(el):
+            raise ValueError(f"unexpected children in UXLC 's': {ET.tostring(el)!r}")
     parts = [el.text or ""]
     for child in el:
-        if child.tag != "x":
+        if child.tag == "s":
             parts.append(uxlc_text(child))
+        elif child.tag == "x":
+            if child.attrib or list(child):
+                raise ValueError(
+                    f"unexpected UXLC inline x shape: {ET.tostring(child)!r}"
+                )
+        else:
+            raise ValueError(
+                f"unclassified inline tag {child.tag!r} in UXLC {el.tag!r}"
+            )
         parts.append(child.tail or "")
     return "".join(parts)
 

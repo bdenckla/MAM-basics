@@ -33,24 +33,29 @@ def has_staged_changes(repo_dir: Path) -> bool:
 
 
 def get_staged_summary(repo_dir: Path) -> dict[str, int]:
-    result = run_cmd(["git", "-C", str(repo_dir), "diff", "--cached", "--numstat"])
+    result = run_cmd(
+        ["git", "-C", str(repo_dir), "diff", "--cached", "--numstat", "-z"]
+    )
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to summarize staged changes in {repo_dir}"
         )
 
-    lines = [line for line in result.stdout.splitlines() if line.strip()]
     insertions = 0
     deletions = 0
-    for line in lines:
-        added_str, deleted_str, _path = line.split("\t", 2)
+    files_changed = 0
+    for record in result.stdout.split("\0"):
+        if record.count("\t") < 2:
+            continue
+        files_changed += 1
+        added_str, deleted_str, _path = record.split("\t", 2)
         if added_str != "-":
             insertions += int(added_str)
         if deleted_str != "-":
             deletions += int(deleted_str)
 
     return {
-        "files_changed": len(lines),
+        "files_changed": files_changed,
         "insertions": insertions,
         "deletions": deletions,
     }

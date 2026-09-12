@@ -10,6 +10,7 @@ from mb_diff_mpu.mpplus_flatten import (
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
+    selected_body_tail,
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
@@ -33,18 +34,6 @@ def _validate_special_kq_if_needed(tmpl):
     sug_raw = get_param(tmpl, "סוג")
     sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
     rkqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
-
-
-def _iter_named_templates(obj, template_name):
-    """Yield every template dict with a matching tmpl_name."""
-    if isinstance(obj, dict):
-        if obj.get("tmpl_name") == template_name:
-            yield obj
-        for value in obj.values():
-            yield from _iter_named_templates(value, template_name)
-    elif isinstance(obj, list):
-        for item in obj:
-            yield from _iter_named_templates(item, template_name)
 
 
 def _arg2_param_key(template_name):
@@ -73,6 +62,8 @@ def _collect_named_template_tracking(obj, template_name, parts, instances):
         return
     if isinstance(obj, dict):
         _collect_named_template_from_template(obj, template_name, parts, instances)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus body element: {type(obj).__name__}")
 
 
 def _collect_named_template_from_template(tmpl, template_name, parts, instances):
@@ -133,9 +124,11 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         if pk is not MISSING:
             _collect_named_template_tracking(pk, template_name, parts, instances)
         return
-    p1 = get_param(tmpl, "1")
-    if p1 is not MISSING:
-        _collect_named_template_tracking(p1, template_name, parts, instances)
+    role, value = selected_body_tail(tmpl)
+    if role == "param" and value is not MISSING:
+        _collect_named_template_tracking(value, template_name, parts, instances)
+    elif role == "literal":
+        parts.append(value)
 
 
 _KQ_TRIVIAL_NAMES = ("קו״כ-אם", "מ:קו״כ-אם-2")

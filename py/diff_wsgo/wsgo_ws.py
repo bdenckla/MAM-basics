@@ -1,6 +1,7 @@
 """Exports massage_ws_book"""
 
 from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import plain_template_schema
 from mb_cmn import uni_denorm
 from mb_cmn import hebrew_accents as ha
 from mb_cmn.my_utils import dv_dispatch
@@ -123,6 +124,7 @@ def _has_spacing_tmpl(wtseq):
 def _is_spacing_tmpl(wtel):
     if not wtp1.is_template(wtel):
         return False
+    plain_template_schema.validate_current_plain_template(wtel)
     if wtp1.is_doc_template(wtel):
         tel1 = wtp1.template_element(wtel, 1)
         return _has_spacing_tmpl(tel1) or tel1 in ([" "], ["__"])
@@ -169,6 +171,7 @@ def _cmass_ws_wtel(mctx, wtel):  # cmass: massage with mctx
         return _cmass_ws_wt_list(mctx, wtel)
     assert isinstance(wtel, dict)
     if wtp1.is_abtag(wtel):
+        plain_template_schema.validate_current_plain_custom_tag(wtel)
         return wtel
     return _cmass_tmpl(mctx, wtel)
 
@@ -179,6 +182,7 @@ def _germuq_revia(in_str):
 
 
 def _cmass_tmpl(mctx, tmpl):  # cmass: massage with mctx
+    plain_template_schema.validate_current_plain_template(tmpl)
     tels_in = wtp1.template_elements(tmpl)
     assert isinstance(tels_in, list)
     tels_out = sl_map((_cmass_ws_wt_list, mctx), tels_in)

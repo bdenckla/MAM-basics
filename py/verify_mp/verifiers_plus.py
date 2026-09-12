@@ -5,6 +5,7 @@ from collections import Counter
 from typing import Callable
 
 from mb_author.claim import ClaimRecord
+from mb_cmn import template_names
 from verify_mp.corpus import (
     Context,
     iter_chapters,
@@ -150,11 +151,25 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
         )
         if top_name == docnote_wrapper:
             saw_wrapped = True
-            assert any(
-                t["tmpl_name"] == label_tmpl for t in iter_template_objects(item)
-            ), f"{docnote_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
+            wrapper_params = template_names.validate_current_plus_template(item)
+            target = wrapper_params["1"]
+            if isinstance(target, list):
+                assert len(target) == 1, (
+                    f"{docnote_wrapper!r} parameter 1 must contain one direct"
+                    f" {label_tmpl!r} template: {item!r}"
+                )
+                target = target[0]
+            assert isinstance(
+                target, dict
+            ), f"{docnote_wrapper!r} parameter 1 is not a direct template: {item!r}"
+            template_names.validate_current_plus_template(target)
+            assert (
+                target["tmpl_name"] == label_tmpl
+            ), f"{docnote_wrapper!r} parameter 1 is not {label_tmpl!r}: {item!r}"
+            label_params = target.get("tmpl_params", {})
         else:
             saw_direct = True
+            template_names.validate_current_plus_template(item)
             label_params = item.get("tmpl_params", {})
             has_named = any(k in named_params for k in label_params)
             assert has_named, (
@@ -162,6 +177,11 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
                 f" ({sorted(named_params)!r}): {item!r}"
             )
             saw_direct_with_named_params = True
+        unexpected = set(label_params) - {"1", "2", "3"} - named_params
+        assert not unexpected, (
+            f"D-column {label_tmpl!r} has unexpected params"
+            f" {sorted(unexpected)!r}: {item!r}"
+        )
     assert saw_empty, "D column never empty"
     assert saw_direct, "never observed direct מ:פסוק in D column"
     assert saw_wrapped, "never observed נוסח-wrapped מ:פסוק in D column"

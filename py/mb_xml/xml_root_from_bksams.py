@@ -6,15 +6,19 @@ from mb_misc import mb_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import vtrad_helpers
 from mb_misc import osis_book_abbrevs as osisba
-from py_misc import yeivin_book_abbrevs as yeivinba
 from mb_xml import xml_distribute_sampe as xml_sampe
 
 
-def root(bksams, vtrad, variant):
-    """Get XML root element from bksams (mix of books & sampes)."""
+def root(bksams, vtrads, variant):
+    """Get XML root element from bksams (mix of books & sampes).
+
+    ``vtrads`` is the comma-separated set of versification traditions whose cv-labels
+    this book group's file carries, which for a vtmam file is more than one wherever the
+    other traditions agree with MAM.  See main_mam_simple._vtrads_served.
+    """
     the_root = ET.Element("book24")
     _add_subelements(the_root, bksams, variant)
-    the_root.set("versification-tradition", vtrad)
+    the_root.set("versification-tradition", vtrads)
     return the_root
 
 
@@ -68,12 +72,18 @@ def _sub_el_fun_versam_ver(chap_et_el, versam_ver, variant):
     mb_html.add_htel_to_etxml(chap_et_el, verse_html_el)
 
 
-def _id_attr(bcvt, variant):
-    out = {"osisID": _osis_id_from_bcvt(bcvt)}
-    if alt_id := variant.get("variant-alt-id"):
-        assert alt_id == "variant-alt-id-value-yeivin"
-        out["yeivinID"] = _yeivin_id_from_bcvt(bcvt)
-    return out
+def _id_attr(bcvt, _variant):
+    # A "yeivinID" attribute sat beside this one, on every verse of the vtmam
+    # variant alone, until 2026-09-12.  It was Yeivin's spelling of the very same
+    # chapter and verse -- "Rut 1:1" beside osisID "Ruth.1.1" -- differing from the
+    # osisID in the book abbreviation and the separators and in nothing else, as
+    # all 23,202 of them were checked to be that day.  Ben had it written so that he
+    # could search the corpus for references in the form his Yeivin ITM adaptation
+    # uses, and retired it on the grounds that he has no plans to resume that work
+    # and that an agent doing it would convert reference styles itself.  The book
+    # map remains at py/py_misc/yeivin_book_abbrevs.py, so the attribute can be
+    # recomputed from the osisID; nothing in this repository ever read it.
+    return {"osisID": _osis_id_from_bcvt(bcvt)}
 
 
 def _cvm_attr(bcvt, cvm_rec):
@@ -98,12 +108,6 @@ def _osis_id_from_bcvt(bcvt):
     bkid, chnu, vrnu = tbn.bcvt_get_bcv_triple(bcvt)
     osis_bkid = osisba.BOOK_ABBREVS[bkid]
     return _osis_id(osis_bkid, chnu, vrnu)
-
-
-def _yeivin_id_from_bcvt(bcvt):
-    bkid, chnu, vrnu = tbn.bcvt_get_bcv_triple(bcvt)
-    yba = yeivinba.BOOK_ABBREV_FROM_BK39ID[bkid]
-    return f"{yba} {str(chnu)}:{str(vrnu)}"
 
 
 def _osis_id_from_cvm(bcvt, cvm):

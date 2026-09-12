@@ -41,7 +41,10 @@ def write(args_foi, all_fois):
     provenance.write_directory_provenance(
         _OUT_DIR_PATH,
         __file__,
-        "FOI JSON and HTML outputs",
+        "FOI JSON and HTML outputs. Structural inventories that opt into "
+        "all_branch_foilers inspect every validated parameter of every recognized "
+        "template. Other FOIs select or separately label the Scripture branches "
+        "required by their own question.",
     )
     if not args_foi:
         _write_index_dot_html(auto_outspecs)

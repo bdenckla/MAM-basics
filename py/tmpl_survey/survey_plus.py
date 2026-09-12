@@ -1,4 +1,11 @@
-"""Survey Wikisource template usage patterns in MAM-parsed-plus data."""
+"""Survey every template branch in MAM-parsed-plus as dataset structure.
+
+This is deliberately not a Scripture projection.  The inventory visits every
+parameter of every template so documentation, apparatus, formatting, ketiv/qere,
+qamats, dual-cantillation, and stress-helper branches all contribute to the schema
+and nesting counts.  The generated grammar locks classify the complete template
+and nesting inventory and fail when the dataset introduces an unclassified shape.
+"""
 
 import json
 import collections
@@ -11,6 +18,7 @@ from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
+from mb_cmn import template_names
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
@@ -18,6 +26,7 @@ _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
 
 def _wtel_type_and_subtype(wtel):
     assert wtp2.is_template(wtel), wtel
+    template_names.validate_current_plus_template(wtel)
     tmpl_name = wtp2.template_name(wtel)
     return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
 
@@ -265,6 +274,13 @@ def survey(plain_mpasuq, case_rank_maps):
     )
     plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])
     result = {
+        "projection": {
+            "kind": "all-classified-template-branches",
+            "description": (
+                "Dataset-structure inventory over every parameter, including "
+                "documentation, apparatus, formatting, and alternative branches."
+            ),
+        },
         "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
         "column_counts": _flatten_col_counts(accum),

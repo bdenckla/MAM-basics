@@ -31,8 +31,8 @@ that repository's Python remains.
 
 CORPUS ROOTS AND CODE PATHS COVER THE SAME THREE REPOS. ``check_mark_order`` reads
 ``.json`` as well as ``.py``, and the Ben-authored JSON under book-of-job, aleppo,
-and cam1753 is a large part of what the check was ever for -- measured 2026-09-10,
-7 JSON files in book-of-job, 81 in aleppo, and 72 in cam1753. Until that day the
+and cam1753 is a large part of what the check was ever for -- measured 2026-09-12,
+7 JSON files in book-of-job, 80 in aleppo, and 72 in cam1753. Until that day the
 Leningrad code made ``code_paths()`` the longer list, while the Leningrad tree held
 only two generated JSON artifacts and no separate corpus root; it contributes no
 mark-order scope now, holding neither code nor JSON.

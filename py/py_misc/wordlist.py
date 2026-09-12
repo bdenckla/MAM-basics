@@ -1,3 +1,13 @@
+"""Build the MAM qere-word list under its explicit per-template policy.
+
+For ketiv/qere templates, stage 1 includes only qere, except that
+``מ:קו״כ-אם-2`` retains parameter 1, its historical pointed-ketiv form.  For
+alternative-bearing templates other than ketiv/qere, stage 2 is deliberately
+maximal: the list includes parameters 1 and 2 of ``מ:דחי`` and ``מ:צינור``,
+parameters ד and ס of ``מ:קמץ``, and parameters כפול, א, and ב of ``מ:כפול``.
+The resulting lexicon is not one coherent Scripture projection.
+"""
+
 from py_misc import wt_qere
 from mb_misc import hebrew_letter_words as hlw
 from mb_cmn import hebrew_punctuation as hpu
@@ -56,15 +66,29 @@ def _hnd_slh_word(tmpl):
     return [tuple(quad2)]
 
 
-def _hnd_recurse_on_param_vals(tmpl):
-    return sum_of_seqs(wtp.map_params(_do_one_wtseq, tmpl))
+def _recurse_on_params(tmpl, keys):
+    return sum_of_seqs(
+        [_do_one_wtseq(wtp.template_param_val(tmpl, key)) for key in keys]
+    )
+
+
+def _hnd_recurse_on_stress_helper_params(tmpl):
+    return _recurse_on_params(tmpl, ("1", "2"))
+
+
+def _hnd_recurse_on_qamats_params(tmpl):
+    return _recurse_on_params(tmpl, ("ד", "ס"))
+
+
+def _hnd_recurse_on_dual_cantillation_params(tmpl):
+    return _recurse_on_params(tmpl, ("כפול", "א", "ב"))
 
 
 _HANDLERS_FOR_STAGE_2 = {
-    "מ:דחי": _hnd_recurse_on_param_vals,
-    "מ:צינור": _hnd_recurse_on_param_vals,
-    "מ:קמץ": _hnd_recurse_on_param_vals,
-    "מ:כפול": _hnd_recurse_on_param_vals,
+    "מ:דחי": _hnd_recurse_on_stress_helper_params,
+    "מ:צינור": _hnd_recurse_on_stress_helper_params,
+    "מ:קמץ": _hnd_recurse_on_qamats_params,
+    "מ:כפול": _hnd_recurse_on_dual_cantillation_params,
     tmpln.SLH_WORD: _hnd_slh_word,
     "מ:פסק": _hnd_return_empty_list,
 }

@@ -56,19 +56,21 @@ def _html_for_wtseq(wtseq):
     return hfr.html_for_ren_el(hfr_ctx, new_renseq)
 
 
-_FOILERS = {
-    tmpln.SLH_WORD: _record_slh_word_as_foi,
-    "כו״ק": fwh.label_args_of_ketiv_qere,
-    "נוסח": fwh.label_args_of_doc,
-    tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-}
+_FOILERS = fwh.all_branch_foilers(
+    {
+        tmpln.SLH_WORD: _record_slh_word_as_foi,
+        "כו״ק": fwh.label_args_of_ketiv_qere,
+        "נוסח": fwh.label_args_of_doc,
+        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+    }
+)
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,
     ("doc-target", "scrdfftar-tar"): None,
-    ("doc-target", "מ:דחי"): None,
-    #
+    ("doc-target", "מ:דחי", "1"): None,
+    ("doc-target", "מ:דחי", "2"): None,
     ("doc-target", "scrdfftar-note"): -1,
     ("doc-target", "kq-ketiv"): -1,
     ("scrdfftar-note",): -1,
@@ -78,8 +80,8 @@ _STACK_INDICATES_A_NOTE = {
     tuple(): False,
     ("doc-target",): False,
     ("doc-target", "scrdfftar-tar"): False,
-    ("doc-target", "מ:דחי"): False,
-    #
+    ("doc-target", "מ:דחי", "1"): False,
+    ("doc-target", "מ:דחי", "2"): False,
     ("doc-target", "scrdfftar-note"): True,
     ("doc-target", "kq-ketiv"): False,
     ("scrdfftar-note",): True,
