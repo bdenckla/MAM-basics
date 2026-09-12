@@ -21,8 +21,30 @@ You can get a feel for the hierarchy from this schematic overview of how the boo
 ```
 
 The root element is always `<book24>`, and its one attribute is
-`versification-tradition`, whose value is `vtmam`, `vtbhs`, or `vtsef`
-according to which of the six folders the file came from.
+`versification-tradition`.
+
+**Its value is a comma-separated set: every versification tradition whose cv-labels this
+file carries**, drawn from `vtmam`, `vtbhs` and `vtsef`, in that order.
+Most often that is more than one, because the three traditions place the same cv-labels
+in most of the Bible, and the file is then correct for each of them.
+An `xml-vtrad-bhs` or `xml-vtrad-sef` file always names its own tradition and nothing
+else, those folders holding only the book groups where that tradition parts company with
+MAM.
+An `xml-vtrad-mam` file names every tradition that agrees with MAM for that book group:
+
+| Value | Book groups | Meaning |
+|---|---|---|
+| `vtmam,vtbhs,vtsef` | 18 of 24 | all three traditions agree here |
+| `vtmam,vtsef` | `Num` | Sefaria agrees with MAM; BHS does not, and has its own file |
+| `vtmam` | `1Sam-2Sam`, `Deut`, `Exod`, `Jer`, `Josh` | both other traditions differ, and both have their own files |
+
+So a reader that fell back to an `xml-vtrad-mam` file, because the folder it asked for
+did not hold that book group, can confirm from the file itself that the file is right for
+the versification it wanted.
+
+The value was a single tradition until 2026-09-12, naming the folder the file came from.
+Every value written before that date is still true under the reading above, a single
+value being a one-element set.
 
 A parashah element (`spi-pe2`, `spi-pe3`, `spi-samekh2`, `spi-samekh3`)
 can appear:

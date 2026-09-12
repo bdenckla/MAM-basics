@@ -26,11 +26,12 @@ places somewhere other than where MAM places them — six for BHS, five for Sefa
 
 **So, to read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it
 is not there, read `<fmt>-vtrad-mam/X` instead.**
-The file you get is byte-for-byte what the missing file would have been, except that
-its root element says `versification-tradition="vtmam"` rather than naming the
-versification you asked for.
-Every cv-label and every byte of text in it is what versification `V` calls for,
+Every cv-label and every byte of text in that file is what versification `V` calls for,
 which is exactly why the file is not stored twice.
+**And the file says so itself**: its root's `versification-tradition` names every
+tradition it is correct for, so a `Ruth` read this way says
+`versification-tradition="vtmam,vtbhs,vtsef"` and a `Num` says
+`versification-tradition="vtmam,vtsef"`.
 
 This replaced six complete folders on 2026-09-12 and removed 24.3 MB, taking the
 product from 63.3 MB to 39.0 MB.

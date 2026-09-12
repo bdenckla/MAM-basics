@@ -9,11 +9,16 @@ from mb_misc import osis_book_abbrevs as osisba
 from mb_xml import xml_distribute_sampe as xml_sampe
 
 
-def root(bksams, vtrad, variant):
-    """Get XML root element from bksams (mix of books & sampes)."""
+def root(bksams, vtrads, variant):
+    """Get XML root element from bksams (mix of books & sampes).
+
+    ``vtrads`` is the comma-separated set of versification traditions whose cv-labels
+    this book group's file carries, which for a vtmam file is more than one wherever the
+    other traditions agree with MAM.  See main_mam_simple._vtrads_served.
+    """
     the_root = ET.Element("book24")
     _add_subelements(the_root, bksams, variant)
-    the_root.set("versification-tradition", vtrad)
+    the_root.set("versification-tradition", vtrads)
     return the_root
 
 

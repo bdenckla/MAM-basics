@@ -8,11 +8,16 @@ from mb_misc import osis_book_abbrevs as osisba
 from mb_xml import xml_distribute_sampe as xml_sampe
 
 
-def root(bksams, vtrad, variant):
-    """Get JSON root dict from bksams (mix of books & sampes)."""
+def root(bksams, vtrads, variant):
+    """Get JSON root dict from bksams (mix of books & sampes).
+
+    ``vtrads`` is the comma-separated set of versification traditions whose cv-labels
+    this book group's file carries, which for a vtmam file is more than one wherever the
+    other traditions agree with MAM.  See main_mam_simple._vtrads_served.
+    """
     contents = []
     _add_subelements(contents, bksams, variant)
-    return {"versification-tradition": vtrad, "contents": contents}
+    return {"versification-tradition": vtrads, "contents": contents}
 
 
 def _add_subelements(contents, bksams, variant):

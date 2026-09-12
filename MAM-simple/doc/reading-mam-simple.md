@@ -45,12 +45,14 @@ def book_group_path(fmt: str, vtrad: str, stem: str) -> Path:
     return Path(f"{fmt}-vtrad-mam") / (stem + suffix)
 ```
 
-The file the fallback returns is byte-for-byte what the missing file would have been,
-except that its root element says `versification-tradition="vtmam"` rather than naming
-the versification you asked for. Every cv-label and every byte of text in it is what
-versification `V` calls for, which is exactly why it is not stored twice. A reader that
-needs the root attribute to name the versification it asked for should override it
-after loading rather than look for a second file.
+Every cv-label and every byte of text in the file the fallback returns is what
+versification `V` calls for, which is exactly why it is not stored twice. **And the file
+says so itself**: its root's `versification-tradition` holds a comma-separated set naming
+every tradition it is correct for, so a `Ruth` read this way says
+`versification-tradition="vtmam,vtbhs,vtsef"` and a `Num` says
+`versification-tradition="vtmam,vtsef"`. A reader can therefore check the file it landed
+on rather than trust the fallback rule — see
+[the XML guide's root element](reading-mam-simple-xml.md#xml-element-hierarchy).
 
 For a full description of where and how the three versifications differ, see [Versification Differences](versification-differences.md).
 
