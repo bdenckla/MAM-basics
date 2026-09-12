@@ -106,6 +106,7 @@ def project_qere_atoms(
     node: object,
     *,
     source: dict[str, object] | None,
+    skip_qamats_variant: bool = False,
 ) -> list[dict[str, object]]:
     if isinstance(node, str):
         return [_text_atom(node, source)]
@@ -113,7 +114,13 @@ def project_qere_atoms(
     if isinstance(node, (list, tuple)):
         out: list[dict[str, object]] = []
         for item in node:
-            out.extend(project_qere_atoms(item, source=source))
+            out.extend(
+                project_qere_atoms(
+                    item,
+                    source=source,
+                    skip_qamats_variant=skip_qamats_variant,
+                )
+            )
         return out
 
     if not isinstance(node, dict):
@@ -131,7 +138,9 @@ def project_qere_atoms(
 
     if cmp_name in {"נוסח", canonical_template_name(template_names.SCRDFF_TAR)}:
         return project_qere_atoms(
-            _required_param(tmpl_name, tmpl_params, "1"), source=source
+            _required_param(tmpl_name, tmpl_params, "1"),
+            source=source,
+            skip_qamats_variant=skip_qamats_variant,
         )
 
     if cmp_name in {
@@ -146,6 +155,7 @@ def project_qere_atoms(
         return project_qere_atoms(
             _required_param(tmpl_name, tmpl_params, qere_arg_key),
             source=_with_source(source, tmpl_name, qere_arg_key),
+            skip_qamats_variant=skip_qamats_variant,
         )
 
     if cmp_name in WHITESPACE_TEMPLATE_NAMES or cmp_name == "ש":
@@ -166,6 +176,8 @@ def project_qere_atoms(
     }:
         selected_key = "1"
     elif cmp_name == canonical_template_name(template_names.QAMATS_VARIANT):
+        if skip_qamats_variant:
+            return [_text_atom(" ", source)]
         selected_key = "ד"
     elif cmp_name == canonical_template_name(template_names.DUAL_CANTILLATION):
         selected_key = "כפול"
@@ -174,7 +186,9 @@ def project_qere_atoms(
 
     if selected_key is not None:
         return project_qere_atoms(
-            _required_param(tmpl_name, tmpl_params, selected_key), source=source
+            _required_param(tmpl_name, tmpl_params, selected_key),
+            source=source,
+            skip_qamats_variant=skip_qamats_variant,
         )
 
     if cmp_name in {

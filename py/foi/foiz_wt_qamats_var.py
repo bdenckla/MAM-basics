@@ -18,7 +18,12 @@ def find_fois_wt(mroge):
     if minirow is None:
         return structural
     selected_text = "".join(
-        atom["text"] for atom in project_qere_atoms(minirow.EP, source=None)
+        atom["text"]
+        for atom in project_qere_atoms(
+            minirow.EP,
+            source=None,
+            skip_qamats_variant=True,
+        )
     )
     return structural + _record_xataf_qamats(tuple(), selected_text)
 
