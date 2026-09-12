@@ -785,8 +785,8 @@ clone, and nothing before then shows that the dependency exists.
 
 The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
 mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
-spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
-record lacked one, so the lookup never ran. The renderer raises instead now, and
+spelling in MAM-private's Phonetic MAM for any displayed survey entry with no `mam_form`. No
+displayed survey entry lacked one, so the lookup never ran. The renderer raises instead now, and
 `py/accgram/post_stress_meteg.py`'s survey build is the only post-stress-meteg code that
 reads Phonetic MAM. Two other code paths read it, both unconditionally:
 `py/accgram/breuer_word_length.py`'s `survey-breuer-zaqef-units` and
