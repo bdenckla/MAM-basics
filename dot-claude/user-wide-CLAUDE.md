@@ -55,6 +55,47 @@ github-misc `1925699` of 2026-09-07 — finding 5.6 of
 Claude homes and not the Codex one. Nothing warns, and the Codex home is tracked nowhere of its
 own, so those two comparisons are the only detector there is.
 
+## Two axes of risk: does the change reach a product, and is the act hard to undo
+
+Risk here has two unrelated axes, and clearing one says nothing about the other. Ben,
+2026-09-12, asking which of a list of review findings were risky: "where 'risky' includes
+things like code changes that could (or will!) change MAM-parsed, MAM-with-doc, MAM-simple,
+gh-pages, or other things you deem 'public facing'". The answer that followed addressed only
+the first axis, which is what this section exists to stop.
+
+**Axis one, whether the change reaches something published or distributed, is a
+per-repository question, and the repository answers it.** In MAM-basics that is
+`py/product_scopes.py`, with the `CLAUDE.md` section "What this repository's products are,
+and which check a change owes". A repo carrying no such declaration has not defined its
+products, which is a thing to say plainly rather than to guess at.
+
+**Axis two is whether the ACT is hard to undo, whatever it touches.** Five kinds. Each is
+already ruled on, in this file or in a repo's own, so what follows points rather than
+restates — the whole content of this list is that the five are one axis:
+
+1. **Outward-facing acts**: a GitHub issue's state, a remote branch, a Wikisource edit, and a
+   push to `main`, which deploys Pages. §"Never change an issue's state without a comment
+   saying why" also requires the comment that says why.
+2. **Destructive local acts**: worktree removal, branch deletion, history rewrite, recycling
+   a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
+   §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
+   follows a junction and empties the real venv without warning.
+3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.codex/`. They change
+   what every future session loads, nothing version-controls them, and drift is silent, which
+   is why the preamble above requires the two `git diff --no-index` comparisons after any
+   change to a shared skill.
+4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
+   document. Editing one rewrites the record rather than fixing a defect. MAM-basics'
+   `CLAUDE.md` §"A finished dated document is corrected in `<stem>-update.md`, never edited"
+   is the fullest statement, and `~/.codex/AGENTS.md` carries it for Codex.
+5. **Code paths that cannot be exercised on this machine**, the cloud-session hook above all.
+   A fix there is unverifiable locally and lands in an environment nobody here is in, so
+   report it as unverified rather than as working.
+
+**Say which axes a piece of work touches, rather than a bare "low risk".** A change that
+reaches no product can still be an act on the list above, and a change that reaches a product
+can be entirely ordinary.
+
 ## Git & commits — commit at will; integrate worktrees at archival
 Rewritten 2026-09-07 from Ben's Codex instructions — `~/.codex/AGENTS.md`'s section of the same
 name, github-misc commits `7780489` and `14a53df` of 2026-09-06 and `56737b6` of 2026-09-07 — so
