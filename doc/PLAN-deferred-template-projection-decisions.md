@@ -28,8 +28,8 @@ Before continuing the review, read these sources completely:
 1. The live user instructions at `C:/Users/BenDe/.Codex/AGENTS.md`.
 2. The Hebrew-prose skill at
    `C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md`.
-3. `doc/review-findings-2026-09-11.md`, which records the five current-state
-   findings and their product reach.
+3. `doc/blind-dive-into-template-params.md`, which records the five
+   current-state findings and their product reach.
 4. This document, which records the settled and deferred semantic decisions.
 
 The integrated code implements the decisions already fixed, the completed
@@ -341,7 +341,7 @@ stream:
 1. `py/hkq_cmn/qere_projection.py:word_atoms_from_qere_atoms` joins adjacent
    projected text fragments before tokenization and preserves combined source
    information. The regenerated holam-he report retained its previous hit set.
-   `doc/review-findings-2026-09-11.md`, Finding 2, records the affected examples
+   `doc/blind-dive-into-template-params.md`, Finding 2, records the affected examples
    and measured reach.
 2. `py/mb_cmn/plain_template_schema.py:validate_current_plain_template`
    validates the exact required and allowed argument identities as well as the
