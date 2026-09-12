@@ -731,6 +731,49 @@ before treating one as a peer whose files need syncing.
 disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
 and because all wlc work now happens in this repo.)
 
+## What this repository's products are, and which check a change owes
+
+`py/product_scopes.py` is the declaration of record and `py/tests/test_product_scopes.py` keeps
+it true. Ben asked for the definition on 2026-09-12, having asked which of a list of review
+findings were "risky", "where 'risky' includes things like code changes that could (or will!)
+change MAM-parsed, MAM-with-doc, MAM-simple, gh-pages, or other things you deem 'public facing'";
+answering that took about fifteen separate measurements, because nothing here said what the
+products were. Three tiers:
+
+1. **Published** — `gh-pages/`, which a push to `main` deploys.
+2. **Distributed data** — `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/` and
+   `MAM-OSIS/`, consumed by git URL whether or not Pages serves them. "Not published" is
+   therefore not the same as "not distributed".
+3. **Generators** — the 47 entry points that the step table of `py/main_0_mega.py` runs across
+   its 59 steps, measured 2026-09-12. This is the tier that matters, being the only routine
+   route into tiers 1 and 2 other than editing those trees by hand.
+
+**A change that can reach tier 3 owes a mega run and a reading of the `git diff` it leaves; a
+change that cannot owes the suite.** The section below, "Integrating a worktree branch here",
+states that rule and the four conditions on reading the diff.
+
+**Tier 3 is not every route into a product.** The hand-run interactive programs — the Aleppo and
+Cambridge 1753 word-image and crop work above all — write tracked images that are published under
+`gh-pages/book-of-job/jobn/img/`, and `py/tests/test_mega_coverage.py` declares each of them, with
+its reason, in `NOT_IN_MEGA`. So "this is not a mega step" answers a different question from "this
+reaches no product", and a change to a hand-run generator owes regenerating what it generates,
+which a mega run will not do for it.
+
+**A change can cross tiers by name rather than by path.** Three unrelated functions here are
+called `strip_heb`. Measured 2026-09-12: the two in `py/py_ac_word_image_helper/hebrew_metrics.py`
+and `py/py_cam1753_word_image/hebrew_metrics.py` reach those crop generators through each
+package's `linebreak_search.py`, while the one in `py/uxlc_misc/my_uxlc_find_atom.py` is read by
+`py/main_verse_links.py` and `py/main_uxlc_estimate_atom_loc.py`, two interactive lookups that
+write nothing tracked. All three sit in programs the mega does not run, and two of the three
+reach a published product anyway.
+
+**"Outside tier 3" is not "safe".** Whether a change reaches a product is one axis of risk. The
+other has nothing to do with products — outward-facing acts, destructive local acts, writes
+outside the repository, records that are receipts, and code paths that cannot be exercised on
+this machine — and it is stated in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, tracked here
+as `dot-claude/user-wide-CLAUDE.md` and `dot-Codex/user-wide-AGENTS.md`, under "Two axes of
+risk".
+
 ## A code path reads MAM-private every time it runs, or never
 
 Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private
