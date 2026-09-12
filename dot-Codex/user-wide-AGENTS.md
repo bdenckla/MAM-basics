@@ -42,6 +42,48 @@ and `~/.agents` fell behind anyway, because nothing loads that README.
 `560239c` reached both Claude-side homes and not this one. Codex is the agent that then reads the
 stale copy, and nothing warns it, so those two comparisons are the only detector there is.
 
+## Two axes of risk: does the change reach a product, and is the act hard to undo
+
+Risk here has two unrelated axes, and clearing one says nothing about the other. Ben,
+2026-09-12, asking which of a list of review findings were risky: "where 'risky' includes
+things like code changes that could (or will!) change MAM-parsed, MAM-with-doc, MAM-simple,
+gh-pages, or other things you deem 'public facing'". The answer that followed addressed only
+the first axis, which is what this section exists to stop.
+
+**Axis one, whether the change reaches something published or distributed, is a
+per-repository question, and the repository answers it.** In MAM-basics that is
+`py/product_scopes.py`, with the `CLAUDE.md` section "What this repository's products are,
+and which check a change owes" — a file Codex does not load, so read it when the question
+comes up. A repo carrying no such declaration has not defined its products, which is a thing
+to say plainly rather than to guess at.
+
+**Axis two is whether the ACT is hard to undo, whatever it touches.** Five kinds. Each is
+already ruled on, in this file or in a repo's own, so what follows points rather than
+restates — the whole content of this list is that the five are one axis:
+
+1. **Outward-facing acts**: a GitHub issue's state, a remote branch, a Wikisource edit, and a
+   push to `main`, which deploys Pages. §"Never change an issue's state without a comment
+   saying why" also requires the comment that says why.
+2. **Destructive local acts**: worktree removal, branch deletion, history rewrite, recycling
+   a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
+   §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
+   follows a junction and empties the real venv without warning.
+3. **Writes outside the repository**: `~/.agents/`, `~/.codex/`, `~/.claude/`. They change
+   what every future session loads, nothing version-controls them, and drift is silent, which
+   is why the preamble above requires both of the shared-skill comparisons — and `~/.agents/`
+   is the home that has twice fallen behind.
+4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
+   document. Editing one rewrites the record rather than fixing a defect; §"A finished dated
+   document is corrected in `<stem>-update.md`, never edited" is the rule for the last of
+   those.
+5. **Code paths that cannot be exercised on this machine**, a cloud session's own hook above
+   all. A fix there is unverifiable locally and lands in an environment nobody here is in, so
+   report it as unverified rather than as working.
+
+**Say which axes a piece of work touches, rather than a bare "low risk".** A change that
+reaches no product can still be an act on the list above, and a change that reaches a product
+can be entirely ordinary.
+
 ## Git & commits — commit at will; integrate worktrees at archival
 - **Commit finished work without asking.** A commit is an ordinary step of doing the work, not
   an outward-facing action needing its own yes. This reverses the old rule that left finished

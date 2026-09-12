@@ -172,12 +172,12 @@ A correction, an update or a later measurement therefore goes in a sibling file 
 `<stem>-update.md`, and the document it corrects is not touched. So a correction to
 `doc/PLAN-foo.md` goes in `doc/PLAN-foo-update.md`, and where a second round of corrections
 should not be added to that file either, it goes in `doc/PLAN-foo-update-2.md`, a third in
-`doc/PLAN-foo-update-3.md`, and so on (Ben, 2026-09-12). An update file is small by intent. The first four are
-`doc/review-findings-2026-09-08-update.md`,
-`doc/PLAN-remediate-review-findings-2026-09-08-update.md`,
-`doc/PLAN-efficient-wikisource-downloads-update.md` and
-`doc/PLAN-wikisource-derived-mam-products-update.md`. Each names the passage it corrects by that
-passage's own words, since line numbers drift. An update file is itself live, so it is kept true.
+`doc/PLAN-foo-update-3.md`, and so on (Ben, 2026-09-12). An update file is small by intent.
+`git ls-files "doc/*-update.md"` lists the ones that exist; there were eight on 2026-09-12, five
+of them written on 2026-09-11, the day of the decision. This paragraph named four of those five
+until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`, which `ffc82f60`
+created alongside two of the four it did name. Each update file names the passage it corrects by
+that passage's own words, since line numbers drift, and is itself live, so it is kept true.
 
 A document that describes the present is the opposite case and is kept true in place: `CLAUDE.md`,
 the READMEs, the docstrings, this file, and a plan still being executed.

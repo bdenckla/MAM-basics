@@ -501,19 +501,24 @@ tell how the writer could have known at the time what the document now says.
 So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
 small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes
 in `doc/PLAN-foo-update-2.md`, and so on. The update file names the passage it corrects by that
-passage's own words, since line numbers drift, and it is itself live, so it is kept true. The
-first four are `doc/review-findings-2026-09-08-update.md`,
-`doc/PLAN-remediate-review-findings-2026-09-08-update.md`,
-`doc/PLAN-efficient-wikisource-downloads-update.md` and
-`doc/PLAN-wikisource-derived-mam-products-update.md`.
+passage's own words, since line numbers drift, and it is itself live, so it is kept true.
+`git ls-files "doc/*-update.md"` lists the ones that exist; there were eight on 2026-09-12, five
+of them written on 2026-09-11, the day of the decision. This sentence named four of those five
+until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`, which `ffc82f60`
+created alongside two of the four it did name.
 
 A document that describes the present is the opposite case and is kept true in place: this file,
 the READMEs, the docstrings, and a plan still being executed. `doc/dual-agent-review.md`'s section
 "Correcting a finished dated document" (D12) is the fuller statement, and it also retired the
 close-out step that had said to add dated corrections beside the passage they correct.
 
-**Codex loads neither this file nor `doc/dual-agent-review.md`**, so the same rule is written into
-`~/.codex/AGENTS.md`, which is tracked here as `dot-Codex/user-wide-AGENTS.md`.
+**The rule is not this repository's, so it is stated outside it twice over.** Codex loads neither
+this file nor `doc/dual-agent-review.md`, so it is written into `~/.codex/AGENTS.md`, tracked here
+as `dot-Codex/user-wide-AGENTS.md`; and a Claude session in any other repository loads neither
+either, so it is written into `~/.claude/CLAUDE.md`, tracked here as
+`dot-claude/user-wide-CLAUDE.md`. Ben, 2026-09-12, asked whether the omission from the Claude
+user-level file had been deliberate on the reading that the rule might be specific to this
+repository: "it is not such a policy; it should apply to all repos."
 
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
