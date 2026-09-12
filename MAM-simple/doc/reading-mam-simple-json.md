@@ -50,7 +50,6 @@ Simple verses (no special markup) have a `text` field directly:
 {
   "type": "verse",
   "osisID": "Ruth.1.1",
-  "yeivinID": "Rut 1:1",
   "text": "וַיְהִ֗י בִּימֵי֙ ..."
 }
 ```
@@ -61,7 +60,6 @@ Complex verses (with legarmeih, ketiv/qere, etc.) have a `contents` array instea
 {
   "type": "verse",
   "osisID": "Ruth.1.2",
-  "yeivinID": "Rut 1:2",
   "contents": [
     { "type": "text", "text": "וְשֵׁ֣ם הָאִ֣ישׁ ..." },
     { "type": "lp-legarmeih" },

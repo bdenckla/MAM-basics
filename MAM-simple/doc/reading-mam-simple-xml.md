@@ -88,7 +88,7 @@ through some other sort.
 A `<verse>` element without any special features stores its full, plain text in a `text` attribute, e.g.:
 
 ```xml
-<verse osisID="Job.34.2" yeivinID="Job 34:2"
+<verse osisID="Job.34.2"
        text="שִׁמְע֣וּ חֲכָמִ֣ים מִלָּ֑י וְ֝יֹדְעִ֗ים הַאֲזִ֥ינוּ לִֽי׃"/>
 ```
 
@@ -103,7 +103,7 @@ Instead, the plain text between special features is in `<text>` child elements,
 interspersed with elements encoding special features, e.g.:
 
 ```xml
-<verse osisID="Job.1.1" yeivinID="Job 1:1">
+<verse osisID="Job.1.1">
   <text text="אִ֛ישׁ הָיָ֥ה בְאֶֽרֶץ־ע֖וּץ אִיּ֣וֹב שְׁמ֑וֹ וְהָיָ֣ה"/>
   <lp-legarmeih/>
   <text text=" הָאִ֣ישׁ הַה֗וּא תָּ֧ם וְיָשָׁ֛ר וִירֵ֥א אֱלֹהִ֖ים וְסָ֥ר מֵרָֽע׃"/>
@@ -278,16 +278,22 @@ Three elements take an optional `class` attribute:
 | Attribute | Meaning |
 |-----------|---------|
 | `osisID` | OSIS-format reference (e.g., `Job.34.24`) |
-| `yeivinID` | Yeivin-format reference (e.g., `Job 34:24`) |
 | `text` | Full verse text (only present for simple verses) |
 | `starts-with-sampe` | Verse starts after a parashah marker (`pe2`, `samekh2`, etc.) |
 | `ends-with-sampe` | Verse ends with a parashah marker |
 | `contents-corresponds-to` | Versification note |
 | `osisID-of-MAM-src` | Source verse in MAM's native versification |
 
-`osisID` is on every verse. `yeivinID` is on every verse of the `vtmam` files and on no
-verse of the `vtbhs` or `vtsef` ones, so a reader that wants it should read `vtmam`.
-The last two attributes are the other way about: they never appear in `vtmam`.
+`osisID` is on every verse. The last two attributes never appear in `vtmam`.
+
+A `yeivinID` attribute sat beside `osisID` until 2026-09-12, on every verse of the
+`vtmam` files and on no verse of the `vtbhs` or `vtsef` ones. It gave Yeivin's spelling
+of the very same chapter and verse — `Job 34:24` beside `osisID` `Job.34.24` — and it
+was retired because that is all it ever was: checked across all 23,202 of them, the
+chapter and verse always matched, and the book abbreviation came from a fixed one-to-one
+table of the 39 books, which is still at `py/py_misc/yeivin_book_abbrevs.py` in
+MAM-basics. A reader that wants Yeivin-format references can build them from the
+`osisID` and that table.
 
 `starts-with-sampe` and `ends-with-sampe` take a bare marker name — `pe2`, `pe3`,
 `samekh2`, `samekh3` — rather than the `spi-` prefixed element name.

@@ -17,6 +17,24 @@ folder | format | versification
 `json-vtrad-sef` | JSON | Sefaria
 `json-vtrad-mam` | JSON | MAM native
 
+**The BHS and Sefaria folders are stored incrementally against the MAM one, and are
+therefore far from complete.**
+The MAM folders hold all 24 book-group files.
+A BHS or Sefaria folder holds only the book groups whose cv-labels that versification
+places somewhere other than where MAM places them — six for BHS, five for Sefaria:
+`1Sam-2Sam`, `Deut`, `Exod`, `Jer`, `Josh`, and, for BHS alone, `Num`.
+
+**So, to read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it
+is not there, read `<fmt>-vtrad-mam/X` instead.**
+The file you get is byte-for-byte what the missing file would have been, except that
+its root element says `versification-tradition="vtmam"` rather than naming the
+versification you asked for.
+Every cv-label and every byte of text in it is what versification `V` calls for,
+which is exactly why the file is not stored twice.
+
+This replaced six complete folders on 2026-09-12 and removed 24.3 MB, taking the
+product from 63.3 MB to 39.0 MB.
+
 The JSON format mirrors the XML structure: it has the same hierarchy and element types.
 
 For a detailed guide to the hierarchy and element types of both formats,

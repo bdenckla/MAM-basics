@@ -878,7 +878,7 @@ _ORACLE = {
         # is corrected to a qadma upstream in clc_collect (_UXLC_PENDING_CHANGES_APPLIED,
         # applying UXLC's own pending change #10, design doc §7.4) — before this oracle ever
         # runs. That qadma belongs to taxton alone: MAM's own cant-alef/cant-bet for this word
-        # (MAM-simple xml-vtrad-mam/Deut.xml, verse yeivinID "Dt 5:7") give alef a qadma and
+        # (MAM-simple xml-vtrad-mam/Deut.xml, verse osisID "Deut.5.7") give alef a qadma and
         # bet a plain meteg, never both on the same strand. So the cluster below tracks the
         # qadma/meteg slot itself (not just the meteg-or-silluq + maqaf tail after it) — an
         # ordinary position-safe subtraction, same as every other atom here, not an omission.

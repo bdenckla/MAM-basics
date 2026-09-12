@@ -40,6 +40,7 @@ Usage (run from repo root):
 
 import argparse
 import sys
+from pathlib import Path
 
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
@@ -83,7 +84,6 @@ _VARIANT_VTMAM = {
     **_VARIANT_COMMON,
     "variant-convert-vtrad": _do_not_convert,
     "variant-path-qual": "vpq-vtrad-mam",
-    "variant-alt-id": "variant-alt-id-value-yeivin",
     # The only variant that gets a Unicode-names rendering, and the only one that
     # ever did after 2026-09-12.  Ben's decision that day: "ditch the -bhs and -sef
     # versions of this 'unicode names' pseudo-edition", and, on being asked whether
@@ -95,7 +95,20 @@ _VARIANT_VTMAM = {
     # for the vtrad token in each verse's header line.
     "variant-writes-unicode-names": True,
 }
-_VARIANTS = _VARIANT_VTBHS, _VARIANT_VTSEF, _VARIANT_VTMAM
+# vtmam FIRST, and that order is load-bearing since 2026-09-12: the bhs and sef
+# corpora are stored incrementally against vtmam (see _prune_if_same_as_vtmam), so the
+# vtmam file for a book group must be on disk before either other variant writes that
+# book group.  The order was bhs, sef, mam until that day.
+_VARIANTS = _VARIANT_VTMAM, _VARIANT_VTBHS, _VARIANT_VTSEF
+
+# The one token that separates a vtbhs or vtsef file from its vtmam counterpart where
+# the two traditions place the same cv-labels.  It is the value of the root element's
+# versification-tradition attribute, and the corpora carry it nowhere else.
+_VTRAD_TOKENS = {
+    "vpq-vtrad-mam": "vtmam",
+    "vpq-vtrad-bhs": "vtbhs",
+    "vpq-vtrad-sef": "vtsef",
+}
 
 
 def _do_one_book_group(bkg, books_mpu, variant):
@@ -118,6 +131,7 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     xml_root = xml_root_from_bksams.root(bksams, vtrad_val, variant)
     xml_path = write_utils.bkg_path(variant, bkg["bkg-name"], out_subdir="")
     write_utils_xml.write_root_in_xml_fmt(xml_path, xml_root, generator_file=__file__)
+    _prune_if_same_as_vtmam(xml_path, bkg, variant, fmt_override=None)
     json_root = json_root_from_bksams.root(bksams, vtrad_val, variant)
     json_path = write_utils.bkg_path(
         variant, bkg["bkg-name"], fmt_override="vff-json", out_subdir=""
@@ -125,6 +139,38 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     write_utils_json.write_root_in_json_fmt(
         json_path, json_root, generator_file=__file__
     )
+    _prune_if_same_as_vtmam(json_path, bkg, variant, fmt_override="vff-json")
+
+
+def _prune_if_same_as_vtmam(out_path, bkg, variant, fmt_override):
+    """Delete a just-written vtbhs or vtsef file that its vtmam counterpart stands for.
+
+    THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY AGAINST THE MAM ONE, on Ben's
+    instruction of 2026-09-12: "move to a system where -bhs and -sef versions only
+    exist for books whose files differ from the -mam version.  I.e. move to an
+    'incremental' storage system, with -mam as the base."  A book group absent from
+    xml-vtrad-bhs/ or json-vtrad-sef/ is one whose cv-labels that tradition places
+    exactly where MAM places them, and its vtmam file is the file to read, differing
+    only in the root's versification-tradition attribute.
+
+    WRITE-THEN-DELETE rather than compare-then-write, deliberately.  The comparison is
+    then between two files the real serializers produced, so no second code path can
+    disagree with them, and the transitions both work without a separate sweep: a book
+    group that starts differing is written and kept, and one that stops differing has
+    its stale file deleted here rather than left behind for someone to notice in a
+    diff.  The cost is writing 34 files a run that are deleted again, well under a
+    second of the step's twelve.
+    """
+    path_qual = variant["variant-path-qual"]
+    if path_qual == "vpq-vtrad-mam":
+        return
+    mam_path = write_utils.bkg_path(
+        _VARIANT_VTMAM, bkg["bkg-name"], fmt_override=fmt_override, out_subdir=""
+    )
+    written = Path(out_path).read_text(encoding="utf-8")
+    neutral = written.replace(_VTRAD_TOKENS[path_qual], _VTRAD_TOKENS["vpq-vtrad-mam"])
+    if neutral == Path(mam_path).read_text(encoding="utf-8"):
+        Path(out_path).unlink()
     if variant.get("variant-writes-unicode-names"):
         verses_for_write = {"rv-cant-all-three": bkg_rendered}
         write_utils.write_bkg_in_un_fmt(

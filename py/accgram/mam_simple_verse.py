@@ -144,12 +144,46 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
 
 
 def _mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
+    """The MAM-simple JSON file holding one bk39's book group, or None.
+
+    THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY against the MAM one, on Ben's
+    instruction of 2026-09-12, so ``json-vtrad-bhs/`` holds six of the 24 book groups
+    and ``json-vtrad-sef/`` five: those whose cv-labels the tradition places somewhere
+    other than where MAM places them.  A book group absent from one of those two is one
+    whose labels that tradition and MAM agree on, and ``json-vtrad-mam/`` holds the
+    file to read -- identical but for the root's versification-tradition value, which
+    this loader does not read.  That is the reading rule MAM-simple's README and
+    ``doc/reading-mam-simple.md`` state, implemented here because this is the one
+    function that turns a bk39 id into a file for every accgram caller, and those
+    callers ask for ``json-vtrad-bhs`` (the surveys are keyed to WLC's refs).
+
+    The fallback fires only for a directory named ``json-vtrad-bhs`` or
+    ``json-vtrad-sef``, and only towards its own sibling: a caller that passed
+    ``--mam-simple-dir`` pointing somewhere else gets no silent substitution.
+    """
     candidate_names = [_mam_simple_json_file_for_bk39id(bk39id), f"{bk39id}.json"]
-    for candidate_name in candidate_names:
-        candidate_path = mam_simple_dir / candidate_name
-        if candidate_path.is_file():
-            return candidate_path
+    for directory in _mam_simple_dirs_in_fallback_order(mam_simple_dir):
+        for candidate_name in candidate_names:
+            candidate_path = directory / candidate_name
+            if candidate_path.is_file():
+                return candidate_path
     return None
+
+
+_INCREMENTAL_JSON_DIR_NAMES = ("json-vtrad-bhs", "json-vtrad-sef")
+
+
+def _mam_simple_dirs_in_fallback_order(mam_simple_dir: Path) -> list[Path]:
+    if mam_simple_dir.name not in _INCREMENTAL_JSON_DIR_NAMES:
+        return [mam_simple_dir]
+    base_dir = mam_simple_dir.parent / "json-vtrad-mam"
+    if not base_dir.is_dir():
+        raise FileNotFoundError(
+            f"{mam_simple_dir} is stored incrementally against {base_dir}, which is"
+            " absent.  See MAM-simple/doc/reading-mam-simple.md, 'The BHS and Sefaria"
+            " folders are incremental, with the MAM ones as the base'."
+        )
+    return [mam_simple_dir, base_dir]
 
 
 def _mam_simple_json_file_for_bk39id(bk39id: str) -> str:

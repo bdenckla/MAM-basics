@@ -14,8 +14,43 @@ folder | format | versification
 `json-vtrad-sef` | JSON | Sefaria
 `json-vtrad-mam` | JSON | MAM native
 
-Each folder contains one file per `book24` (e.g., `1Sam-2Sam.xml`, `Gen.xml`, `Hos-Mal.xml`).
+Each file is named for one `book24` (e.g., `1Sam-2Sam.xml`, `Gen.xml`, `Hos-Mal.xml`).
 A `book24` corresponds to one of the 24 books of the Hebrew Bible; some of them span more than one `book39`, i.e. some of them span more than one book in the system that divides the Hebrew Bible up into 39 rather than 24 books.
+
+### The BHS and Sefaria folders are incremental, with the MAM ones as the base
+
+Since 2026-09-12, the two `-vtrad-mam` folders hold all 24 book-group files and the four
+others hold only the book groups whose cv-labels that versification places somewhere
+other than where MAM places them. That is six of the 24 for BHS — `1Sam-2Sam`, `Deut`,
+`Exod`, `Jer`, `Josh`, `Num` — and the same five less `Num` for Sefaria. The change
+removed 24.3 MB of near-duplicate files, taking the product from 63.3 MB to 39.0 MB.
+
+**To read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it is not
+there, read `<fmt>-vtrad-mam/X` instead.** In Python, that is one `try`:
+
+```python
+from pathlib import Path
+
+
+def book_group_path(fmt: str, vtrad: str, stem: str) -> Path:
+    """The file to read for one book group in one versification.
+
+    fmt is "xml" or "json"; vtrad is "mam", "bhs" or "sef"; stem is a book24
+    name such as "Gen" or "1Sam-2Sam".
+    """
+    suffix = "." + fmt
+    asked = Path(f"{fmt}-vtrad-{vtrad}") / (stem + suffix)
+    if asked.exists():
+        return asked
+    return Path(f"{fmt}-vtrad-mam") / (stem + suffix)
+```
+
+The file the fallback returns is byte-for-byte what the missing file would have been,
+except that its root element says `versification-tradition="vtmam"` rather than naming
+the versification you asked for. Every cv-label and every byte of text in it is what
+versification `V` calls for, which is exactly why it is not stored twice. A reader that
+needs the root attribute to name the versification it asked for should override it
+after loading rather than look for a second file.
 
 For a full description of where and how the three versifications differ, see [Versification Differences](versification-differences.md).
 
