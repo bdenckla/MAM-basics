@@ -52,16 +52,20 @@ nothing to show for it until something compares bytes.
 For the full statement, including what the guarantee does and does not cover, see
 [Three invariants worth relying on](doc/reading-mam-simple-xml.md#three-invariants-worth-relying-on).
 
-This product also has example programs. They are found under `py-examples/`:
+This product also has an example program. It is found under `py-examples/`:
 
 <!-- sync: bullet list of example programs also appears in doc/reading-mam-simple.md ##The-py-examples-Programs -->
-* The [`main_mam4sef_example.py`](py-examples/main_mam4sef_example.py) program
-creates the Sefaria edition of MAM, using the JSON format as its input.
-* The [`main_mam_osis_example.py`](py-examples/main_mam_osis_example.py) program
-creates the OSIS edition of MAM, using the XML format as its input.
 * The [`main_letter_small_job_example.py`](py-examples/main_letter_small_job_example.py) program
 reports all of the `<letter-small>` elements in `Job.xml`,
 writing output to `py-examples-out/letter-small-job.txt`.
+
+Two further example programs, `main_mam4sef_example.py` and `main_mam_osis_example.py`,
+were retired on 2026-09-12.
+They created the Sefaria and OSIS editions of MAM from this product,
+and they were written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories.
+Both editions are still produced, by
+[MAM-basics](https://github.com/bdenckla/MAM-basics)'s own `py/main_mam4sef.py` and
+`py/main_mam_osis.py`, and the retired programs remain in that repository's history.
 
 As I said above, MAM-simple is not complete.
 It is an extract of MAM, not a full version of MAM.

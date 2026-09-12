@@ -114,7 +114,7 @@ def vendored_exclude_regex(
     black re.searches this against the path relative to the project root, in
     forward slashes with a leading one. Bracketing the package alternation in
     slashes matches a whole path component at any depth (py/mb_cmn/,
-    py-examples/osis/); anchoring each override path with a leading slash and a
+    py-examples/mb_misc/); anchoring each override path with a leading slash and a
     trailing end-of-string matches that one file and nothing else.
     """
     packages = "|".join(re.escape(name) for name in package_names)

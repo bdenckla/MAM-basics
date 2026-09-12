@@ -274,17 +274,17 @@ _CAM_EXCLUDE_DIR_PREFIXES = (
 
 # The landed products are not repositories of their own. These exclusions retain
 # authored product metadata, prose, and examples while leaving generated corpus data
-# to the generators that already validate it. MAM-simple's three top-level
-# ``py-examples/main_*`` files are authored examples; the package directories beside
-# them are copied from this repo and are already in the MAM-basics scope.
+# to the generators that already validate it. MAM-simple's top-level
+# ``py-examples/main_*`` file is an authored example; the package directories beside
+# it are copied from this repo and are already in the MAM-basics scope. The
+# ``py-examples/mb_sefaria/`` and ``py-examples/osis/`` prefixes left on 2026-09-12
+# with the Sefaria and OSIS example programs.
 _MAM_SIMPLE_EXCLUDE_DIR_PREFIXES = (
     "json-vtrad-",
     "misc/",
     "py/",
     "py-examples/mb_cmn/",
     "py-examples/mb_misc/",
-    "py-examples/mb_sefaria/",
-    "py-examples/osis/",
     "py-examples-out/",
     "xml-vtrad-",
 )
@@ -434,9 +434,13 @@ def _scopes() -> tuple[_Scope, ...]:
             root=paths.repo_root() / "MAM-simple",
             exclude_dir_prefixes=_MAM_SIMPLE_EXCLUDE_DIR_PREFIXES,
             exclude_files=_MAM_SIMPLE_EXCLUDE_FILES,
-            # Four root metadata files, requirements.txt, four procedures, and
-            # three authored top-level examples measure 12 files.
-            floor=10,
+            # Four root metadata files, requirements.txt, four procedures, and one
+            # authored top-level example measure 10 files. It was 12 against a floor
+            # of 10 until 2026-09-12, when the Sefaria and OSIS example programs were
+            # retired and the scope came to exactly its own floor, which fails. The
+            # floor is 8 now, and still means "an exclusion filter swallowed
+            # everything" rather than asserting a tree size.
+            floor=8,
         ),
         _Scope(
             label="MAM-with-doc authored metadata",

@@ -22,16 +22,6 @@ _GENERATOR_FILE = Path(__file__).resolve()
 _INTENTIONALLY_NON_VENDORED_ROWS = [
     {
         "repo": "MAM-simple",
-        "path": "py-examples/main_mam4sef_example.py",
-        "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
-    },
-    {
-        "repo": "MAM-simple",
-        "path": "py-examples/main_mam_osis_example.py",
-        "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
-    },
-    {
-        "repo": "MAM-simple",
         "path": "py-examples/main_letter_small_job_example.py",
         "notes": "Maintained in the MAM-simple product; not copied from MAM-basics.",
     },

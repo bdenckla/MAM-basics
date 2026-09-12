@@ -846,7 +846,10 @@ do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
 `--legacy-history` comparisons require read access to a sibling MAM-parsed
 clone. No command fetches or creates that optional clone. Some files copied into
 `MAM-simple/py-examples/` keep cwd-relative or self-contained `__file__`-relative logic for
-portable example use; `mb_cmn/paths.py` is among the copied support files.
+portable example use. `mb_cmn/paths.py` was among the copied support files until
+2026-09-12, when retiring the Sefaria and OSIS example programs cut the copied set from 44
+modules to the three the surviving `main_letter_small_job_example.py` imports:
+`mb_cmn/file_io.py`, `mb_cmn/provenance.py` and `mb_misc/letter_small_job.py`.
 
 Even so, still run from the repo root, never from `py/`: some in-repo paths (e.g.
 `in/mam-ws-bot-edits/...`) remain cwd-relative by design, and the venv itself

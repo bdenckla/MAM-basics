@@ -324,9 +324,10 @@ def _mam_simple_fragments(
     * ``letter-large`` / ``letter-small`` / ``letter-hung`` -- a letter written large,
       small or suspended, wrapped with the rest of its atom in an ``slh-word``.  Genesis
       1:1 came out as בְּ and רֵאשִׁ֖ית, Leviticus 13:33 as וְהִ֨תְ, גַּ and לָּ֔ח.  These
-      are named text-bearing node types below, matching what MAM-simple's own
-      reference handlers do with them (``py-examples/osis/
-      osis_handlers.py`` passes each straight into the surrounding run).
+      are named text-bearing node types below, matching what the OSIS generator's
+      handlers do with them (``py/osis/osis_handlers.py`` passes each straight into the
+      surrounding run; this cited the vendored copy at ``py-examples/osis/`` until that
+      copy was retired on 2026-09-12).
     * ``implicit-maqaf`` -- MAM's gray maqaf, which belongs on the END of the atom before
       it.  Emitted as a token of its own it reached ``_join_on_maqaf`` after that atom had
       been closed, and so attached FORWARD: Psalms 106:1 came out as הַ֥לְלוּ and ־יָ֨הּ,

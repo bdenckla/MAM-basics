@@ -14,7 +14,7 @@
   },
   "repos": {
     "MAM-basics": {
-      "comment": "Generated MAM-simple example package copies, local under MAM-simple/.",
+      "comment": "Generated MAM-simple example package copies, local under MAM-simple/. Two pkg_scan_roots left on 2026-09-12, MAM-simple/py-examples/mb_sefaria and MAM-simple/py-examples/osis, when Ben retired the Sefaria and OSIS example programs: those two directories no longer exist, and test_every_pkg_scan_root_exists would have failed on them. global.source_pkg_dirs keeps its mb_sefaria and osis entries, because py/mb_sefaria and py/osis are still this repository's own source for the MAM-for-Sefaria and MAM-OSIS products; only the vendored copies under MAM-simple went.",
       "ignore": false,
       "scan_provenance": false,
       "default_category": "generated",
@@ -26,12 +26,6 @@
         ],
         "mb_misc": [
           "MAM-simple/py-examples/mb_misc"
-        ],
-        "mb_sefaria": [
-          "MAM-simple/py-examples/mb_sefaria"
-        ],
-        "osis": [
-          "MAM-simple/py-examples/osis"
         ]
       }
     },
