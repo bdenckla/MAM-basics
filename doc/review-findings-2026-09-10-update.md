@@ -26,3 +26,13 @@ Product axis: the repair changes a live plan and this update record; it changes 
 product. Act axis: both writes are ordinary repository commits on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Inherited item 2: update-file State declaration pointers
+
+Recorded by Codex on 2026-09-12. Inherited item 2 under “Three items this round's integration
+inherits” is complete.
+
+Implementation commit `d18cbb4b` on branch `dual-agent-review-2026-09-10` adds the owed pointers
+from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-update.md`, never
+edited” and D12 of `doc/dual-agent-review.md` to the declaration in
+`py/repo_util/check_repo_standards.py`'s module docstring.
