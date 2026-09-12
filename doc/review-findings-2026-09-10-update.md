@@ -123,3 +123,24 @@ generator behavior or product and does not owe a mega run. Act axis: both commit
 repository commits on the unpushed review branch; all three finished dated documents remain
 unchanged, and no outward-facing act, destructive local act, external configuration write or
 receipt rewrite occurred.
+
+## Finding 20.5: the seven finding leads put their dispositions first
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 20.5
+is unfixed and not acted on.
+
+Implementation commit `a0ff3b45891e21aa0698b9c7690676f998f68ae6` on branch
+`dual-agent-review-2026-09-10` completes finding 20.5. The new
+`doc/meteg-after-silluq-psalms-72-15-update.md` gives disposition-first versions of summary items
+4, 7 and 8. The existing `doc/meteg-after-silluq-screen-against-uxlc-and-wlc-update.md` now gives
+disposition-first versions of findings 1, 5, 6 and 7.
+
+All seven sites were individually confirmed as the reports' analytic prose rather than protected
+quotations. Each disposition comes from the same report: an established screen or source result,
+Phonetic MAM's exclusion as evidence, or a result not found in Yeivin and Breuer. No substantive
+finding changes. Both finished source reports remain unchanged.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; both
+finished dated reports remain unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
