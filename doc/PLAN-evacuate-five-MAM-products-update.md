@@ -25,3 +25,23 @@ their recorded Git blobs, each last changed by `209b4c05`, `321b2eeb`, `426fa229
 (`git merge-base --is-ancestor <commit> 40b8ea4b`). The Phase 6 records are dated and name
 `40b8ea4b`, so they are right as written; this entry says only that their "unchanged" describes
 that commit and not a later tree. Neither that plan nor the programme mentions the cutover.
+
+## The two bounded public findings are a numbered list
+
+Recorded by Codex on 2026-09-12, for finding 20.4 of
+`doc/review-findings-2026-09-10.md`. The passage beginning “The sweep found two bounded public
+findings” announces two findings but presents them as “First” and “Second” in running prose. The
+passage should be read as this numbered list:
+
+1. The shared Hebrew-prose verification guidance still called landed MAM-OSIS a sibling. The
+   tracked guidance, the Claude live copy and the Codex live copy now list all five products
+   inside MAM-basics and retain only MAM-private and a temporary redirect-host clone as siblings;
+   both required whole-skill comparisons passed with no difference.
+2. The manually maintained MAM-with-doc sigil page still linked source issues 6 and 8 and called
+   the landed tree a repository. Commit `3e3a93ef82615710a2520bd85a3086e9ae4fbc9d` links open
+   MAM-basics issues 257 and 259 and calls the tree a product. Pages run `34523189844` deployed
+   that commit successfully; a fresh HTTP request returned 9,613 bytes exactly matching the
+   commit, with both current links present and both old links absent.
+
+The completed evacuation plan remains unchanged; this entry corrects only the presentation of its
+two findings.

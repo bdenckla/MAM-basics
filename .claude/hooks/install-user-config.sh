@@ -39,21 +39,21 @@
 #   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
 #   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
 #
-# Those are the two MAM-basics' CLAUDE.md names. Four further trees are tracked
+# Those are the two MAM-basics' CLAUDE.md names. Three further entries are tracked
 # beside them and none is installed here:
 #
-#   dot-claude/skills/prune-claude-state/
+#   1. dot-claude/skills/prune-claude-state/
 #                          operates on ~/.claude/plans/ and on the per-repo
 #                          auto-memory directory, neither of which reaches a cloud
 #                          container, so it would have nothing to read. It is also
 #                          declared disable-model-invocation: true, so it runs only
 #                          when Ben asks for it by name.
-#   dot-claude/skills/verse-links/
+#   2. dot-claude/skills/verse-links/
 #                          names its interpreter and py/main_verse_links.py by the
 #                          absolute Windows paths of Ben's own machines, which a
 #                          cloud container does not have. The command itself needs
 #                          only the checkout, and its --help says how to run it.
-#   dot-claude/README.md, dot-Codex/
+#   3. dot-claude/README.md, dot-Codex/
 #                          the deployment procedure and the Codex-side
 #                          configuration. Nothing in a Claude cloud session loads
 #                          either, and both are readable in the checkout if wanted.

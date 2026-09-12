@@ -528,12 +528,14 @@ find them should rewrite the one it needs from the descriptions below rather tha
 Run each as `python <that directory>/<name>.py` with the system Python; none needs a venv.
 
 Two things about the copies are stale by construction, and neither is worth fixing until a script is
-actually run. `drift_check.py`, `extract_citations.py` and `section_compare.py` name the checkout
-whose tracked copies they read in a `WT` constant near the top; **it still says
-`C:/Users/BenDe/GitRepos/github-misc` and must be repointed to
-`C:/Users/BenDe/GitRepos/MAM-basics`**, or to a worktree. And **`substitution_proof.py` cannot run
-from the copy at all**: it reads the repository at `f8898a9`, a github-misc commit, so it needs a
-fresh clone of the private remote — see §0.
+actually run:
+
+1. `drift_check.py`, `extract_citations.py` and `section_compare.py` name the checkout whose tracked
+   copies they read in a `WT` constant near the top; **it still says
+   `C:/Users/BenDe/GitRepos/github-misc` and must be repointed to
+   `C:/Users/BenDe/GitRepos/MAM-basics`**, or to a worktree.
+2. **`substitution_proof.py` cannot run from the copy at all**: it reads the repository at
+   `f8898a9`, a github-misc commit, so it needs a fresh clone of the private remote — see §0.
 
 1. `drift_check.py` — sha256 of all twelve files at every home; the §1 baseline. **Stale twice
    over: the `WT` constant above, and the two renames — its `dot-claude/CLAUDE.md` and

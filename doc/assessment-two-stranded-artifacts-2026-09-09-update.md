@@ -37,3 +37,18 @@ Recorded 2026-09-12, for the same finding. §9's sentence "The three measurement
 script" is followed by four numbered items. `40c0ade4` of 13:17 that day added the fourth, the
 edition-transcription diagnosis of §1, and left the count in the sentence above it at three. The
 four items are right; the word "three" is wrong.
+
+## Section 6's three reasons are a numbered list
+
+Recorded by Codex on 2026-09-12, for finding 20.4 of
+`doc/review-findings-2026-09-10.md`. Section 6 says that “Three things argue for closing it
+anyway” but presents the three reasons in running prose. The passage should be read as this
+numbered list:
+
+1. The sweep's stated purpose is that agent branches “would accrue” unswept.
+2. A remote-only branch accrues in the one place the sweep does not inspect.
+3. Under Ben's decision in cause 1, a cloud session's work is expected to sit on a remote-only
+   branch, so the remote-only branch is now a routine end state rather than an anomaly.
+
+The finished assessment remains unchanged; this entry corrects only the presentation of the three
+reasons.
