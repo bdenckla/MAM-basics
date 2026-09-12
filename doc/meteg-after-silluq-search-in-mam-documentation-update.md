@@ -113,3 +113,33 @@ Product axis: this correction changes documentation only and reaches no generato
 Act axis: this update file preserves the finished report rather than rewriting it; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 2 parse-failure Judgment cells should name the two codices
+
+Recorded by Codex on 2026-09-12. This entry corrects seven bare codex abbreviations in seven
+Judgment cells of finding 2's 26-row parse-failure table. Each Judgment cell was checked
+individually against its Reference, String and Why the parse failed fields. In every listed cell,
+`L` means the LC and `A` means the Aleppo Codex. The remaining 19 Judgment cells contain neither
+abbreviation.
+
+The corrected readings are:
+
+| Reference | Original Judgment cell | Corrected reading |
+|---|---|---|
+| Genesis 2:6 | “L's four-atom compound; the silluq is on the last atom's final syllable and the metegs stand two or more syllables before it” | “the LC's four-atom compound; the silluq is on the last atom's final syllable and the metegs stand two or more syllables before it” |
+| Numbers 31:32 | “L's compound; metegs on the first atom and on the last atom's stressed final syllable” | “the LC's compound; metegs on the first atom and on the last atom's stressed final syllable” |
+| Deuteronomy 33:28 | “L's compound; metegs on the first atom and on the last atom's one syllable” | “the LC's compound; metegs on the first atom and on the last atom's one syllable” |
+| Job 23:5 | “A's compound; metegs on the middle atom and on the last atom's one syllable” | “the Aleppo Codex's compound; metegs on the middle atom and on the last atom's one syllable” |
+| Esther 9:22 | “L's plene form; metegs on the first and the stressed final syllable, not adjacent” | “the LC's plene form; metegs on the first and the stressed final syllable, not adjacent” |
+| Ezra 8:36 | “L's compound; metegs on the middle atom and on the last atom's stressed final syllable” | “the LC's compound; metegs on the middle atom and on the last atom's stressed final syllable” |
+| Nehemiah 11:30 | “L's compound; metegs on the middle atom and on the last atom's stressed final syllable” | “the LC's compound; metegs on the middle atom and on the last atom's stressed final syllable” |
+
+This correction applies only to the Judgment column of the 26-row parse-failure table. The
+Reference, String and Why the parse failed columns remain as written, and finding 11.2's prose
+after that table remains uncorrected. The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+Product axis: this correction changes documentation only and reaches no generator or product.
+Act axis: this update file preserves the finished report rather than rewriting it; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
