@@ -503,14 +503,6 @@ def servi_before_from_verse_node(verse_node: dict, target: str) -> list[str | No
     return servi_before_in_words(word_accents_from_verse_node(verse_node), target)
 
 
-def _mam_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
-    prefix = oba.BOOK_ABBREVS.get(bk39id)
-    if prefix is None:
-        return None
-    candidate = mam_simple_dir / f"{prefix}.json"
-    return candidate if candidate.is_file() else None
-
-
 def _iter_verse_nodes(value: object):
     """Locate every verse in the complete MAM-simple book structure.
 
@@ -538,9 +530,7 @@ def _iter_book_verses(mam_simple_dir: Path, books: tuple[str, ...]):
     mam_simple_verse.require_mam_simple(mam_simple_dir)
     for bb in books:
         bk39id = wlc_bb_to_bk39id(bb)
-        json_path = _mam_json_path(mam_simple_dir, bk39id)
-        if json_path is None:
-            continue
+        json_path = mam_simple_verse.mam_simple_json_path(mam_simple_dir, bk39id)
         prefix = oba.BOOK_ABBREVS[bk39id]
         with json_path.open("r", encoding="utf-8") as f_in:
             root = json.load(f_in)

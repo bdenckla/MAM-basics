@@ -72,10 +72,7 @@ def load_mam_simple_for_refs(
     by_bcv: dict[str, dict[str, object]] = {}
     for bb, ref_pairs in refs_by_book.items():
         bk39id = wlc_bb_to_bk39id(bb)
-        json_path = _mam_simple_json_path(mam_simple_dir, bk39id)
-        if json_path is None:
-            continue
-
+        json_path = mam_simple_json_path(mam_simple_dir, bk39id)
         root = _read_json(json_path)
         if not isinstance(root, dict):
             raise ValueError(f"Expected root object in MAM-simple file: {json_path}")
@@ -125,9 +122,7 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     refs: dict[str, set[tuple[int, int]]] = {}
     for bb in wlc_bb_codes():
         bk39id = wlc_bb_to_bk39id(bb)
-        json_path = _mam_simple_json_path(mam_simple_dir, bk39id)
-        if json_path is None:
-            continue
+        json_path = mam_simple_json_path(mam_simple_dir, bk39id)
         osis_prefix = oba.BOOK_ABBREVS.get(bk39id)
         if osis_prefix is None:
             continue
@@ -143,8 +138,16 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     return refs
 
 
-def _mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
-    """The MAM-simple JSON file holding one bk39's book group, or None.
+def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
+    """The MAM-simple JSON file holding one bk39's book group.
+
+    THE ONE RESOLVER.  ``mam_poetic_accents`` had a second one, ``_mam_json_path``,
+    until 2026-09-12, and the duplicate is what made the incremental storage below a
+    silent failure rather than a loud one: that copy knew nothing of the fallback and
+    returned None, and its caller skipped the book.  One mega run then reported
+    "ps: 0/0 verses agree (0.00%)" for the poetic cross-check, having checked nothing.
+    So this raises where it used to return None, per CLAUDE.md's "A missing input must
+    FAIL, never skip".
 
     THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY against the MAM one, on Ben's
     instruction of 2026-09-12, so ``json-vtrad-bhs/`` holds six of the 24 book groups
@@ -162,12 +165,16 @@ def _mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path | None:
     ``--mam-simple-dir`` pointing somewhere else gets no silent substitution.
     """
     candidate_names = [_mam_simple_json_file_for_bk39id(bk39id), f"{bk39id}.json"]
-    for directory in _mam_simple_dirs_in_fallback_order(mam_simple_dir):
+    directories = _mam_simple_dirs_in_fallback_order(mam_simple_dir)
+    for directory in directories:
         for candidate_name in candidate_names:
             candidate_path = directory / candidate_name
             if candidate_path.is_file():
                 return candidate_path
-    return None
+    tried = ", ".join(
+        str(directory / name) for directory in directories for name in candidate_names
+    )
+    raise FileNotFoundError(f"No MAM-simple file for {bk39id}; tried {tried}")
 
 
 _INCREMENTAL_JSON_DIR_NAMES = ("json-vtrad-bhs", "json-vtrad-sef")
