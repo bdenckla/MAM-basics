@@ -403,7 +403,8 @@ lower-case the live-path spellings while keeping the tracked directory `dot-Code
 
 **D9 — Class 1. The CoS export figures and the scan count are in three places.** "522 sections
 in 57 files" in `SKILL.md` and `references/sources-and-corpora.md`, the per-chapter section counts
-(Ch. 1 44 … Ch. 15 50) in the latter, and "719 page images" in both — all restated from
+(Ch. 1 44 … Ch. 15 50) in `references/sources-and-corpora.md`, and "719 page images" in both —
+all restated from
 `MAM-private/masorah-books/README.md` §"CoS — 57 files, chapter-scoped numbering" and §"What is in
 this repo". In step on 2026-09-09 (57 files on disk; `python .novc/review-2026-09-09/remeasure.py`,
 `numeral_dupes.py`). Ben's rule of 2026-09-09: where an external authority exists, point at it.

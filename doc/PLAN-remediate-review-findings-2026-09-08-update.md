@@ -22,3 +22,16 @@ The snapshot lookup is now `_snapshot_unannotated_form`, private to
 `py/accgram/post_stress_meteg.py`. Item 1's matching selection, item 2's mark preservation, and
 items 3 and 4 are unaffected. `CLAUDE.md`'s section "A code path reads MAM-private every time it
 runs, or never" states the rule that retired the fallback.
+
+## Finding 20.2: the State references should name their historical points directly
+
+Recorded by Codex on 2026-09-12, for finding 20.2 of
+`doc/review-findings-2026-09-10.md`.
+
+The sentence `The former current State at source 0ee34bea8 is preserved here:` should read
+`The State at source commit 0ee34bea8 is preserved here:`. The commit identifies the preserved
+State directly.
+
+The sentence `For example, the former line-3 State was:` should read `For example, the line-3
+State before Ben's approval was:`. Ben's approval is the event that made the quoted State
+historical.
