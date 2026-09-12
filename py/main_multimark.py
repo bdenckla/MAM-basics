@@ -1,6 +1,7 @@
-"""Record multimarked letters in the combined-cantillation MAM qere stream.
+"""Record multimarked letters in every historically surveyed MAM alternative.
 
-The survey selects canonical deḥi/tsinnor text and qamats parameter dalet.
+The replacement population awaits the decision recorded in
+``doc/PLAN-deferred-template-projection-decisions.md``.
 """
 
 from mb_cmn import read_books_from_mam_parsed_plus as plus

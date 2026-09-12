@@ -9,7 +9,10 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import template_names as tmpln
 from mb_cmn import uni_denorm as udn
 from mb_cmn import ws_tmpl2 as wtp
-from hkq_cmn.qere_projection import project_qere_atoms
+from hkq_cmn.qere_projection import (
+    FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY,
+    project_qere_atoms,
+)
 
 MISC = "misc"
 XOLAM_HE = "xolam-he"
@@ -117,7 +120,11 @@ def _is_extra_alef(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
 
 
 def _flatten_text(wtel):
-    atoms = project_qere_atoms(wtel, source=None)
+    atoms = project_qere_atoms(
+        wtel,
+        source=None,
+        policy=FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY,
+    )
     return "".join(atom["text"] for atom in atoms)
 
 

@@ -31,7 +31,7 @@ _HANDLERS = {
     "מ:דחי": wt_qere.hnd_recurse_on_arg_0,
     "מ:צינור": wt_qere.hnd_recurse_on_arg_0,
     "מ:קמץ": wt_qere.hnd_recurse_on_param_dalet,
-    "מ:כפול": wt_qere.hnd_recurse_on_param_combined,
+    "מ:כפול": wt_qere.hnd_recurse_on_all_declared_alternatives,
     #
     "מ:פסק": wt_qere.hnd_return_plain_space,
 }

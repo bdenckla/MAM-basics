@@ -280,10 +280,11 @@ def validate_current_plus_template(tmpl):
     """Return a current plus template's params after closed name/shape validation."""
     if not isinstance(tmpl, dict) or not isinstance(tmpl.get("tmpl_name"), str):
         raise TypeError(f"not a current MAM-parsed-plus template: {tmpl!r}")
-    name = tmpl["tmpl_name"]
+    raw_name = tmpl["tmpl_name"]
+    name = raw_name.replace('"', "\N{HEBREW PUNCTUATION GERSHAYIM}")
     policy = CURRENT_PLUS_PARAM_POLICY.get(name)
     if policy is None:
-        raise ValueError(f"unclassified current MAM-parsed-plus template: {name!r}")
+        raise ValueError(f"unclassified current MAM-parsed-plus template: {raw_name!r}")
     extra_object_keys = set(tmpl) - {"tmpl_name", "tmpl_params"}
     if extra_object_keys:
         raise ValueError(

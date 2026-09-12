@@ -75,6 +75,7 @@ def _el_text(el):
     if not wtp.is_template(el):
         raise TypeError(f"Unexpected strand element: {el!r}")
 
+    tmpln.validate_current_plus_template(el)
     name = wtp.template_name(el)
     if name in {"נוסח", tmpln.SCRDFF_TAR}:
         return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
@@ -105,15 +106,19 @@ def _el_text(el):
 
 
 def _word_template_text(wtel):
-    """Return the selected qere text of a template sitting directly in EP.
+    """Return the historical direct-template contribution to a strand.
 
     Issue #199 arose when dropping a top-level ketiv/qere deleted Deut 5:9's
     last word מִצְוֺתָֽי and left first/last-word extraction seeing the bare ׃
-    that follows it. The same closed projection used inside a cantillation
-    strand applies here, so a note target can contribute Scripture but note
-    prose cannot.
+    that follows it. Standard ketiv/qere therefore contributes qere. Every
+    other current top-level template contributes no text here, preserving the
+    behavior on main while the page's wider projection contract remains
+    deferred in doc/PLAN-deferred-template-projection-decisions.md.
     """
-    return _el_text(wtel)
+    tmpln.validate_current_plus_template(wtel)
+    if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(wtel, _KQ_QERE))
+    return ""
 
 
 def _strand_word_text(minirow, param):

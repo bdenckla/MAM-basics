@@ -13,6 +13,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn.shrink import shrink
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import intersperse
 from py_misc.split import my_re_split
 
 
@@ -55,6 +56,27 @@ def hnd_recurse_on_param_bet(hnds, tmpl):
 
 def hnd_recurse_on_param_combined(hnds, tmpl):
     return do_one_wtseq(hnds, wtp.template_param_val(tmpl, "כפול"))
+
+
+_ALTERNATIVE_ARGUMENT_KEYS = {
+    "מ:דחי": ("1", "2"),
+    "מ:צינור": ("1", "2"),
+    "מ:קמץ": ("ד", "ס"),
+    "מ:כפול": ("כפול", "א", "ב"),
+}
+
+
+def hnd_recurse_on_all_declared_alternatives(hnds, tmpl):
+    """Preserve the historical concatenation pending each consumer's decision."""
+    name = wtp.template_name(tmpl)
+    try:
+        keys = _ALTERNATIVE_ARGUMENT_KEYS[name]
+    except KeyError as exc:
+        raise ValueError(f"no declared alternative order for {name!r}") from exc
+    mapped = []
+    for key in keys:
+        mapped.extend(do_one_wtseq(hnds, wtp.template_param_val(tmpl, key)))
+    return intersperse(" ", mapped)
 
 
 def hnd_identity(_1, tmpl):

@@ -198,10 +198,10 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
         return
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
+        tmpl_params = template_names.validate_current_plus_template(node)
         # Folded to ASCII quotes for matching the quote-bearing literals below;
         # tmpl_name itself (gershayim) is never stored from this function.
         cmp_name = canonical_template_name(tmpl_name)
-        tmpl_params = node.get("tmpl_params")
         if cmp_name in _NO_ATOM_CMP:
             # A TEMPLATE THAT CONTRIBUTES NO ATOM SEPARATES THE ATOMS AROUND IT,
             # so it contributes a space, whether or not it has parameters.  The
@@ -328,54 +328,41 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
     raise TypeError(f"unclassified plus verse payload node: {type(node).__name__}")
 
 
-def _argument_keys_for_table_word_verifier(tmpl_name: str) -> tuple[str, ...]:
-    """Parameters that can answer the Holman-table word/wrapper question.
-
-    The verifier needs both sides of a ketiv/qere wrapper so it can identify the
-    wrapper, but it otherwise follows the selected qere Scripture stream used by
-    ``_collect_text_fragments``: the clean stress-helper form, dikduk qamats form,
-    combined dual cantillation, and note target.  Documentation and apparatus
-    fields cannot make a table word count as present.
-    """
-    cmp_name = canonical_template_name(tmpl_name)
-    if cmp_name in _STD_KQ_CMP or tmpl_name == "קרי ולא כתיב":
-        return ("1", "2")
-    if tmpl_name == "כתיב ולא קרי":
-        return ("1",)
-    if cmp_name == canonical_template_name(template_names.TRIVIAL_QERE):
-        return ("1", "3")
-    if tmpl_name in {"נוסח", template_names.SCRDFF_TAR}:
-        return ("1",)
-    if tmpl_name in template_names.STRESS_HELPER_TMPL_NAMES:
-        return ("1",)
-    if tmpl_name == template_names.QAMATS_VARIANT:
-        return ("ד",)
-    if tmpl_name == template_names.DUAL_CANTILLATION:
-        return ("כפול",)
-    if tmpl_name in template_names.IN_WORD_TMPL_NAMES | {"מודגש", "מ:סיום בטוב"}:
-        return ("1",)
-    if cmp_name in _NO_ATOM_CMP or tmpl_name in {
-        template_names.INVERTED_NUN,
-        template_names.SCRDFF_NO_TAR,
-        "מ:קישור בהערה",
-        "מ:קישור פנימי בהערה",
-        "ש",
-    }:
-        return ()
-    raise ValueError(f"unclassified table-word template: {tmpl_name!r}")
-
-
-def _selected_argument_text(node: object) -> str:
-    parts: list[str] = []
-    _collect_text_fragments(node, parts)
-    return "".join(parts).strip()
+def _render_template_like_text(node: object) -> str:
+    """Render one classified template argument as the verifier historically did."""
+    if isinstance(node, str):
+        return node
+    if isinstance(node, list):
+        return "".join(_render_template_like_text(item) for item in node)
+    if isinstance(node, dict):
+        tmpl_name = node.get("tmpl_name")
+        if not isinstance(tmpl_name, str):
+            raise ValueError(f"unclassified non-template mapping: {node!r}")
+        tmpl_params = template_names.validate_current_plus_template(node)
+        rendered_args: list[str] = []
+        for key, value in tmpl_params.items():
+            rendered_value = _render_template_like_text(value)
+            if isinstance(key, str) and key.isdigit():
+                rendered_args.append(rendered_value)
+            else:
+                rendered_args.append(f"{key}={rendered_value}")
+        if not rendered_args:
+            return f"{{{{{tmpl_name}}}}}"
+        return f"{{{{{tmpl_name}|{'|'.join(rendered_args)}}}}}"
+    raise TypeError(f"unclassified template-argument node: {type(node).__name__}")
 
 
 def _collect_template_argument_records(
     node: object,
     out_records: list[dict[str, str]],
 ) -> None:
-    """Collect classified Scripture arguments for the Holman-table verifier."""
+    """Collect the historical all-argument Holman-verifier population explicitly.
+
+    The replacement population is deferred in MAM-basics #276.  Until that
+    decision, every declared argument remains searchable except documentation
+    parameter 2 of ``נוסח``, matching the behavior on main.  Closed shape
+    validation prevents an added argument from entering this population silently.
+    """
     if isinstance(node, list):
         for item in node:
             _collect_template_argument_records(item, out_records)
@@ -386,24 +373,13 @@ def _collect_template_argument_records(
 
     if isinstance(node, dict):
         tmpl_name = node.get("tmpl_name")
-        tmpl_params = node.get("tmpl_params")
         if isinstance(tmpl_name, str):
-            argument_keys = _argument_keys_for_table_word_verifier(tmpl_name)
-            if tmpl_params is None:
-                if argument_keys:
-                    raise ValueError(
-                        f"{tmpl_name!r} lacks required verifier arguments {argument_keys!r}"
-                    )
-                return
-            if not isinstance(tmpl_params, dict):
-                raise ValueError(f"{tmpl_name!r} has non-mapping parameters")
-            for argument_key in argument_keys:
-                if argument_key not in tmpl_params:
-                    raise ValueError(
-                        f"{tmpl_name!r} lacks required verifier argument {argument_key!r}"
-                    )
-                value = tmpl_params[argument_key]
-                argument_text = _selected_argument_text(value)
+            tmpl_params = template_names.validate_current_plus_template(node)
+            for key, value in tmpl_params.items():
+                argument_key = str(key)
+                if tmpl_name == "נוסח" and argument_key == "2":
+                    continue
+                argument_text = _render_template_like_text(value).strip()
                 if argument_text:
                     out_records.append(
                         {

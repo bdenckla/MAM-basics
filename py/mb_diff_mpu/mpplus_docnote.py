@@ -39,7 +39,8 @@ def docnote_body_to_html(body):
 
       ``{ש}``       → ``<br>``
       ``{מודגש}``   → ``<strong>…</strong>``
-      note links    → escaped links whose visible label is param 2
+      external note links → escaped links whose visible label is param 2
+      internal note links → historical param-1 text pending a target decision
       marked letters and punctuation → their explicitly named content
 
     Every reachable note-body template is classified.  An unfamiliar template or
@@ -117,11 +118,18 @@ def _render_template(tmpl):
         _require_param_keys(tmpl, ("1",))
         inner = _to_raw_html(_required_param(tmpl, "1"))
         return f"<strong>{inner}</strong>"
-    if name in {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
+    if name == "מ:קישור בהערה":
         _require_param_keys(tmpl, ("1", "2"))
         target = _plain_link_target(_required_param(tmpl, "1"), name)
         label = _to_raw_html(_required_param(tmpl, "2"))
         return f'<a href="{_esc(target)}">{label}</a>'
+    if name == "מ:קישור פנימי בהערה":
+        _require_param_keys(tmpl, ("1", "2"))
+        # The internal-target contract is deferred in
+        # doc/PLAN-deferred-template-projection-decisions.md.  Preserve the
+        # behavior on main until then: display parameter 1 without emitting a
+        # page-relative link whose target is known to be wrong.
+        return _to_raw_html(_required_param(tmpl, "1"))
     if name == "מ:אות-מיוחדת-במילה":
         _require_param_keys(tmpl, ("1",))
         return _to_raw_html(_required_param(tmpl, "1"))

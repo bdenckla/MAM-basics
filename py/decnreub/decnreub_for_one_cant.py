@@ -2,6 +2,7 @@
 
 from mb_cmn.my_utils import sum_of_map
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 
 
@@ -12,6 +13,7 @@ def do_one_wtseq(wtseq):
 def _do_one_wtel(wtel):
     if isinstance(wtel, str):
         return _HANDLERS_INSIDE_ONE_CANT["string"](wtel)
+    tmpln.validate_current_plus_template(wtel)
     if tmpl_name := wtp.template_name(wtel):
         return _HANDLERS_INSIDE_ONE_CANT[tmpl_name](wtel)
     assert False, wtel

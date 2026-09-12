@@ -4,7 +4,7 @@ from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import uni_heb as uh
 from mb_cmn import hebrew_points as hpo
 from py_misc import analyze_qamats_variant as aqv
-from hkq_cmn.qere_projection import project_qere_atoms
+from hkq_cmn.qere_projection import XATAF_QAMATS_POLICY, project_qere_atoms
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
@@ -22,7 +22,7 @@ def find_fois_wt(mroge):
         for atom in project_qere_atoms(
             minirow.EP,
             source=None,
-            skip_qamats_variant=True,
+            policy=XATAF_QAMATS_POLICY,
         )
     )
     return structural + _record_xataf_qamats(tuple(), selected_text)

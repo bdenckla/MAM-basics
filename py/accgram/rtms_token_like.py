@@ -12,13 +12,14 @@ def text_from_one_token_like(token: object) -> str:
 
 
 def texts_from_token_like_payload(payload: object) -> list[str]:
-    """Project a selected Scripture token stream out of the RTMS input shapes.
+    """Project the historical RTMS text while rejecting unfamiliar shapes.
 
-    WLC and MAM verse records contribute only ``vels``.  UXLC word and separator
-    nodes contribute their direct text, while ``x`` note nodes and node metadata do
-    not.  MAM's structural paseq/legarmeh marker is punctuation rather than word
-    text.  Each recognized container names the child that belongs to the projection;
-    an unfamiliar shape raises instead of recursively treating every value as text.
+    Ben deferred the choice of a selected Scripture stream in
+    ``doc/PLAN-deferred-template-projection-decisions.md``.  Until that decision,
+    this function explicitly preserves the behavior on main: every declared verse
+    stream contributes, a mapping with direct ``text`` or ``word`` contributes that
+    field, and metadata contributes nothing.  MAM's structural paseq/legarmeh marker
+    contributes nothing.  An unfamiliar shape raises.
     """
 
     if isinstance(payload, str):
@@ -45,23 +46,32 @@ def texts_from_token_like_payload(payload: object) -> list[str]:
                 raise ValueError(
                     f"unclassified RTMS verse fields: {sorted(unexpected)!r}"
                 )
-            return texts_from_token_like_payload(payload["vels"])
+            out: list[str] = []
+            for key, value in payload.items():
+                if key in {"vels", "vels_cant_alef", "vels_cant_bet"}:
+                    out.extend(texts_from_token_like_payload(value))
+            return out
 
-        tag = payload.get("tag")
-        if tag == "x":
-            return []
-        if tag is not None:
-            raise ValueError(f"unclassified RTMS XML-ish node tag: {tag!r}")
+        text = payload.get("text")
+        if isinstance(text, str):
+            unexpected = set(payload) - {"text", "note", "notes", "tag"}
+            if unexpected:
+                raise ValueError(
+                    f"unclassified RTMS text fields: {sorted(unexpected)!r}"
+                )
+            tag = payload.get("tag")
+            if tag not in {None, "x"}:
+                raise ValueError(f"unclassified RTMS XML-ish node tag: {tag!r}")
+            return [text]
 
-        keys = set(payload)
-        if keys in ({"text"}, {"text", "note"}, {"text", "notes"}):
-            text = payload["text"]
-            if isinstance(text, str):
-                return [text]
-        if keys in ({"word"}, {"word", "notes"}):
-            word = payload["word"]
-            if isinstance(word, str):
-                return [word]
+        word = payload.get("word")
+        if isinstance(word, str):
+            unexpected = set(payload) - {"word", "note", "notes"}
+            if unexpected:
+                raise ValueError(
+                    f"unclassified RTMS word fields: {sorted(unexpected)!r}"
+                )
+            return [word]
 
         raise ValueError(
             "unclassified RTMS token-like mapping: "

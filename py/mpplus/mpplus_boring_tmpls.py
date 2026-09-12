@@ -24,12 +24,13 @@ def evaluate(wtel):
         return wtel
     if isinstance(wtel, (tuple, list)):
         return _flatten_then_shrink(list(map(evaluate, wtel)))
-    handler = _HANDLERS.get(wtp.template_name(wtel))
+    name = wtp.template_name(wtel)
+    handler = _HANDLERS.get(name)
     if handler is None:
-        name = wtp.template_name(wtel)
         if name not in PRESERVED_TEMPLATE_NAMES:
             raise ValueError(f"unclassified template in boring-template pass: {name!r}")
         return wtp.mktmpl_mp(evaluate, wtel)
+    validate_current_handler_input_template(wtel)
     if isinstance(handler, str):
         return handler
     return handler(wtel)

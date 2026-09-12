@@ -428,8 +428,6 @@ def accents_of(word: str) -> str:
 _PHONETIC_MAM_LAYOUT_MARKERS = frozenset((None, "סס", "ססס", "פפ", "פפפ", "מ:פסק"))
 _CB_QAMATS = "cb-qamats"
 _CB_DUAL_CANTILLATION = "cb-dualcant"
-_SELECTED_PHONETIC_MAM_CANTILLATION = "cant-alef"
-_PHONETIC_MAM_CANTILLATION_BRANCH_INDEX = {"cant-alef": 0, "cant-bet": 1}
 
 
 def _qamats_branch_labels(node: object) -> set[str]:
@@ -448,13 +446,13 @@ def _qamats_branch_labels(node: object) -> set[str]:
 
 
 def _flatten(node: object, out: list[dict]) -> None:
-    """Select one Phonetic MAM stream for Breuer's word-length comparison.
+    """Flatten the historically included Phonetic MAM branches.
 
-    The survey compares one sequence of chanted words with WLC.  A qamats bracket
-    therefore contributes the named ``qamats-dal`` reading, and a dual-cantillation
-    bracket contributes the named ``cant-alef`` branch (the first branch in Phonetic
-    MAM's declared ordering).  Layout and paseq/legarmeh markers contribute no word.
-    Every bracket marker is classified here; a new marker fails the survey.
+    Concatenating alternative branches is not a valid single Phonetic MAM stream,
+    but rejecting that representation does not choose its replacement.  Ben
+    deferred the replacement in
+    ``doc/PLAN-deferred-template-projection-decisions.md``.  This closed dispatch
+    validates the current brackets while preserving the behavior on main.
     """
     if isinstance(node, dict):
         out.append(node)
@@ -474,23 +472,19 @@ def _flatten(node: object, out: list[dict]) -> None:
             _flatten(sub, out)
         return
     if node[0] == [_CB_QAMATS]:
-        selected = [
-            branch
-            for branch in node[1:]
-            if _qamats_branch_labels(branch) == {"qamats-dal"}
-        ]
-        if len(selected) != 1:
+        branches = node[1:]
+        labels = [_qamats_branch_labels(branch) for branch in branches]
+        if labels != [{"qamats-dal"}, {"qamats-sam"}]:
             raise ValueError(f"unexpected {_CB_QAMATS} branches: {node!r}")
-        _flatten(selected[0], out)
+        for branch in branches:
+            _flatten(branch, out)
         return
     if node[0] == [_CB_DUAL_CANTILLATION]:
         branches = node[1:]
         if len(branches) != 2:
             raise ValueError(f"unexpected {_CB_DUAL_CANTILLATION} branches: {node!r}")
-        branch_index = _PHONETIC_MAM_CANTILLATION_BRANCH_INDEX[
-            _SELECTED_PHONETIC_MAM_CANTILLATION
-        ]
-        _flatten(branches[branch_index], out)
+        for branch in branches:
+            _flatten(branch, out)
         return
     for sub in node:
         _flatten(sub, out)

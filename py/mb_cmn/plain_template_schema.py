@@ -119,6 +119,50 @@ CURRENT_PLAIN_TEMPLATE_ARG_COUNTS = {
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון": frozenset({1}),
 }
 
+# Exact argument-identity sequences for templates whose current plain calls use
+# named arguments.  Every template absent from this mapping has positional
+# arguments only; its permitted sequences are derived from the arities above.
+_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES = {
+    "בסיס-משתמש": frozenset({("שם",)}),
+    "מ:הערה": frozenset({("1", "שם")}),
+    "מ:כו״ק מיוחד": frozenset({("1", "2", "סוג")}),
+    "מ:כפול": frozenset({("כפול", "א", "ב")}),
+    "מ:עלייה": frozenset(
+        {
+            ("א", "ב0", "ב1"),
+            ("א", "ב0", "ב1", "ב2"),
+            ("א", "ב0", "ב1", "ב2", "ג0", "ג1"),
+            ("א", "ב0", "ב1", "ב2", "ג0", "ג1", "ג2"),
+            ("א", "ב0", "ב1", "ב2", "ג0", "ג2"),
+            ("א", "ב0", "ב1", "ב3"),
+            ("א", "ב0", "ב1", "ב3", "ג0", "ג1"),
+            ("א", "ב0", "ב1", "ג0", "ג1"),
+            ("א", "ב0", "ב2"),
+            ("א", "ב0", "ב2", "ג0", "ג2"),
+            ("א", "ב0", "ב3"),
+            ("א", "ב0", "ב3", "ג0", "ג3"),
+        }
+    ),
+    "מ:פסוק": frozenset(
+        {
+            ("1", "2", "3"),
+            ("1", "2", "3", "סדר"),
+            ("1", "2", "3", "עלייה"),
+            ("1", "2", "3", "סדר", "עלייה"),
+        }
+    ),
+    "מ:קו״כ-אם-2": frozenset(
+        {
+            ("1", "2", "3"),
+            ("1", "2", "3", "מקורות"),
+            ("1", "2", "3", "סוג"),
+            ("1", "2", "3", "מקורות", "סוג"),
+        }
+    ),
+    "מ:קמץ": frozenset({("ד", "ס")}),
+    "פרשה-מרכז": frozenset({("כותרת",)}),
+}
+
 CURRENT_PLAIN_CUSTOM_TAG_NAMES = frozenset(
     {
         "/noinclude",
@@ -151,20 +195,47 @@ CURRENT_PLAIN_CUSTOM_TAG_NAMES = frozenset(
 
 
 def validate_current_plain_template(tmpl):
-    """Return a plain template's name after closed name/arity validation."""
+    """Return a template name after closed name and argument-shape validation."""
     if not isinstance(tmpl, dict) or not ws_tmpl1.dic_is_template(tmpl):
         raise TypeError(f"not a current MAM-parsed-plain template: {tmpl!r}")
     name = ws_tmpl1.template_name(tmpl)
     allowed_arg_counts = CURRENT_PLAIN_TEMPLATE_ARG_COUNTS.get(name)
     if allowed_arg_counts is None:
         raise ValueError(f"unclassified current MAM-parsed-plain template: {name!r}")
-    arg_count = len(ws_tmpl1.template_arguments(tmpl))
+    arguments = ws_tmpl1.template_arguments(tmpl)
+    arg_count = len(arguments)
     if arg_count not in allowed_arg_counts:
         raise ValueError(
             f"unexpected argument count for current plain template {name!r}: "
             f"allowed {sorted(allowed_arg_counts)!r}, got {arg_count}"
         )
+    actual_identities = tuple(
+        _plain_argument_identity(argument, position)
+        for position, argument in enumerate(arguments, start=1)
+    )
+    allowed_identities = _CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES.get(name)
+    if allowed_identities is None:
+        allowed_identities = frozenset(
+            tuple(str(position) for position in range(1, count + 1))
+            for count in allowed_arg_counts
+        )
+    if actual_identities not in allowed_identities:
+        raise ValueError(
+            f"unexpected argument identities for current plain template {name!r}: "
+            f"allowed {sorted(allowed_identities)!r}, got {actual_identities!r}"
+        )
     return name
+
+
+def _plain_argument_identity(argument, position):
+    if not isinstance(argument, list) or not argument:
+        raise TypeError(
+            f"plain template argument {position} is not a nonempty list: {argument!r}"
+        )
+    first = argument[0]
+    if isinstance(first, str) and "=" in first:
+        return first.split("=", 1)[0]
+    return str(position)
 
 
 def validate_current_plain_custom_tag(node):

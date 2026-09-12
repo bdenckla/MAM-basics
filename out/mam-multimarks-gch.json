@@ -1483,8 +1483,8 @@
     "chnu": 2,
     "vrnu": 3,
     "ndualcant": 0,
-    "npoetcant": 39,
-    "ni": 39,
+    "npoetcant": 78,
+    "ni": 78,
     "nuc": 7
   },
   {
@@ -1547,8 +1547,8 @@
     "chnu": 9,
     "vrnu": 8,
     "ndualcant": 0,
-    "npoetcant": 27,
-    "ni": 27,
+    "npoetcant": 54,
+    "ni": 54,
     "nuc": 4
   },
   {
@@ -1627,8 +1627,8 @@
     "chnu": 18,
     "vrnu": 15,
     "ndualcant": 0,
-    "npoetcant": 34,
-    "ni": 34,
+    "npoetcant": 35,
+    "ni": 35,
     "nuc": 14
   },
   {
@@ -1723,8 +1723,8 @@
     "chnu": 37,
     "vrnu": 34,
     "ndualcant": 0,
-    "npoetcant": 8,
-    "ni": 8,
+    "npoetcant": 16,
+    "ni": 16,
     "nuc": 6
   },
   {
@@ -1739,8 +1739,8 @@
     "chnu": 37,
     "vrnu": 38,
     "ndualcant": 0,
-    "npoetcant": 6,
-    "ni": 6,
+    "npoetcant": 14,
+    "ni": 14,
     "nuc": 1
   },
   {
@@ -1755,8 +1755,8 @@
     "chnu": 41,
     "vrnu": 14,
     "ndualcant": 0,
-    "npoetcant": 2,
-    "ni": 2,
+    "npoetcant": 4,
+    "ni": 4,
     "nuc": 1
   },
   {
@@ -1913,8 +1913,8 @@
     "chnu": 115,
     "vrnu": 4,
     "ndualcant": 0,
-    "npoetcant": 9,
-    "ni": 9,
+    "npoetcant": 18,
+    "ni": 18,
     "nuc": 3
   },
   {
@@ -1945,8 +1945,8 @@
     "chnu": 135,
     "vrnu": 2,
     "ndualcant": 0,
-    "npoetcant": 1,
-    "ni": 1,
+    "npoetcant": 2,
+    "ni": 2,
     "nuc": 1
   },
   {
@@ -1989,6 +1989,22 @@
     "r": "שָׁלִַם",
     "rs": null,
     "sa": "לַיִ",
+    "bkna": "Psalms",
+    "chnu": 147,
+    "vrnu": 12,
+    "ndualcant": 0,
+    "npoetcant": 1,
+    "ni": 1,
+    "nuc": 1
+  },
+  {
+    "mmcat": "LaUi",
+    "Vow": "_i",
+    "Acc": "(dex)",
+    "Spe": null,
+    "r": "שָׁלִַ֭ם",
+    "rs": "שָׁלַ֭͏ִם",
+    "sa": "לַי֭יִ",
     "bkna": "Psalms",
     "chnu": 147,
     "vrnu": 12,
@@ -2073,8 +2089,8 @@
     "chnu": 32,
     "vrnu": 13,
     "ndualcant": 0,
-    "npoetcant": 1,
-    "ni": 1,
+    "npoetcant": 2,
+    "ni": 2,
     "nuc": 1
   },
   {

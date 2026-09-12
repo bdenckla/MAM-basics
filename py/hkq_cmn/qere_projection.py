@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterator
+from dataclasses import dataclass
 import re
 
 from mb_cmn.hebrew_punctuation import MAQ, PASOLEG
@@ -28,10 +29,6 @@ WHITESPACE_TEMPLATE_NAMES = {
 IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
 
 
-# This search projection is one coherent MAM reading: qere, parameter 1 of a
-# dexi/tsinnor stress-helper template, qamats parameter dalet, and combined
-# cantillation.  The alternative branches are data, but they are not additional
-# qere-word occurrences for this survey.
 # Per-template extraction rules below mirror those in:
 #   gh-pages/MAM-parsed/plus/html/mpplus.html and its siblings, the rendered
 #     structure reference, whose source is this repo's py/author_misc/
@@ -42,7 +39,62 @@ IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
 # THE FIRST ENTRY NAMED A FILE THAT DOES NOT EXIST, until 2026-09-02: it read
 # MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example),
 # and that whole directory is gone.
-#
+
+
+@dataclass(frozen=True)
+class QereProjectionPolicy:
+    """One caller's explicit choices among textual alternatives."""
+
+    name: str
+    trivial_qere_argument_key: str
+    stress_helper_argument_keys: tuple[str, ...]
+    qamats_argument_keys: tuple[str, ...]
+    dual_cantillation_argument_keys: tuple[str, ...]
+    whitespace_text: str = " "
+    paseq_legarmeh_text: str = PASOLEG
+    gray_maqaf_text: str = MAQ
+    excluded_qamats_text: str = " "
+
+
+# The holam-he search decision is deferred in
+# doc/PLAN-deferred-template-projection-decisions.md.  This policy makes the
+# behavior on main explicit while retaining it: parameter 1 of the trivial
+# ketiv/qere template and every declared variant branch.
+HOLAM_HE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
+    name="holam-he-main-compatible",
+    trivial_qere_argument_key="1",
+    stress_helper_argument_keys=("1", "2"),
+    qamats_argument_keys=("ד", "ס"),
+    dual_cantillation_argument_keys=("כפול", "א", "ב"),
+)
+
+# The qamats-variation survey's accepted 2026-09-12 policy: selected qere,
+# parameter 1 of a stress-helper template, no text from a qamats-variation
+# template, and the combined-cantillation representation.
+XATAF_QAMATS_POLICY = QereProjectionPolicy(
+    name="xataf-qamats-foi",
+    trivial_qere_argument_key="3",
+    stress_helper_argument_keys=("1",),
+    qamats_argument_keys=(),
+    dual_cantillation_argument_keys=("כפול",),
+)
+
+# The historical foi-kq-simple pqere field omits separator punctuation.  The
+# unresolved question of whether that field should retain a paseq/legarmeh glyph
+# is deferred in the same plan document.
+FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
+    name="foi-kq-simple-main-compatible",
+    trivial_qere_argument_key="3",
+    stress_helper_argument_keys=("1",),
+    qamats_argument_keys=("ד",),
+    dual_cantillation_argument_keys=("כפול",),
+    whitespace_text="",
+    paseq_legarmeh_text="",
+    gray_maqaf_text="",
+    excluded_qamats_text="",
+)
+
+
 def to_vowel_only_form(text: str) -> str:
     no_joiners = CGJ_AND_JOINERS_RE.sub("", text)
     return ACCENTS_AND_METEG_RE.sub("", no_joiners)
@@ -76,8 +128,6 @@ def _with_source(
     return {
         "template_name": template_name,
         "argument_key": argument_key,
-        "is_trivial_qere": canonical_template_name(template_name) == 'מ:קו"כ-אם-2'
-        and argument_key == "3",
         "parent_source": source,
     }
 
@@ -87,6 +137,17 @@ def _text_atom(text: str, source: dict[str, object] | None) -> dict[str, object]
         "kind": "text",
         "text": text,
         "source": source,
+    }
+
+
+def _template_atom(
+    template_name: str,
+    param_atom_lists: list[list[dict[str, object]]],
+) -> dict[str, object]:
+    return {
+        "kind": "template",
+        "template_name": template_name,
+        "param_atom_lists": param_atom_lists,
     }
 
 
@@ -102,11 +163,32 @@ def _required_param(
     return tmpl_params[key]
 
 
+def _project_argument_keys(
+    tmpl_name: str,
+    tmpl_params: dict[object, object],
+    keys: tuple[str, ...],
+    *,
+    source: dict[str, object] | None,
+    policy: QereProjectionPolicy,
+) -> list[dict[str, object]]:
+    projected = [
+        project_qere_atoms(
+            _required_param(tmpl_name, tmpl_params, key),
+            source=source,
+            policy=policy,
+        )
+        for key in keys
+    ]
+    if len(projected) == 1:
+        return projected[0]
+    return [_template_atom(tmpl_name, projected)]
+
+
 def project_qere_atoms(
     node: object,
     *,
     source: dict[str, object] | None,
-    skip_qamats_variant: bool = False,
+    policy: QereProjectionPolicy,
 ) -> list[dict[str, object]]:
     if isinstance(node, str):
         return [_text_atom(node, source)]
@@ -118,7 +200,7 @@ def project_qere_atoms(
                 project_qere_atoms(
                     item,
                     source=source,
-                    skip_qamats_variant=skip_qamats_variant,
+                    policy=policy,
                 )
             )
         return out
@@ -140,7 +222,7 @@ def project_qere_atoms(
         return project_qere_atoms(
             _required_param(tmpl_name, tmpl_params, "1"),
             source=source,
-            skip_qamats_variant=skip_qamats_variant,
+            policy=policy,
         )
 
     if cmp_name in {
@@ -151,52 +233,80 @@ def project_qere_atoms(
         return []
 
     qere_arg_key = qere_arg_key_for_template(tmpl_name)
+    if cmp_name == canonical_template_name(template_names.TRIVIAL_QERE):
+        qere_arg_key = policy.trivial_qere_argument_key
     if qere_arg_key is not None:
         return project_qere_atoms(
             _required_param(tmpl_name, tmpl_params, qere_arg_key),
             source=_with_source(source, tmpl_name, qere_arg_key),
-            skip_qamats_variant=skip_qamats_variant,
+            policy=policy,
         )
 
     if cmp_name in WHITESPACE_TEMPLATE_NAMES or cmp_name == "ש":
-        return [_text_atom(" ", source)]
+        return [_text_atom(policy.whitespace_text, source)]
 
     if cmp_name in {"מ:פסק", "מ:לגרמיה-2"}:
-        return [_text_atom(PASOLEG, source)]
+        return [_text_atom(policy.paseq_legarmeh_text, source)]
 
     if cmp_name == "מ:מקף אפור":
-        return [_text_atom(MAQ, source)]
+        return [_text_atom(policy.gray_maqaf_text, source)]
 
-    selected_key = None
     if cmp_name in {
         canonical_template_name(item) for item in IN_WORD_RECURSE_TEMPLATE_NAMES
-    } | {
+    }:
+        return project_qere_atoms(
+            _required_param(tmpl_name, tmpl_params, "1"),
+            source=source,
+            policy=policy,
+        )
+
+    if cmp_name in {
         canonical_template_name(item)
         for item in template_names.STRESS_HELPER_TMPL_NAMES
     }:
-        selected_key = "1"
-    elif cmp_name == canonical_template_name(template_names.QAMATS_VARIANT):
-        if skip_qamats_variant:
-            return [_text_atom(" ", source)]
-        selected_key = "ד"
-    elif cmp_name == canonical_template_name(template_names.DUAL_CANTILLATION):
-        selected_key = "כפול"
-    elif cmp_name in {"מ:סיום בטוב", "מודגש"}:
-        selected_key = "1"
-
-    if selected_key is not None:
-        return project_qere_atoms(
-            _required_param(tmpl_name, tmpl_params, selected_key),
+        return _project_argument_keys(
+            tmpl_name,
+            tmpl_params,
+            policy.stress_helper_argument_keys,
             source=source,
-            skip_qamats_variant=skip_qamats_variant,
+            policy=policy,
+        )
+
+    if cmp_name == canonical_template_name(template_names.QAMATS_VARIANT):
+        if not policy.qamats_argument_keys:
+            return [_text_atom(policy.excluded_qamats_text, source)]
+        return _project_argument_keys(
+            tmpl_name,
+            tmpl_params,
+            policy.qamats_argument_keys,
+            source=source,
+            policy=policy,
+        )
+
+    if cmp_name == canonical_template_name(template_names.DUAL_CANTILLATION):
+        return _project_argument_keys(
+            tmpl_name,
+            tmpl_params,
+            policy.dual_cantillation_argument_keys,
+            source=source,
+            policy=policy,
+        )
+
+    if cmp_name in {"מ:סיום בטוב", "מודגש"}:
+        return project_qere_atoms(
+            _required_param(tmpl_name, tmpl_params, "1"),
+            source=source,
+            policy=policy,
         )
 
     if cmp_name in {
         canonical_template_name(item) for item in template_names.NO_ATOM_TMPL_NAMES
     } | {"מ:קישור בהערה", "מ:קישור פנימי בהערה"}:
-        return [_text_atom(" ", source)]
+        return [_text_atom(policy.whitespace_text, source)]
 
-    raise ValueError(f"Unclassified template {tmpl_name!r} in qere-word projection")
+    raise ValueError(
+        f"Unclassified template {tmpl_name!r} in {policy.name!r} projection"
+    )
 
 
 def flatten_sources(source: dict[str, object] | None) -> list[dict[str, object]]:
@@ -207,42 +317,91 @@ def flatten_sources(source: dict[str, object] | None) -> list[dict[str, object]]
             {
                 "template_name": current.get("template_name"),
                 "argument_key": current.get("argument_key"),
-                "is_trivial_qere": bool(current.get("is_trivial_qere")),
             }
         )
         current = current.get("parent_source")
     return out
 
 
-def _word_atoms_from_text_atom(atom: dict[str, object]) -> list[dict[str, object]]:
-    text = atom.get("text")
-    if not isinstance(text, str):
-        raise TypeError(f"projected text atom has no string text: {atom!r}")
+def _append_unique_sources(
+    out: list[dict[str, object]],
+    incoming: list[dict[str, object]],
+) -> None:
+    for source in incoming:
+        if source not in out:
+            out.append(source)
 
-    source = atom.get("source")
-    sources = flatten_sources(source if isinstance(source, dict) else None)
-    return [
-        {
-            "word": part,
-            "sources": list(sources),
-        }
-        for part in TOKEN_SPLIT_RE.split(text)
-        if part
-    ]
+
+def _word_atoms_from_text_atoms(
+    atoms: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    """Tokenize after adjoining text fragments that have no delimiter between them."""
+    out: list[dict[str, object]] = []
+    word_parts: list[str] = []
+    word_sources: list[dict[str, object]] = []
+
+    def emit_word() -> None:
+        if not word_parts:
+            return
+        out.append({"word": "".join(word_parts), "sources": list(word_sources)})
+        word_parts.clear()
+        word_sources.clear()
+
+    for atom in atoms:
+        text = atom.get("text")
+        if not isinstance(text, str):
+            raise TypeError(f"projected text atom has no string text: {atom!r}")
+        source = atom.get("source")
+        sources = flatten_sources(source if isinstance(source, dict) else None)
+        cursor = 0
+        for match in TOKEN_SPLIT_RE.finditer(text):
+            fragment = text[cursor : match.start()]
+            if fragment:
+                word_parts.append(fragment)
+                _append_unique_sources(word_sources, sources)
+            emit_word()
+            cursor = match.end()
+        fragment = text[cursor:]
+        if fragment:
+            word_parts.append(fragment)
+            _append_unique_sources(word_sources, sources)
+
+    emit_word()
+    return out
 
 
 def word_atoms_from_qere_atoms(
     atoms: list[dict[str, object]],
 ) -> list[dict[str, object]]:
     out: list[dict[str, object]] = []
+    text_run: list[dict[str, object]] = []
+
+    def emit_text_run() -> None:
+        if text_run:
+            out.extend(_word_atoms_from_text_atoms(text_run))
+            text_run.clear()
+
     for atom in atoms:
         if not isinstance(atom, dict):
             raise TypeError(f"unclassified projected atom: {atom!r}")
         kind = atom.get("kind")
         if kind == "text":
-            out.extend(_word_atoms_from_text_atom(atom))
+            text_run.append(atom)
+            continue
+        emit_text_run()
+        if kind == "template":
+            param_atom_lists = atom.get("param_atom_lists")
+            if not isinstance(param_atom_lists, list):
+                raise TypeError(f"projected template atom lacks branches: {atom!r}")
+            for param_atoms in param_atom_lists:
+                if not isinstance(param_atoms, list):
+                    raise TypeError(
+                        f"projected template branch is not an atom list: {param_atoms!r}"
+                    )
+                out.extend(word_atoms_from_qere_atoms(param_atoms))
             continue
         raise ValueError(f"unclassified projected atom kind {kind!r}: {atom!r}")
+    emit_text_run()
     return out
 
 

@@ -6,8 +6,10 @@ import json
 from pathlib import Path
 
 import hkq_paths
-from mb_cmn import paths
+from mb_cmn import paths, template_names
+from hkq_cmn.template_name_quotes import canonical_template_name
 from hkq_cmn.qere_projection import (
+    HOLAM_HE_MAIN_COMPATIBLE_POLICY,
     iter_plus_verses,
     project_qere_atoms,
     to_vowel_only_form,
@@ -54,7 +56,11 @@ def load_mpu_hits_for_spec(
             plus_json = json.load(handle)
 
         for verse_info in iter_plus_verses(plus_json, plus_path.name):
-            qere_atoms = project_qere_atoms(verse_info["ep_payload"], source=None)
+            qere_atoms = project_qere_atoms(
+                verse_info["ep_payload"],
+                source=None,
+                policy=HOLAM_HE_MAIN_COMPATIBLE_POLICY,
+            )
             tokens = word_atoms_from_qere_atoms(qere_atoms)
 
             for token in tokens:
@@ -80,8 +86,10 @@ def load_mpu_hits_for_spec(
                         and isinstance(item.get("argument_key"), str)
                     }
                 )
-                is_trivial_qere = any(
-                    bool(item.get("is_trivial_qere"))
+                is_trivq_arg1 = any(
+                    canonical_template_name(str(item.get("template_name")))
+                    == canonical_template_name(template_names.TRIVIAL_QERE)
+                    and item.get("argument_key") == "1"
                     for item in sources
                     if isinstance(item, dict)
                 )
@@ -96,7 +104,7 @@ def load_mpu_hits_for_spec(
                         "verse": verse_info["verse"],
                         "word": word,
                         "vowel_only_form": to_vowel_only_form(word),
-                        "is_trivial_qere": is_trivial_qere,
+                        "is_trivq_arg1": is_trivq_arg1,
                         "source_templates": source_templates,
                         "source_argument_keys": source_argument_keys,
                         "is_plain_text_hit": len(source_templates) == 0,
@@ -131,28 +139,26 @@ def load_wordlist_hits_for_spec(
 
 def summarize_mpu_hits(hits: list[dict[str, object]]) -> dict[str, object]:
     vowel_only_counter = Counter(hit["vowel_only_form"] for hit in hits)
-    trivial_qere_hits = [hit for hit in hits if hit["is_trivial_qere"]]
-    other_hits = [hit for hit in hits if not hit["is_trivial_qere"]]
+    trivq_hits = [hit for hit in hits if hit["is_trivq_arg1"]]
+    other_hits = [hit for hit in hits if not hit["is_trivq_arg1"]]
     plain_hits = [hit for hit in hits if hit["is_plain_text_hit"]]
-    templated_non_trivial_qere_hits = [
-        hit
-        for hit in hits
-        if not hit["is_trivial_qere"] and not hit["is_plain_text_hit"]
+    templated_non_trivq_hits = [
+        hit for hit in hits if not hit["is_trivq_arg1"] and not hit["is_plain_text_hit"]
     ]
 
     return {
         "hit_count": len(hits),
         "unique_vowel_only_form_count": len(vowel_only_counter),
-        "trivial_qere_hit_count": len(trivial_qere_hits),
-        "trivial_qere_unique_vowel_only_form_count": len(
-            {hit["vowel_only_form"] for hit in trivial_qere_hits}
+        "trivq_arg1_hit_count": len(trivq_hits),
+        "trivq_arg1_unique_vowel_only_form_count": len(
+            {hit["vowel_only_form"] for hit in trivq_hits}
         ),
         "other_hit_count": len(other_hits),
         "other_unique_vowel_only_form_count": len(
             {hit["vowel_only_form"] for hit in other_hits}
         ),
         "plain_text_hit_count": len(plain_hits),
-        "templated_non_trivial_qere_hit_count": len(templated_non_trivial_qere_hits),
+        "templated_non_trivq_hit_count": len(templated_non_trivq_hits),
         "source_template_hit_counts": dict(
             sorted(
                 Counter(
@@ -167,8 +173,8 @@ def summarize_mpu_hits(hits: list[dict[str, object]]) -> dict[str, object]:
 
 
 def hit_source_category(hit: dict[str, object]) -> str:
-    if hit["is_trivial_qere"]:
-        return "trivial_qere"
+    if hit["is_trivq_arg1"]:
+        return "trivq_arg1"
     if hit["is_plain_text_hit"]:
         return "plain_text"
     return "templated_other"
@@ -241,11 +247,12 @@ def build_ending_pattern_report(
             "vowel_only_suffixes": list(spec.vowel_only_suffixes),
         },
         "notes": [
-            "MAM-plus projection: qere, including parameter 3 of the trivial",
-            "ketiv/qere template; parameter 1 of deḥi and tsinnor stress-helper",
-            "templates; qamats parameter dalet; combined",
-            "cantillation. Documentation and unselected alternatives do not enter",
-            "the search population. An unclassified template raises.",
+            "DEFERRED PROJECTION: this report explicitly preserves the behavior on main.",
+            "It uses parameter 1 of the trivial ketiv/qere template and every",
+            "declared branch of deḥi, tsinnor, qamats, and dual-cantillation",
+            "templates. The replacement population requires Ben's decision; see",
+            "doc/PLAN-deferred-template-projection-decisions.md. An unclassified",
+            "template or parameter shape raises.",
         ],
         "summary": {
             "mpu": summarize_mpu_hits(mpu_hits),
@@ -263,8 +270,8 @@ def build_ending_pattern_report(
                 mpu_vowel_only_forms & wordlist_vowel_only_forms
             ),
         },
-        "mpu_hits_trivial_qere": [hit for hit in mpu_hits if hit["is_trivial_qere"]],
-        "mpu_hits_other": [hit for hit in mpu_hits if not hit["is_trivial_qere"]],
+        "mpu_hits_trivq_arg1": [hit for hit in mpu_hits if hit["is_trivq_arg1"]],
+        "mpu_hits_other": [hit for hit in mpu_hits if not hit["is_trivq_arg1"]],
         "mpu_hits_plain_text": [hit for hit in mpu_hits if hit["is_plain_text_hit"]],
         "mpu_hits_by_verse": verse_indexed_hits(mpu_hits),
         "mpu_templated_hits_by_verse": verse_indexed_hits(
