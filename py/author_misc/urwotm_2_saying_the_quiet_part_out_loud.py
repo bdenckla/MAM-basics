@@ -29,7 +29,7 @@ def gen_html_file(tdm_ch):
         author.para(_PARA_009),
         author.unordered_list(_LIST_010),
         author.para_for_img(
-            "urwotm/2Sam 13v33 and 15v21 אם -- WLC qere ketiv.png", width_em=36.0
+            "urwotm/2Sam 13v33 and 15v21 A6 -- WLC qere ketiv.png", width_em=36.0
         ),
         author.para(_PARA_012),
         author.unordered_list(_LIST_013),
@@ -43,7 +43,7 @@ def gen_html_file(tdm_ch):
         author.para(_PARA_023),
         author.para(_PARA_024),
         author.para_for_img(
-            "urwotm/2Sam 15v21 אם -- BHS masorah qetanah.png", width_em=31.5
+            "urwotm/2Sam 15v21 A6 -- BHS masorah qetanah.png", width_em=31.5
         ),
         author.para(_PARA_026),
         author.para(_PARA_027, {"class": "center"}),
@@ -56,22 +56,22 @@ def gen_html_file(tdm_ch):
         author.para(_PARA_034),
         author.para(_PARA_035, {"class": "center"}),
         author.para(_PARA_036),
-        author.para_for_img("urwotm/2Sam אם -- L masorah qetanah.png", width_em=7.0),
+        author.para_for_img("urwotm/2Sam A6 -- L masorah qetanah.png", width_em=7.0),
         author.para(_PARA_038),
         author.para_for_img(
-            "urwotm/Jer 51v3 ידרך -- L masorah gedolah page 274B.png", width_em=131.3
+            "urwotm/Jer 51v3 YDR5 -- L masorah gedolah page 274B.png", width_em=131.3
         ),
         author.para_hbo(_HBO_040),
         author.para(_PARA_041),
         author.para(_PARA_042),
         author.para(_PARA_043),
-        author.para_for_img("urwotm/2Sam 13v33 כי־אם -- JPS HET.png", width_em=10.6),
+        author.para_for_img("urwotm/2Sam 13v33 KY0A6 -- JPS HET.png", width_em=10.6),
         author.para_for_img(
-            "urwotm/2Sam 13v33 כי־אם -- JPS HET note.png", width_em=21.3
+            "urwotm/2Sam 13v33 KY0A6 -- JPS HET note.png", width_em=21.3
         ),
-        author.para_for_img("urwotm/2Sam 15v21 אם־במקום -- JPS HET.png", width_em=16.0),
+        author.para_for_img("urwotm/2Sam 15v21 A60BMQV6 -- JPS HET.png", width_em=16.0),
         author.para_for_img(
-            "urwotm/2Sam 15v21 אם־במקום -- JPS HET note.png", width_em=21.5
+            "urwotm/2Sam 15v21 A60BMQV6 -- JPS HET note.png", width_em=21.5
         ),
         author.para(_PARA_048),
         author.para(_PARA_049),
@@ -89,7 +89,7 @@ def gen_html_file(tdm_ch):
         author.unordered_list(_LIST_061),
         author.para(_PARA_062),
         author.para_for_img(
-            "urwotm/2Sam 15v21 אם -- BHS masorah circles.png", width_em=13.2
+            "urwotm/2Sam 15v21 A6 -- BHS masorah circles.png", width_em=13.2
         ),
         author.para(_PARA_064),
         author.para_for_img(
@@ -97,11 +97,11 @@ def gen_html_file(tdm_ch):
         ),
         author.para(_PARA_066),
         author.para_for_img(
-            "urwotm/2Sam 15v21 ויאמר -- BHS masorah circle.png", width_em=12.4
+            "urwotm/2Sam 15v21 VYAMR -- BHS masorah circle.png", width_em=12.4
         ),
         author.para(_PARA_068),
         author.para_for_img(
-            "urwotm/2Sam 3v33 ויאמר -- BHS masorah qetanah.png", width_em=41.0
+            "urwotm/2Sam 3v33 VYAMR -- BHS masorah qetanah.png", width_em=41.0
         ),
         author.para(_PARA_070),
         author.para(_PARA_071),
@@ -112,19 +112,19 @@ def gen_html_file(tdm_ch):
         author.para(_PARA_074),
         author.para(_PARA_075),
         author.para(_PARA_076),
-        author.para_for_img("urwotm/2Sam 13v33 כי אם -- Aleppo.png", width_em=16.0),
-        author.para_for_img("urwotm/2Sam 15v21 אם -- Aleppo.png", width_em=17.9),
+        author.para_for_img("urwotm/2Sam 13v33 KY_A6 -- Aleppo.png", width_em=16.0),
+        author.para_for_img("urwotm/2Sam 15v21 A6 -- Aleppo.png", width_em=17.9),
         author.para(_PARA_079),
         author.para_for_img(
-            "urwotm/2Sam 13v33 כי־אם־אמנון -- MAM Wikisource.png", width_em=21.7
+            "urwotm/2Sam 13v33 KY0A60AMNV7 -- MAM Wikisource.png", width_em=21.7
         ),
         author.para_for_img(
-            "urwotm/2Sam 15v21 אם־במקום -- MAM Wikisource.png", width_em=24.1
+            "urwotm/2Sam 15v21 A60BMQV6 -- MAM Wikisource.png", width_em=24.1
         ),
         author.para(_PARA_082),
         author.para(_PARA_083),
         author.para_for_img(
-            "urwotm/2Sam 13v33 כי־אם־אמנון -- long maqaf alternative.png", width_em=21.2
+            "urwotm/2Sam 13v33 KY0A60AMNV7 -- long maqaf alternative.png", width_em=21.2
         ),
         author.para(_PARA_085),
         author.para(_PARA_086),
@@ -241,8 +241,8 @@ tanach.us):""".replace(
 )
 _TABLE_015 = [
     [
-        author.para_for_img("urwotm/2Sam 13v33 כי־אם־אמנון -- UXLC.png", width_em=22.2),
-        author.para_for_img("urwotm/2Sam 15v21 אם־במקום -- UXLC.png", width_em=24.9),
+        author.para_for_img("urwotm/2Sam 13v33 KY0A60AMNV7 -- UXLC.png", width_em=22.2),
+        author.para_for_img("urwotm/2Sam 15v21 A60BMQV6 -- UXLC.png", width_em=24.9),
     ],
 ]
 _PARA_016 = """The correction involves no change to any letter or pointing. The correction simply

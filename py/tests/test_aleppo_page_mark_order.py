@@ -11,13 +11,13 @@ _HEBREW_LETTER_RE = re.compile(r"[\u05D0-\u05EA]")
 
 def _tracked_aleppo_pages() -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "--", "gh-pages/aleppo/*.html"],
+        ["git", "ls-files", "-z", "--", "gh-pages/aleppo/*.html"],
         cwd=paths.repo_root(),
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
-    return [name for name in result.stdout.splitlines() if name]
+    return [name for name in result.stdout.split("\0") if name]
 
 
 def test_owned_aleppo_page_family_uses_mam_mark_order():

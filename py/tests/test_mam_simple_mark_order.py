@@ -83,15 +83,14 @@ _REQUIRED_OUTSIDE_PRODUCT = frozenset(
 
 def _tracked_text_files() -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "--", "MAM-simple", *_REQUIRED_OUTSIDE_PRODUCT],
+        ["git", "ls-files", "-z", "--", "MAM-simple", *_REQUIRED_OUTSIDE_PRODUCT],
         cwd=paths.repo_root(),
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     in_scope = []
-    for line in result.stdout.splitlines():
-        rel = line.strip().replace("\\", "/")
+    for rel in result.stdout.split("\0"):
         if not rel:
             continue
         product_rel = rel.removeprefix("MAM-simple/")

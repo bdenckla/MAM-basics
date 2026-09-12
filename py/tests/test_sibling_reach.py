@@ -300,13 +300,13 @@ class _Consulted:
 def _tracked_py() -> list[tuple[str, Path]]:
     root = paths.repo_root()
     result = subprocess.run(
-        ["git", "-C", str(root), "ls-files", "py/*.py"],
+        ["git", "-C", str(root), "ls-files", "-z", "py/*.py"],
         capture_output=True,
         text=True,
         encoding="utf-8",
         check=True,
     )
-    rels = [line for line in result.stdout.splitlines() if line]
+    rels = [path for path in result.stdout.split("\0") if path]
     assert rels, "git ls-files listed no tracked py/*.py -- the scan has no input"
     return [(rel, root / rel) for rel in rels if rel != _SELF]
 

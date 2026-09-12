@@ -353,11 +353,10 @@ def _scopes() -> tuple[_Scope, ...]:
             # before that deletion and 45 are after it -- doc/ (2), README.md,
             # CLAUDE.md, docs-not-served/ (4), emails/ (26), data/ (2), io/ (1),
             # assets/ (4) and four dotfiles. This comment said 154 and 47 from
-            # 2026-08-18 until the 2026-08-22 review's follow-up, counting in the two
-            # "JC3 ..." pages, whose non-ASCII names git ls-files returns quoted, so
-            # the leading quote keeps them past the gh-pages/ prefix filter -- but
-            # the quoted name is not a path, so _tracked_files_in_scope's is_file()
-            # drops both, and 45 is what it returns, re-measured 2026-08-22. The
+            # 2026-08-18 until the 2026-08-22 review's follow-up, counting in two
+            # non-ASCII "JC3 ..." paths that line-based parsing silently dropped.
+            # The parser has used NUL-delimited output since 2026-09-12, and the two
+            # paths have ASCII names now; 45 is the correctly measured count. The
             # comment predicted 48 before the phase ran; the one file between that
             # and the 47 it then recorded is .vscode/settings.json, which Phase 4
             # deleted as well. Comfortably above 40, so the floor keeps meaning "an
@@ -486,15 +485,14 @@ def _is_binary(path: Path) -> bool:
 
 def _tracked_files_in_scope(scope: _Scope) -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files"],
+        ["git", "ls-files", "-z"],
         cwd=scope.root,
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     in_scope = []
-    for line in result.stdout.splitlines():
-        rel = line.strip()
+    for rel in result.stdout.split("\0"):
         if not rel:
             continue
         posix_rel = rel.replace("\\", "/")

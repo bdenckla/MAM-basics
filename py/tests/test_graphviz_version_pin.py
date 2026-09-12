@@ -69,19 +69,14 @@ _MIN_STAMPED = 10
 
 def _tracked_svg_paths():
     completed = subprocess.run(
-        # core.quotepath=false keeps a non-ASCII tracked name spelled as itself
-        # rather than C-quoted, which would fail the is_file() guard below and
-        # drop the file with nothing said. No tracked .svg has such a name today;
-        # the flag is here so that one arriving does not go unlinted.
-        ["git", "-c", "core.quotepath=false", "ls-files", "--", "*.svg"],
+        ["git", "ls-files", "-z", "--", "*.svg"],
         cwd=REPO_ROOT,
         capture_output=True,
         encoding="utf-8",
         check=True,
     )
     paths = []
-    for line in completed.stdout.splitlines():
-        rel = line.strip().replace("\\", "/")
+    for rel in completed.stdout.split("\0"):
         if not rel:
             continue
         if not (REPO_ROOT / rel).is_file():

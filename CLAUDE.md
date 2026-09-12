@@ -55,6 +55,28 @@ and `codex-index-cam1753` carry near-verbatim copies of the deleted wording, bot
 implementation. On 2026-08-04, one day after the deletion, three NFC-ordered clusters were found in
 a hand-authored file here. That is why it is worth the tokens.
 
+## Tracked filenames do not use Hebrew letters; Git filename output is NUL-delimited
+
+**No tracked filename contains a Hebrew letter.** When Hebrew identifies a file, convert the
+Hebrew portion with `heb_alef_bet_to_ascii` from
+`py/py_ac_word_image_helper/alef_bet_to_ascii.py`; do not invent a second transliteration. The
+one-time migration on 2026-09-12 applied that established conversion to all 69 tracked filenames
+that then contained Hebrew letters and updated controlled references. The two Holman pages were
+renamed without compatibility stubs, by Ben's decision of 2026-09-12; external references to the
+old URLs were deliberately left to break.
+
+**Filenames without Hebrew letters do not make line-delimited Git output safe.** Every programmatic
+Git command that returns filenames requests NUL delimiters with `-z` and splits on `"\0"`, never
+on lines.
+Spaces, tabs, newlines, quoting characters and future non-ASCII filenames remain possible even
+when Hebrew letters are forbidden. The filename rule is the preventive policy; NUL-delimited Git
+parsing is the independent safeguard.
+
+`py/tests/test_tracked_filenames.py` enforces both rules. The case that prompted them was finding
+18.2 of `doc/review-findings-2026-09-10.md`: two tracked Holman pages were reported as untracked
+because line-based parsing treated Git's quoted path output as paths. The finding was false, but
+the failure mode was real.
+
 ## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
 
 That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in **this repository** at
@@ -451,10 +473,10 @@ prefix would imply that the citation was ambiguous.
 
 **holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
 Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
-`#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes once, in the one backtick
-span `gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` that names the two pages sharing
-that stem (this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
-`git grep -c '#19' -- CLAUDE.md` there is 1), and that is a JC Edition article number
+`#NN` in any of its tracked prose was the `#19` its `CLAUDE.md` quoted once. The pages now share
+the stem `gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-Z` in this repository
+(this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
+`git grep -c '#19' -- CLAUDE.md` there was 1), and that is a JC Edition article number
 rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
 just been added.
 

@@ -44,10 +44,10 @@ def render_title_card(**kwargs):
 
 
 _PSALM_15V1_JSON = pathlib.Path(
-    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך.json"
+    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 BAHL5.json"
 )
 _PSALM_15V1_PHONETIC = pathlib.Path(
-    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך phonetic.png"
+    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 BAHL5 phonetic.png"
 )
 _PSALM_5V9_JSON = pathlib.Path(
     "misc/mam-is-a-dataset/img-sources/Psalm 5v9 mpplus.json"

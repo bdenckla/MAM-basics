@@ -611,13 +611,13 @@ _SUBPROCESS_FUNCTIONS = frozenset(
 def _tracked_py() -> frozenset[str]:
     """Every tracked .py, by repo-relative path."""
     result = subprocess.run(
-        ["git", "-C", str(paths.repo_root()), "ls-files", "*.py"],
+        ["git", "-C", str(paths.repo_root()), "ls-files", "-z", "*.py"],
         capture_output=True,
         text=True,
         encoding="utf-8",
         check=True,
     )
-    rels = frozenset(line for line in result.stdout.splitlines() if line)
+    rels = frozenset(path for path in result.stdout.split("\0") if path)
     assert rels, "git ls-files listed no tracked .py -- the scan has no input"
     return rels
 

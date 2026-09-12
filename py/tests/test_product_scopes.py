@@ -65,13 +65,13 @@ from mb_cmn import paths
 def _tracked() -> frozenset[str]:
     """Every tracked path in the repository, repo-relative with forward slashes."""
     result = subprocess.run(
-        ["git", "-C", str(paths.repo_root()), "ls-files"],
+        ["git", "-C", str(paths.repo_root()), "ls-files", "-z"],
         capture_output=True,
         text=True,
         encoding="utf-8",
         check=True,
     )
-    rels = frozenset(line for line in result.stdout.splitlines() if line)
+    rels = frozenset(path for path in result.stdout.split("\0") if path)
     assert rels, "git ls-files listed no tracked path -- the lint has no input"
     return rels
 

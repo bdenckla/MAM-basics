@@ -122,7 +122,7 @@ _RECORD_15 = {
     "uxlc_bcvp": ("Ex", 12, 50, 1),
     "imgs": {
         "LC": "Ex12v50.png",
-        "BHS": "Ex12v50-ויעשו-in-BHS.jpg",
+        "BHS": "Ex12v50-VY3JV-in-BHS.jpg",
     },
     "dubious early mtg": _BETTER_1,
     "initial-remark": "See UXLC change proposal 2024.01.29-4.",

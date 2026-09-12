@@ -544,11 +544,14 @@ def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
             except (UnicodeDecodeError, OSError):
                 script_covers = False
 
-    worktree_list = run_cmd(["git", "-C", str(repo_dir), "worktree", "list"])
+    worktree_list = run_cmd(
+        ["git", "-C", str(repo_dir), "worktree", "list", "--porcelain", "-z"]
+    )
     linked = None
     if worktree_list.returncode == 0:
-        lines = [line for line in worktree_list.stdout.splitlines() if line.strip()]
-        linked = max(len(lines) - 1, 0)  # the first entry is the main worktree
+        records = worktree_list.stdout.split("\0")
+        worktrees = [record for record in records if record.startswith("worktree ")]
+        linked = max(len(worktrees) - 1, 0)  # the first entry is the main worktree
 
     branch_list = run_cmd(
         [
@@ -633,12 +636,12 @@ def _find_sys_path_mutations(text: str) -> list[int]:
 
 
 def _tracked_py_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "*.py"])
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", "*.py"])
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"
         )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    return [path for path in result.stdout.split("\0") if path]
 
 
 def _is_excluded_from_scan(
@@ -811,12 +814,12 @@ def _scan_py_files(
 
 
 def _tracked_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files"])
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z"])
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files in {repo_dir}"
         )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    return [path for path in result.stdout.split("\0") if path]
 
 
 def _is_excluded_from_nfc_scan(

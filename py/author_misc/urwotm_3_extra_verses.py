@@ -50,7 +50,7 @@ def gen_html_file(tdm_ch):
         author.para_for_img("urwotm/Josh 21v34-38 -- Aleppo.png", width_em=36.3),
         author.para(_PARA_030),
         author.para_for_img(
-            "urwotm/Josh 21v35 את־דמנה -- Aleppo missing sof pasuq.png", width_em=25.9
+            "urwotm/Josh 21v35 AF0DMNH -- Aleppo missing sof pasuq.png", width_em=25.9
         ),
         author.para(_PARA_032),
         author.para_for_img(
@@ -61,7 +61,7 @@ def gen_html_file(tdm_ch):
         ),
         author.para(_PARA_035),
         author.para_for_img(
-            "urwotm/Josh 21v34 זבולן -- Sassoon 1053 cut off nun.png", width_em=16.9
+            "urwotm/Josh 21v34 ZBVL7 -- Sassoon 1053 cut off nun.png", width_em=16.9
         ),
         author.para(_PARA_037),
         author.para(_PARA_038),
