@@ -388,6 +388,20 @@ too, and before the run go through H8's three checks, which the sweep cannot mak
 Use `--report-txt`: the one-line-per-repo stdout summary gives counts, and the text report
 gives the actual findings. Write reports into `.novc/`, not into a tracked directory.
 
+**`--check-memory-health` checks a memory directory's mechanics, never whether a memory is still
+worth having**, and the judgment half is deliberately not part of maintenance: it belongs to the
+on-demand skill `dot-claude/skills/prune-claude-state/`, live at `~/.claude/skills/` and
+`~/.agents/skills/`, which Ben invokes as `/prune-claude-state` (the skill carries
+`disable-model-invocation: true`, so a session cannot start it). That skill reads a repo's
+memories and its slice of `~/.claude/plans/`, cross-checks each against live GitHub issue state
+rather than the file's own prose, and deletes nothing without an explicit confirmation. Its own
+statement of why it sits outside this runbook is that it is expensive. Do not fold it in, and do
+not prune memories by judgment during a maintenance sweep. A worked pass, 2026-09-12 in
+MAM-basics: five memories deleted as describing a world that no longer exists or as superseded by
+`~/.claude/CLAUDE.md`, five repointed at paths the evacuations had moved, two pairs merged, and
+every `MEMORY.md` hook cut to one clause, taking the index that loads each session from 14,766 to
+about 7,500 bytes.
+
 **5. `--run-black`**, last of the mechanical steps and the only one that rewrites source:
 ```
 .venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace

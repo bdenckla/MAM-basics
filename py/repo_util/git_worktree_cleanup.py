@@ -1137,10 +1137,3 @@ def print_report(report: CleanupReport) -> None:
         or report.errors
     ):
         print("worktrees: nothing to clean")
-
-
-def _held_commits(stranded: StrandedBranch) -> str:
-    if stranded.commits is None:
-        return f"commit count unavailable; not in {stranded.unmerged_into}"
-    plural = "" if stranded.commits == 1 else "s"
-    return f"{stranded.commits} commit{plural} not in {stranded.unmerged_into}"

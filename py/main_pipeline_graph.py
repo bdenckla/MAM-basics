@@ -6,7 +6,7 @@ TWO GRAPHS, TWO PROVENANCES, AND ONLY ONE OF THE `.dot` FILES IS GENERATED.
   * `pipeline.dot` and `pipeline.svg` are generated here from the structured
     spec in `py/pipeline_graph/pipeline_graph_spec.py`. Both carry a
     "Do not edit by hand" line, and both mean it.
-  * `MAM-process.dot` is HAND-AUTHORED and stays that way. Only its `.svg` is
+  * `MAM-process.dot` is BEN-WRITTEN and stays that way. Only its `.svg` is
     rendered here. Do not add a "do not edit by hand" line to that `.dot`, and
     do not translate it into a spec: it was written by hand in `d86e5779` and
     has never been edited since -- `git log --follow` on it shows two directory
