@@ -14,10 +14,6 @@ so it tracked the Wikisource text within a run.
 It is now regenerated only when someone runs `py/main_mam_osis.py` deliberately,
 which means it can lag `MAM-simple/` and `MAM-parsed/plus/` by any amount.
 
-The reason is that this extract reaches STEPBible and CrossWire only when
-Ben Denckla converts and delivers it,
-so a continuously regenerated extract was not reaching anyone any sooner.
-
 To bring it up to date, run, from the MAM-basics repository root:
 
 ```

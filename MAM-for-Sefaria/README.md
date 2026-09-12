@@ -13,12 +13,6 @@ so it tracked the Wikisource text within a run.
 It is now regenerated only when someone runs `py/main_mam4sef.py` deliberately,
 which means it can lag `MAM-simple/` and `MAM-parsed/plus/` by any amount.
 
-The reason is that Sefaria takes an update only when Ben Denckla asks it to,
-so a continuously regenerated extract was not reaching anyone any sooner.
-The extract already differed from the edition published on the Sefaria web site,
-because Sefaria does not take updates as frequently as this directory received them;
-what has changed is that this directory no longer receives them automatically either.
-
 To bring it up to date, run, from the MAM-basics repository root:
 
 ```
