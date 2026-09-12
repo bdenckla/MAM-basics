@@ -442,15 +442,19 @@ Acceptance requires all of the following:
    unfounded, names 1 Kings 7:37 with the form לְכֻלָּֽהְנָֽה׃, and has no group label
    locating the silluq as the verse-final U+05BD. Read the rendered page, not the
    module.
-9. `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` is byte-identical to the file this
-   plan was widened against: 718 records in five groups, `1/sopa-y/maq-n` 354,
-   `1/sopa-y/maq-y` 229, `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102 and
-   `2/sopa-y/maq-y` 14, with 1 Kings 7:37 in `1/sopa-y/maq-n` and its `r` holding
-   both U+05BD marks. Those five figures were re-derived from the tracked JSON on
-   2026-09-09 at `becc6f0014e1646d47c3b63239945e3b7838d17e`; re-measure and treat
-   any mismatch as a finding. A count of 353 in the first group means the new
-   template's handler recursed on parameter 2 or ran `drop_post_silluq_metegs`,
-   and this MAM-with-doc artifact keeps MAM's text.
+9. `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` is byte-identical before and after
+   this plan's implementation. Before the first implementation edit, record its
+   Git blob and re-derive its five group counts. At `f079523148ae4892bec3b313dd43b3b627c1a2a9`
+   on 2026-09-12, the baseline is blob `b6c323992bb1d05e5995b1047449931c8e026464`:
+   717 records in five groups, `1/sopa-y/maq-n` 354, `1/sopa-y/maq-y` 228,
+   `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102 and `2/sopa-y/maq-y` 14, with
+   1 Kings 7:37 in `1/sopa-y/maq-n` and its `r` holding both U+05BD marks. If the
+   starting blob differs, re-derive the counts and treat the mismatch as a
+   finding before proceeding; do not restore old bytes merely to satisfy this
+   criterion. After regeneration, compare the JSON with the recorded pre-edit
+   blob. A count of 353 in the first group means the new template's handler
+   recursed on parameter 2 or ran `drop_post_silluq_metegs`, and this MAM-with-doc
+   artifact keeps MAM's text.
 10. `main_diff.py wsgo` is empty after both live sources have the same call.
 11. The full MAM-basics suite passes with no silent skips caused by a missing
     sibling checkout. The last recorded clean-main baseline was 976 passed,
@@ -473,10 +477,17 @@ Acceptance requires all of the following:
     primary clone's venv, and all unexplained generated diffs are resolved before
     commit.
 
-Re-derive criterion 9's five figures with:
+Re-derive criterion 9's five figures from the verified MAM-basics worktree root
+with:
 
 ```powershell
-Get-Content C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/MAM-with-doc/foi/foi-mtgmtg.json -Raw | ConvertFrom-Json | Group-Object fp | Select-Object Name,Count
+Get-Content gh-pages/MAM-with-doc/foi/foi-mtgmtg.json -Raw | ConvertFrom-Json | Group-Object fp | Select-Object Name,Count
+```
+
+Record its pre-edit Git blob with:
+
+```powershell
+git hash-object gh-pages/MAM-with-doc/foi/foi-mtgmtg.json
 ```
 
 Run Black only on changed Python files:
