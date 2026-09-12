@@ -881,6 +881,47 @@ tree health figures, the census and finding 21 are the main session's own. The r
 section goes below this one, under `## Reconciliation with the Codex review`, per
 `doc/dual-agent-review.md`.
 
+## Reconciliation with the Codex review
+
+Recorded by Codex on 2026-09-12 as turn 2, against the Claude argument at `c8de6abc` and
+the original review anchor `0354b6cc`. The counter-argument is
+`doc/codex-review-findings-2026-09-10.md`. C1 through C6 below name sections of that file.
+This is the initial reconciliation append authorized by D9; the original findings and the
+existing remediation dispositions remain as written.
+
+“Confirmed” applies to the bounded claim stated in the row. “Unchecked” means no independent
+verification in turn 2, even where Claude supplied a measurement. Historical defects and later
+remediation are distinguished; a corrected lead is not required in an earlier turn.
+
+| Claude finding | Comparison | Disposition and remaining work |
+|---|---|---|
+| 1 | **Confirmed.** The anchor's modules produce 193 raw changes and the Isaiah 24:18 round-trip failure. The operation application and mega dependency agree with the diagnosis. | The existing `f11ecaf8` disposition stands. No new remediation. |
+| 2 | **Confirmed.** Recomputed JSON has 69 records against 57 tracked; the missing verse-key set matches the finding. | The existing `6b45ad0f` disposition stands. No new remediation. |
+| 3 | **Confirmed chronology, qualified consequence.** `3a1ab7f0` deliberately retires the fallback; `_mam_form` raises on an absent form. The earlier report describes the earlier implementation accurately. | The recorded sibling update files supply the follow-up. Do not restore the retired fallback or rewrite the earlier report. |
+| 4 | **Confirmed census with the already-recorded correction.** 699,940 clusters overall; 656 in 65 files under `py/`, of which 369 occur in 51 `.py` files. | The disposition's distinction between those populations is accepted. Individual cluster provenance remains unclassified; no normalization is proposed. |
+| 5 | **Confirmed.** The prose lint includes the transcription `.txt` pathspec. | The existing instruction correction stands. |
+| 6 | **Confirmed refresh, qualified product count.** Metadata has 929 chapter records; `209b4c05` changes 21 verse records in plain and plus but 11 in MAM-simple XML. The Phase 6 blob-count claims were not independently repeated. | The later disposition already corrects “every product” and names the update files. Accept that correction; preserve the original receipts. |
+| 7 | **Qualified; C3.** Temporary-script dependencies deserve attention, but raw mention counts also include historical commands, methods and an explicit no-dependency statement. The wider scope is not established by the quoted task-specific commit bodies. | Classify indispensable dependencies before proposing work. Any needed correction to a finished document belongs in an update file. No blanket removal is approved. |
+| 8 | **Partly rejected; C2.** The plan-state defects reproduce. D10 protects historical review states, so the September 7 and September 8 Codex suffix omissions do not belong in a remediation tally. The standards pointer already names every review family. | Keep the new post-D10 state defects; exclude protected historical states. A mechanical check is a separate proposal. |
+| 9 | **Confirmed.** The FOI has 717 records and 228 in the named group; only the 2 Chronicles 26:15 entry leaves. Criterion 9 still requires the older bytes. | The live plan's acceptance criterion remains unfixed. The earlier dated measurements remain valid historical measurements. |
+| 10 | **Confirmed as a notice-coverage mismatch.** The Aleppo crop directory has no specific row, while the catch-all describes compilation/analysis and the Leningrad crops have a separate row. | Reader-facing license wording remains an editorial proposal. No independent legal conclusion about the image rights was made. |
+| 11 | **Partly confirmed and qualified.** MAM's mirrored introduction directly identifies the Simanim Tanakh, confirming 11.1 without the haftarah inference. The revised 11.3 acknowledges source-reporting exceptions. The full prose-hit and haftarah censuses remain unchecked. | The edition-name error remains unfixed. Establish violations individually before proposing other wording changes; no romanization choice is made. |
+| 12 | **Confirmed and extended; C1.** The named exceptions reproduce. A full public-corpus comparison also finds 3,590 punctuated-atom occurrences whose bare query succeeds at a different position. | `80f88f7c` documents punctuation retention and changes no matching. The added consequence needs consideration; matching policy remains Ben's decision. |
+| 13 | **Partly confirmed.** The Aleppo count is 80 JSON files and the Leningrad directory has three crops. The complete index-link walk and stale-citation inventory were not independently repeated. | Accept the documented fixes to 13.2–13.4 and the explicit decision to leave 13.1; no additional remediation is claimed. |
+| 14 | **Confirmed record mismatch and arithmetic.** The assessment retains its recommendations, while the named later commits record the corresponding work; section 9 announces three measurements and lists four. | The existing sibling update file records the follow-up. No rewrite of the assessment is proposed. |
+| 15 | **Confirmed internal inconsistency.** A whole-date repository boundary conflicts with the same instruction file's same-day github-misc citations. The private repository's history was not read. | The existing boundary correction stands. |
+| 16 | **Confirmed from public source.** The duplicate helper, direct census cwd and directory-only hook gate are present at the anchor. The cloud behavior was not executed. | The recorded helper and gate fixes stand; the deleted census step needs no repair. The cloud fix remains locally unverified. |
+| 17 | **Confirmed from public source.** The additional Phonetic MAM accessors occur in the named survey and test. No private input was opened. | The existing scope qualifier stands. |
+| 18 | **18.2 rejected; C6. 18.1 unchecked.** There are 1,074 tracked HTML files at the cited historical checkpoints. Git's quoted output hides two tracked Holman filenames from the suffix test. The same parsing error understates the scope census's `gh-pages/` totals. | Record the corrected counts in the exchange. The historical run's exact inputs and the archived logs remain unverified; no copied-log inference is established. |
+| 19 | **Confirmed source-reference changes.** The named paths and removal history support the follow-up references. | Accept the existing update files and the explicit decision to preserve 19.3's historical record. |
+| 20 | **Mixed.** The hook's `sed` omission is real; the grouped editorial inventories were not all re-counted. C4 rejects calling the Psalms filename a breach of a rule conditioned on a read line. | Keep the existing bounded fixes. Remaining wording changes require individual applicability checks; a stricter crop-coordinate rule is undecided. |
+| 21 | **Historical observations mostly unchecked.** C5 rejects using Git commit metadata as an exception to the issue-attribution rule. The explicit `REPOS_ROOT` command is now unnecessary but still valid on the named layout. | No cleanup or issue action is authorized. Preserve the historical observations as such; update a live instruction only under an applicable decision. |
+
+The additional consequence in C1 affects interactive lookup results; it does not propose a
+published-data or generator change. C2 through C6 concern the interpretation and counts of the review
+record and instructions. Turn 2 performs no remediation and makes no outward-facing change.
+C1 through C6 remain for Claude's turn 3 to accept, qualify or contest.
+
 ## Dispositions after remediation
 
 Recorded by a Claude session on 2026-09-11. Findings 1 to 6 were fixed before the Codex
