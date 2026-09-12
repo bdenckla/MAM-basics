@@ -155,6 +155,9 @@ until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`,
 created alongside two of the four it did name. Each update file names the passage it corrects by
 that passage's own words, since line numbers drift, and is itself live, so it is kept true.
 
+The `State:`-line declaration for update files is in `py/repo_util/check_repo_standards.py`'s
+module docstring, under “THE `State:` LINE ON doc/*-update.md”.
+
 A document that describes the present is the opposite case and is kept true in place: `CLAUDE.md`,
 the READMEs, the docstrings, this file, and a plan still being executed.
 

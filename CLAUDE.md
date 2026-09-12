@@ -530,6 +530,9 @@ of them written on 2026-09-11, the day of the decision. This sentence named four
 until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`, which `ffc82f60`
 created alongside two of the four it did name.
 
+The `State:`-line declaration for update files is in `py/repo_util/check_repo_standards.py`'s
+module docstring, under “THE `State:` LINE ON doc/*-update.md”.
+
 A document that describes the present is the opposite case and is kept true in place: this file,
 the READMEs, the docstrings, and a plan still being executed. `doc/dual-agent-review.md`'s section
 "Correcting a finished dated document" (D12) is the fuller statement, and it also retired the
