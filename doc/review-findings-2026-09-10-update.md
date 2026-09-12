@@ -235,3 +235,27 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
 finished source report remains unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.2: finding 2's parse-failure Judgment cells name the codices
+
+Recorded by Codex on 2026-09-12. This entry records further partial action on finding 11.2. The
+Judgment-column subunit in finding 2's 26-row parse-failure table is complete; finding 11.2's
+prose after that table remains unacted on.
+
+Implementation commit `9b552fad86ba1cf985d23aff59057b1466d8904a` on branch
+`dual-agent-review-2026-09-10` extends
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` with corrected readings for all
+seven applicable Judgment cells. The seven individually checked abbreviations comprise six uses
+of `L`, corrected to “the LC,” and one use of `A`, corrected to “the Aleppo Codex.” The Reference,
+String and Why the parse failed columns remain unchanged.
+
+The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The prose beginning “The 52 NON-verse-final
+template calls” and continuing through finding 3's item beginning “Psalms 19:7, where L's one
+stroke sits on the first syllable” remains for later tasks; this entry does not claim that all of
+finding 11.2 is complete.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the
+finished source report remains unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
