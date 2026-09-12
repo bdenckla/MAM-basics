@@ -557,15 +557,17 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
    the 38, 354, 392, 135 and 122 are unaffected (stream C, `C_05_mtgmtg_oracle.py`,
    `C_12_followups.py`).
 
-10. **Evidence gap, unfixed: `DATA-LICENSES.md` has no row for `aleppo/page-snips/`.** The
-    directory arrived in `ca0b4d02` with Ben's crop of the Aleppo Codex from mgketer.org's image
+10. **Licence coverage gap, unfixed: `DATA-LICENSES.md` has no row for `aleppo/page-snips/`.** The
+    directory arrived in `ca0b4d02` with Ben's crop of the Aleppo Codex from mgketer.org's image,
     and `7d40fa06` added a second. Its only cover is line 92's catch-all "`aleppo/`, except
-    `aleppo/aleppo-pages/` and `aleppo/aleppo-wiki/`", described as "line and column data
-    annotated by Ben Denckla, derived reports, procedures, and provenance records" under "Ben
-    Denckla's compilation and analysis" — a crop of a photograph of the Codex is none of those and
-    its terms are not Ben's — while `leningrad/page-snips/` has its own "each rights holder's; no
-    grant is made or implied here" row at line 95 (added 2026-09-07, `9eedccbd`); the window's two
-    licence commits, `c39b6dd6` and `42520d05`, predate the directory (stream C).
+    `aleppo/aleppo-pages/` and `aleppo/aleppo-wiki/`", which describes its contents as "line and
+    column data annotated by Ben Denckla, derived reports, procedures, and provenance records"
+    under the terms "Ben Denckla's compilation and analysis". A crop of a photograph of the Codex
+    is none of those four things, and its terms are not Ben's to state. The row a remedy would
+    copy is line 95's, for `leningrad/page-snips/`: "crops that Ben Denckla made from Leningrad
+    Codex photographs", under the terms "each rights holder's; no grant is made or implied here"
+    (added 2026-09-07, `9eedccbd`). The window's two licence commits, `c39b6dd6` and `42520d05`,
+    both predate the directory, so no licence pass has run since the crops arrived (stream C).
 
 11. **Terminology in the meteg-after-silluq documents, unfixed, listed by rule** (stream C,
     `C_03_terminology.py`, then read):
