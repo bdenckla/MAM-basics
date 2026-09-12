@@ -166,3 +166,26 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; all three
 finished dated reports remain unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.3: analytic `ga'ya` terms have live `meteg` corrections
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.3
+is unfixed and not acted on.
+
+Implementation commit `2c9b00ca60f077316271af6b5f8ae900cda93566` on branch
+`dual-agent-review-2026-09-10` extends
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` with corrected readings for the
+analytic category labels in finding 2, the MAM roster statement in finding 4, and the scope note
+under “What could not be verified.” Each corrected reading uses “meteg,” as the report's opening
+vocabulary note requires.
+
+The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The passages reporting MAM's introduction,
+Yeivin's `gaʿya`, or Breuer's `ga'aya` remain unchanged, as do all twelve source-reporting sites
+in `doc/foi-mtgmtg-empty-cell.md`. Finding 11.5's separate choice between `hataf` and `ḥataf`
+remains unmade.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the
+finished source report remains unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
