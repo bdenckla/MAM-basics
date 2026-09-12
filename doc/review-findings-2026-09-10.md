@@ -548,7 +548,11 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
    refresh `209b4c05` removed; the file had 718 / 229 at `becc6f00` and `30fb7681` and 717 / 228
    at `5f996d0e` and `0354b6cc`. The criterion says "re-measure and treat any mismatch as a
    finding", so its first execution reports a mismatch that has nothing to do with the template,
-   and its "byte-identical" cannot be met. The same 229 stands as a dated measurement in
+   and its "byte-identical" is unsatisfiable as written, the file having already changed: the
+   criterion needs re-pinning to the current bytes, or rewriting to compare against a named
+   commit. That plan's line 3 says `State: live`, so it is kept true in place rather than
+   corrected in a sibling `-update.md` file (D12 of `doc/dual-agent-review.md`). The same 229
+   stands as a dated measurement in
    `doc/foi-mtgmtg-empty-cell.md:31, :151` and `doc/meteg-after-silluq-koren-lookup-candidates.md:52`;
    the 38, 354, 392, 135 and 122 are unaffected (stream C, `C_05_mtgmtg_oracle.py`,
    `C_12_followups.py`).
