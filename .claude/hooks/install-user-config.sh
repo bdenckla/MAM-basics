@@ -102,7 +102,9 @@ fi
 want_conventions=no
 want_skill=no
 [ -f "$DEST/CLAUDE.md" ] || want_conventions=yes
-[ -d "$DEST/skills/hebrew-prose" ] || want_skill=yes
+# A directory alone is not the skill: an interrupted cp -R leaves one behind, and
+# the report below already reads presence off SKILL.md rather than off the directory.
+[ -f "$DEST/skills/hebrew-prose/SKILL.md" ] || want_skill=yes
 
 if [ "$want_conventions" = no ] && [ "$want_skill" = no ]; then
     # Nothing to install, but still say where the two documents are: this branch is
@@ -147,8 +149,10 @@ if [ "$want_conventions" = yes ]; then
     cp "$SRC/user-wide-CLAUDE.md" "$DEST/CLAUDE.md"
 fi
 if [ "$want_skill" = yes ]; then
-    mkdir -p "$DEST/skills"
-    cp -R "$SRC/skills/hebrew-prose" "$DEST/skills/hebrew-prose"
+    # The trailing /. copies the contents, so a directory left by an interrupted
+    # run is filled rather than nested inside itself.
+    mkdir -p "$DEST/skills/hebrew-prose"
+    cp -R "$SRC/skills/hebrew-prose/." "$DEST/skills/hebrew-prose/"
 fi
 
 # Report against the filesystem rather than against what the copies returned, so a
