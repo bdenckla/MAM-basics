@@ -694,6 +694,21 @@ MAM-basics the fuller statement is `doc/dual-agent-review.md`'s section "Correct
 dated document" (D12), and that repo's `CLAUDE.md` carries the same rule; this section exists
 because Codex loads neither of those files.
 
+## In MAM-basics, an unprefixed `doc/review-findings-<date>.md` is the Claude review series
+
+MAM-basics' periodic review series is `doc/review-findings-<date>.md`, with no agent name in the
+file name, and that repo's `doc/periodic-review.md` describes it. When Codex reviews the same
+window, its file takes the prefixed name `doc/codex-review-findings-<date>.md`, and the Claude
+series is not renamed to match: the unprefixed name is the incumbent and the prefixed name
+announces its difference. `doc/dual-agent-review.md`'s D10 there is the fuller statement,
+including the four reasons the rename was rejected.
+
+**So a Codex review file never takes the unprefixed name.** `doc/blind-dive-into-template-params.md`
+is the case that produced this section: Codex wrote it (`fa07fd8f`) as a current-state review of
+template projection, under the name `doc/review-findings-2026-09-11.md`, and Ben renamed it on
+2026-09-12. MAM-basics' `CLAUDE.md` §"An unprefixed `doc/review-findings-<date>.md` is the Claude
+series" carries the same rule; it is restated here because Codex does not load that file.
+
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
   on it before committing — mandatory, not optional.
