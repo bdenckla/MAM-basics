@@ -57,9 +57,18 @@ arose independently and never looked at this file.** Two confirmed, both fixed b
 - **`MP03-02`**, a missing Graphviz silently preserving stale SVGs. The commit's own title says it
   now fails instead of skipping.
 
-And others are still exactly as reported. The three terminology findings that name the reader-facing
-spelling `legarmeih` — `MP02-08`, `MP04-09` and `MP06-07` — were re-checked on 2026-09-12 and that
-spelling stands in **17** tracked files under `gh-pages/` and `out/`.
+And others are still exactly as reported. The three terminology findings that name the
+reader-facing spelling `legarmeih` — `MP02-08`, `MP04-09` and `MP06-07` — were re-checked on
+2026-09-12 and are still real: `gh-pages/MAM-OSIS/index.html` shows that spelling in visible
+prose, a heading among the hits, and `gh-pages/MAM-for-Sefaria/index.html` shows it in a
+romanized table cell.
+
+*Corrected 2026-09-12, the day this entry was written.* It first said the spelling "stands in
+**17** tracked files under `gh-pages/` and `out/`". That is what
+`git grep -lI 'legarmeih' -- gh-pages/ out/` counts, but only 8 of the 17 are HTML; 4 are CSS
+and 5 JSON, where the string is likely an identifier or data — MAM-simple's XML element for
+legarmeh is itself named `lp-legarmeih` — so the count overstated the prose these findings are
+about. The findings are still real; the figure was the wrong evidence for it.
 
 **The problem this creates is not that findings are open; it is that `Open — queued` no longer
 distinguishes the two cases.** A reader cannot tell a finding that is still real from one that was
