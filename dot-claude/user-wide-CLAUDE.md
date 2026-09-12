@@ -26,7 +26,10 @@ storing it there is what makes a cloud session able to read it.
 **The history stayed behind, so a `github-misc <sha>` citation below is right as written.** The
 files were copied rather than filtered out with their commits, so every commit that touched this
 file before 2026-09-09 is still a `github-misc` commit and is still cited as one — `1925699`,
-`7780489`, `14a53df`, `56737b6`. Commits from 2026-09-09 onward are MAM-basics commits. Do not
+`7780489`, `14a53df`, `56737b6`. The boundary is the move itself, `74d883d2` at 12:02 on
+2026-09-09, and not the date: `25a8955` and `560239c`, cited below, are github-misc commits of
+that same morning and resolve in neither MAM-basics nor anywhere else here. Commits from the move
+onward are MAM-basics commits. Do not
 "correct" an old citation to name MAM-basics: it would then resolve to nothing.
 
 **The tracked name is `user-wide-CLAUDE.md`, not `CLAUDE.md`, and that is deliberate.** Claude

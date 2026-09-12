@@ -234,13 +234,14 @@ as he chose the same answer for UXLC.
 answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10, and
 al-hatorah is in no workspace file, so no machine clones it — `../al-hatorah/…` names nothing on
 either count. (A clone of it turning up on some machine is residue, per "Repo locations are
-decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Seven
-sites**, named here so nobody re-derives them: `chanted_word_accents.py:638`, `final_stress.py:5`
-and `maqaf_nonfinal_accents.py:112` write `../al-hatorah/py/itm/` and
-`../al-hatorah/py/aht_phon…`, which want `../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`,
-`:43`, `:106` and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write "al-hatorah's
-`io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want `MAM-private/al-hatorah/`
-in front of the in-repo path. Two further mentions name the repo with no path in them —
+decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Eight
+sites**, named here so nobody re-derives them and re-measured 2026-09-12:
+`chanted_word_accents.py:696`, `final_stress.py:5` and `maqaf_nonfinal_accents.py:112`
+write `../al-hatorah/py/itm/` and `../al-hatorah/py/aht_phon…`, which want
+`../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`, `:43` and `:105`,
+`post_stress_meteg.py:15`, and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write
+"al-hatorah's `io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want
+`MAM-private/al-hatorah/` in front of the in-repo path. Two further mentions name the repo with no path in them —
 `edition_transcription.py:67` and `final_stress.py:16` — and read correctly as written.
 Search the full OCR before concluding Yeivin is silent on something;
 a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
@@ -696,7 +697,8 @@ The archived repository keeps its history and closed issue tracker; new public-s
 in MAM-basics. No source Pages site or redirect manifest exists.
 
 Nothing in the ordinary suite resolves a Leningrad sibling. `leningrad/` holds only its
-`README.md` and the hand-maintained `page-snips/` crop with its evidence note. On Ben's decision
+`README.md` and the `page-snips/` directory, which holds three crops Ben made and a
+`README.md` carrying an evidence note for each. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
 used and its three generated files, since it "will never be run again"; phase 3 of
 `doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
@@ -741,8 +743,12 @@ clone, and nothing before then shows that the dependency exists.
 The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
 mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
 spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
-record lacked one, so the lookup never ran. The renderer raises instead now, and only the survey
-build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
+record lacked one, so the lookup never ran. The renderer raises instead now, and
+`py/accgram/post_stress_meteg.py`'s survey build is the only post-stress-meteg code that
+reads Phonetic MAM. Two other code paths read it, both unconditionally:
+`py/accgram/breuer_word_length.py`'s `survey-breuer-zaqef-units` and
+`py/tests/test_final_stress_vs_phonetic_mam.py`, each through
+`require_al_hatorah_phonetic_dir`. `py/mb_cmn/paths.py`'s
 `al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
 
 ## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
