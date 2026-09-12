@@ -509,18 +509,23 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
    Re-establish: `git grep -c -I "\.novc" HEAD -- "*.md"`; `C_03_terminology.py`;
    `B2_14_prose_rules.py`.
 
-8. **`State:` lines, unfixed: 6 of 21 plans and 4 of 17 review files do not conform to the
-   vocabulary the standard and D10 record, and nothing checks any of it.** Stream D's census
+8. **`State:` lines, unfixed: 6 of 21 plans and 4 of 17 review files do not conform to the two
+   vocabularies — `check_repo_standards.py`'s five plan words (`executed <date>`, `paused
+   <date>`, `live`, `runbook`, `pointer`) and D10's review-file phrases (`not yet acted on`,
+   `acted on <date>`, and `completed <date>; review only` for a later turn) — and nothing checks
+   any of it.** Stream D's census
    (`D_05_state_lines.py`), in the vocabulary of `py/repo_util/check_repo_standards.py:269–289`
    and `doc/dual-agent-review.md`'s D10 section:
    1. Three 2026-09-10 Codex-written plans have no `State:` line at all while each says in prose
       it is complete: `doc/PLAN-efficient-wikisource-downloads.md:3` is `## Authorization, status,
       and development location`, `doc/PLAN-wikisource-derived-mam-products.md:3` is
       `## Authorization and status`, `doc/PLAN-worktree-file-consolidation.md:3` is body text. All
-      three arrived after `9d1de074`, at which the Wave 4 record's 16 / 16 census was true — the
-      shape of the September 8 review's finding 7 back within the day (stream A).
+      three arrived after `9d1de074`, at which the Wave 4 census of 16 out of 16 was true, so the
+      September 8 review's finding 7 recurred the same day its remediation was verified
+      (stream A).
    2. `doc/PLAN-evacuate-five-MAM-products.md` and `doc/PLAN-evacuate-public-repos-programme.md`
-      say `State: complete`, a word outside the five; `doc/PLAN-close-out-review-2026-09-08.md`
+      say `State: complete`, a sixth word beside the five the lead names;
+      `doc/PLAN-close-out-review-2026-09-08.md`
       leads with `State: remediation executed 2026-09-10`.
    3. `doc/review-findings-2026-09-08.md:3` reads `State: remediated 2026-09-10; …`, a third word
       where D10 rule 2 allows `not yet acted on` or `acted on <date>`, written by the very
