@@ -85,9 +85,9 @@ restates — the whole content of this list is that the five are one axis:
    is why the preamble above requires the two `git diff --no-index` comparisons after any
    change to a shared skill.
 4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
-   document. Editing one rewrites the record rather than fixing a defect. MAM-basics'
-   `CLAUDE.md` §"A finished dated document is corrected in `<stem>-update.md`, never edited"
-   is the fullest statement, and `~/.codex/AGENTS.md` carries it for Codex.
+   document. Editing one rewrites the record rather than fixing a defect. §"A finished dated
+   document is corrected in `<stem>-update.md`, never edited" below is the rule; MAM-basics'
+   `CLAUDE.md` is the fullest statement of it, and `~/.codex/AGENTS.md` carries it for Codex.
 5. **Code paths that cannot be exercised on this machine**, the cloud-session hook above all.
    A fix there is unverifiable locally and lands in an environment nobody here is in, so
    report it as unverified rather than as working.
@@ -780,6 +780,35 @@ this session" and "since reverted" with no date, and gave no repo paths.
 - **Carry forward the verification and the commit discipline** — the real regeneration commands,
   black on the files touched, and commit-and-push per the Git section above — so the fresh
   session does not have to infer them from these global rules alone.
+
+## A finished dated document is corrected in `<stem>-update.md`, never edited
+
+Ben's decision, 2026-09-11, with the naming settled 2026-09-12, and it holds in **every** repo. A
+finished dated document — a review, a remediation plan, a completed plan, an execution record — is
+left as written, like a pushed commit under a "never amend pushed commits" discipline. Keeping such
+documents current is maintenance without end, and it makes them more confusing rather than less,
+since a reader cannot tell how the writer could have known at the time what the document now says.
+
+So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
+small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes in
+`doc/PLAN-foo-update-2.md`, a third in `doc/PLAN-foo-update-3.md`, and so on. An update file names
+the passage it corrects by that passage's own words, since line numbers drift, and it is itself
+live, so it is kept true.
+
+**A document that describes the present is the opposite case and is kept true in place**: this
+file, a repo's own `CLAUDE.md`, the READMEs, the docstrings, and a plan still being executed.
+
+**This section reached this file a day late, on 2026-09-12, and the delay is the point of saying
+so here.** The rule was written on 2026-09-11 into MAM-basics' `CLAUDE.md` and into
+`doc/dual-agent-review.md` as that procedure's decision D12, and on 2026-09-12 into
+`~/.codex/AGENTS.md` — so for a day a Codex session in any repo carried the rule while a Claude
+session outside MAM-basics did not, and this file's own §"Two axes of risk" item 4 pointed at a
+statement most sessions cannot load. A review of the MAM-basics review branch's edits raised the
+asymmetry as possibly deliberate, on the reading that the rule might be specific to that
+repository. Ben, 2026-09-12: *"it is not such a policy; it should apply to all repos."* MAM-basics'
+own statement is the fuller one and stays there, because it names the update files that exist in
+that repository; this one is the rule itself. That fuller statement reaches MAM-basics' `main` with
+the 2026-09-10 review round, so until then it is findable only on that round's branch.
 
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
