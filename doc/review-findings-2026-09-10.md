@@ -722,7 +722,7 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
        deleted the script and its message says the record stays as written; listed so the "now"
        is visible, not to reverse the choice (stream B1).
 
-20. **Prose-rule hits and small record slips, all low, unfixed:**
+20. **Prose-rule hits and small record slips, eleven of them, all low, unfixed:**
     1. "hand-authored" at `CLAUDE.md:24, :37` (`036deb92`), `doc/PLAN-wikisource-derived-mam-products.md:594`,
        `doc/mam-products-phase6-command-map.md:156`, nine sites of the assessment and five of
        `py/tests/test_prose_mark_order.py`; "HAND-AUTHORED", "hand-maintained" and "hand-written"
@@ -734,7 +734,7 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
        `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md:405`.
     3. "one … the other" at `doc/PLAN-mega-coverage.md:411`, `py/tests/test_mega_coverage.py:47–48`
        and `py/mb_cmn/graphviz_pin.py:27`, referents recoverable in each.
-    4. Announced counts left unnumbered: `doc/PLAN-evacuate-five-MAM-products.md:1964` ("two
+    4. Announced counts left unnumbered, five sites: `doc/PLAN-evacuate-five-MAM-products.md:1964` ("two
        bounded public findings. First, … Second, …"), the assessment's §6 line 510 ("Three
        things"), the hook's comment lines 42–59 ("Four further trees", three entries), the
        instruction-file plan's §6 line 529 ("Two things"), the screen doc's line 5 ("Two terms").
@@ -746,7 +746,7 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
     7. `doc/user-level-config-in-cloud-sessions.md:214–216` says the hook invokes "`cp`, `echo`,
        `ls`, `mkdir`, and `cd` / `dirname` / `pwd` … and nothing else"; it also invokes `sed`
        (line 129); the substantive claim, no network call, holds.
-    8. Immutable-message slips: `5e7f0d6b` "holds Hebrew on 126 lines" (16 lines hold a
+    8. Immutable-message slips, four: `5e7f0d6b` "holds Hebrew on 126 lines" (16 lines hold a
        Hebrew-block codepoint); `74d883d2` "13 Hebrew clusters, 0 in Unicode-normal order" over the
        twelve config files, which hold 0 clusters with two or more marks, so no cluster there can
        tell the orders apart and the assessment's §3 repeats that vacuous evidence; `5a07e5af`
@@ -762,7 +762,7 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
     11. `dot-claude/user-wide-CLAUDE.md:1275` and `dot-Codex/user-wide-AGENTS.md:1061`, the
         illustrative `[page](gh-pages/accgram/page.html)` that a link checker reads as dead.
 
-21. **Process and hygiene, recorded for Ben's decisions:**
+21. **Process and hygiene, eight items, recorded for Ben's decisions:**
     1. **The desktop app re-leased `eloquent-ritchie-0e4c6c` to this session**, the third session
        in that worktree (created 2026-09-09 13:45 for `claude/eloquent-ritchie-0e4c6c`, re-used
        2026-09-10 08:58 by the Koren-lookups session on `claude/interesting-taussig-6aa52b`, and
@@ -884,6 +884,15 @@ session that read his instruction to step through the findings as an instruction
 problems they describe, when he had asked to be shown each finding and to discuss its wording.
 This is said here because the rows below would otherwise read as six requested fixes.
 
+The 2026-09-12 rows are a second batch, and Ben did ask for it. His instruction that day was to
+make whatever wording changes this session saw fit to findings 12 to 21 without reviewing them in
+detail, and to do whatever fix-now remediations it saw fit along the way — given after a risk
+assessment establishing that no fix among findings 12 to 21 changes MAM-parsed, MAM-simple,
+MAM-with-doc or `gh-pages`. Every commit in that batch is on `fix-review-2026-09-10-batch`,
+branched off `main`, under Ben's rule that fix-now remediation lands outside the review branch.
+The findings' own leads still say "unfixed", as findings 1 to 6 do, because each states what was
+true at the anchor `0354b6cc`; this table is where the disposition lives.
+
 | Date | Finding | Disposition |
 |---|---|---|
 | 2026-09-11 | 1 | Has been fixed by `f11ecaf8` on `main`. Every op that places a mark now records the index the mark has among its cluster's marks in the new text, and `change_ops_apply` places it there, so the mpplus diff rebuilds Isaiah 24:18 and the mega's step, now named `diff-mpplus`, no longer stops. The finding's command re-establishes it with the subcommand renamed: `py/main_diff.py mpplus --old 9ce6ee5 --new HEAD`. |
@@ -892,5 +901,16 @@ This is said here because the rows below would otherwise read as six requested f
 | 2026-09-11 | 4 | Has been fixed, unasked, by `d71387a5` on this branch, by making `CLAUDE.md`'s mark-order section state only what was measured. Re-measured at `2bb94060` with the same counting as `D_04_treewide_scan.py`: 699,940 clusters; 688,072 in the four mam-ws trees, `out/mam-ws-bot/proto-fmt-2/` now named among them; 4,621 in the named captures; and 7,247 in 152 files, now stated as unclassified rather than expected. At Ben's direction, whether each unclassified cluster is deliberate was not judged, so the two trees item 4 calls captures are counted among the unclassified. Item 3's two figures are both true of different sets: 656 clusters are in the 65 files under `py/`, and 369 of them are in the 51 `.py` files. |
 | 2026-09-11 | 5 | Has been fixed, unasked, by that same commit `d71387a5`. `CLAUDE.md` now names the prose lint's third pathspec element, the `.txt` under `in/accgram/edition_transcriptions/`, and says that any other `.txt` is covered by nothing. |
 | 2026-09-11 | 6 | Has been fixed, unasked, by `89c1d7cf` and then `ffc82f60`, both on `main` and both made off this branch, at Ben's direction that fix-now remediation lands outside the review branch. `89c1d7cf` had put dated corrections, and a new section, inside three completed plans; under Ben's decision of 2026-09-11 that a finished dated document is left as written, `ffc82f60` restores those three plans to their earlier text and puts the same material in three sibling files: `doc/PLAN-efficient-wikisource-downloads-update.md`, holding the production refresh `209b4c05` of 2026-09-10 with its figures and the three passages it made stale, `doc/PLAN-wikisource-derived-mam-products-update.md` and `doc/PLAN-evacuate-five-MAM-products-update.md`. The first two also state, in the conventional form, the state their plans declare only in prose: both complete. The Phase 3 validation JSON stays as written, as a receipt. Re-measured from `209b4c05` alone, item 1's "21 verses changed in every product" holds for MAM-parsed plus and plain; `MAM-simple/xml-vtrad-mam/` changed in 11, the meteg changes. |
+| 2026-09-12 | 12 | Has been fixed by `80f88f7c`, on `fix-review-2026-09-10-batch` off `main`. The verse-links skill, `py/main_verse_links.py` and `py/uxlc_misc/my_uxlc_find_atom.py` now say that "letters alone" drops marks and format characters only, so a sof pasuq or a maqaf survives and a bare consonantal form matches a mid-verse atom and not a verse-final or maqaf-final one. Measured on that tree with every form lifted from the UXLC: Psalms 72:15's last atom and Job 4:12's last atom match by `exact` when pointed and raise `AtomNotFound` when bare, Job 4:12's first atom matches either way, and Genesis 1:2's maqaf-final `על־` is not found when bare. The matching is untouched: making a bare form work everywhere means dropping Po and Pd in `strip_heb` too, which changes what every lookup resolves and is Ben's to decide. The skill was edited live and copied to its other two homes, both `git diff --no-index` comparisons clean. |
+| 2026-09-12 | 13.2, 13.3, 13.4 | Have been fixed by `6dfabceb`, on the same branch. `py/repo_scopes.py` says 80 JSON files in aleppo, re-measured today with `git ls-files` along with the 7 and the 72 beside it; `CLAUDE.md` says `leningrad/page-snips/` holds three crops Ben made, with an evidence note for each, and no longer calls them hand-maintained; and its "Seven sites" of stale `al-hatorah` citations is eight, re-measured today, with `chanted_word_accents.py:696`, `breuer_word_length.py:105` and the added `post_stress_meteg.py:15`. Finding 13.1 is deliberately not fixed: the comment self-dates and its floor of 25 still functions, so changing 35 to 36 would spend a second decision on a number that goes stale again. |
+| 2026-09-12 | 14 | Has been fixed by `5eec01bf`, on the same branch, in the sibling file `doc/assessment-two-stranded-artifacts-2026-09-09-update.md` rather than in the assessment, which is finished. It names the commit and the time for each of the six §8 dispositions, all executed between 13:36 and 14:16 on 2026-09-09, and records that §9 announces three measurements and numbers four. |
+| 2026-09-12 | 15 | Has been fixed by `6dfabceb`, in the tracked and the live copy by the same edit rather than by copying one over the other, the live copy already carrying the review branch's `<stem>-update.md` section. The file now says the boundary is the move, `74d883d2` at 12:02 on 2026-09-09, and names `25a8955` and `560239c` as github-misc commits of that same morning. |
+| 2026-09-12 | 16.1, 16.3 | Have been fixed by `53696b30`, on the same branch. The second `_held_commits` is gone and one definition remains. The hook's gate tests `skills/hebrew-prose/SKILL.md` rather than the directory, and its copy now uses a trailing `/.` into an `mkdir -p`'d destination, because changing only the gate would have made `cp -R` nest the skill inside a half-copied directory. Finding 16.2 needs no fix: the mega step it names was deleted on 2026-09-11, and `_run_near_aleppo_census` survives on that tree only in a stale `.pyc`. |
+| 2026-09-12 | 17 | Has been fixed by `6dfabceb`. `CLAUDE.md` now says that `py/accgram/post_stress_meteg.py`'s survey build is the only post-stress-meteg code that reads Phonetic MAM, and names the two other paths that read it, `breuer_word_length.py`'s `survey-breuer-zaqef-units` and `py/tests/test_final_stress_vs_phonetic_mam.py`, both through `require_al_hatorah_phonetic_dir`. |
+| 2026-09-12 | 19.1, 19.2 | Have been fixed by `5eec01bf`, in two new sibling files, `doc/metsudah-vs-ctr-update.md` and `doc/PLAN-evacuate-public-repos-programme-update.md`, both documents being finished. Finding 19.3 is deliberately not fixed: it is listed so that a "now" about a deleted script is visible, and its own record says that choice stands. |
+| 2026-09-12 | 20.1 (its two source sites), 20.7, 20.10 | Have been fixed by `3134f32b`. `py/main_pipeline_graph.py` calls `MAM-process.dot` Ben-written, `d86e5779` being Ben's commit with no agent trailer, and `py/main_0_mega.py`'s step description drops "hand-maintained" and "hand-written"; those strings are the mega's console text and `git grep` finds them in no tracked artifact. `doc/user-level-config-in-cloud-sessions.md` names `sed` among the commands the hook invokes. The screen document's trailing blank line is gone. The rest of finding 20 is untouched, for the reasons `3134f32b`'s message gives. |
 
-Findings 7 to 21 are not yet acted on.
+Findings 7 to 11, 13.1, 16.2, 18, 19.3, the rest of 20, and all of 21 are not acted on. Findings
+7 to 11 have been presented to Ben and reworded with their problems deliberately left standing;
+18 records evidence rather than proposing a fix; and 21 is a list of decisions that are Ben's by
+design.
