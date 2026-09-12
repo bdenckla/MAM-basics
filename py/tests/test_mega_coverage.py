@@ -168,6 +168,21 @@ _LINE_BREAK_REPORT = (
     " phase 7 of doc/PLAN-mega-coverage.md."
 )
 
+_SEF_AND_OSIS_NOT_KEPT_CURRENT = (
+    "Ben's decision, 2026-09-12, which removed the mam4sef-and-ajf and mam-osis steps:"
+    ' "I know of no reason to be supplying constantly-updated versions of these; as far'
+    " as I know those two versions would only take on update if I did it (in the case of"
+    ' StepBible (OSIS)) or if I asked them to do it (Sefaria)."  He weighed the other'
+    ' reason to keep a program in the mega and rejected it for these two: "that code is'
+    " unlikely to break (or if it does, would be easy to fix) because the code isn't that"
+    " 'interesting', because IMO these editions are pretty close to MAM-simple.  So it is"
+    " really MAM-simple's code and data that needs to be kept up to date, which they"
+    " presumably will be kept, by keeping MAM-simple's code run in 'mega'.\"  So the"
+    " mam-simple step is what stands behind both products now.  Recorded in the comment"
+    " where the two steps stood in py/main_0_mega.py, and in each product's README under"
+    ' "How current this product is".'
+)
+
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  Every program the mega does not run, keyed as the module
 # docstring says, with why the mega leaves it out and where that is recorded.
@@ -500,6 +515,8 @@ NOT_IN_MEGA: dict[str, str] = {
         ' parsing WS twice in one run", and whose Phase 2 record says that ws-products'
         " rejects a production-tree destination."
     ),
+    "py/main_mam4sef.py": _SEF_AND_OSIS_NOT_KEPT_CURRENT,
+    "py/main_mam_osis.py": _SEF_AND_OSIS_NOT_KEPT_CURRENT,
     "py/main_mam_simple.py all": (
         "The mega runs its two halves as two steps, mam-simple for the export and"
         " mam-simple-docs for the docs.  Recorded in item 1 of phase 5b of"

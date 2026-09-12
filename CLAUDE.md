@@ -588,8 +588,9 @@ No `frozen_repos` or `repos_to_keep_absent` entry is needed. The unarchived
 history; new product issues belong in MAM-basics.
 
 The frozen legacy set is the single `index.html` in
-`in/mam_osis_redirect_pages.json`. Production, the independent MAM-simple OSIS
-example, and the canonical suite run without a source clone. Keep the redirect-only
+`in/mam_osis_redirect_pages.json`. Production and the canonical suite run without a
+source clone. (This sentence also named "the independent MAM-simple OSIS example" until
+2026-09-12, when that example was retired along with the Sefaria one.) Keep the redirect-only
 MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
 publication still requires a temporary source host. Only when that work is selected:
 
