@@ -79,3 +79,24 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the finished
 September 8 plan remains unchanged, and no outward-facing act, destructive local act, external
 configuration write or receipt rewrite occurred.
+
+## Finding 20.3: the three paired referents are named directly
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 20.3
+is unfixed and not acted on.
+
+Implementation commit `ded05cd1d24baf32fc415e3d4da881b4527b2d99` on branch
+`dual-agent-review-2026-09-10` completes finding 20.3. The mega-coverage plan is finished, so D12
+leaves its historical “one flag-selected mode of a program and not another” sentence intact and
+`doc/PLAN-mega-coverage-update.md` names the mode that the mega runs and the mode that the mega does
+not run. The live `py/tests/test_mega_coverage.py` module docstring makes the same two referents
+explicit. The live `py/mb_cmn/graphviz_pin.py` module docstring names `check_installed` as the check
+that prevents a wrong Graphviz stamp and `stamp_in_svg_text` as the check of existing SVG stamps.
+All three sites were applicable prose defects rather than protected quotations. No other part of
+finding 20 changed.
+
+Product axis: the correction changes documentation and Python docstrings only; it changes no
+generator behavior or product and does not owe a mega run. Act axis: both commits are ordinary
+repository commits on the unpushed review branch; the finished mega-coverage plan remains
+unchanged, and no outward-facing act, destructive local act, external configuration write or
+receipt rewrite occurred.
