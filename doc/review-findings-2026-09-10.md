@@ -1,6 +1,6 @@
 # Findings of the 2026-09-10 review of the public repos since 2026-09-08
 
-State: not yet acted on, except findings 1 to 6, fixed on 2026-09-11 before the Codex counter-argument ran — findings 1 and 2 at Ben's direction, findings 3 to 6 unasked; see `## Dispositions after remediation` at the end
+State: acted on 2026-09-11 and 2026-09-12, in part — findings 1 to 6 on 2026-09-11, findings 12, 14, 15 and 17 and parts of 13, 16, 19 and 20 on 2026-09-12; findings 7 to 11, 18 and 21 and the rest of 13, 16, 19 and 20 not acted on. `## Dispositions after remediation` at the end has a row per fix and says which fixes Ben asked for.
 
 Written 2026-09-10, late evening, as the Claude argument, turn 1 of the standard alternating
 dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09): this file was
@@ -352,7 +352,9 @@ exemption used to be.
 
 ## Findings
 
-In rough order of consequence. Nothing was fixed. Line numbers are as measured at `0354b6cc`.
+In rough order of consequence. Nothing had been fixed when this list was written, and each lead
+still says what was true then; `## Dispositions after remediation` at the end records what has been
+fixed since. Line numbers are as measured at `0354b6cc`.
 
 1. **Code defect, unfixed: `py/main_diff.py mpp` raises at `0354b6cc`, so the mega's `diff-mpp`
    step fails and the change log cannot be regenerated.**
@@ -597,11 +599,12 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
        search-doc sites are that doc's voice — the category labels at 60, 61, 63 and 66, the
        claim at 216 and the scope note at 236 — while 141 to 146 report MAM's introduction
        and 221 reports Yeivin and Breuer.
-    4. Verbs the skill's "just say has" rule replaces, 8 sites. The skill retires writes,
-       carries, codes and prints by name; marks, puts and copies are that rule applied to
-       synonyms it does not name. `doc/meteg-after-silluq-koren-lookup-candidates.md:68`,
-       added by `18612038` on 2026-09-09, has two of the eight:
-       ("MAM writes one deḥi", "MAM-simple carries no deḥi stress helper").
+    4. Verbs the skill's "just say has" rule replaces, 9 sites on 8 lines. The skill retires
+       writes, carries, codes and prints by name; marks, puts and copies are that rule applied
+       to synonyms it does not name. `doc/meteg-after-silluq-koren-lookup-candidates.md:68`,
+       added by `18612038` on 2026-09-09, has two of the nine on its one line
+       ("MAM writes one deḥi", "MAM-simple carries no deḥi stress helper"); this item said
+       8 sites until 2026-09-12, having counted that line once.
        `doc/meteg-after-silluq-job-4-12.md` has four, one per site: :64 "MAM marks", :79
        "UXLC codes", :84 "MAM puts", :85 "the Aleppo Codex puts"; that doc has moved since
        `0354b6cc`, and at `ad73ec3a` those four are its lines 69, 84, 89 and 90. The
@@ -617,8 +620,12 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
        single-sources `ROM_PATAX = "pataḥ"`, so "pataḥ" wins over "patah", and the
        `hebrew-prose` skill writes "deḥi" in prose, reserving `dexi` for identifiers and
        `#` comments. The third word is settled nowhere: with "xataf" ruled out, all six
-       docs have "hataf", while 7 sites in tracked markdown elsewhere have "ḥataf", and
-       which of those two wins is Ben's to settle.
+       docs have "hataf", while "ḥataf" has 7 sites on 6 lines of tracked markdown outside
+       those six docs and this file — three in
+       `doc/mega-pipeline-review-findings-public-2026-09-01.md`, two on one line of
+       `misc/mam-is-a-dataset/script.md`, and one each in
+       `doc/mega-pipeline-review-phase-13-2026-09-01.md` and `doc/metsudah-vs-ctr.md`. Which
+       of those two spellings wins is Ben's to settle.
     6. `doc/PLAN-silluq-before-gaya-template.md` is still named with "gaya" while its line 81
        says the element name "deliberately uses meteg, not gaya" — pre-existing (`772545d5`), cited
        at seven in-scope sites, note only.
@@ -722,7 +729,7 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
        deleted the script and its message says the record stays as written; listed so the "now"
        is visible, not to reverse the choice (stream B1).
 
-20. **Prose-rule hits and small record slips, eleven of them, all low, unfixed:**
+20. **Prose-rule hits and small slips, eleven of them, all low, unfixed:**
     1. "hand-authored" at `CLAUDE.md:24, :37` (`036deb92`), `doc/PLAN-wikisource-derived-mam-products.md:594`,
        `doc/mam-products-phase6-command-map.md:156`, nine sites of the assessment and five of
        `py/tests/test_prose_mark_order.py`; "HAND-AUTHORED", "hand-maintained" and "hand-written"
@@ -889,7 +896,9 @@ make whatever wording changes this session saw fit to findings 12 to 21 without 
 detail, and to do whatever fix-now remediations it saw fit along the way — given after a risk
 assessment establishing that no fix among findings 12 to 21 changes MAM-parsed, MAM-simple,
 MAM-with-doc or `gh-pages`. Every commit in that batch is on `fix-review-2026-09-10-batch`,
-branched off `main`, under Ben's rule that fix-now remediation lands outside the review branch.
+branched off `main`, under Ben's rule that fix-now remediation lands outside the review branch;
+`main` contains all five as of 2026-09-12, so a row below naming only the branch names where its
+commit was made rather than the only place that commit is.
 The findings' own leads still say "unfixed", as findings 1 to 6 do, because each states what was
 true at the anchor `0354b6cc`; this table is where the disposition lives.
 
