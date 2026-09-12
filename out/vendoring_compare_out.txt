@@ -13,7 +13,7 @@ paths.py                                   MAM-basics                 MAM-simple
 provenance.py                              MAM-basics                 MAM-simple/py-examples/mb_cmn/provenance.py             identical      2026-09-10   generated
 shrink.py                                  MAM-basics                 MAM-simple/py-examples/mb_cmn/shrink.py                 identical      2026-09-06   generated
 str_defs.py                                MAM-basics                 MAM-simple/py-examples/mb_cmn/str_defs.py               identical      2026-09-06   generated
-template_names.py                          MAM-basics                 MAM-simple/py-examples/mb_cmn/template_names.py         identical      2026-09-11   generated
+template_names.py                          MAM-basics                 MAM-simple/py-examples/mb_cmn/template_names.py         identical      2026-09-12   generated
 uni_heb.py                                 MAM-basics                 MAM-simple/py-examples/mb_cmn/uni_heb.py                identical      2026-09-06   generated
 url_percent.py                             MAM-basics                 MAM-simple/py-examples/mb_cmn/url_percent.py            identical      2026-09-06   generated
 ws_tmpl1.py                                MAM-basics                 MAM-simple/py-examples/mb_cmn/ws_tmpl1.py               identical      2026-09-06   generated
