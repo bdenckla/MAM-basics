@@ -212,3 +212,26 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
 finished source report remains unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.2: finding 2's 23-call category label names the LC
+
+Recorded by Codex on 2026-09-12. This entry records further partial action on finding 11.2. The
+finding 2 category label beginning “23: L has a ga'ya to the right of its vowel” is complete;
+finding 11.2's later prose remains unacted on.
+
+Implementation commit `b7237bd84f107a8ed7b397871d079ea179087d23` on branch
+`dual-agent-review-2026-09-10` extends
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` with the cumulative corrected
+reading “23: the LC has a meteg to the right of its vowel (glyph placement).” The category label
+was individually checked in finding 2's category list. The correction carries forward finding
+11.3's `ga'ya`-to-`meteg` correction and adds only finding 11.2's `L`-to-“the LC” correction.
+
+The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The later prose corresponding to the original
+review's lines 108–146 remains for later tasks; this entry does not claim that all of finding
+11.2 is complete.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the
+finished source report remains unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
