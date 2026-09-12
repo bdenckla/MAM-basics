@@ -633,6 +633,25 @@ this session" and "since reverted" with no date, and gave no repo paths.
   black on the files touched, and commit-and-push per the Git section above — so the fresh
   session does not have to infer them from these global rules alone.
 
+## A finished dated document is corrected in `<stem>-update.md`, never edited
+
+Ben's decision, 2026-09-11, with the naming settled 2026-09-12. A finished dated document — a
+review, a remediation plan, a completed plan, an execution record — is left as written, like a
+pushed commit under a "never amend pushed commits" discipline. Keeping such documents current is
+maintenance without end, and it makes them more confusing rather than less, since a reader cannot
+tell how the writer could have known at the time what the document now says.
+
+So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
+small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes
+in `doc/PLAN-foo-update-2.md`, and so on. An update file names the passage it corrects by that
+passage's own words, since line numbers drift, and it is itself live, so it is kept true.
+
+A document that describes the present is the opposite case and is kept true in place: this file,
+a repo's own instruction file, the READMEs, the docstrings, and a plan still being executed. In
+MAM-basics the fuller statement is `doc/dual-agent-review.md`'s section "Correcting a finished
+dated document" (D12), and that repo's `CLAUDE.md` carries the same rule; this section exists
+because Codex loads neither of those files.
+
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
   on it before committing — mandatory, not optional.
@@ -751,6 +770,17 @@ There is no default template behavior.
   the template and explicitly deciding that every branch belongs in that operation. Name that
   scope in the module and output; "all branches" is a decision for a named template, never the
   fallback for an unknown template.
+- **A deep dive diagnoses; Ben decides semantic policy.** A request to inspect, audit, or
+  deep-dive template handling does not authorize choosing a projection, edition display, or
+  survey population. Choices among ketiv, qere, pointed ketiv, selected or all alternatives,
+  body-text, and doc-note-text depend on the consumer's goals and usually require Ben's judgment.
+  Separate the consumer-visible change types, report the existing behavior, examples, and counts,
+  and ask Ben which behavior to retain before implementing or recommending a policy change.
+- **An invalid representation does not select its replacement.** Concatenating ketiv and qere
+  into one form is objectively wrong, but that diagnosis establishes only what must not remain.
+  The consumer may need ketiv, qere, both as separate alternatives, or another explicit
+  projection. Apply an existing explicit policy; if none exists, ask Ben rather than inferring the
+  replacement from the diagnosis.
 - **Make every decision reviewable.** Keep template choices in a named policy or explicit
   call-site dispatch, record a generated survey's projection in metadata or documentation where
   practical, and verify regenerated outputs as differential tests. Ben's instruction,

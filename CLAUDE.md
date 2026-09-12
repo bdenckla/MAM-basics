@@ -512,6 +512,9 @@ the READMEs, the docstrings, and a plan still being executed. `doc/dual-agent-re
 "Correcting a finished dated document" (D12) is the fuller statement, and it also retired the
 close-out step that had said to add dated corrections beside the passage they correct.
 
+**Codex loads neither this file nor `doc/dual-agent-review.md`**, so the same rule is written into
+`~/.codex/AGENTS.md`, which is tracked here as `dot-Codex/user-wide-AGENTS.md`.
+
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
 Seven files, arrived 2026-08-21 with Phase 4 of `doc/PLAN-evacuate-python-from-book-of-job.md`
