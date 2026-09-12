@@ -58,3 +58,24 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 20.2: the three historical referents are named directly
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 20.2
+is unfixed and not acted on.
+
+Implementation commit `a65bb60ed66df1cbff72d105abc68c029006a38b` on branch
+`dual-agent-review-2026-09-10` completes finding 20.2. The September 8 remediation plan is a
+finished document, so D12 leaves both historical phrases unchanged; the plan's existing sibling
+update records source commit `0ee34bea8` for the first State and Ben's approval as the event that
+made the second State historical. The live September 9 instruction-file remediation plan names
+`references/sources-and-corpora.md` directly in place of “the latter.” All three sites were
+applicable prose defects rather than protected quotations. No other part of finding 20 changed.
+
+`git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
+with 5 skipped and 65 subtests passed. This documentation-only unit does not owe a mega run.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the finished
+September 8 plan remains unchanged, and no outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
