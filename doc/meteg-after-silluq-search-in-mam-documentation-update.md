@@ -96,3 +96,20 @@ Product axis: this correction changes documentation only and reaches no generato
 Act axis: this update file preserves the finished report rather than rewriting it; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 2's 23-call category label should name the LC
+
+Recorded by Codex on 2026-09-12. This entry corrects the finding 2 category label “23: L has a
+ga'ya to the right of its vowel (glyph placement).” The label is the report's analytic voice,
+and `L` in this label means the LC. Carrying forward the earlier correction from `ga'ya` to
+`meteg`, the cumulative corrected reading is “23: the LC has a meteg to the right of its vowel
+(glyph placement).”
+
+This correction applies only to that category label. Finding 11.2's later prose remains
+uncorrected. The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+Product axis: this correction changes documentation only and reaches no generator or product.
+Act axis: this update file preserves the finished report rather than rewriting it; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
