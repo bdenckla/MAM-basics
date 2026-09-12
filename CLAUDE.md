@@ -490,6 +490,28 @@ is both the most-cited of the seven and not natively this repo's file. So the un
 incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md` is the fuller
 statement, including the four reasons the rename was rejected; nothing in it has been run.
 
+## A finished dated document is corrected in `<stem>-update.md`, never edited
+
+Ben's decision, 2026-09-11, with the naming settled 2026-09-12. A finished dated document — a
+review, a remediation plan, a completed plan, an execution record — is left as written, like a
+pushed commit under a "never amend pushed commits" discipline. Keeping such documents current is
+maintenance without end, and it makes them more confusing rather than less, since a reader cannot
+tell how the writer could have known at the time what the document now says.
+
+So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
+small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes
+in `doc/PLAN-foo-update-2.md`, and so on. The update file names the passage it corrects by that
+passage's own words, since line numbers drift, and it is itself live, so it is kept true. The
+first four are `doc/review-findings-2026-09-08-update.md`,
+`doc/PLAN-remediate-review-findings-2026-09-08-update.md`,
+`doc/PLAN-efficient-wikisource-downloads-update.md` and
+`doc/PLAN-wikisource-derived-mam-products-update.md`.
+
+A document that describes the present is the opposite case and is kept true in place: this file,
+the READMEs, the docstrings, and a plan still being executed. `doc/dual-agent-review.md`'s section
+"Correcting a finished dated document" (D12) is the fuller statement, and it also retired the
+close-out step that had said to add dated corrections beside the passage they correct.
+
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
 Seven files, arrived 2026-08-21 with Phase 4 of `doc/PLAN-evacuate-python-from-book-of-job.md`

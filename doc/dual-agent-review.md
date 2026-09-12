@@ -169,7 +169,10 @@ them more confusing rather than less, since a reader cannot tell how the writer 
 at the time what the document now says.
 
 A correction, an update or a later measurement therefore goes in a sibling file named
-`<stem>-update.md`, and the document it corrects is not touched. The first four are
+`<stem>-update.md`, and the document it corrects is not touched. So a correction to
+`doc/PLAN-foo.md` goes in `doc/PLAN-foo-update.md`, and where a second round of corrections
+should not be added to that file either, it goes in `doc/PLAN-foo-update-2.md`, a third in
+`doc/PLAN-foo-update-3.md`, and so on (Ben, 2026-09-12). An update file is small by intent. The first four are
 `doc/review-findings-2026-09-08-update.md`,
 `doc/PLAN-remediate-review-findings-2026-09-08-update.md`,
 `doc/PLAN-efficient-wikisource-downloads-update.md` and
