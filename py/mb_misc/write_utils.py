@@ -55,15 +55,18 @@ _FOLDERS = {
         "vff-csv": "csv",
         "vff-xml": "xml",
     },
+    # No "vff-unicode-names" under vpq-vtrad-bhs or vpq-vtrad-sef: Ben retired those
+    # two Unicode-names trees on 2026-09-12, code as well as data, so asking for that
+    # format under either path qualifier is now a KeyError rather than a write nobody
+    # wanted.  main_mam_simple's "variant-writes-unicode-names" key is what decides
+    # which variant asks.
     "vpq-vtrad-bhs": {
         "vff-json": "json-vtrad-bhs",
-        "vff-unicode-names": "unicode-names-vtrad-bhs",
         "vff-csv": "csv-vtrad-bhs",
         "vff-xml": "xml-vtrad-bhs",
     },
     "vpq-vtrad-sef": {
         "vff-json": "json-vtrad-sef",
-        "vff-unicode-names": "unicode-names-vtrad-sef",
         "vff-csv": "csv-vtrad-sef",
         "vff-xml": "xml-vtrad-sef",
     },

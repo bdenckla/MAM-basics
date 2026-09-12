@@ -84,6 +84,16 @@ _VARIANT_VTMAM = {
     "variant-convert-vtrad": _do_not_convert,
     "variant-path-qual": "vpq-vtrad-mam",
     "variant-alt-id": "variant-alt-id-value-yeivin",
+    # The only variant that gets a Unicode-names rendering, and the only one that
+    # ever did after 2026-09-12.  Ben's decision that day: "ditch the -bhs and -sef
+    # versions of this 'unicode names' pseudo-edition", and, on being asked whether
+    # that meant the data alone, "by 'ditch' I mean not only remove the data, but
+    # make the code cease to generate them".  The two retired trees were
+    # MAM-simple/misc/unicode-names-vtrad-bhs/ and -sef/, 9.78 MB each.  They were
+    # near-duplicates of the -mam tree: measured that day, 18 of the 24 bhs book
+    # groups and 19 of the 24 sef ones were identical to their -mam counterpart but
+    # for the vtrad token in each verse's header line.
+    "variant-writes-unicode-names": True,
 }
 _VARIANTS = _VARIANT_VTBHS, _VARIANT_VTSEF, _VARIANT_VTMAM
 
@@ -115,15 +125,16 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     write_utils_json.write_root_in_json_fmt(
         json_path, json_root, generator_file=__file__
     )
-    verses_for_write = {"rv-cant-all-three": bkg_rendered}
-    write_utils.write_bkg_in_un_fmt(
-        variant,
-        bkg["bkg-name"],
-        verses_for_write,
-        "rv-cant-all-three",
-        out_subdir="misc",
-        generator_file=__file__,
-    )
+    if variant.get("variant-writes-unicode-names"):
+        verses_for_write = {"rv-cant-all-three": bkg_rendered}
+        write_utils.write_bkg_in_un_fmt(
+            variant,
+            bkg["bkg-name"],
+            verses_for_write,
+            "rv-cant-all-three",
+            out_subdir="misc",
+            generator_file=__file__,
+        )
 
 
 def _get_vtrad(verses):

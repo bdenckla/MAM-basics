@@ -71,9 +71,7 @@ _PROGRAM_WRITTEN_GROUPS = {
         "cam1753/check_line_breaks.html",
     ),
     "MAM-simple": (
-        "MAM-simple/misc/unicode-names-vtrad-bhs",
         "MAM-simple/misc/unicode-names-vtrad-mam",
-        "MAM-simple/misc/unicode-names-vtrad-sef",
         "MAM-simple/py-examples",
     ),
     "MAM-parsed": (

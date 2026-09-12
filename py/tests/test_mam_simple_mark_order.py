@@ -34,9 +34,16 @@ against 0.01 seconds for everything else, and it is the one part already guarant
 generation time by the assert named above. Including it would grow this repo's suite by
 a tenth for a second opinion on the only thing already proven.
 
-``misc/`` and ``py-examples-out/`` ARE covered, though both are generated: they are
-produced by the vendored copies under ``py-examples/``, which drift from this repo's
-originals between re-vendorings, so a check on them is a check on that drift.
+``misc/`` and ``py-examples-out/`` ARE covered, though both are generated. Until
+2026-09-12 the reason was that both were produced by the vendored copies under
+``py-examples/``, which drift from this repo's originals between re-vendorings, so a
+check on them was a check on that drift. That reason has thinned on both sides: the
+Sefaria and OSIS example programs were retired that day, so ``py-examples-out/`` holds
+one 40-byte file from ``main_letter_small_job_example.py``, and ``misc/`` lost
+``unicode-names-vtrad-bhs/`` and ``-sef/`` the same day, leaving
+``unicode-names-vtrad-mam/``, which ``py/main_mam_simple.py`` writes directly rather
+than through any vendored copy. Both stay in scope because checking them costs 0.01
+seconds and dropping a tree from a lint needs a better reason than that.
 
 WHAT MAM'S MARK ORDER IS, AND WHAT IT IS NOT
 
