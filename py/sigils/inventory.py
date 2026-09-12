@@ -181,7 +181,7 @@ def _note_node_to_text(node):
 
 
 def _without_pointed_hebrew(text):
-    """Remove pointed Hebrew quotations before scanning note prose for sigils."""
+    """Remove Hebrew clusters that contain a point or accent."""
 
     def replace_cluster(match):
         cluster = match.group(0)
@@ -257,9 +257,12 @@ def _looks_authority_like_expression(expression):
 
 def _split_expression_tokens(expression):
     tokens = []
-    for token in _TOKEN_SPLIT_RE.split(_without_pointed_hebrew(expression)):
-        cleaned = token.strip()
+    for token in _TOKEN_SPLIT_RE.split(expression):
+        filtered = _without_pointed_hebrew(token)
+        cleaned = filtered.strip()
         if cleaned == "":
+            continue
+        if filtered != token and not any(char.isalnum() for char in cleaned):
             continue
         if cleaned == "וכן":
             continue
