@@ -24,7 +24,8 @@ sat green. Ben chose the full stamp, 2026-09-09, knowing it means a benign rebui
 trips the check; when it does, the answer is to look at whether the tracked files
 really would change, and then either match the build or raise the pin.
 
-TWO READINGS, AND NEITHER ONE COVERS THE OTHER'S GROUND.
+``check_installed`` PREVENTS A WRONG GRAPHVIZ STAMP, WHILE
+``stamp_in_svg_text`` CHECKS EXISTING SVG STAMPS.
 
   * ``check_installed`` asks the dot executable what it is, and refuses to render
     with the wrong one. This is what PREVENTS a mis-stamped file being written,

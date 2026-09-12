@@ -44,8 +44,9 @@ a program after all, that program is reported as neither run nor declared.
 
 MODES, WHICH THE SCAN CANNOT SEE
 
-A mode chosen by flags or arguments is invisible to a scan of calls.  So where the mega
-runs one mode of a program and not another, the other mode is declared by hand, keyed
+A mode chosen by flags or arguments is invisible to a scan of calls.  So when the mega
+runs a flag-selected mode of a program but does not run a different flag-selected mode
+of the same program, the mode that the mega does not run is declared by hand, keyed
 ``"<program> <mode>"``: ``"py/main_find_uxlc_accent_changes.py --audit"``, or
 ``"py/main_accgram.py generate-html without --trust-survey"`` for the form lacking a
 flag the mega passes.  A mode's program must exist, and each ``--flag`` its key names
