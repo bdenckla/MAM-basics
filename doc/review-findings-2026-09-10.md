@@ -569,32 +569,56 @@ In rough order of consequence. Nothing was fixed. Line numbers are as measured a
     (added 2026-09-07, `9eedccbd`). The window's two licence commits, `c39b6dd6` and `42520d05`,
     both predate the directory, so no licence pass has run since the crops arrived (stream C).
 
-11. **Terminology in the meteg-after-silluq documents, unfixed, listed by rule** (stream C,
-    `C_03_terminology.py`, then read):
+11. **Terminology in the meteg-after-silluq documents, unfixed, listed by rule, except
+    item 1, which is a factual error about which printed book MAM's note compares rather
+    than a rule violation** (stream C, `C_03_terminology.py`, then read):
     1. `doc/meteg-after-silluq-search-in-mam-documentation.md:37, :52` render MAM's note's סימנים
        at 1 Kings 7:37 as "the Simanim Tiqqun". The Simanim Tiqqun is a Torah-and-haftarot tiqqun
        (`doc/scan-pages.md:6`) and 1 Kings 7:37 is in no haftarah (the readings from 1 Kings 7
        are 7:13–26, 7:40–50 and 7:51–8:21 — stream C's knowledge, not the repository's, since
        `in/scan-pages/simanim-tiqqun.json` has no census); the edition MAM's note compares is the
        Simanim Tanakh, which the Job and Psalms docs read by page (1172, 1053).
-       `references/terminology.md:291` says an unqualified "Simanim" "reads as the Tiqqun by
-       historical accident alone", which is what happened.
+       The two sites expanded a bare "Simanim" to the Tiqqun, which is the
+       accident `references/terminology.md:291` describes when it says that an unqualified
+       "Simanim" "reads as the Tiqqun by historical accident alone".
     2. Bare "L" and "A" for the two codices in the search doc's own voice, 36 sites (the
        classification column of finding 1's table at lines 20–47, the category label at 60, lines
        108–146), against the skill's "the LC" and the named codex.
-    3. "ga'ya" in the docs' own voice against their own declarations (search doc line 12,
-       empty-cell doc lines 10–13): 14 sites in the search doc (60, 61, 63, 66, 135, 141–146, 216,
-       221, 236) and 12 in `doc/foi-mtgmtg-empty-cell.md` (42, a heading; 45, 52, 63, 68, 71, 72,
-       120, 147, 169, 171).
-    4. Agentive verbs the skill has retired, 8 sites: `doc/meteg-after-silluq-koren-lookup-candidates.md:68`
-       ("MAM writes one deḥi", "MAM-simple carries no deḥi stress helper"; `18612038`),
-       `doc/meteg-after-silluq-job-4-12.md:64, :79, :84, :85` ("MAM marks", "UXLC codes", "MAM
-       puts", "the Aleppo Codex puts"), `doc/meteg-after-silluq-psalms-72-15.md:9, :14` and the Job
-       doc's line 9 ("MAM copies", "MAM prints").
+    3. "ga'ya" where each doc declares it says meteg (search doc line 12, empty-cell doc
+       lines 10–13): 14 sites in the search doc (60, 61, 63, 66, 135, 141–146, 216, 221, 236)
+       and 12 in `doc/foi-mtgmtg-empty-cell.md` (42, a heading; 45, 52, 63, 68 twice, 71,
+       72, 120, 147, 169, 171). Both counts are raw: stream C did not separate a site in a
+       doc's analytic voice, which those declarations forbid, from a site reporting what a
+       source says, which they permit. Re-read on 2026-09-12 at `ad73ec3a`, where neither
+       file has changed since `0354b6cc`: all 12 empty-cell sites sit in sentences
+       reporting Yeivin's sections or naming his categories, the two closest to that doc's
+       voice being 120's "most ga'ya categories" and 171's "how many ga'yot a verse-final
+       chanted word may have", so that half of this item may reduce to nothing. Six
+       search-doc sites are that doc's voice — the category labels at 60, 61, 63 and 66, the
+       claim at 216 and the scope note at 236 — while 141 to 146 report MAM's introduction
+       and 221 reports Yeivin and Breuer.
+    4. Verbs the skill's "just say has" rule replaces, 8 sites. The skill retires writes,
+       carries, codes and prints by name; marks, puts and copies are that rule applied to
+       synonyms it does not name. `doc/meteg-after-silluq-koren-lookup-candidates.md:68`,
+       added by `18612038` on 2026-09-09, has two of the eight:
+       ("MAM writes one deḥi", "MAM-simple carries no deḥi stress helper").
+       `doc/meteg-after-silluq-job-4-12.md` has four, one per site: :64 "MAM marks", :79
+       "UXLC codes", :84 "MAM puts", :85 "the Aleppo Codex puts"; that doc has moved since
+       `0354b6cc`, and at `ad73ec3a` those four are its lines 69, 84, 89 and 90. The
+       remaining three are `doc/meteg-after-silluq-psalms-72-15.md:9` "MAM copies", the
+       same file's `:14` "MAM prints", and `doc/meteg-after-silluq-job-4-12.md:9`, "MAM
+       copies" again.
     5. Three romanizations of the same three words across the six docs: "patax / xataf / dexi" in
        the screen doc (17 sites) and the search doc (11), "pataḥ / hataf / deḥi" in the Koren doc
-       (229) and `doc/post-stress-meteg-method.md`, "patah / hataf" in the in-uxlc, Job and Psalms
-       docs; the user-level rule puts ASCII `x` in `#` comments only.
+       (227) and `doc/post-stress-meteg-method.md` (2), "patah / hataf" in the in-uxlc, Job and
+       Psalms docs. The user-level rule puts ASCII `x` in `#` comments only, which rules
+       out "patax / xataf / dexi" and settles nothing between the other two sets. Two of
+       the three words are settled elsewhere: `py/accgram/printed_decalogue_strands.py:235`
+       single-sources `ROM_PATAX = "pataḥ"`, so "pataḥ" wins over "patah", and the
+       `hebrew-prose` skill writes "deḥi" in prose, reserving `dexi` for identifiers and
+       `#` comments. The third word is settled nowhere: with "xataf" ruled out, all six
+       docs have "hataf", while 7 sites in tracked markdown elsewhere have "ḥataf", and
+       which of those two wins is Ben's to settle.
     6. `doc/PLAN-silluq-before-gaya-template.md` is still named with "gaya" while its line 81
        says the element name "deliberately uses meteg, not gaya" — pre-existing (`772545d5`), cited
        at seven in-scope sites, note only.
