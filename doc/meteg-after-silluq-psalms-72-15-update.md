@@ -25,3 +25,16 @@ the report. The leads should be read as follows:
 
 The finished Psalms 72:15 report remains unchanged; these corrections change only the order in
 which the three leads state their existing dispositions.
+
+## Finding 11.4: the two possession verbs should read “has”
+
+Recorded by Codex on 2026-09-12. Both cited sites are the report's analytic prose rather than
+protected quotations. The passages should be read with these two corrections:
+
+1. The clause “MAM copies the meteg as the Aleppo Codex has it wherever that manuscript survives”
+   should read “MAM has the meteg as the Aleppo Codex has it wherever that manuscript survives”.
+2. The clause “MAM prints in its place a special sign over the letter with the sheva” should read
+   “MAM has in its place a special sign over the letter with the sheva.”
+
+The finished Psalms 72:15 report remains unchanged. The corrections replace only the two
+possession verbs and do not change either claim.
