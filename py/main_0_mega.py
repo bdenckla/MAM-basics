@@ -702,8 +702,8 @@ _STEPS = [
         "pipeline-graph",
         main_pipeline_graph.almost_main,
         "writes doc/process-documentation/pipeline.dot and pipeline.svg from the"
-        " hand-maintained py/pipeline_graph/pipeline_graph_spec.py, and renders the"
-        " hand-written MAM-process.dot to MAM-process.dot.svg; needs the pinned"
+        " py/pipeline_graph/pipeline_graph_spec.py spec, and renders the Ben-written"
+        " MAM-process.dot to MAM-process.dot.svg; needs the pinned"
         " Graphviz, and a cloud session skips its two SVG renders as it does"
         " tmpl-survey's",
     ),

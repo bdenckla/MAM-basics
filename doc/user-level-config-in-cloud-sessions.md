@@ -211,8 +211,9 @@ not tracked; the six cases are listed here so they can be rebuilt.
 
 **The whole path was then exercised in a real cloud container**, on `main` at `74d883d2`; the
 section above records what that run measured. It also settles the one thing the harness cannot:
-that the hook makes no network call. The script invokes `cp`, `echo`, `ls`, `mkdir`, and `cd` /
-`dirname` / `pwd` in its repository-root fallback, and nothing else — no `git`, no `curl`, no
+that the hook makes no network call. The script invokes `cp`, `echo`, `ls`, `mkdir`, `sed` to
+indent one listing, and `cd` / `dirname` / `pwd` in its repository-root fallback, and
+nothing else — no `git`, no `curl`, no
 `gh`.
 
 **The local guard was also exercised against the live `~/.claude/` rather than a fake one**, which
