@@ -144,3 +144,25 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; both
 finished dated reports remain unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.4: the nine possession verbs have live “has” corrections
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.4
+is unfixed and not acted on.
+
+Implementation commit `0e40b5a1d545d13e815e863c759d6b013b40a5ae` on branch
+`dual-agent-review-2026-09-10` completes finding 11.4. The new
+`doc/meteg-after-silluq-koren-lookup-candidates-update.md` gives the two corrected Koren-candidates
+passages, the new `doc/meteg-after-silluq-job-4-12-update.md` gives the five corrected Job 4:12
+passages, and the existing `doc/meteg-after-silluq-psalms-72-15-update.md` now gives the two
+corrected Psalms 72:15 passages.
+
+All nine sites were individually confirmed as the reports' analytic prose rather than protected
+quotations. Each correction replaces only the cited possession verb with “has” and preserves the
+passage's claim. The three finished source reports remain unchanged. Finding 11.5's choice between
+`hataf` and `ḥataf` remains unmade.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; all three
+finished dated reports remain unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
