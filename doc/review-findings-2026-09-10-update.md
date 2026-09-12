@@ -36,3 +36,25 @@ Implementation commit `d18cbb4b` on branch `dual-agent-review-2026-09-10` adds t
 from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-update.md`, never
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
+
+## Finding 11.1: MAM's `סימנים` identifies the Simanim Tanakh
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.1
+is unfixed and not acted on.
+
+Implementation commit `f13b1a988ebd9871db11f28ea4aec831c48fc0c1` on branch
+`dual-agent-review-2026-09-10` adds
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md`. The search document is a
+finished report, so D12 leaves its two historical references to “the Simanim Tiqqun” intact and
+the sibling update says that both references should read “the Simanim Tanakh.”
+
+The correction rests on MAM's mirrored public introduction at
+`in/mam-ws-intro/appendices.mediawiki`, which defines `סימנים` in the list of editions based on
+the Aleppo Codex as `תנ"ך סימנים (פלדהיים תשס"ח)`. No inference about the Simanim Tiqqun's
+haftarot is needed. Finding 11's remaining prose sites are unchanged, and no choice between
+`hataf` and `ḥataf` has been made.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
