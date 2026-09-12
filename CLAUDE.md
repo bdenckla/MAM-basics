@@ -469,14 +469,14 @@ standing exceptions in this repository, and holman-ketiv-qere and book-of-job ne
 
 ## An unprefixed `doc/review-findings-<date>.md` is the Claude series
 
-The periodic review series has been Claude-only since 2026-07-29, and its files are named
-`doc/review-findings-<date>.md` with no agent name in them. Should a Codex counterpart ever be run,
-it takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
+The periodic review series is `doc/review-findings-<date>.md`, with no agent name in the file
+name, and `doc/periodic-review.md` describes it. When Codex reviews the same window, its file
+takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
 renamed to match** — measured 2026-09-01, the rename cost 41 lines across 18 files to buy an
 asymmetry one sentence fixes, and the file it would churn most, `doc/review-findings-2026-07-29.md`,
-is both the most-cited of the seven and not natively this repo's file. So the unprefixed name is the
-incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md` is the fuller
-statement, including the four reasons the rename was rejected; nothing in it has been run.
+is both the most-cited in the series and not natively this repo's file. So the unprefixed name is
+the incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md`'s D10 is
+the fuller statement, including the four reasons the rename was rejected.
 
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 

@@ -566,9 +566,10 @@ original, which was written while the twelve files were still in a private repos
 
 ### The two properties of the series, and what each one actually excluded
 
-The process is defined in `doc/dual-agent-review.md` §"What the periodic review is, and what Codex
-joined" — every four to eight days, public repositories only since 2026-08-26, doc-only since
-2026-09-01 — with each `doc/review-findings-<date>.md` restating its scope, anchors and streams. The
+The process is defined in `doc/periodic-review.md` §"What the periodic review is" and
+§"Two standing properties of the series" — every four to eight days, public repositories only
+since 2026-08-26, doc-only since 2026-09-01 — with each `doc/review-findings-<date>.md`
+restating its scope, anchors and streams. The
 convention of record for both properties is the "The doc/ directory standard" section of
 `py/repo_util/check_repo_standards.py`'s module docstring. Read it there rather than re-deriving it.
 

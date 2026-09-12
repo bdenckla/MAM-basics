@@ -292,8 +292,9 @@ produced, so for plans a high reference count can report that the work landed, n
 that the file is still wanted. Keep the screen for other `doc/` files; read the
 `State:` line for plans.
 
-For the current review-file naming and State rules, see `doc/dual-agent-review.md`,
-"Review filenames and State lines" (Ben's decision, 2026-09-09, D10). That procedure
+For the current review-file naming and State rules, see `doc/periodic-review.md` for
+the series and `doc/dual-agent-review.md`, "Review filenames and State lines" (Ben's
+decision, 2026-09-09, D10), for the files of a two-agent window. D10
 covers the initial reviews, Codex counterparts and exceptional additional reviews,
 and later numbered turns; the historical review glob below names only the initial
 Claude series. This pointer adds no mechanical standards check.
@@ -346,7 +347,7 @@ work somebody must do still files a real issue with a real body, and #233
 is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
 merits.  The test is whether the issue says anything the doc does not.
 
-AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/dual-agent-review.md
+AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/periodic-review.md
 calls the series "doc-only since 2026-09-01" and points here for the
 convention, so the phrase is worth pinning: what became doc-only is where a
 review is WRITTEN DOWN -- the doc alone, the thin issue retired, the State
