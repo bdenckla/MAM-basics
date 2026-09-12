@@ -189,3 +189,26 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
 finished source report remains unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.2: finding 1's Classification cells name the codices
+
+Recorded by Codex on 2026-09-12. This entry records partial action on finding 11.2: the
+Classification-column subunit in finding 1's 31-row table is complete, while finding 11.2's
+category label and later prose remain unacted on.
+
+Implementation commit `50f1bf56dc0f311f91641005d4c0f84437059985` on branch
+`dual-agent-review-2026-09-10` extends
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` with corrected readings for all
+22 applicable Classification cells. The 23 individually checked abbreviations comprise 19 uses
+of `L`, corrected to “the LC,” and 4 uses of `A`, corrected to “the Aleppo Codex.” The
+Reference, Template, Target and Note columns remain unchanged.
+
+The finished source report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The category label corresponding to the original
+review's line 60 and the later prose corresponding to its lines 108–146 remain for later tasks;
+this entry does not claim that all of finding 11.2 is complete.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the
+finished source report remains unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
