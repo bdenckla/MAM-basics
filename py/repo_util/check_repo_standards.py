@@ -323,6 +323,24 @@ that the doc did not, and the State line is that, in the file a reader is
 already in.  #261 and #263 were closed on 2026-09-01 with a comment saying
 why; the other five were already closed.
 
+THE `State:` LINE ON doc/*-update.md, declared 2026-09-12: line 3, directly
+under the H1, the word `open` plus a first-entry date -- the position and
+shape the two declarations above use.  The declaration follows the practice
+rather than founding it.  All eight update files already carried the line,
+several sessions having reached the same wording with nothing to copy from:
+measured 2026-09-12, six on `main` and two arriving with the 2026-09-10
+review round, five reading "first entry" and three "first entries".  Nothing
+checks it, here or anywhere else.
+
+`open` IS NOT `live`, and the difference is which thing the word describes.
+`live` describes the WORK: a plan is `live` while the work it names is still
+being done, which is why it has a terminal state, `executed <date>`.  `open`
+describes the FILE.  An update file's entries are each finished and dated the
+moment they are written, so nothing in one is ever pending; it is `open`
+because more entries are expected, and it has no terminal state for as long as
+the document it corrects exists.  Reusing `live` would import a life cycle the
+genre does not have.
+
 What is retired is the THIN POINTER, not issue-filing.  A review that finds
 work somebody must do still files a real issue with a real body, and #233
 is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
