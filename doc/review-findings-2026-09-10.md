@@ -923,3 +923,47 @@ Findings 7 to 11, 13.1, 16.2, 18, 19.3, the rest of 20, and all of 21 are not ac
 7 to 11 have been presented to Ben and reworded with their problems deliberately left standing;
 18 records evidence rather than proposing a fix; and 21 is a list of decisions that are Ben's by
 design.
+
+### Three items this round's integration inherits
+
+Recorded by a Claude session on 2026-09-12, alongside the two commits it made on `main`,
+`575114dc` and `39cdd0e3`. None of the three is a finding; each is work that can only be finished
+when this branch integrates.
+
+1. **The `CLAUDE.md` conflict between `main` and this branch has been removed.** Finding 17's fix,
+   `6dfabceb` on `main`, and this branch's terminology rename, `3f962e62`, edited the same two
+   sentences of the section "A code path reads MAM-private every time it runs, or never", and each
+   fixed a defect the other did not: `6dfabceb` the factual error about which code paths read
+   Phonetic MAM, `3f962e62` the use of "displayed record" for a survey entry. Taking either side
+   whole would have dropped the other fix. The union — `main`'s text with only the two word
+   substitutions applied — is on `main` as `575114dc`, and this branch's competing hunk is removed
+   in this commit, which restores that paragraph to its pre-`3f962e62` text byte for byte.
+   `3f962e62`'s renames inside this document are deliberately untouched, `main` having made no
+   edit to it. `git merge-tree --write-tree --name-only origin/main dual-agent-review-2026-09-10`
+   reported `CONFLICT (content): Merge conflict in CLAUDE.md` before this commit; the same command
+   run after it reports no conflict.
+
+2. **The `State: open` declaration for `doc/*-update.md` is on `main` as `39cdd0e3`, and its two
+   pointers are still owed, to be added when this branch integrates.** The declaration sits in
+   `py/repo_util/check_repo_standards.py`'s "The doc/ directory standard" docstring, beside the
+   State-line declarations for plans and for `doc/review-findings-*.md`: line 3 directly under the
+   H1, the word `open` plus a first-entry date, declared rather than invented, since all eight
+   update files already carried it. It also records the distinction Ben asked to have written
+   down — `live` is about the work and so has a terminal state, `executed <date>`, while `open` is
+   about the file and has none for as long as the document it corrects exists. The two sections
+   that should point at the declaration exist only on this branch, which is why the pointers wait
+   for integration instead of going on `main`: `CLAUDE.md`'s "A finished dated document is
+   corrected in `<stem>-update.md`, never edited", and decision D12 of `doc/dual-agent-review.md`.
+   Each should cite the declaration rather than restate it. That `CLAUDE.md` section's own history
+   is the argument: its restated list named four of the five update files that existed on
+   2026-09-11, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`.
+
+3. **The sync discipline for the live user-level files is deferred, with four decisions that are
+   Ben's to make.** Ben's proposal, 2026-09-12: that the live `~/.claude/CLAUDE.md` and
+   `~/.codex/AGENTS.md` be synced only from `origin/main` and never from a branch, so that a live
+   copy every session loads cannot carry text no integrated commit contains. Nothing has been
+   written, because four things are undecided. First, which `main` the rule names. Second, whether
+   the cloud-session hook's copy out of a branch checkout is a declared exception to it. Third,
+   whether the sync writes all three homes, `~/.agents/skills/` included, or only the two this
+   proposal names. Fourth, whether a `--check` mode is wired into anything that actually runs, or
+   is left as a command somebody remembers to type.

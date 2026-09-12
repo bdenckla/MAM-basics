@@ -783,11 +783,10 @@ clone, and nothing before then shows that the dependency exists.
 
 The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
 mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
-spelling in MAM-private's Phonetic MAM for any displayed survey entry with no `mam_form`. No
-displayed survey entry lacked one, so the lookup never ran. The renderer raises instead now, and
-only the survey build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM.
-`py/mb_cmn/paths.py`'s `al_hatorah_phonetic_dir` docstring states the rule where a new reader
-would call it.
+spelling in MAM-private's Phonetic MAM for any displayed record with no `mam_form`. No displayed
+record lacked one, so the lookup never ran. The renderer raises instead now, and only the survey
+build in `py/accgram/post_stress_meteg.py` reads Phonetic MAM. `py/mb_cmn/paths.py`'s
+`al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
 
 ## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
 
