@@ -100,3 +100,26 @@ generator behavior or product and does not owe a mega run. Act axis: both commit
 repository commits on the unpushed review branch; the finished mega-coverage plan remains
 unchanged, and no outward-facing act, destructive local act, external configuration write or
 receipt rewrite occurred.
+
+## Finding 20.4: the five announced sets are numbered
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 20.4
+is unfixed and not acted on.
+
+Implementation commit `5d771295d95f87265cbc7ec169402f5f795c28b0` on branch
+`dual-agent-review-2026-09-10` completes finding 20.4. The live instruction-file remediation plan
+now numbers its two stale conditions. The live hook comment reconciles “Four further trees” with
+the three entries it presents, calls them three entries, and numbers them 1 through 3.
+
+The completed five-products evacuation plan and the completed two-artifact assessment remain
+unchanged; their existing sibling update files give the two public findings and the three reasons
+as numbered lists. The completed meteg-after-silluq screen report also remains unchanged; the new
+`doc/meteg-after-silluq-screen-against-uxlc-and-wlc-update.md` gives its two opening definitions as
+a numbered list. All five sites were applicable prose rather than protected quotations. No other
+part of finding 20 changed.
+
+Product axis: the correction changes documentation and a code comment only; it changes no
+generator behavior or product and does not owe a mega run. Act axis: both commits are ordinary
+repository commits on the unpushed review branch; all three finished dated documents remain
+unchanged, and no outward-facing act, destructive local act, external configuration write or
+receipt rewrite occurred.
