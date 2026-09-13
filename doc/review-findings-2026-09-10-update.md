@@ -1004,22 +1004,25 @@ their original range; current filesystem and remote checks are dated below.
    tracked-first edits caused no current mismatch; no live user-level file was written here.
    Inherited item 3's four broader sync-discipline choices remain separate and decision-pending.
 
-6. **Item 21.6 still needs Ben's issue-completion decision.** Read-only GitHub checks on
-   2026-09-13 find issues #266 and #267 open. Each issue still has only skadish1's 2026-09-09
-   “Fixed” comment and Wikisource diff link. The MAM source, plus and plain Psalms files have no
-   commit after `0354b6cc`, so the fixes found there at the review anchor remain in all three.
-   The issue bodies ask whether MAM needs the two deḥi stress-helper changes and state no
-   downstream phonetic-hbo completion criterion. Ben still needs to choose between exactly these
-   alternatives:
+6. **Item 21.6 is complete under Ben's decision for issues #266 and #267.** Ben decided on
+   2026-09-13 to close both issues when the requested Wikisource corrections had reached the MAM
+   source and MAM-parsed products, without making downstream phonetic-hbo regeneration a
+   completion criterion. Ben described the choice between the two recorded alternatives as a
+   tough judgment call, so this disposition establishes no repository-wide issue-completion rule.
 
-   1. Close both issues now, because the requested Wikisource changes have been refreshed into
-      the MAM source and derived MAM products. Each close must include an agent-written comment
-      that says why it is closing.
-   2. Keep both issues open until the relevant phonetic-hbo page has been regenerated or verified
-      to contain the upstream changes, then close each issue with the same explanatory and
-      agent-attributed comment.
+   A pre-action read-only GitHub check found both issues open, each still with only skadish1's
+   2026-09-09 “Fixed” comment and Wikisource diff link. Commit `209b4c05` remained the last commit
+   to each of `in/mam-ws/D1-Psalms.json`, `MAM-parsed/plus/D1-Psalms.json` and
+   `MAM-parsed/plain/D1-Psalms.json`; all three have both corrections. The live phonetic-hbo
+   `main` remained at `10de797098dab454b5b92e1d4f479fba68f6674b`, and the relevant generated
+   Psalms pages had not received the corrections. That separate downstream state did not block
+   the completion criterion Ben selected for these two issues.
 
-   No issue comment, state, label or assignment changed during this remediation.
+   Codex then posted an agent-written comment stating the reason and the selected completion
+   criterion on [#266](https://github.com/bdenckla/MAM-basics/issues/266#issuecomment-5654334247)
+   and [#267](https://github.com/bdenckla/MAM-basics/issues/267#issuecomment-5654335637), immediately
+   before closing each issue. A final read-only check found #266 closed at 15:53:01Z and #267
+   closed at 15:53:16Z on 2026-09-13. No label or assignment changed.
 
 7. **Item 21.7 is fixed in the live instruction-file remediation plan.** Commit `516a4a1a`
    remains in the live tree, and repository `CLAUDE.md` states that a normal linked worktree needs
@@ -1053,9 +1056,10 @@ their original range; current filesystem and remote checks are dated below.
 These documentation corrections reach no generator or product and do not owe a mega run.
 
 Product axis: the changes affect current review and process documentation only. Act axis: the
-writes are ordinary repository changes on the unpushed review branch. Read-only checks reached
-GitHub issues, remote refs and live user-level files, but no outward-facing act, destructive local
-act, external configuration write or finished-record rewrite occurred.
+repository writes are ordinary changes on the unpushed review branch. The explanatory comments
+and state changes on issues #266 and #267 are outward-facing acts explicitly authorized by Ben's
+2026-09-13 decision. No destructive local act, external configuration write or finished-record
+rewrite occurred.
 
 ## Finding 7.1, September 8 remediation plan: no missing `.novc` dependency remains
 
