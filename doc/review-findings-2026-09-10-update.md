@@ -155,6 +155,31 @@ local act. The deployment's fresh remote source, validation, staged replacements
 post-deployment verification address that act risk. No cloud-only executable path or finished
 dated record was changed.
 
+## Integration mega: restored-tree provenance resolution is fixed
+
+Recorded by Codex on 2026-09-13. The integration mega after commit `5eca0c83` changed only
+`gh-pages/MAM-with-doc/change-log/unpinned-latest.html` and its JSON counterpart. The regenerated
+files replaced content commit `73c6b113` with older commit `209b4c05`, although `73c6b113` was the
+last commit that changed `MAM-parsed/plus` and both commits contain the same tree there.
+
+The cause was `mpplus_revisions.resolve()` calling `git log -1 -- MAM-parsed/plus`. Git's ordinary
+path-history simplification skipped `73c6b113` because that commit restored the tree already
+present at `209b4c05`. That result violated the resolver's stated contract to name the last commit
+that changed the path and would have regressed the change log's accurate provenance.
+
+Implementation commit `9f6ee787` adds `--full-history` to that lookup and records the restored-tree
+case in the resolver's docstring. The targeted `py/main_diff.py mpplus --all` regeneration then
+left every tracked change-log file unchanged. Black and Ruff passed on the changed Python file.
+After the implementation commit, the full suite passed 997 tests, with 5 skipped, in 80.29
+seconds. The final integration mega passed all 55 steps in 174.2 seconds and left the worktree
+clean.
+
+Product axis: the fix changes the generator for MAM-with-doc's published change-log provenance;
+the present generated product remains byte-identical because the tracked provenance was already
+correct. Act axis: commit `9f6ee787` is an ordinary repository change on the unpushed review
+branch. No external configuration write, destructive local act or finished-record rewrite
+occurred. The eventual push of `main` is outward-facing.
+
 ## Finding 11.1: MAM's `סימנים` identifies the Simanim Tanakh
 
 Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.1
