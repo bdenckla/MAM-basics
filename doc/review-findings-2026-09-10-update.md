@@ -693,3 +693,70 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository change on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 10: Aleppo crop license-notice wording still needs Ben's decision
+
+Recorded by Codex on 2026-09-12. Finding 10 is re-established and remains decision-pending; no
+license wording, image license or crop has been changed.
+
+At checkpoint `217fd9086eddc03af6e480e1895a03eefe3f25fe`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, the live evidence is:
+
+1. `DATA-LICENSES.md:92` still has the path cell “`aleppo/`, except `aleppo/aleppo-pages/` and
+   `aleppo/aleppo-wiki/`.” Its content cell names “line and column data annotated by Ben
+   Denckla, derived reports, procedures, and provenance records”; its terms cell names “Ben
+   Denckla's compilation and analysis.” The path cell does not exclude `aleppo/page-snips/`, and
+   neither descriptive cell names photographic crops.
+2. `DATA-LICENSES.md` still has no row specific to `aleppo/page-snips/`.
+   `DATA-LICENSES.md:95` separately covers `leningrad/page-snips/` as “crops that Ben Denckla
+   made from Leningrad Codex photographs,” under “each rights holder's; no grant is made or
+   implied here,” and says that the crops are reproduced as evidence for the manuscript readings
+   documented beside them.
+3. `aleppo/page-snips/` currently contains two PNG crops and its README. The README records Ben's
+   2026-09-10 judgment that tiny crops like these are kept as fair use, says that each section
+   identifies the crop's author and source image, and says that Ben's crops come from mgketer.org
+   unless he says otherwise. Both crop sections identify Ben and an mgketer.org image.
+4. `ca0b4d02064280c19907d47b788fb9b83f82e70d` introduced the directory and the first crop at
+   20:26 on 2026-09-10; `7d40fa06c776e5e74e6034799508b3c57d23ba81` added the second at 20:55.
+   The latest commit to `DATA-LICENSES.md` is still
+   `7fa58d7345eafa5a9903a5e7be7bf23aadb8bb99` at 18:10 that day, before either crop arrived.
+5. The reconciliation confirms a notice-coverage mismatch and leaves reader-facing license
+   wording as an editorial proposal. Ben's later wording approval in
+   `ad73ec3a750cc85f7beb77276b14f946ae132d20` changes the finding's lead to “Licence coverage
+   gap,” names the Leningrad row as the row a remedy would copy, and says that Ben had not asked
+   for remediation. A search of later repository history and the current repository, Codex and
+   Claude instructions found no later explicit Ben decision selecting the table wording.
+
+Ben still needs to choose between two concrete table treatments:
+
+1. **Add a dedicated Aleppo-crops row.** Change the catch-all path cell to the following text,
+   then add the proposed row beside the other Aleppo rows:
+
+   ```markdown
+   `aleppo/`, except `aleppo/aleppo-pages/`, `aleppo/aleppo-wiki/` and `aleppo/page-snips/`
+   ```
+
+   ```markdown
+   | `aleppo/page-snips/` | crops that Ben Denckla made from Aleppo Codex photographs shown by mgketer.org | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the manuscript readings documented beside them |
+   ```
+
+2. **Use one row for both codices' crop directories.** Make the same change to the Aleppo
+   catch-all path cell, then replace the existing Leningrad row with this shared row:
+
+   ```markdown
+   | `aleppo/page-snips/`, `leningrad/page-snips/` | crops that Ben Denckla made from Aleppo and Leningrad Codex photographs | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the manuscript readings documented beside them |
+   ```
+
+Neither alternative repeats the Aleppo README's fair-use statement in `DATA-LICENSES.md`.
+Repeating that statement in the root license notice would be a separate reader-facing wording
+decision. Until Ben selects the table treatment, `DATA-LICENSES.md`, both crop directories, all
+images and all finished dated documents remain unchanged. This documentation-only disposition
+reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 76.82 seconds.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
