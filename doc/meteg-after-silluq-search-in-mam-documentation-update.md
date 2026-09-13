@@ -22,6 +22,30 @@ Act axis: this update file preserves the finished report rather than rewriting i
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 11.5: narrative romanizations should use `pataḥ`, `ḥataf` and `deḥi`
+
+Recorded by Codex on 2026-09-13. A fresh census of the finished search report found 1 `patax`
+site, 2 `patah` sites, 6 `xataf` sites, 3 `hataf` sites and 4 `dexi` sites. The corrected
+readings are:
+
+1. In finding 1's Deuteronomy 5:6 Classification cell, “the עליון's patah and revia” should read
+   “the עליון's pataḥ and revia.”
+2. In finding 2's category label “31: a hataf against a sheva after a meteg,” `hataf` should read
+   `ḥataf`.
+3. In the paragraph beginning “`.novc/mas_a_stress_after_census.py` counts,” `xataf` should read
+   `ḥataf`, `patax` should read `pataḥ`, and both `dexi` sites should read `deḥi`.
+4. In items 7 and 8 of the twelve-item list that follows that paragraph, `dexi` should read
+   `deḥi` in each item.
+5. In the paragraph beginning “So, relative to Phonetic MAM,” both `xataf` sites should read
+   `ḥataf`.
+6. In the table that follows that paragraph, the Genesis 6:20, Genesis 10:22 and Genesis 11:6
+   cells saying “a xataf syllable” should say “a ḥataf syllable”; the Psalms 12:6 cell should say
+   “the furtive pataḥ”; and the Psalms 27:11 and Psalms 60:9 cells should each say “before the
+   ḥataf.”
+
+The finished search report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
 ## Finding 1 Classification cells should name the two codices
 
 Recorded by Codex on 2026-09-12. This entry corrects 23 bare codex abbreviations in 22 of

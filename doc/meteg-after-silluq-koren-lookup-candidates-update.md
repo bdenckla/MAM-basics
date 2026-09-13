@@ -20,3 +20,20 @@ read with these two corrections:
 
 The finished Koren-candidates report remains unchanged. The corrections replace only the two
 possession verbs and do not change either claim.
+
+## Finding 11.5: narrative `hataf` should read `ḥataf`
+
+Recorded by Codex on 2026-09-13. A fresh census of the finished Koren-candidates report found 10
+plain-`hataf` sites on five lines. The corrected readings are:
+
+1. In the opening decision **Syllables are counted the Masoretic way**, all three `hataf` sites
+   should read `ḥataf`.
+2. In section 2's **Syllable verdict** item, both `hataf` sites should read `ḥataf`.
+3. In section 2's **Sheva after the first mark** item, `hataf` should read `ḥataf`.
+4. In section 2's **Twin evidence** item, both `hataf` sites should read `ḥataf`.
+5. In the paragraph beginning “Over all 263,320 chanted words of Phonetic MAM,” both `hataf`
+   sites should read `ḥataf`.
+
+The identifier path `py/explicit_xataf/extract.py` remains as written because file paths and
+code identifiers retain the ASCII-oriented spelling `xataf`. The finished Koren-candidates
+report remains unchanged at Git blob `51dfa981efc871449cee7830b294389e5ecb7dbf`.

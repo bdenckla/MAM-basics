@@ -644,6 +644,24 @@ D12 leaves all six finished Markdown documents unchanged. The next remediation t
 document-by-document corrected readings in sibling update files; this task records the decision
 only.
 
+### Document-by-document correction follow-through
+
+Recorded by Codex on 2026-09-13. The document-by-document correction follow-through is complete.
+Five existing sibling update files now give precise corrected readings, and
+`doc/meteg-after-silluq-in-uxlc-and-wlc-update.md` supplies the previously missing sixth sibling.
+The six finished reports remain byte-identical to the Git blobs recorded in those sibling update
+entries.
+
+The fresh source-report census confirmed 24 plain-`hataf` sites on 15 lines, 14 `xataf` sites on
+10 lines and no `ḥataf`. The sibling updates correct all 24 plain-`hataf` sites and the 13
+narrative `xataf` sites to `ḥataf`. The identifier path `py/explicit_xataf/extract.py` remains
+`xataf`. The same entries complete finding 11.5's already-settled romanizations by correcting
+every narrative `patax` or `patah` site to `pataḥ` and every narrative `dexi` site to `deḥi`.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: the sibling update files preserve all six finished reports rather than rewriting any
+receipt; no outward-facing act, destructive local act or external configuration write occurred.
+
 `git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
 with 5 skipped and 65 subtests passed. This documentation-only disposition reaches no generator
 or product and does not owe a mega run.

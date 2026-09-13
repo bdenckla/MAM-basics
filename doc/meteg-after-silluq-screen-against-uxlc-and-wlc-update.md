@@ -41,3 +41,22 @@ that follows the lead. The leads should be read as follows:
 
 The finished screen report remains unchanged; these corrections change only the order in which
 the four leads state their existing dispositions.
+
+## Finding 11.5: narrative romanizations should use `pataḥ`, `ḥataf` and `deḥi`
+
+Recorded by Codex on 2026-09-13. A fresh census of the finished screen report found the 17
+legacy romanizations named by finding 11.5: 4 `patax` sites, 7 `xataf` sites and 6 `dexi` sites.
+The corrected readings are:
+
+1. In the summary paragraph beginning “4 of the 6 are settled by mark position alone,” every
+   narrative `patax`, `xataf` and `dexi` should read `pataḥ`, `ḥataf` and `deḥi`, respectively.
+   This correction covers two `patax` sites, four `xataf` sites and three `dexi` sites.
+2. In section 3's **Syllables** item, “a furtive patax” should read “a furtive pataḥ,” and “a
+   sheva or a xataf” should read “a sheva or a ḥataf.”
+3. In section 3's **Nuclei** item, each of the two `xataf` sites should read `ḥataf`, and “a
+   furtive patax” should read “a furtive pataḥ.”
+4. In section 8, the sentence immediately before the table and both the Psalms 4:3 and Psalms
+   71:9 table rows should each read “deḥi” in place of “dexi.”
+
+The finished screen report remains unchanged at Git blob
+`a46dbf0f9b384afa072878584c1dace2328dc179`.

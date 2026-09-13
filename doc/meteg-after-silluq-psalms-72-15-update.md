@@ -38,3 +38,19 @@ protected quotations. The passages should be read with these two corrections:
 
 The finished Psalms 72:15 report remains unchanged. The corrections replace only the two
 possession verbs and do not change either claim.
+
+## Finding 11.5: narrative romanizations should use `pataḥ` and `ḥataf`
+
+Recorded by Codex on 2026-09-13. A fresh census of the finished Psalms 72:15 report found one
+`patah` site and six `hataf` sites. The corrected readings are:
+
+1. In summary item 1, “with a hataf under the resh” should read “with a ḥataf under the resh,”
+   “its list of hatafs under non-guttural letters” should read “its list of ḥatafs under
+   non-guttural letters,” and “Both quotations are about the hataf” should read “Both quotations
+   are about the ḥataf.”
+2. In summary item 6, “a hataf patah” should read “a ḥataf pataḥ,” “no policy on hatafs under
+   non-guttural letters” should read “no policy on ḥatafs under non-guttural letters,” and “a
+   hataf under a non-guttural letter” should read “a ḥataf under a non-guttural letter.”
+
+The finished Psalms 72:15 report remains unchanged at Git blob
+`b7944176b007648166d8c362e06a7927ca84df8d`.

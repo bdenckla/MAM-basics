@@ -25,3 +25,20 @@ protected quotations. The passages should be read with these five corrections:
 
 The finished Job 4:12 report remains unchanged. The corrections replace only the five possession
 verbs and do not change any claim.
+
+## Finding 11.5: narrative romanizations should use `pataḥ` and `ḥataf`
+
+Recorded by Codex on 2026-09-13. A fresh census of the finished Job 4:12 report found three
+`patah` sites and three `hataf` sites. The corrected readings are:
+
+1. In summary item 7, “before a hataf” should read “before a ḥataf.”
+2. In section 4's item about the Leningrad Codex at Psalms 72:15, “the note is about the hataf”
+   should read “the note is about the ḥataf.”
+3. In section 6's paragraph beginning “UXLC 3.9 records a leading meteg in 727 atoms,” the
+   sequence “patah 412, qamats 184, segol 59, tsere 37, hiriq 28, sheva 4, hataf patah 2 and
+   qubuts 1” should read “pataḥ 412, qamats 184, segol 59, tsere 37, hiriq 28, sheva 4, ḥataf
+   pataḥ 2 and qubuts 1”; later in that paragraph, “371 of the 412 on a patah” should read “371
+   of the 412 on a pataḥ.”
+
+The finished Job 4:12 report remains unchanged at Git blob
+`b8fc419f43970d94dd96330074da6c3489eeb839`.
