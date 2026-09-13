@@ -29,7 +29,10 @@ Before continuing the review, read these sources completely:
 2. The Hebrew-prose skill at
    `C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md`.
 3. `doc/blind-dive-into-template-params.md`, which records the five
-   current-state findings and their product reach.
+   current-state findings and their product reach, and
+   `doc/blind-dive-into-template-params-update.md`, which records which of
+   those findings have been fixed and which deferred decisions below hold the
+   rest.
 4. This document, which records the settled and deferred semantic decisions.
 
 The integrated code implements the decisions already fixed, the completed
