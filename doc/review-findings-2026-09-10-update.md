@@ -37,12 +37,12 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
-## Inherited item 3: live user-level synchronization has its source-ref decision
+## Inherited item 3: live user-level synchronization has two decisions
 
 Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
-inherits” is re-established. Ben has made the first of its four decisions; the cloud-hook,
+inherits” is re-established. Ben has made the source-ref and cloud-hook decisions; the
 deployment-scope and check-scheduling decisions remain pending. No live user-level file, tracked
-user-level copy, hook or skill has been changed by this disposition.
+user-level copy, hook or skill has been changed by either disposition.
 
 Re-measured at review-branch commit `a872790e70d0f02bfa40cc965760c066e0e06918`, local and
 remote-tracking MAM-basics `main` are both `1d2ddc3dc8d029af06bf5cb6ac7a9696f2f78caa`, and
@@ -86,28 +86,18 @@ consequences, are:
    MAM generator or product. Applying the deployment writes outside the repository, but the
    deployment itself performs no outward-facing Git write.
 
-2. **Whether the cloud-session hook is an exception to the selected `main` rule.** The current
-   `.claude/settings.json` runs `.claude/hooks/install-user-config.sh` at startup, resume and
-   compaction. When `CLAUDE_CODE_REMOTE=true`, the hook copies an absent `CLAUDE.md` or
-   `hebrew-prose` skill from `$CLAUDE_PROJECT_DIR`, so a cloud session started from a branch gets
-   that branch's tracked copies. The hook does not inspect `main` or `origin/main`, and the hook
-   does not overwrite a file already present.
-
-   1. **Declare the cloud hook an exception.** A branch checkout may supply configuration to that
-      branch's isolated cloud session. This keeps the current network-free bootstrap and lets the
-      session receive instructions that accompany the branch, but branch-only instruction text
-      can govern the same session before integration. The copy writes outside the repository into
-      the cloud container's live home. The cloud-only path cannot be exercised on this machine,
-      so a change to the hook must remain reported as locally unverified even if fake-home tests
-      pass. The hook reaches no MAM generator or product.
-   2. **Make the cloud hook obey the selected `main` source.** A branch session would extract the
-      tracked configuration from the selected MAM-basics `main` ref rather than from the checkout
-      tree. This prevents branch-only instruction text from governing the session, but the hook
-      must define what happens when the selected ref is missing or stale. Skipping the copy in
-      that case leaves the cloud session without the user-level configuration; obtaining a fresh
-      ref adds a Git dependency to a hook that currently makes no network or Git call. The copy
-      still writes outside the repository, and the changed cloud-only path still cannot be
-      exercised on this machine. The hook reaches no MAM generator or product.
+2. **The cloud hook uses the cloud session's checked-out branch.** Ben's decision, 2026-09-13:
+   the cloud hook uses the user-level configuration and instruction files from the branch checked
+   out for the cloud session, not from `main` unless `main` is the checked-out branch. This is an
+   explicit exception to decision 1's freshly fetched `refs/remotes/origin/main` rule for local
+   deployment. The current `.claude/settings.json` and `.claude/hooks/install-user-config.sh`
+   already implement the selected behavior: at startup, resume and compaction, the hook copies an
+   absent `CLAUDE.md` or `hebrew-prose` skill from `$CLAUDE_PROJECT_DIR`; it does not inspect or
+   fetch `main` or `origin/main`, and it does not overwrite a file already present. The cloud
+   session therefore receives instructions that accompany its branch without a network or Git
+   dependency, and branch-only instruction text can govern that same isolated session before
+   integration. The copy writes outside the repository into the cloud container's live home, but
+   no cloud-only code change is required and no MAM generator or product is reached.
 
 3. **Whether a main-sourced operation deploys skills as well as the two instruction files.** The
    current procedures treat these as separate operations. The instruction-file operation covers
