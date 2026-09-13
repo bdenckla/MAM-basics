@@ -201,10 +201,14 @@ def resolve(rev):
     A MAM-basics ref resolves to its content commit: the last commit at or before the
     ref that changed MAM-parsed/plus. MAM-parsed/plus is the same at both commits, so
     the inputs read are the same, and the content commit is the hash a report records.
-    HEAD therefore resolves to one hash until a commit changes MAM-parsed/plus, and a
-    report regenerated over unchanged inputs is byte-identical. Ben's decision,
-    2026-09-11, was that the change log records "a true hash" rather than the literal
-    HEAD, which names nothing once the report is committed.
+    ``--full-history`` is required because ordinary path-history simplification skips
+    a change that restores a tree already present in an older ancestor. That happened
+    when 73c6b113 restored 209b4c05's MAM-parsed/plus tree: without full history, the
+    report incorrectly named the older commit. HEAD therefore resolves to one hash
+    until a commit changes MAM-parsed/plus, and a report regenerated over unchanged
+    inputs is byte-identical. Ben's decision, 2026-09-11, was that the change log
+    records "a true hash" rather than the literal HEAD, which names nothing once the
+    report is committed.
     """
     if rev.startswith("legacy:"):
         legacy_ref = rev.removeprefix("legacy:")
@@ -250,7 +254,16 @@ def resolve(rev):
             " (or legacy:<ref>) and read access to a sibling MAM-parsed clone."
         ) from exc
     content_commit = (
-        _git(repo, "log", "-1", "--format=%H", commit, "--", "MAM-parsed/plus")
+        _git(
+            repo,
+            "log",
+            "--full-history",
+            "-1",
+            "--format=%H",
+            commit,
+            "--",
+            "MAM-parsed/plus",
+        )
         or commit
     )
     date = (
