@@ -741,6 +741,53 @@ generated MAM product. Act axis: the write is an ordinary repository change on t
 branch; no outward-facing act, destructive local act, external configuration write or receipt
 rewrite occurred.
 
+## Finding 7.1, worktree-file-consolidation plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-13. This entry classifies only the 24 live lines containing `.novc`
+in `doc/PLAN-worktree-file-consolidation.md`. It does not establish a rule for the rest of finding
+7's census.
+
+At checkpoint `4816afe2cad093ebfc001b827805bdd593c54021`, current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
+unchanged at Git blob `5b8da2ddc883016e4afa939b0a657a191f0cf5d7`. Its existing sibling update remains unchanged at
+Git blob `d1a68033a6591bd3a717b990f8262fbbe08e4bf0`; that update supplies the plan's State declaration
+and no scratch artifact. The six phase worktrees named by the plan no longer exist. The tracked
+`.gitignore` ignores `.novc/`.
+
+The 24 lines have these classifications:
+
+| Searchable anchor in the finished plan | Lines in the live tree | Classification |
+|---|---:|---|
+| Scope: “`parse_ws` writes optional format 1 output under” | 114 | Reproducible current output policy and disposable output. The tracked `py/main_parse.py ws --write-fmt-1` entry point and `py/subcommands/parse_ws.py` write `.novc/mam-ws-parsed-fmt-1/`; the directory is generated debugging output, not an input. |
+| Phase 1: “The scratch driver used for the original measurement” and “Logs and all-file before/after snapshots remain in” | 155 and 161 | Historical evidence-location record and statement that no dependency remains. The next sentence says that the scratch files are conveniences and that the committed evidence and reproduction method suffice. The Phase 1 worktree is gone, while the tracked compressed evidence retains the baseline inventory, UXLC-note entries, historical manifest and members, Job source blobs and typed values, generator runs, environment and Wikisource counts. |
+| Phase 1: the original `verify_worktree_file_consolidation_phase1_plan.py` command | 200 | Historical verification command. The receipt records what the absent checker established, including the complete directory map and hashes of all 208 affected output paths. The tracked compressed evidence, the printed inventory script and Git history preserve the inputs and method needed for a new check. |
+| Inventory reproduction: the printed recheck-script path, output path and command | 323, 380 and 386 | Reproducible method and disposable output destination. The complete Python source is printed in the plan, reads an explicitly supplied commit with `git ls-tree -r -l -z`, and writes a new UTF-8 JSON report under `.novc/`; neither scratch pathname is an input. |
+| Phase 2: “the explicitly identified scratch replay archive” | 442 | Historical disposable test-fixture pointer. The plan distinguishes this replay from the unavailable historical `Notes.zip` comparison, and its Phase 2 acceptance criteria explicitly permit creating a scratch verification archive. The consolidated per-book JSON, `NoteStorageOperation` and the production ZIP verifier remain tracked. |
+| Phase 2: the migration, verification, replay, output-comparison and inventory commands | 461–463, 465 and 470 | Historical command record and reproducible method. Git history retains the 477 source HTML blobs, the consolidation commit retains the 36 JSON results and storage implementation, and the immutable baseline records every source size and hash. The plan states the downloader probes, malformed-storage cases, generated-output comparison and inventory arithmetic; the scratch scripts and replay archive were not inputs to a live operation. |
+| Phase 3: the archive builder, archive verifier and MPP comparison commands | 603–605 | Historical command record and reproducible method. The plan specifies sorted names, `ZIP_STORED`, fixed timestamps, Unix creator metadata, permissions, empty comments and extra fields, member checks and negative probes. The six archives, manifest, `mpplus_revisions.py`, historical README, Phase 1 evidence and phase commits remain tracked. |
+| Phase 4: the `verify_job_records_phase4.py` command | 737 | Historical verification command and reproducible differential specification. The plan records every comparison and result; the Phase 1 evidence retains the original source blobs, ordered typed values and hashes, Git history retains the per-record modules, and the live tree retains the chapter modules and consistency and relation checks. |
+| Phase 5: the static verifier, notes replay and post-verifier commands | 914, 916 and 927 | Historical verification command record and disposable replay output. The receipt says that Phase 5 used only committed inputs plus fresh task-local probes, read no earlier phase scratch and extracted no historical archive. It records every checked path set, hash, failure probe, generator result and the three corrected verifier assumptions; the production entry points and immutable baseline remain tracked. |
+| Phase 6 receipt: the benchmark parent and driver | 984 and 986 | Historical execution-location and filename record. The old worktree and raw task-local record are gone, but the plan preserves the exact operation timed, six commands, revisions, fresh child paths, durations, output endpoints, Git configuration, cleanup checks, result-file hash and limitations. The driver was not an input to a live operation. |
+| Phase 6 instructions: “A suitable task-owned parent is” | 1097 | Reproducible benchmark method and disposable working directory. The surrounding instructions specify alternating revisions, fresh detached worktrees, timing boundary, recorded environment and results, verified cleanup and interpretation. A new benchmark creates a new task-local directory and new measurements. |
+| Commit discipline: “Write a unique commit-message file under `.novc/`” | 1132 | Historical procedure and disposable message-file destination. The sentence prescribes a fresh task-specific file and `git commit -F`; it points to no retained input or result. |
+
+No `.novc` artifact named or described by these lines is an indispensable missing dependency of a
+tracked result or current method. The unavailable raw benchmark record and phase logs limit
+reinspection of those historical execution details, but the finished plan is the durable receipt
+and preserves the reported measurements, methods, limitations and hashes. No new Ben decision
+arises from this classification, and D12 leaves both the finished plan and its existing sibling
+update unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 76.25 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.1, instruction-file remediation plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-12. This entry classifies only the 16 live lines containing `.novc`
