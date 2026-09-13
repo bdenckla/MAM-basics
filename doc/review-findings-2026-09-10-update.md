@@ -807,6 +807,43 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 documents and the plan's sibling update remain unchanged, and no outward-facing act, destructive
 local act, external configuration write or receipt rewrite occurred.
 
+## Finding 7.1, five singleton documents: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-12. This entry classifies only the single live `.novc` line in each
+of `doc/assessment-two-stranded-artifacts-2026-09-09.md`,
+`doc/codex-review-findings-2026-09-08-claude-turn-5.md`, `doc/foi-mtgmtg-empty-cell.md`,
+`doc/user-level-config-in-cloud-sessions.md` and
+`doc/meteg-after-silluq-in-uxlc-and-wlc.md`. It does not establish a rule for the rest of finding
+7's census.
+
+At checkpoint `e13ebba2e71e3f81fa54e04d209f9f1804ed37c1`, current `main` was already merged. The five
+documents have Git blobs `f6fdd5591aeabd0a18894968eb1e493e754045ae`,
+`211802245bf15d6a21b1670c450f410c9f0ad98b`, `591e14fcaa1cf734c0776887020573fdadcc48f2`,
+`d7bde24203e46f12a748f365f398d4308f0f9a54` and
+`fad8f1836286e3fbb76ce0da39918f23cdb9e4b9`, respectively. None has a sibling update file.
+
+| Finished document and searchable anchor | Live line | Classification |
+|---|---:|---|
+| `assessment-two-stranded-artifacts-2026-09-09.md`: “the three measurements that needed a script” | 568 | Reproducible method and historical execution record. Section 9 names the interpreter, import, predicates, revisions, pathspecs and outputs, then explicitly tells a fresh session to rewrite the throwaway scripts because the preceding sections contain the whole method. Commit `847862f9ef0f6276e827b86a59ef5b6bc7d7cebb` records the same four evidence groups and their results. |
+| `codex-review-findings-2026-09-08-claude-turn-5.md`: “The scripts are untracked at” | 52 | Historical evidence pointer. The unavailable filenames say where the completed review read its figures; the following sentence states that every citation also gives the plain Git command that re-establishes the figure. The verdicts depend on the cited tracked files and Git history, not on either verification script. |
+| `foi-mtgmtg-empty-cell.md`: “The census scripts are gitignored” | 107 | Filename inventory and reproducible quantitative method. The section names each script's population, the tracked `wt_qere` handlers and the report role. Its numbered clauses state the counts, partitions, formulas, reduced-vowel control, consonantal-skeleton and stem comparisons, and verse-position comparison. The tracked `py/foi/foiz_wt_mtgmtg.py` handler and `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` preserve the survey population and partition; the document's regeneration command re-derives them. Commit `d99f2cf4134ac7691c3e10a58053ceb2d575180e` also records that the three evidence strands are re-derivable from the file. `verify_doc_claims.py` was a completed-run check, not an unrecorded semantic policy. |
+| `user-level-config-in-cloud-sessions.md`: “The harness was a throwaway under `.novc/`” | 209 | Reproducible method and historical test record. Lines 206–210 enumerate all six fake-home cases, and the tracked `.claude/hooks/install-user-config.sh` remains the subject under test. The separately recorded real-cloud and live-home exercises are historical environment measurements, not outputs whose only evidence is the scratch harness. |
+| `meteg-after-silluq-in-uxlc-and-wlc.md`: “checked that nothing in the file points into a `.novc` directory” | 118 | Statement that no dependency remains. The occurrence denies a `.novc` pointer and describes a completed writer check. Sections 9 and 10 preserve the data sources, method, calibration and tracked verse-link command. |
+
+No `.novc` file named or described by these five lines is indispensable to a tracked result or
+method. No further Ben decision arises from this five-document unit, and D12 leaves all five
+finished documents unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 77.21 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 10: Aleppo crop license-notice wording still needs Ben's decision
 
 Recorded by Codex on 2026-09-12. Finding 10 is re-established and remains decision-pending; no
