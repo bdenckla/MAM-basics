@@ -187,6 +187,43 @@ can be entirely ordinary.
   *cleanly* and therefore silently. That is worth the worktree; it does not make immediate
   integration necessary.
 
+## Verification cadence for multi-session work: cheap checks per commit, broad checks at risk and integration gates
+
+Ben's decision, 2026-09-13. Multi-session work uses three verification gates. This cadence is
+about the likelihood that a change breaks tests. It is separate from whether a change reaches a
+published or distributed product and from whether the act is hard to undo; report those axes
+separately.
+
+1. **Every commit gets cheap checks matched to the changed surface.** Run `git diff --check`,
+   format each changed source file with the repository's formatter, and run directly relevant
+   targeted tests or lints.
+2. **Run the full suite after the last change with a meaningful likelihood of breaking it.**
+   Executable source, tests or test infrastructure, schemas, shared data, cross-repository path
+   behavior, and any other surface the repository identifies as test-risky trigger this gate.
+   Batch documentation, comments, review records and instruction-only commits: none of those
+   commits or handoffs by itself triggers another full suite or expires the last relevant
+   full-suite result. If no later test-risky change follows, that result remains the verification
+   result for final close-out.
+3. **Use generators at the scale the changed surface warrants.** Run a targeted generator during
+   development when it helps verify a product-affecting change. Run a repository-wide generation
+   or regeneration pipeline only when a generator, orchestration or product change makes an
+   earlier differential checkpoint materially useful, and at the final integration gate where
+   repository instructions require it. Do not run the complete pipeline after every intermediate
+   low-test-risk unit.
+
+Deferred broad verification still requires small, coherent commits, each intended to be valid.
+A final failure may be isolated by bisect, but deferral does not license a knowingly broken
+intermediate commit. A repository-specific or user-explicit requirement for more verification
+wins.
+
+The 2026-09-10 MAM-basics review remediation is the case that produced this rule. At the time of
+the decision, its live update summarized 18 successful full-suite runs; the known actual lower
+bound was 20 because an earlier finding-10 run had been replaced in the live section and the
+finding-10 final-disposition task ran the suite twice. No remediation-chain mega had run, and one
+mega remained reserved for final integration. Those figures are historical evidence that the
+per-unit full-suite cadence was disproportionate, not a census a future session re-measures as a
+prerequisite.
+
 ## What belongs under GitRepos is defined in repo_maintenance_policy.json
 `MAM-basics/in/repo_maintenance_policy.json` carries two keys that between them define the
 roster, and **"set up GitRepos" on a new machine and "sync GitRepos" on this one are the same

@@ -176,6 +176,37 @@ After a review is written, and after any review of it:
 4. Integrate by the worktree procedure in `~/.claude/CLAUDE.md`, with step 2 a mega run, as
    `CLAUDE.md`'s section "Integrating a worktree branch here" requires.
 
+### Verification cadence during remediation — Ben's decision, 2026-09-13
+
+Remediation uses three verification gates, chosen by test-breakage risk rather than by the number
+of commits or handoffs:
+
+1. Every commit gets `git diff --check`, formatting for each changed source file, and directly
+   relevant targeted tests or lints.
+2. The full suite runs after the last change with a meaningful likelihood of breaking it:
+   executable source, tests or test infrastructure, schemas, shared data, cross-repository path
+   behavior, or another surface the repository identifies. Documentation, comments, review
+   records and instruction-only commits are batched; none of those commits or handoffs by itself
+   requires another full-suite run or expires the last relevant result. If no later test-risky
+   change follows, that result remains the verification result for final close-out.
+3. A targeted generator runs during development when useful for a product-affecting change. A
+   repository-wide generation or regeneration pipeline runs earlier only when a generator,
+   orchestration or product change makes a differential checkpoint materially useful, and always
+   at the final integration gate where repository instructions require it. MAM-basics' complete
+   mega is not a per-unit check.
+
+Deferred broad verification still requires small, coherent commits, each intended to be valid.
+A final failure may be isolated by bisect, but the cadence does not license a knowingly broken
+intermediate commit. A repository-specific or user-explicit requirement for more verification
+wins. Test-breakage risk remains separate from the public/product risk and hard-to-undo-act axes.
+
+The 2026-09-10 remediation is the case that produced the rule. At the time of Ben's decision, the
+live update summarized 18 successful full-suite runs; the known actual lower bound was 20 because
+an earlier finding-10 run had been replaced in the live section and the finding-10
+final-disposition task ran the suite twice. No remediation-chain mega had run, and one mega
+remained reserved for final integration. Those figures are historical evidence that the per-unit
+full-suite cadence was disproportionate, not a count a future close-out must re-measure.
+
 ### Separate defects from editorial proposals — Ben's decision, 2026-09-09 (D7)
 
 For every remediation proposal, separate reproducible data or code defects from proposed

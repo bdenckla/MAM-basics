@@ -173,7 +173,12 @@ path; development commands, edits, staging and commits use the verified shared w
 
 Each close-out task merges `main` into the review branch before editing and resolves conflicts
 there. No intermediate task fast-forwards `main` or pushes, including when an intermediate task
-is archived. The final remediation task integrates once: merge `main` into the review branch,
+is archived. Intermediate remediation tasks follow `doc/periodic-review.md`'s “Verification
+cadence during remediation”: every coherent commit gets the cheap checks matched to its changed
+surface, while the full suite runs after the last test-risky change rather than after every
+low-test-risk commit or handoff. A later documentation, comment, review-record or instruction-only
+commit does not expire that full-suite result. The final remediation task integrates once: merge
+`main` into the review branch,
 run `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` from the
 worktree with no `REPOS_ROOT`, read its Git diff, and commit every explained generated change on
 the branch. An unexplained generated change or a failing mega step is a failure. Then fast-forward
