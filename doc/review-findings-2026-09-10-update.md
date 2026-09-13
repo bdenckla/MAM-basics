@@ -430,3 +430,48 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository commit on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 20.8: immutable commit messages require no history rewrite
+
+Recorded by Codex on 2026-09-12. Finding 20.8 is disposed of as an immutable-history census; no
+remediation is authorized or required.
+
+A fresh check of the cited commits and their Git trees reproduces the four observations:
+
+1. Commit `5e7f0d6b` says that `CLAUDE.md` “holds Hebrew on 126 lines.” The committed
+   `5e7f0d6b:CLAUDE.md` blob has 16 lines containing a Hebrew-block codepoint.
+2. Commit `74d883d2` says that its twelve configuration files have “13 Hebrew clusters, 0 in
+   Unicode-normal order.” The twelve committed files have 13 Hebrew letter clusters with at
+   least one combining mark and zero clusters with two or more combining marks. None of the 13
+   clusters can distinguish Unicode-normal order from MAM-normal order. Section 3 of the
+   finished `doc/assessment-two-stranded-artifacts-2026-09-09.md` correctly says that the files
+   are in the prose lint’s scope and are not offenders, but its clean result supplies no
+   discriminating mark-order evidence for those files.
+3. Commit `5a07e5af` reports 983 passed tests, while commit `7af937fa` reports 984 and calls 983
+   “one low.” The commits are on different lines after merge base `63ac5b84`: `5a07e5af` is one
+   commit from the merge base, and `7af937fa` is eight commits from the merge base. The parent of
+   `7af937fa`, `c65e103d`, contains the newly added
+   `test_hand_authored_prose_is_in_mam_mark_order` test. The finished assessment already states
+   the historical relationship accurately: 983 passed at `a50da28b`, and 984 were expected on
+   the merged tree because the prose lint added one test.
+4. Commit `209b4c05` changes 24 rows of `out/vendoring_compare_out.txt` from `eol-only` to
+   `identical` and merges the corresponding eight rows of `doc/vendoring-inventory.md` into four,
+   while its message names only the Wikisource refresh and pipeline regeneration. Its immediate
+   history contains the completed efficiency programme at `b2052ab9`; that programme’s finished
+   plan explicitly says that the same generated report changes were preserved in scratch and
+   restored rather than included in the programme commits. The live vendoring inventory now
+   reports its current three-file population accurately as two `identical` rows.
+
+The four inaccurate or incomplete statements are commit-message history. The assessment and the
+efficiency plan are finished dated reports and remain unchanged under D12. The live `CLAUDE.md`,
+the prose mark-order lint and the generated vendoring reports require no correction. Rewriting the
+commit messages would require a history rewrite, which is neither authorized nor warranted.
+
+`git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
+with 5 skipped and 65 subtests passed, in 111.21 seconds. This documentation-only disposition
+does not owe a mega run.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository commit on the unpushed review branch; no history
+rewrite, outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
