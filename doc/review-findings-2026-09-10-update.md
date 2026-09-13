@@ -766,6 +766,47 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 reports remain unchanged, and no outward-facing act, destructive local act, external
 configuration write or receipt rewrite occurred.
 
+## Finding 7.1, mega-coverage pair: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-12. This entry classifies only the `.novc` references in
+`doc/PLAN-mega-coverage.md` and `doc/mega-coverage-2026-09-10.md`. It does not establish a rule
+for the rest of finding 7's census.
+
+At checkpoint `8e2db58f6fd3b7fd30bd3c71951167871637f294`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, the finished plan has
+2 lines containing `.novc` and the finished report has 3. The plan's named worktree,
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/mega-coverage`, no longer exists. The plan
+remains unchanged at Git blob `dee11fb218d56f77ab780a7e1a7528322daa464b`; the report remains
+unchanged at Git blob `9b0a26f459fc340c4e046403cd41340dd9220fd4`. The existing
+`doc/PLAN-mega-coverage-update.md` changes only Phase 7's run-mode sentence and supplies no
+missing scratch artifact.
+
+The five lines have these classifications:
+
+| Searchable anchor in the finished plan or report | Lines in the live tree | Classification |
+|---|---:|---|
+| Plan: “Throwaway scripts and message files go under” | 51 | Historical method. The sentence records where each completed phase put temporary working files; it points to no particular file and preserves no input or result. |
+| Plan: “The scratch evidence is in the worktree's `.novc/mega-coverage-phase5b/ctr/`” | 226 | Historical evidence pointer. The directory and its worktree are gone, but no indispensable dependency is missing. The plan's Phase 5c item 2 records the accepted narrow-sense paseq-template mapping, the 84-entry result and the five changed records; Phase 5c's completion record names commit `9fa80e1162c8dc9a0c3f9a93dd1507ca755d92f3`. That commit preserves the handler, mega step and exact `out/diff_ctr_mam.json` diff, and the handler and step remain in the live tree. |
+| Report: “a measurement written only to `.novc/`” | 137 | Reproducible method and output policy. The tracked `survey-breuer-zaqef-units` entry point regenerates `.novc/breuer-zaqef-units.json`; `.novc` is the destination, not an input. The separately stated Phonetic MAM dependency remains explicit and is not a missing `.novc` dependency. |
+| Report: “read Holman's untracked mailboxes under `.novc/`; the reports regenerate from the tracked derivatives” | 154 | Statement that no report-regeneration dependency remains. The mailboxes are intentionally per-machine inputs needed only to ingest a new message. Existing reports regenerate from `holman/emails/` and `holman/docs-not-served/mam_suggestions.json`, as `CLAUDE.md`, the two tracked path accessors and the cited evacuation plan state. |
+| Report: “debugging output to `.novc/`; the tracked half of the run is `parse-ws`'s” | 181 | Reproducible method and disposable output. The tracked `py/main_parse.py ws --write-fmt-1` path writes `.novc/mam-ws-parsed-fmt-1/`; the normal parse path writes the tracked format-2 and production outputs. The format-1 directory is re-created output, not an input or evidence dependency. |
+
+No line in this pair is a filename inventory, and no `.novc` artifact is indispensable to a
+tracked result or method asserted by this pair. Holman's mailboxes remain indispensable only for
+future ingestion of the messages they contain; that intentional per-machine input boundary is
+already tracked and requires no new decision. No correction to either finished document and no
+addition to its sibling update is warranted.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped, in 77.58 seconds.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; both finished
+documents and the plan's sibling update remain unchanged, and no outward-facing act, destructive
+local act, external configuration write or receipt rewrite occurred.
+
 ## Finding 10: Aleppo crop license-notice wording still needs Ben's decision
 
 Recorded by Codex on 2026-09-12. Finding 10 is re-established and remains decision-pending; no
