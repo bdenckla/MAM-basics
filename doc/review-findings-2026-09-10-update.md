@@ -1046,21 +1046,22 @@ of that category is `doc/meteg-after-silluq-in-uxlc-and-wlc.md`, outside this cl
 The later sibling update files correct terminology and presentation but preserve no `mas_a_*` or
 `mas_b_*` implementation, so they do not close the exact-replay gap.
 
-Ben still needs to choose the disposition for the missing first-match predicates:
+Ben's decision, 2026-09-13: preserve and explain. Keep the category totals as historical results;
+do not reconstruct predicates merely to replay the completed report. The existing
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` now corrects the finished report's
+“Re-measure rather than trust” instruction. Finding 2's ten ordered predicate categories and its
+`other` fallback cannot now be remeasured as the same exact partition because neither the
+predicates nor their precedence was preserved. The displayed totals remain historical results of
+the 2026-09-09 run; the correction does not declare the totals false. The remeasurement
+instruction continues to apply to figures whose methods remain preserved.
 
-1. **Restore exact remeasurement.** Reconstruct the predicates from the original task evidence,
-   review every semantic choice, and preserve the approved implementation in tracked source
-   behind a repository entry point.
-2. **Keep the counts as historical results.** Add a later correction to
-   `doc/meteg-after-silluq-search-in-mam-documentation-update.md` saying that the ten category
-   counts cannot now satisfy the finished report's “Re-measure rather than trust” instruction.
+No predicate has been reconstructed, no script has been added, and neither finished report has
+been changed. This documentation-only decision record reaches no generator or product and does
+not owe a mega run.
 
-Until Ben chooses, no predicate has been reconstructed, no script has been added, and neither
-finished report nor either sibling update file has been changed. This evidence-only disposition
-reaches no generator or product and does not owe a mega run.
-
-`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
-suite passed 997 tests, with 5 skipped, in 76.12 seconds.
+At the decision-pending classification checkpoint, `git diff --check` and the tracked-prose
+mark-order lint passed; the lint passed 1 test. The full suite passed 997 tests, with 5 skipped,
+in 76.12 seconds.
 
 Product axis: the disposition changes a review update only and reaches no generator or product.
 Act axis: the write is an ordinary repository change on the unpushed review branch; both finished

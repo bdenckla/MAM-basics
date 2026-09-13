@@ -174,3 +174,23 @@ Product axis: this correction changes documentation only and reaches no generato
 Act axis: this update file preserves the finished report rather than rewriting it; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 7.2: category totals remain historical results
+
+Ben's decision, 2026-09-13: preserve and explain. This entry corrects the final paragraph
+beginning “Re-measure rather than trust.” For finding 2's category partition, the corrected
+reading is:
+
+> The totals for the ten ordered predicate categories and the `other` fallback are historical
+> results of the 2026-09-09 run. The predicates and their precedence were implemented only in
+> `.novc/mas_a_write_doc.py` and were not preserved. The category partition therefore cannot now
+> be remeasured exactly from tracked source. This limitation does not declare the totals false.
+> The instruction to remeasure continues to apply to figures whose methods remain preserved.
+
+No predicate has been reconstructed and no tracked script has been added. The finished report
+remains unchanged at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+Product axis: this correction changes documentation only and reaches no generator or product.
+Act axis: this update file preserves the finished report rather than rewriting it; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
