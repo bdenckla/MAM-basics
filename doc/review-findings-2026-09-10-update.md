@@ -37,12 +37,12 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
-## Inherited item 3: live user-level synchronization has two decisions
+## Inherited item 3: live user-level synchronization has three decisions
 
 Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
-inherits” is re-established. Ben has made the source-ref and cloud-hook decisions; the
-deployment-scope and check-scheduling decisions remain pending. No live user-level file, tracked
-user-level copy, hook or skill has been changed by either disposition.
+inherits” is re-established. Ben has made the source-ref, cloud-hook and deployment-scope
+decisions; the check-scheduling decision remains pending. No live user-level file, tracked
+user-level copy, hook or skill has been changed by these dispositions.
 
 Re-measured at review-branch commit `a872790e70d0f02bfa40cc965760c066e0e06918`, local and
 remote-tracking MAM-basics `main` are both `1d2ddc3dc8d029af06bf5cb6ac7a9696f2f78caa`, and
@@ -99,25 +99,17 @@ consequences, are:
    integration. The copy writes outside the repository into the cloud container's live home, but
    no cloud-only code change is required and no MAM generator or product is reached.
 
-3. **Whether a main-sourced operation deploys skills as well as the two instruction files.** The
-   current procedures treat these as separate operations. The instruction-file operation covers
-   `~/.claude/CLAUDE.md` and `~/.Codex/AGENTS.md`. The shared-skill operation maintains a
-   three-home invariant: tracked `dot-claude/skills/<name>/`, live
-   `~/.claude/skills/<name>/` and live `~/.agents/skills/<name>/`.
-
-   1. **Deploy instruction files and skills together.** The tracked `main` tree would supply both
-      instruction files, both live homes of every shared skill, including
-      `~/.agents/skills/`, and the live homes of tracked agent-specific skills. This makes the
-      known Codex third-home drift detectable and repairable in the same operation. It also gives
-      the operation the broadest external write scope. Replacing a live skill directory with the
-      current remove-then-copy method is both a write outside the repository and a destructive
-      local act; an interrupted replacement can leave a partial live skill. No MAM generator or
-      product changes.
-   2. **Deploy only the two instruction files.** Skills retain the separate three-home procedure
-      in `dot-claude/README.md`. The narrower operation writes two files outside the repository
-      and need not delete or replace a live directory, but running the instruction-file operation
-      says nothing about whether `~/.agents/skills/` matches the canonical skill. No MAM
-      generator or product changes.
+3. **The main-sourced operation deploys both instruction files and every tracked user-level
+   skill.** Ben's decision, 2026-09-13: concur with Codex's recommendation to deploy the two
+   instruction files and all skills together from the freshly fetched `origin/main` selected by
+   decision 1. The scope is `~/.claude/CLAUDE.md`, `~/.Codex/AGENTS.md`, both live homes of each
+   shared skill, and the appropriate live home of each tracked agent-specific skill. The
+   implementation must validate every source file and skill tree before changing any destination
+   and avoid leaving a partially replaced live skill where practical. This applies the selected
+   remote-preservation rule to everything future sessions load and makes omission of
+   `~/.agents/skills/` detectable and repairable in the same operation. Replacing live skill
+   directories is both a write outside the repository and a potentially destructive local act;
+   no MAM generator or product changes.
 
 4. **Whether a read-only `--check` is manual or attached to a command that runs.** Current
    comparison commands live only in the two READMEs. The SessionStart hook checks for missing
