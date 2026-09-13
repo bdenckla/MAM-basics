@@ -306,3 +306,37 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository commit on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 18: corrected historical counts require no implementation remediation
+
+Recorded by Codex on 2026-09-12. Finding 18 is disposed of as an evidence-only finding; no
+implementation remediation is authorized or required.
+
+A fresh reading of NUL-delimited `git ls-tree -r --name-only -z` output, split only on NUL,
+reproduces the corrected historical counts accepted in C6 and turns 3 and 4:
+
+1. Commits `38a606e2`, `c2f238f2`, `f1166057`, `931d6762`, `c36f5baa` and `9d1de074` each have
+   1,074 tracked HTML files overall, 1,829 tracked files under `gh-pages/` and 578 tracked HTML
+   files under `gh-pages/`.
+2. Commit `0354b6cc` has 598 tracked HTML files overall, 1,859 tracked files under `gh-pages/`
+   and 579 tracked HTML files under `gh-pages/`.
+
+The NUL-delimited filenames also confirm the two tracked Holman HTML paths named in C6. Ordinary
+line splitting treated Git's quoted forms of those paths as filenames whose final character was
+a quotation mark, so the original suffix test returned 1,072 rather than 1,074. The same quoted
+forms explain the historical `gh-pages/` undercounts. Finding 18.2's inference that two untracked
+HTML files accounted for 1,074 is therefore withdrawn in the completed review exchange.
+
+Finding 18.1 remains unverified. The live public tree does not establish the archived run's exact
+inputs, and identical bytes in two archived log files do not establish that either log file was
+copied. This disposition makes no attribution for how the archived log files arose.
+
+Finding 18 concerns the interpretation of historical evidence, not generator behavior or a
+product defect. The numerical correction is already recorded in the completed review exchange,
+and finding 18.1 supplies no evidence that selects an implementation change. No historical
+finished report is edited.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository commit on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
