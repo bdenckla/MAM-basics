@@ -37,16 +37,15 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
-## Inherited item 3: live user-level synchronization has all four decisions
+## Inherited item 3: live user-level synchronization is implemented
 
 Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
-inherits” is re-established. Ben has made the source-ref, cloud-hook, deployment-scope and
-check-scheduling decisions; implementation remains. No live user-level file, tracked user-level
-copy, hook or skill has been changed by these dispositions.
+inherits” is complete. Ben made the source-ref, cloud-hook, deployment-scope and check-scheduling
+decisions, and implementation commit `1842e784` applies all four decisions.
 
 Re-measured at review-branch commit `a872790e70d0f02bfa40cc965760c066e0e06918`, local and
 remote-tracking MAM-basics `main` are both `1d2ddc3dc8d029af06bf5cb6ac7a9696f2f78caa`, and
-both are ancestors of the review branch. The current copies have no drift:
+both are ancestors of the review branch. At that decision checkpoint the copies had no drift:
 
 1. `C:/Users/BenDe/.claude/CLAUDE.md` and `dot-claude/user-wide-CLAUDE.md` have SHA-256
    `6EAE1FBA5EB989F71310EBC0A8BB08527E8623F100E17709D45AC3AFB12C2ADF`.
@@ -64,7 +63,8 @@ both are ancestors of the review branch. The current copies have no drift:
    form of `main` contains. This is the concrete condition the selected source-ref policy will
    prevent after implementation; no deployment was run as part of this disposition.
 
-The current deployment procedures are manual and live-first. `dot-claude/README.md` and
+Before implementation, the deployment procedures were manual and live-first.
+`dot-claude/README.md` and
 `dot-Codex/README.md` tell an editor to change a live copy, copy the result into the primary
 `C:/Users/BenDe/GitRepos/MAM-basics` checkout, compare the copies and commit. The commands do not
 verify any Git ref before copying. The current shared-skill procedure separately requires the
@@ -72,8 +72,8 @@ canonical tracked tree, the live Claude tree and the live Codex tree to agree. N
 has a user-level synchronization `--check` mode, and no suite, maintenance command or local
 session-start path checks these copies automatically.
 
-Ben's first decision and the three remaining decisions, with the live alternatives and
-consequences, are:
+Ben's four decisions, with the alternatives and consequences measured before implementation,
+are:
 
 1. **A main-sourced deployment uses a freshly fetched `refs/remotes/origin/main`.** Ben's
    decision, 2026-09-13: concur with Codex's recommendation to fetch `origin` in the primary
@@ -123,14 +123,37 @@ consequences, are:
    configuration write; fetching updates local remote-tracking Git metadata but performs no
    outward-facing write.
 
-Until Ben makes all four decisions, the current live-first procedures, the cloud hook and the
-manual comparisons remain unchanged. This decision record changes only the live review update and
-reaches no generator or product, so it does not owe a mega run.
+Implementation commit `1842e784` adds `py/repo_util/user_config_sync.py` and the
+`py/main_repo_util.py --sync-user-config` entry point. The operation explicitly fetches remote
+`main` into `refs/remotes/origin/main`, extracts the complete configuration from that ref,
+validates every source and destination mapping, stages every changed replacement, rolls earlier
+replacements back after a later failure and verifies all destinations after deployment.
+`dot-claude/shared-skills.txt` declares the Claude skills that also deploy to Codex. The same
+commit attaches `--sync-user-config --check` to step 3 of `py/main_repo_maintenance.py`, leaving
+the suite at step 6 and the mega at step 7. Both tracked user-level instruction files and their
+README files now prescribe canonical-first editing and main-sourced deployment. The cloud hook's
+behavior is unchanged; its comments and the surrounding instructions now state the branch-sourced
+exception explicitly. The two affected finished dated reports remain unchanged; their corrections
+are in `doc/user-level-config-in-cloud-sessions-update.md` and
+`doc/mega-coverage-2026-09-10-update.md`.
 
-Product axis: this disposition changes a review update only and reaches no generator or product.
-Act axis: the write is an ordinary repository change on the unpushed review branch. Read-only
-checks inspected live user-level files, but no outward-facing act, destructive local act, external
-configuration write, unexercisable cloud-hook change or receipt rewrite occurred.
+A throwaway fake-remote and fake-home verifier exercised all nine current destinations. It
+verified nine explicit “not installed” results, complete deployment, a clean recheck, detection and
+repair of a live-only skill file, exact restoration after an injected second-replacement failure,
+no change after a fetch failure, and no leftover staging or backup path. Black and Ruff passed on
+all four changed Python files. The targeted mega-coverage and tracked-prose checks passed 4 tests.
+The full suite passed 997 tests, with 5 skipped, in 111.39 seconds. No real live user-level file
+was changed during implementation verification; decision 1 requires the real deployment to wait
+until this branch has been integrated into `main` and pushed.
+
+Product axis: the implementation changes repository utilities, maintenance, instructions and
+documentation but reaches no MAM generator or generated product. Act axis: commit `1842e784` is
+an ordinary repository change on the unpushed review branch. The verifier wrote only temporary
+fake homes. The eventual push of `main` is outward-facing, and the eventual replacement of live
+user-level configuration is both a write outside the repository and a potentially destructive
+local act. The deployment's fresh remote source, validation, staged replacements, rollback and
+post-deployment verification address that act risk. No cloud-only executable path or finished
+dated record was changed.
 
 ## Finding 11.1: MAM's `סימנים` identifies the Simanim Tanakh
 
