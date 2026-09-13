@@ -30,19 +30,22 @@ remove the results of the completed Book-of-Job work.
    Aleppo, Leningrad, and Cambridge Add. 1753 crops used by the published HTML.
    Existing Book-of-Job pages must continue to work after the programs and source
    page images are removed.
-3. Preserve all six small evidence crops under `aleppo/page-snips/`,
-   `cam1753/page-snips/`, and `leningrad/page-snips/`, together with their
-   READMEs.
+3. Preserve all small evidence crops, together with their READMEs. Ben's
+   decision of 2026-09-13 moved the six crops this plan found under
+   `aleppo/page-snips/`, `cam1753/page-snips/` and `leningrad/page-snips/` into
+   `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, folders for the
+   work each crop serves, and removed `leningrad/`.
 4. Preserve `book-of-job/out/cam1753-crops.json`. The coordinate data remains a
    part of the Book-of-Job record even though no current program will create or
    apply additional entries.
 5. Preserve the line-break check reports and the other derived JSON that document
    the retained indexes. They become frozen artifacts rather than outputs that a
    maintained program is expected to regenerate.
-6. Remove no Leningrad file. The current `leningrad/` tree contains no page-sized
-   images, Python, line-break editor, or crop editor. Its README and three
-   `page-snips/` PNGs stay. The broader below-page Leningrad location data under
-   `uxlc/` and the programs that consume that location data also stay.
+6. Remove no Leningrad file. Leningrad had no page-sized images, Python,
+   line-break editor, or crop editor. `leningrad/` itself is already gone: Ben's
+   decision of 2026-09-13 moved its three crops to the snips folders named in
+   decision 3 and dropped its README. The broader below-page Leningrad location
+   data under `uxlc/` and the programs that consume that location data stay.
 7. Do not recreate or modify the former `codex-index-aleppo`,
    `codex-index-cam1753`, or `codex-index-leningrad` checkouts or GitHub
    repositories. Their maintained contents moved into MAM-basics on 2026-09-04;
@@ -57,7 +60,7 @@ remove the results of the completed Book-of-Job work.
 - Read `C:/Users/BenDe/.codex/AGENTS.md`, the development checkout's
   `CLAUDE.md`, this entire plan, and `py/product_scopes.py` before editing.
 - Load the `hebrew-prose` skill before changing prose in the manuscript READMEs,
-  the page-snips notes, or `doc/meteg-after-silluq-job-4-12.md`.
+  the snips READMEs under `doc/`, or `doc/meteg-after-silluq-job-4-12.md`.
 - Use
   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` as the shared
   interpreter. Run scripts, Git commands, formatting, and tests from the verified
@@ -103,7 +106,7 @@ The same command measured the retained fine-grained index and crop material:
 | `cam1753/cam1753-line-breaks/*.json` | 27 |
 | `cam1753/cam1753-col-quads/*.json` | 28 |
 | `cam1753/cam1753-spread-splits-doc/*.json` | 15 |
-| retained `page-snips/*.png` across the three codex trees | 6 |
+| retained `*.png` across `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` (six at planning, in the three codex trees; eight since the 2026-09-13 move) | 8 |
 | finished codex crops in `gh-pages/book-of-job/jobn/img/` | 480: 160 per codex |
 
 The measurement script must write a protected-file manifest for:
@@ -112,7 +115,7 @@ The measurement script must write a protected-file manifest for:
 - all retained JSON under `aleppo/`, `cam1753/`, and `book-of-job/out/`;
 - `aleppo/check_line_breaks.html` and `cam1753/check_line_breaks.html`;
 - `cam1753/cam1753-gutter-profiles.png`; and
-- all three `page-snips/` trees.
+- both `doc/*-snips/` folders.
 
 Compare that manifest after the removal. A changed protected file is a finding.
 Documentation files within a protected tree may be deliberately edited only when
@@ -225,9 +228,9 @@ lookups rather than the retired Book-of-Job crop workflow.
 ## Rewrite current documentation as a retained-data description
 
 - Update `README.md`, `aleppo/README.md`, `cam1753/README.md`,
-  `cam1753/CLAUDE.md`, and `leningrad/README.md`. Describe the retained index data,
-  state that the image programs and page-sized source images were retired, and make
-  clear that Leningrad had no such program or page-sized image to remove.
+  and `cam1753/CLAUDE.md`. Describe the retained index data and state that the image
+  programs and page-sized source images were retired. (`leningrad/README.md` was on this
+  list until Ben's decision of 2026-09-13 removed `leningrad/`.)
 - Convert `aleppo/doc/aleppo-line-breaks.md` and
   `cam1753/doc/cam1753-line-break-task.md` from runnable procedures into static
   coverage, schema, provenance, and interpretation notes. Preserve facts needed to
@@ -246,8 +249,8 @@ lookups rather than the retired Book-of-Job crop workflow.
 - Update `doc/book-of-job-artifacts.md` so the artifact register says that all
   current images and Cambridge crop coordinates are retained source data and that
   no crop-producing program remains.
-- Update the three `page-snips/README.md` files and
-  `doc/meteg-after-silluq-job-4-12.md` only where current prose claims that a
+- Update `doc/meteg-after-silluq-snips/README.md`, `doc/lam-2-3-akhla-snips/README.md`
+  and `doc/meteg-after-silluq-job-4-12.md` only where current prose claims that a
   page-sized local source image remains. Preserve each statement supported by the
   retained crop.
 - Update `DATA-LICENSES.md` so it accurately describes retained crops and removed

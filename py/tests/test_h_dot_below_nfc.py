@@ -9,8 +9,7 @@ ELEVEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This 
 holds the code, the wlc corpus it generates, book-of-job's remaining tracked
 procedures under ``book-of-job/``, the relocated UXLC data under ``uxlc/``, and
 the Aleppo corpus under ``aleppo/``. Holman-ketiv-qere still holds its corpus, while
-the Cambridge 1753 corpus now lives under ``cam1753/``. Leningrad's five data files
-now live under ``leningrad/`` and are scanned by MAM-basics' scope. Each separate
+the Cambridge 1753 corpus now lives under ``cam1753/``. Each separate
 scope retains the hand-authored transliterations that would otherwise go unscanned
 once Python moved out.
 ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
@@ -260,10 +259,9 @@ _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 # output, excluded because codex-index-aleppo's own copy excluded its counterparts of
 # exactly those two.
 #
-# page-snips/ is deliberately NOT excluded, as leningrad/page-snips/ is not: the
-# crops are made by hand and the README beside them records what each one settles.
-# Neither is cam1753-page-index.json, hand-made and read by no program, nor
-# check_line_breaks.html, which codex-index-aleppo's copy also left in scope.
+# cam1753-page-index.json is deliberately NOT excluded, being hand-made and read by no
+# program, and neither is check_line_breaks.html, which codex-index-aleppo's copy also
+# left in scope.
 _CAM_EXCLUDE_DIR_PREFIXES = (
     "cam1753-col-quads/",
     "cam1753-line-breaks/",
@@ -413,7 +411,7 @@ def _scopes() -> tuple[_Scope, ...]:
             # the source repository never had one, so nothing obliged this entry. It is
             # here because the alternative was that after its Phase 4 nothing anywhere
             # would read the hand-authored Hebrew -- things-noticed-in-cam1753.md,
-            # page-snips/README.md, cam1753-page-index.json and its two prose files --
+            # cam1753-page-index.json and its prose files --
             # and because adding it surfaced no violation: it passed on the first run.
             #
             # That is the opposite call from the one repo_scopes.py records for the
