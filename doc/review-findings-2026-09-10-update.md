@@ -37,27 +37,32 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
-## Inherited item 3: live user-level synchronization needs Ben's four decisions
+## Inherited item 3: live user-level synchronization has its source-ref decision
 
 Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
-inherits” is re-established and remains decision-pending. No live user-level file, tracked
-user-level copy, hook or skill has been changed.
+inherits” is re-established. Ben has made the first of its four decisions; the cloud-hook,
+deployment-scope and check-scheduling decisions remain pending. No live user-level file, tracked
+user-level copy, hook or skill has been changed by this disposition.
 
-At checkpoint `2398fc801f374eb9109ab53dbdb9c6c8bc7d30f4`, current local and remote-tracking
-MAM-basics `main` were both `7b64043ba6c3bf4ffafdc0c3ed8169a2989bd530`, and `main` was already
-merged into the review branch. The current copies have no drift:
+Re-measured at review-branch commit `a872790e70d0f02bfa40cc965760c066e0e06918`, local and
+remote-tracking MAM-basics `main` are both `1d2ddc3dc8d029af06bf5cb6ac7a9696f2f78caa`, and
+both are ancestors of the review branch. The current copies have no drift:
 
 1. `C:/Users/BenDe/.claude/CLAUDE.md` and `dot-claude/user-wide-CLAUDE.md` have SHA-256
-   `F32191A794596500297D4B566DAE98BEDCB126D00821B2BDCD880FFB438D0D18`.
+   `6EAE1FBA5EB989F71310EBC0A8BB08527E8623F100E17709D45AC3AFB12C2ADF`.
 2. `C:/Users/BenDe/.Codex/AGENTS.md` and `dot-Codex/user-wide-AGENTS.md` have SHA-256
-   `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`.
+   `87C3EDDB6A9F001DAD5481D2162E0CE32D52FE7DB719C4AC651F030B5D4C393F`.
 3. Recursive `git diff --no-index` comparisons from the tracked
    `dot-claude/skills/hebrew-prose/` tree to
    `C:/Users/BenDe/.claude/skills/hebrew-prose/` and
    `C:/Users/BenDe/.agents/skills/hebrew-prose/` both exit 0 with no content difference.
-4. The two tracked instruction files and the tracked `hebrew-prose` skill have no branch diff
-   from either `main` or `origin/main`. Among the relevant configuration paths, only comments in
-   `.claude/hooks/install-user-config.sh` differ between this branch and `main`.
+4. The two tracked instruction files differ from both `main` and `origin/main` by the
+   verification-cadence section added on the review branch. The tracked `verse-links` skill also
+   differs by its completed unique-letters lookup documentation, and comments in
+   `.claude/hooks/install-user-config.sh` differ by their completed numbering correction. The
+   live instruction files therefore currently contain committed review-branch text that neither
+   form of `main` contains. This is the concrete condition the selected source-ref policy will
+   prevent after implementation; no deployment was run as part of this disposition.
 
 The current deployment procedures are manual and live-first. `dot-claude/README.md` and
 `dot-Codex/README.md` tell an editor to change a live copy, copy the result into the primary
@@ -67,29 +72,19 @@ canonical tracked tree, the live Claude tree and the live Codex tree to agree. N
 has a user-level synchronization `--check` mode, and no suite, maintenance command or local
 session-start path checks these copies automatically.
 
-Ben's four decisions, with the live alternatives and consequences, are:
+Ben's first decision and the three remaining decisions, with the live alternatives and
+consequences, are:
 
-1. **Which MAM-basics `main` supplies a main-sourced deployment.** The current procedure names no
-   source ref and copies in the opposite direction, from a live file to the primary checkout.
-   Two concrete alternatives are viable:
-
-   1. **Use `refs/remotes/origin/main` in the primary MAM-basics clone.** A deployment would use
-      only bytes known to exist on the remote-tracking ref; an integrated local commit could not
-      reach the live configuration until `origin/main` had advanced. The command would also need
-      to define whether it fetches first or accepts the locally cached ref. The deployment changes
-      no MAM generator or product. Applying the deployment writes outside the repository, but the
-      deployment itself performs no outward-facing Git write.
-   2. **Use `refs/heads/main` in the primary MAM-basics clone.** A deployment could use a commit
-      after the review branch had been fast-forwarded into local `main` and before `main` had been
-      pushed, and it would work without refreshing a remote-tracking ref. The live configuration
-      could therefore temporarily contain text absent from `origin/main`, though the text would
-      be integrated rather than branch-only. The deployment changes no MAM generator or product.
-      Applying the deployment writes outside the repository, but the deployment itself performs
-      no outward-facing Git write.
-
-   Both alternatives should name the primary MAM-basics clone explicitly. “The current
-   repository's `main`” is not a complete rule because the canonical tracked configuration is in
-   MAM-basics even when a session is working in another repository.
+1. **A main-sourced deployment uses a freshly fetched `refs/remotes/origin/main`.** Ben's
+   decision, 2026-09-13: concur with Codex's recommendation to fetch `origin` in the primary
+   `C:/Users/BenDe/GitRepos/MAM-basics` clone and deploy exclusively from
+   `refs/remotes/origin/main`. If the fetch fails, the operation stops before changing any live
+   file. An integrated local commit therefore cannot reach live configuration until it has been
+   pushed and the remote-tracking ref has advanced. The rejected local `refs/heads/main`
+   alternative would have worked without a network refresh, but would have allowed live
+   configuration to contain integrated text absent from the remote. The deployment changes no
+   MAM generator or product. Applying the deployment writes outside the repository, but the
+   deployment itself performs no outward-facing Git write.
 
 2. **Whether the cloud-session hook is an exception to the selected `main` rule.** The current
    `.claude/settings.json` runs `.claude/hooks/install-user-config.sh` at startup, resume and
