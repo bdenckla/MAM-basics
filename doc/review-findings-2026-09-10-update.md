@@ -724,6 +724,99 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 12 and C1: the documentation remains incorrect; atom-matching policy needs Ben's decision
+
+Recorded by Codex on 2026-09-13. This entry supersedes finding 12's 2026-09-12 disposition,
+which says “Has been fixed by `80f88f7c`,” without changing that historical disposition or any
+other finished review record under D12. No matching code, code docstring, verse-links skill home
+or live user-level skill copy has been changed.
+
+At checkpoint `c0765a290e2792d460fc1fa58b170b43e0b2de24`, after current `main` at
+`7b64043ba6c3bf4ffafdc0c3ed8169a2989bd530` was confirmed already merged, the live evidence is:
+
+1. The canonical verse-links skill's “Running the command” items 2 and 3 still say that a bare
+   consonantal form fails for a verse-final or maqaf-final atom, and that a query matching none or
+   more than one of the verse's atoms lists the atoms and exits 1. The same incomplete account is
+   in `py/main_verse_links.py` and `py/uxlc_misc/my_uxlc_find_atom.py`; the last file also still
+   says that ambiguity raises rather than silently selecting one position.
+2. The implementation in `my_uxlc_find_atom.py` removes only Unicode categories Mn and Cf.
+   Punctuation therefore remains in each stripped candidate. The ambiguity check counts only
+   candidates equal after that punctuation-sensitive stripping; an occurrence excluded because
+   it ends in a sof pasuq or maqaf is absent from the candidate count.
+3. A fresh public-input run used the live `my_uxlc.read_all_books()` result and live `find_atom`.
+   For every UXLC atom ending in U+05BE or U+05C3, it retained only U+05D0 through U+05EA for the
+   query and compared the returned atom number with the enumerated reference atom. The command was
+   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe
+   .novc/finding12_c1_live_verify.py`; the complete anchor-era reproducer remains in
+   `doc/codex-review-findings-2026-09-10.md` under “C1's complete reproducer follows.” The live
+   65,713-occurrence result is unchanged:
+
+   | Result | Occurrences |
+   |---|---:|
+   | `AtomNotFound` | 61,711 |
+   | ambiguity `ValueError` | 412 |
+   | returned a different atom | 3,590 |
+   | returned the reference atom | 0 |
+
+4. Genesis 1:3 remains the complete successful-different-position example. The UXLC's atom 4 is
+   `א֑וֹר`, and atom 6 is `אֽוֹר׃`. Querying the exact atom-6 form returns
+   `(6, "exact", "אֽוֹר׃")`; querying the bare consonants from atom 6 returns
+   `(4, "stripped", "א֑וֹר")`. `main_verse_links.py` says that the match used letters alone and
+   prints the UXLC form, but exits 0 and does not say that another occurrence with the same letters
+   exists.
+
+The documentation correction and the semantic matching policy are separate. If matching remains
+unchanged, the skill and both code docstrings need to say that a bare query for a punctuated atom
+can fail, raise for the candidates admitted by the punctuation-sensitive comparison, or succeed at
+a different atom. A semantic code change would instead make the documentation describe the policy
+Ben selects. The correction is required either way, but its final wording should not promise a
+policy before Ben selects one.
+
+Four viable policies have distinct user-visible consequences:
+
+1. **Option 1 — require an exact UXLC atom form or `--atom`.** Remove the stripped fallback from
+   the UXLC lookup. Bare mid-verse lookup convenience ends, and a MAM form differing from the UXLC
+   in marks may not resolve. For the measured 65,713 punctuated reference atoms, the bare query is
+   never the reference atom's exact form, so the user must supply the UXLC form or atom number.
+2. **Option 2 — normalize punctuation for the fallback and reject repeated occurrences.** After
+   the exact pass, compare the Hebrew letters of every atom in the verse, return only a unique
+   candidate and list all candidates otherwise. On the measured population, 52,881 occurrences
+   have a unique letters-only candidate and would return the reference atom; 12,832 have repeated
+   letters and would require `--atom`. Genesis 1:3 would list atoms 4 and 6 instead of selecting
+   atom 4.
+3. **Option 3 — retain punctuation-sensitive matching and add a letters-only safety check.** Keep
+   the current not-found behavior, but before returning a stripped match, raise ambiguity when a
+   punctuation-normalized comparison finds another occurrence. On the measured population, the
+   3,590 different-atom returns become errors: 61,711 remain not found and 4,002 are ambiguous.
+   This option prevents the successful-different-position result but does not make a unique bare
+   verse-final or maqaf-final atom resolvable.
+4. **Option 4 — retain matching and correct only the documentation.** This option preserves every
+   current success and failure, including the 3,590 measured successful returns at a different
+   atom. The command continues to print the returned UXLC form without stating that the verse has
+   another occurrence with the same letters.
+
+Ben's decision needs to state whether a bare query is meant to locate the unique letters-only
+occurrence or merely to provide the current punctuation-sensitive convenience, and whether a
+repeated letters-only form must raise and require `--atom`. The decision also needs a scope. The
+`my_uxlc_find_atom.py` docstring says its convention is kept in sync with the Aleppo and Cambridge
+linebreak locators, but those locators also handle maqaf-joined spans and feed hand-run generators
+whose tracked images can reach `gh-pages/`. A UXLC-only decision should narrow that sync statement;
+a three-locator decision needs separate differential checks for both linebreak locators and their
+generated images. The 65,713-occurrence census measures possible queries, not actual interactive
+usage, so it cannot decide the input contract for Ben.
+
+Until Ben selects a policy and scope, finding 12/C1 remains decision-pending. This disposition
+changes only the review's live sibling update and reaches no generator or product, so it does not
+owe a mega run.
+
+`git diff --check` passed. The tracked-prose mark-order lint passed 1 test. The full suite passed
+997 tests, with 5 skipped and 65 subtests passed, in 116.33 seconds.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; all finished
+records remain unchanged, and no outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
+
 ## Finding 21: the eight process-and-hygiene items are disposed or decision-pending
 
 Recorded by Codex on 2026-09-13. This entry re-establishes finding 21 against the live tree after
