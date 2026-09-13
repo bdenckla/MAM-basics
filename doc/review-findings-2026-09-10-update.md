@@ -37,6 +37,127 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
+## Inherited item 3: live user-level synchronization needs Ben's four decisions
+
+Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
+inherits” is re-established and remains decision-pending. No live user-level file, tracked
+user-level copy, hook or skill has been changed.
+
+At checkpoint `2398fc801f374eb9109ab53dbdb9c6c8bc7d30f4`, current local and remote-tracking
+MAM-basics `main` were both `7b64043ba6c3bf4ffafdc0c3ed8169a2989bd530`, and `main` was already
+merged into the review branch. The current copies have no drift:
+
+1. `C:/Users/BenDe/.claude/CLAUDE.md` and `dot-claude/user-wide-CLAUDE.md` have SHA-256
+   `F32191A794596500297D4B566DAE98BEDCB126D00821B2BDCD880FFB438D0D18`.
+2. `C:/Users/BenDe/.Codex/AGENTS.md` and `dot-Codex/user-wide-AGENTS.md` have SHA-256
+   `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`.
+3. Recursive `git diff --no-index` comparisons from the tracked
+   `dot-claude/skills/hebrew-prose/` tree to
+   `C:/Users/BenDe/.claude/skills/hebrew-prose/` and
+   `C:/Users/BenDe/.agents/skills/hebrew-prose/` both exit 0 with no content difference.
+4. The two tracked instruction files and the tracked `hebrew-prose` skill have no branch diff
+   from either `main` or `origin/main`. Among the relevant configuration paths, only comments in
+   `.claude/hooks/install-user-config.sh` differ between this branch and `main`.
+
+The current deployment procedures are manual and live-first. `dot-claude/README.md` and
+`dot-Codex/README.md` tell an editor to change a live copy, copy the result into the primary
+`C:/Users/BenDe/GitRepos/MAM-basics` checkout, compare the copies and commit. The commands do not
+verify any Git ref before copying. The current shared-skill procedure separately requires the
+canonical tracked tree, the live Claude tree and the live Codex tree to agree. No tracked command
+has a user-level synchronization `--check` mode, and no suite, maintenance command or local
+session-start path checks these copies automatically.
+
+Ben's four decisions, with the live alternatives and consequences, are:
+
+1. **Which MAM-basics `main` supplies a main-sourced deployment.** The current procedure names no
+   source ref and copies in the opposite direction, from a live file to the primary checkout.
+   Two concrete alternatives are viable:
+
+   1. **Use `refs/remotes/origin/main` in the primary MAM-basics clone.** A deployment would use
+      only bytes known to exist on the remote-tracking ref; an integrated local commit could not
+      reach the live configuration until `origin/main` had advanced. The command would also need
+      to define whether it fetches first or accepts the locally cached ref. The deployment changes
+      no MAM generator or product. Applying the deployment writes outside the repository, but the
+      deployment itself performs no outward-facing Git write.
+   2. **Use `refs/heads/main` in the primary MAM-basics clone.** A deployment could use a commit
+      after the review branch had been fast-forwarded into local `main` and before `main` had been
+      pushed, and it would work without refreshing a remote-tracking ref. The live configuration
+      could therefore temporarily contain text absent from `origin/main`, though the text would
+      be integrated rather than branch-only. The deployment changes no MAM generator or product.
+      Applying the deployment writes outside the repository, but the deployment itself performs
+      no outward-facing Git write.
+
+   Both alternatives should name the primary MAM-basics clone explicitly. “The current
+   repository's `main`” is not a complete rule because the canonical tracked configuration is in
+   MAM-basics even when a session is working in another repository.
+
+2. **Whether the cloud-session hook is an exception to the selected `main` rule.** The current
+   `.claude/settings.json` runs `.claude/hooks/install-user-config.sh` at startup, resume and
+   compaction. When `CLAUDE_CODE_REMOTE=true`, the hook copies an absent `CLAUDE.md` or
+   `hebrew-prose` skill from `$CLAUDE_PROJECT_DIR`, so a cloud session started from a branch gets
+   that branch's tracked copies. The hook does not inspect `main` or `origin/main`, and the hook
+   does not overwrite a file already present.
+
+   1. **Declare the cloud hook an exception.** A branch checkout may supply configuration to that
+      branch's isolated cloud session. This keeps the current network-free bootstrap and lets the
+      session receive instructions that accompany the branch, but branch-only instruction text
+      can govern the same session before integration. The copy writes outside the repository into
+      the cloud container's live home. The cloud-only path cannot be exercised on this machine,
+      so a change to the hook must remain reported as locally unverified even if fake-home tests
+      pass. The hook reaches no MAM generator or product.
+   2. **Make the cloud hook obey the selected `main` source.** A branch session would extract the
+      tracked configuration from the selected MAM-basics `main` ref rather than from the checkout
+      tree. This prevents branch-only instruction text from governing the session, but the hook
+      must define what happens when the selected ref is missing or stale. Skipping the copy in
+      that case leaves the cloud session without the user-level configuration; obtaining a fresh
+      ref adds a Git dependency to a hook that currently makes no network or Git call. The copy
+      still writes outside the repository, and the changed cloud-only path still cannot be
+      exercised on this machine. The hook reaches no MAM generator or product.
+
+3. **Whether a main-sourced operation deploys skills as well as the two instruction files.** The
+   current procedures treat these as separate operations. The instruction-file operation covers
+   `~/.claude/CLAUDE.md` and `~/.Codex/AGENTS.md`. The shared-skill operation maintains a
+   three-home invariant: tracked `dot-claude/skills/<name>/`, live
+   `~/.claude/skills/<name>/` and live `~/.agents/skills/<name>/`.
+
+   1. **Deploy instruction files and skills together.** The tracked `main` tree would supply both
+      instruction files, both live homes of every shared skill, including
+      `~/.agents/skills/`, and the live homes of tracked agent-specific skills. This makes the
+      known Codex third-home drift detectable and repairable in the same operation. It also gives
+      the operation the broadest external write scope. Replacing a live skill directory with the
+      current remove-then-copy method is both a write outside the repository and a destructive
+      local act; an interrupted replacement can leave a partial live skill. No MAM generator or
+      product changes.
+   2. **Deploy only the two instruction files.** Skills retain the separate three-home procedure
+      in `dot-claude/README.md`. The narrower operation writes two files outside the repository
+      and need not delete or replace a live directory, but running the instruction-file operation
+      says nothing about whether `~/.agents/skills/` matches the canonical skill. No MAM
+      generator or product changes.
+
+4. **Whether a read-only `--check` is manual or attached to a command that runs.** Current
+   comparison commands live only in the two READMEs. The SessionStart hook checks for missing
+   cloud files, not drift, and exits locally before reading a live file.
+
+   1. **Keep `--check` manual.** The check can compare every selected source and destination and
+      return nonzero on drift without writing anywhere. The check touches neither risk axis, but
+      drift persists until somebody remembers to run the command.
+   2. **Attach `--check` to periodic MAM-basics repository maintenance.** The maintenance pass
+      already runs on Ben's machines and can report drift without repairing it. The check remains
+      read-only, reaches no MAM generator or product and performs no hard-to-undo act. A
+      machine without a live destination needs an explicit “not installed” result rather than a
+      false clean result. Attaching the check to the cloud SessionStart hook instead would modify
+      the unexercisable cloud path and would cover Claude starts but not Codex starts, so that is a
+      materially different wiring choice rather than evidence for the maintenance choice.
+
+Until Ben makes all four decisions, the current live-first procedures, the cloud hook and the
+manual comparisons remain unchanged. This decision record changes only the live review update and
+reaches no generator or product, so it does not owe a mega run.
+
+Product axis: this disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch. Read-only
+checks inspected live user-level files, but no outward-facing act, destructive local act, external
+configuration write, unexercisable cloud-hook change or receipt rewrite occurred.
+
 ## Finding 11.1: MAM's `סימנים` identifies the Simanim Tanakh
 
 Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.1
