@@ -334,7 +334,8 @@ wlc-utils above all, which was emptied of Python on 2026-08-01 while agents go o
 Run everything from `C:/Users/BenDe/GitRepos/MAM-basics` with
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
 
-Six actions, mutually exclusive, one per invocation:
+Seven actions, mutually exclusive, one per invocation. Six operate across selected repositories;
+`--sync-user-config` is the MAM-basics-specific exception and ignores workspace selection:
 
 | Action | Writes? | Notes |
 |---|---|---|
@@ -344,6 +345,8 @@ Six actions, mutually exclusive, one per invocation:
 | `--audit-line-terms` | no | |
 | `--run-black` | **REFORMATS** | its own commit, never riding along |
 | `--commit-across-repos` | **COMMITS** | do NOT use — see H3 |
+| `--sync-user-config --check` | no live configuration write | fetches `origin` and compares every declared user-level destination with `origin/main` |
+| `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run only from the primary MAM-basics clone after the canonical changes are pushed |
 
 **`--workspace-file all-repos.code-workspace` is not optional.** The default
 `MAM-basics.code-workspace` lists only the handful of repos MAM-basics generates into, and

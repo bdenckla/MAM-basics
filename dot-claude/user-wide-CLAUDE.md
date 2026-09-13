@@ -4,14 +4,20 @@ Personal, cross-project preferences — these apply in **every** repo. A project
 `CLAUDE.md` or auto-memory may add repo-specific detail on top.
 
 **Canonical location: my `MAM-basics` repo, at `dot-claude/user-wide-CLAUDE.md`** (cloned to
-`~/GitRepos/MAM-basics`). The file you are reading, `~/.claude/CLAUDE.md`, is the live working
-copy that Claude Code actually loads; nothing syncs the two automatically. **After editing this
-file, copy it back to the repo and commit**, or the tracked copy silently goes stale:
+`~/GitRepos/MAM-basics`). The file you are reading, `~/.claude/CLAUDE.md`, is the deployed copy
+that Claude Code actually loads. **Do not edit the live copy.** Edit the tracked canonical file
+in the applicable MAM-basics development checkout, commit the change, integrate it into `main`
+and push `main`. Then run the deployment from the primary MAM-basics clone:
 ```powershell
-Copy-Item "$HOME/.claude/CLAUDE.md" "$HOME/GitRepos/MAM-basics/dot-claude/user-wide-CLAUDE.md" -Force
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
-See `dot-claude/README.md` there for the drift check and for what is deliberately *not*
-tracked (`settings*.json`, `projects/`).
+The command fetches `origin`, fails before any live write if the fetch fails, and deploys both
+instruction files and every tracked user-level skill exclusively from the freshly updated
+`refs/remotes/origin/main`. Its `--check` mode writes no live file, and ordinary
+`py/main_repo_maintenance.py` runs that check. See `dot-claude/README.md` there for the complete
+mapping and for what is deliberately *not* tracked (`settings*.json`, `projects/`). A Claude
+cloud session is the declared exception: its SessionStart hook uses the user-level files from
+the cloud session's checked-out branch, which is `main` only when `main` is that branch.
 
 **It lived in `github-misc` at `dot-claude/CLAUDE.md` until 2026-09-09**, beside the `dot-emacs`
 and `dot-gitconfig` copies, and it moved for a reason worth stating rather than a tidying
@@ -40,11 +46,13 @@ what the loader requires there; only the tracked copy is renamed.
 
 **A shared SKILL has THREE homes, not two, and the third is the one that goes stale.**
 `MAM-basics`'s `dot-claude/skills/<name>/` is canonical, `~/.claude/skills/<name>/` is what
-Claude Code loads, and `~/.agents/skills/<name>/` is what Codex loads. The procedure, and the
-two `git diff --no-index` comparisons that prove a change reached both live homes, are in
-`dot-claude/README.md` §"Shared-skill deployment to Claude and Codex" — read them there rather
-than here, and **run both comparisons whenever a shared skill changes.** Checking the canonical
-copy against `~/.claude/` alone passes while Codex is reading something else.
+Claude Code loads, and `~/.agents/skills/<name>/` is what Codex loads.
+`dot-claude/shared-skills.txt` declares which canonical Claude skills have both live
+destinations. Edit the canonical skill in a MAM-basics development checkout, integrate and push
+the commit, then run the same `--sync-user-config` deployment. The operation validates every
+canonical source before changing any destination, stages every changed destination before
+replacement, and rolls earlier replacements back if a later replacement fails. Its `--check`
+mode compares all three homes, so checking the Claude home alone can no longer hide Codex drift.
 
 **Why this needs saying in the file that loads every session:** the rule has been in
 `dot-claude/README.md` all along and `~/.agents` fell behind anyway, because nothing loads that
@@ -52,8 +60,8 @@ README. `~/.agents/skills/hebrew-prose/references/sources-and-corpora.md` silent
 github-misc `1925699` of 2026-09-07 — finding 5.6 of
 `MAM-basics/doc/review-findings-2026-09-08.md` — until `25a8955` put it back in step on
 2026-09-09. It then fell behind again **that same day**, when `560239c` reached the canonical and
-Claude homes and not the Codex one. Nothing warns, and the Codex home is tracked nowhere of its
-own, so those two comparisons are the only detector there is.
+Claude homes and not the Codex one. The attached maintenance check is now the detector, and the
+complete main-sourced deployment is the repair.
 
 ## Two axes of risk: does the change reach a product, and is the act hard to undo
 
@@ -80,10 +88,10 @@ restates — the whole content of this list is that the five are one axis:
    a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
    §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
    follows a junction and empties the real venv without warning.
-3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.codex/`. They change
-   what every future session loads, nothing version-controls them, and drift is silent, which
-   is why the preamble above requires the two `git diff --no-index` comparisons after any
-   change to a shared skill.
+3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.Codex/`. They change
+   what every future session loads, and nothing version-controls them, which is why the preamble
+   above requires the complete `origin/main`-sourced deployment and attaches its read-only check
+   to repository maintenance.
 4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
    document. Editing one rewrites the record rather than fixing a defect. §"A finished dated
    document is corrected in `<stem>-update.md`, never edited" below is the rule; MAM-basics'

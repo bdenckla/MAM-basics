@@ -8,8 +8,8 @@ maintenance (if it is not already) to check that the only programs not part of m
 those that have documented justifications for why they are not part of mega."  The
 design is section 7 of ``doc/mega-coverage-2026-09-10.md``, which Ben agreed to that
 day; this file is phase 7 of ``doc/PLAN-mega-coverage.md``.  It is part of maintenance
-with no wiring of its own: ``py/main_repo_maintenance.py`` runs the suite at its step 5,
-before its step 6 runs the mega.
+with no wiring of its own: ``py/main_repo_maintenance.py`` runs the suite at its step 6,
+before its step 7 runs the mega.
 
 This is a mechanical lint over the tree, the second of the two test shapes CLAUDE.md
 sanctions, and it follows ``py/tests/test_sibling_reach.py``: an AST pass rather than a
@@ -360,18 +360,20 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/check_cam1753_all.py": _PER_MANUSCRIPT_CHECK,
     "py/check_cam1753_word_finding.py": _PER_MANUSCRIPT_CHECK,
     "py/main_test.py": (
-        "The suite, which MAM-basics' maintenance runs at its step 5, just before its"
-        " step 6 runs the mega.  Recorded in py/main_repo_maintenance.py's docstring and"
-        " doc/mega-coverage-2026-09-10.md §3."
+        "The suite, which MAM-basics' maintenance runs at its step 6, just before its"
+        " step 7 runs the mega.  Recorded in py/main_repo_maintenance.py's docstring and"
+        " doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_repo_util.py": (
-        "Cross-repository maintenance, all six actions; --commit-across-repos is barred"
-        " from the sweep.  Recorded in doc/PLAN-repo-maintenance-across-GitRepos.md and"
-        " doc/mega-coverage-2026-09-10.md §3."
+        "Repository utilities, seven actions; six serve cross-repository maintenance and"
+        " --sync-user-config serves MAM-basics' user-level configuration."
+        " --commit-across-repos is barred from the sweep.  Recorded in"
+        " doc/PLAN-repo-maintenance-across-GitRepos.md and"
+        " doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_repo_maintenance.py": (
-        "MAM-basics' maintenance, whose step 6 runs the mega.  Recorded in its docstring"
-        " and doc/mega-coverage-2026-09-10.md §3."
+        "MAM-basics' maintenance, whose step 7 runs the mega.  Recorded in its docstring"
+        " and doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_redirect_stubs.py build": _REDIRECT_STUBS,
     "py/main_redirect_stubs.py check": _REDIRECT_STUBS,
@@ -485,8 +487,9 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     # --- Programs the analysis's sections 3 and 4 do not name.
     "py/main_0_mega.py": (
-        "The mega itself, which py/main_repo_maintenance.py runs at its step 6."
-        "  Recorded in the docstrings of both."
+        "The mega itself, which py/main_repo_maintenance.py runs at its step 7."
+        "  Recorded in the docstrings of both and"
+        " doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_authored.py gen-mp-claims-index": (
         "Claude-written, accepted by Ben on 2026-09-10: it rewrites doc/mp-claims.md"

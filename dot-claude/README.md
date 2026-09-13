@@ -51,85 +51,59 @@ Tracked so far:
 | `prune-claude-state` | A manual hygiene pass over Claude Code's *own* persisted state for the current repo — the per-repo auto-memory directory and that repo's slice of the global `~/.claude/plans/`. Cross-checks each file against live GitHub issue state and proposes stale ones for deletion, never deleting without explicit confirmation. Both directories live outside git, so there is no undo. |
 | `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
-## This is the canonical copy; `~/.claude/` is the live working copy
+## Main-sourced deployment and check
 
-The versions here are canonical — that is what `~/.claude/CLAUDE.md` says of itself, in its
-own opening lines — but Claude Code only ever loads what is in `~/.claude/`, and **nothing
-syncs the two**. After editing a live file, re-copy it here and commit, or the canonical
-copy silently goes stale. This applies to the skills exactly as it does to `CLAUDE.md`:
-
-```powershell
-Copy-Item "$HOME/.claude/CLAUDE.md" "$HOME/GitRepos/MAM-basics/dot-claude/user-wide-CLAUDE.md" -Force
-```
+The versions here are canonical, and Claude Code loads the deployed copies under
+`~/.claude/`. Ben's decision, 2026-09-13: **edit the tracked canonical copy, never the live
+copy.** Commit the edit in its MAM-basics development checkout, integrate it into `main`, and
+push `main`. Then run the deployment from `C:/Users/BenDe/GitRepos/MAM-basics`, the primary
+clone:
 
 ```powershell
-$s = "hebrew-prose"; Remove-Item -Recurse -Force "$HOME/GitRepos/MAM-basics/dot-claude/skills/$s" -ErrorAction Ignore; Copy-Item "$HOME/.claude/skills/$s" "$HOME/GitRepos/MAM-basics/dot-claude/skills/$s" -Recurse
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
 
-The `Remove-Item` is not optional. A plain `Copy-Item <src> <dst> -Recurse -Force` where `<dst>`
-**already exists** does not replace it — it copies the source *inside* it, producing
-`skills/hebrew-prose/hebrew-prose/`. That works the first time and silently nests on every
-re-copy afterwards, which is exactly when you are least likely to look. Deleting first makes the
-command idempotent; git will show the real diff either way.
+The command fetches `origin` and uses only the freshly updated
+`refs/remotes/origin/main`. A fetch failure or invalid source stops before any live write. The
+source includes both instruction files, every Claude-specific and Codex-specific skill, and both
+destinations of every shared skill. The operation validates all sources first, stages all changed
+destinations, replaces complete skill directories instead of nesting them, and rolls earlier
+replacements back if a later replacement fails.
 
-To check whether they have drifted:
+The read-only form uses the same fresh source and reports `clean`, `drift`, or `not installed` for
+every destination:
 
 ```powershell
-(Get-FileHash "$HOME/.claude/CLAUDE.md").Hash -eq (Get-FileHash "$HOME/GitRepos/MAM-basics/dot-claude/user-wide-CLAUDE.md").Hash
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
 ```
 
-**A shared skill has a third home and this command does not reach it.** `~/.agents/skills/<name>/`
-is Codex's live copy, and a two-way check between here and `~/.claude/` passes while Codex reads
-something else — which has happened twice, both times to `hebrew-prose`. "Shared-skill deployment
-to Claude and Codex" below is the full four-step procedure and both comparisons.
+Ordinary `py/main_repo_maintenance.py` runs that check automatically. A failed check changes no
+live configuration and does not stop the maintenance script's later steps.
 
-A directory needs a recursive comparison rather than one hash — this reports every file that
-differs, is only here, or is only there, and prints nothing when the two are identical:
+The cloud SessionStart hook is the explicit exception. A cloud session gets the user-level
+configuration from its checked-out branch, not from `main` unless `main` is the checked-out
+branch. The hook remains network-free and does not overwrite a file already present in the cloud
+home.
 
-```powershell
-$a = "$HOME/.claude/skills/hebrew-prose"; $b = "$HOME/GitRepos/MAM-basics/dot-claude/skills/hebrew-prose"; Compare-Object (Get-ChildItem -Recurse -File $a | ForEach-Object { "$($_.FullName.Substring($a.Length)) $((Get-FileHash $_).Hash)" }) (Get-ChildItem -Recurse -File $b | ForEach-Object { "$($_.FullName.Substring($b.Length)) $((Get-FileHash $_).Hash)" })
-```
+The former procedure was live-first from 2026-09-09 through 2026-09-13. That procedure could put
+branch-only text into files every local session loads and twice left Codex's shared-skill home
+behind. The main-sourced operation replaces that procedure rather than adding another direction
+to it.
 
 Deliberately **not** tracked here: `~/.claude/settings.json` and `settings.local.json`
-(they carry per-machine permission allowlists), `projects/` (per-project session
-transcripts and auto-memory), and anything else under `~/.claude/` that is state rather
-than authored configuration.
+(they carry per-machine permission allowlists), `projects/` (per-project session transcripts and
+auto-memory), and anything else under `~/.claude/` that is state rather than authored
+configuration.
 
-## Shared-skill deployment to Claude and Codex
+## Shared skills deploy to Claude and Codex
 
-`dot-claude/skills/` is the **single canonical source** for skills shared with Codex.
-`~/.claude/skills/<name>/` is the live copy Claude Code loads, `~/.agents/skills/<name>/` is the
-live copy Codex loads. Neither live directory is an independent source, and a change has to reach
-all three homes.
+`dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
+`~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
+`~/.agents/skills/`; the declaration currently names `hebrew-prose` and `verse-links`.
+`dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
+`~/.agents/skills/`.
 
-**Edit the live Claude copy and copy it outwards. Four steps, in this order.** Ben's decision,
-2026-09-09, settling a contradiction rather than expressing a preference: this section used to
-say "make an edit here first, then deploy the complete canonical skill directory to both live
-locations before committing", which is the reverse of what the section above prescribes for a
-live file, the reverse of what `~/.claude/CLAUDE.md`'s own opening prescribes for itself, and the
-reverse of what sessions do — commit `1925699` of 2026-09-07 and the five of 2026-09-09 that
-followed it each edited `~/.claude/skills/hebrew-prose/` and copied outwards from there. Which
-order is chosen is fairly arbitrary; that one is specified is not.
-
-1. **Edit `~/.claude/skills/<name>/`**, which is the copy an editing session has actually loaded
-   and read.
-2. **Copy that directory here**, with the `Remove-Item` guard the section above explains.
-3. **Copy it to `~/.agents/skills/<name>/`** as well, with the same guard:
-
-   ```powershell
-   $s = "hebrew-prose"; Remove-Item -Recurse -Force "$HOME/.agents/skills/$s" -ErrorAction Ignore; Copy-Item "$HOME/.claude/skills/$s" "$HOME/.agents/skills/$s" -Recurse
-   ```
-
-4. **Run both comparisons below, and commit only on a clean result.** They print the differences
-   and return a nonzero status when the copies differ:
-
-```powershell
-git diff --no-index -- "$HOME/GitRepos/MAM-basics/dot-claude/skills/hebrew-prose" "$HOME/.claude/skills/hebrew-prose"
-```
-
-```powershell
-git diff --no-index -- "$HOME/GitRepos/MAM-basics/dot-claude/skills/hebrew-prose" "$HOME/.agents/skills/hebrew-prose"
-```
-
-Run both comparisons whenever a shared skill changes. A clean comparison is the required
-evidence that Claude and Codex will receive the same instructions.
+Do not copy a shared skill separately. The complete `--sync-user-config` operation deploys every
+declared home in one transaction, and `--check` compares every declared home. Adding a skill
+requires adding its canonical directory; adding a Codex destination for a Claude skill also
+requires adding that skill's directory name to `dot-claude/shared-skills.txt`.

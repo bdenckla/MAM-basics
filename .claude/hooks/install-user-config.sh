@@ -31,8 +31,11 @@
 # files therefore moved into MAM-basics, at dot-claude/ and dot-Codex/, where they
 # arrive with the clone -- so this hook now copies from the checkout and touches the
 # network not at all. doc/user-level-config-in-cloud-sessions.md records the
-# measurement and the reasoning; dot-claude/README.md records the deployment
-# procedure for Ben's own machines, which is unchanged.
+# measurement and the reasoning; dot-claude/README.md records the origin/main-sourced
+# deployment procedure for Ben's own machines. Ben's decision, 2026-09-13: this hook
+# is the exception. It uses the user-level files from the cloud session's checked-out
+# branch, which is main only when main is that branch; it never substitutes main for a
+# different checked-out branch.
 #
 # WHAT IS INSTALLED, AND WHAT IS DELIBERATELY NOT
 #

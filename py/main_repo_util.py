@@ -8,6 +8,8 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --session-ended <worktree path>
+    .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
+    .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
 
 ``--workspace-file all-repos.code-workspace`` is what widens any of these past the
@@ -22,6 +24,13 @@ records of running sessions included. A path that is no linked worktree of the
 selected repos is refused before anything runs. See "THE OVERRIDE IS PER
 WORKTREE" in ``repo_util/git_worktree_cleanup.py`` for why this replaced a
 repo-wide switch.
+
+``--sync-user-config`` does not traverse a workspace.  It fetches ``origin`` in the
+primary MAM-basics clone and uses only ``refs/remotes/origin/main`` as its source.
+``--check`` compares both instruction files and every tracked skill destination without
+changing them.  Without ``--check``, the action deploys the complete configuration and
+must be run from the primary clone.  The cloud-session hook is separate and continues to
+source the cloud session's checked-out branch.
 
 Three of the repos that file lists are private, so a sweep over all of them
 produces findings that must not land in this public repo's tracked tree.
@@ -57,6 +66,7 @@ from repo_util import maintenance_policy
 from repo_util.report_destination import assert_report_destination_ok
 from repo_util.repo_selection import load_workspace_repo_dirs, select_repo_infos
 from repo_util.run_black import problem_repos, run_black_across_repos
+from repo_util.user_config_sync import run_user_config_sync
 
 REPO_ROOT = paths.repo_root()
 DEFAULT_WORKSPACE_FILE = REPO_ROOT / "MAM-basics.code-workspace"
@@ -71,7 +81,14 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--check-repo-standards", action="store_true")
     action_group.add_argument("--check-memory-health", action="store_true")
     action_group.add_argument("--clean-worktrees", action="store_true")
+    action_group.add_argument("--sync-user-config", action="store_true")
     action_group.add_argument("--commit-across-repos", action="store_true")
+
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="With --sync-user-config: compare without changing live configuration",
+    )
 
     parser.add_argument(
         "--workspace-file",
@@ -212,6 +229,8 @@ def _validate_action_specific_args(
 ) -> None:
     if args.session_ended and not args.clean_worktrees:
         parser.error("--session-ended only applies to --clean-worktrees")
+    if args.check and not args.sync_user_config:
+        parser.error("--check only applies to --sync-user-config")
 
     if args.commit_across_repos:
         if args.message is None and args.message_file is None:
@@ -254,6 +273,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     _validate_action_specific_args(parser, args)
+
+    if args.sync_user_config:
+        return 0 if run_user_config_sync(check=args.check) else 1
 
     workspace_file = Path(args.workspace_file).resolve()
     repos_root = (

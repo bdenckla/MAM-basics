@@ -4,14 +4,20 @@ Personal, cross-project preferences — these apply in **every** repo. A project
 `AGENTS.md` or auto-memory may add repo-specific detail on top.
 
 **Canonical location: my `MAM-basics` repo, at `dot-Codex/user-wide-AGENTS.md`** (cloned to
-`~/GitRepos/MAM-basics`). The file you are reading, `~/.Codex/AGENTS.md`, is the live working
-copy that Codex actually loads; nothing syncs the two automatically. **After editing this file,
-copy it back to the repo and commit**, or the tracked copy silently goes stale:
+`~/GitRepos/MAM-basics`). The file you are reading, `~/.Codex/AGENTS.md`, is the deployed copy
+that Codex actually loads. **Do not edit the live copy.** Edit the tracked canonical file in the
+applicable MAM-basics development checkout, commit the change, integrate it into `main` and push
+`main`. Then run the deployment from the primary MAM-basics clone:
 ```powershell
-Copy-Item "$HOME/.Codex/AGENTS.md" "$HOME/GitRepos/MAM-basics/dot-Codex/user-wide-AGENTS.md" -Force
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
-See `dot-Codex/README.md` there for the drift check and for what is deliberately *not*
-tracked (`settings*.json`, `projects/`).
+The command fetches `origin`, fails before any live write if the fetch fails, and deploys both
+instruction files and every tracked user-level skill exclusively from the freshly updated
+`refs/remotes/origin/main`. Its `--check` mode writes no live file, and ordinary
+`py/main_repo_maintenance.py` runs that check. See `dot-Codex/README.md` there for the complete
+mapping and for what is deliberately *not* tracked (`settings*.json`, `projects/`). A Claude
+cloud session is the declared exception: its SessionStart hook uses the user-level files from
+the cloud session's checked-out branch, which is `main` only when `main` is that branch.
 
 **It lived in `github-misc` at `dot-Codex/AGENTS.md` until 2026-09-09**, beside the `dot-emacs`
 and `dot-gitconfig` copies, and moved with the Claude-side tree for a reason that is about
@@ -24,15 +30,14 @@ procedure below keeps both of its ends in one repository. The tracked name gains
 repository's own instructions; the live copy keeps the name Codex requires.
 
 **A shared SKILL has THREE homes, and `~/.agents/` is the one that goes stale.**
-`~/.agents/skills/<name>/` is the live copy Codex loads, and it is fed from **two** canonical
-trees in `MAM-basics`, which is what makes it easy to get wrong: the cross-agent `hebrew-prose`
-is canonical at `dot-claude/skills/hebrew-prose/` and has a third home in Claude's
-`~/.claude/skills/`, while the Codex-only `worktree-forest` and `prune-claude-state` are
-canonical at `dot-Codex/skills/<name>/` and have two homes, like this file. So a shared-skill
-change has to reach three places. `dot-claude/README.md` §"Shared-skill deployment to Claude and
-Codex" is the four-step procedure of record — read it there rather than here, and **run both of
-its comparisons whenever a shared skill changes.** `~/.claude/CLAUDE.md` carries the counterpart
-of this paragraph on the Claude side.
+`~/.agents/skills/<name>/` is the live copy Codex loads. The cross-agent skills are canonical
+under `dot-claude/skills/`, and `dot-claude/shared-skills.txt` declares their Codex destinations;
+Codex-only skills are canonical under `dot-Codex/skills/`. Edit a canonical skill in a
+MAM-basics development checkout, integrate and push the commit, then run the same
+`--sync-user-config` deployment. The operation validates every canonical source before changing
+any destination, stages every changed destination before replacement, and rolls earlier
+replacements back if a later replacement fails. Its `--check` mode compares every declared live
+home. `~/.claude/CLAUDE.md` carries the counterpart of this paragraph on the Claude side.
 
 **Why this is in the file Codex loads:** the rule has been in `dot-claude/README.md` all along
 and `~/.agents` fell behind anyway, because nothing loads that README.
@@ -40,7 +45,8 @@ and `~/.agents` fell behind anyway, because nothing loads that README.
 `1925699` of 2026-09-07 — finding 5.6 of `MAM-basics/doc/review-findings-2026-09-08.md` — until
 `25a8955` put it back in step on 2026-09-09, and it fell behind again **that same day**, when
 `560239c` reached both Claude-side homes and not this one. Codex is the agent that then reads the
-stale copy, and nothing warns it, so those two comparisons are the only detector there is.
+stale copy. The attached maintenance check is now the detector, and the complete main-sourced
+deployment is the repair.
 
 ## Two axes of risk: does the change reach a product, and is the act hard to undo
 
@@ -68,10 +74,10 @@ restates — the whole content of this list is that the five are one axis:
    a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
    §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
    follows a junction and empties the real venv without warning.
-3. **Writes outside the repository**: `~/.agents/`, `~/.codex/`, `~/.claude/`. They change
-   what every future session loads, nothing version-controls them, and drift is silent, which
-   is why the preamble above requires both of the shared-skill comparisons — and `~/.agents/`
-   is the home that has twice fallen behind.
+3. **Writes outside the repository**: `~/.agents/`, `~/.Codex/`, `~/.claude/`. They change
+   what every future session loads, and nothing version-controls them, which is why the preamble
+   above requires the complete `origin/main`-sourced deployment and attaches its read-only check
+   to repository maintenance. `~/.agents/` is the home that has twice fallen behind.
 4. **Records that are receipts**: evidence JSON, a pushed commit message, a finished dated
    document. Editing one rewrites the record rather than fixing a defect; §"A finished dated
    document is corrected in `<stem>-update.md`, never edited" is the rule for the last of
