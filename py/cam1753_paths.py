@@ -40,8 +40,8 @@ codex-index-cam1753's copy, deliberately, that copy being a Phase 4 deletion.
 and for the same reason.
 
 WHAT NO PROGRAM HERE READS OR WRITES: ``cam1753-page-index.json``, the
-hand-made verse-to-column index, cited only by ``page-snips/README.md`` and
-``things-noticed-in-cam1753.md``; ``page-snips/`` (2 files); and the three
+hand-made verse-to-column index, cited only by
+``doc/lam-2-3-akhla-snips/README.md`` and ``things-noticed-in-cam1753.md``; and the three
 ``doc/``.  They are named here so that Phase 4's inventory of artifacts with no
 generator does not have to re-derive them.
 """

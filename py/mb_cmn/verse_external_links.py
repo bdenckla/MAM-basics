@@ -98,8 +98,8 @@ def masoretica_url(
 
     masoretica.org answers with that manuscript's page and folio for the verse.
     Three of its manuscript= values are recorded in this repository: aleppo, the
-    one the mgketer diff cards use; leningrad (leningrad/page-snips/README.md); and
-    sassoon, for Codex Sassoon 1053 (doc/ms-snips/README.md).
+    one the mgketer diff cards use; leningrad; and sassoon, for Codex Sassoon 1053.
+    doc/lam-2-3-akhla-snips/README.md records the leningrad and sassoon values.
     """
     query = urlencode(
         {

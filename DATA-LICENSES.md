@@ -4,8 +4,9 @@ MAM-basics holds code and data under different terms, so it takes two license de
 
 **The code is GPL-3.0**, declared in [`LICENSE`](LICENSE) at the repository root. That is the
 license of MAM-basics' work in code and prose: everything under `py/`, the Pages workflow
-under `.github/`, the plans and notes under `doc/` — the font at `doc/woff2/` excepted, since the
-table below covers it — and the generated indexes and reports under `out/` that carry no corpus
+under `.github/`, the plans and notes under `doc/` — the font at `doc/woff2/` and the page crops in
+`doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` excepted, since the table below
+covers them — and the generated indexes and reports under `out/` that carry no corpus
 text.
 
 **Most of the data is not MAM-basics' to license.** Nearly every corpus here was prepared
@@ -92,7 +93,7 @@ away:**
 | `aleppo/`, except `aleppo/aleppo-pages/` and `aleppo/aleppo-wiki/` | line and column data annotated by Ben Denckla, derived reports, procedures, and provenance records | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
 | `cam1753/cam1753-spreads/` and the regenerable, untracked `cam1753/cam1753-pages/` | fourteen two-page scans of Cambridge University Library MS Add. 1753, downloaded from the Internet Archive's `ketuvim-cambridge-ms-add-1753-images` item, and the 28 single-page derivatives | the Cambridge University Library and the Ktiv Project's terms, recorded in `cam1753/cam1753-spreads-provenance.md`: use is for educational and research purposes, source attribution is required, and commercial use is prohibited. **No grant is made or implied here.** |
 | `cam1753/`, except `cam1753/cam1753-spreads/` and the untracked `cam1753/cam1753-pages/` | line and column data annotated by Ben Denckla, derived reports, procedures, provenance records, and the Book-of-Job test-data extract | Ben Denckla's compilation and analysis; **no grant is made or implied here.** The data cites and compares manuscript material without acquiring a blanket GPL-3.0 grant from its new location |
-| `leningrad/page-snips/` | crops that Ben Denckla made from Leningrad Codex photographs | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the manuscript readings documented beside them |
+| `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` | crops that Ben Denckla made from images of the Aleppo Codex, the Leningrad Codex, Cambridge Add. 1753, Codex Sassoon 1053 and the Second Rabbinic Bible | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the facts about each manuscript and edition documented beside them |
 | `in/diffable-pointed-hebrew-short-name-overrides.json` | the former diffable-pointed-hebrew product's nine short Unicode-name assignments, made by Ben Denckla | CC0 1.0 — the dedication at the end of this file. Until 2026-09-13 the file sat in `diffable-pointed-hebrew/` under that product's MIT `LICENSE`. The MAM-basics entry point under `py/` remains under this repository's GPL-3.0 license. |
 | `gh-pages/book-of-job/`, except its two image directories and every Taamey D font copy below it | Ben Denckla's review of *Biblia Hebraica Quinta* Job: the generated HTML reports, stylesheets, and page scripts | Ben Denckla's; **no grant is made or implied here.** The former `bdenckla/book-of-job` repository had no blanket licence, so moving the review pages into this repository does not silently place them under MAM-basics' GPL-3.0 licence |
 | `gh-pages/book-of-job/jobn/img/`, `gh-pages/book-of-job/jobn/img-orphans/` | crops from photographic facsimiles of the Aleppo, Leningrad, Cambridge 1753, Sassoon 1053, and Jerusalem Crown manuscripts | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the corresponding Job review pages, not as material MAM-basics may license |

@@ -1,21 +1,21 @@
-# ms-snips
+# Crops for the Lamentations 2:3 meteg question
 
-Crops of manuscript page images, kept as the evidence behind a stated fact about what a
-manuscript MAM cites actually has. One file per fact, named
-`<manuscript>-<page>-<ref>-<slug>.png`.
+Crops of three manuscripts' pages at Lamentations 2:3, kept as the evidence behind a stated fact
+about what each manuscript has. A Sefaria correction request of 2026-07-22 asked for a meteg on
+one atom of that verse, and none of the three manuscripts has one there; the section on the Codex
+Sassoon 1053 crop, below, has the whole account. Tiny crops like these are kept as fair use (Ben,
+2026-09-10).
 
-**Where a snip goes.** A manuscript with its own page-snips folder keeps its snips there —
-`../../leningrad/page-snips/`, `../../aleppo/page-snips/`, `../../cam1753/page-snips/`. This folder
-is for the rest, which is why the Leningrad half of the Lamentations 2:3 question below
-lives in the Leningrad folder rather than here.
-MAM-basics is the fallback because it is where MAM's sigla are decoded — see
-[sigil-decoding.md](../sigil-decoding.md).
+Each file is named `<manuscript>-<page>-<ref>-<slug>.png`, the page in that manuscript's form,
+with a column and line after the page where they have been read off the image.
 
-**A printed edition's crops come here too**, the first being the Second Rabbinic Bible's at
-Job 4:12, below, on 2026-09-11. They are named the same way, the edition in the manuscript's
-place; the folder's name predates them.
+Crops are kept in a folder for the work they serve, not in one for the manuscript they come from
+(Ben's decision, 2026-09-13). Until then these three were in `leningrad/page-snips/`,
+`cam1753/page-snips/` and `doc/ms-snips/`.
 
-## masoretica.org is how to find a page
+## Finding a page and its image
+
+### masoretica.org
 
 <https://www.masoretica.org/> serves 187 manuscripts — Masoretic, Samaritan and Greek —
 addressable straight to a verse:
@@ -30,6 +30,95 @@ the Aleppo Codex and Codex Sassoon 1053 among others. Checked 2026-08-04: it doe
 have Cambridge University Library MS Add. 1753, so the leaf hunt for that manuscript still
 runs through `../../cam1753/`.
 
+### The Leningrad Codex
+
+Images come from the two sets that the Leningrad Codex index on Hebrew Wikisource links, which
+are the same photographs:
+
+- <https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F430B.jpg> (direct JPEG)
+- <https://archive.org/details/Leningrad_Codex_Color_Images/page/n859/mode/1up?view=theater>
+
+That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
+for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
+to an image. The page is a folio and side, as in `430B`. Ben does not report lines and columns
+(2026-09-10), so a Leningrad crop's name has a column and line only where he gave the line
+unprompted.
+
+### Cambridge Add. 1753
+
+The page is a leaf and side in `{leaf:04d}{side}` form, as in `0105B`. To get from a verse to a
+page: `../../cam1753/cam1753-page-index.json` for the low-resolution index and
+`../../cam1753/cam1753-line-breaks/` for the Job pages that have line-level data. The BookReader
+URL is `https://archive.org/details/ketuvim-cambridge-ms-add-1753-images/page/n<spread>/mode/1up`,
+where `<spread>` is the entry's `de_archive_spread`. masoretica.org does **not** have this
+manuscript.
+
+## leningrad-430B-col2-line10-Lam2v3-akhla.png
+
+Lamentations 2:3, the word אָכְלָ֖ה, on **folio 430B, column 2, line 10**.
+
+**The Leningrad Codex has no meteg on this word** — confirmed by Ben from this image on
+2026-08-04. The qamats under the alef stands alone, so nothing in the manuscript marks the
+qamats as gadol or the shewa as na.
+
+Why it was cropped: a Sefaria correction request of 2026-07-22 asked that Lamentations 2:3
+read אָֽכְלָ֖ה rather than אָכְלָ֖ה, "and therefore both קמץ are קמץ גדול". MAM has no meteg
+there, as does Mikraot Gedolot Haketer; Metsudah (Lakewood 2001) has one. This crop settles
+what the Leningrad Codex has, which is what MAM follows.
+
+Two further facts about the same verse, from `../../in/UXLC-39/Lamentations.xml`
+rather than from the image: the verse has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus
+the silluq on the verse-final סָבִֽיב׃. So the absence on אָכְלָ֖ה sits among three marks
+present, not on a page sparing with them.
+
+Codex Sassoon 1053 and Cambridge Add. 1753 have no meteg on this word either, both confirmed
+the same day: `sassoon1053-p740-Lam2v3-akhla.png` for Sassoon 1053 page 740,
+and `cam1753-0105B-col2-Lam2v3-akhla.png` for Cambridge Add. 1753 leaf 0105B
+column 2.
+
+### Calibration note for the atom-location estimator
+
+`MAM-basics/py/main_uxlc_estimate_atom_loc.py` put this word at folio 430B, column 2, line
+12.9 — three lines low against the line 10 Ben read off the image:
+
+```
+{'page': '430B', 'fline-guess': '39.9', 'line-guess': '12.9', 'column-guess': 2}
+```
+
+The folio is right and the column is not independently confirmed: Ben's correction named the
+line only, and the column is still the estimator's. Recorded here as one data point about how
+close the estimate runs, not as a defect report.
+
+## cam1753-0105B-col2-Lam2v3-akhla.png
+
+Lamentations 2:3, the word אָכְלָ֖ה, on **leaf 0105B, column 2, third line up from the
+bottom** — so line 24, if the column is the usual 26 of `../../cam1753/cam1753-col-quads/`. It is the
+right-hand page of archive.org spread n110.
+
+**Cambridge Add. 1753 has no meteg on this word** — confirmed by Ben from this image on
+2026-08-04. It agrees with the Leningrad Codex and with Codex Sassoon 1053, whose crops and
+confirmations are at `leningrad-430B-col2-line10-Lam2v3-akhla.png`
+and `sassoon1053-p740-Lam2v3-akhla.png`.
+
+Those three are what MAM follows here. A Sefaria correction request of 2026-07-22 asked that
+Lamentations 2:3 read אָֽכְלָ֖ה rather than אָכְלָ֖ה; MAM has no meteg, and neither does
+Mikraot Gedolot Haketer. This manuscript matters most of the three, being the one MAM cites
+most across Lamentations — ק-מ appears in 24 of the book's 38 נוסח notes, against Sassoon
+1053's 16, and the Aleppo Codex is absent, Lamentations being one of the books lost from it
+entirely.
+
+### How the page was found
+
+By interpolating between column readings Ben made off the images, all now in
+`../../cam1753/cam1753-page-index.json`: Lamentations begins on 0105A col 2, 0105B col 2 opens at
+Lam 1:17, and 0107A col 1 opens at Lam 3:55. Those bracket Lam 2:3 tightly enough that only
+one column is a candidate. The interpolation was originally a fitted lines model, but it
+carries nothing now — the readings on either side do the work.
+
+That column also has a centered ספר איכה above it, which first looked like a start-of-book
+heading and is not. `../../cam1753/things-noticed-in-cam1753.md` distinguishes it from the איכה that
+marks the actual start of the book on 0105A col 2.
+
 ## sassoon1053-p740-Lam2v3-akhla.png
 
 Lamentations 2:3, the word אָכְלָ֖ה, in **Codex Sassoon 1053 (MAM's ש1), page 740**, found
@@ -37,8 +126,8 @@ through the masoretica.org URL above.
 
 **Sassoon 1053 has no meteg on this word** — confirmed by Ben from this image on 2026-08-04.
 So do the other two manuscripts, confirmed the same day:
-`../../leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png` for the Leningrad Codex,
-and `../../cam1753/page-snips/0105B-col2-Lam2v3-akhla.png`
+`leningrad-430B-col2-line10-Lam2v3-akhla.png` for the Leningrad Codex,
+and `cam1753-0105B-col2-Lam2v3-akhla.png`
 for Cambridge Add. 1753.
 
 The three together answer a Sefaria correction request of 2026-07-22 that asked for
@@ -125,27 +214,3 @@ conversions of one shared digital ancestor, neither a transform of the other. At
 verse, the meteg the correction request asked for is in both digital texts — Metsudah has
 אָֽכְלָ֭ה, CTR has אָֽכְלָ֖ה — though the three manuscripts above lack it; and CTR has the
 yetiv, logically before its ḥolam, that the Metsudah quotation lacks.
-
-## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
-
-Job 4:12, the verse-final atom, מֶֽנְהֽוּ׃ in MAM, in **the Second Rabbinic Bible, volume IV**:
-the Venice Mikra'ot Gedolot of 1524–25, edited by Jacob ben Hayyim. Ben cropped it on 2026-09-11
-from a scan titled "The Second Rabbinic Bible (Mikraot Gedolot) (מקראות גדולות) Volume IV",
-on the page marked with a 99 in pencil, which is the `pencil99` in the file name.
-
-**The Second Rabbinic Bible appears to have one meteg/silluq on this atom, under the mem, and none
-under the he** — Ben's reading of this image; diacritics, he says, do not come through well in
-the scan. MAM has one under the mem and one under the he, and so do both codices, in
-`../../aleppo/page-snips/271r-col2-line5-Job4v12-menhu.png` and
-`../../leningrad/page-snips/398A-Job4v12-menhu.png`. At the crop's resolution Claude sees what Ben
-sees: under the mem a short stroke beside the segol, under the nun a sheva, and under the he
-nothing; the one dark mark below the he is the top of a lamed of the next line.
-
-**The crop is of Job 4:12 and not of Psalms 68:24**, whose last atom, מִנֵּֽהוּ׃, is the only other
-atom in MAM with the letters מנהו. Here the atom comes after the ץ of שמץ, and the next line has
-the לילה of Job 4:13; in Psalms 68:24 the atom comes after מאיבים.
-
-The question the crop was made for is which of MAM's two meteg/silluq marks on this atom is the
-silluq. [meteg-after-silluq-job-4-12.md](../meteg-after-silluq-job-4-12.md) has the evidence, and
-counts the Second Rabbinic Bible with Koren, which also has only the mark under the mem, as
-evidence that the stress is penultimate.

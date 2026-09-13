@@ -723,9 +723,11 @@ canonical `uxlc/data/lci_augrecs.json`, and archived the empty source repository
 The archived repository keeps its history and closed issue tracker; new public-side issues belong
 in MAM-basics. No source Pages site or redirect manifest exists.
 
-Nothing in the ordinary suite resolves a Leningrad sibling. `leningrad/` holds only its
-`README.md` and the `page-snips/` directory, which holds three crops Ben made and a
-`README.md` carrying an evidence note for each. On Ben's decision
+Nothing in the ordinary suite resolves a Leningrad sibling, and `leningrad/` is gone as well. It
+held only a README and three crops Ben made, and Ben's decision of 2026-09-13 moved the crops,
+with their evidence notes, into folders for the work each one serves:
+`doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, which took the Aleppo Codex,
+Cambridge 1753 and other crops too. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
 used and its three generated files, since it "will never be run again"; phase 3 of
 `doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
