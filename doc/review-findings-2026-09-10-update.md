@@ -37,12 +37,12 @@ from `CLAUDE.md`'s section “A finished dated document is corrected in `<stem>-
 edited” and D12 of `doc/dual-agent-review.md` to the declaration in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
-## Inherited item 3: live user-level synchronization has three decisions
+## Inherited item 3: live user-level synchronization has all four decisions
 
 Recorded by Codex on 2026-09-13. Inherited item 3 under “Three items this round's integration
-inherits” is re-established. Ben has made the source-ref, cloud-hook and deployment-scope
-decisions; the check-scheduling decision remains pending. No live user-level file, tracked
-user-level copy, hook or skill has been changed by these dispositions.
+inherits” is re-established. Ben has made the source-ref, cloud-hook, deployment-scope and
+check-scheduling decisions; implementation remains. No live user-level file, tracked user-level
+copy, hook or skill has been changed by these dispositions.
 
 Re-measured at review-branch commit `a872790e70d0f02bfa40cc965760c066e0e06918`, local and
 remote-tracking MAM-basics `main` are both `1d2ddc3dc8d029af06bf5cb6ac7a9696f2f78caa`, and
@@ -111,20 +111,17 @@ consequences, are:
    directories is both a write outside the repository and a potentially destructive local act;
    no MAM generator or product changes.
 
-4. **Whether a read-only `--check` is manual or attached to a command that runs.** Current
-   comparison commands live only in the two READMEs. The SessionStart hook checks for missing
-   cloud files, not drift, and exits locally before reading a live file.
-
-   1. **Keep `--check` manual.** The check can compare every selected source and destination and
-      return nonzero on drift without writing anywhere. The check touches neither risk axis, but
-      drift persists until somebody remembers to run the command.
-   2. **Attach `--check` to periodic MAM-basics repository maintenance.** The maintenance pass
-      already runs on Ben's machines and can report drift without repairing it. The check remains
-      read-only, reaches no MAM generator or product and performs no hard-to-undo act. A
-      machine without a live destination needs an explicit “not installed” result rather than a
-      false clean result. Attaching the check to the cloud SessionStart hook instead would modify
-      the unexercisable cloud path and would cover Claude starts but not Codex starts, so that is a
-      materially different wiring choice rather than evidence for the maintenance choice.
+4. **Every ordinary MAM-basics repository-maintenance run checks live configuration drift.**
+   Ben's decision, 2026-09-13: concur with Codex's recommendation to attach the complete check to
+   `py/main_repo_maintenance.py`. The check fetches `origin`, stops its own check on fetch failure,
+   compares both instruction files and every selected skill destination with the freshly updated
+   `origin/main`, and changes no live configuration. Every missing destination is reported
+   explicitly as “not installed”, never as clean. This adds no scheduled task: the check runs when
+   Ben invokes ordinary MAM-basics repository maintenance. The cloud SessionStart hook remains
+   outside this check because it covers Claude cloud sessions only and decision 2 gives it its own
+   branch-sourced rule. The check reaches no MAM generator or product and performs no live
+   configuration write; fetching updates local remote-tracking Git metadata but performs no
+   outward-facing write.
 
 Until Ben makes all four decisions, the current live-first procedures, the cloud hook and the
 manual comparisons remain unchanged. This decision record changes only the live review update and
