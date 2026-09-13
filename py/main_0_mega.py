@@ -658,9 +658,8 @@ _STEPS = [
     StepRecord(
         "diffable-pointed-hebrew",
         main_diffable_pointed_hebrew.write_tracked_expansions,
-        "reads only committed inputs: expands the two sample inputs under"
-        " diffable-pointed-hebrew/ and the two zarqa tables under"
-        " misc/zarqa-table-diff/ into the four tracked outputs beside them, the pairs"
+        "reads only committed inputs: expands the two zarqa tables under"
+        " misc/zarqa-table-diff/ into the two tracked outputs beside them, the pairs"
         " in py/main_diffable_pointed_hebrew.py's TRACKED_EXPANSIONS",
     ),
     StepRecord(

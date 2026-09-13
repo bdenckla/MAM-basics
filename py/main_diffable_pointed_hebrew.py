@@ -3,9 +3,9 @@
 The command accepts a source file and an output file.  It expands every
 character in the source into the product's short Unicode name and writes JSON.
 The nine short names that differ from MAM-basics' general mapping are product
-data in ``diffable-pointed-hebrew/short_unicode_name_overrides.json``.
+data in ``in/diffable-pointed-hebrew-short-name-overrides.json``.
 
-``write_tracked_expansions`` regenerates the command's four tracked outputs,
+``write_tracked_expansions`` regenerates the command's two tracked outputs,
 the pairs in ``TRACKED_EXPANSIONS``; ``py/main_0_mega.py`` runs it as its
 ``diffable-pointed-hebrew`` step.
 """
@@ -19,21 +19,19 @@ from pathlib import Path
 
 from mb_cmn import file_io, paths, uni_heb
 
-_DPH_DIR = paths.repo_root() / "diffable-pointed-hebrew"
 _ZARQA_DIR = paths.repo_root() / "misc" / "zarqa-table-diff"
-_SHORT_NAME_OVERRIDES_PATH = _DPH_DIR / "short_unicode_name_overrides.json"
+_SHORT_NAME_OVERRIDES_PATH = (
+    paths.repo_root() / "in" / "diffable-pointed-hebrew-short-name-overrides.json"
+)
 
-# The command's four tracked outputs, each after the source it expands.  The first
-# two are the product's samples, which diffable-pointed-hebrew/README.md calls the
-# differential artifacts for the command; the other two are the two zarqa tables in
-# misc/zarqa-table-diff/.  A PowerShell script beside those tables also expanded them
-# until 2026-09-10, when phase 6b of doc/PLAN-mega-coverage.md deleted it, the mega's
-# diffable-pointed-hebrew step having made it redundant.
-# tiny-sample-output-normalized.json is not among them: the README calls it
-# preserved historical data rather than a current command output.
+# The command's two tracked outputs, each after the source it expands: the two zarqa
+# tables in misc/zarqa-table-diff/.  A PowerShell script beside those tables also
+# expanded them until 2026-09-10, when phase 6b of doc/PLAN-mega-coverage.md deleted
+# it, the mega's diffable-pointed-hebrew step having made it redundant.
+# Until 2026-09-13 two more pairs came first here: the former product's two samples,
+# under diffable-pointed-hebrew/.  Ben's decision that day deleted them with that
+# directory, leaving these two pairs as the command's goldens.
 TRACKED_EXPANSIONS = (
-    (_DPH_DIR / "sample-input.txt", _DPH_DIR / "sample-output.json"),
-    (_DPH_DIR / "tiny-sample-input.txt", _DPH_DIR / "tiny-sample-output.json"),
     (
         _ZARQA_DIR / "zarqa-table-from-hebrew-wikisource.txt",
         _ZARQA_DIR / "zarqa-table-from-hebrew-wikisource.dph.txt",
