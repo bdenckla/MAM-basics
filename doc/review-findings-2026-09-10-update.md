@@ -259,3 +259,28 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
 finished source report remains unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.2: the 36 enumerated codex abbreviations are corrected
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 11.2
+is unfixed, not acted on or only partly acted on. Finding 11.2 is complete as bounded by the 36
+sites that the finding enumerates.
+
+Implementation commit `fa88d68f00e74cc97a714fbead97580da718530f` on branch
+`dual-agent-review-2026-09-10` extends
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md` with corrected readings for the
+five remaining narrative abbreviations. The four individually checked passages begin “The 52
+NON-verse-final template calls,” “Psalms 18:46, where L has,” “MAM's editorial rule that where L
+has two or more ga'yot,” and “Psalms 19:7, where L's one stroke.” Every `L` in those passages
+means the LC.
+
+The earlier entries in the same update file correct 23 abbreviations in finding 1's
+Classification cells, one abbreviation in finding 2's category label and seven abbreviations in
+finding 2's parse-failure Judgment cells. Those 31 corrections plus the final five narrative
+corrections account for all 36 sites named by finding 11.2. The finished source report remains
+unchanged at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+Product axis: the correction changes documentation only and reaches no generator or product.
+Act axis: both commits are ordinary repository commits on the unpushed review branch; the
+finished source report remains unchanged, and no outward-facing act, destructive local act,
+external configuration write or receipt rewrite occurred.
