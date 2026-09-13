@@ -694,6 +694,53 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.1, revision-aware Wikisource downloads plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-13. This entry classifies only the 24 live lines containing `.novc`
+in `doc/PLAN-efficient-wikisource-downloads.md`. It does not establish a rule for the rest of
+finding 7's census.
+
+At checkpoint `520f2df2648582651c0c58af0d00f29d45d301ff`, current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
+unchanged at Git blob `85fd19f1e6a25de7f145d1e9d7678271cd9d5b94`. Its existing sibling update remains at Git blob
+`d12529f6372cd5ee0db5d43bcd5bb8bb184cae99`; that update records the later production refresh
+and supplies no scratch artifact. The plan's named worktree,
+`C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`, no longer exists. Neither the review worktree
+nor the primary clone has the plan's named `ws_efficiency_*` scripts or `ws-efficiency-*`
+output directories. The tracked `.gitignore` ignores `.novc/`.
+
+The 24 lines have these classifications:
+
+| Searchable anchor in the finished plan | Lines in the live tree | Classification |
+|---|---:|---|
+| Phase 1: “The generated versions were saved” | 301 | Historical output-location record. The tracked Phase 1 receipt preserves the generated and baseline SHA-256 values for both vendoring reports and names their disposition; the current tracked reports remain the inputs to a new comparison. The saved copies were evidence for the completed run, not inputs to a live operation. |
+| Phase 1: the nine commands under “Reproducing Phase 1” | 319, 323, 329, 335, 339, 343, 347, 351 and 355 | Historical command record and reproducible method. The tracked Phase 1 receipt preserves the exact successful commands, checkout, commit, timings, logs, results and hashes of six scratch sources. The receipt-writer command at line 355 is historical provenance for the receipt that survives. The paragraph beginning “If scratch tools are absent” specifies how to reconstruct the bounded measurement against a new commit; current planner, downloader, revision-client and suite entry points remain tracked. |
+| Phase 1: “Raw responses, request headers/parameters, full logs” | 359–361 | Historical evidence-location and filename inventory. The tracked receipt preserves the request counts, body-byte counts, response-manifest hashes, per-book hashes, exact upstream changes, command results and protected-tree hashes. No current program reads the missing directories. |
+| Phase 2: “Reproduce the matrix from the development checkout” | 524 and 528 | Reproducible verification specification and historical command record. The plan states the complete required matrix and its 51 main checks plus 9 additional checks. The tracked Phase 2 receipt names all 60 passed checks, the exact commands and the scratch-source hashes. The production implementation and its adapted tracked downloader fixture remain in the tree, so a fresh fault-injection harness can be written against the current interfaces without recovering either dated script. |
+| Phase 2: “Final command logs live under”, the extras driver and preserved reports | 535, 546 and 558 | Historical log/output inventory and reproducible method. The Phase 2 receipt records each direct command, result and log name, and records the same two generated/baseline report hashes as Phase 1. The extras driver only sequenced tracked entry points; the saved reports and logs were outputs, not inputs. |
+| Phase 3: “Captures and scripts are under” | 612 | Historical evidence-location and filename inventory. The named worktree is gone. The tracked Phase 3 receipt preserves the measurement method, every run's command and result, request and response-manifest hashes, API failures, exact upstream edits, per-book hashes, product comparisons and hashes of all 13 scratch scripts. The missing response bodies cannot be used to resume the completed 2026-09-10 run, but no current operation calls for resuming that run; a new measurement must fetch and record new responses. |
+| Phase 3: the live, product and comparison drivers | 722, 726 and 727 | Reproducible method and historical command record. The plan fixes the run order, independent-decoder boundary, resume rule, product scope, write guard and comparison requirements; the Phase 3 receipt records their results and source hashes. The tracked downloader, revision modules, product generators and receipt data remain the concrete inputs for a new implementation of the method. |
+| Regeneration: `ws-products --output-dir` | 760 | Reproducible current command and disposable output destination. The tracked `py/main_parse.py ws-products` entry point creates the candidate; `.novc/ws-efficiency-candidate` is an output directory, never an input. |
+| Regeneration: the Phase 5 mega driver | 767 | Reproducible method and historical command record. The following paragraph explicitly says to reconstruct the narrow driver from tracked `main_0_mega._STEPS` when the script is missing. The private `near-aleppo-census` step that the dated driver omitted has since been removed, and current `CLAUDE.md` names the direct tracked `py/main_0_mega.py` command for a worktree run. |
+
+None of the 24 lines is a statement that no dependency remains; the table supplies that
+classification now. No `.novc` artifact named or described by the plan is an indispensable
+missing dependency of a tracked result or current method. The absent captures and logs limit
+reinspection of the historical HTTP bodies, but the completed plan treats the tracked receipts as
+the durable records and requires a new retrieval for a new measurement. No new Ben decision
+arises from this classification, and D12 leaves both the finished plan and its existing sibling
+update unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 75.63 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.1, instruction-file remediation plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-12. This entry classifies only the 16 live lines containing `.novc`
