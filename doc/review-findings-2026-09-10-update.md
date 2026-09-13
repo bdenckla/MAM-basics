@@ -284,3 +284,25 @@ Product axis: the correction changes documentation only and reaches no generator
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
 finished source report remains unchanged, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
+
+## Finding 11.6: the historical filename requires no remediation
+
+Recorded by Codex on 2026-09-12. Finding 11.6 is recorded with no remediation authorized or
+required.
+
+The live `doc/PLAN-silluq-before-gaya-template.md` remains `State: live`. Its passage beginning
+“The element name deliberately uses `meteg`, not `gaya`” still assigns `meteg` to MAM-simple's
+public English vocabulary. Git history shows that commit `772545d5` introduced the plan at its
+current path.
+
+The seven in-scope references remain seven path references across four files: one in
+`doc/PLAN-meteg-after-silluq-in-uxlc-and-wlc.md`, three in `doc/foi-mtgmtg-empty-cell.md`, one in
+`doc/meteg-after-silluq-job-4-12.md`, and two in
+`doc/meteg-after-silluq-search-in-mam-documentation.md`. Each reference identifies the existing
+plan or uses its path in a command; none states a filename policy. The plan is not renamed, and
+this disposition makes no choice among `gaya`, `ga'ya` and `meteg` for filenames.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository commit on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
