@@ -694,6 +694,54 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.1, Phase 6 map, September 8 review and close-out plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-12. This entry classifies only the live `.novc` references in
+`doc/mam-products-phase6-command-map.md`, `doc/review-findings-2026-09-08.md` and
+`doc/PLAN-close-out-review-2026-09-08.md`. It does not establish a rule for the rest of finding
+7's census.
+
+At checkpoint `a94ee16e703c768838b4b58c4d239c68623c1632`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, each assigned document
+has 4 lines containing `.novc`. Their Git blobs are
+`741485b0672a6985712ec9a7025d6528547b5cd0`,
+`3df541234f0952f17efce6c5b897af7ff7451f11` and
+`baccee1bdf429519314ea7a5252ea495e0bf98f9`, respectively. The command map has no sibling update.
+The existing `doc/review-findings-2026-09-08-update.md` and
+`doc/PLAN-close-out-review-2026-09-08-update.md`, at Git blobs
+`d38316952314a11182beaab2ce8b2004740aea77` and
+`69b989ec30fe319b13a27cc13eb04ada439b7b23`, correct unrelated State and display-fallback
+passages and supply no scratch artifact.
+
+The 12 lines have these classifications:
+
+| Finished document and searchable anchor | Lines in the live tree | Classification |
+|---|---:|---|
+| `mam-products-phase6-command-map.md`: “The directories are” | 130–132 | Reproducible commands and disposable outputs. The tracked `in/mam_products_phase6_baseline.json` preserves the full `build` and `check` argument arrays, exact redirect-manifest inputs and every `scratch_stub_paths` member for all five directories. The live `py/main_redirect_stubs.py` and `py/redirect_stubs/stubs.py` implement those commands. Each `.novc` directory is regenerated output, not an input. |
+| `mam-products-phase6-command-map.md`: “Use a uniquely named `.novc/` Python file” | 177 | Reproducible method and temporary implementation choice. The plan gives the exact NUL-delimited `git ls-tree` command above this line and the byte-count, SHA-256 and Git-object checks below it; the tracked baseline preserves the sets and file records being checked. No particular scratch filename or unrecorded predicate is required. |
+| `review-findings-2026-09-08.md`: “and `give_std_mark_order` put them back” | 71 | Historical provenance and reproducible method. The finished review already contains the corrected bytes. The tracked `give_std_mark_order` and `has_std_mark_order` implementation remains in `py/mb_cmn/uni_denorm.py`, and `py/tests/test_prose_mark_order.py` now checks the finished review. The primary clone still has `fix_findings_marks.py`, but that writer is not an input to the document or the lint. |
+| `review-findings-2026-09-08.md`: “Every script and output is untracked under” | 145 | Historical evidence-location and naming record. The line identifies the completed review's four stream prefixes and main-session bundle. The review's tracked scope, findings, reconciliation and dispositions preserve the conclusions; no current Python path invokes this directory. The primary clone still has the evidence bundle, but no tracked result or current method takes the bundle as input. |
+| `review-findings-2026-09-08.md`: “`9e6e9e17`'s ‘415 files’” | 558 | Historical evidence-inventory result. The primary clone's `review-2026-09-07` directory still has exactly 416 files, including `commit_msg_review_findings_2026_09_07.txt`; commit `9e6e9e173d179aa3ddea2b2217f5798e6f1a3e94` preserves the earlier 415-file statement. The corrected count describes that completed bundle and is not an input to a live operation. |
+| `review-findings-2026-09-08.md`: “or `.novc/review-2026-09-08/` script that re-establishes it” | 756 | Reproducible-method index and historical evidence pointer. The review states the fixed Git ranges, each finding's population and measurement, and the plain Git commands where a command suffices. The named throwaway scans implement those stated checks; every specifically named re-establish artifact checked for this classification remains in the primary copy. The tracked reconciliation and dated dispositions preserve the accepted conclusions, and no unrecorded semantic partition comparable to finding 7.2's first-match predicates was found. |
+| `PLAN-close-out-review-2026-09-08.md`: “Turn-5 scripts” | 108 | Historical evidence pointer. The old worktree is gone, but all three named scripts and both reports remain in the primary clone's copied review directory. The tracked turn-5 document gives the Git commands and findings those files checked; finding 7's earlier singleton classification records that the verdicts depend on tracked files and Git history rather than on the verification scripts. |
+| `PLAN-close-out-review-2026-09-08.md`: “integration-receipt.json” and “ignored `.novc/review-remediation-2026-09-08/` evidence” | 1177 and 1208 | Historical receipt pointer and preservation instruction. The source directory disappeared with the retired worktree, as planned, but its 6,208 files survive in the verified external evidence archive and manifest named at lines 1211–1213. The archive's current SHA-256 is `33495ad7b7d0b040719ded27ff5544a75efb2f19c0c971c4d333a790dbb523ce`, equal to the manifest, and the manifest inventories `wave4-01a08b71/integration-receipt.json`. The receipt is preserved evidence, not a missing dependency. |
+| `PLAN-close-out-review-2026-09-08.md`: “the ignored `.novc/review-2026-09-08/` does not count” | 1232 | Historical retirement instruction and evidence-location note. The statement explains Git's worktree-removal behavior and points back to the primary copy of the turn-5 files, which still exists. The worktree and branch named by the completed instruction are gone; no current operation depends on the old ignored directory. |
+
+No `.novc` artifact named or described by these lines is an indispensable missing dependency of a
+tracked result or method. The close-out evidence remains deliberately external and verified; it
+must remain unchanged as a receipt. No further Ben decision arises from this unit, and D12 leaves
+all three finished documents and both existing sibling updates unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 81.12 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.2: the two finished reports have one missing exact-replay dependency
 
 Recorded by Codex on 2026-09-12. This entry classifies only the `.novc` references in
