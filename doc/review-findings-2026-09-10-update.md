@@ -569,3 +569,74 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 canonical instruction files, the live user-level copies, every finished dated document and the
 dead provenance link remain unchanged. No outward-facing act, destructive local act, external
 configuration write or receipt rewrite occurred.
+
+## Finding 11.5: `hataf` versus `ḥataf` still needs Ben's decision
+
+Recorded by Codex on 2026-09-12. Finding 11.5 is re-established and remains decision-pending; no
+prose spelling has been selected.
+
+At checkpoint `974395f9f2fabf69eee147c1764886a7c8e28ec0`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, a fresh census used
+NUL-delimited `git ls-files -z` for the tracked-Markdown population. Each table entry gives
+literal sites followed by lines containing a site:
+
+| Finished report | `xataf` | `hataf` | `ḥataf` |
+|---|---:|---:|---:|
+| `doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md` | 7 / 4 | 0 / 0 | 0 / 0 |
+| `doc/meteg-after-silluq-search-in-mam-documentation.md` | 6 / 5 | 3 / 3 | 0 / 0 |
+| `doc/meteg-after-silluq-koren-lookup-candidates.md` | 1 / 1 | 10 / 5 | 0 / 0 |
+| `doc/meteg-after-silluq-in-uxlc-and-wlc.md` | 0 / 0 | 2 / 2 | 0 / 0 |
+| `doc/meteg-after-silluq-job-4-12.md` | 0 / 0 | 3 / 3 | 0 / 0 |
+| `doc/meteg-after-silluq-psalms-72-15.md` | 0 / 0 | 6 / 2 | 0 / 0 |
+
+The six reports therefore have 24 plain-`hataf` sites on 15 lines. They also have 14 `xataf`
+sites on 10 lines: 13 sites on 9 lines are prose in the screen and search reports, while the
+remaining site is the identifier path `py/explicit_xataf/extract.py` in the Koren-candidates
+report. None of the six reports has `ḥataf`.
+
+Outside the six reports and the remediation records that merely discuss finding 11.5, the
+`ḥataf` population remains seven sites on six lines:
+
+1. `doc/mega-pipeline-review-findings-public-2026-09-01.md:126, :128, :130` has three
+   `explicit-ḥataf` sites.
+2. `doc/mega-pipeline-review-phase-13-2026-09-01.md:148` has one `explicit-ḥataf` site.
+3. `doc/metsudah-vs-ctr.md:237` has one `ḥataf qamats` site.
+4. `misc/mam-is-a-dataset/script.md:19` has `ḥataf` and `ḥataf pataḥ` on the same line.
+
+Before this entry, five further `ḥataf` sites merely discussed the unresolved choice:
+`doc/review-findings-2026-09-10.md:626`,
+`doc/meteg-after-silluq-search-in-mam-documentation-update.md:93`, and
+`doc/review-findings-2026-09-10-update.md:55, :163, :185`. The pre-entry tracked-Markdown total at
+the checkpoint was consequently 12 literal sites on 11 lines; only the seven sites on six lines
+listed above use `ḥataf` as the prose term rather than as the subject of this review.
+
+The authority check does not select between the two prose alternatives:
+
+1. Commit `9e3aed3424b2cbe00cb2334360125f4ae0243666` of 2026-03-25 is the only matching commit
+   message that explicitly maps `hataf` to `ḥataf` in prose and `xataf` in identifiers. The
+   commit has a Claude coauthor trailer and does not attribute that editorial choice to Ben.
+   Later report commits introduced the plain spelling without declaring a reversal. The
+   historical commit is evidence for `ḥataf`, not an explicit Ben decision.
+2. The current `py/tests/test_transliterations.py` docstring describes het-as-plain-`h` forms as
+   retired, but the live denylist has no `hataf` pattern and scans Python rather than Markdown.
+   The current user-level Claude and Codex instructions, `CLAUDE.md`,
+   `doc/dual-agent-review.md`, and the live `hebrew-prose` skill have no `hataf`, `ḥataf` or
+   `xataf` occurrence that selects the prose spelling.
+3. `py/accgram/printed_decalogue_strands.py` single-sources its rendered names and has
+   `ROM_PATAX = "pataḥ"`, but it has no `ROM_HATAF`. Its `SCOPE` paragraph makes the `ROM_*`
+   convention specific to the printed-Decalogue pages. Extending either the dotted consonant or
+   the single-sourcing table to `hataf` would be a new editorial choice.
+
+Ben still needs to choose `hataf` or `ḥataf` for prose. The 13 historical prose sites with
+`xataf` are not a third candidate; after Ben selects the prose spelling, sibling update files can
+give the corrected readings for the six finished reports. D12 leaves all six reports unchanged,
+and no sibling correction file is created before the replacement is approved.
+
+`git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
+with 5 skipped and 65 subtests passed. This documentation-only disposition reaches no generator
+or product and does not owe a mega run.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; all six
+finished reports remain unchanged, and no outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
