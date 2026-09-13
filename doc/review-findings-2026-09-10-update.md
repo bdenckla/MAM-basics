@@ -1584,3 +1584,57 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository change on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Close-out: every finding and inherited integration item has a disposition
+
+Recorded by Codex on 2026-09-13. This entry supersedes the initial review's line-3 statement that
+the review had been acted on only in part. D12 leaves that finished dated review unchanged. The
+2026-09-10 review's remediation is complete: every finding now has an implemented correction, an
+explicit decision to make no change, or an evidence-only disposition, and every inherited
+integration item is complete.
+
+Completion does not turn every historical uncertainty into a verifiable fact. Finding 18.1's
+archived-log provenance remains unverified, and finding 21.8's primary-clone `.pytest_cache`
+remains referred to repository maintenance. Neither item needs a review-remediation decision or
+blocks this close-out.
+
+| Finding | Close-out disposition |
+|---:|---|
+| 1 | The mark-operation position defect is fixed by `f11ecaf8`. |
+| 2 | The MAM-with-doc change log is regenerated with the twelve omitted verses by `6b45ad0f`. |
+| 3 | The retired display fallback is recorded in the two sibling update files named in the 2026-09-11 disposition. |
+| 4 | `CLAUDE.md` now gives the measured mark-order populations and calls the remaining 7,247 clusters unclassified. |
+| 5 | `CLAUDE.md` now names the prose lint's edition-transcription `.txt` scope and the limit outside that scope. |
+| 6 | The Wikisource refresh and the records it overtook are recorded in three sibling update files; the finished plans and validation receipt remain unchanged. |
+| 7 | All 17 documents in the finding's `.novc` census have document-by-document classifications. Finding 7.1 finds no missing indispensable dependency. Finding 7.2 identifies one missing exact-replay dependency for the ten ordered first-match categories, and Ben's 2026-09-13 decision is to preserve the historical totals and explain that limit rather than reconstruct the predicates. |
+| 8 | Every applicable plan and review State defect has an effective declaration; D10-protected historical State lines remain unchanged, and no mechanical check was added. |
+| 9 | The live template plan now compares the regenerated FOI with its measured starting blob rather than with superseded bytes. |
+| 10 | The later crop-directory move supplied dedicated coverage in `DATA-LICENSES.md`; Ben chose to keep that coverage unchanged. |
+| 11 | Item 11.1 names the Simanim Tanakh; item 11.2 names the LC and the Aleppo Codex at all 36 enumerated sites; item 11.3 uses `meteg` in the report's analytic prose; item 11.4 supplies all nine “has” corrections; item 11.5 applies `ḥataf` in narrative Unicode prose and `xataf` in ASCII-oriented contexts; item 11.6 keeps the historical filename. Every finished report remains unchanged, with corrected readings in sibling update files. |
+| 12 | Ben selected unique letters-only UXLC matching. Exact input still matches exactly; a bare consonantal query returns only a unique atom and lists every candidate when the letters repeat. |
+| 13 | Item 13.1 deliberately keeps the self-dating inventory floor. Items 13.2 through 13.4 have current counts, crop wording and citation locations. |
+| 14 | The six completed choices and the four-item measurement list are recorded in the assessment's sibling update. |
+| 15 | The user-level instruction now places the repository boundary at the 2026-09-09 move commit rather than at the whole date. |
+| 16 | The duplicate helper and the cloud-hook file gate are fixed. The deleted near-Aleppo mega step makes item 16.2 inapplicable. The cloud-only behavior remains reported as locally unverified. |
+| 17 | The Phonetic MAM paragraph now names the post-stress-meteg survey build and the two additional accessors. |
+| 18 | The NUL-delimited census corrects finding 18.2's HTML counts. Finding 18.1 remains an evidence limit and selects no implementation change. |
+| 19 | Items 19.1 and 19.2 have sibling-update corrections. Item 19.3 deliberately preserves the finished plan's historical “now” statement. |
+| 20 | Item 20.1 retains the established term-of-art uses and corrects the Ben-written sites; items 20.2 and 20.3 name every referent; item 20.4 numbers every announced set; item 20.5 supplies seven disposition-first readings; item 20.6 preserves receipt paths; item 20.7 names `sed`; item 20.8 preserves immutable commit messages; item 20.9 keeps the live crop-coordinate rule by Ben's decision; item 20.10 removes the authored trailing blank line; and item 20.11 preserves the inline-code negative examples. |
+| 21 | Items 21.1 and 21.2 record completed worktree housekeeping; item 21.3 remains a historical cadence census; item 21.4 corrects the trailer count without creating an issue-attribution exception or deleting the remote branch; item 21.5 has no residual drift and is superseded in scope by completed inherited item 3; item 21.6 closed issues #266 and #267 after agent-written explanatory comments; item 21.7 fixes the live plan's `REPOS_ROOT` instructions; and item 21.8 records completed housekeeping, the maintenance referral, dated censuses and the corrected interpretation of worktrees `0e63`. |
+
+| Inherited item | Close-out disposition |
+|---:|---|
+| 1 | The competing `CLAUDE.md` hunk was removed before integration. The final merge at `a7d37b34` contains both the Phonetic MAM correction and the terminology correction, and branch `dual-agent-review-2026-09-10`, local `main` and `origin/main` all point to that merge. |
+| 2 | Commit `d18cbb4b` adds both pointers to the update-file State declaration. |
+| 3 | Commit `1842e784` implements the four user-configuration decisions. After the branch was integrated and pushed, the main-sourced deployment ran. A close-out comparison at `a7d37b34` finds both live instruction files and all seven live skill destinations identical to their tracked canonical sources. |
+
+The last test-risky remediation was the restored-tree provenance fix. Its post-change suite passed
+997 tests with 5 skipped, and the final integration mega passed all 55 steps and left the worktree
+clean. This close-out entry changes only the live review update, so the repository's verification
+cadence does not require another full suite or mega run.
+
+Product axis: this close-out changes review documentation only and reaches no generator or
+product. Act axis: the close-out comparison is read-only, every finished dated document remains
+unchanged, and this entry itself requires only an ordinary repository commit. Integrating and
+pushing that commit is the outward-facing act that completes this task; no further live
+configuration deployment is needed because the tracked user-level configuration is unchanged.
