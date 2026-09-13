@@ -640,3 +640,56 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository change on the unpushed review branch; all six
 finished reports remain unchanged, and no outward-facing act, destructive local act, external
 configuration write or receipt rewrite occurred.
+
+## Finding 20.9: crop-coordinate filename policy still needs Ben's decision
+
+Recorded by Codex on 2026-09-12. Finding 20.9 is re-established and remains decision-pending; no
+image has been adjudicated, no coordinate has been newly confirmed, no crop has been renamed and
+the live naming rule has not been tightened.
+
+At checkpoint `bea962688e6153bac935995d4fd0e490916bd640`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, the live evidence is:
+
+1. `leningrad/page-snips/README.md` still permits the
+   `<folio><side>-col<N>-line<N>-<ref>-<slug>.png` form “when the line has been read off the image”
+   and uses the coordinate-free form when the line has not been read. The rule conditions the
+   coordinate-bearing name on the line; the rule does not say that every encoded coordinate must
+   have been independently confirmed.
+2. The tracked Psalms crop remains
+   `leningrad/page-snips/380A-col2-line3-Ps72v15-yevarkhenhu.png`. Its README entry says that Ben
+   read line 3 from the image and that column 2 is the estimator's, not an independently confirmed
+   column. Commit `b97a2100af5d63671203dcf0d110eb741b2f0375`, which introduced the crop, states
+   both facts and calls the same arrangement the Lamentations 2:3 precedent.
+3. The tracked Lamentations crop remains
+   `leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png`. Its README entry says that Ben read
+   line 10 from the image and that column 2 is still the estimator's. A rule requiring independent
+   confirmation of every coordinate would therefore affect the Lamentations crop as well as the
+   Psalms crop.
+4. Commit `9eff3d0044ad097d2c050bd1a4d9f9e75bc46ae0` is still the latest commit that changed
+   `leningrad/page-snips/README.md`. Its subject says “a name has a line only if read,” and it
+   removed the coordinates from the Job 4:12 crop because neither the column nor the line had been
+   read from the image. It did not remove either crop whose line had been read.
+5. A search of the post-`9eff3d00` repository history and the current repository, Codex and Claude
+   instruction files found no later explicit Ben decision requiring independent confirmation of
+   every coordinate. The later matching entries are the dual-agent review records themselves:
+   C4 and turn 3 both call the stronger rule Ben's choice, and the reconciliation table calls the
+   stronger rule undecided.
+
+Ben still needs to choose between two policies:
+
+1. **Keep the live rule.** Reading the line authorizes the coordinate-bearing filename. An
+   estimator-supplied column may remain in the filename when the README discloses that the column
+   is unconfirmed. Both current coordinate-bearing filenames comply and require no remediation.
+2. **Require independent confirmation of every encoded coordinate.** An estimator-supplied column
+   may not remain in a filename merely because the line was read. The Psalms and Lamentations
+   crops would then need a later, explicit disposition: independently confirm each column or adopt
+   and apply a filename form that does not assert the unconfirmed column.
+
+Until Ben selects a policy, the live README, the three crop filenames and all finished dated
+documents remain unchanged. This documentation-only disposition reaches no generator or product
+and does not owe a mega run.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
