@@ -525,3 +525,47 @@ Product axis: the correction changes a code docstring and documentation only; it
 generator or product. Act axis: the commits are ordinary repository commits on the unpushed
 review branch; all finished dated documents remain unchanged, and no outward-facing act,
 destructive local act, external configuration write or receipt rewrite occurred.
+
+## Finding 20.11: inline-code link examples require no remediation
+
+Recorded by Codex on 2026-09-12. Finding 20.11 is complete as an evidence-only disposition.
+
+A fresh live-tree inspection gives these dispositions:
+
+1. The tracked canonical `dot-claude/user-wide-CLAUDE.md` has the cited text at line 1416, and
+   the live `C:/Users/BenDe/.claude/CLAUDE.md` has the same text at line 1416. The two files are
+   byte-identical at SHA-256
+   `F32191A794596500297D4B566DAE98BEDCB126D00821B2BDCD880FFB438D0D18`.
+2. The tracked canonical `dot-Codex/user-wide-AGENTS.md` has the cited text at line 1197, and
+   the live `C:/Users/BenDe/.Codex/AGENTS.md` has the same text at line 1197. The two files are
+   byte-identical at SHA-256
+   `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`.
+
+Both occurrences of `[page](gh-pages/accgram/page.html)` are enclosed by backticks, so CommonMark
+parses each occurrence as an inline-code example rather than as a link. The surrounding sentence
+explicitly calls the repo-relative spelling “the wrong thing here.” The nonexistent target is
+therefore part of the negative example. Replacing the target with an existing page would make the
+example contradict the instruction it illustrates.
+
+The positive `file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/maqaf-nonfinal-accents.html`
+example occurs in a fenced code block in each instruction file, and the named file exists in both
+the primary clone and the review worktree. No tracked Markdown-link checker exists in the live
+tree; the review-only `md_links_check.py` named by the finding treated inline code as links. No
+checker weakening, exclusion or mechanical gate is warranted.
+
+The same review census separately identifies
+`misc/what-is-mam/img/provenance-misc.md:6` as a dead link. That occurrence is an ordinary
+reader-facing Markdown link, its target
+`.github/prompts/capture-what-is-mam-slides.prompt.md` is absent, and commit `84a801f4` deleted the
+target. The dead provenance link is pre-existing and is not one of finding 20.11's two instruction
+examples, so this narrow unit leaves the dead provenance link unchanged.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 113.28 seconds. No Python file
+changed, and this documentation-only disposition does not owe a mega run.
+
+Product axis: this disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; the tracked
+canonical instruction files, the live user-level copies, every finished dated document and the
+dead provenance link remain unchanged. No outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
