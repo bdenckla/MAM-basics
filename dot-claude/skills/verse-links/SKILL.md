@@ -24,12 +24,13 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRe
 1. **`<book>` is a bk39 id, and several are not the obvious spelling**: `Levit`, `Deuter`,
    `Tsefaniah`, `1Samuel`, `2Kings`, `1Chronicles`, and `"Song of Songs"`, quoted for its spaces.
    An unknown id is refused with the full list.
-2. **Name the atom by its Hebrew text or by `--atom N`.** The Hebrew is matched against the UXLC
-   exactly, then by its letters alone, and "letters alone" drops marks and format characters only.
-   A sof pasuq or a maqaf in the UXLC's atom survives that, so it has to be in what you give: a
-   bare consonantal form matches a mid-verse atom and fails for a verse-final or maqaf-final one,
-   where MAM's pointed form, which carries the mark, works. With neither, the Leningrad Codex line
-   gives where the verse starts and ends.
+2. **Name the atom by its Hebrew text or by `--atom N`.** A pointed or punctuated form is matched
+   against the UXLC exactly first and returns only when that exact form occurs once. Otherwise the
+   matcher retains only Hebrew letters U+05D0 through U+05EA, so it ignores vowels, accents,
+   format characters, a sof pasuq and a maqaf. A bare consonantal form always uses that
+   letters-only pass and works only when its letters occur once in the verse. Repeated occurrences
+   require `--atom`, whether the repeated atoms have the same pointing or different pointing.
+   With neither, the Leningrad Codex line gives where the verse starts and ends.
 3. **`--atom` counts the UXLC's atoms, not MAM's**: one per `<w>` and per `<q>` of the UXLC core
    XML, a ketiv not counted. When the Hebrew given matches none of the verse's atoms, or more than
    one, the command lists the atoms numbered in exactly that count and exits 1; rerun with

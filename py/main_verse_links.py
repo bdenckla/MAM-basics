@@ -7,12 +7,13 @@ resolved from this file, never from the cwd:
 
 <book> is a bk39 id -- Psalms, 2Samuel, Levit, Tsefaniah, "Song of Songs" -- and
 an unknown one is refused with the full list.  Name the atom by its Hebrew text,
-matched as py/main_uxlc_estimate_atom_loc.py matches it (exactly, then by its
-letters alone), or by its number with --atom.  The letters-alone pass drops marks
-and format characters only, so a sof pasuq or a maqaf survives it: a bare
-consonantal form matches a mid-verse atom and not a verse-final or maqaf-final
-one, which wants MAM's pointed form or --atom.  With neither, the Leningrad Codex
-line gives the verse's first atom and its last.
+matched as py/main_uxlc_estimate_atom_loc.py matches it, or by its number with
+--atom.  A pointed or punctuated form is matched exactly first and returns only
+when that exact form occurs once.  Otherwise the matcher retains only U+05D0
+through U+05EA, so it ignores vowels, accents, format characters, a sof pasuq and
+a maqaf.  A bare consonantal form always uses that letters-only pass and works
+only when its letters occur once in the verse; repeated letters require --atom.
+With neither, the Leningrad Codex line gives the verse's first atom and its last.
 
 Prints one markdown link per line, ready to paste into a reply:
 
