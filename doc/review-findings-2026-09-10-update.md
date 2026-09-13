@@ -845,6 +845,24 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 20.9 decision: keep the live crop-coordinate filename rule
+
+Recorded by Codex on 2026-09-13. Ben's decision, 2026-09-13: “Keep the current rule.”
+
+The live rule in `leningrad/page-snips/README.md` therefore remains unchanged. Reading a line from
+an image authorizes the coordinate-bearing filename, and an estimator-supplied column may remain
+in that filename when the README discloses that the column is not independently confirmed. The
+existing Psalms 72:15 and Lamentations 2:3 filenames comply with the selected rule, so neither crop
+is renamed. No image has been adjudicated and no coordinate has been newly confirmed.
+
+Finding 20.9 is complete. This documentation-only disposition reaches no generator or product and
+does not owe a mega run.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
+
 ## Finding 12 and C1: the documentation remains incorrect; atom-matching policy needs Ben's decision
 
 Recorded by Codex on 2026-09-13. This entry supersedes finding 12's 2026-09-12 disposition,
