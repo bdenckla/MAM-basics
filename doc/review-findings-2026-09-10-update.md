@@ -694,6 +694,63 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.1, Wikisource-derived MAM products plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-13. This entry classifies only the 43 live lines containing `.novc`
+in `doc/PLAN-wikisource-derived-mam-products.md`. It does not establish a rule for the rest of
+finding 7's census.
+
+At checkpoint `cbe8b5a2a618c38a7b4fbe650013c0e6930cbd34`, current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
+unchanged at Git blob `bc60b785903b1099a9bcbd9a6b9eb55bcd3103e6`. Its existing sibling update remains
+unchanged at Git blob `cb6b5f7e899338380b4b404704bfbf030f2952df`; that update records the later production
+refresh and supplies no scratch artifact. The plan's named worktree,
+`C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`, no longer exists. Neither the review worktree
+nor the primary clone has any of the 30 named scratch paths checked for this classification. The
+tracked `.gitignore` ignores `.novc/`.
+
+The 43 lines have these classifications:
+
+| Searchable anchor in the finished plan | Lines in the live tree | Classification |
+|---|---:|---|
+| “The reproducible scratch scripts remain” and the experiment command | 163–166 and 171 | Historical command record, reproducible method and disposable outputs. The plan states the conversion, comparison and codepoint-inspection method and explicitly requires reconstructing a missing checker. The tracked review-differences receipt preserves the original nine changed fields, while the Phase 2 implementation and receipt preserve the accepted general representation rules and corrected direct-cluster method. The absent scripts are not inputs to a current operation. |
+| Phase 2 candidate command under “Implementation phases” | 239 | Reproducible current command and disposable output destination. The tracked `py/main_parse.py ws-products --output-dir` entry point remains live, and `py/subcommands/parse_ws_products.py` rejects a production-tree destination. A new run creates a new candidate; the named `.novc` directory is not an input. |
+| Phase 5: “create a disposable standalone clone” | 328 | Historical optional verification method and disposable working copy. The plan permitted omitting the private census, and Phase 5 did omit it. Commit `d32a17b82c8dbf779be101be896c7c491c5b4e4e` later removed the `near-aleppo-census` mega step, so the current MAM-basics mega has no private writer for this procedure to support. |
+| Baseline wrapper, eight-command driver, driver command and receipt directory | 360, 367, 380 and 390 | Historical wrapper and command record, reproducible method, and historical output inventory. The plan prints all eight tracked entry points in order and records every return code and generated-diff result. The later phase commits preserve the code as it stood, and current generation has the tracked `py/main_0_mega.py` entry point. The missing logs limit direct reinspection of the 2026-09-10 processes but are not inputs to a current method. |
+| Phase checkout receipts | 442, 531, 714, 826 and 916 | Historical environment and starting-state records. Each phase section records the task ID, checkout, branch and starting commit in tracked prose, and Git history preserves each named commit. No current operation reads a checkout receipt. |
+| Phase 1 capture and replacement-check commands and reports | 461, 464, 470 and 474 | Historical differential commands, outputs and reproducible method. The pre-edit planner survives at commit `491cb6b84639a8235941e7ad63dd1d8127b82c67`, the replacement at `ee7ee2a05502e944162e34711da8210b50e2604f`, and the tracked corpus check remains in `py/tests/test_wikisource_plan_corpus.py`. The plan records the compared populations, case counts, ordering rules and results. The exact scratch harness is unavailable, but no tracked result or current planner operation requires byte-for-byte replay of that completed harness. |
+| Phase 1 downloader wrapper, log and command receipt | 502 and 507–508 | Historical command and output record. The plan records the two tracked test modules, the 15-test result and the meaning of the checks. Both test modules remain tracked; a fresh run does not read either missing output file or the missing wrapper. |
+| Phase 2 whole-corpus verifier and detailed scratch receipt | 608 and 614 | Historical verification command and output. The tracked Phase 2 validation receipt preserves the 39-book, 929-chapter and 23,202-verse population, every changed path and codepoint sequence, serialization and mark-order results, plus validation and the accepted representation rules. The tracked converter remains in `py/ws/ws_plain.py`. |
+| Phase 2 rendering wrapper and detailed scratch receipt | 617 and 626 | Historical verification command, reproducible method and output. The tracked Phase 2 receipt preserves the complete rendering differences and all nine inverted-nun results; the tracked MAM-with-doc, MAM-simple, Sefaria, AJF and OSIS handlers remain available for a new whole-corpus comparison. |
+| Phase 2 independence wrapper and detailed scratch receipt | 632 and 642 | Historical fault-injection command, reproducible method and output. The plan states every blocked input and import, the write boundary and input census. The tracked Phase 2 receipt preserves the counts and successful boundary results, and the current candidate entry point supplies the subject for a new fault-injection harness. |
+| Phase 2 receipt writer | 645 | Historical provenance. The command wrote the tracked Phase 2 validation receipt that survives; the writer is not required to read, use or re-establish that receipt. |
+| Phase 2 Google, format-2 and suite wrappers, with the shared receipt directory | 653, 657, 670 and 677 | Historical wrapper commands and output inventory. The direct tracked entry points remain, while Git history at Phase 2 preserves their then-current behavior. The plan and tracked Phase 2 receipt preserve the return codes, documentation result, suite result and unchanged-production conclusion; none of the missing logs is a current input. |
+| Phase 3 Google and comparator wrapper commands | 735 and 758 | Historical wrapper commands around current tracked entry points. The tracked Phase 3 receipt preserves their zero-difference results, and commits `05cfc018ee63da5bcb25dd2d3152157f75029584` and `426fa229c69aad6168cf2ec5217b105088d6293f` preserve the intermediate and cutover implementations. A current comparison runs the direct entry points rather than reading a wrapper or its logs. |
+| Phase 3 source-boundary verifier and scratch receipt | 766 and 782 | Historical fault-injection command, reproducible method and output. The plan states the blocked production input and Google-only mutation checks. The tracked Phase 3 receipt preserves the reader boundary, search and replacement checks, normalization-call count and results; the Google reader and comparator remain tracked. |
+| Phase 4 detailed receipts and logs | 896 | Historical output inventory. The tracked Phase 4 validation receipt preserves the source boundary, product comparison, protected-capture counts, commands and test results. Commit `426fa229c69aad6168cf2ec5217b105088d6293f` preserves the complete cutover diff. |
+| Phase 5 mega logs | 923 | Historical output inventory. The tracked Phase 5 validation receipt lists every one of the 38 local steps in order with its return code and timing, records the omitted private step and preserves the stability result. The current mega is a tracked direct command and has since removed that private step. |
+| Phase 5 artifact-audit receipt | 959 | Historical detailed output. The tracked Phase 5 receipt names all 30 changed artifacts, partitions them by the two accepted representation changes, records the change-log arithmetic, support copy, protected-tree hashes and empty unexplained-change set. Git diff from baseline `67cb3ecc17931732d2cd1f9bbafee1976a322a2e` through Phase 5 commit `321b2eeb43295f4de0e9e008e9c13bcbeb371df6` preserves the artifact changes themselves. |
+| Phase 5 primary-checkout postcheck | 991 | Historical environment output. The tracked Phase 5 receipt preserves both observed primary-checkout heads, the three concurrent paths and the conclusion that Phase 5 wrote no primary-checkout file. Git history retains both named heads and the concurrent commit. |
+| Phase 5 detailed logs and command receipts | 997 | Historical output-location record. The tracked Phase 5 receipt and the finished plan preserve the commands, results, artifact accounting, limitations and protected-tree hashes. The missing detailed logs are not inputs to the completed products or a current verification method. |
+
+No line in this plan is a statement that no `.novc` dependency remains; the table supplies that
+classification now. No `.novc` artifact named or described by the plan is an indispensable
+missing dependency of a tracked result or current method. The missing harness sources and logs
+limit byte-for-byte replay and direct reinspection of the historical executions, but the finished
+plan, tracked validation receipts, phase commits, current entry points and Git history preserve
+every accepted method and result needed now. No new Ben decision arises from this classification,
+and D12 leaves both the finished plan and its existing sibling update unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped, in 75.81 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.1, revision-aware Wikisource downloads plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-13. This entry classifies only the 24 live lines containing `.novc`
