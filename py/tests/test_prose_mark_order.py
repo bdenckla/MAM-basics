@@ -53,7 +53,7 @@ against each other.
 
 THE TRANSCRIPTION DIRECTORY IS A NAMED EXCEPTION, AND NOT THAT BLANKET WIDENING.
 The remaining 4 of those 15 are the ``in/accgram/edition_transcriptions/*.txt``
-whose hand-written ``#`` headers carry Ben's notes on what each printed edition does
+whose Ben-written ``#`` headers carry Ben's notes on what each printed edition does
 at a given place, quoting pointed Hebrew -- prose pasted through something that
 normalized it, the same defect as the 132 clusters above rather than a different
 kind. Ben's decision, 2026-09-09, was to cover them, and the pathspec names that one

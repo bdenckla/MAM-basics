@@ -52,3 +52,17 @@ numbered list:
 
 The finished assessment remains unchanged; this entry corrects only the presentation of the three
 reasons.
+
+## The edition-transcription headers are Ben-written
+
+Recorded by Codex on 2026-09-12, for finding 20.1 of
+`doc/review-findings-2026-09-10.md`.
+
+The assessment's sentence beginning “Every offending cluster sits on a `#` comment line” calls
+the edition-transcription header “hand-written” and immediately identifies the header's contents
+as Ben's notes. The header is never regenerated; only the body beneath the header is derived.
+Under the authorship vocabulary recorded by commit `b4706759`, the phrase should be read as
+“Ben-written header.” The assessment's uses of “hand-authored prose” classify prose that is not a
+capture or generated output; those uses retain the established term of art.
+
+The finished assessment remains unchanged; this entry corrects only the header's attribution.
