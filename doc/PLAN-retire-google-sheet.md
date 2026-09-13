@@ -1,5 +1,7 @@
 # Retire the MAM Google Sheet pipeline
 
+State: live
+
 ## Summary
 
 Retire the Google Sheet as a maintained source, remove its download, parse,

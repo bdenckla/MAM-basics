@@ -8,6 +8,16 @@ plan, an execution record — is left as written, like a pushed commit. A correc
 a sibling file named `<stem>-update.md`, which is what this file is for the September 8 review.
 Nothing here edits the document it corrects.
 
+## The review's remediation State: acted on 2026-09-10
+
+Recorded by Codex on 2026-09-12. Commit `2cddb893` recorded D10 of
+`doc/dual-agent-review.md` on 2026-09-09. Commit `9d1de074` last wrote the review's line beginning
+`State: remediated 2026-09-10` on 2026-09-10, after D10 established the review-State vocabulary.
+D10 uses `acted on <date>` for an initial review whose findings received remediation. The review
+is a finished record and remains unchanged. Its corrected State reading is: `State: acted on
+2026-09-10; all approved waves and E/N items complete within scope; retained as a review record
+with explicit deferrals and verification limits.`
+
 ## Finding 13.3's display fallback was retired on 2026-09-10
 
 Recorded by a Claude session on 2026-09-11, for finding 3 of `doc/review-findings-2026-09-10.md`.

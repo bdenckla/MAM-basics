@@ -8,12 +8,12 @@ plan, an execution record — is left as written, like a pushed commit. A correc
 a sibling file named `<stem>-update.md`, which is what this file is for that programme. Nothing
 here edits the document it corrects.
 
-## The programme's own state: complete
+## The programme's State declaration: executed 2026-09-10
 
 Recorded 2026-09-11. Most plans under `doc/` declare their state in a `State:` line at line 3,
 directly under the H1. This one declares it in prose instead, in the sentence beginning "Status
-on 2026-09-10: Phases 1 through 5 are complete." Its state in the conventional form is
-**complete**.
+on 2026-09-10: Phases 1 through 5 are complete." Its State declaration in the conventional form
+is `State: executed 2026-09-10`.
 
 ## "Raw inputs and bot captures are unchanged" stopped being true that same day
 

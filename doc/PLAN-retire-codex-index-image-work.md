@@ -1,6 +1,8 @@
 # Retire the codex-index image-work pipelines
 
-State: ready for execution; recorded 2026-09-12
+State: live
+
+Ready for execution; recorded 2026-09-12.
 
 ## Purpose
 

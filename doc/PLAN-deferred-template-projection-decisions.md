@@ -1,6 +1,8 @@
 # Deferred template-projection decisions
 
-Status: Ben Denckla deferred only the semantic decisions under “Deferred
+State: paused 2026-09-12
+
+Ben Denckla deferred only the semantic decisions under “Deferred
 semantic decisions” on 2026-09-12. The decisions under “Decisions already
 fixed” and the repairs under “Completed engineering repairs” were completed and
 integrated into `main` on 2026-09-12. Do not implement or settle a deferred

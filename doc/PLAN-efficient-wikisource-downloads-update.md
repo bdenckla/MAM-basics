@@ -8,12 +8,12 @@ plan, an execution record — is left as written, like a pushed commit. A correc
 a sibling file named `<stem>-update.md`, which is what this file is for the downloads plan.
 Nothing here edits the document it corrects.
 
-## The plan's own state: complete
+## The plan's State declaration: executed 2026-09-10
 
 Recorded 2026-09-11. Most plans under `doc/` declare their state in a `State:` line at line 3,
 directly under the H1. This one declares it in prose instead, in the paragraph beginning "All
-three phases are complete." Its state in the conventional form is **complete**: all three phases
-executed, the last of them on 2026-09-10.
+three phases are complete." Its State declaration in the conventional form is
+`State: executed 2026-09-10`: all three phases executed, the last of them on 2026-09-10.
 
 ## The production refresh of the 20 chapters, 2026-09-10
 

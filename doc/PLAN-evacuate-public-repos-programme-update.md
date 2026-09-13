@@ -9,6 +9,14 @@ plan, an execution record — is left as written, like a pushed commit. A correc
 a sibling file named `<stem>-update.md`, which is what this file is for the programme. Nothing
 here edits the document it corrects.
 
+## The programme's State declaration: executed 2026-09-10
+
+Recorded by Codex on 2026-09-12. The programme's line beginning `State: complete` uses a word
+outside the five-word plan-State vocabulary declared in `py/repo_util/check_repo_standards.py`.
+The programme is a finished execution record and remains unchanged. Its State declaration in the
+conventional form is `State: executed 2026-09-10`, the date on which Phase 6 and the
+public-repository evacuation programme completed.
+
 ## The licence argument names a `DATA-LICENSES.md` row that does not exist
 
 Recorded by a Claude session on 2026-09-12, for finding 19.2 of
