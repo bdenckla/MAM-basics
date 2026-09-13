@@ -143,3 +143,34 @@ Product axis: this correction changes documentation only and reaches no generato
 Act axis: this update file preserves the finished report rather than rewriting it; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 11.2: the prose after finding 2 should name the LC
+
+Recorded by Codex on 2026-09-12. This entry completes finding 11.2. It corrects the final five
+bare codex abbreviations among the 36 sites that finding 11.2 enumerates: the prose immediately
+after finding 2's 26-row parse-failure table and items 3, 5 and 6 of finding 3. Each passage was
+checked individually against the report's context and the cited MAM-introduction passage. In all
+five uses, `L` means the LC.
+
+The corrected readings are:
+
+1. The paragraph beginning “The 52 NON-verse-final template calls” should end “Breuer's ‘doubts
+   with no decision’, the hitpael forms of Yeivin's section 356, the LC's double ga'yot on maqaf
+   compounds.”
+2. Finding 3's item beginning “`ch2.mediawiki` line 515, in a footnote: Psalms 18:46” should read
+   “Psalms 18:46, where the LC has מִֽמִּסְגְּרֽוֹתֵיהֶֽם with three strokes.”
+3. Finding 3's item beginning “`ch3.mediawiki` line 1365: MAM's editorial rule” should begin
+   “MAM's editorial rule that where the LC has two or more ga'yot in one atom, or in maqaf-joined
+   atoms, MAM has one” and should end “the authority there is the Aleppo Codex, not the LC.”
+4. Finding 3's item beginning “`ch4.mediawiki` line 518: Psalms 19:7” should read “Psalms 19:7,
+   where the LC's one stroke sits on the first syllable.”
+
+Together with the 23 Classification-cell abbreviations, the one category-label abbreviation and
+the seven Judgment-cell abbreviations corrected by the earlier entries in this file, these five
+uses account for all 36 sites named by finding 11.2. The finished source report remains unchanged
+at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+Product axis: this correction changes documentation only and reaches no generator or product.
+Act axis: this update file preserves the finished report rather than rewriting it; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
