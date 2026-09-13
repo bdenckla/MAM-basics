@@ -694,6 +694,78 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.2: the two finished reports have one missing exact-replay dependency
+
+Recorded by Codex on 2026-09-12. This entry classifies only the `.novc` references in
+`doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md` and
+`doc/meteg-after-silluq-search-in-mam-documentation.md`. It does not establish a rule for the
+rest of finding 7's census.
+
+At checkpoint `c141f54105e12042150b16b81cf521685071d7be`, after current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, each finished report
+has 23 lines containing `.novc`. The current worktree has none of the named `mas_a_*` or
+`mas_b_*` files. The screen report's named worktree,
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/zen-babbage-2d6583`, no longer exists. The
+screen report remains unchanged at Git blob `09ac3f23175aacb1ffb10c39894b3c2d2fe78912`.
+The documentation-search report remains unchanged at Git blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+
+The 23 screen-report lines have these classifications:
+
+| Searchable anchors in the finished screen report | Lines in the live tree | Classification |
+|---|---:|---|
+| “Written by `.novc/mas_b_write_doc.py`” | 3 | Historical provenance. The sentence identifies the writer that lifted the Hebrew forms and made the finished report; D12 gives no current process a reason to regenerate that report. |
+| `mas_b_syllables.py`, `mas_b_screen.py`, `mas_b_mgketer.py`, `mas_b_nuclei.py`, `mas_b_write_doc.py`, `mas_b_verify_members.py` and `mas_b_peek_no_sopa.py` in the analytic sections | 22, 31–32, 59, 65, 85, 96, 101, 251, 268 and 313 | Reproducible methods. Sections 1, 3 and 11 state the inputs, loader rules, verse-final-chanted-word rule, alignment, position comparison, classes, calibration and syllable criterion. The missing filenames identify the implementations used in 2026; the methods do not require those implementations. |
+| “listed in `.novc/mas_b_mgketer_report.txt`” | 276 | Filename inventory. The missing intermediate report held the 17-item skip list; the screen report states the count and the reason for the skips, and the list can be re-derived by section 11's method. |
+| “All are gitignored under `.novc/`” and the nine `.novc/mas_b_*.py` command lines | 318, 329, 333, 337, 341, 345, 349, 353, 357 and 361 | Historical command record. The commands name the order and environment of the completed run. The old worktree is gone, so the commands are not runnable instructions in the live tree. Lines 364–381 preserve what each command did and which intermediate files it made. |
+
+The screen method has a concrete tracked replacement for the unavailable scripts. Commit
+`6ca009a583805283c4dd695adf465fff8056f774` changed the live
+`doc/PLAN-meteg-after-silluq-in-uxlc-and-wlc.md` to call the screen report's section 11 “the
+method of record for loading and aligning all three.” The MAM-simple, UXLC 3.9, WLC 4.22 and WLC
+4.20 inputs and the named `accgram` helpers all exist at the report's pinned MAM-basics commit
+`30fb7681`. Phonetic MAM exists at the pinned MAM-private commit
+`3f53991ca85d0b53b0e9291d670299f4f4b5c6db`. Git history identifies
+`3025e8221d05a624071dccba0eecd10bbd4c3d1c` as the last MAM-private commit affecting
+`mgketer/out/` before the report was committed. No `.novc` file is indispensable to repeating
+the screen as a new measurement from those tracked inputs.
+
+The 23 documentation-search-report lines have these classifications:
+
+| Searchable anchors in the finished documentation-search report | Lines in the live tree | Classification |
+|---|---:|---|
+| `mas_a_compare_a06_ws_report.txt`, `(c')` in `mas_a_ws_docnotes_report.txt` and `mas_a_intro_grep_report.txt` | 16, 135 and 139 | Filename inventory. These are missing intermediate views of the completed run. The report states the compared sets, the 52-call disposition, the eight introduction-search terms and the four filtered views. |
+| `mas_a_stress_after_census.py` and `mas_a_stress_classify.py` in the analytic sections | 72 and 87 | Reproducible methods. The report states Ben's syllable definition, the census population and classifications, and the candidate rule; the classification uses the tracked `py/accgram/post_stress_meteg.py` parser. The historical Phonetic MAM input remains available at `3f53991ca85d0b53b0e9291d670299f4f4b5c6db`. |
+| “the test for each is in `.novc/mas_a_write_doc.py`” | 56 | Indispensable missing dependency for exact replay of the ten first-match category counts. The report lists category names and totals, but no tracked file preserves the predicates or the precedence behavior when one call matches several predicates. Reimplementation without those decisions could produce a different partition while preserving the same 166-call population. |
+| “All scripts are gitignored under `.novc/`” and the eight `.novc/mas_a_*.py` command lines | 241, 250, 256, 262, 268, 274, 280, 286 and 292 | Historical command record. The commands identify the completed run's environment and order; no live operation invokes them. |
+| The eight numbered `.novc/mas_a_*.py` descriptions | 247, 253, 259, 265, 271, 277, 283 and 289 | Method and filename inventory. The entries say what was scanned, cross-checked, classified or looked up and name the intermediate files. The tracked inputs exist at MAM-basics commit `30fb7681` and MAM-private commit `3f53991ca85d0b53b0e9291d670299f4f4b5c6db`; the live tree also has the tracked Wikitext parser and the post-stress-meteg parser. The writer reference is historical provenance except for the missing first-match predicates identified above. |
+
+Neither finished report has a statement that no `.novc` dependency remains. Finding 7's example
+of that category is `doc/meteg-after-silluq-in-uxlc-and-wlc.md`, outside this classification.
+The later sibling update files correct terminology and presentation but preserve no `mas_a_*` or
+`mas_b_*` implementation, so they do not close the exact-replay gap.
+
+Ben still needs to choose the disposition for the missing first-match predicates:
+
+1. **Restore exact remeasurement.** Reconstruct the predicates from the original task evidence,
+   review every semantic choice, and preserve the approved implementation in tracked source
+   behind a repository entry point.
+2. **Keep the counts as historical results.** Add a later correction to
+   `doc/meteg-after-silluq-search-in-mam-documentation-update.md` saying that the ten category
+   counts cannot now satisfy the finished report's “Re-measure rather than trust” instruction.
+
+Until Ben chooses, no predicate has been reconstructed, no script has been added, and neither
+finished report nor either sibling update file has been changed. This evidence-only disposition
+reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped, in 76.12 seconds.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository change on the unpushed review branch; both finished
+reports remain unchanged, and no outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
+
 ## Finding 10: Aleppo crop license-notice wording still needs Ben's decision
 
 Recorded by Codex on 2026-09-12. Finding 10 is re-established and remains decision-pending; no
