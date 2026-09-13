@@ -475,3 +475,53 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository commit on the unpushed review branch; no history
 rewrite, outward-facing act, destructive local act, external configuration write or receipt
 rewrite occurred.
+
+## Finding 20.1: term-of-art uses remain and the Ben attribution is explicit
+
+Recorded by Codex on 2026-09-12. Finding 20.1 is complete.
+
+Ben's 2026-09-04 commit `b4706759` says that `script-regenerable` supersedes an authorship claim
+when a script reproduces an artifact, while `Ben-written` and `Claude-written` remain useful for
+artifacts that no script reproduces. The same message expressly says that this refinement is not a
+rename: “hand-authored” remains an unambiguous lint-scope term meaning “not emitted by a script,”
+and no repository-wide sweep is proposed. The review's phrase “against the 2026-09-04 vocabulary”
+therefore does not supply a mechanical replacement rule.
+
+A fresh live-tree census gives these dispositions:
+
+1. Commit `3134f32b` already corrected the three source descriptions cited in the finding.
+   `py/main_pipeline_graph.py` now calls `MAM-process.dot` Ben-written, and
+   `py/main_0_mega.py` describes the structured specification without an authorship claim and
+   calls `MAM-process.dot` Ben-written. The three cited spellings are absent from both modules.
+2. The finding's two `CLAUDE.md` anchors now occur at lines 24 and 49. Both use “hand-authored” as
+   the mark-order lint's term of art. The live instruction file has two additional occurrences of
+   the same term at lines 69 and 166; both make the same generated-or-captured distinction. All
+   four remain. The historical “hand-maintained” test-registry description at line 992 states the
+   maintenance method rather than an unknown authorship and also remains.
+3. `py/tests/test_prose_mark_order.py` still has exactly five occurrences of “hand-authored,” at
+   lines 1, 6, 41, 45 and 176. Line 1 names the lint's scope; line 6 quotes the instruction that
+   motivated the lint; line 41 distinguishes captured note HTML from prose; line 45 distinguishes
+   external input from prose; and line 176 states the lint failure. All five retain the term of
+   art. The adjacent line 56 called the edition-transcription headers “hand-written” and
+   immediately identified their contents as Ben's notes. Commit `c8ba9f00` changes that live
+   docstring to “Ben-written.”
+4. The finished `doc/PLAN-wikisource-derived-mam-products.md` and frozen
+   `doc/mam-products-phase6-command-map.md` each have one “hand-authored” occurrence, both
+   distinguishing source from generated output. The finished
+   `doc/assessment-two-stranded-artifacts-2026-09-09.md` has ten literal “hand-authored”
+   occurrences and one “hand-written” occurrence, rather than a literal population of nine. The
+   occurrences at lines 66, 68 and 175 quote earlier instruction text. Lines 89, 93, 117, 176,
+   233, 234 and 553 use the generated-or-captured classification. The “hand-written” occurrence
+   at line 116 describes Ben's notes in a header that is never regenerated, so
+   `doc/assessment-two-stranded-artifacts-2026-09-09-update.md` records that the phrase should be
+   read as “Ben-written header.” D12 leaves all three finished documents unchanged.
+
+Black left the edited Python file unchanged. `git diff --check` and the tracked-prose mark-order
+lint passed; the lint passed 1 test. The full suite passed 997 tests, with 5 skipped, in 114.05
+seconds. The source change is a docstring correction and reaches no generator or generated
+product, so this unit does not owe a mega run.
+
+Product axis: the correction changes a code docstring and documentation only; it reaches no
+generator or product. Act axis: the commits are ordinary repository commits on the unpushed
+review branch; all finished dated documents remain unchanged, and no outward-facing act,
+destructive local act, external configuration write or receipt rewrite occurred.
