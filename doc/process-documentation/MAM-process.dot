@@ -26,7 +26,6 @@ digraph "MAM process" {
 
     // Output formats
     XML             [label="XML"]
-    JPS             [label="JPS"]
     with_doc        [label="\"with doc\""]
 
 
@@ -60,7 +59,6 @@ digraph "MAM process" {
 
     // parsed-plus -> Output formats
     parsed_plus -> XML
-    parsed_plus -> JPS
     parsed_plus -> with_doc
 
 
