@@ -654,12 +654,16 @@ The `../wlc-utils` paths in `doc/`'s plans are execution records of what was tru
 ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
 citations too.
 
-## diffable-pointed-hebrew is local under `diffable-pointed-hebrew/`
+## diffable-pointed-hebrew's only data is `in/diffable-pointed-hebrew-short-name-overrides.json`
 
 The completed Phase 4 lane of
-`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moves the former
+`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved the former
 diffable-pointed-hebrew product's samples and its nine short Unicode-name assignments under
-`diffable-pointed-hebrew/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
+`diffable-pointed-hebrew/`. Ben's decision of 2026-09-13 removed that directory: the nine
+assignments moved to `in/diffable-pointed-hebrew-short-name-overrides.json`, and the two sample
+pairs, a historical output, the README and the product's MIT `LICENSE` were deleted. The samples
+were MAM text, which that licence could not cover, and the command's two remaining goldens are
+the zarqa tables under `misc/zarqa-table-diff/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
 MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
 is deliberately absent from `all-repos.code-workspace`, `repo_visibility`, and vendoring audit
 configuration. The source repository keeps its history as an archived dated breadcrumb. Ben
