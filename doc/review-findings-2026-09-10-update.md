@@ -694,6 +694,52 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.1, instruction-file remediation plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-12. This entry classifies only the 16 live lines containing `.novc`
+in `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md`. It does not establish a
+rule for the rest of finding 7's census.
+
+At checkpoint `86fa91719c40cebd444bde6bb88a3c78fb77f752`, current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
+unchanged at Git blob `abc066916cba72157693e6a89e419677abb248ad`, and no sibling update file
+exists. The review worktree has no `.novc/review-2026-09-09/` directory. The primary clone still
+has the complete machine-local bundle: 13 Python scripts and 10 output files. The tracked
+`.gitignore` ignores that directory.
+
+The 16 lines have these classifications:
+
+| Searchable anchor in the finished plan | Lines in the live tree | Classification |
+|---|---:|---|
+| “Baseline: no drift anywhere” | 102 | Historical precondition and reproducible method. The primary clone still has `drift_check.py`, but §6 already identifies its stale checkout and filename constants. The tracked `dot-claude/README.md` supplies the current file-hash and recursive-comparison commands, including both comparisons required for the shared skill. |
+| M1: `show_policy.py` | 126 | Reproducible method. The script and `policy_excerpt.txt` survive in the primary copy. The authoritative inputs remain tracked in `in/repo_maintenance_policy.json`, `all-repos.code-workspace` and `py/repo_util/repo_selection.py`; the plan states the fields and assertions the script displays. |
+| M2: `resolve_paths.py` and `paths_report.txt` | 140 | Reproducible method and historical output filename. The script and report survive in the primary copy. M2 names all five paths, their tracked replacements and the governing repository section, so no unrecorded classification is needed to repeat the check. |
+| M3: `substitution_proof.py` and `substitution_diff.txt` | 163 | Historical provenance and reproducible method. The script and exact report survive in the primary copy. Section 6 states that the comparison applies the same section comparison at github-misc commit `f8898a9`; §0 identifies the private remote and the commands for reaching that history. A fresh clone is an explicit input to a new run, not a missing `.novc` dependency. |
+| M4: `final_checks.py` | 184 | Historical verification record and reproducible method. The script survives in the primary copy, while M4 names the checked section and the tracked file that supplies it. The verification result is evidence for the dated plan, not an input to a live repository operation. |
+| M5 and D3: `section_compare.py` and `section_compare.txt` | 224 and 356 | Reproducible method and historical report. The script and report survive in the primary copy. Section 6 states the operation—compare corresponding `##` sections after the `claude` to `Codex` substitution—and warns that the checkout constant must be repointed before a new run. M5 and D3 state which differences matter; no hidden predicate is required. |
+| M8: `remeasure.py`, with the alternate per-page search | 262 | Reproducible method. The same sentence gives the direct search alternative, and the three tracked pages and their Git history remain the inputs. The primary copy also retains the script. |
+| M12: `resolve_issues.py` and `issues_report.txt` | 306 | Historical external-state evidence and filename inventory. The primary copy retains both files. M12 enumerates every cited site and required tracker prefix, so future edits do not depend on reconstructing the dated issue-state report. |
+| D5: `remeasure2.py` | 379 | Reproducible method. D5 identifies the tracked `liberality_metric.py` constant and its `--html-dir` override, which are the facts the check inspects. The primary copy retains the script. |
+| D9: `remeasure.py` and `numeral_dupes.py` | 409 | Historical measurement and reproducible method. Both scripts and `numerals_report.txt` survive in the primary copy. The plan names the measured figures and points to the corresponding sections of the tracked MAM-private `masorah-books/README.md`, which remains the authority rather than either scratch script. |
+| D16: “were copied to `MAM-basics/.novc/review-2026-09-09/`” | 458 | Historical evidence-location record. The primary copy still exists. The tracked §7 preserves Ben's one-off-review decision and the remaining proposal independently of the scratch directory. |
+| §4 item 1: `resolve_shas.py` and `shas_report.txt` | 467 | Historical verification result and reproducible method. The script and report survive in the primary copy. The plan pins the 23 SHAs to their repositories and dates; local or remote Git history, rather than the scratch report, remains the source for a new verification. |
+| §6: the copied directory, commands that resolve there, and ignored status | 521–523 | Evidence-location record, filename inventory and explicit recovery method. The primary copy has exactly the 13 scripts and 10 outputs §6 describes. Section 6 records each script's inputs and outputs, identifies the stale constants, and instructs a fresh session to rewrite a missing script from those descriptions. The special historical input for `substitution_proof.py` is separately named in §0. |
+
+No `.novc` artifact named or described by these lines is an indispensable missing dependency of a
+tracked result or method. No new Ben decision arises from this classification; the plan's existing
+substantive decisions and §7 proposal remain exactly as the finished plan records them. D12 leaves
+the finished plan unchanged.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 76.16 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.1, Phase 6 map, September 8 review and close-out plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-12. This entry classifies only the live `.novc` references in
