@@ -390,3 +390,43 @@ Product axis: the corrections change documentation only and reach no generator o
 axis: both commits are ordinary repository commits on the unpushed review branch; every finished
 plan and review remains unchanged, and no outward-facing act, destructive local act, external
 configuration write or receipt rewrite occurred.
+
+## Finding 20.6: backslash paths require no receipt rewrite
+
+Recorded by Codex on 2026-09-12. Finding 20.6 is disposed of as an evidence-only census; no
+remediation is authorized or required.
+
+A fresh census read NUL-delimited `git ls-files -z` output, split filenames only on NUL, decoded
+each filename as UTF-8 and parsed every tracked direct `in/*.json` file from an explicit UTF-8
+read. The census reproduces the finding's exact population: 45 JSON string values, each on a
+distinct source line, contain a Windows absolute backslash path such as `C:\...`. A captured log
+value containing more than one such path counts once, matching the review's string-line census.
+The ten files and their counts are:
+
+1. `in/mam_osis_empty_verification.json`: 2.
+2. `in/mam_osis_remove_verification.json`: 9.
+3. `in/mam_osis_repoint_verification.json`: 8.
+4. `in/mam_osis_stubs_verification.json`: 4.
+5. `in/mam_products_phase6a_verification.json`: 2.
+6. `in/mam_products_phase6b_verification.json`: 5.
+7. `in/mam_products_phase6c_verification.json`: 3.
+8. `in/mam_products_phase6d_verification.json`: 2.
+9. `in/mam_products_phase6e_verification.json`: 9.
+10. `in/mam_products_phase6f_verification.json`: 1.
+
+All 45 values are immutable evidence-receipt data: 39 are structured path or command values and
+six are captured `log_text` values. None is reader-facing prose. The same NUL-safe tracked-file
+scan found no Python reference to any of the ten receipt filenames, and the tracked Python tree
+has no shared consumer for the two filename families. References outside the ten receipts are
+finished plan and review records, evidence inventories, and a validation record; no live code
+consumes the recorded path values. Converting their separators would rewrite the receipts rather
+than correct live input.
+
+`git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
+with 5 skipped and 65 subtests passed. This documentation-only disposition does not owe a mega
+run.
+
+Product axis: the disposition changes a review update only and reaches no generator or product.
+Act axis: the write is an ordinary repository commit on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
