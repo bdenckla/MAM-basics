@@ -340,3 +340,53 @@ Product axis: the disposition changes a review update only and reaches no genera
 Act axis: the write is an ordinary repository commit on the unpushed review branch; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Finding 8: applicable State defects have declarations
+
+Recorded by Codex on 2026-09-12. This entry supersedes the review's statements that finding 8 is
+unfixed or not acted on. It excludes the historical review State lines that D10 of
+`doc/dual-agent-review.md` protects and does not add the mechanical check that finding 8 presents
+as a separate proposal.
+
+A fresh NUL-delimited `git ls-files -z` census at starting commit `eb79e618` found 25 direct
+`doc/PLAN-*.md` files after excluding sibling update files. Nine plans needed effective State
+declarations:
+
+1. `doc/PLAN-close-out-review-2026-09-08.md`: `State: executed 2026-09-10` in its new sibling
+   update.
+2. `doc/PLAN-efficient-wikisource-downloads.md`: `State: executed 2026-09-10` in its existing
+   sibling update.
+3. `doc/PLAN-evacuate-five-MAM-products.md`: `State: executed 2026-09-10` in its existing sibling
+   update.
+4. `doc/PLAN-evacuate-public-repos-programme.md`: `State: executed 2026-09-10` in its existing
+   sibling update.
+5. `doc/PLAN-wikisource-derived-mam-products.md`: `State: executed 2026-09-10` in its existing
+   sibling update.
+6. `doc/PLAN-worktree-file-consolidation.md`: `State: executed 2026-09-10` in its new sibling
+   update.
+7. `doc/PLAN-deferred-template-projection-decisions.md`: `State: paused 2026-09-12` at line 3.
+8. `doc/PLAN-retire-codex-index-image-work.md`: `State: live` at line 3.
+9. `doc/PLAN-retire-google-sheet.md`: `State: live` at line 3.
+
+The first six plans are finished execution records, so D12 leaves all six plans unchanged and
+their sibling update files supply the effective declarations. The last three plans describe work
+that is paused or live, so the three State lines are kept true in the plans themselves. The
+fourth plan added after the review anchor, `doc/PLAN-dispose-mega-pipeline-review-findings.md`,
+already begins with `State: live` and needs no correction.
+
+The same census found 21 review files in D10's families. Sixteen historical State lines remain
+unchanged under D10's preservation rule. The four files in the 2026-09-10 round use the applicable
+initial-argument or later-turn State phrase. The remaining line is
+`doc/review-findings-2026-09-08.md`'s `State: remediated 2026-09-10`, last written by `9d1de074`
+on 2026-09-10 after `2cddb893` recorded D10 on 2026-09-09. The review's existing sibling update
+now supplies the corrected reading `State: acted on 2026-09-10` with the original qualifications.
+
+Implementation commit `d3ab7cf16949c44d5c1d5fe01c53f311d38afadf` makes only those bounded
+corrections. `git diff --cached --check` and the tracked-prose mark-order lint passed. The full
+suite passed 997 tests, with 5 skipped, in 117.26 seconds. This documentation-only unit does not
+owe a mega run.
+
+Product axis: the corrections change documentation only and reach no generator or product. Act
+axis: both commits are ordinary repository commits on the unpushed review branch; every finished
+plan and review remains unchanged, and no outward-facing act, destructive local act, external
+configuration write or receipt rewrite occurred.
