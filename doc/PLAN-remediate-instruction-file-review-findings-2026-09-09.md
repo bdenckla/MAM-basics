@@ -84,8 +84,10 @@ cannot run without a clone of it.
    optional: run `.venv/Scripts/python.exe py/main_test.py` from
    `C:/Users/BenDe/GitRepos/MAM-basics`, never from `py/`, before the first edit and after the
    last. The baseline on 2026-09-09 was **983 passed, 5 skipped, 65 subtests passed**, about 84
-   seconds. In a worktree, set `$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"` first and name the
-   primary clone's venv by absolute path. `py/tests/test_prose_conventions.py` reads the skill, so
+   seconds. In a worktree, name the primary clone's venv by absolute path. Since `516a4a1a`, a
+   normal linked worktree needs no `REPOS_ROOT`: `paths.repos_root()` reads the home clone from
+   Git's worktree metadata and finds its siblings there. The variable remains an override for a
+   nonstandard layout. `py/tests/test_prose_conventions.py` reads the skill, so
    an edit there can turn it red; and if the branch that
    `doc/assessment-two-stranded-artifacts-2026-09-09.md` §3 recommends merging has landed,
    `py/tests/test_prose_mark_order.py` fails on any tracked `.md` whose Hebrew is not in MAM-normal
@@ -510,10 +512,10 @@ still need a decision.**
    says what HAPPENED to it".
 8. **Integrate**: in the primary clone, run `.venv/Scripts/python.exe py/main_test.py` from the
    repository root and then push `main`; in a worktree, immediately after step 5 by the Git
-   section's four steps (`git merge --no-edit main` in the worktree, run the suite there with
-   `$env:REPOS_ROOT` set as §1 item 4 says, `--ff-only` in the primary clone, push), for the reason
-   in §1 item 1. **The suite is the step github-misc did not have**: `main` must not carry a commit
-   nothing has verified.
+   section's four steps (`git merge --no-edit main` in the worktree, run the suite there with the
+   primary clone's venv and no `REPOS_ROOT` in the normal layout, `--ff-only` in the primary clone,
+   push), for the reason in §1 item 1. **The suite is the step github-misc did not have**: `main`
+   must not carry a commit nothing has verified.
 
 ## 6. The review's scripts and outputs, and how to run them
 

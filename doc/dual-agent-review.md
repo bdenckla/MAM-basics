@@ -174,11 +174,12 @@ path; development commands, edits, staging and commits use the verified shared w
 Each close-out task merges `main` into the review branch before editing and resolves conflicts
 there. No intermediate task fast-forwards `main` or pushes, including when an intermediate task
 is archived. The final remediation task integrates once: merge `main` into the review branch,
-run the repository suite in the worktree with `REPOS_ROOT=C:/Users/BenDe/GitRepos` and
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, then fast-forward the primary
-clone's `main` with `--ff-only` and push `main`. If the fast-forward refuses because `main`
-moved, merge and verify again in the worktree. Retire the worktree and its merged branch only
-after the final task has ended.
+run `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` from the
+worktree with no `REPOS_ROOT`, read its Git diff, and commit every explained generated change on
+the branch. An unexplained generated change or a failing mega step is a failure. Then fast-forward
+the primary clone's `main` with `--ff-only` and push `main`. If the fast-forward refuses because
+`main` moved, merge and verify again in the worktree. Retire the worktree and its merged branch
+only after the final task has ended.
 
 In the September 8 round, Codex created
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on branch

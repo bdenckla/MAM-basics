@@ -724,6 +724,107 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 21: the eight process-and-hygiene items are disposed or decision-pending
+
+Recorded by Codex on 2026-09-13. This entry re-establishes finding 21 against the live tree after
+current `main` at `7b64043ba6c3bf4ffafdc0c3ed8169a2989bd530` was merged into the review branch,
+producing checkpoint `52e0c2db9b71e5bcd175c5f059acc695800ccc33`. Historical censuses remain tied to
+their original range; current filesystem and remote checks are dated below.
+
+1. **Item 21.1 is completed housekeeping.** The re-leased
+   `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/eloquent-ritchie-0e4c6c` no longer
+   exists and is absent from `git worktree list`. None of the three historical branch names
+   `claude/eloquent-ritchie-0e4c6c`, `claude/interesting-taussig-6aa52b` and
+   `claude/mam-basics-review-stage-1-72e903` exists locally. No current work remains for this
+   item, and no worktree or branch was removed by this remediation.
+
+2. **Item 21.2 is completed housekeeping with a now-recorded execution gap.** Commit
+   `e7a1736bcd9e02f3e2ed3f478a6bd33032731f4d` records that its maintenance sweep removed the
+   September 8 Codex review worktree named through `--session-ended`. The path remains absent
+   from disk and `git worktree list`, and local branch `codex-review-2026-09-08` remains absent.
+   The surviving evidence does not prove which command removed the branch. D12 leaves the
+   finished `doc/PLAN-close-out-review-2026-09-08.md` unchanged; its live sibling
+   `doc/PLAN-close-out-review-2026-09-08-update.md` now records that Step 7 is complete and
+   preserves the evidentiary limit.
+
+3. **Item 21.3 is a confirmed historical census, not a process defect.** Git history still
+   gives 31 merge commits in `38a606e2..0354b6cc`, including 13 merges of `main` into
+   `codex-review-2026-09-08`; seven merge commits have paths in their combined diff. The
+   user-level instruction gives the ordinary integration schedule. The review-specific plan and
+   the live D11 procedure explicitly require each close-out task to merge current `main` into the
+   review branch before editing. The specific review procedure explains the measured cadence, so
+   no generic instruction change or merge-history rewrite follows.
+
+4. **Item 21.4 remains a Git census and creates no issue-attribution exception; one historical
+   trailer count is corrected here.** Through anchor `0354b6cc`, Git has 12 commits whose author
+   is `Claude <noreply@anthropic.com>`. Eleven have a `Claude-Session:` trailer. Merge commit
+   `1af10e4cb275d59ec2effa85ab005af33ef3d9d5` is the twelfth and has no such trailer. A live
+   `git ls-remote` check still finds remote branch `claude/charming-mayer-xknwcw` at
+   `036deb92fa42f7b6b707dbbcd04f9560fb709b84`. C5 remains controlling: Git author and trailer
+   metadata describe commits and cannot identify the actor behind a GitHub issue event. An
+   agent-written explanatory comment remains required for an issue state change. The remote
+   branch is a census fact, not an instruction to delete it.
+
+5. **Item 21.5 has no residual drift.** The live `C:/Users/BenDe/.Codex/AGENTS.md` and tracked
+   `dot-Codex/user-wide-AGENTS.md` have the same SHA-256 hash,
+   `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`. The tracked text now
+   explicitly says to edit the live file first, copy it back and commit. The two historical
+   tracked-first edits caused no current mismatch; no live user-level file was written here.
+   Inherited item 3's four broader sync-discipline choices remain separate and decision-pending.
+
+6. **Item 21.6 still needs Ben's issue-completion decision.** Read-only GitHub checks on
+   2026-09-13 find issues #266 and #267 open. Each issue still has only skadish1's 2026-09-09
+   “Fixed” comment and Wikisource diff link. The MAM source, plus and plain Psalms files have no
+   commit after `0354b6cc`, so the fixes found there at the review anchor remain in all three.
+   The issue bodies ask whether MAM needs the two deḥi stress-helper changes and state no
+   downstream phonetic-hbo completion criterion. Ben still needs to choose between exactly these
+   alternatives:
+
+   1. Close both issues now, because the requested Wikisource changes have been refreshed into
+      the MAM source and derived MAM products. Each close must include an agent-written comment
+      that says why it is closing.
+   2. Keep both issues open until the relevant phonetic-hbo page has been regenerated or verified
+      to contain the upstream changes, then close each issue with the same explanatory and
+      agent-attributed comment.
+
+   No issue comment, state, label or assignment changed during this remediation.
+
+7. **Item 21.7 is fixed in the live instruction-file remediation plan.** Commit `516a4a1a`
+   remains in the live tree, and repository `CLAUDE.md` states that a normal linked worktree needs
+   no `REPOS_ROOT`; the variable is only an override for a nonstandard sibling layout. The two
+   stale mandatory-export directions in
+   `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md` now name the primary
+   clone's venv and state that normal worktree runs need no `REPOS_ROOT`. The plan's suite check
+   remains: the plan changes only instruction files, and repository `CLAUDE.md` exempts an
+   instruction-only branch from the mega. The live D11 procedure in `doc/dual-agent-review.md`
+   now states the current final-integration command: run `py/main_0_mega.py` from the merged
+   review branch, read its Git diff, and commit every explained generated change before the
+   fast-forward, with no `REPOS_ROOT`.
+
+8. **Item 21.8 contains completed housekeeping, one continuing maintenance referral, historical
+   counts and one corrected worktree interpretation.** A live remote check confirms that
+   `origin/post-stress-meteg` is absent; the post-stress-meteg worktree and empty `d4d1` directory
+   remain absent. The primary clone's `.pytest_cache` still exists and remains referred to
+   repository maintenance; this review did not remove it. The historical five-entry count under
+   `C:/Users/BenDe/.codex/plans` remains a dated census; the directory has seven top-level entries
+   on 2026-09-13, whose contents were not read. `C:/Users/BenDe/GitRepos` still contains exactly
+   the five directories named by `all-repos.code-workspace`, with no extra directory.
+
+   The historical concern about `C:/Users/BenDe/.codex/worktrees/0e63` is withdrawn. A
+   MAM-basics-specific `git worktree list` cannot name worktrees belonging to sibling
+   repositories. MAM-private's worktree list names `0e63/MAM-private` on branch
+   `codex-worktree-0e63`, and phonetic-hbo's worktree list names `0e63/phonetic-hbo` on the branch
+   of the same name. The two registered worktrees are not unexplained residue. The current
+   top-level `.codex/worktrees` census belongs to later task state and is not substituted for the
+   September 10 census. No directory was deleted or otherwise changed.
+
+These documentation corrections reach no generator or product and do not owe a mega run.
+
+Product axis: the changes affect current review and process documentation only. Act axis: the
+writes are ordinary repository changes on the unpushed review branch. Read-only checks reached
+GitHub issues, remote refs and live user-level files, but no outward-facing act, destructive local
+act, external configuration write or finished-record rewrite occurred.
+
 ## Finding 7.1, September 8 remediation plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-13. This entry classifies only the 33 live lines containing `.novc`
