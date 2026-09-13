@@ -694,6 +694,62 @@ Act axis: the write is an ordinary repository change on the unpushed review bran
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## Finding 7.1, September 8 remediation plan: no missing `.novc` dependency remains
+
+Recorded by Codex on 2026-09-13. This entry classifies only the 33 live lines containing `.novc`
+in `doc/PLAN-remediate-review-findings-2026-09-08.md`. It does not establish a rule for the rest
+of finding 7's census.
+
+At checkpoint `0a86cddefe2d1ed5151b91476ffadf08f3233fd1`, current `main` at
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
+unchanged at Git blob `bbd8c142bee6c1f1424cc33d08fa81bf37c7e1c3`, the same blob as final remediation
+commit `9d1de07404bd9257c3e4cafc0acc1c46b87264c9`. Its existing sibling update remains unchanged
+at Git blob `37f48fbc1feadcf374cddf6ee6e9d72617fbc543`; the update records the later retirement of
+the Wave 3 display fallback and supplies no scratch artifact.
+
+The plan's named worktree, `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, no
+longer exists. Neither the review worktree nor the primary clone has the dated
+`.novc/review-remediation-2026-09-08/` directory. The tracked `.gitignore` ignores `.novc/`.
+The completed remediation deliberately preserved that directory outside the retired worktree:
+`C:/Users/BenDe/.codex/visualizations/2026/09/10/01a08b71-0f3a-7ca2-b088-8dc432526ba8/review-remediation-2026-09-08-evidence.zip`
+is 91,973,867 bytes, and its SHA-256 is
+`33495ad7b7d0b040719ded27ff5544a75efb2f19c0c971c4d333a790dbb523ce`. The adjacent verified
+manifest has that same size and hash, inventories 6,208 source files, and identifies final commit
+and verified remote `main` as `9d1de07404bd9257c3e4cafc0acc1c46b87264c9`.
+
+The 33 lines have these classifications:
+
+| Searchable anchor in the finished plan | Lines in the live tree | Classification |
+|---|---:|---|
+| “V6 was implemented” and the later V6 script commands | 667, 699, 953, 1898 and 2047 | Historical execution-time dependency, command record and reproducible method. The original V6 gate was mandatory while the remediation was active. The verified archive preserves the exact script, its fixed Git baseline and its deliberate failure proofs. The plan also specifies reconstruction from the nine fixed `c2f238f2` HTML blobs and survey JSON. The completed remediation has no current operation that reads the gate. |
+| V6 run directories and remediation scratch-root references | 681, 761, 853, 961, 1071, 1182, 1289, 1498 and 2051 | Historical output inventory. The verified archive has 1,375 files under `v6-runs/`, including the labelled failure probes and the passing wave checkpoints. The plan records each result and the fixed baseline hashes; no current generator or check reads a dated run directory. |
+| “were backed up under” for the D2 skill deployment | 704 | Disposable backup and historical deployment evidence. The verified archive has 18 files under `d2-wave1-01a0891a/`, including the before/after inventories and all three skill-home copies. The current tracked skill and live deployment procedure, rather than the backup, govern a new change. |
+| Wave 1A suite log and verifier | 723 | Historical command and output record. The archive preserves `wave1a-01a0891a-suite.log` and `verify_wave1a_01a0891a.py`; the plan records the command and result. The current tracked `py/main_test.py` is the entry point for a new suite run. |
+| Wave 1B, Wave 1C1 and Wave 1C2 measurement commands | 770, 865, 877 and 969 | Historical measurement commands, reproducible methods and outputs. The archive preserves all four exact scripts and their reports. The plan states the populations, commits, inputs and results, while Git history preserves the cited branches, records and product trees. No current operation imports any of the measurement scripts. |
+| Wave 2 verifier, baseline and Holman-label approval receipt | 1502, 1505, 1636 and 1647 | Historical differential harness, immutable before-edit output and decision receipt. The archive preserves the verifier, all 930 baseline files and the exact approval JSON. The tracked Wave 2 implementation, generated products and execution record preserve the accepted result; a new product check uses the current tracked generators and tests. |
+| Wave 3 preparation and technical evidence directories | 1785 and 1971 | Historical source-trace, fault-injection, differential and output inventory. The archive preserves 27 preparation files and 2,189 technical-evidence files. The finished plan records the covered domains and results, current source and annotation validation remain tracked, and the sibling update identifies the display fallback that was retired later. |
+| Editorial contract, expected pages and editorial-gate command | 2203, 2222 and 2256 | Historical execution-time dependency, approved output contract and reproducible method. The editorial gate was mandatory through Wave 4. The archive preserves the exact gate, contract, nine expected pages, twelve proposed-diff files and complete run evidence. Git history preserves the original baseline, approved source change and resulting pages. No current operation reads the completed-remediation contract. |
+| Wave 4 editorial-gate runs and Wave 4 evidence | 2435 and 2441 | Historical output inventory and final-verification record. The archive preserves 303 editorial-gate run files and all 33 Wave 4 files, including the final integration receipt. The manifest verifies the archived files and the plan records the successful audit, suite, fast-forward, push and remote-head check. |
+| “Use uniquely named real scripts” | 2568 | Reproducible current method and disposable output destination. The sentence prescribes how a future bounded check is written; it does not require an old script. |
+| V6 baseline recipe | 2670 | Reproducible historical gate specification and disposable destination. The exact `mas-html-baseline/` is preserved in the verified archive, and every baseline byte is independently recoverable from the fixed Git commit the recipe names. The retired worktree path is not an input to a current check. |
+
+The V6 gate and editorial gate were indispensable dependencies of the active remediation, and the
+verified archive preserves both. No `.novc` artifact named or described by the 33 lines is an
+indispensable missing dependency of a tracked result or current method. No further Ben decision
+arises from this document-by-document unit. D12 leaves the finished plan and its existing sibling
+update unchanged. Finding 7.2's first-match predicates remain decision-pending and are outside this
+unit.
+
+This evidence-only disposition reaches no generator or product and does not owe a mega run.
+
+`git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
+suite passed 997 tests, with 5 skipped and 65 subtests passed, in 79.21 seconds.
+
+Product axis: this classification changes only the review's live sibling update and reaches no
+generated MAM product. Act axis: the write is an ordinary repository change on the unpushed review
+branch; no outward-facing act, destructive local act, external configuration write or receipt
+rewrite occurred.
+
 ## Finding 7.1, Wikisource-derived MAM products plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-13. This entry classifies only the 43 live lines containing `.novc`
