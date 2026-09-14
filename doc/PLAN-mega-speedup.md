@@ -313,12 +313,14 @@ what each produced is in those two files. Five things are worth carrying here:
    clone's graft boundary has no parent object, so git reports every file in it as added, and the
    path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
    §7 has it, and it reproduced identically on 3.13.
-5. **Step 3 below needs amending before this phase is run again, and so does the environment's
-   setup script.** That script fails with exit code 2, having built a 3.13 virtual environment and
-   then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
-   clone. A session that does not notice falls back to the system `python3`, which is 3.11 and
-   whose dpkg-managed `site-packages` then blocks a `pip install`. Inside the 3.13 environment the
-   install takes 3.0 s and no conflict arises. The update entry has the evidence and the fix.
+5. **The environment's setup script is broken and only Ben can fix it; steps 3 and 4 below have
+   been amended to survive it.** That script fails with exit code 2, having built a 3.13 virtual
+   environment and then looked for `requirements.txt` in `/home/user`, the parent of the clone
+   rather than the clone. A session that does not notice falls back to the system `python3`, which
+   is 3.11 and whose dpkg-managed `site-packages` then blocks a `pip install` — which is exactly
+   what happened on 2026-09-14, and why the record's figures are 3.11 ones. Inside the 3.13
+   environment the install takes 3.0 s and no conflict arises. The update entry has the evidence
+   and the fix, which is that the script must enter the clone before looking for the file.
 
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
@@ -340,17 +342,33 @@ Steps:
    mega depends on it.
 2. **Record the environment**: `git rev-parse HEAD`; `git rev-parse --is-shallow-repository`,
    since the container that `fa517040` measured on 2026-09-11 held a shallow clone of 221 commits;
-   `nproc`; the model name from `lscpu`; `free -h`; `python3 --version`, which was 3.13.12 there,
-   while the dated record measured the JSON writer's saving on 3.13.15; whether `dot` is on the
-   path, which it should not be; and `cat /proc/loadavg` before each run.
-3. **Check the packages.** If `python3 py/main_test.py --collect-only -q` fails on a missing
-   module, install them with `python3 -m pip install -r requirements.txt`, and record that the
-   install happened and how long it took, apart from the runs.
+   `nproc`; the model name from `lscpu`; `free -h`; **the version of the interpreter the runs will
+   actually use, which is the virtual environment's and not `python3`'s** — record both, since on
+   2026-09-14 they were 3.13.12 and 3.11.15 and only the first is the one to measure on, while the
+   dated record measured the JSON writer's saving on 3.13.15; whether `dot` is on the path, which
+   it should not be; and `cat /proc/loadavg` before each run.
+3. **Check the interpreter first, then the packages.** Amended 2026-09-14, after the run recorded
+   in `doc/mega-timing-cloud-2026-09-14.md` followed the earlier wording of this step and measured
+   the wrong Python throughout. **Do not reach for `python3`**: in a cloud container that is the
+   system interpreter, 3.11, and its `site-packages` is managed by dpkg, so a `pip install` into
+   it fails on a package pip cannot uninstall. Use the virtual environment the environment's setup
+   script builds, which is 3.13 and is what Ben's machine runs. Find it before anything else —
+   `.venv` at the repository root, or at `/home/user/.venv` while the setup script's working
+   directory is still the parent of the clone — and check its version with
+   `<venv>/bin/python --version`. **If the setup script failed and there is no usable 3.13
+   environment, say so and stop rather than falling back to `python3`**, since a fallback silently
+   changes what is being measured. Install into that environment with
+   `uv pip install --python <venv>/bin/python -r requirements.txt`, which took 3.0 s on
+   2026-09-14, and record the install apart from the runs. Then confirm the packages with
+   `<venv>/bin/python py/main_test.py --collect-only -q`; a pywikibot user-config collection error
+   in `py/tests/test_ws_bot_real_diff_links.py` is a suite matter that no mega step touches.
 4. **Make three full runs back to back**, from the repository root, each captured to an untracked
-   file:
+   file, using the 3.13 environment of step 3 and never a bare `python3`. Discard the first run's
+   figures: a fresh container runs it cold, which cost 27.9 s on 2026-09-14, over half of that in
+   `diff-mpplus` alone. Restore the four files of step 6 between runs, so each starts clean.
 
    ```bash
-   python3 py/main_0_mega.py > <untracked file> 2>&1
+   <venv>/bin/python py/main_0_mega.py > <untracked file> 2>&1
    ```
 
 5. **Compare step by step, never by total**, because a cloud run does less. It skips
