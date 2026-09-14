@@ -198,7 +198,7 @@ the evidence, and "What verifies sound" carries what was checked and found right
 4. **`py/product_scopes.py`'s declaration equals the live step table, and its wrapper table is
    right, but the section of `CLAUDE.md` that presents it went stale the day it was written, and
    no rule in either file covers the path finding 2.1 took.**
-   The lint's four checks pass, and an independent resolution of the 55 steps' runners gives the
+   The lint's five tests pass, and an independent resolution of the 55 steps' runners gives the
    same 43 entry points and the same 18 wrappers, each wrapper read against the function it names.
    `CLAUDE.md` still says 47 entry points across 59 steps. Since `bf4a6c5e` of the same day,
    `MAM-for-Sefaria/` and `MAM-OSIS/` are written only by the two hand-run programs of finding 2.1,
@@ -303,7 +303,7 @@ READMEs' sections once backtick path tokens are masked (`snips_readme_check2.py`
 `in/diffable-pointed-hebrew-short-name-overrides.json` holds the nine assignments and
 `main_diffable_pointed_hebrew.py`'s `TRACKED_EXPANSIONS` has two pairs; `MAM-process.dot` lost its
 JPS node and `pipeline.dot` and `pipeline.svg` regenerate unchanged in the mega.
-`py/product_scopes.py`: the four lint checks pass, the 43 declared entry points equal the resolved
+`py/product_scopes.py`: the five lint tests pass, the 43 declared entry points equal the resolved
 step table, the 18 wrapper entries are all used and each names the program its wrapper's body
 calls (`_run_gen_site` calls `main_authored.gen_site`, `_run_diff_ctr_vs_mam` calls
 `main_diff.almost_main`, the eleven `_run_accgram_*` call `main_accgram.almost_main`, the two
