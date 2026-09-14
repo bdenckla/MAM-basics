@@ -164,25 +164,30 @@ the evidence, and "What verifies sound" carries what was checked and found right
    `3134f32b`'s three edits are in place; the one count the batch left stale is finding 4.1.
    `80f88f7c` was superseded the next day by `a872790e`, which changed the matching it had only
    documented, and the four cases it measured behave as the new docstring says (finding 4.2).
-2. **The mega-speedup session reached products, and at `bca64824` the two products it moved out
-   of the mega can no longer be regenerated: `py/main_mam4sef.py` and `py/main_mam_osis.py` both
-   fail on their first book group, because the incremental storage removed the files they read 22
-   minutes after the same session took them out of the mega (finding 2.1).** The two product
-   READMEs written that day tell the reader to run exactly those commands; the products are
-   current in content as of the last Wikisource refresh, so the breakage bites at the next one.
-   Everything the mega still runs reproduces: the mega at `bca64824` passes all 55 steps and leaves
-   no diff, so MAM-simple's 109 tracked files, its docs and the Unicode-names tree are what the
-   generators write. The session also introduced a second silent generator defect and fixed it
-   62 minutes later: `3b1adf45` orphaned the block that writes
-   `MAM-simple/misc/unicode-names-vtrad-mam/` into a new function behind an early return, so for
-   two commits the tree was not regenerated at all, and `20f18020` records the defect and puts the
-   block back (finding 2.2). The figures the session wrote into the product's README and docs
-   re-derive — 23,202 `yeivinID` pairs with the chapter and verse always matching and a one-to-one
-   map over 39 books, 18 of 24 BHS and 19 of 24 Sefaria Unicode-names files identical to the MAM
-   ones but for the tradition token, 9.78 MB each, six BHS and five Sefaria book groups stored, the
-   `versification-tradition` values 18, 1 and 5 — except the size: 63.3 MB before is right, but the
-   product is 37.6 MB after by git blob size and by disk, not 39.0 MB, and the reduction 25.6 MB,
-   not 24.3 MB (finding 2.3).
+2. **The mega-speedup session reached products, and at `bca64824` the two products it moved out of
+   the mega can no longer be regenerated: `py/main_mam4sef.py` and `py/main_mam_osis.py` both fail
+   on their first book group, because the incremental storage removed the files they read 22 minutes
+   after the same session took them out of the mega (finding 2.1).** The two product READMEs written
+   that day tell the reader to run exactly those commands; the products are current in content as of
+   the last Wikisource refresh, and from the next one on they will lag it with no working command to
+   update them. Everything the mega still runs reproduces: the mega at `bca64824` passes all 55
+   steps and leaves no diff, so every MAM-simple file a generator writes, the corpora, the
+   Unicode-names tree and `MAM-simple/doc/versification-differences.md` among them, is what the
+   generators at `bca64824` write; the README and the three `MAM-simple/doc/reading-mam-simple*.md`
+   guides are written by hand, and a mega run does not check them. The same commit introduced two
+   other defects, and the session fixed both before `main` held either: it orphaned the block that
+   writes `MAM-simple/misc/unicode-names-vtrad-mam/` into a new function behind an early return, so
+   for three commits the tree was not regenerated at all, which no diff could show and which
+   `20f18020` records and fixes 62 minutes later (finding 2.2); and it left the poetic cross-check
+   reading no verse of Psalms, Proverbs or Job, which the mega's diff showed and `6dbd27e7` fixed 16
+   minutes later (finding 2.4). The figures the session wrote into the product's README, its docs
+   and the code's comments re-derive — 23,202 `yeivinID` pairs with the chapter and verse always
+   matching and a one-to-one map over 39 books, 18 of 24 BHS and 19 of 24 Sefaria Unicode-names
+   files identical to the MAM ones but for the tradition token, 9.78 MB each, six BHS and five
+   Sefaria book groups stored, the `versification-tradition` values 18, 1 and 5 — except the size
+   after: 63.3 MB before and the 24.3 MB the deleted files weighed are right, but the same commit's
+   `yeivinID` removal took another 1.3 MB, so the product is 37.6 MB after, by git blob size and by
+   disk, not 39.0 MB (finding 2.3).
 3. **The README session verifies sound apart from the D12 question its crop move raises and the
    two consequences of that move.** Every path `README.md` names exists at `bca64824`; the eight
    crop sections of the four old READMEs are byte-identical to the new READMEs' sections apart
@@ -221,9 +226,10 @@ the evidence, and "What verifies sound" carries what was checked and found right
   `accgram-survey-chanted-word-accents` 15.9 s, `wlc-json-and-unicode` 14.6 s, `diff-wsgo` 11.6 s
   and `parse-ws` 11.4 s.
 - The two generators the mega no longer runs: `py/main_mam4sef.py` (all three modes) and
-  `py/main_mam_osis.py`, run on the same scratch worktree, each exit 1 with `FileNotFoundError` on
-  `Gen` before writing anything (finding 2.1; `run_mam4sef.txt`, `run_mam4sef_default.txt`,
-  `run_mam4sef_ajf.txt`, `run_mam_osis.txt`).
+  `py/main_mam_osis.py`, run on the same scratch worktree, each rewrite two files with the bytes
+  they already hold and then exit 1 with `FileNotFoundError` on `Gen`, changing no tracked file
+  (finding 2.1; `run_mam4sef.txt`, `run_mam4sef_default.txt`, `run_mam4sef_ajf.txt`,
+  `run_mam_osis.txt`).
 - Product trees: `MAM-parsed/plus` and `MAM-parsed/plain` at `bca64824` have the tree hashes they
   had at `209b4c05`, the last Wikisource refresh (`2072b5f9…` and `98c82e34…`), so the window
   changed neither product at its endpoints; finding 5 is about what happened between.
@@ -293,10 +299,11 @@ differently and the five Sefaria does (`vtrad.bk24s_differing_from_mam`) are exa
 one; 18 of 24 BHS and 19 of 24 Sefaria Unicode-names files at `dcd2c1f6^` equal the MAM file but
 for the tradition token, at 9.78 MB a tree; the product was 63.3 MB by blob size before
 `3b1adf45`; `mam_simple_verse.mam_simple_json_path` falls back from `json-vtrad-bhs` and `-sef` to
-`json-vtrad-mam` and raises otherwise, and its four callers no longer skip a missing book;
-`main_mam4sef.py` and `main_mam_osis.py` are declared in `NOT_IN_MEGA` with Ben's quoted reason,
-and each product's README says it is not kept current and how to regenerate it
-(`mam_simple_figures.py`). The README session: all 48 path-like tokens `README.md` names resolve
+`json-vtrad-mam` and raises otherwise, and none of its four callers skips a missing book;
+`main_mam4sef.py` and `main_mam_osis.py` are declared in `NOT_IN_MEGA` with Ben's quoted reason, and
+each product's README says it is not kept current and gives the command that should regenerate it,
+which finding 2.1 shows failing (`mam_simple_figures.py`). The README session: all 48 path-like
+tokens `README.md` names resolve
 at `bca64824` (the two that do not, `.novc/` and `doc/*-snips/`, are a gitignored directory and a
 glob); the eight crop sections of the four retired READMEs are byte-identical to the new
 READMEs' sections once backtick path tokens are masked (`snips_readme_check2.py`);
@@ -329,8 +336,8 @@ over the tracked survey; `5cb06e25`'s `py/mb_cmn/template_names.py` has no `.get
 no `else` arm and no catch-all, and `validate_current_plus_template` raises on a name or a
 parameter outside the closed sets; 201 of the 203 commits carry `209b4c05`'s `MAM-parsed/plus`
 tree; all 20 filename-returning git calls in the 1,051 tracked `.py` carry `-z`;
-`mam_simple_verse.mam_simple_json_path` raises rather than returning `None`, and its four callers
-no longer skip a book (`B_01` to `B_12`).
+`mam_simple_verse.mam_simple_json_path` raises rather than returning `None`, and none of its four
+callers skips a book (`B_01` to `B_12`).
 
 **The 2026-09-10 close-out records (stream A).** The exchange reached D9's stopping rule at turn 4
 ("No factual or characterization disagreement remains"), each turn an ancestor of the next. In
@@ -466,68 +473,97 @@ ROUTINE route into tiers 1 and 2, and not the only one".** `63aaa6f3` wrote both
 been false since it was written, because of the hand-run programs lines 41–44 name. `CLAUDE.md`'s
 version says "the only routine route".
 
-### 2. The mega-speedup session broke the two product generators it moved out of the mega, introduced and fixed a second silent generator defect, and left one figure that does not re-derive
+### 2. The mega-speedup session broke the two product generators it moved out of the mega, introduced and fixed two other defects in the same commit, and documented a size the product never had
 
-Ben's second area. Three parts.
+Ben's second area. Four parts.
 
 2.1. **Unfixed at `bca64824`, and the window's most serious finding: `py/main_mam4sef.py` and
 `py/main_mam_osis.py` both fail on their first book group, so `MAM-for-Sefaria/` and `MAM-OSIS/`
 cannot be regenerated by the commands their READMEs give.** Run from the scratch worktree at
 `bca64824`: `py/main_mam4sef.py --both-sef-and-ajf`, `py/main_mam4sef.py` and `py/main_mam4sef.py
---just-ajf` each exit 1 with `FileNotFoundError` on `MAM-simple/json-vtrad-sef/Gen.json` (the
-AJF mode on `json-vtrad-bhs/Gen.json`), and `py/main_mam_osis.py` exits 1 with `FileNotFoundError`
-on `MAM-simple/xml-vtrad-bhs/Gen.xml`; none writes a file before failing (`run_mam4sef*.txt`,
-`run_mam_osis.txt`). The cause is the order of two commits in one session: `bf4a6c5e` (12:47)
-took the two programs out of the mega, and `3b1adf45` (13:09), 22 minutes later, stored the BHS
-and Sefaria corpora incrementally, leaving `json-vtrad-sef/` with five book groups,
-`json-vtrad-bhs/` and `xml-vtrad-bhs/` with six, and the other 18 or 19 of each only in the MAM
-folders. `_read_book_group` in `py/mb_sefaria/mam4sef_or_ajf.py:71–81` opens
-`<input_base>/json-vtrad-<sef|bhs>/<bkg>.json` directly, and `py/main_mam_osis.py:9` names
-`MAM-simple/xml-vtrad-bhs` as its whole input; neither has the fallback to the MAM folder that
-`6dbd27e7` gave `py/accgram/mam_simple_verse.py` the same afternoon for the accgram callers, and
-`MAM-simple/doc/reading-mam-simple.md` says of the two that they "read this product exactly as
-the retired examples did", which is true and is the defect. Nothing caught it: the two programs
-were out of the mega before the storage changed, the suite runs neither, and `20f18020`'s "Mega
-run on this tree: every step passed" is true of a mega that no longer ran them. What the
-breakage costs today is bounded: both products were last regenerated by the Wikisource refresh
-`209b4c05` of 2026-09-10, and MAM-simple's text has not changed since (the window's edits to its
-MAM folders are the `yeivinID` removal and the root attribute), so the products are current in
-content and the breakage bites at the next refresh. The two READMEs written the same day
-(`bf4a6c5e`, `d0ca548e`) say "To bring it up to date, run" the failing commands, and `README.md`'s
-core pipeline step 4 describes the two programs as what makes the two products.
-`py/tests/test_mega_coverage.py`'s `NOT_IN_MEGA` reason quotes Ben's judgment that "that code is
-unlikely to break (or if it does, would be easy to fix)"; it broke 22 minutes later, and the
-fix is the fallback `mam_simple_verse.mam_simple_json_path` already implements, or a direct read of
-the MAM folder for the book groups the tradition folders lack. Re-establish from any checkout at
-`bca64824`: `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam_osis.py`.
+--just-ajf` each exit 1 with `FileNotFoundError` on `MAM-simple/json-vtrad-sef/Gen.json` (the AJF
+mode on `json-vtrad-bhs/Gen.json`), and `py/main_mam_osis.py` exits 1 with `FileNotFoundError` on
+`MAM-simple/xml-vtrad-bhs/Gen.xml`; before failing, each rewrites two files with the bytes they
+already hold (two `_provenance.md` sidecars under `MAM-for-Sefaria/`, or
+`gh-pages/MAM-OSIS/index.html` and its stylesheet), so none changes a tracked file
+(`run_mam4sef*.txt`, `run_mam_osis.txt`). The cause is `3b1adf45` (13:09), which stored the BHS and
+Sefaria corpora incrementally 22 minutes after `bf4a6c5e` (12:47) had taken the two programs out of
+the mega, leaving `json-vtrad-sef/` with five book groups, `json-vtrad-bhs/` and `xml-vtrad-bhs/`
+with six, and the other 18 or 19 of each only in the MAM folders. `_read_book_group` in
+`py/mb_sefaria/mam4sef_or_ajf.py:71–81` opens `<input_base>/json-vtrad-<sef|bhs>/<bkg>.json`
+directly, and `py/main_mam_osis.py:9` names `MAM-simple/xml-vtrad-bhs` as the only MAM-simple
+directory it reads. Neither has the fallback to the MAM folder that `3b1adf45` itself gave
+`py/accgram/mam_simple_verse.py` after four tests failed without it, and that `6dbd27e7` made the
+only resolver the accgram callers use once the mega's diff had exposed a second resolver without it
+(finding 2.4); neither commit's message names these two programs.
+`MAM-simple/doc/reading-mam-simple.md` says of the two that they "read this product exactly as the
+retired examples did", which is true and is the defect. Nothing caught it: the two programs were out
+of the mega before the storage changed, the suite runs neither, and `20f18020`'s "Mega run on this
+tree: every step passed" is true of a mega that no longer ran them. What the breakage costs today is
+bounded: both products last changed in the Wikisource refresh `209b4c05` of 2026-09-10; every file
+of the three MAM-simple folders they read is byte-identical at `209b4c05` and at `3b1adf45^`, and at
+`bca64824` MAM-simple's reading rule gives, for every book group, that same file but for the root's
+`versification-tradition` value, which neither program's code names; so the products are current in
+content, and from the next refresh on they will lag it with the commands that would bring them up to
+date failing. The two READMEs' "How current this product is" sections, which `bf4a6c5e` wrote and
+`d0ca548e` trimmed 34 minutes after `3b1adf45`, keeping "the command", say "To bring it up to date,
+run" the failing commands, and `README.md`'s core pipeline step 4 describes the two programs as what
+makes the two products. `py/tests/test_mega_coverage.py`'s `NOT_IN_MEGA` reason quotes Ben's
+judgment that "that code is unlikely to break (or if it does, would be easy to fix)"; it broke 22
+minutes later, and the fix is the reading rule `mam_simple_verse.mam_simple_json_path` already
+implements for JSON, applied in both programs, or a direct read of the MAM folder for the book
+groups the tradition folders lack. Re-establish from any checkout at `bca64824`:
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam_osis.py`.
 
-2.2. **Fixed by `20f18020`, 62 minutes after `3b1adf45` introduced it, and raised here because
-it is a defect the mega's "no diff" check cannot catch.** `3b1adf45` inserted
-`def _prune_if_same_as_vtmam` between `_finish_one_book_group`'s last statement and the block that
-writes `MAM-simple/misc/unicode-names-vtrad-mam/`, which orphaned that block into the new function
-after an early `return` for the `vtmam` variant — the one variant that writes Unicode names. So at
-`3b1adf45` and `6dbd27e7` the tree was not regenerated at all, and no diff could show it, because
-a writer that stops writing leaves the previous run's correct files in place. `20f18020` (14:11)
-records the defect, proves it by deleting `Ruth.txt` and re-running, and puts the block back in
-`_finish_one_book_group` (`py/main_mam_simple.py:150` at `bca64824`); the mega at `bca64824`
-rewrites the 24 files and leaves them unchanged, so the tree is current. Both commits reached
-`main` in one fast-forward (`2a4b010c`, 14:35), so no pushed `main` held the defect. What this
-shows: the integration check `CLAUDE.md` prescribes, a mega run followed by a reading of its
-diff, is blind to a generator that ceases to write one of its outputs, and the only check that
-sees that class is the one `20f18020` used — delete the output and confirm the run restores it. No
-rule says to do that, and this review does not propose one; it records that the class exists and
-that a session at the effort level Ben is concerned about produced an instance and then caught it,
-and a second instance, 2.1, that it did not.
+2.2. **Fixed by `20f18020`, 62 minutes after `3b1adf45` introduced it, and raised here because it is
+a defect the mega's "no diff" check cannot catch.** `3b1adf45` inserted `def
+_prune_if_same_as_vtmam` between `_finish_one_book_group`'s last statement and the block that writes
+`MAM-simple/misc/unicode-names-vtrad-mam/`, which orphaned that block into the new function after an
+early `return` for the `vtmam` variant — the one variant that writes Unicode names. So at
+`3b1adf45`, `6dbd27e7` and `d0ca548e` the tree was not regenerated at all, and no diff could show
+it, because a writer that stops writing leaves the previous run's correct files in place: the full
+mega run recorded in `6dbd27e7`'s message passed over it. `20f18020` (14:11) records the defect,
+proves it by deleting `Ruth.txt` and re-running, and puts the block back in `_finish_one_book_group`
+(`py/main_mam_simple.py:150` at `bca64824`); the mega at `bca64824` rewrites the 24 files and leaves
+them unchanged, so the tree is current. Both commits reached `main` in one fast-forward (`2a4b010c`,
+14:35), so no pushed `main` held the defect. What this shows: the integration check `CLAUDE.md`
+prescribes, a mega run followed by a reading of its diff, is blind to a generator that ceases to
+write one of its outputs, and the check `20f18020` used — delete the output and confirm the run
+restores it — is one that sees that class. No rule says to do that. #278, opened at 14:26 that day,
+15 minutes after `20f18020`, by a Claude session at Ben's request, names this defect as the case
+that produced it and proposes that a single-writer program assert `written_this_run == intended ==
+on_disk` at the end of a whole-directory run, its first failure, "A writer went dead", being this
+class; it is open and assigned to no plan. So a session at the effort level Ben is concerned about
+produced an instance of the class and caught it. Finding 2.1 is a different kind of defect: programs
+that fail loudly when run, and that nothing runs.
 
-2.3. **Unfixed at `bca64824`: `MAM-simple/README.md` and `MAM-simple/doc/reading-mam-simple.md`
-say the incremental storage "removed 24.3 MB, taking the product from 63.3 MB to 39.0 MB", and
-the product is 37.6 MB after, by two measures.** Summing git blob sizes over `MAM-simple/` gives
-63,269,926 bytes at `3b1adf45^` (63.3 MB, as the README says) and 37,645,076 at `3b1adf45`, a
-reduction of 25.6 MB; the six `*-vtrad-*` folders alone went from 53.4 to 27.8 MB (stream E); on
-disk in the worktree at `bca64824` the tree's 109 tracked files are 37.6 MB and no untracked file
-sits beside them. The README does not say how it measured, and no method this review tried gives
-39.0. Both files are reader-facing product documentation. Re-establish with
-`mam_simple_figures.py` (section 1) or with `git ls-tree -r -l -z <commit> MAM-simple` summed.
+2.3. **Unfixed at `bca64824`: `MAM-simple/README.md` and `MAM-simple/doc/reading-mam-simple.md` say
+the incremental storage removed 24.3 MB, "taking the product from 63.3 MB to 39.0 MB", and the
+product was never 39.0 MB.** `3b1adf45` wrote both figures, and its message gives them with a file
+count: "43 files and 24.3 MB go; MAM-simple drops from 63.3 MB to 39.0 MB". Summing git blob sizes
+over `MAM-simple/`, the product is 63,269,926 bytes at `3b1adf45^` (63.3 MB), and the 74 files
+`3b1adf45` deleted, not 43, weighed 24,287,554 bytes there (24.3 MB), which leaves 38,982,372 (39.0
+MB). But the same commit also removed `yeivinID` from the 48 MAM files, another 1,340,200 bytes, so
+the product is 37,645,076 bytes at `3b1adf45` (37.6 MB), and 37,647,285 at `bca64824`, which is also
+what its 109 tracked files measure on disk in the worktree, with no untracked file beside them. So
+24.3 MB is right for the deleted files, and 39.0 MB is a size the product had at no commit. Both
+files are reader-facing product documentation. Re-establish by summing `git ls-tree -r -l -z
+<commit> MAM-simple` at `3b1adf45^` and `3b1adf45`, and the `3b1adf45^` sizes of the paths
+`3b1adf45` deleted.
+
+2.4. **Fixed by `6dbd27e7`, 16 minutes after `3b1adf45` introduced it: the poetic cross-check read
+no verse of Psalms, Proverbs or Job.** `3b1adf45` gave the incremental fallback to
+`mam_simple_verse`'s resolver and not to a second resolver, `_mam_json_path` in
+`py/accgram/mam_poetic_accents.py`, which returned `None` for the three books, and its caller
+skipped them. `6dbd27e7`'s message records that the first mega run after `3b1adf45` left a diff in
+eight tracked files, `out/accgram/poetic/_mam_xcheck.txt` going from "total: 4407/4465 agree
+(98.70%); 58 divergences" to "total: 0/0 agree (0.00%); 0 divergences". `6dbd27e7` deleted the
+second resolver and made the one left raise rather than return `None`; at `bca64824` the file's
+total line reads "total: 4407/4465 agree (98.70%); 58 divergences". Both commits reached `main` in
+the fast-forward to `2a4b010c`, so no `main` held the defect. Raised to complete the account of
+`3b1adf45`, which introduced three defects: the mega's diff caught this one, the session caught
+2.2's while writing `20f18020`, and nothing caught 2.1's. Re-establish with `git show 6dbd27e7 --
+py/accgram` and `git grep -n "total:" bca64824 -- out/accgram/poetic/_mam_xcheck.txt`.
 
 ### 3. The crop move edited two finished dated reports in place, the day after Codex's dispositions declared the same two reports unchanged, and left the one report it did not edit with a dead link
 
@@ -1017,7 +1053,8 @@ committed; it held no branch and no work.
 #279, #281 and #280; `doc/PLAN-deferred-template-projection-decisions.md` is `State: paused
 2026-09-12`, tracked on #277; `doc/PLAN-silluq-before-gaya-template.md` is `live` and unexecuted,
 on phonetic-hbo#78. `MAM-for-Sefaria/` and `MAM-OSIS/` are declared not kept current since
-2026-09-12 by their READMEs. The 2026-09-10 review's findings 7, 10, 11.5, 13.1, 16.2, 19.3,
+2026-09-12 by their READMEs, whose commands for regenerating them fail (finding 2.1). The 2026-09-10
+review's findings 7, 10, 11.5, 13.1, 16.2, 19.3,
 20.9 and 21 are recorded as not acted on or as Ben's decisions, in its dispositions and update
 file. Issues #271 to #274, #276 and #278 are open and assigned to no plan. `main` and
 `origin/main` stood at `bca64824` when this file was committed.
