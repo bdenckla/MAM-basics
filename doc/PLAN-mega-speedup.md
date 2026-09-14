@@ -318,10 +318,13 @@ what each produced is in those two files. Five things are worth carrying here:
    to within 0.6 s on every step, so it is the better place to attribute a speedup — for every
    step but the one it skips. A first run in a fresh container is a cold-cache run and should be
    discarded.
-4. **One finding is raised and not fixed**, this phase being forbidden to change code: a shallow
-   clone's graft boundary has no parent object, so git reports every file in it as added, and the
-   path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
-   §7 has it, and it reproduced identically on 3.13.
+4. **One finding, raised in this phase and not fixed in it, has been fixed since by `b5dd2ffb`.**
+   Git treats each commit a shallow clone lists in `.git/shallow` as having no parents, so every
+   file in it looks added, and the path-filtered walk that dated unpinned-latest returned such a
+   commit rather than finding nothing. The record's §7 has the finding, which reproduced
+   identically on 3.13, but blames a missing parent object, which the update corrects. Since
+   `b5dd2ffb`, `diff-mpplus` labels unpinned-latest by the tree id of `MAM-parsed/plus` and gives
+   it no date, so a shallow clone no longer changes that report; no cloud run has confirmed it yet.
 5. **The environment's setup script failed until Ben fixed it on 2026-09-14; steps 3 and 4 below
    survive it either way.** It failed with exit code 2, having built a 3.13 virtual environment
    and then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
@@ -376,7 +379,7 @@ Steps:
 4. **Make three full runs back to back**, from the repository root, each captured to an untracked
    file, using the 3.13 environment of step 3 and never a bare `python3`. Discard the first run's
    figures: a fresh container runs it cold, which cost 27.9 s on 2026-09-14, over half of that in
-   `diff-mpplus` alone. Restore the four files of step 6 between runs, so each starts clean.
+   `diff-mpplus` alone. Between runs, check the tree as step 6 says, so that each run starts clean.
 
    ```bash
    <venv>/bin/python py/main_0_mega.py > <untracked file> 2>&1
@@ -387,13 +390,13 @@ Steps:
    record's pinned run of the committed code, and it skips the SVG renders of `tmpl-survey`
    (twelve) and `pipeline-graph` (two). The closing banner, `MEGA RUN IS CLOUD-COMPLETE`, lists
    what was skipped.
-6. **Check the tree after each run.** A shallow clone can change one output with no defect in the
-   code, because it reads commit dates from a history that a shallow clone truncates.
-   `diff-mpplus` dates `HEAD` by the last commit to `MAM-parsed/plus`, as the docstring in
-   `py/subcommands/diff_mpplus.py` that begins "THE ONE GIT READING LEFT" explains. Check a diff
-   in that output against that explanation, and do not commit it. Any other diff is a failure to
-   report. This step named two such outputs until 2026-09-14, when the `vendoring-audit` step,
-   which dated each vendored copy by its last commit, was removed from the mega.
+6. **Check the tree after each run.** A run should change no tracked file, and any diff is a
+   failure to report. Until 2026-09-14 this step expected a shallow clone to change the outputs of
+   two steps with no defect in their diffs, because both read commit dates from a history that a
+   shallow clone truncates: `vendoring-audit`, which dated each vendored copy by its last commit
+   and was removed from the mega that day, and `diff-mpplus`, which dated unpinned-latest by the
+   last commit to `MAM-parsed/plus` until `b5dd2ffb` labelled that report by the tree's id
+   instead. No cloud run has confirmed the clean tree yet.
 7. **Write the record**: a new dated document, `doc/mega-timing-cloud-<date>.md`, with the
    environment, each step's three times, the skips, and Phase 1's medians beside them if Phase 1
    has run. In the same commit, which names both paths, update this plan's Phase 2 status. Push
@@ -401,8 +404,8 @@ Steps:
    (`doc/user-level-config-in-cloud-sessions.md`). A local session then integrates that branch
    under `CLAUDE.md`'s "Integrating a worktree branch here".
 
-What Phase 2 must not change: no code, and no generated output other than the shallow-clone
-differences of step 6, which are not committed.
+What Phase 2 must not change: no code and no generated output. A difference that step 6 finds is
+reported, not committed.
 
 ## Implementing items 3 to 9 and 13 to 15
 

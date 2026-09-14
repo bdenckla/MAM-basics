@@ -127,3 +127,92 @@ made for "the Python this repo runs (3.13)", where `json.dump` encodes in pure P
 `json.dumps` reaches the C encoder. Whether 3.11 behaves differently was not tested; Ben declined
 that test on 2026-09-14. It is a plausible part of the 3.11-to-3.13 difference in the
 JSON-heavy steps and is recorded as unmeasured rather than claimed.
+
+## 2026-09-14: section 7's graft-boundary finding has another cause, and has been fixed
+
+**The finding has been fixed by `b5dd2ffb`**, which labels unpinned-latest by the git tree id of
+`MAM-parsed/plus` and gives it no date, by Ben's choice on 2026-09-14. That id is the same in every
+clone, shallow or full, so a shallow clone no longer changes `unpinned-latest.json` or
+`unpinned-latest.html`. **The fix is verified in a local depth-50 clone and not yet in a cloud
+container**, where a mega run confirms it by leaving both files unchanged. The rest of section 7's
+finding went with the `vendoring-audit` step, which `25bcabf6` removed from the mega the same day,
+so a cloud mega run should now leave the tree clean.
+
+Measured on 2026-09-14, the record's account of the mechanism is wrong in two places, which the next
+two subsections correct.
+
+### A boundary commit looks added because `.git/shallow` lists it, not because its parent is absent
+
+Section 7 says "**A shallow clone's graft boundaries have no parent object, so git shows every file
+in such a commit as added**", and item 4 of section 8 says of `d3ab7cf`'s absent parent `eb79e61`
+that it "is what makes git treat every file in it as added". **The absent parent is not the
+cause.** A depth-50 clone of `89f10bb4` matches the three figures the record gives for the
+container: 153 commits, three boundaries, and `d3ab7cf` the newest of them. In that clone
+`git log --full-history -1 -- MAM-parsed/plus` returned `d3ab7cf`. With `eb79e61` then fetched into
+the clone, the walk still returned `d3ab7cf`, because `.git/shallow` still listed it: git treats
+every commit that file lists as having no parents, whatever objects are present. After
+`git fetch --unshallow` emptied the list, the walk returned `73c6b113`, the answer a full clone
+gives.
+
+### A real change inside the window does not stop the walk
+
+Section 7 explains that the 2026-09-11 container escaped because "3 commits inside its 221-commit
+window genuinely touched `MAM-parsed/plus`, so its walk stopped at a real one before reaching a
+graft boundary". **A real change inside the window is not enough.** The walk lists commits newest
+first and returns the first that seems to change the path, so it returns a boundary commit whenever
+one is newer than the last real change, wherever that change lies. In clones of `89f10bb4` at seven
+depths, every depth below 150 returned a boundary, including depths 50, 75 and 100, whose windows
+all contain `73c6b113`:
+
+| Depth | Commits in window | Boundaries | The walk returned | Listed in `.git/shallow` | Window holds `73c6b113` |
+|---:|---:|---:|---|---|---|
+| 1 | 1 | 1 | `89f10bb`, 2026-09-14 11:17 | yes | no |
+| 10 | 11 | 2 | `797709e`, 2026-09-13 14:25 | yes | no |
+| 25 | 43 | 2 | `5e7715d`, 2026-09-13 11:11 | yes | no |
+| 50 | 153 | 3 | `d3ab7cf`, 2026-09-12 21:05 | yes | yes |
+| 75 | 305 | 6 | `e1e8e28`, 2026-09-12 17:51 | yes | yes |
+| 100 | 442 | 5 | `3f962e6`, 2026-09-11 18:02 | yes | yes |
+| 150 | 639 | 2 | `73c6b113`, 2026-09-11 15:55 | no | yes |
+
+The times are committer times, every one at -04:00. At depth 100 the boundary `3f962e6` was
+committed about two hours after `73c6b113`, and that order decided the answer, not what the window
+held. So what let the 2026-09-11 container's walk stop at a real change, as section 7 reports, was
+that none of its boundaries was newer than that change, not that its window held real changes.
+
+### How the fix was verified
+
+1. **Before the fix**, in an ordinary depth-50 clone of `main` at `c1af93cb` (121 commits, five
+   boundaries), the kind of clone a cloud container has rather than a partial one, the walk returned
+   the boundary `217fd90`. Running `py/main_diff.py mpplus` there changed the two unpinned-latest
+   files and nothing else: `new_rev` became `217fd90`'s full hash, and the title and the End date
+   became 2026-09-12, where the committed files named `73c6b113` and 2026-09-11.
+2. **After the fix**, the same clone moved to `b5dd2ffb` held 117 commits and nine boundaries, and
+   the old walk would still have returned a boundary, `c141f54`, so the check could have failed.
+   Running `py/main_diff.py mpplus` there left `git status --porcelain` empty.
+3. **On Ben's machine**, a full mega run on `b5dd2ffb` left no tracked file changed.
+
+### Commands behind the figures
+
+1. **The depth table and the parent-object test.** Bare blobless clones of MAM-basics' primary clone
+   at `89f10bb437d60af3279a72c72be9b6aa866c5bf8`, made in a scratch directory by a throwaway script:
+   `git init --bare`; `core.repositoryformatversion 1` and `extensions.partialClone origin`; a
+   `file://` remote with `remote.origin.promisor true`, `remote.origin.partialCloneFilter blob:none`
+   and the `uploadpack` override `git -c uploadpack.allowFilter=true -c
+   uploadpack.allowAnySHA1InWant=true upload-pack`; then `git fetch --depth=<d> --filter=blob:none
+   origin <that commit>`. In each clone, `git rev-list --count` gives the window, the `shallow` file
+   the boundaries, `git log --full-history -1 --format="%H %ci" <that commit> -- MAM-parsed/plus`
+   the walk's answer, and `git rev-list` whether `73c6b113` is in the window. `eb79e61` was fetched
+   by `git cat-file -e`, which git 2.43 answers by fetching a missing object from a promisor remote,
+   and its presence before and after was read with
+   `git cat-file --batch-all-objects --batch-check`, which fetches nothing.
+2. **The before-and-after clones.**
+   `git clone --depth 50 --sparse file:///C:/Users/BenDe/GitRepos/MAM-basics <scratch directory>`
+   and `git sparse-checkout add py MAM-parsed/historical gh-pages/MAM-with-doc/change-log`, then the
+   primary clone's interpreter running `py/main_diff.py mpplus` from the clone's root. For the
+   second run, `git restore` of the change log, `git fetch --depth=50 origin main` and
+   `git checkout --detach origin/main`.
+3. **The 2.6 MiB that `resolve`'s docstring in `py/mb_diff_mpu/mpplus_revisions.py` gives for the
+   option not taken**, fetching the history a shallow clone lacks without file contents: the growth
+   of `size-pack` in `git count-objects -v`, from 356 KiB to 3,033 KiB, across
+   `git fetch --unshallow --filter=blob:none origin <that commit>` in a fresh blobless depth-50
+   clone of `89f10bb4`.
