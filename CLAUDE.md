@@ -469,10 +469,11 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
   constants that name `bdenckla/holman-ketiv-qere` and are passed to `gh issue list --repo`;
   leave the constants and the rendering alone. Phase 6 of
   `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md` names this as the trap to check for first.
-- **`wlc_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
+- **`github_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
   resolves which tracker `issue <number>` names from the checkout it runs in, so `repo` is a
   required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
-  worked example of the ambiguity and must stay bare.
+  worked example of the ambiguity and must stay bare. The module was `wlc_issue_edit.py` until
+  2026-09-14, and dated records keep that name.
 
 wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still meant
 a wlc-utils issue, and qualifying those would imply they were ambiguous. Phase 10 of
@@ -608,7 +609,7 @@ decision, 2026-08-22, reaffirmed 2026-08-31 as the general rule that **an evacua
 appear in `GitRepos`**. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
 for `bdenckla.github.io/wlc-utils/<path>`, and only the clone is unwanted. Nothing routine wants
 one: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
-checkout (`py/wlc_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
+checkout (`py/github_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
 test here resolves that sibling.
 
 **The worked case for reading a reflog before believing a clone's story.** A machine surveyed on

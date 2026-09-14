@@ -1,4 +1,4 @@
-"""Guard: ``wlc_issue_edit.replace_once`` refuses the two anchor failures that lose edits.
+"""Guard: ``github_issue_edit.replace_once`` refuses the two anchor failures that lose edits.
 
 The module exists so an issue edit is always derived from the body just fetched, rather than
 from a scratch snapshot of unknown age.  ``replace_once`` is the part that has to be right: a
@@ -23,12 +23,12 @@ from __future__ import annotations
 
 import pytest
 
-import wlc_issue_edit
+import github_issue_edit
 
 
 def test_a_single_match_is_rewritten() -> None:
     body = "## Why\n\n- [ ] transcribe Koren\n\n## Notes\n"
-    got = wlc_issue_edit.replace_once(
+    got = github_issue_edit.replace_once(
         body, "- [ ] transcribe Koren", "- [x] transcribe Koren"
     )
     assert got == "## Why\n\n- [x] transcribe Koren\n\n## Notes\n"
@@ -36,40 +36,40 @@ def test_a_single_match_is_rewritten() -> None:
 
 def test_a_stale_anchor_raises_rather_than_silently_doing_nothing() -> None:
     """The concurrent-edit case: the text moved, so the edit must not be reported as applied."""
-    with pytest.raises(wlc_issue_edit.IssueEditError, match="no match"):
-        wlc_issue_edit.replace_once(
+    with pytest.raises(github_issue_edit.IssueEditError, match="no match"):
+        github_issue_edit.replace_once(
             "the body as it now reads", "the body as it read an hour ago", "x"
         )
 
 
 def test_an_ambiguous_anchor_raises_rather_than_picking_one() -> None:
     """Which of several identical anchors gets rewritten would be accidental, so refuse."""
-    with pytest.raises(wlc_issue_edit.IssueEditError, match="2 matches"):
-        wlc_issue_edit.replace_once(
+    with pytest.raises(github_issue_edit.IssueEditError, match="2 matches"):
+        github_issue_edit.replace_once(
             "- [ ] done\n- [ ] done\n", "- [ ] done", "- [x] done"
         )
 
 
 def test_the_outgoing_path_is_fixed_per_issue() -> None:
     """One overwritten path per issue: an accumulating byproduct is the failure being cured."""
-    path69 = wlc_issue_edit.outgoing_path(69, "wlc-utils")
-    assert path69 == wlc_issue_edit.outgoing_path(69, "wlc-utils")
-    assert path69 != wlc_issue_edit.outgoing_path(70, "wlc-utils")
+    path69 = github_issue_edit.outgoing_path(69, "wlc-utils")
+    assert path69 == github_issue_edit.outgoing_path(69, "wlc-utils")
+    assert path69 != github_issue_edit.outgoing_path(70, "wlc-utils")
     assert path69.name == "issue-bdenckla-wlc-utils-69-outgoing.md"
 
 
 def test_the_two_trackers_69s_do_not_share_a_byproduct_path() -> None:
     """The trackers stayed split, so a bare number names a different issue in each."""
-    assert wlc_issue_edit.outgoing_path(
+    assert github_issue_edit.outgoing_path(
         69, "wlc-utils"
-    ) != wlc_issue_edit.outgoing_path(69, "MAM-basics")
+    ) != github_issue_edit.outgoing_path(69, "MAM-basics")
 
 
 def test_hebrew_survives_the_round_trip_to_the_outgoing_file(
     tmp_path, monkeypatch
 ) -> None:
     """Hebrew must reach the file as UTF-8; a lone surrogate here once pushed an empty body."""
-    monkeypatch.setattr(wlc_issue_edit, "_OUT_DIR", tmp_path)
+    monkeypatch.setattr(github_issue_edit, "_OUT_DIR", tmp_path)
     body = "the לא of לא תרצח, taken as *merkha* — p. 114\n"
-    path = wlc_issue_edit.write_and_edit(70, body, repo="wlc-utils", dry_run=True)
+    path = github_issue_edit.write_and_edit(70, body, repo="wlc-utils", dry_run=True)
     assert path.read_text(encoding="utf-8") == body

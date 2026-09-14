@@ -10,27 +10,34 @@ later session cannot tell which one is current and picks wrong.
 The cure is not tidier filenames.  It is to stop the file being the source: fetch, mutate in
 memory, and push, all in ONE process, so the body written back is derived from the body just
 read.  The file this module writes is a byproduct -- one fixed path per issue, overwritten
-every time, valuable only for reading back what was sent::
+every time, valuable only for reading back what was sent.  ``py/main_github_issue_edit.py``
+does all three for replacements read from a file, and is the usual way in; the functions are
+for a caller that needs something else::
 
-    from wlc_issue_edit import fetch_body, replace_once, write_and_edit
+    from github_issue_edit import fetch_body, replace_once, write_and_edit
 
     body = fetch_body(69, repo="wlc-utils")
     body = replace_once(body, anchor, anchor + addition)
     write_and_edit(69, body, repo="wlc-utils")
 
+Which changes belong in a body at all, rather than in a new comment, is the subject of the
+github-issues skill, canonical at ``dot-claude/skills/github-issues/SKILL.md``: only a
+correction to an open issue.  This module was ``wlc_issue_edit.py`` until 2026-09-14, a name
+left from its wlc-utils days; nothing in it was ever specific to that repository.
+
 WHICH TRACKER IS AN ARGUMENT, NOT AN INHERITED CWD.  ``gh`` resolves which repo
 "issue <number>" names from the git checkout it runs in, so this module used to pass
 ``cwd=<the wlc-utils root>`` to pin it.  That worked while there was one tracker to
-pin to.  There are now two: wlc-utils keeps issues 1-88 where they are, and everything
-new is filed in MAM-basics, so NEITHER root is a safe default and a plausible-looking
-``#69`` names a different issue in each.  ``repo`` is therefore required and travels to
-``gh`` as ``--repo bdenckla/<name>``.  An explicit argument cannot silently edit the
-wrong tracker; an inherited cwd can.
+pin to.  Issues now live in several trackers whose numbers collide -- MAM-basics,
+MAM-private, and the trackers ``CLAUDE.md``'s "Five issue trackers" registers -- so no
+checkout is a safe default, and a plausible-looking ``#69`` names a different issue in
+each.  ``repo`` is therefore required and travels to ``gh`` as ``--repo bdenckla/<name>``.
+An explicit argument cannot silently edit the wrong tracker; an inherited cwd can.
 
 The byproduct path carries the repo for the same reason -- one ``issue-69-outgoing.md``
-for two trackers would reintroduce, in the scratch directory, exactly the ambiguity the
-argument removes.  It is written under this repo's ``.novc/``, the code root, because
-what it is a byproduct OF is an issue edit, not the wlc-utils corpus.
+for several trackers would reintroduce, in the scratch directory, exactly the ambiguity the
+argument removes.  It is written under this repo's ``.novc/`` whichever tracker the issue
+is in.
 
 :func:`replace_once` is what actually makes this safe.  A plain ``str.replace`` that matches
 nothing returns the string unchanged, so a stale anchor -- the exact symptom of someone else

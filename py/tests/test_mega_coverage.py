@@ -535,6 +535,12 @@ NOT_IN_MEGA: dict[str, str] = {
         " whose recommendation Ben agreed to on 2026-09-10 and phase 5a of"
         " doc/PLAN-mega-coverage.md carried out."
     ),
+    "py/main_github_issue_edit.py": (
+        "Ben's decision, 2026-09-14, approving a Claude-written proposal: it corrects a"
+        " stale fact in an open GitHub issue's body, which no mega run may do.  Its"
+        " module docstring and dot-claude/skills/github-issues/SKILL.md describe that"
+        " use."
+    ),
     "py/main_verse_links.py": (
         "Claude-written proposal, not yet reviewed by Ben: an on-demand lookup that"
         " prints the links for a verse, and an atom of it, named on its command line,"
