@@ -387,13 +387,13 @@ Steps:
    record's pinned run of the committed code, and it skips the SVG renders of `tmpl-survey`
    (twelve) and `pipeline-graph` (two). The closing banner, `MEGA RUN IS CLOUD-COMPLETE`, lists
    what was skipped.
-6. **Check the tree after each run.** A shallow clone can change two outputs with no defect in the
-   code, because both read commit dates from a history that a shallow clone truncates.
-   `vendoring-audit` dates each vendored copy by its last commit, through `git log -1` in
-   `py/vendoring/compare.py`. `diff-mpplus` dates `HEAD` by the last commit to `MAM-parsed/plus`,
-   as the docstring in `py/subcommands/diff_mpplus.py` that begins "THE ONE GIT READING LEFT"
-   explains. Check a diff in either output against that explanation, and commit neither. Any other
-   diff is a failure to report.
+6. **Check the tree after each run.** A shallow clone can change one output with no defect in the
+   code, because it reads commit dates from a history that a shallow clone truncates.
+   `diff-mpplus` dates `HEAD` by the last commit to `MAM-parsed/plus`, as the docstring in
+   `py/subcommands/diff_mpplus.py` that begins "THE ONE GIT READING LEFT" explains. Check a diff
+   in that output against that explanation, and do not commit it. Any other diff is a failure to
+   report. This step named two such outputs until 2026-09-14, when the `vendoring-audit` step,
+   which dated each vendored copy by its last commit, was removed from the mega.
 7. **Write the record**: a new dated document, `doc/mega-timing-cloud-<date>.md`, with the
    environment, each step's three times, the skips, and Phase 1's medians beside them if Phase 1
    has run. In the same commit, which names both paths, update this plan's Phase 2 status. Push

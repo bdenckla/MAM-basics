@@ -278,7 +278,7 @@ express the risk Ben assigns to changing what readers see or consumers receive.
    file from a proposed content change.
 3. **All remaining changes — lower risk.** Start with a summary by type, at the granularity
    of "wording changes to Markdown files in doc directories", "Python comments and
-   docstrings", "agent instructions", "code and tests", or "vendoring reports". Ben will
+   docstrings", "agent instructions", or "code and tests". Ben will
    ask for finer detail where he wants it; do not begin by requiring him to inspect every
    internal wording replacement.
 

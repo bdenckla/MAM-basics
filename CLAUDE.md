@@ -719,8 +719,8 @@ pairs, a historical output, the README and the product's MIT `LICENSE` were dele
 were MAM text, which that licence could not cover, and the command's two remaining goldens are
 the zarqa tables under `misc/zarqa-table-diff/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
 MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
-is deliberately absent from `all-repos.code-workspace`, `repo_visibility`, and vendoring audit
-configuration. The source repository keeps its history as an archived dated breadcrumb. Ben
+is deliberately absent from `all-repos.code-workspace` and `repo_visibility`. The source
+repository keeps its history as an archived dated breadcrumb. Ben
 archived `bdenckla/diffable-pointed-hebrew` on 2026-09-04; its archive state was then confirmed
 with `gh repo view --json isArchived,url`. The source tracker has no issues; new product work is
 tracked in MAM-basics.

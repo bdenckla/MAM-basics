@@ -322,9 +322,7 @@ Python source. The helper accepts the fully marked atom and
 marked atom with all post-silluq U+05BD marks removed.
 
 Copy the shared helper into `MAM-simple/py-examples/mb_cmn/` through the existing
-MAM-simple support-file generator. Do not hand-edit the vendored copy. Extend
-the vendoring inventory/check so the canonical and copied implementations must
-remain byte-identical.
+MAM-simple support-file generator. Do not hand-edit the vendored copy.
 
 Add `silluq-before-meteg` to the XML render mapping, the JSON conversion, and
 the MAM-simple XML/JSON documentation. Update any MAM-simple loaders that
@@ -436,8 +434,8 @@ Acceptance requires all of the following:
 6. Generic MAM-simple readers, the Aleppo reader, and the masorah-books reader
    reproduce the atom text with both marks and do not expose the structural
    wrapper as stray output.
-7. The canonical and generated MAM-simple example support files are
-   byte-identical under the vendoring check.
+7. The canonical and generated MAM-simple example support files, the new helper
+   among them, are byte-identical.
 8. `gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` no longer calls the concern
    unfounded, names 1 Kings 7:37 with the form לְכֻלָּֽהְנָֽה׃, and has no group label
    locating the silluq as the verse-final U+05BD. Read the rendered page, not the

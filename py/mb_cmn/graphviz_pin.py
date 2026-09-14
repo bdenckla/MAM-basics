@@ -128,8 +128,8 @@ discipline ``~/.claude/CLAUDE.md`` states for a black version bump, and for the
 same reason: a regeneration that rides along makes a small change look like a
 formatting commit. MAM-private pins the same version independently, in
 ``MAM-private/py/tests/test_graphviz_version_pin.py``; the two repos are
-deliberately NOT wired together, since a vendoring relationship governed by
-``in/vendoring_policy.json`` would cost more than the one string it kept in step.
+deliberately NOT wired together, since a vendored copy and the sync that keeps it
+current would cost more than the one string it kept in step.
 Raising the pin means editing both.
 """
 

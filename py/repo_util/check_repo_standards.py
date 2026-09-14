@@ -250,10 +250,11 @@ walkthrough plus its .mmd and .svg, superseded by `py/verify_mp/` and the
 generated doc/mp-claims.md; a nesting normal-form spec that
 `py/tmpl_survey/nesting_normal_form.py` states in its own docstrings down to
 the three coverage buckets; and three issue-#60 vendoring handoffs whose end
-state is `in/vendoring_policy.json` plus `py/vendoring/discover.py` and the
-generated doc/vendoring-inventory.md. Four of the ten had drifted into
-falsehood by the time they were cut -- the clearest being a guardrail about
-import order that no longer had a mechanism behind it.
+state was `in/vendoring_policy.json` plus `py/vendoring/discover.py` and the
+generated doc/vendoring-inventory.md, until the vendoring audit was removed on
+2026-09-14. Four of the ten had drifted into falsehood by the time they were
+cut -- the clearest being a guardrail about import order that no longer had a
+mechanism behind it.
 
 The three the screen raised and hand-checking kept are the shape to expect:
 doc/sigil-decoding.md, which calls itself the current decoder authority and
