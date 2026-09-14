@@ -288,25 +288,37 @@ record and this plan.
 
 ## Phase 2: measure the mega in a cloud session
 
-**Executed 2026-09-14, and its record is `doc/mega-timing-cloud-2026-09-14.md`.** A Claude cloud
-session on `bdenckla/MAM-basics`, on branch `claude/adoring-shannon-8term6` at `main` `89f10bb4`,
-made three full runs. All 55 steps ran or were skipped for the cloud in each, no step failed, and
-the median run took 249.0 s in its 54 executed steps. The steps below are left as written; what
-each produced is in that record. Four things it found are worth carrying here:
+**Executed 2026-09-14, and its record is `doc/mega-timing-cloud-2026-09-14.md`, corrected the same
+day by `doc/mega-timing-cloud-2026-09-14-update.md`.** A Claude cloud session on
+`bdenckla/MAM-basics`, on branch `claude/adoring-shannon-8term6` at `main` `89f10bb4`, made three
+full runs on Python 3.11 and, after the update entry found out why that was the wrong interpreter,
+two more on 3.13. All 55 steps ran or were skipped for the cloud in every run and no step failed.
+**The figures to quote are the update's**, the record's being 3.11 measurements: a 3.13 run takes
+**229.8 s** in its 54 executed steps, against 248.9 s on 3.11. The steps below are left as written;
+what each produced is in those two files. Five things are worth carrying here:
 
 1. **Normalizing for the cloud's skips does matter**, against the guess in Ben's instruction that
    it might not: the one step a cloud run skips, `accgram-survey-post-stress-meteg`, is the
    mega's most expensive on Ben's machine at 40.9 s, or 16.5% of a comparable run there. Step 5's
    "compare step by step, never by total" is the whole of the normalization needed.
-2. **Like for like the container is 1.13 times Ben's pinned machine** over the 52 steps that
-   completed in both, and 1.01 times his unpinned run.
-3. **A container is markedly more repeatable than Ben's machine**, runs 2 and 3 agreeing to within
-   0.6 s on every step, so it is the better place to attribute a speedup — for every step but the
-   one it skips. Its first run is a cold-cache run and should be discarded.
+2. **Like for like the container is 1.04 times Ben's pinned machine** over the 52 steps that
+   completed in both, and **0.93 times** his unpinned run, so a container is within a few percent
+   of his performance cores and ahead of his machine unpinned. (On 3.11 those ratios read 1.13 and
+   1.01, which is what the record states.)
+3. **A container is markedly more repeatable than Ben's machine**, each pair of warm runs agreeing
+   to within 0.6 s on every step, so it is the better place to attribute a speedup — for every
+   step but the one it skips. A first run in a fresh container is a cold-cache run and should be
+   discarded.
 4. **One finding is raised and not fixed**, this phase being forbidden to change code: a shallow
    clone's graft boundary has no parent object, so git reports every file in it as added, and the
    path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
-   §7 has it.
+   §7 has it, and it reproduced identically on 3.13.
+5. **Step 3 below needs amending before this phase is run again, and so does the environment's
+   setup script.** That script fails with exit code 2, having built a 3.13 virtual environment and
+   then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
+   clone. A session that does not notice falls back to the system `python3`, which is 3.11 and
+   whose dpkg-managed `site-packages` then blocks a `pip install`. Inside the 3.13 environment the
+   install takes 3.0 s and no conflict arises. The update entry has the evidence and the fix.
 
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
