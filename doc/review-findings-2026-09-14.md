@@ -174,20 +174,20 @@ the evidence, and "What verifies sound" carries what was checked and found right
    steps and leaves no diff, so every MAM-simple file a generator writes, the corpora, the
    Unicode-names tree and `MAM-simple/doc/versification-differences.md` among them, is what the
    generators at `bca64824` write; the README and the three `MAM-simple/doc/reading-mam-simple*.md`
-   guides are written by hand, and a mega run does not check them. The same commit introduced two
-   other defects, and the session fixed both before `main` held either: it orphaned the block that
-   writes `MAM-simple/misc/unicode-names-vtrad-mam/` into a new function behind an early return, so
-   for three commits the tree was not regenerated at all, which no diff could show and which
-   `20f18020` records and fixes 62 minutes later (finding 2.2); and it left the poetic cross-check
-   reading no verse of Psalms, Proverbs or Job, which the mega's diff showed and `6dbd27e7` fixed 16
-   minutes later (finding 2.4). The figures the session wrote into the product's README, its docs
-   and the code's comments re-derive — 23,202 `yeivinID` pairs with the chapter and verse always
-   matching and a one-to-one map over 39 books, 18 of 24 BHS and 19 of 24 Sefaria Unicode-names
-   files identical to the MAM ones but for the tradition token, 9.78 MB each, six BHS and five
-   Sefaria book groups stored, the `versification-tradition` values 18, 1 and 5 — except the size
-   after: 63.3 MB before and the 24.3 MB the deleted files weighed are right, but the same commit's
-   `yeivinID` removal took another 1.3 MB, so the product is 37.6 MB after, by git blob size and by
-   disk, not 39.0 MB (finding 2.3).
+   guides are written by hand, and a mega run does not check them. `3b1adf45`, the commit that
+   stored the corpora incrementally, introduced two other defects, and the session fixed both before
+   `main` held either: it orphaned the block that writes `MAM-simple/misc/unicode-names-vtrad-mam/`
+   into a new function behind an early return, so for three commits the tree was not regenerated at
+   all, which no diff could show and which `20f18020` records and fixes 62 minutes later (finding
+   2.2); and it left the poetic cross-check reading no verse of Psalms, Proverbs or Job, which the
+   mega's diff showed and `6dbd27e7` fixed 16 minutes later (finding 2.4). The figures the session
+   wrote into the product's README, its docs and the code's comments re-derive — 23,202 `yeivinID`
+   pairs with the chapter and verse always matching and a one-to-one map over 39 books, 18 of 24 BHS
+   and 19 of 24 Sefaria Unicode-names files identical to the MAM ones but for the tradition token,
+   9.78 MB each, six BHS and five Sefaria book groups stored, the `versification-tradition` values
+   18, 1 and 5 — except the size after: 63.3 MB before and the 24.3 MB the deleted files weighed are
+   right, but the same commit's `yeivinID` removal took another 1.3 MB, so the product is 37.6 MB
+   after, by git blob size and by disk, not 39.0 MB (finding 2.3).
 3. **The README session verifies sound apart from the D12 question its crop move raises and the
    two consequences of that move.** Every path `README.md` names exists at `bca64824`; the eight
    crop sections of the four old READMEs are byte-identical to the new READMEs' sections apart
