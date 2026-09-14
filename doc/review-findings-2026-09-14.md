@@ -195,15 +195,14 @@ the evidence, and "What verifies sound" carries what was checked and found right
    that the one finished document the commit did leave as written, `doc/metsudah-vs-ctr.md`, got
    no update entry and holds the window's one new dead link (finding 3.3).
 4. **`py/product_scopes.py`'s declaration equals the live step table, and its wrapper table is
-   right, but the section of `CLAUDE.md` that presents it went stale within two hours of being
-   written, and the tiers no longer say where two of the five distributed products come from.**
+   right, but the section of `CLAUDE.md` that presents it went stale the day it was written, and
+   no rule in either file covers the path finding 2.1 took.**
    The lint's four checks pass, and an independent resolution of the 55 steps' runners gives the
    same 43 entry points and the same 18 wrappers, each wrapper read against the function it names.
-   `CLAUDE.md` still says 47 entry points across 59 steps, and both files still say tier 3 is the
-   only routine route into tiers 1 and 2, while since `bf4a6c5e` of the same day `MAM-for-Sefaria/`
-   and `MAM-OSIS/` are written only by the two hand-run programs of finding 2.1, which tier 3 no
-   longer lists; so the rule "a change that cannot reach tier 3 owes the suite" now sends a change
-   to their generators past the mega, which is exactly how finding 2.1 went unnoticed (finding 1).
+   `CLAUDE.md` still says 47 entry points across 59 steps. Since `bf4a6c5e` of the same day,
+   `MAM-for-Sefaria/` and `MAM-OSIS/` are written only by the two hand-run programs of finding 2.1,
+   and neither file covers a change to what such a program reads, which is how finding 2.1 went
+   unnoticed: `3b1adf45` changed MAM-simple, got its mega run, and broke both programs (finding 1).
 
 ## Tree health at `bca64824`: green, with the suite at 997 and the mega clean, but ruff failing
 
@@ -415,53 +414,55 @@ Findings 1 to 4 are Ben's four areas, in his order; 5 and 6 are the two other th
 product or a routine run; 7 to 12 are the record, the instruction files, the issues, the code's
 guards, the prose and the hygiene. Each lead says its disposition at `bca64824`.
 
-### 1. `CLAUDE.md`'s product tiers and `py/product_scopes.py` went stale within two hours of being written, and neither says where two of the five distributed products come from now
+### 1. `CLAUDE.md`'s tier-3 counts went stale the day they were written, and no rule covers a change to what a hand-run program reads
 
-**Unfixed at `bca64824`.** Ben's fourth area. Three parts.
+**Unfixed at `bca64824`.** Ben's fourth area. Four parts.
 
 1.1. **`CLAUDE.md`'s section "What this repository's products are, and which check a change
 owes" says tier 3 is "the 47 entry points that the step table of `py/main_0_mega.py` runs across
 its 59 steps, measured 2026-09-12".** Both figures were true when `63aaa6f3` wrote them at 10:23
-that day and false from 12:47, when `bf4a6c5e` took the `mam4sef-and-ajf`, `mam-osis`,
-`vendored-mam4sef` and `vendored-mam-osis` steps out of the mega (`d6a6764d` at 12:44 had already
-retired the two vendored examples). At `bca64824` the step table has **55** steps and
+that day. On the mega-speedup branch, `d6a6764d` (12:44) removed the `vendored-mam4sef` and
+`vendored-mam-osis` steps and `bf4a6c5e` (12:47) removed `mam4sef-and-ajf` and `mam-osis`, taking
+the step table from 59 steps to 55 and its entry points from 47 to 43. The two lines of work first
+met in the merge `2a4b010c` at 14:35, and the sentence has been false on `main` since `main`
+fast-forwarded to that merge nine seconds later. At `bca64824` the step table has **55** steps and
 `py/product_scopes.py` declares **43** entry points, which is what the lint checks and what an
 independent resolution of the runners gives (`scopes_check.txt`). The merge `2a4b010c`, which
 brought `product_scopes.py` onto the mega-speedup branch at 14:35, resolved the conflict by
 removing the four retired entry points and two wrappers from the module, with a comment saying
-why, and by editing two other sentences of `CLAUDE.md`, but it left this sentence alone. `CLAUDE.md`
+why, and edited no other file, so this sentence stayed as `63aaa6f3` wrote it. `CLAUDE.md`
 is a document that describes the present and is kept true in place, so this is a stale figure in
 a live instruction, not a receipt. Streams A, B, C, D and E each found the 59 independently.
 Re-establish with `scopes_check.py`, or with `git grep -c -E "^\s+StepRecord\(" bca64824 --
 py/main_0_mega.py`.
 
-1.2. **Both files still say tier 3 is the only routine route into tiers 1 and 2, and since
-`bf4a6c5e` it is not: `MAM-for-Sefaria/` and `MAM-OSIS/` are written only by `py/main_mam4sef.py`
-and `py/main_mam_osis.py`, which are hand-run programs tier 3 no longer lists.** `CLAUDE.md`'s
-item 3 says "This is the tier that matters, being the only routine route into tiers 1 and 2 other
-than editing those trees by hand"; `py/product_scopes.py:26` says "the only route into tiers 1
-and 2 other than editing those trees by hand". The section's "Tier 3 is not every route into a
-product" paragraph names one exception, the hand-run crop generators that write published images,
-and does not name the two product generators, although the same day's `bf4a6c5e` moved them to
-`py/tests/test_mega_coverage.py`'s `NOT_IN_MEGA` and gave each product a "How current this product
-is" section. The consequence is the one Ben's fourth area is about: under the section's rule, "a
-change that can reach tier 3 owes a mega run and a reading of the `git diff` it leaves; a change
-that cannot owes the suite", a change to `py/main_mam4sef.py`, `py/mb_sefaria/`,
-`py/main_mam_osis.py` or `py/osis/` now owes only the suite, which does not run either program,
-while the change alters a distributed product the next time someone runs the program by hand.
-Finding 2.1 is the first instance: the suite passed and the mega passed on a tree where both
-programs fail. Nothing in the section says that these two products are regenerated only by hand
-and so owe their own regeneration, the way the crop paragraph says it of the images. This is an
-instruction gap for Ben to decide how to close; the products' own READMEs say the right thing
+1.2. **Unfixed at `bca64824`: no rule in `CLAUDE.md` or `py/product_scopes.py` covers a change to
+what a hand-run program reads, and that is the path finding 2.1 took.** Since `bf4a6c5e`,
+`MAM-for-Sefaria/` and `MAM-OSIS/` are written only by `py/main_mam4sef.py` and
+`py/main_mam_osis.py`, which `py/tests/test_mega_coverage.py` declares in `NOT_IN_MEGA`. Tier 3 is
+still the only routine route into tiers 1 and 2, and both files' paragraph on hand-run programs
+covers a change to either program: "a change to a hand-run generator owes regenerating what it
+generates, which a mega run will not do for it". Neither covers a change upstream of such a program.
+`3b1adf45` changed `py/main_mam_simple.py` and MAM-simple's layout, a tier-3 change that got its
+mega run, and broke both programs, which read MAM-simple and which the mega no longer runs. Neither
+file names the two products among what hand-run programs write: `CLAUDE.md`'s examples are all image
+work, and `py/product_scopes.py` says it only in the code comment where the two entries stood. This
+is an instruction gap for Ben to decide how to close; the products' own READMEs say the right thing
 about currency and the wrong thing about how to regenerate (finding 2.1).
 
 1.3. **The tiers' lint cannot see either 1.1 or 1.2, by design, and that is worth saying where
 the lint is described.** `py/tests/test_product_scopes.py` defends the declaration against the
 step table, so a step added or removed fails it, which is what happened on 2026-09-12 and what
 `2a4b010c` resolved. It does not read `CLAUDE.md`, and it cannot know that a program leaving the
-step table left a product behind. The lint's docstring and `CLAUDE.md` both say what it checks; a
+step table left a product behind. The lint's docstring says what it checks; a
 one-sentence statement of what it does not check would have made 1.1 a known cost rather than a
 surprise.
+
+1.4. **Unfixed at `bca64824`: `py/product_scopes.py:26` says tier 3 is "the only route into tiers 1
+and 2 other than editing those trees by hand", and lines 39–41 of the same docstring say it is "the
+ROUTINE route into tiers 1 and 2, and not the only one".** `63aaa6f3` wrote both, so line 26 has
+been false since it was written, because of the hand-run programs lines 41–44 name. `CLAUDE.md`'s
+version says "the only routine route".
 
 ### 2. The mega-speedup session broke the two product generators it moved out of the mega, introduced and fixed a second silent generator defect, and left one figure that does not re-derive
 
