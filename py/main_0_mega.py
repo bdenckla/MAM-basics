@@ -818,6 +818,23 @@ def _report_step_times(run_seconds):
     print("=" * 80)
 
 
+def _check_graphviz_first():
+    """Check, before any step runs, that the SVG renders will be able to run.
+
+    Ben's decision, 2026-09-14. Two steps render SVGs, tmpl-survey eighth and
+    pipeline-graph near the end, and until then each found out only on arriving
+    that this machine could not render. That day one run stopped at tmpl-survey
+    after 65 s on a Graphviz other than the pinned one, and a second after 79 s
+    on a font the machine lacked. graphviz_pin.check_rendering_environment makes
+    the checks render_svg makes, on the same dot. A cloud session skips its
+    renders, so it skips this check too.
+    """
+    if graphviz_pin.in_cloud_session():
+        print("GRAPHVIZ CHECK SKIPPED: this cloud session skips its SVG renders")
+        return
+    print(f"GRAPHVIZ CHECK: {graphviz_pin.check_rendering_environment()}", flush=True)
+
+
 def main():
     """Run various mains"""
     # The wlc steps emit Hebrew.  Their own `if __name__ == "__main__"` blocks called
@@ -834,6 +851,7 @@ def main():
         + ", ".join(_STEP_NAMES),
     )
     args = parser.parse_args()
+    _check_graphviz_first()
     resuming = args.resume_from is not None
     old_argv = sys.argv
     run_start = time.perf_counter()

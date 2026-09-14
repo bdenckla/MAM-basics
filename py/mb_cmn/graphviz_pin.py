@@ -89,6 +89,15 @@ would do: ``FONTNAME`` for the nodes too, as the edges and
     ``doc/process-documentation/MAM-process.dot`` gets by naming no font, is
     unaffected: the alias table resolves it to Times New Roman, and it loads.
 
+THE MEGA CHECKS ALL OF THIS BEFORE ITS FIRST STEP. ``check_rendering_environment``
+finds dot as ``render_svg`` does, checks its stamp, and renders a graph of two
+nodes and an edge in ``FONTNAME`` and in Graphviz's default font, raising on a
+substituted font. ``py/main_0_mega.py`` calls it before any step, outside a
+cloud session: Ben's decision, 2026-09-14, the day one run stopped at its eighth
+step, tmpl-survey, on a Graphviz other than the pinned one, and a second on a
+font the machine lacked. ``find_dot`` moved here from ``survey_dot.py`` that
+day, so that the check and the renders ask the same dot.
+
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better
 design than this one: a pinned entry in ``requirements.txt`` would make the
@@ -126,6 +135,7 @@ Raising the pin means editing both.
 
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -235,3 +245,70 @@ def check_installed(dot_exe):
             "that regeneration on its own."
         )
     return found
+
+
+# Where Graphviz's Windows installer puts dot, for a shell whose PATH predates the
+# install.
+DOT_FALLBACK = os.path.join(
+    os.environ.get("ProgramFiles", r"C:/Program Files"), "Graphviz", "bin", "dot.exe"
+)
+
+# What Graphviz's text layout writes to standard error when it cannot load a font a
+# graph names, and draws that text in another font instead.
+_FONT_SUBSTITUTED = "couldn't load font"
+
+# A graph that names FONTNAME for a node and an edge and leaves one node in
+# Graphviz's default font: the two fonts this repo's graphs use.
+_FONT_CHECK_DOT = (
+    "digraph font_check {\n"
+    '    default_font [label="default"];\n'
+    f'    node [fontname="{FONTNAME}"];\n'
+    f'    edge [fontname="{FONTNAME}"];\n'
+    '    named_font [label="named"];\n'
+    '    default_font -> named_font [label="edge"];\n'
+    "}\n"
+)
+
+
+def find_dot():
+    """Return the path to the dot executable, or None: PATH first, then DOT_FALLBACK."""
+    found = shutil.which("dot")
+    if found:
+        return found
+    if shutil.which(DOT_FALLBACK):
+        return DOT_FALLBACK
+    return None
+
+
+def font_was_substituted(dot_stderr):
+    """True when dot's standard error says it drew some text in a substitute font."""
+    return _FONT_SUBSTITUTED in dot_stderr
+
+
+def check_rendering_environment():
+    """Raise unless dot is found, is the pinned Graphviz, and loads the graphs' fonts.
+
+    Makes the checks that survey_dot.render_svg makes before and while rendering,
+    once, on a graph of two nodes, for py/main_0_mega.py to run before its first
+    step. Returns a line saying what was checked.
+    """
+    dot = find_dot()
+    if dot is None:
+        raise FileNotFoundError(
+            f"Graphviz dot executable was not found on PATH or at {DOT_FALLBACK}."
+        )
+    stamp = check_installed(dot)
+    completed = subprocess.run(
+        [dot, "-Tsvg"],
+        input=_FONT_CHECK_DOT,
+        capture_output=True,
+        check=True,
+        encoding="utf-8",
+    )
+    if font_was_substituted(completed.stderr):
+        raise RuntimeError(
+            f"Graphviz at {dot} substituted a font while rendering a test graph "
+            f"that names {FONTNAME!r} and Graphviz's default font: "
+            f"stderr={completed.stderr!r}"
+        )
+    return f"{dot} is the pinned {stamp}, and {FONTNAME!r} and the default font load"

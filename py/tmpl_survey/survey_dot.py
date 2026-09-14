@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass
 import os
-import shutil
 import subprocess
 import time
 
@@ -15,9 +14,6 @@ from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
-_DOT_FALLBACK = os.path.join(
-    os.environ.get("ProgramFiles", r"C:/Program Files"), "Graphviz", "bin", "dot.exe"
-)
 _FOCUS_NODE_ATTR_PARTS = (
     'fillcolor="lightgoldenrod1"',
     'style="filled"',
@@ -562,16 +558,6 @@ def write_focused_dot_files(
         _maybe_remove_legacy_unsuffixed(base_svg_path, needs_disambiguation)
 
 
-def _find_dot():
-    """Return the path to the dot executable, or None."""
-    found = shutil.which("dot")
-    if found:
-        return found
-    if shutil.which(_DOT_FALLBACK):
-        return _DOT_FALLBACK
-    return None
-
-
 def _with_svg_comment_inserted(svg_text, comment_text):
     marker = f"<!-- {comment_text} -->"
     if marker in svg_text:
@@ -622,7 +608,7 @@ def render_svg(dot_path, svg_path, generator_file=None):
     gh-pages/MAM-parsed/plain/svg/plain-call-graph-c.svg drawn in a fallback font.
     Ben asked for the temporary file the same day.
     """
-    dot = _find_dot()
+    dot = graphviz_pin.find_dot()
     if dot is None:
         if graphviz_pin.in_cloud_session():
             graphviz_pin.note_cloud_skip(svg_path)
@@ -630,7 +616,7 @@ def render_svg(dot_path, svg_path, generator_file=None):
         raise FileNotFoundError(
             "Graphviz dot executable was not found, so "
             f"{svg_path} cannot be rendered. Looked on PATH and at "
-            f"{_DOT_FALLBACK}."
+            f"{graphviz_pin.DOT_FALLBACK}."
         )
     graphviz_pin.check_installed(dot)
     return file_io.with_tmp_path(
@@ -659,7 +645,7 @@ def _render_svg_to(dot, dot_path, svg_path, generator_file, tmp_svg_path):
             ) from error
         else:
             stderr = getattr(completed, "stderr", "") or ""
-            if "couldn't load font" in stderr:
+            if graphviz_pin.font_was_substituted(stderr):
                 raise RuntimeError(
                     f"Graphviz substituted a fallback font while rendering {svg_path} "
                     f"from {dot_path}, so {svg_path} was left unchanged: "

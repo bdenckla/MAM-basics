@@ -217,7 +217,9 @@ class TestGraphProvenance(unittest.TestCase):
             # is stubbed to report the pinned stamp -- which leaves check_installed
             # doing its own real comparison rather than being stubbed out whole.
             with (
-                mock.patch.object(survey_dot, "_find_dot", return_value="dot"),
+                mock.patch.object(
+                    survey_dot.graphviz_pin, "find_dot", return_value="dot"
+                ),
                 mock.patch.object(
                     survey_dot.graphviz_pin,
                     "installed_stamp",
