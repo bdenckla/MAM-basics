@@ -2,7 +2,7 @@
 
 State: not yet acted on
 
-Written 2026-09-14, from about 07:45 to early afternoon local, as the Claude argument, turn 1 of
+Written 2026-09-14, from about 07:45 to 08:44 local, as the Claude argument, turn 1 of
 the standard alternating dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of
 2026-09-09): this file was frozen before any Codex reviewer read it, and the Claude session neither
 read nor sought a Codex half (no file named `codex-review-findings-2026-09-14*` exists, and nothing
@@ -86,10 +86,11 @@ times), `claude/periodic-review-split` and `dual-agent-review-2026-09-10` (twice
 made directly on `main` in the primary clone: the five of 2026-09-10 night (`e7a1736b`,
 `a7586b4b`, `44479798`, `9dd066ad`, `e84e2c70`), `b31ca87f`, `11ee6879` and `81627bc6` on
 2026-09-12, and the six of the README session and its neighbours on 2026-09-13 (`d044ee7d`,
-`7b64043b`, `67a1f9b3`, `a8e4790e`, `1d2ddc3d`, `eb9adf13`). Fourteen of the 27 merges carry a
-conflict resolution that differs from both parents (`git diff-tree --cc --name-only <merge>`):
-`CLAUDE.md` in nine of them, `py/main_0_mega.py` in two, `py/product_scopes.py` in `2a4b010c`
-(finding 1.1), and one to five other files each.
+`7b64043b`, `67a1f9b3`, `a8e4790e`, `1d2ddc3d`, `eb9adf13`). Fourteen of the 27 merges hold a file
+that differs from both parents (`git diff-tree --cc --name-only <merge>`), `CLAUDE.md` in nine and
+`py/main_0_mega.py` in two, a count that includes files git merged cleanly; eight carry a resolution
+hunk that matches neither parent (`git diff-tree --cc -p <merge>`), `CLAUDE.md` in three of them and
+`py/product_scopes.py` in `2a4b010c` (finding 1.1).
 
 The window changed **673 paths** between its endpoints — 43 added, 286 deleted, 265 modified, 79
 that `git diff -M` pairs as renames — taking the tree from 4,935 to **4,692** tracked files, 1,088
@@ -410,9 +411,10 @@ the five `py/subcommands/` entries; the declaration has 43 (`scopes_check.txt`).
 
 ## Findings
 
-Findings 1 to 4 are Ben's four areas, in his order; 5 and 6 are the two other things that touch a
-product or a routine run; 7 to 12 are the record, the instruction files, the issues, the code's
-guards, the prose and the hygiene. Each lead says its disposition at `bca64824`.
+Findings 1 to 4 are Ben's four areas: finding 1 his fourth, 2 his second, 3 his third and 4 his
+first; 5 and 6 are the two other things that touch a product or a routine run; 7 to 12 are the
+record, the instruction files, the issues, the code's guards, the prose and the hygiene. Each lead
+says its disposition at `bca64824`.
 
 ### 1. `CLAUDE.md`'s tier-3 counts went stale the day they were written, and no rule covers a change to what a hand-run program reads
 
