@@ -27,6 +27,11 @@ record's §7 is kept in this plan.** The wording of §7 itself describes 2026-09
 bodies of #272 and #273 until 2026-09-14, when a Claude session, with Ben's approval, corrected
 their stale statements and commented on each issue with a link to this plan.
 
+**This plan holds more proposals than the dated record's twelve.** Items 13 to 15, added
+2026-09-14 at Ben's request, come from reading the post-stress-meteg survey's code rather than from
+any measurement, and have their own section below. Item numbers run 1 to 15 across the two
+sections, so a reference to an item number needs no further qualification.
+
 Two speedups were made and measured with the dated record, and both are on `main`: `15c09692` gave
 the prose scanner a fast path, cutting its time from 75.3 s to 21.1 s over the eight steps that
 call it, and `af1c404a` made the JSON writer use `json.dumps`, saving about 15.8 s a run (the dated
@@ -41,7 +46,7 @@ record's §5).
   in particular its sections "Integrating a worktree branch here" and "What this repository's
   products are". The `hebrew-prose` skill is not needed for Phases 1 and 2, which write only
   timing records. Load it before editing any docstring or comment under `py/accgram/`, which
-  items 3, 4 and 7 would do.
+  items 3, 4, 7 and 13 to 15 would do.
 - **Another session may be live in this repository.** Code work goes in a worktree. Timing work
   cannot share the machine at all: the dated record's §1 discarded a baseline run because a mega
   started from another worktree slowed it, `parse-ws` taking 40.4 s against 12.8 to 15.2 s.
@@ -144,6 +149,63 @@ of the code the item names.
 12. **Run the subprocess steps in-process.** Not proposed: interpreter start-up is worth well under
     a second in all. The dated record counted four `vendored-*` subprocess steps; two remain,
     `vendored-tmpl-survey-toy` and `vendored-letter-small-job`.
+
+## Three further proposals for the post-stress-meteg survey, from reading its code on 2026-09-14
+
+**None of these three is measured, and no figure below is a measurement of a change.** They come
+from reading `py/accgram/post_stress_meteg.py` in a cloud container on 2026-09-14, where
+`accgram-survey-post-stress-meteg` is the one step that does not run, so the session that proposed
+them could time nothing. Ben asked that day for them to be added here. **Treat each as a hypothesis
+to verify before believing it**; the shares quoted are the dated record's profile of the existing
+code. They are numbered 13 to 15 so that a reference to an item number stays unambiguous: items 1
+to 12 above are the dated record's, and these three are not.
+
+**Why this step repays the attention.** It was the dated record's largest step, 58.5 s unpinned and
+40.9 s pinned, and that record's §4 item 1 puts 132.9 of its 150.9 s under cProfile in **four
+passes of `_scan`**. All three items below are about those four passes. Item 7 above, which loads
+MAM-simple once, is about the same step and is independent of these three. `build_survey` makes the
+four calls, which are two cantillation strands times two modes:
+
+```python
+found              = _scan(phon_dir, CANT_ALEF)
+found_bet          = _scan(phon_dir, CANT_BET)
+template_found     = _scan(phon_dir, CANT_ALEF, dual_templates_only=True)
+template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
+```
+
+13. **Decode the Phonetic MAM files once a run, not four times.** `_scan` has
+    `data = json.loads(path.read_text(encoding="utf-8"))` inside its loop over
+    `sorted(phon_dir.glob("*.json"))`, so each of the four passes reads and decodes every file of
+    the standard set. Hoisting the read and the decode above the four calls, and passing the
+    decoded data in, cuts that work to a quarter. **Expected saving: not estimated.** The dated
+    record's profile does not separate decoding from scanning, so measure it first, by Phase 1 or
+    by a profile run of the one step. **Risk: low**, provided the scan treats the decoded data as
+    read-only, which is to be checked before the four passes share one copy.
+
+14. **Stop the two `dual_templates_only` passes paying for the verses they skip.** Those two passes
+    open with `if dual_templates_only and not dual: continue`, so they visit only the
+    dual-cantillation verses, which `_has_dual_cantillation`'s docstring puts at the two Decalogues
+    plus Genesis 35:22 — a handful out of the whole standard set. Each pass nevertheless decodes
+    every file and runs `_has_dual_cantillation` on every verse to reach that `continue`.
+    **Item 13 removes most of this by itself**, since the only per-verse cost then left in the two
+    passes is the dual test; computing the dual set once would remove the rest. The three
+    assertions immediately after the four calls already establish that all four passes agree on
+    `dual_cant_verses`. **Expected saving: whatever item 13 does not already take. Risk: low.**
+
+15. **Scan a verse that has no dual cantillation once, rather than once per strand.** This is the
+    largest of the three and the only one that is not plainly safe.
+    `_select_cantillation_strand` branches only where a payload begins `[_DUALCANT_MARKER]`, that
+    marker being `"cb-dualcant"`; everywhere else it rebuilds a structurally identical result. So
+    for every verse without a dual-cantillation node the `CANT_ALEF` and `CANT_BET` passes select
+    equal text and then scan it identically, and the verses that do have such a node are the
+    handful item 14 names. **Expected saving: up to one of the two full passes**, which would be
+    the largest single saving proposed anywhere in this plan. **Risk: medium to high**, for a
+    reason easy to miss: `_scan` makes one `prose_scanner.HasLegarmeh()` per file and keeps it
+    across that file's verses, so each pass builds stateful per-file scanner state in verse order,
+    and skipping the non-dual verses of the second strand would change that state. The `found` dict
+    accumulates `Counter`s and lists across a whole pass besides. **Any implementation must leave
+    `out/accgram/post-stress-meteg.json` byte for byte the same**, which is the differential check
+    this repository relies on, and that file's figures reach the nine post-stress-meteg pages.
 
 ## Phase 1: re-measure on Ben's machine with nothing else running
 
@@ -301,7 +363,7 @@ Steps:
 What Phase 2 must not change: no code, and no generated output other than the shallow-clone
 differences of step 6, which are not committed.
 
-## Implementing items 3 to 9
+## Implementing items 3 to 9 and 13 to 15
 
 1. **Every item must be output-neutral**, as both speedups already made were: every tracked output
    stays byte for byte the same. An item that changes an output is a different piece of work.
