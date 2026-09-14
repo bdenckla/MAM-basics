@@ -107,7 +107,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--today-only",
         action="store_true",
-        help="Keep only repos whose HEAD committer local date is today",
+        help=(
+            "Keep only repos whose HEAD commit date, in this machine's time zone,"
+            " is today"
+        ),
     )
     parser.add_argument(
         "--visibility",

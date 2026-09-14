@@ -59,4 +59,4 @@ def local_date_from_git_iso8601(value: str) -> dt.date:
 
 
 def today_local_date() -> dt.date:
-    return dt.datetime.now().date()
+    return dt.datetime.now(dt.timezone.utc).astimezone().date()
