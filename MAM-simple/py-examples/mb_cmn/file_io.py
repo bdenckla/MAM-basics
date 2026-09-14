@@ -7,7 +7,7 @@ import time
 
 from mb_cmn import provenance
 
-__all__ = ["with_tmp_openw", "json_dump_to_file_path"]
+__all__ = ["with_tmp_openw", "with_tmp_path", "json_dump_to_file_path"]
 
 
 def with_tmp_openw(out_path: str, kwargs_dic, write_fun, *write_fun_args):
@@ -15,6 +15,24 @@ def with_tmp_openw(out_path: str, kwargs_dic, write_fun, *write_fun_args):
     tpath = _tmp_path(out_path)
     with _openw(tpath, **kwargs_dic) as outfp:
         retval = write_fun(*write_fun_args, outfp)
+    _replace_file(tpath, out_path)
+    return retval
+
+
+def with_tmp_path(out_path: str, write_fun, *write_fun_args):
+    """Have write_fun write to a temporary path, then move that file to out_path.
+
+    For a writer that needs a path rather than an open file, such as an external
+    program's -o option. write_fun receives the temporary path as its last
+    argument. If write_fun raises, the temporary file is removed and out_path is
+    left as it was.
+    """
+    tpath = _tmp_path(out_path)
+    try:
+        retval = write_fun(*write_fun_args, tpath)
+    except BaseException:
+        tpath.unlink(missing_ok=True)
+        raise
     _replace_file(tpath, out_path)
     return retval
 

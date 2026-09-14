@@ -4,6 +4,7 @@
 from collections import defaultdict
 
 from tmpl_survey import survey_dot
+from mb_cmn import graphviz_pin
 from mb_cmn import provenance
 
 from pipeline_graph import pipeline_graph_spec as spec
@@ -100,8 +101,8 @@ def render_dot_text(generator_file=None):
         [
             "    // Generated from structured pipeline data.",
             "    rankdir=LR;",
-            '    node [fontname="Helvetica", fontsize=10];',
-            '    edge [fontname="Helvetica", fontsize=9];',
+            f'    node [fontname="{graphviz_pin.FONTNAME}", fontsize=10];',
+            f'    edge [fontname="{graphviz_pin.FONTNAME}", fontsize=9];',
             "",
             "    // ── Data stores ──",
             "    node [shape=cylinder];",

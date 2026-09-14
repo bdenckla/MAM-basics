@@ -91,7 +91,7 @@ every periodic review window to use two agents or establish a blind parallel-tra
 
 The round takes turns in this order:
 
-1. **Claude argument:** the initial review of the named public commit ranges, committed as
+1. **Claude argument:** the initial review of the named commit ranges, committed as
    `doc/review-findings-<date>.md`.
 2. **Codex counter-argument:** check the Claude claims and the same ranges for omissions,
    committed as `doc/codex-review-findings-<date>.md`. Once stable, append the reconciliation
@@ -116,8 +116,9 @@ does not silently become a remediation instruction. Ben resolves any objection t
 decision before close-out proceeds. Step 1 of
 `doc/PLAN-close-out-review-2026-09-08.md` is the worked acknowledgment and closure decision.
 
-**Every turn is review only and uses public evidence only.** It performs no remediation and
-does not rewrite an earlier turn. A correction belongs in the turn that accepts the correction.
+**Every turn is review only and, in this repository's series, uses public evidence only.** It
+performs no remediation and does not rewrite an earlier turn. A correction belongs in the turn that
+accepts the correction.
 Turn 2's initial reconciliation is the specified append to the argument, not permission to edit
 the original findings; subsequent corrections to that table are recorded in subsequent turns.
 The close-out reads the table together with those corrections and Ben's decisions.
@@ -185,6 +186,12 @@ the branch. An unexplained generated change or a failing mega step is a failure.
 the primary clone's `main` with `--ff-only` and push `main`. If the fast-forward refuses because
 `main` moved, merge and verify again in the worktree. Retire the worktree and its merged branch
 only after the final task has ended.
+
+A round of the private series, which `doc/periodic-review.md` describes, works the same way in
+MAM-private: its shared worktree is
+`C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dual-agent-review-<date>`, and its final
+integration verifies with what MAM-private's `CLAUDE.md` requires in place of this repository's
+mega.
 
 In the September 8 round, Codex created
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on branch
@@ -433,7 +440,7 @@ Four reasons the rename was rejected, none of which the growing count changes.
 
 ## Two things to set up before the first Codex review
 
-### 1. Scope Codex to the public repositories, explicitly
+### 1. Scope Codex to its window's series, explicitly
 
 A Codex agent that reads MAM-private and then writes `doc/codex-review-findings-<date>.md` into
 MAM-basics publishes private material permanently, and no mechanism prevents it.
@@ -442,9 +449,18 @@ MAM-basics publishes private material permanently, and no mechanism prevents it.
 docstring names what it deliberately does not cover: "what a human or an agent later types into a
 `doc/` file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
 
-The public-only scope the review series has run under since 2026-08-26 removes this structurally.
-Keep Codex inside that scope, and do not give it a private-side lane until the question of where
-that lane's output lives has been settled.
+The public-only scope this repository's series has run under since 2026-08-26 removes this
+structurally. Keep the Codex reviewer of a window of this repository's series inside that scope.
+
+**A window of the private series has the opposite boundary: its records stay in MAM-private.** Ben,
+2026-09-14: "I would like the MAM-private review process to be potentially dual-agent", and, on
+where the Codex file goes, "wouldn't it be in MAM-private/doc/codex-review-findings-YYYY-MM-DD.md
+or whatever the analogy with MAM-basics would dictate?" So a private window's Codex reviewer reads
+the private clones in its window and writes only into MAM-private's `doc/`, under D10's names
+there: `doc/codex-review-findings-<date>.md` for the counter-argument and the numbered turn names
+after it. As item 4 of `doc/periodic-review.md`'s section "The private series, recorded in
+MAM-private" says, the Codex task reads MAM-private's `CLAUDE.md` before its first check, since
+Codex does not load that file.
 
 ### 2. Limit the Codex reviewer to review records
 
@@ -490,8 +506,7 @@ in `dot-Codex`, which a case-sensitive glob for `dot-codex` misses.
 
 1. **Whether every periodic window should have a blind parallel review.** Design B's calibration
    addresses that cadence; D9 already settles the standard dual-agent procedure.
-2. **Whether Codex ever reviews the private side.** Setup item 1 defers this rather than answering it.
-3. **How to run Codex on this machine.** No command line is given here. Codex demonstrably runs
+2. **How to run Codex on this machine.** No command line is given here. Codex demonstrably runs
    here — see the provenance section — but this document has not examined how it is invoked, and
    guessing a spelling would be worse than the omission.
 

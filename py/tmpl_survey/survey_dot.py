@@ -2,10 +2,10 @@
 
 from dataclasses import dataclass
 import os
-import shutil
 import subprocess
 import time
 
+from mb_cmn import file_io
 from mb_cmn import graphviz_pin
 from mb_cmn import provenance
 from mb_cmn import uni_heb as uh
@@ -14,9 +14,6 @@ from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
-_DOT_FALLBACK = os.path.join(
-    os.environ.get("ProgramFiles", r"C:/Program Files"), "Graphviz", "bin", "dot.exe"
-)
 _FOCUS_NODE_ATTR_PARTS = (
     'fillcolor="lightgoldenrod1"',
     'style="filled"',
@@ -232,8 +229,8 @@ def _write_dot(
         fp.write("// Do not edit by hand.\n")
     fp.write("digraph template_call_graph {\n")
     fp.write("    rankdir=LR;\n")
-    fp.write('    node [fontname="SBL Hebrew,Helvetica", fontsize=12];\n')
-    fp.write('    edge [fontname="Helvetica", fontsize=9];\n')
+    fp.write(f'    node [fontname="{graphviz_pin.FONTNAME}", fontsize=12];\n')
+    fp.write(f'    edge [fontname="{graphviz_pin.FONTNAME}", fontsize=9];\n')
     if generated_by:
         fp.write(f"    graph [comment={_dot_quoted(generated_by)}];\n")
     fp.write("\n")
@@ -561,16 +558,6 @@ def write_focused_dot_files(
         _maybe_remove_legacy_unsuffixed(base_svg_path, needs_disambiguation)
 
 
-def _find_dot():
-    """Return the path to the dot executable, or None."""
-    found = shutil.which("dot")
-    if found:
-        return found
-    if shutil.which(_DOT_FALLBACK):
-        return _DOT_FALLBACK
-    return None
-
-
 def _with_svg_comment_inserted(svg_text, comment_text):
     marker = f"<!-- {comment_text} -->"
     if marker in svg_text:
@@ -611,8 +598,17 @@ def render_svg(dot_path, svg_path, generator_file=None):
     note_cloud_skip and reported at the end of a mega run. The callers below
     still ignore it deliberately: there is nothing for them to do about a skip
     that has already been recorded.
+
+    THE SVG IS WRITTEN THROUGH A TEMPORARY FILE, by mb_cmn.file_io.with_tmp_path,
+    the way file_io writes this repo's own files. It is moved to svg_path only
+    after Graphviz has succeeded without substituting a font and the provenance
+    comment is in. Until 2026-09-14 Graphviz wrote svg_path itself and the font
+    check ran afterwards, so a failed check left a wrongly rendered tracked SVG
+    behind: that day a mega run on a machine without the SBL Hebrew font left
+    gh-pages/MAM-parsed/plain/svg/plain-call-graph-c.svg drawn in a fallback font.
+    Ben asked for the temporary file the same day.
     """
-    dot = _find_dot()
+    dot = graphviz_pin.find_dot()
     if dot is None:
         if graphviz_pin.in_cloud_session():
             graphviz_pin.note_cloud_skip(svg_path)
@@ -620,10 +616,17 @@ def render_svg(dot_path, svg_path, generator_file=None):
         raise FileNotFoundError(
             "Graphviz dot executable was not found, so "
             f"{svg_path} cannot be rendered. Looked on PATH and at "
-            f"{_DOT_FALLBACK}."
+            f"{graphviz_pin.DOT_FALLBACK}."
         )
     graphviz_pin.check_installed(dot)
-    command = [dot, "-Tsvg", "-o", svg_path, dot_path]
+    return file_io.with_tmp_path(
+        svg_path, _render_svg_to, dot, dot_path, svg_path, generator_file
+    )
+
+
+def _render_svg_to(dot, dot_path, svg_path, generator_file, tmp_svg_path):
+    """Render dot_path into tmp_svg_path, which render_svg then moves to svg_path."""
+    command = [dot, "-Tsvg", "-o", str(tmp_svg_path), dot_path]
     for attempt in range(2):
         try:
             completed = subprocess.run(
@@ -642,22 +645,23 @@ def render_svg(dot_path, svg_path, generator_file=None):
             ) from error
         else:
             stderr = getattr(completed, "stderr", "") or ""
-            if "couldn't load font" in stderr:
+            if graphviz_pin.font_was_substituted(stderr):
                 raise RuntimeError(
                     f"Graphviz substituted a fallback font while rendering {svg_path} "
-                    f"from {dot_path}: stderr={stderr!r}"
+                    f"from {dot_path}, so {svg_path} was left unchanged: "
+                    f"stderr={stderr!r}"
                 )
             break
     generated_by = _generated_by_text(generator_file)
     if generated_by is not None:
-        _ensure_svg_comment(svg_path, generated_by)
-        with open(svg_path, "r", encoding="utf-8") as svg_fp:
+        _ensure_svg_comment(tmp_svg_path, generated_by)
+        with open(tmp_svg_path, "r", encoding="utf-8") as svg_fp:
             svg_text = svg_fp.read()
         normalized_svg_text = svg_provenance_norm.normalize_generated_by_comment_hyphen(
             svg_text,
             generated_by,
         )
         if normalized_svg_text != svg_text:
-            with open(svg_path, "w", encoding="utf-8", newline="") as svg_fp:
+            with open(tmp_svg_path, "w", encoding="utf-8", newline="") as svg_fp:
                 svg_fp.write(normalized_svg_text)
     return True
