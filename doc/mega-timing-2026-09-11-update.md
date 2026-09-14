@@ -14,3 +14,11 @@ that sibling for `doc/mega-timing-2026-09-11.md`. Nothing here edits the documen
 mega has changed since the runs measured here, and plans new measurements. Five of the 60 steps
 timed here have since left the mega: `near-aleppo-census` on 2026-09-11, and `mam4sef-and-ajf`,
 `mam-osis`, `vendored-mam4sef` and `vendored-mam-osis` on 2026-09-12.
+
+## 2026-09-14: the current mega on a second machine is timed in `doc/mega-timing-laptop-2026-09-14.md`
+
+That record times four full runs of the mega's 55 steps on `LAPTOP-DBLE8UKA`, a Surface Laptop 4
+with an AMD Ryzen 7 of 16 logical processors, all of one kind. The step loop took a median of
+262.9 s. Outside the first run, every step of 5 s or more stayed within 4% of its fastest time,
+against the up-to-2.6-times variation that §1 here measured on the i5-13500T. It is a different
+machine and later code, so its figures are not a re-measurement of this record's.
