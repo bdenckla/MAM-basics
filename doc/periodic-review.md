@@ -149,11 +149,20 @@ declared `open` better. Nothing had been edited on the strength of the recommend
 ### How Ben walks through a review's findings
 
 Ben's rules for an interactive walk through a review's findings, given on 2026-09-11 while the
-2026-09-10 review was walked through. They are what make his part of a review of a review work.
+2026-09-10 review was walked through and on 2026-09-14 while the 2026-09-14 review was. They are
+what make his part of a review of a review work.
+
+**What the walk-through is for.** Ben, 2026-09-14: it is mainly about Ben identifying what the
+review findings are, to see whether he wants to weigh in on them, for example by suggesting a
+different remediation or questioning a finding, and about the agent fixing up the findings' language
+or, in extreme cases, weighing in as Ben does, for example by suggesting a remediation different
+from those already present or questioning the finding itself. In his words: "Notably, this process
+is unlikely to be about me fixing up review finding language, nor is it likely to be about me
+questioning your proposed fix-ups to review finding language."
 
 1. **Say which of two things is meant: the wording of finding N, or the problem finding N
-   describes.** Never write a bare "fix finding N". A walk-through is about the wording; fixing the
-   problem is a separate decision Ben makes per finding.
+   describes.** Never write a bare "fix finding N". Fixing the wording is the agent's part of a
+   walk-through; fixing the problem is a separate decision Ben makes per finding.
 2. **Say what a finding is before saying anything about it.** Ben, 2026-09-11: "You need to not
    just say something like 'I fixed finding 6.' that requires me to have in my head what finding 6
    is."
@@ -161,6 +170,15 @@ Ben's rules for an interactive walk through a review's findings, given on 2026-0
    and a fix he does ask for lands off the review branch.
 4. **Use one word for one thing.** The case: "record" was naming both a post-stress-meteg survey
    entry and a document's written account, until `3f962e62`.
+5. **Summarize a finding's wording changes and offer the detail, rather than presenting each
+   change.** Say what the finding is about and that there are wording changes to it, and offer to
+   detail them. Ben, 2026-09-14, after finding 3 of the 2026-09-14 review was presented with
+   eighteen wording corrections, each quoted as it stood and as proposed: "For the record it would
+   have been sufficient for you to summarize what finding 3 was about and say you had various
+   wording changes to it, and *offered* to detail them to me, which I would have likely declined yet
+   still told you to go ahead and implement." Where the agent also weighs in, with a different
+   remediation or a doubt about the finding itself, it says so plainly, since weighing in is what
+   the walk-through is for.
 
 ## Close-out: from findings to dispositions
 
