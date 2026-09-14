@@ -1,6 +1,6 @@
 # PLAN — make the mega run faster
 
-State: live, no phase started as of 2026-09-14.
+State: live. Phase 2 executed 2026-09-14; no other phase started as of that date.
 
 Written by a Claude session on 2026-09-14. Ben's instructions that day, said of the changes to the
 mega since 2026-09-11 that the session had just listed for him: "Should other updates you mention
@@ -27,6 +27,11 @@ record's §7 is kept in this plan.** The wording of §7 itself describes 2026-09
 bodies of #272 and #273 until 2026-09-14, when a Claude session, with Ben's approval, corrected
 their stale statements and commented on each issue with a link to this plan.
 
+**This plan holds more proposals than the dated record's twelve.** Items 13 to 15, added
+2026-09-14 at Ben's request, come from reading the post-stress-meteg survey's code rather than from
+any measurement, and have their own section below. Item numbers run 1 to 15 across the two
+sections, so a reference to an item number needs no further qualification.
+
 Two speedups were made and measured with the dated record, and both are on `main`: `15c09692` gave
 the prose scanner a fast path, cutting its time from 75.3 s to 21.1 s over the eight steps that
 call it, and `af1c404a` made the JSON writer use `json.dumps`, saving about 15.8 s a run (the dated
@@ -41,7 +46,7 @@ record's §5).
   in particular its sections "Integrating a worktree branch here" and "What this repository's
   products are". The `hebrew-prose` skill is not needed for Phases 1 and 2, which write only
   timing records. Load it before editing any docstring or comment under `py/accgram/`, which
-  items 3, 4 and 7 would do.
+  items 3, 4, 7 and 13 to 15 would do.
 - **Another session may be live in this repository.** Code work goes in a worktree. Timing work
   cannot share the machine at all: the dated record's §1 discarded a baseline run because a mega
   started from another worktree slowed it, `parse-ws` taking 40.4 s against 12.8 to 15.2 s.
@@ -145,6 +150,63 @@ of the code the item names.
     a second in all. The dated record counted four `vendored-*` subprocess steps; two remain,
     `vendored-tmpl-survey-toy` and `vendored-letter-small-job`.
 
+## Three further proposals for the post-stress-meteg survey, from reading its code on 2026-09-14
+
+**None of these three is measured, and no figure below is a measurement of a change.** They come
+from reading `py/accgram/post_stress_meteg.py` in a cloud container on 2026-09-14, where
+`accgram-survey-post-stress-meteg` is the one step that does not run, so the session that proposed
+them could time nothing. Ben asked that day for them to be added here. **Treat each as a hypothesis
+to verify before believing it**; the shares quoted are the dated record's profile of the existing
+code. They are numbered 13 to 15 so that a reference to an item number stays unambiguous: items 1
+to 12 above are the dated record's, and these three are not.
+
+**Why this step repays the attention.** It was the dated record's largest step, 58.5 s unpinned and
+40.9 s pinned, and that record's §4 item 1 puts 132.9 of its 150.9 s under cProfile in **four
+passes of `_scan`**. All three items below are about those four passes. Item 7 above, which loads
+MAM-simple once, is about the same step and is independent of these three. `build_survey` makes the
+four calls, which are two cantillation strands times two modes:
+
+```python
+found              = _scan(phon_dir, CANT_ALEF)
+found_bet          = _scan(phon_dir, CANT_BET)
+template_found     = _scan(phon_dir, CANT_ALEF, dual_templates_only=True)
+template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
+```
+
+13. **Decode the Phonetic MAM files once a run, not four times.** `_scan` has
+    `data = json.loads(path.read_text(encoding="utf-8"))` inside its loop over
+    `sorted(phon_dir.glob("*.json"))`, so each of the four passes reads and decodes every file of
+    the standard set. Hoisting the read and the decode above the four calls, and passing the
+    decoded data in, cuts that work to a quarter. **Expected saving: not estimated.** The dated
+    record's profile does not separate decoding from scanning, so measure it first, by Phase 1 or
+    by a profile run of the one step. **Risk: low**, provided the scan treats the decoded data as
+    read-only, which is to be checked before the four passes share one copy.
+
+14. **Stop the two `dual_templates_only` passes paying for the verses they skip.** Those two passes
+    open with `if dual_templates_only and not dual: continue`, so they visit only the
+    dual-cantillation verses, which `_has_dual_cantillation`'s docstring puts at the two Decalogues
+    plus Genesis 35:22 — a handful out of the whole standard set. Each pass nevertheless decodes
+    every file and runs `_has_dual_cantillation` on every verse to reach that `continue`.
+    **Item 13 removes most of this by itself**, since the only per-verse cost then left in the two
+    passes is the dual test; computing the dual set once would remove the rest. The three
+    assertions immediately after the four calls already establish that all four passes agree on
+    `dual_cant_verses`. **Expected saving: whatever item 13 does not already take. Risk: low.**
+
+15. **Scan a verse that has no dual cantillation once, rather than once per strand.** This is the
+    largest of the three and the only one that is not plainly safe.
+    `_select_cantillation_strand` branches only where a payload begins `[_DUALCANT_MARKER]`, that
+    marker being `"cb-dualcant"`; everywhere else it rebuilds a structurally identical result. So
+    for every verse without a dual-cantillation node the `CANT_ALEF` and `CANT_BET` passes select
+    equal text and then scan it identically, and the verses that do have such a node are the
+    handful item 14 names. **Expected saving: up to one of the two full passes**, which would be
+    the largest single saving proposed anywhere in this plan. **Risk: medium to high**, for a
+    reason easy to miss: `_scan` makes one `prose_scanner.HasLegarmeh()` per file and keeps it
+    across that file's verses, so each pass builds stateful per-file scanner state in verse order,
+    and skipping the non-dual verses of the second strand would change that state. The `found` dict
+    accumulates `Counter`s and lists across a whole pass besides. **Any implementation must leave
+    `out/accgram/post-stress-meteg.json` byte for byte the same**, which is the differential check
+    this repository relies on, and that file's figures reach the nine post-stress-meteg pages.
+
 ## Phase 1: re-measure on Ben's machine with nothing else running
 
 Ben asked for this phase to be planned and not yet done. Start it only when he says to.
@@ -226,6 +288,42 @@ record and this plan.
 
 ## Phase 2: measure the mega in a cloud session
 
+**Executed 2026-09-14, and its record is `doc/mega-timing-cloud-2026-09-14.md`, corrected the same
+day by `doc/mega-timing-cloud-2026-09-14-update.md`.** A Claude cloud session on
+`bdenckla/MAM-basics`, on branch `claude/adoring-shannon-8term6` at `main` `89f10bb4`, made three
+full runs on Python 3.11 and, after the update entry found out why that was the wrong interpreter,
+two more on 3.13. All 55 steps ran or were skipped for the cloud in every run and no step failed.
+**The figures to quote are the update's**, the record's being 3.11 measurements: a 3.13 run takes
+**229.8 s** in its 54 executed steps, against 248.9 s on 3.11. The steps below are left as written;
+what each produced is in those two files. Five things are worth carrying here:
+
+1. **Normalizing for the cloud's skips does matter**, against the guess in Ben's instruction that
+   it might not: the one step a cloud run skips, `accgram-survey-post-stress-meteg`, is the
+   mega's most expensive on Ben's machine at 40.9 s, or 16.5% of a comparable run there. Step 5's
+   "compare step by step, never by total" is the whole of the normalization needed.
+2. **Like for like the container is 1.04 times Ben's pinned machine** over the 52 steps that
+   completed in both, and **0.93 times** his unpinned run, so a container is within a few percent
+   of his performance cores and ahead of his machine unpinned. (On 3.11 those ratios read 1.13 and
+   1.01, which is what the record states.)
+3. **A container is markedly more repeatable than Ben's machine**, each pair of warm runs agreeing
+   to within 0.6 s on every step, so it is the better place to attribute a speedup — for every
+   step but the one it skips. A first run in a fresh container is a cold-cache run and should be
+   discarded.
+4. **One finding is raised and not fixed**, this phase being forbidden to change code: a shallow
+   clone's graft boundary has no parent object, so git reports every file in it as added, and the
+   path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
+   §7 has it, and it reproduced identically on 3.13.
+5. **The environment's setup script failed until Ben fixed it on 2026-09-14; steps 3 and 4 below
+   survive it either way.** It failed with exit code 2, having built a 3.13 virtual environment
+   and then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
+   clone. A session that does not notice falls back to the system `python3`, which is 3.11 and
+   whose dpkg-managed `site-packages` then blocks a `pip install` — which is exactly what happened
+   on 2026-09-14, and why the record's figures are 3.11 ones. Inside the 3.13 environment the
+   install takes 3.0 s and no conflict arises. **The fix is Ben's report and is not verified in
+   this repository**, the container that found the fault having been built before it; the next
+   cloud session confirms it by finding a populated 3.13 environment at step 3, and needs no
+   workaround if it does. The update entry has the evidence.
+
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
 out.
@@ -246,17 +344,33 @@ Steps:
    mega depends on it.
 2. **Record the environment**: `git rev-parse HEAD`; `git rev-parse --is-shallow-repository`,
    since the container that `fa517040` measured on 2026-09-11 held a shallow clone of 221 commits;
-   `nproc`; the model name from `lscpu`; `free -h`; `python3 --version`, which was 3.13.12 there,
-   while the dated record measured the JSON writer's saving on 3.13.15; whether `dot` is on the
-   path, which it should not be; and `cat /proc/loadavg` before each run.
-3. **Check the packages.** If `python3 py/main_test.py --collect-only -q` fails on a missing
-   module, install them with `python3 -m pip install -r requirements.txt`, and record that the
-   install happened and how long it took, apart from the runs.
+   `nproc`; the model name from `lscpu`; `free -h`; **the version of the interpreter the runs will
+   actually use, which is the virtual environment's and not `python3`'s** — record both, since on
+   2026-09-14 they were 3.13.12 and 3.11.15 and only the first is the one to measure on, while the
+   dated record measured the JSON writer's saving on 3.13.15; whether `dot` is on the path, which
+   it should not be; and `cat /proc/loadavg` before each run.
+3. **Check the interpreter first, then the packages.** Amended 2026-09-14, after the run recorded
+   in `doc/mega-timing-cloud-2026-09-14.md` followed the earlier wording of this step and measured
+   the wrong Python throughout. **Do not reach for `python3`**: in a cloud container that is the
+   system interpreter, 3.11, and its `site-packages` is managed by dpkg, so a `pip install` into
+   it fails on a package pip cannot uninstall. Use the virtual environment the environment's setup
+   script builds, which is 3.13 and is what Ben's machine runs. Find it before anything else —
+   `.venv` at the repository root, or at `/home/user/.venv` while the setup script's working
+   directory is still the parent of the clone — and check its version with
+   `<venv>/bin/python --version`. **If the setup script failed and there is no usable 3.13
+   environment, say so and stop rather than falling back to `python3`**, since a fallback silently
+   changes what is being measured. Install into that environment with
+   `uv pip install --python <venv>/bin/python -r requirements.txt`, which took 3.0 s on
+   2026-09-14, and record the install apart from the runs. Then confirm the packages with
+   `<venv>/bin/python py/main_test.py --collect-only -q`; a pywikibot user-config collection error
+   in `py/tests/test_ws_bot_real_diff_links.py` is a suite matter that no mega step touches.
 4. **Make three full runs back to back**, from the repository root, each captured to an untracked
-   file:
+   file, using the 3.13 environment of step 3 and never a bare `python3`. Discard the first run's
+   figures: a fresh container runs it cold, which cost 27.9 s on 2026-09-14, over half of that in
+   `diff-mpplus` alone. Restore the four files of step 6 between runs, so each starts clean.
 
    ```bash
-   python3 py/main_0_mega.py > <untracked file> 2>&1
+   <venv>/bin/python py/main_0_mega.py > <untracked file> 2>&1
    ```
 
 5. **Compare step by step, never by total**, because a cloud run does less. It skips
@@ -281,7 +395,7 @@ Steps:
 What Phase 2 must not change: no code, and no generated output other than the shallow-clone
 differences of step 6, which are not committed.
 
-## Implementing items 3 to 9
+## Implementing items 3 to 9 and 13 to 15
 
 1. **Every item must be output-neutral**, as both speedups already made were: every tracked output
    stays byte for byte the same. An item that changes an output is a different piece of work.
