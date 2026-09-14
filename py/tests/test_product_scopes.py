@@ -4,10 +4,11 @@ WHY THIS EXISTS
 
 ``py/product_scopes.py`` is the written answer to "what are this repository's
 products", which Ben asked for on 2026-09-12.  A written answer that nothing checks
-goes stale silently, which is the failure
-``py/tests/test_vendoring_policy_paths.py`` was written for after a manifest went
-unnoticed-stale for a day.  This lint is what defends it.  It is a mechanical lint
-over the tree, the second of the two test shapes CLAUDE.md sanctions.
+goes stale silently, which is the failure ``py/tests/test_vendoring_policy_paths.py``
+was written for after a manifest went unnoticed-stale for a day.  That lint was deleted
+with the vendoring audit on 2026-09-14; this one defends ``py/product_scopes.py``.  It
+is a mechanical lint over the tree, the second of the two test shapes CLAUDE.md
+sanctions.
 
 WHAT IT CHECKS
 

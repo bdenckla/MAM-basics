@@ -16,7 +16,8 @@ rewrite. It goes on working only while a page is published at that path here. Re
 frozen page, or drop it, and its stub keeps redirecting -- to a URL that 404s. Nothing in
 the target subtree knows the manifest exists, so the break is silent, and it is exactly
 the shape ``py/tests/test_vendoring_policy_paths.py`` was written for after a manifest
-went stale unnoticed for a day.
+went stale unnoticed for a day. That lint was deleted with the vendoring audit on
+2026-09-14.
 
 The repair is a decision rather than a rewrite, which is why this reports rather than
 fixes: republish the page at its old path, or, if the content is genuinely gone, drop the

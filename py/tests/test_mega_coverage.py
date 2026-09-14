@@ -153,11 +153,6 @@ _CHECK_WRITES_NOTHING = (
     " py/check_html_syntax_and_sanity.py.  Proposed in doc/mega-coverage-2026-09-10.md"
     " §4."
 )
-_VENDORING_PART = (
-    "Claude-written, accepted by Ben on 2026-09-10: one part of the --all audit"
-    " that the vendoring-audit step runs.  Proposed in doc/mega-coverage-2026-09-10.md"
-    " §4."
-)
 
 # ---------------------------------------------------------------------------
 # A reason shared by two programs, from a decision of Ben's.
@@ -443,9 +438,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " writes nothing; --find-stack-path-verbose is the same lookup with more"
         " context.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
-    "py/main_vendoring.py --compare": _VENDORING_PART,
-    "py/main_vendoring.py --provenance": _VENDORING_PART,
-    "py/main_vendoring.py --gen-inventory": _VENDORING_PART,
     "py/main_slide_generator.py make-pptx": (
         "Claude-written, accepted by Ben on 2026-09-10: it builds an untracked"
         " presentation file for giving a talk.  Proposed in"

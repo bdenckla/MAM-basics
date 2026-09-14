@@ -1,5 +1,0 @@
-FILE                                       DEST_REPO                  DEST_PATH                                               IDENTITY       LAST_SYNCED  HINT_NOTES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-file_io.py                                 MAM-basics                 MAM-simple/py-examples/mb_cmn/file_io.py                identical      2026-09-14   generated
-provenance.py                              MAM-basics                 MAM-simple/py-examples/mb_cmn/provenance.py             identical      2026-09-10   generated
-letter_small_job.py                        MAM-basics                 MAM-simple/py-examples/mb_misc/letter_small_job.py      identical      2026-09-08   generated

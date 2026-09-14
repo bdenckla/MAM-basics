@@ -45,7 +45,6 @@ _ORIGINAL_SCANNED_PATHS = (
     "gh-pages",
     "book-of-job/out",
     "doc/mp-claims.md",
-    "doc/vendoring-inventory.md",
     "holman/data",
     "holman/docs-not-served",
     "holman/emails",

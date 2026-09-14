@@ -66,7 +66,7 @@ Seven independent steps, in order:
    why they are not part of mega".
 7. Run ``py/main_0_mega.py``, the routine downstream rebuild: every step of
    its ``_STEPS``, in order, from ``parse-ws`` to the closing
-   ``vendoring-audit``.  ``_STEPS`` is the only list of those steps: a copy
+   ``pipeline-graph``.  ``_STEPS`` is the only list of those steps: a copy
    kept here went stale, naming a step the mega does not have and missing
    several that it has.
 

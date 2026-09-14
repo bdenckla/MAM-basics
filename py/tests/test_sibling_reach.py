@@ -61,7 +61,7 @@ longer exists.  On 2026-09-04 ``2e66268a`` removed the literal
 and had to remove that literal's ``_NOT_A_SIBLING_PATH`` entry by hand; left in, the
 entry would have sat there green.  So each consult point records the declared key it
 used, and ``test_every_declared_suppression_still_matches_a_site`` fails naming the keys
-nothing reached.  All FOUR declaration tables are covered -- see the comment above
+nothing reached.  All THREE declaration tables are covered -- see the comment above
 ``_Consulted`` for why none of them is exempt.
 
 THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
@@ -76,9 +76,12 @@ THE FIVE MECHANISMS, ALL OF WHICH THIS COVERS
   built the MAM-private subprocess ``cwd`` this way until its near-aleppo-census step
   was deleted on 2026-09-11, and no site spells a repo name this way since; the
   recognizer stays for the next one.
-* A name arriving from a tracked data file, which no in-file lookup can resolve:
-  ``vendoring/`` and ``tests/test_vendoring_policy_paths.py`` take theirs from
-  ``in/vendoring_policy.json``. ``_DYNAMIC_NAME_SOURCES`` names those two sites.
+* A name arriving from a tracked data file, which no in-file lookup can resolve.  No site
+  has done this since 2026-09-14, when the vendoring audit's ``vendoring/`` package and
+  ``tests/test_vendoring_policy_paths.py`` were deleted.  Both took their repo names
+  from ``in/vendoring_policy.json``, and ``_DYNAMIC_NAME_SOURCES``, the table declaring
+  those two sites, was deleted with them.  A new such site fails as unresolvable until
+  this scan is taught to read its data file.
 * Cwd-relative ``"../X"``, the mechanism the survey's grep cannot see -- as a plain
   literal or as an interpolated path whose first segment this test can resolve in the
   same file. The vocabulary filter excludes an interpolated site-relative href.
@@ -111,7 +114,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from mb_cmn import paths, provenance
+from mb_cmn import paths
 
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  One entry per sibling repo this tree resolves a path into,
@@ -195,14 +198,6 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
 # reach set on the strength of a string in a mock.
 _INERT_RESOLVER_TESTS = frozenset({"py/tests/test_mb_cmn_paths.py"})
 
-# Sites whose repo name comes from a tracked data file rather than from any literal in
-# the same file.  Naming the site here is what keeps an unresolved name a hard failure
-# everywhere else.
-_DYNAMIC_NAME_SOURCES: dict[tuple[str, str], str] = {
-    ("py/vendoring/discover.py", "repo_name"): "vendoring-policy",
-    ("py/tests/test_vendoring_policy_paths.py", "repo_name"): "vendoring-policy",
-}
-
 # paths.py IS the resolver: its `repos_root() / name` is the mechanism rather than a
 # call site, and its `name` is a parameter no in-file lookup can resolve.  Only the
 # repos_root recognizer skips it; its sibling_repo("MAM-private") call is a real reach
@@ -220,14 +215,14 @@ _CWD_RELATIVE = re.compile(r"^\.\./([A-Za-z0-9][A-Za-z0-9._-]*)")
 # records the declared key it used, so a declaration excusing a site the tree no
 # longer has is reported rather than sitting green.
 #
-# ALL FOUR TABLES ARE COVERED, not just ``_NOT_A_SIBLING_PATH``.  Each names a file
+# ALL THREE TABLES ARE COVERED, not just ``_NOT_A_SIBLING_PATH``.  Each names a file
 # or a (file, name) pair, so each goes stale by the one mechanism -- the code it
 # names being edited or deleted -- and each is consulted at a point the scan reaches
 # whenever the site it names still exists.  So an unused key means a site that is
 # gone, never a live one that merely went unvisited, and neither
-# ``_INERT_RESOLVER_TESTS``, ``_DYNAMIC_NAME_SOURCES`` nor ``_PATHS_MODULE`` earns an
-# exemption.  ``_DYNAMIC_NAME_SOURCES`` is read on two separate paths, the paths-API
-# recognizer and the cwd-relative one, and a key hit on either counts.
+# ``_INERT_RESOLVER_TESTS`` nor ``_PATHS_MODULE`` earns an exemption.  There were four
+# tables until 2026-09-14, when ``_DYNAMIC_NAME_SOURCES`` was deleted along with the
+# only two sites it declared, which belonged to the vendoring audit.
 #
 # ``_PATHS_MODULE`` needed its consult point MOVED to earn this.  It used to be read
 # before ``_reaching_name_node`` had tested whether the division was rooted at
@@ -261,13 +256,6 @@ class _Consulted:
         self._used.add(("_NOT_A_SIBLING_PATH", (rel, literal)))
         return True
 
-    def dynamic_name_source(self, rel: str, ident: str) -> str | None:
-        """Where this site's repo names come from, if it is declared to have a source."""
-        source = _DYNAMIC_NAME_SOURCES.get((rel, ident))
-        if source is not None:
-            self._used.add(("_DYNAMIC_NAME_SOURCES", (rel, ident)))
-        return source
-
     def inert_resolver_test(self, rel: str) -> bool:
         """Do this file's reaching calls name no clone?"""
         if rel not in _INERT_RESOLVER_TESTS:
@@ -286,7 +274,6 @@ class _Consulted:
         """Declared keys no site reached -- one line each, naming what to delete."""
         declared: list[tuple[str, set[object]]] = [
             ("_NOT_A_SIBLING_PATH", set(_NOT_A_SIBLING_PATH)),
-            ("_DYNAMIC_NAME_SOURCES", set(_DYNAMIC_NAME_SOURCES)),
             ("_INERT_RESOLVER_TESTS", set(_INERT_RESOLVER_TESTS)),
             ("_PATHS_MODULE", {_PATHS_MODULE}),
         ]
@@ -429,23 +416,6 @@ def _repos_root_aliases(tree: ast.Module) -> set[str]:
     return out
 
 
-def _vendoring_policy_dest_repos() -> set[str]:
-    """The un-ignored sibling destinations of ``in/vendoring_policy.json``."""
-    policy = json.loads(
-        (paths.in_dir() / "vendoring_policy.json").read_text(encoding="utf-8")
-    )
-    repos = policy.get("repos", {})
-    # This filter is the lint's model of the branch ``destination_repo_path`` takes for
-    # this repository's own policy entry, so it has to ask the question that function
-    # asks: is this name the repository's, as provenance derives it?  Never the checkout
-    # directory's name, which in a branch-named worktree is not ``MAM-basics``.
-    return {
-        name
-        for name, entry in repos.items()
-        if not entry.get("ignore") and name != provenance.this_repo_name()
-    }
-
-
 def _roster_names() -> set[str]:
     """Sibling folder names in ``all-repos.code-workspace`` -- the machine roster."""
     workspace = json.loads(
@@ -467,7 +437,6 @@ def _scan_calls_and_joins(
     consulted: _Consulted,
 ) -> None:
     """The paths-API and repos_root recognizers, over every tracked module."""
-    dest_repos: set[str] | None = None
     for rel, tree in trees.items():
         aliases = _repos_root_aliases(tree)
         for node in ast.walk(tree):
@@ -483,23 +452,16 @@ def _scan_calls_and_joins(
             if ident is None:
                 problems.append(
                     f"{site}: the repo name is {ast.unparse(name_node)!r}, which this"
-                    " scan cannot resolve.  Add the site to _DYNAMIC_NAME_SOURCES."
+                    " scan cannot resolve.  Spell the name at the call, or teach this"
+                    " scan where the name comes from."
                 )
                 continue
-            source = consulted.dynamic_name_source(rel, ident)
-            if source == "vendoring-policy":
-                if dest_repos is None:
-                    dest_repos = _vendoring_policy_dest_repos()
-                names = dest_repos
-                if not names:
-                    continue
-            else:
-                names = _string_literals_bound_to(tree, ident)
+            names = _string_literals_bound_to(tree, ident)
             if not names:
                 problems.append(
                     f"{site}: the repo name comes from {ident!r}, and no string"
-                    " literal in that file binds it.  Add the site to"
-                    " _DYNAMIC_NAME_SOURCES saying where its names come from."
+                    " literal in that file binds it.  Bind it to a literal in that"
+                    " file, or teach this scan where its names come from."
                 )
                 continue
             if consulted.inert_resolver_test(rel):
@@ -578,7 +540,8 @@ def _scan_cwd_relative(
                         f"{site}: {text} roots a path at the parent directory with an"
                         " interpolated first segment, so it may name a sibling repo."
                         "  Add it to _NOT_A_SIBLING_PATH if it is a site-relative"
-                        " href, or to _DYNAMIC_NAME_SOURCES if it is a reach."
+                        " href; if it is a reach, bind its first segment to a literal"
+                        " in the same file."
                     )
                     continue
                 for name in resolved:

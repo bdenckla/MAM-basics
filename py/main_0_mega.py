@@ -43,8 +43,7 @@ Six more generators of tracked files joined the same day, each placed by what
 it reads: ``mam-simple-docs``, the doc half of ``py/main_mam_simple.py``, after
 ``mam-simple``; the two Holman corpus searches after ``wordlist``; and
 ``diffable-pointed-hebrew``, ``ac-gen-index-flat-annotated`` and
-``pipeline-graph``, whose inputs no step writes, between ``gen-site`` and
-``vendoring-audit``.
+``pipeline-graph``, whose inputs no step writes, after ``gen-site``.
 
 The ``diff-ctr-vs-mam`` step joined the same day, after ``diff-mpplus``, once
 ``py/diff_ctr_vs_mam/massage_mpu_verse.py`` could handle the narrow-sense paseq
@@ -72,7 +71,6 @@ import main_foi_features_of_interest
 import main_multimark
 import main_sigil_inventory
 import main_tmpl_survey
-import main_vendoring
 import main_wordlist
 import main_mam_with_doc
 import main_mam_simple
@@ -653,8 +651,8 @@ _STEPS = [
     # The three steps below joined on 2026-09-10, with the other offline generators of
     # tracked files that Ben agreed to add; until then nothing routine rewrote what they
     # write.  Each reads only committed inputs that no step writes, so nothing orders
-    # them against the steps above: they sit together after gen-site and before the
-    # closing audit.
+    # them against the steps above: they sit together after gen-site, at the end of
+    # the run.
     StepRecord(
         "diffable-pointed-hebrew",
         main_diffable_pointed_hebrew.write_tracked_expansions,
@@ -678,19 +676,6 @@ _STEPS = [
         " MAM-process.dot to MAM-process.dot.svg; needs the pinned"
         " Graphviz, and a cloud session skips its two SVG renders as it does"
         " tmpl-survey's",
-    ),
-    # Last, and not because anything above it feeds it: this one AUDITS rather than
-    # builds, reading the copied .py files under MAM-simple/py-examples/, and a
-    # report reads most naturally as the closing act.  It is here at all because until
-    # 2026-08-02 nothing routine ran py/main_vendoring.py, which let it stay outright
-    # broken for a day (a deleted wlc-utils scan root) and let its inventory drift
-    # since April.  Its three artifacts are git-tracked, so drift now surfaces the way
-    # everything else here does -- as an unexplained diff after a rebuild.  ~15s.
-    StepRecord(
-        "vendoring-audit",
-        main_vendoring.almost_main,
-        "writes doc/vendoring-inventory.md, which lists the MAM-simple example-support"
-        " copies it audits, and out/vendoring_*_out.*",
     ),
 ]
 
