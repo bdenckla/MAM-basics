@@ -179,6 +179,13 @@ questioning your proposed fix-ups to review finding language."
    still told you to go ahead and implement." Where the agent also weighs in, with a different
    remediation or a doubt about the finding itself, it says so plainly, since weighing in is what
    the walk-through is for.
+6. **Write a prompt that presents the next finding in a fresh session from what is already known,
+   and measure nothing for it.** The prompt names the finding, the passages that restate it, where
+   its evidence is and the checks to repeat. It runs no measurement to prepare leads, because the
+   fresh session verifies every claim it presents. Ben, 2026-09-14, while a session was measuring
+   leads for the prompt that presents finding 4 of the 2026-09-14 review: "But is the prompt's
+   session just going to turn around and re-measure this stuff anyway? If so, it feels like a waste
+   of time to do it when forming the prompt."
 
 ## Close-out: from findings to dispositions
 
