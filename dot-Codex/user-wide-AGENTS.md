@@ -718,7 +718,7 @@ MAM-basics the fuller statement is `doc/dual-agent-review.md`'s section "Correct
 dated document" (D12), and that repo's `CLAUDE.md` carries the same rule; this section exists
 because Codex loads neither of those files.
 
-## In MAM-basics, an unprefixed `doc/review-findings-<date>.md` is the Claude review series
+## In MAM-basics and MAM-private, an unprefixed `doc/review-findings-<date>.md` is the Claude review series
 
 MAM-basics' periodic review series is `doc/review-findings-<date>.md`, with no agent name in the
 file name, and that repo's `doc/periodic-review.md` describes it. When Codex reviews the same
@@ -732,6 +732,12 @@ is the case that produced this section: Codex wrote it (`fa07fd8f`) as a current
 template projection, under the name `doc/review-findings-2026-09-11.md`, and Ben renamed it on
 2026-09-12. MAM-basics' `CLAUDE.md` §"An unprefixed `doc/review-findings-<date>.md` is the Claude
 series" carries the same rule; it is restated here because Codex does not load that file.
+
+**MAM-private's review series uses the same names in MAM-private's own `doc/`.** Since 2026-09-14
+a review of MAM-private follows MAM-basics' `doc/periodic-review.md`, and a two-agent window there
+follows `doc/dual-agent-review.md` as well. `doc/periodic-review.md`'s section "The private series,
+recorded in MAM-private" says what differs, and every record of a private window stays in
+MAM-private. MAM-private's `CLAUDE.md` says the same, and Codex does not load that file either.
 
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
