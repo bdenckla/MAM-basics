@@ -148,23 +148,29 @@ verifies sound" rather than as findings.
 Each area's lead says what the review concluded; the numbered findings under `## Findings` carry
 the evidence, and "What verifies sound" carries what was checked and found right.
 
-1. **The fix batch of 2026-09-12 (`80f88f7c`, `6dfabceb`, `53696b30`, `3134f32b`) verifies sound
-   on every claim but one small count, and the hook change has now been exercised.** All four
-   touch no product tree, no generator that the mega runs, and no data, so the risk assessment
-   that sent them to `main` without detailed review holds on the product axis; on the act axis
-   `53696b30` changes the cloud-session hook, which the 2026-09-10 review, the commit message and
-   stream D all call unexercised. This review exercised it: run under Git Bash with `HOME`
-   pointed at a temporary directory and `CLAUDE_CODE_REMOTE=true`, the hook installs the two
-   documents byte-identically when the destination is absent, reports "already in place" when it
-   is complete, fills a half-copied skill directory (its `SKILL.md` removed, `references/` left)
-   back to the source's five files without nesting a second `hebrew-prose/` inside it, reinstalls
-   an absent skill beside a present `CLAUDE.md`, and does nothing at all with `CLAUDE_CODE_REMOTE`
-   unset (`hook_exercise.py`, `hook_exercise.txt`). What is not verified is the Linux container
-   itself; what is verified is every branch of the script and the `cp -R <dir>/. <dest>/`
-   semantics the fix relies on. `6dfabceb`'s three re-measured figures re-derive (7, 80 and 72
-   tracked `.json` files; the eight `al-hatorah` path sites at the lines it names), and
-   `3134f32b`'s three edits are in place; the one count the batch left stale is finding 4.1.
-   `80f88f7c` was superseded the next day by `a872790e`, which changed the matching it had only
+1. **The fix batch of 2026-09-12 (`80f88f7c`, `6dfabceb`, `53696b30`, `3134f32b`) verifies sound on
+   every claim but one small count, and the hook change has now been exercised.** All four touch no
+   product tree and no data, and none of them changes what a generator writes (`3134f32b` edits the
+   docstring of `py/main_pipeline_graph.py`, a generator the mega runs, and a step description in
+   `py/main_0_mega.py`), so the risk assessment that sent them to `main` without detailed review
+   holds on the product axis; on the act axis `53696b30` changes the cloud-session hook, which the
+   2026-09-10 review, the commit message and stream D all call unexercised. This review exercised
+   it: run under Git Bash with `HOME` pointed at a temporary directory and
+   `CLAUDE_CODE_REMOTE=true`, the hook installs the two documents byte-identically when the
+   destination is absent (`hook_exercise.py` compares the bytes of `CLAUDE.md` and the names of the
+   skill's five files; a byte comparison of the five, made during Ben's walk-through of this review
+   on 2026-09-14, found them identical), reports "already in place" when it is complete, fills a
+   half-copied skill directory (its `SKILL.md` removed, `references/` left) back to the source's
+   five files without nesting a second `hebrew-prose/` inside it, reinstalls an absent skill beside
+   a present `CLAUDE.md`, and does nothing at all with `CLAUDE_CODE_REMOTE` unset
+   (`hook_exercise.py`, `hook_exercise.txt`). What is verified is every path through the script that
+   the fix changed, and the `cp -R <dir>/. <dest>/` semantics the fix relies on; what is not
+   verified is the Linux container itself, or four paths the fix did not change: the banner for a
+   missing source, the banner for a partial install, the fallback used when `CLAUDE_PROJECT_DIR` is
+   unset, and an absent `CLAUDE.md` beside a complete skill. `6dfabceb`'s re-measured figures
+   re-derive (7, 80 and 72 tracked `.json` files; the eight `al-hatorah` path sites at the lines it
+   names), and `3134f32b`'s three edits are in place; the one count the batch left stale is finding
+   4.1. `80f88f7c` was superseded the next day by `a872790e`, which changed the matching it had only
    documented, and the four cases it measured behave as the new docstring says (finding 4.2).
 2. **The mega-speedup session reached products, and at `bca64824` the two products it moved out of
    the mega can no longer be regenerated: `py/main_mam4sef.py` and `py/main_mam_osis.py` both fail
@@ -284,22 +290,24 @@ the evidence, and "What verifies sound" carries what was checked and found right
 
 ## What verifies sound, stream by stream
 
-**The four areas Ben named (main session).** The fix batch: `80f88f7c`, `6dfabceb`, `53696b30`
-and `3134f32b` touch `CLAUDE.md`, `dot-claude/`, `py/repo_scopes.py`,
-`py/repo_util/git_worktree_cleanup.py`, `py/main_0_mega.py`'s console text, `py/main_pipeline_graph.py`'s
-docstring, the hook and two `doc/` files, and nothing under a product tree or in a generator's
-output; `git ls-files` at `bca64824` gives 7, 80 and 72 `.json` under `book-of-job/`, `aleppo/`
-and `cam1753/`; the eight `al-hatorah` path sites are at the lines `CLAUDE.md` names
-(`chanted_word_accents.py:696`, `final_stress.py:5`, `maqaf_nonfinal_accents.py:112`,
-`breuer_word_length.py:37`, `:43`, `:105`, `post_stress_meteg.py:15`,
-`test_final_stress_vs_phonetic_mam.py:4`); `_held_commits` is defined once, at
-`git_worktree_cleanup.py:1101`, and called at `:1127`; the retired authorship words are gone from
-both modules, which now say "Ben-written"; the screen document ends on its table's last row; the
-cloud document names `sed` among the hook's commands, and the hook invokes `cp`, `ls`, `mkdir`,
-`sed`, `dirname` and the builtins `cd`, `pwd`, `echo`, `[`, `set` and `exit`, no `git`, `curl` or
-`gh`; the hook parses under `bash -n` and, with `HOME` redirected, installs, no-ops, fills and
-reinstalls as the "Ben's four areas" section says (`readme_and_fixbatch_check.py`,
-`hook_exercise.py`). The mega-speedup session: the six MAM-simple book groups BHS places
+**The four areas Ben named (main session).** The fix batch: `80f88f7c`, `6dfabceb`, `53696b30` and
+`3134f32b` touch `CLAUDE.md`, `dot-claude/`, `py/repo_scopes.py`,
+`py/repo_util/git_worktree_cleanup.py`, the docstrings of `py/main_verse_links.py` and
+`py/uxlc_misc/my_uxlc_find_atom.py`, `py/main_0_mega.py`'s console text,
+`py/main_pipeline_graph.py`'s docstring, the hook and two `doc/` files, and nothing under a product
+tree or in a generator's output; `git ls-files` at `bca64824` gives 7, 80 and 72 `.json` under
+`book-of-job/`, `aleppo/` and `cam1753/`; the eight `al-hatorah` path sites are at the lines
+`CLAUDE.md` names (`chanted_word_accents.py:696`, `final_stress.py:5`,
+`maqaf_nonfinal_accents.py:112`, `breuer_word_length.py:37`, `:43`, `:105`,
+`post_stress_meteg.py:15`, `test_final_stress_vs_phonetic_mam.py:4`); `_held_commits` is defined
+once, at `git_worktree_cleanup.py:1101`, and called at `:1127`; the retired authorship words are
+gone from both modules, which now say "Ben-written"; the screen document ends on its table's last
+row; the cloud document names `sed` among the hook's commands, and stream D's static trace finds
+that the hook invokes `cp`, `ls`, `mkdir`, `sed`, `dirname` and the builtins `cd`, `pwd`, `echo`,
+`[`, `set` and `exit`, no `git`, `curl` or `gh`; the hook parses under `bash -n` and, with `HOME`
+redirected, installs, no-ops, fills and reinstalls as the "Ben's four areas" section says
+(`readme_and_fixbatch_check.py`, `hook_exercise.py`). The mega-speedup session: the six MAM-simple
+book groups BHS places
 differently and the five Sefaria does (`vtrad.bk24s_differing_from_mam`) are exactly the files
 `xml-` and `json-vtrad-bhs/` and `-sef/` hold; every `xml-` and `json-vtrad-mam/` root says
 `vtmam,vtbhs,vtsef` except `Num`'s `vtmam,vtsef` and the five that say `vtmam`; the 23,202
@@ -681,39 +689,74 @@ Python files, and `doc/PLAN-retire-codex-index-image-work.md` are repointed; and
 minutes after the move, replaced `README.md`'s `leningrad/` entry with one for `in/lci_recs.json`,
 which exists. What the new READMEs promise and do not keep is finding 11.3.
 
-### 4. The fix batch's one stale count, the atom lookup's changed policy, and a traceback where a message was promised
+### 4. The one count the fix batch left stale, the atom lookup's changed policy, a traceback on an ambiguous form, and a letters-only note that no longer prints
 
-Ben's first area. Three parts, the first unfixed and the other two raised.
+Ben's first area. Four parts, the first unfixed and the other three raised.
 
-4.1. **Unfixed at `bca64824`: `CLAUDE.md`'s "Two further mentions name the repo with no path in
-them — `edition_transcription.py:67` and `final_stress.py:16`" is five within `py/accgram/`.**
-`6dfabceb` re-measured the path-bearing sites, correctly, from seven to eight, and left the
-path-free count as it was written on 2026-08-11. At `bca64824` `py/accgram/post_stress_meteg.py`
-names the repository without a path at lines 19, 24 and 2723 ("al-hatorah's schedule",
-"al-hatorah's business", "al-hatorah's pipeline"), all of which read correctly as written. Twenty
-more path-free mentions sit under `py/` outside `py/accgram/`, which the section does not claim
-to count. Re-establish with `git grep -n "al-hatorah" bca64824 -- "py/accgram/*.py"`.
+4.1. **Unfixed at `bca64824`: `CLAUDE.md`'s "Two further mentions name the repo with no path in them
+— `edition_transcription.py:67` and `final_stress.py:16`" is five within `py/accgram/`.** `6dfabceb`
+re-measured the path-bearing sites, correctly, from seven to eight, and left the path-free count as
+it was written on 2026-08-11. At `bca64824` `py/accgram/post_stress_meteg.py` names the repository
+without a path at lines 19, 24 and 2723 ("al-hatorah's schedule", "al-hatorah's business",
+"al-hatorah's pipeline"), all of which read correctly as written, and all three already stood at
+`0354b6cc`, so the batch left the count stale rather than making it stale. Outside `py/accgram/`, 24
+more lines under `py/` name the repository, 20 of them outside `py/tests/` as well, most of them
+with a path; `CLAUDE.md` counts one of the 24, `py/tests/test_final_stress_vs_phonetic_mam.py:4`,
+among its eight sites. Re-establish with `git grep -n "al-hatorah" bca64824 -- py/`. A remediation
+option, raised during Ben's walk-through of this review on 2026-09-14: delete the count and the two
+sites it names rather than correcting it to five, since a mention with no path needs no action and
+this count was already stale when `6dfabceb` re-measured the eight sites beside it; one sentence
+saying that such mentions read correctly as written would keep that `CLAUDE.md` paragraph's point
+with no figure to go stale.
 
-4.2. **Raised, not a defect: `80f88f7c` documented a matching behaviour that `a872790e` changed
-the next day, so the fix batch's finding-12 measurements now come out differently.** `80f88f7c`
-recorded that the letters-alone pass dropped only Unicode categories Mn and Cf, so a bare
-consonantal form failed for a verse-final or maqaf-final atom; Codex's C1 then found 3,590
-punctuated atoms whose bare query succeeded at a different position; and `a872790e` ("Make bare
-UXLC atom lookup unambiguous", Ben's decision of 2026-09-13) made `strip_heb` retain only
-U+05D0–U+05EA and made a bare query use the letters-only pass always, returning only when its
-letters occur once in the verse. Re-run at `bca64824` with `py/main_uxlc_estimate_atom_loc.py`:
-Psalms 72:15's bare last atom and Job 4:12's bare last atom now match by letters alone, and
-Genesis 1:2's bare `על` is refused as ambiguous between atoms 6 and 12, all as the new docstring
-and the skill's three homes say; stream A reproduced the entry's whole 65,713-atom differential.
-The 2026-09-10 review's finding 12 and its disposition row describe the older behaviour,
-accurately for their date.
+4.2. **Raised, not a defect: `80f88f7c` documented a matching behaviour that `a872790e` changed the
+next day, so three of the four cases the fix batch measured for finding 12 now come out
+differently.** `80f88f7c` recorded that the letters-alone pass dropped only Unicode categories Mn
+and Cf, so a bare consonantal form failed for a verse-final or maqaf-final atom; Codex's C1 then
+found 3,590 punctuated atoms whose bare query succeeded at a different position; and `a872790e`
+("Make bare UXLC atom lookup unambiguous"), implementing Ben's decision of 2026-09-13, which the
+entry "Finding 12 and C1" of `doc/review-findings-2026-09-10-update.md` records, made the
+`strip_heb` of `py/uxlc_misc/my_uxlc_find_atom.py` retain only U+05D0–U+05EA and made a bare query
+use the letters-only pass always, returning only when its letters occur once in the verse. Re-run at
+`bca64824` with `py/main_uxlc_estimate_atom_loc.py`: Psalms 72:15's bare last atom and Job 4:12's
+bare last atom now match by letters alone, Job 4:12's bare first atom still matches atom 1, and
+Genesis 1:2's bare `על` is refused as ambiguous between atoms 6 and 12, all as the new docstring and
+the skill's three homes say; stream A reproduced that entry's whole 65,713-atom differential. The
+2026-09-10 review's finding 12, its reconciliation row and its disposition row of 2026-09-12
+describe the older behaviour, accurately for their date, and that entry says it supersedes the
+disposition row.
 
-4.3. **Raised, minor: on an ambiguous form `py/main_uxlc_estimate_atom_loc.py` exits 1 with a
-Python traceback rather than a message.** Its `main` catches `AtomNotFound` only, so the
+4.3. **Raised, minor: on an ambiguous form `py/main_uxlc_estimate_atom_loc.py` exits 1 with a Python
+traceback rather than a message.** Its `main` catches `AtomNotFound` only, so the
 `ValueError("Ambiguous: 2 letters-only matches …")` that `find_atom` raises propagates. Its
 docstring says "An ambiguous form is refused by find_atom", which is true; `py/main_verse_links.py`
 catches the same error and lists the atoms numbered with exit 1, as the verse-links skill promises
-for it. Re-establish with `py/main_uxlc_estimate_atom_loc.py Genesis 1:2 על`.
+for it. Re-establish with `py/main_uxlc_estimate_atom_loc.py Genesis 1:2 על`. A remediation option,
+raised during Ben's walk-through of this review on 2026-09-14: catching the error and listing the
+numbered atoms, as `py/main_verse_links.py` does, would not be enough by itself, since
+`py/main_uxlc_estimate_atom_loc.py` takes no `--atom` to accept a number, and where the repeated
+atoms are byte-identical, as Genesis 1:2's atoms 6 and 12 are in the UXLC, the UXLC's form of the
+atom is refused as ambiguous too; the command needs an `--atom` option, or an error that points to
+`py/main_verse_links.py --atom N`, which gives the same folio, column and line estimate. The
+traceback predates the window: at `0354b6cc`, too, the program's `main` function caught only
+`AtomNotFound`. `a872790e` made ambiguity the result of every bare query whose letters occur more
+than once in its verse: 12,832 of the 65,713 bare queries in the differential of
+`doc/review-findings-2026-09-10-update.md`'s entry "Finding 12 and C1".
+
+4.4. **Raised, minor: since `a872790e`, `py/main_verse_links.py` no longer says when it placed an
+atom by its letters alone.** `a872790e` renamed the method `find_atom` returns for a letters-only
+match from `"stripped"` to `"letters"` and left `py/main_verse_links.py:162` testing `method ==
+"stripped"`, so that command's note "(matched by its letters alone; the UXLC has …)" has not printed
+since, while `py/main_uxlc_estimate_atom_loc.py`, which tests for any method other than `"exact"`,
+still prints its note. The atom is still placed correctly, since a letters-only match returns only
+when the letters occur once in the verse; what is lost is the only sign that the UXLC's form of the
+atom differs from the form given, such as MAM's. The entry "Finding 12 and C1" of
+`doc/review-findings-2026-09-10-update.md` records the note as the command's behaviour before the
+change. Added during Ben's walk-through of this review on 2026-09-14, when a query that is Psalms
+72:15's first atom as the UXLC has it, without its accent, returned `(1, "letters", …)` from
+`find_atom` at `bca64824`, and of the two commands only `py/main_uxlc_estimate_atom_loc.py` printed
+a note. Re-establish: `git grep -n '"stripped"' bca64824 -- py/main_verse_links.py
+py/uxlc_misc/my_uxlc_find_atom.py`, which finds the test and no return.
 
 ### 5. A Codex checkpoint commit rewrote nine `MAM-parsed/plus/` files, a distributed product, and a second commit restored them four and a half hours later; no pushed `main` held the rewrite
 
@@ -1120,9 +1163,10 @@ file. Issues #271 to #274, #276 and #278 are open and assigned to no plan. `main
    survey `aedac688` regenerated, MAM-private's own census, and the mgketer commit the finding
    7.2 entry names.
 2. The cloud container itself: the hook was exercised under Git Bash on Windows with `HOME`
-   redirected, which tests every branch of the script and the copy semantics it relies on, not
-   the container's `bash`, `cp` or environment; and no credential miss was forced against the
-   deployment's fetch.
+   redirected, which tests every path through the script that `53696b30` changed and the copy
+   semantics that change relies on, but neither the four other paths that area 1 of "Ben's four
+   areas" names nor the container's `bash`, `cp` or environment; and no credential miss was forced
+   against the deployment's fetch.
 3. The live Google Sheet and the live Hebrew Wikisource: whether the Apps Script run of
    2026-09-10 wrote "Applied 34 auto-edits." into the Sheet, and the editorial correctness of the
    34 auto-edits.
@@ -1153,9 +1197,11 @@ Anchors for comparison: MAM-basics `0354b6cc..bca64824`; the fifteen quiet publi
 heads named in "Scope, anchors and census". Each finding above gives the commit, the file and line
 as of `bca64824`, the claim, the measurement, and the command or `.novc/review-2026-09-14/` script
 that re-establishes it, so a disagreement can be checked by hand without re-deriving the whole
-window. Findings 1, 2, 4, 5 and 12 were derived by the main session, which also read Ben's third
-area itself, and findings 3.1 to 3.3 are streams A's and E's; finding 2.1 was found by running the
-two generators after stream B noted that they read the incremental folders directly; findings
+window. Findings 1, 2, 4.2, 4.3, 5 and 12 were derived by the main session, which also read Ben's
+third area itself; finding 4.1 is stream E's, and the main session's check found the same three
+`post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 2.1 was found by
+running the two generators after stream B noted that they read the incremental folders directly;
+findings
 6 and 11 are stream E's, 7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each
 spot-checked by the main session where a figure could be re-run cheaply (the stale step count by
 all six readings, the nonexistent blob, the two replaced blobs, the dead link, the ruff errors,
