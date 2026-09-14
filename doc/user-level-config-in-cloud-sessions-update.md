@@ -65,6 +65,10 @@ sandbox account required a per-process Git `safe.directory` value for this workt
 temporary directory outside the repository; the runner passed both only to the test subprocess and
 changed no global Git or Python configuration.
 
+Local `main` advanced by seven New York time-zone commits during that verification. After merging
+those commits into the worktree branch, the hook syntax check and every fake-home case passed again,
+and the merged tree's canonical suite passed with 988 tests passed and 5 semantic skips.
+
 The hook and documentation reach no declared MAM-basics product. The hook is executable setup code,
 so it carries test-breakage risk and receives targeted checks in this worktree. The eventual push
 to `main` is outward-facing, and the cloud code path cannot be exercised on this machine; neither
