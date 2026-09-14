@@ -110,7 +110,9 @@ of the code the item names.
    `wlc-json-and-unicode` with `mam-simple`, then `accgram-run-prose`,
    `accgram-survey-chanted-word-accents`, `accgram-generate-html`. #272's body says that three
    `vendored-*` steps run what `mam-simple` rewrites under `MAM-simple/py-examples/`; since
-   `d6a6764d` one does, `vendored-letter-small-job`.
+   `d6a6764d` one does, `vendored-letter-small-job`. Item 1 needs a declared list of what each
+   step reads and writes, as #272's body and the dated record's §7 both say, and #278 could use
+   the same list; see "Related plans and issues" below.
 2. **Take `near-aleppo-census` out of the mega.** Saving: 17.6 s in run 1, 19.4 s pinned. **Done
    in `d32a17b8`** on 2026-09-11, so that the mega writes nothing outside this repository.
 3. **Give the poetic scanner the prose scanner's fast path.** Estimated saving: about 5 s of the
@@ -292,8 +294,13 @@ differences of step 6, which are not committed.
 
 ## Related plans and issues
 
-- **#278**, "Assert written_this_run == intended == on_disk for single-writer output
-  directories", needs the same per-step record of what each step writes that item 1 needs.
+- **[#278](https://github.com/bdenckla/MAM-basics/issues/278)**, "Assert written_this_run ==
+  intended == on_disk for single-writer output directories". The declared list of what each
+  step reads and writes, which item 1 needs, would also record two things #278 needs: which
+  step owns each output directory, which #278 says is recorded nowhere in this repository, and
+  which files each step claims, the scope #278 says its `on_disk` set needs. The list would not
+  supply `written_this_run`, which has to be recorded as files are written. Ben raised the
+  connection on 2026-09-14, and #278's body links back to this plan.
 - **`doc/PLAN-dispose-mega-pipeline-review-findings.md`** covers the 13 open atomicity findings,
   each about a failure that leaves a set of outputs half-written. Item 1's rule for stopping the
   other steps when one step fails bears on the same failures.
