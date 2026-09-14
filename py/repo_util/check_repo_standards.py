@@ -342,10 +342,16 @@ because more entries are expected, and it has no terminal state for as long as
 the document it corrects exists.  Reusing `live` would import a life cycle the
 genre does not have.
 
-What is retired is the THIN POINTER, not issue-filing.  A review that finds
-work somebody must do still files a real issue with a real body, and #233
-is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
-merits.  The test is whether the issue says anything the doc does not.
+What is retired is the THIN POINTER, not issue-filing, and only for the
+review files.  A review that finds work somebody must do still files a real
+issue with a real body, and #233 is the shape: spun out of the 2026-08-22
+review, 6.8 KB, open on its own merits.  The test is whether the issue says
+anything the doc does not.  A doc/PLAN-*.md file whose work is still to be
+done does get a thin pointer issue.  Ben asked on 2026-09-12 for "a detailed
+plan in the 'doc' folder and thin GitHub issue with a pointer to that
+plan", #277, #279, #280 and #281 are four such issues filed that day, and
+on 2026-09-14 he approved limiting the retirement to review files.  The
+github-issues skill, dot-claude/skills/github-issues/SKILL.md, states both.
 
 AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/periodic-review.md
 calls the series "doc-only since 2026-09-01" and points here for the

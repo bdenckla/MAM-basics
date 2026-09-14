@@ -42,7 +42,7 @@
 #   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
 #   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
 #
-# Those are the two MAM-basics' CLAUDE.md names. Three further entries are tracked
+# Those are the two MAM-basics' CLAUDE.md names. Four further entries are tracked
 # beside them and none is installed here:
 #
 #   1. dot-claude/skills/prune-claude-state/
@@ -56,7 +56,13 @@
 #                          absolute Windows paths of Ben's own machines, which a
 #                          cloud container does not have. The command itself needs
 #                          only the checkout, and its --help says how to run it.
-#   3. dot-claude/README.md, dot-Codex/
+#   3. dot-claude/skills/github-issues/
+#                          names the same interpreter and
+#                          py/main_github_issue_edit.py by those absolute Windows
+#                          paths, and whether a cloud session's repository-scoped
+#                          token may write to a GitHub issue has not been
+#                          measured. Ben's decision, 2026-09-14: not installed here.
+#   4. dot-claude/README.md, dot-Codex/
 #                          the deployment procedure and the Codex-side
 #                          configuration. Nothing in a Claude cloud session loads
 #                          either, and both are readable in the checkout if wanted.

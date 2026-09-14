@@ -1,4 +1,5 @@
 # One canonical dot-claude/skills directory name per line. These skills deploy to
 # both ~/.claude/skills/ and ~/.agents/skills/.
+github-issues
 hebrew-prose
 verse-links

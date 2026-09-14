@@ -330,37 +330,14 @@ judgment step (its step 7), so a repository-maintenance session learns that this
 maintenance without trying to automate the decision.
 
 ## Never change an issue's state without a comment saying why
-Closing, reopening, reassigning or relabelling a GitHub issue writes one line into its timeline:
-the event, the account, the timestamp. **It records no reason, and it will not record one later.**
-So the reason goes in a comment, posted with the state change — `gh issue close --comment`, or a
-`gh issue comment` immediately before. This applies to me as much as to you; I ask for it because
-I have been on the wrong end of it.
+Closing, reopening, relabelling or reassigning a GitHub issue records no reason, so post the reason
+as a comment with the change, marked as agent-written. The full rule moved on 2026-09-14 to the
+`github-issues` skill, which covers reading, filing, commenting on and editing issues too.
 
-- **The account is not the actor, so the timeline cannot tell us apart.** A session's `gh issue
-  close` authenticates with my personal token, so its event reads `actor: bdenckla`,
-  `actor_type: User`, `performed_via_github_app: null` — byte for byte what my own click in the
-  web UI produces. Do not infer from a timeline entry that a human did something, or that a
-  session did; the only honest reading is "this account did it."
-- **The worked case, 2026-08-27: MAM-basics #260.** It was closed at 11:19 local with no comment.
-  An hour later the work it tracked completed. Nothing on the issue said whether it had been
-  closed because the *question* was answered — `skadish1` had answered it at 00:05 — or because
-  the *work* was done, and those are different definitions of done for that issue: its title says
-  "Investigate and document sigil ב2" and its "Done when" is entirely about evidence and
-  confidence, while the replacement of ב2 by ת451 was the consequence rather than the scope.
-  Establishing merely that no session had closed it took a scan of **483 transcripts** across
-  every project directory. A one-sentence closing comment would have cost nothing and answered it.
-- **Say when a comment is agent-written.** A commit carries `Co-Authored-By: Claude`, so commits
-  are already attributed; issue comments and state changes have no such convention and are
-  indistinguishable from mine. Put it in the text.
-- **This is the cheap half of a bigger question I decided against.** A separate GitHub machine
-  account for agent use would make every action self-identifying, and I already run exactly that
-  pattern on Wikisource as `BDencklaBot`. On GitHub it is not worth it for attribution alone:
-  ~20 repos to add a collaborator to, a second persona in front of `skadish1`, `gh auth` juggling
-  whose failure mode is worse than the problem, and a possible paid seat for MAM-private. If I
-  ever want it, the reason will be **permission scoping** — an agent token that cannot force-push
-  or delete — not attribution, which this section fixes for free. A fine-grained PAT or a GitHub
-  App would be the form, since an App's actions set `performed_via_github_app` and so are
-  distinguishable without adding a second voice.
+## No GitHub issue for an idea, and no offer to file one
+When an idea worth noting is not work Ben asked for, say it in the conversation and stop: file no
+issue, and do not offer to file one. Ben, 2026-09-12: "I have so many GitHub issues I am
+overwhelmed"; the `github-issues` skill gives the rest of his reason.
 
 ## Handing off to a task chip: be archivable BEFORE you spawn it
 The handoff we use over and over runs: a session spawns a task chip, I launch the chip, I ask
