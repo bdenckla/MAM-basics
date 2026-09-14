@@ -1,6 +1,6 @@
 # PLAN — make the mega run faster
 
-State: live, no phase started as of 2026-09-14.
+State: live. Phase 2 executed 2026-09-14; no other phase started as of that date.
 
 Written by a Claude session on 2026-09-14. Ben's instructions that day, said of the changes to the
 mega since 2026-09-11 that the session had just listed for him: "Should other updates you mention
@@ -225,6 +225,26 @@ What Phase 1 must not change: no code and no generated output. Its commit names 
 record and this plan.
 
 ## Phase 2: measure the mega in a cloud session
+
+**Executed 2026-09-14, and its record is `doc/mega-timing-cloud-2026-09-14.md`.** A Claude cloud
+session on `bdenckla/MAM-basics`, on branch `claude/adoring-shannon-8term6` at `main` `89f10bb4`,
+made three full runs. All 55 steps ran or were skipped for the cloud in each, no step failed, and
+the median run took 249.0 s in its 54 executed steps. The steps below are left as written; what
+each produced is in that record. Four things it found are worth carrying here:
+
+1. **Normalizing for the cloud's skips does matter**, against the guess in Ben's instruction that
+   it might not: the one step a cloud run skips, `accgram-survey-post-stress-meteg`, is the
+   mega's most expensive on Ben's machine at 40.9 s, or 16.5% of a comparable run there. Step 5's
+   "compare step by step, never by total" is the whole of the normalization needed.
+2. **Like for like the container is 1.13 times Ben's pinned machine** over the 52 steps that
+   completed in both, and 1.01 times his unpinned run.
+3. **A container is markedly more repeatable than Ben's machine**, runs 2 and 3 agreeing to within
+   0.6 s on every step, so it is the better place to attribute a speedup — for every step but the
+   one it skips. Its first run is a cold-cache run and should be discarded.
+4. **One finding is raised and not fixed**, this phase being forbidden to change code: a shallow
+   clone's graft boundary has no parent object, so git reports every file in it as added, and the
+   path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
+   §7 has it.
 
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
