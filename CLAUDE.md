@@ -857,6 +857,31 @@ this machine — and it is stated in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.
 as `dot-claude/user-wide-CLAUDE.md` and `dot-Codex/user-wide-AGENTS.md`, under "Two axes of
 risk".
 
+## Dates shown on pages are in New York time, and each one says so
+
+Ben's decision, 2026-09-14: every date that this repository's code shows on a page or in a report
+is its date in New York time (America/New_York), followed at every occurrence by the label
+", New York time" — `2026-04-14, New York time`, `06 August 2026, New York time`. A timestamp
+stored in data keeps its full ISO 8601 form with its offset, and the stored timestamps here are
+UTC. `py/mb_cmn/new_york_time.py` is the one spelling of the zone and the label: convert and label
+through it rather than writing either again.
+
+1. **A date that is a name takes no label**: a release name such as `2026-04-14` in
+   `gh-pages/MAM-with-doc/change-log/releases.json`, a UXLC change id, a dated document's file name.
+2. **`py/tests/test_explicit_time_zones.py` fails on a clock read with no zone, or on a git date
+   placeholder that drops the offset**, anywhere in tracked Python under `py/`. Take a commit's
+   date as `%cI` or `%ct`, never `%cs`, and read the clock as `datetime.now(<zone>)`.
+3. **Why New York rather than UTC.** Until 2026-09-14 the change log printed `%cs`, each commit's
+   date in whatever offset that commit recorded, which differs between Ben's machines and a cloud
+   container. On 2026-09-14 the seven dates stored in `MAM-parsed/historical/manifest.json` were
+   checked against GitHub's UTC committer times, and all seven are New York dates. In UTC, commit
+   `1880cbbd`, committed at 20:09 EDT on 2026-03-16 as the boundary of the release named for that
+   day, would read 2026-03-17. `requirements.txt` names `tzdata`, since `zoneinfo` has no zone data
+   of its own on Windows.
+
+**Codex does not load this file**, so the same rule is written into `~/.codex/AGENTS.md`, which is
+tracked here as `dot-Codex/user-wide-AGENTS.md`.
+
 ## A code path reads MAM-private every time it runs, or never
 
 Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private

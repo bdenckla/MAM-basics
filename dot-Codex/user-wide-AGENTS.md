@@ -739,6 +739,18 @@ follows `doc/dual-agent-review.md` as well. `doc/periodic-review.md`'s section "
 recorded in MAM-private" says what differs, and every record of a private window stays in
 MAM-private. MAM-private's `CLAUDE.md` says the same, and Codex does not load that file either.
 
+## In MAM-basics, dates shown on pages are in New York time, and each one says so
+
+Ben's decision, 2026-09-14: every date that MAM-basics code shows on a page or in a report is its
+date in New York time (America/New_York), followed at every occurrence by the label
+", New York time", and a timestamp stored in data keeps its full ISO 8601 form with its offset.
+That repo's `py/mb_cmn/new_york_time.py` is the one spelling of the zone and the label. A date that
+is a name — a release name, a UXLC change id, a dated file name — takes no label. The lint
+`py/tests/test_explicit_time_zones.py` fails on a clock read with no zone, or on a git date
+placeholder that drops the offset, such as `%cs`. MAM-basics' `CLAUDE.md` §"Dates shown on pages
+are in New York time, and each one says so" is the fuller statement, with the reason New York was
+chosen over UTC; it is restated here because Codex does not load that file.
+
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
   on it before committing — mandatory, not optional.
