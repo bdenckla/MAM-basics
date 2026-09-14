@@ -186,6 +186,14 @@ questioning your proposed fix-ups to review finding language."
    leads for the prompt that presents finding 4 of the 2026-09-14 review: "But is the prompt's
    session just going to turn around and re-measure this stuff anyway? If so, it feels like a waste
    of time to do it when forming the prompt."
+7. **Put the questions for Ben at the end of the message that presents a finding, and only
+   there.** They are the message's last item, numbered, each naming what it asks about. A direct
+   answer to a question Ben asked still comes first, under the report's heading. Ben, 2026-09-14,
+   after the session presenting finding 4 of the 2026-09-14 review put three numbered questions
+   directly under its report's heading, as the Claude-written prompt for that session instructed,
+   and closed by saying it was waiting for his answer: "waiting for my answer to what? Please
+   either repeat the questions at the bottom, or in future, don't even ask them at the top, just
+   ask them at the bottom".
 
 ## Close-out: from findings to dispositions
 
