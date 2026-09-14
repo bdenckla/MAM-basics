@@ -689,8 +689,8 @@ _STEPS = [
     StepRecord(
         "vendoring-audit",
         main_vendoring.almost_main,
-        "audits 44 MAM-simple example-support copies; writes"
-        " doc/vendoring-inventory.md and out/vendoring_*_out.*",
+        "writes doc/vendoring-inventory.md, which lists the MAM-simple example-support"
+        " copies it audits, and out/vendoring_*_out.*",
     ),
 ]
 

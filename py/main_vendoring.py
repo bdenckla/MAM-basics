@@ -21,8 +21,8 @@ not exist``, and it took a day and a hand-run to notice.  Meanwhile
 So the audit is now a step of ``py/main_0_mega.py``, which is what makes the drift
 visible: the three artifacts it writes are git-tracked, and in this repo the tracked
 generated artifact IS the test (CLAUDE.md).  A stale inventory shows up as an ordinary
-unexplained diff after a rebuild. The current audit hashes 44 MAM-simple example-support
-copies and runs one ``git log`` per copy.
+unexplained diff after a rebuild. The audit hashes each MAM-simple example-support copy
+that ``doc/vendoring-inventory.md`` lists, and runs one ``git log`` per copy.
 
 The crash half is caught earlier and more cheaply by
 ``py/tests/test_vendoring_policy_paths.py``, a lint over the same policy file that
