@@ -96,9 +96,11 @@ The window changed **673 paths** between its endpoints — 43 added, 286 deleted
 that `git diff -M` pairs as renames — taking the tree from 4,935 to **4,692** tracked files, 1,088
 to **1,051** `.py`, `gh-pages/` 1,859 to 1,859 files (579 HTML both times), `doc/*.md` 79 to
 **112** (direct children of `doc/`), `doc/PLAN-*.md` 21 to **33**, and `doc/*-update.md` 0 to
-**22**. Of the 79 rename pairs, 69 are the Hebrew-letter filenames `4e007289` migrated to ASCII
-(66 under `gh-pages/`, two under `misc/`, one under `in/`), eight are the page crops `a8e4790e`
-moved into `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, one is
+**22**. Of the 79 rename pairs, 69 are the Hebrew-letter filenames `4e007289` migrated to ASCII (66
+under `gh-pages/`, two under `misc/`, one under `in/`), seven are page crops `a8e4790e` moved into
+`doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` (an eighth, which `f3a11572` added
+inside the window, shows as an addition), one pairs `doc/ms-snips/README.md` with
+`doc/lam-2-3-akhla-snips/README.md` at 53 per cent similarity, one is
 `py/subcommands/diff_mpp.py` becoming `diff_mpplus.py`, and one pairs
 `diffable-pointed-hebrew/short_unicode_name_overrides.json` with
 `in/diffable-pointed-hebrew-short-name-overrides.json` at 65 per cent similarity. By top-level
@@ -189,17 +191,21 @@ the evidence, and "What verifies sound" carries what was checked and found right
    right, but the same commit's `yeivinID` removal took another 1.3 MB, so the product is 37.6 MB
    after, by git blob size and by disk, not 39.0 MB (finding 2.3).
 3. **The README session verifies sound apart from the D12 question its crop move raises and the
-   two consequences of that move.** Every path `README.md` names exists at `bca64824`; the eight
-   crop sections of the four old READMEs are byte-identical to the new READMEs' sections apart
-   from path tokens, as `a8e4790e`'s message claims; `DATA-LICENSES.md` and `README.md` agree on
-   the crops' exception from the GPL-3.0 scope; `diffable-pointed-hebrew/`'s nine assignments are
-   in `in/` under CC0 with the mega's step and the command repointed and the mega passing. The
-   question is that `a8e4790e` edited two finished dated reports in place to repoint the moved
-   crops, the same two reports that Codex's dispositions of the day before had declared "remain
-   unchanged" and corrected only in sibling files (finding 3.1); the consequences are that those
-   sibling files and the update file now cite blobs the reports no longer have (finding 3.2), and
-   that the one finished document the commit did leave as written, `doc/metsudah-vs-ctr.md`, got
-   no update entry and holds the window's one new dead link (finding 3.3).
+   three consequences of that move.** Every path `README.md` names exists at `bca64824` except
+   `.novc/`, a gitignored directory, and `doc/*-snips/`, a glob; the eight crop sections of the four
+   old READMEs are byte-identical to the new READMEs' sections apart from path tokens, as
+   `a8e4790e`'s message claims; `DATA-LICENSES.md` and `README.md` agree on the crops' exception
+   from the GPL-3.0 scope; `diffable-pointed-hebrew/`'s nine assignments are in `in/` under CC0 with
+   the mega's step and the command repointed and the mega passing. The question is that `a8e4790e`
+   edited two reports in place on `main` to repoint the moved crops while the 2026-09-10 review's
+   branch, not yet merged into `main`, treated the same two reports as finished: sibling files
+   created on that branch the evening before correct them, and Codex's dispositions say the finished
+   source reports "remain unchanged" (finding 3.1). The consequences are that those sibling files
+   and the 2026-09-10 review's update file now say the reports are unchanged at blobs the reports no
+   longer have (finding 3.2); that `doc/metsudah-vs-ctr.md`, one of the dated records the commit
+   left as written, got no update entry and holds the window's one new dead link (finding 3.3); and
+   that the commit deleted the README holding the crop-naming rule Ben had decided that morning to
+   keep, a rule the new READMEs state two ways (finding 3.4).
 4. **`py/product_scopes.py`'s declaration equals the live step table, and its wrapper table is
    right, but the section of `CLAUDE.md` that presents it went stale the day it was written, and
    no rule in either file covers the path finding 2.1 took.**
@@ -248,11 +254,13 @@ the evidence, and "What verifies sound" carries what was checked and found right
   (`E_02_mark_order_added_lines.py`); `py/tests/test_prose_mark_order.py` passes.
 - Whitespace: `git diff --check 0354b6cc bca64824` prints nothing, 0 sites, against the previous
   window's 43.
-- Markdown links: 428 links in the 237 tracked `.md`, **2 dead**: the pre-existing
-  `misc/what-is-mam/img/provenance-misc.md:6`, and `doc/metsudah-vs-ctr.md:4`, which `a8e4790e`
-  made dead (finding 3.3). The previous review's other two "dead links", in the two user-level
-  files, sit inside backticks and were never links, which the 2026-09-10 review's update file
-  already records (`E_03_md_links.py`).
+- Markdown links: of 428 link targets in the 237 tracked `.md`, 149 are external and were not
+  followed, 5 sit inside fenced code blocks and 7 are GitHub `#L` line anchors on source files; of
+  the other 267, 265 resolve and **2 are dead**: the pre-existing
+  `misc/what-is-mam/img/provenance-misc.md:6`, and `doc/metsudah-vs-ctr.md:4`, which `a8e4790e` made
+  dead (finding 3.3). The previous review's other two "dead links", in the two user-level files, sit
+  inside backticks and were never links, which the 2026-09-10 review's update file already records
+  (`E_03_md_links.py`).
 - `py/check_html_syntax_and_sanity.py`: "No HTML output issues found" in both its default mode
   and `--deploy-root`; after `4e007289`'s 69 renames, all 6,896 relative `src=` and `href=`
   values in the 579 tracked `gh-pages/**/*.html` resolve to tracked files (`B_08_ghpages_links.py`).
@@ -302,11 +310,11 @@ for the tradition token, at 9.78 MB a tree; the product was 63.3 MB by blob size
 `json-vtrad-mam` and raises otherwise, and none of its four callers skips a missing book;
 `main_mam4sef.py` and `main_mam_osis.py` are declared in `NOT_IN_MEGA` with Ben's quoted reason, and
 each product's README says it is not kept current and gives the command that should regenerate it,
-which finding 2.1 shows failing (`mam_simple_figures.py`). The README session: all 48 path-like
-tokens `README.md` names resolve
-at `bca64824` (the two that do not, `.novc/` and `doc/*-snips/`, are a gitignored directory and a
-glob); the eight crop sections of the four retired READMEs are byte-identical to the new
-READMEs' sections once backtick path tokens are masked (`snips_readme_check2.py`);
+which finding 2.1 shows failing (`mam_simple_figures.py`). The README session: of the 48 path-like
+tokens `README.md` names, 43 resolve at `bca64824`, three are URLs, and the two that do not resolve,
+`.novc/` and `doc/*-snips/`, are a gitignored directory and a glob (`readme_and_fixbatch_check.py`);
+the eight crop sections of the four retired READMEs are byte-identical to the new READMEs' sections
+once backtick path tokens are masked (`snips_readme_check2.py`);
 `in/diffable-pointed-hebrew-short-name-overrides.json` holds the nine assignments and
 `main_diffable_pointed_hebrew.py`'s `TRACKED_EXPANSIONS` has two pairs; `MAM-process.dot` lost its
 JPS node and `pipeline.dot` and `pipeline.svg` regenerate unchanged in the mega.
@@ -565,9 +573,10 @@ the fast-forward to `2a4b010c`, so no `main` held the defect. Raised to complete
 2.2's while writing `20f18020`, and nothing caught 2.1's. Re-establish with `git show 6dbd27e7 --
 py/accgram` and `git grep -n "total:" bca64824 -- out/accgram/poetic/_mam_xcheck.txt`.
 
-### 3. The crop move edited two finished dated reports in place, the day after Codex's dispositions declared the same two reports unchanged, and left the one report it did not edit with a dead link
+### 3. The crop move edited in place, on `main`, two reports the 2026-09-10 review's unmerged branch had declared finished, deleted the README holding a crop-naming rule Ben had decided that morning to keep, and left a dead link in a dated record it did not edit
 
-Ben's third area. Four parts; the first is his decision, the other three follow from it.
+Ben's third area. Five parts: 3.1 leaves Ben a decision, on which the fix for 3.2 depends; 3.3 and
+3.4 are further consequences of the move, and 3.5 is what holds.
 
 3.1. **Unfixed at `bca64824`; Ben's decision.** `a8e4790e` ("Keep page crops by project, not by
 manuscript; remove leningrad/", 2026-09-13 11:34) changed four lines of
@@ -576,55 +585,101 @@ manuscript; remove leningrad/", 2026-09-13 11:34) changed four lines of
 `leningrad/page-snips/…` and `doc/ms-snips/…` with the crops' new paths under
 `doc/meteg-after-silluq-snips/`, and "that directory's README" with "that folder's README". Its
 message lists the two under "Live references updated" and says "Dated records keep the old paths,
-doc/metsudah-vs-ctr.md among them". But the two reports are the finished dated documents of the
-meteg-after-silluq work: each has a sibling `-update.md` created in this window
+doc/metsudah-vs-ctr.md among them". But the 2026-09-10 review's branch, which `main` did not hold
+until it fast-forwarded to `a7d37b34` at 14:30 that day, already treated the two reports, like four
+other reports of the meteg-after-silluq work, as finished dated documents. Each of the two has a
+sibling `-update.md` that Codex created on that branch on 2026-09-12
 (`doc/meteg-after-silluq-job-4-12-update.md` by `0e40b5a1`,
-`doc/meteg-after-silluq-psalms-72-15-update.md` by `a0ff3b45`, both 2026-09-12), and the
-2026-09-10 review's update file says of the finding 11.4 and 20.5 dispositions that "the three
-finished source reports remain unchanged" and "both finished source reports remain unchanged".
-Under D12 (`CLAUDE.md`, "A finished dated document is corrected in `<stem>-update.md`, never
-edited"; Ben's decision of 2026-09-11, `279a6ec1`) a correction to a finished document goes in the
-sibling file, and a path that moved is a correction of exactly that kind; the same commit treated
-`doc/metsudah-vs-ctr.md` that way. Either the two reports are live documents, in which case the
-sibling files' "remain unchanged" statements described a status they no longer have, or they are
-finished and the twelve lines belong in the two sibling files with the reports restored. Stream
-A's D12 census classifies every other in-window edit of a pre-existing `doc/` file: the four
-finished plans and three other documents `aedac688` edited in place with dated notes at 11:11 on
-2026-09-11 predate the decision by seven hours and were not reverted when the same-day edits
-`2bb94060` and `89c1d7cf` were; `3134f32b` (2026-09-12) removed one trailing blank line from the
-finished `doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md` in place, a breach by the letter
-and whitespace only, and edited `doc/user-level-config-in-cloud-sessions.md`, whose status is
-finding 8.12; every other edit is to a live document. Re-establish with `git show a8e4790e --
-doc/meteg-after-silluq-job-4-12.md doc/meteg-after-silluq-psalms-72-15.md` and
-`A_02b_doc_perfile_log.txt`.
+`doc/meteg-after-silluq-psalms-72-15-update.md` by `a0ff3b45`), whose opening sentences say the
+report "is left exactly as written"; and the 2026-09-10 review's update file says "The three
+finished source reports remain unchanged" in Codex's finding 11.4 disposition, of the
+Koren-candidates, Job 4:12 and Psalms 72:15 reports, and "Both finished source reports remain
+unchanged" in Codex's finding 20.5 disposition, of the Psalms 72:15 and screen reports. Under D12
+(Ben's decision of 2026-09-11, recorded in `doc/dual-agent-review.md` by `279a6ec1` and added to
+`CLAUDE.md` by `1095b027` as the section "A finished dated document is corrected in
+`<stem>-update.md`, never edited", both commits on the 2026-09-10 review's branch; `main` at
+`a8e4790e` had the rule in the two user-level instruction files and in `doc/periodic-review.md`) an
+update to a finished document goes in the sibling file, and a path that moved is an update of
+exactly that kind; the same commit left `doc/metsudah-vs-ctr.md` as written, but without the sibling
+entry whose absence is finding 3.3. Either the two reports are live documents, in which case the
+sibling files' "remains unchanged" statements describe a status the reports no longer have, or the
+two reports are finished, in which case the new crop paths on the six changed lines belong in
+entries in the two sibling files, with the reports restored. Stream A's D12 census classifies the
+other in-window edits of pre-existing `doc/` files: the four finished plans and three other
+documents `aedac688` edited in place with dated notes at 11:11 on 2026-09-11 predate the decision by
+seven hours and were not reverted when the same-day edits `2bb94060` and `89c1d7cf` were; `3134f32b`
+(2026-09-12) removed one trailing blank line from the finished
+`doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md` in place, a breach by the letter and
+whitespace only, and edited `doc/user-level-config-in-cloud-sessions.md`, whose status is finding
+8.12; every other edit it classifies is to a live document. It leaves out two earlier edits of the
+Job 4:12 report itself, which bear on whether that report is live: `f3a11572` and `bfe28eee`, at
+10:20 and 10:32 on 2026-09-11, before the decision, added to that report in place what Ben reported
+that day about the Second Rabbinic Bible and about two of his scans. Re-establish with `git show
+a8e4790e -- doc/meteg-after-silluq-job-4-12.md doc/meteg-after-silluq-psalms-72-15.md` and, per
+file, `git log --full-history --no-merges --format="%h %ad %s" --date=iso-local 0354b6cc..bca64824
+-- <file>`; `A_02b_doc_perfile_log.txt`, made without `--full-history`, lists neither `89c1d7cf` nor
+`ffc82f60`, which reverted `89c1d7cf`.
 
-3.2. **Unfixed at `bca64824`: three live records say the two reports "remain unchanged" at blobs
-`a8e4790e` replaced.** `doc/meteg-after-silluq-job-4-12-update.md:43–44` gives blob `b8fc419f…`,
-and the report at `bca64824` is `eb4dcee4…`; `doc/meteg-after-silluq-psalms-72-15-update.md:55–56`
-gives `b7944176…`, and the report is `e1b0559a…`; `doc/review-findings-2026-09-10-update.md:795–796`
+3.2. **Unfixed at `bca64824`: three live records say the two reports are unchanged at blobs
+`a8e4790e` replaced.** `doc/meteg-after-silluq-job-4-12-update.md:43–44` gives blob `b8fc419f…`, and
+the report at `bca64824` is `eb4dcee4…`; `doc/meteg-after-silluq-psalms-72-15-update.md:55–56` gives
+`b7944176…`, and the report is `e1b0559a…`; `doc/review-findings-2026-09-10-update.md:795–796`
 (`8ee5e54e`, 10:21 on 2026-09-13) says "The six finished reports remain byte-identical to the Git
-blobs recorded in those sibling update entries", and two of the six are not. All three were true
-when written and became false 73 minutes after the third; an update file "is itself live, so it is
-kept true". The content that moved is crop paths only, so the corrected readings the siblings give
-still apply to the text. Re-establish: `git rev-parse bca64824:doc/meteg-after-silluq-job-4-12.md
-bca64824:doc/meteg-after-silluq-psalms-72-15.md` (`verify_a_findings.py`).
+blobs recorded in those sibling update entries", and two of the six are not. `8ee5e54e` wrote all
+three statements on the 2026-09-10 review's branch, where they were true; `a8e4790e` was committed
+on `main` 73 minutes later, and the three statements first became false in the merge `8c6b66c4` at
+12:00 that day, the first commit to hold both `8ee5e54e` and `a8e4790e`; `main` has held both
+commits since it fast-forwarded to `a7d37b34` at 14:30. An update file "is itself live, so it is
+kept true". What `a8e4790e` changed in the two reports is where they say the crops are, and every
+passage the siblings correct is in the reports word for word both before and after `a8e4790e`, so
+the corrected readings the siblings give still apply. Re-establish: `git rev-parse
+bca64824:doc/meteg-after-silluq-job-4-12.md bca64824:doc/meteg-after-silluq-psalms-72-15.md`
+(`verify_a_findings.py`); `git merge-base --is-ancestor 8ee5e54e a8e4790e`, which fails.
 
 3.3. **Unfixed at `bca64824`: `doc/metsudah-vs-ctr.md:4` is a dead link, and
-`doc/metsudah-vs-ctr-update.md` does not record it.** The link `[ms-snips/README.md](ms-snips/README.md)`
-resolves to `doc/ms-snips/README.md`, which `a8e4790e` renamed to
-`doc/lam-2-3-akhla-snips/README.md`; six further mentions of `ms-snips` in that finished document
-name the old folder. Leaving the document as written is what D12 requires, and the commit message
-says so; the rule's other half, the correction in the sibling file, was not done — the update
-file's one entry, of 2026-09-12, is about `download_sefaria.py`. This is the window's one new
-dead link. Re-establish: `E_03_md_links.py`; `git ls-tree bca64824 doc/ms-snips/` (empty).
+`doc/metsudah-vs-ctr-update.md` does not record it.** The link
+`[ms-snips/README.md](ms-snips/README.md)` resolves to `doc/ms-snips/README.md`, which `a8e4790e`
+renamed to `doc/lam-2-3-akhla-snips/README.md`; in that finished document, three further mentions
+give `doc/ms-snips/README.md` as a path, and three more speak of "the ms-snips thread", "the
+ms-snips spotlight" and "the ms-snips correction thread". Leaving the document as written is what
+D12 requires, and the commit message says so; the rule's other half, the correction in the sibling
+file, was not done — the update file's one entry, of 2026-09-12, is about `download_sefaria.py`.
+This is the window's one new dead link. Re-establish: `E_03_md_links.py`; `git ls-tree bca64824
+doc/ms-snips/` (empty).
 
-3.4. **Raised, not a defect: everything else about the move holds.** The eight crop files moved
-at 100 per cent similarity; the eight crop sections of the four retired READMEs are byte-identical
-to the new READMEs' sections apart from path tokens; `DATA-LICENSES.md`'s new row covers both
-folders where the old table had a row for `leningrad/page-snips/` only and none for `doc/ms-snips/`;
-`cam1753/cam1753-page-index.json`'s note, the verse-links skill, three Python docstrings and
-`doc/PLAN-retire-codex-index-image-work.md` are repointed; `README.md`'s `in/lci_recs.json` entry
-exists. What the new READMEs promise and do not keep is finding 11.3.
+3.4. **Unfixed at `bca64824`: `a8e4790e` deleted `leningrad/page-snips/README.md` six minutes after
+Ben's decision to keep its crop-naming rule was recorded on the 2026-09-10 review's branch, and each
+new README states the rule two ways.** `f3c7f79a` (Codex, 11:28 on 2026-09-13) recorded the decision
+in the 2026-09-10 review's update file as Ben's decision on that review's finding 20.9, "Keep the
+current rule.", followed by "The live rule in `leningrad/page-snips/README.md` therefore remains
+unchanged". That rule named a Leningrad crop `<folio><side>-col<N>-line<N>-<ref>-<slug>.png` "when
+the line has been read off the image", and the entry adds that an estimator's column may stay in the
+name when the README says so. `main` did not hold `f3c7f79a` when `a8e4790e` deleted the README at
+11:34. Each new README's general naming sentence asks for more, putting a column and line in a name
+only "where the column and line have been established"
+(`doc/meteg-after-silluq-snips/README.md:9–11`) or "where they have been read off the image"
+(`doc/lam-2-3-akhla-snips/README.md:9–10`), while its Leningrad subsection conditions the name on
+the line alone: "a Leningrad crop's name has a column and line only where he gave the line
+unprompted" (`doc/meteg-after-silluq-snips/README.md:40–42`,
+`doc/lam-2-3-akhla-snips/README.md:43–45`). The sections for
+`leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png` and
+`leningrad-430B-col2-line10-Lam2v3-akhla.png` still say that the column in each name is the
+estimator's, so the general sentences, read literally, do not allow those two names: that is the
+stricter policy finding 20.9 put to Ben, and not the one he chose. Two live records say the rule was
+kept unchanged: the entry's sentence above, at `doc/review-findings-2026-09-10-update.md:874`, and
+the close-out table's "item 20.9 keeps the live crop-coordinate rule by Ben's decision" (line 1622),
+which `bca64824` wrote after the merge `8c6b66c4` had brought the deletion into the 2026-09-10
+review's branch. Re-establish: `git show a8e4790e^:leningrad/page-snips/README.md`; `git merge-base
+--is-ancestor f3c7f79a a8e4790e`, which fails.
+
+3.5. **Raised, not a defect: everything else about the move holds.** The eight crop files moved at
+100 per cent similarity; the eight crop sections of the four retired READMEs are byte-identical to
+the new READMEs' sections apart from path tokens; `DATA-LICENSES.md`'s new row covers both folders
+where the old table had a row for `leningrad/page-snips/` only and none for `doc/ms-snips/`;
+`cam1753/cam1753-page-index.json`'s note, the verse-links skill, docstrings and comments in three
+Python files, and `doc/PLAN-retire-codex-index-image-work.md` are repointed; and `1d2ddc3d`, four
+minutes after the move, replaced `README.md`'s `leningrad/` entry with one for `in/lci_recs.json`,
+which exists. What the new READMEs promise and do not keep is finding 11.3.
 
 ### 4. The fix batch's one stale count, the atom lookup's changed policy, and a traceback where a message was promised
 
@@ -1098,8 +1153,9 @@ Anchors for comparison: MAM-basics `0354b6cc..bca64824`; the fifteen quiet publi
 heads named in "Scope, anchors and census". Each finding above gives the commit, the file and line
 as of `bca64824`, the claim, the measurement, and the command or `.novc/review-2026-09-14/` script
 that re-establishes it, so a disagreement can be checked by hand without re-deriving the whole
-window. Findings 1 to 5 and 12 were derived by the main session; finding 2.1 was found by running
-the two generators after stream B noted that they read the incremental folders directly; findings
+window. Findings 1, 2, 4, 5 and 12 were derived by the main session, which also read Ben's third
+area itself, and findings 3.1 to 3.3 are streams A's and E's; finding 2.1 was found by running the
+two generators after stream B noted that they read the incremental folders directly; findings
 6 and 11 are stream E's, 7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each
 spot-checked by the main session where a figure could be re-run cheaply (the stale step count by
 all six readings, the nonexistent blob, the two replaced blobs, the dead link, the ruff errors,
