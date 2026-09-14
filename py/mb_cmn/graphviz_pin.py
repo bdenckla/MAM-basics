@@ -63,6 +63,32 @@ leaves is that the ``.dot`` beside a skipped ``.svg`` IS rewritten, so the
 tracked pair can drift apart; the mega's end-of-run banner says so, and says not
 to commit a changed ``.dot`` without its ``.svg``.
 
+HELVETICA, WHICH GRAPHVIZ DRAWS WITH ARIAL, IS THE ONE FONT THE GENERATED GRAPHS
+NAME, so rendering them needs the pinned Graphviz and no font installed beyond
+Windows' own. Until 2026-09-14 the template call graphs of
+``py/tmpl_survey/survey_dot.py`` named "SBL Hebrew,Helvetica" for their nodes,
+and on a machine without SBL Hebrew the render stopped on a substituted font.
+Ben's decision that day, having asked whether a font known to be on Windows
+would do: ``FONTNAME`` for the nodes too, as the edges and
+``py/pipeline_graph/pipeline_graph.py`` already had.
+
+  * Helvetica itself is not installed on Windows. Graphviz's own PostScript
+    alias table resolves the name to Arial, which is: ``dot -v`` reported
+    ``"Helvetica" resolved to: (ps:pango  Arial, )`` that day.
+  * Arial covered every character the call-graph node labels used that day: 25
+    unpointed Hebrew letters, gershayim and the horizontal ellipsis, over every
+    tracked ``out/tmpl-survey-*/*.dot``, read from Arial's cmap table.
+  * An SVG asks the browser for "Helvetica,sans-Serif", which a Mac draws in
+    Helvetica and Windows in Arial, which has Helvetica's letter widths. So the
+    labels are drawn at the widths the boxes were laid out for.
+  * SBL Hebrew was not a recorded choice. It arrived with the first call graph,
+    in ``2b89c0ca`` (2026-03-10), whose message gives no reason for it.
+  * Never write "Times New Roman" as a fontname. Graphviz's text layout reads
+    "Roman" as a style word, looks for a family called "Times New", and falls
+    back. Graphviz's default, Times-Roman, which the Ben-written
+    ``doc/process-documentation/MAM-process.dot`` gets by naming no font, is
+    unaffected: the alias table resolves it to Times New Roman, and it loads.
+
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better
 design than this one: a pinned entry in ``requirements.txt`` would make the
@@ -106,6 +132,10 @@ import sys
 # The Graphviz that every tracked SVG in this repo was rendered by. Raising this
 # is a deliberate act; see this module's docstring for what else it obliges.
 PINNED_STAMP = "16.0.0 (20260814.1018)"
+
+# The one font this repo's generated graphs name, for nodes and edges alike; see
+# this module's docstring, section "HELVETICA, WHICH GRAPHVIZ DRAWS WITH ARIAL".
+FONTNAME = "Helvetica"
 
 # Ben's decision, 2026-09-09: a missing Graphviz is FATAL on his own machines and
 # a recorded SKIP in a cloud container -- see this module's docstring, section

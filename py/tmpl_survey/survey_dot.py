@@ -233,8 +233,8 @@ def _write_dot(
         fp.write("// Do not edit by hand.\n")
     fp.write("digraph template_call_graph {\n")
     fp.write("    rankdir=LR;\n")
-    fp.write('    node [fontname="SBL Hebrew,Helvetica", fontsize=12];\n')
-    fp.write('    edge [fontname="Helvetica", fontsize=9];\n')
+    fp.write(f'    node [fontname="{graphviz_pin.FONTNAME}", fontsize=12];\n')
+    fp.write(f'    edge [fontname="{graphviz_pin.FONTNAME}", fontsize=9];\n')
     if generated_by:
         fp.write(f"    graph [comment={_dot_quoted(generated_by)}];\n")
     fp.write("\n")
