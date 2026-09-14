@@ -47,6 +47,7 @@ Run via ``main_accgram.py generate-html``.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 from pathlib import Path
 
 from accgram import printed_decalogue as pd
@@ -58,6 +59,7 @@ from accgram.almost_errors_html_shared import hbo, link
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn.new_york_time import labelled, new_york_date
 from mb_cmn import paths
 from mb_cmn import provenance
 
@@ -927,6 +929,7 @@ def _provenance_section(source: dict) -> tuple[object, ...]:
     prov = source.get("provenance", {})
     oldid = prov.get("oldid")
     ts = prov.get("revision_timestamp", "")
+    revision_date = labelled(new_york_date(datetime.fromisoformat(ts)).isoformat())
     return (
         H.heading_level_2("Source"),
         H.para(
@@ -934,7 +937,7 @@ def _provenance_section(source: dict) -> tuple[object, ...]:
                 f"All eight strands (two books × {_TAHTON}/{_ELYON} × m-trad/p-trad) are"
                 " taken from the Wikisource base page ",
                 link("עשרת הדברות בסיס/טעמים", _SOURCE_URL),
-                f" (revision {oldid}, {ts[:10]}), which every p-trad-vs-m-trad comparison"
+                f" (revision {oldid}, {revision_date}), which every p-trad-vs-m-trad comparison"
                 " table there transcludes. A handful of wiki templates are resolved to plain"
                 " pointed text for accent-grammar parsing (",
                 _ROM_LEGARMEH,

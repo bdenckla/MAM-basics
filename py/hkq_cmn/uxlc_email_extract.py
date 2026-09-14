@@ -84,6 +84,7 @@ from pathlib import Path
 import re
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn.new_york_time import labelled, new_york_date
 from hkq_cmn.holman_email_common import (
     email_key as _email_key,
     parts_of_type as _parts_of_type,
@@ -635,7 +636,7 @@ def _read_one(
         sender_name=meta["sender_name"],
         date_utc=date_utc,
         date_iso=date_utc.isoformat(),
-        date_display=date_utc.strftime("%d %B %Y"),
+        date_display=labelled(new_york_date(date_utc).strftime("%d %B %Y")),
         preamble=preamble,
         closing=closing,
     )

@@ -25,7 +25,9 @@ markers Chabad shows between verses.  Normalizing CTR's encoding is the comparis
 not the vendoring's, so the snapshot stays faithful to what the page serves.
 
 This is a network tool run by hand.  The committed JSON records the source URLs, the aids,
-and the retrieval date for provenance.  Run from the repo root:
+and the retrieval time, in ISO 8601 with its offset, for provenance.  The committed
+snapshot's ``retrieved``, 2026-07-24, predates that: it is the date on the fetching machine's
+clock, with no zone.  Run from the repo root:
 
     PYTHONUTF8=1 .venv/Scripts/python.exe py/main_accgram.py vendor-ctr-decalogue
 
@@ -182,16 +184,22 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
     )
     parser.add_argument(
         "--retrieved",
-        default=datetime.date.today().isoformat(),
-        help="retrieval date to record (default: today)",
+        default=_now_in_utc(),
+        help="retrieval time, ISO 8601 with its offset (default: now, in UTC)",
     )
 
 
+def _now_in_utc() -> str:
+    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+
+
 def run(args: argparse.Namespace) -> None:
+    if datetime.datetime.fromisoformat(args.retrieved).utcoffset() is None:
+        raise ValueError(f"--retrieved {args.retrieved!r} states no UTC offset")
     payload = build_payload(args.cache, args.retrieved)
     out_path: Path = args.out
     # file_io: temp-file write, PermissionError retry, and it makes the directory.
-    # build_payload records the retrieval date itself, so no generator_file=.
+    # build_payload records the retrieval time itself, so no generator_file=.
     file_io.json_dump_to_file_path(payload, str(out_path))
     n = sum(len(c["decalogue_verses"]) for c in payload["chapters"].values())
     print(

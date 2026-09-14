@@ -5,10 +5,10 @@ They contain the plus JSON at each boundary of the named pre-migration
 releases. Each snapshot is an uncompressed ZIP archive named by its full
 original MAM-parsed commit. Members retain their original `plus/...` names and
 exact bytes.
-`manifest.json` records the source repository, commit dates, source blob
-identifiers, and migration information. Preserve the JSON bytes, including
-historical schema and filename differences; the reader handles those
-differences without rewriting these inputs.
+`manifest.json` records the source repository, commit dates in New York time,
+source blob identifiers, and migration information. Preserve the JSON bytes,
+including historical schema and filename differences; the reader handles
+those differences without rewriting these inputs.
 
 The archives are deterministic: member names are sorted, timestamps are fixed
 at 1980-01-01 00:00:00, the creating platform is fixed to Unix, regular-file
@@ -31,9 +31,10 @@ with committed `MAM-parsed/plus/` at MAM-basics HEAD:
 
 `--all` also regenerates every named release. Explicit `--old` and `--new`
 accept stored release hashes or MAM-basics refs. The original migration
-source commit also resolves to the byte-identical Land commit. Dates for
-that initial tree retain the source date; subsequent product changes use
-the date of the commit that last changed the plus tree.
+source commit also resolves to the byte-identical Land commit. A stored
+release is labelled by its commit and that commit's date in New York time;
+a MAM-basics ref is labelled by the git tree id of `MAM-parsed/plus` and has
+no date.
 
 For an arbitrary pre-migration comparison, supply both revisions and opt
 into the sibling clone:

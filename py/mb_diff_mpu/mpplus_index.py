@@ -10,6 +10,8 @@ whole mb_diff_mpu report subsystem string-based and self-contained, not an overs
 See mpplus_html.py's module docstring for the full rationale.
 """
 
+from mb_cmn.new_york_time import labelled
+
 
 def write_index(release_info, change_log_dir):
     """Write index.html listing all releases (newest first).
@@ -43,8 +45,9 @@ def write_index(release_info, change_log_dir):
         old_date = info["old_date"]
         count = info["count"]
         suffix = "change" if count == 1 else "changes"
+        start = f"{labelled(old_date)}," if old_date else old_date
         lines.append(
-            f"  <li>Release spanning {old_date} to"
+            f"  <li>Release spanning {start} to"
             f' <a href="{name}.html">{name}</a>'
             f" &mdash; {count} body text {suffix}</li>"
         )

@@ -3,12 +3,14 @@ Render the subtitle table for MAM-parsed-plus diff reports.
 
 Exports:
     render_subtitle_table — HTML table with commit hashes or tree ids, Gregorian
-                            dates, and Hebrew dates
+                            dates in New York time, and Hebrew dates
 """
 
 import datetime
 
 from pyluach import dates as heb_dates
+
+from mb_cmn.new_york_time import labelled
 
 
 def _esc(text):
@@ -25,6 +27,11 @@ def _greg_to_heb(date_str):
     """Convert a 'YYYY-MM-DD' string to a Hebrew date string."""
     gd = datetime.date.fromisoformat(date_str)
     return heb_dates.HebrewDate.from_pydate(gd).hebrew_date_string()
+
+
+def _date_cell(date_str):
+    """One side's date cell: the date with its zone named, or empty."""
+    return _esc(labelled(date_str)) if date_str else ""
 
 
 def _id_cell(label):
@@ -65,7 +72,9 @@ def render_subtitle_table(old_label, new_label, old_date, new_date, total):
     if old_date or new_date:
         old_heb = _greg_to_heb(old_date) if old_date else ""
         new_heb = _greg_to_heb(new_date) if new_date else ""
-        rows.append(f"<tr><td>{_esc(old_date)}</td><td>{_esc(new_date)}</td></tr>")
+        old_date_cell = _date_cell(old_date)
+        new_date_cell = _date_cell(new_date)
+        rows.append(f"<tr><td>{old_date_cell}</td><td>{new_date_cell}</td></tr>")
         rows.append(
             f'<tr><td dir="rtl">{_esc(old_heb)}</td>'
             f'<td dir="rtl">{_esc(new_heb)}</td></tr>'

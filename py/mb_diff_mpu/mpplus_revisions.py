@@ -7,6 +7,7 @@ That optional mode performs read-only Git operations and never fetches or clones
 """
 
 from dataclasses import dataclass
+from datetime import datetime
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -15,6 +16,7 @@ import subprocess
 import zipfile
 
 from mb_cmn import paths
+from mb_cmn.new_york_time import new_york_date
 
 _ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 _ZIP_CREATE_SYSTEM = 3
@@ -211,6 +213,11 @@ def resolve(rev):
     date. A MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref,
     and has no date.
 
+    Every date is the commit's date in New York time, by Ben's decision of 2026-09-14,
+    recorded in mb_cmn/new_york_time.py. A legacy:<ref>'s date is converted from git's
+    committer time. A stored release's date is the manifest's, which a check that day
+    against GitHub's UTC committer times found is already the New York date.
+
     WHY A TREE ID, AND NO DATE. Until 2026-09-14 a MAM-basics ref resolved to its content
     commit, the last commit at or before the ref that changed MAM-parsed/plus, found with
     ``git log --full-history -1`` and dated by that commit. Ben's decision of 2026-09-11
@@ -257,7 +264,10 @@ def resolve(rev):
         if not (repo / ".git").exists():
             raise FileNotFoundError(f"Legacy comparisons require a Git clone at {repo}")
         commit = _git(repo, "rev-parse", "--verify", f"{legacy_ref}^{{commit}}")
-        date = _git(repo, "show", "-s", "--format=%cs", commit)
+        committed = datetime.fromisoformat(
+            _git(repo, "show", "-s", "--format=%cI", commit)
+        )
+        date = new_york_date(committed).isoformat()
         return Revision(commit, date, repo, "plus")
 
     manifest = _manifest()
