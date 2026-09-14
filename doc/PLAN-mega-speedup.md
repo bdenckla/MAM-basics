@@ -27,6 +27,12 @@ record's §7 is kept in this plan.** The wording of §7 itself describes 2026-09
 bodies of #272 and #273 until 2026-09-14, when a Claude session, with Ben's approval, corrected
 their stale statements and commented on each issue with a link to this plan.
 
+`doc/mega-timing-laptop-2026-09-14.md` times the current mega on a second machine, a Surface
+Laptop 4 whose AMD Ryzen 7 has 16 logical processors, all of one kind. It records four full runs
+of 55 steps at `ac24cbd3` and `8834ce4b`, with a median of 262.9 s in the step loop. It is not
+Phase 1, which re-measures Ben's i5-13500T, and its per-step figures are no baseline for that
+machine.
+
 **This plan holds more proposals than the dated record's twelve.** Items 13 to 15, added
 2026-09-14 at Ben's request, come from reading the post-stress-meteg survey's code rather than from
 any measurement, and have their own section below. Item numbers run 1 to 15 across the two
@@ -83,7 +89,10 @@ record's §5).
   removed the example programs' output; `dcd2c1f6` removed the bhs and sef Unicode-names trees;
   `3b1adf45` writes a bhs or sef corpus file only where it differs from the vtrad-mam one, and
   dropped `yeivinID`; `20f18020` then took the choice of which bhs and sef files to write from the
-  versification tables. **The `mam-simple` step has not been timed since.** A throwaway script
+  versification tables. **The `mam-simple` step has not been timed on Ben's machine since.** On
+  the Surface Laptop 4 of `doc/mega-timing-laptop-2026-09-14.md` it took a median of 10.7 s on
+  2026-09-14, a figure from a different machine and so not comparable with the dated record's
+  11.3 to 18.1 s. A throwaway script
   that sums the sizes of the files `git ls-files -z -- MAM-simple` names re-establishes the
   tracked tree's size.
 - **The code of the heaviest steps has changed**, so the dated record's per-step figures are
