@@ -19,6 +19,7 @@ sibling mpplus_index.py bypasses mb_html for the same reason.
 import difflib
 from collections import Counter
 
+from mb_cmn.new_york_time import labelled
 from mb_diff_mpu.grapheme_diff import char_diff_spans
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 from mb_diff_mpu.describe_diff import describe_change, add_name_tooltips
@@ -365,9 +366,9 @@ def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""
     """Write the full HTML report to out_path.
 
     ``old_label`` and ``new_label`` are ``mpplus_revisions.Revision.label`` pairs. The
-    title names the new side's date, or, for a side with no date -- a MAM-basics ref,
-    recorded by its tree id since 2026-09-14 -- the output file's stem, such as
-    unpinned-latest.
+    title names the new side's date with its zone, or, for a side with no date -- a
+    MAM-basics ref, recorded by its tree id since 2026-09-14 -- the output file's stem,
+    such as unpinned-latest.
     """
     import os
 
@@ -379,7 +380,11 @@ def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""
     subtitle_table = render_subtitle_table(
         old_label, new_label, old_date, new_date, total
     )
-    title = new_date or os.path.splitext(os.path.basename(out_path))[0]
+    title = (
+        labelled(new_date)
+        if new_date
+        else os.path.splitext(os.path.basename(out_path))[0]
+    )
     html_parts = [
         "<!DOCTYPE html>",
         '<html lang="en">',
