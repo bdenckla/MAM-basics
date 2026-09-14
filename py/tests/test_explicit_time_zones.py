@@ -71,7 +71,9 @@ def _call_problem(node: ast.Call) -> str | None:
 
 
 def _string_problem(value: str) -> str | None:
-    if value.startswith("--date="):
+    # An option with a value, as git takes one; a bare prefix string such as this
+    # module's own pattern is not an option.
+    if re.match(r"^--date=\S", value):
         return f"{value!r} formats a git date without its offset"
     if _GIT_FORMAT_RE.match(value):
         found = set(_GIT_DATE_PLACEHOLDER_RE.findall(value))
