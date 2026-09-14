@@ -23,8 +23,9 @@ It timed the mega's 60 steps on Ben's machine, at `main` `132f2f3e` plus the fou
 branch that added step timing and the first two speedups. It is a finished dated document and
 stays as written, under Ben's rule of 2026-09-11, and its sibling
 `doc/mega-timing-2026-09-11-update.md` points here. **The status of each proposal in the dated
-record's §7 is kept in this plan.** The wording of §7 itself, and the bodies of #272 and #273,
-describe 2026-09-11.
+record's §7 is kept in this plan.** The wording of §7 itself describes 2026-09-11. So did the
+bodies of #272 and #273 until 2026-09-14, when a Claude session, with Ben's approval, corrected
+their stale statements and commented on each issue with a link to this plan.
 
 Two speedups were made and measured with the dated record, and both are on `main`: `15c09692` gave
 the prose scanner a fast path, cutting its time from 75.3 s to 21.1 s over the eight steps that
@@ -108,11 +109,11 @@ of the code the item names.
    120 s. Risk: high. **Filed as #272, open, not started.** Both chains are unchanged at
    `bca64824`: `parse-ws`, `mam-simple`, `accgram-survey-post-stress-meteg`, `gen-site`; and
    `wlc-json-and-unicode` with `mam-simple`, then `accgram-run-prose`,
-   `accgram-survey-chanted-word-accents`, `accgram-generate-html`. #272's body says that three
-   `vendored-*` steps run what `mam-simple` rewrites under `MAM-simple/py-examples/`; since
-   `d6a6764d` one does, `vendored-letter-small-job`. Item 1 needs a declared list of what each
-   step reads and writes, as #272's body and the dated record's §7 both say, and #278 could use
-   the same list; see "Related plans and issues" below.
+   `accgram-survey-chanted-word-accents`, `accgram-generate-html`. Since `d6a6764d` one
+   `vendored-*` step runs what `mam-simple` rewrites under `MAM-simple/py-examples/`,
+   `vendored-letter-small-job`; #272's body said three until it was corrected on 2026-09-14.
+   Item 1 needs a declared list of what each step reads and writes, as #272's body and the dated
+   record's §7 both say, and #278 could use the same list; see "Related plans and issues" below.
 2. **Take `near-aleppo-census` out of the mega.** Saving: 17.6 s in run 1, 19.4 s pinned. **Done
    in `d32a17b8`** on 2026-09-11, so that the mega writes nothing outside this repository.
 3. **Give the poetic scanner the prose scanner's fast path.** Estimated saving: about 5 s of the
@@ -309,5 +310,5 @@ differences of step 6, which are not committed.
 
 - `doc/mega-timing-2026-09-11.md` stays as written. Anything to add to it goes in
   `doc/mega-timing-2026-09-11-update.md`.
-- No issue was edited in writing this plan. The bodies of #272 and #273 still describe
-  2026-09-11.
+- No issue was edited in writing this plan. A later session corrected the bodies of #272 and
+  #273 on 2026-09-14, and linked each issue to this plan in a comment.
