@@ -792,6 +792,10 @@ this session" and "since reverted" with no date, and gave no repo paths.
 - **Every figure carries the command that re-establishes it**, and the plan says to re-measure
   rather than trust it, treating a mismatch as a finding. Say what the numbers were measured
   against — the commit of each repo involved — because the tree will have moved on.
+  **The exception is a figure that answers a question asked in passing** (Ben's decision,
+  2026-09-14): its script may stay an untracked `.novc/` throwaway, and the plan says instead
+  that the figure is the state of the code on the date it was measured, accepted as liable to
+  go stale, with no route to re-measuring it.
 - **Say what is NOT expected to change**, not only what is. That is what turns an unexpected diff
   into a finding instead of noise.
 - **Line numbers drift, so cite a searchable anchor too** (the identifier, the sentence). A plan
