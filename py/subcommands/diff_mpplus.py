@@ -54,17 +54,18 @@ PRESERVED_CHANGE_LOG_ARTIFACTS = (
 
 
 def _commit_date(rev):
-    """Return the stored source date or the landed product's commit date.
+    """Return a stored release's or legacy:<ref>'s date, or "" for a MAM-basics ref.
 
-    THE ONE GIT READING LEFT IN A ``--all`` RUN, and the one place a shallow clone could still
-    mislead rather than fail.  A named release resolves out of the tracked manifest with no git
-    at all; ``HEAD`` resolves through ``git log -1 -- MAM-parsed/plus``, which walks only as far
-    as the clone goes.  If no commit inside the window touched ``MAM-parsed/plus``, that walk
-    finds nothing and the date falls back to HEAD's own, which would be later than the truth --
-    a wrong date in a published report rather than a wrong diff.  Measured in a cloud container
-    on 2026-09-11: 3 commits inside a 221-commit window touch ``MAM-parsed/plus``, the newest
-    being ``209b4c0``, so the fallback did not fire there.  Recorded rather than guarded,
-    because guarding it means raising, which is what 2026-09-11's work removed.
+    A MAM-basics ref has had no date since 2026-09-14, when it began to be recorded by the git
+    tree id of MAM-parsed/plus.  Until then its date was that of the last commit to change
+    MAM-parsed/plus, found by a path-filtered ``git log``, and in a shallow clone that walk can
+    return the wrong commit.  Git treats each commit listed in .git/shallow as having no
+    parents, so every path in it looks added, and the newest-first walk returns such a boundary
+    commit whenever one is newer than the last real change.  This docstring had predicted a
+    different failure, a walk that finds nothing and falls back to HEAD's own date; a cloud
+    container's mega run showed on 2026-09-14 that the walk finds a boundary commit instead,
+    whose hash and date the report then published over correct diffs.
+    ``mpplus_revisions.resolve`` has the rest.
     """
     return mpplus_revisions.resolve(rev).date
 
@@ -144,15 +145,16 @@ def default_output_path(old_rev, new_rev):
 def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     """Generate one diff report. Returns the expanded diff count.
 
-    The report records each side's full commit hash, never the revision as given.
-    Until 2026-09-11 it recorded ``old_rev`` and ``new_rev`` verbatim, so
-    unpinned-latest said "HEAD", which names nothing once the report is committed; Ben
-    decided that day that "a true hash should be recorded". A stored release or a
-    legacy:<ref> records the full hash of its MAM-parsed commit, and a MAM-basics ref
-    records its content commit, which ``mpplus_revisions.resolve`` defines. The log
-    need not keep up with every commit -- Ben, the same day: "I want the diff to be
-    able to run as sparsely or as frequently as the user wants" -- so a report that
-    lags only has to say exactly what it describes, and the recorded hashes say it.
+    The report never records a revision as given. Until 2026-09-11 it recorded
+    ``old_rev`` and ``new_rev`` verbatim, so unpinned-latest said "HEAD", which names
+    nothing once the report is committed; Ben decided that day that "a true hash should
+    be recorded". A stored release or a legacy:<ref> records the full hash of its
+    MAM-parsed commit. A MAM-basics ref recorded its content commit until 2026-09-14,
+    and since then records the git tree id of MAM-parsed/plus, which is the same in
+    every clone, shallow ones included; ``mpplus_revisions.resolve`` says why. The log
+    need not keep up with every commit -- Ben, 2026-09-11: "I want the diff to be able
+    to run as sparsely or as frequently as the user wants" -- so a report that lags only
+    has to say exactly what it describes, and the recorded ids say it.
     """
     print(f"Comparing {old_rev} -> {new_rev} ...")
     diffs = mpplus_extract.diff_all_books(old_rev, new_rev)
@@ -169,19 +171,17 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
             f"{len(verification_errors)} diff(s) failed roundtrip verification; "
             "no JSON or HTML report was written"
         )
-    old_date = _commit_date(old_rev)
-    new_date = _commit_date(new_rev)
-    old_commit = mpplus_revisions.resolve(old_rev).commit
-    new_commit = mpplus_revisions.resolve(new_rev).commit
+    old = mpplus_revisions.resolve(old_rev)
+    new = mpplus_revisions.resolve(new_rev)
     os.makedirs(os.path.dirname(output), exist_ok=True)
     json_path = output.removesuffix(".html") + ".json"
-    mpplus_json.write_json(diffs, old_commit, new_commit, json_path)
+    mpplus_json.write_json(diffs, old.label, new.label, json_path)
     print(f"  JSON written to {json_path}")
     total = mpplus_html.write_report(
-        diffs, old_commit, new_commit, output, old_date, new_date
+        diffs, old.label, new.label, output, old.date, new.date
     )
     print(f"  Report written to {output}")
-    return total, old_date
+    return total, old.date
 
 
 def run_all():
