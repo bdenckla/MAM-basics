@@ -67,6 +67,13 @@ The fix to the setup script is a path, nothing more: give it the clone's directo
 `MAM-basics/requirements.txt`. **The record's advice to prefer a virtual environment stands and its
 reasoning was right for the wrong reason** — the setup script was already making one.
 
+**Ben fixed the setup script on 2026-09-14**, reporting so in the session that wrote this entry.
+The fix is not verified here and could not be: the container this entry was written in was built
+before it, and its failed environment at `/home/user/.venv` is the evidence of the fault rather
+than of the repair. **The next cloud session is what confirms it**, and confirms it by finding a
+populated 3.13 environment before it runs anything, which step 3 of `doc/PLAN-mega-speedup.md`'s
+Phase 2 now requires. A session that finds one needs none of the workaround above.
+
 ### The 3.13 re-measurement, and every figure it moves
 
 Two further full runs were made in the same container with

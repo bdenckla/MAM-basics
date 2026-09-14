@@ -313,14 +313,16 @@ what each produced is in those two files. Five things are worth carrying here:
    clone's graft boundary has no parent object, so git reports every file in it as added, and the
    path-filtered walk of step 6 stops at such a commit rather than finding nothing. The record's
    §7 has it, and it reproduced identically on 3.13.
-5. **The environment's setup script is broken and only Ben can fix it; steps 3 and 4 below have
-   been amended to survive it.** That script fails with exit code 2, having built a 3.13 virtual
-   environment and then looked for `requirements.txt` in `/home/user`, the parent of the clone
-   rather than the clone. A session that does not notice falls back to the system `python3`, which
-   is 3.11 and whose dpkg-managed `site-packages` then blocks a `pip install` — which is exactly
-   what happened on 2026-09-14, and why the record's figures are 3.11 ones. Inside the 3.13
-   environment the install takes 3.0 s and no conflict arises. The update entry has the evidence
-   and the fix, which is that the script must enter the clone before looking for the file.
+5. **The environment's setup script failed until Ben fixed it on 2026-09-14; steps 3 and 4 below
+   survive it either way.** It failed with exit code 2, having built a 3.13 virtual environment
+   and then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
+   clone. A session that does not notice falls back to the system `python3`, which is 3.11 and
+   whose dpkg-managed `site-packages` then blocks a `pip install` — which is exactly what happened
+   on 2026-09-14, and why the record's figures are 3.11 ones. Inside the 3.13 environment the
+   install takes 3.0 s and no conflict arises. **The fix is Ben's report and is not verified in
+   this repository**, the container that found the fault having been built before it; the next
+   cloud session confirms it by finding a populated 3.13 environment at step 3, and needs no
+   workaround if it does. The update entry has the evidence.
 
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
