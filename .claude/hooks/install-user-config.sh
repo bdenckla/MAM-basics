@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #
-# SessionStart hook: put Ben's user-level Claude configuration into ~/.claude/ when
-# the session is running in an ephemeral cloud container, which does not get it any
-# other way.
+# SessionStart hook: put Ben's user-level Claude configuration and its Codex import
+# target into an ephemeral cloud container, which does not get them any other way.
 #
 # WHAT IS MISSING WITHOUT THIS, AND WHY IT MATTERS
 #
@@ -12,15 +11,16 @@
 # outright, in its "What carries over from your setup" table, for both
 # ~/.claude/CLAUDE.md and ~/.claude/skills/. Verified in a remote session on
 # 2026-09-09: `find / -name CLAUDE.md` found nothing outside the checkout, and
-# ~/.claude/skills/ held no hebrew-prose.
+# ~/.claude/skills/ held no hebrew-prose. The common user-level arrangement adopted
+# for implementation in MAM-basics issue 274 also needs ~/.codex/AGENTS.md: the
+# minimal Claude wrapper will import that file, and the tracked copy alone does not
+# create the import target.
 #
-# MAM-basics' own CLAUDE.md depends on both by name. Its section "Invoke the
-# hebrew-prose skill before writing or editing prose about accentuation" calls that
-# skill "the canonical, single home" for the accentuation-prose rules, and two later
-# sections defer to ~/.claude/CLAUDE.md by name -- the doc/boj-*.md section ("the
-# global conventions win") and the testing section (its "No sys.path surgery" rule).
-# So a cloud session reads a CLAUDE.md that cites two documents it cannot open, and
-# nothing says so.
+# The target symmetric setup depends on all three resources by name. Its repository
+# instructions require the hebrew-prose skill, while its minimal user-level Claude
+# wrapper will import ~/.codex/AGENTS.md. Without this hook, a cloud session can read
+# wrappers or repository instructions that point at files the session cannot open,
+# and nothing says so.
 #
 # WHY THIS COPIES AND DOES NOT CLONE
 #
@@ -39,11 +39,12 @@
 #
 # WHAT IS INSTALLED, AND WHAT IS DELIBERATELY NOT
 #
+#   dot-Codex/user-wide-AGENTS.md    -> ~/.codex/AGENTS.md
 #   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
 #   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
 #
-# Those are the two MAM-basics' CLAUDE.md names. Four further entries are tracked
-# beside them and none is installed here:
+# Those are the three resources the target symmetric Claude setup needs. Four further
+# entries are tracked beside them and none is installed here:
 #
 #   1. dot-claude/skills/prune-claude-state/
 #                          operates on ~/.claude/plans/ and on the per-repo
@@ -62,10 +63,10 @@
 #                          paths, and whether a cloud session's repository-scoped
 #                          token may write to a GitHub issue has not been
 #                          measured. Ben's decision, 2026-09-14: not installed here.
-#   4. dot-claude/README.md, dot-Codex/
-#                          the deployment procedure and the Codex-side
-#                          configuration. Nothing in a Claude cloud session loads
-#                          either, and both are readable in the checkout if wanted.
+#   4. dot-claude/README.md and the rest of dot-Codex/
+#                          are the deployment procedure and Codex-only resources.
+#                          Nothing in a Claude cloud session loads them, and they
+#                          are readable in the checkout if wanted.
 #
 # WHICH GATE, AND WHY BOTH OF THEM
 #
@@ -91,8 +92,9 @@
 
 set -u
 
-DOC_NOTE="doc/user-level-config-in-cloud-sessions.md"
-DEST="$HOME/.claude"
+DOC_NOTE="doc/user-level-config-in-cloud-sessions-update.md"
+CLAUDE_DEST="$HOME/.claude"
+CODEX_DEST="$HOME/.codex"
 
 # $CLAUDE_PROJECT_DIR is set for a hook, but derive a fallback from this script's own
 # location so the hook still works when run by hand from another directory.
@@ -100,7 +102,8 @@ REPO="${CLAUDE_PROJECT_DIR:-}"
 if [ -z "$REPO" ]; then
     REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 fi
-SRC="$REPO/dot-claude"
+CLAUDE_SRC="$REPO/dot-claude"
+CODEX_SRC="$REPO/dot-Codex"
 
 # Gate 1: do nothing at all outside an ephemeral cloud container.
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
@@ -108,77 +111,135 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
 fi
 
 # Gate 2: decide what is actually absent. Anything already present is left alone.
-want_conventions=no
+want_common=no
+want_wrapper=no
 want_skill=no
-[ -f "$DEST/CLAUDE.md" ] || want_conventions=yes
+[ -f "$CODEX_DEST/AGENTS.md" ] || want_common=yes
+[ -f "$CLAUDE_DEST/CLAUDE.md" ] || want_wrapper=yes
 # A directory alone is not the skill: an interrupted cp -R leaves one behind, and
 # the report below already reads presence off SKILL.md rather than off the directory.
-[ -f "$DEST/skills/hebrew-prose/SKILL.md" ] || want_skill=yes
+[ -f "$CLAUDE_DEST/skills/hebrew-prose/SKILL.md" ] || want_skill=yes
 
-if [ "$want_conventions" = no ] && [ "$want_skill" = no ]; then
-    # Nothing to install, but still say where the two documents are: this branch is
+if [ "$want_common" = no ] && [ "$want_wrapper" = no ] && [ "$want_skill" = no ]; then
+    # Nothing to install, but still say where the three resources are: this branch is
     # what a resumed or compacted session hits, and after a compaction the notice
     # printed at startup may no longer be in context.
     echo "MAM-basics SessionStart hook: Ben's user-level Claude configuration is already in place."
+    echo "  $HOME/.codex/AGENTS.md"
+    echo "      -- the user-level instruction file at Codex's native path."
     echo "  $HOME/.claude/CLAUDE.md"
-    echo "      -- global cross-repo conventions."
+    echo "      -- the user-level instruction file at Claude Code's native path."
     echo "  $HOME/.claude/skills/hebrew-prose/"
     echo "      -- the canonical accentuation-prose rules; if hebrew-prose is not in your"
     echo "         available-skills list, read its SKILL.md directly."
     exit 0
 fi
 
-if [ ! -f "$SRC/user-wide-CLAUDE.md" ] || [ ! -f "$SRC/skills/hebrew-prose/SKILL.md" ]; then
+have_common_source=no
+have_wrapper_source=no
+have_skill_source=no
+[ -f "$CODEX_SRC/user-wide-AGENTS.md" ] && have_common_source=yes
+[ -f "$CLAUDE_SRC/user-wide-CLAUDE.md" ] && have_wrapper_source=yes
+[ -f "$CLAUDE_SRC/skills/hebrew-prose/SKILL.md" ] && have_skill_source=yes
+
+missing_source=no
+if [ "$want_common" = yes ] && [ "$have_common_source" = no ]; then
+    missing_source=yes
+fi
+if [ "$want_wrapper" = yes ] && [ "$have_wrapper_source" = no ]; then
+    missing_source=yes
+fi
+if [ "$want_skill" = yes ] && [ "$have_skill_source" = no ]; then
+    missing_source=yes
+fi
+
+if [ "$missing_source" = yes ]; then
     echo "================================================================================"
     echo "  MAM-basics SessionStart hook: USER-LEVEL CLAUDE CONFIGURATION IS MISSING"
     echo "================================================================================"
-    echo "Expected these in the checkout, and at least one is not there:"
-    echo "    dot-claude/user-wide-CLAUDE.md"
-    echo "    dot-claude/skills/hebrew-prose/SKILL.md"
-    echo "Looked under: $SRC"
-    echo "Found:"
-    ls -1 "$SRC" 2>&1 | sed 's/^/    /'
+    echo "SOURCE STATUS (a source is needed only when its destination is missing)"
+    echo "  dot-Codex/user-wide-AGENTS.md present:             $have_common_source"
+    echo "  dot-claude/user-wide-CLAUDE.md present:            $have_wrapper_source"
+    echo "  dot-claude/skills/hebrew-prose/SKILL.md present:   $have_skill_source"
+    echo "Looked under:"
+    echo "    $CODEX_SRC"
+    echo "    $CLAUDE_SRC"
+    echo "Found under dot-Codex/:"
+    ls -1 "$CODEX_SRC" 2>&1 | sed 's/^/    /'
+    echo "Found under dot-claude/:"
+    ls -1 "$CLAUDE_SRC" 2>&1 | sed 's/^/    /'
+    echo
+    echo "DESTINATION STATUS"
+    if [ "$want_common" = yes ]; then
+        echo "  $HOME/.codex/AGENTS.md present: no"
+    else
+        echo "  $HOME/.codex/AGENTS.md present: yes"
+    fi
+    if [ "$want_wrapper" = yes ]; then
+        echo "  $HOME/.claude/CLAUDE.md present: no"
+    else
+        echo "  $HOME/.claude/CLAUDE.md present: yes"
+    fi
+    if [ "$want_skill" = yes ]; then
+        echo "  $HOME/.claude/skills/hebrew-prose/SKILL.md present: no"
+    else
+        echo "  $HOME/.claude/skills/hebrew-prose/SKILL.md present: yes"
+    fi
     echo
     echo "WHAT THIS MEANS FOR THIS SESSION"
-    echo "  - The hebrew-prose skill is NOT available. Do not write or edit prose about"
-    echo "    Hebrew accentuation as though you had read it, and do not report having"
-    echo "    followed it."
-    echo "  - MAM-basics' CLAUDE.md cites both of those documents by name, so parts of it"
-    echo "    now point at files this session cannot open."
+    if [ "$want_common" = yes ]; then
+        echo "  - The user-level instructions at $HOME/.codex/AGENTS.md are unavailable."
+    fi
+    if [ "$want_wrapper" = yes ]; then
+        echo "  - The user-level Claude file at $HOME/.claude/CLAUDE.md is unavailable."
+    fi
+    if [ "$want_skill" = yes ]; then
+        echo "  - The hebrew-prose skill is NOT available. Do not write or edit prose about"
+        echo "    Hebrew accentuation as though you had read it, and do not report having"
+        echo "    followed it."
+    fi
     echo "  - Say so in your first reply to Ben, before doing the task."
-    echo "  - Nothing here needs the network: these files are tracked in this repository,"
+    echo "  - Nothing here needs the network: all three sources are tracked in this repository,"
     echo "    so their absence means the checkout is wrong or they have been moved."
     echo "    See $DOC_NOTE."
     echo "================================================================================"
     exit 0
 fi
 
-if [ "$want_conventions" = yes ]; then
-    mkdir -p "$DEST"
-    cp "$SRC/user-wide-CLAUDE.md" "$DEST/CLAUDE.md"
+if [ "$want_common" = yes ]; then
+    mkdir -p "$CODEX_DEST"
+    cp "$CODEX_SRC/user-wide-AGENTS.md" "$CODEX_DEST/AGENTS.md"
+fi
+if [ "$want_wrapper" = yes ]; then
+    mkdir -p "$CLAUDE_DEST"
+    cp "$CLAUDE_SRC/user-wide-CLAUDE.md" "$CLAUDE_DEST/CLAUDE.md"
 fi
 if [ "$want_skill" = yes ]; then
     # The trailing /. copies the contents, so a directory left by an interrupted
     # run is filled rather than nested inside itself.
-    mkdir -p "$DEST/skills/hebrew-prose"
-    cp -R "$SRC/skills/hebrew-prose/." "$DEST/skills/hebrew-prose/"
+    mkdir -p "$CLAUDE_DEST/skills/hebrew-prose"
+    cp -R "$CLAUDE_SRC/skills/hebrew-prose/." "$CLAUDE_DEST/skills/hebrew-prose/"
 fi
 
 # Report against the filesystem rather than against what the copies returned, so a
 # half-completed install is announced as one.
-ok_conventions=no
+ok_common=no
+ok_wrapper=no
 ok_skill=no
-[ -f "$DEST/CLAUDE.md" ] && ok_conventions=yes
-[ -f "$DEST/skills/hebrew-prose/SKILL.md" ] && ok_skill=yes
+[ -f "$CODEX_DEST/AGENTS.md" ] && ok_common=yes
+[ -f "$CLAUDE_DEST/CLAUDE.md" ] && ok_wrapper=yes
+[ -f "$CLAUDE_DEST/skills/hebrew-prose/SKILL.md" ] && ok_skill=yes
 
-if [ "$ok_conventions" = yes ] && [ "$ok_skill" = yes ]; then
+if [ "$ok_common" = yes ] && [ "$ok_wrapper" = yes ] && [ "$ok_skill" = yes ]; then
     # Both banners spell these paths the same way, expanded. They did not until
     # 2026-09-09, when the cloud verification reported that this branch wrote a
     # literal ~ while the already-in-place branch above wrote the expanded form; an
     # agent that has to open the file is better served by the expanded one.
     echo "MAM-basics SessionStart hook: installed Ben's user-level Claude configuration from this checkout."
+    echo "  $HOME/.codex/AGENTS.md"
+    echo "      -- the user-level instruction file at Codex's native path."
     echo "  $HOME/.claude/CLAUDE.md"
-    echo "      -- global cross-repo conventions, cited by name in MAM-basics' CLAUDE.md."
+    echo "      -- the user-level instruction file at Claude Code's native path."
     echo "  $HOME/.claude/skills/hebrew-prose/"
     echo "      -- the canonical accentuation-prose rules."
     echo "Claude Code watches ~/.claude/skills/ and picks a skill added to it up without a"
@@ -186,14 +247,16 @@ if [ "$ok_conventions" = yes ] && [ "$ok_skill" = yes ]; then
     echo "available-skills list, and these instructions were in context, on the turn after"
     echo "this hook ran. If hebrew-prose is nonetheless absent from your list, read"
     echo "$HOME/.claude/skills/hebrew-prose/SKILL.md directly before writing or editing any"
-    echo "prose about accentuation, and read $HOME/.claude/CLAUDE.md before your first edit."
+    echo "prose about accentuation, and read both $HOME/.claude/CLAUDE.md and"
+    echo "$HOME/.codex/AGENTS.md before your first edit."
 else
     echo "================================================================================"
     echo "  MAM-basics SessionStart hook: INSTALL ONLY PARTLY SUCCEEDED"
     echo "================================================================================"
-    echo "  ~/.claude/CLAUDE.md present:                    $ok_conventions"
-    echo "  ~/.claude/skills/hebrew-prose/SKILL.md present: $ok_skill"
-    echo "Tell Ben which one is missing; do not treat its rules as available."
+    echo "  ~/.codex/AGENTS.md present:                      $ok_common"
+    echo "  ~/.claude/CLAUDE.md present:                     $ok_wrapper"
+    echo "  ~/.claude/skills/hebrew-prose/SKILL.md present:  $ok_skill"
+    echo "Tell Ben which resource is missing; do not treat its rules as available."
     echo "See $DOC_NOTE."
     echo "================================================================================"
 fi

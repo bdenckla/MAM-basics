@@ -74,7 +74,10 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py
 
 Ordinary `py/main_repo_maintenance.py` runs that check automatically. The Claude cloud-session
 hook is the declared exception: it sources the cloud session's checked-out branch, which is
-`main` only when `main` is that branch. The hook does not install Codex configuration.
+`main` only when `main` is that branch. The hook prepositions
+`dot-Codex/user-wide-AGENTS.md` as `~/.codex/AGENTS.md`, the import target selected by issue 274's
+symmetric-instructions design. It does not install this README, a Codex-only skill, `config.toml`,
+or any other Codex state.
 
 Deliberately not tracked here: `auth.json`, `config.toml`, `settings*.json`,
 plugin caches, session transcripts, databases, logs, machine permission state,

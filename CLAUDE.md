@@ -102,7 +102,7 @@ statement; the sections here stay as pointers, and **a rule change goes into the
 **`dot-claude/` and `dot-Codex/` are storage, and this repository loads neither.** They hold the
 version-controlled originals of Ben's user-level Claude and Codex configuration — the skill above,
 `user-wide-CLAUDE.md`, `user-wide-AGENTS.md` and the Codex-only skills. The live copies under
-`~/.claude/`, `~/.Codex/` and `~/.agents/` are what the two agents actually load, and
+`~/.claude/`, `~/.codex/` and `~/.agents/` are what the two agents actually load, and
 `dot-claude/README.md` is the deployment procedure of record. **Edit the tracked canonical copy,
 never a live copy.** Commit the edit on its development branch, integrate and push `main`, then
 run `py/main_repo_util.py --sync-user-config` from the primary MAM-basics clone. The command
@@ -112,17 +112,20 @@ fetches `origin`, deploys every instruction file and tracked skill only from the
 until 2026-09-09, so a `github-misc <sha>` citation inside them is right as written and must not be
 repointed.
 
-**A cloud session does not get any of it from `~/.claude/`, so a hook installs it.** Nothing under
-`~/.claude/` travels with the clone, while `dot-claude/` does.
-`.claude/hooks/install-user-config.sh` copies `dot-claude/user-wide-CLAUDE.md` and
-`dot-claude/skills/hebrew-prose/` from the cloud session's checked-out branch into `~/.claude/` at
-session start, touching neither the network nor any other repository, and reports what it did in
-the transcript. The checked-out branch can be `main`; the hook does not substitute `main` for a
-different checked-out branch. This branch-sourced cloud bootstrap is the explicit exception to
-the local `origin/main` deployment rule. On Ben's own machines the hook exits before reading
-anything. If `hebrew-prose` is not in the available-skills list and no such report appeared, say
-so rather than writing accentuation prose without it; `doc/user-level-config-in-cloud-sessions.md`
-has the diagnosis.
+**A cloud session gets none of the user-level files from Ben's machine, so a hook installs the
+current Claude files and prepositions issue 274's Codex import target.** Nothing under
+`~/.claude/` or `~/.codex/` travels with the clone, while `dot-claude/` and `dot-Codex/` do.
+`.claude/hooks/install-user-config.sh` copies
+`dot-Codex/user-wide-AGENTS.md` to `~/.codex/AGENTS.md`,
+`dot-claude/user-wide-CLAUDE.md` to `~/.claude/CLAUDE.md`, and
+`dot-claude/skills/hebrew-prose/` to `~/.claude/skills/hebrew-prose/` from the cloud session's
+checked-out branch at session start. The hook touches neither the network nor another repository,
+and its transcript banner reports all three resources. The checked-out branch can be `main`; the
+hook does not substitute `main` for a different checked-out branch. This branch-sourced cloud
+bootstrap is the explicit exception to the local `origin/main` deployment rule. On Ben's own
+machines the hook exits before reading anything. If `hebrew-prose` is not in the available-skills
+list and no such report appeared, say so rather than writing accentuation prose without it;
+`doc/user-level-config-in-cloud-sessions-update.md` has the current diagnosis.
 
 ## The post-stress-meteg pages say plain "word" — do not qualify it as "chanted"
 
