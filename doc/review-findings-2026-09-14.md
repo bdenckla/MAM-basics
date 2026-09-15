@@ -1275,3 +1275,34 @@ the Codex file's UXLC-utils citations, the 13-file glob). The census, and the tr
 suite, mega, generator and product-tier figures, are the main session's own. The reconciliation
 section goes below this one, under `## Reconciliation with the Codex review`, per
 `doc/dual-agent-review.md`.
+
+## Reconciliation with the Codex review
+
+Recorded by Codex on 2026-09-15 as turn 2 of the D9 alternating round. The counter-argument is
+`doc/codex-review-findings-2026-09-14.md`; its C1 through C3 are additional findings or
+qualifications, not remediation. The reviewed range remains MAM-basics
+`0354b6cc..bca64824`, with the fifteen quiet public repositories named above. Turn 2 read the
+argument with Ben's later decisions at `fbeb3809` and changed only the two review records.
+
+"Confirmed" applies to the bounded claim and the disposition the finding itself states.
+"Qualified" records a narrower evidence claim or additional unfixed work. No finding is marked
+fixed merely because the comparison is complete.
+
+| Finding | Codex result | Work still unfixed |
+|---:|---|---|
+| 1 | **Confirmed.** The stale 47/59 figures, upstream-change gap, lint boundary, and contradictory tier-3 wording reproduce. | Correct the figures to 43/55, cover upstream changes to hand-run generators, document the lint's limits, and reconcile the two tier-3 descriptions. |
+| 2 | **Confirmed.** The two hand-run product generators are broken by incremental MAM-simple storage, and 39.0 MB was not the post-commit product size. Parts 2.2 and 2.4 were fixed within the window. | Repair the two generators and correct the size statement. No further work arises from 2.2 or 2.4. |
+| 3 | **Confirmed.** The live-versus-finished conflict, stale blob records, dead-link update gap, and displaced crop-naming rule reproduce. | Decide and apply the two reports' classification, align the live update records, record the moved `metsudah-vs-ctr` link, and restore or relocate the crop-naming rule. |
+| 4 | **Confirmed.** The stale count and missing letters-only-match note reproduce; the lookup change is correctly not a defect. | Correct the al-hatorah count, decide whether to improve ambiguous-query output, and restore the letters-only-match note. No work arises from 4.2. |
+| 5 | **Confirmed.** The finding correctly treats the transient rewrite as outside the endpoint diff and already remediated. | None. |
+| 6 | **Confirmed.** Ruff reports exactly the two named unused imports. | Remove the two imports so repository maintenance's lint step passes. |
+| 7 | **Qualified; C3.** The substantive record and procedure defects reproduce, but D12 expects line numbers to drift and both entries retain its required word anchors. The live present-tense line claims may still be refreshed or checkpointed. | Apply Ben's update-file decision; correct the nonexistent blob, procedure departures, missing `Recorded by`, checkpoint-less measurements, and internal inconsistencies. Do not describe line drift as loss of the passages' durable locators. |
+| 8 | **Qualified and extended; C1 and C2.** The stated instruction and plan defects reproduce, but the plan audit missed a rule for resolving the ignored primary-checkout target and a pinned pointer to the tracked 36-page oracle. | Apply the recorded instruction and procedure decisions; make both plans executable by either agent; make the image plan resolve the exact ignored cache outside a secondary worktree; and make the Google plan cite, checkpoint, and remeasure its tracked exact-title inventory. |
+| 9 | **Confirmed.** The open issue still names the removed directory example. | Correct or replace the example in MAM-basics issue #278 during remediation. |
+| 10 | **Qualified by the public-evidence boundary.** The four source-level gaps reproduce; the local-session instance in 10.1 was not independently read. Parts 10.4 through 10.6 and 10.8 remain observations. | Address 10.1, 10.2, 10.3, and 10.7. No fix follows solely from 10.4 through 10.6 or 10.8. |
+| 11 | **Confirmed.** The six prose defects reproduce against the loaded `hebrew-prose` rules. | Correct the six defects in their proper live-file or sibling-update locations. |
+
+Turn 2 changed no product, source, issue, remote branch, or live user-level file. It read no
+MAM-private material and made no manuscript or editorial adjudication. C1's later remediation would
+include a recoverable local destructive act; C2, C3, and the reconciliation itself reach no product
+and perform no hard-to-undo act.
