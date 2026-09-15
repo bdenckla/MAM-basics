@@ -825,7 +825,10 @@ His words on the remediation: "don't change any existing plan documents, just ma
 you suggest to an -update.md (or -update-N.md if -update.md is taken already, and N is sequentially
 the next unused integer)"; and, asked whether the procedure should say that a finished document's
 later status goes in its update file: "Yes, the policy of -update.md files should be documented in
-the two files you suggest", the two files being those two documents. Re-establish: `git grep -n
+the two files you suggest", the two files being those two documents. The decision at the end of 7.4
+supersedes two parts of those words: an update goes into the existing `-update.md`, never into an
+`-update-N.md`, and the pointer line under line 3 is an edit the remediation does make to existing
+documents. Re-establish: `git grep -n
 "^State:" bca64824 -- "doc/*.md"`; `A_05`.
 
 7.2. **Unfixed at `bca64824`: the update file's entry for the 2026-09-10 review's finding 7.2 cites
@@ -859,15 +862,28 @@ doc/dual-agent-review.md`; `git grep -n "stopping rule" bca64824 --
 doc/dual-agent-review-2026-09-10-turn-03-claude.md
 doc/dual-agent-review-2026-09-10-turn-04-codex.md`.
 
-7.4. **Raised, low: the standards docstring and D12 describe an update file's entries in ways that
-conflict, and one entry of `doc/review-findings-2026-09-10-update.md` has no "Recorded by" line.**
+7.4. **Raised, low; Ben's decision is at the end of this part: the standards docstring and D12
+describe an update file's entries in ways that conflict, and one entry of
+`doc/review-findings-2026-09-10-update.md` has no "Recorded by" line.**
 `py/repo_util/check_repo_standards.py:339` says "An update file's entries are each finished and
 dated the moment they are written, so nothing in one is ever pending", while D12 in
 `doc/dual-agent-review.md` says an update file "is itself live, so it is kept true"; 7.2, 7.5 and
 7.6 of this finding follow D12, counting stale statements in a live update file as defects to
 correct. At `bca64824` the update file has 39 headed sections, 38 of them with a "Recorded by" line;
 the one without is the entry for finding 10, "Finding 10: the moved crop directories have dedicated
-license coverage". Re-establish: `git grep -n "finished and dated" bca64824 --
+license coverage". Ben decided on 2026-09-15, choosing among options a Claude session offered after
+he asked whether the `<stem>-update.md` rule reinvents git, that an update file is live, as D12
+says: there is one per finished document, kept true for as long as that document exists; later
+documents cite its entries by heading, never by line number; and no `-update-N.md` is ever created.
+He decided at the same time that when an update file is created, one line pointing to it is
+inserted directly under line 3 of the document it updates, the only edit a finished document ever
+gets, and that a lint checks, for every `doc/<stem>-update.md`, that `doc/<stem>.md` has that line.
+Both are for the
+remediation phase: D12 in `doc/dual-agent-review.md`; the section "A finished dated document is
+corrected in `<stem>-update.md`, never edited" in `CLAUDE.md`, `dot-claude/user-wide-CLAUDE.md` and
+`dot-Codex/user-wide-AGENTS.md`; and the docstring section "THE `State:` LINE ON doc/*-update.md" in
+`py/repo_util/check_repo_standards.py` are to say so, and each finished document that already has
+an update file, 22 of them at `1887188f`, gets its line. Re-establish: `git grep -n "finished and dated" bca64824 --
 py/repo_util/check_repo_standards.py`; `git grep -c "^Recorded by" bca64824 --
 doc/review-findings-2026-09-10-update.md`.
 
