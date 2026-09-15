@@ -30,13 +30,15 @@ Seven independent steps, in order:
    a decision or a pending item, and promote anything that is -- to an issue,
    to ``doc/``, or into the docstring of the code it explains.
    ``grep -rn '\.novc' py/ doc/`` finds the citations worth honouring.
-2. Remove finished agent worktrees under ``.claude/worktrees/`` and the merged
+2. Remove finished Claude worktrees under ``.claude/worktrees/`` and the merged
    ``claude/*`` branches they leave behind
    (``repo_util.git_worktree_cleanup``). Unlike step 1 this one spares
    anything it could destroy: a worktree with any uncommitted change, any
    commit not yet in the default branch, or any gitignored content (the class
    of file step 1 wipes on purpose and this step must not wipe by accident --
-   ``git worktree remove`` alone would) is kept and reported, never forced.
+   ``git worktree remove`` alone would) is kept and reported, never forced. Codex
+   worktrees are outside this step and use the separate preflighted retirement
+   action in ``py/main_repo_util.py``.
    This step is a repo-maintenance STANDARD, not one repo's quirk -- see
    ``repo_util/check_repo_standards.py``'s ``worktree_hygiene`` check, which
    measures every repo against it, and which this repo did not itself satisfy
@@ -99,7 +101,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-worktrees",
         action="store_true",
-        help="don't remove finished agent worktrees and their merged branches",
+        help="don't remove finished Claude worktrees and their merged branches",
     )
     parser.add_argument(
         "--skip-user-config-check",

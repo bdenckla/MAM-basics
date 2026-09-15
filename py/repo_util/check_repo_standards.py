@@ -61,8 +61,8 @@ does not list a source clone.
 
 The worktree-cleanup standard
 -----------------------------
-EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
-BRANCHES THEY LEAVE BEHIND. An agent session run in isolation creates a worktree
+EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED CLAUDE WORKTREES AND THE
+BRANCHES THEY LEAVE BEHIND. A Claude session run in isolation creates a worktree
 plus, usually, a `claude/<name>` branch, and cleans up neither when it ends.
 Both therefore accumulate silently: the first scan to include this check found
 wlc-utils holding two orphaned worktrees and three orphaned branches, every one
@@ -87,6 +87,11 @@ use by Claude Code's own session records, or currently running the code;
 restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
 never a candidate; and remove worktrees before branches, since a branch held by
 a worktree cannot be deleted while that worktree exists.
+
+This standard is Claude-owned. The reference implementation also requires a
+``.claude/worktrees/`` path or ``claude/*`` branch before removal. Codex
+worktrees remain visible in the linked-worktree count but use the separate,
+explicitly preflighted retirement action in ``py/main_repo_util.py``.
 
 Three of those spare a worktree another session is using right now, which git
 gives no way to detect outright. `git worktree lock` is the sanctioned,
@@ -529,7 +534,7 @@ def _check_maintenance_script(repo_dir: Path, *, has_tracked_py: bool) -> dict:
 
 
 def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
-    """Does the maintenance script clean up agent worktrees, and is anything left?
+    """Does the maintenance script clean Claude worktrees, and is anything left?
 
     See "The worktree-cleanup standard" in this module's docstring. `script_covers`
     is a text scan of whatever `maintenance_script` found, so it answers "has this

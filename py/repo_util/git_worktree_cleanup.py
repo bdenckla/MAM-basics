@@ -1,4 +1,4 @@
-"""Remove finished agent git worktrees and the branches they left behind.
+"""Remove finished Claude git worktrees and the branches they left behind.
 
 REPO-AGNOSTIC BY DESIGN, and filed here rather than in a ``wlc_``-prefixed package
 for that reason.  It was written in wlc-utils and moved here with the rest of that
@@ -7,7 +7,13 @@ it the reference implementation for the cross-repo ``worktree_hygiene`` standard
 a repo-specific-looking home would have contradicted the point.  It takes the repo to
 clean as an argument and imports nothing from either repo.
 
-Agent sessions that run in isolation create a worktree plus, usually, a matching
+CLAUDE OWNERSHIP IS EXPLICIT.  A removal candidate must either live below the main
+checkout's ``.claude/worktrees/`` directory or have a ``claude/*`` branch.  A Codex
+worktree under ``~/.codex/worktrees/`` is reported and left for the separate,
+preflighted Codex retirement flow in ``repo_util.codex_worktree_retirement``.  This
+module never treats an idle timestamp as permission to cross that ownership boundary.
+
+Claude sessions that run in isolation create a worktree plus, usually, a matching
 ``claude/<name>`` branch, and clean up neither when the session ends, so both
 accumulate: at the time this module was written wlc-utils carried two orphaned
 worktrees and three orphaned branches, every one of them clean and already
@@ -782,6 +788,15 @@ def _path_key(path: Path | str) -> str:
     return os.path.normcase(os.path.abspath(path))
 
 
+def _is_claude_owned_worktree(worktree: _Worktree, main_worktree: Path) -> bool:
+    """Whether the path or branch places this worktree in Claude's namespace."""
+    if worktree.branch is not None and worktree.branch.startswith(_AGENT_BRANCH_PREFIX):
+        return True
+    parent = _path_key(main_worktree / _WORKTREE_PARENT)
+    path = _path_key(worktree.path)
+    return path.startswith(parent + os.sep)
+
+
 def _read_session_records() -> _SessionRecords:
     """Read both of Claude Code's records, tolerating either being absent.
 
@@ -856,6 +871,20 @@ def is_linked_worktree(repo_dir: Path, path: Path) -> bool:
     except (RuntimeError, OSError):
         return False
     return any(_path_key(worktree.path) == key for worktree in worktrees[1:])
+
+
+def is_claude_owned_worktree(repo_dir: Path, path: Path) -> bool:
+    """Whether ``path`` is a linked worktree in this cleaner's Claude scope."""
+    key = _path_key(path)
+    try:
+        worktrees = _list_worktrees(repo_dir)
+    except (RuntimeError, OSError):
+        return False
+    return any(
+        _path_key(worktree.path) == key
+        and _is_claude_owned_worktree(worktree, worktrees[0].path)
+        for worktree in worktrees[1:]
+    )
 
 
 def _holds_no_file(directory: Path) -> bool:
@@ -980,7 +1009,7 @@ def _sweep_empty_dirs(checkout_root: Path, report: CleanupReport) -> None:
 def clean_worktrees(
     repo_dir: Path, *, sessions_ended: Collection[Path] = ()
 ) -> CleanupReport:
-    """Prune, remove finished agent worktrees, then delete their merged branches.
+    """Prune, remove finished Claude worktrees, then delete merged Claude branches.
 
     ``sessions_ended`` names worktrees whose sessions the caller has seen end:
     for those alone the activity check is skipped, and every other condition
@@ -1010,6 +1039,11 @@ def clean_worktrees(
         name = str(worktree.path)
         if self_path is not None and worktree.path.resolve() == self_path:
             report.kept_worktrees.append((name, "is the running checkout"))
+            continue
+        if not _is_claude_owned_worktree(worktree, worktrees[0].path):
+            report.kept_worktrees.append(
+                (name, "not Claude-owned; requires owner-specific cleanup")
+            )
             continue
         if not worktree.path.is_dir():
             report.kept_worktrees.append((name, "directory is gone but prune kept it"))

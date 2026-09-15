@@ -360,8 +360,9 @@ NOT_IN_MEGA: dict[str, str] = {
         " doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_repo_util.py": (
-        "Repository utilities, seven actions; six serve cross-repository maintenance and"
-        " --sync-user-config serves MAM-basics' user-level configuration."
+        "Repository utilities, nine actions; six serve cross-repository maintenance,"
+        " --sync-user-config serves MAM-basics' user-level configuration, and two"
+        " preflight or execute an explicitly targeted Codex worktree retirement."
         " --commit-across-repos is barred from the sweep.  Recorded in"
         " doc/PLAN-repo-maintenance-across-GitRepos.md and"
         " doc/mega-coverage-2026-09-10-update.md."
