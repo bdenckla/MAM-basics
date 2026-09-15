@@ -957,28 +957,35 @@ review, that `.codex`, the spelling on disk, is to stand everywhere, a change fo
 phase. Re-establish: `git grep -n -E "\.[Cc]odex/" bca64824 -- CLAUDE.md dot-claude dot-Codex
 doc/dual-agent-review.md`.
 
-8.8. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-google-sheet.md` fails four items of the
-fresh-session checklist and carries a stale expectation.** No decision in it is dated or attributed
-— the retirement and the freeze date "the Sheet as frozen on September 12, 2026" name no decider;
-lines 28–29 tell the executor to read "the `hebrew-prose`, `spreadsheets`, and `computer-use`
-skills", of which only `hebrew-prose` is tracked in this repository's skill homes, without saying
-where the other two live; the stage-count figure carries no re-establishing command; it does not say
-whether another session may be live, one of the preconditions the checklist asks a plan to state;
-and lines 45–46 expect 57 mega stages after the retirement where `bca64824`'s 55 minus `parse-go`
-and `diff-wsgo` is 53 (its "if the planning snapshot's 59 stages have not otherwise changed" hedge
-is right, and they have). It has no authorship line either, though no checklist item asks for one.
-It also does not record that the last auto-edit application left the Sheet level with Wikisource —
-both `out/` files are `[]` and `wsgo` reproduces them — which is the fact that makes freezing the
-Sheet harmless, and which the plan's deletions remove the tool for re-establishing. Re-establish:
-`C_06_mega_step_counts.py`; `git ls-files -- "dot-Codex/skills/*/SKILL.md"
-"dot-claude/skills/*/SKILL.md"`.
+8.8. **Raised, unfixed at `bca64824`; Ben's decision on its remediation is at the end of this part:
+`doc/PLAN-retire-google-sheet.md` fails four items of the fresh-session checklist and carries a
+stale expectation.** No decision in it is dated or attributed — the retirement and the freeze date
+"the Sheet as frozen on September 12, 2026" name no decider; lines 28–29 tell the executor to read
+"the `hebrew-prose`, `spreadsheets`, and `computer-use` skills", of which only `hebrew-prose` is
+tracked in this repository's skill homes, without saying where the other two live; the stage-count
+figure carries no re-establishing command; it does not say whether another session may be live, one
+of the preconditions the checklist asks a plan to state; and lines 45–46 expect 57 mega stages after
+the retirement where `bca64824`'s 55 minus `parse-go` and `diff-wsgo` is 53 (its "if the planning
+snapshot's 59 stages have not otherwise changed" hedge is right, and they have). It has no
+authorship line either, though no checklist item asks for one. It also does not record that the last
+auto-edit application left the Sheet level with Wikisource — both `out/` files are `[]` and `wsgo`
+reproduces them — which is the fact that makes freezing the Sheet harmless, and which the plan's
+deletions remove the tool for re-establishing. Ben decided on 2026-09-15, during his walk-through of
+this review, that in the remediation phase this plan and the plan of 8.9 are to be made
+agent-neutral, their Codex-specific lines, such as the `codex-worktree-<worktree-id>` branch naming,
+replaced so that either agent can execute either plan. Re-establish: `C_06_mega_step_counts.py`;
+`git ls-files -- "dot-Codex/skills/*/SKILL.md" "dot-claude/skills/*/SKILL.md"`.
 
-8.9. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-codex-index-image-work.md` dates its seven
-decisions and attributes none of them**, listing them in the imperative under "Decisions recorded on
-2026-09-12" with only the 2026-09-13 amendments naming Ben, and its line 60 sends the executor to
-`C:/Users/BenDe/.codex/AGENTS.md`, which a Claude executor does not load, without saying which agent
-the plan is written for. Every file count and byte count in it re-measures; its test counts, taken
-at its planning snapshot `06874577`, were not re-run.
+8.9. **Raised, unfixed at `bca64824`; Ben's decision on its remediation is at the end of this part:
+`doc/PLAN-retire-codex-index-image-work.md` dates its seven decisions and attributes none of them**,
+listing them in the imperative under "Decisions recorded on 2026-09-12" with only the 2026-09-13
+amendments naming Ben, and its line 60 sends the executor to `C:/Users/BenDe/.codex/AGENTS.md`,
+which a Claude executor does not load, without saying which agent the plan is written for. Every
+file count and byte count in it re-measures; its test counts, taken at its planning snapshot
+`06874577`, were not re-run. Ben decided on 2026-09-15, during his walk-through of this review, that
+in the remediation phase this plan and the plan of 8.8 are to be made agent-neutral, their
+Codex-specific lines, such as line 60's pointer to Codex's instruction file, replaced so that either
+agent can execute either plan.
 
 8.10. **Raised, low; Ben's decision on its remediation is at the end of this part: the
 `doc/periodic-review.md` split left the close-out procedure stated in both files, and hands the
