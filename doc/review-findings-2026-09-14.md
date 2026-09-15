@@ -245,9 +245,6 @@ the evidence, and "What verifies sound" carries what was checked and found right
   concurrency setting intends — 36 succeeded and the one for `a8e4790e` (created 15:38:21Z) was
   cancelled by the run for `1d2ddc3d` 34 seconds behind it; the latest, for `bca64824`, succeeded
   at 18:49Z.
-- Issues: fourteen touched in the window — eleven opened (#271 to #281), #266 and #267 closed on
-  2026-09-13 with agent-written comments saying why, #275 opened and closed the same way, and #270
-  commented on by Ben; 109 open, from 101 at the last review.
 - The user-level homes: `--sync-user-config --check` from the primary clone reports nine clean
   destinations sourced from `refs/remotes/origin/main@bca64824`, and an independent hashing of the
   17 live files those destinations hold agrees, every one byte-identical to its blob (stream D).
@@ -404,7 +401,7 @@ declaration has 43 (`scopes_check.txt`).
 Findings 1 to 4 are Ben's four areas: finding 1 his fourth, 2 his second, 3 his third and 4 his
 first; 5 is a rewrite of product files made and undone between the window's two anchors, out of
 scope as a problem, and 6 is a lint failure that repository maintenance reports; 7 to 11 are the
-record, the instruction files, the issues, the code's guards and the prose. Each lead says its
+record, the instruction files, an open issue, the code's guards and the prose. Each lead says its
 disposition at `bca64824`.
 
 ### 1. `CLAUDE.md`'s tier-3 counts went stale the day they were written, and no rule covers a change to what a hand-run program reads
@@ -1028,17 +1025,30 @@ update file's statement that it is a finished dated report, is for the remediati
 Re-establish: `git log --format="%h %ad %s" --date=iso-local 0354b6cc..bca64824 --
 doc/user-level-config-in-cloud-sessions.md`.
 
-### 9. Two pointer issues are unsigned and one open issue names a directory the window removed
+### 9. Open issue #278 names a directory the window removed
 
-Stream C.
-
-9.1. **Raised, unfixed: issues #279 and #281 do not say whether they are agent-written.** Each body
-is one line naming its plan. Every other issue opened or commented on in the window says so in its
-first or last line. Re-establish: `C_01_fetch_issues.py`.
-
-9.2. **Raised, unfixed: #278's body names `leningrad/page-snips/`, which `a8e4790e` removed the
-day after the issue was opened.** The example still holds under the two new folders. The issue is
-open, and an open issue's body is corrected. Everything else in #278 re-measures.
+**Raised, unfixed on GitHub, with its cause in the window's diff; Ben's decision on its remediation
+is at the end of this finding.** Stream C. The body of MAM-basics issue #278, in its section "Two
+things to settle first", says "Some output directories hold hand-authored companions —
+`leningrad/page-snips/` has a `README.md` beside the crops", and `a8e4790e` removed that directory
+the day after the issue was opened, moving its crops to `doc/meteg-after-silluq-snips/` and
+`doc/lam-2-3-akhla-snips/`. The stale text is on GitHub rather than in a file, but its cause is in
+the window's diff, and a file the window added sends readers to #278's body:
+`doc/mega-pipeline-review-findings-public-2026-09-01-update.md`, added in `a9462b61`,
+cross-references #278 and says "#278's body carries the other direction." The example does not show
+what #278 needs, under the old path or a new one: `leningrad/page-snips/` held only a README and
+evidence crops of the Leningrad Codex, "three crops Ben made" in `CLAUDE.md`'s words, not a
+program's output, and the two new folders are the same kind of directory. #278 is open, and
+correcting a stale fact in an open issue's body was already the practice in the window, where a
+Claude session corrected #276's body on 2026-09-13 at Ben's direction; no tracked file stated it
+until `05bdb5ed` wrote it into the `github-issues` skill on 2026-09-14, after this review was
+written. The files and functions #278 names exist as it says, `3b1adf45` and `20f18020` exist with
+the subjects it paraphrases, and its figures for the atomicity findings re-measure at `bca64824`;
+its other claims, such as the 24 deletions it says a clear-at-start would have shown, were not
+re-derived. Ben decided on 2026-09-15, during his walk-through of this review, that in the
+remediation phase #278's body is to be corrected by dropping the example or replacing it with a
+directory that a program writes. Re-establish: `C_10_issue_facts.py`; `gh issue view 278 --repo
+bdenckla/MAM-basics --json body`.
 
 ### 10. Ten guards, invariants and pointers in the window's code, none a defect in shipped data
 
@@ -1172,8 +1182,8 @@ by their READMEs, whose commands for regenerating them fail (finding 2.1). The 2
 update file declares that review's remediation complete, with every finding disposed of and two ends
 left open: finding 18.1's archived-log provenance, unverified, and finding 21.8's `.pytest_cache` in
 the primary clone, referred to repository maintenance; that review's line 3 and dispositions table
-still say otherwise (this review's finding 7.1). Issues #271 to #274, #276 and #278 are open and
-assigned to no plan. `main` and `origin/main` stood at `bca64824` when this file was committed.
+still say otherwise (this review's finding 7.1). `main` and `origin/main` stood at `bca64824` when
+this file was committed.
 
 ## What this review did not check
 
@@ -1217,8 +1227,8 @@ area itself; finding 4.1 is stream E's, and the main session's check found the s
 counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
 main session measured it; finding 2.1 was found by running the two generators after stream B noted
 that they read the incremental folders directly; findings 6, 7.6 and 11 are stream E's, the rest of
-7 stream A's, 8 and 9 streams C's and D's, with stream E also finding 8.7's `CLAUDE.md` spellings
-and 8.10's census glob, 10 streams B's and D's, each spot-checked by the main
+7 stream A's, 8 streams C's and D's, with stream E also finding 8.7's `CLAUDE.md` spellings and
+8.10's census glob, 9 stream C's, 10 streams B's and D's, each spot-checked by the main
 session where a figure could be re-run cheaply (the stale step count by all six readings, the
 nonexistent blob, the two replaced blobs, the dead link, the ruff errors, the "its step 7" sentence,
 the Codex file's UXLC-utils citations, the 13-file glob). The census, and the tree-health section's
