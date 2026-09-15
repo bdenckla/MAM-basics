@@ -378,10 +378,13 @@ true of the record when written, and the main session's exercise above is the me
 for.
 
 **Prose, mark order, links and formatters (stream E).** The `hebrew-prose` skill was loaded before
-reading. The two new snips READMEs state every manuscript claim as Ben's reading of a named image,
-with the transcription named separately where one is cited, the one inherited exception being
-finding 11.1; the six `doc/meteg-after-silluq-*-update.md` files use "has", "the LC", "the Aleppo
-Codex", "the Simanim Tanakh", "pataḥ", "ḥataf", "deḥi" and "meteg" as the skill requires, every bare
+reading. The lines the window added to the two new snips READMEs state every manuscript claim as
+Ben's reading of a named image, with the transcription named separately where one is cited, the one
+exception being finding 11.1 (`doc/lam-2-3-akhla-snips/README.md:171–172` also give the Leningrad
+Codex's three marks with no source named, but are unchanged lines of the rename from
+`doc/ms-snips/README.md`); the six `doc/meteg-after-silluq-*-update.md` files use "has", "the LC",
+"the Aleppo Codex", "the Simanim Tanakh", "pataḥ", "ḥataf", "deḥi" and "meteg" as the skill
+requires, every bare
 "L", "A", "ga'ya", "hataf", "patax" and "dexi" in them being a quotation of the passage corrected,
 except the two passages of finding 7.6; the `doc/PLAN-silluq-before-gaya-template.md` hunk's blob,
 record and group figures re-measure; `aedac688`'s eleven meteg edits account for every moved figure
@@ -1126,7 +1129,7 @@ dated records" are five lines in three files** (`doc/PLAN-evacuate-the-rest-of-t
 `doc/PLAN-remediate-review-findings-2026-09-07.md:660–661`,
 `doc/codex-review-findings-2026-09-10.md:159–160`), all rightly left as written.
 
-### 11. Six prose defects against the `hebrew-prose` skill and the prose rules, one of them inherited
+### 11. Six prose defects against the `hebrew-prose` skill, the prose rules and plain usage; 11.1 and three of 11.5's slips predate the window
 
 Stream E, with the skill loaded.
 
@@ -1139,13 +1142,17 @@ source is disclosed, but the sentence's subject is the Leningrad Codex's verse a
 is about the manuscript page, which the rule "A transcription is evidence about the transcription,
 never about the manuscript" forbids; it should say that UXLC 3.9 records the three marks and stop.
 `a8e4790e` moved the paragraph byte for byte from `leningrad/page-snips/README.md`, so the window
-carried it unreviewed rather than composing it. Re-establish: `git show
+carried it over rather than composing it. Re-establish: `git show
 0354b6cc:leningrad/page-snips/README.md`.
 
 11.2. **Unfixed at `bca64824`: `doc/mega-timing-2026-09-11.md:248` says "the WLC 4.22 prose
-books".** The skill: "Prose verses and poetic verses, never prose or poetic BOOKS"; the corpus name
-is "the 21 books". The document is a finished dated report, so the correction belongs in a new
-`doc/mega-timing-2026-09-11-update.md`, which does not exist.
+books".** The skill: "Prose verses and poetic verses, never prose or poetic BOOKS". "The 21 books"
+would be wrong as well: the step scans the verses that `py/accgram/prose_filter.py`'s
+`should_keep_line` accepts (`py/accgram/prose_run.py:255`), which include Job's
+prose-cantillated verses and exclude Genesis 35:22 and the Decalogue verses with dual
+cantillation, so the passage wants "the WLC 4.22 prose verses". The document is a finished dated
+report, so the correction belongs in a new `doc/mega-timing-2026-09-11-update.md`, which does not
+exist. Re-establish: `git show bca64824:py/accgram/prose_filter.py`.
 
 11.3. **Unfixed at `bca64824`, low: `doc/meteg-after-silluq-snips/README.md:7` promises "Each
 section says whose crop it is and which image it was read from", and its two Leningrad Codex
@@ -1156,16 +1163,29 @@ The three other sections keep the promise.
 
 11.4. **Unfixed at `bca64824`, low: `py/versification_and_cantillation/strands.py:5`, a line
 `2239cbad` rewrote, says "The Decalogue verses carry the מ:כפול (dual-cantillation) template".**
-"have" is the word; the same rewrite rightly removed the "upper/lower" glosses.
+"carry" is one of the verbs the skill's "Just say 'has'" rule retires, so "have" is the word;
+the same rewrite rightly removed the "upper/lower" glosses.
 
-11.5. **Raised, low, in finished documents: three vocabulary slips the update files would take.**
-`doc/review-findings-2026-09-10.md:379` and `:388` say "the plus" for `MAM-parsed/plus/`;
-`doc/meteg-after-silluq-snips/README.md` says "the verse-final word" at three lines and "the
-verse-final atom" at one for the same kind of thing; `doc/lam-2-3-akhla-snips/README.md:66` and
-`:104` spell the edition "Mikraot Gedolot Haketer" where the skill's table has "Mikra'ot Gedolot
-ha-Keter", line 62 has "shewa" where the other README has "sheva", and lines 65–66 read "MAM has
-no meteg there, as does Mikraot Gedolot Haketer", where "nor does" is meant. All three README
-sentences were moved verbatim from the pre-window READMEs.
+11.5. **Four wording slips, unfixed at `bca64824`, low, in the two live snips READMEs.**
+
+1. `doc/lam-2-3-akhla-snips/README.md:66` and `:105` spell the edition "Mikraot Gedolot Haketer",
+   where the skill's table has "Mikra'ot Gedolot ha-Keter".
+2. `doc/lam-2-3-akhla-snips/README.md:62` has "shewa", where
+   `doc/meteg-after-silluq-snips/README.md` has "sheva" at lines 127 and 161.
+3. `doc/lam-2-3-akhla-snips/README.md:65–66` reads "MAM has no meteg there, as does Mikraot
+   Gedolot Haketer", where "nor does" is meant.
+4. `doc/meteg-after-silluq-snips/README.md` says "the verse-final word" at lines 51, 68, 96 and
+   118 and "the verse-final atom" at line 151, for the same kind of thing.
+
+A README describes the present, so all four are corrected in place. Items 1 to 3 predate the
+window: `a8e4790e` moved those sentences verbatim from `leningrad/page-snips/README.md:29` and
+`:32–33` and `cam1753/page-snips/README.md:30–31`. In item 4 the four "word" lines were moved
+verbatim from the Aleppo and Leningrad page-snips READMEs, and line 151 was written in the window,
+in `f3a11572`. `doc/lam-2-3-akhla-snips/README.md:148` has a third "Mikraot Gedolot Haketer" and
+`:167` a second "shewa", both unchanged lines of the rename from `doc/ms-snips/README.md` and so
+outside the diff. Re-establish: `git grep -n -e verse-final -e sheva bca64824 --
+doc/meteg-after-silluq-snips/README.md`; `git show 0354b6cc:leningrad/page-snips/README.md`; `git
+show 0354b6cc:cam1753/page-snips/README.md`.
 
 11.6. **Unfixed at `bca64824`, trivial: `README.md:87` reads "Run tests through the unified
 harness (on MS-Windows:):"**, a doubled colon inside the parenthesis, from the window's rewrite of
