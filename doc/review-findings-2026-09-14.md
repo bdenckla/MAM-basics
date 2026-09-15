@@ -788,32 +788,40 @@ root ("Found 2 errors"), and for `0354b6cc` by running the same command at the r
 Stream A, with one item from stream E. Six parts; none touches a product. Apart from the labels 7.1
 to 7.6 of its six parts, every finding number in finding 7 names a finding of the 2026-09-10 review.
 
-7.1. **Raised, not fixed, because it needs Ben's decision: `doc/review-findings-2026-09-10.md`'s
-line 3 and its dispositions table were left stale on purpose, and no rule declares what replaces
-them, a current State given in a sibling update file, which eight more finished documents also
-have.** Line 3, last written by `c8de6abc` on 2026-09-12, says that review's findings 7 to 11, 18
-and 21 and the rest of 13, 16, 19 and 20 are "not acted on", and the dispositions section's closing
-paragraph says the same; the update file's close-out entry ("## Close-out: every finding and
-inherited integration item has a disposition") says "This entry supersedes the initial review's
-line-3 statement … D12 leaves that finished dated review unchanged". Three rules of record place
-remediation state in the review file itself: D10 rule 3 in `doc/dual-agent-review.md` and
-`py/repo_util/check_repo_standards.py`'s docstring put it on line 3, and `doc/periodic-review.md`'s
-close-out step 3, written after D12, puts the dispositions in the review's own `## Dispositions
-after remediation` section while "the rest of the file is left as written". The round kept line 3
-and the table current through its 2026-09-12 batch and recorded every later disposition in the
-update file; a reader of line 3 now gets the wrong answer. The same arrangement covers eight more
-finished documents at `bca64824`, each with a sibling entry that gives or supersedes its State:
-three plans have no `State:` line at all (`doc/PLAN-efficient-wikisource-downloads.md`,
-`doc/PLAN-wikisource-derived-mam-products.md`, `doc/PLAN-worktree-file-consolidation.md`); three
-have a line 3 outside the declared vocabulary (`doc/PLAN-close-out-review-2026-09-08.md`,
-`doc/PLAN-evacuate-five-MAM-products.md`, `doc/PLAN-evacuate-public-repos-programme.md`);
-`doc/review-findings-2026-09-08.md` reads "remediated 2026-09-10"; and
-`doc/blind-dive-into-template-params.md` reads "five open findings.", which its sibling entry calls
-overtaken. No rule tells a reader of line 3, human or mechanical, to look for such an entry. What
-needs deciding is whether line 3 and the dispositions table are an explicit exception to D12, as
-`doc/periodic-review.md`'s step 3 already treats the table, or whether D10 rule 3 and the docstring
-are to declare the sibling arrangement. Re-establish: `git grep -n "^State:" bca64824 --
-"doc/*.md"`; `A_05`.
+7.1. **Raised, not fixed; Ben's decision on its remediation is at the end of this part:
+`doc/review-findings-2026-09-10.md`'s line 3 and its dispositions table were left stale on purpose,
+and no rule declares what replaces them, a current State given in a sibling update file, which eight
+more finished documents also have.** Line 3, last written by `c8de6abc` on 2026-09-12, says that
+review's findings 7 to 11, 18 and 21 and the rest of 13, 16, 19 and 20 are "not acted on", and the
+dispositions section's closing paragraph says the same; the update file's close-out entry ("##
+Close-out: every finding and inherited integration item has a disposition") says "This entry
+supersedes the initial review's line-3 statement … D12 leaves that finished dated review unchanged".
+Three rules of record place remediation state in the review file itself: D10 rule 3 in
+`doc/dual-agent-review.md` and `py/repo_util/check_repo_standards.py`'s docstring put it on line 3,
+and `doc/periodic-review.md`'s close-out step 3, written after D12, puts the dispositions in the
+review's own `## Dispositions after remediation` section while "the rest of the file is left as
+written". The round kept line 3 and the table current through its 2026-09-12 batch and recorded
+every later disposition in the update file; a reader of line 3 now gets the wrong answer. The same
+arrangement covers eight more finished documents at `bca64824`, each with a sibling entry that gives
+or supersedes its State: three plans have no `State:` line at all
+(`doc/PLAN-efficient-wikisource-downloads.md`, `doc/PLAN-wikisource-derived-mam-products.md`,
+`doc/PLAN-worktree-file-consolidation.md`); three have a line 3 outside the declared vocabulary
+(`doc/PLAN-close-out-review-2026-09-08.md`, `doc/PLAN-evacuate-five-MAM-products.md`,
+`doc/PLAN-evacuate-public-repos-programme.md`); `doc/review-findings-2026-09-08.md` reads
+"remediated 2026-09-10"; and `doc/blind-dive-into-template-params.md` reads "five open findings.",
+which its sibling entry calls overtaken. No rule tells a reader of line 3, human or mechanical, to
+look for such an entry. Ben decided on 2026-09-15, during his walk-through of this review, that the
+sibling arrangement is to become the written rule in the remediation phase, a timing he left open
+("Either is fine"): a finished document's line 3 stays as written, and a State it takes on later,
+and a review's dispositions, go in its update file, which supersedes line 3, so that a review gets
+no `## Dispositions after remediation` section; `doc/dual-agent-review.md` and
+`doc/periodic-review.md` are to say so, edited in place because they describe the current procedure.
+His words on the remediation: "don't change any existing plan documents, just make whatever updates
+you suggest to an -update.md (or -update-N.md if -update.md is taken already, and N is sequentially
+the next unused integer)"; and, asked whether the procedure should say that a finished document's
+later status goes in its update file: "Yes, the policy of -update.md files should be documented in
+the two files you suggest", the two files being those two documents. Re-establish: `git grep -n
+"^State:" bca64824 -- "doc/*.md"`; `A_05`.
 
 7.2. **Unfixed at `bca64824`: the update file's entry for the 2026-09-10 review's finding 7.2 cites
 a blob that is not in the repository.** `doc/review-findings-2026-09-10-update.md:1414`: "The screen
