@@ -63,35 +63,6 @@ clones are private and fall to the private series: MAM-private and hbofonts, nei
 github-misc has no clone here, and the series' one standing exception, its instruction-file
 byte-compare, is spent as `doc/periodic-review.md` records.
 
-Of the 203 commits, 201 are authored Ben Denckla and **2 are authored `Claude
-<noreply@anthropic.com>`** — `6ce5ea51` and `fa517040`, a cloud session's two commits of 2026-09-11
-morning, each carrying a `Claude-Session:` trailer, merged by `478bdae6` from
-`origin/claude/loving-ptolemy-1i4seh`, which still exists on the remote (finding 12.1). The
-trailers are spelled four ways: `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` 93,
-`Co-Authored-By: Codex <noreply@openai.com>` 75, `Co-Authored-By: Codex <codex@openai.com>` 8, and
-`Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` 2. 25 commits carry no trailer: 22 are
-`Merge branch 'main' into <branch>` merges, and three are not merges — `a7586b4b` and `44479798`,
-the Google Sheet refresh pair of 2026-09-10 23:13 and 23:19, and `11ee6879`, "Document Google
-Sheet retirement plan" (finding 12.2). 27 commits are merges, 176 are not, and 100 sit on `main`'s
-first-parent line. The reflog of `main` in the primary clone shows 22 fast-forwards in the window,
-onto 17 named local branches and the cloud session's merge commit `478bdae6` — the branches being
-`claude/mega-integration-check`, `claude/job-4-12-meteg-silluq-f860cb`,
-`claude/remove-near-aleppo-census`, `claude/peaceful-haslett-91c6f8`, `claude/stoic-jennings-15ce11`,
-`claude/quirky-keller-b4fa8b`, `claude/fix-mpplus-isaiah-24-18-fd19b7`,
-`claude/infallible-liskov-74da72`, `fix-review-2026-09-10-finding-6`,
-`fix-review-2026-09-10-finding-6-update`, `fix-review-2026-09-10-batch` (twice),
-`codex-worktree-36c2`, `user-config-update-rule-2026-09-12`,
-`claude-md-terminology-and-update-state-2026-09-12`, `claude/mega-speedup-estimate-3750c4` (three
-times), `claude/periodic-review-split` and `dual-agent-review-2026-09-10` (twice) — and 14 commits
-made directly on `main` in the primary clone: the five of 2026-09-10 night (`e7a1736b`,
-`a7586b4b`, `44479798`, `9dd066ad`, `e84e2c70`), `b31ca87f`, `11ee6879` and `81627bc6` on
-2026-09-12, and the six of the README session and its neighbours on 2026-09-13 (`d044ee7d`,
-`7b64043b`, `67a1f9b3`, `a8e4790e`, `1d2ddc3d`, `eb9adf13`). Fourteen of the 27 merges hold a file
-that differs from both parents (`git diff-tree --cc --name-only <merge>`), `CLAUDE.md` in nine and
-`py/main_0_mega.py` in two, a count that includes files git merged cleanly; eight carry a resolution
-hunk that matches neither parent (`git diff-tree --cc -p <merge>`), `CLAUDE.md` in three of them and
-`py/product_scopes.py` in `2a4b010c` (finding 1.1).
-
 The window changed **673 paths** between its endpoints — 43 added, 286 deleted, 265 modified, 79
 that `git diff -M` pairs as renames — taking the tree from 4,935 to **4,692** tracked files, 1,088
 to **1,051** `.py`, `gh-pages/` 1,859 to 1,859 files (579 HTML both times), `doc/*.md` 79 to
@@ -280,13 +251,6 @@ the evidence, and "What verifies sound" carries what was checked and found right
 - The user-level homes: `--sync-user-config --check` from the primary clone reports nine clean
   destinations sourced from `refs/remotes/origin/main@bca64824`, and an independent hashing of the
   17 live files those destinations hold agrees, every one byte-identical to its blob (stream D).
-- Worktrees and branches at the start: `git worktree list` named five checkouts — the primary
-  clone, two Codex worktrees (`C:/Users/BenDe/.codex/worktrees/36c2/MAM-basics` on
-  `codex-worktree-36c2` at `2a75c1e2`, `…/699f/MAM-basics` detached at `132f2f3e`), the 2026-09-10
-  round's shared worktree at `bca64824`, and a fifth nested inside that one's `.novc/`,
-  `.novc/fix-review-filenames` on `fix-review-2026-09-10-batch` at `f0795231` — all four clean,
-  every head an ancestor of `main`, all six local branches besides `main` merged, and both remote
-  `claude/*` branches merged (finding 12.1).
 
 ## What verifies sound, stream by stream
 
@@ -412,8 +376,8 @@ against the code. One stream D statement is superseded rather than rejected: its
 hook rewrite "has been exercised nowhere" was true of the record when written, and the main
 session's exercise above is the measurement it asked for.
 
-**Prose, mark order, links, formatters and commit hygiene (stream E).** The `hebrew-prose` skill
-was loaded before reading. The two new snips READMEs state every manuscript claim as Ben's reading
+**Prose, mark order, links and formatters (stream E).** The `hebrew-prose` skill was loaded before
+reading. The two new snips READMEs state every manuscript claim as Ben's reading
 of a named image, with the transcription named separately where one is cited, the one inherited
 exception being finding 11.1; the six `doc/meteg-after-silluq-*-update.md` files use "has", "the
 LC", "the Aleppo Codex", "the Simanim Tanakh", "pataḥ", "ḥataf", "deḥi" and "meteg" as the skill
@@ -427,16 +391,15 @@ re-measure except for findings 2.3 and 1.1; a banned-term scan over the added li
 "proclitic", "word-division", bare "the Keter edition", or "the latter" used as a referent, and
 every bare "Simanim" a quotation or the publisher sense. The five named new documents, and the
 four larger ones read as well, keep every announced count, define every coined name, and lead
-every finding with its disposition; `doc/mega-timing-2026-09-11.md`'s tables foot. The trailer
-census confirms the main session's four figures exactly, and `git branch -a --no-merged main`
-lists no branch. Stream E's own figure for the tier-3 declaration, 38, is a miscount that omitted
-the five `py/subcommands/` entries; the declaration has 43 (`scopes_check.txt`).
+every finding with its disposition; `doc/mega-timing-2026-09-11.md`'s tables foot. Stream E's own
+figure for the tier-3 declaration, 38, is a miscount that omitted the five `py/subcommands/`
+entries; the declaration has 43 (`scopes_check.txt`).
 
 ## Findings
 
 Findings 1 to 4 are Ben's four areas: finding 1 his fourth, 2 his second, 3 his third and 4 his
-first; 5 and 6 are the two other things that touch a product or a routine run; 7 to 12 are the
-record, the instruction files, the issues, the code's guards, the prose and the hygiene. Each lead
+first; 5 and 6 are the two other things that touch a product or a routine run; 7 to 11 are the
+record, the instruction files, the issues, the code's guards and the prose. Each lead
 says its disposition at `bca64824`.
 
 ### 1. `CLAUDE.md`'s tier-3 counts went stale the day they were written, and no rule covers a change to what a hand-run program reads
@@ -615,8 +578,7 @@ two reports are finished, in which case the new crop paths on the six changed li
 entries in the two sibling files, with the reports restored. Stream A's D12 census classifies the
 other in-window edits of pre-existing `doc/` files: the four finished plans and three other
 documents `aedac688` edited in place with dated notes at 11:11 on 2026-09-11 predate the decision by
-seven hours and were not reverted when the same-day edits `2bb94060` and `89c1d7cf` were; `3134f32b`
-(2026-09-12) removed one trailing blank line from the finished
+seven hours; `3134f32b` (2026-09-12) removed one trailing blank line from the finished
 `doc/meteg-after-silluq-screen-against-uxlc-and-wlc.md` in place, a breach by the letter and
 whitespace only, and edited `doc/user-level-config-in-cloud-sessions.md`, whose status is finding
 8.12; every other edit it classifies is to a live document. It leaves out two earlier edits of the
@@ -625,8 +587,7 @@ Job 4:12 report itself, which bear on whether that report is live: `f3a11572` an
 that day about the Second Rabbinic Bible and about two of his scans. Re-establish with `git show
 a8e4790e -- doc/meteg-after-silluq-job-4-12.md doc/meteg-after-silluq-psalms-72-15.md` and, per
 file, `git log --full-history --no-merges --format="%h %ad %s" --date=iso-local 0354b6cc..bca64824
--- <file>`; `A_02b_doc_perfile_log.txt`, made without `--full-history`, lists neither `89c1d7cf` nor
-`ffc82f60`, which reverted `89c1d7cf`.
+-- <file>`.
 
 3.2. **Unfixed at `bca64824`: three live records say the two reports are unchanged at blobs
 `a8e4790e` replaced.** `doc/meteg-after-silluq-job-4-12-update.md:43–44` gives blob `b8fc419f…`, and
@@ -771,10 +732,9 @@ semantic policy" and "An invalid representation does not select its replacement"
 instruction files; `63aaa6f3` (committed 2026-09-12 10:36) defined this repository's product tiers
 in `CLAUDE.md` and `py/product_scopes.py`; and `fb575b09` (committed the same minute) added "Two
 axes of risk" to both user-level instruction files. `2239cbad` ("Checkpoint the template-projection
-audit", authored 2026-09-11 11:34 and cherry-picked onto `6982dcf5` at 12:20, `Co-Authored-By: Codex
-<codex@openai.com>`) changed `MAM-parsed/plus/A1-Genesis.json`, `A2-Exodus.json`, `A3-Levit.json`,
-`A4-Numbers.json`, `A5-Deuter.json`, `B1-Joshua.json`, `D1-Psalms.json`, `D2-Proverbs.json` and
-`D3-Job.json`, 140 insertions and 627 deletions. The special-letter wrapper
+audit", committed 2026-09-11 12:20) changed `MAM-parsed/plus/A1-Genesis.json`, `A2-Exodus.json`,
+`A3-Levit.json`, `A4-Numbers.json`, `A5-Deuter.json`, `B1-Joshua.json`, `D1-Psalms.json`,
+`D2-Proverbs.json` and `D3-Job.json`, 140 insertions and 627 deletions. The special-letter wrapper
 template `מ:אות-מיוחדת-במילה` has a chanted word with a small, large or hung letter in two forms,
 decomposed around the special letter in parameter 1 and as a plain string in parameter 2, with a
 dot-mask, a type code and a summary in parameters 3 to 5; 11 of its 95 calls at `bca64824` wrap a
@@ -782,31 +742,22 @@ maqaf compound. In documentation text `2239cbad` replaced each call with the con
 parameter 1 — 40 of the 72 calls in those nine books, all in note parameters, while the 32 in
 Scripture stayed — so the special letter's template remained, the chanted word's other letters
 stayed as text beside it, and parameters 2 to 5 were dropped: at Genesis 5:1, for one, the note
-quoting the large samekh kept its letters and lost the wrapper. Its message says "Preserve the
-interrupted audit work before development continues in the e66d worktree. The checkpoint does not
-claim that the audit is complete", and does not say that the product changed. The same commit
-changed 18 files under `gh-pages/`, a published product: five files of MAM-with-doc's
-`foi-slh-word`, `foi-rare-tmpls` and `foi-unicode` pages, `foi/provenance.md` and 12 call-graph
-SVGs. `5cb06e25` inherited that plus tree and regenerated 27 files of MAM-simple's Deuteronomy,
-Genesis and Numbers from it, in all three versifications. `73c6b113` ("Restore special-letter
-wrappers in documentation text", 15:55, 3 hours 35 minutes after the checkpoint was committed) put
-them back: `MAM-parsed/plus` has the same tree hash, `2072b5f9…`, at `209b4c05`, `0354b6cc`,
-`73c6b113` and `bca64824`, and `ff2f5bfb…` only at `2239cbad` and `5cb06e25`; `MAM-parsed/plain` is
-`98c82e34…` at all 203 commits; and at `73c6b113` the 27 MAM-simple files and 17 of the 18
-`gh-pages/` files are byte-identical to their state at `6982dcf5`, the 18th being
-`foi/provenance.md`. `2239cbad`, `5cb06e25` and `73c6b113` reached `main` together in the
-fast-forward to `2a75c1e2` at 10:20 on 2026-09-12, pushed at 10:21, and no Codex branch is on the
-remote, so no pushed branch tip had the flattened tree, though that push took `2239cbad` and
-`5cb06e25` to GitHub in `main`'s history. The mega at `bca64824` regenerates `MAM-parsed/plus`
-byte-identically, which confirms that the restoration equals what the parser writes. What is raised:
-a checkpoint commit changed tier-2 data with a message that does not mention it, and the only
-account of what changed is the restoring commit's message
-(`doc/review-findings-2026-09-10-update.md` and the docstring of `mpplus_revisions.resolve()` record
-that `73c6b113` restored `209b4c05`'s tree, without saying what had changed it); `git log` with
-default history simplification does not list either commit for the path, which is the same trap
-`9f6ee787` fixed in the change-log resolver; nothing in `doc/` cites `2239cbad`. Re-establish with
-`git log --full-history --format="%h %s" 0354b6cc..bca64824 -- MAM-parsed/plus` and `git rev-parse
-<commit>:MAM-parsed/plus`.
+quoting the large samekh kept its letters and lost the wrapper. The same commit changed 18 files
+under `gh-pages/`, a published product: five files of MAM-with-doc's `foi-slh-word`,
+`foi-rare-tmpls` and `foi-unicode` pages, `foi/provenance.md` and 12 call-graph SVGs. `5cb06e25`
+inherited that plus tree and regenerated 27 files of MAM-simple's Deuteronomy, Genesis and Numbers
+from it, in all three versifications. `73c6b113` ("Restore special-letter wrappers in documentation
+text", 15:55, 3 hours 35 minutes after the checkpoint was committed) put them back:
+`MAM-parsed/plus` has the same tree hash, `2072b5f9…`, at `209b4c05`, `0354b6cc`, `73c6b113` and
+`bca64824`, and `ff2f5bfb…` only at `2239cbad` and `5cb06e25`; `MAM-parsed/plain` is `98c82e34…` at
+all 203 commits; and at `73c6b113` the 27 MAM-simple files and 17 of the 18 `gh-pages/` files are
+byte-identical to their state at `6982dcf5`, the 18th being `foi/provenance.md`. `2239cbad`,
+`5cb06e25` and `73c6b113` reached `main` together in the fast-forward to `2a75c1e2` at 10:20 on
+2026-09-12, pushed at 10:21, and no Codex branch is on the remote, so no pushed branch tip had the
+flattened tree, though that push took `2239cbad` and `5cb06e25` to GitHub in `main`'s history. The
+mega at `bca64824` regenerates `MAM-parsed/plus` byte-identically, which confirms that the
+restoration equals what the parser writes. Re-establish with `git log --full-history --format="%h
+%s" 0354b6cc..bca64824 -- MAM-parsed/plus` and `git rev-parse <commit>:MAM-parsed/plus`.
 
 ### 6. `ruff check py`, which repository maintenance runs, fails on two unused imports the template-dispatch commit left behind
 
@@ -954,7 +905,7 @@ dot-Codex doc/dual-agent-review.md`.
 8.8. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-google-sheet.md` fails three items of
 the fresh-session checklist and carries a stale expectation.** No decision in it is dated or
 attributed — the retirement and the freeze date "the Sheet as frozen on September 12, 2026" name
-no decider — and the file has no authorship line (`11ee6879` carries no trailer; finding 12.2);
+no decider — and the file has no authorship line;
 lines 28–29 tell the executor to read "the `hebrew-prose`, `spreadsheets`, and `computer-use`
 skills", of which only `hebrew-prose` is tracked in this repository's skill homes, without saying
 where the other two live; the stage-count figure carries no re-establishing command; and lines
@@ -1133,40 +1084,6 @@ sentences were moved verbatim from the pre-window READMEs.
 harness (on MS-Windows:):"**, a doubled colon inside the parenthesis, from the window's rewrite of
 the root README.
 
-### 12. Hygiene: the closed round's worktree and its 840 MB of scratch, eight merged branches, and three commits with no trailer
-
-12.1. **Raised, for Ben, since worktree removal and branch deletion are destructive local acts.**
-At `bca64824` the 2026-09-10 round's worktree,
-`.claude/worktrees/dual-agent-review-2026-09-10`, is still registered although its round closed
-with the fast-forward at `bca64824`; its `.novc/` holds about 840 MB — `fix-review-filenames`, a
-nested linked worktree on `fix-review-2026-09-10-batch` at `f0795231` (760 MB), `codex-turn2-20260912`
-(42 MB) and `review-2026-09-10` (37 MB) — and the nested worktree is registered in the primary
-clone's `.git/worktrees/`, so removing the parent directory without `git worktree remove` on the
-child first would leave a prunable registration. The two Codex worktrees,
-`C:/Users/BenDe/.codex/worktrees/36c2/MAM-basics` (`codex-worktree-36c2` at `2a75c1e2`, with a
-`.novc/` of its own) and `…/699f/MAM-basics` (detached at `132f2f3e`), are clean and at merged
-commits. Six local branches besides `main` are merged and not deleted: `claude/determined-boyd-b7dc31`,
-`claude/sweet-diffie-bece00`, `codex-worktree-36c2`, `dual-agent-review-2026-09-10`,
-`fix-review-2026-09-10-batch` and `review-branch-conflict-removal-2026-09-12`; and both remote
-`claude/*` branches, `origin/claude/charming-mayer-xknwcw` (the 2026-09-10 review's finding 21.4)
-and `origin/claude/loving-ptolemy-1i4seh` (this window's cloud session), are merged and not
-deleted. Finding 10.1 is why the sweep would not remove the review worktrees on its own.
-Re-establish: `git worktree list`; `git branch --merged main`; `git branch -r`.
-
-12.2. **Raised: of the three trailer-less non-merge commits, `11ee6879` is agent-written, and
-`a7586b4b` and `44479798` cannot be attributed from public evidence.** `11ee6879` ("Document Google Sheet retirement
-plan", 2026-09-12 14:56) adds `doc/PLAN-retire-google-sheet.md`, 178 lines in the agent genre
-throughout — `##` sections, absolute paths, "If a new Codex-managed worktree is detached, create
-`codex-worktree-<worktree-id>`" — with no `Co-Authored-By` trailer and no authorship line.
-`a7586b4b` and `44479798` (2026-09-10 23:13 and 23:19) are regenerated data only, with one-line
-subjects, sitting between trailer-carrying agent commits; nothing public says whether Ben or a
-session ran them, so they are reported, not attributed.
-
-12.3. **Done by this session: the scratch worktree of this review was removed.**
-`.claude/worktrees/review-2026-09-14-mega-scratch`, detached at `bca64824`, was created for the
-mega and generator runs of the tree-health section and removed, clean, before this file was
-committed; it held no branch and no work.
-
 ## Open ends the window itself declares (not findings)
 
 `doc/PLAN-retire-google-sheet.md`, `doc/PLAN-retire-codex-index-image-work.md` and
@@ -1223,7 +1140,7 @@ Anchors for comparison: MAM-basics `0354b6cc..bca64824`; the fifteen quiet publi
 heads named in "Scope, anchors and census". Each finding above gives the commit, the file and line
 as of `bca64824`, the claim, the measurement, and the command or `.novc/review-2026-09-14/` script
 that re-establishes it, so a disagreement can be checked by hand without re-deriving the whole
-window. Findings 1, 2, 4.2, 4.3 and 12 were derived by the main session, which also read Ben's third
+window. Findings 1, 2, 4.2 and 4.3 were derived by the main session, which also read Ben's third
 area itself; finding 4.1 is stream E's, and the main session's check found the same three
 `post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 5's tree hashes,
 counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
