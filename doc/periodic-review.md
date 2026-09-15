@@ -17,6 +17,21 @@ not require any window to have two.
 Every four to eight days one Claude session reads a commit range across the public repositories and
 writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
 
+**A periodic review is of one diff: the changes in files between the window's start commit and its
+end commit.** Ben's decision, 2026-09-15, during his walk-through of
+`doc/review-findings-2026-09-14.md`, whose finding 5 described a `MAM-parsed/plus/` rewrite made and
+undone on a side branch inside the window: "The review is, conceptually, of a single diff, between
+the start commit and the end commit. If the reviewing agent wants to 'understand' that review by
+looking at the path taken through git to get there, fine, but that's an internal decision about how
+that single, big diff can best be understood." So reading the commits, reflogs and `--full-history`
+between the two anchors is a way to understand the diff, not a second subject: a state made and
+undone inside the window, commit-message contents and trailers, merge shapes, and leftover branches
+and worktrees are not what a review looks for. Something of that kind noticed while understanding
+the diff may be mentioned; Ben, the same day: "don't turn a blind eye to something you notice, but
+don't go 'looking for trouble' in details beyond the narrow focus". A review of the process followed
+across a series of commits, for better instruction files or linters, is a different review, and
+there individual commits matter.
+
 Measured on 2026-09-12, ten files match `doc/review-findings-*.md`, dated 2026-07-29 through
 2026-09-08, all of them window reviews. An eleventh file held the name until 2026-09-12, when it
 was renamed `doc/blind-dive-into-template-params.md` on Ben's instruction: Codex had written it
