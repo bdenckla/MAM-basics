@@ -48,6 +48,21 @@ and `~/.agents` fell behind anyway, because nothing loads that README.
 stale copy. The attached maintenance check is now the detector, and the complete main-sourced
 deployment is the repair.
 
+## Delegate bounded work when it helps
+
+Root agents and sub-agents are explicitly authorized to spawn further sub-agents in every
+session, without asking Ben first, when bounded, independently checkable work can run in
+parallel, a fresh sequential pass can improve quality, or delegation can keep noisy investigation
+out of the root agent's context. Sub-agents may work in parallel or hand a later step to another
+sub-agent. Tell Ben when delegation starts and what each sub-agent owns. Do not delegate merely to
+satisfy a quota; keep tightly coupled work local when coordination would cost more than it saves.
+
+The root agent remains the orchestrator. The root agent defines scope, collects and reconciles
+sub-agent results, verifies material claims before adopting them, owns integration, and owns the
+final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
+read-only investigation freely; if concurrent agents must write, give the agents separate verified
+worktrees. A sub-agent never stages or commits another agent's unfinished files.
+
 ## Two axes of risk: does the change reach a product, and is the act hard to undo
 
 Risk here has two unrelated axes, and clearing one says nothing about the other. Ben,

@@ -89,6 +89,16 @@ every periodic review window to use two agents or establish a blind parallel-tra
 
 ## The standard alternating round — Ben's decision, 2026-09-09 (D9)
 
+**Each named turn may itself be an orchestrated multi-agent task — Ben's decision, 2026-09-15.**
+The turn's root reviewer and any sub-agent may delegate bounded, independently checkable work to
+another sub-agent, either in parallel or as a sequential handoff. The root reviewer remains
+responsible for the turn: the root reviewer sets the scope, reconciles the reports, verifies the
+claims it adopts, and owns the tracked file and commit. Because the agents share the D11 checkout,
+only one agent writes, stages or commits at a time; other sub-agents report without editing unless
+writing responsibility is explicitly handed to one sub-agent. Use delegation when it can save
+time, protect the root reviewer's context or improve confidence, not merely to create another
+task.
+
 The round takes turns in this order:
 
 1. **Claude argument:** the initial review of the named public commit ranges, committed as

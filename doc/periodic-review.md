@@ -1,4 +1,4 @@
-# The periodic review: one agent, one commit window, one findings file
+# The periodic review: one responsible reviewer, one commit window, one findings file
 
 This document describes the periodic review as a procedure in its own right: what the series is,
 what a review file contains, how a review is checked before it is acted on, and how its findings
@@ -11,6 +11,20 @@ paths in `py/accgram/` are.
 Read this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
 window is to be reviewed by two agents; D9 there chooses the procedure for such a window, and does
 not require any window to have two.
+
+## Delegation during a periodic review — Ben's decision, 2026-09-15
+
+Whether a window has one responsible reviewer or two, each review turn may be an orchestrated
+multi-agent task. The root reviewer and any sub-agent may delegate bounded, independently
+checkable work to another sub-agent, either in parallel or as a sequential handoff. The root
+reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
+reports, verifies the claims it adopts, and owns the findings file and commit.
+
+In a shared checkout, only one agent writes, stages or commits at a time. Other sub-agents report
+without editing unless writing responsibility is explicitly handed to one sub-agent. Use
+delegation when it can save time, protect the root reviewer's context or improve confidence, not
+merely to create another task. The mandatory pre-commit check under "Reviewing the review, with the
+same agent and with Ben" still applies.
 
 ## What the periodic review is
 
