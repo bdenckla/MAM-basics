@@ -45,6 +45,19 @@ skills are deliberately separate: Claude's `prune-claude-state` remains canonica
 under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here at
 `dot-Codex/skills/prune-claude-state/` because it addresses Codex memory and plans.
 
+## Machine-local project-instruction budget
+
+Each machine's `~/.codex/config.toml` must set:
+
+```toml
+project_doc_max_bytes = 131072
+```
+
+MAM-basics' common repository `AGENTS.md` body exceeds Codex's default 32 KiB combined project-
+instruction budget. The larger limit applies to the whole project-instruction discovery chain,
+not to each file separately. `config.toml` remains machine-local and untracked; the deployment
+procedure below does not install or change it.
+
 For every instruction file and skill, edit the tracked canonical copy in a MAM-basics development
 checkout. Integrate and push the commit before deploying it. `dot-claude/README.md`'s
 “Main-sourced deployment and check” is the procedure of record for Claude, Codex, shared and
