@@ -92,7 +92,9 @@ every periodic review window to use two agents or establish a blind parallel-tra
 The round takes turns in this order:
 
 1. **Claude argument:** the initial review of the named public commit ranges, committed as
-   `doc/review-findings-<date>.md`.
+   `doc/review-findings-<date>.md` after sub-agents have checked each finding, with no walk-through
+   of the findings before turn 2, as `doc/periodic-review.md`'s section "Reviewing the review, with
+   the same agent and with Ben" sets out (Ben's decision, 2026-09-15).
 2. **Codex counter-argument:** check the Claude claims and the same ranges for omissions,
    committed as `doc/codex-review-findings-<date>.md`. Once stable, append the reconciliation
    table to the argument under `## Reconciliation with the Codex review`, recording confirmed,
@@ -125,7 +127,9 @@ The close-out reads the table together with those corrections and Ben's decision
 After the exchange closes, close-out proceeds in this order, as worked in
 `doc/PLAN-close-out-review-2026-09-08.md`:
 
-1. Record Ben's decisions on the choices the review leaves to him.
+1. Record Ben's decisions on the choices the review leaves to him, asked as one list covering every
+   finding, as `doc/periodic-review.md`'s section "Reviewing the review, with the same agent and
+   with Ben" sets out.
 2. Update the procedure record with the round's outcome and the approved process changes.
 3. Write a remediation plan for a fresh task, including concrete editorial wording for Ben's
    approval; obtain the required approvals before execution.

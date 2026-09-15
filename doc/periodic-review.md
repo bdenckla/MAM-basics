@@ -117,10 +117,53 @@ carries `## Inputs for the reconciliation with the Codex review` and, after turn
 
 ## Reviewing the review, with the same agent and with Ben
 
-**A review file can be reviewed again by the same agent before it is acted on, and the one time
-that was done it found real defects each time.** This is worth trying, not established: it rests on
-one review, `doc/review-findings-2026-09-10.md`, reviewed twice by Claude on 2026-09-12. Ben asked
-for both passes, and for this section, on that day.
+### The check runs autonomously, and Ben sees the findings once — Ben's decision, 2026-09-15
+
+**Before a review is committed, the session writing it has sub-agents check every finding; nobody
+walks Ben through the findings before close-out; and at close-out step 1 Ben gets one list covering
+every finding.** Ben, 2026-09-15, after the walk-through of `doc/review-findings-2026-09-14.md`:
+"the basic process is just way too slow." That review was written in about an hour, from 07:45 to
+08:44 on 2026-09-14. Its walk-through's 22 commits ran from 10:14 that day to 17:15 on 2026-09-15,
+each finding was re-verified while Ben waited, and 6 of the 22 commits changed this document rather
+than the review. The decision has three parts:
+
+1. **The writing session checks the review before committing it.** It gives each finding to a
+   sub-agent, which reports without editing: it reruns the scripts the finding cites, recounts every
+   count against its own list, establishes that the finding is about the window's diff (the section
+   "What the periodic review is"), checks that each lead states the finding's disposition, finds the
+   other passages of the file that restate the finding, and looks for the claim traps listed below.
+   The writing session re-runs a report's measurements where that is cheap before applying it.
+2. **No walk-through of the findings happens before close-out.** In a round under
+   `doc/dual-agent-review.md` that means none before Codex's turn 2, and a correction found after
+   the review is committed goes in a later turn. The rules under "How Ben walks through a review's
+   findings" below apply only when Ben asks for a walk-through.
+3. **At close-out step 1, Ben gets one list covering every finding**: a sentence each, each fix
+   defaulting to "later, in the remediation phase", and a question only where his judgment is
+   needed, asked in dialogs. Something pressing, such as a mega that fails on `main`, is raised with
+   him at once rather than held for the list.
+
+The claim traps are the ways the 2026-09-14 review's own claims came out false, each found during
+its walk-through:
+
+1. a timing across branches, stated without finding which branch each commit was on
+   (`git merge-base --is-ancestor`) and when the commits first shared a tree;
+2. merge resolutions counted with `git diff-tree --cc --name-only`, which also lists files git
+   merged cleanly, where a resolution needs `--cc -p`;
+3. a local time read off a UTC timestamp, where `git log --date=iso-local` gives local time;
+4. a count not re-counted, or a source not re-read;
+5. a per-file history census run without `--full-history`;
+6. an absolute such as "the one" or "every" that its own cited source contradicts;
+7. a finding credited to the wrong stream or author.
+
+The decision was first applied to that review itself: Ben decided on 2026-09-15 that its
+walk-through would end with finding 9, that sub-agents would check findings 10 and 11 instead, and
+that Codex's turn 2 would follow.
+
+### The evidence from 2026-09-12
+
+**A review file was reviewed again by the same agent before it was acted on, once, and both passes
+found real defects.** That rests on one review, `doc/review-findings-2026-09-10.md`, reviewed twice
+by Claude on 2026-09-12. Ben asked for both passes, and for this section, on that day.
 
 1. **Pass 1, `99ac89a7` (10:30).** It read the commits that had edited the file since it was first
    committed as `301d0fcc`, and corrected six passages: the `State:` line's shape; a lead saying
@@ -164,8 +207,9 @@ declared `open` better. Nothing had been edited on the strength of the recommend
 ### How Ben walks through a review's findings
 
 Ben's rules for an interactive walk through a review's findings, given on 2026-09-11 while the
-2026-09-10 review was walked through and on 2026-09-14 while the 2026-09-14 review was. They are
-what make his part of a review of a review work.
+2026-09-10 review was walked through and on 2026-09-14 while the 2026-09-14 review was. Since
+2026-09-15 a walk-through happens only when Ben asks for one, under the decision at the head of this
+section, and these rules govern it then.
 
 **What the walk-through is for.** Ben, 2026-09-14: it is mainly about Ben identifying what the
 review findings are, to see whether he wants to weigh in on them, for example by suggesting a
@@ -223,7 +267,8 @@ questioning your proposed fix-ups to review finding language."
 
 After a review is written, and after any review of it:
 
-1. Record Ben's decisions on the choices the review leaves to him.
+1. Record Ben's decisions on the choices the review leaves to him, asked as one list covering every
+   finding, as the section "Reviewing the review, with the same agent and with Ben" sets out.
 2. Write a remediation plan for a fresh task, including concrete wording for each editorial change,
    and obtain Ben's approval before execution. The two rules below govern how.
 3. Execute the approved remediation, recording each finding's disposition under a
@@ -322,6 +367,3 @@ categories first.
 1. **The cadence.** "Every four to eight days" describes the series; nothing requires it.
 2. **Whether a window has one reviewer or two.** D9 in `doc/dual-agent-review.md` settles the
    procedure for a two-agent window and leaves the choice open.
-3. **Whether a review is reviewed again before it is acted on.** The section "Reviewing the review,
-   with the same agent and with Ben" records one case and recommends trying it; it does not require
-   it.
