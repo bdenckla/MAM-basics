@@ -107,8 +107,8 @@ disposition plan, and the README session of 2026-09-13 morning.
 The review ran as five agent streams plus the main session: (A) the 2026-09-10 review's close-out
 records, D12 compliance and the `State:` lines; (B) the window's code commits outside Ben's four
 areas; (C) the Google Sheet refresh, the template-projection thread, the new plans and the issues;
-(D) the user-configuration deployment and the live homes; (E) the prose, the mark order, the
-links, the formatters and the commit hygiene. Every script and output is untracked under
+(D) the user-configuration deployment and the live homes; (E) the prose, the mark order, the links
+and the formatters. Every script and output is untracked under
 `.novc/review-2026-09-14/` in the shared worktree, prefixed `A_` to `E_` per stream and
 unprefixed for the main session, each stream's report beside them as `<stream>_report.md`. Two
 stream claims were checked by the main session and rejected, and are recorded under "What
@@ -817,22 +817,20 @@ step 2 was not done — `doc/dual-agent-review.md` at `bca64824` does not contai
 `2026-09-10`, and its "What Codex joined" census is still the 2026-09-09 one; and step 3 and D7
 have no record for the editorial items — no remediation plan was written, and no approval is
 recorded for the corrected readings Codex wrote for findings 11.1 to 11.4 and 20.2 to 20.5, for
-20.1's live docstring change or for finding 8's State declarations, whose commit bodies name no
-instruction either. Ben's decisions are recorded for findings 7.2, 10, 11.5, 12/C1, 20.9, 21.6
+20.1's live docstring change or for finding 8's State declarations. Ben's decisions are recorded for
+findings 7.2, 10, 11.5, 12/C1, 20.9, 21.6
 and inherited item 3, and his 2026-09-12 instruction covering findings 12 to 21 is in the review.
 Whether he approved the rest in chat is not public evidence. Re-establish: `git grep -n
 "2026-09-10" bca64824 -- doc/dual-agent-review.md`.
 
-7.4. **Raised, low: seven of the thirteen disposition commits delete lines from update-file
-entries already recorded and dated, and one subject understates its commit.** `9d9da5c2`,
-`cfbe6ba7`, `08f49feb`, `ef8b4435`, `11d97c0d`, `063c6ece` and `5eca0c83` remove 19, 56, 34, 25,
-23, 18 and 16 lines, the last five rewriting the inherited-item-3 entry as each decision arrived,
-and `cfbe6ba7` replaced the 2026-09-12 finding-10 entry with the file's one entry of 39 that has
-no "Recorded by" line. The standards docstring calls an update file's entries "each finished and
-dated the moment they are written"; the practice is defensible under "kept true", and the
-description and the practice do not match. `c0765a29`'s subject names the update entry while the
-commit also edits two live documents, disclosed in its body; `2398fc80` and `5e7715dc` have no
-body beyond the trailer. Re-establish: `A_03_named_commits_summary.txt`.
+7.4. **Raised, low: seven of the thirteen disposition commits delete lines from update-file entries
+already recorded and dated.** `9d9da5c2`, `cfbe6ba7`, `08f49feb`, `ef8b4435`, `11d97c0d`, `063c6ece`
+and `5eca0c83` remove 19, 56, 34, 25, 23, 18 and 16 lines, the last five rewriting the
+inherited-item-3 entry as each decision arrived, and `cfbe6ba7` replaced the 2026-09-12 finding-10
+entry with the file's one entry of 39 that has no "Recorded by" line. The standards docstring calls
+an update file's entries "each finished and dated the moment they are written"; the practice is
+defensible under "kept true", and the description and the practice do not match. Re-establish:
+`A_03_named_commits_summary.txt`.
 
 7.5. **Raised, low: two live entries cite line numbers with no searchable anchor, and two have
 drifted.** The finding 20.1 entry's `CLAUDE.md` lines 166 and 992 are 173 and 1005 at `bca64824`;
@@ -953,11 +951,9 @@ doc/user-level-config-in-cloud-sessions.md`.
 
 Stream C.
 
-9.1. **Raised, unfixed: issues #279 and #281 do not say whether they are agent-written.** Each
-body is one line naming its plan. #279 was created 44 seconds after `11ee6879` committed
-`doc/PLAN-retire-google-sheet.md`, #281 22 seconds after `81627bc6` (Codex trailer) committed
-`doc/PLAN-retire-codex-index-image-work.md`. Every other issue opened or commented on in the
-window says so in its first or last line. Re-establish: `C_01_fetch_issues.py`.
+9.1. **Raised, unfixed: issues #279 and #281 do not say whether they are agent-written.** Each body
+is one line naming its plan. Every other issue opened or commented on in the window says so in its
+first or last line. Re-establish: `C_01_fetch_issues.py`.
 
 9.2. **Raised, unfixed: #278's body names `leningrad/page-snips/`, which `a8e4790e` removed the
 day after the issue was opened.** The example still holds under the two new folders. The issue is
@@ -1110,29 +1106,21 @@ file. Issues #271 to #274, #276 and #278 are open and assigned to no plan. `main
 3. The live Google Sheet and the live Hebrew Wikisource: whether the Apps Script run of
    2026-09-10 wrote "Applied 34 auto-edits." into the Sheet, and the editorial correctness of the
    34 auto-edits.
-4. The recorded suite and mega counts of the intermediate commits; only the 997 and the 55 steps
-   at `bca64824` were run.
-5. The image content of the eight moved crops beyond their bytes being unchanged by the move;
-   no manuscript or edition reading was adjudicated.
-6. Whether anyone fetched `2239cbad` or `5cb06e25` from GitHub, where the push of 2026-09-12 10:21
-   put them in `main`'s history: no branch tip on the remote ever had the flattened tree, and no
-   Pages tree holds `MAM-parsed/plus`. GitHub's events API, read during Ben's walk-through of this
-   review on 2026-09-15, lists pushes in the window to `main` and `claude/loving-ptolemy-1i4seh`
-   only.
-7. The live user-level homes beyond stream D's comparison; nothing under `~/.claude/projects/`
-   or `~/.codex/sessions/` was read, and the Codex-side facts behind the live `~/.codex/AGENTS.md`
-   were read only as a hash.
-8. The sixty-odd modules `5cb06e25` changed beyond `py/mb_cmn/template_names.py`, against the
+4. The image content of the eight moved crops beyond their bytes being unchanged by the move; no
+   manuscript or edition reading was adjudicated.
+5. The live user-level homes beyond stream D's comparison; nothing under `~/.claude/projects/` or
+   `~/.codex/sessions/` was read, and the Codex-side facts behind the live `~/.codex/AGENTS.md` were
+   read only as a hash.
+6. The sixty-odd modules `5cb06e25` changed beyond `py/mb_cmn/template_names.py`, against the
    closed-dispatch rule; the 2026-09-10 review's template-projection findings were not redone.
-9. The Codex entries' judgments of reproducibility in the update file; only their counts, line
-   numbers and blobs were re-measured, and the correctness of their corrected readings was
-   checked by stream E for vocabulary, not for substance.
-10. `doc/PLAN-retire-codex-index-image-work.md`'s 355 lines and `doc/PLAN-retire-google-sheet.md`
-    beyond its first forty, for prose beyond the fresh-session checklist and the banned-term scan;
-    the rendered `gh-pages/` prose outside the one `post-stress-meteg.html` hunk; and the 176
-    commit messages' bodies for the prose rules.
-11. Whether the seven Claude-only and three Codex-only instruction sections are deliberately
-    asymmetric.
+7. The Codex entries' judgments of reproducibility in the update file; only their counts, line
+   numbers and blobs were re-measured, and the correctness of their corrected readings was checked
+   by stream E for vocabulary, not for substance.
+8. `doc/PLAN-retire-codex-index-image-work.md`'s 355 lines and `doc/PLAN-retire-google-sheet.md`
+   beyond its first forty, for prose beyond the fresh-session checklist and the banned-term scan;
+   and the rendered `gh-pages/` prose outside the one `post-stress-meteg.html` hunk.
+9. Whether the seven Claude-only and three Codex-only instruction sections are deliberately
+   asymmetric.
 
 ## Inputs for the reconciliation with the Codex review
 
