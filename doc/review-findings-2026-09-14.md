@@ -126,9 +126,9 @@ instruction-file work: the `<stem>-update.md` rule in both user-level files, "Tw
 the product tiers, the verification cadence, `doc/periodic-review.md` split out of
 `doc/dual-agent-review.md`, and the `origin/main`-sourced user-configuration deployment
 (`1842e784`) — about 20 commits. 4. Codex's template-projection audit on `codex-worktree-36c2`:
-every template dispatch closed (`5cb06e25`), a checkpoint that rewrote nine `MAM-parsed/plus/`
-files and the restoration four and a half hours later (`2239cbad`, `73c6b113`; finding 5), the
-blind-dive review and the deferred-decisions plan, and the Hebrew-filename migration
+every template dispatch closed (`5cb06e25`), a checkpoint that rewrote nine `MAM-parsed/plus/` files
+and the restoration 3 hours 35 minutes later (`2239cbad`, `73c6b113`; finding 5), the blind-dive
+review and the deferred-decisions plan, and the Hebrew-filename migration
 (`4e007289`) — about 15 commits. 5. On `main` directly, the Google Sheet refresh of 2026-09-10 night
 and its retirement plan, the codex-index image-work retirement plan, the mega-pipeline review
 disposition plan, and the README session of 2026-09-13 morning.
@@ -758,32 +758,55 @@ change. Added during Ben's walk-through of this review on 2026-09-14, when a que
 a note. Re-establish: `git grep -n '"stripped"' bca64824 -- py/main_verse_links.py
 py/uxlc_misc/my_uxlc_find_atom.py`, which finds the test and no return.
 
-### 5. A Codex checkpoint commit rewrote nine `MAM-parsed/plus/` files, a distributed product, and a second commit restored them four and a half hours later; no pushed `main` held the rewrite
+### 5. Out of scope as a problem, and already remediated: a Codex checkpoint commit on a side branch rewrote nine `MAM-parsed/plus/` files, a distributed product, and a commit 3 hours 35 minutes later restored them
 
-**Raised, not a defect at `bca64824`.** `2239cbad` ("Checkpoint the template-projection audit",
-2026-09-11 11:34, `Co-Authored-By: Codex <codex@openai.com>`) changed `MAM-parsed/plus/A1-Genesis.json`,
-`A2-Exodus.json`, `A3-Levit.json`, `A4-Numbers.json`, `A5-Deuter.json`, `B1-Joshua.json`,
-`D1-Psalms.json`, `D2-Proverbs.json` and `D3-Job.json`, 140 insertions and 627 deletions: in
-documentation text it replaced each call of the special-letter wrapper
-template `מ:אות-מיוחדת-במילה`, which carries the whole atom and four descriptive parameters, with
-only its inner letter template, so the parameters 2 to 5 were dropped — at Genesis 5:1, for one, the note
-quoting the large samekh lost its four descriptors and its wrapped atom. Its message says
-"Preserve the interrupted audit work before development continues in the e66d worktree. The
-checkpoint does not claim that the audit is complete", and does not say that the product changed.
-`5cb06e25` inherited that plus tree and regenerated MAM-simple's Deuteronomy, Genesis and Numbers
-from it in all three versifications. `73c6b113` ("Restore special-letter wrappers in documentation
-text", 15:55) put the tree back: `MAM-parsed/plus` has the same tree hash, `2072b5f9…`, at
-`209b4c05`, `0354b6cc`, `73c6b113` and `bca64824`, and `ff2f5bfb…` only at `2239cbad` and
-`5cb06e25`; `MAM-parsed/plain` is `98c82e34…` at all 203 commits. Both Codex commits reached
-`main` in the single fast-forward `2a75c1e2` of 2026-09-12 10:20, and no Codex branch is on the
-remote, so no pushed `main` and no branch a consumer could reach held the flattened tree. The mega
-at `bca64824` regenerates `MAM-parsed/plus` byte-identically, which confirms that the restoration
-equals what the parser writes. What is raised: a checkpoint commit changed tier-2 data with a
-message that does not mention it, and the only account of the change is the restoring commit's
-message; `git log` with default history simplification does not list either commit for the path,
-which is the same trap `9f6ee787` fixed in the change-log resolver; nothing in `doc/` cites
-`2239cbad`. Re-establish with `git log --full-history --format="%h %s" 0354b6cc..bca64824 --
-MAM-parsed/plus` and `git rev-parse <commit>:MAM-parsed/plus`.
+**Out of scope as a problem, and already remediated.** Across the window `MAM-parsed/plus` did not
+change: its tree is the same at `0354b6cc` and at `bca64824`. What this finding describes existed
+only between those two commits, on a side branch, and this review is of the window's single diff
+(Ben, 2026-09-15, during his walk-through of this review: "The review is, conceptually, of a single
+diff, between the start commit and the end commit"). What let it happen was remediated inside the
+window, and Ben agreed during the same walk-through that nothing more is needed: `e97ba21c`
+(2026-09-11 18:23, on `codex-worktree-36c2`) added the rules "A deep dive diagnoses; Ben decides
+semantic policy" and "An invalid representation does not select its replacement" to both user-level
+instruction files; `63aaa6f3` (committed 2026-09-12 10:36) defined this repository's product tiers
+in `CLAUDE.md` and `py/product_scopes.py`; and `fb575b09` (committed the same minute) added "Two
+axes of risk" to both user-level instruction files. `2239cbad` ("Checkpoint the template-projection
+audit", authored 2026-09-11 11:34 and cherry-picked onto `6982dcf5` at 12:20, `Co-Authored-By: Codex
+<codex@openai.com>`) changed `MAM-parsed/plus/A1-Genesis.json`, `A2-Exodus.json`, `A3-Levit.json`,
+`A4-Numbers.json`, `A5-Deuter.json`, `B1-Joshua.json`, `D1-Psalms.json`, `D2-Proverbs.json` and
+`D3-Job.json`, 140 insertions and 627 deletions. The special-letter wrapper
+template `מ:אות-מיוחדת-במילה` has a chanted word with a small, large or hung letter in two forms,
+decomposed around the special letter in parameter 1 and as a plain string in parameter 2, with a
+dot-mask, a type code and a summary in parameters 3 to 5; 11 of its 95 calls at `bca64824` wrap a
+maqaf compound. In documentation text `2239cbad` replaced each call with the contents of its
+parameter 1 — 40 of the 72 calls in those nine books, all in note parameters, while the 32 in
+Scripture stayed — so the special letter's template remained, the chanted word's other letters
+stayed as text beside it, and parameters 2 to 5 were dropped: at Genesis 5:1, for one, the note
+quoting the large samekh kept its letters and lost the wrapper. Its message says "Preserve the
+interrupted audit work before development continues in the e66d worktree. The checkpoint does not
+claim that the audit is complete", and does not say that the product changed. The same commit
+changed 18 files under `gh-pages/`, a published product: five files of MAM-with-doc's
+`foi-slh-word`, `foi-rare-tmpls` and `foi-unicode` pages, `foi/provenance.md` and 12 call-graph
+SVGs. `5cb06e25` inherited that plus tree and regenerated 27 files of MAM-simple's Deuteronomy,
+Genesis and Numbers from it, in all three versifications. `73c6b113` ("Restore special-letter
+wrappers in documentation text", 15:55, 3 hours 35 minutes after the checkpoint was committed) put
+them back: `MAM-parsed/plus` has the same tree hash, `2072b5f9…`, at `209b4c05`, `0354b6cc`,
+`73c6b113` and `bca64824`, and `ff2f5bfb…` only at `2239cbad` and `5cb06e25`; `MAM-parsed/plain` is
+`98c82e34…` at all 203 commits; and at `73c6b113` the 27 MAM-simple files and 17 of the 18
+`gh-pages/` files are byte-identical to their state at `6982dcf5`, the 18th being
+`foi/provenance.md`. `2239cbad`, `5cb06e25` and `73c6b113` reached `main` together in the
+fast-forward to `2a75c1e2` at 10:20 on 2026-09-12, pushed at 10:21, and no Codex branch is on the
+remote, so no pushed branch tip had the flattened tree, though that push took `2239cbad` and
+`5cb06e25` to GitHub in `main`'s history. The mega at `bca64824` regenerates `MAM-parsed/plus`
+byte-identically, which confirms that the restoration equals what the parser writes. What is raised:
+a checkpoint commit changed tier-2 data with a message that does not mention it, and the only
+account of what changed is the restoring commit's message
+(`doc/review-findings-2026-09-10-update.md` and the docstring of `mpplus_revisions.resolve()` record
+that `73c6b113` restored `209b4c05`'s tree, without saying what had changed it); `git log` with
+default history simplification does not list either commit for the path, which is the same trap
+`9f6ee787` fixed in the change-log resolver; nothing in `doc/` cites `2239cbad`. Re-establish with
+`git log --full-history --format="%h %s" 0354b6cc..bca64824 -- MAM-parsed/plus` and `git rev-parse
+<commit>:MAM-parsed/plus`.
 
 ### 6. `ruff check py`, which repository maintenance runs, fails on two unused imports the template-dispatch commit left behind
 
@@ -1174,8 +1197,11 @@ file. Issues #271 to #274, #276 and #278 are open and assigned to no plan. `main
    at `bca64824` were run.
 5. The image content of the eight moved crops beyond their bytes being unchanged by the move;
    no manuscript or edition reading was adjudicated.
-6. Whether `2239cbad`'s flattening was ever served: no push carried it and no Pages tree holds
-   `MAM-parsed/plus`, but the GitHub API was not asked for the branch's reachability at 2026-09-11.
+6. Whether anyone fetched `2239cbad` or `5cb06e25` from GitHub, where the push of 2026-09-12 10:21
+   put them in `main`'s history: no branch tip on the remote ever had the flattened tree, and no
+   Pages tree holds `MAM-parsed/plus`. GitHub's events API, read during Ben's walk-through of this
+   review on 2026-09-15, lists pushes in the window to `main` and `claude/loving-ptolemy-1i4seh`
+   only.
 7. The live user-level homes beyond stream D's comparison; nothing under `~/.claude/projects/`
    or `~/.codex/sessions/` was read, and the Codex-side facts behind the live `~/.codex/AGENTS.md`
    were read only as a hash.
@@ -1197,10 +1223,12 @@ Anchors for comparison: MAM-basics `0354b6cc..bca64824`; the fifteen quiet publi
 heads named in "Scope, anchors and census". Each finding above gives the commit, the file and line
 as of `bca64824`, the claim, the measurement, and the command or `.novc/review-2026-09-14/` script
 that re-establishes it, so a disagreement can be checked by hand without re-deriving the whole
-window. Findings 1, 2, 4.2, 4.3, 5 and 12 were derived by the main session, which also read Ben's
-third area itself; finding 4.1 is stream E's, and the main session's check found the same three
-`post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 2.1 was found by
-running the two generators after stream B noted that they read the incremental folders directly;
+window. Findings 1, 2, 4.2, 4.3 and 12 were derived by the main session, which also read Ben's third
+area itself; finding 4.1 is stream E's, and the main session's check found the same three
+`post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 5's tree hashes,
+counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
+main session measured it; finding 2.1 was found by running the two generators after stream B noted
+that they read the incremental folders directly;
 findings
 6 and 11 are stream E's, 7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each
 spot-checked by the main session where a figure could be re-run cheaply (the stale step count by
