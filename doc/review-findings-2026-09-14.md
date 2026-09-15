@@ -319,24 +319,26 @@ tree; all 20 filename-returning git calls in the 1,051 tracked `.py` carry `-z`;
 `mam_simple_verse.mam_simple_json_path` raises rather than returning `None`, and none of its four
 callers skips a book (`B_01` to `B_12`).
 
-**The 2026-09-10 close-out records (stream A).** The exchange reached D9's stopping rule at turn 4
-("No factual or characterization disagreement remains"), each turn an ancestor of the next. In
-`doc/review-findings-2026-09-10-update.md` (1,640 lines) all 96 named commits resolve and are
-ancestors of `bca64824`; 24 of 27 blob claims hold; the finding 7, 8, 9, 11.5, 12/C1, 20.6, 20.8
-and 21 censuses reproduce to the last figure — the 17 documents' 208 `.novc` lines, 25 direct
-plans and 21 review files, the FOI's 717 records in groups 354 / 228 / 19 / 102 / 14, the 45
-backslash paths in ten receipts, the 65,713-atom lookup differential with its 52,881 / 12,832 /
-0 / 0 split, and the closures of #266 and #267 at 15:53:01Z and 15:53:16Z on 2026-09-13, each
-seven seconds after an agent-written comment. The three inherited items are done with evidence:
-the merge `a7d37b34` resolves the `CLAUDE.md` conflict as item 1 says, `d18cbb4b` adds the two
-pointers of item 2, and `1842e784`'s deployment reached every live home. The nine "Classify …
-.novc references" commits each insert one entry into the update file and nothing else. The `State:`
-lines at `bca64824` (69) are in the declared vocabularies except the six of finding 7.1. The
-standards check runs clean from the worktree (`SYS_PATH_MUTATIONS=0`, `ORPHAN_MARKS=0`,
-`HEX_ESCAPES=80`, `NFC_H_DOT=30`, `NFC_LATIN=39`, six linked worktrees, two agent branches). One
-stream A claim was checked and rejected: the update file's SHA-256 for
-`dot-Codex/user-wide-AGENTS.md` is the file's, `87C3EDDB6A9F…`, not a transposed value
-(`verify_a_findings.py`).
+**The 2026-09-10 close-out records (stream A).** The exchange reached D9's stopping rule at turn 3,
+which turn 4 acknowledged ("No factual or characterization disagreement remains"), each turn an
+ancestor of the next. In `doc/review-findings-2026-09-10-update.md` (1,640 lines) all 96 named
+commits resolve and are ancestors of `bca64824`; 24 of 27 blob claims hold; the censuses of the
+2026-09-10 review's findings 7, 8, 9, 11.5, 12/C1, 20.6, 20.8 and 21 reproduce to the last figure —
+the 17 documents' 208 `.novc` lines, 25 direct plans and 21 review files, the FOI's 717 records in
+groups 354 / 228 / 19 / 102 / 14, the 45 backslash paths in ten receipts, the 65,713-atom lookup
+differential with its 52,881 / 12,832 / 0 / 0 split, and the closures of #266 and #267 at 15:53:01Z
+and 15:53:16Z on 2026-09-13, each seven seconds after an agent-written comment. The three inherited
+items are done with evidence: the merge `a7d37b34` resolves the `CLAUDE.md` conflict as item 1 says,
+`d18cbb4b` adds the two pointers of item 2, and `1842e784`'s deployment reached every live home. The
+nine "Classify … .novc references" commits each insert one entry into the update file and nothing
+else. Of the 68 `State:` lines at `bca64824`, 61 begin with the declared State phrase for their kind
+of file or keep a historical form that D10 preserves. Of the other seven, five are in files finding
+7.1 names, one is in `doc/assessment-two-stranded-artifacts-2026-09-09.md`, a file of no declared
+kind, and one is the State quoted at line 42 of `doc/review-findings-2026-09-08.md`. The standards
+check runs clean from the worktree (`SYS_PATH_MUTATIONS=0`, `ORPHAN_MARKS=0`, `HEX_ESCAPES=80`,
+`NFC_H_DOT=30`, `NFC_LATIN=39`, six linked worktrees, two agent branches). One stream A claim was
+checked and rejected: the update file's SHA-256 for `dot-Codex/user-wide-AGENTS.md` is the file's,
+`87C3EDDB6A9F…`, not a transposed value (`verify_a_findings.py`).
 
 **The Google Sheet refresh, the template-projection thread, the plans and the issues (stream
 C).** `a7586b4b` recorded 34 Wikisource-versus-Sheet differences in 21 verses across 11 books, all
@@ -377,23 +379,23 @@ hook rewrite "has been exercised nowhere" was true of the record when written, a
 session's exercise above is the measurement it asked for.
 
 **Prose, mark order, links and formatters (stream E).** The `hebrew-prose` skill was loaded before
-reading. The two new snips READMEs state every manuscript claim as Ben's reading
-of a named image, with the transcription named separately where one is cited, the one inherited
-exception being finding 11.1; the six `doc/meteg-after-silluq-*-update.md` files use "has", "the
-LC", "the Aleppo Codex", "the Simanim Tanakh", "pataḥ", "ḥataf", "deḥi" and "meteg" as the skill
-requires, every bare "L", "A", "ga'ya", "hataf", "patax" and "dexi" in them being a quotation of
-the passage corrected; the `doc/PLAN-silluq-before-gaya-template.md` hunk's blob, record and group
-figures re-measure; `aedac688`'s eleven meteg edits account for every moved figure in the seven
-documents and the page hunk, and `py/tests/test_post_stress_meteg_plain_word.py` passes; the
-MAM-simple, MAM-OSIS, MAM-for-Sefaria, `README.md`, `DATA-LICENSES.md` and `CLAUDE.md` hunks
-re-measure except for findings 2.3 and 1.1; a banned-term scan over the added lines of the 206
+reading. The two new snips READMEs state every manuscript claim as Ben's reading of a named image,
+with the transcription named separately where one is cited, the one inherited exception being
+finding 11.1; the six `doc/meteg-after-silluq-*-update.md` files use "has", "the LC", "the Aleppo
+Codex", "the Simanim Tanakh", "pataḥ", "ḥataf", "deḥi" and "meteg" as the skill requires, every bare
+"L", "A", "ga'ya", "hataf", "patax" and "dexi" in them being a quotation of the passage corrected,
+except the two passages of finding 7.6; the `doc/PLAN-silluq-before-gaya-template.md` hunk's blob,
+record and group figures re-measure; `aedac688`'s eleven meteg edits account for every moved figure
+in the seven documents and the page hunk, and `py/tests/test_post_stress_meteg_plain_word.py`
+passes; the MAM-simple, MAM-OSIS, MAM-for-Sefaria, `README.md`, `DATA-LICENSES.md` and `CLAUDE.md`
+hunks re-measure except for findings 2.3 and 1.1; a banned-term scan over the added lines of the 206
 `.md`, `.html` and `.py` files the window touched finds no "witness", "cantillation accent",
 "proclitic", "word-division", bare "the Keter edition", or "the latter" used as a referent, and
-every bare "Simanim" a quotation or the publisher sense. The five named new documents, and the
-four larger ones read as well, keep every announced count, define every coined name, and lead
-every finding with its disposition; `doc/mega-timing-2026-09-11.md`'s tables foot. Stream E's own
-figure for the tier-3 declaration, 38, is a miscount that omitted the five `py/subcommands/`
-entries; the declaration has 43 (`scopes_check.txt`).
+every bare "Simanim" a quotation or the publisher sense. The five named new documents, and the four
+larger ones read as well, keep every announced count, define every coined name, and lead every
+finding with its disposition; `doc/mega-timing-2026-09-11.md`'s tables foot. Stream E's own figure
+for the tier-3 declaration, 38, is a miscount that omitted the five `py/subcommands/` entries; the
+declaration has 43 (`scopes_check.txt`).
 
 ## Findings
 
@@ -781,79 +783,101 @@ cycle, each of the five modules that import `rtmsr_verse` loads `rtmsr_sat` by a
 root ("Found 2 errors"), and for `0354b6cc` by running the same command at the root of an extracted
 `git archive 0354b6cc py ruff.toml` ("All checks passed!").
 
-### 7. The 2026-09-10 review's close-out record: a stale line-3 State by design, one blob that does not exist, four departures from the written procedure, and three smaller record defects
+### 7. The 2026-09-10 review's close-out record: a stale line-3 State by design, one blob that does not exist, two departures from the written procedure, and three smaller defects
 
-Stream A, with one item from stream E. Six parts; none touches a product.
+Stream A, with one item from stream E. Six parts; none touches a product. Apart from the labels 7.1
+to 7.6 of its six parts, every finding number in finding 7 names a finding of the 2026-09-10 review.
 
-7.1. **Raised, not fixed, because it needs Ben's decision: the round left `doc/review-findings-2026-09-10.md`'s
-line 3 and its dispositions table stale on purpose, and the sibling "effective State declaration"
-it invented for six other files is declared nowhere.** Line 3, last written by `c8de6abc` on
-2026-09-12, says findings 7 to 11, 18 and 21 and parts of 13, 16, 19 and 20 are "not acted on",
-and the dispositions section's closing paragraph says the same; the update file's close-out entry
-("## Close-out: every finding and inherited integration item has a disposition") says "This entry
-supersedes the initial review's line-3 statement … D12 leaves that finished dated review
-unchanged". Three rules of record say line 3 is where remediation state lives: D10 rule 3 in
-`doc/dual-agent-review.md`, `doc/periodic-review.md`'s close-out step 3 (written after D12: the
-dispositions go in the review's own section while "the rest of the file is left as written"), and
-`py/repo_util/check_repo_standards.py`'s docstring. The round kept line 3 and the table live until
-14:06 on 2026-09-12 and then, from `70d1f581` at 17:42, put every later disposition in the update
-file and touched neither again; a reader of line 3 now gets the wrong answer. `d3ab7cf1` applied
-the same mechanism to six more files: three plans have no `State:` line at all
-(`doc/PLAN-efficient-wikisource-downloads.md`, `doc/PLAN-wikisource-derived-mam-products.md`,
-`doc/PLAN-worktree-file-consolidation.md`), three have a line 3 outside the declared vocabulary
-(`doc/PLAN-close-out-review-2026-09-08.md`, `doc/PLAN-evacuate-five-MAM-products.md`,
-`doc/PLAN-evacuate-public-repos-programme.md`), and `doc/review-findings-2026-09-08.md` reads
-"remediated 2026-09-10" — each with a sibling entry giving "its State declaration in the
-conventional form", which no rule tells a line-3 reader, human or mechanical, to look for. What
+7.1. **Raised, not fixed, because it needs Ben's decision: `doc/review-findings-2026-09-10.md`'s
+line 3 and its dispositions table were left stale on purpose, and no rule declares what replaces
+them, a current State given in a sibling update file, which eight more finished documents also
+have.** Line 3, last written by `c8de6abc` on 2026-09-12, says that review's findings 7 to 11, 18
+and 21 and the rest of 13, 16, 19 and 20 are "not acted on", and the dispositions section's closing
+paragraph says the same; the update file's close-out entry ("## Close-out: every finding and
+inherited integration item has a disposition") says "This entry supersedes the initial review's
+line-3 statement … D12 leaves that finished dated review unchanged". Three rules of record place
+remediation state in the review file itself: D10 rule 3 in `doc/dual-agent-review.md` and
+`py/repo_util/check_repo_standards.py`'s docstring put it on line 3, and `doc/periodic-review.md`'s
+close-out step 3, written after D12, puts the dispositions in the review's own `## Dispositions
+after remediation` section while "the rest of the file is left as written". The round kept line 3
+and the table current through its 2026-09-12 batch and recorded every later disposition in the
+update file; a reader of line 3 now gets the wrong answer. The same arrangement covers eight more
+finished documents at `bca64824`, each with a sibling entry that gives or supersedes its State:
+three plans have no `State:` line at all (`doc/PLAN-efficient-wikisource-downloads.md`,
+`doc/PLAN-wikisource-derived-mam-products.md`, `doc/PLAN-worktree-file-consolidation.md`); three
+have a line 3 outside the declared vocabulary (`doc/PLAN-close-out-review-2026-09-08.md`,
+`doc/PLAN-evacuate-five-MAM-products.md`, `doc/PLAN-evacuate-public-repos-programme.md`);
+`doc/review-findings-2026-09-08.md` reads "remediated 2026-09-10"; and
+`doc/blind-dive-into-template-params.md` reads "five open findings.", which its sibling entry calls
+overtaken. No rule tells a reader of line 3, human or mechanical, to look for such an entry. What
 needs deciding is whether line 3 and the dispositions table are an explicit exception to D12, as
-`doc/periodic-review.md`'s step 3 already treats the table, or whether D10 rule 3 and the
-docstring are to declare the sibling mechanism. Re-establish: `git grep -n "^State:" bca64824 --
+`doc/periodic-review.md`'s step 3 already treats the table, or whether D10 rule 3 and the docstring
+are to declare the sibling arrangement. Re-establish: `git grep -n "^State:" bca64824 --
 "doc/*.md"`; `A_05`.
 
-7.2. **Unfixed at `bca64824`: the finding 7.2 entry cites a blob that is not in the repository.**
-`doc/review-findings-2026-09-10-update.md:1414`: "The screen report remains unchanged at Git blob
-`09ac3f23175aacb1ffb10c39894b3c2d2fe78912`." `git cat-file -t` on that id fails. The screen
-report's blob at the entry's own checkpoint and at `bca64824` is `a46dbf0f…`, which
-`doc/meteg-after-silluq-screen-against-uxlc-and-wlc-update.md` records correctly; the file's only
-other blob ever is `2b146272…`. The hash has stood since `8e2db58f`. Re-establish: `git cat-file -t
-09ac3f23175aacb1ffb10c39894b3c2d2fe78912` (`verify_a_findings.py`).
+7.2. **Unfixed at `bca64824`: the update file's entry for the 2026-09-10 review's finding 7.2 cites
+a blob that is not in the repository.** `doc/review-findings-2026-09-10-update.md:1414`: "The screen
+report remains unchanged at Git blob `09ac3f23175aacb1ffb10c39894b3c2d2fe78912`." `git cat-file -t`
+on that id fails. The screen report's blob at the entry's own checkpoint and at `bca64824` is
+`a46dbf0f…`, which `doc/meteg-after-silluq-screen-against-uxlc-and-wlc-update.md` records correctly;
+the screen report's only other blob in the history of any branch is `2b146272…`. The hash has stood
+since `8e2db58f`. Re-establish: `git cat-file -t 09ac3f23175aacb1ffb10c39894b3c2d2fe78912`
+(`verify_a_findings.py`).
 
-7.3. **Raised, not verifiable from public evidence: the close-out departed from the written
-procedure at four points.** No acknowledgment of turn 4 is recorded, where D9's stopping rule
-asks the other agent's next task to record one and the September 8 round did (`8c49cdd2`); no
-record says that Ben closed the exchange, where the September 8 round's record does; close-out
-step 2 was not done — `doc/dual-agent-review.md` at `bca64824` does not contain the string
-`2026-09-10`, and its "What Codex joined" census is still the 2026-09-09 one; and step 3 and D7
-have no record for the editorial items — no remediation plan was written, and no approval is
-recorded for the corrected readings Codex wrote for findings 11.1 to 11.4 and 20.2 to 20.5, for
-20.1's live docstring change or for finding 8's State declarations. Ben's decisions are recorded for
-findings 7.2, 10, 11.5, 12/C1, 20.9, 21.6
-and inherited item 3, and his 2026-09-12 instruction covering findings 12 to 21 is in the review.
-Whether he approved the rest in chat is not public evidence. Re-establish: `git grep -n
-"2026-09-10" bca64824 -- doc/dual-agent-review.md`.
+7.3. **Raised: the close-out record departs from D9's written procedure at two points.** D9's
+close-out list in `doc/dual-agent-review.md` has, as step 2, "Update the procedure record with the
+round's outcome and the approved process changes": the process changes, D12 among them, are in that
+file, but the outcome is not, since at `bca64824` the file does not contain the string `2026-09-10`
+and its "What Codex joined" census is still the one measured on 2026-09-09. As step 3 it has a
+remediation plan for a fresh task, with concrete editorial wording for Ben's approval: no such plan
+was written, and the remediation is recorded entry by entry in
+`doc/review-findings-2026-09-10-update.md`. The exchange itself followed D9: turn 3 says that under
+the stopping rule "it ends the round", turn 4 says "This file is the acknowledgment required by the
+stopping rule", as `8c49cdd2` acknowledged the September 8 round's turn 5, and D9 asks Ben at that
+stage to settle only an objection, which turn 4 does not raise. Ben's decisions are recorded for
+findings 7.2, 10, 11.5, 12/C1, 20.9 and 21.6 and inherited item 3, and his 2026-09-12 instruction on
+findings 12 to 21 went to the Claude session whose batch the 2026-09-10 review's dispositions table
+records. No approval is recorded for the corrected readings Codex wrote for findings 11.1 to 11.4
+and 20.2 to 20.5, for 20.1's docstring change or for finding 8's State declarations, but D7 says to
+"Follow already-recorded decisions without asking again", and most of those apply rules already
+recorded: the `hebrew-prose` vocabulary, the prose rules and D10's State words; 11.1 corrects a
+misidentified edition. Re-establish: `git grep -n "2026-09-10" bca64824 --
+doc/dual-agent-review.md`; `git grep -n "stopping rule" bca64824 --
+doc/dual-agent-review-2026-09-10-turn-03-claude.md
+doc/dual-agent-review-2026-09-10-turn-04-codex.md`.
 
-7.4. **Raised, low: seven of the thirteen disposition commits delete lines from update-file entries
-already recorded and dated.** `9d9da5c2`, `cfbe6ba7`, `08f49feb`, `ef8b4435`, `11d97c0d`, `063c6ece`
-and `5eca0c83` remove 19, 56, 34, 25, 23, 18 and 16 lines, the last five rewriting the
-inherited-item-3 entry as each decision arrived, and `cfbe6ba7` replaced the 2026-09-12 finding-10
-entry with the file's one entry of 39 that has no "Recorded by" line. The standards docstring calls
-an update file's entries "each finished and dated the moment they are written"; the practice is
-defensible under "kept true", and the description and the practice do not match. Re-establish:
-`A_03_named_commits_summary.txt`.
+7.4. **Raised, low: the standards docstring and D12 describe an update file's entries in ways that
+conflict, and one entry of `doc/review-findings-2026-09-10-update.md` has no "Recorded by" line.**
+`py/repo_util/check_repo_standards.py:339` says "An update file's entries are each finished and
+dated the moment they are written, so nothing in one is ever pending", while D12 in
+`doc/dual-agent-review.md` says an update file "is itself live, so it is kept true"; 7.2, 7.5 and
+7.6 of this finding follow D12, counting stale statements in a live update file as defects to
+correct. At `bca64824` the update file has 39 headed sections, 38 of them with a "Recorded by" line;
+the one without is the entry for finding 10, "Finding 10: the moved crop directories have dedicated
+license coverage". Re-establish: `git grep -n "finished and dated" bca64824 --
+py/repo_util/check_repo_standards.py`; `git grep -c "^Recorded by" bca64824 --
+doc/review-findings-2026-09-10-update.md`.
 
-7.5. **Raised, low: two live entries cite line numbers with no searchable anchor, and two have
-drifted.** The finding 20.1 entry's `CLAUDE.md` lines 166 and 992 are 173 and 1005 at `bca64824`;
-the finding 20.11 entry gives line numbers and SHA-256 values for the two instruction files
-without the checkpoint they were measured at, and both files have changed since. Re-establish:
-`A_05`, "Finding 20.1".
+7.5. **Raised, low: the line numbers in two live entries have drifted, and one entry's SHA-256
+values name no checkpoint.** Both entries name the text they locate. The entry for finding 20.1
+gives `CLAUDE.md`'s "hand-authored" at lines 24, 49, 69 and 166 and "hand-maintained" at 992, and at
+`bca64824` lines 166 and 992 are 173 and 1005. The entry for finding 20.11 gives
+`[page](gh-pages/accgram/page.html)` at line 1416 of `dot-claude/user-wide-CLAUDE.md` and line 1197
+of `dot-Codex/user-wide-AGENTS.md`, which are 1461 and 1240 at `bca64824`, and it gives the two
+files' SHA-256 values without the commit they were measured at; the values were right when the entry
+was written, and both files have changed since. Re-establish: `git grep -n -e hand-authored -e
+hand-maintained bca64824 -- CLAUDE.md`; `git grep -n -F "[page](gh-pages/accgram/page.html)"
+bca64824 -- dot-claude/user-wide-CLAUDE.md dot-Codex/user-wide-AGENTS.md`.
 
 7.6. **Unfixed at `bca64824`: two internal inconsistencies in the live
 `doc/meteg-after-silluq-search-in-mam-documentation-update.md`.** Its line 117 says "Finding 11.5's
-separate choice between `hataf` and `ḥataf` remains unmade", while the same file's finding 11.5
-entry at lines 25–47, recorded 2026-09-13, records the choice and applies it; and the corrected
-reading for the 1 Kings 7:37 Classification cell (line 70) keeps "silluq then ga'ya" while the
-entry "Analytic `ga'ya` terminology should read `meteg`" (line 93) says the report's analytic voice
-says "meteg", and the cell is the report's classification, not a quotation of MAM's note (stream E).
+separate choice between `hataf` and `ḥataf` remains unmade", while the same file's entry for that
+finding, the 2026-09-10 review's finding 11.5, at lines 25–47, recorded 2026-09-13, records the
+choice and applies it; and the corrected reading for the 1 Kings 7:37 Classification cell, at line
+70, keeps "silluq then ga'ya" while the entry at line 93, "Analytic `ga'ya` terminology should read
+`meteg`", says the six passages it corrects use "the report's analytic voice, for which the report's
+opening vocabulary note declares" meteg, and the cell is the report's classification, not a
+quotation of MAM's note (stream E).
 
 ### 8. Twelve stale, unattributed or asymmetric statements in the instruction files, procedure documents and plans
 
@@ -930,13 +954,13 @@ recorded on 2026-09-12" with only the 2026-09-13 amendments naming Ben, and its 
 executor to `C:/Users/BenDe/.codex/AGENTS.md`, which a Claude executor does not load, without
 saying which agent the plan is written for. Every figure in it re-measures.
 
-8.10. **Raised, low: the `doc/periodic-review.md` split left the close-out procedure stated in
-both files, and hands the reader a census glob that now over-matches.** `doc/periodic-review.md`
-§"Close-out" gives four steps and `doc/dual-agent-review.md:125–136` five, step 1 verbatim in
-both; and the new file's "ten files match `doc/review-findings-*.md` … all of them window reviews"
-with `git ls-files -- "doc/review-findings-*.md"` as its command returns 13 files at `bca64824`,
-two of them the 2026-09-08 and 2026-09-10 update files. Re-establish: `C_04_split_check.py`;
-`git ls-tree --name-only bca64824 doc/`.
+8.10. **Raised, low: the `doc/periodic-review.md` split left the close-out procedure stated in both
+files, and hands the reader a census glob that now over-matches.** `doc/periodic-review.md`
+§"Close-out" gives four steps and `doc/dual-agent-review.md:125–137` six, step 1 verbatim in both;
+and the new file's "ten files match `doc/review-findings-*.md` … all of them window reviews" with
+`git ls-files -- "doc/review-findings-*.md"` as its command returns 13 files at `bca64824`, two of
+them the 2026-09-08 and 2026-09-10 update files. Re-establish: `C_04_split_check.py`; `git ls-tree
+--name-only bca64824 doc/`.
 
 8.11. **Raised, deliberateness unrecorded: seven sections exist only in the Claude user-level
 file, and one in-window edit deepened the asymmetry.** All seven were Claude-only at `0354b6cc`
@@ -1094,19 +1118,20 @@ the root README.
 `doc/PLAN-retire-google-sheet.md`, `doc/PLAN-retire-codex-index-image-work.md` and
 `doc/PLAN-dispose-mega-pipeline-review-findings.md` are `State: live` and unexecuted, tracked on
 #279, #281 and #280; `doc/PLAN-deferred-template-projection-decisions.md` is `State: paused
-2026-09-12`, tracked on #277; `doc/PLAN-silluq-before-gaya-template.md` is `live` and unexecuted,
-on phonetic-hbo#78. `MAM-for-Sefaria/` and `MAM-OSIS/` are declared not kept current since
-2026-09-12 by their READMEs, whose commands for regenerating them fail (finding 2.1). The 2026-09-10
-review's findings 7, 10, 11.5, 13.1, 16.2, 19.3,
-20.9 and 21 are recorded as not acted on or as Ben's decisions, in its dispositions and update
-file. Issues #271 to #274, #276 and #278 are open and assigned to no plan. `main` and
-`origin/main` stood at `bca64824` when this file was committed.
+2026-09-12`, tracked on #277; `doc/PLAN-silluq-before-gaya-template.md` is `live` and unexecuted, on
+phonetic-hbo#78. `MAM-for-Sefaria/` and `MAM-OSIS/` are declared not kept current since 2026-09-12
+by their READMEs, whose commands for regenerating them fail (finding 2.1). The 2026-09-10 review's
+update file declares that review's remediation complete, with every finding disposed of and two ends
+left open: finding 18.1's archived-log provenance, unverified, and finding 21.8's `.pytest_cache` in
+the primary clone, referred to repository maintenance; that review's line 3 and dispositions table
+still say otherwise (this review's finding 7.1). Issues #271 to #274, #276 and #278 are open and
+assigned to no plan. `main` and `origin/main` stood at `bca64824` when this file was committed.
 
 ## What this review did not check
 
-1. Anything in MAM-private or hbofonts: the Phonetic MAM figures behind the post-stress-meteg
-   survey `aedac688` regenerated, MAM-private's own census, and the mgketer commit the finding
-   7.2 entry names.
+1. Anything in MAM-private or hbofonts: the Phonetic MAM figures behind the post-stress-meteg survey
+   `aedac688` regenerated, MAM-private's own census, and the two MAM-private commits named in the
+   2026-09-10 review's update-file entry for its finding 7.2.
 2. The cloud container itself: the hook was exercised under Git Bash on Windows with `HOME`
    redirected, which tests every path through the script that `53696b30` changed and the copy
    semantics that change relies on, but neither the four other paths that area 1 of "Ben's four
@@ -1142,10 +1167,11 @@ area itself; finding 4.1 is stream E's, and the main session's check found the s
 `post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 5's tree hashes,
 counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
 main session measured it; finding 2.1 was found by running the two generators after stream B noted
-that they read the incremental folders directly; findings 6 and 11 are stream E's, 7 stream A's, 8
-and 9 streams C's and D's, 10 streams B's and D's, each spot-checked by the main session where a
-figure could be re-run cheaply (the stale step count by all six readings, the nonexistent blob, the
-two replaced blobs, the dead link, the ruff errors, the "its step 7" sentence, the Codex file's
-UXLC-utils citations, the 13-file glob). The census, and the tree-health section's suite, mega,
-generator and product-tier figures, are the main session's own. The reconciliation section goes
-below this one, under `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
+that they read the incremental folders directly; findings 6, 7.6 and 11 are stream E's, the rest of
+7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each spot-checked by the main
+session where a figure could be re-run cheaply (the stale step count by all six readings, the
+nonexistent blob, the two replaced blobs, the dead link, the ruff errors, the "its step 7" sentence,
+the Codex file's UXLC-utils citations, the 13-file glob). The census, and the tree-health section's
+suite, mega, generator and product-tier figures, are the main session's own. The reconciliation
+section goes below this one, under `## Reconciliation with the Codex review`, per
+`doc/dual-agent-review.md`.
