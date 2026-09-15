@@ -63,6 +63,30 @@ permanent deletion. State the exact path and why the retirement is safe. Leave a
 folder in place and report the question. Recycle Bin contents remain recoverable but continue to
 consume disk space until the Recycle Bin is emptied.
 
+### Audit always-loaded AGENTS.md files for trimming opportunities — report only
+
+Inspect the user-wide `~/.codex/AGENTS.md` once and every selected repository's tracked
+`AGENTS.md` and `AGENTS.override.md` files as part of the judgment pass. Programmatic Git filename
+enumeration still uses `-z`. Measure each file's UTF-8 byte size and look for material that need
+not be loaded before every task: dated measurements and historical narratives, long examples,
+procedures for a recognizable task type, source-tree-specific detail, and rules duplicated in the
+user-wide file, a repository file, a skill, or maintained documentation. A file can merit
+trimming while it remains below Codex's byte limit; the cost is repeated context and maintenance
+as well as truncation risk.
+
+Report each worthwhile opportunity without implementing it. Name the exact heading or searchable
+anchor, the proposed destination, and why a future task would still discover the information.
+Prefer a skill only when the task that needs the material has a reliable description-level
+trigger; otherwise keep a concise always-loaded rule and point to a focused reference. Do not
+assume that a nested `AGENTS.md` will load when tasks normally start at the repository root.
+
+Do not trim an instruction file, create or restructure a skill, move documentation, or change
+`project_doc_max_bytes` during maintenance unless Ben separately asks for implementation. Assess
+the limit against the combined instruction chain from the repository root to the relevant working
+directory, not against one file in isolation. If every selected repository's relevant chain would
+fit under Codex's default 32 KiB project-document limit after a proposed trim, report the raised
+limit as a separate configuration opportunity rather than changing it.
+
 ## EXECUTED 2026-08-27 — the public half, and the process change the private half forced
 
 The second run of this plan. **Read this section and the 2026-08-07 one below it before acting
