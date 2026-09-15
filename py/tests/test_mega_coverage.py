@@ -366,6 +366,11 @@ NOT_IN_MEGA: dict[str, str] = {
         " doc/PLAN-repo-maintenance-across-GitRepos.md and"
         " doc/mega-coverage-2026-09-10-update.md."
     ),
+    "dot-Codex/hooks/check_project_doc_budget.py": (
+        "A user-level SessionStart diagnostic, deployed by --sync-user-config and also"
+        " invoked in maintenance mode by py/main_repo_maintenance.py.  Recorded in its"
+        " module docstring and dot-Codex/README.md."
+    ),
     "py/main_repo_maintenance.py": (
         "MAM-basics' maintenance, whose step 7 runs the mega.  Recorded in its docstring"
         " and doc/mega-coverage-2026-09-10-update.md."

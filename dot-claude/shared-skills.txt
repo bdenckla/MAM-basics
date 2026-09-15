@@ -2,4 +2,5 @@
 # both ~/.claude/skills/ and ~/.agents/skills/.
 github-issues
 hebrew-prose
+mam-repository-topology
 verse-links

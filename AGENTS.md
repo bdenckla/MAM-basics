@@ -4,1120 +4,208 @@
 
 `AGENTS.md` is the common repository instruction body. Codex loads it directly, and Claude Code
 loads it through the minimal `CLAUDE.md` wrapper. Historical prose that cites “`CLAUDE.md`'s
-section X” now means section X in this common `AGENTS.md` body imported by `CLAUDE.md`; do not
-mechanically rewrite those historical citations.
+section X” means either the matching section here or the task-specific reference to which that
+section now points; do not mechanically rewrite historical citations.
 
-## Hebrew marks go in MAM-normal order, not Unicode-normal order — never run NFC over them
+## Hebrew marks go in MAM-normal order, not Unicode-normal order
 
-Two orders exist for the combining marks of one base-letter cluster, and they differ on where the
-dagesh sits:
+MAM-normal order puts shin dot, sin dot, dagesh/mapiq, and rafe before every other mark while
+preserving the other marks' relative order. `py/mb_cmn/uni_denorm.py` is the authority:
+`give_std_mark_order` applies the order and `has_std_mark_order` checks it.
 
-- **MAM-normal order**, the one this repo uses. Shin dot, sin dot, dagesh/mapiq, rafe, then every
-  other mark in the relative order it already had. Spelled out and implemented in
-  `py/mb_cmn/uni_denorm.py` — `give_std_mark_order` is the authority, `has_std_mark_order` the
-  predicate. The code calls it "(our) standard mark order" and its combining-class table "SBL2",
-  after the appendix to the SBL Hebrew Font manual, so grep for **std mark order** and **SBL2** as
-  well as for this section's heading.
-- **Unicode-normal order**, what `unicodedata.normalize` produces from the canonical combining
-  classes (qamats 18, holam 19, dagesh 21, meteg 22). It puts the dagesh **after** the vowel.
+**Never call `unicodedata.normalize` in any form on Hebrew.** When two Hebrew strings that should
+match do not, compare them through `give_std_mark_order`; do not normalize them. Hebrew copied
+from a browser is especially suspect because the two orders render identically.
 
-**Never call `unicodedata.normalize` (NFC, NFD, any form) on Hebrew.** When two strings that should
-match do not, put both through `give_std_mark_order`; do not paper over it by normalizing. The two
-orders render identically, so nothing looks wrong on the page and the defect surfaces only where
-something compares bytes.
-
-MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_std_mark_order` true
-for all 87 files of `MAM-parsed/plus/`, `MAM-parsed/plain/` and `MAM-for-Sefaria/csv/`. So a cluster
-in the other order is either hand-authored — and **the way in is a paste through anything that
-normalizes, a browser above all** — or it sits upstream of the denormalizing step and belongs
-exactly as it is. Hebrew you did not lift from the data is the thing to suspect.
-
-**Never "repair" the second kind, and know which clusters are the second kind.** A scan of every
-tracked file on 2026-09-11, at review-branch commit `2bb94060`, counted **699,940** clusters in the
-other order, a cluster counting when `give_std_mark_order` changes it. Two groups, 692,693
-clusters between them, are known to be expected:
-
-- **688,072 are the Wikisource download and three faithful intermediates of it**, 172,018 in each
-  tree. `in/mam-ws/` is a download that is inherently normalized (Ben, 2026-09-09);
-  `out/mam-ws-bot/proto/`, `out/mam-ws-bot/proto-fmt-2/` and `out/mam-ws-parsed-fmt-2/` are
-  written from it, and their per-book counts match it exactly. The pipeline denormalizes
-  downstream, which is why `MAM-parsed/` and `MAM-for-Sefaria/` come out clean.
-- **4,621 are byte-verbatim captures of external sources**: `in/mam-ws-intro/`, `in/UXLC-39/`,
-  `aleppo/aleppo-wiki/Wikisource-manual-*.txt`, `misc/zarqa-table-diff/`, `misc/*/img-sources/`.
-
-**The other 7,247 clusters, in 152 files, are unclassified.** Nobody has established, file by
-file, whether each is a capture, an upstream intermediate, or a paste that should have been in
-MAM-normal order. The largest shares are in `uxlc/in/` and `uxlc/out/` (3,890), `in/accgram/`
-(1,431), `out/accgram/` (702), files under `py/` (656 in 65 files, 369 of those in 51 `.py`
-files) and `gh-pages/` (334). So do not repair one of them, and do not cite one as expected,
-without first finding out which it is. `py/repo_scopes.py` records why a repo-wide mark-order
-sweep has no meaning here.
-
-**The lint over hand-authored prose is `py/tests/test_prose_mark_order.py`** — every tracked `.md`,
-the `.html` under `doc/`, and the `.txt` under `in/accgram/edition_transcriptions/`, the last by
-Ben's decision of 2026-09-09, which the lint's docstring records. It was added 2026-09-09, when a
-scan someone chose to run found 132 such clusters in 16 prose files that no existing check
-covered. Source outside its scope is still yours to check: `py/check_mark_order.py` covers the
-`.py` and the Ben-authored `.json` of the three repos `py/repo_scopes.py` names, and
-`py/tests/test_mam_simple_mark_order.py` covers MAM-simple's non-corpus tree, but any other
-`.txt` is covered by nothing, and
-`py/tests/test_aleppo_page_mark_order.py` covers generated pages rather than source. Separately
-`py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
-`py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.
-
-Scope: only those four marks have a declared place. A vowel and an accent pass in either order, so
-`has_std_mark_order` says nothing about which of them comes first.
-
-**This section is back, not new.** It stood in `CLAUDE.md` and `.github/copilot-instructions.md`
-until both were disabled on 2026-05-19 and deleted in `b1fa115` on 2026-08-03. `codex-index-aleppo`
-and `codex-index-cam1753` carry near-verbatim copies of the deleted wording, both pointing back at
-`uni_denorm.py` in this repo — so the rule survived everywhere except the repo that hosts its
-implementation. On 2026-08-04, one day after the deletion, three NFC-ordered clusters were found in
-a hand-authored file here. That is why it is worth the tokens.
+Do not “repair” faithful external captures or intermediates upstream of the pipeline's deliberate
+denormalization. Known examples include `in/mam-ws/`, its faithful intermediates, and verbatim
+source captures. For scope, census evidence, and the checks covering authored prose, Python,
+JSON, data, and generated pages, read `doc/mam-normal-mark-order.md` before changing mark order.
 
 ## Tracked filenames do not use Hebrew letters; Git filename output is NUL-delimited
 
-**No tracked filename contains a Hebrew letter.** When Hebrew identifies a file, convert the
-Hebrew portion with `heb_alef_bet_to_ascii` from
-`py/py_ac_word_image_helper/alef_bet_to_ascii.py`; do not invent a second transliteration. The
-one-time migration on 2026-09-12 applied that established conversion to all 69 tracked filenames
-that then contained Hebrew letters and updated controlled references. The two Holman pages were
-renamed without compatibility stubs, by Ben's decision of 2026-09-12; external references to the
-old URLs were deliberately left to break.
-
-**Filenames without Hebrew letters do not make line-delimited Git output safe.** Every programmatic
-Git command that returns filenames requests NUL delimiters with `-z` and splits on `"\0"`, never
-on lines.
-Spaces, tabs, newlines, quoting characters and future non-ASCII filenames remain possible even
-when Hebrew letters are forbidden. The filename rule is the preventive policy; NUL-delimited Git
-parsing is the independent safeguard.
-
-`py/tests/test_tracked_filenames.py` enforces both rules. The case that prompted them was finding
-18.2 of `doc/review-findings-2026-09-10.md`: two tracked Holman pages were reported as untracked
-because line-based parsing treated Git's quoted path output as paths. The finding was false, but
-the failure mode was real.
-
-## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
-
-That user-level skill (`~/.claude/skills/hebrew-prose/` for Claude Code and
-`~/.agents/skills/hebrew-prose/` for Codex, tracked in **this repository** at
-`dot-claude/skills/hebrew-prose/`) is the canonical, single home for the rules the sections below
-and `printed_decalogue_strands.py`'s docstring state — atom vs chanted word, the one-scale maqaf
-rule, which corpus a claim takes, the banned verbs and framings, where Yeivin and Breuer live,
-how to verify a page's numbers. It loads on demand rather than every session, so it can hold the
-full statement; the sections here stay as pointers, and **a rule change goes into the skill
-first**.
-
-**`dot-claude/` and `dot-Codex/` are storage, and this repository loads neither.** They hold the
-version-controlled originals of Ben's user-level Claude and Codex configuration — the skill above,
-`user-wide-CLAUDE.md`, `user-wide-AGENTS.md`, the Codex `SessionStart` hook and the Codex-only
-skills. The live copies under
-`~/.claude/`, `~/.codex/` and `~/.agents/` are what the two agents actually load, and
-`dot-claude/README.md` is the deployment procedure of record. **Edit the tracked canonical copy,
-never a live copy.** Commit the edit on its development branch, integrate and push `main`, then
-run `py/main_repo_util.py --sync-user-config` from the primary MAM-basics clone. The command
-fetches `origin`, deploys every instruction file and tracked skill plus the Codex hook only from
-the freshly updated `origin/main`, and fails before any live write when the fetch or source validation
-fails. Its `--check` mode is part of ordinary `py/main_repo_maintenance.py`, which also runs the
-hook's project-instruction budget check. The trees lived in `github-misc`
-until 2026-09-09, so a `github-misc <sha>` citation inside them is right as written and must not be
-repointed.
-
-### Claude Code only: cloud SessionStart installation
-
-**A Claude Code cloud session gets none of the user-level files from Ben's machine, so a hook
-installs the current Claude files and prepositions issue 274's Codex import target.** Nothing under
-`~/.claude/` or `~/.codex/` travels with the clone, while `dot-claude/` and `dot-Codex/` do.
-`.claude/hooks/install-user-config.sh` copies
-`dot-Codex/user-wide-AGENTS.md` to `~/.codex/AGENTS.md`,
-`dot-claude/user-wide-CLAUDE.md` to `~/.claude/CLAUDE.md`, and
-`dot-claude/skills/hebrew-prose/` to `~/.claude/skills/hebrew-prose/` from the cloud session's
-checked-out branch at session start. The hook touches neither the network nor another repository,
-and its transcript banner reports all three resources. The checked-out branch can be `main`; the
-hook does not substitute `main` for a different checked-out branch. This branch-sourced cloud
-bootstrap is the explicit exception to the local `origin/main` deployment rule. On Ben's
-machines the Claude Code hook exits before reading anything, and Codex does not run this hook. If
-`hebrew-prose` is not in the available-skills list and no such report appeared, say so rather
-than writing accentuation prose without it; `doc/user-level-config-in-cloud-sessions-update.md`
-has the current diagnosis.
-
-## The post-stress-meteg pages say plain "word" — do not qualify it as "chanted"
-
-The skill's first rule is "Never a loose 'word'". **Ben's decision of 2026-09-08 is that
-`gh-pages/post-stress-meteg*.html` and its eight sub-documents are an exception**, and the skill
-itself allows for one: plain "word" survives "wherever the context already settles which sense is
-meant". The main page defines both "word" and "atom" in its second expository paragraph; the
-opening sentence already uses "word". So plain "word" is the declared term there, in
-visible prose, headings, tooltips and alt text alike.
-
-**This is enforced, not merely advised**, by `py/tests/test_post_stress_meteg_plain_word.py` —
-"chanted" must not appear in any of the nine rendered pages. The lint exists because a comment or
-a helper function would not have prevented what happened: between 2026-09-07 and 2026-09-08 two
-branches fixed the same alt-text defect in opposite directions, one making the alt text say "word"
-and the other making the visible prose say "chanted word" 440 times, and the merge then conflicted
-in 13 files and 32 hunks of `py/author_site/post_stress_meteg.py` alone. Neither side was
-careless; the exception was recorded nowhere a terminology sweep could see it.
-
-**The source is deliberately outside the lint's scope.** `census_chanted_word_summary`,
-`chanted_word_difference` and `_case_chanted_word_cell` are the survey's vocabulary, and the
-skill's rule governs reader-facing prose rather than identifiers and docstrings.
-
-## The MAM introduction is mirrored at `in/mam-ws-intro/` — read it, do not fetch it
-
-Hebrew Wikisource's introduction to MAM is consulted constantly here, and since 2026-08-31 all
-thirteen of its pages are mirrored locally as verbatim wikitext, one `.mediawiki` file each.
-Refresh with `.venv/Scripts/python.exe py/main_download.py fr-ws-intro`, which is deliberately
-**separate** from `fr-wikisource` (Ben's decision, 2026-08-31): the books and the introduction
-have unrelated refresh rhythms, and nothing downstream reparses when the introduction moves.
-
-| File under `in/mam-ws-intro/` | Wikisource subpage |
-|---|---|
-| `root.mediawiki` | the introduction's root page |
-| `summary.mediawiki` | `/תקציר` |
-| `ch1` … `ch5.mediawiki` | `/פרק א` … `/פרק ה` |
-| `appendices.mediawiki` | `/נספחים` — the sigil roster `doc/sigil-decoding.md` leans on |
-| `index-aleppo.mediawiki` | `/מפתח לכתר ארם צובה` |
-| `index-leningrad.mediawiki` | `/מפתח לכתי"ל` |
-| `westminster-typing.mediawiki` | `/מידע טכני על הקלדת וסטמינסטר` |
-| `data-sheet-guide.mediawiki` | `/מדריך טכני לגיליון הנתונים` |
-| `technical-guide.mediawiki` | `/מדריך טכני` |
-
-Three things about it are worth knowing before you touch it:
-
-1. **Never summarize-fetch these pages, mirror or no mirror.** That is what the mirror is for.
-   `doc/sigil-decoding.md`'s source #1 records what a summarizing fetch did to the sigil roster
-   on 2026-08-06, and the mirrored wikitext is where you can see what it flattened.
-2. **This tree is exempt from the mark-order rule at the top of this file.** It is hand-authored
-   wiki prose, so clusters in Unicode-normal rather than MAM-normal order are what the source
-   says, not defects. Do not run `uni_check` or `has_std_mark_order` over it, and never
-   normalize on refresh — the files are byte-verbatim by design.
-3. **A mirror goes stale in a way `in/mam-ws/` does not.** The books move when Ben edits them;
-   the introduction moves when Avi Kadish does, unannounced — five of the thirteen pages were
-   edited in August 2026 alone (the committed manifest's count; this said four until 2026-09-01,
-   from a drafting-time fetch predating the month's last two edits). `manifest.json` beside the
-   pages records each one's revision id
-   and timestamp, so staleness is checkable without a network call.
-
-**`index-aleppo.mediawiki` and `index-leningrad.mediawiki` are hand work, and nothing in this
-repository generates them.** Each page began as wikitext from a one-off generator. Ben,
-2026-08-31: those generated files "were only ever intended to be starting points for manual work
-on Wikisource." The published pages are that manual work. On Ben's decision of 2026-09-10 both
-generators and their outputs were removed from the repository — they "will never be run again"
-— so there is no generated form left to compare a mirrored page against. Phase 3 of
-`doc/PLAN-mega-coverage.md` names every file removed, and git history keeps them.
-
-Measured before the removal, **26 (4%)** of the Aleppo generator's 700 lines survived into the
-live page, and **94 (8%)** of the Leningrad generator's 1,135. The `aleppo/aleppo-wiki/` tree
-also keeps two snapshots of the hand work itself, `Wikisource-manual-initial.txt` (63 lines,
-carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose lines are
-in the live page) — which is the pipeline written down: generate raw material, then build the
-page by hand from it. The generated Aleppo file's overlap with the hand-made line was the same 26
-lines whether measured against the initial snapshot, the final snapshot or the live page, so the
-hand work left the generated form immediately and never went back to it. No snapshot of the
-Leningrad hand work was kept.
-
-## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
-
-That docstring is where the editorial conventions for accgram's **rendered prose** are recorded
-— strand names in Hebrew letters and never transliterated, the two signal-word sets, atom vs
-chanted word, the single-sourced `ROM_*` romanizations and their italic wrapper, "the Simanim
-Tiqqun" and never a bare "Simanim", real em dashes, no English sentence opening on a Hebrew word.
-It lives in the printed-Decalogue trio because that is where each rule was settled, but the rules
-are not all trio-specific — its SCOPE paragraph says which are which: read it before writing or
-editing prose on **any** accgram page. Nothing referenced it for a long time, so it was
-discoverable only by already editing the file it governs.
-
-**A table cell holding Hebrew is declared `dir="rtl"`.** Every such cell of every table on a page,
-unless the whole table already is, and without waiting to be asked — right-justification then
-follows from having said what the cell holds, which is why the declaration beats a literal
-`text-align`. Blank cells in the column included; the English heading left alone; no class and no
-stylesheet rule. `maqaf_nonfinal_accents_page`'s `_HEBREW_CELL`, spliced through each table's one
-`*_CELL_ATTRS` tuple, is the pattern. This is here as well as in the skill because Ben has had to
-say it repeatedly (2026-07-29: "something I find myself telling you about frequently … this should
-just be sort of obvious"), and the common `AGENTS.md` body loads for both agents whether or not
-the skill fires. The fuller statement, with the companion rule about abbreviating a long accent
-name in a cell, is the `hebrew-prose` skill's `references/rendered-prose.md`.
-
-Two of those conventions are claims about Hebrew accentuation rather than about this repo:
-
-**Never a loose "word"** (wlc-utils#81). An **atom** is one written word, between spaces or maqafs
-— the thing a maqaf joins to the next. A **chanted word** is a lone atom *or* a whole maqaf
-compound: the unit cantillation operates on, normally bearing one accent. Say which you mean, and
-name a compound whole (על־פני, לא־תעשה), never a bare half of one. Plain "word" survives for an
-ordinary English word, inside quoted or translated source material (which keeps whatever it says),
-**and wherever the context already settles which sense is meant** — what wlc-utils#81 bans is a
-loose "word" the reader must resolve from nothing, so the qualifier is owed where the sense is in
-doubt and is noise where it is not. A table heading is read with its column, so `Word` over a
-column of Hebrew forms is right whether they are simple, compound or mixed (Ben, 2026-07-29); the
-sense can still go in the heading's hover text, as the one-letter appendix's does.
-`MAQAF_IS_THE_LAST_RUNG` is where "atom" is glossed for the reader; that gloss is what licenses
-the bare term on the pages. Note that the two senses come apart exactly where the rung below
-matters, so the two rules are best read together.
-
-**Maqaf is the last rung of one scale.** Disjunctives, then conjunctives, then maqaf — a maqaf
-separates the atom it sits on from the next even less than a conjunctive does, so it carries the
-weakest *separating* force on the scale. (Never write a bare "weakest": a maqaf *binds* tightest,
-so unqualified it reads as backwards.) There is no second ledger for "word division". A maqaf
-difference is counted **once**, at the atom whose marking changed, never as a regrouping plus an
-accent; and it is stated as an **exchange with both marks named** — "a maqaf where its Wikisource
-strand has a merkha" — never as the absent maqaf alone. Do not define a maqaf as "the atom left
-blank of an accent": that is only the normal case, and `koren_dt_elyon`'s `mun-mun` on לא־תעשה is
-a maqaf compound whose joined atom keeps its munaḥ — as are the Simanim Tiqqun's two munaḥ-on-לא.
-But do not swing the other way either: in the **prose** system a second accent on a compound is
-rare, and is largely just a consequence of the compound being one chanted word — the accents found
-there are the ones that can be the first of two on an atomic word, which is also Yeivin's short
-list of prose "secondary accents" (munaḥ-zaqef, metigah-zaqef, rare merkha/mehuppakh on a tevir
-word). The separate case is a maqaf written after a word that keeps its own conjunctive: a
-manuscript habit, and one **L is specifically named for** (Yeivin ITM §293). The **poetic** system
-is far more willing to put two accents on one chanted word; that asymmetry is a major difference
-between the systems, not a detail. `edition_transcription`'s "HOW RARE THAT IS IN PROSE" paragraph
-has it with its Yeivin and Breuer citations.
-
-**Yeivin lives in two places and they are not the same.**
-`../MAM-private/al-hatorah/py/itm/` is Ben's
-*adaptation* — partial, with sections still untranscribed.
-`../MAM-private/masorah-books/books/itm/md-export-of-docx/` is
-the *full* OCR of the book. That repo was `yeivin-itm` until 2026-07-31, when it was renamed and
-Breuer's *Cantillation of Scripture* was merged into it from `breuer-cos`; CoS is the sibling
-`../MAM-private/masorah-books/books/cos/md-export-of-docx/`, so both books are still one clone
-away, that clone being MAM-private since 2026-08-10. masorah-books itself is in no workspace
-file, so no machine clones it either, and a copy found on one is residue (one was removed
-2026-08-31). **The `../masorah-books/…` spellings that
-remain in `py/accgram/` docstrings and comments are stale by exactly that one directory** — eight
-sites in `breuer_word_length.py`, `chanted_word_accents.py`, `edition_transcription.py`,
-`maqaf_nonfinal_accents.py` and `maqaf_nonfinal_accents_page.py`, each naming a path that now
-reads `../MAM-private/masorah-books/…`. Ben chose this sentence over editing the eight, 2026-08-10,
-as he chose the same answer for UXLC.
-
-**The `al-hatorah` citations in `py/accgram/` are stale the same way, and Ben chose the same
-answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10, and
-al-hatorah is in no workspace file, so no machine clones it — `../al-hatorah/…` names nothing on
-either count. (A clone of it turning up on some machine is residue, per "Repo locations are
-decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Eight
-sites**, named here so nobody re-derives them and re-measured 2026-09-12:
-`chanted_word_accents.py:696`, `final_stress.py:5` and `maqaf_nonfinal_accents.py:112`
-write `../al-hatorah/py/itm/` and `../al-hatorah/py/aht_phon…`, which want
-`../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`, `:43` and `:105`,
-`post_stress_meteg.py:15`, and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write
-"al-hatorah's `io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want
-`MAM-private/al-hatorah/` in front of the in-repo path. Two further mentions name the repo with no path in them —
-`edition_transcription.py:67` and `final_stress.py:16` — and read correctly as written.
-Search the full OCR before concluding Yeivin is silent on something;
-a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
-absent. The verbatim reader-facing statement is
-`MAQAF_IS_THE_LAST_RUNG`; its guardrail comment records the convention it replaced (a 2026-07-25
-audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
-get reinstated. Issue wlc-utils#76.
-
-## Holman's mailboxes, public derivatives, and authored CSS
-
-The raw mailboxes for Holman's two correspondence projects are untracked under
-MAM-basics' `.novc/`: `.novc/eml/` contains suggested UXLC corrections and
-`.novc/eml-mam/` contains suggested MAM corrections. This public repository
-does not track a `.eml` file or an address from any mail header.
-
-The UXLC ingest writes the address-free derivative in `holman/emails/` and
-redacts addresses from message bodies as it reads them, including forwarded
-headers quoted in a body. Before adding a field to that derivative, check what
-the field would carry from a mail header.
-
-The MAM-suggestions ingest has a stricter boundary. It tracks no message body:
-only the suggestion itself, its reference and compared forms, Holman's
-description or suggestion where present, and the subject, date, and sender
-display name. `hkq_cmn/mam_suggestion_extract.py` accepts messages only from
-Holman; it does not harvest correspondence among Ben Denckla and Avi Kadish.
-A substantive judgment that settles a suggestion belongs in
-`hkq_cmn/mam_suggestion_dispositions.py`, deliberately and with the person who
-reached the judgment cited by name and date. Personal circumstances and
-availability do not belong in a disposition.
-
-The four authored Holman CSS and JavaScript assets live under `holman/assets/`.
-Edit those files rather than their generated copies under `gh-pages/holman/`.
-Every authored CSS theme declares `color-scheme: light dark` on `:root` and
-keeps each color in a `light-dark(<light>, <dark>)` custom-property pair. Do not
-add an `@media (prefers-color-scheme: dark)` block.
-
-## Five issue trackers: a bare `#NN` here means MAM-basics
-
-wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
-their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
-and closed — 93 of them as of 2026-08-17 (this paragraph long said 88, a count that was already
-five short when it was written: #89–#93 were filed 2026-07-31). The trackers unify *going forward* only: **every new issue, including new work on the
-moved code, is filed in MAM-basics.**
-
-So in this repo a bare `#NN` names a MAM-basics issue, and a citation of a wlc-utils issue is
-written **`wlc-utils#NN`**. The prefix is not decoration: both trackers have issues in the 1-88
-range, and several numbers name quite unrelated things in each — wlc-utils#52 is the printed
-Decalogue where MAM-basics #52 asks about a meteg in Ezekiel, wlc-utils#69 the hand transcriptions
-where MAM-basics #69 is a CSS URL, wlc-utils#75 making maqaf a token of its own where MAM-basics
-#75 is the `mb_cmn/paths.py` convention. The moved code's 326 bare citations were prefixed on
-2026-08-02.
-
-**UXLC-utils is the third tracker and works the same way.** Its issues were not transferred when
-its Python moved here on 2026-08-03 either — 56 of them as of 2026-08-18, numbered 1–56, still
-read, commented on and closed in `bdenckla/UXLC-utils`. So a citation of a UXLC-utils issue is
-written **`UXLC-utils#NN`**, and here the whole numbered range collides: UXLC-utils#19 removes the
-CLC note fallbacks where MAM-basics #19 asks for a no-args mode in `main_diff_mpp`, UXLC-utils#29
-encodes the pasoleg-tokenization verses where MAM-basics #29 wants mgketer links, UXLC-utils#48
-lets the editor simplify a reiterated note-target word where MAM-basics #48 is a space before sof
-pasuq in Isaiah 44:24. The moved code's 50 bare citations were prefixed on 2026-08-18, across
-eight `py/clc/` modules and `py/main_clc_download_notes.py`.
-
-**holman-ketiv-qere is the fourth tracker.** Its Python moved here on 2026-08-18 and its issues
-were not transferred either — **81 of them, numbered 1–81, 60 open**, measured 2026-08-18, still
-read, commented on and closed in `bdenckla/holman-ketiv-qere`. So a citation of one is written
-**`holman-ketiv-qere#NN`**, and the whole numbered range collides, all 81:
-holman-ketiv-qere#4 is row 13's 2 Samuel 11:24 ויראו where MAM-basics #4 produces MIDI of a trope
-realization, holman-ketiv-qere#48 is row 41's Jeremiah 17:11 ימו where MAM-basics #48 is a space
-before sof pasuq in Isaiah 44:24, holman-ketiv-qere#75 is row 65's Ezekiel 40:34 ואלמו where
-MAM-basics #75 is the `mb_cmn/paths.py` convention. Most of holman-ketiv-qere's issues are one per
-review row, titled "row NN Book C:V FORM MAM qere", and `io/table_row_github_issues.json` holds
-that mapping. **Six numbers became four-way collisions when holman-ketiv-qere's tracker was
-added** — #19, #29, #48, #52, #69 and #75, each already cited above as a wlc-utils or a
-UXLC-utils collision.
-
-**Unlike the two moves that had citations to prefix — wlc-utils' 326 and UXLC-utils' 50 —
-holman-ketiv-qere's move had nothing to prefix**, which is worth stating because the arithmetic
-that predicts otherwise is so easy to do. Phase 6 read every `#`-plus-digit site in
-the 60 files that moved and found no citation of any tracker among them: 19 CSS hex colours in
-`py/py_render/rt_assets.py`, and the `#2026.08.05-6` UXLC **change** anchor in
-`py/hkq_cmn/uxlc_change_records.py`. The rest of holman-ketiv-qere's pre-move `py/` carried eight
-more sites, and every one is disposed of rather than moved. Six sat in `py/mb_cmn/`, which was a
-pure deletion: four lines of `hebrew_accents.py` citing Yeivin *ITM* as `#194`, `#358` and `#361`,
-and two of `paths.py`, a `#75` naming MAM-basics' paths convention and an already-prefixed
-`wlc-utils#48`. The other two are both `#187`, naming MAM-basics' NFC convention — one in
-`main_test.py`, which disappeared, one in `test_h_dot_below_nfc.py`, which collided with this
-repo's copy. **A repo can move its whole
-Python and still owe this section nothing but a clause** — count the citations, never the files.
-
-**book-of-job is the fifth tracker.** Its Python moved here on 2026-08-19 and its issues were not
-transferred either — **61 of them, numbered 1–61 with no gaps, 19 open**, measured 2026-08-22,
-still read, commented on and closed in `bdenckla/book-of-job`. So a citation of one is written
-**`book-of-job#NN`**, and the numbered range collides from #1 upward: book-of-job#1 studies UXLC
-changes in Job where MAM-basics #1 syllabifies pointed Hebrew, book-of-job#7 shows only the first
-five of each group where MAM-basics #7 adds `main_diff_mpp.py`. **Its issues take the shape
-holman-ketiv-qere's do rather than wlc-utils'**: 37 of the 61 name a Job verse or a quirk-record
-SID in the title, 11 of those leading with the verse, as "30:18: add prefix; expand Lenin crop"
-does — one issue per quirk record, per manuscript image, or per crop-editor failure. **The bullet
-below about modules that render issue references as data does not apply here**: book-of-job's
-issue numbers live in its tracker and in prose, and no module of its code turns them into links or
-tags, so it has no counterpart to `io/table_row_github_issues.json`. The book-of-job data and
-programs now live under `book-of-job/` and `py/` in MAM-basics; no `DATA_REPO_NAME` constant remains.
-
-**Four of the six numbers named above are now FIVE-way collisions** — #19, #29, #48 and #52, whose
-book-of-job titles are "Add Aleppo Codex image for 34:5", "supplement μA images with manuscript
-locations", "details is getting too big" and "30:18: add prefix; expand Lenin crop". **#69 and #75
-stay four-way**, book-of-job's numbering stopping at 61.
-
-**book-of-job had nothing to prefix either, which makes it twice running.** Its move was the
-programme's largest, 241 modules against holman-ketiv-qere's 60, and it owed this section exactly
-as little. All **29** `#`-plus-digit sites in the 268 `.py` that repo tracked before the move are
-disposed of without a prefix: **24 are lines of CSS hex colours**, 32 colour tokens on those 24
-lines (the two files hold 46 tokens over 36 such lines, the other 12 lines opening with a letter
-and so not matching `#`-plus-digit; this sentence said "46 colour tokens between them" until the
-2026-08-22 review), in `py/main_gen_aleppo_crop_editor.py` and
-`py/main_gen_cam1753_crop_editor.py`; **four are Yeivin
-*ITM* section numbers** — `#194`, `#358` and `#361` — in the `mb_cmn/hebrew_accents.py` copy Phase
-4 deleted, the same four lines holman-ketiv-qere's copy carried; and the twenty-ninth,
-`py/author_boj_util/qr_relations.py:75`, was already written out in full as
-`bdenckla/wlc-utils#43`. book-of-job's copy of `mb_cmn/` held no `paths.py` and its
-`test_h_dot_below_nfc.py` cited nothing, so even the two `#187` sites and the `#75` that
-holman-ketiv-qere's move disposed of have no counterpart here. **Two moves of very different
-sizes have now confirmed the same thing: how many citations a move owes is a function of what its
-code talks about, never of how many files it is.**
-
-**Five more public trackers were emptied into this one on 2026-08-26, by transfer, and this
-section keeps its "Five" name anyway.** Between 18:50 and 19:01 local that evening, Ben
-transferred all 27 open issues of five public trackers into MAM-basics, where they are
-**#234–#260**: codex-index-cam1753 2 (#234–#235), MAM-simple 2 (#236–#237), codex-index-aleppo 6
-(#238–#243), MAM-parsed 8 (#244–#251), MAM-with-doc 9 (#252–#260) — re-derived 2026-08-27 from
-the GitHub GraphQL timeline (`TransferredEvent.fromRepository`), all 27 open here that day. A
-transferred issue is a MAM-basics issue: its home citation is a bare `#NN`, and the old qualified
-form still resolves through GitHub's transfer redirect (Ben observed this during the 2026-08-26
-review), so an old-form citation is stale-but-working rather than broken. The first repointing is
-done: `doc/sigil-decoding.md` carried `MAM-with-doc#6` at six sites — five citations of its
-umbrella issue plus the paragraph justifying their qualifier, all six qualified by `e624139` at
-18:27 that same evening, 34 minutes before the transfer — and since 2026-08-27 it cites the issue
-as **#257**, its number here (Ben's decision), the justifying paragraph now carrying the
-citation's three forms instead. `e624139`'s message, "MAM-with-doc becomes the sixth tracker
-cited from this repo", is immutable and stays as the record of those 34 minutes.
-
-**The five source trackers hold closed issues only now** — MAM-with-doc 1, MAM-parsed 12,
-MAM-simple 2, codex-index-aleppo 21, codex-index-cam1753 10, 0 open each, measured 2026-08-27 —
-and no new issue is filed in any of them: a new public-side issue goes to MAM-basics, and the
-private half of that doctrine is recorded at MAM-private `9dfe424` (2026-08-26), new issues to
-MAM-private or MAM-basics and nowhere else. A citation of one of those closed issues takes the
-repo prefix like every cross-tracker citation in this section — `MAM-parsed#NN`,
-`codex-index-aleppo#NN` — and every number in all five closed sets collides with a MAM-basics
-number, so the prefix is as non-decorative there as anywhere. **The count in the section's name
-stays at five** because the five it counts are unchanged — MAM-basics itself, then wlc-utils,
-UXLC-utils, holman-ketiv-qere and book-of-job, whose issues stay put and are still read,
-commented on and closed where they are. The newly emptied five are a consolidation record inside
-the section, not a sixth through tenth count; settled 2026-08-27, Ben having deferred the
-framing, and recorded here so a rename is not re-proposed. Finding 2 of
-`doc/review-findings-2026-08-26.md` is the fuller record of the transfer evening.
-
-**This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
-trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,
-and "Five issue trackers" since. Dated execution records in the surviving programme and in
-deleted plans preserved in Git history use the earlier names because each record describes the
-section as it stood when that phase ran.
-
-Three things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
-
-- **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
-  shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours —
-  `py/main_gen_cam1753_crop_editor.py` holds 23, as its Aleppo counterpart did until phase 6a of
-  `doc/PLAN-mega-coverage.md` deleted it on 2026-09-10 — and `poetic_ply_grammar.py` numbers the
-  accents of Ps 17:14 as `#7`–`#10`. None of those
-  take a prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
-  number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
-  the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
-  §9 #6" name that list rather than issues #2 and #6; three sites name a UXLC **change** number,
-  the 2026.10.19 release's tenth change, written "change #10" and "pending change #10"; and
-  `main_uxlc_grammar_test.py`'s #218 and #219 are MAM-basics' own, so they are already right
-  bare. `clc_render.py`'s site read "issue #6" until 2026-08-18 and now says "design doc §9 #6,
-  not an issue", which is what the `clc_collect.py` site had said all along.
-- **Two modules render issue references as DATA about the Holman review, not as citations of a
-  tracker, and prefixing them corrupts the rendered table.** `py/py_render/rt_issue_tags.py` and
-  `py/hkq_cmn/table_row_github_issues.py` turn `io/table_row_github_issues.json` into the per-row
-  issue links, state and tags on holman-ketiv-qere's report pages. Those numbers are
-  holman-ketiv-qere issue numbers already, resolved through the `REPO_OWNER` and `REPO_NAME`
-  constants that name `bdenckla/holman-ketiv-qere` and are passed to `gh issue list --repo`;
-  leave the constants and the rendering alone. Phase 6 of
-  `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md` names this as the trap to check for first.
-- **`github_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
-  resolves which tracker `issue <number>` names from the checkout it runs in, so `repo` is a
-  required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
-  worked example of the ambiguity and must stay bare. The module was `wlc_issue_edit.py` until
-  2026-09-14, and dated records keep that name.
-
-wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still meant
-a wlc-utils issue, and qualifying those would imply they were ambiguous. Phase 10 of
-`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` then deleted that repo's `doc/` and `in/` outright
-(2026-08-17), and their byte-identical copies live in **this** repo's `doc/` and `in/` — the six
-`doc/` files that arrived 2026-08-12 (`agent-planning-principles.md`,
-`edition-transcription-workflow.md`, `review-findings-2026-07-29.md`, `simanim-tanakh-signs.md`,
-`PLAN-overall-port-to-python.md`, `PLAN-two-accents-on-one-chanted-word.md`) and the wlc trees
-under `in/` (`in/accgram/edition_transcriptions/` above all) — still carrying bare `#NN` issue
-citations that mean wlc-utils issues. Those files are one of the two standing exceptions to "a
-bare `#NN` here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its
-bare-`#NN`-means-wlc-utils note for the redirect host itself.
-
-**UXLC-utils' two `doc/` files are the same exception, in this repository now.** The 2026-09-03
-evacuation moved `doc/clc-design.md` and `doc/clc-skeleton-plan.md` to `uxlc/doc/`. A bare `#NN`
-inside either file still means a UXLC-utils issue, and the citations remain unqualified because a
-prefix would imply that the citation was ambiguous.
-
-**holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
-Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
-`#NN` in any of its tracked prose was the `#19` its `CLAUDE.md` quoted once. The pages now share
-the stem `gh-pages/holman/JC3 The Biblical Text in the JC Edition #19-Z` in this repository
-(this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
-`git grep -c '#19' -- CLAUDE.md` there was 1), and that is a JC Edition article number
-rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
-just been added.
-
-**book-of-job needs no such exception either, and it goes further than holman-ketiv-qere does.**
-Measured 2026-08-22, `git grep -nIE '#[0-9]+'` over its **whole tracked tree** returns nothing at
-all — not in its `CLAUDE.md`, its `README.md`, its two `doc/` files or the three `.md` under
-`py_ac_loc/`, and not in any of the 701 artifacts under `gh-pages/` and `out/` either. All **784**
-files that repo tracks are free of `#NN` in every shape, issue numbers and hex colours alike, so
-there is nothing there for a reader to have to disambiguate. **So the four evacuated repos split
-two and two**: wlc-utils' `doc/` and `in/` copies and UXLC-utils' `uxlc/doc/` copies are the two
-standing exceptions in this repository, and holman-ketiv-qere and book-of-job need none.
-
-## An unprefixed `doc/review-findings-<date>.md` is the Claude series
-
-The periodic review series is `doc/review-findings-<date>.md`, with no agent name in the file
-name, and `doc/periodic-review.md` describes it. When Codex reviews the same window, its file
-takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
-renamed to match** — measured 2026-09-01, the rename cost 41 lines across 18 files to buy an
-asymmetry one sentence fixes, and the file it would churn most, `doc/review-findings-2026-07-29.md`,
-is both the most-cited in the series and not natively this repo's file. So the unprefixed name is
-the incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md`'s D10 is
-the fuller statement, including the four reasons the rename was rejected.
-
-## A finished dated document is corrected in `<stem>-update.md`, never edited
-
-Ben's decision, 2026-09-11, with the naming settled 2026-09-12. A finished dated document — a
-review, a remediation plan, a completed plan, an execution record — is left as written, like a
-pushed commit under a "never amend pushed commits" discipline. Keeping such documents current is
-maintenance without end, and it makes them more confusing rather than less, since a reader cannot
-tell how the writer could have known at the time what the document now says.
-
-So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
-small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes
-in `doc/PLAN-foo-update-2.md`, and so on. The update file names the passage it corrects by that
-passage's own words, since line numbers drift, and it is itself live, so it is kept true.
-`git ls-files "doc/*-update.md"` lists the ones that exist; there were eight on 2026-09-12, five
-of them written on 2026-09-11, the day of the decision. This sentence named four of those five
-until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`, which `ffc82f60`
-created alongside two of the four it did name.
-
-The `State:`-line declaration for update files is in `py/repo_util/check_repo_standards.py`'s
-module docstring, under “THE `State:` LINE ON doc/*-update.md”.
-
-A document that describes the present is the opposite case and is kept true in place: this file,
-the READMEs, the docstrings, and a plan still being executed. `doc/dual-agent-review.md`'s section
-"Correcting a finished dated document" (D12) is the fuller statement, and it also retired the
-close-out step that had said to add dated corrections beside the passage they correct.
-
-**The rule is not this repository's, so it is also stated at user level for both agents.** Codex's
-copy is `~/.codex/AGENTS.md`, tracked here as `dot-Codex/user-wide-AGENTS.md`; Claude Code's copy
-is `~/.claude/CLAUDE.md`, tracked here as `dot-claude/user-wide-CLAUDE.md`. Ben, 2026-09-12,
-asked whether the omission from the Claude user-level file had been deliberate on the reading
-that the rule might be specific to this repository: "it is not such a policy; it should apply to
-all repos."
-
-## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
-
-Seven files, arrived 2026-08-21 with Phase 4 of `doc/PLAN-evacuate-python-from-book-of-job.md`
-(deleted as spent by the 2026-08-29 `doc/` sweep, and in git history),
-following the code they describe: `boj-aleppo-word-crops.md`, `boj-cam1753-word-crops.md`,
-`boj-leningrad-word-crops.md`, `boj-leningrad-image-scaling.md`,
-`boj-image-crop-reproducibility.md`, `boj-viewing-image-metadata.md` and
-`boj-quirkrec-comments.md`. They cover cropping a word from the three manuscripts μA, μL and μY,
-scaling a μL image to match a μA one, keeping a crop reproducible, reading a PNG's embedded
-metadata, and quirk-record comment style. **Read the relevant one before touching
-`py/author_boj*`, `py/py_ac_word_image_helper/` or `py/py_cam1753_word_image/`** — nothing in
-the code points at them.
-
-The paths now name this repo's code as `py/…`, the retained corpus records as
-`book-of-job/out/…`, the published site as `gh-pages/book-of-job/…`, and scratch output as
-`.novc/book-of-job/…`; the current spellings were completed on 2026-09-07 rather than on arrival.
-**But the prose is Copilot-era and has not been
-re-verified.** All seven were `.github/copilot-instructions-*.md` in book-of-job until
-2026-08-03. Where one gives a command that conflicts with the user-level conventions in
-`~/.claude/CLAUDE.md` for Claude Code or `~/.codex/AGENTS.md` for Codex — a `python -c`
-one-liner, a bare `python`, `PYTHONIOENCODING`, a `Start-Process` that opens a page rather than
-handing Ben a `file:///` link — the user-level conventions win.
-
-book-of-job's two procedures now live under `book-of-job/doc/`: `opening-html-files.md` and
-`reading-mam-simple.md`, both about reading the evacuated tree rather than how it is made.
-
-## Repo locations are decisions, not one machine's disk
-
-Ben works on more than one machine, and they are not in step. A clone removed on one can still
-be sitting on another; a sync run on one says nothing about the rest. So a sentence of the form
-"X came off the disk on <date>" is a fact about one machine on one day, and reading it as a
-global truth is what makes this file's history look self-contradictory when it is not. Ben's
-instruction, 2026-08-31: **stop writing single-track, single-machine history here.**
-
-Two consequences, and they apply to every location claim below.
-
-1. **Write the decision, not the disk state.** "wlc-utils belongs on no machine" is checkable
-   against the roster and stays true; "there is no local wlc-utils clone" expires the moment
-   another machine is switched on. `all-repos.code-workspace` is the roster and
-   `in/repo_maintenance_policy.json`'s `gitrepos_setup_rule` is the rule that reads it; between
-   them they say what belongs on a machine, and nothing else does — **not** a comparison against
-   `gh repo list`, which that rule's clause 4 forbids outright as the proxy that dragged the
-   discontinued `trope` back onto a disk.
-2. **A clone's presence is residue, not evidence that a decision was reversed.** It is far more
-   likely to predate the decision, or to come from a sync that did not know about it, than to
-   record a change of mind. Before concluding anything about where a clone came from, read its
-   reflog: a fresh clone opens with `clone: from …`, a survivor does not.
-
-## wlc-utils belongs on no machine, and its stub set is frozen
-
-**wlc-utils is not in the roster**, so under `gitrepos_setup_rule` no machine clones it — Ben's
-decision, 2026-08-22, reaffirmed 2026-08-31 as the general rule that **an evacuated repo does not
-appear in `GitRepos`**. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
-for `bdenckla.github.io/wlc-utils/<path>`, and only the clone is unwanted. Nothing routine wants
-one: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
-checkout (`py/github_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
-test here resolves that sibling.
-
-**The worked case for reading a reflog before believing a clone's story.** A machine surveyed on
-2026-08-31 held a full 97.4 MB clone, and an earlier version of this section had read a clone
-found that day as freshly re-cloned by an ad-hoc sweep, then predicted recurrence from that. The
-reflog said otherwise: exactly one `clone:` entry, dated **2024-02-20**, running unbroken to a
-`pull --ff-only` that morning — so on that machine the clone had been present continuously since
-2024, and the sweep had *pulled* it rather than cloned it. The prediction was built on one
-machine's disk standing for every machine's. The clone was removed 2026-08-31, along with
-al-hatorah's and masorah-books', on the evacuated-repos rule above.
-
-**Only explicitly selected redirect-host work wants a clone.**
-`py/main_redirect_stubs.py build --repo wlc-utils --publish`, and
-`check --repo wlc-utils` with no `--dir`, reach `py/redirect_stubs/stubs.py`'s
-`source_pages_dir`. Every redirect command requires `--repo`; table order never chooses a
-missing source clone. **Nothing schedules the program**: it is in no pipeline — `py/main_0_mega.py` and
-`py/pipeline_graph/pipeline_graph_spec.py` never name it — and the one check that runs all the
-time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely because it
-needs no clone. It raises with the command that fixes it:
-
-```powershell
-git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:/Users/BenDe/GitRepos/wlc-utils
-```
-
-**The stub set is frozen at `in/wlc_redirect_pages.json`, the 154 URLs wlc-utils published at the
-2026-08-17 move, and it can only shrink.** Until 2026-08-22 both subcommands derived it from the
-live `git ls-files gh-pages/wlc`, which anchored the lint to the wrong set: a page published
-*here* after the move never had a wlc-utils URL and is cited as a MAM-basics one, so it earns no
-stub — but the derivation would have reported the first such page as an old URL about to 404. The
-two sets coincided only because nothing had been added under `gh-pages/wlc/` since `f99996f`
-(2026-08-12). So a publish is needed only if one of those 154 pages is **renamed or dropped**,
-which breaks its stub; `py/tests/test_redirect_manifest.py` is the half of that lint needing
-no clone, and it fires here.
-
-**`../wlc-utils` was dropped from `all-repos.code-workspace` in the same commit, 20 folders to
-19** — not tidying: `py/repo_util/repo_selection.py`'s `load_workspace_repo_dirs` raises
-`FileNotFoundError` on any listed folder that is not on disk, and it runs before *every* action,
-so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards checks alike, not
-just the part that names wlc-utils. That is the same three-step the frozen repos took on
-2026-08-07 (move out, drop from the workspace file, record it).
-
-## MAM-OSIS belongs on no machine except for explicit stub publication
-
-Ben's decision, 2026-09-10: the completed Phase 5 lane of
-`doc/PLAN-evacuate-five-MAM-products.md` makes MAM-OSIS a local product under
-`MAM-OSIS/`, with published documentation under `gh-pages/MAM-OSIS/`. The source
-clone is absent from both workspace rosters and `repo_visibility`; under
-`gitrepos_setup_rule`, no machine should restore it during setup or maintenance.
-A surviving clone is residue to inspect for recoverable work before recycling.
-No `frozen_repos` or `repos_to_keep_absent` entry is needed. The unarchived
-`bdenckla/MAM-OSIS` repository remains the Pages redirect host and preserves its
-history; new product issues belong in MAM-basics.
-
-The frozen legacy set is the single `index.html` in
-`in/mam_osis_redirect_pages.json`. Production and the canonical suite run without a
-source clone. (This sentence also named "the independent MAM-simple OSIS example" until
-2026-09-12, when that example was retired along with the Sefaria one.) Keep the redirect-only
-MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
-publication still requires a temporary source host. Only when that work is selected:
-
-```powershell
-git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git C:/Users/BenDe/GitRepos/MAM-OSIS
-```
-
-From MAM-basics, run `py/main_redirect_stubs.py build --repo MAM-OSIS --publish`
-and `check --repo MAM-OSIS`, commit and push the host changes, verify the source
-Pages deployment, then safety-check and recycle the temporary clone again. Keep
-the clone out of the workspace rosters. A local preview needs no clone: use
-`build --repo MAM-OSIS --out <scratch-directory>` and
-`check --repo MAM-OSIS --dir <scratch-directory>`.
-
-## codex-index-aleppo is a redirect host
-
-**codex-index-aleppo is not in the roster**, so `gitrepos_setup_rule` does not put a clone on
-any machine. Phase 2 of
-`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved the live data to
-`aleppo/` and its published pages to `gh-pages/aleppo/` on 2026-09-04. The source repository
-stays live only as the generated-stub host for its former three Pages URLs. The frozen manifest is
-`in/codex_index_aleppo_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks it
-without a clone. The source tracker has no open issues; qualified citations of its closed issues
-remain source-tracker citations, while new public-side issues belong in MAM-basics.
-
-## Cambridge 1753 data is local under `cam1753/`
-
-Ben's decision, 2026-09-04: `codex-index-cam1753` belongs on no machine. Its archived GitHub
-history remains, but its live data is `cam1753/`, its programs are under `py/`, and the MAM
-word-sequence ground truth is `MAM-simple/xml-vtrad-mam/`. The fourteen source spreads are tracked;
-`cam1753-pages/` is ignored output that `py/main_cam1753_split_spreads.py` regenerates for an
-editor or crop task. The old clone left `all-repos.code-workspace` and
-`in/repo_maintenance_policy.json`'s `repo_visibility` map in the same completed lane: a missing
-workspace entry is therefore a decision, not a clone failure. The archived source tracker has no
-open issues; qualified citations of its closed issues remain source-tracker citations, while new
-public-side issues belong in MAM-basics.
-
-The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
-ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
-citations too.
-
-## diffable-pointed-hebrew's only data is `in/diffable-pointed-hebrew-short-name-overrides.json`
-
-The completed Phase 4 lane of
-`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved the former
-diffable-pointed-hebrew product's samples and its nine short Unicode-name assignments under
-`diffable-pointed-hebrew/`. Ben's decision of 2026-09-13 removed that directory: the nine
-assignments moved to `in/diffable-pointed-hebrew-short-name-overrides.json`, and the two sample
-pairs, a historical output, the README and the product's MIT `LICENSE` were deleted. The samples
-were MAM text, which that licence could not cover, and the command's two remaining goldens are
-the zarqa tables under `misc/zarqa-table-diff/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
-MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
-is deliberately absent from `all-repos.code-workspace` and `repo_visibility`. The source
-repository keeps its history as an archived dated breadcrumb. Ben
-archived `bdenckla/diffable-pointed-hebrew` on 2026-09-04; its archive state was then confirmed
-with `gh repo view --json isArchived,url`. The source tracker has no issues; new product work is
-tracked in MAM-basics.
-
-## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
-
-**holman-ketiv-qere is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any
-machine. Ben's decision, 2026-08-22, applies the evacuated-repository rule here: the source
-repository stays alive at `bdenckla/holman-ketiv-qere` as the redirect host and issue tracker,
-but its local clone is unwanted. The completed 2026-09-03 lane moved the public data and
-generators to `holman/` in this repository, then removed the source clone after retiring its
-clean detached review worktree.
-
-Nothing in the ordinary suite reads `../holman-ketiv-qere`. The frozen six-page old URL set is
-`in/holman_ketiv_qere_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks it
-without a source clone. If an old Holman page is renamed or dropped, temporarily re-create the
-redirect host with:
-
-```powershell
-git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git C:/Users/BenDe/GitRepos/holman-ketiv-qere
-```
-
-Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and remove the temporary
-clone again after the source repository's Pages deployment succeeds. `../holman-ketiv-qere` is
-already absent from `all-repos.code-workspace`, so no workspace entry needs changing.
-
-## UXLC-utils belongs on no machine, and its redirect set is frozen
-
-**UXLC-utils is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any machine.
-Ben's 2026-09-03 evacuation moved the public data and generators to `uxlc/` and `gh-pages/uxlc/`
-in this repository. The source repository remains alive at `bdenckla/UXLC-utils` as the redirect
-host and issue tracker; source commit `2745c65` retains the deployed redirect stubs.
-
-Nothing in the ordinary suite reads `../UXLC-utils`. The frozen 91-page old URL set is
-`in/uxlc_utils_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks the manifest
-without a source clone. If an old UXLC page is renamed or dropped, temporarily re-create the
-redirect host with:
-
-```powershell
-git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git C:/Users/BenDe/GitRepos/UXLC-utils
-```
-
-Then publish and check the frozen stubs with `--repo UXLC-utils`, and remove the temporary clone
-again after the source repository's Pages deployment succeeds. `../UXLC-utils` was removed from
-`all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
-missing directory.
-
-## codex-index-leningrad has been evacuated
-
-**codex-index-leningrad is not in the roster.** Phase 1 of
-`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
-five retained files into `leningrad/`, repointed its Wikisource index generator to MAM-basics'
-canonical `uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
-The archived repository keeps its history and closed issue tracker; new public-side issues belong
-in MAM-basics. No source Pages site or redirect manifest exists.
-
-Nothing in the ordinary suite resolves a Leningrad sibling, and `leningrad/` is gone as well. It
-held only a README and three crops Ben made, and Ben's decision of 2026-09-13 moved the crops,
-with their evidence notes, into folders for the work each one serves:
-`doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, which took the Aleppo Codex,
-Cambridge 1753 and other crops too. On Ben's decision
-of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
-used and its three generated files, since it "will never be run again"; phase 3 of
-`doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
-`py/repo_scopes.py` lists none.
-
-Phase 5 on 2026-09-04 confirmed that the clean primary clone's `HEAD` and `origin/main` were both
-`86f88c0`, and that `git worktree list` named only the primary checkout. The review forest was no
-longer present, so the primary clone was moved to the Windows Recycle Bin. No Leningrad clone
-belongs on a machine.
-
-## There is no `wlc-koren-12th` repo
-
-`~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
-branch `claude/koren-12th-site`, which is why it sat flat among the siblings and answered
-`git remote -v` with `bdenckla/wlc-utils`; its copies of files such as
-`py/accgram/poetic_ply_grammar.py` were the same files on an older branch, never duplicates to
-reconcile or keep in sync. Repeated sessions read it as a twin repo and burned a turn
-"reconciling" it — that is the whole reason for this note. Deleted 2026-07-27, along with the
-fully-merged leftover branches `claude/koren-12th-site` and `claude/festive-napier-38d58d`, both
-accepted by `git branch -d` (never `-D`), which is the record that nothing was lost. The only
-place the name survives is old session transcripts under `~/.claude/projects/`, which is exactly
-where the wrong conclusion kept being copied from.
-
-**General lesson:** a directory sitting flat under `~/GitRepos` is not necessarily a repo. Run
-`git -C <dir> rev-parse --git-common-dir` (or `git worktree list` from the repo you suspect)
-before treating one as a peer whose files need syncing.
-
-(Moved here from wlc-utils' `CLAUDE.md` on 2026-08-17, when Phase 10 of
-`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` shrank that file to redirect-host facts — the
-disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
-and because all wlc work now happens in this repo.)
+No tracked filename contains a Hebrew letter. Convert a Hebrew filename component with
+`heb_alef_bet_to_ascii` from `py/py_ac_word_image_helper/alef_bet_to_ascii.py`; do not invent
+another transliteration.
+
+Every programmatic Git command returning filenames requests NUL delimiters with `-z` and splits
+on `"\0"`, never on lines. Spaces, tabs, newlines, quoting characters, and future non-ASCII
+filenames remain possible. `py/tests/test_tracked_filenames.py` enforces both rules.
+
+## Invoke the `hebrew-prose` skill before accentuation prose
+
+Before writing, editing, or reviewing prose about Hebrew accentuation or cantillation, load the
+user-level `hebrew-prose` skill. This includes rendered text, headings, tables, tooltips, alt
+text, docstrings, comments, commit messages, issue text, and chat. The skill covers atom versus
+chanted word, the one-scale maqaf rule, paseq versus legarmeh, silluq versus meteg, prose and
+poetic verses, corpus choice, primary sources, rendered-prose conventions, and verification.
+
+For MAM-basics work, the skill requires its `references/mam-basics.md` reference. That reference
+carries this repository's exceptions and page-specific rules, including the deliberate plain
+“word” terminology on the nine post-stress-meteg pages and the accgram rendered-prose rules.
+
+The canonical shared skill is `dot-claude/skills/hebrew-prose/`; the live copies under
+`~/.claude/skills/` and `~/.agents/skills/` are what the agents load. `dot-claude/` and
+`dot-Codex/` are version-controlled storage, not project instruction trees. Edit a canonical
+copy, commit and integrate it, then deploy from the primary MAM-basics clone with the
+`--sync-user-config` procedure in `dot-claude/README.md`. Never edit a live copy.
+
+### Claude Code cloud SessionStart installation
+
+`.claude/hooks/install-user-config.sh` supplies a Claude Code cloud session from the session's
+checked-out branch because the machine-level files do not travel with the clone. The hook is
+network-free, reports what it installed, and exits without reading anything on Ben's machines.
+Codex does not run this Claude hook. The checked-out branch, not necessarily `main`, is the
+cloud source. `doc/user-level-config-in-cloud-sessions-update.md` carries the current diagnosis.
+
+## The MAM introduction is mirrored locally
+
+Read `in/mam-ws-intro/README.md` and the mirror itself instead of fetching a summarized web copy.
+The README maps all thirteen files, gives the independent refresh command, explains the
+byte-verbatim mark-order exception, and distinguishes the two manually maintained index pages
+from their retired one-off generators. `manifest.json` records each source revision and
+timestamp.
+
+## Holman and book-of-Job work has local routing documentation
+
+Before touching Holman mailboxes, correspondence derivatives, dispositions, or authored assets,
+read `holman/WORKFLOW.md`. Raw mail remains untracked; public derivatives exclude addresses; MAM
+suggestion dispositions contain substantive judgments rather than personal circumstances; and
+authored CSS and JavaScript live in `holman/assets/`, not in generated `gh-pages/` copies.
+
+Before touching `py/author_boj*`, `py/py_ac_word_image_helper/`, or
+`py/py_cam1753_word_image/`, read the relevant `doc/boj-*.md` procedure. Those seven procedures
+began as Copilot instructions and have not all been re-verified, so current user-level and
+repository instructions win when a command conflicts. The two procedures for reading the
+evacuated product live under `book-of-job/doc/`.
+
+## Issue citations in MAM-basics
+
+Load the `github-issues` skill for any issue operation or citation audit. The always-needed
+MAM-basics rules are:
+
+1. A bare `#NN` in current MAM-basics files means a MAM-basics issue. Cite another tracker as
+   `repo#NN`. In an issue or comment, use the other issue's full URL.
+2. A number that is not an issue never takes a bare `#NN` form. Name an ITM section, a design-doc
+   item, a UXLC change, or a CSS color in a form that cannot link to an unrelated issue.
+3. Imported wlc-utils documents under `doc/` and `in/`, and imported UXLC-utils documents under
+   `uxlc/doc/`, retain their original bare-number meaning. Read the surrounding sentence before
+   changing a citation.
+4. `py/py_render/rt_issue_tags.py` and `py/hkq_cmn/table_row_github_issues.py` render
+   holman-ketiv-qere issue numbers as data. Repository constants supply that tracker; prefixing
+   the stored numbers would corrupt the output.
+
+For collision history, evacuated tracker dispositions, transferred issues, and the exact traps
+encountered by past sweeps, read the skill's `references/mam-basics-trackers.md`.
+
+## Review filenames and finished dated documents
+
+An unprefixed `doc/review-findings-<date>.md` is the Claude review series. A Codex review of the
+same window is `doc/codex-review-findings-<date>.md`. The private series stays in MAM-private.
+`doc/periodic-review.md` and `doc/dual-agent-review.md` are the procedures of record.
+
+A finished dated review, remediation plan, completed plan, or execution record is never edited.
+Correct it in `<stem>-update.md`, then `<stem>-update-2.md`, and name the corrected passage by
+its words rather than by a drifting line number. A document describing the present—this file,
+README files, docstrings, and a plan still being executed—is kept true in place. The `State:`
+rules live in `py/repo_util/check_repo_standards.py`'s module docstring.
+
+## Repository topology is task-specific
+
+Load the shared `mam-repository-topology` skill before setting up or synchronizing GitRepos,
+performing repository maintenance, publishing redirect stubs, retiring a clone, or deciding
+where an evacuated repository or sibling dependency lives. If the skill is not installed in a
+cloud session, read `dot-claude/skills/mam-repository-topology/SKILL.md` from the checkout and
+follow its reference routing.
+
+`in/repo_maintenance_policy.json` and `all-repos.code-workspace` are the sources of truth. A
+clone's presence on one machine is residue, not evidence that a topology decision changed. Do
+not infer the desired clone set from `gh repo list` or a disk set difference. Evacuated public
+repositories can remain redirect hosts or issue trackers while belonging on no machine; the
+skill's `references/evacuated-repositories.md` carries their exact current dispositions,
+temporary-stub procedures, and historical traps.
 
 ## What this repository's products are, and which check a change owes
 
-`py/product_scopes.py` is the declaration of record and `py/tests/test_product_scopes.py` keeps
-it true. Ben asked for the definition on 2026-09-12, having asked which of a list of review
-findings were "risky", "where 'risky' includes things like code changes that could (or will!)
-change MAM-parsed, MAM-with-doc, MAM-simple, gh-pages, or other things you deem 'public facing'";
-answering that took about fifteen separate measurements, because nothing here said what the
-products were. Three tiers:
+`py/product_scopes.py` is the declaration of record, enforced by
+`py/tests/test_product_scopes.py`. The product tiers are:
 
-1. **Published** — `gh-pages/`, which a push to `main` deploys.
-2. **Distributed data** — `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/` and
-   `MAM-OSIS/`, consumed by git URL whether or not Pages serves them. "Not published" is
-   therefore not the same as "not distributed".
-3. **Generators** — the 47 entry points that the step table of `py/main_0_mega.py` runs across
-   its 59 steps, measured 2026-09-12. This is the tier that matters, being the only routine
-   route into tiers 1 and 2 other than editing those trees by hand.
+1. **Published:** `gh-pages/`, deployed by a push to `main`.
+2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`, and
+   `MAM-OSIS/`.
+3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
-**A change that can reach tier 3 owes a mega run and a reading of the `git diff` it leaves; a
-change that cannot owes the suite.** The section below, "Integrating a worktree branch here",
-states that rule and the four conditions on reading the diff.
+A change that can reach a mega generator owes a mega run and an explanation of every tracked
+diff. A change that cannot reach a mega generator owes the suite. A hand-run generator can reach
+a product even though the mega does not run it; regenerate the outputs of the hand-run generator
+when it changes. Product reach and whether an act is hard to undo are separate risk axes, as the
+user-level instructions explain.
 
-**Tier 3 is not every route into a product.** The hand-run interactive programs — the Aleppo and
-Cambridge 1753 word-image and crop work above all — write tracked images that are published under
-`gh-pages/book-of-job/jobn/img/`, and `py/tests/test_mega_coverage.py` declares each of them, with
-its reason, in `NOT_IN_MEGA`. So "this is not a mega step" answers a different question from "this
-reaches no product", and a change to a hand-run generator owes regenerating what it generates,
-which a mega run will not do for it.
+## Dates shown on pages are New York dates and say so
 
-**A change can cross tiers by name rather than by path.** Three unrelated functions here are
-called `strip_heb`. Measured 2026-09-12: the two in `py/py_ac_word_image_helper/hebrew_metrics.py`
-and `py/py_cam1753_word_image/hebrew_metrics.py` reach those crop generators through each
-package's `linebreak_search.py`, while the one in `py/uxlc_misc/my_uxlc_find_atom.py` is read by
-`py/main_verse_links.py` and `py/main_uxlc_estimate_atom_loc.py`, two interactive lookups that
-write nothing tracked. All three sit in programs the mega does not run, and two of the three
-reach a published product anyway.
-
-**"Outside tier 3" is not "safe".** Whether a change reaches a product is one axis of risk. The
-other has nothing to do with products — outward-facing acts, destructive local acts, writes
-outside the repository, records that are receipts, and code paths that cannot be exercised on
-this machine — and it is stated in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, tracked here
-as `dot-claude/user-wide-CLAUDE.md` and `dot-Codex/user-wide-AGENTS.md`, under "Two axes of
-risk".
-
-## Dates shown on pages are in New York time, and each one says so
-
-Ben's decision, 2026-09-14: every date that this repository's code shows on a page or in a report
-is its date in New York time (America/New_York), followed at every occurrence by the label
-", New York time" — `2026-04-14, New York time`, `06 August 2026, New York time`. A timestamp
-stored in data keeps its full ISO 8601 form with its offset, and the stored timestamps here are
-UTC. `py/mb_cmn/new_york_time.py` is the one spelling of the zone and the label: convert and label
-through it rather than writing either again.
-
-1. **A date that is a name takes no label**: a release name such as `2026-04-14` in
-   `gh-pages/MAM-with-doc/change-log/releases.json`, a UXLC change id, a dated document's file name.
-2. **`py/tests/test_explicit_time_zones.py` fails on a clock read with no zone, or on a git date
-   placeholder that drops the offset**, anywhere in tracked Python under `py/`. Take a commit's
-   date as `%cI` or `%ct`, never `%cs`, and read the clock as `datetime.now(<zone>)`.
-3. **Why New York rather than UTC.** Until 2026-09-14 the change log printed `%cs`, each commit's
-   date in whatever offset that commit recorded, which differs between Ben's machines and a cloud
-   container. On 2026-09-14 the seven dates stored in `MAM-parsed/historical/manifest.json` were
-   checked against GitHub's UTC committer times, and all seven are New York dates. In UTC, commit
-   `1880cbbd`, committed at 20:09 EDT on 2026-03-16 as the boundary of the release named for that
-   day, would read 2026-03-17. `requirements.txt` names `tzdata`, since `zoneinfo` has no zone data
-   of its own on Windows.
-
-**The same cross-project rule is also written into both agents' user-level instructions.** The
-Codex copy is `~/.codex/AGENTS.md`, tracked here as `dot-Codex/user-wide-AGENTS.md`; the Claude
-Code copy is `~/.claude/CLAUDE.md`, tracked here as `dot-claude/user-wide-CLAUDE.md`.
+Every date shown by repository code on a page or report is converted through
+`py/mb_cmn/new_york_time.py` and followed by “, New York time”. Stored timestamps retain full
+ISO 8601 offsets. A date used as a name—a release name, change id, or dated filename—takes no
+label. Git dates retain their offset with `%cI` or `%ct`, never `%cs`; clock reads name their
+zone. `py/tests/test_explicit_time_zones.py` enforces the rule.
 
 ## A code path reads MAM-private every time it runs, or never
 
-Ben's rule, 2026-09-10: "there should be one or more code paths that uses MAM-private
-unconditionally, and all other code paths should not use MAM-private. If those other code paths
-find they need something from MAM-private, they should fail loudly rather than be clever and reach
-out to MAM-private." A path that reaches into the private clone only when its data calls for it
-works everywhere until the first time that data meets a machine or a cloud session without the
-clone, and nothing before then shows that the dependency exists.
+A code path that depends on MAM-private reads it unconditionally. Every other code path must
+fail loudly if it unexpectedly needs MAM-private; it must not probe for the private tree only
+when particular data happens to require it. Use `py/mb_cmn/paths.py`'s required-sibling helpers.
+The cloud-only suite exception is declared on the test module that reads Phonetic MAM.
 
-The case that produced the rule: until 2026-09-10 the post-stress-meteg page renderer, which the
-mega's `gen-site` step runs from the tracked survey with `--trust-surveys`, looked up a substitute
-spelling in MAM-private's Phonetic MAM for any displayed survey entry with no `mam_form`. No
-displayed survey entry lacked one, so the lookup never ran. The renderer raises instead now, and
-`py/accgram/post_stress_meteg.py`'s survey build is the only post-stress-meteg code that
-reads Phonetic MAM. Two other code paths read it, both unconditionally:
-`py/accgram/breuer_word_length.py`'s `survey-breuer-zaqef-units` and
-`py/tests/test_final_stress_vs_phonetic_mam.py`, each through
-`require_al_hatorah_phonetic_dir`. `py/mb_cmn/paths.py`'s
-`al_hatorah_phonetic_dir` docstring states the rule where a new reader would call it.
+## Integrating a worktree branch here: run the mega and read its diff
 
-## Integrating a worktree branch here: run the mega and read its `git diff`, not the suite
-
-**In this repo, step 2 of the user-level worktree integration is a mega run, not a suite run.**
-Ben's decision, 2026-09-11. After `git merge --no-edit main` in the worktree (step 1), run the
-mega on the merged tree from the worktree root, then read the `git diff` it leaves:
+For final worktree integration, after merging `main` into the worktree branch, run from the
+worktree root:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 ```
 
-1. **A failing step is a failure**, fixed by a further commit on the branch, never on `main`.
-2. **Every change the run makes to a tracked file must be explained.** An explained change is
-   committed on the branch before the fast-forward: for example, the change log under
-   `gh-pages/MAM-with-doc/change-log/` catching up with a commit that changed
-   `MAM-parsed/plus/`. An unexplained change is a failure.
-3. **Running `py/main_test.py` as well is optional.** The user-level step 2 says "Run the repo's
-   suite"; for this repo, this section replaces that.
-4. **A branch that changes only instruction files** (`AGENTS.md`, `CLAUDE.md`, `dot-claude/`,
-   `dot-Codex/`) **needs no mega run**, since nothing the mega reads has changed.
+A failing step or unexplained tracked diff is a failure. Commit each explained generated change
+on the worktree branch before the primary clone is fast-forwarded. Running the suite too is
+optional. A branch changing only instruction files—`AGENTS.md`, `CLAUDE.md`, `dot-claude/`, or
+`dot-Codex/`—needs no mega run. The user-level Git section gives the remaining integration order.
 
-**Why a mega run, and why after the commit.** The committed outputs are the goldens, and
-reproducing them is the test of this code (§"Writing tests — differential and lint-shaped only"
-below). The case that produced the rule: the Wikisource refresh `209b4c05` of 2026-09-10 was
-integrated as `a0a2e3ab` after a suite run passed 992 tests, on a tree where the mega's
-`diff-mpplus` step raised, because the mpplus diff could not reconstruct the meteg that the
-refresh added at Isaiah 24:18. That is finding 1 of `doc/review-findings-2026-09-10.md`, which is
-on branch `dual-agent-review-2026-09-10` until that review round integrates, and which calls the
-step `diff-mpp`, its name until 2026-09-11. Every mega run on a tree containing `209b4c05` stopped
-at that step until `f11ecaf8` fixed the defect on 2026-09-11. A mega run before the commit could
-not have caught it: `diff-mpplus` compares committed revisions, reading `MAM-parsed/plus/` at HEAD
-through git rather than from the working tree, so only a run made after the commit sees the
-commit's own changes. Step 2 is such a run. A full run took about five minutes on 2026-09-10; the
-suite takes about two.
+## Running tests: use the one entrypoint from the repository root
 
-**A second defect stopped every run on a tree containing `209b4c05` at `gen-site`, until
-`aedac688` fixed it on 2026-09-11.** The step before it, `accgram-survey-post-stress-meteg`,
-regenerated `out/accgram/post-stress-meteg.json` with the eleven meteg edits the refresh brought
-in, and prose `mbs_only` fell from 12,849 to 12,842, which `pin_claims` in
-`py/author_site/post_stress_meteg.py` still pinned. `aedac688` committed the regenerated survey and
-moved the pins and the main page with it; `doc/post-stress-meteg-method.md` names the eleven edits.
-With both fixes, one full run on a tree merged with `main` at `56132dfd` passed all 59 steps and
-left no diff, so the check is a single run again.
-
-**The mega writes nothing outside this repo.** Until 2026-09-11 its `near-aleppo-census` step
-rewrote MAM-private's tracked `near-aleppo/census/expected/` goldens, so a run could leave a diff
-in MAM-private, and this paragraph said to commit that diff there, as the 2026-09-10 refresh did
-(MAM-private `ecab726`). Ben had the step deleted that day. MAM-private's own mega runs the census
-now, so a change to `MAM-parsed/plus/` leaves MAM-private's census for MAM-private to refresh,
-and an integration here has nothing to commit in any other repository.
-
-**The same cross-project rule is also written into both agents' user-level instructions.** The
-Codex copy is `~/.codex/AGENTS.md`, tracked here as `dot-Codex/user-wide-AGENTS.md`; the Claude
-Code copy is `~/.claude/CLAUDE.md`, tracked here as `dot-claude/user-wide-CLAUDE.md`.
-
-## Running tests — always from the repo root
-
-Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:
-
-```bash
-.venv/Scripts/python.exe py/main_test.py
-```
-
-**A worktree needs no `REPOS_ROOT`.** The suite reads MAM-private, while MAM-simple,
-MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are local products. Since 2026-09-10
-`paths.repos_root()` reads a linked worktree's home clone out of git's own files and looks for
-siblings beside it (Ben's decision that day), so a run in a linked checkout such as
-`.claude/worktrees/<name>` or `.codex/worktrees/<id>/<repo>` finds
-`C:/Users/BenDe/GitRepos/MAM-private` with nothing exported; before then every worktree run had
-to set `REPOS_ROOT`. The variable still overrides the default, for a layout where the siblings
-sit somewhere else. A worktree run with nothing exported passed **988 passed, 5 skipped** on
-2026-09-10.
-
-**In a cloud container the suite reads MAM-private nowhere, and that is the one exception to the
-sentence above.** `py/tests/test_final_stress_vs_phonetic_mam.py` is the only module that reads it,
-and since 2026-09-11 the whole module carries a `pytest.mark.skipif` on
-`graphviz_pin.in_cloud_session()` — Ben's decision that day, extending to it the treatment
-`py/main_0_mega.py` gives its MAM-private step (it had two until `near-aleppo-census` was deleted
-later that day). On any machine of Ben's nothing changes: a
-missing MAM-private still fails through `paths.require_sibling`. A cloud run therefore reports
-these 2 as skips beside the 5 semantic skips of `py/tests/test_edition_transcriptions.py`, and
-the reason strings are what tell the two kinds apart under `-rs`.
+Run the suite from the MAM-basics root through the primary clone's shared interpreter:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
-Sibling-repo paths for MAM-private, temporary redirect hosts, and optional
-MAM-parsed legacy history are built from `mb_cmn.paths.repo_root()` / `repos_root()` /
-`sibling_repo(name)` — a
-single `__file__`-relative utility (issue #75), not cwd-relative `"../MAM-parsed"`
-literals or ad hoc `Path(__file__).resolve().parents[N]` chains. New path-construction
-code should use it too. The local MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS products
-do not require `REPOS_ROOT`. Normal change-log comparisons use tracked
-`MAM-parsed/historical/` inputs and MAM-basics revisions; only explicit
-`--legacy-history` comparisons require read access to a sibling MAM-parsed
-clone. No command fetches or creates that optional clone. Some files copied into
-`MAM-simple/py-examples/` keep cwd-relative or self-contained `__file__`-relative logic for
-portable example use. `mb_cmn/paths.py` was among the copied support files until
-2026-09-12, when retiring the Sefaria and OSIS example programs cut the copied set from 44
-modules to the three the surviving `main_letter_small_job_example.py` imports:
-`mb_cmn/file_io.py`, `mb_cmn/provenance.py` and `mb_misc/letter_small_job.py`.
+Arguments pass through to pytest. A linked worktree normally finds MAM-private through Git's
+common-directory metadata and needs no `REPOS_ROOT`; the variable remains an override for an
+unusual layout. Always run from the repository root because some inputs are intentionally
+cwd-relative.
 
-Even so, still run from the repo root, never from `py/`: some in-repo paths (e.g.
-`in/mam-ws-bot-edits/...`) remain cwd-relative by design, and the venv itself
-(`.venv/Scripts/python.exe`) is a repo-root-relative path. Running pytest from `py/`
-(e.g. `cd py && pytest tests/`) breaks these with a plain `FileNotFoundError`, which reads
-as a real test failure rather than a wrong-invocation-directory error. On 2026-07-01 this
-exact mistake produced 17 misleading test failures that got misdiagnosed as
-pre-existing/unrelated bugs.
+`py/main_test.py` is the only runner. A bare `pytest` or `pytest py/tests` failing imports is the
+designed state; do not add `sys.path` surgery, a root `conftest.py`, pytest `pythonpath`, a `.pth`,
+`PYTHONPATH`, or an editable installation. Pytest discovers `test_*.py` and `*_test.py`
+automatically; no registry exists.
 
-If a shell has already `cd`'d into `py/` from an earlier command, explicitly `cd` back to
-the repo root before running tests — a persistent-cwd shell keeps resolving
-repo-root-relative paths wrong otherwise.
+Sibling paths use `mb_cmn.paths.repo_root()`, `repos_root()`, `sibling_repo(name)`, and the
+required-sibling helpers, not cwd-relative parent paths or ad hoc `Path.parents` chains. The
+local product directories do not require sibling clones.
 
-**`py/main_test.py` is the only runner — a bare `pytest` is not supported from anywhere,
-including the repo root.** `fd2241a` migrated this repo onto that single entrypoint on
-purpose. It needs no path configuration because CPython prepends a script's own directory
-to `sys.path`, which is exactly why the entrypoint lives in `py/` and not at the root. So
-`pytest py/tests` failing with ~34 `ModuleNotFoundError` collection errors (`No module
-named 'mb_author'`, ...) is the designed state, not a defect: **do not "fix" it** with a
-`pytest.ini` `pythonpath`, a root `conftest.py`, a `.pth`, or `PYTHONPATH`. Each re-creates
-the second entrypoint the migration removed. This was reported as a bug on 2026-07-30 and
-the report was wrong. The cross-repo rule is the user-level instruction section "No `sys.path`
-surgery" in `~/.claude/CLAUDE.md` for Claude Code and `~/.codex/AGENTS.md` for Codex; this repo
-is the worked example for the rule that settled the standard at zero inserts per repo rather than
-one. `py/versification_and_cantillation/doc.py`'s module docstring says the same thing.
+## Writing tests: differential and lint-shaped only
 
-**There is no test registry any more, and no file to add a new test to.** `main_test.py`
-was a hand-maintained `TEST_MODULE_SPECS` tuple plus a `unittest` loader until 2026-08-01;
-it is now a `pytest.main()` wrapper, so pytest discovers `py/tests/` itself. The registry
-is gone because of the failure mode it had: an unregistered file does not skip, it reports
-nothing at all — worse than the silent-green skip the global rules warn about — and two
-files went unrun that way here from the 2026-05-03 migration until 2026-07-30, one of them
-edited four times meanwhile.
+Do not add an example-based unit test unless Ben asks. Add tests in one of two shapes:
 
-**Drop a new test file in and it runs, so long as it is named `test_*.py` or `*_test.py`.**
-Those two patterns are pytest's default `python_files` and both are in use under
-`py/tests/`: this repo's own tests are prefix-named, and the CLC tests that arrived from
-UXLC-utils on 2026-08-01 are suffix-named. A file matching neither is the registry's failure
-mode back again — nothing collects it and nothing says so. `py/tests/mc_marks.py` is the one
-file there matching neither, and rightly so: it is a helper four test modules import
-`mc_to_marks` from, not a test.
+1. A differential check against an independent oracle.
+2. A mechanical lint over source text or the repository tree.
 
-Arguments pass straight through to pytest, so `-k`, `-x`, `-q`, `--lf` and `--collect-only`
-all work; naming a file replaces the default target of the whole `py/tests` tree:
+Otherwise regenerate the tracked artifact with the real command and read its diff; the artifact
+is the test. A missing input fails rather than skips, and an empty parametrization must not report
+green. The `ws_bot` tests are the deliberate exception because a live Wikisource edit is an
+outward-facing act with no regeneratable artifact. `doc/agent-planning-principles.md`, “Generated
+Outputs Are the Tests”, carries the evidence and full rationale.
 
-```bash
-.venv/Scripts/python.exe py/main_test.py --collect-only -q
-```
+## This is the only repository instruction body
 
-Both test styles collect natively — this repo's `unittest.TestCase` classes and the
-module-level `def test_` functions that arrived with the wlc-utils code — so no test file
-was rewritten in either direction.
-
-## Writing tests — differential and lint-shaped only
-
-An audit of git history, comments, and issues across all of Ben's repos (2026-07-25) found
-four occasions where a test demonstrably found something, and **zero** recorded cases of a
-pre-existing example-based unit test failing later and thereby catching a regression. All
-four have one of two shapes. Do not add a test unless it is one of them, or Ben asks.
-
-- **A differential check against an independent oracle** — regenerate the corpus and compare
-  against a frozen reference or a second derivation of the same fact. The accgram code that
-  arrived from wlc-utils on 2026-08-01 brought two of the four: the PLY parity comparator against
-  the frozen C `accents` checker, and the printed-Decalogue transcriptions against their vendored
-  strands.
-- **A mechanical lint over the tree** — a decidable property of the *source text* rather than
-  of behavior (`py/tests/test_h_dot_below_nfc.py`, `py/tests/test_transliterations.py`
-  (wlc-utils#26), and the `check_repo_standards.py` scans are this shape).
-
-Otherwise the generated, git-tracked artifact is the test: regenerate it with the real command
-and read the diff. Unexplained diffs are failures until explained. This is how the real bugs
-here were actually found — `1ef8f51` (#199, a top-level ketiv/qere silently dropped from a
-strand) surfaced as wrong text in generated output, not as a red test.
-
-Do not write an example-based unit test that pins one hand-picked case, a string, or a name.
-Nothing in the record shows one catching anything, and they have to be dragged through every
-terminology rename.
-
-**A missing input must FAIL, never skip.** wlc-utils' `25a7800` removed twenty-one skip guards
-that reported green having verified nothing. Skips are a *semantic* channel in the accgram tests
-(a skip reports that a page diverges from its strand), so an environment skip mixed in corrupts
-the signal. An empty `@parametrize` list also reports as a skip — hence the
-`or ["(none committed)"]` fallbacks, which are the failure mechanism and must stay. Reach for
-`require_sibling` rather than a "sibling repo not present" skip.
-
-**The `ws_bot` tests are a deliberate exception.** A Wikisource edit is an irreversible,
-outward-facing action against a live wiki, and there is no regeneratable artifact to diff
-after the fact — so pinning an edit payload before it is sent is worth its cost on those
-grounds, not because the general rule has an escape hatch.
-
-The fullest statement of this rule, with the evidence behind it, is in this repo:
-`doc/agent-planning-principles.md` §"Generated Outputs Are the Tests". (This sentence said "in the
-sibling repo: `wlc-utils/doc/…`" until 2026-08-17 — the file came home with the rest of wlc-utils'
-`doc/` in the 2026-08 evacuation, which then deleted wlc-utils' copy.)
-
-**`AGENTS.md` is the only repository instruction body.** Codex loads it directly, while the
-minimal `CLAUDE.md` wrapper imports it for Claude Code. `CLAUDE-disabled.md` and
-`.github/copilot-instructions-disabled.md` were deleted on 2026-08-03, when GitHub Copilot
-stopped being used; nothing in either was moved into the instruction body, because it was stale
-or already said better in the user-level instructions, in `doc/`, or in the docstring of the
-module it described. Both are in git history if a claim in them ever needs checking.
+Codex loads this file directly. Claude Code's minimal `CLAUDE.md` imports it. Retired Copilot and
+disabled instruction files are historical records, not additional instruction sources.

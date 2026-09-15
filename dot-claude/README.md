@@ -49,6 +49,7 @@ Tracked so far:
 | --- | --- |
 | `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the user-wide section "Never change an issue's state without a comment saying why", which stays as a pointer, and two MAM-basics memory notes. Added 2026-09-14, shared with Codex and not installed in cloud sessions, all Ben's decisions of that day. |
 | `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the scattered copies in `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — those stay as pointers, and a rule change goes into the skill first. |
+| `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
 | `prune-claude-state` | A manual hygiene pass over Claude Code's *own* persisted state for the current repo — the per-repo auto-memory directory and that repo's slice of the global `~/.claude/plans/`. Cross-checks each file against live GitHub issue state and proposes stale ones for deletion, never deleting without explicit confirmation. Both directories live outside git, so there is no undo. |
 | `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
@@ -103,8 +104,8 @@ configuration.
 
 `dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
 `~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
-`~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose` and
-`verse-links`.
+`~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose`,
+`mam-repository-topology` and `verse-links`.
 `dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
 `~/.agents/skills/`.
 
