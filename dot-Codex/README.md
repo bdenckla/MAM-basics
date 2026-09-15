@@ -58,16 +58,18 @@ under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here a
 Each machine's `~/.codex/config.toml` must set:
 
 ```toml
-project_doc_max_bytes = 131072
+project_doc_max_bytes = 32768
 ```
 
 MAM-basics' common repository `AGENTS.md` now fits Codex's default 32 KiB project-instruction
-budget. The configured 128 KiB limit remains machine-local headroom for repositories or nested
-instruction chains that need it; this repository no longer requires the larger value. The limit
-is shared by the project files selected from the project root down to the session's working
-directory, not applied separately to each file. The user-wide `~/.Codex/AGENTS.md` is loaded
-outside that project budget and must not be added to the project total. `config.toml` remains
-machine-local and untracked; the deployment procedure below does not install or change it.
+budget. The explicit 32 KiB value matches Codex's current default, making the selected ceiling a
+machine policy rather than relying on an implicit upstream default. Keeping the setting explicit
+also preserves the mechanism for a deliberate future increase if a repository or nested
+instruction chain needs one. The limit is shared by the project files selected from the project
+root down to the session's working directory, not applied separately to each file. The user-wide
+`~/.Codex/AGENTS.md` is loaded outside that project budget and must not be added to the project
+total. `config.toml` remains machine-local and untracked; the deployment procedure below does not
+install or change it.
 
 The user-level `SessionStart` hook reads the effective working directory from Codex's hook input
 and reads `project_doc_max_bytes`, `project_doc_fallback_filenames` and `project_root_markers`
