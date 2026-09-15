@@ -303,16 +303,19 @@ git call as UTF-8, and leaves no duplicated or unreferenced definition; `--sessi
 scratch byte-identically — `unpinned-latest.json` (21,601 bytes, 69 diffs, `new_rev` `73c6b113`)
 and its HTML, and all five named releases — so `f11ecaf8`'s recorded positions and `9f6ee787`'s
 `--full-history` lookup produce what the tracked artifacts carry; three throwaway repositories
-show the lookup naming a commit with HEAD's `MAM-parsed/plus` tree in every merge shape. `af1c404a`'s
-`json.dumps` writer re-dumps 17 of 20 tracked JSON products byte-identically, the other three
-differing only by a trailing newline their own writers never emit (finding 10.6), and the
+show the lookup naming a commit with HEAD's `MAM-parsed/plus` tree in three merge shapes.
+`af1c404a`'s `json.dumps` writer re-dumps 17 of 20 tracked JSON products byte-identically, the other
+three differing only by a trailing newline their own writers never emit
+(`py/mb_diff_mpu/mpplus_json.py:113` and `py/hkq_cmn/qere_ending_search.py:300`, each a bare
+`json.dump` in lines the window did not change), and the
 rationale holds on this venv's Python 3.13.15. The cloud skips gate on `CLAUDE_CODE_REMOTE ==
 "true"` alone; `aedac688`'s 12,842 closes arithmetically from the survey's own accounting (prose
 12,955 = 12,842 + 104 + 9; poetic 1,805 = 1,786 + 18 + 1; 104 + 18 = 122) and `pin_claims` passes
 over the tracked survey; `5cb06e25`'s `py/mb_cmn/template_names.py` has no `.get` with a default,
 no `else` arm and no catch-all, and `validate_current_plus_template` raises on a name or a
 parameter outside the closed sets; 201 of the 203 commits carry `209b4c05`'s `MAM-parsed/plus`
-tree; all 20 filename-returning git calls in the 1,051 tracked `.py` carry `-z`;
+tree; all 21 filename-returning git commands that `B_12` and the lint's own method find in the
+1,051 tracked `.py` carry `-z`;
 `mam_simple_verse.mam_simple_json_path` raises rather than returning `None`, and none of its four
 callers skips a book (`B_01` to `B_12`).
 
@@ -1053,40 +1056,45 @@ remediation phase #278's body is to be corrected by dropping the example or repl
 directory that a program writes. Re-establish: `C_10_issue_facts.py`; `gh issue view 278 --repo
 bdenckla/MAM-basics --json body`.
 
-### 10. Ten guards, invariants and pointers in the window's code, none a defect in shipped data
+### 10. Eight guards, invariants and pointers in the window's code, none a defect in shipped data
 
-Streams B and D. Each is a place where a later change would go unnoticed, or a count in an
-immutable message.
+Streams B and D. Each is a guard with a gap in it, an invariant or a behavior that nothing checks
+or documents, or a pointer for the next change to the code it names.
 
 10.1. **Raised, unfixed at `bca64824`: the worktree sweep's session records do not cover a session
 whose work is in a worktree while its recorded working directory is the primary clone, which is
 this review's own shape.** `_session_in` (`py/repo_util/git_worktree_cleanup.py:825–840`) spares a
 worktree when a running session's `cwd` is the worktree or inside it, or when the desktop register
 leases it. Measured 2026-09-14: this session's record says `cwd = C:\Users\BenDe\GitRepos\MAM-basics`
-while every command of the review ran in the review worktree, and the desktop register listed no
-worktree; so both worktrees of this review printed `session record: None` and were protected only
-by the activity hour and the dirty and unique-ignored-content checks. A clean, merged review
-worktree idle for an hour would be removed while the session that made it still reads it. H8 of
-`doc/PLAN-repo-maintenance-across-GitRepos.md` names Codex threads and the desktop pool as what
-the records miss, not this shape; `git worktree lock` is the module's own remedy. Re-establish:
+while the review worked in the review worktree and the mega-scratch worktree, and the desktop
+register listed no worktree; so both worktrees of this review printed `session record: None` and
+were protected only by the activity hour and the dirty and unique-ignored-content checks. A clean,
+merged review worktree idle for an hour would be removed while the session that made it still
+reads it. H8 of `doc/PLAN-repo-maintenance-across-GitRepos.md` names three things the records do
+not cover — Codex threads, the lease a session leaves behind when it moves to another worktree, and
+the desktop pool — and not this shape; `git worktree lock` is the module's own remedy. Re-establish:
 `B_02_worktree_records_dry.py`, `B_10_session_records_liveness.py`.
 
 10.2. **Raised, unfixed at `bca64824`: `test_git_filename_commands_request_nul_delimiters` cannot
-see a git call made through a wrapper, so it enforces less than `CLAUDE.md`'s "enforces both
-rules" says.** `_literal_command` (`py/tests/test_tracked_filenames.py:42–49`) examines only a
-literal list or tuple containing `"git"`; three of the 20 filename-returning calls go through a
-wrapper (`git_worktree_cleanup.py:361` and `:491`, `mpplus_revisions.py:158`), all three with
-`-z` today, and the lint would not notice one that dropped it. Re-establish:
-`B_12_git_filename_calls_any_callee.py`.
+see a git command whose arguments reach a wrapper with no literal `"git"`, so it enforces less than
+`CLAUDE.md`'s "enforces both rules" says.** `_literal_command`
+(`py/tests/test_tracked_filenames.py:42–49`) examines only a literal list or tuple containing
+`"git"`. There are 21 filename-returning git commands: `B_12`'s method finds 20, and the lint's own
+method finds 18, one of which (`py/tests/test_tracked_filenames.py:28`, a list built in a variable)
+`B_12` misses. The other three pass their arguments to a wrapper as separate strings
+(`git_worktree_cleanup.py:361` and `:491`, `mpplus_revisions.py:158`), all three with `-z` today,
+and the lint would not notice one that dropped it. Re-establish:
+`B_12_git_filename_calls_any_callee.py`, and `_literal_command` applied to the same blobs.
 
-10.3. **Raised, not a defect: `mpplus_revisions.resolve()`'s `--full-history` lookup rests on an
-invariant it does not check, and one docstring beside it is stale.** The commit it names is
-assumed to have HEAD's `MAM-parsed/plus` tree; three throwaway repositories show that holding in
-every merge shape, and it can fail only under committer-date skew. A guard comparing the two
-trees' hashes would make a report unable to record a hash whose tree is not the one diffed.
-`_commit_date`'s docstring in `py/subcommands/diff_mpplus.py:56–68` still says HEAD resolves
-through `git log -1 -- MAM-parsed/plus`, which since `9f6ee787` is `--full-history -1`.
-Re-establish: `B_05_full_history_demo.py`.
+10.3. **Unfixed at `bca64824`: `_commit_date`'s docstring in `py/subcommands/diff_mpplus.py:56–68`
+is stale.** It still says HEAD resolves through `git log -1 -- MAM-parsed/plus`, which since
+`9f6ee787` is `--full-history -1`. The `--full-history` lookup in `mpplus_revisions.resolve()`
+assumes that the commit it names has HEAD's `MAM-parsed/plus` tree, and that holds whatever the
+committer dates: every commit git passes over before the first one it lists is identical to all its
+parents under the path, so the listed commit has the tree of the commit the walk started from.
+Three throwaway repositories show it in three merge shapes, and the same command run on 600 commits
+of random histories with random committer dates found no exception. Re-establish:
+`B_05_full_history_demo.py`.
 
 10.4. **Raised, not a defect: the byte identity the deployment relies on rests on
 `.gitattributes`' `* text=auto eol=lf`, and nothing in `user_config_sync.py` says so.** `git
@@ -1099,35 +1107,31 @@ no conversion. Re-establish: `D_03_remeasure.py` §7.
 
 10.5. **Raised, not a defect, by design and half documented: inside a tracked destination a
 deployment removes every live-only file, and a skill removed from the tracked tree is neither
-retired nor reported.** `dot-claude/README.md` says it "replaces complete skill directories" and
-the check names a live-only file before any deploy; the converse, that deleting
-`dot-claude/skills/<name>/` leaves `~/.claude/skills/<name>/` in place and invisible to every later
-check, is undocumented. Nothing outside the nine destinations is ever touched.
+retired nor reported.** `dot-claude/README.md` says it "replaces complete skill directories", and
+the `--check` form names a live-only file, though a deployment run removes the file without printing
+its name; the converse, that deleting `dot-claude/skills/<name>/` leaves `~/.claude/skills/<name>/`
+in place and invisible to every later check, is undocumented. Nothing outside the nine destinations
+is ever removed, apart from the staging and backup directories the deployment creates beside them.
 
-10.6. **Raised, not a defect: two writers still write JSON products with a bare `json.dump`,
-outside `af1c404a`'s speedup and `file_io`'s temp-file-and-retry.** `py/mb_diff_mpu/mpplus_json.py:113`
-(the change-log JSON) and `py/hkq_cmn/qere_ending_search.py:300` (`holman/out/holam_he_qere_report.json`),
-both without a trailing newline. Re-establish: `B_04_file_io_byte_identity.py`.
+10.6. **Raised, not a defect: a staging or backup directory the deployment could leave behind
+would sit directly under a skills root with a `SKILL.md` inside it**, named
+`.<name>.user-config-stage-<hex>` or `.<name>.user-config-backup-<hex>`; whether Claude Code and
+Codex skip a dot-prefixed skill directory is not established. None exists today.
 
-10.7. **Raised, not a defect: a backup or staging directory the deployment could leave behind
-would carry a `SKILL.md` directly under a skills root**, named `.<name>.user-config-stage-<hex>`
-or `.<name>.user-config-backup-<hex>`; whether Claude Code and Codex skip a dot-prefixed skill
-directory is not established. None exists today.
-
-10.8. **Raised, not a defect of the window: `py/main_repo_util.py` does not reconfigure stdout to
-UTF-8**, while `py/main_repo_maintenance.py:192–193` does; the deployment's failure branch prints
-git's stderr, so a non-ASCII message under a redirected cp1252 stdout would raise after the
+10.7. **Raised, unfixed at `bca64824`, in an entry point older than the window:
+`py/main_repo_util.py` does not reconfigure stdout to UTF-8**, while
+`py/main_repo_maintenance.py:192–193` does; the deployment's failure branch, which the window added,
+prints git's stderr, so a non-ASCII message under a redirected cp1252 stdout would raise after the
 failure had already been decided.
 
-10.9. **Raised, not a defect: `fa517040` kept one mock-based example test.**
-`test_zero_diffs_writes_empty_unpinned_latest_artifacts` (`py/tests/test_diff_mpplus_unpinned_latest.py:18–46`)
-stubs two functions and asserts one call, the shape `CLAUDE.md`'s "Writing tests" section says
-not to add; the lint-shaped chain test beside it is the right shape.
-
-10.10. **Raised, a count in an immutable message: `4e007289`'s "the three references in finished
-dated records" are five lines in three files** (`doc/PLAN-evacuate-the-rest-of-three-repos.md:1561`,
-`doc/PLAN-remediate-review-findings-2026-09-07.md:660–661`,
-`doc/codex-review-findings-2026-09-10.md:159–160`), all rightly left as written.
+10.8. **Raised, not a defect: `py/tests/test_diff_mpplus_unpinned_latest.py` holds two tests that
+stub functions and assert a call, where it held three before the window.**
+`test_zero_diffs_writes_empty_unpinned_latest_artifacts` (lines 18–46) stubs two functions and
+asserts one call, and `test_legacy_history_never_reuses_a_named_release_output` (lines 72–93)
+stubs `generate_report` and asserts its call once per release: the shape `CLAUDE.md`'s "Writing
+tests" section says not to add. The window's diff added no test of that shape and added the
+lint-shaped chain test beside them (lines 48–70), which is the right shape. The file was
+`py/tests/test_diff_mpp_unpinned_latest.py` until `8b2386b0`.
 
 ### 11. Six prose defects against the `hebrew-prose` skill, the prose rules and plain usage; 11.1 and three of 11.5's slips predate the window
 
