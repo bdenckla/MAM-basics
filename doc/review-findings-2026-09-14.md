@@ -340,43 +340,45 @@ check runs clean from the worktree (`SYS_PATH_MUTATIONS=0`, `ORPHAN_MARKS=0`, `H
 checked and rejected: the update file's SHA-256 for `dot-Codex/user-wide-AGENTS.md` is the file's,
 `87C3EDDB6A9F…`, not a transposed value (`verify_a_findings.py`).
 
-**The Google Sheet refresh, the template-projection thread, the plans and the issues (stream
-C).** `a7586b4b` recorded 34 Wikisource-versus-Sheet differences in 21 verses across 11 books, all
-in the verse-body column, and `44479798` brought `in/mam-go/`'s five CSVs and the tier-2
+**The Google Sheet refresh, the template-projection thread, the plans and the issues (stream C).**
+`a7586b4b` recorded 34 Wikisource-versus-Sheet differences in 21 verses across 11 books, all in the
+verse-body column, and `44479798` brought `in/mam-go/`'s five CSVs and the tier-2
 `MAM-parsed/google/` tree level in exactly those 21 verses, after which `py/main_diff.py wsgo`
-reports nothing and reproduces the tracked empty files byte for byte when run to scratch; no
-program in this repository writes to the live Sheet, the outward-facing act being the two tracked
-Apps Scripts run inside it, per `doc/process-documentation/auto-edits-process.md`. The closed-dispatch
+reports nothing and reproduces the tracked empty files byte for byte when run to scratch; no program
+in this repository writes to the live Sheet, the outward-facing act being the two tracked Apps
+Scripts run inside it, per `doc/process-documentation/auto-edits-process.md`. The closed-dispatch
 section is byte-identical in the two user-level files; the blind-dive review's five findings each
 have a disposition at `bca64824` that the code bears out (`1b7b97ef`); #275 was closed with an
 agent-written comment saying why. `doc/PLAN-dispose-mega-pipeline-review-findings.md` passes the
-fresh-session checklist and every one of its figures re-measures (85 findings, 81 open, 8 / 55 /
-18 by priority); `doc/PLAN-retire-codex-index-image-work.md`'s figures all re-measure; nothing was
-lost in the `doc/periodic-review.md` split (69 of 75 removed lines verbatim in the new file, six
-rewordings); all six named instruction commits landed in both user-level files. The 2026-09-10
-review's finding 21.6 is resolved by the closures of #266 and #267.
+fresh-session checklist, and every one of its figures re-measures (85 findings, 81 open, 8 / 55 / 18
+by priority) except its count of 63 `Open — queued` findings naming no root cause, which stream C
+did not re-derive; `doc/PLAN-retire-codex-index-image-work.md`'s file and byte counts all
+re-measure; nothing was lost in the `doc/periodic-review.md` split (69 of 75 removed lines verbatim
+in the new file, six rewordings); all six named instruction commits landed in both user-level files.
+The 2026-09-10 review's finding 21.6 is resolved by the closures of #266 and #267.
 
 **The user-configuration deployment (stream D).** `--sync-user-config --check`, run once from the
-primary clone, fetched `origin`, sourced `refs/remotes/origin/main@bca64824` and reported nine
-clean destinations and `USER_CONFIG_PROBLEM_COUNT=0`; an independent hashing of the 17 live files
-those nine destinations hold agrees, every one byte-identical to its blob at `bca64824`, LF, not a
+primary clone, fetched `origin`, sourced `refs/remotes/origin/main@bca64824` and reported nine clean
+destinations and `USER_CONFIG_PROBLEM_COUNT=0`; an independent hashing of the 17 live files those
+nine destinations hold agrees, every one byte-identical to its blob at `bca64824`, LF, not a
 symlink, with no live-only file inside any tracked destination and no staging or backup residue.
-`user_config_sync.py` (560 lines) fetches before it reads, can source nothing but that ref (a
-`git archive` into a temporary directory), stops with `USER_CONFIG_DEPLOY_FAILED` before any live
-write when the fetch fails or times out, stages every changed destination before the first
-`os.replace`, keeps a named backup per destination and rolls back on a later failure, removes
-nothing outside its nine mappings, refuses two sources aiming at one destination, sets
-`GIT_TERMINAL_PROMPT=0` and `GCM_INTERACTIVE=Never`, and in `--check` mode writes no live file
-(every live mtime unchanged across the run). The deployment ran once, at about 14:31 on
-2026-09-13 from `origin/main` at `a7d37b34`: both live instruction files carry that commit's
-committer time to the second, the clone's `FETCH_HEAD` had not moved since, and `bca64824`
-differs from `a7d37b34` in no configuration file. The hook is wired as a `SessionStart` hook on
-`startup|resume|compact`, unchanged in the window; its static trace agrees with the main
-session's exercise. All thirteen instruction-file commits of the window are paired between the two
-user-level files or owed no pair, and the preamble's five claims about the deployment re-measure
-against the code. One stream D statement is superseded rather than rejected: its finding that the
-hook rewrite "has been exercised nowhere" was true of the record when written, and the main
-session's exercise above is the measurement it asked for.
+`user_config_sync.py` (560 lines) fetches before it reads, can source nothing but that ref (a `git
+archive` into a temporary directory), stops with `USER_CONFIG_DEPLOY_FAILED` before any live write
+when the fetch fails or times out, stages every changed destination before the first `os.replace`,
+keeps a named backup per destination and rolls back on a later failure, removes nothing outside its
+nine mappings, refuses two sources aiming at one destination, sets `GIT_TERMINAL_PROMPT=0` and
+`GCM_INTERACTIVE=Never`, and in `--check` mode writes no live file (every live mtime unchanged
+across the run). The deployment ran once, at about 14:31 on 2026-09-13 from `origin/main` at
+`a7d37b34`: both live instruction files carry that commit's committer time to the second, the
+clone's `FETCH_HEAD` had not moved since, and `bca64824` differs from `a7d37b34` in no configuration
+file. The hook is wired as a `SessionStart` hook on `startup|resume|compact`, unchanged in the
+window; its static trace agrees with the main session's exercise. The thirteen instruction-file
+commits stream D's prompt named, of the 35 non-merge commits in the window that changed `CLAUDE.md`
+or a user-level file, are each paired between the two user-level files or owed no pair, and the
+preamble's five claims about the deployment re-measure against the code. One stream D statement is
+superseded rather than rejected: its finding that the hook rewrite "has been exercised nowhere" was
+true of the record when written, and the main session's exercise above is the measurement it asked
+for.
 
 **Prose, mark order, links and formatters (stream E).** The `hebrew-prose` skill was loaded before
 reading. The two new snips READMEs state every manuscript claim as Ben's reading of a named image,
@@ -889,8 +891,9 @@ quotation of MAM's note (stream E).
 
 ### 8. Twelve stale, unattributed or asymmetric statements in the instruction files, procedure documents and plans
 
-Streams C and D. None touches a product; each is a live document kept true in place, or a plan
-a fresh session would execute.
+Streams C and D; stream E also found 8.7's `CLAUDE.md` spellings and 8.10's census glob. None
+touches a product; each is in a live document kept true in place, or in a plan a fresh session would
+execute. 8.12's document is live by Ben's decision of 2026-09-15, recorded in that part.
 
 8.1. **Unfixed at `bca64824`: `dot-claude/user-wide-CLAUDE.md:329` says the maintenance runbook's
 Codex task-folder step is "its step 7"; since `2239cbad` that step is 8.** `2239cbad` inserted
@@ -908,84 +911,114 @@ until then it is findable only on that round's branch".** The round integrated a
 
 8.3. **Unfixed at `bca64824`: `doc/dual-agent-review.md:480–487` still describes the retired
 live-first procedure**, saying the Codex file's canonical copy comes "with the same manual
-write-back and the same drift check" and giving a `Get-Content … .Count` command for the live
-file. `1842e784` retired the write-back and replaced the check with `--sync-user-config --check`.
-The file is live (`09072b50` edited it on 2026-09-13). Re-establish: `D_03_report.txt` §6.
+write-back and the same drift check" and giving a `Get-Content … .Count` command for the live file.
+`1842e784` retired the write-back and replaced the check with `--sync-user-config --check`. The file
+is live: its own D12 names "this file" among the documents that describe the present and are kept
+true in place. Re-establish: `D_03_report.txt` §6.
 
-8.4. **Unfixed at `bca64824`: the hook's inventory of tracked entries omits
-`dot-claude/shared-skills.txt`.** `.claude/hooks/install-user-config.sh:45–62` says "Three further
-entries are tracked beside them and none is installed here"; `1842e784` added `shared-skills.txt`
-beside them and edited this file's comments without extending the list. `dot-claude/` holds ten
-tracked files. Re-establish: `git ls-tree -r --name-only bca64824 -- dot-claude`.
+8.4. **Unfixed at `bca64824`; Ben's decision on its remediation is at the end of this part: the
+hook's inventory of tracked entries omits `dot-claude/shared-skills.txt`.**
+`.claude/hooks/install-user-config.sh:45–62` says "Three further entries are tracked beside them and
+none is installed here"; `1842e784` added `shared-skills.txt` beside them and edited this file's
+comments without extending the list. `dot-claude/` holds ten tracked files. Ben decided on
+2026-09-15, during his walk-through of this review, that in the remediation phase the comment is to
+name what the hook does not install without claiming to name all of it, so that a newly tracked
+entry cannot make it stale again. Re-establish: `git ls-tree -r --name-only bca64824 -- dot-claude`.
 
-8.5. **Raised, older than the window: the Codex instruction file's two Hebrew-terminology
+8.5. **Raised, outside the window's diff: the Codex instruction file's two Hebrew-terminology
 sections cite an evacuated repository where the Claude file cites this one.** "**UXLC-utils**
 `doc/clc-design.md` §7.16", "`mb_cmn/hebrew_punctuation.py` (vendored into UXLC-utils and
 wlc-utils)" and "**UXLC-utils** `doc/clc-design.md` §2" in `dot-Codex/user-wide-AGENTS.md`, where
 `dot-claude/user-wide-CLAUDE.md` says "**MAM-basics** `uxlc/doc/clc-design.md`" and "formerly
-vendored". Both wordings date from `74d883d2` (2026-09-09), six days after the 2026-09-03
-evacuation, so the window inherited the drift. Re-establish: `git grep -n "UXLC-utils" bca64824 --
-dot-Codex/user-wide-AGENTS.md`.
+vendored". Both wordings entered this repository with `74d883d2`, which brought both files here on
+2026-09-09, six days after the 2026-09-03 evacuation, and both sections are byte-identical in both
+files at `0354b6cc` and at `bca64824`. So the window's diff did not touch what this part describes;
+it was noticed while the two files were compared, and since a periodic review is of the window's
+single diff (`doc/periodic-review.md`, "What the periodic review is"), it stands here as something
+noticed rather than as a defect of the window. Re-establish: `git grep -n "UXLC-utils" 0354b6cc
+bca64824 -- dot-Codex/user-wide-AGENTS.md`.
 
 8.6. **Raised, not a defect: the Codex file did not receive `6dfabceb`'s clarification that the
 cited github-misc commits do not resolve here.** `dot-Codex/user-wide-AGENTS.md:44–47` cites
 `25a8955` and `560239c` with only `1925699` labelled `github-misc`; none of the three resolves in
 MAM-basics. Re-establish: `D_03_report.txt` §3.
 
-8.7. **Raised, Ben's call: the Codex destination is spelled `~/.Codex/` in the code and in three
-instruction sentences, `~/.codex/` in five others, and the directory on disk is `.codex`.**
-`user_config_sync.py:252` maps to `.Codex/AGENTS.md`; NTFS makes that one file with `.codex`, and
-a case-sensitive filesystem would not. `1842e784` changed `~/.codex/` to `~/.Codex/` in axis
-item 3 of both user-level files and in `CLAUDE.md:105`, while `dot-claude/user-wide-CLAUDE.md:98`
-and `:849`, `CLAUDE.md:549`, `:855` and `:929`, and `doc/dual-agent-review.md:480` and `:486` keep
-`~/.codex/`. Re-establish: `git grep -n -E "\.[Cc]odex/" bca64824 -- CLAUDE.md dot-claude
-dot-Codex doc/dual-agent-review.md`.
+8.7. **Raised; Ben's decision on its remediation is at the end of this part: the Codex home is
+spelled `.Codex` in the code and `~/.Codex/` in 9 lines of the files the command below searches,
+`~/.codex/` or `C:/Users/BenDe/.codex/` in 22 lines of them, and the directory on disk is
+`.codex`.** `user_config_sync.py:252` maps to `.Codex/AGENTS.md`; NTFS makes that one file with
+`.codex`, and a case-sensitive filesystem would not. The Codex-side files already spelled the home
+`.Codex` at `0354b6cc`, and `1842e784` changed `~/.codex/` to `~/.Codex/` in axis item 3 of both
+user-level files and in `CLAUDE.md:105`. At `bca64824` the command prints 34 lines: 9 with
+`~/.Codex/`, 14 with `~/.codex/`, 8 with `C:/Users/BenDe/.codex/`, and three relative paths,
+`.codex/worktrees/<sibling>` in the Claude user-level file and `.Codex/worktrees/<sibling>` and
+`.Codex/launch.json` in the Codex one. Ben decided on 2026-09-15, during his walk-through of this
+review, that `.codex`, the spelling on disk, is to stand everywhere, a change for the remediation
+phase. Re-establish: `git grep -n -E "\.[Cc]odex/" bca64824 -- CLAUDE.md dot-claude dot-Codex
+doc/dual-agent-review.md`.
 
-8.8. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-google-sheet.md` fails three items of
-the fresh-session checklist and carries a stale expectation.** No decision in it is dated or
-attributed — the retirement and the freeze date "the Sheet as frozen on September 12, 2026" name
-no decider — and the file has no authorship line;
+8.8. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-google-sheet.md` fails four items of the
+fresh-session checklist and carries a stale expectation.** No decision in it is dated or attributed
+— the retirement and the freeze date "the Sheet as frozen on September 12, 2026" name no decider;
 lines 28–29 tell the executor to read "the `hebrew-prose`, `spreadsheets`, and `computer-use`
 skills", of which only `hebrew-prose` is tracked in this repository's skill homes, without saying
-where the other two live; the stage-count figure carries no re-establishing command; and lines
-45–46 expect 57 mega stages after the retirement where `bca64824`'s 55 minus `parse-go` and
-`diff-wsgo` is 53 (its "if the planning snapshot's 59 stages have not otherwise changed" hedge is
-right, and they have). It also does not record that the last auto-edit application left the Sheet
-level with Wikisource — both `out/` files are `[]` and `wsgo` reproduces them — which is the fact
-that makes freezing the Sheet harmless, and which the plan's deletions remove the tool for
-re-establishing. Re-establish: `C_06_mega_step_counts.py`; `git ls-files -- "dot-Codex/skills/*/SKILL.md"
+where the other two live; the stage-count figure carries no re-establishing command; it does not say
+whether another session may be live, one of the preconditions the checklist asks a plan to state;
+and lines 45–46 expect 57 mega stages after the retirement where `bca64824`'s 55 minus `parse-go`
+and `diff-wsgo` is 53 (its "if the planning snapshot's 59 stages have not otherwise changed" hedge
+is right, and they have). It has no authorship line either, though no checklist item asks for one.
+It also does not record that the last auto-edit application left the Sheet level with Wikisource —
+both `out/` files are `[]` and `wsgo` reproduces them — which is the fact that makes freezing the
+Sheet harmless, and which the plan's deletions remove the tool for re-establishing. Re-establish:
+`C_06_mega_step_counts.py`; `git ls-files -- "dot-Codex/skills/*/SKILL.md"
 "dot-claude/skills/*/SKILL.md"`.
 
-8.9. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-codex-index-image-work.md` dates its
-seven decisions and attributes none of them**, listing them in the imperative under "Decisions
-recorded on 2026-09-12" with only the 2026-09-13 amendments naming Ben, and its line 60 sends the
-executor to `C:/Users/BenDe/.codex/AGENTS.md`, which a Claude executor does not load, without
-saying which agent the plan is written for. Every figure in it re-measures.
+8.9. **Raised, unfixed at `bca64824`: `doc/PLAN-retire-codex-index-image-work.md` dates its seven
+decisions and attributes none of them**, listing them in the imperative under "Decisions recorded on
+2026-09-12" with only the 2026-09-13 amendments naming Ben, and its line 60 sends the executor to
+`C:/Users/BenDe/.codex/AGENTS.md`, which a Claude executor does not load, without saying which agent
+the plan is written for. Every file count and byte count in it re-measures; its test counts, taken
+at its planning snapshot `06874577`, were not re-run.
 
-8.10. **Raised, low: the `doc/periodic-review.md` split left the close-out procedure stated in both
-files, and hands the reader a census glob that now over-matches.** `doc/periodic-review.md`
-§"Close-out" gives four steps and `doc/dual-agent-review.md:125–137` six, step 1 verbatim in both;
-and the new file's "ten files match `doc/review-findings-*.md` … all of them window reviews" with
-`git ls-files -- "doc/review-findings-*.md"` as its command returns 13 files at `bca64824`, two of
-them the 2026-09-08 and 2026-09-10 update files. Re-establish: `C_04_split_check.py`; `git ls-tree
---name-only bca64824 doc/`.
+8.10. **Raised, low; Ben's decision on its remediation is at the end of this part: the
+`doc/periodic-review.md` split left the close-out procedure stated in both files, and hands the
+reader a census glob that now over-matches.** `doc/periodic-review.md` §"Close-out" gives four steps
+and `doc/dual-agent-review.md:125–137` six, step 1 verbatim in both; and the new file's "ten files
+match `doc/review-findings-*.md` … all of them window reviews" with `git ls-files --
+"doc/review-findings-*.md"` as its command returns 13 files at `bca64824`, two of them the
+2026-09-08 and 2026-09-10 update files. Ben decided on 2026-09-15, during his walk-through of this
+review, that the duplicated close-out list is to be removed in the remediation phase by the same
+edit that writes finding 7.1's update-file rule into the two documents: one of them keeps the list
+and the other points to it. Re-establish: `C_04_split_check.py`; `git ls-tree --name-only bca64824
+doc/`.
 
-8.11. **Raised, deliberateness unrecorded: seven sections exist only in the Claude user-level
-file, and one in-window edit deepened the asymmetry.** All seven were Claude-only at `0354b6cc`
-and date from `74d883d2`; `2eee5f51` rewrote the Claude-only closing-message section from a rule
-bar to an H1 heading with no Codex counterpart. Whether "Authored paths use forward slashes",
-"Prose: a reported finding says what HAPPENED to it" and "A transcription is evidence about the
-transcription" are meant to be Claude-only is recorded nowhere. The Codex file has three sections
-the Claude file lacks, two of them counterparts. Re-establish: `C_02_headings_compare.py`.
+8.11. **Raised; Ben's decision on its remediation is at the end of this part: `2eee5f51` rewrote the
+closing-message section of the Claude user-level file, a section the Codex file has never had, from
+a rule bar to an H1 heading.** That section is one of seven whose headings exist only in the Claude
+file, at `0354b6cc` and at `bca64824` alike, and the other six have the same text at both commits,
+so the window's diff changed only this one of the seven. Five of the seven entered this repository
+with `74d883d2` on 2026-09-09; "Prompt authorship: sign the chips you write" came with `628b1ac8`
+that evening, and the closing-message section with `35a73b06`. Two of the seven,
+"all-repos.code-workspace is the roster" and "A successor session verifies its exact checkout and
+commit before editing", have Codex counterparts under other headings, and the window added one
+Codex-only section, `06874577`'s, whose Claude counterpart is in `CLAUDE.md`. Ben decided on
+2026-09-15, during his walk-through of this review, that the closing-message rule is not meant to be
+Claude-only: Codex needs it too, and giving Codex's user-level instructions a counterpart is for the
+remediation phase. Re-establish: `C_02_headings_compare.py`; for each heading, `git log
+--full-history --format="%h %ad" --date=iso-local -S "<heading>" -- dot-claude/user-wide-CLAUDE.md`.
 
-8.12. **Raised, Ben's call: `doc/user-level-config-in-cloud-sessions.md` is classified both
-ways inside the window.** `3134f32b` changed one clause in place on 2026-09-12; `1842e784`
-created its sibling update file on 2026-09-13 and the item-3 entry calls it one of "two affected
-finished dated reports"; its lines 110–112 still instruct "Edit the live copy, copy outwards, run
-both comparisons" and cite a README section that no longer exists, corrected only in the sibling.
-Its title and its gating section describe the present and `CLAUDE.md` sends sessions to it for
-"the diagnosis"; its body is a dated record of 2026-09-09 measurements. Nobody has said which it
-is. Re-establish: `git log --format="%h %ad %s" --date=iso-local 0354b6cc..bca64824 --
+8.12. **Raised; Ben's decision is at the end of this part:
+`doc/user-level-config-in-cloud-sessions.md` is classified both ways inside the window.** `3134f32b`
+changed one clause in place on 2026-09-12; `1842e784` created its sibling update file on 2026-09-13
+and the entry "Inherited item 3: live user-level synchronization is implemented" in
+`doc/review-findings-2026-09-10-update.md` calls it one of "two affected finished dated reports";
+its lines 110–112 still instruct "Edit the live copy, copy outwards, run both comparisons" and cite
+a README section that no longer exists, corrected only in the sibling. Its title and its gating
+section describe the present and `CLAUDE.md` sends sessions to it for "the diagnosis"; its body is a
+dated record of 2026-09-09 measurements. Ben decided on 2026-09-15, during his walk-through of this
+review, that it is a live document, kept true in place; correcting it in place, and correcting its
+update file's statement that it is a finished dated report, is for the remediation phase.
+Re-establish: `git log --format="%h %ad %s" --date=iso-local 0354b6cc..bca64824 --
 doc/user-level-config-in-cloud-sessions.md`.
 
 ### 9. Two pointer issues are unsigned and one open issue names a directory the window removed
@@ -1161,8 +1194,9 @@ assigned to no plan. `main` and `origin/main` stood at `bca64824` when this file
 8. `doc/PLAN-retire-codex-index-image-work.md`'s 355 lines and `doc/PLAN-retire-google-sheet.md`
    beyond its first forty, for prose beyond the fresh-session checklist and the banned-term scan;
    and the rendered `gh-pages/` prose outside the one `post-stress-meteg.html` hunk.
-9. Whether the seven Claude-only and three Codex-only instruction sections are deliberately
-   asymmetric.
+9. Whether the six Claude-only sections of the user-level instruction files that the window's diff
+   did not change, and the two Codex-only sections that predate the window, are meant to exist in
+   one file only (finding 8.11).
 
 ## Inputs for the reconciliation with the Codex review
 
@@ -1176,7 +1210,8 @@ area itself; finding 4.1 is stream E's, and the main session's check found the s
 counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
 main session measured it; finding 2.1 was found by running the two generators after stream B noted
 that they read the incremental folders directly; findings 6, 7.6 and 11 are stream E's, the rest of
-7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each spot-checked by the main
+7 stream A's, 8 and 9 streams C's and D's, with stream E also finding 8.7's `CLAUDE.md` spellings
+and 8.10's census glob, 10 streams B's and D's, each spot-checked by the main
 session where a figure could be re-run cheaply (the stale step count by all six readings, the
 nonexistent blob, the two replaced blobs, the dead link, the ruff errors, the "its step 7" sentence,
 the Codex file's UXLC-utils citations, the 13-file glob). The census, and the tree-health section's
