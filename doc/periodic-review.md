@@ -181,8 +181,8 @@ questioning your proposed fix-ups to review finding language."
 2. **Say what a finding is before saying anything about it.** Ben, 2026-09-11: "You need to not
    just say something like 'I fixed finding 6.' that requires me to have in my head what finding 6
    is."
-3. **Change nothing beyond what Ben asks.** Presenting a finding is not authorization to fix it,
-   and a fix he does ask for lands off the review branch.
+3. **Change nothing beyond what Ben asks.** Presenting a finding is not authorization to fix it, and
+   where a fix he does ask for goes is rule 8's question.
 4. **Use one word for one thing.** The case: "record" was naming both a post-stress-meteg survey
    entry and a document's written account, until `3f962e62`.
 5. **Summarize a finding's wording changes and offer the detail, rather than presenting each
@@ -209,13 +209,15 @@ questioning your proposed fix-ups to review finding language."
    and closed by saying it was waiting for his answer: "waiting for my answer to what? Please
    either repeat the questions at the bottom, or in future, don't even ask them at the top, just
    ask them at the bottom".
-8. **Ask whether a fix Ben approves is wanted at once or in the remediation phase, unless he has
-   said which.** A fix made at once, on a branch of its own, is usually for something pressing, such
-   as a mega that fails on `main`. Ben, 2026-09-15, after the session presenting finding 7 of the
-   2026-09-14 review took his approval of a procedure change for finding 7.1 as an instruction to
-   make it at once: "Either is fine, but it would have been nice to have been asked for
-   clarification, as 'fix now' is usually reserved for things [that] are usually quite pressing
-   (e.g. mega is found to be broken on main)."
+8. **When Ben approves a fix, ask where it goes, unless he has said: fixed later, in the remediation
+   phase; fixed now, on the review branch; or fixed now, on `main`.** A fix made now on `main`, on a
+   branch of its own that is integrated at once, is for something pressing, such as a mega that
+   fails on `main`. Ben, 2026-09-15, after the session presenting finding 7 of the 2026-09-14 review
+   took his approval of a procedure change for finding 7.1 as an instruction to make it at once on
+   `main`: "Either is fine, but it would have been nice to have been asked for clarification, as
+   'fix now' is usually reserved for things [that] are usually quite pressing (e.g. mega is found to
+   be broken on main)." And later that day: "there are actually (at least) 3 dispositions for a fix:
+   fix later in remediation, fix now on the review branch, and fix now on the main branch."
 
 ## Close-out: from findings to dispositions
 
