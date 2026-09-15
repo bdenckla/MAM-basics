@@ -118,7 +118,16 @@ retired; the reasoning bullets that survive below are unchanged.
   ask for a follow-on commit fixing whatever he does not like.
 - **In a primary checkout, push `main` normally. In a secondary worktree, commit only to its
   local non-`main` branch.** Do not push that worktree branch merely as a backup: nobody needs
-  to inspect it on the remote. Do not merge it into `main` merely because it has a commit.
+  to inspect it on the remote. A long-lived worktree branch is the exception when its merge into
+  `main` is not scheduled for when its session is archived—for example, because Ben has said it
+  merges only when he asks. Push such a branch to `origin` after every commit as a backup and so
+  the work can resume on another machine; this still pushes nothing to `main`. A short-lived
+  worktree branch still pushes nothing. Ben's reason, 2026-09-15: "Seems like a good idea, as a
+  backup, in case something happens to the machine we're working on (and if we wanted to resume
+  that work on another machine, regardless of whether data loss happened!)". The first case was
+  MAM-private's branch `worktree-near-aleppo`, first pushed 2026-09-15; its own `CLAUDE.md` has
+  carried the rule since MAM-private commit `a99d7eb`. Do not merge it into `main` merely because
+  it has a commit.
 - **Merge a worktree branch into `main` and push `main` just before the session is archived.**
   Integrate earlier only when Ben asks or when a concrete need requires the primary checkout to
   contain the work. A local worktree commit is the intended state between implementation and

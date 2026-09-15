@@ -20,7 +20,16 @@ coordinated multi-repository forest.
 3. Keep one writer per checkout. Before staging, confirm that `HEAD` still equals the recorded
    pre-work head and that status contains only paths owned by the task.
 4. Commit finished work on the worktree's local branch. Do not push the worktree branch or merge
-   it into `main` merely as a backup or merely to create a successor task.
+   it into `main` merely as a backup or merely to create a successor task. The no-push exception
+   is a long-lived worktree branch whose merge into `main` is not scheduled for when its session
+   is archived—for example, because Ben has said it merges only when he asks. Push such a branch
+   to `origin` after every commit as a backup and so the work can resume on another machine; this
+   still pushes nothing to `main`. A short-lived worktree branch still pushes nothing. Ben's
+   reason, 2026-09-15: "Seems like a good idea, as a backup, in case something happens to the
+   machine we're working on (and if we wanted to resume that work on another machine, regardless
+   of whether data loss happened!)". The first case was MAM-private's branch
+   `worktree-near-aleppo`, first pushed 2026-09-15; its own `CLAUDE.md` has carried the rule since
+   MAM-private commit `a99d7eb`.
 
 ## Load the reference for the selected work
 
