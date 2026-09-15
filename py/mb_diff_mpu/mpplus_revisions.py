@@ -315,4 +315,6 @@ def resolve(rev):
 # what a shallow clone cannot do -- in a cloud container the landing commit is outside the
 # window and the count died, taking the mega's ``diff-mpplus`` step with it. Ben's decision,
 # 2026-09-11. Nothing now reads ``manifest["revisions"][<sha>]["commits_to_migration"]``; the
-# key is left in the tracked manifest rather than migrated out of it.
+# key is left in the tracked manifest rather than migrated out of it. Nothing has read
+# ``manifest["migration"]["source_date"]`` either since b5dd2ffb, which stopped dating a
+# MAM-basics revision on 2026-09-14, and that key is left in the manifest as well.
