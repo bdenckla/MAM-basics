@@ -193,7 +193,7 @@ the evidence, and "What verifies sound" carries what was checked and found right
    and neither file covers a change to what such a program reads, which is how finding 2.1 went
    unnoticed: `3b1adf45` changed MAM-simple, got its mega run, and broke both programs (finding 1).
 
-## Tree health at `bca64824`: green, with the suite at 997 and the mega clean, but ruff failing
+## Tree health at `bca64824`: the suite at 997 and the mega clean, but ruff failing
 
 - Suite: **997 passed, 5 skipped, 65 subtests passed** (103.44 s), run in the shared worktree with
   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q -rs` and no
@@ -398,9 +398,10 @@ entries; the declaration has 43 (`scopes_check.txt`).
 ## Findings
 
 Findings 1 to 4 are Ben's four areas: finding 1 his fourth, 2 his second, 3 his third and 4 his
-first; 5 and 6 are the two other things that touch a product or a routine run; 7 to 11 are the
-record, the instruction files, the issues, the code's guards and the prose. Each lead
-says its disposition at `bca64824`.
+first; 5 is a rewrite of product files made and undone between the window's two anchors, out of
+scope as a problem, and 6 is a lint failure that repository maintenance reports; 7 to 11 are the
+record, the instruction files, the issues, the code's guards and the prose. Each lead says its
+disposition at `bca64824`.
 
 ### 1. `CLAUDE.md`'s tier-3 counts went stale the day they were written, and no rule covers a change to what a hand-run program reads
 
@@ -759,18 +760,26 @@ mega at `bca64824` regenerates `MAM-parsed/plus` byte-identically, which confirm
 restoration equals what the parser writes. Re-establish with `git log --full-history --format="%h
 %s" 0354b6cc..bca64824 -- MAM-parsed/plus` and `git rev-parse <commit>:MAM-parsed/plus`.
 
-### 6. `ruff check py`, which repository maintenance runs, fails on two unused imports the template-dispatch commit left behind
+### 6. `ruff check py`, which repository maintenance runs, fails on two unused imports that `5cb06e25` left behind
 
-**Unfixed at `bca64824`.** `5cb06e25` replaced `_token_text`'s body in `py/accgram/rtmsr_verse.py`
-with a call to `text_from_one_token_like`, leaving `from accgram import rtmsr_sat` at line 6
-unused, and replaced `_flatten_text` in `py/foi/kq_trivial_types.py` with `project_qere_atoms`,
-leaving `from mb_cmn import template_names as tmpln` at line 9 unused. `git blame` dates both
-import lines before the window; `git log -S` names `5cb06e25` for both removed uses. `ruff.toml`
-says the linter is "wired into the repo-maintenance script's lint step", and
-`py/main_repo_maintenance.py:167` runs `ruff check py`, so the next maintenance run stops here.
-Neither module's behaviour changes; an unused import reaches no output. Re-establish with
+**Unfixed at `bca64824`.** With ruff 0.16.5, `ruff check py` passes at `0354b6cc` and reports two
+F401 errors at `bca64824`. `5cb06e25` replaced `_token_text`'s body in `py/accgram/rtmsr_verse.py`
+with a call to `text_from_one_token_like`, leaving `from accgram import rtmsr_sat` at line 6 unused,
+and replaced `_flatten_text`'s body in `py/foi/kq_trivial_types.py` with a call to
+`project_qere_atoms`, leaving `from mb_cmn import template_names as tmpln` at line 9 unused. `git
+blame` dates both import lines before the window; `git log -S` names `5cb06e25` for both removed
+uses. `ruff.toml` says the linter is "wired into the repo-maintenance script's lint step", and
+`py/main_repo_maintenance.py:167` runs `ruff check py`, so the next maintenance run reports its lint
+step as failed, goes on to its later steps, and exits with status 1. `py/main_repo_maintenance.py`
+is the only tracked program that runs ruff, so a ruff failure shows up only in repository
+maintenance; Ben, 2026-09-15, during his walk-through of this review: "it is fine by me that such
+ruff issues only show up during repo maintenance", and "repo maintenance should only stop if it
+cannot continue". Removing the two imports would change no output: neither is part of an import
+cycle, each of the five modules that import `rtmsr_verse` loads `rtmsr_sat` by another route, and
+`kq_trivial_types` also loads `template_names` through `ws_tmpl2`. Re-establish with
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m ruff check py` from the repository
-root ("Found 2 errors").
+root ("Found 2 errors"), and for `0354b6cc` by running the same command at the root of an extracted
+`git archive 0354b6cc py ruff.toml` ("All checks passed!").
 
 ### 7. The 2026-09-10 review's close-out record: a stale line-3 State by design, one blob that does not exist, four departures from the written procedure, and three smaller record defects
 
@@ -1133,11 +1142,10 @@ area itself; finding 4.1 is stream E's, and the main session's check found the s
 `post_stress_meteg.py` lines; findings 3.1 to 3.3 are streams A's and E's; finding 5's tree hashes,
 counts and Genesis 5:1 example are stream B's (`B_07_plus_tree_hashes.py`), and no script of the
 main session measured it; finding 2.1 was found by running the two generators after stream B noted
-that they read the incremental folders directly;
-findings
-6 and 11 are stream E's, 7 stream A's, 8 and 9 streams C's and D's, 10 streams B's and D's, each
-spot-checked by the main session where a figure could be re-run cheaply (the stale step count by
-all six readings, the nonexistent blob, the two replaced blobs, the dead link, the ruff errors,
-the "its step 7" sentence, the Codex file's UXLC-utils citations, the 13-file glob). The tree
-health figures and the census are the main session's own. The reconciliation section goes below
-this one, under `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
+that they read the incremental folders directly; findings 6 and 11 are stream E's, 7 stream A's, 8
+and 9 streams C's and D's, 10 streams B's and D's, each spot-checked by the main session where a
+figure could be re-run cheaply (the stale step count by all six readings, the nonexistent blob, the
+two replaced blobs, the dead link, the ruff errors, the "its step 7" sentence, the Codex file's
+UXLC-utils citations, the 13-file glob). The census, and the tree-health section's suite, mega,
+generator and product-tier figures, are the main session's own. The reconciliation section goes
+below this one, under `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
