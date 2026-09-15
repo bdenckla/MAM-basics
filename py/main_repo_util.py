@@ -27,10 +27,10 @@ repo-wide switch.
 
 ``--sync-user-config`` does not traverse a workspace.  It fetches ``origin`` in the
 primary MAM-basics clone and uses only ``refs/remotes/origin/main`` as its source.
-``--check`` compares both instruction files and every tracked skill destination without
-changing them.  Without ``--check``, the action deploys the complete configuration and
-must be run from the primary clone.  The cloud-session hook is separate and continues to
-source the cloud session's checked-out branch.
+``--check`` compares both instruction files, the user-level Codex hook and every tracked
+skill destination without changing them.  Without ``--check``, the action deploys the
+complete configuration and must be run from the primary clone.  The Claude cloud-session
+hook is separate and continues to source the cloud session's checked-out branch.
 
 Three of the repos that file lists are private, so a sweep over all of them
 produces findings that must not land in this public repo's tracked tree.

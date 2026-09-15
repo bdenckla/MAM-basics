@@ -6,7 +6,8 @@ failed fetch stops before any live destination changes.  The cloud-session boots
 hook is deliberately separate: it sources the cloud session's checked-out branch.
 
 Every skill under ``dot-claude/skills`` deploys to Claude, every skill under
-``dot-Codex/skills`` deploys to Codex, and the names in
+``dot-Codex/skills`` deploys to Codex, the user-level Codex hook is installed,
+and the names in
 ``dot-claude/shared-skills.txt`` deploy from the Claude tree to Codex as well.  Building
 that complete mapping and validating every source precedes any destination write.
 """
@@ -30,10 +31,13 @@ from mb_cmn import paths, provenance
 _SOURCE_REF = "refs/remotes/origin/main"
 _FETCH_TIMEOUT_SECONDS = 60
 _SHARED_SKILLS = Path("dot-claude/shared-skills.txt")
+_GENERATED_USER_AGENTS_FINGERPRINT = Path(".generated/expected-user-wide-AGENTS.sha256")
 _ARCHIVE_PATHS = (
     Path("dot-claude/user-wide-CLAUDE.md"),
     Path("dot-claude/skills"),
     Path("dot-Codex/user-wide-AGENTS.md"),
+    Path("dot-Codex/hooks.json"),
+    Path("dot-Codex/hooks/check_project_doc_budget.py"),
     Path("dot-Codex/skills"),
     _SHARED_SKILLS,
 )
@@ -241,20 +245,34 @@ def _extract_regular_files(archive_path: Path, destination: Path) -> None:
 
 
 def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
-    required_files = (
-        ConfigMapping(
-            Path("dot-claude/user-wide-CLAUDE.md"),
-            Path(".claude/CLAUDE.md"),
-            "file",
-        ),
-        ConfigMapping(
-            Path("dot-Codex/user-wide-AGENTS.md"),
-            Path(".Codex/AGENTS.md"),
-            "file",
-        ),
+    claude_instructions = ConfigMapping(
+        Path("dot-claude/user-wide-CLAUDE.md"), Path(".claude/CLAUDE.md"), "file"
     )
-    for mapping in required_files:
+    codex_instructions = ConfigMapping(
+        Path("dot-Codex/user-wide-AGENTS.md"), Path(".Codex/AGENTS.md"), "file"
+    )
+    hook_script = ConfigMapping(
+        Path("dot-Codex/hooks/check_project_doc_budget.py"),
+        Path(".Codex/hooks/check_project_doc_budget.py"),
+        "file",
+    )
+    hook_config = ConfigMapping(
+        Path("dot-Codex/hooks.json"), Path(".Codex/hooks.json"), "file"
+    )
+    for mapping in (
+        claude_instructions,
+        codex_instructions,
+        hook_script,
+        hook_config,
+    ):
         _require_source(source_root / mapping.source_rel, mapping.kind)
+
+    fingerprint_source = source_root / _GENERATED_USER_AGENTS_FINGERPRINT
+    fingerprint_source.parent.mkdir(exist_ok=True)
+    fingerprint_source.write_text(
+        _sha256(source_root / "dot-Codex/user-wide-AGENTS.md") + "\n",
+        encoding="ascii",
+    )
 
     claude_skills = _skill_names(source_root / "dot-claude" / "skills")
     codex_skills = _skill_names(source_root / "dot-Codex" / "skills")
@@ -266,7 +284,16 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
             + ", ".join(missing_shared)
         )
 
-    mappings = list(required_files)
+    mappings = [
+        claude_instructions,
+        codex_instructions,
+        hook_script,
+        ConfigMapping(
+            _GENERATED_USER_AGENTS_FINGERPRINT,
+            Path(".Codex/hooks/expected-user-wide-AGENTS.sha256"),
+            "file",
+        ),
+    ]
     mappings.extend(
         ConfigMapping(
             Path("dot-claude/skills") / name,
@@ -291,6 +318,10 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
         )
         for name in shared_skills
     )
+    # Activate the hook only after its script and fingerprint are in place on a
+    # first installation. Existing sessions can still see individual replacements,
+    # but every replacement has already been staged and rollback remains complete.
+    mappings.append(hook_config)
     _reject_duplicate_destinations(mappings)
     return tuple(mappings)
 

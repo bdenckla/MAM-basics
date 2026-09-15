@@ -12,8 +12,8 @@ applicable MAM-basics development checkout, commit the change, integrate it into
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
 The command fetches `origin`, fails before any live write if the fetch fails, and deploys both
-instruction files and every tracked user-level skill exclusively from the freshly updated
-`refs/remotes/origin/main`. Its `--check` mode writes no live file, and ordinary
+instruction files, the user-level Codex hook and every tracked user-level skill exclusively from
+the freshly updated `refs/remotes/origin/main`. Its `--check` mode writes no live file, and ordinary
 `py/main_repo_maintenance.py` runs that check. See `dot-Codex/README.md` there for the complete
 mapping and for what is deliberately *not* tracked (`settings*.json`, `projects/`). A Claude
 cloud session is the declared exception: its SessionStart hook uses the user-level files from

@@ -110,14 +110,16 @@ first**.
 
 **`dot-claude/` and `dot-Codex/` are storage, and this repository loads neither.** They hold the
 version-controlled originals of Ben's user-level Claude and Codex configuration — the skill above,
-`user-wide-CLAUDE.md`, `user-wide-AGENTS.md` and the Codex-only skills. The live copies under
+`user-wide-CLAUDE.md`, `user-wide-AGENTS.md`, the Codex `SessionStart` hook and the Codex-only
+skills. The live copies under
 `~/.claude/`, `~/.codex/` and `~/.agents/` are what the two agents actually load, and
 `dot-claude/README.md` is the deployment procedure of record. **Edit the tracked canonical copy,
 never a live copy.** Commit the edit on its development branch, integrate and push `main`, then
 run `py/main_repo_util.py --sync-user-config` from the primary MAM-basics clone. The command
-fetches `origin`, deploys every instruction file and tracked skill only from the freshly updated
-`origin/main`, and fails before any live write when the fetch or source validation fails. Its
-`--check` mode is part of ordinary `py/main_repo_maintenance.py`. The trees lived in `github-misc`
+fetches `origin`, deploys every instruction file and tracked skill plus the Codex hook only from
+the freshly updated `origin/main`, and fails before any live write when the fetch or source validation
+fails. Its `--check` mode is part of ordinary `py/main_repo_maintenance.py`, which also runs the
+hook's project-instruction budget check. The trees lived in `github-misc`
 until 2026-09-09, so a `github-misc <sha>` citation inside them is right as written and must not be
 repointed.
 

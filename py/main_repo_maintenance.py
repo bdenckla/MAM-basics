@@ -42,13 +42,18 @@ Seven independent steps, in order:
    measures every repo against it, and which this repo did not itself satisfy
    until the standard's reference implementation came home here.
 3. Fetch ``origin`` in the primary MAM-basics clone and compare both live
-   instruction files and every tracked user-level skill destination with
-   ``refs/remotes/origin/main``.  Missing destinations are reported as ``not
-   installed`` rather than as clean.  This step never changes live configuration;
-   deployment is the separate ``py/main_repo_util.py --sync-user-config`` action.
-   A failed fetch or any mismatch sets the overall exit status but does not block
-   later steps.  The cloud-session hook is outside this check because it uses the
-   cloud session's checked-out branch by design.
+   instruction files, the user-level Codex hook, its origin-derived instruction
+   fingerprint and every tracked user-level skill destination with
+   ``refs/remotes/origin/main``.  Then run the same Codex instruction check as the
+   hook: measure the project instruction chain against the
+   ``project_doc_max_bytes`` value in live ``config.toml`` and verify the live
+   user-wide ``AGENTS.md`` fingerprint. Missing destinations are reported as
+   ``not installed`` rather than as clean. This step never changes live
+   configuration; deployment is the separate
+   ``py/main_repo_util.py --sync-user-config`` action. A failed fetch or any
+   mismatch sets the overall exit status but does not block later steps. The
+   Claude cloud-session hook is outside this check because it uses the cloud
+   session's checked-out branch by design.
 4. Run ``black --check py``. Check-only: drift is reported, never
    auto-reformatted -- repo-wide reformatting is its own deliberate commit
    (see ``py/main_repo_util.py --run-black``). Failures set the overall exit
@@ -75,6 +80,7 @@ The rebuild step is skipped if the test step failed, unless
 """
 
 import argparse
+from pathlib import Path
 import shutil
 import subprocess
 import sys
@@ -160,7 +166,27 @@ def run_black() -> bool:
 
 
 def run_user_config_check() -> bool:
-    return run_user_config_sync(check=True)
+    installation_ok = run_user_config_sync(check=True)
+    hook_script = _REPO / "dot-Codex" / "hooks" / "check_project_doc_budget.py"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(hook_script),
+            "--maintenance",
+            "--cwd",
+            str(_REPO),
+            "--codex-home",
+            str(Path.home() / ".codex"),
+        ],
+        cwd=_REPO,
+    )
+    instruction_ok = result.returncode == 0
+    print(
+        "Codex instruction check: OK"
+        if instruction_ok
+        else f"Codex instruction check: FAILED (exit {result.returncode})"
+    )
+    return installation_ok and instruction_ok
 
 
 def run_lint() -> bool:

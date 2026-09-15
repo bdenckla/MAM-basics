@@ -66,10 +66,11 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py
 
 The command fetches `origin` and uses only the freshly updated
 `refs/remotes/origin/main`. A fetch failure or invalid source stops before any live write. The
-source includes both instruction files, every Claude-specific and Codex-specific skill, and both
-destinations of every shared skill. The operation validates all sources first, stages all changed
-destinations, replaces complete skill directories instead of nesting them, and rolls earlier
-replacements back if a later replacement fails.
+source includes both instruction files, the user-level Codex hook, every Claude-specific and
+Codex-specific skill, and both destinations of every shared skill. The operation generates the
+hook's expected user-wide-AGENTS fingerprint from the same `origin/main` source. The operation
+validates all sources first, stages all changed destinations, replaces complete skill directories
+instead of nesting them, and rolls earlier replacements back if a later replacement fails.
 
 The read-only form uses the same fresh source and reports `clean`, `drift`, or `not installed` for
 every destination:
@@ -78,8 +79,10 @@ every destination:
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
 ```
 
-Ordinary `py/main_repo_maintenance.py` runs that check automatically. A failed check changes no
-live configuration and does not stop the maintenance script's later steps.
+Ordinary `py/main_repo_maintenance.py` runs that check automatically, verifies the installed
+Codex hook and fingerprint, and runs the hook's instruction-size check in maintenance mode. A
+failed check changes no live configuration and does not stop the maintenance script's later
+steps.
 
 The cloud SessionStart hook is the explicit exception. A cloud session gets the user-level
 configuration from its checked-out branch, not from `main` unless `main` is the checked-out
