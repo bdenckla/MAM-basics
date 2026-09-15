@@ -37,6 +37,7 @@ Tracked Codex-only skills:
 
 | Skill | Purpose |
 | --- | --- |
+| `codex-worktree-tasks` | Verify, use, recover, hand off, and archive ordinary Codex-managed worktree tasks, including branch naming, shared virtual environments, exact checkout identity, and final integration. |
 | `worktree-forest` | Create, verify, reuse, hand off, and retire pinned multi-repository worktree forests, including the Windows SID `safe.directory` workaround. |
 | `prune-Codex-state` (`skills/prune-claude-state/`) | Review Codex auto-memory and plan files for the current repository, cross-check them against live issue state, and propose stale files for deletion. |
 
@@ -60,12 +61,13 @@ Each machine's `~/.codex/config.toml` must set:
 project_doc_max_bytes = 131072
 ```
 
-MAM-basics' common repository `AGENTS.md` body exceeds Codex's default 32 KiB project-instruction
-budget. The larger limit is shared by the project files selected from the project root down to
-the session's working directory, not applied separately to each file. The user-wide
-`~/.Codex/AGENTS.md` is loaded outside that project budget and must not be added to the project
-total. `config.toml` remains machine-local and untracked; the deployment procedure below does not
-install or change it.
+MAM-basics' common repository `AGENTS.md` now fits Codex's default 32 KiB project-instruction
+budget. The configured 128 KiB limit remains machine-local headroom for repositories or nested
+instruction chains that need it; this repository no longer requires the larger value. The limit
+is shared by the project files selected from the project root down to the session's working
+directory, not applied separately to each file. The user-wide `~/.Codex/AGENTS.md` is loaded
+outside that project budget and must not be added to the project total. `config.toml` remains
+machine-local and untracked; the deployment procedure below does not install or change it.
 
 The user-level `SessionStart` hook reads the effective working directory from Codex's hook input
 and reads `project_doc_max_bytes`, `project_doc_fallback_filenames` and `project_root_markers`
