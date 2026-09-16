@@ -3,7 +3,6 @@ from __future__ import annotations
 from collections.abc import Callable
 
 from accgram import rtms_focus_highlight
-from accgram import rtmsr_sat
 from accgram.rtms_token_like import text_from_one_token_like
 from py_html import wlc_utils_html
 

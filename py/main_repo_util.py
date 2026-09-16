@@ -61,6 +61,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 from typing import Sequence
 
 from mb_cmn import paths
@@ -364,6 +365,8 @@ def _filter_by_visibility(repo_infos, visibility: str):
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = build_parser()
     args = parser.parse_args(argv)
     _validate_action_specific_args(parser, args)

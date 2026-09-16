@@ -63,6 +63,62 @@ def _returns_filenames(command: list[str]) -> bool:
     return "worktree" in command and "list" in command
 
 
+def _git_wrappers(tree: ast.AST) -> dict[str, tuple[int, list[str]]]:
+    wrappers = {}
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            continue
+        vararg = node.args.vararg
+        if vararg is None:
+            continue
+        for candidate in ast.walk(node):
+            if not isinstance(candidate, (ast.List, ast.Tuple)) or not candidate.elts:
+                continue
+            first = candidate.elts[0]
+            if not (
+                isinstance(first, ast.Constant)
+                and isinstance(first.value, str)
+                and first.value == "git"
+            ):
+                continue
+            expands_vararg = any(
+                isinstance(element, ast.Starred)
+                and isinstance(element.value, ast.Name)
+                and element.value.id == vararg.arg
+                for element in candidate.elts
+            )
+            if not expands_vararg:
+                continue
+            literal_prefix = [
+                element.value
+                for element in candidate.elts
+                if isinstance(element, ast.Constant) and isinstance(element.value, str)
+            ]
+            fixed_count = len(node.args.posonlyargs) + len(node.args.args)
+            wrappers[node.name] = fixed_count, literal_prefix
+            break
+    return wrappers
+
+
+def _wrapped_command(
+    node: ast.AST, wrappers: dict[str, tuple[int, list[str]]]
+) -> list[str] | None:
+    if not (
+        isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Name)
+        and node.func.id in wrappers
+    ):
+        return None
+    fixed_count, prefix = wrappers[node.func.id]
+    passed_varargs = node.args[fixed_count:]
+    if not passed_varargs or any(
+        not isinstance(argument, ast.Constant) or not isinstance(argument.value, str)
+        for argument in passed_varargs
+    ):
+        return None
+    return [*prefix, *(argument.value for argument in passed_varargs)]
+
+
 def test_tracked_filenames_contain_no_hebrew_letters() -> None:
     tracked = _tracked_paths()
     assert len(tracked) >= _TRACKED_FILE_FLOOR, (
@@ -87,8 +143,9 @@ def test_git_filename_commands_request_nul_delimiters() -> None:
     for rel in python_paths:
         source = (paths.repo_root() / rel).read_text(encoding="utf-8")
         tree = ast.parse(source, filename=rel)
+        wrappers = _git_wrappers(tree)
         for node in ast.walk(tree):
-            command = _literal_command(node)
+            command = _literal_command(node) or _wrapped_command(node, wrappers)
             if command is None or not _returns_filenames(command) or "-z" in command:
                 continue
             offenders.append(f"{rel}:{node.lineno}")

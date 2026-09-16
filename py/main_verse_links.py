@@ -159,7 +159,7 @@ def _leningrad_lines(
         except ValueError as unplaced:  # AtomNotFound, or more than one match
             lines = [f"- LC: {unplaced}. Give the atom's number with --atom:"]
             return lines + _numbered(words), False
-        if method == "stripped":
+        if method == "letters":
             note = f" (matched by its letters alone; the UXLC has {uxlc_word})"
     if atom is not None:
         if not 1 <= atom <= len(words):
