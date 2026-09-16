@@ -77,7 +77,8 @@ Read the sections needed for the requested operation before touching GitHub.
 3. **Post it from a file**: `gh issue comment <number> --repo bdenckla/<repo> --body-file <file>`.
    1. Never pass a multi-line body as an argument, a shell here-doc or a PowerShell here-string,
       and never `--body-file -`, which reads stdin (item 3 of section 1). "Running scripts — no
-      inline one-liners", in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, is the general rule.
+      inline one-liners", in the common `~/.codex/AGENTS.md` body imported by Claude Code through
+      `~/.claude/CLAUDE.md`, is the general rule.
    2. Name the file for its one task, such as `.novc/issue272_plan_link_comment.md`, never a
       generic `comment.md` reused across jobs: a stale file from an earlier task gets posted,
       silently, in place of the one meant.

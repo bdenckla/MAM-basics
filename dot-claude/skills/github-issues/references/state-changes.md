@@ -43,8 +43,10 @@ agents, having been on the wrong end of it.
    that cannot force-push or delete — not attribution, which the comment fixes for free. A
    fine-grained PAT or a GitHub App would be the form, since an App's actions set
    `performed_via_github_app` and so are distinguishable without adding a second voice.
-7. **Each of these is an outward-facing act**, item 1 of "Two axes of risk" in
-   `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, so a report names it as one.
+7. **Each of these is an outward-facing act**, item 1 of "Risk has two independent axes" in the
+   common `~/.codex/AGENTS.md` body, so a report names it as one. Claude Code receives that body
+   through `~/.claude/CLAUDE.md`.
 
-This section stood in both of those files until 2026-09-14, under the heading "Never change an
-issue's state without a comment saying why", which stays there as a pointer to this skill.
+This section stood in both full instruction bodies until 2026-09-14, under the heading "Never
+change an issue's state without a comment saying why". The common body now keeps the pointer to
+this skill.

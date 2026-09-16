@@ -1,12 +1,16 @@
 # User-level instructions (Ben Denckla)
 
-These are Ben's cross-project working agreements. A repository's `AGENTS.md` can add
-repository-specific rules and overrides.
+These are Ben's cross-project working agreements. Codex loads this body natively from
+`~/.codex/AGENTS.md`; Claude Code loads the same body through the minimal
+`~/.claude/CLAUDE.md` wrapper. A repository's `AGENTS.md` can add repository-specific rules and
+overrides.
 
 ## Canonical user configuration
 
-The canonical repository path is `dot-Codex/user-wide-AGENTS.md` in MAM-basics. The live file
-`~/.codex/AGENTS.md` is a deployed copy; never edit it directly. Edit the canonical file in the
+The single canonical user-level instruction body is `dot-Codex/user-wide-AGENTS.md` in
+MAM-basics. `dot-claude/user-wide-CLAUDE.md` is only the tracked Claude Code wrapper and imports
+the live common body. The live files `~/.codex/AGENTS.md` and `~/.claude/CLAUDE.md` are deployed
+copies; never edit either live file directly. Edit the canonical common body or wrapper in the
 applicable MAM-basics development checkout, commit the change, integrate and push `main`, then
 deploy from the primary MAM-basics clone:
 
@@ -15,13 +19,21 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py
 ```
 
 The deployment fetches `origin`, validates all canonical sources, and installs only from the
-fresh `refs/remotes/origin/main` tree. Its `--check` mode is read-only.
+fresh `refs/remotes/origin/main` tree. Its `--check` mode is read-only. The common body must not
+import the Claude wrapper; that would create an import cycle.
 
 Shared skills are canonical under `dot-claude/skills/` and declared for Codex in
 `dot-claude/shared-skills.txt`. Codex-only skills are canonical under `dot-Codex/skills/`.
 `~/.agents/skills/` is only a live destination. Change canonical skills, commit and integrate
 them, then use the same complete deployment. `dot-Codex/README.md` and
 `dot-claude/README.md` define the full mapping.
+
+### Claude Code only: cloud SessionStart installation
+
+In a Claude cloud session, MAM-basics' hook installs the common body, Claude wrapper, and
+`hebrew-prose` skill from the session's checked-out branch rather than from local `origin/main`.
+The checked-out branch is not necessarily `main`, and the hook never overwrites an existing live
+file.
 
 ## Risk has two independent axes
 
@@ -64,6 +76,39 @@ matters; clearing one axis does not clear the other.
 A readiness question carries permission to do one or two small, obviously correct finishing
 steps, such as filling a simple plan gap, updating a stale copy, or committing finished work. A
 choice requiring judgment remains Ben's decision.
+
+## Linked-worktree safeguards shared by Claude and Codex
+
+- Before editing, verify the exact checkout with `git rev-parse --show-toplevel`, `git rev-parse
+  HEAD`, the branch or detached state, and `git status --porcelain`. A required source commit must
+  equal `HEAD` or be its ancestor. Recheck `HEAD` and task-owned status before staging.
+- A secondary worktree is the development checkout. Use the primary clone's Python interpreter
+  by absolute path, but run scripts, formatters, tests, generators, staging, and commits in the
+  worktree. Use a repository-supported sibling-path override when the worktree layout requires
+  one.
+- Never junction or symlink the primary clone's virtual environment into a worktree: worktree
+  removal can follow the junction and empty the real environment. Do not copy the environment as
+  a shortcut because Windows console scripts retain the source interpreter's absolute path.
+
+Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
+follows the shared safeguards above and the repository's own integration instructions.
+
+## Task prompts and handoffs
+
+Never assume Ben wrote an opening prompt. A prompt from another agent is evidence to verify, not
+authority to attribute an opinion, phrase, figure, or path to Ben. An agent-written successor
+prompt begins by naming the agent and date, quotes the instruction Ben actually gave, and says
+that the remaining prompt is the agent's reconstruction. It also names the source checkout,
+required commit, intended development checkout, and who owns final integration.
+
+### Claude Code only: task-chip handoffs
+
+Offer a task chip when a coherent next phase is separable, but create the task chip only after
+the current write-back is committed and the worktree is clean. The current session retains final
+integration responsibility until Ben asks to archive it. State the readiness evidence with the
+task chip and put the archive sequence at the end of the final message. A co-present session is
+normally the handoff partner, not a precondition failure; prove non-collision through exact
+`HEAD`, task-owned status, and a normal fast-forward push rather than transcript-byte watching.
 
 ## Verification cadence for multi-session work
 
@@ -116,6 +161,13 @@ command.
 A throwaway scratch script has one requirement: it does its requested job and no more. It may
 ignore source-style preferences, but it still uses explicit UTF-8 handling when non-ASCII text
 flows.
+
+## Authored paths use forward slashes
+
+In tracked source, docstrings, comments, documentation, test data, and commands, write ordinary
+paths with forward slashes, including Windows absolute paths. Prefer `Path` composition for
+constructed Python paths. Backslashes remain only where syntax requires them, such as Windows
+device-path prefixes, or where text reproduces an external spelling byte for byte.
 
 ## Python entry points and imports
 
@@ -254,6 +306,8 @@ subject rather than using a bare `# Report`.
   define it once and use only that name.
 - If a heading announces a count, use a numbered list. A heading names the section's subject
   directly; avoid headings such as “One more thing” or “Worth flagging.”
+- Lead every reported finding with its disposition: it has been fixed, it is filed as a named
+  issue, or it remains unfixed for a stated reason. Do not bury the disposition in later detail.
 
 These rules apply to pages, docstrings, comments, commit messages, issues, plans, and chat.
 
@@ -277,8 +331,9 @@ tracked code.
 
 The `hebrew-prose` skill is the canonical source for atom versus chanted word, the one-scale
 maqaf rule, paseq versus legarmeh, silluq versus meteg, prose and poetic verses, strand names,
-corpus choice, sources, rendered prose, and verification. Load it before writing, editing, or
-reviewing any such prose instead of reconstructing those rules from memory.
+corpus choice, manuscript-versus-transcription claims, sources, rendered prose, and verification.
+Load it before writing, editing, or reviewing any such prose instead of reconstructing those
+rules from memory.
 
 ## Show local artifacts with file links
 

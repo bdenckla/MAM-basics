@@ -66,10 +66,10 @@ images" without crossing a directory that says so.
 Whether a change reaches a product is one axis of risk.  The other has nothing to do
 with products: outward-facing acts, destructive local acts, writes outside the
 repository, records that are receipts, and code paths that cannot be exercised on
-this machine.  That axis is stated in Ben's user-level instruction files,
-``~/.claude/CLAUDE.md`` and ``~/.codex/AGENTS.md``, tracked here as
-``dot-claude/user-wide-CLAUDE.md`` and ``dot-Codex/user-wide-AGENTS.md``, under the
-heading "Two axes of risk".
+this machine.  That axis is stated under "Risk has two independent axes" in Ben's common
+user-level instruction body, ``~/.codex/AGENTS.md``, tracked here as
+``dot-Codex/user-wide-AGENTS.md``.  Claude Code imports that body through the minimal wrapper
+``~/.claude/CLAUDE.md``, tracked here as ``dot-claude/user-wide-CLAUDE.md``.
 
 WHAT THIS MODULE IS NOT
 
