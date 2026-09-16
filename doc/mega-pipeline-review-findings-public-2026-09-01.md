@@ -1,6 +1,7 @@
 # MAM mega-pipeline review: public finding disposition companion
 
 Review closeout date: 2026-09-01.
+Updates and later status: [mega-pipeline-review-findings-public-2026-09-01-update.md](mega-pipeline-review-findings-public-2026-09-01-update.md).
 
 This is the public companion to the canonical private disposition ledger. It
 contains every public finding and public coverage statement, but no private

@@ -1,6 +1,7 @@
 # PLAN — make the mega run everything it should, and record why the rest does not
 
 State: executed 2026-09-10, every phase done.
+Updates and later status: [PLAN-mega-coverage-update.md](PLAN-mega-coverage-update.md).
 
 Written by a Claude session on 2026-09-10. Ben's instructions that day were: "An analysis of what
 is and isn't part of mega should be made", "Everything that is not part of mega should have a

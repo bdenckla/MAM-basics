@@ -1,11 +1,7 @@
 # Reduce MAM-basics worktree creation time by consolidating tracked files
 
-Ben authorized this programme on 2026-09-10 in task
-`01a08c45-a1ec-79f2-9399-1293caa62c9c`, **Plan faster MAM-basics worktrees**.
-The objective is to reduce full worktree creation time while preserving data,
-ordinary commands, generated products, and published URLs. The programme changes
-storage for UXLC notes, historical MAM-parsed inputs, and Job quirk records.
-The file-count estimate is not a prediction of the timing improvement.
+Ben authorized this programme on 2026-09-10 in task `01a08c45-a1ec-79f2-9399-1293caa62c9c`, **Plan faster MAM-basics worktrees**. The objective is to reduce full worktree creation time while preserving data, ordinary commands, generated products, and published URLs. The programme changes storage for UXLC notes, historical MAM-parsed inputs, and Job quirk records. The file-count estimate is not a prediction of the timing improvement.
+Updates and later status: [PLAN-worktree-file-consolidation-update.md](PLAN-worktree-file-consolidation-update.md).
 
 ## Execution status and checkout ownership
 

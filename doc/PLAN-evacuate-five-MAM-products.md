@@ -1,6 +1,7 @@
 # Total evacuation: the five MAM products
 
 State: complete
+Updates and later status: [PLAN-evacuate-five-MAM-products-update.md](PLAN-evacuate-five-MAM-products-update.md).
 
 This is the dedicated fourth-stage plan that Ben decided to have on 2026-09-05. The stage moves five public MAM products into C:/Users/BenDe/GitRepos/MAM-basics so MAM-basics no longer writes product data outside MAM-basics. The MAM-private Near Aleppo census is a separate task and remains out of scope.
 

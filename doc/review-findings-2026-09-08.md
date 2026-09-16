@@ -1,6 +1,7 @@
 # Findings of the 2026-09-08 review of the public repos since 2026-09-07
 
 State: remediated 2026-09-10; all approved waves and E/N items complete within scope; retained as a review record with explicit deferrals and verification limits.
+Updates and later status: [review-findings-2026-09-08-update.md](review-findings-2026-09-08-update.md).
 
 Status updated by Codex on 2026-09-10 at the final local checkpoint: Wave 4's
 vendoring audit and complete finding dispositions are committed at

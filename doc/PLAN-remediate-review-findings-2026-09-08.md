@@ -1,6 +1,7 @@
 # Plan: remediate the reconciled 2026-09-08 public-repository review
 
 State: executed 2026-09-10; Waves 1-4 complete within approved scope; retained as a review record, with explicit deferrals and original technical/editorial evidence.
+Updates and later status: [PLAN-remediate-review-findings-2026-09-08-update.md](PLAN-remediate-review-findings-2026-09-08-update.md).
 
 Status updated 2026-09-10 at the final local checkpoint: all approved remediation
 is complete. The repeat vendoring audit is byte-identical after the implementation

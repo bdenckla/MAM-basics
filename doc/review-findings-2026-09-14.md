@@ -1,6 +1,7 @@
 # Findings of the 2026-09-14 review of the public repos since 2026-09-10
 
 State: not yet acted on
+Updates and later status: [review-findings-2026-09-14-update.md](review-findings-2026-09-14-update.md).
 
 Written 2026-09-14, from about 07:45 to 08:44 local, as the Claude argument, turn 1 of
 the standard alternating dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of

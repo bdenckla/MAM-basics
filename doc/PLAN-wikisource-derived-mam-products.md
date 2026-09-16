@@ -1,6 +1,7 @@
 # Wikisource-derived MAM products
 
 ## Authorization and status
+Updates and later status: [PLAN-wikisource-derived-mam-products-update.md](PLAN-wikisource-derived-mam-products-update.md).
 
 Ben's decision, 2026-09-10: implement the proposed change from Google-derived MAM
 products to Wikisource-derived MAM products. Flesh out the implementation plan

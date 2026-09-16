@@ -1,9 +1,7 @@
 # Getting `~/.claude/` into a cloud session
 
-A cloud session — Claude Code on the web, `claude --cloud`, a routine, a Claude Tag session —
-starts from a fresh clone of `bdenckla/MAM-basics` on an Anthropic-managed Ubuntu VM. Everything
-tracked in this repository travels with that clone. **Nothing under `~/.claude/` does**, and until
-2026-09-09 nothing said so.
+A cloud session — Claude Code on the web, `claude --cloud`, a routine, a Claude Tag session — starts from a fresh clone of `bdenckla/MAM-basics` on an Anthropic-managed Ubuntu VM. Everything tracked in this repository travels with that clone. **Nothing under `~/.claude/` does**, and until 2026-09-09 nothing said so.
+Updates and later status: [user-level-config-in-cloud-sessions-update.md](user-level-config-in-cloud-sessions-update.md).
 
 Since 2026-09-09 the fix has two halves. `dot-claude/` and `dot-Codex/` hold the
 version-controlled originals of Ben's user-level Claude and Codex configuration, so they arrive

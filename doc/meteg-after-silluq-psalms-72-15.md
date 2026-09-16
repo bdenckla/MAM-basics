@@ -1,6 +1,7 @@
 # Meteg after silluq at Psalms 72:15 in the Leningrad Codex: what the repositories hold
 
 Written 2026-09-10 by a Claude session in the MAM-basics worktree `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/eloquent-ritchie-0e4c6c`, on the branch `claude/interesting-taussig-6aa52b`. Ben's instruction, 2026-09-10: "Psalms 72:15, UXLC 3.9 seems to point to a possible additional case of meteg after silluq in Leningrad ... For right now we'll just investigate that Psalms 72:15 word individually". The complete run over every verse-final chanted word that he asked for in the same message is recorded as `doc/PLAN-meteg-after-silluq-in-uxlc-and-wlc.md`. Everything below is this session's account of the data, and the terms are those of `doc/meteg-after-silluq-job-4-12.md`.
+Updates and later status: [meteg-after-silluq-psalms-72-15-update.md](meteg-after-silluq-psalms-72-15-update.md).
 
 The verse-final chanted word of Psalms 72:15 is a lone atom, and the verse, as MAM-simple has it, is וִיחִ֗י וְיִתֶּן־לוֹ֮ מִזְּהַ֢ב שְׁ֫בָ֥א וְיִתְפַּלֵּ֣ל בַּעֲד֣וֹ תָמִ֑יד כׇּל־הַ֝יּ֗וֹם יְבָרְכֶֽנְהוּ׃
 
