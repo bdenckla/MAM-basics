@@ -31,6 +31,10 @@ same agent and with Ben" still applies.
 Every four to eight days one Claude session reads a commit range across the public repositories and
 writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
 
+That filename is the single-agent Claude-series convention. A standard sequential dual-agent round
+uses the neutral numbered turn filenames in `doc/dual-agent-review.md`; the first reviewer may be
+Claude or Codex. Blind Design B retains its author-based pair of filenames.
+
 **A second series, which this repository's reviews call the private series, follows this same
 procedure in MAM-private**, a private repository holding Python code, data and documents of the
 same kinds as this repository's, and records its reviews there. Where the two need telling apart,
@@ -132,9 +136,10 @@ founding it. A review that departs from it should say why in its opening paragra
 Items 4, 5, 6 and 9 first appear together in `doc/review-findings-2026-09-04.md`. From 2026-08-03
 to 2026-09-01 a review usually fixed some findings during the review itself and said so under
 `## How the review was acted on (<date>)`, and `doc/review-findings-2026-07-29.md` groups its
-findings under `## Major` and `## Minor — <area>` headings. A review in a two-agent window also
-carries `## Inputs for the reconciliation with the Codex review` and, after turn 2,
-`## Reconciliation with the Codex review`; `doc/dual-agent-review.md` owns both.
+findings under `## Major` and `## Minor — <area>` headings. In a standard two-agent window, Agent
+1's turn-01 file also carries the inputs for reconciliation and, after turn 02, Agent 2's
+reconciliation; `doc/dual-agent-review.md` owns both. Historical author-named headings remain as
+written.
 
 ## The private series, recorded in MAM-private
 
@@ -148,9 +153,9 @@ added: "I would like the MAM-private review process to be potentially dual-agent
 review follows this document, and a two-agent private window follows `doc/dual-agent-review.md` as
 well, with five differences:
 
-1. **Every record of a private window is a file in MAM-private's `doc/`**: the review, any Codex
-   counter-argument or later turn under the names D10 of `doc/dual-agent-review.md` gives, and any
-   update file. None goes into this public repository or its tracker, because a public record of
+1. **Every record of a private window is a file in MAM-private's `doc/`**: the single-agent review,
+   every numbered turn of a standard alternating round, every blind counterpart, and any update
+   file. None goes into this public repository or its tracker, because a public record of
    private work can disclose what a private repository exists to keep private. The first of the
    two standing properties above, doc-only, holds there too, so a private review files no tracking
    issue.
@@ -187,7 +192,7 @@ than the review. The decision has three parts:
    other passages of the file that restate the finding, and looks for the claim traps listed below.
    The writing session re-runs a report's measurements where that is cheap before applying it.
 2. **No walk-through of the findings happens before close-out.** In a round under
-   `doc/dual-agent-review.md` that means none before Codex's turn 2, and a correction found after
+   `doc/dual-agent-review.md` that means none before Agent 2's turn 02, and a correction found after
    the review is committed goes in a later turn. The rules under "How Ben walks through a review's
    findings" below apply only when Ben asks for a walk-through.
 3. **At close-out step 1, Ben gets one list covering every finding**: a sentence each, each fix

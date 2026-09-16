@@ -99,27 +99,34 @@ writing responsibility is explicitly handed to one sub-agent. Use delegation whe
 time, protect the root reviewer's context or improve confidence, not merely to create another
 task.
 
+Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
+turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
+1, and the other is Agent 2.** The role names describe sequence, not which agent fills the role.
+There is no maximum number of turns; the stopping rule below ends the exchange.
+
 The round takes turns in this order:
 
-1. **Claude argument:** the initial review of the named commit ranges, committed as
-   `doc/review-findings-<date>.md` after sub-agents have checked each finding, with no walk-through
-   of the findings before turn 2, as `doc/periodic-review.md`'s section "Reviewing the review, with
-   the same agent and with Ben" sets out (Ben's decision, 2026-09-15).
-2. **Codex counter-argument:** check the Claude claims and the same ranges for omissions,
-   committed as `doc/codex-review-findings-<date>.md`. Once stable, append the reconciliation
-   table to the argument under `## Reconciliation with the Codex review`, recording confirmed,
-   qualified, rejected and unchecked claims and identifying unfixed work.
-3. **Claude rebuttal:** accept, qualify or contest the counter-argument and its characterization
+1. **Agent 1 argument:** review the named commit ranges after sub-agents have checked each finding,
+   with no walk-through of the findings before Agent 2's turn, as `doc/periodic-review.md`'s section
+   "Reviewing the review, with the same agent and with Ben" sets out (Ben's decision, 2026-09-15).
+2. **Agent 2 counter-argument:** check Agent 1's claims and the same ranges for omissions. Once the
+   turn is stable, Agent 2 appends the reconciliation table to Agent 1's argument, recording
+   confirmed, qualified, rejected and unchecked claims and identifying unfixed work.
+3. **Agent 1 rebuttal:** accept, qualify or contest the counter-argument and its characterization
    of the argument. A rebuttal need not defend the initial findings.
-4. **Codex counter-rebuttal:** assess the rebuttal against the cited evidence and record any
-   corrections Codex accepts.
-5. **Further alternating turns as needed:** Claude, then Codex, until the stopping rule applies.
+4. **Agent 2 counter-rebuttal:** assess the rebuttal against the cited evidence and record any
+   corrections Agent 2 accepts.
+5. **Further alternating turns as needed:** Agent 1 owns odd turns and Agent 2 owns even turns until
+   the stopping rule applies.
 
-Each turn is a tracked file. Ben supplies the next task with that file's path and commit; the
-next task reads the committed file instead of depending on pasted chat or remembered conclusions.
-Verify the exact shared checkout, branch, required commit and clean working tree before reading.
-A newer starting commit must contain the required commit as an ancestor. The naming section gives
-the numbered filenames for turns after the counter-argument.
+Each turn is a tracked file named
+`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`: the two-digit number records sequence and
+the final component records the agent that actually wrote the turn. Ben supplies the next task with
+that file's path and commit; the next task reads the committed file instead of depending on pasted
+chat or remembered conclusions. Verify the exact shared checkout, branch, required commit and clean
+working tree before reading. A newer starting commit must contain the required commit as an
+ancestor. The naming section distinguishes this standard round from single-agent and blind-review
+filenames.
 
 **The stopping rule:** a turn that accepts everything and lists no unresolved disagreement ends
 the round. The other agent's next task reads that turn and records an acknowledgment or an
@@ -145,9 +152,9 @@ After the exchange closes, close-out proceeds in this order, as worked in
 3. Write a remediation plan for a fresh task, including concrete editorial wording for Ben's
    approval; obtain the required approvals before execution.
 4. Execute the approved remediation, recording each finding's disposition under a dated
-   `## Dispositions after remediation` section in the initial review. Leave every finished dated
-   document as written; a correction to one goes in a sibling `<stem>-update.md`, as the section
-   below sets out.
+   `## Dispositions after remediation` section in Agent 1's turn-01 argument. Leave every finished
+   dated document as written; a correction to one goes in a sibling `<stem>-update.md`, as the
+   section below sets out.
 5. Integrate once after the final remediation wave, using the worktree procedure below.
 6. Retire the shared worktree and branch after the final task ends.
 
@@ -178,13 +185,15 @@ the READMEs, the docstrings, this file, and a plan still being executed.
 
 ### The shared worktree — Ben's decision, 2026-09-09 (D11)
 
-For future rounds, the Claude session that writes the argument creates branch
-`dual-agent-review-<date>` and worktree
-`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-<date>` at the round's
-start. The branch and worktree folder have the same name. Every turn of both agents and every
-close-out task uses that checkout directly, with writing responsibility passed between tasks.
-Do not create another worktree for a successor. The primary clone supplies its venv by absolute
-path; development commands, edits, staging and commits use the verified shared worktree.
+For future rounds, prefer a setup-only Claude session to create branch `dual-agent-review-<date>`
+and worktree
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-<date>` at the round's start,
+even when Codex is Agent 1. Setup creates the checkout and performs no review turn. If that setup
+session is unavailable, Agent 1 may create the same branch and worktree. The branch and worktree
+folder have the same name. Every turn of both agents and every close-out task uses that checkout
+directly, with writing responsibility passed between tasks. Do not create another worktree for a
+successor. The primary clone supplies its venv by absolute path; development commands, edits,
+staging and commits use the verified shared worktree.
 
 Each close-out task merges `main` into the review branch before editing and resolves conflicts
 there. No intermediate task fast-forwards `main` or pushes, including when an intermediate task
@@ -213,6 +222,13 @@ In the September 8 round, Codex created
 of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that creating the
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
+
+The September 14 round also keeps its historical names and author-specific role descriptions. It
+began before Ben's 2026-09-16 Agent 1 and Agent 2 decision, used the shared worktree named
+`dual-agent-review-2026-09-14`, and closed without a remaining disagreement after four turns. Ben's
+approved close-out choices are recorded in `doc/review-findings-2026-09-14-update.md`. The neutral
+roles and turn-01/turn-02 filenames above govern future rounds; they do not rename or rewrite that
+finished exchange, and approval of its choices does not claim its remediation is complete.
 
 ### Remediation approvals: D7 and the risk ordering
 
@@ -391,38 +407,42 @@ wrong there; an agent grading its own paper there will resolve it in its own fav
 intending to. A session that watched either review being written is anchored to it and is not a
 reconciler either, for the same reason the two reviews are kept blind in the first place.
 
-## Review filenames and State lines — Ben's decision, 2026-09-09 (D10)
+## Review filenames and State lines — Ben's decisions, 2026-09-09 (D10) and 2026-09-16
 
-The Codex counterpart takes the prefixed name `doc/codex-review-findings-<date>.md`. The existing
-`doc/review-findings-<date>.md` series keeps its unprefixed name and is **not** renamed to
-`claude-review-findings-<date>.md`.
+The existing `doc/review-findings-<date>.md` series keeps its unprefixed name and is **not** renamed
+to `claude-review-findings-<date>.md`. A Codex counterpart in the blind Design B procedure takes the
+prefixed name `doc/codex-review-findings-<date>.md`. Those author-based names remain the single-agent
+and blind-review convention; the standard sequential alternating round uses neutral numbered turn
+files.
 
-For future rounds, the filenames and states follow these rules:
+For future reviews, the filenames and states follow these rules:
 
-1. **Keep the first two filenames:** `doc/review-findings-<date>.md` for the Claude argument and
-   `doc/codex-review-findings-<date>.md` for the Codex counter-argument. The standard Codex file
-   has no model suffix. Reserve a suffix such as `-sol` for an exceptional additional review
-   comparing or repeating the same role with a named model; September 7's `-sol` file is the
-   worked example.
-2. **Number later turns:** `doc/dual-agent-review-<date>-turn-03-claude.md`,
-   `doc/dual-agent-review-<date>-turn-04-codex.md`, and the corresponding numbered name for each
-   further alternating turn. The stem identifies the shared exchange and the number identifies
-   its sequence.
-3. **Keep remediation state in the initial argument:** `review-findings-<date>.md` uses
-   `State: not yet acted on` or `State: acted on <date>`, with any qualifications. Every later
-   review turn uses `State: completed <date>; review only`. Completion means the review turn
-   is finished; "acted on" means findings were remediated. Keep the state at line 3, directly
-   under the H1.
-4. **Recognize all the review files in the document standard:** the initial Claude files, the
-   Codex counter-arguments and exceptional additional reviews, and the later numbered dual-agent
-   turns. The older `doc/review-findings-*.md` glob in the standard's history names only the
-   initial series. The naming and state rules here cover the additional files too. Preserve
-   historical filenames and `State:` lines, including September 4's Codex "acted on" and
-   September 8's later turns under a Codex-prefixed stem.
+1. **Number every turn of a standard alternating round:**
+   `doc/dual-agent-review-<date>-turn-01-<claude|codex>.md`, then turn 02 and every later turn. The
+   stem identifies the shared exchange, the number identifies its sequence, and the final component
+   records the actual author. Agent 1 owns odd turns and Agent 2 owns even turns.
+2. **Keep author-based names for single-agent reviews and blind Design B:**
+   `doc/review-findings-<date>.md` remains the Claude series, and
+   `doc/codex-review-findings-<date>.md` remains the Codex Design B counterpart. Reserve a suffix
+   such as `-sol` for an exceptional additional review comparing or repeating the same blind role
+   with a named model; September 7's `-sol` file is the worked example.
+3. **Keep remediation state in the argument:** turn 01 of a standard alternating round, or the
+   unprefixed file of a single-agent or blind review, uses `State: not yet acted on` or
+   `State: acted on <date>`, with any qualifications. Every later alternating turn and every blind
+   counterpart uses `State: completed <date>; review only`. Completion means the review turn is
+   finished; "acted on" means findings were remediated. Keep the state at line 3, directly under
+   the H1.
+4. **Recognize all review files in the document standard:** the initial single-agent files, blind
+   counterparts and exceptional additional reviews, and every numbered dual-agent turn. The older
+   `doc/review-findings-*.md` glob in the standard's history names only the unprefixed series.
+   Preserve historical filenames and `State:` lines, including September 4's Codex "acted on",
+   September 8's turns under a Codex-prefixed stem, and September 14's mixed old and numbered
+   naming.
 
-The asymmetry reads correctly: the unprefixed name is the incumbent, and the prefixed name announces
-its difference. `CLAUDE.md` carries one sentence saying that an unprefixed name means the Claude
-series, so a reader meeting the asymmetry is not left to infer it.
+For the single-agent and blind conventions, the asymmetry reads correctly: the unprefixed name is
+the incumbent, and the prefixed name announces its difference. Repository instructions say that an
+unprefixed name means the Claude series, so a reader meeting that convention is not left to infer
+it. The standard alternating convention has no such filename asymmetry.
 
 The rename was measured and rejected on 2026-09-01, when `review-findings` appeared on 41 lines
 across 18 files, 39 of them naming a dated file, 25 citing `doc/review-findings-2026-07-29.md`
@@ -456,8 +476,8 @@ Four reasons the rename was rejected, none of which the growing count changes.
 
 ### 1. Scope Codex to its window's series, explicitly
 
-A Codex agent that reads MAM-private and then writes `doc/codex-review-findings-<date>.md` into
-MAM-basics publishes private material permanently, and no mechanism prevents it.
+A Codex agent that reads MAM-private and then writes any review turn into MAM-basics publishes
+private material permanently, and no mechanism prevents it.
 `py/repo_util/report_destination.py`'s guard makes it mechanically impossible for
 `main_repo_util.py` to write a private-covering report into a public tree, but that guard's
 docstring names what it deliberately does not cover: "what a human or an agent later types into a
@@ -469,18 +489,18 @@ structurally. Keep the Codex reviewer of a window of this repository's series in
 **A window of the private series has the opposite boundary: its records stay in MAM-private.** Ben,
 2026-09-14: "I would like the MAM-private review process to be potentially dual-agent", and, on
 where the Codex file goes, "wouldn't it be in MAM-private/doc/codex-review-findings-YYYY-MM-DD.md
-or whatever the analogy with MAM-basics would dictate?" So a private window's Codex reviewer reads
-the private clones in its window and writes only into MAM-private's `doc/`, under D10's names
-there: `doc/codex-review-findings-<date>.md` for the counter-argument and the numbered turn names
-after it. As item 4 of `doc/periodic-review.md`'s section "The private series, recorded in
-MAM-private" says, the Codex task reads MAM-private's `CLAUDE.md` before its first check, since
-Codex does not load that file.
+or whatever the analogy with MAM-basics would dictate?" That quotation predates the neutral
+numbered convention. A private window's Codex reviewer reads the private clones in its window and
+writes only into MAM-private's `doc/`, using numbered turns for a standard alternating round and
+the author-based name for blind Design B. As item 4 of `doc/periodic-review.md`'s section "The
+private series, recorded in MAM-private" says, the Codex task reads MAM-private's `CLAUDE.md`
+before its first check, since Codex does not load that file.
 
 ### 2. Limit the Codex reviewer to review records
 
-A Codex reviewer writes only the named findings and reconciliation records, including the specified
-reconciliation append to the Claude argument. A Codex reviewer does not modify source files,
-generated products, or earlier findings. Two agents with write
+A Codex reviewer writes only the numbered turn that belongs to Codex and, when Codex is Agent 2,
+the specified reconciliation append to Agent 1's argument. A Codex reviewer does not modify source
+files, generated products, or earlier findings. Two agents with write
 access to one working tree can stage each other's half-written work, and that failure is clean and
 therefore silent — the collision the worktree rules in `~/.claude/CLAUDE.md` exist to prevent, but
 with no human turn between the two agents.
@@ -488,9 +508,9 @@ with no human turn between the two agents.
 The record-only scope has to be maintained deliberately rather than inferred from a sandbox flag.
 This document does not prescribe or assess current Codex sandbox syntax.
 
-For the standard alternating round, give the Codex reviewer the shared worktree created by
-Claude, under D11 above. Every successor uses that same checkout directly. A worktree runs the
-primary clone's venv by absolute path.
+For the standard alternating round, give the Codex reviewer the shared worktree created under D11
+above. Every successor uses that same checkout directly. A worktree runs the primary clone's venv
+by absolute path.
 
 ## A precondition this document does not own: `~/.codex/AGENTS.md`
 

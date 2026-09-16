@@ -151,9 +151,11 @@ Correct it in `<stem>-update.md`, then `<stem>-update-2.md`; name the passage be
 its words rather than by a drifting line number. Keep present-state documents, instructions,
 README files, comments, and docstrings true in place.
 
-In MAM-basics and MAM-private, an unprefixed
-`doc/review-findings-<date>.md` belongs to the Claude review series. A Codex review uses
-`doc/codex-review-findings-<date>.md`. The private series stays in MAM-private.
+In MAM-basics and MAM-private, an unprefixed `doc/review-findings-<date>.md` belongs to the
+single-agent Claude review series and the Claude half of blind Design B. A Codex Design B review
+uses `doc/codex-review-findings-<date>.md`. A standard sequential alternating round instead uses
+`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
+even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
 
 ## Format changed Python with Black
 

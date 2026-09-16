@@ -100,8 +100,11 @@ encountered by past sweeps, read the skill's `references/mam-basics-trackers.md`
 
 ## Review filenames and finished dated documents
 
-An unprefixed `doc/review-findings-<date>.md` is the Claude review series. A Codex review of the
-same window is `doc/codex-review-findings-<date>.md`. The private series stays in MAM-private.
+An unprefixed `doc/review-findings-<date>.md` is the single-agent Claude review series and the
+Claude half of blind Design B. A Codex Design B review of the same window is
+`doc/codex-review-findings-<date>.md`. A standard sequential alternating round instead uses
+`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
+even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
 `doc/periodic-review.md` and `doc/dual-agent-review.md` are the procedures of record.
 
 A finished dated review, remediation plan, completed plan, or execution record is never edited.
