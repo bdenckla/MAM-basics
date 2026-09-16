@@ -52,6 +52,12 @@ matters; clearing one axis does not clear the other.
   `main` is pushed.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.
+- In an elevated Windows session, give the first direct Git invocation and every subsequent Git
+  invocation the exact repository path through a per-command `safe.directory`. Never use
+  `safe.directory=*` or add a global trust entry. A parent program that launches Git supplies the
+  exact path through process-local `GIT_CONFIG_*` entries inherited by its children.
+- Repository trust and sandbox filesystem access are separate. If a Git metadata write is denied
+  at a sandbox boundary, use the normal escalation path even when `safe.directory` is correct.
 - Do not add sleeps, timers, or custom deployment debouncing for Ben's Pages repositories.
   Their workflows already use a concurrency group that cancels an obsolete run.
 
@@ -133,7 +139,20 @@ Ben.
 
 ## Plans and finished dated records
 
-Write a plan for a fresh session with no access to the surrounding conversation:
+Every executable plan is a handoff artifact for a fresh session with no access to the surrounding
+conversation, even when execution may begin immediately. A plan never assumes same-session
+execution or uncompacted context. Keep the plan proportional: a short task can have a short
+standalone plan.
+
+Every repository execution plan is worktree-compatible by default. It identifies the development
+worktree, primary integration checkout, required baseline, shared interpreter, exact verification,
+commit discipline, and integration sequence. If a task genuinely cannot run in a worktree, the
+plan says why and names the alternative checkout.
+
+After substantial planning or investigation, prefer execution in a fresh worktree session. Use
+same-session execution when the work is small and repeating discovery would cost more.
+
+In each plan:
 
 - use absolute repository paths and name the checkout where each command runs;
 - name the skills and instruction files to load before editing;

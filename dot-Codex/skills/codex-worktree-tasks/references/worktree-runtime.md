@@ -14,16 +14,20 @@ overwrite it.
 
 ## Use Git's local trust exception
 
-Windows can report dubious ownership when the worktree was created under another SID. Do not add
-the worktree to global Git configuration. Pass the exact absolute path on each invocation:
+Windows can report dubious ownership when the worktree was created under another SID. In an
+elevated Windows session, do not wait for that failure. Pass the exact absolute worktree path on
+the first Git invocation and every subsequent Git invocation. Never use `safe.directory=*` and
+never add the worktree to global Git configuration:
 
 ```powershell
 git -c "safe.directory=C:/absolute/worktree/repo" -C "C:/absolute/worktree/repo" status --short --branch
 ```
 
-For a child process that starts Git, pass the equivalent
-`GIT_CONFIG_COUNT`/`GIT_CONFIG_KEY_<n>`/`GIT_CONFIG_VALUE_<n>` only to that process. The
-ownership warning does not establish corruption, dirt, or a wrong commit.
+For a parent program that starts Git, inject the equivalent exact path with
+`GIT_CONFIG_COUNT`/`GIT_CONFIG_KEY_<n>`/`GIT_CONFIG_VALUE_<n>` into that program's process-local
+environment so its Git descendants inherit the trust entry. The ownership warning does not
+establish corruption, dirt, or a wrong commit. Trust does not grant filesystem access: if a Git
+metadata write crosses a sandbox boundary and is denied, use the normal escalation path.
 
 ## Share the primary clone's Python environment
 
