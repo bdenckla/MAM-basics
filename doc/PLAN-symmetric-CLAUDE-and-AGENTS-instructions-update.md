@@ -97,3 +97,24 @@ MAM-basics issue 274 now has exactly three remaining checks:
 
 The implementing session did not perform or claim any fresh-session check because its startup
 context predates the deployment.
+
+## Fresh local Codex startup verification — 2026-09-16
+
+Recorded by a Codex session on 2026-09-16 at Ben's request.
+
+Ben supplied the response from a newly started local Codex task. Before using tools, that task
+correctly named and summarized the final user-level H2, `Show local artifacts with file links`,
+and the final MAM-basics H2, `This is the only repository instruction body`. It also correctly
+identified `dot-Codex/user-wide-AGENTS.md` as the canonical tracked user-level common body,
+explained that Claude Code receives that body through the minimal tracked
+`dot-claude/user-wide-CLAUDE.md` wrapper, distinguished the live deployed Claude file from its
+canonical source, and identified the MAM-basics `SessionStart` hook as the Claude cloud-session
+installer.
+
+The fresh local Codex startup check therefore passed. This update file remains **State: open**.
+MAM-basics issue 274 now has exactly two remaining checks:
+
+1. A fresh local Claude Code session check.
+2. A real Claude cloud-session check.
+
+No fresh local Claude Code or Claude cloud-session verification has occurred.
