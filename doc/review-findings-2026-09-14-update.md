@@ -1,6 +1,6 @@
 # Updates to the 2026-09-14 public-repository review
 
-State: completed 2026-09-16; first entry 2026-09-16. Every entry here corrects or supplements
+State: open, first entry 2026-09-16. Every entry here corrects or supplements
 `doc/review-findings-2026-09-14.md`, which is left exactly as written.
 
 Ben's decision, 2026-09-11: a finished dated document is left as written, like a pushed commit. A
@@ -48,8 +48,9 @@ remediation plan must present separately.
 11. **Finding 11:** fix the remaining prose and usage defects; current `main` already supplied
     `doc/mega-timing-2026-09-11-update.md`, so that part requires no further work.
 
-The procedure-record update follows this entry. A fresh-task remediation plan with concrete
-editorial wording remains the next close-out phase, and no remediation named above has begun.
+The procedure-record update was written immediately after this decision entry. At the time, a
+fresh-task remediation plan with concrete editorial wording was the next close-out phase, and no
+remediation named above had begun.
 
 Product axis: this decision record and the procedure-record update reach no repository product.
 Act axis: they are ordinary local commits on the unpushed review branch; they perform no external
