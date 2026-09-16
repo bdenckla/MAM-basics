@@ -43,8 +43,9 @@ readings are:
    “the furtive pataḥ”; and the Psalms 27:11 and Psalms 60:9 cells should each say “before the
    ḥataf.”
 
-The finished search report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+The finished search report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer.
 
 ## Finding 1 Classification cells should name the two codices
 
@@ -136,8 +137,9 @@ and `L` in this label means the LC. Carrying forward the earlier correction from
 (glyph placement).”
 
 This correction applies only to that category label. Finding 11.2's later prose remains
-uncorrected. The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+uncorrected. The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -166,8 +168,9 @@ The corrected readings are:
 
 This correction applies only to the Judgment column of the 26-row parse-failure table. The
 Reference, String and Why the parse failed columns remain as written, and finding 11.2's prose
-after that table remains uncorrected. The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+after that table remains uncorrected. The finished source report's substantive bytes match
+historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the
+authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -197,8 +200,9 @@ The corrected readings are:
 
 Together with the 23 Classification-cell abbreviations, the one category-label abbreviation and
 the seven Judgment-cell abbreviations corrected by the earlier entries in this file, these five
-uses account for all 36 sites named by finding 11.2. The finished source report remains unchanged
-at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+uses account for all 36 sites named by finding 11.2. The finished source report's substantive bytes
+match historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the
+authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -217,8 +221,9 @@ reading is:
 > be remeasured exactly from tracked source. This limitation does not declare the totals false.
 > The instruction to remeasure continues to apply to figures whose methods remain preserved.
 
-No predicate has been reconstructed and no tracked script has been added. The finished report
-remains unchanged at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+No predicate has been reconstructed and no tracked script has been added. The finished report's
+substantive bytes match historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only
+additional line is the authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no

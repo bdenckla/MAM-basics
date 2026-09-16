@@ -22,3 +22,7 @@ with an AMD Ryzen 7 of 16 logical processors, all of one kind. The step loop too
 262.9 s. Outside the first run, every step of 5 s or more stayed within 4% of its fastest time,
 against the up-to-2.6-times variation that §1 here measured on the i5-13500T. It is a different
 machine and later code, so its figures are not a re-measurement of this record's.
+
+## 2026-09-16: `accgram-run-prose` scans verses, not books
+
+The `accgram-run-prose` entry should read “Scans and parses the WLC 4.22 prose verses.”

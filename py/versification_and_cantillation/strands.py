@@ -2,7 +2,7 @@
 straight from the upstream MAM-parsed-plus data, so the generated doc is
 byte-faithful to the source (nothing hand-typed).
 
-The Decalogue verses carry the מ:כפול (dual-cantillation) template, whose named
+The Decalogue verses have the מ:כפול (dual-cantillation) template, whose named
 parameters are ["כפול", "א", "ב"] = (combined, תחתון, עליון). Where the two
 cantillations agree (e.g. the 4th short commandment), the text is a plain string,
 not a מ:כפול. See MAM-basics/py/author_misc/mp_dualcant_common.py.

@@ -322,15 +322,16 @@ analytic category labels in finding 2, the MAM roster statement in finding 4, an
 under “What could not be verified.” Each corrected reading uses “meteg,” as the report's opening
 vocabulary note requires.
 
-The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The passages reporting MAM's introduction,
+The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer. The passages reporting MAM's introduction,
 Yeivin's `gaʿya`, or Breuer's `ga'aya` remain unchanged, as do all twelve source-reporting sites
 in `doc/foi-mtgmtg-empty-cell.md`. The later finding 11.5 entry records Ben's contextual
 `ḥataf` / `xataf` rule.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
-finished source report remains unchanged, and no outward-facing act, destructive local act,
+finished source report's historical text is preserved, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
 
 ## Finding 11.2: finding 1's Classification cells name the codices
@@ -346,14 +347,15 @@ Implementation commit `50f1bf56dc0f311f91641005d4c0f84437059985` on branch
 of `L`, corrected to “the LC,” and 4 uses of `A`, corrected to “the Aleppo Codex.” The
 Reference, Template, Target and Note columns remain unchanged.
 
-The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The category label corresponding to the original
+The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer. The category label corresponding to the original
 review's line 60 and the later prose corresponding to its lines 108–146 remain for later tasks;
 this entry does not claim that all of finding 11.2 is complete.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
-finished source report remains unchanged, and no outward-facing act, destructive local act,
+finished source report's historical text is preserved, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
 
 ## Finding 11.2: finding 2's 23-call category label names the LC
@@ -369,14 +371,15 @@ reading “23: the LC has a meteg to the right of its vowel (glyph placement).�
 was individually checked in finding 2's category list. The correction carries forward finding
 11.3's `ga'ya`-to-`meteg` correction and adds only finding 11.2's `L`-to-“the LC” correction.
 
-The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The later prose corresponding to the original
+The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer. The later prose corresponding to the original
 review's lines 108–146 remains for later tasks; this entry does not claim that all of finding
 11.2 is complete.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
-finished source report remains unchanged, and no outward-facing act, destructive local act,
+finished source report's historical text is preserved, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
 
 ## Finding 11.2: finding 2's parse-failure Judgment cells name the codices
@@ -392,15 +395,16 @@ seven applicable Judgment cells. The seven individually checked abbreviations co
 of `L`, corrected to “the LC,” and one use of `A`, corrected to “the Aleppo Codex.” The Reference,
 String and Why the parse failed columns remain unchanged.
 
-The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`. The prose beginning “The 52 NON-verse-final
+The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer. The prose beginning “The 52 NON-verse-final
 template calls” and continuing through finding 3's item beginning “Psalms 19:7, where L's one
 stroke sits on the first syllable” remains for later tasks; this entry does not claim that all of
 finding 11.2 is complete.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
-finished source report remains unchanged, and no outward-facing act, destructive local act,
+finished source report's historical text is preserved, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
 
 ## Finding 11.2: the 36 enumerated codex abbreviations are corrected
@@ -420,12 +424,13 @@ means the LC.
 The earlier entries in the same update file correct 23 abbreviations in finding 1's
 Classification cells, one abbreviation in finding 2's category label and seven abbreviations in
 finding 2's parse-failure Judgment cells. Those 31 corrections plus the final five narrative
-corrections account for all 36 sites named by finding 11.2. The finished source report remains
-unchanged at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+corrections account for all 36 sites named by finding 11.2. The finished source report's
+substantive bytes match historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only
+additional line is the authorized update pointer.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
 Act axis: both commits are ordinary repository commits on the unpushed review branch; the
-finished source report remains unchanged, and no outward-facing act, destructive local act,
+finished source report's historical text is preserved, and no outward-facing act, destructive local act,
 external configuration write or receipt rewrite occurred.
 
 ## Finding 11.6: the historical filename requires no remediation
@@ -790,8 +795,9 @@ only.
 Recorded by Codex on 2026-09-13. The document-by-document correction follow-through is complete.
 Five existing sibling update files now give precise corrected readings, and
 `doc/meteg-after-silluq-in-uxlc-and-wlc-update.md` supplies the previously missing sixth sibling.
-The six finished reports remain byte-identical to the Git blobs recorded in those sibling update
-entries.
+The Job 4:12 and Psalms 72:15 reports, which were improperly edited during the crop move, were
+restored to their pre-move substantive blobs and their relocation was recorded in their live
+updates. Each report's authorized line-4 update pointer remains.
 
 The fresh source-report census confirmed 24 plain-`hataf` sites on 15 lines, 14 `xataf` sites on
 10 lines and no `ḥataf`. The sibling updates correct all 24 plain-`hataf` sites and the 13
@@ -800,17 +806,19 @@ narrative `xataf` sites to `ḥataf`. The identifier path `py/explicit_xataf/ext
 every narrative `patax` or `patah` site to `pataḥ` and every narrative `dexi` site to `deḥi`.
 
 Product axis: the correction changes documentation only and reaches no generator or product.
-Act axis: the sibling update files preserve all six finished reports rather than rewriting any
-receipt; no outward-facing act, destructive local act or external configuration write occurred.
+Act axis: the sibling update files preserve the reports' historical text; the two improperly
+edited reports were restored under the receipt policy. No outward-facing act, destructive local
+act or external configuration write occurred.
 
 `git diff --check` and the tracked-prose mark-order lint passed. The full suite passed 997 tests,
 with 5 skipped and 65 subtests passed. This documentation-only disposition reaches no generator
 or product and does not owe a mega run.
 
 Product axis: the disposition changes a review update only and reaches no generator or product.
-Act axis: the write is an ordinary repository change on the unpushed review branch; all six
-finished reports remain unchanged, and no outward-facing act, destructive local act, external
-configuration write or receipt rewrite occurred.
+Act axis: the write is an ordinary repository change on the unpushed review branch. The two
+reports improperly edited during the crop move were restored to their pre-move substantive blobs,
+and their relocation is recorded in their live updates. No outward-facing act, destructive local
+act or external configuration write occurred.
 
 ## Finding 20.9: crop-coordinate filename policy still needs Ben's decision
 
@@ -869,11 +877,13 @@ occurred.
 
 Recorded by Codex on 2026-09-13. Ben's decision, 2026-09-13: “Keep the current rule.”
 
-The live rule in `leningrad/page-snips/README.md` therefore remains unchanged. Reading a line from
-an image authorizes the coordinate-bearing filename, and an estimator-supplied column may remain
-in that filename when the README discloses that the column is not independently confirmed. The
-existing Psalms 72:15 and Lamentations 2:3 filenames comply with the selected rule, so neither crop
-is renamed. No image has been adjudicated and no coordinate has been newly confirmed.
+The rule formerly stated in `leningrad/page-snips/README.md` is preserved in the two live snips
+READMEs, `doc/meteg-after-silluq-snips/README.md` and
+`doc/lam-2-3-akhla-snips/README.md`. Reading a line from an image authorizes the
+coordinate-bearing filename, and an estimator-supplied column may remain in that filename when the
+README discloses that the column is not independently confirmed. The existing Psalms 72:15 and
+Lamentations 2:3 filenames comply with the selected rule, so neither crop is renamed. No image has
+been adjudicated and no coordinate has been newly confirmed.
 
 Finding 20.9 is complete. This documentation-only disposition reaches no generator or product and
 does not owe a mega run.
@@ -1411,9 +1421,9 @@ has 23 lines containing `.novc`. The current worktree has none of the named `mas
 `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/zen-babbage-2d6583`, no longer exists. The
 screen report's substantive content is historical blob
 `a46dbf0f9b384afa072878584c1dace2328dc179`; its only additional line is the authorized update
+pointer. The documentation-search report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
 pointer.
-The documentation-search report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
 
 The 23 screen-report lines have these classifications:
 
@@ -1481,9 +1491,11 @@ for the rest of finding 7's census.
 At checkpoint `8e2db58f6fd3b7fd30bd3c71951167871637f294`, after current `main` at
 `f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, the finished plan has
 2 lines containing `.novc` and the finished report has 3. The plan's named worktree,
-`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/mega-coverage`, no longer exists. The plan
-remains unchanged at Git blob `dee11fb218d56f77ab780a7e1a7528322daa464b`; the report remains
-unchanged at Git blob `9b0a26f459fc340c4e046403cd41340dd9220fd4`. The existing
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/mega-coverage`, no longer exists. The plan's
+substantive bytes match historical blob `dee11fb218d56f77ab780a7e1a7528322daa464b`; its only
+additional line is the authorized update pointer. The report preserves the historical text at
+blob `9b0a26f459fc340c4e046403cd41340dd9220fd4`; its only authorized base edits are the mechanical
+opening-paragraph join and the update pointer. The existing
 `doc/PLAN-mega-coverage-update.md` changes only Phase 7's run-mode sentence and supplies no
 missing scratch artifact.
 

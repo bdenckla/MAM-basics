@@ -40,9 +40,10 @@ are the same photographs:
 
 That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
 for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
-to an image. The page is a folio and side, as in `430B`. Ben does not report lines and columns
-(2026-09-10), so a Leningrad crop's name has a column and line only where he gave the line
-unprompted.
+to an image. The page is a folio and side, as in `430B`. A Leningrad crop may include both column
+and line when Ben has read the line from the image; the section must say when the column comes only
+from the estimator. For another source, include only coordinates established from its image or
+retained index.
 
 ### Cambridge Add. 1753
 
@@ -59,17 +60,16 @@ Lamentations 2:3, the word אָכְלָ֖ה, on **folio 430B, column 2, line 10*
 
 **The Leningrad Codex has no meteg on this word** — confirmed by Ben from this image on
 2026-08-04. The qamats under the alef stands alone, so nothing in the manuscript marks the
-qamats as gadol or the shewa as na.
+qamats as gadol or the sheva as na.
 
 Why it was cropped: a Sefaria correction request of 2026-07-22 asked that Lamentations 2:3
 read אָֽכְלָ֖ה rather than אָכְלָ֖ה, "and therefore both קמץ are קמץ גדול". MAM has no meteg
-there, as does Mikraot Gedolot Haketer; Metsudah (Lakewood 2001) has one. This crop settles
+there, nor does Mikra'ot Gedolot ha-Keter; Metsudah (Lakewood 2001) has one. This crop settles
 what the Leningrad Codex has, which is what MAM follows.
 
-Two further facts about the same verse, from `../../in/UXLC-39/Lamentations.xml`
-rather than from the image: the verse has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus
-the silluq on the verse-final סָבִֽיב׃. So the absence on אָכְלָ֖ה sits among three marks
-present, not on a page sparing with them.
+UXLC 3.9 has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus silluq on the verse-final
+סָבִֽיב׃. This records the transcription; it does not establish what the Leningrad Codex
+manuscript has.
 
 Codex Sassoon 1053 and Cambridge Add. 1753 have no meteg on this word either, both confirmed
 the same day: `sassoon1053-p740-Lam2v3-akhla.png` for Sassoon 1053 page 740,
@@ -102,7 +102,7 @@ and `sassoon1053-p740-Lam2v3-akhla.png`.
 
 Those three are what MAM follows here. A Sefaria correction request of 2026-07-22 asked that
 Lamentations 2:3 read אָֽכְלָ֖ה rather than אָכְלָ֖ה; MAM has no meteg, and neither does
-Mikraot Gedolot Haketer. This manuscript matters most of the three, being the one MAM cites
+Mikra'ot Gedolot ha-Keter. This manuscript matters most of the three, being the one MAM cites
 most across Lamentations — ק-מ appears in 24 of the book's 38 נוסח notes, against Sassoon
 1053's 16, and the Aleppo Codex is absent, Lamentations being one of the books lost from it
 entirely.
@@ -145,7 +145,7 @@ cited outside the agreement clause in three notes (4:9, 4:15, 4:16) and ק-מ in
 counting agreement alone gives ש1 18 and ק-מ 29. The figures here read 16 and 24 until
 2026-08-04, and reproduced under no counting rule.
 
-Mikraot Gedolot Haketer has no meteg here either — checked directly, and it agrees
+Mikra'ot Gedolot ha-Keter has no meteg here either — checked directly, and it agrees
 with MAM at this word (private annex §5). Metsudah
 (Lakewood, 2001) has one, which is the printed tradition doing what it does.
 
@@ -164,12 +164,13 @@ Both are base text in `MAM-parsed/plus/`, not a `מ:קמץ` template alternative
 is for places MAM is making a call worth flagging, as at בׇּֽחֳרִי־אַ֗ף in this very verse.
 So no edit to MAM's text would convey anything the text does not already convey.
 
-What MAM's text does not speak to is the shewa. Phonetic MAM does, and agrees it is na:
+What MAM's text does not speak to is the sheva. Phonetic MAM does, and agrees it is na:
 `’a·kh(e)·la` at <https://bdenckla.github.io/phonetic-hbo/tnkh/E3-Lamentations/02.html>,
 against `le·’okh·la` for Gen 1:29.
 
-Nor is this verse's pointing simply sparing with meteg: the Leningrad Codex has one on
-בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus the silluq on the verse-final סָבִֽיב׃.
+UXLC 3.9 has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus silluq on the verse-final
+סָבִֽיב׃. This records the transcription; it does not establish what the Leningrad Codex
+manuscript has.
 
 ### The correction request quotes UXLC, not MAM
 

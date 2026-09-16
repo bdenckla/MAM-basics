@@ -4,7 +4,8 @@ Crops of manuscript and printed-edition page images for the two meteg-after-sill
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md) and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), each kept as the evidence
 behind a stated fact about what one manuscript or edition has. Tiny crops like these are kept as
-fair use (Ben, 2026-09-10). Each section says whose crop it is and which image it was read from.
+fair use (Ben, 2026-09-10). Each section records the crop's available provenance; the Leningrad
+sections use the image sources named under “The Leningrad Codex.”
 
 Each file is named `<source>-<page>-<ref>-<slug>.png`: the manuscript or edition, then the page in
 that source's form, with `col<N>-line<N>` after the page where the column and line have been
@@ -37,9 +38,10 @@ are the same photographs:
 
 That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
 for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
-to an image. The page is a folio and side, as in `430B`. Ben does not report lines and columns
-(2026-09-10), so a Leningrad crop's name has a column and line only where he gave the line
-unprompted.
+to an image. The page is a folio and side, as in `430B`. A Leningrad crop may include both column
+and line when Ben has read the line from the image; the section must say when the column comes only
+from the estimator. For another source, include only coordinates established from its image or
+retained index.
 
 ### The Second Rabbinic Bible
 
@@ -48,7 +50,7 @@ page is named by a pencil mark on it, as in `pencil99`.
 
 ## aleppo-253v-Ps72v15-yevarkhenhu.png
 
-Psalms 72:15, the verse-final word, on **leaf 253v**, which has Psalms 71:18–73:10 (MAM's index of
+Psalms 72:15, the verse-final atom, on **leaf 253v**, which has Psalms 71:18–73:10 (MAM's index of
 the Aleppo Codex, `../../in/mam-ws-intro/index-aleppo.mediawiki` line 613). Ben's crop,
 2026-09-10, from mgketer.org's image of Psalm 72.
 
@@ -65,7 +67,7 @@ manuscript agrees. The whole account is `../meteg-after-silluq-psalms-72-15.md`.
 
 ## leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png
 
-Psalms 72:15, the verse-final word יְבָרֲכֶֽנְהֽוּ׃ as UXLC 3.9 records it, on **folio 380A, line 3**, in
+Psalms 72:15, the verse-final atom יְבָרֲכֶֽנְהֽוּ׃ as UXLC 3.9 records it, on **folio 380A, line 3**, in
 the early middle of the line.
 
 **The Leningrad Codex has a meteg/silluq stroke under the kaf and another under the he** —
@@ -93,7 +95,7 @@ the column in this file's name is the estimator's.
 
 ## aleppo-271r-col2-line5-Job4v12-menhu.png
 
-Job 4:12, the verse-final word, which ends **line 5 of column 2 of leaf 271r**
+Job 4:12, the verse-final atom, which ends **line 5 of column 2 of leaf 271r**
 (`../../aleppo/line-breaks/271r.json` lines 814–836). Ben's crop, 2026-09-10, from
 mgketer.org's image of Job 4.
 
@@ -115,7 +117,7 @@ account is `../meteg-after-silluq-job-4-12.md`.
 
 ## leningrad-398A-Job4v12-menhu.png
 
-Job 4:12, the verse-final word מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
+Job 4:12, the verse-final atom מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
 2026-09-10.
 
 **The Leningrad Codex has a meteg/silluq stroke under the mem and another under the he** —
