@@ -36,6 +36,16 @@ NARPAS_GROUPING_RULE = (
     "need not make a display-spacing decision."
 )
 
+MAM_PARSED_WHITESPACE_TEMPLATE_RULE = (
+    "A whitespace template can be the only separator between adjacent Scripture "
+    "strings: for example, מ:ששש and ססס can have no literal whitespace at that "
+    "boundary. Do not drop the template or collect a descriptive parameter as "
+    "Scripture. A plain-text projection that does not preserve layout must supply "
+    "a separator; a layout-preserving renderer must implement the documented space "
+    "or break. This rule does not apply to narpas, whose missing literal whitespace "
+    "prescribes no display spacing."
+)
+
 
 def mam_parsed_notice(variant: str) -> dict[str, object]:
     """Return the notice for a MAM-parsed plain or plus payload."""
@@ -80,6 +90,7 @@ def mam_parsed_notice(variant: str) -> dict[str, object]:
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
+            MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             NARPAS_GROUPING_RULE,
             variant_rule,
             (

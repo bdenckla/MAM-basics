@@ -558,6 +558,7 @@ def s_common_templates(*, claims: ClaimCollection):
         body_shared.choice_templates_intro_para(),
         tblh.tmpl_purp_table(plus_choice_rows),
         author.heading_level_3("Whitespace templates"),
+        body_shared.whitespace_template_consumer_para(),
         tblh.tmpl_purp_table(
             cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_plus_rows
         ),

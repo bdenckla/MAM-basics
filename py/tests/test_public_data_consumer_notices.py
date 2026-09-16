@@ -45,6 +45,11 @@ NARPAS_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-simple" / "doc" / "reading-mam-simple.md",
     ROOT / "MAM-simple" / "doc" / "reading-mam-simple-xml.md",
 )
+MAM_PARSED_WHITESPACE_DOCUMENTATION_TARGETS = (
+    ROOT / "MAM-parsed" / "README.md",
+    ROOT / "gh-pages" / "MAM-parsed" / "plain" / "html" / "mpplain.html",
+    ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
+)
 
 
 def _load_json(path: Path):
@@ -87,6 +92,13 @@ def _assert_narpas_rule(actual, source: Path | str):
     )
 
 
+def _assert_mam_parsed_whitespace_rule(actual, source: Path | str):
+    assert notice.MAM_PARSED_WHITESPACE_TEMPLATE_RULE in actual["critical_rules"], (
+        f"{source}: consumer_notice omits the canonical rule for whitespace "
+        "templates without adjacent literal whitespace"
+    )
+
+
 def _assert_documentation_targets():
     assert set(DOCUMENTATION_TARGETS) == {
         notice.MAM_PARSED_PLAIN_DOCUMENTATION,
@@ -116,6 +128,21 @@ def _assert_narpas_documentation():
             assert text in contents, f"{path}: narpas guidance lacks {text!r}"
 
 
+def _assert_mam_parsed_whitespace_documentation():
+    required_text = (
+        "a whitespace template can be the only separator",
+        "no literal whitespace at that boundary",
+        "dropping the template fuses separate atoms",
+        "this rule does not apply to narpas",
+    )
+    for path in MAM_PARSED_WHITESPACE_DOCUMENTATION_TARGETS:
+        contents = " ".join(path.read_text(encoding="utf-8").lower().split())
+        for text in required_text:
+            assert (
+                text in contents
+            ), f"{path}: whitespace-template guidance lacks {text!r}"
+
+
 def test_mam_parsed_notices_and_complete_file_sets():
     expected_stems = None
     for variant in ("plain", "plus"):
@@ -133,6 +160,7 @@ def test_mam_parsed_notices_and_complete_file_sets():
             assert stems == expected_stems, "MAM-parsed plain and plus file sets differ"
         expected_notice = notice.mam_parsed_notice(variant)
         _assert_narpas_rule(expected_notice, f"MAM-parsed/{variant}")
+        _assert_mam_parsed_whitespace_rule(expected_notice, f"MAM-parsed/{variant}")
         for path in files:
             payload = _load_json(path)
             assert set(payload) == {
@@ -245,3 +273,4 @@ def test_codex_entry_indexes_use_canonical_schema_and_notices():
 def test_notice_documentation_targets_and_anchors_exist():
     _assert_documentation_targets()
     _assert_narpas_documentation()
+    _assert_mam_parsed_whitespace_documentation()

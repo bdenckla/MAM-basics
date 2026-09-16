@@ -160,6 +160,29 @@ def selected_templates_intro_block():
     ]
 
 
+def whitespace_template_consumer_para():
+    return author.para(
+        [
+            "A whitespace template can be the only separator between adjacent"
+            " Scripture strings: the strings before and after ",
+            author.hbo("מ:ששש"),
+            " or ",
+            author.hbo("ססס"),
+            " can contain no literal whitespace at that boundary. A plain-text"
+            " projection that does not preserve layout must therefore supply at"
+            " least one separator; a layout-preserving renderer implements the"
+            " documented space or break. Dropping the template fuses separate atoms,"
+            " while collecting a descriptive parameter such as ",
+            author.hbo("פסקא באמצע פסוק"),
+            " inserts documentation into Scripture. This rule does not apply to"
+            " narpas: ",
+            author.hbo("מ:פסק"),
+            " is a punctuation template, and its missing literal whitespace"
+            " prescribes no display spacing.",
+        ]
+    )
+
+
 def verse_label_templates_block():
     return [
         author.heading_level_3("Verse label templates"),
