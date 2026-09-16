@@ -88,7 +88,7 @@ restates — the whole content of this list is that the five are one axis:
    a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
    §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
    follows a junction and empties the real venv without warning.
-3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.Codex/`. They change
+3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.codex/`. They change
    what every future session loads, and nothing version-controls them, which is why the preamble
    above requires the complete `origin/main`-sourced deployment and attaches its read-only check
    to repository maintenance.
@@ -248,6 +248,21 @@ mega remained reserved for final integration. Those figures are historical evide
 per-unit full-suite cadence was disproportionate, not a census a future session re-measures as a
 prerequisite.
 
+## Delegate bounded work when it helps
+
+Root agents and sub-agents are explicitly authorized to spawn further sub-agents in every
+session, without asking Ben first, when bounded, independently checkable work can run in
+parallel, a fresh sequential pass can improve quality, or delegation can keep noisy investigation
+out of the root agent's context. Sub-agents may work in parallel or hand a later step to another
+sub-agent. Tell Ben when delegation starts and what each sub-agent owns. Do not delegate merely to
+satisfy a quota; keep tightly coupled work local when coordination would cost more than it saves.
+
+The root agent remains the orchestrator. The root agent defines scope, collects and reconciles
+sub-agent results, verifies material claims before adopting them, owns integration, and owns the
+final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
+read-only investigation freely; if concurrent agents must write, give the agents separate verified
+worktrees. A sub-agent never stages or commits another agent's unfinished files.
+
 ## all-repos.code-workspace is the roster: clone only what it lists
 **"Set up GitRepos" on a new machine and "sync GitRepos" on this one are the same question,
 and `MAM-basics/all-repos.code-workspace` is the whole answer.** Ben's decision, 2026-08-31:
@@ -335,8 +350,9 @@ work, or whether a forest is a deliberate handoff environment.
   disk space until emptied.
 
 The MAM-basics runbook `doc/PLAN-repo-maintenance-across-GitRepos.md` carries the corresponding
-judgment step (its step 7), so a repository-maintenance session learns that this work belongs in
-maintenance without trying to automate the decision.
+task-folder judgment step, “Retire completed Codex task folders under
+`C:/Users/BenDe/Documents/Codex`,” so a repository-maintenance session learns that this work
+belongs in maintenance without trying to automate the decision.
 
 ## Never change an issue's state without a comment saying why
 Closing, reopening, relabelling or reassigning a GitHub issue records no reason, so post the reason

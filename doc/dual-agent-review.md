@@ -529,14 +529,10 @@ procedure, and it is tracked separately** — Ben's decision, 2026-09-03. It is 
 that a session running a Codex review knows the dependency exists and can check whether it has been
 met.
 
-**It has been met.** `~/.codex/AGENTS.md` exists and is 1,106 lines, re-measured on 2026-09-09
-(the September 8 measurement was 1,077). It is a port of `~/.claude/CLAUDE.md`,
-carrying the same opening convention — its canonical copy is **this repository's**
-`dot-Codex/user-wide-AGENTS.md` since 2026-09-09, alongside the `dot-claude/` copies, with the same
-manual write-back and the same drift check. It was `github-misc`'s `dot-Codex/AGENTS.md` until that
-day; the tracked `user-wide-` name distinguishes the stored copy from repository instructions.
-Re-establish with `(Get-Content C:/Users/BenDe/.codex/AGENTS.md).Count`. Note the capital C
-in `dot-Codex`, which a case-sensitive glob for `dot-codex` misses.
+`dot-Codex/user-wide-AGENTS.md` is canonical. After canonical changes integrate and `main` is
+pushed, deploy from the primary clone with `py/main_repo_util.py --sync-user-config`; the command
+fetches and installs only from fresh `origin/main`. Verify afterward with
+`py/main_repo_util.py --sync-user-config --check`.
 
 ## What this document deliberately does not settle
 

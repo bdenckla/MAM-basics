@@ -43,27 +43,31 @@
 #   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
 #   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
 #
-# Those are the three resources the target symmetric Claude setup needs. Four further
-# entries are tracked beside them and none is installed here:
+# Those are the three resources the target symmetric Claude setup needs. Other tracked entries
+# are deliberately not installed here; the relevant cases include:
 #
-#   1. dot-claude/skills/prune-claude-state/
+#   - dot-claude/skills/prune-claude-state/
 #                          operates on ~/.claude/plans/ and on the per-repo
 #                          auto-memory directory, neither of which reaches a cloud
 #                          container, so it would have nothing to read. It is also
 #                          declared disable-model-invocation: true, so it runs only
 #                          when Ben asks for it by name.
-#   2. dot-claude/skills/verse-links/
+#   - dot-claude/skills/verse-links/
 #                          names its interpreter and py/main_verse_links.py by the
 #                          absolute Windows paths of Ben's own machines, which a
 #                          cloud container does not have. The command itself needs
 #                          only the checkout, and its --help says how to run it.
-#   3. dot-claude/skills/github-issues/
+#   - dot-claude/skills/github-issues/
 #                          names the same interpreter and
 #                          py/main_github_issue_edit.py by those absolute Windows
 #                          paths, and whether a cloud session's repository-scoped
 #                          token may write to a GitHub issue has not been
 #                          measured. Ben's decision, 2026-09-14: not installed here.
-#   4. dot-claude/README.md and the rest of dot-Codex/
+#   - dot-claude/shared-skills.txt
+#                          is the local deployment manifest that declares which shared skills
+#                          Codex receives. It is not itself a user-level resource installed by
+#                          the Claude cloud hook.
+#   - dot-claude/README.md and the rest of dot-Codex/
 #                          are the deployment procedure and Codex-only resources.
 #                          Nothing in a Claude cloud session loads them, and they
 #                          are readable in the checkout if wanted.

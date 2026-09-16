@@ -27,7 +27,7 @@ than assume that the repository has remained at these commits.
 
 Before continuing the review, read these sources completely:
 
-1. The live user instructions at `C:/Users/BenDe/.Codex/AGENTS.md`.
+1. The live user instructions at `C:/Users/BenDe/.codex/AGENTS.md`.
 2. The Hebrew-prose skill at
    `C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md`.
 3. `doc/blind-dive-into-template-params.md`, which records the five

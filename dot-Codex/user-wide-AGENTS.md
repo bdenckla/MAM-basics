@@ -6,7 +6,7 @@ repository-specific rules and overrides.
 ## Canonical user configuration
 
 The canonical repository path is `dot-Codex/user-wide-AGENTS.md` in MAM-basics. The live file
-`~/.Codex/AGENTS.md` is a deployed copy; never edit it directly. Edit the canonical file in the
+`~/.codex/AGENTS.md` is a deployed copy; never edit it directly. Edit the canonical file in the
 applicable MAM-basics development checkout, commit the change, integrate and push `main`, then
 deploy from the primary MAM-basics clone:
 
@@ -220,6 +220,12 @@ sub-agent results, verifies material claims before adopting them, owns integrati
 final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
 read-only investigation freely; if concurrent agents must write, give the agents separate verified
 worktrees. A sub-agent never stages or commits another agent's unfinished files.
+
+## Final messages begin with one H1 report heading
+
+Begin every final message with `# Report: <subject>`, with nothing above it, and use no other H1
+in the turn. Put the direct answer immediately below that heading. The heading names the report's
+subject rather than using a bare `# Report`.
 
 ## Prose names its subject
 
