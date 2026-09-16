@@ -147,10 +147,11 @@ temporary-stub procedures, and historical traps.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 A change that can reach a mega generator owes a mega run and an explanation of every tracked
-diff. A change that cannot reach a mega generator owes the suite. A hand-run generator can reach
-a product even though the mega does not run it; regenerate the outputs of the hand-run generator
-when it changes. Product reach and whether an act is hard to undo are separate risk axes, as the
-user-level instructions explain.
+diff. A change that cannot reach a mega generator owes the suite. A hand-run generator can reach a
+product even though the mega does not run it. A change to a hand-run generator, or to any input it
+reads, requires rerunning every affected hand-run generator and inspecting its tracked outputs.
+Product reach and whether an act is hard to undo are separate risk axes, as the user-level
+instructions explain.
 
 ## Dates shown on pages are New York dates and say so
 

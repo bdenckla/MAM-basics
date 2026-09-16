@@ -23,8 +23,8 @@ THE THREE TIERS
    consumer pinning a path in one of these trees sees a change here without any
    deploy at all.
 3. GENERATORS.  The entry points listed in ``_GENERATOR_ENTRY_POINTS`` below.  This
-   is the tier that matters, because it is the only route into tiers 1 and 2 other
-   than editing those trees by hand.
+   is the routine route into tiers 1 and 2; declared hand-run generators are the
+   other route.
 
 WHAT A CHANGE OWES
 
@@ -44,8 +44,8 @@ are published under ``gh-pages/``, and ``py/tests/test_mega_coverage.py`` declar
 each of them, with its reason, in ``NOT_IN_MEGA``.  So "this program is not a mega
 step" answers a different question from "this change reaches no product", and reading
 the first as the second is the mistake this paragraph exists to stop.  A change to a
-hand-run generator owes regenerating what it generates, which a mega run will not do
-for it.
+hand-run generator, or to any input it reads, owes rerunning every affected generator
+and inspecting every tracked output it writes; a mega run does not do that for it.
 
 THE WORKED EXAMPLE, WHICH CROSSES TIERS BY NAME RATHER THAN BY PATH
 

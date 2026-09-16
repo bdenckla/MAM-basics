@@ -12,6 +12,10 @@ sanctions.
 
 WHAT IT CHECKS
 
+This lint proves that the declared mega entry points and wrappers match ``_STEPS``. It does not
+validate prose counts, discover a product left behind by a removed mega step, or infer which
+hand-run generators read a changed upstream input.
+
 1. Every declared path exists and is tracked -- the published tree, the five product
    directories, and every tier-3 entry point.  A product directory renamed or dropped
    fails here rather than leaving the declaration quietly describing a tree that is

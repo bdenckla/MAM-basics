@@ -6,6 +6,7 @@ from pathlib import Path
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn.mam_simple_book_group import resolve_book_group_path
 from mb_misc import osis_book_abbrevs as oba
 
 from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
@@ -141,10 +142,11 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
 def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
     """The MAM-simple JSON file holding one bk39's book group.
 
-    THE ONE RESOLVER.  ``mam_poetic_accents`` had a second one, ``_mam_json_path``,
-    until 2026-09-12, and the duplicate is what made the incremental storage below a
-    silent failure rather than a loud one: that copy knew nothing of the fallback and
-    returned None, and its caller skipped the book.  One mega run then reported
+    The shared resolver is in ``mb_cmn.mam_simple_book_group``.
+    ``mam_poetic_accents`` had a second local resolver until 2026-09-12, and the
+    duplicate is what made the incremental storage below a silent failure rather than
+    a loud one: that copy knew nothing of the fallback and returned None, and its caller skipped
+    the book. One mega run then reported
     "ps: 0/0 verses agree (0.00%)" for the poetic cross-check, having checked nothing.
     So this raises where it used to return None, per CLAUDE.md's "A missing input must
     FAIL, never skip".
@@ -164,33 +166,32 @@ def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
     ``json-vtrad-sef``, and only towards its own sibling: a caller that passed
     ``--mam-simple-dir`` pointing somewhere else gets no silent substitution.
     """
-    candidate_names = [_mam_simple_json_file_for_bk39id(bk39id), f"{bk39id}.json"]
-    directories = _mam_simple_dirs_in_fallback_order(mam_simple_dir)
-    for directory in directories:
-        for candidate_name in candidate_names:
-            candidate_path = directory / candidate_name
-            if candidate_path.is_file():
-                return candidate_path
-    tried = ", ".join(
-        str(directory / name) for directory in directories for name in candidate_names
-    )
-    raise FileNotFoundError(f"No MAM-simple file for {bk39id}; tried {tried}")
-
-
-_INCREMENTAL_JSON_DIR_NAMES = ("json-vtrad-bhs", "json-vtrad-sef")
-
-
-def _mam_simple_dirs_in_fallback_order(mam_simple_dir: Path) -> list[Path]:
-    if mam_simple_dir.name not in _INCREMENTAL_JSON_DIR_NAMES:
-        return [mam_simple_dir]
-    base_dir = mam_simple_dir.parent / "json-vtrad-mam"
-    if not base_dir.is_dir():
-        raise FileNotFoundError(
-            f"{mam_simple_dir} is stored incrementally against {base_dir}, which is"
-            " absent.  See MAM-simple/doc/reading-mam-simple.md, 'The BHS and Sefaria"
-            " folders are incremental, with the MAM ones as the base'."
+    stems = tuple(
+        dict.fromkeys(
+            (_mam_simple_json_file_for_bk39id(bk39id).removesuffix(".json"), bk39id)
         )
-    return [mam_simple_dir, base_dir]
+    )
+    standard_vtrad = {
+        "json-vtrad-mam": "mam",
+        "json-vtrad-bhs": "bhs",
+        "json-vtrad-sef": "sef",
+    }.get(mam_simple_dir.name)
+    if standard_vtrad is not None:
+        return resolve_book_group_path(
+            mam_simple_dir.parent,
+            fmt="json",
+            vtrad=standard_vtrad,
+            stems=stems,
+        )
+
+    return resolve_book_group_path(
+        mam_simple_dir.parent,
+        fmt="json",
+        vtrad="bhs",
+        stems=stems,
+        requested_dir=mam_simple_dir,
+        allow_mam_fallback=False,
+    )
 
 
 def _mam_simple_json_file_for_bk39id(bk39id: str) -> str:

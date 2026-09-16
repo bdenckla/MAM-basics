@@ -19,8 +19,8 @@ To bring it up to date, run, from the MAM-basics repository root:
 .venv/Scripts/python.exe py/main_mam4sef.py --both-sef-and-ajf
 ```
 
-That reads `MAM-simple/`, so regenerate MAM-simple first if the Wikisource text has
-moved since this product was last written.
+That reads the incremental Sefaria and BHS JSON folders with the MAM JSON folder as their base,
+so regenerate MAM-simple first if its source changed.
 
 Other versions/formats of MAM (each with their tradeoffs) include:
 

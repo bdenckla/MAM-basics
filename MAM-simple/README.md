@@ -33,8 +33,8 @@ tradition it is correct for, so a `Ruth` read this way says
 `versification-tradition="vtmam,vtbhs,vtsef"` and a `Num` says
 `versification-tradition="vtmam,vtsef"`.
 
-This replaced six complete folders on 2026-09-12 and removed 24.3 MB, taking the
-product from 63.3 MB to 39.0 MB.
+The incremental-folder deletion removed 24.3 MB on 2026-09-12. The same commit removed another
+1.3 MB by dropping `yeivinID` from the 48 MAM files, taking the product from 63.3 MB to 37.6 MB.
 
 The JSON format mirrors the XML structure: it has the same hierarchy and element types.
 

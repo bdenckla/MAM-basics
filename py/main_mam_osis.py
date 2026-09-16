@@ -2,11 +2,12 @@
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import paths
+from mb_cmn.mam_simple_book_group import resolve_book_group_path
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from osis import osis_runner
 
+_MAM_SIMPLE_ROOT = paths.repo_root() / "MAM-simple"
 _PATHS = {
-    "input_xml_dir": str(paths.repo_root() / "MAM-simple" / "xml-vtrad-bhs"),
     "output_book_dir": str(paths.repo_root() / "MAM-OSIS" / "MAPM-24"),
     "header_path": str(paths.repo_root() / "MAM-OSIS" / "header.xml"),
     "osis_output_path": str(paths.repo_root() / "MAM-OSIS" / "mapm.osis.xml"),
@@ -20,11 +21,24 @@ _PATHS = {
 }
 
 
+def _bhs_xml_book_group_path(stem: str):
+    return resolve_book_group_path(
+        _MAM_SIMPLE_ROOT,
+        fmt="xml",
+        vtrad="bhs",
+        stems=(stem,),
+    )
+
+
 def almost_main(bkids=None):
     """Create MAM-OSIS from MAM-simple XML."""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    osis_runner.almost_main(_PATHS, bkids)
+    osis_runner.almost_main(
+        _PATHS,
+        bkids,
+        book_group_path=_bhs_xml_book_group_path,
+    )
 
 
 def main():
