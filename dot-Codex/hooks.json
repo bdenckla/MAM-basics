@@ -1,0 +1,19 @@
+{
+  "description": "Ben's user-level Codex startup checks.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.codex/hooks/check_project_doc_budget.py",
+            "commandWindows": "python C:/Users/BenDe/.codex/hooks/check_project_doc_budget.py",
+            "timeout": 5,
+            "statusMessage": "Checking Codex instructions"
+          }
+        ]
+      }
+    ]
+  }
+}

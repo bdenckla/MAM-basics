@@ -30,25 +30,32 @@ Seven independent steps, in order:
    a decision or a pending item, and promote anything that is -- to an issue,
    to ``doc/``, or into the docstring of the code it explains.
    ``grep -rn '\.novc' py/ doc/`` finds the citations worth honouring.
-2. Remove finished agent worktrees under ``.claude/worktrees/`` and the merged
+2. Remove finished Claude worktrees under ``.claude/worktrees/`` and the merged
    ``claude/*`` branches they leave behind
    (``repo_util.git_worktree_cleanup``). Unlike step 1 this one spares
    anything it could destroy: a worktree with any uncommitted change, any
    commit not yet in the default branch, or any gitignored content (the class
    of file step 1 wipes on purpose and this step must not wipe by accident --
-   ``git worktree remove`` alone would) is kept and reported, never forced.
+   ``git worktree remove`` alone would) is kept and reported, never forced. Codex
+   worktrees are outside this step and use the separate preflighted retirement
+   action in ``py/main_repo_util.py``.
    This step is a repo-maintenance STANDARD, not one repo's quirk -- see
    ``repo_util/check_repo_standards.py``'s ``worktree_hygiene`` check, which
    measures every repo against it, and which this repo did not itself satisfy
    until the standard's reference implementation came home here.
 3. Fetch ``origin`` in the primary MAM-basics clone and compare both live
-   instruction files and every tracked user-level skill destination with
-   ``refs/remotes/origin/main``.  Missing destinations are reported as ``not
-   installed`` rather than as clean.  This step never changes live configuration;
-   deployment is the separate ``py/main_repo_util.py --sync-user-config`` action.
-   A failed fetch or any mismatch sets the overall exit status but does not block
-   later steps.  The cloud-session hook is outside this check because it uses the
-   cloud session's checked-out branch by design.
+   instruction files, the user-level Codex hook, its origin-derived instruction
+   fingerprint and every tracked user-level skill destination with
+   ``refs/remotes/origin/main``.  Then run the same Codex instruction check as the
+   hook: measure the project instruction chain against the
+   ``project_doc_max_bytes`` value in live ``config.toml`` and verify the live
+   user-wide ``AGENTS.md`` fingerprint. Missing destinations are reported as
+   ``not installed`` rather than as clean. This step never changes live
+   configuration; deployment is the separate
+   ``py/main_repo_util.py --sync-user-config`` action. A failed fetch or any
+   mismatch sets the overall exit status but does not block later steps. The
+   Claude cloud-session hook is outside this check because it uses the cloud
+   session's checked-out branch by design.
 4. Run ``black --check py``. Check-only: drift is reported, never
    auto-reformatted -- repo-wide reformatting is its own deliberate commit
    (see ``py/main_repo_util.py --run-black``). Failures set the overall exit
@@ -66,7 +73,7 @@ Seven independent steps, in order:
    why they are not part of mega".
 7. Run ``py/main_0_mega.py``, the routine downstream rebuild: every step of
    its ``_STEPS``, in order, from ``parse-ws`` to the closing
-   ``vendoring-audit``.  ``_STEPS`` is the only list of those steps: a copy
+   ``pipeline-graph``.  ``_STEPS`` is the only list of those steps: a copy
    kept here went stale, naming a step the mega does not have and missing
    several that it has.
 
@@ -75,6 +82,7 @@ The rebuild step is skipped if the test step failed, unless
 """
 
 import argparse
+from pathlib import Path
 import shutil
 import subprocess
 import sys
@@ -93,7 +101,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-worktrees",
         action="store_true",
-        help="don't remove finished agent worktrees and their merged branches",
+        help="don't remove finished Claude worktrees and their merged branches",
     )
     parser.add_argument(
         "--skip-user-config-check",
@@ -160,7 +168,27 @@ def run_black() -> bool:
 
 
 def run_user_config_check() -> bool:
-    return run_user_config_sync(check=True)
+    installation_ok = run_user_config_sync(check=True)
+    hook_script = _REPO / "dot-Codex" / "hooks" / "check_project_doc_budget.py"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(hook_script),
+            "--maintenance",
+            "--cwd",
+            str(_REPO),
+            "--codex-home",
+            str(Path.home() / ".codex"),
+        ],
+        cwd=_REPO,
+    )
+    instruction_ok = result.returncode == 0
+    print(
+        "Codex instruction check: OK"
+        if instruction_ok
+        else f"Codex instruction check: FAILED (exit {result.returncode})"
+    )
+    return installation_ok and instruction_ok
 
 
 def run_lint() -> bool:

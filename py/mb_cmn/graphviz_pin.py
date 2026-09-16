@@ -63,6 +63,41 @@ leaves is that the ``.dot`` beside a skipped ``.svg`` IS rewritten, so the
 tracked pair can drift apart; the mega's end-of-run banner says so, and says not
 to commit a changed ``.dot`` without its ``.svg``.
 
+HELVETICA, WHICH GRAPHVIZ DRAWS WITH ARIAL, IS THE ONE FONT THE GENERATED GRAPHS
+NAME, so rendering them needs the pinned Graphviz and no font installed beyond
+Windows' own. Until 2026-09-14 the template call graphs of
+``py/tmpl_survey/survey_dot.py`` named "SBL Hebrew,Helvetica" for their nodes,
+and on a machine without SBL Hebrew the render stopped on a substituted font.
+Ben's decision that day, having asked whether a font known to be on Windows
+would do: ``FONTNAME`` for the nodes too, as the edges and
+``py/pipeline_graph/pipeline_graph.py`` already had.
+
+  * Helvetica itself is not installed on Windows. Graphviz's own PostScript
+    alias table resolves the name to Arial, which is: ``dot -v`` reported
+    ``"Helvetica" resolved to: (ps:pango  Arial, )`` that day.
+  * Arial covered every character the call-graph node labels used that day: 25
+    unpointed Hebrew letters, gershayim and the horizontal ellipsis, over every
+    tracked ``out/tmpl-survey-*/*.dot``, read from Arial's cmap table.
+  * An SVG asks the browser for "Helvetica,sans-Serif", which a Mac draws in
+    Helvetica and Windows in Arial, which has Helvetica's letter widths. So the
+    labels are drawn at the widths the boxes were laid out for.
+  * SBL Hebrew was not a recorded choice. It arrived with the first call graph,
+    in ``2b89c0ca`` (2026-03-10), whose message gives no reason for it.
+  * Never write "Times New Roman" as a fontname. Graphviz's text layout reads
+    "Roman" as a style word, looks for a family called "Times New", and falls
+    back. Graphviz's default, Times-Roman, which the Ben-written
+    ``doc/process-documentation/MAM-process.dot`` gets by naming no font, is
+    unaffected: the alias table resolves it to Times New Roman, and it loads.
+
+THE MEGA CHECKS ALL OF THIS BEFORE ITS FIRST STEP. ``check_rendering_environment``
+finds dot as ``render_svg`` does, checks its stamp, and renders a graph of two
+nodes and an edge in ``FONTNAME`` and in Graphviz's default font, raising on a
+substituted font. ``py/main_0_mega.py`` calls it before any step, outside a
+cloud session: Ben's decision, 2026-09-14, the day one run stopped at its eighth
+step, tmpl-survey, on a Graphviz other than the pinned one, and a second on a
+font the machine lacked. ``find_dot`` moved here from ``survey_dot.py`` that
+day, so that the check and the renders ask the same dot.
+
 PIP CANNOT SUPPLY GRAPHVIZ, AND THAT WAS CHECKED RATHER THAN ASSUMED. Ben asked
 on 2026-09-09 whether a pip install could provide it, which would be a better
 design than this one: a pinned entry in ``requirements.txt`` would make the
@@ -93,19 +128,24 @@ discipline ``~/.claude/CLAUDE.md`` states for a black version bump, and for the
 same reason: a regeneration that rides along makes a small change look like a
 formatting commit. MAM-private pins the same version independently, in
 ``MAM-private/py/tests/test_graphviz_version_pin.py``; the two repos are
-deliberately NOT wired together, since a vendoring relationship governed by
-``in/vendoring_policy.json`` would cost more than the one string it kept in step.
+deliberately NOT wired together, since a vendored copy and the sync that keeps it
+current would cost more than the one string it kept in step.
 Raising the pin means editing both.
 """
 
 import os
 import re
+import shutil
 import subprocess
 import sys
 
 # The Graphviz that every tracked SVG in this repo was rendered by. Raising this
 # is a deliberate act; see this module's docstring for what else it obliges.
 PINNED_STAMP = "16.0.0 (20260814.1018)"
+
+# The one font this repo's generated graphs name, for nodes and edges alike; see
+# this module's docstring, section "HELVETICA, WHICH GRAPHVIZ DRAWS WITH ARIAL".
+FONTNAME = "Helvetica"
 
 # Ben's decision, 2026-09-09: a missing Graphviz is FATAL on his own machines and
 # a recorded SKIP in a cloud container -- see this module's docstring, section
@@ -205,3 +245,70 @@ def check_installed(dot_exe):
             "that regeneration on its own."
         )
     return found
+
+
+# Where Graphviz's Windows installer puts dot, for a shell whose PATH predates the
+# install.
+DOT_FALLBACK = os.path.join(
+    os.environ.get("ProgramFiles", r"C:/Program Files"), "Graphviz", "bin", "dot.exe"
+)
+
+# What Graphviz's text layout writes to standard error when it cannot load a font a
+# graph names, and draws that text in another font instead.
+_FONT_SUBSTITUTED = "couldn't load font"
+
+# A graph that names FONTNAME for a node and an edge and leaves one node in
+# Graphviz's default font: the two fonts this repo's graphs use.
+_FONT_CHECK_DOT = (
+    "digraph font_check {\n"
+    '    default_font [label="default"];\n'
+    f'    node [fontname="{FONTNAME}"];\n'
+    f'    edge [fontname="{FONTNAME}"];\n'
+    '    named_font [label="named"];\n'
+    '    default_font -> named_font [label="edge"];\n'
+    "}\n"
+)
+
+
+def find_dot():
+    """Return the path to the dot executable, or None: PATH first, then DOT_FALLBACK."""
+    found = shutil.which("dot")
+    if found:
+        return found
+    if shutil.which(DOT_FALLBACK):
+        return DOT_FALLBACK
+    return None
+
+
+def font_was_substituted(dot_stderr):
+    """True when dot's standard error says it drew some text in a substitute font."""
+    return _FONT_SUBSTITUTED in dot_stderr
+
+
+def check_rendering_environment():
+    """Raise unless dot is found, is the pinned Graphviz, and loads the graphs' fonts.
+
+    Makes the checks that survey_dot.render_svg makes before and while rendering,
+    once, on a graph of two nodes, for py/main_0_mega.py to run before its first
+    step. Returns a line saying what was checked.
+    """
+    dot = find_dot()
+    if dot is None:
+        raise FileNotFoundError(
+            f"Graphviz dot executable was not found on PATH or at {DOT_FALLBACK}."
+        )
+    stamp = check_installed(dot)
+    completed = subprocess.run(
+        [dot, "-Tsvg"],
+        input=_FONT_CHECK_DOT,
+        capture_output=True,
+        check=True,
+        encoding="utf-8",
+    )
+    if font_was_substituted(completed.stderr):
+        raise RuntimeError(
+            f"Graphviz at {dot} substituted a font while rendering a test graph "
+            f"that names {FONTNAME!r} and Graphviz's default font: "
+            f"stderr={completed.stderr!r}"
+        )
+    return f"{dot} is the pinned {stamp}, and {FONTNAME!r} and the default font load"

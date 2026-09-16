@@ -31,6 +31,12 @@ same agent and with Ben" still applies.
 Every four to eight days one Claude session reads a commit range across the public repositories and
 writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
 
+**A second series, which this repository's reviews call the private series, follows this same
+procedure in MAM-private**, a private repository holding Python code, data and documents of the
+same kinds as this repository's, and records its reviews there. Where the two need telling apart,
+this document calls the series in this repository the public series. The section "The private
+series, recorded in MAM-private" below says what differs.
+
 **A periodic review is of one diff: the changes in files between the window's start commit and its
 end commit.** Ben's decision, 2026-09-15, during his walk-through of
 `doc/review-findings-2026-09-14.md`, whose finding 5 described a `MAM-parsed/plus/` rewrite made and
@@ -77,8 +83,9 @@ Two properties of the series matter to every review in it.
    #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
    account and only #219 was ever adopted as a citation handle. A review that finds work somebody
    must do still files a real issue with a real body; #233 is that shape.
-2. **The series is public-only since 2026-08-26.** It does not read MAM-private. This is load-bearing
-   for the Codex scoping rule in `doc/dual-agent-review.md`, not incidental.
+2. **The series is public-only since 2026-08-26.** It does not read MAM-private, which the private
+   series reviews instead. This is load-bearing for the Codex scoping rule in
+   `doc/dual-agent-review.md`, not incidental.
 
    **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
    the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future
@@ -128,6 +135,38 @@ to 2026-09-01 a review usually fixed some findings during the review itself and 
 findings under `## Major` and `## Minor — <area>` headings. A review in a two-agent window also
 carries `## Inputs for the reconciliation with the Codex review` and, after turn 2,
 `## Reconciliation with the Codex review`; `doc/dual-agent-review.md` owns both.
+
+## The private series, recorded in MAM-private
+
+On 2026-08-26, when this repository's series stopped reviewing private repositories, those reviews
+became the private series, recorded in MAM-private's `doc/`; its first review is
+`doc/review-findings-2026-08-26.md` there. That review's opening paragraph adopted the public
+series' conventions "transposed", and it was the private series' only statement of them until
+2026-09-14. That day Ben asked whether MAM-private could borrow the public series' process "rather
+than have redundant process documentation here in MAM-private that will get stale", said yes, and
+added: "I would like the MAM-private review process to be potentially dual-agent." So a private
+review follows this document, and a two-agent private window follows `doc/dual-agent-review.md` as
+well, with five differences:
+
+1. **Every record of a private window is a file in MAM-private's `doc/`**: the review, any Codex
+   counter-argument or later turn under the names D10 of `doc/dual-agent-review.md` gives, and any
+   update file. None goes into this public repository or its tracker, because a public record of
+   private work can disclose what a private repository exists to keep private. The first of the
+   two standing properties above, doc-only, holds there too, so a private review files no tracking
+   issue.
+2. **The window is the private clones that the latest review of the public series hands to the
+   private series.** A private review may read a public repository for evidence about a private
+   commit, but gives no verdict on a public commit.
+3. **The H1 names the private repos**, where item 1 of "What a review file contains" names the
+   public ones.
+4. **The suite, the mega, the instructions and the paths are MAM-private's.** Where this document
+   or `doc/dual-agent-review.md` names this repository's, a private review uses what MAM-private's
+   `CLAUDE.md` gives instead, so read that file before the first check. Codex does not load it on
+   its own.
+5. **The section "Present remediation by public-facing risk" takes MAM-private's products from
+   MAM-private's `CLAUDE.md`.** This repository declares its own in `py/product_scopes.py`. Where
+   MAM-private's `CLAUDE.md` declares none, a private remediation presentation says so, and names
+   any route into a published tree that the file does record.
 
 ## Reviewing the review, with the same agent and with Ben
 
@@ -355,7 +394,7 @@ express the risk Ben assigns to changing what readers see or consumers receive.
    file from a proposed content change.
 3. **All remaining changes — lower risk.** Start with a summary by type, at the granularity
    of "wording changes to Markdown files in doc directories", "Python comments and
-   docstrings", "agent instructions", "code and tests", or "vendoring reports". Ben will
+   docstrings", "agent instructions", or "code and tests". Ben will
    ask for finer detail where he wants it; do not begin by requiring him to inspect every
    internal wording replacement.
 

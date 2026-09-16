@@ -21,16 +21,6 @@ Three separate questions, deliberately answered by two separate files:
   Frozen and private are unrelated -- MAM-private is private and very much not
   frozen, and mamgo-auto-edits is frozen and public -- so neither list may be
   derived from the other, exactly as with the two lists above.
-
-Note that in/vendoring_policy.json also has a per-repo "ignore" flag. That means
-"do not scan this repo for vendoring" and says nothing about whether the repo is
-frozen. This said "The two lists coincide today; that is not a rule and must not
-become one" until 2026-09-04, and the two lists are now DISJOINT, which makes the
-same point more plainly: the sole ignored repo is MAM-private, which is private
-and very much not frozen, and none of the six frozen repos is ignored --
-CCAR-Psalms' freeze record says so in its own comment. MAM-private was ignored
-that day so that no MAM-basics program resolves the private clone on account of
-the vendoring policy; Ben's decision, recorded in that repo's policy comment.
 """
 
 from __future__ import annotations
@@ -91,11 +81,10 @@ def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
     record single files copied to paths of their own. Those files are just as
     vendored and just as much not this repo's to reformat.
 
-    Merges the policy's two per-file sections: overrides (MAM-basics-sourced,
-    measured by the vendoring audit) and foreign_vendored (sourced outside
-    MAM-basics -- Taamey_D's hbofonts build scripts -- which the audit
-    deliberately does not measure). For the black sweep the distinction is
-    nothing: neither kind is this repo's to reformat.
+    Merges the policy's two per-file sections: overrides (sourced from
+    MAM-basics) and foreign_vendored (sourced outside MAM-basics -- Taamey_D's
+    hbofonts build scripts). For the black sweep the distinction is nothing:
+    neither kind is this repo's to reformat.
     """
     payload = read_json(policy_path or DEFAULT_VENDORING_POLICY)
     by_repo: dict[str, list[str]] = {}

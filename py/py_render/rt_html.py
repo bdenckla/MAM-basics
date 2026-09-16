@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from datetime import datetime
 from html import escape
 import os
 from pathlib import Path
@@ -39,6 +40,7 @@ from py_render.rt_validate_qyv import evaluate_qyv_row, require_qyv_row_match
 from hkq_cmn.json_io import load_json
 from hkq_cmn.mam_suggestion_dispositions import is_suppressed
 from hkq_cmn.table_row_github_issues import require_row_github_issue_metadata
+from mb_cmn.new_york_time import new_york_date
 import hkq_paths
 
 MAIN_NAV_LABEL = "Active"
@@ -355,8 +357,11 @@ def _load_mam_suggestions(
     raw_messages = payload.get("source_messages")
     if not isinstance(raw_messages, list):
         raise ValueError("mam_suggestions.json must have a list key 'source_messages'")
+    # The New York date of each message's stored UTC timestamp (mb_cmn/new_york_time.py).
     dates_by_key = {
-        as_text(message.get("key", "")): as_text(message.get("date", ""))[:10]
+        as_text(message.get("key", "")): new_york_date(
+            datetime.fromisoformat(as_text(message.get("date", "")))
+        ).isoformat()
         for message in raw_messages
         if isinstance(message, dict)
     }

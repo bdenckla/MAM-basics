@@ -118,7 +118,16 @@ retired; the reasoning bullets that survive below are unchanged.
   ask for a follow-on commit fixing whatever he does not like.
 - **In a primary checkout, push `main` normally. In a secondary worktree, commit only to its
   local non-`main` branch.** Do not push that worktree branch merely as a backup: nobody needs
-  to inspect it on the remote. Do not merge it into `main` merely because it has a commit.
+  to inspect it on the remote. A long-lived worktree branch is the exception when its merge into
+  `main` is not scheduled for when its session is archived—for example, because Ben has said it
+  merges only when he asks. Push such a branch to `origin` after every commit as a backup and so
+  the work can resume on another machine; this still pushes nothing to `main`. A short-lived
+  worktree branch still pushes nothing. Ben's reason, 2026-09-15: "Seems like a good idea, as a
+  backup, in case something happens to the machine we're working on (and if we wanted to resume
+  that work on another machine, regardless of whether data loss happened!)". The first case was
+  MAM-private's branch `worktree-near-aleppo`, first pushed 2026-09-15; its own `CLAUDE.md` has
+  carried the rule since MAM-private commit `a99d7eb`. Do not merge it into `main` merely because
+  it has a commit.
 - **Merge a worktree branch into `main` and push `main` just before the session is archived.**
   Integrate earlier only when Ben asks or when a concrete need requires the primary checkout to
   contain the work. A local worktree commit is the intended state between implementation and
@@ -330,37 +339,14 @@ judgment step (its step 7), so a repository-maintenance session learns that this
 maintenance without trying to automate the decision.
 
 ## Never change an issue's state without a comment saying why
-Closing, reopening, reassigning or relabelling a GitHub issue writes one line into its timeline:
-the event, the account, the timestamp. **It records no reason, and it will not record one later.**
-So the reason goes in a comment, posted with the state change — `gh issue close --comment`, or a
-`gh issue comment` immediately before. This applies to me as much as to you; I ask for it because
-I have been on the wrong end of it.
+Closing, reopening, relabelling or reassigning a GitHub issue records no reason, so post the reason
+as a comment with the change, marked as agent-written. The full rule moved on 2026-09-14 to the
+`github-issues` skill, which covers reading, filing, commenting on and editing issues too.
 
-- **The account is not the actor, so the timeline cannot tell us apart.** A session's `gh issue
-  close` authenticates with my personal token, so its event reads `actor: bdenckla`,
-  `actor_type: User`, `performed_via_github_app: null` — byte for byte what my own click in the
-  web UI produces. Do not infer from a timeline entry that a human did something, or that a
-  session did; the only honest reading is "this account did it."
-- **The worked case, 2026-08-27: MAM-basics #260.** It was closed at 11:19 local with no comment.
-  An hour later the work it tracked completed. Nothing on the issue said whether it had been
-  closed because the *question* was answered — `skadish1` had answered it at 00:05 — or because
-  the *work* was done, and those are different definitions of done for that issue: its title says
-  "Investigate and document sigil ב2" and its "Done when" is entirely about evidence and
-  confidence, while the replacement of ב2 by ת451 was the consequence rather than the scope.
-  Establishing merely that no session had closed it took a scan of **483 transcripts** across
-  every project directory. A one-sentence closing comment would have cost nothing and answered it.
-- **Say when a comment is agent-written.** A commit carries `Co-Authored-By: Claude`, so commits
-  are already attributed; issue comments and state changes have no such convention and are
-  indistinguishable from mine. Put it in the text.
-- **This is the cheap half of a bigger question I decided against.** A separate GitHub machine
-  account for agent use would make every action self-identifying, and I already run exactly that
-  pattern on Wikisource as `BDencklaBot`. On GitHub it is not worth it for attribution alone:
-  ~20 repos to add a collaborator to, a second persona in front of `skadish1`, `gh auth` juggling
-  whose failure mode is worse than the problem, and a possible paid seat for MAM-private. If I
-  ever want it, the reason will be **permission scoping** — an agent token that cannot force-push
-  or delete — not attribution, which this section fixes for free. A fine-grained PAT or a GitHub
-  App would be the form, since an App's actions set `performed_via_github_app` and so are
-  distinguishable without adding a second voice.
+## No GitHub issue for an idea, and no offer to file one
+When an idea worth noting is not work Ben asked for, say it in the conversation and stop: file no
+issue, and do not offer to file one. Ben, 2026-09-12: "I have so many GitHub issues I am
+overwhelmed"; the `github-issues` skill gives the rest of his reason.
 
 ## Handing off to a task chip: be archivable BEFORE you spawn it
 The handoff we use over and over runs: a session spawns a task chip, I launch the chip, I ask
@@ -815,6 +801,10 @@ this session" and "since reverted" with no date, and gave no repo paths.
 - **Every figure carries the command that re-establishes it**, and the plan says to re-measure
   rather than trust it, treating a mismatch as a finding. Say what the numbers were measured
   against — the commit of each repo involved — because the tree will have moved on.
+  **The exception is a figure that answers a question asked in passing** (Ben's decision,
+  2026-09-14): its script may stay an untracked `.novc/` throwaway, and the plan says instead
+  that the figure is the state of the code on the date it was measured, accepted as liable to
+  go stale, with no route to re-measuring it.
 - **Say what is NOT expected to change**, not only what is. That is what turns an unexpected diff
   into a finding instead of noise.
 - **Line numbers drift, so cite a searchable anchor too** (the identifier, the sentence). A plan

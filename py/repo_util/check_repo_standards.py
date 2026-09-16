@@ -61,8 +61,8 @@ does not list a source clone.
 
 The worktree-cleanup standard
 -----------------------------
-EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
-BRANCHES THEY LEAVE BEHIND. An agent session run in isolation creates a worktree
+EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED CLAUDE WORKTREES AND THE
+BRANCHES THEY LEAVE BEHIND. A Claude session run in isolation creates a worktree
 plus, usually, a `claude/<name>` branch, and cleans up neither when it ends.
 Both therefore accumulate silently: the first scan to include this check found
 wlc-utils holding two orphaned worktrees and three orphaned branches, every one
@@ -87,6 +87,11 @@ use by Claude Code's own session records, or currently running the code;
 restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
 never a candidate; and remove worktrees before branches, since a branch held by
 a worktree cannot be deleted while that worktree exists.
+
+This standard is Claude-owned. The reference implementation also requires a
+``.claude/worktrees/`` path or ``claude/*`` branch before removal. Codex
+worktrees remain visible in the linked-worktree count but use the separate,
+explicitly preflighted retirement action in ``py/main_repo_util.py``.
 
 Three of those spare a worktree another session is using right now, which git
 gives no way to detect outright. `git worktree lock` is the sanctioned,
@@ -250,10 +255,11 @@ walkthrough plus its .mmd and .svg, superseded by `py/verify_mp/` and the
 generated doc/mp-claims.md; a nesting normal-form spec that
 `py/tmpl_survey/nesting_normal_form.py` states in its own docstrings down to
 the three coverage buckets; and three issue-#60 vendoring handoffs whose end
-state is `in/vendoring_policy.json` plus `py/vendoring/discover.py` and the
-generated doc/vendoring-inventory.md. Four of the ten had drifted into
-falsehood by the time they were cut -- the clearest being a guardrail about
-import order that no longer had a mechanism behind it.
+state was `in/vendoring_policy.json` plus `py/vendoring/discover.py` and the
+generated doc/vendoring-inventory.md, until the vendoring audit was removed on
+2026-09-14. Four of the ten had drifted into falsehood by the time they were
+cut -- the clearest being a guardrail about import order that no longer had a
+mechanism behind it.
 
 The three the screen raised and hand-checking kept are the shape to expect:
 doc/sigil-decoding.md, which calls itself the current decoder authority and
@@ -342,10 +348,16 @@ because more entries are expected, and it has no terminal state for as long as
 the document it corrects exists.  Reusing `live` would import a life cycle the
 genre does not have.
 
-What is retired is the THIN POINTER, not issue-filing.  A review that finds
-work somebody must do still files a real issue with a real body, and #233
-is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
-merits.  The test is whether the issue says anything the doc does not.
+What is retired is the THIN POINTER, not issue-filing, and only for the
+review files.  A review that finds work somebody must do still files a real
+issue with a real body, and #233 is the shape: spun out of the 2026-08-22
+review, 6.8 KB, open on its own merits.  The test is whether the issue says
+anything the doc does not.  A doc/PLAN-*.md file whose work is still to be
+done does get a thin pointer issue.  Ben asked on 2026-09-12 for "a detailed
+plan in the 'doc' folder and thin GitHub issue with a pointer to that
+plan", #277, #279, #280 and #281 are four such issues filed that day, and
+on 2026-09-14 he approved limiting the retirement to review files.  The
+github-issues skill, dot-claude/skills/github-issues/SKILL.md, states both.
 
 AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/periodic-review.md
 calls the series "doc-only since 2026-09-01" and points here for the
@@ -522,7 +534,7 @@ def _check_maintenance_script(repo_dir: Path, *, has_tracked_py: bool) -> dict:
 
 
 def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
-    """Does the maintenance script clean up agent worktrees, and is anything left?
+    """Does the maintenance script clean Claude worktrees, and is anything left?
 
     See "The worktree-cleanup standard" in this module's docstring. `script_covers`
     is a text scan of whatever `maintenance_script` found, so it answers "has this

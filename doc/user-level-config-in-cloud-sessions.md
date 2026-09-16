@@ -107,9 +107,8 @@ states the convention — public text cites `private annex §N`, and
 
 `dot-claude/` and `dot-Codex/` are **storage**. This repository loads neither, exactly as
 `github-misc` loaded neither. The live copies under `~/.claude/`, `~/.codex/` and `~/.agents/` are
-what the two agents read, and `dot-claude/README.md` §"Shared-skill deployment to Claude and
-Codex" is the deployment procedure of record. Edit the live copy, copy outwards, run both
-comparisons.
+what the two agents read, and `dot-claude/README.md` §"Main-sourced deployment and check" is the
+deployment procedure of record: edit the tracked copy, push `main`, then deploy from `origin/main`.
 
 Two naming decisions follow from that, and both are mechanical rather than cosmetic:
 
@@ -157,6 +156,9 @@ a Claude cloud session at all, and are readable in the checkout when wanted.
 `dot-claude/skills/verse-links/`, added 2026-09-10, names its interpreter and
 `py/main_verse_links.py` by the absolute Windows paths of Ben's own machines, which a cloud
 container does not have; the command itself needs only the checkout.
+`dot-claude/skills/github-issues/`, added 2026-09-14, names the same interpreter and
+`py/main_github_issue_edit.py` by those paths, and whether a cloud session's repository-scoped
+token may write to a GitHub issue has not been measured; Ben decided that day not to install it.
 
 ## Is a skill written after Claude Code launches picked up? Yes, measured
 

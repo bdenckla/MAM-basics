@@ -14,13 +14,13 @@
 <g id="node1" class="node">
 <title>מ:פסוק</title>
 <polygon fill="none" stroke="black" points="154.5,-90 100.5,-90 100.5,-54 154.5,-54 154.5,-90"/>
-<text xml:space="preserve" text-anchor="middle" x="127.5" y="-66.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:פסוק</text>
+<text xml:space="preserve" text-anchor="middle" x="127.5" y="-67.72" font-family="Helvetica,sans-Serif" font-size="12.00">מ:פסוק</text>
 </g>
 <!-- מ:עלייה -->
 <g id="node2" class="node">
 <title>מ:עלייה</title>
 <polygon fill="none" stroke="black" points="260.25,-90 206.25,-90 206.25,-54 260.25,-54 260.25,-90"/>
-<text xml:space="preserve" text-anchor="middle" x="233.25" y="-66.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:עלייה</text>
+<text xml:space="preserve" text-anchor="middle" x="233.25" y="-67.72" font-family="Helvetica,sans-Serif" font-size="12.00">מ:עלייה</text>
 </g>
 <!-- מ:פסוק&#45;&gt;מ:עלייה -->
 <g id="edge1" class="edge">
@@ -33,7 +33,7 @@
 <g id="node3" class="node">
 <title>נוסח</title>
 <polygon fill="none" stroke="black" points="54,-53 0,-53 0,-17 54,-17 54,-53"/>
-<text xml:space="preserve" text-anchor="middle" x="27" y="-29.98" font-family="SBL Hebrew,Helvetica" font-size="12.00">נוסח</text>
+<text xml:space="preserve" text-anchor="middle" x="27" y="-30.73" font-family="Helvetica,sans-Serif" font-size="12.00">נוסח</text>
 </g>
 <!-- נוסח&#45;&gt;מ:פסוק -->
 <g id="edge2" class="edge">
@@ -46,7 +46,7 @@
 <g id="node4" class="node">
 <title>ש</title>
 <polygon fill="none" stroke="black" points="154.5,-36 100.5,-36 100.5,0 154.5,0 154.5,-36"/>
-<text xml:space="preserve" text-anchor="middle" x="127.5" y="-12.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">ש</text>
+<text xml:space="preserve" text-anchor="middle" x="127.5" y="-13.72" font-family="Helvetica,sans-Serif" font-size="12.00">ש</text>
 </g>
 <!-- נוסח&#45;&gt;ש -->
 <g id="edge3" class="edge">

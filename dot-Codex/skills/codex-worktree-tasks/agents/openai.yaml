@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Worktree Tasks"
+  short_description: "Create and hand off managed worktree tasks"
+  default_prompt: "Use $codex-worktree-tasks to prepare and hand off this Codex worktree task."

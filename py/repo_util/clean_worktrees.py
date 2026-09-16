@@ -2,7 +2,7 @@
 
 WHY A CROSS-REPO SWEEP EXISTS AT ALL. The per-repo home for this is a repo's own
 ``py/main_repo_maintenance.py`` step, and that is still the right place for a repo
-that has one. But an agent session leaves a worktree behind in whatever repo it
+that has one. But a Claude session leaves a worktree behind in whatever repo it
 ran in, and plenty of the repos in ``all-repos.code-workspace`` have no Python and
 so can have no maintenance script -- wlc-utils above all, which was emptied of
 Python on 2026-08-01 while agents go on editing its ``doc/`` and ``gh-pages/``.
@@ -15,6 +15,9 @@ is safe to delete. A repo whose cleanup errors is named at the end and sets the
 exit status, in the same shape ``run_black.py`` uses, rather than being passed over
 in silence -- but a worktree SPARED for any of the reasons that module documents is
 not an error and does not count.
+
+The sweep is Claude-owned: Codex worktrees are outside its candidate set and use
+``repo_util.codex_worktree_retirement`` only after an explicit preflight.
 
 ``STRANDED_BRANCH_COUNT=`` is the exception to that shape, and deliberately so. It
 names remote ``claude/*`` branches holding work no local clone has -- the end state
@@ -51,7 +54,7 @@ def unknown_worktrees(repo_infos: list[RepoInfo], named: Sequence[Path]) -> list
         path
         for path in named
         if not any(
-            git_worktree_cleanup.is_linked_worktree(info.path, path)
+            git_worktree_cleanup.is_claude_owned_worktree(info.path, path)
             for info in repo_infos
         )
     ]

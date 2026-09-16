@@ -138,7 +138,6 @@ _GENERATOR_ENTRY_POINTS = (
     "py/main_uxlc_check_changes.py",
     "py/main_uxlc_grammar_test.py",
     "py/main_uxlc_word_list.py",
-    "py/main_vendoring.py",
     "py/main_verify_and_render_table.py",
     "py/main_wlc_a_notes.py",
     "py/main_wlc_diffs_420422.py",

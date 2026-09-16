@@ -78,8 +78,14 @@ def _serialize_diff(d):
     return out
 
 
-def write_json(diffs, old_rev, new_rev, out_path):
+def write_json(diffs, old_label, new_label, out_path):
     """Write the abstract diff data to a JSON file.
+
+    ``old_label`` and ``new_label`` are ``mpplus_revisions.Revision.label`` pairs, and
+    each side's key is named for its kind: ``old_rev`` or ``new_rev`` holds the commit
+    hash of a stored release or legacy:<ref>, and ``old_tree`` or ``new_tree`` holds the
+    git tree id of MAM-parsed/plus by which a MAM-basics ref has been recorded since
+    2026-09-14. That is the day unpinned-latest.json's ``new_rev`` became ``new_tree``.
 
     For text-changed diffs, includes narrowed word-level change pairs
     rather than full verse text. For structural diffs, includes the
@@ -101,9 +107,11 @@ def write_json(diffs, old_rev, new_rev, out_path):
         expanded.append(diff)
 
     serialized = [_serialize_diff(d) for d in expanded]
+    old_kind, old_id = old_label
+    new_kind, new_id = new_label
     data = {
-        "old_rev": old_rev,
-        "new_rev": new_rev,
+        f"old_{old_kind}": old_id,
+        f"new_{new_kind}": new_id,
         "diff_count": len(serialized),
         "diffs": serialized,
     }

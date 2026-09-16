@@ -1,5 +1,5 @@
 {
-  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose main_update_vendored_files.py copied from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60). That script is gone: Phase 4 of doc/PLAN-evacuate-python-from-codex-index-trio.md emptied codex-index-leningrad of Python on 2026-08-22, and Phase 1 of doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md retired the temporary sparse vendor when its only reader began reading MAM-basics' `uxlc/data/lci_augrecs.json` directly. All three codex-index repos left the repos object and the overrides list on 2026-08-22 (that plan's Phase 7 item 1), holding no vendored copy of any package named here. Category answers 'is this copy being kept up?' and mechanism answers 'by what?' (5fc4a77). Category's four values -- active, generated, stale, unmeasured -- are a closed set, checked by vendoring/repo_policy.py's CATEGORY_VALUES, where each one is glossed; unmeasured replaced the retired deferred on 2026-08-07 (#60). Category is not read off last_synced and cannot be: compare.py derives last_synced from the date of the last commit touching each file in the destination repo, so a file that a re-vendor run leaves byte-identical keeps its old date, and a repo whose copies are all up to date still shows mixed.",
+  "comment": "What the black sweep leaves alone. py/main_repo_util.py --run-black reads this file through py/repo_util/maintenance_policy.py and applies it to every swept repo except MAM-basics, which formats its own originals: a vendored copy is maintained in its source repo, so reformatting the copy would only make the next sync noisier. global.source_pkg_dirs: each key is a package name that black skips as a directory at any depth, and only the keys are read. overrides: single files copied out of MAM-basics to paths of their own; there are none. foreign_vendored: files copied into a swept repo from a source repo other than MAM-basics. Among the directories the package names cover are MAM-private's copies mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, made by MAM-private/mgketer/py/main_update_vendored_files.py, and al-hatorah/py/mb_cmn, made by MAM-private/al-hatorah/py/main_update_vendored_files.py, each script copying by intersection with this repo's package of the same name. Nothing measures whether those copies have drifted.",
   "global": {
     "comment": null,
     "source_pkg_dirs": {
@@ -12,37 +12,10 @@
       "author_misc": "py/author_misc"
     }
   },
-  "repos": {
-    "MAM-basics": {
-      "comment": "Generated MAM-simple example package copies, local under MAM-simple/. Two pkg_scan_roots left on 2026-09-12, MAM-simple/py-examples/mb_sefaria and MAM-simple/py-examples/osis, when Ben retired the Sefaria and OSIS example programs: those two directories no longer exist, and test_every_pkg_scan_root_exists would have failed on them. global.source_pkg_dirs keeps its mb_sefaria and osis entries, because py/mb_sefaria and py/osis are still this repository's own source for the MAM-for-Sefaria and MAM-OSIS products; only the vendored copies under MAM-simple went.",
-      "ignore": false,
-      "scan_provenance": false,
-      "default_category": "generated",
-      "default_mechanism": "copy_script",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "MAM-simple/py-examples/mb_cmn"
-        ],
-        "mb_misc": [
-          "MAM-simple/py-examples/mb_misc"
-        ]
-      }
-    },
-    "MAM-private": {
-      "comment": "IGNORED SINCE 2026-09-04: nothing here measures MAM-private any more, and no MAM-basics program resolves that clone on account of this file. Ben's decision that day, on being shown that vendoring-audit was the second of the two py/main_0_mega.py steps requiring the private clone (the first being near-aleppo-census, which was deleted from the mega on 2026-09-11): 'The lack of vendoring audit of MAM-private is a cost worth the benefit of decoupling MAM-basics from MAM-private.' Three readers stop reaching the clone with this flag: discover.discover_relationships skips an ignored repo before _scanned_dest_paths touches the disk, discover.provenance_dest_repos filters it out, and py/tests/test_vendoring_policy_paths.py excludes it from both of its parametrize lists -- so the suite is decoupled as well as the mega. WHAT MAM-PRIVATE STILL VENDORS, recorded here because ignoring it is what stops this file recording it as rows: mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, 16 files, copied by MAM-private/mgketer/py/main_update_vendored_files.py by intersection with this repo's py/mb_cmn and py/mb_diff_mpu; and al-hatorah/py/mb_cmn, 28 files, copied by MAM-private/al-hatorah/py/main_update_vendored_files.py. All 44 read identical when last measured -- mgketer at 0a3f1509, al-hatorah at 62d6f3e3. Those copies are maintained by those two scripts alone now, and drift in them will not surface here. THE TWO OVERRIDES THAT LEFT WITH THIS ENTRY named mgketer/py/python_modules/my_diffs.py and mgketer/py/python_modules/uni_denorm.py, stale copies of mb_cmn files that no copy script reaches and that both read DIFFERS; repo_policy._load_override rejects an override targeting an ignored repo, so they could not stay. Their one effect beyond the audit was the black sweep's --extend-exclude, through repo_util/maintenance_policy.py's vendored_overrides, and losing it changes nothing today: both files are black-clean at 26.5.1 defaults, measured 2026-09-04. The whole-package copies keep their exclusion either way, that one being derived from global.source_pkg_dirs by directory name rather than from this section. IGNORED RATHER THAN DELETED, unlike the four frozen repos dropped on 2026-08-07, because MAM-private's clone stays on disk and only the audit of it is being given up: an entry preserves this paragraph, and gen_inventory names the ignored repos in the inventory's footer, so the exclusion reads as a decision in the tracked artifact instead of as an absence.",
-      "ignore": true,
-      "scan_provenance": false,
-      "default_category": null,
-      "default_mechanism": null,
-      "default_provenance_doc": null,
-      "pkg_scan_roots": {}
-    }
-  },
   "overrides": [],
   "foreign_vendored": [
     {
-      "comment": "Files vendored INTO a workspace repo FROM a source repo other than MAM-basics. The audit does not measure these: category and mechanism are the source repo's business ('a vendored copy is maintained in its source repo'), so entries carry no category, no mechanism and no src_pkg, and vendoring/discover.py and vendoring/compare.py never read this section. Its one consumer is repo_util/maintenance_policy.py's vendored_overrides, which folds dest_paths into the black sweep's --extend-exclude so the sweep leaves the copies as they arrive; dest_repo is deliberately not required to be in the repos object above, so nothing here obliges the audit or the suite to resolve the destination repo on disk. Section added 2026-09-01, Ben's decision: af77984 (2026-08-31) added Taamey_D to the workspace roster as hbofonts' public release target and recorded 'where that exclusion belongs' as open, since its six tracked .py are stale copies of hbofonts build scripts that a black sweep would reformat; Ben settled the location as this file during the 2026-09-01 review's follow-up.",
+      "comment": "Files vendored INTO a workspace repo FROM a source repo other than MAM-basics. This section's one consumer is repo_util/maintenance_policy.py's vendored_overrides, which folds dest_paths into the black sweep's --extend-exclude so the sweep leaves the copies as they arrive. Section added 2026-09-01, Ben's decision: af77984 (2026-08-31) added Taamey_D to the workspace roster as hbofonts' public release target and recorded 'where that exclusion belongs' as open, since its six tracked .py are stale copies of hbofonts build scripts that a black sweep would reformat; Ben settled the location as this file during the 2026-09-01 review's follow-up.",
       "dest_repo": "Taamey_D",
       "src_repo": "hbofonts",
       "dest_paths": [

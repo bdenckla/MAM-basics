@@ -45,7 +45,7 @@ The three distinctions the fold discards and the faithful field keeps:
     template only incidentally, as the least-processing rule that also keeps the three above.
 
 This is a network tool run by hand to refresh the vendored snapshot; the committed JSON
-records the source page's revision id and retrieval date for provenance.  ``--oldid`` pins a
+records the source page's revision id and revision timestamp for provenance.  ``--oldid`` pins a
 specific revision -- the wlc-utils#74 re-vendoring pins 3025606, the revision already vendored, so
 that this contract change carries no upstream content drift and stays independently reviewable
 from any later content refresh.  Run from the repo root (pinned):

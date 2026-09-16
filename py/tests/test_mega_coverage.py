@@ -153,11 +153,6 @@ _CHECK_WRITES_NOTHING = (
     " py/check_html_syntax_and_sanity.py.  Proposed in doc/mega-coverage-2026-09-10.md"
     " §4."
 )
-_VENDORING_PART = (
-    "Claude-written, accepted by Ben on 2026-09-10: one part of the --all audit"
-    " that the vendoring-audit step runs.  Proposed in doc/mega-coverage-2026-09-10.md"
-    " §4."
-)
 
 # ---------------------------------------------------------------------------
 # A reason shared by two programs, from a decision of Ben's.
@@ -365,11 +360,17 @@ NOT_IN_MEGA: dict[str, str] = {
         " doc/mega-coverage-2026-09-10-update.md."
     ),
     "py/main_repo_util.py": (
-        "Repository utilities, seven actions; six serve cross-repository maintenance and"
-        " --sync-user-config serves MAM-basics' user-level configuration."
+        "Repository utilities, nine actions; six serve cross-repository maintenance,"
+        " --sync-user-config serves MAM-basics' user-level configuration, and two"
+        " preflight or execute an explicitly targeted Codex worktree retirement."
         " --commit-across-repos is barred from the sweep.  Recorded in"
         " doc/PLAN-repo-maintenance-across-GitRepos.md and"
         " doc/mega-coverage-2026-09-10-update.md."
+    ),
+    "dot-Codex/hooks/check_project_doc_budget.py": (
+        "A user-level SessionStart diagnostic, deployed by --sync-user-config and also"
+        " invoked in maintenance mode by py/main_repo_maintenance.py.  Recorded in its"
+        " module docstring and dot-Codex/README.md."
     ),
     "py/main_repo_maintenance.py": (
         "MAM-basics' maintenance, whose step 7 runs the mega.  Recorded in its docstring"
@@ -443,9 +444,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " writes nothing; --find-stack-path-verbose is the same lookup with more"
         " context.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
-    "py/main_vendoring.py --compare": _VENDORING_PART,
-    "py/main_vendoring.py --provenance": _VENDORING_PART,
-    "py/main_vendoring.py --gen-inventory": _VENDORING_PART,
     "py/main_slide_generator.py make-pptx": (
         "Claude-written, accepted by Ben on 2026-09-10: it builds an untracked"
         " presentation file for giving a talk.  Proposed in"
@@ -534,6 +532,12 @@ NOT_IN_MEGA: dict[str, str] = {
         ' the row for py/main_verify_and_render_table.py ("its render-only subset"),'
         " whose recommendation Ben agreed to on 2026-09-10 and phase 5a of"
         " doc/PLAN-mega-coverage.md carried out."
+    ),
+    "py/main_github_issue_edit.py": (
+        "Ben's decision, 2026-09-14, approving a Claude-written proposal: it corrects a"
+        " stale fact in an open GitHub issue's body, which no mega run may do.  Its"
+        " module docstring and dot-claude/skills/github-issues/SKILL.md describe that"
+        " use."
     ),
     "py/main_verse_links.py": (
         "Claude-written proposal, not yet reviewed by Ben: an on-demand lookup that"

@@ -7,6 +7,7 @@ That optional mode performs read-only Git operations and never fetches or clones
 """
 
 from dataclasses import dataclass
+from datetime import datetime
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -15,6 +16,7 @@ import subprocess
 import zipfile
 
 from mb_cmn import paths
+from mb_cmn.new_york_time import new_york_date
 
 _ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 _ZIP_CREATE_SYSTEM = 3
@@ -128,11 +130,12 @@ def _validated_archive_members(archive_name, expected, _size, _mtime_ns):
 
 @dataclass(frozen=True)
 class Revision:
-    """A resolved plus tree, its source commit, and its content date.
+    """A resolved plus tree, the commit it is read from, and what a report records of it.
 
     ``commit`` is always the full 40-character hash of the commit the tree is read from,
-    never the revision as given, so a report can record it as the source of its inputs.
-    For a MAM-basics ref it is the ref's content commit, which ``resolve`` defines.
+    never the revision as given. A stored release or a legacy:<ref> is recorded by that
+    commit and by ``date``. A MAM-basics ref is recorded by ``tree``, the git tree id of
+    MAM-parsed/plus at ``commit``, and its ``date`` is empty; ``resolve`` says why.
     """
 
     commit: str
@@ -141,6 +144,14 @@ class Revision:
     prefix: str
     stored_files: tuple[str, ...] | None = None
     archive: Path | None = None
+    tree: str | None = None
+
+    @property
+    def label(self):
+        """The kind and id a report records: ("tree", tree id) or ("rev", commit hash)."""
+        if self.tree is not None:
+            return "tree", self.tree
+        return "rev", self.commit
 
     def _validate_archive(self):
         if self.archive is None:
@@ -198,17 +209,53 @@ class Revision:
 def resolve(rev):
     """Resolve a stored release, a MAM-basics ref, or explicit legacy:<ref>.
 
-    A MAM-basics ref resolves to its content commit: the last commit at or before the
-    ref that changed MAM-parsed/plus. MAM-parsed/plus is the same at both commits, so
-    the inputs read are the same, and the content commit is the hash a report records.
-    ``--full-history`` is required because ordinary path-history simplification skips
-    a change that restores a tree already present in an older ancestor. That happened
-    when 73c6b113 restored 209b4c05's MAM-parsed/plus tree: without full history, the
-    report incorrectly named the older commit. HEAD therefore resolves to one hash
-    until a commit changes MAM-parsed/plus, and a report regenerated over unchanged
-    inputs is byte-identical. Ben's decision, 2026-09-11, was that the change log
-    records "a true hash" rather than the literal HEAD, which names nothing once the
-    report is committed.
+    A stored release and a legacy:<ref> are recorded by their MAM-parsed commit and its
+    date. A MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref,
+    and has no date.
+
+    Every date is the commit's date in New York time, by Ben's decision of 2026-09-14,
+    recorded in mb_cmn/new_york_time.py. A legacy:<ref>'s date is converted from git's
+    committer time. A stored release's date is the manifest's, which a check that day
+    against GitHub's UTC committer times found is already the New York date.
+
+    WHY A TREE ID, AND NO DATE. Until 2026-09-14 a MAM-basics ref resolved to its content
+    commit, the last commit at or before the ref that changed MAM-parsed/plus, found with
+    ``git log --full-history -1`` and dated by that commit. Ben's decision of 2026-09-11
+    was that the change log record "a true hash" rather than the literal HEAD, which
+    names nothing once the report is committed. But that walk can be wrong in a shallow
+    clone, such as a Claude cloud container's. Git treats each commit listed in
+    .git/shallow as having no parents, so every path in it looks added, and the
+    newest-first walk returns such a boundary commit whenever one is newer than the last
+    real change. The report then published a wrong hash and date over correct diffs, as
+    section 7 of doc/mega-timing-cloud-2026-09-14.md and its update record. On 2026-09-14
+    Ben chose the tree id instead. ``git rev-parse <commit>:MAM-parsed/plus`` needs only
+    the commit and its trees, which every shallow clone has, and prints the same id in
+    every clone. A tree that a later commit restores gets its old id back, which is
+    right, since the inputs are then identical: 73c6b113 restored 209b4c05's tree, and
+    both carry 2072b5f9. So HEAD keeps one id until MAM-parsed/plus changes, and a report
+    regenerated over unchanged inputs is byte-identical. In a clone with full history,
+    ``git log --full-history --find-object=<tree id> -- MAM-parsed/plus`` lists the
+    commits that introduced or removed a tree.
+
+    TWO QUESTIONS, ONE ID. Ben observed on 2026-09-14, having chosen the tree id, that
+    two distinct questions had been fused into one. The first is what a reader of the
+    HTML report should see to identify what unpinned-latest describes: ideally something
+    human-meaningful, such as a date, and human-useful, such as a commit hash a reader
+    can look up on GitHub. The second is what, for internal use, should be the "stat"
+    that says whether the report is stale, that is, whether the diff needs running at
+    all. The tree id suits the second, since it is the same in every clone and changes
+    exactly when MAM-parsed/plus does. The option offered for the first, and not taken,
+    was to fetch the git history a shallow clone lacks, without file contents, before a
+    cloud mega run. Unshallowing a depth-50 clone of 89f10bb4 that way grew its packs by
+    2.6 MiB on 2026-09-14, after which the walk described above returned 73c6b113 again,
+    a true commit hash and date. It was untried in a cloud container, whose clone is an
+    ordinary shallow clone rather than a partial one, and a --filter fetch needs a
+    promisor remote; a guard would also have had to raise whenever git log still
+    returned a commit listed in .git/shallow.
+
+    A revision naming the manifest's migration.source_commit, the last MAM-parsed commit
+    before MAM-parsed's data moved into MAM-basics, reads migration.landing_commit, where
+    that data landed, and is recorded like any other MAM-basics ref.
     """
     if rev.startswith("legacy:"):
         legacy_ref = rev.removeprefix("legacy:")
@@ -217,7 +264,10 @@ def resolve(rev):
         if not (repo / ".git").exists():
             raise FileNotFoundError(f"Legacy comparisons require a Git clone at {repo}")
         commit = _git(repo, "rev-parse", "--verify", f"{legacy_ref}^{{commit}}")
-        date = _git(repo, "show", "-s", "--format=%cs", commit)
+        committed = datetime.fromisoformat(
+            _git(repo, "show", "-s", "--format=%cI", commit)
+        )
+        date = new_york_date(committed).isoformat()
         return Revision(commit, date, repo, "plus")
 
     manifest = _manifest()
@@ -253,25 +303,8 @@ def resolve(rev):
             " Arbitrary old MAM-parsed revisions require --legacy-history"
             " (or legacy:<ref>) and read access to a sibling MAM-parsed clone."
         ) from exc
-    content_commit = (
-        _git(
-            repo,
-            "log",
-            "--full-history",
-            "-1",
-            "--format=%H",
-            commit,
-            "--",
-            "MAM-parsed/plus",
-        )
-        or commit
-    )
-    date = (
-        migration["source_date"]
-        if content_commit == migration["landing_commit"]
-        else _git(repo, "show", "-s", "--format=%cs", content_commit)
-    )
-    return Revision(content_commit, date, repo, "MAM-parsed/plus")
+    tree = _git(repo, "rev-parse", "--verify", f"{commit}:MAM-parsed/plus")
+    return Revision(commit, "", repo, "MAM-parsed/plus", tree=tree)
 
 
 # ``count_newer_commits`` stood here until 2026-09-11, counting the commits between a revision
@@ -282,4 +315,6 @@ def resolve(rev):
 # what a shallow clone cannot do -- in a cloud container the landing commit is outside the
 # window and the count died, taking the mega's ``diff-mpplus`` step with it. Ben's decision,
 # 2026-09-11. Nothing now reads ``manifest["revisions"][<sha>]["commits_to_migration"]``; the
-# key is left in the tracked manifest rather than migrated out of it.
+# key is left in the tracked manifest rather than migrated out of it. Nothing has read
+# ``manifest["migration"]["source_date"]`` either since b5dd2ffb, which stopped dating a
+# MAM-basics revision on 2026-09-14, and that key is left in the manifest as well.

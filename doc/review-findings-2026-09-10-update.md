@@ -602,8 +602,9 @@ A fresh check of the cited commits and their Git trees reproduces the four obser
    while its message names only the Wikisource refresh and pipeline regeneration. Its immediate
    history contains the completed efficiency programme at `b2052ab9`; that programme’s finished
    plan explicitly says that the same generated report changes were preserved in scratch and
-   restored rather than included in the programme commits. The live vendoring inventory now
-   reports its current three-file population accurately as two `identical` rows.
+   restored rather than included in the programme commits. The vendoring inventory then
+   reported its three-file population accurately as two `identical` rows. The vendoring audit
+   and everything it wrote, the inventory included, were removed on 2026-09-14.
 
 The four inaccurate or incomplete statements are commit-message history. The assessment and the
 efficiency plan are finished dated reports and remain unchanged under D12. The live `CLAUDE.md`,
@@ -1230,7 +1231,7 @@ The 24 lines have these classifications:
 
 | Searchable anchor in the finished plan | Lines in the live tree | Classification |
 |---|---:|---|
-| Phase 1: “The generated versions were saved” | 301 | Historical output-location record. The tracked Phase 1 receipt preserves the generated and baseline SHA-256 values for both vendoring reports and names their disposition; the current tracked reports remain the inputs to a new comparison. The saved copies were evidence for the completed run, not inputs to a live operation. |
+| Phase 1: “The generated versions were saved” | 301 | Historical output-location record. The tracked Phase 1 receipt preserves the generated and baseline SHA-256 values for both vendoring reports and names their disposition; both reports left the tree with the vendoring audit on 2026-09-14. The saved copies were evidence for the completed run, not inputs to a live operation. |
 | Phase 1: the nine commands under “Reproducing Phase 1” | 319, 323, 329, 335, 339, 343, 347, 351 and 355 | Historical command record and reproducible method. The tracked Phase 1 receipt preserves the exact successful commands, checkout, commit, timings, logs, results and hashes of six scratch sources. The receipt-writer command at line 355 is historical provenance for the receipt that survives. The paragraph beginning “If scratch tools are absent” specifies how to reconstruct the bounded measurement against a new commit; current planner, downloader, revision-client and suite entry points remain tracked. |
 | Phase 1: “Raw responses, request headers/parameters, full logs” | 359–361 | Historical evidence-location and filename inventory. The tracked receipt preserves the request counts, body-byte counts, response-manifest hashes, per-book hashes, exact upstream changes, command results and protected-tree hashes. No current program reads the missing directories. |
 | Phase 2: “Reproduce the matrix from the development checkout” | 524 and 528 | Reproducible verification specification and historical command record. The plan states the complete required matrix and its 51 main checks plus 9 additional checks. The tracked Phase 2 receipt names all 60 passed checks, the exact commands and the scratch-source hashes. The production implementation and its adapted tracked downloader fixture remain in the tree, so a fresh fault-injection harness can be written against the current interfaces without recovering either dated script. |

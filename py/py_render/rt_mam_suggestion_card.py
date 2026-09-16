@@ -39,6 +39,7 @@ from py_render.rt_suggestion_kinds import (
     kind_filter_id,
     suggestion_kind,
 )
+from mb_cmn.new_york_time import labelled
 
 MAM_ROW_NAME = "MAM"
 
@@ -414,7 +415,10 @@ def _source_note_html(
     if not dates:
         return ""
     label = "Message:" if len(dates) == 1 else "Messages:"
-    return note_line_html(label=label, value=", ".join(dates))
+    # Each labelled date contains a comma, so semicolons separate the dates.
+    return note_line_html(
+        label=label, value="; ".join(labelled(date) for date in dates)
+    )
 
 
 def _image_paths_html(

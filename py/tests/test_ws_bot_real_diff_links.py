@@ -39,7 +39,7 @@ class WsBotRealDiffLinksTests(unittest.TestCase):
 
         self.assertRegex(
             run_root,
-            r"^\.novc/mam-ws-bot-real-runs/\d{8}-\d{6}-\d{6}$",
+            r"^\.novc/mam-ws-bot-real-runs/\d{8}-\d{6}-\d{6}[+-]\d{4}$",
         )
         self.assertEqual(
             run_paths["chapters-dir"].replace("\\", "/"),
