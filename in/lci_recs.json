@@ -1,5 +1,15 @@
 {
     "header": {
+        "description": "A page-entry locator index for the Leningrad Codex, derived from LCIndex and refined with page, column, line, and atom boundaries.",
+        "consumer_notice": {
+            "summary": "This file is a locator index, not a manuscript transcription or a Bible edition.",
+            "critical_rules": [
+                "Text ranges and text cues locate content on photographed pages; they must not be cited as a diplomatic transcription of the manuscript.",
+                "Gaps and mid-verse boundaries are meaningful locator evidence; do not round them to whole verses or fill them from another edition.",
+                "Line-break and page-geometry annotations are separate supporting data; do not infer either from this entry index."
+            ],
+            "documentation": "https://github.com/bdenckla/MAM-basics/blob/main/doc/scan-pages.md#codex-entry-indexes"
+        },
         "Version": "2025-02-25",
         "Author": "Ben Denckla",
         "Derived-From": "LCIndex",

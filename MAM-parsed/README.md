@@ -39,6 +39,22 @@ For detailed documentation of the file structures, see:
 * [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-basics/MAM-parsed/plain/html/mpplain.html) — structure reference for the "plain" format
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
+A whitespace template can be the only separator between adjacent Scripture strings in
+the Wikisource-derived `plain/` and `plus/` payloads. For example, the strings before
+and after `מ:ששש` or `ססס` can contain no literal whitespace at that boundary. A
+plain-text projection that does not preserve layout must supply at least one separator;
+a layout-preserving renderer must implement the documented space or break. Dropping
+the template fuses separate atoms, while collecting a descriptive parameter such as
+`פסקא באמצע פסוק` inserts documentation into Scripture. This rule does not apply to
+narpas.
+
+The narrow-sense paseq template also has no text whitespace before or after it, but it
+is not a whitespace template. The omission is not a grouping instruction: narpas
+(narrow-sense paseq, ׀) forms no compound of any kind, and only maqaf joins atoms into
+a chanted word. The omission also prescribes no display spacing. An edition decides
+whether to display spacing before and/or after narpas; an analytical consumer need not
+make a display-spacing decision.
+
 This product directory also contains a toy sample application
 [`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),
 giving some sense of how the JSON files might be used.

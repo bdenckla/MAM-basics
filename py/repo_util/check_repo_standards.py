@@ -32,7 +32,7 @@ still reads n/a there, and the repo no longer holds data for an agent session
 to edit, so its ungated worktree counts should normally read 0 now.) The two
 worktree COUNTS are not gated, because they stay true and still matter -- such a
 repo goes on accruing worktrees from agents editing its data, which is what
-`py/main_repo_util.py --clean-worktrees` exists to sweep now that no maintenance
+`py/main_repo_util.py --inspect-worktrees` provides inspection now that no maintenance
 script of its own can.
 
 MAINTENANCE_SCRIPT=False IS THE SETTLED, EXPECTED ANSWER EVERYWHERE BUT HERE --
@@ -61,58 +61,28 @@ does not list a source clone.
 
 The worktree-cleanup standard
 -----------------------------
-EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED CLAUDE WORKTREES AND THE
-BRANCHES THEY LEAVE BEHIND. A Claude session run in isolation creates a worktree
-plus, usually, a `claude/<name>` branch, and cleans up neither when it ends.
-Both therefore accumulate silently: the first scan to include this check found
-wlc-utils holding two orphaned worktrees and three orphaned branches, every one
-of them clean and already merged. That is not cosmetic -- a worktree is a second
-full checkout, so a stale one is a live trap where a later session can do real
-work in the wrong tree.
+Repository maintenance should inspect linked worktrees through the shared retirement
+API. Candidate selection can be Claude-only, Codex-only, both, or an exact path;
+ownership never supplies a different Git or ignored-content safety policy.
+`repo_util.worktree_retirement` is the implementation of record. The compatibility
+`git_worktree_cleanup` API and `--clean-worktrees` action inspect Claude candidates;
+they never prune registrations, sweep folders, or automatically delete branches.
 
-Cover BOTH places they land. The harness default is `<repo>/.claude/worktrees/`,
-whose nesting puts it two levels deeper than the sibling repos its code expects
-at `../<sibling>` (see `mb_cmn/paths.py`'s docstring, which exists because of
-exactly this). The workaround is to place the worktree as a SIBLING of the repo
-instead, `GitRepos/<repo>-<topic>`, where those lookups resolve -- deliberate
-practice, and the variety that litters the more annoying directory. Driving
-removal off `git worktree list` covers both without special-casing either.
-
-The reference implementation is `repo_util/git_worktree_cleanup.py`, wired as a
-step in this repo's `py/main_repo_maintenance.py` and, across every repo in a
-workspace file, as `py/main_repo_util.py --clean-worktrees`. Copy its conservatism
-along with its code: never `--force`; spare and REPORT any worktree that is
-dirty (untracked files included), unmerged, locked, recently active, placed in
-use by Claude Code's own session records, or currently running the code;
-restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
-never a candidate; and remove worktrees before branches, since a branch held by
-a worktree cannot be deleted while that worktree exists.
-
-This standard is Claude-owned. The reference implementation also requires a
-``.claude/worktrees/`` path or ``claude/*`` branch before removal. Codex
-worktrees remain visible in the linked-worktree count but use the separate,
-explicitly preflighted retirement action in ``py/main_repo_util.py``.
-
-Three of those spare a worktree another session is using right now, which git
-gives no way to detect outright. `git worktree lock` is the sanctioned,
-exact answer, and comes free: `git worktree remove` refuses a locked worktree,
-so merely never passing `--force` honours it. The heuristic beside it times the
-per-worktree `index`, which every git command rewrites, and skips anything
-touched within the hour -- it must be read BEFORE the dirty check, whose own
-`git status` refreshes that very index. The third reads Claude Code's own
-records of its running sessions and of the worktrees its desktop app has leased,
-and outranks the heuristic, because an hour without git is not rare in a live
-session (measured 2026-09-10; see that module's "AN HOUR WITHOUT GIT IS NOT AN
-ABANDONED SESSION"). Do not treat the OS as a further layer: a
-held file handle makes removal fail only AFTER git has emptied the directory,
-so it makes a wrong removal noisy, not survivable.
+Preparation writes a reviewed per-target JSON audit. Execution repeats runtime,
+tracked/untracked, integration, reflog and object gates, retains and verifies .novc,
+and uses non-forced removal followed by `git branch -d` only for the retired target's
+eligible branch. Unique ignored content outside .novc blocks removal. Claude
+session/desktop records and Codex task/writer records contribute liveness facts
+for every owner. Missing records never prove inactivity; require an explicit
+ended-task attestation and honor locks. Windows residue remains measured and
+recorded for conservative resumption; retained-data disposal is a separate decision.
 
 `worktree_hygiene` reports both halves of the picture per repo: whether the
 maintenance script mentions worktrees at all (a text scan of the script found
 by `maintenance_script` -- crude on purpose, in keeping with the rest of this
 file), and how much is actually lying around right now (`linked_worktrees`,
 the `git worktree list` count minus the main worktree, and `agent_branches`,
-the count of local `claude/*` refs). Nonzero counts with SCRIPT_COVERS=False is
+the count of local `claude/*`, `codex/*` and `codex-*` refs). Nonzero counts with SCRIPT_COVERS=False is
 the case this check exists to surface. Do not read nonzero counts as leftovers
 on their own, though: a session running RIGHT NOW shows up identically, which is
 what wlc-utils' LINKED_WORKTREES=1 meant on the first all-repos run.
@@ -547,7 +517,7 @@ def _check_maintenance_script(repo_dir: Path, *, has_tracked_py: bool) -> dict:
 
 
 def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
-    """Does the maintenance script clean Claude worktrees, and is anything left?
+    """Does maintenance inspect worktrees, and which registrations and agent refs remain?
 
     See "The worktree-cleanup standard" in this module's docstring. `script_covers`
     is a text scan of whatever `maintenance_script` found, so it answers "has this
@@ -586,6 +556,8 @@ def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
             "for-each-ref",
             "--format=%(refname:short)",
             "refs/heads/claude/",
+            "refs/heads/codex/",
+            "refs/heads/codex-*",
         ]
     )
     agent_branches = None

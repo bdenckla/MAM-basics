@@ -1,6 +1,7 @@
 """Exports add_plus_stuff"""
 
 from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import public_data_consumer_notice as consumer_notice
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import ws_tmpl1 as wtp1
 from mpplus import mpplus_scrdfftar
@@ -33,6 +34,7 @@ def _plus_header(header):
     already match plus shape for these fields.
     """
     out_header = dict(header)
+    out_header["consumer_notice"] = consumer_notice.mam_parsed_notice("plus")
     sbns = header["sub_book_names"]
     if isinstance(sbns, dict):
         if len(sbns) == 0:

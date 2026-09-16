@@ -47,6 +47,26 @@ for a fresh session that has no other context.
   Phase 1 below, in the paragraphs headed "Cost probe, 2026-09-10". The probe built no
   tooling, and none of its ten records entered `in/scan-pages/koren.json`.
 
+## Codex entry indexes
+
+`in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
+has exactly `header` and `body`. The header contains `description`,
+`consumer_notice`, the retained LCIndex and USC-WSRP provenance fields, and
+`column-dictionary`. The body alone contains page records. Each page record uses the
+fields named by `column-dictionary`, including page, column, line, book, chapter,
+verse, and atom boundaries plus an optional note.
+
+The Aleppo and Cambridge entry indexes use the same `{header, body}` contract; their
+format-specific fields are documented in `aleppo/README.md` and `cam1753/README.md`.
+Each header's `consumer_notice.documentation` points to the relevant consumer guide.
+
+All three files are locator indexes, not manuscript transcriptions or Bible editions.
+Ranges and text cues identify positions on photographed pages; a cue copied or derived
+from MAM is not evidence that the manuscript has MAM's pointing or mark order. A range
+can begin or end mid-verse. Gaps and incomplete coverage are meaningful and must not be
+rounded to whole verses or filled from another edition. Line-break and geometry data
+are separate evidence and must not be inferred from an entry-index record.
+
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 
 - **Home repo: MAM-basics** (`C:/Users/BenDe/GitRepos/MAM-basics`, venv at

@@ -1,5 +1,15 @@
 {
   "header": {
+    "description": "A page-entry locator index for the Aleppo Codex, with text ranges, gaps, and page identifiers.",
+    "consumer_notice": {
+      "summary": "This file is a locator index, not a manuscript transcription or a Bible edition.",
+      "critical_rules": [
+        "Text ranges and text cues locate content on photographed pages; they must not be cited as a diplomatic transcription of the manuscript.",
+        "Gaps and mid-verse boundaries are meaningful locator evidence; do not round them to whole verses or fill them from another edition.",
+        "Line-break and page-geometry annotations are separate supporting data; do not infer either from this entry index."
+      ],
+      "documentation": "https://github.com/bdenckla/MAM-basics/blob/main/aleppo/README.md#consumer-guide"
+    },
     "rows_sans_url": [
       {
         "de_text_range": [

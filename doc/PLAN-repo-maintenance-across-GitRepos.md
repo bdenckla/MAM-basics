@@ -324,8 +324,9 @@ tree stayed still. What was verified then:
      `claude/gallant-meitner-68c79b`, and edited five sibling repos (al-hatorah, book-of-job,
      codex-index-aleppo, holman-ketiv-qere, mgketer) as shared clones.
 
-   If either is still live, STOP. `--clean-worktrees` would delete a running session's
-   worktree, and `--run-black` would reformat files another session is editing.
+   These were prerequisites for the historical run. In a current run, live sessions block
+   retirement, and `--run-black` must not reformat files another session is editing.
+   The compatibility `--clean-worktrees` action now inspects without removing anything.
 
 2. **The re-vendor branch is merged and its worktree removed.** Check:
    ```
@@ -350,21 +351,20 @@ tree stayed still. What was verified then:
 **MAM-basics is the only repo in GitRepos with its own `py/main_repo_maintenance.py`**
 (verified 2026-08-07 by scanning every directory for that path). Every other repo's
 maintenance comes from MAM-basics' cross-repo entry point, `py/main_repo_util.py`. That is
-the whole reason the cross-repo sweep exists: `repo_util/clean_worktrees.py`'s docstring says
-plenty of repos have no Python and so can have no maintenance script of their own —
-wlc-utils above all, which was emptied of Python on 2026-08-01 while agents go on editing its
-`doc/` and `gh-pages/`.
+why the cross-repo inspection exists: repositories without Python can still have linked
+worktrees. The historical example was wlc-utils, emptied of Python on 2026-08-01; today's
+reachable repository set comes from the workspace and repository-maintenance policy.
 
 Run everything from `C:/Users/BenDe/GitRepos/MAM-basics` with
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
 
-Nine actions, mutually exclusive, one per invocation. Six operate across selected repositories;
-`--sync-user-config` and the two explicitly targeted Codex-retirement actions ignore workspace
-selection:
+Actions are mutually exclusive, one per invocation. Repository sweeps use workspace selection;
+`--sync-user-config` and exact-target retirement actions do not:
 
 | Action | Writes? | Notes |
 |---|---|---|
-| `--clean-worktrees` | yes | removes finished Claude-owned worktrees + merged `claude/*` branches; `--session-ended` names Claude worktrees whose sessions ended |
+| `--inspect-worktrees` | no | selects `--worktree-owner claude`, `codex` or `both`; `--worktree PATH` targets one exact registration |
+| `--clean-worktrees` | no | compatibility alias for Claude-only inspection; `--session-ended` validates paths without retiring them |
 | `--check-repo-standards` | no | |
 | `--check-memory-health` | no | |
 | `--audit-line-terms` | no | |
@@ -372,8 +372,8 @@ selection:
 | `--commit-across-repos` | **COMMITS** | do NOT use — see H3 |
 | `--sync-user-config --check` | no live configuration write | fetches `origin` and compares every declared user-level destination with `origin/main` |
 | `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run only from the primary MAM-basics clone after the canonical changes are pushed |
-| `--prepare-codex-worktree-retirement` | writes one preflight, not the target | audits one ended Codex worktree and writes collision-safe JSON outside it |
-| `--execute-codex-worktree-retirement` | **RELOCATES AND REMOVES** | ordinary-token, separately invoked action; revalidates the preflight, retains `.novc`, removes one Codex worktree without force, then uses `branch -d` |
+| `--prepare-worktree-retirement PATH` | writes one preflight, not the target | shared audit of one ended target, with optional owner-selection guard |
+| `--execute-worktree-retirement PREFLIGHT` | **RELOCATES AND REMOVES** | shared executor revalidates the reviewed audit, retains `.novc`, removes one target without force, then uses `branch -d` for its eligible branch |
 
 **`--workspace-file all-repos.code-workspace` is not optional.** The default
 `MAM-basics.code-workspace` lists only the handful of repos MAM-basics generates into, and
@@ -401,13 +401,15 @@ the workspace file rather than typing it.
 
 ## 3. Order of operations
 
-**1. `--clean-worktrees` FIRST, before any hand-inspection of any Claude worktree.** See H1.
+**1. Inspect the requested worktree ownership scope.** For both owners:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --inspect-worktrees --worktree-owner both --workspace-file C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace
 ```
-.venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
-```
-Read every `kept ... (reason)` line. A spared worktree is not a failure; it is a question.
-`WORKTREE_PROBLEM_COUNT` is the failure signal. Read the `worktrees: session records:` line
-too, and before the run go through H8's three checks, which the sweep cannot make for you.
+
+Use `claude` or `codex` to narrow selection. Read every candidate and blocker. Inspection
+removes nothing; `WORKTREE_PROBLEM_COUNT` reports repository-audit errors. Follow step 8 for
+reviewed per-target preparation and execution, and H8 for runtime limitations.
 
 **2–4. The three read-only checks**, in any order:
 ```
@@ -573,35 +575,34 @@ the evidence, and leave an ambiguous task folder in place. The Recycle Bin makes
 recoverable, but it does not free disk space until emptied. Do not delete the `Documents/Codex`
 root while an active task folder or the `ReviewForests` root remains.
 
-Codex-managed linked worktrees under `C:/Users/BenDe/.codex/worktrees/` have a separate ownership
-and retirement path. The Claude `--clean-worktrees` sweep reports them and leaves them in place.
-Load `codex-worktree-tasks` and its `references/task-lifecycle.md`, then apply all ordinary gates:
-the task has ended; the worktree is inactive and unlocked; tracked, untracked, ref, reflog and
-object state is safe; and `HEAD` plus any branch are integrated or otherwise durably preserved.
-A Codex retirement never selects a `.claude/worktrees/` path or a `claude/*` branch.
+Linked-worktree retirement has one owner-neutral policy. Load `mam-repository-topology`
+and `references/repository-maintenance.md`, section “Completed linked worktrees”; load
+`codex-worktree-tasks` and its lifecycle reference when coordinating a Codex task. Claude-only,
+Codex-only and both select candidates. An exact path selects one target. All selections share
+the same current/primary, active/leased, locked, tracked/untracked, integration, reflog and
+object gates, plus citation review and verified `.novc` retention.
 
-Unique ignored `.novc` content alone does not keep a safe Codex worktree alive. Search tracked
-documentation, receipts and commands for references into every old `.novc` path, promote or
-redirect durable results, and retain each `.novc` outside the worktree in the lifecycle reference's
-sparse absolute-path shadow with adjacent JSON provenance. Verify membership, byte counts and
-SHA-256 hashes before worktree removal; a failed verification leaves the source and worktree in
-place. Retention is separate from retirement: report every path and size, retain by default, and
-ask Ben separately about Recycle Bin disposal even when the directory is only about 10 KiB.
+Inspect with `--inspect-worktrees --worktree-owner claude|codex|both`, or
+`--inspect-worktrees --worktree "C:/absolute/ended-worktree"`. Prepare the selected exact path
+with `--prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --preflight-file
+"C:/absolute/preflight.json"`. Read the JSON and settle citations; prepare a new file with
+`--citations-reviewed --citation-note "disposition"` when necessary. Execute with
+`--execute-worktree-retirement "C:/absolute/preflight.json" --task-ended` under the ordinary
+user token from a separate checkout. The full absolute PowerShell commands and metadata
+requirements are in the shared skill reference.
 
-Codex creates the JSON with `--prepare-codex-worktree-retirement` and normally runs
-`--execute-codex-worktree-retirement` under the ordinary user token from a separate cleanup task
-when cleanup is in scope. A valid absolute PowerShell 7 handoff to Ben uses the same action. Each
-execution repeats the ended-task attestation with `--task-ended`; the program re-audits and refuses
-drift immediately before relocation, non-forced worktree removal and `git branch -d`.
+`--clean-worktrees` now selects Claude candidates for inspection only. Its `--session-ended`
+compatibility argument cannot remove anything. Codex-named prepare/execute actions delegate
+to the same engine with a Codex selection guard; schema-1 plans must be prepared again.
+Neither inspection nor execution prunes registrations or deletes unrelated orphan branches.
 
-Do not turn Windows elevation into a cleanup prerequisite. If Git unregisters a worktree but an
-ownership or ACL failure leaves its directory, the executor records a resumable partial state and
-reports the exact residue path, readable file count and readable byte total. Any unreadable entry
-or subtree makes both figures explicit lower bounds. Leave the verified residue in place. Report
-the narrower residue risk first, then let Ben decide whether it is large or troublesome enough to
-justify a separate administrator cleanup; small residue normally remains. An elevated command,
-when Ben chooses one, targets only that measured Git-unregistered path and revalidates it
-immediately before deletion.
+Unique ignored `.novc` content does not keep a safe worktree alive. Relocate every `.novc`
+outside the target, verify membership, bytes and SHA-256, and keep the JSON provenance.
+Unique ignored content outside `.novc` remains a blocker. Retention and disposal are separate:
+report each retained path and size, retain by default, and record any later Ben-authorized
+Recycle Bin disposal. If Windows unregisters a worktree but leaves ACL residue, record and
+measure it, label lower bounds for unreadable entries, and leave it in place. Resume through
+the same preflight. Elevation is a separate Ben-chosen residue-disposal stage, never automatic.
 
 **Grandfathered archive recorded 2026-09-15.** The pre-policy archive
 `C:/Users/BenDe/.codex/visualizations/2026/09/15/01a0a5e2-b0d2-7e10-a06a-c71acc1ecbac/codex-worktree-retirement-artifacts-2026-09-15.zip`
@@ -663,8 +664,8 @@ Three constraints on that fan-out:
 - **holman-ketiv-qere has a leftover worktree and branch.**
   `.claude/worktrees/festive-shamir-dad9ec` (detached at `ca1beea`) and branch
   `claude/festive-shamir-dad9ec`, "Register two unrun test modules in main_test.py". Confirm
-  merged into that repo's default branch before deleting; `--clean-worktrees` checks this
-  itself and refuses an unmerged branch, so let it decide rather than pre-empting it.
+  merged into that repo's default branch before deleting. Re-verify this historical finding;
+  current retirement requires the reviewed preflight in step 8 and leaves orphan branches alone.
 - **masorah-books has 5 orphaned worktree project directories** under
   `C:/Users/BenDe/.claude/projects/` (`C--Users-BenDe-GitRepos-masorah-books--claude-worktrees-*`).
   Same litter cleaned out of MAM-basics on 2026-08-07 (7 dirs, 50.2 MB). `--check-memory-health`
@@ -688,39 +689,22 @@ Three constraints on that fan-out:
 
 ## 6. Hazards
 
-**H1 — Hand-inspecting a Claude worktree makes the sweep skip it.** `git_worktree_cleanup` decides
-"may be in use" from the mtime of the per-worktree `index` file, which ANY git command in
-that worktree rewrites, `git status` included; the grace is one hour. On 2026-08-07 this
-session probed four MAM-basics worktrees with `git status --ignored` and the sweep then
-spared two of them, reporting activity 5 and 12 minutes ago when the real last activity was
-over an hour earlier. **Run the sweep first; investigate only what it spares.** The module
-restores the index mtime around its OWN probe; a probe you run from the shell gets no such
-restore. If you have already poisoned the stamps, do not reach for a force flag — the module
-documents that a `--force` reaches none of its conditions, since all are decided in Python
-before git runs. Establish that each spared worktree's session has ended — in the desktop
-app, `mcp__ccd_session_mgmt__list_sessions` with `include_archived` gives each session's `cwd`
-and whether it `isArchived` — then name exactly those worktrees:
+**H1 — Inspection is not retirement authority.** The shared inspector uses Git's
+`--no-optional-locks` and never authorizes removal based on index age. Verify the session ended,
+prepare a per-target preflight, review it, then execute from a separate checkout. The historical
+index-mtime grace could be perturbed by inspection; it is no longer a retirement gate.
 
-```
-.venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace --repos <repo> --session-ended <worktree path>
-```
+**Historical correction, 2026-09-10:** the former `activity_grace_seconds=0` escape was removed
+after a live, clean, merged session demonstrated its danger. The replacement `--session-ended`
+formerly bypassed age only for named paths. Today that legacy option validates Claude selection
+only; it cannot cause deletion. This preserves the incident's lesson without retaining its old
+cleanup mechanism.
 
-**Correction 2026-09-10: this paragraph used to end by prescribing
-`clean_worktrees(repo, activity_grace_seconds=0)` from a throwaway script, and that call
-switched the activity check off for every worktree in the repo at once.** That day the session
-running in `friendly-volhard-77bb64` had a worktree that was found, 24 minutes later and on the
-same commit, to be clean, merged and holding nothing of its own, so such a call would have
-removed it from under that session. The parameter was removed the same day, and
-`--session-ended` skips the activity check for the named worktrees alone. H8 is the other half
-of the same risk.
-
-**H2 — A spared Claude worktree holding gitignored content is a review task, not a bug.** The sweep
-spares a Claude worktree whose gitignored files exist nowhere else, naming them. Check each is
-recorded somewhere durable — a filed issue, a commit — before deleting anything. On
-2026-08-07 two MAM-basics worktrees were spared this way and all seven files turned out to be
-spent: a draft issue body byte-identical to the filed issue, and five throwaway scripts whose
-findings were already written up in an issue comment. Codex retirement uses the distinct retained
-`.novc` protocol in step 8 rather than this Claude disposition.
+**H2 — Ignored material requires a shared disposition.** Unique ignored content outside `.novc`
+blocks retirement. Every selected owner's `.novc` is inventoried, relocated and verified under
+step 8, even when small. Tracked citations require review, and later disposal is a separate
+recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files in two
+spared MAM-basics worktrees; that observation does not establish that today's contents are spent.
 
 **H3 — Frozen repos are honored by `--run-black` ONLY (MAM-basics issue #211, open).**
 `maintenance_policy.frozen_repos()` is consulted in the `--run-black` branch and nowhere else.
@@ -732,10 +716,10 @@ repos and "four actions", predating breuer-cos's freeze (2026-07-31) and the
 `--check-memory-health` and `--clean-worktrees` actions. Worth a comment on #211 recording
 that, rather than a silent fix.
 
-**H4 — `--clean-worktrees` does not consult the frozen list either, and that is defensible.**
-Removing a worktree, or deleting an already-merged `claude/*` branch, changes no commit and no
-last-changed date, which is what a freeze protects. State this deliberately rather than
-leaving it as an unexamined gap; if Ben disagrees it belongs in #211.
+**H4 — Worktree inspection is read-only regardless of repository freeze.** The workspace
+roster still bounds discovery. Retirement is separately reviewed and changes local checkout
+and eligible branch state; it does not rewrite commits. Never turn a clean inspection into
+permission to retire a live worktree.
 
 **H5 — black runs from each repo's OWN venv.** `run_black.py` prefers
 `<repo>/.venv/Scripts/black.exe`, falls back to `<repo>/.venv/Scripts/python.exe -m black`,
@@ -759,31 +743,19 @@ explicitly.
 other change, that is pre-existing drift (usually a black version bump) and must not ride
 along and make a small change look like a formatting commit.
 
-**H8 — The activity check times git, not a session, so an idle live session looks
-abandoned.** Measured 2026-09-10: the session running in `friendly-volhard-77bb64` was 57
-minutes past its last git command when a sweep read its stamp, and a sweep a few minutes later
-would have been free to remove its worktree. Since that day the sweep first reads two records
-Claude Code keeps — `~/.claude/sessions/<pid>.json`, one per running process, and the desktop
-app's `%APPDATA%/Claude/git-worktrees.json`, whose `leasedBy` names the session holding each
-worktree the app made — and spares any worktree they place a session in, whatever its idle
-time. Read the `worktrees: session records:` line on every run: it says what was read, and a
-record reported missing or unreadable means the sweep is back to the activity check alone.
-`py/repo_util/git_worktree_cleanup.py`'s "AN HOUR WITHOUT GIT IS NOT AN ABANDONED SESSION"
-has the fuller statement. Three things those records do not cover, so check them before a
-sweep:
+**H8 — Runtime records can block retirement but cannot prove inactivity.** For every owner,
+the shared audit reads Claude cwd/session records and desktop leases plus Codex task databases
+and writer leases. An unreadable installed format blocks the audit. Missing records still need
+an explicit ended-session attestation at preparation and execution. Git locks always block.
 
-1. **A Codex thread writes neither record**, so the Claude sweep now leaves every explicitly
-   Codex-owned worktree to the separate preflighted flow in step 8. Lock any live Codex worktree;
-   retirement still requires an ended-task attestation and a fresh safety audit. On 2026-09-10
-   Ben's worktree to keep was the one named `0e63`, which held `MAM-private` and `phonetic-hbo`.
-2. **A session that moves to another worktree leaves its lease behind.** Observed once, on
-   2026-09-10: a session started in `eloquent-ritchie-0e4c6c` moved to
-   `dual-agent-review-2026-09-10`, and its process record's `cwd` followed it there, but the
-   desktop lease on `eloquent-ritchie-0e4c6c` stayed held. Both were spared, which is right;
-   the old worktree becomes removable only once that session is archived.
-3. **The desktop app pools a released worktree and may lease it to a new session at any
-   time.** A worktree reported as `leased by Claude session …` is in use even when the session
-   that first made it is archived.
+1. A runtime can change its private record format or fail to record a session's changed cwd.
+   Verify the task ended and keep live worktrees locked; do not substitute index age for proof.
+2. Historical observation on 2026-09-10: a Claude session moved from `eloquent-ritchie-0e4c6c`
+   to `dual-agent-review-2026-09-10`, while retaining its earlier desktop lease. Both worktrees
+   were correctly spared. A stale-looking lease requires investigation, not bypassing.
+3. Claude can pool and re-lease a checkout after its original session ends. Codex uses task IDs
+   and writer leases instead. These are adapter differences; Git safety and `.novc` handling
+   remain identical across selected owners.
 
 ---
 
@@ -819,9 +791,8 @@ Findings from that run, worth carrying forward:
 ## 8. What is NOT expected to change
 
 - **No tracked source file should change except by `--run-black`.** The other cross-repository
-  sweeps read only or change Git/worktree state; `--clean-worktrees` touches only Claude-owned
-  worktrees, `claude/*` branches and `.claude/worktrees/` directories. Codex retirement is the
-  separate, explicitly targeted step 8 operation.
+  sweeps read only. Shared retirement in step 8 relocates ignored evidence and changes only
+  the reviewed target registration and its eligible branch; ownership only selects candidates.
 - **`HEX_ESCAPES` findings are advisory and are never auto-fixed** —
   `check_repo_standards.py` says findings are reported, never auto-fixed. Do not start
   converting `\uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
@@ -835,10 +806,10 @@ Findings from that run, worth carrying forward:
 ## 9. Verification and commit discipline
 
 Re-run each sweep after acting on its findings and confirm the counts moved the way you
-expect: `WORKTREE_PROBLEM_COUNT` absent, `AGENT_BRANCHES` at 0 for every repo whose Claude branches
-you cleaned, no unexpected Claude-owned linked worktree, `WORKTREE_PROJECT_DIRS` at 0 for any repo
+expect: `WORKTREE_PROBLEM_COUNT` absent, only the reviewed targets and their eligible branches
+retired, no unexpected change outside the selected owners, `WORKTREE_PROJECT_DIRS` at 0 for any repo
 whose orphaned session directories you removed, and `MIXED_FILES=0`/`NO_TERM=0` for line terms.
-An explicitly retained or active Codex worktree can keep `LINKED_WORKTREES` nonzero.
+An active or retained worktree of either owner, or a preserved orphan branch, can keep counts nonzero.
 
 For any repo with its own test suite, run it from that repo's root with that repo's own venv
 before committing.
