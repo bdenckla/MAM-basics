@@ -37,6 +37,14 @@ DOCUMENTATION_TARGETS = {
         "## Consumer guide",
     ),
 }
+NARPAS_DOCUMENTATION_TARGETS = (
+    ROOT / "MAM-parsed" / "README.md",
+    ROOT / "gh-pages" / "MAM-parsed" / "plain" / "html" / "mpplain.html",
+    ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
+    ROOT / "MAM-simple" / "README.md",
+    ROOT / "MAM-simple" / "doc" / "reading-mam-simple.md",
+    ROOT / "MAM-simple" / "doc" / "reading-mam-simple-xml.md",
+)
 
 
 def _load_json(path: Path):
@@ -72,6 +80,13 @@ def _assert_notice(actual, expected, source: Path):
     ), f"{source}: consumer_notice drifted from its canonical value"
 
 
+def _assert_narpas_rule(actual, source: Path | str):
+    assert notice.NARPAS_GROUPING_RULE in actual["critical_rules"], (
+        f"{source}: consumer_notice omits the canonical rule that narpas forms "
+        "no compound and encodes no grouping or display-spacing preference"
+    )
+
+
 def _assert_documentation_targets():
     assert set(DOCUMENTATION_TARGETS) == {
         notice.MAM_PARSED_PLAIN_DOCUMENTATION,
@@ -87,6 +102,18 @@ def _assert_documentation_targets():
         assert (
             anchor_text in contents
         ), f"{url}: maintained local target lacks anchor evidence {anchor_text!r}"
+
+
+def _assert_narpas_documentation():
+    required_text = (
+        "narpas",
+        "forms no compound of any kind",
+        "display-spacing",
+    )
+    for path in NARPAS_DOCUMENTATION_TARGETS:
+        contents = path.read_text(encoding="utf-8").lower()
+        for text in required_text:
+            assert text in contents, f"{path}: narpas guidance lacks {text!r}"
 
 
 def test_mam_parsed_notices_and_complete_file_sets():
@@ -105,6 +132,7 @@ def test_mam_parsed_notices_and_complete_file_sets():
         else:
             assert stems == expected_stems, "MAM-parsed plain and plus file sets differ"
         expected_notice = notice.mam_parsed_notice(variant)
+        _assert_narpas_rule(expected_notice, f"MAM-parsed/{variant}")
         for path in files:
             payload = _load_json(path)
             assert set(payload) == {
@@ -135,6 +163,7 @@ def _mam_simple_files(fmt: str, vtrad: str) -> list[Path]:
 
 def test_mam_simple_json_and_xml_notices_and_complete_file_sets():
     expected_notice = notice.mam_simple_notice()
+    _assert_narpas_rule(expected_notice, "MAM-simple")
     for vtrad in MAM_SIMPLE_COUNTS:
         json_files = _mam_simple_files("json", vtrad)
         xml_files = _mam_simple_files("xml", vtrad)
@@ -215,3 +244,4 @@ def test_codex_entry_indexes_use_canonical_schema_and_notices():
 
 def test_notice_documentation_targets_and_anchors_exist():
     _assert_documentation_targets()
+    _assert_narpas_documentation()

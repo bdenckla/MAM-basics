@@ -35,6 +35,11 @@ branches.</li>
 representations of one atom-form; select one text representation rather than collecting both.</li>
 <li>Reassemble text fragments before identifying atoms or chanted words; array, template, and
 element boundaries are not segmentation boundaries.</li>
+<li>Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf joins atoms into a
+chanted word. Within the Scripture stream, MAM encodes no whitespace before or after narpas; that
+absence expresses neither grouping nor a display-spacing preference. An edition chooses whether to
+display spacing before and/or after narpas, while an analytical consumer need not make a
+display-spacing decision.</li>
 <li>Plus omits plain's 0 and triple-tav pseudo-verses, but its remaining structures still require
 documented role and choice handling.</li>
 <li>For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or
@@ -144,6 +149,7 @@ sub-book, i.e. a book39 that is also a book24.)</td>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual cantillation, qamats, and stress-helper alternatives where present; do not concatenate the branches.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;A special-letter template&#x27;s interrupted spelling and uninterrupted atom-form are two representations of one atom-form; select one text representation rather than collecting both.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Reassemble text fragments before identifying atoms or chanted words; array, template, and element boundaries are not segmentation boundaries.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string pointed">&quot;Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf joins atoms into a chanted word. Within the Scripture stream, MAM encodes no whitespace before or after narpas; that absence expresses neither grouping nor a display-spacing preference. An edition chooses whether to display spacing before and/or after narpas, while an analytical consumer need not make a display-spacing decision.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Plus omits plain&#x27;s 0 and triple-tav pseudo-verses, but its remaining structures still require documented role and choice handling.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently.&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
@@ -174,6 +180,7 @@ the header for Samuel, a book24 that has sub-books:</p>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual cantillation, qamats, and stress-helper alternatives where present; do not concatenate the branches.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;A special-letter template&#x27;s interrupted spelling and uninterrupted atom-form are two representations of one atom-form; select one text representation rather than collecting both.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Reassemble text fragments before identifying atoms or chanted words; array, template, and element boundaries are not segmentation boundaries.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string pointed">&quot;Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf joins atoms into a chanted word. Within the Scripture stream, MAM encodes no whitespace before or after narpas; that absence expresses neither grouping nor a display-spacing preference. An edition chooses whether to display spacing before and/or after narpas, while an analytical consumer need not make a display-spacing decision.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;Plus omits plain&#x27;s 0 and triple-tav pseudo-verses, but its remaining structures still require documented role and choice handling.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-string">&quot;For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently.&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
@@ -421,7 +428,10 @@ small, or hung.) See <a href="mpplus_aot.html">its dedicated page</a>.</td>
 <td class="template-col"><bdi lang="hbo">מ:פסק</bdi></td>
 <td class="wide-col"><span class="romanized">Paseq</span>. The vertical line ׀ as
 <span class="romanized">paseq</span> in the narrow sense, i.e. <span class="romanized">paseq</span>
-as distinct from <span class="romanized">legarmeh</span>.</td>
+as distinct from <span class="romanized">legarmeh</span>. Narpas forms no compound of any kind; only
+<span class="romanized">maqaf</span> joins atoms into a chanted word.
+<abbr class="small-caps">MAM</abbr> stores this template with no text whitespace before or after it
+to avoid prescribing display spacing, not to group the surrounding text.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:מקף אפור</bdi></td>

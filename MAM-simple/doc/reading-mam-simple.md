@@ -80,7 +80,13 @@ The following rules protect distinctions that a generic tree walk would erase:
   order before segmentation. An atom is one written form between spaces or maqafs. A
   chanted word is one atom or a complete maqaf compound. A template, fragment,
   punctuation, or structural-node boundary defines neither unit; in particular, a
-  standalone `<lp-legarmeih>` or `<lp-paseq>` belongs with the preceding atom.
+  separate `<lp-legarmeih>` or `<lp-paseq>` node represents a mark that belongs with
+  the preceding atom.
+- Narpas (narrow-sense paseq, ׀) forms no compound of any kind; only maqaf joins atoms
+  into a chanted word. MAM encodes no text whitespace before or after narpas to avoid
+  prescribing display spacing, not to group the surrounding text. An edition decides
+  whether to display spacing before and/or after narpas; an analytical consumer need
+  not make a display-spacing decision.
 - The free parashah marker and the adjacent `starts-with-sampe` and
   `ends-with-sampe` attributes describe one break. Do not count the same break three
   times.

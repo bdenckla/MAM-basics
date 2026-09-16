@@ -73,6 +73,13 @@ before comparison.
 For the full statement, including what the guarantee does and does not cover, see
 [Three invariants worth relying on](doc/reading-mam-simple-xml.md#three-invariants-worth-relying-on).
 
+MAM-simple also has a separate node for narpas (narrow-sense paseq, ׀), with no text
+whitespace encoded before or after it. Narpas forms no compound of any kind; only
+maqaf joins atoms into a chanted word. The missing whitespace expresses neither
+grouping nor a display-spacing preference. An edition decides whether to display
+spacing before and/or after narpas; an analytical consumer need not make that choice.
+See [Legarmeh and paseq](doc/reading-mam-simple-xml.md#legarmeh-and-paseq).
+
 This product also has an example program. It is found under `py-examples/`:
 
 <!-- sync: bullet list of example programs also appears in doc/reading-mam-simple.md ##The-py-examples-Programs -->

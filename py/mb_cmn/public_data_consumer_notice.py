@@ -27,6 +27,15 @@ CAMBRIDGE_INDEX_DOCUMENTATION = (
     "cam1753/README.md#consumer-guide"
 )
 
+NARPAS_GROUPING_RULE = (
+    "Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf "
+    "joins atoms into a chanted word. Within the Scripture stream, MAM encodes "
+    "no whitespace before or after narpas; that absence expresses neither "
+    "grouping nor a display-spacing preference. An edition chooses whether to "
+    "display spacing before and/or after narpas, while an analytical consumer "
+    "need not make a display-spacing decision."
+)
+
 
 def mam_parsed_notice(variant: str) -> dict[str, object]:
     """Return the notice for a MAM-parsed plain or plus payload."""
@@ -71,6 +80,7 @@ def mam_parsed_notice(variant: str) -> dict[str, object]:
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
+            NARPAS_GROUPING_RULE,
             variant_rule,
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
@@ -111,9 +121,11 @@ def mam_simple_notice() -> dict[str, object]:
             ),
             (
                 "Reassemble fragments before identifying atoms or chanted words; a "
-                "standalone paseq or legarmeh element belongs with the preceding atom, "
-                "and structural boundaries do not define units of cantillation."
+                "separate paseq or legarmeh node represents a mark that belongs with "
+                "the preceding atom, and structural boundaries do not define units of "
+                "cantillation."
             ),
+            NARPAS_GROUPING_RULE,
             (
                 "The free parashah marker and the adjacent starts-with-sampe and "
                 "ends-with-sampe attributes describe one break, not three."
