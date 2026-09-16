@@ -7,6 +7,8 @@ from pathlib import Path
 import subprocess
 from typing import Any, Sequence
 
+from mb_cmn.git_process import git_command
+
 
 def run_cmd(
     args: Sequence[str],
@@ -31,6 +33,16 @@ def run_cmd(
             or f"Command failed with exit code {result.returncode}: {format_command(args)}"
         )
     return result
+
+
+def run_git(
+    repo_dir: Path,
+    *args: str,
+    timeout_sec: float | None = None,
+    check: bool = False,
+) -> subprocess.CompletedProcess[str]:
+    """Run Git with exact command-local trust for ``repo_dir``."""
+    return run_cmd(git_command(repo_dir, *args), timeout_sec=timeout_sec, check=check)
 
 
 def format_command(args: Sequence[str]) -> str:

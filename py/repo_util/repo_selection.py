@@ -9,7 +9,7 @@ from mb_cmn import provenance
 from repo_util.common import (
     local_date_from_git_iso8601,
     read_json,
-    run_cmd,
+    run_git,
     today_local_date,
 )
 
@@ -177,14 +177,12 @@ def _select_explicit_repos(
 
 
 def _is_git_repo(repo_dir: Path) -> bool:
-    result = run_cmd(["git", "-C", str(repo_dir), "rev-parse", "--is-inside-work-tree"])
+    result = run_git(repo_dir, "rev-parse", "--is-inside-work-tree")
     return result.returncode == 0 and result.stdout.strip() == "true"
 
 
 def _get_head_info(repo_dir: Path) -> tuple[str | None, str | None]:
-    result = run_cmd(
-        ["git", "-C", str(repo_dir), "log", "-1", "--pretty=format:%H|%cI"]
-    )
+    result = run_git(repo_dir, "log", "-1", "--pretty=format:%H|%cI")
     text = result.stdout.strip()
     if result.returncode != 0 or "|" not in text:
         return None, None

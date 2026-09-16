@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from repo_util.common import run_cmd, write_json, write_text
+from repo_util.common import run_git, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
 
@@ -79,7 +79,7 @@ def _tracked_files(repo_dir: Path, include_pattern: str) -> list[str]:
     if not patterns:
         patterns = ["*.py"]
 
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", *patterns])
+    result = run_git(repo_dir, "ls-files", "-z", *patterns)
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files for {repo_dir}"

@@ -57,16 +57,28 @@ distinct; a suffix avoids a stale path after PID reuse.  Keeping the path short 
 preserves Windows path-length budget for tests that construct deep paths below
 ``tmp_path``.  Other operating systems retain their normal temporary-directory
 behavior.
+
+WHY DESCENDANT GIT PROCESSES USE PROCESS-LOCAL TRUST
+
+An elevated Windows session must give every direct Git command an exact repository
+path through the command's ``-c safe.directory=...`` option.  The tests deliberately
+keep their raw Git invocations independent of the production helper, so this entry
+point instead adds the same exact path to the process-local ``GIT_CONFIG_*`` entries
+inherited by descendant Git processes.  No global Git configuration is changed.  A
+Git metadata write can still cross a sandbox filesystem boundary and require normal
+sandbox escalation; repository trust does not grant filesystem access.
 """
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
 import pytest
 
 from mb_cmn import paths
+from mb_cmn.git_process import add_windows_safe_directory
 
 
 def _add_windows_basetemp(args: list[str]) -> None:
@@ -98,6 +110,7 @@ def main(argv: list[str] | None = None) -> int:
     """Run pytest over ``argv`` (default ``sys.argv[1:]``) and return its exit code."""
     args = list(sys.argv[1:] if argv is None else argv)
     _add_windows_basetemp(args)
+    add_windows_safe_directory(os.environ, paths.repo_root())
     # Supply the default target only when nothing given already names one.  An option's
     # value -- the expression after -k, say -- is not an existing path, so `-k <expr>`
     # still selects from the whole suite rather than from nothing.

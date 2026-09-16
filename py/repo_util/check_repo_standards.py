@@ -373,7 +373,7 @@ import tokenize
 import unicodedata
 from pathlib import Path
 
-from repo_util.common import run_cmd, write_json, write_text
+from repo_util.common import run_git, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
 _MAINTENANCE_SCRIPT_CANDIDATES = (
@@ -539,26 +539,20 @@ def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
             except (UnicodeDecodeError, OSError):
                 script_covers = False
 
-    worktree_list = run_cmd(
-        ["git", "-C", str(repo_dir), "worktree", "list", "--porcelain", "-z"]
-    )
+    worktree_list = run_git(repo_dir, "worktree", "list", "--porcelain", "-z")
     linked = None
     if worktree_list.returncode == 0:
         records = worktree_list.stdout.split("\0")
         worktrees = [record for record in records if record.startswith("worktree ")]
         linked = max(len(worktrees) - 1, 0)  # the first entry is the main worktree
 
-    branch_list = run_cmd(
-        [
-            "git",
-            "-C",
-            str(repo_dir),
-            "for-each-ref",
-            "--format=%(refname:short)",
-            "refs/heads/claude/",
-            "refs/heads/codex/",
-            "refs/heads/codex-*",
-        ]
+    branch_list = run_git(
+        repo_dir,
+        "for-each-ref",
+        "--format=%(refname:short)",
+        "refs/heads/claude/",
+        "refs/heads/codex/",
+        "refs/heads/codex-*",
     )
     agent_branches = None
     if branch_list.returncode == 0:
@@ -633,7 +627,7 @@ def _find_sys_path_mutations(text: str) -> list[int]:
 
 
 def _tracked_py_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", "*.py"])
+    result = run_git(repo_dir, "ls-files", "-z", "*.py")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"
@@ -811,7 +805,7 @@ def _scan_py_files(
 
 
 def _tracked_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z"])
+    result = run_git(repo_dir, "ls-files", "-z")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files in {repo_dir}"

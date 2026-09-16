@@ -16,6 +16,7 @@ import subprocess
 import zipfile
 
 from mb_cmn import paths
+from mb_cmn.git_process import git_command
 from mb_cmn.new_york_time import new_york_date
 
 _ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
@@ -25,7 +26,7 @@ _ZIP_EXTERNAL_ATTR = 0o100644 << 16
 
 def _git(repo, *args):
     result = subprocess.run(
-        ["git", "-C", str(repo), *args],
+        git_command(repo, *args),
         capture_output=True,
         text=True,
         encoding="utf-8",

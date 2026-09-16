@@ -104,6 +104,7 @@ import subprocess
 from urllib.parse import quote
 
 from mb_cmn import paths
+from mb_cmn.git_process import git_command
 
 _MAM_BASICS_SITE = "https://bdenckla.github.io/MAM-basics/"
 
@@ -332,8 +333,7 @@ def published_pages(repo_root: Path, repo: RedirectRepo) -> list[str]:
     pointing at deleted pages would be worse than saying so.
     """
     result = subprocess.run(
-        ["git", "ls-files", "-z", "--", repo.pages_prefix],
-        cwd=repo_root,
+        git_command(repo_root, "ls-files", "-z", "--", repo.pages_prefix),
         capture_output=True,
         encoding="utf-8",
         check=True,

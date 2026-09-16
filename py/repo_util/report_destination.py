@@ -47,7 +47,7 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 from mb_cmn import provenance
-from repo_util.common import run_cmd
+from repo_util.common import run_git
 
 
 class ReportDestinationError(RuntimeError):
@@ -99,7 +99,7 @@ def repo_name(repo_dir: Path) -> str:
 
 
 def _git_ignores(repo_dir: Path, path: Path) -> bool:
-    result = run_cmd(["git", "-C", str(repo_dir), "check-ignore", "-q", str(path)])
+    result = run_git(repo_dir, "check-ignore", "-q", str(path))
     return result.returncode == 0
 
 

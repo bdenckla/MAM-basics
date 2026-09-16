@@ -19,6 +19,7 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any, Sequence
 
+from mb_cmn.git_process import git_command
 from mb_cmn.new_york_time import NEW_YORK
 from repo_util import worktree_owners
 
@@ -56,15 +57,7 @@ def _git(
     repo_dir: Path, *args: str, text: bool = True
 ) -> subprocess.CompletedProcess[Any]:
     """Run Git with the exact local trust exception Windows worktrees need."""
-    command = [
-        "git",
-        "-c",
-        f"safe.directory={repo_dir.resolve().as_posix()}",
-        "-C",
-        str(repo_dir),
-        "--no-optional-locks",
-        *args,
-    ]
+    command = git_command(repo_dir, "--no-optional-locks", *args)
     return subprocess.run(
         command,
         capture_output=True,

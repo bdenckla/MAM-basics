@@ -27,6 +27,7 @@ from typing import Iterator, Literal
 import uuid
 
 from mb_cmn import paths, provenance
+from mb_cmn.git_process import git_command
 
 _SOURCE_REF = "refs/remotes/origin/main"
 _FETCH_TIMEOUT_SECONDS = 60
@@ -209,7 +210,7 @@ def _run_git(
     environment["GIT_TERMINAL_PROMPT"] = "0"
     environment["GCM_INTERACTIVE"] = "Never"
     return subprocess.run(
-        ["git", "-C", str(primary), *args],
+        git_command(primary, *args),
         capture_output=True,
         text=True,
         encoding="utf-8",
