@@ -147,9 +147,11 @@ A figure answering a passing question may remain a dated measurement with no mai
 reproduction path if the plan says that explicitly.
 
 A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-Correct it in `<stem>-update.md`, then `<stem>-update-2.md`; name the passage being corrected by
-its words rather than by a drifting line number. Keep present-state documents, instructions,
-README files, comments, and docstrings true in place.
+While the receipt remains tracked, never edit it. Correct it in `<stem>-update.md`, then
+`<stem>-update-2.md`; name the passage being corrected by its words rather than by a drifting line
+number. Receipt status does not require permanent retention: a repository's manual retirement
+rule may delete a spent base receipt and every update sibling together. Keep present-state
+documents, instructions, README files, comments, and docstrings true in place.
 
 In MAM-basics and MAM-private, an unprefixed
 `doc/review-findings-<date>.md` belongs to the Claude review series. A Codex review uses

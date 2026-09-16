@@ -119,3 +119,20 @@ Read the sections needed for the requested operation before touching GitHub.
    Anything changed on GitHub between the fetch and the push is silently reverted, and snapshots
    under near-identical names pile up until a later session picks the wrong one.
    `py/github_issue_edit.py`'s docstring is the fuller statement.
+
+## 5. Correcting references before a tracked document is retired
+
+1. Audit issue bodies and comments before deleting the document. Classify each reference as
+   current guidance or historical evidence. Repoint current guidance to a current successor; if
+   no successor exists, the reference blocks deletion. Repoint historical evidence to the full
+   40-character SHA of the last commit whose tree contains the document.
+2. A base receipt and its `<stem>-update.md`, `<stem>-update-2.md`, and later siblings are one
+   retirement family. Verify every member at the archival SHA and link every member so the
+   correction sequence remains visible. Never use `blob/main`, a branch, a tag, a short SHA, or
+   the deletion commit whose tree lacks the files.
+3. If the stale reference is in an open issue body, correct that body with
+   `py/main_github_issue_edit.py`, first with `--dry-run`, exactly as section 4 requires.
+4. If the issue is closed, or if the stale reference is in any comment, add a new dated
+   agent-written correction comment with the current-successor or immutable-historical link from
+   item 1. Never edit or delete the existing comment. Read the complete issue back after the
+   change.

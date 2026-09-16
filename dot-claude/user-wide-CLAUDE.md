@@ -824,6 +824,10 @@ left as written, like a pushed commit under a "never amend pushed commits" disci
 documents current is maintenance without end, and it makes them more confusing rather than less,
 since a reader cannot tell how the writer could have known at the time what the document now says.
 
+“Left as written” governs a receipt while it remains tracked; it does not require permanent
+retention. A repository's manual document-retirement rule may delete a spent base receipt and
+every update sibling together, with Git history as the historical copy.
+
 So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
 small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes in
 `doc/PLAN-foo-update-2.md`, a third in `doc/PLAN-foo-update-3.md`, and so on. An update file names

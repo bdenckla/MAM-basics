@@ -22,6 +22,17 @@ inspect coverage. It derives whether a repository has Python from tracked `*.py`
 when a repository with tracked Python has no Black installation. A vendored file is formatted in
 its source repository, not in each destination copy. A repo-wide reformat is a separate commit.
 
+## Manual document retirement
+
+Use MAM-basics' live `doc/PLAN-repo-maintenance-across-GitRepos.md`, section “The `doc/` sweep —
+genuinely last”, for the cross-repository procedure. The sweep is judgment work and remains
+outside the maintenance scripts. A finished dated document is immutable while tracked, but a
+spent base receipt and every update sibling form one retirement family and may be deleted
+together. Before deletion, audit GitHub issue bodies and comments: current-guidance references
+must reach a current successor or block deletion, and historical references must reach the
+verified full SHA of the last commit containing every family member. Follow the GitHub-issues
+skill's open-body versus closed-issue-or-comment procedure for the corrections.
+
 ## Completed Codex task folders
 
 Screen `C:/Users/BenDe/Documents/Codex` after the mechanical repository and document sweeps.
