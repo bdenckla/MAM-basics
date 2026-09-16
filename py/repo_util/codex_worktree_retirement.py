@@ -25,6 +25,8 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any, Sequence
 
+from mb_cmn.new_york_time import NEW_YORK
+
 SCHEMA_VERSION = 1
 
 _CODEX_BRANCH_PREFIXES = ("codex/", "codex-")
@@ -459,7 +461,7 @@ def _shadow_parts(path: Path) -> tuple[str, ...]:
 
 
 def _retirement_id() -> str:
-    timestamp = datetime.now().astimezone().strftime("%Y%m%dT%H%M%S%z")
+    timestamp = datetime.now(NEW_YORK).strftime("%Y%m%dT%H%M%S%z")
     return f"{timestamp}-{secrets.token_hex(4)}"
 
 
@@ -662,7 +664,7 @@ def prepare_retirement(
     preflight = {
         "schema_version": SCHEMA_VERSION,
         "kind": "codex-worktree-retirement-preflight",
-        "created_at": datetime.now().astimezone().isoformat(),
+        "created_at": datetime.now(NEW_YORK).isoformat(),
         "task_ended_attested": True,
         "codex_task_ids": list(dict.fromkeys(codex_task_ids)),
         "citations_reviewed": citations_reviewed,
@@ -970,7 +972,7 @@ def execute_retirement(
         )
 
     execution = preflight.setdefault("execution", {})
-    execution.setdefault("started_at", datetime.now().astimezone().isoformat())
+    execution.setdefault("started_at", datetime.now(NEW_YORK).isoformat())
     execution["ordinary_token"] = True
     execution["elevation_requested"] = False
     execution["worktree_registered_before_attempt"] = registered
@@ -1118,7 +1120,7 @@ def execute_retirement(
             _update_sidecar(sidecar, metadata)
     execution["branch_deleted"] = branch_deleted
     execution["stage"] = "complete_with_residue" if residue["exists"] else "complete"
-    execution["completed_at"] = datetime.now().astimezone().isoformat()
+    execution["completed_at"] = datetime.now(NEW_YORK).isoformat()
     _update_sidecar(preflight_file, preflight)
     return {
         "worktree_registered": False,

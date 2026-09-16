@@ -276,7 +276,10 @@ LC-index data. The repository evacuations settled the question:
   Project index.
 - [uxlc/data/lci_augrecs.json](../data/lci_augrecs.json) is generated from that input and the
   UXLC corpus by [py/main_write_page_break_info.py](../../py/main_write_page_break_info.py). It
-  augments the LCI records with word counts and start/stop line numbers.
+  preserves `startli` and `stopli`, the manuscript line numbers inherited from `lci_recs.json`;
+  adds `start_word_count` and `stop_word_count`, the existing cumulative per-folio estimator
+  counts; and adds `whole_start_verse_atom_count` and `whole_stop_verse_atom_count`, the
+  estimator-counted atoms in the complete verses containing the start and stop boundaries.
 - The former sparse-vendoring relationship was retired when `codex-index-leningrad` landed under
   `leningrad/`. The former `shared-with-codex-index-leningrad.md` was deliberately deleted because
   its claim that UXLC-utils was canonical had expired. The Leningrad Wikisource index generator
