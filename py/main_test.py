@@ -40,16 +40,41 @@ being rewritten: pytest collects both those and this repo's ``unittest.TestCase`
 classes natively, so zero test files changed on either side.  What the cross-repo
 standard actually forbids is path configuration, which this file has none of either
 way.
+
+WHY WINDOWS TEST TEMP FILES ARE WORKTREE-LOCAL
+
+A Codex elevated Windows sandbox can run commands under a dedicated Windows account
+while preserving another account's ``TEMP``, ``TMP``, and ``USERNAME``.  Python 3.13
+gives directories created with mode ``0o700`` a private Windows ACL, while pytest
+names its shared temporary root from ``USERNAME``.  A root created by one identity
+can therefore block the next identity before a test using ``tmp_path`` even starts.
+
+On Windows this entry point redirects ``TEMP`` and ``TMP`` to the gitignored
+``.novc/pytest-temp-root`` in the current checkout before importing pytest.  Pytest
+still creates its normal numbered run directories below that writable parent, so
+simultaneous runs do not share a fixed ``--basetemp`` that either run could clear.
+Other operating systems retain their normal temporary-directory behavior.
 """
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
-import pytest
-
 from mb_cmn import paths
+
+
+def _configure_windows_temp_root() -> None:
+    """Give Windows test processes a disposable temp parent in this checkout."""
+    if sys.platform != "win32":
+        return
+
+    temp_root = paths.repo_root() / ".novc" / "pytest-temp-root"
+    temp_root.mkdir(parents=True, exist_ok=True)
+    temp_root_text = str(temp_root)
+    os.environ["TEMP"] = temp_root_text
+    os.environ["TMP"] = temp_root_text
 
 
 def _default_target() -> str:
@@ -59,6 +84,12 @@ def _default_target() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     """Run pytest over ``argv`` (default ``sys.argv[1:]``) and return its exit code."""
+    _configure_windows_temp_root()
+
+    # Import after redirecting TEMP and TMP so Python and pytest cannot cache the
+    # inherited user temp directory first.
+    import pytest
+
     args = list(sys.argv[1:] if argv is None else argv)
     # Supply the default target only when nothing given already names one.  An option's
     # value -- the expression after -k, say -- is not an existing path, so `-k <expr>`

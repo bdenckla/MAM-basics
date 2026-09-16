@@ -73,10 +73,12 @@ class TestMbCmnProvenance(unittest.TestCase):
         )
 
     def test_generated_by_text_raises_for_non_local_repo_path(self):
-        with TemporaryDirectory() as tmp_dir:
-            non_mam_path = Path(tmp_dir) / "fake_generator.py"
-            with self.assertRaises(ValueError):
-                provenance.generated_by_text(str(non_mam_path))
+        # The test runner deliberately puts TEMP inside this checkout so Windows
+        # sandbox identities can use it.  Name an explicit sibling path instead of
+        # assuming that the operating system's temporary directory is non-local.
+        non_mam_path = paths.repo_root().parent / "not-MAM-basics" / "fake_generator.py"
+        with self.assertRaises(ValueError):
+            provenance.generated_by_text(str(non_mam_path))
 
     def test_write_directory_provenance_uses_default_sidecar_name(self):
         with TemporaryDirectory() as tmp_dir:
