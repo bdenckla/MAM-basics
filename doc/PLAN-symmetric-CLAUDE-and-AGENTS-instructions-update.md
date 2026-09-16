@@ -24,3 +24,21 @@ Verification at integration:
 - The mega gate produced no declared MAM-basics product change.
 
 The issue remains open. The user-level `CLAUDE.md` wrapper conversion, the MAM-private repository conversion, the fresh Claude and Codex session checks, and a real Claude cloud-session check remain. The new non-managed Codex hook must also be trusted through `/hooks` before Codex will run it automatically; that trust state cannot be verified from the deployed files.
+
+## MAM-private implementation spin-off — 2026-09-16
+
+Recorded by a Codex session on 2026-09-16 at Ben's request.
+
+The MAM-private implementation has been spun off to
+[MAM-private#26](https://github.com/bdenckla/MAM-private/issues/26) and its detailed
+[`doc/PLAN-consolidate-agent-instructions.md`](https://github.com/bdenckla/MAM-private/blob/main/doc/PLAN-consolidate-agent-instructions.md),
+established by MAM-private commit
+[`8a3e7eb5272bb5301fdf7993994b1ddf48ab074e`](https://github.com/bdenckla/MAM-private/commit/8a3e7eb5272bb5301fdf7993994b1ddf48ab074e).
+The MAM-private implementation is no longer owned by the MAM-basics issue 274 plan family.
+
+The MAM-private plan gates its execution on completion and deployment of the user-level
+conversion. The implementing MAM-private session must then re-inspect the final live and
+canonical user-level files before deciding what MAM-private can remove.
+
+The remaining MAM-basics scope is the user-level `CLAUDE.md` wrapper conversion, fresh local
+Claude Code and Codex verification, and real Claude cloud verification.
