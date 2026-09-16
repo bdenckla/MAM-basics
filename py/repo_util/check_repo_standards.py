@@ -217,9 +217,23 @@ indistinguishable from one inside a string literal.
 The doc/ directory standard
 ---------------------------
 A DOC FILE THAT ONLY RECORDS FINISHED WORK IS DELETED, NOT ARCHIVED. Git
-history keeps it; the tree should carry only what a reader needs now. The
-shape to look for is a plan, a migration note or a decisions log whose end
-result is already in the code -- in the modules it produced, or in their
+history keeps it; the tree should carry only what a reader needs now. A
+finished dated document is immutable while tracked, but that receipt status
+does not grant permanent retention. Treat its base file and every
+`<stem>-update.md`, `<stem>-update-2.md`, and later sibling as one retirement
+family: keep or delete the whole family, never only one member.
+
+Before deleting a family, audit GitHub issue bodies and comments. A reference
+to current guidance is repointed to a current successor or blocks deletion. A
+historical reference is repointed to the full SHA of the last commit whose
+tree contains every family member, after verifying every path there. Correct
+a stale open-issue body through the approved body editor; for a closed issue,
+or a reference in any comment, add a dated agent-written correction comment
+and never edit or delete the old comment. This gate and the deletion decision
+remain manual.
+
+The shape to look for is a plan, a migration note or a decisions log whose
+end result is already in the code -- in the modules it produced, or in their
 docstrings and comments. Once the work has landed, the doc restates it worse
 and then drifts, and the next reader has to consult both to learn which one
 is current.

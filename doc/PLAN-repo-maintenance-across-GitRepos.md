@@ -444,6 +444,27 @@ after everything else, where a wrong call is plainest in the diff. The standard 
 the "The doc/ directory standard" section of `py/repo_util/check_repo_standards.py`: a doc file
 that only records finished work is deleted, not archived; git history keeps it.
 
+Receipt immutability and retention are independent. A finished dated document is never edited
+while it remains tracked, but receipt status does not make the document permanent. Treat a base
+receipt and every sibling `<stem>-update.md`, `<stem>-update-2.md`, and so on as one retirement
+family: keep or delete the whole family, never only one member.
+
+Before deleting a family, audit GitHub issue bodies and comments owner-wide and classify each
+reference. A reference to current guidance is repointed to a current successor or blocks the
+deletion. A reference to historical evidence is repointed to the full 40-character SHA of the
+last commit whose tree contains every family member. Verify every path there with `git cat-file
+-e`; never use `blob/main`, a branch, a tag, a short SHA, or the deletion commit whose tree lacks
+the files. Link the base receipt and every update sibling so that the correction sequence remains
+visible.
+
+For an open issue, correct a stale body reference with `py/main_github_issue_edit.py`, first with
+`--dry-run`, and read the entire outgoing body before applying it. For a closed issue, or a
+reference found in any comment, add a dated agent-written correction comment; never edit or delete
+an existing comment. Then read back the complete issues, delete the family in one repository
+commit, verify, and push. The archival commit must already be on `origin/main` before the issue
+links are changed. This audit and the deletion decision remain manual; neither
+`py/main_repo_maintenance.py` nor `py/main_repo_util.py` automates them.
+
 **Only two folders under `GitRepos` have plans — MAM-basics 6 and MAM-private 4**, and that
 second figure read 3 until 2026-08-29, when running this step against MAM-private turned up a
 fourth: `al-hatorah/doc/PLAN-melody-compiler.md`, live work sitting in one of the evacuated trees

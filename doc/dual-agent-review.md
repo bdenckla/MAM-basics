@@ -166,6 +166,10 @@ reason, 2026-09-11: keeping such documents current is maintenance without end, a
 them more confusing rather than less, since a reader cannot tell how the writer could have known
 at the time what the document now says.
 
+“Left as written” governs the document while it remains tracked; it does not require permanent
+retention. The repository's manual document-retirement rule may delete a spent base document and
+every update sibling together, leaving Git history as the historical copy.
+
 A correction, an update or a later measurement therefore goes in a sibling file named
 `<stem>-update.md`, and the document it corrects is not touched. So a correction to
 `doc/PLAN-foo.md` goes in `doc/PLAN-foo-update.md`, and where a second round of corrections
