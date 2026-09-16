@@ -38,7 +38,12 @@ def gh_pages_dir() -> Path:
 
 def data_dir() -> Path:
     """``uxlc/data/``, holding ``lci_augrecs.json``: the Leningrad Codex index's
-    records, augmented with word counts and start and stop lines, pre-formed.
+    records, preserving ``startli`` and ``stopli``, manuscript line numbers inherited
+    from ``lci_recs.json``; adding ``start_word_count`` and ``stop_word_count``,
+    cumulative per-folio estimator counts; and adding
+    ``whole_start_verse_atom_count`` and ``whole_stop_verse_atom_count``,
+    estimator-counted atoms in the complete verses containing the start and stop
+    boundaries, pre-formed.
 
     Nothing in this repository reads the file.  The two estimators,
     ``py/main_estimate_uxlc_locations.py`` and ``py/main_uxlc_estimate_atom_loc.py``,
