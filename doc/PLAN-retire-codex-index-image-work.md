@@ -20,6 +20,9 @@ remove the results of the completed Book-of-Job work.
 
 ## Decisions recorded on 2026-09-12
 
+Ben made the retirement decisions below on 2026-09-12; decision 3 records Ben's
+follow-up disposition from 2026-09-13.
+
 1. Preserve all current page-level and below-page-level index data. Aleppo is
    intentionally uneven: much of the Tanakh is indexed at page level, while Job
    and some other retained material have finer detail. Cambridge Add. 1753 is
@@ -57,35 +60,45 @@ remove the results of the completed Book-of-Job work.
   editing, record `git rev-parse --show-toplevel`, `git rev-parse HEAD`, the branch
   or detached-HEAD state, `git status --porcelain`, and `git worktree list`. Do not
   assume that `C:/Users/BenDe/GitRepos/MAM-basics` is the development checkout.
-- Read `C:/Users/BenDe/.codex/AGENTS.md`, the development checkout's
-  `CLAUDE.md`, this entire plan, and `py/product_scopes.py` before editing.
+- Confirm that no other task is writing the assigned checkout. Read the applicable
+  user instructions, the assigned checkout's repository instructions, this entire
+  plan, and `py/product_scopes.py` before editing. Load `codex-worktree-tasks` only
+  when the assigned checkout is Codex-managed.
 - Load the `hebrew-prose` skill before changing prose in the manuscript READMEs,
   the snips READMEs under `doc/`, or `doc/meteg-after-silluq-job-4-12.md`.
 - Use
   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` as the shared
   interpreter. Run scripts, Git commands, formatting, and tests from the verified
   development checkout.
-- Preserve an existing worktree branch. If a newly allocated Codex worktree is
-  detached, create `codex-worktree-<worktree-id>` at the current HEAD after
-  confirming that the name is unused.
+- Preserve an existing branch. If the assigned checkout is detached, follow the
+  managing environment's verified detached-worktree rule rather than assuming a
+  Codex branch name.
 
 ## Planning snapshot and preconditions
 
 The planning snapshot was a clean primary checkout on `main` at
-`068745779405ca38ec079ca25db9c8842195fd37`. Re-measure every figure before
-editing and treat a mismatch as a finding rather than silently adjusting the
-scope.
+`068745779405ca38ec079ca25db9c8842195fd37`. Every dated figure below belongs to
+that baseline. Re-run the named measurement and test commands before editing;
+treat a mismatch as a finding rather than silently adjusting the scope.
 
 Create a uniquely named UTF-8 throwaway script at
 `.novc/measure_codex_index_image_retirement.py`. The script should use
 `git ls-files -z` for tracked-path inventories, `Path.stat()` for checked-out byte
-sizes, and `hashlib.sha256` for protected-file manifests. It should also inspect
-the ignored `cam1753/cam1753-pages/` directory directly and expand the grouped
-Python deletion rules stated below. Run it from the verified checkout with:
+sizes, and `hashlib.sha256` for protected-file manifests. It should expand the
+grouped Python deletion rules stated below. Run it from the verified checkout with:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/measure_codex_index_image_retirement.py
 ```
+
+During development, inventory
+`C:/Users/BenDe/GitRepos/MAM-basics/cam1753/cam1753-pages/` read-only and record its file count,
+byte count, and a SHA-256 manifest. Do not change that primary-clone tree from a secondary
+checkout. After the retirement branch is fully verified, fast-forwarded into primary `main`, and
+pushed, remeasure the same exact absolute path from a separate primary-checkout step. If the
+measurements still match the reviewed manifest, move the directory to the Windows Recycle Bin
+and verify the original path is absent. Never permanently delete it and never substitute a
+same-relative path in a secondary worktree.
 
 That command measured the page-sized image inputs as follows on the planning
 snapshot:
@@ -138,9 +151,9 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py --ba
 
 - Remove the tracked `aleppo/aleppo-pages/` tree.
 - Remove the tracked `cam1753/cam1753-spreads/` tree.
-- Move the ignored, derived `cam1753/cam1753-pages/` tree to the Windows Recycle
-  Bin after resolving and checking its exact absolute path. This ignored tree is
-  not preserved by Git, so do not delete it permanently.
+- Leave the ignored, derived `cam1753/cam1753-pages/` tree unchanged during
+  development. Its only authorized disposition is the separate post-push
+  primary-checkout step under “Planning snapshot and preconditions.”
 - Keep `cam1753/cam1753-gutter-profiles.png`. It is a compact retained record, not
   a page-sized source scan and not an input needed by the published Book-of-Job
   pages.
@@ -267,8 +280,10 @@ lookups rather than the retired Book-of-Job crop workflow.
 - Re-run `.novc/measure_codex_index_image_retirement.py` and compare the protected
   SHA-256 manifest with the pre-edit manifest. Every unapproved difference is a
   failure.
-- Confirm that `aleppo/aleppo-pages/`, `cam1753/cam1753-spreads/`, and
-  `cam1753/cam1753-pages/` are absent.
+- Confirm before integration that tracked `aleppo/aleppo-pages/` and
+  `cam1753/cam1753-spreads/` are absent while the exact primary-clone
+  `C:/Users/BenDe/GitRepos/MAM-basics/cam1753/cam1753-pages/` tree still matches
+  its read-only pre-edit manifest.
 - Confirm that every retained line-break, coordinate, split-record, page-index,
   flat-stream, page-snip, Book-of-Job crop, and Book-of-Job HTML file remains.
 - Run the Book-of-Job checks, including the broken-local-image-reference check:
@@ -321,9 +336,11 @@ until explained. This plan expects no such change.
 
 - The expected tracked deletions are the remeasured 48 Python files, the 37
   Aleppo page JPEGs, the 14 Cambridge spread JPEGs, and the three obsolete crop
-  procedures.
-- The expected untracked removal is the remeasured 28 ignored Cambridge page
-  JPEGs, moved to the Recycle Bin.
+  procedures at baseline `068745779405ca38ec079ca25db9c8842195fd37`; the
+  measurement script, not these dated figures, defines the execution input.
+- The expected post-push local retirement is the remeasured ignored Cambridge page
+  tree at the exact primary-clone path, moved to the Recycle Bin only after its
+  second manifest matches the reviewed manifest.
 - The expected edits are surviving path and scope declarations plus current
   documentation and provenance.
 - No Leningrad file is deleted.
@@ -338,7 +355,9 @@ the committed implementation, commit any explained follow-up needed to restore a
 clean generated tree, and push only after all checks pass. In a secondary
 worktree, commit on its existing branch; immediately before archival, merge
 `main` into the branch, run the mega pipeline and inspect its diff, then
-fast-forward the primary checkout and push `main`.
+fast-forward the primary checkout and push `main`. Only after the push, perform
+the separate primary-checkout remeasurement and Recycle Bin move specified under
+“Planning snapshot and preconditions”; verify the exact original path is absent.
 
 This work touches both risk axes:
 
@@ -348,8 +367,9 @@ This work touches both risk axes:
    Protected-file hashes, the Book-of-Job checks, and the mega diff enforce that
    boundary.
 2. **Hard-to-undo acts.** The implementation deletes tracked code and JPEGs,
-   removes ignored local JPEGs, and ultimately pushes `main`. Resolve every target
-   before deletion, use the Recycle Bin for the ignored files, record the
-   pre-removal commit and external sources, and rely on Git history for exact
-   recovery of tracked files. Do not rewrite history or alter the old GitHub
-   repositories.
+   later moves ignored local JPEGs, and ultimately pushes `main`. Resolve every
+   tracked target before deletion, keep the primary ignored tree read-only through
+   development and integration, use the Recycle Bin only after the two manifests
+   match, record the pre-removal commit and external sources, and rely on Git
+   history for exact recovery of tracked files. Do not rewrite history or alter
+   the old GitHub repositories.
