@@ -147,11 +147,11 @@ temporary-stub procedures, and historical traps.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 A change that can reach a mega generator owes a mega run and an explanation of every tracked
-diff. A change that cannot reach a mega generator owes the suite. A hand-run generator can reach a
-product even though the mega does not run it. A change to a hand-run generator, or to any input it
-reads, requires rerunning every affected hand-run generator and inspecting its tracked outputs.
-Product reach and whether an act is hard to undo are separate risk axes, as the user-level
-instructions explain.
+diff. A documentation-only change owes neither a mega run nor the suite. Any other change that
+cannot reach a mega generator owes the suite. A hand-run generator can reach a product even though
+the mega does not run it. A change to a hand-run generator, or to any input it reads, requires
+rerunning every affected hand-run generator and inspecting its tracked outputs. Product reach and
+whether an act is hard to undo are separate risk axes, as the user-level instructions explain.
 
 ## Dates shown on pages are New York dates and say so
 
@@ -168,7 +168,7 @@ fail loudly if it unexpectedly needs MAM-private; it must not probe for the priv
 when particular data happens to require it. Use `py/mb_cmn/paths.py`'s required-sibling helpers.
 The cloud-only suite exception is declared on the test module that reads Phonetic MAM.
 
-## Integrating a worktree branch here: run the mega and read its diff
+## Integrating a worktree branch here: run the mega unless the branch is exempt
 
 For final worktree integration, after merging `main` into the worktree branch, run from the
 worktree root:
@@ -179,8 +179,9 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 
 A failing step or unexplained tracked diff is a failure. Commit each explained generated change
 on the worktree branch before the primary clone is fast-forwarded. Running the suite too is
-optional. A branch changing only instruction files—`AGENTS.md`, `CLAUDE.md`, `dot-claude/`, or
-`dot-Codex/`—needs no mega run. The user-level Git section gives the remaining integration order.
+optional. A branch changing only documentation or instruction files—`doc/`, `AGENTS.md`,
+`CLAUDE.md`, `dot-claude/`, or `dot-Codex/`—needs neither a mega run nor the suite. The user-level
+Git section gives the remaining integration order.
 
 ## Running tests: use the one entrypoint from the repository root
 
