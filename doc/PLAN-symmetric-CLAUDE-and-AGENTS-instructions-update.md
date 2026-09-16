@@ -42,3 +42,58 @@ canonical user-level files before deciding what MAM-private can remove.
 
 The remaining MAM-basics scope is the user-level `CLAUDE.md` wrapper conversion, fresh local
 Claude Code and Codex verification, and real Claude cloud verification.
+
+## User-level common-body conversion and deployment — 2026-09-16
+
+Recorded by a Codex session on 2026-09-16 at Ben's request.
+
+The user-level conversion is implemented and deployed. Before editing, the session remeasured the
+2026-09-16 baseline at MAM-basics commit
+`a7cb3e979e809e32fd27d3d11a3d336ea36f48ab`: the canonical common file was 16,252 bytes, the
+canonical Claude file was 121,892 bytes, and each canonical file remained byte-identical to its
+live destination. Current `main` and `origin/main` were still at that baseline.
+
+The old Claude body was reconciled section by section against the compact Codex body and the
+canonical skills. No genuine policy conflict required a new decision. The resolved common body
+preserves the unique live rules for authored forward-slash paths, successor-prompt authorship,
+finding dispositions, and shared checkout and virtual-environment safeguards. The Claude task-chip
+and cloud-installation material remains under explicit `Claude Code only` headings. Detailed
+GitHub-issue, Hebrew-prose, repository-topology, and Codex-worktree procedures remain routed to
+their canonical skills instead of being copied back into the always-loaded body.
+
+Commit
+[`d695966be8daea270f85424cb77d06f3b92a873d`](https://github.com/bdenckla/MAM-basics/commit/d695966be8daea270f85424cb77d06f3b92a873d)
+made `dot-Codex/user-wide-AGENTS.md` the single canonical user-level instruction body and reduced
+`dot-claude/user-wide-CLAUDE.md` to exactly `@~/.codex/AGENTS.md` followed by one LF. The commit
+also corrected the deployment READMEs, current GitHub-issue skill references, and two explanatory
+Python docstrings. Inspection confirmed that `py/repo_util/user_config_sync.py` and
+`.claude/hooks/install-user-config.sh` already deploy, compare, and bootstrap the common body and
+wrapper independently, so no executable behavior changed. Black left both docstring-only Python
+files unchanged. Per Ben's documentation and instruction verification policy, no mega run, suite,
+targeted document lint, or other repository lint was run; the complete diff was reviewed manually,
+and `git diff --check` passed.
+
+The worktree branch was merged with current `main`, the primary clone was confirmed clean at the
+expected baseline, and the primary clone fast-forwarded and pushed `main` to `d695966b`. The
+authorized deployment then ran from `C:/Users/BenDe/GitRepos/MAM-basics` and reported
+`USER_CONFIG_DEPLOYED_COUNT=5`, sourcing
+`refs/remotes/origin/main@d695966be8daea270f85424cb77d06f3b92a873d`. Its immediate read-only
+follow-up reported every destination clean and `USER_CONFIG_PROBLEM_COUNT=0`.
+
+Independent read-back recorded these final canonical and live measurements:
+
+| File | Bytes | SHA-256 | Result |
+| --- | ---: | --- | --- |
+| common `AGENTS.md` | 19,856 | `92e929ed58527634de2c04087208f4f2b4597a5276e3d4df4ec7180d09db1443` | canonical and live files byte-identical |
+| Claude wrapper | 20 | `38a1085f3a53b4027ff2e96fad50daa2c372c17f5fcf0f973298316435e2ead1` | canonical and live files byte-identical; bytes end in one LF |
+
+The MAM-private issue 26 dependency on the deployed user-level conversion is now satisfied, but
+MAM-private remains outside this plan family's scope. This update file remains **State: open**.
+MAM-basics issue 274 now has exactly three remaining checks:
+
+1. A fresh local Claude Code session check.
+2. A fresh local Codex session check.
+3. A real Claude cloud-session check.
+
+The implementing session did not perform or claim any fresh-session check because its startup
+context predates the deployment.
