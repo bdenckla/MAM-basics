@@ -126,10 +126,12 @@ Read the sections needed for the requested operation before touching GitHub.
    current guidance or historical evidence. Repoint current guidance to a current successor; if
    no successor exists, the reference blocks deletion. Repoint historical evidence to the full
    40-character SHA of the last commit whose tree contains the document.
-2. A base receipt and its `<stem>-update.md`, `<stem>-update-2.md`, and later siblings are one
-   retirement family. Verify every member at the archival SHA and link every member so the
-   correction sequence remains visible. Never use `blob/main`, a branch, a tag, a short SHA, or
-   the deletion commit whose tree lacks the files.
+2. A base receipt and its optional one live `<stem>-update.md` are one retirement family. Verify
+   both members at the archival SHA and link both so the correction sequence remains visible.
+   Never create a numbered update sibling. A historical numbered sibling found at the archival SHA
+   remains part of that historical family and must also be verified and linked; its literal
+   preservation does not make numbered siblings current policy. Never use `blob/main`, a branch, a
+   tag, a short SHA, or the deletion commit whose tree lacks the files.
 3. If the stale reference is in an open issue body, correct that body with
    `py/main_github_issue_edit.py`, first with `--dry-run`, exactly as section 4 requires.
 4. If the issue is closed, or if the stale reference is in any comment, add a new dated

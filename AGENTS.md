@@ -108,12 +108,17 @@ even turns, and either Claude or Codex may be Agent 1. The private series stays 
 `doc/periodic-review.md` and `doc/dual-agent-review.md` are the procedures of record.
 
 A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-While the receipt remains tracked, never edit it. Correct it in `<stem>-update.md`, then
-`<stem>-update-2.md`, and name the corrected passage by its words rather than by a drifting line
-number. Receipt status does not grant permanent retention: the manual document-retirement
-standard may delete a spent base receipt and every update sibling together, with Git history as
-the historical copy. A document describing the present—this file, README files, docstrings, and
-a plan still being executed—is kept true in place. The `State:` and retirement rules live in
+Each receipt has at most one live sibling, `<stem>-update.md`. Corrections, later measurements,
+later State, and remediation dispositions go in that file. Keep the update file true while the
+base remains tracked, and never create `<stem>-update-N.md`. When the update file is created,
+insert one line directly below line 3 of the base: `Updates and later status:
+[<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary joining of a
+prose paragraph that begins on line 3 without changing its text, is the only post-completion edit
+to the base. A spent base and its optional one update file are one retirement family and may be
+retired together under the manual retirement procedure. A historical numbered sibling in Git
+history remains historical evidence; it does not authorize another numbered sibling. A document
+describing the present—this file, README files, docstrings, and a plan still being executed—is
+kept true in place. The `State:` and retirement rules live in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
 ## Repository topology is task-specific

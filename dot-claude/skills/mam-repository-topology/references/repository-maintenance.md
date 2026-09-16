@@ -26,9 +26,12 @@ its source repository, not in each destination copy. A repo-wide reformat is a s
 
 Use MAM-basics' live `doc/PLAN-repo-maintenance-across-GitRepos.md`, section “The `doc/` sweep —
 genuinely last”, for the cross-repository procedure. The sweep is judgment work and remains
-outside the maintenance scripts. A finished dated document is immutable while tracked, but a
-spent base receipt and every update sibling form one retirement family and may be deleted
-together. Before deletion, audit GitHub issue bodies and comments: current-guidance references
+outside the maintenance scripts. A finished dated document is immutable while tracked apart from
+its authorized line-4 update pointer. A spent base receipt and its optional one live
+`<stem>-update.md` form one retirement family and may be deleted together. Never create a numbered
+update sibling. A historical numbered sibling remains historical evidence and belongs to the
+historical family in which it appears; literal preservation does not make that naming current
+policy. Before deletion, audit GitHub issue bodies and comments: current-guidance references
 must reach a current successor or block deletion, and historical references must reach the
 verified full SHA of the last commit containing every family member. Follow the GitHub-issues
 skill's open-body versus closed-issue-or-comment procedure for the corrections.

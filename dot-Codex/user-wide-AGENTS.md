@@ -147,11 +147,16 @@ A figure answering a passing question may remain a dated measurement with no mai
 reproduction path if the plan says that explicitly.
 
 A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-While the receipt remains tracked, never edit it. Correct it in `<stem>-update.md`, then
-`<stem>-update-2.md`; name the passage being corrected by its words rather than by a drifting line
-number. Receipt status does not require permanent retention: a repository's manual retirement
-rule may delete a spent base receipt and every update sibling together. Keep present-state
-documents, instructions, README files, comments, and docstrings true in place.
+Each receipt has at most one live sibling, `<stem>-update.md`. Corrections, later measurements,
+later State, and remediation dispositions go in that file. Keep the update file true while the
+base remains tracked, and never create `<stem>-update-N.md`. When the update file is created,
+insert one line directly below line 3 of the base: `Updates and later status:
+[<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary joining of a
+prose paragraph that begins on line 3 without changing its text, is the only post-completion edit
+to the base. A spent base and its optional one update file are one retirement family and may be
+retired together under the manual retirement procedure. A historical numbered sibling in Git
+history remains historical evidence; it does not authorize another numbered sibling. Keep
+present-state documents, instructions, README files, comments, and docstrings true in place.
 
 In MAM-basics and MAM-private, an unprefixed `doc/review-findings-<date>.md` belongs to the
 single-agent Claude review series and the Claude half of blind Design B. A Codex Design B review

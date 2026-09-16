@@ -142,21 +142,10 @@ Turn 2's initial reconciliation is the specified append to the argument, not per
 the original findings; subsequent corrections to that table are recorded in subsequent turns.
 The close-out reads the table together with those corrections and Ben's decisions.
 
-After the exchange closes, close-out proceeds in this order, as worked in
-`doc/PLAN-close-out-review-2026-09-08.md`:
-
-1. Record Ben's decisions on the choices the review leaves to him, asked as one list covering every
-   finding, as `doc/periodic-review.md`'s section "Reviewing the review, with the same agent and
-   with Ben" sets out.
-2. Update the procedure record with the round's outcome and the approved process changes.
-3. Write a remediation plan for a fresh task, including concrete editorial wording for Ben's
-   approval; obtain the required approvals before execution.
-4. Execute the approved remediation, recording each finding's disposition under a dated
-   `## Dispositions after remediation` section in Agent 1's turn-01 argument. Leave every finished
-   dated document as written; a correction to one goes in a sibling `<stem>-update.md`, as the
-   section below sets out.
-5. Integrate once after the final remediation wave, using the worktree procedure below.
-6. Retire the shared worktree and branch after the final task ends.
+After the exchange closes, follow `doc/periodic-review.md`'s `Close-out` list. A sequential
+dual-agent round additionally updates this procedure record after Ben's decisions, uses Agent 1's
+turn-01 update file for later dispositions, integrates through the shared-review branch, and
+retires the shared worktree only after the final task ends.
 
 ### Correcting a finished dated document — Ben's decision, 2026-09-11 (D12)
 
@@ -166,20 +155,19 @@ reason, 2026-09-11: keeping such documents current is maintenance without end, a
 them more confusing rather than less, since a reader cannot tell how the writer could have known
 at the time what the document now says.
 
-“Left as written” governs the document while it remains tracked; it does not require permanent
-retention. The repository's manual document-retirement rule may delete a spent base document and
-every update sibling together, leaving Git history as the historical copy.
+Each finished document has at most one live sibling, `<stem>-update.md`. Corrections, later
+measurements, later State, and remediation dispositions go in that file. Keep the update file true
+while the base remains tracked: append later dated entries and correct stale present-tense claims
+in place. Never create `<stem>-update-N.md`.
 
-A correction, an update or a later measurement therefore goes in a sibling file named
-`<stem>-update.md`, and the document it corrects is not touched. So a correction to
-`doc/PLAN-foo.md` goes in `doc/PLAN-foo-update.md`, and where a second round of corrections
-should not be added to that file either, it goes in `doc/PLAN-foo-update-2.md`, a third in
-`doc/PLAN-foo-update-3.md`, and so on (Ben, 2026-09-12). An update file is small by intent.
-`git ls-files "doc/*-update.md"` lists the ones that exist; there were eight on 2026-09-12, five
-of them written on 2026-09-11, the day of the decision. This paragraph named four of those five
-until 2026-09-12, having missed `doc/PLAN-evacuate-five-MAM-products-update.md`, which `ffc82f60`
-created alongside two of the four it did name. Each update file names the passage it corrects by
-that passage's own words, since line numbers drift, and is itself live, so it is kept true.
+When the update file is created, insert one line directly below line 3 of the base: `Updates and
+later status: [<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary
+joining of a prose paragraph that begins on line 3 without changing its text, is the only
+post-completion edit to the base. Each update entry names the passage it corrects by that passage's
+own words, since line numbers drift. A spent base and its optional one update file are one
+retirement family and may be retired together under the repository's manual retirement procedure.
+A historical numbered sibling in Git history remains historical evidence; the live policy neither
+creates another numbered sibling nor uses the historical file as authority for doing so.
 
 The `State:`-line declaration for update files is in `py/repo_util/check_repo_standards.py`'s
 module docstring, under “THE `State:` LINE ON doc/*-update.md”.
@@ -198,6 +186,11 @@ folder have the same name. Every turn of both agents and every close-out task us
 directly, with writing responsibility passed between tasks. Do not create another worktree for a
 successor. The primary clone supplies its venv by absolute path; development commands, edits,
 staging and commits use the verified shared worktree.
+
+Setup locks the shared worktree with `git worktree lock --reason "active dual-agent review
+<date>" <absolute-worktree-path>` before the first review turn. The lock remains through review
+and remediation. A separate cleanup task unlocks it only after final integration, after the final
+task ends, and immediately before an ordinary non-force worktree removal.
 
 Each close-out task merges `main` into the review branch before editing and resolves conflicts
 there. No intermediate task fast-forwards `main` or pushes, including when an intermediate task
@@ -226,6 +219,12 @@ In the September 8 round, Codex created
 of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that creating the
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
+
+### The September 10 round
+
+The September 10 exchange closed, and its remediation outcome is recorded in
+`doc/review-findings-2026-09-10-update.md`. No separate fresh-task remediation plan was written;
+do not fabricate one after the fact.
 
 The September 14 round also keeps its historical names and author-specific role descriptions. It
 began before Ben's 2026-09-16 Agent 1 and Agent 2 decision, used the shared worktree named
@@ -430,12 +429,11 @@ For future reviews, the filenames and states follow these rules:
    `doc/codex-review-findings-<date>.md` remains the Codex Design B counterpart. Reserve a suffix
    such as `-sol` for an exceptional additional review comparing or repeating the same blind role
    with a named model; September 7's `-sol` file is the worked example.
-3. **Keep remediation state in the argument:** turn 01 of a standard alternating round, or the
-   unprefixed file of a single-agent or blind review, uses `State: not yet acted on` or
-   `State: acted on <date>`, with any qualifications. Every later alternating turn and every blind
-   counterpart uses `State: completed <date>; review only`. Completion means the review turn is
-   finished; "acted on" means findings were remediated. Keep the state at line 3, directly under
-   the H1.
+3. **Keep the historical finish state in the argument:** turn 01 of a standard alternating round,
+   or the unprefixed file of a single-agent or blind review, records at line 3 what was true when
+   that review finished. Every later alternating turn and every blind counterpart uses
+   `State: completed <date>; review only`. Later remediation State and every disposition belong in
+   the first argument's single live update file, not in a new section of the finished base review.
 4. **Recognize all review files in the document standard:** the initial single-agent files, blind
    counterparts and exceptional additional reviews, and every numbered dual-agent turn. The older
    `doc/review-findings-*.md` glob in the standard's history names only the unprefixed series.

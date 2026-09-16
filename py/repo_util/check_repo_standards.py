@@ -218,10 +218,12 @@ The doc/ directory standard
 ---------------------------
 A DOC FILE THAT ONLY RECORDS FINISHED WORK IS DELETED, NOT ARCHIVED. Git
 history keeps it; the tree should carry only what a reader needs now. A
-finished dated document is immutable while tracked, but that receipt status
-does not grant permanent retention. Treat its base file and every
-`<stem>-update.md`, `<stem>-update-2.md`, and later sibling as one retirement
-family: keep or delete the whole family, never only one member.
+finished dated document is immutable while tracked, apart from its one
+authorized line-4 update pointer. Each finished document has at most one live
+`<stem>-update.md`; never create `<stem>-update-N.md`. Treat the base and its
+optional one update file as one retirement family: keep or delete the whole
+family, never only one member. A historical numbered sibling found in Git
+history remains historical evidence, not authority to create another one.
 
 Before deleting a family, audit GitHub issue bodies and comments. A reference
 to current guidance is repointed to a current successor or blocks deletion. A
@@ -353,14 +355,11 @@ measured 2026-09-12, six on `main` and two arriving with the 2026-09-10
 review round, five reading "first entry" and three "first entries".  Nothing
 checks it, here or anywhere else.
 
-`open` IS NOT `live`, and the difference is which thing the word describes.
-`live` describes the WORK: a plan is `live` while the work it names is still
-being done, which is why it has a terminal state, `executed <date>`.  `open`
-describes the FILE.  An update file's entries are each finished and dated the
-moment they are written, so nothing in one is ever pending; it is `open`
-because more entries are expected, and it has no terminal state for as long as
-the document it corrects exists.  Reusing `live` would import a life cycle the
-genre does not have.
+An update file is live while its base remains tracked: later dated entries are
+appended and stale present-tense claims are corrected in place. Its `State:` is
+`open` because more entries may be added, and it has no terminal state for as
+long as the document it corrects exists. This is distinct from a live plan,
+whose work is still being done and which therefore ends at `executed <date>`.
 
 What is retired is the THIN POINTER, not issue-filing, and only for the
 review files.  A review that finds work somebody must do still files a real

@@ -102,7 +102,7 @@ are:
 3. **The main-sourced operation deploys both instruction files and every tracked user-level
    skill.** Ben's decision, 2026-09-13: concur with Codex's recommendation to deploy the two
    instruction files and all skills together from the freshly fetched `origin/main` selected by
-   decision 1. The scope is `~/.claude/CLAUDE.md`, `~/.Codex/AGENTS.md`, both live homes of each
+   decision 1. The scope is `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, both live homes of each
    shared skill, and the appropriate live home of each tracked agent-specific skill. The
    implementation must validate every source file and skill tree before changing any destination
    and avoid leaving a partially replaced live skill where practical. This applies the selected
@@ -133,9 +133,9 @@ commit attaches `--sync-user-config --check` to step 3 of `py/main_repo_maintena
 the suite at step 6 and the mega at step 7. Both tracked user-level instruction files and their
 README files now prescribe canonical-first editing and main-sourced deployment. The cloud hook's
 behavior is unchanged; its comments and the surrounding instructions now state the branch-sourced
-exception explicitly. The two affected finished dated reports remain unchanged; their corrections
-are in `doc/user-level-config-in-cloud-sessions-update.md` and
-`doc/mega-coverage-2026-09-10-update.md`.
+exception explicitly. `doc/user-level-config-in-cloud-sessions.md` describes the present and is
+kept true in place. `doc/mega-coverage-2026-09-10.md` is a finished receipt, and its corrections
+are recorded in `doc/mega-coverage-2026-09-10-update.md`.
 
 A throwaway fake-remote and fake-home verifier exercised all nine current destinations. It
 verified nine explicit “not installed” results, complete deployment, a clean recheck, detection and
@@ -631,32 +631,30 @@ rename: “hand-authored” remains an unambiguous lint-scope term meaning “no
 and no repository-wide sweep is proposed. The review's phrase “against the 2026-09-04 vocabulary”
 therefore does not supply a mechanical replacement rule.
 
-A fresh live-tree census gives these dispositions:
+A historical live-tree census at
+`d34afb44d94a631e08587a49281eec8c3349620d` gave these dispositions:
 
-1. Commit `3134f32b` already corrected the three source descriptions cited in the finding.
-   `py/main_pipeline_graph.py` now calls `MAM-process.dot` Ben-written, and
-   `py/main_0_mega.py` describes the structured specification without an authorship claim and
-   calls `MAM-process.dot` Ben-written. The three cited spellings are absent from both modules.
-2. The finding's two `CLAUDE.md` anchors now occur at lines 24 and 49. Both use “hand-authored” as
-   the mark-order lint's term of art. The live instruction file has two additional occurrences of
-   the same term at lines 69 and 166; both make the same generated-or-captured distinction. All
-   four remain. The historical “hand-maintained” test-registry description at line 992 states the
-   maintenance method rather than an unknown authorship and also remains.
-3. `py/tests/test_prose_mark_order.py` still has exactly five occurrences of “hand-authored,” at
-   lines 1, 6, 41, 45 and 176. Line 1 names the lint's scope; line 6 quotes the instruction that
-   motivated the lint; line 41 distinguishes captured note HTML from prose; line 45 distinguishes
-   external input from prose; and line 176 states the lint failure. All five retain the term of
-   art. The adjacent line 56 called the edition-transcription headers “hand-written” and
-   immediately identified their contents as Ben's notes. Commit `c8ba9f00` changes that live
-   docstring to “Ben-written.”
+1. Commit `3134f32b` had already corrected the three source descriptions cited in the finding.
+   `py/main_pipeline_graph.py` called `MAM-process.dot` Ben-written, and
+   `py/main_0_mega.py` described the structured specification without an authorship claim and
+   called `MAM-process.dot` Ben-written. The three cited spellings were absent from both modules.
+2. The finding's two `CLAUDE.md` anchors used “hand-authored” as the mark-order lint's term of art.
+   The live instruction file had two additional occurrences making the same generated-or-captured
+   distinction. The historical “hand-maintained” test-registry description stated the maintenance
+   method rather than an unknown authorship.
+3. `py/tests/test_prose_mark_order.py` had exactly five occurrences of “hand-authored”: the lint's
+   scope, the instruction that motivated the lint, captured note HTML distinguished from prose,
+   external input distinguished from prose, and the lint failure. The adjacent docstring called
+   the edition-transcription headers “hand-written” and immediately identified their contents as
+   Ben's notes. Commit `c8ba9f00` changed that live docstring to “Ben-written.”
 4. The finished `doc/PLAN-wikisource-derived-mam-products.md` and frozen
-   `doc/mam-products-phase6-command-map.md` each have one “hand-authored” occurrence, both
+   `doc/mam-products-phase6-command-map.md` each had one “hand-authored” occurrence, both
    distinguishing source from generated output. The finished
-   `doc/assessment-two-stranded-artifacts-2026-09-09.md` has ten literal “hand-authored”
-   occurrences and one “hand-written” occurrence, rather than a literal population of nine. The
-   occurrences at lines 66, 68 and 175 quote earlier instruction text. Lines 89, 93, 117, 176,
-   233, 234 and 553 use the generated-or-captured classification. The “hand-written” occurrence
-   at line 116 describes Ben's notes in a header that is never regenerated, so
+   `doc/assessment-two-stranded-artifacts-2026-09-09.md` had ten literal “hand-authored”
+   occurrences and one “hand-written” occurrence, rather than a literal population of nine. Three
+   occurrences quote earlier instruction text; seven use the generated-or-captured
+   classification. The “hand-written” occurrence describes Ben's notes in a header that is never
+   regenerated, so
    `doc/assessment-two-stranded-artifacts-2026-09-09-update.md` records that the phrase should be
    read as “Ben-written header.” D12 leaves all three finished documents unchanged.
 
@@ -674,45 +672,44 @@ destructive local act, external configuration write or receipt rewrite occurred.
 
 Recorded by Codex on 2026-09-12. Finding 20.11 is complete as an evidence-only disposition.
 
-A fresh live-tree inspection gives these dispositions:
+A historical live-tree inspection at
+`974395f9f2fabf69eee147c1764886a7c8e28ec0` recorded these dispositions:
 
-1. The tracked canonical `dot-claude/user-wide-CLAUDE.md` has the cited text at line 1416, and
-   the live `C:/Users/BenDe/.claude/CLAUDE.md` has the same text at line 1416. The two files are
-   byte-identical at SHA-256
+1. The tracked canonical `dot-claude/user-wide-CLAUDE.md` and the live
+   `C:/Users/BenDe/.claude/CLAUDE.md` contained the cited text and were byte-identical at SHA-256
    `F32191A794596500297D4B566DAE98BEDCB126D00821B2BDCD880FFB438D0D18`.
-2. The tracked canonical `dot-Codex/user-wide-AGENTS.md` has the cited text at line 1197, and
-   the live `C:/Users/BenDe/.Codex/AGENTS.md` has the same text at line 1197. The two files are
-   byte-identical at SHA-256
+2. The tracked canonical `dot-Codex/user-wide-AGENTS.md` and the live
+   `C:/Users/BenDe/.codex/AGENTS.md` contained the cited text and were byte-identical at SHA-256
    `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`.
 
-Both occurrences of `[page](gh-pages/accgram/page.html)` are enclosed by backticks, so CommonMark
-parses each occurrence as an inline-code example rather than as a link. The surrounding sentence
-explicitly calls the repo-relative spelling “the wrong thing here.” The nonexistent target is
-therefore part of the negative example. Replacing the target with an existing page would make the
-example contradict the instruction it illustrates.
+Both occurrences of `[page](gh-pages/accgram/page.html)` were enclosed by backticks, so CommonMark
+parsed each occurrence as an inline-code example rather than as a link. The surrounding sentence
+explicitly called the repo-relative spelling “the wrong thing here.” The nonexistent target was
+therefore part of the negative example. Replacing the target with an existing page would have made
+the example contradict the instruction it illustrated.
 
-The positive `file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/maqaf-nonfinal-accents.html`
-example occurs in a fenced code block in each instruction file, and the named file exists in both
-the primary clone and the review worktree. No tracked Markdown-link checker exists in the live
-tree; the review-only `md_links_check.py` named by the finding treated inline code as links. No
-checker weakening, exclusion or mechanical gate is warranted.
+At that checkpoint, the positive
+`file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/maqaf-nonfinal-accents.html`
+example occurred in a fenced code block in each instruction file, and the named file existed in
+both the primary clone and the review worktree. No tracked Markdown-link checker existed; the
+review-only `md_links_check.py` named by the finding treated inline code as links. No checker
+weakening, exclusion or mechanical gate was warranted.
 
-The same review census separately identifies
+The same review census separately identified
 `misc/what-is-mam/img/provenance-misc.md:6` as a dead link. That occurrence is an ordinary
 reader-facing Markdown link, its target
-`.github/prompts/capture-what-is-mam-slides.prompt.md` is absent, and commit `84a801f4` deleted the
-target. The dead provenance link is pre-existing and is not one of finding 20.11's two instruction
-examples, so this narrow unit leaves the dead provenance link unchanged.
+`.github/prompts/capture-what-is-mam-slides.prompt.md` was absent, and commit `84a801f4` deleted the
+target. The dead provenance link was pre-existing and was not one of finding 20.11's two
+instruction examples, so this narrow unit left the dead provenance link unchanged.
 
 `git diff --check` and the tracked-prose mark-order lint passed; the lint passed 1 test. The full
 suite passed 997 tests, with 5 skipped and 65 subtests passed, in 113.28 seconds. No Python file
 changed, and this documentation-only disposition does not owe a mega run.
 
 Product axis: this disposition changes a review update only and reaches no generator or product.
-Act axis: the write is an ordinary repository change on the unpushed review branch; the tracked
-canonical instruction files, the live user-level copies, every finished dated document and the
-dead provenance link remain unchanged. No outward-facing act, destructive local act, external
-configuration write or receipt rewrite occurred.
+Act axis: the write was an ordinary repository change on the unpushed review branch; no
+outward-facing act, destructive local act, external configuration write or receipt rewrite
+occurred.
 
 ## Finding 11.5: `ḥataf` in prose and `xataf` in ASCII-oriented contexts
 
@@ -1035,7 +1032,7 @@ their original range; current filesystem and remote checks are dated below.
    agent-written explanatory comment remains required for an issue state change. The remote
    branch is a census fact, not an instruction to delete it.
 
-5. **Item 21.5 has no residual drift.** The live `C:/Users/BenDe/.Codex/AGENTS.md` and tracked
+5. **Item 21.5 has no residual drift.** The live `C:/Users/BenDe/.codex/AGENTS.md` and tracked
    `dot-Codex/user-wide-AGENTS.md` have the same SHA-256 hash,
    `577320F67CB32E2910D1DA269899814B5E44771D2D78E4E46D43321BAA3AECFC`. The tracked text now
    explicitly says to edit the live file first, copy it back and commit. The two historical
@@ -1412,7 +1409,9 @@ At checkpoint `c141f54105e12042150b16b81cf521685071d7be`, after current `main` a
 has 23 lines containing `.novc`. The current worktree has none of the named `mas_a_*` or
 `mas_b_*` files. The screen report's named worktree,
 `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/zen-babbage-2d6583`, no longer exists. The
-screen report remains unchanged at Git blob `09ac3f23175aacb1ffb10c39894b3c2d2fe78912`.
+screen report's substantive content is historical blob
+`a46dbf0f9b384afa072878584c1dace2328dc179`; its only additional line is the authorized update
+pointer.
 The documentation-search report remains unchanged at Git blob
 `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
 
@@ -1553,6 +1552,8 @@ rewrite occurred.
 
 ## Finding 10: the moved crop directories have dedicated license coverage
 
+Recorded by Codex on 2026-09-13.
+
 Finding 10 is resolved. The notice-coverage mismatch recorded on 2026-09-12 no longer exists,
 and Ben's 2026-09-13 decision is to keep the way `DATA-LICENSES.md` now covers the crops.
 
@@ -1620,7 +1621,7 @@ blocks this close-out.
 | 17 | The Phonetic MAM paragraph now names the post-stress-meteg survey build and the two additional accessors. |
 | 18 | The NUL-delimited census corrects finding 18.2's HTML counts. Finding 18.1 remains an evidence limit and selects no implementation change. |
 | 19 | Items 19.1 and 19.2 have sibling-update corrections. Item 19.3 deliberately preserves the finished plan's historical “now” statement. |
-| 20 | Item 20.1 retains the established term-of-art uses and corrects the Ben-written sites; items 20.2 and 20.3 name every referent; item 20.4 numbers every announced set; item 20.5 supplies seven disposition-first readings; item 20.6 preserves receipt paths; item 20.7 names `sed`; item 20.8 preserves immutable commit messages; item 20.9 keeps the live crop-coordinate rule by Ben's decision; item 20.10 removes the authored trailing blank line; and item 20.11 preserves the inline-code negative examples. |
+| 20 | Item 20.1 retains the established term-of-art uses and corrects the Ben-written sites; items 20.2 and 20.3 name every referent; item 20.4 numbers every announced set; item 20.5 supplies seven disposition-first readings; item 20.6 preserves receipt paths; item 20.7 names `sed`; item 20.8 preserves immutable commit messages; item 20.9 keeps the crop-coordinate rules in `doc/meteg-after-silluq-snips/README.md` and `doc/lam-2-3-akhla-snips/README.md` by Ben's decision; item 20.10 removes the authored trailing blank line; and item 20.11 preserves the inline-code negative examples. |
 | 21 | Items 21.1 and 21.2 record completed worktree housekeeping; item 21.3 remains a historical cadence census; item 21.4 corrects the trailer count without creating an issue-attribution exception or deleting the remote branch; item 21.5 has no residual drift and is superseded in scope by completed inherited item 3; item 21.6 closed issues #266 and #267 after agent-written explanatory comments; item 21.7 fixes the live plan's `REPOS_ROOT` instructions; and item 21.8 records completed housekeeping, the maintenance referral, dated censuses and the corrected interpretation of worktrees `0e63`. |
 
 | Inherited item | Close-out disposition |

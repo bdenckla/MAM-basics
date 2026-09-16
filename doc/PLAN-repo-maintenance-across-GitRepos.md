@@ -445,9 +445,12 @@ the "The doc/ directory standard" section of `py/repo_util/check_repo_standards.
 that only records finished work is deleted, not archived; git history keeps it.
 
 Receipt immutability and retention are independent. A finished dated document is never edited
-while it remains tracked, but receipt status does not make the document permanent. Treat a base
-receipt and every sibling `<stem>-update.md`, `<stem>-update-2.md`, and so on as one retirement
-family: keep or delete the whole family, never only one member.
+while it remains tracked apart from its authorized line-4 update pointer, but receipt status does
+not make the document permanent. Treat a base receipt and its optional one live
+`<stem>-update.md` as one retirement family: keep or delete the whole family, never only one
+member. Never create `<stem>-update-N.md`. A historical numbered sibling found in Git history
+remains historical evidence and belongs to the historical family in which it appears; preserving
+that file literally does not make numbered siblings current policy.
 
 Before deleting a family, audit GitHub issue bodies and comments owner-wide and classify each
 reference. A reference to current guidance is repointed to a current successor or blocks the

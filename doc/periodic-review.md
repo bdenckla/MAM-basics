@@ -56,18 +56,16 @@ don't go 'looking for trouble' in details beyond the narrow focus". A review of 
 across a series of commits, for better instruction files or linters, is a different review, and
 there individual commits matter.
 
-Measured on 2026-09-12, ten files match `doc/review-findings-*.md`, dated 2026-07-29 through
-2026-09-08, all of them window reviews. An eleventh file held the name until 2026-09-12, when it
-was renamed `doc/blind-dive-into-template-params.md` on Ben's instruction: Codex had written it
-(`fa07fd8f`) as a current-state review of template projection at one commit, not a review of a
-commit window. Re-establish the census, and read the states rather than inferring them:
+The unprefixed dated review series is selected by the exact date-shaped pathspec below. Re-establish
+the census and read the states rather than inferring them. The broader
+`doc/review-findings-*.md` pattern also matches live update files and is not the series census.
 
 ```powershell
-git ls-files -- "doc/review-findings-*.md"
+git ls-files -- "doc/review-findings-????-??-??.md"
 ```
 
 ```powershell
-git grep -n "^State:" HEAD -- "doc/review-findings-*.md"
+git grep -n "^State:" HEAD -- "doc/review-findings-????-??-??.md"
 ```
 
 ## Two standing properties of the series
@@ -80,9 +78,10 @@ Two properties of the series matter to every review in it.
    for a scope decision he does not owe. A review reads whatever the window changed in a public
    repository: `doc/review-findings-2026-09-08.md` is headed "review of the public repos" and
    accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
-   is the RECORD. Each file carries a `State:` line at
-   line 3 directly under the H1. The initial review records remediation state; later turns record
-   review completion, under D10 in `doc/dual-agent-review.md`. The
+   is the RECORD. Each file carries a `State:` line at line 3 directly under the H1. The initial
+   review records what was true when the review finished; later remediation State belongs in its
+   single live update file. Later turns record review completion, under D10 in
+   `doc/dual-agent-review.md`. The
    thin tracking issue every review used to file — wlc-utils#87, then MAM-basics #219, #228, #231,
    #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
    account and only #219 was ever adopted as a citation handle. A review that finds work somebody
@@ -112,9 +111,9 @@ founding it. A review that departs from it should say why in its opening paragra
 
 1. **The H1 names the window**: "Findings of the <date> review of the public repos since <date of
    the previous review>". Through 2026-08-22 it read "of the work since <date>".
-2. **Line 3 is the `State:` line**, directly under the H1: `not yet acted on`, or
-   `acted on <date>` plus any clause naming what is not. `check_repo_standards.py`'s docstring is
-   where that vocabulary is declared.
+2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
+   finished. Later remediation State and every disposition go in the review's single live update
+   file. `check_repo_standards.py`'s docstring is where the vocabulary is declared.
 3. **The opening paragraphs say how the file was written**: which session, which commit it was frozen
    at, and anything that happened to it on the way into the tree.
 4. **`## Scope, anchors and census`**: the commit range in each repository, named by commit, and a
@@ -129,9 +128,6 @@ founding it. A review that departs from it should say why in its opening paragra
 8. **`## Open ends the window itself declares (not findings)`**: work the window's own commits say
    is unfinished, which is not a defect of the window.
 9. **`## What this review did not check`**.
-10. **`## Dispositions after remediation`**, added later, when somebody acts on the findings: one
-    row per finding or sub-finding, each naming the commit that fixed it or the decision that
-    closed it.
 
 Items 4, 5, 6 and 9 first appear together in `doc/review-findings-2026-09-04.md`. From 2026-08-03
 to 2026-09-01 a review usually fixed some findings during the review itself and said so under
@@ -325,16 +321,12 @@ questioning your proposed fix-ups to review finding language."
 
 After a review is written, and after any review of it:
 
-1. Record Ben's decisions on the choices the review leaves to him, asked as one list covering every
-   finding, as the section "Reviewing the review, with the same agent and with Ben" sets out.
-2. Write a remediation plan for a fresh task, including concrete wording for each editorial change,
-   and obtain Ben's approval before execution. The two rules below govern how.
-3. Execute the approved remediation, recording each finding's disposition under a
-   `## Dispositions after remediation` section at the end of the review file. The rest of the file
-   is left as written; a correction to it goes in `<stem>-update.md`, under `~/.claude/CLAUDE.md`'s
-   section "A finished dated document is corrected in `<stem>-update.md`, never edited".
-4. Integrate by the worktree procedure in `~/.claude/CLAUDE.md`, with step 2 a mega run, as
-   `CLAUDE.md`'s section "Integrating a worktree branch here" requires.
+1. Record Ben's decisions on every finding, asked as one list as the section "Reviewing the review,
+   with the same agent and with Ben" sets out.
+2. Write and approve a fresh-task remediation plan with concrete editorial wording.
+3. Execute remediation and put later State and every disposition in the review's one live update
+   file, leaving the base's historical State untouched apart from its line-4 pointer.
+4. Run the required final integration gate.
 
 ### Verification cadence during remediation — Ben's decision, 2026-09-13
 

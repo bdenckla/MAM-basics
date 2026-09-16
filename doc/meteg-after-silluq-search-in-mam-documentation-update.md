@@ -67,7 +67,7 @@ The corrected readings are:
 | Deuteronomy 12:2 | “different: L lacks the silluq” | “different: the LC lacks the silluq” |
 | Deuteronomy 23:12 | “different: L lacks the silluq; the target's other U+05BD is a meteg before the stress” | “different: the LC lacks the silluq; the target's other U+05BD is a meteg before the stress” |
 | Deuteronomy 23:18 | “different: L lacks the silluq” | “different: the LC lacks the silluq” |
-| 1 Kings 7:37 | “THE PHENOMENON: A has two strokes, silluq then ga'ya; L, the printed editions, Koren, the Simanim Tiqqun and Mechon Mamre have the silluq alone” | “THE PHENOMENON: the Aleppo Codex has two strokes, silluq then ga'ya; the LC, the printed editions, Koren, the Simanim Tanakh and Mechon Mamre have the silluq alone” |
+| 1 Kings 7:37 | “THE PHENOMENON: A has two strokes, silluq then ga'ya; L, the printed editions, Koren, the Simanim Tiqqun and Mechon Mamre have the silluq alone” | “THE PHENOMENON: the Aleppo Codex has two strokes, silluq then meteg; the LC, the printed editions, Koren, the Simanim Tanakh and Mechon Mamre have the silluq alone” |
 | Jeremiah 48:22 | “unrelated: a spot beside A's silluq makes it look like tevir” | “unrelated: a spot beside the Aleppo Codex's silluq makes it look like tevir” |
 | Obadiah 1:16 | “different: L has its one U+05BD on another syllable (silluq position)” | “different: the LC has its one U+05BD on another syllable (silluq position)” |
 | Obadiah 1:17 | “different: L lacks the silluq; the target's other U+05BD is a meteg before the stress” | “different: the LC lacks the silluq; the target's other U+05BD is a meteg before the stress” |
@@ -81,9 +81,13 @@ The corrected readings are:
 | Proverbs 6:16 | “unrelated: a spot beside A's silluq” | “unrelated: a spot beside the Aleppo Codex's silluq” |
 
 The 1 Kings 7:37 corrected reading carries forward this file's earlier correction from “the
-Simanim Tiqqun” to “the Simanim Tanakh”; only the `A` and `L` changes are new in this entry. The
-Reference, Template, Target and Note columns remain as written source material. Finding 11.2's
-category label and later prose are outside this subunit and remain uncorrected.
+Simanim Tiqqun” to “the Simanim Tanakh”; this entry also expands `A` and `L` and corrects analytic
+`ga'ya` to `meteg`. The Reference, Template, Target and Note columns remain as written source
+material. Finding 11.2's category label and later prose are outside this subunit and remain
+uncorrected.
+
+The classification reads “silluq then meteg”; this is analytic prose, not a quotation retaining
+`ga'ya`.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -114,7 +118,9 @@ These six passages use the report's analytic voice, for which the report's openi
 note declares “meteg.” The passages that report MAM's introduction, Yeivin's `gaʿya`, or
 Breuer's `ga'aya` remain unchanged. All twelve `ga'ya` sites in
 `doc/foi-mtgmtg-empty-cell.md` also remain unchanged because each reports Yeivin or his
-categories. Finding 11.5's separate choice between `hataf` and `ḥataf` remains unmade.
+categories. Finding 11.5's choice was recorded on 2026-09-13 in
+`doc/review-findings-2026-09-10-update.md`: use `ḥataf` in narrative Unicode prose and `xataf` in
+ASCII-oriented contexts.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no

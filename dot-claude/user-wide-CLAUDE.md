@@ -824,15 +824,19 @@ left as written, like a pushed commit under a "never amend pushed commits" disci
 documents current is maintenance without end, and it makes them more confusing rather than less,
 since a reader cannot tell how the writer could have known at the time what the document now says.
 
-“Left as written” governs a receipt while it remains tracked; it does not require permanent
-retention. A repository's manual document-retirement rule may delete a spent base receipt and
-every update sibling together, with Git history as the historical copy.
+Each finished document has at most one live sibling, `<stem>-update.md`. Corrections, later
+measurements, later State, and remediation dispositions go in that file. Keep the update file true
+while the base remains tracked: append later dated entries and correct stale present-tense claims
+in place. Never create `<stem>-update-N.md`.
 
-So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
-small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes in
-`doc/PLAN-foo-update-2.md`, a third in `doc/PLAN-foo-update-3.md`, and so on. An update file names
-the passage it corrects by that passage's own words, since line numbers drift, and it is itself
-live, so it is kept true.
+When the update file is created, insert one line directly below line 3 of the base: `Updates and
+later status: [<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary
+joining of a prose paragraph that begins on line 3 without changing its text, is the only
+post-completion edit to the base. Each update entry names the passage it corrects by that passage's
+own words, since line numbers drift. A spent base and its optional one update file are one
+retirement family and may be retired together under the repository's manual retirement procedure.
+A historical numbered sibling in Git history remains historical evidence; the live policy neither
+creates another numbered sibling nor uses the historical file as authority for doing so.
 
 **A document that describes the present is the opposite case and is kept true in place**: this
 file, a repo's own `CLAUDE.md`, the READMEs, the docstrings, and a plan still being executed.
@@ -845,9 +849,8 @@ session outside MAM-basics did not, and this file's own §"Two axes of risk" ite
 statement most sessions cannot load. A review of the MAM-basics review branch's edits raised the
 asymmetry as possibly deliberate, on the reading that the rule might be specific to that
 repository. Ben, 2026-09-12: *"it is not such a policy; it should apply to all repos."* MAM-basics'
-own statement is the fuller one and stays there, because it names the update files that exist in
-that repository; this one is the rule itself. That fuller statement reaches MAM-basics' `main` with
-the 2026-09-10 review round, so until then it is findable only on that round's branch.
+fuller repository statement names that repository's update files; this section states the
+cross-project rule.
 
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black
