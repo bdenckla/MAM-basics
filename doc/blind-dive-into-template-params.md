@@ -1,6 +1,7 @@
 # Findings of the 2026-09-11 current-state review of template projection
 
 State: five open findings.
+Updates and later status: [blind-dive-into-template-params-update.md](blind-dive-into-template-params-update.md).
 
 The reviewed state is MAM-basics commit
 `73c6b1137777ad1a522949fcea290f8ac1f87a7b`. The review treats the code at that

@@ -36,4 +36,5 @@ plain-`hataf` sites on five lines. The corrected readings are:
 
 The identifier path `py/explicit_xataf/extract.py` remains as written because file paths and
 code identifiers retain the ASCII-oriented spelling `xataf`. The finished Koren-candidates
-report remains unchanged at Git blob `51dfa981efc871449cee7830b294389e5ecb7dbf`.
+report's substantive bytes match historical blob `51dfa981efc871449cee7830b294389e5ecb7dbf`;
+its only additional line is the authorized update pointer.

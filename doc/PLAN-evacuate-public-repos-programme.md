@@ -1,6 +1,7 @@
 # Evacuating the public repos into MAM-basics — the programme
 
 State: complete
+Updates and later status: [PLAN-evacuate-public-repos-programme-update.md](PLAN-evacuate-public-repos-programme-update.md).
 
 **RETAIN THIS FILE AND THE TWO COMPLETED STAGE PLANS.**
 `PLAN-evacuate-five-MAM-products.md` now carries the fourth stage's six

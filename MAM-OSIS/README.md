@@ -20,7 +20,7 @@ To bring it up to date, run, from the MAM-basics repository root:
 .venv/Scripts/python.exe py/main_mam_osis.py
 ```
 
-That reads `MAM-simple/`, so regenerate MAM-simple first if the Wikisource text has
-moved since this product was last written.
+That reads the incremental BHS XML folder with the MAM XML folder as its base, so regenerate
+MAM-simple first if its source changed.
 
 MAM-basics also publishes [documentation for MAM OSIS](https://bdenckla.github.io/MAM-basics/MAM-OSIS/) via GitHub Pages.

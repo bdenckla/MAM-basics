@@ -6,7 +6,8 @@ State: open, first entry 2026-09-13.
 
 Recorded by Codex on 2026-09-13. This entry corrects the passage beginning
 “`dot-claude/` and `dot-Codex/` are **storage**” under “Storage is not load scope, and the layout
-says so.” The source document is a finished dated report and remains unchanged.
+says so.” The source document describes the current cloud-session setup and is kept true in place.
+This dated entry records the earlier correction rather than freezing the source document.
 
 Ben's four decisions of 2026-09-13 replace the report's live-first local deployment procedure.
 For persistent configuration on Ben's machines, edit the tracked canonical copy in a MAM-basics

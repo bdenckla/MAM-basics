@@ -1,6 +1,7 @@
 # Meteg after silluq: what MAM's documentation and the secondary literature name
 
 **The documentation names no further case. The one verse-final chanted word it names with a meteg after the silluq is the one already known, 1 Kings 7:37 לְכֻלָּֽהְנָֽה, and every other place the documentation brings near it is a different phenomenon.** Searched 2026-09-09 in the worktree `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/zen-babbage-2d6583` (branch `claude/meteg-after-silluq-mam-9555f5`, HEAD `30fb7681`), as task A of a three-way investigation; the two sibling tasks screen MAM against UXLC and WLC and build a Koren lookup list, and nothing here duplicates them. Ben Denckla set the question and the four sources on 2026-09-09; the classifications below are Claude's, by the rules stated at each finding.
+Updates and later status: [meteg-after-silluq-search-in-mam-documentation-update.md](meteg-after-silluq-search-in-mam-documentation-update.md).
 
 Four sources were searched, and the figures are the ones the scripts in the last section print:
 

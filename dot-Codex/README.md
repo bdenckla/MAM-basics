@@ -6,13 +6,13 @@ sit outside every project repository, so this directory is the durable copy in
 
 | Tracked path | Live location |
 | --- | --- |
-| `user-wide-AGENTS.md` | `~/.Codex/AGENTS.md` |
-| `hooks.json` | `~/.Codex/hooks.json` |
-| `hooks/check_project_doc_budget.py` | `~/.Codex/hooks/check_project_doc_budget.py` |
+| `user-wide-AGENTS.md` | `~/.codex/AGENTS.md` |
+| `hooks.json` | `~/.codex/hooks.json` |
+| `hooks/check_project_doc_budget.py` | `~/.codex/hooks/check_project_doc_budget.py` |
 | `skills/<name>/` | `~/.agents/skills/<name>/` |
 
 Deployment also creates
-`~/.Codex/hooks/expected-user-wide-AGENTS.sha256` from the `origin/main` copy of
+`~/.codex/hooks/expected-user-wide-AGENTS.sha256` from the `origin/main` copy of
 `user-wide-AGENTS.md`; the generated fingerprint is not a separately authored tracked file.
 
 **This directory is storage, and project instruction discovery loads none of it.** Repo
@@ -67,7 +67,7 @@ machine policy rather than relying on an implicit upstream default. Keeping the 
 also preserves the mechanism for a deliberate future increase if a repository or nested
 instruction chain needs one. The limit is shared by the project files selected from the project
 root down to the session's working directory, not applied separately to each file. The user-wide
-`~/.Codex/AGENTS.md` is loaded outside that project budget and must not be added to the project
+`~/.codex/AGENTS.md` is loaded outside that project budget and must not be added to the project
 total. `config.toml` remains machine-local and untracked; the deployment procedure below does not
 install or change it.
 

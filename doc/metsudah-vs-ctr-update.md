@@ -23,3 +23,9 @@ file of that name is tracked.
 
 The comparison itself is unaffected. Its fetch happened on 2026-08-04, the CSV it produced is
 what the findings rest on, and nothing in this repository re-fetches from that endpoint now.
+
+## 2026-09-16: the crop README moved after the finished report
+
+The base passage beginning “The motivating clue is in” names the historical destination. The live
+destination of the former `doc/ms-snips/README.md` is
+`doc/lam-2-3-akhla-snips/README.md`; the base report keeps its historical link.

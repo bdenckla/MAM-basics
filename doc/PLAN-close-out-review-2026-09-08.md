@@ -1,6 +1,7 @@
 # Plan: close out the 2026-09-08 review, every step on Codex — turn 5 handed off, Ben's decisions taken, the procedure recorded, the findings remediated, the worktree retired
 
 State: remediation executed 2026-09-10; Steps 1-6 implementation complete; final integration evidence recorded separately; Step 7 remains Ben's task after the final task ends.
+Updates and later status: [PLAN-close-out-review-2026-09-08-update.md](PLAN-close-out-review-2026-09-08-update.md).
 
 Status updated 2026-09-10 at the final local checkpoint: Waves 1-4 and all E/N
 items are complete within approved scope. The suite and editorial gate pass, and

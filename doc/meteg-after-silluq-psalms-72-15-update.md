@@ -52,5 +52,12 @@ Recorded by Codex on 2026-09-13. A fresh census of the finished Psalms 72:15 rep
    non-guttural letters” should read “no policy on ḥatafs under non-guttural letters,” and “a
    hataf under a non-guttural letter” should read “a ḥataf under a non-guttural letter.”
 
-The finished Psalms 72:15 report remains unchanged at Git blob
-`b7944176b007648166d8c362e06a7927ca84df8d`.
+The finished Psalms 72:15 report's substantive bytes match historical blob
+`b7944176b007648166d8c362e06a7927ca84df8d`; its only additional line is the authorized update
+pointer.
+
+## 2026-09-16: the crop paths moved after the finished report
+
+The crop paths named in the finished Psalms 72:15 report are historical. Since commit `a8e4790e`,
+the live crops and their source notes are under `doc/meteg-after-silluq-snips/`; the finished
+report's pre-move wording was restored under the receipt policy.

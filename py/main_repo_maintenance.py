@@ -30,19 +30,11 @@ Seven independent steps, in order:
    a decision or a pending item, and promote anything that is -- to an issue,
    to ``doc/``, or into the docstring of the code it explains.
    ``grep -rn '\.novc' py/ doc/`` finds the citations worth honouring.
-2. Remove finished Claude worktrees under ``.claude/worktrees/`` and the merged
-   ``claude/*`` branches they leave behind
-   (``repo_util.git_worktree_cleanup``). Unlike step 1 this one spares
-   anything it could destroy: a worktree with any uncommitted change, any
-   commit not yet in the default branch, or any gitignored content (the class
-   of file step 1 wipes on purpose and this step must not wipe by accident --
-   ``git worktree remove`` alone would) is kept and reported, never forced. Codex
-   worktrees are outside this step and use the separate preflighted retirement
-   action in ``py/main_repo_util.py``.
-   This step is a repo-maintenance STANDARD, not one repo's quirk -- see
-   ``repo_util/check_repo_standards.py``'s ``worktree_hygiene`` check, which
-   measures every repo against it, and which this repo did not itself satisfy
-   until the standard's reference implementation came home here.
+2. Inspect both Claude-owned and Codex-owned worktrees through the shared
+   retirement audit. This step reports candidates and blockers and removes nothing.
+   Prepare each ended target with `py/main_repo_util.py --prepare-worktree-retirement`,
+   review its preflight and .novc citations, then execute separately with
+   `--execute-worktree-retirement`. All owners use the same safety and .novc policy.
 3. Fetch ``origin`` in the primary MAM-basics clone and compare both live
    instruction files, the user-level Codex hook, its origin-derived instruction
    fingerprint and every tracked user-level skill destination with
@@ -101,7 +93,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-worktrees",
         action="store_true",
-        help="don't remove finished Claude worktrees and their merged branches",
+        help="don't inspect Claude and Codex worktrees through the shared retirement audit",
     )
     parser.add_argument(
         "--skip-user-config-check",
@@ -154,8 +146,8 @@ def _clean_one_novc(novc, label: str) -> None:
 
 
 def clean_worktrees() -> bool:
-    """Returns False only on a real failure -- a spared worktree is not one."""
-    report = git_worktree_cleanup.clean_worktrees(_REPO)
+    """Inspect both owners; never retire a checkout during routine maintenance."""
+    report = git_worktree_cleanup.clean_worktrees(_REPO, owner="both")
     git_worktree_cleanup.print_report(report)
     return not report.errors
 

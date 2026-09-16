@@ -58,5 +58,6 @@ The corrected readings are:
 4. In section 8, the sentence immediately before the table and both the Psalms 4:3 and Psalms
    71:9 table rows should each read “deḥi” in place of “dexi.”
 
-The finished screen report remains unchanged at Git blob
-`a46dbf0f9b384afa072878584c1dace2328dc179`.
+The finished screen report's substantive bytes match historical blob
+`a46dbf0f9b384afa072878584c1dace2328dc179`; its only additional line is the authorized update
+pointer.

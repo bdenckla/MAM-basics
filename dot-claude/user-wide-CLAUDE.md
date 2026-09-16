@@ -88,7 +88,7 @@ restates — the whole content of this list is that the five are one axis:
    a clone. §"Git & commits"'s "Still ask before rewriting history or discarding work", and
    §"A worktree runs the primary clone's venv" for the plain `git worktree remove` that
    follows a junction and empties the real venv without warning.
-3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.Codex/`. They change
+3. **Writes outside the repository**: `~/.claude/`, `~/.agents/`, `~/.codex/`. They change
    what every future session loads, and nothing version-controls them, which is why the preamble
    above requires the complete `origin/main`-sourced deployment and attaches its read-only check
    to repository maintenance.
@@ -248,6 +248,21 @@ mega remained reserved for final integration. Those figures are historical evide
 per-unit full-suite cadence was disproportionate, not a census a future session re-measures as a
 prerequisite.
 
+## Delegate bounded work when it helps
+
+Root agents and sub-agents are explicitly authorized to spawn further sub-agents in every
+session, without asking Ben first, when bounded, independently checkable work can run in
+parallel, a fresh sequential pass can improve quality, or delegation can keep noisy investigation
+out of the root agent's context. Sub-agents may work in parallel or hand a later step to another
+sub-agent. Tell Ben when delegation starts and what each sub-agent owns. Do not delegate merely to
+satisfy a quota; keep tightly coupled work local when coordination would cost more than it saves.
+
+The root agent remains the orchestrator. The root agent defines scope, collects and reconciles
+sub-agent results, verifies material claims before adopting them, owns integration, and owns the
+final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
+read-only investigation freely; if concurrent agents must write, give the agents separate verified
+worktrees. A sub-agent never stages or commits another agent's unfinished files.
+
 ## all-repos.code-workspace is the roster: clone only what it lists
 **"Set up GitRepos" on a new machine and "sync GitRepos" on this one are the same question,
 and `MAM-basics/all-repos.code-workspace` is the whole answer.** Ben's decision, 2026-08-31:
@@ -335,8 +350,9 @@ work, or whether a forest is a deliberate handoff environment.
   disk space until emptied.
 
 The MAM-basics runbook `doc/PLAN-repo-maintenance-across-GitRepos.md` carries the corresponding
-judgment step (its step 7), so a repository-maintenance session learns that this work belongs in
-maintenance without trying to automate the decision.
+task-folder judgment step, “Retire completed Codex task folders under
+`C:/Users/BenDe/Documents/Codex`,” so a repository-maintenance session learns that this work
+belongs in maintenance without trying to automate the decision.
 
 ## Never change an issue's state without a comment saying why
 Closing, reopening, relabelling or reassigning a GitHub issue records no reason, so post the reason
@@ -824,15 +840,19 @@ left as written, like a pushed commit under a "never amend pushed commits" disci
 documents current is maintenance without end, and it makes them more confusing rather than less,
 since a reader cannot tell how the writer could have known at the time what the document now says.
 
-“Left as written” governs a receipt while it remains tracked; it does not require permanent
-retention. A repository's manual document-retirement rule may delete a spent base receipt and
-every update sibling together, with Git history as the historical copy.
+Each finished document has at most one live sibling, `<stem>-update.md`. Corrections, later
+measurements, later State, and remediation dispositions go in that file. Keep the update file true
+while the base remains tracked: append later dated entries and correct stale present-tense claims
+in place. Never create `<stem>-update-N.md`.
 
-So a correction, an update or a later measurement to `doc/PLAN-foo.md` goes in a new, hopefully
-small `doc/PLAN-foo-update.md`; a second round that should not be added to that file either goes in
-`doc/PLAN-foo-update-2.md`, a third in `doc/PLAN-foo-update-3.md`, and so on. An update file names
-the passage it corrects by that passage's own words, since line numbers drift, and it is itself
-live, so it is kept true.
+When the update file is created, insert one line directly below line 3 of the base: `Updates and
+later status: [<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary
+joining of a prose paragraph that begins on line 3 without changing its text, is the only
+post-completion edit to the base. Each update entry names the passage it corrects by that passage's
+own words, since line numbers drift. A spent base and its optional one update file are one
+retirement family and may be retired together under the repository's manual retirement procedure.
+A historical numbered sibling in Git history remains historical evidence; the live policy neither
+creates another numbered sibling nor uses the historical file as authority for doing so.
 
 **A document that describes the present is the opposite case and is kept true in place**: this
 file, a repo's own `CLAUDE.md`, the READMEs, the docstrings, and a plan still being executed.
@@ -845,9 +865,8 @@ session outside MAM-basics did not, and this file's own §"Two axes of risk" ite
 statement most sessions cannot load. A review of the MAM-basics review branch's edits raised the
 asymmetry as possibly deliberate, on the reading that the rule might be specific to that
 repository. Ben, 2026-09-12: *"it is not such a policy; it should apply to all repos."* MAM-basics'
-own statement is the fuller one and stays there, because it names the update files that exist in
-that repository; this one is the rule itself. That fuller statement reaches MAM-basics' `main` with
-the 2026-09-10 review round, so until then it is findable only on that round's branch.
+fuller repository statement names that repository's update files; this section states the
+cross-project rule.
 
 ## Format Python with black
 - **black is my formatter of choice.** After writing or editing any Python file, run black

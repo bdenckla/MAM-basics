@@ -1,13 +1,7 @@
 # Metsudah Megillot (Sefaria) vs. Chabad CTR — plan, then findings
 
-Ben's ask, 2026-08-04: *"Compare Sefaria's Metsudah Megillot to Chabad CTR's corresponding
-five books."* The motivating clue is in [ms-snips/README.md](ms-snips/README.md): the
-Metsudah Five Megillot digital text quoted into a Sefaria correction thread has U+05AD
-HEBREW ACCENT DEHI on prose-book tipḥas, and Chabad's CTR abuses the same lookalike pair in
-the opposite direction (`py/author_misc/rocc_2_pre_vowel_accents_in_ctr.py`). The question
-this comparison answers: **is Sefaria's Metsudah Hebrew text a deterministic transform of
-CTR (or of a shared Judaica Press/Davka ancestor — see `rocc_1_on_the_provenance_of_ctr.py`),
-and what exactly is the transform?**
+Ben's ask, 2026-08-04: *"Compare Sefaria's Metsudah Megillot to Chabad CTR's corresponding five books."* The motivating clue is in [ms-snips/README.md](ms-snips/README.md): the Metsudah Five Megillot digital text quoted into a Sefaria correction thread has U+05AD HEBREW ACCENT DEHI on prose-book tipḥas, and Chabad's CTR abuses the same lookalike pair in the opposite direction (`py/author_misc/rocc_2_pre_vowel_accents_in_ctr.py`). The question this comparison answers: **is Sefaria's Metsudah Hebrew text a deterministic transform of CTR (or of a shared Judaica Press/Davka ancestor — see `rocc_1_on_the_provenance_of_ctr.py`), and what exactly is the transform?**
+Updates and later status: [metsudah-vs-ctr-update.md](metsudah-vs-ctr-update.md).
 
 **Answered, 2026-08-05: it is not a transform.** Neither text is a deterministic function of
 the other's bytes; both are independent conversions of one shared digital ancestor. The

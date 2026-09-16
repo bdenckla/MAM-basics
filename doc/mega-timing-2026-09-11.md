@@ -1,10 +1,7 @@
 # Where a mega run spends its time, and what makes it faster
 
-Written by a Claude session on 2026-09-11, from a task chip that another Claude session wrote the
-same day. Ben's words behind the chip were "I think the most interesting direction to go in is to
-make mega run faster than to keep running mostly useless or entirely useless test suite entries"
-and "Please bring up a task chip for this mega speedup investigation." Everything else here is the
-measurement and analysis of the session that wrote this file.
+Written by a Claude session on 2026-09-11, from a task chip that another Claude session wrote the same day. Ben's words behind the chip were "I think the most interesting direction to go in is to make mega run faster than to keep running mostly useless or entirely useless test suite entries" and "Please bring up a task chip for this mega speedup investigation." Everything else here is the measurement and analysis of the session that wrote this file.
+Updates and later status: [mega-timing-2026-09-11-update.md](mega-timing-2026-09-11-update.md).
 
 **Measured against** `main` at `132f2f3e` (2026-09-11) plus the commits of branch
 `claude/quirky-keller-b4fa8b`: `93550605` (step timing), `15c09692` (the prose scanner),

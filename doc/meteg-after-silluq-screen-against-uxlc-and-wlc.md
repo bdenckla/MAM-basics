@@ -1,6 +1,7 @@
 # Meteg after silluq: MAM's verse-final chanted words screened against UXLC 3.9 and WLC 4.22
 
 Task B of Ben's question of 2026-09-09 -- does MAM have a verse-final chanted word with a meteg after the silluq besides 1 Kings 7:37 -- run as a differential screen of every verse-final chanted word of MAM against UXLC 3.9 and WLC 4.22, with WLC 4.20 as a second run and mgketer's transcription of Mikra'ot Gedolot ha-Keter as an optional third. Written by `.novc/mas_b_write_doc.py` from the screen's JSON, at worktree HEAD `30fb7681` (branch `claude/meteg-after-silluq-mam-9555f5`), 2026-09-09. Every Hebrew form below is lifted from the data by that script; the UXLC and WLC forms are shown in MAM's mark order (`uni_denorm.give_std_mark_order`) because `py/tests/test_prose_mark_order.py` requires it of every tracked `.md`, and the screen itself compared letter positions, never bytes, so the reordering changes nothing it reports. UXLC's m-notes and d-notes were ignored throughout (Ben's instruction, 2026-09-09): a U+05BD is a U+05BD whether or not a note sits on it.
+Updates and later status: [meteg-after-silluq-screen-against-uxlc-and-wlc-update.md](meteg-after-silluq-screen-against-uxlc-and-wlc-update.md).
 
 Two terms, used exactly as the `hebrew-prose` skill defines them: an **atom** is one written
 word between spaces or maqafs; a **chanted word** is a lone atom or a whole maqaf compound.

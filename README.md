@@ -84,7 +84,7 @@ Run scripts from the repo root, not from `py/`. On MS-Windows:
 .venv/Scripts/python.exe py/main_mam_simple.py
 ```
 
-Run tests through the unified harness (on MS-Windows:):
+Run tests through the unified harness (on MS-Windows):
 
 ```bash
 .venv/Scripts/python.exe py/main_test.py

@@ -17,5 +17,6 @@ the finished report. The corrected readings are:
 2. In section 8's **Syllables** item, “a furtive patah” should read “a furtive pataḥ,” and “a
    sheva or a hataf” should read “a sheva or a ḥataf.”
 
-The finished report remains unchanged at Git blob
-`fad8f1836286e3fbb76ce0da39918f23cdb9e4b9`.
+The finished report's substantive bytes match historical blob
+`fad8f1836286e3fbb76ce0da39918f23cdb9e4b9`; its only additional line is the authorized update
+pointer.

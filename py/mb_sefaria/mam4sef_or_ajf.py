@@ -2,12 +2,15 @@
 
 import json
 import os
+from pathlib import Path
+
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_misc import osis_book_abbrevs
 from mb_sefaria import sef_cmn
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import paths
+from mb_cmn.mam_simple_book_group import resolve_book_group_path
 from mb_misc import write_utils
 from mb_sefaria import write_utils_sef_or_ajf
 from mb_cmn import shrink
@@ -70,14 +73,25 @@ def _handle(handlers, jobj):  # jobj: JSON dict
 
 def _read_book_group(variant, bkg_name):
     vtrad = variant["variant-vtrad"]
-    json_vtrad_xxx_dic = {
-        tbn.VT_BHS: "json-vtrad-bhs",
-        tbn.VT_SEF: "json-vtrad-sef",
+    resolver_vtrad_by_variant = {
+        tbn.VT_MAM: "mam",
+        tbn.VT_BHS: "bhs",
+        tbn.VT_SEF: "sef",
     }
-    json_vtrad_xxx = json_vtrad_xxx_dic[vtrad]
-    input_base = variant.get("variant-input-base", paths.repo_root() / "MAM-simple")
-    json_path = f"{input_base}/{json_vtrad_xxx}/{bkg_name}.json"
-    with open(json_path, encoding="utf-8") as f:
+    try:
+        resolver_vtrad = resolver_vtrad_by_variant[vtrad]
+    except KeyError as exc:
+        raise ValueError(f"Unsupported MAM4Sefaria versification: {vtrad!r}") from exc
+    input_base = Path(
+        variant.get("variant-input-base", paths.repo_root() / "MAM-simple")
+    )
+    json_path = resolve_book_group_path(
+        input_base,
+        fmt="json",
+        vtrad=resolver_vtrad,
+        stems=(bkg_name,),
+    )
+    with json_path.open(encoding="utf-8") as f:
         return json.load(f)
 
 

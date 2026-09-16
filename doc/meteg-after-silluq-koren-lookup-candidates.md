@@ -1,6 +1,7 @@
 # Koren lookup candidates for a meteg after the silluq in MAM
 
 **What this list is for.** When this file was written, MAM had one known verse-final chanted word in which a meteg follows the silluq: 1 Kings 7:37, לְכֻלָּֽהְנָֽה׃ — the silluq is the U+05BD on letter 3 of 6, the meteg is the U+05BD on letter 5, and the stress is penultimate. This file ranks every other verse-final chanted word of MAM whose final atom has two U+05BD by how plausible the same reading is there, so that Ben can look the likeliest ones up in the Koren edition first. The reading being graded is called the **post-silluq reading** below: it takes the FIRST U+05BD of the final atom as the silluq, that is, it puts the stress on that syllable. Written 2026-09-09 by a Claude session (Task C of the meteg-after-silluq investigation) at MAM-basics commit `30fb7681`, from the tracked `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json`, and revised the same day on the three decisions listed next. Ben has looked 11 of the 392 up in Koren so far, beginning 2026-09-09; the section "Koren readings so far" below lists them, the Koren column has each reading at its row, and the column is empty wherever he has not yet looked.
+Updates and later status: [meteg-after-silluq-koren-lookup-candidates-update.md](meteg-after-silluq-koren-lookup-candidates-update.md).
 
 **Three decisions of Ben's, 2026-09-09, each of which overruled the first version of this file:**
 

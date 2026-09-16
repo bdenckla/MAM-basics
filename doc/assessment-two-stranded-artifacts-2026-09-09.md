@@ -1,8 +1,7 @@
 # Assessment — two stranded artifacts of 2026-09-09
 
-State: assessment only, written 2026-09-09. Nothing was merged, deleted or force-pushed, and every
-disposition below is Ben's to choose. The one change this session made is the corrected
-`repo_visibility.github-misc.comment` recorded in §7.
+State: assessment only, written 2026-09-09. Nothing was merged, deleted or force-pushed, and every disposition below is Ben's to choose. The one change this session made is the corrected `repo_visibility.github-misc.comment` recorded in §7.
+Updates and later status: [assessment-two-stranded-artifacts-2026-09-09-update.md](assessment-two-stranded-artifacts-2026-09-09-update.md).
 
 The two artifacts:
 

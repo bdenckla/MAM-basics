@@ -1,6 +1,7 @@
 # Revision-aware Wikisource chapter downloads
 
 ## Authorization, status, and development location
+Updates and later status: [PLAN-efficient-wikisource-downloads-update.md](PLAN-efficient-wikisource-downloads-update.md).
 
 Ben's decisions, 2026-09-10: investigate and then implement revision-aware
 Wikisource chapter downloads. Commit revision metadata beside downloaded text

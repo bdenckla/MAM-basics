@@ -58,7 +58,7 @@ def _commit_date(rev):
 
     A MAM-basics ref has had no date since 2026-09-14, when it began to be recorded by the git
     tree id of MAM-parsed/plus.  Until then its date was that of the last commit to change
-    MAM-parsed/plus, found by a path-filtered ``git log``, and in a shallow clone that walk can
+    MAM-parsed/plus, found by a path-filtered ``git log --full-history -1``, and in a shallow clone that walk can
     return the wrong commit.  Git treats each commit listed in .git/shallow as having no
     parents, so every path in it looks added, and the newest-first walk returns such a boundary
     commit whenever one is newer than the last real change.  This docstring had predicted a

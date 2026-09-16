@@ -43,8 +43,9 @@ readings are:
    “the furtive pataḥ”; and the Psalms 27:11 and Psalms 60:9 cells should each say “before the
    ḥataf.”
 
-The finished search report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+The finished search report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer.
 
 ## Finding 1 Classification cells should name the two codices
 
@@ -67,7 +68,7 @@ The corrected readings are:
 | Deuteronomy 12:2 | “different: L lacks the silluq” | “different: the LC lacks the silluq” |
 | Deuteronomy 23:12 | “different: L lacks the silluq; the target's other U+05BD is a meteg before the stress” | “different: the LC lacks the silluq; the target's other U+05BD is a meteg before the stress” |
 | Deuteronomy 23:18 | “different: L lacks the silluq” | “different: the LC lacks the silluq” |
-| 1 Kings 7:37 | “THE PHENOMENON: A has two strokes, silluq then ga'ya; L, the printed editions, Koren, the Simanim Tiqqun and Mechon Mamre have the silluq alone” | “THE PHENOMENON: the Aleppo Codex has two strokes, silluq then ga'ya; the LC, the printed editions, Koren, the Simanim Tanakh and Mechon Mamre have the silluq alone” |
+| 1 Kings 7:37 | “THE PHENOMENON: A has two strokes, silluq then ga'ya; L, the printed editions, Koren, the Simanim Tiqqun and Mechon Mamre have the silluq alone” | “THE PHENOMENON: the Aleppo Codex has two strokes, silluq then meteg; the LC, the printed editions, Koren, the Simanim Tanakh and Mechon Mamre have the silluq alone” |
 | Jeremiah 48:22 | “unrelated: a spot beside A's silluq makes it look like tevir” | “unrelated: a spot beside the Aleppo Codex's silluq makes it look like tevir” |
 | Obadiah 1:16 | “different: L has its one U+05BD on another syllable (silluq position)” | “different: the LC has its one U+05BD on another syllable (silluq position)” |
 | Obadiah 1:17 | “different: L lacks the silluq; the target's other U+05BD is a meteg before the stress” | “different: the LC lacks the silluq; the target's other U+05BD is a meteg before the stress” |
@@ -81,9 +82,13 @@ The corrected readings are:
 | Proverbs 6:16 | “unrelated: a spot beside A's silluq” | “unrelated: a spot beside the Aleppo Codex's silluq” |
 
 The 1 Kings 7:37 corrected reading carries forward this file's earlier correction from “the
-Simanim Tiqqun” to “the Simanim Tanakh”; only the `A` and `L` changes are new in this entry. The
-Reference, Template, Target and Note columns remain as written source material. Finding 11.2's
-category label and later prose are outside this subunit and remain uncorrected.
+Simanim Tiqqun” to “the Simanim Tanakh”; this entry also expands `A` and `L` and corrects analytic
+`ga'ya` to `meteg`. The Reference, Template, Target and Note columns remain as written source
+material. Finding 11.2's category label and later prose are outside this subunit and remain
+uncorrected.
+
+The classification reads “silluq then meteg”; this is analytic prose, not a quotation retaining
+`ga'ya`.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -114,7 +119,9 @@ These six passages use the report's analytic voice, for which the report's openi
 note declares “meteg.” The passages that report MAM's introduction, Yeivin's `gaʿya`, or
 Breuer's `ga'aya` remain unchanged. All twelve `ga'ya` sites in
 `doc/foi-mtgmtg-empty-cell.md` also remain unchanged because each reports Yeivin or his
-categories. Finding 11.5's separate choice between `hataf` and `ḥataf` remains unmade.
+categories. Finding 11.5's choice was recorded on 2026-09-13 in
+`doc/review-findings-2026-09-10-update.md`: use `ḥataf` in narrative Unicode prose and `xataf` in
+ASCII-oriented contexts.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -130,8 +137,9 @@ and `L` in this label means the LC. Carrying forward the earlier correction from
 (glyph placement).”
 
 This correction applies only to that category label. Finding 11.2's later prose remains
-uncorrected. The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+uncorrected. The finished source report's substantive bytes match historical blob
+`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the authorized update
+pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -160,8 +168,9 @@ The corrected readings are:
 
 This correction applies only to the Judgment column of the 26-row parse-failure table. The
 Reference, String and Why the parse failed columns remain as written, and finding 11.2's prose
-after that table remains uncorrected. The finished source report remains unchanged at Git blob
-`5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+after that table remains uncorrected. The finished source report's substantive bytes match
+historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the
+authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -191,8 +200,9 @@ The corrected readings are:
 
 Together with the 23 Classification-cell abbreviations, the one category-label abbreviation and
 the seven Judgment-cell abbreviations corrected by the earlier entries in this file, these five
-uses account for all 36 sites named by finding 11.2. The finished source report remains unchanged
-at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+uses account for all 36 sites named by finding 11.2. The finished source report's substantive bytes
+match historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only additional line is the
+authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no
@@ -211,8 +221,9 @@ reading is:
 > be remeasured exactly from tracked source. This limitation does not declare the totals false.
 > The instruction to remeasure continues to apply to figures whose methods remain preserved.
 
-No predicate has been reconstructed and no tracked script has been added. The finished report
-remains unchanged at Git blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`.
+No predicate has been reconstructed and no tracked script has been added. The finished report's
+substantive bytes match historical blob `5c4aaf4c61d8f66f95caf65c48a37a9c1d735fba`; its only
+additional line is the authorized update pointer.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
 Act axis: this update file preserves the finished report rather than rewriting it; no

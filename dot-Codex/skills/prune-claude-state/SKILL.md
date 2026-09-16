@@ -1,6 +1,6 @@
 ---
 name: prune-Codex-state
-description: Review this repo's Codex auto-memory files and this repo's entries among the global ~/.Codex/plans/ plan files, cross-check each against live GitHub issue state, and propose stale ones for deletion (with explicit confirmation before deleting anything).
+description: Review this repo's Codex auto-memory files and this repo's entries among the global ~/.codex/plans/ plan files, cross-check each against live GitHub issue state, and propose stale ones for deletion (with explicit confirmation before deleting anything).
 when_to_use: Use when the user asks to clean up / prune / review Codex's memory or plan files for the current repo, or asks "what memory/plan files are stale" — not for routine repo maintenance (tests, rebuilds, .novc), which is a separate script.
 disable-model-invocation: true
 ---
@@ -22,7 +22,7 @@ file it links to.
 
 ## Step 2 — Find this repo's plan files
 
-Plan files live in `~/.Codex/plans/*.md` and are **global, not per-repo** —
+Plan files live in `~/.codex/plans/*.md` and are **global, not per-repo** —
 most belong to other repos. Identify the current repo (name, GitHub
 `owner/repo` slug from `git remote -v`, and any sibling-repo names it
 interacts with). If there are more than ~15 plan files, delegate the read to
@@ -75,7 +75,7 @@ confirmation with unrelated deletions from a different run.
 - Delete the confirmed memory `.md` files, then remove their corresponding
   index lines from `MEMORY.md` (do not touch entries that weren't confirmed
   for deletion).
-- Delete the confirmed plan `.md` files under `~/.Codex/plans/`.
+- Delete the confirmed plan `.md` files under `~/.codex/plans/`.
 - Report what was actually removed.
 
 Leave everything not explicitly confirmed untouched, including plan files

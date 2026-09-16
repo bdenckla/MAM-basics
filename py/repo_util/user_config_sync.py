@@ -249,15 +249,15 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
         Path("dot-claude/user-wide-CLAUDE.md"), Path(".claude/CLAUDE.md"), "file"
     )
     codex_instructions = ConfigMapping(
-        Path("dot-Codex/user-wide-AGENTS.md"), Path(".Codex/AGENTS.md"), "file"
+        Path("dot-Codex/user-wide-AGENTS.md"), Path(".codex/AGENTS.md"), "file"
     )
     hook_script = ConfigMapping(
         Path("dot-Codex/hooks/check_project_doc_budget.py"),
-        Path(".Codex/hooks/check_project_doc_budget.py"),
+        Path(".codex/hooks/check_project_doc_budget.py"),
         "file",
     )
     hook_config = ConfigMapping(
-        Path("dot-Codex/hooks.json"), Path(".Codex/hooks.json"), "file"
+        Path("dot-Codex/hooks.json"), Path(".codex/hooks.json"), "file"
     )
     for mapping in (
         claude_instructions,
@@ -290,7 +290,7 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
         hook_script,
         ConfigMapping(
             _GENERATED_USER_AGENTS_FINGERPRINT,
-            Path(".Codex/hooks/expected-user-wide-AGENTS.sha256"),
+            Path(".codex/hooks/expected-user-wide-AGENTS.sha256"),
             "file",
         ),
     ]

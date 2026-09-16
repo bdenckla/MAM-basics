@@ -1,6 +1,7 @@
 # Findings of the 2026-09-10 review of the public repos since 2026-09-08
 
 State: acted on 2026-09-11 and 2026-09-12, in part — findings 1 to 6 on 2026-09-11, findings 12, 14, 15 and 17 and parts of 13, 16, 19 and 20 on 2026-09-12; findings 7 to 11, 18 and 21 and the rest of 13, 16, 19 and 20 not acted on. `## Dispositions after remediation` at the end has a row per finding acted on, says which fixes Ben asked for, records 13.1, 16.2 and 19.3 as deliberately not fixed, and ends with three items that are not findings and that this round's integration inherits.
+Updates and later status: [review-findings-2026-09-10-update.md](review-findings-2026-09-10-update.md).
 
 Written 2026-09-10, late evening, as the Claude argument, turn 1 of the standard alternating
 dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09): this file was

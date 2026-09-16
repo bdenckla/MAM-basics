@@ -1,15 +1,7 @@
 # What a mega run costs in a cloud container, and how to compare it with Ben's machine
 
-Written by a Claude session in a cloud container on 2026-09-14, carrying out Phase 2 of
-`doc/PLAN-mega-speedup.md`. Ben's words that day were "Do one or more runs of 'mega' in the cloud
-and record the results in appropriate files in 'doc'. I think the protocol is to use new files to
-record timings, albeit of an appropriate name such that they will be found, e.g.
-doc/mega-timing-cloud-2026-09-14.md." He also put the question §4 answers: "I suppose mega may be
-faster on cloud because it will (by design) lack MAM-private and graphviz, so some stuff will be
-skipped. I'm not sure how we should 'normalize' for that to be able to compare with local runs
-with both MAM-private and graphviz present, but perhaps there isn't much need to normalize if
-those steps aren't really that time consuming anyway." Everything else here is that session's
-measurement and analysis.
+Written by a Claude session in a cloud container on 2026-09-14, carrying out Phase 2 of `doc/PLAN-mega-speedup.md`. Ben's words that day were "Do one or more runs of 'mega' in the cloud and record the results in appropriate files in 'doc'. I think the protocol is to use new files to record timings, albeit of an appropriate name such that they will be found, e.g. doc/mega-timing-cloud-2026-09-14.md." He also put the question §4 answers: "I suppose mega may be faster on cloud because it will (by design) lack MAM-private and graphviz, so some stuff will be skipped. I'm not sure how we should 'normalize' for that to be able to compare with local runs with both MAM-private and graphviz present, but perhaps there isn't much need to normalize if those steps aren't really that time consuming anyway." Everything else here is that session's measurement and analysis.
+Updates and later status: [mega-timing-cloud-2026-09-14-update.md](mega-timing-cloud-2026-09-14-update.md).
 
 **Measured against** `main` at `89f10bb4`, which the container's branch
 `claude/adoring-shannon-8term6` sat on exactly when the runs were made. MAM-private was absent, as

@@ -54,6 +54,18 @@ def main():
         print(not_found)
         print(f"Atoms in verse: {not_found.words}")
         sys.exit(1)
+    except ValueError as ambiguous:
+        print(ambiguous)
+        words = uxlc[book_id][chapter - 1][verse - 1]
+        for number, candidate in enumerate(words, start=1):
+            print(f"    {number} {candidate}")
+        print("Choose the intended number, then run")
+        book_arg = f"'{book_id}'" if " " in book_id else book_id
+        print(
+            "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe"
+            f" py/main_verse_links.py {book_arg} {cv} --atom N"
+        )
+        sys.exit(1)
     if match_method != "exact":
         print(f"  (matched by Hebrew letters alone; UXLC has {uxlc_word!r})")
     std_bcvp_quad = book_id, chapter, verse, atom

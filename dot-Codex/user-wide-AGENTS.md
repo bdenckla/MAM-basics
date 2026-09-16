@@ -6,7 +6,7 @@ repository-specific rules and overrides.
 ## Canonical user configuration
 
 The canonical repository path is `dot-Codex/user-wide-AGENTS.md` in MAM-basics. The live file
-`~/.Codex/AGENTS.md` is a deployed copy; never edit it directly. Edit the canonical file in the
+`~/.codex/AGENTS.md` is a deployed copy; never edit it directly. Edit the canonical file in the
 applicable MAM-basics development checkout, commit the change, integrate and push `main`, then
 deploy from the primary MAM-basics clone:
 
@@ -147,15 +147,22 @@ A figure answering a passing question may remain a dated measurement with no mai
 reproduction path if the plan says that explicitly.
 
 A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-While the receipt remains tracked, never edit it. Correct it in `<stem>-update.md`, then
-`<stem>-update-2.md`; name the passage being corrected by its words rather than by a drifting line
-number. Receipt status does not require permanent retention: a repository's manual retirement
-rule may delete a spent base receipt and every update sibling together. Keep present-state
-documents, instructions, README files, comments, and docstrings true in place.
+Each receipt has at most one live sibling, `<stem>-update.md`. Corrections, later measurements,
+later State, and remediation dispositions go in that file. Keep the update file true while the
+base remains tracked, and never create `<stem>-update-N.md`. When the update file is created,
+insert one line directly below line 3 of the base: `Updates and later status:
+[<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary joining of a
+prose paragraph that begins on line 3 without changing its text, is the only post-completion edit
+to the base. A spent base and its optional one update file are one retirement family and may be
+retired together under the manual retirement procedure. A historical numbered sibling in Git
+history remains historical evidence; it does not authorize another numbered sibling. Keep
+present-state documents, instructions, README files, comments, and docstrings true in place.
 
-In MAM-basics and MAM-private, an unprefixed
-`doc/review-findings-<date>.md` belongs to the Claude review series. A Codex review uses
-`doc/codex-review-findings-<date>.md`. The private series stays in MAM-private.
+In MAM-basics and MAM-private, an unprefixed `doc/review-findings-<date>.md` belongs to the
+single-agent Claude review series and the Claude half of blind Design B. A Codex Design B review
+uses `doc/codex-review-findings-<date>.md`. A standard sequential alternating round instead uses
+`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
+even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
 
 ## Format changed Python with Black
 
@@ -198,6 +205,27 @@ asks. Otherwise regenerate the tracked artifact with the real command and read i
 generated output is the test. A missing input fails rather than skips, and an empty
 parametrization must not report green. Do not enforce this judgment mechanically in a repository
 standards test.
+
+## Delegate bounded work when it helps
+
+Root agents and sub-agents are explicitly authorized to spawn further sub-agents in every
+session, without asking Ben first, when bounded, independently checkable work can run in
+parallel, a fresh sequential pass can improve quality, or delegation can keep noisy investigation
+out of the root agent's context. Sub-agents may work in parallel or hand a later step to another
+sub-agent. Tell Ben when delegation starts and what each sub-agent owns. Do not delegate merely to
+satisfy a quota; keep tightly coupled work local when coordination would cost more than it saves.
+
+The root agent remains the orchestrator. The root agent defines scope, collects and reconciles
+sub-agent results, verifies material claims before adopting them, owns integration, and owns the
+final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
+read-only investigation freely; if concurrent agents must write, give the agents separate verified
+worktrees. A sub-agent never stages or commits another agent's unfinished files.
+
+## Final messages begin with one H1 report heading
+
+Begin every final message with `# Report: <subject>`, with nothing above it, and use no other H1
+in the turn. Put the direct answer immediately below that heading. The heading names the report's
+subject rather than using a bare `# Report`.
 
 ## Prose names its subject
 

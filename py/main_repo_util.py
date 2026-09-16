@@ -6,10 +6,12 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --today-only
     .venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --repos MAM-basics
     .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
-    .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
-    .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --session-ended <worktree path>
-    .venv/Scripts/python.exe py/main_repo_util.py --prepare-codex-worktree-retirement <worktree> --task-ended --preflight-file <file>
-    .venv/Scripts/python.exe py/main_repo_util.py --execute-codex-worktree-retirement <preflight> --task-ended
+    .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner claude --workspace-file all-repos.code-workspace
+    .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner codex
+    .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner both
+    .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree <worktree>
+    .venv/Scripts/python.exe py/main_repo_util.py --prepare-worktree-retirement <worktree> --task-ended --preflight-file <file>
+    .venv/Scripts/python.exe py/main_repo_util.py --execute-worktree-retirement <preflight> --task-ended
     .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
     .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
@@ -19,22 +21,18 @@ handful of repos ``MAM-basics.code-workspace`` lists, and is worth spelling out 
 ``--clean-worktrees``: the repos most in need of it are the ones with no Python and
 so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
 
-``--session-ended <worktree>`` belongs to ``--clean-worktrees`` alone. It says the
-session in that worktree has ended, so the sweep skips the activity check for that
-worktree and no other; every other condition still applies, Claude Code's own
-records of running sessions included. A path that is no linked worktree of the
-selected repos is refused before anything runs. See "THE OVERRIDE IS PER
-WORKTREE" in ``repo_util/git_worktree_cleanup.py`` for why this replaced a
-repo-wide switch.
+``--inspect-worktrees --worktree-owner claude|codex|both`` selects candidates
+across the chosen repositories. ``--worktree PATH`` inspects one exact target.
+``--prepare-worktree-retirement PATH --task-ended --preflight-file FILE`` writes
+a per-target audit; ``--execute-worktree-retirement FILE --task-ended`` rechecks
+it and applies the shared Git and .novc preservation policy. Inspect the printed
+citations and prepare again with --citations-reviewed and --citation-note when
+needed. Preparation and inspection never remove worktrees.
 
-``--clean-worktrees`` is the Claude-owned sweep: it can remove worktrees under
-``.claude/worktrees/`` or on ``claude/*`` branches, and no Codex worktree.  Codex
-retirement is deliberately separate.  ``--prepare-codex-worktree-retirement``
-writes a JSON audit outside the target without changing the target.  After the task
-has ended, ``--execute-codex-worktree-retirement`` runs under the ordinary user
-token from a separate checkout or cleanup task.  It revalidates every recorded fact,
-retains and verifies ``.novc`` content, uses only non-forced Git removal and safe
-branch deletion, and measures rather than elevates for ACL-protected residue.
+``--clean-worktrees`` is a compatibility alias for Claude-only inspection.
+Its old --session-ended paths are validated but never cause automatic removal.
+Codex-named prepare/execute actions use the shared engine with a Codex selection
+guard. Old schema-1 preflights must be prepared again with the new safety gates.
 
 ``--sync-user-config`` does not traverse a workspace.  It fetches ``origin`` in the
 primary MAM-basics clone and uses only ``refs/remotes/origin/main`` as its source.
@@ -61,13 +59,15 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 from typing import Sequence
 
 from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
 from repo_util.check_memory_health import run_check_memory_health_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
-from repo_util.codex_worktree_retirement import (
+from repo_util.worktree_retirement import (
+    inspect_worktrees,
     RetirementError,
     execute_retirement,
     prepare_retirement,
@@ -96,16 +96,44 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--audit-line-terms", action="store_true")
     action_group.add_argument("--check-repo-standards", action="store_true")
     action_group.add_argument("--check-memory-health", action="store_true")
-    action_group.add_argument("--clean-worktrees", action="store_true")
+    action_group.add_argument(
+        "--clean-worktrees",
+        action="store_true",
+        help="Compatibility: Claude-only inspection; removes nothing",
+    )
+    action_group.add_argument(
+        "--inspect-worktrees",
+        action="store_true",
+        help="Inspect selected worktrees without removing anything",
+    )
+    action_group.add_argument(
+        "--prepare-worktree-retirement",
+        metavar="WORKTREE",
+        help="Prepare one exact worktree using the shared retirement policy",
+    )
+    action_group.add_argument(
+        "--execute-worktree-retirement",
+        metavar="PREFLIGHT",
+        help="Execute a reviewed shared retirement preflight",
+    )
+    parser.add_argument(
+        "--worktree-owner",
+        choices=("claude", "codex", "both"),
+        help="Inspection selector or preparation ownership guard (inspection default: both)",
+    )
+    parser.add_argument(
+        "--worktree",
+        help="With --inspect-worktrees: inspect this exact worktree instead of a workspace scope",
+    )
     action_group.add_argument(
         "--prepare-codex-worktree-retirement",
         metavar="WORKTREE",
-        help="Audit an ended Codex worktree and write a retirement preflight",
+        help="Compatibility: shared preparation restricted to Codex selection",
     )
     action_group.add_argument(
         "--execute-codex-worktree-retirement",
         metavar="PREFLIGHT",
-        help="Revalidate a preflight, retain .novc, and retire the Codex worktree",
+        help="Compatibility: shared execution restricted to a Codex preflight",
     )
     action_group.add_argument("--sync-user-config", action="store_true")
     action_group.add_argument("--commit-across-repos", action="store_true")
@@ -156,28 +184,28 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="WORKTREE",
         help=(
             "With --clean-worktrees: linked worktree(s) whose sessions you have"
-            " seen end. The activity check is skipped for these alone"
+            " seen end. Validated for compatibility; inspection still removes nothing"
         ),
     )
     parser.add_argument(
         "--task-ended",
         action="store_true",
         help=(
-            "With either Codex retirement action: attest again that the target task"
+            "With either retirement action: attest again that the target task"
             " has ended"
         ),
     )
     parser.add_argument(
         "--retirement-root",
         help=(
-            "With --prepare-codex-worktree-retirement: durable root for retained"
-            " .novc directories (default: $HOME/.codex/worktree-retirements)"
+            "With --prepare-worktree-retirement: durable root for retained"
+            " .novc directories (default: $HOME/worktree-retirements)"
         ),
     )
     parser.add_argument(
         "--preflight-file",
         help=(
-            "With --prepare-codex-worktree-retirement: new JSON file outside the"
+            "With --prepare-worktree-retirement: new JSON file outside the"
             " target worktree"
         ),
     )
@@ -185,19 +213,19 @@ def build_parser() -> argparse.ArgumentParser:
         "--codex-task-id",
         action="append",
         default=[],
-        help="With --prepare-codex-worktree-retirement: task ID to record (repeatable)",
+        help="With --prepare-worktree-retirement: task ID to record (repeatable)",
     )
     parser.add_argument(
         "--citations-reviewed",
         action="store_true",
         help=(
-            "With --prepare-codex-worktree-retirement: affirm that every tracked"
+            "With --prepare-worktree-retirement: affirm that every tracked"
             " .novc citation printed by the audit has a durable disposition"
         ),
     )
     parser.add_argument(
         "--citation-note",
-        help="With --prepare-codex-worktree-retirement: record the citation disposition",
+        help="With --prepare-worktree-retirement: record the citation disposition",
     )
 
     parser.add_argument(
@@ -301,30 +329,37 @@ def _validate_action_specific_args(
     if args.check and not args.sync_user_config:
         parser.error("--check only applies to --sync-user-config")
 
-    preparing = args.prepare_codex_worktree_retirement is not None
-    executing = args.execute_codex_worktree_retirement is not None
-    retiring = preparing or executing
-    if args.task_ended and not retiring:
-        parser.error("--task-ended only applies to a Codex worktree retirement")
-    if retiring and not args.task_ended:
-        parser.error("Codex worktree retirement requires --task-ended")
-    if preparing and args.preflight_file is None:
-        parser.error("--prepare-codex-worktree-retirement requires --preflight-file")
-    if executing and args.preflight_file is not None:
-        parser.error(
-            "--preflight-file only applies to --prepare-codex-worktree-retirement"
-        )
-    prepare_only = bool(
+    preparing = (
+        args.prepare_worktree_retirement or args.prepare_codex_worktree_retirement
+    )
+    executing = (
+        args.execute_worktree_retirement or args.execute_codex_worktree_retirement
+    )
+    if args.task_ended and not (preparing or executing):
+        parser.error("--task-ended only applies to retirement preparation or execution")
+    if (preparing or executing) and not args.task_ended:
+        parser.error("retirement requires --task-ended")
+    if preparing and not args.preflight_file:
+        parser.error("preparation requires --preflight-file")
+    if args.preflight_file and not preparing:
+        parser.error("--preflight-file only applies to preparation")
+    if (
         args.retirement_root
         or args.codex_task_id
         or args.citations_reviewed
         or args.citation_note
-    )
-    if prepare_only and not preparing:
+    ) and not preparing:
         parser.error(
-            "--retirement-root, --codex-task-id, --citations-reviewed and"
-            " --citation-note only apply to --prepare-codex-worktree-retirement"
+            "retention, task provenance and citation options only apply to preparation"
         )
+    if args.worktree and not args.inspect_worktrees:
+        parser.error("--worktree only applies to --inspect-worktrees")
+    if args.worktree and args.worktree_owner:
+        parser.error("choose an exact --worktree or --worktree-owner")
+    if args.worktree_owner and not (
+        args.inspect_worktrees or args.prepare_worktree_retirement
+    ):
+        parser.error("--worktree-owner applies to inspection or shared preparation")
 
     if args.commit_across_repos:
         if args.message is None and args.message_file is None:
@@ -364,39 +399,66 @@ def _filter_by_visibility(repo_infos, visibility: str):
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = build_parser()
     args = parser.parse_args(argv)
     _validate_action_specific_args(parser, args)
 
-    if args.prepare_codex_worktree_retirement is not None:
+    preparing = (
+        args.prepare_worktree_retirement or args.prepare_codex_worktree_retirement
+    )
+    executing = (
+        args.execute_worktree_retirement or args.execute_codex_worktree_retirement
+    )
+    if preparing:
         retirement_root = (
             Path(args.retirement_root)
-            if args.retirement_root is not None
-            else Path.home() / ".codex" / "worktree-retirements"
+            if args.retirement_root
+            else Path.home() / "worktree-retirements"
         )
         try:
             prepare_retirement(
-                Path(args.prepare_codex_worktree_retirement),
+                Path(preparing),
                 retirement_root=retirement_root,
                 preflight_file=Path(args.preflight_file),
                 task_ended=args.task_ended,
+                owner_selector=(
+                    "codex"
+                    if args.prepare_codex_worktree_retirement
+                    else args.worktree_owner
+                ),
                 codex_task_ids=args.codex_task_id,
                 citations_reviewed=args.citations_reviewed,
                 citation_note=args.citation_note,
             )
         except (RetirementError, OSError, KeyError, TypeError, ValueError) as exc:
-            print(f"Codex worktree retirement refused: {exc}")
+            print(f"Worktree retirement refused: {exc}")
             return 1
         return 0
-
-    if args.execute_codex_worktree_retirement is not None:
+    if executing:
         try:
             execute_retirement(
-                Path(args.execute_codex_worktree_retirement),
+                Path(executing),
                 confirm_task_ended=args.task_ended,
+                owner_selector=(
+                    "codex" if args.execute_codex_worktree_retirement else None
+                ),
             )
         except (RetirementError, OSError, KeyError, TypeError, ValueError) as exc:
-            print(f"Codex worktree retirement refused: {exc}")
+            print(f"Worktree retirement refused: {exc}")
+            return 1
+        return 0
+    if args.inspect_worktrees and args.worktree:
+        try:
+            for item in inspect_worktrees(
+                Path(args.worktree), exact=Path(args.worktree)
+            ):
+                print(
+                    f"{item['worktree']}: {item['blocker'] or 'audit passed; prepare a reviewed preflight'}"
+                )
+        except (RetirementError, OSError) as exc:
+            print(f"Worktree inspection refused: {exc}")
             return 1
         return 0
 
@@ -505,9 +567,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         return 0
 
-    if args.clean_worktrees:
+    if args.clean_worktrees or args.inspect_worktrees:
+        owner = "claude" if args.clean_worktrees else args.worktree_owner or "both"
         ended = [Path(path) for path in args.session_ended]
-        unknown = unknown_worktrees(repo_infos, ended)
+        unknown = unknown_worktrees(repo_infos, ended, owner=owner)
         if unknown:
             # Refused before anything runs: a name matching nothing would be
             # ignored, and the worktree meant would be spared as "may be in use"
@@ -519,7 +582,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         # Same contract as --run-black: a repo the sweep could not clean fails
         # the run rather than being passed over. A worktree deliberately spared
         # is not a failure -- see repo_util/clean_worktrees.py.
-        reports = run_clean_worktrees_across_repos(repo_infos, sessions_ended=ended)
+        reports = run_clean_worktrees_across_repos(
+            repo_infos, sessions_ended=ended, owner=owner
+        )
         return 1 if worktree_problem_repos(reports) else 0
 
     run_commit_across_repos(

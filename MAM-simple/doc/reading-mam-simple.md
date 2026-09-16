@@ -22,8 +22,9 @@ A `book24` corresponds to one of the 24 books of the Hebrew Bible; some of them 
 Since 2026-09-12, the two `-vtrad-mam` folders hold all 24 book-group files and the four
 others hold only the book groups whose cv-labels that versification places somewhere
 other than where MAM places them. That is six of the 24 for BHS — `1Sam-2Sam`, `Deut`,
-`Exod`, `Jer`, `Josh`, `Num` — and the same five less `Num` for Sefaria. The change
-removed 24.3 MB of near-duplicate files, taking the product from 63.3 MB to 39.0 MB.
+`Exod`, `Jer`, `Josh`, `Num` — and the same five less `Num` for Sefaria. The incremental-folder
+deletion removed 24.3 MB on 2026-09-12. The same commit removed another 1.3 MB by dropping
+`yeivinID` from the 48 MAM files, taking the product from 63.3 MB to 37.6 MB.
 
 **To read book group `X` in versification `V`: read `<fmt>-vtrad-<V>/X`, and if it is not
 there, read `<fmt>-vtrad-mam/X` instead.** In Python, that is one `try`:
@@ -173,9 +174,10 @@ It iterates directly over XML elements, without the handler pattern described be
 Two further examples, `main_mam4sef_example.py` and `main_mam_osis_example.py`, were
 retired on 2026-09-12. They created the Sefaria and OSIS editions of MAM from this
 product — the first from the JSON format, the second from the XML format — and they were
-written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories. Both
-editions are still produced, by MAM-basics' own `py/main_mam4sef.py` and
-`py/main_mam_osis.py`, which read this product exactly as the retired examples did.
+written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories. Both editions
+are still produced by MAM-basics' `py/main_mam4sef.py` and `py/main_mam_osis.py`. Both generators
+follow the incremental-folder rule above: read the requested versification file when present and
+the MAM file otherwise.
 
 ## The Recursive Handler Pattern
 

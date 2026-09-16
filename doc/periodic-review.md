@@ -1,4 +1,4 @@
-# The periodic review: one agent, one commit window, one findings file
+# The periodic review: one responsible reviewer, one commit window, one findings file
 
 This document describes the periodic review as a procedure in its own right: what the series is,
 what a review file contains, how a review is checked before it is acted on, and how its findings
@@ -12,10 +12,28 @@ Read this before starting a periodic review. Read `doc/dual-agent-review.md` as 
 window is to be reviewed by two agents; D9 there chooses the procedure for such a window, and does
 not require any window to have two.
 
+## Delegation during a periodic review — Ben's decision, 2026-09-15
+
+Whether a window has one responsible reviewer or two, each review turn may be an orchestrated
+multi-agent task. The root reviewer and any sub-agent may delegate bounded, independently
+checkable work to another sub-agent, either in parallel or as a sequential handoff. The root
+reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
+reports, verifies the claims it adopts, and owns the findings file and commit.
+
+In a shared checkout, only one agent writes, stages or commits at a time. Other sub-agents report
+without editing unless writing responsibility is explicitly handed to one sub-agent. Use
+delegation when it can save time, protect the root reviewer's context or improve confidence, not
+merely to create another task. The mandatory pre-commit check under "Reviewing the review, with the
+same agent and with Ben" still applies.
+
 ## What the periodic review is
 
 Every four to eight days one Claude session reads a commit range across the public repositories and
 writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
+
+That filename is the single-agent Claude-series convention. A standard sequential dual-agent round
+uses the neutral numbered turn filenames in `doc/dual-agent-review.md`; the first reviewer may be
+Claude or Codex. Blind Design B retains its author-based pair of filenames.
 
 **A second series, which this repository's reviews call the private series, follows this same
 procedure in MAM-private**, a private repository holding Python code, data and documents of the
@@ -23,18 +41,31 @@ same kinds as this repository's, and records its reviews there. Where the two ne
 this document calls the series in this repository the public series. The section "The private
 series, recorded in MAM-private" below says what differs.
 
-Measured on 2026-09-12, ten files match `doc/review-findings-*.md`, dated 2026-07-29 through
-2026-09-08, all of them window reviews. An eleventh file held the name until 2026-09-12, when it
-was renamed `doc/blind-dive-into-template-params.md` on Ben's instruction: Codex had written it
-(`fa07fd8f`) as a current-state review of template projection at one commit, not a review of a
-commit window. Re-establish the census, and read the states rather than inferring them:
+**A periodic review is of one diff: the changes in files between the window's start commit and its
+end commit.** Ben's decision, 2026-09-15, during his walk-through of
+`doc/review-findings-2026-09-14.md`, whose finding 5 described a `MAM-parsed/plus/` rewrite made and
+undone on a side branch inside the window: "The review is, conceptually, of a single diff, between
+the start commit and the end commit. If the reviewing agent wants to 'understand' that review by
+looking at the path taken through git to get there, fine, but that's an internal decision about how
+that single, big diff can best be understood." So reading the commits, reflogs and `--full-history`
+between the two anchors is a way to understand the diff, not a second subject: a state made and
+undone inside the window, commit-message contents and trailers, merge shapes, and leftover branches
+and worktrees are not what a review looks for. Something of that kind noticed while understanding
+the diff may be mentioned; Ben, the same day: "don't turn a blind eye to something you notice, but
+don't go 'looking for trouble' in details beyond the narrow focus". A review of the process followed
+across a series of commits, for better instruction files or linters, is a different review, and
+there individual commits matter.
+
+The unprefixed dated review series is selected by the exact date-shaped pathspec below. Re-establish
+the census and read the states rather than inferring them. The broader
+`doc/review-findings-*.md` pattern also matches live update files and is not the series census.
 
 ```powershell
-git ls-files -- "doc/review-findings-*.md"
+git ls-files -- "doc/review-findings-????-??-??.md"
 ```
 
 ```powershell
-git grep -n "^State:" HEAD -- "doc/review-findings-*.md"
+git grep -n "^State:" HEAD -- "doc/review-findings-????-??-??.md"
 ```
 
 ## Two standing properties of the series
@@ -47,9 +78,10 @@ Two properties of the series matter to every review in it.
    for a scope decision he does not owe. A review reads whatever the window changed in a public
    repository: `doc/review-findings-2026-09-08.md` is headed "review of the public repos" and
    accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
-   is the RECORD. Each file carries a `State:` line at
-   line 3 directly under the H1. The initial review records remediation state; later turns record
-   review completion, under D10 in `doc/dual-agent-review.md`. The
+   is the RECORD. Each file carries a `State:` line at line 3 directly under the H1. The initial
+   review records what was true when the review finished; later remediation State belongs in its
+   single live update file. Later turns record review completion, under D10 in
+   `doc/dual-agent-review.md`. The
    thin tracking issue every review used to file — wlc-utils#87, then MAM-basics #219, #228, #231,
    #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
    account and only #219 was ever adopted as a citation handle. A review that finds work somebody
@@ -79,9 +111,9 @@ founding it. A review that departs from it should say why in its opening paragra
 
 1. **The H1 names the window**: "Findings of the <date> review of the public repos since <date of
    the previous review>". Through 2026-08-22 it read "of the work since <date>".
-2. **Line 3 is the `State:` line**, directly under the H1: `not yet acted on`, or
-   `acted on <date>` plus any clause naming what is not. `check_repo_standards.py`'s docstring is
-   where that vocabulary is declared.
+2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
+   finished. Later remediation State and every disposition go in the review's single live update
+   file. `check_repo_standards.py`'s docstring is where the vocabulary is declared.
 3. **The opening paragraphs say how the file was written**: which session, which commit it was frozen
    at, and anything that happened to it on the way into the tree.
 4. **`## Scope, anchors and census`**: the commit range in each repository, named by commit, and a
@@ -96,16 +128,14 @@ founding it. A review that departs from it should say why in its opening paragra
 8. **`## Open ends the window itself declares (not findings)`**: work the window's own commits say
    is unfinished, which is not a defect of the window.
 9. **`## What this review did not check`**.
-10. **`## Dispositions after remediation`**, added later, when somebody acts on the findings: one
-    row per finding or sub-finding, each naming the commit that fixed it or the decision that
-    closed it.
 
 Items 4, 5, 6 and 9 first appear together in `doc/review-findings-2026-09-04.md`. From 2026-08-03
 to 2026-09-01 a review usually fixed some findings during the review itself and said so under
 `## How the review was acted on (<date>)`, and `doc/review-findings-2026-07-29.md` groups its
-findings under `## Major` and `## Minor — <area>` headings. A review in a two-agent window also
-carries `## Inputs for the reconciliation with the Codex review` and, after turn 2,
-`## Reconciliation with the Codex review`; `doc/dual-agent-review.md` owns both.
+findings under `## Major` and `## Minor — <area>` headings. In a standard two-agent window, Agent
+1's turn-01 file also carries the inputs for reconciliation and, after turn 02, Agent 2's
+reconciliation; `doc/dual-agent-review.md` owns both. Historical author-named headings remain as
+written.
 
 ## The private series, recorded in MAM-private
 
@@ -119,9 +149,9 @@ added: "I would like the MAM-private review process to be potentially dual-agent
 review follows this document, and a two-agent private window follows `doc/dual-agent-review.md` as
 well, with five differences:
 
-1. **Every record of a private window is a file in MAM-private's `doc/`**: the review, any Codex
-   counter-argument or later turn under the names D10 of `doc/dual-agent-review.md` gives, and any
-   update file. None goes into this public repository or its tracker, because a public record of
+1. **Every record of a private window is a file in MAM-private's `doc/`**: the single-agent review,
+   every numbered turn of a standard alternating round, every blind counterpart, and any update
+   file. None goes into this public repository or its tracker, because a public record of
    private work can disclose what a private repository exists to keep private. The first of the
    two standing properties above, doc-only, holds there too, so a private review files no tracking
    issue.
@@ -141,10 +171,53 @@ well, with five differences:
 
 ## Reviewing the review, with the same agent and with Ben
 
-**A review file can be reviewed again by the same agent before it is acted on, and the one time
-that was done it found real defects each time.** This is worth trying, not established: it rests on
-one review, `doc/review-findings-2026-09-10.md`, reviewed twice by Claude on 2026-09-12. Ben asked
-for both passes, and for this section, on that day.
+### The check runs autonomously, and Ben sees the findings once — Ben's decision, 2026-09-15
+
+**Before a review is committed, the session writing it has sub-agents check every finding; nobody
+walks Ben through the findings before close-out; and at close-out step 1 Ben gets one list covering
+every finding.** Ben, 2026-09-15, after the walk-through of `doc/review-findings-2026-09-14.md`:
+"the basic process is just way too slow." That review was written in about an hour, from 07:45 to
+08:44 on 2026-09-14. Its walk-through's 22 commits ran from 10:14 that day to 17:15 on 2026-09-15,
+each finding was re-verified while Ben waited, and 6 of the 22 commits changed this document rather
+than the review. The decision has three parts:
+
+1. **The writing session checks the review before committing it.** It gives each finding to a
+   sub-agent, which reports without editing: it reruns the scripts the finding cites, recounts every
+   count against its own list, establishes that the finding is about the window's diff (the section
+   "What the periodic review is"), checks that each lead states the finding's disposition, finds the
+   other passages of the file that restate the finding, and looks for the claim traps listed below.
+   The writing session re-runs a report's measurements where that is cheap before applying it.
+2. **No walk-through of the findings happens before close-out.** In a round under
+   `doc/dual-agent-review.md` that means none before Agent 2's turn 02, and a correction found after
+   the review is committed goes in a later turn. The rules under "How Ben walks through a review's
+   findings" below apply only when Ben asks for a walk-through.
+3. **At close-out step 1, Ben gets one list covering every finding**: a sentence each, each fix
+   defaulting to "later, in the remediation phase", and a question only where his judgment is
+   needed, asked in dialogs. Something pressing, such as a mega that fails on `main`, is raised with
+   him at once rather than held for the list.
+
+The claim traps are the ways the 2026-09-14 review's own claims came out false, each found during
+its walk-through:
+
+1. a timing across branches, stated without finding which branch each commit was on
+   (`git merge-base --is-ancestor`) and when the commits first shared a tree;
+2. merge resolutions counted with `git diff-tree --cc --name-only`, which also lists files git
+   merged cleanly, where a resolution needs `--cc -p`;
+3. a local time read off a UTC timestamp, where `git log --date=iso-local` gives local time;
+4. a count not re-counted, or a source not re-read;
+5. a per-file history census run without `--full-history`;
+6. an absolute such as "the one" or "every" that its own cited source contradicts;
+7. a finding credited to the wrong stream or author.
+
+The decision was first applied to that review itself: Ben decided on 2026-09-15 that its
+walk-through would end with finding 9, that sub-agents would check findings 10 and 11 instead, and
+that Codex's turn 2 would follow.
+
+### The evidence from 2026-09-12
+
+**A review file was reviewed again by the same agent before it was acted on, once, and both passes
+found real defects.** That rests on one review, `doc/review-findings-2026-09-10.md`, reviewed twice
+by Claude on 2026-09-12. Ben asked for both passes, and for this section, on that day.
 
 1. **Pass 1, `99ac89a7` (10:30).** It read the commits that had edited the file since it was first
    committed as `301d0fcc`, and corrected six passages: the `State:` line's shape; a lead saying
@@ -188,32 +261,72 @@ declared `open` better. Nothing had been edited on the strength of the recommend
 ### How Ben walks through a review's findings
 
 Ben's rules for an interactive walk through a review's findings, given on 2026-09-11 while the
-2026-09-10 review was walked through. They are what make his part of a review of a review work.
+2026-09-10 review was walked through and on 2026-09-14 while the 2026-09-14 review was. Since
+2026-09-15 a walk-through happens only when Ben asks for one, under the decision at the head of this
+section, and these rules govern it then.
+
+**What the walk-through is for.** Ben, 2026-09-14: it is mainly about Ben identifying what the
+review findings are, to see whether he wants to weigh in on them, for example by suggesting a
+different remediation or questioning a finding, and about the agent fixing up the findings' language
+or, in extreme cases, weighing in as Ben does, for example by suggesting a remediation different
+from those already present or questioning the finding itself. In his words: "Notably, this process
+is unlikely to be about me fixing up review finding language, nor is it likely to be about me
+questioning your proposed fix-ups to review finding language."
 
 1. **Say which of two things is meant: the wording of finding N, or the problem finding N
-   describes.** Never write a bare "fix finding N". A walk-through is about the wording; fixing the
-   problem is a separate decision Ben makes per finding.
+   describes.** Never write a bare "fix finding N". Fixing the wording is the agent's part of a
+   walk-through; fixing the problem is a separate decision Ben makes per finding.
 2. **Say what a finding is before saying anything about it.** Ben, 2026-09-11: "You need to not
    just say something like 'I fixed finding 6.' that requires me to have in my head what finding 6
    is."
-3. **Change nothing beyond what Ben asks.** Presenting a finding is not authorization to fix it,
-   and a fix he does ask for lands off the review branch.
+3. **Change nothing beyond what Ben asks.** Presenting a finding is not authorization to fix it, and
+   where a fix he does ask for goes is rule 8's question.
 4. **Use one word for one thing.** The case: "record" was naming both a post-stress-meteg survey
    entry and a document's written account, until `3f962e62`.
+5. **Summarize a finding's wording changes and offer the detail, rather than presenting each
+   change.** Say what the finding is about and that there are wording changes to it, and offer to
+   detail them. Ben, 2026-09-14, after finding 3 of the 2026-09-14 review was presented with
+   eighteen wording corrections, each quoted as it stood and as proposed: "For the record it would
+   have been sufficient for you to summarize what finding 3 was about and say you had various
+   wording changes to it, and *offered* to detail them to me, which I would have likely declined yet
+   still told you to go ahead and implement." Where the agent also weighs in, with a different
+   remediation or a doubt about the finding itself, it says so plainly, since weighing in is what
+   the walk-through is for.
+6. **Write a prompt that presents the next finding in a fresh session from what is already known,
+   and measure nothing for it.** The prompt names the finding, the passages that restate it, where
+   its evidence is and the checks to repeat. It runs no measurement to prepare leads, because the
+   fresh session verifies every claim it presents. Ben, 2026-09-14, while a session was measuring
+   leads for the prompt that presents finding 4 of the 2026-09-14 review: "But is the prompt's
+   session just going to turn around and re-measure this stuff anyway? If so, it feels like a waste
+   of time to do it when forming the prompt."
+7. **Put the questions for Ben at the end of the message that presents a finding, and only
+   there.** They are the message's last item, numbered, each naming what it asks about. A direct
+   answer to a question Ben asked still comes first, under the report's heading. Ben, 2026-09-14,
+   after the session presenting finding 4 of the 2026-09-14 review put three numbered questions
+   directly under its report's heading, as the Claude-written prompt for that session instructed,
+   and closed by saying it was waiting for his answer: "waiting for my answer to what? Please
+   either repeat the questions at the bottom, or in future, don't even ask them at the top, just
+   ask them at the bottom".
+8. **When Ben approves a fix, ask where it goes, unless he has said: fixed later, in the remediation
+   phase; fixed now, on the review branch; or fixed now, on `main`.** A fix made now on `main`, on a
+   branch of its own that is integrated at once, is for something pressing, such as a mega that
+   fails on `main`. Ben, 2026-09-15, after the session presenting finding 7 of the 2026-09-14 review
+   took his approval of a procedure change for finding 7.1 as an instruction to make it at once on
+   `main`: "Either is fine, but it would have been nice to have been asked for clarification, as
+   'fix now' is usually reserved for things [that] are usually quite pressing (e.g. mega is found to
+   be broken on main)." And later that day: "there are actually (at least) 3 dispositions for a fix:
+   fix later in remediation, fix now on the review branch, and fix now on the main branch."
 
 ## Close-out: from findings to dispositions
 
 After a review is written, and after any review of it:
 
-1. Record Ben's decisions on the choices the review leaves to him.
-2. Write a remediation plan for a fresh task, including concrete wording for each editorial change,
-   and obtain Ben's approval before execution. The two rules below govern how.
-3. Execute the approved remediation, recording each finding's disposition under a
-   `## Dispositions after remediation` section at the end of the review file. The rest of the file
-   is left as written; a correction to it goes in `<stem>-update.md`, under `~/.claude/CLAUDE.md`'s
-   section "A finished dated document is corrected in `<stem>-update.md`, never edited".
-4. Integrate by the worktree procedure in `~/.claude/CLAUDE.md`, with step 2 a mega run, as
-   `CLAUDE.md`'s section "Integrating a worktree branch here" requires.
+1. Record Ben's decisions on every finding, asked as one list as the section "Reviewing the review,
+   with the same agent and with Ben" sets out.
+2. Write and approve a fresh-task remediation plan with concrete editorial wording.
+3. Execute remediation and put later State and every disposition in the review's one live update
+   file, leaving the base's historical State untouched apart from its line-4 pointer.
+4. Run the required final integration gate.
 
 ### Verification cadence during remediation — Ben's decision, 2026-09-13
 
@@ -304,6 +417,3 @@ categories first.
 1. **The cadence.** "Every four to eight days" describes the series; nothing requires it.
 2. **Whether a window has one reviewer or two.** D9 in `doc/dual-agent-review.md` settles the
    procedure for a two-agent window and leaves the choice open.
-3. **Whether a review is reviewed again before it is acted on.** The section "Reviewing the review,
-   with the same agent and with Ben" records one case and recommends trying it; it does not require
-   it.

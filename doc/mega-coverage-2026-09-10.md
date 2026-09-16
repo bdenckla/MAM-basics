@@ -1,12 +1,7 @@
 # What `py/main_0_mega.py` runs, and why everything else does not run there
 
-Written by a Claude session on 2026-09-10. Ben's instructions that day were: "An analysis of what
-is and isn't part of mega should be made", "Everything that is not part of mega should have a
-recorded justification as to why it is not in mega", and "It should be part of repo maintenance
-(if it is not already) to check that the only programs not part of mega are those that have
-documented justifications for why they are not part of mega." Of the post-stress-meteg survey he
-also said: "If it is not part of mega, it should be!" Everything else here is that session's
-analysis.
+Written by a Claude session on 2026-09-10. Ben's instructions that day were: "An analysis of what is and isn't part of mega should be made", "Everything that is not part of mega should have a recorded justification as to why it is not in mega", and "It should be part of repo maintenance (if it is not already) to check that the only programs not part of mega are those that have documented justifications for why they are not part of mega." Of the post-stress-meteg survey he also said: "If it is not part of mega, it should be!" Everything else here is that session's analysis.
+Updates and later status: [mega-coverage-2026-09-10-update.md](mega-coverage-2026-09-10-update.md).
 
 **Measured against** `main` at `a2e883f1` (2026-09-10 12:04), in the worktree branch
 `claude/mega-coverage`. That branch's first commit, `3a1ab7f0`, is the one code change made so far:
