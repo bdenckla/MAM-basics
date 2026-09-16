@@ -95,11 +95,11 @@ def _flatten_one(lci_augrec):
     return lci_augrec_f
 
 
-def _flatten_verlens(verlens_stasto):
-    vrl_start, vrl_stop = verlens_stasto
+def _flatten_verlens(whole_verse_atom_counts):
+    whole_start_verse_atom_count, whole_stop_verse_atom_count = whole_verse_atom_counts
     return {
-        "startl": vrl_start,
-        "stopl": vrl_stop,
+        "whole_start_verse_atom_count": whole_start_verse_atom_count,
+        "whole_stop_verse_atom_count": whole_stop_verse_atom_count,
     }
 
 
@@ -146,6 +146,6 @@ def _get_verlens(ctx, lcir):
     if bkid is None:
         return None, None
     cvp_start, cvp_stop = lci_rec.get_cvp_range(lcir)
-    vrl_start = verlen.get_verlen(ctx["uxlc"], bkid, cvp_start)
-    vrl_stop = verlen.get_verlen(ctx["uxlc"], bkid, cvp_stop)
-    return vrl_start, vrl_stop
+    whole_start_verse_atom_count = verlen.get_verlen(ctx["uxlc"], bkid, cvp_start)
+    whole_stop_verse_atom_count = verlen.get_verlen(ctx["uxlc"], bkid, cvp_stop)
+    return whole_start_verse_atom_count, whole_stop_verse_atom_count
