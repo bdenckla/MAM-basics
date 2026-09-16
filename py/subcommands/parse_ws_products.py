@@ -62,7 +62,7 @@ def generate(output_dir, bkids=None, parsed_books=None):
         print(f"Parsed Wikisource {bkid}", flush=True)
     out_paths = []
     for bk24id, light_books in grouped.items():
-        plain = mam_parsed_plain.add_header(light_books)
+        plain = mam_parsed_plain.add_header(light_books, "wikisource")
         plus = mam_parsed_plus.add_plus_stuff(plain)
         filename = tbn.ordered_short_dash_full_24(bk24id) + ".json"
         book_paths = {}

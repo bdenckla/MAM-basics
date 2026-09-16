@@ -22,6 +22,28 @@ applications, the plus format is more convenient to work with than the
 <li>Selected templates</li>
 <li>Differences from plain format</li>
 </ul>
+<h2 id="consumer-notice">Consumer notice</h2>
+<p>This is a structured dataset, not ready-to-display Scripture; interpret each structure by its
+documented role and choose a projection wherever the payload presents alternatives.</p>
+<ul>
+<li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
+fields, and fail on an unknown template instead of guessing from its parameters or skipping it.</li>
+<li>Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual
+cantillation, qamats, and stress-helper alternatives where present; do not concatenate the
+branches.</li>
+<li>A special-letter template's interrupted spelling and uninterrupted atom-form are two
+representations of one atom-form; select one text representation rather than collecting both.</li>
+<li>Reassemble text fragments before identifying atoms or chanted words; array, template, and
+element boundaries are not segmentation boundaries.</li>
+<li>Plus omits plain's 0 and triple-tav pseudo-verses, but its remaining structures still require
+documented role and choice handling.</li>
+<li>For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or
+transform both sides deliberately; Unicode-normalized text can look identical while comparing
+differently.</li>
+</ul>
+<p>Every generated <code>MAM-parsed/plus/*.json</code> file embeds this warning in
+<code>header.consumer_notice</code>. Its <code>documentation</code> field is an absolute URL to this
+section.</p>
 <h2>File naming</h2>
 <p>File names (e.g. <code>A1-Genesis.json</code>) start with two characters that identify the book
 (in the “24 books” sense) and provide a standard ordering. The first character
@@ -98,21 +120,65 @@ sub-books.)</td>
 <code>chapter_count</code>. (The <code>sub_book_name</code> will be null for a book39 that is not a
 sub-book, i.e. a book39 that is also a book24.)</td>
 </tr>
+<tr>
+<td><code>consumer_notice</code></td>
+<td>object</td>
+<td class="wide-col">A warning label for consumers, with a summary, a nonempty array of
+<code>critical_rules</code>, and the absolute URL of this format guide.</td>
+</tr>
 </table>
 <p>Here’s the header for Job, a book24 has no sub-books:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct">}]</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;consumer_notice&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;summary&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;This is a structured dataset, not ready-to-display Scripture; interpret each structure by its documented role and choose a projection wherever the payload presents alternatives.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;critical_rules&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual cantillation, qamats, and stress-helper alternatives where present; do not concatenate the branches.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;A special-letter template&#x27;s interrupted spelling and uninterrupted atom-form are two representations of one atom-form; select one text representation rather than collecting both.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Reassemble text fragments before identifying atoms or chanted words; array, template, and element boundaries are not segmentation boundaries.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Plus omits plain&#x27;s 0 and triple-tav pseudo-verses, but its remaining structures still require documented role and choice handling.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently.&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;documentation&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html#consumer-notice&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Here’s
 the header for Samuel, a book24 that has sub-books:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">31</span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">31</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">},</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;consumer_notice&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;summary&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;This is a structured dataset, not ready-to-display Scripture; interpret each structure by its documented role and choose a projection wherever the payload presents alternatives.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;critical_rules&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual cantillation, qamats, and stress-helper alternatives where present; do not concatenate the branches.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;A special-letter template&#x27;s interrupted spelling and uninterrupted atom-form are two representations of one atom-form; select one text representation rather than collecting both.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Reassemble text fragments before identifying atoms or chanted words; array, template, and element boundaries are not segmentation boundaries.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;Plus omits plain&#x27;s 0 and triple-tav pseudo-verses, but its remaining structures still require documented role and choice handling.&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-string">&quot;For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently.&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;documentation&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html#consumer-notice&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Book39
 structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>

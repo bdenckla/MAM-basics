@@ -56,6 +56,40 @@ on rather than trust the fallback rule — see
 
 For a full description of where and how the three versifications differ, see [Versification Differences](versification-differences.md).
 
+## Consumer notice
+
+MAM-simple is a projected extract of MAM, not a complete representation of the
+MAM-parsed source. Every JSON file embeds a `consumer_notice` immediately after its
+`provenance` field, and every XML file places the same structured notice in a comment
+before the `<book24>` root. The notice points back to this section.
+
+The following rules protect distinctions that a generic tree walk would erase:
+
+- Use the incremental-folder fallback above. An absent BHS or Sefaria book-group file
+  is not an absent book.
+- Dispatch explicitly on every documented element role and fail on an unknown element.
+  Choose one branch where alternatives remain, including `<kq>` and
+  `<cant-all-three>`; do not concatenate alternatives, a `<scrdfftar>` target with its
+  note, or a `<good-ending>` repetition with running text. MAM-simple has already
+  resolved or removed some choices retained by MAM-parsed, so absence here does not
+  establish absence in MAM-parsed.
+- The children of `<slh-word>` spell one atom-form. Its `slhw-desc-0` attribute repeats
+  the uninterrupted atom-form without the letter formatting; the attribute is not
+  additional Scripture.
+- Select the required Scripture branches and reassemble adjacent fragments in source
+  order before segmentation. An atom is one written form between spaces or maqafs. A
+  chanted word is one atom or a complete maqaf compound. A template, fragment,
+  punctuation, or structural-node boundary defines neither unit; in particular, a
+  standalone `<lp-legarmeih>` or `<lp-paseq>` belongs with the preceding atom.
+- The free parashah marker and the adjacent `starts-with-sampe` and
+  `ends-with-sampe` attributes describe one break. Do not count the same break three
+  times.
+- MAM stores Hebrew combining marks in MAM order, not Unicode-normal order. A literal
+  search using normalized input can miss equivalent-looking MAM text, and normalization
+  can change bytes. Preserve MAM order when a byte-for-byte round trip or MAM-compatible
+  output is required; a consumer with a different output contract may transform both
+  sides deliberately.
+
 ## Format Details
 
 - **[XML format](reading-mam-simple-xml.md)** — element hierarchy, verse text storage, child element types, verse attributes, and versification attributes.

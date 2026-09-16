@@ -56,14 +56,22 @@ def _increment(atc, key, val):
 def _fill_elem_with_dict(elem, dic):
     for key, val in dic.items():
         subelem = ET.SubElement(elem, key)
-        if isinstance(val, dict):
-            _fill_elem_with_dict(subelem, val)
-        elif isinstance(val, str):
-            subelem.text = val
-        elif isinstance(val, int):
-            subelem.text = str(val)
-        else:
-            assert val is None
+        _fill_elem_with_value(subelem, val)
+
+
+def _fill_elem_with_value(elem, value):
+    if isinstance(value, dict):
+        _fill_elem_with_dict(elem, value)
+    elif isinstance(value, list):
+        for item in value:
+            item_elem = ET.SubElement(elem, "item")
+            _fill_elem_with_value(item_elem, item)
+    elif isinstance(value, str):
+        elem.text = value
+    elif isinstance(value, int):
+        elem.text = str(value)
+    elif value is not None:
+        raise TypeError(f"unsupported JSON value in Leningrad header: {value!r}")
 
 
 def _fill_col_analysis_elem(ca_elem, ca_dic):

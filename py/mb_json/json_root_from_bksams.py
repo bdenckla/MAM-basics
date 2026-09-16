@@ -6,6 +6,7 @@ from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import vtrad_helpers
 from mb_misc import osis_book_abbrevs as osisba
 from mb_xml import xml_distribute_sampe as xml_sampe
+from mb_cmn import public_data_consumer_notice as consumer_notice
 
 
 def root(bksams, vtrads, variant):
@@ -17,7 +18,11 @@ def root(bksams, vtrads, variant):
     """
     contents = []
     _add_subelements(contents, bksams, variant)
-    return {"versification-tradition": vtrads, "contents": contents}
+    return {
+        "consumer_notice": consumer_notice.mam_simple_notice(),
+        "versification-tradition": vtrads,
+        "contents": contents,
+    }
 
 
 def _add_subelements(contents, bksams, variant):

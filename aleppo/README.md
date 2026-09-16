@@ -15,6 +15,36 @@ MAM-basics contains the programs that read and write this product directory. The
 
 The published scholarly pages are under [`../gh-pages/aleppo/`](../gh-pages/aleppo/) and are served at [bdenckla.github.io/MAM-basics/aleppo/](https://bdenckla.github.io/MAM-basics/aleppo/).
 
+## Consumer guide
+
+`aleppo-wiki/index-flat-corrected.json` is the hand-corrected entry index, and
+`index-flat-annotated.json` is its generated form with `de_start_whole` and
+`de_end_whole` added. Both have exactly this top-level shape:
+
+```json
+{
+  "header": {
+    "description": "...",
+    "consumer_notice": {"summary": "...", "critical_rules": ["..."], "documentation": "https://..."},
+    "rows_sans_url": ["..."],
+    "rows_with_gap": ["..."],
+    "books": ["..."]
+  },
+  "body": ["...page records only..."]
+}
+```
+
+The files are locator indexes, not transcriptions of the Aleppo Codex and not Bible
+editions. A body record's `de_text_range` can begin or end mid-verse, and `de_gap`
+records missing manuscript coverage rather than permission to fill the gap. The range
+is locator evidence; it makes no general promise that any text field reproduces the
+manuscript's pointing or mark order.
+
+The subordinate `line-breaks/` files align a MAM word stream with manually annotated
+page lines, and `column-coordinates/` records image geometry. The line-break stream is
+not a diplomatic transcription, and the geometry does not establish textual content.
+Neither subordinate format is part of the entry-index schema above.
+
 ## Conventions
 
 - A page ID is `{leaf_number}{r|v}`: for example, `270r` is leaf 270 recto.

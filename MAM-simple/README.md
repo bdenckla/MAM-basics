@@ -61,13 +61,15 @@ In an existing sparse MAM-basics checkout, add the product with
 `git sparse-checkout add MAM-simple`.
 
 One property of the text is worth knowing before you write any code against it:
-**the Hebrew is in neither NFC nor NFD, and normalizing it will silently corrupt it.**
+**the Hebrew is in neither NFC nor NFD.**
 The combining marks of a letter are in MAM's order, in which shin dot, sin dot, dagesh
 and rafe come first — so a dagesh comes before its vowel, where Unicode's canonical
 order puts the vowel first.
-The two orders render identically and no error is raised, so a pipeline that normalizes
-by reflex, as many tools do on save, changes tens of thousands of code points with
-nothing to show for it until something compares bytes.
+The two orders render identically, so literal search with normalized input can miss MAM
+text and normalization can change bytes without a visible signal. Preserve MAM order
+when byte-for-byte round trips or MAM-compatible output are required. A consumer with a
+different output contract may transform deliberately, but should transform both sides
+before comparison.
 For the full statement, including what the guarantee does and does not cover, see
 [Three invariants worth relying on](doc/reading-mam-simple-xml.md#three-invariants-worth-relying-on).
 
