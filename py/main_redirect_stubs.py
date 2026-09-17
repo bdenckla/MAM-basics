@@ -1,4 +1,4 @@
-"""Redirect stubs standing in for published pages that now live in MAM-basics.
+"""Redirect stubs standing in for published pages that moved to maintained sites.
 
 ``bdenckla.github.io/wlc-utils/<path>`` moved to
 ``bdenckla.github.io/MAM-basics/wlc/<path>``, a pure prefix rewrite.  Some of the old URLs
@@ -7,10 +7,12 @@ vendored into UXLC-utils above all -- so wlc-utils stays alive as a redirect hos
 than being archived or deleted, holding one stub per published page plus a ``404.html``
 catch-all.  This program builds that set and lints it.
 
-``py/redirect_stubs/stubs.py`` records one row per redirect host: its source repository,
-MAM-basics subtree, old URL prefix, frozen manifest and clone URL. A lane adds a row only with
-that source repo's frozen manifest, so a missing manifest fails rather than producing an empty
-stub set.
+``py/redirect_stubs/stubs.py`` records one explicit row per redirect host: its source
+repository and published directory, old URL prefix, frozen manifest, maintained target
+repository and published prefix, absolute target-site base, and clone URL. A row declares
+whether its manifest is a same-suffix prefix contract or an explicit old-to-target mapping;
+JSON shape never selects semantics. A lane adds a row only with that source repo's frozen
+manifest, so a missing or malformed manifest fails rather than producing an empty stub set.
 
 WITH JAVASCRIPT OFF, A DEEP LINK LOSES ITS FRAGMENT.  Each stub carries its target three
 times and the three do different work: the canonical link names the current copy for a
@@ -27,13 +29,13 @@ Subcommands:
                 is required and selects a table row; --out names the destination and defaults to a
                 gitignored subtree-specific directory, so the safe target is the one
                 received by saying nothing. --publish writes into that source repo's
-                gh-pages/ instead. It deletes nothing.
+                declared published directory instead. It deletes nothing.
     check
                 Lint a selected row's stub tree against its frozen URLs: every URL has a
-                stub, every stub answers one, every URL is still published under its
-                MAM-basics subtree, 404.html is present, and each stub names its own
-                path's prefix rewrite and no other target. --dir names the tree; its
-                default, the selected source repo's gh-pages/, takes a clone. Exits
+                stub, every stub answers one, every declared target remains published,
+                404.html is present, and each stub names its declared target and no
+                other URL. --dir names the tree; its default, the selected source
+                repo's published directory, takes a clone. Exits
                 non-zero on any problem.
 
 Examples:
@@ -81,7 +83,8 @@ def build_parser() -> argparse.ArgumentParser:
         "build",
         help=(
             "Write a selected redirect host's frozen stubs plus 404.html. --out names the "
-            "destination; --publish writes into the selected source repo's gh-pages/. "
+            "destination; --publish writes into the selected source repo's declared "
+            "published directory. "
             "Deletes nothing."
         ),
     )
@@ -92,8 +95,8 @@ def build_parser() -> argparse.ArgumentParser:
         "check",
         help=(
             "Lint a selected redirect host's stubs: the two sets correspond and each "
-            "stub names its own path's prefix rewrite. --dir defaults to the source "
-            "repo's gh-pages/. Exits non-zero on any problem."
+            "stub names its declared target. --dir defaults to the source repo's "
+            "published directory. Exits non-zero on any problem."
         ),
     )
     check_stubs.add_args(check_parser, repo_root=_repo_root())

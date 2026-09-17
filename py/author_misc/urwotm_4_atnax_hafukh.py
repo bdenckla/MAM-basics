@@ -79,7 +79,7 @@ _FNAME = urwotm_common.FNAMES[_PART]
 _URL_BDENCKLA_GITHUB_IO_1 = (
     "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c5v10"
 )
-_URL_BDENCKLA_GITHUB_IO_2 = "https://bdenckla.github.io/Taamey_D/"
+_URL_BDENCKLA_GITHUB_IO_2 = "https://bdenckla.github.io/hbofonts/Taamey_D.html"
 _URL_TANACH_US_1 = "https://tanach.us/"
 
 _PARA_002 = """This is the fourth article in a series. The series is about errors in $BHS and/or

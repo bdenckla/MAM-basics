@@ -1,0 +1,9 @@
+{
+  "comment": "The one HTML path published at bdenckla.github.io/Taamey_D/, frozen from source commit 38134991aceee6493444ab6f56b04b89b6d06ebf before the 2026-09-17 redirect flip. The explicit mapping sends that legacy index to hbofonts/Taamey_D.html rather than applying a same-suffix prefix rewrite. The source host keeps its stylesheet and four WOFF2 assets byte-for-byte, so static assets are deliberately not redirect-manifest entries.",
+  "source_repo": "Taamey_D",
+  "source_commit": "38134991aceee6493444ab6f56b04b89b6d06ebf",
+  "frozen_on": "2026-09-17",
+  "pages": {
+    "index.html": "Taamey_D.html"
+  }
+}

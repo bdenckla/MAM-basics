@@ -35,16 +35,16 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         "--out",
         type=Path,
         help=(
-            "directory to write the stubs into; defaults to the gitignored"
-            " .novc/<subtree>-redirect-stubs/ for the selected row"
+            "directory to write the stubs into; defaults to the selected row's"
+            " gitignored .novc/<scratch-name>-redirect-stubs/"
         ),
     )
     destination.add_argument(
         "--publish",
         action="store_true",
         help=(
-            "write into the selected source repo's gh-pages/ instead, which takes a"
-            " temporary clone"
+            "write into the selected source repo's declared published directory"
+            " instead, which takes a temporary clone"
         ),
     )
 

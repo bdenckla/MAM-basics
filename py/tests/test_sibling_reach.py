@@ -168,6 +168,14 @@ SIBLINGS_REACHED: dict[str, str] = {
     "UXLC-utils": "redirect_stubs/stubs.py only -- as wlc-utils, a redirect host.",
     "holman-ketiv-qere": "redirect_stubs/stubs.py only -- as wlc-utils, a redirect host.",
     "book-of-job": "redirect_stubs/stubs.py only -- as wlc-utils, a redirect host.",
+    "Taamey_D": (
+        "redirect_stubs/stubs.py only, to publish or check the frozen redirect stubs"
+        " under the source host's docs directory."
+    ),
+    "hbofonts": (
+        "redirect_stubs/stubs.py reads the maintained target to prove each mapped"
+        " Taamey_D page remains tracked under hbofonts' published gh-pages directory."
+    ),
 }
 
 # ---------------------------------------------------------------------------
