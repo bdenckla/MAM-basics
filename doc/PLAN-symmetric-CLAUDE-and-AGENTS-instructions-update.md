@@ -118,3 +118,40 @@ MAM-basics issue 274 now has exactly two remaining checks:
 2. A real Claude cloud-session check.
 
 No fresh local Claude Code or Claude cloud-session verification has occurred.
+
+## Fresh local Claude Code startup verification — 2026-09-17
+
+Recorded by a Codex session on 2026-09-17, at Ben's request.
+
+The development checkout was the primary clone at
+`C:/Users/BenDe/GitRepos/MAM-basics`, on clean `main` at
+`a4968fd7b8eac92caf4df6736b128b5a1e1e1b13`. The required deployment comparison
+reported
+`USER_CONFIG_SOURCE=C:/Users/BenDe/GitRepos/MAM-basics refs/remotes/origin/main@a4968fd7b8eac92caf4df6736b128b5a1e1e1b13`
+and `USER_CONFIG_PROBLEM_COUNT=0`.
+
+The Codex implementing session started a brand-new, non-persistent local Claude
+Code process from that checkout, using the installed Claude Code 2.1.274 binary
+with tools disabled and the prescribed prompt unchanged. Ben did not supply a
+separate response. The process produced no instruction-content response and did
+not reach model inference. Its complete result reported:
+
+> Failed to authenticate: OAuth session expired and could not be refreshed
+
+The fresh local Claude Code startup check therefore did not pass. Because no
+model response was produced, none of the content acceptance criteria could be
+evaluated: the process did not name or summarize either final H2, identify the
+canonical common body or tracked wrapper, explain the two live deployed files,
+identify the Claude cloud-session installer, or report whether startup produced
+an import, truncation, or instruction-loading warning. The exact failed
+criterion was the prerequisite that the fresh Claude Code session produce a
+startup-only response from its loaded instructions.
+
+This update file remains **State: open**. MAM-basics issue 274 still has exactly
+two remaining checks:
+
+1. A successful fresh local Claude Code session check after local Claude Code
+   authentication is restored.
+2. A real Claude cloud-session check.
+
+The issue body remains current and was not edited.
