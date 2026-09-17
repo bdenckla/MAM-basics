@@ -1,7 +1,7 @@
 # Notes: the four accent-placement Holman suggestions (M17, M24, M32, M34)
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md). **"The larger
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md). **"The larger
 rollout plan" and "the rollout plan" below name that programme**, whose item 4 is the phase this
 note calls "download the chapters" and whose item 7 is the phase it calls "refresh mgketer". The
 four records covered here are the four the programme excludes: its thirty are M1–M16, M18–M23,

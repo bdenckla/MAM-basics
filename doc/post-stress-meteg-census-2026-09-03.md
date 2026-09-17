@@ -26,7 +26,7 @@ remain unchanged as the 2026-09-03 baseline they record.
 
 **STATUS, 2026-09-04: EVERY FIGURE HERE IS PRE-ROLLOUT AND IS NOW A BASELINE
 RATHER THAN A CURRENT COUNT.** It was measured before items 3 and 5 of
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md)
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md)
 put the thirty Holman meteg suggestions into MAM, which they did on 2026-09-03
 and 2026-09-04. Two movements are expected against the counts below, and the
 programme's section "Item 5 changes the survey's figures, and nothing re-runs the
@@ -35,7 +35,7 @@ survey by itself" holds the reasoning: the post-stress count should rise from
 census is about, and the prose pre-stress figure of **13,131** should fall by
 about 29, all 29 removals being pre-stress metegs. **Those two are predictions
 made on 2026-09-04 and not measurements**; Phase 1 of
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md)
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md)
 is what tests them, and a mismatch with either is a finding rather than something
 to absorb.
 
@@ -55,10 +55,10 @@ that staleness."*** So these figures stay current as well as being the baseline,
 and the question is closed rather than pending.
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
 and specifically for
 that programme's item 1, planned in
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md),
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md),
 whose Phase 1 builds the tracked generator that replaces the script named above. The note that
 reads these figures is
 [`holman-meteg-m23-isaiah-23-12.md`](holman-meteg-m23-isaiah-23-12.md).

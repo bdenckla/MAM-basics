@@ -1,7 +1,7 @@
 # Notes: 2 Chronicles 18:33 word 21 הׇֽחֳלֵֽיתִי׃ is inside a `מ:קמץ` template call
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md). Its finding is
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md). Its finding is
 what turns M13 into two entries of that programme's item 2 rather than one.
 
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
@@ -15,7 +15,7 @@ closing section of this note leaves open.
 **Status, 2026-09-04: M13 HAS BEEN IMPLEMENTED, and this heading said "not yet
 done; no edit made" until now.** The Wikisource bot removed both metegs on
 2026-09-03 as item 3 of
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
 and item 5's Google Sheet round trip and mega run carried the change into
 MAM-parsed and the generated repositories on 2026-09-04. **The finding below is
 what made the two-parameter shape matter, and it held**: M13's two bot entries
@@ -119,7 +119,7 @@ output is the place to see both verses listed among their peers rather than in i
 **This HAS BEEN SETTLED, and the candidate list below is the record of the choice rather than
 an open question.** Ben's decision, 2026-09-03: the third candidate. The six notes are `doc/`
 files of MAM-basics, cross-linked to the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
 which is where the implementation of the M-series suggestions is tracked — so the first and
 third candidates were taken together rather than one instead of the other. No issue was filed
 for M13, the second candidate.

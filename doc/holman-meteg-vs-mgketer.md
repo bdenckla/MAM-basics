@@ -1,7 +1,7 @@
 # Notes: the 30 meteg suggestions M1–M33 lined up against the mgketer comparison reports
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md). Its table of
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md). Its table of
 30 records is the target set of that programme's items 2, 3 and 6, and the by-type totals at the
 foot are what its item 7 re-reads after the mgketer refresh.
 
@@ -168,7 +168,7 @@ to read at those spots than at the other 27.
 ## Status, 2026-09-04: the refresh has happened and these totals are now HISTORICAL
 
 **Every figure above is pre-refresh.** Item 7 of
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md)
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md)
 ran `py/main_diff.py --all` on mgketer on 2026-09-04, after items 3 and 5 had put
 the thirty suggestions into MAM. Counted as diff cards on the pages themselves:
 `mam-adds-meteg.html` fell from **67 to 37** and `mgketer-adds-meteg.html` from
