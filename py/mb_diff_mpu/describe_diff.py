@@ -137,8 +137,8 @@ POINT_NAMES = {
     hpo.SHIND: "shin-dot",
     hpo.SIND: "sin-dot",
     hpo.VARIKA: "varika",
-    hpo.SHEVA_NA: "shewa-na-mudgash",
-    hpo.DAGESH_XAZAQ: "dagesh-ḥazaq-mudgash",
+    hpo.SHEVA_NA: "sheva-na",
+    hpo.DAGESH_XAZAQ: "dagesh-xazaq",
 }
 
 

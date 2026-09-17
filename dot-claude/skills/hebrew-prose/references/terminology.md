@@ -423,6 +423,25 @@ In free-text comments and docstrings spell out **"the LC"** for the manuscript, 
 never "the L scanner" (the LC is a manuscript, not software). Bare "L" is widespread legacy
 across the poetic files — a pending sweep, not the standard.
 
+## Sheva, shewa, and `MUDGASH`
+
+- **Use `sheva` only when the text stays close to a Unicode code point.** A short lowercase name
+  derived from `HEBREW POINT SHEVA` uses `sheva`; one derived from `HEBREW POINT SHEVA NA
+  MUDGASH` may use `sheva na`, `sheva-na`, or `sheva_na`, as the surrounding convention requires.
+- **Use `shewa` for the abstract concept**, divorced from a particular Unicode character. The
+  boundary can be ambiguous; decide from whether the immediate subject is a coded character or
+  the abstract Masoretic or linguistic concept, and make the distinction explicit where it
+  matters.
+- **Treat this as an aspirational rule for new and touched text, not as a spelling sweep.** Do not
+  sweep established prose, labels, identifiers, or generated artifacts from `shewa` to `sheva`
+  or from `sheva` to `shewa` solely to conform to this rule.
+- **`MUDGASH` and `mudgash` name Unicode code points; they do not describe the marks.** Use the
+  word only when literally naming U+05C8 or U+05C9, whose full names are `HEBREW POINT SHEVA NA
+  MUDGASH` and `HEBREW POINT DAGESH HAZAQ MUDGASH`. Do not put `mudgash` in a short display
+  name, internal label, or semantic description.
+- **For these two code points, ASCII internal labels use `sheva-na` and `dagesh-xazaq`.**
+  These are Unicode-close names; they do not establish terminology for the abstract concepts.
+
 ## Transliteration (accgram)
 
 - **ḥet (ח) is never `h`.** ASCII **`x`/`X`** almost everywhere hand-written — identifiers

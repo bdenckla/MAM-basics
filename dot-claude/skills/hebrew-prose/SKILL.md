@@ -33,7 +33,8 @@ the repository-specific reference before writing. Load only the references neede
 7. **Use the established names.** Write "the Simanim Tiqqun", not bare "Simanim". Keep strand
    names in Hebrew letters in reader-facing prose. Distinguish narrow-sense meteg from secondary
    stress, and do not infer vowels from secondary-stress placement. Treat stress-helper templates
-   as choices among strands, not as a license to traverse all branches.
+   as choices among strands, not as a license to traverse all branches. Reserve `MUDGASH` and
+   `mudgash` for literal Unicode code-point names.
 8. **Show the Hebrew form in Unicode.** Do not replace the form with a transliteration or an
    English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
    give Hebrew an English runway or its own RTL table cell.
