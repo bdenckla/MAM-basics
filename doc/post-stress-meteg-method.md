@@ -3,6 +3,13 @@
 This is maintainer documentation for the post-stress-meteg survey. The rendered
 post-stress-meteg page explains the cantillation findings without this implementation detail.
 
+## Current totals
+
+This document explains how the populations are computed; it does not duplicate their changing
+totals. Read the [generated post-stress-meteg page](../gh-pages/post-stress-meteg.html) for the
+current reader-facing tables and [`out/accgram/post-stress-meteg.json`](../out/accgram/post-stress-meteg.json)
+for the current survey records and summaries. Regenerate both before reporting a current figure.
+
 ## Fit for MAS
 
 The fit-for-MAS table asks a narrow structural question about a pair of chanted words. A candidate
@@ -26,14 +33,18 @@ on that stress syllable. The prose or poetic accent grammar establishes the next
 chanted word's disjunctive accent. The U+05BD on ר in Genesis 28:7's next chanted word, אֲרָֽם׃, is
 silluq, not an absence of an accent: the sof pasuq supplies the context that classifies it.
 
-The non-type-specific conditions deliberately define a narrower table than the MAS census. A
-grammar-aware audit found 217 next-chanted-word disjunctives and 15 next-chanted-word conjunctives
-among the 232 MAS records; all but Jeremiah 46:14 have initial stress in the next chanted word. The Fit-for-MAS
-section accounts for every difference between the table's "Has MAS" count and the total MAS count.
-In particular, ten chanted words have two distinct metegs: an MBS before the primary stress and a
-MAS immediately after it. The MBS_O census category counts chanted words with one or more MBS
-marks and no MAS, while the MAS category counts chanted words with a MAS regardless of whether a
-chanted word also has an MBS. The ten chanted words therefore appear only in the MAS census category.
+The non-type-specific conditions deliberately define a narrower table than the MAS census. The
+survey classifies the next chanted word's accent as disjunctive or conjunctive for every MAS
+record, and the two classes must partition the MAS population. All MAS records except Jeremiah
+46:14 have initial stress in the next chanted word. The Fit-for-MAS summary accounts for every
+MAS record excluded from its "Has MAS" count, using disjoint reasons whose total reconciles with
+the complete MAS population.
+
+The survey also derives the MAS chanted words that have two distinct metegs: an MBS before the
+primary stress and a MAS immediately after it. The MBS_O census category counts chanted words
+with one or more MBS marks and no MAS, while the MAS category counts chanted words with a MAS
+regardless of whether a chanted word also has an MBS. A chanted word in the derived MBS-and-MAS
+list therefore appears only in the MAS census category.
 
 The common conditions are a search filter, not a shared source description. Yeivin §332 specifies
 initial stress in the next chanted word for the open-syllable type. Yeivin §354 specifies a
@@ -78,20 +89,16 @@ In template terms, the census takes parameter `ד` and does not also take parame
 decision, 2026-09-08: selecting exactly one of `ד` or `ס` is the required treatment; which one is
 selected need not receive a separate effect analysis. The present choice of `ד` is acceptable,
 analogous to the survey's selection of cant-alef for a dual-cantillation template.
-The 2026-09-08 survey found 309 such rows in prose verses and 61 in poetic verses. Those 370
-rows contribute 372 duplicate phonetic-reading entries because Psalms 35:10 and Proverbs 19:7
-each form one chanted word in the qamats-dal reading and two chanted words in the qamats-sam
-reading.
+The distinct grouping cases are Psalms 35:10 and Proverbs 19:7: each forms one chanted word in
+the qamats-dal reading and two chanted words in the qamats-sam reading. That named exception set
+is pinned because it explains why duplicate phonetic-reading entries can exceed qamats-variant
+rows.
 
 The fatal invariants connect all three quantities per verse system: source entries equal MAM
 chanted words plus duplicate phonetic-reading entries, and duplicate entries equal variant rows
-plus the two measured grouping differences. The resulting MAM denominators are 233,277 prose
-chanted words and 29,542 poetic chanted words. The corresponding MBS_O chanted-word counts are
-12,843 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
-positional census separately counts 12,956 and 1,805 individual pre-stress marks. The two prose
-figures were 12,849 and 12,962 until 2026-09-11; "Eleven meteg edits reached the survey on
-2026-09-11" below says why. Both prose figures increased by one on 2026-09-17 when Phonetic MAM
-acquired MAM's meteg at 2 Samuel 18:3.
+plus the measured grouping differences. The MAM chanted-word count must also equal the survey's
+"chanted words checked" count for the same verse system. The JSON's `qamats_variant_census`,
+`counts`, and `census_chanted_word_summary` sections contain the current populations.
 
 ## A census chanted word is identified by position, not by form
 
@@ -100,49 +107,44 @@ chanted word is identified by its numbered verse and by its position among that 
 entries. Keying it by form instead — the numbered verse, the chanted word and its `jta` — makes
 each such pair read as a single chanted word carrying both occurrences' meteg marks.
 
-The census was keyed by form until 2026-09-09, and reported 12,828 prose MBS_O chanted words
-and 143 MBS_O chanted words with more than one meteg. Twenty-one of those 143 were one form
-counted against itself, each occurrence carrying one meteg, so the MBS_O counts were 21 short
-of the chanted words they are described as counting and the multiple-meteg count was 21 too
-many. All 21 are in prose verses. The corrected figures were 12,849 prose MBS_O chanted words
-and 122 with more than one meteg. (The 12,849 became 12,842 on 2026-09-11 and 12,843 on
-2026-09-17, for reasons that have nothing to do with the key: "Eleven meteg edits reached the
-survey on 2026-09-11" below and the 2 Samuel 18:3 refresh above.) The poetic MBS_O count, both
-MAS counts and every positional
-count are unaffected: no MAS chanted word shares a numbered verse with another chanted word of
-the same form.
+MAM-basics commit `ad44dba7` on 2026-09-09 replaced the form key with the position key. Before
+that correction, the survey reported 12,828 prose MBS_O chanted words and 143 MBS_O chanted
+words with more than one meteg. Twenty-one of those 143 were one form counted against itself,
+each occurrence carrying one meteg, so the MBS_O population was 21 chanted words too small and
+the multiple-MBS population was 21 too large. All 21 were in prose verses. At that commit, the
+corrected measurements were 12,849 prose MBS_O chanted words and 122 with more than one meteg.
+The poetic MBS_O measurement, both MAS measurements, and every positional measurement were
+unaffected: no MAS chanted word shared a numbered verse with another chanted word of the same
+form.
 
 The independent oracle is `py/foi/foiz_wt_mtgmtg.py`, which counts U+05BD per chanted word
-straight from MAM-parsed-plus with no stress oracle at all. Its tracked output
-`gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` has 135 chanted words carrying two meteg marks
-beside any verse-final silluq: the groups `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102 and
-`2/sopa-y/maq-y` 14. Those 135 reconcile against the census as the 122 MBS_O chanted words, the
-ten MAS chanted words that also carry one meteg before the stress, and three cant-bet Decalogue
-forms — לֹֽא־יִהְיֶֽה־לְךָ֩ at Exodus 20:2 and לֹֽא־תַעֲשֶֽׂה־לְךָ֣ at Exodus 20:3 and Deuteronomy 5:7 — which the
-features-of-interest survey counts because its `מ:כפול` handler concatenates both cantillation
-strands where the census counts cant-alef alone.
+straight from MAM-parsed-plus with no stress oracle. At MAM-basics commit `ad44dba7` on
+2026-09-09, its tracked output had 135 chanted words carrying two meteg marks beside any
+verse-final silluq: the groups `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102, and
+`2/sopa-y/maq-y` 14. Those 135 reconciled with the corrected census as 122 MBS_O chanted words,
+ten MAS chanted words that also had one MBS, and three cant-bet Decalogue forms. The
+features-of-interest survey counted those three because its `מ:כפול` handler concatenated both
+cantillation strands where the post-stress survey counted cant-alef alone.
 
 ## Snapshot currency is not source-form alignment
 
 The JSON's `currency` section measures the difference in U+05BD counts between Phonetic MAM's
-snapshot and MAM-simple today, one numbered verse at a time. It does not align chanted words or
-classify the U+05C0 glyph. Its purpose is to state the scope of the census while its stress oracle
-is the older Phonetic MAM snapshot, not to preserve that snapshot as a permanent comparison
-target. The 2026-09-08 measurement compares 23,184 numbered verses and finds nine differences,
-all cases where MAM-simple has one more U+05BD than the snapshot. When Phonetic MAM is regenerated,
-`currency` is regenerated too; it is not evidence against the template-aware source-form result
-above.
+snapshot and current MAM-simple, one numbered verse at a time. It does not align chanted words or
+classify the U+05C0 glyph. Its purpose is to state the scope of the census while its stress
+oracle is an older Phonetic MAM snapshot, not to preserve that snapshot as a permanent comparison
+target. When Phonetic MAM is regenerated, `currency` is regenerated too; it is not evidence
+against the template-aware source-form result above.
 
 ## Eleven meteg edits reached the survey on 2026-09-11
 
-The tracked survey had last been regenerated on 2026-09-09, in `ad44dba7`. Regenerated on
-2026-09-11, it found both of its inputs moved. The Wikisource refresh of 2026-09-10, MAM-basics
-`209b4c05`, brought into `in/mam-ws/` and MAM-simple the eleven meteg edits made on Hebrew
-Wikisource on 2026-08-30 and 2026-08-31, which `doc/PLAN-holman-meteg-rollout-programme.md`
-recorded on 2026-09-03 as not yet downloaded. That evening, MAM-private `65ee486` brought the
-same eleven into the Phonetic MAM snapshot the survey reads. All eleven are in prose verses,
-and each changes one chanted word by one meteg and nothing else. Nine removed the chanted
-word's one meteg before the stress, and two added one:
+The tracked survey had last been regenerated on 2026-09-09, in `ad44dba7`. MAM-basics commit
+`aedac688` regenerated it on 2026-09-11 and found that both inputs had moved. The Wikisource
+refresh of 2026-09-10, MAM-basics `209b4c05`, brought into `in/mam-ws/` and MAM-simple the eleven
+meteg edits made on Hebrew Wikisource on 2026-08-30 and 2026-08-31, which
+`doc/PLAN-holman-meteg-rollout-programme.md` recorded on 2026-09-03 as not yet downloaded. That
+evening, MAM-private `65ee486` brought the same eleven into the Phonetic MAM snapshot the survey
+reads. All eleven are in prose verses, and each changes one chanted word by one meteg and nothing
+else. Nine removed the chanted word's one meteg before the stress, and two added one:
 
 | Verse | Before the edit | After the edit |
 | --- | --- | --- |
@@ -191,9 +193,9 @@ figure that moved except the two in item 6:
 
 Re-establish these with `py/main_accgram.py survey-post-stress-meteg` and the diff of
 `out/accgram/post-stress-meteg.json` against `ad44dba7`. The main page's MBS_O cells moved with
-item 2. The main page's MBS_O cell and `pin_claims` in
-`py/author_site/post_stress_meteg.py` now state 12,843 after the 2026-09-17 2 Samuel 18:3
-refresh.
+item 2. MAM-basics commit `c35b2d2d` on 2026-09-17 then recorded the additional 2 Samuel 18:3
+meteg in both survey inputs. Current totals belong to the generated page and JSON named above;
+`pin_claims` no longer freezes those populations in source code.
 
 ## Primary stress and accent parsing
 
