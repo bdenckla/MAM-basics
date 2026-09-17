@@ -374,7 +374,7 @@ Actions are mutually exclusive, one per invocation. Repository sweeps use worksp
 | `--sync-user-config --check` | no live configuration write | fetches `origin` and compares every declared user-level destination with `origin/main` |
 | `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run only from the primary MAM-basics clone after the canonical changes are pushed |
 | `--prepare-worktree-retirement PATH` | writes one preflight, not the target | shared audit of one ended target, with optional owner-selection guard |
-| `--execute-worktree-retirement PREFLIGHT` | **RELOCATES AND REMOVES** | shared executor revalidates the reviewed audit, retains `.novc`, removes one target without force, then uses `branch -d` for its eligible branch |
+| `--execute-worktree-retirement PREFLIGHT` | **RELOCATES AND REMOVES** | first runs the mandatory operational simulation and fails closed; only then revalidates the reviewed audit, retains `.novc`, removes one target without force, and uses `branch -d` for its eligible branch |
 
 **`--workspace-file all-repos.code-workspace` is not optional.** The default
 `MAM-basics.code-workspace` lists only the handful of repos MAM-basics generates into, and
@@ -598,8 +598,12 @@ with `--prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --
 "C:/absolute/preflight.json"`. Read the JSON and settle citations; prepare a new file with
 `--citations-reviewed --citation-note "disposition"` when necessary. Execute with
 `--execute-worktree-retirement "C:/absolute/preflight.json" --task-ended` under the ordinary
-user token from a separate checkout. The full absolute PowerShell commands and metadata
-requirements are in the shared skill reference.
+user token from a separate checkout. Preparation is nondestructive and does not run the
+operational simulation. Every execution and resume attempt runs
+`py/repo_util/worktree_retirement_simulation_test.py` first and fails closed before reading the
+preflight or mutating the target; only after that pass does the shared executor revalidate and
+retire the target. The full absolute PowerShell commands and metadata requirements are in the
+shared skill reference.
 
 `--clean-worktrees` now selects Claude candidates for inspection only. Its `--session-ended`
 compatibility argument cannot remove anything. Codex-named prepare/execute actions delegate

@@ -602,15 +602,14 @@ def _check_path_shim_config(repo_dir: Path) -> dict:
 
 def _is_test_file(normalized_rel_path: str) -> bool:
     """Both of pytest's default `python_files` spellings, `test_*.py` and
-    `*_test.py` -- CLC uses the suffix form (py/clc/clc_kq_test.py),
-    MAM-basics and wlc-utils the prefix form. A `py/main_<x>.py` entry point is
-    never one, however it is named: wlc-utils' py/main_uxlc_grammar_test.py
-    runs a grammar test but is a command, so its insert is the ordinary
-    unnecessary kind rather than the no-op-under-pytest kind. (Dated example,
-    left as it was written. That main is this repo's py/main_uxlc_grammar_test.py
-    since the 2026-08-01 evacuation; wlc-utils now has no tracked .py, so it is
-    MAM-basics that uses the prefix form and a scan of wlc-utils reaches no file
-    at all.)"""
+    `*_test.py` -- MAM-basics uses both forms, including CLC's suffix form and
+    the operational worktree-retirement simulation. A `py/main_<x>.py` entry
+    point is never one, however it is named: wlc-utils'
+    py/main_uxlc_grammar_test.py runs a grammar test but is a command, so its
+    insert is the ordinary unnecessary kind rather than the no-op-under-pytest
+    kind. (Dated example, left as it was written. That main is this repo's
+    py/main_uxlc_grammar_test.py since the 2026-08-01 evacuation; wlc-utils now
+    has no tracked .py, so a scan of wlc-utils reaches no file at all.)"""
     name = Path(normalized_rel_path).name
     if name.startswith("main_"):
         return False
