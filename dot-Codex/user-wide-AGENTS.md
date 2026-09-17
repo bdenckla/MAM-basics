@@ -135,6 +135,8 @@ user-explicit verification requirements take precedence.
 - Load `mam-repository-topology` before GitRepos setup or synchronization, repository
   maintenance, clone retirement, redirect-host work, or decisions about evacuated repositories
   and sibling locations.
+- Load `mam-wikisource-refresh` when Ben asks to download, update, or refresh MAM book data from
+  Hebrew Wikisource.
 - Load `codex-worktree-tasks` for ordinary Codex-managed worktree setup, task creation, handoff,
   recovery, or archival.
 - Load `worktree-forest` for a pinned multi-repository worktree forest. Do not apply that skill

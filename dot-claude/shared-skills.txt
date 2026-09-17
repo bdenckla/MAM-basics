@@ -3,4 +3,5 @@
 github-issues
 hebrew-prose
 mam-repository-topology
+mam-wikisource-refresh
 verse-links
