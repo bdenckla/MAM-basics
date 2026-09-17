@@ -1,6 +1,7 @@
 # Findings of the 2026-09-16 review of the public repos since 2026-09-14
 
 State: not yet acted on
+Updates and later status: [dual-agent-review-2026-09-16-turn-01-claude-update.md](dual-agent-review-2026-09-16-turn-01-claude-update.md).
 
 Written on 2026-09-16 from about 11:53 local and finished on 2026-09-17, as turn 01 of the standard
 alternating dual-agent review under `doc/dual-agent-review.md` (Ben's decision D9 of 2026-09-09),

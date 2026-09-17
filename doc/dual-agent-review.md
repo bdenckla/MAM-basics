@@ -197,8 +197,10 @@ and remediation. A separate cleanup task unlocks it only after final integration
 task ends, and immediately before an ordinary non-force worktree removal.
 
 Each close-out task merges `main` into the review branch before editing and resolves conflicts
-there. No intermediate task fast-forwards `main` or pushes, including when an intermediate task
-is archived. Intermediate remediation tasks follow `doc/periodic-review.md`'s “Verification
+there. The shared review branch is a long-lived branch under the user-level backup exception: push
+it to `origin` after every commit as a backup, without pushing `main`. No intermediate task
+fast-forwards or pushes `main`, including when an intermediate task is archived. Intermediate
+remediation tasks follow `doc/periodic-review.md`'s “Verification
 cadence during remediation”: every coherent commit gets the cheap checks matched to its changed
 surface, while the full suite runs after the last test-risky change rather than after every
 low-test-risk commit or handoff. A later documentation, comment, review-record or instruction-only
@@ -236,6 +238,17 @@ began before Ben's 2026-09-16 Agent 1 and Agent 2 decision, used the shared work
 approved close-out choices are recorded in `doc/review-findings-2026-09-14-update.md`. The neutral
 roles and turn-01/turn-02 filenames above govern future rounds; they do not rename or rewrite that
 finished exchange, and approval of its choices does not claim its remediation is complete.
+
+### The September 16 round
+
+The September 16 round was the first standard round to use the neutral roles and numbered filenames
+from its start. Claude was Agent 1 and wrote the odd turns; Codex was Agent 2 and wrote the even
+turns. Turn 05 accepted every conclusion and disposition of turn 04, and turn 06 acknowledged that
+closure without an objection. Ben approved the complete close-out decision package on 2026-09-17;
+the decisions are recorded in
+`doc/dual-agent-review-2026-09-16-turn-01-claude-update.md`. The package makes the shared review
+branch subject to the backup exception recorded above and reserves all other remediation for a
+fresh-task plan with concrete editorial wording.
 
 ### Remediation approvals: D7 and the risk ordering
 
