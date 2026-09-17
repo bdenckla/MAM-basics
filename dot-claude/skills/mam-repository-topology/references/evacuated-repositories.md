@@ -112,10 +112,11 @@ stylesheet and four WOFF2 files remain byte-for-byte static assets in the source
 
 The frozen mapping is `in/taamey_d_redirect_pages.json`. MAM-basics' redirect row names
 hbofonts' `gh-pages/` as the maintained target and Taamey_D's `docs/` as the source
-published directory. Phase 2 of the evacuation deliberately retains Taamey_D in
-`all-repos.code-workspace`, `repo_visibility`, and `vendoring_policy.json` until the
-source host is committed and deployed in Phase 3. Phase 4 removes those routine-clone
-entries; after Phase 4, a Taamey_D clone belongs on no machine.
+published directory. Taamey_D is absent from `all-repos.code-workspace`,
+`repo_visibility`, and `vendoring_policy.json`, so routine setup and maintenance do not
+restore or sweep a clone. It needs no `frozen_repos` or `repos_to_keep_absent` entry;
+omission from the workspace roster is the mechanism. A Taamey_D clone belongs on no
+machine.
 
 After Phase 4, only explicitly selected redirect-host work wants a temporary clone:
 
