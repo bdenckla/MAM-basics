@@ -422,8 +422,8 @@ nobody; the argument's 17.1 charged only turn 3 of that round with the misattrib
    puts it from 13:43:50 -04:00. The reflog then puts it at `6e78664c` "Retire the Taamey_D routine
    clone" from 14:18:35 -04:00 and at `851fc5ca` "Merge branch 'main' into codex-worktree-4162"
    from 14:39:51 -04:00, with the local `origin/main` ref following each time within half a minute.
-   At 14:45 -04:00, minutes before this file was committed, both stood at `851fc5ca`, 47 commits
-   past the endpoint, which remains its ancestor. None of those commits was reviewed.
+   At 14:45 -04:00, in the minute before this file was committed, both stood at `851fc5ca`, 47
+   commits past the endpoint, which remains its ancestor. None of those commits was reviewed.
 
 ## How the measurements were made
 
