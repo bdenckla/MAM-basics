@@ -21931,9 +21931,14 @@
   "verses_on_one_side_only": [],
   "dual_cantillation_verses_left_out": 18,
   "metegs_in_the_surveyed_snapshot": 38154,
-  "metegs_in_mam_simple_today": 38163,
-  "verses_differing": 9,
+  "metegs_in_mam_simple_today": 38164,
+  "verses_differing": 10,
   "differences": [
+   {
+    "bcv": "2s18:3",
+    "surveyed_snapshot": 4,
+    "mam_simple_today": 5
+   },
    {
     "bcv": "jb29:16",
     "surveyed_snapshot": 1,

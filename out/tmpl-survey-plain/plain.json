@@ -13104,7 +13104,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 148
+      "count_E": 149
     },
     {
       "wtel_type": "tmpl",
@@ -13208,7 +13208,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 274,
       "count_D": 35,
-      "count_E": 3592
+      "count_E": 3593
     },
     {
       "wtel_type": "tmpl",
@@ -13914,7 +13914,7 @@
     },
     {
       "stack": "E/מ:קו״כ-אם-2",
-      "count": 133
+      "count": 134
     },
     {
       "stack": "E/מ:קו״כ-אם-2/מ:דחי",
@@ -13938,7 +13938,7 @@
     },
     {
       "stack": "E/נוסח",
-      "count": 3550
+      "count": 3551
     },
     {
       "stack": "E/נוסח/גלגל-2",
@@ -14683,7 +14683,7 @@
     {
       "wtel_subtype": "מ:קו״כ-אם-2",
       "arg_count": 5,
-      "count": 139,
+      "count": 140,
       "variations": 3
     },
     {
@@ -14755,7 +14755,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3905,
+      "count": 3906,
       "variations": 1
     },
     {

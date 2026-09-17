@@ -18,15 +18,15 @@
     "mpu": {
       "hit_count": 1393,
       "unique_vowel_only_form_count": 113,
-      "trivq_arg1_hit_count": 19,
+      "trivq_arg1_hit_count": 20,
       "trivq_arg1_unique_vowel_only_form_count": 16,
-      "other_hit_count": 1374,
-      "other_unique_vowel_only_form_count": 101,
-      "plain_text_hit_count": 1373,
+      "other_hit_count": 1373,
+      "other_unique_vowel_only_form_count": 100,
+      "plain_text_hit_count": 1372,
       "templated_non_trivq_hit_count": 1,
       "source_template_hit_counts": {
         "כו״ק": 1,
-        "מ:קו״כ-אם-2": 19
+        "מ:קו״כ-אם-2": 20
       },
       "vowel_only_form_counts": {
         "אֵיכֹה": 1,
@@ -400,6 +400,24 @@
       "verse": 23,
       "word": "קִצֹּ֔ה",
       "vowel_only_form": "קִצֹּה",
+      "is_trivq_arg1": true,
+      "source_templates": [
+        "מ:קו״כ-אם-2"
+      ],
+      "source_argument_keys": [
+        "1"
+      ],
+      "is_plain_text_hit": false
+    },
+    {
+      "plus_file": "BC-Kings.json",
+      "book39_index": 1,
+      "book24_name": "ספר מלכים",
+      "sub_book_name": "מל\"ב",
+      "chapter": 20,
+      "verse": 13,
+      "word": "נְכֹתֹ֡ה",
+      "vowel_only_form": "נְכֹתֹה",
       "is_trivq_arg1": true,
       "source_templates": [
         "מ:קו״כ-אם-2"
@@ -9932,20 +9950,6 @@
       "verse": 5,
       "word": "כֹּֽה",
       "vowel_only_form": "כֹּה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "BC-Kings.json",
-      "book39_index": 1,
-      "book24_name": "ספר מלכים",
-      "sub_book_name": "מל\"ב",
-      "chapter": 20,
-      "verse": 13,
-      "word": "נְכֹתֹ֡ה",
-      "vowel_only_form": "נְכֹתֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -29156,20 +29160,6 @@
       "verse": 5,
       "word": "כֹּֽה",
       "vowel_only_form": "כֹּה",
-      "is_trivq_arg1": false,
-      "source_templates": [],
-      "source_argument_keys": [],
-      "is_plain_text_hit": true
-    },
-    {
-      "plus_file": "BC-Kings.json",
-      "book39_index": 1,
-      "book24_name": "ספר מלכים",
-      "sub_book_name": "מל\"ב",
-      "chapter": 20,
-      "verse": 13,
-      "word": "נְכֹתֹ֡ה",
-      "vowel_only_form": "נְכֹתֹה",
       "is_trivq_arg1": false,
       "source_templates": [],
       "source_argument_keys": [],
@@ -49440,9 +49430,13 @@
         {
           "word": "נְכֹתֹ֡ה",
           "vowel_only_form": "נְכֹתֹה",
-          "source_category": "plain_text",
-          "source_templates": [],
-          "source_argument_keys": []
+          "source_category": "trivq_arg1",
+          "source_templates": [
+            "מ:קו״כ-אם-2"
+          ],
+          "source_argument_keys": [
+            "1"
+          ]
         }
       ]
     },
@@ -61277,6 +61271,27 @@
         {
           "word": "קִצֹּ֔ה",
           "vowel_only_form": "קִצֹּה",
+          "source_category": "trivq_arg1",
+          "source_templates": [
+            "מ:קו״כ-אם-2"
+          ],
+          "source_argument_keys": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "plus_file": "BC-Kings.json",
+      "book39_index": 1,
+      "book24_name": "ספר מלכים",
+      "sub_book_name": "מל\"ב",
+      "chapter": 20,
+      "verse": 13,
+      "hits": [
+        {
+          "word": "נְכֹתֹ֡ה",
+          "vowel_only_form": "נְכֹתֹה",
           "source_category": "trivq_arg1",
           "source_templates": [
             "מ:קו״כ-אם-2"
