@@ -9,11 +9,10 @@ Three separate questions, deliberately answered by two separate files:
   the repo and destroy the date the freeze exists to protect.
 - Vendored directories are derived from in/vendoring_policy.json's declared
   source package names, and individually vendored files from its overrides and
-  foreign_vendored sections; foreign_vendored names copies whose source is a
-  repo other than MAM-basics, such as Taamey_D's hbofonts build scripts. A
-  vendored copy is maintained in its source repo; if it arrives
-  non-black-compliant, that is the source's business, and reformatting the copy
-  only makes the next vendoring sync noisier.
+  foreign_vendored sections; foreign_vendored can name copies whose source is a
+  repo other than MAM-basics. A vendored copy is maintained in its source repo;
+  if it arrives non-black-compliant, that is the source's business, and
+  reformatting the copy only makes the next vendoring sync noisier.
 
 - Repo visibility comes from in/repo_maintenance_policy.json too, as a second
   section beside the frozen list. It answers a question the freeze does not:
@@ -82,8 +81,8 @@ def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
     vendored and just as much not this repo's to reformat.
 
     Merges the policy's two per-file sections: overrides (sourced from
-    MAM-basics) and foreign_vendored (sourced outside MAM-basics -- Taamey_D's
-    hbofonts build scripts). For the black sweep the distinction is nothing:
+    MAM-basics) and foreign_vendored (sourced outside MAM-basics). For the black
+    sweep the distinction is nothing:
     neither kind is this repo's to reformat.
     """
     payload = read_json(policy_path or DEFAULT_VENDORING_POLICY)
