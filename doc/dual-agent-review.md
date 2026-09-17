@@ -69,8 +69,11 @@ checked claims, and found one record error the Claude review omitted. Because De
 to the Claude review, that result measures error-checking value but not independent overlap; it does
 not fill the four Design B buckets.
 
-The September 7 window added `doc/codex-review-findings-2026-09-07.md` (Terra) and the requested
-additional `doc/codex-review-findings-2026-09-07-sol.md`. Re-read at `9ac147cc` on 2026-09-09,
+The September 7 window added
+[`doc/codex-review-findings-2026-09-07.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-07.md)
+(Terra) and the requested additional
+[`doc/codex-review-findings-2026-09-07-sol.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-07-sol.md).
+Re-read at `9ac147cc` on 2026-09-09,
 Terra confirmed its selected claims and found no omission; Sol checked a largely separate set,
 corrected the qamats-variant unit and count and the trailer-spelling count, and found omitted
 artifact whitespace errors. Sol's independence caveat records that it saw Terra's reconciliation
@@ -133,7 +136,8 @@ the round. The other agent's next task reads that turn and records an acknowledg
 objection. An objection identifies the disputed claim and the evidence needed to settle it; it
 does not silently become a remediation instruction. Ben resolves any objection that needs his
 decision before close-out proceeds. Step 1 of
-`doc/PLAN-close-out-review-2026-09-08.md` is the worked acknowledgment and closure decision.
+[`doc/PLAN-close-out-review-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-close-out-review-2026-09-08.md)
+is the worked acknowledgment and closure decision.
 
 **Every turn is review only and, in this repository's series, uses public evidence only.** It
 performs no remediation and does not rewrite an earlier turn. A correction belongs in the turn that
@@ -276,23 +280,32 @@ The periodic reviews already provide some delayed feedback: the next Claude revi
 the preceding Codex findings and remediations. The experiment brings an explicit Claude rebuttal
 into the same review window, before disputed findings become remediation instructions.
 
-For this experiment, Claude writes the rebuttal to
-`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08/doc/codex-review-findings-2026-09-08-claude-rebuttal.md`.
-The original Claude review and Codex findings remain intact. Ben gives the next Codex task the
-file path and, if committed, the commit ID; Ben need not paste the rebuttal into chat. The next
-Codex task reads the rebuttal from that file.
+For this experiment, Claude wrote the rebuttal in the shared review checkout; its final copy is
+[`doc/codex-review-findings-2026-09-08-claude-rebuttal.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-08-claude-rebuttal.md).
+The original Claude review and Codex findings remained intact. Ben gave the next Codex task the
+committed file path instead of pasting the rebuttal into chat, and the next Codex task read the
+file from that checkout.
 
 **Outcome recorded 2026-09-09:** the experiment completed with corrections accepted by both
 reviewers. Ben made the alternating round the standard dual-agent review on 2026-09-09 (D9),
 replacing Design A as the default. The five documents of the exchange are:
 
-1. Claude argument: `doc/review-findings-2026-09-08.md`, `e56ae06a`, with its reconciliation
+1. Claude argument:
+   [`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-08.md),
+   `e56ae06a`, with its reconciliation
    table appended at `5636d38a`.
-2. Codex counter-argument: `doc/codex-review-findings-2026-09-08.md`, `5636d38a`.
-3. Claude rebuttal: `doc/codex-review-findings-2026-09-08-claude-rebuttal.md`, `da4e40a5`.
+2. Codex counter-argument:
+   [`doc/codex-review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-08.md),
+   `5636d38a`.
+3. Claude rebuttal:
+   [`doc/codex-review-findings-2026-09-08-claude-rebuttal.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-08-claude-rebuttal.md),
+   `da4e40a5`.
 4. Codex counter-rebuttal:
-   `doc/codex-review-findings-2026-09-08-codex-counter-rebuttal.md`, `ad5d9f43`.
-5. Claude turn 5: `doc/codex-review-findings-2026-09-08-claude-turn-5.md`, `2b365153`, with
+   [`doc/codex-review-findings-2026-09-08-codex-counter-rebuttal.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-08-codex-counter-rebuttal.md),
+   `ad5d9f43`.
+5. Claude turn 5:
+   [`doc/codex-review-findings-2026-09-08-claude-turn-5.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-08-claude-turn-5.md),
+   `2b365153`, with
    its addendum at `7c4416cd`.
 
 Turn 5 accepted Codex's concessions and closed the three disputes the rebuttal had listed:
@@ -331,7 +344,8 @@ The step-1 acknowledgment, appended to the counter-rebuttal at
 objection to the inferred time of Claude's skill reading. **Ben closed the review exchange on
 2026-09-09:** leave the skill-reading time unknown; the uncertainty does not affect the review's
 conclusions. The objection is disposed of by that decision, as recorded beside step 1 in
-`doc/PLAN-close-out-review-2026-09-08.md`; it is not an unresolved dispute. The exchange's
+[`doc/PLAN-close-out-review-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-close-out-review-2026-09-08.md);
+it is not an unresolved dispute. The exchange's
 closure and D9's adoption of the procedure do not claim that outstanding remediation is done.
 
 ## Keep the two reviews blind to each other
@@ -340,7 +354,8 @@ Under Design B the two reviews are run **against the same anchors, concurrently,
 the other's output.** This is the condition that makes the parallel track worth anything at all.
 
 The reason is error decorrelation, and it is fragile. A Codex review run after reading
-`doc/review-findings-2026-09-01.md` anchors on those conclusions and confirms them, so the second
+[`doc/review-findings-2026-09-01.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-01.md)
+anchors on those conclusions and confirms them, so the second
 review reports agreement and you have paid twice for one review's worth of independence. The same
 rule governs what either agent is handed in the first place: give the reviewer the diff, never the
 authoring session's transcript and never the commit message's justification, because a reviewer
@@ -447,10 +462,13 @@ unprefixed name means the Claude series, so a reader meeting that convention is 
 it. The standard alternating convention has no such filename asymmetry.
 
 The rename was measured and rejected on 2026-09-01, when `review-findings` appeared on 41 lines
-across 18 files, 39 of them naming a dated file, 25 citing `doc/review-findings-2026-07-29.md`
+across 18 files, 39 of them naming a dated file, 25 citing
+[`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md)
 alone, and none of the 41 executable — every one a docstring, a comment, or markdown. Re-measured
 2026-09-03 at `dc24164b`, before this document was added: **50 occurrences across 23 files**, of
-which **29 across 11 files** name `doc/review-findings-2026-07-29.md`. The figure grew with the
+which **29 across 11 files** name
+[`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md).
+The figure grew with the
 `State:` line work and the mega-pipeline review docs, and this document itself adds further
 citations, so re-measure rather than trusting either figure:
 
@@ -464,10 +482,12 @@ Four reasons the rename was rejected, none of which the growing count changes.
    `../masorah-books/` paths and the seven `al-hatorah` paths in `py/accgram/` are each stale by
    exactly one directory, and `CLAUDE.md` says so in prose rather than editing the fifteen sites.
 2. **The most-cited file is the one a rename would hurt most.** `check_repo_standards.py` singles
-   `doc/review-findings-2026-07-29.md` out as the model case of a doc earning its place, precisely
+   [`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md)
+   out as the model case of a doc earning its place, precisely
    because a dozen code comments cite it by item number. Churning those citations to add an agent's
    name to the path is a poor trade.
-3. **`doc/review-findings-2026-07-29.md` is not natively this repository's file.** It arrived
+3. **[`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md)
+   is not natively this repository's file.** It arrived
    byte-identical from wlc-utils, and `CLAUDE.md` asserts that identity. Renaming it would
    retroactively label as a Claude review a file that predates the distinction.
 4. **There is precedent for keeping a name and explaining it.** `CLAUDE.md`'s "Five issue trackers"
@@ -545,8 +565,11 @@ fetches and installs only from fresh `origin/main`. Verify afterward with
 ## Provenance and caveat
 
 The recommendation recorded here was made by Claude on 2026-09-01. Design A was first run on
-2026-09-04, in `doc/review-findings-2026-09-04.md` and
-`doc/codex-review-findings-2026-09-04.md`. Ben made Design A the default dual-agent design on
+2026-09-04, in
+[`doc/review-findings-2026-09-04.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-04.md)
+and
+[`doc/codex-review-findings-2026-09-04.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/codex-review-findings-2026-09-04.md).
+Ben made Design A the default dual-agent design on
 2026-09-07. Design A remained the default until Ben adopted the alternating round on 2026-09-09;
 Design B remains unrun and optional by explicit request.
 

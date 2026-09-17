@@ -119,7 +119,8 @@ Select-String -Path C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/MAM-with-doc/foi
 ```
 
 Ben settled the reading on 2026-09-09, disposing of finding 1 of
-`doc/review-findings-2026-09-08.md`: MAM has a meteg after silluq at 1 Kings 7:37, and the
+[`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-08.md):
+MAM has a meteg after silluq at 1 Kings 7:37, and the
 post-stress-meteg research deliberately misreads that word as meteg-then-silluq, which it
 now says on its own pages in Ben's wording (`gh-pages/post-stress-meteg-methods.html`, and
 footnote φ1 on `gh-pages/post-stress-meteg.html`; commit `3b0225e0`). The `mtgmtg` page
@@ -242,11 +243,11 @@ Re-establish the state rather than trusting either revision, and do not begin
 implementation in a dirty checkout.
 
 Before the first edit, read the complete `hebrew-prose` skill, this repository's
-`CLAUDE.md`, `doc/agent-planning-principles.md`, and the current execution record
-in `doc/PLAN-evacuate-five-MAM-products.md`. Phase 5 of that evacuation may move
-MAM-OSIS into MAM-basics before this plan is executed; use the landed in-repo
-paths if Phase 5 is complete, and use a separate MAM-OSIS worktree only if
-MAM-OSIS remains a sibling repository.
+[`AGENTS.md`](../AGENTS.md), [`doc/agent-planning-principles.md`](agent-planning-principles.md),
+[`py/product_scopes.py`](../py/product_scopes.py),
+[`in/repo_maintenance_policy.json`](../in/repo_maintenance_policy.json), and
+[`all-repos.code-workspace`](../all-repos.code-workspace). MAM-OSIS is now the in-repository
+product under `MAM-OSIS/`; do not use a sibling MAM-OSIS checkout.
 
 Re-establish the worktree path, commit, branch, and cleanliness with:
 
@@ -399,12 +400,6 @@ $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
 $env:REPO_MAM_PRIVATE_DIR="C:/path/to/the/verified/MAM-private-worktree"
 ```
 
-If MAM-OSIS has not yet moved into MAM-basics, also set:
-
-```powershell
-$env:REPO_MAM_OSIS_DIR="C:/path/to/the/verified/MAM-OSIS-worktree"
-```
-
 Run the current production mega entry point from the verified MAM-basics
 worktree after inspecting its CLI help for the all-steps spelling. Do not run a
 generator, formatter, staging command, or commit in the primary MAM-basics
@@ -457,7 +452,8 @@ Acceptance requires all of the following:
 11. The full MAM-basics suite passes with no silent skips caused by a missing
     sibling checkout. The last recorded clean-main baseline was 976 passed,
     5 skipped, and 65 subtests on 2026-09-06 in
-    `doc/PLAN-evacuate-five-MAM-products.md`; remeasure and treat any mismatch as
+    [`doc/PLAN-evacuate-five-MAM-products.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-evacuate-five-MAM-products.md);
+    remeasure and treat any mismatch as
     a finding rather than trusting that figure.
 
     **Correction, 2026-09-09 (finding 7.2):** the cited 976/5/65 result is the
@@ -534,7 +530,7 @@ return to the worktree merge rather than creating a second merge in the primary
 clone.
 
 After all generated artifacts and public outputs are verified and pushed, post
-an agent-attributed closing comment on phonetic-hbo#78 with the MAM-basics,
-MAM-OSIS if still separate, and MAM-private commits plus the acceptance results.
+an agent-attributed closing comment on phonetic-hbo#78 with the MAM-basics commit (including
+MAM-OSIS), the MAM-private commit, and the acceptance results.
 Close phonetic-hbo#78 with that explanatory comment. No related issue changes
 state without a separate explanatory comment.

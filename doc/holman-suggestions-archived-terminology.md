@@ -1,9 +1,9 @@
 # Note: rename the reader-facing word "Suppressed" to "Archived" on the Holman findings pages
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md). The rename it
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md). The rename it
 describes is Phase 4 of that programme's item 1, planned in
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md);
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md);
 it is NOT part of item 6, which archives the thirty records themselves.
 
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
@@ -14,7 +14,7 @@ concurrent work in git-tracked areas had not concluded. All six were moved into 
 **Status, 2026-09-04: THE RENAME HAS BEEN DONE, and this paragraph said "the
 rename itself is not yet done; no edit has been made" until now.** It was
 applied on 2026-09-03 as Phase 4 of
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md),
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md),
 whose "Phase 4 done 2026-09-03" section is the execution record and reports both
 renames applied with the per-row ketiv/qere vocabulary untouched. The
 reader-facing strings live in `py/py_render/rt_html.py` as `SUPPRESSED_NAV_LABEL`,
