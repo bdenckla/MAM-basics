@@ -5,9 +5,11 @@ description: Refresh MAM book data from Hebrew Wikisource and regenerate, audit,
 
 # Refresh MAM from Hebrew Wikisource
 
-Use this workflow for MAM book-data downloads from Hebrew Wikisource. The workflow has two
-local commits because the change-log generator compares the latest release with committed
-`HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
+Use this workflow for MAM book-data downloads from Hebrew Wikisource. Coordinate the repositories'
+existing entry points; do not create a new orchestration program. A changed refresh is committed
+before dependent regeneration, and MAM change logs are committed only after the dependency loop
+returns to its final MAM-basics state. The change-log generator compares the latest release with
+committed `HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
 
 The commands below run from the verified MAM-basics development checkout. Use
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` as the interpreter, even when the
@@ -51,65 +53,23 @@ not run mega, commit, or push. If no tracked file changed but expected untracked
 report that unexpected residue and stop for cleanup or direction; do not run mega, commit, or
 push.
 
-## Commit the refresh and generated products
+## Complete the dependent refresh
 
-When tracked data changed:
+When tracked Wikisource data changed, read and follow
+[references/dependent-refresh.md](references/dependent-refresh.md) before running a generator.
+That reference governs the complete MAM-basics → MAM-private → phonetic-hbo → MAM-basics
+dependency loop, the separate change-log commit, final gates, push order, and clean remote-state
+check.
 
-1. Run the complete product pipeline:
+The downstream preflight happens before any downstream write. A clean checkout is necessary but
+does not prove that the checkout is unowned: if MAM-private or phonetic-hbo is dirty, is attached
+to another active task, or cannot be assigned unambiguously to this refresh, stop and require a
+handoff. Expected dependent regeneration is regeneration, not a failed census. A dependent
+generator that legitimately produces no diff needs no commit; never create an empty commit.
 
-   ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
-   ```
-
-2. Read and explain every tracked diff, including every generated product diff. An unexplained
-   generated change is a failure, not a reason to continue.
-3. Run `git diff --check`.
-4. Immediately before staging, require `HEAD` to equal the recorded starting `HEAD`. Require
-   NUL-delimited status to contain only the downloaded data and audited outputs owned by this
-   refresh.
-5. Stage only those audited paths, inspect the cached diff, run `git diff --cached --check`, and
-   commit locally as `Refresh MAM from Wikisource`. Do not push yet.
-
-The local commit is a functional prerequisite for the next phase: `diff_mpplus` reads committed
-`HEAD`, not dirty `MAM-parsed/plus`.
-
-## Regenerate and commit the change logs
-
-Against the new refresh commit, run:
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --all
-```
-
-Read every change-log diff. Changes to reports for named historical releases are unexpected and
-must be explained or fixed before continuing. Normally only `unpinned-latest.html`,
-`unpinned-latest.json`, and `index.html` change.
-
-Run the read-only freshness guard:
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --check
-```
-
-Require it to report that the artifacts are current. If regeneration produced no tracked
-change-log diff, treat that as an unexpected result and stop before pushing; do not create an
-empty second commit. Otherwise record the refresh commit's `HEAD`, and immediately before
-staging require `HEAD` still to equal that commit and status to contain only the audited
-change-log paths. Stage only those paths, inspect the cached diff, run
-`git diff --cached --check`, and commit them locally as `Regenerate MAM change logs`.
-
-Run the guard again and require a clean worktree:
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --check
-```
-
-Follow the surrounding checkout's integration procedure. Once the authorized target is ready,
-push the two commits together in one normal push; never force-push. Verify that local `HEAD` and
-`origin/main` identify the same integration commit. If the push rejects because `main` moved,
-incorporate the new `main`, repeat the required generator and guard checks, and read every new
-tracked diff. Audit and commit any explained task-owned generated change before retrying the
-normal push; an unexplained change blocks integration.
+Any unexplained diff, failed gate, stale input, changed recorded `HEAD`, or ambiguous ownership
+stops the workflow before pushing. The surrounding user and repository instructions govern
+integration and push authority; this skill does not grant them.
 
 ## Separate workflows
 
