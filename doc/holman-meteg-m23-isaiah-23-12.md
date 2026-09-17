@@ -1,9 +1,9 @@
 # Notes: suggestion M23 (Isaiah 23:12 atom 11, קוּמִי) adds a meteg after the stress
 
 Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
 and specifically for that programme's item 1, which has a separate plan,
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md).
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md).
 
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
 HEAD `3829585`, clean tree), one of a set of six notes: the M13 note is
@@ -22,7 +22,7 @@ work in git-tracked areas had not concluded, and were moved into `doc/` on 2026-
 **Status, 2026-09-04: M23 HAS BEEN IMPLEMENTED, and this heading said "not yet
 implemented; no edit made" until now.** The Wikisource bot added the meteg on
 2026-09-03 as item 3 of
-[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md),
+[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
 and item 5 carried it into MAM-parsed and the generated repositories on
 2026-09-04. **Nothing in this note decided it, and that part of the old heading
 stands**: Ben Denckla had taken all thirty meteg suggestions as a batch before
@@ -183,7 +183,7 @@ had zero such failures and zero syllable-count mismatches over 263,320 chanted w
 comparison baseline, and one sentence below it is withdrawn.** The script's verse-final test
 treats a final parsed entry as verse-final even when that entry lacks sof pasuq, so its
 silluq-versus-post-stress boundary is wrong wherever a final entry has no sof pasuq. The plan
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md)
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md)
 records the defect, says not to run or edit the script, and makes its Phase 1 tracked generator
 the remeasurement authority. The sentence withdrawn is "The census confirms it: zero metegs
 after the stress on any chanted word with sof pasuq", in the post-silluq section below: that is
@@ -282,7 +282,7 @@ here settles that.
 
 **Correction, 2026-09-03: the paragraph above HAS BEEN SUPERSEDED — the host and the name are
 decided.** Ben's decision that day, recorded in the plan
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](PLAN-post-stress-meteg-page-and-holman-m23.md):
+[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md):
 MAM-basics hosts the page, published at its deploy root as `gh-pages/post-stress-meteg.html`,
 beside `gh-pages/unicode-proposals.html`, and the M23 card's link is the relative
 `../post-stress-meteg.html#m23-isaiah-23-12`. That plan put the page under

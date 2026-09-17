@@ -5,6 +5,7 @@ from mb_author import author
 from mb_author import json_block
 from mb_author.claim import ClaimCollection
 from mb_misc import mb_html
+from mb_cmn import public_data_consumer_notice as consumer_notice
 from author_misc import mp_cmn as cmn
 from author_misc import mp_cmn_dedicated_rows as dedicated_rows
 from author_misc import mp_kq_am2_common as kq_am2_common
@@ -64,6 +65,27 @@ def build_top_level_section(
         json_block.json_block_raw_html(header_fn(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
         json_block.json_block_raw_html(header_composite_fn(claims=claims)),
+    ]
+
+
+def consumer_notice_block(variant: str):
+    """Render the canonical notice and give its embedded URL a stable target."""
+    notice = consumer_notice.mam_parsed_notice(variant)
+    return [
+        author.heading_level_2("Consumer notice", {"id": "consumer-notice"}),
+        mb_html.para(notice["summary"]),
+        mb_html.unordered_list(notice["critical_rules"]),
+        author.para(
+            [
+                "Every generated ",
+                mb_html.code(f"MAM-parsed/{variant}/*.json"),
+                " file embeds this warning in ",
+                mb_html.code("header.consumer_notice"),
+                ". Its ",
+                mb_html.code("documentation"),
+                " field is an absolute URL to this section.",
+            ]
+        ),
     ]
 
 
@@ -136,6 +158,29 @@ def selected_templates_intro_block():
             ]
         ),
     ]
+
+
+def whitespace_template_consumer_para():
+    return author.para(
+        [
+            "A whitespace template can be the only separator between adjacent"
+            " Scripture strings: the strings before and after ",
+            author.hbo("מ:ששש"),
+            " or ",
+            author.hbo("ססס"),
+            " can contain no literal whitespace at that boundary. A plain-text"
+            " projection that does not preserve layout must therefore supply at"
+            " least one separator; a layout-preserving renderer implements the"
+            " documented space or break. Dropping the template fuses separate atoms,"
+            " while collecting a descriptive parameter such as ",
+            author.hbo("פסקא באמצע פסוק"),
+            " inserts documentation into Scripture. This rule does not apply to"
+            " narpas: ",
+            author.hbo("מ:פסק"),
+            " is a punctuation template, and its missing literal whitespace"
+            " prescribes no display spacing.",
+        ]
+    )
 
 
 def verse_label_templates_block():

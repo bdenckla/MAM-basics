@@ -12,7 +12,7 @@ def get_git_info(repo_path: Path) -> tuple[str, str | None]:
     commit = _git_stdout(repo_path, "rev-parse", "HEAD")
 
     tag_result = subprocess.run(
-        ["git", "-C", str(repo_path), "describe", "--tags", "--exact-match", "HEAD"],
+        _git_command(repo_path, "describe", "--tags", "--exact-match", "HEAD"),
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -117,13 +117,28 @@ def write_provenance(
 
 def _git_stdout(repo_path: Path, *args: str) -> str:
     result = subprocess.run(
-        ["git", "-C", str(repo_path), *args],
+        _git_command(repo_path, *args),
         capture_output=True,
         text=True,
         encoding="utf-8",
         check=True,
     )
     return result.stdout.strip()
+
+
+def _git_command(repo_path: Path, *args: str) -> list[str]:
+    """Build Git arguments with exact command-local trust and no dependencies."""
+    resolved = repo_path.resolve(strict=True)
+    if not resolved.is_dir():
+        raise NotADirectoryError(f"Git repository path is not a directory: {resolved}")
+    return [
+        "git",
+        "-c",
+        f"safe.directory={resolved.as_posix()}",
+        "-C",
+        str(resolved),
+        *args,
+    ]
 
 
 def _iter_local_files(dest_dir: Path, *, recursive: bool) -> list[Path]:

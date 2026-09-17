@@ -100,7 +100,7 @@ def _has_hebrew(text: str) -> bool:
 
 
 def _has_pointing(text: str) -> bool:
-    return any("\u0591" <= ch <= "\u05c7" for ch in text)
+    return any("\u0591" <= ch <= "\u05c9" for ch in text)
 
 
 def _span(text: str, color_cls: str) -> str:

@@ -1,8 +1,9 @@
-"""Validate MAS annotations against source forms without changing displayed text.
+"""Validate source dots and reject Phonetic MAM annotations in displayed text.
 
-Phonetic MAM uses MASORA CIRCLE and UPPER DOT as annotations. Those codepoints
+Legacy Phonetic MAM used MASORA CIRCLE and UPPER DOT as annotations. Those codepoints
 can also belong to a source text: accept an exact independently sourced form,
-including its Hebrew context. LOWER DOT and VARIKA are not these annotations.
+including its Hebrew context. Current Phonetic MAM uses U+05C8 and U+05C9, which
+must never appear on a published page. LOWER DOT and VARIKA are not annotations.
 Complete-page validation covers cells, prose, literals, compositions, fallbacks
 and attributes. Survey strings and literals locate defects but do not authorize
 themselves as reference forms.
@@ -15,15 +16,17 @@ from collections import defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
 import re
-import unicodedata
 
 from accgram import post_stress_meteg as psm
 from accgram import mam_simple_verse
 from mb_cmn import paths
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import unicode_data
 
 _FORM = re.compile(r"[\u034f\u0590-\u05ff\ufb1e~]+")
 _BCV = re.compile(r"(.+?)(\d+):(\d+)$")
-_ANNOTATION_MARKS = frozenset((psm.hpu.MCIRC, psm.hpu.UPDOT))
+_SOURCE_DOTS = frozenset((psm.hpu.MCIRC, psm.hpu.UPDOT))
+_FORBIDDEN_PHONETIC_MARKS = frozenset((hpo.SHEVA_NA, hpo.DAGESH_XAZAQ))
 _BLOCKS = frozenset(
     (
         "html",
@@ -111,7 +114,7 @@ def reference_forms(extra_sources: dict[str, str]) -> dict[str, set[str]]:
         for bcv, words in psm._mam_words_by_bcv(cantillation).items():
             for word in words:
                 for match in _FORM.finditer(word):
-                    if _ANNOTATION_MARKS.intersection(match[0]):
+                    if _SOURCE_DOTS.intersection(match[0]):
                         references[match[0]].add(
                             f"{source_files[_BCV.fullmatch(bcv)[1]]} {bcv} "
                             f"{cantillation or 'cant-combined'}"
@@ -139,10 +142,11 @@ class _PageAnnotations(HTMLParser):
 
     def _check(self, form, position, context):
         self.forms_checked += 1
-        marks = _ANNOTATION_MARKS.intersection(form)
-        if not marks:
+        forbidden = _FORBIDDEN_PHONETIC_MARKS.intersection(form)
+        source_dots = _SOURCE_DOTS.intersection(form)
+        if not forbidden and not source_dots:
             return
-        if form in self.references:
+        if not forbidden and form in self.references:
             self.source_marks_checked += 1
             return
         locations = self.locations.get(form, set())
@@ -150,7 +154,7 @@ class _PageAnnotations(HTMLParser):
             locations = {
                 location
                 for fragment, origins in self.locations.items()
-                if fragment in form and marks.intersection(fragment)
+                if fragment in form and source_dots.intersection(fragment)
                 for location in origins
             }
         self.problems.append(
@@ -158,8 +162,8 @@ class _PageAnnotations(HTMLParser):
                 "output": f"{self.path}:{position[0]}:{position[1] + 1} ({context})",
                 "form": form,
                 "marks": [
-                    f"U+{ord(mark):04X} {unicodedata.name(mark)}"
-                    for mark in sorted(marks)
+                    f"U+{ord(mark):04X} {unicode_data.name(mark)}"
+                    for mark in sorted(forbidden | source_dots)
                 ],
                 "sources": sorted(locations)
                 or ["unresolved composed input; inspect output location"],

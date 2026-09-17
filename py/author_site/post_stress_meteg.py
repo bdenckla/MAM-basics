@@ -2,7 +2,8 @@ r"""MAM's meteg marks after the stress: the main page and eight supporting pages
 
 The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
 and takes every figure it prints from the survey rather than from a separate constant.
-``pin_claims`` re-derives each figure the prose states and raises on drift, which is the shape
+``pin_claims`` checks the survey's internal consistency and re-derives the categorical and
+relational claims in the prose, which is the shape
 ``maqaf_nonfinal_accents_page.pin_claims`` established.
 
 A LOOSE PAGE AT THE DEPLOY ROOT, beside ``index.html`` and ``unicode-proposals.html``, which
@@ -68,9 +69,10 @@ nu35:21, dt4:33, 1s22:17 and ec1:5, exactly the exceptions Ch. 8 §9 lists as it
 -- and ten are poetic verses: ps10:11, ps18:45, ps19:3, ps94:9, ps105:28, pr28:2, pr29:2,
 pr29:6, pr29:18 and jb22:13.  The one type-2 MAS whose next chanted word begins with ר is
 poetic, ps19:14, which is one of item (b)'s four cantillated-word examples; all four of those
-examples are type-2 MAS records here.  Re-derive by grouping that JSON's ``TYPE_GUTTURAL``
-records by ``(record["system"], psm.type_2_next_filter_group(record["next_mam_form"]))``; the
-groups must sum to ``pin_claims``' ungrouped lamed=38, guttural=17, resh=1, bet=2, mem=2.
+examples are type-2 MAS records here.  Re-derive current counts by grouping the tracked JSON's
+``TYPE_GUTTURAL`` records by
+``(record["system"], psm.type_2_next_filter_group(record["next_mam_form"]))``.  The grouping
+must partition the type-2 records, but its populations are not source-code constants.
 """
 
 from __future__ import annotations
@@ -809,68 +811,293 @@ def _misc_almost_type_3_only_member(survey: dict) -> dict:
     return records[0]
 
 
-def pin_claims(survey: dict) -> None:
-    """Re-derive every figure the prose states, and raise on drift.
+def _assert_exact_keys(mapping: dict, expected_keys: set[str], label: str) -> None:
+    """Require a summary mapping to name every category and no unknown category."""
+    actual_keys = set(mapping)
+    assert actual_keys == expected_keys, (label, actual_keys, expected_keys)
 
-    The page's sentences state census figures; each figure is computed from the survey here as
-    well as where it is rendered, so a corpus that moves under the page fails the build rather
-    than publishing a stale number.
-    """
+
+def pin_claims(survey: dict) -> None:
+    """Validate the survey and every categorical or relational statement in the prose."""
+    _check_survey_consistency(survey)
+    _pin_prose_claims(survey)
+
+
+def _check_survey_consistency(survey: dict) -> None:
+    """Reconcile computed summaries without freezing their current populations."""
+    systems = {_PROSE, _POETIC}
+    count_categories = {
+        "chanted words checked",
+        "meteg before the stressed syllable",
+        "meteg in the stressed syllable, no sof pasuq",
+        "meteg after the stressed syllable",
+        "silluq",
+        "meteg sharing a letter with a non-stress-marking accent",
+    }
+    counts = survey["counts"]
+    _assert_exact_keys(counts, systems, "count systems")
+    for system in systems:
+        _assert_exact_keys(
+            counts[system], count_categories, f"{system} count categories"
+        )
+
+    post_stress = survey["post_stress"]
+    assert len(post_stress) == _both(
+        survey, "meteg after the stressed syllable"
+    ), "the post-stress records and the post-stress count disagree"
+    assert all(record["system"] in systems for record in post_stress)
+
+    census = survey["census_chanted_word_summary"]
+    _assert_exact_keys(census["by_system"], systems, "census systems")
+    for system in systems:
+        system_census = census["by_system"][system]
+        _assert_exact_keys(system_census, {"mbs_only", "mas"}, f"{system} census")
+        mas_records = sum(record["system"] == system for record in post_stress)
+        assert system_census["mas"] == mas_records
+    assert (
+        census["mbs_only_chanted_words_with_more_than_two_mbs"]
+        <= census["mbs_only_chanted_words_with_multiple_mbs"]
+    )
+
+    qamats = survey["qamats_variant_census"]
+    _assert_exact_keys(qamats["by_system"], systems, "qamats-variant systems")
+    grouping_entry_differences = Counter()
+    for record in qamats["distinct_phonetic_groupings"]:
+        assert record["system"] in systems
+        grouping_entry_differences[record["system"]] += len(record["qamats-sam"]) - len(
+            record["qamats-dal"]
+        )
+    qamats_categories = {
+        "source_entries",
+        "variant_rows",
+        "duplicate_phonetic_reading_entries",
+        "mam_chanted_words_counted",
+    }
+    for system in systems:
+        system_qamats = qamats["by_system"][system]
+        _assert_exact_keys(
+            system_qamats, qamats_categories, f"{system} qamats-variant census"
+        )
+        assert system_qamats["source_entries"] == (
+            system_qamats["mam_chanted_words_counted"]
+            + system_qamats["duplicate_phonetic_reading_entries"]
+        )
+        assert system_qamats["duplicate_phonetic_reading_entries"] == (
+            system_qamats["variant_rows"] + grouping_entry_differences[system]
+        )
+        assert (
+            system_qamats["mam_chanted_words_counted"]
+            == counts[system]["chanted words checked"]
+        )
+
+    structural_types = {*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED}
+    by_type = survey["post_stress_by_structural_type"]
+    _assert_exact_keys(by_type, systems, "structural-type systems")
+    for system in systems:
+        _assert_exact_keys(
+            by_type[system], structural_types, f"{system} structural types"
+        )
+    assert Counter(
+        (record["system"], record["structural_type"]) for record in post_stress
+    ) == Counter(
+        {
+            (system, kind): by_type[system][kind]
+            for system in systems
+            for kind in structural_types
+        }
+    )
+
+    subtypes = {psm.SUBTYPE_MISC_VAYOMER, psm.SUBTYPE_MISC_ALMOST_TYPE_3}
+    by_subtype = survey["post_stress_by_subtype"]
+    _assert_exact_keys(by_subtype, systems, "subtype systems")
+    for system in systems:
+        _assert_exact_keys(by_subtype[system], subtypes, f"{system} subtypes")
+    assert Counter(
+        (record["system"], record["subtype"])
+        for record in post_stress
+        if record["subtype"] is not None
+    ) == Counter(
+        {
+            (system, subtype): by_subtype[system][subtype]
+            for system in systems
+            for subtype in subtypes
+        }
+    )
+
+    actual_type_1_mas = _actual_type_1_mas(survey)
+    type_1_patterns = {
+        psm.TYPE_1_SUBTYPE_A,
+        psm.TYPE_1_SUBTYPE_B,
+        psm.TYPE_1_SUBTYPE_C,
+        "not_initially_stressed",
+    }
+    pattern_counts = actual_type_1_mas["by_initial_stress_pattern"]
+    _assert_exact_keys(pattern_counts, type_1_patterns, "type-1 patterns")
+    for pattern, pattern_count in pattern_counts.items():
+        _assert_exact_keys(
+            pattern_count, {"cases", "by_system"}, f"type-1 pattern {pattern}"
+        )
+        _assert_exact_keys(
+            pattern_count["by_system"], systems, f"type-1 pattern {pattern} systems"
+        )
+        assert pattern_count["cases"] == sum(pattern_count["by_system"].values())
+        assert pattern_count["cases"] > 0
+    assert actual_type_1_mas["cases"] == sum(
+        pattern_count["cases"] for pattern_count in pattern_counts.values()
+    )
+    assert actual_type_1_mas["cases"] == _by_type_count(survey, psm.TYPE_OPEN)
+    example_keys = actual_type_1_mas["example_keys_by_initial_stress_pattern"]
+    _assert_exact_keys(example_keys, type_1_patterns, "type-1 example patterns")
+    assert all(
+        set(example_key) == {"bcv", "chanted_word", "jta"}
+        for example_key in example_keys.values()
+    )
+
+    fit_for_mas = _fit_for_mas(survey)
+    type_1_subtypes = {
+        psm.TYPE_1_SUBTYPE_A,
+        psm.TYPE_1_SUBTYPE_B,
+        psm.TYPE_1_SUBTYPE_C,
+    }
+    _assert_exact_keys(
+        fit_for_mas["by_type_1_subtype"], type_1_subtypes, "fit type-1 subtypes"
+    )
+    for subtype, counts_by_subtype in fit_for_mas["by_type_1_subtype"].items():
+        _assert_exact_keys(
+            counts_by_subtype,
+            {"candidates", "with_mas", "without_mas", "with_mas_by_system"},
+            f"fit type-1 subtype {subtype}",
+        )
+        _assert_exact_keys(
+            counts_by_subtype["with_mas_by_system"],
+            systems,
+            f"fit type-1 subtype {subtype} systems",
+        )
+        assert counts_by_subtype["candidates"] == (
+            counts_by_subtype["with_mas"] + counts_by_subtype["without_mas"]
+        )
+        assert counts_by_subtype["with_mas"] == sum(
+            counts_by_subtype["with_mas_by_system"].values()
+        )
+
+    fit_types = {
+        psm.FIT_TYPE_1_A,
+        psm.FIT_TYPE_1_B,
+        psm.FIT_TYPE_2_AF,
+        psm.FIT_TYPE_2_BF,
+        psm.FIT_TYPE_3,
+    }
+    by_fit_type = fit_for_mas["by_fit_type"]
+    _assert_exact_keys(by_fit_type, fit_types, "fit types")
+    for fit_type, fit_counts in by_fit_type.items():
+        _assert_exact_keys(
+            fit_counts,
+            {"candidates", "with_mas", "without_mas"},
+            f"fit type {fit_type}",
+        )
+        assert fit_counts["candidates"] == (
+            fit_counts["with_mas"] + fit_counts["without_mas"]
+        )
+    assert fit_for_mas["fitting_any_type"] == sum(
+        fit_counts["candidates"] for fit_counts in by_fit_type.values()
+    )
+    assert fit_for_mas["with_mas"] == sum(
+        fit_counts["with_mas"] for fit_counts in by_fit_type.values()
+    )
+    assert fit_for_mas["without_mas"] == sum(
+        fit_counts["without_mas"] for fit_counts in by_fit_type.values()
+    )
+    assert (
+        fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
+        == fit_for_mas["fitting_any_type"]
+    )
+    assert (
+        fit_for_mas["candidate_chanted_words"]
+        >= fit_for_mas["non_type_specific_conditions"]
+        >= fit_for_mas["fitting_any_type"]
+    )
+    assert (
+        sum(fit_for_mas["accent_grammar_token_counts"].values())
+        == fit_for_mas["candidate_chanted_words"]
+    )
+
+    fitting_records = fit_for_mas["records"]
+    assert len(fitting_records) == fit_for_mas["fitting_any_type"]
+    expected_fit_record_counts = Counter()
+    for fit_type, fit_counts in by_fit_type.items():
+        expected_fit_record_counts[(fit_type, True)] = fit_counts["with_mas"]
+        expected_fit_record_counts[(fit_type, False)] = fit_counts["without_mas"]
+    assert (
+        Counter((record["fit_type"], record["has_mas"]) for record in fitting_records)
+        == expected_fit_record_counts
+    )
+    assert len(_lacks_mas_records(survey)) == fit_for_mas["without_mas"]
+
+    mas_not_in_the_table = fit_for_mas["mas_not_in_the_table"]
+    _assert_exact_keys(
+        mas_not_in_the_table,
+        {
+            "outside_the_three_types",
+            "stress_not_penultimate",
+            "next_word_not_disjunctive",
+            "next_word_not_initially_stressed",
+            "type_1_subtype_C",
+            "type_2_subtype_C",
+        },
+        "MAS outside the fit table",
+    )
+    not_fit_records = _not_fit_for_mas_records(survey)
+    assert sum(mas_not_in_the_table.values()) == len(not_fit_records)
+    assert fit_for_mas["with_mas"] + len(not_fit_records) == len(post_stress)
+    assert len(not_fit_records) == len(post_stress) - fit_for_mas["with_mas"]
+
+    mas_with_mbs = census["mas_chanted_words_with_mbs"]
+    mas_with_mbs_keys = {(record["bcv"], record["mam_form"]) for record in mas_with_mbs}
+    assert len(mas_with_mbs_keys) == len(mas_with_mbs)
+    post_stress_keys = {(record["bcv"], record["mam_form"]) for record in post_stress}
+    assert len(post_stress_keys) == len(post_stress)
+    assert mas_with_mbs_keys <= post_stress_keys
+
+    type_2_groups = Counter(
+        _type_2_filter_group(record) for record in _type_2_records(survey)
+    )
+    _assert_exact_keys(
+        type_2_groups,
+        {group for group, _code, _description in _TYPE_2_SUBTYPE_SPECS},
+        "type-2 subtypes",
+    )
+    assert sum(type_2_groups.values()) == _by_type_count(survey, psm.TYPE_GUTTURAL)
+
+
+def _pin_prose_claims(survey: dict) -> None:
+    """Raise when corpus movement falsifies a statement rather than changing a figure."""
     post_stress = survey["post_stress"]
     census_chanted_word_summary = survey["census_chanted_word_summary"]
-    assert {
-        "mbs_only_chanted_words_with_multiple_mbs": census_chanted_word_summary[
-            "mbs_only_chanted_words_with_multiple_mbs"
-        ],
-        "mbs_only_chanted_words_with_more_than_two_mbs": census_chanted_word_summary[
-            "mbs_only_chanted_words_with_more_than_two_mbs"
-        ],
-    } == {
-        "mbs_only_chanted_words_with_multiple_mbs": 122,
-        "mbs_only_chanted_words_with_more_than_two_mbs": 0,
-    }
-    # 122 and 12,849 were 143 and 12,828 until 2026-09-09, when the census stopped keying a
-    # chanted word by its form: 21 forms occur twice in one numbered verse with one meteg on
-    # each occurrence, so each such pair read as one chanted word carrying two metegs.  All
-    # 21 are in prose verses, which is why the poetic MBS_O count did not move.
-    # 12,842 was 12,849 until 2026-09-11, when the survey was first regenerated after the
-    # eleven meteg edits made on Hebrew Wikisource on 2026-08-30 and 2026-08-31 reached its
-    # two inputs, MAM-simple in MAM-basics 209b4c05 and Phonetic MAM in MAM-private 65ee486,
-    # both of 2026-09-10.  All eleven are in prose verses: nine removed a chanted word's one
-    # meteg before the stress, and two, at 2 Chronicles 28:19 and Isaiah 24:18, added one.
-    # doc/post-stress-meteg-method.md names all eleven.
-    assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12842, "mas": 178},
-        _POETIC: {"mbs_only": 1786, "mas": 54},
-    }
-    assert survey["qamats_variant_census"]["by_system"] == {
-        _PROSE: {
-            "source_entries": 233586,
-            "variant_rows": 309,
-            "duplicate_phonetic_reading_entries": 309,
-            "mam_chanted_words_counted": 233277,
-        },
-        _POETIC: {
-            "source_entries": 29605,
-            "variant_rows": 61,
-            "duplicate_phonetic_reading_entries": 63,
-            "mam_chanted_words_counted": 29542,
-        },
-    }
+    assert (
+        census_chanted_word_summary["mbs_only_chanted_words_with_more_than_two_mbs"]
+        == 0
+    )
+    mbs_only = sum(
+        counts["mbs_only"]
+        for counts in census_chanted_word_summary["by_system"].values()
+    )
+    mas = sum(
+        counts["mas"] for counts in census_chanted_word_summary["by_system"].values()
+    )
+    assert mbs_only > mas, "the prose says a meteg almost always precedes the stress"
     qamats_grouping_differences = survey["qamats_variant_census"][
         "distinct_phonetic_groupings"
     ]
-    assert [record["bcv"] for record in qamats_grouping_differences] == [
+    assert {record["bcv"] for record in qamats_grouping_differences} == {
         "ps35:10",
         "pr19:7",
-    ]
+    }
+    assert len(qamats_grouping_differences) == 2
     assert all(
         len(record["qamats-dal"]) == 1 and len(record["qamats-sam"]) == 2
         for record in qamats_grouping_differences
     )
-    assert len(post_stress) == _both(
-        survey, "meteg after the stressed syllable"
-    ), "the post-stress records and the post-stress count disagree"
+    assert _both(survey, "meteg in the stressed syllable, no sof pasuq") == 0
     stress_accent_classification = survey["stress_accent_classification"]
     assert stress_accent_classification["counts"] == {
         "conjunctive": len(post_stress),
@@ -884,131 +1111,15 @@ def pin_claims(survey: dict) -> None:
     next_accent_classification = Counter(
         record["next_chanted_word_accent_classification"] for record in post_stress
     )
-    assert next_accent_classification == {
-        "disjunctive": 217,
-        "conjunctive": 15,
-    }
-    actual_type_1_mas = _actual_type_1_mas(survey)
-    assert {
-        "cases": actual_type_1_mas["cases"],
-        "by_initial_stress_pattern": actual_type_1_mas["by_initial_stress_pattern"],
-    } == {
-        "cases": 123,
-        "by_initial_stress_pattern": {
-            psm.TYPE_1_SUBTYPE_A: {
-                "cases": 103,
-                "by_system": {_PROSE: 97, _POETIC: 6},
-            },
-            psm.TYPE_1_SUBTYPE_B: {
-                "cases": 12,
-                "by_system": {_PROSE: 12, _POETIC: 0},
-            },
-            psm.TYPE_1_SUBTYPE_C: {
-                "cases": 7,
-                "by_system": {_PROSE: 3, _POETIC: 4},
-            },
-            "not_initially_stressed": {
-                "cases": 1,
-                "by_system": {_PROSE: 1, _POETIC: 0},
-            },
-        },
-    }
-    assert tuple(actual_type_1_mas["example_keys_by_initial_stress_pattern"]) == tuple(
-        actual_type_1_mas["by_initial_stress_pattern"]
-    )
-    assert all(
-        set(example_key) == {"bcv", "chanted_word", "jta"}
-        for example_key in actual_type_1_mas[
-            "example_keys_by_initial_stress_pattern"
-        ].values()
-    )
+    assert set(next_accent_classification) <= {"disjunctive", "conjunctive"}
+    assert sum(next_accent_classification.values()) == len(post_stress)
     fit_for_mas = _fit_for_mas(survey)
-    assert (
-        fit_for_mas["fitting_any_type"],
-        fit_for_mas["with_mas"],
-        fit_for_mas["without_mas"],
-    ) == (377, 200, 177)
-    assert (
-        fit_for_mas["with_mas"] + fit_for_mas["without_mas"]
-        == fit_for_mas["fitting_any_type"]
-    )
-    assert fit_for_mas["by_type_1_subtype"] == {
-        psm.TYPE_1_SUBTYPE_A: {
-            "candidates": 210,
-            "with_mas": 97,
-            "without_mas": 113,
-            "with_mas_by_system": {_PROSE: 93, _POETIC: 4},
-        },
-        psm.TYPE_1_SUBTYPE_B: {
-            "candidates": 43,
-            "with_mas": 12,
-            "without_mas": 31,
-            "with_mas_by_system": {_PROSE: 12, _POETIC: 0},
-        },
-        psm.TYPE_1_SUBTYPE_C: {
-            "candidates": 1571,
-            "with_mas": 4,
-            "without_mas": 1567,
-            "with_mas_by_system": {_PROSE: 2, _POETIC: 2},
-        },
-    }
-    assert fit_for_mas["by_fit_type"] == {
-        psm.FIT_TYPE_1_A: {
-            "candidates": 210,
-            "with_mas": 97,
-            "without_mas": 113,
-        },
-        psm.FIT_TYPE_1_B: {
-            "candidates": 43,
-            "with_mas": 12,
-            "without_mas": 31,
-        },
-        psm.FIT_TYPE_2_AF: {
-            "candidates": 38,
-            "with_mas": 35,
-            "without_mas": 3,
-        },
-        psm.FIT_TYPE_2_BF: {
-            "candidates": 45,
-            "with_mas": 15,
-            "without_mas": 30,
-        },
-        psm.FIT_TYPE_3: {
-            "candidates": 41,
-            "with_mas": 41,
-            "without_mas": 0,
-        },
-    }
-    assert fit_for_mas["mas_not_in_the_table"] == {
-        "outside_the_three_types": 7,
-        "stress_not_penultimate": 4,
-        "next_word_not_disjunctive": 15,
-        "next_word_not_initially_stressed": 1,
-        "type_1_subtype_C": 4,
-        "type_2_subtype_C": 1,
-    }
     mbs_and_mas = census_chanted_word_summary["mas_chanted_words_with_mbs"]
-    assert [record["bcv"] for record in mbs_and_mas] == [
-        "lv25:53",
-        "1s22:17",
-        "1s25:15",
-        "1s29:6",
-        "1k8:16",
-        "is65:18",
-        "je42:2",
-        "mi1:12",
-        "ps94:9",
-        "da6:25",
-    ]
     assert all(
         record["mam_form"] is not None and record["mam_form"].count(psm.METEG) == 2
         for record in mbs_and_mas
     )
-    assert fit_for_mas["with_mas"] + sum(
-        fit_for_mas["mas_not_in_the_table"].values()
-    ) == len(post_stress)
     not_fit_for_mas_records = _not_fit_for_mas_records(survey)
-    assert len(not_fit_for_mas_records) == len(post_stress) - fit_for_mas["with_mas"]
     assert all(
         record["chanted_word"]
         and record["next_chanted_word"]
@@ -1022,7 +1133,6 @@ def pin_claims(survey: dict) -> None:
         for record in not_fit_for_mas_records
     )
     fitting_records = fit_for_mas["records"]
-    assert len(fitting_records) == fit_for_mas["fitting_any_type"]
     assert all(
         record["stress_syllable_has_conjunctive_accent"]
         and record["next_chanted_word_is_initially_stressed"]
@@ -1038,53 +1148,15 @@ def pin_claims(survey: dict) -> None:
         and record["next_mam_form"]
         for record in fitting_records
     )
-    assert Counter(
-        (record["fit_type"], record["has_mas"]) for record in fitting_records
-    ) == Counter(
-        {
-            (psm.FIT_TYPE_1_A, True): 97,
-            (psm.FIT_TYPE_1_A, False): 113,
-            (psm.FIT_TYPE_1_B, True): 12,
-            (psm.FIT_TYPE_1_B, False): 31,
-            (psm.FIT_TYPE_2_AF, True): 35,
-            (psm.FIT_TYPE_2_AF, False): 3,
-            (psm.FIT_TYPE_2_BF, True): 15,
-            (psm.FIT_TYPE_2_BF, False): 30,
-            (psm.FIT_TYPE_3, True): 41,
-        }
-    )
-    assert sum(
-        record["has_mas"] and record["word_has_another_meteg"]
-        for record in fitting_records
-    ) == len(mbs_and_mas)
     lacks_mas_records = _lacks_mas_records(survey)
-    assert len(lacks_mas_records) == fit_for_mas["without_mas"]
-    assert Counter(record["fit_type"] for record in lacks_mas_records) == Counter(
-        {
-            psm.FIT_TYPE_1_A: 113,
-            psm.FIT_TYPE_1_B: 31,
-            psm.FIT_TYPE_2_AF: 3,
-            psm.FIT_TYPE_2_BF: 30,
-        }
-    )
     assert all(record["chanted_word"] for record in lacks_mas_records)
-    assert (
-        sum(fit_for_mas["accent_grammar_token_counts"].values())
-        == fit_for_mas["candidate_chanted_words"]
-    )
-    by_type = sum(_by_type_count(survey, kind) for kind in _TYPE_SOURCES)
-    assert by_type + _by_type_count(survey, psm.TYPE_UNCLASSIFIED) == len(
-        post_stress
-    ), "the structural types do not partition the post-stress records"
     misc_records = _misc_records(survey)
-    assert len(misc_records) == _by_type_count(survey, psm.TYPE_UNCLASSIFIED)
     assert all(one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in misc_records)
     for subtype in (
         psm.SUBTYPE_MISC_VAYOMER,
         psm.SUBTYPE_MISC_ALMOST_TYPE_3,
     ):
         subtype_records = _subtype_records(survey, subtype)
-        assert len(subtype_records) == _by_subtype_count(survey, subtype)
         assert all(
             one["structural_type"] == psm.TYPE_UNCLASSIFIED for one in subtype_records
         )
@@ -1097,7 +1169,6 @@ def pin_claims(survey: dict) -> None:
         and not misc_almost_type_3["chanted_word_is_closed_by_a_guttural"]
     )
     misc_vayomer_records = _subtype_records(survey, psm.SUBTYPE_MISC_VAYOMER)
-    assert len(misc_vayomer_records) == 4, misc_vayomer_records
     assert [
         one for one in post_stress if one.get("intervening_punctuation")
     ] == misc_vayomer_records
@@ -1112,7 +1183,6 @@ def pin_claims(survey: dict) -> None:
         for one in misc_vayomer_records
     )
     type_2_records = _type_2_records(survey)
-    assert len(type_2_records) == _by_type_count(survey, psm.TYPE_GUTTURAL)
     assert all(
         record["chanted_word_is_closed_by_a_guttural"]
         and record["next_chanted_word_is_initially_stressed"]
@@ -1123,12 +1193,13 @@ def pin_claims(survey: dict) -> None:
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
-    assert [record["bcv"] for record in nonfinal_mas_syllable_records] == [
+    assert {record["bcv"] for record in nonfinal_mas_syllable_records} == {
         "is63:12",
         "pr1:19",
         "pr11:26",
         "jb5:10",
-    ]
+    }
+    assert len(nonfinal_mas_syllable_records) == 4
     assert all(
         record["syllables_after_the_stress"] == 1
         and record["structural_type"] == psm.TYPE_GUTTURAL
@@ -1141,7 +1212,6 @@ def pin_claims(survey: dict) -> None:
     type_2_final_mas_records = [
         record for record in type_2_records if record["is_the_last_syllable"]
     ]
-    assert len(type_2_final_mas_records) == 56
     assert all(
         not record["syllable_is_open"] and record["vowel"] == "pataḥ"
         for record in type_2_final_mas_records
@@ -1151,7 +1221,6 @@ def pin_claims(survey: dict) -> None:
         for record in post_stress
         if record["structural_type"] == psm.TYPE_CLOSED_TSERE
     ]
-    assert len(type_3_records) == _by_type_count(survey, psm.TYPE_CLOSED_TSERE)
     assert all(
         record["is_the_last_syllable"]
         and not record["syllable_is_open"]
@@ -1163,47 +1232,21 @@ def pin_claims(survey: dict) -> None:
         record for record in post_stress if record["structural_type"] == psm.TYPE_OPEN
     ]
     assert all(record["is_the_last_syllable"] for record in type_1_records)
-    assert Counter(
-        _type_1_subtype_code(record) for record in type_1_records
-    ) == Counter({"1A": 103, "1B": 12, "1C": 7, "1D": 1})
     noninitial_next_stress_records = _noninitial_next_stress_records(survey)
-    assert [
-        (
-            record["bcv"],
-            record["mam_form"],
-            record["next_mam_form"],
-            record["structural_type"],
-        )
-        for record in noninitial_next_stress_records
-    ] == [
-        (
-            "je46:14",
-            "וְהַשְׁמִ֣יעֽוּ",
-            "בְמִגְדּ֔וֹל",
-            psm.TYPE_OPEN,
-        )
-    ], "the noninitial-next-stress exception has moved"
-    assert (
-        len(type_1_records),
-        len(type_2_records),
-        len(type_3_records),
-        len(misc_records),
-    ) == (123, 60, 42, 7)
+    assert len(noninitial_next_stress_records) == 1
+    assert noninitial_next_stress_records[0]["bcv"] == "je46:14"
+    assert noninitial_next_stress_records[0]["structural_type"] == psm.TYPE_OPEN
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
-    assert type_2_type_3_overlap["chanted_words"] == 154
-    assert type_2_type_3_overlap["by_book"] == {"da": 136, "er": 18}
-    assert type_2_type_3_overlap["by_final_letter"] == {"ה": 154}
-    assert type_2_type_3_overlap["example"]["bcv"] == "da2:5"
+    assert type_2_type_3_overlap["chanted_words"] == sum(
+        type_2_type_3_overlap["by_book"].values()
+    )
+    assert type_2_type_3_overlap["chanted_words"] == sum(
+        type_2_type_3_overlap["by_final_letter"].values()
+    )
+    assert set(type_2_type_3_overlap["by_book"]) == {"da", "er"}
+    assert set(type_2_type_3_overlap["by_final_letter"]) == {"\N{HEBREW LETTER HE}"}
     assert type_2_type_3_overlap["example"]["mam_form"] is not None
-    type_2_next_group_counts = Counter(
-        _type_2_next_group(record) for record in type_2_records
-    )
-    assert type_2_next_group_counts == Counter(
-        lamed=38, guttural=17, resh=1, bet=2, mem=2
-    )
-    assert Counter(
-        _type_2_filter_group(record) for record in type_2_records
-    ) == Counter(lamed=38, guttural=17, **{"not-lamed-or-guttural": 5})
+    assert _split(type_2_type_3_overlap["example"]["bcv"])[0] in {"da", "er"}
     assert survey["post_silluq"]["in_mam"] == sum(
         1 for one in post_stress if one["has_sof_pasuq"]
     ), "the post-silluq count and the records disagree"
@@ -1218,12 +1261,29 @@ def pin_claims(survey: dict) -> None:
     dual_cantillation = _dual_cantillation(survey)
     whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
     template_comparison = dual_cantillation["template_counts"]
-    assert dual_cantillation["counted_cantillation"] == psm.CANT_ALEF
-    for category in (
+    cantillations = {psm.CANT_ALEF, psm.CANT_BET}
+    comparison_categories = {
         "chanted words checked",
         "meteg before the stressed syllable",
         "meteg after the stressed syllable",
-    ):
+    }
+    _assert_exact_keys(
+        whole_census_comparison, cantillations, "whole-census cantillations"
+    )
+    _assert_exact_keys(template_comparison, cantillations, "template cantillations")
+    for cantillation in cantillations:
+        _assert_exact_keys(
+            whole_census_comparison[cantillation],
+            comparison_categories,
+            f"{cantillation} whole-census comparison",
+        )
+        _assert_exact_keys(
+            template_comparison[cantillation],
+            comparison_categories,
+            f"{cantillation} template comparison",
+        )
+    assert dual_cantillation["counted_cantillation"] == psm.CANT_ALEF
+    for category in comparison_categories:
         assert whole_census_comparison[psm.CANT_ALEF][category] == _both(
             survey, category
         )
@@ -1233,6 +1293,17 @@ def pin_claims(survey: dict) -> None:
     )
     assert template_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
     assert template_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
+    for category in (
+        "chanted words checked",
+        "meteg before the stressed syllable",
+    ):
+        assert (
+            abs(
+                template_comparison[psm.CANT_ALEF][category]
+                - template_comparison[psm.CANT_BET][category]
+            )
+            == 1
+        )
     assert survey["post_silluq"]["in_mam"] == 0
     difference = dual_cantillation["meteg_before_stress_difference"]
     assert difference["bcv"] == "dt5:6"
@@ -1512,26 +1583,12 @@ def _census_definitions(survey: dict) -> list:
     ]
     assert more_than_two_mbs == 0
     records = census_chanted_word_summary["mas_chanted_words_with_mbs"]
-    assert len(records) == 10
-    fitting_mas_with_another_meteg = [
-        record
-        for record in _fit_for_mas(survey)["records"]
-        if record["has_mas"] and record["word_has_another_meteg"]
-    ]
-    assert len(fitting_mas_with_another_meteg) == len(records)
-    fit_record_by_bcv_and_mam_form = {
-        (record["bcv"], record["mam_form"]): record
-        for record in fitting_mas_with_another_meteg
-    }
-    assert len(fit_record_by_bcv_and_mam_form) == len(records)
-    assert {(record["bcv"], record["mam_form"]) for record in records} == set(
-        fit_record_by_bcv_and_mam_form
-    )
     # The (sub)type column shows the structural taxonomy, so the label comes off the
-    # post-stress record rather than off the fit-for-MAS one beside it.
+    # post-stress record; the census section makes no Fit-for-MAS claim.
     post_stress_by_bcv_and_mam_form = {
         (one["bcv"], one["mam_form"]): one for one in survey["post_stress"]
     }
+    assert len(post_stress_by_bcv_and_mam_form) == len(survey["post_stress"])
     assert {(record["bcv"], record["mam_form"]) for record in records} <= set(
         post_stress_by_bcv_and_mam_form
     )
@@ -1590,7 +1647,7 @@ def _census_definitions(survey: dict) -> list:
                     (
                         _ref_link(record["bcv"]),
                         _case_chanted_word_cell(
-                            fit_record_by_bcv_and_mam_form[
+                            post_stress_by_bcv_and_mam_form[
                                 (record["bcv"], record["mam_form"])
                             ]
                         ),
@@ -1889,7 +1946,7 @@ def _type_1_subtypes(survey: dict) -> list:
         for pattern, counts in pattern_counts.items()
     ]
     total = sum(counts["cases"] for counts in pattern_counts.values())
-    assert total == type_1_mas["cases"] == 123
+    assert total == type_1_mas["cases"]
     return [
         mb_html.heading_level_2("The four subtypes of MAS type 1"),
         mb_html.para(
@@ -1944,7 +2001,7 @@ def _type_2_subtypes(survey: dict) -> list:
             )
         )
     total = sum(len(records) for records in records_by_group.values())
-    assert total == _by_type_count(survey, psm.TYPE_GUTTURAL) == 60
+    assert total == _by_type_count(survey, psm.TYPE_GUTTURAL)
     return [
         mb_html.heading_level_2("The three subtypes of MAS type 2"),
         mb_html.para(
@@ -3352,7 +3409,6 @@ def _nonfinal_mas_syllable_footnote(survey: dict) -> list:
         if _case_filter_subtype(record) == "2C"
     ]
     other_two_c_count = len(two_c_records) - len(nonfinal_mas_syllable_records)
-    assert other_two_c_count == 1, two_c_records
     return [
         mb_html.heading_level_3(
             "φ2 — The four nonfinal MAS syllables", {"id": _NONFINAL_MAS_FOOTNOTE_ID}

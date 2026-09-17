@@ -11,11 +11,12 @@ silently first and was noticed later, because the index lived in a different rep
 the pages it named.  Now that the index is here, half of it can be checked.
 
 WHAT IS CHECKED, AND WHAT DELIBERATELY IS NOT.  Only the links that point back into THIS
-repo's ``gh-pages/``.  The rest of the index names MAM-with-doc, book-of-job, phonetic-hbo,
-Taamey_D, two gists' worth of former reviews, Google Docs and hakirah.org, and checking
-those would need either the network or a sibling clone.  A sibling clone is the harder
-objection: under this repo's missing-input rule a test may not skip when its input is
-absent, so a sibling-aware check would have to FAIL on any machine without the clone.  So
+repo's ``gh-pages/``. The rest of the index names MAM-with-doc, book-of-job, phonetic-hbo,
+hbofonts' current Taamey D pages, two gists' worth of former reviews, Google Docs and
+hkirah.org, and checking those would need either the network or a sibling clone. A
+sibling clone is the harder objection: under this repo's missing-input rule a test may
+not skip when its input is absent, so a sibling-aware check would have to FAIL on any
+machine without the clone.  So
 this file checks the half whose both sides are in this repo -- the same reasoning
 ``py/tests/test_redirect_manifest.py``'s docstring gives for hoisting one check out of a
 program that cannot run here.

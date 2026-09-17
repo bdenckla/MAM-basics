@@ -41241,7 +41241,9 @@ v,_,y,·,_,r,:,α,‥,(mun),m.
 SPACE
 α,∵,τ,-,k,·,oa,l,-,b,·,‥,(mun),y,τ
 SPACE
+START kq-trivial
 n,:,k,o,τ,o,(paz),h
+STOP kq-trivial
 SPACE
 α,∵,τ,-,h,_,k,·,∵,(tel_q),σ,∵,p.,(tel_q)
 SPACE

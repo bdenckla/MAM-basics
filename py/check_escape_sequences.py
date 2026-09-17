@@ -8,7 +8,7 @@ degree sign (°), multiplication sign (×), box-drawing characters,
 arrows, check marks, Hebrew letters, and Hebrew punctuation.
 
 Characters that SHOULD remain as escapes (visually ambiguous or invisible):
-  - Combining marks: CGJ (U+034F), Hebrew points/accents (U+0591–U+05C7),
+  - Combining marks: CGJ (U+034F), Hebrew points/accents (U+0591–U+05C9),
     Varika (U+FB1E)
   - Zero-width / space characters: ZWJ (U+200D), NBSP, thin space, hair space
   - Any character where the literal glyph is easily confused with ASCII
@@ -51,6 +51,7 @@ _KEEP_AS_ESCAPE = set()
 #   U+05C1–U+05C2  shin dot, sin dot
 #   U+05C4–U+05C5  upper dot, lower dot
 #   U+05C7         qamats qatan
+#   U+05C8–U+05C9  Phonetic MAM's two Unicode 18 annotation marks
 # Excludes displayable punctuation: maqaf (U+05BE), paseq (U+05C0),
 # sof pasuq (U+05C3), nun hafukha (U+05C6).
 _KEEP_AS_ESCAPE.update(range(0x0591, 0x05BE))  # U+0591 – U+05BD
@@ -58,6 +59,7 @@ _KEEP_AS_ESCAPE.add(0x05BF)  # rafe
 _KEEP_AS_ESCAPE.update(range(0x05C1, 0x05C3))  # shin dot, sin dot
 _KEEP_AS_ESCAPE.update(range(0x05C4, 0x05C6))  # upper dot, lower dot
 _KEEP_AS_ESCAPE.add(0x05C7)  # qamats qatan
+_KEEP_AS_ESCAPE.update(range(0x05C8, 0x05CA))  # Phonetic MAM annotations
 
 # Combining Grapheme Joiner
 _KEEP_AS_ESCAPE.add(0x034F)

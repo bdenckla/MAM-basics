@@ -39,5 +39,6 @@ throughout:
 
 This skill is canonical at `MAM-basics/dot-claude/skills/github-issues/` and is shared with
 Codex through `dot-claude/shared-skills.txt`. Change the canonical copy first, then use the
-deployment procedure in `dot-claude/README.md`. The user-wide instruction files keep only the
-conversation-level rules and a pointer here.
+deployment procedure in `dot-claude/README.md`. The common user-wide instruction body keeps only
+the conversation-level rules and a pointer here. Codex loads that body from
+`~/.codex/AGENTS.md`; Claude Code imports it through `~/.claude/CLAUDE.md`.

@@ -8,7 +8,7 @@ import sys
 from typing import Sequence
 
 from repo_util import maintenance_policy
-from repo_util.common import format_command, run_cmd, write_json, write_text
+from repo_util.common import format_command, run_cmd, run_git, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
 
@@ -61,7 +61,7 @@ def _has_tracked_py_files(repo_dir: Path) -> bool:
     checkout nobody was going to commit. ``git ls-files`` is the right question
     precisely because it ignores what is merely lying in the directory.
     """
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", "*.py"])
+    result = run_git(repo_dir, "ls-files", "-z", "*.py")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"

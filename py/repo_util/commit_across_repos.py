@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import tempfile
 
-from repo_util.common import run_cmd
+from repo_util.common import run_git
 from repo_util.repo_selection import RepoInfo
 
 
@@ -22,9 +22,7 @@ def read_commit_message(message: str | None, message_file: str | None) -> str:
 
 
 def has_staged_changes(repo_dir: Path) -> bool:
-    result = run_cmd(
-        ["git", "-C", str(repo_dir), "diff", "--cached", "--quiet", "--exit-code"]
-    )
+    result = run_git(repo_dir, "diff", "--cached", "--quiet", "--exit-code")
     if result.returncode in (0, 1):
         return result.returncode == 1
     raise RuntimeError(
@@ -33,9 +31,7 @@ def has_staged_changes(repo_dir: Path) -> bool:
 
 
 def get_staged_summary(repo_dir: Path) -> dict[str, int]:
-    result = run_cmd(
-        ["git", "-C", str(repo_dir), "diff", "--cached", "--numstat", "-z"]
-    )
+    result = run_git(repo_dir, "diff", "--cached", "--numstat", "-z")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to summarize staged changes in {repo_dir}"
@@ -62,14 +58,14 @@ def get_staged_summary(repo_dir: Path) -> dict[str, int]:
 
 
 def commit_repo(repo_dir: Path, message_file: Path) -> None:
-    result = run_cmd(["git", "-C", str(repo_dir), "commit", "-F", str(message_file)])
+    result = run_git(repo_dir, "commit", "-F", str(message_file))
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
     print(f"Committed {repo_dir.name}")
 
 
 def push_repo(repo_dir: Path) -> None:
-    result = run_cmd(["git", "-C", str(repo_dir), "push"])
+    result = run_git(repo_dir, "push")
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
     print(f"Pushed {repo_dir.name}")

@@ -19,7 +19,7 @@ topology decision.
 4. Read `references/evacuated-repositories.md` for the current disposition, exact explicit
    stub-publication procedure, and historical traps for every evacuated repository.
 5. Read `references/repository-maintenance.md` for a maintenance sweep, Black coverage, or
-   retirement of completed Codex task folders and disposable cache data.
+   retirement of selected linked worktrees, completed Codex task folders and disposable cache data.
 
 Apply every clause of `gitrepos_setup_rule`, including its exclusions and its listed gists.
 Never reconstruct the roster from `gh repo list` or from a disk set difference. If the request

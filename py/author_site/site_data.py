@@ -67,7 +67,7 @@ _MAM_FOR_SEFARIA = "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/"
 _MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
 _MAM_OSIS = "https://bdenckla.github.io/MAM-basics/MAM-OSIS/"
 _PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
-_TAAMEY_D = "https://bdenckla.github.io/Taamey_D/"
+_TAAMEY_D = "https://bdenckla.github.io/hbofonts/Taamey_D.html"
 _GDOC = "https://docs.google.com/document/d/e"
 
 UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
@@ -306,7 +306,8 @@ _TAAMEY = Section(
                 " (",
                 Anchor(
                     "latest release of that font",
-                    "https://github.com/bdenckla/Taamey_D/releases/latest",
+                    "https://bdenckla.github.io/hbofonts/downloads/latest/"
+                    "Taamey_D_and_friends.zip",
                 ),
                 ")",
             ),

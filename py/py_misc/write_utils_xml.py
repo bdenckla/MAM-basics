@@ -3,6 +3,7 @@
 import xml.etree.ElementTree as ET
 from mb_cmn import file_io
 from mb_cmn import provenance
+from mb_cmn import public_data_consumer_notice as consumer_notice
 
 
 def write_root_in_xml_fmt(out_path, root, generator_file=None):
@@ -19,5 +20,8 @@ def write_root_in_xml_fmt(out_path, root, generator_file=None):
 def _write_callback(xml_elementtree, generator_file, out_fp):
     if generator_file is not None:
         out_fp.write(f"<!-- {provenance.generated_by_text(generator_file)} -->\n")
+    out_fp.write(
+        f"<!-- {consumer_notice.xml_comment(consumer_notice.mam_simple_notice())} -->\n"
+    )
     xml_elementtree.write(out_fp, encoding="unicode")
     out_fp.write("\n")

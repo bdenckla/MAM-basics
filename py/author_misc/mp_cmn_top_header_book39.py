@@ -15,7 +15,12 @@ JSON_BOOK39_SKEL_COMMON = jsnip.read_text(
 )
 JSON_BOOK39_SKEL_PLUS = jsnip.read_text("top_header_book39", "book39_skel_plus.json")
 
-HEADER_KEYS = ["book24_name", "sub_book_names", "chapter_counts"]
+HEADER_KEYS = [
+    "book24_name",
+    "sub_book_names",
+    "chapter_counts",
+    "consumer_notice",
+]
 BOOK39_KEYS_COMMON = ["book24_name", "sub_book_name", "chapters"]
 
 
@@ -46,6 +51,15 @@ def header_rows():
                 " (The ",
                 mb_html.code("sub_book_name"),
                 " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
+            ],
+        ],
+        [
+            mb_html.code("consumer_notice"),
+            "object",
+            [
+                "A warning label for consumers, with a summary, a nonempty array of ",
+                mb_html.code("critical_rules"),
+                ", and the absolute URL of this format guide.",
             ],
         ],
     ]

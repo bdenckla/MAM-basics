@@ -76,7 +76,9 @@ Two properties of the series matter to every review in it.
    RECORDED, never what it may READ** — a distinction worth spelling out, because two documents
    written on 2026-09-09 both took it the other way, and either reading would send a session to Ben
    for a scope decision he does not owe. A review reads whatever the window changed in a public
-   repository: `doc/review-findings-2026-09-08.md` is headed "review of the public repos" and
+   repository:
+   [`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-08.md)
+   is headed "review of the public repos" and
    accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
    is the RECORD. Each file carries a `State:` line at line 3 directly under the H1. The initial
    review records what was true when the review finished; later remediation State belongs in its
@@ -129,9 +131,13 @@ founding it. A review that departs from it should say why in its opening paragra
    is unfinished, which is not a defect of the window.
 9. **`## What this review did not check`**.
 
-Items 4, 5, 6 and 9 first appear together in `doc/review-findings-2026-09-04.md`. From 2026-08-03
+Items 4, 5, 6 and 9 first appear together in
+[`doc/review-findings-2026-09-04.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-04.md).
+From 2026-08-03
 to 2026-09-01 a review usually fixed some findings during the review itself and said so under
-`## How the review was acted on (<date>)`, and `doc/review-findings-2026-07-29.md` groups its
+`## How the review was acted on (<date>)`, and
+[`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md)
+groups its
 findings under `## Major` and `## Minor — <area>` headings. In a standard two-agent window, Agent
 1's turn-01 file also carries the inputs for reconciliation and, after turn 02, Agent 2's
 reconciliation; `doc/dual-agent-review.md` owns both. Historical author-named headings remain as

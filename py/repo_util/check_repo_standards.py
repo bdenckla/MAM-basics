@@ -32,7 +32,7 @@ still reads n/a there, and the repo no longer holds data for an agent session
 to edit, so its ungated worktree counts should normally read 0 now.) The two
 worktree COUNTS are not gated, because they stay true and still matter -- such a
 repo goes on accruing worktrees from agents editing its data, which is what
-`py/main_repo_util.py --clean-worktrees` exists to sweep now that no maintenance
+`py/main_repo_util.py --inspect-worktrees` provides inspection now that no maintenance
 script of its own can.
 
 MAINTENANCE_SCRIPT=False IS THE SETTLED, EXPECTED ANSWER EVERYWHERE BUT HERE --
@@ -61,58 +61,28 @@ does not list a source clone.
 
 The worktree-cleanup standard
 -----------------------------
-EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED CLAUDE WORKTREES AND THE
-BRANCHES THEY LEAVE BEHIND. A Claude session run in isolation creates a worktree
-plus, usually, a `claude/<name>` branch, and cleans up neither when it ends.
-Both therefore accumulate silently: the first scan to include this check found
-wlc-utils holding two orphaned worktrees and three orphaned branches, every one
-of them clean and already merged. That is not cosmetic -- a worktree is a second
-full checkout, so a stale one is a live trap where a later session can do real
-work in the wrong tree.
+Repository maintenance should inspect linked worktrees through the shared retirement
+API. Candidate selection can be Claude-only, Codex-only, both, or an exact path;
+ownership never supplies a different Git or ignored-content safety policy.
+`repo_util.worktree_retirement` is the implementation of record. The compatibility
+`git_worktree_cleanup` API and `--clean-worktrees` action inspect Claude candidates;
+they never prune registrations, sweep folders, or automatically delete branches.
 
-Cover BOTH places they land. The harness default is `<repo>/.claude/worktrees/`,
-whose nesting puts it two levels deeper than the sibling repos its code expects
-at `../<sibling>` (see `mb_cmn/paths.py`'s docstring, which exists because of
-exactly this). The workaround is to place the worktree as a SIBLING of the repo
-instead, `GitRepos/<repo>-<topic>`, where those lookups resolve -- deliberate
-practice, and the variety that litters the more annoying directory. Driving
-removal off `git worktree list` covers both without special-casing either.
-
-The reference implementation is `repo_util/git_worktree_cleanup.py`, wired as a
-step in this repo's `py/main_repo_maintenance.py` and, across every repo in a
-workspace file, as `py/main_repo_util.py --clean-worktrees`. Copy its conservatism
-along with its code: never `--force`; spare and REPORT any worktree that is
-dirty (untracked files included), unmerged, locked, recently active, placed in
-use by Claude Code's own session records, or currently running the code;
-restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
-never a candidate; and remove worktrees before branches, since a branch held by
-a worktree cannot be deleted while that worktree exists.
-
-This standard is Claude-owned. The reference implementation also requires a
-``.claude/worktrees/`` path or ``claude/*`` branch before removal. Codex
-worktrees remain visible in the linked-worktree count but use the separate,
-explicitly preflighted retirement action in ``py/main_repo_util.py``.
-
-Three of those spare a worktree another session is using right now, which git
-gives no way to detect outright. `git worktree lock` is the sanctioned,
-exact answer, and comes free: `git worktree remove` refuses a locked worktree,
-so merely never passing `--force` honours it. The heuristic beside it times the
-per-worktree `index`, which every git command rewrites, and skips anything
-touched within the hour -- it must be read BEFORE the dirty check, whose own
-`git status` refreshes that very index. The third reads Claude Code's own
-records of its running sessions and of the worktrees its desktop app has leased,
-and outranks the heuristic, because an hour without git is not rare in a live
-session (measured 2026-09-10; see that module's "AN HOUR WITHOUT GIT IS NOT AN
-ABANDONED SESSION"). Do not treat the OS as a further layer: a
-held file handle makes removal fail only AFTER git has emptied the directory,
-so it makes a wrong removal noisy, not survivable.
+Preparation writes a reviewed per-target JSON audit. Execution repeats runtime,
+tracked/untracked, integration, reflog and object gates, retains and verifies .novc,
+and uses non-forced removal followed by `git branch -d` only for the retired target's
+eligible branch. Unique ignored content outside .novc blocks removal. Claude
+session/desktop records and Codex task/writer records contribute liveness facts
+for every owner. Missing records never prove inactivity; require an explicit
+ended-task attestation and honor locks. Windows residue remains measured and
+recorded for conservative resumption; retained-data disposal is a separate decision.
 
 `worktree_hygiene` reports both halves of the picture per repo: whether the
 maintenance script mentions worktrees at all (a text scan of the script found
 by `maintenance_script` -- crude on purpose, in keeping with the rest of this
 file), and how much is actually lying around right now (`linked_worktrees`,
 the `git worktree list` count minus the main worktree, and `agent_branches`,
-the count of local `claude/*` refs). Nonzero counts with SCRIPT_COVERS=False is
+the count of local `claude/*`, `codex/*` and `codex-*` refs). Nonzero counts with SCRIPT_COVERS=False is
 the case this check exists to surface. Do not read nonzero counts as leftovers
 on their own, though: a session running RIGHT NOW shows up identically, which is
 what wlc-utils' LINKED_WORKTREES=1 meant on the first all-repos run.
@@ -403,7 +373,8 @@ import tokenize
 import unicodedata
 from pathlib import Path
 
-from repo_util.common import run_cmd, write_json, write_text
+from mb_cmn import unicode_data
+from repo_util.common import run_git, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
 _MAINTENANCE_SCRIPT_CANDIDATES = (
@@ -547,7 +518,7 @@ def _check_maintenance_script(repo_dir: Path, *, has_tracked_py: bool) -> dict:
 
 
 def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
-    """Does the maintenance script clean Claude worktrees, and is anything left?
+    """Does maintenance inspect worktrees, and which registrations and agent refs remain?
 
     See "The worktree-cleanup standard" in this module's docstring. `script_covers`
     is a text scan of whatever `maintenance_script` found, so it answers "has this
@@ -569,24 +540,20 @@ def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
             except (UnicodeDecodeError, OSError):
                 script_covers = False
 
-    worktree_list = run_cmd(
-        ["git", "-C", str(repo_dir), "worktree", "list", "--porcelain", "-z"]
-    )
+    worktree_list = run_git(repo_dir, "worktree", "list", "--porcelain", "-z")
     linked = None
     if worktree_list.returncode == 0:
         records = worktree_list.stdout.split("\0")
         worktrees = [record for record in records if record.startswith("worktree ")]
         linked = max(len(worktrees) - 1, 0)  # the first entry is the main worktree
 
-    branch_list = run_cmd(
-        [
-            "git",
-            "-C",
-            str(repo_dir),
-            "for-each-ref",
-            "--format=%(refname:short)",
-            "refs/heads/claude/",
-        ]
+    branch_list = run_git(
+        repo_dir,
+        "for-each-ref",
+        "--format=%(refname:short)",
+        "refs/heads/claude/",
+        "refs/heads/codex/",
+        "refs/heads/codex-*",
     )
     agent_branches = None
     if branch_list.returncode == 0:
@@ -635,15 +602,14 @@ def _check_path_shim_config(repo_dir: Path) -> dict:
 
 def _is_test_file(normalized_rel_path: str) -> bool:
     """Both of pytest's default `python_files` spellings, `test_*.py` and
-    `*_test.py` -- CLC uses the suffix form (py/clc/clc_kq_test.py),
-    MAM-basics and wlc-utils the prefix form. A `py/main_<x>.py` entry point is
-    never one, however it is named: wlc-utils' py/main_uxlc_grammar_test.py
-    runs a grammar test but is a command, so its insert is the ordinary
-    unnecessary kind rather than the no-op-under-pytest kind. (Dated example,
-    left as it was written. That main is this repo's py/main_uxlc_grammar_test.py
-    since the 2026-08-01 evacuation; wlc-utils now has no tracked .py, so it is
-    MAM-basics that uses the prefix form and a scan of wlc-utils reaches no file
-    at all.)"""
+    `*_test.py` -- MAM-basics uses both forms, including CLC's suffix form and
+    the operational worktree-retirement simulation. A `py/main_<x>.py` entry
+    point is never one, however it is named: wlc-utils'
+    py/main_uxlc_grammar_test.py runs a grammar test but is a command, so its
+    insert is the ordinary unnecessary kind rather than the no-op-under-pytest
+    kind. (Dated example, left as it was written. That main is this repo's
+    py/main_uxlc_grammar_test.py since the 2026-08-01 evacuation; wlc-utils now
+    has no tracked .py, so a scan of wlc-utils reaches no file at all.)"""
     name = Path(normalized_rel_path).name
     if name.startswith("main_"):
         return False
@@ -661,7 +627,7 @@ def _find_sys_path_mutations(text: str) -> list[int]:
 
 
 def _tracked_py_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z", "*.py"])
+    result = run_git(repo_dir, "ls-files", "-z", "*.py")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"
@@ -697,7 +663,7 @@ def _range_spans(text: str) -> list[tuple[int, int]]:
     """Return spans of \\uXXXX-\\uYYYY character-class range pairs. \\N{...}
     can express a single named character, never a range, so both endpoints
     are exempt regardless of raw-string-ness -- see e.g. non-raw
-    RECC_APCV = "\\u0591-\\u05c7" in mb_cmn/hebrew_points.py."""
+    RECC_APCV = "\\u0591-\\u05c9" in mb_cmn/hebrew_points.py."""
     return [match.span() for match in _RANGE_PATTERN.finditer(text)]
 
 
@@ -769,7 +735,12 @@ def _find_hex_escapes(text: str) -> list[int]:
     for match in _HEX_ESCAPE_PATTERN.finditer(text):
         if _in_any_span(match.start(), exempt_spans):
             continue
-        if not _has_unicode_name(match.group(0)[2:]):
+        hex_digits = match.group(0)[2:]
+        if int(hex_digits, 16) in (0x05C8, 0x05C9):
+            # These constants deliberately stay numeric so this source runs on
+            # Python versions whose Unicode database predates Unicode 18.
+            continue
+        if not _has_unicode_name(hex_digits):
             continue
         line_no = text.count("\n", 0, match.start()) + 1
         if line_no not in line_numbers:
@@ -788,7 +759,7 @@ def _find_orphan_combining_marks(text: str) -> list[int]:
             if ch not in _QUOTE_CHARS:
                 continue
             nxt = line[i + 1]
-            if unicodedata.category(nxt) in ("Mn", "Mc"):
+            if unicode_data.category(nxt) in ("Mn", "Mc"):
                 line_numbers.append(line_no)
                 break
     return line_numbers
@@ -839,7 +810,7 @@ def _scan_py_files(
 
 
 def _tracked_files(repo_dir: Path) -> list[str]:
-    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "-z"])
+    result = run_git(repo_dir, "ls-files", "-z")
     if result.returncode != 0:
         raise RuntimeError(
             result.stderr.strip() or f"Failed to list tracked files in {repo_dir}"
@@ -898,7 +869,7 @@ _HEBREW_RANGES_NFC = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
 
 # NFC composition onto a Latin base only draws from the Combining Diacritical
 # Marks block (U+0300-U+036F), so every cluster worth examining has one of these
-# as its first mark (Hebrew marks live at U+0591-U+05C7, outside this range).
+# as its first mark (Hebrew marks live at U+0591-U+05C9, outside this range).
 # Raw-string range escape -- the accepted \uXXXX-range convention here (see the
 # hex_escape_style docstring); no literal combining mark is typed.
 #

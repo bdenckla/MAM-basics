@@ -2,6 +2,8 @@
 
 import argparse
 import json
+from pathlib import Path
+import tempfile
 import unittest
 from unittest import mock
 
@@ -76,6 +78,7 @@ class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
         self.assertTrue(releases, "releases.json must name at least one release")
         for entry in releases:
             args = argparse.Namespace(
+                check=False,
                 all=False,
                 old=entry["old"],
                 new=entry["new"],
@@ -91,6 +94,103 @@ class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
             legacy_output = diff_mpplus.default_output_path(old_rev, new_rev)
             self.assertNotEqual(legacy_output, named_output)
             generate_mock.assert_called_once_with(old_rev, new_rev, legacy_output)
+
+    def test_generated_artifact_names_follow_releases_json(self):
+        with open(diff_mpplus.RELEASES_JSON, encoding="utf-8") as in_fp:
+            releases = json.load(in_fp)["releases"]
+
+        expected = []
+        for entry in releases:
+            expected.extend((f"{entry['name']}.html", f"{entry['name']}.json"))
+        expected.extend(("unpinned-latest.html", "unpinned-latest.json", "index.html"))
+
+        self.assertEqual(diff_mpplus.generated_artifact_names(), tuple(expected))
+
+    def test_generated_artifact_comparison_covers_every_artifact(self):
+        artifact_names = diff_mpplus.generated_artifact_names()
+        with (
+            tempfile.TemporaryDirectory() as generated_dir,
+            tempfile.TemporaryDirectory() as tracked_dir,
+        ):
+            generated_dir = Path(generated_dir)
+            tracked_dir = Path(tracked_dir)
+            for name in artifact_names:
+                (generated_dir / name).write_bytes(b"same")
+                (tracked_dir / name).write_bytes(b"same")
+
+            self.assertEqual(
+                diff_mpplus._generated_artifact_problems(generated_dir, tracked_dir),
+                [],
+            )
+
+            for name in artifact_names:
+                with self.subTest(name=name, state="different"):
+                    (generated_dir / name).write_bytes(b"different")
+                    self.assertEqual(
+                        diff_mpplus._generated_artifact_problems(
+                            generated_dir, tracked_dir
+                        ),
+                        [f"Differing artifact: {name}"],
+                    )
+                    (generated_dir / name).write_bytes(b"same")
+
+                with self.subTest(name=name, state="missing regenerated"):
+                    (generated_dir / name).unlink()
+                    self.assertEqual(
+                        diff_mpplus._generated_artifact_problems(
+                            generated_dir, tracked_dir
+                        ),
+                        [f"Missing regenerated artifact: {name}"],
+                    )
+                    (generated_dir / name).write_bytes(b"same")
+
+                with self.subTest(name=name, state="missing tracked"):
+                    (tracked_dir / name).unlink()
+                    self.assertEqual(
+                        diff_mpplus._generated_artifact_problems(
+                            generated_dir, tracked_dir
+                        ),
+                        [f"Missing tracked artifact: {name}"],
+                    )
+                    (tracked_dir / name).write_bytes(b"same")
+
+    def test_check_rejects_every_conflicting_selector(self):
+        defaults = {
+            "check": True,
+            "all": False,
+            "old": None,
+            "new": None,
+            "output": None,
+            "legacy_history": False,
+        }
+        conflicts = {
+            "all": True,
+            "old": "old",
+            "new": "new",
+            "output": "report.html",
+            "legacy_history": True,
+        }
+        for selector, value in conflicts.items():
+            with self.subTest(selector=selector):
+                args = argparse.Namespace(**(defaults | {selector: value}))
+                with self.assertRaises(SystemExit):
+                    diff_mpplus.run_from_args(args)
+
+    def test_check_all_generates_in_a_temporary_directory(self):
+        with tempfile.TemporaryDirectory() as generated_dir:
+            with (
+                mock.patch.object(diff_mpplus, "TemporaryDirectory") as temp_mock,
+                mock.patch.object(diff_mpplus, "run_all") as run_all_mock,
+                mock.patch.object(
+                    diff_mpplus, "_generated_artifact_problems", return_value=[]
+                ) as problems_mock,
+            ):
+                temp_mock.return_value.__enter__.return_value = generated_dir
+                diff_mpplus.check_all()
+
+        self.assertNotEqual(generated_dir, diff_mpplus.CHANGE_LOG_DIR)
+        run_all_mock.assert_called_once_with(generated_dir)
+        problems_mock.assert_called_once_with(generated_dir)
 
 
 if __name__ == "__main__":

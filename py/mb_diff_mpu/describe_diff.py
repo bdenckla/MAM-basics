@@ -7,7 +7,6 @@ section 4) for use in MAM-parsed-plus diff reports.  Produces human-readable des
     "meteg on mem removed"
 """
 
-import unicodedata
 from collections import Counter
 
 from mb_cmn import hebrew_accents as ha
@@ -15,6 +14,7 @@ from mb_cmn import retired_kq_special_templates as rkqst
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn.str_defs import DOUB_VERT_LINE
+from mb_cmn import unicode_data
 from mb_diff_mpu.mpplus_flatten import (
     is_ketiv_velo_qere_template,
     is_parashah_template,
@@ -137,6 +137,8 @@ POINT_NAMES = {
     hpo.SHIND: "shin-dot",
     hpo.SIND: "sin-dot",
     hpo.VARIKA: "varika",
+    hpo.SHEVA_NA: "sheva-na",
+    hpo.DAGESH_XAZAQ: "dagesh-xazaq",
 }
 
 
@@ -156,13 +158,13 @@ def is_mark(ch):
     return (
         (0x05B0 <= cp <= 0x05BD)
         or cp == 0x05BF
-        or cp in (0x05C1, 0x05C2, 0x05C7)
+        or cp in (0x05C1, 0x05C2, 0x05C7, 0x05C8, 0x05C9)
         or cp == 0xFB1E
     )
 
 
 def letter_name(ch):
-    return LETTER_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+    return LETTER_NAMES.get(ch, unicode_data.name(ch, f"U+{ord(ch):04X}"))
 
 
 def ordinal(n):
@@ -198,11 +200,11 @@ def accent_name(ch, poetic=False):
         name = POETIC_ACCENTS.get(ch)
         if name:
             return name
-    return ACCENT_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+    return ACCENT_NAMES.get(ch, unicode_data.name(ch, f"U+{ord(ch):04X}"))
 
 
 def mark_name(ch):
-    return POINT_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+    return POINT_NAMES.get(ch, unicode_data.name(ch, f"U+{ord(ch):04X}"))
 
 
 # ── Qualify marks/accents with their preceding letter ────────────────

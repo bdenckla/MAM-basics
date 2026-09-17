@@ -15,7 +15,7 @@ _GOERWITZ_TMS_IMAGE_CAPTION_CLASS = "goerwitz-tms-image-caption"
 _IMG_BASE = "img/"
 
 _POINTED_HEBREW_SEGMENT_RE = re.compile(r"[\u0590-\u05FF]+")
-_HEBREW_POINTING_MARK_RE = re.compile(r"[\u0591-\u05C7]")
+_HEBREW_POINTING_MARK_RE = re.compile(r"[\u0591-\u05C9]")
 _HEBREW_LETTER_RE = re.compile(r"[\u05D0-\u05EA]")
 _LC_IMAGE_NAME_RE = re.compile(r"LC-([0-9]+[A-Za-z])-col-([0-9]+)-line-([0-9]+)")
 

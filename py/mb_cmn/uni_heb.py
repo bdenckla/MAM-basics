@@ -1,12 +1,12 @@
 """Hebrew Unicode utilities."""
 
 import re
-import unicodedata
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import str_defs as sd
+from mb_cmn import unicode_data
 
 __all__ = [
     "shunna",
@@ -28,7 +28,7 @@ def shunna(string):
     """
     if nonhe := _HE_TO_NONHE_DIC.get(string):
         return nonhe
-    fullname = unicodedata.name(string)
+    fullname = unicode_data.name(string)
     fullname_words = fullname.split()
     if len(fullname_words) < 3:
         return fullname
@@ -169,10 +169,12 @@ _HE_AND_DIRECT_ASCII_LETT_PAIRS = (
 _HE_AND_NONHE_POINT_PAIRS = (
     (hpo.VARIKA, "varika"),
     (hpo.DAGOMOSD, "·"),
+    (hpo.DAGESH_XAZAQ, "··"),
     (hpo.RAFE, "‾"),  # r̄ was another candidate
     (hpo.SHIND, "·sh"),
     (hpo.SIND, "·si"),
     (hpo.SHEVA, ":"),  # ambiguous, could be na or nax
+    (hpo.SHEVA_NA, "::"),
     (hpo.XSEGOL, ":∵"),  # ∵ aka BECAUSE
     (hpo.XPATAX, ":_"),
     (hpo.XQAMATS, ":a"),

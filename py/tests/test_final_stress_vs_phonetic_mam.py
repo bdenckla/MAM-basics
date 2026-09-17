@@ -77,6 +77,8 @@ from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
 from mb_cmn import graphviz_pin
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 
 # Both tests read MAM-private's Phonetic MAM through ``_oracle``, so both are skipped in a cloud
@@ -93,16 +95,20 @@ pytestmark = pytest.mark.skipif(
     ),
 )
 
-# What a join key drops: the accents (U+0591..U+05AE), the masora circle (U+05AF) Phonetic MAM
-# writes to mark a sheva or dagesh it has resolved, meteg (U+05BD), rafe (U+05BF), the punctuation
-# that can sit inside a chanted word (paseq U+05C0, sof pasuq U+05C3, the two puncta
-# U+05C4..U+05C5), and the two invisibles (CGJ U+034F, varika U+FB1E).  What is left is letters and
-# points, which is what the two sides have to agree on: they are two renderings of MAM rather than
-# one file, and the accents are what this test COMPARES rather than what it matches on.  Written as
-# numeric escapes because a character class wants range endpoints and because a bare combining mark
-# in a literal is unreadable and un-diffable.
+# What a join key drops: the accents (U+0591..U+05AE), masora circle (U+05AF), meteg (U+05BD),
+# rafe (U+05BF), the punctuation that can sit inside a chanted word (paseq U+05C0 and sof pasuq
+# U+05C3), the two puncta U+05C4..U+05C5, and the two invisibles (CGJ U+034F and varika U+FB1E).
+# What is left is letters and points, which is what the two sides have to agree on: they are two
+# renderings of MAM rather than one file, and the accents are what this test COMPARES rather than
+# what it matches on.  Written as numeric escapes because a character class wants range endpoints
+# and because a bare combining mark in a literal is unreadable and un-diffable.
 _NOT_IN_THE_JOIN_KEY = re.compile(
     "[\u0591-\u05af\u05bd\u05bf\u05c0\u05c3-\u05c5\u034f\ufb1e]"
+)
+
+_LEGACY_PHONETIC_MAM_ANNOTATIONS = (
+    hpo.SHEVA + hpu.MCIRC,
+    hpo.DAGOMOSD + hpu.UPDOT,
 )
 
 # What separates one syllable of a ``jta`` form from the next: ``.`` within an atom and ``-``
@@ -110,7 +116,17 @@ _NOT_IN_THE_JOIN_KEY = re.compile(
 _SYLLABLE_BREAK = re.compile(r"[.\-]")
 
 
-def _join_key(word: str) -> str:
+def _phonetic_mam_join_key(word: str) -> str:
+    assert not any(
+        pair in word for pair in _LEGACY_PHONETIC_MAM_ANNOTATIONS
+    ), f"legacy Phonetic MAM annotation pair: {word!r}"
+    generic = word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(
+        hpo.DAGESH_XAZAQ, hpo.DAGOMOSD
+    )
+    return _NOT_IN_THE_JOIN_KEY.sub("", generic)
+
+
+def _mam_join_key(word: str) -> str:
     return _NOT_IN_THE_JOIN_KEY.sub("", word)
 
 
@@ -174,7 +190,9 @@ def _book(bb: str) -> dict[tuple[int, int], dict[str, frozenset]]:
             word = fva.split(" ")[0]
             for spelling in (word, entry.get("before_qfikq")):
                 if spelling:
-                    verdicts[_join_key(spelling)].add(_stress_is_final(jta, word))
+                    verdicts[_phonetic_mam_join_key(spelling)].add(
+                        _stress_is_final(jta, word)
+                    )
         per_verse[(int(chnu), int(vrnu))] = {
             k: frozenset(v) for k, v in verdicts.items()
         }
@@ -183,7 +201,7 @@ def _book(bb: str) -> dict[tuple[int, int], dict[str, frozenset]]:
 
 def _oracle(bcv: str, word: str) -> frozenset:
     bb, chnu, vrnu = mpa.split_bcv(bcv)
-    return _book(bb).get((chnu, vrnu), {}).get(_join_key(word), frozenset())
+    return _book(bb).get((chnu, vrnu), {}).get(_mam_join_key(word), frozenset())
 
 
 def _measured() -> list[dict]:

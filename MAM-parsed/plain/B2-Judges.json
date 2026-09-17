@@ -7,7 +7,21 @@
         "sub_book_name": null,
         "chapter_count": 21
       }
-    ]
+    ],
+    "consumer_notice": {
+      "summary": "This is a structured dataset, not ready-to-display Scripture; interpret each structure by its documented role and choose a projection wherever the payload presents alternatives.",
+      "critical_rules": [
+        "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it.",
+        "Choose one documented branch of each choice-bearing structure, including ketiv/qere, dual cantillation, qamats, and stress-helper alternatives where present; do not concatenate the branches.",
+        "A special-letter template's interrupted spelling and uninterrupted atom-form are two representations of one atom-form; select one text representation rather than collecting both.",
+        "Reassemble text fragments before identifying atoms or chanted words; array, template, and element boundaries are not segmentation boundaries.",
+        "A whitespace template can be the only separator between adjacent Scripture strings: for example, מ:ששש and ססס can have no literal whitespace at that boundary. Do not drop the template or collect a descriptive parameter as Scripture. A plain-text projection that does not preserve layout must supply a separator; a layout-preserving renderer must implement the documented space or break. This rule does not apply to narpas, whose missing literal whitespace prescribes no display spacing.",
+        "Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf joins atoms into a chanted word. Within the Scripture stream, MAM encodes no whitespace before or after narpas; that absence expresses neither grouping nor a display-spacing preference. An edition chooses whether to display spacing before and/or after narpas, while an analytical consumer need not make a display-spacing decision.",
+        "Plain retains the 0 and triple-tav pseudo-verses and other source structure; those records are not automatically Scripture.",
+        "For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently."
+      ],
+      "documentation": "https://bdenckla.github.io/MAM-basics/MAM-parsed/plain/html/mpplain.html#consumer-notice"
+    }
   },
   "book39s": [
     {

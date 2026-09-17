@@ -35,6 +35,34 @@ The image attribution and non-commercial terms are in
 [`cam1753-spreads-provenance.md`](cam1753-spreads-provenance.md) and
 [`../DATA-LICENSES.md`](../DATA-LICENSES.md).
 
+## Consumer guide
+
+`cam1753-page-index.json` is the low-resolution entry index. Its canonical top level
+has exactly `header` and `body`:
+
+```json
+{
+  "header": {
+    "description": "...",
+    "consumer_notice": {"summary": "...", "critical_rules": ["..."], "documentation": "https://..."}
+  },
+  "body": ["...page records only..."]
+}
+```
+
+The header description preserves the index's scope and provenance warning. A body
+record identifies a page with `de_leaf`, `de_archive_spread`, and `de_spread_side`, and
+can add a column, notes, or text cues with their references. These records are locators,
+not transcriptions of Cambridge MS Add. 1753 and not a Bible edition. A text cue can be
+letters-only MAM evidence or older pointed locator text, as its accompanying description
+states; it must not be cited as a manuscript transcription or treated as a blanket
+mark-order guarantee. Mid-verse boundaries and incomplete coverage are meaningful.
+
+The subordinate `cam1753-line-breaks/` files align a MAM word stream with manually
+annotated page lines, while `cam1753-col-quads/` records image geometry. Line-break data
+is not a diplomatic transcription, and geometry does not establish textual content.
+Neither subordinate format is part of the entry-index schema above.
+
 ## Conventions
 
 - Page IDs are `{spread_number}{A|B}`: `0073A` is the left page of spread 73.

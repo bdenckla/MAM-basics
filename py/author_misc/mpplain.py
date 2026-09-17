@@ -14,6 +14,7 @@ from mb_misc import mb_html
 from mb_author import author
 from mb_author.claim import ClaimCollection
 from author_misc import mp_cmn as cmn
+from author_misc import mp_body_shared as body_shared
 from author_misc import mpplain_body as body
 
 _FNAME = "mpplain.html"
@@ -39,6 +40,7 @@ def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *body.s_intro(),
+        *body_shared.consumer_notice_block("plain"),
         *cmn.s_file_naming(file_naming_rows=file_naming_rows),
         *body.s_top_level(claims=claims),
         *body.s_book39(claims=claims),

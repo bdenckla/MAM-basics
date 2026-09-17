@@ -3,12 +3,13 @@
 Split text into grapheme clusters (base char + combining marks) and
 produce HTML with ``<mark>`` tags around clusters that differ.
 
-Pure stdlib — depends only on ``unicodedata`` and ``difflib``.
+Depends only on ``difflib`` and the shared Unicode-property fallback.
 """
 
 import difflib
 import html
-import unicodedata
+
+from mb_cmn import unicode_data
 
 
 def grapheme_clusters(text):
@@ -16,7 +17,7 @@ def grapheme_clusters(text):
     clusters = []
     current = []
     for ch in text:
-        if unicodedata.category(ch).startswith("M") and current:
+        if unicode_data.is_mark(ch) and current:
             current.append(ch)
         else:
             if current:

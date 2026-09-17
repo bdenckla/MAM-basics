@@ -1,8 +1,9 @@
 # dot-Codex
 
-Tracked copies of Ben's authored, user-level Codex configuration. The live files
-sit outside every project repository, so this directory is the durable copy in
-`MAM-basics`, alongside `dot-claude`.
+Tracked copies of Ben's authored, user-level Codex configuration. This directory also contains
+the single common instruction body that Claude Code imports through its wrapper. The live files
+sit outside every project repository, so this directory is durable storage in `MAM-basics`,
+alongside `dot-claude`.
 
 | Tracked path | Live location |
 | --- | --- |
@@ -22,10 +23,11 @@ cloud sessions rather than about Codex, and says why both trees moved together r
 only the Claude one. The commits stay in `github-misc`'s history, so a `github-misc <sha>`
 citation in any of these files is right as written.
 
-`user-wide-AGENTS.md` contains the cross-project instructions Codex loads at session start.
-The live file name is plural: `AGENTS.md`, not `AGENT.md`. The tracked copy carries the
-`user-wide-` prefix so that no second `AGENTS.md` sits inside MAM-basics to be mistaken for the
-repository's own agent instructions.
+`user-wide-AGENTS.md` is the single common cross-project instruction body. Codex loads its live
+copy natively at session start, and Claude Code imports the same live copy through the minimal
+wrapper tracked at `dot-claude/user-wide-CLAUDE.md`. The live Codex file name is plural:
+`AGENTS.md`, not `AGENT.md`. The tracked copy carries the `user-wide-` prefix so that no second
+`AGENTS.md` sits inside MAM-basics to be mistaken for the repository's own agent instructions.
 
 `skills/` contains user-wide Codex skills. Codex initially sees each skill's name
 and description and reads the full `SKILL.md` only when the skill is invoked or
@@ -46,8 +48,9 @@ The general forest procedure is canonical in `skills/worktree-forest/SKILL.md`.
 and each later forest may carry its own `review-manifest.json` and review reports;
 those per-run records describe instances rather than replacing the reusable skill.
 
-The cross-agent `github-issues`, `hebrew-prose` and `verse-links` skills remain canonical under
-`dot-claude/skills`; `dot-claude/shared-skills.txt` declares their live Codex destinations under
+The cross-agent `github-issues`, `hebrew-prose`, `mam-repository-topology`,
+`mam-wikisource-refresh` and `verse-links` skills remain canonical under `dot-claude/skills`;
+`dot-claude/shared-skills.txt` declares their live Codex destinations under
 `~/.agents/skills`. The two state-pruning
 skills are deliberately separate: Claude's `prune-claude-state` remains canonical
 under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here at
@@ -86,10 +89,10 @@ directory but not Codex's already-computed byte count or every effective configu
 In particular, a command-line `-c` override or an additional selected environment is not exposed
 to the hook. Ordinary local sessions using `config.toml` have the same inputs as the check.
 
-For every instruction file and skill, edit the tracked canonical copy in a MAM-basics development
-checkout. Integrate and push the commit before deploying it. `dot-claude/README.md`'s
-“Main-sourced deployment and check” is the procedure of record for Claude, Codex, shared and
-agent-specific configuration together.
+For the common instruction body, Claude wrapper, and every skill, edit the tracked canonical copy
+in a MAM-basics development checkout. Integrate and push the commit before deploying it.
+`dot-claude/README.md`'s “Main-sourced deployment and check” is the procedure of record for the
+common body, wrapper, and all shared and agent-specific configuration together.
 
 ## Main-sourced deployment and check
 
@@ -102,10 +105,11 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py
 ```
 
 The command fetches `origin`, fails before any live write if the fetch or source validation fails,
-and deploys both instruction files, the Codex hook configuration and script, the generated
-user-wide-instruction fingerprint, and all tracked skills only from the freshly updated
-`refs/remotes/origin/main`. It stages complete replacements and rolls earlier replacements back
-if a later replacement fails. The former manual, live-first copy commands are retired.
+and deploys the common instruction body, the Claude wrapper, the Codex hook configuration and
+script, the generated user-wide-instruction fingerprint, and all tracked skills only from the
+freshly updated `refs/remotes/origin/main`. It stages complete replacements and rolls earlier
+replacements back if a later replacement fails. The former manual, live-first copy commands are
+retired.
 
 The read-only form reports `clean`, `drift`, or `not installed` for every Claude and Codex
 destination:
@@ -127,9 +131,9 @@ check cannot establish Codex's separate trust state.
 
 The Claude cloud-session hook is the declared exception: it sources the cloud session's
 checked-out branch, which is `main` only when `main` is that branch. The hook prepositions
-`dot-Codex/user-wide-AGENTS.md` as `~/.codex/AGENTS.md`, the import target selected by issue 274's
-symmetric-instructions design. It does not install this README, a Codex-only skill, `config.toml`,
-or any other Codex state.
+`dot-Codex/user-wide-AGENTS.md` as `~/.codex/AGENTS.md`, the import target used by the adopted
+common-body architecture. It does not install this README, a Codex-only skill, `config.toml`, or
+any other Codex state.
 
 Deliberately not tracked here: `auth.json`, `config.toml`, `settings*.json`,
 plugin caches, session transcripts, databases, logs, machine permission state,

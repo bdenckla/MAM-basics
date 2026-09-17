@@ -1,23 +1,24 @@
 # dot-claude
 
-Tracked copies of the machine-level Claude Code configuration that lives outside any
-project repo, in `~/.claude/` (`C:/Users/BenDe/.claude/` on Windows).
+Tracked copies of the machine-level Claude Code configuration that lives outside any project
+repo, in `~/.claude/` (`C:/Users/BenDe/.claude/` on Windows). The Claude instruction file is a
+minimal wrapper around the single common user-level body in `dot-Codex`.
 
 | Path in here | Live location |
 | --- | --- |
 | `user-wide-CLAUDE.md` | `~/.claude/CLAUDE.md` |
 | `skills/<name>/` | `~/.claude/skills/<name>/`; shared skills also deploy to `~/.agents/skills/<name>/` for Codex |
 
-**This directory is storage, not something MAM-basics loads.** Nothing here is read by a
-session merely because it sits in this repository: the live copies under `~/.claude/` are what
-Claude Code loads, and these are the version-controlled originals they are deployed from. That
-is why the instruction file is tracked as `user-wide-CLAUDE.md` rather than `CLAUDE.md` —
-Claude Code auto-loads a nested `CLAUDE.md` from a directory being worked in, so a file of that
-name here would start loading itself beside MAM-basics' own `CLAUDE.md`, which is the confusion
-this rename exists to prevent. The same reasoning gives `dot-Codex/user-wide-AGENTS.md` its
-prefix. A skill is kept out of `.claude/skills/` for a related reason: a personal skill
-shadows a project skill of the same name, so a copy there would be inert on every machine that
-has `~/.claude/skills/hebrew-prose/` and would run only in the cloud — the copy you never see
+**This directory is storage, not something MAM-basics loads.** Nothing here is read by a session
+merely because it sits in this repository. Claude Code loads the deployed wrapper at
+`~/.claude/CLAUDE.md`; that wrapper imports the deployed common body at `~/.codex/AGENTS.md`.
+The version-controlled sources are `dot-claude/user-wide-CLAUDE.md` for the wrapper and
+`dot-Codex/user-wide-AGENTS.md` for the common body. The wrapper is tracked with the
+`user-wide-` prefix because a nested file named `CLAUDE.md` would auto-load beside MAM-basics'
+own repository wrapper; the same reasoning keeps the common body from being tracked as a second
+nested `AGENTS.md`. A skill is kept out of `.claude/skills/` for a related reason: a personal
+skill shadows a project skill of the same name, so a copy there would be inert on every machine
+that has `~/.claude/skills/hebrew-prose/` and would run only in the cloud — the copy you never see
 being the one that executes.
 
 **These trees lived in `github-misc` until 2026-09-09**, beside its `dot-emacs` and
@@ -30,35 +31,33 @@ while MAM-basics itself arrives with the session. See
 installs these files. The commits stay in `github-misc`'s history, so a `github-misc <sha>`
 citation in any of these files is right as written and must not be repointed.
 
-`user-wide-CLAUDE.md` holds the user-level instructions that load in **every** repo, every session:
-git/commit habits, the no-inline-one-liners rule, black formatting, the Hebrew-accentuation
-terminology entries (paseq vs. legarmeh, silluq vs. meteg), Unicode conventions, and the
-testing rule. It is the only channel that reaches repos with no `CLAUDE.md` of their own,
-and it is where a convention goes when a project's own copy is stranded in a disabled file
-(as MAM-basics' black section was).
+`user-wide-CLAUDE.md` contains exactly `@~/.codex/AGENTS.md` plus a final newline. The imported
+common body holds the user-level instructions that load in every repository and session. The
+wrapper never becomes a second instruction body, and the common body never imports the wrapper.
 
 `skills/` holds **user-level Claude Code skills** — `~/.claude/skills/<name>/SKILL.md` plus
-whatever `references/` files it carries. Unlike `CLAUDE.md`, a skill does not load every
-session: Claude reads its frontmatter `description` and pulls the body in only when the work
-matches. That makes a skill the right home for a long body of rules that would bloat
-`CLAUDE.md` if it loaded unconditionally.
+whatever `references/` files it carries. Unlike the common body imported by `CLAUDE.md`, a skill
+does not load every session: Claude reads its frontmatter `description` and pulls the body in
+only when the work matches. That makes a skill the right home for a long specialized procedure
+that would bloat the common body if it loaded unconditionally.
 
 Tracked so far:
 
 | Skill | What it is |
 | --- | --- |
 | `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the user-wide section "Never change an issue's state without a comment saying why", which stays as a pointer, and two MAM-basics memory notes. Added 2026-09-14, shared with Codex and not installed in cloud sessions, all Ben's decisions of that day. |
-| `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the scattered copies in `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — those stay as pointers, and a rule change goes into the skill first. |
+| `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the former scattered copies in the old full `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — current instruction bodies keep routing pointers, and a rule change goes into the skill first. |
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
+| `mam-wikisource-refresh` | The safe end-to-end workflow for refreshing MAM book data from Hebrew Wikisource, auditing generated products, and regenerating change logs only after the refreshed data has been committed. |
 | `prune-claude-state` | A manual hygiene pass over Claude Code's *own* persisted state for the current repo — the per-repo auto-memory directory and that repo's slice of the global `~/.claude/plans/`. Cross-checks each file against live GitHub issue state and proposes stale ones for deletion, never deleting without explicit confirmation. Both directories live outside git, so there is no undo. |
 | `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
 ## Main-sourced deployment and check
 
-The versions here are canonical, and Claude Code loads the deployed copies under
-`~/.claude/`. Ben's decision, 2026-09-13: **edit the tracked canonical copy, never the live
-copy.** Commit the edit in its MAM-basics development checkout, integrate it into `main`, and
-push `main`. Then run the deployment from `C:/Users/BenDe/GitRepos/MAM-basics`, the primary
+The common body, wrapper, and skills have tracked canonical copies, and Claude Code loads their
+deployed destinations. Ben's decision, 2026-09-13: **edit the tracked canonical copy, never the
+live copy.** Commit the edit in its MAM-basics development checkout, integrate it into `main`,
+and push `main`. Then run the deployment from `C:/Users/BenDe/GitRepos/MAM-basics`, the primary
 clone:
 
 ```powershell
@@ -67,11 +66,12 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py
 
 The command fetches `origin` and uses only the freshly updated
 `refs/remotes/origin/main`. A fetch failure or invalid source stops before any live write. The
-source includes both instruction files, the user-level Codex hook, every Claude-specific and
-Codex-specific skill, and both destinations of every shared skill. The operation generates the
-hook's expected user-wide-AGENTS fingerprint from the same `origin/main` source. The operation
-validates all sources first, stages all changed destinations, replaces complete skill directories
-instead of nesting them, and rolls earlier replacements back if a later replacement fails.
+source includes the common instruction body, the Claude wrapper, the user-level Codex hook,
+every Claude-specific and Codex-specific skill, and both destinations of every shared skill. The
+operation generates the hook's expected user-wide-AGENTS fingerprint from the same `origin/main`
+source. The operation validates all sources first, stages all changed destinations, replaces
+complete skill directories instead of nesting them, and rolls earlier replacements back if a
+later replacement fails.
 
 The read-only form uses the same fresh source and reports `clean`, `drift`, or `not installed` for
 every destination:
@@ -105,7 +105,7 @@ configuration.
 `dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
 `~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
 `~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose`,
-`mam-repository-topology` and `verse-links`.
+`mam-repository-topology`, `mam-wikisource-refresh` and `verse-links`.
 `dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
 `~/.agents/skills/`.
 

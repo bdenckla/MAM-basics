@@ -1,17 +1,17 @@
-"""``check``: lint a stub tree against the site it stands in for.
+"""``check``: lint a stub tree against its frozen URLs and maintained target.
 
-The selected table row supplies the frozen manifest, source repository and MAM-basics
-subtree. Each stub's expected target is a prefix rewrite of its own path, so this needs
-editing only when the frozen set shrinks. It is the second of the two test shapes
-``CLAUDE.md`` sanctions, a mechanical lint over generated text, and it is deliberately
+The selected table row supplies the frozen manifest, source repository, maintained target
+repository and published prefixes. Each stub's target is either the row's declared prefix
+rewrite or its explicit old-path-to-target-path mapping. It is the second of the two test
+shapes ``CLAUDE.md`` sanctions, a mechanical lint over generated text, and it is deliberately
 not a pytest module: the tree it lints is another repository's, and a test that built one
 to a temp directory first would be checking the generator against itself. The one
 direction that needs no stub tree -- a frozen URL whose page is no longer published here
 -- is ``py/tests/test_redirect_manifest.py``, which is the only part of this lint that
 still runs with no source clone on the disk.
 
-The default target is the explicitly selected source repo's committed ``gh-pages/``, so with no clone
-on the disk this subcommand needs either ``--dir`` or a fresh clone;
+The default target is the explicitly selected source repo's declared published directory,
+so with no clone on the disk this subcommand needs either ``--dir`` or a fresh clone;
 ``stubs.source_pages_dir`` says how to get one.
 """
 
@@ -44,7 +44,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         type=Path,
         help=(
             "the tree of stubs to check; defaults to the selected source repo's"
-            " gh-pages/, which takes a temporary clone"
+            " declared published directory, which takes a temporary clone"
         ),
     )
 

@@ -2,8 +2,8 @@
   "header": {
     "description": "Inventory of sigil-like material found in נוסח notes across MAM-parsed-plus.",
     "counts": {
-      "notes_scanned": 3866,
-      "notes_with_matches": 3866,
+      "notes_scanned": 3867,
+      "notes_with_matches": 3867,
       "distinct_expressions": 1347,
       "distinct_expression_tokens": 884,
       "distinct_prose_tokens": 572
@@ -17,7 +17,7 @@
   "expressions": [
     {
       "item": "א",
-      "count": 1297,
+      "count": 1298,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -20227,7 +20227,7 @@
     },
     {
       "item": "א",
-      "count": 1491,
+      "count": 1492,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36069,7 +36069,7 @@
   "prose_tokens": [
     {
       "item": "ו",
-      "count": 21527,
+      "count": 21530,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36105,7 +36105,7 @@
     },
     {
       "item": "י",
-      "count": 15811,
+      "count": 15814,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36141,7 +36141,7 @@
     },
     {
       "item": "ר",
-      "count": 12256,
+      "count": 12257,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36177,7 +36177,7 @@
     },
     {
       "item": "ה",
-      "count": 11741,
+      "count": 11743,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36213,7 +36213,7 @@
     },
     {
       "item": "ב",
-      "count": 10911,
+      "count": 10916,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36249,7 +36249,7 @@
     },
     {
       "item": "א",
-      "count": 10152,
+      "count": 10153,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36285,7 +36285,7 @@
     },
     {
       "item": "ת",
-      "count": 9281,
+      "count": 9285,
       "examples": [
         {
           "ref": "Genesis 1:1",
@@ -36357,7 +36357,7 @@
     },
     {
       "item": "מ",
-      "count": 8208,
+      "count": 8211,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36393,7 +36393,7 @@
     },
     {
       "item": "ש",
-      "count": 5542,
+      "count": 5541,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36429,7 +36429,7 @@
     },
     {
       "item": "ק",
-      "count": 5408,
+      "count": 5409,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36465,7 +36465,7 @@
     },
     {
       "item": "ע",
-      "count": 5098,
+      "count": 5099,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36501,7 +36501,7 @@
     },
     {
       "item": "כ",
-      "count": 4670,
+      "count": 4672,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36537,7 +36537,7 @@
     },
     {
       "item": "ס",
-      "count": 4329,
+      "count": 4331,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36609,7 +36609,7 @@
     },
     {
       "item": "נ",
-      "count": 3811,
+      "count": 3814,
       "examples": [
         {
           "ref": "Genesis 1:3",
@@ -36717,7 +36717,7 @@
     },
     {
       "item": "ט",
-      "count": 2894,
+      "count": 2893,
       "examples": [
         {
           "ref": "Genesis 1:3",

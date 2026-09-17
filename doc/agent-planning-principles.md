@@ -44,6 +44,38 @@ Bear in mind that no CI runs pytest here — `pages.yml` is a Pages deploy that 
 
 Resist turning this into a gate (a `check_repo_standards.py` rule, a meta-test). "Is this test example-based?" is not decidable, and issue #27 → #49 is the cautionary tale: a guard test faithfully enforced decomposed ḥ across 21 files until the policy reversed to NFC, at which point the enforcement made the reversal more expensive rather than cheaper. This is advice a reviewer can override.
 
+### Diagnostic value per recurring minute
+
+MAM-basics #271 uses diagnostic value per recurring minute as the governing criterion for the
+test inventory. For every test file or independently schedulable check, record:
+
+1. Measured wall-clock seconds added to an ordinary default-suite run, including the aggregate
+   cost of parameterized cases.
+2. Recurrence: default suite, change-triggered, pre-operation, or manually requested.
+3. Demonstrated catches, with commits or issues when known.
+4. Oracle independence: independent reference, mechanical source property,
+   same-implementation assertion, mock, or pinned example.
+5. Signal uniqueness: whether the mega or generated-output inspection would already expose the
+   defect.
+6. Relevance frequency: how often ordinary changes can plausibly introduce the covered defect.
+7. Escape consequence and how actionable and localized a failure is.
+8. An evidence-backed diagnostic-value band: high, medium, low, or unidentified.
+9. Disposition: retain in the default suite, move to a trigger, move to a pre-operation gate, or
+   delete.
+
+Evaluate the evidence-backed value band against the minutes repeatedly charged in that
+recurrence context. Sort low-value, high-minute checks first for removal or rescheduling. Do not
+divide arbitrary ordinal values into a pseudo-scientific decimal score.
+
+The first worked example is worktree retirement. Its simulation has high escape consequence and
+useful independent Git and filesystem oracles when retirement code changes or retirement is
+imminent, but unrelated MAM changes rarely introduce the covered defects. The baseline measured
+on 2026-09-17, New York time, took 397.68 seconds for the retirement module's 35 cases. Charging
+that cost to
+every default-suite invocation has poor recurring value; charging the 34 operational cases
+immediately before a rare destructive retirement has favorable value. Keep the cheap static
+safety lint in the default suite and run the simulation as a mandatory pre-operation gate.
+
 ## Prefer New Files For New Features
 
 Implement new features in new focused modules/files as much as practical.

@@ -12,7 +12,12 @@ Subcommands:
 Examples:
     .venv/Scripts/python.exe py/main_diff.py ctr-vs-mam
     .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
+    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --check
     .venv/Scripts/python.exe py/main_diff.py wsgo
+
+The mpplus freshness guard compares tracked change-log artifacts with reports regenerated
+against committed HEAD. Run it after committing refreshed MAM-parsed/plus data, not while that
+directory contains uncommitted changes.
 """
 
 import argparse

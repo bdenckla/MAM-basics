@@ -100,6 +100,36 @@ Pages deployment, then safety-check and recycle the temporary clone again. Keep
 the clone out of the workspace rosters. A local preview needs no clone: use
 `build --repo MAM-OSIS --out <scratch-directory>` and
 `check --repo MAM-OSIS --dir <scratch-directory>`.
+
+## Taamey_D's decided disposition is an unarchived redirect, release, and issue host
+
+Ben's 2026-09-16 evacuation plan keeps `bdenckla/Taamey_D` public and unarchived. Its
+historical tags, releases, release assets, and issues remain at their original URLs. The
+maintained documentation and downloads live in hbofonts; the one legacy HTML URL maps
+from `index.html` to `https://bdenckla.github.io/hbofonts/Taamey_D.html`. The legacy
+stylesheet and four WOFF2 files remain byte-for-byte static assets in the source host's
+`docs/` tree rather than redirect-manifest entries.
+
+The frozen mapping is `in/taamey_d_redirect_pages.json`. MAM-basics' redirect row names
+hbofonts' `gh-pages/` as the maintained target and Taamey_D's `docs/` as the source
+published directory. Taamey_D is absent from `all-repos.code-workspace`,
+`repo_visibility`, and `vendoring_policy.json`, so routine setup and maintenance do not
+restore or sweep a clone. It needs no `frozen_repos` or `repos_to_keep_absent` entry;
+omission from the workspace roster is the mechanism. A Taamey_D clone belongs on no
+machine.
+
+After Phase 4, only explicitly selected redirect-host work wants a temporary clone:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/Taamey_D.git C:/Users/BenDe/GitRepos/Taamey_D
+```
+
+From MAM-basics, run `py/main_redirect_stubs.py build --repo Taamey_D --publish` and
+`check --repo Taamey_D`, commit and push the host changes, verify the source Pages
+deployment, then safety-check and recycle the temporary clone again. A local preview
+needs no source clone: use `build --repo Taamey_D --out <scratch-directory>` and
+`check --repo Taamey_D --dir <scratch-directory>`.
+
 ## codex-index-aleppo is a redirect host
 
 **codex-index-aleppo is not in the roster**, so `gitrepos_setup_rule` does not put a clone on

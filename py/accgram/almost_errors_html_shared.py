@@ -98,9 +98,12 @@ _HEBREW_RUN_RE = re.compile(r"[\u034f\u0590-\u05ff]+(?: +[\u034f\u0590-\u05ff]+)
 # Any Hebrew combining mark -- vowel, dagesh, accent, meteg.  The ranges are written as
 # numeric escapes because a bare combining mark in a literal renders as a floating diacritic
 # on the quote: U+0591-U+05BD accents through meteg, U+05BF rafe, U+05C1-U+05C2 the shin/sin
-# dots, U+05C4-U+05C5 the upper/lower dots, U+05C7 qamats qatan.  Deliberately NOT here:
+# dots, U+05C4-U+05C5 the upper/lower dots, and U+05C7-U+05C9 qamats qatan and
+# Phonetic MAM's annotation marks.  Deliberately NOT here:
 # U+05BE maqaf, U+05C0 paseq, U+05C3 sof pasuq -- spacing punctuation, not pointing.
-_HEBREW_MARK_RE = re.compile("[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7]")
+_HEBREW_MARK_RE = re.compile(
+    "[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9]"
+)
 
 
 def wrap_hebrew_runs(text: str) -> tuple[object, ...]:

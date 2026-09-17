@@ -32,14 +32,14 @@ Read the sections needed for the requested operation before touching GitHub.
    puts the sorting back on him. He added that labelling might largely solve the problem, but *"I
    just want to keep the total issue volume down, too"*, so a label is no licence to file more.
    An issue about work in flight is unaffected, and so is recording a decision where it belongs:
-   a docstring, a `CLAUDE.md` section, a commit message.
+   a docstring, an `AGENTS.md` section, a commit message.
 2. **A new issue goes in `bdenckla/MAM-basics` or `bdenckla/MAM-private`, and nowhere else.** Ben,
    2026-08-26: *"I'm going to try to add no issues to trackers other than those for MAM-basics and
    MAM-private, just as I am, long-term, aiming to have no unarchived repos other than MAM-basics
    and MAM-private."* Commenting on and closing an existing issue in any other tracker is not
-   filing one, and is how those trackers wind down. MAM-private's `CLAUDE.md`, "A new issue is
-   filed here, wherever the old citations point", records this, and also which of the two a MAM
-   change goes in: MAM-private when the mgketer comparison suggested it, MAM-basics otherwise.
+   filing one, and is how those trackers wind down. MAM-private's `AGENTS.md`, "Issue citations
+   and issue routing", records this, and also which of the two a MAM change goes in: MAM-private
+   when the mgketer comparison suggested it, MAM-basics otherwise.
    MAM-basics is public, so check a MAM-basics issue's text for anything about MAM-private's
    content before filing it.
 3. **Open the body with an authorship line quoting what Ben asked for**, in the shape MAM-basics
@@ -77,7 +77,8 @@ Read the sections needed for the requested operation before touching GitHub.
 3. **Post it from a file**: `gh issue comment <number> --repo bdenckla/<repo> --body-file <file>`.
    1. Never pass a multi-line body as an argument, a shell here-doc or a PowerShell here-string,
       and never `--body-file -`, which reads stdin (item 3 of section 1). "Running scripts — no
-      inline one-liners", in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, is the general rule.
+      inline one-liners", in the common `~/.codex/AGENTS.md` body imported by Claude Code through
+      `~/.claude/CLAUDE.md`, is the general rule.
    2. Name the file for its one task, such as `.novc/issue272_plan_link_comment.md`, never a
       generic `comment.md` reused across jobs: a stale file from an earlier task gets posted,
       silently, in place of the one meant.

@@ -38,7 +38,7 @@ def do_one_section(secid, outfolder, mam_info=None):
 
 
 def _do_light_books_in_bk24(outfolder, bk24id, light_books):
-    lb_with_hdr = mam_parsed_plain.add_header(light_books)
+    lb_with_hdr = mam_parsed_plain.add_header(light_books, "google")
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     out_path_google = f"{outfolder}/google/{osdf24}.json"
     file_io.json_dump_to_file_path(lb_with_hdr, out_path_google)

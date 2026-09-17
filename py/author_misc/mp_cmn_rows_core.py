@@ -97,7 +97,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ("מ:פסק",),
         [
             author.hbo("מ:פסק"),
-            "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
+            "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh. Narpas forms no compound of any kind; only $maqaf joins atoms into a chanted word. $MAM stores this template with no text whitespace before or after it to avoid prescribing display spacing, not to group the surrounding text.",
         ],
     ),
     (

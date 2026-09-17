@@ -59,6 +59,7 @@ _NS_COMB_CLASSES = {  # nonstandard combining classes
     hpo.SHIND: 10,
     hpo.SIND: 11,
     hpo.DAGOMOSD: 21,
+    hpo.DAGESH_XAZAQ: 21,
     hpo.RAFE: 23,
 }
 
@@ -67,6 +68,7 @@ _NS_COMB_CLASSES_AHT = {
     hpo.SHIND: 10,
     hpo.SIND: 11,
     hpo.DAGOMOSD: 1,  # Here's the weirdness! (Compare to 21 above.)
+    hpo.DAGESH_XAZAQ: 1,
     hpo.RAFE: 23,
 }
 
