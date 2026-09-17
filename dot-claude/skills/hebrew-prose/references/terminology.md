@@ -425,10 +425,11 @@ across the poetic files — a pending sweep, not the standard.
 
 ## Sheva, shewa, and `MUDGASH`
 
-- **Use `sheva` by default** in Unicode-facing prose, code labels, data labels, and other prose
-  that is not deliberately following Yeivin or Revell. Preserve `shewa` in quotations, source
-  titles, and prose that intentionally follows Yeivin's or Revell's ITM terminology. Do not
-  change an established identifier solely to respell it.
+- **Use `sheva` by default in new text**: Unicode-facing prose, code labels, data labels, and
+  other prose that is not deliberately following Yeivin or Revell. Preserve `shewa` in
+  quotations, source titles, and prose that intentionally follows Yeivin's or Revell's ITM
+  terminology. This default does not authorize a repository-wide sweep of established spellings;
+  do not change an established identifier solely to respell it.
 - **`MUDGASH` and `mudgash` name Unicode code points; they do not describe the marks.** Use the
   word only when literally naming U+05C8 or U+05C9, whose full names are `HEBREW POINT SHEVA NA
   MUDGASH` and `HEBREW POINT DAGESH HAZAQ MUDGASH`. Do not put `mudgash` in a short display
