@@ -4,15 +4,21 @@
 <meta charset="utf-8">
 <title>MAM Change Logs</title>
 <style>
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#fff, #1e1c1a);
+  --text: light-dark(#333, #e8e4e0);
+  --link: light-dark(#4a90d9, #5ba3cb);
+}
 body {
   font: 15px/1.6 "Segoe UI", system-ui, sans-serif;
   max-width: 700px; margin: 2rem auto; padding: 0 1.5rem;
-  color: #333;
+  background: var(--bg); color: var(--text);
 }
 h1 { font-size: 1.4rem; margin-bottom: 1rem; }
 ul { margin: 0; padding-left: 1.5rem; }
 li { margin: .3rem 0; }
-a { color: #4a90d9; }
+a { color: var(--link); }
 </style>
 </head>
 <body>
