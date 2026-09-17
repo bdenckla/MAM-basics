@@ -56,8 +56,9 @@ The selected MAM-parsed-plus form has the following explicit choices.
    would omit the repeated deḥi or tsinnor that Phonetic MAM has.
 3. A standard ketiv/qere template selects its qere argument; a trivial ketiv/qere template selects
    its first argument; and the same implicit-qere helper used for Phonetic MAM is then applied.
-4. The comparison removes Phonetic MAM's upper dot and rafe, which the reader-facing MAM-form
-   projection also removes. A shared varika stays in the form.
+4. The comparison folds Phonetic MAM's U+05C8 and U+05C9 annotations to U+05B0 and U+05BC, and
+   removes rafe, which the reader-facing MAM-form projection also removes. A shared varika stays
+   in the form.
 
 When a matching MAM chanted word is followed by a `מ:לגרמיה-2` template, the two inputs agree
 semantically rather than textually: MAM-simple represents U+05C0 in a separate stream position,
@@ -86,10 +87,11 @@ The fatal invariants connect all three quantities per verse system: source entri
 chanted words plus duplicate phonetic-reading entries, and duplicate entries equal variant rows
 plus the two measured grouping differences. The resulting MAM denominators are 233,277 prose
 chanted words and 29,542 poetic chanted words. The corresponding MBS_O chanted-word counts are
-12,842 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
-positional census separately counts 12,955 and 1,805 individual pre-stress marks. The two prose
+12,843 and 1,786; MAS counts are 178 and 54; and silluq counts are 18,738 and 4,465. The
+positional census separately counts 12,956 and 1,805 individual pre-stress marks. The two prose
 figures were 12,849 and 12,962 until 2026-09-11; "Eleven meteg edits reached the survey on
-2026-09-11" below says why.
+2026-09-11" below says why. Both prose figures increased by one on 2026-09-17 when Phonetic MAM
+acquired MAM's meteg at 2 Samuel 18:3.
 
 ## A census chanted word is identified by position, not by form
 
@@ -103,9 +105,10 @@ and 143 MBS_O chanted words with more than one meteg. Twenty-one of those 143 we
 counted against itself, each occurrence carrying one meteg, so the MBS_O counts were 21 short
 of the chanted words they are described as counting and the multiple-meteg count was 21 too
 many. All 21 are in prose verses. The corrected figures were 12,849 prose MBS_O chanted words
-and 122 with more than one meteg. (The 12,849 has been 12,842 since 2026-09-11, for a reason
-that has nothing to do with the key: "Eleven meteg edits reached the survey on 2026-09-11"
-below.) The poetic MBS_O count, both MAS counts and every positional
+and 122 with more than one meteg. (The 12,849 became 12,842 on 2026-09-11 and 12,843 on
+2026-09-17, for reasons that have nothing to do with the key: "Eleven meteg edits reached the
+survey on 2026-09-11" below and the 2 Samuel 18:3 refresh above.) The poetic MBS_O count, both
+MAS counts and every positional
 count are unaffected: no MAS chanted word shares a numbered verse with another chanted word of
 the same form.
 
@@ -188,7 +191,9 @@ figure that moved except the two in item 6:
 
 Re-establish these with `py/main_accgram.py survey-post-stress-meteg` and the diff of
 `out/accgram/post-stress-meteg.json` against `ad44dba7`. The main page's MBS_O cells moved with
-item 2, and `pin_claims` in `py/author_site/post_stress_meteg.py` states 12,842.
+item 2. The main page's MBS_O cell and `pin_claims` in
+`py/author_site/post_stress_meteg.py` now state 12,843 after the 2026-09-17 2 Samuel 18:3
+refresh.
 
 ## Primary stress and accent parsing
 

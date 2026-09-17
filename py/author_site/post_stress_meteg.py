@@ -838,9 +838,10 @@ def pin_claims(survey: dict) -> None:
     # two inputs, MAM-simple in MAM-basics 209b4c05 and Phonetic MAM in MAM-private 65ee486,
     # both of 2026-09-10.  All eleven are in prose verses: nine removed a chanted word's one
     # meteg before the stress, and two, at 2 Chronicles 28:19 and Isaiah 24:18, added one.
+    # It became 12,843 on 2026-09-17 when both inputs acquired the meteg at 2 Samuel 18:3.
     # doc/post-stress-meteg-method.md names all eleven.
     assert census_chanted_word_summary["by_system"] == {
-        _PROSE: {"mbs_only": 12842, "mas": 178},
+        _PROSE: {"mbs_only": 12843, "mas": 178},
         _POETIC: {"mbs_only": 1786, "mas": 54},
     }
     assert survey["qamats_variant_census"]["by_system"] == {

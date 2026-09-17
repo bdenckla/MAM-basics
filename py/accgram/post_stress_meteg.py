@@ -831,9 +831,9 @@ def _qamats_variant_branches(payload: object) -> list[object]:
         for first, second in zip(*entries_by_branch, strict=True):
             first_word = first["fva"].split(" ")[0]
             second_word = second["fva"].split(" ")[0]
-            assert _fold_qamats_qatan(_join_key(first_word)) == _fold_qamats_qatan(
-                _join_key(second_word)
-            ), payload
+            assert _fold_qamats_qatan(
+                _phonetic_mam_join_key(first_word)
+            ) == _fold_qamats_qatan(_phonetic_mam_join_key(second_word)), payload
             assert (
                 _jta_syllables(first["jta"])[1] == _jta_syllables(second["jta"])[1]
             ), payload
@@ -956,7 +956,7 @@ def _accent_grammar_tokens_by_entry(
     fragments: list[cwa.Frag] = []
     for event in events:
         if isinstance(event, dict) and event.get("fva"):
-            word = event["fva"].split(" ")[0]
+            word = _phonetic_mam_scanner_word(event["fva"].split(" ")[0])
             entries.append(event)
             fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
         elif event == _PHONETIC_MAM_PASOLEG:
@@ -1116,8 +1116,12 @@ def _dual_cantillation_facts(verse: object) -> dict:
     same_groups = []
     for group in groups:
         assert len(group) == 2, len(group)
-        first = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[0])
-        second = tuple(_join_key(one["fva"].split(" ")[0]) for one in group[1])
+        first = tuple(
+            _phonetic_mam_join_key(one["fva"].split(" ")[0]) for one in group[0]
+        )
+        second = tuple(
+            _phonetic_mam_join_key(one["fva"].split(" ")[0]) for one in group[1]
+        )
         if first == second:
             same_groups.append(group)
     assert (
@@ -1158,29 +1162,42 @@ def _bare(word: str) -> str:
 
 
 # What a join key drops, so that a Phonetic MAM chanted word can be matched to the MAM-simple
-# one it stands for: the accents, the masora circle and the puncta Phonetic MAM adds to mark
-# a sheva or a dagesh it has resolved, meteg, rafe, the punctuation that can sit inside a
-# chanted word, and the two invisibles.  What is left is letters and points -- which is what
-# the two sides have to agree on, the marks this survey is about being exactly what it must
-# not match on.  The same set ``test_final_stress_vs_phonetic_mam._NOT_IN_THE_JOIN_KEY``
-# drops, and written as numeric escapes for the same two reasons: a character class wants
-# range endpoints, and a bare combining mark in a literal is unreadable.
+# one it stands for: the accents, the masora circle, meteg, rafe, the punctuation and puncta
+# that can sit inside a chanted word, and the two invisibles.  What is left is letters and
+# points -- which is what the two sides have to agree on, the marks this survey is about being
+# exactly what it must not match on.  The same set
+# ``test_final_stress_vs_phonetic_mam._NOT_IN_THE_JOIN_KEY`` drops, and written as numeric
+# escapes for the same two reasons: a character class wants range endpoints, and a bare
+# combining mark in a literal is unreadable.
 _NOT_IN_THE_JOIN_KEY = re.compile(
     "[\u0591-\u05af\u05bd\u05bf\u05c0\u05c3-\u05c5\u034f\ufb1e]"
 )
 
+_LEGACY_PHONETIC_MAM_ANNOTATIONS = (
+    hpo.SHEVA + hpu.MCIRC,
+    hpo.DAGOMOSD + hpu.UPDOT,
+)
+
 
 def _fold_phonetic_mam_annotations(word: str) -> str:
-    """Read current and legacy Phonetic MAM annotations as their generic points."""
-    return (
-        word.replace(hpo.SHEVA_NA, hpo.SHEVA)
-        .replace(hpo.DAGESH_XAZAQ, hpo.DAGOMOSD)
-        .replace(hpo.SHEVA + hpu.MCIRC, hpo.SHEVA)
-        .replace(hpo.DAGOMOSD + hpu.UPDOT, hpo.DAGOMOSD)
-    )
+    """Fold Unicode 18 Phonetic MAM annotations to their generic points."""
+    if any(pair in word for pair in _LEGACY_PHONETIC_MAM_ANNOTATIONS):
+        raise SurveyProblem("legacy Phonetic MAM annotation pair")
+    return word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(hpo.DAGESH_XAZAQ, hpo.DAGOMOSD)
 
 
-def _join_key(word: str) -> str:
+def _phonetic_mam_scanner_word(word: str) -> str:
+    """Give the accent scanner the same mark stream as the retired annotations did.
+
+    ``uni_to_marks.word_to_marks`` dropped the old U+05B0 and U+05AF pair but retained the
+    old pair's U+05C4 as a punctum while dropping its U+05BC.  Preserve that established
+    scanner input without accepting or reconstructing either retired source pair.
+    """
+    _fold_phonetic_mam_annotations(word)
+    return word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(hpo.DAGESH_XAZAQ, hpu.UPDOT)
+
+
+def _phonetic_mam_join_key(word: str) -> str:
     """``word`` reduced to what both texts must agree on: letters, points, and the maqafs.
 
     Phonetic MAM's tilde for MAM's gray maqaf is folded onto the maqaf it stands for, so a
@@ -1190,13 +1207,18 @@ def _join_key(word: str) -> str:
     return _NOT_IN_THE_JOIN_KEY.sub("", generic).replace(hpu.NU_GMAQ, MAQAF)
 
 
+def _mam_join_key(word: str) -> str:
+    """A MAM form reduced without treating genuine extraordinary dots as annotations."""
+    return _NOT_IN_THE_JOIN_KEY.sub("", word).replace(hpu.NU_GMAQ, MAQAF)
+
+
 def _parse(word: str, jta: str) -> dict:
     """Everything the classification of one chanted word's U+05BDs rests on.
 
     Raises ``SurveyProblem`` where the two sides' syllable counts disagree, which is the check
     that makes reading a syllable off the ``jta`` and a nucleus off the Hebrew safe.
     """
-    letters = _letters(word)
+    letters = _letters(_fold_phonetic_mam_annotations(word))
     nuclei = _nuclei(letters)
     syllables, stressed = _jta_syllables(jta)
     if len(nuclei) != len(syllables):
@@ -2549,17 +2571,17 @@ def _settle(matches: list[str], snapshot: str) -> tuple[str | None, str]:
 
 def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]:
     """The MAM chanted words a record's spelling can be matched to, and how it matched."""
-    keys = [_join_key(record["chanted_word"])]
+    keys = [_phonetic_mam_join_key(record["chanted_word"])]
     if record.get("snapshot_before_qere"):
-        keys.append(_join_key(record["snapshot_before_qere"]))
+        keys.append(_phonetic_mam_join_key(record["snapshot_before_qere"]))
     for index, key in enumerate(keys):
-        matches = [word for word in words if _join_key(word) == key]
+        matches = [word for word in words if _mam_join_key(word) == key]
         if matches:
             return matches, "the qere it stands for" if index else "as written"
     for key in keys:
         folded = _fold_qamats_qatan(key)
         matches = [
-            word for word in words if _fold_qamats_qatan(_join_key(word)) == folded
+            word for word in words if _fold_qamats_qatan(_mam_join_key(word)) == folded
         ]
         if matches:
             return matches, "with qamats qatan read as qamats"
@@ -2645,10 +2667,11 @@ def _attach_mam_forms(
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
     THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``, and this is where the difference is
-    made.  Phonetic MAM's text has two annotations absent from MAM -- a masora
-    circle on a resolved sheva and an upper dot on a dagesh it reads as ḥazaq -- so a page
-    showing its forms verbatim would put marks in front of a reader that MAM's text does not
-    have.  The join key drops exactly what the two sides may legitimately differ in, this
+    made.  Phonetic MAM's text has two annotations absent from MAM -- U+05C8 in place of U+05B0
+    for a shewa it resolves as vocal, and U+05C9 in place of U+05BC for a dagesh it reads as
+    xazaq -- so a page showing its forms verbatim would put marks in front of a reader that
+    MAM's text does not have.  The join key drops exactly what the two sides may legitimately
+    differ in, this
     including the survey's subject, so a chanted word that has GAINED or LOST a meteg since
     the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
 
@@ -2837,9 +2860,9 @@ def _consonant_key(text: str) -> str:
 def _mam_form_for_dual_cantillation_atom(raw_atom: str, mam_atoms: list[str]) -> str:
     """The MAM atom with only the cantillation marks of ``raw_atom``'s branch.
 
-    Phonetic MAM marks a resolved sheva with a masora circle that MAM's text does not have.
-    The raw atom therefore decides only which accent and meteg marks its cantillation branch
-    selects; its letters and points never reach the reader-facing form.
+    Phonetic MAM uses U+05C8 where MAM has U+05B0 when it resolves a shewa as vocal.  The raw
+    atom therefore decides only which accent and meteg marks its cantillation branch selects;
+    its letters and points never reach the reader-facing form.
     """
     candidates = [
         atom for atom in mam_atoms if _consonant_key(atom) == _consonant_key(raw_atom)
