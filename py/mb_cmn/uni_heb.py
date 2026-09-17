@@ -169,10 +169,12 @@ _HE_AND_DIRECT_ASCII_LETT_PAIRS = (
 _HE_AND_NONHE_POINT_PAIRS = (
     (hpo.VARIKA, "varika"),
     (hpo.DAGOMOSD, "·"),
+    (hpo.DAGESH_XAZAQ, "··"),
     (hpo.RAFE, "‾"),  # r̄ was another candidate
     (hpo.SHIND, "·sh"),
     (hpo.SIND, "·si"),
     (hpo.SHEVA, ":"),  # ambiguous, could be na or nax
+    (hpo.SHEVA_NA, "::"),
     (hpo.XSEGOL, ":∵"),  # ∵ aka BECAUSE
     (hpo.XPATAX, ":_"),
     (hpo.XQAMATS, ":a"),
