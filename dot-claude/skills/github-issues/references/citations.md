@@ -7,11 +7,11 @@ Read this reference when writing or auditing issue citations.
 1. **What a bare `#NN` means depends on where it is written.**
    1. In MAM-basics' files, and in MAM-basics' issues and comments, a bare `#NN` is a MAM-basics
       issue, and any other tracker's issue is written `repo#NN`, such as `wlc-utils#88`.
-      MAM-basics' `CLAUDE.md`, "Five issue trackers", lists the collisions that make the prefix
-      necessary.
+      MAM-basics' `AGENTS.md`, "Issue citations in MAM-basics", states the rule;
+      `references/mam-basics-trackers.md` records the collisions that make the prefix necessary.
    2. In MAM-private, a bare `#NN` inside an evacuated tree such as `mgketer/` means that tree's
       own tracker, and MAM-private's own issues are always written `MAM-private#NN`. MAM-private's
-      `CLAUDE.md`, "Issue citations", is the statement.
+      `AGENTS.md`, "Issue citations and issue routing", is the statement.
    3. In this skill, and anywhere a reader could be in either repository, write the repository
       out: "MAM-basics #263".
 2. **In an issue or a comment, give another tracker's issue as its full URL**,
