@@ -1,6 +1,6 @@
 # Updates to the symmetric CLAUDE.md and AGENTS.md instructions plan
 
-State: open, first entry 2026-09-15.
+State: executed, first entry 2026-09-15.
 
 This file is the dynamic home for later progress, State, scope changes, measurements, and dispositions for [the frozen base plan](PLAN-symmetric-CLAUDE-and-AGENTS-instructions.md). Append later dated entries here and correct stale present-tense claims here while the base remains tracked.
 
@@ -155,3 +155,87 @@ two remaining checks:
 2. A real Claude cloud-session check.
 
 The issue body remains current and was not edited.
+
+## Successful fresh local Claude Code startup verification — 2026-09-17
+
+Recorded by a Codex session on 2026-09-17, at Ben's request.
+
+Ben supplied the complete response unchanged from a newly started interactive
+local Claude Code session rooted at `C:/Users/BenDe/GitRepos/MAM-basics`. Before
+using a tool or reading a file, that session correctly named and summarized the
+final user-level H2, `Show local artifacts with file links`, and the final
+MAM-basics H2, `This is the only repository instruction body`. It identified
+`dot-Codex/user-wide-AGENTS.md` as the tracked canonical common body and
+`dot-claude/user-wide-CLAUDE.md` as the tracked wrapper, distinguished both from
+the live `~/.codex/AGENTS.md` and `~/.claude/CLAUDE.md` files, and explained that
+the live Claude wrapper imports the live common body. It also identified
+`.claude/hooks/install-user-config.sh` as the Claude cloud-session installer.
+The response reported no import, truncation, or instruction-loading warning.
+
+The tool-free verification response did not query its instantaneous Git HEAD
+while other work was advancing the primary checkout. The earlier preflight had
+verified the relevant deployed configuration at
+`a4968fd7b8eac92caf4df6736b128b5a1e1e1b13` with
+`USER_CONFIG_PROBLEM_COUNT=0`. Before recording this successful response, Git
+history confirmed that none of `AGENTS.md`, `CLAUDE.md`, the two tracked
+user-level instruction files, the cloud hook, or its settings registration
+changed between that commit and the recording baseline
+`163ca7827d111b1a7c1ff66da534c0a3f8ce887d`. The exact instantaneous commit is
+therefore not claimed, but the instruction content under test is pinned to both
+verified endpoints.
+
+The fresh local Claude Code startup check passed. The earlier failed command-line
+attempt remains above as historical evidence and is superseded by this successful
+interactive check.
+
+## Real Claude cloud-session verification — 2026-09-17
+
+Recorded by a Codex session on 2026-09-17, at Ben's request.
+
+Ben supplied two complete responses unchanged from a fresh Claude Code cloud
+session. The first response used no tool and read no file. Its startup context
+contained the full-success `SessionStart` banner for installing the common body,
+Claude wrapper, and `hebrew-prose` skill. It correctly reported both imported
+instruction bodies through their final H2 sections, found `hebrew-prose` in the
+available-skills list, and reported no import, truncation, or instruction-loading
+warning.
+
+The second response used read-only tools and recorded Claude Code 2.1.274 in
+container hostname `vm`, with `HOME=/root`, `CLAUDE_CODE_REMOTE=true`, and the
+repository at `/home/user/MAM-basics`. The checked-out branch was
+`claude/optimistic-ramanujan-84xvh7` at
+`92f73fa321f17c5d65950c304a6c632401315e24`; the user-level conversion commit
+`d695966be8daea270f85424cb77d06f3b92a873d` was an ancestor.
+
+The cloud filesystem evidence reported:
+
+- `dot-Codex/user-wide-AGENTS.md` and `/root/.codex/AGENTS.md` were both 21,291
+  bytes with SHA-256
+  `e3db8fb6e2a7484cb0d1589b9e4a2cec2aca1308126052437329fce4e5453360`.
+- `dot-claude/user-wide-CLAUDE.md` and `/root/.claude/CLAUDE.md` were both 20
+  bytes with SHA-256
+  `38a1085f3a53b4027ff2e96fad50daa2c372c17f5fcf0f973298316435e2ead1`.
+- The tracked and installed `hebrew-prose` trees contained the same seven files
+  and 105,784 bytes; every corresponding file hash matched.
+- Both `cmp` checks and the recursive skill-tree `diff` produced no output. The
+  user wrapper contained exactly `@~/.codex/AGENTS.md` plus one LF, and the
+  repository wrapper contained exactly `@AGENTS.md` plus one LF.
+- `.claude/settings.json` registered the cloud installer for `SessionStart`.
+  Repository status was clean before and after verification, and HEAD did not
+  move.
+
+The real Claude cloud-session check passed. The successful local Codex, local
+Claude Code, and Claude cloud checks now complete every remaining verification
+owned by this plan family.
+
+## Completion disposition — 2026-09-17
+
+Recorded by a Codex session on 2026-09-17, at Ben's request.
+
+This update file is now **State: executed**. The common user-level instruction
+body, both Claude wrappers, the MAM-basics common repository body, the local
+deployment procedure, and the cloud bootstrap have all been implemented and
+verified through fresh local Codex, fresh local Claude Code, and real Claude
+cloud sessions. MAM-private remains separately tracked by
+[MAM-private issue 26](https://github.com/bdenckla/MAM-private/issues/26).
+MAM-basics issue 274 has no remaining work and may be closed.
