@@ -1170,13 +1170,24 @@ _NOT_IN_THE_JOIN_KEY = re.compile(
 )
 
 
+def _fold_phonetic_mam_annotations(word: str) -> str:
+    """Read current and legacy Phonetic MAM annotations as their generic points."""
+    return (
+        word.replace(hpo.SHEVA_NA, hpo.SHEVA)
+        .replace(hpo.DAGESH_XAZAQ, hpo.DAGOMOSD)
+        .replace(hpo.SHEVA + hpu.MCIRC, hpo.SHEVA)
+        .replace(hpo.DAGOMOSD + hpu.UPDOT, hpo.DAGOMOSD)
+    )
+
+
 def _join_key(word: str) -> str:
     """``word`` reduced to what both texts must agree on: letters, points, and the maqafs.
 
     Phonetic MAM's tilde for MAM's gray maqaf is folded onto the maqaf it stands for, so a
     compound joined by one matches the compound MAM has.
     """
-    return _NOT_IN_THE_JOIN_KEY.sub("", word).replace(hpu.NU_GMAQ, MAQAF)
+    generic = _fold_phonetic_mam_annotations(word)
+    return _NOT_IN_THE_JOIN_KEY.sub("", generic).replace(hpu.NU_GMAQ, MAQAF)
 
 
 def _parse(word: str, jta: str) -> dict:
@@ -2457,10 +2468,7 @@ def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
             field = "rep" if node.get("rep") else "fva"
             selected = node[field].split(" ")[0]
             source = f"{location}/{field} (first form)"
-            if field == "fva" and (
-                hpo.SHEVA + hpu.MCIRC in selected
-                or hpo.DAGOMOSD + hpu.UPDOT in selected
-            ):
+            if field == "fva" and _fold_phonetic_mam_annotations(selected) != selected:
                 raise SurveyProblem(f"{source}: annotated fva has no rep")
             if raw in forms:
                 previous, sources = forms[raw]
@@ -2823,7 +2831,7 @@ def _dual_template_counts(found: dict) -> dict[str, int]:
 
 def _consonant_key(text: str) -> str:
     """The Hebrew letters of a chanted word, ignoring vowels, accents, and punctuation."""
-    return re.sub("[\u0591-\u05c7\u034f]", "", text)
+    return re.sub("[\u0591-\u05c9\u034f]", "", text)
 
 
 def _mam_form_for_dual_cantillation_atom(raw_atom: str, mam_atoms: list[str]) -> str:

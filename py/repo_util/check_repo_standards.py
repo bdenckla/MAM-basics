@@ -373,6 +373,7 @@ import tokenize
 import unicodedata
 from pathlib import Path
 
+from mb_cmn import unicode_data
 from repo_util.common import run_git, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
@@ -663,7 +664,7 @@ def _range_spans(text: str) -> list[tuple[int, int]]:
     """Return spans of \\uXXXX-\\uYYYY character-class range pairs. \\N{...}
     can express a single named character, never a range, so both endpoints
     are exempt regardless of raw-string-ness -- see e.g. non-raw
-    RECC_APCV = "\\u0591-\\u05c7" in mb_cmn/hebrew_points.py."""
+    RECC_APCV = "\\u0591-\\u05c9" in mb_cmn/hebrew_points.py."""
     return [match.span() for match in _RANGE_PATTERN.finditer(text)]
 
 
@@ -735,7 +736,12 @@ def _find_hex_escapes(text: str) -> list[int]:
     for match in _HEX_ESCAPE_PATTERN.finditer(text):
         if _in_any_span(match.start(), exempt_spans):
             continue
-        if not _has_unicode_name(match.group(0)[2:]):
+        hex_digits = match.group(0)[2:]
+        if int(hex_digits, 16) in (0x05C8, 0x05C9):
+            # These constants deliberately stay numeric so this source runs on
+            # Python versions whose Unicode database predates Unicode 18.
+            continue
+        if not _has_unicode_name(hex_digits):
             continue
         line_no = text.count("\n", 0, match.start()) + 1
         if line_no not in line_numbers:
@@ -754,7 +760,7 @@ def _find_orphan_combining_marks(text: str) -> list[int]:
             if ch not in _QUOTE_CHARS:
                 continue
             nxt = line[i + 1]
-            if unicodedata.category(nxt) in ("Mn", "Mc"):
+            if unicode_data.category(nxt) in ("Mn", "Mc"):
                 line_numbers.append(line_no)
                 break
     return line_numbers
@@ -864,7 +870,7 @@ _HEBREW_RANGES_NFC = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
 
 # NFC composition onto a Latin base only draws from the Combining Diacritical
 # Marks block (U+0300-U+036F), so every cluster worth examining has one of these
-# as its first mark (Hebrew marks live at U+0591-U+05C7, outside this range).
+# as its first mark (Hebrew marks live at U+0591-U+05C9, outside this range).
 # Raw-string range escape -- the accepted \uXXXX-range convention here (see the
 # hex_escape_style docstring); no literal combining mark is typed.
 #

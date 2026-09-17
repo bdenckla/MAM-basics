@@ -323,10 +323,9 @@ def al_hatorah_phonetic_dir() -> Path:
 
     READ ``rep`` FOR MAM'S SPELLING OF A CHANTED WORD, NOT ``fva``.  A record's ``fva`` is
     three space-separated forms -- full, vowels-only, accents-only -- and the full one has
-    Phonetic MAM's annotations on it, which MAM's text does not have.  An annotation is a
-    second Unicode mark after the point it is about: U+05AF MASORA CIRCLE after U+05B0 SHEVA
-    says the sheva is vocal, and U+05C4 UPPER DOT after U+05BC DAGESH says the dagesh is
-    xazaq.  ``rep``, where a record has one, is two space-separated forms whose first is
+    Phonetic MAM's annotations on it, which MAM's text does not have. U+05C8 HEBREW POINT
+    SHEVA NA MUDGASH says a sheva is vocal, and U+05C9 HEBREW POINT DAGESH HAZAQ MUDGASH
+    says a dagesh is xazaq. ``rep``, where a record has one, is two space-separated forms whose first is
     exactly that full form with those marks removed -- so MAM's Hebrew is already in the
     record and needs no stripping.  Measured 2026-09-09 across all 39 books, 263,320 records:
     a record has a non-null ``rep`` exactly when its ``fva`` full form is annotated (122,555
@@ -334,16 +333,12 @@ def al_hatorah_phonetic_dir() -> Path:
     an upper dot for an extraordinary point is why this paragraph is here.
 
     DO NOT PASTE A FORM OUT OF THIS DATA -- lift it.  These files are in al-hatorah's mark
-    order, not NFC: the carrier mark sits immediately after the point it annotates, and
-    NFC's canonical ordering moves whatever else is on that letter in between the two, which
-    silently breaks every match on the pair.  So a form quoted into prose, an issue body or a
-    code literal must come from the data unnormalized.  Copying through anything that
-    normalizes is how two of these marks reached a published page in September 2026.
+    order, not NFC. Never normalize Hebrew, including this data.
 
     PHONETIC MAM CANNOT REPRESENT AN EXTRAORDINARY POINT, which matters to any join against
-    this data.  ``aht_read_handlers_cmn.phon_s_han_for_str`` deletes every U+05C4 the AHT
-    source has before the annotation is applied, precisely so that from there on an upper dot
-    means a xazaq dagesh and nothing else -- 98 of them, at the 15 classical loci.  So
+    this data. ``aht_read_handlers_cmn.phon_s_han_for_str`` deletes every U+05C4 the AHT
+    source has before the phonetic annotation is applied -- 98 of them, at the 15 classical
+    loci. So
     Phonetic MAM's Hebrew differs from MAM's at those sites, and a chanted word with a genuine
     extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg``'s
     ``_settle`` already handles that case with a second test.  al-hatorah's

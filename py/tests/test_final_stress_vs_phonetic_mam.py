@@ -77,6 +77,8 @@ from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
 from mb_cmn import graphviz_pin
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 
 # Both tests read MAM-private's Phonetic MAM through ``_oracle``, so both are skipped in a cloud
@@ -111,7 +113,13 @@ _SYLLABLE_BREAK = re.compile(r"[.\-]")
 
 
 def _join_key(word: str) -> str:
-    return _NOT_IN_THE_JOIN_KEY.sub("", word)
+    generic = (
+        word.replace(hpo.SHEVA_NA, hpo.SHEVA)
+        .replace(hpo.DAGESH_XAZAQ, hpo.DAGOMOSD)
+        .replace(hpo.SHEVA + hpu.MCIRC, hpo.SHEVA)
+        .replace(hpo.DAGOMOSD + hpu.UPDOT, hpo.DAGOMOSD)
+    )
+    return _NOT_IN_THE_JOIN_KEY.sub("", generic)
 
 
 def _stress_is_final(jta: str, word: str) -> bool:

@@ -31,10 +31,8 @@ Enforces two rules over hand-authored ``py/`` + ``tools/`` + ``doc/``:
    h-with-dot-below transliteration); tooling/paste-from-web defaults to NFC too,
    so pinning it removes an edit/match-failure tax rather than fighting the
    ecosystem default. Read over the *decoded* text (NFC is a property of decoded
-   text, unlike rule 1's raw-source distinction). Hebrew text is never flagged:
-   every Hebrew letter+point pair is on the NFC composition-exclusion list, so
-   nothing Hebrew ever composes -- this holds by construction, not by
-   special-casing.
+   text, unlike rule 1's raw-source distinction). Hebrew text is explicitly
+   excluded before normalization because Hebrew mark order is repository data.
 
 Shared harness: file discovery + a pluggable tuple of ``Check``s, each yielding
 ``Offense(relpath, line, codepoint, uname, detail)``.
@@ -53,6 +51,8 @@ import ast
 import os
 import unicodedata
 from collections import namedtuple
+
+from mb_cmn import unicode_data
 
 Offense = namedtuple("Offense", "relpath line codepoint uname detail")
 
@@ -126,7 +126,7 @@ def find_orphan_combining_marks(relpath, text):
         if seg is None:
             continue
         ch = _first_string_body_char(seg)
-        if ch is None or not unicodedata.combining(ch):
+        if ch is None or not unicode_data.combining(ch):
             continue
         line = node.lineno
         if _PRAGMA in lines[line - 1]:
@@ -135,7 +135,7 @@ def find_orphan_combining_marks(relpath, text):
             relpath=relpath,
             line=line,
             codepoint=f"U+{ord(ch):04X}",
-            uname=unicodedata.name(ch, f"<unnamed U+{ord(ch):04X}>"),
+            uname=unicode_data.name(ch, f"<unnamed U+{ord(ch):04X}>"),
             detail="orphan combining mark; use a \\N{NAME} escape",
         )
 
@@ -148,24 +148,26 @@ def find_decomposed_composites(relpath, text):
     property of decoded text, not raw source). For each combining mark, checks
     whether it composes with the immediately preceding character; if so, that
     pair is a decomposed canonical composite and should be written precomposed.
-    Hebrew is never flagged: no Hebrew letter+point pair has a single-codepoint
-    NFC composition (all are on the composition-exclusion list), so this holds
-    by construction, not by special-casing.
+    Hebrew is never normalized or flagged. Its mark order is repository data,
+    and ``mb_cmn.uni_denorm`` rather than Unicode normalization owns any repair.
     """
     line_no = 1
     for i, ch in enumerate(text):
         if ch == "\n":
             line_no += 1
             continue
-        if i == 0 or not unicodedata.combining(ch):
+        if i == 0 or not unicode_data.combining(ch):
             continue
-        comp = unicodedata.normalize("NFC", text[i - 1] + ch)
+        previous = text[i - 1]
+        if "\u0590" <= previous <= "\u05ff" or "\u0590" <= ch <= "\u05ff":
+            continue
+        comp = unicodedata.normalize("NFC", previous + ch)
         if len(comp) == 1:
             yield Offense(
                 relpath=relpath,
                 line=line_no,
                 codepoint=f"U+{ord(ch):04X}",
-                uname=unicodedata.name(ch, f"<unnamed U+{ord(ch):04X}>"),
+                uname=unicode_data.name(ch, f"<unnamed U+{ord(ch):04X}>"),
                 detail=(
                     "decomposed composite; write precomposed "
                     f"U+{ord(comp):04X} {unicodedata.name(comp, '?')}"
