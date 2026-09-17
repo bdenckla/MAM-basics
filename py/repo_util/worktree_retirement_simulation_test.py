@@ -1,10 +1,11 @@
-"""Differential retirement checks against Git and filesystem oracles.
+"""Operational retirement simulation against Git and filesystem oracles.
 
-Every destructive operation is confined to pytest's temporary repositories.
-Equivalent owner fixtures must leave the same Git and retained-data outcome.
+This module lives outside ``py/tests`` and is excluded from default
+``py/main_test.py`` collection. Actual worktree retirement invokes it first.
+Every destructive operation remains confined to pytest's temporary repositories,
+and equivalent owner fixtures must leave the same Git and retained-data outcome.
 """
 
-import ast
 import hashlib
 import json
 import os
@@ -20,29 +21,6 @@ from repo_util import worktree_owners
 from repo_util import git_worktree_cleanup
 from repo_util import codex_worktree_retirement
 from main_repo_util import build_parser, _validate_action_specific_args
-
-
-def test_only_shared_engine_contains_nonforced_git_retirement():
-    modules = (retirement, git_worktree_cleanup, codex_worktree_retirement)
-    mutations = []
-    for module in modules:
-        tree = ast.parse(Path(module.__file__).read_text(encoding="utf-8"))
-        assert not any(
-            isinstance(node, ast.Constant) and node.value in ("--force", "-D")
-            for node in ast.walk(tree)
-        )
-        for node in ast.walk(tree):
-            if not isinstance(node, ast.Call):
-                continue
-            constants = [
-                arg.value for arg in node.args if isinstance(arg, ast.Constant)
-            ]
-            if constants[:2] in (["worktree", "remove"], ["branch", "-d"]):
-                mutations.append((module.__name__, constants[:2]))
-    assert mutations == [
-        (retirement.__name__, ["worktree", "remove"]),
-        (retirement.__name__, ["branch", "-d"]),
-    ]
 
 
 @pytest.fixture

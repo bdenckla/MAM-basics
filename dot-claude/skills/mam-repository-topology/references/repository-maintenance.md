@@ -127,6 +127,7 @@ add `--worktree-owner claude|codex|both` as a preparation selection guard. Recor
 Codex IDs with `--codex-task-id`; the adapter also discovers IDs. If citations are reported,
 settle them and prepare a new file with `--citations-reviewed --citation-note "disposition"`.
 The preflight freezes the safety snapshot, owner selection, inventories and destinations.
+Preparation remains nondestructive and does not run the operational retirement simulation.
 
 Review the preflight, then execute under the ordinary user token from a separate checkout:
 
@@ -134,15 +135,19 @@ Review the preflight, then execute under the ordinary user token from a separate
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --execute-worktree-retirement "C:/absolute/preflight.json" --task-ended
 ```
 
-Execution repeats runtime and Git safety checks, refuses drift, relocates and verifies `.novc`,
-then uses only non-forced `git worktree remove` and eligible `git branch -d`. Reuse the same
-preflight to resume a recorded removal attempt. A registration removed outside that recorded
-attempt is a blocker. A failed or ambiguous relocation leaves evidence in place for inspection;
-do not improvise a force flag or delete the sidecar.
+Every execution and resume attempt first runs
+`py/repo_util/worktree_retirement_simulation_test.py` through `py/main_test.py`. The command
+fails closed unless the simulation passes, before it reads the preflight or mutates the target.
+Only then does execution repeat runtime and Git safety checks, refuse drift, relocate and verify
+`.novc`, and use non-forced `git worktree remove` and eligible `git branch -d`. Reuse the same
+preflight to resume a recorded removal attempt; the simulation runs again. A registration
+removed outside that recorded attempt is a blocker. A failed or ambiguous relocation leaves
+evidence in place for inspection; do not improvise a force flag or delete the sidecar.
 
 Compatibility: `--clean-worktrees` now means Claude-only inspection and never removes anything.
 Its `--session-ended` paths are checked against that scope, but cannot cause retirement. The
-Codex-named prepare and execute actions route through the shared engine with a Codex selector.
+Codex-named prepare and execute actions use the same preparation behavior and mandatory
+execution simulation, then route through the shared engine with a Codex selector.
 Schema-1 preflights must be prepared again because they omit the shared runtime and object gates.
 Repository maintenance uses the same inspection API. Remote-only work is reported from cached
 refs, labelled as such; fetch separately when fresh remote evidence is needed.

@@ -11,6 +11,12 @@ given go straight through to pytest, so its own options (``-k``, ``-x``, ``-q``,
 replaces the default target rather than adding to it.  Use the venv's own
 interpreter -- the system Python has neither pytest nor PLY.
 
+The operational worktree-retirement simulation lives at
+``py/repo_util/worktree_retirement_simulation_test.py`` and is intentionally outside
+the default ``py/tests`` suite. Real retirement execution invokes that module
+explicitly before reading its preflight; maintainers can name the path explicitly to
+run it on its own.
+
 WHY THIS FILE EXISTS, AND WHY A BARE ``pytest`` FAILS TO COLLECT
 
 ``.venv/Scripts/pytest.exe py/tests`` does not collect: every test imports

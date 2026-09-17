@@ -25,9 +25,11 @@ so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
 across the chosen repositories. ``--worktree PATH`` inspects one exact target.
 ``--prepare-worktree-retirement PATH --task-ended --preflight-file FILE`` writes
 a per-target audit; ``--execute-worktree-retirement FILE --task-ended`` rechecks
-it and applies the shared Git and .novc preservation policy. Inspect the printed
+it and applies the shared Git and .novc preservation policy. Every execution and
+resume attempt first runs the operational retirement simulation and fails closed
+before reading the preflight if the simulation does not pass. Inspect the printed
 citations and prepare again with --citations-reviewed and --citation-note when
-needed. Preparation and inspection never remove worktrees.
+needed. Preparation and inspection never run the simulation or remove worktrees.
 
 ``--clean-worktrees`` is a compatibility alias for Claude-only inspection.
 Its old --session-ended paths are validated but never cause automatic removal.
@@ -59,6 +61,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import subprocess
 import sys
 from typing import Sequence
 
@@ -114,7 +117,10 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument(
         "--execute-worktree-retirement",
         metavar="PREFLIGHT",
-        help="Execute a reviewed shared retirement preflight",
+        help=(
+            "Run the operational simulation, then execute a reviewed shared"
+            " retirement preflight"
+        ),
     )
     parser.add_argument(
         "--worktree-owner",
@@ -133,7 +139,10 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument(
         "--execute-codex-worktree-retirement",
         metavar="PREFLIGHT",
-        help="Compatibility: shared execution restricted to a Codex preflight",
+        help=(
+            "Compatibility: run the simulation, then shared execution restricted"
+            " to a Codex preflight"
+        ),
     )
     action_group.add_argument("--sync-user-config", action="store_true")
     action_group.add_argument("--commit-across-repos", action="store_true")
@@ -398,6 +407,34 @@ def _filter_by_visibility(repo_infos, visibility: str):
     return [info for info in repo_infos if declared[info.name] == visibility]
 
 
+def _run_worktree_retirement_simulation() -> None:
+    """Fail closed unless the operational retirement simulation passes."""
+    simulation = (
+        REPO_ROOT / "py" / "repo_util" / "worktree_retirement_simulation_test.py"
+    )
+    command = [
+        sys.executable,
+        str(REPO_ROOT / "py" / "main_test.py"),
+        str(simulation),
+        "-q",
+        "-p",
+        "no:cacheprovider",
+    ]
+    print("Running mandatory worktree-retirement simulation before execution...")
+    try:
+        result = subprocess.run(command, cwd=REPO_ROOT, check=False)
+    except OSError as exc:
+        raise RetirementError(
+            f"could not launch the operational retirement simulation: {exc}"
+        ) from exc
+    if result.returncode != 0:
+        raise RetirementError(
+            "operational retirement simulation failed with exit code"
+            f" {result.returncode}; execution will not continue"
+        )
+    print("Worktree-retirement simulation passed; continuing with execution.")
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
     sys.stderr.reconfigure(encoding="utf-8")
@@ -438,6 +475,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if executing:
         try:
+            _run_worktree_retirement_simulation()
             execute_retirement(
                 Path(executing),
                 confirm_task_ended=args.task_ended,
