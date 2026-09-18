@@ -47,13 +47,52 @@ _L2 = "https://www.unicode.org/L2/L2025"
 _GDOC = "https://docs.google.com/document/u/0/d"
 _ONEDRIVE = "https://1drv.ms/w/c/1a2a340dcdf04d04"
 
-_ISO_NOTE_ID = "iso"
-_WITHDRAWN_NOTE_ID = "withdrawn"
-
 # One tuple per proposal, in the source's order: the proposal's name, its "latest
-# document" link, its L2 number and PDF if it reached one, and the id of the footnote it
-# carries.  A proposal with no L2 number has not been submitted under one.
-_PROPOSALS = (
+# document" link, its L2 number and PDF if it reached one, and an optional status
+# suffix.  A proposal with no L2 number has not been submitted under one.
+_CURRENT_PROPOSALS = (
+    (
+        "Re-documenting ZARQA and ZINOR",
+        Anchor("LGD", f"{_GDOC}/1qJby64wXq9ueTUHXFlIlYdgohRFlnUqT4SkyNEFWMKU/edit"),
+        None,
+        None,
+    ),
+    (
+        "Errors about QAMATS QATAN in WG2 N4502",
+        Anchor(
+            "LGD",
+            "https://docs.google.com/document/d/"
+            "14ys4CwlF5IsOgBmUB9kvtxDZLrqrV1pnqBdj-JMaJZM/edit?usp=sharing",
+        ),
+        Anchor("L2/25-237", f"{_L2}/25237-qamats-qatan.pdf"),
+        "ISO: This was later determined to be an ISO rather than a Unicode issue,"
+        " and therefore this proposal was later made to an ISO working group rather"
+        " than a Unicode working group.",
+    ),
+    (
+        "Adding ALTERNATE PASEQ to Hebrew",
+        Anchor("LGD", f"{_GDOC}/1VDVtngW9VJMD2er8V5JOFkUNp6BlSjjdgvcR9QDOpIE/edit"),
+        Anchor("L2/25-243", f"{_L2}/25243-paseq-hebrew.pdf"),
+        None,
+    ),
+    (
+        "Adding ALTERNATE YERAH BEN YOMO to Hebrew",
+        Anchor("LGD", f"{_GDOC}/1M7-sVTuKEJLdFRDXLpOeKEjtynSTvY2EM6Lj1uK4ylA/edit"),
+        None,
+        None,
+    ),
+    (
+        "Forced helper forms of Hebrew accents",
+        Anchor(
+            "LWD",
+            f"{_ONEDRIVE}/Eaik4ZX61L9HnM45cob2gHEBHRm5le8FVgMbhgRpIHH1pw?e=T9CBLU",
+        ),
+        None,
+        None,
+    ),
+)
+
+_DISCONTINUED_PROPOSALS = (
     (
         "Regarding the name HEAVY SHEVA",
         Anchor("LGD", f"{_GDOC}/18Zq9eJMREv8JtdMpME0zXtddA2FHDLpVXpa7gNvedEU/edit"),
@@ -73,50 +112,14 @@ _PROPOSALS = (
         None,
     ),
     (
-        "Re-documenting ZARQA and ZINOR",
-        Anchor("LGD", f"{_GDOC}/1qJby64wXq9ueTUHXFlIlYdgohRFlnUqT4SkyNEFWMKU/edit"),
-        None,
-        None,
-    ),
-    (
-        "Errors about QAMATS QATAN in WG2 N4502",
-        Anchor(
-            "LGD",
-            "https://docs.google.com/document/d/"
-            "14ys4CwlF5IsOgBmUB9kvtxDZLrqrV1pnqBdj-JMaJZM/edit?usp=sharing",
-        ),
-        Anchor("L2/25-237", f"{_L2}/25237-qamats-qatan.pdf"),
-        _ISO_NOTE_ID,
-    ),
-    (
-        "Adding ALTERNATE PASEQ to Hebrew",
-        Anchor("LGD", f"{_GDOC}/1VDVtngW9VJMD2er8V5JOFkUNp6BlSjjdgvcR9QDOpIE/edit"),
-        Anchor("L2/25-243", f"{_L2}/25243-paseq-hebrew.pdf"),
-        None,
-    ),
-    (
-        "Adding ALTERNATE YERAH BEN YOMO to Hebrew",
-        Anchor("LGD", f"{_GDOC}/1M7-sVTuKEJLdFRDXLpOeKEjtynSTvY2EM6Lj1uK4ylA/edit"),
-        None,
-        None,
-    ),
-    (
         "Adding Hebrew stress helper accents",
         Anchor(
             "LWD",
             f"{_ONEDRIVE}/Eaap-g_IPGhFtNJczt9mXhwBTjLYp6XS9RUsRurnD6-HHQ?e=ldC6GM",
         ),
         Anchor("L2/25-242", f"{_L2}/25242-hebrew-accents.pdf"),
-        _WITHDRAWN_NOTE_ID,
-    ),
-    (
-        "Forced helper forms of Hebrew accents",
-        Anchor(
-            "LWD",
-            f"{_ONEDRIVE}/Eaik4ZX61L9HnM45cob2gHEBHRm5le8FVgMbhgRpIHH1pw?e=T9CBLU",
-        ),
-        None,
-        None,
+        "Withdrawn: I withdrew this proposal upon receiving feedback that it was"
+        " unlikely to be accepted.",
     ),
 )
 
@@ -125,20 +128,12 @@ _LEGEND = (
     "LWD = Latest (Microsoft) Word Doc (on OneDrive)",
 )
 
-_NOTES = (
-    (
-        _ISO_NOTE_ID,
-        "ISO",
-        "This was later determined to be an ISO rather than a Unicode issue, and"
-        " therefore this proposal was later made to an ISO working group rather than a"
-        " Unicode working group.",
-    ),
-    (
-        _WITHDRAWN_NOTE_ID,
-        "withdrawn",
-        "I withdrew this proposal upon receiving feedback that it was unlikely to be"
-        " accepted.",
-    ),
+_DISCONTINUED_INTRO = (
+    "These proposals are retained only for historical interest because they have"
+    " reached terminal states such as accepted, rejected, or withdrawn. The first"
+    " three proposals in this section concern one of the two Hebrew points added in"
+    " Unicode 18: U+05C8 HEBREW POINT SHEVA NA MUDGASH and U+05C9 HEBREW POINT"
+    " DAGESH HAZAQ MUDGASH."
 )
 
 
@@ -157,42 +152,26 @@ def gen_html_file(out_dir: Path | None = None) -> str:
 
 
 def build_body():
-    """The page: the numbered proposals, the legend, then the notes."""
+    """The page: current proposals, the legend, then discontinued proposals."""
     return [
         mb_html.heading_level_1(_TITLE),
-        mb_html.ordered_list([_proposal_licont(one) for one in _PROPOSALS]),
+        mb_html.ordered_list([_proposal_licont(one) for one in _CURRENT_PROPOSALS]),
         *[mb_html.para(one) for one in _LEGEND],
-        mb_html.heading_level_2("Notes"),
-        mb_html.unordered_list([_note_licont(one) for one in _NOTES]),
+        mb_html.heading_level_2("Discontinued"),
+        mb_html.para(_DISCONTINUED_INTRO),
+        mb_html.ordered_list(
+            [_proposal_licont(one) for one in _DISCONTINUED_PROPOSALS]
+        ),
     ]
 
 
 def _proposal_licont(proposal):
-    name, latest, l2_doc, note_id = proposal
+    name, latest, l2_doc, status = proposal
     links = [latest] if l2_doc is None else [latest, l2_doc]
     licont = [name, " "]
     for index, anchor in enumerate(links):
         licont.append(", " if index else "")
         licont.append(mb_html.anchor_h(anchor.text, anchor.href))
-    if note_id is not None:
-        licont.append(" ")
-        licont.append(_note_ref(note_id))
+    if status is not None:
+        licont.extend((" — ", status))
     return [one for one in licont if one != ""]
-
-
-def _note_ref(note_id: str):
-    """A superscript link down to the note, the way the source's footnote markers read."""
-    return mb_html.sup(mb_html.anchor_h(_note_text(note_id), f"#note-{note_id}"))
-
-
-def _note_text(note_id: str) -> str:
-    return next(text for one_id, text, _ in _NOTES if one_id == note_id)
-
-
-def _note_licont(note):
-    note_id, text, body = note
-    return [
-        mb_html.span(text, {"id": f"note-{note_id}"}),
-        ": ",
-        body,
-    ]
