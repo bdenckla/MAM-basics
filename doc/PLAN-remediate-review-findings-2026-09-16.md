@@ -74,8 +74,9 @@ gitignored `.novc/`.
 
 The following current-tree facts are dated measurements, not invariants:
 
-- the filename-command census finds 27 filename-returning Git sites; all 27 use `-z`, while the
-  lint sees 14 and misses 13;
+- before Wave 4, the filename-command census found 27 filename-returning Git sites; all 27 used
+  `-z`, while the lint saw 14 and missed 13. The Wave 4 remeasurement finds all 27 current sites
+  and the structural lint sees all 27;
 - finding 12.2's current broad grep finds 138 files and 2,046 `.novc` lines in this branch and 132
   files and 2,000 lines in current `main`;
 - before Wave 3, the four skill/reference files in finding 19 contained 13 headings without a

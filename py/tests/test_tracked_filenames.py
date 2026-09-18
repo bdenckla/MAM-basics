@@ -15,6 +15,9 @@ lint over tracked Python syntax. Both are lint-shaped tests sanctioned by
 """
 
 import ast
+from dataclasses import dataclass
+import importlib.util
+from pathlib import PurePosixPath
 import re
 import subprocess
 
@@ -22,6 +25,12 @@ from mb_cmn import paths
 
 _HEBREW_LETTER_RE = re.compile(r"[\u05D0-\u05EA]")
 _TRACKED_FILE_FLOOR = 4000
+
+
+@dataclass(frozen=True)
+class _Wrapper:
+    fixed_count: int
+    literal_prefix: tuple[str, ...]
 
 
 def _tracked_paths(*pathspecs: str) -> list[str]:
@@ -60,63 +69,168 @@ def _returns_filenames(command: list[str]) -> bool:
         return True
     if "diff" in command and "--numstat" in command:
         return True
+    if "git" in command and "grep" in command:
+        grep_index = command.index("grep")
+        filename_modes = {
+            "-l",
+            "-L",
+            "--files-with-matches",
+            "--files-without-match",
+        }
+        if any(part in filename_modes for part in command[grep_index + 1 :]):
+            return True
     return "worktree" in command and "list" in command
 
 
-def _git_wrappers(tree: ast.AST) -> dict[str, tuple[int, list[str]]]:
-    wrappers = {}
+def _module_name(rel: str) -> str:
+    parts = list(PurePosixPath(rel).with_suffix("").parts)
+    if parts and parts[0] == "py":
+        parts.pop(0)
+    if parts and parts[-1] == "__init__":
+        parts.pop()
+    return ".".join(parts)
+
+
+def _import_bindings(tree: ast.AST, module_name: str) -> dict[str, str]:
+    bindings = {}
+    package = module_name.rpartition(".")[0]
     for node in ast.walk(tree):
-        if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-            continue
-        vararg = node.args.vararg
-        if vararg is None:
-            continue
-        for candidate in ast.walk(node):
-            if not isinstance(candidate, (ast.List, ast.Tuple)) or not candidate.elts:
+        if isinstance(node, ast.ImportFrom):
+            imported_module = node.module or ""
+            if node.level:
+                if not package:
+                    continue
+                imported_module = importlib.util.resolve_name(
+                    "." * node.level + imported_module, package
+                )
+            for alias in node.names:
+                if alias.name == "*":
+                    continue
+                local_name = alias.asname or alias.name
+                bindings[local_name] = f"{imported_module}.{alias.name}"
+        elif isinstance(node, ast.Import):
+            for alias in node.names:
+                if alias.asname:
+                    bindings[alias.asname] = alias.name
+    return bindings
+
+
+def _callable_name(
+    node: ast.AST, module_name: str, bindings: dict[str, str]
+) -> str | None:
+    if isinstance(node, ast.Name):
+        return bindings.get(node.id, f"{module_name}.{node.id}")
+    if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
+        imported_module = bindings.get(node.value.id)
+        if imported_module is not None:
+            return f"{imported_module}.{node.attr}"
+    return None
+
+
+def _expands_vararg(node: ast.AST, vararg: str) -> bool:
+    return (
+        isinstance(node, ast.Starred)
+        and isinstance(node.value, ast.Name)
+        and node.value.id == vararg
+    )
+
+
+def _git_wrappers(trees: dict[str, ast.AST]) -> dict[str, _Wrapper]:
+    functions: dict[
+        str,
+        tuple[
+            ast.FunctionDef | ast.AsyncFunctionDef,
+            str,
+            dict[str, str],
+        ],
+    ] = {}
+    wrappers: dict[str, _Wrapper] = {}
+    for rel, tree in trees.items():
+        module_name = _module_name(rel)
+        bindings = _import_bindings(tree, module_name)
+        for node in ast.walk(tree):
+            if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
                 continue
-            first = candidate.elts[0]
-            if not (
-                isinstance(first, ast.Constant)
-                and isinstance(first.value, str)
-                and first.value == "git"
-            ):
+            vararg = node.args.vararg
+            if vararg is None:
                 continue
-            expands_vararg = any(
-                isinstance(element, ast.Starred)
-                and isinstance(element.value, ast.Name)
-                and element.value.id == vararg.arg
-                for element in candidate.elts
-            )
-            if not expands_vararg:
-                continue
-            literal_prefix = [
-                element.value
-                for element in candidate.elts
-                if isinstance(element, ast.Constant) and isinstance(element.value, str)
-            ]
-            fixed_count = len(node.args.posonlyargs) + len(node.args.args)
-            wrappers[node.name] = fixed_count, literal_prefix
+            qualified_name = f"{module_name}.{node.name}"
+            functions[qualified_name] = node, module_name, bindings
+            for candidate in ast.walk(node):
+                if not isinstance(candidate, (ast.List, ast.Tuple)):
+                    continue
+                if not any(
+                    _expands_vararg(item, vararg.arg) for item in candidate.elts
+                ):
+                    continue
+                literals = tuple(
+                    item.value
+                    for item in candidate.elts
+                    if isinstance(item, ast.Constant) and isinstance(item.value, str)
+                )
+                if "git" not in literals:
+                    continue
+                wrappers[qualified_name] = _Wrapper(
+                    fixed_count=len(node.args.posonlyargs) + len(node.args.args),
+                    literal_prefix=literals,
+                )
+                break
+
+    unresolved = set(functions) - set(wrappers)
+    while unresolved:
+        progress = False
+        for qualified_name in tuple(unresolved):
+            node, module_name, bindings = functions[qualified_name]
+            vararg = node.args.vararg
+            assert vararg is not None
+            for candidate in ast.walk(node):
+                if not isinstance(candidate, ast.Call):
+                    continue
+                if not any(
+                    _expands_vararg(item, vararg.arg) for item in candidate.args
+                ):
+                    continue
+                callee_name = _callable_name(candidate.func, module_name, bindings)
+                callee = wrappers.get(callee_name or "")
+                if callee is None:
+                    continue
+                forwarded = candidate.args[callee.fixed_count :]
+                literal_arguments = tuple(
+                    item.value
+                    for item in forwarded
+                    if isinstance(item, ast.Constant) and isinstance(item.value, str)
+                )
+                wrappers[qualified_name] = _Wrapper(
+                    fixed_count=len(node.args.posonlyargs) + len(node.args.args),
+                    literal_prefix=(*callee.literal_prefix, *literal_arguments),
+                )
+                unresolved.remove(qualified_name)
+                progress = True
+                break
+        if not progress:
             break
     return wrappers
 
 
 def _wrapped_command(
-    node: ast.AST, wrappers: dict[str, tuple[int, list[str]]]
+    node: ast.AST,
+    module_name: str,
+    bindings: dict[str, str],
+    wrappers: dict[str, _Wrapper],
 ) -> list[str] | None:
-    if not (
-        isinstance(node, ast.Call)
-        and isinstance(node.func, ast.Name)
-        and node.func.id in wrappers
-    ):
+    if not isinstance(node, ast.Call):
         return None
-    fixed_count, prefix = wrappers[node.func.id]
-    passed_varargs = node.args[fixed_count:]
-    if not passed_varargs or any(
-        not isinstance(argument, ast.Constant) or not isinstance(argument.value, str)
+    callable_name = _callable_name(node.func, module_name, bindings)
+    wrapper = wrappers.get(callable_name or "")
+    if wrapper is None:
+        return None
+    passed_varargs = node.args[wrapper.fixed_count :]
+    literal_arguments = [
+        argument.value
         for argument in passed_varargs
-    ):
-        return None
-    return [*prefix, *(argument.value for argument in passed_varargs)]
+        if isinstance(argument, ast.Constant) and isinstance(argument.value, str)
+    ]
+    return [*wrapper.literal_prefix, *literal_arguments]
 
 
 def test_tracked_filenames_contain_no_hebrew_letters() -> None:
@@ -139,13 +253,19 @@ def test_git_filename_commands_request_nul_delimiters() -> None:
         f"Only {len(python_paths)} tracked Python files were listed; the Git-command"
         " lint may have read the wrong tree."
     )
-    offenders = []
+    trees = {}
     for rel in python_paths:
         source = (paths.repo_root() / rel).read_text(encoding="utf-8")
-        tree = ast.parse(source, filename=rel)
-        wrappers = _git_wrappers(tree)
+        trees[rel] = ast.parse(source, filename=rel)
+    wrappers = _git_wrappers(trees)
+    offenders = []
+    for rel, tree in trees.items():
+        module_name = _module_name(rel)
+        bindings = _import_bindings(tree, module_name)
         for node in ast.walk(tree):
-            command = _literal_command(node) or _wrapped_command(node, wrappers)
+            command = _literal_command(node) or _wrapped_command(
+                node, module_name, bindings, wrappers
+            )
             if command is None or not _returns_filenames(command) or "-z" in command:
                 continue
             offenders.append(f"{rel}:{node.lineno}")
