@@ -95,3 +95,99 @@ Product axis: this decision record and the procedure-record update reach no repo
 Act axis: they are ordinary commits on the locked shared review branch, backed up to the existing
 remote review branch; they do not update `main`, open a pull request, change an issue, perform a
 destructive operation or rewrite a receipt beyond its authorized update pointer.
+
+## Remediation completed on 2026-09-18
+
+Recorded by Codex on 2026-09-18, New York time, after the substantive remediation head
+`61aa48ee730a3cff222f28886298c6a06079586e` was backed up to the existing review branch,
+fast-forwarded to `main`, pushed, and used to deploy the canonical user configuration. These are
+the final dispositions of the twenty findings:
+
+1. **Finding 1 was fixed by `4e30b0f4`.** The two snips READMEs now distinguish their general crop
+   naming from the approved Leningrad-specific preservation rule.
+2. **Finding 2 was fixed by `18ddfbf7`.** The cloud-session account now names all three resources,
+   and the finished September 14 remediation plan's update records the false no-edit assertion.
+3. **Finding 3 was fixed by `18ddfbf7`.** The remaining `.Codex` spelling is classified as a
+   historical capture, and the stale plan-blob assertions now state the checkpoint, pointer and
+   retirement history.
+4. **Finding 4 was fixed by `016fc273`.** The structural lint now recognizes every current
+   filename-returning Git call without pinning a site count, while retaining the NUL-delimiter
+   requirement.
+5. **Finding 5 was fixed by `18aabf8d`.** All three receipt-pointer rules now permit the
+   mechanically necessary paragraph join.
+6. **Finding 6 was fixed by `18ddfbf7`.** The September 14 remediation plan's update sibling holds
+   the stale progress, State, heading, anchor, skill-path and executor corrections.
+7. **Finding 7 was fixed by `18aabf8d`.** The topology skill now describes the declared workspace,
+   frozen-repository register and vendoring policy; the canonical correction was deployed from
+   pushed `main` at `61aa48ee`.
+8. **Finding 8 was fixed by `4e30b0f4` and `18aabf8d`.** The reader-facing introduction guidance,
+   moved mark-order pointer, Phase 3 and current-repository claims, and source-number form are
+   corrected without rewriting the move's history.
+9. **Finding 9 was fixed by `18aabf8d`; the portions already current at baseline remain
+   unchanged.** The live headings, quotations, paths, cross-file section references and
+   cross-tracker issue spellings are repaired, while truthful historical retired-plan references
+   remain historical.
+10. **Finding 10 was already resolved by current `main` at `d3edadc6` plus `fbaae3d0`.** The shared
+    skill list, common-body wrapper and long-lived review-branch backup exception were current, so
+    no later implementation commit was required.
+11. **Finding 11 was fixed by `18aabf8d`.** The affected instruction and skill passages now carry
+    dated or explicitly undated provenance without implying that the underlying policies had
+    disappeared.
+12. **Finding 12 was fixed by baseline `d3edadc6` and `d759adec`.** The current reparse-point
+    guards already closed 12.1. The citation gate for 12.2 now matches only the exact relocated
+    paths across the target, primary checkout and registered worktrees, preserves its complete
+    audit record, and rejects generic `.novc` and `.novc-old` references. Verification used the
+    operational simulation; no real worktree retirement ran.
+13. **Findings 13.1 through 13.3 were fixed by `5b8e4026`; conditional finding 13.4 required no
+    hook change under the approved stop rule.** The owner-scope diagnostic, unused helper, Git-date
+    wording and custom MAM-simple directory diagnostic are corrected. Codex
+    `0.154.0-alpha.6.2` ran the no-bypass inventory in ephemeral session
+    `01a0b49d-6169-7812-810b-c3f61ef0ef0e`, but its diagnostics did not provide a complete hook
+    source inventory. The result was therefore inconclusive: the hook-trust bypass was not used,
+    the capture and subprocess harness were not run, and no live or tracked hook changed. The
+    preserved experiment result is `.novc/hook-serialization-é/experiment-result.json`.
+14. **Finding 14 was fixed by `4e30b0f4` and `18aabf8d`.** The two module paths now include `py/`,
+    and the Holman workflow distinguishes theme custom properties that use `light-dark(...)` from
+    fixed badge colors.
+15. **Finding 15 was fixed by `18aabf8d`.** The New York label rule now governs generated clock
+    dates and timestamps, with the approved historical, citation, quotation, release, revision and
+    name exemptions.
+16. **Finding 16 was fixed by `18ddfbf7`; finding 16.9 remains a nondefect.** The timing updates
+    correct the attribution, medians, ratio blanks, receipt prose, names and replacement extent.
+    The new laptop update records the inferred `-04:00` offset and its approximately -04:01:05 to
+    -03:58:09 bracket without claiming a recorded zone name.
+17. **Finding 17 was fixed by `18ddfbf7`.** The September 14 review update now records the corrected
+    remedy attribution and the supported disposition, source, reference and reproducibility
+    shortcomings without rewriting the finished turns.
+18. **Finding 18 was fixed by `18ddfbf7`.** The live speedup plan retains only the provenance gap
+    for 37.7 MB and now gives the corrected commit set, baseline suite count, verification commands
+    and recoverable record aliases.
+19. **Finding 19 was fixed by `18ddfbf7` and `18aabf8d`; part 19.4 was already resolved at baseline
+    `d3edadc6`.** The receipt update corrects the prose-system wording, and the remaining skill and
+    plan prose removes the redundant “own”, fixes formatting and the drive path, numbers the three
+    exemptions and names the intended works directly.
+20. **Finding 20 was fixed by `18aabf8d`.** The review procedure now establishes windows from
+    endpoint commits and corroborates pushes directly rather than treating commit-date queries as
+    a completeness check.
+
+The four affected hand-run generator modes all succeeded. Their eight tracked output changes were
+not resolver regressions: they refreshed stale Sefaria and OSIS derivatives of the Wikisource
+input change in `b5b15c01`, and `61aa48ee` records the inspected result. The final mega completed
+all 54 steps, its MAM-parsed verification reported 79 passed, 0 failed and 1 pending, and it left
+no tracked diff.
+
+Verification passed: the filename lint reported 2 passed; the receipt, time-zone, prose,
+post-stress-meteg, retirement-policy, dualcant-loader and mega-coverage group reported 13 passed;
+the MAM-simple resolver matrix reported 2 passed; the operational retirement simulation exited
+zero; repository standards passed; and the final full suite reported 1003 passed, 5 skipped and 1
+warning. Every staged commit passed `git diff --cached --check`, and changed Python files passed
+Black. The deployed user configuration was then checked against pushed
+`origin/main@61aa48ee730a3cff222f28886298c6a06079586e` with
+`USER_CONFIG_PROBLEM_COUNT=0`.
+
+Product axis: the remediation reaches generated Sefaria and OSIS data through the eight inspected
+refresh diffs in `61aa48ee`; the final mega added no product diff. Act axis: the substantive head
+was backed up to the existing remote review branch, fast-forwarded to `main`, pushed and deployed
+to the live user-configuration destinations. No issue changed, no history was rewritten and no
+worktree was retired. The closing documentation commit still requires its planned backup,
+fast-forward and final `main` push.

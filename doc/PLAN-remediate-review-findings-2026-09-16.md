@@ -1,7 +1,6 @@
 # Plan: remediate the closed 2026-09-16 dual-agent review
 
-State: live. Written 2026-09-17 after Ben approved the dispositions. Ben approved the concrete
-editorial wording on 2026-09-18, and remediation is in progress.
+State: executed 2026-09-18. The substantive remediation, required repository verification, integration of the substantive branch head, and user-configuration deployment are complete. This closing record commit requires only its documentation fast-forward and push.
 
 This is a fresh-task plan for the existing shared checkout
 `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-2026-09-16` on branch
