@@ -145,7 +145,8 @@ the final dispositions of the twenty findings:
     `01a0b49d-6169-7812-810b-c3f61ef0ef0e`, but its diagnostics did not provide a complete hook
     source inventory. The result was therefore inconclusive: the hook-trust bypass was not used,
     the capture and subprocess harness were not run, and no live or tracked hook changed. The
-    preserved experiment result is `.novc/hook-serialization-é/experiment-result.json`.
+    cleanup disposition and durable hashes for the ignored experiment result are recorded below;
+    the `.novc/` path is not durable evidence.
 14. **Finding 14 was fixed by `4e30b0f4` and `18aabf8d`.** The two module paths now include `py/`,
     and the Holman workflow distinguishes theme custom properties that use `light-dark(...)` from
     fixed badge colors.
@@ -191,3 +192,61 @@ was backed up to the existing remote review branch, fast-forwarded to `main`, pu
 to the live user-configuration destinations. No issue changed, no history was rewritten and no
 worktree was retired. The closing documentation commit still requires its planned backup,
 fast-forward and final `main` push.
+
+## Cleanup evidence disposition recorded on 2026-09-18
+
+Recorded by Codex on 2026-09-18, New York time, before the cleanup task's planned removal of the
+review worktree. The inventory found 4,295 files totaling 8,304,766 bytes under `.novc/`. Every
+item has one of these prefix-complete dispositions:
+
+- `codex-turn02-20260917/` (5 files, 9,519 bytes), `darp-2026-09-16/` (4 files, 31,347 bytes),
+  `review-2026-09-16/` (286 files, 5,149,689 bytes), and `review-2026-09-16-turn03/` (52 files,
+  958,952 bytes) are redundant review scripts, captures, reports, prompt copies and test output;
+- `remeasure_filename_git_calls_2026_09_16.json` and
+  `remeasure_filename_git_calls_2026_09_16.py` (2 files, 25,226 bytes together),
+  `verify_review_history_2026_09_18.py` (1 file, 2,202 bytes), and `t/` (3,916 files,
+  2,093,002 bytes) are reproducible measurement scripts and pytest or retirement-simulation
+  temporary trees; and
+- `hook-serialization-é/` (29 files, 34,829 bytes) is the inconclusive hook experiment. This
+  entry preserves its lasting result and hashes; its isolated Git repository, config, helper
+  scripts, sample hooks and captured diagnostics are disposable scratch after this entry is
+  integrated.
+
+The hook experiment ran under Codex `0.154.0-alpha.6.2` in ephemeral session
+`01a0b49d-6169-7812-810b-c3f61ef0ef0e`. The no-bypass inventory exited zero and wrote
+`INVENTORY` to both its last-message and stdout files, but its 904-byte stderr did not enumerate
+every hook source. The approved stop rule therefore made the result inconclusive: no bypass,
+capture, classification or subprocess harness ran, and no live or tracked hook changed. The
+scratch evidence still matched these SHA-256 hashes immediately before disposition:
+
+- experiment result:
+  `CF5691ED43FB71D038355F14CE37366CB45E988E681F674B10AB8BC0BA10DDBD`;
+- pre-inventory permitted-hook record:
+  `316AB3227ED794834AF2CAA7D5B129983F8FAF0FC342CA8B260812069F08EB2D`;
+- project hook definition:
+  `A4611F9413EDA8C0FB5E9AE5FAAE175B1D9D32DC697E6660B06B0D573E7B9CD4`;
+- capture helper:
+  `A9BD2BF5B8381008913C56F8E388E8913BEB00CFED7A23356C2BF9FAE1F6F843`;
+- inventory last message:
+  `44E764C4A7DB9A4F8E25B2826D2DF39BD21670A30BD9C74ED108FA889A61584D`;
+- inventory stdout:
+  `8B5DB0AA4B11806BDC91BDB0D6606F988A58EFCC9204C9272732DC93AB56DC9E`;
+- inventory stderr:
+  `17EA4571B8D377642917804F1B6DDE855855520EB3C9C9B52AC0AFDF3CD40767`;
+- live user hook definition:
+  `5ACBD9978BFFB22944F93F48B71272741F9509CA3ADA7D2812A9D6B48EC90D2C`; and
+- live hook command:
+  `33C24422DBE49A07BBFA2A92407580FEA110E3274B8B80608D194221A1B4E0D4`.
+
+Outside `.novc/`, `.pytest_cache/`, `.ruff_cache/` and every `__pycache__/` directory reported by
+Git contain only reproducible tool caches and bytecode and are disposable with the worktree. The
+access-restricted `.pytest_cache/` was inspected separately and contained only its three metadata
+files and one pytest node-id cache. A second access-context inspection covered the restricted
+`codex-turn02-20260917/pytest-temp/`, which contained one test-output Markdown file. The complete
+tree had no junction, symbolic link or other reparse point, and no process other than the
+inspection command named the exact worktree path. These facts permit ordinary non-forced removal
+after this documentation commit is backed up, integrated and published.
+
+Product axis: this cleanup entry reaches no repository product. Act axis: preserving the durable
+evidence requires the ordinary review-branch backup, `main` fast-forward and push; later worktree
+and local-branch removal dispose only the explicitly classified scratch and merged local state.
