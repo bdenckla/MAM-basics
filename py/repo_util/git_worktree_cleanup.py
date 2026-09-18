@@ -29,13 +29,6 @@ def is_linked_worktree(repo_dir: Path, path: Path) -> bool:
     )
 
 
-def is_claude_owned_worktree(repo_dir: Path, path: Path) -> bool:
-    return any(
-        worktree_retirement._same_path(record.path, path)
-        for record in worktree_retirement.select_worktrees(repo_dir, owner="claude")
-    )
-
-
 def clean_worktrees(
     repo_dir: Path, *, sessions_ended: Collection[Path] = (), owner: str = "claude"
 ) -> CleanupReport:

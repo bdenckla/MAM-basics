@@ -187,7 +187,6 @@ def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
     return resolve_book_group_path(
         mam_simple_dir.parent,
         fmt="json",
-        vtrad="bhs",
         stems=stems,
         requested_dir=mam_simple_dir,
         allow_mam_fallback=False,

@@ -615,8 +615,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             # ignored, and the worktree meant would be spared as "may be in use"
             # with nothing saying that the override missed it.
             parser.error(
-                "--session-ended names no linked worktree of the selected repos: "
-                + ", ".join(str(path) for path in unknown)
+                "--session-ended names no linked worktree in the selected owner scope "
+                "of the selected repos: " + ", ".join(str(path) for path in unknown)
             )
         # Same contract as --run-black: a repo the sweep could not clean fails
         # the run rather than being passed over. A worktree deliberately spared
