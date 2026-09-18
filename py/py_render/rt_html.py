@@ -57,10 +57,11 @@ INDEX_NAV_LABEL = "Index"
 # ketiv/qere vocabulary stays exactly as it is -- it names a category that still
 # exists, and it drives this page's filtering. The FILENAME is unchanged,
 # deliberately: table_data_findings.html is the URL index.html links and the one Ben
-# has already sent to correspondents.
-MAIN_PAGE_TITLE = "Holman MAM suggestions"
-SUPPRESSED_PAGE_TITLE = "Holman MAM suggestions - Archived"
-MAIN_PAGE_HEADING = "Holman MAM suggestions"
+# has already sent to correspondents. The 2026-09-18 wording parallels the UXLC
+# report and describes the records as proposals rather than observations.
+MAIN_PAGE_TITLE = "Daniel Holman’s change proposals for MAM"
+SUPPRESSED_PAGE_TITLE = "Daniel Holman’s change proposals for MAM — Archived"
+MAIN_PAGE_HEADING = "Daniel Holman’s change proposals for MAM"
 SUPPRESSED_PAGE_HEADING = "Archived"
 # Two things reach the Archived page by two different routes: a ketiv/qere row
 # whose GitHub issue is closed, and a MAM suggestion with a ruling in

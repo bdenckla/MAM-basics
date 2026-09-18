@@ -1,60 +1,30 @@
-"""The landing page's authored content: Ben's index of the documents he has written.
+"""The landing page's ordered topical index.
 
-WHERE THIS CAME FROM.  ``document-index/README.md``, a separate repo until 2026-08-31,
-transcribed entry for entry.  ``doc/PLAN-unify-the-document-index.md`` is the record of the
-move and of the three decisions Ben took when it was proposed.  Two of those decisions are
-visible in the shape of this file:
+``SECTIONS`` is the sole source for ``build_body`` in ``author_site.site_index``.  The
+index distinguishes published MAM editions from repository datasets, then groups related
+studies, excerpts, technical resources, and reviews by subject.  The structure stays flat
+except for the named four-part Masoretes series.  Unicode and Taamey D are linked headings
+because each heading is itself the sole destination for that topic.
 
-* **One page.**  The publication manifest that used to be the whole of the landing page
-  became this page's last section, headed "Pages published from this repository", and was
-  DERIVED rather than listed, by an ``author_site/published_subtrees.py`` this file's
-  docstring pointed at.  Ben deleted that section on 2026-08-31, having disliked it, and
-  asked that the pages it reached through ``gh-pages/wlc/index.html`` be distributed to
-  the top-level sections instead -- so the four of that page's seven the index did not
-  already name were added, and the whole file is authored now, with no derived half.  All
-  four went to ``_WLC`` first; the same day Ben moved three of them to ``_MISC``, not
-  being WLC-specific, and the comment for that section has the counts behind it.
-* **Flat, then trimmed.**  Ben, 2026-08-31, asked for "a 'misc' section with links to
-  those 10 documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that
-  reaching any of his documents took one click from here and not two.  Later the same day
-  he asked for the section to be trimmed "down to documents not reachable from another,
-  document already listed", which cut eleven of its thirteen entries.  The comment for ``_MISC``
-  names each of the eleven and the page that reaches it.
+Every internal href is relative so the generated page works both in a local checkout and
+at the site root.  ``py/tests/test_site_index_links.py`` walks all typed anchors, including
+heading links and grouped entries, to verify tracked targets and deploy-root reachability.
 
-THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRIED THE LINK TEXT FROM
-``gh-pages/wlc/index.html``, verbatim, down to its em dashes -- that Ben-written page is where Ben had already
-named each of them for a reader, so distributing them was a move rather than a rewrite.
-Only ``almost-errors``, in ``_WLC``, still is on this page: the trim later that day cut the
-other three, ``printed-decalogue``, ``printed-decalogue-uvinkha`` and
-``ps17v14-double-tsinnor``, all of which ``goerwitz.html`` or ``almost-errors.html``
-reaches.  So no entry here reads differently from the page's ``<title>`` any more, and
-every ``_MISC`` entry copies a ``py/author_misc/`` module's ``_TITLE``.
+The two translated excerpts from the Introduction to MAM copy the ``_TITLE`` constants of
+their ``py/author_misc/`` renderers.  The same lint compares those copies mechanically, so
+edit the source page title and this index entry together rather than retyping one side.
 
-THE HEADINGS ARE NOT INVENTED.  document-index's top-level list mixed four category
-bullets with two lone documents.  Rendering categories as ``<h2>`` sections is flatter than
-nesting lists, and the two lone documents get a heading that is the NAME OF THE THING THEY
-POINT AT -- "Unicode and ISO Proposals" is that page's title, "Taamey D" the font's.
-So every heading here is either a category name from document-index or a name it used.
-
-WHAT WAS DELIBERATELY CHANGED, and it is exactly two hrefs.  document-index sent both of
-its gist-hosted reviews to gists that were cut down to forwarding stubs on 2026-08-31, when
-``15a09ae`` and ``9086da4`` moved their text into ``py/author_misc/``.  Following either
-link reached a page whose only content was a pointer.  Both now name the generated page
-directly, and no gist link survives on this page.  Everything else is document-index's,
-including its ordering, its parentheticals and its two lead-in sentences.
-
-THE MISC TITLES MATCH THE PAGES' TITLES.  They are copies of ``_TITLE`` in the matching
-``py/author_misc/`` module, and ``py/tests/test_site_index_links.py`` fails if a copy drifts
-from its original.  Do not edit one here without editing the module -- and do not retype
-one: the two that survived the trim carry no Hebrew, but the modules' titles elsewhere in
-``py/author_misc/`` do, along with curly apostrophes.
+``gh-pages/wlc/index.html`` remains deliberately absent.  The index names the useful WLC
+destinations directly, while the frozen redirect manifest preserves the old wlc-utils
+route.  The Almost-errors page is likewise not a top-level entry because Goerwitz Run on
+WLC links to it.
 """
 
 from __future__ import annotations
 
 from mb_cmn import str_defs as sd
 
-from author_site.entries import Anchor, Entry, Italic, Section
+from author_site.entries import Anchor, Entry, EntryGroup, Italic, Section
 
 _RSQM = "\N{RIGHT SINGLE QUOTATION MARK}"
 _EM_DASH = "\N{EM DASH}"
@@ -62,13 +32,11 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
 _MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
-_MAM_SIMPLE = "https://bdenckla.github.io/MAM-basics/MAM-simple/"
-_MAM_FOR_SEFARIA = "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/"
-_MAM_PARSED = "https://bdenckla.github.io/MAM-basics/MAM-parsed/"
-_MAM_OSIS = "https://bdenckla.github.io/MAM-basics/MAM-OSIS/"
 _PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
 _TAAMEY_D = "https://bdenckla.github.io/hbofonts/Taamey_D.html"
 _GDOC = "https://docs.google.com/document/d/e"
+_REPO = "https://github.com/bdenckla/MAM-basics"
+_REPO_MAIN = f"{_REPO}/blob/main"
 
 UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
@@ -134,49 +102,115 @@ def _mwd_misc(title: str, fname: str) -> Entry:
     return _entry(title, _MWD_MISC + fname)
 
 
-LEAD_IN = "Links to public documents of which I am the author (or an author):"
-
-LEAD_IN_NOT_MINE = (
-    "Documents of which I am neither the author nor an author, but are"
-    f" {sd.LDQM}mine{sd.RDQM} in some sense:"
+INTRO = (
+    "Links to editions and datasets of MAM, together with related studies, excerpts, "
+    "reviews, and technical resources."
 )
 
-_UNICODE = Section(
-    heading=UNICODE_PROPOSALS_TITLE,
-    entries=(_entry("Unicode proposals I have submitted", UNICODE_PROPOSALS_FNAME),),
-)
-
-_MAM = Section(
-    heading="MAM",
+_EDITIONS = Section(
+    heading="MAM editions",
     entries=(
         _entry(
-            "Miqra as Oral Torah, Written Torah and Digital Torah",
-            "https://hakirah.org/vol36Kadish.pdf",
-            subs=("in Ḥakirah volume 36", "co-author Seth (Avi) Kadish"),
+            "MAM on Hebrew Wikisource",
+            "https://he.wikisource.org/wiki/מקרא_על_פי_המסורה",
         ),
+        _entry("Phonetic MAM", _PHONETIC),
         _entry(
-            f"MAM and UXLC {_EM_DASH} two Hebrew Bible datasets",
-            "https://t.co/YmM3Wj9RVr",
-            note=(" (presented at the 2023 SBL Annual Meeting in San Antonio)",),
+            "MAM on Sefaria",
+            "https://www.sefaria.org/Genesis.1?lang=bi&vhe=hebrew%7C"
+            "Miqra_according_to_the_Masorah",
         ),
-        _entry("MAM FOI (Features of Interest) Lists", f"{_MWD}foi/index.html"),
-        _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_FNAME),
+        _entry("MAM with doc", _MWD),
         _entry(
-            ("Notes on Torah ", Italic("aliyot")),
-            f"{_MWD_MISC}notes_on_aliyot.html",
+            "MAM for SWORD (CrossWire MapM)",
+            "https://ftp.crosswire.org/sword/modules/ModInfo.jsp?modName=MapM",
         ),
     ),
 )
 
-_HEBREW_BIBLE_RESOURCES = Section(
-    heading="Hebrew Bible resources",
+_DATASETS = Section(
+    heading="MAM datasets and technical documentation",
     entries=(
-        _entry("UXLC-utils web pages", "uxlc/index.html"),
+        _entry("MAM-parsed", f"{_REPO_MAIN}/MAM-parsed/README.md"),
+        _entry("MAM-simple", f"{_REPO_MAIN}/MAM-simple/README.md"),
+        _entry("MAM-for-Sefaria", f"{_REPO_MAIN}/MAM-for-Sefaria/README.md"),
+        _entry("MAM-OSIS", f"{_REPO_MAIN}/MAM-OSIS/README.md"),
+    ),
+)
+
+_ABOUT_MAM = Section(
+    heading="About MAM",
+    entries=(
         _entry(
-            "Daniel Holman's observations on the Hebrew Bible text",
-            "holman/index.html",
+            "Miqra as Oral Torah, Written Torah and Digital Torah",
+            "https://hakirah.org/vol36Kadish.pdf",
+            note=(" (in Ḥakirah volume 36; co-author Seth (Avi) Kadish)",),
         ),
+        _entry(
+            f"MAM and UXLC {_EM_DASH} two Hebrew Bible datasets",
+            "https://1drv.ms/p/s!AgRN8M0NNCoaiP0oo3o1BMXeqb7PIQ",
+            note=(" (presented at the 2023 SBL Annual Meeting in San Antonio)",),
+        ),
+        _entry("MAM FOI (Features of Interest) Lists", f"{_MWD}foi/index.html"),
+        _entry(
+            ("Notes on Torah ", Italic("aliyot")),
+            f"{_MWD_MISC}notes_on_aliyot.html",
+        ),
+        _entry(
+            f"Daniel Holman{_RSQM}s change proposals for MAM",
+            "holman/table_data_findings.html",
+        ),
+    ),
+)
+
+_INTRODUCTION_EXCERPTS = Section(
+    heading="Excerpts from the Introduction to MAM",
+    entries=(
+        _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
+        _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
         _entry(f"Aleppo Codex {_EM_DASH} Missing Sections", "aleppo/index.html"),
+    ),
+)
+
+_URWOTM = EntryGroup(
+    label="Undoing and redoing the work of the Masoretes",
+    entries=(
+        _entry(
+            "The tale of the qadma",
+            f"{_MWD_MISC}urwotm_1_tale_of_the_qadma.html",
+            label="Part 1: ",
+        ),
+        _entry(
+            "Saying the quiet part out loud",
+            f"{_MWD_MISC}urwotm_2_saying_the_quiet_part_out_loud.html",
+            label="Part 2: ",
+        ),
+        _entry(
+            "Extra verses",
+            f"{_MWD_MISC}urwotm_3_extra_verses.html",
+            label="Part 3: ",
+        ),
+        _entry(
+            "Atnaḥ hafukh",
+            f"{_MWD_MISC}urwotm_4_atnax_hafukh.html",
+            label="Part 4: ",
+        ),
+    ),
+)
+
+_POINTING_AND_CANTILLATION = Section(
+    heading="Pointing and cantillation",
+    entries=(
+        _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_FNAME),
+        _entry(
+            (
+                "Excerpts from ",
+                Italic("Introduction to the Tiberian Masorah"),
+                " by Israel Yeivin",
+            ),
+            f"{_PHONETIC}yeivin_itm.html",
+        ),
+        _URWOTM,
     ),
 )
 
@@ -217,8 +251,8 @@ _REVIEWS = Section(
     ),
 )
 
-_WLC = Section(
-    heading="WLC",
+_WLC_AND_UXLC = Section(
+    heading="WLC and UXLC",
     entries=(
         _entry(
             "All changes in Westminster Leningrad Codex (WLC) version 4.22",
@@ -230,139 +264,45 @@ _WLC = Section(
         ),
         _entry("All WLC a-notes", "wlc/wlc-a-notes/index.html"),
         _entry("Goerwitz Run on WLC", "wlc/accgram/goerwitz.html"),
+        _entry("UXLC-utils web pages", "uxlc/index.html"),
         _entry(
-            f"Almost errors {_EM_DASH} editorial charities the checker applies",
-            "wlc/accgram/almost-errors.html",
+            f"Daniel Holman{_RSQM}s change proposals for UXLC",
+            "holman/uxlc_corrections.html",
         ),
     ),
 )
 
-_URWOTM = Section(
-    heading="Undoing and redoing the work of the Masoretes",
-    entries=(
-        _entry(
-            "The tale of the qadma",
-            f"{_MWD_MISC}urwotm_1_tale_of_the_qadma.html",
-            label="Part 1: ",
-        ),
-        _entry(
-            "Saying the quiet part out loud",
-            f"{_MWD_MISC}urwotm_2_saying_the_quiet_part_out_loud.html",
-            label="Part 2: ",
-        ),
-        _entry(
-            "Extra verses",
-            f"{_MWD_MISC}urwotm_3_extra_verses.html",
-            label="Part 3: ",
-        ),
-        _entry(
-            "Atnaḥ hafukh",
-            f"{_MWD_MISC}urwotm_4_atnax_hafukh.html",
-            label="Part 4: ",
-        ),
-    ),
-)
-
-# The two documents that NOTHING ELSE ON THIS PAGE REACHES.  Ben, 2026-08-31: trim this
-# section "down to documents not reachable from another, document already listed".
-#
-# WHAT THAT REVERSES, since it was decided the same day.  This section opened as the ten
-# documents under MAM-with-doc/misc/ that document-index did not carry, so that reaching
-# any document of Ben's took one click from here rather than two; three accgram pages
-# published from this repo joined them when the manifest section was retired.  Eleven of
-# those thirteen are reachable by following links from a document this page already names,
-# and are cut on that ground:
-#
-# * rocc_0_review_of_ctr.html, this page's "Review of Chabad's web Tanakh", links the four
-#   rocc_1..rocc_4 pages and tsinnorit_and_oleh_on_ivs.html directly.
-# * tsinnorit_and_oleh_on_ivs.html then links tsinnorit_and_oleh_facts.html and
-#   tsinnorit_in_psalm_32v5.html, which links tsinnorit_and_the_xxd_in_bhs.html.
-# * wlc/accgram/goerwitz.html and wlc/accgram/almost-errors.html, both named under WLC,
-#   link printed-decalogue.html and ps17v14-double-tsinnor.html; printed-decalogue.html
-#   links printed-decalogue-uvinkha.html.
-#
-# Gray maqaf and Paseq and legarmeh survive because no page anywhere in this site or in
-# MAM-with-doc links either one: cut from here, they would be reachable by no number of
-# clicks, which is the thing Ben objects to.  MAM-with-doc/gh-pages/misc/index.html names
-# them but is itself linked from nothing, so it rescues neither.
-#
-# Re-establish the whole finding by crawling both gh-pages trees from the documents this
-# page names; the counts above were measured 2026-08-31 against MAM-basics 027acc3.
-_MISC = Section(
-    heading="Misc",
-    entries=(
-        _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
-        _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
-    ),
+_UNICODE = Section(
+    heading=Anchor(UNICODE_PROPOSALS_TITLE, UNICODE_PROPOSALS_FNAME),
+    entries=(),
 )
 
 _TAAMEY = Section(
-    heading="Taamey D",
-    entries=(
-        _entry(
-            f"Documentation for my Biblical Hebrew font, {sd.LDQM}Taamey D{sd.RDQM}",
-            _TAAMEY_D,
-            note=(
-                " (",
-                Anchor(
-                    "latest release of that font",
-                    "https://bdenckla.github.io/hbofonts/downloads/latest/"
-                    "Taamey_D_and_friends.zip",
-                ),
-                ")",
-            ),
-        ),
-    ),
+    heading=Anchor("Taamey D", _TAAMEY_D),
+    entries=(),
 )
 
-_EDITIONS = Section(
-    heading="Editions of MAM",
-    entries=(
-        _entry("Phonetic MAM", _PHONETIC),
-        _entry("MAM-simple", _MAM_SIMPLE),
-        _entry("MAM-for-Sefaria", _MAM_FOR_SEFARIA),
-        _entry("MAM-parsed", _MAM_PARSED),
-        _entry("MAM with doc", _MWD),
-        _entry("MAM-OSIS", _MAM_OSIS),
-    ),
-)
-
-_EXCERPTS = Section(
-    heading="Excerpts",
-    entries=(
-        _entry(
-            (
-                "Excerpts from ",
-                Italic("Introduction to the Tiberian Masorah"),
-                " by Israel Yeivin",
-            ),
-            f"{_PHONETIC}yeivin_itm.html",
-        ),
-    ),
-)
-
-# document-index's order, which is Ben's.
-BY_ME = (
-    _UNICODE,
-    _MAM,
-    _HEBREW_BIBLE_RESOURCES,
+# Ben's 2026-09-18 topical order.
+SECTIONS = (
+    _EDITIONS,
+    _DATASETS,
+    _ABOUT_MAM,
+    _INTRODUCTION_EXCERPTS,
+    _POINTING_AND_CANTILLATION,
+    _WLC_AND_UXLC,
     _REVIEWS,
-    _WLC,
-    _URWOTM,
-    _MISC,
+    _UNICODE,
     _TAAMEY,
 )
-NOT_BY_ME = (_EDITIONS, _EXCERPTS)
 
-# The MAM-with-doc half of the Misc section, and the modules whose _TITLE each entry copies.
-# Paired rather than derived twice, so the lint cannot zip an entry against another entry's
-# module.  The whole section is MAM-with-doc since the 2026-08-31 trim, so the href filter
-# selects everything today; it stays because an entry naming a page published from this repo
-# copies no module's _TITLE, and Misc has twice held such entries.
-MISC_MWD_ENTRIES = tuple(
-    entry for entry in _MISC.entries if entry.anchor.href.startswith(_MWD_MISC)
+# The two translated Introduction-to-MAM entries and the source modules whose titles they
+# copy.  Keeping both ordered tuples lets the lint compare each entry with its own source.
+INTRO_MAM_MWD_ENTRIES = tuple(
+    entry
+    for entry in _INTRODUCTION_EXCERPTS.entries
+    if entry.anchor.href.startswith(_MWD_MISC)
 )
-MISC_SOURCE_MODULES = tuple(
+INTRO_MAM_SOURCE_MODULES = tuple(
     entry.anchor.href[len(_MWD_MISC) :].removesuffix(".html")
-    for entry in MISC_MWD_ENTRIES
+    for entry in INTRO_MAM_MWD_ENTRIES
 )

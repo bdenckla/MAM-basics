@@ -1,53 +1,19 @@
-"""The site's landing page, ``gh-pages/index.html``.
+"""Render the topical landing page at ``gh-pages/index.html``.
 
-WHAT THIS PAGE IS.  From Phase 2 of ``doc/PLAN-unify-the-document-index.md``, Ben's index
-of the documents he has written, which lived in its own repo as ``document-index/README.md``
-until 2026-08-31.  Every entry is AUTHORED, in ``site_data``: they name work of Ben's
-wherever it lives, on this site or on hakirah.org, and no program can derive them.
+``build_body`` renders the single ordered ``site_data.SECTIONS`` collection.  Most
+sections are an ``<h2>`` followed by one flat list.  A linked heading is its own sole
+destination and therefore has no empty list, while the Masoretes series is the page's one
+deliberate nested list.
 
-THE DERIVED HALF IS GONE, and this paragraph is here so nobody rebuilds it.  A last section
-headed "Pages published from this repository" listed one entry per tracked
-``gh-pages/<subtree>/index.html``, derived by an ``author_site/published_subtrees.py``, per
-the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-public-repos-programme.md``.  Ben deleted
-that section on 2026-08-31, having disliked it: its single entry sent a reader to
-``gh-pages/wlc/index.html`` to find seven pages, four of which this page did not name
-anywhere else, and he asked for those four to be distributed to the sections above instead.
-``published_subtrees.py`` was deleted with the section it existed for -- so a subtree
-published from here is named by an authored entry or it is named nowhere, exactly as
-``gh-pages/unicode-proposals.html`` always was.  Three of the four distributed pages left
-the page again later that day, when Ben trimmed ``site_data``'s ``_MISC`` to the entries no
-other listed document reaches; ``almost-errors`` stayed, in ``_WLC``.
+The page remains fully authored rather than derived from the deployment tree.  The
+mechanical lint in ``py/tests/test_site_index_links.py`` checks every typed internal link
+and the deploy-root reachability rule.  The frozen ``gh-pages/wlc/index.html`` remains an
+intentional non-entry: old wlc-utils links redirect to it, while the topical index names
+the useful WLC destinations directly.
 
-``gh-pages/wlc/index.html`` IS LINKED FROM NO PAGE NOW, AND THAT IS SETTLED.  Removing the
-section left it reachable from nothing on this site, and Ben's rule the same day is that a
-page unreadable "by any number of clicks" is the thing he objects to -- placement on this
-page being optional.  He ruled on 2026-08-31 that this one is reachable anyway: it is a
-frozen target in ``in/wlc_redirect_pages.json``, so the stub for
-``bdenckla.github.io/wlc-utils/index.html`` forwards to it, and following an old wlc-utils
-link is a real way to read it.  That is also why the file cannot simply be deleted -- the
-stub would 404 and ``py/tests/test_redirect_manifest.py`` would fail.  **Do not
-un-strand it by adding an entry here.**  When this paragraph was written, the seven pages
-it lists were exactly the pages ``site_data``'s ``_WLC`` then named; the same evening's
-Misc trim cut ``_WLC`` to four of the seven (420422, wlc-a-notes, goerwitz,
-almost-errors), and the other three (the two printed-Decalogue pages and
-ps17v14-double-tsinnor) stay reachable from this landing page through links on the
-goerwitz and almost-errors pages -- re-measured by the 2026-09-01 review's crawl, which
-reached every tracked gh-pages page except ``wlc/index.html`` itself.  So an entry here
-would still be redundant as well as a step back toward the section Ben had just removed.
-A reachability sweep will keep reporting it; this paragraph is the answer.
-
-NOT ``author.dollar_sub``.  Every other authored page here runs its text through
-``mb_author.author``, whose ``_check_no_undollared`` RAISES on an un-``$``-prefixed
-romanization key.  This page's link text is full of them -- tsinnorit, maqaf, qadma,
-paseq, shewa -- because the titles are other pages' titles, lifted verbatim.  So this
-module renders with bare ``mb_html``, exactly as ``main_authored.py``'s own
-``_gen_index_html`` does for the misc index, and for the same reason.
-
-WHAT THE FIRST GENERATED PAGE CHANGED, so a later reader does not go looking for a bug.
-This file replaced a hand-written ``gh-pages/index.html`` that said so in a comment.  The
-generated page says the same things in the same order; what moved is whitespace, because
-``mb_html``'s serializer indents nothing and puts ``<title>`` on one line, where the
-hand-written page indented and split it.  See the plan's Phase 1.
+This renderer deliberately uses bare ``mb_html`` rather than ``author.dollar_sub``.
+Several copied document titles contain ordinary romanization words such as maqaf, qadma,
+and paseq; treating those titles as author-source markup would reject them.
 """
 
 from __future__ import annotations
@@ -60,10 +26,10 @@ from mb_cmn import provenance
 from mb_misc import mb_html
 
 from author_site import site_data
-from author_site.entries import Anchor, Entry, Italic, Part, Text
+from author_site.entries import Anchor, Entry, EntryGroup, Italic, Part, Text
 
 _FNAME = "index.html"
-_TITLE = "Documents by Ben Denckla"
+_TITLE = "The Miqra according to Denckla."
 
 _REPO_URL = "https://github.com/bdenckla/MAM-basics"
 _README_URL = f"{_REPO_URL}/blob/main/README.md"
@@ -91,26 +57,40 @@ def build_body():
     """The page's body contents, top to bottom."""
     return [
         mb_html.heading_level_1(_TITLE),
-        mb_html.para(site_data.LEAD_IN),
-        *_sections(site_data.BY_ME),
-        mb_html.para(site_data.LEAD_IN_NOT_MINE),
-        *_sections(site_data.NOT_BY_ME),
+        mb_html.para(site_data.INTRO),
+        *_sections(site_data.SECTIONS),
         _readme_pointer(),
     ]
 
 
 def _sections(sections):
-    """Every authored section, flattened: heading, list, heading, list."""
-    return [
-        el
-        for one in sections
-        for el in _headed_list(one.heading, [_entry_licont(e) for e in one.entries])
-    ]
+    """Every topical section, flattened into its heading and optional list."""
+    return [element for section in sections for element in _section(section)]
 
 
-def _headed_list(heading: str, liconts):
-    """The page's one repeated shape: an ``<h2>`` and the ``<ul>`` under it."""
-    return [mb_html.heading_level_2(heading), mb_html.unordered_list(liconts)]
+def _section(section):
+    """Render one section, omitting the list for a linked-heading destination."""
+    heading = (
+        _anchor(section.heading)
+        if isinstance(section.heading, Anchor)
+        else section.heading
+    )
+    rendered = [mb_html.heading_level_2(heading)]
+    if section.entries:
+        rendered.append(
+            mb_html.unordered_list([_list_item(item) for item in section.entries])
+        )
+    return rendered
+
+
+def _list_item(item: Entry | EntryGroup):
+    """Render an ordinary entry or the page's one named group of entries."""
+    if isinstance(item, EntryGroup):
+        return [
+            item.label,
+            mb_html.unordered_list([_entry_licont(entry) for entry in item.entries]),
+        ]
+    return _entry_licont(item)
 
 
 def _entry_licont(entry: Entry):
@@ -127,11 +107,11 @@ def _entry_licont(entry: Entry):
 
 
 def _readme_pointer():
-    """The closing pointer the hand-written page ended with, kept word for word."""
+    """The closing pointer to the MAM-basics repository documentation."""
     return mb_html.para(
         [
-            "For the project itself, see the ",
-            _anchor(Anchor("README", _README_URL)),
+            "For the MAM-basics source code and project documentation, see the ",
+            _anchor(Anchor("repository README", _README_URL)),
             ".",
         ]
     )
@@ -159,13 +139,10 @@ def _part(part: Part):
 def _rtl_split(text: str):
     """Wrap each Hebrew run of ``text`` in a ``dir="rtl"`` span, leaving the rest alone.
 
-    Three Misc titles embedded a Hebrew word in an English phrase until the 2026-08-31
-    trim cut all three, so no title the page carries today holds any Hebrew at all and
-    this function wraps nothing.  It stays because the rule it applies is the site's, not
-    those three titles': declaring the direction of a Hebrew run says what the fragment is,
-    which is what CLAUDE.md asks for, where declaring it on the whole list item would be a
-    claim about the English too.  Doing it here rather than in the data keeps site_data.py
-    free of rendering, and makes the rule apply to any Hebrew that arrives later.
+    Declaring the direction on a Hebrew fragment says what that fragment is, while
+    declaring it on an entire English list item would misdescribe the surrounding text.
+    Keeping the split here leaves ``site_data.py`` free of rendering details and applies
+    the rule to any Hebrew that arrives later.
     """
     parts = [
         mb_html.span(run, {"dir": "rtl"}) if _is_hebrew(run) else run

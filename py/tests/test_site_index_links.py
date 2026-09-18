@@ -1,70 +1,14 @@
-"""Lint: the landing page's internal links, and the titles it copies from other pages.
+"""Mechanical lints for the topical landing-page model.
 
-WHY THIS EARNS ITS PLACE.  ``doc/agent-planning-principles.md`` allows two test shapes, and
-this is the second: a mechanical lint over the tree, both sides derived from tracked source,
-with no hand-picked example pinned anywhere.  It is also the check the history asked for.
-``gh-pages/index.html`` took over from ``document-index/README.md``, whose 41 commits
-include three that are pure link repair AFTER a page moved -- ``4d756b0`` "Update WLC links
-to new GitHub Pages URLs", ``aca96fd`` "Point the URWOTM series at the generated pages",
-``8f9a353`` "Repoint the four wlc-utils links at MAM-basics/wlc".  Each of those broke
-silently first and was noticed later, because the index lived in a different repository from
-the pages it named.  Now that the index is here, half of it can be checked.
+Every anchor reachable from ``site_data.SECTIONS`` is walked, including linked headings
+and entries nested in a group.  Links into this repository must name tracked files.  In
+the reverse direction, each HTML page at the deployment root must be named by the index or
+listed explicitly as an intentional indirect destination.
 
-WHAT IS CHECKED, AND WHAT DELIBERATELY IS NOT.  Only the links that point back into THIS
-repo's ``gh-pages/``. The rest of the index names MAM-with-doc, book-of-job, phonetic-hbo,
-hbofonts' current Taamey D pages, two gists' worth of former reviews, Google Docs and
-hkirah.org, and checking those would need either the network or a sibling clone. A
-sibling clone is the harder objection: under this repo's missing-input rule a test may
-not skip when its input is absent, so a sibling-aware check would have to FAIL on any
-machine without the clone.  So
-this file checks the half whose both sides are in this repo -- the same reasoning
-``py/tests/test_redirect_manifest.py``'s docstring gives for hoisting one check out of a
-program that cannot run here.
-
-THERE IS NO DERIVED HALF ANY MORE, and the lint got wider when it went.  A last section
-headed "Pages published from this repository" used to be built by an
-``author_site/published_subtrees.py`` from the set of tracked ``gh-pages/<name>/index.html``
-files, so its links named a tracked page BY CONSTRUCTION and this file deliberately let them
-be.  Ben deleted that section on 2026-08-31 and asked for the pages it reached to be
-distributed to the authored sections instead, so the four that moved into ``site_data``'s
-``_WLC`` and ``_MISC`` became typed links, checked here like every other typed link.  Three
-of those four left the page again with that day's Misc trim, which cut every Misc entry
-another listed document reaches; ``almost-errors`` is the one that stayed.
-
-BOTH DIRECTIONS ARE CHECKED SINCE 2026-09-03, and the second one is what Ben asked for
-when this repository's deploy root gained a second authored page.  Entry to file says
-that every index link naming a page here names a page that exists; file to entry says
-that every page published at the deploy root is named by an entry or is excluded BY
-NAME.  Without the second, a page generated at the deploy root with no ``site_data``
-entry is published and unreachable from the index, and nothing says so.
-
-WHY THE REVERSE CHECK STOPS AT THE DEPLOY ROOT.  Ben's 2026-09-07 decision added authored
-landing-page entries for the UXLC, Holman and Aleppo subtree indexes.  The forward check
-therefore verifies those three index files now.  It still does not crawl the entries within
-any subtree index: pages under ``gh-pages/wlc/`` and ``gh-pages/book-of-job/``, and pages below
-the three newly linked indexes, are reached through links below the deploy root.  Requiring an
-authored landing-page entry for every nested page would fail immediately and for the wrong
-reason.
-
-THE HOLMAN SUBTREE-INDEX GAP REMAINS ACCEPTED.  Ben said on 2026-09-03, *"I am at peace
-with no lint reaching this file."*  The 2026-09-07 landing-page entry reverses only the index's
-unreachability: this file now checks that ``gh-pages/holman/index.html`` exists, but still does
-not check that the hand-authored Holman index names every page beneath it or copies every page's
-title correctly.  That distinction keeps the accepted cost recorded where a future proposal to
-widen the lint will arise.
-
-WHY THE EXCLUSIONS ARE NAMED RATHER THAN INFERRED.  A deliberate omission must not be
-indistinguishable from an accident, which is what any rule of the form "skip the pages
-nothing names" would make it.  So the excluded pages are written out one at a time with
-the reason beside each, and an excluded name that has stopped being a tracked deploy-root
-page fails too -- a register nothing prunes is how a check quietly stops covering things.
-
-TRACKED, NOT MERELY PRESENT.  ``.github/workflows/pages.yml`` deploys what is committed, so
-a link to a generated-but-untracked page would 404 for every reader while resolving fine on
-the machine that generated it.  ``git ls-files`` is therefore the right oracle.
-
-A GREEN RUN THAT VERIFIED NOTHING IS A FAILURE.  Every test here asserts its input is the
-size it should be before asserting anything about it.
+External destinations are not fetched: doing so would turn a deterministic repository
+lint into a network and sibling-repository check.  The title-copy lint separately compares
+the two translated Introduction-to-MAM entries with the source modules that render them.
+Each check asserts a minimum input size so a broken walk cannot report green.
 """
 
 from __future__ import annotations
@@ -82,10 +26,10 @@ _PAGES_PREFIX = "gh-pages/"
 _MISC_MODULE_DIR = "py/author_misc"
 _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 
-# document-index carried 25 links and this page carries 35 after the 2026-09-08 index additions;
-# if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
+# The landing page carries well over 25 links; if the walk ever returns a handful, it is
+# walking the wrong thing.  Do not raise this to
 # the exact count: it is a floor guarding against a broken walk, not an inventory.
-_MIN_AUTHORED_ANCHORS = 25
+_MIN_LANDING_PAGE_ANCHORS = 25
 
 # The deploy root held index.html and unicode-proposals.html when this floor was set on
 # 2026-09-03. Two remains the floor: the index itself, and at least one page it names. Like the anchor floor
@@ -120,9 +64,9 @@ def _tracked_pages(repo_root: Path) -> set[str]:
     return {entry[len(_PAGES_PREFIX) :] for entry in result.stdout.split("\0") if entry}
 
 
-def _authored_anchors() -> list[Anchor]:
-    """Every link the landing page's authored data holds."""
-    return anchors_in([*site_data.BY_ME, *site_data.NOT_BY_ME])
+def _landing_page_anchors() -> list[Anchor]:
+    """Every link the landing page's ordered section data holds."""
+    return anchors_in(site_data.SECTIONS)
 
 
 def _in_site_target(href: str) -> str | None:
@@ -145,15 +89,15 @@ def _in_site_targets() -> set[str]:
     """Every ``gh-pages/``-relative path the landing page's authored data names."""
     return {
         _in_site_target(anchor.href)
-        for anchor in _authored_anchors()
+        for anchor in _landing_page_anchors()
         if _in_site_target(anchor.href) is not None
     }
 
 
 def test_every_in_site_link_names_a_tracked_page():
     """A link into this site's gh-pages must name a file that is published."""
-    anchors = _authored_anchors()
-    assert len(anchors) >= _MIN_AUTHORED_ANCHORS, len(anchors)
+    anchors = _landing_page_anchors()
+    assert len(anchors) >= _MIN_LANDING_PAGE_ANCHORS, len(anchors)
     tracked = _tracked_pages(paths.repo_root())
     assert tracked, "no files tracked under gh-pages/: wrong repo root?"
     targets = {
@@ -200,19 +144,20 @@ def test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name():
     )
 
 
-def test_the_misc_titles_match_the_source_pages():
-    """Each Misc entry's link text is still the _TITLE of the module that renders it."""
-    modules = site_data.MISC_SOURCE_MODULES
+def test_the_translated_introduction_titles_match_the_source_pages():
+    """Each translated excerpt still copies the title of the module that renders it."""
+    modules = site_data.INTRO_MAM_SOURCE_MODULES
     assert len(modules) == 2, modules
-    # Every Misc entry is a MAM-with-doc page since the 2026-08-31 trim, so the filtered
-    # half is the whole section today.  Pair with the filtered half anyway: Misc has twice
-    # held an entry naming a page published from this repo, whose link text copies no
-    # module's _TITLE, and zipping the whole section against the modules would then compare
-    # such an entry to a MAM-with-doc module and report drift that is the pairing's fault.
-    entries = site_data.MISC_MWD_ENTRIES
+    entries = site_data.INTRO_MAM_MWD_ENTRIES
     assert len(entries) == len(modules)
-    misc = next(one for one in site_data.BY_ME if one.heading == "Misc")
-    assert set(entries) <= set(misc.entries), "MISC_MWD_ENTRIES left the Misc section"
+    excerpts = next(
+        one
+        for one in site_data.SECTIONS
+        if one.heading == "Excerpts from the Introduction to MAM"
+    )
+    assert set(entries) <= set(
+        excerpts.entries
+    ), "INTRO_MAM_MWD_ENTRIES left the Introduction-to-MAM excerpts section"
     drifted = []
     for entry, module in zip(entries, modules):
         source = (paths.repo_root() / _MISC_MODULE_DIR / f"{module}.py").read_text(
@@ -223,7 +168,8 @@ def test_the_misc_titles_match_the_source_pages():
         if match.group(1) != entry.anchor.text:
             drifted.append((module, match.group(1), entry.anchor.text))
     assert not drifted, (
-        "Misc entries whose link text no longer matches the title of the page they name:"
+        "Introduction-to-MAM entries whose link text no longer matches the title of the"
+        " page they name:"
         f" {drifted}. Copy the module's _TITLE rather than editing it here, and copy it"
         " rather than retyping it: a py/author_misc/ title can carry Hebrew, a precomposed"
         " U+1E24 or a curly apostrophe."

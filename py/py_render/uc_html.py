@@ -52,8 +52,8 @@ from hkq_cmn.uxlc_standard_atoms import (
 )
 from uxlc_comments.all_comments import BY_REF as COMMENTS_BY_REF, comments_for_ref
 
-PAGE_TITLE = "Holman UXLC suggestions"
-PAGE_HEADING = "Daniel Holman's suggestions for the UXLC"
+PAGE_TITLE = "Daniel Holman’s change proposals for UXLC"
+PAGE_HEADING = "Daniel Holman’s change proposals for UXLC"
 # The nav reaches this report and the hand-written landing page, and stops
 # there. It used to carry two more links, to the ketiv/qere review and its
 # suppressed companion; Ben had them removed on 2026-08-11, the two bodies of

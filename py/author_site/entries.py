@@ -25,8 +25,7 @@ class Italic:
 
 
 # What an anchor's visible text may be: a plain string, or a run mixing strings and
-# Italic, for the two entries naming a book -- "Excerpts from [Introduction to the
-# Tiberian Masorah] by Israel Yeivin" and "Notes on Torah [aliyot]".
+# Italic, for the entries that name a book or italicize a term.
 Text = str | tuple[str | Italic, ...]
 
 
@@ -61,11 +60,25 @@ class Entry:
 
 
 @dataclass(frozen=True)
-class Section:
-    """A heading and the entries under it. A section with no heading is a bare list."""
+class EntryGroup:
+    """A plain list label whose child items are linked entries."""
 
+    label: str
     entries: tuple[Entry, ...]
-    heading: str = ""
+
+
+ListItem = Entry | EntryGroup
+
+
+@dataclass(frozen=True)
+class Section:
+    """A heading and its list items.
+
+    An ``Anchor`` heading is itself the destination and therefore has no list items.
+    """
+
+    entries: tuple[ListItem, ...]
+    heading: str | Anchor = ""
     intro: tuple[Part, ...] = field(default_factory=tuple)
 
 
