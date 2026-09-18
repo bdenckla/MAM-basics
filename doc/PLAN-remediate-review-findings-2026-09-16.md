@@ -1,7 +1,7 @@
 # Plan: remediate the closed 2026-09-16 dual-agent review
 
-State: live. Written 2026-09-17 after Ben approved the dispositions. Ben has not yet approved the
-concrete editorial wording in this plan, and no remediation in this plan has been executed.
+State: live. Written 2026-09-17 after Ben approved the dispositions. Ben approved the concrete
+editorial wording on 2026-09-18, and remediation is in progress.
 
 This is a fresh-task plan for the existing shared checkout
 `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-2026-09-16` on branch

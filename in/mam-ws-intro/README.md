@@ -25,9 +25,10 @@ have unrelated refresh rhythms, and nothing downstream reparses when the introdu
 Three things about it are worth knowing before you touch it:
 
 1. **Never summarize-fetch these pages, mirror or no mirror.** That is what the mirror is for.
-   `doc/sigil-decoding.md`'s source #1 records what a summarizing fetch did to the sigil roster
-   on 2026-08-06, and the mirrored wikitext is where you can see what it flattened.
-2. **This tree is exempt from the mark-order rule at the top of this file.** It is hand-authored
+   `doc/sigil-decoding.md`'s Source Hierarchy item 1 records what a summarizing fetch did to the
+   sigil roster on 2026-08-06, and the mirrored wikitext is where you can see what it flattened.
+2. **This tree is exempt from the MAM-normal mark-order rule documented in
+   `doc/mam-normal-mark-order.md`.** It is hand-authored
    wiki prose, so clusters in Unicode-normal rather than MAM-normal order are what the source
    says, not defects. Do not run `uni_check` or `has_std_mark_order` over it, and never
    normalize on refresh — the files are byte-verbatim by design.
@@ -43,8 +44,9 @@ repository generates them.** Each page began as wikitext from a one-off generato
 2026-08-31: those generated files "were only ever intended to be starting points for manual work
 on Wikisource." The published pages are that manual work. On Ben's decision of 2026-09-10 both
 generators and their outputs were removed from the repository — they "will never be run again"
-— so there is no generated form left to compare a mirrored page against. Phase 3 of
-`doc/PLAN-mega-coverage.md` names every file removed, and git history keeps them.
+— so there is no generated form left to compare a mirrored page against.
+`git show --stat 985262e2` names every file removed; Phase 3 of
+`doc/PLAN-mega-coverage.md` records the totals.
 
 Measured before the removal, **26 (4%)** of the Aleppo generator's 700 lines survived into the
 live page, and **94 (8%)** of the Leningrad generator's 1,135. The `aleppo/aleppo-wiki/` tree

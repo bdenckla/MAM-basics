@@ -6,8 +6,10 @@ one atom of that verse, and none of the three manuscripts has one there; the sec
 Sassoon 1053 crop, below, has the whole account. Tiny crops like these are kept as fair use (Ben,
 2026-09-10).
 
-Each file is named `<manuscript>-<page>-<ref>-<slug>.png`, the page in that manuscript's form,
-with a column and line after the page where they have been read off the image.
+Each file is named `<manuscript>-<page>-<ref>-<slug>.png`, the page in that manuscript's form. A
+Leningrad crop may include both column and line when Ben has read the line from the image; the
+relevant section must say when the column comes only from the estimator. For another source,
+include only coordinates established from its image or retained index.
 
 Crops are kept in a folder for the work they serve, not in one for the manuscript they come from
 (Ben's decision, 2026-09-13). Until then these three were in `leningrad/page-snips/`,
@@ -40,10 +42,7 @@ are the same photographs:
 
 That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
 for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
-to an image. The page is a folio and side, as in `430B`. A Leningrad crop may include both column
-and line when Ben has read the line from the image; the section must say when the column comes only
-from the estimator. For another source, include only coordinates established from its image or
-retained index.
+to an image. The page is a folio and side, as in `430B`.
 
 ### Cambridge Add. 1753
 
