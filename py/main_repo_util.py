@@ -27,9 +27,10 @@ across the chosen repositories. ``--worktree PATH`` inspects one exact target.
 a per-target audit; ``--execute-worktree-retirement FILE --task-ended`` rechecks
 it and applies the shared Git and .novc preservation policy. Every execution and
 resume attempt first runs the operational retirement simulation and fails closed
-before reading the preflight if the simulation does not pass. Inspect the printed
-citations and prepare again with --citations-reviewed and --citation-note when
-needed. Preparation and inspection never run the simulation or remove worktrees.
+before reading the preflight if the simulation does not pass. Inspect every printed
+tracked reference to a `.novc` path being relocated and prepare again with
+--citations-reviewed and --citation-note when needed. Preparation and inspection
+never run the simulation or remove worktrees.
 
 ``--clean-worktrees`` is a compatibility alias for Claude-only inspection.
 Its old --session-ended paths are validated but never cause automatic removal.
@@ -228,8 +229,8 @@ def build_parser() -> argparse.ArgumentParser:
         "--citations-reviewed",
         action="store_true",
         help=(
-            "With --prepare-worktree-retirement: affirm that every tracked"
-            " .novc citation printed by the audit has a durable disposition"
+            "With --prepare-worktree-retirement: affirm that every printed tracked"
+            " reference to a `.novc` path being relocated has a durable disposition"
         ),
     )
     parser.add_argument(

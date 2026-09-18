@@ -596,8 +596,9 @@ object gates, plus citation review and verified `.novc` retention.
 Inspect with `--inspect-worktrees --worktree-owner claude|codex|both`, or
 `--inspect-worktrees --worktree "C:/absolute/ended-worktree"`. Prepare the selected exact path
 with `--prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --preflight-file
-"C:/absolute/preflight.json"`. Read the JSON and settle citations; prepare a new file with
-`--citations-reviewed --citation-note "disposition"` when necessary. Execute with
+"C:/absolute/preflight.json"`. Read the JSON and settle every tracked reference to a `.novc`
+path that this retirement will relocate; prepare a new file with `--citations-reviewed
+--citation-note "disposition"` when necessary. Execute with
 `--execute-worktree-retirement "C:/absolute/preflight.json" --task-ended` under the ordinary
 user token from a separate checkout. Preparation is nondestructive and does not run the
 operational simulation. Every execution and resume attempt runs
@@ -715,11 +716,13 @@ formerly bypassed age only for named paths. Today that legacy option validates C
 only; it cannot cause deletion. This preserves the incident's lesson without retaining its old
 cleanup mechanism.
 
-**H2 — Ignored material requires a shared disposition.** Unique ignored content outside `.novc`
-blocks retirement. Every selected owner's `.novc` is inventoried, relocated and verified under
-step 8, even when small. Tracked citations require review, and later disposal is a separate
-recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files in two
-spared MAM-basics worktrees; that observation does not establish that today's contents are spent.
+**H2 — Tracked references to relocated `.novc` paths require review.** Unique ignored content
+outside `.novc` blocks retirement. Every selected owner's `.novc` is inventoried, relocated and
+verified under step 8, even when small. Every tracked reference to one of those exact relative or
+absolute paths requires review; generic `.novc` policy prose does not. Later disposal is a
+separate recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files
+in two spared MAM-basics worktrees; that observation does not establish that today's contents are
+spent.
 
 **H3 — Frozen repos are honored by `--run-black` ONLY (MAM-basics issue #211, open).**
 `maintenance_policy.frozen_repos()` is consulted in the `--run-black` branch and nowhere else.

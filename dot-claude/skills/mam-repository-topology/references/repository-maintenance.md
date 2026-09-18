@@ -78,10 +78,11 @@ Retirement is a destructive local act independent of product reach. First establ
 3. Unique ignored content outside `.novc` blocks retirement. Known regenerable tool caches and
    byte-identical primary-checkout copies may be disposable. Linked directories and uncertain
    objects fail closed; never force removal to bypass the audit.
-4. Audit tracked citations into `.novc` in both the target and primary checkout, including
-   primary receipts added after the target's HEAD. Review every match semantically, promote a durable
-   result or record its relocated path, and give a substantive citation note. An unreadable
-   citation is a blocker. Generic `.novc` references can be recorded as generic after review.
+4. Tracked references to relocated `.novc` paths require review. Search the target, primary and
+   every other registered linked worktree for the exact relative or absolute paths that this
+   retirement will relocate, including receipts added after the target's HEAD. Review every match
+   semantically, promote a durable result or record its relocated path, and give a substantive
+   citation note. An unreadable citation is a blocker. Generic `.novc` policy prose does not gate.
 5. Inventory every `.novc` and relocate it outside the worktree using the shadow layout below.
    Verify membership, bytes and SHA-256 before Git removal. Retain its JSON provenance.
 
@@ -125,10 +126,12 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRe
 The default durable retention root is `$HOME/worktree-retirements`; override it with
 `--retirement-root`. Both the preflight and retention root must be outside the target. Optionally
 add `--worktree-owner claude|codex|both` as a preparation selection guard. Record additional known
-Codex IDs with `--codex-task-id`; the adapter also discovers IDs. If citations are reported,
-settle them and prepare a new file with `--citations-reviewed --citation-note "disposition"`.
-The preflight freezes the safety snapshot, owner selection, inventories and destinations.
-Preparation remains nondestructive and does not run the operational retirement simulation.
+Codex IDs with `--codex-task-id`; the adapter also discovers IDs. If references are reported,
+settle every tracked reference to a `.novc` path that this retirement will relocate, then prepare
+a new file with `--citations-reviewed --citation-note "disposition"`. The preflight freezes the
+full structured hit list and its fingerprint with the review note, safety snapshot, owner
+selection, inventories and destinations. Preparation remains nondestructive and does not run the
+operational retirement simulation.
 
 Review the preflight, then execute under the ordinary user token from a separate checkout:
 

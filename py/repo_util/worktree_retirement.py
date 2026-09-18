@@ -325,13 +325,86 @@ def _inventory(directory: Path) -> dict[str, Any]:
     }
 
 
-def _tracked_novc_citations(worktree: Path) -> list[dict[str, Any]]:
+def _normalized_reference(path: Path) -> str:
+    return os.path.normcase(str(path.resolve())).replace("\\", "/")
+
+
+def _reference_matches(line: str, reference: str, *, allow_exact: bool) -> bool:
+    normalized_line = os.path.normcase(line).replace("\\", "/")
+    start = 0
+    path_characters = frozenset("._~-:")
+    trailing_delimiters = frozenset(" \t\r\n`'\"<>|()[]{};,")
+    while (index := normalized_line.find(reference, start)) >= 0:
+        before = normalized_line[index - 1] if index else ""
+        end = index + len(reference)
+        after = normalized_line[end : end + 1]
+        before_is_path = bool(
+            before and (before.isalnum() or before in path_characters or before == "/")
+        )
+        exact = not after or (
+            not after.isalnum() and after not in path_characters and after != "/"
+        )
+        descendant = (
+            after == "/"
+            and end + 1 < len(normalized_line)
+            and normalized_line[end + 1] not in trailing_delimiters
+            and normalized_line[end + 1] not in "*?/"
+        )
+        if not before_is_path and (descendant or (allow_exact and exact)):
+            return True
+        start = index + 1
+    return False
+
+
+def _citation_references(
+    retirement_target: Path, novc_directories: Sequence[Path]
+) -> list[dict[str, Any]]:
+    references: list[dict[str, Any]] = []
+    retirement_target = retirement_target.resolve()
+    for source in novc_directories:
+        source = source.resolve()
+        try:
+            relative = source.relative_to(retirement_target).as_posix()
+        except ValueError as exc:
+            raise RetirementError(
+                f".novc source is outside the retirement target: {source}"
+            ) from exc
+        references.append(
+            {
+                "source": str(source),
+                "reference": _normalized_reference(source),
+                "kind": "absolute",
+                "allow_exact": True,
+            }
+        )
+        references.append(
+            {
+                "source": str(source),
+                "reference": os.path.normcase(relative).replace("\\", "/"),
+                "kind": "relative",
+                # A bare root-level `.novc` is generic policy prose, not a
+                # reference to evidence that this retirement will relocate.
+                "allow_exact": relative != ".novc",
+            }
+        )
+    return references
+
+
+def _tracked_relocation_citations(
+    checkout: Path,
+    retirement_target: Path,
+    novc_directories: Sequence[Path],
+) -> list[dict[str, Any]]:
+    references = _citation_references(retirement_target, novc_directories)
+    if not references:
+        return []
     result = _git(
-        worktree,
+        checkout,
         "grep",
         "-l",
         "-z",
         "-I",
+        "-i",
         "-e",
         ".novc",
         "--",
@@ -342,24 +415,50 @@ def _tracked_novc_citations(worktree: Path) -> list[dict[str, Any]]:
         raise RetirementError(f"git grep for .novc citations failed: {message}")
     paths = [entry for entry in result.stdout.split(b"\0") if entry]
     citations: list[dict[str, Any]] = []
+    seen: set[tuple[str, int, str]] = set()
     for encoded_path in paths:
         relative = encoded_path.decode("utf-8", errors="surrogateescape")
+        source_file = checkout / relative
         try:
-            lines = (worktree / relative).read_text(encoding="utf-8").splitlines()
+            lines = source_file.read_text(encoding="utf-8").splitlines()
+            source_bytes, source_sha256 = _file_digest(source_file)
         except (OSError, UnicodeDecodeError) as exc:
             raise RetirementError(
                 f"cannot review tracked citation {relative}: {exc}"
             ) from exc
         for line_number, line in enumerate(lines, start=1):
-            if ".novc" in line:
+            for reference in references:
+                if not _reference_matches(
+                    line,
+                    reference["reference"],
+                    allow_exact=reference["allow_exact"],
+                ):
+                    continue
+                key = (relative, line_number, reference["source"])
+                if key in seen:
+                    continue
+                seen.add(key)
                 citations.append(
                     {
                         "path": PurePosixPath(relative).as_posix(),
                         "line": line_number,
                         "text": line[:500],
+                        "matched_source": reference["source"],
+                        "matched_reference": reference["reference"],
+                        "reference_kind": reference["kind"],
+                        "tracked_file_bytes": source_bytes,
+                        "tracked_file_sha256": source_sha256,
                     }
                 )
-    return citations
+    return sorted(
+        citations,
+        key=lambda item: (
+            item["path"],
+            item["line"],
+            item["matched_source"],
+            item["reference_kind"],
+        ),
+    )
 
 
 def _operation_markers(worktree: Path) -> list[str]:
@@ -497,7 +596,9 @@ def _destinations(
     raise RetirementError("could not allocate collision-free retirement destinations")
 
 
-def _safety_snapshot(worktree_path: Path) -> dict[str, Any]:
+def _safety_snapshot(
+    worktree_path: Path, *, citation_sources: Sequence[Path] | None = None
+) -> dict[str, Any]:
     worktree_path = worktree_path.resolve()
     root = Path(_git_ok(worktree_path, "rev-parse", "--show-toplevel").strip())
     if not _same_path(root, worktree_path):
@@ -615,6 +716,20 @@ def _safety_snapshot(worktree_path: Path) -> dict[str, Any]:
         {"path": str(directory), "inventory": _inventory(directory)}
         for directory in novc_directories
     ]
+    sources = (
+        list(citation_sources) if citation_sources is not None else novc_directories
+    )
+    checkouts: list[Path] = []
+    seen_checkouts: set[str] = set()
+    for checkout in (
+        worktree_path,
+        primary,
+        *(record.path.resolve() for record in worktrees),
+    ):
+        key = _path_key(checkout)
+        if key not in seen_checkouts:
+            seen_checkouts.add(key)
+            checkouts.append(checkout)
     return {
         "owners": found_owners,
         "delete_branch": worktree_owners.deletable_branch(
@@ -639,8 +754,10 @@ def _safety_snapshot(worktree_path: Path) -> dict[str, Any]:
         "ignored_blockers": ignored_blockers,
         "tracked_novc_citations": [
             {"checkout": str(checkout), **citation}
-            for checkout in (worktree_path, primary)
-            for citation in _tracked_novc_citations(checkout)
+            for checkout in checkouts
+            for citation in _tracked_relocation_citations(
+                checkout, worktree_path, sources
+            )
         ],
     }
 
@@ -784,6 +901,18 @@ def _preflight_plan_fingerprint(preflight: dict[str, Any]) -> str:
     return _fingerprint(plan)
 
 
+def _citation_review(
+    citations: Sequence[dict[str, Any]], *, reviewed: bool, note: str | None
+) -> dict[str, Any]:
+    review: dict[str, Any] = {
+        "citations": list(citations),
+        "reviewed": reviewed,
+        "note": note,
+    }
+    review["fingerprint"] = _fingerprint(review)
+    return review
+
+
 def _write_json_exclusive(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("x", encoding="utf-8", newline="\n") as handle:
@@ -829,6 +958,9 @@ def prepare_retirement(
         [Path(item["path"]) for item in snapshot["novc_directories"]],
     )
     ready = not citations or citations_reviewed
+    citation_review = _citation_review(
+        citations, reviewed=citations_reviewed, note=citation_note
+    )
     preflight = {
         "schema_version": SCHEMA_VERSION,
         "kind": "worktree-retirement-preflight",
@@ -841,6 +973,7 @@ def prepare_retirement(
         "claude_session_ids": snapshot["runtime"]["claude_session_ids"],
         "citations_reviewed": citations_reviewed,
         "citation_note": citation_note,
+        "citation_review": citation_review,
         "ready_for_execution": ready,
         "retirement_root": str(retirement_root),
         "retirement_id": identifier,
@@ -851,7 +984,10 @@ def prepare_retirement(
     preflight["plan_fingerprint"] = _preflight_plan_fingerprint(preflight)
     _write_json_exclusive(preflight_file, preflight)
     print(f"Worktree retirement preflight: {preflight_file}")
-    print(f"ready for execution: {'yes' if ready else 'no; review .novc citations'}")
+    print(
+        "ready for execution: "
+        + ("yes" if ready else "no; review references to relocated .novc paths")
+    )
     for item in snapshot["novc_directories"]:
         inventory = item["inventory"]
         print(
@@ -859,10 +995,11 @@ def prepare_retirement(
             f"{inventory['total_bytes']} byte(s)"
         )
     if citations:
-        print(f"tracked .novc citations: {len(citations)}")
+        print(f"tracked references to relocated .novc paths: {len(citations)}")
         for citation in citations:
             print(
-                f"  {citation['checkout']}/{citation['path']}:{citation['line']}: {citation['text']}"
+                f"  {citation['checkout']}/{citation['path']}:{citation['line']}: "
+                f"{citation['text']} (relocates {citation['matched_source']})"
             )
     return preflight
 
@@ -1010,6 +1147,7 @@ def _reconcile_relocations(
                 or metadata.get("head") != preflight["snapshot"]["head"]
                 or metadata.get("branch") != preflight["snapshot"]["branch"]
                 or metadata.get("verification") != inventories[item["source"]]
+                or metadata.get("citation_review") != preflight.get("citation_review")
             ):
                 raise RetirementError(
                     f"sidecar does not verify retained data: {sidecar}"
@@ -1112,10 +1250,17 @@ def execute_retirement(
         raise RetirementError("file is not a Worktree retirement preflight")
     if not preflight.get("ready_for_execution"):
         raise RetirementError(
-            "preflight is not ready; its .novc citation audit is pending"
+            "preflight is not ready; its relocated .novc reference audit is pending"
         )
     if preflight.get("plan_fingerprint") != _preflight_plan_fingerprint(preflight):
         raise RetirementError("preflight plan changed after it was prepared")
+    expected_citation_review = _citation_review(
+        preflight["snapshot"]["tracked_novc_citations"],
+        reviewed=bool(preflight.get("citations_reviewed")),
+        note=preflight.get("citation_note"),
+    )
+    if preflight.get("citation_review") != expected_citation_review:
+        raise RetirementError("preflight citation review is incomplete or changed")
 
     old_snapshot = preflight["snapshot"]
     if owner_selector is not None and not worktree_owners.selected(
@@ -1153,7 +1298,10 @@ def execute_retirement(
     completed_sources = {item["source"] for item in completed}
     registered = _is_registered(primary, worktree)
     if registered:
-        current_snapshot = _safety_snapshot(worktree)
+        current_snapshot = _safety_snapshot(
+            worktree,
+            citation_sources=[Path(source) for source in expected_sources],
+        )
         expected_snapshot = _snapshot_after_relocations(old_snapshot, completed_sources)
         if _fingerprint(current_snapshot) != _fingerprint(expected_snapshot):
             raise RetirementError(
@@ -1193,10 +1341,7 @@ def execute_retirement(
         "codex_task_ids": preflight.get("codex_task_ids", []),
         "claude_session_ids": preflight.get("claude_session_ids", []),
         "retired_at": retired_at,
-        "citation_review": {
-            "citations": old_snapshot["tracked_novc_citations"],
-            "note": preflight.get("citation_note"),
-        },
+        "citation_review": preflight["citation_review"],
     }
     for item in pending:
         source = Path(item["source"])
@@ -1220,7 +1365,10 @@ def execute_retirement(
         # This is the last safety read before the first Git mutation.  The only
         # expected difference from the reviewed preflight is that its .novc
         # directories now live at their verified retained destinations.
-        current_snapshot = _safety_snapshot(worktree)
+        current_snapshot = _safety_snapshot(
+            worktree,
+            citation_sources=[Path(source) for source in expected_sources],
+        )
         expected_snapshot = _snapshot_after_relocations(
             old_snapshot, set(expected_sources)
         )

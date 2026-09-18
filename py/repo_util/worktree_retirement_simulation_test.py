@@ -6,11 +6,13 @@ Every destructive operation remains confined to pytest's temporary repositories,
 and equivalent owner fixtures must leave the same Git and retained-data outcome.
 """
 
+import gc
 import hashlib
 import json
 import os
 import sqlite3
 import subprocess
+import tempfile
 from datetime import datetime
 from pathlib import Path
 
@@ -24,10 +26,17 @@ from main_repo_util import build_parser, _validate_action_specific_args
 
 
 @pytest.fixture
-def tmp_path(tmp_path_factory):
+def tmp_path():
     # Sparse absolute-path shadows repeat the source prefix; keep fixture paths
     # short enough for Windows hosts where extended-length paths are disabled.
-    return tmp_path_factory.mktemp("r")
+    with tempfile.TemporaryDirectory(prefix="mam-retirement-") as directory:
+        try:
+            yield Path(directory)
+        finally:
+            # sqlite3's read-only connection can participate in a reference
+            # cycle after runtime inspection; collect it before Windows removes
+            # the isolated database.
+            gc.collect()
 
 
 def git(repo, *args, check=True):
@@ -316,7 +325,7 @@ def test_selection_and_branch_deletion_stay_in_scope(tmp_path, isolated_runtime)
         prepare(tmp_path, primary, "primary")
 
 
-def test_citation_review_and_task_provenance(tmp_path, isolated_runtime):
+def test_generic_policy_does_not_gate_and_task_provenance(tmp_path, isolated_runtime):
     for owner in ("claude", "codex"):
         primary, target, _ = fixture_repo(tmp_path, isolated_runtime, owner)
         codex_record(isolated_runtime, target, leased=False)
@@ -327,13 +336,9 @@ def test_citation_review_and_task_provenance(tmp_path, isolated_runtime):
             preflight_file=path,
             task_ended=True,
         )
-        assert plan["snapshot"][
-            "tracked_novc_citations"
-        ]  # Tracked ignore rule is reviewed too.
-        assert not plan["ready_for_execution"]
+        assert plan["snapshot"]["tracked_novc_citations"] == []
+        assert plan["ready_for_execution"]
         assert plan["codex_task_ids"] == ["fixture-task"]
-        with pytest.raises(retirement.RetirementError):
-            retirement.execute_retirement(path, confirm_task_ended=True)
         assert target.as_posix() in registration_paths(primary)
 
 
@@ -476,26 +481,97 @@ def test_branch_reflog_history_preceding_checkout_is_protected(
         assert not branch_exists(primary, branch)
 
 
-def test_primary_citations_added_after_target_creation_require_review(
+def test_exact_relocation_citations_gate_and_survive_retirement(
     tmp_path, isolated_runtime
 ):
     for owner in ("claude", "codex"):
         primary, target, _ = fixture_repo(tmp_path, isolated_runtime, owner)
-        citation = str(target / ".novc" / "evidence.bin")
-        (primary / "receipt.md").write_text(citation, encoding="utf-8")
-        git(primary, "add", "receipt.md")
-        git(primary, "commit", "-m", "Record later fixture citation")
-        plan = retirement.prepare_retirement(
+        source = add_novc(target)
+        original = tree_bytes(source)
+        absolute_citation = str(source / "evidence.bin")
+        relative_citation = ".novc/evidence.bin"
+        noncitation = str(target / ".novc-old" / "evidence.bin")
+        (primary / "policy.md").write_text(
+            "A generic `.novc` policy is not an artifact reference.\n"
+            f"This similarly named path is not the target: {noncitation}\n",
+            encoding="utf-8",
+        )
+        git(primary, "add", "policy.md")
+        git(primary, "commit", "-m", "Add generic fixture policy")
+        observer = tmp_path / f"observer-{owner}"
+        git(
+            primary,
+            "worktree",
+            "add",
+            "-b",
+            f"observer/{owner}",
+            str(observer),
+            "main",
+        )
+
+        generic_plan = retirement.prepare_retirement(
             target,
             retirement_root=tmp_path / "retained",
-            preflight_file=tmp_path / f"{owner}.json",
+            preflight_file=tmp_path / f"generic-{owner}.json",
             task_ended=True,
         )
-        assert not plan["ready_for_execution"]
-        assert any(
-            item["checkout"] == str(primary) and item["text"] == citation
-            for item in plan["snapshot"]["tracked_novc_citations"]
+        assert generic_plan["ready_for_execution"]
+        assert generic_plan["snapshot"]["tracked_novc_citations"] == []
+
+        (primary / "receipt.md").write_text(
+            f"absolute twice: {absolute_citation} and {absolute_citation}\n"
+            f"relative: {relative_citation}\n",
+            encoding="utf-8",
         )
+        git(primary, "add", "receipt.md")
+        git(primary, "commit", "-m", "Record exact fixture citations")
+        git(observer, "merge", "main")
+
+        unreviewed_path = tmp_path / f"unreviewed-exact-{owner}.json"
+        unreviewed = retirement.prepare_retirement(
+            target,
+            retirement_root=tmp_path / "retained",
+            preflight_file=unreviewed_path,
+            task_ended=True,
+        )
+        citations = unreviewed["snapshot"]["tracked_novc_citations"]
+        assert not unreviewed["ready_for_execution"]
+        assert {item["checkout"] for item in citations} == {
+            str(primary),
+            str(observer),
+        }
+        assert {item["reference_kind"] for item in citations} == {
+            "absolute",
+            "relative",
+        }
+        assert len(citations) == 4
+        assert all(item["path"] == "receipt.md" for item in citations)
+        assert all(item["matched_source"] == str(source) for item in citations)
+        assert all(item["tracked_file_sha256"] for item in citations)
+        assert all(".novc-old" not in item["text"] for item in citations)
+        assert unreviewed["citation_review"]["citations"] == citations
+        assert unreviewed["citation_review"]["note"] is None
+        with pytest.raises(retirement.RetirementError):
+            retirement.execute_retirement(unreviewed_path, confirm_task_ended=True)
+
+        reviewed_path, reviewed = prepare(tmp_path, target, f"reviewed-{owner}")
+        review_payload = {
+            key: value
+            for key, value in reviewed["citation_review"].items()
+            if key != "fingerprint"
+        }
+        assert reviewed["citation_review"]["citations"] == citations
+        assert reviewed["citation_review"]["reviewed"]
+        assert reviewed["citation_review"]["note"] == (
+            "Reviewed fixture references; retained paths are in this preflight."
+        )
+        assert reviewed["citation_review"]["fingerprint"] == retirement._fingerprint(
+            review_payload
+        )
+        retirement.execute_retirement(reviewed_path, confirm_task_ended=True)
+        metadata = assert_retained(reviewed, original)
+        assert metadata["citation_review"] == reviewed["citation_review"]
+        assert observer.as_posix() in registration_paths(primary)
 
 
 def test_cached_remote_reporting_matches_selected_ref_oracle(
