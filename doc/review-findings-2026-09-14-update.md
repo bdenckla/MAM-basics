@@ -123,3 +123,19 @@ outside Git. No Cambridge files, worktrees, branches or review evidence were del
 The remaining `.novc/` evidence classification, shared-worktree unlock and removal, and deletion
 of the merged review branch belong to the separate cleanup-only task. That cleanup does not leave
 the review or its remediation open.
+
+## 2026-09-18: corrections to the alternating turn records
+
+Turn 3's statement that dropping the numbers was one of C3's two remedies is incorrect. C3
+offered refreshing the numbers or giving them an explicit checkpoint; dropping them was Turn
+3's third proposal. Turn 4's phrase “the recorded remedy” can truthfully refer to Turn 3's
+proposal.
+
+The finished turn records also have these form and reproducibility limitations: finding leads
+state acceptance rather than fixed-or-unfixed disposition; `## Result` names no subject; Turn 3
+names five files and then says “the last three”; Turn 2 omitted re-establishing commands for its
+Black, Ruff and fifteen-repository-history figures; and Turn 4 says Black and Ruff were rerun
+directly without giving the commands. Turn 3 later supplied Black and Ruff commands and
+corrected the Black version to 26.5.1. The accurate prose counts need no numerical correction,
+and `counter-findings`, `new findings` and `counter-argument` describe different scopes rather
+than contradictory names.

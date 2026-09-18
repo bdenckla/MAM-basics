@@ -45,6 +45,9 @@ record's §5).
 
 ## Preconditions
 
+- **Baseline suite at `bca64824`:** the repository suite passed 997 tests with 5 skipped.
+  Re-run the suite at the execution baseline and record the new counts before relying on that
+  baseline.
 - **Repository**: `C:/Users/BenDe/GitRepos/MAM-basics`, with every command run from its root. The
   interpreter is `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, spelled
   absolutely in a secondary worktree. Phase 2 uses the cloud container's own `python3`.
@@ -84,12 +87,16 @@ record's §5).
   roughly 11 to 14 s of 285.7 s. **No run has measured that saving**; step 7 of Phase 1 can. All
   four hang off `mam-simple` and lie on neither of item 1's long chains, so under item 1 their
   removal would save almost nothing.
-- **MAM-simple's tree shrank from 107.7 MB to 37.7 MB on 2026-09-12**, as the session that shrank
-  it measured with `du -sb`. `b653e9b9` retired `MAM-simple/misc/Torah-letters-only/`; `d6a6764d`
-  removed the example programs' output; `dcd2c1f6` removed the bhs and sef Unicode-names trees;
-  `3b1adf45` writes a bhs or sef corpus file only where it differs from the vtrad-mam one, and
-  dropped `yeivinID`; `20f18020` then took the choice of which bhs and sef files to write from the
-  versification tables. **The `mam-simple` step has not been timed on Ben's machine since.** On
+- **MAM-simple's tree was recorded as shrinking from 107.7 MB to 37.7 MB on 2026-09-12, but the
+  post-shrink figure is not reproducible from the preserved evidence.** The session attributed the
+  figures to `du -sb` but preserved neither its raw output nor the exact working-tree state. At
+  `bca64824`, the tracked files total 37,647,285 bytes, or 37.6 MB. Treat 37.7 MB as an unverified
+  historical filesystem measurement unless preserved evidence re-establishes it. `b653e9b9`
+  retired `MAM-simple/misc/Torah-letters-only/`; `d6a6764d` removed the example programs' output;
+  `dcd2c1f6` removed the bhs and sef Unicode-names trees; `3b1adf45` writes a bhs or sef corpus file
+  only where it differs from the vtrad-mam one, and dropped `yeivinID`; `20f18020` then took the
+  choice of which bhs and sef files to write from the versification tables. **The `mam-simple`
+  step has not been timed on Ben's machine since.** On
   the Surface Laptop 4 of `doc/mega-timing-laptop-2026-09-14.md` it took a median of 10.7 s on
   2026-09-14, a figure from a different machine and so not comparable with the dated record's
   11.3 to 18.1 s. A throwaway script
@@ -97,9 +104,10 @@ record's §5).
   tracked tree's size.
 - **The code of the heaviest steps has changed**, so the dated record's per-step figures are
   history rather than a baseline. On 2026-09-14 at `bca64824` the command below listed 14 commits
-  that are not merges. Two are the dated record's own speedups. The other 12 include the
-  MAM-simple commits above and `6dbd27e7`, the template-projection work (`2239cbad`, `5cb06e25`,
-  `1b7b97ef`), and two changes to the mpplus diff (`fa517040`, `7fd381db`).
+  that are not merges. Two are the dated record's speedups, `af1c404a` and `15c09692`. The other
+  twelve are four MAM-simple commits (`d6a6764d`, `dcd2c1f6`, `3b1adf45`, `20f18020`),
+  `6dbd27e7`, the three template-projection commits (`2239cbad`, `5cb06e25`, `1b7b97ef`), and four
+  mpplus commits (`fa517040`, `8b2386b0`, `cde921bf`, `7fd381db`).
 
   ```powershell
   git -C C:/Users/BenDe/GitRepos/MAM-basics log --no-merges --format="%h %ad %s" --date=short 132f2f3e..HEAD -- py/main_mam_simple.py py/main_tmpl_survey.py py/tmpl_survey py/subcommands py/accgram py/main_accgram.py py/mb_cmn/file_io.py py/main_wlc_json_and_unicode.py py/main_fois.py py/main_mam_with_doc.py py/main_multimark.py
@@ -300,11 +308,16 @@ record and this plan.
 **Executed 2026-09-14, and its record is `doc/mega-timing-cloud-2026-09-14.md`, corrected the same
 day by `doc/mega-timing-cloud-2026-09-14-update.md`.** A Claude cloud session on
 `bdenckla/MAM-basics`, on branch `claude/adoring-shannon-8term6` at `main` `89f10bb4`, made three
-full runs on Python 3.11 and, after the update entry found out why that was the wrong interpreter,
+full runs on Python 3.11 and, after the cloud update found out why that was the wrong interpreter,
 two more on 3.13. All 55 steps ran or were skipped for the cloud in every run and no step failed.
-**The figures to quote are the update's**, the record's being 3.11 measurements: a 3.13 run takes
-**229.8 s** in its 54 executed steps, against 248.9 s on 3.11. The steps below are left as written;
-what each produced is in those two files. Five things are worth carrying here:
+This phase calls `doc/mega-timing-cloud-2026-09-14.md` the cloud record and
+`doc/mega-timing-cloud-2026-09-14-update.md` the cloud update. The 2026-09-11 dated record is
+`doc/mega-timing-2026-09-11.md`.
+
+**The figures to quote are the cloud update's**, the cloud record's being 3.11 measurements: a
+3.13 run takes **229.7 s**, the median of the two printed 3.13 step-loop totals, against 248.9 s on
+3.11. The steps below are left as written; what each produced is in those two files. Five things
+are worth carrying here:
 
 1. **Normalizing for the cloud's skips does matter**, against the guess in Ben's instruction that
    it might not: the one step a cloud run skips, `accgram-survey-post-stress-meteg`, is the
@@ -313,7 +326,7 @@ what each produced is in those two files. Five things are worth carrying here:
 2. **Like for like the container is 1.04 times Ben's pinned machine** over the 52 steps that
    completed in both, and **0.93 times** his unpinned run, so a container is within a few percent
    of his performance cores and ahead of his machine unpinned. (On 3.11 those ratios read 1.13 and
-   1.01, which is what the record states.)
+   1.01, which is what the cloud record states.)
 3. **A container is markedly more repeatable than Ben's machine**, each pair of warm runs agreeing
    to within 0.6 s on every step, so it is the better place to attribute a speedup — for every
    step but the one it skips. A first run in a fresh container is a cold-cache run and should be
@@ -321,8 +334,8 @@ what each produced is in those two files. Five things are worth carrying here:
 4. **One finding, raised in this phase and not fixed in it, has been fixed since by `b5dd2ffb`.**
    Git treats each commit a shallow clone lists in `.git/shallow` as having no parents, so every
    file in it looks added, and the path-filtered walk that dated unpinned-latest returned such a
-   commit rather than finding nothing. The record's §7 has the finding, which reproduced
-   identically on 3.13, but blames a missing parent object, which the update corrects. Since
+   commit rather than finding nothing. The cloud record's §7 has the finding, which reproduced
+   identically on 3.13, but blames a missing parent object, which the cloud update corrects. Since
    `b5dd2ffb`, `diff-mpplus` labels unpinned-latest by the tree id of `MAM-parsed/plus` and gives
    it no date, so a shallow clone no longer changes that report; no cloud run has confirmed it yet.
 5. **The environment's setup script failed until Ben fixed it on 2026-09-14; steps 3 and 4 below
@@ -330,11 +343,11 @@ what each produced is in those two files. Five things are worth carrying here:
    and then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
    clone. A session that does not notice falls back to the system `python3`, which is 3.11 and
    whose dpkg-managed `site-packages` then blocks a `pip install` — which is exactly what happened
-   on 2026-09-14, and why the record's figures are 3.11 ones. Inside the 3.13 environment the
+   on 2026-09-14, and why the cloud record's figures are 3.11 ones. Inside the 3.13 environment the
    install takes 3.0 s and no conflict arises. **The fix is Ben's report and is not verified in
    this repository**, the container that found the fault having been built before it; the next
    cloud session confirms it by finding a populated 3.13 environment at step 3, and needs no
-   workaround if it does. The update entry has the evidence.
+   workaround if it does. The cloud update entry has the evidence.
 
 Ben asked for this phase to be planned and not yet done. It cannot run on Ben's machine: Ben
 starts a Claude Code cloud session on `bdenckla/MAM-basics` at `main`, and that session carries it
@@ -418,6 +431,10 @@ reported, not committed.
    That run is also the integration check that `CLAUDE.md` requires.
 4. **Run black on each changed Python file, and commit each item on its own, naming its paths**,
    with its measured saving and new status recorded in this plan in the same commit.
+
+Run `git diff --check` and the full suite before committing each completed executable item. Run
+the repository's final mega integration gate after the last executable change and explain every
+tracked generated diff.
 
 ## Related plans and issues
 

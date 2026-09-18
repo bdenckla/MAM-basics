@@ -64,8 +64,11 @@ uv pip install --python /home/user/.venv/bin/python -r /home/user/MAM-basics/req
 ```
 
 The fix to the setup script is a path, nothing more: give it the clone's directory, or name
-`MAM-basics/requirements.txt`. **The record's advice to prefer a virtual environment stands and its
-reasoning was right for the wrong reason** — the setup script was already making one.
+`MAM-basics/requirements.txt`.
+
+The virtual-environment advice in `doc/PLAN-mega-speedup.md` stands; the record itself gives no
+such advice. That advice was added to the plan after this update's first entry was written. The
+setup script was already making a virtual environment.
 
 **Ben fixed the setup script on 2026-09-14**, reporting so in the session that wrote this entry.
 The fix is not verified here and could not be: the container this entry was written in was built
@@ -87,8 +90,9 @@ renders, and the same four shallow-clone file changes, none committed. The two a
 | 3.13 run 1 | 233.4 | 230.0 |
 | 3.13 run 2 | 232.0 | 229.4 |
 
-**Python 3.13 runs the mega 7.7% faster than 3.11 on identical hardware**, 229.8 s against 248.9 s,
-comparing medians of the warm runs of each. **One step is over half of that difference**:
+**Python 3.13 runs the mega 7.7% faster than 3.11 on identical hardware**: the median of its two
+printed warm-run step-loop totals is 229.7 s, against 248.9 s on 3.11. **One step is over half of
+that difference**:
 `wlc-json-and-unicode` falls from 32.8 s to 22.6 s, a ratio of 0.69.
 
 **The record's headline comparison changes, and the direction of its conclusion with it.** Over
@@ -97,7 +101,7 @@ the same 52 steps that ran to completion in both places:
 | Compared with | Record, on 3.11 | Re-measured on 3.13 |
 |---|---:|---:|
 | Ben pinned to logical processors 0-11 | 235.0 s, ratio **1.13** | 216.3 s, ratio **1.04** |
-| Ben unpinned, run 1 of the dated record | 235.0 s, ratio **1.01** | 216.3 s, ratio **0.93** |
+| Ben unpinned, run 1 of `doc/mega-timing-2026-09-11.md` | 235.0 s, ratio **1.01** | 216.3 s, ratio **0.93** |
 | Per-step ratio, median | 1.23 | 1.12 |
 | Steps worth at least 2 s on Ben's machine, aggregate | 1.11 | 1.03 |
 
@@ -216,3 +220,23 @@ that none of its boundaries was newer than that change, not that its window held
    of `size-pack` in `git count-objects -v`, from 356 KiB to 3,033 KiB, across
    `git fetch --unshallow --filter=blob:none origin <that commit>` in a fresh blobless depth-50
    clone of `89f10bb4`.
+
+## 2026-09-18: corrections to the cloud record
+
+1. The summary's 249.0 s is the sum of the 54 per-step medians in section 3, not the median of
+   the three run totals; the run-total median is 249.4 s from 271.3, 248.4 and 249.4 s.
+2. A blank `Cloud / Ben` ratio has one of two causes: `diff-mpplus` and `gen-site` raised in the
+   comparison run, while `find-uxlc-accent-changes`, `tmpl-survey-toy`, `letter-small-job`,
+   `map-changes-to-book-of-job` and `ac-gen-index-flat-annotated` have a recorded Ben value of
+   0.0, so their ratios have a zero denominator.
+3. In section 7, “Both” means the two output groups: the `vendoring-audit` outputs,
+   `doc/vendoring-inventory.md` and `out/vendoring_compare_out.txt`, and the `diff-mpplus`
+   outputs, `unpinned-latest.html` and `unpinned-latest.json`; all four listed files changed.
+4. The dry-run explanation's three facts are: `ws-bot-proto` uses local file I/O; the live path
+   is `ws_bot_real`, which the mega does not name; and only `py/subcommands/ws_bot_real.py`
+   imports pywikibot.
+5. The package-install defect is fixed by the amended Phase 2 step 3, as this update's first
+   entry records. The Surface Laptop record separately reports that `git add` refreshed cache
+   entries for four files in the first status and two in the second and staged no content, while
+   twelve files remained CRLF on disk. The record gives no disposition for that worktree-only
+   condition.

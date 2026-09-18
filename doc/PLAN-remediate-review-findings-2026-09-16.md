@@ -76,7 +76,7 @@ The following current-tree facts are dated measurements, not invariants:
 
 - the filename-command census finds 27 filename-returning Git sites; all 27 use `-z`, while the
   lint sees 14 and misses 13;
-- finding 12.2's current broad grep finds 137 files and 2,027 `.novc` lines in this branch and 132
+- finding 12.2's current broad grep finds 138 files and 2,046 `.novc` lines in this branch and 132
   files and 2,000 lines in current `main`;
 - the four skill/reference files in finding 19 contain 13 headings without a preceding blank line
   and eight overlong prose lines after excluding tables and the clone command; and
@@ -89,7 +89,7 @@ The following current-tree facts are dated measurements, not invariants:
 
 ### 2.1 Public-facing documents: high reader-facing risk, no product reach
 
-No generated HTML changes. Three reader-facing README edits remain.
+No generated HTML changes. The three reader-facing README edits were completed by `4e30b0f4`.
 
 In both `doc/meteg-after-silluq-snips/README.md` and
 `doc/lam-2-3-akhla-snips/README.md`, retain each existing filename prefix and replace the
@@ -122,7 +122,9 @@ These edits change guidance, not crop bytes, mirrored introduction bytes or gene
 
 ### 2.2 Public-facing data: high risk
 
-None. The plan changes no corpus JSON, XML, image or other distributed data.
+Finding 13.3 reaches `MAM-for-Sefaria/`, `MAM-OSIS/` and `gh-pages/MAM-OSIS/` through hand-run
+generators. The verification below must prove that all affected distributed data stays byte
+identical.
 
 ### 2.3 Other work by product reach and act risk
 
@@ -130,8 +132,9 @@ The remaining work consists of review and timing receipts, live plans, internal 
 agent instructions and skills, Python diagnostics and tests, and maintenance tooling. Product
 reach and act risk remain separate:
 
-- finding 13.3 lies on an accgram mega path and therefore reaches the generator tier; the final
-  mega must prove that the diagnostic-only repair produces no tracked product diff;
+- finding 13.3 lies on an accgram mega path and on the hand-run Sefaria and OSIS generators; the
+  final mega and all four hand-run modes must prove that the diagnostic-only repair produces no
+  tracked product diff;
 - finding 12 has no repository-product reach, but its subject is destructive retirement tooling;
   its wave runs only simulations and must not retire a real worktree;
 - adding the permitted pointer to a finished receipt base is a narrowly authorized historical
@@ -205,7 +208,7 @@ is that sibling. The paragraph join and update pointer are the only edits to the
 file supplements; its substantive wording remains unchanged.
 ```
 
-Use the dated entry heading `## 2026-09-17: corrections after the September 16 review`.
+Use the dated entry heading `## 2026-09-18: corrections after the September 16 review`.
 Mechanically join the base's State paragraph, without changing its text, then insert this exact
 line as physical line 4:
 
@@ -300,7 +303,7 @@ unpinned, run 1 of `doc/mega-timing-2026-09-11.md`.”
 
 Append this numbered correction entry to the cloud update:
 
-> ## 2026-09-17: corrections to the cloud record
+> ## 2026-09-18: corrections to the cloud record
 >
 > 1. The summary's 249.0 s is the sum of the 54 per-step medians in section 3, not the median of
 >    the three run totals; the run-total median is 249.4 s from 271.3, 248.4 and 249.4 s.
@@ -344,7 +347,7 @@ file supplements; its substantive wording remains unchanged.
 
 The substantive entry is:
 
-> ## 2026-09-17: the unlabelled clock reads imply an offset of `-04:00`
+> ## 2026-09-18: the unlabelled clock reads imply an offset of `-04:00`
 >
 > The clock read in the sentence beginning “The runs ran from 15:20 to 15:46” and the run table's
 > `Started` column are unlabelled. The record's checkout associations and commit chronology imply
@@ -368,7 +371,7 @@ Finding 16.9 remains a nondefect and gets no remediation text.
 
 Append this entry to `doc/review-findings-2026-09-14-update.md`:
 
-> ## 2026-09-17: corrections to the alternating turn records
+> ## 2026-09-18: corrections to the alternating turn records
 >
 > Turn 3's statement that dropping the numbers was one of C3's two remedies is incorrect. C3
 > offered refreshing the numbers or giving them an explicit checkpoint; dropping them was Turn
@@ -426,7 +429,7 @@ name the 2026-09-11 files. The compatibility-covered `CLAUDE.md` citations need 
 
 Append to `doc/metsudah-vs-ctr-update.md`:
 
-> ## 2026-09-17: the prose system is a property of verses, not books
+> ## 2026-09-18: the prose system is a property of verses, not books
 >
 > The base's phrase `prose-book tipḥas` should read `tipḥas in prose verses`; the prose and poetic
 > systems classify verses, not books.
@@ -450,8 +453,10 @@ headings in `dot-claude/skills/github-issues/references/reading-and-writing.md`,
 `dot-claude/skills/mam-repository-topology/references/evacuated-repositories.md`. Wrap the eight
 remeasured overlong prose lines across those three files and
 `dot-claude/skills/github-issues/references/mam-basics-trackers.md` without changing their words.
-Leave long table rows and the clone command alone. The backslash drive-path example no longer
-exists on current `main`; preserve the intentional UNC syntax and do no 19.4 edit.
+Leave long table rows and the clone command alone. In
+`dot-claude/skills/mam-repository-topology/references/repository-maintenance.md`, change the drive
+example `C:\Users\BenDe\...` to `C:/Users/BenDe/...`. Preserve the intentional UNC syntax on the
+following line.
 
 ## 5. Proposed editorial wording for instructions and procedures
 
@@ -810,9 +815,9 @@ receipt and live-plan wave after the receipt-link test and `git diff --check`.
 
 ### 7.3 Wave 3: instructions, skills and review procedure
 
-Implement findings 5, 7 to 9, 11, 15 and 20 from section 5. Apply finding 19's skill formatting in
-this wave. Run the repository-standards and prose-convention checks. Commit canonical skill and
-instruction changes together; deployment waits for pushed `main`.
+Implement findings 5, 7 to 9, 11, 15 and 20 from section 5. Apply finding 19's skill formatting
+and drive-path correction in this wave. Run the repository-standards and prose-convention checks.
+Commit canonical skill and instruction changes together; deployment waits for pushed `main`.
 
 ### 7.4 Wave 4: filename lint
 
@@ -831,7 +836,7 @@ Implement findings 13.1 to 13.3, and implement 13.4 only if the serialization ca
 the defect. Run the matched tests, the full suite after the final executable change, and the final
 mega after merging current `main` as section 8 requires. No tracked generated diff is expected.
 
-Finding 10, finding 12.1, finding 16.9 and finding 19.4 get no implementation commit. Record their
+Finding 10, finding 12.1 and finding 16.9 get no implementation commit. Record their
 already-resolved or nondefect dispositions in the final review update rather than touching code.
 
 ## 8. Verification and commit discipline
@@ -858,6 +863,25 @@ Run the operational retirement simulation through the supported test entry point
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py py/repo_util/worktree_retirement_simulation_test.py -q -p no:cacheprovider
+```
+
+After finding 13.3, run all four affected hand-run generator modes from the worktree root and
+inspect every tracked diff:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam4sef.py
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam4sef.py --both-sef-and-ajf
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam4sef.py --just-ajf
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_mam_osis.py
 ```
 
 Run repository standards after documentation, receipt and instruction changes:

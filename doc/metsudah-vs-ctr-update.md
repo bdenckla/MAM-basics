@@ -29,3 +29,8 @@ what the findings rest on, and nothing in this repository re-fetches from that e
 The base passage beginning “The motivating clue is in” names the historical destination. The live
 destination of the former `doc/ms-snips/README.md` is
 `doc/lam-2-3-akhla-snips/README.md`; the base report keeps its historical link.
+
+## 2026-09-18: the prose system is a property of verses, not books
+
+The base's phrase `prose-book tipḥas` should read `tipḥas in prose verses`; the prose and poetic
+systems classify verses, not books.

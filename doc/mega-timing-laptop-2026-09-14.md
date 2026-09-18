@@ -1,11 +1,7 @@
 # Mega timing on a Surface Laptop 4, LAPTOP-DBLE8UKA, 2026-09-14
 
-Written by a Claude session on 2026-09-14. Ben's instruction was: "Do a timing run of mega, and
-record the results (along with this machine's name and any relevant performance information (CPU
-type, amount of RAM, type of disk, etc.)". Once the first run was under way he added: "I should
-have said "do as many timing runs as you see fit" so that you could satisfy yourself that the
-measurement is reasonably consistent". Everything else here is that session's measurement and
-reconstruction.
+Written by a Claude session on 2026-09-14. Ben's instruction was: "Do a timing run of mega, and record the results (along with this machine's name and any relevant performance information (CPU type, amount of RAM, type of disk, etc.)". Once the first run was under way he added: "I should have said "do as many timing runs as you see fit" so that you could satisfy yourself that the measurement is reasonably consistent". Everything else here is that session's measurement and reconstruction.
+Updates and later status: [mega-timing-laptop-2026-09-14-update.md](mega-timing-laptop-2026-09-14-update.md).
 
 **Measured against** `main`: run 1 at `ac24cbd3`, and runs 2 to 4 at `8834ce4b`, whose code is
 the same. `8834ce4b` adds only `823be50b`, one regenerated line of `out/vendoring_compare_out.txt`,

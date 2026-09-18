@@ -49,8 +49,10 @@ both are ancestors of the review branch. At that decision checkpoint the copies 
 
 1. `C:/Users/BenDe/.claude/CLAUDE.md` and `dot-claude/user-wide-CLAUDE.md` have SHA-256
    `6EAE1FBA5EB989F71310EBC0A8BB08527E8623F100E17709D45AC3AFB12C2ADF`.
-2. `C:/Users/BenDe/.Codex/AGENTS.md` and `dot-Codex/user-wide-AGENTS.md` have SHA-256
-   `87C3EDDB6A9F001DAD5481D2162E0CE32D52FE7DB719C4AC651F030B5D4C393F`.
+2. The historical capture at `a872790e` used `C:/Users/BenDe/.Codex/AGENTS.md`; that file and
+   `dot-Codex/user-wide-AGENTS.md` had SHA-256
+   `87C3EDDB6A9F001DAD5481D2162E0CE32D52FE7DB719C4AC651F030B5D4C393F`. The `.Codex` spelling
+   is retained as historical evidence rather than as the current live Codex home.
 3. Recursive `git diff --no-index` comparisons from the tracked
    `dot-claude/skills/hebrew-prose/` tree to
    `C:/Users/BenDe/.claude/skills/hebrew-prose/` and
@@ -1108,16 +1110,21 @@ rewrite occurred.
 
 ## Finding 7.1, September 8 remediation plan: no missing `.novc` dependency remains
 
-Recorded by Codex on 2026-09-13. This entry classifies only the 33 live lines containing `.novc`
-in `doc/PLAN-remediate-review-findings-2026-09-08.md`. It does not establish a rule for the rest
-of finding 7's census.
+Recorded by Codex on 2026-09-13. This entry classifies only the 33 lines at checkpoint
+`0a86cddefe2d1ed5151b91476ffadf08f3233fd1` containing `.novc` in
+`doc/PLAN-remediate-review-findings-2026-09-08.md`. It does not establish a rule for the rest of
+finding 7's census.
 
 At checkpoint `0a86cddefe2d1ed5151b91476ffadf08f3233fd1`, current `main` at
-`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
-unchanged at Git blob `bbd8c142bee6c1f1424cc33d08fa81bf37c7e1c3`, the same blob as final remediation
-commit `9d1de07404bd9257c3e4cafc0acc1c46b87264c9`. Its existing sibling update remains unchanged
-at Git blob `37f48fbc1feadcf374cddf6ee6e9d72617fbc543`; the update records the later retirement of
-the Wave 3 display fallback and supplies no scratch artifact.
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. Before retirement, the finished
+plan's substantive bytes matched historical blob `bbd8c142bee6c1f1424cc33d08fa81bf37c7e1c3`,
+the same blob as final remediation commit `9d1de07404bd9257c3e4cafc0acc1c46b87264c9`; its only
+later base edit was the authorized update pointer, producing blob
+`0c84712d539bce20e6f0c01555ac73ebebad350d`. Its update sibling's final blob was
+`37f48fbc1feadcf374cddf6ee6e9d72617fbc543`. Commit
+`2a051ba509901228fbd4d62d91b73765b94a39e4` retired the base and update together on 2026-09-17.
+The update records the later retirement of the Wave 3 display fallback and supplies no scratch
+artifact.
 
 The plan's named worktree, `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08`, no
 longer exists. Neither the review worktree nor the primary clone has the dated
@@ -1164,15 +1171,19 @@ rewrite occurred.
 
 ## Finding 7.1, Wikisource-derived MAM products plan: no missing `.novc` dependency remains
 
-Recorded by Codex on 2026-09-13. This entry classifies only the 43 live lines containing `.novc`
-in `doc/PLAN-wikisource-derived-mam-products.md`. It does not establish a rule for the rest of
+Recorded by Codex on 2026-09-13. This entry classifies only the 43 lines at checkpoint
+`cbe8b5a2a618c38a7b4fbe650013c0e6930cbd34` containing `.novc` in
+`doc/PLAN-wikisource-derived-mam-products.md`. It does not establish a rule for the rest of
 finding 7's census.
 
 At checkpoint `cbe8b5a2a618c38a7b4fbe650013c0e6930cbd34`, current `main` at
-`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
-unchanged at Git blob `bc60b785903b1099a9bcbd9a6b9eb55bcd3103e6`. Its existing sibling update remains
-unchanged at Git blob `cb6b5f7e899338380b4b404704bfbf030f2952df`; that update records the later production
-refresh and supplies no scratch artifact. The plan's named worktree,
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. Before retirement, the finished
+plan's substantive bytes matched historical blob `bc60b785903b1099a9bcbd9a6b9eb55bcd3103e6`;
+its only later base edit was the authorized update pointer, producing blob
+`1efcd386afb2dfa67c89112f8bac32305f3e928a`. Its update sibling's final blob was
+`cb6b5f7e899338380b4b404704bfbf030f2952df`. Commit
+`2a051ba509901228fbd4d62d91b73765b94a39e4` retired the base and update together on 2026-09-17.
+The update records the later production refresh and supplies no scratch artifact. The plan's named worktree,
 `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`, no longer exists. Neither the review worktree
 nor the primary clone has any of the 30 named scratch paths checked for this classification. The
 tracked `.gitignore` ignores `.novc/`.
@@ -1221,15 +1232,19 @@ rewrite occurred.
 
 ## Finding 7.1, revision-aware Wikisource downloads plan: no missing `.novc` dependency remains
 
-Recorded by Codex on 2026-09-13. This entry classifies only the 24 live lines containing `.novc`
-in `doc/PLAN-efficient-wikisource-downloads.md`. It does not establish a rule for the rest of
+Recorded by Codex on 2026-09-13. This entry classifies only the 24 lines at checkpoint
+`520f2df2648582651c0c58af0d00f29d45d301ff` containing `.novc` in
+`doc/PLAN-efficient-wikisource-downloads.md`. It does not establish a rule for the rest of
 finding 7's census.
 
 At checkpoint `520f2df2648582651c0c58af0d00f29d45d301ff`, current `main` at
-`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
-unchanged at Git blob `85fd19f1e6a25de7f145d1e9d7678271cd9d5b94`. Its existing sibling update remains at Git blob
-`d12529f6372cd5ee0db5d43bcd5bb8bb184cae99`; that update records the later production refresh
-and supplies no scratch artifact. The plan's named worktree,
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. Before retirement, the finished
+plan's substantive bytes matched historical blob `85fd19f1e6a25de7f145d1e9d7678271cd9d5b94`;
+its only later base edit was the authorized update pointer, producing blob
+`adf3903960d593740c3e4210602fd943dcf209f7`. Its update sibling's final blob was
+`d12529f6372cd5ee0db5d43bcd5bb8bb184cae99`. Commit
+`2a051ba509901228fbd4d62d91b73765b94a39e4` retired the base and update together on 2026-09-17.
+The update records the later production refresh and supplies no scratch artifact. The plan's named worktree,
 `C:/Users/BenDe/.codex/worktrees/3a6b/MAM-basics`, no longer exists. Neither the review worktree
 nor the primary clone has the plan's named `ws_efficiency_*` scripts or `ws-efficiency-*`
 output directories. The tracked `.gitignore` ignores `.novc/`.
@@ -1268,15 +1283,20 @@ rewrite occurred.
 
 ## Finding 7.1, worktree-file-consolidation plan: no missing `.novc` dependency remains
 
-Recorded by Codex on 2026-09-13. This entry classifies only the 24 live lines containing `.novc`
-in `doc/PLAN-worktree-file-consolidation.md`. It does not establish a rule for the rest of finding
+Recorded by Codex on 2026-09-13. This entry classifies only the 24 lines at checkpoint
+`4816afe2cad093ebfc001b827805bdd593c54021` containing `.novc` in
+`doc/PLAN-worktree-file-consolidation.md`. It does not establish a rule for the rest of finding
 7's census.
 
 At checkpoint `4816afe2cad093ebfc001b827805bdd593c54021`, current `main` at
-`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. The finished plan remains
-unchanged at Git blob `5b8da2ddc883016e4afa939b0a657a191f0cf5d7`. Its existing sibling update remains unchanged at
-Git blob `d1a68033a6591bd3a717b990f8262fbbe08e4bf0`; that update supplies the plan's State declaration
-and no scratch artifact. The six phase worktrees named by the plan no longer exist. The tracked
+`f079523148ae4892bec3b313dd43b3b627c1a2a9` was already merged. Before retirement, the finished
+plan's substantive wording matched historical blob `5b8da2ddc883016e4afa939b0a657a191f0cf5d7`;
+its later base edits were the authorized update pointer and the mechanically necessary joining of
+its opening paragraph, producing blob `5d4c4572a863f2be9d4370b9f35945546dd1fed4`. Its update
+sibling's final blob was `d1a68033a6591bd3a717b990f8262fbbe08e4bf0`. Commit
+`2a051ba509901228fbd4d62d91b73765b94a39e4` retired the base and update together on 2026-09-17.
+The update supplies the plan's State declaration and no scratch artifact. The six phase worktrees
+named by the plan no longer exist. The tracked
 `.gitignore` ignores `.novc/`.
 
 The 24 lines have these classifications:

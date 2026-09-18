@@ -1,7 +1,7 @@
 # Plan: remediate the closed 2026-09-14 dual-agent review
 
-State: live; written 2026-09-16 after the review exchange closed and Ben approved the complete
-decision package. Nothing in this plan has been remediated yet.
+State: live; written 2026-09-16 after the review exchange closed and Ben approved the complete decision package. Nothing in this plan has been remediated yet.
+Updates and later status: [PLAN-remediate-review-findings-2026-09-14-update.md](PLAN-remediate-review-findings-2026-09-14-update.md).
 
 This plan is for a fresh task with no access to the conversation that produced it. The executing
 task works in the existing shared checkout

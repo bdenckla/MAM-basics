@@ -6,7 +6,9 @@ Updates and later status: [user-level-config-in-cloud-sessions-update.md](user-l
 Since 2026-09-09 the fix has two halves. `dot-claude/` and `dot-Codex/` hold the
 version-controlled originals of Ben's user-level Claude and Codex configuration, so they arrive
 with the clone; and `.claude/hooks/install-user-config.sh`, wired in by `.claude/settings.json` as
-a `SessionStart` hook, copies two of them into `~/.claude/` when that directory lacks them.
+a `SessionStart` hook, installs three resources when their destinations are absent:
+`dot-Codex/user-wide-AGENTS.md` as `~/.codex/AGENTS.md`, and
+`dot-claude/user-wide-CLAUDE.md` plus `dot-claude/skills/hebrew-prose/` under `~/.claude/`.
 
 This file records the gap and how it was measured, why the configuration is stored here rather
 than in `github-misc`, the one sentence that was redacted on the way in, and how the hook is
@@ -142,14 +144,16 @@ script's comments at greater length.
 resumes the previous one, which is far too severe a response to a missing prose reference. Failure
 is reported by printing a banner instead: `SessionStart` is one of the few hook events whose
 plain-text stdout Claude Code adds to the session as context, so the banner reaches Ben's
-transcript **and** the model. Two failures get their own banner — the files being absent from the
-checkout, and only one of the two landing — and each tells the session to say so to Ben before
-starting work, rather than to proceed as though the rules had been read.
+transcript **and** the model. Two failures get their own banner—a needed tracked source being
+absent from the checkout, and any of the three destinations still missing after copying—and each
+tells the session to say so to Ben before starting work rather than to proceed as though the rules
+had been read.
 
-**The hook installs two of the tracked trees and not the rest.**
+**The hook installs the three tracked resources the symmetric Claude setup needs and not the
+rest.**
 `dot-claude/skills/prune-claude-state/` reads `~/.claude/plans/` and the per-repo auto-memory
 directory, neither of which reaches a cloud container, and it declares
-`disable-model-invocation: true`. `dot-claude/README.md` and all of `dot-Codex/` are not loaded by
+`disable-model-invocation: true`. `dot-claude/README.md` and the rest of `dot-Codex/` are not loaded by
 a Claude cloud session at all, and are readable in the checkout when wanted.
 `dot-claude/skills/verse-links/`, added 2026-09-10, names its interpreter and
 `py/main_verse_links.py` by the absolute Windows paths of Ben's own machines, which a cloud
