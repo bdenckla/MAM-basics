@@ -27,7 +27,8 @@ its source repository, not in each destination copy. A repo-wide reformat is a s
 Use MAM-basics' live `doc/PLAN-repo-maintenance-across-GitRepos.md`, section “The `doc/` sweep —
 genuinely last”, for the cross-repository procedure. The sweep is judgment work and remains
 outside the maintenance scripts. A finished dated document is immutable while tracked apart from
-its authorized line-4 update pointer. A spent base receipt and its optional one live
+its authorized line-4 update pointer and a mechanically necessary joining of a prose paragraph
+that begins on line 3 without changing its text. A spent base receipt and its optional one live
 `<stem>-update.md` form one retirement family and may be deleted together. Never create a numbered
 update sibling. A historical numbered sibling remains historical evidence and belongs to the
 historical family in which it appears; literal preservation does not make that naming current
@@ -173,7 +174,7 @@ tracked files as a clean checkout.
 Name an absolute durable retirement root outside the worktree. Below that root, preserve a sparse
 shadow of the former absolute parent path:
 
-- `C:\Users\BenDe\...` maps to `drive-C/Users/BenDe/...`.
+- `C:/Users/BenDe/...` maps to `drive-C/Users/BenDe/...`.
 - `\\server\share\...` maps to `unc/server/share/...`.
 - `/...` maps to `root/...`.
 

@@ -18,7 +18,8 @@ AC_PACKAGES = ("py_ac_loc",)
 
 ``py_ac_loc`` kept its name.  A second package held the Wikisource index generator's
 modules until 2026-09-10, when Ben's decision that day removed the generator and its
-outputs; phase 3 of ``doc/PLAN-mega-coverage.md`` names every file removed.
+outputs; `git show --stat 985262e2` names every file removed; Phase 3 of
+`doc/PLAN-mega-coverage.md` records the totals.
 ``py_ac_word_image_helper`` is NOT listed: it arrived here with book-of-job on
 2026-08-19 and is one committed blob with codex-index-aleppo's copy, so it belongs
 to ``boj_paths.BOJ_PACKAGES``, which lists it, and listing it twice would lint it

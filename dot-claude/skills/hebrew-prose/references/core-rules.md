@@ -8,7 +8,9 @@ This is the detailed statement behind the compact checklist in `../SKILL.md`.
 a maqaf joins to the next. A **chanted word** is a lone atom *or* a whole maqaf compound: the
 unit cantillation operates on, normally with one accent. Say which you mean. Name a compound
 whole — על־פני, לא־תעשה — never a bare half of one with an apology ("פני, maqaf-joined as
-על־פני" was rejected outright; the hedge is the error, not the wording). Plain ‘word’ survives for an ordinary English word, inside quoted or translated source material, and wherever the context already settles which sense is meant (references/terminology.md).
+על־פני" was rejected outright; the hedge is the error, not the wording). Plain ‘word’ survives
+for an ordinary English word, inside quoted or translated source material, and wherever the
+context already settles which sense is meant (references/terminology.md).
 
 **"Chanted word" is MECHANICAL, and an analysis never takes the name away.** What makes a chanted
 word is the writing: atoms joined by maqafs, bounded by spaces. So **never write that a maqaf
@@ -62,9 +64,16 @@ is in `references/terminology.md` §"Stress helpers."
 maqaf," "Breuer restores the secondary mark." Such framing never declares whether it is a
 teaching aid, a historical claim, or a picture of someone scratching ink off a manuscript. State
 what each text **has**: "MAM has no maqaf there: ויאמר and אלהים stand as two chanted words, each
-with a munaḥ of its own." Three exemptions — a source's own rule quoted in its own terms
-(Breuer's "cancelling"), **stress retraction** (nesiga), and anything explicitly declared a
-thought experiment.
+with a munaḥ of its own."
+
+Three exemptions:
+
+1. A source's rule quoted in the source's terms, such as Breuer's “cancelling”.
+2. Stress retraction (nesiga).
+3. Anything explicitly declared a thought experiment.
+
+Ben's undated rule, already present when MAM-basics became the canonical configuration home on
+2026-09-09.
 
 **Just say "has."** A corpus, manuscript, edition, atom, chanted word or compound *has* a mark.
 Exterminated so far, each its own cleanup: writes, wrote, codes, carries, reads, prints/is
@@ -74,6 +83,9 @@ Repeating "has" across neighbouring sentences is fine and preferred. Legitimate 
 the ones carrying real information — "lacks" for absence, a positional verb where possession is
 the wrong relation. "Bear out" (of evidence) is not possession and is fine. Passive is fine; so
 is naming the real agent, the *naqdan*.
+
+Ben's undated rule, already present when MAM-basics became the canonical configuration home on
+2026-09-09.
 
 **Never "witness."** Say edition, printed edition, manuscript, or the thing's name. Ben dislikes
 the term even for actual manuscripts.
@@ -92,7 +104,11 @@ alike.
 
 **MAM is a consensus text, and is not a Breuer edition.** See "Which corpus a claim takes" below
 — this one has been got wrong five times in one module.
+
 ## Which corpus a claim takes
+
+Ben's undated rule, already present when MAM-basics became the canonical configuration home on
+2026-09-09.
 
 - **Diplomatic** (one manuscript as it stands) = WLC, UXLC. **Consensus** = MAM. Ben prefers
   "consensus" to the standard "eclectic." Never write "an edited text, not a manuscript reading":
@@ -112,6 +128,7 @@ alike.
   `references/sources-and-corpora.md`.
 - Only the **LC** has the ambiguous vertical **bar**; WLC/UXLC/MAM have definite codepoints. Say
   "the LC's bar, which WLC transcribes as merkha," never "WLC's bar."
+
 ## Vocabulary quick table
 
 | Say | Not |
@@ -127,7 +144,7 @@ alike.
 | the Wikisource strand; "all four strands" | a bare "the strand" / "the strands" where nothing settles which |
 | the LC (manuscript), WLC (digital text) | bare "L" |
 | SimTiq / SimTan in code; "the Simanim Tiqqun" in prose | a bare "Simanim" where both editions are in play |
-| Mikra'ot Gedolot ha-Keter (`מג"ה`); the Jerusalem Crown (`כתר ירושלים`); the Aleppo Codex (`כתר ארם צובה`) | a bare "the Keter edition", which names either of the first two |
+| Mikra'ot Gedolot ha-Keter (`מג"ה`); the Jerusalem Crown (`כתר ירושלים`); the Aleppo Codex (`כתר ארם צובה`) | a bare "the Keter edition", which can name Mikra'ot Gedolot ha-Keter or the Jerusalem Crown |
 | BIL / AIL | "preposed" (outside M-C quotes) |
 | the compound / the page / the edition | "reading" as a vague catch-all noun |
 

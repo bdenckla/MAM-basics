@@ -189,7 +189,9 @@ The doc/ directory standard
 A DOC FILE THAT ONLY RECORDS FINISHED WORK IS DELETED, NOT ARCHIVED. Git
 history keeps it; the tree should carry only what a reader needs now. A
 finished dated document is immutable while tracked, apart from its one
-authorized line-4 update pointer. Each finished document has at most one live
+authorized line-4 update pointer and a mechanically necessary joining of a prose
+paragraph that begins on line 3 without changing its text. Each finished document
+has at most one live
 `<stem>-update.md`; never create `<stem>-update-N.md`. Treat the base and its
 optional one update file as one retirement family: keep or delete the whole
 family, never only one member. A historical numbered sibling found in Git

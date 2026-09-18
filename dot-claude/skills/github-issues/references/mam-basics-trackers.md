@@ -1,14 +1,16 @@
 # MAM-basics issue-tracker history and citation traps
 
-Read this reference when auditing, migrating, or interpreting issue citations in MAM-basics. The concise current rule remains in MAM-basics' `AGENTS.md`.
+Read this reference when auditing, migrating, or interpreting issue citations in MAM-basics. The
+concise current rule remains in MAM-basics' `AGENTS.md`.
 
 ## Five issue trackers: a bare `#NN` here means MAM-basics
 
 wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
 their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
 and closed — 93 of them as of 2026-08-17 (this paragraph long said 88, a count that was already
-five short when it was written: #89–#93 were filed 2026-07-31). The trackers unify *going forward* only: **every new issue, including new work on the
-moved code, is filed in MAM-basics.**
+five short when it was written: wlc-utils#89 through wlc-utils#93 were filed 2026-07-31). The
+trackers unify *going forward* only: **every new issue, including new work on the moved code, is
+filed in MAM-basics.**
 
 So in this repo a bare `#NN` names a MAM-basics issue, and a citation of a wlc-utils issue is
 written **`wlc-utils#NN`**. The prefix is not decoration: both trackers have issues in the 1-88
@@ -36,7 +38,8 @@ holman-ketiv-qere#4 is row 13's 2 Samuel 11:24 ויראו where MAM-basics #4 pr
 realization, holman-ketiv-qere#48 is row 41's Jeremiah 17:11 ימו where MAM-basics #48 is a space
 before sof pasuq in Isaiah 44:24, holman-ketiv-qere#75 is row 65's Ezekiel 40:34 ואלמו where
 MAM-basics #75 is the `mb_cmn/paths.py` convention. Most of holman-ketiv-qere's issues are one per
-review row, titled "row NN Book C:V FORM MAM qere", and `io/table_row_github_issues.json` holds
+review row, titled "row NN Book C:V FORM MAM qere", and
+`holman/io/table_row_github_issues.json` holds
 that mapping. **Six numbers became four-way collisions when holman-ketiv-qere's tracker was
 added** — #19, #29, #48, #52, #69 and #75, each already cited above as a wlc-utils or a
 UXLC-utils collision.
@@ -66,7 +69,7 @@ SID in the title, 11 of those leading with the verse, as "30:18: add prefix; exp
 does — one issue per quirk record, per manuscript image, or per crop-editor failure. **The bullet
 below about modules that render issue references as data does not apply here**: book-of-job's
 issue numbers live in its tracker and in prose, and no module of its code turns them into links or
-tags, so it has no counterpart to `io/table_row_github_issues.json`. The book-of-job data and
+tags, so it has no counterpart to `holman/io/table_row_github_issues.json`. The book-of-job data and
 programs now live under `book-of-job/` and `py/` in MAM-basics; no `DATA_REPO_NAME` constant remains.
 
 **Four of the six numbers named above are now FIVE-way collisions** — #19, #29, #48 and #52, whose
@@ -136,16 +139,17 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
   `doc/PLAN-mega-coverage.md` deleted it on 2026-09-10 — and `poetic_ply_grammar.py` numbers the
   accents of Ps 17:14 as `#7`–`#10`. None of those
   take a prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
-  number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
+  number waiting to be mistaken for it**: `uxlc/doc/clc-design.md` numbers its §9 open questions in
   the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
-  §9 #6" name that list rather than issues #2 and #6; three sites name a UXLC **change** number,
+  §9 #6" name that list rather than UXLC-utils#2 and UXLC-utils#6; three sites name a UXLC
+  **change** number,
   the 2026.10.19 release's tenth change, written "change #10" and "pending change #10"; and
   `main_uxlc_grammar_test.py`'s #218 and #219 are MAM-basics' own, so they are already right
   bare. `clc_render.py`'s site read "issue #6" until 2026-08-18 and now says "design doc §9 #6,
   not an issue", which is what the `clc_collect.py` site had said all along.
 - **Two modules render issue references as DATA about the Holman review, not as citations of a
   tracker, and prefixing them corrupts the rendered table.** `py/py_render/rt_issue_tags.py` and
-  `py/hkq_cmn/table_row_github_issues.py` turn `io/table_row_github_issues.json` into the per-row
+  `py/hkq_cmn/table_row_github_issues.py` turn `holman/io/table_row_github_issues.json` into the per-row
   issue links, state and tags on holman-ketiv-qere's report pages. Those numbers are
   holman-ketiv-qere issue numbers already, resolved through the `REPO_OWNER` and `REPO_NAME`
   constants that name `bdenckla/holman-ketiv-qere` and are passed to `gh issue list --repo`;

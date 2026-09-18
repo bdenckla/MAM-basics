@@ -21,7 +21,9 @@ topology decision.
 5. Read `references/repository-maintenance.md` for a maintenance sweep, Black coverage, or
    retirement of selected linked worktrees, completed Codex task folders and disposable cache data.
 
-Apply every clause of `gitrepos_setup_rule`, including its exclusions and its listed gists.
+Apply every clause of `gitrepos_setup_rule`: clone only the folders in
+`all-repos.code-workspace`; do not consult exclusion lists, enumerate GitHub repositories, or
+clone the listed gists.
 Never reconstruct the roster from `gh repo list` or from a disk set difference. If the request
 uses a recency criterion, apply that criterion rather than widening it to every missing clone.
 

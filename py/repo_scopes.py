@@ -26,7 +26,8 @@ would surface violations that are nobody's current business; they are deliberate
 absent. codex-index-leningrad never had them either, and its eight small modules were
 included anyway while they lasted, since they passed both checks as they stood. They
 went on 2026-09-10 with the Wikisource index generator they served, by Ben's decision
-that day; phase 3 of ``doc/PLAN-mega-coverage.md`` names every file removed. None of
+that day; `git show --stat 985262e2` names every file removed; Phase 3 of
+`doc/PLAN-mega-coverage.md` records the totals. None of
 that repository's Python remains.
 
 CORPUS ROOTS AND CODE PATHS COVER THE SAME THREE REPOS. ``check_mark_order`` reads

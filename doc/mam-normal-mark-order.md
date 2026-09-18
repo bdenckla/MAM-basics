@@ -64,8 +64,9 @@ Scope: only those four marks have a declared place. A vowel and an accent pass i
 `has_std_mark_order` says nothing about which of them comes first.
 
 **This section is back, not new.** It stood in `CLAUDE.md` and `.github/copilot-instructions.md`
-until both were disabled on 2026-05-19 and deleted in `b1fa115` on 2026-08-03. `codex-index-aleppo`
-and `codex-index-cam1753` carry near-verbatim copies of the deleted wording, both pointing back at
-`uni_denorm.py` in this repo — so the rule survived everywhere except the repo that hosts its
-implementation. On 2026-08-04, one day after the deletion, three NFC-ordered clusters were found in
-a hand-authored file here. That is why it is worth the tokens.
+until both were disabled on 2026-05-19 and deleted in `b1fa115` on 2026-08-03. When this section
+was restored on 2026-08-04, `codex-index-aleppo` and `codex-index-cam1753` carried near-verbatim
+copies of the deleted wording that pointed back at `uni_denorm.py` here; both repositories
+replaced those copies with evacuation breadcrumbs on 2026-09-04. On 2026-08-04, one day after the
+deletion, three NFC-ordered clusters were found in a hand-authored file here. That is why it is
+worth the tokens.

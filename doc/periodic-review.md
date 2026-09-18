@@ -56,6 +56,15 @@ don't go 'looking for trouble' in details beyond the narrow focus". A review of 
 across a series of commits, for better instruction files or linters, is a different review, and
 there individual commits matter.
 
+Establish each repository's review window from endpoint commits, not commit dates. For a cloned
+repository, carry forward the previous review's recorded end commit and compare
+`<previous-end>..<current-end>`. For a GitHub-only repository, record the previous and current
+default-branch commit IDs and compare those endpoints through the API. Repository-level
+`pushed_at` can establish that some push occurred; when the arrival of a particular commit
+matters, corroborate it with a direct ref update or PushEvent that names the before and after
+commits. Do not use `git log --since` or `commits?since=` as a completeness check: both filter by
+commit date and can miss an older commit pushed during the current review window.
+
 The unprefixed dated review series is selected by the exact date-shaped pathspec below. Re-establish
 the census and read the states rather than inferring them. The broader
 `doc/review-findings-*.md` pattern also matches live update files and is not the series census.

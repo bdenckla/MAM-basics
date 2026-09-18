@@ -37,7 +37,8 @@ the repository-specific reference before writing. Load only the references neede
    `mudgash` for literal Unicode code-point names.
 8. **Show the Hebrew form in Unicode.** Do not replace the form with a transliteration or an
    English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
-   give Hebrew an English runway or its own RTL table cell.
+   give Hebrew an English runway or its own RTL table cell. A section sign, a digit and a backtick
+   are neutral rather than strong; none satisfies this rule.
 
 ## Load only the references the task needs
 
@@ -48,7 +49,7 @@ the repository-specific reference before writing. Load only the references neede
   `references/rendered-prose.md`. Every table cell holding Hebrew is `dir="rtl"` unless the
   whole table already is.
 - **MAM-basics prose:** also read `references/mam-basics.md`. In particular, the nine
-  `gh-pages/post-stress-meteg*.html` pages deliberately use plain "word" because their own
+  `gh-pages/post-stress-meteg*.html` pages deliberately use plain "word" because their
   introduction fixes the meaning; never change those pages to "chanted word".
 - **Claims about corpora, Yeivin, Breuer, CTR, manuscript practice, or the prose-poetic
   asymmetry:** read `references/sources-and-corpora.md`. Search the full local OCR, not only

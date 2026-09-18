@@ -153,13 +153,17 @@ the mega does not run it. A change to a hand-run generator, or to any input it r
 rerunning every affected hand-run generator and inspecting its tracked outputs. Product reach and
 whether an act is hard to undo are separate risk axes, as the user-level instructions explain.
 
-## Dates shown on pages are New York dates and say so
+Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository;
+MAM-private runs its own near-Aleppo census.
 
-Every date shown by repository code on a page or report is converted through
-`py/mb_cmn/new_york_time.py` and followed by “, New York time”. Stored timestamps retain full
-ISO 8601 offsets. A date used as a name—a release name, change id, or dated filename—takes no
-label. Git dates retain their offset with `%cI` or `%ct`, never `%cs`; clock reads name their
-zone. `py/tests/test_explicit_time_zones.py` enforces the rule.
+## Generated clock dates and timestamps shown on pages use New York time and say so
+
+A date or timestamp that repository code generates from a clock for display on a page or report
+is converted through `py/mb_cmn/new_york_time.py` and followed by “, New York time”. Historical
+decision dates, citations, quotations, release or revision dates, and date-like names—including
+release names, change ids and dated filenames—take no label. Stored timestamps retain full ISO
+8601 offsets. Git dates retain their offset with `%cI` or `%ct`, never `%cs`; clock reads name
+their zone. `py/tests/test_explicit_time_zones.py` enforces the mechanical rule.
 
 ## A code path reads MAM-private every time it runs, or never
 

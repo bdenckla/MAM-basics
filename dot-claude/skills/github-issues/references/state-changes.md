@@ -12,7 +12,8 @@ agents, having been on the wrong end of it.
 1. **Close** with `gh issue close <number> --repo bdenckla/<repo> --comment "<one line>"`, adding
    `--reason "not planned"` when the work will not be done. **Reopen** with `gh issue reopen` and
    the same `--comment`. Both take the comment only as an argument, so a reason longer than one
-   line is posted first with `gh issue comment --body-file` (section 3), and the close or reopen
+   line is posted first with `gh issue comment --body-file` (`references/reading-and-writing.md`,
+   section 3), and the close or reopen
    follows it at once.
 2. **Relabel or reassign** with `gh issue edit <number> --repo bdenckla/<repo>` and
    `--add-label`, `--remove-label`, `--add-assignee` or `--remove-assignee`, with a comment

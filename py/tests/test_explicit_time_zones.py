@@ -1,10 +1,12 @@
 """Lint: code under py/ reads the clock, and git's dates, with a zone.
 
-Ben's decision of 2026-09-14, recorded in ``py/mb_cmn/new_york_time.py``: every date that
-this repository's code shows on a page or in a report is its New York date and says so, and
-a timestamp stored in data keeps its ISO 8601 offset. A clock read with no zone, or a git
-date placeholder that drops the committer's offset, is how a date with no stated zone gets
-written, so this lint fails on either in tracked Python under ``py/``:
+Ben's decision of 2026-09-14, recorded in ``py/mb_cmn/new_york_time.py``: a date or timestamp that
+repository code generates from a clock for display on a page or report uses New York time and
+says so. Historical decision dates, citations, quotations, release or revision dates, and
+date-like names are outside this generated-clock rule. Stored timestamps retain their ISO 8601
+offsets. An unzoned clock read or a Git date form outside the ``%cI``, ``%aI``, ``%ct`` and ``%at``
+whitelist can write a date with no canonical zone evidence, so this lint rejects both in tracked
+Python under ``py/``:
 
 * ``today()``, ``now()`` with no argument, ``utcnow()``, ``utcfromtimestamp()``, and
   ``fromtimestamp()`` without a zone;
@@ -74,14 +76,15 @@ def _string_problem(value: str) -> str | None:
     # An option with a value, as git takes one; a bare prefix string such as this
     # module's own pattern is not an option.
     if re.match(r"^--date=\S", value):
-        return f"{value!r} formats a git date without its offset"
+        return (
+            f"{value!r} selects a noncanonical Git date display mode; use %cI, %aI, "
+            "%ct or %at without --date="
+        )
     if _GIT_FORMAT_RE.match(value):
         found = set(_GIT_DATE_PLACEHOLDER_RE.findall(value))
         dropped = sorted(found - _ZONED_PLACEHOLDERS)
         if dropped:
-            return (
-                f"{value!r} uses git date placeholders {dropped}, which drop the offset"
-            )
+            return f"{value!r} uses Git date placeholders outside the allowed %cI, %aI, %ct and %at set"
     return None
 
 
@@ -105,6 +108,7 @@ def test_clock_and_git_date_reads_state_a_zone() -> None:
             if problem is not None:
                 problems.append(f"{rel}:{node.lineno}: {problem}")
     assert not problems, (
-        "Read the clock with a zone, take git dates as %cI, %aI, %ct or %at, and show a"
-        " date through py/mb_cmn/new_york_time.py:\n" + "\n".join(sorted(problems))
+        "Read the clock with a zone, take git dates as %cI, %aI, %ct or %at, and generate"
+        " displayed clock dates through py/mb_cmn/new_york_time.py:\n"
+        + "\n".join(sorted(problems))
     )

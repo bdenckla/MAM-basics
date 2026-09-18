@@ -20,6 +20,7 @@ Read the sections needed for the requested operation before touching GitHub.
    script with `capture_output=True` and `encoding="utf-8"`. Python decodes stdin with
    `surrogateescape`, and a lone surrogate from Hebrew text then raises on re-encode, which once
    pushed an empty body to a GitHub issue.
+
 ## 2. Filing an issue
 
 1. **File no issue for an idea, and do not offer to file one.** Ben, 2026-09-12, declining an idea
@@ -52,7 +53,8 @@ Read the sections needed for the requested operation before touching GitHub.
       and thin GitHub issue with a pointer to that plan."* Use MAM-basics #280's shape: the
       authorship line, a link to the plan on GitHub, and a summary of a few sentences. The link
       resolves only once the plan has been pushed to `main`. When the plan's `State:` line comes
-      to read `executed`, close the issue with a comment saying so (section 5).
+      to read `executed`, close the issue with a comment saying so
+      (`references/state-changes.md`, section `Closing, reopening, relabelling and reassigning`).
    2. **A `doc/review-findings-*.md` file gets no issue.** Its `State:` line carries open or
       closed. The thin tracking issues the reviews used to file were retired on 2026-09-01, and
       `py/repo_util/check_repo_standards.py`'s docstring records why, under "THE `State:` LINE ON
@@ -64,16 +66,19 @@ Read the sections needed for the requested operation before touching GitHub.
    mega run".
 6. **File it with** `gh issue create --repo bdenckla/<repo> --title "<title>" --body-file <file>`,
    the body file written as section 3 says, and give Ben the URL `gh` prints.
+
 ## 3. Commenting on an issue
 
 1. **A comment is for anything that adds to an issue, open or closed** — a cross-link, a related
    plan, a later finding, progress — **and for any correction to a closed issue**, which is a
-   record. Ben, 2026-09-14, of the cross-link quoted at the top: *"It seems way more appropriate
+   record. Ben, 2026-09-14, of the “Related: the mega speedup plan” cross-link in MAM-basics
+   #278: *"It seems way more appropriate
    (and procedurally easier) to add a comment!"* He asked that that edit not be undone, so
    MAM-basics #278's body keeps its "Related: the mega speedup plan" section. A correction to an
    open issue edits the body instead (section 4).
 2. **Open the comment with a line saying an agent wrote it**, such as *"Written by a Claude session
-   on 2026-09-14, at Ben's request."* Item 5 of section 5 says why.
+   on 2026-09-14, at Ben's request."* Item 5 of `references/state-changes.md`, section
+   `Closing, reopening, relabelling and reassigning`, says why.
 3. **Post it from a file**: `gh issue comment <number> --repo bdenckla/<repo> --body-file <file>`.
    1. Never pass a multi-line body as an argument, a shell here-doc or a PowerShell here-string,
       and never `--body-file -`, which reads stdin (item 3 of section 1). "Running scripts — no
@@ -88,6 +93,7 @@ Read the sections needed for the requested operation before touching GitHub.
       Hebrew combining marks into Unicode-normal order, and MAM-basics keeps MAM-normal order.
 4. **Never `gh issue comment --edit-last` or `--delete-last`.** Both act on the last comment of
    the account `gh` runs as, and every session runs as Ben, so that comment can be his.
+
 ## 4. Correcting a stale fact in an open issue's body
 
 1. **Edit a body only to correct an open issue**: a dead link, an umbrella issue that has since

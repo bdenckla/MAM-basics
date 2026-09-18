@@ -30,3 +30,6 @@ Every authored CSS theme declares `color-scheme: light dark` on `:root` and
 every theme custom property that stores a color uses a
 `light-dark(<light>, <dark>)` pair. Fixed badge foregrounds and backgrounds
 remain literal colors.
+
+Ben decided on 2026-09-12 that the two renamed JC3 zayin pages receive no compatibility stubs,
+so their old URLs may break; `in/holman_ketiv_qere_redirect_pages.json` records that decision.

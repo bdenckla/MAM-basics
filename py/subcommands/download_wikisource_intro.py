@@ -29,8 +29,9 @@ THEM.  Each began as wikitext from a one-off generator, and Ben said on 2026-08-
 those generated files that they "were only ever intended to be starting points for
 manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here are that
 manual work as published.  Ben's decision of 2026-09-10 removed both generators and
-their outputs from this repository, since they "will never be run again"; phase 3 of
-``doc/PLAN-mega-coverage.md`` names every file removed.  So the mirror is a drift
+their outputs from this repository, since they "will never be run again"; `git show --stat
+985262e2` names every file removed; Phase 3 of `doc/PLAN-mega-coverage.md` records the totals.
+So the mirror is a drift
 check against nothing -- an earlier draft of this docstring called it a drift check
 between generator and page, which was wrong even while the generators existed: 26 of
 the Aleppo generator's 700 lines reached the live page (4%), and 94 of the Leningrad

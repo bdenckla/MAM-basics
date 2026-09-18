@@ -1,10 +1,10 @@
-"""Dates shown on pages and in reports are in New York time, and each one says so.
+"""Generated clock dates and timestamps shown on pages use New York time and say so.
 
-Ben's decision, 2026-09-14: every date that this repository's code shows on a published page
-or in a report is the date in New York time (America/New_York), followed by the label
-", New York time". A timestamp stored in data keeps its full ISO 8601 form with its offset;
-only what is shown is converted. A date that is a name, such as a release name, takes no
-label.
+Ben's decision, 2026-09-14: a date or timestamp that repository code generates from a clock for
+display on a page or report is the date or time in New York (``America/New_York``) and is followed
+by the label “, New York time”. Historical decision dates, citations, quotations, release or
+revision dates, and date-like names—including release names, change ids and dated filenames—take
+no label. A timestamp stored in data keeps its full ISO 8601 form with its offset.
 
 WHY NEW YORK RATHER THAN UTC. The seven dates stored in
 ``MAM-parsed/historical/manifest.json`` are New York dates: each equals the New York date of

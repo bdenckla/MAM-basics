@@ -503,9 +503,10 @@ Four reasons the rename was rejected, none of which the growing count changes.
    is not natively this repository's file.** It arrived
    byte-identical from wlc-utils, and `CLAUDE.md` asserts that identity. Renaming it would
    retroactively label as a Claude review a file that predates the distinction.
-4. **There is precedent for keeping a name and explaining it.** `CLAUDE.md`'s "Five issue trackers"
-   section kept its name after five more trackers were consolidated into it, with an explicit note
-   recorded so a rename is not re-proposed.
+4. **There is precedent for keeping a name and explaining it.**
+   `dot-claude/skills/github-issues/references/mam-basics-trackers.md` keeps “Five issue trackers”
+   after five more trackers were consolidated into it, with an explicit note recorded so a rename
+   is not re-proposed.
 
 ## Two things to set up before the first Codex review
 
@@ -591,8 +592,9 @@ Design B remains unrun and optional by explicit request.
 same day disproved it: four Codex review forests then existed under
 `C:/Users/BenDe/Documents/Codex/ReviewForests/`. Those forests were retired by 2026-09-04;
 `~/.codex/sessions` holds Codex session history, and
-`~/.codex/AGENTS.md` was 1,077 lines as measured on 2026-09-08; the prerequisite section above
-records the September 9 measurement. Codex ran the staged mega-pipeline review of `py/main_0_mega.py`'s
+`~/.codex/AGENTS.md` was 1,077 lines as measured on 2026-09-08;
+`~/.codex/AGENTS.md` was 1,106 lines when remeasured on 2026-09-09. Codex ran the staged
+mega-pipeline review of `py/main_0_mega.py`'s
 42 steps, whose output is this repository's `doc/mega-pipeline-review-phase-*-2026-09-01.md` — that
 review names its governing forest and records that the `worktree-forest` and `hebrew-prose` skills
 governed it.

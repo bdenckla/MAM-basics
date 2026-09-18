@@ -1,6 +1,7 @@
 # MAM repository topology, redirect hosts, and historical traps
 
-Read this reference only for repository setup or maintenance, redirect-stub work, or questions about the location and status of an evacuated repository.
+Read this reference only for repository setup or maintenance, redirect-stub work, or questions
+about the location and status of an evacuated repository.
 
 ## Repo locations are decisions, not one machine's disk
 
@@ -23,6 +24,7 @@ Two consequences, and they apply to every location claim below.
    likely to predate the decision, or to come from a sync that did not know about it, than to
    record a change of mind. Before concluding anything about where a clone came from, read its
    reflog: a fresh clone opens with `clone: from …`, a survivor does not.
+
 ## wlc-utils belongs on no machine, and its stub set is frozen
 
 **wlc-utils is not in the roster**, so under `gitrepos_setup_rule` no machine clones it — Ben's
@@ -71,6 +73,11 @@ no clone, and it fires here.
 so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards checks alike, not
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
+
+The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
+ran, and are left as written—the dispositions Ben chose on 2026-08-10 for masorah-books and on
+2026-08-11 for al-hatorah.
+
 ## MAM-OSIS belongs on no machine except for explicit stub publication
 
 Ben's decision, 2026-09-10: the completed Phase 5 lane of
@@ -140,6 +147,7 @@ stays live only as the generated-stub host for its former three Pages URLs. The 
 `in/codex_index_aleppo_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks it
 without a clone. The source tracker has no open issues; qualified citations of its closed issues
 remain source-tracker citations, while new public-side issues belong in MAM-basics.
+
 ## Cambridge 1753 data is local under `cam1753/`
 
 Ben's decision, 2026-09-04: `codex-index-cam1753` belongs on no machine. Its archived GitHub
@@ -152,9 +160,6 @@ workspace entry is therefore a decision, not a clone failure. The archived sourc
 open issues; qualified citations of its closed issues remain source-tracker citations, while new
 public-side issues belong in MAM-basics.
 
-The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
-ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
-citations too.
 ## diffable-pointed-hebrew's only data is `in/diffable-pointed-hebrew-short-name-overrides.json`
 
 The completed Phase 4 lane of
@@ -171,6 +176,7 @@ repository keeps its history as an archived dated breadcrumb. Ben
 archived `bdenckla/diffable-pointed-hebrew` on 2026-09-04; its archive state was then confirmed
 with `gh repo view --json isArchived,url`. The source tracker has no issues; new product work is
 tracked in MAM-basics.
+
 ## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
 
 **holman-ketiv-qere is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any
@@ -192,6 +198,7 @@ git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git C:/Users/B
 Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and remove the temporary
 clone again after the source repository's Pages deployment succeeds. `../holman-ketiv-qere` is
 already absent from `all-repos.code-workspace`, so no workspace entry needs changing.
+
 ## UXLC-utils belongs on no machine, and its redirect set is frozen
 
 **UXLC-utils is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any machine.
@@ -212,6 +219,7 @@ Then publish and check the frozen stubs with `--repo UXLC-utils`, and remove the
 again after the source repository's Pages deployment succeeds. `../UXLC-utils` was removed from
 `all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
 missing directory.
+
 ## codex-index-leningrad has been evacuated
 
 **codex-index-leningrad is not in the roster.** Phase 1 of
@@ -227,14 +235,16 @@ with their evidence notes, into folders for the work each one serves:
 `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, which took the Aleppo Codex,
 Cambridge 1753 and other crops too. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
-used and its three generated files, since it "will never be run again"; phase 3 of
-`doc/PLAN-mega-coverage.md` names every file removed. No Leningrad code remains, so
+used and its three generated files, since it "will never be run again";
+`git show --stat 985262e2` names every file removed; Phase 3 of
+`doc/PLAN-mega-coverage.md` records the totals. No Leningrad code remains, so
 `py/repo_scopes.py` lists none.
 
 Phase 5 on 2026-09-04 confirmed that the clean primary clone's `HEAD` and `origin/main` were both
 `86f88c0`, and that `git worktree list` named only the primary checkout. The review forest was no
 longer present, so the primary clone was moved to the Windows Recycle Bin. No Leningrad clone
 belongs on a machine.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on

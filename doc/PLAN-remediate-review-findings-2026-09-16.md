@@ -78,8 +78,9 @@ The following current-tree facts are dated measurements, not invariants:
   lint sees 14 and misses 13;
 - finding 12.2's current broad grep finds 138 files and 2,046 `.novc` lines in this branch and 132
   files and 2,000 lines in current `main`;
-- the four skill/reference files in finding 19 contain 13 headings without a preceding blank line
-  and eight overlong prose lines after excluding tables and the clone command; and
+- before Wave 3, the four skill/reference files in finding 19 contained 13 headings without a
+  preceding blank line and eight overlong prose lines after excluding tables and the clone
+  command; and
 - the fourteen non-merge commits named by `doc/PLAN-mega-speedup.md`'s exact pathspec and range
   `132f2f3e..bca64824` are `20f18020`, `6dbd27e7`, `3b1adf45`, `dcd2c1f6`, `d6a6764d`,
   `1b7b97ef`, `5cb06e25`, `2239cbad`, `cde921bf`, `7fd381db`, `af1c404a`, `15c09692`,
