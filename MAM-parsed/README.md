@@ -2,16 +2,11 @@
 
 This MAM-basics product directory contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
-in two Wikisource-derived primary parsed formats, `plain/` and `plus/`, plus a
-Google-derived comparison product in `google/` that uses the plain schema.
+in two Wikisource-derived parsed formats, `plain/` and `plus/`.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-Each of `plain/`, `plus/`, and `google/` contains a JSON file for each of the 24
-books of the Miqra.
-
-Hebrew Wikisource supplies `plain/` and `plus/`. The
-[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745) supplies only
-`google/`, the independent Google input to `py/main_diff.py wsgo`.
+Each of `plain/` and `plus/` contains a JSON file for each of the 24 books of the
+Miqra. Hebrew Wikisource supplies both formats.
 
 Each JSON file represents its corresponding book in a format that is easier for a program to read than the source Wikitext.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
@@ -84,12 +79,6 @@ example support file, and the published documentation:
 
 ```powershell
 .venv/Scripts/python.exe py/main_parse.py ws
-```
-
-Regenerate the independent Google comparison product separately:
-
-```powershell
-.venv/Scripts/python.exe py/main_parse.py go
 ```
 
 Run the toy example from the MAM-basics root; its existing output is the

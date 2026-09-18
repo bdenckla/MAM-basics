@@ -29,7 +29,7 @@ from author_site import site_data
 from author_site.entries import Anchor, Entry, EntryGroup, Italic, Part, Text
 
 _FNAME = "index.html"
-_TITLE = "The Miqra according to Denckla."
+_TITLE = "The Miqra according to Denckla"
 
 _REPO_URL = "https://github.com/bdenckla/MAM-basics"
 _README_URL = f"{_REPO_URL}/blob/main/README.md"

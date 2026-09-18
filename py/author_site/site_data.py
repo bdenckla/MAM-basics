@@ -103,8 +103,8 @@ def _mwd_misc(title: str, fname: str) -> Entry:
 
 
 INTRO = (
-    "Links to editions and datasets of MAM, together with related studies, excerpts, "
-    "reviews, and technical resources."
+    "This page contains links to editions and datasets of MAM, together with related "
+    "studies, excerpts, reviews, and technical resources."
 )
 
 _EDITIONS = Section(
