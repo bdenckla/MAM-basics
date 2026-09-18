@@ -13514,7 +13514,7 @@ v,:,α,i,m.,-,y,a,m,u,(mah),τ,v,·
 SPACE
 x,∵,c,:,y,‥,(pash),n,v,·,(pash)
 SPACE
-l,o,α,-,y,a,$,·si,i,(mah),y,m,v,·
+l,o,(mos),α,-,y,a,$,·si,i,(mah),y,m,v,·
 SPACE
 α,‥,l,‥,(pash),y,n,v,·,(pash)
 SPACE
