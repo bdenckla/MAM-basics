@@ -14,9 +14,10 @@ defined for future use.  This module is that definition, and
 
 THE THREE TIERS
 
-1. PUBLISHED.  ``gh-pages/``, which a push to ``main`` deploys.  Anyone with the URL
-   reads it, and a push is the act that makes that true, so a change reaching this
-   tier is outward-facing in the ordinary sense.
+1. PUBLISHED.  ``gh-pages/``, deployed from ``main`` once daily at 4:17 AM, New York
+   time, and on manual dispatch.  Anyone with the URL reads it, and either deployment
+   is the act that makes that true, so a change reaching this tier is outward-facing
+   in the ordinary sense.
 2. DISTRIBUTED DATA.  ``MAM-parsed/``, ``MAM-simple/``, ``MAM-for-Sefaria/``,
    ``MAM-with-doc/`` and ``MAM-OSIS/``.  These are consumed by git URL whether or not
    Pages serves them, so "not published" is not the same as "not distributed": a
@@ -184,7 +185,7 @@ _MEGA_WRAPPER_DELEGATES = {
 
 
 def published_tree() -> Path:
-    """Tier 1: the tree a push to ``main`` deploys to GitHub Pages."""
+    """Tier 1: the tree published from ``main`` daily and on manual dispatch."""
     return paths.repo_root() / "gh-pages"
 
 

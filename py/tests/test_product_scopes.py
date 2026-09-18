@@ -102,7 +102,8 @@ def test_published_tree_exists_and_is_tracked() -> None:
     rel = _rel(tree)
     assert tree.is_dir(), (
         f"product_scopes.published_tree() names {rel}, which is not a directory."
-        " Tier 1 is the tree a push to main deploys; if it has moved, update"
+        " Tier 1 is the tree scheduled and manual Pages runs deploy from main; if it has moved,"
+        " update"
         " py/product_scopes.py to say where it is now."
     )
     assert rel in _tracked_dirs(), (

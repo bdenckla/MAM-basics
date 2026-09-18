@@ -141,7 +141,8 @@ temporary-stub procedures, and historical traps.
 `py/product_scopes.py` is the declaration of record, enforced by
 `py/tests/test_product_scopes.py`. The product tiers are:
 
-1. **Published:** `gh-pages/`, deployed by a push to `main`.
+1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
+   on manual dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`, and
    `MAM-OSIS/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
