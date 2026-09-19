@@ -14,11 +14,21 @@ inputs and outputs both below and above that limit.
 ## Official documentation
 
 Windows historically limits many paths to `MAX_PATH`, 260 characters including
-the terminating null character. Extended paths are available only under
-particular conditions. For the modern opt-in behavior, Microsoft says both the
-`LongPathsEnabled` registry value and an application's `longPathAware` manifest
-declaration are required; the registry setting does not make every application
-long-path aware. See [Microsoft's long-path
+the terminating null character. Microsoft documents two distinct mechanisms for
+getting past that limit with absolute paths:
+
+1. An application can pass an extended-length path in the `\\?\...` form to
+   Unicode Windows API functions. Windows passes such a path with minimal
+   modification and permits an approximate maximum of 32,767 characters. This
+   mechanism requires neither `LongPathsEnabled` nor a `longPathAware`
+   application manifest, and `LongPathsEnabled` adds no path-length capacity to
+   it.
+2. On Windows 10 version 1607 and later, many common Win32 functions can accept
+   long paths without the `\\?\` prefix when `LongPathsEnabled` is `1` and the
+   application manifest declares `longPathAware`. The registry setting alone
+   does not make every application long-path aware.
+
+See [Microsoft's long-path
 requirements](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation).
 
 Python 3.6 and later can use extended paths when the Windows setting is enabled.
@@ -26,11 +36,11 @@ The Python documentation specifically names `open()`, `os`, and most other path
 functionality. See [Python's Windows
 guidance](https://docs.python.org/3.13/using/windows.html#removing-the-max-path-limitation).
 
-Windows `LongPathsEnabled` and Git for Windows `core.longpaths` are separate
-mechanisms. The first is an operating-system opt-in used by long-path-aware
-applications. The second enables Git for Windows' own handling in C-based Git
-commands, while Git for Windows warns that scripted Git commands can still
-fail. See [Git for Windows on long
+Git for Windows `core.longpaths` uses the first mechanism: its C-based Git
+commands convert long paths to the `\\?\...` form. That prefix-based handling
+does not require `LongPathsEnabled` and does not benefit from enabling it. Git
+for Windows warns that scripted Git commands can still fail even when
+`core.longpaths` is enabled. See [Git for Windows on long
 paths](https://gitforwindows.org/git-cannot-create-a-file-or-directory-with-a-long-path.html).
 
 Codex-managed worktrees live under `$CODEX_HOME/worktrees` by default, although
