@@ -827,7 +827,7 @@
             "startp": 14,
             "stopc": 44,
             "stopv": 23,
-            "stopp": 1,
+            "stopp": 2,
             "note": null
         },
         {
@@ -839,7 +839,7 @@
             "bkid": "Genesis",
             "startc": 44,
             "startv": 23,
-            "startp": 2,
+            "startp": 3,
             "stopc": 45,
             "stopv": 16,
             "stopp": 13,

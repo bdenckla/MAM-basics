@@ -1356,8 +1356,8 @@
     "change_column": 3,
     "change_line": 6,
     "change_fline": 60,
-    "guess_fline": 58.62,
-    "fline_diff": -1.38
+    "guess_fline": 58.45,
+    "fline_diff": -1.55
   },
   {
     "change_release": "2022.04.01",

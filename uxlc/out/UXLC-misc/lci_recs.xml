@@ -885,7 +885,7 @@
       <startp>14</startp>
       <stopc>44</stopc>
       <stopv>23</stopv>
-      <stopp>1</stopp>
+      <stopp>2</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -897,7 +897,7 @@
       <bkid>Genesis</bkid>
       <startc>44</startc>
       <startv>23</startv>
-      <startp>2</startp>
+      <startp>3</startp>
       <stopc>45</stopc>
       <stopv>16</stopv>
       <stopp>13</stopp>
