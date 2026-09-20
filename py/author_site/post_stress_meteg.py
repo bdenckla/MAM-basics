@@ -1,9 +1,10 @@
 r"""MAM's meteg marks after the stress: the main page and eight supporting pages.
 
-The page for ``accgram.post_stress_meteg``'s survey.  That module measures; this one renders,
-and takes every figure it prints from the survey rather than from a separate constant.
-``pin_claims`` checks the survey's internal consistency and re-derives the categorical and
-relational claims in the prose, which is the shape
+The pages for ``accgram.post_stress_meteg``'s survey take every census figure from that survey
+rather than from a separate constant. The maintained meteg-after-silluq page instead joins its
+two validated JSON ledgers to forms lifted from MAM-simple or UXLC. ``pin_claims`` checks the
+survey's internal consistency and re-derives the categorical and relational claims in the prose,
+which is the shape
 ``maqaf_nonfinal_accents_page.pin_claims`` established.
 
 A LOOSE PAGE AT THE DEPLOY ROOT, beside ``index.html`` and ``unicode-proposals.html``, which
@@ -23,10 +24,10 @@ WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and acce
 subject; and what the page is about is which SYLLABLE a mark falls in, which a reader cannot
 see without the vowels that make the syllables.  All three of the page's structural types
 are named for a vowel or a syllable shape, so the vowel is the point of the comparison here in
-the sense the house rule allows for.  Every reader-facing form begins with MAM's data at
-generation time. The Fit-for-MAS lack page uses each record's ``mam_form`` and
-``next_mam_form``; analysis-only annotations are omitted before HTML is written. None is
-typed here.
+the sense the house rule allows for. Reader-facing forms begin with MAM's data at generation
+time except where the meteg-after-silluq ledger explicitly requests the UXLC transcription.
+The Fit-for-MAS lack page uses each record's ``mam_form`` and ``next_mam_form``; analysis-only
+annotations are omitted before HTML is written. None is typed here.
 
 THESE PAGES SAY PLAIN "word", AND THAT IS A DECISION RATHER THAN AN OVERSIGHT.  The
 ``hebrew-prose`` skill's first rule is "Never a loose 'word'"; Ben exempted this document and
@@ -78,12 +79,14 @@ must partition the type-2 records, but its populations are not source-code const
 from __future__ import annotations
 
 from collections import Counter
+from datetime import date
 import json
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 
 from accgram import final_stress
+from accgram import mam_simple_verse
 from accgram import post_stress_meteg as psm
 from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
@@ -98,7 +101,8 @@ from mb_misc import mb_html
 from py_html.my_html_span_romanized import rmn
 from py_uxlc import my_uxlc
 from py_wlc_json_and_unicode import wlc_uword
-from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
+from uxlc_misc import my_uxlc as uxlc_source
+from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
 _FNAME = site_data.POST_STRESS_METEG_FNAME
 _TITLE = site_data.POST_STRESS_METEG_TITLE
@@ -175,6 +179,7 @@ def _visible_title(title: str, *, lowercase: bool = False) -> tuple:
 # included, the English heading left alone, no class and no stylesheet rule.
 _HEBREW_CELL = {"dir": "rtl"}
 _NUMERIC_CELL = {"class": "numeric"}
+_POST_SILLUQ_BCV_CELL = {"class": "post-silluq-bcv"}
 
 # No excerpt from either book appears on this page.  Kept as a structure rather than as a bare
 # absence so the accounting below has something to count, and so an excerpt added later is
@@ -217,11 +222,39 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
+_POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
+_POST_SILLUQ_KOREN_JSON = "meteg_after_silluq_koren_readings.json"
+_POST_SILLUQ_REPORT_URL_PREFIX = "https://github.com/bdenckla/MAM-basics/blob/main/"
+_POST_SILLUQ_CASE_STATUSES = frozenset(
+    {"established", "favoured-not-proven", "open-candidate"}
+)
+_POST_SILLUQ_FORM_SOURCES = frozenset({"mam", "uxlc"})
+_POST_SILLUQ_SOURCE_STATES = frozenset(
+    {
+        "later-meteg",
+        "no-later-mark",
+        "both-strokes",
+        "first-position-only",
+        "tracked-observation",
+        "not-recorded",
+    }
+)
+_POST_SILLUQ_SOURCES = ("mam", "aleppo", "leningrad", "koren")
+_POST_SILLUQ_IMAGE_REFS = {
+    "lc-1s17-5": "1 Samuel 17:5",
+    "aleppo-1s17-5": "1 Samuel 17:5",
+    "aleppo-1k7-37": "1 Kings 7:37",
+    "leningrad-1k7-37": "1 Kings 7:37",
+}
+_POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
+_KOREN_STATUSES = frozenset({"complete", "incomplete", "deferred", "skipped-family"})
+_KOREN_POSITIONS = frozenset({"first", "last", "both"})
+_KOREN_SHEVA_STATES = frozenset({"vocal", "silent"})
+_FULL_REF = re.compile(r"(?P<book>.+) (?P<chapter>[0-9]+):(?P<verse>[0-9]+)")
 _CHRONICLES_8_11_VERSE = "2c8:11"
 _CHRONICLES_8_11_REF = ref_abbrev(_CHRONICLES_8_11_VERSE)
-# site_data spells these two page titles by hand, being a plain data module with no accgram
-# import.  These are what keep those two spellings at ref_abbrev's form.
-assert _POST_SILLUQ_REF in _POST_SILLUQ_TITLE, (_POST_SILLUQ_TITLE, _POST_SILLUQ_REF)
+# site_data spells this page title by hand, being a plain data module with no accgram import.
+# This assertion keeps its reference at ref_abbrev's form.
 assert _CHRONICLES_8_11_REF in _CHRONICLES_8_11_TITLE, (
     _CHRONICLES_8_11_TITLE,
     _CHRONICLES_8_11_REF,
@@ -542,6 +575,8 @@ def gen_html_files(
     """
     survey = psm.load_survey() if trust_survey else psm.build_survey()
     pin_claims(survey)
+    post_silluq_cases = load_post_silluq_cases()
+    koren_observations = load_post_silluq_koren_observations()
     top_dir = paths.gh_pages_dir() if out_dir is None else Path(out_dir)
     out_paths = (
         _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
@@ -563,7 +598,7 @@ def gen_html_files(
         _write_page(
             top_dir / _POST_SILLUQ_FNAME,
             _POST_SILLUQ_TITLE,
-            build_post_silluq_body(survey),
+            build_post_silluq_body(survey, post_silluq_cases, koren_observations),
         ),
         _write_page(
             top_dir / _CHRONICLES_8_11_FNAME,
@@ -576,12 +611,14 @@ def gen_html_files(
             build_next_conjunctive_body(survey),
         ),
     )
-    assert_no_phonetic_mam_annotations(out_paths, survey)
+    assert_no_phonetic_mam_annotations(out_paths, survey, post_silluq_cases)
     return out_paths
 
 
-def assert_no_phonetic_mam_annotations(page_paths, survey):
+def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=None):
     """Validate every complete page against current MAM and the comparison source."""
+    if post_silluq_cases is None:
+        post_silluq_cases = load_post_silluq_cases()
     expected = {
         value
         for name, value in vars(site_data).items()
@@ -593,14 +630,26 @@ def assert_no_phonetic_mam_annotations(page_paths, survey):
     ):
         raise ValueError("MAS annotation validation requires every declared page")
     bhs_form = dict(_post_silluq_comparison(survey))["BHS"]
+    uxlc_case_forms = {
+        case["bcv"]: _verse_final_word(
+            _uxlc_words(case["bcv"]), bcv=case["bcv"], source="UXLC 3.9"
+        )
+        for case in post_silluq_cases
+        if case["form_source"] == "uxlc"
+    }
+    extra_sources = {
+        f"{paths.in_dir() / 'UXLC-39'} {bcv}; case-ledger form": form
+        for bcv, form in uxlc_case_forms.items()
+    }
+    extra_sources[
+        f"{paths.in_dir() / 'UXLC-39'} {_POST_SILLUQ_VERSE}; BHS-labelled form, "
+        "asserted equal to WLC 4.22"
+    ] = bhs_form
     return post_stress_meteg_annotations.validate_pages(
         page_paths,
         survey,
         Path(__file__),
-        extra_sources={
-            f"{paths.in_dir() / 'UXLC-39'} {_POST_SILLUQ_VERSE}; BHS-labelled form, "
-            "asserted equal to WLC 4.22": bhs_form,
-        },
+        extra_sources=extra_sources,
     )
 
 
@@ -663,31 +712,20 @@ def build_methods_body(survey: dict) -> list:
             )
         ),
         mb_html.heading_level_2(
-            (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, f" in {_MAM_POST_SILLUQ_REF}")
+            (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, " in the census")
         ),
         mb_html.para(_mam_post_silluq_statement(survey)),
-        _mam_post_silluq_aleppo_crop(),
         mb_html.para(
             (
-                "The Aleppo Codex has a ",
-                _ROM_METEG,
-                " after the ",
-                _ROM_SILLUQ,
-                f" in {_MAM_POST_SILLUQ_REF}.",
+                "The ",
+                mb_html.anchor_h(
+                    ("comprehensive ", _ROM_METEG, "-after-", _ROM_SILLUQ, " page"),
+                    _POST_SILLUQ_FNAME,
+                ),
+                " gives the comparative evidence, known cases, unresolved candidates,"
+                " and Koren-search results.",
             )
         ),
-        mb_html.para(
-            (
-                "At ",
-                _ref_link(_MAM_POST_SILLUQ_VERSE),
-                ", the Leningrad Codex lacks the ",
-                _ROM_METEG,
-                " after the ",
-                _ROM_SILLUQ,
-                ".",
-            )
-        ),
-        _mam_post_silluq_leningrad_crop(),
         *_census_definitions(survey),
         *_dually_cantillated_passages(survey),
         *_oleh_meteg_overlap(survey),
@@ -2667,6 +2705,326 @@ def _wlc_words(bcv: str) -> list[str]:
     return [wlc_uword.uword(atom) for atom in vels]
 
 
+def _require_exact_keys(
+    record: dict, *, required: set[str], allowed: set[str], where: str
+) -> None:
+    """Reject missing and unknown keys in one authored JSON object."""
+    missing = sorted(required - set(record))
+    unknown = sorted(set(record) - allowed)
+    if missing or unknown:
+        raise ValueError(f"{where}: missing keys {missing}; unknown keys {unknown}")
+
+
+def _require_nonempty_string(value: object, *, where: str) -> str:
+    """Return one nonempty authored string, or fail with its JSON location."""
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{where}: expected a nonempty string")
+    return value
+
+
+def _full_ref_to_bcv(ref: str) -> str:
+    """Convert the tracked full-English reference to the survey's compact BCV."""
+    match = _FULL_REF.fullmatch(ref)
+    if match is None:
+        raise ValueError(f"Malformed reference: {ref!r}")
+    english_to_bb = {}
+    for bb in wlc_bb_codes():
+        parts = uxlc_source.book_basename(wlc_bb_to_bk39id(bb)).split("_")
+        english_name = (
+            f"{parts[-1]} {' '.join(parts[:-1])}"
+            if parts[-1] in {"1", "2"}
+            else " ".join(parts)
+        )
+        english_to_bb[english_name] = bb
+    try:
+        bb = english_to_bb[match["book"]]
+    except KeyError as exc:
+        raise ValueError(f"Unknown book in reference: {ref!r}") from exc
+    return f"{bb}{int(match['chapter'])}:{int(match['verse'])}"
+
+
+def _validate_iso_date(value: object, *, where: str) -> str:
+    """Validate one historical observation date without generating a clock date."""
+    text = _require_nonempty_string(value, where=where)
+    try:
+        parsed = date.fromisoformat(text)
+    except ValueError as exc:
+        raise ValueError(f"{where}: expected an ISO date, got {text!r}") from exc
+    if parsed.isoformat() != text:
+        raise ValueError(f"{where}: date is not canonical ISO form: {text!r}")
+    return text
+
+
+def _validate_string_list(
+    value: object, *, where: str, allow_empty: bool = False
+) -> list[str]:
+    """Validate a duplicate-free list of nonempty strings."""
+    if not isinstance(value, list) or (not allow_empty and not value):
+        raise ValueError(
+            f"{where}: expected a {'possibly empty' if allow_empty else 'nonempty'} list"
+        )
+    strings = [
+        _require_nonempty_string(item, where=f"{where}[{index}]")
+        for index, item in enumerate(value)
+    ]
+    if len(strings) != len(set(strings)):
+        raise ValueError(f"{where}: duplicate entries")
+    return strings
+
+
+def load_post_silluq_cases() -> list[dict]:
+    """Load and validate the curated cross-source case ledger."""
+    path = paths.in_dir() / _POST_SILLUQ_CASES_JSON
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"{path}: expected a root object")
+    _require_exact_keys(
+        payload,
+        required={"about", "cases"},
+        allowed={"about", "cases"},
+        where=str(path),
+    )
+    _require_nonempty_string(payload["about"], where=f"{path}#about")
+    cases = payload["cases"]
+    if not isinstance(cases, list) or not cases:
+        raise ValueError(f"{path}#cases: expected a nonempty list")
+
+    seen_refs: set[str] = set()
+    seen_bcvs: set[str] = set()
+    for index, case in enumerate(cases):
+        where = f"{path}#cases/{index}"
+        if not isinstance(case, dict):
+            raise ValueError(f"{where}: expected an object")
+        required = {"ref", "bcv", "status", "form_source", "reports", "images"}
+        allowed = required | {"sources", "additional_sources", "transcriptions"}
+        _require_exact_keys(case, required=required, allowed=allowed, where=where)
+
+        ref = _require_nonempty_string(case["ref"], where=f"{where}/ref")
+        bcv = _require_nonempty_string(case["bcv"], where=f"{where}/bcv")
+        if _full_ref_to_bcv(ref) != bcv:
+            raise ValueError(f"{where}: ref {ref!r} does not match bcv {bcv!r}")
+        if ref in seen_refs or bcv in seen_bcvs:
+            raise ValueError(f"{where}: duplicate reference {ref!r} or bcv {bcv!r}")
+        seen_refs.add(ref)
+        seen_bcvs.add(bcv)
+
+        status = case["status"]
+        if status not in _POST_SILLUQ_CASE_STATUSES:
+            raise ValueError(f"{where}/status: unknown status {status!r}")
+        if case["form_source"] not in _POST_SILLUQ_FORM_SOURCES:
+            raise ValueError(
+                f"{where}/form_source: unknown source {case['form_source']!r}"
+            )
+
+        reports = _validate_string_list(case["reports"], where=f"{where}/reports")
+        for report in reports:
+            report_path = Path(report)
+            if (
+                report_path.is_absolute()
+                or "\\" in report
+                or not report.startswith("doc/")
+                or not (paths.repo_root() / report_path).is_file()
+            ):
+                raise ValueError(f"{where}/reports: invalid report path {report!r}")
+
+        images = _validate_string_list(
+            case["images"], where=f"{where}/images", allow_empty=True
+        )
+        unknown_images = sorted(set(images) - _POST_SILLUQ_IMAGE_IDS)
+        if unknown_images:
+            raise ValueError(f"{where}/images: unknown identifiers {unknown_images}")
+        mismatched_images = [
+            image_id for image_id in images if _POST_SILLUQ_IMAGE_REFS[image_id] != ref
+        ]
+        if mismatched_images:
+            raise ValueError(
+                f"{where}/images: identifiers belong to another reference: "
+                f"{mismatched_images}"
+            )
+
+        if status == "open-candidate":
+            if "sources" in case or "additional_sources" in case:
+                raise ValueError(
+                    f"{where}: open candidates do not take source conclusions"
+                )
+            _validate_string_list(
+                case.get("transcriptions"), where=f"{where}/transcriptions"
+            )
+        else:
+            if "transcriptions" in case or "sources" not in case:
+                raise ValueError(
+                    f"{where}: known cases require sources, not transcriptions"
+                )
+            sources = case["sources"]
+            if not isinstance(sources, dict) or set(sources) != set(
+                _POST_SILLUQ_SOURCES
+            ):
+                raise ValueError(
+                    f"{where}/sources: expected exactly {_POST_SILLUQ_SOURCES}"
+                )
+            for source, state in sources.items():
+                if state not in _POST_SILLUQ_SOURCE_STATES:
+                    raise ValueError(
+                        f"{where}/sources/{source}: unknown state {state!r}"
+                    )
+            additions = case.get("additional_sources", [])
+            if not isinstance(additions, list):
+                raise ValueError(f"{where}/additional_sources: expected a list")
+            addition_names: set[str] = set()
+            for add_index, addition in enumerate(additions):
+                add_where = f"{where}/additional_sources/{add_index}"
+                if not isinstance(addition, dict):
+                    raise ValueError(f"{add_where}: expected an object")
+                _require_exact_keys(
+                    addition,
+                    required={"source", "state"},
+                    allowed={"source", "state"},
+                    where=add_where,
+                )
+                source = _require_nonempty_string(
+                    addition["source"], where=f"{add_where}/source"
+                )
+                if source in addition_names:
+                    raise ValueError(f"{add_where}: duplicate source {source!r}")
+                addition_names.add(source)
+                if addition["state"] not in _POST_SILLUQ_SOURCE_STATES:
+                    raise ValueError(
+                        f"{add_where}/state: unknown state {addition['state']!r}"
+                    )
+    return cases
+
+
+def load_post_silluq_koren_observations() -> list[dict]:
+    """Load Koren observations, preserving incomplete states as non-results.
+
+    Missing ``status`` is the backward-compatible spelling of ``complete``. A completed
+    observation has a closed ``koren`` classification; an incomplete, deferred or skipped
+    observation must not have one. Additional marks and notes remain separate from that
+    classification.
+    """
+    path = paths.in_dir() / _POST_SILLUQ_KOREN_JSON
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"{path}: expected a root object")
+    _require_exact_keys(
+        payload,
+        required={"about", "readings"},
+        allowed={"about", "readings"},
+        where=str(path),
+    )
+    _require_nonempty_string(payload["about"], where=f"{path}#about")
+    readings = payload["readings"]
+    if not isinstance(readings, list) or not readings:
+        raise ValueError(f"{path}#readings: expected a nonempty list")
+
+    normalized = []
+    seen_refs: set[str] = set()
+    seen_bcvs: set[str] = set()
+    allowed = {
+        "ref",
+        "bcv",
+        "status",
+        "koren",
+        "sheva",
+        "additional_marks",
+        "note",
+        "date",
+    }
+    for index, raw in enumerate(readings):
+        where = f"{path}#readings/{index}"
+        if not isinstance(raw, dict):
+            raise ValueError(f"{where}: expected an object")
+        _require_exact_keys(
+            raw,
+            required={"ref", "date"},
+            allowed=allowed,
+            where=where,
+        )
+        ref = _require_nonempty_string(raw["ref"], where=f"{where}/ref")
+        bcv = _full_ref_to_bcv(ref)
+        if "bcv" in raw and raw["bcv"] != bcv:
+            raise ValueError(f"{where}/bcv: does not match {ref!r}")
+        if ref in seen_refs or bcv in seen_bcvs:
+            raise ValueError(f"{where}: duplicate reference {ref!r}")
+        seen_refs.add(ref)
+        seen_bcvs.add(bcv)
+
+        status = raw.get("status", "complete")
+        if status not in _KOREN_STATUSES:
+            raise ValueError(f"{where}/status: unknown status {status!r}")
+        if status == "complete":
+            if raw.get("koren") not in _KOREN_POSITIONS:
+                raise ValueError(
+                    f"{where}/koren: completed observation needs a position"
+                )
+        elif "koren" in raw:
+            raise ValueError(
+                f"{where}/koren: non-complete observation cannot be classified"
+            )
+
+        if "sheva" in raw and raw["sheva"] not in _KOREN_SHEVA_STATES:
+            raise ValueError(f"{where}/sheva: unknown state {raw['sheva']!r}")
+        if "additional_marks" in raw:
+            _validate_string_list(
+                raw["additional_marks"], where=f"{where}/additional_marks"
+            )
+        if "note" in raw:
+            _require_nonempty_string(raw["note"], where=f"{where}/note")
+        _validate_iso_date(raw["date"], where=f"{where}/date")
+        normalized.append({**raw, "bcv": bcv, "status": status})
+    return normalized
+
+
+def _verse_final_word(words: list[str], *, bcv: str, source: str) -> str:
+    """Locate one verse-final source form without placing pointed Hebrew in the ledger."""
+    hits = [word for word in words if psm.SOF_PASUQ in word]
+    if len(hits) != 1:
+        raise ValueError(
+            f"{source} {bcv}: expected one verse-final word, found {len(hits)}"
+        )
+    return hits[0]
+
+
+def _mam_final_forms(bcvs: set[str]) -> dict[str, str]:
+    """Lift each requested verse-final form from the tracked MAM-simple product."""
+    refs_by_book: dict[str, set[tuple[int, int]]] = {}
+    for bcv in bcvs:
+        bb, chnu, vrnu = _split(bcv)
+        refs_by_book.setdefault(bb, set()).add((chnu, vrnu))
+    loaded = mam_simple_verse.load_mam_simple_for_refs(
+        paths.require_mam_simple_dir(), refs_by_book
+    )
+    missing = sorted(bcvs - set(loaded))
+    if missing:
+        raise ValueError(f"MAM-simple lacks requested references: {missing}")
+    return {
+        bcv: _verse_final_word(
+            [
+                word
+                for word in payload["mam_simple_verse"]["vels"]
+                if isinstance(word, str)
+            ],
+            bcv=bcv,
+            source="MAM-simple",
+        )
+        for bcv, payload in loaded.items()
+    }
+
+
+def _case_forms(cases: list[dict], mam_forms: dict[str, str]) -> dict[str, str]:
+    """Lift each case form from the ledger-declared tracked corpus."""
+    forms = {}
+    for case in cases:
+        bcv = case["bcv"]
+        if case["form_source"] == "mam":
+            forms[bcv] = mam_forms[bcv]
+        elif case["form_source"] == "uxlc":
+            forms[bcv] = _verse_final_word(_uxlc_words(bcv), bcv=bcv, source="UXLC 3.9")
+        else:  # closed validation above makes this unreachable
+            raise ValueError(f"Unknown case form source: {case['form_source']!r}")
+    return forms
+
+
 def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
     """The MAM and BHS forms relevant to 1 Samuel 17:5's post-silluq question.
 
@@ -2766,12 +3124,6 @@ def _mam_post_silluq_leningrad_crop() -> object:
     )
 
 
-def _post_silluq_leningrad_form(survey: dict) -> str:
-    """The BHS transcription of the Leningrad Codex form at 1 Samuel 17:5."""
-    forms = dict(_post_silluq_comparison(survey))
-    return forms["BHS"]
-
-
 def _post_silluq_lc_crop() -> object:
     """The directly inspectable LC line for 1 Samuel 17:5's post-silluq question."""
     return mb_html.raw_html(
@@ -2795,77 +3147,475 @@ def _post_silluq_aleppo_crop() -> object:
     )
 
 
-def _post_silluq_details(survey: dict) -> list:
-    """The evidence and discussion for 1 Samuel 17:5's post-silluq meteg."""
-    comparison = _post_silluq_comparison(survey)
-    comparison_rows = [
-        mb_html.table_row_of_data((source, _hebrew_cell(form)), (None, _HEBREW_CELL))
-        for source, form in comparison
+def _post_silluq_table_row(contents: tuple, attrs: tuple) -> object:
+    """Build one row without the shared helper's silent ``zip`` truncation."""
+    if len(contents) != len(attrs):
+        raise ValueError(
+            f"post-silluq table row has {len(contents)} cells and {len(attrs)} attributes"
+        )
+    return mb_html.table_row_of_data(contents, attrs)
+
+
+def _post_silluq_status_label(status: str) -> str:
+    """The visible, exhaustive case-status dispatch."""
+    labels = {
+        "established": "Established",
+        "favoured-not-proven": "Favoured, not proven",
+        "open-candidate": "Open candidate",
+    }
+    try:
+        return labels[status]
+    except KeyError as exc:
+        raise ValueError(f"Unknown post-silluq status: {status!r}") from exc
+
+
+def _post_silluq_source_state(state: str) -> object:
+    """The visible, exhaustive source-state dispatch."""
+    if state == "later-meteg":
+        return ("later ", _ROM_METEG)
+    if state == "no-later-mark":
+        return "no later mark"
+    if state == "both-strokes":
+        return "both strokes"
+    if state == "first-position-only":
+        return "first position only"
+    if state == "not-recorded":
+        return "not recorded"
+    if state == "tracked-observation":
+        raise ValueError("tracked-observation needs the Koren observation dispatch")
+    raise ValueError(f"Unknown post-silluq source state: {state!r}")
+
+
+def _koren_position_label(position: str) -> str:
+    """The visible, exhaustive Koren two-position classification."""
+    labels = {
+        "first": "first position only",
+        "last": "last position only",
+        "both": "both positions",
+    }
+    try:
+        return labels[position]
+    except KeyError as exc:
+        raise ValueError(f"Unknown Koren position: {position!r}") from exc
+
+
+def _complete_koren_by_ref(observations: list[dict]) -> dict[str, dict]:
+    """Index only completed observations for case-register joins."""
+    return {
+        observation["ref"]: observation
+        for observation in observations
+        if observation["status"] == "complete"
+    }
+
+
+def _case_source_cell(
+    case: dict, source: str, complete_koren_by_ref: dict[str, dict]
+) -> object:
+    """One source cell, joining Koren only when the case ledger requests it."""
+    state = case["sources"][source]
+    if state != "tracked-observation":
+        return _post_silluq_source_state(state)
+    if source != "koren":
+        raise ValueError(f"{case['ref']}: tracked observation assigned to {source}")
+    observation = complete_koren_by_ref.get(case["ref"])
+    if observation is None:
+        raise ValueError(f"{case['ref']}: missing completed Koren observation")
+    return _koren_position_label(observation["koren"])
+
+
+def _report_links(reports: list[str]) -> tuple:
+    """Links from the maintained page to immutable historical reports."""
+    contents = []
+    for index, report in enumerate(reports):
+        if contents:
+            contents.append(", ")
+        label = "update" if Path(report).stem.endswith("-update") else "report"
+        if sum(not Path(one).stem.endswith("-update") for one in reports) > 1:
+            label = f"{label} {index + 1}"
+        contents.append(
+            mb_html.anchor_h(label, f"{_POST_SILLUQ_REPORT_URL_PREFIX}{report}")
+        )
+    return tuple(contents)
+
+
+def _post_silluq_case_register(
+    cases: list[dict], forms: dict[str, str], observations: list[dict]
+) -> list:
+    """The established and favoured cases, with source distinctions visible."""
+    known = [case for case in cases if case["status"] != "open-candidate"]
+    complete_koren_by_ref = _complete_koren_by_ref(observations)
+    headers = (
+        "Form",
+        "Reference",
+        "Status",
+        "MAM",
+        "Aleppo Codex",
+        "Leningrad Codex",
+        "Koren",
+        "Evidence",
+    )
+    attrs = (
+        _HEBREW_CELL,
+        _POST_SILLUQ_BCV_CELL,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    )
+    rows = [
+        _post_silluq_table_row(
+            (
+                _hebrew_cell(forms[case["bcv"]]),
+                _ref_link(case["bcv"]),
+                _post_silluq_status_label(case["status"]),
+                *(
+                    _case_source_cell(case, source, complete_koren_by_ref)
+                    for source in _POST_SILLUQ_SOURCES
+                ),
+                _report_links(case["reports"]),
+            ),
+            attrs,
+        )
+        for case in known
     ]
     return [
+        mb_html.heading_level_2("Case register"),
         mb_html.para(
             (
-                f"In the Leningrad Codex, the last word of {_POST_SILLUQ_REF} has a ",
+                author.dquote("Established"),
+                " means that both the stress and the later mark are established. ",
+                author.dquote("Favoured, not proven"),
+                " means that the two strokes are established but the stress, and therefore"
+                " the identification of the later stroke as ",
                 _ROM_METEG,
-                " after its ",
-                _ROM_SILLUQ,
-                ".",
+                ", is not.",
             )
         ),
-        _post_silluq_lc_crop(),
-        mb_html.para(
-            (
-                "That ",
-                _ROM_METEG,
-                " is surprising, but we deem the ",
-                _ROM_SILLUQ,
-                "-",
-                _ROM_METEG,
-                " reading less surprising than the ",
-                _ROM_METEG,
-                "-",
-                _ROM_SILLUQ,
-                " reading. In ",
-                _ROM_SILLUQ,
-                "-",
-                _ROM_METEG,
-                " order, only the presence of the ",
-                _ROM_METEG,
-                " is surprising; in ",
-                _ROM_METEG,
-                "-",
-                _ROM_SILLUQ,
-                " order, the location of the stress is surprising. We find a ",
-                _ROM_METEG,
-                " surprise far more likely than a stress surprise.",
-            )
-        ),
-        mb_html.para(
-            (
-                "This surprising ",
-                _ROM_METEG,
-                " is correctly recorded in BHS and in BHS-derived editions such as UXLC and"
-                " WLC:",
-            )
-        ),
-        mb_html.table(
-            comparison_rows,
-            {"class": "limited-width post-stress-meteg-table"},
-        ),
-        mb_html.para(
-            (
-                "A ",
-                _ROM_METEG,
-                " after a ",
-                _ROM_SILLUQ,
-                " is hard to identify in Unicode, since the two marks share one codepoint.",
-            )
+        _table(
+            headers,
+            rows,
+            {"class": "post-stress-meteg-table post-silluq-register"},
         ),
     ]
 
 
-def build_post_silluq_body(survey: dict) -> list:
-    """The independent page about a meteg after silluq in 1 Samuel 17:5."""
+def _post_silluq_additional_sources(cases: list[dict]) -> list:
+    """Curated observations outside the four main source columns."""
+    cases_with_additions = [case for case in cases if case.get("additional_sources")]
+    if not cases_with_additions:
+        return []
+    contents = [mb_html.heading_level_2("Additional source observations")]
+    for case in cases_with_additions:
+        contents.extend(
+            (
+                mb_html.heading_level_3(_ref_link(case["bcv"])),
+                mb_html.unordered_list(
+                    tuple(
+                        (
+                            addition["source"],
+                            ": ",
+                            _post_silluq_source_state(addition["state"]),
+                            ".",
+                        )
+                        for addition in case["additional_sources"]
+                    )
+                ),
+            )
+        )
+    return contents
+
+
+def _post_silluq_image_nodes(image_id: str) -> list:
+    """The fixed claim and existing deployed figure for one known image identifier."""
+    if image_id == "lc-1s17-5":
+        return [
+            mb_html.para(
+                (
+                    "The Leningrad Codex has a ",
+                    _ROM_METEG,
+                    " after its ",
+                    _ROM_SILLUQ,
+                    f" at {_POST_SILLUQ_REF}.",
+                )
+            ),
+            _post_silluq_lc_crop(),
+        ]
+    if image_id == "aleppo-1s17-5":
+        return [
+            mb_html.para(
+                (
+                    "The Aleppo Codex lacks the later ",
+                    _ROM_METEG,
+                    f" at {_POST_SILLUQ_REF}.",
+                )
+            ),
+            _post_silluq_aleppo_crop(),
+        ]
+    if image_id == "aleppo-1k7-37":
+        return [
+            mb_html.para(
+                (
+                    "The Aleppo Codex has a later ",
+                    _ROM_METEG,
+                    f" at {_MAM_POST_SILLUQ_REF}.",
+                )
+            ),
+            _mam_post_silluq_aleppo_crop(),
+        ]
+    if image_id == "leningrad-1k7-37":
+        return [
+            mb_html.para(
+                (
+                    "The Leningrad Codex lacks the later ",
+                    _ROM_METEG,
+                    f" at {_MAM_POST_SILLUQ_REF}.",
+                )
+            ),
+            _mam_post_silluq_leningrad_crop(),
+        ]
+    raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
+
+
+def _post_silluq_image_evidence(cases: list[dict]) -> list:
+    """Reuse only the four already deployed manuscript crops."""
+    with_images = [case for case in cases if case["images"]]
+    if not with_images:
+        return []
+    contents = [mb_html.heading_level_2("Image evidence")]
+    for case in with_images:
+        contents.append(mb_html.heading_level_3(_ref_link(case["bcv"])))
+        for image_id in case["images"]:
+            contents.extend(_post_silluq_image_nodes(image_id))
+    return contents
+
+
+def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> list:
+    """The transcription-derived cases awaiting a Leningrad Codex image reading."""
+    open_cases = [case for case in cases if case["status"] == "open-candidate"]
+    attrs = (_HEBREW_CELL, _POST_SILLUQ_BCV_CELL, None, None, None)
+    rows = [
+        _post_silluq_table_row(
+            (
+                _hebrew_cell(forms[case["bcv"]]),
+                _ref_link(case["bcv"]),
+                ", ".join(case["transcriptions"]),
+                "unresolved",
+                _report_links(case["reports"]),
+            ),
+            attrs,
+        )
+        for case in open_cases
+    ]
+    return [
+        mb_html.heading_level_2("Unresolved Leningrad Codex candidates"),
+        mb_html.para(
+            (
+                "The named transcriptions have a second U+05BD after MAM's ",
+                _ROM_SILLUQ,
+                ". A transcription is not a manuscript image; these rows remain open until"
+                " the Leningrad Codex itself is read.",
+            )
+        ),
+        _table(
+            ("Form", "Reference", "Transcriptions", "Leningrad Codex", "Evidence"),
+            rows,
+            {"class": "post-stress-meteg-table post-silluq-register"},
+        ),
+    ]
+
+
+def _koren_progress(observations: list[dict]) -> tuple[Counter, int, int]:
+    """Partition tracked Koren work without treating noncomplete rows as negatives."""
+    counts = Counter(observation["status"] for observation in observations)
+    completed = [
+        observation
+        for observation in observations
+        if observation["status"] == "complete"
+    ]
+    signals = sum(observation["koren"] == "first" for observation in completed)
+    non_signals = sum(
+        observation["koren"] in {"last", "both"} for observation in completed
+    )
+    if len(completed) != signals + non_signals:
+        raise ValueError(
+            "completed Koren observations do not partition into search results"
+        )
+    if sum(counts.values()) != len(observations):
+        raise ValueError(
+            "Koren progress states do not partition the tracked observations"
+        )
+    return counts, signals, non_signals
+
+
+def _koren_details(observation: dict) -> str:
+    """Additional marks and notes, kept outside the two-position classification."""
+    details = []
+    if observation.get("additional_marks"):
+        details.append(
+            "Additional marks: " + "; ".join(observation["additional_marks"])
+        )
+    if observation.get("note"):
+        details.append(observation["note"])
+    return "; ".join(details) if details else "none recorded"
+
+
+def _koren_state_label(status: str) -> str:
+    """The exhaustive visible labels for noncomplete Koren work."""
+    labels = {
+        "incomplete": "Incomplete",
+        "deferred": "Deferred",
+        "skipped-family": "Skipped family",
+    }
+    try:
+        return labels[status]
+    except KeyError as exc:
+        raise ValueError(f"Unknown noncomplete Koren status: {status!r}") from exc
+
+
+def _post_silluq_koren_section(
+    observations: list[dict], mam_forms: dict[str, str]
+) -> list:
+    """Derived Koren progress and every completed observation."""
+    counts, signals, non_signals = _koren_progress(observations)
+    for observation in observations:
+        form = mam_forms[observation["bcv"]]
+        if form.count(psm.METEG) != 2:
+            raise ValueError(
+                f"{observation['ref']}: Koren candidate MAM form does not have two U+05BD"
+            )
+    completed = [
+        observation
+        for observation in observations
+        if observation["status"] == "complete"
+    ]
+    attrs = (
+        _HEBREW_CELL,
+        _POST_SILLUQ_BCV_CELL,
+        None,
+        None,
+        None,
+        None,
+        None,
+    )
+    completed_rows = [
+        _post_silluq_table_row(
+            (
+                _hebrew_cell(mam_forms[observation["bcv"]]),
+                _ref_link(observation["bcv"]),
+                _koren_position_label(observation["koren"]),
+                "signal" if observation["koren"] == "first" else "not a signal",
+                observation.get("sheva", "not recorded"),
+                _koren_details(observation),
+                observation["date"],
+            ),
+            attrs,
+        )
+        for observation in completed
+    ]
+    contents = [
+        mb_html.heading_level_2("Koren search"),
+        mb_html.para(
+            (
+                "Koren is used here as evidence for how that edition understands the"
+                " stress. Koren alone does not establish a manuscript's marks or a general"
+                " claim about Tiberian Hebrew. A first-position-only observation is the"
+                " search signal; a last-position-only or both-position observation is not.",
+            )
+        ),
+        mb_html.unordered_list(
+            (
+                ("Completed observations: ", f"{counts['complete']:,}", "."),
+                ("Signals: ", f"{signals:,}", "."),
+                ("Completed non-signals: ", f"{non_signals:,}", "."),
+                ("Incomplete observations: ", f"{counts['incomplete']:,}", "."),
+                ("Deferred candidates: ", f"{counts['deferred']:,}", "."),
+                ("Skipped families: ", f"{counts['skipped-family']:,}", "."),
+            )
+        ),
+        mb_html.heading_level_3("Completed observations"),
+        _table(
+            (
+                "MAM form",
+                "Reference",
+                "Koren at MAM's two positions",
+                "Search result",
+                "Sheva after the first position",
+                "Additional marks or notes",
+                "Reported",
+            ),
+            completed_rows,
+            {"class": "post-stress-meteg-table post-silluq-register"},
+        ),
+        mb_html.para(
+            (
+                "The ",
+                mb_html.anchor_h(
+                    "historical candidate report",
+                    f"{_POST_SILLUQ_REPORT_URL_PREFIX}doc/"
+                    "meteg-after-silluq-koren-lookup-candidates.md",
+                ),
+                " records the original ranking and its evidence.",
+            )
+        ),
+    ]
+    noncomplete = [
+        observation
+        for observation in observations
+        if observation["status"] != "complete"
+    ]
+    if noncomplete:
+        pending_rows = [
+            _post_silluq_table_row(
+                (
+                    _hebrew_cell(mam_forms[observation["bcv"]]),
+                    _ref_link(observation["bcv"]),
+                    _koren_state_label(observation["status"]),
+                    observation.get("sheva", "not recorded"),
+                    _koren_details(observation),
+                    observation["date"],
+                ),
+                (
+                    _HEBREW_CELL,
+                    _POST_SILLUQ_BCV_CELL,
+                    None,
+                    None,
+                    None,
+                    None,
+                ),
+            )
+            for observation in noncomplete
+        ]
+        contents.extend(
+            (
+                mb_html.heading_level_3("Incomplete, deferred, or skipped work"),
+                _table(
+                    (
+                        "MAM form",
+                        "Reference",
+                        "State",
+                        "Sheva information",
+                        "Additional marks or notes",
+                        "Reported",
+                    ),
+                    pending_rows,
+                    {"class": "post-stress-meteg-table post-silluq-register"},
+                ),
+            )
+        )
+    return contents
+
+
+def build_post_silluq_body(
+    survey: dict, cases: list[dict], observations: list[dict]
+) -> list:
+    """The maintained page for cases and candidates of meteg after silluq."""
+    mam_bcvs = {case["bcv"] for case in cases if case["form_source"] == "mam"} | {
+        observation["bcv"] for observation in observations
+    }
+    mam_forms = _mam_final_forms(mam_bcvs)
+    forms = _case_forms(cases, mam_forms)
     return [
         mb_html.heading_level_1(_visible_title(_POST_SILLUQ_TITLE)),
         _hebrew_spacing_option(),
@@ -2878,22 +3628,29 @@ def build_post_silluq_body(survey: dict) -> list:
                 ".",
             )
         ),
-        *_post_silluq_details(survey),
         mb_html.para(
             (
-                "As one would expect, the Aleppo Codex has this word with no ",
-                _ROM_METEG,
-                " after the ",
+                "The same Unicode code point, U+05BD, represents both ",
                 _ROM_SILLUQ,
-                ":",
+                " and ",
+                _ROM_METEG,
+                ". In a verse-final word, U+05BD on the stressed syllable is ",
+                _ROM_SILLUQ,
+                "; a later U+05BD is ",
+                _ROM_METEG,
+                " only when the stress has been established on an earlier syllable.",
             )
         ),
-        _post_silluq_aleppo_crop(),
+        *_post_silluq_case_register(cases, forms, observations),
+        *_post_silluq_additional_sources(cases),
+        *_post_silluq_image_evidence(cases),
+        *_post_silluq_open_candidates(cases, forms),
+        *_post_silluq_koren_section(observations, mam_forms),
     ]
 
 
 def _post_silluq_footnote(survey: dict) -> list:
-    """Footnote 1: the MAM and Leningrad Codex post-silluq cases."""
+    """Footnote 1: the census treatment and a link to the maintained register."""
     return [
         mb_html.heading_level_3(
             ("φ1 — ", _ROM_METEG_CAP, " after ", _ROM_SILLUQ),
@@ -2909,23 +3666,13 @@ def _post_silluq_footnote(survey: dict) -> list:
         ),
         mb_html.para(
             (
-                f"At {_POST_SILLUQ_REF}, in the Leningrad Codex, there is a ",
-                _ROM_METEG,
-                " after ",
-                _ROM_SILLUQ,
-                " in ",
-                wrap_hebrew_runs(_post_silluq_leningrad_form(survey)),
-                ". See ",
+                "The ",
                 mb_html.anchor_h(
-                    (
-                        "the crops and why we read the marks as ",
-                        _ROM_SILLUQ,
-                        "-",
-                        _ROM_METEG,
-                    ),
+                    ("maintained ", _ROM_METEG, "-after-", _ROM_SILLUQ, " register"),
                     _POST_SILLUQ_FNAME,
                 ),
-                ".",
+                " gives the known cases, evidence, unresolved candidates, and Koren-search"
+                " progress.",
             )
         ),
     ]

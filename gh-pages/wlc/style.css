@@ -34,6 +34,16 @@ body.centered-page table {
    the 14pt body; these table cells need about 24pt for their vowels and accents to remain
    readable. The class confines the larger size to this page's Hebrew table data. */
 table.post-stress-meteg-table td[dir="rtl"] [lang="hbo"] { font-size: 170%; }
+table.post-silluq-register th,
+table.post-silluq-register td {
+    padding: 0.2em 0.5em;
+    vertical-align: middle;
+}
+table.post-silluq-register td[dir="rtl"] { line-height: 1.8; }
+table.post-silluq-register .post-silluq-bcv {
+    padding-left: 0.7em;
+    white-space: nowrap;
+}
 
 /* The post-stress-meteg pages have unusually many similar pointed forms. The control at the top
    of each page switches and persists the page-wide setting; a click on a Hebrew span overrides

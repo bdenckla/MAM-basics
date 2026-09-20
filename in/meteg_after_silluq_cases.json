@@ -1,0 +1,149 @@
+{
+  "about": "Curated present-state conclusions for the generated meteg-after-silluq case register. Pointed forms are resolved from tracked corpora during generation; this file stores only classifications, source states, provenance paths, and deployed image identifiers.",
+  "cases": [
+    {
+      "ref": "1 Samuel 17:5",
+      "bcv": "1s17:5",
+      "status": "established",
+      "form_source": "uxlc",
+      "sources": {
+        "mam": "no-later-mark",
+        "aleppo": "no-later-mark",
+        "leningrad": "later-meteg",
+        "koren": "not-recorded"
+      },
+      "reports": [
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+      ],
+      "images": [
+        "lc-1s17-5",
+        "aleppo-1s17-5"
+      ]
+    },
+    {
+      "ref": "Psalms 72:15",
+      "bcv": "ps72:15",
+      "status": "established",
+      "form_source": "uxlc",
+      "sources": {
+        "mam": "no-later-mark",
+        "aleppo": "no-later-mark",
+        "leningrad": "later-meteg",
+        "koren": "no-later-mark"
+      },
+      "additional_sources": [
+        {
+          "source": "the Simanim Tanakh",
+          "state": "no-later-mark"
+        }
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-psalms-72-15.md",
+        "doc/meteg-after-silluq-psalms-72-15-update.md"
+      ],
+      "images": []
+    },
+    {
+      "ref": "1 Kings 7:37",
+      "bcv": "1k7:37",
+      "status": "established",
+      "form_source": "mam",
+      "sources": {
+        "mam": "later-meteg",
+        "aleppo": "later-meteg",
+        "leningrad": "no-later-mark",
+        "koren": "tracked-observation"
+      },
+      "additional_sources": [
+        {
+          "source": "the Simanim Tanakh",
+          "state": "no-later-mark"
+        }
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-search-in-mam-documentation.md",
+        "doc/meteg-after-silluq-search-in-mam-documentation-update.md"
+      ],
+      "images": [
+        "aleppo-1k7-37",
+        "leningrad-1k7-37"
+      ]
+    },
+    {
+      "ref": "Job 4:12",
+      "bcv": "jb4:12",
+      "status": "favoured-not-proven",
+      "form_source": "mam",
+      "sources": {
+        "mam": "both-strokes",
+        "aleppo": "both-strokes",
+        "leningrad": "both-strokes",
+        "koren": "tracked-observation"
+      },
+      "additional_sources": [
+        {
+          "source": "Cambridge Add. 1753",
+          "state": "both-strokes"
+        },
+        {
+          "source": "Mikra'ot Gedolot ha-Keter",
+          "state": "both-strokes"
+        },
+        {
+          "source": "the Simanim Tanakh",
+          "state": "both-strokes"
+        },
+        {
+          "source": "the Second Rabbinic Bible",
+          "state": "first-position-only"
+        }
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-job-4-12.md",
+        "doc/meteg-after-silluq-job-4-12-update.md"
+      ],
+      "images": []
+    },
+    {
+      "ref": "1 Kings 14:14",
+      "bcv": "1k14:14",
+      "status": "open-candidate",
+      "form_source": "uxlc",
+      "transcriptions": [
+        "UXLC 3.9"
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+      ],
+      "images": []
+    },
+    {
+      "ref": "Psalms 60:10",
+      "bcv": "ps60:10",
+      "status": "open-candidate",
+      "form_source": "uxlc",
+      "transcriptions": [
+        "UXLC 3.9",
+        "WLC 4.22"
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+      ],
+      "images": []
+    },
+    {
+      "ref": "Psalms 70:2",
+      "bcv": "ps70:2",
+      "status": "open-candidate",
+      "form_source": "uxlc",
+      "transcriptions": [
+        "UXLC 3.9",
+        "WLC 4.22"
+      ],
+      "reports": [
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+      ],
+      "images": []
+    }
+  ]
+}
