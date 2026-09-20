@@ -134,6 +134,25 @@ add or touch a table with a Hebrew column, declare all of them.
   column's width and pushes the rest of the row apart. Same trade the `Acc1`/`Acc2`/`C`/`S`
   headings already make. Rendered *prose* still gets the name in full.
 
+## A pointed-Hebrew table keeps its Hebrew/BCV pair together
+
+Ben's decision, 2026-09-20: for a table whose core is a pointed-Hebrew form and its
+book-chapter-verse reference, arrange the visible columns from left to right as:
+
+`[additional pointed-Hebrew columns] | pointed Hebrew | BCV | [additional Latin-alphabet columns]`
+
+The bracketed column groups are optional; omit them when the table does not need them. Additional
+pointed-Hebrew columns extend to the left, and additional Latin-alphabet columns extend to the
+right. This keeps the core pointed Hebrew immediately to the left of its BCV.
+
+- Let the table and its columns take their natural content widths. Do not stretch the table to
+  fill the available width, and do not divide the available width equally between columns.
+- Render pointed Hebrew large enough for its pointing to be read comfortably, with adequate line
+  height and `dir="rtl"` on each Hebrew cell as required above.
+- Keep each BCV on one line, vertically center the BCV cells against the taller pointed Hebrew,
+  and give the BCV column modest left padding. The padding should separate the two values without
+  visually breaking the Hebrew/BCV pair.
+
 ## No jargon, no previews
 
 The audience is Hebrew-Bible readers, not people who know what the checker does.
