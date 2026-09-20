@@ -1,4 +1,4 @@
-# The periodic review: one responsible reviewer, one commit window, one findings file
+# The periodic review: one repository, one commit window, one responsible reviewer, one findings file
 
 This document describes the periodic review as a procedure in its own right: what the series is,
 what a review file contains, how a review is checked before it is acted on, and how its findings
@@ -28,7 +28,7 @@ same agent and with Ben" still applies.
 
 ## What the periodic review is
 
-Every four to eight days one Claude session reads a commit range across the public repositories and
+Every four to eight days one Claude session reads a commit range in one public repository and
 writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
 
 That filename is the single-agent Claude-series convention. A standard sequential dual-agent round
@@ -56,14 +56,14 @@ don't go 'looking for trouble' in details beyond the narrow focus". A review of 
 across a series of commits, for better instruction files or linters, is a different review, and
 there individual commits matter.
 
-Establish each repository's review window from endpoint commits, not commit dates. For a cloned
-repository, carry forward the previous review's recorded end commit and compare
-`<previous-end>..<current-end>`. For a GitHub-only repository, record the previous and current
-default-branch commit IDs and compare those endpoints through the API. Repository-level
-`pushed_at` can establish that some push occurred; when the arrival of a particular commit
-matters, corroborate it with a direct ref update or PushEvent that names the before and after
-commits. Do not use `git log --since` or `commits?since=` as a completeness check: both filter by
-commit date and can miss an older commit pushed during the current review window.
+Establish the window from endpoint commits, not commit dates. For a cloned repository, carry
+forward the previous review's recorded end commit and compare `<previous-end>..<current-end>`.
+For a GitHub-only repository, record the previous and current default-branch commit IDs and
+compare those endpoints through the API. Repository-level `pushed_at` can establish that some
+push occurred; when the arrival of a particular commit matters, corroborate it with a direct
+ref update or PushEvent that names the before and after commits. Do not use `git log --since`
+or `commits?since=` as a completeness check: both filter by commit date and can miss an older
+commit pushed during the current review window.
 
 The unprefixed dated review series is selected by the exact date-shaped pathspec below. Re-establish
 the census and read the states rather than inferring them. The broader
@@ -76,6 +76,32 @@ git ls-files -- "doc/review-findings-????-??-??.md"
 ```powershell
 git grep -n "^State:" HEAD -- "doc/review-findings-????-??-??.md"
 ```
+
+### The window is one repository — Ben's decision, 2026-09-20
+
+**A window covers one repository, so a window is one repository and one `(start, end)` pair.** Ben
+raised the defect on 2026-09-17, while MAM-private's catch-up rounds were being scoped: the
+definition above is singular, while other passages of these two documents presupposed a set of
+repositories each carrying its own commit range, and giving each repository its own commit window
+was "a road I don't want to go down". His remedy that day: "maybe this is a needed mam-basics fix:
+to constrain this process to a single repo (and therefore a single commit window)." He decided on
+2026-09-20 to make the amendment; #286 states the defect it closes.
+
+Three things follow.
+
+1. **The unprefixed dated series in this repository's `doc/` reviews MAM-basics.** Its start anchor
+   is the previous review's recorded end commit in MAM-basics, and nothing else is in the window.
+2. **A commit in another public repository is not in the window.** It waits for a window of its
+   own, and where that window's record goes and what it is called are settled when Ben asks for
+   one. The cost is real: before this decision a round could carry a small sibling along with the
+   main repository. The 2026-09-16 round's window was MAM-basics `bca64824..71f96ca3` plus
+   phonetic-hbo `10de7970..8b134b6b`, stated as "98 commits in two public repos" in its turn-01
+   file on the pushed branch `dual-agent-review-2026-09-16`, and `doc/review-findings-2026-09-10.md`
+   covered "252 commits across three public repos". Those files record their windows as they
+   were scoped and are not rewritten.
+3. **Each series carries its own anchors forward**, so no series hands another one a repository
+   name without a starting commit for it. That is what the public series did when it handed
+   MAM-private and hbofonts to the private series.
 
 ## Two standing properties of the series
 
@@ -120,15 +146,17 @@ Nothing prescribes a review file's sections. The shape below is what the files s
 travelled by imitation from one dated file to the next, so this section records it rather than
 founding it. A review that departs from it should say why in its opening paragraphs.
 
-1. **The H1 names the window**: "Findings of the <date> review of the public repos since <date of
-   the previous review>". Through 2026-08-22 it read "of the work since <date>".
+1. **The H1 names the window**: "Findings of the <date> review of <repository> since <date of
+   the previous review>". Through 2026-09-20, while a window could cover more than one
+   repository, it read "of the public repos since <date>", and through 2026-08-22 "of the work
+   since <date>".
 2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
    finished. Later remediation State and every disposition go in the review's single live update
    file. `check_repo_standards.py`'s docstring is where the vocabulary is declared.
 3. **The opening paragraphs say how the file was written**: which session, which commit it was frozen
    at, and anything that happened to it on the way into the tree.
-4. **`## Scope, anchors and census`**: the commit range in each repository, named by commit, and a
-   count of what the window changed.
+4. **`## Scope, anchors and census`**: the window's repository and its commit range, named by
+   start and end commit, and a count of what the window changed.
 5. **`## Tree health at <commit>`**: the suite's count and the lints, with the commit they ran on
    in the heading.
 6. **`## What verifies sound, stream by stream`**: what the review checked and found no defect in,
@@ -170,11 +198,13 @@ well, with five differences:
    private work can disclose what a private repository exists to keep private. The first of the
    two standing properties above, doc-only, holds there too, so a private review files no tracking
    issue.
-2. **The window is the private clones that the latest review of the public series hands to the
-   private series.** A private review may read a public repository for evidence about a private
-   commit, but gives no verdict on a public commit.
-3. **The H1 names the private repos**, where item 1 of "What a review file contains" names the
-   public ones.
+2. **The window is one private repository**, whose start anchor is the previous private review's
+   recorded end commit in that repository. Until 2026-09-20 the window was the private clones that
+   the latest review of the public series handed to the private series, a handover that named a
+   repository without naming a starting commit for it. A private review may read a public
+   repository for evidence about a private commit, but gives no verdict on a public commit.
+3. **The H1 names the private repository**, where item 1 of "What a review file contains" names
+   the public one.
 4. **The suite, the mega, the instructions and the paths are MAM-private's.** Where this document
    or `doc/dual-agent-review.md` names this repository's, a private review uses what MAM-private's
    `CLAUDE.md` gives instead, so read that file before the first check. Codex does not load it on

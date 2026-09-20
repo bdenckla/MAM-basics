@@ -383,8 +383,9 @@ rule governs what either agent is handed in the first place: give the reviewer t
 authoring session's transcript and never the commit message's justification, because a reviewer
 shown the rationale reports agreement with it.
 
-"Same anchors" means the same commit range in the same repositories, named explicitly, and the same
-starting commit for each repository the range covers.
+"Same anchors" means the same commit range in the same repository, named explicitly by its start
+and end commit. A window covers one repository, which `doc/periodic-review.md`'s section "The
+window is one repository" settles.
 
 ## Reconcile both designs; use four buckets only for Design B
 
@@ -535,9 +536,9 @@ structurally. Keep the Codex reviewer of a window of this repository's series in
 2026-09-14: "I would like the MAM-private review process to be potentially dual-agent", and, on
 where the Codex file goes, "wouldn't it be in MAM-private/doc/codex-review-findings-YYYY-MM-DD.md
 or whatever the analogy with MAM-basics would dictate?" That quotation predates the neutral
-numbered convention. A private window's Codex reviewer reads the private clones in its window and
-writes only into MAM-private's `doc/`, using numbered turns for a standard alternating round and
-the author-based name for blind Design B. As item 4 of `doc/periodic-review.md`'s section "The
+numbered convention. A private window's Codex reviewer reads the one private repository in its
+window and writes only into MAM-private's `doc/`, using numbered turns for a standard alternating
+round and the author-based name for blind Design B. As item 4 of `doc/periodic-review.md`'s section "The
 private series, recorded in MAM-private" says, the Codex task reads MAM-private's `CLAUDE.md`
 before its first check, since Codex does not load that file.
 
