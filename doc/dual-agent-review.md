@@ -181,15 +181,25 @@ the READMEs, the docstrings, this file, and a plan still being executed.
 
 ### The shared worktree — Ben's decision, 2026-09-09 (D11)
 
-For future rounds, prefer a setup-only Claude session to create branch `dual-agent-review-<date>`
-and worktree
-`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dual-agent-review-<date>` at the round's start,
-even when Codex is Agent 1. Setup creates the checkout and performs no review turn. If that setup
-session is unavailable, Agent 1 may create the same branch and worktree. The branch and worktree
-folder have the same name. Every turn of both agents and every close-out task uses that checkout
-directly, with writing responsibility passed between tasks. Do not create another worktree for a
-successor. The primary clone supplies its venv by absolute path; development commands, edits,
-staging and commits use the verified shared worktree.
+For future rounds, prefer a setup-only Claude session to create branch `dar-<date>` and worktree
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dar-<date>` at the round's start, even when
+Codex is Agent 1. Setup creates the checkout and performs no review turn. If that setup session is
+unavailable, Agent 1 may create the same branch and worktree. The branch and worktree folder have
+the same name. Every turn of both agents and every close-out task uses that checkout directly, with
+writing responsibility passed between tasks. Do not create another worktree for a successor. The
+primary clone supplies its venv by absolute path; development commands, edits, staging and commits
+use the verified shared worktree.
+
+**`dar` abbreviates `dual-agent-review` in the branch name and the worktree-folder name, and
+nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2 of MAM-private's
+`doc/PLAN-private-review-series-catch-up.md`. The turn filenames keep the full word, so
+`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md` is unchanged, and so is the
+`git worktree lock` reason below. The abbreviation shortens the worktree root by fourteen
+characters: `doc/windows-long-paths.md` measures
+`C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dual-agent-review-2026-09-17` at 82
+characters, against 68 for the same path spelled `dar-2026-09-17`, and its operating
+recommendation is to go on budgeting for short paths on this machine. Every round created before
+2026-09-20 keeps its existing branch and worktree names, as the September 8 round does below.
 
 Setup locks the shared worktree with `git worktree lock --reason "active dual-agent review
 <date>" <absolute-worktree-path>` before the first review turn. The lock remains through review
@@ -215,9 +225,8 @@ only after the final task has ended.
 
 A round of the private series, which `doc/periodic-review.md` describes, works the same way in
 MAM-private: its shared worktree is
-`C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dual-agent-review-<date>`, and its final
-integration verifies with what MAM-private's `CLAUDE.md` requires in place of this repository's
-mega.
+`C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dar-<date>`, and its final integration
+verifies with what MAM-private's `CLAUDE.md` requires in place of this repository's mega.
 
 In the September 8 round, Codex created
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on branch
