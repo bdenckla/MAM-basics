@@ -538,9 +538,9 @@ where the Codex file goes, "wouldn't it be in MAM-private/doc/codex-review-findi
 or whatever the analogy with MAM-basics would dictate?" That quotation predates the neutral
 numbered convention. A private window's Codex reviewer reads the one private repository in its
 window and writes only into MAM-private's `doc/`, using numbered turns for a standard alternating
-round and the author-based name for blind Design B. As item 4 of `doc/periodic-review.md`'s section "The
-private series, recorded in MAM-private" says, the Codex task reads MAM-private's `CLAUDE.md`
-before its first check, since Codex does not load that file.
+round and the author-based name for blind Design B. As item 4 of `doc/periodic-review.md`'s
+section "The private series, recorded in MAM-private" says, the Codex task reads MAM-private's
+`CLAUDE.md` before its first check, since Codex does not load that file.
 
 ### 2. Limit the Codex reviewer to review records
 
