@@ -147,6 +147,7 @@ def _author_romanization(key: str) -> object:
 _ROM_METEG = rmn(pds.ROM_METEG)
 _ROM_METEG_MERKHA = rmn(f"{pds.ROM_METEG}/{pds.ROM_MERKHA}")
 _ROM_METEG_CAP = rmn(pds.ROM_METEG.capitalize())
+_ROM_METSIL = rmn("metsil")
 _ROM_SILLUQ = rmn(pds.ROM_SILLUQ)
 _ROM_PASEQ = rmn(pds.ROM_PASEQ)
 _ROM_PATAH = rmn(pds.ROM_PATAX)
@@ -224,9 +225,7 @@ _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
 _POST_SILLUQ_KOREN_JSON = "meteg_after_silluq_koren_readings.json"
-_POST_SILLUQ_CASE_STATUSES = frozenset(
-    {"established", "favoured-not-proven", "open-candidate"}
-)
+_POST_SILLUQ_CASE_STATUSES = frozenset({"last-metsil-contrast", "open-candidate"})
 _POST_SILLUQ_FORM_SOURCES = frozenset({"mam", "uxlc"})
 _POST_SILLUQ_SOURCE_STATES = frozenset(
     {
@@ -3154,19 +3153,6 @@ def _post_silluq_table_row(contents: tuple, attrs: tuple) -> object:
     return mb_html.table_row_of_data(contents, attrs)
 
 
-def _post_silluq_status_label(status: str) -> str:
-    """The visible, exhaustive case-status dispatch."""
-    labels = {
-        "established": "Established",
-        "favoured-not-proven": "Favoured, not proven",
-        "open-candidate": "Open candidate",
-    }
-    try:
-        return labels[status]
-    except KeyError as exc:
-        raise ValueError(f"Unknown post-silluq status: {status!r}") from exc
-
-
 def _post_silluq_source_state(state: str) -> object:
     """The visible, exhaustive source-state dispatch."""
     if state == "later-meteg":
@@ -3221,16 +3207,55 @@ def _case_source_cell(
     return _koren_position_label(observation["koren"])
 
 
+def _case_last_metsil_positions(
+    case: dict, complete_koren_by_ref: dict[str, dict]
+) -> set[str]:
+    """Derive whether each recorded source's last metsil is first or last.
+
+    ``first`` and ``last`` name the two U+05BD positions under comparison, not a
+    grammatical identification of either mark.
+    """
+    positions = set()
+    source_states = list(case["sources"].items()) + [
+        (addition["source"], addition["state"])
+        for addition in case.get("additional_sources", [])
+    ]
+    for source, state in source_states:
+        if state in {"later-meteg", "both-strokes"}:
+            positions.add("last")
+        elif state in {"no-later-mark", "first-position-only"}:
+            positions.add("first")
+        elif state == "not-recorded":
+            continue
+        elif state == "tracked-observation" and source == "koren":
+            observation = complete_koren_by_ref.get(case["ref"])
+            if observation is None:
+                raise ValueError(f"{case['ref']}: missing completed Koren observation")
+            positions.add("first" if observation["koren"] == "first" else "last")
+        else:
+            raise ValueError(
+                f"{case['ref']}: cannot compare the last metsil for {source}: {state!r}"
+            )
+    return positions
+
+
 def _post_silluq_case_register(
     cases: list[dict], forms: dict[str, str], observations: list[dict]
 ) -> list:
-    """The established and favoured cases, with source distinctions visible."""
-    known = [case for case in cases if case["status"] != "open-candidate"]
+    """The cross-source position contrasts, with source distinctions visible."""
+    known = [case for case in cases if case["status"] == "last-metsil-contrast"]
     complete_koren_by_ref = _complete_koren_by_ref(observations)
+    for case in known:
+        if _case_last_metsil_positions(case, complete_koren_by_ref) != {
+            "first",
+            "last",
+        }:
+            raise ValueError(
+                f"{case['ref']}: sources do not establish a last-metsil position contrast"
+            )
     headers = (
         "Form",
         "Reference",
-        "Status",
         "MAM",
         "Aleppo Codex",
         "Leningrad Codex",
@@ -3243,14 +3268,12 @@ def _post_silluq_case_register(
         None,
         None,
         None,
-        None,
     )
     rows = [
         _post_silluq_table_row(
             (
                 _hebrew_cell(forms[case["bcv"]]),
                 _ref_link(case["bcv"]),
-                _post_silluq_status_label(case["status"]),
                 *(
                     _case_source_cell(case, source, complete_koren_by_ref)
                     for source in _POST_SILLUQ_SOURCES
@@ -3264,13 +3287,16 @@ def _post_silluq_case_register(
         mb_html.heading_level_2("Case register"),
         mb_html.para(
             (
-                author.dquote("Established"),
-                " means that both the stress and the later mark are established. ",
-                author.dquote("Favoured, not proven"),
-                " means that the two strokes are established but the stress, and therefore"
-                " the identification of the later stroke as ",
+                "Each case below has at least one source—a manuscript or printed edition—"
+                "whose last ",
+                _ROM_METSIL,
+                " (a neutral name here for a U+05BD that may be ",
                 _ROM_METEG,
-                ", is not.",
+                " or ",
+                _ROM_SILLUQ,
+                ") is later than the last ",
+                _ROM_METSIL,
+                " in at least one other source.",
             )
         ),
         _table(
