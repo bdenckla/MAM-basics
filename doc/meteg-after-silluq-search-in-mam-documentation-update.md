@@ -22,6 +22,14 @@ Act axis: this update file preserves the finished report rather than rewriting i
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
 
+## CoS print citation for 1 Kings 7:37
+
+Recorded from Ben's citation style on 2026-09-21. The isolated CoS citation in finding 4 and its
+recapitulation under “What could not be verified” should read: “Breuer, CoS, ch. 8 §47,
+footnote 54 (p. 355 in the Wengrov English translation).” The chapter, section and footnote
+numbers precede the parenthesized page number because only the page number belongs specifically
+to the Wengrov English translation.
+
 ## Finding 11.5: narrative romanizations should use `pataḥ`, `ḥataf` and `deḥi`
 
 Recorded by Codex on 2026-09-13. A fresh census of the finished search report found 1 `patax`

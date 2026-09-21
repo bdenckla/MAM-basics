@@ -82,10 +82,12 @@ the full title spelled out in the visible prose. Both are single-sourced in
 `MAM-basics/py/accgram/almost_errors_html_shared.py` as `itm()` / `cos()` — call those rather than
 building an `abbr` locally, and note `COS_TITLE` keeps Breuer's leading "The".
 
-**A CoS page number is from Wengrov's English translation.** Ben's decision, 2026-09-21: qualify
-each isolated page citation, as in “p. 355 in the Wengrov English translation, n. 54.” In a
-document with many CoS page citations, one sentence saying that all CoS page numbers use that
-translation is enough. Apply the qualification to the page number only.
+**A CoS page number is from Wengrov's English translation.** Ben's decision, 2026-09-21: in an
+isolated citation, put the cross-edition chapter, section and footnote numbers first, spell out
+“footnote,” and put the page number last in parentheses: “Breuer, CoS, ch. 8 §47, footnote 54
+(p. 355 in the Wengrov English translation).” In a document with many CoS page citations, one
+sentence saying that all CoS page numbers use that translation is enough. Apply the
+qualification to the page number only.
 
 Recorded here on 2026-08-03 because it had been living **only** in a code comment on
 `maqaf_nonfinal_accents_page`, which is not somewhere a session writing a new page will look: a

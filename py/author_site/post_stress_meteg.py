@@ -213,6 +213,15 @@ _CHB_GLOSS = "Jacobson's Chanting the Hebrew Bible"
 # other form on the page.
 _POST_SILLUQ_VERSE = "1s17:5"
 _MAM_POST_SILLUQ_VERSE = "1k7:37"
+_UXLC_CHANGE_VERSE = "1k14:14"
+_UXLC_CHANGE_URL = (
+    "https://tanach.us/Changes/2022.12.07%20-%20Changes/"
+    "2022.12.07%20-%20Changes.html?2022.08.31-17"
+)
+_POST_SILLUQ_CASE_NOTE_IDS = {
+    _POST_SILLUQ_VERSE: (1, "source-note-1"),
+    _UXLC_CHANGE_VERSE: (2, "source-note-2"),
+}
 # Every visible spelling of these two references comes from ``ref_abbrev``, the
 # short-but-not-super-short prose form built on ``mb_misc/osis_book_abbrevs.py``'s
 # OSIS list -- "Gen. 2:7", "1 Sam. 17:5", "1 Kgs. 7:37".  Ben's rule of 2026-09-08:
@@ -638,7 +647,7 @@ def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=Non
         raise ValueError("MAS annotation validation requires every declared page")
     bhs_form = dict(_post_silluq_comparison(survey))["BHS"]
     uxlc_case_forms = {
-        case["bcv"]: _verse_final_word(
+        case["bcv"]: _verse_final_chanted_word(
             _uxlc_words(case["bcv"]), bcv=case["bcv"], source="UXLC 3.9"
         )
         for case in post_silluq_cases
@@ -2997,18 +3006,23 @@ def load_post_silluq_koren_observations() -> list[dict]:
     return normalized
 
 
-def _verse_final_word(words: list[str], *, bcv: str, source: str) -> str:
-    """Locate one verse-final source form without placing pointed Hebrew in the ledger."""
-    hits = [word for word in words if psm.SOF_PASUQ in word]
-    if len(hits) != 1:
+def _verse_final_chanted_word(words: list[str], *, bcv: str, source: str) -> str:
+    """Locate the complete verse-final chanted word in a source's atom stream."""
+    final_indexes = [index for index, word in enumerate(words) if psm.SOF_PASUQ in word]
+    if len(final_indexes) != 1:
         raise ValueError(
-            f"{source} {bcv}: expected one verse-final word, found {len(hits)}"
+            f"{source} {bcv}: expected one verse-final atom, found "
+            f"{len(final_indexes)}"
         )
-    return hits[0]
+    final_index = final_indexes[0]
+    first_index = final_index
+    while first_index and words[first_index - 1].endswith(psm.MAQAF):
+        first_index -= 1
+    return "".join(words[first_index : final_index + 1])
 
 
 def _mam_final_forms(bcvs: set[str]) -> dict[str, str]:
-    """Lift each requested verse-final form from the tracked MAM-simple product."""
+    """Lift each complete verse-final chanted word from tracked MAM-simple."""
     refs_by_book: dict[str, set[tuple[int, int]]] = {}
     for bcv in bcvs:
         bb, chnu, vrnu = _split(bcv)
@@ -3020,7 +3034,7 @@ def _mam_final_forms(bcvs: set[str]) -> dict[str, str]:
     if missing:
         raise ValueError(f"MAM-simple lacks requested references: {missing}")
     return {
-        bcv: _verse_final_word(
+        bcv: _verse_final_chanted_word(
             [
                 word
                 for word in payload["mam_simple_verse"]["vels"]
@@ -3041,7 +3055,9 @@ def _case_forms(cases: list[dict], mam_forms: dict[str, str]) -> dict[str, str]:
         if case["form_source"] == "mam":
             forms[bcv] = mam_forms[bcv]
         elif case["form_source"] == "uxlc":
-            forms[bcv] = _verse_final_word(_uxlc_words(bcv), bcv=bcv, source="UXLC 3.9")
+            forms[bcv] = _verse_final_chanted_word(
+                _uxlc_words(bcv), bcv=bcv, source="UXLC 3.9"
+            )
         else:  # closed validation above makes this unreachable
             raise ValueError(f"Unknown case form source: {case['form_source']!r}")
     return forms
@@ -3276,6 +3292,18 @@ def _case_register_source_cell(
     raise ValueError(f"{case['ref']}: unknown case status {status!r}")
 
 
+def _post_silluq_case_reference(case: dict) -> object:
+    """One case reference, with a source-note callout where the page has one."""
+    note = _POST_SILLUQ_CASE_NOTE_IDS.get(case["bcv"])
+    if note is None:
+        return _ref_link(case["bcv"])
+    number, note_id = note
+    return (
+        _ref_link(case["bcv"]),
+        mb_html.sup(mb_html.anchor_h(str(number), f"#{note_id}")),
+    )
+
+
 def _post_silluq_case_register(
     cases: list[dict], forms: dict[str, str], observations: list[dict]
 ) -> list:
@@ -3291,7 +3319,7 @@ def _post_silluq_case_register(
         _post_silluq_table_row(
             (
                 _hebrew_cell(forms[case["bcv"]]),
-                _ref_link(case["bcv"]),
+                _post_silluq_case_reference(case),
                 _case_register_source_cell(case, complete_koren_by_ref),
             ),
             attrs,
@@ -3335,6 +3363,116 @@ def _post_silluq_case_register(
     ]
 
 
+def _post_silluq_case_notes(
+    cases: list[dict], forms: dict[str, str], mam_forms: dict[str, str]
+) -> list:
+    """Subordinate source notes for the two cases Ben read in printed editions."""
+    cases_by_bcv = {case["bcv"]: case for case in cases}
+    required = set(_POST_SILLUQ_CASE_NOTE_IDS)
+    if not required <= set(cases_by_bcv):
+        raise ValueError(
+            "The post-silluq source notes require "
+            f"{sorted(required - set(cases_by_bcv))}"
+        )
+
+    first_samuel = cases_by_bcv[_POST_SILLUQ_VERSE]
+    first_kings = cases_by_bcv[_UXLC_CHANGE_VERSE]
+    expected_printed_state = {
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark",
+    }
+    for case in (first_samuel, first_kings):
+        if case["status"] != "last-metsil-contrast":
+            raise ValueError(f"{case['ref']}: source note requires a classified case")
+        actual = {source: case["sources"][source] for source in expected_printed_state}
+        if actual != expected_printed_state:
+            raise ValueError(
+                f"{case['ref']}: printed-edition states drifted: {actual!r}"
+            )
+    if first_kings["sources"]["leningrad"] != "later-meteg":
+        raise ValueError("1 Kings 14:14: the LC classification drifted")
+
+    first_samuel_form = mam_forms[_POST_SILLUQ_VERSE]
+    first_kings_printed_form = mam_forms[_UXLC_CHANGE_VERSE]
+    first_kings_lc_form = forms[_UXLC_CHANGE_VERSE]
+    if first_samuel_form.count(psm.METEG) != 1:
+        raise ValueError("1 Samuel 17:5: expected one metsil in the printed form")
+    if (
+        psm.MAQAF not in first_kings_printed_form
+        or psm.MAQAF not in first_kings_lc_form
+        or first_kings_printed_form.count(psm.METEG) != 1
+        or first_kings_lc_form.count(psm.METEG) != 2
+    ):
+        raise ValueError("1 Kings 14:14: complete chanted-word forms drifted")
+
+    first_samuel_number, first_samuel_note_id = _POST_SILLUQ_CASE_NOTE_IDS[
+        _POST_SILLUQ_VERSE
+    ]
+    first_kings_number, first_kings_note_id = _POST_SILLUQ_CASE_NOTE_IDS[
+        _UXLC_CHANGE_VERSE
+    ]
+    return [
+        mb_html.para(
+            mb_html.small(
+                (
+                    mb_html.sup(str(first_samuel_number), {"id": first_samuel_note_id}),
+                    " At ",
+                    _ref_link(_POST_SILLUQ_VERSE),
+                    ", Koren and the Simanim Tanakh each have only one ",
+                    _ROM_METSIL,
+                    " in ",
+                    wrap_hebrew_runs(first_samuel_form),
+                    ". Because this verse-final word has only one ",
+                    _ROM_METSIL,
+                    ", the mark is the ",
+                    _ROM_SILLUQ,
+                    ", on ",
+                    wrap_hebrew_runs("ח"),
+                    " (xet), as expected.",
+                )
+            )
+        ),
+        mb_html.para(
+            mb_html.small(
+                (
+                    mb_html.sup(str(first_kings_number), {"id": first_kings_note_id}),
+                    " At ",
+                    _ref_link(_UXLC_CHANGE_VERSE),
+                    ", Koren and the Simanim Tanakh each have only one ",
+                    _ROM_METSIL,
+                    " in ",
+                    wrap_hebrew_runs(first_kings_printed_form),
+                    ": the ",
+                    _ROM_SILLUQ,
+                    " on ",
+                    wrap_hebrew_runs("ע"),
+                    " (ayin), as expected. UXLC 3.9 acquired a second ",
+                    _ROM_METSIL,
+                    " through ",
+                    mb_html.anchor_h(
+                        "Daniel Holman's change proposal 2022.08.31-17",
+                        _UXLC_CHANGE_URL,
+                    ),
+                    ". Ben independently inspected the manuscript image supplied with that "
+                    "record on 2026-09-21 and reads the UXLC form ",
+                    wrap_hebrew_runs(first_kings_lc_form),
+                    " as the content of the Leningrad Codex. The second ",
+                    _ROM_METSIL,
+                    " is likely a ",
+                    _ROM_METEG,
+                    " after ",
+                    _ROM_SILLUQ,
+                    "; Breuer also notes this second ",
+                    _ROM_METSIL,
+                    " in ",
+                    mb_html.emphasis("Da'at Miqra"),
+                    ".",
+                )
+            )
+        ),
+    ]
+
+
 def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     """Credit the publications and searches through which the cases became known."""
     bcvs = {case["bcv"] for case in cases}
@@ -3359,7 +3497,7 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 _ref_link(_MAM_POST_SILLUQ_VERSE),
                 " from Breuer, ",
                 cos(),
-                ", ch. 8 §47, p. 355 in the Wengrov English translation, n. 54. The "
+                ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). The "
                 "remaining entries came from systematic "
                 "candidate searches.",
             )
@@ -3461,7 +3599,7 @@ def build_post_silluq_body(
     survey: dict, cases: list[dict], observations: list[dict]
 ) -> list:
     """The maintained page for cases and candidates of meteg after silluq."""
-    mam_bcvs = {case["bcv"] for case in cases if case["form_source"] == "mam"}
+    mam_bcvs = {case["bcv"] for case in cases}
     mam_forms = _mam_final_forms(mam_bcvs)
     forms = _case_forms(cases, mam_forms)
     return [
@@ -3496,6 +3634,7 @@ def build_post_silluq_body(
             )
         ),
         *_post_silluq_case_register(cases, forms, observations),
+        *_post_silluq_case_notes(cases, forms, mam_forms),
         *_post_silluq_discovery_credits(cases),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),

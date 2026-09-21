@@ -10,11 +10,12 @@
         "mam": "no-later-mark",
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "koren": "not-recorded",
-        "simanim": "not-recorded"
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark"
       },
       "reports": [
-        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
+        "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
       "images": [
         "lc-1s17-5",
@@ -95,13 +96,18 @@
     {
       "ref": "1 Kings 14:14",
       "bcv": "1k14:14",
-      "status": "open-candidate",
+      "status": "last-metsil-contrast",
       "form_source": "uxlc",
-      "transcriptions": [
-        "UXLC 3.9"
-      ],
+      "sources": {
+        "mam": "not-recorded",
+        "aleppo": "not-recorded",
+        "leningrad": "later-meteg",
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark"
+      },
       "reports": [
-        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
+        "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
       "images": []
     },
