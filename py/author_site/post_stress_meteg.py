@@ -224,7 +224,6 @@ _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
 _POST_SILLUQ_KOREN_JSON = "meteg_after_silluq_koren_readings.json"
-_POST_SILLUQ_REPORT_URL_PREFIX = "https://github.com/bdenckla/MAM-basics/blob/main/"
 _POST_SILLUQ_CASE_STATUSES = frozenset(
     {"established", "favoured-not-proven", "open-candidate"}
 )
@@ -3222,21 +3221,6 @@ def _case_source_cell(
     return _koren_position_label(observation["koren"])
 
 
-def _report_links(reports: list[str]) -> tuple:
-    """Links from the maintained page to immutable historical reports."""
-    contents = []
-    for index, report in enumerate(reports):
-        if contents:
-            contents.append(", ")
-        label = "update" if Path(report).stem.endswith("-update") else "report"
-        if sum(not Path(one).stem.endswith("-update") for one in reports) > 1:
-            label = f"{label} {index + 1}"
-        contents.append(
-            mb_html.anchor_h(label, f"{_POST_SILLUQ_REPORT_URL_PREFIX}{report}")
-        )
-    return tuple(contents)
-
-
 def _post_silluq_case_register(
     cases: list[dict], forms: dict[str, str], observations: list[dict]
 ) -> list:
@@ -3251,12 +3235,10 @@ def _post_silluq_case_register(
         "Aleppo Codex",
         "Leningrad Codex",
         "Koren",
-        "Evidence",
     )
     attrs = (
         _HEBREW_CELL,
         _POST_SILLUQ_BCV_CELL,
-        None,
         None,
         None,
         None,
@@ -3273,7 +3255,6 @@ def _post_silluq_case_register(
                     _case_source_cell(case, source, complete_koren_by_ref)
                     for source in _POST_SILLUQ_SOURCES
                 ),
-                _report_links(case["reports"]),
             ),
             attrs,
         )
@@ -3393,7 +3374,7 @@ def _post_silluq_image_evidence(cases: list[dict]) -> list:
 def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> list:
     """The transcription-derived cases awaiting a Leningrad Codex image reading."""
     open_cases = [case for case in cases if case["status"] == "open-candidate"]
-    attrs = (_HEBREW_CELL, _POST_SILLUQ_BCV_CELL, None, None, None)
+    attrs = (_HEBREW_CELL, _POST_SILLUQ_BCV_CELL, None, None)
     rows = [
         _post_silluq_table_row(
             (
@@ -3401,7 +3382,6 @@ def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> li
                 _ref_link(case["bcv"]),
                 ", ".join(case["transcriptions"]),
                 "unresolved",
-                _report_links(case["reports"]),
             ),
             attrs,
         )
@@ -3418,7 +3398,7 @@ def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> li
             )
         ),
         _table(
-            ("Form", "Reference", "Transcriptions", "Leningrad Codex", "Evidence"),
+            ("Form", "Reference", "Transcriptions", "Leningrad Codex"),
             rows,
             {"class": "post-stress-meteg-table post-silluq-register"},
         ),
