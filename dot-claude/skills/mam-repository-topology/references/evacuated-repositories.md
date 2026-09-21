@@ -230,10 +230,11 @@ The archived repository keeps its history and closed issue tracker; new public-s
 in MAM-basics. No source Pages site or redirect manifest exists.
 
 Nothing in the ordinary suite resolves a Leningrad sibling, and `leningrad/` is gone as well. It
-held only a README and three crops Ben made, and Ben's decision of 2026-09-13 moved the crops,
-with their evidence notes, into folders for the work each one serves:
-`doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, which took the Aleppo Codex,
-Cambridge 1753 and other crops too. On Ben's decision
+held only a README and three crops Ben made. Ben's decision of 2026-09-13 first moved the crops,
+with their evidence notes, into folders for the work each one serves. On 2026-09-21 the Aleppo
+and Leningrad crops published on the post-silluq page moved to `gh-pages/img/`; their source notes
+and the unpublished Second Rabbinic Bible crop remain in `doc/meteg-after-silluq-snips/`.
+Lamentations evidence remains in `doc/lam-2-3-akhla-snips/`. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
 used and its three generated files, since it "will never be run again";
 `git show --stat 985262e2` names every file removed; Phase 3 of

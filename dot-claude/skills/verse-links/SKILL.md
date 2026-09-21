@@ -84,9 +84,11 @@ One markdown link per line, in this order:
    and both times the estimate put the atom lower on the page than it is: Lamentations 2:3 was
    estimated at line 12.9 and is on line 10, and Psalms 72:15 at line 5.5 and is on line 3
    (Ben's readings, 2026-08-04 and 2026-09-10). When Ben reads a position off an image, record
-   it with a crop and a calibration note in the README of the MAM-basics `doc/*-snips/` folder for
-   the work the lookup served, as `doc/lam-2-3-akhla-snips/README.md` and
-   `doc/meteg-after-silluq-snips/README.md` do for those two. Never report what the Leningrad Codex has on the UXLC's authority — a
+   it with a crop and a calibration note in the README for the work the lookup served. A crop
+   published on a generated page may live under `gh-pages/img/`, while its calibration and
+   provenance note remains in the applicable `doc/*-snips/README.md`, as the Psalms 72:15 note in
+   `doc/meteg-after-silluq-snips/README.md` does. An unpublished evidence crop may remain beside
+   its README, as `doc/lam-2-3-akhla-snips/README.md` documents. Never report what the Leningrad Codex has on the UXLC's authority — a
    transcription is evidence about the transcription.
 6. **Mind versification.** Every link takes the reference as given. Where MAM's versification
    and the UXLC's differ — the UXLC's Numbers 25:19 is MAM's 26:1 — run the command once with

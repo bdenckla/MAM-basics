@@ -2,19 +2,22 @@
 
 Crops of manuscript and printed-edition page images for the two meteg-after-silluq accounts,
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md) and
-[`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), each kept as the evidence
-behind a stated fact about what one manuscript or edition has. Tiny crops like these are kept as
-fair use (Ben, 2026-09-10). Each section records the crop's available provenance; the Leningrad
-sections use the image sources named under “The Leningrad Codex.”
+[`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), each kept as evidence
+behind a stated fact about what one manuscript or edition has. The four manuscript crops published
+on the post-silluq page are under [`../../gh-pages/img/`](../../gh-pages/img/); the unpublished
+Second Rabbinic Bible crop remains beside this README. Tiny crops like these are kept as fair use
+(Ben, 2026-09-10). Each section records the crop's available provenance; the Leningrad sections
+use the image sources named under “The Leningrad Codex.”
 
 Each file is named `<source>-<page>-<ref>-<slug>.png`: the manuscript or edition, then the page in
 that source's form. A Leningrad crop may include both column and line when Ben has read the line
 from the image; the relevant section must say when the column comes only from the estimator. For
 another source, include only coordinates established from its image or retained index.
 
-Crops are kept in a folder for the work they serve, not in one for the manuscript they come from
-(Ben's decision, 2026-09-13). Until then these five were in `aleppo/page-snips/`,
-`leningrad/page-snips/` and `doc/ms-snips/`.
+The manuscript crops moved to `gh-pages/img/` for publication on 2026-09-21. Their source notes
+remain here. The Second Rabbinic Bible crop is not published and remains in this folder. Before
+2026-09-13 these five crops were in `aleppo/page-snips/`, `leningrad/page-snips/`, and
+`doc/ms-snips/`.
 
 ## Finding a page and its image
 
@@ -46,7 +49,7 @@ to an image. The page is a folio and side, as in `430B`.
 A printed edition's crop is named like a manuscript's, the edition in the manuscript's place. Its
 page is named by a pencil mark on it, as in `pencil99`.
 
-## aleppo-253v-Ps72v15-yevarkhenhu.png
+## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 
 Psalms 72:15, the verse-final atom, on **leaf 253v**, which has Psalms 71:18–73:10 (MAM's index of
 the Aleppo Codex, `../../in/mam-ws-intro/index-aleppo.mediawiki` line 613). Ben's crop,
@@ -58,12 +61,12 @@ implausible. There is nothing under the he.
 
 Why it was cropped: the Leningrad Codex has a second stroke, under the he, as UXLC 3.9 records
 it, יְבָרֲכֶֽנְהֽוּ׃, and Ben confirmed from its image the same day
-(`leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png`). With the stress
+([`leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png`](../../gh-pages/img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png)). With the stress
 penultimate, that second stroke is a meteg after the silluq. MAM follows the Aleppo Codex here,
 and MAM's note at the verse quotes it as יְבָרֲכֶֽנְהוּ, with the one mark; this crop shows that the
 manuscript agrees. The whole account is `../meteg-after-silluq-psalms-72-15.md`.
 
-## leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png
+## [leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png](../../gh-pages/img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png)
 
 Psalms 72:15, the verse-final atom יְבָרֲכֶֽנְהֽוּ׃ as UXLC 3.9 records it, on **folio 380A, line 3**, in
 the early middle of the line.
@@ -91,7 +94,7 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 The folio is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
 
-## aleppo-271r-col2-line5-Job4v12-menhu.png
+## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
 
 Job 4:12, the verse-final atom, which ends **line 5 of column 2 of leaf 271r**
 (`../../aleppo/line-breaks/271r.json` lines 814–836). Ben's crop, 2026-09-10, from
@@ -102,7 +105,7 @@ he** — confirmed by Ben from this image on 2026-09-10. The Internet Archive's 
 leaf, `../../aleppo/aleppo-pages/271r.jpg`, has the same two strokes at its resolution.
 
 The stroke under the mem stands to the right of its segol, in the same place as the Leningrad
-Codex's (`leningrad-398A-Job4v12-menhu.png`). Ben calls it an early
+Codex's ([`leningrad-398A-Job4v12-menhu.png`](../../gh-pages/img/leningrad-398A-Job4v12-menhu.png)). Ben calls it an early
 metsil, metsil being his shorthand for meteg/silluq, because at this word whether it is a meteg or
 a silluq is exactly what is in question. He had taken the placement for scribal whim, and finds
 the two manuscripts' agreement on it unlikely to be chance. Yeivin says that both manuscripts keep
@@ -113,7 +116,7 @@ Why it was cropped: MAM has מֶֽנְהֽוּ׃, with both U+05BD, following th
 only the one on the mem, so which of the two is the silluq is the open question. The whole
 account is `../meteg-after-silluq-job-4-12.md`.
 
-## leningrad-398A-Job4v12-menhu.png
+## [leningrad-398A-Job4v12-menhu.png](../../gh-pages/img/leningrad-398A-Job4v12-menhu.png)
 
 Job 4:12, the verse-final atom מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
 2026-09-10.
@@ -127,7 +130,8 @@ whether it is a meteg or a silluq is exactly what is in question. His impression
 placement is common with a sheva, uncommon with a segol, and commonest on a word's first letter,
 where it causes no confusion; this one is on the first letter. He also sees signs of a possible
 erasure after the segol and around the stroke under the he. The Aleppo Codex has the stroke under
-the mem in the same place (`aleppo-271r-col2-line5-Job4v12-menhu.png`); Ben had
+the mem in the same place
+([`aleppo-271r-col2-line5-Job4v12-menhu.png`](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)); Ben had
 taken the placement for scribal whim, and finds that agreement unlikely to be chance.
 
 Why it was cropped: MAM has מֶֽנְהֽוּ׃, with both U+05BD, and Koren has only the one on the mem, so
@@ -156,8 +160,9 @@ on the page marked with a 99 in pencil, which is the `pencil99` in the file name
 **The Second Rabbinic Bible appears to have one meteg/silluq on this atom, under the mem, and none
 under the he** — Ben's reading of this image; diacritics, he says, do not come through well in
 the scan. MAM has one under the mem and one under the he, and so do both codices, in
-`aleppo-271r-col2-line5-Job4v12-menhu.png` and
-`leningrad-398A-Job4v12-menhu.png`. At the crop's resolution Claude sees what Ben
+[`aleppo-271r-col2-line5-Job4v12-menhu.png`](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
+and [`leningrad-398A-Job4v12-menhu.png`](../../gh-pages/img/leningrad-398A-Job4v12-menhu.png).
+At the crop's resolution Claude sees what Ben
 sees: under the mem a short stroke beside the segol, under the nun a sheva, and under the he
 nothing; the one dark mark below the he is the top of a lamed of the next line.
 

@@ -1672,3 +1672,11 @@ product. Act axis: the close-out comparison is read-only, every finished dated d
 unchanged, and this entry itself requires only an ordinary repository commit. Integrating and
 pushing that commit is the outward-facing act that completes this task; no further live
 configuration deployment is needed because the tracked user-level configuration is unchanged.
+
+## 2026-09-21: the published post-silluq crops moved again
+
+The 2026-09-13 entries above remain historical. The four Aleppo and Leningrad crops for Psalms
+72:15 and Job 4:12 now live under `gh-pages/img/`, where the generated post-silluq page publishes
+them. Their source notes remain in `doc/meteg-after-silluq-snips/README.md`, together with the
+unpublished Second Rabbinic Bible crop. The live paths are also recorded in the two research
+reports' sibling update files; neither finished base report was rewritten.

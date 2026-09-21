@@ -35,9 +35,12 @@ follow-up disposition from 2026-09-13.
    page images are removed.
 3. Preserve all small evidence crops, together with their READMEs. Ben's
    decision of 2026-09-13 moved the six crops this plan found under
-   `aleppo/page-snips/`, `cam1753/page-snips/` and `leningrad/page-snips/` into
-   `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/`, folders for the
-   work each crop serves, and removed `leningrad/`.
+   `aleppo/page-snips/`, `cam1753/page-snips/`, and `leningrad/page-snips/` into
+   folders for the work each crop serves and removed `leningrad/`. Since
+   2026-09-21, published post-silluq crops live under `gh-pages/img/`, their source
+   notes and the unpublished Second Rabbinic Bible crop live under
+   `doc/meteg-after-silluq-snips/`, and Lamentations evidence lives under
+   `doc/lam-2-3-akhla-snips/`.
 4. Preserve `book-of-job/out/cam1753-crops.json`. The coordinate data remains a
    part of the Book-of-Job record even though no current program will create or
    apply additional entries.
@@ -46,7 +49,7 @@ follow-up disposition from 2026-09-13.
    maintained program is expected to regenerate.
 6. Remove no Leningrad file. Leningrad had no page-sized images, Python,
    line-break editor, or crop editor. `leningrad/` itself is already gone: Ben's
-   decision of 2026-09-13 moved its three crops to the snips folders named in
+   decision of 2026-09-13 moved its three crops to the destinations described in
    decision 3 and dropped its README. The broader below-page Leningrad location
    data under `uxlc/` and the programs that consume that location data stay.
 7. Do not recreate or modify the former `codex-index-aleppo`,
@@ -119,7 +122,7 @@ The same command measured the retained fine-grained index and crop material:
 | `cam1753/cam1753-line-breaks/*.json` | 27 |
 | `cam1753/cam1753-col-quads/*.json` | 28 |
 | `cam1753/cam1753-spread-splits-doc/*.json` | 15 |
-| retained `*.png` across `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` (six at planning, in the three codex trees; eight since the 2026-09-13 move) | 8 |
+| retained evacuated `*.png` across `gh-pages/img/`, `doc/meteg-after-silluq-snips/`, and `doc/lam-2-3-akhla-snips/` (six at planning, in the three codex trees; eight since the 2026-09-13 move) | 8 |
 | finished codex crops in `gh-pages/book-of-job/jobn/img/` | 480: 160 per codex |
 
 The measurement script must write a protected-file manifest for:
@@ -128,7 +131,7 @@ The measurement script must write a protected-file manifest for:
 - all retained JSON under `aleppo/`, `cam1753/`, and `book-of-job/out/`;
 - `aleppo/check_line_breaks.html` and `cam1753/check_line_breaks.html`;
 - `cam1753/cam1753-gutter-profiles.png`; and
-- both `doc/*-snips/` folders.
+- both `doc/*-snips/` folders and the four post-silluq crops moved to `gh-pages/img/`.
 
 Compare that manifest after the removal. A changed protected file is a finding.
 Documentation files within a protected tree may be deliberately edited only when
@@ -262,10 +265,10 @@ lookups rather than the retired Book-of-Job crop workflow.
 - Update `doc/book-of-job-artifacts.md` so the artifact register says that all
   current images and Cambridge crop coordinates are retained source data and that
   no crop-producing program remains.
-- Update `doc/meteg-after-silluq-snips/README.md`, `doc/lam-2-3-akhla-snips/README.md`
-  and `doc/meteg-after-silluq-job-4-12.md` only where current prose claims that a
-  page-sized local source image remains. Preserve each statement supported by the
-  retained crop.
+- Update `doc/meteg-after-silluq-snips/README.md`, `doc/lam-2-3-akhla-snips/README.md`,
+  and the applicable finished report's sibling `-update.md` only where current prose claims
+  that a page-sized local source image remains. Preserve each statement supported by the
+  retained crop; do not rewrite a finished base report.
 - Update `DATA-LICENSES.md` so it accurately describes retained crops and removed
   full-page scans without weakening the rights statements.
 - Preserve finished dated plans, reviews, and execution records as historical

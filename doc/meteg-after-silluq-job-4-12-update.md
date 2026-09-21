@@ -49,3 +49,11 @@ pointer.
 The crop paths named in the finished Job 4:12 report are historical. Since commit `a8e4790e`, the
 live crops and their source notes are under `doc/meteg-after-silluq-snips/`; the finished report's
 pre-move wording was restored under the receipt policy.
+
+## 2026-09-21: the manuscript crops moved to the published image directory
+
+The source notes remain in `doc/meteg-after-silluq-snips/README.md`. The live crops are now
+`gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png` and
+`gh-pages/img/leningrad-398A-Job4v12-menhu.png`, where the generated post-silluq page publishes
+them. The unpublished Second Rabbinic Bible crop remains under `doc/meteg-after-silluq-snips/`.
+The finished report remains unchanged under the receipt policy.
