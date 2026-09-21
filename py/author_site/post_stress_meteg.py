@@ -237,12 +237,13 @@ _POST_SILLUQ_SOURCE_STATES = frozenset(
         "not-recorded",
     }
 )
-_POST_SILLUQ_SOURCES = ("mam", "aleppo", "leningrad", "koren")
+_POST_SILLUQ_SOURCES = ("mam", "aleppo", "leningrad", "koren", "simanim")
+_POST_SILLUQ_MASK_SOURCES = ("aleppo", "leningrad", "koren", "simanim")
 _POST_SILLUQ_SOURCE_CODES = {
-    "mam": "M",
     "aleppo": "A",
     "leningrad": "L",
     "koren": "K",
+    "simanim": "S",
 }
 _POST_SILLUQ_IMAGE_REFS = {
     "lc-1s17-5": "1 Samuel 17:5",
@@ -2870,6 +2871,11 @@ def load_post_silluq_cases() -> list[dict]:
                     raise ValueError(
                         f"{where}/sources/{source}: unknown state {state!r}"
                     )
+            if sources["mam"] != sources["aleppo"]:
+                raise ValueError(
+                    f"{where}/sources: MAM differs from the Aleppo Codex and cannot be "
+                    "omitted from the source mask"
+                )
             additions = case.get("additional_sources", [])
             if not isinstance(additions, list):
                 raise ValueError(f"{where}/additional_sources: expected a list")
@@ -3219,10 +3225,10 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the MALK has/does-not-have source masks for one case."""
+    """Render the ALKS has/does-not-have source masks for one case."""
     flags_by_source = {
         source: _case_source_mask_flags(case, source, complete_koren_by_ref)
-        for source in _POST_SILLUQ_SOURCES
+        for source in _POST_SILLUQ_MASK_SOURCES
     }
     if not any(flags[0] for flags in flags_by_source.values()) or not any(
         flags[1] for flags in flags_by_source.values()
@@ -3232,11 +3238,11 @@ def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> ob
         )
     has_mask = "".join(
         _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][0] else "-"
-        for source in _POST_SILLUQ_SOURCES
+        for source in _POST_SILLUQ_MASK_SOURCES
     )
     does_not_have_mask = "".join(
         _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][1] else "-"
-        for source in _POST_SILLUQ_SOURCES
+        for source in _POST_SILLUQ_MASK_SOURCES
     )
     return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
 
@@ -3300,17 +3306,16 @@ def _post_silluq_case_register(
                 "In each monospace cell, the first line marks sources that have the later ",
                 _ROM_METSIL,
                 " and the second line marks sources that do not. The four positions are "
-                "M = MAM, A = Aleppo Codex, L = Leningrad Codex, and K = Koren; a dash "
-                "means no classification is recorded yet for that source.",
+                "A = Aleppo Codex, L = Leningrad Codex, K = Koren, and S = the Simanim "
+                "Tanakh; a dash means no classification is recorded yet for that source.",
             )
         ),
         mb_html.para(
             (
                 "Rows labeled candidate come from the named transcriptions, which have a "
-                "second U+05BD after MAM's ",
-                _ROM_SILLUQ,
-                ". A transcription is not a manuscript image; no Leningrad Codex "
-                "classification is recorded until the manuscript itself is read.",
+                "U+05BD after the stressed-syllable U+05BD. A transcription is not a "
+                "manuscript image; no Leningrad Codex classification is recorded until the "
+                "manuscript itself is read.",
             )
         ),
         _table(

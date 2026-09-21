@@ -10,7 +10,8 @@
         "mam": "no-later-mark",
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "koren": "not-recorded"
+        "koren": "not-recorded",
+        "simanim": "not-recorded"
       },
       "reports": [
         "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
@@ -29,14 +30,9 @@
         "mam": "no-later-mark",
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "koren": "no-later-mark"
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark"
       },
-      "additional_sources": [
-        {
-          "source": "the Simanim Tanakh",
-          "state": "no-later-mark"
-        }
-      ],
       "reports": [
         "doc/meteg-after-silluq-psalms-72-15.md",
         "doc/meteg-after-silluq-psalms-72-15-update.md"
@@ -52,14 +48,9 @@
         "mam": "later-meteg",
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
-        "koren": "tracked-observation"
+        "koren": "tracked-observation",
+        "simanim": "no-later-mark"
       },
-      "additional_sources": [
-        {
-          "source": "the Simanim Tanakh",
-          "state": "no-later-mark"
-        }
-      ],
       "reports": [
         "doc/meteg-after-silluq-search-in-mam-documentation.md",
         "doc/meteg-after-silluq-search-in-mam-documentation-update.md"
@@ -78,7 +69,8 @@
         "mam": "both-strokes",
         "aleppo": "both-strokes",
         "leningrad": "both-strokes",
-        "koren": "tracked-observation"
+        "koren": "tracked-observation",
+        "simanim": "both-strokes"
       },
       "additional_sources": [
         {
@@ -87,10 +79,6 @@
         },
         {
           "source": "Mikra'ot Gedolot ha-Keter",
-          "state": "both-strokes"
-        },
-        {
-          "source": "the Simanim Tanakh",
           "state": "both-strokes"
         },
         {
