@@ -3292,11 +3292,7 @@ def _post_silluq_case_register(
                 "Each classified case below has at least one source—a manuscript or printed "
                 "edition—whose last ",
                 _ROM_METSIL,
-                " (a neutral name here for a U+05BD that may be ",
-                _ROM_METEG,
-                " or ",
-                _ROM_SILLUQ,
-                ") is later than the last ",
+                " is later than the last ",
                 _ROM_METSIL,
                 " in at least one other source.",
             )
@@ -3312,10 +3308,10 @@ def _post_silluq_case_register(
         ),
         mb_html.para(
             (
-                "Rows labeled candidate come from the named transcriptions, which have a "
-                "U+05BD after the stressed-syllable U+05BD. A transcription is not a "
-                "manuscript image; no Leningrad Codex classification is recorded until the "
-                "manuscript itself is read.",
+                "Rows labeled candidate record a later ",
+                _ROM_METSIL,
+                " in the named transcriptions, not in the Leningrad Codex manuscript itself. "
+                "No Leningrad Codex classification is recorded until the manuscript is read.",
             )
         ),
         _table(
@@ -3437,13 +3433,19 @@ def build_post_silluq_body(
         ),
         mb_html.para(
             (
-                "The same Unicode code point, U+05BD, represents both ",
+                "A verse-final word may have more than one ",
+                _ROM_METSIL,
+                ", the neutral term used here for a mark that may be ",
                 _ROM_SILLUQ,
-                " and ",
+                " or ",
                 _ROM_METEG,
-                ". In a verse-final word, U+05BD on the stressed syllable is ",
+                ". The ",
+                _ROM_METSIL,
+                " on the stressed syllable is ",
                 _ROM_SILLUQ,
-                "; a later U+05BD is ",
+                "; a later ",
+                _ROM_METSIL,
+                " is ",
                 _ROM_METEG,
                 " only when the stress has been established on an earlier syllable.",
             )
