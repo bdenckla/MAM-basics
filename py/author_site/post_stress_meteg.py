@@ -722,8 +722,7 @@ def build_methods_body(survey: dict) -> list:
                     ("comprehensive ", _ROM_METEG, "-after-", _ROM_SILLUQ, " page"),
                     _POST_SILLUQ_FNAME,
                 ),
-                " gives the comparative evidence, known cases, unresolved candidates,"
-                " and Koren-search results.",
+                " gives the comparative evidence, known cases, and unresolved candidates.",
             )
         ),
         *_census_definitions(survey),
@@ -3426,194 +3425,11 @@ def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> li
     ]
 
 
-def _koren_progress(observations: list[dict]) -> tuple[Counter, int, int]:
-    """Partition tracked Koren work without treating noncomplete rows as negatives."""
-    counts = Counter(observation["status"] for observation in observations)
-    completed = [
-        observation
-        for observation in observations
-        if observation["status"] == "complete"
-    ]
-    signals = sum(observation["koren"] == "first" for observation in completed)
-    non_signals = sum(
-        observation["koren"] in {"last", "both"} for observation in completed
-    )
-    if len(completed) != signals + non_signals:
-        raise ValueError(
-            "completed Koren observations do not partition into search results"
-        )
-    if sum(counts.values()) != len(observations):
-        raise ValueError(
-            "Koren progress states do not partition the tracked observations"
-        )
-    return counts, signals, non_signals
-
-
-def _koren_details(observation: dict) -> str:
-    """Additional marks and notes, kept outside the two-position classification."""
-    details = []
-    if observation.get("additional_marks"):
-        details.append(
-            "Additional marks: " + "; ".join(observation["additional_marks"])
-        )
-    if observation.get("note"):
-        details.append(observation["note"])
-    return "; ".join(details) if details else "none recorded"
-
-
-def _koren_state_label(status: str) -> str:
-    """The exhaustive visible labels for noncomplete Koren work."""
-    labels = {
-        "incomplete": "Incomplete",
-        "deferred": "Deferred",
-        "skipped-family": "Skipped family",
-    }
-    try:
-        return labels[status]
-    except KeyError as exc:
-        raise ValueError(f"Unknown noncomplete Koren status: {status!r}") from exc
-
-
-def _post_silluq_koren_section(
-    observations: list[dict], mam_forms: dict[str, str]
-) -> list:
-    """Derived Koren progress and every completed observation."""
-    counts, signals, non_signals = _koren_progress(observations)
-    for observation in observations:
-        form = mam_forms[observation["bcv"]]
-        if form.count(psm.METEG) != 2:
-            raise ValueError(
-                f"{observation['ref']}: Koren candidate MAM form does not have two U+05BD"
-            )
-    completed = [
-        observation
-        for observation in observations
-        if observation["status"] == "complete"
-    ]
-    attrs = (
-        _HEBREW_CELL,
-        _POST_SILLUQ_BCV_CELL,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )
-    completed_rows = [
-        _post_silluq_table_row(
-            (
-                _hebrew_cell(mam_forms[observation["bcv"]]),
-                _ref_link(observation["bcv"]),
-                _koren_position_label(observation["koren"]),
-                "signal" if observation["koren"] == "first" else "not a signal",
-                observation.get("sheva", "not recorded"),
-                _koren_details(observation),
-                observation["date"],
-            ),
-            attrs,
-        )
-        for observation in completed
-    ]
-    contents = [
-        mb_html.heading_level_2("Koren search"),
-        mb_html.para(
-            (
-                "Koren is used here as evidence for how that edition understands the"
-                " stress. Koren alone does not establish a manuscript's marks or a general"
-                " claim about Tiberian Hebrew. A first-position-only observation is the"
-                " search signal; a last-position-only or both-position observation is not.",
-            )
-        ),
-        mb_html.unordered_list(
-            (
-                ("Completed observations: ", f"{counts['complete']:,}", "."),
-                ("Signals: ", f"{signals:,}", "."),
-                ("Completed non-signals: ", f"{non_signals:,}", "."),
-                ("Incomplete observations: ", f"{counts['incomplete']:,}", "."),
-                ("Deferred candidates: ", f"{counts['deferred']:,}", "."),
-                ("Skipped families: ", f"{counts['skipped-family']:,}", "."),
-            )
-        ),
-        mb_html.heading_level_3("Completed observations"),
-        _table(
-            (
-                "MAM form",
-                "Reference",
-                "Koren at MAM's two positions",
-                "Search result",
-                "Sheva after the first position",
-                "Additional marks or notes",
-                "Reported",
-            ),
-            completed_rows,
-            {"class": "post-stress-meteg-table post-silluq-register"},
-        ),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(
-                    "historical candidate report",
-                    f"{_POST_SILLUQ_REPORT_URL_PREFIX}doc/"
-                    "meteg-after-silluq-koren-lookup-candidates.md",
-                ),
-                " records the original ranking and its evidence.",
-            )
-        ),
-    ]
-    noncomplete = [
-        observation
-        for observation in observations
-        if observation["status"] != "complete"
-    ]
-    if noncomplete:
-        pending_rows = [
-            _post_silluq_table_row(
-                (
-                    _hebrew_cell(mam_forms[observation["bcv"]]),
-                    _ref_link(observation["bcv"]),
-                    _koren_state_label(observation["status"]),
-                    observation.get("sheva", "not recorded"),
-                    _koren_details(observation),
-                    observation["date"],
-                ),
-                (
-                    _HEBREW_CELL,
-                    _POST_SILLUQ_BCV_CELL,
-                    None,
-                    None,
-                    None,
-                    None,
-                ),
-            )
-            for observation in noncomplete
-        ]
-        contents.extend(
-            (
-                mb_html.heading_level_3("Incomplete, deferred, or skipped work"),
-                _table(
-                    (
-                        "MAM form",
-                        "Reference",
-                        "State",
-                        "Sheva information",
-                        "Additional marks or notes",
-                        "Reported",
-                    ),
-                    pending_rows,
-                    {"class": "post-stress-meteg-table post-silluq-register"},
-                ),
-            )
-        )
-    return contents
-
-
 def build_post_silluq_body(
     survey: dict, cases: list[dict], observations: list[dict]
 ) -> list:
     """The maintained page for cases and candidates of meteg after silluq."""
-    mam_bcvs = {case["bcv"] for case in cases if case["form_source"] == "mam"} | {
-        observation["bcv"] for observation in observations
-    }
+    mam_bcvs = {case["bcv"] for case in cases if case["form_source"] == "mam"}
     mam_forms = _mam_final_forms(mam_bcvs)
     forms = _case_forms(cases, mam_forms)
     return [
@@ -3645,7 +3461,6 @@ def build_post_silluq_body(
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),
         *_post_silluq_open_candidates(cases, forms),
-        *_post_silluq_koren_section(observations, mam_forms),
     ]
 
 
@@ -3671,8 +3486,7 @@ def _post_silluq_footnote(survey: dict) -> list:
                     ("maintained ", _ROM_METEG, "-after-", _ROM_SILLUQ, " register"),
                     _POST_SILLUQ_FNAME,
                 ),
-                " gives the known cases, evidence, unresolved candidates, and Koren-search"
-                " progress.",
+                " gives the known cases, evidence, and unresolved candidates.",
             )
         ),
     ]
