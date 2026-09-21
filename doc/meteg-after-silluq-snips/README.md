@@ -1,10 +1,12 @@
 # Crops for the meteg-after-silluq work
 
-Crops of manuscript and printed-edition page images for the two meteg-after-silluq accounts,
-[`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md) and
-[`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), each kept as evidence
-behind a stated fact about what one manuscript or edition has. The four manuscript crops published
-on the post-silluq page are under [`../../gh-pages/img/`](../../gh-pages/img/); the unpublished
+Crops of manuscript and printed-edition page images for the maintained meteg-after-silluq
+research: the [`../meteg-after-silluq-in-uxlc-and-wlc.md`](../meteg-after-silluq-in-uxlc-and-wlc.md)
+report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
+[`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
+[`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
+evidence behind a stated fact about what one manuscript or edition has. The seven manuscript crops
+published on the post-silluq page are under [`../../gh-pages/img/`](../../gh-pages/img/); the unpublished
 Second Rabbinic Bible crop remains beside this README. Tiny crops like these are kept as fair use
 (Ben, 2026-09-10). Each section records the crop's available provenance; the Leningrad sections
 use the image sources named under “The Leningrad Codex.”
@@ -48,6 +50,50 @@ to an image. The page is a folio and side, as in `430B`.
 
 A printed edition's crop is named like a manuscript's, the edition in the manuscript's place. Its
 page is named by a pencil mark on it, as in `pencil99`.
+
+## [aleppo-083r-1K14v14-atta.png](../../gh-pages/img/aleppo-083r-1K14v14-atta.png)
+
+1 Kings 14:14, the verse-final chanted word, on **leaf 83r**. Ben inspected this crop on
+2026-09-21. Its original source filename is `Screenshot 2026-09-21 141837.png`; its SHA-256 is
+`B1A014F0846F00E683F1CF5FF6E281837985C236E3AED947983FD8FB97338A14`.
+
+Reference links: the chapter at
+[mgketer.org](https://www.mgketer.org/mikra/10/14/1/mg/106) and the verse at
+[Masoretica](https://www.masoretica.org/?book=1+Kings&chapter=14&verse=14&manuscript=aleppo).
+
+**The Aleppo Codex has the silluq without a second metsil in גַּם־עָֽתָּה׃.** The Leningrad Codex
+has a second metsil, the likely meteg after the silluq, as Ben confirmed from the Leningrad crop
+below.
+
+## [leningrad-195B-col2-line27-1K14v14-atta.jpg](../../gh-pages/img/leningrad-195B-col2-line27-1K14v14-atta.jpg)
+
+1 Kings 14:14, the verse-final chanted word, on **folio 195B, column 2, line 27**. Ben inspected
+this crop on 2026-09-21. Its original source filename is `17-Detail.jpg`; its SHA-256 is
+`C20CA3D597A7A617788DAA1A43CA9A36923B80025625B09BFBF5A8EC7C633078`.
+
+Daniel Holman's UXLC change proposal `2022.08.31-17`, which credits Sefaria for the image,
+supplied the detail crop and records the transcription history. Ben's inspection establishes
+what the manuscript has. The [whole-folio photograph at
+Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg) provides the image
+context.
+
+**The Leningrad Codex has the silluq and a second metsil in גַּם־עָֽתָּֽה׃.** The second metsil
+is the likely meteg after the silluq; the Aleppo Codex has the silluq without that second metsil.
+
+## [aleppo-251r-Ps60v10-HFRV33Y.png](../../gh-pages/img/aleppo-251r-Ps60v10-HFRV33Y.png)
+
+Psalms 60:10, the verse-final atom, on **leaf 251r**. Ben cropped it from mgketer.org and
+inspected it on 2026-09-21. Its original source filename is `Screenshot 2026-09-21 144056.png`;
+its SHA-256 is
+`292FB206BBFC738BA049E474147295635A988E372E22E4761BD498F7B328EBC4`.
+
+The source psalm is at
+[mgketer.org](https://www.mgketer.org/mikra/27/60/1/mg/106), and the verse is at
+[Masoretica](https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=aleppo).
+
+**The Aleppo Codex has the silluq alone in הִתְרוֹעָֽעִי׃:** one stroke on the first ayin and no
+later stroke on the second ayin. UXLC 3.9 and WLC 4.22 have a later U+05BD at this verse, but
+the Leningrad Codex remains for inspection.
 
 ## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 

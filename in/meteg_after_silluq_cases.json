@@ -94,7 +94,7 @@
       "status": "last-metsil-contrast",
       "form_source": "uxlc",
       "sources": {
-        "aleppo": "not-recorded",
+        "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
@@ -103,7 +103,10 @@
         "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
         "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
-      "images": []
+      "images": [
+        "aleppo-1k14-14",
+        "leningrad-1k14-14"
+      ]
     },
     {
       "ref": "Psalms 60:10",
@@ -114,10 +117,19 @@
         "UXLC 3.9",
         "WLC 4.22"
       ],
+      "sources": {
+        "aleppo": "no-later-mark",
+        "leningrad": "not-recorded",
+        "koren": "not-recorded",
+        "simanim": "not-recorded"
+      },
       "reports": [
-        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
+        "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
-      "images": []
+      "images": [
+        "aleppo-ps60-10"
+      ]
     },
     {
       "ref": "Psalms 70:2",

@@ -50,6 +50,15 @@ settled from manuscript images: 1 Samuel 17:5, 1 Kings 14:14 and Psalms 72:15. T
 cases for manuscript inspection are Psalms 60:10 and Psalms 70:2. The lead of section 6 should
 likewise say “the other two,” not “the other three.”
 
+## Psalms 60:10: the Aleppo Codex has the silluq alone
+
+Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex has the silluq alone in the
+verse-final atom **הִתְרוֹעָֽעִי׃**: the stroke is on the first ayin, with no later stroke on the
+second ayin.
+
+The Leningrad Codex remains unclassified. Psalms 60:10 and Psalms 70:2 remain for Leningrad
+manuscript inspection.
+
 ## Complete chanted-word forms in the seven-case register
 
 Audited by Codex on 2026-09-21 against the tracked MAM-simple and UXLC 3.9 data. Six of the seven

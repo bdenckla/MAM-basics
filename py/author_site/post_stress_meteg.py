@@ -218,12 +218,14 @@ _UXLC_CHANGE_URL = (
     "https://tanach.us/Changes/2022.12.07%20-%20Changes/"
     "2022.12.07%20-%20Changes.html?2022.08.31-17"
 )
-# Every visible spelling of these two references comes from ``ref_abbrev``, the
+# Every visible spelling of these references comes from ``ref_abbrev``, the
 # short-but-not-super-short prose form built on ``mb_misc/osis_book_abbrevs.py``'s
 # OSIS list -- "Gen. 2:7", "1 Sam. 17:5", "1 Kgs. 7:37".  Ben's rule of 2026-09-08:
 # no reference is typed out, here or in a figure caption or an alt text.
 _POST_SILLUQ_REF = ref_abbrev(_POST_SILLUQ_VERSE)
 _MAM_POST_SILLUQ_REF = ref_abbrev(_MAM_POST_SILLUQ_VERSE)
+_UXLC_CHANGE_REF = ref_abbrev(_UXLC_CHANGE_VERSE)
+_PSALMS_60_REF = ref_abbrev("ps60:10")
 _PSALMS_72_REF = ref_abbrev("ps72:15")
 _JOB_4_REF = ref_abbrev("jb4:12")
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
@@ -231,6 +233,9 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
+_FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
+_FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.jpg"
+_PSALMS_60_ALEPPO_CROP_URL = "img/aleppo-251r-Ps60v10-HFRV33Y.png"
 _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
 _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
@@ -264,6 +269,9 @@ _POST_SILLUQ_IMAGE_REFS = {
     "leningrad-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
+    "aleppo-1k14-14": "1 Kings 14:14",
+    "leningrad-1k14-14": "1 Kings 14:14",
+    "aleppo-ps60-10": "Psalms 60:10",
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
 }
@@ -272,6 +280,7 @@ _POST_SILLUQ_IMAGE_PAIRS = {
     "1 Samuel 17:5": ("aleppo-1s17-5", "lc-1s17-5"),
     "Psalms 72:15": ("aleppo-ps72-15", "leningrad-ps72-15"),
     "1 Kings 7:37": ("aleppo-1k7-37", "leningrad-1k7-37"),
+    "1 Kings 14:14": ("aleppo-1k14-14", "leningrad-1k14-14"),
     "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12"),
 }
 _KOREN_STATUSES = frozenset({"complete", "incomplete", "deferred", "skipped-family"})
@@ -2809,6 +2818,16 @@ def _validate_string_list(
     return strings
 
 
+def _validate_post_silluq_sources(value: object, *, where: str) -> dict:
+    """Validate the closed four-source mapping shared by both case statuses."""
+    if not isinstance(value, dict) or set(value) != set(_POST_SILLUQ_SOURCES):
+        raise ValueError(f"{where}: expected exactly {_POST_SILLUQ_SOURCES}")
+    for source, state in value.items():
+        if state not in _POST_SILLUQ_SOURCE_STATES:
+            raise ValueError(f"{where}/{source}: unknown state {state!r}")
+    return value
+
+
 def load_post_silluq_cases() -> list[dict]:
     """Load and validate the curated cross-source case ledger."""
     path = paths.in_dir() / _POST_SILLUQ_CASES_JSON
@@ -2890,34 +2909,21 @@ def load_post_silluq_cases() -> list[dict]:
             )
 
         if status == "open-candidate":
-            if (
-                "sources" in case
-                or "additional_sources" in case
-                or "mam_editorial_basis" in case
-            ):
+            if "additional_sources" in case or "mam_editorial_basis" in case:
                 raise ValueError(
-                    f"{where}: open candidates do not take source conclusions"
+                    f"{where}: open candidates do not take additions or an editorial basis"
                 )
             _validate_string_list(
                 case.get("transcriptions"), where=f"{where}/transcriptions"
             )
+            if "sources" in case:
+                _validate_post_silluq_sources(case["sources"], where=f"{where}/sources")
         else:
             if "transcriptions" in case or "sources" not in case:
                 raise ValueError(
                     f"{where}: known cases require sources, not transcriptions"
                 )
-            sources = case["sources"]
-            if not isinstance(sources, dict) or set(sources) != set(
-                _POST_SILLUQ_SOURCES
-            ):
-                raise ValueError(
-                    f"{where}/sources: expected exactly {_POST_SILLUQ_SOURCES}"
-                )
-            for source, state in sources.items():
-                if state not in _POST_SILLUQ_SOURCE_STATES:
-                    raise ValueError(
-                        f"{where}/sources/{source}: unknown state {state!r}"
-                    )
+            _validate_post_silluq_sources(case["sources"], where=f"{where}/sources")
             additions = case.get("additional_sources", [])
             if not isinstance(additions, list):
                 raise ValueError(f"{where}/additional_sources: expected a list")
@@ -3213,6 +3219,39 @@ def _post_silluq_aleppo_crop() -> object:
     )
 
 
+def _first_kings_14_aleppo_crop() -> object:
+    """The Aleppo Codex crop at 1 Kings 14:14."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_FIRST_KINGS_14_ALEPPO_CROP_URL}"'
+        f' alt="Aleppo Codex crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
+        ' the silluq alone, without a second metsil." loading="lazy"'
+        ' style="max-width: 100%; height: auto;">'
+        f"<figcaption>Aleppo Codex, leaf 83r ({_UXLC_CHANGE_REF}).</figcaption></figure>"
+    )
+
+
+def _first_kings_14_leningrad_crop() -> object:
+    """The Leningrad Codex crop at 1 Kings 14:14."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_FIRST_KINGS_14_LENINGRAD_CROP_URL}"'
+        f' alt="Leningrad Codex crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
+        ' a second metsil after the silluq." loading="lazy"'
+        ' style="max-width: 100%; height: auto;">'
+        "<figcaption>Leningrad Codex, folio 195B, column 2, line 27 "
+        f"({_UXLC_CHANGE_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_60_aleppo_crop() -> object:
+    """The Aleppo Codex crop at Psalms 60:10."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_60_ALEPPO_CROP_URL}"'
+        f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_60_REF}; it has the'
+        ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f"<figcaption>Aleppo Codex, leaf 251r ({_PSALMS_60_REF}).</figcaption></figure>"
+    )
+
+
 def _psalms_72_aleppo_crop() -> object:
     """The Aleppo Codex crop at Psalms 72:15."""
     return mb_html.raw_html(
@@ -3324,14 +3363,14 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the ALKS has/does-not-have source masks for one case."""
+    """Render the ALKS masks, requiring a contrast only for classified cases."""
     flags_by_source = {
         source: _case_source_mask_flags(case, source, complete_koren_by_ref)
         for source in _POST_SILLUQ_SOURCES
     }
-    if not any(flags[0] for flags in flags_by_source.values()) or not any(
-        flags[1] for flags in flags_by_source.values()
-    ):
+    has_later = any(flags[0] for flags in flags_by_source.values())
+    lacks_later = any(flags[1] for flags in flags_by_source.values())
+    if case["status"] == "last-metsil-contrast" and not (has_later and lacks_later):
         raise ValueError(
             f"{case['ref']}: sources do not establish a last-metsil position contrast"
         )
@@ -3354,8 +3393,13 @@ def _case_register_source_cell(
     if status == "last-metsil-contrast":
         return _case_source_masks(case, complete_koren_by_ref)
     if status == "open-candidate":
+        masks = (
+            _case_source_masks(case, complete_koren_by_ref)
+            if "sources" in case
+            else mb_html.raw_html("<code>----<br>----</code>")
+        )
         return (
-            mb_html.raw_html("<code>----<br>----</code>"),
+            masks,
             mb_html.line_break(),
             mb_html.small(("candidate: ", ", ".join(case["transcriptions"]))),
         )
@@ -3634,6 +3678,42 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             ),
             _post_silluq_aleppo_crop(),
         ]
+    if image_id == "aleppo-1k14-14":
+        return [
+            mb_html.para(
+                (
+                    "At ",
+                    _ref_link(_UXLC_CHANGE_VERSE),
+                    ", the Aleppo Codex lacks the second ",
+                    _ROM_METSIL,
+                    " that the Leningrad Codex has. The Leningrad Codex's second ",
+                    _ROM_METSIL,
+                    " is the likely ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    ".",
+                )
+            ),
+            _first_kings_14_aleppo_crop(),
+        ]
+    if image_id == "leningrad-1k14-14":
+        return [_first_kings_14_leningrad_crop()]
+    if image_id == "aleppo-ps60-10":
+        return [
+            mb_html.para(
+                (
+                    "At ",
+                    _PSALMS_60_REF,
+                    ", the Aleppo Codex lacks the later ",
+                    _ROM_METEG,
+                    " and has the ",
+                    _ROM_SILLUQ,
+                    " alone.",
+                )
+            ),
+            _psalms_60_aleppo_crop(),
+        ]
     if image_id == "aleppo-ps72-15":
         return [
             mb_html.para(
@@ -3692,7 +3772,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
 
 
 def _post_silluq_image_evidence(cases: list[dict]) -> list:
-    """Render the eight deployed manuscript crops in Aleppo-Leningrad pairs."""
+    """Render each case's ordered set of deployed manuscript crops and conclusions."""
     with_images = [case for case in cases if case["images"]]
     if not with_images:
         return []
@@ -3740,6 +3820,23 @@ def build_post_silluq_body(
                 " is ",
                 _ROM_METEG,
                 " only when the stress has been established on an earlier syllable.",
+            )
+        ),
+        mb_html.para(
+            (
+                "In this investigation, the printed tradition helps clarify marks in the "
+                "manuscript tradition. Although printed editions generally have an excess of ",
+                _ROM_METEG,
+                " marks, the printed editions considered here sometimes have the ",
+                _ROM_SILLUQ,
+                " alone where a manuscript has a later ",
+                _ROM_METSIL,
+                ". The printed editions' lack of the later mark helps identify the "
+                "corresponding manuscript mark as ",
+                _ROM_METEG,
+                " rather than ",
+                _ROM_SILLUQ,
+                ".",
             )
         ),
         *_post_silluq_case_register(cases, forms, mam_forms, observations),
