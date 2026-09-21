@@ -72,8 +72,19 @@ syllable.</p>
 in at least one other source.</p>
 <p>In each monospace cell, the first line marks sources that have the later
 <span class="romanized">metsil</span> and the second line marks sources that do not. The four
-positions are A = Aleppo Codex, L = Leningrad Codex, K = Koren, and S = the Simanim Tanakh; a dash
-means no classification is recorded yet for that source.</p>
+positions are A = Aleppo Codex, L = Leningrad Codex, K = Koren, and S = the Simanim Tanakh. In
+either line, a dash means that the source is not assigned to that line; only dashes in both lines at
+the same position mean that no classification is recorded for that source. MAM is omitted from the
+ALKS mask when its state agrees with the Aleppo Codex, because repeating that state would be
+redundant.</p>
+<p>For example, at
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c17v5">1 Sam. 17:5</a>,
+<code>-L--</code> on the first line means that the Leningrad Codex has the later last
+<span class="romanized">metsil</span>, while <code>A-KS</code> on the second line means that the
+Aleppo Codex, Koren, and the Simanim Tanakh do not. Koren and the Simanim Tanakh each have only one
+<span class="romanized">metsil</span> in <span lang="hbo">נְחֹֽשֶׁת׃</span>; it is therefore the
+<span class="romanized">silluq</span> on ח (xet), as expected. MAM agrees with the Aleppo Codex here
+and is therefore omitted from the mask as redundant.</p>
 <p>Rows labeled candidate record a later <span class="romanized">metsil</span> in the named
 transcriptions, not in the Leningrad Codex manuscript itself. No Leningrad Codex classification is
 recorded until the manuscript is read.</p>
@@ -86,7 +97,7 @@ recorded until the manuscript is read.</p>
 <tr>
 <td dir="rtl"><span lang="hbo">נְחֹֽשֶֽׁת׃</span></td>
 <td class="post-silluq-bcv"><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c17v5">1
-Sam. 17:5</a><sup><a href="#source-note-1">1</a></sup></td>
+Sam. 17:5</a></td>
 <td><code>-L--<br>A-KS</code></td>
 </tr>
 <tr>
@@ -98,7 +109,7 @@ Kgs. 7:37</a></td>
 <tr>
 <td dir="rtl"><span lang="hbo">גַּם־עָֽתָּֽה׃</span></td>
 <td class="post-silluq-bcv"><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c14v14">1
-Kgs. 14:14</a><sup><a href="#source-note-2">2</a></sup></td>
+Kgs. 14:14</a></td>
 <td><code>-L--<br>--KS</code></td>
 </tr>
 <tr>
@@ -128,23 +139,21 @@ Kgs. 14:14</a><sup><a href="#source-note-2">2</a></sup></td>
 <td><code>AL-S<br>--K-</code></td>
 </tr>
 </table>
-<p><small><sup id="source-note-1">1</sup> At
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c17v5">1 Sam. 17:5</a>,
-Koren and the Simanim Tanakh each have only one <span class="romanized">metsil</span> in
-<span lang="hbo">נְחֹֽשֶׁת׃</span>. Because this verse-final word has only one
-<span class="romanized">metsil</span>, the mark is the <span class="romanized">silluq</span>, on ח
-(xet), as expected.</small></p>
-<p><small><sup id="source-note-2">2</sup> At
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c14v14">1 Kgs. 14:14</a>,
-Koren and the Simanim Tanakh each have only one <span class="romanized">metsil</span> in
-<span lang="hbo">גַּם־עָֽתָּה׃</span>: the <span class="romanized">silluq</span> on ע (ayin), as
-expected. UXLC 3.9 acquired a second <span class="romanized">metsil</span> through
+<p><small>MAM's note at
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c7v37">1 Kgs. 7:37</a>
+reports both manuscript readings: the Aleppo Codex has the later
+<span class="romanized">meteg</span>, while the Leningrad Codex has the
+<span class="romanized">silluq</span> alone. MAM's body text has
+<span lang="hbo">לְכֻלָּֽהְנָֽה׃</span>, following the Aleppo Codex. This choice retains MAM's
+general policy of following the Aleppo Codex. MAM diverges when a specific editorial policy requires
+a different form or, in a rare case, when the Aleppo Codex is fairly clearly erroneous or fairly
+clearly outside the manuscript tradition of which the Aleppo Codex is generally the greatest
+example. Because <span class="romanized">meteg</span> after <span class="romanized">silluq</span> is
+so rare, such a judgment is difficult here, so MAM follows the Aleppo Codex.</small></p>
+<p><small>At <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c14v14">1
+Kgs. 14:14</a>, UXLC acquired a second <span class="romanized">metsil</span> through
 <a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html?2022.08.31-17">Daniel
-Holman's change proposal 2022.08.31-17</a>. Ben independently inspected the manuscript image
-supplied with that record on 2026-09-21 and reads the UXLC form
-<span lang="hbo">גַּם־עָֽתָּֽה׃</span> as the content of the Leningrad Codex. The second
-<span class="romanized">metsil</span> is likely a <span class="romanized">meteg</span> after
-<span class="romanized">silluq</span>; Breuer also notes this second
+Holman's change proposal 2022.08.31-17</a>; Breuer also notes the second
 <span class="romanized">metsil</span> in <em>Da'at Miqra</em>.</small></p>
 <h2>How the cases were found</h2>
 <p>We became aware of
@@ -158,8 +167,6 @@ candidate searches.</p>
 <h3><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c4v12">Job 4:12</a></h3>
 <ul>
 <li>Cambridge Add. 1753: both strokes.</li>
-<li>Mikra'ot Gedolot ha-Keter: both strokes.</li>
-<li>the Second Rabbinic Bible: first position only.</li>
 </ul>
 <h2>Image evidence</h2>
 <h3><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c17v5">1 Sam.

@@ -45,6 +45,7 @@
       "bcv": "1k7:37",
       "status": "last-metsil-contrast",
       "form_source": "mam",
+      "mam_editorial_basis": "aleppo-default",
       "sources": {
         "mam": "later-meteg",
         "aleppo": "later-meteg",
@@ -77,14 +78,6 @@
         {
           "source": "Cambridge Add. 1753",
           "state": "both-strokes"
-        },
-        {
-          "source": "Mikra'ot Gedolot ha-Keter",
-          "state": "both-strokes"
-        },
-        {
-          "source": "the Second Rabbinic Bible",
-          "state": "first-position-only"
         }
       ],
       "reports": [

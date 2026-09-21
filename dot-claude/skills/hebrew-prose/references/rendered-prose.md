@@ -72,6 +72,11 @@ is a checker error name.
   a primary observation is recorded; on the page it reads as the author bracing against a doubt
   the reader had not formed. This is the sibling of "bounded doubts get no mention at all" below —
   that bans naming the doubt, this bans pre-emptively answering it.
+- **Keep inspection audit trails in maintained research notes.** Who inspected which image, when,
+  and the reasoning path belong in the maintained research record. A rendered page ordinarily
+  states the resulting source classification. Promote the inspector, date, or method to rendered
+  prose only when that attribution or method is itself needed for the reader's argument or
+  evaluation.
 
 ## Cite the two books as ITM and CoS, with the full title on hover
 

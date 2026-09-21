@@ -218,10 +218,6 @@ _UXLC_CHANGE_URL = (
     "https://tanach.us/Changes/2022.12.07%20-%20Changes/"
     "2022.12.07%20-%20Changes.html?2022.08.31-17"
 )
-_POST_SILLUQ_CASE_NOTE_IDS = {
-    _POST_SILLUQ_VERSE: (1, "source-note-1"),
-    _UXLC_CHANGE_VERSE: (2, "source-note-2"),
-}
 # Every visible spelling of these two references comes from ``ref_abbrev``, the
 # short-but-not-super-short prose form built on ``mb_misc/osis_book_abbrevs.py``'s
 # OSIS list -- "Gen. 2:7", "1 Sam. 17:5", "1 Kgs. 7:37".  Ben's rule of 2026-09-08:
@@ -2822,7 +2818,12 @@ def load_post_silluq_cases() -> list[dict]:
         if not isinstance(case, dict):
             raise ValueError(f"{where}: expected an object")
         required = {"ref", "bcv", "status", "form_source", "reports", "images"}
-        allowed = required | {"sources", "additional_sources", "transcriptions"}
+        allowed = required | {
+            "sources",
+            "additional_sources",
+            "transcriptions",
+            "mam_editorial_basis",
+        }
         _require_exact_keys(case, required=required, allowed=allowed, where=where)
 
         ref = _require_nonempty_string(case["ref"], where=f"{where}/ref")
@@ -2869,7 +2870,11 @@ def load_post_silluq_cases() -> list[dict]:
             )
 
         if status == "open-candidate":
-            if "sources" in case or "additional_sources" in case:
+            if (
+                "sources" in case
+                or "additional_sources" in case
+                or "mam_editorial_basis" in case
+            ):
                 raise ValueError(
                     f"{where}: open candidates do not take source conclusions"
                 )
@@ -2922,6 +2927,14 @@ def load_post_silluq_cases() -> list[dict]:
                     raise ValueError(
                         f"{add_where}/state: unknown state {addition['state']!r}"
                     )
+            editorial_basis = case.get("mam_editorial_basis")
+            if editorial_basis is not None and (
+                bcv != _MAM_POST_SILLUQ_VERSE or editorial_basis != "aleppo-default"
+            ):
+                raise ValueError(
+                    f"{where}/mam_editorial_basis: unsupported value "
+                    f"{editorial_basis!r} for {bcv}"
+                )
     return cases
 
 
@@ -3292,20 +3305,11 @@ def _case_register_source_cell(
     raise ValueError(f"{case['ref']}: unknown case status {status!r}")
 
 
-def _post_silluq_case_reference(case: dict) -> object:
-    """One case reference, with a source-note callout where the page has one."""
-    note = _POST_SILLUQ_CASE_NOTE_IDS.get(case["bcv"])
-    if note is None:
-        return _ref_link(case["bcv"])
-    number, note_id = note
-    return (
-        _ref_link(case["bcv"]),
-        mb_html.sup(mb_html.anchor_h(str(number), f"#{note_id}")),
-    )
-
-
 def _post_silluq_case_register(
-    cases: list[dict], forms: dict[str, str], observations: list[dict]
+    cases: list[dict],
+    forms: dict[str, str],
+    mam_forms: dict[str, str],
+    observations: list[dict],
 ) -> list:
     """The cross-source contrasts and unresolved candidates in one table."""
     complete_koren_by_ref = _complete_koren_by_ref(observations)
@@ -3319,13 +3323,29 @@ def _post_silluq_case_register(
         _post_silluq_table_row(
             (
                 _hebrew_cell(forms[case["bcv"]]),
-                _post_silluq_case_reference(case),
+                _ref_link(case["bcv"]),
                 _case_register_source_cell(case, complete_koren_by_ref),
             ),
             attrs,
         )
         for case in sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
     ]
+    cases_by_bcv = {case["bcv"]: case for case in cases}
+    first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
+    if first_samuel is None:
+        raise ValueError("The source-mask example requires 1 Samuel 17:5")
+    expected_first_samuel_sources = {
+        "mam": "no-later-mark",
+        "aleppo": "no-later-mark",
+        "leningrad": "later-meteg",
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark",
+    }
+    if first_samuel["sources"] != expected_first_samuel_sources:
+        raise ValueError("1 Samuel 17:5: source-mask example drifted")
+    first_samuel_form = mam_forms[_POST_SILLUQ_VERSE]
+    if first_samuel_form.count(psm.METEG) != 1:
+        raise ValueError("1 Samuel 17:5: expected one metsil in the printed form")
     return [
         mb_html.heading_level_2("Case register"),
         mb_html.para(
@@ -3344,7 +3364,34 @@ def _post_silluq_case_register(
                 _ROM_METSIL,
                 " and the second line marks sources that do not. The four positions are "
                 "A = Aleppo Codex, L = Leningrad Codex, K = Koren, and S = the Simanim "
-                "Tanakh; a dash means no classification is recorded yet for that source.",
+                "Tanakh. In either line, a dash means that the source is not assigned to "
+                "that line; only dashes in both lines at the same position mean that no "
+                "classification is recorded for that source. MAM is omitted from the ALKS "
+                "mask when its state agrees with the Aleppo Codex, because repeating that "
+                "state would be redundant.",
+            )
+        ),
+        mb_html.para(
+            (
+                "For example, at ",
+                _ref_link(_POST_SILLUQ_VERSE),
+                ", ",
+                mb_html.raw_html("<code>-L--</code>"),
+                " on the first line means that the Leningrad Codex has the later last ",
+                _ROM_METSIL,
+                ", while ",
+                mb_html.raw_html("<code>A-KS</code>"),
+                " on the second line means that the Aleppo Codex, Koren, and the Simanim "
+                "Tanakh do not. Koren and the Simanim Tanakh each have only one ",
+                _ROM_METSIL,
+                " in ",
+                wrap_hebrew_runs(first_samuel_form),
+                "; it is therefore the ",
+                _ROM_SILLUQ,
+                " on ",
+                wrap_hebrew_runs("ח"),
+                " (xet), as expected. MAM agrees with the Aleppo Codex here and is "
+                "therefore omitted from the mask as redundant.",
             )
         ),
         mb_html.para(
@@ -3363,106 +3410,84 @@ def _post_silluq_case_register(
     ]
 
 
-def _post_silluq_case_notes(
-    cases: list[dict], forms: dict[str, str], mam_forms: dict[str, str]
-) -> list:
-    """Subordinate source notes for the two cases Ben read in printed editions."""
+def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
+    """Subordinate provenance and editorial notes not encoded by the source masks."""
     cases_by_bcv = {case["bcv"]: case for case in cases}
-    required = set(_POST_SILLUQ_CASE_NOTE_IDS)
+    required = {_MAM_POST_SILLUQ_VERSE, _UXLC_CHANGE_VERSE}
     if not required <= set(cases_by_bcv):
         raise ValueError(
             "The post-silluq source notes require "
             f"{sorted(required - set(cases_by_bcv))}"
         )
 
-    first_samuel = cases_by_bcv[_POST_SILLUQ_VERSE]
-    first_kings = cases_by_bcv[_UXLC_CHANGE_VERSE]
-    expected_printed_state = {
-        "koren": "no-later-mark",
+    first_kings_seven = cases_by_bcv[_MAM_POST_SILLUQ_VERSE]
+    expected_first_kings_seven_sources = {
+        "mam": "later-meteg",
+        "aleppo": "later-meteg",
+        "leningrad": "no-later-mark",
+        "koren": "tracked-observation",
         "simanim": "no-later-mark",
     }
-    for case in (first_samuel, first_kings):
-        if case["status"] != "last-metsil-contrast":
-            raise ValueError(f"{case['ref']}: source note requires a classified case")
-        actual = {source: case["sources"][source] for source in expected_printed_state}
-        if actual != expected_printed_state:
-            raise ValueError(
-                f"{case['ref']}: printed-edition states drifted: {actual!r}"
-            )
-    if first_kings["sources"]["leningrad"] != "later-meteg":
-        raise ValueError("1 Kings 14:14: the LC classification drifted")
-
-    first_samuel_form = mam_forms[_POST_SILLUQ_VERSE]
-    first_kings_printed_form = mam_forms[_UXLC_CHANGE_VERSE]
-    first_kings_lc_form = forms[_UXLC_CHANGE_VERSE]
-    if first_samuel_form.count(psm.METEG) != 1:
-        raise ValueError("1 Samuel 17:5: expected one metsil in the printed form")
     if (
-        psm.MAQAF not in first_kings_printed_form
-        or psm.MAQAF not in first_kings_lc_form
-        or first_kings_printed_form.count(psm.METEG) != 1
-        or first_kings_lc_form.count(psm.METEG) != 2
+        first_kings_seven["status"] != "last-metsil-contrast"
+        or first_kings_seven["form_source"] != "mam"
+        or first_kings_seven["sources"] != expected_first_kings_seven_sources
+        or first_kings_seven.get("mam_editorial_basis") != "aleppo-default"
     ):
-        raise ValueError("1 Kings 14:14: complete chanted-word forms drifted")
+        raise ValueError("1 Kings 7:37: MAM editorial note drifted")
+    first_kings_seven_form = forms[_MAM_POST_SILLUQ_VERSE]
+    if first_kings_seven_form.count(psm.METEG) != 2:
+        raise ValueError("1 Kings 7:37: expected silluq and later meteg in MAM")
 
-    first_samuel_number, first_samuel_note_id = _POST_SILLUQ_CASE_NOTE_IDS[
-        _POST_SILLUQ_VERSE
-    ]
-    first_kings_number, first_kings_note_id = _POST_SILLUQ_CASE_NOTE_IDS[
-        _UXLC_CHANGE_VERSE
-    ]
+    first_kings_fourteen = cases_by_bcv[_UXLC_CHANGE_VERSE]
+    if first_kings_fourteen["sources"]["leningrad"] != "later-meteg":
+        raise ValueError("1 Kings 14:14: the LC classification drifted")
+    first_kings_fourteen_form = forms[_UXLC_CHANGE_VERSE]
+    if (
+        psm.MAQAF not in first_kings_fourteen_form
+        or first_kings_fourteen_form.count(psm.METEG) != 2
+    ):
+        raise ValueError("1 Kings 14:14: UXLC form drifted")
+
     return [
         mb_html.para(
             mb_html.small(
                 (
-                    mb_html.sup(str(first_samuel_number), {"id": first_samuel_note_id}),
-                    " At ",
-                    _ref_link(_POST_SILLUQ_VERSE),
-                    ", Koren and the Simanim Tanakh each have only one ",
-                    _ROM_METSIL,
-                    " in ",
-                    wrap_hebrew_runs(first_samuel_form),
-                    ". Because this verse-final word has only one ",
-                    _ROM_METSIL,
-                    ", the mark is the ",
+                    "MAM's note at ",
+                    _ref_link(_MAM_POST_SILLUQ_VERSE),
+                    " reports both manuscript readings: the Aleppo Codex has the later ",
+                    _ROM_METEG,
+                    ", while the Leningrad Codex has the ",
                     _ROM_SILLUQ,
-                    ", on ",
-                    wrap_hebrew_runs("ח"),
-                    " (xet), as expected.",
+                    " alone. MAM's body text has ",
+                    wrap_hebrew_runs(first_kings_seven_form),
+                    ", following the Aleppo Codex. This choice retains MAM's general "
+                    "policy of following the Aleppo Codex. MAM diverges when a specific "
+                    "editorial policy requires a different form or, in a rare case, when "
+                    "the Aleppo Codex is fairly clearly erroneous or fairly clearly outside "
+                    "the manuscript tradition of which the Aleppo Codex is generally the "
+                    "greatest example. Because ",
+                    _ROM_METEG,
+                    " after ",
+                    _ROM_SILLUQ,
+                    " is so rare, such a judgment is difficult here, so MAM follows the "
+                    "Aleppo Codex.",
                 )
             )
         ),
         mb_html.para(
             mb_html.small(
                 (
-                    mb_html.sup(str(first_kings_number), {"id": first_kings_note_id}),
-                    " At ",
+                    "At ",
                     _ref_link(_UXLC_CHANGE_VERSE),
-                    ", Koren and the Simanim Tanakh each have only one ",
-                    _ROM_METSIL,
-                    " in ",
-                    wrap_hebrew_runs(first_kings_printed_form),
-                    ": the ",
-                    _ROM_SILLUQ,
-                    " on ",
-                    wrap_hebrew_runs("ע"),
-                    " (ayin), as expected. UXLC 3.9 acquired a second ",
+                    ", UXLC acquired a second ",
                     _ROM_METSIL,
                     " through ",
                     mb_html.anchor_h(
                         "Daniel Holman's change proposal 2022.08.31-17",
                         _UXLC_CHANGE_URL,
                     ),
-                    ". Ben independently inspected the manuscript image supplied with that "
-                    "record on 2026-09-21 and reads the UXLC form ",
-                    wrap_hebrew_runs(first_kings_lc_form),
-                    " as the content of the Leningrad Codex. The second ",
-                    _ROM_METSIL,
-                    " is likely a ",
-                    _ROM_METEG,
-                    " after ",
-                    _ROM_SILLUQ,
-                    "; Breuer also notes this second ",
+                    "; Breuer also notes the second ",
                     _ROM_METSIL,
                     " in ",
                     mb_html.emphasis("Da'at Miqra"),
@@ -3633,8 +3658,8 @@ def build_post_silluq_body(
                 " only when the stress has been established on an earlier syllable.",
             )
         ),
-        *_post_silluq_case_register(cases, forms, observations),
-        *_post_silluq_case_notes(cases, forms, mam_forms),
+        *_post_silluq_case_register(cases, forms, mam_forms, observations),
+        *_post_silluq_source_notes(cases, forms),
         *_post_silluq_discovery_credits(cases),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),

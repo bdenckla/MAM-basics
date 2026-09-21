@@ -30,6 +30,24 @@ footnote 54 (p. 355 in the Wengrov English translation).” The chapter, section
 numbers precede the parenthesized page number because only the page number belongs specifically
 to the Wengrov English translation.
 
+## 1 Kings 7:37: MAM's apparatus and body text
+
+Recorded by Codex on 2026-09-21 from MAM's tracked source for 1 Kings 7:37 and the general
+editorial policy in chapter 5 of MAM's introduction.
+
+**Apparatus evidence.** MAM's note reports both manuscript readings. The Aleppo Codex has two
+strokes, the silluq and a later meteg; the Leningrad Codex has the silluq alone.
+
+**Body text.** MAM has the complete form **לְכֻלָּֽהְנָֽה׃** in its body text and therefore
+follows the Aleppo Codex here.
+
+**Editorial inference.** MAM's general policy is to follow the Aleppo Codex. MAM diverges when a
+specific editorial policy requires a form contrary to the Aleppo Codex or, in a rare case, when
+the Aleppo Codex is fairly clearly erroneous or fairly clearly outside the manuscript tradition
+of which the Aleppo Codex is generally the greatest example. Because meteg after silluq is so
+rare, such a judgment is difficult here. MAM therefore retains its default and follows the
+Aleppo Codex.
+
 ## Finding 11.5: narrative romanizations should use `pataḥ`, `ḥataf` and `deḥi`
 
 Recorded by Codex on 2026-09-13. A fresh census of the finished search report found 1 `patax`
