@@ -1,5 +1,5 @@
 {
-  "about": "Ben Denckla's readings of the Koren edition at the candidates listed in doc/meteg-after-silluq-koren-lookup-candidates.md, one per reference, in the order he reported them. 'koren' says which of the two U+05BD on MAM's final atom Koren has: 'first' (the first mark only), 'last' (the last mark only) or 'both'. 'sheva', present only where Ben gave it, is how Koren treats the simple sheva after the first mark: 'vocal' or 'silent'. 'note', present only where needed, records a mark Koren has that MAM lacks, or Koren's treatment of a sheva other than the one after the first mark. 'date' is the day Ben reported the reading. A throwaway writer, which is not tracked, fills that file's Koren column from this list.",
+  "about": "Ben Denckla's readings of the Koren edition at the candidates listed in doc/meteg-after-silluq-koren-lookup-candidates.md, one per reference, in the order he reported them. 'koren' classifies Koren's metsil or metsils only relative to the two U+05BD positions on MAM's final atom: 'first' means a metsil at MAM's first position but not its last, 'last' means a metsil at MAM's last position but not its first, and 'both' means metsils at both positions. A metsil at another position is recorded in 'note' and does not affect this classification. 'sheva', present only where Ben gave a vocal-or-silent judgment and Koren has a simple sheva in the relevant position, is Koren's treatment of the simple sheva after MAM's first U+05BD position. 'note', present only where needed, records additional Koren pointing not represented by 'koren' or 'sheva', including an additional metsil, Koren's treatment of another sheva, or a different vowel or sheva at the relevant position. 'date' is the day Ben reported the reading. A throwaway writer, which is not tracked, fills the generated comparison from this list.",
   "readings": [
     {"ref": "1 Kings 7:37", "koren": "first", "sheva": "silent", "date": "2026-09-09"},
     {"ref": "Psalms 35:10", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
@@ -11,6 +11,23 @@
     {"ref": "Genesis 5:2", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
     {"ref": "Exodus 21:35", "koren": "both", "date": "2026-09-10"},
     {"ref": "Leviticus 26:31", "koren": "both", "date": "2026-09-10"},
-    {"ref": "Deuteronomy 1:12", "koren": "both", "sheva": "vocal", "date": "2026-09-10"}
+    {"ref": "Deuteronomy 1:12", "koren": "both", "sheva": "vocal", "date": "2026-09-10"},
+    {"ref": "2 Kings 22:1", "koren": "last", "sheva": "silent", "note": "qamats qatan under the bet, where MAM has ordinary qamats", "date": "2026-09-20"},
+    {"ref": "Jeremiah 33:21", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Ezekiel 37:9", "koren": "both", "sheva": "silent", "date": "2026-09-20"},
+    {"ref": "Psalms 60:9", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Daniel 3:14", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Daniel 3:28", "koren": "both", "date": "2026-09-20"},
+    {"ref": "Daniel 5:6", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Daniel 5:12", "koren": "both", "date": "2026-09-20"},
+    {"ref": "Nehemiah 7:52", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Nehemiah 12:22", "koren": "last", "sheva": "silent", "note": "pataḥ under the pe, where MAM has qamats", "date": "2026-09-20"},
+    {"ref": "1 Chronicles 4:30", "koren": "both", "sheva": "vocal", "date": "2026-09-20"},
+    {"ref": "Genesis 6:19", "koren": "both", "sheva": "silent", "date": "2026-09-20"},
+    {"ref": "Isaiah 1:18", "koren": "both", "sheva": "silent", "date": "2026-09-20"},
+    {"ref": "Jeremiah 25:33", "koren": "both", "sheva": "silent", "date": "2026-09-20"},
+    {"ref": "Numbers 23:26", "koren": "both", "date": "2026-09-20"},
+    {"ref": "Numbers 5:18", "koren": "both", "note": "also a metsil on the initial he, which MAM lacks; a vocal simple sheva under the mem; and ḥataf pataḥ under the first resh, where MAM has varika-sheva", "date": "2026-09-20"},
+    {"ref": "Daniel 3:6", "koren": "last", "sheva": "vocal", "note": "also a metsil on the yod, which MAM lacks", "date": "2026-09-20"}
   ]
 }
