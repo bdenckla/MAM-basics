@@ -238,6 +238,12 @@ _POST_SILLUQ_SOURCE_STATES = frozenset(
     }
 )
 _POST_SILLUQ_SOURCES = ("mam", "aleppo", "leningrad", "koren")
+_POST_SILLUQ_SOURCE_CODES = {
+    "mam": "M",
+    "aleppo": "A",
+    "leningrad": "L",
+    "koren": "K",
+}
 _POST_SILLUQ_IMAGE_REFS = {
     "lc-1s17-5": "1 Samuel 17:5",
     "aleppo-1s17-5": "1 Samuel 17:5",
@@ -3170,19 +3176,6 @@ def _post_silluq_source_state(state: str) -> object:
     raise ValueError(f"Unknown post-silluq source state: {state!r}")
 
 
-def _koren_position_label(position: str) -> str:
-    """The visible, exhaustive Koren two-position classification."""
-    labels = {
-        "first": "first position only",
-        "last": "last position only",
-        "both": "both positions",
-    }
-    try:
-        return labels[position]
-    except KeyError as exc:
-        raise ValueError(f"Unknown Koren position: {position!r}") from exc
-
-
 def _complete_koren_by_ref(observations: list[dict]) -> dict[str, dict]:
     """Index only completed observations for case-register joins."""
     return {
@@ -3192,51 +3185,60 @@ def _complete_koren_by_ref(observations: list[dict]) -> dict[str, dict]:
     }
 
 
-def _case_source_cell(
+def _case_source_mask_flags(
     case: dict, source: str, complete_koren_by_ref: dict[str, dict]
-) -> object:
-    """One source cell, joining Koren only when the case ledger requests it."""
+) -> tuple[bool, bool]:
+    """Return the mutually exclusive has/does-not-have flags for one source."""
     state = case["sources"][source]
-    if state != "tracked-observation":
-        return _post_silluq_source_state(state)
-    if source != "koren":
-        raise ValueError(f"{case['ref']}: tracked observation assigned to {source}")
-    observation = complete_koren_by_ref.get(case["ref"])
-    if observation is None:
-        raise ValueError(f"{case['ref']}: missing completed Koren observation")
-    return _koren_position_label(observation["koren"])
-
-
-def _case_last_metsil_positions(
-    case: dict, complete_koren_by_ref: dict[str, dict]
-) -> set[str]:
-    """Derive whether each recorded source's last metsil is first or last.
-
-    ``first`` and ``last`` name the two U+05BD positions under comparison, not a
-    grammatical identification of either mark.
-    """
-    positions = set()
-    source_states = list(case["sources"].items()) + [
-        (addition["source"], addition["state"])
-        for addition in case.get("additional_sources", [])
-    ]
-    for source, state in source_states:
-        if state in {"later-meteg", "both-strokes"}:
-            positions.add("last")
-        elif state in {"no-later-mark", "first-position-only"}:
-            positions.add("first")
-        elif state == "not-recorded":
-            continue
-        elif state == "tracked-observation" and source == "koren":
-            observation = complete_koren_by_ref.get(case["ref"])
-            if observation is None:
-                raise ValueError(f"{case['ref']}: missing completed Koren observation")
-            positions.add("first" if observation["koren"] == "first" else "last")
+    if state in {"later-meteg", "both-strokes"}:
+        flags = (True, False)
+    elif state in {"no-later-mark", "first-position-only"}:
+        flags = (False, True)
+    elif state == "not-recorded":
+        flags = (False, False)
+    elif state == "tracked-observation":
+        if source != "koren":
+            raise ValueError(f"{case['ref']}: tracked observation assigned to {source}")
+        observation = complete_koren_by_ref.get(case["ref"])
+        if observation is None:
+            raise ValueError(f"{case['ref']}: missing completed Koren observation")
+        position = observation["koren"]
+        if position == "first":
+            flags = (False, True)
+        elif position in {"last", "both"}:
+            flags = (True, False)
         else:
-            raise ValueError(
-                f"{case['ref']}: cannot compare the last metsil for {source}: {state!r}"
-            )
-    return positions
+            raise ValueError(f"Unknown Koren position: {position!r}")
+    else:
+        raise ValueError(
+            f"{case['ref']}: cannot compare the last metsil for {source}: {state!r}"
+        )
+    if flags == (True, True):
+        raise ValueError(f"{case['ref']}: {source} appears in both source masks")
+    return flags
+
+
+def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
+    """Render the MALK has/does-not-have source masks for one case."""
+    flags_by_source = {
+        source: _case_source_mask_flags(case, source, complete_koren_by_ref)
+        for source in _POST_SILLUQ_SOURCES
+    }
+    if not any(flags[0] for flags in flags_by_source.values()) or not any(
+        flags[1] for flags in flags_by_source.values()
+    ):
+        raise ValueError(
+            f"{case['ref']}: sources do not establish a last-metsil position contrast"
+        )
+    has_mask = "".join(
+        _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][0] else "-"
+        for source in _POST_SILLUQ_SOURCES
+    )
+    does_not_have_mask = "".join(
+        _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][1] else "-"
+        for source in _POST_SILLUQ_SOURCES
+    )
+    return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
 
 
 def _post_silluq_case_register(
@@ -3245,28 +3247,10 @@ def _post_silluq_case_register(
     """The cross-source position contrasts, with source distinctions visible."""
     known = [case for case in cases if case["status"] == "last-metsil-contrast"]
     complete_koren_by_ref = _complete_koren_by_ref(observations)
-    for case in known:
-        if _case_last_metsil_positions(case, complete_koren_by_ref) != {
-            "first",
-            "last",
-        }:
-            raise ValueError(
-                f"{case['ref']}: sources do not establish a last-metsil position contrast"
-            )
-    headers = (
-        "Form",
-        "Reference",
-        "MAM",
-        "Aleppo Codex",
-        "Leningrad Codex",
-        "Koren",
-    )
+    headers = ("Form", "Reference", "Sources")
     attrs = (
         _HEBREW_CELL,
         _POST_SILLUQ_BCV_CELL,
-        None,
-        None,
-        None,
         None,
     )
     rows = [
@@ -3274,10 +3258,7 @@ def _post_silluq_case_register(
             (
                 _hebrew_cell(forms[case["bcv"]]),
                 _ref_link(case["bcv"]),
-                *(
-                    _case_source_cell(case, source, complete_koren_by_ref)
-                    for source in _POST_SILLUQ_SOURCES
-                ),
+                _case_source_masks(case, complete_koren_by_ref),
             ),
             attrs,
         )
@@ -3297,6 +3278,15 @@ def _post_silluq_case_register(
                 ") is later than the last ",
                 _ROM_METSIL,
                 " in at least one other source.",
+            )
+        ),
+        mb_html.para(
+            (
+                "In each monospace cell, the first line marks sources that have the later ",
+                _ROM_METSIL,
+                " and the second line marks sources that do not. The four positions are "
+                "M = MAM, A = Aleppo Codex, L = Leningrad Codex, and K = Koren; a dash "
+                "means no classification is recorded yet for that source.",
             )
         ),
         _table(
