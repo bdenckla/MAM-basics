@@ -3241,11 +3241,26 @@ def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> ob
     return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
 
 
+def _case_register_source_cell(
+    case: dict, complete_koren_by_ref: dict[str, dict]
+) -> object:
+    """Render either recorded source masks or an unresolved candidate label."""
+    status = case["status"]
+    if status == "last-metsil-contrast":
+        return _case_source_masks(case, complete_koren_by_ref)
+    if status == "open-candidate":
+        return (
+            mb_html.raw_html("<code>----<br>----</code>"),
+            mb_html.line_break(),
+            mb_html.small(("candidate: ", ", ".join(case["transcriptions"]))),
+        )
+    raise ValueError(f"{case['ref']}: unknown case status {status!r}")
+
+
 def _post_silluq_case_register(
     cases: list[dict], forms: dict[str, str], observations: list[dict]
 ) -> list:
-    """The cross-source position contrasts, with source distinctions visible."""
-    known = [case for case in cases if case["status"] == "last-metsil-contrast"]
+    """The cross-source contrasts and unresolved candidates in one table."""
     complete_koren_by_ref = _complete_koren_by_ref(observations)
     headers = ("Form", "Reference", "Sources")
     attrs = (
@@ -3258,18 +3273,18 @@ def _post_silluq_case_register(
             (
                 _hebrew_cell(forms[case["bcv"]]),
                 _ref_link(case["bcv"]),
-                _case_source_masks(case, complete_koren_by_ref),
+                _case_register_source_cell(case, complete_koren_by_ref),
             ),
             attrs,
         )
-        for case in known
+        for case in cases
     ]
     return [
         mb_html.heading_level_2("Case register"),
         mb_html.para(
             (
-                "Each case below has at least one source—a manuscript or printed edition—"
-                "whose last ",
+                "Each classified case below has at least one source—a manuscript or printed "
+                "edition—whose last ",
                 _ROM_METSIL,
                 " (a neutral name here for a U+05BD that may be ",
                 _ROM_METEG,
@@ -3287,6 +3302,15 @@ def _post_silluq_case_register(
                 " and the second line marks sources that do not. The four positions are "
                 "M = MAM, A = Aleppo Codex, L = Leningrad Codex, and K = Koren; a dash "
                 "means no classification is recorded yet for that source.",
+            )
+        ),
+        mb_html.para(
+            (
+                "Rows labeled candidate come from the named transcriptions, which have a "
+                "second U+05BD after MAM's ",
+                _ROM_SILLUQ,
+                ". A transcription is not a manuscript image; no Leningrad Codex "
+                "classification is recorded until the manuscript itself is read.",
             )
         ),
         _table(
@@ -3387,40 +3411,6 @@ def _post_silluq_image_evidence(cases: list[dict]) -> list:
     return contents
 
 
-def _post_silluq_open_candidates(cases: list[dict], forms: dict[str, str]) -> list:
-    """The transcription-derived cases awaiting a Leningrad Codex image reading."""
-    open_cases = [case for case in cases if case["status"] == "open-candidate"]
-    attrs = (_HEBREW_CELL, _POST_SILLUQ_BCV_CELL, None, None)
-    rows = [
-        _post_silluq_table_row(
-            (
-                _hebrew_cell(forms[case["bcv"]]),
-                _ref_link(case["bcv"]),
-                ", ".join(case["transcriptions"]),
-                "unresolved",
-            ),
-            attrs,
-        )
-        for case in open_cases
-    ]
-    return [
-        mb_html.heading_level_2("Unresolved Leningrad Codex candidates"),
-        mb_html.para(
-            (
-                "The named transcriptions have a second U+05BD after MAM's ",
-                _ROM_SILLUQ,
-                ". A transcription is not a manuscript image; these rows remain open until"
-                " the Leningrad Codex itself is read.",
-            )
-        ),
-        _table(
-            ("Form", "Reference", "Transcriptions", "Leningrad Codex"),
-            rows,
-            {"class": "post-stress-meteg-table post-silluq-register"},
-        ),
-    ]
-
-
 def build_post_silluq_body(
     survey: dict, cases: list[dict], observations: list[dict]
 ) -> list:
@@ -3456,7 +3446,6 @@ def build_post_silluq_body(
         *_post_silluq_case_register(cases, forms, observations),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),
-        *_post_silluq_open_candidates(cases, forms),
     ]
 
 
