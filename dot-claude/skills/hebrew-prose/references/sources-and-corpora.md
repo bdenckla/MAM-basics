@@ -87,6 +87,9 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
 
 ## Breuer, *The Cantillation of Scripture* (CoS, English)
 
+- **CoS page numbers are from Wengrov's English translation.** Qualify each isolated page
+  citation; in a document with many CoS page citations, one scope sentence is enough. Apply the
+  qualification to the page number only.
 - **CoS shares the `../MAM-private/masorah-books` tree with ITM** (private, for copyright in the
   source material and not for secrecy, with the same sanctioned exception letting public repos
   name it).

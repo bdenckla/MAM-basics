@@ -3345,8 +3345,8 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
             f"{sorted(required - bcvs)}"
         )
 
-    # The CoS citation follows Ben's print reference. The OCR attaches the same note to
-    # chapter 8 section 46 as note [^81], because its section and footnote numbering differ.
+    # The CoS citation follows Ben's print reference. The OCR export attaches the same note
+    # to section 46 as its internal note [^81], which does not replace the printed citation.
     return [
         mb_html.heading_level_2("How the cases were found"),
         mb_html.para(
@@ -3359,7 +3359,8 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 _ref_link(_MAM_POST_SILLUQ_VERSE),
                 " from Breuer, ",
                 cos(),
-                ", ch. 8 §47, p. 355 n. 54. The remaining entries came from systematic "
+                ", ch. 8 §47, p. 355 in the Wengrov English translation, n. 54. The "
+                "remaining entries came from systematic "
                 "candidate searches.",
             )
         ),
@@ -3480,9 +3481,9 @@ def build_post_silluq_body(
                 "A verse-final word may have more than one ",
                 _ROM_METSIL,
                 ", the neutral term used here for a mark that may be ",
-                _ROM_SILLUQ,
-                " or ",
                 _ROM_METEG,
+                " or ",
+                _ROM_SILLUQ,
                 ". The ",
                 _ROM_METSIL,
                 " on the stressed syllable is ",
