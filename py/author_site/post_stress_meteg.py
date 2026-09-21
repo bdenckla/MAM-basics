@@ -206,6 +206,7 @@ _MAS_CENSUS_GLOSS = (
 # So do not unify the four pages on either spelling; the difference is chosen, not overlooked.
 _ITM_GLOSS = "Yeivin's Introduction to the Tiberian Masorah"
 _COS_GLOSS = "Breuer's The Cantillation of Scripture"
+_CHB_GLOSS = "Jacobson's Chanting the Hebrew Bible"
 
 # The one verse the page names outside its tables.  The survey records its chanted words as MAM
 # has them today, under ``currency.focus_verses``, so the form shown here is lifted like every
@@ -226,6 +227,7 @@ _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
 _POST_SILLUQ_KOREN_JSON = "meteg_after_silluq_koren_readings.json"
 _POST_SILLUQ_CASE_STATUSES = frozenset({"last-metsil-contrast", "open-candidate"})
+_POST_SILLUQ_BOOK_ORDER = {bb: index for index, bb in enumerate(wlc_bb_codes())}
 _POST_SILLUQ_FORM_SOURCES = frozenset({"mam", "uxlc"})
 _POST_SILLUQ_SOURCE_STATES = frozenset(
     {
@@ -1420,6 +1422,11 @@ def cos() -> object:
     return mb_html.abbr("CoS", {"title": _COS_GLOSS})
 
 
+def chb() -> object:
+    """The abbreviated book name, with Jacobson's title on hover."""
+    return mb_html.abbr("CHB", {"title": _CHB_GLOSS})
+
+
 def _para(text: str) -> object:
     """One paragraph, its pointed Hebrew runs wrapped so they take the Hebrew font."""
     return mb_html.para(wrap_hebrew_runs(text))
@@ -1453,6 +1460,12 @@ def _split(bcv: str) -> tuple[str, int, int]:
     bb = bcv[:2]
     chnu, _colon, vrnu = bcv[2:].partition(":")
     return bb, int(chnu), int(vrnu)
+
+
+def _scriptural_bcv_key(bcv: str) -> tuple[int, int, int]:
+    """Sort one compact BCV in the repository's canonical scriptural order."""
+    bb, chnu, vrnu = _split(bcv)
+    return _POST_SILLUQ_BOOK_ORDER[bb], chnu, vrnu
 
 
 def _table(headers: tuple, rows: list, attr: dict | None = None) -> object:
@@ -3283,7 +3296,7 @@ def _post_silluq_case_register(
             ),
             attrs,
         )
-        for case in cases
+        for case in sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
     ]
     return [
         mb_html.heading_level_2("Case register"),
@@ -3318,6 +3331,37 @@ def _post_silluq_case_register(
             headers,
             rows,
             {"class": "post-stress-meteg-table post-silluq-register"},
+        ),
+    ]
+
+
+def _post_silluq_discovery_credits(cases: list[dict]) -> list:
+    """Credit the publications and searches through which the cases became known."""
+    bcvs = {case["bcv"] for case in cases}
+    required = {_POST_SILLUQ_VERSE, _MAM_POST_SILLUQ_VERSE}
+    if not required <= bcvs:
+        raise ValueError(
+            "The meteg-after-silluq discovery credits require "
+            f"{sorted(required - bcvs)}"
+        )
+
+    # The CoS citation follows Ben's print reference. The OCR attaches the same note to
+    # chapter 8 section 46 as note [^81], because its section and footnote numbering differ.
+    return [
+        mb_html.heading_level_2("How the cases were found"),
+        mb_html.para(
+            (
+                "We became aware of ",
+                _ref_link(_POST_SILLUQ_VERSE),
+                " from Jacobson, ",
+                chb(),
+                ", p. 31, and of ",
+                _ref_link(_MAM_POST_SILLUQ_VERSE),
+                " from Breuer, ",
+                cos(),
+                ", ch. 8 §47, p. 355 n. 54. The remaining entries came from systematic "
+                "candidate searches.",
+            )
         ),
     ]
 
@@ -3451,6 +3495,7 @@ def build_post_silluq_body(
             )
         ),
         *_post_silluq_case_register(cases, forms, observations),
+        *_post_silluq_discovery_credits(cases),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),
     ]
