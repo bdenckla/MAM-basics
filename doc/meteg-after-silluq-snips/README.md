@@ -285,3 +285,21 @@ The question the crop was made for is which of MAM's two meteg/silluq marks on t
 silluq. [meteg-after-silluq-job-4-12.md](../meteg-after-silluq-job-4-12.md) has the evidence, and
 counts the Second Rabbinic Bible with Koren, which also has only the mark under the mem, as
 evidence that the stress is penultimate.
+
+## [urj-2005-Num23v26-eeseh.png](../../gh-pages/img/urj-2005-Num23v26-eeseh.png)
+
+Numbers 23:26, the verse-final word, in the 2005 revised edition of *The Torah: A Modern
+Commentary*. Ben supplied and inspected the crop on 2026-09-22 from his Kindle edition. Its
+original source filename is `Screenshot 2026-09-22 092430.png`; its SHA-256 is
+`E3F065933AD6C4EFB9B41A23FBC2640BC689B1FB85D092D9FBBBF3B222D2B9F2`.
+
+**In אֶֽעֱשֶֽׂה, the edition has a longer stroke for the silluq than for the meteg; each stroke
+is beside a segol** — Ben's reading of the image. This makes the two segols direct visual
+yardsticks for comparing the stroke lengths.
+
+The 222 × 146 source PNG has opaque alpha and 256 achromatic levels, so it is grayscale rather
+than bilevel. The tracked PNG losslessly encodes the identical pixels as 8-bit grayscale while
+retaining the source's sRGB intent, gamma, and resolution metadata. Its SHA-256 is
+`6BDD6177C9C62CA876E88392AE68D5DDEFD2221D8E69BFF0912996415496A5EF`; its decoded RGBA-pixel
+SHA-256 is `48C6174F193E75874856E4A764DB075D064C9F0B25801934BC0E1CDCB41B2C96`, identical to the
+source's decoded RGBA-pixel SHA-256.

@@ -124,6 +124,7 @@ _NEXT_CONJUNCTIVE_FNAME = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME
 _NEXT_CONJUNCTIVE_TITLE = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE
 _PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
+_POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID = "distinct-stroke-footnote"
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
 _JEREMIAH_FOOTNOTE_ID = "footnote-3"
 _NEXT_CONJUNCTIVE_FOOTNOTE_ID = "footnote-4"
@@ -214,9 +215,14 @@ _CHB_GLOSS = "Jacobson's Chanting the Hebrew Bible"
 _POST_SILLUQ_VERSE = "1s17:5"
 _MAM_POST_SILLUQ_VERSE = "1k7:37"
 _UXLC_CHANGE_VERSE = "1k14:14"
+_URJ_DISTINCT_STROKE_VERSE = "nu23:26"
 _UXLC_CHANGE_URL = (
     "https://tanach.us/Changes/2022.12.07%20-%20Changes/"
     "2022.12.07%20-%20Changes.html?2022.08.31-17"
+)
+_PLAUT_STEIN_TORAH_URL = (
+    "https://www.ccarpress.org/"
+    "documentation-for-the-revised-edition-of-the-torah-a-modern-commentary/"
 )
 # Every visible spelling of these references comes from ``ref_abbrev``, the
 # short-but-not-super-short prose form built on ``mb_misc/osis_book_abbrevs.py``'s
@@ -225,6 +231,7 @@ _UXLC_CHANGE_URL = (
 _POST_SILLUQ_REF = ref_abbrev(_POST_SILLUQ_VERSE)
 _MAM_POST_SILLUQ_REF = ref_abbrev(_MAM_POST_SILLUQ_VERSE)
 _UXLC_CHANGE_REF = ref_abbrev(_UXLC_CHANGE_VERSE)
+_URJ_DISTINCT_STROKE_REF = ref_abbrev(_URJ_DISTINCT_STROKE_VERSE)
 _PSALMS_60_REF = ref_abbrev("ps60:10")
 _PSALMS_70_REF = ref_abbrev("ps70:2")
 _PSALMS_72_REF = ref_abbrev("ps72:15")
@@ -245,6 +252,7 @@ _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
 _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
 _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
+_URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-eeseh.png"
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
 _POST_SILLUQ_KOREN_JSON = "meteg_after_silluq_koren_readings.json"
 _POST_SILLUQ_CASE_STATUSES = frozenset({"last-metsil-contrast", "open-candidate"})
@@ -3681,6 +3689,27 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     ]
 
 
+def _urj_distinct_stroke_mam_form() -> str:
+    """MAM's final word at Numbers 23:26, lifted for the printed-edition example."""
+    form = _mam_final_forms({_URJ_DISTINCT_STROKE_VERSE})[_URJ_DISTINCT_STROKE_VERSE]
+    assert _letters_of(form) == ("אעשה",), form
+    assert form.count("\N{HEBREW POINT SEGOL}" + psm.METEG) == 2, form
+    assert form.endswith(psm.SOF_PASUQ), form
+    return form.removesuffix(psm.SOF_PASUQ)
+
+
+def _urj_distinct_stroke_figure() -> object:
+    """The supplied crop illustrating the URJ edition's two stroke lengths."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_URJ_DISTINCT_STROKE_CROP_URL}"'
+        f' alt="The last word of {_URJ_DISTINCT_STROKE_REF} in the 2005 revised URJ'
+        " ḥumash; the silluq stroke is longer than the meteg stroke, and each is beside"
+        ' a segol." loading="lazy" style="max-width: 100%; height: auto;">'
+        "<figcaption>The 2005 revised URJ ḥumash, "
+        f"{_URJ_DISTINCT_STROKE_REF}.</figcaption></figure>"
+    )
+
+
 def _post_silluq_additional_sources(cases: list[dict]) -> list:
     """Curated observations outside the four main source columns."""
     cases_with_additions = [case for case in cases if case.get("additional_sources")]
@@ -3897,21 +3926,42 @@ def build_post_silluq_body(
         ),
         mb_html.para(
             (
-                "A verse-final word may have more than one ",
-                _ROM_METSIL,
-                ", the neutral term used here for a mark that may be ",
-                _ROM_METEG,
-                " or ",
+                "With very few exceptions, manuscripts and printed editions use the same"
+                " vertical stroke for both ",
                 _ROM_SILLUQ,
-                ". The ",
-                _ROM_METSIL,
-                " on the stressed syllable is ",
-                _ROM_SILLUQ,
-                "; a later ",
-                _ROM_METSIL,
-                " is ",
+                " and ",
                 _ROM_METEG,
-                " only when the stress has been established on an earlier syllable.",
+                " (",
+                _footnote_callout(1, _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID),
+                "). Here we call that stroke ",
+                _ROM_METSIL,
+                ". A verse-final word always has at least one ",
+                _ROM_METSIL,
+                ". If it has only one ",
+                _ROM_METSIL,
+                ", that ",
+                _ROM_METSIL,
+                " must be the ",
+                _ROM_SILLUQ,
+                ". But if it has more than one ",
+                _ROM_METSIL,
+                ", it is not clear which one is the ",
+                _ROM_SILLUQ,
+                ". Fortunately, in all but a handful of cases, the last ",
+                _ROM_METSIL,
+                " is the ",
+                _ROM_SILLUQ,
+                ". This document discusses the handful of cases in which the last ",
+                _ROM_METSIL,
+                " is a ",
+                _ROM_METEG,
+                " rather than the ",
+                _ROM_SILLUQ,
+                ". That is to say, in these cases there is a ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                ".",
             )
         ),
         mb_html.para(
@@ -3936,6 +3986,40 @@ def build_post_silluq_body(
         *_post_silluq_source_notes(cases, forms),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),
+        mb_html.heading_level_2(
+            ("φ1 — A distinct form for ", _ROM_SILLUQ),
+            {"id": _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "One exception is the 2005 revised edition of ",
+                mb_html.anchor_h(
+                    author.book_title("The Torah: A Modern Commentary"),
+                    _PLAUT_STEIN_TORAH_URL,
+                ),
+                " (W. Gunther Plaut, original editor; David E. S. Stein,"
+                " revised-edition editor), whose typography distinguishes ",
+                _ROM_SILLUQ,
+                " from ",
+                _ROM_METEG,
+                ".",
+            )
+        ),
+        mb_html.para(
+            (
+                "In the last word of ",
+                _ref_link(_URJ_DISTINCT_STROKE_VERSE),
+                ", ",
+                wrap_hebrew_runs(_urj_distinct_stroke_mam_form()),
+                ", the ",
+                _ROM_SILLUQ,
+                " stroke is longer than the ",
+                _ROM_METEG,
+                " stroke. Each stroke is beside a segol, providing a direct visual"
+                " yardstick.",
+            )
+        ),
+        _urj_distinct_stroke_figure(),
     ]
 
 
