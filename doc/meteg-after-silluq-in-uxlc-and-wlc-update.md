@@ -60,6 +60,11 @@ likely meteg after the silluq.
 The case is therefore settled from the two manuscript images: the Aleppo Codex has the silluq
 alone, while the Leningrad Codex has the later metsil.
 
+On 2026-09-22 Ben inspected Koren scan page `D1-Ps-031`. Koren has only the silluq in this
+verse-final atom, beside the qamats under the first ayin; Koren has no metsil under the second
+ayin. The Koren edition therefore joins the Aleppo Codex on the no-later-metsil side of the
+contrast.
+
 ## Psalms 70:2: Aleppo and Cambridge contrast with Leningrad
 
 Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex and Cambridge Add. 1753 have the
