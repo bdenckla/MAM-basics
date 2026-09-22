@@ -101,6 +101,13 @@ prompt begins by naming the agent and date, quotes the instruction Ben actually 
 that the remaining prompt is the agent's reconstruction. It also names the source checkout,
 required commit, intended development checkout, and who owns final integration.
 
+### Planning remains planning until explicit execution
+
+A task used to develop or revise a plan remains planning-only until Ben explicitly instructs it
+to execute. A transition out of Plan Mode, including one made only to persist a plan, does not
+authorize implementation. Later suggestions in that task revise the plan unless Ben explicitly
+says to implement them.
+
 ### Claude Code only: task-chip handoffs
 
 Offer a task chip when a coherent next phase is separable, but create the task chip only after

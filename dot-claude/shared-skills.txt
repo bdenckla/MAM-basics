@@ -2,6 +2,7 @@
 # both ~/.claude/skills/ and ~/.agents/skills/.
 github-issues
 hebrew-prose
+iterative-document-editing
 mam-repository-topology
 mam-wikisource-refresh
 verse-links
