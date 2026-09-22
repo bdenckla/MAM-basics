@@ -103,6 +103,28 @@ Three things follow.
    name without a starting commit for it. That is what the public series did when it handed
    MAM-private and hbofonts to the private series.
 
+### A prior round's own records inside a successor window — Ben's decision, 2026-09-21
+
+**A review's records are in a successor window's diff like any other file, and the
+successor's first turn says in writing which of them it reads as a subject and which it
+treats as evidence.** Neither disposition is the default: the turn states the one it takes
+and its reason, and a boundary that rests on nothing but a setup session's recommendation
+is not a boundary. Ben decides any case the turn cannot settle, and his decision is
+recorded before close-out proceeds.
+
+Ben's decision of 2026-09-20 is the worked case. Window 2 of MAM-private's 2026-09-20
+round contained the whole of window 1's own records — its five turn files, its turn-01
+update file, its remediation plan with that plan's update file, and the series' catch-up
+plan — at 5,605 insertions and no deletions, 23.3% of that window's non-generated
+insertions; window 1's code and data remediation was in the window too. He accepted
+window 1's prior round as coverage of those nine files, in his words "accept W1's prior
+round as coverage", so no supplemental read was required. That decision is about that
+window; this rule is what generalizes from it, and it generalizes the requirement to
+state the boundary, not the disposition he chose.
+
+A prior round's code and data remediation is ordinary window content, because no review
+has read it.
+
 ## Two standing properties of the series
 
 Two properties of the series matter to every review in it.

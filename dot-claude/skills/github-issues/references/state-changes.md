@@ -9,6 +9,10 @@ the event, the account, the timestamp. **It records no reason, and it will not r
 So the reason goes in a comment, posted with the change. Ben asks this of himself as much as of
 agents, having been on the wrong end of it.
 
+**Never close, or suggest closing, a GitHub issue until its work is both committed and pushed to
+the remote.** Closing before pushing leaves the issue marked resolved while the fix is still only
+local.
+
 1. **Close** with `gh issue close <number> --repo bdenckla/<repo> --comment "<one line>"`, adding
    `--reason "not planned"` when the work will not be done. **Reopen** with `gh issue reopen` and
    the same `--comment`. Both take the comment only as an argument, so a reason longer than one
@@ -48,6 +52,6 @@ agents, having been on the wrong end of it.
    common `~/.codex/AGENTS.md` body, so a report names it as one. Claude Code receives that body
    through `~/.claude/CLAUDE.md`.
 
-This section stood in both full instruction bodies until 2026-09-14, under the heading "Never
-change an issue's state without a comment saying why". The common body now keeps the pointer to
-this skill.
+Apart from the push-before-closing rule, added on 2026-09-22, this section stood in both full
+instruction bodies until 2026-09-14, under the heading "Never change an issue's state without a
+comment saying why". The common body now keeps the pointer to this skill.
