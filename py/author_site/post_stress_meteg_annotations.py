@@ -80,17 +80,24 @@ def _add_source_location(locations, text: str, source: str) -> None:
         locations[form.replace(psm.hpu.NU_GMAQ, psm.MAQAF)].add(source)
 
 
-def source_locations(survey: dict, author_path: Path) -> dict[str, set[str]]:
+def source_locations(
+    survey: dict, author_paths: Path | tuple[Path, ...]
+) -> dict[str, set[str]]:
     """Locate possible inputs of a displayed form without accepting those inputs."""
     locations = defaultdict(set)
     for pointer, text in _survey_strings(survey):
         _add_source_location(
             locations, text, f"{psm.default_json_out_path()}#{pointer}"
         )
-    tree = ast.parse(author_path.read_text(encoding="utf-8"))
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Constant) and isinstance(node.value, str):
-            _add_source_location(locations, node.value, f"{author_path}:{node.lineno}")
+    if isinstance(author_paths, Path):
+        author_paths = (author_paths,)
+    for author_path in author_paths:
+        tree = ast.parse(author_path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                _add_source_location(
+                    locations, node.value, f"{author_path}:{node.lineno}"
+                )
     return locations
 
 
@@ -216,9 +223,9 @@ class _PageAnnotations(HTMLParser):
         self._flush()
 
 
-def validate_pages(page_paths, survey, author_path, *, extra_sources):
+def validate_pages(page_paths, survey, author_paths, *, extra_sources):
     """Raise with source and output locations for every unverified annotation form."""
-    locations = source_locations(survey, author_path)
+    locations = source_locations(survey, author_paths)
     references = reference_forms(extra_sources)
     reports = []
     problems = []
