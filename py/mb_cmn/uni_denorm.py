@@ -11,12 +11,16 @@ def give_std_mark_order(string):
     Give the string (our) standard mark order.
     Our standard mark order is not Unicode-normal order,
     but we think it is a more reasonable order than Unicode-normal order.
-    Our standard mark order has the following four marks first
-    (in the order shown), followed by all other marks:
+    Our standard mark order gives the following five marks priority
+    over all other marks:
         shin dot
         sin dot
         dagesh/mapiq/shuruq dot
+        dagesh hazaq mudgash
         rafeh
+    The two dagesh marks have the same priority; otherwise priorities
+    follow the order shown. Marks with the same priority retain their
+    relative order.
     """
     # TODO: what about varika? A standard order (combining class) should be given to varika.
     pattclu = r"[א-ת]" + hpo.RE_APCV_STAR  # pattern for a cluster
