@@ -52,6 +52,6 @@ local.
    common `~/.codex/AGENTS.md` body, so a report names it as one. Claude Code receives that body
    through `~/.claude/CLAUDE.md`.
 
-This section stood in both full instruction bodies until 2026-09-14, under the heading "Never
-change an issue's state without a comment saying why". The common body now keeps the pointer to
-this skill.
+Apart from the push-before-closing rule, added on 2026-09-22, this section stood in both full
+instruction bodies until 2026-09-14, under the heading "Never change an issue's state without a
+comment saying why". The common body now keeps the pointer to this skill.
