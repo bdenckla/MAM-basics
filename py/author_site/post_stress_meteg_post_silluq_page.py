@@ -1023,9 +1023,9 @@ def build_post_silluq_body(
             (
                 "With very few exceptions, manuscripts and printed editions use the same"
                 " vertical stroke for both ",
-                _ROM_SILLUQ,
-                " and ",
                 _ROM_METEG,
+                " and ",
+                _ROM_SILLUQ,
                 " (",
                 _footnote_callout(1, _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID),
                 "). Here we coin a portmanteau “",
