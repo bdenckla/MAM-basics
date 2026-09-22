@@ -5,11 +5,12 @@ research: the [`../meteg-after-silluq-in-uxlc-and-wlc.md`](../meteg-after-silluq
 report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
-evidence behind a stated fact about what one manuscript or edition has. The seven manuscript crops
-published on the post-silluq page are under [`../../gh-pages/img/`](../../gh-pages/img/); the unpublished
-Second Rabbinic Bible crop remains beside this README. Tiny crops like these are kept as fair use
-(Ben, 2026-09-10). Each section records the crop's available provenance; the Leningrad sections
-use the image sources named under “The Leningrad Codex.”
+evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
+publishes fifteen manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); eleven
+have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
+README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
+crop's available provenance; the Leningrad sections use the image sources named under “The
+Leningrad Codex” only when the source of the supplied crop is established.
 
 Each file is named `<source>-<page>-<ref>-<slug>.png`: the manuscript or edition, then the page in
 that source's form. A Leningrad crop may include both column and line when Ben has read the line
@@ -92,8 +93,72 @@ The source psalm is at
 [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=aleppo).
 
 **The Aleppo Codex has the silluq alone in הִתְרוֹעָֽעִי׃:** one stroke on the first ayin and no
-later stroke on the second ayin. UXLC 3.9 and WLC 4.22 have a later U+05BD at this verse, but
-the Leningrad Codex remains for inspection.
+later stroke on the second ayin. The Leningrad Codex crop below has the silluq and a second
+metsil; the second metsil is the likely meteg after the silluq.
+
+## [leningrad-377B-Ps60v10-HFRV33Y.png](../../gh-pages/img/leningrad-377B-Ps60v10-HFRV33Y.png)
+
+Psalms 60:10, the verse-final atom, on **folio 377B**. Ben supplied and inspected the final crop
+on 2026-09-21. Its original source filename is `Screenshot 2026-09-21 144323.png`; its SHA-256
+is `83FE2304070EEC24F85030A09C29C7CDF13AC87C3D73B3806CDF477C9CE3BD2B`. The tracked PNG is a
+byte-for-byte copy with the same hash, dimensions 334 × 178 pixels, and no cropping, resizing,
+resampling, or re-encoding.
+
+The [whole-folio photograph at
+Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F377B.jpg) is a locator. The
+source site of the supplied screenshot is not recorded, and no column or line has been
+established from the crop.
+
+**The Leningrad Codex has the silluq and a second metsil in this atom.** The second metsil is the
+likely meteg after the silluq; the Aleppo Codex has the silluq alone.
+
+## [aleppo-253r-Ps70v2-xushah.png](../../gh-pages/img/aleppo-253r-Ps70v2-xushah.png)
+
+Psalms 70:2, the verse-final atom, on **leaf 253r**. Ben supplied and inspected the final crop on
+2026-09-21. Its original source filename is `Screenshot 2026-09-21 152611.png`; its SHA-256 is
+`1B213120FB4903AA552022C8CDDCE0990DA5307708A68224AF73BD7E270E2D37`. Under the standing
+provenance rule for Ben's Aleppo crops, the source is mgketer.org.
+
+The uniformly opaque alpha channel was removed and the crop was saved as an optimized RGB PNG.
+The image was not cropped, resized, resampled, rotated, or sharpened; its 160 × 136 decoded RGB
+pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked PNG's SHA-256 is
+`2D898A914C3413FAE993C732E4B1A71117D8F42B3A3B717A553C0DCAB4E29C0C`.
+
+**The Aleppo Codex has the silluq alone:** there is no later metsil.
+
+## [leningrad-379B-Ps70v2-xushah.png](../../gh-pages/img/leningrad-379B-Ps70v2-xushah.png)
+
+Psalms 70:2, the verse-final atom, on **folio 379B**. Ben supplied and inspected the final crop on
+2026-09-21. Its original source filename is `Screenshot 2026-09-21 152828.png`; its SHA-256 is
+`2F44B8858C11D7A30104AFF3BDE49AE104B028FAF0F9900308B5074643E4FB21`.
+
+The uniformly opaque alpha channel was removed and the crop was saved as an optimized RGB PNG.
+The image was not cropped, resized, resampled, rotated, or sharpened; its 226 × 186 decoded RGB
+pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked PNG's SHA-256 is
+`5A0170707F6978DEDC581D4852ABAD2C82168BDE491A2DC140607CB2AE737D94`.
+
+The [whole-folio photograph at
+Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F379B.jpg) is a locator. The
+source site of the supplied screenshot is not recorded, and no column or line has been
+established from the crop.
+
+**The Leningrad Codex has two metsil marks.** The first is the silluq, and the later mark is the
+likely meteg after the silluq.
+
+## [cam1753-unlocated-Ps70v2-xushah.png](../../gh-pages/img/cam1753-unlocated-Ps70v2-xushah.png)
+
+Psalms 70:2, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and inspected the
+final crop on 2026-09-21. Its original source filename is
+`Screenshot 2026-09-21 153431.png`; its SHA-256 is
+`17C946D14BBEB16B0CDA81ADDF25B8CDB458FF957A778A5DF8C35181869498C2`. The manuscript page or
+folio and the source URL are not recorded.
+
+The uniformly opaque alpha channel was removed and the crop was saved as an optimized RGB PNG.
+The image was not cropped, resized, resampled, rotated, or sharpened; its 212 × 178 decoded RGB
+pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked PNG's SHA-256 is
+`BC75D5A08CA3142C71846435526972FFD5D70E934D84A95B129A6F94EB81D8B2`.
+
+**Cambridge Add. 1753 has the silluq alone:** there is no later metsil.
 
 ## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 

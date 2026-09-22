@@ -111,15 +111,11 @@
     {
       "ref": "Psalms 60:10",
       "bcv": "ps60:10",
-      "status": "open-candidate",
+      "status": "last-metsil-contrast",
       "form_source": "uxlc",
-      "transcriptions": [
-        "UXLC 3.9",
-        "WLC 4.22"
-      ],
       "sources": {
         "aleppo": "no-later-mark",
-        "leningrad": "not-recorded",
+        "leningrad": "later-meteg",
         "koren": "not-recorded",
         "simanim": "not-recorded"
       },
@@ -128,22 +124,36 @@
         "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
       "images": [
-        "aleppo-ps60-10"
+        "aleppo-ps60-10",
+        "leningrad-ps60-10"
       ]
     },
     {
       "ref": "Psalms 70:2",
       "bcv": "ps70:2",
-      "status": "open-candidate",
+      "status": "last-metsil-contrast",
       "form_source": "uxlc",
-      "transcriptions": [
-        "UXLC 3.9",
-        "WLC 4.22"
+      "sources": {
+        "aleppo": "no-later-mark",
+        "leningrad": "later-meteg",
+        "koren": "not-recorded",
+        "simanim": "not-recorded"
+      },
+      "additional_sources": [
+        {
+          "source": "Cambridge Add. 1753",
+          "state": "no-later-mark"
+        }
       ],
       "reports": [
-        "doc/meteg-after-silluq-in-uxlc-and-wlc.md"
+        "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
+        "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"
       ],
-      "images": []
+      "images": [
+        "aleppo-ps70-2",
+        "leningrad-ps70-2",
+        "cam1753-ps70-2"
+      ]
     }
   ]
 }

@@ -45,19 +45,33 @@ The Leningrad Codex is therefore classified on the later-metsil side, and Koren 
 Tanakh are classified on the no-later-metsil side. WLC remains a transcription that records only
 the earlier mark; WLC's form is not evidence against Ben's independent reading of the manuscript.
 
-The finished report's summary item 3 should now say that three of the five class 1 cases are
-settled from manuscript images: 1 Samuel 17:5, 1 Kings 14:14 and Psalms 72:15. The remaining two
-cases for manuscript inspection are Psalms 60:10 and Psalms 70:2. The lead of section 6 should
-likewise say “the other two,” not “the other three.”
+The finished report's summary item 3 should now say that all five class 1 cases are settled from
+manuscript images: 1 Samuel 17:5, 1 Kings 14:14, Psalms 60:10, Psalms 70:2 and Psalms 72:15.
+No class 1 case remains for Leningrad manuscript inspection. The lead of section 6 should say
+that the table gives locators for the five settled cases, rather than “the other three.”
 
-## Psalms 60:10: the Aleppo Codex has the silluq alone
+## Psalms 60:10: the codices contrast
 
 Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex has the silluq alone in the
 verse-final atom **הִתְרוֹעָֽעִי׃**: the stroke is on the first ayin, with no later stroke on the
-second ayin.
+second ayin. The Leningrad Codex has the silluq and a second metsil. The second metsil is the
+likely meteg after the silluq.
 
-The Leningrad Codex remains unclassified. Psalms 60:10 and Psalms 70:2 remain for Leningrad
-manuscript inspection.
+The case is therefore settled from the two manuscript images: the Aleppo Codex has the silluq
+alone, while the Leningrad Codex has the later metsil.
+
+## Psalms 70:2: Aleppo and Cambridge contrast with Leningrad
+
+Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex and Cambridge Add. 1753 have the
+silluq alone in the verse-final atom. The Leningrad Codex has two metsil marks. The first is the
+silluq, and the later mark is the likely meteg after the silluq.
+
+The three manuscript crops settle the case: Leningrad is on the later-metsil side, while Aleppo
+and Cambridge Add. 1753 are on the no-later-metsil side. Koren and the Simanim Tanakh remain not
+recorded.
+
+The finished report's statement “Four of the five have more on disk” should now say that all five
+class 1 cases have supporting material on disk.
 
 ## Complete chanted-word forms in the seven-case register
 

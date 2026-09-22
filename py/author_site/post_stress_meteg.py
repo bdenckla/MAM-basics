@@ -226,6 +226,7 @@ _POST_SILLUQ_REF = ref_abbrev(_POST_SILLUQ_VERSE)
 _MAM_POST_SILLUQ_REF = ref_abbrev(_MAM_POST_SILLUQ_VERSE)
 _UXLC_CHANGE_REF = ref_abbrev(_UXLC_CHANGE_VERSE)
 _PSALMS_60_REF = ref_abbrev("ps60:10")
+_PSALMS_70_REF = ref_abbrev("ps70:2")
 _PSALMS_72_REF = ref_abbrev("ps72:15")
 _JOB_4_REF = ref_abbrev("jb4:12")
 _POST_SILLUQ_LC_CROP_URL = "img/LC-159A-col-3-line-8-1S-17v5.png"
@@ -236,6 +237,10 @@ _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 _FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
 _FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.jpg"
 _PSALMS_60_ALEPPO_CROP_URL = "img/aleppo-251r-Ps60v10-HFRV33Y.png"
+_PSALMS_60_LENINGRAD_CROP_URL = "img/leningrad-377B-Ps60v10-HFRV33Y.png"
+_PSALMS_70_ALEPPO_CROP_URL = "img/aleppo-253r-Ps70v2-xushah.png"
+_PSALMS_70_LENINGRAD_CROP_URL = "img/leningrad-379B-Ps70v2-xushah.png"
+_PSALMS_70_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps70v2-xushah.png"
 _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
 _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
@@ -272,15 +277,25 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-1k14-14": "1 Kings 14:14",
     "leningrad-1k14-14": "1 Kings 14:14",
     "aleppo-ps60-10": "Psalms 60:10",
+    "leningrad-ps60-10": "Psalms 60:10",
+    "aleppo-ps70-2": "Psalms 70:2",
+    "leningrad-ps70-2": "Psalms 70:2",
+    "cam1753-ps70-2": "Psalms 70:2",
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
 }
 _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
-_POST_SILLUQ_IMAGE_PAIRS = {
+_POST_SILLUQ_IMAGE_SEQUENCES = {
     "1 Samuel 17:5": ("aleppo-1s17-5", "lc-1s17-5"),
     "Psalms 72:15": ("aleppo-ps72-15", "leningrad-ps72-15"),
     "1 Kings 7:37": ("aleppo-1k7-37", "leningrad-1k7-37"),
     "1 Kings 14:14": ("aleppo-1k14-14", "leningrad-1k14-14"),
+    "Psalms 60:10": ("aleppo-ps60-10", "leningrad-ps60-10"),
+    "Psalms 70:2": (
+        "aleppo-ps70-2",
+        "leningrad-ps70-2",
+        "cam1753-ps70-2",
+    ),
     "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12"),
 }
 _KOREN_STATUSES = frozenset({"complete", "incomplete", "deferred", "skipped-family"})
@@ -2902,10 +2917,10 @@ def load_post_silluq_cases() -> list[dict]:
                 f"{where}/images: identifiers belong to another reference: "
                 f"{mismatched_images}"
             )
-        expected_pair = _POST_SILLUQ_IMAGE_PAIRS.get(ref)
-        if expected_pair is not None and tuple(images) != expected_pair:
+        expected_sequence = _POST_SILLUQ_IMAGE_SEQUENCES.get(ref)
+        if expected_sequence is not None and tuple(images) != expected_sequence:
             raise ValueError(
-                f"{where}/images: expected Aleppo then Leningrad: {expected_pair}"
+                f"{where}/images: expected exact sequence {expected_sequence}"
             )
 
         if status == "open-candidate":
@@ -3249,6 +3264,48 @@ def _psalms_60_aleppo_crop() -> object:
         f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_60_REF}; it has the'
         ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
         f"<figcaption>Aleppo Codex, leaf 251r ({_PSALMS_60_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_60_leningrad_crop() -> object:
+    """The Leningrad Codex crop at Psalms 60:10."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_60_LENINGRAD_CROP_URL}"'
+        f' alt="Leningrad Codex crop of the verse-final word at {_PSALMS_60_REF}; it has'
+        ' the silluq and a second metsil." loading="lazy"'
+        ' style="max-width: 100%; height: auto;">'
+        f"<figcaption>Leningrad Codex, folio 377B ({_PSALMS_60_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_70_aleppo_crop() -> object:
+    """The Aleppo Codex crop at Psalms 70:2."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_70_ALEPPO_CROP_URL}"'
+        f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_70_REF}; it has the'
+        ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f"<figcaption>Aleppo Codex, leaf 253r ({_PSALMS_70_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_70_leningrad_crop() -> object:
+    """The Leningrad Codex crop at Psalms 70:2."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_70_LENINGRAD_CROP_URL}"'
+        f' alt="Leningrad Codex crop of the verse-final word at {_PSALMS_70_REF}; it has'
+        ' the silluq and a second metsil." loading="lazy"'
+        ' style="max-width: 100%; height: auto;">'
+        f"<figcaption>Leningrad Codex, folio 379B ({_PSALMS_70_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_70_cam1753_crop() -> object:
+    """The Cambridge Add. 1753 crop at Psalms 70:2."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_70_CAM1753_CROP_URL}"'
+        f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_70_REF}; it has'
+        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_70_REF}).</figcaption></figure>"
     )
 
 
@@ -3703,15 +3760,52 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 (
                     "At ",
                     _PSALMS_60_REF,
-                    ", the Aleppo Codex lacks the later ",
-                    _ROM_METEG,
-                    " and has the ",
+                    ", the Aleppo Codex has the ",
                     _ROM_SILLUQ,
-                    " alone.",
+                    " alone, while the Leningrad Codex has the ",
+                    _ROM_SILLUQ,
+                    " and a second ",
+                    _ROM_METSIL,
+                    ". The second Leningrad ",
+                    _ROM_METSIL,
+                    " is the likely ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    ".",
                 )
             ),
             _psalms_60_aleppo_crop(),
         ]
+    if image_id == "leningrad-ps60-10":
+        return [_psalms_60_leningrad_crop()]
+    if image_id == "aleppo-ps70-2":
+        return [
+            mb_html.para(
+                (
+                    "At ",
+                    _PSALMS_70_REF,
+                    ", the Aleppo Codex and Cambridge Add. 1753 have the ",
+                    _ROM_SILLUQ,
+                    " alone, while the Leningrad Codex has the ",
+                    _ROM_SILLUQ,
+                    " and a second ",
+                    _ROM_METSIL,
+                    ". The second Leningrad ",
+                    _ROM_METSIL,
+                    " is the likely ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    ".",
+                )
+            ),
+            _psalms_70_aleppo_crop(),
+        ]
+    if image_id == "leningrad-ps70-2":
+        return [_psalms_70_leningrad_crop()]
+    if image_id == "cam1753-ps70-2":
+        return [_psalms_70_cam1753_crop()]
     if image_id == "aleppo-ps72-15":
         return [
             mb_html.para(
