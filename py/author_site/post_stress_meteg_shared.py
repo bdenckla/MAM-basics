@@ -251,6 +251,8 @@ _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
 
 _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
 
+_JOB_4_CAM1753_CROP_URL = "img/cam1753-0073B-col2-line13-Job4v12-menhu.png"
+
 _URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-eeseh.png"
 
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
@@ -299,6 +301,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "cam1753-ps70-2": "Psalms 70:2",
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
+    "cam1753-jb4-12": "Job 4:12",
 }
 
 _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
@@ -314,7 +317,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "leningrad-ps70-2",
         "cam1753-ps70-2",
     ),
-    "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12"),
+    "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12", "cam1753-jb4-12"),
 }
 
 _KOREN_STATUSES = frozenset({"complete", "incomplete", "deferred", "skipped-family"})

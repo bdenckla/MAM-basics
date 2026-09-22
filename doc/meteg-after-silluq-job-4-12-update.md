@@ -57,3 +57,18 @@ The source notes remain in `doc/meteg-after-silluq-snips/README.md`. The live cr
 `gh-pages/img/leningrad-398A-Job4v12-menhu.png`, where the generated post-silluq page publishes
 them. The unpublished Second Rabbinic Bible crop remains under `doc/meteg-after-silluq-snips/`.
 The finished report remains unchanged under the receipt policy.
+
+## 2026-09-22: Cambridge Add. 1753 crop and stroke placement
+
+Ben supplied `Screenshot 2026-09-22 171050.png` as a crop of the verse-final word at Job 4:12
+in Cambridge Add. 1753. The screenshot's SHA-256 is
+`7FBEA62B6781874F4295041C3BA1DFF32CF3FB8787C6D166D41680CE673445F2`; its byte-identical
+published copy is `gh-pages/img/cam1753-0073B-col2-line13-Job4v12-menhu.png`. The manuscript
+locator, page 0073B, column 2, line 13, is recorded in the finished report.
+
+Ben reads both metsil marks in the crop: the silluq under the mem and a meteg after it. Unlike
+the Aleppo and Leningrad codices, Cambridge Add. 1753 has its silluq to the left of its segol,
+in the normal position rather than the “early” position. The case ledger already classified
+Cambridge Add. 1753 as having both strokes; this later observation adds the crop and the
+placement contrast without changing that classification. Codex did not independently inspect
+the pointed-Hebrew image.

@@ -15,6 +15,7 @@ from author_site.post_stress_meteg_shared import (
     _FNAME,
     _HEBREW_CELL,
     _JOB_4_ALEPPO_CROP_URL,
+    _JOB_4_CAM1753_CROP_URL,
     _JOB_4_LENINGRAD_CROP_URL,
     _JOB_4_REF,
     _MAM_POST_SILLUQ_ALEPPO_CROP_URL,
@@ -232,6 +233,18 @@ def _job_4_leningrad_crop() -> object:
         f' alt="Leningrad Codex crop of the verse-final word at {_JOB_4_REF}; it has both'
         ' strokes." loading="lazy" style="max-width: 100%; height: auto;">'
         f"<figcaption>Leningrad Codex, folio 398A ({_JOB_4_REF}).</figcaption></figure>"
+    )
+
+
+def _job_4_cam1753_crop() -> object:
+    """The Cambridge Add. 1753 crop at Job 4:12."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_JOB_4_CAM1753_CROP_URL}"'
+        f' alt="Cambridge Add. 1753 crop of the verse-final word at {_JOB_4_REF}; it has'
+        ' both strokes, with the silluq to the left of its segol." loading="lazy"'
+        ' style="max-width: 100%; height: auto;">'
+        f"<figcaption>Cambridge Add. 1753, page 0073B, column 2, line 13 ({_JOB_4_REF})."
+        "</figcaption></figure>"
     )
 
 
@@ -907,6 +920,21 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             mb_html.para(("The Leningrad Codex has both strokes at ", _JOB_4_REF, ".")),
             _job_4_leningrad_crop(),
         ]
+    if image_id == "cam1753-jb4-12":
+        return [
+            mb_html.para(
+                (
+                    "Cambridge Add. 1753 has a ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    " at ",
+                    _JOB_4_REF,
+                    ".",
+                )
+            ),
+            _job_4_cam1753_crop(),
+        ]
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
 
@@ -939,7 +967,7 @@ def build_post_silluq_image_body(case: dict) -> list:
     for image_id in case["images"]:
         contents.extend(_post_silluq_image_nodes(image_id))
     if bcv == "jb4:12":
-        # Ben's placement observation is recorded in doc/meteg-after-silluq-job-4-12.md.
+        # Ben's placement observations are recorded in the Job report and its update.
         contents.append(
             mb_html.para(
                 (
@@ -952,7 +980,10 @@ def build_post_silluq_image_body(case: dict) -> list:
                     "the Leningrad Codex. On this page's interpretation, both codices "
                     "therefore have an “early ",
                     _ROM_SILLUQ,
-                    "” here, which seems an extraordinary coincidence.",
+                    "” here, which seems an extraordinary coincidence. In Cambridge Add. "
+                    "1753, the ",
+                    _ROM_SILLUQ,
+                    " under the mem is to the left of its segol, in the normal position.",
                 )
             )
         )

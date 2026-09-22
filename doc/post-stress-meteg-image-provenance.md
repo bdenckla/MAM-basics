@@ -19,6 +19,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `aleppo-253v-Ps72v15-yevarkhenhu.png` | Aleppo Codex | Psalms 72:15 | Leaf 253v | mgketer.org | Not recorded |
 | `aleppo-271r-col2-line5-Job4v12-menhu.png` | Aleppo Codex | Job 4:12 | Leaf 271r, column 2, line 5 | mgketer.org | Not recorded |
 | `cam1753-unlocated-Ps70v2-xushah.png` | Cambridge Add. 1753 | Psalms 70:2 | Not recorded | Supplied screenshot; source site not recorded | Not recorded |
+| `cam1753-0073B-col2-line13-Job4v12-menhu.png` | Cambridge Add. 1753 | Job 4:12 | Page 0073B, column 2, line 13 | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `LC-159A-col-3-line-8-1S-17v5.png` | Leningrad Codex | 1 Samuel 17:5 | F159A, column 3, line 8 | Not recorded in the inspected public record | Not recorded in the inspected public record |
 | `Leningrad-Codex-1K-7v37.png` | Leningrad Codex | 1 Kings 7:37 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
 | `Leningrad-Codex-2Chr-8v11.png` | Leningrad Codex | 2 Chronicles 8:11 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
@@ -35,6 +36,13 @@ PNG has opaque alpha and 256 achromatic levels, so it is grayscale rather than b
 tracked PNG losslessly encodes the identical pixels as 8-bit grayscale while retaining the
 source's sRGB intent, gamma, and resolution metadata; its SHA-256 is
 `6BDD6177C9C62CA876E88392AE68D5DDEFD2221D8E69BFF0912996415496A5EF`.
+
+The Cambridge Job 4:12 crop was added on 2026-09-22 from Ben's
+`Screenshot 2026-09-22 171050.png`, SHA-256
+`7FBEA62B6781874F4295041C3BA1DFF32CF3FB8787C6D166D41680CE673445F2`. The tracked copy
+retains the screenshot's bytes unchanged. Page 0073B, column 2, line 13 is recorded in the
+finished Job 4:12 report from the manuscript's tracked line-break data; the screenshot's source
+site is not recorded.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds

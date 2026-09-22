@@ -261,6 +261,20 @@ column 2, line 4.0:
 
 Ben did not read the column or the line off the image, so this crop gives no calibration point.
 
+## [cam1753-0073B-col2-line13-Job4v12-menhu.png](../../gh-pages/img/cam1753-0073B-col2-line13-Job4v12-menhu.png)
+
+Job 4:12, the verse-final word, in **Cambridge Add. 1753**. Ben supplied and interpreted the
+crop on 2026-09-22 from `Screenshot 2026-09-22 171050.png`, SHA-256
+`7FBEA62B6781874F4295041C3BA1DFF32CF3FB8787C6D166D41680CE673445F2`. The published PNG
+is a byte-for-byte copy. The source site of the screenshot is not recorded. The manuscript
+location is page 0073B, column 2, line 13, as the finished Job 4:12 report records from the
+tracked line-break data.
+
+**Cambridge Add. 1753 has both metsil marks:** the silluq under the mem and a meteg after it.
+The silluq is to the left of its segol, in its normal position. In the Aleppo and Leningrad
+codices the silluq is “early,” to the right of its segol. This reading is Ben's; Codex did not
+independently inspect the pointed-Hebrew image.
+
 ## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
 
 Job 4:12, the verse-final atom, מֶֽנְהֽוּ׃ in MAM, in **the Second Rabbinic Bible, volume IV**:
