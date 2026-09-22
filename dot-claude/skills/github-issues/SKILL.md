@@ -26,7 +26,8 @@ throughout:
   issue's body is corrected in place, through MAM-basics'
   `py/main_github_issue_edit.py` procedure.
 - **Close, reopen, relabel, or reassign:** read `references/state-changes.md`. Post a comment
-  saying why as part of the act; the timeline event records no reason.
+  saying why as part of the act; the timeline event records no reason. Never close, or suggest
+  closing, an issue until its work is both committed and pushed.
 - **Write or audit citations:** read `references/citations.md`. A bare `#NN` is meaningful only
   in a repository-defined context. In cross-repository prose, name the repository. In a GitHub
   issue or comment, link another repository's issue with its full URL. Never let a non-issue

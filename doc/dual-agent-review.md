@@ -149,7 +149,10 @@ The close-out reads the table together with those corrections and Ben's decision
 After the exchange closes, follow `doc/periodic-review.md`'s `Close-out` list. A sequential
 dual-agent round additionally updates this procedure record after Ben's decisions, uses Agent 1's
 turn-01 update file for later dispositions, integrates through the shared-review branch, and
-retires the shared worktree only after the final task ends.
+retires the shared worktree only after the final task ends. Where the window contains a prior
+round's own records, Agent 1's turn 01 states which of them it reads as a subject and which it
+treats as evidence, as `doc/periodic-review.md`'s "A prior round's own records inside a successor
+window" requires.
 
 ### Correcting a finished dated document — Ben's decision, 2026-09-11 (D12)
 
