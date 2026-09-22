@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import Counter
 
 from accgram import final_stress
-from accgram import post_stress_meteg as psm
+from accgram import post_stress_meteg_model as psm
 
 from author_site.post_stress_meteg_shared import (
     _CHRONICLES_8_11_VERSE,

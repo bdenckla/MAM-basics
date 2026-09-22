@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 
-from accgram import post_stress_meteg as psm
+from accgram import post_stress_meteg_model as psm
 from mb_author import author
 from mb_misc import mb_html
 

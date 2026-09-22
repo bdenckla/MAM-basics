@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import re
 
-from accgram import post_stress_meteg as psm
+from accgram import post_stress_meteg_model as psm
+from mb_cmn import hebrew_punctuation as hpu
 from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
@@ -729,7 +730,7 @@ def _spelled(count: int) -> str:
 
 def _hebrew_cell(form: str | None) -> tuple:
     """A pointed reader-facing Hebrew form wrapped as an hbo run for an RTL table cell."""
-    return wrap_hebrew_runs((form or "").replace(psm.hpu.NU_GMAQ, psm.MAQAF))
+    return wrap_hebrew_runs((form or "").replace(hpu.NU_GMAQ, psm.MAQAF))
 
 
 def _ref_link(bcv: str, text: str | None = None) -> object:

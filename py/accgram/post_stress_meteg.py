@@ -83,70 +83,14 @@ U+05A5 either merkha or yored.
 from __future__ import annotations
 
 import json
-import re
-from collections import Counter
-from functools import cache
 from pathlib import Path
 
-from accgram import maqaf_nonfinal_accents as mna
-from accgram import poetic_accent_names as pan
-from accgram import poetic_filter
-from accgram import poetic_scanner
-from accgram import prose_scanner
-from accgram import uni_to_marks
-from accgram import chanted_word_accents as cwa
-from accgram.almost_errors_html_shared import accents_and_letters
-from accgram.uni_to_marks import is_accent
-from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
-from mb_cmn import hebrew_accents as ha
-from mb_cmn import hebrew_letters as hl
-from mb_cmn import hebrew_points as hpo
-from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 from mb_cmn import provenance
-from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
-from accgram.post_stress_meteg_model import (
-    CANT_ALEF,
-    CANT_BET,
-    FIT_TYPE_1_A,
-    FIT_TYPE_1_B,
-    FIT_TYPE_2_AF,
-    FIT_TYPE_2_BF,
-    FIT_TYPE_3,
-    MAQAF,
-    METEG,
-    PASOLEG,
-    SILLUQ_RULE,
-    SOF_PASUQ,
-    SUBTYPE_MISC_ALMOST_TYPE_3,
-    SUBTYPE_MISC_VAYOMER,
-    SYSTEM_POETIC,
-    SYSTEM_PROSE,
-    SurveyProblem,
-    TYPE_1_SUBTYPE_A,
-    TYPE_1_SUBTYPE_B,
-    TYPE_1_SUBTYPE_C,
-    TYPE_2_NEXT_WORD_FILTER_GROUPS,
-    TYPE_CLOSED_TSERE,
-    TYPE_GUTTURAL,
-    TYPE_OPEN,
-    TYPE_UNCLASSIFIED,
-    type_2_next_filter_group,
-)
-
-from accgram.post_stress_meteg_sources import (
-    _mam_words_by_bcv,
-)
-
-from accgram.post_stress_meteg_classification import (
-    stress_accent_classification,
-)
-
-from accgram.post_stress_meteg_survey import (
-    build_survey,
-)
+from accgram.post_stress_meteg_model import SurveyProblem
+from accgram.post_stress_meteg_survey import build_survey
 
 
 def default_json_out_path() -> Path:

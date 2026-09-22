@@ -17,15 +17,19 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 
-from accgram import post_stress_meteg as psm
+from accgram import post_stress_meteg_model as psm
+from accgram.post_stress_meteg import default_json_out_path
+from accgram.post_stress_meteg_sources import _mam_words_by_bcv
 from accgram import mam_simple_verse
 from mb_cmn import paths
 from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import unicode_data
+from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
 _FORM = re.compile(r"[\u034f\u0590-\u05ff\ufb1e~]+")
 _BCV = re.compile(r"(.+?)(\d+):(\d+)$")
-_SOURCE_DOTS = frozenset((psm.hpu.MCIRC, psm.hpu.UPDOT))
+_SOURCE_DOTS = frozenset((hpu.MCIRC, hpu.UPDOT))
 _FORBIDDEN_PHONETIC_MARKS = frozenset((hpo.SHEVA_NA, hpo.DAGESH_XAZAQ))
 _BLOCKS = frozenset(
     (
@@ -77,7 +81,7 @@ def _add_source_location(locations, text: str, source: str) -> None:
         form = match[0]
         locations[form].add(source)
         # Index the permitted display spelling too; never change the source text.
-        locations[form.replace(psm.hpu.NU_GMAQ, psm.MAQAF)].add(source)
+        locations[form.replace(hpu.NU_GMAQ, psm.MAQAF)].add(source)
 
 
 def source_locations(
@@ -86,9 +90,7 @@ def source_locations(
     """Locate possible inputs of a displayed form without accepting those inputs."""
     locations = defaultdict(set)
     for pointer, text in _survey_strings(survey):
-        _add_source_location(
-            locations, text, f"{psm.default_json_out_path()}#{pointer}"
-        )
+        _add_source_location(locations, text, f"{default_json_out_path()}#{pointer}")
     if isinstance(author_paths, Path):
         author_paths = (author_paths,)
     for author_path in author_paths:
@@ -110,15 +112,15 @@ def reference_forms(extra_sources: dict[str, str]) -> dict[str, set[str]]:
     references = defaultdict(set)
     directory = paths.require_mam_simple_dir()
     source_files = {}
-    for bb in psm.wlc_bb_codes():
+    for bb in wlc_bb_codes():
         # The public resolver since 2026-09-12, and it raises for itself now, so the
         # None check that stood here is gone.  It reached into the private name until
         # that day.
         source_files[bb] = mam_simple_verse.mam_simple_json_path(
-            directory, psm.wlc_bb_to_bk39id(bb)
+            directory, wlc_bb_to_bk39id(bb)
         )
     for cantillation in (None, psm.CANT_ALEF, psm.CANT_BET):
-        for bcv, words in psm._mam_words_by_bcv(cantillation).items():
+        for bcv, words in _mam_words_by_bcv(cantillation).items():
             for word in words:
                 for match in _FORM.finditer(word):
                     if _SOURCE_DOTS.intersection(match[0]):
