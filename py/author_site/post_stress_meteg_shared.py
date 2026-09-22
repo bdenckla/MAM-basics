@@ -84,6 +84,9 @@ def _author_romanization(key: str) -> object:
     return rendered
 
 
+_METSIL = "metsil"  # Portmanteau, not a romanized Hebrew mark name.
+
+
 # Each visible romanization is a module-level HTML node, so the shared ``romanized`` class
 # italicizes it.  Existing ``ROM_*`` spellings stay single-sourced; the author-wide dollar
 # substitutions supply the additional standard spellings this page needs.
@@ -92,8 +95,6 @@ _ROM_METEG = rmn(pds.ROM_METEG)
 _ROM_METEG_MERKHA = rmn(f"{pds.ROM_METEG}/{pds.ROM_MERKHA}")
 
 _ROM_METEG_CAP = rmn(pds.ROM_METEG.capitalize())
-
-_ROM_METSIL = rmn("metsil")
 
 _ROM_SILLUQ = rmn(pds.ROM_SILLUQ)
 
