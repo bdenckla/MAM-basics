@@ -44,6 +44,20 @@ table.post-silluq-register .post-silluq-bcv {
     padding-left: 0.7em;
     white-space: nowrap;
 }
+p.post-silluq-example-form {
+    text-align: center;
+    line-height: 2;
+}
+p.post-silluq-example-form [lang="hbo"] { font-size: 170%; }
+p.post-silluq-example-form code { font-size: 120%; }
+.post-silluq-stressed-syllable {
+    background-color: light-dark(#b8e6ba, #245c36);
+    border-radius: 0.12em;
+}
+.post-silluq-later-meteg-syllable {
+    background-color: light-dark(#fff0a6, #705500);
+    border-radius: 0.12em;
+}
 
 /* The post-stress-meteg pages have unusually many similar pointed forms. The control at the top
    of each page switches and persists the page-wide setting; a click on a Hebrew span overrides

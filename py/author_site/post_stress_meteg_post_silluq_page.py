@@ -302,6 +302,14 @@ def _case_source_mask_flags(
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
     """Render the ALKS masks, requiring a contrast only for classified cases."""
+    has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
+    return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
+
+
+def _case_source_mask_values(
+    case: dict, complete_koren_by_ref: dict[str, dict]
+) -> tuple[str, str]:
+    """Derive both ALKS lines from the classified source states."""
     flags_by_source = {
         source: _case_source_mask_flags(case, source, complete_koren_by_ref)
         for source in _POST_SILLUQ_SOURCES
@@ -320,7 +328,197 @@ def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> ob
         _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][1] else "-"
         for source in _POST_SILLUQ_SOURCES
     )
-    return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
+    return has_mask, does_not_have_mask
+
+
+# Each pair gives the first letter of the stressed syllable and the first letter of the
+# later-meteg syllable. The pointed forms themselves come from tracked corpora, and the
+# renderer checks their letters and the position of each mark before applying color.
+_POST_SILLUQ_SYLLABLES = {
+    "1s17:5": ("נחשת", 1, 2),
+    "1k7:37": ("לכלהנה", 2, 4),
+    "1k14:14": ("גםעתה", 2, 3),
+    "ps60:10": ("התרעעי", 3, 4),
+    "ps70:2": ("חושה", 0, 2),
+    "ps72:15": ("יברכנהו", 3, 5),
+    "jb4:12": ("מנהו", 0, 2),
+}
+
+
+def _colored_post_silluq_form(form: str, bcv: str, *, later_meteg: bool) -> object:
+    """Color the stressed syllable and, when present, the later-meteg syllable."""
+    if bcv not in _POST_SILLUQ_SYLLABLES:
+        raise ValueError(f"Unknown post-silluq syllable boundaries: {bcv}")
+    expected_letters, stressed_start, later_start = _POST_SILLUQ_SYLLABLES[bcv]
+    if not form.endswith(psm.SOF_PASUQ):
+        raise ValueError(f"{bcv}: expected a verse-final form")
+    core = form.removesuffix(psm.SOF_PASUQ)
+    letter_positions = [index for index, char in enumerate(core) if "א" <= char <= "ת"]
+    letters = "".join(core[index] for index in letter_positions)
+    if letters != expected_letters or not 0 <= stressed_start < later_start < len(
+        letters
+    ):
+        raise ValueError(f"{bcv}: post-silluq syllable boundaries drifted")
+    stressed_index = letter_positions[stressed_start]
+    later_index = letter_positions[later_start]
+    prefix, stressed, later = (
+        core[:stressed_index],
+        core[stressed_index:later_index],
+        core[later_index:],
+    )
+    if (
+        form.count(psm.METEG) != 1 + int(later_meteg)
+        or stressed.count(psm.METEG) != 1
+        or later.count(psm.METEG) != int(later_meteg)
+    ):
+        raise ValueError(
+            f"{bcv}: post-silluq marks no longer match the colored syllables"
+        )
+    contents = [
+        prefix,
+        mb_html.span((stressed,), {"class": "post-silluq-stressed-syllable"}),
+    ]
+    if later_meteg:
+        contents.append(
+            mb_html.span((later,), {"class": "post-silluq-later-meteg-syllable"})
+        )
+    else:
+        contents.append(later)
+    contents.append(psm.SOF_PASUQ)
+    return mb_html.span(tuple(contents), {"lang": "hbo"})
+
+
+def _post_silluq_example_form(form: object, *, direction: str = "rtl") -> object:
+    """Center a pointed Hebrew form or a two-line source mask."""
+    return mb_html.para(
+        (form,), {"class": "post-silluq-example-form", "dir": direction}
+    )
+
+
+def _post_silluq_first_samuel_example(
+    cases: list[dict],
+    forms: dict[str, str],
+    mam_forms: dict[str, str],
+    observations: list[dict],
+) -> list:
+    """Introduce the two forms, syllable colors, and ALKS notation at 1 Samuel 17:5."""
+    cases_by_bcv = {case["bcv"]: case for case in cases}
+    first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
+    if first_samuel is None:
+        raise ValueError("The source-mask example requires 1 Samuel 17:5")
+    expected_sources = {
+        "aleppo": "no-later-mark",
+        "leningrad": "later-meteg",
+        "koren": "no-later-mark",
+        "simanim": "no-later-mark",
+    }
+    if (
+        first_samuel["status"] != "last-metsil-contrast"
+        or first_samuel["sources"] != expected_sources
+    ):
+        raise ValueError("1 Samuel 17:5: source-mask example drifted")
+    leningrad_form = forms[_POST_SILLUQ_VERSE]
+    aleppo_form = mam_forms[_POST_SILLUQ_VERSE]
+    if leningrad_form.count(psm.METEG) != 2 or aleppo_form.count(psm.METEG) != 1:
+        raise ValueError("1 Samuel 17:5: expected two and one metsil, respectively")
+    later_mark_index = leningrad_form.rfind(psm.METEG)
+    if (
+        leningrad_form[:later_mark_index] + leningrad_form[later_mark_index + 1 :]
+        != aleppo_form
+    ):
+        raise ValueError("1 Samuel 17:5: the two forms differ beyond the later meteg")
+    masks = _case_source_mask_values(first_samuel, _complete_koren_by_ref(observations))
+    if masks != ("-L--", "A-KS"):
+        raise ValueError("1 Samuel 17:5: introductory source masks drifted")
+    return [
+        mb_html.para(
+            (
+                "For example, Jacobson, in his ",
+                chb(),
+                " (p. 31), brought a case at ",
+                _ref_link(_POST_SILLUQ_VERSE),
+                " to our attention. In the Leningrad Codex (and in the many editions "
+                "that, for better or for worse, try to stick close to that manuscript), "
+                "the final word (letters ",
+                wrap_hebrew_runs("".join(_letters_of(leningrad_form))),
+                ") has a ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                ":",
+            )
+        ),
+        _post_silluq_example_form(wrap_hebrew_runs(leningrad_form)),
+        mb_html.para(
+            (
+                "Or, coloring its stressed syllable (its syllable of primary stress) "
+                "green and the syllable of its later ",
+                _ROM_METEG,
+                " yellow (for “caution”):",
+            )
+        ),
+        _post_silluq_example_form(
+            _colored_post_silluq_form(
+                leningrad_form, _POST_SILLUQ_VERSE, later_meteg=True
+            )
+        ),
+        mb_html.para(
+            (
+                "In contrast, in the Aleppo Codex and in editions of Tanakh like "
+                "Koren and the Simanim Tanakh, which are not so slavishly devoted to "
+                "the Leningrad Codex, there is no such ",
+                _ROM_METEG,
+                " after the ",
+                _ROM_SILLUQ,
+                ":",
+            )
+        ),
+        _post_silluq_example_form(
+            _colored_post_silluq_form(
+                aleppo_form, _POST_SILLUQ_VERSE, later_meteg=False
+            )
+        ),
+        mb_html.para(
+            (
+                "For example, at ",
+                _ref_link(_POST_SILLUQ_VERSE),
+                ", ",
+                mb_html.raw_html(f"<code>{masks[0]}</code>"),
+                " on the first line means that the Leningrad Codex has the later ",
+                _ROM_METSIL,
+                ", while ",
+                mb_html.raw_html(f"<code>{masks[1]}</code>"),
+                " on the second line means that the Aleppo Codex, Koren, and the Simanim "
+                "Tanakh do not. In other words, the Aleppo Codex, Koren, and the Simanim "
+                "Tanakh each have only one ",
+                _ROM_METSIL,
+                " and therefore it must be a ",
+                _ROM_SILLUQ,
+                ". That ",
+                _ROM_METSIL,
+                " is on ",
+                wrap_hebrew_runs("ח"),
+                "; they have ",
+                wrap_hebrew_runs(aleppo_form),
+                ".",
+            )
+        ),
+        mb_html.para("We might compactly represent the situation like this:"),
+        _post_silluq_example_form(
+            mb_html.raw_html(f"<code>{masks[0]}<br>{masks[1]}</code>"),
+            direction="ltr",
+        ),
+        mb_html.para(
+            (
+                "The four positions are A = Aleppo Codex, L = Leningrad Codex, K = "
+                "Koren, and S = the Simanim Tanakh. The first line means that the "
+                "Leningrad Codex has the later ",
+                _ROM_METSIL,
+                ", while the second line means that the Aleppo Codex, Koren, and the "
+                "Simanim Tanakh do not.",
+            )
+        ),
+    ]
 
 
 def _case_register_source_cell(
@@ -347,7 +545,6 @@ def _case_register_source_cell(
 def _post_silluq_case_register(
     cases: list[dict],
     forms: dict[str, str],
-    mam_forms: dict[str, str],
     observations: list[dict],
 ) -> list:
     """The cross-source contrasts and unresolved candidates in one table."""
@@ -361,7 +558,9 @@ def _post_silluq_case_register(
     rows = [
         _post_silluq_table_row(
             (
-                _hebrew_cell(forms[case["bcv"]]),
+                _colored_post_silluq_form(
+                    forms[case["bcv"]], case["bcv"], later_meteg=True
+                ),
                 _ref_link(case["bcv"]),
                 _case_register_source_cell(case, complete_koren_by_ref),
             ),
@@ -369,80 +568,46 @@ def _post_silluq_case_register(
         )
         for case in sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
     ]
-    cases_by_bcv = {case["bcv"]: case for case in cases}
-    first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
-    if first_samuel is None:
-        raise ValueError("The source-mask example requires 1 Samuel 17:5")
-    expected_first_samuel_sources = {
-        "aleppo": "no-later-mark",
-        "leningrad": "later-meteg",
-        "koren": "no-later-mark",
-        "simanim": "no-later-mark",
-    }
-    if first_samuel["sources"] != expected_first_samuel_sources:
-        raise ValueError("1 Samuel 17:5: source-mask example drifted")
-    first_samuel_form = mam_forms[_POST_SILLUQ_VERSE]
-    if first_samuel_form.count(psm.METEG) != 1:
-        raise ValueError("1 Samuel 17:5: expected one metsil in the printed form")
+    unclassified_case = next(
+        (
+            case
+            for case in cases
+            if case["sources"]["koren"] == "not-recorded"
+            and case["sources"]["simanim"] == "not-recorded"
+        ),
+        None,
+    )
+    if unclassified_case is None:
+        raise ValueError(
+            "The register needs an example with unclassified Koren and Simanim"
+        )
+    unclassified_masks = _case_source_mask_values(
+        unclassified_case, complete_koren_by_ref
+    )
+    if unclassified_masks != ("-L--", "A---"):
+        raise ValueError("The unclassified-source mask example drifted")
     return [
         mb_html.heading_level_2("Case register"),
         mb_html.para(
-            (
-                "Each classified case below has at least one source—a manuscript or printed "
-                "edition—whose last ",
-                _ROM_METSIL,
-                " is later than the last ",
-                _ROM_METSIL,
-                " in at least one other source.",
-            )
-        ),
-        mb_html.para(
-            (
-                "In each monospace cell, the first line marks sources that have the later ",
-                _ROM_METSIL,
-                " and the second line marks sources that do not. The four positions are "
-                "A = Aleppo Codex, L = Leningrad Codex, K = Koren, and S = the Simanim "
-                "Tanakh. In either line, a dash means that the source is not assigned to "
-                "that line; only dashes in both lines at the same position mean that no "
-                "classification is recorded for that source.",
-            )
-        ),
-        mb_html.para(
-            (
-                "For example, at ",
-                _ref_link(_POST_SILLUQ_VERSE),
-                ", ",
-                mb_html.raw_html("<code>-L--</code>"),
-                " on the first line means that the Leningrad Codex has the later ",
-                _ROM_METSIL,
-                ", while ",
-                mb_html.raw_html("<code>A-KS</code>"),
-                " on the second line means that the Aleppo Codex, Koren, and the Simanim "
-                "Tanakh do not. In other words, Aleppo, Koren and Simanim each have only one ",
-                _ROM_METSIL,
-                " and therefore it must be a ",
-                _ROM_SILLUQ,
-                ". That ",
-                _ROM_METSIL,
-                " is on ",
-                wrap_hebrew_runs("ח"),
-                ", i.e. they have ",
-                wrap_hebrew_runs(first_samuel_form),
-                ".",
-            )
-        ),
-        mb_html.para(
-            (
-                "Rows labeled candidate record a later ",
-                _ROM_METSIL,
-                " in the named transcriptions, not in the Leningrad Codex manuscript itself. "
-                "No Leningrad Codex classification is recorded until the manuscript is read.",
-            )
+            "Having introduced our notations through the 1 Sam. 17:5 example above, "
+            "we now present all our cases of concern, using those notations:"
         ),
         _table(
             headers,
             rows,
             {"class": "post-stress-meteg-table post-silluq-register"},
+        ),
+        mb_html.para("In entries such as:"),
+        _post_silluq_example_form(
+            mb_html.raw_html(
+                f"<code>{unclassified_masks[0]}<br>{unclassified_masks[1]}</code>"
+            ),
+            direction="ltr",
+        ),
+        mb_html.para(
+            "A dash in both lines at the same position means that no classification "
+            "is recorded for that source. In this entry, no classification is recorded "
+            "for either K or S (Koren or the Simanim Tanakh)."
         ),
     ]
 
@@ -494,8 +659,10 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
                 _ROM_METEG,
                 ", while the Leningrad Codex has the ",
                 _ROM_SILLUQ,
-                " alone. MAM's body text has ",
-                wrap_hebrew_runs(first_kings_seven_form),
+                " alone. MAM's body text has the ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
                 ", following the Aleppo Codex. This choice retains MAM's general "
                 "policy of following the Aleppo Codex. MAM diverges from Aleppo when a "
                 "specific editorial policy requires a different form or, in a rare case, "
@@ -546,17 +713,17 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
         mb_html.heading_level_2("Notes on the cases"),
         mb_html.para(
             (
-                "We became aware of ",
+                "As mentioned above, we became aware of ",
                 _ref_link(_POST_SILLUQ_VERSE),
                 " from Jacobson, ",
                 chb(),
-                ", p. 31, and of ",
+                ", p. 31. We became aware of ",
                 _ref_link(_MAM_POST_SILLUQ_VERSE),
                 " from Breuer, ",
                 cos(),
-                ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). The "
-                "remaining entries came from systematic "
-                "candidate searches.",
+                ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
+                "We became aware of the remaining five entries from various searches "
+                "of our own.",
             )
         ),
     ]
@@ -806,9 +973,9 @@ def build_post_silluq_body(
                 _ROM_METEG,
                 " (",
                 _footnote_callout(1, _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID),
-                "). Here we call that stroke ",
+                "). Here we coin a portmanteau “",
                 _ROM_METSIL,
-                ". A verse-final word always has at least one ",
+                "” to describe that ambiguous stroke. A verse-final word always has at least one ",
                 _ROM_METSIL,
                 ". If it has only one ",
                 _ROM_METSIL,
@@ -837,6 +1004,7 @@ def build_post_silluq_body(
                 ".",
             )
         ),
+        *_post_silluq_first_samuel_example(cases, forms, mam_forms, observations),
         mb_html.para(
             (
                 "In this investigation, the printed tradition helps clarify marks in the "
@@ -854,7 +1022,7 @@ def build_post_silluq_body(
                 ".",
             )
         ),
-        *_post_silluq_case_register(cases, forms, mam_forms, observations),
+        *_post_silluq_case_register(cases, forms, observations),
         *_post_silluq_discovery_credits(cases),
         *_post_silluq_source_notes(cases, forms),
         *_post_silluq_additional_sources(cases),
@@ -865,31 +1033,26 @@ def build_post_silluq_body(
         ),
         mb_html.para(
             (
-                "One exception is the 2005 revised edition of ",
+                "One book whose typography distinguishes ",
+                _ROM_SILLUQ,
+                " from ",
+                _ROM_METEG,
+                " is the 2005 revised edition of ",
                 mb_html.anchor_h(
                     author.book_title("The Torah: A Modern Commentary"),
                     _PLAUT_STEIN_TORAH_URL,
                 ),
                 " (W. Gunther Plaut, original editor; David E. S. Stein,"
-                " revised-edition editor), whose typography distinguishes ",
-                _ROM_SILLUQ,
-                " from ",
-                _ROM_METEG,
-                ".",
-            )
-        ),
-        mb_html.para(
-            (
-                "In the last word of ",
+                " revised-edition editor). There are thousands of examples that could "
+                "be used, but let's use its version of the last word of ",
                 _ref_link(_URJ_DISTINCT_STROKE_VERSE),
-                ", ",
-                wrap_hebrew_runs(_urj_distinct_stroke_mam_form()),
-                ", the ",
+                " (letters ",
+                wrap_hebrew_runs("".join(_letters_of(_urj_distinct_stroke_mam_form()))),
+                "), because both the ",
                 _ROM_SILLUQ,
-                " stroke is longer than the ",
+                " and the ",
                 _ROM_METEG,
-                " stroke. Each stroke is beside a segol, providing a direct visual"
-                " yardstick.",
+                " appear next to a segol, providing an obvious visual yardstick:",
             )
         ),
         _urj_distinct_stroke_figure(),
