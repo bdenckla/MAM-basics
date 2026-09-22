@@ -938,6 +938,24 @@ def build_post_silluq_image_body(case: dict) -> list:
     ]
     for image_id in case["images"]:
         contents.extend(_post_silluq_image_nodes(image_id))
+    if bcv == "jb4:12":
+        # Ben's placement observation is recorded in doc/meteg-after-silluq-job-4-12.md.
+        contents.append(
+            mb_html.para(
+                (
+                    "We usually regard the position of an “early ",
+                    _ROM_METEG,
+                    "”—a ",
+                    _ROM_METEG,
+                    " to the right of its vowel—as meaningless. Yet the stroke under "
+                    "the mem is to the right of its segol in both the Aleppo Codex and "
+                    "the Leningrad Codex. On this page's interpretation, both codices "
+                    "therefore have an “early ",
+                    _ROM_SILLUQ,
+                    "” here, which seems an extraordinary coincidence.",
+                )
+            )
+        )
     return contents
 
 
