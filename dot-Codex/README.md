@@ -48,10 +48,10 @@ The general forest procedure is canonical in `skills/worktree-forest/SKILL.md`.
 and each later forest may carry its own `review-manifest.json` and review reports;
 those per-run records describe instances rather than replacing the reusable skill.
 
-The cross-agent `github-issues`, `hebrew-prose`, `mam-repository-topology`,
-`mam-wikisource-refresh` and `verse-links` skills remain canonical under `dot-claude/skills`;
-`dot-claude/shared-skills.txt` declares their live Codex destinations under
-`~/.agents/skills`. The two state-pruning
+The cross-agent `github-issues`, `hebrew-prose`, `iterative-document-editing`,
+`mam-repository-topology`, `mam-wikisource-refresh` and `verse-links` skills remain canonical
+under `dot-claude/skills`; `dot-claude/shared-skills.txt` declares their live Codex destinations
+under `~/.agents/skills`. The two state-pruning
 skills are deliberately separate: Claude's `prune-claude-state` remains canonical
 under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here at
 `dot-Codex/skills/prune-claude-state/` because it addresses Codex memory and plans.
