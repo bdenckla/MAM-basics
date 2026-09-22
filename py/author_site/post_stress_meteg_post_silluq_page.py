@@ -319,7 +319,16 @@ def _case_source_mask_flags(
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
     """Render the ALKS masks, requiring a contrast only for classified cases."""
     has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
-    return mb_html.raw_html(f"<code>{has_mask}<br>{does_not_have_mask}</code>")
+    return _source_mask_pair(has_mask, does_not_have_mask)
+
+
+def _source_mask_pair(has_mask: str, does_not_have_mask: str) -> object:
+    """Color the later-metsil mask yellow and the no-later mask green."""
+    return mb_html.raw_html(
+        f'<code><span class="post-silluq-mask-with-later">{has_mask}</span>'
+        f'<br><span class="post-silluq-mask-without-later">'
+        f"{does_not_have_mask}</span></code>"
+    )
 
 
 def _case_source_mask_values(
@@ -496,7 +505,7 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para("We might compactly represent the situation like this:"),
         _post_silluq_example_form(
-            mb_html.raw_html(f"<code>{masks[0]}<br>{masks[1]}</code>"),
+            _source_mask_pair(*masks),
             direction="ltr",
         ),
         mb_html.para(
@@ -521,7 +530,7 @@ def _case_register_source_cell(
         masks = (
             _case_source_masks(case, complete_koren_by_ref)
             if "sources" in case
-            else mb_html.raw_html("<code>----<br>----</code>")
+            else _source_mask_pair("----", "----")
         )
         return (
             masks,
@@ -597,9 +606,7 @@ def _post_silluq_case_register(
         ),
         mb_html.para("In entries such as:"),
         _post_silluq_example_form(
-            mb_html.raw_html(
-                f"<code>{unclassified_masks[0]}<br>{unclassified_masks[1]}</code>"
-            ),
+            _source_mask_pair(*unclassified_masks),
             direction="ltr",
         ),
         mb_html.para(

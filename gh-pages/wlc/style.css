@@ -50,10 +50,12 @@ p.post-silluq-example-form {
 }
 p.post-silluq-example-form [lang="hbo"] { font-size: 170%; }
 p.post-silluq-example-form code { display: inline-block; font-size: 120%; line-height: 1.2; }
-.post-silluq-stressed-syllable {
+.post-silluq-stressed-syllable,
+.post-silluq-mask-without-later {
     color: light-dark(#08753a, #72d68a);
 }
-.post-silluq-later-meteg-syllable {
+.post-silluq-later-meteg-syllable,
+.post-silluq-mask-with-later {
     color: light-dark(#8a6700, #f4d35e);
 }
 
