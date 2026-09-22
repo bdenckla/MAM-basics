@@ -3475,20 +3475,22 @@ def _post_silluq_case_register(
                 _ref_link(_POST_SILLUQ_VERSE),
                 ", ",
                 mb_html.raw_html("<code>-L--</code>"),
-                " on the first line means that the Leningrad Codex has the later last ",
+                " on the first line means that the Leningrad Codex has the later ",
                 _ROM_METSIL,
                 ", while ",
                 mb_html.raw_html("<code>A-KS</code>"),
                 " on the second line means that the Aleppo Codex, Koren, and the Simanim "
-                "Tanakh do not. Koren and the Simanim Tanakh each have only one ",
+                "Tanakh do not. In other words, Aleppo, Koren and Simanim each have only one ",
                 _ROM_METSIL,
-                " in ",
-                wrap_hebrew_runs(first_samuel_form),
-                "; it is therefore the ",
+                " and therefore it must be a ",
                 _ROM_SILLUQ,
-                " on ",
+                ". That ",
+                _ROM_METSIL,
+                " is on ",
                 wrap_hebrew_runs("ח"),
-                " (xet), as expected.",
+                ", i.e. they have ",
+                wrap_hebrew_runs(first_samuel_form),
+                ".",
             )
         ),
         mb_html.para(
@@ -3547,48 +3549,44 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
 
     return [
         mb_html.para(
-            mb_html.small(
-                (
-                    "MAM's note at ",
-                    _ref_link(_MAM_POST_SILLUQ_VERSE),
-                    " reports both manuscript readings: the Aleppo Codex has the later ",
-                    _ROM_METEG,
-                    ", while the Leningrad Codex has the ",
-                    _ROM_SILLUQ,
-                    " alone. MAM's body text has ",
-                    wrap_hebrew_runs(first_kings_seven_form),
-                    ", following the Aleppo Codex. This choice retains MAM's general "
-                    "policy of following the Aleppo Codex. MAM diverges when a specific "
-                    "editorial policy requires a different form or, in a rare case, when "
-                    "the Aleppo Codex is fairly clearly erroneous or fairly clearly outside "
-                    "the manuscript tradition of which the Aleppo Codex is generally the "
-                    "greatest example. Because ",
-                    _ROM_METEG,
-                    " after ",
-                    _ROM_SILLUQ,
-                    " is so rare, such a judgment is difficult here, so MAM follows the "
-                    "Aleppo Codex.",
-                )
+            (
+                "MAM's note at ",
+                _ref_link(_MAM_POST_SILLUQ_VERSE),
+                " reports both manuscript readings: the Aleppo Codex has the later ",
+                _ROM_METEG,
+                ", while the Leningrad Codex has the ",
+                _ROM_SILLUQ,
+                " alone. MAM's body text has ",
+                wrap_hebrew_runs(first_kings_seven_form),
+                ", following the Aleppo Codex. This choice retains MAM's general "
+                "policy of following the Aleppo Codex. MAM diverges from Aleppo when a "
+                "specific editorial policy requires a different form or, in a rare case, "
+                "when the Aleppo Codex is fairly clearly erroneous or fairly clearly "
+                "outside the manuscript tradition of which the Aleppo Codex is generally "
+                "the greatest example. Because ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                " is so rare, such a judgment is difficult here, so MAM follows the "
+                "Aleppo Codex.",
             )
         ),
         mb_html.para(
-            mb_html.small(
-                (
-                    "At ",
-                    _ref_link(_UXLC_CHANGE_VERSE),
-                    ", UXLC acquired a second ",
-                    _ROM_METSIL,
-                    " through ",
-                    mb_html.anchor_h(
-                        "Daniel Holman's change proposal 2022.08.31-17",
-                        _UXLC_CHANGE_URL,
-                    ),
-                    "; Breuer also notes the second ",
-                    _ROM_METSIL,
-                    " in ",
-                    mb_html.emphasis("Da'at Miqra"),
-                    ".",
-                )
+            (
+                "At ",
+                _ref_link(_UXLC_CHANGE_VERSE),
+                ", UXLC acquired a second ",
+                _ROM_METSIL,
+                " through ",
+                mb_html.anchor_h(
+                    "Daniel Holman's change proposal 2022.08.31-17",
+                    _UXLC_CHANGE_URL,
+                ),
+                "; Breuer also notes the second ",
+                _ROM_METSIL,
+                " in ",
+                mb_html.emphasis("Da'at Miqra"),
+                ".",
             )
         ),
     ]
@@ -3607,7 +3605,7 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     # The CoS citation follows Ben's print reference. The OCR export attaches the same note
     # to section 46 as its internal note [^81], which does not replace the printed citation.
     return [
-        mb_html.heading_level_2("How the cases were found"),
+        mb_html.heading_level_2("Notes on the cases"),
         mb_html.para(
             (
                 "We became aware of ",
@@ -3840,8 +3838,8 @@ def build_post_silluq_body(
             )
         ),
         *_post_silluq_case_register(cases, forms, mam_forms, observations),
-        *_post_silluq_source_notes(cases, forms),
         *_post_silluq_discovery_credits(cases),
+        *_post_silluq_source_notes(cases, forms),
         *_post_silluq_additional_sources(cases),
         *_post_silluq_image_evidence(cases),
     ]
