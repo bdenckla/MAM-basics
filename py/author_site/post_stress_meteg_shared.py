@@ -57,6 +57,8 @@ _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 
 _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID = "distinct-stroke-footnote"
 
+_POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID = "mam-policy-footnote"
+
 _NONFINAL_MAS_FOOTNOTE_ID = "footnote-2"
 
 _JEREMIAH_FOOTNOTE_ID = "footnote-3"

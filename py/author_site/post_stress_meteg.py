@@ -1,4 +1,4 @@
-r"""MAM's meteg marks after the stress: the main page and eight supporting pages.
+r"""MAM's meteg marks after the stress: the main page and supporting pages.
 
 The pages for ``accgram.post_stress_meteg``'s survey take every census figure from that survey
 rather than from a separate constant. The maintained meteg-after-silluq page instead joins its
@@ -143,6 +143,7 @@ from author_site.post_stress_meteg_post_silluq_data import (
 
 from author_site.post_stress_meteg_post_silluq_page import (
     build_post_silluq_body,
+    build_post_silluq_image_body,
 )
 
 from author_site.post_stress_meteg_validation import (
@@ -189,7 +190,7 @@ _AUTHOR_SOURCE_PATHS = (
 
 def gen_html_files(
     out_dir: Path | None = None, *, trust_survey: bool = False
-) -> tuple[str, str, str, str, str, str, str, str, str]:
+) -> tuple[str, ...]:
     """Write the main page and its supporting pages.
 
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
@@ -225,6 +226,16 @@ def gen_html_files(
             _POST_SILLUQ_TITLE,
             build_post_silluq_body(survey, post_silluq_cases, koren_observations),
         ),
+        *(
+            _write_page(
+                top_dir
+                / site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]][0],
+                f"{_POST_SILLUQ_TITLE}: manuscript images for the verse-final word at "
+                f"{site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case['bcv']][1]}",
+                build_post_silluq_image_body(case),
+            )
+            for case in post_silluq_cases
+        ),
         _write_page(
             top_dir / _CHRONICLES_8_11_FNAME,
             _CHRONICLES_8_11_TITLE,
@@ -249,6 +260,10 @@ def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=Non
         for name, value in vars(site_data).items()
         if name.startswith("POST_STRESS_METEG") and name.endswith("_FNAME")
     }
+    expected.update(
+        fname
+        for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
+    )
     if (
         len(page_paths) != len(expected)
         or {Path(path).name for path in page_paths} != expected

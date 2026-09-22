@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from accgram import post_stress_meteg_model as psm
 from accgram.almost_errors_html_shared import wrap_hebrew_runs
+from author_site import site_data
 from mb_author import author
 from mb_misc import mb_html
 
@@ -24,9 +25,11 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_ALEPPO_CROP_URL,
     _POST_SILLUQ_BCV_CELL,
     _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID,
+    _POST_SILLUQ_FNAME,
     _POST_SILLUQ_FOOTNOTE_ID,
     _POST_SILLUQ_LC_CROP_SOURCE_URL,
     _POST_SILLUQ_LC_CROP_URL,
+    _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID,
     _POST_SILLUQ_REF,
     _POST_SILLUQ_SOURCES,
     _POST_SILLUQ_SOURCE_CODES,
@@ -437,8 +440,8 @@ def _post_silluq_first_samuel_example(
                 chb(),
                 " (p. 31), brought a case at ",
                 _ref_link(_POST_SILLUQ_VERSE),
-                " to our attention. In the Leningrad Codex (and in the many editions "
-                "that, for better or for worse, try to stick close to that manuscript), "
+                " to our attention. In the Leningrad Codex, and in the many editions "
+                "that, for better or for worse, try to stick close to that manuscript, "
                 "the final word (letters ",
                 wrap_hebrew_runs("".join(_letters_of(leningrad_form))),
                 ") has a ",
@@ -464,9 +467,9 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "In contrast, in the Aleppo Codex and in editions of Tanakh like "
-                "Koren and the Simanim Tanakh, which are not so slavishly devoted to "
-                "the Leningrad Codex, there is no such ",
+                "In contrast, in the Aleppo Codex, and in editions of Tanakh that "
+                "are not so slavishly devoted to the Leningrad Codex, such as Koren "
+                "and the Simanim Tanakh, there is no such ",
                 _ROM_METEG,
                 " after the ",
                 _ROM_SILLUQ,
@@ -478,31 +481,6 @@ def _post_silluq_first_samuel_example(
                 aleppo_form, _POST_SILLUQ_VERSE, later_meteg=False
             )
         ),
-        mb_html.para(
-            (
-                "For example, at ",
-                _ref_link(_POST_SILLUQ_VERSE),
-                ", ",
-                mb_html.raw_html(f"<code>{masks[0]}</code>"),
-                " on the first line means that the Leningrad Codex has the later ",
-                _ROM_METSIL,
-                ", while ",
-                mb_html.raw_html(f"<code>{masks[1]}</code>"),
-                " on the second line means that the Aleppo Codex, Koren, and the Simanim "
-                "Tanakh do not. In other words, the Aleppo Codex, Koren, and the Simanim "
-                "Tanakh each have only one ",
-                _ROM_METSIL,
-                " and therefore it must be a ",
-                _ROM_SILLUQ,
-                ". That ",
-                _ROM_METSIL,
-                " is on ",
-                wrap_hebrew_runs("ח"),
-                "; they have ",
-                wrap_hebrew_runs(aleppo_form),
-                ".",
-            )
-        ),
         mb_html.para("We might compactly represent the situation like this:"),
         _post_silluq_example_form(
             mb_html.raw_html(f"<code>{masks[0]}<br>{masks[1]}</code>"),
@@ -510,12 +488,10 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "The four positions are A = Aleppo Codex, L = Leningrad Codex, K = "
-                "Koren, and S = the Simanim Tanakh. The first line means that the "
-                "Leningrad Codex has the later ",
+                "The first line means that the Leningrad Codex (L) has the later ",
                 _ROM_METSIL,
-                ", while the second line means that the Aleppo Codex, Koren, and the "
-                "Simanim Tanakh do not.",
+                ", while the second line means that the Aleppo Codex (A), Koren (K), "
+                "and the Simanim Tanakh (S) do not.",
             )
         ),
     ]
@@ -549,7 +525,13 @@ def _post_silluq_case_register(
 ) -> list:
     """The cross-source contrasts and unresolved candidates in one table."""
     complete_koren_by_ref = _complete_koren_by_ref(observations)
-    headers = ("Form", "Reference", "Sources")
+    headers = (
+        "Form",
+        mb_html.abbr(
+            "bcv & img", {"title": "book-chapter-verse as a link to manuscript images"}
+        ),
+        "Sources",
+    )
     attrs = (
         _HEBREW_CELL,
         _POST_SILLUQ_BCV_CELL,
@@ -561,7 +543,10 @@ def _post_silluq_case_register(
                 _colored_post_silluq_form(
                     forms[case["bcv"]], case["bcv"], later_meteg=True
                 ),
-                _ref_link(case["bcv"]),
+                mb_html.anchor_h(
+                    site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]][1],
+                    site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]][0],
+                ),
                 _case_register_source_cell(case, complete_koren_by_ref),
             ),
             attrs,
@@ -587,7 +572,7 @@ def _post_silluq_case_register(
     if unclassified_masks != ("-L--", "A---"):
         raise ValueError("The unclassified-source mask example drifted")
     return [
-        mb_html.heading_level_2("Case register"),
+        mb_html.heading_level_2("Case register", {"id": "case-register"}),
         mb_html.para(
             "Having introduced our notations through the 1 Sam. 17:5 example above, "
             "we now present all our cases of concern, using those notations:"
@@ -664,16 +649,9 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
                 " after ",
                 _ROM_SILLUQ,
                 ", following the Aleppo Codex. This choice retains MAM's general "
-                "policy of following the Aleppo Codex. MAM diverges from Aleppo when a "
-                "specific editorial policy requires a different form or, in a rare case, "
-                "when the Aleppo Codex is fairly clearly erroneous or fairly clearly "
-                "outside the manuscript tradition of which the Aleppo Codex is generally "
-                "the greatest example. Because ",
-                _ROM_METEG,
-                " after ",
-                _ROM_SILLUQ,
-                " is so rare, such a judgment is difficult here, so MAM follows the "
-                "Aleppo Codex.",
+                "policy of following the Aleppo Codex (",
+                _footnote_callout(2, _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID),
+                ").",
             )
         ),
         mb_html.para(
@@ -932,16 +910,34 @@ def _post_silluq_image_nodes(image_id: str) -> list:
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
 
-def _post_silluq_image_evidence(cases: list[dict]) -> list:
-    """Render each case's ordered set of deployed manuscript crops and conclusions."""
-    with_images = [case for case in cases if case["images"]]
-    if not with_images:
-        return []
-    contents = [mb_html.heading_level_2("Image evidence")]
-    for case in with_images:
-        contents.append(mb_html.heading_level_3(_ref_link(case["bcv"])))
-        for image_id in case["images"]:
-            contents.extend(_post_silluq_image_nodes(image_id))
+def build_post_silluq_image_body(case: dict) -> list:
+    """Render one case's ordered manuscript images on its own page."""
+    bcv = case["bcv"]
+    if not case["images"]:
+        raise ValueError(f"{bcv}: image page needs manuscript images")
+    if bcv not in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES:
+        raise ValueError(f"{bcv}: no manuscript-image page is declared")
+    _fname, ref = site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[bcv]
+    contents = [
+        mb_html.heading_level_1(
+            (
+                _visible_title(_POST_SILLUQ_TITLE),
+                ": manuscript images for the verse-final word at ",
+                ref,
+            )
+        ),
+        mb_html.para(
+            (
+                "← Back to the ",
+                mb_html.anchor_h(
+                    "case register", f"{_POST_SILLUQ_FNAME}#case-register"
+                ),
+                ".",
+            )
+        ),
+    ]
+    for image_id in case["images"]:
+        contents.extend(_post_silluq_image_nodes(image_id))
     return contents
 
 
@@ -950,6 +946,16 @@ def build_post_silluq_body(
 ) -> list:
     """The maintained page for cases and candidates of meteg after silluq."""
     mam_bcvs = {case["bcv"] for case in cases}
+    if len(cases) != 7 or {
+        case["bcv"]
+        for case in cases
+        if case["sources"]["aleppo"] in {"later-meteg", "both-strokes"}
+    } != {_MAM_POST_SILLUQ_VERSE, "jb4:12"}:
+        raise ValueError("The MAM policy footnote's two-of-seven claim drifted")
+    if mam_bcvs != set(site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES):
+        raise ValueError(
+            "Manuscript-image page declarations differ from the case ledger"
+        )
     mam_forms = _mam_final_forms(mam_bcvs)
     forms = _case_forms(cases, mam_forms)
     return [
@@ -1005,28 +1011,10 @@ def build_post_silluq_body(
             )
         ),
         *_post_silluq_first_samuel_example(cases, forms, mam_forms, observations),
-        mb_html.para(
-            (
-                "In this investigation, the printed tradition helps clarify marks in the "
-                "manuscript tradition. Although printed editions generally have an excess of ",
-                _ROM_METEG,
-                " marks, the printed editions considered here sometimes have the ",
-                _ROM_SILLUQ,
-                " alone where a manuscript has a later ",
-                _ROM_METSIL,
-                ". The printed editions' lack of the later mark helps identify the "
-                "corresponding manuscript mark as ",
-                _ROM_METEG,
-                " rather than ",
-                _ROM_SILLUQ,
-                ".",
-            )
-        ),
         *_post_silluq_case_register(cases, forms, observations),
         *_post_silluq_discovery_credits(cases),
         *_post_silluq_source_notes(cases, forms),
         *_post_silluq_additional_sources(cases),
-        *_post_silluq_image_evidence(cases),
         mb_html.heading_level_2(
             ("φ1 — A distinct form for ", _ROM_SILLUQ),
             {"id": _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID},
@@ -1048,7 +1036,7 @@ def build_post_silluq_body(
                 _ref_link(_URJ_DISTINCT_STROKE_VERSE),
                 " (letters ",
                 wrap_hebrew_runs("".join(_letters_of(_urj_distinct_stroke_mam_form()))),
-                "), because both the ",
+                "), because in this word both the ",
                 _ROM_SILLUQ,
                 " and the ",
                 _ROM_METEG,
@@ -1056,4 +1044,29 @@ def build_post_silluq_body(
             )
         ),
         _urj_distinct_stroke_figure(),
+        mb_html.heading_level_2(
+            ("φ2 — MAM's use of the Aleppo Codex"),
+            {"id": _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "MAM diverges from Aleppo only when a specific editorial policy requires "
+                "a different form or, in a rare case, when Aleppo is fairly clearly "
+                "erroneous or fairly clearly outside the manuscript tradition of which "
+                "Aleppo is generally the greatest example. Because ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                " is so rare, such a judgment is difficult here, so it makes sense that "
+                "MAM follows Aleppo in the two of our seven cases in which Aleppo has ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                ": ",
+                _ref_link(_MAM_POST_SILLUQ_VERSE),
+                " and ",
+                _ref_link("jb4:12"),
+                ".",
+            )
+        ),
     ]

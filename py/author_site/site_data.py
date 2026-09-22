@@ -57,6 +57,15 @@ POST_STRESS_METEG_NOT_FIT_FNAME = "post-stress-meteg-not-fit.html"
 POST_STRESS_METEG_NOT_FIT_TITLE = "Meteg after the stress: cases not fit for MAS"
 POST_STRESS_METEG_POST_SILLUQ_FNAME = "post-stress-meteg-post-silluq.html"
 POST_STRESS_METEG_POST_SILLUQ_TITLE = "Meteg after silluq"
+POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES = {
+    "1s17:5": ("post-stress-meteg-post-silluq-1s17v5.html", "1 Sam. 17:5"),
+    "1k7:37": ("post-stress-meteg-post-silluq-1k7v37.html", "1 Kgs. 7:37"),
+    "1k14:14": ("post-stress-meteg-post-silluq-1k14v14.html", "1 Kgs. 14:14"),
+    "ps60:10": ("post-stress-meteg-post-silluq-ps60v10.html", "Ps. 60:10"),
+    "ps70:2": ("post-stress-meteg-post-silluq-ps70v2.html", "Ps. 70:2"),
+    "ps72:15": ("post-stress-meteg-post-silluq-ps72v15.html", "Ps. 72:15"),
+    "jb4:12": ("post-stress-meteg-post-silluq-jb4v12.html", "Job 4:12"),
+}
 POST_STRESS_METEG_2CHRONICLES_8_11_FNAME = "post-stress-meteg-2chr-8-11.html"
 POST_STRESS_METEG_2CHRONICLES_8_11_TITLE = "Meteg in 2 Chr. 8:11"
 POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME = "post-stress-meteg-next-conjunctive.html"
@@ -64,7 +73,7 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
     "Meteg after the stress: next words with a conjunctive accent"
 )
 
-# The stylesheet all eleven pages at the deploy root link, written by Ben and tracked as
+# The stylesheet the deploy-root pages link, written by Ben and tracked as
 # gh-pages/style.css -- a sibling of every page, so the href needs no prefix.  Its whole job is
 # the light/dark switching every other page generated here already had through
 # gh-pages/wlc/style.css, which the deploy-root pages cannot simply share: that file's @font-face
@@ -74,8 +83,8 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
 # dark display.
 CSS_HREF = "style.css"
 
-# The accgram stylesheet, linked BESIDE the one above by the nine post-stress-meteg pages that show
-# pointed Hebrew and accent-name romanizations. It supplies the
+# The accgram stylesheet, linked BESIDE the one above by the post-stress-meteg pages that show
+# pointed Hebrew or accent-name romanizations. It supplies the
 # lang="hbo" font at the size that makes accents legible, the italic for span.romanized, and
 # the numeric-cell alignment, none of which a page of links has any use for and none of which
 # is therefore in style.css.  Its @font-face URL is relative to the stylesheet, so the font

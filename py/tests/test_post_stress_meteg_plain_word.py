@@ -7,7 +7,7 @@ word**, because the two come apart exactly where a maqaf matters.  That is the r
 and it is not in question here.
 
 **Ben's decision of 2026-09-08 is that this document and its sub-documents are an exception
-to it.**  These nine pages define their two senses once, in the main page's second paragraph
+to it.**  These pages define their two senses once, in the main page's second paragraph
 -- "by 'word' we mean either a simple word (having just one atom) or a compound word (having
 two or more atoms connected by maqaf marks). By 'atom' we mean a sequence of pointed letters
 uninterrupted by space, maqaf, or any other punctuation" -- and then use plain "word" in that
@@ -70,6 +70,10 @@ _PAGE_FNAMES = (
     site_data.POST_STRESS_METEG_POST_SILLUQ_FNAME,
     site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME,
     site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME,
+    *(
+        fname
+        for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
+    ),
 )
 
 
@@ -78,7 +82,7 @@ def _page_path(fname: str) -> Path:
 
 
 class TestPostStressMetegPlainWord(unittest.TestCase):
-    """The nine post-stress-meteg pages use plain "word" in their declared sense."""
+    """The post-stress-meteg pages use plain "word" in their declared sense."""
 
     def test_every_page_is_present(self):
         missing = [fname for fname in _PAGE_FNAMES if not _page_path(fname).is_file()]
@@ -99,6 +103,10 @@ class TestPostStressMetegPlainWord(unittest.TestCase):
             for name, value in vars(site_data).items()
             if name.startswith("POST_STRESS_METEG") and name.endswith("_FNAME")
         }
+        declared.update(
+            fname
+            for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
+        )
         self.assertEqual(rendered, expected, "Rendered MAS page membership differs")
         self.assertEqual(declared, expected, "Declared MAS page membership differs")
 

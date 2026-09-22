@@ -49,14 +49,12 @@ p.post-silluq-example-form {
     line-height: 2;
 }
 p.post-silluq-example-form [lang="hbo"] { font-size: 170%; }
-p.post-silluq-example-form code { font-size: 120%; }
+p.post-silluq-example-form code { display: inline-block; font-size: 120%; line-height: 1.2; }
 .post-silluq-stressed-syllable {
-    background-color: light-dark(#b8e6ba, #245c36);
-    border-radius: 0.12em;
+    color: light-dark(#08753a, #72d68a);
 }
 .post-silluq-later-meteg-syllable {
-    background-color: light-dark(#fff0a6, #705500);
-    border-radius: 0.12em;
+    color: light-dark(#8a6700, #f4d35e);
 }
 
 /* The post-stress-meteg pages have unusually many similar pointed forms. The control at the top
