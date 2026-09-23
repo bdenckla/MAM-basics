@@ -893,7 +893,12 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
 def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     """Credit the publications and searches through which the cases became known."""
     bcvs = {case["bcv"] for case in cases}
-    required = {_POST_SILLUQ_VERSE, _MAM_POST_SILLUQ_VERSE}
+    required = {
+        _POST_SILLUQ_VERSE,
+        _MAM_POST_SILLUQ_VERSE,
+        _UXLC_CHANGE_VERSE,
+        "ps72:15",
+    }
     if not required <= bcvs:
         raise ValueError(
             "The meteg-after-silluq discovery credits require "
@@ -921,13 +926,17 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
         ),
         mb_html.para(
             (
-                "For ",
-                _ref_link(_UXLC_CHANGE_VERSE),
-                ", Breuer notes, in ",
+                "In ",
                 mb_html.emphasis("Da'at Miqra"),
-                ", the ",
+                ", Breuer notes the Leningrad Codex's ",
                 _ROM_METEG,
-                " after the stress.",
+                " after the ",
+                _ROM_SILLUQ,
+                " at ",
+                _ref_link(_UXLC_CHANGE_VERSE),
+                " and ",
+                _ref_link("ps72:15"),
+                ".",
             )
         ),
     ]
