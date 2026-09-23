@@ -8,7 +8,7 @@ Inventory recorded 2026-09-09 from the tracked `gh-pages/img/` filenames, the ca
 post-silluq page on 2026-09-21 retain their fuller source notes in
 [`meteg-after-silluq-snips/README.md`](meteg-after-silluq-snips/README.md).
 
-| Filename under `gh-pages/img/` | Manuscript or edition | Verse | Location recorded in the caption | Image source | Rights holder |
+| Filename under `gh-pages/img/` | Manuscript or edition | Verse | Recorded location | Image source | Rights holder |
 |---|---|---|---|---|---|
 | `Aleppo-Codex-1K-7v37.png` | Aleppo Codex | 1 Kings 7:37 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
 | `Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png` | Aleppo Codex | 1 Samuel 17:5 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
@@ -19,6 +19,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `aleppo-253v-Ps72v15-yevarkhenhu.png` | Aleppo Codex | Psalms 72:15 | Leaf 253v | mgketer.org | Not recorded |
 | `aleppo-271r-col2-line5-Job4v12-menhu.png` | Aleppo Codex | Job 4:12 | Leaf 271r, column 2, line 5 | mgketer.org | Not recorded |
 | `cairo-cotp-p110-image103-1S17v5-nexoshet.png` | Cairo CoTP (Codex of the Prophets) | 1 Samuel 17:5 | Manuscript page 110; digital image 103, per Ben | Screenshot supplied by Ben from [CSIC Simurg](https://simurg.csic.es/view/9918494052404201) | Not independently established; CSIC lists CC BY-NC-SA 4.0 for the digital copy |
+| `cairo-cotp-image204-1K14v14-atta.png` | Cairo CoTP (Codex of the Prophets) | 1 Kings 14:14 | Digital image 204; no page label, per Ben | Screenshot supplied by Ben from [CSIC Simurg](https://simurg.csic.es/view/9918494052404201) | Not independently established; CSIC lists CC BY-NC-SA 4.0 for the digital copy |
 | `cam1753-unlocated-Ps60v10-HFRV33Y.png` | Cambridge Add. 1753 | Psalms 60:10 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `cam1753-unlocated-Ps70v2-xushah.png` | Cambridge Add. 1753 | Psalms 70:2 | Not recorded | Supplied screenshot; source site not recorded | Not recorded |
 | `cam1753-unlocated-Ps72v15-yevarkhenhu.png` | Cambridge Add. 1753 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
@@ -54,6 +55,13 @@ retains the screenshot's bytes unchanged. Ben identified manuscript page 110 and
 103 and read the silluq alone. Codex did not inspect the pointed-Hebrew image. The CSIC source
 record attributes the photograph collection to the Archivo del Centro de Ciencias Humanas y
 Sociales and states CC BY-NC-SA 4.0 terms for the digital copy.
+
+The Cairo CoTP 1 Kings 14:14 crop was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 133528.png`, SHA-256
+`0AFFA7E03672CB049853791DBB1EF02B322338C96848FEA88956B1FF940CE7D7`. The tracked crop
+retains the screenshot's bytes unchanged. Ben identified digital image 204, reported that the
+manuscript page has no page label, and read the silluq alone. Codex did not inspect the
+pointed-Hebrew image.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds

@@ -6,7 +6,7 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes sixteen manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); twelve
+publishes twenty manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); sixteen
 have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
 README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
 crop's available provenance; the Leningrad sections use the image sources named under “The
@@ -74,8 +74,8 @@ against Cairo CoTP. The earlier pre-vowel meteg research for Job 4:12 is in
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), section 5, and
 measures UXLC placements rather than Cairo CoTP.
 
-Cairo CoTP is included in the source masks for 1 Kings 7:37 and 1 Kings 14:14. Ben asked that
-its classifications for both Kings words remain unrecorded for now (2026-09-23).
+Cairo CoTP is also included in the source mask for 1 Kings 7:37, but Ben asked that its
+classification there remain unrecorded for now (2026-09-23).
 
 ## [aleppo-083r-1K14v14-atta.png](../../gh-pages/img/aleppo-083r-1K14v14-atta.png)
 
@@ -105,6 +105,18 @@ context.
 
 **The Leningrad Codex has the silluq and a second metsil in גַּם־עָֽתָּֽה׃.** The second metsil
 is the likely meteg after the silluq; the Aleppo Codex has the silluq without that second metsil.
+
+## [cairo-cotp-image204-1K14v14-atta.png](../../gh-pages/img/cairo-cotp-image204-1K14v14-atta.png)
+
+The verse-final word of 1 Kings 14:14 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
+and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 133528.png`, SHA-256
+`0AFFA7E03672CB049853791DBB1EF02B322338C96848FEA88956B1FF940CE7D7`. The published PNG
+is a byte-for-byte copy: 101,757 bytes and 326 × 230 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben identifies it as digital image 204 in the [CSIC Simurg Cairo CoTP photograph
+collection](https://simurg.csic.es/view/9918494052404201). He reports no page label on the
+manuscript page. **Cairo CoTP has the silluq alone:** it has no meteg after the silluq.
 
 ## [aleppo-251r-Ps60v10-HFRV33Y.png](../../gh-pages/img/aleppo-251r-Ps60v10-HFRV33Y.png)
 

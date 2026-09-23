@@ -97,7 +97,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "cairo_cotp": "not-recorded",
+        "cairo_cotp": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -107,7 +107,8 @@
       ],
       "images": [
         "aleppo-1k14-14",
-        "leningrad-1k14-14"
+        "leningrad-1k14-14",
+        "cairo-cotp-1k14-14"
       ]
     },
     {

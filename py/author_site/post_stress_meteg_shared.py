@@ -238,6 +238,8 @@ _FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
 
 _FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.jpg"
 
+_FIRST_KINGS_14_CAIRO_COTP_CROP_URL = "img/cairo-cotp-image204-1K14v14-atta.png"
+
 _PSALMS_60_ALEPPO_CROP_URL = "img/aleppo-251r-Ps60v10-HFRV33Y.png"
 
 _PSALMS_60_LENINGRAD_CROP_URL = "img/leningrad-377B-Ps60v10-HFRV33Y.png"
@@ -332,6 +334,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "leningrad-1k7-37": "1 Kings 7:37",
     "aleppo-1k14-14": "1 Kings 14:14",
     "leningrad-1k14-14": "1 Kings 14:14",
+    "cairo-cotp-1k14-14": "1 Kings 14:14",
     "aleppo-ps60-10": "Psalms 60:10",
     "leningrad-ps60-10": "Psalms 60:10",
     "cam1753-ps60-10": "Psalms 60:10",
@@ -357,7 +360,11 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "cam1753-ps72-15",
     ),
     "1 Kings 7:37": ("aleppo-1k7-37", "leningrad-1k7-37"),
-    "1 Kings 14:14": ("aleppo-1k14-14", "leningrad-1k14-14"),
+    "1 Kings 14:14": (
+        "aleppo-1k14-14",
+        "leningrad-1k14-14",
+        "cairo-cotp-1k14-14",
+    ),
     "Psalms 60:10": (
         "aleppo-ps60-10",
         "leningrad-ps60-10",

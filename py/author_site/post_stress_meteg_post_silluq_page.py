@@ -11,6 +11,7 @@ from mb_misc import mb_html
 
 from author_site.post_stress_meteg_shared import (
     _FIRST_KINGS_14_ALEPPO_CROP_URL,
+    _FIRST_KINGS_14_CAIRO_COTP_CROP_URL,
     _FIRST_KINGS_14_LENINGRAD_CROP_URL,
     _FNAME,
     _HEBREW_CELL,
@@ -158,6 +159,22 @@ def _first_kings_14_leningrad_crop() -> object:
         ' a second metsil after the silluq." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad Codex, folio 195B, column 2, line 27."
+        "</figcaption></figure>"
+    )
+
+
+def _first_kings_14_cairo_cotp_crop() -> object:
+    """The Cairo CoTP crop at 1 Kings 14:14, as interpreted by Ben."""
+    return mb_html.raw_html(
+        f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        f' rel="noopener"><img src="{_FIRST_KINGS_14_CAIRO_COTP_CROP_URL}"'
+        f' alt="Cairo CoTP crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
+        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        "</a><figcaption>Cairo CoTP (Codex of the Prophets), digital image 204; "
+        "photograph from the Archivo del Centro de Ciencias Humanas y Sociales "
+        "(CSIC), "
+        f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
         "</figcaption></figure>"
     )
 
@@ -699,8 +716,11 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
         raise ValueError("1 Kings 7:37: expected silluq and later meteg in MAM")
 
     first_kings_fourteen = cases_by_bcv[_UXLC_CHANGE_VERSE]
-    if first_kings_fourteen["sources"]["leningrad"] != "later-meteg":
-        raise ValueError("1 Kings 14:14: the LC classification drifted")
+    if (
+        first_kings_fourteen["sources"]["leningrad"] != "later-meteg"
+        or first_kings_fourteen["sources"]["cairo_cotp"] != "no-later-mark"
+    ):
+        raise ValueError("1 Kings 14:14: manuscript classifications drifted")
     first_kings_fourteen_form = forms[_UXLC_CHANGE_VERSE]
     if (
         psm.MAQAF not in first_kings_fourteen_form
@@ -896,6 +916,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "leningrad-1k14-14":
         return [_first_kings_14_leningrad_crop()]
+    if image_id == "cairo-cotp-1k14-14":
+        return [
+            mb_html.para(("Cairo CoTP has the ", _ROM_SILLUQ, " alone.")),
+            _first_kings_14_cairo_cotp_crop(),
+        ]
     if image_id == "aleppo-ps60-10":
         return [
             mb_html.para(
