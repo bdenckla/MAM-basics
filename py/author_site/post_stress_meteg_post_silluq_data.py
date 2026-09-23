@@ -30,11 +30,11 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_IMAGE_REFS,
     _POST_SILLUQ_IMAGE_SEQUENCES,
     _POST_SILLUQ_KOREN_JSON,
-    _POST_SILLUQ_SOURCES,
     _POST_SILLUQ_SOURCE_STATES,
     _POST_SILLUQ_VERSE,
     _ROM_METEG,
     _ROM_SILLUQ,
+    _post_silluq_sources_for_bcv,
     _ref_link,
     _split,
 )
@@ -200,10 +200,11 @@ def _validate_string_list(
     return strings
 
 
-def _validate_post_silluq_sources(value: object, *, where: str) -> dict:
-    """Validate the closed four-source mapping shared by both case statuses."""
-    if not isinstance(value, dict) or set(value) != set(_POST_SILLUQ_SOURCES):
-        raise ValueError(f"{where}: expected exactly {_POST_SILLUQ_SOURCES}")
+def _validate_post_silluq_sources(value: object, *, bcv: str, where: str) -> dict:
+    """Validate the source mapping for this explicitly recognized case."""
+    expected = _post_silluq_sources_for_bcv(bcv)
+    if not isinstance(value, dict) or set(value) != set(expected):
+        raise ValueError(f"{where}: expected exactly {expected}")
     for source, state in value.items():
         if state not in _POST_SILLUQ_SOURCE_STATES:
             raise ValueError(f"{where}/{source}: unknown state {state!r}")
@@ -299,13 +300,17 @@ def load_post_silluq_cases() -> list[dict]:
                 case.get("transcriptions"), where=f"{where}/transcriptions"
             )
             if "sources" in case:
-                _validate_post_silluq_sources(case["sources"], where=f"{where}/sources")
+                _validate_post_silluq_sources(
+                    case["sources"], bcv=bcv, where=f"{where}/sources"
+                )
         else:
             if "transcriptions" in case or "sources" not in case:
                 raise ValueError(
                     f"{where}: known cases require sources, not transcriptions"
                 )
-            _validate_post_silluq_sources(case["sources"], where=f"{where}/sources")
+            _validate_post_silluq_sources(
+                case["sources"], bcv=bcv, where=f"{where}/sources"
+            )
             additions = case.get("additional_sources", [])
             if not isinstance(additions, list):
                 raise ValueError(f"{where}/additional_sources: expected a list")

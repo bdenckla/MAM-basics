@@ -29,6 +29,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cam1753": "not-recorded",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -70,15 +71,10 @@
       "sources": {
         "aleppo": "both-strokes",
         "leningrad": "both-strokes",
+        "cam1753": "both-strokes",
         "koren": "tracked-observation",
         "simanim": "both-strokes"
       },
-      "additional_sources": [
-        {
-          "source": "Cambridge Add. 1753",
-          "state": "both-strokes"
-        }
-      ],
       "reports": [
         "doc/meteg-after-silluq-job-4-12.md",
         "doc/meteg-after-silluq-job-4-12-update.md"
@@ -117,6 +113,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cam1753": "not-recorded",
         "koren": "no-later-mark",
         "simanim": "not-recorded"
       },
@@ -137,15 +134,10 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cam1753": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
-      "additional_sources": [
-        {
-          "source": "Cambridge Add. 1753",
-          "state": "no-later-mark"
-        }
-      ],
       "reports": [
         "doc/meteg-after-silluq-in-uxlc-and-wlc.md",
         "doc/meteg-after-silluq-in-uxlc-and-wlc-update.md"

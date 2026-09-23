@@ -33,7 +33,6 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_LC_CROP_URL,
     _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID,
     _POST_SILLUQ_REF,
-    _POST_SILLUQ_SOURCES,
     _POST_SILLUQ_SOURCE_CODES,
     _POST_SILLUQ_TITLE,
     _POST_SILLUQ_VERSE,
@@ -59,6 +58,7 @@ from author_site.post_stress_meteg_shared import (
     _footnote_callout,
     _hebrew_cell,
     _hebrew_spacing_option,
+    _post_silluq_sources_for_bcv,
     _ref_link,
     _scriptural_bcv_key,
     _table,
@@ -317,7 +317,7 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the ALKS masks, requiring a contrast only for classified cases."""
+    """Render the ALKS or AL7KS masks for one case."""
     has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
     return _source_mask_pair(has_mask, does_not_have_mask)
 
@@ -334,10 +334,11 @@ def _source_mask_pair(has_mask: str, does_not_have_mask: str) -> object:
 def _case_source_mask_values(
     case: dict, complete_koren_by_ref: dict[str, dict]
 ) -> tuple[str, str]:
-    """Derive both ALKS lines from the classified source states."""
+    """Derive both source-mask lines from the classified source states."""
+    sources = _post_silluq_sources_for_bcv(case["bcv"])
     flags_by_source = {
         source: _case_source_mask_flags(case, source, complete_koren_by_ref)
-        for source in _POST_SILLUQ_SOURCES
+        for source in sources
     }
     has_later = any(flags[0] for flags in flags_by_source.values())
     lacks_later = any(flags[1] for flags in flags_by_source.values())
@@ -347,11 +348,11 @@ def _case_source_mask_values(
         )
     has_mask = "".join(
         _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][0] else "-"
-        for source in _POST_SILLUQ_SOURCES
+        for source in sources
     )
     does_not_have_mask = "".join(
         _POST_SILLUQ_SOURCE_CODES[source] if flags_by_source[source][1] else "-"
-        for source in _POST_SILLUQ_SOURCES
+        for source in sources
     )
     return has_mask, does_not_have_mask
 
@@ -559,6 +560,7 @@ def _post_silluq_case_register(
         _POST_SILLUQ_BCV_CELL,
         None,
     )
+    sorted_cases = sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
     rows = [
         _post_silluq_table_row(
             (
@@ -573,20 +575,9 @@ def _post_silluq_case_register(
             ),
             attrs,
         )
-        for case in sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
+        for case in sorted_cases
     ]
-    unclassified_case = next(
-        (case for case in cases if case["sources"]["simanim"] == "not-recorded"),
-        None,
-    )
-    if unclassified_case is None:
-        raise ValueError("The register needs an example with unclassified Simanim")
-    unclassified_masks = _case_source_mask_values(
-        unclassified_case, complete_koren_by_ref
-    )
-    if unclassified_masks != ("-L--", "A-K-"):
-        raise ValueError("The unclassified-source mask example drifted")
-    return [
+    contents = [
         mb_html.heading_level_2("Case register", {"id": "case-register"}),
         mb_html.para(
             "Having introduced our notations through the 1 Sam. 17:5 example above, "
@@ -597,17 +588,41 @@ def _post_silluq_case_register(
             rows,
             {"class": "post-stress-meteg-table post-silluq-register"},
         ),
-        mb_html.para("In entries such as:"),
-        _post_silluq_example_form(
-            _source_mask_pair(*unclassified_masks),
-            direction="ltr",
-        ),
         mb_html.para(
-            "A dash in both lines at the same position means that no classification "
-            "is recorded for that source. In this entry, no classification is recorded "
-            "for S (the Simanim Tanakh)."
+            (
+                "In the three Psalms rows and the Job row, the source order is ",
+                mb_html.code("AL7KS"),
+                "; ",
+                mb_html.code("7"),
+                " represents Cambridge Add. 1753. The 1 Sam. 17:5 example above "
+                "uses ",
+                mb_html.code("ALKS"),
+                " and does not include this source.",
+            )
         ),
     ]
+    unclassified_masks = None
+    for case in sorted_cases:
+        if "sources" not in case:
+            continue
+        masks = _case_source_mask_values(case, complete_koren_by_ref)
+        if any(top == bottom == "-" for top, bottom in zip(*masks, strict=True)):
+            unclassified_masks = masks
+            break
+    if unclassified_masks is not None:
+        contents.extend(
+            (
+                mb_html.para("In entries such as:"),
+                _post_silluq_example_form(
+                    _source_mask_pair(*unclassified_masks), direction="ltr"
+                ),
+                mb_html.para(
+                    "A dash in both lines at the same position means that no "
+                    "classification is recorded for that source."
+                ),
+            )
+        )
+    return contents
 
 
 def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
@@ -742,7 +757,7 @@ def _urj_distinct_stroke_figure() -> object:
 
 
 def _post_silluq_additional_sources(cases: list[dict]) -> list:
-    """Curated observations outside the four main source columns."""
+    """Curated observations outside the case-register source masks."""
     cases_with_additions = [case for case in cases if case.get("additional_sources")]
     if not cases_with_additions:
         return []
