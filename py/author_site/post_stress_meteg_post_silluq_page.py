@@ -62,6 +62,8 @@ from author_site.post_stress_meteg_shared import (
     _PSALMS_72_CAM1753_CROP_URL,
     _PSALMS_72_LENINGRAD_CROP_URL,
     _PSALMS_72_REF,
+    _PSALMS_72_SASSOON_CROP_URL,
+    _PSALMS_72_SASSOON_SOURCE_URL,
     _ROM_METEG,
     _ROM_SILLUQ,
     _TITLE,
@@ -355,6 +357,21 @@ def _psalms_72_cam1753_crop() -> object:
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_72_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge Add. 1753.</figcaption></figure>"
+    )
+
+
+def _psalms_72_sassoon_crop() -> object:
+    """The Codex Sassoon 1053 crop at Psalms 72:15, as interpreted by Ben."""
+    href = escape(_PSALMS_72_SASSOON_SOURCE_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_PSALMS_72_SASSOON_CROP_URL}"'
+        f' alt="Codex Sassoon 1053 crop of the verse-final word at {_PSALMS_72_REF};'
+        ' it has the silluq alone." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Codex Sassoon 1053; "
+        f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
+        "</figcaption></figure>"
     )
 
 
@@ -1105,6 +1122,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "cam1753-ps72-15":
         return [_psalms_72_cam1753_crop()]
+    if image_id == "sassoon-1053-ps72-15":
+        return [
+            mb_html.para(("Codex Sassoon 1053 has the ", _ROM_SILLUQ, " alone.")),
+            _psalms_72_sassoon_crop(),
+        ]
     if image_id == "aleppo-1k7-37":
         return [
             mb_html.para(

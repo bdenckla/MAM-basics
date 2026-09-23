@@ -6,8 +6,8 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-five manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-one have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes twenty-six manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-two have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -327,6 +327,19 @@ PNG is a byte-for-byte copy: 60,278 bytes and 270 × 200 pixels. The source site
 page or folio are not recorded. Codex did not independently inspect the pointed Hebrew image.
 
 **Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
+
+## [sassoon-1053-Ps72v15-yevarkhenhu.png](../../gh-pages/img/sassoon-1053-Ps72v15-yevarkhenhu.png)
+
+The verse-final word of Psalms 72:15 in **Codex Sassoon 1053**. Ben supplied and interpreted
+the crop on 2026-09-23 from `Screenshot 2026-09-23 140341.png`, SHA-256
+`45614C646A7A9F1777B6A7490565653402A7EF2BF17F08A08E6019749CDBD8E2`. The published PNG
+is a byte-for-byte copy: 222,823 bytes and 448 × 294 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
+72:15](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon). A
+manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
+alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
 

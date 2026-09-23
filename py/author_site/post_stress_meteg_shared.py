@@ -288,6 +288,12 @@ _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhen
 
 _PSALMS_72_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps72v15-yevarkhenhu.png"
 
+_PSALMS_72_SASSOON_CROP_URL = "img/sassoon-1053-Ps72v15-yevarkhenhu.png"
+
+_PSALMS_72_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon"
+)
+
 _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
 
 _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
@@ -361,6 +367,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-ps72-15": "Psalms 72:15",
     "leningrad-ps72-15": "Psalms 72:15",
     "cam1753-ps72-15": "Psalms 72:15",
+    "sassoon-1053-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
     "sassoon-1053-1k7-37": "1 Kings 7:37",
@@ -394,6 +401,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "aleppo-ps72-15",
         "leningrad-ps72-15",
         "cam1753-ps72-15",
+        "sassoon-1053-ps72-15",
     ),
     "1 Kings 7:37": (
         "aleppo-1k7-37",
