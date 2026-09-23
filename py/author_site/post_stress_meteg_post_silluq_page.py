@@ -933,8 +933,10 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 " after the ",
                 _ROM_SILLUQ,
                 " at ",
+                _ref_link(_POST_SILLUQ_VERSE),
+                ", ",
                 _ref_link(_UXLC_CHANGE_VERSE),
-                " and ",
+                ", and ",
                 _ref_link("ps72:15"),
                 ".",
             )
