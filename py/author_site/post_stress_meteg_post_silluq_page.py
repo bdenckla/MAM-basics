@@ -884,10 +884,6 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
                     "Daniel Holman's change proposal 2022.08.31-17",
                     _UXLC_CHANGE_URL,
                 ),
-                "; Breuer also notes the second ",
-                _METSIL,
-                " in ",
-                mb_html.emphasis("Da'at Miqra"),
                 ".",
             )
         ),
@@ -921,6 +917,17 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
                 "We became aware of the remaining five entries from various searches "
                 "of our own.",
+            )
+        ),
+        mb_html.para(
+            (
+                "For ",
+                _ref_link(_UXLC_CHANGE_VERSE),
+                ", Breuer notes, in ",
+                mb_html.emphasis("Da'at Miqra"),
+                ", the ",
+                _ROM_METEG,
+                " after the stress.",
             )
         ),
     ]
