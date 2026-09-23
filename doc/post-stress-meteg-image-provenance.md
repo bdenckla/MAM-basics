@@ -38,6 +38,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `sassoon-1053-Ps60v10-HFRV33Y.png` | Codex Sassoon 1053 | Psalms 60:10 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Ps70v2-xushah.png` | Codex Sassoon 1053 | Psalms 70:2 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Ps72v15-yevarkhenhu.png` | Codex Sassoon 1053 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon) | Not independently established |
+| `sassoon-1053-Job4v12-menhu.png` | Codex Sassoon 1053 | Job 4:12 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon) | Not independently established |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
 The URJ crop was added on 2026-09-22 from `Screenshot 2026-09-22 092430.png`, SHA-256
@@ -104,6 +105,13 @@ The Codex Sassoon 1053 crop of Psalms 72:15 was added on 2026-09-23 from Ben's
 `45614C646A7A9F1777B6A7490565653402A7EF2BF17F08A08E6019749CDBD8E2`. The tracked crop
 retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
 coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
+
+The Codex Sassoon 1053 crop of Job 4:12 was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 140626.png`, SHA-256
+`C581614FD07C4C6D7A77E48D1CCA4B067A1F429AF889FFB5F1D710B457656D84`. The tracked crop
+retains the screenshot's bytes unchanged. Ben read the silluq and a later meteg, and noted the
+later mark's strong northeast-to-southwest slant. No manuscript page or folio coordinate was
+supplied, and Codex did not inspect the pointed-Hebrew image.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds

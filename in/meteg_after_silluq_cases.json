@@ -10,6 +10,7 @@
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -33,6 +34,7 @@
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -57,6 +59,7 @@
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
         "cairo_cotp": "not-recorded",
+        "sassoon_1053": "no-later-mark",
         "koren": "tracked-observation",
         "simanim": "no-later-mark"
       },
@@ -79,6 +82,7 @@
         "aleppo": "both-strokes",
         "leningrad": "both-strokes",
         "cam1753": "both-strokes",
+        "sassoon_1053": "both-strokes",
         "koren": "tracked-observation",
         "simanim": "both-strokes"
       },
@@ -89,7 +93,8 @@
       "images": [
         "aleppo-jb4-12",
         "leningrad-jb4-12",
-        "cam1753-jb4-12"
+        "cam1753-jb4-12",
+        "sassoon-1053-jb4-12"
       ]
     },
     {
@@ -101,6 +106,7 @@
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -124,6 +130,7 @@
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -147,6 +154,7 @@
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },

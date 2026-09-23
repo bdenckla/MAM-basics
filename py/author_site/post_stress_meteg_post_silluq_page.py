@@ -22,6 +22,8 @@ from author_site.post_stress_meteg_shared import (
     _JOB_4_CAM1753_CROP_URL,
     _JOB_4_LENINGRAD_CROP_URL,
     _JOB_4_REF,
+    _JOB_4_SASSOON_CROP_URL,
+    _JOB_4_SASSOON_SOURCE_URL,
     _MAM_POST_SILLUQ_ALEPPO_CROP_URL,
     _MAM_POST_SILLUQ_LENINGRAD_CROP_URL,
     _MAM_POST_SILLUQ_REF,
@@ -408,6 +410,21 @@ def _job_4_cam1753_crop() -> object:
     )
 
 
+def _job_4_sassoon_crop() -> object:
+    """The Codex Sassoon 1053 crop at Job 4:12, as interpreted by Ben."""
+    href = escape(_JOB_4_SASSOON_SOURCE_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_JOB_4_SASSOON_CROP_URL}"'
+        f' alt="Codex Sassoon 1053 crop of the verse-final word at {_JOB_4_REF};'
+        ' it has the silluq and a strongly slanted meteg after it." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Codex Sassoon 1053; "
+        f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
+        "</figcaption></figure>"
+    )
+
+
 def _post_silluq_table_row(contents: tuple, attrs: tuple) -> object:
     """Build one row without the shared helper's silent ``zip`` truncation."""
     if len(contents) != len(attrs):
@@ -477,7 +494,7 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the ALCKS or AL7KS masks for one case."""
+    """Render the ALC5KS or AL75KS masks for one case."""
     has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
     return _source_mask_pair(has_mask, does_not_have_mask)
 
@@ -587,7 +604,7 @@ def _post_silluq_first_samuel_example(
     mam_forms: dict[str, str],
     observations: list[dict],
 ) -> list:
-    """Introduce the two forms, syllable colors, and ALCKS notation at 1 Samuel 17:5."""
+    """Introduce the two forms, syllable colors, and ALC5KS at 1 Samuel 17:5."""
     cases_by_bcv = {case["bcv"]: case for case in cases}
     first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
     if first_samuel is None:
@@ -596,6 +613,7 @@ def _post_silluq_first_samuel_example(
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
+        "sassoon_1053": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark",
     }
@@ -615,7 +633,7 @@ def _post_silluq_first_samuel_example(
     ):
         raise ValueError("1 Samuel 17:5: the two forms differ beyond the later meteg")
     masks = _case_source_mask_values(first_samuel, _complete_koren_by_ref(observations))
-    if masks != ("-L---", "A-CKS"):
+    if masks != ("-L----", "A-C5KS"):
         raise ValueError("1 Samuel 17:5: introductory source masks drifted")
     return [
         mb_html.para(
@@ -651,9 +669,10 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "In contrast, in the Aleppo Codex and Cairo CoTP (Codex of the "
-                "Prophets), and in editions of Tanakh that are not so slavishly "
-                "devoted to the Leningrad Codex, such as Koren and the Simanim "
+                "In contrast, in the Aleppo Codex, Cairo CoTP (Codex of the "
+                "Prophets), and Codex Sassoon 1053, as well as in editions of "
+                "Tanakh that are not so slavishly devoted to the Leningrad "
+                "Codex, such as Koren and the Simanim "
                 "Tanakh, there is no such ",
                 _ROM_METEG,
                 " after the ",
@@ -676,7 +695,8 @@ def _post_silluq_first_samuel_example(
                 "The first line means that the Leningrad Codex (L) has the later ",
                 _METSIL,
                 ", while the second line means that the Aleppo Codex (A), Cairo "
-                "CoTP (C), Koren (K), and the Simanim Tanakh (S) do not.",
+                "CoTP (C), Codex Sassoon 1053 (5), Koren (K), and the Simanim "
+                "Tanakh (S) do not.",
             )
         ),
     ]
@@ -753,15 +773,17 @@ def _post_silluq_case_register(
         mb_html.para(
             (
                 "In the three Prophets rows, the source order is ",
-                mb_html.code("ALCKS"),
+                mb_html.code("ALC5KS"),
                 "; ",
                 mb_html.code("C"),
                 " represents Cairo CoTP. In the three Psalms rows and the Job row, "
                 "the source order is ",
-                mb_html.code("AL7KS"),
+                mb_html.code("AL75KS"),
                 "; ",
                 mb_html.code("7"),
-                " represents Cambridge Add. 1753.",
+                " represents Cambridge Add. 1753. In every row, ",
+                mb_html.code("5"),
+                " represents Codex Sassoon 1053.",
             )
         ),
     ]
@@ -804,6 +826,7 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
         "cairo_cotp": "not-recorded",
+        "sassoon_1053": "no-later-mark",
         "koren": "tracked-observation",
         "simanim": "no-later-mark",
     }
@@ -1178,6 +1201,25 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 )
             ),
             _job_4_cam1753_crop(),
+        ]
+    if image_id == "sassoon-1053-jb4-12":
+        return [
+            mb_html.para(
+                (
+                    "Codex Sassoon 1053 has a ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    " at ",
+                    _JOB_4_REF,
+                    ". The later ",
+                    _ROM_METEG,
+                    " is far from vertical: it slants northeast to southwest. "
+                    "I have no idea whether that slant is meaningful, but it is "
+                    "too conspicuous to leave unmentioned.",
+                )
+            ),
+            _job_4_sassoon_crop(),
         ]
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 

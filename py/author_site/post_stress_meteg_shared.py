@@ -300,6 +300,12 @@ _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
 
 _JOB_4_CAM1753_CROP_URL = "img/cam1753-0073B-col2-line13-Job4v12-menhu.png"
 
+_JOB_4_SASSOON_CROP_URL = "img/sassoon-1053-Job4v12-menhu.png"
+
+_JOB_4_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon"
+)
+
 _URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-eeseh.png"
 
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
@@ -328,6 +334,7 @@ _POST_SILLUQ_CAIRO_COTP_SOURCES = (
     "aleppo",
     "leningrad",
     "cairo_cotp",
+    "sassoon_1053",
     "koren",
     "simanim",
 )
@@ -336,13 +343,14 @@ _POST_SILLUQ_CAM1753_SOURCES = (
     "aleppo",
     "leningrad",
     "cam1753",
+    "sassoon_1053",
     "koren",
     "simanim",
 )
 
 
 def _post_silluq_sources_for_bcv(bcv: str) -> tuple[str, ...]:
-    """Use ALCKS for the Prophets cases and AL7KS for the other four."""
+    """Use ALC5KS for the Prophets cases and AL75KS for the other four."""
     if bcv in _POST_SILLUQ_CAIRO_COTP_BCVS:
         return _POST_SILLUQ_CAIRO_COTP_SOURCES
     if bcv in _POST_SILLUQ_CAM1753_BCVS:
@@ -355,6 +363,7 @@ _POST_SILLUQ_SOURCE_CODES = {
     "leningrad": "L",
     "cairo_cotp": "C",
     "cam1753": "7",
+    "sassoon_1053": "5",
     "koren": "K",
     "simanim": "S",
 }
@@ -386,6 +395,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
     "cam1753-jb4-12": "Job 4:12",
+    "sassoon-1053-jb4-12": "Job 4:12",
 }
 
 _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
@@ -426,7 +436,12 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "cam1753-ps70-2",
         "sassoon-1053-ps70-2",
     ),
-    "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12", "cam1753-jb4-12"),
+    "Job 4:12": (
+        "aleppo-jb4-12",
+        "leningrad-jb4-12",
+        "cam1753-jb4-12",
+        "sassoon-1053-jb4-12",
+    ),
 }
 
 _KOREN_STATUSES = frozenset({"complete", "incomplete", "deferred", "skipped-family"})

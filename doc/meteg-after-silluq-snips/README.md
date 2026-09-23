@@ -6,11 +6,15 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-six manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-two have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes twenty-seven manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-three have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
+
+The page's source-mask code `5` represents Codex Sassoon 1053 in all seven cases. Ben chose `5`
+from 1053 because `S` already represents the Simanim Tanakh, while `1` and `0` risk confusion
+with similar-looking characters. Cambridge Add. 1753 uses `7`, leaving `C` for Cairo CoTP.
 
 Each file is named `<source>-<page>-<ref>-<slug>.png`: the manuscript or edition, then the page in
 that source's form. A Leningrad crop may include both column and line when Ben has read the line
@@ -410,6 +414,21 @@ tracked line-break data.
 The silluq is to the left of its segol, in its normal position. In the Aleppo and Leningrad
 codices the silluq is “early,” to the right of its segol. This reading is Ben's; Codex did not
 independently inspect the pointed-Hebrew image.
+
+## [sassoon-1053-Job4v12-menhu.png](../../gh-pages/img/sassoon-1053-Job4v12-menhu.png)
+
+The verse-final word of Job 4:12 in **Codex Sassoon 1053**. Ben supplied and interpreted the
+crop on 2026-09-23 from `Screenshot 2026-09-23 140626.png`, SHA-256
+`C581614FD07C4C6D7A77E48D1CCA4B067A1F429AF889FFB5F1D710B457656D84`. The published PNG
+is a byte-for-byte copy: 146,913 bytes and 272 × 316 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Job
+4:12](https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon). A manuscript
+page or folio coordinate has not been recorded. **Codex Sassoon 1053 has both strokes:** the
+silluq and a meteg after it. Ben notes that the later meteg is far from vertical, slanting
+northeast to southwest. He does not know whether the slant is meaningful, but considers it too
+conspicuous to omit from the image page.
 
 ## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
 
