@@ -240,6 +240,12 @@ _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 
+_MAM_POST_SILLUQ_SASSOON_CROP_URL = "img/sassoon-1053-1K7v37-final-word.png"
+
+_MAM_POST_SILLUQ_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=1+Kings&chapter=7&verse=37&manuscript=sassoon"
+)
+
 _FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
 
 _FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.jpg"
@@ -339,6 +345,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "cam1753-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
+    "sassoon-1053-1k7-37": "1 Kings 7:37",
     "aleppo-1k14-14": "1 Kings 14:14",
     "leningrad-1k14-14": "1 Kings 14:14",
     "cairo-cotp-1k14-14": "1 Kings 14:14",
@@ -367,7 +374,11 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "leningrad-ps72-15",
         "cam1753-ps72-15",
     ),
-    "1 Kings 7:37": ("aleppo-1k7-37", "leningrad-1k7-37"),
+    "1 Kings 7:37": (
+        "aleppo-1k7-37",
+        "leningrad-1k7-37",
+        "sassoon-1053-1k7-37",
+    ),
     "1 Kings 14:14": (
         "aleppo-1k14-14",
         "leningrad-1k14-14",

@@ -6,7 +6,7 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-one manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); seventeen
+publishes twenty-two manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); eighteen
 have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
 README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
 crop's available provenance; the Leningrad sections use the image sources named under “The
@@ -87,6 +87,19 @@ the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Samuel
 17:5](https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon). A
+manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
+alone:** it has no meteg after the silluq, according to Ben's reading.
+
+## [sassoon-1053-1K7v37-final-word.png](../../gh-pages/img/sassoon-1053-1K7v37-final-word.png)
+
+The verse-final word of 1 Kings 7:37 in **Codex Sassoon 1053**. Ben supplied and interpreted the
+crop on 2026-09-23 from `Screenshot 2026-09-23 134056.png`, SHA-256
+`39656E10822C34DD6CB40615C8352F79D800393B4B08B8E2D4BFE622890C86DD`. The published PNG
+is a byte-for-byte copy: 260,956 bytes and 466 × 338 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
+7:37](https://www.masoretica.org/?book=1+Kings&chapter=7&verse=37&manuscript=sassoon). A
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 

@@ -33,6 +33,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png` | Leningrad Codex | Psalms 72:15 | Folio 380A, line 3; column 2 is the estimator's value | Sefaria and Internet Archive image sets documented in the source-note README | Not recorded |
 | `leningrad-398A-Job4v12-menhu.png` | Leningrad Codex | Job 4:12 | Folio 398A; no independently read column or line | Sefaria and Internet Archive image sets documented in the source-note README | Not recorded |
 | `sassoon-1053-1S17v5-nexoshet.png` | Codex Sassoon 1053 | 1 Samuel 17:5 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon) | Not independently established |
+| `sassoon-1053-1K7v37-final-word.png` | Codex Sassoon 1053 | 1 Kings 7:37 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=1+Kings&chapter=7&verse=37&manuscript=sassoon) | Not independently established |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
 The URJ crop was added on 2026-09-22 from `Screenshot 2026-09-22 092430.png`, SHA-256
@@ -67,6 +68,12 @@ pointed-Hebrew image.
 The Codex Sassoon 1053 crop of 1 Samuel 17:5 was added on 2026-09-23 from Ben's
 `Screenshot 2026-09-23 133845.png`, SHA-256
 `8ED84ED295115DF367C99A10D35A6212BC94139EE10E0EB9FA5C7F16E906AD73`. The tracked crop
+retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
+coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
+
+The Codex Sassoon 1053 crop of 1 Kings 7:37 was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 134056.png`, SHA-256
+`39656E10822C34DD6CB40615C8352F79D800393B4B08B8E2D4BFE622890C86DD`. The tracked crop
 retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
 coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
 

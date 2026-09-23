@@ -23,6 +23,8 @@ from author_site.post_stress_meteg_shared import (
     _MAM_POST_SILLUQ_ALEPPO_CROP_URL,
     _MAM_POST_SILLUQ_LENINGRAD_CROP_URL,
     _MAM_POST_SILLUQ_REF,
+    _MAM_POST_SILLUQ_SASSOON_CROP_URL,
+    _MAM_POST_SILLUQ_SASSOON_SOURCE_URL,
     _MAM_POST_SILLUQ_VERSE,
     _METSIL,
     _PLAUT_STEIN_TORAH_URL,
@@ -101,6 +103,21 @@ def _mam_post_silluq_leningrad_crop() -> object:
         ' it lacks a meteg after the silluq."'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
         "<figcaption>Leningrad Codex.</figcaption></figure>"
+    )
+
+
+def _mam_post_silluq_sassoon_crop() -> object:
+    """The Codex Sassoon 1053 crop at 1 Kings 7:37, as interpreted by Ben."""
+    href = escape(_MAM_POST_SILLUQ_SASSOON_SOURCE_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_MAM_POST_SILLUQ_SASSOON_CROP_URL}"'
+        f' alt="Codex Sassoon 1053 crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
+        ' it has the silluq alone." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Codex Sassoon 1053; "
+        f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
+        "</figcaption></figure>"
     )
 
 
@@ -1043,6 +1060,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 )
             ),
             _mam_post_silluq_leningrad_crop(),
+        ]
+    if image_id == "sassoon-1053-1k7-37":
+        return [
+            mb_html.para(("Codex Sassoon 1053 has the ", _ROM_SILLUQ, " alone.")),
+            _mam_post_silluq_sassoon_crop(),
         ]
     if image_id == "aleppo-jb4-12":
         return [
