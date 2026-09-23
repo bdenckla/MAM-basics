@@ -25,6 +25,7 @@ from author_site.post_stress_meteg_shared import (
     _JOB_4_SASSOON_CROP_URL,
     _JOB_4_SASSOON_SOURCE_URL,
     _MAM_POST_SILLUQ_ALEPPO_CROP_URL,
+    _MAM_POST_SILLUQ_CAIRO_COTP_CROP_URL,
     _MAM_POST_SILLUQ_LENINGRAD_CROP_URL,
     _MAM_POST_SILLUQ_REF,
     _MAM_POST_SILLUQ_SASSOON_CROP_URL,
@@ -113,6 +114,23 @@ def _mam_post_silluq_leningrad_crop() -> object:
         ' it lacks a meteg after the silluq."'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
         "<figcaption>Leningrad Codex.</figcaption></figure>"
+    )
+
+
+def _mam_post_silluq_cairo_cotp_crop() -> object:
+    """The Cairo CoTP crop at 1 Kings 7:37, as interpreted by Ben."""
+    return mb_html.raw_html(
+        f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        f' rel="noopener"><img src="{_MAM_POST_SILLUQ_CAIRO_COTP_CROP_URL}"'
+        f' alt="Cairo CoTP crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
+        ' it has the silluq alone." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Cairo CoTP (Codex of the Prophets), digital page 186 "
+        "(no manuscript page number is visible); photograph from the Archivo "
+        "del Centro de Ciencias Humanas y Sociales (CSIC), "
+        f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
+        "</figcaption></figure>"
     )
 
 
@@ -825,7 +843,7 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
     expected_first_kings_seven_sources = {
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
-        "cairo_cotp": "not-recorded",
+        "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
         "koren": "tracked-observation",
         "simanim": "no-later-mark",
@@ -1189,6 +1207,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 )
             ),
             _mam_post_silluq_leningrad_crop(),
+        ]
+    if image_id == "cairo-cotp-1k7-37":
+        return [
+            mb_html.para(("Cairo CoTP has the ", _ROM_SILLUQ, " alone.")),
+            _mam_post_silluq_cairo_cotp_crop(),
         ]
     if image_id == "sassoon-1053-1k7-37":
         return [

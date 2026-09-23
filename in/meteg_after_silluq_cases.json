@@ -58,7 +58,7 @@
       "sources": {
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
-        "cairo_cotp": "not-recorded",
+        "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
         "koren": "tracked-observation",
         "simanim": "no-later-mark"
@@ -70,6 +70,7 @@
       "images": [
         "aleppo-1k7-37",
         "leningrad-1k7-37",
+        "cairo-cotp-1k7-37",
         "sassoon-1053-1k7-37"
       ]
     },

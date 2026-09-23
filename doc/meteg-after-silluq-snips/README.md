@@ -6,8 +6,8 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-seven manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-three have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes twenty-eight manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-four have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -78,8 +78,17 @@ against Cairo CoTP. The earlier pre-vowel meteg research for Job 4:12 is in
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), section 5, and
 measures UXLC placements rather than Cairo CoTP.
 
-Cairo CoTP is also included in the source mask for 1 Kings 7:37, but Ben asked that its
-classification there remain unrecorded for now (2026-09-23).
+## [cairo-cotp-digital-page186-1K7v37-final-word.png](../../gh-pages/img/cairo-cotp-digital-page186-1K7v37-final-word.png)
+
+The verse-final word of 1 Kings 7:37 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
+and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 133206.png`, SHA-256
+`66BA51E13EF2FCE8C7E2B68BDD7D6B310720B94923A4C04A422225EB314FEDC0`. The published PNG
+is a byte-for-byte copy: 112,012 bytes and 374 × 236 pixels. Codex independently inspected the
+crop and saw no later metsil, agreeing with Ben's reading.
+
+Ben identifies it as digital page 186 in the [CSIC Simurg Cairo CoTP photograph
+collection](https://simurg.csic.es/view/9918494052404201). No manuscript page number appears on
+the page image. **Cairo CoTP has the silluq alone:** it has no meteg after the silluq.
 
 ## [sassoon-1053-1S17v5-nexoshet.png](../../gh-pages/img/sassoon-1053-1S17v5-nexoshet.png)
 

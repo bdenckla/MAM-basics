@@ -240,6 +240,10 @@ _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
 
+_MAM_POST_SILLUQ_CAIRO_COTP_CROP_URL = (
+    "img/cairo-cotp-digital-page186-1K7v37-final-word.png"
+)
+
 _MAM_POST_SILLUQ_SASSOON_CROP_URL = "img/sassoon-1053-1K7v37-final-word.png"
 
 _MAM_POST_SILLUQ_SASSOON_SOURCE_URL = (
@@ -379,6 +383,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "sassoon-1053-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
+    "cairo-cotp-1k7-37": "1 Kings 7:37",
     "sassoon-1053-1k7-37": "1 Kings 7:37",
     "aleppo-1k14-14": "1 Kings 14:14",
     "leningrad-1k14-14": "1 Kings 14:14",
@@ -416,6 +421,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
     "1 Kings 7:37": (
         "aleppo-1k7-37",
         "leningrad-1k7-37",
+        "cairo-cotp-1k7-37",
         "sassoon-1053-1k7-37",
     ),
     "1 Kings 14:14": (
