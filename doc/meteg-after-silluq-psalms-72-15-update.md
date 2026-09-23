@@ -77,6 +77,13 @@ Add. 1753 with the Aleppo Codex, against the Leningrad Codex's later mark. The c
 `gh-pages/img/cam1753-unlocated-Ps72v15-yevarkhenhu.png`; its manuscript page or folio and
 source site are not recorded. The finished report remains unchanged.
 
+## 2026-09-23: the Simanim Tanakh has silent sheva under the nun
+
+Ben reported on 2026-09-23 that in the Simanim Tanakh at Psalms 72:15,
+**יְבָרֲכֶֽנְהֽוּ**, the simple sheva under the nun is silent. This supplements the finished
+report's record of a vocal simple sheva under the resh: the vocality judgments concern two
+different shevas.
+
 ## 2026-09-23: Koren has silent sheva under the nun
 
 Ben reported on 2026-09-23 that the simple sheva under the nun in Koren's Psalms 72:15
