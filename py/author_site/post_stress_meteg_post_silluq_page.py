@@ -548,7 +548,7 @@ def _post_silluq_case_register(
     """The cross-source contrasts and unresolved candidates in one table."""
     complete_koren_by_ref = _complete_koren_by_ref(observations)
     headers = (
-        "Form",
+        "",
         mb_html.abbr(
             "bcv & img", {"title": "book-chapter-verse as a link to manuscript images"}
         ),
