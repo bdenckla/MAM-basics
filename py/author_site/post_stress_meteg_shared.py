@@ -252,6 +252,12 @@ _FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-att
 
 _FIRST_KINGS_14_CAIRO_COTP_CROP_URL = "img/cairo-cotp-image204-1K14v14-atta.png"
 
+_FIRST_KINGS_14_SASSOON_CROP_URL = "img/sassoon-1053-1K14v14-atta.png"
+
+_FIRST_KINGS_14_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=1+Kings&chapter=14&verse=14&manuscript=sassoon"
+)
+
 _PSALMS_60_ALEPPO_CROP_URL = "img/aleppo-251r-Ps60v10-HFRV33Y.png"
 
 _PSALMS_60_LENINGRAD_CROP_URL = "img/leningrad-377B-Ps60v10-HFRV33Y.png"
@@ -349,6 +355,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-1k14-14": "1 Kings 14:14",
     "leningrad-1k14-14": "1 Kings 14:14",
     "cairo-cotp-1k14-14": "1 Kings 14:14",
+    "sassoon-1053-1k14-14": "1 Kings 14:14",
     "aleppo-ps60-10": "Psalms 60:10",
     "leningrad-ps60-10": "Psalms 60:10",
     "cam1753-ps60-10": "Psalms 60:10",
@@ -383,6 +390,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "aleppo-1k14-14",
         "leningrad-1k14-14",
         "cairo-cotp-1k14-14",
+        "sassoon-1053-1k14-14",
     ),
     "Psalms 60:10": (
         "aleppo-ps60-10",
