@@ -50,6 +50,8 @@ from author_site.post_stress_meteg_shared import (
     _PSALMS_60_CAM1753_CROP_URL,
     _PSALMS_60_LENINGRAD_CROP_URL,
     _PSALMS_60_REF,
+    _PSALMS_60_SASSOON_CROP_URL,
+    _PSALMS_60_SASSOON_SOURCE_URL,
     _PSALMS_70_ALEPPO_CROP_URL,
     _PSALMS_70_CAM1753_CROP_URL,
     _PSALMS_70_LENINGRAD_CROP_URL,
@@ -259,6 +261,21 @@ def _psalms_60_cam1753_crop() -> object:
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_60_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge Add. 1753.</figcaption></figure>"
+    )
+
+
+def _psalms_60_sassoon_crop() -> object:
+    """The Codex Sassoon 1053 crop at Psalms 60:10, as interpreted by Ben."""
+    href = escape(_PSALMS_60_SASSOON_SOURCE_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_PSALMS_60_SASSOON_CROP_URL}"'
+        f' alt="Codex Sassoon 1053 crop of the verse-final word at {_PSALMS_60_REF};'
+        ' it has the silluq alone." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Codex Sassoon 1053; "
+        f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
+        "</figcaption></figure>"
     )
 
 
@@ -1010,6 +1027,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         return [_psalms_60_leningrad_crop()]
     if image_id == "cam1753-ps60-10":
         return [_psalms_60_cam1753_crop()]
+    if image_id == "sassoon-1053-ps60-10":
+        return [
+            mb_html.para(("Codex Sassoon 1053 has the ", _ROM_SILLUQ, " alone.")),
+            _psalms_60_sassoon_crop(),
+        ]
     if image_id == "aleppo-ps70-2":
         return [
             mb_html.para(

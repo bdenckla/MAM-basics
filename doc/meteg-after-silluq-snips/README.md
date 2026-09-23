@@ -6,7 +6,7 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-three manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); nineteen
+publishes twenty-four manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); twenty
 have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
 README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
 crop's available provenance; the Leningrad sections use the image sources named under “The
@@ -198,6 +198,19 @@ manuscript page or folio are not recorded. Codex did not independently inspect t
 Hebrew image.
 
 **Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
+
+## [sassoon-1053-Ps60v10-HFRV33Y.png](../../gh-pages/img/sassoon-1053-Ps60v10-HFRV33Y.png)
+
+The verse-final word of Psalms 60:10 in **Codex Sassoon 1053**. Ben supplied and interpreted
+the crop on 2026-09-23 from `Screenshot 2026-09-23 134736.png`, SHA-256
+`C56601762B319718EFBE9BC1717BEA441A90A47905B7864E257B5E60C2F50658`. The published PNG
+is a byte-for-byte copy: 224,572 bytes and 516 × 266 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
+60:10](https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon). A
+manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
+alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [aleppo-253r-Ps70v2-xushah.png](../../gh-pages/img/aleppo-253r-Ps70v2-xushah.png)
 

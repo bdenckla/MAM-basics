@@ -264,6 +264,12 @@ _PSALMS_60_LENINGRAD_CROP_URL = "img/leningrad-377B-Ps60v10-HFRV33Y.png"
 
 _PSALMS_60_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps60v10-HFRV33Y.png"
 
+_PSALMS_60_SASSOON_CROP_URL = "img/sassoon-1053-Ps60v10-HFRV33Y.png"
+
+_PSALMS_60_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon"
+)
+
 _PSALMS_70_ALEPPO_CROP_URL = "img/aleppo-253r-Ps70v2-xushah.png"
 
 _PSALMS_70_LENINGRAD_CROP_URL = "img/leningrad-379B-Ps70v2-xushah.png"
@@ -359,6 +365,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-ps60-10": "Psalms 60:10",
     "leningrad-ps60-10": "Psalms 60:10",
     "cam1753-ps60-10": "Psalms 60:10",
+    "sassoon-1053-ps60-10": "Psalms 60:10",
     "aleppo-ps70-2": "Psalms 70:2",
     "leningrad-ps70-2": "Psalms 70:2",
     "cam1753-ps70-2": "Psalms 70:2",
@@ -396,6 +403,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "aleppo-ps60-10",
         "leningrad-ps60-10",
         "cam1753-ps60-10",
+        "sassoon-1053-ps60-10",
     ),
     "Psalms 70:2": (
         "aleppo-ps70-2",
