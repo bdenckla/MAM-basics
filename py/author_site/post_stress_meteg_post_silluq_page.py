@@ -37,6 +37,7 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_TITLE,
     _POST_SILLUQ_VERSE,
     _PSALMS_60_ALEPPO_CROP_URL,
+    _PSALMS_60_CAM1753_CROP_URL,
     _PSALMS_60_LENINGRAD_CROP_URL,
     _PSALMS_60_REF,
     _PSALMS_70_ALEPPO_CROP_URL,
@@ -160,6 +161,16 @@ def _psalms_60_leningrad_crop() -> object:
         ' the silluq and a second metsil." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         f"<figcaption>Leningrad Codex, folio 377B ({_PSALMS_60_REF}).</figcaption></figure>"
+    )
+
+
+def _psalms_60_cam1753_crop() -> object:
+    """The Cambridge Add. 1753 crop at Psalms 60:10."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_60_CAM1753_CROP_URL}"'
+        f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_60_REF}; it has'
+        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_60_REF}).</figcaption></figure>"
     )
 
 
@@ -832,7 +843,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 (
                     "At ",
                     _PSALMS_60_REF,
-                    ", the Aleppo Codex has the ",
+                    ", the Aleppo Codex and Cambridge Add. 1753 have the ",
                     _ROM_SILLUQ,
                     " alone, while the Leningrad Codex has the ",
                     _ROM_SILLUQ,
@@ -851,6 +862,8 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "leningrad-ps60-10":
         return [_psalms_60_leningrad_crop()]
+    if image_id == "cam1753-ps60-10":
+        return [_psalms_60_cam1753_crop()]
     if image_id == "aleppo-ps70-2":
         return [
             mb_html.para(

@@ -18,6 +18,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `aleppo-253r-Ps70v2-xushah.png` | Aleppo Codex | Psalms 70:2 | Leaf 253r | mgketer.org | Not recorded |
 | `aleppo-253v-Ps72v15-yevarkhenhu.png` | Aleppo Codex | Psalms 72:15 | Leaf 253v | mgketer.org | Not recorded |
 | `aleppo-271r-col2-line5-Job4v12-menhu.png` | Aleppo Codex | Job 4:12 | Leaf 271r, column 2, line 5 | mgketer.org | Not recorded |
+| `cam1753-unlocated-Ps60v10-HFRV33Y.png` | Cambridge Add. 1753 | Psalms 60:10 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `cam1753-unlocated-Ps70v2-xushah.png` | Cambridge Add. 1753 | Psalms 70:2 | Not recorded | Supplied screenshot; source site not recorded | Not recorded |
 | `cam1753-0073B-col2-line13-Job4v12-menhu.png` | Cambridge Add. 1753 | Job 4:12 | Page 0073B, column 2, line 13 | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `LC-159A-col-3-line-8-1S-17v5.png` | Leningrad Codex | 1 Samuel 17:5 | F159A, column 3, line 8 | Not recorded in the inspected public record | Not recorded in the inspected public record |

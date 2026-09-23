@@ -112,6 +112,17 @@ established from the crop.
 **The Leningrad Codex has the silluq and a second metsil in this atom.** The second metsil is the
 likely meteg after the silluq; the Aleppo Codex has the silluq alone.
 
+## [cam1753-unlocated-Ps60v10-HFRV33Y.png](../../gh-pages/img/cam1753-unlocated-Ps60v10-HFRV33Y.png)
+
+Psalms 60:10, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and interpreted the
+crop on 2026-09-23. Its original source filename is `Screenshot 2026-09-23 100637.png`; its
+SHA-256 is `00C3DD084318DC9CF901B867FB5244282D25D730D62FCC7B9290B5822EEB176C`. The tracked
+PNG is a byte-for-byte copy: 48,375 bytes and 288 × 186 pixels. The source site and the
+manuscript page or folio are not recorded. Codex did not independently inspect the pointed
+Hebrew image.
+
+**Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
+
 ## [aleppo-253r-Ps70v2-xushah.png](../../gh-pages/img/aleppo-253r-Ps70v2-xushah.png)
 
 Psalms 70:2, the verse-final atom, on **leaf 253r**. Ben supplied and inspected the final crop on
