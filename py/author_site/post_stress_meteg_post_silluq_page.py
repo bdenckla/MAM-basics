@@ -594,10 +594,7 @@ def _post_silluq_case_register(
                 mb_html.code("AL7KS"),
                 "; ",
                 mb_html.code("7"),
-                " represents Cambridge Add. 1753. The 1 Sam. 17:5 example above "
-                "uses ",
-                mb_html.code("ALKS"),
-                " and does not include this source.",
+                " represents Cambridge Add. 1753.",
             )
         ),
     ]

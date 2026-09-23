@@ -50,7 +50,7 @@ manuscript images: 1 Samuel 17:5, 1 Kings 14:14, Psalms 60:10, Psalms 70:2 and P
 No class 1 case remains for Leningrad manuscript inspection. The lead of section 6 should say
 that the table gives locators for the five settled cases, rather than “the other three.”
 
-## Psalms 60:10: the codices contrast
+## Psalms 60:10: Aleppo, Koren, and the Simanim Tanakh contrast with Leningrad
 
 Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex has the silluq alone in the
 verse-final atom **הִתְרוֹעָֽעִי׃**: the stroke is on the first ayin, with no later stroke on the
@@ -64,6 +64,10 @@ On 2026-09-22 Ben inspected Koren scan page `D1-Ps-031`. Koren has only the sill
 verse-final atom, beside the qamats under the first ayin; Koren has no metsil under the second
 ayin. The Koren edition therefore joins the Aleppo Codex on the no-later-metsil side of the
 contrast.
+
+On 2026-09-23 Ben reported that the Simanim Tanakh, page 1043, likewise has only the silluq
+in this verse-final atom, with no later metsil. The Simanim Tanakh therefore joins Koren and
+the Aleppo Codex on the no-later-metsil side of the contrast.
 
 ## Psalms 70:2: Aleppo, Cambridge, Koren, and the Simanim Tanakh contrast with Leningrad
 
