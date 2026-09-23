@@ -85,7 +85,7 @@ def _mam_post_silluq_aleppo_crop() -> object:
         f' alt="Aleppo Codex crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
         ' it has a meteg after the silluq."'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, {_MAM_POST_SILLUQ_REF}.</figcaption></figure>"
+        "<figcaption>Aleppo Codex.</figcaption></figure>"
     )
 
 
@@ -96,7 +96,7 @@ def _mam_post_silluq_leningrad_crop() -> object:
         f' alt="Leningrad Codex crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
         ' it lacks a meteg after the silluq."'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
-        f"<figcaption>Leningrad Codex, {_MAM_POST_SILLUQ_REF}.</figcaption></figure>"
+        "<figcaption>Leningrad Codex.</figcaption></figure>"
     )
 
 
@@ -106,8 +106,8 @@ def _post_silluq_lc_crop() -> object:
         f'<figure><a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_POST_SILLUQ_LC_CROP_URL}"'
         f' alt="Leningrad Codex, F159A, column 3, line 8: {_POST_SILLUQ_REF}."'
-        ' loading="lazy"></a><figcaption>Leningrad Codex, F159A, column 3, line 8'
-        f" ({_POST_SILLUQ_REF}); crop attached to "
+        ' loading="lazy"></a><figcaption>Leningrad Codex, F159A, column 3, line 8;'
+        " crop attached to "
         f'<a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">phonetic-hbo #78</a>.</figcaption></figure>'
     )
@@ -119,7 +119,7 @@ def _post_silluq_aleppo_crop() -> object:
         f'<figure><img src="{_POST_SILLUQ_ALEPPO_CROP_URL}"'
         f' alt="Aleppo Codex crop of the verse-final word in {_POST_SILLUQ_REF}; it has'
         ' no meteg after the silluq." loading="lazy">'
-        f"<figcaption>Aleppo Codex, {_POST_SILLUQ_REF}.</figcaption></figure>"
+        "<figcaption>Aleppo Codex.</figcaption></figure>"
     )
 
 
@@ -131,7 +131,7 @@ def _post_silluq_cairo_cotp_crop() -> object:
         f' alt="Cairo CoTP crop of the verse-final word at {_POST_SILLUQ_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
         "</a><figcaption>Cairo CoTP (Codex of the Prophets), manuscript page 110, "
-        f"digital image 103 ({_POST_SILLUQ_REF}); photograph from the "
+        "digital image 103; photograph from the "
         "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
         f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
@@ -146,7 +146,7 @@ def _first_kings_14_aleppo_crop() -> object:
         f' alt="Aleppo Codex crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
         ' the silluq alone, without a second metsil." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, leaf 83r ({_UXLC_CHANGE_REF}).</figcaption></figure>"
+        "<figcaption>Aleppo Codex, leaf 83r.</figcaption></figure>"
     )
 
 
@@ -157,8 +157,8 @@ def _first_kings_14_leningrad_crop() -> object:
         f' alt="Leningrad Codex crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
         ' a second metsil after the silluq." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad Codex, folio 195B, column 2, line 27 "
-        f"({_UXLC_CHANGE_REF}).</figcaption></figure>"
+        "<figcaption>Leningrad Codex, folio 195B, column 2, line 27."
+        "</figcaption></figure>"
     )
 
 
@@ -168,7 +168,7 @@ def _psalms_60_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_60_ALEPPO_CROP_URL}"'
         f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_60_REF}; it has the'
         ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, leaf 251r ({_PSALMS_60_REF}).</figcaption></figure>"
+        "<figcaption>Aleppo Codex, leaf 251r.</figcaption></figure>"
     )
 
 
@@ -179,7 +179,7 @@ def _psalms_60_leningrad_crop() -> object:
         f' alt="Leningrad Codex crop of the verse-final word at {_PSALMS_60_REF}; it has'
         ' the silluq and a second metsil." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        f"<figcaption>Leningrad Codex, folio 377B ({_PSALMS_60_REF}).</figcaption></figure>"
+        "<figcaption>Leningrad Codex, folio 377B.</figcaption></figure>"
     )
 
 
@@ -189,7 +189,7 @@ def _psalms_60_cam1753_crop() -> object:
         f'<figure><img src="{_PSALMS_60_CAM1753_CROP_URL}"'
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_60_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_60_REF}).</figcaption></figure>"
+        "<figcaption>Cambridge Add. 1753.</figcaption></figure>"
     )
 
 
@@ -199,7 +199,7 @@ def _psalms_70_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_70_ALEPPO_CROP_URL}"'
         f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_70_REF}; it has the'
         ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, leaf 253r ({_PSALMS_70_REF}).</figcaption></figure>"
+        "<figcaption>Aleppo Codex, leaf 253r.</figcaption></figure>"
     )
 
 
@@ -210,7 +210,7 @@ def _psalms_70_leningrad_crop() -> object:
         f' alt="Leningrad Codex crop of the verse-final word at {_PSALMS_70_REF}; it has'
         ' the silluq and a second metsil." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        f"<figcaption>Leningrad Codex, folio 379B ({_PSALMS_70_REF}).</figcaption></figure>"
+        "<figcaption>Leningrad Codex, folio 379B.</figcaption></figure>"
     )
 
 
@@ -220,7 +220,7 @@ def _psalms_70_cam1753_crop() -> object:
         f'<figure><img src="{_PSALMS_70_CAM1753_CROP_URL}"'
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_70_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_70_REF}).</figcaption></figure>"
+        "<figcaption>Cambridge Add. 1753.</figcaption></figure>"
     )
 
 
@@ -230,7 +230,7 @@ def _psalms_72_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_72_ALEPPO_CROP_URL}"'
         f' alt="Aleppo Codex crop of the verse-final word at {_PSALMS_72_REF}; it lacks'
         ' a meteg after the silluq." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, leaf 253v ({_PSALMS_72_REF}).</figcaption></figure>"
+        "<figcaption>Aleppo Codex, leaf 253v.</figcaption></figure>"
     )
 
 
@@ -240,7 +240,7 @@ def _psalms_72_leningrad_crop() -> object:
         f'<figure><img src="{_PSALMS_72_LENINGRAD_CROP_URL}"'
         f' alt="Leningrad Codex crop of the verse-final word at {_PSALMS_72_REF}; it has'
         ' a meteg after the silluq." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Leningrad Codex, folio 380A, line 3 ({_PSALMS_72_REF})."
+        "<figcaption>Leningrad Codex, folio 380A, line 3."
         "</figcaption></figure>"
     )
 
@@ -251,7 +251,7 @@ def _psalms_72_cam1753_crop() -> object:
         f'<figure><img src="{_PSALMS_72_CAM1753_CROP_URL}"'
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_72_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_72_REF}).</figcaption></figure>"
+        "<figcaption>Cambridge Add. 1753.</figcaption></figure>"
     )
 
 
@@ -261,7 +261,7 @@ def _job_4_aleppo_crop() -> object:
         f'<figure><img src="{_JOB_4_ALEPPO_CROP_URL}"'
         f' alt="Aleppo Codex crop of the verse-final word at {_JOB_4_REF}; it has both'
         ' strokes." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Aleppo Codex, leaf 271r, column 2, line 5 ({_JOB_4_REF})."
+        "<figcaption>Aleppo Codex, leaf 271r, column 2, line 5."
         "</figcaption></figure>"
     )
 
@@ -272,7 +272,7 @@ def _job_4_leningrad_crop() -> object:
         f'<figure><img src="{_JOB_4_LENINGRAD_CROP_URL}"'
         f' alt="Leningrad Codex crop of the verse-final word at {_JOB_4_REF}; it has both'
         ' strokes." loading="lazy" style="max-width: 100%; height: auto;">'
-        f"<figcaption>Leningrad Codex, folio 398A ({_JOB_4_REF}).</figcaption></figure>"
+        "<figcaption>Leningrad Codex, folio 398A.</figcaption></figure>"
     )
 
 
@@ -283,7 +283,7 @@ def _job_4_cam1753_crop() -> object:
         f' alt="Cambridge Add. 1753 crop of the verse-final word at {_JOB_4_REF}; it has'
         ' both strokes, with the silluq to the left of its segol." loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        f"<figcaption>Cambridge Add. 1753, page 0073B, column 2, line 13 ({_JOB_4_REF})."
+        "<figcaption>Cambridge Add. 1753, page 0073B, column 2, line 13."
         "</figcaption></figure>"
     )
 
