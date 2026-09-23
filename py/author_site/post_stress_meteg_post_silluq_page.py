@@ -576,22 +576,15 @@ def _post_silluq_case_register(
         for case in sorted(cases, key=lambda case: _scriptural_bcv_key(case["bcv"]))
     ]
     unclassified_case = next(
-        (
-            case
-            for case in cases
-            if case["sources"]["koren"] == "not-recorded"
-            and case["sources"]["simanim"] == "not-recorded"
-        ),
+        (case for case in cases if case["sources"]["simanim"] == "not-recorded"),
         None,
     )
     if unclassified_case is None:
-        raise ValueError(
-            "The register needs an example with unclassified Koren and Simanim"
-        )
+        raise ValueError("The register needs an example with unclassified Simanim")
     unclassified_masks = _case_source_mask_values(
         unclassified_case, complete_koren_by_ref
     )
-    if unclassified_masks != ("-L--", "A---"):
+    if unclassified_masks != ("-L--", "A-K-"):
         raise ValueError("The unclassified-source mask example drifted")
     return [
         mb_html.heading_level_2("Case register", {"id": "case-register"}),
@@ -612,7 +605,7 @@ def _post_silluq_case_register(
         mb_html.para(
             "A dash in both lines at the same position means that no classification "
             "is recorded for that source. In this entry, no classification is recorded "
-            "for either K or S (Koren or the Simanim Tanakh)."
+            "for S (the Simanim Tanakh)."
         ),
     ]
 

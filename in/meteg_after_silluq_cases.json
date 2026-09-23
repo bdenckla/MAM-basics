@@ -137,7 +137,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "koren": "not-recorded",
+        "koren": "no-later-mark",
         "simanim": "not-recorded"
       },
       "additional_sources": [
