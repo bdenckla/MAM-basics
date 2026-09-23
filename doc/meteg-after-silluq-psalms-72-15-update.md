@@ -76,3 +76,10 @@ Ben supplied and interpreted a Cambridge Add. 1753 crop of the verse-final atom 
 Add. 1753 with the Aleppo Codex, against the Leningrad Codex's later mark. The crop is
 `gh-pages/img/cam1753-unlocated-Ps72v15-yevarkhenhu.png`; its manuscript page or folio and
 source site are not recorded. The finished report remains unchanged.
+
+## 2026-09-23: Koren has silent sheva under the nun
+
+Ben reported on 2026-09-23 that the simple sheva under the nun in Koren's Psalms 72:15
+is silent. The finished report already identifies Koren's scan file as `D1-Ps-038.jpg`,
+and `in/scan-pages/koren.json` lists it as a Psalms body page. Ben describes the printed
+page label as לח (38); the section counted by this pagination is not established here.
