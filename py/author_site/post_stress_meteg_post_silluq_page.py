@@ -26,6 +26,8 @@ from author_site.post_stress_meteg_shared import (
     _PLAUT_STEIN_TORAH_URL,
     _POST_SILLUQ_ALEPPO_CROP_URL,
     _POST_SILLUQ_BCV_CELL,
+    _POST_SILLUQ_CAIRO_COTP_CROP_URL,
+    _POST_SILLUQ_CAIRO_COTP_SOURCE_URL,
     _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID,
     _POST_SILLUQ_FNAME,
     _POST_SILLUQ_FOOTNOTE_ID,
@@ -118,6 +120,22 @@ def _post_silluq_aleppo_crop() -> object:
         f' alt="Aleppo Codex crop of the verse-final word in {_POST_SILLUQ_REF}; it has'
         ' no meteg after the silluq." loading="lazy">'
         f"<figcaption>Aleppo Codex, {_POST_SILLUQ_REF}.</figcaption></figure>"
+    )
+
+
+def _post_silluq_cairo_cotp_crop() -> object:
+    """The Cairo CoTP crop at 1 Samuel 17:5, as interpreted by Ben."""
+    return mb_html.raw_html(
+        f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        f' rel="noopener"><img src="{_POST_SILLUQ_CAIRO_COTP_CROP_URL}"'
+        f' alt="Cairo CoTP crop of the verse-final word at {_POST_SILLUQ_REF}; it has'
+        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        "</a><figcaption>Cairo CoTP (Codex of the Prophets), manuscript page 110, "
+        f"digital image 113 ({_POST_SILLUQ_REF}); photograph from the "
+        "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
+        f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
+        ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
+        "</figcaption></figure>"
     )
 
 
@@ -339,7 +357,7 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the ALKS or AL7KS masks for one case."""
+    """Render the ALCKS or AL7KS masks for one case."""
     has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
     return _source_mask_pair(has_mask, does_not_have_mask)
 
@@ -449,7 +467,7 @@ def _post_silluq_first_samuel_example(
     mam_forms: dict[str, str],
     observations: list[dict],
 ) -> list:
-    """Introduce the two forms, syllable colors, and ALKS notation at 1 Samuel 17:5."""
+    """Introduce the two forms, syllable colors, and ALCKS notation at 1 Samuel 17:5."""
     cases_by_bcv = {case["bcv"]: case for case in cases}
     first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
     if first_samuel is None:
@@ -457,6 +475,7 @@ def _post_silluq_first_samuel_example(
     expected_sources = {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cairo_cotp": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark",
     }
@@ -476,7 +495,7 @@ def _post_silluq_first_samuel_example(
     ):
         raise ValueError("1 Samuel 17:5: the two forms differ beyond the later meteg")
     masks = _case_source_mask_values(first_samuel, _complete_koren_by_ref(observations))
-    if masks != ("-L--", "A-KS"):
+    if masks != ("-L---", "A-CKS"):
         raise ValueError("1 Samuel 17:5: introductory source masks drifted")
     return [
         mb_html.para(
@@ -512,9 +531,10 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "In contrast, in the Aleppo Codex, and in editions of Tanakh that "
-                "are not so slavishly devoted to the Leningrad Codex, such as Koren "
-                "and the Simanim Tanakh, there is no such ",
+                "In contrast, in the Aleppo Codex and Cairo CoTP (Codex of the "
+                "Prophets), and in editions of Tanakh that are not so slavishly "
+                "devoted to the Leningrad Codex, such as Koren and the Simanim "
+                "Tanakh, there is no such ",
                 _ROM_METEG,
                 " after the ",
                 _ROM_SILLUQ,
@@ -535,8 +555,8 @@ def _post_silluq_first_samuel_example(
             (
                 "The first line means that the Leningrad Codex (L) has the later ",
                 _METSIL,
-                ", while the second line means that the Aleppo Codex (A), Koren (K), "
-                "and the Simanim Tanakh (S) do not.",
+                ", while the second line means that the Aleppo Codex (A), Cairo "
+                "CoTP (C), Koren (K), and the Simanim Tanakh (S) do not.",
             )
         ),
     ]
@@ -612,7 +632,12 @@ def _post_silluq_case_register(
         ),
         mb_html.para(
             (
-                "In the three Psalms rows and the Job row, the source order is ",
+                "In the three Prophets rows, the source order is ",
+                mb_html.code("ALCKS"),
+                "; ",
+                mb_html.code("C"),
+                " represents Cairo CoTP. In the three Psalms rows and the Job row, "
+                "the source order is ",
                 mb_html.code("AL7KS"),
                 "; ",
                 mb_html.code("7"),
@@ -658,6 +683,7 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
     expected_first_kings_seven_sources = {
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
+        "cairo_cotp": "not-recorded",
         "koren": "tracked-observation",
         "simanim": "no-later-mark",
     }
@@ -826,6 +852,28 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 )
             ),
             _post_silluq_aleppo_crop(),
+        ]
+    if image_id == "cairo-cotp-1s17-5":
+        return [
+            mb_html.para(
+                (
+                    "Cairo CoTP has the ",
+                    _ROM_SILLUQ,
+                    " alone at ",
+                    _POST_SILLUQ_REF,
+                    ".",
+                )
+            ),
+            _post_silluq_cairo_cotp_crop(),
+            mb_html.para(
+                (
+                    "A stroke attached to the lamed ascender in the crop may look "
+                    "like a ",
+                    _ROM_METEG,
+                    ", but it is part of the scribe's lamed. Ben notes that the "
+                    "other lameds on the manuscript page have the same feature.",
+                )
+            ),
         ]
     if image_id == "aleppo-1k14-14":
         return [

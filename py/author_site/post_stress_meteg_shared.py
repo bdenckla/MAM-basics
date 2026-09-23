@@ -226,6 +226,10 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 
+_POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image113-1S17v5-nexoshet.png"
+
+_POST_SILLUQ_CAIRO_COTP_SOURCE_URL = "https://simurg.csic.es/view/9918494052404201"
+
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
@@ -281,7 +285,14 @@ _POST_SILLUQ_SOURCE_STATES = frozenset(
     }
 )
 
-_POST_SILLUQ_SOURCES = ("aleppo", "leningrad", "koren", "simanim")
+_POST_SILLUQ_CAIRO_COTP_BCVS = frozenset({"1s17:5", "1k7:37", "1k14:14"})
+_POST_SILLUQ_CAIRO_COTP_SOURCES = (
+    "aleppo",
+    "leningrad",
+    "cairo_cotp",
+    "koren",
+    "simanim",
+)
 _POST_SILLUQ_CAM1753_BCVS = frozenset({"ps60:10", "ps70:2", "ps72:15", "jb4:12"})
 _POST_SILLUQ_CAM1753_SOURCES = (
     "aleppo",
@@ -293,15 +304,18 @@ _POST_SILLUQ_CAM1753_SOURCES = (
 
 
 def _post_silluq_sources_for_bcv(bcv: str) -> tuple[str, ...]:
-    """Use AL7KS for the four Cambridge Add. 1753 comparison cases."""
+    """Use ALCKS for the Prophets cases and AL7KS for the other four."""
+    if bcv in _POST_SILLUQ_CAIRO_COTP_BCVS:
+        return _POST_SILLUQ_CAIRO_COTP_SOURCES
     if bcv in _POST_SILLUQ_CAM1753_BCVS:
         return _POST_SILLUQ_CAM1753_SOURCES
-    return _POST_SILLUQ_SOURCES
+    raise ValueError(f"Unknown post-silluq source set for {bcv!r}")
 
 
 _POST_SILLUQ_SOURCE_CODES = {
     "aleppo": "A",
     "leningrad": "L",
+    "cairo_cotp": "C",
     "cam1753": "7",
     "koren": "K",
     "simanim": "S",
@@ -310,6 +324,7 @@ _POST_SILLUQ_SOURCE_CODES = {
 _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-1s17-5": "1 Samuel 17:5",
     "lc-1s17-5": "1 Samuel 17:5",
+    "cairo-cotp-1s17-5": "1 Samuel 17:5",
     "aleppo-ps72-15": "Psalms 72:15",
     "leningrad-ps72-15": "Psalms 72:15",
     "cam1753-ps72-15": "Psalms 72:15",
@@ -331,7 +346,11 @@ _POST_SILLUQ_IMAGE_REFS = {
 _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
 
 _POST_SILLUQ_IMAGE_SEQUENCES = {
-    "1 Samuel 17:5": ("aleppo-1s17-5", "lc-1s17-5"),
+    "1 Samuel 17:5": (
+        "aleppo-1s17-5",
+        "lc-1s17-5",
+        "cairo-cotp-1s17-5",
+    ),
     "Psalms 72:15": (
         "aleppo-ps72-15",
         "leningrad-ps72-15",

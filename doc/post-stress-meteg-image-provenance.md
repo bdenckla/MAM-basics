@@ -18,6 +18,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `aleppo-253r-Ps70v2-xushah.png` | Aleppo Codex | Psalms 70:2 | Leaf 253r | mgketer.org | Not recorded |
 | `aleppo-253v-Ps72v15-yevarkhenhu.png` | Aleppo Codex | Psalms 72:15 | Leaf 253v | mgketer.org | Not recorded |
 | `aleppo-271r-col2-line5-Job4v12-menhu.png` | Aleppo Codex | Job 4:12 | Leaf 271r, column 2, line 5 | mgketer.org | Not recorded |
+| `cairo-cotp-p110-image113-1S17v5-nexoshet.png` | Cairo CoTP (Codex of the Prophets) | 1 Samuel 17:5 | Manuscript page 110; digital image 113, per Ben | Screenshot supplied by Ben from [CSIC Simurg](https://simurg.csic.es/view/9918494052404201) | Not independently established; CSIC lists CC BY-NC-SA 4.0 for the digital copy |
 | `cam1753-unlocated-Ps60v10-HFRV33Y.png` | Cambridge Add. 1753 | Psalms 60:10 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `cam1753-unlocated-Ps70v2-xushah.png` | Cambridge Add. 1753 | Psalms 70:2 | Not recorded | Supplied screenshot; source site not recorded | Not recorded |
 | `cam1753-unlocated-Ps72v15-yevarkhenhu.png` | Cambridge Add. 1753 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
@@ -45,6 +46,14 @@ The Cambridge Job 4:12 crop was added on 2026-09-22 from Ben's
 retains the screenshot's bytes unchanged. Page 0073B, column 2, line 13 is recorded in the
 finished Job 4:12 report from the manuscript's tracked line-break data; the screenshot's source
 site is not recorded.
+
+The Cairo CoTP 1 Samuel 17:5 crop was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 121710.png`, SHA-256
+`049E1DBB11B81C591A7B59A490203E7B6C4ED45B1F5629408764448F8B5619B9`. The tracked crop
+retains the screenshot's bytes unchanged. Ben identified manuscript page 110 and digital image
+113 and read the silluq alone. Codex did not inspect the pointed-Hebrew image. The CSIC source
+record attributes the photograph collection to the Archivo del Centro de Ciencias Humanas y
+Sociales and states CC BY-NC-SA 4.0 terms for the digital copy.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds

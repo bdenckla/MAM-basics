@@ -9,6 +9,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cairo_cotp": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -18,7 +19,8 @@
       ],
       "images": [
         "aleppo-1s17-5",
-        "lc-1s17-5"
+        "lc-1s17-5",
+        "cairo-cotp-1s17-5"
       ]
     },
     {
@@ -52,6 +54,7 @@
       "sources": {
         "aleppo": "later-meteg",
         "leningrad": "no-later-mark",
+        "cairo_cotp": "not-recorded",
         "koren": "tracked-observation",
         "simanim": "no-later-mark"
       },
@@ -94,6 +97,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
+        "cairo_cotp": "not-recorded",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },

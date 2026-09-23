@@ -6,7 +6,7 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes fifteen manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); eleven
+publishes sixteen manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); twelve
 have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
 README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
 crop's available provenance; the Leningrad sections use the image sources named under “The
@@ -51,6 +51,31 @@ to an image. The page is a folio and side, as in `430B`.
 
 A printed edition's crop is named like a manuscript's, the edition in the manuscript's place. Its
 page is named by a pencil mark on it, as in `pencil99`.
+
+## [cairo-cotp-p110-image113-1S17v5-nexoshet.png](../../gh-pages/img/cairo-cotp-p110-image113-1S17v5-nexoshet.png)
+
+The verse-final word of 1 Samuel 17:5 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
+and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 121710.png`, SHA-256
+`049E1DBB11B81C591A7B59A490203E7B6C4ED45B1F5629408764448F8B5619B9`. The published PNG
+is a byte-for-byte copy: 93,607 bytes and 270 × 232 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben identifies the manuscript page as 110 and the digital image as 113 in the [CSIC Simurg
+photograph collection](https://simurg.csic.es/view/9918494052404201). The collection's source
+record names the Archivo del Centro de Ciencias Humanas y Sociales as the archive and states that
+the digital copy is distributed under CC BY-NC-SA 4.0.
+
+**Cairo CoTP has the silluq alone:** it has no meteg after the silluq. Ben notes that a stroke
+attached to the lamed ascender may look like a meteg, but is the scribe's lamed letterform; the
+other lameds on the manuscript page have the same feature. Ben does not know whether
+pre-vowel meteg is common in Cairo CoTP. His broader expectation that, in manuscripts where
+pre-vowel meteg is common, it rarely occurs beyond an initial vowel has not been checked
+against Cairo CoTP. The earlier pre-vowel meteg research for Job 4:12 is in
+[`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md), section 5, and
+measures UXLC placements rather than Cairo CoTP.
+
+Cairo CoTP is included in the source masks for 1 Kings 7:37 and 1 Kings 14:14. Ben asked that
+its classifications for both Kings words remain unrecorded for now (2026-09-23).
 
 ## [aleppo-083r-1K14v14-atta.png](../../gh-pages/img/aleppo-083r-1K14v14-atta.png)
 
