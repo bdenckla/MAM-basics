@@ -65,18 +65,22 @@ verse-final atom, beside the qamats under the first ayin; Koren has no metsil un
 ayin. The Koren edition therefore joins the Aleppo Codex on the no-later-metsil side of the
 contrast.
 
-## Psalms 70:2: Aleppo, Cambridge, and Koren contrast with Leningrad
+## Psalms 70:2: Aleppo, Cambridge, Koren, and the Simanim Tanakh contrast with Leningrad
 
 Recorded from Ben's inspection on 2026-09-21. The Aleppo Codex and Cambridge Add. 1753 have the
 silluq alone in the verse-final atom. The Leningrad Codex has two metsil marks. The first is the
 silluq, and the later mark is the likely meteg after the silluq.
 
 The three manuscript crops settle the case: Leningrad is on the later-metsil side, while Aleppo
-and Cambridge Add. 1753 are on the no-later-metsil side. The Simanim Tanakh remains not recorded.
+and Cambridge Add. 1753 are on the no-later-metsil side.
 
 On 2026-09-23 Ben inspected Koren scan page `D1-Ps-037`. Koren has only the silluq on ח (xet)
 in the verse-final atom, with no later metsil. Koren therefore joins the Aleppo Codex and
 Cambridge Add. 1753 on the no-later-metsil side of the contrast.
+
+On 2026-09-23 Ben reported that the Simanim Tanakh, page 1051, likewise has only the silluq
+on ח (xet) in the verse-final atom, with no later metsil. The Simanim Tanakh therefore joins
+Koren, the Aleppo Codex, and Cambridge Add. 1753 on the no-later-metsil side of the contrast.
 
 The finished report's statement “Four of the five have more on disk” should now say that all five
 class 1 cases have supporting material on disk.
