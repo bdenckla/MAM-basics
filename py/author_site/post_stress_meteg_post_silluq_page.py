@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from html import escape
 
 from accgram import post_stress_meteg_model as psm
 from accgram.almost_errors_html_shared import wrap_hebrew_runs
@@ -36,6 +37,8 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_LC_CROP_URL,
     _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID,
     _POST_SILLUQ_REF,
+    _POST_SILLUQ_SASSOON_CROP_URL,
+    _POST_SILLUQ_SASSOON_SOURCE_URL,
     _POST_SILLUQ_SOURCE_CODES,
     _POST_SILLUQ_TITLE,
     _POST_SILLUQ_VERSE,
@@ -136,6 +139,21 @@ def _post_silluq_cairo_cotp_crop() -> object:
         "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
         f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
+        "</figcaption></figure>"
+    )
+
+
+def _post_silluq_sassoon_crop() -> object:
+    """The Codex Sassoon 1053 crop at 1 Samuel 17:5, as interpreted by Ben."""
+    href = escape(_POST_SILLUQ_SASSOON_SOURCE_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_POST_SILLUQ_SASSOON_CROP_URL}"'
+        f' alt="Codex Sassoon 1053 crop of the verse-final word at {_POST_SILLUQ_REF};'
+        ' it has the silluq alone." loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>Codex Sassoon 1053; "
+        f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
         "</figcaption></figure>"
     )
 
@@ -894,6 +912,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                     "other lameds on the manuscript page have the same feature.",
                 )
             ),
+        ]
+    if image_id == "sassoon-1053-1s17-5":
+        return [
+            mb_html.para(("Codex Sassoon 1053 has the ", _ROM_SILLUQ, " alone.")),
+            _post_silluq_sassoon_crop(),
         ]
     if image_id == "aleppo-1k14-14":
         return [

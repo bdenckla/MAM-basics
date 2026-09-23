@@ -230,6 +230,12 @@ _POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image103-1S17v5-nexoshet
 
 _POST_SILLUQ_CAIRO_COTP_SOURCE_URL = "https://simurg.csic.es/view/9918494052404201"
 
+_POST_SILLUQ_SASSOON_CROP_URL = "img/sassoon-1053-1S17v5-nexoshet.png"
+
+_POST_SILLUQ_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon"
+)
+
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
@@ -327,6 +333,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-1s17-5": "1 Samuel 17:5",
     "lc-1s17-5": "1 Samuel 17:5",
     "cairo-cotp-1s17-5": "1 Samuel 17:5",
+    "sassoon-1053-1s17-5": "1 Samuel 17:5",
     "aleppo-ps72-15": "Psalms 72:15",
     "leningrad-ps72-15": "Psalms 72:15",
     "cam1753-ps72-15": "Psalms 72:15",
@@ -353,6 +360,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "aleppo-1s17-5",
         "lc-1s17-5",
         "cairo-cotp-1s17-5",
+        "sassoon-1053-1s17-5",
     ),
     "Psalms 72:15": (
         "aleppo-ps72-15",

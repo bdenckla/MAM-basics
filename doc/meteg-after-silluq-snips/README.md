@@ -6,7 +6,7 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); sixteen
+publishes twenty-one manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); seventeen
 have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
 README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
 crop's available provenance; the Leningrad sections use the image sources named under “The
@@ -76,6 +76,19 @@ measures UXLC placements rather than Cairo CoTP.
 
 Cairo CoTP is also included in the source mask for 1 Kings 7:37, but Ben asked that its
 classification there remain unrecorded for now (2026-09-23).
+
+## [sassoon-1053-1S17v5-nexoshet.png](../../gh-pages/img/sassoon-1053-1S17v5-nexoshet.png)
+
+The verse-final word of 1 Samuel 17:5 in **Codex Sassoon 1053**. Ben supplied and interpreted
+the crop on 2026-09-23 from `Screenshot 2026-09-23 133845.png`, SHA-256
+`8ED84ED295115DF367C99A10D35A6212BC94139EE10E0EB9FA5C7F16E906AD73`. The published PNG
+is a byte-for-byte copy: 207,099 bytes and 356 × 346 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Samuel
+17:5](https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon). A
+manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
+alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [aleppo-083r-1K14v14-atta.png](../../gh-pages/img/aleppo-083r-1K14v14-atta.png)
 

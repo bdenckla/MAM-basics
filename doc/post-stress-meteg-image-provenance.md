@@ -32,6 +32,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `leningrad-379B-Ps70v2-xushah.png` | Leningrad Codex | Psalms 70:2 | Folio 379B; no independently read column or line | Supplied screenshot; source site not recorded | Not recorded |
 | `leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png` | Leningrad Codex | Psalms 72:15 | Folio 380A, line 3; column 2 is the estimator's value | Sefaria and Internet Archive image sets documented in the source-note README | Not recorded |
 | `leningrad-398A-Job4v12-menhu.png` | Leningrad Codex | Job 4:12 | Folio 398A; no independently read column or line | Sefaria and Internet Archive image sets documented in the source-note README | Not recorded |
+| `sassoon-1053-1S17v5-nexoshet.png` | Codex Sassoon 1053 | 1 Samuel 17:5 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon) | Not independently established |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
 The URJ crop was added on 2026-09-22 from `Screenshot 2026-09-22 092430.png`, SHA-256
@@ -62,6 +63,12 @@ The Cairo CoTP 1 Kings 14:14 crop was added on 2026-09-23 from Ben's
 retains the screenshot's bytes unchanged. Ben identified digital image 204, reported that the
 manuscript page has no page label, and read the silluq alone. Codex did not inspect the
 pointed-Hebrew image.
+
+The Codex Sassoon 1053 crop of 1 Samuel 17:5 was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 133845.png`, SHA-256
+`8ED84ED295115DF367C99A10D35A6212BC94139EE10E0EB9FA5C7F16E906AD73`. The tracked crop
+retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
+coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds
