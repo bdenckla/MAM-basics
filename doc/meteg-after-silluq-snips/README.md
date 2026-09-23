@@ -6,11 +6,11 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-four manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/); twenty
-have fuller source notes below. The unpublished Second Rabbinic Bible crop remains beside this
-README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section records the
-crop's available provenance; the Leningrad sections use the image sources named under “The
-Leningrad Codex” only when the source of the supplied crop is established.
+publishes twenty-five manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-one have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
+records the crop's available provenance; the Leningrad sections use the image sources named
+under “The Leningrad Codex” only when the source of the supplied crop is established.
 
 Each file is named `<source>-<page>-<ref>-<slug>.png`: the manuscript or edition, then the page in
 that source's form. A Leningrad crop may include both column and line when Ben has read the line
@@ -259,6 +259,19 @@ pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked P
 `BC75D5A08CA3142C71846435526972FFD5D70E934D84A95B129A6F94EB81D8B2`.
 
 **Cambridge Add. 1753 has the silluq alone:** there is no later metsil.
+
+## [sassoon-1053-Ps70v2-xushah.png](../../gh-pages/img/sassoon-1053-Ps70v2-xushah.png)
+
+The verse-final word of Psalms 70:2 in **Codex Sassoon 1053**. Ben supplied and interpreted
+the crop on 2026-09-23 from `Screenshot 2026-09-23 140012.png`, SHA-256
+`69BA4120F041762992FB557E2A030CB91E7E34B2A0DD300DFADCC0A486F57A72`. The published PNG
+is a byte-for-byte copy: 140,753 bytes and 284 × 280 pixels. Codex did not independently inspect
+the pointed-Hebrew image.
+
+Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
+70:2](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon). A
+manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
+alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 

@@ -36,6 +36,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `sassoon-1053-1K7v37-final-word.png` | Codex Sassoon 1053 | 1 Kings 7:37 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=1+Kings&chapter=7&verse=37&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-1K14v14-atta.png` | Codex Sassoon 1053 | 1 Kings 14:14 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=1+Kings&chapter=14&verse=14&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Ps60v10-HFRV33Y.png` | Codex Sassoon 1053 | Psalms 60:10 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon) | Not independently established |
+| `sassoon-1053-Ps70v2-xushah.png` | Codex Sassoon 1053 | Psalms 70:2 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon) | Not independently established |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
 The URJ crop was added on 2026-09-22 from `Screenshot 2026-09-22 092430.png`, SHA-256
@@ -88,6 +89,12 @@ coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
 The Codex Sassoon 1053 crop of Psalms 60:10 was added on 2026-09-23 from Ben's
 `Screenshot 2026-09-23 134736.png`, SHA-256
 `C56601762B319718EFBE9BC1717BEA441A90A47905B7864E257B5E60C2F50658`. The tracked crop
+retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
+coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
+
+The Codex Sassoon 1053 crop of Psalms 70:2 was added on 2026-09-23 from Ben's
+`Screenshot 2026-09-23 140012.png`, SHA-256
+`69BA4120F041762992FB557E2A030CB91E7E34B2A0DD300DFADCC0A486F57A72`. The tracked crop
 retains the screenshot's bytes unchanged. Ben read the silluq alone. No manuscript page or folio
 coordinate was supplied, and Codex did not inspect the pointed-Hebrew image.
 

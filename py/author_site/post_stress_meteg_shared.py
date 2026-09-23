@@ -276,6 +276,12 @@ _PSALMS_70_LENINGRAD_CROP_URL = "img/leningrad-379B-Ps70v2-xushah.png"
 
 _PSALMS_70_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps70v2-xushah.png"
 
+_PSALMS_70_SASSOON_CROP_URL = "img/sassoon-1053-Ps70v2-xushah.png"
+
+_PSALMS_70_SASSOON_SOURCE_URL = (
+    "https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon"
+)
+
 _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
@@ -369,6 +375,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "aleppo-ps70-2": "Psalms 70:2",
     "leningrad-ps70-2": "Psalms 70:2",
     "cam1753-ps70-2": "Psalms 70:2",
+    "sassoon-1053-ps70-2": "Psalms 70:2",
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
     "cam1753-jb4-12": "Job 4:12",
@@ -409,6 +416,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "aleppo-ps70-2",
         "leningrad-ps70-2",
         "cam1753-ps70-2",
+        "sassoon-1053-ps70-2",
     ),
     "Job 4:12": ("aleppo-jb4-12", "leningrad-jb4-12", "cam1753-jb4-12"),
 }
