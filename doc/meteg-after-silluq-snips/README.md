@@ -216,6 +216,16 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 The folio is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
 
+## [cam1753-unlocated-Ps72v15-yevarkhenhu.png](../../gh-pages/img/cam1753-unlocated-Ps72v15-yevarkhenhu.png)
+
+Psalms 72:15, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and interpreted the
+crop on 2026-09-23. Its original source filename is `Screenshot 2026-09-23 101124.png`; its
+SHA-256 is `D1AAD154956C69CF11C3FD1108C30A320EE64E248ACE85FBA79C4F65AFCFAC4E`. The tracked
+PNG is a byte-for-byte copy: 60,278 bytes and 270 × 200 pixels. The source site and manuscript
+page or folio are not recorded. Codex did not independently inspect the pointed Hebrew image.
+
+**Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
+
 ## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
 
 Job 4:12, the verse-final atom, which ends **line 5 of column 2 of leaf 271r**

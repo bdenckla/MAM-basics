@@ -29,7 +29,7 @@
       "sources": {
         "aleppo": "no-later-mark",
         "leningrad": "later-meteg",
-        "cam1753": "not-recorded",
+        "cam1753": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -39,7 +39,8 @@
       ],
       "images": [
         "aleppo-ps72-15",
-        "leningrad-ps72-15"
+        "leningrad-ps72-15",
+        "cam1753-ps72-15"
       ]
     },
     {

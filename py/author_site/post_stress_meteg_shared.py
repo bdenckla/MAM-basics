@@ -250,6 +250,8 @@ _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
 
+_PSALMS_72_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps72v15-yevarkhenhu.png"
+
 _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
 
 _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
@@ -310,6 +312,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "lc-1s17-5": "1 Samuel 17:5",
     "aleppo-ps72-15": "Psalms 72:15",
     "leningrad-ps72-15": "Psalms 72:15",
+    "cam1753-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
     "aleppo-1k14-14": "1 Kings 14:14",
@@ -329,7 +332,11 @@ _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
 
 _POST_SILLUQ_IMAGE_SEQUENCES = {
     "1 Samuel 17:5": ("aleppo-1s17-5", "lc-1s17-5"),
-    "Psalms 72:15": ("aleppo-ps72-15", "leningrad-ps72-15"),
+    "Psalms 72:15": (
+        "aleppo-ps72-15",
+        "leningrad-ps72-15",
+        "cam1753-ps72-15",
+    ),
     "1 Kings 7:37": ("aleppo-1k7-37", "leningrad-1k7-37"),
     "1 Kings 14:14": ("aleppo-1k14-14", "leningrad-1k14-14"),
     "Psalms 60:10": (

@@ -45,6 +45,7 @@ from author_site.post_stress_meteg_shared import (
     _PSALMS_70_LENINGRAD_CROP_URL,
     _PSALMS_70_REF,
     _PSALMS_72_ALEPPO_CROP_URL,
+    _PSALMS_72_CAM1753_CROP_URL,
     _PSALMS_72_LENINGRAD_CROP_URL,
     _PSALMS_72_REF,
     _ROM_METEG,
@@ -223,6 +224,16 @@ def _psalms_72_leningrad_crop() -> object:
         ' a meteg after the silluq." loading="lazy" style="max-width: 100%; height: auto;">'
         f"<figcaption>Leningrad Codex, folio 380A, line 3 ({_PSALMS_72_REF})."
         "</figcaption></figure>"
+    )
+
+
+def _psalms_72_cam1753_crop() -> object:
+    """The Cambridge Add. 1753 crop at Psalms 72:15."""
+    return mb_html.raw_html(
+        f'<figure><img src="{_PSALMS_72_CAM1753_CROP_URL}"'
+        f' alt="Cambridge Add. 1753 crop of the verse-final word at {_PSALMS_72_REF}; it has'
+        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f"<figcaption>Cambridge Add. 1753 ({_PSALMS_72_REF}).</figcaption></figure>"
     )
 
 
@@ -895,7 +906,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         return [
             mb_html.para(
                 (
-                    "The Aleppo Codex lacks the later ",
+                    "The Aleppo Codex and Cambridge Add. 1753 lack the later ",
                     _ROM_METEG,
                     f" at {_PSALMS_72_REF}.",
                 )
@@ -913,6 +924,8 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             ),
             _psalms_72_leningrad_crop(),
         ]
+    if image_id == "cam1753-ps72-15":
+        return [_psalms_72_cam1753_crop()]
     if image_id == "aleppo-1k7-37":
         return [
             mb_html.para(

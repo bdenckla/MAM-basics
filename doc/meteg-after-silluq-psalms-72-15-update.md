@@ -68,3 +68,11 @@ The source notes remain in `doc/meteg-after-silluq-snips/README.md`. The live cr
 `gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png` and
 `gh-pages/img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png`, where the generated post-silluq
 page publishes them. The finished report remains unchanged under the receipt policy.
+
+## 2026-09-23: Cambridge Add. 1753 has the silluq alone
+
+Ben supplied and interpreted a Cambridge Add. 1753 crop of the verse-final atom at Psalms
+72:15. Cambridge Add. 1753 has only the silluq, with no meteg after it. This places Cambridge
+Add. 1753 with the Aleppo Codex, against the Leningrad Codex's later mark. The crop is
+`gh-pages/img/cam1753-unlocated-Ps72v15-yevarkhenhu.png`; its manuscript page or folio and
+source site are not recorded. The finished report remains unchanged.
