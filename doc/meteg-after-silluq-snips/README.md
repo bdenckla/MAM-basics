@@ -52,7 +52,7 @@ to an image. The page is a folio and side, as in `430B`.
 A printed edition's crop is named like a manuscript's, the edition in the manuscript's place. Its
 page is named by a pencil mark on it, as in `pencil99`.
 
-## [cairo-cotp-p110-image113-1S17v5-nexoshet.png](../../gh-pages/img/cairo-cotp-p110-image113-1S17v5-nexoshet.png)
+## [cairo-cotp-p110-image103-1S17v5-nexoshet.png](../../gh-pages/img/cairo-cotp-p110-image103-1S17v5-nexoshet.png)
 
 The verse-final word of 1 Samuel 17:5 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
 and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 121710.png`, SHA-256
@@ -60,7 +60,7 @@ and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 121710.png`, 
 is a byte-for-byte copy: 93,607 bytes and 270 × 232 pixels. Codex did not independently inspect
 the pointed-Hebrew image.
 
-Ben identifies the manuscript page as 110 and the digital image as 113 in the [CSIC Simurg
+Ben identifies the manuscript page as 110 and the digital image as 103 in the [CSIC Simurg
 photograph collection](https://simurg.csic.es/view/9918494052404201). The collection's source
 record names the Archivo del Centro de Ciencias Humanas y Sociales as the archive and states that
 the digital copy is distributed under CC BY-NC-SA 4.0.

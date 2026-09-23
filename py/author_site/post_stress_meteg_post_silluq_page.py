@@ -131,7 +131,7 @@ def _post_silluq_cairo_cotp_crop() -> object:
         f' alt="Cairo CoTP crop of the verse-final word at {_POST_SILLUQ_REF}; it has'
         ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
         "</a><figcaption>Cairo CoTP (Codex of the Prophets), manuscript page 110, "
-        f"digital image 113 ({_POST_SILLUQ_REF}); photograph from the "
+        f"digital image 103 ({_POST_SILLUQ_REF}); photograph from the "
         "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
         f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'

@@ -226,7 +226,7 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 
-_POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image113-1S17v5-nexoshet.png"
+_POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image103-1S17v5-nexoshet.png"
 
 _POST_SILLUQ_CAIRO_COTP_SOURCE_URL = "https://simurg.csic.es/view/9918494052404201"
 
