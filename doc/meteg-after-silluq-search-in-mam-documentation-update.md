@@ -48,6 +48,17 @@ of which the Aleppo Codex is generally the greatest example. Because meteg after
 rare, such a judgment is difficult here. MAM therefore retains its default and follows the
 Aleppo Codex.
 
+## 1 Kings 7:37: the Simanim Tanakh's silent sheva and wide he
+
+Ben reported on 2026-09-23 that in the Simanim Tanakh (page 573) at 1 Kings 7:37,
+**לְכֻלָּֽהְנָֽה**, the simple sheva under the medial he is silent and the he has its wide form.
+Ben's interpretation is that the wide he identifies the letter as consonantal where confusion
+might otherwise arise. In that respect the wide form functions somewhat like a mappiq without
+the edition adding a literal mappiq. Ben further suggested that avoidance of a literal mappiq
+may reflect reluctance to depart too far from the Masoretic or manuscript tradition. The
+functional comparison and the reason for avoiding mappiq are recorded as Ben's interpretation,
+not as a published Simanim editorial rule.
+
 ## Finding 11.5: narrative romanizations should use `pataḥ`, `ḥataf` and `deḥi`
 
 Recorded by Codex on 2026-09-13. A fresh census of the finished search report found 1 `patax`
