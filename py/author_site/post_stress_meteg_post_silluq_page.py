@@ -9,6 +9,7 @@ from accgram.almost_errors_html_shared import wrap_hebrew_runs
 from author_site import site_data
 from mb_author import author
 from mb_misc import mb_html
+from py_html.my_html_span_romanized import rmn
 
 from author_site.post_stress_meteg_shared import (
     _FIRST_KINGS_14_ALEPPO_CROP_URL,
@@ -76,6 +77,7 @@ from author_site.post_stress_meteg_shared import (
     _UXLC_CHANGE_REF,
     _UXLC_CHANGE_URL,
     _UXLC_CHANGE_VERSE,
+    _author_romanization,
     _footnote_callout,
     _hebrew_cell,
     _hebrew_spacing_option,
@@ -86,6 +88,7 @@ from author_site.post_stress_meteg_shared import (
     _visible_title,
     chb,
     cos,
+    itm,
 )
 
 from author_site.post_stress_meteg_post_silluq_data import (
@@ -93,6 +96,14 @@ from author_site.post_stress_meteg_post_silluq_data import (
     _letters_of,
     _mam_final_forms,
 )
+
+_POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID = "stroke-angles-footnote"
+_POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
+
+_ROM_MERKHA = _author_romanization("merkha")
+_ROM_MAYELA = rmn("mayela")
+_ROM_TIPEHA = _author_romanization("tipexa")
+_ROM_TARHA = _author_romanization("tarxa")
 
 
 def _post_silluq_crop_alt(source: str, ref: str, state: str) -> str:
@@ -547,10 +558,7 @@ def _source_mask_explanation(
     )
     if len(source_names) == 1:
         return f"{source_names[0]} has {relation}"
-    return (
-        f"The following manuscripts and editions have {relation}: "
-        f"{_source_name_list(source_names)}"
-    )
+    return f"{_source_name_list(source_names)} have {relation}"
 
 
 def _source_mask_pair(
@@ -812,7 +820,7 @@ def _post_silluq_first_samuel_example(
                 "The Cairo CoTP (Codex of the Prophets)",
                 "The Sassoon 1053 Codex",
                 "Various editions of Tanakh that are not so slavishly devoted to the "
-                "Leningrad Codex, such as the editions of Koren and the Simanim.",
+                "Leningrad Codex, such as the editions of Koren and Simanim.",
             )
         ),
         mb_html.para("We might compactly represent the situation like this:"),
@@ -985,7 +993,7 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
             (
                 "MAM's note at ",
                 _ref_link(_MAM_POST_SILLUQ_VERSE),
-                " reports both manuscript readings: Aleppo has the later ",
+                " reports that Aleppo has the later ",
                 _ROM_METEG,
                 ", while Leningrad has the ",
                 _ROM_SILLUQ,
@@ -993,9 +1001,8 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
                 _ROM_METEG,
                 " after ",
                 _ROM_SILLUQ,
-                ", following Aleppo. This choice retains MAM's general policy of "
-                "following Aleppo (",
-                _footnote_callout(2, _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID),
+                ", following Aleppo, as is MAM's usual policy (",
+                _footnote_callout(4, _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID),
                 ").",
             )
         ),
@@ -1053,8 +1060,8 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 cos(),
                 ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
                 "We became aware of the remaining five entries from various searches "
-                "of our own. After finding those five, we learned that reference works "
-                "also record them. We catalog those references below.",
+                "of our own. After finding those five, we learned that various reference "
+                "works also record them. We catalog those references below.",
             )
         ),
     ]
@@ -1080,6 +1087,11 @@ def _post_silluq_catalog_x(kind: str) -> object:
     )
 
 
+def _daat_miqra_code() -> object:
+    """Render the DM catalog abbreviation with its decoding on hover."""
+    return mb_html.abbr("DM", {"title": "Da'at Miqra"})
+
+
 def _post_silluq_reference_catalog(cases: list[dict]) -> list:
     """Catalog where Breuer and Dotan record the seven post-silluq cases."""
     expected_bcvs = {
@@ -1102,7 +1114,7 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
     centered = {"class": "centered"}
     catalog_rows = [
         _post_silluq_table_row(
-            (_ref_link("1s17:5"), mb_html.code("DM"), mb_html.code("BHL AppA")),
+            (_ref_link("1s17:5"), _daat_miqra_code(), "BHL AppA"),
             (None, centered, centered),
         ),
         _post_silluq_table_row(
@@ -1116,14 +1128,14 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
         _post_silluq_table_row(
             (
                 _ref_link("1k14:14"),
-                mb_html.code("DM"),
+                _daat_miqra_code(),
                 _post_silluq_catalog_x("questioned"),
             ),
             (None, centered, centered),
         ),
         *(
             _post_silluq_table_row(
-                (_ref_link(bcv), mb_html.code("DM"), mb_html.code("BHL body")),
+                (_ref_link(bcv), _daat_miqra_code(), "BHL body"),
                 (None, centered, centered),
             )
             for bcv in ("ps60:10", "ps70:2", "ps72:15")
@@ -1132,14 +1144,14 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
             (
                 _ref_link("jb4:12"),
                 _post_silluq_catalog_x("questioned"),
-                mb_html.code("BHL body"),
+                "BHL body",
             ),
             (None, centered, centered),
         ),
     ]
     decoding_rows = [
         _post_silluq_table_row(
-            ("Breuer", mb_html.code("DM"), author.book_title("Da'at Miqra")),
+            ("Breuer", _daat_miqra_code(), author.book_title("Da'at Miqra")),
             (None, centered, None),
         ),
         _post_silluq_table_row(
@@ -1153,22 +1165,24 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
         _post_silluq_table_row(
             (
                 "Dotan",
-                mb_html.code("BHL AppA"),
-                (
-                    author.book_title("Biblia Hebraica Leningradensia"),
-                    ", Appendix A",
-                ),
+                "BHL",
+                author.book_title("Biblia Hebraica Leningradensia"),
             ),
             (None, centered, None),
         ),
         _post_silluq_table_row(
             (
                 "Dotan",
-                mb_html.code("BHL body"),
-                (
-                    author.book_title("Biblia Hebraica Leningradensia"),
-                    ", body (non-Appendix) text",
-                ),
+                "... AppA",
+                "... Appendix A",
+            ),
+            (None, centered, None),
+        ),
+        _post_silluq_table_row(
+            (
+                "Dotan",
+                "... body",
+                "... body, i.e. non-Appendix text",
             ),
             (None, centered, None),
         ),
@@ -1179,6 +1193,9 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
             "works by Breuer and Dotan."
         ),
         _table(("bcv", "Breuer", "Dotan"), catalog_rows),
+        mb_html.para(
+            "The abbreviations and codes in the first table are decoded below:"
+        ),
         _table(("scholar", "code", "decoding"), decoding_rows),
         mb_html.para("Further notes on the first table:"),
         mb_html.unordered_list(
@@ -1188,11 +1205,15 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
                     _post_silluq_catalog_x("expected"),
                     " in Dotan's column marks BHL's expected omission at ",
                     _ref_link(_MAM_POST_SILLUQ_VERSE),
-                    ": BHL follows Leningrad here, and Leningrad has no ",
+                    ": Aleppo has the ",
                     _ROM_METEG,
                     " after the ",
                     _ROM_SILLUQ,
-                    ".",
+                    ", while Leningrad has the ",
+                    _ROM_SILLUQ,
+                    " alone. BHL follows Leningrad, so its omission of the ",
+                    _ROM_METEG,
+                    " is expected.",
                 ),
                 (
                     "The red ",
@@ -1482,31 +1503,30 @@ def build_post_silluq_image_body(case: dict) -> list:
             )
         ),
     ]
-    for image_id in case["images"]:
-        contents.extend(_post_silluq_image_nodes(image_id))
     if bcv == "jb4:12":
         # Ben's placement observations are recorded in the Job report and its update.
         contents.extend(
             (
-                mb_html.heading_level_2("Position of the two strokes"),
+                mb_html.heading_level_2(("Early ", _ROM_SILLUQ, " in L & A?")),
                 mb_html.para(
                     (
-                        "We usually regard the position of an “early ",
+                        "We usually regard an “early ",
                         _ROM_METEG,
                         "”—a ",
                         _ROM_METEG,
-                        " to the right of its vowel—as meaningless. Yet the stroke under "
-                        "the mem is to the right of its segol in both Aleppo and "
-                        "Leningrad. On this page's interpretation, both manuscripts "
-                        "therefore have an “early ",
+                        " to the right of its vowel—as meaningless. Should we also treat "
+                        "“early ",
                         _ROM_SILLUQ,
-                        "” here, which seems an extraordinary coincidence. In Cambridge, the ",
-                        _ROM_SILLUQ,
-                        " under the mem is to the left of its segol, in the normal position.",
+                        "” as meaningless? In both Aleppo and Leningrad, the stroke under "
+                        "the mem is to the right of its segol. This seems an extraordinary "
+                        "coincidence. (In Cambridge and Sassoon, the stroke under the mem "
+                        "is in its normal position: to the left of its segol.)",
                     )
                 ),
             )
         )
+    for image_id in case["images"]:
+        contents.extend(_post_silluq_image_nodes(image_id))
     return contents
 
 
@@ -1542,15 +1562,19 @@ def build_post_silluq_body(
         mb_html.para(
             (
                 "With very few exceptions, manuscripts and printed editions use the same"
-                " vertical stroke for both ",
+                " vertical stroke (",
+                _footnote_callout(1, _POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID),
+                ") for both ",
                 _ROM_METEG,
                 " and ",
                 _ROM_SILLUQ,
                 " (",
-                _footnote_callout(1, _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID),
+                _footnote_callout(2, _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID),
                 "). Here we coin a portmanteau “",
                 _METSIL,
-                "” to describe that ambiguous stroke. A verse-final word always has at least one ",
+                "” to describe that ambiguous stroke (",
+                _footnote_callout(3, _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID),
+                "). A verse-final word always has at least one ",
                 _METSIL,
                 ". If it has only one ",
                 _METSIL,
@@ -1586,7 +1610,21 @@ def build_post_silluq_body(
         *_post_silluq_reference_catalog(cases),
         *_post_silluq_additional_sources(cases),
         mb_html.heading_level_2(
-            ("φ1 — A distinct form for ", _ROM_SILLUQ),
+            "φ1 — Stroke angles",
+            {"id": _POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "In this document, we ignore the vexing set of angles, some quite far "
+                "from the vertical, that both ",
+                _ROM_METEG,
+                " and ",
+                _ROM_SILLUQ,
+                " can take on, both within a single manuscript and across manuscripts.",
+            )
+        ),
+        mb_html.heading_level_2(
+            ("φ2 — A distinct form for ", _ROM_SILLUQ),
             {"id": _POST_SILLUQ_DISTINCT_STROKE_FOOTNOTE_ID},
         ),
         mb_html.para(
@@ -1615,7 +1653,45 @@ def build_post_silluq_body(
         ),
         _urj_distinct_stroke_figure(),
         mb_html.heading_level_2(
-            ("φ2 — MAM's use of Aleppo"),
+            "φ3 — Other accents with a similar stroke",
+            {"id": _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID},
+        ),
+        mb_html.para(
+            (
+                "In this document, we set aside the broader set of accents that a "
+                "similar stroke can represent: ",
+                _ROM_MERKHA,
+                ", ",
+                _ROM_MAYELA,
+                ", ",
+                _ROM_TIPEHA,
+                ", and ",
+                _ROM_TARHA,
+                ". In prose verses, Yeivin, ",
+                itm(),
+                " §210, describes a secondary accent with the form of ",
+                _ROM_TIPEHA,
+                " in the word that has ",
+                _ROM_SILLUQ,
+                "; §216 calls the corresponding accent ",
+                _ROM_MAYELA,
+                ". Breuer, ",
+                cos(),
+                ", ch. 11 §80, records secondary ",
+                _ROM_TARHA,
+                " or ",
+                _ROM_MERKHA,
+                " in the word that has ",
+                _ROM_SILLUQ,
+                " in poetic verses. The additional accents in those examples precede ",
+                _ROM_SILLUQ,
+                ", so they are outside this document's post-",
+                _ROM_SILLUQ,
+                " scope.",
+            )
+        ),
+        mb_html.heading_level_2(
+            "φ4 — MAM's use of Aleppo",
             {"id": _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID},
         ),
         mb_html.para(
