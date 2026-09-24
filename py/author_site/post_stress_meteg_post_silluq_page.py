@@ -693,19 +693,20 @@ def _post_silluq_source_code_table() -> object:
     """List the one-character codes in the introductory mask's source order."""
     rows = [
         _post_silluq_table_row(
-            (mb_html.code(code), source),
-            (None, None),
+            (mb_html.code(code), source, source_range),
+            (None, None, None),
         )
-        for code, source in (
-            ("A", "Aleppo Codex"),
-            ("L", "Leningrad Codex"),
-            ("5", "Sassoon 1053"),
-            ("C", "Cairo CoTP"),
-            ("K", "Koren Classic Tanakh"),
-            ("S", "Simanim Tanakh"),
+        for code, source, source_range in (
+            ("A", "Aleppo Codex", ""),
+            ("L", "Leningrad Codex", ""),
+            ("5", "Sassoon 1053", ""),
+            ("C", "Cairo CoTP", "Prophets"),
+            ("7", "Cambridge 1753", "Writings"),
+            ("K", "Koren Classic Tanakh", ""),
+            ("S", "Simanim Tanakh", ""),
         )
     ]
-    return _table(("code", "manuscript or edition"), rows)
+    return _table(("code", "manuscript or edition", "range"), rows)
 
 
 def _post_silluq_first_samuel_example(
@@ -819,6 +820,12 @@ def _post_silluq_first_samuel_example(
             )
         ),
         _post_silluq_source_code_table(),
+        mb_html.para(
+            "So, for cases in The Prophets, the full possible array of codes is "
+            "AL5CKS, and for cases in The Writings, the full possible array is "
+            "AL57KS. Note that in the array for The Writings, there is a '7' "
+            "where for The Prophets we had a 'C'."
+        ),
     ]
 
 
@@ -883,12 +890,9 @@ def _post_silluq_case_register(
         mb_html.heading_level_2("Case register", {"id": "case-register"}),
         mb_html.para(
             "Having introduced our notations through the 1 Sam. 17:5 example above, "
-            "we now present all our cases of concern:"
-        ),
-        mb_html.para(
-            "In the four Sifrei Emet rows, a one-character code '7' appears instead "
-            "of 'C'; that's because we use Cambridge 1753 as a reference there "
-            "instead of Cairo."
+            "we now present all our cases of concern. In the table below, the "
+            '"bcv & img" column contains links to pages showing crops of the '
+            "relevant manuscript images."
         ),
         _table(
             headers,
