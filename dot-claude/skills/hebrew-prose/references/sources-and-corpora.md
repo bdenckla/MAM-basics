@@ -228,6 +228,16 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
 - Ben **dislikes Breuer's transformative framing** and will not have it adopted (see the ban in
   `SKILL.md`), though Breuer's own rules quoted in his own terms keep his wording.
 
+## Richter, “Hebrew Cantillation Marks And Their Encoding”
+
+- **Search the local mirror before the Internet.** When Ben says to look in Richter, start at
+  `C:/Users/BenDe/OneDrive/Documents/Tanakh/Helmut Richter - Hebrew Cantillation Marks And Their
+  Encoding/index.html`. The mirror preserves all five parts of the article and their same-site
+  charts and images. Search and read the local files before consulting Mechon Mamre online; use
+  the live site only to check for an upstream revision or material missing from the mirror.
+- `SOURCE.txt` beside `index.html` records the Mechon Mamre source URL, the 2026-09-24 retrieval
+  date and the mirror's complete file inventory.
+
 ## Two accents on one chanted word: prose vs poetic
 
 This asymmetry is a **major difference between the two systems, not a detail** — state it that
