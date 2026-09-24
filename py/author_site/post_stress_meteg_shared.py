@@ -337,8 +337,8 @@ _POST_SILLUQ_CAIRO_COTP_BCVS = frozenset({"1s17:5", "1k7:37", "1k14:14"})
 _POST_SILLUQ_CAIRO_COTP_SOURCES = (
     "aleppo",
     "leningrad",
-    "cairo_cotp",
     "sassoon_1053",
+    "cairo_cotp",
     "koren",
     "simanim",
 )
@@ -346,15 +346,15 @@ _POST_SILLUQ_CAM1753_BCVS = frozenset({"ps60:10", "ps70:2", "ps72:15", "jb4:12"}
 _POST_SILLUQ_CAM1753_SOURCES = (
     "aleppo",
     "leningrad",
-    "cam1753",
     "sassoon_1053",
+    "cam1753",
     "koren",
     "simanim",
 )
 
 
 def _post_silluq_sources_for_bcv(bcv: str) -> tuple[str, ...]:
-    """Use ALC5KS for the Prophets cases and AL75KS for the other four."""
+    """Use AL5CKS for the Prophets cases and AL57KS for the other four."""
     if bcv in _POST_SILLUQ_CAIRO_COTP_BCVS:
         return _POST_SILLUQ_CAIRO_COTP_SOURCES
     if bcv in _POST_SILLUQ_CAM1753_BCVS:

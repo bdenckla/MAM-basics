@@ -512,7 +512,7 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the ALC5KS or AL75KS masks for one case."""
+    """Render the AL5CKS or AL57KS masks for one case."""
     has_mask, does_not_have_mask = _case_source_mask_values(case, complete_koren_by_ref)
     return _source_mask_pair(has_mask, does_not_have_mask)
 
@@ -616,13 +616,32 @@ def _post_silluq_example_form(form: object, *, direction: str = "rtl") -> object
     )
 
 
+def _post_silluq_source_code_table() -> object:
+    """List the one-character codes in the introductory mask's source order."""
+    rows = [
+        _post_silluq_table_row(
+            (mb_html.code(code), source),
+            (None, None),
+        )
+        for code, source in (
+            ("A", "Aleppo Codex"),
+            ("L", "Leningrad Codex"),
+            ("5", "Sassoon 1053"),
+            ("C", "Cairo CoTP"),
+            ("K", "Koren"),
+            ("S", "Simanim Tanakh"),
+        )
+    ]
+    return _table(("code", "manuscript or edition"), rows)
+
+
 def _post_silluq_first_samuel_example(
     cases: list[dict],
     forms: dict[str, str],
     mam_forms: dict[str, str],
     observations: list[dict],
 ) -> list:
-    """Introduce the two forms, syllable colors, and ALC5KS at 1 Samuel 17:5."""
+    """Introduce the two forms, syllable colors, and AL5CKS at 1 Samuel 17:5."""
     cases_by_bcv = {case["bcv"]: case for case in cases}
     first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
     if first_samuel is None:
@@ -651,7 +670,7 @@ def _post_silluq_first_samuel_example(
     ):
         raise ValueError("1 Samuel 17:5: the two forms differ beyond the later meteg")
     masks = _case_source_mask_values(first_samuel, _complete_koren_by_ref(observations))
-    if masks != ("-L----", "A-C5KS"):
+    if masks != ("-L----", "A-5CKS"):
         raise ValueError("1 Samuel 17:5: introductory source masks drifted")
     return [
         mb_html.para(
@@ -674,8 +693,7 @@ def _post_silluq_first_samuel_example(
         _post_silluq_example_form(wrap_hebrew_runs(leningrad_form)),
         mb_html.para(
             (
-                "Or, coloring its stressed syllable (its syllable of primary stress) "
-                "green and the syllable of its later ",
+                "Or, coloring its stressed syllable green and the syllable of its later ",
                 _ROM_METEG,
                 " yellow (for “caution”):",
             )
@@ -687,11 +705,7 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "In contrast, in the Aleppo Codex, Cairo CoTP (Codex of the "
-                "Prophets), and Codex Sassoon 1053, as well as in editions of "
-                "Tanakh that are not so slavishly devoted to the Leningrad "
-                "Codex, such as Koren and the Simanim "
-                "Tanakh, there is no such ",
+                "In contrast, in other manuscripts and editions, there is no such ",
                 _ROM_METEG,
                 " after the ",
                 _ROM_SILLUQ,
@@ -703,6 +717,16 @@ def _post_silluq_first_samuel_example(
                 aleppo_form, _POST_SILLUQ_VERSE, later_meteg=False
             )
         ),
+        mb_html.para("These other manuscripts and editions include the following:"),
+        mb_html.unordered_list(
+            (
+                "The Aleppo Codex",
+                "The Cairo CoTP (Codex of the Prophets)",
+                "The Sassoon 1053 Codex",
+                "Various editions of Tanakh that are not so slavishly devoted to the "
+                "Leningrad Codex, such as the editions of Koren and the Simanim.",
+            )
+        ),
         mb_html.para("We might compactly represent the situation like this:"),
         _post_silluq_example_form(
             _source_mask_pair(*masks),
@@ -710,13 +734,15 @@ def _post_silluq_first_samuel_example(
         ),
         mb_html.para(
             (
-                "The first line means that the Leningrad Codex (L) has the later ",
-                _METSIL,
-                ", while the second line means that the Aleppo Codex (A), Cairo "
-                "CoTP (C), Codex Sassoon 1053 (5), Koren (K), and the Simanim "
-                "Tanakh (S) do not.",
+                "That notation uses one-character manuscript/edition codes to show, "
+                "on its first line, who has a ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                ", and on the second line, who doesn't. The codes are as follows:",
             )
         ),
+        _post_silluq_source_code_table(),
     ]
 
 
@@ -781,7 +807,7 @@ def _post_silluq_case_register(
         mb_html.heading_level_2("Case register", {"id": "case-register"}),
         mb_html.para(
             "Having introduced our notations through the 1 Sam. 17:5 example above, "
-            "we now present all our cases of concern, using those notations:"
+            "we now present all our cases of concern:"
         ),
         _table(
             headers,
@@ -789,20 +815,9 @@ def _post_silluq_case_register(
             {"class": "post-stress-meteg-table post-silluq-register"},
         ),
         mb_html.para(
-            (
-                "In the three Prophets rows, the source order is ",
-                mb_html.code("ALC5KS"),
-                "; ",
-                mb_html.code("C"),
-                " represents Cairo CoTP. In the three Psalms rows and the Job row, "
-                "the source order is ",
-                mb_html.code("AL75KS"),
-                "; ",
-                mb_html.code("7"),
-                " represents Cambridge Add. 1753. In every row, ",
-                mb_html.code("5"),
-                " represents Codex Sassoon 1053.",
-            )
+            "In the four Sifrei Emet rows, a one-character code '7' appears instead "
+            "of 'C'; that's because we use Cambridge 1753 as a reference there "
+            "instead of Cairo CoTP."
         ),
     ]
     unclassified_masks = None
