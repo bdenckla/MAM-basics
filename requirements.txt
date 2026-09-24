@@ -5,6 +5,9 @@ pyluach
 python-bidi
 python-pptx
 pywikibot
+# Validation-only: repository code does not import PyYAML, but the bundled
+# skill-creator validator uses it to check tracked shared skills.
+PyYAML
 requests
 lxml
 matplotlib
