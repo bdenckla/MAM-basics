@@ -85,6 +85,19 @@ Also on disk: `~/OneDrive/Documents/Tanakh/Introduction to the Tiberian Masorah 
 FineReader export.docx`, with excerpts under `~/OneDrive/Documents/Tanakh/misc/Yeivin-ITM-misc/`,
 and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pdf`.
 
+## Khan, *The Tiberian Pronunciation Tradition of Biblical Hebrew*
+
+- **Search the local mirror before the Internet.** When Ben says to look in Khan, start at
+  `C:/Users/BenDe/OneDrive/Documents/Tanakh/Geoffrey Khan - The Tiberian Pronunciation Tradition
+  of Biblical Hebrew - web/index.html`. The mirror has searchable `volume-1.html` and
+  `volume-2.html` files; `index.html` links the volumes and their authoritative OpenEdition web
+  chapters. Do not fetch or search the PDFs when the local mirror is sufficient.
+- **The local HTML is a search aid, not the final authority for delicate characters or exact
+  quotation.** It was assembled from the Internet Archive's automatically produced EPUB
+  derivatives, whose notice warns that the OCR can be inaccurate. English prose is generally
+  useful for searching. Check Hebrew, Arabic, phonetic symbols, an apparent OCR anomaly, or an
+  exact quotation against the authoritative OpenEdition chapter linked from `index.html`.
+
 ## Breuer, *Da'at Miqra*
 
 - **The canonical scan is**
