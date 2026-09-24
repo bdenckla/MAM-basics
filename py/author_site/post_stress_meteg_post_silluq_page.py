@@ -95,12 +95,24 @@ from author_site.post_stress_meteg_post_silluq_data import (
 )
 
 
+def _post_silluq_crop_alt(source: str, ref: str, state: str) -> str:
+    """Give every manuscript crop the same short-name and claim structure."""
+    if state == "later-meteg":
+        claim = "it has a meteg after the silluq"
+    elif state == "no-later-mark":
+        claim = "it has no meteg after the silluq"
+    elif state == "both-strokes":
+        claim = "it has both strokes"
+    else:
+        raise ValueError(f"Unknown post-silluq crop state: {state!r}")
+    return f"{source} crop of the verse-final word at {ref}; {claim}."
+
+
 def _mam_post_silluq_aleppo_crop() -> object:
     """The Aleppo Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
-        ' it has a meteg after the silluq."'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _MAM_POST_SILLUQ_REF, "later-meteg")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo.</figcaption></figure>"
     )
@@ -110,8 +122,7 @@ def _mam_post_silluq_leningrad_crop() -> object:
     """The Leningrad Codex crop at the MAM post-silluq site."""
     return mb_html.raw_html(
         f'<figure><img src="{_MAM_POST_SILLUQ_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
-        ' it lacks a meteg after the silluq."'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _MAM_POST_SILLUQ_REF, "no-later-mark")}"'
         ' loading="lazy" style="width: 300px; max-width: 100%; height: auto;">'
         "<figcaption>Leningrad.</figcaption></figure>"
     )
@@ -122,8 +133,8 @@ def _mam_post_silluq_cairo_cotp_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_MAM_POST_SILLUQ_CAIRO_COTP_CROP_URL}"'
-        f' alt="Cairo crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Cairo", _MAM_POST_SILLUQ_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Cairo, digital page 186 "
         "(no manuscript page number is visible); photograph from the Archivo "
@@ -140,8 +151,8 @@ def _mam_post_silluq_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_MAM_POST_SILLUQ_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_MAM_POST_SILLUQ_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _MAM_POST_SILLUQ_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -154,7 +165,7 @@ def _post_silluq_lc_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_POST_SILLUQ_LC_CROP_URL}"'
-        f' alt="Leningrad, F159A, column 3, line 8: {_POST_SILLUQ_REF}."'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _POST_SILLUQ_REF, "later-meteg")}"'
         ' loading="lazy"></a><figcaption>Leningrad, F159A, column 3, line 8;'
         " crop attached to "
         f'<a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
@@ -166,8 +177,8 @@ def _post_silluq_aleppo_crop() -> object:
     """The Aleppo crop showing no meteg after the silluq in 1 Samuel 17:5."""
     return mb_html.raw_html(
         f'<figure><img src="{_POST_SILLUQ_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word in {_POST_SILLUQ_REF}; it has'
-        ' no meteg after the silluq." loading="lazy">'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _POST_SILLUQ_REF, "no-later-mark")}"'
+        ' loading="lazy">'
         "<figcaption>Aleppo.</figcaption></figure>"
     )
 
@@ -177,8 +188,8 @@ def _post_silluq_cairo_cotp_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_POST_SILLUQ_CAIRO_COTP_CROP_URL}"'
-        f' alt="Cairo crop of the verse-final word at {_POST_SILLUQ_REF}; it has'
-        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Cairo", _POST_SILLUQ_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "</a><figcaption>Cairo, manuscript page 110, "
         "digital image 103; photograph from the "
         "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
@@ -194,8 +205,8 @@ def _post_silluq_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_POST_SILLUQ_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_POST_SILLUQ_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _POST_SILLUQ_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -207,8 +218,8 @@ def _first_kings_14_aleppo_crop() -> object:
     """The Aleppo Codex crop at 1 Kings 14:14."""
     return mb_html.raw_html(
         f'<figure><img src="{_FIRST_KINGS_14_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
-        ' the silluq alone, without a second metsil." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _UXLC_CHANGE_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo, leaf 83r.</figcaption></figure>"
     )
@@ -218,8 +229,8 @@ def _first_kings_14_leningrad_crop() -> object:
     """The Leningrad Codex crop at 1 Kings 14:14."""
     return mb_html.raw_html(
         f'<figure><img src="{_FIRST_KINGS_14_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
-        ' a second metsil after the silluq." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _UXLC_CHANGE_REF, "later-meteg")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad, folio 195B, column 2, line 27."
         "</figcaption></figure>"
@@ -231,8 +242,8 @@ def _first_kings_14_cairo_cotp_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         f' rel="noopener"><img src="{_FIRST_KINGS_14_CAIRO_COTP_CROP_URL}"'
-        f' alt="Cairo crop of the verse-final word at {_UXLC_CHANGE_REF}; it has'
-        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Cairo", _UXLC_CHANGE_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "</a><figcaption>Cairo, digital image 204; "
         "photograph from the Archivo del Centro de Ciencias Humanas y Sociales "
         "(CSIC), "
@@ -248,8 +259,8 @@ def _first_kings_14_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_FIRST_KINGS_14_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_UXLC_CHANGE_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _UXLC_CHANGE_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -261,8 +272,8 @@ def _psalms_60_aleppo_crop() -> object:
     """The Aleppo Codex crop at Psalms 60:10."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_60_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_PSALMS_60_REF}; it has the'
-        ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_60_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo, leaf 251r.</figcaption></figure>"
     )
 
@@ -271,8 +282,8 @@ def _psalms_60_leningrad_crop() -> object:
     """The Leningrad Codex crop at Psalms 60:10."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_60_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_PSALMS_60_REF}; it has'
-        ' the silluq and a second metsil." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_60_REF, "later-meteg")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad, folio 377B.</figcaption></figure>"
     )
@@ -282,8 +293,8 @@ def _psalms_60_cam1753_crop() -> object:
     """The Cambridge Add. 1753 crop at Psalms 60:10."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_60_CAM1753_CROP_URL}"'
-        f' alt="Cambridge crop of the verse-final word at {_PSALMS_60_REF}; it has'
-        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Cambridge", _PSALMS_60_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge.</figcaption></figure>"
     )
 
@@ -294,8 +305,8 @@ def _psalms_60_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_PSALMS_60_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_PSALMS_60_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _PSALMS_60_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -307,8 +318,8 @@ def _psalms_70_aleppo_crop() -> object:
     """The Aleppo Codex crop at Psalms 70:2."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_70_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_PSALMS_70_REF}; it has the'
-        ' silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_70_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo, leaf 253r.</figcaption></figure>"
     )
 
@@ -317,8 +328,8 @@ def _psalms_70_leningrad_crop() -> object:
     """The Leningrad Codex crop at Psalms 70:2."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_70_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_PSALMS_70_REF}; it has'
-        ' the silluq and a second metsil." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_70_REF, "later-meteg")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad, folio 379B.</figcaption></figure>"
     )
@@ -328,8 +339,8 @@ def _psalms_70_cam1753_crop() -> object:
     """The Cambridge Add. 1753 crop at Psalms 70:2."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_70_CAM1753_CROP_URL}"'
-        f' alt="Cambridge crop of the verse-final word at {_PSALMS_70_REF}; it has'
-        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Cambridge", _PSALMS_70_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge.</figcaption></figure>"
     )
 
@@ -340,8 +351,8 @@ def _psalms_70_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_PSALMS_70_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_PSALMS_70_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _PSALMS_70_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -353,8 +364,8 @@ def _psalms_72_aleppo_crop() -> object:
     """The Aleppo Codex crop at Psalms 72:15."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_72_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_PSALMS_72_REF}; it lacks'
-        ' a meteg after the silluq." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_72_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo, leaf 253v.</figcaption></figure>"
     )
 
@@ -363,8 +374,8 @@ def _psalms_72_leningrad_crop() -> object:
     """The Leningrad Codex crop at Psalms 72:15."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_72_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_PSALMS_72_REF}; it has'
-        ' a meteg after the silluq." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_72_REF, "later-meteg")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad, folio 380A, line 3."
         "</figcaption></figure>"
     )
@@ -374,8 +385,8 @@ def _psalms_72_cam1753_crop() -> object:
     """The Cambridge Add. 1753 crop at Psalms 72:15."""
     return mb_html.raw_html(
         f'<figure><img src="{_PSALMS_72_CAM1753_CROP_URL}"'
-        f' alt="Cambridge crop of the verse-final word at {_PSALMS_72_REF}; it has'
-        ' the silluq alone." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Cambridge", _PSALMS_72_REF, "no-later-mark")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge.</figcaption></figure>"
     )
 
@@ -386,8 +397,8 @@ def _psalms_72_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_PSALMS_72_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_PSALMS_72_REF};'
-        ' it has the silluq alone." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _PSALMS_72_REF, "no-later-mark")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -399,8 +410,8 @@ def _job_4_aleppo_crop() -> object:
     """The Aleppo Codex crop at Job 4:12."""
     return mb_html.raw_html(
         f'<figure><img src="{_JOB_4_ALEPPO_CROP_URL}"'
-        f' alt="Aleppo crop of the verse-final word at {_JOB_4_REF}; it has both'
-        ' strokes." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Aleppo", _JOB_4_REF, "both-strokes")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Aleppo, leaf 271r, column 2, line 5."
         "</figcaption></figure>"
     )
@@ -410,8 +421,8 @@ def _job_4_leningrad_crop() -> object:
     """The Leningrad Codex crop at Job 4:12."""
     return mb_html.raw_html(
         f'<figure><img src="{_JOB_4_LENINGRAD_CROP_URL}"'
-        f' alt="Leningrad crop of the verse-final word at {_JOB_4_REF}; it has both'
-        ' strokes." loading="lazy" style="max-width: 100%; height: auto;">'
+        f' alt="{_post_silluq_crop_alt("Leningrad", _JOB_4_REF, "both-strokes")}"'
+        ' loading="lazy" style="max-width: 100%; height: auto;">'
         "<figcaption>Leningrad, folio 398A.</figcaption></figure>"
     )
 
@@ -420,8 +431,8 @@ def _job_4_cam1753_crop() -> object:
     """The Cambridge Add. 1753 crop at Job 4:12."""
     return mb_html.raw_html(
         f'<figure><img src="{_JOB_4_CAM1753_CROP_URL}"'
-        f' alt="Cambridge crop of the verse-final word at {_JOB_4_REF}; it has'
-        ' both strokes, with the silluq to the left of its segol." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Cambridge", _JOB_4_REF, "both-strokes")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
         "<figcaption>Cambridge, page 0073B, column 2, line 13."
         "</figcaption></figure>"
@@ -434,8 +445,8 @@ def _job_4_sassoon_crop() -> object:
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_JOB_4_SASSOON_CROP_URL}"'
-        f' alt="Sassoon crop of the verse-final word at {_JOB_4_REF};'
-        ' it has the silluq and a strongly slanted meteg after it." loading="lazy"'
+        f' alt="{_post_silluq_crop_alt("Sassoon", _JOB_4_REF, "both-strokes")}"'
+        ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
@@ -1028,9 +1039,6 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
 
     # The CoS citation follows Ben's print reference. The OCR export attaches the same note
     # to section 46 as its internal note [^81], which does not replace the printed citation.
-    # Ben directly checked Da'at Miqra and established on 2026-09-23 that Breuer notes the
-    # Leningrad Codex's post-silluq meteg in five of these seven words, with 1 Kings 7:37
-    # and Job 4:12 as the exceptions.
     return [
         mb_html.heading_level_2("Notes on the cases"),
         mb_html.para(
@@ -1045,22 +1053,178 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 cos(),
                 ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
                 "We became aware of the remaining five entries from various searches "
-                "of our own.",
+                "of our own. After finding those five, we learned that reference works "
+                "also record them. We catalog those references below.",
             )
         ),
-        mb_html.para(
+    ]
+
+
+def _post_silluq_catalog_x(kind: str) -> object:
+    """Render an accessible gray or red X for an expected or questioned omission."""
+    if kind == "expected":
+        color = "gray"
+        explanation = "not recorded; absence expected"
+    elif kind == "questioned":
+        color = "red"
+        explanation = "not recorded; omission questioned"
+    else:
+        raise ValueError(f"Unknown post-silluq catalog X kind: {kind!r}")
+    return mb_html.span(
+        "\N{BALLOT X}",
+        {
+            "style": f"color: {color}; font-weight: 700;",
+            "title": explanation,
+            "aria-label": explanation,
+        },
+    )
+
+
+def _post_silluq_reference_catalog(cases: list[dict]) -> list:
+    """Catalog where Breuer and Dotan record the seven post-silluq cases."""
+    expected_bcvs = {
+        _POST_SILLUQ_VERSE,
+        _MAM_POST_SILLUQ_VERSE,
+        _UXLC_CHANGE_VERSE,
+        "ps60:10",
+        "ps70:2",
+        "ps72:15",
+        "jb4:12",
+    }
+    bcvs = {case["bcv"] for case in cases}
+    if bcvs != expected_bcvs:
+        raise ValueError(
+            "The Breuer-Dotan catalog requires exactly these cases: "
+            f"missing {sorted(expected_bcvs - bcvs)}; "
+            f"unexpected {sorted(bcvs - expected_bcvs)}"
+        )
+
+    centered = {"class": "centered"}
+    catalog_rows = [
+        _post_silluq_table_row(
+            (_ref_link("1s17:5"), mb_html.code("DM"), mb_html.code("BHL AppA")),
+            (None, centered, centered),
+        ),
+        _post_silluq_table_row(
             (
-                "In ",
-                mb_html.emphasis("Da'at Miqra"),
-                ", Breuer notes Leningrad's ",
-                _ROM_METEG,
-                " after the ",
-                _ROM_SILLUQ,
-                " in five of these seven words; the exceptions are ",
-                _ref_link(_MAM_POST_SILLUQ_VERSE),
-                " and ",
+                _ref_link("1k7:37"),
+                cos(),
+                _post_silluq_catalog_x("expected"),
+            ),
+            (None, centered, centered),
+        ),
+        _post_silluq_table_row(
+            (
+                _ref_link("1k14:14"),
+                mb_html.code("DM"),
+                _post_silluq_catalog_x("questioned"),
+            ),
+            (None, centered, centered),
+        ),
+        *(
+            _post_silluq_table_row(
+                (_ref_link(bcv), mb_html.code("DM"), mb_html.code("BHL body")),
+                (None, centered, centered),
+            )
+            for bcv in ("ps60:10", "ps70:2", "ps72:15")
+        ),
+        _post_silluq_table_row(
+            (
                 _ref_link("jb4:12"),
-                ".",
+                _post_silluq_catalog_x("questioned"),
+                mb_html.code("BHL body"),
+            ),
+            (None, centered, centered),
+        ),
+    ]
+    decoding_rows = [
+        _post_silluq_table_row(
+            ("Breuer", mb_html.code("DM"), author.book_title("Da'at Miqra")),
+            (None, centered, None),
+        ),
+        _post_silluq_table_row(
+            (
+                "Breuer",
+                mb_html.code("CoS"),
+                author.book_title("The Cantillation of Scripture"),
+            ),
+            (None, centered, None),
+        ),
+        _post_silluq_table_row(
+            (
+                "Dotan",
+                mb_html.code("BHL AppA"),
+                (
+                    author.book_title("Biblia Hebraica Leningradensia"),
+                    ", Appendix A",
+                ),
+            ),
+            (None, centered, None),
+        ),
+        _post_silluq_table_row(
+            (
+                "Dotan",
+                mb_html.code("BHL body"),
+                (
+                    author.book_title("Biblia Hebraica Leningradensia"),
+                    ", body (non-Appendix) text",
+                ),
+            ),
+            (None, centered, None),
+        ),
+    ]
+    return [
+        mb_html.para(
+            "Below we catalog how these seven cases are or are not recorded in "
+            "works by Breuer and Dotan."
+        ),
+        _table(("bcv", "Breuer", "Dotan"), catalog_rows),
+        _table(("scholar", "code", "decoding"), decoding_rows),
+        mb_html.para("Further notes on the first table:"),
+        mb_html.unordered_list(
+            (
+                (
+                    "The gray ",
+                    _post_silluq_catalog_x("expected"),
+                    " in Dotan's column marks BHL's expected omission at ",
+                    _ref_link(_MAM_POST_SILLUQ_VERSE),
+                    ": BHL follows Leningrad here, and Leningrad has no ",
+                    _ROM_METEG,
+                    " after the ",
+                    _ROM_SILLUQ,
+                    ".",
+                ),
+                (
+                    "The red ",
+                    _post_silluq_catalog_x("questioned"),
+                    " in Dotan's column marks BHL's omission at ",
+                    _ref_link(_UXLC_CHANGE_VERSE),
+                    ". BHL's body has only the ",
+                    _ROM_SILLUQ,
+                    ", and Appendix A has no entry. I regard that combined omission "
+                    "as an error.",
+                ),
+                (
+                    "The red ",
+                    _post_silluq_catalog_x("questioned"),
+                    " in Breuer's column marks the absence of ",
+                    _ref_link("jb4:12"),
+                    " from both ",
+                    author.book_title("Da'at Miqra"),
+                    " and ",
+                    cos(),
+                    ". The omission may be intentional because the Aleppo and "
+                    "Leningrad codices agree there, so there might seem to be nothing "
+                    "to note. But Koren has the ",
+                    _ROM_SILLUQ,
+                    " alone, and the Second Rabbinic Bible (the Venice Mikra'ot "
+                    "Gedolot of 1524–25) appears to have the ",
+                    _ROM_SILLUQ,
+                    " alone. Koren would probably not be noted in either work, but "
+                    "Breuer typically notes the Second Rabbinic Bible with his sigil ",
+                    wrap_hebrew_runs("ד"),
+                    " (dalet).",
+                ),
             )
         ),
     ]
@@ -1113,43 +1277,37 @@ def _post_silluq_additional_sources(cases: list[dict]) -> list:
     return contents
 
 
+def _post_silluq_image_intro(source: str, ref: str, state: str) -> list:
+    """Render one source heading and one uniformly phrased image claim."""
+    if state == "later-meteg":
+        claim = (" has a ", _ROM_METEG, " after the ", _ROM_SILLUQ)
+    elif state == "no-later-mark":
+        claim = (" has no ", _ROM_METEG, " after the ", _ROM_SILLUQ)
+    elif state == "both-strokes":
+        claim = (" has both strokes",)
+    else:
+        raise ValueError(f"Unknown post-silluq image state: {state!r}")
+    return [
+        mb_html.heading_level_2(source),
+        mb_html.para((source, *claim, " at ", ref, ".")),
+    ]
+
+
 def _post_silluq_image_nodes(image_id: str) -> list:
     """The fixed claim and existing deployed figure for one known image identifier."""
     if image_id == "lc-1s17-5":
         return [
-            mb_html.para(
-                (
-                    "Leningrad has a ",
-                    _ROM_METEG,
-                    " after its ",
-                    _ROM_SILLUQ,
-                    f" at {_POST_SILLUQ_REF}.",
-                )
-            ),
+            *_post_silluq_image_intro("Leningrad", _POST_SILLUQ_REF, "later-meteg"),
             _post_silluq_lc_crop(),
         ]
     if image_id == "aleppo-1s17-5":
         return [
-            mb_html.para(
-                (
-                    "Aleppo lacks the later ",
-                    _ROM_METEG,
-                    f" at {_POST_SILLUQ_REF}.",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _POST_SILLUQ_REF, "no-later-mark"),
             _post_silluq_aleppo_crop(),
         ]
     if image_id == "cairo-cotp-1s17-5":
         return [
-            mb_html.para(
-                (
-                    "Cairo has the ",
-                    _ROM_SILLUQ,
-                    " alone at ",
-                    _POST_SILLUQ_REF,
-                    ".",
-                )
-            ),
+            *_post_silluq_image_intro("Cairo", _POST_SILLUQ_REF, "no-later-mark"),
             _post_silluq_cairo_cotp_crop(),
             mb_html.para(
                 (
@@ -1163,208 +1321,137 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "sassoon-1053-1s17-5":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _POST_SILLUQ_REF, "no-later-mark"),
             _post_silluq_sassoon_crop(),
         ]
     if image_id == "aleppo-1k14-14":
         return [
-            mb_html.para(
-                (
-                    "At ",
-                    _ref_link(_UXLC_CHANGE_VERSE),
-                    ", Aleppo lacks the second ",
-                    _METSIL,
-                    " that Leningrad has. Leningrad's second ",
-                    _METSIL,
-                    " is the likely ",
-                    _ROM_METEG,
-                    " after the ",
-                    _ROM_SILLUQ,
-                    ".",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _UXLC_CHANGE_REF, "no-later-mark"),
             _first_kings_14_aleppo_crop(),
         ]
     if image_id == "leningrad-1k14-14":
-        return [_first_kings_14_leningrad_crop()]
+        return [
+            *_post_silluq_image_intro("Leningrad", _UXLC_CHANGE_REF, "later-meteg"),
+            _first_kings_14_leningrad_crop(),
+        ]
     if image_id == "cairo-cotp-1k14-14":
         return [
-            mb_html.para(("Cairo has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Cairo", _UXLC_CHANGE_REF, "no-later-mark"),
             _first_kings_14_cairo_cotp_crop(),
         ]
     if image_id == "sassoon-1053-1k14-14":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _UXLC_CHANGE_REF, "no-later-mark"),
             _first_kings_14_sassoon_crop(),
         ]
     if image_id == "aleppo-ps60-10":
         return [
-            mb_html.para(
-                (
-                    "At ",
-                    _PSALMS_60_REF,
-                    ", Aleppo and Cambridge have the ",
-                    _ROM_SILLUQ,
-                    " alone, while Leningrad has the ",
-                    _ROM_SILLUQ,
-                    " and a second ",
-                    _METSIL,
-                    ". The second Leningrad ",
-                    _METSIL,
-                    " is the likely ",
-                    _ROM_METEG,
-                    " after the ",
-                    _ROM_SILLUQ,
-                    ".",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _PSALMS_60_REF, "no-later-mark"),
             _psalms_60_aleppo_crop(),
         ]
     if image_id == "leningrad-ps60-10":
-        return [_psalms_60_leningrad_crop()]
+        return [
+            *_post_silluq_image_intro("Leningrad", _PSALMS_60_REF, "later-meteg"),
+            _psalms_60_leningrad_crop(),
+        ]
     if image_id == "cam1753-ps60-10":
-        return [_psalms_60_cam1753_crop()]
+        return [
+            *_post_silluq_image_intro("Cambridge", _PSALMS_60_REF, "no-later-mark"),
+            _psalms_60_cam1753_crop(),
+        ]
     if image_id == "sassoon-1053-ps60-10":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _PSALMS_60_REF, "no-later-mark"),
             _psalms_60_sassoon_crop(),
         ]
     if image_id == "aleppo-ps70-2":
         return [
-            mb_html.para(
-                (
-                    "At ",
-                    _PSALMS_70_REF,
-                    ", Aleppo and Cambridge have the ",
-                    _ROM_SILLUQ,
-                    " alone, while Leningrad has the ",
-                    _ROM_SILLUQ,
-                    " and a second ",
-                    _METSIL,
-                    ". The second Leningrad ",
-                    _METSIL,
-                    " is the likely ",
-                    _ROM_METEG,
-                    " after the ",
-                    _ROM_SILLUQ,
-                    ".",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _PSALMS_70_REF, "no-later-mark"),
             _psalms_70_aleppo_crop(),
         ]
     if image_id == "leningrad-ps70-2":
-        return [_psalms_70_leningrad_crop()]
+        return [
+            *_post_silluq_image_intro("Leningrad", _PSALMS_70_REF, "later-meteg"),
+            _psalms_70_leningrad_crop(),
+        ]
     if image_id == "cam1753-ps70-2":
-        return [_psalms_70_cam1753_crop()]
+        return [
+            *_post_silluq_image_intro("Cambridge", _PSALMS_70_REF, "no-later-mark"),
+            _psalms_70_cam1753_crop(),
+        ]
     if image_id == "sassoon-1053-ps70-2":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _PSALMS_70_REF, "no-later-mark"),
             _psalms_70_sassoon_crop(),
         ]
     if image_id == "aleppo-ps72-15":
         return [
-            mb_html.para(
-                (
-                    "Aleppo and Cambridge lack the later ",
-                    _ROM_METEG,
-                    f" at {_PSALMS_72_REF}.",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _PSALMS_72_REF, "no-later-mark"),
             _psalms_72_aleppo_crop(),
         ]
     if image_id == "leningrad-ps72-15":
         return [
-            mb_html.para(
-                (
-                    "Leningrad has a later ",
-                    _ROM_METEG,
-                    f" at {_PSALMS_72_REF}.",
-                )
-            ),
+            *_post_silluq_image_intro("Leningrad", _PSALMS_72_REF, "later-meteg"),
             _psalms_72_leningrad_crop(),
         ]
     if image_id == "cam1753-ps72-15":
-        return [_psalms_72_cam1753_crop()]
+        return [
+            *_post_silluq_image_intro("Cambridge", _PSALMS_72_REF, "no-later-mark"),
+            _psalms_72_cam1753_crop(),
+        ]
     if image_id == "sassoon-1053-ps72-15":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _PSALMS_72_REF, "no-later-mark"),
             _psalms_72_sassoon_crop(),
         ]
     if image_id == "aleppo-1k7-37":
         return [
-            mb_html.para(
-                (
-                    "Aleppo has a later ",
-                    _ROM_METEG,
-                    f" at {_MAM_POST_SILLUQ_REF}.",
-                )
-            ),
+            *_post_silluq_image_intro("Aleppo", _MAM_POST_SILLUQ_REF, "later-meteg"),
             _mam_post_silluq_aleppo_crop(),
         ]
     if image_id == "leningrad-1k7-37":
         return [
-            mb_html.para(
-                (
-                    "Leningrad lacks the later ",
-                    _ROM_METEG,
-                    f" at {_MAM_POST_SILLUQ_REF}.",
-                )
+            *_post_silluq_image_intro(
+                "Leningrad", _MAM_POST_SILLUQ_REF, "no-later-mark"
             ),
             _mam_post_silluq_leningrad_crop(),
         ]
     if image_id == "cairo-cotp-1k7-37":
         return [
-            mb_html.para(("Cairo has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Cairo", _MAM_POST_SILLUQ_REF, "no-later-mark"),
             _mam_post_silluq_cairo_cotp_crop(),
         ]
     if image_id == "sassoon-1053-1k7-37":
         return [
-            mb_html.para(("Sassoon has the ", _ROM_SILLUQ, " alone.")),
+            *_post_silluq_image_intro("Sassoon", _MAM_POST_SILLUQ_REF, "no-later-mark"),
             _mam_post_silluq_sassoon_crop(),
         ]
     if image_id == "aleppo-jb4-12":
         return [
-            mb_html.para(("Aleppo has both strokes at ", _JOB_4_REF, ".")),
+            *_post_silluq_image_intro("Aleppo", _JOB_4_REF, "both-strokes"),
             _job_4_aleppo_crop(),
         ]
     if image_id == "leningrad-jb4-12":
         return [
-            mb_html.para(("Leningrad has both strokes at ", _JOB_4_REF, ".")),
+            *_post_silluq_image_intro("Leningrad", _JOB_4_REF, "both-strokes"),
             _job_4_leningrad_crop(),
         ]
     if image_id == "cam1753-jb4-12":
         return [
-            mb_html.para(
-                (
-                    "Cambridge has a ",
-                    _ROM_METEG,
-                    " after the ",
-                    _ROM_SILLUQ,
-                    " at ",
-                    _JOB_4_REF,
-                    ".",
-                )
-            ),
+            *_post_silluq_image_intro("Cambridge", _JOB_4_REF, "both-strokes"),
             _job_4_cam1753_crop(),
         ]
     if image_id == "sassoon-1053-jb4-12":
         return [
+            *_post_silluq_image_intro("Sassoon", _JOB_4_REF, "both-strokes"),
+            _job_4_sassoon_crop(),
             mb_html.para(
                 (
-                    "Sassoon has a ",
-                    _ROM_METEG,
-                    " after the ",
-                    _ROM_SILLUQ,
-                    " at ",
-                    _JOB_4_REF,
-                    ". The later ",
-                    _ROM_METEG,
-                    " is far from vertical: it slants northeast to southwest. "
-                    "I have no idea whether that slant is meaningful, but it is "
-                    "too conspicuous to leave unmentioned.",
+                    "Sassoon's later stroke is far from vertical: it slants northeast "
+                    "to southwest. I have no idea whether that slant is meaningful, but "
+                    "it is too conspicuous to leave unmentioned.",
                 )
             ),
-            _job_4_sassoon_crop(),
         ]
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
@@ -1399,22 +1486,25 @@ def build_post_silluq_image_body(case: dict) -> list:
         contents.extend(_post_silluq_image_nodes(image_id))
     if bcv == "jb4:12":
         # Ben's placement observations are recorded in the Job report and its update.
-        contents.append(
-            mb_html.para(
-                (
-                    "We usually regard the position of an “early ",
-                    _ROM_METEG,
-                    "”—a ",
-                    _ROM_METEG,
-                    " to the right of its vowel—as meaningless. Yet the stroke under "
-                    "the mem is to the right of its segol in both Aleppo and "
-                    "Leningrad. On this page's interpretation, both manuscripts "
-                    "therefore have an “early ",
-                    _ROM_SILLUQ,
-                    "” here, which seems an extraordinary coincidence. In Cambridge, the ",
-                    _ROM_SILLUQ,
-                    " under the mem is to the left of its segol, in the normal position.",
-                )
+        contents.extend(
+            (
+                mb_html.heading_level_2("Position of the two strokes"),
+                mb_html.para(
+                    (
+                        "We usually regard the position of an “early ",
+                        _ROM_METEG,
+                        "”—a ",
+                        _ROM_METEG,
+                        " to the right of its vowel—as meaningless. Yet the stroke under "
+                        "the mem is to the right of its segol in both Aleppo and "
+                        "Leningrad. On this page's interpretation, both manuscripts "
+                        "therefore have an “early ",
+                        _ROM_SILLUQ,
+                        "” here, which seems an extraordinary coincidence. In Cambridge, the ",
+                        _ROM_SILLUQ,
+                        " under the mem is to the left of its segol, in the normal position.",
+                    )
+                ),
             )
         )
     return contents
@@ -1493,6 +1583,7 @@ def build_post_silluq_body(
         *_post_silluq_case_register(cases, forms, observations),
         *_post_silluq_discovery_credits(cases),
         *_post_silluq_source_notes(cases, forms),
+        *_post_silluq_reference_catalog(cases),
         *_post_silluq_additional_sources(cases),
         mb_html.heading_level_2(
             ("φ1 — A distinct form for ", _ROM_SILLUQ),
