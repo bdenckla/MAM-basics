@@ -911,20 +911,27 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
 def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     """Credit the publications and searches through which the cases became known."""
     bcvs = {case["bcv"] for case in cases}
-    required = {
+    expected_bcvs = {
         _POST_SILLUQ_VERSE,
         _MAM_POST_SILLUQ_VERSE,
         _UXLC_CHANGE_VERSE,
+        "ps60:10",
+        "ps70:2",
         "ps72:15",
+        "jb4:12",
     }
-    if not required <= bcvs:
+    if bcvs != expected_bcvs:
         raise ValueError(
-            "The meteg-after-silluq discovery credits require "
-            f"{sorted(required - bcvs)}"
+            "The Da'at Miqra five-of-seven account requires exactly these cases: "
+            f"missing {sorted(expected_bcvs - bcvs)}; "
+            f"unexpected {sorted(bcvs - expected_bcvs)}"
         )
 
     # The CoS citation follows Ben's print reference. The OCR export attaches the same note
     # to section 46 as its internal note [^81], which does not replace the printed citation.
+    # Ben directly checked Da'at Miqra and established on 2026-09-23 that Breuer notes the
+    # Leningrad Codex's post-silluq meteg in five of these seven words, with 1 Kings 7:37
+    # and Job 4:12 as the exceptions.
     return [
         mb_html.heading_level_2("Notes on the cases"),
         mb_html.para(
@@ -950,12 +957,10 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 _ROM_METEG,
                 " after the ",
                 _ROM_SILLUQ,
-                " at ",
-                _ref_link(_POST_SILLUQ_VERSE),
-                ", ",
-                _ref_link(_UXLC_CHANGE_VERSE),
-                ", and ",
-                _ref_link("ps72:15"),
+                " in five of these seven words; the exceptions are ",
+                _ref_link(_MAM_POST_SILLUQ_VERSE),
+                " and ",
+                _ref_link("jb4:12"),
                 ".",
             )
         ),

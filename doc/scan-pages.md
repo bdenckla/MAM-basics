@@ -194,6 +194,18 @@ are separate evidence and must not be inferred from an entry-index record.
   | `simanim-tiqqun` | `Feldheim Simanim Tiqqun` | 614 |
   | `bhl` | `Biblia Hebraica Leningradensia` | 1295 |
 
+### Canonical holdings outside the current five-edition index
+
+The canonical Da'at Miqra scan is
+`C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/Da-at Miqra`. It is available and
+organized by biblical book, but it is not one of the five editions currently indexed by
+`py/main_scan_pages.py` and has no `in/scan-pages/` index. A Da'at Miqra index is possible
+future work, not a phase of the current five-edition undertaking.
+
+`C:/Users/BenDe/OneDrive/Documents/Tanakh/misc/Breuer-DM-mekorot-hanosah.pdf` is a
+low-quality, noncanonical copy and is not a substitute for the canonical scan. It remains
+untouched; deleting it would be a separate, explicitly authorized task.
+
 ## Survey findings (measured 2026-08-06 against the live OneDrive folder)
 
 Scans root: `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks`. The file counts above and
@@ -752,5 +764,6 @@ here. Independent of Phase 2, so the two can interleave.
 
 1. **Census order across the four full-Tanakh editions?** Default: jc1, bhl, koren,
    simanim-tanakh.
-2. **Scope:** the other ScansOfBooks folders (JC2 Companion, JC3, Da'at Miqra, the
+2. **Scope beyond the recorded Da'at Miqra disposition:** the other ScansOfBooks folders
+   (JC2 Companion, JC3, the
    readers, the loose PDFs) stay out of the index. Confirm.

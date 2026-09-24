@@ -85,6 +85,26 @@ Also on disk: `~/OneDrive/Documents/Tanakh/Introduction to the Tiberian Masorah 
 FineReader export.docx`, with excerpts under `~/OneDrive/Documents/Tanakh/misc/Yeivin-ITM-misc/`,
 and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pdf`.
 
+## Breuer, *Da'at Miqra*
+
+- **The canonical scan is**
+  `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/Da-at Miqra`, organized by biblical book.
+  It is available for source research but is not one of the five editions currently covered by
+  MAM-basics' operational scan-pages index. A Da'at Miqra index is possible future work, not an
+  existing index.
+- **Ignore the low-quality, noncanonical copy** at
+  `C:/Users/BenDe/OneDrive/Documents/Tanakh/misc/Breuer-DM-mekorot-hanosah.pdf`; it is not a
+  substitute for the canonical scan. The workbook `quirks listed in Da-at Miqra.xlsx` indexes
+  Job quirks rather than the whole series and cannot establish broader coverage.
+- **A missing searchable-text layer is not evidence that the readings are unavailable.** Do
+  not automatically respond by attempting OCR or asking Ben to supply readings. Direct image
+  inspection, limited OCR, and a full Da'at Miqra index are separately scoped work; do not add
+  any of them to an unrelated source question.
+- **For the seven meteg-after-silluq words, the coverage is settled.** Ben directly established
+  on 2026-09-23 that Breuer notes the Leningrad Codex's meteg after the silluq in five; the
+  exceptions are 1 Kings 7:37 and Job 4:12. Do not reopen that finding merely because the
+  noncanonical PDF has no searchable text.
+
 ## Breuer, *The Cantillation of Scripture* (CoS, English)
 
 - **CoS page numbers are from Wengrov's English translation.** In an isolated citation, put the
