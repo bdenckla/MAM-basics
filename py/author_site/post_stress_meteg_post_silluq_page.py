@@ -1157,7 +1157,7 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
         _post_silluq_table_row(
             (
                 "Breuer",
-                mb_html.code("CoS"),
+                "CoS",
                 author.book_title("The Cantillation of Scripture"),
             ),
             (None, centered, None),
@@ -1298,7 +1298,9 @@ def _post_silluq_additional_sources(cases: list[dict]) -> list:
     return contents
 
 
-def _post_silluq_image_intro(source: str, ref: str, state: str) -> list:
+def _post_silluq_image_intro(
+    source: str, ref: str, state: str, continuation: tuple = ()
+) -> list:
     """Render one source heading and one uniformly phrased image claim."""
     if state == "later-meteg":
         claim = (" has a ", _ROM_METEG, " after the ", _ROM_SILLUQ)
@@ -1310,7 +1312,7 @@ def _post_silluq_image_intro(source: str, ref: str, state: str) -> list:
         raise ValueError(f"Unknown post-silluq image state: {state!r}")
     return [
         mb_html.heading_level_2(source),
-        mb_html.para((source, *claim, " at ", ref, ".")),
+        mb_html.para((source, *claim, " at ", ref, ".", *continuation)),
     ]
 
 
@@ -1328,17 +1330,19 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "cairo-cotp-1s17-5":
         return [
-            *_post_silluq_image_intro("Cairo", _POST_SILLUQ_REF, "no-later-mark"),
-            _post_silluq_cairo_cotp_crop(),
-            mb_html.para(
+            *_post_silluq_image_intro(
+                "Cairo",
+                _POST_SILLUQ_REF,
+                "no-later-mark",
                 (
-                    "A stroke attached to the lamed ascender in the crop may look "
+                    " A stroke attached to the lamed ascender in the crop may look "
                     "like a ",
                     _ROM_METEG,
                     ", but it is part of the scribe's lamed. Ben notes that the "
                     "other lameds on the manuscript page have the same feature.",
-                )
+                ),
             ),
+            _post_silluq_cairo_cotp_crop(),
         ]
     if image_id == "sassoon-1053-1s17-5":
         return [
@@ -1464,15 +1468,17 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "sassoon-1053-jb4-12":
         return [
-            *_post_silluq_image_intro("Sassoon", _JOB_4_REF, "both-strokes"),
-            _job_4_sassoon_crop(),
-            mb_html.para(
+            *_post_silluq_image_intro(
+                "Sassoon",
+                _JOB_4_REF,
+                "both-strokes",
                 (
-                    "Sassoon's later stroke is far from vertical: it slants northeast "
+                    " Sassoon's later stroke is far from vertical: it slants northeast "
                     "to southwest. I have no idea whether that slant is meaningful, but "
                     "it is too conspicuous to leave unmentioned.",
-                )
+                ),
             ),
+            _job_4_sassoon_crop(),
         ]
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
