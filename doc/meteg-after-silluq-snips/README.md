@@ -6,8 +6,8 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes thirty manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-six have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes thirty-one manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-seven have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -192,6 +192,28 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
 14:14](https://www.masoretica.org/?book=1+Kings&chapter=14&verse=14&manuscript=sassoon). A
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
+
+## [st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png)
+
+The verse-final chanted word of 1 Kings 14:14 in **St. Petersburg EVR-II-B-55**, formerly B 247
+and identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
+from `Screenshot 2026-09-25 161027.png`, SHA-256
+`56C00FBC82FE6F183BB0E733B14BA25B393BA3AACEF0DBCEF9489CF7348DAE29`. The published PNG
+is a byte-for-byte copy: 79,942 bytes and 374 × 208 pixels.
+
+Ben identifies the source as Part B image 186, FL48718079. Opened fresh, the [National Library
+of Israel viewer](https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48718079)
+shows volume 2 and “Page 186.”
+
+The whole verse occupies main-text lines 14–19 of the right-hand column, column 1 of 3. The
+verse-final chanted word is the maqaf compound גם־עתה, and it spans a line break: its first atom,
+גם, is the last atom on line 18, and its second atom, עתה, is the first atom on line 19. No page
+or column break falls inside the verse. The verse begins below two lines of Masorah at the top,
+and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
+image.
+
+**St. Petersburg EVR-II-B-55 has the silluq alone:** it has no meteg after the silluq. Codex
+directly inspected the supplied crop.
 
 ## [aleppo-251r-Ps60v10-HFRV33Y.png](../../gh-pages/img/aleppo-251r-Ps60v10-HFRV33Y.png)
 

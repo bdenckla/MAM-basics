@@ -41,6 +41,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `sassoon-1053-Ps72v15-yevarkhenhu.png` | Codex Sassoon 1053 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Job4v12-menhu.png` | Codex Sassoon 1053 | Job 4:12 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon) | Not independently established |
 | `st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | 1 Samuel 17:5 | Folio 57a; digital page 120; column 2, line 7 | Screenshot supplied by Ben Denckla from [National Library of Israel Part B image 120](https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48718013) | Not independently established |
+| `st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | 1 Kings 14:14 | Digital page 186; column 1, lines 18–19 | Screenshot supplied by Ben Denckla from [National Library of Israel Part B image 186](https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48718079) | Not independently established |
 | `st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 60:10 | Folio 303a; image file 623 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
 | `st-petersburg-evr-ii-b-55-Ps70v2-xushah.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 70:2 | Folio 307b; image file 632 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
 | `st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 72:15 | Folio 308b; image file 634 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
@@ -135,6 +136,15 @@ visible at the bottom of the page; Ben identifies the side as folio 57a. Ben rep
 whole verse occupies column 2, main-text lines 1–7, with the verse-final chanted word as a single
 atom opening line 7. The crop-source README records the fuller page-layout details. Codex directly
 inspected the supplied crop and saw the silluq alone, with no later meteg.
+
+The St. Petersburg EVR-II-B-55 crop of 1 Kings 14:14 was added on 2026-09-25 from Ben's
+`Screenshot 2026-09-25 161027.png`, SHA-256
+`56C00FBC82FE6F183BB0E733B14BA25B393BA3AACEF0DBCEF9489CF7348DAE29`. The tracked crop
+retains the screenshot's 79,942 bytes unchanged. Ben identifies the source as Part B image 186,
+FL48718079, which the National Library of Israel viewer labels “Page 186.” Ben reports that the
+whole verse occupies column 1, main-text lines 14–19, and that the verse-final chanted word spans
+lines 18–19. The crop-source README records the atom positions and fuller page-layout details.
+Codex directly inspected the supplied crop and saw the silluq alone, with no later meteg.
 
 The St. Petersburg EVR-II-B-55 crop of Job 4:12 was added on 2026-09-25 from Ben's
 `Screenshot 2026-09-25 080758.png`, SHA-256

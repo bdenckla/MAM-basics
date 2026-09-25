@@ -15,6 +15,8 @@ from author_site.post_stress_meteg_shared import (
     _FIRST_KINGS_14_ALEPPO_CROP_URL,
     _FIRST_KINGS_14_CAIRO_COTP_CROP_URL,
     _FIRST_KINGS_14_LENINGRAD_CROP_URL,
+    _FIRST_KINGS_14_PETERSBURG_CROP_URL,
+    _FIRST_KINGS_14_PETERSBURG_SOURCE_URL,
     _FIRST_KINGS_14_SASSOON_CROP_URL,
     _FIRST_KINGS_14_SASSOON_SOURCE_URL,
     _FNAME,
@@ -1452,6 +1454,13 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             *_post_silluq_image_intro("Sassoon", _UXLC_CHANGE_REF, "no-later-mark"),
             _first_kings_14_sassoon_crop(),
         ]
+    if image_id == "petersburg-evr-ii-b-55-1k14-14":
+        return _petersburg_image_nodes(
+            _UXLC_CHANGE_REF,
+            _FIRST_KINGS_14_PETERSBURG_CROP_URL,
+            source_url=_FIRST_KINGS_14_PETERSBURG_SOURCE_URL,
+            location="digital page 186, column 1, lines 18–19",
+        )
     if image_id == "aleppo-ps60-10":
         return [
             *_post_silluq_image_intro("Aleppo", _PSALMS_60_REF, "no-later-mark"),
