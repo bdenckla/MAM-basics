@@ -567,7 +567,7 @@ def _case_source_mask_flags(
 
 
 def _case_source_masks(case: dict, complete_koren_by_ref: dict[str, dict]) -> object:
-    """Render the AL5CKS or AL57KS masks and their hover explanations."""
+    """Render the AL5ECKS or AL5E7KS masks and their hover explanations."""
     return _source_mask_pair(*_case_source_mask_data(case, complete_koren_by_ref))
 
 
@@ -626,6 +626,7 @@ _POST_SILLUQ_SHORT_SOURCE_NAMES = {
     "cairo_cotp": "Cairo",
     "cam1753": "Cambridge",
     "sassoon_1053": "Sassoon",
+    "petersburg_evr_ii_b_55": "EVR-II-B-55",
     "koren": "Koren",
     "simanim": "Simanim",
 }
@@ -752,6 +753,7 @@ def _post_silluq_source_code_table() -> object:
             ("A", "Aleppo Codex", ""),
             ("L", "Leningrad Codex", ""),
             ("5", "Sassoon 1053", ""),
+            ("E", "St. Petersburg EVR-II-B-55", "Prophets and Writings"),
             ("C", "Cairo CoTP", "Prophets"),
             ("7", "Cambridge 1753", "Writings"),
             ("K", "Koren Classic Tanakh", ""),
@@ -767,7 +769,7 @@ def _post_silluq_first_samuel_example(
     mam_forms: dict[str, str],
     observations: list[dict],
 ) -> list:
-    """Introduce the two forms, syllable colors, and AL5CKS at 1 Samuel 17:5."""
+    """Introduce the two forms, syllable colors, and AL5ECKS at 1 Samuel 17:5."""
     cases_by_bcv = {case["bcv"]: case for case in cases}
     first_samuel = cases_by_bcv.get(_POST_SILLUQ_VERSE)
     if first_samuel is None:
@@ -777,6 +779,7 @@ def _post_silluq_first_samuel_example(
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark",
     }
@@ -799,7 +802,7 @@ def _post_silluq_first_samuel_example(
         first_samuel, _complete_koren_by_ref(observations)
     )
     masks = mask_data[:2]
-    if masks != ("-L----", "A-5CKS"):
+    if masks != ("-L-----", "A-5ECKS"):
         raise ValueError("1 Samuel 17:5: introductory source masks drifted")
     return [
         mb_html.para(
@@ -874,8 +877,8 @@ def _post_silluq_first_samuel_example(
         _post_silluq_source_code_table(),
         mb_html.para(
             "So, for cases in The Prophets, the full possible array of codes is "
-            "AL5CKS, and for cases in The Writings, the full possible array is "
-            "AL57KS. Note that in the array for The Writings, there is a '7' "
+            "AL5ECKS, and for cases in The Writings, the full possible array is "
+            "AL5E7KS. Note that in the array for The Writings, there is a '7' "
             "where for The Prophets we had a 'C'."
         ),
     ]
@@ -994,6 +997,7 @@ def _post_silluq_source_notes(cases: list[dict], forms: dict[str, str]) -> list:
         "leningrad": "no-later-mark",
         "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "not-recorded",
         "koren": "tracked-observation",
         "simanim": "no-later-mark",
     }
@@ -1080,7 +1084,7 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
     # The CoS citation follows Ben's print reference. The OCR export attaches the same note
     # to section 46 as its internal note [^81], which does not replace the printed citation.
     return [
-        mb_html.heading_level_2("Notes on the cases"),
+        mb_html.heading_level_2("Other reports of these anomalies"),
         mb_html.para(
             (
                 "As mentioned above, we became aware of ",
@@ -1092,7 +1096,11 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 " from Breuer, ",
                 cos(),
                 ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
-                "We became aware of the remaining five entries from searches of our own. "
+                "We became aware of the remaining five entries from searches of our own.",
+            )
+        ),
+        mb_html.para(
+            (
                 "When we later compared all seven cases with the reference works catalogued "
                 "below, we found a mixed picture: some works merely have the relevant form "
                 "or note it for another reason, rather than identifying the ",
@@ -1504,7 +1512,17 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _psalms_70_sassoon_crop(),
         ]
     if image_id == "petersburg-evr-ii-b-55-ps70-2":
-        return _petersburg_image_nodes(_PSALMS_70_REF, _PSALMS_70_PETERSBURG_CROP_URL)
+        return _petersburg_image_nodes(
+            _PSALMS_70_REF,
+            _PSALMS_70_PETERSBURG_CROP_URL,
+            (
+                ". A hard-to-explain mark appears just to the left of the ",
+                _ROM_SILLUQ,
+                " and touches the ",
+                _ROM_SILLUQ,
+                ". The mark looks intentional, but I have no idea what it might be.",
+            ),
+        )
     if image_id == "aleppo-ps72-15":
         return [
             *_post_silluq_image_intro("Aleppo", _PSALMS_72_REF, "no-later-mark"),

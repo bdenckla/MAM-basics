@@ -368,6 +368,7 @@ _POST_SILLUQ_CAIRO_COTP_SOURCES = (
     "aleppo",
     "leningrad",
     "sassoon_1053",
+    "petersburg_evr_ii_b_55",
     "cairo_cotp",
     "koren",
     "simanim",
@@ -377,6 +378,7 @@ _POST_SILLUQ_CAM1753_SOURCES = (
     "aleppo",
     "leningrad",
     "sassoon_1053",
+    "petersburg_evr_ii_b_55",
     "cam1753",
     "koren",
     "simanim",
@@ -384,7 +386,7 @@ _POST_SILLUQ_CAM1753_SOURCES = (
 
 
 def _post_silluq_sources_for_bcv(bcv: str) -> tuple[str, ...]:
-    """Use AL5CKS for the Prophets cases and AL57KS for the other four."""
+    """Use AL5ECKS for the Prophets cases and AL5E7KS for the other four."""
     if bcv in _POST_SILLUQ_CAIRO_COTP_BCVS:
         return _POST_SILLUQ_CAIRO_COTP_SOURCES
     if bcv in _POST_SILLUQ_CAM1753_BCVS:
@@ -398,6 +400,7 @@ _POST_SILLUQ_SOURCE_CODES = {
     "cairo_cotp": "C",
     "cam1753": "7",
     "sassoon_1053": "5",
+    "petersburg_evr_ii_b_55": "E",
     "koren": "K",
     "simanim": "S",
 }

@@ -11,6 +11,7 @@
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -36,6 +37,7 @@
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -61,6 +63,7 @@
         "leningrad": "no-later-mark",
         "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "not-recorded",
         "koren": "tracked-observation",
         "simanim": "no-later-mark"
       },
@@ -85,6 +88,7 @@
         "leningrad": "both-strokes",
         "cam1753": "both-strokes",
         "sassoon_1053": "both-strokes",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "tracked-observation",
         "simanim": "both-strokes"
       },
@@ -110,6 +114,7 @@
         "leningrad": "later-meteg",
         "cairo_cotp": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -135,6 +140,7 @@
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
@@ -160,6 +166,7 @@
         "leningrad": "later-meteg",
         "cam1753": "no-later-mark",
         "sassoon_1053": "no-later-mark",
+        "petersburg_evr_ii_b_55": "no-later-mark",
         "koren": "no-later-mark",
         "simanim": "no-later-mark"
       },
