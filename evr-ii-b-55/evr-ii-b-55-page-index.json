@@ -1,0 +1,206 @@
+{
+  "header": {
+    "description": "Partial page index of St. Petersburg, National Library of Russia, Evr. II B 55, over the National Library of Israel's images of the codex, whose record calls it Ms. EVR II B 247, 55 and has two parts. It grows page by page, and each record's de_note says who read it, when and at what resolution. A record identifies a page by de_nli_part, by de_nli_image, the image's number in its downloaded filename, and by de_fl_id, the NLI file id in the same filename; de_shelfmark follows the part, Part B's images being taken as B 55's. de_first_atom_* names the first atom the page held and de_last_atom_* its last atom. An atom whose _state is lost was not seen: de_first_atom_basis says how it was inferred, and de_first_surviving_atom_* names the first atom that survives; damaged means partly legible. A _ref names a verse by MAM-simple's book id, chapter and verse, as the verse labels of the Aleppo and Cambridge 1753 line-break files do. A _num counts that verse's atoms from 1 in MAM's word sequence in MAM-simple/xml-vtrad-mam/, segmented as the flat streams behind those line-break files segment it: py/py_ac_loc/mam_xml_verses.py's get_verse_words, then a split after every maqaf. So the paseq glyph and a sof pasuq go with the atom before them, and a ketiv/qere contributes its ketiv. Every de_*_text is MAM's LETTERS, UNPOINTED, one space between atoms, lifted from MAM-simple by a script and never typed, and deliberately so: a record locates text on a page, so pointing it would suggest the pointing had been transcribed off the image as well as the letters, which it has not been. Nothing here records what the manuscript has in pointing, accents or meteg. de_text_at_line gives a located verse's atoms on one line and de_text_at_line_ref that line: a page's lines are its 19 ruled lines of main text, counted from the top with blank ones included. de_pencil_numbers lists the pencilled numbers seen at the foot or in the lower-left margin; an empty list means none was seen there.",
+    "consumer_notice": {
+      "summary": "This file is a locator index, not a manuscript transcription or a Bible edition.",
+      "critical_rules": [
+        "Text ranges and text cues locate content on photographed pages; they must not be cited as a diplomatic transcription of the manuscript.",
+        "Gaps and mid-verse boundaries are meaningful locator evidence; do not round them to whole verses or fill them from another edition.",
+        "Line-break and page-geometry annotations are separate supporting data; do not infer either from this entry index."
+      ],
+      "documentation": "https://github.com/bdenckla/MAM-basics/blob/main/evr-ii-b-55/README.md#consumer-guide"
+    }
+  },
+  "body": [
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 497,
+      "de_fl_id": "FL48719250",
+      "de_layout": "Three columns of 19 ruled lines each.",
+      "de_first_atom_ref": "2Chr 11:16",
+      "de_first_atom_num": 6,
+      "de_first_atom_text": "את",
+      "de_first_atom_state": "complete",
+      "de_last_atom_ref": "2Chr 12:2",
+      "de_last_atom_num": 4,
+      "de_last_atom_text": "למלך",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "12,2",
+          "de_place": "lower-left margin, beside line 19 of the left column"
+        }
+      ],
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6144 × 7824 image; not yet checked by Ben. The first atom is at the right end of line 1 of the right column and the last atom at the left end of line 19 of the left column. Line 17 of the left column holds only 2Chr 12:1's last atom; the rest of that line is blank. The lower margin, where images 621, 623 and 635 have a pencilled number, is torn away close below the Masorah magna."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 621,
+      "de_fl_id": "FL48719460",
+      "de_layout": "Each line in two halves; 19 ruled lines, line 10 blank.",
+      "de_first_atom_ref": "Ps 58:4",
+      "de_first_atom_num": 4,
+      "de_first_atom_text": "תעו",
+      "de_first_atom_state": "damaged",
+      "de_last_atom_ref": "Ps 59:9",
+      "de_last_atom_num": 7,
+      "de_last_atom_text": "גוים",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "302",
+          "de_place": "foot",
+          "de_doubt": "The last digit is uncertain and 308 is not ruled out; its foot runs right like the foot of each 2 in the pencilled 12,2 on image 497."
+        }
+      ],
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6384 × 7120 image; not yet checked by Ben. The torn upper edge takes the Masorah magna, the tops of line 1's letters, and all of line 1's left half, which held the first half of Ps 58:5. The first atom is at the right end of line 1 with the tops of its letters cut. Line 1 is the page's first ruled line: the page has 19 ruled lines, counting the blank line 10, and line 19 sits directly above the Masorah magna at the foot. The page is skewed, the left half of each line sitting higher than its right half. An earlier Claude session had read the pencilled number as 308 from a reduced image the same day."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 622,
+      "de_fl_id": "FL48719461",
+      "de_layout": "Each line in two halves; 19 ruled lines, line 11 blank.",
+      "de_first_atom_ref": "Ps 59:10",
+      "de_first_atom_num": 1,
+      "de_first_atom_text": "עזו",
+      "de_first_atom_state": "lost",
+      "de_first_atom_basis": "Not seen: the right half of line 1 is torn away. Inferred from the layout: the left half of line 1 holds atoms 4-6, the verse's second half, and image 621 ends with Ps 59:9's last atom.",
+      "de_first_surviving_atom_ref": "Ps 59:10",
+      "de_first_surviving_atom_num": 4,
+      "de_first_surviving_atom_text": "כי",
+      "de_first_surviving_atom_state": "damaged",
+      "de_last_atom_ref": "Ps 60:7",
+      "de_last_atom_num": 6,
+      "de_last_atom_text": "ועננו",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [],
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6288 × 7312 image; not yet checked by Ben. The upper edge is torn on a diagonal, higher at the left. Line 1 keeps only its left half, whose letters have their tops cut; the first surviving atom is at its right end. No pencilled number at the foot or in the lower-left margin."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 623,
+      "de_fl_id": "FL48719462",
+      "de_layout": "Each line in two halves; 19 ruled lines, lines 8 and 17 blank.",
+      "de_first_atom_ref": "Ps 60:8",
+      "de_first_atom_num": 1,
+      "de_first_atom_text": "אלהים",
+      "de_first_atom_state": "complete",
+      "de_last_atom_ref": "Ps 62:3",
+      "de_last_atom_num": 8,
+      "de_last_atom_text": "רבה",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "303",
+          "de_place": "foot"
+        }
+      ],
+      "de_text_at_line": "מואב סיר רחצי על אדום אשליך נעלי עלי פלשת התרועעי",
+      "de_text_at_line_ref": "Ps 60:10, atoms 1-10, line 3 of 19; the verse fills the line, and its last atom ends it",
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6288 × 7568 image; not yet checked by Ben. Nothing is lost above line 1, which holds the whole of Ps 60:8 below the Masorah magna. The page is skewed, the left half of each line sitting higher than its right half."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 632,
+      "de_fl_id": "FL48719471",
+      "de_layout": "Each line in two halves; 19 ruled lines, lines 3 and 10 blank.",
+      "de_first_atom_ref": "Ps 69:36",
+      "de_first_atom_num": 1,
+      "de_first_atom_text": "כי",
+      "de_first_atom_state": "lost",
+      "de_first_atom_basis": "Not seen: the parchment is torn away at the right end of line 1. Inferred from the space: line 1 holds atoms 2-10, and the torn space between atom 2's surviving last letter and the text block's right edge, as lines 2 and 4 set it, fits the rest of atom 2 and one two-letter atom.",
+      "de_first_surviving_atom_ref": "Ps 69:36",
+      "de_first_surviving_atom_num": 2,
+      "de_first_surviving_atom_text": "אלהים",
+      "de_first_surviving_atom_state": "damaged",
+      "de_last_atom_ref": "Ps 71:10",
+      "de_last_atom_num": 8,
+      "de_last_atom_text": "יחדו",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "71,10",
+          "de_place": "lower-left margin, beside line 19"
+        }
+      ],
+      "de_text_at_line": "אלהים להצילני יהוה לעזרתי חושה",
+      "de_text_at_line_ref": "Ps 70:2, atoms 1-5, line 4 of 19, after the blank line 3; Ps 70:1 fills the line's right half, this verse fills its left half, and the verse's last atom ends the line",
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6240 × 7520 image; not yet checked by Ben. At the right end of line 1 a stain covers the first surviving atom, of which only the last letter is legible, and the parchment beyond it is torn away. No pencilled number at the foot."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 634,
+      "de_fl_id": "FL48719473",
+      "de_layout": "Each line in two halves; 19 ruled lines, line 17 blank.",
+      "de_first_atom_ref": "Ps 72:5",
+      "de_first_atom_num": 1,
+      "de_first_atom_text": "ייראוך",
+      "de_first_atom_state": "damaged",
+      "de_last_atom_ref": "Ps 73:2",
+      "de_last_atom_num": 4,
+      "de_last_atom_text": "רגלי",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [],
+      "de_text_at_line": "בעדו תמיד כל היום יברכנהו",
+      "de_text_at_line_ref": "Ps 72:15, atoms 7-11, the right half of line 11 of 19, which the verse's last atom ends; atoms 1-6 are the left half of line 10",
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6240 × 7056 image; not yet checked by Ben. The upper left is torn away on a diagonal: lines 1 and 2 keep only their right halves, and line 1's letters are torn along their tops. Of the first atom only the final letter's descender and fragments of the letter before it survive. No pencilled number at the foot or in the lower-left margin."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 635,
+      "de_fl_id": "FL48719474",
+      "de_layout": "Each line in two halves; 19 ruled lines, none blank.",
+      "de_first_atom_ref": "Ps 73:2",
+      "de_first_atom_num": 5,
+      "de_first_atom_text": "כאין",
+      "de_first_atom_state": "complete",
+      "de_last_atom_ref": "Ps 73:26",
+      "de_last_atom_num": 6,
+      "de_last_atom_text": "וחלקי",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "309",
+          "de_place": "foot"
+        }
+      ],
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6128 × 7568 image; not yet checked by Ben. No pencilled number in the lower-left margin."
+    },
+    {
+      "de_shelfmark": "Evr. II B 55",
+      "de_nli_part": "B",
+      "de_nli_image": 714,
+      "de_fl_id": "FL48719553",
+      "de_layout": "Each line in two halves; 19 ruled lines, none blank.",
+      "de_first_atom_ref": "Job 4:11",
+      "de_first_atom_num": 1,
+      "de_first_atom_text": "ליש",
+      "de_first_atom_state": "lost",
+      "de_first_atom_basis": "Not seen: the right half of line 1 is torn away. Inferred from the layout: the left half of line 1 holds atoms 5-7, the verse's second half, so its right half held atoms 1-4.",
+      "de_first_surviving_atom_ref": "Job 4:11",
+      "de_first_surviving_atom_num": 4,
+      "de_first_surviving_atom_text": "טרף",
+      "de_first_surviving_atom_state": "damaged",
+      "de_last_atom_ref": "Job 5:7",
+      "de_last_atom_num": 4,
+      "de_last_atom_text": "יולד",
+      "de_last_atom_state": "complete",
+      "de_pencil_numbers": [
+        {
+          "de_number": "57",
+          "de_place": "lower-left margin, below line 19"
+        }
+      ],
+      "de_text_at_line": "ותקח אזני שמץ מנהו",
+      "de_text_at_line_ref": "Job 4:12, atoms 4-7, the left half of line 2 of 19, which the verse's last atom ends; the right half, which held atoms 1-3, is mostly torn away",
+      "de_note": "Read by a Claude session (Claude Code, Opus 5.5) on 2026-09-25 from full-resolution crops of the 6048 × 7104 image; not yet checked by Ben. The upper right is torn away on a diagonal, taking most of the right halves of lines 1 and 2. Of the first surviving atom only its last letter survives, with marks below the two letters before it. No pencilled number at the foot."
+    }
+  ]
+}

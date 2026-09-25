@@ -29,6 +29,7 @@ Several of the directories below have a README of their own, beside the files it
 - [`MAM-OSIS/`](MAM-OSIS/README.md) — OSIS MAM exports for conversion to SWORD format, with configuration and documentation
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data
 - [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data
+- [`evr-ii-b-55/`](evr-ii-b-55/) — St. Petersburg Evr. II B 55 page-location data
 - [`in/lci_recs.json`](in/lci_recs.json) — Leningrad Codex page-location data
 - [`book-of-job/`](book-of-job/) — files related to the BHQ Job review
 - [`holman/`](holman/) — files related to Daniel Holman's change proposals
