@@ -59,6 +59,7 @@ from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
 from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
+from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
 from author_misc import mam_parsed_docs_build
 from author_site import post_stress_meteg
 from author_site import site_data
@@ -116,6 +117,7 @@ def almost_main():
         as_review.gen_html_file(tdm_ch),
         gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
+        gaya_text.gen_html_file(tdm_ch, body_class="wide"),
     ]
     _gen_index_html(top_dir_misc, index_entries)
 

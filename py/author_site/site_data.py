@@ -10,9 +10,10 @@ Every internal href is relative so the generated page works both in a local chec
 at the site root.  ``py/tests/test_site_index_links.py`` walks all typed anchors, including
 heading links and grouped entries, to verify tracked targets and deploy-root reachability.
 
-The two translated excerpts from the Introduction to MAM copy the ``_TITLE`` constants of
-their ``py/author_misc/`` renderers.  The same lint compares those copies mechanically, so
-edit the source page title and this index entry together rather than retyping one side.
+The three translated excerpts from the Introduction to MAM copy the ``_TITLE`` constants
+of their ``py/author_misc/`` renderers.  The same lint compares those copies
+mechanically, so edit the source page title and this index entry together rather than
+retyping one side.
 
 ``gh-pages/wlc/index.html`` remains deliberately absent.  The index names the useful WLC
 destinations directly, while the frozen redirect manifest preserves the old wlc-utils
@@ -106,9 +107,9 @@ def _entry(text, href, **kwargs) -> Entry:
     return Entry(Anchor(text, href), **kwargs)
 
 
-def _mwd_misc(title: str, fname: str) -> Entry:
+def _mwd_misc(title: str, fname: str, **kwargs) -> Entry:
     """A page under MAM-with-doc/misc/, named by the title that page carries."""
-    return _entry(title, _MWD_MISC + fname)
+    return _entry(title, _MWD_MISC + fname, **kwargs)
 
 
 INTRO = (
@@ -177,6 +178,13 @@ _INTRODUCTION_EXCERPTS = Section(
     entries=(
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
+        # The note repeats the caveat the page opens with; drop both once a human has
+        # reviewed the translation.
+        _mwd_misc(
+            "געיה marks in MAM",
+            "he_ws_intro_to_mam_gaya_text.html",
+            note=(" (AI-generated translation, not yet reviewed by a human)",),
+        ),
         _entry(f"Aleppo Codex {_EM_DASH} Missing Sections", "aleppo/index.html"),
     ),
 )
@@ -304,8 +312,9 @@ SECTIONS = (
     _TAAMEY,
 )
 
-# The two translated Introduction-to-MAM entries and the source modules whose titles they
-# copy.  Keeping both ordered tuples lets the lint compare each entry with its own source.
+# The three translated Introduction-to-MAM entries and the source modules whose titles
+# they copy.  Keeping both ordered tuples lets the lint compare each entry with its own
+# source.
 INTRO_MAM_MWD_ENTRIES = tuple(
     entry
     for entry in _INTRODUCTION_EXCERPTS.entries

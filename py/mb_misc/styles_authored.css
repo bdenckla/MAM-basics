@@ -55,3 +55,11 @@ img.width10em { width: 10em; }
 img.width5em { width: 5em; }
 th, td { padding-right: 0.4em; padding-left: 0.4em; }
 img { max-width: 100%; }
+/* The box an AI-generated page opens with, e.g. he_ws_intro_to_mam_gaya_text.html's
+   "not yet reviewed by a human". Ben asked, 2026-09-25, for that caveat to be
+   prominently displayed. */
+p.ai-caveat {
+    border: 3px solid light-dark(#b00020, #ff6b81);
+    padding: 0.6em 1em;
+    text-align: left;
+}
