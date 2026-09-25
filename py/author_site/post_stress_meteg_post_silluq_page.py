@@ -1078,9 +1078,19 @@ def _post_silluq_discovery_credits(cases: list[dict]) -> list:
                 " from Breuer, ",
                 cos(),
                 ", ch. 8 §47, footnote 54 (p. 355 in the Wengrov English translation). "
-                "We became aware of the remaining five entries from various searches "
-                "of our own. After finding those five, we learned that various reference "
-                "works also record them. We catalog those references below.",
+                "We became aware of the remaining five entries from searches of our own. "
+                "When we later compared all seven cases with the reference works catalogued "
+                "below, we found a mixed picture: some works merely have the relevant form "
+                "or note it for another reason, rather than identifying the ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                " as an anomaly. Dotan does so only for ",
+                _ref_link("1s17:5"),
+                ", by placing it in BHL Appendix A. None of the sources we found calls out ",
+                _ref_link("jb4:12"),
+                " as an instance of this anomaly, so we regard our recognition of that case "
+                "as a discovery of our own.",
             )
         ),
     ]
