@@ -22,6 +22,8 @@ from author_site.post_stress_meteg_shared import (
     _JOB_4_ALEPPO_CROP_URL,
     _JOB_4_CAM1753_CROP_URL,
     _JOB_4_LENINGRAD_CROP_URL,
+    _JOB_4_PETERSBURG_CROP_URL,
+    _JOB_4_PETERSBURG_RECORD_URL,
     _JOB_4_REF,
     _JOB_4_SASSOON_CROP_URL,
     _JOB_4_SASSOON_SOURCE_URL,
@@ -461,6 +463,23 @@ def _job_4_sassoon_crop() -> object:
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>Sassoon; "
         f'<a href="{href}" target="_blank" rel="noopener">Masoretica source</a>.'
+        "</figcaption></figure>"
+    )
+
+
+def _job_4_petersburg_crop() -> object:
+    """The St. Petersburg EVR II B 55 crop at Job 4:12."""
+    href = escape(_JOB_4_PETERSBURG_RECORD_URL, quote=True)
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+        f'<img src="{_JOB_4_PETERSBURG_CROP_URL}"'
+        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR II B 55", _JOB_4_REF, "no-later-mark")}"'
+        ' loading="lazy"'
+        ' style="max-width: 100%; height: auto;"></a>'
+        "<figcaption>St. Petersburg EVR II B 55 (formerly B 247), "
+        'MAM siglum <span dir="rtl">ל-א</span>; '
+        f'<a href="{href}" target="_blank" rel="noopener">'
+        "National Library of Israel manuscript record</a>."
         "</figcaption></figure>"
     )
 
@@ -1479,6 +1498,25 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 ),
             ),
             _job_4_sassoon_crop(),
+        ]
+    if image_id == "petersburg-evr-ii-b-55-jb4-12":
+        return [
+            mb_html.heading_level_2("St. Petersburg EVR II B 55"),
+            mb_html.para(
+                (
+                    "St. Petersburg EVR II B 55 (formerly B 247), identified in "
+                    "MAM by the siglum ",
+                    wrap_hebrew_runs("ל-א"),
+                    ", is a manuscript of the Prophets and Writings close to the "
+                    "Aleppo Codex. At ",
+                    _JOB_4_REF,
+                    " it has the ",
+                    _ROM_SILLUQ,
+                    " alone in this word—the only manuscript represented on this "
+                    "page that has that form.",
+                )
+            ),
+            _job_4_petersburg_crop(),
         ]
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 

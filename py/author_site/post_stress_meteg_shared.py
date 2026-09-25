@@ -310,6 +310,12 @@ _JOB_4_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon"
 )
 
+_JOB_4_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png"
+
+_JOB_4_PETERSBURG_RECORD_URL = (
+    "https://www.nli.org.il/he/manuscripts/NNL_ALEPH990000991240205171/NLI"
+)
+
 _URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-eeseh.png"
 
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
@@ -401,6 +407,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "leningrad-jb4-12": "Job 4:12",
     "cam1753-jb4-12": "Job 4:12",
     "sassoon-1053-jb4-12": "Job 4:12",
+    "petersburg-evr-ii-b-55-jb4-12": "Job 4:12",
 }
 
 _POST_SILLUQ_IMAGE_IDS = frozenset(_POST_SILLUQ_IMAGE_REFS)
@@ -447,6 +454,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "leningrad-jb4-12",
         "cam1753-jb4-12",
         "sassoon-1053-jb4-12",
+        "petersburg-evr-ii-b-55-jb4-12",
     ),
 }
 

@@ -6,8 +6,8 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-eight manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-four have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes twenty-nine manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-five have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -438,6 +438,24 @@ page or folio coordinate has not been recorded. **Codex Sassoon 1053 has both st
 silluq and a meteg after it. Ben notes that the later meteg is far from vertical, slanting
 northeast to southwest. He does not know whether the slant is meaningful, but considers it too
 conspicuous to omit from the image page.
+
+## [st-petersburg-evr-ii-b-55-Job4v12-menhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png)
+
+The verse-final word of Job 4:12 in **St. Petersburg EVR II B 55**, formerly B 247 and identified
+in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+`Screenshot 2026-09-25 080758.png`, SHA-256
+`CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`. The published PNG
+is a byte-for-byte copy: 65,965 bytes and 256 × 204 pixels. The source site and manuscript
+coordinate are not recorded.
+
+The local [`sigil-decoding.md`](../sigil-decoding.md) gives the shelfmark and former number. The
+cached MAM introduction's [manuscript list](../../in/mam-ws-intro/appendices.mediawiki) identifies
+it as a manuscript of the Prophets and Writings close to the Aleppo Codex and records Job 1:1–9:19
+among its surviving text, which includes Job 4:12.
+
+**St. Petersburg EVR II B 55 has the silluq alone:** the crop has the stroke under the mem and no
+later mark under the he. Codex directly inspected the supplied crop. It is the only manuscript
+represented on the Job 4:12 crop page that has the silluq-only form of this word.
 
 ## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
 
