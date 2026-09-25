@@ -656,7 +656,8 @@ _STEPS = [
         " gh-pages/unicode-proposals.html, nine post-stress-meteg pages from the"
         " survey JSON, and one post-silluq case page per entry of"
         " site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES; must come after"
-        " accgram-survey-post-stress-meteg",
+        " accgram-survey-post-stress-meteg; also reads MAM-simple and"
+        " out/wlc422/1verses_03_jsju1s.json",
     ),
     # The three steps below joined on 2026-09-10, with the other offline generators of
     # tracked files that Ben agreed to add; until then nothing routine rewrote what they
