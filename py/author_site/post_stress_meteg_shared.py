@@ -236,6 +236,15 @@ _POST_SILLUQ_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon"
 )
 
+_POST_SILLUQ_PETERSBURG_CROP_URL = (
+    "img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png"
+)
+
+_POST_SILLUQ_PETERSBURG_SOURCE_URL = (
+    "https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI"
+    "?volumeItem=2#$FL48718013"
+)
+
 _MAM_POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1K-7v37.png"
 
 _MAM_POST_SILLUQ_LENINGRAD_CROP_URL = "img/Leningrad-Codex-1K-7v37.png"
@@ -389,6 +398,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "lc-1s17-5": "1 Samuel 17:5",
     "cairo-cotp-1s17-5": "1 Samuel 17:5",
     "sassoon-1053-1s17-5": "1 Samuel 17:5",
+    "petersburg-evr-ii-b-55-1s17-5": "1 Samuel 17:5",
     "aleppo-ps72-15": "Psalms 72:15",
     "leningrad-ps72-15": "Psalms 72:15",
     "cam1753-ps72-15": "Psalms 72:15",
@@ -427,6 +437,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "lc-1s17-5",
         "cairo-cotp-1s17-5",
         "sassoon-1053-1s17-5",
+        "petersburg-evr-ii-b-55-1s17-5",
     ),
     "Psalms 72:15": (
         "aleppo-ps72-15",

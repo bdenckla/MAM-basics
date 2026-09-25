@@ -46,6 +46,8 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_LC_CROP_SOURCE_URL,
     _POST_SILLUQ_LC_CROP_URL,
     _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID,
+    _POST_SILLUQ_PETERSBURG_CROP_URL,
+    _POST_SILLUQ_PETERSBURG_SOURCE_URL,
     _POST_SILLUQ_REF,
     _POST_SILLUQ_SASSOON_CROP_URL,
     _POST_SILLUQ_SASSOON_SOURCE_URL,
@@ -470,9 +472,16 @@ def _job_4_sassoon_crop() -> object:
     )
 
 
-def _petersburg_crop(crop_url: str, ref: str) -> object:
+def _petersburg_crop(
+    crop_url: str,
+    ref: str,
+    *,
+    source_url: str = _PETERSBURG_RECORD_URL,
+    location: str = "",
+) -> object:
     """One St. Petersburg EVR-II-B-55 crop."""
-    href = escape(_PETERSBURG_RECORD_URL, quote=True)
+    href = escape(source_url, quote=True)
+    location_clause = f", {escape(location)}" if location else ""
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{crop_url}"'
@@ -480,7 +489,7 @@ def _petersburg_crop(crop_url: str, ref: str) -> object:
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>St. Petersburg EVR-II-B-55 (formerly B 247), "
-        'MAM siglum <span dir="rtl">ל-א</span>; '
+        f'MAM siglum <span dir="rtl">ל-א</span>{location_clause}; '
         f'<a href="{href}" target="_blank" rel="noopener">'
         "National Library of Israel manuscript record</a>."
         "</figcaption></figure>"
@@ -1348,7 +1357,14 @@ def _post_silluq_image_intro(
     ]
 
 
-def _petersburg_image_nodes(ref: str, crop_url: str, continuation: tuple = ()) -> list:
+def _petersburg_image_nodes(
+    ref: str,
+    crop_url: str,
+    continuation: tuple = (),
+    *,
+    source_url: str = _PETERSBURG_RECORD_URL,
+    location: str = "",
+) -> list:
     """Render the shared identification and one L-A silluq-only crop."""
     sentence_end = continuation or (".",)
     return [
@@ -1367,7 +1383,12 @@ def _petersburg_image_nodes(ref: str, crop_url: str, continuation: tuple = ()) -
                 *sentence_end,
             )
         ),
-        _petersburg_crop(crop_url, ref),
+        _petersburg_crop(
+            crop_url,
+            ref,
+            source_url=source_url,
+            location=location,
+        ),
     ]
 
 
@@ -1404,6 +1425,13 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             *_post_silluq_image_intro("Sassoon", _POST_SILLUQ_REF, "no-later-mark"),
             _post_silluq_sassoon_crop(),
         ]
+    if image_id == "petersburg-evr-ii-b-55-1s17-5":
+        return _petersburg_image_nodes(
+            _POST_SILLUQ_REF,
+            _POST_SILLUQ_PETERSBURG_CROP_URL,
+            source_url=_POST_SILLUQ_PETERSBURG_SOURCE_URL,
+            location="folio 57a, column 2, line 7 (digital page 120)",
+        )
     if image_id == "aleppo-1k14-14":
         return [
             *_post_silluq_image_intro("Aleppo", _UXLC_CHANGE_REF, "no-later-mark"),

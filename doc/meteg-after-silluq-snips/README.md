@@ -6,8 +6,8 @@ report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
 evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes twenty-nine manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-five have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+publishes thirty manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
+twenty-six have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -102,6 +102,29 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Samuel
 17:5](https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon). A
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
+
+## [st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png)
+
+The verse-final chanted word of 1 Samuel 17:5 in **St. Petersburg EVR-II-B-55**, formerly B 247
+and identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
+from `Screenshot 2026-09-25 160701.png`, SHA-256
+`D8CA9D563CA61F900FF460451890D8356123EBF0B39E16EC02AAC33F18EB2F23`. The published PNG
+is a byte-for-byte copy: 31,812 bytes and 176 × 134 pixels.
+
+Ben identifies the source as Part B image 120, FL48718013. Opened fresh, the [National Library
+of Israel viewer](https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48718013)
+shows volume 2 and “Page 120.” The folio number 57 appears at the bottom of the image, so Ben
+identifies the page as folio **57a**.
+
+The whole verse occupies main-text lines 1–7 of the middle column, column 2 of 3 counting from
+the right. The verse-final chanted word is a single atom and is the first atom on line 7. No page
+or column break falls inside the verse. The preceding column break falls inside 1 Samuel 17:4;
+the last atom, וזרת, opens main-text line 1. The verse begins below two lines of Masorah at the
+top, and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
+image.
+
+**St. Petersburg EVR-II-B-55 has the silluq alone:** it has no meteg after the silluq. Codex
+directly inspected the supplied crop.
 
 ## [sassoon-1053-1K7v37-final-word.png](../../gh-pages/img/sassoon-1053-1K7v37-final-word.png)
 
