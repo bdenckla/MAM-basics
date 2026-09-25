@@ -468,15 +468,15 @@ def _job_4_sassoon_crop() -> object:
 
 
 def _job_4_petersburg_crop() -> object:
-    """The St. Petersburg EVR II B 55 crop at Job 4:12."""
+    """The St. Petersburg EVR-II-B-55 crop at Job 4:12."""
     href = escape(_JOB_4_PETERSBURG_RECORD_URL, quote=True)
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
         f'<img src="{_JOB_4_PETERSBURG_CROP_URL}"'
-        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR II B 55", _JOB_4_REF, "no-later-mark")}"'
+        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR-II-B-55", _JOB_4_REF, "no-later-mark")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
-        "<figcaption>St. Petersburg EVR II B 55 (formerly B 247), "
+        "<figcaption>St. Petersburg EVR-II-B-55 (formerly B 247), "
         'MAM siglum <span dir="rtl">ל-א</span>; '
         f'<a href="{href}" target="_blank" rel="noopener">'
         "National Library of Israel manuscript record</a>."
@@ -1501,10 +1501,10 @@ def _post_silluq_image_nodes(image_id: str) -> list:
         ]
     if image_id == "petersburg-evr-ii-b-55-jb4-12":
         return [
-            mb_html.heading_level_2("St. Petersburg EVR II B 55"),
+            mb_html.heading_level_2("St. Petersburg EVR-II-B-55"),
             mb_html.para(
                 (
-                    "St. Petersburg EVR II B 55 (formerly B 247), identified in "
+                    "St. Petersburg EVR-II-B-55 (formerly B 247), identified in "
                     "MAM by the siglum ",
                     wrap_hebrew_runs("ל-א"),
                     ", is a manuscript of the Prophets and Writings close to the "

@@ -40,7 +40,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `sassoon-1053-Ps70v2-xushah.png` | Codex Sassoon 1053 | Psalms 70:2 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Ps72v15-yevarkhenhu.png` | Codex Sassoon 1053 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Job4v12-menhu.png` | Codex Sassoon 1053 | Job 4:12 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon) | Not independently established |
-| `st-petersburg-evr-ii-b-55-Job4v12-menhu.png` | St. Petersburg EVR II B 55 (formerly B 247; MAM siglum ל-א) | Job 4:12 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
+| `st-petersburg-evr-ii-b-55-Job4v12-menhu.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Job 4:12 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
 The URJ crop was added on 2026-09-22 from `Screenshot 2026-09-22 092430.png`, SHA-256
@@ -122,12 +122,12 @@ retains the screenshot's bytes unchanged. Ben read the silluq and a later meteg,
 later mark's strong northeast-to-southwest slant. No manuscript page or folio coordinate was
 supplied, and Codex did not inspect the pointed-Hebrew image.
 
-The St. Petersburg EVR II B 55 crop of Job 4:12 was added on 2026-09-25 from Ben's
+The St. Petersburg EVR-II-B-55 crop of Job 4:12 was added on 2026-09-25 from Ben's
 `Screenshot 2026-09-25 080758.png`, SHA-256
 `CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`. The tracked crop
 retains the screenshot's 65,965 bytes unchanged. Ben identified the crop as MAM's ל-א. The local
 [`sigil-decoding.md`](sigil-decoding.md) and cached MAM introduction identify that siglum as St.
-Petersburg EVR II B 55, formerly B 247, a manuscript of the Prophets and Writings close to the
+Petersburg EVR-II-B-55, formerly B 247, a manuscript of the Prophets and Writings close to the
 Aleppo Codex. No source site or manuscript coordinate was supplied. Codex directly inspected the
 crop and saw the silluq under the mem and no later mark under the he.
 

@@ -441,7 +441,7 @@ conspicuous to omit from the image page.
 
 ## [st-petersburg-evr-ii-b-55-Job4v12-menhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png)
 
-The verse-final word of Job 4:12 in **St. Petersburg EVR II B 55**, formerly B 247 and identified
+The verse-final word of Job 4:12 in **St. Petersburg EVR-II-B-55**, formerly B 247 and identified
 in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 080758.png`, SHA-256
 `CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`. The published PNG
@@ -453,7 +453,7 @@ cached MAM introduction's [manuscript list](../../in/mam-ws-intro/appendices.med
 it as a manuscript of the Prophets and Writings close to the Aleppo Codex and records Job 1:1–9:19
 among its surviving text, which includes Job 4:12.
 
-**St. Petersburg EVR II B 55 has the silluq alone:** the crop has the stroke under the mem and no
+**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the mem and no
 later mark under the he. Codex directly inspected the supplied crop. It is the only manuscript
 represented on the Job 4:12 crop page that has the silluq-only form of this word.
 
