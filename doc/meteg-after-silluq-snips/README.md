@@ -235,8 +235,8 @@ is a byte-for-byte copy: 23,866 bytes and 186 × 108 pixels.
 
 The crop comes from image file 623 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-623-FL48719462.jpg`.
-The source page is marked `303` on the page itself; `303` is the page number rather than the
-source image-file number.
+The source page is marked `303` on the page itself. Ben identifies `303` as a folio number and
+image file 623 as its first side, so this source image is recorded as folio **303a**.
 
 **St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke on the first ayin
 and no later mark on the second ayin. Codex directly inspected the supplied crop and the full
@@ -313,6 +313,9 @@ is a byte-for-byte copy: 31,904 bytes and 212 × 132 pixels.
 
 The crop comes from image file 632 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-632-FL48719471.jpg`.
+The preceding scan, image file 631, is marked `307` on the page itself. Ben identifies `307` as a
+folio number and image file 632 as its second side, so this source image is recorded as folio
+**307b**.
 
 **St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the shin and
 no later mark under the he. Codex directly inspected the supplied crop and the full source
@@ -396,6 +399,7 @@ is a byte-for-byte copy: 18,114 bytes and 174 × 108 pixels.
 
 The crop comes from image file 634 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-634-FL48719473.jpg`.
+By the same image-pair sequence, Ben identifies image file 634 as folio **308b**.
 
 **St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the kaf and no
 later mark under the he. Codex directly inspected the supplied crop and the full source image.
@@ -491,8 +495,11 @@ The verse-final word of Job 4:12 in **St. Petersburg EVR-II-B-55**, formerly B 2
 in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 080758.png`, SHA-256
 `CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`. The published PNG
-is a byte-for-byte copy: 65,965 bytes and 256 × 204 pixels. The source site and manuscript
-coordinate are not recorded.
+is a byte-for-byte copy: 65,965 bytes and 256 × 204 pixels.
+
+The crop comes from image file 714 at
+`C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-714-FL48719553.jpg`.
+Ben identifies this second image in the folio pair as folio **348b**.
 
 The local [`sigil-decoding.md`](../sigil-decoding.md) gives the shelfmark and former number. The
 cached MAM introduction's [manuscript list](../../in/mam-ws-intro/appendices.mediawiki) identifies
@@ -500,8 +507,9 @@ it as a manuscript of the Prophets and Writings close to the Aleppo Codex and re
 among its surviving text, which includes Job 4:12.
 
 **St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the mem and no
-later mark under the he. Codex directly inspected the supplied crop. It is the only manuscript
-represented on the Job 4:12 crop page that has the silluq-only form of this word.
+later mark under the he. Codex directly inspected the supplied crop and the full source image. It
+is the only manuscript represented on the Job 4:12 crop page that has the silluq-only form of
+this word.
 
 ## second-rabbinic-bible-vol4-pencil99-Job4v12-menhu.png
 
