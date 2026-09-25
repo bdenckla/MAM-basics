@@ -636,11 +636,19 @@ _STEPS = [
         " must come before gen-site",
     ),
     # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
-    # post-stress-meteg pages that read the survey from the JSON that step writes.  Nothing
-    # else it reads is written by a step.  That has been so since 2026-08-31, when Ben
-    # deleted the landing page's manifest section, DERIVED from the set of tracked
-    # gh-pages/<subtree>/index.html, and py/author_site/published_subtrees.py with it; that
-    # section was why the step sat after every step writing a subtree.
+    # post-stress-meteg pages that read the survey from the JSON that step writes.  It also
+    # reads the tracked outputs of two steps that run far earlier.  mam-simple writes
+    # MAM-simple: the post-silluq page's _mam_final_forms lifts MAM's verse-final chanted
+    # words from it, and reference_forms reads it for the Phonetic MAM annotation check.
+    # wlc-json-and-unicode writes out/wlc422/1verses_03_jsju1s.json: _post_silluq_comparison
+    # reads it to check that WLC 4.22 and UXLC 3.9 agree on the verse-final chanted word at
+    # 1 Samuel 17:5.  Nothing else it reads is written by a step; its other inputs include
+    # the vendored in/UXLC-39 and the two authored in/meteg_after_silluq_*.json ledgers.
+    # Until 2026-08-31 it also had to follow every step writing a subtree, because the
+    # landing page's manifest section was DERIVED from the set of tracked
+    # gh-pages/<subtree>/index.html; Ben deleted that section that day, and
+    # py/author_site/published_subtrees.py with it.  Until 2026-09-25 this comment called
+    # the survey JSON the only step output it read.
     StepRecord(
         "gen-site",
         _run_gen_site,
