@@ -7,13 +7,15 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write the eleven published pages at the deploy root:
-                gh-pages/index.html, gh-pages/unicode-proposals.html, and the
-                nine gh-pages/post-stress-meteg*.html pages.
-                --trust-surveys lets the post-stress pages read the tracked
-                out/accgram/post-stress-meteg.json instead of recomputing a
-                survey that needs the MAM-private clone; only main_0_mega.py
-                passes it.
+                Write the published pages at the deploy root:
+                gh-pages/index.html, gh-pages/unicode-proposals.html, and every
+                gh-pages/post-stress-meteg*.html page, including one post-silluq
+                case page per entry of
+                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.
+                --trust-surveys lets the post-stress pages that read the survey
+                load it from the tracked out/accgram/post-stress-meteg.json
+                instead of recomputing it, which needs the MAM-private clone;
+                only main_0_mega.py passes it.
     gen-mam-parsed-docs
                 Write index.html to gh-pages/MAM-parsed, plain docs to
                 gh-pages/MAM-parsed/plain/html, and plus docs to
@@ -59,6 +61,7 @@ from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
 from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
+from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
 from author_misc import mam_parsed_docs_build
 from author_site import post_stress_meteg
 from author_site import site_data
@@ -116,6 +119,7 @@ def almost_main():
         as_review.gen_html_file(tdm_ch),
         gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
+        gaya_text.gen_html_file(tdm_ch, body_class="wide"),
     ]
     _gen_index_html(top_dir_misc, index_entries)
 

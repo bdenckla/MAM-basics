@@ -25,8 +25,10 @@ Usage:
 If no pages_dir given, defaults to book-of-job's own gh-pages tree
 (boj_paths.gh_pages_dir()), whatever the working directory.
 The repository's multi-site ``gh-pages/`` root is accepted only through the explicit
-``--deploy-root`` mode. That mode checks the eleven HTML files and CSS files directly at
-the deploy root without folding any sub-site's pages or CSS vocabulary into the root.
+``--deploy-root`` mode. That mode checks the HTML and CSS files directly at the deploy
+root, however many there are, and runs the stale-file check over every file at that
+level. It folds no sub-site's pages or CSS vocabulary into the root, although a root
+page's link into a sub-site must still resolve.
 Without ``--deploy-root``, the root is refused and one sub-site is checked recursively.
 Undefined CSS classes are informational because the current ownership model cannot
 distinguish a shared or external CSS vocabulary from a defect.

@@ -7,7 +7,7 @@ listed explicitly as an intentional indirect destination.
 
 External destinations are not fetched: doing so would turn a deterministic repository
 lint into a network and sibling-repository check.  The title-copy lint separately compares
-the two translated Introduction-to-MAM entries with the source modules that render them.
+the three translated Introduction-to-MAM entries with the source modules that render them.
 Each check asserts a minimum input size so a broken walk cannot report green.
 """
 
@@ -49,6 +49,14 @@ _UNLISTED_DEPLOY_ROOT_PAGES = (
     "post-stress-meteg-next-conjunctive.html",
     "post-stress-meteg-not-fit.html",
     "post-stress-meteg-post-silluq.html",
+    # The post-silluq case pages sit a level further down: the case register of
+    # post-stress-meteg-post-silluq.html links each one, and the index does not.  Their
+    # names come from the dict that generates the pages, so a case page added there needs
+    # no entry here.
+    *(
+        fname
+        for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
+    ),
 )
 
 
@@ -147,7 +155,7 @@ def test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name():
 def test_the_translated_introduction_titles_match_the_source_pages():
     """Each translated excerpt still copies the title of the module that renders it."""
     modules = site_data.INTRO_MAM_SOURCE_MODULES
-    assert len(modules) == 2, modules
+    assert len(modules) == 3, modules
     entries = site_data.INTRO_MAM_MWD_ENTRIES
     assert len(entries) == len(modules)
     excerpts = next(

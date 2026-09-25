@@ -163,7 +163,7 @@ Five decisions, Ben's finding of 2026-09-09 applied to this page:
    redundant for the same reason: the only reader who reaches it has already read the
    introduction, and the word is not among the five shown.
 4. **Plain "word" stands on this page, and no terminology sweep rides along.** The
-   `hebrew-prose` skill bans a loose "word", and this page is not one of the nine
+   `hebrew-prose` skill bans a loose "word", and this page is not one of the
    post-stress-meteg pages that `CLAUDE.md` exempts. Plain "word" stands here on the skill's
    own exemption for a context that settles the sense: the page's second paragraph groups by
    whether maqaf is present, and its tables show a maqaf compound as one row, so a "word"

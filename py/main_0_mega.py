@@ -193,8 +193,8 @@ def _run_accgram_survey_post_stress_meteg():
         step_id = "accgram-survey-post-stress-meteg"
         reason = (
             "it reads MAM-private's Phonetic MAM; gen-site renders the nine"
-            " post-stress-meteg pages from the tracked out/accgram/post-stress-meteg.json,"
-            " unchanged"
+            " post-stress-meteg pages that read the survey from the tracked"
+            " out/accgram/post-stress-meteg.json, unchanged"
         )
         _CLOUD_SKIPPED_STEPS.append((step_id, reason))
         print(
@@ -636,17 +636,19 @@ _STEPS = [
         " must come before gen-site",
     ),
     # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
-    # post-stress-meteg pages from the JSON that step writes.  Nothing else it reads is
-    # written by a step.  That has been so since 2026-08-31, when Ben deleted the landing
-    # page's manifest section, DERIVED from the set of tracked gh-pages/<subtree>/index.html,
-    # and py/author_site/published_subtrees.py with it; that section was why the step sat
-    # after every step writing a subtree.
+    # post-stress-meteg pages that read the survey from the JSON that step writes.  Nothing
+    # else it reads is written by a step.  That has been so since 2026-08-31, when Ben
+    # deleted the landing page's manifest section, DERIVED from the set of tracked
+    # gh-pages/<subtree>/index.html, and py/author_site/published_subtrees.py with it; that
+    # section was why the step sat after every step writing a subtree.
     StepRecord(
         "gen-site",
         _run_gen_site,
-        "writes the eleven deploy-root pages: gh-pages/index.html,"
-        " gh-pages/unicode-proposals.html, and nine post-stress-meteg pages from the"
-        " survey JSON; must come after accgram-survey-post-stress-meteg",
+        "writes the deploy-root pages: gh-pages/index.html,"
+        " gh-pages/unicode-proposals.html, nine post-stress-meteg pages from the"
+        " survey JSON, and one post-silluq case page per entry of"
+        " site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES; must come after"
+        " accgram-survey-post-stress-meteg",
     ),
     # The three steps below joined on 2026-09-10, with the other offline generators of
     # tracked files that Ben agreed to add; until then nothing routine rewrote what they
@@ -692,8 +694,8 @@ def _report_cloud_skips():
     step that uses MAM-private is skipped altogether, by Ben's decision of
     2026-09-10. The accgram-survey-post-stress-meteg step reads MAM-private's
     Phonetic MAM and is skipped on the precedent of the SVG renders, so gen-site
-    renders the nine post-stress-meteg pages from the tracked
-    out/accgram/post-stress-meteg.json, unchanged.
+    renders the nine post-stress-meteg pages that read the survey from the
+    tracked out/accgram/post-stress-meteg.json, unchanged.
 
     Such a run is CLOUD-COMPLETE, meaning that no step failed, and that every step
     either ran or was skipped for the cloud, while some SVGs may have gone

@@ -42,7 +42,7 @@ poetic verses, corpus choice, primary sources, rendered-prose conventions, and v
 
 For MAM-basics work, the skill requires its `references/mam-basics.md` reference. That reference
 carries this repository's exceptions and page-specific rules, including the deliberate plain
-“word” terminology on the nine post-stress-meteg pages and the accgram rendered-prose rules.
+“word” terminology on the post-stress-meteg pages and the accgram rendered-prose rules.
 
 The canonical shared skill is `dot-claude/skills/hebrew-prose/`; the live copies under
 `~/.claude/skills/` and `~/.agents/skills/` are what the agents load. `dot-claude/` and

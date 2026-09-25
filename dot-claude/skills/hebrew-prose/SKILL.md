@@ -48,7 +48,7 @@ the repository-specific reference before writing. Load only the references neede
 - **Rendered HTML, tables, captions, headings, tooltips, or alt text:** read
   `references/rendered-prose.md`. Every table cell holding Hebrew is `dir="rtl"` unless the
   whole table already is.
-- **MAM-basics prose:** also read `references/mam-basics.md`. In particular, the nine
+- **MAM-basics prose:** also read `references/mam-basics.md`. In particular, the
   `gh-pages/post-stress-meteg*.html` pages deliberately use plain "word" because their
   introduction fixes the meaning; never change those pages to "chanted word".
 - **Claims about corpora, Yeivin, Breuer, CTR, manuscript practice, or the prose-poetic

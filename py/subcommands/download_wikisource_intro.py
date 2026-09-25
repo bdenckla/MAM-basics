@@ -9,11 +9,12 @@ sources, and recorded that no copy of it was mirrored anywhere in the local repo
 it had to be fetched every time -- and that a summarizing fetch is not good enough for
 it.  On 2026-08-06 one such fetch reported the siglum ``ו`` as "Leningrad Codex,
 Washington Pentateuch", having merged ``ו`` with the neighbouring ``ל`` entry.  The
-introduction is also what ``py/author_misc/he_ws_intro_to_mam_pasleg.py`` and
-``he_ws_intro_to_mam_gray_maqaf_1.py`` adapt; the first of those already kept a
-hand-saved copy of its one source section beside it, as
-``he_ws_intro_to_mam_pasleg.mediawiki``, for exactly this reason.  This module
-generalizes that one file to the whole introduction.
+introduction is also what ``py/author_misc/he_ws_intro_to_mam_pasleg.py``,
+``he_ws_intro_to_mam_gray_maqaf_1.py`` and ``he_ws_intro_to_mam_gaya_text.py`` adapt;
+the first of those already kept a hand-saved copy of its one source section beside it,
+as ``he_ws_intro_to_mam_pasleg.mediawiki``, for exactly this reason, and the last had
+its Hebrew lifted from this mirror by script.  This module generalizes that one file to
+the whole introduction.
 
 WHAT IS MIRRORED, AND WHY THE SET IS DECLARED RATHER THAN DISCOVERED.  The thirteen
 pages of ``_SLUG_TO_TITLE`` below, which on 2026-08-31 were the whole of the
