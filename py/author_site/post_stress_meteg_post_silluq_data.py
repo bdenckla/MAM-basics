@@ -211,6 +211,47 @@ def _validate_post_silluq_sources(value: object, *, bcv: str, where: str) -> dic
     return value
 
 
+def _validate_missing_expected_images(
+    value: object, *, sources: dict, where: str
+) -> list[dict]:
+    """Validate the closed set of explained manuscript-image absences."""
+    if not isinstance(value, list) or not value:
+        raise ValueError(f"{where}: expected a nonempty list")
+    expected_records = {
+        (
+            "petersburg_evr_ii_b_55",
+            "verse-absent-from-surviving-text",
+        )
+    }
+    seen_sources: set[str] = set()
+    for index, record in enumerate(value):
+        record_where = f"{where}/{index}"
+        if not isinstance(record, dict):
+            raise ValueError(f"{record_where}: expected an object")
+        _require_exact_keys(
+            record,
+            required={"source", "reason"},
+            allowed={"source", "reason"},
+            where=record_where,
+        )
+        source = _require_nonempty_string(
+            record["source"], where=f"{record_where}/source"
+        )
+        reason = _require_nonempty_string(
+            record["reason"], where=f"{record_where}/reason"
+        )
+        if source in seen_sources:
+            raise ValueError(f"{record_where}: duplicate source {source!r}")
+        seen_sources.add(source)
+        if (source, reason) not in expected_records:
+            raise ValueError(f"{record_where}: unsupported record {record!r}")
+        if sources.get(source) != "not-recorded":
+            raise ValueError(
+                f"{record_where}: source {source!r} is not classified as not-recorded"
+            )
+    return value
+
+
 def load_post_silluq_cases() -> list[dict]:
     """Load and validate the curated cross-source case ledger."""
     path = paths.in_dir() / _POST_SILLUQ_CASES_JSON
@@ -240,6 +281,7 @@ def load_post_silluq_cases() -> list[dict]:
             "additional_sources",
             "transcriptions",
             "mam_editorial_basis",
+            "missing_expected_images",
         }
         _require_exact_keys(case, required=required, allowed=allowed, where=where)
 
@@ -292,9 +334,14 @@ def load_post_silluq_cases() -> list[dict]:
             )
 
         if status == "open-candidate":
-            if "additional_sources" in case or "mam_editorial_basis" in case:
+            if (
+                "additional_sources" in case
+                or "mam_editorial_basis" in case
+                or "missing_expected_images" in case
+            ):
                 raise ValueError(
-                    f"{where}: open candidates do not take additions or an editorial basis"
+                    f"{where}: open candidates do not take additions, image absences, "
+                    "or an editorial basis"
                 )
             _validate_string_list(
                 case.get("transcriptions"), where=f"{where}/transcriptions"
@@ -311,6 +358,12 @@ def load_post_silluq_cases() -> list[dict]:
             _validate_post_silluq_sources(
                 case["sources"], bcv=bcv, where=f"{where}/sources"
             )
+            if "missing_expected_images" in case:
+                _validate_missing_expected_images(
+                    case["missing_expected_images"],
+                    sources=case["sources"],
+                    where=f"{where}/missing_expected_images",
+                )
             additions = case.get("additional_sources", [])
             if not isinstance(additions, list):
                 raise ValueError(f"{where}/additional_sources: expected a list")

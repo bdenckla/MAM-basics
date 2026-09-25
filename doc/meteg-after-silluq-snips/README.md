@@ -105,8 +105,8 @@ alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png)
 
-The verse-final chanted word of 1 Samuel 17:5 in **St. Petersburg EVR-II-B-55**, formerly B 247
-and identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
+The verse-final chanted word of 1 Samuel 17:5 in **St. Petersburg Evr. II B 55**, identified in
+MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
 from `Screenshot 2026-09-25 160701.png`, SHA-256
 `D8CA9D563CA61F900FF460451890D8356123EBF0B39E16EC02AAC33F18EB2F23`. The published PNG
 is a byte-for-byte copy: 31,812 bytes and 176 × 134 pixels.
@@ -123,7 +123,7 @@ the last atom, וזרת, opens main-text line 1. The verse begins below two line
 top, and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
 image.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** it has no meteg after the silluq. Codex
+**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. Codex
 directly inspected the supplied crop.
 
 ## [sassoon-1053-1K7v37-final-word.png](../../gh-pages/img/sassoon-1053-1K7v37-final-word.png)
@@ -195,8 +195,8 @@ alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png)
 
-The verse-final chanted word of 1 Kings 14:14 in **St. Petersburg EVR-II-B-55**, formerly B 247
-and identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
+The verse-final chanted word of 1 Kings 14:14 in **St. Petersburg Evr. II B 55**, identified in
+MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
 from `Screenshot 2026-09-25 161027.png`, SHA-256
 `56C00FBC82FE6F183BB0E733B14BA25B393BA3AACEF0DBCEF9489CF7348DAE29`. The published PNG
 is a byte-for-byte copy: 79,942 bytes and 374 × 208 pixels.
@@ -212,7 +212,7 @@ or column break falls inside the verse. The verse begins below two lines of Maso
 and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
 image.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** it has no meteg after the silluq. Codex
+**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. Codex
 directly inspected the supplied crop.
 
 ## [aleppo-251r-Ps60v10-HFRV33Y.png](../../gh-pages/img/aleppo-251r-Ps60v10-HFRV33Y.png)
@@ -272,8 +272,8 @@ alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png)
 
-The verse-final word of Psalms 60:10 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
-identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+The verse-final word of Psalms 60:10 in **St. Petersburg Evr. II B 55**, identified in MAM by
+the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 135847.png`, SHA-256
 `545B29D32563500495D99539CA0F2FA5F1BCE446456A0B9E465E2533FECF6784`. The published PNG
 is a byte-for-byte copy: 23,866 bytes and 186 × 108 pixels.
@@ -283,7 +283,7 @@ The crop comes from image file 623 at
 The source page is marked `303` on the page itself. Ben identifies `303` as a folio number and
 image file 623 as its first side, so this source image is recorded as folio **303a**.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke on the first ayin
+**St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke on the first ayin
 and no later mark on the second ayin. Codex directly inspected the supplied crop and the full
 source image.
 
@@ -350,8 +350,8 @@ alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [st-petersburg-evr-ii-b-55-Ps70v2-xushah.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps70v2-xushah.png)
 
-The verse-final word of Psalms 70:2 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
-identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+The verse-final word of Psalms 70:2 in **St. Petersburg Evr. II B 55**, identified in MAM by the
+siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 140815.png`, SHA-256
 `F727F148FD21AB808E4FAD23A781775EA89B8500916274FE8769E0D8684A633E`. The published PNG
 is a byte-for-byte copy: 31,904 bytes and 212 × 132 pixels.
@@ -362,7 +362,7 @@ The preceding scan, image file 631, is marked `307` on the page itself. Ben iden
 folio number and image file 632 as its second side, so this source image is recorded as folio
 **307b**.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the shin and
+**St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the shin and
 no later mark under the he. Codex directly inspected the supplied crop and the full source
 image.
 
@@ -436,8 +436,8 @@ alone:** it has no meteg after the silluq, according to Ben's reading.
 
 ## [st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png)
 
-The verse-final word of Psalms 72:15 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
-identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+The verse-final word of Psalms 72:15 in **St. Petersburg Evr. II B 55**, identified in MAM by
+the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 141020.png`, SHA-256
 `F0F85724210B090896F162D77A754A7EB8C5CB3044992B7B68F07AE0EC246FBA`. The published PNG
 is a byte-for-byte copy: 18,114 bytes and 174 × 108 pixels.
@@ -446,7 +446,7 @@ The crop comes from image file 634 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-634-FL48719473.jpg`.
 By the same image-pair sequence, Ben identifies image file 634 as folio **308b**.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the kaf and no
+**St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the kaf and no
 later mark under the he. Codex directly inspected the supplied crop and the full source image.
 
 ## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
@@ -536,8 +536,8 @@ conspicuous to omit from the image page.
 
 ## [st-petersburg-evr-ii-b-55-Job4v12-menhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png)
 
-The verse-final word of Job 4:12 in **St. Petersburg EVR-II-B-55**, formerly B 247 and identified
-in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+The verse-final word of Job 4:12 in **St. Petersburg Evr. II B 55**, identified in MAM by the
+siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
 `Screenshot 2026-09-25 080758.png`, SHA-256
 `CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`. The published PNG
 is a byte-for-byte copy: 65,965 bytes and 256 × 204 pixels.
@@ -546,12 +546,12 @@ The crop comes from image file 714 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-714-FL48719553.jpg`.
 Ben identifies this second image in the folio pair as folio **348b**.
 
-The local [`sigil-decoding.md`](../sigil-decoding.md) gives the shelfmark and former number. The
+The local [`sigil-decoding.md`](../sigil-decoding.md) gives the shelfmark. The
 cached MAM introduction's [manuscript list](../../in/mam-ws-intro/appendices.mediawiki) identifies
 it as a manuscript of the Prophets and Writings close to the Aleppo Codex and records Job 1:1–9:19
 among its surviving text, which includes Job 4:12.
 
-**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the mem and no
+**St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the mem and no
 later mark under the he. Codex directly inspected the supplied crop and the full source image. It
 is the only manuscript represented on the Job 4:12 crop page that has the silluq-only form of
 this word.

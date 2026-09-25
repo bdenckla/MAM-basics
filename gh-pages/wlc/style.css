@@ -436,3 +436,7 @@ figcaption { font-size: 0.9em; color: light-dark(#555, #aaa); margin-top: 0.4em;
 .scan-annot-overlay rect {
     fill: light-dark(rgba(255, 213, 0, 0.35), rgba(120, 180, 255, 0.32));
 }
+/* The 1 Kings 14:14 post-silluq crop uses the same reversible overlay machinery to
+   cover context before and after a compound split across two manuscript lines. The
+   opaque fill is the measured background color of a clean patch in that crop. */
+.scan-annot-overlay.post-silluq-redaction-overlay rect { fill: #fefefe; }

@@ -71,6 +71,12 @@
         "doc/meteg-after-silluq-search-in-mam-documentation.md",
         "doc/meteg-after-silluq-search-in-mam-documentation-update.md"
       ],
+      "missing_expected_images": [
+        {
+          "source": "petersburg_evr_ii_b_55",
+          "reason": "verse-absent-from-surviving-text"
+        }
+      ],
       "images": [
         "aleppo-1k7-37",
         "leningrad-1k7-37",

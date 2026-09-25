@@ -9,6 +9,7 @@ from accgram.almost_errors_html_shared import wrap_hebrew_runs
 from author_site import site_data
 from mb_author import author
 from mb_misc import mb_html
+from py_html import my_html_for_img as mhi
 from py_html.my_html_span_romanized import rmn
 
 from author_site.post_stress_meteg_shared import (
@@ -108,6 +109,16 @@ from author_site.post_stress_meteg_post_silluq_data import (
 
 _POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID = "stroke-angles-footnote"
 _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
+
+_PETERSBURG_FULL_NAME = "St. Petersburg Evr. II B 55"
+_PETERSBURG_SHORT_NAME = "EVR-II-B-55"
+_PETERSBURG_CONTINUATION_NAME = "Evr. II B 247"
+_FIRST_KINGS_14_PETERSBURG_VIEWBOX = (374, 208)
+_FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES = (
+    mhi.Box(x=0, y=0, w=374, h=61, rx=0),
+    mhi.Box(x=105, y=48, w=269, h=82, rx=0),
+    mhi.Box(x=0, y=121, w=248, h=87, rx=0),
+)
 
 _ROM_MERKHA = _author_romanization("merkha")
 _ROM_MAYELA = rmn("mayela")
@@ -480,20 +491,46 @@ def _petersburg_crop(
     *,
     source_url: str = _PETERSBURG_RECORD_URL,
     location: str = "",
+    redaction_highlight: bool = False,
 ) -> object:
-    """One St. Petersburg EVR-II-B-55 crop."""
+    """One St. Petersburg Evr. II B 55 crop, optionally masked in HTML."""
     href = escape(source_url, quote=True)
     location_clause = f", {escape(location)}" if location else ""
-    return mb_html.raw_html(
-        f'<figure><a href="{href}" target="_blank" rel="noopener">'
+    img_attr = {
+        "src": crop_url,
+        "alt": _post_silluq_crop_alt(_PETERSBURG_SHORT_NAME, ref, "no-later-mark"),
+        "loading": "lazy",
+        "style": "display: block; max-width: 100%; height: auto;",
+    }
+    image = (
         f'<img src="{crop_url}"'
-        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR-II-B-55", ref, "no-later-mark")}"'
-        ' loading="lazy"'
-        ' style="max-width: 100%; height: auto;"></a>'
-        "<figcaption>St. Petersburg EVR-II-B-55 (formerly B 247), "
+        f' alt="{_post_silluq_crop_alt(_PETERSBURG_SHORT_NAME, ref, "no-later-mark")}"'
+        ' loading="lazy" style="display: block; max-width: 100%; height: auto;">'
+    )
+    redaction_note = ""
+    if redaction_highlight:
+        # The boxes preserve the two atoms of גם־עתה at the end of line 18 and start
+        # of line 19 while masking the surrounding text. The pixel-space viewBox is
+        # checked against the source PNG by test_scan_overlay_viewboxes.py.
+        image = mb_html.el_to_str_for_sef(
+            mhi.annotated_img(
+                img_attr,
+                _FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES,
+                viewbox_w=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[0],
+                viewbox_h=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[1],
+                overlay_class=("scan-annot-overlay post-silluq-redaction-overlay"),
+            )
+        )
+        redaction_note = (
+            " Background-colored bars cover the text before and after the word; the "
+            "underlying crop is unchanged."
+        )
+    return mb_html.raw_html(
+        f'<figure><a href="{href}" target="_blank" rel="noopener">{image}</a>'
+        f"<figcaption>{_PETERSBURG_SHORT_NAME}, "
         f'MAM siglum <span dir="rtl">ל-א</span>{location_clause}; '
         f'<a href="{href}" target="_blank" rel="noopener">'
-        "National Library of Israel manuscript record</a>."
+        f"National Library of Israel manuscript record</a>.{redaction_note}"
         "</figcaption></figure>"
     )
 
@@ -753,7 +790,7 @@ def _post_silluq_source_code_table() -> object:
             ("A", "Aleppo Codex", ""),
             ("L", "Leningrad Codex", ""),
             ("5", "Sassoon 1053", ""),
-            ("E", "St. Petersburg EVR-II-B-55", "Prophets and Writings"),
+            ("E", _PETERSBURG_SHORT_NAME, "Prophets and Writings"),
             ("C", "Cairo CoTP", "Prophets"),
             ("7", "Cambridge 1753", "Writings"),
             ("K", "Koren Classic Tanakh", ""),
@@ -804,6 +841,33 @@ def _post_silluq_first_samuel_example(
     masks = mask_data[:2]
     if masks != ("-L-----", "A-5ECKS"):
         raise ValueError("1 Samuel 17:5: introductory source masks drifted")
+    lower_list_groups = (
+        (("aleppo",), "The Aleppo Codex"),
+        (("sassoon_1053",), "The Sassoon 1053 Codex"),
+        (("petersburg_evr_ii_b_55",), _PETERSBURG_SHORT_NAME),
+        (("cairo_cotp",), "The Cairo CoTP (Codex of the Prophets)"),
+        (
+            ("koren", "simanim"),
+            "Various editions of Tanakh that are not so slavishly devoted to the "
+            "Leningrad Codex, such as the editions of Koren and Simanim.",
+        ),
+    )
+    lower_list_sources = tuple(
+        source for sources, _text in lower_list_groups for source in sources
+    )
+    lower_mask_sources = tuple(
+        source
+        for source, code in zip(
+            _post_silluq_sources_for_bcv(first_samuel["bcv"]),
+            masks[1],
+            strict=True,
+        )
+        if code != "-"
+    )
+    if lower_list_sources != lower_mask_sources:
+        raise ValueError(
+            "1 Samuel 17:5: introductory source list differs from the lower mask"
+        )
     return [
         mb_html.para(
             (
@@ -850,15 +914,7 @@ def _post_silluq_first_samuel_example(
             )
         ),
         mb_html.para("These other manuscripts and editions include the following:"),
-        mb_html.unordered_list(
-            (
-                "The Aleppo Codex",
-                "The Cairo CoTP (Codex of the Prophets)",
-                "The Sassoon 1053 Codex",
-                "Various editions of Tanakh that are not so slavishly devoted to the "
-                "Leningrad Codex, such as the editions of Koren and Simanim.",
-            )
-        ),
+        mb_html.unordered_list(tuple(text for _sources, text in lower_list_groups)),
         mb_html.para("We might compactly represent the situation like this:"),
         _post_silluq_example_form(
             _source_mask_pair(*mask_data),
@@ -955,22 +1011,44 @@ def _post_silluq_case_register(
             {"class": "post-stress-meteg-table post-silluq-register"},
         ),
     ]
-    unclassified_mask_data = None
+    unclassified_entries = []
     for case in sorted_cases:
         if "sources" not in case:
             continue
         mask_data = _case_source_mask_data(case, complete_koren_by_ref)
-        if any(
-            top == bottom == "-" for top, bottom in zip(*mask_data[:2], strict=True)
-        ):
-            unclassified_mask_data = mask_data
-            break
-    if unclassified_mask_data is not None:
+        unclassified_sources = tuple(
+            source
+            for source, top, bottom in zip(
+                _post_silluq_sources_for_bcv(case["bcv"]),
+                *mask_data[:2],
+                strict=True,
+            )
+            if top == bottom == "-"
+        )
+        if unclassified_sources:
+            unclassified_entries.append((mask_data, unclassified_sources))
+    if len(unclassified_entries) == 1 and len(unclassified_entries[0][1]) == 1:
+        mask_data, (source,) = unclassified_entries[0]
+        code = _POST_SILLUQ_SOURCE_CODES[source]
+        source_name = _POST_SILLUQ_SHORT_SOURCE_NAMES[source]
+        contents.extend(
+            (
+                mb_html.para("In the entry:"),
+                _post_silluq_example_form(
+                    _source_mask_pair(*mask_data), direction="ltr"
+                ),
+                mb_html.para(
+                    f"A dash in both lines at the “{code}” position means that no "
+                    f"classification is recorded for {source_name}."
+                ),
+            )
+        )
+    elif unclassified_entries:
         contents.extend(
             (
                 mb_html.para("In entries such as:"),
                 _post_silluq_example_form(
-                    _source_mask_pair(*unclassified_mask_data), direction="ltr"
+                    _source_mask_pair(*unclassified_entries[0][0]), direction="ltr"
                 ),
                 mb_html.para(
                     "A dash in both lines at the same position means that no "
@@ -1374,18 +1452,22 @@ def _petersburg_image_nodes(
     *,
     source_url: str = _PETERSBURG_RECORD_URL,
     location: str = "",
+    redaction_highlight: bool = False,
 ) -> list:
     """Render the shared identification and one L-A silluq-only crop."""
     sentence_end = continuation or (".",)
     return [
-        mb_html.heading_level_2("St. Petersburg EVR-II-B-55"),
+        mb_html.heading_level_2(_PETERSBURG_SHORT_NAME),
         mb_html.para(
             (
-                "St. Petersburg EVR-II-B-55 (formerly B 247), identified in "
-                "MAM by the siglum ",
+                _PETERSBURG_FULL_NAME,
+                ", identified in MAM by the siglum ",
                 wrap_hebrew_runs("ל-א"),
                 ", is a manuscript of the Prophets and Writings close to the "
-                "Aleppo Codex. At ",
+                "Aleppo Codex. The National Library of Israel presents it together "
+                "with its direct continuation, ",
+                _PETERSBURG_CONTINUATION_NAME,
+                ", but this crop belongs to Evr. II B 55. At ",
                 ref,
                 " it has the ",
                 _ROM_SILLUQ,
@@ -1398,6 +1480,7 @@ def _petersburg_image_nodes(
             ref,
             source_url=source_url,
             location=location,
+            redaction_highlight=redaction_highlight,
         ),
     ]
 
@@ -1468,6 +1551,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _FIRST_KINGS_14_PETERSBURG_CROP_URL,
             source_url=_FIRST_KINGS_14_PETERSBURG_SOURCE_URL,
             location="digital page 186, column 1, lines 18–19",
+            redaction_highlight=True,
         )
     if image_id == "aleppo-ps60-10":
         return [
@@ -1605,6 +1689,69 @@ def _post_silluq_image_nodes(image_id: str) -> list:
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
 
+_POST_SILLUQ_MANUSCRIPT_SOURCES = frozenset(
+    {
+        "aleppo",
+        "leningrad",
+        "cairo_cotp",
+        "cam1753",
+        "sassoon_1053",
+        "petersburg_evr_ii_b_55",
+    }
+)
+
+
+def _post_silluq_missing_image_nodes(case: dict, ref: str) -> list:
+    """Render every explicitly recorded absence of an expected manuscript image."""
+    records = case.get("missing_expected_images", [])
+    records_by_source = {record["source"]: record for record in records}
+    if len(records_by_source) != len(records):
+        raise ValueError(f"{case['ref']}: duplicate missing-image source")
+    required_sources = {
+        source
+        for source in _post_silluq_sources_for_bcv(case["bcv"])
+        if source in _POST_SILLUQ_MANUSCRIPT_SOURCES
+        and case["sources"][source] == "not-recorded"
+    }
+    if set(records_by_source) != required_sources:
+        raise ValueError(
+            f"{case['ref']}: missing-image records differ from unclassified manuscripts"
+        )
+    contents = []
+    for source in _post_silluq_sources_for_bcv(case["bcv"]):
+        if source not in records_by_source:
+            continue
+        record = records_by_source[source]
+        if (
+            source != "petersburg_evr_ii_b_55"
+            or record.get("reason") != "verse-absent-from-surviving-text"
+        ):
+            raise ValueError(f"{case['ref']}: unknown missing-image record {record!r}")
+        if any(
+            image_id.startswith("petersburg-evr-ii-b-55-")
+            for image_id in case["images"]
+        ):
+            raise ValueError(
+                f"{case['ref']}: EVR-II-B-55 image is both present and absent"
+            )
+        contents.extend(
+            (
+                mb_html.heading_level_2(_PETERSBURG_SHORT_NAME),
+                mb_html.para(
+                    (
+                        "No image of ",
+                        _PETERSBURG_SHORT_NAME,
+                        " contains ",
+                        ref,
+                        ": its surviving text breaks off at 2 Sam. 1:16 and resumes "
+                        "at 1 Kgs. 8:61.",
+                    )
+                ),
+            )
+        )
+    return contents
+
+
 def build_post_silluq_image_body(case: dict) -> list:
     """Render one case's ordered manuscript images on its own page."""
     bcv = case["bcv"]
@@ -1655,6 +1802,7 @@ def build_post_silluq_image_body(case: dict) -> list:
         )
     for image_id in case["images"]:
         contents.extend(_post_silluq_image_nodes(image_id))
+    contents.extend(_post_silluq_missing_image_nodes(case, ref))
     return contents
 
 

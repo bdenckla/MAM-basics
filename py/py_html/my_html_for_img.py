@@ -51,7 +51,14 @@ def _html_for_imgs_item(imgs_item, *, img_para_attr=None, img_base=_DEFAULT_IMG_
     ]
 
 
-def annotated_img(img_attr, boxes, *, viewbox_w, viewbox_h):
+def annotated_img(
+    img_attr,
+    boxes,
+    *,
+    viewbox_w,
+    viewbox_h,
+    overlay_class="scan-annot-overlay",
+):
     """<img> with a filled-highlight SVG overlaid, in a positioned wrapper.
 
     ``boxes`` are Box instances in the scan's own pixel space, which is also the
@@ -78,7 +85,7 @@ def annotated_img(img_attr, boxes, *, viewbox_w, viewbox_h):
     overlay = wlc_utils_html.svg(
         rects,
         {
-            "class": "scan-annot-overlay",
+            "class": overlay_class,
             "viewBox": f"0 0 {viewbox_w} {viewbox_h}",
             "preserveAspectRatio": "none",
             "aria-hidden": "true",

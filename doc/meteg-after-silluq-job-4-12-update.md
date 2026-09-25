@@ -73,7 +73,7 @@ Cambridge Add. 1753 as having both strokes; this later observation adds the crop
 placement contrast without changing that classification. Codex did not independently inspect
 the pointed-Hebrew image.
 
-## 2026-09-25: St. Petersburg EVR-II-B-55 has the silluq alone
+## 2026-09-25: St. Petersburg Evr. II B 55 has the silluq alone
 
 Ben supplied `Screenshot 2026-09-25 080758.png` as a crop of the verse-final word at Job 4:12 in
 the manuscript MAM identifies by the siglum ל-א. The screenshot's SHA-256 is
@@ -81,8 +81,9 @@ the manuscript MAM identifies by the siglum ל-א. The screenshot's SHA-256 is
 published copy is `gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png`.
 
 The local `doc/sigil-decoding.md` and cached MAM introduction identify ל-א as St. Petersburg
-EVR-II-B-55, formerly B 247, a manuscript of the Prophets and Writings close to the Aleppo Codex.
-The cached introduction records Job 1:1–9:19 among its surviving text. Codex directly inspected
-the crop and saw the silluq under the mem and no later mark under the he. St. Petersburg
-EVR-II-B-55 is the only manuscript represented on the published Job 4:12 crop page that has this
-silluq-only form.
+Evr. II B 55, a manuscript of the Prophets and Writings close to the Aleppo Codex. The NLI
+presents B 55 together with its direct continuation, Evr. II B 247; they are separate shelfmarks,
+not former and current names. The cached introduction records Job 1:1–9:19 among its surviving
+text. Codex directly inspected the crop and saw the silluq under the mem and no later mark under
+the he. St. Petersburg Evr. II B 55 is the only manuscript represented on the published Job 4:12
+crop page that has this silluq-only form.
