@@ -270,6 +270,8 @@ _PSALMS_60_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps60v10-HFRV33Y.png"
 
 _PSALMS_60_SASSOON_CROP_URL = "img/sassoon-1053-Ps60v10-HFRV33Y.png"
 
+_PSALMS_60_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png"
+
 _PSALMS_60_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon"
 )
@@ -282,6 +284,8 @@ _PSALMS_70_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps70v2-xushah.png"
 
 _PSALMS_70_SASSOON_CROP_URL = "img/sassoon-1053-Ps70v2-xushah.png"
 
+_PSALMS_70_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps70v2-xushah.png"
+
 _PSALMS_70_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon"
 )
@@ -293,6 +297,8 @@ _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhen
 _PSALMS_72_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps72v15-yevarkhenhu.png"
 
 _PSALMS_72_SASSOON_CROP_URL = "img/sassoon-1053-Ps72v15-yevarkhenhu.png"
+
+_PSALMS_72_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png"
 
 _PSALMS_72_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon"
@@ -312,7 +318,7 @@ _JOB_4_SASSOON_SOURCE_URL = (
 
 _JOB_4_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png"
 
-_JOB_4_PETERSBURG_RECORD_URL = (
+_PETERSBURG_RECORD_URL = (
     "https://www.nli.org.il/he/manuscripts/NNL_ALEPH990000991240205171/NLI"
 )
 
@@ -387,6 +393,7 @@ _POST_SILLUQ_IMAGE_REFS = {
     "leningrad-ps72-15": "Psalms 72:15",
     "cam1753-ps72-15": "Psalms 72:15",
     "sassoon-1053-ps72-15": "Psalms 72:15",
+    "petersburg-evr-ii-b-55-ps72-15": "Psalms 72:15",
     "aleppo-1k7-37": "1 Kings 7:37",
     "leningrad-1k7-37": "1 Kings 7:37",
     "cairo-cotp-1k7-37": "1 Kings 7:37",
@@ -399,10 +406,12 @@ _POST_SILLUQ_IMAGE_REFS = {
     "leningrad-ps60-10": "Psalms 60:10",
     "cam1753-ps60-10": "Psalms 60:10",
     "sassoon-1053-ps60-10": "Psalms 60:10",
+    "petersburg-evr-ii-b-55-ps60-10": "Psalms 60:10",
     "aleppo-ps70-2": "Psalms 70:2",
     "leningrad-ps70-2": "Psalms 70:2",
     "cam1753-ps70-2": "Psalms 70:2",
     "sassoon-1053-ps70-2": "Psalms 70:2",
+    "petersburg-evr-ii-b-55-ps70-2": "Psalms 70:2",
     "aleppo-jb4-12": "Job 4:12",
     "leningrad-jb4-12": "Job 4:12",
     "cam1753-jb4-12": "Job 4:12",
@@ -424,6 +433,7 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "leningrad-ps72-15",
         "cam1753-ps72-15",
         "sassoon-1053-ps72-15",
+        "petersburg-evr-ii-b-55-ps72-15",
     ),
     "1 Kings 7:37": (
         "aleppo-1k7-37",
@@ -442,12 +452,14 @@ _POST_SILLUQ_IMAGE_SEQUENCES = {
         "leningrad-ps60-10",
         "cam1753-ps60-10",
         "sassoon-1053-ps60-10",
+        "petersburg-evr-ii-b-55-ps60-10",
     ),
     "Psalms 70:2": (
         "aleppo-ps70-2",
         "leningrad-ps70-2",
         "cam1753-ps70-2",
         "sassoon-1053-ps70-2",
+        "petersburg-evr-ii-b-55-ps70-2",
     ),
     "Job 4:12": (
         "aleppo-jb4-12",

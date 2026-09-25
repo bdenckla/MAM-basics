@@ -225,6 +225,23 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
+## [st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png)
+
+The verse-final word of Psalms 60:10 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
+identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+`Screenshot 2026-09-25 135847.png`, SHA-256
+`545B29D32563500495D99539CA0F2FA5F1BCE446456A0B9E465E2533FECF6784`. The published PNG
+is a byte-for-byte copy: 23,866 bytes and 186 × 108 pixels.
+
+The crop comes from image file 623 at
+`C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-623-FL48719462.jpg`.
+The source page is marked `303` on the page itself; `303` is the page number rather than the
+source image-file number.
+
+**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke on the first ayin
+and no later mark on the second ayin. Codex directly inspected the supplied crop and the full
+source image.
+
 ## [aleppo-253r-Ps70v2-xushah.png](../../gh-pages/img/aleppo-253r-Ps70v2-xushah.png)
 
 Psalms 70:2, the verse-final atom, on **leaf 253r**. Ben supplied and inspected the final crop on
@@ -285,6 +302,21 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
 70:2](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon). A
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
+
+## [st-petersburg-evr-ii-b-55-Ps70v2-xushah.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps70v2-xushah.png)
+
+The verse-final word of Psalms 70:2 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
+identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+`Screenshot 2026-09-25 140815.png`, SHA-256
+`F727F148FD21AB808E4FAD23A781775EA89B8500916274FE8769E0D8684A633E`. The published PNG
+is a byte-for-byte copy: 31,904 bytes and 212 × 132 pixels.
+
+The crop comes from image file 632 at
+`C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-632-FL48719471.jpg`.
+
+**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the shin and
+no later mark under the he. Codex directly inspected the supplied crop and the full source
+image.
 
 ## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 
@@ -353,6 +385,20 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
 72:15](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon). A
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
+
+## [st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png)
+
+The verse-final word of Psalms 72:15 in **St. Petersburg EVR-II-B-55**, formerly B 247 and
+identified in MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
+`Screenshot 2026-09-25 141020.png`, SHA-256
+`F0F85724210B090896F162D77A754A7EB8C5CB3044992B7B68F07AE0EC246FBA`. The published PNG
+is a byte-for-byte copy: 18,114 bytes and 174 × 108 pixels.
+
+The crop comes from image file 634 at
+`C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-634-FL48719473.jpg`.
+
+**St. Petersburg EVR-II-B-55 has the silluq alone:** the crop has the stroke under the kaf and no
+later mark under the he. Codex directly inspected the supplied crop and the full source image.
 
 ## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
 

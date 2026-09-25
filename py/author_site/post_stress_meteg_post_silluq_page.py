@@ -23,7 +23,6 @@ from author_site.post_stress_meteg_shared import (
     _JOB_4_CAM1753_CROP_URL,
     _JOB_4_LENINGRAD_CROP_URL,
     _JOB_4_PETERSBURG_CROP_URL,
-    _JOB_4_PETERSBURG_RECORD_URL,
     _JOB_4_REF,
     _JOB_4_SASSOON_CROP_URL,
     _JOB_4_SASSOON_SOURCE_URL,
@@ -35,6 +34,7 @@ from author_site.post_stress_meteg_shared import (
     _MAM_POST_SILLUQ_SASSOON_SOURCE_URL,
     _MAM_POST_SILLUQ_VERSE,
     _METSIL,
+    _PETERSBURG_RECORD_URL,
     _PLAUT_STEIN_TORAH_URL,
     _POST_SILLUQ_ALEPPO_CROP_URL,
     _POST_SILLUQ_BCV_CELL,
@@ -55,18 +55,21 @@ from author_site.post_stress_meteg_shared import (
     _PSALMS_60_ALEPPO_CROP_URL,
     _PSALMS_60_CAM1753_CROP_URL,
     _PSALMS_60_LENINGRAD_CROP_URL,
+    _PSALMS_60_PETERSBURG_CROP_URL,
     _PSALMS_60_REF,
     _PSALMS_60_SASSOON_CROP_URL,
     _PSALMS_60_SASSOON_SOURCE_URL,
     _PSALMS_70_ALEPPO_CROP_URL,
     _PSALMS_70_CAM1753_CROP_URL,
     _PSALMS_70_LENINGRAD_CROP_URL,
+    _PSALMS_70_PETERSBURG_CROP_URL,
     _PSALMS_70_REF,
     _PSALMS_70_SASSOON_CROP_URL,
     _PSALMS_70_SASSOON_SOURCE_URL,
     _PSALMS_72_ALEPPO_CROP_URL,
     _PSALMS_72_CAM1753_CROP_URL,
     _PSALMS_72_LENINGRAD_CROP_URL,
+    _PSALMS_72_PETERSBURG_CROP_URL,
     _PSALMS_72_REF,
     _PSALMS_72_SASSOON_CROP_URL,
     _PSALMS_72_SASSOON_SOURCE_URL,
@@ -467,13 +470,13 @@ def _job_4_sassoon_crop() -> object:
     )
 
 
-def _job_4_petersburg_crop() -> object:
-    """The St. Petersburg EVR-II-B-55 crop at Job 4:12."""
-    href = escape(_JOB_4_PETERSBURG_RECORD_URL, quote=True)
+def _petersburg_crop(crop_url: str, ref: str) -> object:
+    """One St. Petersburg EVR-II-B-55 crop."""
+    href = escape(_PETERSBURG_RECORD_URL, quote=True)
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">'
-        f'<img src="{_JOB_4_PETERSBURG_CROP_URL}"'
-        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR-II-B-55", _JOB_4_REF, "no-later-mark")}"'
+        f'<img src="{crop_url}"'
+        f' alt="{_post_silluq_crop_alt("St. Petersburg EVR-II-B-55", ref, "no-later-mark")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;"></a>'
         "<figcaption>St. Petersburg EVR-II-B-55 (formerly B 247), "
@@ -1345,6 +1348,29 @@ def _post_silluq_image_intro(
     ]
 
 
+def _petersburg_image_nodes(ref: str, crop_url: str, continuation: tuple = ()) -> list:
+    """Render the shared identification and one L-A silluq-only crop."""
+    sentence_end = continuation or (".",)
+    return [
+        mb_html.heading_level_2("St. Petersburg EVR-II-B-55"),
+        mb_html.para(
+            (
+                "St. Petersburg EVR-II-B-55 (formerly B 247), identified in "
+                "MAM by the siglum ",
+                wrap_hebrew_runs("ל-א"),
+                ", is a manuscript of the Prophets and Writings close to the "
+                "Aleppo Codex. At ",
+                ref,
+                " it has the ",
+                _ROM_SILLUQ,
+                " alone in this word",
+                *sentence_end,
+            )
+        ),
+        _petersburg_crop(crop_url, ref),
+    ]
+
+
 def _post_silluq_image_nodes(image_id: str) -> list:
     """The fixed claim and existing deployed figure for one known image identifier."""
     if image_id == "lc-1s17-5":
@@ -1418,6 +1444,8 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             *_post_silluq_image_intro("Sassoon", _PSALMS_60_REF, "no-later-mark"),
             _psalms_60_sassoon_crop(),
         ]
+    if image_id == "petersburg-evr-ii-b-55-ps60-10":
+        return _petersburg_image_nodes(_PSALMS_60_REF, _PSALMS_60_PETERSBURG_CROP_URL)
     if image_id == "aleppo-ps70-2":
         return [
             *_post_silluq_image_intro("Aleppo", _PSALMS_70_REF, "no-later-mark"),
@@ -1438,6 +1466,8 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             *_post_silluq_image_intro("Sassoon", _PSALMS_70_REF, "no-later-mark"),
             _psalms_70_sassoon_crop(),
         ]
+    if image_id == "petersburg-evr-ii-b-55-ps70-2":
+        return _petersburg_image_nodes(_PSALMS_70_REF, _PSALMS_70_PETERSBURG_CROP_URL)
     if image_id == "aleppo-ps72-15":
         return [
             *_post_silluq_image_intro("Aleppo", _PSALMS_72_REF, "no-later-mark"),
@@ -1458,6 +1488,8 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             *_post_silluq_image_intro("Sassoon", _PSALMS_72_REF, "no-later-mark"),
             _psalms_72_sassoon_crop(),
         ]
+    if image_id == "petersburg-evr-ii-b-55-ps72-15":
+        return _petersburg_image_nodes(_PSALMS_72_REF, _PSALMS_72_PETERSBURG_CROP_URL)
     if image_id == "aleppo-1k7-37":
         return [
             *_post_silluq_image_intro("Aleppo", _MAM_POST_SILLUQ_REF, "later-meteg"),
@@ -1510,24 +1542,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _job_4_sassoon_crop(),
         ]
     if image_id == "petersburg-evr-ii-b-55-jb4-12":
-        return [
-            mb_html.heading_level_2("St. Petersburg EVR-II-B-55"),
-            mb_html.para(
-                (
-                    "St. Petersburg EVR-II-B-55 (formerly B 247), identified in "
-                    "MAM by the siglum ",
-                    wrap_hebrew_runs("ל-א"),
-                    ", is a manuscript of the Prophets and Writings close to the "
-                    "Aleppo Codex. At ",
-                    _JOB_4_REF,
-                    " it has the ",
-                    _ROM_SILLUQ,
-                    " alone in this word—the only manuscript represented on this "
-                    "page that has that form.",
-                )
-            ),
-            _job_4_petersburg_crop(),
-        ]
+        return _petersburg_image_nodes(
+            _JOB_4_REF,
+            _JOB_4_PETERSBURG_CROP_URL,
+            ("—the only manuscript represented on this page that has that form.",),
+        )
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
 

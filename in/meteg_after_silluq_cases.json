@@ -45,7 +45,8 @@
         "aleppo-ps72-15",
         "leningrad-ps72-15",
         "cam1753-ps72-15",
-        "sassoon-1053-ps72-15"
+        "sassoon-1053-ps72-15",
+        "petersburg-evr-ii-b-55-ps72-15"
       ]
     },
     {
@@ -143,7 +144,8 @@
         "aleppo-ps60-10",
         "leningrad-ps60-10",
         "cam1753-ps60-10",
-        "sassoon-1053-ps60-10"
+        "sassoon-1053-ps60-10",
+        "petersburg-evr-ii-b-55-ps60-10"
       ]
     },
     {
@@ -167,7 +169,8 @@
         "aleppo-ps70-2",
         "leningrad-ps70-2",
         "cam1753-ps70-2",
-        "sassoon-1053-ps70-2"
+        "sassoon-1053-ps70-2",
+        "petersburg-evr-ii-b-55-ps70-2"
       ]
     }
   ]

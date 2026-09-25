@@ -40,6 +40,9 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `sassoon-1053-Ps70v2-xushah.png` | Codex Sassoon 1053 | Psalms 70:2 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Ps72v15-yevarkhenhu.png` | Codex Sassoon 1053 | Psalms 72:15 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon) | Not independently established |
 | `sassoon-1053-Job4v12-menhu.png` | Codex Sassoon 1053 | Job 4:12 | Not recorded | Screenshot supplied by Ben from [Masoretica](https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon) | Not independently established |
+| `st-petersburg-evr-ii-b-55-Ps60v10-HFRV33Y.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 60:10 | Image file 623; page marked 303 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
+| `st-petersburg-evr-ii-b-55-Ps70v2-xushah.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 70:2 | Image file 632 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
+| `st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Psalms 72:15 | Image file 634 | Screenshot supplied by Ben Denckla from the local source scan; exact path in the crop-source README | Not recorded |
 | `st-petersburg-evr-ii-b-55-Job4v12-menhu.png` | St. Petersburg EVR-II-B-55 (formerly B 247; MAM siglum ל-א) | Job 4:12 | Not recorded | Screenshot supplied by Ben Denckla; source site not recorded | Not recorded |
 | `urj-2005-Num23v26-eeseh.png` | 2005 revised edition of *The Torah: A Modern Commentary* | Numbers 23:26 | Kindle edition; page not recorded | Screenshot supplied by Ben Denckla | Not independently established |
 
@@ -130,6 +133,16 @@ retains the screenshot's 65,965 bytes unchanged. Ben identified the crop as MAM'
 Petersburg EVR-II-B-55, formerly B 247, a manuscript of the Prophets and Writings close to the
 Aleppo Codex. No source site or manuscript coordinate was supplied. Codex directly inspected the
 crop and saw the silluq under the mem and no later mark under the he.
+
+The three St. Petersburg EVR-II-B-55 Psalms crops were added on 2026-09-25 from Ben's supplied
+screenshots. The Psalms 60:10, Psalms 70:2, and Psalms 72:15 screenshots have SHA-256 hashes
+`545B29D32563500495D99539CA0F2FA5F1BCE446456A0B9E465E2533FECF6784`,
+`F727F148FD21AB808E4FAD23A781775EA89B8500916274FE8769E0D8684A633E`, and
+`F0F85724210B090896F162D77A754A7EB8C5CB3044992B7B68F07AE0EC246FBA`, respectively. Each
+tracked crop retains its screenshot's bytes unchanged. The crop-source README records the full
+local source-image paths and the distinction between image file 623 and the page number 303
+visible on that source page. Codex directly inspected the screenshots and source images; each
+crop has the silluq alone and no later meteg.
 
 Rights-holder identification remains deferred where the table says so, as does source
 identification for the older crops where the public record does not name it. The inventory adds
