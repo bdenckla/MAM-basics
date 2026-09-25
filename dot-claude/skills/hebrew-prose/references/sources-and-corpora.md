@@ -98,6 +98,27 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
   useful for searching. Check Hebrew, Arabic, phonetic symbols, an apparent OCR anomaly, or an
   exact quotation against the authoritative OpenEdition chapter linked from `index.html`.
 
+## Price, *The Syntax of Masoretic Accents in the Hebrew Bible*
+
+- **Search the local PDF before the Internet.** When Ben says to look in Price, start at
+  `C:/Users/BenDe/OneDrive/Documents/Tanakh/James D. Price - The Syntax of Masoretic Accents in
+  the Hebrew Bible/The Syntax of Masoretic Accents in the Hebrew Bible - revised second
+  edition.pdf`. This is Price's author-issued, revised and corrected second edition (2010), a
+  searchable 270-page PDF. `SOURCE.txt` beside it records the official source URL, retrieval
+  date, SHA-256 hash, copyright status, and a discrepancy between the author's landing page and
+  the file that page currently links.
+- **Use Price as a secondary grammatical source, not as a MAM oracle.** His research text was an
+  FCAT diskette of BHS. The prose rules were exhaustively tested in the Pentateuch, with only some
+  details checked across all prose verses; the poetic rules were exhaustively tested in Psalms,
+  Job, and Proverbs. His automatic meteg-silluq correction also left some secondary-accent
+  statistics uncertain. Independently remeasure any adopted rule, exception, or count against
+  MAM and the relevant verse system.
+- **Do not treat the concordance as locally available.** Price's five-volume *Concordance of the
+  Hebrew Accents in the Hebrew Bible* is a separate work; the author's site provides only a
+  one-page abstract, and no authorized full digital copy was found. Price also uses
+  transformative terminology that may be quoted with attribution but must not become the
+  project's prose.
+
 ## Breuer, *Da'at Miqra*
 
 - **The canonical scan is**
