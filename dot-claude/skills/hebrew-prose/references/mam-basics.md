@@ -6,11 +6,13 @@ being repeated here.
 
 ## The post-stress-meteg pages say plain "word"
 
-Ben's decision, 2026-09-08: `gh-pages/post-stress-meteg*.html` and its eight subdocuments are an
-exception to the skill's “Never a loose word” rule. The main page defines both “word” and “atom”
-in its second expository paragraph, and the opening sentence already uses “word”. Plain “word” is
-therefore the declared term in visible prose, headings, tooltips, and alt text on all nine pages.
-Never replace it with “chanted word”.
+Ben's decision, 2026-09-08: `gh-pages/post-stress-meteg*.html` and its subdocuments, eight on that
+date, are an exception to the skill's “Never a loose word” rule. The main page defines both “word”
+and “atom” in its second expository paragraph, and the opening sentence already uses “word”. Plain
+“word” is therefore the declared term in visible prose, headings, tooltips, and alt text on every
+page that glob matches. Never replace it with “chanted word”. The glob also matches the
+post-silluq case pages that `post-stress-meteg-post-silluq.html` links, added on 2026-09-22 after
+that decision; their titles, headings, and alt text say plain “word” in the same sense.
 
 `py/tests/test_post_stress_meteg_plain_word.py` enforces the exception: “chanted” must not appear
 in the rendered pages. The source identifiers `census_chanted_word_summary`,

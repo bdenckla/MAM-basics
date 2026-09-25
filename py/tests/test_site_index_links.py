@@ -49,6 +49,14 @@ _UNLISTED_DEPLOY_ROOT_PAGES = (
     "post-stress-meteg-next-conjunctive.html",
     "post-stress-meteg-not-fit.html",
     "post-stress-meteg-post-silluq.html",
+    # The post-silluq case pages sit a level further down: the case register of
+    # post-stress-meteg-post-silluq.html links each one, and the index does not.  Their
+    # names come from the dict that generates the pages, so a case page added there needs
+    # no entry here.
+    *(
+        fname
+        for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
+    ),
 )
 
 

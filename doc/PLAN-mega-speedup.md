@@ -222,7 +222,8 @@ template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
     and skipping the non-dual verses of the second strand would change that state. The `found` dict
     accumulates `Counter`s and lists across a whole pass besides. **Any implementation must leave
     `out/accgram/post-stress-meteg.json` byte for byte the same**, which is the differential check
-    this repository relies on, and that file's figures reach the nine post-stress-meteg pages.
+    this repository relies on, and that file's figures reach the nine post-stress-meteg pages that
+    read it.
 
 ## Phase 1: re-measure on Ben's machine with nothing else running
 

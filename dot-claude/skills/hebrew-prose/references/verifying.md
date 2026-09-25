@@ -35,19 +35,21 @@ Others: `generate-html-poetic`, `-goerwitz`, `-almost-errors`, `-supplied-marks`
 post-stress-meteg work lives**, so do not go looking for those pages under `accgram/`:
 
 1. **`survey-post-stress-meteg` writes only its JSON, `out/accgram/post-stress-meteg.json`. Its
-   nine pages are at the DEPLOY ROOT** — `gh-pages/post-stress-meteg.html` and the eight
+   nine pages are at the DEPLOY ROOT** — `gh-pages/post-stress-meteg.html` and eight of its
    `gh-pages/post-stress-meteg-*.html` sub-documents — and no accgram subcommand renders them.
-   `py/main_authored.py gen-site` does, writing eleven deploy-root pages in all: those nine plus
-   `gh-pages/index.html` and `gh-pages/unicode-proposals.html`. The survey needs the MAM-private
-   clone; `--trust-surveys` lets `gen-site` read the tracked JSON instead, which is how
-   `main_0_mega.py` renders the pages without that clone.
+   `py/main_authored.py gen-site` does. It also writes `gh-pages/index.html`,
+   `gh-pages/unicode-proposals.html`, and one post-silluq case page per entry of
+   `site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES`; the case pages render from
+   `in/meteg_after_silluq_cases.json`, not from the survey. The survey needs the
+   MAM-private clone; `--trust-surveys` lets `gen-site` read the tracked JSON instead, which is
+   how `main_0_mega.py` renders the pages without that clone.
 2. **`survey-breuer-zaqef-units` writes `.novc/breuer-zaqef-units.json` and nothing tracked at
    all** — it is a measurement, so it touches neither `out/` nor `gh-pages/`.
 
-Those nine pages are also the one place the skill's "never a loose word" rule is suspended:
-`MAM-basics/CLAUDE.md` §'The post-stress-meteg pages say plain "word" — do not qualify it as
-"chanted"' records Ben's decision of 2026-09-08, and
-`py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in all nine.
+The `gh-pages/post-stress-meteg*.html` pages, those nine and the case pages alike, are also the
+one place the skill's "never a loose word" rule is suspended: `references/mam-basics.md`
+§'The post-stress-meteg pages say plain "word"' records Ben's decision of 2026-09-08, and
+`py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in every one.
 
 **From a MAM-basics worktree, set `REPOS_ROOT` and regenerate. The ban this paragraph carried
 until 2026-09-09 has been withdrawn, both reasons it gave having been fixed.** It read "Never

@@ -7,13 +7,15 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write the eleven published pages at the deploy root:
-                gh-pages/index.html, gh-pages/unicode-proposals.html, and the
-                nine gh-pages/post-stress-meteg*.html pages.
-                --trust-surveys lets the post-stress pages read the tracked
-                out/accgram/post-stress-meteg.json instead of recomputing a
-                survey that needs the MAM-private clone; only main_0_mega.py
-                passes it.
+                Write the published pages at the deploy root:
+                gh-pages/index.html, gh-pages/unicode-proposals.html, and every
+                gh-pages/post-stress-meteg*.html page, including one post-silluq
+                case page per entry of
+                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.
+                --trust-surveys lets the post-stress pages that read the survey
+                load it from the tracked out/accgram/post-stress-meteg.json
+                instead of recomputing it, which needs the MAM-private clone;
+                only main_0_mega.py passes it.
     gen-mam-parsed-docs
                 Write index.html to gh-pages/MAM-parsed, plain docs to
                 gh-pages/MAM-parsed/plain/html, and plus docs to
