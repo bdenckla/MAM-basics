@@ -2,7 +2,7 @@
 
 This product directory holds data and generated artifacts for locating Hebrew words on photographed pages of the Aleppo Codex. The current corpus covers Job, while the pipeline accepts other biblical books when the index data is available.
 
-MAM-basics contains the programs that read and write this product directory. The `main_ac_*` entry points in [`../py/`](../py/) read [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) as their MAM word-sequence input, write flat streams and annotation editors, and locate annotated words in the page images.
+MAM-basics contains the programs that read and write this product directory. The `main_ac_*` entry points in [`../py/`](../py/) read [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) as their MAM word-sequence input, write flat streams and the column-quadrilateral editor, and locate annotated words in the page images. The line-break editor that annotated `line-breaks/` was deleted on 2026-09-26.
 
 ## Data
 
