@@ -10,7 +10,8 @@ between spaces or maqafs, and the standing rule is that the atoms are what is wr
 on the page. What this application uses is where atoms begin and end and which letters
 they have. Pointing and accents play no part in it, so a stream that differs from
 MAM-simple in marks alone, such as a meteg, differs in nothing that matters here (Ben,
-2026-09-26); compare streams without marks, as both line-break checkers do.
+2026-09-26). Both line-break checkers compare more than that: their
+no_marks_comparison_key ignores meteg and rafe, and no other mark.
 
 ``get_verse_words`` splits each element's text at whitespace, joins the pieces across
 each maqaf into one entry of ``words``, and attaches a lone sof pasuq to the entry

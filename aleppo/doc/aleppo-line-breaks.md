@@ -185,10 +185,12 @@ Deuteronomy run 001r–006r. The strict MAM-simple comparison checks those two
 runs separately: no JSON file represents the text between Deuteronomy 34 and
 Psalms 149.
 
-The MAM-simple sequence comparison removes combining marks and format
-characters, while retaining punctuation including maqaf, PASEQ, and sof pasuq.
-The pointed JSON strings remain the page's display and transcription data, and
-the comparison does not normalize Hebrew.
+The MAM-simple sequence comparison ignores meteg and rafe and nothing else:
+`no_marks_comparison_key` was narrowed to those two marks on 2026-09-08, in
+c76239a5. Every other mark, every format character, and all punctuation,
+including maqaf, PASEQ, and sof pasuq, must match. The pointed JSON strings
+remain the page's display and transcription data, and the comparison does not
+normalize Hebrew.
 
 ## Script promotion policy
 
