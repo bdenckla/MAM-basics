@@ -121,6 +121,8 @@ _FIRST_KINGS_14_PETERSBURG_FOCUS_BOXES = (
     mhi.Box(x=0, y=36, w=190, h=90, rx=0),
     mhi.Box(x=220, y=104, w=154, h=104, rx=0),
 )
+# Measured mean of the light class from an Otsu luminance split of the crop.
+_FIRST_KINGS_14_PETERSBURG_BACKGROUND_COLOR = (245, 245, 245)
 
 _ROM_MERKHA = _author_romanization("merkha")
 _ROM_MAYELA = rmn("mayela")
@@ -525,6 +527,7 @@ def _petersburg_crop(
                     "scan-annot-overlay focus-fade-overlay "
                     "post-silluq-focus-fade-overlay"
                 ),
+                fade_color=_FIRST_KINGS_14_PETERSBURG_BACKGROUND_COLOR,
             )
         )
         focus_fade_note = (
