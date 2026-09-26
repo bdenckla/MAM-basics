@@ -28,7 +28,7 @@ post-silluq page on 2026-09-21 retain their fuller source notes in
 | `LC-159A-col-3-line-8-1S-17v5.png` | Leningrad Codex | 1 Samuel 17:5 | F159A, column 3, line 8 | Not recorded in the inspected public record | Not recorded in the inspected public record |
 | `Leningrad-Codex-1K-7v37.png` | Leningrad Codex | 1 Kings 7:37 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
 | `Leningrad-Codex-2Chr-8v11.png` | Leningrad Codex | 2 Chronicles 8:11 | Not recorded in the inspected public record | Not recorded in the inspected public record | Not recorded in the inspected public record |
-| `leningrad-195B-col2-line27-1K14v14-atta.jpg` | Leningrad Codex | 1 Kings 14:14 | Folio 195B, column 2, line 27 | Sefaria, via Daniel Holman's UXLC change proposal `2022.08.31-17` | Not recorded |
+| `leningrad-195B-col2-line27-1K14v14-atta.png` | Leningrad Codex | 1 Kings 14:14 | Folio 195B, column 2, line 27 | Screenshot supplied by Ben Denckla from the [Sefaria whole-folio photograph](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg) | Not recorded |
 | `leningrad-377B-Ps60v10-HFRV33Y.png` | Leningrad Codex | Psalms 60:10 | Folio 377B; no independently read column or line | Supplied screenshot; source site not recorded | Not recorded |
 | `leningrad-379B-Ps70v2-xushah.png` | Leningrad Codex | Psalms 70:2 | Folio 379B; no independently read column or line | Supplied screenshot; source site not recorded | Not recorded |
 | `leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png` | Leningrad Codex | Psalms 72:15 | Folio 380A, line 3; column 2 is the estimator's value | Sefaria and Internet Archive image sets documented in the source-note README | Not recorded |
@@ -149,6 +149,13 @@ Codex directly inspected the supplied crop and saw the silluq alone, with no lat
 The 1 Kings 14:14 image page experimentally masks the text before and after גם־עתה with three
 SVG overlays in the measured clean-background color `#FEFEFE`. The tracked PNG remains
 the byte-identical source crop; the overlays are reversible presentation, not altered evidence.
+
+The Leningrad Codex crop for 1 Kings 14:14 was replaced on 2026-09-26 by Ben's final hand-crop,
+`Screenshot 2026-09-26 115303.png`, SHA-256
+`21B4833733419862AA86979B28F9A950BFB116F11AE19D4C39B1CE0138C5FB76`. The tracked 308 × 200 PNG
+retains the screenshot's 90,994 bytes unchanged and includes the complete chanted word גם־עתה.
+The earlier JPEG derived from Daniel Holman's UXLC change proposal showed only the atom עתה and
+is no longer published.
 
 The St. Petersburg Evr. II B 55 crop of Job 4:12 was added on 2026-09-25 from Ben's
 `Screenshot 2026-09-25 080758.png`, SHA-256

@@ -153,17 +153,19 @@ Reference links: the chapter at
 has a second metsil, the likely meteg after the silluq, as Ben confirmed from the Leningrad crop
 below.
 
-## [leningrad-195B-col2-line27-1K14v14-atta.jpg](../../gh-pages/img/leningrad-195B-col2-line27-1K14v14-atta.jpg)
+## [leningrad-195B-col2-line27-1K14v14-atta.png](../../gh-pages/img/leningrad-195B-col2-line27-1K14v14-atta.png)
 
-1 Kings 14:14, the verse-final chanted word, on **folio 195B, column 2, line 27**. Ben inspected
-this crop on 2026-09-21. Its original source filename is `17-Detail.jpg`; its SHA-256 is
-`C20CA3D597A7A617788DAA1A43CA9A36923B80025625B09BFBF5A8EC7C633078`.
+1 Kings 14:14, the verse-final chanted word, on **folio 195B, column 2, line 27**. Ben supplied
+this final hand-crop on 2026-09-26. Its original filename is
+`Screenshot 2026-09-26 115303.png`; its SHA-256 is
+`21B4833733419862AA86979B28F9A950BFB116F11AE19D4C39B1CE0138C5FB76`. The published PNG is a
+byte-for-byte copy: 90,994 bytes and 308 × 200 pixels.
 
-Daniel Holman's UXLC change proposal `2022.08.31-17`, which credits Sefaria for the image,
-supplied the detail crop and records the transcription history. Ben's inspection establishes
-what the manuscript has. The [whole-folio photograph at
-Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg) provides the image
-context.
+The hand-crop comes from the [whole-folio photograph at
+Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg). Daniel Holman's
+UXLC change proposal `2022.08.31-17`, which also credits Sefaria, records the transcription
+history; it is not the source of the published crop. Ben's inspection establishes what the
+manuscript has.
 
 **The Leningrad Codex has the silluq and a second metsil in גַּם־עָֽתָּֽה׃.** The second metsil
 is the likely meteg after the silluq; the Aleppo Codex has the silluq without that second metsil.

@@ -113,12 +113,16 @@ _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
 _PETERSBURG_FULL_NAME = "St. Petersburg Evr. II B 55"
 _PETERSBURG_SHORT_NAME = "EVR-II-B-55"
 _PETERSBURG_CONTINUATION_NAME = "Evr. II B 247"
-_FIRST_KINGS_14_PETERSBURG_VIEWBOX = (374, 208)
-_FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES = (
-    mhi.Box(x=0, y=0, w=374, h=61, rx=0),
-    mhi.Box(x=105, y=48, w=269, h=82, rx=0),
-    mhi.Box(x=0, y=121, w=248, h=87, rx=0),
+_PETERSBURG_SURVIVING_TEXT_GAP = (
+    "its surviving text breaks off at 2 Sam. 1:16 and resumes at 1 Kgs. 8:61."
 )
+_FIRST_KINGS_14_PETERSBURG_VIEWBOX = (374, 208)
+_FIRST_KINGS_14_PETERSBURG_FOCUS_BOXES = (
+    mhi.Box(x=0, y=36, w=190, h=90, rx=0),
+    mhi.Box(x=220, y=104, w=154, h=104, rx=0),
+)
+# Twenty-five percent darker than the crop's Otsu light-class mean in sRGB.
+_FIRST_KINGS_14_PETERSBURG_BACKGROUND_COLOR = (184, 184, 184)
 
 _ROM_MERKHA = _author_romanization("merkha")
 _ROM_MAYELA = rmn("mayela")
@@ -491,9 +495,9 @@ def _petersburg_crop(
     *,
     source_url: str = _PETERSBURG_RECORD_URL,
     location: str = "",
-    redaction_highlight: bool = False,
+    focus_fade: bool = False,
 ) -> object:
-    """One St. Petersburg Evr. II B 55 crop, optionally masked in HTML."""
+    """One St. Petersburg Evr. II B 55 crop, optionally focused in HTML."""
     href = escape(source_url, quote=True)
     location_clause = f", {escape(location)}" if location else ""
     img_attr = {
@@ -507,30 +511,35 @@ def _petersburg_crop(
         f' alt="{_post_silluq_crop_alt(_PETERSBURG_SHORT_NAME, ref, "no-later-mark")}"'
         ' loading="lazy" style="display: block; max-width: 100%; height: auto;">'
     )
-    redaction_note = ""
-    if redaction_highlight:
-        # The boxes preserve the two atoms of גם־עתה at the end of line 18 and start
-        # of line 19 while masking the surrounding text. The pixel-space viewBox is
-        # checked against the source PNG by test_scan_overlay_viewboxes.py.
+    focus_fade_note = ""
+    if focus_fade:
+        # The two boxes keep גם־עתה clear at the end of line 18 and start of line 19.
+        # The pixel-space viewBox is checked against the source PNG by
+        # test_scan_overlay_viewboxes.py.
         image = mb_html.el_to_str_for_sef(
-            mhi.annotated_img(
+            mhi.focus_fade_img(
                 img_attr,
-                _FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES,
+                _FIRST_KINGS_14_PETERSBURG_FOCUS_BOXES,
                 viewbox_w=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[0],
                 viewbox_h=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[1],
-                overlay_class=("scan-annot-overlay post-silluq-redaction-overlay"),
+                svg_id="post-silluq-1k14v14-focus-fade",
+                overlay_class=(
+                    "scan-annot-overlay focus-fade-overlay "
+                    "post-silluq-focus-fade-overlay"
+                ),
+                fade_color=_FIRST_KINGS_14_PETERSBURG_BACKGROUND_COLOR,
             )
         )
-        redaction_note = (
-            " Background-colored bars cover the text before and after the word; the "
-            "underlying crop is unchanged."
+        focus_fade_note = (
+            " A focus-of-attention fade subdues the surrounding text rather than "
+            "covering it; the underlying crop is unchanged."
         )
     return mb_html.raw_html(
         f'<figure><a href="{href}" target="_blank" rel="noopener">{image}</a>'
         f"<figcaption>{_PETERSBURG_SHORT_NAME}, "
         f'MAM siglum <span dir="rtl">ל-א</span>{location_clause}; '
         f'<a href="{href}" target="_blank" rel="noopener">'
-        f"National Library of Israel manuscript record</a>.{redaction_note}"
+        f"National Library of Israel manuscript record</a>.{focus_fade_note}"
         "</figcaption></figure>"
     )
 
@@ -790,7 +799,7 @@ def _post_silluq_source_code_table() -> object:
             ("A", "Aleppo Codex", ""),
             ("L", "Leningrad Codex", ""),
             ("5", "Sassoon 1053", ""),
-            ("E", _PETERSBURG_SHORT_NAME, "Prophets and Writings"),
+            ("E", _PETERSBURG_SHORT_NAME, ""),
             ("C", "Cairo CoTP", "Prophets"),
             ("7", "Cambridge 1753", "Writings"),
             ("K", "Koren Classic Tanakh", ""),
@@ -1026,20 +1035,32 @@ def _post_silluq_case_register(
             if top == bottom == "-"
         )
         if unclassified_sources:
-            unclassified_entries.append((mask_data, unclassified_sources))
-    if len(unclassified_entries) == 1 and len(unclassified_entries[0][1]) == 1:
-        mask_data, (source,) = unclassified_entries[0]
+            unclassified_entries.append((case, mask_data, unclassified_sources))
+    if len(unclassified_entries) == 1 and len(unclassified_entries[0][2]) == 1:
+        case, mask_data, (source,) = unclassified_entries[0]
         code = _POST_SILLUQ_SOURCE_CODES[source]
         source_name = _POST_SILLUQ_SHORT_SOURCE_NAMES[source]
+        _fname, ref = site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]]
+        missing_expected_images = case.get("missing_expected_images", [])
+        expected_missing_image = {
+            "source": "petersburg_evr_ii_b_55",
+            "reason": "verse-absent-from-surviving-text",
+        }
+        if source != "petersburg_evr_ii_b_55" or missing_expected_images != [
+            expected_missing_image
+        ]:
+            raise ValueError(f"{case['ref']}: unexpected sole unclassified source")
         contents.extend(
             (
-                mb_html.para("In the entry:"),
+                mb_html.para(f"In the entry for {ref}:"),
                 _post_silluq_example_form(
                     _source_mask_pair(*mask_data), direction="ltr"
                 ),
                 mb_html.para(
                     f"A dash in both lines at the “{code}” position means that no "
-                    f"classification is recorded for {source_name}."
+                    f"classification is recorded for {source_name} because no image "
+                    f"of {source_name} contains {ref}: "
+                    f"{_PETERSBURG_SURVIVING_TEXT_GAP}"
                 ),
             )
         )
@@ -1048,7 +1069,7 @@ def _post_silluq_case_register(
             (
                 mb_html.para("In entries such as:"),
                 _post_silluq_example_form(
-                    _source_mask_pair(*unclassified_entries[0][0]), direction="ltr"
+                    _source_mask_pair(*unclassified_entries[0][1]), direction="ltr"
                 ),
                 mb_html.para(
                     "A dash in both lines at the same position means that no "
@@ -1452,7 +1473,7 @@ def _petersburg_image_nodes(
     *,
     source_url: str = _PETERSBURG_RECORD_URL,
     location: str = "",
-    redaction_highlight: bool = False,
+    focus_fade: bool = False,
 ) -> list:
     """Render the shared identification and one L-A silluq-only crop."""
     sentence_end = continuation or (".",)
@@ -1480,7 +1501,7 @@ def _petersburg_image_nodes(
             ref,
             source_url=source_url,
             location=location,
-            redaction_highlight=redaction_highlight,
+            focus_fade=focus_fade,
         ),
     ]
 
@@ -1551,7 +1572,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _FIRST_KINGS_14_PETERSBURG_CROP_URL,
             source_url=_FIRST_KINGS_14_PETERSBURG_SOURCE_URL,
             location="digital page 186, column 1, lines 18–19",
-            redaction_highlight=True,
+            focus_fade=True,
         )
     if image_id == "aleppo-ps60-10":
         return [
@@ -1743,8 +1764,8 @@ def _post_silluq_missing_image_nodes(case: dict, ref: str) -> list:
                         _PETERSBURG_SHORT_NAME,
                         " contains ",
                         ref,
-                        ": its surviving text breaks off at 2 Sam. 1:16 and resumes "
-                        "at 1 Kgs. 8:61.",
+                        ": ",
+                        _PETERSBURG_SURVIVING_TEXT_GAP,
                     )
                 ),
             )
