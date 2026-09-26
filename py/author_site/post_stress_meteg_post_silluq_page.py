@@ -113,6 +113,9 @@ _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
 _PETERSBURG_FULL_NAME = "St. Petersburg Evr. II B 55"
 _PETERSBURG_SHORT_NAME = "EVR-II-B-55"
 _PETERSBURG_CONTINUATION_NAME = "Evr. II B 247"
+_PETERSBURG_SURVIVING_TEXT_GAP = (
+    "its surviving text breaks off at 2 Sam. 1:16 and resumes at 1 Kgs. 8:61."
+)
 _FIRST_KINGS_14_PETERSBURG_VIEWBOX = (374, 208)
 _FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES = (
     mhi.Box(x=0, y=0, w=374, h=61, rx=0),
@@ -790,7 +793,7 @@ def _post_silluq_source_code_table() -> object:
             ("A", "Aleppo Codex", ""),
             ("L", "Leningrad Codex", ""),
             ("5", "Sassoon 1053", ""),
-            ("E", _PETERSBURG_SHORT_NAME, "Prophets and Writings"),
+            ("E", _PETERSBURG_SHORT_NAME, ""),
             ("C", "Cairo CoTP", "Prophets"),
             ("7", "Cambridge 1753", "Writings"),
             ("K", "Koren Classic Tanakh", ""),
@@ -1026,20 +1029,32 @@ def _post_silluq_case_register(
             if top == bottom == "-"
         )
         if unclassified_sources:
-            unclassified_entries.append((mask_data, unclassified_sources))
-    if len(unclassified_entries) == 1 and len(unclassified_entries[0][1]) == 1:
-        mask_data, (source,) = unclassified_entries[0]
+            unclassified_entries.append((case, mask_data, unclassified_sources))
+    if len(unclassified_entries) == 1 and len(unclassified_entries[0][2]) == 1:
+        case, mask_data, (source,) = unclassified_entries[0]
         code = _POST_SILLUQ_SOURCE_CODES[source]
         source_name = _POST_SILLUQ_SHORT_SOURCE_NAMES[source]
+        _fname, ref = site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]]
+        missing_expected_images = case.get("missing_expected_images", [])
+        expected_missing_image = {
+            "source": "petersburg_evr_ii_b_55",
+            "reason": "verse-absent-from-surviving-text",
+        }
+        if source != "petersburg_evr_ii_b_55" or missing_expected_images != [
+            expected_missing_image
+        ]:
+            raise ValueError(f"{case['ref']}: unexpected sole unclassified source")
         contents.extend(
             (
-                mb_html.para("In the entry:"),
+                mb_html.para(f"In the entry for {ref}:"),
                 _post_silluq_example_form(
                     _source_mask_pair(*mask_data), direction="ltr"
                 ),
                 mb_html.para(
                     f"A dash in both lines at the “{code}” position means that no "
-                    f"classification is recorded for {source_name}."
+                    f"classification is recorded for {source_name} because no image "
+                    f"of {source_name} contains {ref}: "
+                    f"{_PETERSBURG_SURVIVING_TEXT_GAP}"
                 ),
             )
         )
@@ -1048,7 +1063,7 @@ def _post_silluq_case_register(
             (
                 mb_html.para("In entries such as:"),
                 _post_silluq_example_form(
-                    _source_mask_pair(*unclassified_entries[0][0]), direction="ltr"
+                    _source_mask_pair(*unclassified_entries[0][1]), direction="ltr"
                 ),
                 mb_html.para(
                     "A dash in both lines at the same position means that no "
@@ -1743,8 +1758,8 @@ def _post_silluq_missing_image_nodes(case: dict, ref: str) -> list:
                         _PETERSBURG_SHORT_NAME,
                         " contains ",
                         ref,
-                        ": its surviving text breaks off at 2 Sam. 1:16 and resumes "
-                        "at 1 Kgs. 8:61.",
+                        ": ",
+                        _PETERSBURG_SURVIVING_TEXT_GAP,
                     )
                 ),
             )
