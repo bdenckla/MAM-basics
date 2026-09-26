@@ -96,6 +96,183 @@ def annotated_img(
     )
 
 
+def focus_fade_img(
+    img_attr,
+    focus_boxes,
+    *,
+    viewbox_w,
+    viewbox_h,
+    svg_id,
+    overlay_class="scan-annot-overlay focus-fade-overlay",
+    fade_color=(200, 180, 60),
+    max_alpha=200,
+    exponent=0.6,
+    feather=22,
+    clear_margin=14,
+):
+    """<img> with a responsive SVG fade around one or more clear focus boxes.
+
+    ``focus_boxes`` use the image's natural pixel coordinates. The boxes remain
+    fully clear; beyond them, a muted tint becomes progressively stronger with
+    distance from the nearer box. The SVG is a sibling of the unchanged image,
+    so the treatment is nondestructive and scales with responsive image sizing.
+
+    ``svg_id`` must be unique within the rendered document because the mask and
+    filter use fragment references. The color, maximum alpha, and exponent keep
+    the defaults of the former crop editor's focus fade. ``clear_margin`` adds
+    breathing room before the feathered transition begins.
+    """
+    focus_boxes = tuple(focus_boxes)
+    if not focus_boxes:
+        raise ValueError("focus_fade_img requires at least one focus box")
+    if not (viewbox_w > 0 and viewbox_h > 0):
+        raise ValueError("focus_fade_img requires positive viewBox dimensions")
+    if any(
+        box.x < 0
+        or box.y < 0
+        or box.w <= 0
+        or box.h <= 0
+        or box.x + box.w > viewbox_w
+        or box.y + box.h > viewbox_h
+        for box in focus_boxes
+    ):
+        raise ValueError("focus_fade_img focus boxes must fit inside the viewBox")
+    if not (0 <= max_alpha <= 255):
+        raise ValueError("focus_fade_img max_alpha must be between 0 and 255")
+    if feather <= 0 or clear_margin < 0 or exponent <= 0:
+        raise ValueError("focus_fade_img fade geometry must be positive")
+
+    filter_id = f"{svg_id}-filter"
+    mask_id = f"{svg_id}-mask"
+    filter_pad = 4 * feather + clear_margin
+
+    def svg_el(tag, contents=(), attr=None):
+        return wlc_utils_html.htel_mk(tag, attr, contents)
+
+    expanded_cutouts = tuple(
+        wlc_utils_html.rect(
+            {
+                "class": "focus-fade-mask-cutout",
+                "x": str(box.x - clear_margin),
+                "y": str(box.y - clear_margin),
+                "width": str(box.w + 2 * clear_margin),
+                "height": str(box.h + 2 * clear_margin),
+                "rx": str(box.rx + clear_margin),
+            }
+        )
+        for box in focus_boxes
+    )
+    solid_cutouts = tuple(
+        wlc_utils_html.rect(
+            {
+                "class": "focus-fade-mask-cutout",
+                "x": str(box.x),
+                "y": str(box.y),
+                "width": str(box.w),
+                "height": str(box.h),
+                "rx": str(box.rx),
+            }
+        )
+        for box in focus_boxes
+    )
+    fade_filter = svg_el(
+        "filter",
+        (
+            svg_el("feGaussianBlur", attr={"stdDeviation": str(feather)}),
+            svg_el(
+                "feComponentTransfer",
+                tuple(
+                    svg_el(
+                        f"feFunc{channel}",
+                        attr={"type": "linear", "slope": "2", "intercept": "-1"},
+                    )
+                    for channel in "RGB"
+                ),
+            ),
+            svg_el(
+                "feComponentTransfer",
+                tuple(
+                    svg_el(
+                        f"feFunc{channel}",
+                        attr={
+                            "type": "gamma",
+                            "amplitude": "1",
+                            "exponent": str(exponent),
+                            "offset": "0",
+                        },
+                    )
+                    for channel in "RGB"
+                ),
+            ),
+        ),
+        {
+            "id": filter_id,
+            "x": str(-filter_pad),
+            "y": str(-filter_pad),
+            "width": str(viewbox_w + 2 * filter_pad),
+            "height": str(viewbox_h + 2 * filter_pad),
+            "filterUnits": "userSpaceOnUse",
+            "color-interpolation-filters": "sRGB",
+        },
+    )
+    fade_field = svg_el(
+        "g",
+        (
+            wlc_utils_html.rect(
+                {
+                    "class": "focus-fade-mask-base",
+                    "x": str(-filter_pad),
+                    "y": str(-filter_pad),
+                    "width": str(viewbox_w + 2 * filter_pad),
+                    "height": str(viewbox_h + 2 * filter_pad),
+                }
+            ),
+            *expanded_cutouts,
+        ),
+        {"filter": f"url(#{filter_id})"},
+    )
+    fade_mask = svg_el(
+        "mask",
+        (fade_field, *solid_cutouts),
+        {
+            "id": mask_id,
+            "x": "0",
+            "y": "0",
+            "width": str(viewbox_w),
+            "height": str(viewbox_h),
+            "maskUnits": "userSpaceOnUse",
+            "maskContentUnits": "userSpaceOnUse",
+            "style": "mask-type: luminance;",
+        },
+    )
+    tint = wlc_utils_html.rect(
+        {
+            "class": "focus-fade-tint",
+            "x": "0",
+            "y": "0",
+            "width": str(viewbox_w),
+            "height": str(viewbox_h),
+            "mask": f"url(#{mask_id})",
+            "style": (
+                f"--focus-fade-color: rgb({fade_color[0]}, {fade_color[1]}, "
+                f"{fade_color[2]}); --focus-fade-max-alpha: {max_alpha / 255:.6f};"
+            ),
+        }
+    )
+    overlay = wlc_utils_html.svg(
+        (svg_el("defs", (fade_filter, fade_mask)), tint),
+        {
+            "class": overlay_class,
+            "viewBox": f"0 0 {viewbox_w} {viewbox_h}",
+            "preserveAspectRatio": "none",
+            "aria-hidden": "true",
+        },
+    )
+    return wlc_utils_html.div(
+        (wlc_utils_html.img(img_attr), overlay), {"class": "scan-annot"}
+    )
+
+
 def scan_figure(
     src: str,
     alt: str,
