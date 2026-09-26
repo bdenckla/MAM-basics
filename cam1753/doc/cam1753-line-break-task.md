@@ -34,8 +34,8 @@ Run in background. Required because browsers block `file://` cross-origin image 
 - [x] Column quad data for all 28 pages
 - [x] Identify text on pages: Ps 149:7 through end of Job (page 0085B). Page 0086A is past Job — ignore it. 27 pages total: 0072B through 0085B.
 - [x] Build flat stream generator (`../../py/main_cam1753_gen_flat_stream.py`)
-- [x] Build line-break editor (`../../py/main_cam1753_gen_line_break_editor.py`) with blank-line feature
-- [ ] Mark line breaks for all 27 pages (0072B through 0085B)
+- [x] Build line-break editor (`py/main_cam1753_gen_line_break_editor.py`, deleted on 2026-09-26) with blank-line feature
+- [x] Mark line breaks for all 27 pages (0072B through 0085B). Checked on 2026-09-26: all 27 files in `cam1753-line-breaks/` carry line markers, and the tracked `../check_line_breaks.html` reports all checks passed for 27 pages.
 
 ### Pages completed
 
@@ -58,7 +58,15 @@ Run in background. Required because browsers block `file://` cross-origin image 
 | 0079B  | Job 23:14 (mid)   | Job 25:6 (mid)       |
 | 0080A  | Job 26:10 (mid)   | Job 28:17 (mid)      |
 
+The table stops at 0080A; `cam1753-line-breaks/` holds all 27 pages.
+
 ## Procedure: Marking Line Breaks Page by Page
+
+**The line-break editor that this procedure uses, `py/main_cam1753_gen_line_break_editor.py`,
+was deleted on 2026-09-26** by Ben's instruction that day to remove both line-break editors.
+The steps below describe the procedure as it ran.
+`git show 4ac4f16a:py/py_cam1753_loc/gen_line_break_editor.py` recovers the editor, and its
+`main_cam1753_` wrapper is at the same commit.
 
 ### First page (bootstrapping)
 
@@ -113,9 +121,8 @@ Run in background. Required because browsers block `file://` cross-origin image 
 | File | Purpose |
 |------|---------|
 | `../../py/main_cam1753_gen_flat_stream.py` | Generate flat-stream JSON for a page (manual or `--chain` mode) |
-| `../../py/main_cam1753_gen_line_break_editor.py` | Generate interactive HTML editor for marking line breaks |
 | `cam1753-line-breaks/*.json` | Line-break data per page (flat stream + markers) |
-| `cam1753-col-quads/*.json` | Column bounding quad data (used by editor for image cropping) |
+| `cam1753-col-quads/*.json` | Column bounding quad data (used by the word previewer for image cropping) |
 | `cam1753-pages/*.jpg` | Individual page images |
 | `../../py/py_ac_loc/mam_xml_verses.py` | MAM-simple verse extraction |
 | `../../MAM-simple/xml-vtrad-mam/*.xml` | Hebrew Bible text source |

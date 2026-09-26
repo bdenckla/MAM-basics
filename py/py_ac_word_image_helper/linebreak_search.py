@@ -2,8 +2,10 @@
 """Search for words in Aleppo Codex line-break data.
 
 This module is parameterized: the caller supplies the line-break
-directory and the book name, so the same logic can serve both the
-one-off preview tool and the batch crop editor.
+directory and the book name, so the same logic served both the
+one-off preview tool, ``main_ac_find_word_in_images``, and book-of-job's
+batch crop editor, which was deleted on 2026-09-10.  The preview tool is
+its one caller now.
 """
 
 import json

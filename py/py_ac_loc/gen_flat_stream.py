@@ -8,8 +8,8 @@ Each page gets a JSON file containing a flat array of:
   - parashah markers: {"parashah": "spi-pe2"}, {"parashah": "spi-samekh2"}
   - words: plain Hebrew strings
 
-Column and line markers are NOT pre-populated — the user adds them
-interactively via the HTML editor.
+Column and line markers are NOT pre-populated.  A person added them by hand in
+the line-break editor, which was deleted on 2026-09-26.
 
 Usage:
     .venv/Scripts/python.exe py/main_ac_gen_flat_stream.py <page> <start_book> <start_c:v> <end_book> <end_c:v>

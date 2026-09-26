@@ -5,8 +5,9 @@ under this repository's ``py/`` and its data now lives at two paths here:
 
   * published pages are under ``gh-pages/book-of-job/``;
   * tracked JSON and gitignored scratch work are under ``book-of-job/``;
-  * code is under ``py/`` and is not a subtree: seven packages plus seventeen
-    top-level modules, listed in ``BOJ_PACKAGES`` and ``BOJ_TOP_LEVEL_MODULES``.
+  * code is under ``py/`` and is not a subtree: seven packages plus thirteen
+    top-level modules and one data file, listed in ``BOJ_PACKAGES``,
+    ``BOJ_TOP_LEVEL_MODULES`` and ``BOJ_TOP_LEVEL_DATA_FILES``.
 
 The 701 source artifacts were an oracle while the code moved here. Phase 4 then put
 their destination paths here as well, so this module exposes the individual paths
@@ -92,18 +93,18 @@ BOJ_TOP_LEVEL_MODULES = (
     "check_spelling_in_html.py",
     "fix_escape_sequences.py",
     "fix_mark_order.py",
-    "main_apply_cam1753_crops.py",
-    "main_gen_cam1753_crop_editor.py",
     "main_gen_misc_authored_english_documents.py",
     "main_list_missing_aleppo_imgs.py",
 )
-"""Fifteen of book-of-job's sixteen runnable modules, which sat at that repo's root
-and sit at the top of this repo's ``py/``.  The sixteenth,
-``main_gen_aleppo_crop_editor.py``, was deleted on 2026-09-10 by phase 6a of
-``doc/PLAN-mega-coverage.md``.
+"""Thirteen of book-of-job's sixteen runnable modules, which sat at that repo's root
+and sit at the top of this repo's ``py/``.  The other three were deleted:
+``main_gen_aleppo_crop_editor.py`` on 2026-09-10 by phase 6a of
+``doc/PLAN-mega-coverage.md``, and ``main_gen_cam1753_crop_editor.py`` and
+``main_apply_cam1753_crops.py`` on 2026-09-26, when all 160 Cambridge 1753 crops
+existed.
 
 They stay top-level rather than going into a package because every one of them is
-an entry point: four ``main_*``, and the ``check_*``/``fix_*`` family that
+an entry point: two ``main_*``, and the ``check_*``/``fix_*`` family that
 ``check_all`` imports by bare name and that are also run singly.  A package would
 make ``python py/<pkg>/check_mark_order.py`` put the package directory on
 ``sys.path`` instead of ``py/``, which is the import surgery this repo has none of.
@@ -180,15 +181,11 @@ def out_dir() -> Path:
     """Generated-JSON tree at ``book-of-job/out``, with 7 tracked files.
 
     Six are written by ``main_gen_misc_authored_english_documents``; the seventh,
-    ``cam1753_crops_path()`` below, is appended to by the manual crop-ingest step
-    and is the one file of the 701 whose checkout is still CRLF.
+    ``cam1753_crops_path()`` below, was appended to by the manual crop-ingest step
+    until that step was deleted on 2026-09-26, and is the one file of the 701 whose
+    checkout is still CRLF.
     """
     return paths.repo_root() / "book-of-job" / "out"
-
-
-def novc_dir() -> Path:
-    """Gitignored Job scratch tree beneath MAM-basics' shared ``.novc`` directory."""
-    return paths.novc_dir() / "book-of-job"
 
 
 def jobn_dir() -> Path:
@@ -213,15 +210,6 @@ def aleppo_img_dir() -> Path:
     return jobn_img_dir() / "Aleppo"
 
 
-def cam1753_img_dir() -> Path:
-    """Cam1753 crops (``<jobn_img_dir>/cam1753``), 160 tracked PNGs.
-
-    The only image tree here with even a manual producer: ``main_apply_cam1753_crops``
-    writes it from a hand-made crop-editor export it takes as its argument.
-    """
-    return jobn_img_dir() / "cam1753"
-
-
 def jobn_details_dir() -> Path:
     """The per-quirk detail pages (``<gh_pages_dir>/jobn-details``), 160 tracked HTML."""
     return gh_pages_dir() / D1D_DIR
@@ -242,13 +230,14 @@ def enriched_quirkrecs_path() -> Path:
     """The enriched quirk records (``<out_dir>/enriched-quirkrecs.json``).
 
     Written by ``main_gen_misc_authored_english_documents`` and read at MODULE IMPORT
-    TIME by the two crop editors and by ``main_list_missing_aleppo_imgs``, which is the
-    only sequencing among this repo's five entry points.
+    TIME by ``main_list_missing_aleppo_imgs``, which is the only sequencing between
+    book-of-job's two ``main_*`` entry points.
     """
     return out_dir() / "enriched-quirkrecs.json"
 
 
 def cam1753_crops_path() -> Path:
     """Hand-made crop coordinates (``<out_dir>/cam1753-crops.json``), read by the authoring
-    pipeline and appended to by ``main_apply_cam1753_crops``."""
+    pipeline.  ``main_apply_cam1753_crops`` appended to it until that program was
+    deleted on 2026-09-26; nothing writes it now."""
     return out_dir() / "cam1753-crops.json"

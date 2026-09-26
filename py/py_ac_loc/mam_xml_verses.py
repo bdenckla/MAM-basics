@@ -78,10 +78,9 @@ of a break only from the starts-with-sampe attribute of the verse after it, whic
 {"parashah": "spi-samekh3"}. A verse without the attribute gets None, and any other
 value raises ValueError. The spi-pe3 and spi-samekh3 markers, Ben's decision of
 2026-09-26, keep MAM's hint that the break has no blank line (pe3, MAM's פפפ) or is
-in mid-line (samekh3, MAM's ססס). Both line-break editors show them raw until they
-are given a label. A break within a verse, of any of the four kinds, never reaches a
-stream (Ben, 2026-09-26): how a stream shows one is to be decided when line-break work
-reaches a book that has one.
+in mid-line (samekh3, MAM's ססס). A break within a verse, of any of the four kinds,
+never reaches a stream (Ben, 2026-09-26): how a stream shows one is to be decided
+when line-break work reaches a book that has one.
 
 Usage:
     from py_ac_loc.mam_xml_verses import get_verses_in_range

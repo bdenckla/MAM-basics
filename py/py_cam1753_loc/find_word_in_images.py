@@ -144,7 +144,7 @@ def find_and_preview(word, book, cv, *, wide=False):
     after = line_words[word_idx + 1 :] if word_idx + 1 < len(line_words) else []
     print(f"  Context: {' '.join(before)} [{matched_word}] {' '.join(after)}")
 
-    # Initial bounding box in relative (0–1) coords for the crop editor
+    # Initial bounding box in relative (0–1) coords for the preview page's crop mode
     half_ls_box = ls // 2
     init_box_top = max(0, highlight_top - half_ls_box)
     init_box_bot = min(h - 1, highlight_bot + half_ls_box)

@@ -7,7 +7,7 @@ called "line-by-line alignment" of a text to a manuscript image.)
 
 ## Where the code and data are
 
-The five programs and the Aleppo data now share the MAM-basics repository. The programs are
+The three modules and the Aleppo data now share the MAM-basics repository. The modules are
 under `py/py_ac_loc/`, their `main_ac_*` entry points are at the top of `py/`, and the data is
 under `aleppo/`. Run every command below from the MAM-basics root.
 
@@ -29,8 +29,6 @@ MAM-basics/
   py/py_ac_loc/                 (the code)
     gen_flat_stream.py          ← generates initial flat-stream JSON (no line markers)
     gen_lb_flat_stream.py       ← wrapper: generates flat stream for a page
-    gen_line_break_editor.py    ← generates interactive HTML editor
-    merge_line_markers.py       ← merges edited line markers back, handling NFC normalization
     mam_xml_verses.py           ← low-level MAM-simple verse extraction (used by gen_flat_stream)
 
 ✗ py/py_ac_loc/line-breaks/    ← never existed; the data is under `aleppo/`
@@ -39,9 +37,14 @@ MAM-basics/
 ✗ py/py_ac_loc/MAM-simple/     ← never existed; the product is at MAM-basics' root
 ```
 
-Each of those five modules is run through a wrapper at MAM-basics'
+The listing named two more modules until 2026-09-26: `gen_line_break_editor.py`, which
+generated the interactive HTML editor, and `merge_line_markers.py`, which merged edited
+line markers back. Both were deleted that day, as the note under "Workflow" says.
+
+The two generators are each run through a wrapper at MAM-basics'
 `py/` top level — `main_ac_` plus the module name, so `gen_lb_flat_stream.py`
-is run as `main_ac_gen_lb_flat_stream.py`. Running a module under `py_ac_loc/`
+is run as `main_ac_gen_lb_flat_stream.py`. `mam_xml_verses.py` is a library that
+they import. Running a module under `py_ac_loc/`
 directly raises `ModuleNotFoundError`, and did so while the code was here too.
 
 ## Data format
@@ -122,6 +125,13 @@ Leaf    N     Text Range
 Two pages span book boundaries: 270r (Ps→Job) and 281v (Job→Prov).
 
 ## Workflow
+
+**The line-break editor that steps 2 and 3 use, `py/main_ac_gen_line_break_editor.py`,
+was deleted on 2026-09-26,** with its merge step, `py/main_ac_merge_line_markers.py`, by
+Ben's instruction that day to remove both line-break editors. The steps below describe
+the procedure as it ran. `git show 4ac4f16a:py/py_ac_loc/gen_line_break_editor.py`
+recovers the editor and `git show 4ac4f16a:py/py_ac_loc/merge_line_markers.py` the merge
+step; each module's `main_ac_` wrapper is at the same commit.
 
 ### 1. Generate the flat stream (if not already present)
 

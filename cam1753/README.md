@@ -12,8 +12,9 @@ support any biblical book. The programs that read and write this data live in
    ground truth.
 2. [`../py/main_cam1753_gen_flat_stream.py`](../py/main_cam1753_gen_flat_stream.py)
    writes per-page word streams in `cam1753-line-breaks/`.
-3. [`../py/main_cam1753_gen_line_break_editor.py`](../py/main_cam1753_gen_line_break_editor.py)
-   generates the editor used to annotate line breaks.
+3. Line breaks were annotated by hand in an editor that
+   `py/main_cam1753_gen_line_break_editor.py` generated. It was deleted on 2026-09-26;
+   `git show 4ac4f16a:py/py_cam1753_loc/gen_line_break_editor.py` recovers it.
 4. [`../py/main_cam1753_gen_col_quad_editor.py`](../py/main_cam1753_gen_col_quad_editor.py)
    generates the editor used to annotate column quadrilaterals.
 5. [`../py/main_cam1753_find_word_in_images.py`](../py/main_cam1753_find_word_in_images.py)

@@ -115,8 +115,7 @@ _ALEPPO_HAND_WORK = (
 )
 _CAM1753_HAND_WORK = (
     "Interactive hand work on the Cambridge 1753 images.  Recorded in"
-    " cam1753/doc/cam1753-line-break-task.md, py/cam1753_paths.py,"
-    " doc/boj-cam1753-word-crops.md, doc/book-of-job-artifacts.md and"
+    " cam1753/doc/cam1753-line-break-task.md, py/cam1753_paths.py and"
     " doc/mega-coverage-2026-09-10.md §3."
 )
 _PER_MANUSCRIPT_CHECK = (
@@ -321,7 +320,6 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_ac_find_word_in_images.py": _ALEPPO_HAND_WORK,
     "py/main_ac_gen_col_quad_editor.py": _ALEPPO_HAND_WORK,
     "py/main_ac_gen_lb_flat_stream.py": _ALEPPO_HAND_WORK,
-    "py/main_ac_gen_line_break_editor.py": _ALEPPO_HAND_WORK,
     "py/main_ac_download_pages.py": (
         "A network download of Aleppo Codex page images from archive.org.  Recorded in"
         " its docstring and doc/mega-coverage-2026-09-10.md §3."
@@ -334,9 +332,6 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_cam1753_find_word_in_images.py": _CAM1753_HAND_WORK,
     "py/main_cam1753_gen_col_quad_editor.py": _CAM1753_HAND_WORK,
     "py/main_cam1753_gen_flat_stream.py": _CAM1753_HAND_WORK,
-    "py/main_cam1753_gen_line_break_editor.py": _CAM1753_HAND_WORK,
-    "py/main_gen_cam1753_crop_editor.py": _CAM1753_HAND_WORK,
-    "py/main_apply_cam1753_crops.py": _CAM1753_HAND_WORK,
     "py/main_cam1753_gutter_profile.py": (
         "Its chart is not reproducible across matplotlib versions.  Recorded in"
         " cam1753/CLAUDE.md and doc/mega-coverage-2026-09-10.md §3."
@@ -467,11 +462,6 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_ac_gen_flat_stream.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it seeds one page from a"
         " hand-chosen verse range, and refuses to overwrite.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4."
-    ),
-    "py/main_ac_merge_line_markers.py": (
-        "Claude-written, accepted by Ben on 2026-09-10: it merges line markers from a"
-        " hand edit, so it has no input until a person edits a page.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
     # --- Ben's decisions of 2026-09-10.

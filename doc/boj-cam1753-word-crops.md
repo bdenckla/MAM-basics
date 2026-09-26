@@ -5,6 +5,17 @@ This describes the workflow for supplying μY (Cambridge MS Add. 1753)
 word-level image crops to quirkrecs that lack them. It uses regenerated page images
 and line-break data from `cam1753/` in this repository.
 
+**The crop editor that this procedure names, `py/main_gen_cam1753_crop_editor.py`, was
+deleted on 2026-09-26,** with `py/main_apply_cam1753_crops.py`, whose only input was the
+editor's export, by Ben's instruction that day to remove the Cambridge crop editor unless
+a reason to keep it turned up. None did: all 160 quirkrecs have their Cambridge crop,
+under `gh-pages/book-of-job/jobn/img/cam1753/`, and all 160 have their coordinates in
+`book-of-job/out/cam1753-crops.json`, which the authoring pipeline still reads. The steps
+below describe the procedure as it ran. `git show 4ac4f16a:py/main_gen_cam1753_crop_editor.py`
+recovers the editor and `git show 4ac4f16a:py/main_apply_cam1753_crops.py` the apply step.
+For a single word, `py/main_cam1753_find_word_in_images.py` previews it by book, verse and
+word, and its crop mode downloads a PNG with provenance metadata; it takes no quirkrec SID.
+
 ## Quick start
 
 When the user says **"let\u2019s do the next batch of Cambridge crops"**
@@ -61,7 +72,8 @@ relevant word from the Cambridge manuscript. The workflow is:
 
 ### `py/main_gen_cam1753_crop_editor.py`
 
-Generates an interactive HTML crop editor at `.novc/book-of-job/cam1753_crop_editor.html`.
+Deleted on 2026-09-26, as the note at the top of this file says. It generated an
+interactive HTML crop editor at `.novc/book-of-job/cam1753_crop_editor.html`.
 
 ```powershell
 .venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --status       # progress summary
@@ -73,7 +85,8 @@ Generates an interactive HTML crop editor at `.novc/book-of-job/cam1753_crop_edi
 
 ### `py/main_apply_cam1753_crops.py`
 
-Applies crop bounding boxes from the editor export JSON to produce final PNGs.
+Deleted on 2026-09-26, as the note at the top of this file says. It applied crop
+bounding boxes from the editor export JSON to produce final PNGs.
 
 ```powershell
 .venv/Scripts/python.exe py/main_apply_cam1753_crops.py .novc/book-of-job/cam1753_crops_export.json

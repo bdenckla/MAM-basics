@@ -2,8 +2,10 @@
 """Search for words in cam1753 line-break data.
 
 This module is parameterized: the caller supplies the line-break
-directory and the book name, so the same logic can serve both the
-one-off preview tool and the batch crop editor.
+directory and the book name, so the same logic serves both the
+one-off preview tool, ``py_cam1753_loc.find_word_in_images``, and the
+word-finding check, ``check_cam1753_word_finding``.  Book-of-job's batch
+crop editor used it too, until it was deleted on 2026-09-26.
 """
 
 import json

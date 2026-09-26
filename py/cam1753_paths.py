@@ -56,12 +56,14 @@ CAM_PACKAGES = ("py_cam1753_loc",)
 There was no package to keep: all fifteen of that repo's modules sat loose at its
 root, beside the data.  ``py_cam1753_loc`` is named for ``py_ac_loc``, the tree
 codex-index-aleppo already had for the same job on a different manuscript, and the
-eight modules in it drop a now-redundant ``cam1753`` infix that the package name
-carries -- ``gen_cam1753_flat_stream.py`` is ``py_cam1753_loc.gen_flat_stream``,
-which is what makes ``main_cam1753_`` plus the module stem a rule rather than a
-list.  Four of the eight are named for their ``py_ac_loc`` counterparts exactly:
-``check_line_breaks``, ``gen_flat_stream``, ``gen_line_break_editor`` and
-``gen_col_quad_editor``.
+eight modules that landed in it drop a now-redundant ``cam1753`` infix that the
+package name carries -- ``gen_cam1753_flat_stream.py`` is
+``py_cam1753_loc.gen_flat_stream``, which is what makes ``main_cam1753_`` plus the
+module stem a rule rather than a list.  Four of the eight were named for their
+``py_ac_loc`` counterparts exactly: ``check_line_breaks``, ``gen_flat_stream``,
+``gen_line_break_editor`` and ``gen_col_quad_editor``.  Seven remain:
+``gen_line_break_editor`` was deleted with its ``py_ac_loc`` counterpart on
+2026-09-26.
 
 ``py_cam1753_word_image`` is NOT listed: it arrived here with book-of-job on
 2026-08-19 and is one committed blob with codex-index-cam1753's copy, so it belongs
@@ -78,18 +80,20 @@ CAM_TOP_LEVEL_MODULES = (
     "main_cam1753_find_word_in_images.py",
     "main_cam1753_gen_col_quad_editor.py",
     "main_cam1753_gen_flat_stream.py",
-    "main_cam1753_gen_line_break_editor.py",
     "main_cam1753_gutter_profile.py",
     "main_cam1753_split_spreads.py",
 )
-"""codex-index-cam1753's eleven modules at the top of this repo's ``py/``.
+"""Ten of codex-index-cam1753's eleven modules at the top of this repo's ``py/``.
+The eleventh, the line-break editor ``main_cam1753_gen_line_break_editor.py``, was
+deleted on 2026-09-26.
 
 EVERY ONE IS PREFIXED, on the rule codex-index-aleppo's Phase 3 settled the day
 before: ``main_cam1753_`` plus the module stem for an entry point,
-``check_cam1753_`` plus the stem for a check.  Six of these have a
+``check_cam1753_`` plus the stem for a check.  Six of the eleven had a
 ``main_ac_``-prefixed counterpart addressing the same problem on the Aleppo Codex,
 which is exactly why that phase prefixed all fifteen of its own rather than only the
-five whose names were taken.
+five whose names were taken.  Five of those pairs remain; the two line-break editors
+were the sixth.
 """
 
 CODE_DIR = Path(__file__).resolve().parent
@@ -127,8 +131,8 @@ def code_paths() -> list[Path]:
 
 
 def line_breaks_dir() -> Path:
-    """Hand-annotated per-page word streams (27 tracked JSON), the human-in-the-loop
-    output of ``gen_cam1753_line_break_editor``."""
+    """Hand-annotated per-page word streams (27 tracked JSON), marked up in the
+    line-break editor that was deleted on 2026-09-26."""
     return cam1753_data_root() / "cam1753-line-breaks"
 
 
@@ -187,6 +191,6 @@ def word_finding_test_data_path() -> Path:
 
 
 def novc_dir() -> Path:
-    """Gitignored scratch tree, where the two editors and the word previewer write
-    the HTML they open in a browser."""
+    """Gitignored scratch tree, where the column-quadrilateral editor and the word
+    previewer write the HTML they open in a browser."""
     return cam1753_data_root() / ".novc"

@@ -12,9 +12,10 @@ not rerender `cam1753-gutter-profiles.png` as a verification step: matplotlib ve
 changes make that chart non-reproducible. `check_cam1753_all.py` is the artifact
 oracle; it reports four checks and includes the 160-case word-finding check.
 
-The column and line-break editors load page JPEGs from port 8119. Start that local
-server in `C:/Users/BenDe/GitRepos/MAM-basics/cam1753` so their existing
-`http://localhost:8119/cam1753-pages/` URLs resolve. The word-image previewer keeps
+The column editor loads page JPEGs from port 8119. Start that local server in
+`C:/Users/BenDe/GitRepos/MAM-basics/cam1753` so its existing
+`http://localhost:8119/cam1753-pages/` URLs resolve. The line-break editor, which
+loaded them the same way, was deleted on 2026-09-26. The word-image previewer keeps
 its explicit port 8753 and serves its gitignored `.novc` output there.
 
 Preserve the stored Hebrew data exactly; do not normalize it. The MAM-basics

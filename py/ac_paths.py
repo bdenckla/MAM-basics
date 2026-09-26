@@ -36,15 +36,16 @@ AC_TOP_LEVEL_MODULES = (
     "main_ac_gen_flat_stream.py",
     "main_ac_gen_index_flat_annotated.py",
     "main_ac_gen_lb_flat_stream.py",
-    "main_ac_gen_line_break_editor.py",
-    "main_ac_merge_line_markers.py",
 )
-"""codex-index-aleppo's modules at the top of this repo's ``py/``: eleven of the
-fifteen that landed here.  The other four were removed on 2026-09-10: the Wikisource
-index generator and the column-coordinate plots by Ben's decision that day, which
-phase 3 of ``doc/PLAN-mega-coverage.md`` records, the kraken baseline-segmentation
-wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the same plan, and
-``check_ac_word_finding.py`` by phase 6b, which first made it pass again.
+"""codex-index-aleppo's modules at the top of this repo's ``py/``: nine of the
+fifteen that landed here.  Four of the other six were removed on 2026-09-10: the
+Wikisource index generator and the column-coordinate plots by Ben's decision that day,
+which phase 3 of ``doc/PLAN-mega-coverage.md`` records, the kraken
+baseline-segmentation wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the
+same plan, and ``check_ac_word_finding.py`` by phase 6b, which first made it pass
+again.  The last two, the line-break editor ``main_ac_gen_line_break_editor.py`` and
+its merge step ``main_ac_merge_line_markers.py``, were deleted on 2026-09-26 by Ben's
+instruction that day to remove both line-break editors.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the
@@ -93,8 +94,8 @@ def code_paths() -> list[Path]:
 
 
 def line_breaks_dir() -> Path:
-    """Hand-annotated per-page word streams (35 tracked JSON), the human-in-the-loop
-    output of ``py_ac_loc.gen_line_break_editor``."""
+    """Hand-annotated per-page word streams (35 tracked JSON), marked up in the
+    line-break editor that was deleted on 2026-09-26."""
     return ac_data_root() / "line-breaks"
 
 
@@ -128,8 +129,8 @@ def ds_flat_stream_dir() -> Path:
 
 
 def novc_dir() -> Path:
-    """Gitignored scratch tree, where the two editors and the word previewer write
-    the HTML they open in a browser."""
+    """Gitignored scratch tree, where the column-quadrilateral editor and the word
+    previewer write the HTML they open in a browser."""
     return ac_data_root() / ".novc"
 
 

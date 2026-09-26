@@ -94,8 +94,8 @@ An atom is one written form between spaces or maqafs. These rules define its fie
    an atom too. A qere that is not written contributes no atom, and neither does the repeated
    ending that MAM adds after the last verse of four books. A parashah break within a verse
    does not interrupt the count. The numbers count the same units as the word sequences of
-   those two line-break trees, so the existing flat-stream and line-break tools could extend
-   to this manuscript later.
+   those two line-break trees, so the existing flat-stream generators could extend to this
+   manuscript later.
 3. **A `_text` is MAM's letters for the atom or atoms, unpointed**, one space between atoms,
    whether MAM joins them with a space or a maqaf. A script lifted every one from MAM-simple.
    None was typed. A cue helps a reader find the place. It is not a reading of the manuscript,
