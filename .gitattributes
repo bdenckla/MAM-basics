@@ -16,6 +16,11 @@
 #
 *.csv text eol=crlf
 
+# The HBCE Psalms comparison's tab-separated outputs end a row with a tab when its last
+# field is empty. That tab is data, not trailing whitespace, so `git diff --check` must
+# not report it.
+hbce-psalms/out/*.tsv whitespace=-trailing-space
+
 # Binary assets: never convert. Copied verbatim from wlc-utils' .gitattributes
 # (wlc-utils#50) ahead of that repo's corpus arriving, because git applies
 # .gitattributes at `git add` time: were these rules to differ between the two

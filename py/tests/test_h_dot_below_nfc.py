@@ -209,6 +209,13 @@ _EXCLUDE_DIR_PREFIXES = (
     "uxlc/",
     "aleppo/",
     "cam1753/",
+    # HBCE's Psalms transcriptions and catalogue responses, a download kept
+    # byte-verbatim as hbce-psalms/README.md says, and the script-regenerable
+    # comparison outputs beside them. The README, which is Claude-written prose,
+    # stays in scope. Added 2026-09-26, when neither tree held a decomposed cluster:
+    # excluded on the principle, not to hide a finding.
+    "hbce-psalms/in/",
+    "hbce-psalms/out/",
 )
 
 # The relocated UXLC subtree's generated trees -- out/, gh-pages/ and data/ --

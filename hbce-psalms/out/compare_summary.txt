@@ -1,0 +1,130 @@
+MAM verses: 2527 ; MAM-simple tag counts: {'text': 1241, 'implicit-maqaf': 82, 'lp-legarmeih': 464, 'lp-paseq': 57, 'kq': 60, 'kq-trivial': 8, 'slh-word': 3, 'spi-invnun': 7}
+doc-note verses: 515 ; intro-mentioned Psalms verses: 385
+
+=== MA vs MAM (Aleppo) ===
+verses compared: 624; chanted-word pairs: 4510; identical: 4004; differing rows: 506
+label counts:
+    332  policy
+     60  meteg:Aleppo-has:POINT METEG
+     24  meteg:MAM-has:POINT METEG
+     22  stroke-shape
+     17  missing-in-Aleppo
+     16  extra-in-Aleppo
+     15  accent:MAM-has:ACCENT MERKHA
+     10  accent:MAM-has:ACCENT REVIA
+     10  ketiv-qere
+      8  dagesh:Aleppo-has:POINT DAGESH OR MAPIQ
+      8  order-only
+      8  silluq:MAM-has:POINT METEG
+      7  vowel:MAM-has:POINT HOLAM
+      5  unpointed-orig-with-alt
+      4  accent:Aleppo-has:ACCENT MERKHA
+      4  accent:Aleppo-has:ACCENT TIPEHA
+      4  meteg-or-silluq:Aleppo-has:POINT METEG
+      4  accent:Aleppo-has:ACCENT REVIA
+      4  oleh-position
+      3  vowel:MAM-has:POINT PATAH
+      3  vowel:Aleppo-has:POINT QAMATS
+      3  accent:Aleppo-has:ACCENT GERESH
+      2  dagesh:MAM-has:POINT DAGESH OR MAPIQ
+      2  accent:MAM-has:ACCENT GERESH MUQDAM
+      2  rafe:MAM-has:POINT RAFE
+      2  accent:MAM-has:ACCENT MUNAH
+      2  accent:Aleppo-has:ACCENT MUNAH
+      2  accent:MAM-has:ACCENT QADMA
+      2  accent:Aleppo-has:ACCENT GERESH MUQDAM
+      1  accent:Aleppo-has:ACCENT ETNAHTA
+      1  accent:MAM-has:ACCENT DEHI
+      1  shin-sin-dot:Aleppo-has:POINT SIN DOT
+      1  hataf-without-mam-note
+      1  other:Aleppo-has:MARK UPPER DOT
+      1  other:MAM-has:MARK LOWER DOT
+      1  other:MAM-has:MARK UPPER DOT
+      1  accent:Aleppo-has:ACCENT ILUY
+      1  accent:MAM-has:ACCENT YERAH BEN YOMO
+      1  vowel:Aleppo-has:POINT HIRIQ
+      1  accent:MAM-has:ACCENT TIPEHA
+      1  vowel:Aleppo-has:POINT PATAH
+      1  letters
+HBCE tag counts: {'w': 5173, 'space': 658, 'caesura': 1177, 'lb': 807, 'pc': 137, 'cb': 16, 'app': 18, 'seg': 12, 'note': 5}
+
+=== ML vs MAM (Leningrad) ===
+verses compared: 170; chanted-word pairs: 1212; identical: 1112; differing rows: 100
+label counts:
+     69  policy
+      6  accent:MAM-has:ACCENT REVIA
+      4  order-only
+      4  extra-in-Leningrad
+      3  letters
+      3  accent:MAM-has:ACCENT MERKHA
+      3  meteg:Leningrad-has:POINT METEG
+      2  meteg-or-silluq:Leningrad-has:POINT METEG
+      2  silluq:MAM-has:POINT METEG
+      2  ketiv-qere
+      2  missing-in-Leningrad
+      2  stroke-shape
+      1  vowel:MAM-has:POINT PATAH
+      1  vowel:Leningrad-has:POINT HIRIQ
+      1  vowel:MAM-has:POINT HIRIQ
+      1  vowel:Leningrad-has:POINT PATAH
+      1  dagesh:MAM-has:POINT DAGESH OR MAPIQ
+      1  dagesh:Leningrad-has:POINT DAGESH OR MAPIQ
+      1  accent:Leningrad-has:ACCENT TIPEHA
+      1  vowel:MAM-has:POINT QAMATS
+      1  vowel:Leningrad-has:POINT HOLAM
+
+=== ML vs MAM (Leningrad) ===
+verses compared: 801; chanted-word pairs: 5771; identical: 5117; differing rows: 654
+label counts:
+    364  policy
+    117  meteg:Leningrad-has:POINT METEG
+     33  meteg:MAM-has:POINT METEG
+     27  missing-in-Leningrad
+     22  letters
+     19  accent:MAM-has:ACCENT REVIA
+     18  extra-in-Leningrad
+     17  stroke-shape
+     16  ketiv-qere
+     16  accent:MAM-has:ACCENT MERKHA
+     14  silluq:MAM-has:POINT METEG
+     12  order-only
+      9  meteg-or-silluq:Leningrad-has:POINT METEG
+      6  dagesh:Leningrad-has:POINT DAGESH OR MAPIQ
+      5  dagesh:MAM-has:POINT DAGESH OR MAPIQ
+      3  vowel:Leningrad-has:POINT SHEVA
+      3  vowel:MAM-has:POINT SHEVA
+      3  vowel:Leningrad-has:POINT PATAH
+      3  vowel:MAM-has:POINT QAMATS
+      3  vowel:MAM-has:POINT HOLAM
+      3  vowel:MAM-has:POINT PATAH
+      3  oleh-position
+      2  vowel:Leningrad-has:POINT HOLAM
+      2  paseq:MAM-has
+      2  accent:Leningrad-has:ACCENT MAHAPAKH
+      2  accent:MAM-has:ACCENT GERESH MUQDAM
+      2  vowel:Leningrad-has:POINT HATAF PATAH
+      2  vowel:MAM-has:POINT HIRIQ
+      2  rafe:MAM-has:POINT RAFE
+      2  accent:Leningrad-has:ACCENT MUNAH
+      2  accent:Leningrad-has:ACCENT MERKHA
+      2  accent:MAM-has:ACCENT QADMA
+      2  accent:Leningrad-has:ACCENT GERESH MUQDAM
+      1  accent:Leningrad-has:ACCENT REVIA
+      1  maqaf:MAM-has-Leningrad-lacks
+      1  accent:MAM-has:ACCENT ETNAHTA
+      1  vowel:MAM-has:POINT HATAF PATAH
+      1  vowel:Leningrad-has:POINT QAMATS
+      1  vowel:MAM-has:POINT TSERE
+      1  vowel:Leningrad-has:POINT SEGOL
+      1  vowel:MAM-has:POINT SEGOL
+      1  vowel:Leningrad-has:POINT HIRIQ
+      1  accent:Leningrad-has:ACCENT TIPEHA
+      1  other:MAM-has:MARK LOWER DOT
+      1  other:MAM-has:MARK UPPER DOT
+      1  accent:MAM-has:ACCENT YERAH BEN YOMO
+      1  accent:MAM-has:ACCENT DEHI
+      1  accent:MAM-has:ACCENT TIPEHA
+      1  accent:MAM-has:ACCENT MUNAH
+      1  maqaf:Leningrad-has-MAM-lacks
+      1  accent:MAM-has:ACCENT MAHAPAKH
+      1  accent:Leningrad-has:ACCENT YERAH BEN YOMO

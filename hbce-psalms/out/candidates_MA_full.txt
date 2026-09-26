@@ -1,0 +1,415 @@
+
+##### compare_MA.tsv: 506 differing rows, 172 candidate rows
+label -> docnote status counts:
+    60  meteg:Aleppo-has:POINT METEG                  {'none': 45, 'word-note': 9, 'verse-note': 6}
+    24  meteg:MAM-has:POINT METEG                     {'none': 17, 'word-note': 3, 'verse-note': 4}
+    22  stroke-shape                                  {'none': 15, 'word-note': 5, 'verse-note': 2}
+    17  missing-in-Aleppo                             {'word-note': 5, 'none': 10, 'verse-note': 2}
+    16  extra-in-Aleppo                               {'word-note': 6, 'none': 5, 'verse-note': 5}
+    15  accent:MAM-has:ACCENT MERKHA                  {'none': 9, 'word-note': 5, 'verse-note': 1}
+    10  accent:MAM-has:ACCENT REVIA                   {'none': 9, 'word-note': 1}
+     8  dagesh:Aleppo-has:POINT DAGESH OR MAPIQ       {'none': 7, 'word-note': 1}
+     8  silluq:MAM-has:POINT METEG                    {'none': 5, 'word-note': 1, 'verse-note': 2}
+     7  vowel:MAM-has:POINT HOLAM                     {'none': 4, 'verse-note': 2, 'word-note': 1}
+     4  accent:Aleppo-has:ACCENT MERKHA               {'none': 3, 'word-note': 1}
+     4  accent:Aleppo-has:ACCENT TIPEHA               {'word-note': 1, 'none': 3}
+     4  meteg-or-silluq:Aleppo-has:POINT METEG        {'none': 2, 'word-note': 1, 'verse-note': 1}
+     4  accent:Aleppo-has:ACCENT REVIA                {'none': 4}
+     4  oleh-position                                 {'word-note': 3, 'none': 1}
+     3  vowel:MAM-has:POINT PATAH                     {'word-note': 1, 'none': 2}
+     3  vowel:Aleppo-has:POINT QAMATS                 {'word-note': 1, 'none': 2}
+     3  accent:Aleppo-has:ACCENT GERESH               {'verse-note': 1, 'none': 2}
+     2  dagesh:MAM-has:POINT DAGESH OR MAPIQ          {'none': 2}
+     2  accent:MAM-has:ACCENT GERESH MUQDAM           {'verse-note': 1, 'none': 1}
+     2  rafe:MAM-has:POINT RAFE                       {'none': 2}
+     2  accent:MAM-has:ACCENT MUNAH                   {'none': 2}
+     2  accent:Aleppo-has:ACCENT MUNAH                {'verse-note': 1, 'none': 1}
+     2  accent:MAM-has:ACCENT QADMA                   {'word-note': 2}
+     2  accent:Aleppo-has:ACCENT GERESH MUQDAM        {'word-note': 2}
+     1  accent:Aleppo-has:ACCENT ETNAHTA              {'word-note': 1}
+     1  accent:MAM-has:ACCENT DEHI                    {'word-note': 1}
+     1  shin-sin-dot:Aleppo-has:POINT SIN DOT         {'none': 1}
+     1  hataf-without-mam-note                        {'none': 1}
+     1  other:Aleppo-has:MARK UPPER DOT               {'none': 1}
+     1  other:MAM-has:MARK LOWER DOT                  {'word-note': 1}
+     1  other:MAM-has:MARK UPPER DOT                  {'word-note': 1}
+     1  accent:Aleppo-has:ACCENT ILUY                 {'word-note': 1}
+     1  accent:MAM-has:ACCENT YERAH BEN YOMO          {'none': 1}
+     1  vowel:Aleppo-has:POINT HIRIQ                  {'none': 1}
+     1  accent:MAM-has:ACCENT TIPEHA                  {'none': 1}
+     1  vowel:Aleppo-has:POINT PATAH                  {'none': 1}
+     1  letters                                       {'none': 1}
+
+--- candidates with docnote=none: 114 ---
+Ps.1.4     MAM=אֲֽשֶׁר־תִּדְּפֶ֥נּוּ        HBCE=אֲֽ֥שֶׁר־תִּדְּפֶ֥נּוּ       | accent:Aleppo-has:ACCENT MERKHA | flags= | intro=-
+             cluster 0 (א): MAM[POINT HATAF PATAH,POINT METEG] vs A[POINT HATAF PATAH,POINT METEG,ACCENT MERKHA]
+Ps.2.2     MAM=עַל־יְ֝הֹוָ֗ה                HBCE=עַל־יְ֝הוָה                  | policy:divine-name-holam; accent:MAM-has:ACCENT REVIA | flags= | intro=ch2
+             cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]
+Ps.3.2     MAM=מָה־רַבּ֣וּ                  HBCE=מָֽה־רַבּ֣וּ                 | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.4.5     MAM=וְֽאַל־תֶּ֫חֱטָ֥אוּ          HBCE=וְֽאַל־תֶּ֫חֱטָ֥או           | dagesh:MAM-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 4 (ו): MAM[POINT DAGESH OR MAPIQ] vs A[]
+Ps.5.7     MAM=תְּאַבֵּד֮                   HBCE=תְּאַבֵּדּ֮                  | dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 3 (ד): MAM[ACCENT ZINOR] vs A[POINT DAGESH OR MAPIQ,ACCENT ZINOR]
+Ps.5.7     MAM=דֹּבְרֵ֢י                    HBCE=דׂבְרֵ֪י                     | dagesh:MAM-has:POINT DAGESH OR MAPIQ; vowel:MAM-has:POINT HOLAM; shin-sin-dot:Aleppo-has:POINT SIN DOT; policy:atnax-hafukh-encoded-as-galgal | flags= | intro=-
+             cluster 0 (ד): MAM[POINT DAGESH OR MAPIQ,POINT HOLAM] vs A[POINT SIN DOT]
+Ps.5.10    MAM=יַחֲלִיקֽוּן                 HBCE=יַחֲלִֽיקוּן                 | meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG | flags= | intro=-
+             cluster 2 (ל): MAM[POINT HIRIQ] vs A[POINT HIRIQ,POINT METEG]; cluster 4 (ק): MAM[POINT METEG] vs A[]
+Ps.5.11    MAM=הַ֥אֲשִׁימֵ֨ם ׀              HBCE=הַֽאֲשִׁימֵ֨ם ׀              | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ה): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]
+Ps.7.2     MAM=אֱ֭לֹהַי                     HBCE=אֱ֭לֹ֗הַי                    | accent:Aleppo-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (ל): MAM[POINT HOLAM] vs A[POINT HOLAM,ACCENT REVIA]
+Ps.7.9     MAM=שָׁפְטֵ֥נִי                  HBCE=שָׁפֲטֵ֥נִי                  | policy:hataf-non-guttural; hataf-without-mam-note | flags= | intro=-
+Ps.7.9     MAM=כְּצִדְקִ֖י                  HBCE=כְּצִדְ֗קִ֖י                 | accent:Aleppo-has:ACCENT REVIA | flags= | intro=-
+             cluster 2 (ד): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT REVIA]
+Ps.7.16    MAM=כָּ֭רָה                      HBCE=כָּ֭רָֽה                     | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 1 (ר): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.8.2     MAM=מָה־אַדִּ֣יר                 HBCE=מָֽה־אַדִּ֣יר                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.8.8     MAM=וְ֝גַ֗ם                      HBCE=וְ֝֜גַ֗ם                     | accent:Aleppo-has:ACCENT GERESH | flags= | intro=-
+             cluster 0 (ו): MAM[POINT SHEVA,ACCENT GERESH MUQDAM] vs A[POINT SHEVA,ACCENT GERESH MUQDAM,ACCENT GERESH]
+Ps.9.7     MAM=לָ֫נֶ֥צַח                    HBCE=לָ֫נֶ֥צָח                    | vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS | flags= | intro=-
+             cluster 2 (צ): MAM[POINT PATAH] vs A[POINT QAMATS]
+Ps.10.2    MAM=יִדְלַ֣ק                     HBCE=יִּדְלַ֣ק                    | dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 0 (י): MAM[POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]
+Ps.10.6    MAM=לֹֽא־בְרָֽע                  HBCE=לֹֽא־בְרָע                   | silluq:MAM-has:POINT METEG | flags=|sof-pasuq-pc | intro=-
+             cluster 1 (ר): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]
+Ps.10.10   MAM=יָשֹׁ֑חַ                     HBCE=יָשׁ֑ׄחַ                     | vowel:MAM-has:POINT HOLAM; other:Aleppo-has:MARK UPPER DOT | flags= | intro=appendices,ch2
+             cluster 1 (ש): MAM[POINT SHIN DOT,POINT HOLAM,ACCENT ETNAHTA] vs A[POINT SHIN DOT,MARK UPPER DOT,ACCENT ETNAHTA]
+Ps.10.10   MAM=וְנָפַ֥ל                     HBCE=וְנָפַֽל                     | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=appendices,ch2
+             cluster 2 (פ): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]
+Ps.10.10   MAM=בַּ֝עֲצוּמָ֗יו               HBCE=בַּ֜עֲצוּמָ֗יו               | accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH | flags= | intro=appendices,ch2
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT GERESH MUQDAM] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT GERESH]
+Ps.10.10   MAM=חֵ֣ל                         HBCE=—                            | missing-in-Aleppo | flags= | intro=appendices,ch2
+Ps.10.10   MAM=כָּאִֽים                     HBCE=—                            | missing-in-Aleppo | flags= | intro=appendices,ch2
+Ps.10.10   MAM=—                            HBCE=חלכאים                       | extra-in-Aleppo | flags=|alt=חֵל כָּאִֽים,app | intro=appendices,ch2
+Ps.10.14   MAM=כִּי־אַתָּ֤ה ׀               HBCE=כִּֽי־אַתָּ֤ה ׀              | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]
+Ps.12.2    MAM=כִּֽי־גָמַ֣ר                 HBCE=כִּי־גָמַ֣ר                  | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]
+Ps.13.6    MAM=לַֽיהֹוָ֑ה                   HBCE=לַ֖יהוָ֑ה                    | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam | flags= | intro=ch2
+             cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,ACCENT TIPEHA]
+Ps.14.2    MAM=דֹּ֝רֵ֗שׁ                    HBCE=דֹּ֝רֵשׁ                     | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (ר): MAM[POINT TSERE,ACCENT REVIA] vs A[POINT TSERE]
+Ps.25.16   MAM=פְּנֵֽה־אֵלַ֥י               HBCE=פְּנֵה־אֵלַ֥י                | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 1 (נ): MAM[POINT TSERE,POINT METEG] vs A[POINT TSERE]
+Ps.26.4    MAM=לֹֽא־יָ֭שַׁבְתִּי            HBCE=לֹא־יָ֭שַׁבְתִּי             | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+Ps.26.10   MAM=וִ֝ימִינָ֗ם                  HBCE=וִֽ֝ימִינָ֗ם                 | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT HIRIQ,ACCENT GERESH MUQDAM] vs A[POINT HIRIQ,POINT METEG,ACCENT GERESH MUQDAM]
+Ps.27.4    MAM=מֵאֵת־יְהֹוָה֮               HBCE=מֵֽאֵת־יְהוָה֮               | meteg:Aleppo-has:POINT METEG; policy:divine-name-holam | flags= | intro=-
+             cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+Ps.27.6    MAM=לַֽיהֹוָֽה                   HBCE=לַיהוָֽה                     | meteg:MAM-has:POINT METEG; policy:divine-name-holam | flags=|sof-pasuq-pc | intro=-
+             cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH]
+Ps.27.9    MAM=אַ֥ל                         HBCE=אַֽל                         | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (א): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]
+Ps.27.10   MAM=יַאַסְפֵֽנִי                 HBCE=יַֽאַסְפֵֽנִי                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]
+Ps.28.5    MAM=לֹ֪א                         HBCE=לֹא                          | accent:MAM-has:ACCENT YERAH BEN YOMO | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,ACCENT YERAH BEN YOMO] vs A[POINT HOLAM]
+Ps.28.6    MAM=כִּי־שָׁ֝מַ֗ע                HBCE=כִּי־שָׁ֝מַע                 | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (מ): MAM[POINT PATAH,ACCENT REVIA] vs A[POINT PATAH]
+Ps.29.2    MAM=לַ֭יהֹוָה                    HBCE=לַֽ֭יהוָה                    | meteg:Aleppo-has:POINT METEG; policy:divine-name-holam | flags= | intro=-
+             cluster 0 (ל): MAM[POINT PATAH,ACCENT DEHI] vs A[POINT PATAH,POINT METEG,ACCENT DEHI]
+Ps.30.10   MAM=אֶ֫ל                         HBCE=—                            | missing-in-Aleppo | flags= | intro=ch5
+Ps.30.10   MAM=שָׁ֥חַת                      HBCE=—                            | missing-in-Aleppo | flags= | intro=ch5
+Ps.30.10   MAM=—                            HBCE=אֶ֫ל־שָׁ֥חַת                 | extra-in-Aleppo | flags= | intro=ch5
+Ps.31.5    MAM=כִּי־אַ֝תָּ֗ה                HBCE=כִּֽי־אַ֝תָּה                | meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA | flags= | intro=ch5
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]; cluster 1 (ת): MAM[POINT DAGESH OR MAPIQ,POINT QAMATS,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ,POINT QAMATS]
+Ps.31.5    MAM=מָעוּזִּֽי                   HBCE=מָֽעוּזִּֽי                  | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.31.16   MAM=מִיַּד־א֝וֹיְבַ֗י            HBCE=מִיַּד־א֝וֹיְבַ֗יּ           | dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 4 (י): MAM[] vs A[POINT DAGESH OR MAPIQ]
+Ps.31.16   MAM=וּמֵֽרֹדְפָֽי                HBCE=וּמֵרֹּדְּפָֽי               | meteg:MAM-has:POINT METEG; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 1 (מ): MAM[POINT TSERE,POINT METEG] vs A[POINT TSERE]; cluster 2 (ר): MAM[POINT HOLAM] vs A[POINT DAGESH OR MAPIQ,POINT HOLAM]; cluster 3 (ד): MAM[POINT SHEVA] vs A[POINT DAGESH OR MAPIQ,POINT SHEVA]
+Ps.31.21   MAM=מֵרֻכְסֵ֫י                   HBCE=מֵֽרֻכְסֵ֫י                  | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+Ps.31.25   MAM=לַֽיהֹוָֽה                   HBCE=לַ֖יהוָֽה                    | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam | flags= | intro=-
+             cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,ACCENT TIPEHA]
+Ps.32.11   MAM=וְ֝הַרְנִ֗ינוּ               HBCE=וְ֝הַרְנִ֗יִנוּ              | vowel:Aleppo-has:POINT HIRIQ | flags= | intro=-
+             cluster 4 (י): MAM[] vs A[POINT HIRIQ]
+Ps.33.22   MAM=יְהִי־חַסְדְּךָ֣             HBCE=יְהִֽי־חַסְדְּךָ֣            | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 1 (ה): MAM[POINT HIRIQ] vs A[POINT HIRIQ,POINT METEG]
+Ps.34.10   MAM=יְר֣אֿוּ                     HBCE=יְר֣אוּ                      | rafe:MAM-has:POINT RAFE | flags= | intro=ch2
+             cluster 2 (א): MAM[POINT RAFE] vs A[]
+Ps.34.10   MAM=אֶת־יְהֹוָ֣ה                 HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2
+Ps.34.10   MAM=—                            HBCE=אֶת                          | extra-in-Aleppo | flags= | intro=ch2
+Ps.34.10   MAM=—                            HBCE=יְהוָ֣ה                      | extra-in-Aleppo | flags= | intro=ch2
+Ps.35.15   MAM=וְֽנֶ֫אֱסָ֥פוּ               HBCE=וְֽנֶאֱ֫סָ֥פוּ               | oleh-position | flags= | intro=-
+             oleh MAM@[1] Aleppo@[2]
+Ps.35.17   MAM=תִ֫רְאֶ֥ה                    HBCE=תִּ֫רְאֶ֥ה                   | dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=-
+             cluster 0 (ת): MAM[POINT HIRIQ,ACCENT OLE] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,ACCENT OLE]
+Ps.35.20   MAM=מִ֝רְמ֗וֹת                   HBCE=מִ֝רְמוֹת                    | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 2 (מ): MAM[ACCENT REVIA] vs A[]
+Ps.35.23   MAM=וַאדֹנָ֣י                    HBCE=וַֽאדֹנָ֣י                   | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]
+Ps.35.28   MAM=כָּל־הַ֝יּ֗וֹם               HBCE=כָּל־הַ֝יּוֹם                | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (י): MAM[POINT DAGESH OR MAPIQ,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ]
+Ps.36.1    MAM=לְעֶבֶד־יְהֹוָ֬ה             HBCE=לְעֶֽבֶד־יְהוָ֬ה             | meteg:Aleppo-has:POINT METEG; policy:divine-name-holam | flags= | intro=-
+             cluster 1 (ע): MAM[POINT SEGOL] vs A[POINT SEGOL,POINT METEG]
+Ps.36.6    MAM=אֱ֝מ֥וּנָתְךָ֗               HBCE=אֱ֝מֽוּנָתְךָ֗               | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 1 (מ): MAM[ACCENT MERKHA] vs A[POINT METEG]
+Ps.36.7    MAM=צִדְקָתְךָ֨ ׀                HBCE=צִדְקָֽתְךָ֨ ׀               | meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 2 (ק): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.36.7    MAM=אָ֤דָֽם                      HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2
+Ps.36.7    MAM=וּבְהֵמָ֖ה                   HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2
+Ps.36.7    MAM=—                            HBCE=אָ֤דָֽם־וּבְהֵמָ֖ה           | extra-in-Aleppo | flags= | intro=ch2
+Ps.36.11   MAM=וְ֝צִדְקָתְךָ֗               HBCE=וְ֝צִדְקָֽתְךָ֗              | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 3 (ק): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.37.7    MAM=וְהִתְח֢וֹלֵֽ֫ל              HBCE=וְהִתְח֪וֹלֵ֫ל               | policy:atnax-hafukh-encoded-as-galgal; meteg:MAM-has:POINT METEG | flags= | intro=ch2,ch5
+             cluster 5 (ל): MAM[POINT TSERE,POINT METEG,ACCENT OLE] vs A[POINT TSERE,ACCENT OLE]
+Ps.37.11   MAM=וְ֝הִֽתְעַנְּג֗וּ            HBCE=וְ֝הִתְעַנְּג֗וּ             | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 1 (ה): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]
+Ps.37.13   MAM=כִּי־רָ֝אָ֗ה                 HBCE=כִּֽי־רָ֝אָ֗ה                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]
+Ps.37.31   MAM=אֲשֻׁרָֽיו                   HBCE=אֲשֻׁרָיו                    | silluq:MAM-has:POINT METEG | flags= | intro=-
+             cluster 2 (ר): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]
+Ps.37.32   MAM=לַהֲמִיתֽוֹ                  HBCE=לַהֲמִיתוֹ                   | silluq:MAM-has:POINT METEG | flags= | intro=-
+             cluster 4 (ת): MAM[POINT METEG] vs A[]
+Ps.37.39   MAM=מָ֝עוּזָּ֗ם                  HBCE=מָֽ֝עוּזָּ֗ם                 | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (מ): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,POINT METEG,ACCENT GERESH MUQDAM]
+Ps.37.40   MAM=וַ֥יַּעְזְרֵ֥ם               HBCE=וַֽיַּעְזְרֵ֥ם               | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (ו): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]
+Ps.38.15   MAM=לֹֽא־שֹׁמֵ֑עַ                HBCE=לֹא־שֹׁמֵ֑עַ                 | meteg:MAM-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+Ps.38.19   MAM=מֵ֖חַטָּאתִֽי                HBCE=מֵֽחַטָּאתִֽי                | stroke-shape; accent:MAM-has:ACCENT TIPEHA; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (מ): MAM[POINT TSERE,ACCENT TIPEHA] vs A[POINT TSERE,POINT METEG]
+Ps.38.22   MAM=אַל־תַּעַזְבֵ֥נִי            HBCE=אַל־תַּֽעַזְבֵ֥נִי           | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ת): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]
+Ps.39.4    MAM=בִּלְשׁוֹנִֽי                HBCE=בִּלְשֽׁוֹנִי                | meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG | flags= | intro=-
+             cluster 2 (ש): MAM[POINT SHIN DOT] vs A[POINT SHIN DOT,POINT METEG]; cluster 4 (נ): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]
+Ps.39.7    MAM=מִֽי־אֹסְפָֽם                HBCE=מִי־אֹסְפָֽם                 | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (מ): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]
+Ps.40.4    MAM=לֵאלֹ֫הֵ֥ינוּ                HBCE=לֵֽאלֹ֫הֵ֥ינוּ               | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+Ps.40.6    MAM=נִ֥פְלְאֹתֶ֥יךָ              HBCE=נִֽפְלְאֹתֶ֥יךָ              | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (נ): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]
+Ps.40.9    MAM=לַ֥עֲשׂוֹת־רְצוֹנְךָ֣        HBCE=לַֽעֲשֽׂוֹת־רְצוֹנְךָ֣       | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (ל): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]; cluster 2 (ש): MAM[POINT SIN DOT] vs A[POINT SIN DOT,POINT METEG]
+Ps.40.11   MAM=לֹֽא־כִסִּ֨יתִי ׀            HBCE=לֹא־כִסִּ֨יתִי ׀             | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+Ps.40.12   MAM=לֹֽא־תִכְלָ֣א                HBCE=לֹא־תִכְלָ֣א                 | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+Ps.40.17   MAM=אֹ֝הֲבֵ֗י                    HBCE=אֹֽ֝הֲבֵ֗י                   | meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (א): MAM[POINT HOLAM,ACCENT GERESH MUQDAM] vs A[POINT HOLAM,POINT METEG,ACCENT GERESH MUQDAM]
+Ps.41.3    MAM=וִ֭יחַיֵּהוּ                 HBCE=וִֽ֭יחַיֵּהוּ                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT HIRIQ,ACCENT DEHI] vs A[POINT HIRIQ,POINT METEG,ACCENT DEHI]
+Ps.41.12   MAM=לֹֽא־יָרִ֖יעַ                HBCE=לֹֽא־יָרִ֖יַע                | vowel:Aleppo-has:POINT PATAH; vowel:MAM-has:POINT PATAH | flags= | intro=-
+             cluster 2 (י): MAM[] vs A[POINT PATAH]; cluster 3 (ע): MAM[POINT PATAH] vs A[]
+Ps.42.6    MAM=הוֹחִ֣לִי                    HBCE=הוֹחִ֣ילִי                   | letters | flags= | intro=-
+             skel הוחלי vs הוחילי
+Ps.42.9    MAM=שִׁירֹ֣ה                     HBCE=שִׁירָהּ                     | vowel:MAM-has:POINT HOLAM; accent:MAM-has:ACCENT MUNAH; vowel:Aleppo-has:POINT QAMATS; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags=|alt=שִׁירֹ֣ו,app | intro=-
+             cluster 2 (ר): MAM[POINT HOLAM,ACCENT MUNAH] vs A[POINT QAMATS]; cluster 3 (ה): MAM[] vs A[POINT DAGESH OR MAPIQ]
+Ps.42.12   MAM=לֵ֭אלֹהִים                   HBCE=לֵֽ֭אלֹהִים                  | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT TSERE,ACCENT DEHI] vs A[POINT METEG,POINT TSERE,ACCENT DEHI]
+Ps.43.2    MAM=מָעוּזִּי֮                   HBCE=מָֽעוּזִּי֮                  | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]
+Ps.43.3    MAM=אֶל־הַֽר־קָ֝דְשְׁךָ֗         HBCE=אֶל־הַֽ֗ר־קָ֝דְשְׁךָ֗        | accent:Aleppo-has:ACCENT REVIA | flags= | intro=-
+             cluster 0 (ה): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,POINT METEG,ACCENT REVIA]
+Ps.43.5    MAM=לֵ֭אלֹהִים                   HBCE=לֵֽ֭אלֹהִים                  | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT TSERE,ACCENT DEHI] vs A[POINT METEG,POINT TSERE,ACCENT DEHI]
+Ps.43.5    MAM=וֵאלֹהָֽי                    HBCE=וֵֽאלֹהָֽי                   | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+Ps.44.9    MAM=בֵּ֭אלֹהִים                  HBCE=בֵּֽ֭אלֹהִים                 | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT TSERE,ACCENT DEHI] vs A[POINT DAGESH OR MAPIQ,POINT TSERE,POINT METEG,ACCENT DEHI]
+Ps.44.9    MAM=הִלַּ֣לְנוּ                  HBCE=הִלַּלְ֣נוּ                  | accent:MAM-has:ACCENT MUNAH; accent:Aleppo-has:ACCENT MUNAH | flags= | intro=-
+             cluster 1 (ל): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT MUNAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH]; cluster 2 (ל): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT MUNAH]
+Ps.44.13   MAM=וְלֹֽא־רִ֝בִּ֗יתָ            HBCE=וְלֹ֥א־רִ֝בִּ֗יתָ            | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA | flags= | intro=-
+             cluster 1 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT MERKHA]
+Ps.44.22   MAM=יַחֲקָר־זֹ֑את                HBCE=יַֽחֲקָר־זֹ֑את               | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]
+Ps.44.24   MAM=אֲדֹנָ֑י                     HBCE=אֲדנָ֑י                      | vowel:MAM-has:POINT HOLAM | flags= | intro=-
+             cluster 1 (ד): MAM[POINT HOLAM] vs A[]
+Ps.45.8    MAM=מֵחֲבֵרֶֽךָ                  HBCE=מֵֽחֲבֵרֶֽךָ                 | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+Ps.45.10   MAM=לִ֝ימִינְךָ֗                 HBCE=לִֽ֝ימִינְךָ֗                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HIRIQ,ACCENT GERESH MUQDAM] vs A[POINT HIRIQ,POINT METEG,ACCENT GERESH MUQDAM]
+Ps.46.3    MAM=לֹֽא־נִ֭ירָא                 HBCE=לֹ֖א־נִ֭ירָא                 | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT TIPEHA]
+Ps.46.4    MAM=יִ֥רְעֲשֽׁוּ                 HBCE=יִֽרְעֲשֽׁוּ                 | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (י): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]
+Ps.46.11   MAM=כִּֽי־אָנֹכִ֣י               HBCE=כִּ֥י־אָנֹכִ֣י               | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,ACCENT MERKHA]
+Ps.47.3    MAM=גָּ֝ד֗וֹל                    HBCE=גָּ֝דוֹל                     | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (ד): MAM[ACCENT REVIA] vs A[]
+Ps.47.6    MAM=יְ֝הֹוָ֗ה                    HBCE=יְ֝הֹוָה                     | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]
+Ps.48.5    MAM=נ֥וֹעֲד֑וּ                   HBCE=נֽוֹעֲד֑וּ                   | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (נ): MAM[ACCENT MERKHA] vs A[POINT METEG]
+Ps.48.14   MAM=לְֽחֵילָ֗הֿ                  HBCE=לְֽחֵילָ֗ה                   | rafe:MAM-has:POINT RAFE | flags= | intro=ch2
+             cluster 4 (ה): MAM[POINT RAFE] vs A[]
+Ps.49.17   MAM=כִּי־יִ֝רְבֶּ֗ה              HBCE=כִּֽי־יִ֝רְבֶּה              | meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]; cluster 2 (ב): MAM[POINT DAGESH OR MAPIQ,POINT SEGOL,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ,POINT SEGOL]
+Ps.49.18   MAM=לֹֽא־יֵרֵ֖ד                  HBCE=לֹא־יֵרֵ֖ד                   | meteg:MAM-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+Ps.50.13   MAM=הַ֭אוֹכַל                    HBCE=הַֽ֭אוֹכַל                   | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ה): MAM[POINT PATAH,ACCENT DEHI] vs A[POINT PATAH,POINT METEG,ACCENT DEHI]
+Ps.50.19   MAM=בְרָעָ֑ה                     HBCE=בְרָ֗עָ֑ה                    | accent:Aleppo-has:ACCENT REVIA | flags= | intro=-
+             cluster 1 (ר): MAM[POINT QAMATS] vs A[POINT QAMATS,ACCENT REVIA]
+Ps.50.21   MAM=וְאֶעֶרְכָ֣ה                 HBCE=וְאֶֽעֶרְכָ֣ה                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 1 (א): MAM[POINT SEGOL] vs A[POINT SEGOL,POINT METEG]
+Ps.50.22   MAM=בִּינוּ־נָ֣א                 HBCE=בִּֽינוּ־נָ֣א                | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]
+Ps.51.14   MAM=וְר֖וּחַ                     HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+Ps.51.14   MAM=נְדִיבָ֣ה                    HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+Ps.51.14   MAM=תִסְמְכֵֽנִי                 HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+
+--- candidates with docnote=verse-note: 22 ---
+Ps.6.8     MAM=עָ֝תְקָ֗ה                    HBCE=עָ֜תְקָ֗ה                    | accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH | flags= | intro=ch5
+             cluster 0 (ע): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,ACCENT GERESH]
+             note: עָשְׁﬞשָׁ֣ה => "א=עָשֲׁשָׁ֣ה (חטף)" || בְּכׇל־צוֹרְﬞרָֽי => "א=בְּכׇל־צוֹרֲרָֽי (חטף)"
+Ps.26.1    MAM=וּבַיהֹוָ֥ה                  HBCE=וּבַיהוָ֥ה                   | vowel:MAM-has:POINT HOLAM | flags= | intro=-
+             cluster 3 (ה): MAM[POINT HOLAM] vs A[]
+             note: ['לְדָוִ֨ד', {'tmpl_name': 'מ:לגרמיה-2'}] => "אין פרשה לאחר הכותרת"
+Ps.31.2    MAM=בְּךָֽ־יְהֹוָ֣ה              HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+             note: {'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.2    MAM=—                            HBCE=בְּךָ֖                       | extra-in-Aleppo | flags= | intro=-
+             note: {'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.2    MAM=—                            HBCE=יְהוָ֣ה                      | extra-in-Aleppo | flags= | intro=-
+             note: {'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.20   MAM=לִּירֵ֫אֶ֥יךָ                HBCE=לִּֽירֵ֫אֶ֥יךָ               | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ל): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]
+             note: ['מָ֤ה', {'tmpl_name': 'מ:מקף אפור'}, 'רַֽב־טוּבְךָ֮'] => "על מהפך כטעם משני בתיבת \"מָ֤ה\" ראו ברויאר, טעמי המקרא, ט.31 (עמ' 233); יא.27 (עמ' 277-278)." || נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.20   MAM=אָדָֽם                       HBCE=אָדָם                        | silluq:MAM-has:POINT METEG | flags=|sof-pasuq-pc | intro=-
+             cluster 1 (ד): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]
+             note: ['מָ֤ה', {'tmpl_name': 'מ:מקף אפור'}, 'רַֽב־טוּבְךָ֮'] => "על מהפך כטעם משני בתיבת \"מָ֤ה\" ראו ברויאר, טעמי המקרא, ט.31 (עמ' 233); יא.27 (עמ' 277-278)." || נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.24   MAM=אֶֽת־יְהֹוָ֗ה                HBCE=אֶת־יְהוָ֗ה                  | meteg:MAM-has:POINT METEG; policy:divine-name-holam | flags= | intro=-
+             cluster 0 (א): MAM[POINT SEGOL,POINT METEG] vs A[POINT SEGOL]
+             note: אֶ֥הֱב֥וּ => ["=א (וכן הכריעו ברויאר ומ\"מ)", {"tmpl_name": "ש"}, "מג\"ה=אֶֽהֱב֥וּ (למרות שהקו נטוי באופן ברור) וכן הוא בדפוסים וקורן"] || עַל־יֶ֝֗תֶר => "א=עַל־יֶ֝תֶר (השמטת נקודת הרביע)"
+Ps.32.10   MAM=בַּֽיהֹוָ֑ה                  HBCE=בַּיהוָ֑ה                    | meteg:MAM-has:POINT METEG; policy:divine-name-holam | flags= | intro=ch2,ch5
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT PATAH]
+             note: לָ֫רָשָׁ֥ע => ["א!=לָרָ֫שָׁ֥ע (סימן העולה באות רי\"ש)", {"tmpl_name": "ש"}, "בניגוד לדרכו ה\"עולה\" אינו מסומן בהברה הראויה לגעיה; אולי זה בגלל הראש של הלמ\"ד שמפריע שם לכתיב || חֶ֝֗סֶד => "א=חֶ֝סֶד (השמטת נקודת הרביע)"
+Ps.37.3    MAM=בַּ֭יהֹוָה                   HBCE=בַּֽ֭יהוָה                   | meteg:Aleppo-has:POINT METEG; policy:divine-name-holam | flags= | intro=-
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT DEHI] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG,ACCENT DEHI]
+             note: שְׁכׇן־אֶ֝֗רֶץ => "א=שְׁכָן־אֶ֝רֶץ (השמטת נקודת הרביע)"
+Ps.37.36   MAM=וָ֝אֲבַקְשֵׁ֗הוּ             HBCE=וָֽ֝אֲבַקְשֵׁ֗הוּ            | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,POINT METEG,ACCENT GERESH MUQDAM]
+             note: {'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'וַֽ֭יַּעֲבֹר', '2': 'וַֽ֭יַּעֲבֹ֭ר'}} => ["=א,ל", {"tmpl_name": "ש"}, "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"]
+Ps.38.10   MAM=לֹֽא־נִסְתָּֽרָה             HBCE=לֹא־נִסְתָּֽרָה              | meteg:MAM-has:POINT METEG | flags=|sof-pasuq-pc | intro=-
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]
+             note: אֲֽדֹנָ֗י => "א=געיה ימנית"
+Ps.39.13   MAM=—                            HBCE=שִֽׁמְעָ֥ה־תְפִלָּתִ֨י ׀     | extra-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.40.13   MAM=מִשַּׂעֲר֥וֹת                HBCE=מִשַּֽׂעֲר֥וֹת               | meteg:Aleppo-has:POINT METEG | flags= | intro=ch5
+             cluster 1 (ש): MAM[POINT SIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT SIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]
+             note: ['אָפְﬞפֽוּ־עָלַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => "א=אָפֲפֽוּ־עָלַ֨י (חטף)"
+Ps.43.1    MAM=לֹֽא־חָסִ֑יד                 HBCE=לֹ֣א־חָסִ֑יד                 | stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MUNAH | flags= | intro=ch2
+             cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT MUNAH]
+             note: ['מֵ֤אִישׁ', {'tmpl_name': 'מ:מקף אפור'}, 'מִרְמָ֖ה'] => "=לגבי ההקפה ראו ייבין, מב.16.4 (עמ' 293)."
+Ps.44.15   MAM=בַּלְאֻמִּֽים                HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15   MAM=—                            HBCE=בַּלְ                        | extra-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15   MAM=—                            HBCE=אֻמִּֽים                     | extra-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.45.3    MAM=בֵּרַכְךָ֖                   HBCE=בֵּֽרַכְךָ֖                  | meteg:Aleppo-has:POINT METEG | flags= | intro=ch2,ch5
+             cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT TSERE] vs A[POINT DAGESH OR MAPIQ,POINT TSERE,POINT METEG]
+             note: יׇפְיָפִ֡יתָ => "לגבי הקמץ הקטן ביו\"ד הראשונה ראו ויינברג 3.6.8.7, שציין ספק לגבי תיבה זו. הכרענו לפי המסורת הספרדית שבה הקמץ קטן, וכך בסימנים ובתנ\"ך קורן החדש."
+Ps.45.3    MAM=אֱלֹהִ֣ים                    HBCE=אֱלהִ֣ים                     | vowel:MAM-has:POINT HOLAM | flags= | intro=ch2,ch5
+             cluster 1 (ל): MAM[POINT HOLAM] vs A[]
+             note: יׇפְיָפִ֡יתָ => "לגבי הקמץ הקטן ביו\"ד הראשונה ראו ויינברג 3.6.8.7, שציין ספק לגבי תיבה זו. הכרענו לפי המסורת הספרדית שבה הקמץ קטן, וכך בסימנים ובתנ\"ך קורן החדש."
+Ps.48.7    MAM=כַּיּוֹלֵדָֽה                HBCE=כַּיּוֹלֵֽדָה                | meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG | flags= | intro=-
+             cluster 3 (ל): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]; cluster 4 (ד): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]
+             note: חִ֝֗יל => "א=חִ֝יל (השמטת נקודת הרביע)"
+Ps.49.15   MAM=לִ֥שְׁא֣וֹל                  HBCE=לִֽשְׁא֣וֹל                  | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2,ch5
+             cluster 0 (ל): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]
+             note: {'tmpl_name': 'מ:צינור', 'tmpl_params': {'1': 'שַׁתּוּ֮', '2': 'שַׁ֮תּוּ֮'}} => ["=ק13,ת (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וראו ייבין, המסורה למקרא 328 (עמ' 195), והשוו תהלים עג,ט וראו במ\"ש.", {"t
+
+--- candidates with docnote=word-note: 36 ---
+Ps.5.2     MAM=יְהֹוָ֗ה                     HBCE=יְהוָ֑֗ה                     | policy:divine-name-holam; accent:Aleppo-has:ACCENT ETNAHTA | flags= | intro=ch5
+             cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS,ACCENT ETNAHTA,ACCENT REVIA]
+             note: יְהֹוָ֗ה => ["=ל,ש1,ק3 ומ\"ש (טעם רביע באות וי\"ו), וכך הכריעו ברויאר ומג\"ה, וכמו כן בדפוסים", {"tmpl_name": "ש"}, "א!=יְהוָ֑֗ה (טעם רביע וטעם אתנח ביחד באות בוי\"ו)", {"t
+Ps.5.6     MAM=ה֭וֹלְלִים                   HBCE=ה֖וֹלֲלִים                   | accent:MAM-has:ACCENT DEHI; accent:Aleppo-has:ACCENT TIPEHA; policy:hataf-non-guttural | flags= | intro=ch5
+             cluster 0 (ה): MAM[ACCENT DEHI] vs A[ACCENT TIPEHA]
+             note: {'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'ה֭וֹלְﬞלִים', '2': 'ה֭וֹלְﬞלִ֭ים'}} => "א=ה֭וֹלֲלִים (חטף)"
+Ps.6.3     MAM=אֻמְלַ֫ל                     HBCE=אֻמְלָ֫ל                     | vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS | flags= | intro=ch5
+             cluster 2 (ל): MAM[POINT PATAH,ACCENT OLE] vs A[POINT QAMATS,ACCENT OLE]
+             note: אֻמְלַ֫ל => ["=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויא
+Ps.7.6     MAM=יִ֥רַדֹּֽף־אוֹיֵ֨ב ׀         HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.7.6     MAM=—                            HBCE=יִֽרַדֹּ֥ף                   | extra-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.7.6     MAM=—                            HBCE=אוֹיֵ֨ב ׀                    | extra-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.8.3     MAM=עוֹלְלִ֨ים ׀                 HBCE=עֽוֹלֲלִ֨ים ׀                | meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural | flags= | intro=ch5
+             cluster 0 (ע): MAM[] vs A[POINT METEG]
+             note: ['עוֹלְﬞלִ֨ים', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<עוֹלֲלִ֨ים", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"]
+Ps.12.6    MAM=יָפִ֥יחַֽ־לֽוֹ               HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2,ch5
+             note: יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6    MAM=—                            HBCE=יָפִ֥יחַֽ                    | extra-in-Aleppo | flags= | intro=ch2,ch5
+             note: יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6    MAM=—                            HBCE=לֽוֹ                         | extra-in-Aleppo | flags=|sof-pasuq-pc | intro=ch2,ch5
+             note: יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.7    MAM=אִ֥מְר֣וֹת                   HBCE=אִֽמֲר֣וֹת                   | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural | flags= | intro=ch2,ch5
+             cluster 0 (א): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]
+             note: אִ֥מְﬞר֣וֹת => "א=אִ֥מֲר֣וֹת (חטף)"
+Ps.25.2    MAM=אַל־יַעַלְצ֖וּ               HBCE=אַל־יַֽעַלְצ֖וּ              | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]
+             note: אַל־יַעַלְצ֖וּ => ["=א (אין געיה)", {"tmpl_name": "ש"}, "ל=אַל־יַֽעַלְצ֖וּ (געיה)"]
+Ps.25.22   MAM=צָרוֹתָֽיו                   HBCE=צָֽרוֹתָיו                   | meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG | flags=|sof-pasuq-pc | intro=-
+             cluster 0 (צ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]; cluster 3 (ת): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]
+             note: צָרוֹתָֽיו => ["=א,ש1 (אין געיה)", {"tmpl_name": "ש"}, "ל!=צָֽרוֹתָיו (געיה וחסר סילוק)", {"tmpl_name": "ש"}, "הערות ברויאר ודותן והמקליד"]
+Ps.27.5    MAM=יְרוֹמְמֵֽנִי                HBCE=יְרוֹמֲמֵֽנִּי               | policy:hataf-non-guttural; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ | flags= | intro=ch5
+             cluster 5 (נ): MAM[POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]
+             note: יְרוֹמְﬞמֵֽנִי => ["=ש1,ק-מ", {"tmpl_name": "ש"}, "א!=יְרוֹמֲמֵֽנִּי (דגש מיותר באות נו\"ן [וגם חטף כמנהגו]) וכן הכריעו במג\"ה", {"tmpl_name": "ש"}, "הערת ייבין לגבי הדגש"]
+Ps.27.11   MAM=שֽׁוֹרְרָֽי                  HBCE=שׁוֹרְרָֽי                   | meteg:MAM-has:POINT METEG | flags= | intro=ch2,ch5
+             cluster 0 (ש): MAM[POINT SHIN DOT,POINT METEG] vs A[POINT SHIN DOT]
+             note: שֽׁוֹרְﬞרָֽי => "א=שֽׁוֹרֲרָֽי (חטף)"
+Ps.27.12   MAM=עֵדֵי־שֶׁ֝֗קֶר               HBCE=עֵֽדֵי־שֶׁ֝֗קֶר              | meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ע): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]
+             note: עֵדֵי־שֶׁ֝֗קֶר => "=א (נקודת הרביע מסומנת בכתב־היד)"
+Ps.27.13   MAM=לׅׄוּׅׄלֵׅ֗ׄאׅׄ              HBCE=לׅׄוּלֵׅׄ֗אׅׄ                | other:MAM-has:MARK LOWER DOT; other:MAM-has:MARK UPPER DOT | flags= | intro=ch5
+             cluster 1 (ו): MAM[POINT DAGESH OR MAPIQ,MARK LOWER DOT,MARK UPPER DOT] vs A[POINT DAGESH OR MAPIQ]
+             note: לׅׄוּׅׄלֵׅ֗ׄאׅׄ => ["=א ומסורת-א <נקוד מלמע' ולמטה> ודעה ראשונה במנחת שי (\"כן הוא בספרים מדוייקים וכן מצאתי במסורה כתב־יד: דין נקוד למעלה ולמטה ושארא כי אם לעיל\")", {"tmpl_name"
+Ps.27.14   MAM=אֶל־יְ֫הֹוָ֥ה                HBCE=אֶל־יְה֫וָ֥ה                 | oleh-position; vowel:MAM-has:POINT HOLAM | flags= | intro=ch5
+             oleh MAM@[0] Aleppo@[1]; cluster 1 (ה): MAM[POINT HOLAM] vs A[ACCENT OLE]
+             note: אֶל־יְ֫הֹוָ֥ה => "=א (מקום ה\"עולה\" באות יו\"ד כשיטתו)"
+Ps.28.1    MAM=לְדָוִ֡ד                     HBCE=לְ֬דָוִ֡ד                    | accent:Aleppo-has:ACCENT ILUY | flags= | intro=-
+             cluster 0 (ל): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT ILUY]
+             note: לְדָוִ֡ד => "אין פרשה לאחר הכותרת"
+Ps.31.12   MAM=וְלִ֥שְׁכֵנַ֨י ׀             HBCE=וְלִשֲׁכֵנַ֨י ׀              | accent:MAM-has:ACCENT MERKHA; policy:hataf-non-guttural | flags= | intro=ch2,ch5
+             cluster 1 (ל): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ]
+             note: ['וְלִ֥שְׁﬞכֵנַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<וְלִ֥שֲׁכֵנַ֨י", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"]
+Ps.31.24   MAM=אֶ֥הֱב֥וּ                    HBCE=אֶֽהֱב֥וּ                    | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (א): MAM[POINT SEGOL,ACCENT MERKHA] vs A[POINT METEG,POINT SEGOL]
+             note: אֶ֥הֱב֥וּ => ["=א (וכן הכריעו ברויאר ומ\"מ)", {"tmpl_name": "ש"}, "מג\"ה=אֶֽהֱב֥וּ (למרות שהקו נטוי באופן ברור) וכן הוא בדפוסים וקורן"]
+Ps.32.10   MAM=לָ֫רָשָׁ֥ע                   HBCE=לָרָ֫שָׁ֥ע                   | oleh-position | flags= | intro=ch2,ch5
+             oleh MAM@[0] Aleppo@[1]
+             note: לָ֫רָשָׁ֥ע => ["א!=לָרָ֫שָׁ֥ע (סימן העולה באות רי\"ש)", {"tmpl_name": "ש"}, "בניגוד לדרכו ה\"עולה\" אינו מסומן בהברה הראויה לגעיה; אולי זה בגלל הראש של הלמ\"ד שמפריע שם לכתיב
+Ps.37.14   MAM=פָּ֥תְח֣וּ                   HBCE=פָּֽתְח֣וּ                   | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2,ch5
+             cluster 0 (פ): MAM[POINT DAGESH OR MAPIQ,POINT QAMATS,ACCENT MERKHA] vs A[POINT DAGESH OR MAPIQ,POINT QAMATS,POINT METEG]
+             note: פָּ֥תְח֣וּ => ["=א? (הקו נטוי קצת כמרכא אבל לא באופן מובהק) וכן הכריעו ברויאר ומג\"ה", {"tmpl_name": "ש"}, "ממ=פָּֽתְח֣וּ וכן הוא בכתי\"ל ובדפוסים"]
+Ps.37.36   MAM=וַֽ֭יַּעֲבֹר                 HBCE=וַ֭יַּֽעֲבֹר                 | meteg:MAM-has:POINT METEG; meteg:Aleppo-has:POINT METEG | flags= | intro=-
+             cluster 0 (ו): MAM[POINT PATAH,POINT METEG,ACCENT DEHI] vs A[POINT PATAH,ACCENT DEHI]; cluster 1 (י): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT METEG,POINT PATAH]
+             note: {'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'וַֽ֭יַּעֲבֹר', '2': 'וַֽ֭יַּעֲבֹ֭ר'}} => ["=א,ל", {"tmpl_name": "ש"}, "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"]
+Ps.38.10   MAM=אֲֽדֹנָ֗י                    HBCE=אֲֽדֹנָי                     | accent:MAM-has:ACCENT REVIA | flags= | intro=-
+             cluster 2 (נ): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]
+             note: אֲֽדֹנָ֗י => "א=געיה ימנית"
+Ps.39.2    MAM=אֶ֥שְׁמְרָ֣ה                 HBCE=אֶֽשְׁמְרָ֣ה                 | stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG | flags= | intro=ch2
+             cluster 0 (א): MAM[POINT SEGOL,ACCENT MERKHA] vs A[POINT SEGOL,POINT METEG]
+             note: {'tmpl_name': 'ר4'} => "פרשה פתוחה" || ['אֶשְׁמְרָ֥ה', {'tmpl_name': 'מ:מקף אפור'}, 'לְפִ֥י'] => "ראו ברויאר, טעמי המקרא, יא.47 הערה 27."
+Ps.39.13   MAM=שִׁ֥מְעָֽה                   HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.39.13   MAM=תְפִלָּתִ֨י ׀                HBCE=—                            | missing-in-Aleppo | flags= | intro=ch2,ch5
+             note: ['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.40.13   MAM=אָפְפֽוּ־עָלַ֨י ׀            HBCE=אָפֲפ֥וּ־עָלַ֨י ׀            | policy:hataf-non-guttural; stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA | flags= | intro=ch5
+             cluster 2 (פ): MAM[POINT METEG] vs A[ACCENT MERKHA]
+             note: ['אָפְﬞפֽוּ־עָלַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => "א=אָפֲפֽוּ־עָלַ֨י (חטף)"
+Ps.44.15   MAM=מְנֽוֹד־רֹ֝֗אשׁ              HBCE=—                            | missing-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15   MAM=—                            HBCE=מְנֽוֹד                      | extra-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15   MAM=—                            HBCE=רֹ֝֗אשׁ                      | extra-in-Aleppo | flags= | intro=-
+             note: מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.46.8    MAM=מִשְׂגָּֽב־לָ֨נוּ            HBCE=מִשְׂגָּֽב־לָ֝נוּ            | accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM | flags= | intro=-
+             cluster 0 (ל): MAM[POINT QAMATS,ACCENT QADMA] vs A[POINT QAMATS,ACCENT GERESH MUQDAM]
+             note: מִשְׂגָּֽב־לָ֨נוּ => "הקמץ היה מתקיים כקמץ גדול אלמלא ההקפה, כמו: \"כִּֽי־הָיִ֣יתָ מִשְׂגָּ֣ב לִ֑י\" (תהלים נט,יז), ולכן הוא קמץ גדול אף בתיבה מוקפת."
+Ps.46.12   MAM=מִשְׂגָּֽב־לָ֨נוּ            HBCE=מִשְׂגָּֽב־לָ֝נוּ            | accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM | flags= | intro=-
+             cluster 0 (ל): MAM[POINT QAMATS,ACCENT QADMA] vs A[POINT QAMATS,ACCENT GERESH MUQDAM]
+             note: מִשְׂגָּֽב־לָ֨נוּ => "לגבי הקמץ ראו בהערה לעיל, פסוק ח'."
+Ps.50.23   MAM=יְֽכַ֫בְּדָ֥נְנִי            HBCE=יְֽכַ֫בְּ֫דָ֥נְנִי           | oleh-position | flags= | intro=ch2,ch5
+             oleh MAM@[1] Aleppo@[1, 2]
+             note: יְֽכַ֫בְּדָ֥נְנִי => ["=ל,ש1 ובדפוסים (וכן הכריעו ברויאר ומג\"ה)", {"tmpl_name": "ש"}, "א!=יְֽכַ֫בְּ֫דָ֥נְנִי (סימן ה\"עולה\" כתוב פעמיים באותיות הסמוכות כ\"ף ובי\"ת)", {"tmpl_name"
+Ps.51.2    MAM=כַּאֲשֶׁר־בָּ֝֗א             HBCE=כַּֽאֲשֶׁר־בָּ֝א             | meteg:Aleppo-has:POINT METEG; policy:revia-mugrash-dot | flags= | intro=-
+             cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]
+             note: {'tmpl_name': 'ר4'} => "פרשה פתוחה" || כַּאֲשֶׁר־בָּ֝֗א => "א=כַּאֲשֶׁר־בָּ֝א (השמטת נקודת הרביע)"

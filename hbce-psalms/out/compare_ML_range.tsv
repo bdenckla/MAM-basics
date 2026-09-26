@@ -1,0 +1,101 @@
+ref	MAM	Leningrad	orig|flags	labels	details	docnote	intro	note_text
+Ps.15.3	עַל־קְרֹבֽוֹ	עַל־קְרֹֽבוֹ	|sof-pasuq-pc	meteg-or-silluq:Leningrad-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 1 (ר): MAM[POINT HOLAM] vs L[POINT HOLAM,POINT METEG]; cluster 2 (ב): MAM[POINT METEG] vs L[]	word-note	ch4	עַל־קְרֹבֽוֹ => ["=ש1,ק13,גסטר1,ק-מ", {"tmpl_name": "ש"}, "ל!=עַל־קְרֹֽבוֹ (מקום הסילוק)", {"tmpl_name": "ש"}, "הערות ברויאר ודותן, וראו גם \"בִּלְבָבֽוֹ\" בפסוק הקודם."]
+Ps.15.4	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.16.2	לַֽ֭יהֹוָה	לַֽ֭יהוָה		policy:divine-name-holam		none	ch2	
+Ps.16.4	אַחֵ֢ר	אַחֵ֪ר		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.16.5	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.16.6	עָלָֽי	עָלָֽי	|sof-pasuq-pc	order-only		none		
+Ps.16.7	אֶת־יְ֭הֹוָה	אֶת־יְ֭הוָה		policy:divine-name-holam		none		
+Ps.16.8	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.17.1	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר3'} => ["=א(ק), פרשה פתוחה.", {"tmpl_name": "ש"}, "ל,ש1,ק13=פרשה סתומה", {"tmpl_name": "ש"}, "גסטר1=אין פרשה"]
+Ps.17.11	סְבָב֑וּנוּ	סְבָב֑וּנִי	|alt=סְבָב֑וּנוּ,app	ketiv-qere	skel סבבונו vs סבבוני	none		
+Ps.17.12	לִטְרֹ֑ף	לִטְר֑וֹף		letters	skel לטרף vs לטרוף	word-note	ch4	לִטְרֹ֑ף => ["=ש1,ק13,גסטר1,ק-מ (כתיב חסר וי\"ו)", {"tmpl_name": "ש"}, "ל=לִטְר֑וֹף (כתיב מלא וי\"ו)", {"tmpl_name": "ש"}, "הערת ברויאר"]
+Ps.17.12	בְּמִסְתָּרִֽים	בְּמִסְתָּרִֽים	|sof-pasuq-pc	order-only		verse-note	ch4	לִטְרֹ֑ף => ["=ש1,ק13,גסטר1,ק-מ (כתיב חסר וי\"ו)", {"tmpl_name": "ש"}, "ל=לִטְר֑וֹף (כתיב מלא וי\"ו)", {"tmpl_name": "ש"}, "הערת ברויאר"]
+Ps.17.13	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.17.14	מִ֥מְתִֽים־יָדְךָ֨ ׀	—		missing-in-Leningrad		word-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ || מִֽמְﬞתִ֬ים => ["=ל,ש1,גסטר1.", {"tmpl_name": "ש"}, "ק13,פטרבורג-EVR-II-B-55 ושיטת-א=מִֽמֲתִ֬ים (חטף) וכך במג\"ה."]
+Ps.17.14	—	מִֽמְתִ֥ים		extra-in-Leningrad		word-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ || מִֽמְﬞתִ֬ים => ["=ל,ש1,גסטר1.", {"tmpl_name": "ש"}, "ק13,פטרבורג-EVR-II-B-55 ושיטת-א=מִֽמֲתִ֬ים (חטף) וכך במג\"ה."]
+Ps.17.14	—	יָדְךָ֨ ׀		extra-in-Leningrad		word-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ
+Ps.17.14	יְהֹוָ֡ה	יְהוָ֡ה		policy:divine-name-holam		verse-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ || מִֽמְﬞתִ֬ים => ["=ל,ש1,גסטר1.", {"tmpl_name": "ש"}, "ק13,פטרבורג-EVR-II-B-55 ושיטת-א=מִֽמֲתִ֬ים (חטף) וכך במג\"ה."]
+Ps.17.14	וּֽצְפוּנְךָ֮	וּֽצְפִינְךָ֮	|alt=וּֽצְפוּנְךָ֮,app	ketiv-qere	skel וצפונך vs וצפינך	verse-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ || מִֽמְﬞתִ֬ים => ["=ל,ש1,גסטר1.", {"tmpl_name": "ש"}, "ק13,פטרבורג-EVR-II-B-55 ושיטת-א=מִֽמֲתִ֬ים (חטף) וכך במג\"ה."]
+Ps.17.14	תְּמַלֵּ֢א	תְּמַלֵּ֪א		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2,ch4,ch5	['מִ֥מְﬞתִֽים־יָדְךָ֨', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכ || מִֽמְﬞתִ֬ים => ["=ל,ש1,גסטר1.", {"tmpl_name": "ש"}, "ק13,פטרבורג-EVR-II-B-55 ושיטת-א=מִֽמֲתִ֬ים (חטף) וכך במג\"ה."]
+Ps.17.14	לְעוֹלְלֵיהֶֽם	לְעוֹלְלֵיהֶֽם	|sof-pasuq-pc	order-only		word-note	ch2,ch4,ch5	לְעוֹלְלֵיהֶֽם => ["=ש1?,ק-מ (מקום הסילוק)", {"tmpl_name": "ש"}, "גסטר1=לְעֽוֹלְלֵיהֶֽם (געיה וסילוק)", {"tmpl_name": "ש"}, "ל!=לְעוֹלְלֵֽיהֶם (מקום הסילוק) אבל המקליד ציין סילוק
+Ps.18.1	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		verse-note	ch5	{'tmpl_name': 'ר3'} => ["=א(ק), פרשה פתוחה", {"tmpl_name": "ש"}, "ל,ש1,גסטר1=פרשה סתומה; בכתי\"ק13 יש פרשה סתומה לפני \"לְדָ֫וִ֥ד\"."]
+Ps.18.1	לַיהֹוָ֗ה	לַיהוָ֗ה		policy:divine-name-holam		verse-note	ch5	{'tmpl_name': 'ר3'} => ["=א(ק), פרשה פתוחה", {"tmpl_name": "ש"}, "ל,ש1,גסטר1=פרשה סתומה; בכתי\"ק13 יש פרשה סתומה לפני \"לְדָ֫וִ֥ד\"."]
+Ps.18.1	הִֽצִּיל־יְהֹוָ֘ה	הִֽצִּיל־יְהוָ֘ה		policy:divine-name-holam		verse-note	ch5	{'tmpl_name': 'ר3'} => ["=א(ק), פרשה פתוחה", {"tmpl_name": "ש"}, "ל,ש1,גסטר1=פרשה סתומה; בכתי\"ק13 יש פרשה סתומה לפני \"לְדָ֫וִ֥ד\"."]
+Ps.18.2	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note	ch5	אֶרְחׇמְךָ֖ => "מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה
+Ps.18.3	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		verse-note	ch2,ch4	סַ֥לְעִ֥י => ["=ל?,ש1?,ק13,גסטר1 ושיטת-א (מרכא משני באות סמ\"ך); ראו ברויאר, טעמי המקרא, עמ' 274. וכך אצל ברויאר ומג\"ה.", {"tmpl_name": "ש"}, "ל?,ש1?=סַֽלְעִ֥י (געיה ומרכא?
+Ps.18.3	סַ֥לְעִ֥י	סַֽלְעִ֥י		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Leningrad-has:POINT METEG	cluster 0 (ס): MAM[POINT PATAH,ACCENT MERKHA] vs L[POINT PATAH,POINT METEG]	word-note	ch2,ch4	סַ֥לְעִ֥י => ["=ל?,ש1?,ק13,גסטר1 ושיטת-א (מרכא משני באות סמ\"ך); ראו ברויאר, טעמי המקרא, עמ' 274. וכך אצל ברויאר ומג\"ה.", {"tmpl_name": "ש"}, "ל?,ש1?=סַֽלְעִ֥י (געיה ומרכא?
+Ps.18.4	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.18.7	אֶ֥קְרָ֣א	אֶֽקְרָ֣א		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Leningrad-has:POINT METEG	cluster 0 (א): MAM[POINT SEGOL,ACCENT MERKHA] vs L[POINT SEGOL,POINT METEG]	word-note	ch2,ch4,ch5	אֶ֥קְﬞרָ֣א => ["ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א (מרכא כטעם משני ואחריה חטף), וראו ברויאר, טעמי המקרא, עמ' 277.", {"tmpl_name": "ש"}, "ש1,ק13=אֶ֥קְרָ֣א (אין חטף) וכך אצל ברויאר ו
+Ps.18.7	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		verse-note	ch2,ch4,ch5	אֶ֥קְﬞרָ֣א => ["ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א (מרכא כטעם משני ואחריה חטף), וראו ברויאר, טעמי המקרא, עמ' 277.", {"tmpl_name": "ש"}, "ש1,ק13=אֶ֥קְרָ֣א (אין חטף) וכך אצל ברויאר ו
+Ps.18.7	וְאֶל־אֱלֹהַ֢י	וְאֶל־אֱלֹהַ֪י		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2,ch4,ch5	אֶ֥קְﬞרָ֣א => ["ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א (מרכא כטעם משני ואחריה חטף), וראו ברויאר, טעמי המקרא, עמ' 277.", {"tmpl_name": "ש"}, "ש1,ק13=אֶ֥קְרָ֣א (אין חטף) וכך אצל ברויאר ו
+Ps.18.10	רַגְלָֽיו	רַגְלָֽיו	|sof-pasuq-pc	order-only		word-note		רַגְלָֽיו => ["ל=רַגְלָֽיו בסילוק ימני (!); בשאר כתבי־היד (ש1,ק13,גסטר1) נכתב הסילוק כרגיל.", {"tmpl_name": "ש"}, "הערת דותן וכן בהקלדה"]
+Ps.18.14	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.18.15	רָ֝֗ב	רָ֝ב		policy:revia-mugrash-dot		word-note		רָ֝֗ב => ["=דפוסים", {"tmpl_name": "ש"}, "ל!=רָ֝ב כמו ש1,ק13,גסטר1,שיטת-א (השמטת נקודת הרביע)"]
+Ps.18.16	מוֹסְד֢וֹת	מוֹסְד֪וֹת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.18.16	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.18.19	וַֽיְהִי־יְהֹוָ֖ה	וַֽיְהִי־יְהוָ֖ה		policy:divine-name-holam		none		
+Ps.18.21	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.18.22	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.18.25	וַיָּֽשֶׁב־יְהֹוָ֣ה	וַיָּֽשֶׁב־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.18.29	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.18.31	תָּמִ֢ים	תָּמִ֪ים		policy:atnax-hafukh-encoded-as-galgal		verse-note		ה֝֗וּא => ["=ל ובדפוסים", {"tmpl_name": "ש"}, "ק13,גסטר1,שיטת-א=ה֝וּא (השמטת נקודת הרביע)"]
+Ps.18.31	אִמְרַֽת־יְהֹוָ֥ה	אִמְרַֽת־יְהוָ֥ה		policy:divine-name-holam		verse-note		ה֝֗וּא => ["=ל ובדפוסים", {"tmpl_name": "ש"}, "ק13,גסטר1,שיטת-א=ה֝וּא (השמטת נקודת הרביע)"]
+Ps.18.32	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note		צ֝֗וּר => ["=ל ובדפוסים", {"tmpl_name": "ש"}, "ש1,ק13,גסטר1,שיטת-א=צ֝וּר (השמטת נקודת הרביע)"]
+Ps.18.36	מָגֵ֢ן	מָגֵ֪ן		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.18.38	וְלֹֽא־אָ֝שׁ֗וּב	וְלֹֽא־אָ֝שׁוּב		accent:MAM-has:ACCENT REVIA	cluster 1 (ש): MAM[POINT SHIN DOT,ACCENT REVIA] vs L[POINT SHIN DOT]	word-note	ch4	וְלֹֽא־אָ֝שׁ֗וּב => ["=ש1,גסטר1 ובדפוסים (נקודת רביע באות שי\"ן)", {"tmpl_name": "ש"}, "ל!,ק13!=וְלֹֽא־אָ֝שׁוּב (חסרה נקודת רביע באות שי\"ן)", {"tmpl_name": "ש"}, "הערת המקליד"]
+Ps.18.42	עַל־יְ֝הֹוָ֗ה	עַל־יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.18.44	מֵרִ֢יבֵ֫י	מֵרִ֪יבֵ֫י		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.18.46	מִֽמִּסְגְּרוֹתֵיהֶֽם	מִֽמִּסְגְּרֽוֹתֵיהֶֽם	|sof-pasuq-pc	meteg:Leningrad-has:POINT METEG	cluster 4 (ר): MAM[] vs L[POINT METEG]	word-note	ch2	מִֽמִּסְגְּרוֹתֵיהֶֽם => ["=ב\"א,ת,ל-א,פטרבורג-EVR-II-B-34 (געיה כבדה באות מ\"ם הראשונה), וכמו כן בכל התיג'אן ובתנ\"ך ליסבון. בכתי\"ת נכתבה הערה על־יד הפסוק: <לבן נפתלי מִמִסְגְּרוֹ'>. 
+Ps.18.47	חַי־יְ֭הֹוָה	חַי־יְ֭הוָה		policy:divine-name-holam		none		
+Ps.18.50	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.18.51	מַגְדִּל֮	מִגְדַּל֮	|alt=מַגְדִּיל֮,app	vowel:MAM-has:POINT PATAH; vowel:Leningrad-has:POINT HIRIQ; vowel:MAM-has:POINT HIRIQ; vowel:Leningrad-has:POINT PATAH	cluster 0 (מ): MAM[POINT PATAH] vs L[POINT HIRIQ]; cluster 2 (ד): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs L[POINT DAGESH OR MAPIQ,POINT PATAH]	none		
+Ps.18.51	יְשׁוּע֢וֹת	יְשׁוּע֪וֹת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.19.7	מֵחַמָּתֽוֹ	מֵֽחַמָּתוֹ	|sof-pasuq-pc	meteg-or-silluq:Leningrad-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 0 (מ): MAM[POINT TSERE] vs L[POINT TSERE,POINT METEG]; cluster 3 (ת): MAM[POINT METEG] vs L[]	word-note	ch4	מֵחַמָּתֽוֹ => ["=ש1", {"tmpl_name": "ש"}, "ל!=מֵֽחַמָּתוֹ (מקום הסילוק, או געיה וחסר סילוק לאחריה)", {"tmpl_name": "ש"}, "הערות ברויאר ודותן והמקליד"]
+Ps.19.8	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.19.8	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.19.9	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.19.9	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.19.10	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.19.10	עוֹמֶ֢דֶת	עוֹמֶ֪דֶת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.19.10	מִֽשְׁפְּטֵי־יְהֹוָ֥ה	מִֽשְׁפְּטֵי־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.19.15	יִ֥הְיֽוּ־לְרָצ֨וֹן ׀	—		missing-in-Leningrad		word-note	ch2,ch4	['יִ֥הְיֽוּ־לְרָצ֨וֹן', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1 לגבי הטעמים, אך אין בו מקף; וכך קרא ברויאר את התיבה בכתי\"ל ולפי כללי משרת של לגרמיה בתחום שלטון פזר (טעמי המקרא עמ' 265; והשוו לעיל יז, יד), וכך גם במג\"
+Ps.19.15	—	יִֽהְי֥וּ		extra-in-Leningrad		word-note	ch2,ch4	['יִ֥הְיֽוּ־לְרָצ֨וֹן', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1 לגבי הטעמים, אך אין בו מקף; וכך קרא ברויאר את התיבה בכתי\"ל ולפי כללי משרת של לגרמיה בתחום שלטון פזר (טעמי המקרא עמ' 265; והשוו לעיל יז, יד), וכך גם במג\"
+Ps.19.15	—	לְרָצ֨וֹן ׀		extra-in-Leningrad		word-note	ch2,ch4	['יִ֥הְיֽוּ־לְרָצ֨וֹן', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1 לגבי הטעמים, אך אין בו מקף; וכך קרא ברויאר את התיבה בכתי\"ל ולפי כללי משרת של לגרמיה בתחום שלטון פזר (טעמי המקרא עמ' 265; והשוו לעיל יז, יד), וכך גם במג\"
+Ps.19.15	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		verse-note	ch2,ch4	['יִ֥הְיֽוּ־לְרָצ֨וֹן', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1 לגבי הטעמים, אך אין בו מקף; וכך קרא ברויאר את התיבה בכתי\"ל ולפי כללי משרת של לגרמיה בתחום שלטון פזר (טעמי המקרא עמ' 265; והשוו לעיל יז, יד), וכך גם במג\"
+Ps.20.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.20.6	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.20.7	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.20.8	בְּשֵׁם־יְהֹוָ֖ה	בְּשֵׁם־יְהוָ֖ה		policy:divine-name-holam		none		
+Ps.20.10	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.21.2	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => ["פרשה פתוחה", {"tmpl_name": "ש"}, "ל=פרשה סתומה"] || {'tmpl_name': 'קו״כ', 'tmpl_params': {'1': 'יגיל', '2': 'יָּ֥גֶל'}} => "ל=יתיר י' (ובהקלדה גירסה 4.16 הוסיפו קרי)"
+Ps.21.2	מַה־יָּ֥גֶל	מַה־יָּ֥גֵיל	|alt=יָּ֥גֶל,app	letters	skel יגל vs יגיל	verse-note		{'tmpl_name': 'ר4'} => ["פרשה פתוחה", {"tmpl_name": "ש"}, "ל=פרשה סתומה"] || {'tmpl_name': 'קו״כ', 'tmpl_params': {'1': 'יגיל', '2': 'יָּ֥גֶל'}} => "ל=יתיר י' (ובהקלדה גירסה 4.16 הוסיפו קרי)"
+Ps.21.6	וְ֝הָדָ֗ר	וְ֝הָדָר		accent:MAM-has:ACCENT REVIA	cluster 2 (ד): MAM[POINT QAMATS,ACCENT REVIA] vs L[POINT QAMATS]	word-note	ch4	וְ֝הָדָ֗ר => ["=ש1,ק-מ", {"tmpl_name": "ש"}, "ל!=וְ֝הָדָר (חסרה נקודת הרביע באות דל\"ת)"]
+Ps.21.8	בַּיהֹוָ֑ה	בַּיהוָ֑ה		policy:divine-name-holam		none		
+Ps.21.9	יְ֝מִֽינְךָ֗	יְ֝מִֽינְךָ		accent:MAM-has:ACCENT REVIA	cluster 4 (ך): MAM[POINT QAMATS,ACCENT REVIA] vs L[POINT QAMATS]	word-note	ch4	יְ֝מִֽינְךָ֗ => ["=ש1,ק-מ", {"tmpl_name": "ש"}, "ל!=יְ֝מִֽינְךָ (חסרה נקודת הרביע באות כ\"ף סופית)"]
+Ps.21.10	לְעֵ֢ת	לְעֵ֪ת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.21.10	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.21.14	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note	ch4	וּֽ֝נְזַמְּרָ֗ה => ["=ש1 ושיטת-א ובדפוסים", {"tmpl_name": "ש"}, "ל!=וּֽ֝נְזַמְּרָה (חסרה נקודת הרביע באות רי\"ש)", {"tmpl_name": "ש"}, "הערת המקליד", {"tmpl_name": "ש"}, "ברויאר, 
+Ps.21.14	וּֽ֝נְזַמְּרָ֗ה	וּֽ֝נְזַמְּרָה		accent:MAM-has:ACCENT REVIA	cluster 4 (ר): MAM[POINT QAMATS,ACCENT REVIA] vs L[POINT QAMATS]	word-note	ch4	וּֽ֝נְזַמְּרָ֗ה => ["=ש1 ושיטת-א ובדפוסים", {"tmpl_name": "ש"}, "ל!=וּֽ֝נְזַמְּרָה (חסרה נקודת הרביע באות רי\"ש)", {"tmpl_name": "ש"}, "הערת המקליד", {"tmpl_name": "ש"}, "ברויאר, 
+Ps.22.3	וְֽלֹא־דֻֽמִיָּ֥ה	וְֽלֹא־דֽוּמִיָּ֥ה		letters	skel דמיה vs דומיה	word-note	ch4	דֻֽמִיָּ֥ה => ["=ש1 ומסורת-א וטברנית ומ\"ש (כתיב חסר וי\"ו)", {"tmpl_name": "ש"}, "ל=דֽוּמִיָּ֥ה (כתיב מלא וי\"ו)"]
+Ps.22.9	אֶל־יְהֹוָ֣ה	אֶל־יְהוָ֣ה		policy:divine-name-holam		none	ch2,ch5	
+Ps.22.20	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.22.24	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.22.26	תְּֽהִלָּ֫תִ֥י	תְֽהִלָּ֫תִ֥י		dagesh:MAM-has:POINT DAGESH OR MAPIQ	cluster 0 (ת): MAM[POINT DAGESH OR MAPIQ,POINT SHEVA,POINT METEG] vs L[POINT SHEVA,POINT METEG]	word-note		תְּֽהִלָּ֫תִ֥י => ["=ל,ש1,ק-מ (תי\"ו דגושה באופן ברור בכתי\"ל אחרי טעם מפסיק, אמנם הנקודה קצת צמודה לרגל השמאלי של התי\"ו)", {"tmpl_name": "ש"}, "הקלדה=תְֽהִלָּ֫תִ֥י (חסר דגש בטע
+Ps.22.27	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.22.28	אֶל־יְ֭הֹוָה	אֶל־יְ֭הוָה		policy:divine-name-holam		none		
+Ps.22.29	לַ֭יהֹוָה	לַ֭יהוָה		policy:divine-name-holam		none		
+Ps.22.30	וַיִּֽשְׁתַּחֲו֨וּ ׀	וַיִּֽשְׁתַּחֲוּ֨וּ ׀		dagesh:Leningrad-has:POINT DAGESH OR MAPIQ	cluster 5 (ו): MAM[ACCENT QADMA] vs L[POINT DAGESH OR MAPIQ,ACCENT QADMA]	word-note	ch4	['וַיִּֽשְׁתַּחֲו֨וּ', {'tmpl_name': 'מ:לגרמיה-2'}] => ["=ש1,ק-מ ובדפוסים", {"tmpl_name": "ש"}, "ל=<וַיִּֽשְׁתַּחֲוּ֨וּ", {"tmpl_name": "מ:לגרמיה-2"}, "> (נקודה בוי\"ו עיצורית)", {"tmpl_name": "ש"}, "הערות דותן וברו
+Ps.23.1	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.23.5	דִּשַּׁ֥נְתָּ	דִּשַּׁ֖נְתָּ		accent:MAM-has:ACCENT MERKHA; accent:Leningrad-has:ACCENT TIPEHA	cluster 1 (ש): MAM[POINT SHIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT MERKHA] vs L[POINT SHIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT TIPEHA]	word-note	ch4	דִּשַּׁ֥נְתָּ => ["=ש1,ק-מ (בטעם מרכא) ובדפוסים (וכן ברויאר ומג\"ה)", {"tmpl_name": "ש"}, "ל=דִּשַּׁ֖נְתָּ (בטעם טפחא) וכן הוא בקורן", {"tmpl_name": "ש"}, "סימנים, מכון ממרא"]
+Ps.23.6	בְּבֵית־יְ֝הֹוָ֗ה	בְּבֵית־יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.24.1	לַֽ֭יהֹוָה	לַֽ֭יהוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר3'} => ["פרשה פתוחה", {"tmpl_name": "ש"}, "ל=פרשה פתוחה לפני התיבה \"מִ֫זְמ֥וֹר\" במקום לאחריה", {"tmpl_name": "ש"}, "הערת דותן"]
+Ps.24.3	בְהַר־יְהֹוָ֑ה	בְהַר־יְהוָ֑ה		policy:divine-name-holam		verse-note	ch4	וּמִי־יָ֝ק֗וּם => ["=ב1 ובדפוסים", {"tmpl_name": "ש"}, "ל!=וּמִי־יָ֝קוּם (חסרה נקודת הרביע באות קו\"ף)"]
+Ps.24.3	וּמִי־יָ֝ק֗וּם	וּמִי־יָ֝קוּם		accent:MAM-has:ACCENT REVIA	cluster 1 (ק): MAM[ACCENT REVIA] vs L[]	word-note	ch4	וּמִי־יָ֝ק֗וּם => ["=ב1 ובדפוסים", {"tmpl_name": "ש"}, "ל!=וּמִי־יָ֝קוּם (חסרה נקודת הרביע באות קו\"ף)"]
+Ps.24.5	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.24.6	דֹּרְשָׁ֑ו	דֹּרְשׁ֑וֹ	|alt=דֹּרְשָׁ֑יו,app	vowel:MAM-has:POINT QAMATS; vowel:Leningrad-has:POINT HOLAM	cluster 2 (ש): MAM[POINT SHIN DOT,POINT QAMATS,ACCENT ETNAHTA] vs L[POINT SHIN DOT,ACCENT ETNAHTA]; cluster 3 (ו): MAM[] vs L[POINT HOLAM]	word-note		דֹּרְשָׁ֑ו => "ל-קרי=דרשיו"
+Ps.24.8	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.24.8	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.24.9	וְ֝יָבֹ֗א	וְ֝יָבֹא		accent:MAM-has:ACCENT REVIA	cluster 2 (ב): MAM[POINT HOLAM,ACCENT REVIA] vs L[POINT HOLAM]	word-note	ch4	וְ֝יָבֹ֗א => ["=ק-מ,ב1 ובדפוסים", {"tmpl_name": "ש"}, "ל!=וְ֝יָבֹא (חסרה נקודת הרביע באות בי\"ת)"]
+Ps.24.10	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none	ch2	
+Ps.25.1	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		verse-note	ch4	{'tmpl_name': 'ר1'} => ["פרשה סתומה", {"tmpl_name": "ש"}, "ל=פרשה פתוחה"]
