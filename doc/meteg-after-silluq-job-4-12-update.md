@@ -87,3 +87,19 @@ not former and current names. The cached introduction records Job 1:1–9:19 amo
 text. Codex directly inspected the crop and saw the silluq under the mem and no later mark under
 the he. St. Petersburg Evr. II B 55 is the only manuscript represented on the published Job 4:12
 crop page that has this silluq-only form.
+
+## 2026-09-26: the page images that section 3 read left the checkout
+
+Recorded by a Claude Code session on 2026-09-26, when `doc/PLAN-retire-codex-index-image-work.md`
+retired the codex-index image work. The report's section 3 read two page images, and neither is
+in the checkout now:
+
+1. `aleppo/aleppo-pages/271r.jpg` was removed with the other Aleppo page scans. The last commit
+   that holds it is `1fba91fed6f22cd5aeb4d56d836cf109de48b8ad`, so
+   `git show 1fba91fe:aleppo/aleppo-pages/271r.jpg` recovers it.
+2. `cam1753/cam1753-pages/0073B.jpg` was an ignored file split from the spread
+   `cam1753/cam1753-spreads/cam1753-page-0078.jpg`. That spread was removed with the other
+   Cambridge spreads, and `1fba91fe` is also the last commit that holds it. Nothing regenerates
+   the split page now.
+
+The readings section 3 records stand, and the line-break and column data it cites are retained.

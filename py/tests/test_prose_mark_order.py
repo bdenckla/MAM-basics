@@ -23,8 +23,9 @@ missed every one of those 16 files:
   * ``check_mark_order.py`` -- the ``.py`` of the four repos ``py/repo_scopes.py``
     named then, and the Ben-authored ``.json`` of three of them, that module's
     ``corpus_roots()`` omitting the Leningrad tree, which "contributes no mark-order
-    scope". Since 2026-09-10, when the Leningrad code was deleted, both lists name
-    the same three repos.
+    scope". Since 2026-09-10, when the Leningrad code was deleted, both lists named
+    the same three repos, until the Cambridge 1753 code went on 2026-09-26; the
+    Cambridge JSON stays in ``corpus_roots()``.
   * ``test_aleppo_page_mark_order.py`` -- ``gh-pages/aleppo/*.html``, which
     ``main_ac_gen_index_flat_annotated.py`` generates, so output rather than source.
 

@@ -1,17 +1,18 @@
 # Aleppo Codex page-location data in MAM-basics
 
-This product directory holds data and generated artifacts for locating Hebrew words on photographed pages of the Aleppo Codex. The current corpus covers Job, while the pipeline accepts other biblical books when the index data is available.
+This directory holds data for locating Hebrew words on photographed pages of the Aleppo Codex. It is intentionally uneven: much of the codex is indexed at page level, while Job and a run of Deuteronomy pages also have line and column data.
 
-MAM-basics contains the programs that read and write this product directory. The `main_ac_*` entry points in [`../py/`](../py/) read [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) as their MAM word-sequence input, write flat streams and the column-quadrilateral editor, and locate annotated words in the page images. The line-break editor that annotated `line-breaks/` was deleted on 2026-09-26.
+One program maintains this directory: [`../py/main_ac_gen_index_flat_annotated.py`](../py/main_ac_gen_index_flat_annotated.py) writes `index-flat-annotated.json` from the hand-corrected index, and the mega runs it. The page scans and the programs that worked on them were retired on 2026-09-26 by [`../doc/PLAN-retire-codex-index-image-work.md`](../doc/PLAN-retire-codex-index-image-work.md), so the line, column and flat-stream data below are kept as they stand, and nothing regenerates them.
 
 ## Data
 
-- `aleppo-pages/` holds the photographed pages; [`aleppo-pages-provenance.md`](aleppo-pages-provenance.md) records their source.
-- `ds-flat-stream/` holds generated per-page word streams.
 - `line-breaks/` holds line-break data annotated by Ben Denckla.
 - `column-coordinates/` holds column geometry annotated by Ben Denckla.
+- `ds-flat-stream/` holds per-page word streams without line markers, as the retired generator wrote them.
+- [`check_line_breaks.html`](check_line_breaks.html) is the frozen report of the last line-break check; nothing regenerates it.
+- [`aleppo-pages-provenance.md`](aleppo-pages-provenance.md) records where the retired page scans came from and the last commit that holds them.
 - `aleppo-wiki/` holds J. David Stark's index material and two snapshots of the Wikisource page built by hand from it.
-- `doc/` holds procedures for the Aleppo page-location work.
+- `doc/` holds notes on the retained line-break data, on reading MAM-simple, on MAM-with-doc URLs, and on OCR of Aleppo Codex images with Kraken.
 
 The published scholarly pages are under [`../gh-pages/aleppo/`](../gh-pages/aleppo/) and are served at [bdenckla.github.io/MAM-basics/aleppo/](https://bdenckla.github.io/MAM-basics/aleppo/).
 

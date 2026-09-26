@@ -25,8 +25,8 @@ JSON, data, and generated pages, read `doc/mam-normal-mark-order.md` before chan
 ## Tracked filenames do not use Hebrew letters; Git filename output is NUL-delimited
 
 No tracked filename contains a Hebrew letter. Convert a Hebrew filename component with
-`heb_alef_bet_to_ascii` from `py/py_ac_word_image_helper/alef_bet_to_ascii.py`; do not invent
-another transliteration.
+`consensus_to_ascii` from `py/author_boj_util/author.py`; do not invent another
+transliteration.
 
 Every programmatic Git command returning filenames requests NUL delimiters with `-z` and splits
 on `"\0"`, never on lines. Spaces, tabs, newlines, quoting characters, and future non-ASCII
@@ -73,11 +73,10 @@ read `holman/WORKFLOW.md`. Raw mail remains untracked; public derivatives exclud
 suggestion dispositions contain substantive judgments rather than personal circumstances; and
 authored CSS and JavaScript live in `holman/assets/`, not in generated `gh-pages/` copies.
 
-Before touching `py/author_boj*`, `py/py_ac_word_image_helper/`, or
-`py/py_cam1753_word_image/`, read the relevant `doc/boj-*.md` procedure. Those seven procedures
-began as Copilot instructions and have not all been re-verified, so current user-level and
-repository instructions win when a command conflicts. The two procedures for reading the
-evacuated product live under `book-of-job/doc/`.
+Before touching `py/author_boj*`, read the relevant `doc/boj-*.md` procedure. Those four
+procedures began as Copilot instructions and have not all been re-verified, so current
+user-level and repository instructions win when a command conflicts. The two procedures for
+reading the evacuated product live under `book-of-job/doc/`.
 
 ## Issue citations in MAM-basics
 

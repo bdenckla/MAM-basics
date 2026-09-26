@@ -1,41 +1,34 @@
-# cam1753 Line-Break Marking Task
+# cam1753 Line-Break Data
+
+This note describes the retained line-break and column data for Cambridge University
+Library MS Add. 1753: what it covers, what its files hold, and how it was made. The
+marking is finished. The programs and page images it used were retired on 2026-09-26 by
+[`../../doc/PLAN-retire-codex-index-image-work.md`](../../doc/PLAN-retire-codex-index-image-work.md),
+so nothing regenerates this data. Until then this file was the marking procedure;
+`git show f4d81285:cam1753/doc/cam1753-line-break-task.md` recovers that version, and
+`git show f4d81285:<path>` recovers each retired program.
 
 ## Manuscript
 
 Cambridge University Library, MS Add. 1753 (Ketuvim). Images downloaded from archive.org (item `ketuvim-cambridge-ms-add-1753-images`, zip `Ketuvim_Cambridge_MS_Add_1753_jp2.zip`, scale=2, server `ia800901.us.archive.org`).
 
-## Page Images
+## Page images
 
-- **28 individual pages** in `cam1753-pages/` (0072B.jpg through 0086A.jpg, approx 2200x3040 px)
-- Split from two-page spreads in `cam1753-spreads/` (archive pages 77-90)
+- **28 individual pages**, `0072B` through `0086A`, approx 2200x3040 px
+- Split from fourteen two-page spreads (archive pages 77-90)
 - Naming: archive page N → left=recto(A) of leaf N-4, right=verso(B) of leaf N-5
-- Provenance documented in `cam1753-spreads-provenance.md`
+- `../cam1753-spread-splits-doc/` records each split
+- Provenance, and the last commit that holds the spreads, are documented in
+  `../cam1753-spreads-provenance.md`
 
-## Column Quad Data
+## Coverage
 
-- **28 JSON files** in `cam1753-col-quads/` — manually defined bounding quadrilaterals
-- Col1 = RIGHT column (read first in RTL), Col2 = LEFT column
-- Each has `rel` (0-1 normalized) and `px` coordinates for corners tl/tr/bl/br
-- 26 weighted line-boxes per column: top box 1.5x (ascenders), bottom box 1.25x (descenders), 24 normal
-- Generated via `../../py/main_cam1753_gen_col_quad_editor.py` (interactive HTML editor, serves images via localhost:8119)
-
-## Local HTTP Server
-
-HTML editors that load page images need `http://localhost:8119/` serving
-`C:/Users/BenDe/GitRepos/MAM-basics/cam1753`. Start there with:
-```
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m http.server 8119
-```
-Run in background. Required because browsers block `file://` cross-origin image loads in SVG/canvas.
-
-## Status
-
-- [x] Download and split page images (28 pages)
-- [x] Column quad data for all 28 pages
-- [x] Identify text on pages: Ps 149:7 through end of Job (page 0085B). Page 0086A is past Job — ignore it. 27 pages total: 0072B through 0085B.
-- [x] Build flat stream generator (`../../py/main_cam1753_gen_flat_stream.py`)
-- [x] Build line-break editor (`py/main_cam1753_gen_line_break_editor.py`, deleted on 2026-09-26) with blank-line feature
-- [x] Mark line breaks for all 27 pages (0072B through 0085B). Checked on 2026-09-26: all 27 files in `cam1753-line-breaks/` carry line markers, and the tracked `../check_line_breaks.html` reports all checks passed for 27 pages.
+- Line breaks: 27 pages, `0072B` through `0085B`, from Ps 149:7 through the end of Job.
+  Page `0086A` is past Job and has no line-break file.
+- Column quadrilaterals: all 28 pages.
+- All 27 line-break files carry line markers. The frozen report
+  [`../check_line_breaks.html`](../check_line_breaks.html) says all checks passed for the
+  27 pages, as a check on 2026-09-26 found.
 
 ### Pages completed
 
@@ -60,69 +53,43 @@ Run in background. Required because browsers block `file://` cross-origin image 
 
 The table stops at 0080A; `cam1753-line-breaks/` holds all 27 pages.
 
-## Procedure: Marking Line Breaks Page by Page
+## Line-break files
 
-**The line-break editor that this procedure uses, `py/main_cam1753_gen_line_break_editor.py`,
-was deleted on 2026-09-26** by Ben's instruction that day to remove both line-break editors.
-The steps below describe the procedure as it ran.
-`git show 4ac4f16a:py/py_cam1753_loc/gen_line_break_editor.py` recovers the editor, and its
-`main_cam1753_` wrapper is at the same commit.
+Each `../cam1753-line-breaks/<page>.json` is a flat JSON array (a "flat stream") of MAM's
+atoms, as plain Hebrew strings split after every maqaf, and one-key markers:
 
-### First page (bootstrapping)
+- **Structural markers:** `{"page-start": "0072B"}`, `{"page-end": "0072B"}`
+- **Verse markers:** `{"verse-start": "Job 1:16"}`, `{"verse-end": "Job 1:16"}`, and
+  `verse-fragment-start` and `verse-fragment-end` where a page begins or ends mid-verse
+- **Parashah markers:** `{"parashah": "spi-pe2"}`
+- **Line markers:** `{"line-start": {"col": 1, "line-num": 1}}` and
+  `{"line-end": {"col": 1, "line-num": 1}}`
+- **Blank lines:** `{"blank-line": {"col": 1, "line-num": 13}}`
 
-1. User identifies the starting verse (e.g. `Ps 149:7`) and a generous ending verse.
-2. Generate the flat stream:
-   ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_cam1753_gen_flat_stream.py 0072B Ps 149:7 Job 2:10
-   ```
-3. Generate and open the editor (always start with col 1):
-   ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_cam1753_gen_line_break_editor.py 0072B 1
-   ```
-   The script writes the HTML and opens it in the browser automatically.
-4. In the editor: right-click the actual first word on the page to set page-start (if the flat stream includes earlier words from the same verse). Click the last word of each line to mark line-ends. Click line numbers to add blank lines (for masorah notes, inter-book gaps, etc. — any line without verse content). Use the col toggle to switch between columns.
-5. Click **Export** → paste directly into `cam1753-line-breaks/<page_id>.json`.
-6. **Do NOT** paste the exported JSON into the chat window — that causes Unicode NFC normalization of Hebrew text.
+Col 1 = the right column (read first), Col 2 = the left column, and each column's lines
+count from 1 to 26. A “blank line” is a line without verse content (masorah notes,
+decorations between books, etc.), not necessarily visually empty.
 
-### Subsequent pages (chaining)
+The streams were generated from `../../MAM-simple/xml-vtrad-mam/` with the segmentation
+that `get_verse_atoms` in `../../py/mb_cmn/mam_xml_verses.py` now gives, and the line
+markers were then added by hand in an interactive editor, one page at a time.
+[`reading-mam-simple.md`](reading-mam-simple.md) describes the reader's choices.
 
-1. Generate the flat stream with `--chain`, which reads the previous page\u2019s JSON and starts at the next word:
-   ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_cam1753_gen_flat_stream.py 0073A --chain 0072B Job 4:10
-   ```
-   This auto-detects whether the previous page ended mid-verse (generates a `verse-fragment-start`) or at a verse boundary (starts at next full verse). The end verse (`Job 4:10`) should be generous — extra verses at the end are harmless.
-2. Generate and open the editor:
-   ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_cam1753_gen_line_break_editor.py 0073A 1
-   ```
-3. Mark line breaks, export, paste into file (same as bootstrapping steps 4-6).
+## Column quad data
 
-### Important notes
-
-- **The flat stream generator refuses to overwrite** existing files. Use `--force` to overwrite deliberately.
-- **Minimum word count**: The generator requires at least 300 words. If it rejects, use a later end verse.
-- **Always use MAM-basics' interpreter by absolute path** — never bare `python`. The
-  active interpreter is `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
-- **Never use `python -c "..."`** one-liners — always create a script in `.novc/`, per the user-level `CLAUDE.md`'s "Running scripts — no inline one-liners" section, whose temp-file-location bullet names a repo's gitignored scratch dir first.
-- The editor loads images from `http://localhost:8119/cam1753-pages/` — the local HTTP server must be running.
-- Col 1 = right column (read first), Col 2 = left column. The editor has a toggle button to switch.
-- “Blank lines” are lines without verse content (masorah notes, decorations between books, etc.), not necessarily visually empty.
-
-### Editor features
-
-- **Sync mode** (on by default, toggle with `s` key): highlights the next line to mark in the image panel using a reverse-highlight fade, and scrolls both image and words panels to track progress.
-- **Auto-switch**: when col 1 reaches 26 line-ends, automatically switches to col 2.
-- **Flat-order line numbering**: line numbers are assigned from a single flat counter across both columns (1–26 = col 1, 27–52 = col 2). Inserting or removing a line-end in col 1 correctly shifts col 2 numbering.
-- **Crop toggle**: switch between column-cropped and full-page image view.
-- **Resizable divider**: drag the divider between words and image panels.
+- **28 JSON files** in `../cam1753-col-quads/` — manually defined bounding quadrilaterals
+- Col1 = RIGHT column (read first in RTL), Col2 = LEFT column
+- Each has `rel` (0-1 normalized) and `px` coordinates for corners tl/tr/bl/br
+- 26 weighted line-boxes per column: top box 1.5x (ascenders), bottom box 1.25x (descenders), 24 normal
+- Made in an interactive HTML editor, which was retired with the rest
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `../../py/main_cam1753_gen_flat_stream.py` | Generate flat-stream JSON for a page (manual or `--chain` mode) |
-| `cam1753-line-breaks/*.json` | Line-break data per page (flat stream + markers) |
-| `cam1753-col-quads/*.json` | Column bounding quad data (used by the word previewer for image cropping) |
-| `cam1753-pages/*.jpg` | Individual page images |
-| `../../py/py_ac_loc/mam_xml_verses.py` | MAM-simple verse extraction |
+| `../cam1753-line-breaks/*.json` | Line-break data per page (flat stream + markers) |
+| `../cam1753-col-quads/*.json` | Column bounding quad data |
+| `../cam1753-spread-splits-doc/*.json` | Where each spread was split into pages |
+| `../check_line_breaks.html` | The frozen report of the last line-break check |
+| `../../py/mb_cmn/mam_xml_verses.py` | MAM-simple verse and atom extraction |
 | `../../MAM-simple/xml-vtrad-mam/*.xml` | Hebrew Bible text source |

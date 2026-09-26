@@ -2,20 +2,22 @@
 Read verses from MAM-simple XML (xml-vtrad-mam) for locating text in manuscripts.
 
 This module serves one application: locating text on the pages and lines of a
-manuscript by counting atoms and letters in MAM's word sequence. Its users are the
-Aleppo Codex and Cambridge MS Add. 1753 line-break flat streams
-(``py_ac_loc/gen_flat_stream.py`` and ``py_cam1753_loc/gen_flat_stream.py``) and the
-Evr. II B 55 page index (``evr-ii-b-55/README.md``). An atom is one written form
-between spaces or maqafs, and the standing rule is that the atoms are what is written
-on the page. What this application uses is where atoms begin and end and which letters
-they have. Pointing and accents play no part in it, so a stream that differs from
+manuscript by counting atoms and letters in MAM's word sequence. Its user is the
+Evr. II B 55 page index, whose consumer guide in ``evr-ii-b-55/README.md`` defines an
+atom number through ``get_verse_atoms``. The Aleppo Codex and Cambridge MS Add. 1753
+flat streams under ``aleppo/`` and ``cam1753/`` were made with the same segmentation,
+by generators that were retired on 2026-09-26. An atom is one written form between
+spaces or maqafs, and the standing rule is that the atoms are what is written on the
+page. What this application uses is where atoms begin and end and which letters they
+have. Pointing and accents play no part in it, so a stream that differs from
 MAM-simple in marks alone, such as a meteg, differs in nothing that matters here (Ben,
-2026-09-26). Both line-break checkers compare more than that: their
-no_marks_comparison_key ignores meteg and rafe, and no other mark.
+2026-09-26).
 
 ``get_verse_words`` splits each element's text at whitespace, joins the pieces across
 each maqaf into one entry of ``words``, and attaches a lone sof pasuq to the entry
-before it. Both generators then split each entry after every maqaf, giving the atoms.
+before it. ``get_verse_atoms`` then splits each entry after every maqaf, keeping the
+maqaf on the atom before it, which gives the atoms. Until 2026-09-26 each flat-stream
+generator made that split itself.
 
 Every child of a <verse> is dispatched by name, and an unknown element raises
 ValueError. What each contributes:
@@ -50,7 +52,7 @@ then contribute, keeping the atoms what is written on the page:
     atom 10 is תַּעֲשֶׂה־ and atom 11 זֹּֽאת׃. Where the atom before the qere
     ends in a maqaf, at 2 Sam 16:23, 18:20 and Jer 50:29, the maqaf join above makes
     one entry of the atoms on either side of the qere, as 2 Sam 16:23's יִשְׁאַל־בִּדְבַ֣ר.
-    Without that join an entry would end in a maqaf, and each generator's split would
+    Without that join an entry would end in a maqaf, and ``get_verse_atoms`` would
     emit an empty atom.
   - <good-ending>, the repeated ending of four books: nothing. The verse keeps only
     its own atoms: Lam 5:22 has 8, ending מְאֹֽד׃.
@@ -67,11 +69,11 @@ then contribute, keeping the atoms what is written on the page:
 Each of those seven elements has its shape checked against the one it has in every
 occurrence in MAM-simple on 2026-09-26, and any other shape raises ValueError. No
 MAM-simple verse is refused: ``py/tests/test_mam_xml_verses.py`` runs
-``get_verse_words`` over every verse of MAM-simple/xml-vtrad-mam/ and checks that no
-entry ends in a maqaf.
+``get_verse_atoms`` over every verse of MAM-simple/xml-vtrad-mam/ and checks that no
+atom is empty.
 
 Parashah breaks. MAM-simple places a break between books, between chapters, between
-verses or within a verse (MAM-simple/doc/reading-mam-simple-xml.md). A stream learns
+verses or within a verse (MAM-simple/doc/reading-mam-simple-xml.md). A caller learns
 of a break only from the starts-with-sampe attribute of the verse after it, which
 ``get_verses_in_range`` turns into parashah_before: pe2, samekh2, pe3 and samekh3 give
 {"parashah": "spi-pe2"}, {"parashah": "spi-samekh2"}, {"parashah": "spi-pe3"} and
@@ -79,17 +81,17 @@ of a break only from the starts-with-sampe attribute of the verse after it, whic
 value raises ValueError. The spi-pe3 and spi-samekh3 markers, Ben's decision of
 2026-09-26, keep MAM's hint that the break has no blank line (pe3, MAM's פפפ) or is
 in mid-line (samekh3, MAM's ססס). A break within a verse, of any of the four kinds,
-never reaches a stream (Ben, 2026-09-26): how a stream shows one is to be decided
-when line-break work reaches a book that has one.
+never reaches a caller, as Ben decided on 2026-09-26 for the flat streams.
 
 Usage:
-    from py_ac_loc.mam_xml_verses import get_verses_in_range
+    from mb_cmn.mam_xml_verses import get_verses_in_range
 
     verses = get_verses_in_range(
         r'C:/path/to/MAM-basics/MAM-simple/xml-vtrad-mam/Job.xml',
         'Job', (37, 9), (38, 20),
     )
-    # Returns: [{'cv': '37:9', 'words': [...], 'ketiv_indices': [], 'parashah_before': None}, ...]
+    # Returns: [{'cv': '37:9', 'words': [...], 'ketiv_indices': [], 'atoms': [...],
+    #            'parashah_before': None}, ...]
     # parashah_before is None or one of the four markers above
 """
 
@@ -362,6 +364,27 @@ def get_verse_words(verse_el):
     return {"words": merged, "ketiv_indices": ketiv_indices}
 
 
+def _atoms_of(words):
+    """Split each entry after every maqaf, keeping the maqaf on the atom before it."""
+    atoms = []
+    for entry in words:
+        parts = entry.split(MAQAF)
+        atoms.extend(part + MAQAF for part in parts[:-1])
+        atoms.append(parts[-1])
+    return atoms
+
+
+def get_verse_atoms(verse_el):
+    """
+    Return the atoms of a MAM-simple XML <verse> element: each entry of
+    ``get_verse_words``'s ``words``, split after every maqaf, which stays with the
+    atom before it. An atom's number in its verse is its index here plus one.
+
+    Raises ValueError where ``get_verse_words`` does.
+    """
+    return _atoms_of(get_verse_words(verse_el)["words"])
+
+
 def _find_book39(root, book_osis_prefix, xml_path):
     """Return the one <book39> under root whose osisID is book_osis_prefix."""
     if root.tag != "book24":
@@ -412,6 +435,7 @@ def get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv):
             words: list of str — the verse's entries, as from get_verse_words
             ketiv_indices: list of int — indices in `words` of the entries holding
                 a ketiv
+            atoms: list of str — the verse's atoms, as from get_verse_atoms
             parashah_before: None, or {"parashah": ...} with "spi-pe2",
                 "spi-samekh2", "spi-pe3" or "spi-samekh3" — parashah break before
                 this verse (from its starts-with-sampe attribute)
@@ -444,6 +468,7 @@ def get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv):
             if (ch, vs) < start_cv or (ch, vs) > end_cv:
                 continue
             result = get_verse_words(v)
+            result["atoms"] = _atoms_of(result["words"])
             result["cv"] = f"{ch}:{vs}"
 
             # Check for parashah break before this verse
