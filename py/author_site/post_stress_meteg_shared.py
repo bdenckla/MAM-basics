@@ -261,7 +261,7 @@ _MAM_POST_SILLUQ_SASSOON_SOURCE_URL = (
 
 _FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
 
-_FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.jpg"
+_FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.png"
 
 _FIRST_KINGS_14_CAIRO_COTP_CROP_URL = "img/cairo-cotp-image204-1K14v14-atta.png"
 
