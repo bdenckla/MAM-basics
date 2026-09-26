@@ -2,9 +2,9 @@
 
 State: live
 
-Ready for execution; recorded 2026-09-12. `f2a9ead4` executed part of it on 2026-09-26.
-Two open questions for Ben, recorded that day, should be answered before the remaining
-Python deletions run. Both sections follow “Decisions recorded on 2026-09-12”.
+Ready for execution; recorded 2026-09-12. `f2a9ead4` executed part of it on 2026-09-26, and
+Ben decided the two questions it left open that day. “Executed in part on 2026-09-26” and
+“Decisions recorded on 2026-09-26” follow “Decisions recorded on 2026-09-12”.
 
 ## Purpose
 
@@ -97,24 +97,35 @@ downloads one word's crop as a PNG. MAM-basics never held a Leningrad editor: it
 Leningrad Python, a Wikisource index generator and a UXLC vendoring script, went in
 `985262e2` and `079b1e63`, before decision 6 was recorded.
 
-## Open questions for Ben, recorded 2026-09-26
+## Decisions recorded on 2026-09-26
 
-Recorded by the same Claude Code session, which resolved neither. Each is a deletion that
-this plan orders and that collides with work done after its planning snapshot.
+The cloud session that made `f2a9ead4` recorded two open questions and resolved neither.
+Each was a deletion that this plan ordered and that collided with work done after its
+planning snapshot. A local Claude Code session put both to Ben on 2026-09-26 with a
+recommendation, and Ben agreed to each recommendation that day:
 
-1. **The Evr. II B 55 page index depends on `py/py_ac_loc/mam_xml_verses.py`.** The index
-   in `evr-ii-b-55/` was begun on 2026-09-25. Rule 2 of its README's consumer guide
-   defines an atom number through that module's `get_verse_words` and the split after
-   every maqaf that each package's `gen_flat_stream.py` makes. On 2026-09-26, `139f631e`,
-   `009b6378` and `46e2e524` extended the module to implement Ben's decisions of that day.
-   “Delete the five files under `py/py_ac_loc/`” would delete the module and the Aleppo
-   `gen_flat_stream.py`, and “Delete the seven files under `py/py_cam1753_loc/`” would
-   delete the Cambridge one.
-2. **`AGENTS.md` names `py/py_ac_word_image_helper/alef_bet_to_ascii.py` as the one
-   transliteration for a Hebrew filename component.** That rule arrived with `4e007289`
-   on 2026-09-12, about an hour after the planning snapshot, and the commit that recorded
-   this plan did not contain it. `py/tests/test_tracked_filenames.py` also cites the
-   module. “Delete the six files under `py/py_ac_word_image_helper/`” would delete it.
+1. **Move the reader that the Evr. II B 55 page index depends on to `py/mb_cmn/`.** The
+   index in `evr-ii-b-55/` was begun on 2026-09-25. Rule 2 of its README's consumer guide
+   defined an atom number through `get_verse_words` in `py/py_ac_loc/mam_xml_verses.py`
+   and the split after every maqaf that each package's `gen_flat_stream.py` made. On
+   2026-09-26, `139f631e`, `009b6378` and `46e2e524` extended the module to implement
+   Ben's decisions of that day, and `py/tests/test_mam_xml_verses.py` runs it over the whole
+   of MAM-simple. Ben's decision: move the module to `py/mb_cmn/mam_xml_verses.py`, beside
+   `py/mb_cmn/read_books_from_mam_parsed_plus.py`, and fold the maqaf split into it as
+   `get_verse_atoms`, so that rule 2 names one module. Both `gen_flat_stream.py` modules
+   go with the rest of their packages. The move takes the module out of the scope of
+   `py/check_mark_order.py`, whose Python scope is `py/repo_scopes.py`'s code paths.
+2. **Point the filename rule at the surviving copy of its transliteration.** `AGENTS.md`,
+   section “Tracked filenames do not use Hebrew letters; Git filename output is
+   NUL-delimited”, named `heb_alef_bet_to_ascii` in
+   `py/py_ac_word_image_helper/alef_bet_to_ascii.py`, and `py/tests/test_tracked_filenames.py`
+   cited the module. That rule arrived with `4e007289` on 2026-09-12, about an hour after the
+   planning snapshot. `consensus_to_ascii` in `py/author_boj_util/author.py` has the same two
+   tables and the same filter, and the two functions gave identical output on 151,660 strings
+   taken from MAM-simple on 2026-09-26. Every mega run exercises that copy:
+   `py/main_gen_misc_authored_english_documents.py` names the Book-of-Job word ids with it
+   through `py/author_boj_util/prep_quirkrecs.py`. Ben's decision: point `AGENTS.md` and the
+   test at `consensus_to_ascii`, and delete `py/py_ac_word_image_helper/` whole.
 
 ## Execution setup
 
@@ -190,7 +201,9 @@ The measurement script must write a protected-file manifest for:
 - all retained JSON under `aleppo/`, `cam1753/`, and `book-of-job/out/`;
 - `aleppo/check_line_breaks.html` and `cam1753/check_line_breaks.html`;
 - `cam1753/cam1753-gutter-profiles.png`; and
-- both `doc/*-snips/` folders and the four post-silluq crops moved to `gh-pages/img/`.
+- both `doc/*-snips/` folders and the four post-silluq crops moved to `gh-pages/img/`; and
+- all of `evr-ii-b-55/`, whose README and page index change only where Ben's first decision
+  of 2026-09-26 requires.
 
 Compare that manifest after the removal. A changed protected file is a finding.
 Documentation files within a protected tree may be deliberately edited only when
@@ -233,17 +246,20 @@ Aleppo page JPEGs, Cambridge spread JPEGs, or ignored Cambridge page JPEGs.
 
 Expand the deletion set from tracked paths before removing anything. The planning
 snapshot had 48 Python files in the set below. `f2a9ead4` deleted eight of them on
-2026-09-26, so the set now expands to 40. A different expansion is a finding to
-investigate.
+2026-09-26, so the set now expands to 40. Ben's first decision of 2026-09-26 moves one of
+the 40, `py/py_ac_loc/mam_xml_verses.py`, to `py/mb_cmn/`, so 39 are deleted. A different
+expansion is a finding to investigate.
 
 ### Aleppo and shared Aleppo Book-of-Job code
 
 - Delete every `py/main_ac_*.py` except
   `py/main_ac_gen_index_flat_annotated.py`.
 - Delete `py/check_ac_all.py`.
-- Delete the five files under `py/py_ac_loc/`, but see open question 1 first.
-- Delete the six files under `py/py_ac_word_image_helper/`, but see open question 2
-  first.
+- Delete four of the five files under `py/py_ac_loc/`. Move the fifth, `mam_xml_verses.py`,
+  to `py/mb_cmn/` and fold the maqaf split into it, as Ben's first decision of 2026-09-26
+  directs.
+- Delete the six files under `py/py_ac_word_image_helper/`. Ben's second decision of
+  2026-09-26 points the filename rule at `consensus_to_ascii` instead.
 - Delete `py/main_list_missing_aleppo_imgs.py`.
 
 `py/main_ac_gen_index_flat_annotated.py` stays because it maintains the page-level
@@ -254,7 +270,7 @@ Aleppo index from retained JSON without using manuscript images.
 - Delete `py/cam1753_paths.py`.
 - Delete every `py/main_cam1753_*.py`.
 - Delete every `py/check_cam1753_*.py`.
-- Delete the seven files under `py/py_cam1753_loc/`, but see open question 1 first.
+- Delete the seven files under `py/py_cam1753_loc/`.
 - Delete the four files under `py/py_cam1753_word_image/`.
 
 `py/main_gen_cam1753_crop_editor.py` and `py/main_apply_cam1753_crops.py` stood in this
@@ -299,7 +315,20 @@ lookups rather than the retired Book-of-Job crop workflow.
   the repository root. Remove exclusions that existed only for the deleted image
   directories, while preserving the exemptions required by retained external data.
 - Remove the obsolete image-helper `strip_heb` discussion from
-  `py/product_scopes.py`. Keep the product-tier rule itself unchanged.
+  `py/product_scopes.py`. Keep the product-tier rule itself unchanged. The paragraph before
+  that discussion illustrates the hand-run routes into products with “the Aleppo and
+  Cambridge 1753 word-image and crop work above all”; give it the surviving example,
+  `py/main_mam4sef.py` and `py/main_mam_osis.py`, which are hand-run, are declared in
+  `NOT_IN_MEGA`, and write `MAM-for-Sefaria/` and `MAM-OSIS/`.
+- Point the rule in `AGENTS.md`'s section “Tracked filenames do not use Hebrew letters; Git
+  filename output is NUL-delimited”, and `py/tests/test_tracked_filenames.py`, at
+  `consensus_to_ascii` in `py/author_boj_util/author.py`.
+- In `AGENTS.md`'s section “Holman and book-of-Job work has local routing documentation”,
+  count the four `doc/boj-*.md` procedures that remain, and name neither deleted word-image
+  package.
+- Remove the claim in `dot-claude/skills/mam-repository-topology/references/evacuated-repositories.md`
+  that `cam1753-pages/` “regenerates for an editor or crop task”, and the `cam1753-pages/`
+  line of `cam1753/.gitignore`.
 - Remove only the stale synchronization claim from
   `py/uxlc_misc/my_uxlc_find_atom.py`; do not change the lookup's behavior.
 - Search `.vscode/launch.json`, test registries, import sites, help text, and source
@@ -336,6 +365,16 @@ lookups rather than the retired Book-of-Job crop workflow.
   retained crop; do not rewrite a finished base report.
 - Update `DATA-LICENSES.md` so it accurately describes retained crops and removed
   full-page scans without weakening the rights statements.
+- Point every current mention of `py/py_ac_loc/mam_xml_verses.py` at
+  `py/mb_cmn/mam_xml_verses.py`: rule 2 of `evr-ii-b-55/README.md` and the consumer notice
+  in the header of `evr-ii-b-55/evr-ii-b-55-page-index.json`, the three
+  `reading-mam-simple.md` files under `aleppo/doc/`, `cam1753/doc/` and `book-of-job/doc/`,
+  and `doc/PLAN-silluq-before-gaya-template.md`. Rule 2 names `get_verse_atoms` and drops its
+  claim that the flat-stream generators could extend to Evr. II B 55. Change nothing else
+  under `evr-ii-b-55/`.
+- In `aleppo/doc/ocr-with-kraken.md`, rewrite “Image source”, which names
+  `py/main_ac_download_pages.py` and `aleppo/aleppo-pages/`; keep the Kraken OCR procedure,
+  which reads images saved outside the repository and none of the deleted code.
 - Preserve finished dated plans, reviews, and execution records as historical
   receipts. In particular, do not rewrite the 2026-09 evacuation plans or
   `in/mam_products_phase6*.json` to hide paths that existed when those records were
@@ -372,8 +411,10 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py
 - Format only the surviving Python files changed by the implementation:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black py/main_ac_gen_index_flat_annotated.py py/ac_paths.py py/boj_paths.py py/repo_scopes.py py/tests/test_mega_coverage.py py/tests/test_h_dot_below_nfc.py py/product_scopes.py py/uxlc_misc/my_uxlc_find_atom.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black py/main_ac_gen_index_flat_annotated.py py/ac_paths.py py/boj_paths.py py/repo_scopes.py py/tests/test_mega_coverage.py py/tests/test_h_dot_below_nfc.py py/product_scopes.py py/uxlc_misc/my_uxlc_find_atom.py py/mb_cmn/mam_xml_verses.py py/tests/test_mam_xml_verses.py py/tests/test_tracked_filenames.py
 ```
+
+Add any other surviving Python file the implementation changes.
 
 - Run the full suite with a repository-local temporary directory:
 
@@ -403,10 +444,12 @@ until explained. This plan expects no such change.
 ## Expected final diff
 
 - The expected tracked deletions are the remeasured Python files (48 at the
-  planning snapshot, 40 since `f2a9ead4`), the 37
+  planning snapshot, 40 since `f2a9ead4`, 39 once Ben's first decision of 2026-09-26 moves
+  `mam_xml_verses.py` instead), the 37
   Aleppo page JPEGs, the 14 Cambridge spread JPEGs, and the three obsolete crop
   procedures at baseline `068745779405ca38ec079ca25db9c8842195fd37`; the
   measurement script, not these dated figures, defines the execution input.
+- The expected move is `py/py_ac_loc/mam_xml_verses.py` to `py/mb_cmn/mam_xml_verses.py`.
 - The expected post-push local retirement is the remeasured ignored Cambridge page
   tree at the exact primary-clone path, moved to the Recycle Bin only after its
   second manifest matches the reviewed manifest.
