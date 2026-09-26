@@ -118,9 +118,9 @@ _PETERSBURG_SURVIVING_TEXT_GAP = (
 )
 _FIRST_KINGS_14_PETERSBURG_VIEWBOX = (374, 208)
 _FIRST_KINGS_14_PETERSBURG_REDACTION_BOXES = (
-    mhi.Box(x=0, y=0, w=374, h=61, rx=0),
-    mhi.Box(x=105, y=48, w=269, h=82, rx=0),
-    mhi.Box(x=0, y=121, w=248, h=87, rx=0),
+    mhi.Box(x=0, y=0, w=374, h=47, rx=0),
+    mhi.Box(x=178, y=47, w=196, h=70, rx=0),
+    mhi.Box(x=0, y=117, w=236, h=91, rx=0),
 )
 
 _ROM_MERKHA = _author_romanization("merkha")
