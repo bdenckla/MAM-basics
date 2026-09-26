@@ -226,10 +226,10 @@ are presumably among Part B's images 005–495, which the download lacks.
      atoms what is written on the page. A ketiv that is not read is an atom, like any ketiv. A
      qere that is not written, a maqaf after a ketiv that is not read, and a repeated ending
      contribute nothing. A parashah break within a verse contributes nothing either, so the
-     verse's atom numbers run straight through it. In the Decalogue and at Gen 35:22 the atoms
-     are those of `<cant-combined>`, the text with the marks of both the תחתון and עליון
-     strands, whose atom numbers and letters are the same as either strand's. The reader's
-     module docstring gives each decision with an example. No verse is refused now, and
+     verse's atom numbers run straight through it. In the two Decalogues and at Gen 35:22 the
+     atoms are those of `<cant-combined>`, the text with the marks of both strands, whose atom
+     numbers and letters are the same as either strand's. The reader's module docstring gives
+     each decision with an example. No verse is refused now, and
      `py/tests/test_mam_xml_verses.py` checks both fixes over the whole of MAM-simple.
 
    The fixes changed no atom of any verse that the reader already accepted, so no `_num` in the

@@ -7,7 +7,10 @@ Aleppo Codex and Cambridge MS Add. 1753 line-break flat streams
 (``py_ac_loc/gen_flat_stream.py`` and ``py_cam1753_loc/gen_flat_stream.py``) and the
 Evr. II B 55 page index (``evr-ii-b-55/README.md``). An atom is one written form
 between spaces or maqafs, and the standing rule is that the atoms are what is written
-on the page.
+on the page. What this application uses is where atoms begin and end and which letters
+they have. Pointing and accents play no part in it, so a stream that differs from
+MAM-simple in marks alone, such as a meteg, differs in nothing that matters here (Ben,
+2026-09-26); compare streams without marks, as both line-break checkers do.
 
 ``get_verse_words`` splits each element's text at whitespace, joins the pieces across
 each maqaf into one entry of ``words``, and attaches a lone sof pasuq to the entry
@@ -52,12 +55,13 @@ then contribute, keeping the atoms what is written on the page:
     its own atoms: Lam 5:22 has 8, ending מְאֹֽד׃.
   - <spi-pe3>, <spi-samekh3> within a verse: nothing, as for <spi-pe2> and
     <spi-samekh2>. So Neh 3:4's atoms run from 1 to 22.
-  - <cant-all-three>, in the Decalogue and at Gen 35:22: its <cant-combined> only,
-    read as verse-level <text>, <lp-legarmeih> and <lp-paseq>. That is one text with
-    the marks of both the תחתון strand (<cant-alef>) and the עליון strand
-    (<cant-bet>). Atom numbers and letters are the same as for either strand, but one
-    entry can join atoms that each strand alone divides between two chanted words:
-    Deut 5:6's entries includeלֹ֣א־יִהְיֶ֥͏ֽה־לְךָ֛֩.
+  - <cant-all-three>, in the two Decalogues and at Gen 35:22: its <cant-combined>
+    only, read as verse-level <text>, <lp-legarmeih> and <lp-paseq>. That is one text
+    with the marks of both strands, <cant-alef> and <cant-bet>. In the Decalogues they
+    are the תחתון and עליון strands, and at Gen 35:22 the פשוטה and מדרשית strands.
+    Atom numbers and letters are the same as for either strand, but one entry can join
+    atoms that each strand alone divides between two chanted words. So Deut 5:6's
+    entries include לֹ֣א־יִהְיֶ֥͏ֽה־לְךָ֛֩.
 
 Each of those seven elements has its shape checked against the one it has in every
 occurrence in MAM-simple on 2026-09-26, and any other shape raises ValueError. No
