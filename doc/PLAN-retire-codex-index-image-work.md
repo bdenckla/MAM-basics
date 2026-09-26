@@ -2,7 +2,9 @@
 
 State: live
 
-Ready for execution; recorded 2026-09-12.
+Ready for execution; recorded 2026-09-12. `f2a9ead4` executed part of it on 2026-09-26.
+Two open questions for Ben, recorded that day, should be answered before the remaining
+Python deletions run. Both sections follow “Decisions recorded on 2026-09-12”.
 
 ## Purpose
 
@@ -56,6 +58,63 @@ follow-up disposition from 2026-09-13.
    `codex-index-cam1753`, or `codex-index-leningrad` checkouts or GitHub
    repositories. Their maintained contents moved into MAM-basics on 2026-09-04;
    this plan changes MAM-basics only.
+
+## Executed in part on 2026-09-26
+
+Recorded by a Claude Code cloud session on 2026-09-26. Ben's instruction that day, which an
+agent-written prompt relayed, had four items: find out whether anything kept the Cambridge
+1753 crop editor when the Aleppo one was deleted; remove it if nothing did; "remove both
+line-break editors (aleppo and cam1753)"; and "confirm there are no other crop editors or
+line-break editors".
+
+`f2a9ead4` deleted eight of the 48 Python files that “Remove the image-work Python” lists:
+
+1. the Cambridge 1753 crop editor, `py/main_gen_cam1753_crop_editor.py`, and
+   `py/main_apply_cam1753_crops.py`, whose only input was that editor's export;
+2. the Aleppo line-break editor, `py/main_ac_gen_line_break_editor.py` with
+   `py/py_ac_loc/gen_line_break_editor.py`, and its merge step,
+   `py/main_ac_merge_line_markers.py` with `py/py_ac_loc/merge_line_markers.py`;
+3. the Cambridge 1753 line-break editor, `py/main_cam1753_gen_line_break_editor.py` with
+   `py/py_cam1753_loc/gen_line_break_editor.py`.
+
+The same commit deleted `boj_paths.novc_dir()` and `boj_paths.cam1753_img_dir()`, which
+only the two crop programs called, and updated the live references to all ten. No data
+file changed.
+
+The Cambridge 1753 crop editor had outlived the Aleppo one only because
+`doc/mega-coverage-2026-09-10.md` classed it as working hand work, in §3, rather than as
+dead code, in §6, so phase 6a of `doc/PLAN-mega-coverage.md` had no reason to delete it.
+Nothing else kept it: all 160 Cambridge crops and their 160 coordinate records exist, and
+no recorded decision of Ben's kept it.
+
+No other crop editor or line-break editor is tracked, and MAM-basics' history deleted only
+one before `f2a9ead4`: `py/main_gen_aleppo_crop_editor.py`, in `5f35dea3`. Three editors
+remain, none of them a crop or line-break editor: the column-quadrilateral editors
+`py/main_ac_gen_col_quad_editor.py` and `py/main_cam1753_gen_col_quad_editor.py`, and
+`py/accgram/transcription_editor.py`, which transcribes printed-edition scans line by
+line. The two find-word previewers, which this plan deletes, each keep a crop mode that
+downloads one word's crop as a PNG. MAM-basics never held a Leningrad editor: its
+Leningrad Python, a Wikisource index generator and a UXLC vendoring script, went in
+`985262e2` and `079b1e63`, before decision 6 was recorded.
+
+## Open questions for Ben, recorded 2026-09-26
+
+Recorded by the same Claude Code session, which resolved neither. Each is a deletion that
+this plan orders and that collides with work done after its planning snapshot.
+
+1. **The Evr. II B 55 page index depends on `py/py_ac_loc/mam_xml_verses.py`.** The index
+   in `evr-ii-b-55/` was begun on 2026-09-25. Rule 2 of its README's consumer guide
+   defines an atom number through that module's `get_verse_words` and the split after
+   every maqaf that each package's `gen_flat_stream.py` makes. On 2026-09-26, `139f631e`,
+   `009b6378` and `46e2e524` extended the module to implement Ben's decisions of that day.
+   “Delete the five files under `py/py_ac_loc/`” would delete the module and the Aleppo
+   `gen_flat_stream.py`, and “Delete the seven files under `py/py_cam1753_loc/`” would
+   delete the Cambridge one.
+2. **`AGENTS.md` names `py/py_ac_word_image_helper/alef_bet_to_ascii.py` as the one
+   transliteration for a Hebrew filename component.** That rule arrived with `4e007289`
+   on 2026-09-12, about an hour after the planning snapshot, and the commit that recorded
+   this plan did not contain it. `py/tests/test_tracked_filenames.py` also cites the
+   module. “Delete the six files under `py/py_ac_word_image_helper/`” would delete it.
 
 ## Execution setup
 
@@ -173,16 +232,18 @@ Aleppo page JPEGs, Cambridge spread JPEGs, or ignored Cambridge page JPEGs.
 ## Remove the image-work Python
 
 Expand the deletion set from tracked paths before removing anything. The planning
-snapshot has 48 Python files in the set below. A different expansion is a finding
-to investigate.
+snapshot had 48 Python files in the set below. `f2a9ead4` deleted eight of them on
+2026-09-26, so the set now expands to 40. A different expansion is a finding to
+investigate.
 
 ### Aleppo and shared Aleppo Book-of-Job code
 
 - Delete every `py/main_ac_*.py` except
   `py/main_ac_gen_index_flat_annotated.py`.
 - Delete `py/check_ac_all.py`.
-- Delete the seven files under `py/py_ac_loc/`.
-- Delete the six files under `py/py_ac_word_image_helper/`.
+- Delete the five files under `py/py_ac_loc/`, but see open question 1 first.
+- Delete the six files under `py/py_ac_word_image_helper/`, but see open question 2
+  first.
 - Delete `py/main_list_missing_aleppo_imgs.py`.
 
 `py/main_ac_gen_index_flat_annotated.py` stays because it maintains the page-level
@@ -193,10 +254,11 @@ Aleppo index from retained JSON without using manuscript images.
 - Delete `py/cam1753_paths.py`.
 - Delete every `py/main_cam1753_*.py`.
 - Delete every `py/check_cam1753_*.py`.
-- Delete the eight files under `py/py_cam1753_loc/`.
+- Delete the seven files under `py/py_cam1753_loc/`, but see open question 1 first.
 - Delete the four files under `py/py_cam1753_word_image/`.
-- Delete `py/main_gen_cam1753_crop_editor.py`.
-- Delete `py/main_apply_cam1753_crops.py`.
+
+`py/main_gen_cam1753_crop_editor.py` and `py/main_apply_cam1753_crops.py` stood in this
+list until `f2a9ead4` deleted them on 2026-09-26.
 
 Do not add replacement commands. The purpose is to stop maintaining a workflow
 that Ben does not plan to use again, not to preserve the workflow behind a new
@@ -223,7 +285,10 @@ lookups rather than the retired Book-of-Job crop workflow.
   scope. Keep the Book-of-Job published-image paths and
   `cam1753_crops_path()`, because the surviving authoring pipeline reads the
   finished crops and retained coordinates. State explicitly that these are
-  retained inputs with no maintained producer.
+  retained inputs with no maintained producer. `cam1753_img_dir()` is gone
+  already: `f2a9ead4` deleted it with `py/main_apply_cam1753_crops.py`, its one
+  caller, and the authoring pipeline reaches the finished crops through
+  `jobn_dir()`.
 - Remove the Cambridge code scope and `cam1753_paths` import from
   `py/repo_scopes.py`. Keep the Cambridge data root in `corpus_roots()` so the
   retained hand-authored JSON remains covered by the mark-order check.
@@ -337,7 +402,8 @@ until explained. This plan expects no such change.
 
 ## Expected final diff
 
-- The expected tracked deletions are the remeasured 48 Python files, the 37
+- The expected tracked deletions are the remeasured Python files (48 at the
+  planning snapshot, 40 since `f2a9ead4`), the 37
   Aleppo page JPEGs, the 14 Cambridge spread JPEGs, and the three obsolete crop
   procedures at baseline `068745779405ca38ec079ca25db9c8842195fd37`; the
   measurement script, not these dated figures, defines the execution input.
