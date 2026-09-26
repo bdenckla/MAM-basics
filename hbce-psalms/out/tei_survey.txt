@@ -1,0 +1,284 @@
+== element counts ==
+MA	ab	630
+MA	app	18
+MA	body	15
+MA	caesura	1177
+MA	cb	31
+MA	div	68
+MA	lb	823
+MA	note	5
+MA	pb	15
+MA	pc	137
+MA	rdg	36
+MA	seg	12
+MA	space	658
+MA	supplied	1
+MA	unclear	33
+MA	w	5173
+ML	ab	815
+ML	app	24
+ML	body	20
+ML	caesura	825
+ML	cb	40
+ML	div	88
+ML	fw	7
+ML	lb	1079
+ML	note	3
+ML	num	46
+ML	pb	20
+ML	pc	797
+ML	rdg	48
+ML	seg	77
+ML	space	751
+ML	w	6616
+== attribute values (excluding n on structural elements) ==
+MA	ab	part=F	1
+MA	ab	part=I	1
+MA	div	type=book	15
+MA	div	type=chapter	53
+MA	note	type=editorial	1
+MA	note	type=local	4
+MA	note	{http://www.w3.org/XML/1998/namespace}id=B25K26V1-MA-1	1
+MA	note	{http://www.w3.org/XML/1998/namespace}id=B25K26V11-MA-1	1
+MA	note	{http://www.w3.org/XML/1998/namespace}id=B25K37V14-MA-1	1
+MA	note	{http://www.w3.org/XML/1998/namespace}id=B25K37V9-MA-1	1
+MA	pb	type=page	15
+MA	rdg	hand=corrector	10
+MA	rdg	hand=firsthand	26
+MA	rdg	rend=erased	1
+MA	rdg	rend=other	9
+MA	rdg	type=alt	16
+MA	rdg	type=corr	2
+MA	rdg	type=orig	18
+MA	seg	n=@P2-MA	1
+MA	seg	n=@P4-MA	7
+MA	seg	n=@P4C-MA	2
+MA	seg	n=@P4CL-MA	2
+MA	seg	subtype=colleft	1
+MA	seg	subtype=colright	1
+MA	seg	subtype=dagesh within bet	1
+MA	seg	subtype=overwritten	1
+MA	seg	subtype=pageleft	3
+MA	seg	subtype=pageright	5
+MA	seg	type=line	1
+MA	seg	type=margin	10
+MA	seg	type=other	1
+MA	space	extent=1	78
+MA	space	extent=10	7
+MA	space	extent=11	2
+MA	space	extent=12	1
+MA	space	extent=13	1
+MA	space	extent=16	1
+MA	space	extent=17	1
+MA	space	extent=2	140
+MA	space	extent=3	140
+MA	space	extent=4	89
+MA	space	extent=5	89
+MA	space	extent=6	57
+MA	space	extent=7	29
+MA	space	extent=8	10
+MA	space	extent=9	13
+MA	space	unit=char	635
+MA	space	unit=line	23
+MA	supplied	reason=illegible	1
+MA	supplied	source=tr	1
+MA	unclear	reason=damage to page	7
+MA	unclear	reason=faded ink	26
+ML	ab	part=F	14
+ML	ab	part=I	15
+ML	div	type=book	20
+ML	div	type=chapter	68
+ML	fw	type=lectTitle	7
+ML	note	type=editorial	2
+ML	note	type=local	1
+ML	note	{http://www.w3.org/XML/1998/namespace}id=B25K10V5-ML-1	1
+ML	note	{http://www.w3.org/XML/1998/namespace}id=B25K37V17-ML-1	1
+ML	num	n=10	1
+ML	num	n=11	1
+ML	num	n=12	1
+ML	num	n=13	1
+ML	num	n=14	1
+ML	num	n=15	1
+ML	num	n=16	1
+ML	num	n=17	1
+ML	num	n=18	1
+ML	num	n=19	1
+ML	num	n=2	1
+ML	num	n=20	1
+ML	num	n=21	1
+ML	num	n=22	1
+ML	num	n=23	1
+ML	num	n=24	1
+ML	num	n=25	1
+ML	num	n=26	1
+ML	num	n=27	1
+ML	num	n=28	1
+ML	num	n=29	1
+ML	num	n=3	1
+ML	num	n=30	1
+ML	num	n=31	1
+ML	num	n=32	1
+ML	num	n=33	1
+ML	num	n=34	1
+ML	num	n=36	1
+ML	num	n=37	1
+ML	num	n=4	1
+ML	num	n=40	1
+ML	num	n=41	1
+ML	num	n=42	1
+ML	num	n=43	1
+ML	num	n=45	1
+ML	num	n=46	1
+ML	num	n=47	1
+ML	num	n=48	1
+ML	num	n=49	1
+ML	num	n=5	1
+ML	num	n=50	1
+ML	num	n=51	1
+ML	num	n=6	1
+ML	num	n=7	1
+ML	num	n=8	1
+ML	num	n=9	1
+ML	num	rend=center	46
+ML	num	type=chapNum	46
+ML	pb	type=folio	14
+ML	pb	type=page	6
+ML	rdg	hand=corrector	23
+ML	rdg	hand=firsthand	24
+ML	rdg	hand=firsthandV	1
+ML	rdg	rend=erased	1
+ML	rdg	rend=other	23
+ML	rdg	type=alt	22
+ML	rdg	type=corr	2
+ML	rdg	type=orig	24
+ML	seg	n=@P3C-ML	22
+ML	seg	n=@P3CL-ML	36
+ML	seg	n=@P7C-ML	8
+ML	seg	n=@P7CL-ML	11
+ML	seg	subtype=above	37
+ML	seg	subtype=colleft	16
+ML	seg	subtype=colright	14
+ML	seg	subtype=here	9
+ML	seg	subtype=overwritten	1
+ML	seg	type=line	47
+ML	seg	type=margin	30
+ML	space	extent=1	37
+ML	space	extent=10	3
+ML	space	extent=11	1
+ML	space	extent=12	1
+ML	space	extent=13	4
+ML	space	extent=14	1
+ML	space	extent=15	2
+ML	space	extent=16	1
+ML	space	extent=17	1
+ML	space	extent=18	3
+ML	space	extent=19	1
+ML	space	extent=2	43
+ML	space	extent=20	2
+ML	space	extent=21	2
+ML	space	extent=22	3
+ML	space	extent=23	5
+ML	space	extent=24	5
+ML	space	extent=25	1
+ML	space	extent=26	1
+ML	space	extent=3	170
+ML	space	extent=4	273
+ML	space	extent=5	147
+ML	space	extent=6	29
+ML	space	extent=7	7
+ML	space	extent=8	5
+ML	space	extent=9	3
+ML	space	unit=char	727
+ML	space	unit=line	24
+== seg subtypes ==
+MA	colleft	@P4C-MA	1
+MA	colright	@P4C-MA	1
+MA	dagesh within bet	@P4CL-MA	1
+MA	overwritten	@P4CL-MA	1
+MA	pageleft	@P2-MA	1
+MA	pageleft	@P4-MA	2
+MA	pageright	@P4-MA	5
+ML	above	@P3CL-ML	27
+ML	above	@P7CL-ML	10
+ML	colleft	@P3C-ML	12
+ML	colleft	@P7C-ML	4
+ML	colright	@P3C-ML	10
+ML	colright	@P7C-ML	4
+ML	here	@P3CL-ML	8
+ML	here	@P7CL-ML	1
+ML	overwritten	@P3CL-ML	1
+== marks used inside <w> ==
+MA	U+0591	HEBREW ACCENT ETNAHTA	562
+MA	U+0593	HEBREW ACCENT SHALSHELET	13
+MA	U+0596	HEBREW ACCENT TIPEHA	153
+MA	U+0597	HEBREW ACCENT REVIA	594
+MA	U+0598	HEBREW ACCENT ZARQA	45
+MA	U+059C	HEBREW ACCENT GERESH	6
+MA	U+059D	HEBREW ACCENT GERESH MUQDAM	392
+MA	U+05A1	HEBREW ACCENT PAZER	25
+MA	U+05A3	HEBREW ACCENT MUNAH	919
+MA	U+05A4	HEBREW ACCENT MAHAPAKH	186
+MA	U+05A5	HEBREW ACCENT MERKHA	730
+MA	U+05A8	HEBREW ACCENT QADMA	91
+MA	U+05AA	HEBREW ACCENT YERAH BEN YOMO	76
+MA	U+05AB	HEBREW ACCENT OLE	117
+MA	U+05AC	HEBREW ACCENT ILUY	58
+MA	U+05AD	HEBREW ACCENT DEHI	368
+MA	U+05AE	HEBREW ACCENT ZINOR	85
+MA	U+05B0	HEBREW POINT SHEVA	2713
+MA	U+05B1	HEBREW POINT HATAF SEGOL	150
+MA	U+05B2	HEBREW POINT HATAF PATAH	377
+MA	U+05B3	HEBREW POINT HATAF QAMATS	7
+MA	U+05B4	HEBREW POINT HIRIQ	2170
+MA	U+05B5	HEBREW POINT TSERE	962
+MA	U+05B6	HEBREW POINT SEGOL	859
+MA	U+05B7	HEBREW POINT PATAH	1745
+MA	U+05B8	HEBREW POINT QAMATS	2690
+MA	U+05B9	HEBREW POINT HOLAM	1350
+MA	U+05BA	HEBREW POINT HOLAM HASER FOR VAV	17
+MA	U+05BB	HEBREW POINT QUBUTS	44
+MA	U+05BC	HEBREW POINT DAGESH OR MAPIQ	2838
+MA	U+05BD	HEBREW POINT METEG	968
+MA	U+05BE	HEBREW PUNCTUATION MAQAF	663
+MA	U+05C0	HEBREW PUNCTUATION PASEQ	163
+MA	U+05C1	HEBREW POINT SHIN DOT	714
+MA	U+05C2	HEBREW POINT SIN DOT	151
+MA	U+05C4	HEBREW MARK UPPER DOT	4
+MA	U+05C5	HEBREW MARK LOWER DOT	3
+ML	U+0307	COMBINING DOT ABOVE	4
+ML	U+0591	HEBREW ACCENT ETNAHTA	732
+ML	U+0593	HEBREW ACCENT SHALSHELET	14
+ML	U+0596	HEBREW ACCENT TIPEHA	181
+ML	U+0597	HEBREW ACCENT REVIA	793
+ML	U+0598	HEBREW ACCENT ZARQA	59
+ML	U+059D	HEBREW ACCENT GERESH MUQDAM	534
+ML	U+05A1	HEBREW ACCENT PAZER	38
+ML	U+05A3	HEBREW ACCENT MUNAH	1160
+ML	U+05A4	HEBREW ACCENT MAHAPAKH	242
+ML	U+05A5	HEBREW ACCENT MERKHA	964
+ML	U+05A8	HEBREW ACCENT QADMA	120
+ML	U+05AA	HEBREW ACCENT YERAH BEN YOMO	89
+ML	U+05AB	HEBREW ACCENT OLE	143
+ML	U+05AC	HEBREW ACCENT ILUY	68
+ML	U+05AD	HEBREW ACCENT DEHI	460
+ML	U+05AE	HEBREW ACCENT ZINOR	104
+ML	U+05B0	HEBREW POINT SHEVA	3563
+ML	U+05B1	HEBREW POINT HATAF SEGOL	175
+ML	U+05B2	HEBREW POINT HATAF PATAH	431
+ML	U+05B3	HEBREW POINT HATAF QAMATS	8
+ML	U+05B4	HEBREW POINT HIRIQ	2821
+ML	U+05B5	HEBREW POINT TSERE	1234
+ML	U+05B6	HEBREW POINT SEGOL	1128
+ML	U+05B7	HEBREW POINT PATAH	2244
+ML	U+05B8	HEBREW POINT QAMATS	3448
+ML	U+05B9	HEBREW POINT HOLAM	1699
+ML	U+05BA	HEBREW POINT HOLAM HASER FOR VAV	15
+ML	U+05BB	HEBREW POINT QUBUTS	65
+ML	U+05BC	HEBREW POINT DAGESH OR MAPIQ	3685
+ML	U+05BD	HEBREW POINT METEG	1314
+ML	U+05BE	HEBREW PUNCTUATION MAQAF	840
+ML	U+05C0	HEBREW PUNCTUATION PASEQ	207
+ML	U+05C1	HEBREW POINT SHIN DOT	911
+ML	U+05C2	HEBREW POINT SIN DOT	193
+ML	U+05C4	HEBREW MARK UPPER DOT	3
+ML	U+05C5	HEBREW MARK LOWER DOT	3

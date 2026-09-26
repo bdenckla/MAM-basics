@@ -1,0 +1,507 @@
+ref	MAM	Aleppo	orig|flags	labels	details	docnote	intro	note_text
+Ps.1.1	בַּעֲצַ֢ת	בַּעֲצַ֪ת		policy:atnax-hafukh-encoded-as-galgal		none	ch2	
+Ps.1.2	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none	ch2	
+Ps.1.3	שָׁת֢וּל	שָׁת֪וּל		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.1.4	אֲֽשֶׁר־תִּדְּפֶ֥נּוּ	אֲֽ֥שֶׁר־תִּדְּפֶ֥נּוּ		accent:Aleppo-has:ACCENT MERKHA	cluster 0 (א): MAM[POINT HATAF PATAH,POINT METEG] vs A[POINT HATAF PATAH,POINT METEG,ACCENT MERKHA]	none		
+Ps.1.6	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.2.2	עַל־יְ֝הֹוָ֗ה	עַל־יְ֝הוָה		policy:divine-name-holam; accent:MAM-has:ACCENT REVIA	cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]	none	ch2	
+Ps.2.7	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		verse-note	ch2,ch5	['בְּנִ֥י', {'tmpl_name': 'מ:מקף אפור'}, 'אַ֑תָּה'] => "ראו ברויאר, טעמי המקרא, יא.47 הערה 27."
+Ps.2.11	אֶת־יְהֹוָ֣ה	אֶת־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.3.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.3.2	מָה־רַבּ֣וּ	מָֽה־רַבּ֣וּ		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none		
+Ps.3.3	אֹמְרִ֢ים	אֹמְרִ֪ים		policy:atnax-hafukh-encoded-as-galgal		none	ch2	
+Ps.3.4	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.3.5	אֶל־יְהֹוָ֣ה	אֶל־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.3.6	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.3.8	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none	ch2	
+Ps.3.9	לַֽיהֹוָ֥ה	לַֽיהוָ֥ה		policy:divine-name-holam		none		
+Ps.4.4	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.4.4	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.4.5	וְֽאַל־תֶּ֫חֱטָ֥אוּ	וְֽאַל־תֶּ֫חֱטָ֥או		dagesh:MAM-has:POINT DAGESH OR MAPIQ	cluster 4 (ו): MAM[POINT DAGESH OR MAPIQ] vs A[]	none		
+Ps.4.6	אֶל־יְהֹוָֽה	אֶל־יְהוָֽה		policy:divine-name-holam		none		
+Ps.4.7	מִֽי־יַרְאֵ֢נ֫וּ	מִֽי־יַרְאֵ֪נ֫וּ		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.4.7	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		none	ch2,ch5	
+Ps.4.9	אֶשְׁכְּבָ֢ה	אֶשְׁכְּבָ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.4.9	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.5.2	יְהֹוָ֗ה	יְהוָ֑֗ה		policy:divine-name-holam; accent:Aleppo-has:ACCENT ETNAHTA	cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS,ACCENT ETNAHTA,ACCENT REVIA]	word-note	ch5	יְהֹוָ֗ה => ["=ל,ש1,ק3 ומ\"ש (טעם רביע באות וי\"ו), וכך הכריעו ברויאר ומג\"ה, וכמו כן בדפוסים", {"tmpl_name": "ש"}, "א!=יְהוָ֑֗ה (טעם רביע וטעם אתנח ביחד באות בוי\"ו)", {"t
+Ps.5.4	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.5.6	ה֭וֹלְלִים	ה֖וֹלֲלִים		accent:MAM-has:ACCENT DEHI; accent:Aleppo-has:ACCENT TIPEHA; policy:hataf-non-guttural	cluster 0 (ה): MAM[ACCENT DEHI] vs A[ACCENT TIPEHA]	word-note	ch5	{'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'ה֭וֹלְﬞלִים', '2': 'ה֭וֹלְﬞלִ֭ים'}} => "א=ה֭וֹלֲלִים (חטף)"
+Ps.5.7	תְּאַבֵּד֮	תְּאַבֵּדּ֮		dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 3 (ד): MAM[ACCENT ZINOR] vs A[POINT DAGESH OR MAPIQ,ACCENT ZINOR]	none		
+Ps.5.7	דֹּבְרֵ֢י	דׂבְרֵ֪י		dagesh:MAM-has:POINT DAGESH OR MAPIQ; vowel:MAM-has:POINT HOLAM; shin-sin-dot:Aleppo-has:POINT SIN DOT; policy:atnax-hafukh-encoded-as-galgal	cluster 0 (ד): MAM[POINT DAGESH OR MAPIQ,POINT HOLAM] vs A[POINT SIN DOT]	none		
+Ps.5.7	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		none		
+Ps.5.8	אֶל־הֵֽיכַל־קָ֝דְשְׁךָ֗	אֶל־הֵֽיכַל־קָ֝דְשְׁךָ֗		order-only		none		
+Ps.5.9	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		verse-note	ch5	שׁוֹרְﬞרָ֑י => "א=שׁוֹרֲרָ֑י (חטף)"
+Ps.5.9	שׁוֹרְרָ֑י	שׁוֹרֲרָ֑י		policy:hataf-non-guttural		word-note	ch5	שׁוֹרְﬞרָ֑י => "א=שׁוֹרֲרָ֑י (חטף)"
+Ps.5.9	הַיְשַׁ֖ר	הַּוְשַּׁ֥ר		ketiv-qere	skel הישר vs הושר	verse-note	ch5	שׁוֹרְﬞרָ֑י => "א=שׁוֹרֲרָ֑י (חטף)"
+Ps.5.10	קִרְבָּ֢ם	קִרְבָּ֪ם		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.5.10	יַחֲלִיקֽוּן	יַחֲלִֽיקוּן		meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 2 (ל): MAM[POINT HIRIQ] vs A[POINT HIRIQ,POINT METEG]; cluster 4 (ק): MAM[POINT METEG] vs A[]	none		
+Ps.5.11	הַ֥אֲשִׁימֵ֨ם ׀	הַֽאֲשִׁימֵ֨ם ׀		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (ה): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]	none		
+Ps.5.11	מִֽמֹּעֲצ֢וֹתֵ֫יהֶ֥ם	מִֽמֹּעֲצ֪וֹתֵ֫יהֶ֥ם		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.5.13	תְּבָרֵ֢ךְ	תְּבָרֵ֪ךְ		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.5.13	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.6.2	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.6.3	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		verse-note	ch5	אֻמְלַ֫ל => ["=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויא
+Ps.6.3	אֻמְלַ֫ל	אֻמְלָ֫ל		vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS	cluster 2 (ל): MAM[POINT PATAH,ACCENT OLE] vs A[POINT QAMATS,ACCENT OLE]	word-note	ch5	אֻמְלַ֫ל => ["=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויא
+Ps.6.3	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note	ch5	אֻמְלַ֫ל => ["=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויא
+Ps.6.3	עֲצָמָֽי	עֲצָמָֽי		order-only		verse-note	ch5	אֻמְלַ֫ל => ["=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויא
+Ps.6.4	וְאַתָּ֥ה	ואתה	|alt=וְאַתָּֽ,app	unpointed-orig-with-alt		none		
+Ps.6.4	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.6.5	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.6.8	עָשְׁשָׁ֣ה	עָשֲׁשָׁ֣ה		policy:hataf-non-guttural		word-note	ch5	עָשְׁﬞשָׁ֣ה => "א=עָשֲׁשָׁ֣ה (חטף)"
+Ps.6.8	עָ֝תְקָ֗ה	עָ֜תְקָ֗ה		accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH	cluster 0 (ע): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,ACCENT GERESH]	verse-note	ch5	עָשְׁﬞשָׁ֣ה => "א=עָשֲׁשָׁ֣ה (חטף)" || בְּכׇל־צוֹרְﬞרָֽי => "א=בְּכׇל־צוֹרֲרָֽי (חטף)"
+Ps.6.8	בְּכָל־צוֹרְרָֽי	בְּכָל־צוֹרֲרָֽי		policy:hataf-non-guttural		word-note	ch5	בְּכׇל־צוֹרְﬞרָֽי => "א=בְּכׇל־צוֹרֲרָֽי (חטף)"
+Ps.6.9	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.6.10	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.6.10	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.7.1	לַֽיהֹוָ֑ה	לַֽיהוָ֑ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה" || עַל־דִּבְרֵי־כ֝֗וּשׁ => "א!=עַל־דִּבְרֵי־כ֝֗וּשׁ א!,ל (גרש ונקודת הרביע ביחד באותה אות, בניגוד לשיטת-א אבל בהתאם לשיטת-ל)"
+Ps.7.2	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.7.2	אֱ֭לֹהַי	אֱ֭לֹ֗הַי		accent:Aleppo-has:ACCENT REVIA	cluster 1 (ל): MAM[POINT HOLAM] vs A[POINT HOLAM,ACCENT REVIA]	none		
+Ps.7.4	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.7.5	צוֹרְרִ֣י	צוֹרֲרִ֣י		policy:hataf-non-guttural		word-note	ch5	צוֹרְﬞרִ֣י => "א=צוֹרֲרִ֣י (חטף)"
+Ps.7.6	יִ֥רַדֹּֽף־אוֹיֵ֨ב ׀	—		missing-in-Aleppo		word-note	ch2,ch5	['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.7.6	—	יִֽרַדֹּ֥ף		extra-in-Aleppo		word-note	ch2,ch5	['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.7.6	—	אוֹיֵ֨ב ׀		extra-in-Aleppo		word-note	ch2,ch5	['יִ֥רַדֹּֽף־אוֹיֵ֨ב', {'tmpl_name': 'מ:לגרמיה-2'}, ' נַפְשִׁ֡י'] => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יִ֥רַדֹּֽף אוֹיֵ֨ב", {"tmpl_name": "מ:לגרמיה-2"}, " נַפְשִׁ֡י"]
+Ps.7.7	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		verse-note	ch5	צוֹרְﬞרָ֑י => "א=צוֹרֲרָ֑י (חטף)"
+Ps.7.7	צוֹרְרָ֑י	צוֹרֲרָ֑י		policy:hataf-non-guttural		word-note	ch5	צוֹרְﬞרָ֑י => "א=צוֹרֲרָ֑י (חטף)"
+Ps.7.8	תְּסֽוֹבְבֶ֑ךָּ	תְּסֽוֹבֲבֶ֑ךָּ		policy:hataf-non-guttural		word-note	ch5	תְּסֽוֹבְﬞבֶ֑ךָּ => "א=תְּסֽוֹבֲבֶ֑ךָּ (חטף)"
+Ps.7.9	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		none		
+Ps.7.9	יָדִ֢ין	יָדִ֪ין		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.7.9	שָׁפְטֵ֥נִי	שָׁפֲטֵ֥נִי		policy:hataf-non-guttural; hataf-without-mam-note		none		
+Ps.7.9	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.7.9	כְּצִדְקִ֖י	כְּצִדְ֗קִ֖י		accent:Aleppo-has:ACCENT REVIA	cluster 2 (ד): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT REVIA]	none		
+Ps.7.10	וּתְכוֹנֵ֢ן	וּתְכוֹנֵ֪ן		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.7.10	צַדִּֽיק	צַדִּֽיק		order-only		none		
+Ps.7.16	כָּ֭רָה	כָּ֭רָֽה		meteg:Aleppo-has:POINT METEG	cluster 1 (ר): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none		
+Ps.7.18	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note		עֶלְיֽוֹן => "=ל; הדף בכתר פגום משני צידיו בפינה שבה נכתבה \"עֶלְיֽוֹן\", וראו עוד לעיל ב,ד."
+Ps.7.18	שֵֽׁם־יְהֹוָ֥ה	שֵֽׁם־יְהוָ֥ה		policy:divine-name-holam		verse-note		עֶלְיֽוֹן => "=ל; הדף בכתר פגום משני צידיו בפינה שבה נכתבה \"עֶלְיֽוֹן\", וראו עוד לעיל ב,ד."
+Ps.8.2	יְהֹוָ֤ה	יְהוָ֤ה		policy:divine-name-holam		none		
+Ps.8.2	מָה־אַדִּ֣יר	מָֽה־אַדִּ֣יר		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none		
+Ps.8.3	עוֹלְלִ֨ים ׀	עֽוֹלֲלִ֨ים ׀		meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural	cluster 0 (ע): MAM[] vs A[POINT METEG]	word-note	ch5	['עוֹלְﬞלִ֨ים', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<עוֹלֲלִ֨ים", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"]
+Ps.8.3	יִסַּ֢דְתָּ֫	יִסַּ֪דְתָּ֫		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch5	['עוֹלְﬞלִ֨ים', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<עוֹלֲלִ֨ים", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"] || צוֹרְﬞרֶ֑יךָ => "א=צוֹרֲרֶ֑יךָ (חטף)"
+Ps.8.3	צוֹרְרֶ֑יךָ	צוֹרֲרֶ֑יךָ		policy:hataf-non-guttural		word-note	ch5	צוֹרְﬞרֶ֑יךָ => "א=צוֹרֲרֶ֑יךָ (חטף)"
+Ps.8.7	כֹּ֝֗ל	כֹּ֝ל		policy:revia-mugrash-dot		word-note		כֹּ֝֗ל => "א=כֹּ֝ל (השמטת נקודת הרביע)"
+Ps.8.8	וְ֝גַ֗ם	וְ֝֜גַ֗ם		accent:Aleppo-has:ACCENT GERESH	cluster 0 (ו): MAM[POINT SHEVA,ACCENT GERESH MUQDAM] vs A[POINT SHEVA,ACCENT GERESH MUQDAM,ACCENT GERESH]	none		
+Ps.8.10	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.9.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.9.7	לָ֫נֶ֥צַח	לָ֫נֶ֥צָח		vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS	cluster 2 (צ): MAM[POINT PATAH] vs A[POINT QAMATS]	none		
+Ps.9.8	וַֽ֭יהֹוָה	וַֽ֭יהוָה		policy:divine-name-holam		none		
+Ps.9.9	בְּמֵישָׁרִֽים	בְּמֵישָׁרִֽים	|sof-pasuq-pc	order-only		none		
+Ps.9.10	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.9.11	יְהֹוָֽה	יְהוָֽה	|sof-pasuq-pc	policy:divine-name-holam		none		
+Ps.9.12	לַ֭יהֹוָה	לַ֭יהוָה		policy:divine-name-holam		none		
+Ps.9.13	עֲנָוִֽים	עֲנָיִֽים	|alt=ענוים,app,sof-pasuq-pc	ketiv-qere	skel ענוים vs עניים	none		
+Ps.9.14	חָֽנְנֵ֬נִי	חָֽנֲנֵ֬נִי		policy:hataf-non-guttural		word-note	ch5	חָֽנְﬞנֵ֬נִי => "א=חָֽנֲנֵ֬נִי (חטף); בכתר יש לא רק געיה בחי\"ת אלא גם חטף בנו\"ן הראשונה, כך שהשווא במהדורתנו נע בוודאי. ואילו במהדורת סימנים סימנו קמץ קטן תחת החי\"ת, השמיטו 
+Ps.9.14	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		verse-note	ch5	חָֽנְﬞנֵ֬נִי => "א=חָֽנֲנֵ֬נִי (חטף); בכתר יש לא רק געיה בחי\"ת אלא גם חטף בנו\"ן הראשונה, כך שהשווא במהדורתנו נע בוודאי. ואילו במהדורת סימנים סימנו קמץ קטן תחת החי\"ת, השמיטו  || מְ֝רוֹמְﬞמִ֗י => "א=מְ֝רוֹמֲמִ֗י (חטף)"
+Ps.9.14	מְ֝רוֹמְמִ֗י	מְ֝רוֹמֲמִ֗י		policy:hataf-non-guttural		word-note	ch5	מְ֝רוֹמְﬞמִ֗י => "א=מְ֝רוֹמֲמִ֗י (חטף)"
+Ps.9.17	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		none		
+Ps.9.17	מִשְׁפָּ֢ט	מִשְׁפָּ֪ט		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.9.19	עֲ֝נִיִּ֗ים	עֲ֜נִוִיּ֗ם	|alt=עניים,app	ketiv-qere	skel עניים vs ענוים	word-note	ch5	{'tmpl_name': 'כו״ק', 'tmpl_params': {'1': 'ענוים', '2': 'עֲ֝נִיִּ֗ים'}} => "א-כתיב=עֲ֝נִויִּ֗ם"
+Ps.9.20	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.9.21	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.10.1	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.10.1	בַּצָּרָֽה	בַּצָּרָֽה		order-only		none		
+Ps.10.2	יִדְלַ֣ק	יִּדְלַ֣ק		dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 0 (י): MAM[POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]	none		
+Ps.10.3	יְהֹוָֽה	יְהוָֽה	|sof-pasuq-pc	policy:divine-name-holam		none		
+Ps.10.5	דְרָכָ֨ו ׀	דרכו	|alt=דְרָכָ֜יו׀,app	unpointed-orig-with-alt		verse-note	ch5	כׇּל־צ֝וֹרְﬞרָ֗יו => "א=כׇּל־צ֝וֹרֲרָ֗יו (חטף)"
+Ps.10.5	כָּל־צ֝וֹרְרָ֗יו	כָּל־צ֝וֹרֲרָ֗יו		policy:hataf-non-guttural		word-note	ch5	כׇּל־צ֝וֹרְﬞרָ֗יו => "א=כׇּל־צ֝וֹרֲרָ֗יו (חטף)"
+Ps.10.6	לֹֽא־בְרָֽע	לֹֽא־בְרָע	|sof-pasuq-pc	silluq:MAM-has:POINT METEG	cluster 1 (ר): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]	none		
+Ps.10.10	יִדְכֶּ֥ה	ודכה	|alt=יִדְכֶּֽה,app	unpointed-orig-with-alt		none	appendices,ch2	
+Ps.10.10	יָשֹׁ֑חַ	יָשׁ֑ׄחַ		vowel:MAM-has:POINT HOLAM; other:Aleppo-has:MARK UPPER DOT	cluster 1 (ש): MAM[POINT SHIN DOT,POINT HOLAM,ACCENT ETNAHTA] vs A[POINT SHIN DOT,MARK UPPER DOT,ACCENT ETNAHTA]	none	appendices,ch2	
+Ps.10.10	וְנָפַ֥ל	וְנָפַֽל		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 2 (פ): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]	none	appendices,ch2	
+Ps.10.10	בַּ֝עֲצוּמָ֗יו	בַּ֜עֲצוּמָ֗יו		accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT GERESH MUQDAM] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT GERESH]	none	appendices,ch2	
+Ps.10.10	חֵ֣ל	—		missing-in-Aleppo		none	appendices,ch2	
+Ps.10.10	כָּאִֽים	—		missing-in-Aleppo		none	appendices,ch2	
+Ps.10.10	—	חלכאים	|alt=חֵל כָּאִֽים,app	extra-in-Aleppo		none	appendices,ch2	
+Ps.10.12	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.10.12	עֲנָוִֽים	עניים	|alt=עֲנָוִֽים,app	unpointed-orig-with-alt		none		
+Ps.10.14	כִּי־אַתָּ֤ה ׀	כִּֽי־אַתָּ֤ה ׀		meteg:Aleppo-has:POINT METEG	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]	none		
+Ps.10.14	לָתֵ֢ת	לָתֵ֪ת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.10.16	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.10.17	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.11.1	בַּֽיהֹוָ֨ה ׀	בַּֽיהוָ֨ה ׀		policy:divine-name-holam		verse-note	ch5	לְדָ֫וִ֥ד => ["=ל", {"tmpl_name": "ש"}, "א!=לְדָ֥֫וִד (טעם ה\"יורד\" נכתב לפני החיריק מתחת לאות דל\"ת ביחד עם ה\"עולה\")"] || {'tmpl_name': 'ר3'} => "פרשה פתוחה"
+Ps.11.1	נ֝֗וּדִי	נודו	|alt=נ֜וּדִי,app	unpointed-orig-with-alt		word-note	ch5	{'tmpl_name': 'כו״ק', 'tmpl_params': {'1': 'נודו', '2': 'נ֝֗וּדִי'}} => "א-קרי=נ֝וּדִי (השמטת נקודת הרביע)"
+Ps.11.2	כּוֹנְנ֣וּ	כּוֹנֲנ֣וּ		policy:hataf-non-guttural		word-note	ch5	כּוֹנְﬞנ֣וּ => "א=כּוֹנֲנ֣וּ (חטף)"
+Ps.11.2	בְּמוֹ־אֹ֝֗פֶל	בְּמוֹ־אֹ֝פֶל		policy:revia-mugrash-dot		word-note	ch5	בְּמוֹ־אֹ֝֗פֶל => "א=בְּמוֹ־אֹ֝פֶל (השמטת נקודת הרביע)"
+Ps.11.4	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		none		
+Ps.11.4	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		none		
+Ps.11.4	בַּשָּׁמַ֢יִם	בַּשָּׁמַ֪יִם		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.11.5	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		none		
+Ps.11.5	צַדִּ֢יק	צַדִּ֪יק		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.11.7	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.12.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.12.2	כִּֽי־גָמַ֣ר	כִּי־גָמַ֣ר		meteg:MAM-has:POINT METEG	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]	none		
+Ps.12.4	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.12.6	מֵאֶנְקַ֢ת	מֵאֶנְקַ֪ת		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2,ch5	יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note	ch2,ch5	יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6	יָפִ֥יחַֽ־לֽוֹ	—		missing-in-Aleppo		word-note	ch2,ch5	יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6	—	יָפִ֥יחַֽ		extra-in-Aleppo		word-note	ch2,ch5	יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.6	—	לֽוֹ	|sof-pasuq-pc	extra-in-Aleppo		word-note	ch2,ch5	יָפִ֥יחַֽ־לֽוֹ => ["=א (מקף בתיבת משרת)", {"tmpl_name": "ש"}, "ל=יָפִ֥יחַֽ לֽוֹ (בלי מקף) וכך אצל ברויאר"]
+Ps.12.7	אִ֥מְר֣וֹת	אִֽמֲר֣וֹת		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural	cluster 0 (א): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]	word-note	ch2,ch5	אִ֥מְﬞר֣וֹת => "א=אִ֥מֲר֣וֹת (חטף)"
+Ps.12.7	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		verse-note	ch2,ch5	אִ֥מְﬞר֣וֹת => "א=אִ֥מֲר֣וֹת (חטף)"
+Ps.12.7	אֲמָר֢וֹת	אֲמָר֪וֹת		policy:atnax-hafukh-encoded-as-galgal		word-note	ch2,ch5	אִ֥מְﬞר֣וֹת => "א=אִ֥מֲר֣וֹת (חטף)"
+Ps.12.8	אַתָּֽה־יְהֹוָ֥ה	אַתָּֽה־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.13.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.13.4	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.13.6	לַֽיהֹוָ֑ה	לַ֖יהוָ֑ה		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam	cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,ACCENT TIPEHA]	none	ch2	
+Ps.14.2	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.14.2	הִשְׁקִ֢יף	הִשְׁקִ֪יף		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.14.2	דֹּ֝רֵ֗שׁ	דֹּ֝רֵשׁ		accent:MAM-has:ACCENT REVIA	cluster 1 (ר): MAM[POINT TSERE,ACCENT REVIA] vs A[POINT TSERE]	none		
+Ps.14.3	יַחְדָּ֢ו	יַחְדָּ֪ו		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.14.3	אֵ֝֗ין	אֵ֝ין		policy:revia-mugrash-dot		none		
+Ps.14.4	כָּל־פֹּ֢עֲלֵ֫י	כָּל־פֹּ֪עֲלֵ֫י		policy:atnax-hafukh-encoded-as-galgal		none	ch5	
+Ps.14.4	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none	ch5	
+Ps.14.6	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.14.7	יְשׁוּעַ֢ת	יְשׁוּעַ֪ת		policy:atnax-hafukh-encoded-as-galgal		none	ch2	
+Ps.14.7	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none	ch2	
+Ps.25.2	אַל־יַעַלְצ֖וּ	אַל־יַֽעַלְצ֖וּ		meteg:Aleppo-has:POINT METEG	cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]	word-note		אַל־יַעַלְצ֖וּ => ["=א (אין געיה)", {"tmpl_name": "ש"}, "ל=אַל־יַֽעַלְצ֖וּ (געיה)"]
+Ps.25.4	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.25.6	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.25.7	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		none	ch2	
+Ps.25.8	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.25.10	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.25.11	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.25.12	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.25.14	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.25.15	אֶל־יְהֹוָ֑ה	אֶל־יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.25.16	פְּנֵֽה־אֵלַ֥י	פְּנֵה־אֵלַ֥י		meteg:MAM-has:POINT METEG	cluster 1 (נ): MAM[POINT TSERE,POINT METEG] vs A[POINT TSERE]	none		
+Ps.25.22	צָרוֹתָֽיו	צָֽרוֹתָיו	|sof-pasuq-pc	meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 0 (צ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]; cluster 3 (ת): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]	word-note		צָרוֹתָֽיו => ["=א,ש1 (אין געיה)", {"tmpl_name": "ש"}, "ל!=צָֽרוֹתָיו (געיה וחסר סילוק)", {"tmpl_name": "ש"}, "הערות ברויאר ודותן והמקליד"]
+Ps.26.1	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		verse-note		['לְדָוִ֨ד', {'tmpl_name': 'מ:לגרמיה-2'}] => "אין פרשה לאחר הכותרת"
+Ps.26.1	וּבַיהֹוָ֥ה	וּבַיהוָ֥ה		vowel:MAM-has:POINT HOLAM	cluster 3 (ה): MAM[POINT HOLAM] vs A[]	verse-note		['לְדָוִ֨ד', {'tmpl_name': 'מ:לגרמיה-2'}] => "אין פרשה לאחר הכותרת"
+Ps.26.2	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.26.2	צָרְפָ֖ה	צְרוֹפָה	|alt=צָרְפָ֖ה,app	ketiv-qere	skel צרפה vs צרופה	none		
+Ps.26.4	לֹֽא־יָ֭שַׁבְתִּי	לֹא־יָ֭שַׁבְתִּי		meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	none		
+Ps.26.6	וַאֲסֹבְבָ֖ה	וַאֲסֹבֲבָ֖ה		policy:hataf-non-guttural		word-note	ch5	וַאֲסֹבְﬞבָ֖ה => "א=וַאֲסֹבֲבָ֖ה (חטף)"
+Ps.26.6	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		verse-note	ch5	וַאֲסֹבְﬞבָ֖ה => "א=וַאֲסֹבֲבָ֖ה (חטף)"
+Ps.26.8	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.26.10	וִ֝ימִינָ֗ם	וִֽ֝ימִינָ֗ם		meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT HIRIQ,ACCENT GERESH MUQDAM] vs A[POINT HIRIQ,POINT METEG,ACCENT GERESH MUQDAM]	none		
+Ps.26.12	יְהֹוָֽה	יְהוָֽה	|sof-pasuq-pc	policy:divine-name-holam		word-note	ch5	יְהֹוָֽה => "=א (בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
+Ps.27.1	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.27.1	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.27.2	לֶאֱכֹ֢ל	לֶאֱכֹ֪ל		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.27.3	לֹא־יִירָ֢א	לֹא־יִירָ֪א		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.27.4	מֵאֵת־יְהֹוָה֮	מֵֽאֵת־יְהוָה֮		meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	none		
+Ps.27.4	אוֹתָ֢הּ	אוֹתָ֪הּ		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.27.4	בְּבֵית־יְ֭הֹוָה	בְּבֵית־יְ֭הוָה		policy:divine-name-holam		none		
+Ps.27.4	בְּנֹעַם־יְ֝הֹוָ֗ה	בְּנֹעַם־יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.27.5	בְּי֢וֹם	בְּי֪וֹם		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch5	יְרוֹמְﬞמֵֽנִי => ["=ש1,ק-מ", {"tmpl_name": "ש"}, "א!=יְרוֹמֲמֵֽנִּי (דגש מיותר באות נו\"ן [וגם חטף כמנהגו]) וכן הכריעו במג\"ה", {"tmpl_name": "ש"}, "הערת ייבין לגבי הדגש"]
+Ps.27.5	יְרוֹמְמֵֽנִי	יְרוֹמֲמֵֽנִּי		policy:hataf-non-guttural; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 5 (נ): MAM[POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ]	word-note	ch5	יְרוֹמְﬞמֵֽנִי => ["=ש1,ק-מ", {"tmpl_name": "ש"}, "א!=יְרוֹמֲמֵֽנִּי (דגש מיותר באות נו\"ן [וגם חטף כמנהגו]) וכן הכריעו במג\"ה", {"tmpl_name": "ש"}, "הערת ייבין לגבי הדגש"]
+Ps.27.6	לַֽיהֹוָֽה	לַיהוָֽה	|sof-pasuq-pc	meteg:MAM-has:POINT METEG; policy:divine-name-holam	cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH]	none		
+Ps.27.7	שְׁמַע־יְהֹוָ֖ה	שְׁמַע־יְהוָ֖ה		policy:divine-name-holam		none		
+Ps.27.8	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.27.9	אַ֥ל	אַֽל		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (א): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]	none		
+Ps.27.10	וַֽיהֹוָ֣ה	וַֽיהוָ֣ה		policy:divine-name-holam		none		
+Ps.27.10	יַאַסְפֵֽנִי	יַֽאַסְפֵֽנִי		meteg:Aleppo-has:POINT METEG	cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]	none		
+Ps.27.11	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		verse-note	ch2,ch5	שֽׁוֹרְﬞרָֽי => "א=שֽׁוֹרֲרָֽי (חטף)"
+Ps.27.11	שֽׁוֹרְרָֽי	שׁוֹרְרָֽי		meteg:MAM-has:POINT METEG	cluster 0 (ש): MAM[POINT SHIN DOT,POINT METEG] vs A[POINT SHIN DOT]	word-note	ch2,ch5	שֽׁוֹרְﬞרָֽי => "א=שֽׁוֹרֲרָֽי (חטף)"
+Ps.27.12	עֵדֵי־שֶׁ֝֗קֶר	עֵֽדֵי־שֶׁ֝֗קֶר		meteg:Aleppo-has:POINT METEG	cluster 0 (ע): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	word-note		עֵדֵי־שֶׁ֝֗קֶר => "=א (נקודת הרביע מסומנת בכתב־היד)"
+Ps.27.13	לׅׄוּׅׄלֵׅ֗ׄאׅׄ	לׅׄוּלֵׅׄ֗אׅׄ		other:MAM-has:MARK LOWER DOT; other:MAM-has:MARK UPPER DOT	cluster 1 (ו): MAM[POINT DAGESH OR MAPIQ,MARK LOWER DOT,MARK UPPER DOT] vs A[POINT DAGESH OR MAPIQ]	word-note	ch5	לׅׄוּׅׄלֵׅ֗ׄאׅׄ => ["=א ומסורת-א <נקוד מלמע' ולמטה> ודעה ראשונה במנחת שי (\"כן הוא בספרים מדוייקים וכן מצאתי במסורה כתב־יד: דין נקוד למעלה ולמטה ושארא כי אם לעיל\")", {"tmpl_name"
+Ps.27.13	בְּֽטוּב־יְהֹוָ֗ה	בְּֽטוּב־יְהוָ֗ה		policy:divine-name-holam		verse-note	ch5	לׅׄוּׅׄלֵׅ֗ׄאׅׄ => ["=א ומסורת-א <נקוד מלמע' ולמטה> ודעה ראשונה במנחת שי (\"כן הוא בספרים מדוייקים וכן מצאתי במסורה כתב־יד: דין נקוד למעלה ולמטה ושארא כי אם לעיל\")", {"tmpl_name"
+Ps.27.14	אֶל־יְ֫הֹוָ֥ה	אֶל־יְה֫וָ֥ה		oleh-position; vowel:MAM-has:POINT HOLAM	oleh MAM@[0] Aleppo@[1]; cluster 1 (ה): MAM[POINT HOLAM] vs A[ACCENT OLE]	word-note	ch5	אֶל־יְ֫הֹוָ֥ה => "=א (מקום ה\"עולה\" באות יו\"ד כשיטתו)"
+Ps.27.14	אֶל־יְהֹוָֽה	אֶל־יְהוָֽה		policy:divine-name-holam		word-note	ch5	אֶל־יְ֫הֹוָ֥ה => "=א (מקום ה\"עולה\" באות יו\"ד כשיטתו)"
+Ps.28.1	לְדָוִ֡ד	לְ֬דָוִ֡ד		accent:Aleppo-has:ACCENT ILUY	cluster 0 (ל): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT ILUY]	word-note		לְדָוִ֡ד => "אין פרשה לאחר הכותרת"
+Ps.28.1	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		verse-note		לְדָוִ֡ד => "אין פרשה לאחר הכותרת"
+Ps.28.1	אַֽל־תֶּחֱרַ֢שׁ	אַֽל־תֶּחֱרַ֪שׁ		policy:atnax-hafukh-encoded-as-galgal		verse-note		לְדָוִ֡ד => "אין פרשה לאחר הכותרת"
+Ps.28.3	וְעִם־פֹּ֢עֲלֵ֫י	וְעִם־פֹּ֪עֲלֵ֫י		policy:atnax-hafukh-encoded-as-galgal		none	ch5	
+Ps.28.4	וּכְרֹ֢עַ	וּכְרֹ֪עַ		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.28.5	לֹ֪א	לֹא		accent:MAM-has:ACCENT YERAH BEN YOMO	cluster 0 (ל): MAM[POINT HOLAM,ACCENT YERAH BEN YOMO] vs A[POINT HOLAM]	none		
+Ps.28.5	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.28.6	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.28.6	כִּי־שָׁ֝מַ֗ע	כִּי־שָׁ֝מַע		accent:MAM-has:ACCENT REVIA	cluster 1 (מ): MAM[POINT PATAH,ACCENT REVIA] vs A[POINT PATAH]	none		
+Ps.28.7	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		none	ch5	
+Ps.28.8	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.29.1	לַ֭יהֹוָה	לַ֭יהוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.29.1	לַ֝יהֹוָ֗ה	לַ֝יהוָ֗ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.29.2	לַ֭יהֹוָה	לַֽ֭יהוָה		meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	cluster 0 (ל): MAM[POINT PATAH,ACCENT DEHI] vs A[POINT PATAH,POINT METEG,ACCENT DEHI]	none		
+Ps.29.2	לַ֝יהֹוָ֗ה	לַ֝יהוָ֗ה		policy:divine-name-holam		none		
+Ps.29.3	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.29.3	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.29.4	קוֹל־יְהֹוָ֥ה	קוֹל־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.29.4	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.29.5	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.29.5	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.29.7	קוֹל־יְהֹוָ֥ה	קוֹל־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.29.8	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.29.8	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.29.9	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.29.9	וַֽיֶּחֱשֹׂ֢ף	וַֽיֶּחֱשֹׂ֪ף		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.29.10	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.29.10	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.29.11	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.29.11	יְהֹוָ֓ה ׀	יְהוָ֓ה ׀		policy:divine-name-holam		none		
+Ps.30.2	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.30.3	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.30.4	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		verse-note	ch2	{'tmpl_name': 'כו״ק', 'tmpl_params': {'1': 'מיורדי', '2': {'tmpl_name': 'מ:קמץ', 'tmpl_params': {'ד': 'מִיׇּֽרְדִי־', 'ס': 'מִיָּֽרְדִי־'}}}} => ["א=יתיר ו'. לגבי קמץ קטן בתיבה זו ראו ויינברג 3.2.1.3; במהדורת סימנים הדפיסו קמץ רחב וגעיה, ואילו בתנ\"ך קורן קמץ קטן עם מתג.", {"tmpl_name": "ש"}, "בפירוש דעת
+Ps.30.4	מִיָּֽרְדִי־בֽוֹר	מִיָּֽוֹרְדִי־בֽוֹר	|alt=מִיָּֽרְדִי־,app	ketiv-qere	skel מירדי vs מיורדי	verse-note	ch2	{'tmpl_name': 'כו״ק', 'tmpl_params': {'1': 'מיורדי', '2': {'tmpl_name': 'מ:קמץ', 'tmpl_params': {'ד': 'מִיׇּֽרְדִי־', 'ס': 'מִיָּֽרְדִי־'}}}} => ["א=יתיר ו'. לגבי קמץ קטן בתיבה זו ראו ויינברג 3.2.1.3; במהדורת סימנים הדפיסו קמץ רחב וגעיה, ואילו בתנ\"ך קורן קמץ קטן עם מתג.", {"tmpl_name": "ש"}, "בפירוש דעת
+Ps.30.5	לַיהֹוָ֣ה	לַיהוָ֣ה		policy:divine-name-holam		none		
+Ps.30.6	חַיִּ֢ים	חַיִּ֪ים		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.30.8	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none	ch5	
+Ps.30.8	הֶעֱמַ֢דְתָּה	הֶעֱמַ֪דְתָּה		policy:atnax-hafukh-encoded-as-galgal		none	ch5	
+Ps.30.9	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.30.10	בְּרִדְתִּ֢י	בְּרִדְתִּ֪י		policy:atnax-hafukh-encoded-as-galgal		none	ch5	
+Ps.30.10	אֶ֫ל	—		missing-in-Aleppo		none	ch5	
+Ps.30.10	שָׁ֥חַת	—		missing-in-Aleppo		none	ch5	
+Ps.30.10	—	אֶ֫ל־שָׁ֥חַת		extra-in-Aleppo		none	ch5	
+Ps.30.11	שְׁמַע־יְהֹוָ֥ה	שְׁמַע־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.30.11	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.30.12	לְמָח֢וֹל	לְמָח֪וֹל		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch5	לִ֥֫י => "א=לִ֥י (השמטת נקודת הרביע)"
+Ps.30.12	לִ֥֫י	לִ֥י		policy:oleh-supplied		word-note	ch5	לִ֥֫י => "א=לִ֥י (השמטת נקודת הרביע)"
+Ps.30.13	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.31.2	בְּךָֽ־יְהֹוָ֣ה	—		missing-in-Aleppo		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.2	—	בְּךָ֖		extra-in-Aleppo		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.2	—	יְהוָ֣ה		extra-in-Aleppo		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.31.3	מְהֵרָ֢ה	מְהֵרָ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.31.5	כִּי־אַ֝תָּ֗ה	כִּֽי־אַ֝תָּה		meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]; cluster 1 (ת): MAM[POINT DAGESH OR MAPIQ,POINT QAMATS,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ,POINT QAMATS]	none	ch5	
+Ps.31.5	מָעוּזִּֽי	מָֽעוּזִּֽי		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none	ch5	
+Ps.31.6	אַפְקִ֢יד	אַפְקִ֪יד		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.31.6	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.31.7	אֶל־יְהֹוָ֥ה	אֶל־יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.31.10	יְהֹוָה֮	יְהוָה֮		policy:divine-name-holam		verse-note	ch5	עָשְׁﬞשָׁ֖ה => "א=עָשֲׁשָׁ֖ה (חטף)"
+Ps.31.10	עָשְׁשָׁ֖ה	עָשֲׁשָׁ֖ה		policy:hataf-non-guttural		word-note	ch5	עָשְׁﬞשָׁ֖ה => "א=עָשֲׁשָׁ֖ה (חטף)"
+Ps.31.11	וּשְׁנוֹתַ֢י	וּשְׁנוֹתַ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.31.12	מִכָּל־צֹרְרַ֨י	מִכָּל־צֹרֲרַ֨י		policy:hataf-non-guttural		word-note	ch2,ch5	מִכׇּל־צֹרְﬞרַ֨י => "א=מִכׇּל־צֹרֲרַ֨י (חטף)"
+Ps.31.12	וְלִ֥שְׁכֵנַ֨י ׀	וְלִשֲׁכֵנַ֨י ׀		accent:MAM-has:ACCENT MERKHA; policy:hataf-non-guttural	cluster 1 (ל): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ]	word-note	ch2,ch5	['וְלִ֥שְׁﬞכֵנַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<וְלִ֥שֲׁכֵנַ֨י", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"]
+Ps.31.12	וּפַ֢חַד	וּפַ֪חַד		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2,ch5	מִכׇּל־צֹרְﬞרַ֨י => "א=מִכׇּל־צֹרֲרַ֨י (חטף)" || ['וְלִ֥שְׁﬞכֵנַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<וְלִ֥שֲׁכֵנַ֨י", {"tmpl_name": "מ:לגרמיה-2"}, "> (חטף)"]
+Ps.31.12	נָדְד֥וּ	נָדֲד֥וּ		policy:hataf-non-guttural		word-note	ch2,ch5	נָדְﬞד֥וּ => "א=נָדֲד֥וּ (חטף)"
+Ps.31.14	מָג֢וֹר	מָג֪וֹר		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.31.15	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.31.16	מִיַּד־א֝וֹיְבַ֗י	מִיַּד־א֝וֹיְבַ֗יּ		dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 4 (י): MAM[] vs A[POINT DAGESH OR MAPIQ]	none		
+Ps.31.16	וּמֵֽרֹדְפָֽי	וּמֵרֹּדְּפָֽי		meteg:MAM-has:POINT METEG; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 1 (מ): MAM[POINT TSERE,POINT METEG] vs A[POINT TSERE]; cluster 2 (ר): MAM[POINT HOLAM] vs A[POINT DAGESH OR MAPIQ,POINT HOLAM]; cluster 3 (ד): MAM[POINT SHEVA] vs A[POINT DAGESH OR MAPIQ,POINT SHEVA]	none		
+Ps.31.18	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.31.20	אֲשֶׁר־צָפַ֢נְתָּ	אֲשֶׁר־צָפַ֪נְתָּ		policy:atnax-hafukh-encoded-as-galgal		verse-note		['מָ֤ה', {'tmpl_name': 'מ:מקף אפור'}, 'רַֽב־טוּבְךָ֮'] => "על מהפך כטעם משני בתיבת \"מָ֤ה\" ראו ברויאר, טעמי המקרא, ט.31 (עמ' 233); יא.27 (עמ' 277-278)." || נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.20	לִּירֵ֫אֶ֥יךָ	לִּֽירֵ֫אֶ֥יךָ		meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]	verse-note		['מָ֤ה', {'tmpl_name': 'מ:מקף אפור'}, 'רַֽב־טוּבְךָ֮'] => "על מהפך כטעם משני בתיבת \"מָ֤ה\" ראו ברויאר, טעמי המקרא, ט.31 (עמ' 233); יא.27 (עמ' 277-278)." || נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.20	נֶ֝֗גֶד	נֶ֝גֶד		policy:revia-mugrash-dot		word-note		נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.20	אָדָֽם	אָדָם	|sof-pasuq-pc	silluq:MAM-has:POINT METEG	cluster 1 (ד): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]	verse-note		['מָ֤ה', {'tmpl_name': 'מ:מקף אפור'}, 'רַֽב־טוּבְךָ֮'] => "על מהפך כטעם משני בתיבת \"מָ֤ה\" ראו ברויאר, טעמי המקרא, ט.31 (עמ' 233); יא.27 (עמ' 277-278)." || נֶ֝֗גֶד => "א=נֶ֝גֶד (השמטת נקודת הרביע)"
+Ps.31.21	מֵרֻכְסֵ֫י	מֵֽרֻכְסֵ֫י		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	none	ch5	
+Ps.31.22	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note	ch5	לִ֝֗י => "א=לִ֝י (השמטת נקודת הרביע)"
+Ps.31.22	לִ֝֗י	לִ֝י		policy:revia-mugrash-dot		word-note	ch5	לִ֝֗י => "א=לִ֝י (השמטת נקודת הרביע)"
+Ps.31.23	מִנֶּ֢גֶד	מִנֶּ֪גֶד		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.31.24	אֶ֥הֱב֥וּ	אֶֽהֱב֥וּ		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (א): MAM[POINT SEGOL,ACCENT MERKHA] vs A[POINT METEG,POINT SEGOL]	word-note		אֶ֥הֱב֥וּ => ["=א (וכן הכריעו ברויאר ומ\"מ)", {"tmpl_name": "ש"}, "מג\"ה=אֶֽהֱב֥וּ (למרות שהקו נטוי באופן ברור) וכן הוא בדפוסים וקורן"]
+Ps.31.24	אֶֽת־יְהֹוָ֗ה	אֶת־יְהוָ֗ה		meteg:MAM-has:POINT METEG; policy:divine-name-holam	cluster 0 (א): MAM[POINT SEGOL,POINT METEG] vs A[POINT SEGOL]	verse-note		אֶ֥הֱב֥וּ => ["=א (וכן הכריעו ברויאר ומ\"מ)", {"tmpl_name": "ש"}, "מג\"ה=אֶֽהֱב֥וּ (למרות שהקו נטוי באופן ברור) וכן הוא בדפוסים וקורן"] || עַל־יֶ֝֗תֶר => "א=עַל־יֶ֝תֶר (השמטת נקודת הרביע)"
+Ps.31.24	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note		אֶ֥הֱב֥וּ => ["=א (וכן הכריעו ברויאר ומ\"מ)", {"tmpl_name": "ש"}, "מג\"ה=אֶֽהֱב֥וּ (למרות שהקו נטוי באופן ברור) וכן הוא בדפוסים וקורן"] || עַל־יֶ֝֗תֶר => "א=עַל־יֶ֝תֶר (השמטת נקודת הרביע)"
+Ps.31.25	לַֽיהֹוָֽה	לַ֖יהוָֽה		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam	cluster 0 (ל): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,ACCENT TIPEHA]	none		
+Ps.32.2	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none	ch2	
+Ps.32.5	לַיהֹוָ֑ה	לַיהוָ֑ה		policy:divine-name-holam		verse-note		וַעֲוֺ֘נִ֤י => ["=א,ל (הצינורית נכתבת באות וי\"ו); בכתבי־היד הצינורית מחוברת באופן ברור לאות וי\"ו (מהחיבור היא יוצאת למעלה וימינה כנהוג בכתיבת צינורית במקומות אחרים), וכך אצל
+Ps.32.6	לְעֵ֢ת	לְעֵ֪ת		policy:atnax-hafukh-encoded-as-galgal		none	ch2	
+Ps.32.7	מִצַּ֢ר	מִצַּ֪ר		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch5	תְּס֖וֹבְﬞבֵ֣נִי => "א=תְּס֖וֹבֲבֵ֣נִי (חטף)"
+Ps.32.7	תְּס֖וֹבְבֵ֣נִי	תְּס֖וֹבֲבֵ֣נִי		policy:hataf-non-guttural		word-note	ch5	תְּס֖וֹבְﬞבֵ֣נִי => "א=תְּס֖וֹבֲבֵ֣נִי (חטף)"
+Ps.32.9	בַּ֝֗ל	בַּ֝ל		policy:revia-mugrash-dot		word-note		בַּ֝֗ל => "א=בַּ֝ל (השמטת נקודת הרביע)"
+Ps.32.10	לָ֫רָשָׁ֥ע	לָרָ֫שָׁ֥ע		oleh-position	oleh MAM@[0] Aleppo@[1]	word-note	ch2,ch5	לָ֫רָשָׁ֥ע => ["א!=לָרָ֫שָׁ֥ע (סימן העולה באות רי\"ש)", {"tmpl_name": "ש"}, "בניגוד לדרכו ה\"עולה\" אינו מסומן בהברה הראויה לגעיה; אולי זה בגלל הראש של הלמ\"ד שמפריע שם לכתיב
+Ps.32.10	בַּֽיהֹוָ֑ה	בַּיהוָ֑ה		meteg:MAM-has:POINT METEG; policy:divine-name-holam	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT PATAH]	verse-note	ch2,ch5	לָ֫רָשָׁ֥ע => ["א!=לָרָ֫שָׁ֥ע (סימן העולה באות רי\"ש)", {"tmpl_name": "ש"}, "בניגוד לדרכו ה\"עולה\" אינו מסומן בהברה הראויה לגעיה; אולי זה בגלל הראש של הלמ\"ד שמפריע שם לכתיב || חֶ֝֗סֶד => "א=חֶ֝סֶד (השמטת נקודת הרביע)"
+Ps.32.10	יְסוֹבְבֶֽנּוּ	יְסוֹבֲבֶֽנּוּ	|sof-pasuq-pc	policy:hataf-non-guttural		word-note	ch2,ch5	יְסוֹבְﬞבֶֽנּוּ => "א=יְסוֹבֲבֶֽנּוּ (חטף)"
+Ps.32.11	בַיהֹוָ֣ה	בַיהוָ֣ה		policy:divine-name-holam		none		
+Ps.32.11	וְ֝הַרְנִ֗ינוּ	וְ֝הַרְנִ֗יִנוּ		vowel:Aleppo-has:POINT HIRIQ	cluster 4 (י): MAM[] vs A[POINT HIRIQ]	none		
+Ps.33.1	בַּֽיהֹוָ֑ה	בַּֽיהוָ֑ה		policy:divine-name-holam		none		
+Ps.33.2	לַיהֹוָ֣ה	לַיהוָ֣ה		policy:divine-name-holam		none		
+Ps.33.4	דְּבַר־יְהֹוָ֑ה	דְּבַר־יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.33.5	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.33.6	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		verse-note		פִּ֝֗יו => "א=פִּ֝יו (השמטת נקודת הרביע)"
+Ps.33.6	פִּ֝֗יו	פִּ֝יו		policy:revia-mugrash-dot		word-note		פִּ֝֗יו => "א=פִּ֝יו (השמטת נקודת הרביע)"
+Ps.33.8	מֵ֭יְהֹוָה	מֵ֭יְהוָה		policy:divine-name-holam		none		
+Ps.33.9	וַֽיַּעֲמֹֽד	וַֽיַּעֲמֹֽד		order-only		none		
+Ps.33.10	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.33.11	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.33.12	אֲשֶׁר־יְהֹוָ֣ה	אֲשֶׁר־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.33.13	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.33.18	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.33.20	לַֽיהֹוָ֑ה	לַֽיהוָ֑ה		policy:divine-name-holam		none		
+Ps.33.22	יְהִי־חַסְדְּךָ֣	יְהִֽי־חַסְדְּךָ֣		meteg:Aleppo-has:POINT METEG	cluster 1 (ה): MAM[POINT HIRIQ] vs A[POINT HIRIQ,POINT METEG]	none		
+Ps.33.22	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.34.1	וַ֝יְגָרְשֵׁ֗הוּ	וַ֝יְגָרֲשֵׁ֗הוּ		policy:hataf-non-guttural		word-note	ch5	{'tmpl_name': 'ר1'} => "פרשה סתומה" || וַ֝יְגָרְﬞשֵׁ֗הוּ => "א=וַ֝יְגָרֲשֵׁ֗הוּ (חטף)"
+Ps.34.2	אֲבָרְכָ֣ה	אֲבָרֲכָ֣ה		policy:hataf-non-guttural		word-note	ch5	אֲבָרְﬞכָ֣ה => "א=אֲבָרֲכָ֣ה (חטף)"
+Ps.34.2	אֶת־יְהֹוָ֣ה	אֶת־יְהוָ֣ה		policy:divine-name-holam		verse-note	ch5	אֲבָרְﬞכָ֣ה => "א=אֲבָרֲכָ֣ה (חטף)"
+Ps.34.3	בַּ֭יהֹוָה	בַּ֭יהוָה		policy:divine-name-holam		none		
+Ps.34.4	לַיהֹוָ֣ה	לַיהוָ֣ה		policy:divine-name-holam		verse-note	ch5	וּנְרוֹמְﬞמָ֖ה => "א=וּנְרוֹמֲמָ֖ה (חטף)"
+Ps.34.4	וּנְרוֹמְמָ֖ה	וּנְרוֹמֲמָ֖ה		policy:hataf-non-guttural		word-note	ch5	וּנְרוֹמְﬞמָ֖ה => "א=וּנְרוֹמֲמָ֖ה (חטף)"
+Ps.34.5	אֶת־יְהֹוָ֣ה	אֶת־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.34.7	וַיהֹוָ֣ה	וַיהוָ֣ה		policy:divine-name-holam		none		
+Ps.34.8	מַלְאַךְ־יְהֹוָ֓ה	מַלְאַךְ־יְהוָ֓ה		policy:divine-name-holam		none		
+Ps.34.9	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.34.10	יְר֣אֿוּ	יְר֣אוּ		rafe:MAM-has:POINT RAFE	cluster 2 (א): MAM[POINT RAFE] vs A[]	none	ch2	
+Ps.34.10	אֶת־יְהֹוָ֣ה	—		missing-in-Aleppo		none	ch2	
+Ps.34.10	—	אֶת		extra-in-Aleppo		none	ch2	
+Ps.34.10	—	יְהוָ֣ה		extra-in-Aleppo		none	ch2	
+Ps.34.11	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.34.12	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.34.16	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.34.17	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.34.18	וַיהֹוָ֣ה	וַיהוָ֣ה		policy:divine-name-holam		none		
+Ps.34.19	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.34.20	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		none		
+Ps.34.23	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.35.1	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר1'} => "פרשה סתומה"
+Ps.35.4	מְבַקְשֵׁ֢י	מְבַקְשֵׁ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.35.5	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.35.6	וַחֲלַקְלַקֹּ֑ת	וַחֲלַקְלַקֹּ֑ת		order-only		none		
+Ps.35.6	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.35.9	בַּיהֹוָ֑ה	בַּיהוָ֑ה		policy:divine-name-holam		none		
+Ps.35.10	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		verse-note	appendices,ch2	{'tmpl_name': 'מ:קמץ', 'tmpl_params': {'ד': ['כׇּ֥ל', {'tmpl_name': 'מ:מקף אפור'}], 'ס': 'כָּ֥ל '}} => "ראו במידע על מהדורה זו, פרק שני, על ההכרעה בין קמץ קטן לגדול בתיבה זו. יש עוד \"כל\" כזה במשלי (יט,ז)."
+Ps.35.15	שָׂמְח֢וּ	שָׂמְח֪וּ		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.35.15	וְֽנֶ֫אֱסָ֥פוּ	וְֽנֶאֱ֫סָ֥פוּ		oleh-position	oleh MAM@[1] Aleppo@[2]	none		
+Ps.35.17	כַּמָּ֢ה	כַּמָּ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.35.17	תִ֫רְאֶ֥ה	תִּ֫רְאֶ֥ה		dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 0 (ת): MAM[POINT HIRIQ,ACCENT OLE] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,ACCENT OLE]	none		
+Ps.35.18	אֲהַלְלֶֽךָּ	אֲהַלֲלֶֽךָּ		policy:hataf-non-guttural		word-note	ch5	אֲהַלְﬞלֶֽךָּ => "א=אֲהַלֲלֶֽךָּ (חטף)"
+Ps.35.20	מִ֝רְמ֗וֹת	מִ֝רְמוֹת		accent:MAM-has:ACCENT REVIA	cluster 2 (מ): MAM[ACCENT REVIA] vs A[]	none		
+Ps.35.22	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.35.23	וַאדֹנָ֣י	וַֽאדֹנָ֣י		meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]	none		
+Ps.35.24	יְהֹוָ֥ה	יְהוָ֥ה		policy:divine-name-holam		none		
+Ps.35.26	שְׂמֵחֵ֢י	שְׂמֵחֵ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.35.27	חֲפֵצֵ֢י	חֲפֵצֵ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.35.27	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.35.28	כָּל־הַ֝יּ֗וֹם	כָּל־הַ֝יּוֹם		accent:MAM-has:ACCENT REVIA	cluster 1 (י): MAM[POINT DAGESH OR MAPIQ,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ]	none		
+Ps.36.1	לְעֶבֶד־יְהֹוָ֬ה	לְעֶֽבֶד־יְהוָ֬ה		meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	cluster 1 (ע): MAM[POINT SEGOL] vs A[POINT SEGOL,POINT METEG]	none		
+Ps.36.6	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.36.6	אֱ֝מ֥וּנָתְךָ֗	אֱ֝מֽוּנָתְךָ֗		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 1 (מ): MAM[ACCENT MERKHA] vs A[POINT METEG]	none		
+Ps.36.7	צִדְקָתְךָ֨ ׀	צִדְקָֽתְךָ֨ ׀		meteg:Aleppo-has:POINT METEG	cluster 2 (ק): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none	ch2	
+Ps.36.7	אָ֤דָֽם	—		missing-in-Aleppo		none	ch2	
+Ps.36.7	וּבְהֵמָ֖ה	—		missing-in-Aleppo		none	ch2	
+Ps.36.7	—	אָ֤דָֽם־וּבְהֵמָ֖ה		extra-in-Aleppo		none	ch2	
+Ps.36.7	יְהֹוָֽה	יְהוָֽה	|sof-pasuq-pc	policy:divine-name-holam		none	ch2	
+Ps.36.11	וְ֝צִדְקָתְךָ֗	וְ֝צִדְקָֽתְךָ֗		meteg:Aleppo-has:POINT METEG	cluster 3 (ק): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none		
+Ps.37.3	בַּ֭יהֹוָה	בַּֽ֭יהוָה		meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT DEHI] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG,ACCENT DEHI]	verse-note		שְׁכׇן־אֶ֝֗רֶץ => "א=שְׁכָן־אֶ֝רֶץ (השמטת נקודת הרביע)"
+Ps.37.4	עַל־יְהֹוָ֑ה	עַל־יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.37.5	עַל־יְהֹוָ֣ה	עַל־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.37.7	לַיהֹוָה֮	לַיהוָה֮		policy:divine-name-holam		none	ch2,ch5	
+Ps.37.7	וְהִתְח֢וֹלֵֽ֫ל	וְהִתְח֪וֹלֵ֫ל		policy:atnax-hafukh-encoded-as-galgal; meteg:MAM-has:POINT METEG	cluster 5 (ל): MAM[POINT TSERE,POINT METEG,ACCENT OLE] vs A[POINT TSERE,ACCENT OLE]	none	ch2,ch5	
+Ps.37.9	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.37.11	וְ֝הִֽתְעַנְּג֗וּ	וְ֝הִתְעַנְּג֗וּ		meteg:MAM-has:POINT METEG	cluster 1 (ה): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]	none		
+Ps.37.13	כִּי־רָ֝אָ֗ה	כִּֽי־רָ֝אָ֗ה		meteg:Aleppo-has:POINT METEG	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]	none		
+Ps.37.14	פָּ֥תְח֣וּ	פָּֽתְח֣וּ		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (פ): MAM[POINT DAGESH OR MAPIQ,POINT QAMATS,ACCENT MERKHA] vs A[POINT DAGESH OR MAPIQ,POINT QAMATS,POINT METEG]	word-note	ch2,ch5	פָּ֥תְח֣וּ => ["=א? (הקו נטוי קצת כמרכא אבל לא באופן מובהק) וכן הכריעו ברויאר ומג\"ה", {"tmpl_name": "ש"}, "ממ=פָּֽתְח֣וּ וכן הוא בכתי\"ל ובדפוסים"]
+Ps.37.14	וְדָרְכ֢וּ	וְדָרְכ֪וּ		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2,ch5	פָּ֥תְח֣וּ => ["=א? (הקו נטוי קצת כמרכא אבל לא באופן מובהק) וכן הכריעו ברויאר ומג\"ה", {"tmpl_name": "ש"}, "ממ=פָּֽתְח֣וּ וכן הוא בכתי\"ל ובדפוסים"]
+Ps.37.17	יְהֹוָֽה	יְהוָֽה		policy:divine-name-holam		verse-note	ch5	וְסוֹמֵ֖ךְ => ["א!=וְסוֹמֵ֖ך (חסר שווא בכ\"ף סופית)", {"tmpl_name": "ש"}, "הערת ייבין"]
+Ps.37.18	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.37.20	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.37.23	מֵ֭יְהֹוָה	מֵ֭יְהוָה		policy:divine-name-holam		none		
+Ps.37.24	כִּֽי־יְ֝הֹוָ֗ה	כִּֽי־יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.37.28	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.37.31	אֲשֻׁרָֽיו	אֲשֻׁרָיו		silluq:MAM-has:POINT METEG	cluster 2 (ר): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]	none		
+Ps.37.32	לַהֲמִיתֽוֹ	לַהֲמִיתוֹ		silluq:MAM-has:POINT METEG	cluster 4 (ת): MAM[POINT METEG] vs A[]	none		
+Ps.37.33	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.37.34	אֶל־יְהֹוָ֨ה ׀	אֶל־יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.37.36	וַֽ֭יַּעֲבֹר	וַ֭יַּֽעֲבֹר		meteg:MAM-has:POINT METEG; meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT PATAH,POINT METEG,ACCENT DEHI] vs A[POINT PATAH,ACCENT DEHI]; cluster 1 (י): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT METEG,POINT PATAH]	word-note		{'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'וַֽ֭יַּעֲבֹר', '2': 'וַֽ֭יַּעֲבֹ֭ר'}} => ["=א,ל", {"tmpl_name": "ש"}, "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"]
+Ps.37.36	וָ֝אֲבַקְשֵׁ֗הוּ	וָֽ֝אֲבַקְשֵׁ֗הוּ		meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,POINT METEG,ACCENT GERESH MUQDAM]	verse-note		{'tmpl_name': 'מ:דחי', 'tmpl_params': {'1': 'וַֽ֭יַּעֲבֹר', '2': 'וַֽ֭יַּעֲבֹ֭ר'}} => ["=א,ל", {"tmpl_name": "ש"}, "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"]
+Ps.37.39	מֵיְהֹוָ֑ה	מֵיְהוָ֑ה		policy:divine-name-holam		none	ch5	
+Ps.37.39	מָ֝עוּזָּ֗ם	מָֽ֝עוּזָּ֗ם		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT QAMATS,ACCENT GERESH MUQDAM] vs A[POINT QAMATS,POINT METEG,ACCENT GERESH MUQDAM]	none	ch5	
+Ps.37.40	וַ֥יַּעְזְרֵ֥ם	וַֽיַּעְזְרֵ֥ם		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]	none	ch5	
+Ps.37.40	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none	ch5	
+Ps.38.2	יְֽהֹוָ֗ה	יְֽהוָ֗ה	|unclear	policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.38.10	אֲֽדֹנָ֗י	אֲֽדֹנָי		accent:MAM-has:ACCENT REVIA	cluster 2 (נ): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]	word-note		אֲֽדֹנָ֗י => "א=געיה ימנית"
+Ps.38.10	לֹֽא־נִסְתָּֽרָה	לֹא־נִסְתָּֽרָה	|sof-pasuq-pc	meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	verse-note		אֲֽדֹנָ֗י => "א=געיה ימנית"
+Ps.38.15	לֹֽא־שֹׁמֵ֑עַ	לֹא־שֹׁמֵ֑עַ		meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	none	ch2	
+Ps.38.16	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.38.19	מֵ֖חַטָּאתִֽי	מֵֽחַטָּאתִֽי		stroke-shape; accent:MAM-has:ACCENT TIPEHA; meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT TSERE,ACCENT TIPEHA] vs A[POINT TSERE,POINT METEG]	none		
+Ps.38.21	רָֽדְפִי־טֽוֹב	רְֽדוֹפִי־טֽוֹב	|alt=רָֽדְפִי־,app	ketiv-qere	skel רדפי vs רדופי	word-note		[{'tmpl_name': 'כו״ק', 'tmpl_params': {'1': 'רדופי', '2': {'tmpl_name': 'מ:קמץ', 'tmpl_params': {'ד': 'רׇֽדְפִי־', 'ס': 'רָֽדְפִי־'}}}}, 'טֽוֹב'] => "לגבי קמץ קטן בתיבה זו ראו ויינברג 3.2.1.3; במהדורת סימנים הדפיסו קמץ רחב וגעיה, ואילו בתנ\"ך קורן קמץ קטן עם מתג."
+Ps.38.22	אַל־תַּעַזְבֵ֥נִי	אַל־תַּֽעַזְבֵ֥נִי		meteg:Aleppo-has:POINT METEG	cluster 0 (ת): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]	none		
+Ps.38.22	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.39.1	לִֽידוּת֗וּן	לִֽידִית֗וּן	|alt=לִֽידוּת֗וּן,app	ketiv-qere	skel לידותון vs לידיתון	none		
+Ps.39.2	אֶ֥שְׁמְרָ֣ה	אֶֽשְׁמְרָ֣ה		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (א): MAM[POINT SEGOL,ACCENT MERKHA] vs A[POINT SEGOL,POINT METEG]	word-note	ch2	{'tmpl_name': 'ר4'} => "פרשה פתוחה" || ['אֶשְׁמְרָ֥ה', {'tmpl_name': 'מ:מקף אפור'}, 'לְפִ֥י'] => "ראו ברויאר, טעמי המקרא, יא.47 הערה 27."
+Ps.39.2	מֵחֲט֢וֹא	מֵחֲט֪וֹא		policy:atnax-hafukh-encoded-as-galgal		verse-note	ch2	{'tmpl_name': 'ר4'} => "פרשה פתוחה" || ['אֶשְׁמְרָ֥ה', {'tmpl_name': 'מ:מקף אפור'}, 'לְפִ֥י'] => "ראו ברויאר, טעמי המקרא, יא.47 הערה 27."
+Ps.39.4	בִּלְשׁוֹנִֽי	בִּלְשֽׁוֹנִי		meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 2 (ש): MAM[POINT SHIN DOT] vs A[POINT SHIN DOT,POINT METEG]; cluster 4 (נ): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]	none		
+Ps.39.5	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.39.7	מִֽי־אֹסְפָֽם	מִי־אֹסְפָֽם		meteg:MAM-has:POINT METEG	cluster 0 (מ): MAM[POINT HIRIQ,POINT METEG] vs A[POINT HIRIQ]	none		
+Ps.39.13	שִׁ֥מְעָֽה	—		missing-in-Aleppo		word-note	ch2,ch5	['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.39.13	תְפִלָּתִ֨י ׀	—		missing-in-Aleppo		word-note	ch2,ch5	['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.39.13	—	שִֽׁמְעָ֥ה־תְפִלָּתִ֨י ׀		extra-in-Aleppo		verse-note	ch2,ch5	['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.39.13	יְהֹוָ֡ה	יְהוָ֡ה		policy:divine-name-holam		verse-note	ch2,ch5	['שִׁ֥מְﬞעָֽה', {'tmpl_name': 'מ:מקף אפור'}, 'תְפִלָּתִ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => ["א=<שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀> (חטף קמץ באות מ\"ם) או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח); בצילום אפשר להבחין היטב בנקודת חטף מטושטשת. לפי ברויאר חטף קמץ ולפי מג
+Ps.40.2	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.40.3	מִטִּ֢יט	מִטִּ֪יט		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.40.4	תְּהִלָּ֢ה	תְּהִלָּ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.40.4	לֵאלֹ֫הֵ֥ינוּ	לֵֽאלֹ֫הֵ֥ינוּ		meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	none		
+Ps.40.4	בַּיהֹוָֽה	בַּיהוָֽה		policy:divine-name-holam		none		
+Ps.40.6	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none	ch2	
+Ps.40.6	נִ֥פְלְאֹתֶ֥יךָ	נִֽפְלְאֹתֶ֥יךָ		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (נ): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]	none	ch2	
+Ps.40.9	לַ֥עֲשׂוֹת־רְצוֹנְךָ֣	לַֽעֲשֽׂוֹת־רְצוֹנְךָ֣		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT PATAH,ACCENT MERKHA] vs A[POINT PATAH,POINT METEG]; cluster 2 (ש): MAM[POINT SIN DOT] vs A[POINT SIN DOT,POINT METEG]	none	ch2	
+Ps.40.10	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.40.11	לֹֽא־כִסִּ֨יתִי ׀	לֹא־כִסִּ֨יתִי ׀		meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	none		
+Ps.40.12	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.40.12	לֹֽא־תִכְלָ֣א	לֹא־תִכְלָ֣א		meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	none		
+Ps.40.13	אָפְפֽוּ־עָלַ֨י ׀	אָפֲפ֥וּ־עָלַ֨י ׀		policy:hataf-non-guttural; stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	cluster 2 (פ): MAM[POINT METEG] vs A[ACCENT MERKHA]	word-note	ch5	['אָפְﬞפֽוּ־עָלַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => "א=אָפֲפֽוּ־עָלַ֨י (חטף)"
+Ps.40.13	מִשַּׂעֲר֥וֹת	מִשַּֽׂעֲר֥וֹת		meteg:Aleppo-has:POINT METEG	cluster 1 (ש): MAM[POINT SIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT SIN DOT,POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]	verse-note	ch5	['אָפְﬞפֽוּ־עָלַ֨י', {'tmpl_name': 'מ:לגרמיה-2'}] => "א=אָפֲפֽוּ־עָלַ֨י (חטף)"
+Ps.40.14	יְ֭הֹוָה	יְ֭הוָה		policy:divine-name-holam		none		
+Ps.40.14	יְ֝הֹוָ֗ה	יְ֝הוָ֗ה		policy:divine-name-holam		none		
+Ps.40.17	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none	ch2	
+Ps.40.17	אֹ֝הֲבֵ֗י	אֹֽ֝הֲבֵ֗י		meteg:Aleppo-has:POINT METEG	cluster 0 (א): MAM[POINT HOLAM,ACCENT GERESH MUQDAM] vs A[POINT HOLAM,POINT METEG,ACCENT GERESH MUQDAM]	none	ch2	
+Ps.40.18	אֲדֹנָ֢י	אֲדֹנָ֪י		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.41.2	יְהֹוָֽה	יְהוָֽה	|sof-pasuq-pc	policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.41.3	יְהֹוָ֤ה ׀	יְהוָ֤ה ׀		policy:divine-name-holam		none		
+Ps.41.3	וִ֭יחַיֵּהוּ	וִֽ֭יחַיֵּהוּ		meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT HIRIQ,ACCENT DEHI] vs A[POINT HIRIQ,POINT METEG,ACCENT DEHI]	none		
+Ps.41.3	וְאֻשַּׁ֣ר	יֶאְשֹּׁר	|alt=וְאֻשַּׁ֣ר,app	ketiv-qere	skel ואשר vs יאשר	none		
+Ps.41.4	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		none		
+Ps.41.5	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.41.11	יְהֹוָ֗ה	יְהוָ֗ה		policy:divine-name-holam		none		
+Ps.41.12	לֹֽא־יָרִ֖יעַ	לֹֽא־יָרִ֖יַע		vowel:Aleppo-has:POINT PATAH; vowel:MAM-has:POINT PATAH	cluster 2 (י): MAM[] vs A[POINT PATAH]; cluster 3 (ע): MAM[POINT PATAH] vs A[]	none		
+Ps.41.14	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.42.3	לְאֵ֢ל	לְאֵ֪ל		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.42.3	חָ֥֫י	חָ֥י		policy:oleh-supplied		none	ch2,ch5	
+Ps.42.6	וַתֶּהֱמִ֢י	וַתֶּהֱמִ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.42.6	הוֹחִ֣לִי	הוֹחִ֣ילִי		letters	skel הוחלי vs הוחילי	none		
+Ps.42.7	נַפְשִׁ֢י	נַפְשִׁ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.42.9	יְהֹוָ֨ה ׀	יְהוָ֨ה ׀		policy:divine-name-holam		none		
+Ps.42.9	שִׁירֹ֣ה	שִׁירָהּ	|alt=שִׁירֹ֣ו,app	vowel:MAM-has:POINT HOLAM; accent:MAM-has:ACCENT MUNAH; vowel:Aleppo-has:POINT QAMATS; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	cluster 2 (ר): MAM[POINT HOLAM,ACCENT MUNAH] vs A[POINT QAMATS]; cluster 3 (ה): MAM[] vs A[POINT DAGESH OR MAPIQ]	none		
+Ps.42.10	לָמָ֢ה	לָמָ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.42.11	צוֹרְרָ֑י	צוֹרֲרָ֑י		policy:hataf-non-guttural		word-note	ch5	צוֹרְﬞרָ֑י => ["א=צוֹרֲרָ֑י (חטף)", {"tmpl_name": "ש"}, "חסר ברשימת ברויאר"]
+Ps.42.12	וּֽמַה־תֶּהֱמִ֢י	וּֽמַה־תֶּהֱמִ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.42.12	לֵ֭אלֹהִים	לֵֽ֭אלֹהִים		meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT TSERE,ACCENT DEHI] vs A[POINT METEG,POINT TSERE,ACCENT DEHI]	none		
+Ps.43.1	לֹֽא־חָסִ֑יד	לֹ֣א־חָסִ֑יד		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MUNAH	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT MUNAH]	verse-note	ch2	['מֵ֤אִישׁ', {'tmpl_name': 'מ:מקף אפור'}, 'מִרְמָ֖ה'] => "=לגבי ההקפה ראו ייבין, מב.16.4 (עמ' 293)."
+Ps.43.2	מָעוּזִּי֮	מָֽעוּזִּי֮		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT QAMATS] vs A[POINT QAMATS,POINT METEG]	none	ch5	
+Ps.43.2	לָמָ֢ה	לָמָ֪ה		policy:atnax-hafukh-encoded-as-galgal		none	ch5	
+Ps.43.3	אֶל־הַֽר־קָ֝דְשְׁךָ֗	אֶל־הַֽ֗ר־קָ֝דְשְׁךָ֗		accent:Aleppo-has:ACCENT REVIA	cluster 0 (ה): MAM[POINT PATAH,POINT METEG] vs A[POINT PATAH,POINT METEG,ACCENT REVIA]	none		
+Ps.43.4	שִׂמְחַ֢ת	שִׂמְחַ֪ת		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.43.5	וּֽמַה־תֶּהֱמִ֢י	וּֽמַה־תֶּהֱמִ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.43.5	לֵ֭אלֹהִים	לֵֽ֭אלֹהִים		meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT TSERE,ACCENT DEHI] vs A[POINT METEG,POINT TSERE,ACCENT DEHI]	none		
+Ps.43.5	וֵאלֹהָֽי	וֵֽאלֹהָֽי		meteg:Aleppo-has:POINT METEG	cluster 0 (ו): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	none		
+Ps.44.4	לֹא־הוֹשִׁ֢יעָ֫ה	לֹא־הוֹשִׁ֪יעָ֫ה		policy:atnax-hafukh-encoded-as-galgal		none	ch2,ch5	
+Ps.44.9	בֵּ֭אלֹהִים	בֵּֽ֭אלֹהִים		meteg:Aleppo-has:POINT METEG	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT TSERE,ACCENT DEHI] vs A[POINT DAGESH OR MAPIQ,POINT TSERE,POINT METEG,ACCENT DEHI]	none		
+Ps.44.9	הִלַּ֣לְנוּ	הִלַּלְ֣נוּ		accent:MAM-has:ACCENT MUNAH; accent:Aleppo-has:ACCENT MUNAH	cluster 1 (ל): MAM[POINT DAGESH OR MAPIQ,POINT PATAH,ACCENT MUNAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH]; cluster 2 (ל): MAM[POINT SHEVA] vs A[POINT SHEVA,ACCENT MUNAH]	none		
+Ps.44.13	וְלֹֽא־רִ֝בִּ֗יתָ	וְלֹ֥א־רִ֝בִּ֗יתָ		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	cluster 1 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT MERKHA]	none		
+Ps.44.15	מְנֽוֹד־רֹ֝֗אשׁ	—		missing-in-Aleppo		word-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15	בַּלְאֻמִּֽים	—		missing-in-Aleppo		verse-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15	—	מְנֽוֹד		extra-in-Aleppo		word-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15	—	רֹ֝֗אשׁ		extra-in-Aleppo		word-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15	—	בַּלְ		extra-in-Aleppo		verse-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.15	—	אֻמִּֽים		extra-in-Aleppo		verse-note		מְנֽוֹד־רֹ֝֗אשׁ => "א=מְנֽוֹד־רֹ֝אשׁ (השמטת נקודת הרביע)"
+Ps.44.22	יַחֲקָר־זֹ֑את	יַֽחֲקָר־זֹ֑את		meteg:Aleppo-has:POINT METEG	cluster 0 (י): MAM[POINT PATAH] vs A[POINT PATAH,POINT METEG]	none		
+Ps.44.24	אֲדֹנָ֑י	אֲדנָ֑י		vowel:MAM-has:POINT HOLAM	cluster 1 (ד): MAM[POINT HOLAM] vs A[]	none		
+Ps.45.3	בֵּרַכְךָ֖	בֵּֽרַכְךָ֖		meteg:Aleppo-has:POINT METEG	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT TSERE] vs A[POINT DAGESH OR MAPIQ,POINT TSERE,POINT METEG]	verse-note	ch2,ch5	יׇפְיָפִ֡יתָ => "לגבי הקמץ הקטן ביו\"ד הראשונה ראו ויינברג 3.6.8.7, שציין ספק לגבי תיבה זו. הכרענו לפי המסורת הספרדית שבה הקמץ קטן, וכך בסימנים ובתנ\"ך קורן החדש."
+Ps.45.3	אֱלֹהִ֣ים	אֱלהִ֣ים		vowel:MAM-has:POINT HOLAM	cluster 1 (ל): MAM[POINT HOLAM] vs A[]	verse-note	ch2,ch5	יׇפְיָפִ֡יתָ => "לגבי הקמץ הקטן ביו\"ד הראשונה ראו ויינברג 3.6.8.7, שציין ספק לגבי תיבה זו. הכרענו לפי המסורת הספרדית שבה הקמץ קטן, וכך בסימנים ובתנ\"ך קורן החדש."
+Ps.45.8	מֵחֲבֵרֶֽךָ	מֵֽחֲבֵרֶֽךָ		meteg:Aleppo-has:POINT METEG	cluster 0 (מ): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]	none	ch5	
+Ps.45.10	לִ֝ימִינְךָ֗	לִֽ֝ימִינְךָ֗		meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT HIRIQ,ACCENT GERESH MUQDAM] vs A[POINT HIRIQ,POINT METEG,ACCENT GERESH MUQDAM]	none		
+Ps.45.15	תּוּבַ֢ל	תּוּבַ֪ל		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.46.3	לֹֽא־נִ֭ירָא	לֹ֖א־נִ֭ירָא		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM,ACCENT TIPEHA]	none		
+Ps.46.4	יִ֥רְעֲשֽׁוּ	יִֽרְעֲשֽׁוּ		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (י): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]	none	ch2	
+Ps.46.8	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note		מִשְׂגָּֽב־לָ֨נוּ => "הקמץ היה מתקיים כקמץ גדול אלמלא ההקפה, כמו: \"כִּֽי־הָיִ֣יתָ מִשְׂגָּ֣ב לִ֑י\" (תהלים נט,יז), ולכן הוא קמץ גדול אף בתיבה מוקפת."
+Ps.46.8	מִשְׂגָּֽב־לָ֨נוּ	מִשְׂגָּֽב־לָ֝נוּ		accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM	cluster 0 (ל): MAM[POINT QAMATS,ACCENT QADMA] vs A[POINT QAMATS,ACCENT GERESH MUQDAM]	word-note		מִשְׂגָּֽב־לָ֨נוּ => "הקמץ היה מתקיים כקמץ גדול אלמלא ההקפה, כמו: \"כִּֽי־הָיִ֣יתָ מִשְׂגָּ֣ב לִ֑י\" (תהלים נט,יז), ולכן הוא קמץ גדול אף בתיבה מוקפת."
+Ps.46.9	יְהֹוָ֑ה	יְהוָ֑ה		policy:divine-name-holam		none		
+Ps.46.10	עַד־קְצֵ֢ה	עַד־קְצֵ֪ה		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.46.11	כִּֽי־אָנֹכִ֣י	כִּ֥י־אָנֹכִ֣י		stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,ACCENT MERKHA]	none		
+Ps.46.12	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note		מִשְׂגָּֽב־לָ֨נוּ => "לגבי הקמץ ראו בהערה לעיל, פסוק ח'."
+Ps.46.12	מִשְׂגָּֽב־לָ֨נוּ	מִשְׂגָּֽב־לָ֝נוּ		accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM	cluster 0 (ל): MAM[POINT QAMATS,ACCENT QADMA] vs A[POINT QAMATS,ACCENT GERESH MUQDAM]	word-note		מִשְׂגָּֽב־לָ֨נוּ => "לגבי הקמץ ראו בהערה לעיל, פסוק ח'."
+Ps.47.3	כִּֽי־יְהֹוָ֣ה	כִּֽי־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.47.3	גָּ֝ד֗וֹל	גָּ֝דוֹל		accent:MAM-has:ACCENT REVIA	cluster 1 (ד): MAM[ACCENT REVIA] vs A[]	none		
+Ps.47.6	יְ֝הֹוָ֗ה	יְ֝הֹוָה		accent:MAM-has:ACCENT REVIA	cluster 2 (ו): MAM[POINT QAMATS,ACCENT REVIA] vs A[POINT QAMATS]	none		
+Ps.47.10	אֱלֹהֵ֢י	אֱלֹהֵ֪י		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.48.2	יְהֹוָ֣ה	יְהוָ֣ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה"
+Ps.48.3	מְשׂ֢וֹשׂ	מְשׂ֪וֹשׂ		policy:atnax-hafukh-encoded-as-galgal		none		
+Ps.48.5	נ֥וֹעֲד֑וּ	נֽוֹעֲד֑וּ		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (נ): MAM[ACCENT MERKHA] vs A[POINT METEG]	none	ch2	
+Ps.48.7	חִ֝֗יל	חִ֝יל		policy:revia-mugrash-dot		word-note		חִ֝֗יל => "א=חִ֝יל (השמטת נקודת הרביע)"
+Ps.48.7	כַּיּוֹלֵדָֽה	כַּיּוֹלֵֽדָה		meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	cluster 3 (ל): MAM[POINT TSERE] vs A[POINT TSERE,POINT METEG]; cluster 4 (ד): MAM[POINT QAMATS,POINT METEG] vs A[POINT QAMATS]	verse-note		חִ֝֗יל => "א=חִ֝יל (השמטת נקודת הרביע)"
+Ps.48.9	בְּעִיר־יְהֹוָ֣ה	בְּעִיר־יְהוָ֣ה		policy:divine-name-holam		none		
+Ps.48.11	צֶ֝֗דֶק	צֶ֝דֶק		policy:revia-mugrash-dot		word-note		צֶ֝֗דֶק => "א=צֶ֝דֶק (השמטת נקודת הרביע)"
+Ps.48.14	לְֽחֵילָ֗הֿ	לְֽחֵילָ֗ה		rafe:MAM-has:POINT RAFE	cluster 4 (ה): MAM[POINT RAFE] vs A[]	none	ch2	
+Ps.49.3	יַ֝֗חַד	יַ֝חַד		policy:revia-mugrash-dot		word-note		יַ֝֗חַד => "א=יַ֝חַד (השמטת נקודת הרביע)"
+Ps.49.5	חִידָתִֽי	חִידָתִֽי		order-only		none		
+Ps.49.15	לִ֥שְׁא֣וֹל	לִֽשְׁא֣וֹל		stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	cluster 0 (ל): MAM[POINT HIRIQ,ACCENT MERKHA] vs A[POINT HIRIQ,POINT METEG]	verse-note	ch2,ch5	{'tmpl_name': 'מ:צינור', 'tmpl_params': {'1': 'שַׁתּוּ֮', '2': 'שַׁ֮תּוּ֮'}} => ["=ק13,ת (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וראו ייבין, המסורה למקרא 328 (עמ' 195), והשוו תהלים עג,ט וראו במ\"ש.", {"t
+Ps.49.15	וְ֭צוּרָם	וְצִירָם	|alt=וְ֭צוּרָם,app	ketiv-qere	skel וצורם vs וצירם	verse-note	ch2,ch5	{'tmpl_name': 'מ:צינור', 'tmpl_params': {'1': 'שַׁתּוּ֮', '2': 'שַׁ֮תּוּ֮'}} => ["=ק13,ת (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וראו ייבין, המסורה למקרא 328 (עמ' 195), והשוו תהלים עג,ט וראו במ\"ש.", {"t
+Ps.49.17	כִּי־יִ֝רְבֶּ֗ה	כִּֽי־יִ֝רְבֶּה		meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]; cluster 2 (ב): MAM[POINT DAGESH OR MAPIQ,POINT SEGOL,ACCENT REVIA] vs A[POINT DAGESH OR MAPIQ,POINT SEGOL]	none		
+Ps.49.18	לֹֽא־יֵרֵ֖ד	לֹא־יֵרֵ֖ד		meteg:MAM-has:POINT METEG	cluster 0 (ל): MAM[POINT HOLAM,POINT METEG] vs A[POINT HOLAM]	none		
+Ps.50.1	יְֽהֹוָ֗ה	יְֽהוָ֗ה		policy:divine-name-holam		verse-note		{'tmpl_name': 'ר3'} => "פרשה פתוחה" || {'tmpl_name': 'מ:פסק'} => ["ראו ב", {"tmpl_name": "מ:קישור בהערה", "tmpl_params": {"1": "https://archive.org/details/Ginsburg_The-Massorah-Compiled-from-Manuscripts_1880-1905/page/n654/m
+Ps.50.1	מִמִּזְרַח־שֶׁ֝֗מֶשׁ	מִמִּזְרַח־שֶׁ֝מֶשׁ		policy:revia-mugrash-dot		word-note		{'tmpl_name': 'ר3'} => "פרשה פתוחה" || מִמִּזְרַח־שֶׁ֝֗מֶשׁ => "א=מִמִּזְרַח־שֶׁ֝מֶשׁ (השמטת נקודת הרביע)"
+Ps.50.13	הַ֭אוֹכַל	הַֽ֭אוֹכַל		meteg:Aleppo-has:POINT METEG	cluster 0 (ה): MAM[POINT PATAH,ACCENT DEHI] vs A[POINT PATAH,POINT METEG,ACCENT DEHI]	none		
+Ps.50.19	בְרָעָ֑ה	בְרָ֗עָ֑ה		accent:Aleppo-has:ACCENT REVIA	cluster 1 (ר): MAM[POINT QAMATS] vs A[POINT QAMATS,ACCENT REVIA]	none		
+Ps.50.21	וְאֶעֶרְכָ֣ה	וְאֶֽעֶרְכָ֣ה		meteg:Aleppo-has:POINT METEG	cluster 1 (א): MAM[POINT SEGOL] vs A[POINT SEGOL,POINT METEG]	none		
+Ps.50.22	בִּינוּ־נָ֣א	בִּֽינוּ־נָ֣א		meteg:Aleppo-has:POINT METEG	cluster 0 (ב): MAM[POINT DAGESH OR MAPIQ,POINT HIRIQ] vs A[POINT DAGESH OR MAPIQ,POINT HIRIQ,POINT METEG]	none		
+Ps.50.23	יְֽכַ֫בְּדָ֥נְנִי	יְֽכַ֫בְּ֫דָ֥נְנִי		oleh-position	oleh MAM@[1] Aleppo@[1, 2]	word-note	ch2,ch5	יְֽכַ֫בְּדָ֥נְנִי => ["=ל,ש1 ובדפוסים (וכן הכריעו ברויאר ומג\"ה)", {"tmpl_name": "ש"}, "א!=יְֽכַ֫בְּ֫דָ֥נְנִי (סימן ה\"עולה\" כתוב פעמיים באותיות הסמוכות כ\"ף ובי\"ת)", {"tmpl_name"
+Ps.51.2	כַּאֲשֶׁר־בָּ֝֗א	כַּֽאֲשֶׁר־בָּ֝א		meteg:Aleppo-has:POINT METEG; policy:revia-mugrash-dot	cluster 0 (כ): MAM[POINT DAGESH OR MAPIQ,POINT PATAH] vs A[POINT DAGESH OR MAPIQ,POINT PATAH,POINT METEG]	word-note		{'tmpl_name': 'ר4'} => "פרשה פתוחה" || כַּאֲשֶׁר־בָּ֝֗א => "א=כַּאֲשֶׁר־בָּ֝א (השמטת נקודת הרביע)"
+Ps.51.4	הֶ֭רֶב	הַרְבֵּה	|alt=הֶ֭רֶב,app	ketiv-qere	skel הרב vs הרבה	none		
+Ps.51.14	וְר֖וּחַ	—		missing-in-Aleppo		none		
+Ps.51.14	נְדִיבָ֣ה	—		missing-in-Aleppo		none		
+Ps.51.14	תִסְמְכֵֽנִי	—		missing-in-Aleppo		none		

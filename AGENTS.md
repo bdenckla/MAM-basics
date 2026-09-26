@@ -78,6 +78,16 @@ procedures began as Copilot instructions and have not all been re-verified, so c
 user-level and repository instructions win when a command conflicts. The two procedures for
 reading the evacuated product live under `book-of-job/doc/`.
 
+## The HBCE Psalms snapshot is never refreshed from its site's API
+
+Before touching `hbce-psalms/`, `py/hbce_psalms/` or `py/main_hbce_psalms.py`, read
+`hbce-psalms/README.md`. Never fetch from hbcepsalms.manuscriptroom.com's web-service API, which
+the site's robots.txt disallows: the snapshot is a good-faith download made before anyone had read
+that file. If the work resumes, fresh data comes only through the INTF or its documented exports,
+and whether to contact the INTF is Ben's decision. `hbce-psalms/out/` is a frozen record of one
+run: by Ben's decision of 2026-09-26, a change to MAM's data does not oblige rerunning
+`py/main_hbce_psalms.py compare`, as the hand-run rule below would otherwise require.
+
 ## Issue citations in MAM-basics
 
 Load the `github-issues` skill for any issue operation or citation audit. The always-needed
