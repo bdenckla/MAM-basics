@@ -1,10 +1,11 @@
 # Retire the codex-index image-work pipelines
 
-State: live
+State: executed 2026-09-26
 
-Ready for execution; recorded 2026-09-12. `f2a9ead4` executed part of it on 2026-09-26, and
-Ben decided the two questions it left open that day. “Executed in part on 2026-09-26” and
-“Decisions recorded on 2026-09-26” follow “Decisions recorded on 2026-09-12”.
+Recorded 2026-09-12 and executed on 2026-09-26: `f2a9ead4` executed part of it, Ben decided the
+two questions it left open, and `65f5a1c6` executed the rest. “Executed in part on 2026-09-26”,
+“Decisions recorded on 2026-09-26” and “Executed on 2026-09-26” follow “Decisions recorded on
+2026-09-12”.
 
 ## Purpose
 
@@ -126,6 +127,65 @@ recommendation, and Ben agreed to each recommendation that day:
    `py/main_gen_misc_authored_english_documents.py` names the Book-of-Job word ids with it
    through `py/author_boj_util/prep_quirkrecs.py`. Ben's decision: point `AGENTS.md` and the
    test at `consensus_to_ascii`, and delete `py/py_ac_word_image_helper/` whole.
+
+## Executed on 2026-09-26
+
+Recorded by a local Claude Code session on 2026-09-26. It worked in the worktree
+`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/editor-retirement-follow-ups-327156`,
+on branch `claude/editor-retirement-follow-ups-327156`, from `f4d81285`. An agent-written
+prompt from the cloud session that made `f2a9ead4` relayed Ben's instruction to that
+session: "give me a prompt to address all five of these in a new session". Ben agreed that
+day to the four recommendations this session put to him: the two decisions above, a
+count-free title for MAM-basics #269, and closing MAM-basics #241 as not planned.
+
+1. `1fba91fe` recorded the two decisions of 2026-09-26.
+2. `65f5a1c6` did the rest of the tracked work. It deleted 93 files: 39 Python files, the
+   37 Aleppo page JPEGs, the 14 Cambridge spreads and the three future-crop procedures. It
+   moved `py/py_ac_loc/mam_xml_verses.py` to `py/mb_cmn/` with `get_verse_atoms`, pointed
+   the filename rule at `consensus_to_ascii`, simplified the path and scope declarations, and
+   rewrote the current documentation as this plan's sections direct. Its commit message is
+   the full account.
+3. Checks in the worktree, before that commit: the protected-file manifest, 907 files, was
+   identical before and after except for the three edited documents that the first decision
+   of 2026-09-26 and “Rewrite current documentation” name; every retained count was
+   unchanged; Black changed one file; `git diff --check` was clean; every Hebrew run in the
+   36 changed files passed `has_std_mark_order`; the suite gave 1006 passed, 5 skipped and
+   115 subtests, as at `f4d81285`; and `py/check_all.py` passed all seven checks.
+4. The mega ran on `65f5a1c6`: exit 0, 54 steps in 669.4 s, and no tracked diff. By then
+   `main` had gained `fc819f6b` and `a3ca231e`, the HBCE Psalms work. The session making them
+   held staged edits in the primary clone to `py/tests/test_h_dot_below_nfc.py` and
+   `py/tests/test_mega_coverage.py`, which this branch also changes, so the primary clone
+   could not be fast-forwarded, and Ben decided to wait for that session to commit.
+   `c0292e85` merged `main` without a conflict, and the mega ran again on it: exit 0, 54
+   steps in 200.8 s, and no tracked diff. Both runs were on the same machine; the HBCE
+   session was active during the first.
+5. The primary clone `C:/Users/BenDe/GitRepos/MAM-basics` was fast-forwarded from `a3ca231e`
+   to `c0292e85`, and `main` was pushed.
+6. After the push, the primary clone's ignored `cam1753/cam1753-pages/` measured 28 files and
+   50,316,747 bytes, with the same SHA-256 manifest as before any edit. It was moved to the
+   Windows Recycle Bin at 17:01, New York time, and its path is absent.
+7. The body of MAM-basics #269 was corrected with `py/main_github_issue_edit.py`, and its
+   title became “Some programs read sys.argv by hand instead of using argparse”, both at Ben's
+   request. MAM-basics #241 was closed as not planned, with a comment saying why.
+
+Findings, with their dispositions:
+
+1. **Handed to a new session: the suite command in “Planning snapshot and preconditions”
+   widens itself on its second use.** With `--basetemp` and its path as two arguments,
+   `py/main_test.py` treats the path as the test target once the directory exists, and then
+   does not add `py/tests`. The second run collected the whole repository: 1040 passed and 5
+   skipped, the extra tests all in `py/repo_util/worktree_retirement_simulation_test.py`. The
+   run recorded in item 3 used `--basetemp=<path>`. Ben asked on 2026-09-26 for a prompt for a
+   new session to fix `py/main_test.py`; this plan's commands stay as written.
+2. **Left for Ben: `py/boj_paths.py` keeps three accessors that nothing calls.** This plan
+   keeps `jobn_img_dir()` and `aleppo_img_dir()` because the authoring pipeline reads the
+   finished crops, but it reads them through `jobn_dir()`; their last caller was
+   `py/main_list_missing_aleppo_imgs.py`, which was also `enriched_quirkrecs_path()`'s only
+   reader. They were kept as this plan says.
+3. **Left unchanged: `cam1753/cam1753-page-index.json`'s header still names
+   `py/main_cam1753_download_spreads.py`.** No retained JSON under `cam1753/` may change.
+4. **No change owed: `README.md`**, which “Rewrite current documentation” names, already
+   described only the retained data.
 
 ## Execution setup
 
