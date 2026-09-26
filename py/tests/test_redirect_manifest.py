@@ -28,14 +28,48 @@ its stub in the source host, accepting that an old citation now lands on ``404.h
 A MISSING, MALFORMED OR EMPTY MANIFEST FAILS, IT DOES NOT SKIP.
 ``stubs.redirect_targets`` validates and rejects each case, so none can report green
 having verified nothing.
+
+IN A CLOUD CONTAINER, THE HBOFONTS ROW CHECKS ITS MANIFEST AND SKIPS THE REST. Ben's
+decision, 2026-09-26. The Taamey_D row's declared target repository is hbofonts, a private
+sibling that ``stubs.published_pages`` reads through ``paths.require_sibling``, and a cloud
+container cannot clone it: a container run of the suite on 2026-09-25, recorded in the message
+of ``ee0d66d5``, failed that row and no other test. So in a container the row still reads and
+validates its manifest, which is tracked here, and skips only before reading hbofonts. This
+follows ``py/tests/test_final_stress_vs_phonetic_mam.py``, which skips in a container the tests
+that read MAM-private. Like that module, it asks ``graphviz_pin.in_cloud_session()``, the
+repository's one cloud predicate, so the read is skipped in a container whether or not hbofonts
+is attached there. On any machine of Ben's the sibling stays REQUIRED, and a missing hbofonts
+fails here as before. The rows whose target is MAM-basics read only this repository and run
+everywhere. The skip's reason string is what tells it apart from a semantic skip under ``-rs``.
 """
 
 from __future__ import annotations
 
 import pytest
 
+from mb_cmn import graphviz_pin
 from mb_cmn import paths
 from redirect_stubs import stubs
+
+_HBOFONTS_CLOUD_SKIP = (
+    "cloud container: this row's target, the private hbofonts sibling, cannot be cloned"
+    " here -- an environment skip, not this suite's semantic skip"
+)
+
+
+def _cloud_skip_reason(repo: stubs.RedirectRepo) -> str | None:
+    """Why ``repo``'s published target cannot be read in this process, or None.
+
+    Dispatches on each target repository that ``stubs.RedirectRepo`` accepts and raises on
+    any other, so a new target repository cannot run here without a decision about it.
+    """
+    if repo.target_repo == "MAM-basics":
+        return None
+    if repo.target_repo == "hbofonts":
+        return _HBOFONTS_CLOUD_SKIP if graphviz_pin.in_cloud_session() else None
+    raise ValueError(
+        f"{repo.source_repo}: no cloud rule for target repository {repo.target_repo!r}."
+    )
 
 
 @pytest.mark.parametrize(
@@ -43,6 +77,9 @@ from redirect_stubs import stubs
 )
 def test_every_frozen_url_has_a_published_target(repo: stubs.RedirectRepo) -> None:
     targets = stubs.redirect_targets(paths.repo_root(), repo)
+    skip_reason = _cloud_skip_reason(repo)
+    if skip_reason is not None:
+        pytest.skip(skip_reason)
     published = set(stubs.published_pages(paths.repo_root(), repo))
     declared_targets = set(targets.values())
     if repo.not_found_target is not None:

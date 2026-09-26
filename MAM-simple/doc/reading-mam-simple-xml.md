@@ -299,9 +299,13 @@ atom-form is enough; never append both to the running text.
 ### The three cantillations: `<cant-all-three>`
 
 `<cant-all-three>` has exactly three children, `<cant-combined>`, `<cant-alef>`, and
-`<cant-bet>`, giving three accentuations of the same consonantal text. It appears in the
-Decalogue, where MAM has both the תחתון accentuation (`<cant-alef>`) and the עליון one
-(`<cant-bet>`), plus a combined form that has the marks of both (`<cant-combined>`).
+`<cant-bet>`, giving three cantillations of the same consonantal text. It appears in the
+two Decalogues, Exod.20 and Deut.5, where MAM has both the תחתון cantillation
+(`<cant-alef>`) and the עליון one (`<cant-bet>`). It also appears at Gen.35.22, where MAM
+has both the פשוטה cantillation (`<cant-alef>`), whose chanted verse ends before the
+petuḥah inside the numbered verse, and the מדרשית one (`<cant-bet>`), whose chanted verse
+runs on past it. Wherever it appears, `<cant-combined>` is a combined form that has the
+marks of both.
 
 ### Repeated endings: `<good-ending>`
 

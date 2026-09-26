@@ -33,7 +33,20 @@ checked over all three books: 4512 verses, 30322 words, 0 mismatches.
 Two choices in the shared reader belong to the Aleppo and Cambridge 1753 workflows, not to MAM-simple:
 
 - **It takes the ketiv, not the qere**, because the point is alignment against what
-  Cambridge MS Add. 1753 has on the page, and the ketiv is what is written there.
-  `ketiv_indices` says which entries of `words` came out unpointed as a result.
-- **It joins maqaf compounds into a single entry of `words`**, so an entry is a chanted
-  word rather than an atom.
+  Cambridge MS Add. 1753 has on the page, and the ketiv is what is written there. So a
+  ketiv that is not read is taken too, and a qere that is not written contributes nothing
+  (Ben's decisions of 2026-09-26, which the module docstring records with the rest).
+  `ketiv_indices` says which entries of `words` hold a ketiv, which is unpointed.
+- **It joins the atoms across each maqaf into a single entry of `words`**, so an entry is
+  normally a chanted word rather than an atom. The exceptions are these, and none of them
+  falls in Psalms, Job or Proverbs, the books the Cambridge 1753 streams cover:
+  - Where the atom before a qere that is not written ends in a maqaf, one entry joins the
+    atoms on either side of the qere, as 2 Sam 16:23's יִשְׁאַל־בִּדְבַ֣ר.
+    The same happens at 2 Sam 18:20 and Jer 50:29.
+  - Where MAM has a maqaf after a ketiv that is not read, at 2 Kgs 5:18 and 2 Sam 13:33,
+    the reader has none (Ben, 2026-09-26). So where MAM has one compound, the reader gives
+    two entries: in 2 Kgs 5:18, יִסְלַח־נא and then יְהֹוָ֥ה,
+    and in 2 Sam 13:33, כִּֽי־אם and then אַמְנ֥וֹן.
+  - In the Decalogue the reader takes MAM's combined text, which has the maqafs of both
+    strands, so one entry can join atoms that each strand alone divides between two chanted
+    words: Deut 5:6's entries include לֹ֣א־יִהְיֶ֥͏ֽה־לְךָ֛֩.

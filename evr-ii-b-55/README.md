@@ -68,9 +68,12 @@ An atom is one written form between spaces or maqafs. These rules define its fie
    [`../py/py_ac_loc/mam_xml_verses.py`](../py/py_ac_loc/mam_xml_verses.py)'s
    `get_verse_words`, then the split after every maqaf that each package's
    `gen_flat_stream.py` makes. So the paseq glyph and a sof pasuq belong to the atom before
-   them, and where MAM has a ketiv/qere, the atoms are the ketiv's. The numbers count the same
-   units as the word sequences of those two line-break trees, so the existing flat-stream and
-   line-break tools could extend to this manuscript later.
+   them, and where MAM has a ketiv/qere, the atoms are the ketiv's. A ketiv that is not read is
+   an atom too. A qere that is not written contributes no atom, and neither does the repeated
+   ending that MAM adds after the last verse of four books. A parashah break within a verse
+   does not interrupt the count. The numbers count the same units as the word sequences of
+   those two line-break trees, so the existing flat-stream and line-break tools could extend
+   to this manuscript later.
 3. **A `_text` is MAM's letters for the atom or atoms, unpointed**, one space between atoms,
    whether MAM joins them with a space or a maqaf. A script lifted every one from MAM-simple.
    None was typed. A cue helps a reader find the place. It is not a reading of the manuscript,
@@ -213,14 +216,21 @@ are presumably among Part B's images 005–495, which the download lacks.
 5. **Don't list the download's folder.** Take the images' exact names from the zip's central
    directory, which the provenance record describes. The download sits under OneDrive, where a
    listing or search can pull cloud-only files down to disk.
-6. **The segmentation has two limits.**
-   - `get_verses_in_range` reads only a file's first book. So for 2 Chronicles, which shares
-     `1Chr-2Chr.xml` with 1 Chronicles, find each verse by its `osisID` and pass it to
-     `get_verse_words`.
-   - `get_verse_words` raises on a MAM-simple element it does not handle. On 2026-09-25 it
-     refused 149 of MAM-simple's 23,202 verses, each counted at the first such element:
-     `<spi-samekh3>` in 95, `<cant-all-three>` in 18, `<spi-pe3>` in 15, `<kq-q-velo-k>` in 9,
-     `<kq-k-velo-q>` in 8 and `<good-ending>` in 4. None of them falls on a page indexed so far.
-     They include verses of Samuel, Kings, Isaiah, Jeremiah and Ezekiel, whose pages are among
-     those the download lacks. Extending the dispatch means deciding what each of those elements
-     contributes to the atom sequence, which is Ben's decision, not a mechanical fix.
+6. **The segmentation's two former limits were removed on 2026-09-26.**
+   - `get_verses_in_range` read only a file's first book, so 2 Samuel, 2 Kings, 2 Chronicles,
+     Nehemiah and Joel through Malachi were out of its reach, and 2 Chronicles had to be read
+     verse by verse through `get_verse_words`. It now reads the `<book39>` whose `osisID` it is
+     given, and raises if the file has none or more than one.
+   - `get_verse_words` refused 149 of MAM-simple's 23,202 verses, those holding one of seven
+     elements it did not handle. Ben decided on 2026-09-26 what each contributes, keeping the
+     atoms what is written on the page. A ketiv that is not read is an atom, like any ketiv. A
+     qere that is not written, a maqaf after a ketiv that is not read, and a repeated ending
+     contribute nothing. A parashah break within a verse contributes nothing either, so the
+     verse's atom numbers run straight through it. In the two Decalogues and at Gen 35:22 the
+     atoms are those of `<cant-combined>`, the text with the marks of both strands, whose atom
+     numbers and letters are the same as either strand's. The reader's module docstring gives
+     each decision with an example. No verse is refused now, and
+     `py/tests/test_mam_xml_verses.py` checks both fixes over the whole of MAM-simple.
+
+   The fixes changed no atom of any verse that the reader already accepted, so no `_num` in the
+   index and no letter count in item 3 changed.
