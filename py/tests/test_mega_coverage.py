@@ -538,10 +538,11 @@ NOT_IN_MEGA: dict[str, str] = {
         " gained the program in 5aae8465."
     ),
     "py/main_hbce_psalms.py compare": (
-        "Claude-written proposal, not yet reviewed by Ben: it compares a frozen snapshot"
-        " of HBCE's Psalms transcriptions with MAM, and is run by hand, again only if that"
-        " work resumes, so hbce-psalms/out/ records one run rather than following MAM's"
-        ' data.  Recorded in hbce-psalms/README.md, under "Regenerating the outputs".'
+        "Ben's decision, 2026-09-26, accepting a Claude-written proposal: it compares a"
+        " frozen snapshot of HBCE's Psalms transcriptions with MAM, and is run by hand,"
+        " again only if that work resumes, so hbce-psalms/out/ records one run rather"
+        ' than following MAM\'s data.  Ben: "I accept the frozen record."  Recorded in'
+        ' hbce-psalms/README.md, under "Regenerating the outputs".'
     ),
     "py/main_hbce_psalms.py lint-receipt": (
         "Claude-written proposal, not yet reviewed by Ben: it checks the Hebrew forms of"

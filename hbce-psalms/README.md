@@ -74,5 +74,6 @@ of record is in MAM-normal mark order and occurs in the outputs or the transcrip
 The outputs record one run, on 2026-09-26, against MAM as this repository had it then:
 `MAM-simple/xml-vtrad-mam/Ps.xml` as of `47a86b4d` and `MAM-parsed/plus/D1-Psalms.json` as of
 `b5b15c01`. The mega does not run the comparison, so the outputs do not follow later changes to
-MAM's data; rerun it if the work resumes. `py/tests/test_mega_coverage.py` declares that reason,
-which Ben has not yet reviewed.
+MAM's data; rerun it only if the work resumes. Ben accepted this frozen record on 2026-09-26, so a
+change to MAM's data does not oblige a rerun, as `AGENTS.md`'s rule for hand-run programs would
+otherwise require. `py/tests/test_mega_coverage.py` declares the reason and cites that decision.
