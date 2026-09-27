@@ -49,6 +49,10 @@ way.
 
 WHY WINDOWS PYTEST TEMP FILES ARE WORKTREE-LOCAL
 
+A run creates the checkout's gitignored ``.novc`` directory if it is absent.  That
+also gives a caller-supplied ``--basetemp .novc/<name>`` its required parent rather
+than making every command pre-create it.
+
 A Codex elevated Windows sandbox can run commands under a dedicated Windows account
 while preserving another account's ``TEMP``, ``TMP``, and ``USERNAME``.  Python 3.13
 gives directories created with mode ``0o700`` a private Windows ACL, while pytest
@@ -114,6 +118,7 @@ def _default_target() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     """Run pytest over ``argv`` (default ``sys.argv[1:]``) and return its exit code."""
+    paths.novc_dir().mkdir(parents=True, exist_ok=True)
     args = list(sys.argv[1:] if argv is None else argv)
     _add_windows_basetemp(args)
     add_windows_safe_directory(os.environ, paths.repo_root())
