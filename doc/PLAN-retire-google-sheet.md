@@ -132,6 +132,13 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py wsgo
 
 A different result is a finding.
 
+Ben decided on 2026-09-27 to stop applying the auto-edits to the Sheet, since it is being
+retired: "I am retiring the Google Sheet soon so I won't bother doing this." So a non-empty
+result is expected, and the Sheet needs no round trip before this plan runs. At `86132514` the
+command's two files hold 25 auto-edits and 25 differences, from Wikisource edits and refreshes
+since `dab5d091`. Report the count; a difference that no Wikisource change since `dab5d091`
+explains is still a finding.
+
 ## Update repository documentation
 
 - Update the current READMEs, `DATA-LICENSES.md`, `AGENTS.md`, generated MAM-parsed
