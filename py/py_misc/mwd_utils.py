@@ -225,13 +225,21 @@ def _html_for_nondoc(hfr_ctx: hfr.HfrCtx, ver_ndd: VerseNdd):
 
 
 def _html_for_docs(doc_ctx: _DocCtx, doc_type):
+    # The notes of a verse's three rows are numbered in one sequence, in the order the
+    # rows appear, because a note's id is made from the verse and that number alone.
     doc_veraf = doc_ctx.ver_ndd.doc_veraf
-    return doc_veraf.map_over((_html_for_docs2, doc_ctx, doc_type))
+    start_of_next_cp = len(doc_veraf.verse)
+    start_of_good_ending = start_of_next_cp + len(doc_veraf.vaf_next_cp)
+    return vaf.VerseAndFriends(
+        _html_for_docs2(doc_ctx, doc_type, 0, doc_veraf.verse),
+        _html_for_docs2(doc_ctx, doc_type, start_of_next_cp, doc_veraf.vaf_next_cp),
+        _html_for_docs2(doc_ctx, doc_type, start_of_good_ending, doc_veraf.good_ending),
+    )
 
 
-def _html_for_docs2(doc_ctx: _DocCtx, doc_type, doc_renels):
+def _html_for_docs2(doc_ctx: _DocCtx, doc_type, start, doc_renels):
     hfd = my_utils.st_map(
-        (_html_for_single_doc_ren_el, doc_ctx, doc_type), enumerate(doc_renels)
+        (_html_for_single_doc_ren_el, doc_ctx, doc_type), enumerate(doc_renels, start)
     )
     line_break_seq = (mb_html.line_break(),)
     return _shrink_join(line_break_seq, hfd)
