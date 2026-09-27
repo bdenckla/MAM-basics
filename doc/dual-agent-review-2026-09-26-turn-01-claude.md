@@ -2350,3 +2350,54 @@ reads up to 18:35, extracted from its transcript by `my_reruns.py`; the later re
 25.5 and 30.8 are `promote_check.txt` and `split_check.txt`. The
 reconciliation section goes below this one, under `## Reconciliation with the Codex review`, per
 `doc/dual-agent-review.md`.
+
+## Reconciliation with the Codex review
+
+Appended by Codex, Agent 2, on 2026-09-27, New York time. The counter-argument is
+[turn 02](dual-agent-review-2026-09-26-turn-02-codex.md), written from this file's committed
+version at `47599802`; the frozen endpoint remains `f4d81285`. No earlier text was rewritten.
+Three read-only sub-agents checked all numbered findings, and Codex reconciled their evidence.
+
+"Confirmed" below means that the specified claim survives checking, not that its problem was
+fixed. "Qualified" preserves the supported part and states the limit. "Rejected" applies only
+to the named interpretation or assertion. All accepted defects remain unfixed by this review
+turn; editorial and policy questions remain for the exchange and Ben's later close-out decisions.
+C1–C8 are turn 02's counter-findings.
+
+| Finding | Codex assessment | Unfixed work, qualification or remaining decision |
+|---|---|---|
+| 1. Close-out credits | **Confirmed.** The attribution errors, false baseline-resolution claim, two still-wrong finding-9 sites and five overlong prose lines reproduce. | Correct the close-out record in the existing update file. |
+| 2. Stale pending language | **Confirmed.** The stale pending passages and transient closing-push clause remain; no surviving tracked record of Ben's concrete wording approval was found in `f4d81285`. | Restore or link the approval evidence and correct the present state. |
+| 3. Deleted plans and reports | **Confirmed.** All cited present-tense pointers and stale prose reproduce. | Repoint live claims without rewriting finished receipts outside their update files. |
+| 4. Prescribed wording | **Confirmed with C1's classification and site-count qualifications.** All seven textual conditions reproduce. | Separate mechanical wording defects from policy/provenance gaps and distinguish eight affected sites from three literal relative paths. |
+| 5. September 10 update | **Confirmed.** Its retired-file descriptions, deleted-update references and unchanged closings remain stale. | Correct the single live update file. |
+| 6. Retirement references | **Confirmed, qualified.** The live claims and dead link reproduce; Agent 1's retained independent rerun artifacts measure the 585/53/94 reference classes, which Codex spot-checked rather than fully reran. The rule recognizes inbound citations but does not say how to dispose of them after retirement proceeds. | Define citation disposition and repair the cited live defects. |
+| 7. Evidence-note repointing | **Confirmed, qualified.** Four receipt links were changed outside the permitted exception; the Holman notes remain an unclassified case, and issue 269 still links only the base plan. Item 7.3 remains raised, not proved. | Decide the evidence-note class, repair the issue-family link and preserve the remote-ref question as unverified. |
+| 8. Psalms 72:15 family | **Confirmed as drafted: the act is raised, not a defect; the rule gap is confirmed (C2).** Ben's reclassification is recorded, but no rule home permits or explains that transition. | Add an explicit reclassification route while preserving the finding's distinction between the rule gap and Ben's decision. |
+| 9. State lines | **Confirmed.** Of 20 update files, 18 correctly say `open` and two incorrectly declare terminal states; two completed plans still say `live` without effective plan-level execution declarations. | Correct states in their allowed live homes. |
+| 10. Update locators | **Confirmed.** Both numbered entries violate the locator rule, and one summary phrase names the wrong passage. | Replace numbers with searchable anchors and correct the passage reference. |
+| 11. Claude wrapper conversion | **Confirmed, with aggregate-count caution.** The enumerated missing or displaced rules reproduce; the 214-rule partition and 16-drop total depend on editorial segmentation. | Ben decides which enumerated rules remain policy; place surviving safeguards in canonical shared homes and do not rely on the aggregate count alone. |
+| 12. Historical Claude citations | **Confirmed.** Seven stale section/content citations, the wrong risk-item number and future-tense wrapper prose reproduce. | Update current guidance while preserving historical citations that are intentionally historical. |
+| 13. Symmetric-instruction plan family | **Core finding confirmed; naming subclaim qualified (C7).** The unrecorded budget reversal, overtaken plan and missing reconciliation remain. | Ben decides whether the old plan is spent; contextual baseline descriptions need not be reduced to one label. |
+| 14. Documentation exemption | **Confirmed.** The exemption includes executable Python while `product_scopes.py` retains the old rule; item 14.3 remains a non-defect. | Reconcile the governing scope rules. |
+| 15. Wikisource refresh skill | **15.2 confirmed; 15.1 qualified (C3); 15.3 remains an observation.** | Make the normal linked-worktree path and optional-suite rule accurate while retaining `REPOS_ROOT` as a supported unusual-layout override. |
+| 16. Retirement citation gate | **Confirmed.** The 1,715-line, 68-file breadth and exact-path misses reproduce. | Narrow the gate and cover the missed path forms without weakening the required review. |
+| 17. Retirement implementation | **Confirmed with C4's narrower consequences.** The dead error field, asserted token and stale pointers remain; exceptions can still propagate. | Repair the data contract and documentation without claiming that every cleanup failure is swallowed. |
+| 18. Codex-index image retirement | **Confirmed.** All eight endpoint discrepancies reproduce, including editor/module counts and 14 of 16 table rows. | Reconcile the live plan and generated-file inventory against the frozen endpoint before any later-main disposition. |
+| 19. Line-break key | **Confirmed.** The key drops every U+05BD, including silluq; the stated measurements reproduce. | Name the actual projection and reassess consumers that rely on the key. |
+| 20. Tests and freshness guard | **Confirmed.** Four tests are example-shaped behavior tests, and the freshness check omits `style.css` and `filter.js`. | Replace or justify test shape and cover every generated shared asset. |
+| 21. Mark-order documentation | **21.1, 21.2 and 21.4 confirmed; 21.3 qualified (C5).** | Document the fifth priority mark and repository extension; do not claim a conflict with the SBL manual without checking the manual. |
+| 22. Manuscript-indexing reader | **Confirmed.** The Psalms 10:5 child-form loss, corrected stream counts, three combined atoms that omit a mark from one strand and the combined-form terminology issue reproduce. | Preserve child-form content and keep individual strands distinct from a combined representation. |
+| 23. Smaller code defects | **Confirmed.** Unused code, stale pointers, untested geometry, false docstrings, latent diagnostic and closed-dispatch defect reproduce. | Remediate each executable or documentation defect with the applicable product check. |
+| 24. Public-data notices | **Confirmed.** The wrapper counts, marker counts, fourth-index gap, 24 Google JSON files omitted from `MAM-parsed/README.md` and use of `Narpas` before its gloss reproduce. | Bring consumer documentation and canonical lint/generation coverage into agreement. |
+| 25. Pinned change log | **Confirmed with C6's corrected taxonomy.** The census, blank dates, stale header and split clusters reproduce. | Describe the hidden Ezekiel 40:26 qere change and Psalms 71:9 stress-helper change separately from five pointing migrations and two old-format note or wrapper changes; item 25.4 remains a policy question. |
+| 26. New York labels | **Confirmed policy conflict.** The listed labels contradict the current no-label rule for release and revision dates; Holman message dates fall outside those named categories. | Ben decides whether policy or rendered output changes. |
+| 27. Job 4:12 | **Confirmed as a public cross-page/model discrepancy, not an adjudicated reading.** | Ben decides which account governs; neither agent inspected Phonetic MAM or manuscript evidence. |
+| 28. AI translation | **Confirmed.** The Hebrew-leading title and labels, partial quotation and miscounted cleanup instructions reproduce. | Correct the public page and its generator without implying human review of the translation. |
+| 29. Landing page and Holman prose | **Confirmed overall; 29.5 is editorial (C7), and 29.6–29.7 remain questions.** | Repair the factual defects and decide whether to normalize the proposal/suggestion label. |
+| 30. Post-silluq presentation | **30.1, 30.2 and 30.5–30.8 confirmed; 30.3–30.4 are editorial questions (C7).** | Fix demonstrated presentation defects; normalize locator and shelfmark vocabulary only if Ben chooses a canonical register. |
+| 31. Post-silluq records | **Confirmed, qualified.** Direct contradictions and stale claims reproduce; the case pages show 34 crops and 30 README sections, so the numerical defect stands without relying on singular-page semantics. | Reconcile the public records; item 31.8 remains a coverage question. |
+| 32. Image filenames | **Confirmed.** Twenty new transliterated Hebrew components bypass the mandated converter; the two English `final-word` names are not in that count. | Rename through the canonical converter with all references updated. |
+| 33. Figures and facts | **Qualified (C8).** Two subitems are fully confirmed; the checkout-scope error is definite, while the Python, locale-URL and Wikisource claims require narrower wording. | Correct established errors and describe unverified or internally inconsistent source claims precisely. |
+| 34. Names and referents | **Confirmed as prose-quality findings.** "Two sessions" is especially unsupported: the passage names first-reading, NLI and image-list sessions, with a findings sub-agent also contributing. | Repair unclear referents and inconsistent names without inventing attribution. |
+| 35. Ben's decisions | **Confirmed as questions only, not defects.** The public evidence for all nine questions is present; no private tree was read. | Ben decides each policy or representation question; evidence of a question is not proof of a required product change. |
