@@ -11,7 +11,8 @@ only maintained textual source. Preserve the Sheet and its change log as a froze
 archive. Move the special-page inventory into the Wikisource downloader. Repository
 changes are implemented normally; Google Sheet and Hebrew Wikisource changes are
 supplied only as manual-edit drafts and verified afterward by downloading the live
-results. Ben made these retirement and authority-boundary decisions on 2026-09-12.
+results. Ben made the retirement and authority-boundary decisions on 2026-09-12 and
+decided on 2026-09-27 that the `שינויים changes` tab is frozen with every other tab.
 
 ## Execution findings, 2026-09-27
 
@@ -36,7 +37,9 @@ results. Ben made these retirement and authority-boundary decisions on 2026-09-1
   protected corpus products named under “Verification and integration” did not change.
 - The manual packets are
   `.novc/google-sheet-freeze-instructions-2026-09-27.md` and
-  `.novc/wikisource-retirement-edit-packet-2026-09-27.md`. No external edit was made.
+  `.novc/wikisource-retirement-edit-packet-2026-09-27.md`. On 2026-09-27 they were
+  revised to freeze every tab, superseding the earlier change-log exception. No
+  external edit was made.
 
 ## Execution setup
 
@@ -187,14 +190,13 @@ A different result is a finding.
   checkout's gitignored `.novc/` directory and provide links to them.
 - The Sheet instructions must preserve every tab, all data, published access, and
   attached Drive scripts. Direct the editor to add a merged, wrapped, high-contrast,
-  always-visible first row across every used column on every tab except
+  always-visible first row across every used column on every tab, including
   `שינויים changes`.
-- Hebrew banner: `הדף הזה מוקפא מ־12 בספטמבר 2026 ואינו מתעדכן עוד. ויקיטקסט העברי הוא המקור המתוחזק. רק הדף „שינויים changes” עשוי להמשיך להתעדכן.`
-- English banner: `This tab has been frozen since September 12, 2026 and is no longer maintained. Hebrew Wikisource is the maintained source. Only the “שינויים changes” tab may continue to be updated.`
+- Hebrew banner: `הדף הזה מוקפא מ־12 בספטמבר 2026 ואינו מתעדכן עוד. ויקיטקסט העברי הוא המקור המתוחזק. כל הלשוניות בגיליון, לרבות „שינויים changes”, מוקפאות ואינן מתעדכנות עוד.`
+- English banner: `This tab has been frozen since September 12, 2026 and is no longer maintained. Hebrew Wikisource is the maintained source. Every tab in this workbook, including “שינויים changes”, is frozen and no longer updated.`
 - The Sheet instructions must also supply a draft expansion for the README tab
   explaining that the text, templates, special-page inventory, and AutoEdits
-  material are archival; only the change log may still receive hand-authored
-  updates.
+  material are archival and that every tab, including the change log, is frozen.
 - The Wikisource packet must contain exact modern-Hebrew draft replacements, keyed
   by live page title and a searchable existing-text anchor, for:
   - The root introduction.
@@ -214,9 +216,10 @@ A different result is a finding.
 - After Ben reports that the Sheet edits are complete, download a fresh public
   workbook export to `.novc/` and inspect it with the spreadsheet tooling. Verify in
   spirit that:
-  - Every non-change-log tab has a conspicuous bilingual warning.
+  - Every tab has a conspicuous bilingual warning.
   - The README communicates the retirement status.
-  - `שינויים changes` remains exempt.
+  - `שינויים changes` is frozen, carries the same warning, and receives no further
+    entries.
   - No tabs or existing data were removed.
 - After Ben reports that the Wikisource edits are complete, download the live pages
   and compare their meaning with the draft packet. Then refresh the tracked
