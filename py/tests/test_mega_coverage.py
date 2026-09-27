@@ -263,12 +263,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " py/subcommands/diff_mpplus.py's docstring, CLAUDE.md, and"
         " doc/mega-coverage-2026-09-10.md §3."
     ),
-    "py/main_download.py fr-google": (
-        "A network download from Google Sheets, with or without --download-only, run"
-        " when the upstream moves.  Recorded in doc/process-documentation/pipeline.dot"
-        ' ("External prerequisites (not part of _STEPS)") and'
-        " doc/mega-coverage-2026-09-10.md §3."
-    ),
     "py/main_download.py fr-wikisource": (
         "A network download from Hebrew Wikisource, run when the upstream moves."
         '  Recorded in doc/process-documentation/pipeline.dot ("External prerequisites'
@@ -412,13 +406,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " revisions someone picks, where the diff-mpplus step rebuilds every named"
         " release.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
-    "py/main_download.py fr-google --skip-download": (
-        "Claude-written, accepted by Ben on 2026-09-10: it skips the download and"
-        " runs only parse_go.almost_main, the parse that the parse-go step runs; see"
-        " run in py/subcommands/download_google.py.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4, when that form also ran check_mpplus,"
-        " which runs inside the parse-ws step now."
-    ),
     "py/main_ws_bot.py real": (
         "Claude-written, accepted by Ben on 2026-09-10: it saves edits to live Hebrew"
         " Wikisource under Ben's bot account, so every run is a deliberate act."
@@ -555,8 +542,6 @@ NOT_IN_MEGA: dict[str, str] = {
 # key are the arguments that run passes, which is what the mode check reads.
 # ---------------------------------------------------------------------------
 _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
-    # The function `py/main_parse.py go` calls, which writes only MAM-parsed/google/.
-    "parse_go.almost_main": ("py/main_parse.py go",),
     # The function `py/main_parse.py ws` calls, here with no book named.  It calls
     # parse_ws_products.generate_production, which ends by calling
     # main_authored.cmd_gen_mam_parsed_docs(None), which is what
@@ -567,8 +552,6 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
     ),
     # What `py/main_diff.py mpplus --all` runs.
     "diff_mpplus.run_all": ("py/main_diff.py mpplus --all",),
-    # py/subcommands/diff_wsgo.py binds almost_main to run, the function `wsgo` calls.
-    "diff_wsgo.almost_main": ("py/main_diff.py wsgo",),
     # The function `py/main_ws_bot.py proto` calls, here with no edit file.
     "ws_bot_proto.almost_main": ("py/main_ws_bot.py proto",),
     # gen-misc, the default, runs cmd_gen_misc, which calls almost_main.

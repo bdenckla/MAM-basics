@@ -1,6 +1,7 @@
 # PLAN — make the mega run faster
 
-State: live. Phase 2 executed 2026-09-14; no other phase started as of that date.
+State: live. Phase 2 executed 2026-09-14; the Google Sheet retirement was incorporated
+2026-09-27; no other phase has started.
 
 Written by a Claude session on 2026-09-14. Ben's instructions that day, said of the changes to the
 mega since 2026-09-11 that the session had just listed for him: "Should other updates you mention
@@ -113,10 +114,9 @@ record's §5).
   git -C C:/Users/BenDe/GitRepos/MAM-basics log --no-merges --format="%h %ad %s" --date=short 132f2f3e..HEAD -- py/main_mam_simple.py py/main_tmpl_survey.py py/tmpl_survey py/subcommands py/accgram py/main_accgram.py py/mb_cmn/file_io.py py/main_wlc_json_and_unicode.py py/main_fois.py py/main_mam_with_doc.py py/main_multimark.py
   ```
 
-- **`doc/PLAN-retire-google-sheet.md`, which is live, would remove two more steps**, `parse-go`
-  and `diff-wsgo`, which took 1.1 to 3.5 s and 12.4 to 16.1 s in the dated record's runs. If that
-  plan runs first, Phase 1 times two fewer steps, and item 6 shrinks to the one repeated parse
-  left, in `ws-bot-proto`.
+- **The repository phase of `doc/PLAN-retire-google-sheet.md` removed two more steps**, `parse-go`
+  and `diff-wsgo`, on 2026-09-27. They took 1.1 to 3.5 s and 12.4 to 16.1 s in the dated record's
+  runs. Phase 1 now times two fewer steps, and item 6 has only the repeat in `ws-bot-proto`.
 
 ## The dated record's twelve §7 items, and what has become of each
 
@@ -145,9 +145,10 @@ of the code the item names.
 5. **Render `tmpl-survey`'s twelve SVGs at the same time, on a pool of threads.** Estimated
    saving: about 5 s of the 7.5 s its `dot` subprocesses took under cProfile. Risk: low to medium.
    Not started, not filed.
-6. **Parse the Wikisource input once per run.** `diff-wsgo` and `ws-bot-proto` each repeat the
-   parse that `parse-ws` has just made, which took 1.87 s. Estimated saving: about 4 s. Risk:
-   medium. Not started, not filed. The Google Sheet retirement above would leave one repeat.
+6. **Parse the Wikisource input once per run.** `ws-bot-proto` repeats the parse that `parse-ws`
+   has just made, which took 1.87 s in the dated record. The former `diff-wsgo` repeat was removed
+   with the Google Sheet pipeline. Estimated remaining saving: about 2 s. Risk: medium. Not
+   started, not filed.
 7. **Load MAM-simple once in the post-stress-meteg survey**, where `load_mam_simple_for_refs` runs
    four times. Estimated saving: about 2 to 3 s. Risk: low if the four calls ask for the same
    references, which nobody has checked. Not started, not filed. The MAM-simple changes above may

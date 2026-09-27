@@ -1,6 +1,7 @@
 # Retire the MAM Google Sheet pipeline
 
-State: live
+State: live. Repository implementation completed 2026-09-27; the manual Google
+Sheet and Hebrew Wikisource edits and both live verifications remain pending.
 
 ## Summary
 
@@ -11,6 +12,31 @@ archive. Move the special-page inventory into the Wikisource downloader. Reposit
 changes are implemented normally; Google Sheet and Hebrew Wikisource changes are
 supplied only as manual-edit drafts and verified afterward by downloading the live
 results. Ben made these retirement and authority-boundary decisions on 2026-09-12.
+
+## Execution findings, 2026-09-27
+
+- The clean pre-edit baseline was `f4d812850745992d53bb57710f2810f17af51948`.
+  With a writable `.novc/` parent and the prescribed pytest base temporary directory,
+  the suite collected 1,011 tests: 1,006 passed and 5 skipped. The planning snapshot's
+  1,002/997/5 count had drifted.
+- The scratch AST inventory measured 54 mega steps before the edit and 52 afterward;
+  only `parse-go` and `diff-wsgo` left the table.
+- The two Sheet-versus-Wikisource JSON files are empty at pinned commit `dab5d091`.
+  Re-running `main_diff.py wsgo` against the 2026-09-27 pre-edit checkout instead
+  found eight detailed differences and five auto-edits, evidence that maintained
+  Wikisource had moved after the frozen Sheet.
+- The scratch extractor rediscovered the exact 36-page chapter-2 inventory, the
+  `Decalogue` redirect, and all eight pinned Sheet-side `תתת` rows before the Google
+  inputs were deleted.
+- The 52-step mega run completed successfully. It produced one additional, explained
+  generated diff: `MAM-private` commit `49664460` moved the Phonetic MAM primary
+  stress of Judges 19:23's `אַחֲרֵי` from its first syllable to its final syllable.
+  The post-stress-meteg survey consequently has one fewer nonfinal-stress candidate;
+  only `candidate_chanted_words` and its one-token bucket decrease by one. The four
+  protected corpus products named under “Verification and integration” did not change.
+- The manual packets are
+  `.novc/google-sheet-freeze-instructions-2026-09-27.md` and
+  `.novc/wikisource-retirement-edit-packet-2026-09-27.md`. No external edit was made.
 
 ## Execution setup
 

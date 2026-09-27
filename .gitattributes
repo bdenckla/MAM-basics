@@ -26,3 +26,6 @@
 *.pdf  binary
 *.woff2 binary
 MAM-parsed/historical/*.zip binary
+
+# Faithful Wikisource captures retain source-significant trailing spaces.
+in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol

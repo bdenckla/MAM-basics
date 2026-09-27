@@ -47,8 +47,8 @@ away:**
 | Path | Content | Terms |
 |---|---|---|
 | `in/mam-ws/` | MAM wikitext, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |
+| `in/mam-ws-special/` | byte-verbatim wikitext for MAM's 36 declared Decalogue, song-form, and corresponding chapter pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. `manifest.json` records the requested and resolved title, exact revision, byte size, and SHA-256 for each mirrored page |
 | `in/mam-ws-intro/` | the MAM introduction's thirteen pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. This is the same publication as `in/mam-ws/`, which is why it takes the same terms: the introduction is what the Wikisource edition says about itself, and `manifest.json` beside the pages records the revision of each one mirrored |
-| `in/mam-go/` | MAM, downloaded from the MAM Google spreadsheet | CC-BY-SA 4.0 — the statement below |
 | `in/mam-from-Sefaria-2021-11-23/` | MAM, downloaded from Sefaria | CC-BY-SA 4.0 — the statement below |
 | `in/mam-ws-bot-edits/` | edits this repository's bot makes to MAM on Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |
 | `out/mam-ws-parsed-fmt-2/`, `out/mam-ws-bot/`, `out/tmpl-survey-plain/`, `out/tmpl-survey-plus/` | derived from the MAM inputs above | CC-BY-SA 4.0, inherited: the license is share-alike, so what is derived from MAM carries MAM's terms |
@@ -122,8 +122,9 @@ sentence false.
 
 ## The MAM statement, repeated verbatim
 
-What follows is the license and attribution statement from the MAM Google spreadsheet, copied
-without change. The same file stands as `LICENSE.md` in the landed `MAM-parsed/`, `MAM-simple/`,
+What follows is the license and attribution statement from the former MAM Google spreadsheet,
+which became a frozen historical archive on September 12, 2026. The statement is copied without
+change. The same file stands as `LICENSE.md` in the landed `MAM-parsed/`, `MAM-simple/`,
 `MAM-with-doc/`, `MAM-for-Sefaria/`, and `MAM-OSIS/` product directories. The historical
 `MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` files retain the separate CC-BY-SA 3.0
 notice recorded above. Where the statement says "the data in this GitHub repository",

@@ -249,12 +249,11 @@ generated doc/vendoring-inventory.md, until the vendoring audit was removed on
 cut -- the clearest being a guardrail about import order that no longer had a
 mechanism behind it.
 
-The three the screen raised and hand-checking kept are the shape to expect:
+Two of the three the screen raised and hand-checking kept are the shape to expect:
 doc/sigil-decoding.md, which calls itself the current decoder authority and
-carries an open backlog; doc/mpplus-navigation.md, a reader's guide to an
-external JSON format; and doc/process-documentation/auto-edits-process.md,
-a runbook whose middle steps happen in a Google Sheet, so its result is not
-in this tree and cannot be.
+carries an open backlog, and doc/mpplus-navigation.md, a reader's guide to an
+external JSON format.  The third, the Google Sheet auto-edits runbook, was retired
+with the Sheet pipeline in 2026-09.
 
 NOT CHECKED HERE, for now, and this is why. The screen is a few lines of `git
 grep` and would sit comfortably in this file's crude-on-purpose style, but

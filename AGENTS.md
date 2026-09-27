@@ -66,6 +66,17 @@ byte-verbatim mark-order exception, and distinguishes the two manually maintaine
 from their retired one-off generators. `manifest.json` records each source revision and
 timestamp.
 
+## MAM special pages are mirrored with every Wikisource chapter download
+
+Every `py/main_download.py fr-wikisource` run maintains the 36 declared Decalogue,
+song-form, and corresponding chapter pages under `in/mam-ws-special/`, even when the
+chapter selection is narrow. The `.mediawiki` files are byte-verbatim captures and
+`manifest.json` records requested and resolved titles, exact revisions, byte sizes,
+and SHA-256 hashes. `py/ws/ws_special_page_download.py` owns the literal inventory,
+checks it against the two tables in `in/mam-ws-intro/ch2.mediawiki`, and permits only
+the eight declared identities to overlap the chapter mirror. Do not hand-edit the
+mirror or its manifest.
+
 ## Holman and book-of-Job work has local routing documentation
 
 Before touching Holman mailboxes, correspondence derivatives, dispositions, or authored assets,

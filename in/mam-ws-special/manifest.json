@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "endpoint": "https://he.wikisource.org/w/api.php",
+  "pages": {
+    "decalogue": {
+      "resolved_title": "עשרת הדברות/טעמים",
+      "page_id": 344329,
+      "requested_title": "עשרת הדברות/טעמים",
+      "revision_id": 952886,
+      "revision_timestamp": "2020-04-23T19:50:36Z",
+      "byte_size": 19885,
+      "sha256": "af7c1b1d94c7a18bab54cc7232152ed0ed0c29c877739553e6e1c6d976f1826e"
+    },
+    "decalogue-en": {
+      "resolved_title": "מקרא על פי המסורה/Decalogue",
+      "page_id": 377858,
+      "requested_title": "Decalogue",
+      "revision_id": 2980688,
+      "revision_timestamp": "2026-01-27T16:42:35Z",
+      "byte_size": 19915,
+      "sha256": "e62752bd1549ef2a53a2ef2212cac70b350982b4d215fd0d2a4b301c6e15a0d0"
+    },
+    "decalogue-base": {
+      "resolved_title": "עשרת הדברות בסיס/טעמים",
+      "page_id": 344500,
+      "requested_title": "עשרת הדברות בסיס/טעמים",
+      "revision_id": 3025606,
+      "revision_timestamp": "2026-07-20T12:59:22Z",
+      "byte_size": 37649,
+      "sha256": "c2f40b914f618a3cb1cc210d4db5522838d7d3b95161b5509466c0176576f067"
+    },
+    "decalogue-vowels": {
+      "resolved_title": "עשרת הדברות/ניקוד",
+      "page_id": 363515,
+      "requested_title": "עשרת הדברות/ניקוד",
+      "revision_id": 1407570,
+      "revision_timestamp": "2022-06-24T06:41:59Z",
+      "byte_size": 10793,
+      "sha256": "b90e2cd90599eff2d7beb19a2525d284de9ce417319f3d561acac3d4f7feaba4"
+    },
+    "song-sea-taamim": {
+      "resolved_title": "שירת הים/טעמים",
+      "page_id": 363528,
+      "requested_title": "שירת הים/טעמים",
+      "revision_id": 1381493,
+      "revision_timestamp": "2022-03-03T13:49:14Z",
+      "byte_size": 940,
+      "sha256": "fb1ba7d1cd2213acc302d53ab4b9ab31d0be0b0c4b43d3b7007223194b27c3b0"
+    },
+    "song-sea-layout": {
+      "resolved_title": "שירת הים/צורת השיר",
+      "page_id": 314799,
+      "requested_title": "שירת הים/צורת השיר",
+      "revision_id": 2808224,
+      "revision_timestamp": "2023-10-09T19:11:05Z",
+      "byte_size": 17190,
+      "sha256": "6095dc7ffbddd276536cea5de67c4c09383a50d725e55ded3d6f7a0fe234dcf8"
+    },
+    "song-sea-alternates": {
+      "resolved_title": "שירת הים/צורות נוספות",
+      "page_id": 344716,
+      "requested_title": "שירת הים/צורות נוספות",
+      "revision_id": 944864,
+      "revision_timestamp": "2020-03-10T08:51:04Z",
+      "byte_size": 26400,
+      "sha256": "6c3dab1e69e37ce493d908666943e591fa3b35286ebfc56898fb5d2552f27a31"
+    },
+    "song-haazinu-taamim": {
+      "resolved_title": "שירת האזינו/טעמים",
+      "page_id": 363925,
+      "requested_title": "שירת האזינו/טעמים",
+      "revision_id": 1381494,
+      "revision_timestamp": "2022-03-03T13:49:16Z",
+      "byte_size": 947,
+      "sha256": "475509d6b6e4bcd7ebb6b7e00013a7d5fced1f1ff656f45657afc26b3451176e"
+    },
+    "song-haazinu-layout": {
+      "resolved_title": "שירת האזינו/צורת השיר",
+      "page_id": 314798,
+      "requested_title": "שירת האזינו/צורת השיר",
+      "revision_id": 2808225,
+      "revision_timestamp": "2023-10-09T19:16:56Z",
+      "byte_size": 25396,
+      "sha256": "28c41dee6ce9d4fe524f815b7f858eb72cff4ddecaf9652158dc61d22bc3a6dd"
+    },
+    "song-haazinu-alternates": {
+      "resolved_title": "שירת האזינו/צורות נוספות",
+      "page_id": 344717,
+      "requested_title": "שירת האזינו/צורות נוספות",
+      "revision_id": 2806520,
+      "revision_timestamp": "2023-10-02T17:30:57Z",
+      "byte_size": 55186,
+      "sha256": "c3b26326ae40cd34672d74e5552ab98eb1433ed5868d08de213e899f281ae552"
+    },
+    "canaan-kings-taamim": {
+      "resolved_title": "מלכי כנען/טעמים",
+      "page_id": 364072,
+      "requested_title": "מלכי כנען/טעמים",
+      "revision_id": 1381495,
+      "revision_timestamp": "2022-03-03T13:49:20Z",
+      "byte_size": 910,
+      "sha256": "8f734674258c6f92d6304413798bbf83373b980e7931fd977289286834885c88"
+    },
+    "canaan-kings-layout": {
+      "resolved_title": "מלכי כנען/צורת השיר",
+      "page_id": 313714,
+      "requested_title": "מלכי כנען/צורת השיר",
+      "revision_id": 903003,
+      "revision_timestamp": "2019-06-04T15:12:00Z",
+      "byte_size": 5624,
+      "sha256": "20aded040b7fec09837509cf5d36d6f60c38e2667c7fc48384da6af7a2c005df"
+    },
+    "canaan-kings-alternates": {
+      "resolved_title": "מלכי כנען/צורות נוספות",
+      "page_id": 364070,
+      "requested_title": "מלכי כנען/צורות נוספות",
+      "revision_id": 944858,
+      "revision_timestamp": "2020-03-10T08:46:14Z",
+      "byte_size": 6996,
+      "sha256": "379ae4171b1c9460a4838741d1ee42bf21366505932cfe60cb527c32851def21"
+    },
+    "song-deborah-taamim": {
+      "resolved_title": "שירת דבורה/טעמים",
+      "page_id": 364077,
+      "requested_title": "שירת דבורה/טעמים",
+      "revision_id": 1381496,
+      "revision_timestamp": "2022-03-03T13:49:21Z",
+      "byte_size": 920,
+      "sha256": "c2aae0179c897367471f441175efc9cbca8a47d811de898a0ca15e19ee438d6c"
+    },
+    "song-deborah-layout": {
+      "resolved_title": "שירת דבורה/צורת השיר",
+      "page_id": 314705,
+      "requested_title": "שירת דבורה/צורת השיר",
+      "revision_id": 949686,
+      "revision_timestamp": "2020-04-03T06:04:40Z",
+      "byte_size": 15488,
+      "sha256": "041dd8f7c7378bffc922f16c860f281e05cc9c9c810c1db79d1c6859495a2244"
+    },
+    "song-deborah-alternates": {
+      "resolved_title": "שירת דבורה/צורות נוספות",
+      "page_id": 364075,
+      "requested_title": "שירת דבורה/צורות נוספות",
+      "revision_id": 944859,
+      "revision_timestamp": "2020-03-10T08:46:43Z",
+      "byte_size": 22649,
+      "sha256": "80149f64973a4f15c8bd5217bba9dcca43a589dfbefe757e6c42767aa5fbab6d"
+    },
+    "song-david-taamim": {
+      "resolved_title": "שירת דוד/טעמים",
+      "page_id": 364126,
+      "requested_title": "שירת דוד/טעמים",
+      "revision_id": 1381497,
+      "revision_timestamp": "2022-03-03T13:49:21Z",
+      "byte_size": 900,
+      "sha256": "6aca4f5d74e30dc26cf14392660d120920edc8ff73959aa696115f90ad2e04d8"
+    },
+    "song-david-layout": {
+      "resolved_title": "שירת דוד/צורת השיר",
+      "page_id": 314326,
+      "requested_title": "שירת דוד/צורת השיר",
+      "revision_id": 2821033,
+      "revision_timestamp": "2023-11-24T08:45:41Z",
+      "byte_size": 16211,
+      "sha256": "b48fc17568f66be99e57805f9f7439b406dd65aeddf31abf674c82f27f4dd182"
+    },
+    "song-david-alternates": {
+      "resolved_title": "שירת דוד/צורות נוספות",
+      "page_id": 364125,
+      "requested_title": "שירת דוד/צורות נוספות",
+      "revision_id": 2821032,
+      "revision_timestamp": "2023-11-24T08:42:39Z",
+      "byte_size": 24094,
+      "sha256": "7c6928c622645714d2ae8adada47399d9853c6cef4bedb89de5ce4d2ebdcff10"
+    },
+    "song-times-taamim": {
+      "resolved_title": "שירת העתים/טעמים",
+      "page_id": 364177,
+      "requested_title": "שירת העתים/טעמים",
+      "revision_id": 1381499,
+      "revision_timestamp": "2022-03-03T13:49:23Z",
+      "byte_size": 1030,
+      "sha256": "efc5f7512b36d620751b6fcba785bf66906e3d9b29be27484872d41bf95c579b"
+    },
+    "song-times-layout": {
+      "resolved_title": "שירת העתים/צורת השיר",
+      "page_id": 318945,
+      "requested_title": "שירת העתים/צורת השיר",
+      "revision_id": 903296,
+      "revision_timestamp": "2019-06-05T10:41:40Z",
+      "byte_size": 5221,
+      "sha256": "b51b915120ac89c3977ed33b0baf6688312db8fa6aa06bf7803963fd9bc5ad52"
+    },
+    "song-times-alternates": {
+      "resolved_title": "שירת העתים/צורות נוספות",
+      "page_id": 364176,
+      "requested_title": "שירת העתים/צורות נוספות",
+      "revision_id": 1281743,
+      "revision_timestamp": "2021-10-20T20:18:02Z",
+      "byte_size": 7128,
+      "sha256": "1e64f5d1809b8471024557e956a3a2449acc044b0c9fe52b6c8d39ebf0815c41"
+    },
+    "ten-sons-haman-taamim": {
+      "resolved_title": "עשרת בני המן/טעמים",
+      "page_id": 364192,
+      "requested_title": "עשרת בני המן/טעמים",
+      "revision_id": 1381500,
+      "revision_timestamp": "2022-03-03T13:49:24Z",
+      "byte_size": 1228,
+      "sha256": "211422c981fccf29edcf6c82ac6e8e10432016bfba1c3fe085960a721b894831"
+    },
+    "ten-sons-haman-layout": {
+      "resolved_title": "עשרת בני המן/צורת השיר",
+      "page_id": 318944,
+      "requested_title": "עשרת בני המן/צורת השיר",
+      "revision_id": 2808226,
+      "revision_timestamp": "2023-10-09T19:25:12Z",
+      "byte_size": 4237,
+      "sha256": "b5893f0cf5c03f2ba4aee5885b12c5d29715bcac897a001c0a1cdf051c4b84d4"
+    },
+    "ten-sons-haman-alternates": {
+      "resolved_title": "עשרת בני המן/צורות נוספות",
+      "page_id": 364190,
+      "requested_title": "עשרת בני המן/צורות נוספות",
+      "revision_id": 3008251,
+      "revision_timestamp": "2026-04-28T06:04:44Z",
+      "byte_size": 4909,
+      "sha256": "24f897b9efe4871bdda6ffc8c303ff4466b78f4a3d5fb117b41a52880f09d99a"
+    },
+    "song-asaph-taamim": {
+      "resolved_title": "שירת אסף/טעמים",
+      "page_id": 364159,
+      "requested_title": "שירת אסף/טעמים",
+      "revision_id": 1381498,
+      "revision_timestamp": "2022-03-03T13:49:22Z",
+      "byte_size": 900,
+      "sha256": "18efadbc8f8d07a101f9e05f1902fcb724db74c7b024c64086445b36e49d4ea0"
+    },
+    "song-asaph-layout": {
+      "resolved_title": "שירת אסף/צורת השיר",
+      "page_id": 317988,
+      "requested_title": "שירת אסף/צורת השיר",
+      "revision_id": 2808228,
+      "revision_timestamp": "2023-10-09T19:32:54Z",
+      "byte_size": 12065,
+      "sha256": "8070d70a5a84b83198c95e03d1dd582fe70cce98f7483f302b2a43ad8bef39ac"
+    },
+    "song-asaph-alternates": {
+      "resolved_title": "שירת אסף/צורות נוספות",
+      "page_id": 364158,
+      "requested_title": "שירת אסף/צורות נוספות",
+      "revision_id": 944857,
+      "revision_timestamp": "2020-03-10T08:45:33Z",
+      "byte_size": 14475,
+      "sha256": "cf2d1ae38503afacde4062ae655f5cf553d4d1f2e1adcee5656cb723240ed61a"
+    },
+    "exodus-15": {
+      "resolved_title": "שמות טו/טעמים",
+      "page_id": 236197,
+      "requested_title": "שמות טו/טעמים",
+      "revision_id": 2908768,
+      "revision_timestamp": "2025-03-11T21:17:05Z",
+      "byte_size": 13375,
+      "sha256": "82884068f1f4eb4b77325b02beffcc2914261e1d675b68e9b1dd965b77723db9"
+    },
+    "deuteronomy-32": {
+      "resolved_title": "דברים לב/טעמים",
+      "page_id": 236679,
+      "requested_title": "דברים לב/טעמים",
+      "revision_id": 3079372,
+      "revision_timestamp": "2026-08-27T17:42:10Z",
+      "byte_size": 26689,
+      "sha256": "555cf34cdf376874fe3e197a6830a332a8f860b44051bc57829ef246a2d4f8c6"
+    },
+    "joshua-12": {
+      "resolved_title": "יהושע יב/טעמים",
+      "page_id": 236736,
+      "requested_title": "יהושע יב/טעמים",
+      "revision_id": 2997907,
+      "revision_timestamp": "2026-03-12T20:35:03Z",
+      "byte_size": 10279,
+      "sha256": "6a9d481c6a437027bf7d22a237b7f60b37c5b8371af680f142d3b58e2421c1fd"
+    },
+    "judges-5": {
+      "resolved_title": "שופטים ה/טעמים",
+      "page_id": 236805,
+      "requested_title": "שופטים ה/טעמים",
+      "revision_id": 3080379,
+      "revision_timestamp": "2026-09-03T21:30:07Z",
+      "byte_size": 13390,
+      "sha256": "27e6fdd2a31d58085cc09d1314f370f08bd9e94ba7e88b0c95afcdf30e90510a"
+    },
+    "2-samuel-22": {
+      "resolved_title": "שמואל ב כב/טעמים",
+      "page_id": 237083,
+      "requested_title": "שמואל ב כב/טעמים",
+      "revision_id": 3008003,
+      "revision_timestamp": "2026-04-26T19:01:55Z",
+      "byte_size": 17577,
+      "sha256": "9f72b00383775a4fab4204ff30c95caee2918c1e1aa1810d6179b1b62dda6ed2"
+    },
+    "ecclesiastes-3": {
+      "resolved_title": "קהלת ג/טעמים",
+      "page_id": 239203,
+      "requested_title": "קהלת ג/טעמים",
+      "revision_id": 2908765,
+      "revision_timestamp": "2025-03-11T20:57:07Z",
+      "byte_size": 11126,
+      "sha256": "5ad1b5226a444100c42f037634566716fe0740126290230424f8ba00f94b92e4"
+    },
+    "esther-9": {
+      "resolved_title": "אסתר ט/טעמים",
+      "page_id": 239276,
+      "requested_title": "אסתר ט/טעמים",
+      "revision_id": 3008248,
+      "revision_timestamp": "2026-04-28T05:26:23Z",
+      "byte_size": 26581,
+      "sha256": "8e931f8381d62b9fcd7edad4be11abe3b5c65d40b333dc820f69bb2bafd0a9a3"
+    },
+    "1-chronicles-16": {
+      "resolved_title": "דברי הימים א טז/טעמים",
+      "page_id": 239488,
+      "requested_title": "דברי הימים א טז/טעמים",
+      "revision_id": 2910532,
+      "revision_timestamp": "2025-03-18T15:04:08Z",
+      "byte_size": 18563,
+      "sha256": "fc0595a6e7c89452a5b14577e48a3327b52c77c57cb2819de333fd98b2ede93f"
+    }
+  }
+}

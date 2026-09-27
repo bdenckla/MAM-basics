@@ -1,44 +1,14 @@
-# Auto-Edits Process
+# Google Sheet auto-edits process (retired)
 
-I'm not sure if I ever documented this process (in GitHub, Google Docs,
-MS Word, etc.), but the process just changed, so here goes.
+The MAM Google Sheet pipeline was retired on September 12, 2026. Hebrew
+Wikisource is the maintained textual source; the Sheet and its change log remain
+available as a frozen historical archive.
 
-## Steps
+The retired process downloaded the Sheet, parsed it into `MAM-parsed/google/`,
+compared that product with the Wikisource mirror through `diff_wsgo`, and supplied
+the resulting auto-edits to two Google Apps Script programs. The downloader,
+parser, comparison code, generated comparison results, repository copies of the
+Apps Script programs, and this runbook's operational steps were removed together.
 
-1. **Get a baseline** by downloading both Go (Google Sheet) and Ws
-   (Wikisource) using `py/main_download.py fr-google` and
-   `py/main_download.py fr-wikisource`.
-
-2. **Run `py/main_diff.py wsgo`.**
-
-   The command reads its Google input from `MAM-parsed/google/` and parses its
-   Wikisource input directly from `in/mam-ws`.
-
-3. **The differences** (in auto-edit form) are written to
-   `out/diff_mamws_mamgo-auto-edits.json` in this repo. Commit and push
-   that file so the Google Apps Script can fetch it from GitHub.
-
-4. **Go to the MAM Google Sheet.**
-
-5. **Run the "Import auto-edits from GitHub" script** (a `.gs` file —
-   basically JavaScript, but slightly Google-specific, hence `.gs`).
-
-6. **Run the "Apply imported auto-edits" script.**
-
-7. **Run `py/main_download.py fr-google`.** Auto-edits will be reflected in
-   changes to CSV files in the `MAM-basics` repo and JSON files in the
-   `MAM-parsed/google/` product directory in MAM-basics. The command does not
-   rewrite the Wikisource-derived `plain/` or `plus/` products.
-
-8. **Run `py/main_diff.py wsgo`** again to verify that the diffs go empty.
-
-## Note on `main_ws_bot.py real`
-
-`main_ws_bot.py real` now defaults to a post-run local refresh: after it
-edits live Wikisource pages, it downloads the modified chapters into
-`in/mam-ws` and reparses affected books. Use `--no-post-download` only if
-you intentionally want to skip that refresh.
-
-Run artifacts for `main_ws_bot.py real` are now isolated under
-`.novc/mam-ws-bot-real-runs/<timestamp>/`, with per-chapter JSON files in
-`chapters/` and warnings/diff metadata in `misc/`.
+Git history is the reconstruction path for the former implementation and its
+instructions. This page is only a retirement marker; it is not a live runbook.

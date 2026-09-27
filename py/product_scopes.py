@@ -146,8 +146,6 @@ _GENERATOR_ENTRY_POINTS = (
     "py/main_wordlist.py",
     "py/main_write_page_break_info.py",
     "py/subcommands/diff_mpplus.py",
-    "py/subcommands/diff_wsgo.py",
-    "py/subcommands/parse_go.py",
     "py/subcommands/parse_ws.py",
     "py/subcommands/ws_bot_proto.py",
 )

@@ -278,6 +278,16 @@ class WikisourceDownloadTests(unittest.TestCase):
         ) as mock_download_book, mock.patch.object(
             dlws.parse_ws, "almost_main"
         ) as mock_almost_main, mock.patch.object(
+            dlws.special_pages,
+            "download",
+            return_value={
+                "selected": 36,
+                "reused": 36,
+                "fetched": 0,
+                "metadata_batches": 1,
+                "content_batches": 0,
+            },
+        ) as mock_special_pages, mock.patch.object(
             dlws.polite_download, "PoliteDownloader"
         ) as mock_downloader_cls:
             mock_downloader = mock_downloader_cls.return_value.__enter__.return_value
@@ -292,6 +302,8 @@ class WikisourceDownloadTests(unittest.TestCase):
         self.assertIs(mock_downloader, mock_download_book.call_args.args[1])
         self.assertEqual(book_plans, mock_download_book.call_args.args[0])
         self.assertFalse(mock_download_book.call_args.kwargs["force_download"])
+        self.assertIs(mock_downloader, mock_special_pages.call_args.args[0])
+        self.assertFalse(mock_special_pages.call_args.kwargs["force_download"])
 
 
 if __name__ == "__main__":

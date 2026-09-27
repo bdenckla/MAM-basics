@@ -15,17 +15,6 @@ rewrote that clone's tracked goldens. Ben had it deleted that day, so that this
 run writes nothing outside this repository; MAM-private's own mega runs the
 census now.
 
-Straight after ``foi-features-of-interest`` come ``parse-go`` and ``diff-wsgo``,
-the two steps of the Google Sheet, which Ben described on 2026-09-10 as "a MAM
-dataset derived from Wikisource, one of many datasets (e.g. MAM-simple) and
-editions (e.g. MAM with doc) derived from Wikisource". ``parse-go`` regenerates
-``MAM-parsed/google/`` from the committed CSVs under ``in/mam-go/``, which
-``py/main_download.py fr-google`` downloads from the Sheet. ``diff-wsgo``
-compares that with the committed Wikisource input and writes
-``out/diff_mamws_mamgo-auto-edits.json``, the auto-edits from which two Google
-Apps Script scripts update the Sheet, as
-``doc/process-documentation/auto-edits-process.md`` describes.
-
 Since 2026-09-10 the sequence also runs the five UXLC steps that
 ``py/main_uxlc_mega.py`` ran until it was folded in here, from
 ``uxlc-check-changes`` to ``uxlc-word-list``. They write into ``uxlc/``,
@@ -87,8 +76,6 @@ import main_wlc_a_notes
 import main_wlc_diffs_420422
 import main_wlc_json_and_unicode
 from subcommands import diff_mpplus
-from subcommands import diff_wsgo
-from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import ws_bot_proto
 from wlc_cmn.utf8_io import force_utf8_io
@@ -259,31 +246,6 @@ _STEPS = [
         "foi-features-of-interest",
         main_foi_features_of_interest.almost_main,
         None,
-    ),
-    # The Google Sheet's two steps.  426fa229 (2026-09-10) took them out of the mega when
-    # it cut MAM-parsed's plain/ and plus/ over to Wikisource, and Ben put them back the
-    # same day: "Although Google is certainly demoted in this new world, that seems a step
-    # too far, to demote it out of mega!"  And: "the Google Sheet is a MAM dataset derived
-    # from Wikisource, one of many datasets (e.g. MAM-simple) and editions (e.g. MAM with
-    # doc) derived from Wikisource."  Two Google Apps Script scripts update the Sheet from
-    # the auto-edits that diff-wsgo writes (doc/process-documentation/auto-edits-process.md),
-    # so these two steps are as much part of production as the steps that make MAM-simple
-    # and MAM-with-doc.  Phase 7b of doc/PLAN-mega-coverage.md put them back, straight
-    # after foi-features-of-interest.
-    StepRecord(
-        "parse-go",
-        parse_go.almost_main,
-        "py/main_parse.py go: regenerates MAM-parsed/google/ from the committed CSVs"
-        " under in/mam-go/, the Google Sheet's current state as py/main_download.py"
-        " fr-google last downloaded it, for diff-wsgo to compare with Wikisource",
-    ),
-    StepRecord(
-        "diff-wsgo",
-        diff_wsgo.almost_main,
-        "py/main_diff.py wsgo: must come after parse-go, whose MAM-parsed/google/ it"
-        " compares with the committed Wikisource input under in/mam-ws/; writes"
-        " out/diff_mamws_mamgo.json and out/diff_mamws_mamgo-auto-edits.json, the"
-        " auto-edits the Google Sheet is updated from",
     ),
     StepRecord("mam-with-doc", main_mam_with_doc.almost_main, None),
     # run_all, not almost_main, since 2026-08-25.  almost_main is only

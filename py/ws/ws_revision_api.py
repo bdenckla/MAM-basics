@@ -120,6 +120,45 @@ def _revision(page):
     return revision["revid"], content.splitlines()
 
 
+def _raw_revision(page):
+    revisions = page.get("revisions")
+    _require(
+        isinstance(revisions, list) and len(revisions) == 1,
+        "Expected exactly one revision per page",
+    )
+    revision = revisions[0]
+    _require(
+        isinstance(revision, dict) and metadata.positive_id(revision.get("revid")),
+        "Invalid revision ID",
+    )
+    timestamp = revision.get("timestamp")
+    size = revision.get("size")
+    _require(isinstance(timestamp, str) and timestamp, "Invalid revision timestamp")
+    _require(type(size) is int and size >= 0, "Invalid revision byte size")
+    slots = revision.get("slots")
+    _require(
+        isinstance(slots, dict) and isinstance(slots.get("main"), dict),
+        "Missing main revision slot",
+    )
+    for part in (revision, slots["main"]):
+        _require(
+            not any(
+                key in part for key in ("texthidden", "contenthidden", "suppressed")
+            ),
+            "Hidden or suppressed revision content",
+        )
+    content = slots["main"].get("content")
+    _require(isinstance(content, str), "Missing or inaccessible revision content")
+    content_bytes = content.encode("utf-8")
+    _require(len(content_bytes) == size, "Revision byte size does not match content")
+    return {
+        "revision_id": revision["revid"],
+        "revision_timestamp": timestamp,
+        "byte_size": size,
+        "content": content_bytes,
+    }
+
+
 def title_results(response, titles, *, content):
     """Return requested-title results in request order, resolving alias chains."""
     query = _query(response)
@@ -172,6 +211,37 @@ def revision_results(response, identities):
             "Page moved or identity changed after revision check",
         )
         found[revision_id] = (identity, lines)
+    _require(set(found) == set(expected), "Incomplete Wikisource revision response")
+    return {
+        identity["requested_title"]: found[identity["revision_id"]]
+        for identity in identities
+    }
+
+
+def raw_revision_results(response, identities):
+    """Bind byte-verbatim content and revision facts to exact page identities."""
+    query = _query(response)
+    _require(
+        not query.get("normalized") and not query.get("redirects"),
+        "Unexpected aliases for exact revisions",
+    )
+    expected = {identity["revision_id"]: identity for identity in identities}
+    _require(len(expected) == len(identities), "Duplicate requested revisions")
+    found = {}
+    for page in query["pages"]:
+        page_identity = _page_identity(page)
+        revision = _raw_revision(page)
+        revision_id = revision["revision_id"]
+        identity = expected.get(revision_id)
+        _require(
+            identity is not None and revision_id not in found,
+            "Unexpected or duplicate revision",
+        )
+        _require(
+            all(identity[key] == value for key, value in page_identity.items()),
+            "Page moved or identity changed after revision check",
+        )
+        found[revision_id] = (identity, revision)
     _require(set(found) == set(expected), "Incomplete Wikisource revision response")
     return {
         identity["requested_title"]: found[identity["revision_id"]]
@@ -234,6 +304,22 @@ class ChapterClient:
                         str(identity["revision_id"]) for identity in identities
                     ),
                     "rvprop": "ids|content",
+                    "rvslots": "main",
+                }
+            ),
+            identities,
+        )
+
+    def by_raw_revisions(self, identities):
+        """Retrieve exact UTF-8 bytes and revision facts for checked identities."""
+        return raw_revision_results(
+            self._get(
+                {
+                    "prop": "revisions",
+                    "revids": "|".join(
+                        str(identity["revision_id"]) for identity in identities
+                    ),
+                    "rvprop": "ids|timestamp|size|content",
                     "rvslots": "main",
                 }
             ),

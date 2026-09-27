@@ -144,18 +144,11 @@ def build_kq_rows(*, claims: ClaimCollection, kq_am2_doc: str, kq_special_doc: s
 
 
 def selected_templates_intro_block():
-    sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
-    sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
         author.heading_level_2("Selected templates"),
         author.para(
-            [
-                "For English and Hebrew descriptions of most templates, see the ",
-                sheets_link,
-                " of the ",
-                sheets_data_link,
-                ".",
-            ]
+            "The following sections describe the templates selected for this data"
+            " format. Hebrew Wikisource is the maintained textual source."
         ),
     ]
 

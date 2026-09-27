@@ -23,13 +23,6 @@ JSON_DOCNOTE_PLUS = jsnip.read_text(
 )
 
 # ---------------------------------------------------------------------------
-# Google Sheet URLs (shared by plain and plus docs)
-# ---------------------------------------------------------------------------
-
-SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
-SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
-
-# ---------------------------------------------------------------------------
 # File naming section (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 

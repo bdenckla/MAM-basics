@@ -76,12 +76,9 @@ PLAIN_ONLY = _plain_only.PLAIN_ONLY
 PLUS_ONLY = _plain_only.PLUS_ONLY
 
 # ---------------------------------------------------------------------------
-# Google Sheet URLs, JSON snippets, and file-naming section
-# (shared by plain and plus docs)
+# JSON snippets and file-naming section shared by plain and plus docs
 # ---------------------------------------------------------------------------
 
-SHEETS_TMPL = _examples_and_file_naming.SHEETS_TMPL
-SHEETS_DATA = _examples_and_file_naming.SHEETS_DATA
 _FILE_NAMING_ROWS = _examples_and_file_naming._FILE_NAMING_ROWS
 s_file_naming = _examples_and_file_naming.s_file_naming
 

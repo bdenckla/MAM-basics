@@ -53,3 +53,12 @@ So what remains of the review is decisions 7, 10 and 11 of
 `doc/PLAN-deferred-template-projection-decisions.md`, which MAM-basics #277 tracks, with decision
 11 also waiting on MAM-basics #276. The plan's other eight deferred decisions are not dispositions
 of this review's findings.
+
+## The Google comparison product named in finding 4 was retired
+
+Recorded by Codex on 2026-09-27. The base review's description of finding 4 names
+`py/subcommands/diff_wsgo.py`, the two `out/diff_mamws_mamgo*.json` files, and proposed
+Google Sheet edits as products reached by the weaker validator. Those paths were historical
+evidence at the reviewed commit, but the Google download, parse, comparison, and auto-edit
+pipeline was removed during the execution of `doc/PLAN-retire-google-sheet.md`. The survey and
+documentation-verification paths named beside them remain current.

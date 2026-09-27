@@ -2,10 +2,8 @@
 """Dispatch download tools.
 
 Subcommands:
-    fr-google
-                Download MAM data from Google Sheets.
     fr-wikisource
-                Download MAM JSON from Hebrew Wikisource.
+                Download MAM chapters and the 36 special pages from Hebrew Wikisource.
     fr-ws-intro
                 Download the MAM introduction from Hebrew Wikisource.
 
@@ -15,8 +13,6 @@ when the introduction moves, and a chapter-scoped fr-wikisource run should not p
 1.8 MB of introduction.  Ben's decision, 2026-08-31.
 
 Examples:
-    .venv/Scripts/python.exe py/main_download.py fr-google
-    .venv/Scripts/python.exe py/main_download.py fr-google --section Torah
     .venv/Scripts/python.exe py/main_download.py fr-wikisource --book39 Joshua --chapter 11
     .venv/Scripts/python.exe py/main_download.py fr-ws-intro
 """
@@ -24,8 +20,6 @@ Examples:
 import argparse
 import sys
 
-from mb_cmn import bib_locales as tbn
-from subcommands import download_google
 from subcommands import download_wikisource
 from subcommands import download_wikisource_intro
 from ws import ws_download_selector as wsds
@@ -51,36 +45,21 @@ def main() -> None:
 
 
 def _add_subcommands(subparsers) -> None:
-    google_parser = subparsers.add_parser(
-        "fr-google",
-        help="Download Google Sheet data and optionally refresh the comparison product.",
-    )
-    google_parser.add_argument(
-        "--section",
-        choices=tbn.ALL_SECIDS,
-        help="Download only the named section instead of all sections",
-    )
-    google_parser.add_argument(
-        "--skip-download",
-        action="store_true",
-        help="Skip downloading; just parse existing CSVs into MAM-parsed/google/",
-    )
-    google_parser.add_argument(
-        "--download-only",
-        action="store_true",
-        help="Download requested CSVs and exit without parsing",
-    )
-    google_parser.set_defaults(func=_run_google)
-
     ws_parser = subparsers.add_parser(
         "fr-wikisource",
-        help="Download Wikisource chapters and rebuild affected production products.",
+        help=(
+            "Download Wikisource chapters and the 36 special pages, then rebuild"
+            " affected production products."
+        ),
     )
     wsds.add_selector_opts(ws_parser)
     ws_parser.add_argument(
         "--force-download",
         action="store_true",
-        help="Fetch every selected chapter even when its revision is unchanged.",
+        help=(
+            "Fetch every selected chapter and special page even when its revision is"
+            " unchanged."
+        ),
     )
     ws_parser.set_defaults(func=_run_wikisource)
 
@@ -89,14 +68,6 @@ def _add_subcommands(subparsers) -> None:
         help="Download the MAM introduction from Hebrew Wikisource.",
     )
     ws_intro_parser.set_defaults(func=_run_wikisource_intro)
-
-
-def _run_google(args: argparse.Namespace) -> None:
-    download_google.run(
-        section=args.section,
-        skip_download=args.skip_download,
-        download_only=args.download_only,
-    )
 
 
 def _run_wikisource(args: argparse.Namespace) -> None:

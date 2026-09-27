@@ -1,15 +1,16 @@
 ---
 name: mam-wikisource-refresh
-description: Refresh MAM book data from Hebrew Wikisource and regenerate, audit, commit, and publish the dependent products and MAM change logs. Use when Ben asks to download, update, or refresh Hebrew Wikisource book data. Do not use for the separately mirrored MAM introduction, Wikisource bot edits, or Google Sheets refreshes.
+description: Refresh MAM chapter and declared special-page data from Hebrew Wikisource and regenerate, audit, commit, and publish affected products and MAM change logs. Use when Ben asks to download, update, or refresh Hebrew Wikisource book data. Do not use for the separately mirrored MAM introduction or for Wikisource bot edits.
 ---
 
 # Refresh MAM from Hebrew Wikisource
 
-Use this workflow for MAM book-data downloads from Hebrew Wikisource. Coordinate the repositories'
-existing entry points; do not create a new orchestration program. A changed refresh is committed
-before dependent regeneration, and MAM change logs are committed only after the dependency loop
-returns to its final MAM-basics state. The change-log generator compares the latest release with
-committed `HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
+Use this workflow for MAM chapter and declared special-page downloads from Hebrew Wikisource.
+Every `fr-wikisource` run refreshes the selected chapters and all 36 special pages. Coordinate the
+repositories' existing entry points; do not create a new orchestration program. A changed chapter
+refresh is committed before dependent regeneration, and MAM change logs are committed only after
+the dependency loop returns to its final MAM-basics state. The change-log generator compares the
+latest release with committed `HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
 
 The commands below run from the verified MAM-basics development checkout. Use
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` as the interpreter, even when the
@@ -47,19 +48,24 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py 
 
 Use `--force-download` only when Ben explicitly requests a forced download. After the command,
 inspect NUL-delimited Git status before running a generator. Require every changed or untracked
-path to be an expected output of the book-data download; an unexpected path blocks the workflow.
-If status is completely clean, report that the Wikisource data is already current and stop: do
-not run mega, commit, or push. If no tracked file changed but expected untracked output remains,
-report that unexpected residue and stop for cleanup or direction; do not run mega, commit, or
-push.
+path to be an expected chapter output under `in/mam-ws/`, chapter metadata in
+`in/mam-ws-revisions.json`, or a special-page output under `in/mam-ws-special/`; an unexpected
+path blocks the workflow. If status is completely clean, report that the Wikisource data is
+already current and stop: do not run mega, commit, or push. If no tracked file changed but
+expected untracked output remains, report that unexpected residue and stop for cleanup or
+direction; do not run mega, commit, or push.
 
 ## Complete the dependent refresh
 
-When tracked Wikisource data changed, read and follow
+When chapter data or chapter metadata changed, read and follow
 [references/dependent-refresh.md](references/dependent-refresh.md) before running a generator.
 That reference governs the complete MAM-basics → MAM-private → phonetic-hbo → MAM-basics
 dependency loop, the separate change-log commit, final gates, push order, and clean remote-state
 check.
+
+When only `in/mam-ws-special/` changed, inspect its manifest and all changed raw pages, run the
+suite, and commit the special-page refresh without entering the dependent product loop. The
+special-page mirror is archival input and no product generator reads it.
 
 The downstream preflight happens before any downstream write. A clean checkout is necessary but
 does not prove that the checkout is unowned: if MAM-private or phonetic-hbo is dirty, is attached
@@ -77,7 +83,8 @@ integration and push authority; this skill does not grant them.
   `in/mam-ws-intro/README.md` completely and follow its independent refresh procedure; do not
   treat the bare `py/main_download.py fr-ws-intro` command as the whole procedure.
 - Wikisource bot edits are outward-facing edits with their own workflow.
-- Google Sheets refreshes are a separate data source and workflow.
+- The former MAM Google Sheet has been a frozen historical archive since September 12, 2026; it
+  has no refresh workflow.
 
 This skill's canonical copy is `MAM-basics/dot-claude/skills/mam-wikisource-refresh/`. It is
 shared with Codex through `dot-claude/shared-skills.txt` and reaches both live skill homes only

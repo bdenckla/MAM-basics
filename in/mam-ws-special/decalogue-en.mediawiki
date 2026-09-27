@@ -1,0 +1,276 @@
+<div dir="LTR">
+<section begin=miqra template/><div style="text-align: center;">
+[[File:Taamei-hamiqra2.png|200px|Information about fonts for cantillation (Hebrew)|link=:he:ויקיטקסט:טעמי המקרא]]<br><small><small>[[:he:משתמש:Dovi/מקרא על פי המסורה#ראש|'''Miqra''']] · [[:he:משתמש:Dovi/מקרא על פי המסורה/תורה#ראש|Torah]] · [[:he:משתמש:Dovi/מקרא על פי המסורה/נביאים#ראש|Nevi'im]] · [[:he:משתמש:Dovi/מקרא על פי המסורה/כתובים#ראש|Ketuvim]] · [[:he:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו|About this Edition (full Hebrew version)]] · '''[[:EN:User:Dovi/Miqra according to the Mesorah#About this Edition (English Abstract)|About this Edition (English Abstract)]]'''<br>[[:he:ויקיטקסט:טעמי המקרא|About fonts (Hebrew)]] · '''[https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745 Technical Base (Spreadsheet)]''' · '''[[:EN:User:Dovi/Miqra according to the Masorah/Technical Guide|Technical Guide (English)]]''' · '''[[:he:שיחת משתמש:Dovi|Report errors here]]'''</small></small></div>
+</center><section end=miqra template/>
+-----
+{{מרכז|{{גג|'''{{קו תחתי|THE DECALOGUE}}<br>Side-by-Side Comparisons of the Low and High Cantillations in Exodus and Deuteronomy'''}}}}
+
+==Introduction==
+The Decalogue is usually called “The Ten Commandments” in English, but a closer translation of the Hebrew term ''‘Aseret ha-Dibberot'' might be “The Ten Utterances.” The Torah contains two slightly different Decalogues in [[שמות כ/טעמים#כ ב|Exodus (20:2-13)]] and [[דברים ה/טעמים#ה ו|Deuteronomy (5:6-17)]].{{הערה|This page was developed in cooperation with [https://hcanat.us/Tanach.xml Unicode/XML Leningrad Codex]; see the [https://hcanat.us/Supplements/Decalogues.html parallel page] there on the Decalogues, which links to this one.}}
+
+===Two Parallel Systems of Cantillation===
+
+The Tiberian masoretic codices show two parallel systems of cantillation (in both Exodus and Deuteronomy), which later came to be known as the “Low Cantillation” and the “High Cantillation.” The former is thought to be local (i.e. Tiberian) in origin and the latter Babylonian. The difference between them lies in the way that the verses are divided: Low cantillation divides the Decalogue into 12 verses of typical length, which means that some of the longer “commandments” contain more than one verse, while the shortest “commandments” are combined into a single verse. High Cantillation divides the 10 Commandments into 10 verses, i.e. each “commandment” is exactly one verse. This leads to some extremely long verses and some very short verses. Since cantillation always depends upon the division of the text into individual verses, the two different ways that the verses of the Decalogue are divided result in two different systems of cantillation.
+
+Many printed editions of the Hebrew Bible contain supplements which separate the two different systems of cantillation and show them side-by-side. Some others show the Low Cantillation alone in the main text and provide the High Cantillation as a supplement. But the Tiberian masoretic codices do neither of these things. They rather combine the two different systems by marking both the Low and High cantillations for relevant words in the text, often vocalizing the very same word in two different ways. If a given letter has two vowels and/or cantillation marks at the same level (below the letter or above it), then the first (in the right-to-left direction) indicates the Low Cantillation and the second indicates the High Cantillation.
+
+===The Charts on this Page===
+
+This page provides online charts that present the two different systems side-by-side as digital Unicode text. The titles in these charts appear in English (for the original all-Hebrew version of this page see '''[[עשרת הדברות/טעמים|here]]'''). The biblical text shown in these charts has been carefully edited based upon Tiberian manuscripts (most importantly the Leningrad Codex) and it follows the careful analysis of Mordechai Breuer, ''The Aleppo Codex and the Accepted Text of the Bible'' (Jerusalem: Mosad Harav Kook, 1976), pp. 56-67 (Hebrew).{{הערה|Note that a double system of cantillation is also found in one other place in the Bible, namely Genesis 35:22, which is either read as a single verse or divided into two verses. A chart that compares those two different cantillations may be found [[בראשית לה/טעמים#מעשה ראובן|here]] (for analysis see Breuer, pp. 289-292).}}
+
+These same charts appear as appendices to the following pages at Hebrew Wikisource:
+*''[[פרשת יתרו/טעמים|Parashat Yitro]]''; [[שמות כ/טעמים|Exodus 20]]
+*''[[פרשת ואתחנן/טעמים|Parashat Va-’Etḥannan]]''; [[דברים ה/טעמים|Deuteronomy 5]]
+
+The combination of two different systems within the very same text carried potential for confusion, and this led to an important variant during the age of printing. As a result of such confusion, most printed versions of the Hebrew Bible mistakenly show 13 verses for the Lower cantillation and just 9 verses (!) for the Upper cantillation. Because this variant is so widespread in printed bibles, it too is indicated within the charts below, which further compare the text of the earlier Tiberian manuscripts to that of the later printed editions. Breuer discusses this historical development in detail.
+
+===Further Study===
+
+'''Suggestion for further study:''' An excellent starting point is Joshua R. Jacobson, [https://f07ab594-68d5-4fcc-af6c-638a0de3b7a9.filesusr.com/ugd/e77170_ce93cb9b4d804dedbb69c72a0aeb6275.pdf “The Cantillation of the Decalogue”], which presents much of Breuer's analysis in English with illustrations.
+
+==The Decalogue in Exodus==
+
+===Low and High Cantillations (Tiberian Masorah)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Exodus'''}}
+|- 
+|align=center|'''Low Cantillation'''
+|align=center|'''High Cantillation'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (טבריה)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===Low and High Cantillations (Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Exodus'''}}
+|- 
+|align=center|'''Low Cantillation'''
+|align=center|'''High Cantillation'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (דפוסים)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===Low Cantillation (Tiberian Masorah versus Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Exodus'''}}
+|-
+|align=center|'''Low Cantillation in the Tiberian Codices'''
+|align=center|'''Low Cantillation in the Printed Editions'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===High Cantillation (Tiberian Masorah versus Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Exodus'''}}
+|-
+|align=center|'''High Cantillation in the Tiberian Codices'''
+|align=center|'''High Cantillation in the Printed Editions'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+==The Decalogue in Deuteronomy==
+
+===Low and High Cantillations (Tiberian Masorah)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Deuteronomy'''}}
+|- 
+|align=center|'''Low Cantillation'''
+|align=center|'''High Cantillation'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (טבריה)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===Low and High Cantillations (Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Deuteronomy'''}}
+|- 
+|align=center|'''Low Cantillation'''
+|align=center|'''High Cantillation'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (דפוסים)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===Low Cantillation (Tiberian Masorah versus Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Deuteronomy'''}}
+|- 
+|align=center|'''Low Cantillation in the Tiberian Codices'''
+|align=center|'''Low Cantillation in the Printed Editions'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===High Cantillation (Tiberian Masorah versus Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue in Deuteronomy'''}}
+|- 
+|align=center|'''High Cantillation in the Tiberian Codices'''
+|align=center|'''High Cantillation in the Printed Editions'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+==The Decalogue (Exodus compared to Deuteronomy)==
+
+===Low Cantillation (Tiberian Masorah)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue with Low Cantillation'''}}
+|- 
+|align=center|'''Exodus'''
+|align=center|'''Deuteronomy'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (טבריה)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===High Cantillation (Tiberian Masorah)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue with High Cantillation'''}}
+|-
+|align=center|'''Exodus'''
+|align=center|'''Deuteronomy'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (טבריה)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (טבריה)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===Low Cantillation (Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue with Low Cantillation'''}}
+|- 
+|align=center|'''Exodus'''
+|align=center|'''Deuteronomy'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם תחתון (דפוסים)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם תחתון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+===High Cantillation (Printed Editions)===
+{{תבנית:משתמש:Dovi/טעמי המקרא}}
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{ג|'''The Decalogue with High Cantillation'''}}
+|- 
+|align=center|'''Exodus'''
+|align=center|'''Deuteronomy'''
+|-
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|שמות טעם עליון (דפוסים)}}
+|align=right valign=top|{{#קטע:עשרת הדברות בסיס/טעמים|דברים טעם עליון (דפוסים)}}
+|}
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+
+==The Decalogue in Exodus and Deuteronomy (Study Edition with Vowels)==
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{גג|'''The Decalogue<br>A Study Edition with Vowels{{ק|{{הערה|This study edition presents the Decalogues in Exodus and Deuteronomy side-by-side with vowels (''niqqud'') and punctuation, but without cantillation. This is meant to facilitate easier reading and study for those unfamiliar with cantillation. The vowels are based on the [[#Low Cantillation (Tiberian Masorah)|Low Cantillation according to the Tiberian Mesorah]]. The modern punctuation for Exodus is based upon Philip Birnbaum's ''Daily Prayer Book'', pages [[עמוד:Philip Birnbaum - ha-Siddur ha-Shalem (The Daily Prayer Book,1949).pdf/176|151]]-[[עמוד:Philip Birnbaum - ha-Siddur ha-Shalem (The Daily Prayer Book,1949).pdf/178|153]]. The punctuation for Deuteronomy uses Birnbaum's punctuation in Exodus as a model. Birnbaum too used the vowels of the Low Cantillation for his text of the Ten Commandments, because those vowels are indeed more appropriate for an edition with ''niqqud'' that is also punctuated (i.e. divided into sentences) instead of cantillation. In terms of the division of the text into 10 parts, Birnbaum followed the common division which matches that of the [[#High Cantillation (Tiberian Masorah)|High Cantillation]].}}}}'''}}
+|- 
+|width=50% align=center|{{סידור בירנבוים תפילה|'''Exodus'''}}
+|width=50% align=center|{{סידור בירנבוים תפילה|'''Deuteronomy'''}}
+|-
+|align=right valign=top|<div dir="RTL">{{סידור בירנבוים תפילה|{{#קטע:עשרת הדברות/ניקוד|עשרת הדברות בספר שמות}}}}</div>
+|align=right valign=top|<div dir="RTL">{{סידור בירנבוים תפילה|{{#קטע:עשרת הדברות/ניקוד|עשרת הדברות בספר דברים}}}}</div>
+|}
+
+==English Translation==
+
+The following translation is a lightly modified version of the one that appears in Philip Birnbaum, ''The Daily Prayer Book'', pages [[:EN:Page:Philip Birnbaum - ha-Siddur ha-Shalem (The Daily Prayer Book,1949).pdf/177|152]]-[[:EN:Page:Philip Birnbaum - ha-Siddur ha-Shalem (The Daily Prayer Book,1949).pdf/179|154]]; that translation is of the Decalogue as it appears in Exodus. The translation of Deuteronomy is an adaptation of the same text.
+
+{| width=100% border=1 cellpadding=2 align=center
+|-
+|colspan=2 align=center|{{גג|'''The Decalogue in English'''}}
+|- 
+|align=center width=50%|{{גג|'''Exodus'''}}
+|align=center width=50%|{{גג|'''Deuteronomy'''}}
+|-
+|<div dir="LTR">align=left valign=top|
+1. I am the Lord your God Who brought you out of the land of Egypt, out of the house of slavery.
+
+2. You shall have no other gods beside Me. You shall not make for yourself any idols in the shape of anything that is in heaven above, or that is on the earth below, or that is in the water under the earth. You shall not bow down to them nor worship them; for I, the Lord your God, am a jealous God, punishing children for the crime of their fathers, down to the third or fourth generation of those who hate Me, but showing kindness to the thousandth generation of those who love Me and keep My Commandments.
+
+3. You shall not utter the name of the Lord your God in vain; for the Lord will not hold guiltless anyone who utters His name in vain.
+
+4. Remember the Sabbath day to keep it holy. Six days you shall labor and do all your work; but on the seventh day, which is a Sabbath in honor of the Lord your God, you shall not do any work, neither you, nor your son, nor your daughter, nor your male or female servant, nor your cattle, nor the stranger who is within your gates; for in six days the Lord made the heavens, the earth, the sea, and all that they contain, and rested on the seventh day; therefore the Lord blessed the Sabbath day and hallowed it.
+
+5. Honor your father and your mother, that you may live long in the land which the Lord your God is giving you.
+
+6. You shall not murder.
+
+7. You shall not commit adultery.
+
+8. You shall not steal.
+
+9. You shall not testify falsely against your neighbor.
+
+10. You shall not covet your neighbor’s house; you shall not covet your neighbor’s wife, nor his servant, male or female, nor his ox, nor his ass, nor anything that belongs to your neighbor.</div>
+|<div dir="LTR">align=left valign=top|
+1. I am the Lord your God, who brought you out of the land of Egypt, out of the house of slavery.
+
+2. You shall have no other gods beside Me. You shall not make for yourself any idols in the shape of anything that is in heaven above, or that is on the earth below, or that is in the water under the earth. You shall not bow down to them nor worship them; for I, the Lord your God, am a jealous God, punishing children for the sins of their fathers, down to the third or fourth generation of those who hate Me, but showing kindness to the thousandth generation of those who love Me and keep My Commandments.
+
+3. You shall not utter the name of the Lord your God in vain; for the Lord will not hold guiltless anyone who utters His name in vain.
+
+4. Guard the Sabbath day to keep it holy. Six days you shall labor and do all your work; but on the seventh day, which is a Sabbath in honor of the Lord your God, you shall not do any work, neither you, nor your son, nor your daughter, nor your male or female servant, nor your ox nor your ass nor any of your cattle, nor the stranger who is within your gates, so that your male and female servant shall rest as you do. You shall remember that you were a slave in the land of Egypt, and the Lord your God brought you out of there with a mighty hand and an outstretched arm. Therefore did the Lord your God command you to keep the Sabbath day.
+
+5. Honor your father and your mother, as the Lord your God has commanded you, so that you may live long and prosper in the land which the Lord your God is giving you.
+
+6. You shall not murder.
+
+7. You shall not commit adultery.
+
+8. You shall not steal.
+
+9. You shall not testify falsely against your neighbor.
+
+10. You shall not covet your neighbor’s wife; nor shall you desire your neighbor’s house, nor his field, nor his male or female servant, nor his ox, nor his ass, nor anything that belongs to your neighbor.
+</div>
+|}
+
+==Notes==
+<references/>
+</div>
+[[קטגוריה:עשרת הדברות|*]]
+
+{{קיצור דרך|MAM:DECALOGUE}}

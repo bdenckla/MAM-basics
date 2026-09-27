@@ -1,8 +1,5 @@
-We here repeat, in English & Hebrew, the licence & attribution information
-from the MAM Google spreadsheet.
-This information applies equally to the data in this GitHub repository.
-So, in the text below, ignore any references to "in this spreadsheet" (English)
-or שבגליון הנתונים הזה (Hebrew).
+The statement below is preserved verbatim from the former MAM Google spreadsheet,
+which became a frozen historical archive on September 12, 2026.
 
 ----
 License:
