@@ -188,7 +188,7 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),
-    ("py/foi/foi_finals.py", "f'../{book_filename}#{chapnver_id}'"): (
+    ("py/foi/foi_finals.py", "f'../{book_href}#{chapnver_id}'"): (
         "a site-relative href to another page of the same site"
     ),
     (

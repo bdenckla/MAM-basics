@@ -21,6 +21,7 @@ from render_wt import render_wikitext_handlers_for_qamats as qamats_variation
 from render_wt import render_wikitext_helpers as wt_help
 from render_wt import render_wikitext_kq as kq
 from render_wt import render_wikitext_spacing_concerns as spacing
+from mb_cmn.he_wikisource_url import he_page_url
 from mb_cmn.my_utils import dv_map
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn.my_utils import st_map
@@ -59,22 +60,34 @@ def _handle_bold(hctx, tmpl):
     return renel.mk_ren_el_tc("mam-bold", contents)
 
 
-def _handle_anchor_with_href_yyy(href_prefix, hctx, tmpl):
+def _handle_anchor_with_href_yyy(href_fn, hctx, tmpl):
     assert wtp.template_len(tmpl) == 3
     href_param_val = wtp.template_param_val(tmpl, "1")
     anchor_contents = wtp.template_param_val(tmpl, "2")
     href_str = first_and_only_and_str(href_param_val)
     acr = wt_help.render_wtseq(hctx, anchor_contents)
-    attr = {"href": href_prefix + href_str}
+    attr = {"href": href_fn(href_str)}
     return renel.mk_ren_el_tc_and_attr("mam-anchor", acr, attr)
 
 
 def _handle_anchor_with_href_external(hctx, tmpl):
-    return _handle_anchor_with_href_yyy("", hctx, tmpl)
+    return _handle_anchor_with_href_yyy(_url_as_given, hctx, tmpl)
 
 
 def _handle_anchor_with_href_internal(hctx, tmpl):
-    return _handle_anchor_with_href_yyy("https://he.wikisource.org/wiki/", hctx, tmpl)
+    return _handle_anchor_with_href_yyy(_url_for_wikilink_target, hctx, tmpl)
+
+
+def _url_as_given(url):
+    return url
+
+
+def _url_for_wikilink_target(link_target):
+    # The URL that MediaWiki makes for [[link_target]]: a space is an underscore in the
+    # page name and in the section's anchor alike, and he_page_url percent-encodes both.
+    page, hash_sign, section = link_target.partition("#")
+    fragment = section.replace(" ", "_") if hash_sign else None
+    return he_page_url(page.replace(" ", "_"), fragment)
 
 
 def _ignore(_hctx, _tmpl):

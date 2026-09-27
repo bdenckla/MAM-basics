@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 import enum
 import re
+from urllib.parse import quote
 
 from mb_cmn import hebrew_verse_numerals as hvn
 from render_wt import render_element as renel
@@ -197,8 +198,7 @@ def _row_for_good_ending(html_for_good_ending, html_for_docs):
 
 def mk_anchor_with_link_to_book(bkid):
     """Return the anchor for a book."""
-    filename = filename_for_bkid(bkid)
-    return mb_html.anchor_h(bkid, filename)
+    return mb_html.anchor_h(bkid, href_for_bkid(bkid))
 
 
 def mk_anchor_with_link_to_chapter(chnu):
@@ -208,9 +208,16 @@ def mk_anchor_with_link_to_chapter(chnu):
 
 
 def _mk_anchor_with_link_to_bido(bkid, cvt, doc_index):
-    filename = filename_for_bkid_for_bido(bkid)
+    # quote matters for exactly one book: "E1-Song of Songs" has a space in it.
+    href = quote(filename_for_bkid_for_bido(bkid))
     doc_id = _mk_doc_id(cvt, doc_index)
-    return mb_html.anchor_h("...", filename + "#" + doc_id)
+    return mb_html.anchor_h("...", href + "#" + doc_id)
+
+
+def href_for_bkid(bkid):
+    """Return the href of the main file for a book, relative to its directory."""
+    # quote matters for exactly one book: "E1-Song of Songs" has a space in it.
+    return quote(filename_for_bkid(bkid))
 
 
 def filename_for_bkid(bkid):

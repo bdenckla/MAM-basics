@@ -142,9 +142,9 @@ def _get_rows(foi_path, foi_struct):
 
 def _href_for_bcvt(bcvt):
     bkid = tbn.bcvt_get_bk39id(bcvt)
-    book_filename = mwdu.filename_for_bkid(bkid)
+    book_href = mwdu.href_for_bkid(bkid)
     chapnver_id = mwdu.mk_chapnver_id_from_bcvt(bcvt)
-    href = f"../{book_filename}#{chapnver_id}"
+    href = f"../{book_href}#{chapnver_id}"
     return href
 
 

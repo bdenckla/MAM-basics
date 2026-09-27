@@ -45,6 +45,7 @@ import urllib.error
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote
 
 import boj_paths
 from mb_cmn import paths
@@ -247,11 +248,14 @@ class _HTMLInfo(HTMLParser):
         if href.startswith(("http://", "https://", "mailto:")):
             self.external_hrefs.append(href)
         else:
+            # The server percent-decodes the path to find the file, so a file whose
+            # name has a space, like MAM-with-doc's "E1-Song of Songs.html", is linked
+            # with %20 in its place.
             if "#" in href:
                 path_part, frag = href.split("#", 1)
-                self.internal_hrefs.append((path_part or None, frag))
+                self.internal_hrefs.append((unquote(path_part) or None, frag))
             else:
-                self.internal_hrefs.append((href, None))
+                self.internal_hrefs.append((unquote(href), None))
 
 
 def _parse_html(path: Path) -> _HTMLInfo:
