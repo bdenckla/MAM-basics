@@ -1,8 +1,9 @@
 # Dependent refresh after MAM Wikisource data changes
 
-Use this procedure only after `SKILL.md`'s download step leaves audited tracked changes in the
-verified MAM-basics development checkout. It coordinates existing repository entry points; it
-does not authorize a new orchestrator or a push that the surrounding instructions do not allow.
+Use this procedure only after `SKILL.md`'s download step, or the post-run download of a live
+Wikisource bot run, leaves audited tracked changes in the verified MAM-basics development
+checkout. It coordinates existing repository entry points; it does not authorize a new
+orchestrator or a push that the surrounding instructions do not allow.
 
 ## Preconditions
 
@@ -32,7 +33,8 @@ does not authorize a new orchestrator or a push that the surrounding instruction
    Read and explain every tracked diff, including generated products. Run `git diff --check`,
    verify that `HEAD` still equals the recorded starting commit, stage only the audited refresh
    paths, inspect the cached diff, run `git diff --cached --check`, and commit locally as
-   `Refresh MAM from Wikisource`. Do not push. This commit is required because later change-log
+   `Refresh MAM from Wikisource`, or, after a bot run, as the bot run's own commit that
+   `SKILL.md` describes. Do not push. This commit is required because later change-log
    generation cannot compare against dirty `MAM-parsed/plus` data.
 
 2. **Clear both downstream checkouts before writing either one.** Perform the MAM-private and
@@ -41,8 +43,12 @@ does not authorize a new orchestrator or a push that the surrounding instruction
    Require a handoff or cleanup; do not borrow, stash, discard, or work around another task's
    state.
 
-3. **Regenerate MAM-private.** From `C:/Users/BenDe/GitRepos/MAM-private`, run its refresh
-   profile with its repository interpreter:
+3. **Regenerate MAM-private.** MAM-private reads MAM-basics from its primary clone,
+   `C:/Users/BenDe/GitRepos/MAM-basics`, never from a linked worktree, and requires the census
+   inputs committed there. When step 1's commit is on a linked worktree's branch, first
+   fast-forward the clean primary clone to that verified commit, locally; nothing is pushed
+   before step 7. From `C:/Users/BenDe/GitRepos/MAM-private`, run its refresh profile with its
+   repository interpreter:
 
    ```powershell
    C:/Users/BenDe/GitRepos/MAM-private/.venv/Scripts/python.exe py/main_0_mega.py --profile mam-refresh

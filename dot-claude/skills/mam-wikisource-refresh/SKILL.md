@@ -1,6 +1,6 @@
 ---
 name: mam-wikisource-refresh
-description: Refresh MAM book data from Hebrew Wikisource and regenerate, audit, commit, and publish the dependent products and MAM change logs. Use when Ben asks to download, update, or refresh Hebrew Wikisource book data. Do not use for the separately mirrored MAM introduction, Wikisource bot edits, or Google Sheets refreshes.
+description: Refresh MAM book data from Hebrew Wikisource and regenerate, audit, commit, and publish the dependent products and MAM change logs. Use when Ben asks to download, update, or refresh Hebrew Wikisource book data, and after a live Wikisource bot run whose post-run download changed tracked book data. Do not use for the separately mirrored MAM introduction, for preparing or saving bot edits, or for Google Sheets refreshes.
 ---
 
 # Refresh MAM from Hebrew Wikisource
@@ -53,6 +53,17 @@ not run mega, commit, or push. If no tracked file changed but expected untracked
 report that unexpected residue and stop for cleanup or direction; do not run mega, commit, or
 push.
 
+## After a Wikisource bot run
+
+A live `py/main_ws_bot.py real` run that saves pages includes a download: unless
+`--no-post-download` is given, it force-downloads exactly the chapters it saved into `in/mam-ws/`
+and `in/mam-ws-revisions.json`, then reparses those books. That download takes the place of the
+one above. Ben decided on 2026-09-27 that a bot run which changes tracked book data owes the same
+dependent refresh as a download, since it changes `MAM-parsed/plus` just as a download does and
+leaves MAM-private's census stale until the refresh runs. Complete the dependent refresh below.
+Its first commit is the bot run's own record, the saved chapters' regenerated outputs with a new
+entry in `py/ws/ws_bot_edit_history.md`, rather than a separate `Refresh MAM from Wikisource`.
+
 ## Complete the dependent refresh
 
 When tracked Wikisource data changed, read and follow
@@ -76,7 +87,9 @@ integration and push authority; this skill does not grant them.
 - The separately mirrored MAM introduction is not this workflow. Read
   `in/mam-ws-intro/README.md` completely and follow its independent refresh procedure; do not
   treat the bare `py/main_download.py fr-ws-intro` command as the whole procedure.
-- Wikisource bot edits are outward-facing edits with their own workflow.
+- Preparing, dry-running, and saving Wikisource bot edits is an outward-facing workflow of its
+  own, documented in `py/ws/pywikibot-setup.md`. Only the dependent refresh after a saving run
+  belongs here.
 - Google Sheets refreshes are a separate data source and workflow.
 
 This skill's canonical copy is `MAM-basics/dot-claude/skills/mam-wikisource-refresh/`. It is
