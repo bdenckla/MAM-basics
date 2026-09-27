@@ -251,10 +251,11 @@ _STEPS = [
     #
     # parse-ws itself checks every plus book it writes with check_mpplus, and raises on
     # any error (py/subcommands/parse_ws_products.py).  So a string out of standard mark
-    # order, or a doc-note template with the wrong arguments, stops the run in parse-ws,
-    # before this step can report it.  Ben's decision, 2026-09-10, keeps the check inside
-    # parse-ws, rather than in the separate check-mpplus step that phases 5b and 5c of
-    # doc/PLAN-mega-coverage.md had placed after this one.
+    # order, a doc-note template with the wrong arguments, or a note-link template whose
+    # target is the wrong kind, stops the run in parse-ws, before this step can report
+    # it.  Ben's decision, 2026-09-10, keeps the check inside parse-ws, rather than in
+    # the separate check-mpplus step that phases 5b and 5c of doc/PLAN-mega-coverage.md
+    # had placed after this one.
     StepRecord(
         "foi-features-of-interest",
         main_foi_features_of_interest.almost_main,

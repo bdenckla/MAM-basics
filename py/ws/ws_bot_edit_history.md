@@ -219,6 +219,9 @@ infrastructure has changed enough to make them misleading examples:
   five URLs or texts contains `=` or `|`.
 - **One-shot:** every `old` describes the pre-edit text, so a re-run raises
   on its first `old` rather than doing nothing.
+- **Guard:** `_check_note_link_tmpl` in `py/py_misc/check_mpplus.py`, added
+  the same day, stops parse-ws when a `{{מ:קישור בהערה}}` target is not an
+  http(s) URL or a `{{מ:קישור פנימי בהערה}}` target is one.
 - **Edit level:** Raw page text string replacement, chapter-targeted.
 - **JSON files:** `in/mam-ws-bot-edits/lev-10-6-external-link-template.json`,
   `in/mam-ws-bot-edits/bare-links-to-external-link-template.json` and its
