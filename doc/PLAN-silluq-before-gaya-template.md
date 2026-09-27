@@ -330,7 +330,8 @@ The OSIS handler returns the unmodified element text followed by an OSIS note
 with type `x-silluq-before-meteg` and text `סילוק לפני געיה`. The ordinary
 following MAM-simple text node supplies sof pasuq after the note.
 
-Update `py/py_ac_loc/mam_xml_verses.py` and the MAM-private consumer at
+Update `py/mb_cmn/mam_xml_verses.py` (at `py/py_ac_loc/` until 2026-09-26) and the
+MAM-private consumer at
 `C:/Users/BenDe/GitRepos/MAM-private/masorah-books/py/ocr_cmn/mam.py` if their
 element allowlists would otherwise reject or omit the new public MAM-simple
 element. These consumers must flatten it to `text`; neither consumer creates a

@@ -94,7 +94,6 @@ from pathlib import Path
 from mb_cmn import paths
 
 import ac_paths
-import cam1753_paths
 import hkq_paths
 import uxlc_paths
 
@@ -192,6 +191,13 @@ _EXCLUDE_DIR_PREFIXES = (
     "uxlc/",
     "aleppo/",
     "cam1753/",
+    # HBCE's Psalms transcriptions and catalogue responses, a download kept
+    # byte-verbatim as hbce-psalms/README.md says, and the script-regenerable
+    # comparison outputs beside them. The README, which is Claude-written prose,
+    # stays in scope. Added 2026-09-26, when neither tree held a decomposed cluster:
+    # excluded on the principle, not to hide a finding.
+    "hbce-psalms/in/",
+    "hbce-psalms/out/",
 )
 
 # The relocated UXLC subtree's generated trees -- out/, gh-pages/ and data/ --
@@ -211,16 +217,17 @@ _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 
 # What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
-# its published pages, its downloaded page scans, and its derived trees -- four of
-# them until 2026-09-10, when phase 3 of doc/PLAN-mega-coverage.md deleted one with
-# the program that wrote it. Its aleppo-wiki/ is deliberately NOT excluded -- J David
+# its published pages and its derived trees -- four of them until 2026-09-10, when
+# phase 3 of doc/PLAN-mega-coverage.md deleted one with the program that wrote it.
+# Its downloaded page scans, aleppo-pages/, were excluded too until 2026-09-26, when
+# doc/PLAN-retire-codex-index-image-work.md removed them. Its aleppo-wiki/ is
+# deliberately NOT excluded -- J David
 # Stark's hand-made index is there in the forms under precursors/, and the .docx and
 # .xlsx among them are the same index in Office form, which is why both extensions
 # are in _BINARY_EXTENSIONS above. A CSV form of the index sat beside precursors/
 # until 2026-09-10, when phase 6b of the same plan deleted it.
 _AC_EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
-    "aleppo-pages/",
     "column-coordinates/",
     "ds-flat-stream/",
     "line-breaks/",
@@ -235,12 +242,13 @@ _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 # of this test, so unlike the five above there was nothing to carry over verbatim and
 # this list was CHOSEN rather than inherited. It applies the principle the other five
 # embody -- exclude what is downloaded, vendored or program-written, keep what a human
-# wrote -- to that corpus's six artifact trees: MAM-simple/ is generated product data,
-# cam1753-spreads/ the downloaded archive.org scans, cam1753-pages/ and
-# cam1753-spread-splits-doc/ the output of py_cam1753_loc.split_spreads, and
-# cam1753-line-breaks/ and cam1753-col-quads/ the two human-in-the-loop editors'
-# output, excluded because codex-index-aleppo's own copy excluded its counterparts of
-# exactly those two.
+# wrote -- to that corpus's artifact trees: cam1753-spread-splits-doc/ is the output of
+# the spread splitter, and cam1753-line-breaks/ and cam1753-col-quads/ the two
+# human-in-the-loop editors' output, excluded because codex-index-aleppo's own copy
+# excluded its counterparts of exactly those two. The downloaded archive.org scans,
+# cam1753-spreads/, and the ignored pages split from them, cam1753-pages/, were
+# excluded too until 2026-09-26, when doc/PLAN-retire-codex-index-image-work.md removed
+# both with the programs that read them.
 #
 # cam1753-page-index.json is deliberately NOT excluded, being hand-made and read by no
 # program, and neither is check_line_breaks.html, which codex-index-aleppo's copy also
@@ -248,9 +256,7 @@ _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 _CAM_EXCLUDE_DIR_PREFIXES = (
     "cam1753-col-quads/",
     "cam1753-line-breaks/",
-    "cam1753-pages/",
     "cam1753-spread-splits-doc/",
-    "cam1753-spreads/",
 )
 
 # The landed products are not repositories of their own. These exclusions retain
@@ -383,7 +389,7 @@ def _scopes() -> tuple[_Scope, ...]:
         ),
         _Scope(
             label="Cambridge 1753 data",
-            root=cam1753_paths.cam1753_data_root(),
+            root=paths.repo_root() / "cam1753",
             exclude_dir_prefixes=_CAM_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # THE ONE SCOPE HERE THAT IS AN EXPANSION RATHER THAN A RESTORATION, and

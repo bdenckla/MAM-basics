@@ -5,7 +5,7 @@ under this repository's ``py/`` and its data now lives at two paths here:
 
   * published pages are under ``gh-pages/book-of-job/``;
   * tracked JSON and gitignored scratch work are under ``book-of-job/``;
-  * code is under ``py/`` and is not a subtree: seven packages plus thirteen
+  * code is under ``py/`` and is not a subtree: five packages plus twelve
     top-level modules and one data file, listed in ``BOJ_PACKAGES``,
     ``BOJ_TOP_LEVEL_MODULES`` and ``BOJ_TOP_LEVEL_DATA_FILES``.
 
@@ -65,11 +65,9 @@ BOJ_PACKAGES = (
     "author_boj_qr",
     "author_boj_util",
     "boj_render",
-    "py_ac_word_image_helper",
-    "py_cam1753_word_image",
     "pydiff_mm",
 )
-"""The seven packages book-of-job's Python landed in, under this repo's ``py/``.
+"""Five of the seven packages book-of-job's Python landed in, under this repo's ``py/``.
 
 ``author_boj_qr`` was ``pyauthor_qr``, ``author_boj_util`` was ``pyauthor_util``,
 ``author_boj`` was ``pyauthor`` and ``boj_render`` was that repo's own ``py/`` --
@@ -78,7 +76,10 @@ four renames Ben settled together 2026-08-19, the fourth because ``py/`` held
 modules here would have collided by meaning with ``mb_misc/hebrew_letter_words.py``:
 two module objects for one name, reached with no ``sys.path`` line at all.  The
 other three kept their names, ``pydiff_mm`` being distinct from ``mb_diff_mpu`` and
-the two word-image packages being one blob each with a codex-index repo's copy.
+the two word-image packages, ``py_ac_word_image_helper`` and ``py_cam1753_word_image``,
+being one blob each with a codex-index repo's copy.  Those two were deleted on
+2026-09-26 with the rest of the codex-index image work, under
+``doc/PLAN-retire-codex-index-image-work.md``.
 """
 
 BOJ_TOP_LEVEL_MODULES = (
@@ -94,17 +95,17 @@ BOJ_TOP_LEVEL_MODULES = (
     "fix_escape_sequences.py",
     "fix_mark_order.py",
     "main_gen_misc_authored_english_documents.py",
-    "main_list_missing_aleppo_imgs.py",
 )
-"""Thirteen of book-of-job's sixteen runnable modules, which sat at that repo's root
-and sit at the top of this repo's ``py/``.  The other three were deleted:
+"""Twelve of book-of-job's sixteen runnable modules, which sat at that repo's root
+and sit at the top of this repo's ``py/``.  The other four were deleted:
 ``main_gen_aleppo_crop_editor.py`` on 2026-09-10 by phase 6a of
-``doc/PLAN-mega-coverage.md``, and ``main_gen_cam1753_crop_editor.py`` and
+``doc/PLAN-mega-coverage.md``; ``main_gen_cam1753_crop_editor.py`` and
 ``main_apply_cam1753_crops.py`` on 2026-09-26, when all 160 Cambridge 1753 crops
-existed.
+existed; and ``main_list_missing_aleppo_imgs.py`` later that day, under
+``doc/PLAN-retire-codex-index-image-work.md``.
 
 They stay top-level rather than going into a package because every one of them is
-an entry point: two ``main_*``, and the ``check_*``/``fix_*`` family that
+an entry point: one ``main_*``, and the ``check_*``/``fix_*`` family that
 ``check_all`` imports by bare name and that are also run singly.  A package would
 make ``python py/<pkg>/check_mark_order.py`` put the package directory on
 ``sys.path`` instead of ``py/``, which is the import surgery this repo has none of.
@@ -201,12 +202,18 @@ def jobn_dir() -> Path:
 
 
 def jobn_img_dir() -> Path:
-    """The main document's image tree (``<jobn_dir>/img``), 485 tracked PNGs."""
+    """The main document's image tree (``<jobn_dir>/img``), 485 tracked PNGs.
+
+    Retained inputs with no maintained producer: the programs that made the codex crops
+    were retired on 2026-09-26, and the authoring pipeline reads the images through
+    ``jobn_dir()``.
+    """
     return jobn_dir() / "img"
 
 
 def aleppo_img_dir() -> Path:
-    """Aleppo crops (``<jobn_img_dir>/Aleppo``), 160 tracked PNGs, written by no program here."""
+    """Aleppo crops (``<jobn_img_dir>/Aleppo``), 160 tracked PNGs, retained inputs that
+    no program here writes."""
     return jobn_img_dir() / "Aleppo"
 
 
@@ -229,15 +236,15 @@ def index_html_path() -> Path:
 def enriched_quirkrecs_path() -> Path:
     """The enriched quirk records (``<out_dir>/enriched-quirkrecs.json``).
 
-    Written by ``main_gen_misc_authored_english_documents`` and read at MODULE IMPORT
-    TIME by ``main_list_missing_aleppo_imgs``, which is the only sequencing between
-    book-of-job's two ``main_*`` entry points.
+    Written by ``main_gen_misc_authored_english_documents``.  Its one reader here,
+    ``main_list_missing_aleppo_imgs``, was deleted on 2026-09-26.
     """
     return out_dir() / "enriched-quirkrecs.json"
 
 
 def cam1753_crops_path() -> Path:
     """Hand-made crop coordinates (``<out_dir>/cam1753-crops.json``), read by the authoring
-    pipeline.  ``main_apply_cam1753_crops`` appended to it until that program was
-    deleted on 2026-09-26; nothing writes it now."""
+    pipeline: a retained input with no maintained producer.  ``main_apply_cam1753_crops``
+    appended to it until that program was deleted on 2026-09-26; nothing writes it now.
+    """
     return out_dir() / "cam1753-crops.json"

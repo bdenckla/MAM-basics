@@ -7,11 +7,6 @@ its behavior unchanged, so that py/main_verse_links.py finds an atom the same
 way.
 
 Ben's decision, 2026-09-13: this matcher's input contract is UXLC-specific.
-The Aleppo Codex and Cambridge Add. 1753 linebreak locators solve a different
-span-matching problem and are not kept in sync with this matcher:
-
-  py/py_ac_word_image_helper/linebreak_search.py   (Aleppo Codex)
-  py/py_cam1753_word_image/linebreak_search.py     (Cambridge Add. 1753)
 
 UXLC matching conventions:
   - CLI argument order: <book> <c:v> <atom>  (c:v colon-separated)
@@ -27,7 +22,7 @@ UXLC matching conventions:
     caller must disambiguate, normally with an atom number.
 
 On no match at all, find_atom raises AtomNotFound, which carries the
-verse's atoms; the linebreak_search modules return a None-tuple instead.
+verse's atoms.
 
 The atom number is 1-based over the verse as uxlc_misc.my_uxlc.read_all_books
 builds it -- one entry per <w> and per <q>, a ketiv (<k>) not counted -- which

@@ -1,0 +1,173 @@
+ref	MAM	Aleppo(HBCE)	Leningrad(HBCE)	UXLC	HBCE-Aleppo-vs-UXLC	labels	docnote	intro
+Ps.1.4	אֲֽשֶׁר־תִּדְּפֶ֥נּוּ	אֲֽ֥שֶׁר־תִּדְּפֶ֥נּוּ	אֲֽשֶׁר־תִּדְּפֶ֥נּוּ	אֲ‍ֽשֶׁר־ תִּדְּפֶ֥נּוּ	MAM == UXLC	accent:Aleppo-has:ACCENT MERKHA	none	
+Ps.2.2	עַל־יְ֝הֹוָ֗ה	עַל־יְ֝הוָה	עַל־יְ֝הוָה	עַל־ יְ֝הוָה	HBCE-Aleppo == UXLC	policy:divine-name-holam; accent:MAM-has:ACCENT REVIA	none	ch2
+Ps.3.2	מָה־רַבּ֣וּ	מָֽה־רַבּ֣וּ	מָֽה־רַבּ֣וּ	מָֽה־ רַבּ֣וּ	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.4.5	וְֽאַל־תֶּ֫חֱטָ֥אוּ	וְֽאַל־תֶּ֫חֱטָ֥או	וְֽאַל־תֶּ֫חֱטָ֥אוּ	וְֽאַל־ תֶּ֫חֱטָ֥אוּ	MAM == UXLC	dagesh:MAM-has:POINT DAGESH OR MAPIQ	none	
+Ps.5.2	יְהֹוָ֗ה	יְהוָ֑֗ה	יְהוָ֗ה	יְהוָ֗ה	all three differ	policy:divine-name-holam; accent:Aleppo-has:ACCENT ETNAHTA	word-note	ch5
+Ps.5.6	ה֭וֹלְלִים	ה֖וֹלֲלִים	הֽ֭וֹלְלִים	הֽ֭וֹלְלִים	all three differ	accent:MAM-has:ACCENT DEHI; accent:Aleppo-has:ACCENT TIPEHA; policy:hataf-non-guttural	word-note	ch5
+Ps.5.7	תְּאַבֵּד֮	תְּאַבֵּדּ֮	תְּאַבֵּד֮	תְּאַבֵּד֮	MAM == UXLC	dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.5.7	דֹּבְרֵ֢י	דׂבְרֵ֪י	דֹּבְרֵ֪י	דֹּבְרֵ֢י	MAM == UXLC	dagesh:MAM-has:POINT DAGESH OR MAPIQ; vowel:MAM-has:POINT HOLAM; shin-sin-dot:Aleppo-has:POINT SIN DOT; policy:atnax-hafukh-encoded-as-galgal	none	
+Ps.5.10	יַחֲלִיקֽוּן	יַחֲלִֽיקוּן	יַחֲלִֽיקוּן	יַחֲלִֽיקוּן	HBCE-Aleppo == UXLC	meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	none	
+Ps.5.11	הַ֥אֲשִׁימֵ֨ם ׀	הַֽאֲשִׁימֵ֨ם ׀	הַֽאֲשִׁימֵ֨ם ׀	הַֽאֲשִׁימֵ֨ם ׀	all three differ	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	
+Ps.6.3	אֻמְלַ֫ל	אֻמְלָ֫ל	אֻמְלַ֫ל	אֻמְלַ֫ל	MAM == UXLC	vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS	word-note	ch5
+Ps.6.8	עָ֝תְקָ֗ה	עָ֜תְקָ֗ה	עָֽ֝תְקָ֗ה	עָֽ֝תְקָ֗ה	all three differ	accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH	verse-note	ch5
+Ps.7.2	אֱ֭לֹהַי	אֱ֭לֹ֗הַי	אֱ֭לֹהַי	אֱ֭לֹהַי	MAM == UXLC	accent:Aleppo-has:ACCENT REVIA	none	
+Ps.7.6	יִ֥רַדֹּֽף־אוֹיֵ֨ב ׀	—	יִֽרַדֹּ֥ף אוֹיֵ֨ב ׀	יִֽרַדֹּ֥ף אוֹיֵ֨ב ׀	?	missing-in-Aleppo	word-note	ch2,ch5
+Ps.7.6	—	יִֽרַדֹּ֥ף	יִֽרַדֹּ֥ף	יִֽרַדֹּ֥ף	HBCE-Aleppo == UXLC	extra-in-Aleppo	word-note	ch2,ch5
+Ps.7.6	—	אוֹיֵ֨ב ׀	אוֹיֵ֨ב ׀	אוֹיֵ֨ב ׀	all three differ	extra-in-Aleppo	word-note	ch2,ch5
+Ps.7.9	שָׁפְטֵ֥נִי	שָׁפֲטֵ֥נִי	שָׁפְטֵ֥נִי	שָׁפְטֵ֥נִי	MAM == UXLC	policy:hataf-non-guttural; hataf-without-mam-note	none	
+Ps.7.9	כְּצִדְקִ֖י	כְּצִדְ֗קִ֖י	כְּצִדְקִ֖י	כְּצִדְקִ֖י	MAM == UXLC	accent:Aleppo-has:ACCENT REVIA	none	
+Ps.7.16	כָּ֭רָה	כָּ֭רָֽה	כָּ֭רָֽה	כָּ֭רָֽה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.8.2	מָה־אַדִּ֣יר	מָֽה־אַדִּ֣יר	מָֽה־אַדִּ֣יר	מָֽה־ אַדִּ֣יר	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.8.3	עוֹלְלִ֨ים ׀	עֽוֹלֲלִ֨ים ׀	עֽוֹלְלִ֨ים ׀	עֽוֹלְלִ֨ים ׀	all three differ	meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural	word-note	ch5
+Ps.8.8	וְ֝גַ֗ם	וְ֝֜גַ֗ם	וְ֝גַ֗ם	וְ֝גַ֗ם	MAM == UXLC	accent:Aleppo-has:ACCENT GERESH	none	
+Ps.9.7	לָ֫נֶ֥צַח	לָ֫נֶ֥צָח	לָ֫נֶ֥צַח	לָ֫נֶ֥צַח	MAM == UXLC	vowel:MAM-has:POINT PATAH; vowel:Aleppo-has:POINT QAMATS	none	
+Ps.10.2	יִדְלַ֣ק	יִּדְלַ֣ק	יִדְלַ֣ק	יִדְלַ֣ק	MAM == UXLC	dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.10.6	לֹֽא־בְרָֽע	לֹֽא־בְרָע	לֹֽא־בְרָֽע	לֹֽא־ בְרָֽע	MAM == UXLC	silluq:MAM-has:POINT METEG	none	
+Ps.10.10	יָשֹׁ֑חַ	יָשׁ֑ׄחַ	יָשׁ֤חַ	יָשֹׁ֑חַ	MAM == UXLC	vowel:MAM-has:POINT HOLAM; other:Aleppo-has:MARK UPPER DOT	none	appendices,ch2
+Ps.10.10	וְנָפַ֥ל	וְנָפַֽל	וְנָפַ֥ל	וְנָפַ֥ל	MAM == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	appendices,ch2
+Ps.10.10	בַּ֝עֲצוּמָ֗יו	בַּ֜עֲצוּמָ֗יו	בֲּעָצוּמָיו	בַּ֝עֲצוּמָּ֗יו	all three differ	accent:MAM-has:ACCENT GERESH MUQDAM; accent:Aleppo-has:ACCENT GERESH	none	appendices,ch2
+Ps.10.10	חֵ֣ל	—	(not found)	(not found)	?	missing-in-Aleppo	none	appendices,ch2
+Ps.10.10	כָּאִֽים	—	(not found)	כָּאִֽים	?	missing-in-Aleppo	none	appendices,ch2
+Ps.10.10	—	חלכאים	חֶ֣לְכָּאִֽים	(not found)	?	extra-in-Aleppo	none	appendices,ch2
+Ps.10.14	כִּי־אַתָּ֤ה ׀	כִּֽי־אַתָּ֤ה ׀	כִּֽי־אַתָּ֤ה ׀	(not found)	?	meteg:Aleppo-has:POINT METEG	none	
+Ps.12.2	כִּֽי־גָמַ֣ר	כִּי־גָמַ֣ר	כִּי־גָמַ֣ר	(not found)	?	meteg:MAM-has:POINT METEG	none	
+Ps.12.6	יָפִ֥יחַֽ־לֽוֹ	—	יָפִ֥יחַֽ לֽוֹ	יָפִ֥יחַֽ לֽוֹ	?	missing-in-Aleppo	word-note	ch2,ch5
+Ps.12.6	—	יָפִ֥יחַֽ	יָפִ֥יחַֽ	יָפִ֥יחַֽ	HBCE-Aleppo == UXLC	extra-in-Aleppo	word-note	ch2,ch5
+Ps.12.6	—	לֽוֹ	לֽוֹ	לֽוֹ	HBCE-Aleppo == UXLC	extra-in-Aleppo	word-note	ch2,ch5
+Ps.12.7	אִ֥מְר֣וֹת	אִֽמֲר֣וֹת	אִֽמֲר֣וֹת	אִֽמֲר֣וֹת	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; policy:hataf-non-guttural	word-note	ch2,ch5
+Ps.13.6	לַֽיהֹוָ֑ה	לַ֖יהוָ֑ה	לַיהוָ֑ה	לַיהוָ֑ה	all three differ	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam	none	ch2
+Ps.14.2	דֹּ֝רֵ֗שׁ	דֹּ֝רֵשׁ	דֹּ֝רֵשׁ	דֹּ֝רֵשׁ	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.25.2	אַל־יַעַלְצ֖וּ	אַל־יַֽעַלְצ֖וּ	אַל־יַֽעַלְצ֖וּ	(not found)	?	meteg:Aleppo-has:POINT METEG	word-note	
+Ps.25.16	פְּנֵֽה־אֵלַ֥י	פְּנֵה־אֵלַ֥י	פְּנֵה־אֵלַ֥י	פְּנֵה־ אֵלַ֥י	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	none	
+Ps.25.22	צָרוֹתָֽיו	צָֽרוֹתָיו	צָֽרוֹתָיו	צָֽרוֹתָיו	HBCE-Aleppo == UXLC	meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	word-note	
+Ps.26.1	וּבַיהֹוָ֥ה	וּבַיהוָ֥ה	וּבַיהוָ֥ה	וּבַיהוָ֥ה	HBCE-Aleppo == UXLC	vowel:MAM-has:POINT HOLAM	verse-note	
+Ps.26.4	לֹֽא־יָ֭שַׁבְתִּי	לֹא־יָ֭שַׁבְתִּי	לֹא־יָ֭שַׁבְתִּי	(not found)	?	meteg:MAM-has:POINT METEG	none	
+Ps.26.10	וִ֝ימִינָ֗ם	וִֽ֝ימִינָ֗ם	וִֽ֝ימִינָ֗ם	וִֽ֝ימִינָ֗ם	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.27.4	מֵאֵת־יְהֹוָה֮	מֵֽאֵת־יְהוָה֮	מֵֽאֵת־יְהוָה֮	(not found)	?	meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	none	
+Ps.27.5	יְרוֹמְמֵֽנִי	יְרוֹמֲמֵֽנִּי	יְרוֹמְמֵֽנִי	יְרוֹמְמֵֽנִי	MAM == UXLC	policy:hataf-non-guttural; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	word-note	ch5
+Ps.27.6	לַֽיהֹוָֽה	לַיהוָֽה	לַיהוָֽה	לַיהוָֽה	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG; policy:divine-name-holam	none	
+Ps.27.9	אַ֥ל	אַֽל	(not found)	אַל־	all three differ	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	
+Ps.27.10	יַאַסְפֵֽנִי	יַֽאַסְפֵֽנִי	יַֽאַסְפֵֽנִי	יַֽאַסְפֵֽנִי	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.27.11	שֽׁוֹרְרָֽי	שׁוֹרְרָֽי	שׁוֹרְרָֽי	שׁוֹרְרָֽי	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	word-note	ch2,ch5
+Ps.27.12	עֵדֵי־שֶׁ֝֗קֶר	עֵֽדֵי־שֶׁ֝֗קֶר	עֵֽדֵי־שֶׁ֝֗קֶר	עֵֽדֵי־ שֶׁ֝֗קֶר	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	word-note	
+Ps.27.13	לׅׄוּׅׄלֵׅ֗ׄאׅׄ	לׅׄוּלֵׅׄ֗אׅׄ	לׅׄוּלֵׅׄ֗אׅׄ	לׅׄוּלֵׅׄ֗אׅׄ	all three differ	other:MAM-has:MARK LOWER DOT; other:MAM-has:MARK UPPER DOT	word-note	ch5
+Ps.27.14	אֶל־יְ֫הֹוָ֥ה	אֶל־יְה֫וָ֥ה	אֶל־יְה֫וָ֥ה	(not found)	?	oleh-position; vowel:MAM-has:POINT HOLAM	word-note	ch5
+Ps.28.1	לְדָוִ֡ד	לְ֬דָוִ֡ד	לְדָוִ֡ד	לְדָוִ֡ד	MAM == UXLC	accent:Aleppo-has:ACCENT ILUY	word-note	
+Ps.28.5	לֹ֪א	לֹא	לֹ֤א	לֹ֤א	all three differ	accent:MAM-has:ACCENT YERAH BEN YOMO	none	
+Ps.28.6	כִּי־שָׁ֝מַ֗ע	כִּי־שָׁ֝מַע	כִּי־שָׁ֝מַע	כִּי־ שָׁ֝מַע	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.29.2	לַ֭יהֹוָה	לַֽ֭יהוָה	לַֽ֭יהוָה	לַֽ֭יהוָה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	none	
+Ps.30.10	אֶ֫ל	—	אֶ֫ל	אֶ֫ל	?	missing-in-Aleppo	none	ch5
+Ps.30.10	שָׁ֥חַת	—	שָׁ֥חַת	שָׁ֥חַת	?	missing-in-Aleppo	none	ch5
+Ps.30.10	—	אֶ֫ל־שָׁ֥חַת	אֶ֫ל שָׁ֥חַת	אֶ֫ל שָׁ֥חַת	all three differ	extra-in-Aleppo	none	ch5
+Ps.31.2	בְּךָֽ־יְהֹוָ֣ה	—	בְּךָ֖ יְהוָ֣ה	בְּךָֽ־ יְהוָ֣ה	?	missing-in-Aleppo	verse-note	
+Ps.31.2	—	בְּךָ֖	בְּךָ֖	בְּךָֽ־	all three differ	extra-in-Aleppo	verse-note	
+Ps.31.2	—	יְהוָ֣ה	יְהוָ֣ה	יְהוָ֣ה	HBCE-Aleppo == UXLC	extra-in-Aleppo	verse-note	
+Ps.31.5	כִּי־אַ֝תָּ֗ה	כִּֽי־אַ֝תָּה	כִּֽי־אַ֝תָּה	כִּֽי־ אַ֝תָּה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA	none	ch5
+Ps.31.5	מָעוּזִּֽי	מָֽעוּזִּֽי	מָֽעוּזִּי	מָֽעוּזִּי	all three differ	meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.31.12	וְלִ֥שְׁכֵנַ֨י ׀	וְלִשֲׁכֵנַ֨י ׀	וְלִשֲׁכֵנַ֨י ׀	וְלִשֲׁכֵנַ֨י ׀	all three differ	accent:MAM-has:ACCENT MERKHA; policy:hataf-non-guttural	word-note	ch2,ch5
+Ps.31.16	מִיַּד־א֝וֹיְבַ֗י	מִיַּד־א֝וֹיְבַ֗יּ	מִיַּד־א֝וֹיְבַ֗י	מִיַּד־ א֝וֹיְבַ֗י	MAM == UXLC	dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.31.16	וּמֵֽרֹדְפָֽי	וּמֵרֹּדְּפָֽי	וּמֵרֹדְפָֽי	וּמֵרֹדְפָֽי	all three differ	meteg:MAM-has:POINT METEG; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.31.20	לִּירֵ֫אֶ֥יךָ	לִּֽירֵ֫אֶ֥יךָ	לִּֽירֵ֫אֶ֥יךָ	לִּֽירֵ֫אֶ֥יךָ	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	verse-note	
+Ps.31.20	אָדָֽם	אָדָם	אָדָם	אָדָם	HBCE-Aleppo == UXLC	silluq:MAM-has:POINT METEG	verse-note	
+Ps.31.21	מֵרֻכְסֵ֫י	מֵֽרֻכְסֵ֫י	מֵֽרֻכְסֵ֫י	מֵֽרֻכְסֵ֫י	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.31.24	אֶ֥הֱב֥וּ	אֶֽהֱב֥וּ	אֶֽהֱב֥וּ	אֽ͏ֶהֱב֥וּ	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	word-note	
+Ps.31.24	אֶֽת־יְהֹוָ֗ה	אֶת־יְהוָ֗ה	אֶת־יְהוָ֗ה	(not found)	?	meteg:MAM-has:POINT METEG; policy:divine-name-holam	verse-note	
+Ps.31.25	לַֽיהֹוָֽה	לַ֖יהוָֽה	לַיהוָֽה	לַיהוָֽה	all three differ	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA; policy:divine-name-holam	none	
+Ps.32.10	לָ֫רָשָׁ֥ע	לָרָ֫שָׁ֥ע	לָרָ֫שָׁ֥ע	לָרָ֫שָׁ֥ע	HBCE-Aleppo == UXLC	oleh-position	word-note	ch2,ch5
+Ps.32.10	בַּֽיהֹוָ֑ה	בַּיהוָ֑ה	בַּיהוָ֑ה	בַּיהוָ֑ה	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG; policy:divine-name-holam	verse-note	ch2,ch5
+Ps.32.11	וְ֝הַרְנִ֗ינוּ	וְ֝הַרְנִ֗יִנוּ	וְ֝הַרְנִ֗ינוּ	וְ֝הַרְנִ֗ינוּ	MAM == UXLC	vowel:Aleppo-has:POINT HIRIQ	none	
+Ps.33.22	יְהִי־חַסְדְּךָ֣	יְהִֽי־חַסְדְּךָ֣	יְהִֽי־חַסְדְּךָ֣	יְהִֽי־ חַסְדְּךָ֣	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.34.10	יְר֣אֿוּ	יְר֣אוּ	יְר֣אוּ	יְר֣אוּ	HBCE-Aleppo == UXLC	rafe:MAM-has:POINT RAFE	none	ch2
+Ps.34.10	אֶת־יְהֹוָ֣ה	—	אֶת־יְהוָ֣ה	אֶת־ יְהוָ֣ה	?	missing-in-Aleppo	none	ch2
+Ps.34.10	—	אֶת	(not found)	אֶת־	all three differ	extra-in-Aleppo	none	ch2
+Ps.34.10	—	יְהוָ֣ה	(not found)	יְהוָ֣ה	HBCE-Aleppo == UXLC	extra-in-Aleppo	none	ch2
+Ps.35.15	וְֽנֶ֫אֱסָ֥פוּ	וְֽנֶאֱ֫סָ֥פוּ	וְֽנֶאֱ֫סָ֥פוּ	וְֽנֶאֱ֫סָ֥פוּ	HBCE-Aleppo == UXLC	oleh-position	none	
+Ps.35.17	תִ֫רְאֶ֥ה	תִּ֫רְאֶ֥ה	תִּ֫רְאֶ֥ה	תִ֫רְאֶ֥ה	MAM == UXLC	dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.35.20	מִ֝רְמ֗וֹת	מִ֝רְמוֹת	מִ֝רְמוֹת	מִ֝רְמוֹת	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.35.23	וַאדֹנָ֣י	וַֽאדֹנָ֣י	וַֽאדֹנָ֣י	וַֽאדֹנָ֣י	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.35.28	כָּל־הַ֝יּ֗וֹם	כָּל־הַ֝יּוֹם	כָּל־הַ֝יּוֹם	כָּל־ הַ֝יּוֹם	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.36.1	לְעֶבֶד־יְהֹוָ֬ה	לְעֶֽבֶד־יְהוָ֬ה	לְעֶֽבֶד־יְהוָ֬ה	לְעֶֽבֶד־ יְהוָ֬ה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	none	
+Ps.36.6	אֱ֝מ֥וּנָתְךָ֗	אֱ֝מֽוּנָתְךָ֗	אֱ֝מֽוּנָתְךָ֗	אֱ֝מֽוּנָתְךָ֗	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	
+Ps.36.7	צִדְקָתְךָ֨ ׀	צִדְקָֽתְךָ֨ ׀	צִדְקָֽתְךָ֨ ׀	צִדְקָֽתְךָ֨ ׀	all three differ	meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.36.7	אָ֤דָֽם	—	(not found)	אָ֤דָֽם־	?	missing-in-Aleppo	none	ch2
+Ps.36.7	וּבְהֵמָ֖ה	—	(not found)	וּבְהֵמָ֖ה	?	missing-in-Aleppo	none	ch2
+Ps.36.7	—	אָ֤דָֽם־וּבְהֵמָ֖ה	אָ֤דָֽם־וּבְהֵמָ֖ה	אָ֤דָֽם־ וּבְהֵמָ֖ה	HBCE-Aleppo == UXLC	extra-in-Aleppo	none	ch2
+Ps.36.11	וְ֝צִדְקָתְךָ֗	וְ֝צִדְקָֽתְךָ֗	וְ֝צִדְקָֽתְךָ֗	וְ֝צִדְקָֽתְךָ֗	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.37.3	בַּ֭יהֹוָה	בַּֽ֭יהוָה	בַּֽ֭יהוָה	בַּֽ֭יהוָה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG; policy:divine-name-holam	verse-note	
+Ps.37.7	וְהִתְח֢וֹלֵֽ֫ל	וְהִתְח֪וֹלֵ֫ל	וְהִתְח֪וֹלֵ֫ל	וְהִתְח֢וֹלֵ֫ל	all three differ	policy:atnax-hafukh-encoded-as-galgal; meteg:MAM-has:POINT METEG	none	ch2,ch5
+Ps.37.11	וְ֝הִֽתְעַנְּג֗וּ	וְ֝הִתְעַנְּג֗וּ	וְ֝הִתְעַנְּג֗וּ	וְ֝הִתְעַנְּג֗וּ	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	none	
+Ps.37.13	כִּי־רָ֝אָ֗ה	כִּֽי־רָ֝אָ֗ה	כִּֽי־רָ֝אָ֗ה	(not found)	?	meteg:Aleppo-has:POINT METEG	none	
+Ps.37.14	פָּ֥תְח֣וּ	פָּֽתְח֣וּ	פָּֽתְח֣וּ	פָּֽתְח֣וּ	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	word-note	ch2,ch5
+Ps.37.31	אֲשֻׁרָֽיו	אֲשֻׁרָיו	אֲשֻׁרָיו	אֲשֻׁרָיו	HBCE-Aleppo == UXLC	silluq:MAM-has:POINT METEG	none	
+Ps.37.32	לַהֲמִיתֽוֹ	לַהֲמִיתוֹ	לַהֲמִיתוֹ	לַהֲמִיתוֹ	HBCE-Aleppo == UXLC	silluq:MAM-has:POINT METEG	none	
+Ps.37.36	וַֽ֭יַּעֲבֹר	וַ֭יַּֽעֲבֹר	וַ֭יַּֽעֲבֹר	וַ֭יּֽ͏ַעֲבֹר	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG; meteg:Aleppo-has:POINT METEG	word-note	
+Ps.37.36	וָ֝אֲבַקְשֵׁ֗הוּ	וָֽ֝אֲבַקְשֵׁ֗הוּ	וָֽ֝אֲבַקְשֵׁ֗הוּ	וָֽ֝אֲבַקְשֵׁ֗הוּ	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	verse-note	
+Ps.37.39	מָ֝עוּזָּ֗ם	מָֽ֝עוּזָּ֗ם	מָֽ֝עוּזָּ֗ם	מָֽ֝עוּזָּ֗ם	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.37.40	וַ֥יַּעְזְרֵ֥ם	וַֽיַּעְזְרֵ֥ם	וַֽיַּעְזְרֵ֥ם	וַֽיַּעְזְרֵ֥ם	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.38.10	אֲֽדֹנָ֗י	אֲֽדֹנָי	אֲֽדֹנָי	אֲ‍ֽדנָ֗י	all three differ	accent:MAM-has:ACCENT REVIA	word-note	
+Ps.38.10	לֹֽא־נִסְתָּֽרָה	לֹא־נִסְתָּֽרָה	לֹא־נִסְתָּֽרָה	לֹא־ נִסְתָּֽרָה	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	verse-note	
+Ps.38.15	לֹֽא־שֹׁמֵ֑עַ	לֹא־שֹׁמֵ֑עַ	לֹא־שֹׁמֵ֑עַ	לֹא־ שֹׁמֵ֑עַ	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	none	ch2
+Ps.38.19	מֵ֖חַטָּאתִֽי	מֵֽחַטָּאתִֽי	מֵֽחַטָּאתִֽי	מֵ֖חַטָּאתִֽי	MAM == UXLC	stroke-shape; accent:MAM-has:ACCENT TIPEHA; meteg:Aleppo-has:POINT METEG	none	
+Ps.38.22	אַל־תַּעַזְבֵ֥נִי	אַל־תַּֽעַזְבֵ֥נִי	אַל־תַּֽעַזְבֵ֥נִי	(not found)	?	meteg:Aleppo-has:POINT METEG	none	
+Ps.39.2	אֶ֥שְׁמְרָ֣ה	אֶֽשְׁמְרָ֣ה	אֶֽשְׁמְרָ֣ה	אֶֽשְׁמְרָ֣ה	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	word-note	ch2
+Ps.39.4	בִּלְשׁוֹנִֽי	בִּלְשֽׁוֹנִי	בִּלְשֽׁוֹנִי	בִּלְשֽׁוֹנִי	HBCE-Aleppo == UXLC	meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	none	
+Ps.39.7	מִֽי־אֹסְפָֽם	מִי־אֹסְפָֽם	מִי־אֹסְפָֽם	מִי־ אֹסְפָֽם	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	none	
+Ps.39.13	שִׁ֥מְעָֽה	—	(not found)	שִֽׁמְעָ֥ה־	?	missing-in-Aleppo	word-note	ch2,ch5
+Ps.39.13	תְפִלָּתִ֨י ׀	—	(not found)	תְפִלָּתִ֨י ׀	?	missing-in-Aleppo	word-note	ch2,ch5
+Ps.39.13	—	שִֽׁמְעָ֥ה־תְפִלָּתִ֨י ׀	שִֽׁמְעָ֥ה־תְפִלָּתִ֨י ׀	שִֽׁמְעָ֥ה־ תְפִלָּתִ֨י ׀	all three differ	extra-in-Aleppo	verse-note	ch2,ch5
+Ps.40.4	לֵאלֹ֫הֵ֥ינוּ	לֵֽאלֹ֫הֵ֥ינוּ	לֵֽאלֹ֫הֵ֥ינוּ	לֵֽאלֹ֫הֵ֥ינוּ	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.40.6	נִ֥פְלְאֹתֶ֥יךָ	נִֽפְלְאֹתֶ֥יךָ	נִֽפְלְאֹתֶ֥יךָ	נִֽפְלְאֹתֶ֥יךָ	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.40.9	לַ֥עֲשׂוֹת־רְצוֹנְךָ֣	לַֽעֲשֽׂוֹת־רְצוֹנְךָ֣	לַֽעֲשֽׂוֹת־רְצוֹנְךָ֣	לַֽעֲשֽׂוֹת־ רְצוֹנְךָ֣	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG; meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.40.11	לֹֽא־כִסִּ֨יתִי ׀	לֹא־כִסִּ֨יתִי ׀	לֹא־כִסִּ֨יתִי ׀	(not found)	?	meteg:MAM-has:POINT METEG	none	
+Ps.40.12	לֹֽא־תִכְלָ֣א	לֹא־תִכְלָ֣א	לֹא־תִכְלָ֣א	לֹא־ תִכְלָ֣א	HBCE-Aleppo == UXLC	meteg:MAM-has:POINT METEG	none	
+Ps.40.13	אָפְפֽוּ־עָלַ֨י ׀	אָפֲפ֥וּ־עָלַ֨י ׀	אָפְפ֥וּ־עָלַ֨י ׀	אָפְפ֥וּ־ עָלַ֨י ׀	all three differ	policy:hataf-non-guttural; stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	word-note	ch5
+Ps.40.13	מִשַּׂעֲר֥וֹת	מִשַּֽׂעֲר֥וֹת	מִשַּֽׂעֲר֥וֹת	מִשַּֽׂעֲר֥וֹת	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	verse-note	ch5
+Ps.40.17	אֹ֝הֲבֵ֗י	אֹֽ֝הֲבֵ֗י	אֹֽ֝הֲבֵ֗י	אֹֽ֝הֲבֵ֗י	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.41.3	וִ֭יחַיֵּהוּ	וִֽ֭יחַיֵּהוּ	וִֽ֭יחַיֵּהוּ	וִֽ֭יחַיֵּהוּ	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.41.12	לֹֽא־יָרִ֖יעַ	לֹֽא־יָרִ֖יַע	לֹֽא־יָרִ֖יעַ	לֹֽא־ יָרִ֖יעַ	MAM == UXLC	vowel:Aleppo-has:POINT PATAH; vowel:MAM-has:POINT PATAH	none	
+Ps.42.6	הוֹחִ֣לִי	הוֹחִ֣ילִי	הוֹחִ֣ילִי	הוֹחִ֣ילִי	HBCE-Aleppo == UXLC	letters	none	
+Ps.42.9	שִׁירֹ֣ה	שִׁירָהּ	שִׁירֹ֣ה	(not found)	?	vowel:MAM-has:POINT HOLAM; accent:MAM-has:ACCENT MUNAH; vowel:Aleppo-has:POINT QAMATS; dagesh:Aleppo-has:POINT DAGESH OR MAPIQ	none	
+Ps.42.12	לֵ֭אלֹהִים	לֵֽ֭אלֹהִים	לֵֽ֭אלֹהִים	לֽ͏ֵ֭אלֹהִים	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.43.1	לֹֽא־חָסִ֑יד	לֹ֣א־חָסִ֑יד	לֹא־חָסִ֑יד	לֹא־ חָסִ֑יד	all three differ	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MUNAH	verse-note	ch2
+Ps.43.2	מָעוּזִּי֮	מָֽעוּזִּי֮	מָֽעוּזִּי֮	מָֽעוּזִּי֮	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.43.3	אֶל־הַֽר־קָ֝דְשְׁךָ֗	אֶל־הַֽ֗ר־קָ֝דְשְׁךָ֗	אֶל־הַֽר־קָ֝דְשְׁךָ֗	אֶל־ הַֽר־ קָ֝דְשְׁךָ֗	MAM == UXLC	accent:Aleppo-has:ACCENT REVIA	none	
+Ps.43.5	לֵ֭אלֹהִים	לֵֽ֭אלֹהִים	לֵֽ֭אלֹהִים	לֽ͏ֵ֭אלֹהִים	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.43.5	וֵאלֹהָֽי	וֵֽאלֹהָֽי	וֵֽאלֹהָֽי	וֵֽאלֹהָֽי	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.44.9	בֵּ֭אלֹהִים	בֵּֽ֭אלֹהִים	בֵּֽ֭אלֹהִים	בֵּֽ֭אלֹהִים	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.44.9	הִלַּ֣לְנוּ	הִלַּלְ֣נוּ	הִלַּלְ֣נוּ	הִלַּלְ֣נוּ	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT MUNAH; accent:Aleppo-has:ACCENT MUNAH	none	
+Ps.44.13	וְלֹֽא־רִ֝בִּ֗יתָ	וְלֹ֥א־רִ֝בִּ֗יתָ	וְלֹ֥א־רִ֝בִּ֗יתָ	וְלֹ֥א־ רִ֝בִּ֗יתָ	HBCE-Aleppo == UXLC	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	none	
+Ps.44.15	מְנֽוֹד־רֹ֝֗אשׁ	—	מְנֽוֹד־רֹ֝֗אשׁ	מְנֽוֹד־ רֹ֝֗אשׁ	?	missing-in-Aleppo	word-note	
+Ps.44.15	בַּלְאֻמִּֽים	—	בַּל־אֻמִּֽים	(not found)	?	missing-in-Aleppo	verse-note	
+Ps.44.15	—	מְנֽוֹד	(not found)	מְנֽוֹד־	all three differ	extra-in-Aleppo	word-note	
+Ps.44.15	—	רֹ֝֗אשׁ	(not found)	רֹ֝֗אשׁ	HBCE-Aleppo == UXLC	extra-in-Aleppo	word-note	
+Ps.44.15	—	בַּלְ	(not found)	בַּל־	all three differ	extra-in-Aleppo	verse-note	
+Ps.44.15	—	אֻמִּֽים	(not found)	אֻמִּֽים	HBCE-Aleppo == UXLC	extra-in-Aleppo	verse-note	
+Ps.44.22	יַחֲקָר־זֹ֑את	יַֽחֲקָר־זֹ֑את	יַֽחֲקָר־זֹ֑את	יַֽחֲקָר־ זֹ֑את	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.44.24	אֲדֹנָ֑י	אֲדנָ֑י	אֲדֹנָ֑י	אֲדֹנָ֑י	MAM == UXLC	vowel:MAM-has:POINT HOLAM	none	
+Ps.45.3	בֵּרַכְךָ֖	בֵּֽרַכְךָ֖	בֵּֽרַכְךָ֖	בֵּֽרַכְךָ֖	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	verse-note	ch2,ch5
+Ps.45.3	אֱלֹהִ֣ים	אֱלהִ֣ים	אֱלֹהִ֣ים	אֱלֹהִ֣ים	MAM == UXLC	vowel:MAM-has:POINT HOLAM	verse-note	ch2,ch5
+Ps.45.8	מֵחֲבֵרֶֽךָ	מֵֽחֲבֵרֶֽךָ	(not found)	(not found)	?	meteg:Aleppo-has:POINT METEG	none	ch5
+Ps.45.10	לִ֝ימִינְךָ֗	לִֽ֝ימִינְךָ֗	לִֽ֝ימִינְךָ֗	לִֽ֝ימִינְךָ֗	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.46.3	לֹֽא־נִ֭ירָא	לֹ֖א־נִ֭ירָא	לֹא־נִ֭ירָא	לֹא־ נִ֭ירָא	all three differ	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT TIPEHA	none	
+Ps.46.4	יִ֥רְעֲשֽׁוּ	יִֽרְעֲשֽׁוּ	(not found)	יִֽרְעֲשֽׁוּ־	all three differ	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.46.8	מִשְׂגָּֽב־לָ֨נוּ	מִשְׂגָּֽב־לָ֝נוּ	מִשְׂגָּֽב־לָ֝נוּ	מִשְׂגָּֽב־ לָ֝נוּ	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM	word-note	
+Ps.46.11	כִּֽי־אָנֹכִ֣י	כִּ֥י־אָנֹכִ֣י	כִּי־אָנֹכִ֣י	כִּי־ אָנֹכִ֣י	all three differ	stroke-shape; meteg:MAM-has:POINT METEG; accent:Aleppo-has:ACCENT MERKHA	none	
+Ps.46.12	מִשְׂגָּֽב־לָ֨נוּ	מִשְׂגָּֽב־לָ֝נוּ	מִשְׂגָּֽב־לָ֝נוּ	מִשְׂגָּֽב־ לָ֝נוּ	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT QADMA; accent:Aleppo-has:ACCENT GERESH MUQDAM	word-note	
+Ps.47.3	גָּ֝ד֗וֹל	גָּ֝דוֹל	גָּ֝דוֹל	גָּ֝דוֹל	HBCE-Aleppo == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.47.6	יְ֝הֹוָ֗ה	יְ֝הֹוָה	יְ֝הֹוָ֗ה	יְ֝הֹוָ֗ה	MAM == UXLC	accent:MAM-has:ACCENT REVIA	none	
+Ps.48.5	נ֥וֹעֲד֑וּ	נֽוֹעֲד֑וּ	נֽוֹעֲד֑וּ	נֽוֹעֲד֑וּ	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	none	ch2
+Ps.48.7	כַּיּוֹלֵדָֽה	כַּיּוֹלֵֽדָה	כַּיּוֹלֵֽדָה	כַּיּוֹלֵֽדָה	HBCE-Aleppo == UXLC	meteg-or-silluq:Aleppo-has:POINT METEG; silluq:MAM-has:POINT METEG	verse-note	
+Ps.48.14	לְֽחֵילָ֗הֿ	לְֽחֵילָ֗ה	לְֽחֵילָ֗ה	לְֽחֵילָ֗ה	HBCE-Aleppo == UXLC	rafe:MAM-has:POINT RAFE	none	ch2
+Ps.49.15	לִ֥שְׁא֣וֹל	לִֽשְׁא֣וֹל	לִֽשְׁא֣וֹל	לִֽשְׁא֣וֹל	HBCE-Aleppo == UXLC	stroke-shape; accent:MAM-has:ACCENT MERKHA; meteg:Aleppo-has:POINT METEG	verse-note	ch2,ch5
+Ps.49.17	כִּי־יִ֝רְבֶּ֗ה	כִּֽי־יִ֝רְבֶּה	כִּֽי־יִ֝רְבֶּה	(not found)	?	meteg:Aleppo-has:POINT METEG; accent:MAM-has:ACCENT REVIA	none	
+Ps.49.18	לֹֽא־יֵרֵ֖ד	לֹא־יֵרֵ֖ד	לֹא־יֵרֵ֖ד	(not found)	?	meteg:MAM-has:POINT METEG	none	
+Ps.50.13	הַ֭אוֹכַל	הַֽ֭אוֹכַל	הַֽ֭אוֹכַל	הַֽ֭אוֹכַל	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.50.19	בְרָעָ֑ה	בְרָ֗עָ֑ה	בְרָעָ֑ה	בְרָעָ֑ה	MAM == UXLC	accent:Aleppo-has:ACCENT REVIA	none	
+Ps.50.21	וְאֶעֶרְכָ֣ה	וְאֶֽעֶרְכָ֣ה	וְאֶֽעֶרְכָ֣ה	וְאֶֽעֶרְכָ֣ה	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.50.22	בִּינוּ־נָ֣א	בִּֽינוּ־נָ֣א	בִּֽינוּ־נָ֣א	בִּֽינוּ־ נָ֣א	HBCE-Aleppo == UXLC	meteg:Aleppo-has:POINT METEG	none	
+Ps.50.23	יְֽכַ֫בְּדָ֥נְנִי	יְֽכַ֫בְּ֫דָ֥נְנִי	יְֽכַ֫בְּדָ֥נְנִי	יְֽכַבְּ֫דָ֥נְנִי	all three differ	oleh-position	word-note	ch2,ch5
+Ps.51.2	כַּאֲשֶׁר־בָּ֝֗א	כַּֽאֲשֶׁר־בָּ֝א	כַּֽאֲשֶׁר־בָּ֝֗א	כַּֽאֲשֶׁר־ בָּ֝֗א	all three differ	meteg:Aleppo-has:POINT METEG; policy:revia-mugrash-dot	word-note	
+Ps.51.14	וְר֖וּחַ	—	וְר֖וּחַ	וְר֖וּחַ	?	missing-in-Aleppo	none	
+Ps.51.14	נְדִיבָ֣ה	—	נְדִיבָ֣ה	נְדִיבָ֣ה	?	missing-in-Aleppo	none	
+Ps.51.14	תִסְמְכֵֽנִי	—	תִסְמְכֵֽנִי	תִסְמְכֵֽנִי	?	missing-in-Aleppo	none	

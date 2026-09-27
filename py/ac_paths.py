@@ -1,60 +1,45 @@
 """Resolve the Aleppo data that now lives in MAM-basics.
 
-``aleppo/`` holds the Aleppo Codex scans, annotations, index data, reports, and
-procedures. ``MAM-simple/xml-vtrad-mam/`` is the MAM-native XML corpus the Aleppo
-reader uses as its word-sequence ground truth.
+``aleppo/`` holds the Aleppo Codex page index, its annotations, and the retained
+line-break, column-coordinate and flat-stream JSON, with the reports and notes that
+describe them.  The page scans and every program that worked on them were retired on
+2026-09-26 by ``doc/PLAN-retire-codex-index-image-work.md``, so no program here
+regenerates that retained JSON.
 
 ``CODE_DIR`` is MAM-basics' ``py/`` directory. ``code_paths()`` lists the Aleppo
-modules for the source lints, while every other accessor below names the
-MAM-basics data tree directly.
+modules for the source lints, while every other accessor below names the MAM-basics
+data tree directly.
 """
 
 from pathlib import Path
 
 from mb_cmn import paths
 
-AC_PACKAGES = ("py_ac_loc",)
-"""The package codex-index-aleppo's code landed in under this repo's ``py/``.
-
-``py_ac_loc`` kept its name.  A second package held the Wikisource index generator's
-modules until 2026-09-10, when Ben's decision that day removed the generator and its
-outputs; `git show --stat 985262e2` names every file removed; Phase 3 of
-`doc/PLAN-mega-coverage.md` records the totals.
-``py_ac_word_image_helper`` is NOT listed: it arrived here with book-of-job on
-2026-08-19 and is one committed blob with codex-index-aleppo's copy, so it belongs
-to ``boj_paths.BOJ_PACKAGES``, which lists it, and listing it twice would lint it
-twice.
-"""
-
 AC_TOP_LEVEL_MODULES = (
     "ac_paths.py",
-    "check_ac_all.py",
-    "main_ac_check_line_breaks.py",
-    "main_ac_download_pages.py",
-    "main_ac_find_word_in_images.py",
-    "main_ac_gen_col_quad_editor.py",
-    "main_ac_gen_flat_stream.py",
     "main_ac_gen_index_flat_annotated.py",
-    "main_ac_gen_lb_flat_stream.py",
 )
-"""codex-index-aleppo's modules at the top of this repo's ``py/``: nine of the
-fifteen that landed here.  Four of the other six were removed on 2026-09-10: the
+"""codex-index-aleppo's modules at the top of this repo's ``py/``: two of the
+fifteen that landed here.  Four of the other thirteen were removed on 2026-09-10: the
 Wikisource index generator and the column-coordinate plots by Ben's decision that day,
 which phase 3 of ``doc/PLAN-mega-coverage.md`` records, the kraken
 baseline-segmentation wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the
 same plan, and ``check_ac_word_finding.py`` by phase 6b, which first made it pass
-again.  The last two, the line-break editor ``main_ac_gen_line_break_editor.py`` and
-its merge step ``main_ac_merge_line_markers.py``, were deleted on 2026-09-26 by Ben's
-instruction that day to remove both line-break editors.
+again.  Two more, the line-break editor ``main_ac_gen_line_break_editor.py`` and its
+merge step ``main_ac_merge_line_markers.py``, were deleted on 2026-09-26 by Ben's
+instruction that day to remove both line-break editors.  The last seven went later the
+same day with the rest of the codex-index image work, under
+``doc/PLAN-retire-codex-index-image-work.md``.  The package ``py_ac_loc`` went with
+them, and its one surviving module, the MAM-simple reader, moved to
+``py/mb_cmn/mam_xml_verses.py``.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the
 fifteen had to be renamed because MAM-basics already held the name -- the four
 source lints and ``check_all.py``, which is book-of-job's by Ben's decision of
 2026-08-19 that ``check_all`` stays per-repo -- and the rest were renamed for the
-same reason ahead of time: codex-index-cam1753 holds a counterpart of six of them,
-against the same manuscript problem on a different manuscript, and its Phase 3 lands
-them as ``main_cam1753_`` plus the same stems.
+same reason ahead of time: codex-index-cam1753 held counterparts of six of them,
+which its Phase 3 landed as ``main_cam1753_`` plus the same stems.
 
 ``main_gen_permission_glob.py`` is not in that list, and was not while it existed: it
 moved with this code without belonging to it, generating a Claude Code permission glob
@@ -82,8 +67,7 @@ def code_paths() -> list[Path]:
     code is being evacuated rather than developed.  ``repo_scopes.code_paths()`` is
     what unions this with the other evacuated repos' lists.
     """
-    named = [CODE_DIR / name for name in AC_PACKAGES]
-    named += [CODE_DIR / name for name in AC_TOP_LEVEL_MODULES]
+    named = [CODE_DIR / name for name in AC_TOP_LEVEL_MODULES]
     missing = [p for p in named if not p.exists()]
     if missing:
         raise SystemExit(
@@ -91,47 +75,6 @@ def code_paths() -> list[Path]:
             + ", ".join(str(p) for p in missing)
         )
     return named
-
-
-def line_breaks_dir() -> Path:
-    """Hand-annotated per-page word streams (35 tracked JSON), marked up in the
-    line-break editor that was deleted on 2026-09-26."""
-    return ac_data_root() / "line-breaks"
-
-
-def col_coords_dir() -> Path:
-    """Per-page column quadrilaterals (35 tracked JSON), from
-    ``py_ac_loc.gen_col_quad_editor``."""
-    return ac_data_root() / "column-coordinates"
-
-
-def pages_dir() -> Path:
-    """Aleppo Codex page scans (37 tracked JPEG).
-
-    Twenty-four are leaves 270-281 recto and verso; the other thirteen are
-    001r-006r and 148r/148v.
-
-    DOWNLOADED, not generated: ``download_aleppo_pages`` fetches them from
-    archive.org, and no check regenerates them.
-    """
-    return ac_data_root() / "aleppo-pages"
-
-
-def mam_xml_dir() -> Path:
-    """MAM-simple's MAM-native XML, the word-sequence ground truth."""
-    return paths.repo_root() / "MAM-simple" / "xml-vtrad-mam"
-
-
-def ds_flat_stream_dir() -> Path:
-    """Derived per-page flat streams (8 tracked JSON) from
-    ``py_ac_loc.gen_flat_stream``."""
-    return ac_data_root() / "ds-flat-stream"
-
-
-def novc_dir() -> Path:
-    """Gitignored scratch tree, where the column-quadrilateral editor and the word
-    previewer write the HTML they open in a browser."""
-    return ac_data_root() / ".novc"
 
 
 def wiki_dir() -> Path:
@@ -153,11 +96,5 @@ def flat_index_corrected_path() -> Path:
 
 def flat_index_annotated_path() -> Path:
     """Annotated flat index (``<data_root>/index-flat-annotated.json``), written by
-    ``gen_index_flat_annotated`` and read by ``py_ac_word_image_helper.flat_index``."""
+    ``main_ac_gen_index_flat_annotated``."""
     return ac_data_root() / "index-flat-annotated.json"
-
-
-def check_line_breaks_html_path() -> Path:
-    """The line-break check's HTML report (``<data_root>/check_line_breaks.html``),
-    tracked, and rewritten by every run of ``py_ac_loc.check_line_breaks``."""
-    return ac_data_root() / "check_line_breaks.html"

@@ -17,10 +17,11 @@ What remains below is what is specific to the Cambridge 1753 data.
 `../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
 landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
 
-`../../py/py_ac_loc/mam_xml_verses.py` reads it, and
-`../../py/py_cam1753_loc/gen_flat_stream.py` is what calls it. The entry point is
+`../../py/mb_cmn/mam_xml_verses.py` reads it. `py/py_cam1753_loc/gen_flat_stream.py`
+called it to make the Cambridge 1753 streams until 2026-09-26, when that generator was
+retired and the module moved from `py/py_ac_loc/`. The entry point is
 `get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
-dict per verse with `cv`, `words`, `ketiv_indices`, and `parashah_before`.
+dict per verse with `cv`, `words`, `ketiv_indices`, `atoms`, and `parashah_before`.
 
 **The shared reader came from codex-index-aleppo, deliberately.** codex-index-cam1753 had a
 separate copy at `py_mam_xml/mam_xml_verses.py` until 2026-08-22; the two were the same tool
@@ -30,7 +31,7 @@ the codex-index-aleppo copy raised on and the codex-index-cam1753 copy silently 
 given the missing skip clause and codex-index-cam1753's copy was deleted, the equivalence having been
 checked over all three books: 4512 verses, 30322 words, 0 mismatches.
 
-Two choices in the shared reader belong to the Aleppo and Cambridge 1753 workflows, not to MAM-simple:
+Two choices in the shared reader belong to locating text in manuscripts, not to MAM-simple:
 
 - **It takes the ketiv, not the qere**, because the point is alignment against what
   Cambridge MS Add. 1753 has on the page, and the ketiv is what is written there. So a

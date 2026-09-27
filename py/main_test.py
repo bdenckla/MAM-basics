@@ -5,11 +5,13 @@ Examples:
     .venv/Scripts/python.exe py/main_test.py -k printed_decalogue -x
     .venv/Scripts/python.exe py/main_test.py py/tests/test_transliterations.py -q
 
-With no arguments this runs everything under ``py/tests``.  Whatever arguments are
-given go straight through to pytest, so its own options (``-k``, ``-x``, ``-q``,
-``--lf``, ``--collect-only``, ...) work unchanged; naming a file or directory
-replaces the default target rather than adding to it.  Use the venv's own
-interpreter -- the system Python has neither pytest nor PLY.
+Unless the arguments name a test target -- a file, directory or node id -- this runs
+everything under ``py/tests``.  Whatever arguments are given go straight through to
+pytest, so its own options (``-k``, ``-x``, ``-q``, ``--lf``, ``--collect-only``,
+``--basetemp <dir>``, ...) work unchanged; naming a target replaces the default target
+rather than adding to it.  An option's value is never a target, whatever the option
+and whether or not the value is an existing path.  Use the venv's own interpreter --
+the system Python has neither pytest nor PLY.
 
 The operational worktree-retirement simulation lives at
 ``py/repo_util/worktree_retirement_simulation_test.py`` and is intentionally outside
@@ -47,6 +49,27 @@ classes natively, so zero test files changed on either side.  What the cross-rep
 standard actually forbids is path configuration, which this file has none of either
 way.
 
+WHY PYTEST'S OWN PARSE DECIDES WHETHER A TARGET WAS NAMED
+
+Until 2026-09-26 this file added ``py/tests`` only when no argument was an existing
+path.  Any option whose value is a path defeated that check once the path existed:
+``--basetemp <dir>`` collected ``py/tests`` until a run had created ``<dir>``, and the
+whole repository, the worktree-retirement simulation included, from then on;
+``--rootdir .``, ``--ignore <path>`` and ``-k py`` collected from the whole repository
+from the start.
+A node id is never an existing path, so naming one ran the whole suite instead of the
+one test it named.
+
+A list of the options that take a value would have to keep pace with pytest, its
+plugins and any conftest file.  ``_DefaultTarget`` instead reads pytest's own verdict,
+``config.args_source``, after pytest has parsed every option it knows.  pytest settles
+the rootdir, and loads its initial conftest files, before it reaches that verdict, so a
+run with no target starts both from the working directory rather than from
+``py/tests``.  From the repository root, where AGENTS.md says to run the suite, the
+rootdir is the repository root either way; a conftest file under ``py/tests`` would
+load only at collection, too late to add command-line options, but the repository has
+none.
+
 WHY WINDOWS PYTEST TEMP FILES ARE WORKTREE-LOCAL
 
 A run creates the checkout's gitignored ``.novc`` directory if it is absent.  That
@@ -83,7 +106,6 @@ from __future__ import annotations
 
 import os
 import sys
-from pathlib import Path
 
 import pytest
 
@@ -116,18 +138,29 @@ def _default_target() -> str:
     return str(paths.repo_root() / "py" / "tests")
 
 
+class _DefaultTarget:
+    """A pytest plugin: collect ``py/tests`` when the arguments name no test target."""
+
+    @pytest.hookimpl(tryfirst=True)
+    def pytest_configure(self, config: pytest.Config) -> None:
+        # pytest sets ArgsSource.ARGS when a positional argument -- a file, directory
+        # or node id -- remains once every option it knows has taken its value, and
+        # otherwise falls back to its testpaths setting, which this repository does not
+        # have, or to the working directory.  Replacing that fallback, and calling it
+        # ARGS, leaves config.args and config.args_source as they were when this file
+        # put the default target on pytest's command line itself.
+        if config.args_source is not pytest.Config.ArgsSource.ARGS:
+            config.args = [_default_target()]
+            config.args_source = pytest.Config.ArgsSource.ARGS
+
+
 def main(argv: list[str] | None = None) -> int:
     """Run pytest over ``argv`` (default ``sys.argv[1:]``) and return its exit code."""
     paths.novc_dir().mkdir(parents=True, exist_ok=True)
     args = list(sys.argv[1:] if argv is None else argv)
     _add_windows_basetemp(args)
     add_windows_safe_directory(os.environ, paths.repo_root())
-    # Supply the default target only when nothing given already names one.  An option's
-    # value -- the expression after -k, say -- is not an existing path, so `-k <expr>`
-    # still selects from the whole suite rather than from nothing.
-    if not any(Path(arg).exists() for arg in args):
-        args.append(_default_target())
-    return int(pytest.main(args))
+    return int(pytest.main(args, plugins=[_DefaultTarget()]))
 
 
 if __name__ == "__main__":

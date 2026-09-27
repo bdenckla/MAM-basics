@@ -1,36 +1,35 @@
-# Cambridge Ms. Add. 1753 image corpus
+# Cambridge Ms. Add. 1753 page-location data
 
 This tree holds data for locating Hebrew words on photographed pages of Cambridge
-University Library MS Add. 1753. The current work concerns Job, but the procedures
-support any biblical book. The programs that read and write this data live in
-[`../py/`](../py/).
+University Library MS Add. 1753. Its line-break data begins in Psalms and continues
+through Job, and its page index also covers Lamentations.
 
-## Pipeline
-
-1. [`../py/py_ac_loc/mam_xml_verses.py`](../py/py_ac_loc/mam_xml_verses.py) reads
-   [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/), the MAM word-sequence
-   ground truth.
-2. [`../py/main_cam1753_gen_flat_stream.py`](../py/main_cam1753_gen_flat_stream.py)
-   writes per-page word streams in `cam1753-line-breaks/`.
-3. Line breaks were annotated by hand in an editor that
-   `py/main_cam1753_gen_line_break_editor.py` generated. It was deleted on 2026-09-26;
-   `git show 4ac4f16a:py/py_cam1753_loc/gen_line_break_editor.py` recovers it.
-4. [`../py/main_cam1753_gen_col_quad_editor.py`](../py/main_cam1753_gen_col_quad_editor.py)
-   generates the editor used to annotate column quadrilaterals.
-5. [`../py/main_cam1753_find_word_in_images.py`](../py/main_cam1753_find_word_in_images.py)
-   finds annotated words in the page images.
+No program maintains this data. The page images and every program that worked on them
+were retired on 2026-09-26 by
+[`../doc/PLAN-retire-codex-index-image-work.md`](../doc/PLAN-retire-codex-index-image-work.md),
+so the data below is kept as it stands, and nothing regenerates it.
 
 ## Data
 
-- `cam1753-spreads/` holds the fourteen tracked two-page source scans.
-- `cam1753-pages/` is the gitignored, derived 28-JPEG page tree. Run
-  [`../py/main_cam1753_split_spreads.py`](../py/main_cam1753_split_spreads.py) before
-  a crop or editor task needs it.
+- `cam1753-page-index.json` is the low-resolution entry index that the consumer guide
+  below describes.
 - `cam1753-line-breaks/` and `cam1753-col-quads/` hold the hand-annotated data.
-- `cam1753-spread-splits-doc/` records each split so it can be audited without
-  rerunning the gutter finder.
+  [`doc/cam1753-line-break-task.md`](doc/cam1753-line-break-task.md) describes both
+  formats and what they cover.
+- `cam1753-spread-splits-doc/` records where each two-page spread was split into pages,
+  so the split can be audited without the images.
+- `cam1753-gutter-profiles.png` is the retired gutter finder's chart, kept as a record.
+  Matplotlib version changes make it non-reproducible.
+- [`check_line_breaks.html`](check_line_breaks.html) is the frozen report of the last
+  line-break check; nothing regenerates it.
+- `test-data-from-book-of-job.json` holds the 160 Book-of-Job cases that the retired
+  word-finding check read. Nothing reads it now.
+- [`things-noticed-in-cam1753.md`](things-noticed-in-cam1753.md) records observations
+  made while reading the pages.
+- [`cam1753-spreads-provenance.md`](cam1753-spreads-provenance.md) records where the
+  retired spreads came from and the last commit that holds them.
 - [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) is the MAM word-sequence
-  ground truth shared with the Aleppo lane.
+  ground truth that the line-break streams follow.
 
 The image attribution and non-commercial terms are in
 [`cam1753-spreads-provenance.md`](cam1753-spreads-provenance.md) and
@@ -73,7 +72,7 @@ Neither subordinate format is part of the entry-index schema above.
 ## Documentation
 
 - [`doc/cam1753-line-break-task.md`](doc/cam1753-line-break-task.md) describes the
-  manuscript, images, annotation data, and marking task.
+  manuscript, the retired images, the annotation data, and how it was made.
 - [`doc/reading-mam-simple.md`](doc/reading-mam-simple.md) describes the MAM-simple XML
   reader and product path.
 - [`doc/mam-with-doc-urls.md`](doc/mam-with-doc-urls.md) describes MAM-with-doc URLs.

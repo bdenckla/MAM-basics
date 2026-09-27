@@ -56,6 +56,12 @@ By default, after `main_ws_bot.py real` completes its live edits, it
 automatically downloads the modified chapters into `in/mam-ws` and
 reparses affected books.
 
+That download changes tracked book data just as
+`py/main_download.py fr-wikisource` does, so a saving run owes the same
+dependent refresh: the mega, MAM-private and phonetic-hbo, and the MAM
+change logs. The `mam-wikisource-refresh` skill's section "After a
+Wikisource bot run" gives the procedure.
+
 Use `--no-post-download` only when you intentionally want to skip this
 automatic local refresh:
 

@@ -25,6 +25,7 @@ def check_mpplus(plus_paths):
 
 def _validate_dict(dic, errors):
     _check_doc_tmpl(dic, errors)
+    _check_note_link_tmpl(dic, errors)
     for key, val in dic.items():
         _validate(key, errors)
         _validate(val, errors)
@@ -47,6 +48,25 @@ def _check_doc_tmpl(dic, errors):
         return
     if "2" not in ws_tmpl2.template_param_keys(dic):
         errors.append(("doc-tmpl-2nd-arg", dic))
+
+
+# Whether each note-link template's target, its first parameter, is a URL.
+_NOTE_LINK_TARGET_IS_URL = {"מ:קישור בהערה": True, "מ:קישור פנימי בהערה": False}
+
+
+def _check_note_link_tmpl(dic, errors):
+    """
+    Check a note-link template's target: מ:קישור בהערה links to a URL, and
+    מ:קישור פנימי בהערה to a Wikisource page. Until its bot edit of 2026-09-27,
+    Leviticus 10:6 gave the internal-link template an archive.org URL, so
+    MAM-with-doc linked to https://he.wikisource.org/wiki/https://archive.org/...
+    """
+    name = ws_tmpl2.template_name_if_is_template(dic)
+    if name not in _NOTE_LINK_TARGET_IS_URL:
+        return
+    target = my_utils.first_and_only_and_str(ws_tmpl2.template_param_val(dic, "1"))
+    if target.startswith(("http://", "https://")) != _NOTE_LINK_TARGET_IS_URL[name]:
+        errors.append(("note-link-target", dic))
 
 
 def _validate_listlike(listlike, errors):

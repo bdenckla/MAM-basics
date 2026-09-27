@@ -35,8 +35,8 @@ useless and gets deleted, so this one is an AST pass with three deliberate narro
    formerly said "Old git revision (in ../MAM-parsed repo)"); a path does not.  The shape this
    deliberately misses is a path built as ``f"{x}/../MAM-parsed"``, which nothing here
    writes.
-3. THE VOCABULARY IS DERIVED, NOT DECLARED.  ``../img/``, ``../svg/``, ``../misc/``
-   and ``../aleppo-pages/`` are site-relative URLs, not repos, and no list of them is
+3. THE VOCABULARY IS DERIVED, NOT DECLARED.  ``../img/``, ``../svg/`` and ``../misc/``
+   are site-relative URLs, not repos, and no list of them is
    maintained: a ``../X`` literal is considered only when X is a repo name already
    known to the tree -- the ``all-repos.code-workspace`` roster, plus every name the
    two recognizers below resolve.  This is NOT derived from ``SIBLINGS_REACHED``, or
@@ -188,7 +188,7 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),
-    ("py/foi/foi_finals.py", "f'../{book_filename}#{chapnver_id}'"): (
+    ("py/foi/foi_finals.py", "f'../{book_href}#{chapnver_id}'"): (
         "a site-relative href to another page of the same site"
     ),
     (

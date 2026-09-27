@@ -1,14 +1,16 @@
-"""MAM-simple through ``py_ac_loc.mam_xml_verses``: a lint over the tree and a differential.
+"""MAM-simple through ``mb_cmn.mam_xml_verses``: a lint over the tree and a differential.
 
-``py/py_ac_loc/mam_xml_verses.py`` reads MAM-simple/xml-vtrad-mam/ for locating text in
-manuscripts, and everything that calls it is hand-run, outside the mega. So without these
-checks a new MAM-simple element, such as the planned silluq-before-meteg, would surface
-only at the next hand run. Ben chose on 2026-09-26 to add both checks:
+``py/mb_cmn/mam_xml_verses.py`` reads MAM-simple/xml-vtrad-mam/ for locating text in
+manuscripts, and no program the mega runs calls it: the Evr. II B 55 page index uses it
+by hand. So without these checks a new MAM-simple element, such as the planned
+silluq-before-meteg, would surface only at the next hand use. Ben chose on 2026-09-26 to
+add both checks:
 
 1. THE LINT: every <verse> of every tracked MAM-simple/xml-vtrad-mam/*.xml passes
-   ``get_verse_words``, and no entry of its ``words`` ends in a maqaf. Both flat-stream
-   generators split each entry after every maqaf, so such an entry would give an empty
-   atom.
+   ``get_verse_atoms``, and none of its atoms is empty. ``get_verse_atoms`` splits each
+   entry of ``get_verse_words`` after every maqaf, so an entry ending in a maqaf would
+   give an empty atom. Until the split moved into the reader on 2026-09-26, this lint
+   checked the entries for a final maqaf instead.
 2. THE DIFFERENTIAL: for every <book39> of every file, ``get_verses_in_range`` over the
    whole book returns exactly the verses that an independent scan of that <book39> finds,
    in document order. The scan reads each verse's chapter and verse from its osisID and
@@ -23,9 +25,8 @@ import subprocess
 import xml.etree.ElementTree as ET
 
 from mb_cmn import paths
-from py_ac_loc.mam_xml_verses import get_verse_words, get_verses_in_range
+from mb_cmn.mam_xml_verses import get_verse_atoms, get_verses_in_range
 
-_MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 _WHOLE_BOOK = ((1, 1), (999, 999))
 
 
@@ -42,7 +43,7 @@ def _tracked_xml_files():
     return [paths.repo_root() / rel for rel in rels]
 
 
-def test_every_verse_passes_get_verse_words_with_no_entry_ending_in_a_maqaf():
+def test_every_verse_passes_get_verse_atoms_with_no_empty_atom():
     verse_count = 0
     refused = []
     offenders = []
@@ -50,16 +51,15 @@ def test_every_verse_passes_get_verse_words_with_no_entry_ending_in_a_maqaf():
         for verse in ET.parse(path).getroot().iter("verse"):
             verse_count += 1
             try:
-                words = get_verse_words(verse)["words"]
+                atoms = get_verse_atoms(verse)
             except ValueError as error:
                 refused.append(str(error))
                 continue
-            for entry in words:
-                if entry.endswith(_MAQAF):
-                    offenders.append(f"{verse.attrib['osisID']}: {entry}")
+            if "" in atoms:
+                offenders.append(f"{verse.attrib['osisID']}: {atoms}")
     assert verse_count > 0, "No <verse> was found in MAM-simple/xml-vtrad-mam/"
     assert not refused, f"{len(refused)} verses refused: {refused}"
-    assert not offenders, f"Entries ending in a maqaf: {offenders}"
+    assert not offenders, f"Verses with an empty atom: {offenders}"
 
 
 def _scanned_cvs(book39):

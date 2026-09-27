@@ -87,15 +87,14 @@ An atom is one written form between spaces or maqafs. These rules define its fie
 2. **A `_num` counts the verse's atoms from 1** in MAM's word sequence in
    [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/). The segmentation is the one
    behind the Aleppo and Cambridge 1753 flat streams:
-   [`../py/py_ac_loc/mam_xml_verses.py`](../py/py_ac_loc/mam_xml_verses.py)'s
-   `get_verse_words`, then the split after every maqaf that each package's
-   `gen_flat_stream.py` makes. So the paseq glyph and a sof pasuq belong to the atom before
+   [`../py/mb_cmn/mam_xml_verses.py`](../py/mb_cmn/mam_xml_verses.py)'s `get_verse_atoms`,
+   which splits each entry that the module's `get_verse_words` gives after every maqaf. So
+   the paseq glyph and a sof pasuq belong to the atom before
    them, and where MAM has a ketiv/qere, the atoms are the ketiv's. A ketiv that is not read is
    an atom too. A qere that is not written contributes no atom, and neither does the repeated
    ending that MAM adds after the last verse of four books. A parashah break within a verse
    does not interrupt the count. The numbers count the same units as the word sequences of
-   those two line-break trees, so the existing flat-stream generators could extend to this
-   manuscript later.
+   those two line-break trees.
 3. **A `_text` is MAM's letters for the atom or atoms, unpointed**, one space between atoms,
    whether MAM joins them with a space or a maqaf. A script lifted every one from MAM-simple.
    None was typed. A cue helps a reader find the place. It is not a reading of the manuscript,

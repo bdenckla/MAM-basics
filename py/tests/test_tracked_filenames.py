@@ -6,7 +6,9 @@ Git's quoted output as paths. Ben's decision of 2026-09-12 addresses the
 failure on two independent sides:
 
 * Tracked filenames contain no Hebrew letters. Hebrew labels are converted by
-  ``py/py_ac_word_image_helper/alef_bet_to_ascii.py``.
+  ``consensus_to_ascii`` in ``py/author_boj_util/author.py``. The rule named an
+  identical copy, ``py/py_ac_word_image_helper/alef_bet_to_ascii.py``, until Ben's
+  decision of 2026-09-26 retired that package with the codex-index image work.
 * Programmatic Git commands that return filenames still request NUL delimiters.
 
 The first check is a mechanical lint over the index. The second is a mechanical
@@ -242,7 +244,7 @@ def test_tracked_filenames_contain_no_hebrew_letters() -> None:
     offenders = sorted(path for path in tracked if _HEBREW_LETTER_RE.search(path))
     assert not offenders, (
         "Tracked filenames contain Hebrew letters. Convert each Hebrew portion with"
-        " py/py_ac_word_image_helper/alef_bet_to_ascii.py and update controlled"
+        " consensus_to_ascii in py/author_boj_util/author.py and update controlled"
         f" references: {offenders}"
     )
 

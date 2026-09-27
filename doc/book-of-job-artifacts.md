@@ -21,6 +21,11 @@ will restore them.
 | 2 woff2 fonts | Vendored assets |
 | `book-of-job/out/cam1753-crops.json` | Appended by manual crop ingest until that step was deleted on 2026-09-26; never fully regenerated, and no program writes it now |
 
+Every image in the table and the Cambridge 1753 crop coordinates are retained source
+data. No crop-producing program remains: the last ones were retired on 2026-09-26 with
+the codex-index image work, under
+[`PLAN-retire-codex-index-image-work.md`](PLAN-retire-codex-index-image-work.md).
+
 The published tree was copied byte-for-byte from `book-of-job` before that
 source repository became a redirect host. Re-run the Book-of-Job generator only
 when a change calls for regeneration. `py_ac_loc/` was deliberately not carried:
@@ -58,12 +63,11 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py
 | Entry point | Output |
 |---|---|
 | `py/main_gen_misc_authored_english_documents.py` | The 183 regenerable Book-of-Job artifacts: 175 HTML, 2 CSS, and 6 JSON files |
-| `py/main_list_missing_aleppo_imgs.py` | Console output only |
 
-The Cambridge 1753 crop editor, `py/main_gen_cam1753_crop_editor.py`, and its
-crop-ingest step, `py/main_apply_cam1753_crops.py`, stood in this table until
-both were deleted on 2026-09-26; `doc/boj-cam1753-word-crops.md` says why.
+Three more entry points stood in this table until 2026-09-26. The Cambridge 1753 crop
+editor, `py/main_gen_cam1753_crop_editor.py`, and its crop-ingest step,
+`py/main_apply_cam1753_crops.py`, were deleted that day with the line-break editors,
+and `py/main_list_missing_aleppo_imgs.py`, a console report of missing Aleppo crops,
+went later that day with the rest of the codex-index image work.
 
-The last entry point reads `book-of-job/out/enriched-quirkrecs.json` at
-module import time. Run the site generator first. The location cross-check reads
-the UXLC data now held under `uxlc/` in MAM-basics.
+The location cross-check reads the UXLC data now held under `uxlc/` in MAM-basics.

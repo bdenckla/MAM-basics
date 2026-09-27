@@ -39,28 +39,15 @@ TIER 3 IS THE MEGA'S STEP TABLE, AND THAT IS NOT EVERY ROUTE INTO A PRODUCT
 
 ``_GENERATOR_ENTRY_POINTS`` is exactly what the runners of ``_STEPS`` in
 ``py/main_0_mega.py`` run, wrappers resolved.  It is therefore the ROUTINE route into
-tiers 1 and 2, and not the only one.  The hand-run interactive programs -- the Aleppo
-and Cambridge 1753 word-image and crop work above all -- write tracked images that
-are published under ``gh-pages/``, and ``py/tests/test_mega_coverage.py`` declares
-each of them, with its reason, in ``NOT_IN_MEGA``.  So "this program is not a mega
-step" answers a different question from "this change reaches no product", and reading
-the first as the second is the mistake this paragraph exists to stop.  A change to a
-hand-run generator, or to any input it reads, owes rerunning every affected generator
-and inspecting every tracked output it writes; a mega run does not do that for it.
-
-THE WORKED EXAMPLE, WHICH CROSSES TIERS BY NAME RATHER THAN BY PATH
-
-Three unrelated functions in this repository are called ``strip_heb``.  Measured
-2026-09-12: ``py/py_ac_word_image_helper/hebrew_metrics.py`` and
-``py/py_cam1753_word_image/hebrew_metrics.py`` reach the manuscript crop generators
-through each package's ``linebreak_search.py``, and those generators write the
-published crops under ``gh-pages/book-of-job/jobn/img/Aleppo``, ``.../Lenin`` and
-``.../cam1753``.  ``py/uxlc_misc/my_uxlc_find_atom.py`` is read by
-``py/main_verse_links.py`` and ``py/main_uxlc_estimate_atom_loc.py``, two interactive
-lookups that write nothing tracked.  All three sit in programs the mega does not run,
-and two of the three reach a published product anyway.  A sweep that edits
-``strip_heb`` by name therefore crosses from "reaches nothing" to "changes published
-images" without crossing a directory that says so.
+tiers 1 and 2, and not the only one.  The hand-run generators write products too:
+``py/main_mam4sef.py`` writes ``MAM-for-Sefaria/``, and ``py/main_mam_osis.py``
+writes ``MAM-OSIS/`` and ``gh-pages/MAM-OSIS/``.  Ben took both out of the mega on
+2026-09-12, and ``py/tests/test_mega_coverage.py`` declares each, with that reason, in
+``NOT_IN_MEGA``.  So "this program is not a mega step" answers a different question
+from "this change reaches no product", and reading the first as the second is the
+mistake this paragraph exists to stop.  A change to a hand-run generator, or to any
+input it reads, owes rerunning every affected generator and inspecting every tracked
+output it writes; a mega run does not do that for it.
 
 "NOT TIER 3" IS NOT "SAFE"
 

@@ -1,3 +1,5 @@
+from urllib.parse import quote
+
 from mb_misc import mb_html
 from mb_author import author
 from author_misc import tsinnorit_and_oleh_on_ivs as ivs
@@ -10,7 +12,7 @@ _CPARA = [
     [" ", author.paren(["See my ", tip_32v5.anchor()])],
 ]
 _IMG_220_PATH = "img/rocc Judaica Press Psalm 32v5 V3VNY.png"
-_IMG_220 = mb_html.img({"src": _IMG_220_PATH, "class": "width5em"})
+_IMG_220 = mb_html.img({"src": quote(_IMG_220_PATH, safe="/"), "class": "width5em"})
 TD_CTR = (author.hbo_es("וַֽעֲ֘וֺנִ֤י"), "$ayin (!) holds $tsinnorit")
 TD_MAM = (author.hbo_es("וַעֲוֺ֘נִ֤י"), "$vav #2 holds $tsinnorit")
 TD_SBB_KCT = (author.hbo_es("וַֽעֲוֺ֘נִ֤י"), ru.aeq("$MAM"))

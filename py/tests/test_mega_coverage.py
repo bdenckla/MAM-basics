@@ -108,22 +108,6 @@ _EDITION_HAND_WORK = (
     ' docstring ("The interactive, machine-local half of the printed-Decalogue work")'
     " and doc/mega-coverage-2026-09-10.md §3."
 )
-_ALEPPO_HAND_WORK = (
-    "Interactive hand work on the Aleppo Codex page images.  Recorded in py/ac_paths.py,"
-    " aleppo/README.md, aleppo/doc/aleppo-line-breaks.md and"
-    " doc/mega-coverage-2026-09-10.md §3."
-)
-_CAM1753_HAND_WORK = (
-    "Interactive hand work on the Cambridge 1753 images.  Recorded in"
-    " cam1753/doc/cam1753-line-break-task.md, py/cam1753_paths.py and"
-    " doc/mega-coverage-2026-09-10.md §3."
-)
-_PER_MANUSCRIPT_CHECK = (
-    "A per-manuscript check, run by hand.  Recorded in cam1753/CLAUDE.md, which calls"
-    " check_cam1753_all.py the artifact oracle, in"
-    " doc/PLAN-evacuate-public-repos-programme.md, and in"
-    " doc/mega-coverage-2026-09-10.md §3."
-)
 _HOLMAN_MAILBOX = (
     "Reads Holman's untracked mailboxes under .novc/; the reports regenerate from the"
     " tracked derivatives, which the mega's Holman steps read.  Recorded in"
@@ -156,13 +140,6 @@ _CHECK_WRITES_NOTHING = (
 # ---------------------------------------------------------------------------
 # A reason shared by two programs, from a decision of Ben's.
 # ---------------------------------------------------------------------------
-_LINE_BREAK_REPORT = (
-    "Ben's decision, 2026-09-10: the line-break reports stay out of the mega, since the"
-    ' fine-grained indexing they check "served its purpose for the book-of-job'
-    ' project".  Recorded in doc/mega-coverage-2026-09-10.md §1, decision 4(c), and'
-    " phase 7 of doc/PLAN-mega-coverage.md."
-)
-
 _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
     "Ben's decision, 2026-09-12, which removed the mam4sef-and-ajf and mam-osis steps:"
     ' "I know of no reason to be supplying constantly-updated versions of these; as far'
@@ -311,38 +288,6 @@ NOT_IN_MEGA: dict[str, str] = {
         "A verification aid against a downloaded zip outside every repository."
         "  Recorded in its docstring and doc/mega-coverage-2026-09-10.md §3."
     ),
-    "py/main_ac_find_word_in_images.py": _ALEPPO_HAND_WORK,
-    "py/main_ac_gen_col_quad_editor.py": _ALEPPO_HAND_WORK,
-    "py/main_ac_gen_lb_flat_stream.py": _ALEPPO_HAND_WORK,
-    "py/main_ac_download_pages.py": (
-        "A network download of Aleppo Codex page images from archive.org.  Recorded in"
-        " its docstring and doc/mega-coverage-2026-09-10.md §3."
-    ),
-    "py/main_cam1753_download_spreads.py": (
-        "A network download of Cambridge 1753 spreads from archive.org.  Recorded in"
-        " py/py_cam1753_loc/download_spreads.py's docstring and"
-        " doc/mega-coverage-2026-09-10.md §3."
-    ),
-    "py/main_cam1753_find_word_in_images.py": _CAM1753_HAND_WORK,
-    "py/main_cam1753_gen_col_quad_editor.py": _CAM1753_HAND_WORK,
-    "py/main_cam1753_gen_flat_stream.py": _CAM1753_HAND_WORK,
-    "py/main_cam1753_gutter_profile.py": (
-        "Its chart is not reproducible across matplotlib versions.  Recorded in"
-        " cam1753/CLAUDE.md and doc/mega-coverage-2026-09-10.md §3."
-    ),
-    "py/main_cam1753_split_spreads.py": (
-        "Regenerates the untracked page JPEGs when an editor or crop task needs them; its"
-        " tracked split records do not move.  Recorded as Ben's decision of 2026-09-04"
-        " in doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md, in"
-        " cam1753/CLAUDE.md, and in doc/mega-coverage-2026-09-10.md §3."
-    ),
-    "py/main_list_missing_aleppo_imgs.py": (
-        'A console report only.  Recorded in doc/book-of-job-artifacts.md ("Console'
-        ' output only") and doc/mega-coverage-2026-09-10.md §3.'
-    ),
-    "py/check_ac_all.py": _PER_MANUSCRIPT_CHECK,
-    "py/check_cam1753_all.py": _PER_MANUSCRIPT_CHECK,
-    "py/check_cam1753_word_finding.py": _PER_MANUSCRIPT_CHECK,
     "py/main_test.py": (
         "The suite, which MAM-basics' maintenance runs at its step 6, just before its"
         " step 7 runs the mega.  Recorded in py/main_repo_maintenance.py's docstring and"
@@ -446,14 +391,7 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/check_html_syntax_and_sanity.py": _CHECK_WRITES_NOTHING,
     "py/check_escape_sequences.py": _CHECK_WRITES_NOTHING,
     "py/check_function_ordering.py": _CHECK_WRITES_NOTHING,
-    "py/main_ac_gen_flat_stream.py": (
-        "Claude-written, accepted by Ben on 2026-09-10: it seeds one page from a"
-        " hand-chosen verse range, and refuses to overwrite.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4."
-    ),
     # --- Ben's decisions of 2026-09-10.
-    "py/main_ac_check_line_breaks.py": _LINE_BREAK_REPORT,
-    "py/main_cam1753_check_line_breaks.py": _LINE_BREAK_REPORT,
     "py/main_slide_generator.py make-thumbs": (
         "Ben's decision, 2026-09-10: \"don't include these thumbnail-generator-programs"
         ' in mega".  It thumbnails the slides that render-slides draws, which the mega'
@@ -523,6 +461,18 @@ NOT_IN_MEGA: dict[str, str] = {
         " dot-claude/skills/verse-links/SKILL.md describe that use.  Declared when the"
         " integration of doc/PLAN-mega-coverage.md merged main at 225ea3f2, which had"
         " gained the program in 5aae8465."
+    ),
+    "py/main_hbce_psalms.py compare": (
+        "Ben's decision, 2026-09-26, accepting a Claude-written proposal: it compares a"
+        " frozen snapshot of HBCE's Psalms transcriptions with MAM, and is run by hand,"
+        " again only if that work resumes, so hbce-psalms/out/ records one run rather"
+        ' than following MAM\'s data.  Ben: "I accept the frozen record."  Recorded in'
+        ' hbce-psalms/README.md, under "Regenerating the outputs".'
+    ),
+    "py/main_hbce_psalms.py lint-receipt": (
+        "Claude-written proposal, not yet reviewed by Ben: it checks the Hebrew forms of"
+        " one dated receipt against hbce-psalms/, and writes nothing.  Recorded in"
+        " py/main_hbce_psalms.py's docstring and hbce-psalms/README.md."
     ),
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"

@@ -1,5 +1,9 @@
 """Generate index-flat-annotated.json from index-flat-corrected.json.
 
+This maintains the page-level index of the Aleppo Codex under ``aleppo/`` from retained
+JSON, and reads no manuscript image, so it is the one Aleppo program that outlived the
+codex-index image work retired on 2026-09-26.
+
 Adds two fields to each page record in the body:
 
   de_start_whole: True  — the start verse is completely present on this page.
@@ -22,9 +26,9 @@ For **non-gap boundaries** the wholeness is inferred from adjacent records:
     the same triple and no gap intervenes.  Otherwise it is whole.
 
 For **gap-boundary verses** (start verse after a "Before" gap, end verse
-before an "After" gap) the wholeness is resolved from the gh-pages/ directory,
-which records the exact Hebrew words at which each missing section begins and
-ends.  The resolved values are encoded in _GAP_WHOLENESS below.
+before an "After" gap) the wholeness is resolved from the missing-sections pages
+under gh-pages/aleppo/, which record the exact Hebrew words at which each missing
+section begins and ends.  The resolved values are encoded in _GAP_WHOLENESS below.
 
 Usage
 -----
@@ -62,8 +66,8 @@ DEFAULT_OUTPUT = ac_paths.flat_index_annotated_path()
 # Each entry maps (leaf, "start"|"end") to True (whole) or False (partial).
 #
 # Sources:
-#   * gh-pages/missing_sections_torah.html  — Torah gaps
-#   * gh-pages/missing_sections_nakh.html   — Nakh gaps (incl. mgketer footnote)
+#   * gh-pages/aleppo/missing_sections_torah.html  — Torah gaps
+#   * gh-pages/aleppo/missing_sections_nakh.html   — Nakh gaps (incl. mgketer footnote)
 # ---------------------------------------------------------------------------
 _GAP_WHOLENESS = {
     # Torah — the codex begins mid-Deut 28:17 ("וּמִשְׁאַרְתֶּֽךָ")

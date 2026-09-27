@@ -42253,7 +42253,7 @@ y,:,d,i,y,d,a,(mer),h
 SPACE
 b,_,τ,-,3,:_,d,a,y,a,(tip),h
 SPACE
-m,i,b,·,a,(mos),c,:,q,_,(mos),τ,(sopa)
+m,i,b,·,oa,(mos),c,:,q,_,(mos),τ,(sopa)
 
 2Kings 22:2 in vtrad vtmam
 v,_,y,·,_,(mer),3,_,$,·si

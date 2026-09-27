@@ -1,0 +1,14 @@
+{
+  "summary": "Link the archive.org page cited at Lev 10:6 through the external-link template מ:קישור בהערה rather than the internal-link template מ:קישור פנימי בהערה",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Levit": [
+      {
+        "ch": "י",
+        "old": "{{מ:קישור פנימי בהערה|https://archive.org/details/heidenheim-torah-maor-enayim-rodelheim-1818-1821-images/page/n773/mode/1up|",
+        "new": "{{מ:קישור בהערה|https://archive.org/details/heidenheim-torah-maor-enayim-rodelheim-1818-1821-images/page/n773/mode/1up|",
+        "comment": "Leviticus 10:6"
+      }
+    ]
+  }
+}

@@ -184,9 +184,11 @@ history, rather than as something known to have worked in MAM-basics.
 
 ### Image source
 
-Page images come from archive.org at scale=2.  The URL formula is
-`_archive_image_url()` in `py/main_ac_download_pages.py`, which fetches the images
-into `aleppo/aleppo-pages/`, where the deleted module read them.  Page number =
+Page images came from archive.org at scale=2.  The URL formula was
+`_archive_image_url()` in `py/main_ac_download_pages.py`, which fetched the images
+into `aleppo/aleppo-pages/`, where the deleted module read them.  Both were retired on
+2026-09-26: `git show 1fba91fe:py/main_ac_download_pages.py` recovers the program, and
+[`../aleppo-pages-provenance.md`](../aleppo-pages-provenance.md) records the scans.  Page number =
 `(leaf − 1) × 2 + 2 + (0 if recto else 1)`.
 
 ## Output Quality Notes

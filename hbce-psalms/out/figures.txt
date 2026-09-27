@@ -1,0 +1,67 @@
+Row counts quoted by doc/hbce-psalms-vs-mam-2026-09-26.md, recomputed from the TSVs
+beside this file by py/main_hbce_psalms.py compare.
+
+== compare_MA.tsv: HBCE's Aleppo transcription vs MAM ==
+differing rows: 506
+rows by kind:
+    311  policy
+    172  reading difference
+     10  ketiv-qere
+      8  order-only
+      5  unpointed-orig-with-alt
+reading differences by doc-note status:
+    114  none
+     36  word-note
+     22  verse-note
+policy labels (a row can have several):
+    222  policy:divine-name-holam
+     67  policy:atnax-hafukh-encoded-as-galgal
+     29  policy:hataf-non-guttural
+     12  policy:revia-mugrash-dot
+      2  policy:oleh-supplied
+
+== compare_ML_range.tsv: HBCE's Leningrad transcription vs MAM, Psalms 15:1-25:1 ==
+differing rows: 100
+rows by kind:
+     69  policy
+     25  reading difference
+      4  order-only
+      2  ketiv-qere
+reading differences by doc-note status:
+     23  word-note
+      1  none
+      1  verse-note
+policy labels (a row can have several):
+     58  policy:divine-name-holam
+     10  policy:atnax-hafukh-encoded-as-galgal
+      1  policy:revia-mugrash-dot
+
+== compare_ML.tsv: HBCE's Leningrad transcription vs MAM ==
+differing rows: 654
+rows by kind:
+    342  policy
+    284  reading difference
+     16  ketiv-qere
+     12  order-only
+reading differences by doc-note status:
+    174  none
+     62  word-note
+     48  verse-note
+policy labels (a row can have several):
+    280  policy:divine-name-holam
+     76  policy:atnax-hafukh-encoded-as-galgal
+      4  policy:hataf-non-guttural
+      2  policy:oleh-supplied
+      2  policy:revia-mugrash-dot
+
+== candidates_with_ML_UXLC.tsv: Aleppo reading differences with no doc-note on the chanted word ==
+     68  HBCE-Aleppo == UXLC
+     25  ?
+     23  MAM == UXLC
+     20  all three differ
+
+== candidates_with_ML.tsv: which side HBCE's Leningrad form agrees with, for every Aleppo reading difference ==
+    102  Aleppo(HBCE)
+     30  MAM
+     25  neither
+     15  ?
