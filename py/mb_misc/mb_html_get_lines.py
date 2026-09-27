@@ -31,11 +31,18 @@ neither repo's break structure constrains the other's.
 
 A newline inside a text string is the author's own hard break and is preserved as one --
 see ``_add_str``.  Wrapping therefore only ever REPLACES AN EXISTING SPACE with a newline;
-it never invents a break point, moves text, or alters an entity.  That is what lets a
-caller prove a rewrap changed nothing by collapsing whitespace runs and comparing.
+it never invents a break point, moves text, or alters an entity.
+
+Nor does it replace a space that follows a ``<wbr>`` with nothing but tags between them;
+see ``_ENDS_IN_WBR``.  Chromium lays out a ``<wbr>`` as U+200B ZERO WIDTH SPACE, and CSS
+Text removes a newline next to that character but keeps a space, so a break there would
+take the space with it.  Elsewhere the newline renders as the space it replaced.  That is
+what lets a caller prove a rewrap changed nothing by collapsing whitespace runs and
+comparing, as long as neither side has a newline next to a zero-width space.
 """
 
 import html
+import re
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import str_defs as sd
 from mb_cmn.my_utils import sum_of_map
@@ -125,7 +132,11 @@ def _get_lines_from_words(max_line_len, words):
     out_lines = [words[0]]
     for word in words[1:]:
         new_last_line = out_lines[-1] + " " + word
-        if max_line_len == -1 or len(new_last_line) <= max_line_len:
+        if (
+            max_line_len == -1
+            or len(new_last_line) <= max_line_len
+            or _ENDS_IN_WBR.search(out_lines[-1])
+        ):
             out_lines[-1] = new_last_line
         else:
             out_lines.append(word)
@@ -152,3 +163,7 @@ _SSTT = str.maketrans(
         sd.NBSP: "&nbsp;",
     }
 )
+# A <wbr> at the end of a line, perhaps followed by tags.  Wrapping never breaks after one.
+# MAM-with-doc writes a <wbr> after each maqaf, and where a note's lemma ended in a maqaf,
+# such a break showed the lemma and its note with no space between them.
+_ENDS_IN_WBR = re.compile(r"<wbr>(<[^<>]*>)*\Z")
