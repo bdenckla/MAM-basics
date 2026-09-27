@@ -138,15 +138,21 @@ def _div_for_bido_page(
     div_contents_1 = [mb_html.para(cv_str), mb_html.para(html_for_nondoc.verse)]
     div_contents_2 = []
     if html_for_docs.verse:
-        div_contents_2.append(mb_html.para(html_for_docs.verse))
+        div_contents_2.append(_div_for_docs(html_for_docs.verse))
     if html_for_docs.vaf_next_cp:
         div_contents_1.append(mb_html.para(html_for_nondoc.vaf_next_cp))
-        div_contents_2.append(mb_html.para(html_for_docs.vaf_next_cp))
+        div_contents_2.append(_div_for_docs(html_for_docs.vaf_next_cp))
     if html_for_docs.good_ending:
         div_contents_1.append(mb_html.para(html_for_nondoc.good_ending))
-        div_contents_2.append(mb_html.para(html_for_docs.good_ending))
+        div_contents_2.append(_div_for_docs(html_for_docs.good_ending))
     div_contents = div_contents_1 + div_contents_2
     return mb_html.div(div_contents, div_attr)
+
+
+def _div_for_docs(html_for_docs):
+    # A div, since a note with more than one part holds a list, which a p may not hold.
+    # It has a p's margins, so that the page looks as it would with a p.
+    return mb_html.div(html_for_docs, {"style": "margin-block: 1em"})
 
 
 def _row_for_verse(bcvt, html_for_verse, html_for_docs):
