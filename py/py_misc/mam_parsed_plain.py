@@ -1,29 +1,21 @@
-"""Build the shared plain-product header and book list."""
+"""Add the public plain-product notice to transient parser-stage data."""
 
 from mb_cmn import public_data_consumer_notice as consumer_notice
+from py_misc import mam_parser_stage
 
 
 def add_header(light_books, source):
-    """Wrap an ordered mapping of Hebrew book-name pairs to chapters."""
-    he_bns = {}  # An insertion-ordered set.
-    he_sbns = []
-    chap_cnts = []
-    book39s = []
-    for (he_bn, he_sbn), chapters in light_books.items():
-        he_bns[he_bn] = True
-        if he_sbn is not None:
-            he_sbns.append(he_sbn)
-        basic = {"book24_name": he_bn, "sub_book_name": he_sbn}
-        chap_cnts.append({"sub_book_name": he_sbn, "chapter_count": len(chapters)})
-        book39s.append(dict(basic, chapters=chapters))
-    assert len(he_bns) == 1
-    header = {
-        "book24_name": tuple(he_bns.keys())[0],
-        "sub_book_names": he_sbns,
-        "chapter_counts": chap_cnts,
-    }
+    """Build parser-stage data and add the requested public-product notice."""
+    return add_consumer_notice(mam_parser_stage.add_header(light_books), source)
+
+
+def add_consumer_notice(section, source):
+    """Return a shallow copy with the public plain-product notice."""
+    out_section = dict(section)
+    header = dict(section["header"])
     if source == "wikisource":
         header["consumer_notice"] = consumer_notice.mam_parsed_notice("plain")
     elif source != "google":
         raise ValueError(f"unknown MAM-parsed source: {source!r}")
-    return {"header": header, "book39s": book39s}
+    out_section["header"] = header
+    return out_section

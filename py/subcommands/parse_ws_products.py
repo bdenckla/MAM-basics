@@ -9,8 +9,10 @@ from mb_cmn import paths
 import main_authored
 from py_misc import check_mpplus
 from py_misc import mam_parsed_copy_py_files
+from py_misc import mam_parser_stage
 from py_misc import mam_parsed_plain
 from py_misc import mam_parsed_plus
+from verify_mp import parser_stage as parser_stage_validation
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_plain
 
@@ -62,8 +64,10 @@ def generate(output_dir, bkids=None, parsed_books=None):
         print(f"Parsed Wikisource {bkid}", flush=True)
     out_paths = []
     for bk24id, light_books in grouped.items():
-        plain = mam_parsed_plain.add_header(light_books, "wikisource")
-        plus = mam_parsed_plus.add_plus_stuff(plain)
+        parser_stage = mam_parser_stage.add_header(light_books)
+        parser_stage_validation.validate(parser_stage)
+        plain = mam_parsed_plain.add_consumer_notice(parser_stage, "wikisource")
+        plus = mam_parsed_plus.add_plus_stuff(parser_stage)
         filename = tbn.ordered_short_dash_full_24(bk24id) + ".json"
         book_paths = {}
         for kind, data in (("plain", plain), ("plus", plus)):

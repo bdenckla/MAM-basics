@@ -18,8 +18,7 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
-from mb_cmn import kq_special_templates as kqst
-from mb_cmn import plain_template_schema
+from verify_mp import parser_stage
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}
@@ -31,25 +30,7 @@ def _psv_category(bscv):
 
 
 def _wtel_type_and_subtype(wtel):
-    if wtp1.is_template(wtel):
-        # template_name() intentionally normalizes ASCII quote shorthand to
-        # gershayim, and this applies to both stmpl and tmpl template forms.
-        tmpl_name = plain_template_schema.validate_current_plain_template(wtel)
-        return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
-    if wtp1.is_abtag(wtel):
-        return (
-            "custom_tag",
-            plain_template_schema.validate_current_plain_custom_tag(wtel),
-        )
-    raise TypeError(f"unclassified current MAM-parsed-plain node: {wtel!r}")
-
-
-def _survey_tmpl_subtype(tmpl_name, tmpl1):
-    if not kqst.is_special_kq_template_name(tmpl_name):
-        return tmpl_name
-    assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
-    # For survey outputs, reflect the actual template node in the data.
-    return tmpl_name
+    return parser_stage.node_type_and_subtype(wtel)
 
 
 def _record_wtel(accum, wtel_rec):
@@ -94,7 +75,7 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
     stack_rest = _stack_rest_from_stack(stack)
     _my_plus_equals(accum["stack_counts"], stack_top, stack_rest)
     argc = wtp1.template_len(wtel) - 1
-    _check_argc(wtel_subtype, argc)
+    parser_stage.validate_template_arg_count(wtel_subtype, argc)
     _my_plus_equals(accum["arg_counts"], wtel_subtype, argc)
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
         new_stack = *stack, *_child_stack_symbols(wtel_subtype, arg_idx)
@@ -111,8 +92,7 @@ def _child_stack_symbols(parent_subtype, arg_key):
 
 
 def _child_stack_symbol(parent_subtype, arg_key):
-    _ = arg_key
-    return parent_subtype
+    return parser_stage.child_stack_symbols(parent_subtype, arg_key)[0]
 
 
 def _record_parent_context(accum, parent_subtype, arg_key, arg_wtel):
@@ -132,24 +112,6 @@ def _stack_rest_from_stack(stack):
 
 def _my_plus_equals(accum_x, *key_parts):
     accum_x[key_parts] += 1
-
-
-_EXPECTED_ARGC = {
-    str("כו״ק"): 2,
-    str("מ:אות מנוקדת"): 1,
-    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: tuple((2, 3, 4, 5, 6)),
-}
-
-
-def _handle_int(argc_expectation):
-    if isinstance(argc_expectation, int):
-        return (argc_expectation,)  # tuple of length 1
-    return argc_expectation
-
-
-def _check_argc(wtel_subtype, argc):
-    exp = _EXPECTED_ARGC.get(wtel_subtype)
-    assert exp is None or argc in _handle_int(exp)
 
 
 def _record_pseudo_verse(accum, bscv, minirow):
