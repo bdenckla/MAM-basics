@@ -83,26 +83,37 @@ decisions and executes no remediation.
 
    The new name, and whether the JavaScript twin and the published copies take it too, are Ben's
    choice in remediation, as an editorial change under D7.
-4. **Finding 30.3, the Leningrad captions: a side-lettered designation names a page, never a
-   folio.** The session asked whether the 1 Samuel 17:5 caption should say "folio 159A", like the
-   five other Leningrad captions, or keep "F159A". Ben, 2026-09-27:
+4. **Finding 30.3, the Leningrad captions: a side-lettered designation names a page, and the
+   "folio 159A" form is avoided.** The session asked whether the 1 Samuel 17:5 caption should say
+   "folio 159A", like the five other Leningrad captions, or keep "F159A". Ben, 2026-09-27:
 
    > Call it ither page F159A or just call it F159A. Do not call F159A. By our
    > newly-decided-upon terminology, F159 is the folio, it has an A and a B page (a recto and a
    > verso) that belong to it.
 
-   The quotation is exact; its third sentence says why "folio 159A" is excluded. The caption's
-   "F159A" is therefore one of the two forms Ben allows, "page F159A" is the other, and the
-   session's suggestion of "folio 159A" is withdrawn. The tree already defines a page as one side
-   of a folio (`doc/meteg-after-silluq-snips/README.md:52`, `evr-ii-b-55/README.md:163`). The same
-   terminology bears on every caption that names a page as a folio or a leaf: the five other
-   Leningrad captions, "folio 195B", "folio 398A", "folio 377B", "folio 379B" and "folio 380A";
-   the EVR caption's "folio 57a" (`gh-pages/post-stress-meteg-post-silluq-1s17v5.html:33`); and
-   the five Aleppo captions that write "leaf", as in "leaf 83r"
+   Later the same day he added how the avoided form is to be read where others use it:
+
+   > One more note regarding phrases like "folio 57a". I think we should avoid them, but they are
+   > common in existing references in published books and web sites. They should be taken to
+   > imply a parenthesized meaning of "(folio 57)a" meaning, somewhat visually
+   > counterintuitively, that the "folio operator" binds more tightly than the a/b operator.
+
+   The quotations are exact; the third sentence of the first says why "folio 159A" is excluded.
+   The caption's "F159A" is therefore one of the two forms Ben allows, "page F159A" is the other,
+   and the session's suggestion of "folio 159A" is withdrawn. The tree already defines a page as
+   one side of a folio (`doc/meteg-after-silluq-snips/README.md:52`, `evr-ii-b-55/README.md:163`).
+   Read as "(folio 57)a", the "folio 57a" form states nothing false, but it is the form this
+   repository's own prose avoids. The captions that use it, or its "leaf" variant, are the five
+   other Leningrad captions, "folio 195B", "folio 398A", "folio 377B", "folio 379B" and "folio
+   380A"; the EVR caption's "folio 57a" (`gh-pages/post-stress-meteg-post-silluq-1s17v5.html:33`);
+   and the five Aleppo captions that write "leaf", as in "leaf 83r"
    (`gh-pages/post-stress-meteg-post-silluq-1k14v14.html:17`). Cambridge's "page 0073B" already
-   follows it. The remediation plan proposes the wording for each caption, and for the tree's
-   records that write a page as a folio, such as "folio 159A" and "folio 195B" at
-   `doc/meteg-after-silluq-in-uxlc-and-wlc.md:84–85`, for Ben's approval under D7.
+   follows the terminology. The remediation plan proposes the wording for each caption, and for
+   the tree's own records that use the form, such as "folio 159A" and "folio 195B" at
+   `doc/meteg-after-silluq-in-uxlc-and-wlc.md:84–85`, for Ben's approval under D7. A quotation or
+   citation of a published source keeps that source's wording. The terminology has no standing
+   home in the repository's instructions or skills yet; whether to give it one is for the
+   remediation plan to ask.
 
 With this entry, every question that turns 03 to 05 put on close-out step 1's list has Ben's
 answer. Every other finding reaches close-out step 1 as the reconciliation table and turns 03 to
