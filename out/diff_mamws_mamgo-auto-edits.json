@@ -1,11 +1,67 @@
 [
   {
+    "sena": "תורה",
+    "bk24na_slash_chap_id": "ספר שמות/כו",
+    "vrnu": "ז",
+    "column": "C",
+    "search_str": "ב[https://archive.org/details/sefer-torah-bl-or-1462-images/page/n8/mode/1up",
+    "replace_str": "ב{{מ:קישור"
+  },
+  {
+    "sena": "תורה",
+    "bk24na_slash_chap_id": "ספר שמות/כו",
+    "vrnu": "ז",
+    "column": "C",
+    "search_str": " ספר",
+    "replace_str": " בהערה|https://archive.org/details/sefer-torah-bl-or-1462-images/page/n8/mode/1up|ספר"
+  },
+  {
+    "sena": "תורה",
+    "bk24na_slash_chap_id": "ספר שמות/כו",
+    "vrnu": "ז",
+    "column": "C",
+    "search_str": "1462],",
+    "replace_str": "1462}},"
+  },
+  {
+    "sena": "תורה",
+    "bk24na_slash_chap_id": "ספר ויקרא/י",
+    "vrnu": "ו",
+    "column": "E",
+    "search_str": "פנימי ",
+    "replace_str": ""
+  },
+  {
     "sena": "נביאים ראשונים",
     "bk24na_slash_chap_id": "ספר שופטים/יט",
     "vrnu": "כג",
     "column": "E",
     "search_str": "אַ֠חֲרֵי",
     "replace_str": "אַ֠חֲרֵ֠י"
+  },
+  {
+    "sena": "נביאים ראשונים",
+    "bk24na_slash_chap_id": "ספר שמואל/שמ\"א יג",
+    "vrnu": "כא",
+    "column": "E",
+    "search_str": "וב[https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/9._Character_of_the_several_Vowels#GHGpar-9-v",
+    "replace_str": "וב{{מ:קישור"
+  },
+  {
+    "sena": "נביאים ראשונים",
+    "bk24na_slash_chap_id": "ספר שמואל/שמ\"א יג",
+    "vrnu": "כא",
+    "column": "E",
+    "search_str": "גזניוס",
+    "replace_str": "בהערה|https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/9._Character_of_the_several_Vowels#GHGpar-9-v|גזניוס"
+  },
+  {
+    "sena": "נביאים ראשונים",
+    "bk24na_slash_chap_id": "ספר שמואל/שמ\"א יג",
+    "vrnu": "כא",
+    "column": "E",
+    "search_str": "9v];",
+    "replace_str": "9v}};"
   },
   {
     "sena": "נביאים ראשונים",
@@ -110,5 +166,37 @@
     "column": "E",
     "search_str": "מֶֽנְהֽוּ׃",
     "replace_str": "{{נוסח|מֶֽנְהֽוּ|2==א,ל,ש1,ק-מ (קו של סילוק מלעיל באות מ\"ם, וקו של געיה מלרע באות ה\"א), וכך אצל ברויאר ומג\"ה וכמו כן במכון ממרא וסימנים; והשוו מל\"א ז,לז.{{ש}}ל-א=מֶֽנְהוּ (קו של סילוק בלבד מלעיל באות מ\"ם), וכמו כן בדפוסים וקורן.}}׃"
+  },
+  {
+    "sena": "ספרי אמ\"ת",
+    "bk24na_slash_chap_id": "ספר איוב/ו",
+    "vrnu": "י",
+    "column": "E",
+    "search_str": "ב[https://archive.org/details/bible-with-targum-erfurt-1-volume-2-images/page/n597/mode/1up כת\"י",
+    "replace_str": "ב{{מ:קישור בהערה|https://archive.org/details/bible-with-targum-erfurt-1-volume-2-images/page/n597/mode/1up|כת\"י"
+  },
+  {
+    "sena": "ספרי אמ\"ת",
+    "bk24na_slash_chap_id": "ספר איוב/ו",
+    "vrnu": "י",
+    "column": "E",
+    "search_str": "1]",
+    "replace_str": "1}}"
+  },
+  {
+    "sena": "ספרי אמ\"ת",
+    "bk24na_slash_chap_id": "ספר איוב/ו",
+    "vrnu": "י",
+    "column": "E",
+    "search_str": "וב[https://archive.org/details/state-library-of-berlin-ms.-or.-fol.-1213-erfurt-3-images/page/n723/mode/1up כת\"י",
+    "replace_str": "וב{{מ:קישור בהערה|https://archive.org/details/state-library-of-berlin-ms.-or.-fol.-1213-erfurt-3-images/page/n723/mode/1up|כת\"י"
+  },
+  {
+    "sena": "ספרי אמ\"ת",
+    "bk24na_slash_chap_id": "ספר איוב/ו",
+    "vrnu": "י",
+    "column": "E",
+    "search_str": "3].",
+    "replace_str": "3}}."
   }
 ]

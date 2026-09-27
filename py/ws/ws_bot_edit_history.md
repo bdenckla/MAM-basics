@@ -154,7 +154,7 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/sigil-b2-to-t451.json`
 - **Plan:** `doc/PLAN-replace-sigil-b2-with-t451.md`
 
-### Holman meteg rollout: 29 metegs removed, one added — current
+### Holman meteg rollout: 29 metegs removed, one added
 - **Purpose:** Apply the thirty MAM suggestions Daniel Holman sent that differ
   from their Aleppo Codex comparison form in metegs alone. Twenty-nine take a
   meteg off an atom of MAM; one, M23 at Isaiah 23:12.11, puts one on. Ben
@@ -193,6 +193,36 @@ infrastructure has changed enough to make them misleading examples:
   `py/ws/holman_meteg_edit_spec.py`, by phase 6a of `doc/PLAN-mega-coverage.md`. The
   two JSON files stay as records, and
   `git show c3417599:py/ws/holman_meteg_edit_spec.py` recovers the builder.
+
+### Note links: one link template renamed, four bare links templated — current
+- **Purpose:** Fix five links in documentation notes that MAM-with-doc
+  rendered wrongly. Leviticus 10:6 cited an archive.org page through the
+  internal-link template `{{מ:קישור פנימי בהערה}}`, whose first parameter
+  names a Wikisource page, so MAM-with-doc linked to
+  `https://he.wikisource.org/wiki/https://archive.org/...`; the call became
+  the external-link template `{{מ:קישור בהערה}}`. Four notes, at Exodus 26:7,
+  1 Samuel 13:21 and Job 6:10 (two), used MediaWiki's bare `[URL text]`
+  syntax, which MAM-parsed keeps as plain text, so MAM-with-doc showed the
+  brackets and the URL; each became `{{מ:קישור בהערה|URL|text}}`. A Claude
+  Code cloud session wrote both files on 2026-09-27, and Ben gave the
+  go-ahead for each save the same day. Run 2026-09-27: 4 chapters saved —
+  Leviticus 10, then Exodus 26, 1 Samuel 13 and Job 6.
+- **Two files, one per problem,** each with its own edit summary; both are
+  `explicit-replacement`.
+- **Safety rule:** every `old` string was cut from the page text rebuilt from
+  `in/mam-ws/` as refreshed by 97c4aff5, and `edit_page_text` asserts each
+  occurs exactly once in its chapter. Each `--no-save` dry run's edited
+  chapter equalled that capture with the file's replacements applied,
+  codepoint for codepoint.
+- **Parameter form:** the new calls give the URL and the text as parameters 1
+  and 2 without `1=` and `2=`, as 13 of the 29 earlier calls did; none of the
+  five URLs or texts contains `=` or `|`.
+- **One-shot:** every `old` describes the pre-edit text, so a re-run raises
+  on its first `old` rather than doing nothing.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/lev-10-6-external-link-template.json`,
+  `in/mam-ws-bot-edits/bare-links-to-external-link-template.json` and its
+  selector, `bare-links-to-external-link-template.chapters.json`
 
 ## How to look up the original code
 

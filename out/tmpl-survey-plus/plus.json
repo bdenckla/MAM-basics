@@ -164,16 +164,16 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:קישור בהערה",
-      "count_C": 1,
+      "count_C": 2,
       "count_D": 0,
-      "count_E": 28
+      "count_E": 32
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:קישור פנימי בהערה",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 3
+      "count_E": 2
     },
     {
       "wtel_type": "tmpl",
@@ -353,7 +353,7 @@
     },
     {
       "stack": "C/נוסח/מ:קישור בהערה",
-      "count": 1
+      "count": 2
     },
     {
       "stack": "C/נוסח/סס",
@@ -685,11 +685,11 @@
     },
     {
       "stack": "E/נוסח/מ:קישור בהערה",
-      "count": 28
+      "count": 32
     },
     {
       "stack": "E/נוסח/מ:קישור פנימי בהערה",
-      "count": 3
+      "count": 2
     },
     {
       "stack": "E/נוסח/מ:קמץ",
@@ -978,13 +978,13 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
-      "count": 29,
+      "count": 34,
       "variations": 1
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
       "arg_count": 2,
-      "count": 3,
+      "count": 2,
       "variations": 1
     },
     {
@@ -1122,10 +1122,10 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plus-C": {
-      "fully_checked": 245,
+      "fully_checked": 246,
       "partially_checked": 0,
       "totally_unchecked": 0,
-      "total": 245
+      "total": 246
     },
     "plus-D": {
       "fully_checked": 568,
@@ -1134,10 +1134,10 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 4196,
+      "fully_checked": 4199,
       "partially_checked": 0,
       "totally_unchecked": 0,
-      "total": 4196
+      "total": 4199
     }
   },
   "normal_order_cov_top_paths_by_case": {
@@ -1172,15 +1172,15 @@
           "count": 3
         },
         {
+          "stack": "C/נוסח/מ:קישור בהערה",
+          "count": 2
+        },
+        {
           "stack": "C/נוסח/ר1",
           "count": 2
         },
         {
           "stack": "C/נוסח/מ:אין פרשה בתחילת פרק",
-          "count": 1
-        },
-        {
-          "stack": "C/נוסח/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
           "count": 1
         }
       ],

@@ -4641,7 +4641,21 @@
                 }
               ],
               [
-                "2==לגבי הקמץ ראו ויינברג 3.6.7 והערה 45, וב[https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/9._Character_of_the_several_Vowels#GHGpar-9-v גזניוס 9v]; אין געיה בכתר ובכתי\"ל. בסימנים וקורן סימנו קמץ רחב ומתג."
+                "2==לגבי הקמץ ראו ויינברג 3.6.7 והערה 45, וב",
+                {
+                  "tmpl": [
+                    [
+                      "מ:קישור בהערה"
+                    ],
+                    [
+                      "https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/9._Character_of_the_several_Vowels#GHGpar-9-v"
+                    ],
+                    [
+                      "גזניוס 9v"
+                    ]
+                  ]
+                },
+                "; אין געיה בכתר ובכתי\"ל. בסימנים וקורן סימנו קמץ רחב ומתג."
               ]
             ]
           },

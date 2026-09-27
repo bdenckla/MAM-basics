@@ -13110,9 +13110,9 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:קישור בהערה",
       "pseudoverse_category": "1 (normal verse)",
-      "count_C": 1,
+      "count_C": 2,
       "count_D": 0,
-      "count_E": 28
+      "count_E": 32
     },
     {
       "wtel_type": "tmpl",
@@ -13120,7 +13120,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 3
+      "count_E": 2
     },
     {
       "wtel_type": "tmpl",
@@ -13654,7 +13654,7 @@
     },
     {
       "stack": "C/נוסח/מ:קישור בהערה",
-      "count": 1
+      "count": 2
     },
     {
       "stack": "C/נוסח/סס",
@@ -14038,11 +14038,11 @@
     },
     {
       "stack": "E/נוסח/מ:קישור בהערה",
-      "count": 28
+      "count": 32
     },
     {
       "stack": "E/נוסח/מ:קישור פנימי בהערה",
-      "count": 3
+      "count": 2
     },
     {
       "stack": "E/נוסח/מ:קמץ",
@@ -14689,13 +14689,13 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
-      "count": 29,
+      "count": 34,
       "variations": 1
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
       "arg_count": 2,
-      "count": 3,
+      "count": 2,
       "variations": 1
     },
     {
@@ -14899,10 +14899,10 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 240,
+      "fully_checked": 241,
       "partially_checked": 0,
       "totally_unchecked": 6,
-      "total": 246
+      "total": 247
     },
     "plain-D": {
       "fully_checked": 568,
@@ -14911,10 +14911,10 @@
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 4072,
+      "fully_checked": 4075,
       "partially_checked": 17,
       "totally_unchecked": 46,
-      "total": 4135
+      "total": 4138
     }
   },
   "normal_order_cov_top_paths_by_case": {
@@ -14941,6 +14941,10 @@
           "count": 14
         },
         {
+          "stack": "C/נוסח/מ:קישור בהערה",
+          "count": 2
+        },
+        {
           "stack": "C/נוסח/ר1",
           "count": 2
         },
@@ -14950,10 +14954,6 @@
         },
         {
           "stack": "C/נוסח/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
-          "count": 1
-        },
-        {
-          "stack": "C/נוסח/מ:קישור בהערה",
           "count": 1
         },
         {
@@ -15035,7 +15035,7 @@
         },
         {
           "stack": "E/נוסח/מ:קישור בהערה",
-          "count": 28
+          "count": 32
         }
       ],
       "partially_checked": [
