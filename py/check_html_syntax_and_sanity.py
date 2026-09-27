@@ -363,7 +363,9 @@ def _check_images(
     for src in info.img_srcs:
         if src.startswith(("http://", "https://", "data:")):
             continue
-        img_path = (html_dir / src).resolve()
+        # Decoded as an internal href's path is: the images under MAM-with-doc's misc/
+        # have spaces in their names, so their srcs have %20 in their place.
+        img_path = (html_dir / unquote(src)).resolve()
         referenced_images.add(img_path)
         if not img_path.is_file():
             issues.append(f'{rel}: broken image "{src}"')
@@ -414,7 +416,8 @@ def _check_css_links(
     """Check that stylesheet hrefs resolve to existing files."""
     issues = []
     for href in info.css_hrefs:
-        css_path = (html_dir / href).resolve()
+        # Decoded as an img src is, although no stylesheet's name has a space yet.
+        css_path = (html_dir / unquote(href)).resolve()
         if not css_path.is_file():
             issues.append(f'{rel}: broken CSS link "{href}"')
     return issues

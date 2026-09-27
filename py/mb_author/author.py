@@ -1,6 +1,7 @@
 import os
 
 import re
+from urllib.parse import quote
 from mb_misc import mb_html
 from mb_cmn import provenance
 from mb_cmn import str_defs as sd
@@ -173,7 +174,9 @@ def para_for_img(img_path, widthclass=None, width_em=None):
     assert not (widthclass and width_em), (img_path, widthclass, width_em)
     img_class = {"class": widthclass} if widthclass is not None else {}
     img_style = {"style": f"width: {width_em}em"} if width_em is not None else {}
-    img_element = mb_html.img({"src": f"img/{img_path}", **img_class, **img_style})
+    # The image files' names have spaces, which a URL may not hold as they are.
+    src = quote(f"img/{img_path}", safe="/")
+    img_element = mb_html.img({"src": src, **img_class, **img_style})
     return mb_html.para(img_element, {"class": "center"})
 
 

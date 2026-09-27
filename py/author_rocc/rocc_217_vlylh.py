@@ -1,3 +1,5 @@
+from urllib.parse import quote
+
 from mb_misc import mb_html
 from author_rocc import rocc_0_review_of_ctr_header as rocc_0
 from mb_author import author
@@ -7,7 +9,7 @@ from mb_author import author
 
 _CPARA = "Now let’s look at ולילה in Psalm 32:4 (ignoring $CTR):"
 _IMG_217_PATH = "img/rocc Judaica Press Psalm 32v4 VLYLH floating azla.jpg"
-_IMG_217 = mb_html.img({"src": _IMG_217_PATH, "class": "width5em"})
+_IMG_217 = mb_html.img({"src": quote(_IMG_217_PATH, safe="/"), "class": "width5em"})
 TD_CTR = ("וָ֨לַיְלָה׀", "$azla on $vav (!)")
 TD_MAM_KCT_ETC = ("וָלַיְלָה֮", "$tsinnor")
 TD_JP = (_IMG_217, "$azla floats between $vav and $lamed")
