@@ -13128,7 +13128,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 375
+      "count_E": 376
     },
     {
       "wtel_type": "tmpl",
@@ -13208,7 +13208,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 274,
       "count_D": 35,
-      "count_E": 3593
+      "count_E": 3595
     },
     {
       "wtel_type": "tmpl",
@@ -13384,7 +13384,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 16,
       "count_D": 1,
-      "count_E": 3282
+      "count_E": 3285
     },
     {
       "wtel_type": "tmpl",
@@ -13938,7 +13938,7 @@
     },
     {
       "stack": "E/נוסח",
-      "count": 3551
+      "count": 3553
     },
     {
       "stack": "E/נוסח/גלגל-2",
@@ -14046,7 +14046,7 @@
     },
     {
       "stack": "E/נוסח/מ:קמץ",
-      "count": 27
+      "count": 28
     },
     {
       "stack": "E/נוסח/מ:קמץ/מ:כל קמץ קטן מרכא",
@@ -14098,7 +14098,7 @@
     },
     {
       "stack": "E/נוסח/ש",
-      "count": 3224
+      "count": 3227
     },
     {
       "stack": "E/סס",
@@ -14701,7 +14701,7 @@
     {
       "wtel_subtype": "מ:קמץ",
       "arg_count": 2,
-      "count": 375,
+      "count": 376,
       "variations": 1
     },
     {
@@ -14755,7 +14755,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3906,
+      "count": 3908,
       "variations": 1
     },
     {
@@ -14887,7 +14887,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3299,
+      "count": 3302,
       "variations": 1
     },
     {
@@ -14911,10 +14911,10 @@
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 4068,
+      "fully_checked": 4072,
       "partially_checked": 17,
       "totally_unchecked": 46,
-      "total": 4131
+      "total": 4135
     }
   },
   "normal_order_cov_top_paths_by_case": {
@@ -14999,7 +14999,7 @@
       "fully_checked": [
         {
           "stack": "E/נוסח/ש",
-          "count": 3224
+          "count": 3227
         },
         {
           "stack": "E/נוסח/כו״ק",
