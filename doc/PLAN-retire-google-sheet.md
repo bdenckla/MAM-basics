@@ -1,7 +1,8 @@
 # Retire the MAM Google Sheet pipeline
 
-State: live. Repository implementation completed 2026-09-27; the manual Google
-Sheet and Hebrew Wikisource edits and both live verifications remain pending.
+State: executed 2026-09-27. Repository implementation, the frozen Google Sheet,
+the five Hebrew Wikisource documentation edits, both live verifications, and the
+tracked introduction-mirror refresh are complete.
 
 ## Summary
 
@@ -38,8 +39,32 @@ decided on 2026-09-27 that the `שינויים changes` tab is frozen with every
 - The manual packets are
   `.novc/google-sheet-freeze-instructions-2026-09-27.md` and
   `.novc/wikisource-retirement-edit-packet-2026-09-27.md`. On 2026-09-27 they were
-  revised to freeze every tab, superseding the earlier change-log exception. No
-  external edit was made.
+  revised to freeze every tab, superseding the earlier change-log exception.
+- The public post-edit workbook export has SHA-256
+  `dc6cb1531ad798ac5ac0fc44f254b305d10242195e12fc51ed143cf199167dc5`; the
+  pre-edit export has SHA-256
+  `14b8e1f08c5eb6b4d2f5b09d46c42462b3b28c4e724aa2980335f5f920020932`.
+  The detailed comparison passed with zero discrepancies: all 11 sheets and their
+  order, IDs, dimensions, frozen rows, 81 formulas and cached results, styles,
+  hyperlinks, comments, merges, validations, protections, charts, and images were
+  preserved after applying the intended row offsets. Live access remained
+  anyone-with-link reader with discovery disabled, and published revision 27023
+  was current. The full publish-to-web configuration and Apps Script attachment
+  state were not independently exposed, and this verification did not repeat the
+  predecessor session's browser inspection.
+- `BDencklaBot` made the five approved Hebrew Wikisource edits with the packet's
+  edit summary and source text: the root introduction at revision 3085150, the
+  data-sheet technical guide at 3085151, the appendices at 3085152, chapter 2 at
+  3085153, and the summary at 3085154. The two archival community pages found by
+  the original search were not changed.
+- The independent `fr-ws-intro` refresh recorded those five revisions in
+  `in/mam-ws-intro/manifest.json` and reproduced the approved frozen-Sheet wording,
+  including `שינויים changes`. The refresh also captured explainable intervening
+  live changes: chapter 3 count and link corrections; a chapter 5 ketiv/qere and
+  anchor correction; two appendices wording or typo corrections; a Leningrad-index
+  anchor correction; and the Aleppo index's conversion of 601 unavailable
+  Bar-Hama image links to archive-backed template calls with an accompanying
+  availability note.
 
 ## Execution setup
 
