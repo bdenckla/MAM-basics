@@ -368,8 +368,8 @@ def _display(unit: Unit) -> str:
     """The chanted word in letters and accents, no vowels, with its maqafs put back.
 
     ``accents_and_letters`` drops the maqaf along with the vowels, so a compound is reduced atom
-    by atom and rejoined -- the same treatment ``maqaf_nonfinal_accents_page.lo_taase_compound``
-    gives it.  Lifted from the corpus, never retyped.
+    by atom and rejoined -- the same treatment ``maqaf_nonfinal_accents_page._render_span`` gives
+    it.  Lifted from the corpus, never retyped.
     """
     return UNI_MAQAF.join(
         accents_and_letters(atom) for atom in unit.text.split(UNI_MAQAF)
