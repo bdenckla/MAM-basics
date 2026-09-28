@@ -72,8 +72,9 @@ pr29:6, pr29:18 and jb22:13.  The one type-2 MAS whose next chanted word begins 
 poetic, ps19:14, which is one of item (b)'s four cantillated-word examples; all four of those
 examples are type-2 MAS records here.  Re-derive current counts by grouping the tracked JSON's
 ``TYPE_GUTTURAL`` records by
-``(record["system"], psm.type_2_next_filter_group(record["next_mam_form"]))``.  The grouping
-must partition the type-2 records, but its populations are not source-code constants.
+``(record["system"], type_2_next_filter_group(record["next_mam_form"]))``, both names from
+``accgram.post_stress_meteg_model``.  The grouping must partition the type-2 records, but its
+populations are not source-code constants.
 """
 
 from __future__ import annotations
