@@ -88,6 +88,9 @@ from author_site import post_stress_meteg_appendices as _appendices_module
 from author_site import post_stress_meteg_cases as _cases_module
 from author_site import post_stress_meteg_overview as _overview_module
 from author_site import post_stress_meteg_post_silluq_data as _post_silluq_data_module
+from author_site import (
+    post_stress_meteg_post_silluq_images as _post_silluq_images_module,
+)
 from author_site import post_stress_meteg_post_silluq_page as _post_silluq_page_module
 from author_site import post_stress_meteg_shared as _shared_module
 from author_site import post_stress_meteg_survey as _survey_module
@@ -143,6 +146,9 @@ from author_site.post_stress_meteg_post_silluq_data import (
 
 from author_site.post_stress_meteg_post_silluq_page import (
     build_post_silluq_body,
+)
+
+from author_site.post_stress_meteg_post_silluq_images import (
     build_post_silluq_image_body,
 )
 
@@ -180,6 +186,7 @@ _AUTHOR_SOURCE_PATHS = (
             _cases_module,
             _post_silluq_data_module,
             _post_silluq_page_module,
+            _post_silluq_images_module,
             _validation_module,
             _overview_module,
             _appendices_module,

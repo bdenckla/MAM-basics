@@ -340,6 +340,13 @@ _PETERSBURG_RECORD_URL = (
     "https://www.nli.org.il/he/manuscripts/NNL_ALEPH990000991240205171/NLI"
 )
 
+_PETERSBURG_FULL_NAME = "St. Petersburg Evr. II B 55"
+_PETERSBURG_SHORT_NAME = "EVR-II-B-55"
+_PETERSBURG_CONTINUATION_NAME = "Evr. II B 247"
+_PETERSBURG_SURVIVING_TEXT_GAP = (
+    "its surviving text breaks off at 2 Sam. 1:16 and resumes at 1 Kgs. 8:61."
+)
+
 _URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-A3JH.png"
 
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
