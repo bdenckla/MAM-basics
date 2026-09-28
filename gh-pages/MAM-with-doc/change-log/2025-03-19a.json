@@ -1115,6 +1115,16 @@
           "old": "עֲ֭טִינָיו",
           "new": "עֲ֭טִנָיו"
         }
+      ],
+      "alternative_changes": [
+        {
+          "template": "מ:דחי",
+          "occurrence": 1,
+          "role": "stress-helper-alternative",
+          "kind": "content",
+          "old": "עֲ֭טִינָ֭יו",
+          "new": "עֲ֭טִנָ֭יו"
+        }
       ]
     },
     {

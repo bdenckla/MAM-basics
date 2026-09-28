@@ -355,16 +355,6 @@ def build_methods_body(survey: dict) -> list:
             (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, " in the census")
         ),
         mb_html.para(_mam_post_silluq_statement(survey)),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(
-                    ("comprehensive ", _ROM_METEG, "-after-", _ROM_SILLUQ, " page"),
-                    _POST_SILLUQ_FNAME,
-                ),
-                " gives the comparative evidence, known cases, and unresolved candidates.",
-            )
-        ),
         *_census_definitions(survey),
         *_dually_cantillated_passages(survey),
         *_oleh_meteg_overlap(survey),

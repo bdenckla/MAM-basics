@@ -1,6 +1,6 @@
 # Updates to the symmetric CLAUDE.md and AGENTS.md instructions plan
 
-State: executed, first entry 2026-09-15.
+State: open, first entry 2026-09-15.
 
 This file is the dynamic home for later progress, State, scope changes, measurements, and dispositions for [the frozen base plan](PLAN-symmetric-CLAUDE-and-AGENTS-instructions.md). Append later dated entries here and correct stale present-tense claims here while the base remains tracked.
 
@@ -53,13 +53,16 @@ The user-level conversion is implemented and deployed. Before editing, the sessi
 canonical Claude file was 121,892 bytes, and each canonical file remained byte-identical to its
 live destination. Current `main` and `origin/main` were still at that baseline.
 
-The old Claude body was reconciled section by section against the compact Codex body and the
-canonical skills. No genuine policy conflict required a new decision. The resolved common body
-preserves the unique live rules for authored forward-slash paths, successor-prompt authorship,
-finding dispositions, and shared checkout and virtual-environment safeguards. The Claude task-chip
-and cloud-installation material remains under explicit `Claude Code only` headings. Detailed
-GitHub-issue, Hebrew-prose, repository-topology, and Codex-worktree procedures remain routed to
-their canonical skills instead of being copied back into the always-loaded body.
+The conversion preserved the rules for authored forward-slash paths, successor-prompt authorship,
+finding dispositions, and shared checkout and virtual-environment safeguards. The conversion did
+not preserve every clause of the old Claude body. The September 26 review remediation restores
+the specifically approved omissions; the twelve clauses in its finding 11.1 remain deferred.
+The [section-level reconciliation](user-wide-instruction-conversion-reconciliation.md) maps every
+old heading to the shared body, a canonical skill, an approved restoration or a deferred decision.
+
+The Claude task-chip and cloud-installation material remains under explicit `Claude Code only`
+headings. Detailed GitHub-issue, Hebrew-prose, repository-topology, and Codex-worktree procedures
+remain routed to their canonical skills.
 
 Commit
 [`d695966be8daea270f85424cb77d06f3b92a873d`](https://github.com/bdenckla/MAM-basics/commit/d695966be8daea270f85424cb77d06f3b92a873d)
@@ -232,10 +235,26 @@ owned by this plan family.
 
 Recorded by a Codex session on 2026-09-17, at Ben's request.
 
-This update file is now **State: executed**. The common user-level instruction
+The plan's effective State is **executed 2026-09-17**. This update file remains **State: open**
+while the base is tracked. The common user-level instruction
 body, both Claude wrappers, the MAM-basics common repository body, the local
 deployment procedure, and the cloud bootstrap have all been implemented and
 verified through fresh local Codex, fresh local Claude Code, and real Claude
 cloud sessions. MAM-private remains separately tracked by
 [MAM-private issue 26](https://github.com/bdenckla/MAM-private/issues/26).
-MAM-basics issue 274 has no remaining work and may be closed.
+MAM-basics issue 274 was closed on September 17 after these checks completed.
+
+## 2026-09-28: conversion reconciliation and later budget reversal
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time, under Ben's approved September 26 review
+remediation plan. **Corrected here and in the conversion entry above.** The section-level
+reconciliation claim was too broad: the conversion preserved policies, relocated policies,
+omitted clauses and retained unresolved decisions. The maintained
+[reconciliation](user-wide-instruction-conversion-reconciliation.md) distinguishes those results
+for every old level-2 and level-3 heading. It makes no claim to a canonical “214-rule” inventory.
+
+The base's Phase 1 step beginning “Set project_doc_max_bytes to 131072” describes a completed
+historical change. Commit `51a4120c5d08218798e023ba14b8d3dec34e2e8a` subsequently restored the
+32,768-byte default on September 15. The 80,412-byte measurement above remains a dated
+measurement at `52b91ac0`; it does not describe the current configuration. This correction makes
+no budget change and does not execute or retire the separate September 9 pruning plan.

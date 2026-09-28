@@ -58,41 +58,42 @@ reachable only from the private remote:
 M1, M3, M4, M11, D3 and §4 item 1 each rest on that history, and §6's `substitution_proof.py`
 cannot run without a clone of it.
 
+## Current execution boundary, corrected 2026-09-28
+
+The symmetric instruction conversion overtook parts of this September 9 plan. The plan remains
+live until Ben decides whether it is spent; this correction neither executes nor retires it.
+Read [the maintained conversion reconciliation](user-wide-instruction-conversion-reconciliation.md)
+and the current canonical user and repository instructions before selecting any still-applicable
+work. The old Claude body is historical evidence; the current Claude user-level file is a wrapper.
+
 ## 1. Preconditions and setup for the session that executes this plan
 
-1. **Which checkout.** Prefer the primary clone, `C:/Users/BenDe/GitRepos/MAM-basics` on `main`:
-   the deploy commands and drift checks in `dot-claude/README.md` §"Shared-skill deployment to
-   Claude and Codex" name that path, and the live files edited here are machine-global. If the
-   session is given a worktree instead, substitute the worktree path in those commands, and
-   integrate immediately after the last commit rather than at archival — `~/.claude/CLAUDE.md`'s
-   Git section allows early integration "when a concrete need requires the primary checkout to
-   contain the work", and the need here is that the live files must not sit ahead of the primary
-   clone's tracked copies, which every drift check on this machine compares against.
-2. **Live-first order, for every file that has a live copy.** Edit `~/.claude/CLAUDE.md`,
-   `~/.codex/AGENTS.md` and `~/.claude/skills/hebrew-prose/`, then copy back to the tracked copy
-   and commit. For the skill, run the four steps of `dot-claude/README.md` §"Shared-skill
-   deployment to Claude and Codex", including the copy to `~/.agents/skills/hebrew-prose/` and
-   **both** `git diff --no-index` comparisons, before committing. `dot-claude/README.md` and
-   `dot-Codex/README.md` have no live copy and are edited in place.
+1. **Which checkout.** Use the verified MAM-basics development checkout named by the
+   execution task, with one writer. A linked worktree uses the primary clone's interpreter
+   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, while scripts, checks, staging
+   and commits run in that development checkout. Integrate and push `main` before deployment.
+   The complete user-configuration deployment runs only from the primary clone,
+   `C:/Users/BenDe/GitRepos/MAM-basics`, and installs from fresh `origin/main`; do not
+   substitute a worktree path into that deployment. Load `codex-worktree-tasks` for a linked
+   worktree's verification and integration procedure.
+2. **Canonical-first order, for every deployed file.** Edit `dot-Codex/user-wide-AGENTS.md`,
+   the tracked Claude wrapper, or the appropriate canonical skill in the verified MAM-basics
+   development checkout. Commit, integrate and push `main`, then run the complete
+   `py/main_repo_util.py --sync-user-config` deployment from the primary clone and its read-only
+   `--check`. Never edit a live destination first. Follow the current deployment READMEs and
+   skills rather than the superseded copy-back commands in this plan's historical proposals.
 3. **Load the `hebrew-prose` skill before editing its five files.** Its `when_to_use` covers any
    file whose text discusses accents, which its own files do. Nothing in this plan changes an
    accentuation rule; the edits are paths, issue prefixes, dates and pointers.
-4. **The venv, black and the suite — this changed with the move.** github-misc tracked no Python
-   and had no `.venv`, so the plan owed neither a black run nor a test run. MAM-basics owes both.
-   The work items below edit Markdown only, so black has nothing to format unless an item grows a
-   Python edit — if one does, `.venv/Scripts/python.exe -m black <files>`. The suite is not
-   optional: run `.venv/Scripts/python.exe py/main_test.py` from
-   `C:/Users/BenDe/GitRepos/MAM-basics`, never from `py/`, before the first edit and after the
-   last. The baseline on 2026-09-09 was **983 passed, 5 skipped, 65 subtests passed**, about 84
-   seconds. In a worktree, name the primary clone's venv by absolute path. Since `516a4a1a`, a
-   normal linked worktree needs no `REPOS_ROOT`: `paths.repos_root()` reads the home clone from
-   Git's worktree metadata and finds its siblings there. The variable remains an override for a
-   nonstandard layout. `py/tests/test_prose_conventions.py` reads the skill, so
-   an edit there can turn it red; and if the branch that
-   `doc/assessment-two-stranded-artifacts-2026-09-09.md` §3 recommends merging has landed,
-   `py/tests/test_prose_mark_order.py` fails on any tracked `.md` whose Hebrew is not in MAM-normal
-   mark order — which is a live hazard here, because the Write and Edit tools silently produce the
-   other order. Re-measurements against MAM-basics run on that same venv, from that repo's root.
+4. **The shared interpreter and applicable checks.** Use the interpreter in item 1 from the
+   development root. Each commit gets `git diff --check` and directly relevant checks, including
+   the prose-convention and prose-mark-order lints for canonical text. Format changed Python
+   with Black at defaults if a selected item changes Python. Apply the current content-based
+   verification exemption and full-suite cadence; Markdown-only work owes no full suite or
+   mega. Executable changes receive their applicable gates. Do not repeat an unexpired suite
+   result solely for a later instruction-text change. The historical September 9 baseline was
+   983 passed, 5 skipped and 65 subtests passed, about 84 seconds. Normal linked worktrees
+   resolve siblings through Git metadata; `REPOS_ROOT` remains an unusual-layout override.
 5. **Another session may be live.** On 2026-09-09 the MAM-basics primary clone held untracked
    `doc/user-level-config-in-cloud-sessions.md` and `.claude/` from a session then running; its
    name suggests it concerns these same instruction files. Before editing, check for a newer
@@ -365,7 +366,7 @@ the fact that decides between the two.
 **D4 — Class 4. `SKILL.md` cites a deleted plan.** Anchor
 "`MAM-basics/doc/PLAN-evacuate-the-rest-of-wlc-utils.md`" in §"Where these rules used to live".
 Deleted by MAM-basics `80c9ad85` (2026-09-03, "Close second-stage evacuation bookkeeping"); the
-survivor is `doc/PLAN-evacuate-the-rest-of-three-repos.md`
+successor was the later-retired [PLAN-evacuate-the-rest-of-three-repos.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-the-rest-of-three-repos.md)
 (`git -C C:/Users/BenDe/GitRepos/MAM-basics log --diff-filter=D --name-status --
 "doc/PLAN-evacuate-the-rest*"`). Decide: cite the successor plan, or the deleting commit, or
 `MAM-basics/CLAUDE.md` §"wlc-utils belongs on no machine".
@@ -485,7 +486,7 @@ still need a decision.**
    (`drift_check.py`).
 6. **The 2026-09-09 fixes hold**: the `REPOS_ROOT` bullet, the withdrawn worktree ban and its
    caution, the gate-figure pointers, the ZEROs in the spelling traps, the eighteen-pass count,
-   the live-first deploy order.
+   the then-current live-first deploy order. That order is now superseded by §1 item 2.
 7. **Not touched by this plan**: every accentuation rule in the skill; the two READMEs' procedures
    and commands; `dot-claude/skills/prune-claude-state/SKILL.md` beyond D7's quotation;
    `worktree-forest/SKILL.md` beyond D13; `dot-emacs` and `dot-gitconfig`, which were out of
@@ -496,26 +497,30 @@ still need a decision.**
 1. **Preconditions** (§1): read any newer `dot-*/` commit; `drift_check.py` clean; both trees
    clean; record `HEAD` of github-misc and MAM-basics.
 2. **The skill, one commit**: M6, M7, M8, M9, M12's three skill files, M13, plus whichever of
-   D4, D6, D9, D10, D11, D12 Ben has decided. Edit `~/.claude/skills/hebrew-prose/`, run the four
-   deploy steps and both comparisons, commit with the skill's three homes byte-identical.
+   D4, D6, D9, D10, D11, D12 Ben has decided. Edit the canonical
+   `dot-claude/skills/hebrew-prose/` in the verified development checkout and commit finished
+   work. Deploy and compare the live copies only after integration and the normal `main` push.
 3. **`CLAUDE.md`, one commit**: M1, M2, M12's `CLAUDE.md` sites, plus D1, D5, D14, D15 as
-   decided. Edit `~/.claude/CLAUDE.md`, copy back, commit.
+   decided. These old body sites now belong to the common canonical
+   `dot-Codex/user-wide-AGENTS.md`; consult the maintained reconciliation before changing a
+   surviving clause. Edit the canonical source and commit; do not edit the live Claude wrapper.
 4. **`AGENTS.md`, one commit**: M2's five, M3, M4, M5, M12's `AGENTS.md` sites, plus D1, D2, D3,
-   D5, D8, D15 as decided. Edit `~/.codex/AGENTS.md`, copy back, commit.
+   D5, D8, D15 as decided. Edit the applicable common canonical source or canonical skill
+   identified by the maintained reconciliation and commit; do not edit live destinations.
 5. **The READMEs and the Codex skills, one commit**: M10, M11, plus D7, D8, D13, D14 as decided.
 6. **Verify**: re-run `extract_citations.py`, `resolve_paths.py`, `resolve_issues.py`,
    `section_compare.py` and `drift_check.py`; the named dangling paths and the eighteen bare
    numbers must be gone, the three homes identical, and `section_compare.txt` must show only the
    divergences Ben chose to keep under D3.
 7. **Commit messages** state each defect, its evidence and Ben's dated decision, and carry the
-   disposition "has been fixed" up front, per `~/.claude/CLAUDE.md` §"Prose: a reported finding
-   says what HAPPENED to it".
-8. **Integrate**: in the primary clone, run `.venv/Scripts/python.exe py/main_test.py` from the
-   repository root and then push `main`; in a worktree, immediately after step 5 by the Git
-   section's four steps (`git merge --no-edit main` in the worktree, run the suite there with the
-   primary clone's venv and no `REPOS_ROOT` in the normal layout, `--ff-only` in the primary clone,
-   push), for the reason in §1 item 1. **The suite is the step github-misc did not have**: `main`
-   must not carry a commit nothing has verified.
+   disposition "has been fixed" up front, per the canonical common body's "Prose names its subject".
+8. **Integrate**: merge current `main` into the development branch and run the repository's
+   applicable required gates there. Commit every explained generated change. A linked worktree
+   receives the repository's mandatory final mega unless its branch is content-exempt; preserve
+   a still-relevant full-suite result under item 4. The primary checkout receives only a verified
+   `--ff-only` integration, followed by a normal `main` push. Run the complete
+   `py/main_repo_util.py --sync-user-config` deployment and its read-only `--check` from the
+   primary clone after the normal `main` push.
 
 ## 6. The review's scripts and outputs, and how to run them
 

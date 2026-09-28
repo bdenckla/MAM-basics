@@ -314,10 +314,11 @@ def al_hatorah_phonetic_dir() -> Path:
     SHEVA NA MUDGASH says a shewa is vocal, and U+05C9 HEBREW POINT DAGESH HAZAQ MUDGASH
     says a dagesh is xazaq. ``rep``, where a record has one, is two space-separated forms whose
     first is exactly that full form with U+05C8 and U+05C9 folded to U+05B0 and U+05BC -- so
-    MAM's Hebrew is already in the record and needs no stripping.  Measured 2026-09-09 across
+    MAM's Hebrew is already in the record and needs no stripping.  Measured 2026-09-09 under the pre-Unicode-18 annotation relation across
     all 39 books, 263,320 records:
     a record has a non-null ``rep`` exactly when its ``fva`` full form is annotated (122,555
-    either way), and no record contradicts either half.  A session that read ``fva`` and took
+    either way), and no record contradicted either half. The present folding relation
+    was not remeasured here.  A session that read ``fva`` and took
     an upper dot for an extraordinary point is why this paragraph is here.
 
     DO NOT PASTE A FORM OUT OF THIS DATA -- lift it.  These files are in al-hatorah's mark
@@ -328,8 +329,7 @@ def al_hatorah_phonetic_dir() -> Path:
     source has before the phonetic annotation is applied -- 98 of them, at the 15 classical
     loci. So
     Phonetic MAM's Hebrew differs from MAM's at those sites, and a chanted word with a genuine
-    extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg``'s
-    ``_settle`` already handles that case with a second test.  al-hatorah's
+    extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg_sources._settle`` already handles that case with a second test.  al-hatorah's
     ``io/a01-phonetic-std-set/README.md`` is the fuller statement of all three paragraphs.
 
     A CODE PATH CALLS THIS EVERY TIME IT RUNS, OR NEVER.  Ben's rule, 2026-09-10, stated in

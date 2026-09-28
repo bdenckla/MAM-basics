@@ -70,7 +70,8 @@ does — one issue per quirk record, per manuscript image, or per crop-editor fa
 below about modules that render issue references as data does not apply here**: book-of-job's
 issue numbers live in its tracker and in prose, and no module of its code turns them into links or
 tags, so it has no counterpart to `holman/io/table_row_github_issues.json`. The book-of-job data and
-programs now live under `book-of-job/` and `py/` in MAM-basics; no `DATA_REPO_NAME` constant remains.
+programs now live under `book-of-job/` and `py/` in MAM-basics;
+no `DATA_REPO_NAME` constant remains.
 
 **Four of the six numbers named above are now FIVE-way collisions** — #19, #29, #48 and #52, whose
 book-of-job titles are "Add Aleppo Codex image for 34:5", "supplement μA images with manuscript
@@ -123,7 +124,7 @@ UXLC-utils, holman-ketiv-qere and book-of-job, whose issues stay put and are sti
 commented on and closed where they are. The newly emptied five are a consolidation record inside
 the section, not a sixth through tenth count; settled 2026-08-27, Ben having deferred the
 framing, and recorded here so a rename is not re-proposed. Finding 2 of
-`doc/review-findings-2026-08-26.md` is the fuller record of the transfer evening.
+the retired [review-findings-2026-08-26.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-08-26.md) is the fuller record of the transfer evening.
 
 **This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
 trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,
@@ -150,7 +151,8 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
   not an issue", which is what the `clc_collect.py` site had said all along.
 - **Two modules render issue references as DATA about the Holman review, not as citations of a
   tracker, and prefixing them corrupts the rendered table.** `py/py_render/rt_issue_tags.py` and
-  `py/hkq_cmn/table_row_github_issues.py` turn `holman/io/table_row_github_issues.json` into the per-row
+  `py/hkq_cmn/table_row_github_issues.py` turn
+  `holman/io/table_row_github_issues.json` into the per-row
   issue links, state and tags on holman-ketiv-qere's report pages. Those numbers are
   holman-ketiv-qere issue numbers already, resolved through the `REPO_OWNER` and `REPO_NAME`
   constants that name `bdenckla/holman-ketiv-qere` and are passed to `gh issue list --repo`;
@@ -165,12 +167,14 @@ Three things a blind sweep gets wrong, so read the surrounding sentence before a
 wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still meant
 a wlc-utils issue, and qualifying those would imply they were ambiguous. Phase 10 of
 `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` then deleted that repo's `doc/` and `in/` outright
-(2026-08-17), and their byte-identical copies live in **this** repo's `doc/` and `in/` — the six
-`doc/` files that arrived 2026-08-12 (`agent-planning-principles.md`,
-`edition-transcription-workflow.md`, `review-findings-2026-07-29.md`, `simanim-tanakh-signs.md`,
-`PLAN-overall-port-to-python.md`, `PLAN-two-accents-on-one-chanted-word.md`) and the wlc trees
-under `in/` (`in/accgram/edition_transcriptions/` above all) — still carrying bare `#NN` issue
-citations that mean wlc-utils issues. Those files are one of the two standing exceptions to "a
+(2026-08-17). Six `doc/` files arrived as byte-identical copies on 2026-08-12:
+`agent-planning-principles.md`, `edition-transcription-workflow.md`,
+`review-findings-2026-07-29.md`, `simanim-tanakh-signs.md`, `PLAN-overall-port-to-python.md`, and
+`PLAN-two-accents-on-one-chanted-word.md`. That is a historical import inventory, not a claim
+that all six remain tracked. The July 29 review is retired and recoverable in [review-findings-2026-07-29.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-07-29.md).
+The surviving imported documents and wlc trees under `in/`
+(`in/accgram/edition_transcriptions/` above all) retain bare `#NN` citations meaning wlc-utils
+issues. Those files are one of the two standing exceptions to "a
 bare `#NN` here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its
 bare-`#NN`-means-wlc-utils note for the redirect host itself.
 

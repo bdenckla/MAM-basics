@@ -24,9 +24,11 @@ occurred.
 
 ## CoS print citation for 1 Kings 7:37
 
-Recorded from Ben's citation style on 2026-09-21. The isolated CoS citation in finding 4 and its
-recapitulation under “What could not be verified” should read: “Breuer, CoS, ch. 8 §47,
-footnote 54 (p. 355 in the Wengrov English translation).” The chapter, section and footnote
+Recorded from Ben's citation style on 2026-09-21. The source passage beginning “Ben cites the
+passage as chapter 8 section 47, page 355, print footnote 54” and its recapitulation beginning
+“Breuer's print page and footnote numbers. Ben's citation is chapter 8 section 47, page 355,
+footnote 54” should read: “Breuer, CoS, ch. 8 §47, footnote 54 (p. 355 in the Wengrov English
+translation).” The chapter, section and footnote
 numbers precede the parenthesized page number because only the page number belongs specifically
 to the Wengrov English translation.
 

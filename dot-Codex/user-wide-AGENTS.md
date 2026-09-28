@@ -77,6 +77,11 @@ A readiness question carries permission to do one or two small, obviously correc
 steps, such as filling a simple plan gap, updating a stale copy, or committing finished work. A
 choice requiring judgment remains Ben's decision.
 
+An ordinary secondary worktree commits locally without pushing its branch. A
+long-lived branch whose integration awaits Ben's request is an exception: push the
+worktree branch to origin after every commit as a backup, without pushing main.
+Follow the branch's explicit authorization and integration procedure.
+
 ## Linked-worktree safeguards shared by Claude and Codex
 
 - Before editing, verify the exact checkout with `git rev-parse --show-toplevel`, `git rev-parse
@@ -90,7 +95,27 @@ choice requiring judgment remains Ben's decision.
   removal can follow the junction and empty the real environment. Do not copy the environment as
   a shortcut because Windows console scripts retain the source interpreter's absolute path.
 
-Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
+A successor continuing work in a named worktree uses that checkout directly. Create
+additional isolation only when Ben asks or concurrent editing requires it, and state
+the reason. A Claude task chip that creates a fresh worktree is the wrong handoff
+vehicle when the work must continue in a named checkout.
+
+Before diagnosing lost edits, refresh HEAD, task-owned status, recent commits,
+reflogs, and the relevant diffs. Compare the actual provenance before consulting
+stashes or unreachable commits; a matching path alone does not establish lost work.
+
+When Ben reviews a generated local page, identify and verify the exact page path,
+checkout, and commit. A worktree commit does not establish that the primary clone or
+remote branch contains the page.
+
+A worktree may have its own freshly created environment when its task requires
+different dependencies. State that reason; never copy or junction the primary environment.
+
+If the primary clone refuses the final fast-forward, return to the development
+worktree, merge the new main there, and repeat the applicable checks. Do not replace
+the failed fast-forward with a merge in the primary clone.
+
+ChatGPT-Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
 follows the shared safeguards above and the repository's own integration instructions.
 
 ## Task prompts and handoffs
@@ -244,6 +269,13 @@ uses `doc/codex-review-findings-<date>.md`. A standard sequential alternating ro
 `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
 even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
 
+Each update entry identifies the passage it corrects by that passage's own words,
+not only by a finding number or line number.
+
+For retirement references and Ben-authorized reclassification, follow
+`mam-repository-topology`'s `references/repository-maintenance.md`,
+"Manual document retirement".
+
 ## Format changed Python with Black
 
 Run Black at its defaults on every Python file changed before committing. Format only the files
@@ -335,6 +367,16 @@ A Windows Python entry point that may emit non-ASCII reconfigures stdout and std
 the start of `main()`. Prefer writing substantial or non-ASCII output to a file opened with
 `encoding="utf-8"`. `PYTHONUTF8=1` is permitted only as a scratch-script workaround, never for
 tracked code.
+
+## A transcription is evidence about the transcription
+
+**A transcription is evidence about the transcription.** Attribute a finding from
+WLC, UXLC, MAM, or another transcription to that transcription. A manuscript claim
+requires an actual manuscript reading or a clearly attributed prior reading. Unless
+the image was consulted, report the manuscript as unverified rather than saying the
+manuscript has the transcription's reading. A transcription's silence supplies
+little evidence about a fine mark. When a task needs a manuscript judgment and the
+manuscript cannot be consulted, state that limitation.
 
 ## Hebrew accentuation prose uses the skill
 

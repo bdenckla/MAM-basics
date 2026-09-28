@@ -329,73 +329,107 @@ def _normalized_reference(path: Path) -> str:
     return os.path.normcase(str(path.resolve())).replace("\\", "/")
 
 
-def _reference_matches(line: str, reference: str, *, allow_exact: bool) -> bool:
+def _reference_matches(line: str, reference: str, *, directory: bool) -> bool:
     normalized_line = os.path.normcase(line).replace("\\", "/")
+    path_characters = frozenset("._~-:/%")
+    delimiters = frozenset(" \t\r\n`'\"<>|()[]{};,")
     start = 0
-    path_characters = frozenset("._~-:")
-    trailing_delimiters = frozenset(" \t\r\n`'\"<>|()[]{};,")
     while (index := normalized_line.find(reference, start)) >= 0:
         before = normalized_line[index - 1] if index else ""
-        end = index + len(reference)
-        after = normalized_line[end : end + 1]
+        tail = normalized_line[index + len(reference) :]
+        if (
+            directory
+            and tail.startswith("/")
+            and (len(tail) == 1 or tail[1] in delimiters or tail[1] in ".!")
+        ):
+            tail = tail[1:]
+        punctuation = 0
+        while punctuation < len(tail) and tail[punctuation] in ".!?:":
+            punctuation += 1
+        boundary = (
+            not tail
+            or tail[0] in delimiters
+            or (
+                punctuation > 0
+                and (punctuation == len(tail) or tail[punctuation] in delimiters)
+            )
+        )
         before_is_path = bool(
-            before and (before.isalnum() or before in path_characters or before == "/")
+            before and (before.isalnum() or before in path_characters)
         )
-        exact = not after or (
-            not after.isalnum() and after not in path_characters and after != "/"
-        )
-        descendant = (
-            after == "/"
-            and end + 1 < len(normalized_line)
-            and normalized_line[end + 1] not in trailing_delimiters
-            and normalized_line[end + 1] not in "*?/"
-        )
-        if not before_is_path and (descendant or (allow_exact and exact)):
+        if not before_is_path and boundary:
             return True
         start = index + 1
     return False
 
 
 def _citation_references(
-    retirement_target: Path, novc_directories: Sequence[Path]
+    checkout: Path,
+    primary: Path,
+    retirement_target: Path,
+    relocation_records: Sequence[dict[str, Any]],
 ) -> list[dict[str, Any]]:
+    """Name only source roots and members of the frozen relocation inventory."""
     references: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
     retirement_target = retirement_target.resolve()
-    for source in novc_directories:
-        source = source.resolve()
-        try:
-            relative = source.relative_to(retirement_target).as_posix()
-        except ValueError as exc:
+    for item in relocation_records:
+        source = Path(item["path"]).resolve()
+        if not _inside(source, retirement_target):
             raise RetirementError(
                 f".novc source is outside the retirement target: {source}"
-            ) from exc
-        references.append(
-            {
-                "source": str(source),
-                "reference": _normalized_reference(source),
-                "kind": "absolute",
-                "allow_exact": True,
-            }
+            )
+        retained = [(source, True)]
+        retained.extend(
+            (source / relative, True) for relative in item["inventory"]["directories"]
         )
-        references.append(
-            {
-                "source": str(source),
-                "reference": os.path.normcase(relative).replace("\\", "/"),
-                "kind": "relative",
-                # A bare root-level `.novc` is generic policy prose, not a
-                # reference to evidence that this retirement will relocate.
-                "allow_exact": relative != ".novc",
-            }
+        retained.extend(
+            (source / file["path"], False) for file in item["inventory"]["files"]
         )
+        for path, directory in retained:
+            spellings = [
+                (_normalized_reference(path), "absolute"),
+                (path.as_uri(), "file-url"),
+            ]
+            for base, kind in (
+                (retirement_target, "relative"),
+                (primary, "primary-relative"),
+                (checkout, "checkout-relative"),
+            ):
+                try:
+                    relative = os.path.relpath(path, base).replace("\\", "/")
+                except ValueError:
+                    continue
+                # A bare relative root is generic policy; actual child paths
+                # and explicit absolute source-root citations remain auditable.
+                if relative != ".novc":
+                    spellings.append((relative, kind))
+            for spelling, kind in spellings:
+                reference = os.path.normcase(spelling).replace("\\", "/")
+                key = (str(source), reference)
+                if key in seen:
+                    continue
+                seen.add(key)
+                references.append(
+                    {
+                        "source": str(source),
+                        "reference": reference,
+                        "kind": kind,
+                        "directory": directory,
+                    }
+                )
     return references
 
 
 def _tracked_relocation_citations(
     checkout: Path,
+    primary: Path,
     retirement_target: Path,
-    novc_directories: Sequence[Path],
+    relocation_records: Sequence[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    references = _citation_references(retirement_target, novc_directories)
+    references = _citation_references(
+        checkout, primary, retirement_target, relocation_records
+    )
     if not references:
         return []
     result = _git(
@@ -431,7 +465,7 @@ def _tracked_relocation_citations(
                 if not _reference_matches(
                     line,
                     reference["reference"],
-                    allow_exact=reference["allow_exact"],
+                    directory=reference["directory"],
                 ):
                     continue
                 key = (relative, line_number, reference["source"])
@@ -597,7 +631,7 @@ def _destinations(
 
 
 def _safety_snapshot(
-    worktree_path: Path, *, citation_sources: Sequence[Path] | None = None
+    worktree_path: Path, *, citation_sources: Sequence[dict[str, Any]] | None = None
 ) -> dict[str, Any]:
     worktree_path = worktree_path.resolve()
     root = Path(_git_ok(worktree_path, "rev-parse", "--show-toplevel").strip())
@@ -716,9 +750,7 @@ def _safety_snapshot(
         {"path": str(directory), "inventory": _inventory(directory)}
         for directory in novc_directories
     ]
-    sources = (
-        list(citation_sources) if citation_sources is not None else novc_directories
-    )
+    sources = list(citation_sources) if citation_sources is not None else novc
     checkouts: list[Path] = []
     seen_checkouts: set[str] = set()
     for checkout in (
@@ -756,7 +788,7 @@ def _safety_snapshot(
             {"checkout": str(checkout), **citation}
             for checkout in checkouts
             for citation in _tracked_relocation_citations(
-                checkout, worktree_path, sources
+                checkout, primary, worktree_path, sources
             )
         ],
     }
@@ -1300,7 +1332,7 @@ def execute_retirement(
     if registered:
         current_snapshot = _safety_snapshot(
             worktree,
-            citation_sources=[Path(source) for source in expected_sources],
+            citation_sources=old_snapshot["novc_directories"],
         )
         expected_snapshot = _snapshot_after_relocations(old_snapshot, completed_sources)
         if _fingerprint(current_snapshot) != _fingerprint(expected_snapshot):
@@ -1319,7 +1351,8 @@ def execute_retirement(
 
     execution = preflight.setdefault("execution", {})
     execution.setdefault("started_at", datetime.now(NEW_YORK).isoformat())
-    execution["ordinary_token"] = True
+    # Ordinary-token execution is required; elevation measurement remains deferred.
+    execution["ordinary_token_required"] = True
     execution["elevation_requested"] = False
     execution["worktree_registered_before_attempt"] = registered
     execution["stage"] = "relocating_novc"
@@ -1367,7 +1400,7 @@ def execute_retirement(
         # directories now live at their verified retained destinations.
         current_snapshot = _safety_snapshot(
             worktree,
-            citation_sources=[Path(source) for source in expected_sources],
+            citation_sources=old_snapshot["novc_directories"],
         )
         expected_snapshot = _snapshot_after_relocations(
             old_snapshot, set(expected_sources)

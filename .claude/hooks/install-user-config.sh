@@ -13,12 +13,12 @@
 # 2026-09-09: `find / -name CLAUDE.md` found nothing outside the checkout, and
 # ~/.claude/skills/ held no hebrew-prose. The common user-level arrangement adopted
 # for implementation in MAM-basics issue 274 also needs ~/.codex/AGENTS.md: the
-# minimal Claude wrapper will import that file, and the tracked copy alone does not
+# minimal Claude wrapper imports that file, and the tracked copy alone does not
 # create the import target.
 #
-# The target symmetric setup depends on all three resources by name. Its repository
+# The symmetric setup depends on all three resources by name. Its repository
 # instructions require the hebrew-prose skill, while its minimal user-level Claude
-# wrapper will import ~/.codex/AGENTS.md. Without this hook, a cloud session can read
+# wrapper imports ~/.codex/AGENTS.md. Without this hook, a cloud session can read
 # wrappers or repository instructions that point at files the session cannot open,
 # and nothing says so.
 #
@@ -43,7 +43,7 @@
 #   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
 #   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
 #
-# Those are the three resources the target symmetric Claude setup needs. Other tracked entries
+# Those are the three resources the symmetric Claude setup needs. Other tracked entries
 # are deliberately not installed here; the relevant cases include:
 #
 #   - dot-claude/skills/prune-claude-state/

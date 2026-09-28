@@ -62,7 +62,15 @@ def generated_artifact_names() -> tuple[str, ...]:
     names = []
     for entry in releases:
         names.extend((f"{entry['name']}.html", f"{entry['name']}.json"))
-    names.extend(("unpinned-latest.html", "unpinned-latest.json", "index.html"))
+    names.extend(
+        (
+            "unpinned-latest.html",
+            "unpinned-latest.json",
+            "index.html",
+            "style.css",
+            "filter.js",
+        )
+    )
     return tuple(names)
 
 

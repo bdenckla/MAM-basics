@@ -89,7 +89,6 @@ from author_site.post_stress_meteg_shared import (
     _UXLC_CHANGE_VERSE,
     _author_romanization,
     _footnote_callout,
-    _hebrew_cell,
     _hebrew_spacing_option,
     _post_silluq_sources_for_bcv,
     _ref_link,
@@ -204,7 +203,7 @@ def _post_silluq_lc_crop() -> object:
         ' loading="lazy"></a><figcaption>Leningrad, F159A, column 3, line 8;'
         " crop attached to "
         f'<a href="{_POST_SILLUQ_LC_CROP_SOURCE_URL}" target="_blank"'
-        ' rel="noopener">phonetic-hbo #78</a>.</figcaption></figure>'
+        ' rel="noopener">phonetic-hbo#78</a>.</figcaption></figure>'
     )
 
 
@@ -226,7 +225,7 @@ def _post_silluq_cairo_cotp_crop() -> object:
         f' alt="{_post_silluq_crop_alt("Cairo", _POST_SILLUQ_REF, "no-later-mark")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
         "</a><figcaption>Cairo, manuscript page 110, "
-        "digital image 103; photograph from the "
+        "digital page 103; photograph from the "
         "Archivo del Centro de Ciencias Humanas y Sociales (CSIC), "
         f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
         ' rel="noopener">source record</a> (CC BY-NC-SA 4.0).'
@@ -256,7 +255,7 @@ def _first_kings_14_aleppo_crop() -> object:
         f' alt="{_post_silluq_crop_alt("Aleppo", _UXLC_CHANGE_REF, "no-later-mark")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo, leaf 83r.</figcaption></figure>"
+        "<figcaption>Aleppo, page 83r.</figcaption></figure>"
     )
 
 
@@ -267,7 +266,7 @@ def _first_kings_14_leningrad_crop() -> object:
         f' alt="{_post_silluq_crop_alt("Leningrad", _UXLC_CHANGE_REF, "later-meteg")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad, folio 195B, column 2, line 27."
+        "<figcaption>Leningrad, page F195B, column 2, line 27."
         "</figcaption></figure>"
     )
 
@@ -279,7 +278,7 @@ def _first_kings_14_cairo_cotp_crop() -> object:
         f' rel="noopener"><img src="{_FIRST_KINGS_14_CAIRO_COTP_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Cairo", _UXLC_CHANGE_REF, "no-later-mark")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "</a><figcaption>Cairo, digital image 204; "
+        "</a><figcaption>Cairo, digital page 204; "
         "photograph from the Archivo del Centro de Ciencias Humanas y Sociales "
         "(CSIC), "
         f'<a href="{_POST_SILLUQ_CAIRO_COTP_SOURCE_URL}" target="_blank"'
@@ -309,7 +308,7 @@ def _psalms_60_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_60_ALEPPO_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_60_REF, "no-later-mark")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo, leaf 251r.</figcaption></figure>"
+        "<figcaption>Aleppo, page 251r.</figcaption></figure>"
     )
 
 
@@ -320,7 +319,7 @@ def _psalms_60_leningrad_crop() -> object:
         f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_60_REF, "later-meteg")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad, folio 377B.</figcaption></figure>"
+        "<figcaption>Leningrad, page F377B.</figcaption></figure>"
     )
 
 
@@ -355,7 +354,7 @@ def _psalms_70_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_70_ALEPPO_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_70_REF, "no-later-mark")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo, leaf 253r.</figcaption></figure>"
+        "<figcaption>Aleppo, page 253r.</figcaption></figure>"
     )
 
 
@@ -366,7 +365,7 @@ def _psalms_70_leningrad_crop() -> object:
         f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_70_REF, "later-meteg")}"'
         ' loading="lazy"'
         ' style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad, folio 379B.</figcaption></figure>"
+        "<figcaption>Leningrad, page F379B.</figcaption></figure>"
     )
 
 
@@ -401,7 +400,7 @@ def _psalms_72_aleppo_crop() -> object:
         f'<figure><img src="{_PSALMS_72_ALEPPO_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Aleppo", _PSALMS_72_REF, "no-later-mark")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo, leaf 253v.</figcaption></figure>"
+        "<figcaption>Aleppo, page 253v.</figcaption></figure>"
     )
 
 
@@ -411,7 +410,7 @@ def _psalms_72_leningrad_crop() -> object:
         f'<figure><img src="{_PSALMS_72_LENINGRAD_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Leningrad", _PSALMS_72_REF, "later-meteg")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad, folio 380A, line 3."
+        "<figcaption>Leningrad, page F380A, line 3."
         "</figcaption></figure>"
     )
 
@@ -447,7 +446,7 @@ def _job_4_aleppo_crop() -> object:
         f'<figure><img src="{_JOB_4_ALEPPO_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Aleppo", _JOB_4_REF, "both-strokes")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Aleppo, leaf 271r, column 2, line 5."
+        "<figcaption>Aleppo, page 271r, column 2, line 5."
         "</figcaption></figure>"
     )
 
@@ -458,7 +457,7 @@ def _job_4_leningrad_crop() -> object:
         f'<figure><img src="{_JOB_4_LENINGRAD_CROP_URL}"'
         f' alt="{_post_silluq_crop_alt("Leningrad", _JOB_4_REF, "both-strokes")}"'
         ' loading="lazy" style="max-width: 100%; height: auto;">'
-        "<figcaption>Leningrad, folio 398A.</figcaption></figure>"
+        "<figcaption>Leningrad, page F398A.</figcaption></figure>"
     )
 
 
@@ -523,10 +522,6 @@ def _petersburg_crop(
                 viewbox_w=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[0],
                 viewbox_h=_FIRST_KINGS_14_PETERSBURG_VIEWBOX[1],
                 svg_id="post-silluq-1k14v14-focus-fade",
-                overlay_class=(
-                    "scan-annot-overlay focus-fade-overlay "
-                    "post-silluq-focus-fade-overlay"
-                ),
                 fade_color=_FIRST_KINGS_14_PETERSBURG_BACKGROUND_COLOR,
             )
         )
@@ -712,16 +707,6 @@ def _case_source_mask_data(
         if flags_by_source[source][1]
     )
     return has_mask, does_not_have_mask, has_names, does_not_have_names
-
-
-def _case_source_mask_values(
-    case: dict, complete_koren_by_ref: dict[str, dict]
-) -> tuple[str, str]:
-    """Derive both source-mask strings from the classified source states."""
-    has_mask, does_not_have_mask, _has_names, _does_not_have_names = (
-        _case_source_mask_data(case, complete_koren_by_ref)
-    )
-    return has_mask, does_not_have_mask
 
 
 # Each pair gives the first letter of the stressed syllable and the first letter of the
@@ -1344,10 +1329,10 @@ def _post_silluq_reference_catalog(cases: list[dict]) -> list:
         ),
         _table(("bcv", "Breuer", "Dotan"), catalog_rows),
         mb_html.para(
-            "The abbreviations and codes in the first table are decoded below:"
+            "The abbreviations and codes in the Breuer and Dotan catalogue are decoded below:"
         ),
         _table(("scholar", "code", "decoding"), decoding_rows),
-        mb_html.para("Further notes on the first table:"),
+        mb_html.para("Further notes on the Breuer and Dotan catalogue:"),
         mb_html.unordered_list(
             (
                 (
@@ -1544,7 +1529,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _POST_SILLUQ_REF,
             _POST_SILLUQ_PETERSBURG_CROP_URL,
             source_url=_POST_SILLUQ_PETERSBURG_SOURCE_URL,
-            location="folio 57a, column 2, line 7 (digital page 120)",
+            location="page 57a, column 2, line 7 (digital page 120)",
         )
     if image_id == "aleppo-1k14-14":
         return [
@@ -1595,7 +1580,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _psalms_60_sassoon_crop(),
         ]
     if image_id == "petersburg-evr-ii-b-55-ps60-10":
-        return _petersburg_image_nodes(_PSALMS_60_REF, _PSALMS_60_PETERSBURG_CROP_URL)
+        return _petersburg_image_nodes(
+            _PSALMS_60_REF,
+            _PSALMS_60_PETERSBURG_CROP_URL,
+            source_url="https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48719462",
+        )
     if image_id == "aleppo-ps70-2":
         return [
             *_post_silluq_image_intro("Aleppo", _PSALMS_70_REF, "no-later-mark"),
@@ -1627,6 +1616,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                 _ROM_SILLUQ,
                 ". The mark looks intentional, but I have no idea what it might be.",
             ),
+            source_url="https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48719471",
         )
     if image_id == "aleppo-ps72-15":
         return [
@@ -1649,7 +1639,11 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _psalms_72_sassoon_crop(),
         ]
     if image_id == "petersburg-evr-ii-b-55-ps72-15":
-        return _petersburg_image_nodes(_PSALMS_72_REF, _PSALMS_72_PETERSBURG_CROP_URL)
+        return _petersburg_image_nodes(
+            _PSALMS_72_REF,
+            _PSALMS_72_PETERSBURG_CROP_URL,
+            source_url="https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48719473",
+        )
     if image_id == "aleppo-1k7-37":
         return [
             *_post_silluq_image_intro("Aleppo", _MAM_POST_SILLUQ_REF, "later-meteg"),
@@ -1706,6 +1700,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
             _JOB_4_REF,
             _JOB_4_PETERSBURG_CROP_URL,
             ("—the only manuscript represented on this page that has that form.",),
+            source_url="https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48719553",
         )
     raise ValueError(f"Unknown post-silluq image identifier: {image_id!r}")
 
@@ -1803,7 +1798,9 @@ def build_post_silluq_image_body(case: dict) -> list:
         # Ben's placement observations are recorded in the Job report and its update.
         contents.extend(
             (
-                mb_html.heading_level_2(("Early ", _ROM_SILLUQ, " in L & A?")),
+                mb_html.heading_level_2(
+                    ("Early ", _ROM_SILLUQ, " in Leningrad and Aleppo?")
+                ),
                 mb_html.para(
                     (
                         "We usually regard an “early ",

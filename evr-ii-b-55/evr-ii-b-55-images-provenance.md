@@ -1,11 +1,7 @@
 # Provenance of the Evr. II B 55 images read so far
 
-A Claude session wrote this record on 2026-09-25, at Ben's request. Each item says whether it was
-re-measured that day. The others come from the first reading session, an earlier Claude session on
-2026-09-25 that read the same pages from reduced images. No image is tracked in this repository.
-The section on the NLI's record and image service was added on 2026-09-26 by the image-list
-session, from what the NLI session saw on 2026-09-25; [`README.md`](README.md) names these
-sessions.
+A Claude session wrote this record on 2026-09-25, at Ben's request. Each item says whether it was re-measured that day. The others come from the first reading session, an earlier Claude session on 2026-09-25 that read the same pages from reduced images. No image is tracked in this repository. The section on the NLI's record and image service was added on 2026-09-26 by the image-list session, from what the NLI session saw on 2026-09-25; [`README.md`](README.md) names these sessions.
+Updates and later status: [evr-ii-b-55-images-provenance-update.md](evr-ii-b-55-images-provenance-update.md).
 
 ## Source
 

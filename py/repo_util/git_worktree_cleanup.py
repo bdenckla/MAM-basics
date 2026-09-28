@@ -19,7 +19,6 @@ class CleanupReport:
 
     kept_worktrees: list[tuple[str, str]] = field(default_factory=list)
     stranded_branches: list[str] = field(default_factory=list)
-    errors: list[str] = field(default_factory=list)
 
 
 def is_linked_worktree(repo_dir: Path, path: Path) -> bool:
@@ -66,6 +65,12 @@ def clean_worktrees(
         local = worktree_retirement._git(
             repo_dir, "show-ref", "--verify", "--quiet", f"refs/heads/{branch}"
         )
+        if local.returncode not in (0, 1):
+            diagnostic = local.stderr.strip() or local.stdout.strip()
+            raise worktree_retirement.RetirementError(
+                f"cannot determine whether local branch exists: {branch}: "
+                + (diagnostic or f"git show-ref exited {local.returncode}")
+            )
         if local.returncode == 1 and not worktree_retirement._is_ancestor(
             repo_dir, tip, default
         ):
@@ -80,7 +85,5 @@ def print_report(report: CleanupReport) -> None:
         print(
             f"worktrees: remote-only work in {branch} (cached refs; fetch separately to refresh)"
         )
-    for error in report.errors:
-        print(f"worktrees: ERROR {error}")
     if not report.kept_worktrees:
         print("worktrees: no selected candidates")

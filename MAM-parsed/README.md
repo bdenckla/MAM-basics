@@ -35,7 +35,7 @@ For detailed documentation of the file structures, see:
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
 The [consumer cautions](#consumer-cautions) below cover whitespace templates and text
-spacing around narpas.
+spacing around narpas (narrow-sense paseq, ׀).
 
 This product directory also contains a toy sample application
 [`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),
@@ -109,8 +109,7 @@ narpas.
 ### Narpas and text spacing
 
 The narrow-sense paseq template also has no text whitespace before or after it, but it
-is not a whitespace template. The omission is not a grouping instruction: narpas
-(narrow-sense paseq, ׀) forms no compound of any kind, and only maqaf joins atoms into
+is not a whitespace template. The omission is not a grouping instruction: narpas forms no compound of any kind, and only maqaf joins atoms into
 a chanted word. The omission also prescribes no display spacing. An edition decides
 whether to display spacing before and/or after narpas; an analytical consumer need not
 make a display-spacing decision.

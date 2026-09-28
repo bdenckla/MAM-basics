@@ -118,9 +118,10 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
   detailed work, framing it as using Breuer's methods, as its front matter says). MAM follows
   Breuer heavily — attributing a *rule* to Breuer to explain something MAM does is fine as long
   as the inference is visible to the reader.
-- **A claim about what the accentuation DOES takes MAM as its corpus**, not WLC: WLC is a flawed
-  transcription of a flawed manuscript and its blemishes land straight in such counts. WLC keeps
-  only claims that are *about a manuscript*, attributed by name.
+- **A claim about what the accentuation DOES takes MAM as its corpus**, not WLC: WLC's transcription
+  blemishes can affect those counts. Evidence from WLC is about WLC.
+  A manuscript claim requires an actual manuscript reading or a clearly attributed prior reading;
+  an uninspected manuscript remains unverified.
 - **WLC, BHS 1997 and BHQ are usually ONE transcription, not three that agree** (Ben,
   2026-08-07). Their agreeing corroborates nothing about the manuscript — it is one reading
   counted three times. Never "all three have it, so the LC has it"; only someone reading the
@@ -172,7 +173,7 @@ as well as the letters and cannot match a strand that groups those atoms differe
 exactly one place matches; render each atom through `accents_and_letters` and put the maqafs back.
 Two lessons are built into it. **Collect matches in a list, never a set** — a strand's two
 byte-identical לא־תעשה compounds deduped to one and the `len == 1` assertion passed having
-distinguished nothing (item 14 of `MAM-basics/doc/review-findings-2026-07-29.md`); what tells such
+distinguished nothing (item 14 of [review-findings-2026-07-29.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-07-29.md)); what tells such
 sites apart is the word that follows, so carry it in the pattern and display only what you mean to
 show. And **a span runs to whatever length keeps every chanted word in it whole in every column
 being compared** — where one strand joins the next word to your second atom, the comparison shows

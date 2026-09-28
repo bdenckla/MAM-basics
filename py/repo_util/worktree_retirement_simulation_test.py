@@ -2,8 +2,9 @@
 
 This module lives outside ``py/tests`` and is excluded from default
 ``py/main_test.py`` collection. Actual worktree retirement invokes it first.
-Every destructive operation remains confined to pytest's temporary repositories,
-and equivalent owner fixtures must leave the same Git and retained-data outcome.
+Every destructive operation remains confined to simulation temporary repositories
+under the system temporary directory. Equivalent owner fixtures must leave the
+same Git and retained-data outcome.
 """
 
 import gc
@@ -481,23 +482,84 @@ def test_branch_reflog_history_preceding_checkout_is_protected(
         assert not branch_exists(primary, branch)
 
 
+def _write_citation_oracle_receipt(primary, target, checkout, source, filename):
+    retained = sorted([source, *source.rglob("*")], key=lambda path: path.as_posix())
+    assert len(retained) > 1 and any(path.is_file() for path in retained)
+    lines = []
+    expected = set()
+
+    def append(text, accepted=False):
+        lines.append(text)
+        if accepted:
+            expected.add((filename, len(lines), str(source)))
+
+    append("Generic policy uses `.novc`, `.novc/` and `.novc/*`.")
+    append("A missing retained path: `.novc/absent-artifact`.")
+    unrelated = primary.parent / ".novc" / "unrelated-artifact"
+    append(f"Unrelated evidence: `{unrelated.as_posix()}`.")
+    lookalike = source.with_name(".novc-old")
+    append(f"Lookalike root: `{lookalike.as_posix()}`.")
+    for path in retained:
+        spellings = {str(path), path.as_posix(), path.as_uri()}
+        for base in (target, primary, checkout):
+            try:
+                relative = os.path.relpath(path, base).replace("\\", "/")
+            except ValueError:
+                continue
+            if relative != ".novc":
+                spellings.add(relative)
+        for spelling in sorted(spellings):
+            append(f"Retained evidence: `{spelling}`.", accepted=True)
+            append(f"Retained evidence: {spelling}.", accepted=True)
+            append(f"Repeated evidence: `{spelling}` and `{spelling}`.", accepted=True)
+            if path.is_dir():
+                append(f"Retained directory: `{spelling}/`.", accepted=True)
+            append(f"Prefix lookalike: `x{spelling}`.")
+            append(f"Suffix lookalike: `{spelling}-old`.")
+            append(f"Extension lookalike: `{spelling}.bak`.")
+            append(f"Missing descendant: `{spelling}/absent-artifact`.")
+            if path.is_dir():
+                append(f"Wildcard lookalike: `{spelling}/*`.")
+                append(f"Wildcard lookalike: `{spelling}/?`.")
+    (checkout / filename).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    git(checkout, "add", "--", filename)
+    git(checkout, "commit", "-m", "Record filesystem-derived citation fixture")
+    return expected
+
+
 def test_exact_relocation_citations_gate_and_survive_retirement(
     tmp_path, isolated_runtime
 ):
     for owner in ("claude", "codex"):
-        primary, target, _ = fixture_repo(tmp_path, isolated_runtime, owner)
-        source = add_novc(target)
+        primary, target, branch = fixture_repo(tmp_path, isolated_runtime, owner)
+        source = add_novc(target).resolve()
+        (source / "space name.txt").write_bytes(b"URI-escaped fixture evidence\n")
+        (source / "space directory").mkdir()
         original = tree_bytes(source)
-        absolute_citation = str(source / "evidence.bin")
-        relative_citation = ".novc/evidence.bin"
-        noncitation = str(target / ".novc-old" / "evidence.bin")
         (primary / "policy.md").write_text(
-            "A generic `.novc` policy is not an artifact reference.\n"
-            f"This similarly named path is not the target: {noncitation}\n",
+            "A generic `.novc`, `.novc/` or `.novc/*` is not an artifact citation.\n"
+            "A path absent from the retained tree is not a citation: `.novc/absent-artifact`.\n",
             encoding="utf-8",
         )
         git(primary, "add", "policy.md")
         git(primary, "commit", "-m", "Add generic fixture policy")
+        git(target, "merge", "--ff-only", "main")
+        generic_plan = retirement.prepare_retirement(
+            target,
+            retirement_root=tmp_path / "retained",
+            preflight_file=tmp_path / f"generic-{owner}.json",
+            task_ended=True,
+        )
+        assert generic_plan["ready_for_execution"]
+        assert generic_plan["snapshot"]["tracked_novc_citations"] == []
+
+        receipt_oracles = {
+            "target-citations.md": _write_citation_oracle_receipt(
+                primary, target, target, source, "target-citations.md"
+            )
+        }
+        git(primary, "merge", "--ff-only", branch)
+        recorded_target_head = git(target, "rev-parse", "HEAD").stdout.strip()
         observer = tmp_path / f"observer-{owner}"
         git(
             primary,
@@ -508,25 +570,35 @@ def test_exact_relocation_citations_gate_and_survive_retirement(
             str(observer),
             "main",
         )
-
-        generic_plan = retirement.prepare_retirement(
-            target,
-            retirement_root=tmp_path / "retained",
-            preflight_file=tmp_path / f"generic-{owner}.json",
-            task_ended=True,
+        receipt_oracles["observer-citations.md"] = _write_citation_oracle_receipt(
+            primary, target, observer, source, "observer-citations.md"
         )
-        assert generic_plan["ready_for_execution"]
-        assert generic_plan["snapshot"]["tracked_novc_citations"] == []
-
-        (primary / "receipt.md").write_text(
-            f"absolute twice: {absolute_citation} and {absolute_citation}\n"
-            f"relative: {relative_citation}\n",
-            encoding="utf-8",
+        assert git(observer, "rev-parse", "HEAD").stdout.strip() != recorded_target_head
+        assert git(target, "rev-parse", "HEAD").stdout.strip() == recorded_target_head
+        receipt_oracles["primary-citations.md"] = _write_citation_oracle_receipt(
+            primary, target, primary, source, "primary-citations.md"
         )
-        git(primary, "add", "receipt.md")
-        git(primary, "commit", "-m", "Record exact fixture citations")
-        git(observer, "merge", "main")
 
+        expected = set()
+        receipt_bytes = {}
+        for checkout in (target, primary, observer):
+            tracked = set(git(checkout, "ls-files", "-z").stdout.split("\0"))
+            for filename, entries in receipt_oracles.items():
+                if filename in tracked:
+                    expected.update(
+                        (str(checkout.resolve()), path, line, matched_source)
+                        for path, line, matched_source in entries
+                    )
+                    receipt_bytes[checkout / filename] = (
+                        checkout / filename
+                    ).read_bytes()
+        assert expected
+        assert any(
+            checkout == str(observer.resolve()) and path == "observer-citations.md"
+            for checkout, path, _, _ in expected
+        )
+        registry_before = registration_paths(primary)
+        target_before = tree_bytes(target)
         unreviewed_path = tmp_path / f"unreviewed-exact-{owner}.json"
         unreviewed = retirement.prepare_retirement(
             target,
@@ -535,74 +607,131 @@ def test_exact_relocation_citations_gate_and_survive_retirement(
             task_ended=True,
         )
         citations = unreviewed["snapshot"]["tracked_novc_citations"]
-        assert not unreviewed["ready_for_execution"]
-        assert {item["checkout"] for item in citations} == {
-            str(primary),
-            str(observer),
+        actual = {
+            (item["checkout"], item["path"], item["line"], item["matched_source"])
+            for item in citations
         }
-        assert {item["reference_kind"] for item in citations} == {
-            "absolute",
-            "relative",
+        assert actual == expected, {
+            "missing": expected - actual,
+            "extra": actual - expected,
         }
-        assert len(citations) == 4
-        assert all(item["path"] == "receipt.md" for item in citations)
-        assert all(item["matched_source"] == str(source) for item in citations)
+        assert len(citations) == len(actual)
         assert all(item["tracked_file_sha256"] for item in citations)
-        assert all(".novc-old" not in item["text"] for item in citations)
+        assert not unreviewed["ready_for_execution"]
         assert unreviewed["citation_review"]["citations"] == citations
         assert unreviewed["citation_review"]["note"] is None
         with pytest.raises(retirement.RetirementError):
             retirement.execute_retirement(unreviewed_path, confirm_task_ended=True)
+        assert registration_paths(primary) == registry_before
+        assert tree_bytes(target) == target_before
+        assert all(path.read_bytes() == data for path, data in receipt_bytes.items())
 
         reviewed_path, reviewed = prepare(tmp_path, target, f"reviewed-{owner}")
-        review_payload = {
-            key: value
-            for key, value in reviewed["citation_review"].items()
-            if key != "fingerprint"
-        }
         assert reviewed["citation_review"]["citations"] == citations
         assert reviewed["citation_review"]["reviewed"]
         assert reviewed["citation_review"]["note"] == (
             "Reviewed fixture references; retained paths are in this preflight."
         )
-        assert reviewed["citation_review"]["fingerprint"] == retirement._fingerprint(
-            review_payload
-        )
         retirement.execute_retirement(reviewed_path, confirm_task_ended=True)
         metadata = assert_retained(reviewed, original)
+        assert (
+            Path(reviewed["destinations"][0]["destination"]) / "space directory"
+        ).is_dir()
         assert metadata["citation_review"] == reviewed["citation_review"]
         assert observer.as_posix() in registration_paths(primary)
+        assert target.as_posix() not in registration_paths(primary)
+        assert not branch_exists(primary, branch)
+        assert all(
+            path.read_bytes() == data
+            for path, data in receipt_bytes.items()
+            if path.parent != target
+        )
 
 
 def test_cached_remote_reporting_matches_selected_ref_oracle(
     tmp_path, isolated_runtime
 ):
-    primary, _, _ = fixture_repo(tmp_path, isolated_runtime, "claude")
+    primary, target, _ = fixture_repo(tmp_path, isolated_runtime, "claude")
     head = git(primary, "rev-parse", "HEAD").stdout.strip()
     tree = git(primary, "rev-parse", "HEAD^{tree}").stdout.strip()
     tip = git(
         primary, "commit-tree", tree, "-p", head, "-m", "Remote fixture work"
     ).stdout.strip()
-    refs = {
-        f"{prefix}remote"
-        for prefixes in worktree_owners.BRANCH_PREFIXES.values()
-        for prefix in prefixes
-    }
-    for branch in refs:
-        git(primary, "update-ref", f"refs/remotes/origin/{branch}", tip)
+    refs = {}
+    for prefixes in worktree_owners.BRANCH_PREFIXES.values():
+        for prefix in prefixes:
+            for state in ("absent-unmerged", "present-unmerged", "absent-integrated"):
+                branch = prefix + state
+                remote_tip = head if state == "absent-integrated" else tip
+                git(primary, "update-ref", f"refs/remotes/origin/{branch}", remote_tip)
+                if state == "present-unmerged":
+                    git(primary, "update-ref", f"refs/heads/{branch}", tip)
+                refs[branch] = remote_tip
+    assert refs
     before = registration_paths(primary)
+    target_before = tree_bytes(target)
     for owner in worktree_owners.SELECTORS:
-        report = git_worktree_cleanup.clean_worktrees(primary, owner=owner)
         prefixes = tuple(
             prefix
             for key, values in worktree_owners.BRANCH_PREFIXES.items()
             if owner == "both" or key == owner
             for prefix in values
         )
-        assert set(report.stranded_branches) == {
-            ref for ref in refs if ref.startswith(prefixes)
-        }
+        expected = set()
+        for branch, remote_tip in refs.items():
+            if not branch.startswith(prefixes):
+                continue
+            local = git(
+                primary,
+                "show-ref",
+                "--verify",
+                "--quiet",
+                f"refs/heads/{branch}",
+                check=False,
+            )
+            assert local.returncode in (0, 1)
+            integrated = git(
+                primary, "merge-base", "--is-ancestor", remote_tip, "main", check=False
+            )
+            assert integrated.returncode in (0, 1)
+            if local.returncode == 1 and integrated.returncode == 1:
+                expected.add(branch)
+        report = git_worktree_cleanup.clean_worktrees(primary, owner=owner)
+        assert set(report.stranded_branches) == expected
     assert registration_paths(primary) == before
+    assert tree_bytes(target) == target_before
+
+    broken_branch = next(
+        branch for branch in sorted(refs) if branch.startswith("claude/")
+    )
+    broken_ref = Path(
+        git(
+            primary,
+            "rev-parse",
+            "--path-format=absolute",
+            "--git-path",
+            f"refs/heads/{broken_branch}",
+        ).stdout.strip()
+    )
+    broken_ref.parent.mkdir(parents=True, exist_ok=True)
+    missing_object = hashlib.sha1(
+        b"missing temporary retirement fixture object"
+    ).hexdigest()
+    assert git(primary, "cat-file", "-e", missing_object, check=False).returncode != 0
+    broken_ref.write_text(missing_object + "\n", encoding="utf-8")
+    diagnostic = git(
+        primary,
+        "show-ref",
+        "--verify",
+        "--quiet",
+        f"refs/heads/{broken_branch}",
+        check=False,
+    )
+    assert diagnostic.returncode not in (0, 1)
+    with pytest.raises(retirement.RetirementError):
+        git_worktree_cleanup.clean_worktrees(primary, owner="claude")
+    assert registration_paths(primary) == before
+    assert tree_bytes(target) == target_before
 
 
 def test_resume_preserves_new_branch_reflog_history(

@@ -1,10 +1,10 @@
 """Discovery and runtime facts, independent of worktree retirement policy.
 
-Runtime records are advisory blockers, never permission to remove a checkout.
-Claude exposes cwd records and desktop leases. Codex exposes task cwd records in
-its SQLite state and writer-lease files. These private formats may change: an
-unreadable installed format fails closed. Absence of records still requires the
-caller's explicit ended-session attestation in the shared executor.
+Runtime records supply activity evidence, never removal permission.
+Running Claude session records, active runtime leases and unreadable installed
+formats block. A persisted Codex cwd record without a writer lease supplies
+provenance without blocking; missing records do not prove task completion.
+The shared executor still requires an explicit ended-session attestation.
 """
 
 from __future__ import annotations

@@ -11,9 +11,10 @@ mirrored in in/mam-ws-intro/ch3.mediawiki, and put in MAM-normal mark order. It 
 source's wording and drops only its links and its display templates.
 
 The English translation is AI-generated. Claude, an AI model, wrote it on 2026-09-25, at
-Ben Denckla's request, and no human has reviewed it yet. The page says so in a box above
-everything else, and the site index and the misc index say so beside the link. Remove all
-three, and this paragraph, only once a human has reviewed the translation.
+Ben Denckla's request, and no human has reviewed it yet. The page says so in a box after
+the H1, the site index says so beside the link, and the misc index includes the caveat
+in the link text. Remove all three caveats and this paragraph only once a human has
+reviewed the translation.
 """
 
 from dataclasses import dataclass
@@ -26,7 +27,8 @@ def gen_html_file(tdm_ch, body_class=None):
     """Write the page and return its misc-index entry.
 
     The entry's label is the page title followed by the caveat, so that the misc index,
-    like the page and the site index, says that the translation is unreviewed.
+    like the page and the site index, says that the translation is unreviewed. Remove
+    this label caveat together with the page and site-index caveats only after human review.
     """
     fname, title = author.help_gen_html_file(
         __file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class
@@ -653,9 +655,9 @@ _FTNTS_E = [
 _TRANSLATION_NOTES = [
     [
         "The source's word for the mark is $gaya.",
-        " The heading of the section that contains this one, ",
+        " The enclosing section's heading includes ",
         _he("סימון הגעיה (המתג)"),
-        ", equates it with the $meteg (U+05BD).",
+        ", equating $gaya with $meteg (U+05BD).",
         " The English keeps the Hebrew word, as this site's translation of the"
         " gray-$maqaf section does.",
     ],
@@ -730,8 +732,8 @@ _TRIPLES = [
 ]
 # fmt: on
 
-_TITLE = "געיה marks in MAM"
-_H1_CONTENTS = "$gaya marks in $MAM"
+_TITLE = "The געיה marks in MAM"
+_H1_CONTENTS = "The $gaya marks in $MAM"
 _FNAME = "he_ws_intro_to_mam_gaya_text.html"
 _CAVEAT_PAREN = "(AI-generated translation, not yet reviewed by a human)"
 _CAVEAT = author.para(

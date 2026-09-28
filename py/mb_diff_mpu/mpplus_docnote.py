@@ -16,8 +16,8 @@ from mb_diff_mpu.mpplus_param_access import MISSING, get_param, param_items
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 
-_DIAC = "\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7"
-_HEB_CLUSTER_RE = re.compile(rf"[\u05D0-\u05EA{_DIAC}\u05BE\-]+")
+_DIAC = "\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9"
+_HEB_CLUSTER_RE = re.compile(rf"[\u05D0-\u05EA{_DIAC}\u034f\u05BE\-]+")
 _HAS_DIAC_RE = re.compile(rf"[{_DIAC}]")
 _TAG_SPLIT_RE = re.compile(r"(<[^>]+>)")
 

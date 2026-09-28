@@ -149,7 +149,7 @@ def clean_worktrees() -> bool:
     """Inspect both owners; never retire a checkout during routine maintenance."""
     report = git_worktree_cleanup.clean_worktrees(_REPO, owner="both")
     git_worktree_cleanup.print_report(report)
-    return not report.errors
+    return True
 
 
 def run_black() -> bool:

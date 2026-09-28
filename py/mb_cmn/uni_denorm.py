@@ -16,8 +16,8 @@ def give_std_mark_order(string):
         shin dot
         sin dot
         dagesh/mapiq/shuruq dot
-        dagesh hazaq mudgash
-        rafeh
+        dagesh ḥazaq (U+05C9)
+        rafe
     The two dagesh marks have the same priority; otherwise priorities
     follow the order shown. Marks with the same priority retain their
     relative order.
@@ -57,9 +57,8 @@ def _repl_cluster_aht(match):
 
 _NS_COMB_CLASSES = {  # nonstandard combining classes
     # Only the order matters, not the specific values. Both the order and
-    # specific values below correspond to "SBL2", by which I mean the
-    # nonstandard combining classes suggested in the appendix to the manual
-    # for the SBL Hebrew Font.
+    # existing values below are attributed to the SBL Hebrew Font recommendation.
+    # U+05C9 is assigned the same priority as U+05BC by this repository.
     hpo.SHIND: 10,
     hpo.SIND: 11,
     hpo.DAGOMOSD: 21,

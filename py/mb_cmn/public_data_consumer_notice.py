@@ -26,6 +26,10 @@ CAMBRIDGE_INDEX_DOCUMENTATION = (
     "https://github.com/bdenckla/MAM-basics/blob/main/"
     "cam1753/README.md#consumer-guide"
 )
+EVR_INDEX_DOCUMENTATION = (
+    "https://github.com/bdenckla/MAM-basics/blob/main/"
+    "evr-ii-b-55/README.md#consumer-guide"
+)
 
 NARPAS_GROUPING_RULE = (
     "Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf "
@@ -80,18 +84,22 @@ def mam_parsed_notice(variant: str) -> dict[str, object]:
                 "including ketiv/qere, dual cantillation, qamats, and stress-helper "
                 "alternatives where present; do not concatenate the branches."
             ),
-            (
-                "A special-letter template's interrupted spelling and uninterrupted "
-                "atom-form are two representations of one atom-form; select one text "
-                "representation rather than collecting both."
+            *(
+                [
+                    "A special-letter template's interrupted spelling and uninterrupted "
+                    "atom-form are two representations of one atom-form; select one text "
+                    "representation rather than collecting both."
+                ]
+                if variant == "plus"
+                else []
             ),
             (
                 "Reassemble text fragments before identifying atoms or chanted words; "
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
-            MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             NARPAS_GROUPING_RULE,
+            MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             variant_rule,
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
@@ -153,11 +161,12 @@ def mam_simple_notice() -> dict[str, object]:
 
 
 def codex_index_notice(documentation: str) -> dict[str, object]:
-    """Return the notice for one of the three public codex entry indexes."""
+    """Return the notice for one of the four public manuscript entry indexes."""
     if documentation not in {
         LENINGRAD_INDEX_DOCUMENTATION,
         ALEPPO_INDEX_DOCUMENTATION,
         CAMBRIDGE_INDEX_DOCUMENTATION,
+        EVR_INDEX_DOCUMENTATION,
     }:
         raise ValueError(f"unknown codex-index documentation URL: {documentation!r}")
     return {

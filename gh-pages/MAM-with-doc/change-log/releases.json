@@ -1,12 +1,12 @@
 {
   "_header": [
     "Each entry defines a named release as a half-open range (old, new]",
-    " of commits in the MAM-parsed repo.",
+    " of MAM-parsed states identified by historical MAM-parsed commits or MAM-basics refs.",
     " 'old' is the state before the first change (exclusive boundary);",
     " 'new' is the state after the last change (inclusive boundary).",
     " Consecutive releases share a boundary: the 'new' of one release",
     " equals the 'old' of the next.",
-    " main_diff_mpplus.py also uses these to map --old/--new args to a release",
+    " py/main_diff.py mpplus also uses these to map --old/--new args to a release",
     " name for the output filename."
   ],
   "releases": [

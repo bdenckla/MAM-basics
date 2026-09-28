@@ -23,6 +23,7 @@ from mb_diff_mpu.mpplus_flatten import (
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 from mb_diff_mpu.mpplus_structure import (
+    alternative_changes,
     structural_signature,
     template_name_counter,
 )
@@ -254,6 +255,7 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     """
     old_ep = _ep_without_redundant_scrdff_notes(old_ep)
     new_ep = _ep_without_redundant_scrdff_notes(new_ep)
+    alternatives = alternative_changes(old_ep, new_ep)
     old_text = flatten_ep_for_diff(old_ep)
     new_text, new_docnote = flatten_ep_with_docnote_for_diff(new_ep)
     text_changed = old_text != new_text
@@ -268,9 +270,10 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
         new_counts = template_name_counter(new_ep)
         if old_counts == new_counts:
             if structural_signature(old_ep) == structural_signature(new_ep):
-                return None  # No meaningful change
+                if not alternatives:
+                    return None  # No meaningful change
     docnote_notes = find_relevant_docnote(old_text, new_text, new_docnote, text_changed)
-    return {
+    diff = {
         "book": book39id,
         "chapter": chapter,
         "verse": verse,
@@ -281,6 +284,9 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
         "text_changed": text_changed,
         "docnote_notes": docnote_notes,
     }
+    if alternatives:
+        diff["alternative_changes"] = alternatives
+    return diff
 
 
 def diff_all_books(old_rev, new_rev):

@@ -1,12 +1,7 @@
 # Post-stress-meteg image provenance
 
-Inventory recorded 2026-09-09 from the tracked `gh-pages/img/` filenames, the captions in the
-[Methods](../gh-pages/post-stress-meteg-methods.html),
-[post-silluq](../gh-pages/post-stress-meteg-post-silluq.html), and
-[2 Chronicles 8:11](../gh-pages/post-stress-meteg-2chr-8-11.html) pages, and
-[DATA-LICENSES.md](../DATA-LICENSES.md), inspected at `85dcf63d`. Eleven crops added to the
-post-silluq page on 2026-09-21 retain their fuller source notes in
-[`meteg-after-silluq-snips/README.md`](meteg-after-silluq-snips/README.md).
+Inventory recorded 2026-09-09 from the tracked `gh-pages/img/` filenames, the captions in the [Methods](../gh-pages/post-stress-meteg-methods.html), [post-silluq](../gh-pages/post-stress-meteg-post-silluq.html), and [2 Chronicles 8:11](../gh-pages/post-stress-meteg-2chr-8-11.html) pages, and [DATA-LICENSES.md](../DATA-LICENSES.md), inspected at `85dcf63d`. Eleven crops added to the post-silluq page on 2026-09-21 retain their fuller source notes in [`meteg-after-silluq-snips/README.md`](meteg-after-silluq-snips/README.md).
+Updates and later status: [post-stress-meteg-image-provenance-update.md](post-stress-meteg-image-provenance-update.md).
 
 | Filename under `gh-pages/img/` | Manuscript or edition | Verse | Recorded location | Image source | Rights holder |
 |---|---|---|---|---|---|

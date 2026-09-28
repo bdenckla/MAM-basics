@@ -30,8 +30,14 @@ def _greg_to_heb(date_str):
 
 
 def _date_cell(date_str):
-    """One side's date cell: the date with its zone named, or empty."""
-    return _esc(labelled(date_str)) if date_str else ""
+    """One side's date cell: the date with its zone named, or Not dated."""
+    return _esc(labelled(date_str)) if date_str else "Not dated"
+
+
+def _hebrew_date_cell(date_str):
+    if date_str:
+        return f'<td dir="rtl">{_esc(_greg_to_heb(date_str))}</td>'
+    return "<td>Not dated</td>"
 
 
 def _id_cell(label):
@@ -58,7 +64,7 @@ def render_subtitle_table(old_label, new_label, old_date, new_date, total):
 
     Each side is a ``mpplus_revisions.Revision.label`` pair. A tree side -- a MAM-basics
     ref, recorded by the git tree id of MAM-parsed/plus since 2026-09-14 -- has no date,
-    so its date cells stay empty, and a sentence under the table says what its id is.
+    so its date cells say "Not dated", and a sentence under the table says what its id is.
     The date rows appear when either side has a date.
     """
     old_cell = _esc(_id_cell(old_label))
@@ -70,14 +76,11 @@ def render_subtitle_table(old_label, new_label, old_date, new_date, total):
         f"<tr><td>{old_cell}</td><td>{new_cell}</td></tr>",
     ]
     if old_date or new_date:
-        old_heb = _greg_to_heb(old_date) if old_date else ""
-        new_heb = _greg_to_heb(new_date) if new_date else ""
         old_date_cell = _date_cell(old_date)
         new_date_cell = _date_cell(new_date)
         rows.append(f"<tr><td>{old_date_cell}</td><td>{new_date_cell}</td></tr>")
         rows.append(
-            f'<tr><td dir="rtl">{_esc(old_heb)}</td>'
-            f'<td dir="rtl">{_esc(new_heb)}</td></tr>'
+            f"<tr>{_hebrew_date_cell(old_date)}{_hebrew_date_cell(new_date)}</tr>"
         )
     rows.append("</tbody>")
     rows.append("</table>")

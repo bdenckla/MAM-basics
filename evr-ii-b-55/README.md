@@ -82,7 +82,7 @@ records was read:
 | `de_first_surviving_atom_ref`, `_num`, `_text`, `_state` | Present only when the first atom is lost. They name the first atom that survives. |
 | `de_last_atom_ref`, `_num`, `_text`, `_state` | The page's last atom. Present only when the page's edges were read. |
 | `de_pencil_numbers` | The pencilled numbers seen at the foot or in the lower-left margin, each with `de_number`, `de_place` and, where the reading is uncertain, `de_doubt`. Present only when both places were examined. An empty list means that none was seen there. |
-| `de_text_at_line`, `de_text_at_line_ref` | A located verse. The first field gives the verse's atoms on one line, and the second names that line, and on a three-column page its column. |
+| `de_text_at_line`, `de_text_at_line_ref` | A located verse. `de_text_at_line` gives the verse's atoms on one line; `de_text_at_line_ref` names that line and, on a three-column page, its column. |
 | `de_note` | Who read or located the record, when, and at what resolution, with any damage that affects the reading. |
 
 An atom is one written form between spaces or maqafs. These rules define its fields:
@@ -293,7 +293,9 @@ verses from these images.
 ## Extending the index
 
 1. **Estimate, then read.** Interpolate MAM letter counts between verified pages to estimate the
-   target page, then read the target page's edges. Two sessions measured how well this works:
+   target page, then read the target page's edges. Two sessions estimated page positions;
+   the findings sub-agent recounted the Prophets' rates, and the image-list session
+   reproduced the recount:
    - In Psalms, the first reading session's first estimate, from the filename labels alone, was
      about 1.2 images early. After one verified page nearby, its estimates were within about half
      an image.
@@ -360,7 +362,7 @@ verses from these images.
      qere that is not written, a maqaf after a ketiv that is not read, and a repeated ending
      contribute nothing. A parashah break within a verse contributes nothing either, so the
      verse's atom numbers run straight through it. In the two Decalogues and at Gen 35:22 the
-     atoms are those of `<cant-combined>`, the text with the marks of both strands, whose atom
+     atoms are those of `<cant-combined>`, the combined representation of the two strands, whose atom
      numbers and letters are the same as either strand's. The reader's module docstring gives
      each decision with an example. No verse is refused now, and
      `py/tests/test_mam_xml_verses.py` checks both fixes over the whole of MAM-simple.
@@ -374,10 +376,10 @@ verses from these images.
    `<cant-combined>`. Those choices give the same letters as Ben's decisions, as item 3's
    comparison shows.
 
-   One defect remains, found on 2026-09-26 and not yet fixed. `get_verse_words` takes a
-   `<kq-trivial>`'s text only from its `text=` attribute. Psalms 10:5 holds the one
-   `<kq-trivial>` in MAM-simple that has child elements instead, so the reader drops that verse's
-   second atom and the legarmeh after it. No record reaches Psalms 10.
+   The defect found on 2026-09-26 was fixed on 2026-09-28: `get_verse_words` now
+   reads the child form of `<kq-trivial>` at Psalms 10:5, preserving the second atom
+   and its legarmeh. No current index record reaches Psalms 10, so this fix changes
+   no tracked locator record.
 
 ## Reaching images 005–495
 
@@ -518,7 +520,7 @@ For completeness, the NLI access facts found in 2026 remain:
 The rights statements matter only if someone later chooses to obtain images from the NLI rather
 than locate Avi's other zip.
 
-### Segmentation of these books
+### Segmentation of Psalms, Job and Proverbs
 
 Since 2026-09-26 `get_verse_words` refuses no verse ("Extending the index", item 6). Of the 4,827
 verses that the catalog lists before 2 Chronicles 11, 25 hold one of the seven formerly refused

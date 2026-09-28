@@ -108,16 +108,6 @@ def _post_silluq_footnote(survey: dict) -> list:
                 *_mam_post_silluq_statement(survey, starts_sentence=False),
             )
         ),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(
-                    ("maintained ", _ROM_METEG, "-after-", _ROM_SILLUQ, " register"),
-                    _POST_SILLUQ_FNAME,
-                ),
-                " gives the known cases, evidence, and unresolved candidates.",
-            )
-        ),
     ]
 
 

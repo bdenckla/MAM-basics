@@ -32,11 +32,11 @@ only inside its ephemeral container, and its code path cannot be exercised on th
 
 Recorded by Codex on 2026-09-14 while implementing MAM-basics issue 274. This entry supersedes the
 previous entry's statement that the cloud hook "installs only absent Claude files, and does not
-install Codex configuration." The symmetric user-level arrangement will give Claude Code a
-minimal wrapper that imports the common instructions from `~/.codex/AGENTS.md`, so a fresh cloud
-container must have the import target as well as the Claude user-level file and the shared
-`hebrew-prose` skill. The hook now prepositions the import target without claiming that the
-still-open issue's wrapper conversion is already complete.
+install Codex configuration." The symmetric user-level arrangement gives Claude Code a minimal wrapper that imports the
+common instructions from `~/.codex/AGENTS.md`, so a fresh cloud container needs the import target,
+the Claude user-level file and the shared `hebrew-prose` skill. The hook prepositions all three
+resources. The wrapper conversion was completed by `d695966be8daea270f85424cb77d06f3b92a873d`
+on 2026-09-16.
 
 The branch-sourced cloud hook now installs three independently checked resources:
 
@@ -74,3 +74,11 @@ The hook and documentation reach no declared MAM-basics product. The hook is exe
 so it carries test-breakage risk and receives targeted checks in this worktree. The eventual push
 to `main` is outward-facing, and the cloud code path cannot be exercised on this machine; neither
 fact changes the product scope.
+
+## 2026-09-28: the wrapper conversion is completed
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. **Corrected above.** The source passage
+beginning “The symmetric user-level arrangement will give Claude Code a minimal wrapper”
+described a future conversion. The conversion landed at
+`d695966be8daea270f85424cb77d06f3b92a873d` on September 16, so the retained update now describes
+the completed common-body arrangement. This correction performs no new cloud-session check.

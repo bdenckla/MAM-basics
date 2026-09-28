@@ -30,26 +30,36 @@ Cambridge University Library, MS Add. 1753 (Ketuvim). Images downloaded from arc
   [`../check_line_breaks.html`](../check_line_breaks.html) says all checks passed for the
   27 pages, as a check on 2026-09-26 found.
 
-### Pages completed
+### Verse labels in the retained line-break files
 
-| Page   | Start verse       | End verse (fragment) |
-|--------|-------------------|----------------------|
-| 0072B  | Ps 149:7          | Job 1:16 (mid)       |
-| 0073A  | Job 1:16 (mid)    | Job 3:19 (mid)       |
-| 0073B  | Job 3:19 (mid)    | Job 5:16 (mid)       |
-| 0074A  | Job 5:16 (mid)    | Job 6:29 (mid)       |
-| 0074B  | Job 6:29 (mid)    | Job 8:6 (mid)        |
-| 0075A  | Job 8:6 (mid)     | Job 9:31 (mid)       |
-| 0075B  | Job 9:31 (mid)    | Job 11:19 (mid)      |
-| 0076A  | Job 11:19 (mid)   | Job 13:18 (mid)      |
-| 0076B  | Job 13:18 (mid)   | Job 15:10 (mid)      |
-| 0077A  | Job 15:10 (mid)   | Job 16:16 (mid)      |
-| 0077B  | Job 16:16 (mid)   | Job 19:3 (mid)       |
-| 0078A  | Job 19:3 (mid)    | Job 20:18 (mid)      |
-| 0078B  | Job 20:18 (mid)   | Job 21:32 (mid)      |
-| 0079A  | Job 21:32 (mid)   | Job 23:14 (mid)      |
-| 0079B  | Job 23:14 (mid)   | Job 25:6 (mid)       |
-| 0080A  | Job 26:10 (mid)   | Job 28:17 (mid)      |
+The table reports the first and last verse-marker labels in the retained JSON files,
+not independently verified manuscript ranges. "Fragment" means a stored
+verse-fragment-start or verse-fragment-end marker. The stored data is unchanged.
+
+| Page | First label | Last label |
+|---|---|---|
+| 0072B | Psalms 149:7, fragment | Job 1:16, fragment |
+| 0073A | Job 1:16, fragment | Job 3:5, fragment |
+| 0073B | Job 3:5, fragment | Job 5:2, fragment |
+| 0074A | Job 5:2, fragment | Job 6:15, fragment |
+| 0074B | Job 6:15, fragment | Job 8:6, fragment |
+| 0075A | Job 8:6, fragment | Job 9:30, fragment |
+| 0075B | Job 9:31, verse-start | Job 11:18, fragment |
+| 0076A | Job 11:19, verse-start | Job 13:17, fragment |
+| 0076B | Job 13:17, fragment | Job 15:9, fragment |
+| 0077A | Job 15:9, fragment | Job 16:16, fragment |
+| 0077B | Job 16:16, fragment | Job 19:2, fragment |
+| 0078A | Job 19:3, verse-start | Job 20:17, fragment |
+| 0078B | Job 20:17, fragment | Job 21:32, fragment |
+| 0079A | Job 21:32, fragment | Job 23:14, fragment |
+| 0079B | Job 23:14, fragment | Job 26:10, fragment |
+| 0080A | Job 26:10, fragment | Job 28:16, fragment |
+
+At 0075A/0075B, 0075B/0076A, 0077B/0078A, and 0080A/0080B, the earlier file
+ends with a fragment-end label and the next file starts with the following verse's
+verse-start label. These stored markers do not provide a consistent description of
+verse continuation across pages. The table displays the labels without resolving
+the manuscript boundary.
 
 The table stops at 0080A; `cam1753-line-breaks/` holds all 27 pages.
 

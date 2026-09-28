@@ -17,8 +17,9 @@ letter's grapheme cluster in the new text, counting every combining mark
 there, not only the marks of the class being compared.  The English
 rendering never reads a position; change_ops_apply needs one, because
 MAM-normal order (mb_cmn.uni_denorm.give_std_mark_order) fixes the place
-of only four marks, the shin dot, the sin dot, the dagesh or mapiq, and
-the rafe, so where any other placed mark goes is data that nothing else
+of five code points: shin dot, sin dot, dagesh/mapiq/shuruq dot,
+dagesh ḥazaq (U+05C9), and rafe. The two dagesh code points share a priority.
+Where any other placed mark goes is data that nothing else
 can recover.  Until 2026-09-11 no op recorded it, and every placement
 appended the mark to the end of its cluster.  Isaiah 24:18 is the case
 that showed it.  Since MAM-basics 209b4c05 the verse's first cluster has

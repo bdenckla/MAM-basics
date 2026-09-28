@@ -1,6 +1,6 @@
 # Remediate the September 26, 2026 dual-agent review of MAM-basics
 
-State: live; approved for execution 2026-09-28; remediation not started.
+State: live; approved for execution 2026-09-28; remediation in progress.
 
 Prepared by ChatGPT-Codex on 2026-09-28, New York time. Ben instructed: "Continue the review
 process. I think in the narrow sense, the review is done, but next comes remediation, or
@@ -27,12 +27,21 @@ Preserve manuscript names, historical quotations, source anchors and product ide
 
 ## Standalone executor contract
 
-Use the existing development checkout
-`C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics`, branch `dar-2026-09-26`.
+Ben amended the execution location on 2026-09-28: use the primary checkout
+`C:/Users/BenDe/GitRepos/MAM-basics`. He then corrected the requested branch to
+`dar-2026-09-26` and authorized consolidating the duplicate branches. Both local
+branches pointed to handoff commit `93fe8704a61cdc7fb7b60d2391a6f4e54ab73ed4`.
+The primary checkout switched to `dar-2026-09-26` with its remediation diff
+unchanged, and the duplicate local `worktree-dar-2026-09-26` branch was deleted.
+The duplicate branch never existed remotely; `origin/dar-2026-09-26` is retained.
+All development commands and evidence paths below use the primary checkout.
+Backup pushes target `origin/dar-2026-09-26`. Final integration switches this
+clean checkout to `main` and fast-forwards the verified execution branch.
+The old DAR worktree path is absent; its locked registration remains for separate cleanup.
 The primary integration checkout is `C:/Users/BenDe/GitRepos/MAM-basics`, branch `main`.
 The root executor owns final integration. Keep one writer in the development checkout;
-sub-agents may investigate and check read-only. Do not create a replacement checkout or
-switch the review branch to a new feature branch. The Git worktree lock remains in force
+sub-agents may investigate and check read-only. Do not create another checkout.
+The old Git worktree lock remains in force
 through remediation and integration; cleanup belongs to a separate task after this task ends.
 
 The required preparation baseline is
@@ -69,30 +78,33 @@ NUL delimiters for programmatic filename output. The following are separate Powe
 commands; use the exact per-command `safe.directory` for elevated Git too.
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics rev-parse --show-toplevel
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics rev-parse --show-toplevel
 ```
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics rev-parse HEAD
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics rev-parse HEAD
 ```
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics branch --show-current
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics branch --show-current
 ```
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics status --porcelain=v1 -z
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics status --porcelain=v1 -z
 ```
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics merge-base --is-ancestor 8ab079afbac0a6648385f725e51057c2f0fd293f HEAD
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics merge-base --is-ancestor 8ab079afbac0a6648385f725e51057c2f0fd293f HEAD
 ```
 
-Fetch `origin` normally, verify the primary checkout is clean on `main` and agrees with
-the fetched default-branch history, and merge primary `main` into the review branch
-before a close-out edit task. Stop for unexpected HEAD movement, another writer's files,
+Fetch `origin` normally and verify that fetched `origin/main` is an ancestor of the
+development branch before editing. Under Ben's amended single-checkout execution,
+the checkout remains on `dar-2026-09-26` during remediation; local `main` is checked
+and advanced only at final integration. Merge any later fetched `origin/main` into
+the execution branch before the final mega. Stop for unexpected HEAD movement, another writer's files,
 missing source material, a non-fast-forward remote update or an unexplained output diff.
-Do not amend, rebase, force-push, reset, discard files, retire documents or remove branches.
+Do not amend, rebase, force-push, reset, discard files or retire documents. The
+branch consolidation above is the only branch removal authorized during execution.
 
 ## Reader-facing documents: concrete approval surface
 
@@ -883,7 +895,7 @@ git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRe
 ```
 
 ```powershell
-git -c safe.directory=C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics -C C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics config --show-origin --get-all core.longpaths
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics config --show-origin --get-all core.longpaths
 ```
 
 No value with exit 1 means unset for that checkout; any other failure is a diagnostic,
@@ -1070,8 +1082,9 @@ No thin review-tracking issue or new issue is part of this plan.
 
 ### Final integration and deployed instructions
 
-The final phase verifies both checkouts clean, fetches `origin`, and merges the latest
-primary `main` into `dar-2026-09-26` in the development checkout. Resolve conflicts
+The final phase verifies the amended single checkout clean on `dar-2026-09-26`,
+fetches `origin`, and merges the latest `origin/main` into the execution branch if
+needed. Verify local `main` remains an ancestor of the execution branch. Resolve conflicts
 there and repeat relevant checks if the merge changes their inputs. Run the complete
 mandatory mega from the development cwd without `REPOS_ROOT`:
 
@@ -1086,8 +1099,12 @@ every legitimate generated diff on the review branch. Ensure the separate hand-r
 parsed documentation and named-report checks remain current. Record suite/mega
 commit IDs and results, not merely elapsed times or a statement that checks were run.
 
-In the primary integration checkout only, verify it is clean on the expected `main`,
-then perform the verified fast-forward:
+In the same primary checkout, first switch the clean checkout to `main`, verify its
+expected starting HEAD and ancestry, then perform the verified fast-forward:
+
+```powershell
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics switch main
+```
 
 ```powershell
 git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics merge --ff-only dar-2026-09-26
@@ -1097,7 +1114,7 @@ git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRe
 git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics push origin main
 ```
 
-If main moved and the fast-forward refuses, return to the worktree, merge the new
+If main moved and the fast-forward refuses, switch back to the execution branch, merge the new
 main and verify again. Never substitute a primary merge or force push. This is the
 single final integration, which reaches the published Pages tree and distributed
 products; it is independently an outward-facing act.

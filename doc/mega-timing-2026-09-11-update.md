@@ -25,6 +25,7 @@ machine and later code, so its figures are not a re-measurement of this record's
 
 ## 2026-09-16: `accgram-run-prose` scans prose verses, not prose books
 
-In section 4 item 7, replace only `prose books` with `prose verses`; the remainder of the
-entry—“19,531 verse bodies, with the prose scanner and the PLY grammar, and writes
-`out/accgram/prose/`”—continues unchanged.
+The passage “Scans and parses the WLC 4.22 prose books, 19,531 verse bodies” should describe
+prose verses and 19,531 scanner calls: 18,724 verse bodies plus 807 dual-cantillation rescans.
+The step writes 18,725 records to `out/accgram/prose/`. These are corrections to the dated
+measurement's units, not a new timing or private-corpus measurement.

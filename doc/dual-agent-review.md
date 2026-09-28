@@ -173,6 +173,10 @@ joining of a prose paragraph that begins on line 3 without changing its text, is
 post-completion edit to the base. Each update entry names the passage it corrects by that passage's
 own words, since line numbers drift. A spent base and its optional one update file are one
 retirement family and may be retired together under the repository's manual retirement procedure.
+For retirement references and Ben-authorized reclassification, follow
+`mam-repository-topology`'s `references/repository-maintenance.md`,
+"Manual document retirement".
+
 A historical numbered sibling in Git history remains historical evidence; the live policy neither
 creates another numbered sibling nor uses the historical file as authority for doing so.
 
@@ -612,8 +616,8 @@ mega-pipeline review of `py/main_0_mega.py`'s
 review names its governing forest and records that the `worktree-forest` and `hebrew-prose` skills
 governed it.
 
-The lesson is the one `CLAUDE.md` already states about transcriptions, applied to a session
-transcript: **a transcript is evidence about that session, never about the machine.** The 2026-09-01
+The common user-level body's "A transcription is evidence about the transcription" rule applies
+to a session transcript: **a transcript is evidence about that session, never about the machine.** The 2026-09-01
 caveat was accurate about what that session had done and wrong as a claim about this machine, and
 repeating it without checking is how it propagated. Check the machine.
 

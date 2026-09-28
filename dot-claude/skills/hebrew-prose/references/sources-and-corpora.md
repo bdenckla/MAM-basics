@@ -23,14 +23,15 @@
   front matter says. MAM follows Breuer heavily, and attributing a *rule* to Breuer to explain
   something MAM does is fine as long as the inference is visible to the reader. Never "MAM is
   Breuer's edition" — `maqaf_nonfinal_accents{,_page}.py` said exactly that in five places.
-- **A claim about what the accentuation DOES counts MAM.** WLC is a flawed transcription of a
-  flawed manuscript and its blemishes land in such counts. The worked case: the maqaf-non-final
+- **A claim about what the accentuation DOES counts MAM.** WLC's transcription blemishes
+  can affect those counts. The worked case: the maqaf-non-final
   survey's headline frequency moved from WLC 4.22 (36,806 compounds, 139 hits) to MAM (36,786;
   233; 0.63%), which also made the accompanying claim true without exception — WLC's Joshua 20:4
   זקני־העיר has its compound's only accent on the non-final atom because the mark on העיר is a
   mid-verse meteg. **Re-read those numbers out of the regenerated JSON before quoting them.**
-- **WLC keeps the claims that are about a manuscript**, attributed by name (the two-munaḥ
-  compound Koren resembles is in L and not in MAM).
+- **Evidence from WLC is about WLC.** A manuscript claim requires an actual manuscript
+  reading or a clearly attributed prior reading. Unless the image was consulted, the manuscript
+  remains unverified; a transcription's silence supplies little evidence about a fine mark.
 - **WLC, BHS 1997 and BHQ are usually ONE transcription, not three that agree.** Ben,
   2026-08-07, correcting exactly that framing: they "should usually be considered a SINGLE
   transcription, not independent transcripts." So their agreeing corroborates nothing about the

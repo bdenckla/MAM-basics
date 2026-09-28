@@ -6,7 +6,7 @@ rewrite or its explicit old-path-to-target-path mapping. It is the second of the
 shapes ``CLAUDE.md`` sanctions, a mechanical lint over generated text, and it is deliberately
 not a pytest module: the tree it lints is another repository's, and a test that built one
 to a temp directory first would be checking the generator against itself. The one
-direction that needs no stub tree -- a frozen URL whose page is no longer published here
+direction that needs no stub tree -- a frozen URL whose target may be maintained at its new publisher, such as hbofonts
 -- is ``py/tests/test_redirect_manifest.py``, which is the only part of this lint that
 still runs with no source clone on the disk.
 

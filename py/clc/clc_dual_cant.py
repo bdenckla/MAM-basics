@@ -1520,6 +1520,7 @@ def _present_accent(this_text, other_text):
 # other lacks at an omitted-vowel atom, without mistaking a shared dagesh/meteg for it.
 _VOWEL_POINTS = frozenset(describe_diff.POINT_NAMES) - {
     hpo.DAGOMOSD,
+    hpo.DAGESH_XAZAQ,
     hpo.MTGOSLQ,
     hpo.RAFE,
     hpo.SHIND,

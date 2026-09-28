@@ -96,8 +96,9 @@ BOJ_TOP_LEVEL_MODULES = (
     "fix_mark_order.py",
     "main_gen_misc_authored_english_documents.py",
 )
-"""Twelve of book-of-job's sixteen runnable modules, which sat at that repo's root
-and sit at the top of this repo's ``py/``.  The other four were deleted:
+"""Twelve retained modules from book-of-job: eleven runnable entry points and one
+library. They sat at that repo's root and sit at the top of this repo's ``py/``.
+Four other runnable modules were deleted:
 ``main_gen_aleppo_crop_editor.py`` on 2026-09-10 by phase 6a of
 ``doc/PLAN-mega-coverage.md``; ``main_gen_cam1753_crop_editor.py`` and
 ``main_apply_cam1753_crops.py`` on 2026-09-26, when all 160 Cambridge 1753 crops
@@ -183,8 +184,8 @@ def out_dir() -> Path:
 
     Six are written by ``main_gen_misc_authored_english_documents``; the seventh,
     ``cam1753_crops_path()`` below, was appended to by the manual crop-ingest step
-    until that step was deleted on 2026-09-26, and is the one file of the 701 whose
-    checkout is still CRLF.
+    until that step was deleted on 2026-09-26, and now has LF line endings like the other 700
+    retained files.
     """
     return paths.repo_root() / "book-of-job" / "out"
 

@@ -284,7 +284,7 @@ LC-index data. The repository evacuations settled the question:
   `leningrad/`. The former `shared-with-codex-index-leningrad.md` was deliberately deleted because
   its claim that UXLC-utils was canonical had expired. The Leningrad Wikisource index generator
   then read `uxlc/data/lci_augrecs.json` directly, until Ben's decision of 2026-09-10 removed
-  that generator ([`doc/PLAN-mega-coverage.md`](../../doc/PLAN-mega-coverage.md), phase 3).
+  that generator (phase 3 of the retired [PLAN-mega-coverage.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md) and [PLAN-mega-coverage-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)).
 
 The CLC image-guessing machinery and its LCI input therefore live in this repository; no sibling
 clone or sparse copy is required.

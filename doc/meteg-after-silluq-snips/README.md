@@ -5,9 +5,10 @@ research: the [`../meteg-after-silluq-in-uxlc-and-wlc.md`](../meteg-after-silluq
 report and its [`update`](../meteg-after-silluq-in-uxlc-and-wlc-update.md),
 [`../meteg-after-silluq-psalms-72-15.md`](../meteg-after-silluq-psalms-72-15.md), and
 [`../meteg-after-silluq-job-4-12.md`](../meteg-after-silluq-job-4-12.md). Each crop is kept as
-evidence behind a stated fact about what one manuscript or edition has. The post-silluq page
-publishes thirty-one manuscript crops under [`../../gh-pages/img/`](../../gh-pages/img/);
-twenty-seven have fuller source notes below. The unpublished Second Rabbinic Bible crop remains
+evidence behind a stated fact about what one manuscript or edition has. The seven post-silluq case pages publish thirty-four manuscript crops under
+[`../../gh-pages/img/`](../../gh-pages/img/); thirty have fuller source notes below.
+The main post-silluq page publishes the URJ printed-edition crop, which also has
+source notes here. The unpublished Second Rabbinic Bible crop remains
 beside this README. Tiny crops like these are kept as fair use (Ben, 2026-09-10). Each section
 records the crop's available provenance; the Leningrad sections use the image sources named
 under “The Leningrad Codex” only when the source of the supplied crop is established.
@@ -30,12 +31,13 @@ remain here. The Second Rabbinic Bible crop is not published and remains in this
 
 ### The Aleppo Codex
 
-The page is a leaf in `{leaf_number}{r|v}` form (`../../aleppo/README.md`). A column and line go
+The manuscript page identifier is `{leaf_number}{r|v}`, as in `270r`
+(`../../aleppo/README.md`). A column and line go
 into a crop's name when they have been established, as they have for the Job leaves through
 `../../aleppo/line-breaks/`.
 
 Ben's crops are from mgketer.org unless he says otherwise (Ben, 2026-09-10). mgketer.org presents
-the Codex a chapter at a time, a psalm at a time in Psalms, as what looks like a single image,
+the Aleppo Codex a chapter at a time, a psalm at a time in Psalms, as what looks like a single image,
 often several pages long; whether it is one image or pages joined by the page's script, Ben does
 not know.
 
@@ -48,23 +50,24 @@ are the same photographs:
 - <https://archive.org/details/Leningrad_Codex_Color_Images/page/n859/mode/1up?view=theater>
 
 That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
-for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
-to an image. The page is a folio and side, as in `430B`.
+for every manuscript page identifier — 982 of them, checked 2026-09-10 — so it is
+the way to get from a page identifier to an image. The manuscript page identifier
+combines the folio number and side, as in `F430B`.
 
 ### The Second Rabbinic Bible
 
 A printed edition's crop is named like a manuscript's, the edition in the manuscript's place. Its
 page is named by a pencil mark on it, as in `pencil99`.
 
-## [cairo-cotp-p110-image103-1S17v5-nexoshet.png](../../gh-pages/img/cairo-cotp-p110-image103-1S17v5-nexoshet.png)
+## [cairo-cotp-p110-image103-1S17v5-NXJF.png](../../gh-pages/img/cairo-cotp-p110-image103-1S17v5-NXJF.png)
 
 The verse-final word of 1 Samuel 17:5 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
 and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 121710.png`, SHA-256
 `049E1DBB11B81C591A7B59A490203E7B6C4ED45B1F5629408764448F8B5619B9`. The published PNG
-is a byte-for-byte copy: 93,607 bytes and 270 × 232 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 93,607 bytes and 270 × 232 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
-Ben identifies the manuscript page as 110 and the digital image as 103 in the [CSIC Simurg
+Ben identifies the manuscript page as 110 and the digital page as 103 in the [CSIC Simurg
 photograph collection](https://simurg.csic.es/view/9918494052404201). The collection's source
 record names the Archivo del Centro de Ciencias Humanas y Sociales as the archive and states that
 the digital copy is distributed under CC BY-NC-SA 4.0.
@@ -83,19 +86,19 @@ measures UXLC placements rather than Cairo CoTP.
 The verse-final word of 1 Kings 7:37 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
 and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 133206.png`, SHA-256
 `66BA51E13EF2FCE8C7E2B68BDD7D6B310720B94923A4C04A422225EB314FEDC0`. The published PNG
-is a byte-for-byte copy: 112,012 bytes and 374 × 236 pixels. Codex independently inspected the
+is a byte-for-byte copy: 112,012 bytes and 374 × 236 pixels. ChatGPT-Codex independently inspected the
 crop and saw no later metsil, agreeing with Ben's reading.
 
 Ben identifies it as digital page 186 in the [CSIC Simurg Cairo CoTP photograph
 collection](https://simurg.csic.es/view/9918494052404201). No manuscript page number appears on
 the page image. **Cairo CoTP has the silluq alone:** it has no meteg after the silluq.
 
-## [sassoon-1053-1S17v5-nexoshet.png](../../gh-pages/img/sassoon-1053-1S17v5-nexoshet.png)
+## [sassoon-1053-1S17v5-NXJF.png](../../gh-pages/img/sassoon-1053-1S17v5-NXJF.png)
 
 The verse-final word of 1 Samuel 17:5 in **Codex Sassoon 1053**. Ben supplied and interpreted
 the crop on 2026-09-23 from `Screenshot 2026-09-23 133845.png`, SHA-256
 `8ED84ED295115DF367C99A10D35A6212BC94139EE10E0EB9FA5C7F16E906AD73`. The published PNG
-is a byte-for-byte copy: 207,099 bytes and 356 × 346 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 207,099 bytes and 356 × 346 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Samuel
@@ -103,7 +106,7 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Samuel
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
-## [st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png)
+## [st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-NXJF.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-NXJF.png)
 
 The verse-final chanted word of 1 Samuel 17:5 in **St. Petersburg Evr. II B 55**, identified in
 MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
@@ -123,7 +126,7 @@ the last atom, וזרת, opens main-text line 1. The verse begins below two line
 top, and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
 image.
 
-**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. Codex
+**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. ChatGPT-Codex
 directly inspected the supplied crop.
 
 ## [sassoon-1053-1K7v37-final-word.png](../../gh-pages/img/sassoon-1053-1K7v37-final-word.png)
@@ -131,7 +134,7 @@ directly inspected the supplied crop.
 The verse-final word of 1 Kings 7:37 in **Codex Sassoon 1053**. Ben supplied and interpreted the
 crop on 2026-09-23 from `Screenshot 2026-09-23 134056.png`, SHA-256
 `39656E10822C34DD6CB40615C8352F79D800393B4B08B8E2D4BFE622890C86DD`. The published PNG
-is a byte-for-byte copy: 260,956 bytes and 466 × 338 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 260,956 bytes and 466 × 338 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
@@ -139,9 +142,9 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
-## [aleppo-083r-1K14v14-atta.png](../../gh-pages/img/aleppo-083r-1K14v14-atta.png)
+## [aleppo-083r-1K14v14-G603FH.png](../../gh-pages/img/aleppo-083r-1K14v14-G603FH.png)
 
-1 Kings 14:14, the verse-final chanted word, on **leaf 83r**. Ben inspected this crop on
+1 Kings 14:14, the verse-final chanted word, on **page 83r**. Ben inspected this crop on
 2026-09-21. Its original source filename is `Screenshot 2026-09-21 141837.png`; its SHA-256 is
 `B1A014F0846F00E683F1CF5FF6E281837985C236E3AED947983FD8FB97338A14`.
 
@@ -153,9 +156,9 @@ Reference links: the chapter at
 has a second metsil, the likely meteg after the silluq, as Ben confirmed from the Leningrad crop
 below.
 
-## [leningrad-195B-col2-line27-1K14v14-atta.png](../../gh-pages/img/leningrad-195B-col2-line27-1K14v14-atta.png)
+## [leningrad-195B-col2-line27-1K14v14-G603FH.png](../../gh-pages/img/leningrad-195B-col2-line27-1K14v14-G603FH.png)
 
-1 Kings 14:14, the verse-final chanted word, on **folio 195B, column 2, line 27**. Ben supplied
+1 Kings 14:14, the verse-final chanted word, on **page F195B, column 2, line 27**. Ben supplied
 this final hand-crop on 2026-09-26. Its original filename is
 `Screenshot 2026-09-26 115303.png`; its SHA-256 is
 `21B4833733419862AA86979B28F9A950BFB116F11AE19D4C39B1CE0138C5FB76`. The published PNG is a
@@ -170,24 +173,24 @@ manuscript has.
 **The Leningrad Codex has the silluq and a second metsil in גַּם־עָֽתָּֽה׃.** The second metsil
 is the likely meteg after the silluq; the Aleppo Codex has the silluq without that second metsil.
 
-## [cairo-cotp-image204-1K14v14-atta.png](../../gh-pages/img/cairo-cotp-image204-1K14v14-atta.png)
+## [cairo-cotp-image204-1K14v14-G603FH.png](../../gh-pages/img/cairo-cotp-image204-1K14v14-G603FH.png)
 
-The verse-final word of 1 Kings 14:14 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
+The verse-final chanted word of 1 Kings 14:14 in **Cairo CoTP (Codex of the Prophets)**. Ben supplied
 and interpreted the crop on 2026-09-23 from `Screenshot 2026-09-23 133528.png`, SHA-256
 `0AFFA7E03672CB049853791DBB1EF02B322338C96848FEA88956B1FF940CE7D7`. The published PNG
-is a byte-for-byte copy: 101,757 bytes and 326 × 230 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 101,757 bytes and 326 × 230 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
-Ben identifies it as digital image 204 in the [CSIC Simurg Cairo CoTP photograph
+Ben identifies it as digital page 204 in the [CSIC Simurg Cairo CoTP photograph
 collection](https://simurg.csic.es/view/9918494052404201). He reports no page label on the
 manuscript page. **Cairo CoTP has the silluq alone:** it has no meteg after the silluq.
 
-## [sassoon-1053-1K14v14-atta.png](../../gh-pages/img/sassoon-1053-1K14v14-atta.png)
+## [sassoon-1053-1K14v14-G603FH.png](../../gh-pages/img/sassoon-1053-1K14v14-G603FH.png)
 
-The verse-final word of 1 Kings 14:14 in **Codex Sassoon 1053**. Ben supplied and interpreted
+The verse-final chanted word of 1 Kings 14:14 in **Codex Sassoon 1053**. Ben supplied and interpreted
 the crop on 2026-09-23 from `Screenshot 2026-09-23 134512.png`, SHA-256
 `00A0E0B111F4DCDFF8FAD7AFC4C24D3961E99E82A29E5510DB96EDF58A277A05`. The published PNG
-is a byte-for-byte copy: 287,320 bytes and 516 × 344 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 287,320 bytes and 516 × 344 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
@@ -195,7 +198,7 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of 1 Kings
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
-## [st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png)
+## [st-petersburg-evr-ii-b-55-image186-1K14v14-G603FH.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-image186-1K14v14-G603FH.png)
 
 The verse-final chanted word of 1 Kings 14:14 in **St. Petersburg Evr. II B 55**, identified in
 MAM by the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25
@@ -214,12 +217,12 @@ or column break falls inside the verse. The verse begins below two lines of Maso
 and the column has no torn lines. These full-page layout facts are Ben's report from the NLI
 image.
 
-**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. Codex
+**St. Petersburg Evr. II B 55 has the silluq alone:** it has no meteg after the silluq. ChatGPT-Codex
 directly inspected the supplied crop.
 
 ## [aleppo-251r-Ps60v10-HFRV33Y.png](../../gh-pages/img/aleppo-251r-Ps60v10-HFRV33Y.png)
 
-Psalms 60:10, the verse-final atom, on **leaf 251r**. Ben cropped it from mgketer.org and
+Psalms 60:10, the verse-final atom, on **page 251r**. Ben cropped it from mgketer.org and
 inspected it on 2026-09-21. Its original source filename is `Screenshot 2026-09-21 144056.png`;
 its SHA-256 is
 `292FB206BBFC738BA049E474147295635A988E372E22E4761BD498F7B328EBC4`.
@@ -234,7 +237,7 @@ metsil; the second metsil is the likely meteg after the silluq.
 
 ## [leningrad-377B-Ps60v10-HFRV33Y.png](../../gh-pages/img/leningrad-377B-Ps60v10-HFRV33Y.png)
 
-Psalms 60:10, the verse-final atom, on **folio 377B**. Ben supplied and inspected the final crop
+Psalms 60:10, the verse-final atom, on **page F377B**. Ben supplied and inspected the final crop
 on 2026-09-21. Its original source filename is `Screenshot 2026-09-21 144323.png`; its SHA-256
 is `83FE2304070EEC24F85030A09C29C7CDF13AC87C3D73B3806CDF477C9CE3BD2B`. The tracked PNG is a
 byte-for-byte copy with the same hash, dimensions 334 × 178 pixels, and no cropping, resizing,
@@ -254,7 +257,7 @@ Psalms 60:10, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and
 crop on 2026-09-23. Its original source filename is `Screenshot 2026-09-23 100637.png`; its
 SHA-256 is `00C3DD084318DC9CF901B867FB5244282D25D730D62FCC7B9290B5822EEB176C`. The tracked
 PNG is a byte-for-byte copy: 48,375 bytes and 288 × 186 pixels. The source site and the
-manuscript page or folio are not recorded. Codex did not independently inspect the pointed
+manuscript page or folio are not recorded. ChatGPT-Codex did not independently inspect the pointed
 Hebrew image.
 
 **Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
@@ -264,7 +267,7 @@ Hebrew image.
 The verse-final word of Psalms 60:10 in **Codex Sassoon 1053**. Ben supplied and interpreted
 the crop on 2026-09-23 from `Screenshot 2026-09-23 134736.png`, SHA-256
 `C56601762B319718EFBE9BC1717BEA441A90A47905B7864E257B5E60C2F50658`. The published PNG
-is a byte-for-byte copy: 224,572 bytes and 516 × 266 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 224,572 bytes and 516 × 266 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
@@ -283,15 +286,15 @@ is a byte-for-byte copy: 23,866 bytes and 186 × 108 pixels.
 The crop comes from image file 623 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-623-FL48719462.jpg`.
 The source page is marked `303` on the page itself. Ben identifies `303` as a folio number and
-image file 623 as its first side, so this source image is recorded as folio **303a**.
+image file 623 as its first side, so this source image is recorded as page **303a**.
 
 **St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke on the first ayin
-and no later mark on the second ayin. Codex directly inspected the supplied crop and the full
+and no later mark on the second ayin. ChatGPT-Codex directly inspected the supplied crop and the full
 source image.
 
-## [aleppo-253r-Ps70v2-xushah.png](../../gh-pages/img/aleppo-253r-Ps70v2-xushah.png)
+## [aleppo-253r-Ps70v2-XVJH.png](../../gh-pages/img/aleppo-253r-Ps70v2-XVJH.png)
 
-Psalms 70:2, the verse-final atom, on **leaf 253r**. Ben supplied and inspected the final crop on
+Psalms 70:2, the verse-final atom, on **page 253r**. Ben supplied and inspected the final crop on
 2026-09-21. Its original source filename is `Screenshot 2026-09-21 152611.png`; its SHA-256 is
 `1B213120FB4903AA552022C8CDDCE0990DA5307708A68224AF73BD7E270E2D37`. Under the standing
 provenance rule for Ben's Aleppo crops, the source is mgketer.org.
@@ -303,9 +306,9 @@ pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked P
 
 **The Aleppo Codex has the silluq alone:** there is no later metsil.
 
-## [leningrad-379B-Ps70v2-xushah.png](../../gh-pages/img/leningrad-379B-Ps70v2-xushah.png)
+## [leningrad-379B-Ps70v2-XVJH.png](../../gh-pages/img/leningrad-379B-Ps70v2-XVJH.png)
 
-Psalms 70:2, the verse-final atom, on **folio 379B**. Ben supplied and inspected the final crop on
+Psalms 70:2, the verse-final atom, on **page F379B**. Ben supplied and inspected the final crop on
 2026-09-21. Its original source filename is `Screenshot 2026-09-21 152828.png`; its SHA-256 is
 `2F44B8858C11D7A30104AFF3BDE49AE104B028FAF0F9900308B5074643E4FB21`.
 
@@ -322,7 +325,7 @@ established from the crop.
 **The Leningrad Codex has two metsil marks.** The first is the silluq, and the later mark is the
 likely meteg after the silluq.
 
-## [cam1753-unlocated-Ps70v2-xushah.png](../../gh-pages/img/cam1753-unlocated-Ps70v2-xushah.png)
+## [cam1753-unlocated-Ps70v2-XVJH.png](../../gh-pages/img/cam1753-unlocated-Ps70v2-XVJH.png)
 
 Psalms 70:2, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and inspected the
 final crop on 2026-09-21. Its original source filename is
@@ -337,12 +340,12 @@ pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked P
 
 **Cambridge Add. 1753 has the silluq alone:** there is no later metsil.
 
-## [sassoon-1053-Ps70v2-xushah.png](../../gh-pages/img/sassoon-1053-Ps70v2-xushah.png)
+## [sassoon-1053-Ps70v2-XVJH.png](../../gh-pages/img/sassoon-1053-Ps70v2-XVJH.png)
 
 The verse-final word of Psalms 70:2 in **Codex Sassoon 1053**. Ben supplied and interpreted
 the crop on 2026-09-23 from `Screenshot 2026-09-23 140012.png`, SHA-256
 `69BA4120F041762992FB557E2A030CB91E7E34B2A0DD300DFADCC0A486F57A72`. The published PNG
-is a byte-for-byte copy: 140,753 bytes and 284 × 280 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 140,753 bytes and 284 × 280 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
@@ -350,7 +353,7 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
-## [st-petersburg-evr-ii-b-55-Ps70v2-xushah.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps70v2-xushah.png)
+## [st-petersburg-evr-ii-b-55-Ps70v2-XVJH.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps70v2-XVJH.png)
 
 The verse-final word of Psalms 70:2 in **St. Petersburg Evr. II B 55**, identified in MAM by the
 siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
@@ -365,12 +368,12 @@ folio number and image file 632 as its second side, so this source image is reco
 **307b**.
 
 **St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the shin and
-no later mark under the he. Codex directly inspected the supplied crop and the full source
+no later mark under the he. ChatGPT-Codex directly inspected the supplied crop and the full source
 image.
 
 ## [aleppo-253v-Ps72v15-yevarkhenhu.png](../../gh-pages/img/aleppo-253v-Ps72v15-yevarkhenhu.png)
 
-Psalms 72:15, the verse-final atom, on **leaf 253v**, which has Psalms 71:18–73:10 (MAM's index of
+Psalms 72:15, the verse-final atom, on **page 253v**, which has Psalms 71:18–73:10 (MAM's index of
 the Aleppo Codex, `../../in/mam-ws-intro/index-aleppo.mediawiki` line 613). Ben's crop,
 2026-09-10, from mgketer.org's image of Psalm 72.
 
@@ -387,7 +390,7 @@ manuscript agrees. The whole account is `../meteg-after-silluq-psalms-72-15.md`.
 
 ## [leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png](../../gh-pages/img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png)
 
-Psalms 72:15, the verse-final atom יְבָרֲכֶֽנְהֽוּ׃ as UXLC 3.9 records it, on **folio 380A, line 3**, in
+Psalms 72:15, the verse-final atom יְבָרֲכֶֽנְהֽוּ׃ as UXLC 3.9 records it, on **page F380A, line 3**, in
 the early middle of the line.
 
 **The Leningrad Codex has a meteg/silluq stroke under the kaf and another under the he** —
@@ -403,7 +406,7 @@ the verse quotes that manuscript with the one mark. The whole account is
 
 ### Calibration note for the atom-location estimator
 
-`page_and_guesses` in `MAM-basics/py/py_uxlc/my_uxlc_location.py` put this word at folio 380A,
+`page_and_guesses` in `MAM-basics/py/py_uxlc/my_uxlc_location.py` put this word at page F380A,
 column 2, line 5.5 — two and a half lines low against the line 3 Ben read off the image:
 
 ```
@@ -413,22 +416,22 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 The folio is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
 
-## [cam1753-unlocated-Ps72v15-yevarkhenhu.png](../../gh-pages/img/cam1753-unlocated-Ps72v15-yevarkhenhu.png)
+## [cam1753-unlocated-Ps72v15-YBRKNHV.png](../../gh-pages/img/cam1753-unlocated-Ps72v15-YBRKNHV.png)
 
 Psalms 72:15, the verse-final atom, in **Cambridge Add. 1753**. Ben supplied and interpreted the
 crop on 2026-09-23. Its original source filename is `Screenshot 2026-09-23 101124.png`; its
 SHA-256 is `D1AAD154956C69CF11C3FD1108C30A320EE64E248ACE85FBA79C4F65AFCFAC4E`. The tracked
 PNG is a byte-for-byte copy: 60,278 bytes and 270 × 200 pixels. The source site and manuscript
-page or folio are not recorded. Codex did not independently inspect the pointed Hebrew image.
+page or folio are not recorded. ChatGPT-Codex did not independently inspect the pointed Hebrew image.
 
 **Cambridge Add. 1753 has the silluq alone:** it has no meteg after the silluq.
 
-## [sassoon-1053-Ps72v15-yevarkhenhu.png](../../gh-pages/img/sassoon-1053-Ps72v15-yevarkhenhu.png)
+## [sassoon-1053-Ps72v15-YBRKNHV.png](../../gh-pages/img/sassoon-1053-Ps72v15-YBRKNHV.png)
 
 The verse-final word of Psalms 72:15 in **Codex Sassoon 1053**. Ben supplied and interpreted
 the crop on 2026-09-23 from `Screenshot 2026-09-23 140341.png`, SHA-256
 `45614C646A7A9F1777B6A7490565653402A7EF2BF17F08A08E6019749CDBD8E2`. The published PNG
-is a byte-for-byte copy: 222,823 bytes and 448 × 294 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 222,823 bytes and 448 × 294 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
@@ -436,7 +439,7 @@ Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Psalms
 manuscript page or folio coordinate has not been recorded. **Codex Sassoon 1053 has the silluq
 alone:** it has no meteg after the silluq, according to Ben's reading.
 
-## [st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png)
+## [st-petersburg-evr-ii-b-55-Ps72v15-YBRKNHV.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Ps72v15-YBRKNHV.png)
 
 The verse-final word of Psalms 72:15 in **St. Petersburg Evr. II B 55**, identified in MAM by
 the siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
@@ -446,14 +449,14 @@ is a byte-for-byte copy: 18,114 bytes and 174 × 108 pixels.
 
 The crop comes from image file 634 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-634-FL48719473.jpg`.
-By the same image-pair sequence, Ben identifies image file 634 as folio **308b**.
+By the same image-pair sequence, Ben identifies image file 634 as page **308b**.
 
 **St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the kaf and no
-later mark under the he. Codex directly inspected the supplied crop and the full source image.
+later mark under the he. ChatGPT-Codex directly inspected the supplied crop and the full source image.
 
 ## [aleppo-271r-col2-line5-Job4v12-menhu.png](../../gh-pages/img/aleppo-271r-col2-line5-Job4v12-menhu.png)
 
-Job 4:12, the verse-final atom, which ends **line 5 of column 2 of leaf 271r**
+Job 4:12, the verse-final atom, which ends **line 5 of column 2 of page 271r**
 (`../../aleppo/line-breaks/271r.json` lines 814–836). Ben's crop, 2026-09-10, from
 mgketer.org's image of Job 4.
 
@@ -477,7 +480,7 @@ account is `../meteg-after-silluq-job-4-12.md`.
 
 ## [leningrad-398A-Job4v12-menhu.png](../../gh-pages/img/leningrad-398A-Job4v12-menhu.png)
 
-Job 4:12, the verse-final atom מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **folio 398A**. Ben's crop,
+Job 4:12, the verse-final atom מֽ͏ֶנְהֽוּ׃ as UXLC 3.9 records it, on **page F398A**. Ben's crop,
 2026-09-10.
 
 **The Leningrad Codex has a meteg/silluq stroke under the mem and another under the he** —
@@ -500,7 +503,7 @@ has, which until then only UXLC and WLC recorded. The whole account is
 
 ### No calibration point for the atom-location estimator
 
-`page_and_guesses` in `MAM-basics/py/py_uxlc/my_uxlc_location.py` put this word at folio 398A,
+`page_and_guesses` in `MAM-basics/py/py_uxlc/my_uxlc_location.py` put this word at page F398A,
 column 2, line 4.0:
 
 ```
@@ -509,7 +512,7 @@ column 2, line 4.0:
 
 Ben did not read the column or the line off the image, so this crop gives no calibration point.
 
-## [cam1753-0073B-col2-line13-Job4v12-menhu.png](../../gh-pages/img/cam1753-0073B-col2-line13-Job4v12-menhu.png)
+## [cam1753-0073B-col2-line13-Job4v12-MNHV.png](../../gh-pages/img/cam1753-0073B-col2-line13-Job4v12-MNHV.png)
 
 Job 4:12, the verse-final word, in **Cambridge Add. 1753**. Ben supplied and interpreted the
 crop on 2026-09-22 from `Screenshot 2026-09-22 171050.png`, SHA-256
@@ -520,15 +523,15 @@ tracked line-break data.
 
 **Cambridge Add. 1753 has both metsil marks:** the silluq under the mem and a meteg after it.
 The silluq is to the left of its segol, in its normal position. In the Aleppo and Leningrad
-codices the silluq is “early,” to the right of its segol. This reading is Ben's; Codex did not
+codices the silluq is “early,” to the right of its segol. This reading is Ben's; ChatGPT-Codex did not
 independently inspect the pointed-Hebrew image.
 
-## [sassoon-1053-Job4v12-menhu.png](../../gh-pages/img/sassoon-1053-Job4v12-menhu.png)
+## [sassoon-1053-Job4v12-MNHV.png](../../gh-pages/img/sassoon-1053-Job4v12-MNHV.png)
 
 The verse-final word of Job 4:12 in **Codex Sassoon 1053**. Ben supplied and interpreted the
 crop on 2026-09-23 from `Screenshot 2026-09-23 140626.png`, SHA-256
 `C581614FD07C4C6D7A77E48D1CCA4B067A1F429AF889FFB5F1D710B457656D84`. The published PNG
-is a byte-for-byte copy: 146,913 bytes and 272 × 316 pixels. Codex did not independently inspect
+is a byte-for-byte copy: 146,913 bytes and 272 × 316 pixels. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 Ben obtained the crop from [Masoretica's Codex Sassoon 1053 view of Job
@@ -538,7 +541,7 @@ silluq and a meteg after it. Ben notes that the later meteg is far from vertical
 northeast to southwest. He does not know whether the slant is meaningful, but considers it too
 conspicuous to omit from the image page.
 
-## [st-petersburg-evr-ii-b-55-Job4v12-menhu.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png)
+## [st-petersburg-evr-ii-b-55-Job4v12-MNHV.png](../../gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-MNHV.png)
 
 The verse-final word of Job 4:12 in **St. Petersburg Evr. II B 55**, identified in MAM by the
 siglum **ל-א**. Ben supplied and identified the crop on 2026-09-25 from
@@ -548,7 +551,7 @@ is a byte-for-byte copy: 65,965 bytes and 256 × 204 pixels.
 
 The crop comes from image file 714 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-714-FL48719553.jpg`.
-Ben identifies this second image in the folio pair as folio **348b**.
+Ben identifies this second image in the folio pair as page **348b**.
 
 The local [`sigil-decoding.md`](../sigil-decoding.md) gives the shelfmark. The
 cached MAM introduction's [manuscript list](../../in/mam-ws-intro/appendices.mediawiki) identifies
@@ -556,7 +559,7 @@ it as a manuscript of the Prophets and Writings close to the Aleppo Codex and re
 among its surviving text, which includes Job 4:12.
 
 **St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the mem and no
-later mark under the he. Codex directly inspected the supplied crop and the full source image. It
+later mark under the he. ChatGPT-Codex directly inspected the supplied crop and the full source image. It
 is the only manuscript represented on the Job 4:12 crop page that has the silluq-only form of
 this word.
 
@@ -585,7 +588,7 @@ silluq. [meteg-after-silluq-job-4-12.md](../meteg-after-silluq-job-4-12.md) has 
 counts the Second Rabbinic Bible with Koren, which also has only the mark under the mem, as
 evidence that the stress is penultimate.
 
-## [urj-2005-Num23v26-eeseh.png](../../gh-pages/img/urj-2005-Num23v26-eeseh.png)
+## [urj-2005-Num23v26-A3JH.png](../../gh-pages/img/urj-2005-Num23v26-A3JH.png)
 
 Numbers 23:26, the verse-final word, in the 2005 revised edition of *The Torah: A Modern
 Commentary*. Ben supplied and inspected the crop on 2026-09-22 from his Kindle edition. Its

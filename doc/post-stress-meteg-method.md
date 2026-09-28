@@ -109,8 +109,8 @@ each such pair read as a single chanted word carrying both occurrences' meteg ma
 
 MAM-basics commit `ad44dba7` on 2026-09-09 replaced the form key with the position key. Before
 that correction, the survey reported 12,828 prose MBS_O chanted words and 143 MBS_O chanted
-words with more than one meteg. Twenty-one of those 143 were one form counted against itself,
-each occurrence carrying one meteg, so the MBS_O population was 21 chanted words too small and
+words with more than one meteg. Twenty-one of those 143 were one form counted against itself; each occurrence has one
+meteg. The MBS_O population was therefore 21 chanted words too small and
 the multiple-MBS population was 21 too large. All 21 were in prose verses. At that commit, the
 corrected measurements were 12,849 prose MBS_O chanted words and 122 with more than one meteg.
 The poetic MBS_O measurement, both MAS measurements, and every positional measurement were
@@ -119,7 +119,7 @@ form.
 
 The independent oracle is `py/foi/foiz_wt_mtgmtg.py`, which counts U+05BD per chanted word
 straight from MAM-parsed-plus with no stress oracle. At MAM-basics commit `ad44dba7` on
-2026-09-09, its tracked output had 135 chanted words carrying two meteg marks beside any
+2026-09-09, its tracked output had 135 chanted words that have two meteg marks beside any
 verse-final silluq: the groups `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102, and
 `2/sopa-y/maq-y` 14. Those 135 reconciled with the corrected census as 122 MBS_O chanted words,
 ten MAS chanted words that also had one MBS, and three cant-bet Decalogue forms. The

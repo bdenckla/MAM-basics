@@ -166,8 +166,7 @@ def run_audit_line_terms_across_repos(
     results: list[dict] = []
 
     for repo_info in repo_infos:
-        # Progress, in clean_worktrees.py's shape -- see its own copy of this
-        # line for why every sweep prints one.
+        # Flush per-repository progress so captured sweeps remain observable.
         print(f"=== {repo_info.name} ===", flush=True)
         tracked = _tracked_files(repo_info.path, include_pattern)
         filtered = [

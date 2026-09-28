@@ -500,3 +500,124 @@ Deliver the fresh-session prompt only after this approval record is committed,
 backed up to `origin/dar-2026-09-26`, and the development checkout is clean. No
 remediation implementation has occurred during preparation. This update remains
 `State: open` while its base survives.
+
+## Approved remediation implemented; final gates pending, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. **Implemented: the approved
+active work below.** This entry supersedes the preparation entries' pending-execution
+status. Ben amended execution to use primary `C:/Users/BenDe/GitRepos/MAM-basics`.
+Before edits, its exact root, clean status, branch and handoff HEAD
+`93fe8704a61cdc7fb7b60d2391a6f4e54ab73ed4` were verified. The approved snapshot
+`1a92af88c82aecec0e637eddf23942c2c7c52377`, preparation baseline and required main
+merge are ancestors. Fetched `origin/main` was
+`db152332b7d90a3e5387ce0cb068a69bb0673258`, already included in the handoff.
+
+**Consolidated: `dar-2026-09-26` is the sole execution branch.** Ben corrected his
+initial amended branch name and explicitly authorized deleting the duplicate.
+Both local branch refs had the same handoff HEAD. Switching to `dar-2026-09-26`
+preserved the working diff byte for byte; non-forced deletion removed the local
+`worktree-dar-2026-09-26`. The duplicate had never existed remotely. The original
+locked DAR registration survives, although its old path is physically absent;
+no worktree retirement, registry pruning or lock removal was performed.
+
+The root executor remained the only repository writer. Three read-only agents
+supplied independently checked proposals and audits for change logs, records/policy,
+and retirement safety. All commands ran in the primary development checkout with
+its shared `.venv/Scripts/python.exe`; elevated Git and child Git trust named this
+exact root. No live instruction copy was edited during development.
+
+### Dispositions of all 36 findings
+
+The approved plan's finite replacements and later accepted review corrections govern
+this table. “Fixed” records implementation, while final integration and deployment
+remain pending until the later evidence entry confirms them.
+
+| Finding | Execution disposition |
+|---|---|
+| 1 | Fixed: September 16 closure and implementation credits are corrected in its review update and new plan update, with the matcher defect separately fixed under 16. |
+| 2 | Fixed: stale pending/closure accounts are corrected in the September 14/16 live updates; September 18 approval is attributed to its recorded source declaration. |
+| 3 | Fixed: surviving reader/procedure links reach verified archive families; current wlc-utils descriptions preserve the surviving `ac_paths.py` module. |
+| 4 | Fixed: all seven finite record details, including the exact Holman CSS rule, citation census, tracker count, bidi classes and September 17 provenance. |
+| 5 | Fixed: September 10 references identify measured trees, subsequent family retirement, current case pages and the maintained Psalms report. |
+| 6 | Fixed: current inbound historical links reach full-SHA complete families; the canonical retirement-reference rule is restored. Current verification found 35 distinct archive paths in the changed source/documents, all present at `f72297084ab94aea6fd1274dc1bc3d7ce6acddd5`. |
+| 7 | Fixed: the four census corrections use the single update; issue 269 links both plan-family members. Five Holman evidence-note classifications remain deferred; 7.3 requires no repinning because the retained and archive family bytes match. |
+| 8 | Fixed: the canonical narrow Ben-authorized reclassification procedure records the transition and update disposition; Psalms 72:15 remains maintained research. |
+| 9 | Fixed: live updates remain open while their bases survive; the September 14 plan's effective executed date is September 16 in its update. |
+| 10 | Fixed: corrections identify distinctive source words and distinguish summary passages from section leads. |
+| 11 | Fixed: 11.2–11.5 safeguards, transcription-evidence limits, searchable source locators and the long-lived backup exception are restored in canonical shared homes. All twelve 11.1 clauses remain explicitly deferred. |
+| 12 | Fixed: current section citations and wrapper guidance name current instruction homes; the cloud hook changes only its comment. No fresh cloud execution is claimed. |
+| 13 | Fixed: the budget reversal is attributed without changing 32,768 bytes; the maintained reconciliation maps all 35 H2 headings and one H3 from the old common body. Retirement of the overtaken September 9 plan remains deferred. |
+| 14 | Fixed: documentation/instruction exemptions depend on content; executable hooks and helpers receive their applicable checks. |
+| 15 | Fixed: the canonical refresh skill states normal Git-based sibling resolution, the unusual-layout override, conditional suite cadence and mandatory final mega. |
+| 16 | Fixed: inbound detection uses the actual retained relocation inventory, supported path spellings and exact boundaries; real temporary-checkout differentials cover later observer citations and preservation gates. No real retirement occurred. |
+| 17 | Fixed: the seven-module destructive-operation lint, dead error reporting, Git-ref failure distinction, pointers and runtime descriptions. Ordinary-token measurement and all three 17.8 proposals remain deferred. |
+| 18 | Fixed: LF and twelve-module descriptions, editor count/implementation credits, Cambridge instruction consolidation and retained label table. Four manuscript boundary adjudications remain deferred; stored labels did not change. |
+| 19 | Fixed: the Aleppo comparison description names its historical U+05BD/U+05BF omission. Retired comparators remain retired. |
+| 20 | Fixed: the added mock freshness tests are replaced with real registered-output comparison and mechanical coverage checks, including CSS and JavaScript. |
+| 21 | Fixed: the five-priority-code-point descriptions, U+05C9 terminology and vowel-point exclusion. Hebrew mark order and current Scripture remain unchanged. |
+| 22 | Fixed: the child-form reader, grouping exceptions and two-strand/combined-form guides. Implicit-maqaf joining remains deferred. |
+| 23 | Fixed: the finite unused code, source pointers, dependency/diagnostic descriptions, deploy-root geometry lint and supported UXLC child projection. No new reading policy is selected. |
+| 24 | Fixed: the plain consumer notice, parashah guide, structural-boundary audience, scan-index inventory, narpas first-use glosses and notice coverage. Parsed Scripture payloads remain identical. |
+| 25 | Fixed: the approved pinned-report remedy, optional alternative fields, meaningful alternative display, date labels, header and cluster-safe highlights. Names and boundaries remain fixed; the naming/date convention is deferred. |
+| 26 | Deferred: source/revision/message date-label policy remains unchanged. |
+| 27 | Deferred: Job 4:12 adjudication and new evidence work. Current interpretation, survey and ledger remain unchanged. |
+| 28 | Fixed: translation title/labels, excerpt attribution and all three cleanup instructions; existing translation caveats remain. |
+| 29 | Fixed: license/landing-page facts, internal-link account and root styles. Naming, redundant dataset-stub removal and apostrophe policy remain deferred. |
+| 30 | Fixed: the two unsupported promises, four EVR source links, approved page locators, headings, catalogue references, citation spelling and title italics. Shelfmark spelling remains deferred. |
+| 31 | Fixed: the finite research inventories, source citations and contribution descriptions. Further manuscript-observation coverage and ledger links remain deferred. |
+| 32 | Fixed: exactly twenty PNG slugs use the current converter; all crop bytes, sizes and dimensions match their pre-edit manifest. Historical receipt names remain in the bases with the mapping in one update. |
+| 33 | Fixed: supported timing, sigil, scan-attribution and checkout-scope corrections. The original Spanish-locale official URL remains; unresolved external-source disagreements are disclosed rather than adjudicated. |
+| 34 | Fixed: subjects, hazard audiences, source contributions and ChatGPT-Codex attributions are named explicitly; manuscript names and historical quotations are preserved. |
+| 35 | Preserved: the plan's individual nine dispositions. No privacy judgment, new process/browsing rule, historical-act reversal, presentation policy, legarmeh representation choice or dependency removal. The Google comparator retirement remains resolved. The current September 16 review location is corrected. |
+| 36 | Fixed: the authored CSS/JavaScript pair is renamed to `mam-suggestions-report`; generated asset paths and report HTML remain byte-identical. |
+
+### Verification and generated-diff evidence before final integration
+
+**Passed: directly relevant checks on the implementation working tree based on the
+handoff commit.** The commands below use the shared interpreter from the primary
+root. The committed verification baseline and final gate results will be recorded
+after the source/product commit; no pending suite or mega result is claimed here.
+
+- `py/main_test.py py/repo_util/worktree_retirement_simulation_test.py py/tests/test_worktree_retirement_policy.py -q`: 35 passed in 210.30 seconds, using actual temporary Git repositories and retained evidence.
+- The reader/notice/mark-order/geometry/index/page/filename checks and `py/tests/clc_dual_cant_test.py`: all 45 checks passed. The first run passed 44 and exposed an index-based lint reading the approved deleted Cambridge stub; staging that deletion and rerunning the prose lint passed the remaining check.
+- `py/main_test.py py/tests/test_diff_mpplus_unpinned_latest.py py/tests/test_mpplus_alternative_oracle.py -q`: 10 passed in 19.17 seconds. The independent oracle compares all 18 alternative-change values from real release inputs; the report lint keeps combining marks with their base highlights.
+- Black at defaults formats only changed Python. The final source set contains 57 Python files; no repository-wide reformat was performed.
+- `py/main_parse.py ws` and the separate `py/main_authored.py gen-mam-parsed-docs` passed, each with 79 verification claims passed, zero failed and the existing one pending claim.
+- `py/main_authored.py gen-misc`, `gen-site --trust-surveys`, `py/main_verify_and_render_table.py` and `py/main_diff.py mpplus --all` completed successfully.
+
+**Verified unchanged:** 236 protected file hashes, the Scripture payloads of all 48
+parsed books after excluding only `header.consumer_notice`, twenty crop hashes/sizes/
+geometries, stored manuscript labels, surveys, ledger and published Holman HTML/CSS/JS.
+The five new receipt-family pointers pass an exact comparison allowing only the
+line-3 paragraph join and line-4 pointer. All frozen September 26 review turns remain
+byte-identical. Thirty-four manuscript figures remain across seven case pages, plus
+the existing URJ register figure. All six EVR crops have matching clickable-image
+and caption URLs with their specific volume-2 file fragments.
+
+The inspected generated changes are the approved notice headers and two parsed-guide
+HTML files; translation title/excerpt and index labels; page captions/source links,
+twenty image references, two paragraph deletions and removal of one unused SVG class;
+root title italics; and corrected change logs. The seven JSON entry counts are
+59, 565, 28, 113, 33, 76 and 4. The corresponding HTML/index card counts are
+59, 565, 28, 117, 35, 78 and 4 because existing split-word cards remain. All prior
+JSON card fields have identical values after excluding the new optional field.
+Five qere pointing migrations and the substantive alternative changes are visible;
+the two unchanged-qere note/wrapper cases remain suppressed. The gray-maqaf display
+places the existing flattened character correctly and retains its change description.
+
+**Completed: the approved issue-body correction.** Issue
+[MAM-basics#269](https://github.com/bdenckla/MAM-basics/issues/269) was read in full,
+dry-run, reviewed, edited and read back on September 28. The retained `40395aa3` base
+link now has its update sibling and the approved dated ChatGPT-Codex edit note.
+State, title, labels, assignees and comments were checked unchanged.
+
+The plan remains live during the full-suite, committed freshness, final merged-main
+mega, normal fast-forward/main push and complete configuration deployment gates.
+This review update remains `State: open` while its base survives.
+
+**Passed: the full suite after the final material source changes.**
+`py/main_test.py -q` passed 1,019 tests, with 5 skipped and 65 subtests passed,
+in 152.34 seconds. This result covers the final 57-file Python source/test set on
+the handoff-based implementation working tree. Later changes before the first
+implementation commit are documentation/record text only. The post-staging receipt,
+prose-convention and prose-mark-order lints separately check the new update files.

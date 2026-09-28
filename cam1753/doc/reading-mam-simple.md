@@ -39,8 +39,7 @@ Two choices in the shared reader belong to locating text in manuscripts, not to 
   (Ben's decisions of 2026-09-26, which the module docstring records with the rest).
   `ketiv_indices` says which entries of `words` hold a ketiv, which is unpointed.
 - **It joins the atoms across each maqaf into a single entry of `words`**, so an entry is
-  normally a chanted word rather than an atom. The exceptions are these, and none of them
-  falls in Psalms, Job or Proverbs, the books the Cambridge 1753 streams cover:
+  normally a chanted word rather than an atom. The reader has the following exceptions to that grouping:
   - Where the atom before a qere that is not written ends in a maqaf, one entry joins the
     atoms on either side of the qere, as 2 Sam 16:23's יִשְׁאַל־בִּדְבַ֣ר.
     The same happens at 2 Sam 18:20 and Jer 50:29.
@@ -48,6 +47,10 @@ Two choices in the shared reader belong to locating text in manuscripts, not to 
     the reader has none (Ben, 2026-09-26). So where MAM has one compound, the reader gives
     two entries: in 2 Kgs 5:18, יִסְלַח־נא and then יְהֹוָ֥ה,
     and in 2 Sam 13:33, כִּֽי־אם and then אַמְנ֥וֹן.
-  - In the Decalogue the reader takes MAM's combined text, which has the maqafs of both
-    strands, so one entry can join atoms that each strand alone divides between two chanted
+  - In the Decalogue the reader takes the combined representation of MAM's two strands, so one entry can join atoms that each strand alone divides between two chanted
     words: Deut 5:6's entries include לֹ֣א־יִהְיֶ֥͏ֽה־לְךָ֛֩.
+  - Where a `<kq>` qere ends in a maqaf, the reader keeps the ketiv as a separate
+    entry rather than joining it to the following atom. This occurs in the retained
+    streams at Job 7:1, 9:30 and 41:4.
+  - An `<implicit-maqaf/>` contributes no character and does not join the surrounding
+    entries. Whether such pairs should be joined remains deferred.

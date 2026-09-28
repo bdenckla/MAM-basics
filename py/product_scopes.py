@@ -29,11 +29,13 @@ THE THREE TIERS
 
 WHAT A CHANGE OWES
 
-A change that can reach tier 3 owes a mega run and a reading of the ``git diff`` it
-leaves; a change that cannot owes the suite.  CLAUDE.md's section "Integrating a
-worktree branch here: run the mega and read its ``git diff``, not the suite" states
-that rule and the four conditions on reading the diff; this module does not restate
-it.
+A documentation-only, comment-only, docstring-only, or instruction-text-only change owes neither the mega nor the
+suite. A change that can reach tier 3 owes a mega run and a reading of every tracked
+diff it leaves. Other executable-source, test, schema, or shared-data changes owe the
+suite. A change to a hand-run generator, or an input it reads, owes every affected
+hand-run generator and inspection of its outputs. AGENTS.md's "Integrating a worktree
+branch here: run the mega unless the branch is exempt" states the final worktree
+integration gate.
 
 TIER 3 IS THE MEGA'S STEP TABLE, AND THAT IS NOT EVERY ROUTE INTO A PRODUCT
 

@@ -45,10 +45,12 @@ The Leningrad Codex is therefore classified on the later-metsil side, and Koren 
 Tanakh are classified on the no-later-metsil side. WLC remains a transcription that records only
 the earlier mark; WLC's form is not evidence against Ben's independent reading of the manuscript.
 
-The finished report's summary item 3 should now say that all five class 1 cases are settled from
-manuscript images: 1 Samuel 17:5, 1 Kings 14:14, Psalms 60:10, Psalms 70:2 and Psalms 72:15.
-No class 1 case remains for Leningrad manuscript inspection. The lead of section 6 should say
-that the table gives locators for the five settled cases, rather than “the other three.”
+The summary passage “Section 6 has the links for the other three, 1 Kings 14:14, Psalms 60:10
+and Psalms 70:2” should now say that all five class 1 cases are settled from manuscript images:
+1 Samuel 17:5, 1 Kings 14:14, Psalms 60:10, Psalms 70:2 and Psalms 72:15. No class 1 case
+remains for Leningrad manuscript inspection. “The other three” belongs to that summary passage,
+not to section 6's lead. The separate lead beginning “Built by `py/main_verse_links.py`” should
+say that its table gives locators for the five settled cases.
 
 ## Psalms 60:10: Aleppo, Cambridge, Koren, and the Simanim Tanakh contrast with Leningrad
 

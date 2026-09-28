@@ -235,11 +235,12 @@ launch it. Ben, 2026-07-28: *"in sessions like this, I usually already have the 
 particularly after the first turn, this results in multiple copies up in my browser."* No
 `Start-Process`, and never the Claude Browser pane — Ben, 2026-07-26, the pane is **"too
 unreliable, and has yet to show any advantage over an external browser, for my needs."** Do not
-burn a turn diagnosing the pane, do not reach for it as a fallback, and do not treat the global
-`~/.claude/CLAUDE.md`'s older `file://`-URLs-work-in-the-pane material as a reason to try. No dev
+burn a turn diagnosing the pane, do not reach for it as a fallback, and do not treat
+the retired full user-level Claude body's `file://`-URLs-work-in-the-pane material as a reason to try. No dev
 server and no `.claude/launch.json` is ever needed for a local file.
 
 A link gives no screenshot back, so verify content with the **Read** tool on the file — better
 evidence than eyeballing anyway, and now the only evidence you have. Canonical statement: the
-global `~/.claude/CLAUDE.md` §"Showing me a local file", updated 2026-07-28. The transcription
+common `~/.codex/AGENTS.md` body, section "Show local artifacts with file links", imported by
+Claude Code through `~/.claude/CLAUDE.md`. The transcription
 workflow's own statement is `MAM-basics/doc/edition-transcription-workflow.md` §2.

@@ -68,6 +68,10 @@ Neither subordinate format is part of the entry-index schema above.
 - Page IDs are `{spread_number}{A|B}`: `0073A` is the left page of spread 73.
 - Column 1 is the right column, read first in Hebrew; column 2 is the left column.
 - Every column has 26 lines.
+- Preserve the stored Hebrew data exactly. Do not normalize it. Repository mark-order
+  and Latin NFC checks include this tree; the image terms are recorded in
+  [cam1753-spreads-provenance.md](cam1753-spreads-provenance.md) and
+  [../DATA-LICENSES.md](../DATA-LICENSES.md).
 
 ## Documentation
 

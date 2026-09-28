@@ -57,7 +57,6 @@ def annotated_img(
     *,
     viewbox_w,
     viewbox_h,
-    overlay_class="scan-annot-overlay",
 ):
     """<img> with a filled-highlight SVG overlaid, in a positioned wrapper.
 
@@ -85,7 +84,7 @@ def annotated_img(
     overlay = wlc_utils_html.svg(
         rects,
         {
-            "class": overlay_class,
+            "class": "scan-annot-overlay",
             "viewBox": f"0 0 {viewbox_w} {viewbox_h}",
             "preserveAspectRatio": "none",
             "aria-hidden": "true",

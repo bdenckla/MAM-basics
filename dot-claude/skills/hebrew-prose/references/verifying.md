@@ -251,8 +251,9 @@ until the policy reversed to NFC. This is advice a reviewer can override.
   redirect-host clone. `WLC_SCANS_DIR` is a different variable and is still live —
   `py/accgram/scan_page.py` reads it for the personal scan archive outside the repo, which is no
   repo of Ben's — so do not sweep it up with the two that were renamed.
-- **Committing and pushing: follow `~/.claude/CLAUDE.md` §"Git & commits — commit at will;
-  integrate worktrees at archival", which this bullet now cites rather than restates.** It read
+- **Committing and pushing: follow the common `~/.codex/AGENTS.md` body, section "Git and
+  commits", imported by Claude Code through `~/.claude/CLAUDE.md`.** This bullet cites that
+  section rather than restating it. It read
   "Commit only when Ben asks, directly to `main` (he works solo, no feature branches), and do not
   push unless asked" until 2026-09-09. That section reversed it on 2026-09-07: finished work is
   committed without asking; a secondary worktree commits to its own non-`main` branch rather than

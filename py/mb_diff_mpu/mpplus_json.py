@@ -75,6 +75,8 @@ def _serialize_diff(d):
             out["template_structure_changed"] = True
     if d["docnote_notes"]:
         out["docnote_notes"] = d["docnote_notes"]
+    if d.get("alternative_changes"):
+        out["alternative_changes"] = d["alternative_changes"]
     return out
 
 
@@ -93,7 +95,12 @@ def write_json(diffs, old_label, new_label, out_path):
     structural diffs get template_structure_changed=true. Structural
     diffs that render as separate cards are serialized as separate JSON
     entries as well. Excludes the bulky old_ep / new_ep raw MAM-parsed-plus
-    structures.
+    structures. An optional ``alternative_changes`` array records the recognized
+    trivial-template qere and deḥi stress-helper alternatives independently of the
+    selected text. Each entry has the current template family, one-based occurrence
+    in that family within the verse, role, kind, and the actual old/new Scripture
+    values. A qere pointing migration uses kind ``pointing-migration``; other
+    changes to these alternatives use ``content``.
     """
     expanded = []
     for diff in diffs:
