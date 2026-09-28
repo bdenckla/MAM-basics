@@ -33,10 +33,10 @@ transient data corresponding to today's persisted plain files.
 | --- | --- | --- |
 | The target is MAM-parsed plain, not MAM-parsed plus. | active | Remove the plain product and its product-only support. |
 | Keep `MAM-parsed/plus/` and the word `plus` in its public name and path. | active | Do not rename the surviving product. |
-| Remove the persisted/distributed plain JSON. | active | Delete `MAM-parsed/plain/` and stop every generator from recreating it. |
+| Remove the persisted/distributed plain JSON. | partially implemented | Commit `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` stopped every generator from recreating it; delete the tracked `MAM-parsed/plain/` tree next. |
 | Remove the plain survey and its generated graphs and data. | active | Delete its outputs and product-facing code; preserve only validations justified independently of the survey. |
 | Remove plain documentation and self-referential tests. | active | Delete plain pages, authoring sources, claims, examples, and tests whose subject or oracle is the retired product. |
-| Keep valuable raw-structure validation. | partially implemented | Commits `24b7f23ab80430a1cb413f8e4759d97fb5db3e2d` and `146f6145ad85acf9342b421174e35074480c4301` validate the transient parser-stage structure and raw-to-plus relationship before writes. Raw grammar-lock ownership still needs to move out of the plain survey. |
+| Keep valuable raw-structure validation. | implemented | Commits `24b7f23ab80430a1cb413f8e4759d97fb5db3e2d` and `146f6145ad85acf9342b421174e35074480c4301` validate the transient parser-stage structure and raw-to-plus relationship before writes; `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` moved raw grammar-lock ownership out of the plain survey. |
 | Make the plus survey self-contained. | implemented | Commit `146f6145ad85acf9342b421174e35074480c4301` embeds the full plus `mpasuq` result and removes the plus survey's dependency on `plain_result["mpasuq"]`. |
 | Make the plus consumer notice self-contained. | active | Remove its comparison with the retired plain product while preserving the substantive plus warnings. |
 | Limit the first writing phase to MAM-basics. | active | Audit sibling repositories read-only; make MAM-private changes in a separate task. |
@@ -67,24 +67,40 @@ execution for Ben.
    plain and 24 plus JSON files matched the tracked products byte-for-byte; plain
    writing remained enabled by design. `git diff --check` passed and the worktree
    was clean after the commit.
-4. The next bounded checkpoint transfers ownership of the raw expanded-stack lock
-   to the parser-stage validator, stops the parser from writing plain JSON, and
-   removes the obsolete plain wrapper if no caller remains. That checkpoint does
-   not yet delete the tracked plain product, its documentation, or its survey
-   outputs, and does not alter the plus consumer notice.
+4. The third checkpoint is complete in commit
+   `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`. It moved the unchanged raw
+   expanded-stack lock to the parser-stage validator, made the survey lock updater
+   plus-only, stopped production and candidate generation from writing or returning
+   plain paths, and deleted the callerless plain wrapper. The affected command
+   wording, callers, and mega-coverage declarations now describe plus-only output.
+5. The third checkpoint passed Black, 51 targeted tests, the full suite with 1,014
+   passed and five skipped, and the full 52-step mega. Its candidate contained
+   exactly 24 plus JSON files, no plain directory, and bytes identical to the 24
+   tracked plus files. The raw lock was a 100% rename with unchanged bytes. The
+   plus-only lock updater removed four stale direct-nesting edges left behind when
+   `73c6b1137777ad1a522949fcea290f8ac1f87a7b` wrapped those special-letter
+   templates; no other generated artifact changed. `git diff --check` passed and
+   the worktree was clean after the commit.
+6. The next bounded checkpoint completes the remaining MAM-basics retirement across
+   Phases 3 through 6 and commits it locally. The tracked plain trees are still live
+   inputs to current authoring, survey, verifier, and test code, so deleting a tree
+   without retiring those consumers would not be a coherent checkpoint. Complete
+   those coupled removals together, regenerate and verify MAM-basics, and stop at
+   the separate MAM-private compatibility gate. Do not edit MAM-private, integrate,
+   push, publish Pages, or archive the worktree in that checkpoint.
 
 ## Inputs and dated baseline
 
 The intended MAM-basics development checkout is
 `C:/Users/BenDe/.codex/worktrees/1a58/MAM-basics`. The required source commit for
-the next checkpoint is `146f6145ad85acf9342b421174e35074480c4301`. The original
+the next checkpoint is `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`. The original
 implementation baseline, `85cb7acd8df98089614de8e3e30bb67bc5a2c36a`, must remain
 an ancestor. The primary integration checkout is
 `C:/Users/BenDe/GitRepos/MAM-basics`. The shared interpreter is
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
 
-At the original implementation baseline, and again immediately before the first
-checkpoint, the dated removal inventory was:
+At the original implementation baseline, immediately before the first checkpoint,
+and after the third checkpoint, the dated removal inventory was:
 
 1. 25 files under `MAM-parsed/plain/`: 24 JSON books and `provenance.md`.
 2. 14 files under `gh-pages/MAM-parsed/plain/`: eight HTML pages and six SVGs.
@@ -178,7 +194,7 @@ than a permanent invariant.
 
 ## Phase 1: establish a complete current-use inventory
 
-Status through `146f6145ad85acf9342b421174e35074480c4301`: complete for the
+Status through `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`: complete for the
 current checkpoint boundary. The searches and read-only sibling audit found no
 live plain consumer outside MAM-basics. Repeat only focused drift checks for paths
 affected by a new checkpoint; do not redo the full discovery without evidence of
@@ -214,11 +230,11 @@ repositories in Phase 1.
 
 ## Phase 2: make the parser-stage value transient and validated
 
-Status through `146f6145ad85acf9342b421174e35074480c4301`: the in-memory
-parser-stage boundary and raw-to-plus validation are implemented. The semantic
-checks listed below are completed invariants, not work to recreate. The remaining
-Phase 2 work is to transfer raw expanded-stack-lock ownership and then stop the
-plain product write and its public wrapper.
+Status through `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`: complete. The
+in-memory parser-stage boundary, raw-to-plus validation, raw-lock ownership,
+plus-only product writes and return values, and deletion of the callerless public
+plain wrapper are implemented. The semantic checks listed below are completed
+invariants, not work to recreate.
 
 Refactor `parse_ws_products.generate` so the plain-shaped structure exists only in
 memory between Wikisource parsing and `add_plus_stuff`. The production and candidate
@@ -255,22 +271,20 @@ purpose-named validation modules where necessary:
 - nesting normal form and the expanded stack grammar that protect the parser
   representation.
 
-The current plain expanded-stack lock represents a valuable raw-stage invariant,
-not a reason to keep the survey. In the next checkpoint, move it unchanged from
-`py/tmpl_survey/expanded_stack_grammar_plain.lock.json` to the purpose-named
-`py/verify_mp/expanded_stack_grammar_parser_stage.lock.json`; make
-`py/verify_mp/parser_stage.py` own its read and comparison. Remove the raw-lock
-inference and update path from `py/main_tmpl_survey.py`; its command-line lock
-update must update only the plus lock. Keep the plus lock with the plus survey.
-Never update either lock merely to make a failure green.
+The former plain expanded-stack lock represents a valuable raw-stage invariant,
+not a reason to keep the survey. Commit `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`
+moved it unchanged to
+`py/verify_mp/expanded_stack_grammar_parser_stage.lock.json` and made
+`py/verify_mp/parser_stage.py` own its read and comparison. The survey command now
+updates only the plus lock, which remains with the plus survey. Never update either
+lock merely to make a failure green.
 
-After that ownership transfer, change `parse_ws_products.generate` and its callers
-to write and return only plus product paths. Update the affected wording and
-coverage in `py/main_parse.py`, `py/parse_ws.py`, `py/main_0_mega.py`, and
-`py/tests/test_mega_coverage.py`. Delete `py/py_misc/mam_parsed_plain.py` if the
-verified call graph has no remaining caller. The all-books candidate must then
-contain exactly 24 plus JSON files and no plain directory, and every candidate
-plus file must remain byte-for-byte equal to the tracked plus file.
+Commit `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` also changed
+`parse_ws_products.generate` and its callers to write and return only plus product
+paths, updated the affected wording and coverage, and deleted
+`py/py_misc/mam_parsed_plain.py` after verifying that it had no remaining caller.
+The all-books candidate contained exactly 24 plus JSON files and no plain directory,
+and every candidate plus file was byte-for-byte equal to the tracked plus file.
 
 Delete checks that only count, rank, graph, document, exemplify, or prove the
 existence of the retired plain product. Do not preserve the entire plain survey as
@@ -284,11 +298,12 @@ closed-roster checks may remain mechanical tests.
 
 ## Phase 3: retire the plain product and survey
 
-Status through `146f6145ad85acf9342b421174e35074480c4301`: the plus survey is
-self-contained, including full `mpasuq` data, but all tracked plain product,
-documentation, and survey trees still remain. The next checkpoint stops new plain
-JSON writes; deletion of the tracked trees and the remaining product-facing survey
-machinery is later Phase 3 work.
+Status through `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`: the plus survey is
+self-contained, including full `mpasuq` data, and production and candidate
+generation no longer writes plain JSON. All tracked plain product, documentation,
+and survey trees and their remaining product-facing consumers still remain. The
+next checkpoint deletes those trees and retires their coupled consumers across
+Phases 3 through 5 before running Phase 6 verification.
 
 Delete these generated trees completely:
 
@@ -319,6 +334,10 @@ tree; do not rename the plus product or falsely remove the whole tree from produ
 scope.
 
 ## Phase 4: make plus documentation and notices independent
+
+Status through `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`: not yet implemented.
+The next bounded checkpoint owns this work together with the coupled Phase 3 and
+Phase 5 removals.
 
 Rewrite the canonical MAM-parsed-plus consumer notice so it is true and complete
 without referring readers to the retired plain product. Prefer a plus-specific
@@ -375,6 +394,10 @@ text search empty.
 
 ## Phase 5: retire self-referential claims and tests
 
+Status through `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`: not yet implemented.
+The next bounded checkpoint must retire these consumers in the same coherent commit
+that deletes their plain product and survey inputs.
+
 Remove `mp.plain.*` documentation claims and their payload examples. Rewrite or
 remove `mp.both.*` claims according to their actual surviving subject:
 
@@ -404,7 +427,7 @@ self-referential coverage.
 ## Phase 6: regenerate and verify MAM-basics
 
 The last completed full verification checkpoint is
-`146f6145ad85acf9342b421174e35074480c4301`, with the results recorded in
+`4d4385c3cf9ec7ad385e87936739f8687b3cfc7e`, with the results recorded in
 “Implementation progress through 2026-09-28.” A later code checkpoint expires that
 result only for surfaces the later checkpoint can affect and must run the cheap,
 targeted, suite, generator, and final integration gates required by the current
