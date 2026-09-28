@@ -363,7 +363,7 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_tmpl_survey.py --write-expanded-stack-grammar-lock": (
         "Claude-written, accepted by Ben on 2026-09-10: every survey run is checked"
-        " against the locks, so rewriting them on every run would make that check pass"
+        " against the plus lock, so rewriting it on every run would make that check pass"
         " by construction.  Proposed in doc/mega-coverage-2026-09-10.md §4."
     ),
     "py/main_tmpl_survey.py --find-stack-path": (
@@ -425,9 +425,9 @@ NOT_IN_MEGA: dict[str, str] = {
         " Wikisource product generation that the parse-ws step runs."
     ),
     "py/main_parse.py ws-products": (
-        "A second parse of the Wikisource input, which writes candidate plain/ and"
-        " plus/ JSON to an --output-dir outside MAM-parsed/, for an independent check"
-        " of the products that the parse-ws step writes.  Recorded in"
+        "A second parse of the Wikisource input, which writes candidate plus/ JSON"
+        " to an --output-dir outside MAM-parsed/, for an independent check of the"
+        " product that the parse-ws step writes.  Recorded in"
         ' doc/PLAN-wikisource-derived-mam-products.md, whose Phase 4 says to "Avoid'
         ' parsing WS twice in one run", and whose Phase 2 record says that ws-products'
         " rejects a production-tree destination."

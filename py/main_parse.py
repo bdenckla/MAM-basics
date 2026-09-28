@@ -3,9 +3,9 @@
 
 Subcommands:
     ws
-                Parse downloaded Wikisource data into format 2 and production plain/plus.
+                Parse downloaded Wikisource data into format 2 and production plus.
     ws-products
-                Write candidate Wikisource-derived plain/plus JSON to an explicit directory.
+                Write candidate Wikisource-derived plus JSON to an explicit directory.
 
 Examples:
     .venv/Scripts/python.exe py/main_parse.py ws
@@ -43,7 +43,7 @@ def main() -> None:
 def _add_subcommands(subparsers) -> None:
     ws_parser = subparsers.add_parser(
         "ws",
-        help="Parse Wikisource data into format 2 and production plain/plus outputs.",
+        help="Parse Wikisource data into format 2 and production plus output.",
     )
     mutex = ws_parser.add_mutually_exclusive_group()
     mutex.add_argument("--book39")
@@ -57,7 +57,7 @@ def _add_subcommands(subparsers) -> None:
 
     products_parser = subparsers.add_parser(
         "ws-products",
-        help="Generate candidate Wikisource-derived plain/plus JSON.",
+        help="Generate candidate Wikisource-derived plus JSON.",
     )
     parse_ws_products.add_args(products_parser)
 

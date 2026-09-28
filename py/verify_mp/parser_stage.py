@@ -15,7 +15,7 @@ from tmpl_survey import column_d_0_store_the_mpasuq_call_plus as cds_plus
 from tmpl_survey import nesting_normal_form
 
 _EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
-    paths.repo_root() / "py/tmpl_survey/expanded_stack_grammar_plain.lock.json"
+    paths.repo_root() / "py/verify_mp/expanded_stack_grammar_parser_stage.lock.json"
 )
 _EXPECTED_ARGC = {
     "כו״ק": 2,

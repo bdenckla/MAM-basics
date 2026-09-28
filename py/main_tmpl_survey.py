@@ -16,9 +16,6 @@ _PLAIN_OUT_DIR = "out/tmpl-survey-plain"
 _PLUS_OUT_DIR = "out/tmpl-survey-plus"
 _PLAIN_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plain" / "svg")
 _PLUS_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plus" / "svg")
-_PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
-    "py/tmpl_survey/expanded_stack_grammar_plain.lock.json"
-)
 _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
     "py/tmpl_survey/expanded_stack_grammar_plus.lock.json"
 )
@@ -103,12 +100,7 @@ def _read_json_file(path):
         return json.load(fp)
 
 
-def _write_expanded_stack_grammar_locks(plain_grammar, plus_grammar):
-    file_io.json_dump_to_file_path(
-        plain_grammar,
-        _PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
-        generator_file=__file__,
-    )
+def _write_expanded_stack_grammar_lock(plus_grammar):
     file_io.json_dump_to_file_path(
         plus_grammar,
         _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
@@ -116,49 +108,27 @@ def _write_expanded_stack_grammar_locks(plain_grammar, plus_grammar):
     )
 
 
-def _assert_with_expanded_stack_grammar_locks(
-    plain_raw_sc,
+def _assert_with_expanded_stack_grammar_lock(
     plus_raw_sc,
-    write_expanded_stack_grammar_locks=False,
+    write_expanded_stack_grammar_lock=False,
 ):
-    plain_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(
-        plain_raw_sc
-    )
     plus_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(
         plus_raw_sc
     )
 
-    if write_expanded_stack_grammar_locks:
-        _write_expanded_stack_grammar_locks(
-            plain_inferred_grammar,
-            plus_inferred_grammar,
-        )
+    if write_expanded_stack_grammar_lock:
+        _write_expanded_stack_grammar_lock(plus_inferred_grammar)
 
-    missing_paths = [
-        path
-        for path in (
-            _PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
-            _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
-        )
-        if not os.path.exists(path)
-    ]
-    if missing_paths:
-        missing = ", ".join(missing_paths)
+    if not os.path.exists(_PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH):
         raise FileNotFoundError(
-            "Expanded stack grammar lock file(s) not found at "
-            f"{missing}. "
+            "Expanded stack grammar lock file not found at "
+            f"{_PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH}. "
             "Run py/main_tmpl_survey.py --write-expanded-stack-grammar-lock "
-            "to create/update both plain and plus locks."
+            "to create/update the plus lock."
         )
 
-    plain_grammar_lock = _read_json_file(_PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH)
     plus_grammar_lock = _read_json_file(_PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH)
 
-    nesting_normal_form.assert_stack_counts_follow_expanded_grammar(
-        plain_raw_sc,
-        plain_grammar_lock,
-        dataset_name="plain survey (plain expanded stack grammar lock)",
-    )
     nesting_normal_form.assert_stack_counts_follow_expanded_grammar(
         plus_raw_sc,
         plus_grammar_lock,
@@ -171,10 +141,9 @@ def almost_main(write_expanded_stack_grammar_lock=False):
     case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
     plain_result, plain_raw_sc = survey_plain.survey(case_rank_maps=case_rank_maps)
     plus_result, plus_raw_sc = survey_plus.survey(case_rank_maps=case_rank_maps)
-    _assert_with_expanded_stack_grammar_locks(
-        plain_raw_sc,
+    _assert_with_expanded_stack_grammar_lock(
         plus_raw_sc,
-        write_expanded_stack_grammar_locks=write_expanded_stack_grammar_lock,
+        write_expanded_stack_grammar_lock=write_expanded_stack_grammar_lock,
     )
 
     plain_result["normal_order_cov_counts_by_case"] = (
@@ -232,9 +201,8 @@ def build_parser() -> argparse.ArgumentParser:
         "--write-expanded-stack-grammar-lock",
         action="store_true",
         help=(
-            "Infer expanded stack grammar separately for plain and plus surveys, "
-            "write/update both lock files, and validate the current run against "
-            "the matching lock for each dataset."
+            "Infer the plus survey's expanded stack grammar, write/update its "
+            "lock file, and validate the current run against that lock."
         ),
     )
     stack_path_lookup.add_parser_args(parser)
