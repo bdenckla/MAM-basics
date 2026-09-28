@@ -170,10 +170,7 @@ def almost_main(write_expanded_stack_grammar_lock=False):
     """Survey the use of templates in MAM plain and plus."""
     case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
     plain_result, plain_raw_sc = survey_plain.survey(case_rank_maps=case_rank_maps)
-    plus_result, plus_raw_sc = survey_plus.survey(
-        plain_result["mpasuq"],
-        case_rank_maps=case_rank_maps,
-    )
+    plus_result, plus_raw_sc = survey_plus.survey(case_rank_maps=case_rank_maps)
     _assert_with_expanded_stack_grammar_locks(
         plain_raw_sc,
         plus_raw_sc,

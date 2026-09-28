@@ -250,7 +250,7 @@ def _do_a_book24(bk24id, accum):
         _do_a_book39(book39, accum)
 
 
-def survey(plain_mpasuq, case_rank_maps):
+def survey(case_rank_maps):
     """Survey the use of templates in MAM plus.
 
     Returns (result_dict, raw_stack_counts, docnote_arg2_only_leaf_templates).
@@ -281,16 +281,10 @@ def survey(plain_mpasuq, case_rank_maps):
                 "documentation, apparatus, formatting, and alternative branches."
             ),
         },
-        "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),
+        "mpasuq": plus_mpasuq,
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
         "column_counts": _flatten_col_counts(accum),
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
     return result, accum["stack_counts"]
-
-
-def _mpasuq_dedup(plus_mpasuq, plain_mpasuq):
-    if plus_mpasuq == plain_mpasuq:
-        return "same as plain"
-    return plus_mpasuq

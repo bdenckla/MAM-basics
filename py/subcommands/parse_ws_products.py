@@ -65,9 +65,10 @@ def generate(output_dir, bkids=None, parsed_books=None):
     out_paths = []
     for bk24id, light_books in grouped.items():
         parser_stage = mam_parser_stage.add_header(light_books)
-        parser_stage_validation.validate(parser_stage)
+        validation = parser_stage_validation.validate(parser_stage)
         plain = mam_parsed_plain.add_consumer_notice(parser_stage, "wikisource")
         plus = mam_parsed_plus.add_plus_stuff(parser_stage)
+        parser_stage_validation.validate_plus_conversion(parser_stage, validation, plus)
         filename = tbn.ordered_short_dash_full_24(bk24id) + ".json"
         book_paths = {}
         for kind, data in (("plain", plain), ("plus", plus)):
