@@ -54,7 +54,10 @@ matters; clearing one axis does not clear the other.
 
 - Commit finished work without asking. A commit is an ordinary implementation step.
 - In a primary checkout, commit directly to `main` and push `main` normally. Do not create a
-  feature branch merely because work has begun.
+  feature branch merely because work has begun. A repository procedure that explicitly names a
+  shared branch on `origin`, such as a dual-agent review round, is an exception: a primary checkout
+  may temporarily use a local carrier for that branch under the procedure's handoff and integration
+  rules.
 - A secondary worktree uses its existing local branch. If a new Codex-managed worktree is
   detached, follow `codex-worktree-tasks` for exact checkout verification and the
   `codex-worktree-<worktree-id>` branch name. Commit there without pushing the worktree branch.
@@ -77,10 +80,13 @@ A readiness question carries permission to do one or two small, obviously correc
 steps, such as filling a simple plan gap, updating a stale copy, or committing finished work. A
 choice requiring judgment remains Ben's decision.
 
-An ordinary secondary worktree commits locally without pushing its branch. A
-long-lived branch whose integration awaits Ben's request is an exception: push the
-worktree branch to origin after every commit as a backup, without pushing main.
-Follow the branch's explicit authorization and integration procedure.
+An ordinary secondary worktree commits locally without pushing its branch. A long-lived branch
+whose integration awaits Ben's request is an exception: push the worktree branch to origin after
+every commit as a backup, without pushing main. A procedure may instead name a shared branch on
+`origin` as its coordination boundary. In that case, every authorized checkout may use its own
+local carrier branch, and each completed handoff commit is pushed to the one named remote branch;
+the local branch name and checkout path are not shared state. Follow the branch's explicit
+authorization and integration procedure.
 
 ## Linked-worktree safeguards shared by Claude and Codex
 
@@ -329,9 +335,11 @@ satisfy a quota; keep tightly coupled work local when coordination would cost mo
 
 The root agent remains the orchestrator. The root agent defines scope, collects and reconciles
 sub-agent results, verifies material claims before adopting them, owns integration, and owns the
-final answer. In a shared checkout, only one agent writes, stages or commits at a time. Delegate
-read-only investigation freely; if concurrent agents must write, give the agents separate verified
-worktrees. A sub-agent never stages or commits another agent's unfinished files.
+final answer. Within any one checkout, only one agent writes, stages or commits at a time. A
+procedure with a shared remote branch may impose a stricter one-writer rule across separate
+checkouts as well. Delegate read-only investigation freely; if concurrent agents must write, give
+the agents separate verified worktrees. A sub-agent never stages or commits another agent's
+unfinished files.
 
 ## Final messages begin with one H1 report heading
 

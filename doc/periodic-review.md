@@ -20,11 +20,12 @@ checkable work to another sub-agent, either in parallel or as a sequential hando
 reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
 reports, verifies the claims it adopts, and owns the findings file and commit.
 
-In a shared checkout, only one agent writes, stages or commits at a time. Other sub-agents report
-without editing unless writing responsibility is explicitly handed to one sub-agent. Use
-delegation when it can save time, protect the root reviewer's context or improve confidence, not
-merely to create another task. The mandatory pre-commit check under "Reviewing the review, with the
-same agent and with Ben" still applies.
+Within any one checkout, only one agent writes, stages or commits at a time. A procedure with a
+shared remote branch may impose a stricter one-writer rule across separate checkouts as well. Other
+sub-agents report without editing unless writing responsibility is explicitly handed to one
+sub-agent. Use delegation when it can save time, protect the root reviewer's context or improve
+confidence, not merely to create another task. The mandatory pre-commit check under "Reviewing the
+review, with the same agent and with Ben" still applies.
 
 ## What the periodic review is
 
