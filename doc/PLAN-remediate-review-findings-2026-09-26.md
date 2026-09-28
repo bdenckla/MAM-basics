@@ -1,6 +1,9 @@
 # Remediate the September 26, 2026 dual-agent review of MAM-basics
 
-State: live; approved for execution 2026-09-28; remediation in progress.
+State: executed 2026-09-28.
+
+Completion evidence: [the review's live update](dual-agent-review-2026-09-26-turn-01-claude-update.md),
+anchor "Final integration and configuration deployment completed, 2026-09-28".
 
 Prepared by ChatGPT-Codex on 2026-09-28, New York time. Ben instructed: "Continue the review
 process. I think in the narrow sense, the review is done, but next comes remediation, or

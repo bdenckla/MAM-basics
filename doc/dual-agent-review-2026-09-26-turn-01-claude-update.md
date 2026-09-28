@@ -701,3 +701,46 @@ The approved issue correction, all active remediation and every required source,
 generator, suite and mega check are complete. Final main fast-forward/push and
 complete user-configuration deployment/check remain pending. The plan stays live;
 this update stays open while its base survives.
+
+## Final integration and configuration deployment completed, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. **Completed: all approved
+active remediation and the final integration/deployment gates.** This entry supersedes
+"Final main fast-forward/push and complete user-configuration deployment/check remain
+pending" in "Final generation gates passed, 2026-09-28", and the plan's former
+"remediation in progress" State. Close-out steps 1–4 are complete. Every explicit
+deferral and no-action disposition remains as recorded in the 36-finding table;
+the frozen numbered review turns remain byte-identical.
+
+**Integrated and pushed normally:** primary `main` was clean at
+`85cb7acd8df98089614de8e3e30bb67bc5a2c36a`, then fast-forwarded to the backed-up
+execution branch at `583a0c2e116f072eaab2759be52bd86416d0b421`. The final fetched
+`origin/main`, `57d2456f3f22f1c8df01a5ea96a309e54a39214c`, was an ancestor;
+the normal main push advanced that remote ref to `583a0c2e`. No primary merge,
+history rewrite, force push or discarded work was used. The source check baseline
+remains `2374ea3085db57f1de9ed04a81e93e238eb83551`; the later commit adds only the
+verified generation-gate record.
+
+**Deployed and checked:** from the primary checkout on `main`,
+`py/main_repo_util.py --sync-user-config` fetched and validated the complete source
+at `refs/remotes/origin/main@583a0c2e116f072eaab2759be52bd86416d0b421`, installed
+ten changed mappings and verified all 21 mappings clean. The subsequent complete
+`--sync-user-config --check` used the same freshly fetched source and returned
+`USER_CONFIG_PROBLEM_COUNT=0`, with exit status zero. Live instructions, hooks and
+skills were changed only through the approved deployment command.
+
+**Preserved for separate cleanup:** the original DAR registration remains locked
+with reason "active dual-agent review 2026-09-26"; its old directory remains absent.
+The execution branch `dar-2026-09-26` and its remote backup are retained. A final
+local-ref check confirms `worktree-dar-2026-09-26` absent, and the remote-ref read
+returns only `dar-2026-09-26` of the two names. No lock removal, worktree retirement,
+registration pruning or additional branch deletion occurred.
+
+The execution plan is now `State: executed 2026-09-28` and becomes a receipt.
+This review update remains `State: open` while its base survives. The final phase
+finishes by committing these two documentation changes on the retained execution
+branch, backing up that commit, and fast-forwarding/pushing main normally. These
+completion records leave source, generated products and canonical configuration
+bytes unchanged, so the suite, mega, freshness and deployment evidence above remains
+applicable. The complete read-only configuration check is repeated after the final
+receipt push; no new generator or full-suite run is required for these records.
