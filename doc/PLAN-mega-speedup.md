@@ -338,8 +338,9 @@ are worth carrying here:
    file in it looks added, and the path-filtered walk that dated unpinned-latest returned such a
    commit rather than finding nothing. The cloud record's §7 has the finding, which reproduced
    identically on 3.13, but blames a missing parent object, which the cloud update corrects. Since
-   `b5dd2ffb`, `diff-mpplus` labels unpinned-latest by the tree id of `MAM-parsed/plus` and gives
-   it no date, so a shallow clone no longer changes that report; no cloud run has confirmed it yet.
+   `b5dd2ffb`, `diff-mpplus` labels the end of unpinned-latest, HEAD, by the tree id of
+   `MAM-parsed/plus` and gives it no date, so a shallow clone no longer changes that report; the
+   cloud runs that step 6 cites have confirmed it.
 5. **The environment's setup script failed until Ben fixed it on 2026-09-14; steps 3 and 4 below
    survive it either way.** It failed with exit code 2, having built a 3.13 virtual environment
    and then looked for `requirements.txt` in `/home/user`, the parent of the clone rather than the
@@ -411,7 +412,13 @@ Steps:
    shallow clone truncates: `vendoring-audit`, which dated each vendored copy by its last commit
    and was removed from the mega that day, and `diff-mpplus`, which dated unpinned-latest by the
    last commit to `MAM-parsed/plus` until `b5dd2ffb` labelled that report by the tree's id
-   instead. No cloud run has confirmed the clean tree yet.
+   instead. Cloud runs have since confirmed the clean tree: the messages of `ee0d66d5`
+   (2026-09-25), `f4d81285` (2026-09-26) and `ff7eeb03` (2026-09-27), each committed from a
+   Claude cloud container, record a mega run that left no tracked diff. `ee0d66d5` also records
+   that its run first stopped at `diff-mpplus`, because its shallow clone lacked `cb95915`, the
+   end of the release named 2026-09-17, until that one commit was fetched at depth 1. Since
+   `cb95915` was archived on 2026-09-28 in `MAM-parsed/historical/`, where each later boundary is
+   archived when it is pinned, a cloud run should need no fetch.
 7. **Write the record**: a new dated document, `doc/mega-timing-cloud-<date>.md`, with the
    environment, each step's three times, the skips, and Phase 1's medians beside them if Phase 1
    has run. In the same commit, which names both paths, update this plan's Phase 2 status. Push
