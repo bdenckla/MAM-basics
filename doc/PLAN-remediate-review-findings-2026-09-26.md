@@ -1,6 +1,6 @@
 # Remediate the September 26, 2026 dual-agent review of MAM-basics
 
-State: live; detailed plan drafted 2026-09-28; awaiting approval of concrete wording and execution.
+State: live; approved for execution 2026-09-28; remediation not started.
 
 Prepared by ChatGPT-Codex on 2026-09-28, New York time. Ben instructed: "Continue the review
 process. I think in the narrow sense, the review is done, but next comes remediation, or
@@ -10,12 +10,15 @@ backup pushes by replying "yes you may push". Those approvals are recorded in
 [the September 26 review's live update](dual-agent-review-2026-09-26-turn-01-claude-update.md),
 anchor "Ben approved the complete dispositions and branch backup, 2026-09-28".
 
-The dispositions are approved. The concrete editorial replacements and execution in this
-plan still require approval under [the periodic-review procedure](periodic-review.md),
-anchors "Close-out: from findings to dispositions" and "Separate defects from editorial
-proposals" (D7). Preparing or committing this plan does not implement its changes.
-An approval of this plan authorizes the stated repairs, including the explicitly identified
-pinned change-log correction, but does not select any deferred semantic or policy choice.
+Ben approved the concrete wording and execution of this plan at
+`1a92af88c82aecec0e637eddf23942c2c7c52377` on 2026-09-28 by replying:
+"I approve. What's next? Will you give me a prompt for a new session?"
+That commit freezes the approved requirements, changed paths, concrete replacements,
+verification scope, and deferrals. The approval includes the pinned change-log correction
+and optional `alternative_changes` JSON field; no deferred semantic or policy choice is
+selected. The September 26 review's live update records the approval at anchor
+"Ben approved the detailed plan and requested a fresh execution session, 2026-09-28".
+Preparing the handoff does not execute the remediation.
 
 Ben suggested "ChatGPT-Codex" or "OpenAI-Codex" on 2026-09-28 to distinguish
 the agent from manuscripts. This plan selects "ChatGPT-Codex" for new agent
@@ -963,8 +966,9 @@ classify each surviving historical occurrence instead of blindly replacing it.
 
 ## Execution, verification and integration
 
-After Ben approves this concrete plan, freeze the approval scope in the September 26
-review's live update with the actual date and approved plan commit. Use coherent
+Ben's 2026-09-28 approval scope and plan snapshot are frozen in the September 26
+review's live update, anchor "Ben approved the detailed plan and requested a fresh
+execution session, 2026-09-28". Use coherent
 dependency phases: policy/record repairs; reader/notices/alternative-change logic;
 bounded safety/lint work; regenerations and final checks. These are dependency phases,
 not permission to implement only part of the approved work. The root executor may

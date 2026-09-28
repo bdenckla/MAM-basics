@@ -467,3 +467,36 @@ branch remains at `85cb7acd8df98089614de8e3e30bb67bc5a2c36a`.
 This revision changes the live plan and this update. Remediation execution
 approval remains pending; steps 3 and 4 remain pending. This update remains
 `State: open` while its base survives.
+
+## Ben approved the detailed plan and requested a fresh execution session, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. Ben said:
+"I approve. What's next? Will you give me a prompt for a new session?"
+This approval applies to the complete
+[remediation plan at the approved commit](https://github.com/bdenckla/MAM-basics/blob/1a92af88c82aecec0e637eddf23942c2c7c52377/doc/PLAN-remediate-review-findings-2026-09-26.md),
+`1a92af88c82aecec0e637eddf23942c2c7c52377`, including the ChatGPT-Codex naming revision.
+That immutable Git version is the approval snapshot for the requirements, finite
+reader-facing wording, data/policy/code replacements, changed paths or artifacts,
+verification scope, and every deferred or no-action disposition. The live plan's
+approval metadata and State are updated here without changing that approved scope.
+
+The approved work includes the pinned change-log HTML/JSON repairs and optional
+`alternative_changes` field, the finite asset-name changes, the finite issue-body
+correction, and the stated final integration and complete user-configuration deployment.
+No in-scope approval question remains. The explicit deferrals remain deferred; this
+approval supplies no new semantic choice or broader research scope.
+
+Close-out steps 1 and 2 are complete. Step 3, remediation execution, and step 4, the
+final integration gate, remain pending. The fresh executor uses the existing locked
+development checkout `C:/Users/BenDe/.Codex/worktrees/dar-2026-09-26/MAM-basics`,
+branch `dar-2026-09-26`, and owns execution and final integration into primary
+`C:/Users/BenDe/GitRepos/MAM-basics`, branch `main`. The primary clone's shared
+interpreter and the full verification, commit, backup and deployment sequence are
+specified in the plan. Keep one writer; intermediate phases back up the DAR branch
+without integrating or pushing main. Keep the lock and checkout for separate cleanup
+after the execution task ends.
+
+Deliver the fresh-session prompt only after this approval record is committed,
+backed up to `origin/dar-2026-09-26`, and the development checkout is clean. No
+remediation implementation has occurred during preparation. This update remains
+`State: open` while its base survives.
