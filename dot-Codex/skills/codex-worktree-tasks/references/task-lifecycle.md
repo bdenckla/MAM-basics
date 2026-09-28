@@ -6,6 +6,11 @@ Before another task receives writing responsibility, make the current worktree c
 the complete handoff state locally. Create or fork the successor only after that commit exists.
 The current task remains responsible for final integration when Ben asks to archive it.
 
+An explicit procedure that names a shared branch on `origin` replaces the local-only handoff: the
+handoff is complete only after the promised commit is pushed normally to that exact remote branch.
+The successor may use another checkout and verifies the fetched remote tip rather than depending
+on the predecessor's worktree or checkout-local branch name.
+
 Identify all three before creating a successor:
 
 1. The source task and its actual checkout.
