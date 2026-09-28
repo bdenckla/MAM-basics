@@ -10,8 +10,11 @@ sessions.
 ## Source
 
 - Ben downloaded `C:/Users/BenDe/Downloads/public-archivedwl-808.zip` from a pCloud public link.
-  The images in it are the National Library of Israel's images of the codex. Who prepared the
-  pCloud folder is not known.
+  The images in it are the National Library of Israel's images of the codex. Ben reports on
+  2026-09-28 that the link belongs to Avi's pCloud directory. A different zip in that directory
+  has the images absent from this zip, but Ben does not intend to locate it now. Avi used two zip
+  files to separate Prophets from Writings; this manuscript spans both divisions and fits that
+  organization awkwardly. The other zip's filename and exact location have not been recorded.
 - The zip's Mark of the Web is its `Zone.Identifier` stream. It has `ZoneId=3`,
   `ReferrerUrl=https://u.pcloud.link/`, and a `HostUrl` of `https://apinyc1.pcloud.com/getpubzip`
   followed by a query string, which is left out here. This was re-measured on 2026-09-25.
@@ -27,7 +30,7 @@ Ben asked that sessions never unzip it.
 - The files are dated 2022-04-11, from 03:27:54 to 04:09:58. Zip timestamps have no time zone.
   The top folder's entry and Part A's are dated 2025-11-25, and Part B's is dated 2026-04-06.
 - Everything is under a top folder, `L-A_EVR-II-B-247_55/`, in two subfolders:
-  - Part B's subfolder is named `Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM`. It holds 498 images, numbered 001–004 and 496–989 and named `B247, B55 B (Large)-<NNN>-FL<id>.jpg`, and their FL ids increase with the number. The first reading session found that they run from 2 Chronicles 11 through Nehemiah, so the Prophets, presumably images 005–495, are not in the download. In the NLI's viewer the NLI session found 1 Samuel on images 116 and 120 and 1 Kings on image 186.
+  - Part B's subfolder is named `Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM`. It holds 498 images, numbered 001–004 and 496–989 and named `B247, B55 B (Large)-<NNN>-FL<id>.jpg`, and their FL ids increase with the number. The first reading session found that they run from 2 Chronicles 11 through Nehemiah, so the Prophets, presumably images 005–495, are not in this zip. Ben reports that Avi's other zip has those images. In the NLI's viewer the NLI session found 1 Samuel on images 116 and 120 and 1 Kings on image 186.
   - Part A's subfolder is named ` Part A נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה  -  CHRONICLES`, beginning with a space. It holds 32 images named `FL<id>.jpg`, from FL47676695 to FL47676850.
 - The Hebrew in both subfolder names is the NLI's title for the codex. In a Claude translation it
   means "Prophets and Writings (Eastern, 10th–11th century; the missing part in Cairo 22),
@@ -35,8 +38,8 @@ Ben asked that sessions never unzip it.
 - 34 of Part B's filenames have a label after the FL id. Examples are `_CONTENTS` on image 004,
   `_CHRONICLES-II-11` on image 496 and `_Psalms-14` on image 577. They are not the NLI's: the
   NLI's manifest labels every canvas only "Page N" and has no table of contents, as the NLI session
-  found on 2026-09-25. They presumably come from whoever prepared the pCloud folder. The page
-  index leaves them out because they are unverified.
+  found on 2026-09-25. They presumably come from whoever prepared this zip. The page index leaves
+  them out because they are unverified.
 
 ## The extraction
 
@@ -140,4 +143,5 @@ download's folder was opened or listed.
 | 714 | FL48719553 | 4,991,317 | 6048 × 7104 |
 
 The page index also has records for images 120 and 186, which the NLI session located in the
-NLI's viewer. The download lacks them, so they have no row here.
+NLI's viewer. This zip lacks them, so they have no row here; Ben reports that Avi's other zip has
+the images.
