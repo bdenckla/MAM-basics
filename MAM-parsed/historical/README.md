@@ -56,6 +56,40 @@ release, whether a MAM-parsed or a MAM-basics commit, is labelled by its full
 hash and that commit's date in New York time; any other MAM-basics ref, such
 as HEAD, is labelled by the git tree id of `MAM-parsed/plus` and has no date.
 
+To pin a release ending at HEAD, commit `MAM-parsed/plus/` and run, from the
+MAM-basics root:
+
+```powershell
+.venv/Scripts/python.exe py/main_diff.py mpplus --pin <name>
+```
+
+The command appends `{"old": <the latest release's end>, "new": <HEAD's
+7-character hash>, "name": <name>}` to `releases.json`, writes HEAD's snapshot
+and manifest entry, regenerates the change log, and prints the paths to stage.
+It commits nothing. The name is required and never derived: the earlier names
+begin with their end commit's New York date, but release 2026-09-17 ends at a
+commit dated 2026-09-16. The command refuses uncommitted changes under
+`MAM-parsed/plus/`, a name already in `releases.json`, a release whose
+`plus/*.json` blobs are those of the latest release's end, and a short hash that
+already begins a snapshot's hash. Each pin adds a snapshot of about 13 MB to
+every checkout, sparse checkouts of `MAM-parsed/` included, and to Git history
+for good.
+
+Every change-log run refuses, before comparing anything, a boundary of
+`releases.json` that has no snapshot, and names the fix. For a boundary pinned
+without `--pin`, run this in a clone that has the boundary's commit, then run
+`--all`:
+
+```powershell
+.venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>
+```
+
+A shallow clone that lacks the commit can fetch it once by its full hash:
+
+```powershell
+git fetch --depth=1 origin <full hash>
+```
+
 For an arbitrary pre-migration comparison, supply both revisions and opt
 into the sibling clone:
 

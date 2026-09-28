@@ -34,6 +34,7 @@ class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
             mock.patch.object(
                 diff_mpplus, "_latest_release_entry", return_value={"new": "v1"}
             ),
+            mock.patch.object(diff_mpplus, "_refuse_unstored_boundaries"),
             mock.patch.object(
                 diff_mpplus,
                 "generate_report",
@@ -88,6 +89,7 @@ class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
                 legacy_history=True,
                 output=None,
                 archive=None,
+                pin=None,
             )
             named_output = f"{diff_mpplus.CHANGE_LOG_DIR}/{entry['name']}.html"
             with mock.patch.object(diff_mpplus, "generate_report") as generate_mock:

@@ -1,9 +1,12 @@
 """Read stored release inputs and committed MAM-parsed data.
 
-Named historical releases use the tracked snapshots in MAM-parsed/historical/.
-HEAD and other current repository refs use MAM-parsed/plus/ in MAM-basics.
-Only an explicit legacy: revision reads the sibling MAM-parsed Git repository.
-That optional mode performs read-only Git operations and never fetches or clones.
+Every boundary of a named release uses its tracked snapshot in MAM-parsed/historical/:
+the six pre-migration boundaries, MAM-parsed commits, and each MAM-basics commit
+archived when it was pinned, since a shallow clone lacks such a commit within days.
+HEAD and any other MAM-basics ref use MAM-parsed/plus/ in MAM-basics Git, which has
+HEAD in every clone. Only an explicit legacy: revision reads the sibling MAM-parsed
+Git repository. That optional mode performs read-only Git operations and never
+fetches or clones.
 """
 
 from dataclasses import dataclass
@@ -73,7 +76,9 @@ def stored_commit(rev, manifest=None):
         manifest = load_manifest()
     matches = [sha for sha in manifest["revisions"] if sha.startswith(rev.lower())]
     if len(matches) > 1:
-        raise ValueError(f"Ambiguous stored MAM-parsed revision: {rev}")
+        raise ValueError(
+            f"Ambiguous stored release revision {rev!r}: it begins {', '.join(matches)}"
+        )
     return matches[0] if matches else None
 
 
@@ -266,13 +271,22 @@ def resolve(rev):
     real change. The report then published a wrong hash and date over correct diffs, as
     section 7 of doc/mega-timing-cloud-2026-09-14.md and its update record. On 2026-09-14
     Ben chose the tree id instead. ``git rev-parse <commit>:MAM-parsed/plus`` needs only
-    the commit and its trees, which every shallow clone has, and prints the same id in
-    every clone. A tree that a later commit restores gets its old id back, which is
-    right, since the inputs are then identical: 73c6b113 restored 209b4c05's tree, and
-    both carry 2072b5f9. So HEAD keeps one id until MAM-parsed/plus changes, and a report
-    regenerated over unchanged inputs is byte-identical. In a clone with full history,
+    the commit and its trees, which a shallow clone has for every commit inside its
+    window, as HEAD always is, and prints the same id in every clone. A tree that a
+    later commit restores gets its old id back, which is right, since the inputs are
+    then identical: 73c6b113 restored 209b4c05's tree, and both carry 2072b5f9. So HEAD
+    keeps one id until MAM-parsed/plus changes, and a report regenerated over unchanged
+    inputs is byte-identical. In a clone with full history,
     ``git log --full-history --find-object=<tree id> -- MAM-parsed/plus`` lists the
     commits that introduced or removed a tree.
+
+    WHY A PINNED BOUNDARY IS ARCHIVED. A commit outside a shallow clone's window cannot
+    be read at all, and a pinned boundary falls outside a depth-50 clone of main within
+    days: on 2026-09-28 the window of 8c2fa6c3 reached back only to 2026-09-22 and lacked
+    cb95915, which 78559eba had pinned on 2026-09-17. So, by Ben's decisions of
+    2026-09-28, each MAM-basics boundary is archived when it is pinned and resolves as a
+    stored release, and the change log refuses a boundary that is not stored;
+    ``mpplus_archive`` writes the archives.
 
     TWO QUESTIONS, ONE ID. Ben observed on 2026-09-14, having chosen the tree id, that
     two distinct questions had been fused into one. The first is what a reader of the

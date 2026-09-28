@@ -3,7 +3,10 @@
 Exports:
     archive_bytes     — the deterministic ZIP holding a set of plus/ members
     git_blob_id       — the Git object id of a blob's bytes
-    plus_blobs        — the MAM-parsed/plus/*.json blobs at a MAM-basics commit
+    head_commit       — the full hash of MAM-basics HEAD
+    uncommitted_plus_paths — Git's status records for MAM-parsed/plus/
+    plus_blob_ids     — the MAM-parsed/plus/*.json blob ids at a MAM-basics commit
+    plus_blobs        — those blobs with their bytes
     archive_boundary  — archive the MAM-basics commit a releases.json boundary names
 
 A stored release is an uncompressed ZIP of plus JSON in MAM-parsed/historical/, listed in that
@@ -84,17 +87,30 @@ def _git_text(repo, *args):
     return _git_bytes(repo, *args).decode("utf-8").strip()
 
 
-def plus_blobs(commit):
-    """Return ``(member name, blob id, bytes)`` for each MAM-parsed/plus/*.json at ``commit``.
+def head_commit():
+    """The full hash of MAM-basics HEAD."""
+    return _git_text(paths.repo_root(), "rev-parse", "--verify", "HEAD^{commit}")
 
-    ``commit`` is a MAM-basics commit. Member names are plus/<name>, in sorted order. Only
-    names ending in .json are kept, as the Git reader in ``mpplus_revisions`` keeps them,
-    so a file such as plus/provenance.md, which cb95915 has, is left out. Each blob's bytes
-    are read verbatim and checked against the id Git lists for it.
+
+def uncommitted_plus_paths():
+    """Git's status records for MAM-parsed/plus/, which are empty when HEAD holds it all."""
+    status = _git_bytes(
+        paths.repo_root(), "status", "--porcelain", "-z", "--", _PLUS_DIRECTORY
+    )
+    return [record.decode("utf-8") for record in status.split(b"\0") if record]
+
+
+def plus_blob_ids(commit):
+    """Return {member name: blob id} for each MAM-parsed/plus/*.json at ``commit``.
+
+    ``commit`` is a MAM-basics commit. Member names are plus/<name>. Only names ending in
+    .json are kept, as the Git reader in ``mpplus_revisions`` keeps them, so a file such
+    as plus/provenance.md, which cb95915 has, is left out.
     """
-    repo = paths.repo_root()
-    listing = _git_bytes(repo, "ls-tree", "-r", "-z", commit, "--", _PLUS_DIRECTORY)
-    blobs = []
+    listing = _git_bytes(
+        paths.repo_root(), "ls-tree", "-r", "-z", commit, "--", _PLUS_DIRECTORY
+    )
+    blob_ids = {}
     for record in listing.split(b"\0"):
         if not record:
             continue
@@ -105,14 +121,26 @@ def plus_blobs(commit):
             continue
         if kind != "blob":
             raise RuntimeError(f"{path} at {commit} is a {kind}, not a file")
+        blob_ids["plus/" + path.removeprefix(_PLUS_DIRECTORY)] = blob_id
+    if not blob_ids:
+        raise RuntimeError(f"No MAM-parsed/plus JSON files at {commit}")
+    return blob_ids
+
+
+def plus_blobs(commit):
+    """Return ``(member name, blob id, bytes)`` for each of ``plus_blob_ids(commit)``.
+
+    The rows are in sorted order. Each blob's bytes are read verbatim and checked
+    against the id Git lists for it.
+    """
+    repo = paths.repo_root()
+    blobs = []
+    for name, blob_id in sorted(plus_blob_ids(commit).items()):
         data = _git_bytes(repo, "cat-file", "blob", blob_id)
         if git_blob_id(data) != blob_id:
-            raise RuntimeError(f"Git returned the wrong bytes for {path} at {commit}")
-        name = "plus/" + path.removeprefix(_PLUS_DIRECTORY)
+            raise RuntimeError(f"Git returned the wrong bytes for {name} at {commit}")
         blobs.append((name, blob_id, data))
-    if not blobs:
-        raise RuntimeError(f"No MAM-parsed/plus JSON files at {commit}")
-    return sorted(blobs)
+    return blobs
 
 
 def _commit_date(commit):
@@ -129,11 +157,13 @@ def _write_manifest(manifest):
         f.write(json.dumps(manifest, indent=2) + "\n")
 
 
-def archive_boundary(boundary):
+def archive_boundary(boundary, commit=None):
     """Archive the MAM-basics commit that ``boundary`` names; return its full hash.
 
     ``boundary`` is spelled as in releases.json, a 7-character short hash for every
-    boundary pinned so far. This writes MAM-parsed/historical/<full hash>.zip and appends
+    boundary pinned so far. ``commit``, when given, is its full hash, which spares Git
+    resolving a short hash it might find ambiguous among its own commits; the pin command
+    passes HEAD's. This writes MAM-parsed/historical/<full hash>.zip and appends
     that commit's entry to the manifest, after the others. The entry has the
     ``repository`` the commit is in, since the manifest-wide ``source_repository`` names
     MAM-parsed; the commit's ``date``; and ``files``, a row of ``path``, ``sha`` and
@@ -150,7 +180,9 @@ def archive_boundary(boundary):
         raise ValueError(f"{boundary!r} already names the stored release {stored}")
     repo = paths.repo_root()
     try:
-        commit = _git_text(repo, "rev-parse", "--verify", f"{boundary}^{{commit}}")
+        commit = _git_text(
+            repo, "rev-parse", "--verify", f"{commit or boundary}^{{commit}}"
+        )
     except RuntimeError as exc:
         raise ValueError(
             f"MAM-basics commit {boundary!r} is not in this clone. A shallow clone can"
