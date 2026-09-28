@@ -214,15 +214,16 @@ def find_docnote_tmpls(wt_seq):
 
     Documentation-note discovery is a whole-dataset inventory, so every
     parameter of every recognized non-note template is deliberately searched.
+    Every encountered template is validated before discovery or recursion.
     A new template raises until its fields have been classified.
     """
     results = []
     for wtel in wt_seq:
         if isinstance(wtel, dict):
+            params = tmpln.validate_current_plus_template(wtel)
             if wtp.is_doc_template(wtel):
                 results.append(wtel)
-            elif wtp.is_template(wtel):
-                params = tmpln.validate_current_plus_template(wtel)
+            else:
                 for _param_name, arg in params.items():
                     results.extend(find_docnote_tmpls([arg]))
         elif isinstance(wtel, list):

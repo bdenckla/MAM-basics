@@ -35,7 +35,6 @@ from author_site.post_stress_meteg_shared import (
     _NOT_FIT_FNAME,
     _NUMERIC_CELL,
     _PASHTA_STRESS_HELPER_FOOTNOTE_ID,
-    _POST_SILLUQ_FNAME,
     _POST_SILLUQ_FOOTNOTE_ID,
     _ROM_HE,
     _ROM_MAPPIQ,

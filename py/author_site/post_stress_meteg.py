@@ -117,7 +117,6 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_FNAME,
     _POST_SILLUQ_TITLE,
     _POST_SILLUQ_VERSE,
-    _ROM_METEG,
     _ROM_METEG_CAP,
     _ROM_SILLUQ,
     _TITLE,

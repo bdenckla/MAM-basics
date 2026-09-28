@@ -1,10 +1,17 @@
-"""Find verse locations for exact template stack paths in plain/plus parsed data."""
+"""Find verse locations for exact template stack paths in plain/plus parsed data.
+
+This structural inventory visits every argument of each recognized template.
+Each template's name and shape are validated before matching or recursion;
+recognized plain custom tags are validated leaves.
+"""
 
 import json
 import sys
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import paths
+from mb_cmn import plain_template_schema as pts
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp2
 from tmpl_survey import stack_path_verbose_payload as spvp
@@ -156,10 +163,10 @@ def _walk_wtel_plain(
 ):
     if isinstance(wtel, str):
         return
-    assert isinstance(wtel, dict)
-    if not wtp1.is_template(wtel):
+    if wtp1.is_abtag(wtel):
+        pts.validate_current_plain_custom_tag(wtel)
         return
-    subtype = wtp1.template_name(wtel)
+    subtype = pts.validate_current_plain_template(wtel)
     chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(
         hits,
@@ -201,9 +208,7 @@ def _walk_wtel_plus(
 ):
     if isinstance(wtel, str):
         return
-    assert isinstance(wtel, dict)
-    if not wtp2.is_template(wtel):
-        return
+    tmpln.validate_current_plus_template(wtel)
     subtype = wtp2.template_name(wtel)
     chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(

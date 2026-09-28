@@ -16,7 +16,9 @@ coordinated multi-repository forest.
    `git status --porcelain`. A required commit must equal `HEAD` or be an ancestor of it.
 2. Treat the primary clone as the integration checkout, not the development workspace. In a
    secondary-worktree task, source edits, generators, formatters, tests, staging, and commits all
-   run in the verified worktree.
+   run in the verified worktree. An explicit repository procedure may instead assign a primary
+   checkout to a named shared branch on `origin`; that procedure then owns the development and
+   integration roles for its workflow.
 3. Keep one writer per checkout. Before staging, confirm that `HEAD` still equals the recorded
    pre-work head and that status contains only paths owned by the task.
 4. Commit finished work on the worktree's local branch. Do not push the worktree branch or merge
@@ -29,7 +31,9 @@ coordinated multi-repository forest.
    machine we're working on (and if we wanted to resume that work on another machine, regardless
    of whether data loss happened!)". The first case was MAM-private's branch
    `worktree-near-aleppo`, first pushed 2026-09-15; its own `CLAUDE.md` has carried the rule since
-   MAM-private commit `a99d7eb`.
+   MAM-private commit `a99d7eb`. When an explicit procedure names one shared branch on `origin`,
+   push the checked-out commit to that exact remote branch instead; do not publish the
+   checkout-specific local carrier name as another remote branch.
 
 ## Load the reference for the selected work
 

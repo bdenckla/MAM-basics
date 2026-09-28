@@ -8,8 +8,8 @@ dual-agent review, by Ben's decision of 2026-09-09 (D9).** The September 8 revie
 case. Design A was the default from 2026-09-07 to 2026-09-09 and was first run on the September 4
 window; Design B remains the blind alternative by explicit request.
 
-Read this before starting a dual-agent review. It records the standard round, its shared worktree,
-its close-out, and the earlier Design A and Design B procedures.
+Read this before starting a dual-agent review. It records the standard round, its shared branch on
+`origin`, its close-out, and the earlier Design A and Design B procedures.
 
 **Codex already reviews this repository, in a different series.** The staged review of
 `py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under
@@ -96,11 +96,11 @@ every periodic review window to use two agents or establish a blind parallel-tra
 The turn's root reviewer and any sub-agent may delegate bounded, independently checkable work to
 another sub-agent, either in parallel or as a sequential handoff. The root reviewer remains
 responsible for the turn: the root reviewer sets the scope, reconciles the reports, verifies the
-claims it adopts, and owns the tracked file and commit. Because the agents share the D11 checkout,
-only one agent writes, stages or commits at a time; other sub-agents report without editing unless
-writing responsibility is explicitly handed to one sub-agent. Use delegation when it can save
-time, protect the root reviewer's context or improve confidence, not merely to create another
-task.
+claims it adopts, and owns the tracked file and commit. Only one agent writes, stages, commits or
+pushes the round's branch at a time; other sub-agents report without editing unless writing
+responsibility is explicitly handed to one sub-agent. The one-writer rule applies even when the
+agents use separate checkouts. Use delegation when it can save time, protect the root reviewer's
+context or improve confidence, not merely to create another task.
 
 Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
 turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
@@ -125,11 +125,12 @@ The round takes turns in this order:
 Each turn is a tracked file named
 `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`: the two-digit number records sequence and
 the final component records the agent that actually wrote the turn. Ben supplies the next task with
-that file's path and commit; the next task reads the committed file instead of depending on pasted
-chat or remembered conclusions. Verify the exact shared checkout, branch, required commit and clean
-working tree before reading. A newer starting commit must contain the required commit as an
-ancestor. The naming section distinguishes this standard round from single-agent and blind-review
-filenames.
+that file's path and pushed commit; the next task reads the committed file from the round's
+`origin/dar-<date>` branch instead of depending on pasted chat or remembered conclusions. Verify
+the exact checkout, local branch or detached state, required commit, fetched remote-branch tip and
+clean working tree before reading. A known newer starting commit must contain the required commit
+as an ancestor; unexplained remote movement is a collision and stops the task. The naming section
+distinguishes this standard round from single-agent and blind-review filenames.
 
 **The stopping rule:** a turn that accepts everything and lists no unresolved disagreement ends
 the round. The other agent's next task reads that turn and records an acknowledgment or an
@@ -148,11 +149,11 @@ The close-out reads the table together with those corrections and Ben's decision
 
 After the exchange closes, follow `doc/periodic-review.md`'s `Close-out` list. A sequential
 dual-agent round additionally updates this procedure record after Ben's decisions, uses Agent 1's
-turn-01 update file for later dispositions, integrates through the shared-review branch, and
-retires the shared worktree only after the final task ends. Where the window contains a prior
-round's own records, Agent 1's turn 01 states which of them it reads as a subject and which it
-treats as evidence, as `doc/periodic-review.md`'s "A prior round's own records inside a successor
-window" requires.
+turn-01 update file for later dispositions, integrates through the shared branch on `origin`, and
+retires each task-owned review worktree only after the final task using it ends. Where the window
+contains a prior round's own records, Agent 1's turn 01 states which of them it reads as a subject
+and which it treats as evidence, as `doc/periodic-review.md`'s "A prior round's own records inside
+a successor window" requires.
 
 ### Correcting a finished dated document — Ben's decision, 2026-09-11 (D12)
 
@@ -186,54 +187,78 @@ module docstring, under “THE `State:` LINE ON doc/*-update.md”.
 A document that describes the present is the opposite case and is kept true in place: `CLAUDE.md`,
 the READMEs, the docstrings, this file, and a plan still being executed.
 
-### The shared worktree — Ben's decision, 2026-09-09 (D11)
+### The shared origin branch — Ben's decisions, 2026-09-09 and 2026-09-28 (D11, revised)
 
-For future rounds, prefer a setup-only Claude session to create branch `dar-<date>` and worktree
-`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/dar-<date>` at the round's start, even when
-Codex is Agent 1. Setup creates the checkout and performs no review turn. If that setup session is
-unavailable, Agent 1 may create the same branch and worktree. The branch and worktree folder have
-the same name. Every turn of both agents and every close-out task uses that checkout directly, with
-writing responsibility passed between tasks. Do not create another worktree for a successor. The
-primary clone supplies its venv by absolute path; development commands, edits, staging and commits
-use the verified shared worktree.
+For future rounds, setup creates branch `dar-<date>` from the approved starting commit and
+publishes it as `origin/dar-<date>`. A setup-only session may do that without performing a review
+turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directory or local branch
+name, is the round's shared coordination state.
 
-**`dar` abbreviates `dual-agent-review` in the branch name and the worktree-folder name, and
-nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2 of MAM-private's
-`doc/PLAN-private-review-series-catch-up.md`. The turn filenames keep the full word, so
-`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md` is unchanged, and so is the
-`git worktree lock` reason below. The abbreviation shortens the worktree root by fourteen
+Each turn and close-out task may use its own verified checkout: a linked worktree, a primary clone,
+or another clone. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use
+the remote branch's name when available or a checkout-specific name when, for example, another
+worktree registered to the same clone already has `dar-<date>` checked out. Do not create a second
+remote review branch to match a local carrier branch. A linked worktree uses the primary clone's
+venv by absolute path; development commands, edits, staging and commits run in the checkout that
+owns the current turn.
+
+**`dar` abbreviates `dual-agent-review` in the remote branch name and, when used, a
+worktree-folder name, and nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2
+of MAM-private's `doc/PLAN-private-review-series-catch-up.md`. The turn filenames keep the full
+word, so `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md` is unchanged, and so is the
+historical `git worktree lock` reason. The abbreviation shortens a worktree root by fourteen
 characters: `doc/windows-long-paths.md` measures
 `C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dual-agent-review-2026-09-17` at 82
 characters, against 68 for the same path spelled `dar-2026-09-17`, and its operating
 recommendation is to go on budgeting for short paths on this machine. Every round created before
 2026-09-20 keeps its existing branch and worktree names, as the September 8 round does below.
 
-Setup locks the shared worktree with `git worktree lock --reason "active dual-agent review
-<date>" <absolute-worktree-path>` before the first review turn. The lock remains through review
-and remediation. A separate cleanup task unlocks it only after final integration, after the final
-task ends, and immediately before an ordinary non-force worktree removal.
+Turns are sequential even when their checkouts are separate. At the start of a turn, fetch
+`origin`, verify the promised handoff commit against `origin/dar-<date>`, and create the local
+carrier at that remote tip or fast-forward the clean carrier to it before editing. At the end of
+the turn, commit the complete turn, then push the exact commit with the explicit destination
+`origin HEAD:dar-<date>` and report the pushed commit. That successful push is the handoff. A
+non-fast-forward rejection, local divergence, or unexplained remote movement stops the task;
+never force-push. Only the task that owns the current turn may update the remote branch.
 
-Each close-out task merges `main` into the review branch before editing and resolves conflicts
-there. The shared review branch is a long-lived branch under the user-level backup exception: push
-it to `origin` after every commit as a backup, without pushing `main`. No intermediate task
-fast-forwards or pushes `main`, including when an intermediate task is archived. Intermediate
-remediation tasks follow `doc/periodic-review.md`'s “Verification
-cadence during remediation”: every coherent commit gets the cheap checks matched to its changed
-surface, while the full suite runs after the last test-risky change rather than after every
-low-test-risk commit or handoff. A later documentation, comment, review-record or instruction-only
-commit does not expire that full-suite result. The final remediation task integrates once: merge
-`main` into the review branch,
-run `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` from the
-worktree with no `REPOS_ROOT`, read its Git diff, and commit every explained generated change on
-the branch. An unexplained generated change or a failing mega step is a failure. Then fast-forward
-the primary clone's `main` with `--ff-only` and push `main`. If the fast-forward refuses because
-`main` moved, merge and verify again in the worktree. Retire the worktree and its merged branch
-only after the final task has ended.
+Everything a later turn requires must be on the remote branch or be an explicitly identified
+external input. `.novc` files, ignored caches, local hooks, worktree locks, agent transcripts and
+other checkout-local state are not shared protocol state. A turn may use such material as scratch,
+but its tracked turn file must record enough method, input identity and result to check the claim
+without that scratch file. Put a decision or other handoff state needed by a successor in the
+tracked turn, update file or plan before pushing. If a required external input cannot be tracked,
+the handoff names it and its provenance explicitly; its absence in the successor checkout blocks
+the turn.
+
+A linked worktree may be locked as local lifecycle protection while a task uses it. Such a lock
+does not coordinate the round and does not make that worktree shared. Each checkout's owner keeps
+or retires that checkout under the applicable worktree procedure; no task unlocks, removes or
+otherwise manages another task's checkout merely because the round has moved on.
+
+Each close-out task fetches `origin`, brings its local carrier to `origin/dar-<date>`, merges current
+`origin/main` into the review branch before editing, resolves conflicts there, and pushes every
+resulting commit back to `origin/dar-<date>`. The review branch is a long-lived branch under the
+user-level shared-remote-branch exception. No intermediate task fast-forwards or pushes `main`,
+including when an intermediate task is archived. Intermediate remediation tasks follow
+`doc/periodic-review.md`'s “Verification cadence during remediation”: every coherent commit gets
+the cheap checks matched to its changed surface, while the full suite runs after the last
+test-risky change rather than after every low-test-risk commit or handoff. A later documentation,
+comment, review-record or instruction-only commit does not expire that full-suite result. The final
+remediation task integrates once: merge current `origin/main` into the review branch, run
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` from the integration
+checkout with no `REPOS_ROOT`, read its Git diff, commit every explained generated change, and push
+the verified commit to `origin/dar-<date>`. An unexplained generated change or a failing mega step
+is a failure. Then fetch in the designated primary clone, fast-forward its clean `main` with
+`--ff-only` to `origin/dar-<date>`, and push `main`. If the fast-forward or push refuses because
+`origin/main` moved, merge current `origin/main` and verify again in the integration checkout, then
+update the remote review branch before retrying. Retire each task-owned worktree and merged local
+carrier branch only after the final task using it has ended. Deleting the remote review branch is
+separate outward-facing cleanup and requires its own authorization; worktree retirement does not
+imply it.
 
 A round of the private series, which `doc/periodic-review.md` describes, works the same way in
-MAM-private: its shared worktree is
-`C:/Users/BenDe/GitRepos/MAM-private/.claude/worktrees/dar-<date>`, and its final integration
-verifies with what MAM-private's `CLAUDE.md` requires in place of this repository's mega.
+MAM-private: its shared remote branch is `origin/dar-<date>`, and its final integration verifies
+with what MAM-private's `CLAUDE.md` requires in place of this repository's mega.
 
 In the September 8 round, Codex created
 `C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` on branch
@@ -561,9 +586,9 @@ with no human turn between the two agents.
 The record-only scope has to be maintained deliberately rather than inferred from a sandbox flag.
 This document does not prescribe or assess current Codex sandbox syntax.
 
-For the standard alternating round, give the Codex reviewer the shared worktree created under D11
-above. Every successor uses that same checkout directly. A worktree runs the primary clone's venv
-by absolute path.
+For the standard alternating round, give the Codex reviewer the exact pushed commit on
+`origin/dar-<date>` under D11 above. Each successor fetches that branch into its own verified
+checkout. A worktree runs the primary clone's venv by absolute path.
 
 ## A precondition this document does not own: `~/.codex/AGENTS.md`
 
