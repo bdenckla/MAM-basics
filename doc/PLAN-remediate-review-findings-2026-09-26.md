@@ -2,7 +2,7 @@
 
 State: live; detailed plan drafted 2026-09-28; awaiting approval of concrete wording and execution.
 
-Prepared by Codex on 2026-09-28, New York time. Ben instructed: "Continue the review
+Prepared by ChatGPT-Codex on 2026-09-28, New York time. Ben instructed: "Continue the review
 process. I think in the narrow sense, the review is done, but next comes remediation, or
 whatever is needed to prepare for remediation". Ben approved the complete disposition
 package on 2026-09-28 by replying "I approve", and separately authorized review-branch
@@ -16,6 +16,11 @@ anchors "Close-out: from findings to dispositions" and "Separate defects from ed
 proposals" (D7). Preparing or committing this plan does not implement its changes.
 An approval of this plan authorizes the stated repairs, including the explicitly identified
 pinned change-log correction, but does not select any deferred semantic or policy choice.
+
+Ben suggested "ChatGPT-Codex" or "OpenAI-Codex" on 2026-09-28 to distinguish
+the agent from manuscripts. This plan selects "ChatGPT-Codex" for new agent
+attributions and finding 34.5, replacing the earlier "the Codex agent" proposal.
+Preserve manuscript names, historical quotations, source anchors and product identifiers.
 
 ## Standalone executor contract
 
@@ -33,9 +38,12 @@ The required preparation baseline is
 `85cb7acd8df98089614de8e3e30bb67bc5a2c36a` at
 `d13270a056ba14424600c1da84ab728f4728f4b2`. Require that baseline, and the commit
 containing the approved version of this plan, to be ancestors of the execution HEAD.
+The naming revision incorporates upstream `main`
+`db152332b7d90a3e5387ce0cb068a69bb0673258` through merge
+`9c516a2acc87f4ea818837326b24ec958199d531`; require that merge to be an ancestor too.
 The original reviewed endpoint remains `f4d81285` and its start remains `71f96ca3`;
 these are historical review anchors, not the development baseline. The later `main`
-changes are already part of the baseline and must not be reimplemented.
+changes are already present in the review branch and must not be reimplemented.
 
 All relative source and output paths below are relative to the development checkout.
 Every Python, generator, formatter and test command below runs with that checkout as cwd,
@@ -270,7 +278,7 @@ the frozen comparison.
 | 34.2, same README, lead on estimated positions | Attribution conflates the estimating sessions with later recount/reproduction. | "Two sessions estimated page positions; the findings sub-agent recounted the Prophets' rates, and the image-list session reproduced the recount." |
 | 34.2, same README, Psalms/Job/Proverbs heading | "Segmentation of these books" | "Segmentation of Psalms, Job and Proverbs". |
 | 34.1, `doc/post-stress-meteg-method.md`, two census passages | "each occurrence carrying one meteg"; "135 chanted words carrying two meteg marks" | "Twenty-one of those 143 were one form counted against itself; each occurrence has one meteg. The MBS_O population was therefore ..."; "its tracked output had 135 chanted words that have two meteg marks". Retain the rest of the clauses and historical numbers. |
-| 34.5, maintained Psalms 72 report and snips README | "Codex" ambiguously names the agent. | Use "the Codex agent" for the agent; preserve the full manuscript names. Apply the same clear attribution in new updates. |
+| 34.5, maintained Psalms 72 report and snips README | "Codex" ambiguously names the agent. | Use "ChatGPT-Codex" for the agent; preserve the full manuscript names. Apply the same clear attribution in new updates. |
 
 Finding 31.5 corrects only `in/meteg_after_silluq_koren_readings.json`'s final `about`
 sentence: "The tracked post-silluq generator reads this list through
@@ -622,7 +630,7 @@ For finding 11.2, add these five shared safeguards to canonical
 > worktree, merge the new main there, and repeat the applicable checks. Do not replace
 > the failed fast-forward with a merge in the primary clone.
 
-Make skill routing agent-specific: Codex loads `codex-worktree-tasks`; Claude follows
+Make skill routing agent-specific: ChatGPT-Codex loads `codex-worktree-tasks`; Claude follows
 the shared safeguards and repository integration procedure. Preserve common integration
 instructions for both. Source: old common Claude body at
 `71f96ca3801863f6fa64c1fd0e75ccfde773439b`, anchors named worktree, lost edits,
@@ -656,7 +664,7 @@ For finding 11.5, restore this common Git paragraph:
 > worktree branch to origin after every commit as a backup, without pushing main.
 > Follow the branch's explicit authorization and integration procedure.
 
-Keep the Codex skill and DAR D11 consistent. DAR is explicitly subject to the exception;
+Keep the `codex-worktree-tasks` skill and DAR D11 consistent. DAR is explicitly subject to the exception;
 the September 28 backup permission already covers this plan's branch push. The deferred
 11.1 thorny-merge and optional-second-suite clauses are not restored by implication.
 
@@ -847,7 +855,7 @@ Finding 33's public guide replacements are bounded:
   did not name the checkout used for this Git setting." Remeasure `core.longpaths`
   independently in primary and development with the explicit commands below. Record
   results, source and actual date; do not reuse the old Claude checkout's setting as
-  evidence about this recovered Codex checkout.
+  evidence about this recovered managed checkout.
 - In `doc/sigil-decoding.md`, the ל-א row keeps B 55's identification but replaces
   the asserted distinction with "The mirrored appendix calls B 55 formerly B 247
   at line 78 and describes B 247 as a direct continuation at line 93. The NLI presents
@@ -1049,7 +1057,7 @@ base link and its update:
 > and [its update](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-mega-coverage-update.md).
 
 Append a body note dated with the actual execution date: "Edited on [date] by a
-Codex session, following Ben's 2026-09-28 approval of the review dispositions, to
+ChatGPT-Codex session, following Ben's 2026-09-28 approval of the review dispositions, to
 link both members of the retired mega-coverage plan family so its Phase 7 correction
 remains visible." Keep the `40395aa3` pin; both targets already exist on `origin/main`.
 Use the approved editor with a uniquely named scratch body, dry-run, complete outgoing

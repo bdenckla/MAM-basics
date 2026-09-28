@@ -447,3 +447,23 @@ and execution approval under `doc/periodic-review.md`, "Close-out: from findings
 dispositions" and D7. Steps 3 and 4 remain pending; no remediation implementation or
 intermediate main integration has occurred. This update remains `State: open` while
 its base survives.
+
+## Agent naming revised in the live plan, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. Ben observed that
+"Codex agent" could still mean an agent working on a manuscript and suggested
+"ChatGPT-Codex" or "OpenAI-Codex". The live
+[remediation plan](PLAN-remediate-review-findings-2026-09-26.md) selects
+"ChatGPT-Codex" for new agent attributions and finding 34.5, superseding the
+earlier "the Codex agent" proposal. Manuscript names, historical quotations,
+source anchors and product identifiers retain their spellings.
+
+Before this plan revision, upstream `main`
+`db152332b7d90a3e5387ce0cb068a69bb0673258`, documenting the second pCloud zip,
+was merged into the DAR branch at `9c516a2acc87f4ea818837326b24ec958199d531`
+without conflicts and backed up to `origin/dar-2026-09-26`. The primary `main`
+branch remains at `85cb7acd8df98089614de8e3e30bb67bc5a2c36a`.
+
+This revision changes the live plan and this update. Remediation execution
+approval remains pending; steps 3 and 4 remain pending. This update remains
+`State: open` while its base survives.
