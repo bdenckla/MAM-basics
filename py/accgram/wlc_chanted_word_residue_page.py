@@ -34,9 +34,9 @@ Phase 4 of doc/PLAN-two-accents-on-one-chanted-word.md (this repo's copy is the 
 Unicode PASEQ standing apart from the chanted word with a space on each side, where WLC has it on
 the word, and ``prose_scanner``'s legarmeh rules cannot cross a space, so the scanner read a
 legarmeh in the one and not in the other.  THE FIX LANDED ON 2026-08-18, in
-``chanted_word_accents._fold_lone_bars``, and the marker and the paragraph dropped out of the page
-on their own, the way ``_accounted_for``'s groups do -- no row is marked now, and neither the
-caveat's ``†`` nor its paragraph is rendered.  The mechanism had been checked against
+``chanted_word_accents_units._fold_lone_bars``, and the marker and the paragraph dropped out of
+the page on their own, the way ``_accounted_for``'s groups do -- no row is marked now, and
+neither the caveat's ``†`` nor its paragraph is rendered.  The mechanism had been checked against
 MAM-parsed-plus on 2026-08-04: at Nehemiah 8:7 the stroke is a ``מ:לגרמיה-2`` template, which
 MAM-simple rendered as a vel of its own, and WLC 4.22's vel there has the U+05C0 attached to the
 word.
@@ -87,6 +87,10 @@ from pathlib import Path
 
 from accgram import chanted_word_accents as cwa
 from accgram import rtms_report
+from accgram.chanted_word_accents_inventory import (
+    NAMED_TOKEN_SEQUENCES,
+    YEIVIN_ENTRIES,
+)
 from accgram.almost_errors_html_shared import (
     hbo,
     itm,
@@ -253,9 +257,7 @@ def residue(corpus: dict) -> list[dict]:
     ca8:6, which Ben's ruling names in MAM, stands in this page's residue as it always did.
     """
     return [
-        h
-        for h in corpus["occurrences"]
-        if h["sequence"] not in cwa.NAMED_TOKEN_SEQUENCES
+        h for h in corpus["occurrences"] if h["sequence"] not in NAMED_TOKEN_SEQUENCES
     ]
 
 
@@ -349,9 +351,9 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
     accounted for elsewhere.  Raise rather than warn -- a warning in a generator's output is a
     warning nobody reads.
     """
-    named = set(cwa.NAMED_TOKEN_SEQUENCES)
+    named = set(NAMED_TOKEN_SEQUENCES)
     assert named == {
-        seq for entry in cwa.YEIVIN_ENTRIES for seq in entry.sequences
+        seq for entry in YEIVIN_ENTRIES for seq in entry.sequences
     }, "the whitelist has parted company with Yeivin's inventory"
     assert not (
         named & {r["sequence"] for r in rows}
@@ -457,8 +459,8 @@ def _counts(survey: dict, rows: list[dict]) -> dict[str, int]:
         "hits": wlc["hits"],
         "residue": len(rows),
         "sequences": len({r["sequence"] for r in rows}),
-        "named": len(cwa.NAMED_TOKEN_SEQUENCES),
-        "named_unspelled": len(cwa.NAMED_TOKEN_SEQUENCES) - _NAMED_SPELLED_OUT,
+        "named": len(NAMED_TOKEN_SEQUENCES),
+        "named_unspelled": len(NAMED_TOKEN_SEQUENCES) - _NAMED_SPELLED_OUT,
         "mam_residue": survey["mam_residue"]["total"],
         "flagged": sum(1 for r in rows if r["status"] in _ERROR_STATUSES),
         "clean": sum(1 for r in rows if r["status"] not in _ERROR_STATUSES),

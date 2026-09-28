@@ -2083,8 +2083,8 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         #
         # SCOPED TO SPREADERS, Ben's own qualification (2026-08-04), and it does real work: the
         # merkha-before-silluq row visibly has a simple count of 1, and that chanted word -- Song
-        # 8:6 שלהבתיה -- is named by neither book, on ``chanted_word_accents``' §209 Yeivin entry.
-        # A sentence about the two PAIRS would therefore be false of it, where one about the
+        # 8:6 שלהבתיה -- is named by neither book, on ``chanted_word_accents_inventory``' §209 Yeivin
+        # entry.  A sentence about the two PAIRS would therefore be false of it, where one about the
         # spreaders is not, and the scoping costs the page nothing, the compounds being what §357
         # and ch. 1 §43 are about.  It replaced a trailing sentence that had said as much
         # outright, naming שלהבתיה through ``_example_cell``: "the limitation to spreaders ...
