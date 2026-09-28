@@ -248,9 +248,7 @@ until the policy reversed to NFC. This is advice a reviewer can override.
   seventh repo's name". **The example this bullet gave, `../MAM-simple`, has been corrected as
   well**: MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc and MAM-OSIS are landed products
   inside MAM-basics, so the siblings the override still serves are MAM-private and a temporary
-  redirect-host clone. `WLC_SCANS_DIR` is a different variable and is still live —
-  `py/accgram/scan_page.py` reads it for the personal scan archive outside the repo, which is no
-  repo of Ben's — so do not sweep it up with the two that were renamed.
+  redirect-host clone.
 - **Committing and pushing: follow the common `~/.codex/AGENTS.md` body, section "Git and
   commits", imported by Claude Code through `~/.claude/CLAUDE.md`.** This bullet cites that
   section rather than restating it. It read

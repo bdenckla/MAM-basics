@@ -179,8 +179,9 @@ are separate evidence and must not be inferred from an entry-index record.
   `os.startfile` default went with it, against the standing rule that a link costs one
   click when the page is not already open and a duplicate window when it is.
 - **The program is cwd-independent.** Scans root and repo paths are anchored in code
-  (`Path.home() / "OneDrive" / "Documents" / "ScansOfBooks"`; `mb_cmn/paths.py` for
-  siblings), never cwd-relative, so it runs from anywhere. UTF-8 stdio reconfigure first
+  (`mb_cmn.paths.book_scans_root()`: `~/OneDrive/Documents/ScansOfBooks` unless
+  `BOOK_SCANS_ROOT` overrides it; `mb_cmn/paths.py` for siblings), never cwd-relative, so it
+  runs from anywhere. UTF-8 stdio reconfigure first
   thing in `main()`, per the global rules — and load-bearing rather than precautionary
   since 2026-09-10, because the answer itself now goes to stdout: a JSON ride-along that
   holds the page-edge phrases puts Hebrew there. Until that day this clause said real

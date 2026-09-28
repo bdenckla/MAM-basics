@@ -109,11 +109,31 @@ def novc_dir() -> Path:
 def scans_dir() -> Path:
     """Where page renderings from the scan archive are written (``<novc_dir>/scans``).
 
-    NOT the scan archive itself, which is a personal collection outside every repo and is
-    resolved by ``accgram.scan_page.SCANS`` off ``WLC_SCANS_DIR``.  These are the
-    downscaled, cropped derivatives, which are disposable and can be large.
+    NOT the scan archive itself, a personal collection outside every repo, which
+    ``book_scans_root`` below locates.  These are the downscaled, cropped derivatives, which
+    are disposable and can be large.
     """
     return novc_dir() / "scans"
+
+
+def book_scans_root() -> Path:
+    """The scan archive, holding one folder per scanned book (``BOOK_SCANS_ROOT`` overrides it).
+
+    By default ``~/OneDrive/Documents/ScansOfBooks``, a personal collection outside every repo,
+    so this is absolute and checkout-independent: a worktree reads the same scans the primary
+    clone does.  NOT ``scans_dir`` above, which is where renderings made from these scans are
+    written.
+
+    Both readers of the archive, ``accgram.scan_page`` and ``scan_pages.editions``, have
+    located it here since 2026-09-28.  Until then ``scan_pages.editions`` hard-coded the default
+    and ignored the override that ``accgram.scan_page`` honoured (item 7 in section 8 of
+    ``doc/mega-coverage-2026-09-10.md``), and the override was named ``WLC_SCANS_DIR``, whose
+    prefix was left over from wlc-utils.  The old name is not read as a fallback.
+    """
+    override = os.environ.get("BOOK_SCANS_ROOT")
+    if override:
+        return Path(override)
+    return Path.home() / "OneDrive" / "Documents" / "ScansOfBooks"
 
 
 def repos_root() -> Path:

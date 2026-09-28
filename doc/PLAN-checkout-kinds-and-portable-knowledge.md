@@ -154,8 +154,8 @@ Three rules apply to every kind:
 
    Such a task never spans forests.
 3. **Inputs outside every repository are user level.** Every forest on the machine can reach them.
-   Examples are the scan archive, found through `WLC_SCANS_DIR` (a separate task is renaming that
-   variable), and pywikibot's configuration in `$env:USERPROFILE/.pywikibot`.
+   Examples are the scan archive, found through `BOOK_SCANS_ROOT` (`WLC_SCANS_DIR` until
+   2026-09-28), and pywikibot's configuration in `$env:USERPROFILE/.pywikibot`.
 
 ### What secondary forests cost
 

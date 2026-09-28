@@ -1,7 +1,7 @@
 """Printed-edition transcription workflow.
 
 The interactive, machine-local half of the printed-Decalogue work: it reads a personal scan
-archive outside the repo (see WLC_SCANS_DIR) and writes disposable renderings to the
+archive outside the repo (see BOOK_SCANS_ROOT) and writes disposable renderings to the
 gitignored .novc/scans/.  Kept apart from main_accgram.py deliberately -- that entry point is
 corpus runs and page generation, which need no scans and produce tracked output.
 
