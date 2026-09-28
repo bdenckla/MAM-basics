@@ -412,3 +412,38 @@ The next phase is the standalone detailed remediation plan, with concrete reader
 wording, distributed-notice effects, internal policy text, executable steps, verification,
 and final integration. Implementation awaits that plan's approval. Step 1 is complete;
 steps 2 through 4 remain pending. This update remains `State: open` while its base survives.
+
+## Detailed remediation plan prepared; execution approval pending, 2026-09-28
+
+Recorded by Codex on 2026-09-28, New York time. The standalone
+[remediation plan](PLAN-remediate-review-findings-2026-09-26.md) uses the recovered
+managed DAR checkout and requires the approval record at
+`8ab079afbac0a6648385f725e51057c2f0fd293f`. It covers all approved active findings,
+retains every approved deferral/no-action disposition, and presents exact public
+wording before data effects and the lower-risk internal work. The proposed pinned
+change-log correction explicitly includes useful alternative-change HTML/JSON,
+five pointing migrations, and distinct unchanged-qere note/wrapper exclusions.
+The plan names finite image mappings, receipt routing, independent checks,
+commit/backup discipline, hand-run generators, final integration and deployment.
+
+Two read-only agents checked the finding groups and the full draft. Codex reconciled
+their material corrections and independently checked the current converter outputs,
+all twenty image hashes, the sixteen Cambridge first/last stored labels and the two
+substantive alternative values in the real change-log endpoints. The plan proposes
+no new semantic decision for a deferred item. Preparing this plan changes no source,
+product, image, issue, deployed instruction or frozen review turn.
+
+**Clarified the push rule in response to Ben's question.** The live
+`codex-worktree-tasks` skill's rule 4 restricts ordinary short-lived worktree backups
+and contains a long-lived exception. The repository's `doc/dual-agent-review.md`,
+"The shared worktree" (D11), explicitly requires DAR branch backups after every
+commit and reserves `main` integration/push for final remediation. There is no DAR
+backup prohibition. The earlier automatic-review authorization block was resolved
+by Ben's explicit September 28 permission; that permission covers this preparation
+backup too.
+
+Step 1 remains complete. Step 2 now has a concrete standalone plan awaiting wording
+and execution approval under `doc/periodic-review.md`, "Close-out: from findings to
+dispositions" and D7. Steps 3 and 4 remain pending; no remediation implementation or
+intermediate main integration has occurred. This update remains `State: open` while
+its base survives.
