@@ -129,7 +129,9 @@ answer. Every other finding reaches close-out step 1 as the reconciliation table
 Prepared by Codex on 2026-09-27, New York time. Ben's instruction was: "Continue the review
 process. I think in the narrow sense, the review is done, but next comes remediation, or whatever
 is needed to prepare for remediation". The proposals below are Codex's reconstruction, not
-decisions attributed to Ben.
+decisions attributed to Ben when proposed. Ben approved the complete package on
+2026-09-28; the approval entry below distinguishes that scope from the later plan's
+concrete wording approval.
 
 **The review is closed; remediation remains unstarted.** Turn 06 acknowledges turn 05 without
 an objection. Its acknowledgment satisfies the stopping rule in `doc/dual-agent-review.md`.
@@ -326,9 +328,9 @@ Existing generated diffs from `main` are baseline changes, not remediation diffs
 
 ### Choices proposed for Ben, and items deliberately deferred
 
-The following recommendations make the judgment parts of the list explicit. They are proposals
-until Ben accepts them; a rejection or alternative is recorded here before the next plan is
-frozen.
+The following recommendations make the judgment parts of the list explicit. Ben approved
+them on 2026-09-28 as dispositions for the next plan. The plan still presents the
+concrete editorial wording for approval before implementation.
 
 | Finding | Proposed decision for the next plan |
 |---|---|
@@ -383,9 +385,30 @@ checks passed (four tests); `git diff --check` passed. The restricted repository
 inspection exited zero and reported informational source totals; it did not expand remediation
 scope. The independent package checks were reconciled before committing this entry.
 
-**Remote backup remains pending explicit approval.** Automatic approval review rejected the
-normal push of `dar-2026-09-26` twice, including after the D11 backup exception was shown. Its
-stated reason was that an outward-facing worktree-branch push lacked user authorization and
-that the repository document could not override the general no-push instruction. No workaround
-was used. The merge and preparation commit remain local until Ben authorizes that backup;
-primary `main` remains at its prior commit.
+**Backed up on 2026-09-28 after Ben's explicit approval.** Automatic approval review had
+rejected the normal review-branch push twice on 2026-09-27, including after the D11 exception
+was shown, because it considered authorization insufficient. Ben then explicitly authorized
+the backup, and the normal push advanced `origin/dar-2026-09-26` from `db62361e` to
+`572fa2aba1696c3afc7a6bfc56628fa2c559e168`. No workaround or force push was used; primary
+`main` remains at `85cb7acd8df98089614de8e3e30bb67bc5a2c36a`.
+
+## Ben approved the complete dispositions and branch backup, 2026-09-28
+
+Recorded by Codex on 2026-09-28, New York time. Ben selected the question,
+"Do you approve the proposed fixes, deferrals, and no-action dispositions?", and replied
+"I approve". That approval applies to the complete 36-finding package committed at
+`572fa2aba1696c3afc7a6bfc56628fa2c559e168`, including its policy recommendations, finite
+asset-name proposal, already-resolved subitems, explicit no-action dispositions, and
+deferrals. All fixes remain for later remediation. The approval does not supply approval
+of unspecified editorial wording or authorize deferred semantic choices.
+
+Ben separately selected the question,
+"May I push the preparation commits to origin/dar-2026-09-26 as a backup?", and replied
+"yes you may push". The authorized backup succeeded after a fresh fetch and exact
+checkout/status verification; the remote branch now contains both the required `main`
+merge and the preparation commit.
+
+The next phase is the standalone detailed remediation plan, with concrete reader-facing
+wording, distributed-notice effects, internal policy text, executable steps, verification,
+and final integration. Implementation awaits that plan's approval. Step 1 is complete;
+steps 2 through 4 remain pending. This update remains `State: open` while its base survives.
