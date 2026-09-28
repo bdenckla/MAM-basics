@@ -17,9 +17,8 @@ Subcommands:
                 instead of recomputing it, which needs the MAM-private clone;
                 only main_0_mega.py passes it.
     gen-mam-parsed-docs
-                Write index.html to gh-pages/MAM-parsed, plain docs to
-                gh-pages/MAM-parsed/plain/html, and plus docs to
-                gh-pages/MAM-parsed/plus/html.  Runs the claim verification
+                Write index.html to gh-pages/MAM-parsed and the plus docs to
+                gh-pages/MAM-parsed/plus/html. Runs the claim verification
                 afterwards unless --skip-verify-mp says not to.
     verify-mp
                 Run MAM-parsed claim verification without rewriting
@@ -28,8 +27,7 @@ Subcommands:
                 Write doc/mp-claims.md from explicit claims and available
                 verifier functions without rewriting MAM-parsed authored
                 HTML/CSS outputs.  Run this after editing
-                py/author_misc/mpplain.py, py/author_misc/mpplain_body.py,
-                py/author_misc/mpplus.py, or py/author_misc/mpplus_body.py.
+                py/author_misc/mpplus.py or py/author_misc/mpplus_body.py.
 
 Examples:
     .venv/Scripts/python.exe py/main_authored.py
@@ -70,7 +68,7 @@ from author_site import unicode_proposals
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
 from verify_mp import survey_artifact
-from verify_mp.corpus import Context, load_plus_corpus, load_plain_corpus
+from verify_mp.corpus import Context, load_plus_corpus
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -193,14 +191,10 @@ def cmd_gen_site(args):
 def _run_verify_mp(*, claims) -> None:
     """Run MAM-parsed claim verification against corpus + survey artifacts."""
     corpus = load_plus_corpus()
-    corpus_plain = load_plain_corpus()
     survey = survey_artifact.load()
-    survey_plain = survey_artifact.load_plain()
     ctx = Context(
         corpus=corpus,
-        corpus_plain=corpus_plain,
         survey=survey,
-        survey_plain=survey_plain,
     )
     verify_driver.run(ctx, claims=claims)
 
@@ -253,8 +247,8 @@ def build_parser():
     sub.add_parser(
         "gen-mam-parsed-docs",
         help=(
-            "Generate authored MAM-parsed docs (index at gh-pages root, "
-            "plain/html and plus/html for family pages)."
+            "Generate authored MAM-parsed docs (index at gh-pages root and "
+            "plus/html for the surviving product pages)."
         ),
     ).add_argument(
         "--skip-verify-mp",

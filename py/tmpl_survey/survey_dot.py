@@ -605,7 +605,7 @@ def render_svg(dot_path, svg_path, generator_file=None):
     comment is in. Until 2026-09-14 Graphviz wrote svg_path itself and the font
     check ran afterwards, so a failed check left a wrongly rendered tracked SVG
     behind: that day a mega run on a machine without the SBL Hebrew font left
-    gh-pages/MAM-parsed/plain/svg/plain-call-graph-c.svg drawn in a fallback font.
+    one tracked call-graph SVG drawn in a fallback font.
     Ben asked for the temporary file the same day.
     """
     dot = graphviz_pin.find_dot()

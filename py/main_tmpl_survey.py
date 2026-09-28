@@ -1,4 +1,4 @@
-"""Survey Wikisource template usage patterns across the MAM corpus (plain and plus)."""
+"""Survey template usage patterns across the MAM-parsed-plus corpus."""
 
 import argparse
 import json
@@ -7,22 +7,14 @@ import os
 from tmpl_survey import nesting_normal_form
 from tmpl_survey import stack_path_lookup
 from tmpl_survey import survey_dot
-from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
 from mb_cmn import file_io
 from mb_cmn import paths
 
-_PLAIN_OUT_DIR = "out/tmpl-survey-plain"
 _PLUS_OUT_DIR = "out/tmpl-survey-plus"
-_PLAIN_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plain" / "svg")
 _PLUS_SVG_DIR = str(paths.gh_pages_dir() / "MAM-parsed" / "plus" / "svg")
 _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
     "py/tmpl_survey/expanded_stack_grammar_plus.lock.json"
-)
-_PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
-    "In the plain survey, template names are normalized: ASCII double quote "
-    '(") is converted to Hebrew gershayim (U+05F4). This applies to both '
-    "stmpl and tmpl template forms in plain data."
 )
 _PLUS_FULL_GRAPH_COLLAPSE_NODE_GROUPS = (("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),)
 _PLUS_FULL_GRAPH_PREFERRED_REPRESENTATIVES = ("סס",)
@@ -30,9 +22,6 @@ _PLUS_FULL_GRAPH_PREFER_SHORTEST_REPRESENTATIVE = True
 
 
 _NORMAL_FORM_CASE_RANK_GROUPS = {
-    "plain-C": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_C,
-    "plain-D": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_D,
-    "plain-E": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_E,
     "plus-C": nesting_normal_form.RANK_GROUPS_FOR_PLUS_C,
     "plus-D": nesting_normal_form.RANK_GROUPS_FOR_PLUS_D,
     "plus-E": nesting_normal_form.RANK_GROUPS_FOR_PLUS_E,
@@ -46,31 +35,19 @@ def _case_rank_maps(case_rank_groups):
     }
 
 
-def _with_tmpl_name_normalization_note(result, note_text):
-    note_key = "template_name_normalization_note"
-    assert note_key not in result
-    return {note_key: note_text, **result}
-
-
 def _write_outputs(
     result,
     raw_stack_counts,
     stem,
     svg_stem,
-    normalization_note=None,
     full_graph_collapse_node_groups=None,
     full_graph_preferred_representatives=None,
     full_graph_prefer_shortest_representative=False,
 ):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
     os.makedirs(os.path.dirname(svg_stem), exist_ok=True)
-    result_with_note = result
-    if normalization_note is not None:
-        result_with_note = _with_tmpl_name_normalization_note(
-            result, normalization_note
-        )
     file_io.json_dump_to_file_path(
-        result_with_note,
+        result,
         f"{stem}.json",
         generator_file=__file__,
     )
@@ -137,53 +114,28 @@ def _assert_with_expanded_stack_grammar_lock(
 
 
 def almost_main(write_expanded_stack_grammar_lock=False):
-    """Survey the use of templates in MAM plain and plus."""
+    """Survey the use of templates in MAM-parsed-plus."""
     case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
-    plain_result, plain_raw_sc = survey_plain.survey(case_rank_maps=case_rank_maps)
     plus_result, plus_raw_sc = survey_plus.survey(case_rank_maps=case_rank_maps)
     _assert_with_expanded_stack_grammar_lock(
         plus_raw_sc,
         write_expanded_stack_grammar_lock=write_expanded_stack_grammar_lock,
     )
 
-    plain_result["normal_order_cov_counts_by_case"] = (
-        nesting_normal_form.summarize_rank_coverage_by_case(
-            plain_raw_sc,
-            dataset_key="plain",
-            case_rank_maps=case_rank_maps,
-        )
-    )
-    plain_result["normal_order_cov_top_paths_by_case"] = (
-        nesting_normal_form.summarize_rank_coverage_top_paths_by_case(
-            plain_raw_sc,
-            dataset_key="plain",
-            case_rank_maps=case_rank_maps,
-            max_paths=10,
-        )
-    )
     plus_result["normal_order_cov_counts_by_case"] = (
         nesting_normal_form.summarize_rank_coverage_by_case(
             plus_raw_sc,
-            dataset_key="plus",
             case_rank_maps=case_rank_maps,
         )
     )
     plus_result["normal_order_cov_top_paths_by_case"] = (
         nesting_normal_form.summarize_rank_coverage_top_paths_by_case(
             plus_raw_sc,
-            dataset_key="plus",
             case_rank_maps=case_rank_maps,
             max_paths=10,
         )
     )
 
-    _write_outputs(
-        plain_result,
-        plain_raw_sc,
-        f"{_PLAIN_OUT_DIR}/plain",
-        svg_stem=f"{_PLAIN_SVG_DIR}/plain",
-        normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
-    )
     _write_outputs(
         plus_result,
         plus_raw_sc,
@@ -210,7 +162,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main():
-    """Survey the use of templates in MAM plain and plus."""
+    """Survey the use of templates in MAM-parsed-plus."""
     parser = build_parser()
     args = parser.parse_args()
     if stack_path_lookup.maybe_handle_cli(parser, args):

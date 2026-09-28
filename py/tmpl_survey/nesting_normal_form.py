@@ -233,15 +233,13 @@ def summarize_rank_coverage_top_paths(
 
 def summarize_rank_coverage_by_case(
     stack_counts: StackCounts,
-    dataset_key: str,
     case_rank_maps: Mapping[str, RankMap],
 ) -> Dict[str, Dict[str, int]]:
-    """Summarize coverage categories for C/D/E cases of one dataset."""
-    assert dataset_key in ("plain", "plus"), dataset_key
+    """Summarize coverage categories for the plus C/D/E cases."""
 
     by_case: Dict[str, Dict[str, int]] = {}
     for column in _COLUMN_LETTERS:
-        case_key = f"{dataset_key}-{column}"
+        case_key = f"plus-{column}"
         rank_map = case_rank_maps.get(case_key)
         if rank_map is None:
             raise ValueError(
@@ -258,16 +256,14 @@ def summarize_rank_coverage_by_case(
 
 def summarize_rank_coverage_top_paths_by_case(
     stack_counts: StackCounts,
-    dataset_key: str,
     case_rank_maps: Mapping[str, RankMap],
     max_paths: int = 10,
 ) -> Dict[str, Dict[str, List[dict[str, object]]]]:
-    """Return top stacks per checkedness bucket for C/D/E cases."""
-    assert dataset_key in ("plain", "plus"), dataset_key
+    """Return top stacks per checkedness bucket for plus C/D/E cases."""
 
     by_case: Dict[str, Dict[str, List[dict[str, object]]]] = {}
     for column in _COLUMN_LETTERS:
-        case_key = f"{dataset_key}-{column}"
+        case_key = f"plus-{column}"
         rank_map = case_rank_maps.get(case_key)
         if rank_map is None:
             raise ValueError(
@@ -374,18 +370,12 @@ def _stack_counts_for_column(
 
 def assert_stack_counts_in_normal_form_by_case(
     stack_counts: StackCounts,
-    dataset_key: str,
     case_rank_maps: Mapping[str, RankMap],
 ) -> None:
-    """Assert normal form separately for C/D/E using dataset-specific rank maps.
-
-    dataset_key must be "plain" or "plus". Expected case keys in case_rank_maps
-    are f"{dataset_key}-C", f"{dataset_key}-D", and f"{dataset_key}-E".
-    """
-    assert dataset_key in ("plain", "plus"), dataset_key
+    """Assert plus normal form separately for C/D/E using per-case rank maps."""
 
     for column in _COLUMN_LETTERS:
-        case_key = f"{dataset_key}-{column}"
+        case_key = f"plus-{column}"
         rank_map = case_rank_maps.get(case_key)
         if rank_map is None:
             raise ValueError(
@@ -395,7 +385,7 @@ def assert_stack_counts_in_normal_form_by_case(
         column_stack_counts = _stack_counts_for_column(stack_counts, column)
         assert_stack_counts_in_normal_form(
             column_stack_counts,
-            dataset_name=f"{dataset_key} survey ({column} column)",
+            dataset_name=f"plus survey ({column} column)",
             rank_map=rank_map,
         )
 

@@ -2,11 +2,11 @@
 
 This MAM-basics product directory contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
-in two Wikisource-derived parsed formats, `plain/` and `plus/`.
+in the Wikisource-derived MAM-parsed-plus format under `plus/`.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-Each of `plain/` and `plus/` contains a JSON file for each of the 24 books of the
-Miqra. Hebrew Wikisource supplies both formats.
+`plus/` contains one JSON file for each of the 24 books of the Miqra. Hebrew
+Wikisource supplies the source data.
 
 Each JSON file represents its corresponding book in a format that is easier for a program to read than the source Wikitext.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
@@ -17,21 +17,13 @@ The source data contains Wikitext strings, including Wikitext templates such as
 In contrast, the JSON files represent the C and E column data as
 parse trees that "know" about the Wikitext template format.
 
-The contents of the `plain/` files stay close to the Wikisource Wikitext after
-the source-page structure is converted to the 24-book schema. The `plus/` files
-diverge from `plain/` in the following ways:
-
-* Compared to `plain/`, the `plus/` format adds:
-    * A `good_ending_plus` key to the `book39` header.
-    * A targeted version of each מ:הערה template call.
-    * A template marking each word with special letters.
-* Compared to `plain/`, the `plus/` format removes:
-    * custom XML tags
-    * 0 (zero) and תתת (triple-tav) pseudo-verses
+The format adds conveniences for consumers, including a `good_ending_plus` key
+in each `book39` object, targeted scroll-difference notes, and an explicit
+template for each atom with special letters. Source boundary records such as the
+0 (zero) and תתת (triple-tav) pseudo-verses are absent.
 
 For detailed documentation of the file structures, see:
 
-* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-basics/MAM-parsed/plain/html/mpplain.html) — structure reference for the "plain" format
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
 The [consumer cautions](#consumer-cautions) below cover whitespace templates and text
@@ -61,8 +53,8 @@ a sibling MAM-parsed clone and the explicit `--legacy-history` mode.
 
 ## Regeneration and the example
 
-From the MAM-basics root, regenerate Wikisource-derived `plain/` and `plus/`, the
-example support file, and the published documentation:
+From the MAM-basics root, regenerate Wikisource-derived `plus/`, the example
+support file, and the published documentation:
 
 ```powershell
 .venv/Scripts/python.exe py/main_parse.py ws
@@ -98,7 +90,7 @@ product generators. No release archive is maintained.
 ### Whitespace templates
 
 A whitespace template can be the only separator between adjacent Scripture strings in
-the Wikisource-derived `plain/` and `plus/` payloads. For example, the strings before
+the Wikisource-derived `plus/` payloads. For example, the strings before
 and after `מ:ששש` or `ססס` can contain no literal whitespace at that boundary. A
 plain-text projection that does not preserve layout must supply at least one separator;
 a layout-preserving renderer must implement the documented space or break. Dropping

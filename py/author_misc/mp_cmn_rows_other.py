@@ -117,19 +117,16 @@ PABP_ARG_VALUE_STRUCT = (
     " סס, ססס, פפ, or פפפ"
     " when the parashah division appears within a verse rather than between verses."
     " This is a parameter value, not a template name."
-    " Verified by corpus assertions in survey_plain.py and survey_plus.py."
+    " Verified by corpus assertions in survey_plus.py."
 )
 
 CLAIM_DEFS = (
     _claim_def(
-        "mp.both.templates.other.set",
+        "mp.plus.templates.other.set",
         OTHER_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
-            # מ:אות מנוקדת, מ:טעם ומתג באות אחת, מ:גרש ותלישא גדולה,
-            # מ:גרשיים ותלישא גדולה, רווח בסוף שורה, מ:כל קמץ קטן מרכא, and מ:סיום בטוב
-            # appear only in the plain survey. Verified in PLAIN_ONLY.
             "templates": [
                 "פפ",
                 "סס",
@@ -143,20 +140,20 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.sampe.pabp-arg-value",
+        "mp.plus.templates.sampe.pabp-arg-value",
         PABP_ARG_VALUE_STRUCT,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "arg_value": "פסקא באמצע פסוק",
             "templates": ["סס", "ססס", "פפ", "פפפ"],
         },
     ),
     _claim_def(
-        "mp.both.templates.modag.only-in-docnote-param2",
+        "mp.plus.templates.modag.only-in-docnote-param2",
         MODAG_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מודגש",
             "parent_template": "נוסח",
@@ -164,10 +161,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.sh.only-in-docnote-param2",
+        "mp.plus.templates.sh.only-in-docnote-param2",
         SH_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "ש",
             "parent_template": "נוסח",
@@ -237,15 +234,3 @@ def other_rows_shared_core(*, docnote_doc=_DOCNOTE_DOC):
 
 def good_ending_row(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
     return _good_ending_row(good_ending_doc)
-
-
-def other_rows_plain_extras(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
-    return [
-        OTHER_ROW_BY_TEMPLATE["מ:אות מנוקדת"],
-        _good_ending_row(good_ending_doc),
-        OTHER_ROW_BY_TEMPLATE["מ:טעם ומתג באות אחת"],
-        OTHER_ROW_BY_TEMPLATE["מ:גרש ותלישא גדולה"],
-        OTHER_ROW_BY_TEMPLATE["מ:גרשיים ותלישא גדולה"],
-        OTHER_ROW_BY_TEMPLATE["רווח בסוף שורה"],
-        OTHER_ROW_BY_TEMPLATE["מ:כל קמץ קטן מרכא"],
-    ]

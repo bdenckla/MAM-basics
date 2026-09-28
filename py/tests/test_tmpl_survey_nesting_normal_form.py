@@ -17,23 +17,20 @@ def _survey_case_rank_maps():
 
 
 def _default_normal_form_rank_map():
-    return _survey_case_rank_maps()["plain-E"]
+    return _survey_case_rank_maps()["plus-E"]
 
 
 class TestTmplSurveyNestingNormalForm(unittest.TestCase):
-    def test_plain_and_plus_d_use_three_template_rank_order(self):
+    def test_plus_d_uses_three_template_rank_order(self):
         case_rank_maps = _survey_case_rank_maps()
 
         expected_templates = {"נוסח", "מ:פסוק", "מ:עלייה"}
-        plain_d = case_rank_maps["plain-D"]
         plus_d = case_rank_maps["plus-D"]
 
-        self.assertTrue(expected_templates.issubset(set(plain_d)))
         self.assertTrue(expected_templates.issubset(set(plus_d)))
-        self.assertEqual(plain_d, plus_d)
-        self.assertEqual(0, plain_d["נוסח"])
-        self.assertEqual(1, plain_d["מ:פסוק"])
-        self.assertEqual(2, plain_d["מ:עלייה"])
+        self.assertEqual(0, plus_d["נוסח"])
+        self.assertEqual(1, plus_d["מ:פסוק"])
+        self.assertEqual(2, plus_d["מ:עלייה"])
 
     def test_plus_e_uses_custom_rank_overrides(self):
         case_rank_maps = _survey_case_rank_maps()
@@ -45,14 +42,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertLess(plus_e["מ:הערה-2"], plus_e["כו״ק"])
         self.assertLess(plus_e["כו״ק"], plus_e["מ:קמץ"])
         self.assertLess(plus_e["מ:קמץ"], plus_e["מ:דחי"])
-
-        plain_e = case_rank_maps["plain-E"]
-        self.assertEqual(plain_e["כו״ק"], plain_e["מ:כו״ק מיוחד"])
-        self.assertEqual(plain_e["כו״ק"], plain_e["מ:קו״כ-אם-2"])
-        self.assertEqual(plain_e["כו״ק"], plain_e["קו״כ"])
-        self.assertLess(plain_e["מ:הערה-2"], plain_e["כו״ק"])
-        self.assertLess(plain_e["כו״ק"], plain_e["מ:קמץ"])
-        self.assertLess(plain_e["מ:קמץ"], plain_e["מ:דחי"])
 
     def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
@@ -170,13 +159,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         )
         case_rank_maps = {
-            "plain-C": same_order,
-            "plain-D": same_order,
-            "plain-E": same_order,
+            "plus-C": same_order,
+            "plus-D": same_order,
+            "plus-E": same_order,
         }
         nnf.assert_stack_counts_in_normal_form_by_case(
             stack_counts,
-            dataset_key="plain",
             case_rank_maps=case_rank_maps,
         )
 
@@ -199,17 +187,16 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         )
         case_rank_maps = {
-            "plain-C": a_before_b,
-            "plain-D": a_before_b,
-            "plain-E": b_before_a,
+            "plus-C": a_before_b,
+            "plus-D": a_before_b,
+            "plus-E": b_before_a,
         }
         with self.assertRaises(AssertionError) as ctx:
             nnf.assert_stack_counts_in_normal_form_by_case(
                 stack_counts,
-                dataset_key="plain",
                 case_rank_maps=case_rank_maps,
             )
-        self.assertIn("plain survey (E column)", str(ctx.exception))
+        self.assertIn("plus survey (E column)", str(ctx.exception))
 
     def test_case_rank_maps_require_all_dataset_columns(self):
         stack_counts = {
@@ -222,7 +209,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             nnf.assert_stack_counts_in_normal_form_by_case(
                 stack_counts,
-                dataset_key="plus",
                 case_rank_maps=case_rank_maps,
             )
         self.assertIn("plus-E", str(ctx.exception))
@@ -294,7 +280,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
-    def test_summarize_rank_coverage_counts_handles_plain_docnote_paths(self):
+    def test_summarize_rank_coverage_counts_handles_docnote_paths(self):
         rank_map = nnf.build_rank_map(
             (
                 frozenset({"נוסח"}),
@@ -371,39 +357,38 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         )
         case_rank_maps = {
-            "plain-C": a_before_b,
-            "plain-D": a_before_b,
-            "plain-E": a_before_b,
+            "plus-C": a_before_b,
+            "plus-D": a_before_b,
+            "plus-E": a_before_b,
         }
 
         by_case = nnf.summarize_rank_coverage_top_paths_by_case(
             stack_counts,
-            dataset_key="plain",
             case_rank_maps=case_rank_maps,
             max_paths=10,
         )
 
-        self.assertEqual({"plain-C", "plain-D", "plain-E"}, set(by_case))
-        self.assertEqual(1, len(by_case["plain-C"]["fully_checked"]))
-        self.assertIn("stack", by_case["plain-C"]["fully_checked"][0])
+        self.assertEqual({"plus-C", "plus-D", "plus-E"}, set(by_case))
+        self.assertEqual(1, len(by_case["plus-C"]["fully_checked"]))
+        self.assertIn("stack", by_case["plus-C"]["fully_checked"][0])
         self.assertEqual(
-            "C/A/B", _read_top_stack(by_case["plain-C"]["fully_checked"][0])
+            "C/A/B", _read_top_stack(by_case["plus-C"]["fully_checked"][0])
         )
-        self.assertEqual(1, by_case["plain-C"]["fully_checked"][0]["count"])
+        self.assertEqual(1, by_case["plus-C"]["fully_checked"][0]["count"])
 
-        self.assertEqual(1, len(by_case["plain-D"]["fully_checked"]))
-        self.assertIn("stack", by_case["plain-D"]["fully_checked"][0])
+        self.assertEqual(1, len(by_case["plus-D"]["fully_checked"]))
+        self.assertIn("stack", by_case["plus-D"]["fully_checked"][0])
         self.assertEqual(
-            "D/A/B", _read_top_stack(by_case["plain-D"]["fully_checked"][0])
+            "D/A/B", _read_top_stack(by_case["plus-D"]["fully_checked"][0])
         )
-        self.assertEqual(2, by_case["plain-D"]["fully_checked"][0]["count"])
+        self.assertEqual(2, by_case["plus-D"]["fully_checked"][0]["count"])
 
-        self.assertEqual(1, len(by_case["plain-E"]["totally_unchecked"]))
-        self.assertIn("stack", by_case["plain-E"]["totally_unchecked"][0])
+        self.assertEqual(1, len(by_case["plus-E"]["totally_unchecked"]))
+        self.assertIn("stack", by_case["plus-E"]["totally_unchecked"][0])
         self.assertEqual(
-            "E/X/Z", _read_top_stack(by_case["plain-E"]["totally_unchecked"][0])
+            "E/X/Z", _read_top_stack(by_case["plus-E"]["totally_unchecked"][0])
         )
-        self.assertEqual(3, by_case["plain-E"]["totally_unchecked"][0]["count"])
+        self.assertEqual(3, by_case["plus-E"]["totally_unchecked"][0]["count"])
 
     def test_summarize_rank_coverage_by_case_returns_dataset_case_keys(self):
         stack_counts = {
@@ -418,21 +403,20 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         )
         case_rank_maps = {
-            "plain-C": a_before_b,
-            "plain-D": a_before_b,
-            "plain-E": a_before_b,
+            "plus-C": a_before_b,
+            "plus-D": a_before_b,
+            "plus-E": a_before_b,
         }
 
         summary = nnf.summarize_rank_coverage_by_case(
             stack_counts,
-            dataset_key="plain",
             case_rank_maps=case_rank_maps,
         )
 
-        self.assertEqual({"plain-C", "plain-D", "plain-E"}, set(summary))
-        self.assertEqual(1, summary["plain-C"]["fully_checked"])
-        self.assertEqual(1, summary["plain-D"]["fully_checked"])
-        self.assertEqual(1, summary["plain-E"]["totally_unchecked"])
+        self.assertEqual({"plus-C", "plus-D", "plus-E"}, set(summary))
+        self.assertEqual(1, summary["plus-C"]["fully_checked"])
+        self.assertEqual(1, summary["plus-D"]["fully_checked"])
+        self.assertEqual(1, summary["plus-E"]["totally_unchecked"])
 
     def test_infer_expanded_stack_grammar_has_edges_and_order(self):
         baseline = {

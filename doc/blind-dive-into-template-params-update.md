@@ -39,8 +39,8 @@ of 2026-09-12.
    emitted. The external-link template `מ:קישור בהערה` still renders a link. Whether an internal
    target follows the documented strict contract or a permissive one is decision 10 of the plan.
 4. **Finding 4 has been fixed.**
-   `py/mb_cmn/plain_template_schema.py:validate_current_plain_template` checks every argument's
-   identity as well as the argument count: against `_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES` where
+   `py/mb_cmn/parser_stage_template_schema.py:validate_parser_stage_template` checks every argument's
+   identity as well as the argument count: against `_PARSER_STAGE_NAMED_ARGUMENT_IDENTITIES` where
    that table has an entry for the template, and against positional identities otherwise.
 5. **Finding 5 has been fixed.** Each of the four paths the finding names now validates a
    template's shape before it selects parameters. `py/mpplus/mpplus_boring_tmpls.py:evaluate` calls
@@ -61,4 +61,15 @@ Recorded by Codex on 2026-09-27. The base review's description of finding 4 name
 Google Sheet edits as products reached by the weaker validator. Those paths were historical
 evidence at the reviewed commit, but the Google download, parse, comparison, and auto-edit
 pipeline was removed during the execution of `doc/PLAN-retire-google-sheet.md`. The survey and
-documentation-verification paths named beside them remain current.
+documentation-verification paths named beside them remained current at that checkpoint.
+
+## The persisted plain product and survey have been retired
+
+Recorded by Codex on 2026-09-28 during execution of
+`doc/PLAN-retire-mam-parsed-plain.md`. The base review's descriptions of
+`MAM-parsed/plain/`, `py/tmpl_survey/survey_plain.py`,
+`out/tmpl-survey-plain/`, and the published plain-template call graphs are now
+historical evidence about the reviewed commit. MAM-basics no longer persists or
+distributes the plain representation or its survey. The raw template-shape and
+expanded-stack checks remain live at the transient parser-stage validation
+boundary in `py/verify_mp/parser_stage.py`.

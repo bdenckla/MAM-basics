@@ -6,7 +6,7 @@ import json
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn import paths
-from mb_cmn import plain_template_schema
+from mb_cmn import parser_stage_template_schema
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl_named_params as wtnp
 from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
@@ -39,7 +39,9 @@ _RANK_MAPS = {
 def node_type_and_subtype(node):
     """Validate and classify one non-string parser-stage node."""
     if wtp1.is_template(node):
-        template_name = plain_template_schema.validate_current_plain_template(node)
+        template_name = parser_stage_template_schema.validate_parser_stage_template(
+            node
+        )
         if kqst.is_special_kq_template_name(template_name):
             assert kqst.is_unified_special_kq_template_name(
                 template_name
@@ -48,7 +50,7 @@ def node_type_and_subtype(node):
     if wtp1.is_abtag(node):
         return (
             "custom_tag",
-            plain_template_schema.validate_current_plain_custom_tag(node),
+            parser_stage_template_schema.validate_parser_stage_custom_tag(node),
         )
     raise TypeError(f"unclassified current parser-stage node: {node!r}")
 

@@ -1,13 +1,13 @@
-"""Closed shape roster for the current MAM-parsed-plain corpus.
+"""Closed shape roster for the transient parser-stage representation.
 
-The roster was audited against every plain book on 2026-09-11.  Whole-structure
+The roster was audited against every parser-stage book on 2026-09-11. Whole-structure
 walkers validate a template or custom tag here before visiting its children.  A
 new name or arity therefore requires an explicit source change.
 """
 
 from mb_cmn import ws_tmpl1
 
-CURRENT_PLAIN_TEMPLATE_ARG_COUNTS = {
+PARSER_STAGE_TEMPLATE_ARG_COUNTS = {
     "#בלי קטע:": frozenset({1}),
     "#בלי קטע:דברי הימים א טז/טעמים": frozenset({1}),
     "#בלי קטע:דברים לב/טעמים": frozenset({1}),
@@ -119,10 +119,10 @@ CURRENT_PLAIN_TEMPLATE_ARG_COUNTS = {
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון": frozenset({1}),
 }
 
-# Exact argument-identity sequences for templates whose current plain calls use
+# Exact argument-identity sequences for templates whose parser-stage calls use
 # named arguments.  Every template absent from this mapping has positional
 # arguments only; its permitted sequences are derived from the arities above.
-_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES = {
+_PARSER_STAGE_NAMED_ARGUMENT_IDENTITIES = {
     "בסיס-משתמש": frozenset({("שם",)}),
     "מ:הערה": frozenset({("1", "שם")}),
     "מ:כו״ק מיוחד": frozenset({("1", "2", "סוג")}),
@@ -163,7 +163,7 @@ _CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES = {
     "פרשה-מרכז": frozenset({("כותרת",)}),
 }
 
-CURRENT_PLAIN_CUSTOM_TAG_NAMES = frozenset(
+PARSER_STAGE_CUSTOM_TAG_NAMES = frozenset(
     {
         "/noinclude",
         "noinclude",
@@ -194,26 +194,26 @@ CURRENT_PLAIN_CUSTOM_TAG_NAMES = frozenset(
 )
 
 
-def validate_current_plain_template(tmpl):
+def validate_parser_stage_template(tmpl):
     """Return a template name after closed name and argument-shape validation."""
     if not isinstance(tmpl, dict) or not ws_tmpl1.dic_is_template(tmpl):
-        raise TypeError(f"not a current MAM-parsed-plain template: {tmpl!r}")
+        raise TypeError(f"not a current parser-stage template: {tmpl!r}")
     name = ws_tmpl1.template_name(tmpl)
-    allowed_arg_counts = CURRENT_PLAIN_TEMPLATE_ARG_COUNTS.get(name)
+    allowed_arg_counts = PARSER_STAGE_TEMPLATE_ARG_COUNTS.get(name)
     if allowed_arg_counts is None:
-        raise ValueError(f"unclassified current MAM-parsed-plain template: {name!r}")
+        raise ValueError(f"unclassified current parser-stage template: {name!r}")
     arguments = ws_tmpl1.template_arguments(tmpl)
     arg_count = len(arguments)
     if arg_count not in allowed_arg_counts:
         raise ValueError(
-            f"unexpected argument count for current plain template {name!r}: "
+            f"unexpected argument count for parser-stage template {name!r}: "
             f"allowed {sorted(allowed_arg_counts)!r}, got {arg_count}"
         )
     actual_identities = tuple(
-        _plain_argument_identity(argument, position)
+        _parser_stage_argument_identity(argument, position)
         for position, argument in enumerate(arguments, start=1)
     )
-    allowed_identities = _CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES.get(name)
+    allowed_identities = _PARSER_STAGE_NAMED_ARGUMENT_IDENTITIES.get(name)
     if allowed_identities is None:
         allowed_identities = frozenset(
             tuple(str(position) for position in range(1, count + 1))
@@ -221,16 +221,17 @@ def validate_current_plain_template(tmpl):
         )
     if actual_identities not in allowed_identities:
         raise ValueError(
-            f"unexpected argument identities for current plain template {name!r}: "
+            f"unexpected argument identities for parser-stage template {name!r}: "
             f"allowed {sorted(allowed_identities)!r}, got {actual_identities!r}"
         )
     return name
 
 
-def _plain_argument_identity(argument, position):
+def _parser_stage_argument_identity(argument, position):
     if not isinstance(argument, list) or not argument:
         raise TypeError(
-            f"plain template argument {position} is not a nonempty list: {argument!r}"
+            f"parser-stage template argument {position} is not a nonempty list: "
+            f"{argument!r}"
         )
     first = argument[0]
     if isinstance(first, str) and "=" in first:
@@ -238,11 +239,11 @@ def _plain_argument_identity(argument, position):
     return str(position)
 
 
-def validate_current_plain_custom_tag(node):
-    """Return a plain custom-tag value after closed shape/name validation."""
+def validate_parser_stage_custom_tag(node):
+    """Return a parser-stage custom-tag value after closed validation."""
     if not isinstance(node, dict) or set(node) != {"custom_tag"}:
-        raise TypeError(f"not a current MAM-parsed-plain custom tag: {node!r}")
+        raise TypeError(f"not a current parser-stage custom tag: {node!r}")
     value = node["custom_tag"]
-    if value not in CURRENT_PLAIN_CUSTOM_TAG_NAMES:
-        raise ValueError(f"unclassified current MAM-parsed-plain custom tag: {value!r}")
+    if value not in PARSER_STAGE_CUSTOM_TAG_NAMES:
+        raise ValueError(f"unclassified current parser-stage custom tag: {value!r}")
     return value

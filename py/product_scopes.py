@@ -18,8 +18,9 @@ THE THREE TIERS
    time, and on manual dispatch.  Anyone with the URL reads it, and either deployment
    is the act that makes that true, so a change reaching this tier is outward-facing
    in the ordinary sense.
-2. DISTRIBUTED DATA.  ``MAM-parsed/``, ``MAM-simple/``, ``MAM-for-Sefaria/``,
-   ``MAM-with-doc/`` and ``MAM-OSIS/``.  These are consumed by git URL whether or not
+2. DISTRIBUTED DATA.  ``MAM-parsed/`` (whose current parsed payload is
+   ``MAM-parsed/plus/``), ``MAM-simple/``, ``MAM-for-Sefaria/``, ``MAM-with-doc/``
+   and ``MAM-OSIS/``. These are consumed by git URL whether or not
    Pages serves them, so "not published" is not the same as "not distributed": a
    consumer pinning a path in one of these trees sees a change here without any
    deploy at all.
@@ -81,6 +82,8 @@ _PRODUCT_DIR_NAMES = (
     "MAM-with-doc",
     "MAM-OSIS",
 )
+
+_MAM_PARSED_CURRENT_FORMAT_DIR = "MAM-parsed/plus"
 
 # Every entry point the runners of _STEPS in py/main_0_mega.py run, by repo-relative
 # path, with the _run_* wrappers defined in that file resolved to what they drive.
@@ -178,6 +181,11 @@ def product_dirs() -> list[Path]:
     """Tier 2: the five data products, each consumed by git URL as well as by Pages."""
     root = paths.repo_root()
     return [root / name for name in _PRODUCT_DIR_NAMES]
+
+
+def mam_parsed_current_format_dir() -> Path:
+    """The surviving current parsed-data format within the MAM-parsed product."""
+    return paths.repo_root() / _MAM_PARSED_CURRENT_FORMAT_DIR
 
 
 def generator_entry_points() -> list[Path]:

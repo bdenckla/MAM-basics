@@ -22,7 +22,7 @@ orders render identically, so nothing looks wrong on the page and the defect sur
 something compares bytes.
 
 MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_std_mark_order` true
-for all 87 files of `MAM-parsed/plus/`, `MAM-parsed/plain/` and `MAM-for-Sefaria/csv/`. So a cluster
+for all 63 files now retained under `MAM-parsed/plus/` and `MAM-for-Sefaria/csv/`. So a cluster
 in the other order is either hand-authored — and **the way in is a paste through anything that
 normalizes, a browser above all** — or it sits upstream of the denormalizing step and belongs
 exactly as it is. Hebrew you did not lift from the data is the thing to suspect.

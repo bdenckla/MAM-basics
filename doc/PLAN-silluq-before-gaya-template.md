@@ -90,7 +90,7 @@ The generated products have these exact outcomes at 1 Kings 7:37:
 | Product | Result |
 | --- | --- |
 | MAM-with-doc | Keep `לְכֻלָּֽהְנָֽה׃` and the existing detailed `נוסח` note. |
-| MAM-parsed plain and plus | Keep both U+05BD marks; the template must not change MAM's text. |
+| MAM-parsed-plus | Keep both U+05BD marks; the template must not change MAM's text. |
 | MAM-simple XML and JSON | Keep both U+05BD marks in `text` and retain the silluq position in `letters-with-silluq`. |
 | Sefaria | Emit `לְכֻלָּֽהְנָה׃` and no note. |
 | AJF | Emit `לְכֻלָּֽהְנָה׃` and no note. |
@@ -279,8 +279,8 @@ old and new source strings and must change only the target atom; run the bot's
 no-save mode before the live edit.
 
 After Wikisource is updated, refresh the Wikisource books and the MAM
-introduction. The Wikisource book refresh updates production MAM-parsed plain and
-plus and maintains the special-page mirror. Review the exact source and generated
+introduction. The Wikisource book refresh updates production MAM-parsed-plus and
+maintains the special-page mirror. Review the exact source and generated
 diffs before proceeding.
 
 Use the production entry points from the MAM-basics worktree:
@@ -294,10 +294,10 @@ option after inspecting the current CLI help; do not invent a second bot path.
 
 ### Parser, MAM-simple, and shared cleanup helper
 
-Add the new template to every template registry that governs MAM-parsed plain,
-MAM-parsed plus, generic source rendering, template surveys, nesting checks, and
+Add the new template to every template registry that governs the transient parser
+stage, MAM-parsed-plus, generic source rendering, template surveys, nesting checks, and
 feature-of-interest recursion. The default rendering path returns parameter 1,
-so MAM-with-doc, MAM-parsed plain, and MAM-parsed plus retain MAM's two marks.
+so MAM-with-doc and MAM-parsed-plus retain MAM's two marks.
 The abstract rendering path creates `silluq-before-meteg` with the parameter-2
 value as `letters-with-silluq` and parameter 1 as the element text.
 
@@ -408,7 +408,7 @@ Acceptance requires all of the following:
 2. A corpus search confirms that no call includes sof pasuq in either parameter
    and that the source sof pasuq immediately follows the enclosing `נוסח`
    template.
-3. MAM-with-doc, MAM-parsed plain, MAM-parsed plus, and MAM-simple have
+3. MAM-with-doc, MAM-parsed-plus, and MAM-simple have
    `לְכֻלָּֽהְנָֽה׃` at 1 Kings 7:37.
 4. Sefaria and AJF have `לְכֻלָּֽהְנָה׃` at 1 Kings 7:37 and no synthetic note.
 5. OSIS has both U+05BD marks, exactly one `x-silluq-before-meteg` note at the

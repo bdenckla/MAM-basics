@@ -2,20 +2,10 @@
 
 import unittest
 
-from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
 
 
 class TestTmplSurveyPlusInvariants(unittest.TestCase):
-    def test_plain_child_stack_symbols_match_parent_template(self):
-        self.assertEqual(("נוסח",), survey_plain._child_stack_symbols("נוסח", 1))
-        self.assertEqual(("מ:כפול",), survey_plain._child_stack_symbols("מ:כפול", 1))
-
-    def test_plain_child_stack_symbol_is_parent_template(self):
-        self.assertEqual("נוסח", survey_plain._child_stack_symbol("נוסח", 1))
-        self.assertEqual("נוסח", survey_plain._child_stack_symbol("נוסח", "2"))
-        self.assertEqual("מ:כפול", survey_plain._child_stack_symbol("מ:כפול", 1))
-
     def test_plus_child_stack_symbols_match_parent_template(self):
         self.assertEqual(("נוסח",), survey_plus._child_stack_symbols("נוסח", 2))
         self.assertEqual(("מ:כפול",), survey_plus._child_stack_symbols("מ:כפול", 1))
@@ -24,23 +14,6 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         self.assertEqual("נוסח", survey_plus._child_stack_symbol("נוסח", 1))
         self.assertEqual("נוסח", survey_plus._child_stack_symbol("נוסח", "2"))
         self.assertEqual("מ:כפול", survey_plus._child_stack_symbol("מ:כפול", 1))
-
-    def test_plain_flatten_stack_counts_uses_unsuffixed_docnote(self):
-        accum = {
-            "stack_counts": {
-                ("מ:פסוק", "E"): 5,
-                ("מ:פסוק", "E/נוסח"): 5,
-            }
-        }
-        records = survey_plain._flatten_stack_counts(accum)
-        self.assertEqual(2, len(records))
-        self.assertEqual(
-            [
-                ("E/מ:פסוק", 5),
-                ("E/נוסח/מ:פסוק", 5),
-            ],
-            [(r["stack"], r["count"]) for r in records],
-        )
 
     def test_plus_flatten_stack_counts_uses_unsuffixed_docnote(self):
         accum = {
@@ -58,17 +31,6 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
             ],
             [(r["stack"], r["count"]) for r in records],
         )
-
-    def test_plain_flatten_stack_counts_preserves_direct_docnote(self):
-        accum = {
-            "stack_counts": {
-                ("מ:פסוק", "E/נוסח"): 1,
-            }
-        }
-        records = survey_plain._flatten_stack_counts(accum)
-        self.assertEqual(1, len(records))
-        self.assertEqual("E/נוסח/מ:פסוק", records[0]["stack"])
-        self.assertEqual(1, records[0]["count"])
 
     def test_plus_flatten_stack_counts_preserves_direct_docnote(self):
         accum = {

@@ -269,7 +269,6 @@ def survey(case_rank_maps):
     _assert_plus_excludes_non_targeted_scroll_diff_notes(accum["stack_counts"])
     nesting_normal_form.assert_stack_counts_in_normal_form_by_case(
         accum["stack_counts"],
-        dataset_key="plus",
         case_rank_maps=case_rank_maps,
     )
     plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])

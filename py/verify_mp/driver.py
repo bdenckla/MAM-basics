@@ -7,18 +7,16 @@ from typing import Callable, Mapping
 
 from mb_author.claim import ClaimCollection, ClaimRecord
 from verify_mp import payload_examples
-from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
+from verify_mp import verifiers_plus, verifiers_templates
 from verify_mp.corpus import Context
-from verify_mp.verifiers_both import REGISTRY as REGISTRY_BOTH
-from verify_mp.verifiers_plain import REGISTRY as REGISTRY_PLAIN
+from verify_mp.verifiers_templates import REGISTRY as REGISTRY_TEMPLATES
 from verify_mp.verifiers_plus import REGISTRY as REGISTRY_PLUS
 
 VerifierFn = Callable[[ClaimRecord, Context], None]
 
 _VERIFIER_MODULES: tuple[ModuleType, ...] = (
     verifiers_plus,
-    verifiers_both,
-    verifiers_plain,
+    verifiers_templates,
 )
 
 
@@ -30,10 +28,8 @@ def _registry_for_module(module: ModuleType) -> Mapping[str, VerifierFn]:
     """Return explicit REGISTRY symbol for known modules, else module.REGISTRY."""
     if module is verifiers_plus:
         return REGISTRY_PLUS
-    if module is verifiers_both:
-        return REGISTRY_BOTH
-    if module is verifiers_plain:
-        return REGISTRY_PLAIN
+    if module is verifiers_templates:
+        return REGISTRY_TEMPLATES
     return module.REGISTRY
 
 

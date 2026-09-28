@@ -10,11 +10,11 @@ from author_misc import mp_cmn as cmn
 def _kq_special_rows(*, claims: ClaimCollection):
     cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.kq-special.subtype-counts",
+        claim_id="mp.plus.templates.kq-special.subtype-counts",
     )
     return cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.kq-special.subtypes",
+        claim_id="mp.plus.templates.kq-special.subtypes",
     )
 
 

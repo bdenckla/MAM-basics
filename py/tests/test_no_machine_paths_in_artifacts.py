@@ -74,7 +74,6 @@ _PROGRAM_WRITTEN_GROUPS = {
         "MAM-simple/py-examples",
     ),
     "MAM-parsed": (
-        "MAM-parsed/plain/provenance.md",
         "MAM-parsed/plus/provenance.md",
         "MAM-parsed/py-examples",
         "MAM-parsed/py-examples-out",

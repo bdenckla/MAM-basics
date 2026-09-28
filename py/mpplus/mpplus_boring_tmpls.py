@@ -166,7 +166,7 @@ assert frozenset(_CURRENT_HANDLER_INPUT_PARAM_POLICY) == frozenset(_HANDLERS)
 
 
 def validate_current_handler_input_template(tmpl):
-    """Validate a current plain-only template after conversion to tmpl2 form."""
+    """Validate a parser-stage template after conversion to tmpl2 form."""
     if not isinstance(tmpl, dict) or not isinstance(tmpl.get("tmpl_name"), str):
         raise TypeError(f"not a converted current template: {tmpl!r}")
     name = tmpl["tmpl_name"]

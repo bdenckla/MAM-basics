@@ -9,19 +9,18 @@ to gershayim for both the ``stmpl`` and the ``tmpl`` shape, via
 the true character and the ASCII quote as the stand-in. So the parsed name is
 always the canonical one, and these constants are what it equals.
 
-The shorthand is still visible in stored data, which is the one thing to watch:
-MAM-parsed-PLAIN keeps the raw wikitext spelling in its ``stmpl`` strings and
-``tmpl`` lists — ``קו"כ``, ``מ:קו"כ-אם-2``, ``מ:כו"ק מיוחד``,
-``מ:אין פרשה בתחילת פרק בספרי אמ"ת`` — so a raw plain name compared without going
-through ``template_name()`` will not equal any constant here. MAM-parsed-PLUS
-stores the canonical spelling directly in ``tmpl_name`` and can be compared raw,
-and has since MAM-parsed 2993dbd of 2026-05-09, "Use g2 not q2 in tmpl names".
-Before 2993dbd, though, plus data has the ASCII shorthand in ``tmpl_name`` just as
-plain data does. So code reading plus data from arbitrary git revisions, rather than
-from the working tree, must normalize the quote before comparing;
+The shorthand remains visible in the transient parser-stage representation, whose
+``stmpl`` strings and ``tmpl`` lists keep the raw Wikitext spelling — ``קו"כ``,
+``מ:קו"כ-אם-2``, ``מ:כו"ק מיוחד``, ``מ:אין פרשה בתחילת פרק בספרי אמ"ת``. A raw
+parser-stage name compared without going through ``template_name()`` will not equal
+any constant here. MAM-parsed-plus stores the canonical spelling directly in
+``tmpl_name`` and can be compared raw, and has since MAM-parsed 2993dbd of
+2026-05-09, "Use g2 not q2 in tmpl names". Before 2993dbd, plus data has the ASCII
+shorthand in ``tmpl_name``. Code reading plus data from arbitrary git revisions,
+rather than from the working tree, must normalize the quote before comparing;
 ``py/mb_diff_mpu/mpplus_extract.py``'s ``_canonicalize_template_names`` is the
 worked example.
-Names with no quote mark are spelled identically everywhere and raise none of this.
+Names with no quote mark are spelled identically in both representations.
 """
 
 # Named because more than one comparison site needs them, in this repo's siblings

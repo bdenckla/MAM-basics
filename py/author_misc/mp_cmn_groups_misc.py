@@ -102,18 +102,6 @@ NOTE_ROW = [
     ],
 ]
 
-NOTE_ROW_PLAIN = [
-    author.hbo(tmpln.SCRDFF_NO_TAR),
-    [
-        "Non-targeted scroll-difference note (Torah and Esther only). See ",
-        author.anchor_h(
-            ["Wikisource template page for ", author.hbo("מ:הערה")],
-            "https://he.wikisource.org/wiki/תבנית:הערה",
-        ),
-        ".",
-    ],
-]
-
 NOTE_LINKS_ROW = [
     [
         author.hbo("מ:קישור בהערה"),
@@ -184,14 +172,11 @@ ALL_GROUPS_COVER_ALL_OBSERVED = (
 
 CLAIM_DEFS = (
     _claim_def(
-        "mp.both.templates.structural.set",
+        "mp.plus.templates.structural.set",
         STRUCTURAL_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
-            # מ:יישור-בשני-הצדדים, מ:יישור-בשני-הצדדים-סוף,
-            # מ:רווח בתרי עשר, and מ:רווח לספר בתהלים appear only in the plain
-            # survey (stripped from plus during corpus construction). Verified in PLAIN_ONLY.
             "templates": [
                 "מ:ספר חדש",
                 "מ:רווח בתרי עשר בפסוק הראשון",
@@ -204,17 +189,17 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.note",
+        "mp.plus.templates.note",
         NOTE_ROW,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={"templates": [tmpln.SCRDFF_TAR], "books": "Torah and Esther only"},
     ),
     _claim_def(
-        "mp.both.templates.note-links.set",
+        "mp.plus.templates.note-links.set",
         NOTE_LINKS_ROW,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "templates": [
                 "מ:קישור בהערה",
@@ -223,10 +208,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.note-link-external.only-in-docnote-param2",
+        "mp.plus.templates.note-link-external.only-in-docnote-param2",
         NOTE_LINK_EXTERNAL_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מ:קישור בהערה",
             "parent_template": "נוסח",
@@ -234,10 +219,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.note-link-internal.only-in-docnote-param2",
+        "mp.plus.templates.note-link-internal.only-in-docnote-param2",
         NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מ:קישור פנימי בהערה",
             "parent_template": "נוסח",
@@ -245,25 +230,21 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.navigation.set",
+        "mp.plus.templates.navigation.set",
         NAVIGATION_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
-            # מ:שוליים, מ:שוליים-סוף, טעמי המקרא באינטרנט, מ:טעמי המקרא,
-            # מ:טעמי המקרא-סוף, ניווט טעמים, בסיס-משתמש, קק,
-            # עוגן בשורה, and צורות כתיבה בספרי אמ״ת appear only in the plain
-            # survey (not in the plus content format). Verified in PLAIN_ONLY.
             "templates": [
                 "מ:פסוק",
             ]
         },
     ),
     _claim_def(
-        "mp.both.templates.all-groups-cover-all-observed",
+        "mp.plus.templates.all-groups-cover-all-observed",
         ALL_GROUPS_COVER_ALL_OBSERVED,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={},
     ),
 )

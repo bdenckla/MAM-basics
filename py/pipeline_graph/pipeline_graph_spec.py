@@ -33,7 +33,6 @@ class RawEdge:
 
 DISPLAY_NODES = [
     DisplayNode("ds_parsed_plus", "MAM-parsed/plus/", DATA_STORES),
-    DisplayNode("ds_parsed_plain", "MAM-parsed/plain/", DATA_STORES),
     DisplayNode("ds_ws", "in/mam-ws/\n(Wikisource JSON)", DATA_STORES),
     DisplayNode("ds_ws_special", "in/mam-ws-special/\n(raw Wikitext)", DATA_STORES),
     DisplayNode("src_ws_live", "Hebrew Wikisource", DATA_STORES),
@@ -76,7 +75,6 @@ DISPLAY_NODES = [
 RAW_NODES = [
     # mpu = MAM-parsed-plus (short internal ID)
     RawNode("mpu_plus", "MAM-parsed/plus/", "ds_parsed_plus"),
-    RawNode("mpu_plain", "MAM-parsed/plain/", "ds_parsed_plain"),
     RawNode("in_mam_ws", "in/mam-ws/\n(Wikisource JSON)", "ds_ws"),
     RawNode(
         "in_mam_ws_special",
@@ -134,7 +132,7 @@ RAW_EDGES = [
     RawEdge("mpu_plus", "main_wordlist", "MAM-parsed consumers"),
     RawEdge("mpu_plus", "main_explicit_xataf", "MAM-parsed consumers"),
     RawEdge("mpu_plus", "main_diff__ctr_vs_mam", "MAM-parsed consumers"),
-    RawEdge("mpu_plain", "main_tmpl_survey", "MAM-parsed consumers"),
+    RawEdge("mpu_plus", "main_tmpl_survey", "MAM-parsed consumers"),
     RawEdge(
         "main_foi_features_of_interest",
         "out_with_doc",
@@ -172,7 +170,6 @@ RAW_EDGES = [
         "Wikisource pipeline",
     ),
     RawEdge("in_mam_ws", "main_parse__ws", "Wikisource pipeline"),
-    RawEdge("main_parse__ws", "mpu_plain", "Wikisource pipeline"),
     RawEdge("main_parse__ws", "mpu_plus", "Wikisource pipeline"),
     RawEdge("in_mam_ws", "main_ws_bot__proto", "Wikisource pipeline"),
     RawEdge("main_ws_bot__real", "src_hebrew_wikisource", "Wikisource pipeline"),
