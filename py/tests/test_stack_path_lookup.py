@@ -91,7 +91,7 @@ class TestStackPathLookup(unittest.TestCase):
                     "tmpl_name": "נוסח",
                     "tmpl_params": {
                         "1": "ב",
-                        "2": {"tmpl_name": "ש", "tmpl_params": {"1": "ג"}},
+                        "2": {"tmpl_name": "ש"},
                     },
                 },
             ]
@@ -132,7 +132,7 @@ class TestStackPathLookup(unittest.TestCase):
         self.assertEqual(
             {
                 "{{נוסח|א|{{ש}}}}",
-                "{{נוסח|ב|{{ש|ג}}}}",
+                "{{נוסח|ב|{{ש}}}}",
             },
             root_wikitexts,
         )
