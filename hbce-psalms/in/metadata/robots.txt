@@ -1,0 +1,10 @@
+# NTVMR / VMRCRE instances
+# The web-service API is not for search-engine crawling: several endpoints
+# execute expensive database queries. Bulk data consumers: please contact
+# the INTF, or use the documented exports rather than walking the API.
+User-agent: *
+Disallow: /community/vmr/api/
+Disallow: /opensocial-portlet/
+Disallow: /poller/
+Disallow: /*my_sites
+Crawl-delay: 10

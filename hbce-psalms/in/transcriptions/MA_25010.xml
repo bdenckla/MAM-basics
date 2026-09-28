@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="TEI-NTMSS.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="document" n="MA">MA</title>
+<respStmt xml:id="VMRCRE"><resp>edition metadata assembled by</resp><name type="org">VMRCRE (Virtual Manuscript Room Collaborative Research Environment), transcript/get</name></respStmt>
+      </titleStmt>
+      <!-- VMRCRE-generated: publicationStmt -->
+      <publicationStmt>
+        <publisher><name type="org">The Institut für neutestamentliche Textforschung</name></publisher>
+        <availability><p>
+<![CDATA[
+(C) 2026 Institut für Neutestamentliche Textforschung.
+]]>
+</p><p> <![CDATA[
+This work is licensed under a <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 Unported License<br/><span style="float:right;"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/80x15.png" /></span></a>
+]]>
+</p><p> <![CDATA[
+
+]]>
+</p></availability>
+      </publicationStmt>
+</fileDesc>
+<!-- VMRCRE-generated: profileDesc -->
+    <profileDesc>
+      <langUsage>
+        <language ident="hbo"></language>
+      </langUsage>
+      <handNotes>
+        <handNote>
+          <listWit>
+            <witness n="firsthand"></witness>
+<witness n="corrector"></witness>
+</listWit>
+        </handNote>
+      </handNotes>
+    </profileDesc>
+</teiHeader>
+<text xml:lang="hbo"><body>
+
+<pb n="485" type="page"/>
+<cb n="1"/>
+<lb/><div type="book" n="Ps"><div type="chapter" n="Ps.4"><ab n="Ps.4.6"><w>זִבְח֥וּ</w> <w>זִבְחֵי־</w> <w>צֶ֑דֶק</w><caesura/><space unit="char" extent="9"/><w>וּ֝בִטְח֗וּ</w> <w>אֶל־</w> <w>יְהוָֽה</w><caesura/>
+<lb/></ab> <ab n="Ps.4.7"><w>רַבִּ֥ים</w> <w>אֹמְרִים֮</w> <w>מִֽי־</w> <w>יַרְאֵ֪נ֫וּ</w> <w>ט֥וֹב</w><caesura/><space unit="char" extent="4"/><w>נְֽסָה־</w> <w>עָ֭לֵינוּ</w><caesura/>
+<lb/><w>א֨וֹר</w> <w>פָּנֶ֬יךָ</w> <w>יְהוָֽה</w><caesura/></ab> <ab n="Ps.4.8"><w>נָתַ֣תָּה</w> <w>שִׂמְחָ֣ה</w> <w>בְלִבִּ֑י</w><caesura/>
+<lb/><w>מֵעֵ֬ת</w> <w>דְּגָנָ֖ם</w> <w>וְתִירוֹשָׁ֣ם</w> <w>רָֽבּוּ</w><caesura/><space unit="char" extent="5"/></ab> <ab n="Ps.4.9"><w>בְּשָׁל֣וֹם</w> <w>יַחְדָּו֮</w><caesura/>
+<lb/><w>אֶשְׁכְּבָ֪ה</w> <w>וְאִ֫ישָׁ֥ן</w> <w>כִּֽי־</w> <w>אַתָּ֣ה</w> <w>יְהוָ֣ה</w> <w>לְבָדָ֑ד</w> <w>לָ֝בֶ֗טַח</w> <w>תּוֹשִׁיבֵֽנִי</w>
+<lb/>
+<lb/></ab></div><div type="chapter" n="Ps.5"><ab n="Ps.5.1"><w>לַמְנַצֵּ֥חַ</w> <w>אֶֽל־</w> <w>הַנְּחִיל֗וֹת</w><caesura/><space unit="char" extent="10"/><w>מִזְמ֥וֹר</w> <w>לְדָוִֽד</w><caesura/>
+<lb/></ab> <ab n="Ps.5.2"><w>אֲמָרַ֖י</w> <w>הַאֲזִ֥ינָה׀</w> <w>יְהוָ֑֗ה</w><caesura/><space unit="char" extent="10"/><w>בִּ֣ינָה</w> <w>הֲגִיגִֽי</w><pc>׃</pc><caesura/>
+<lb/></ab> <ab n="Ps.5.3"><w>הַקְשִׁ֤יבָה׀</w> <w>לְק֬וֹל</w> <w>שַׁוְעִ֗י</w> <w>מַלְכִּ֥י</w> <w>וֵאלֹהָ֑י</w> <w>כִּֽי־</w> <w>אֵ֝לֶ֗יךָ</w> <w>אֶתְפַּלָּֽל</w><caesura/>
+<lb/></ab> <ab n="Ps.5.4"><w>יְֽהוָ֗ה</w> <w>בֹּ֭קֶר</w> <w>תִּשְׁמַ֣ע</w> <w>קוֹלִ֑י</w><caesura/><space unit="char" extent="3"/><w>בֹּ֥קֶר</w> <w>אֶעֱרָךְ־</w> <w>לְ֝ךָ֗</w> <w>וַאֲצַפֶּֽה</w><caesura/>
+<lb/></ab> <ab n="Ps.5.5"><w>כִּ֤י׀</w> <w>לֹ֤א</w> <w>אֵֽל־</w> <w>חָפֵ֘ץ</w> <w>רֶ֥שַׁע׀</w> <w>אָ֑תָּה</w><caesura/><space unit="char" extent="4"/><w>לֹ֖א</w> <w>יְגֻרְךָ֣</w> <w>רָֽע</w><caesura/>
+<lb/></ab> <ab n="Ps.5.6"><w>לֹֽא־</w> <w>יִתְיַצְּב֣וּ</w> <w>ה֖וֹלֲלִים</w> <w>לְנֶ֣גֶד</w> <w>עֵינֶ֑יךָ</w> <w>שָׂ֝נֵ֗אתָ</w> <w>כָּל־</w> <w>פֹּ֥עֲלֵי</w> <w>אָֽוֶן</w><caesura/>
+<lb/></ab> <ab n="Ps.5.7"><w>תְּאַבֵּדּ֮</w> <w>דׂבְרֵ֪י</w> <w>כָ֫זָ֥ב</w><caesura/><space unit="char" extent="3"/><w>אִישׁ־</w> <w>דָּמִ֥ים</w> <w>וּמִרְמָ֗ה</w> <w>יְתָ֘עֵ֥ב׀</w> <w>יְהוָֽה</w><caesura/>
+<lb/></ab> <ab n="Ps.5.8"><w>וַאֲנִ֗י</w> <w>בְּרֹ֣ב</w> <w>חַ֭סְדְּךָ</w><caesura/><space unit="char" extent="5"/><w>אָב֣וֹא</w> <w>בֵיתֶ֑ךָ</w> <w>אֶשְׁתַּחֲוֶ֥ה</w><caesura/>
+<lb/><w>אֶל־</w> <w>הֵֽיכַל־</w> <w>קָ֝דְשְׁךָ֗</w> <w>בְּיִרְאָתֶֽךָ</w><pc>׃</pc><caesura/><space unit="char" extent="2"/></ab> <ab n="Ps.5.9"><w>יְהוָ֤ה׀</w> <w>נְחֵ֬נִי</w> <w>בְצִדְקָתֶ֗ךָ</w><caesura/>
+<lb/><w>לְמַ֥עַן</w> <w>שׁוֹרֲרָ֑י</w> <w>הַּוְשַּׁ֥ר</w> <w>לְפָנַ֣י</w> <w>דַּרְכֶּֽךָ</w><pc>׃</pc><caesura/><space unit="char" extent="1"/></ab> <ab n="Ps.5.10"><w>כִּ֤י</w> <w>אֵ֪ין</w> <w>בְּפִ֡יהוּ</w><caesura/>
+<lb/><w>נְכוֹנָה֮</w> <w>קִרְבָּ֪ם</w> <w>הַ֫וּ֥וֹת</w><caesura/><space unit="char" extent="3"/><w>קֶֽבֶר־</w> <w>פָּת֥וּחַ</w> <w>גְּרֹנָ֑ם</w> <w>לְ֝שׁוֹנָ֗ם</w> <w>יַחֲלִֽיקוּן</w><caesura/>
+<lb/></ab> <ab n="Ps.5.11"><w>הַֽאֲשִׁימֵ֨ם׀</w> <w>אֱֽלֹהִ֗ים</w><caesura/><space unit="char" extent="9"/><w>יִפְּלוּ֮</w> <w>מִֽמֹּעֲצ֪וֹתֵ֫יהֶ֥ם</w><caesura/>
+<lb/><w>בְּרֹ֣ב</w> <w>פִּ֭שְׁעֵיהֶם</w> <w>הַדִּיחֵ֑מוֹ</w><caesura/><space unit="char" extent="10"/><w>כִּי־</w> <w>מָ֥רוּ</w> <w>בָֽךְ</w><caesura/>
+<lb/></ab> <ab n="Ps.5.12"><w>וְיִשְׂמְח֨וּ</w> <w>כָל־</w> <w>ח֪וֹסֵי</w> <w>בָ֡ךְ</w><caesura/><space unit="char" extent="3"/><w>לְעוֹלָ֣ם</w> <w>יְ֭רַנֵּנוּ</w> <w>וְתָסֵ֣ךְ</w> <w>עָלֵ֑ימוֹ</w><caesura/>
+<lb/><w>וְֽיַעְלְצ֥וּ</w> <w>בְ֝ךָ֗</w> <w>אֹהֲבֵ֥י</w> <w>שְׁמֶֽךָ</w><pc>׃</pc><caesura/><space unit="char" extent="9"/></ab> <ab n="Ps.5.13"><w>כִּֽי־</w> <w>אַתָּה֮</w><caesura/>
+<lb/><w>תְּבָרֵ֪ךְ</w> <w>צַ֫דִּ֥יק</w><caesura/><space unit="char" extent="5"/><w>יְהוָ֑ה</w> <w>כַּ֝צִּנָּ֗ה</w> <w>רָצ֥וֹן</w> <w>תַּעְטְרֶֽנּוּ</w>
+<lb/>
+<lb/></ab></div><div type="chapter" n="Ps.6"><ab n="Ps.6.1"><w>לַ<unclear reason="faded ink">מְנַצֵּ֣</unclear>חַ</w> <w>בִּ֭נְגִינוֹת</w> <w>עַֽל־</w> <w>הַשְּׁמִינִ֗ית</w><caesura/><space unit="char" extent="5"/><w>מִזְמ֥וֹר</w> <w>לְדָוִֽד</w><caesura/>
+<lb/></ab> <ab n="Ps.6.2"><w>יְֽהוָ֗ה</w> <w>אַל־</w> <w>בְּאַפְּךָ֥</w> <w>תוֹכִיחֵ֑נִי</w><caesura/><w>וְֽאַל־</w> <w>בַּ<unclear reason="faded ink">חֲמָ</unclear>תְךָ֥</w> <w>תְיַסְּרֵֽנִי</w><caesura/>
+<lb/></ab> <ab n="Ps.6.3"><w><unclear reason="faded ink">חָ</unclear>נֵּ֥נִי</w> <w>יְהוָה֮</w> <w>כִּ֤י</w> <w>אֻמְלָ֫ל</w> <w>אָ֥נִי</w> <w>רְפָאֵ֥נִי</w> <w>יְהוָ֑ה</w> <w>כִּ֖י</w> <w>נִבְהֲל֣וּ</w> <w>עֲצָמָֽי</w><caesura/>
+<lb/></ab> <ab n="Ps.6.4"><w>וְ֭נַפְשִׁי</w> <w>נִבְהֲלָ֣ה</w> <w>מְאֹ֑ד</w><caesura/><app><rdg type="orig" hand="firsthand"><w>ואתה</w></rdg><rdg type="alt" hand="corrector" rend="other"><seg type="line" subtype="overwritten" n="@P4CL-MA"><w>וְאַתָּֽ</w></seg></rdg></app> <w>יְ֝הוָ֗ה</w> <w>עַד־</w> <w>מָתָֽי</w><caesura/>
+<lb/></ab> <ab n="Ps.6.5"><w>שׁוּבָ֣ה</w> <w>יְ֭הוָה</w> <w>חַלְּצָ֣ה</w> <w>נַפְשִׁ֑י</w><caesura/><space unit="char" extent="2"/><w>ה֝וֹשִׁיעֵ֗נִי</w> <w>לְמַ֣עַן</w> <w>חַסְדֶּֽךָ</w><caesura/>
+<cb n="2"/>
+<lb/></ab> <ab n="Ps.6.6"><w>כִּ֤י</w> <w>אֵ֣ין</w> <w>בַּמָּ֣וֶת</w> <w>זִכְרֶ֑ךָ</w><caesura/><space unit="char" extent="7"/><w>בִּ֝שְׁא֗וֹל</w> <w>מִ֣י</w> <w>יֽוֹדֶה־</w> <w>לָּֽךְ</w><caesura/>
+<lb/></ab> <ab n="Ps.6.7"><w>יָגַ֤עְתִּי׀</w> <w>בְּֽאַנְחָתִ֗י</w><caesura/><space unit="char" extent="4"/><w>אַשְׂחֶ֣ה</w> <w>בְכָל־</w> <w>לַ֭יְלָה</w> <w>מִטָּתִ֑י</w><caesura/>
+<lb/><w>בְּ֝דִמְעָתִ֗י</w> <w>עַרְשִׂ֥י</w> <w>אַמְסֶֽה</w><pc>׃</pc><caesura/><space unit="char" extent="2"/></ab> <ab n="Ps.6.8"><w>עָשֲׁשָׁ֣ה</w> <w>מִכַּ֣עַס</w> <w>עֵינִ֑י</w><caesura/>
+<lb/><w>עָ֜תְקָ֗ה</w> <w>בְּכָל־</w> <w>צוֹרֲרָֽי</w><caesura/><space unit="char" extent="2"/></ab> <ab n="Ps.6.9"><w>ס֣וּרוּ</w> <w>מִ֭מֶּנִּי</w> <w>כָּל־</w> <w>פֹּ֣עֲלֵי</w> <w>אָ֑וֶן</w><caesura/>
+<lb/><w>כִּֽי־</w> <w>שָׁמַ֥ע</w> <w>יְ֝הוָ֗ה</w> <w>ק֣וֹל</w> <w>בִּכְיִֽי</w><pc>׃</pc><caesura/><space unit="char" extent="4"/></ab> <ab n="Ps.6.10"><space unit="char" extent="4"/><w>שָׁמַ֣ע</w> <w>יְ֭הוָה</w> <w>תְּחִנָּתִ֑י</w><caesura/>
+<lb/><w>יְ֝הוָ֗ה</w> <w>תְּֽפִלָּתִ֥י</w> <w>יִקָּֽח</w><pc>׃</pc><caesura/><space unit="char" extent="16"/></ab> <ab n="Ps.6.11"><w>יֵבֹ֤שׁוּ׀</w><caesura/>
+<lb/><w>וְיִבָּהֲל֣וּ</w> <w>מְ֭אֹד</w> <w>כָּל־</w> <w>אֹיְבָ֑י</w><caesura/><space unit="char" extent="6"/><w>יָ֝שֻׁ֗בוּ</w> <w>יֵבֹ֥שׁוּ</w> <w>רָֽגַע</w>
+<lb/>
+<lb/></ab></div><div type="chapter" n="Ps.7"><ab n="Ps.7.1"><w>שִׁגָּי֗וֹן</w> <w>לְדָ֫וִ֥ד</w><caesura/><space unit="char" extent="2"/><w>אֲשֶׁר־</w> <w>שָׁ֥ר</w> <w>לַֽיהוָ֑ה</w> <w>עַל־</w> <w>דִּבְרֵי־</w> <w>כ֝֗וּשׁ</w> <w>בֶּן־</w> <w>יְמִינִֽי</w><caesura/>
+<lb/></ab> <ab n="Ps.7.2"><w>יְהוָ֣ה</w> <w>אֱ֭לֹ֗הַי</w> <w>בְּךָ֣</w> <w>חָסִ֑יתִי</w> <w>הוֹשִׁיעֵ֥נִי</w> <w>מִכָּל־</w> <w>רֹ֝דְפַ֗י</w> <w>וְהַצִּילֵֽנִי</w><caesura/>
+<lb/></ab> <ab n="Ps.7.3"><w>פֶּן־</w> <w>יִטְרֹ֣ף</w> <w>כְּאַרְיֵ֣ה</w> <w>נַפְשִׁ֑י</w><caesura/><space unit="char" extent="5"/><w>פֹּ֝רֵ֗ק</w> <w>וְאֵ֣ין</w> <w>מַצִּֽיל</w><caesura/>
+<lb/></ab> <ab n="Ps.7.4"><w>יְהוָ֣ה</w> <w>אֱ֭לֹהַי</w> <w>אִם־</w> <w>עָשִׂ֣יתִי</w> <w>זֹ֑את</w><caesura/><space unit="char" extent="2"/><w>אִֽם־</w> <w>יֶשׁ־</w> <w>עָ֥וֶל</w> <w>בְּכַפָּֽי</w><caesura/>
+<lb/></ab> <ab n="Ps.7.5"><w>אִם־</w> <w>גָּ֭מַלְתִּי</w> <w>שֽׁוֹלְמִ֥י</w> <w>רָ֑ע</w><caesura/><space unit="char" extent="2"/><w>וָאֲחַלְּצָ֖ה</w> <w>צוֹרֲרִ֣י</w> <w>רֵיקָֽם</w><caesura/>
+<lb/></ab> <ab n="Ps.7.6"><w>יִֽרַדֹּ֥ף</w> <w>אוֹיֵ֨ב׀</w> <w>נַפְשִׁ֡י</w><caesura/><w>וְיַשֵּׂ֗ג</w> <w>וְיִרְמֹ֣ס</w> <w>לָאָ֣רֶץ</w> <w>חַיָּ֑י</w><caesura/>
+<lb/><w>וּכְבוֹדִ֓י׀</w> <w>לֶעָפָ֖ר</w> <w>יַשְׁכֵּ֣ן</w> <w>סֶֽלָה</w><caesura/><space unit="char" extent="6"/></ab> <ab n="Ps.7.7"><w>ק֘וּמָ֤ה</w> <w>יְהוָ֨ה׀</w><caesura/>
+<lb/><w>בְּאַפֶּ֗ךָ</w> <w>הִ֭נָּשֵׂא</w> <w>בְּעַבְר֣וֹת</w> <w>צוֹרֲרָ֑י</w><caesura/><w>וְע֥וּרָה</w> <w>אֵ֝לַ֗י</w><caesura/>
+<lb/><w>מִשְׁפָּ֥ט</w> <w>צִוִּֽיתָ</w><pc>׃</pc><caesura/><space unit="char" extent="6"/></ab> <ab n="Ps.7.8"><w>וַעֲדַ֣ת</w> <w>לְ֭אֻמִּים</w> <w>תְּסֽוֹבֲבֶ֑ךָּ</w><caesura/>
+<lb/><w>וְ֝עָלֶ֗יהָ</w> <w>לַמָּר֥וֹם</w> <w>שֽׁוּבָה</w><caesura/><space unit="char" extent="7"/></ab> <ab n="Ps.7.9"><w>יְהוָה֮</w> <w>יָדִ֪ין</w> <w>עַ֫מִּ֥ים</w><caesura/>
+<lb/><w>שָׁפֲטֵ֥נִי</w> <w>יְהוָ֑ה</w> <w>כְּצִדְ֗קִ֖י</w> <w>וּכְתֻמִּ֣י</w> <w>עָלָֽי</w><pc>׃</pc></ab> <ab n="Ps.7.10"><w>יִגְמָר־</w> <w>נָ֬א</w> <w>רַ֨ע׀</w><caesura/>
+<lb/><w>רְשָׁעִים֮</w> <w>וּתְכוֹנֵ֪ן</w> <w>צַ֫דִּ֥יק</w><caesura/><space unit="char" extent="5"/><w>וּבֹחֵ֣ן</w> <w>לִ֭בּוֹת</w> <w>וּכְלָי֗וֹת</w><caesura/>
+<lb/><w>אֱלֹהִ֥ים</w> <w>צַדִּֽיק</w><caesura/><space unit="char" extent="2"/></ab> <ab n="Ps.7.11"><w>מָגִנִּ֥י</w> <w>עַל־</w> <w>אֱלֹהִ֑ים</w> <w>מ֝וֹשִׁ֗יעַ</w> <w>יִשְׁרֵי־</w> <w>לֵֽב</w>
+<lb/></ab> <ab n="Ps.7.12"><w>אֱ֭לֹהִים</w> <w>שׁוֹפֵ֣ט</w> <w>צַדִּ֑יק</w><caesura/><space unit="char" extent="3"/><w>וְ֝אֵ֗ל</w> <w><unclear reason="faded ink">זֹ</unclear>עֵ֥ם</w> <w>בְּכָל־</w> <w>יֽוֹם</w><caesura/>
+<lb/></ab> <ab n="Ps.7.13"><w>אִם־</w> <w>לֹ֣א</w> <w>יָ֭שׁוּב</w> <w>חַרְבּ֣וֹ</w> <w>יִלְט֑וֹשׁ</w> <w>קַשְׁתּ֥וֹ</w> <w>דָ֝רַ֗ךְ</w> <w>וַֽיְכוֹנְנֶֽהָ</w><caesura/>
+<lb/></ab> <ab n="Ps.7.14"><w>וְ֭לוֹ</w> <w>הֵכִ֣ין</w> <w>כְּלֵי־</w> <w>מָ֑וֶת</w><caesura/><space unit="char" extent="5"/><w>חִ֝צָּ֗יו</w> <w>לְֽדֹלְקִ֥ים</w> <w>יִפְעָֽל</w><caesura/>
+<lb/></ab> <ab n="Ps.7.15"><w>הִנֵּ֥ה</w> <w>יְחַבֶּל־</w> <w>אָ֑וֶן</w><caesura/><space unit="char" extent="7"/><w>וְהָרָ֥ה</w> <w>עָ֝מָ֗ל</w> <w>וְיָ֣לַד</w> <w>שָֽׁקֶר</w><caesura/>
+<lb/></ab> <ab n="Ps.7.16"><w>בּ֣וֹר</w> <w>כָּ֭רָֽה</w> <w>וַֽיַּחְפְּרֵ֑הוּ</w><caesura/><space unit="char" extent="5"/><w>וַ֝יִּפֹּ֗ל</w> <w>בְּשַׁ֣חַת</w> <w>יִפְעָֽל</w><caesura/>
+<lb/></ab> <ab n="Ps.7.17"><w>יָשׁ֣וּב</w> <w>עֲמָל֣וֹ</w> <w>בְרֹאשׁ֑וֹ</w><caesura/><space unit="char" extent="2"/><w>וְעַ֥ל</w> <w>קָ֝דְקֳד֗וֹ</w> <w>חֲמָס֥וֹ</w> <w>יֵרֵֽד</w><caesura/>
+<lb/></ab> <ab n="Ps.7.18"><w>אוֹדֶ֣ה</w> <w>יְהוָ֣ה</w> <w>כְּצִדְק֑וֹ</w><caesura/><space unit="char" extent="2"/><w>וַ֝אֲזַמְּרָ֗ה</w> <w>שֵֽׁם־</w> <w>יְהוָ֥ה</w><note type="editorial">Part of lamed is preserved. It looks like עליון has been intentionally scraped off. Are there any known variants here? -DL</note> <w><supplied source="tr" reason="illegible">עֶלְיֽוֹן</supplied></w></ab></div> </div></body></text></TEI>

@@ -26,8 +26,8 @@ as separate copies. codex-index-aleppo read the snapshot with
 `py_mam_xml/mam_xml_verses.py`. Both repos' Python moved to MAM-basics that day
 under `doc/PLAN-evacuate-python-from-codex-index-trio.md` (deleted 2026-08-29 by
 `f6173fe`; in git history). Phase 3 found the two readers to be one tool with 43
-lines of drift and merged them: they are
-`../../py/py_ac_loc/mam_xml_verses.py`, single. Neither codex-index repo holds any code
-now; each keeps its data and goes on hosting it. Book-of-Job no longer holds a
-second snapshot. Since 2026-09-06 both live reader routes use
+lines of drift and merged them into `py/py_ac_loc/mam_xml_verses.py`, single, which
+moved to `../../py/mb_cmn/mam_xml_verses.py` on 2026-09-26. Neither codex-index repo
+holds any code now; each keeps its data and goes on hosting it. Book-of-Job no longer
+holds a second snapshot. Since 2026-09-06 the reader has read
 `MAM-basics/MAM-simple/xml-vtrad-mam/`.

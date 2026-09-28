@@ -45,6 +45,7 @@ import urllib.error
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote
 
 import boj_paths
 from mb_cmn import paths
@@ -247,11 +248,14 @@ class _HTMLInfo(HTMLParser):
         if href.startswith(("http://", "https://", "mailto:")):
             self.external_hrefs.append(href)
         else:
+            # The server percent-decodes the path to find the file, so a file whose
+            # name has a space, like MAM-with-doc's "E1-Song of Songs.html", is linked
+            # with %20 in its place.
             if "#" in href:
                 path_part, frag = href.split("#", 1)
-                self.internal_hrefs.append((path_part or None, frag))
+                self.internal_hrefs.append((unquote(path_part) or None, frag))
             else:
-                self.internal_hrefs.append((href, None))
+                self.internal_hrefs.append((unquote(href), None))
 
 
 def _parse_html(path: Path) -> _HTMLInfo:
@@ -359,7 +363,9 @@ def _check_images(
     for src in info.img_srcs:
         if src.startswith(("http://", "https://", "data:")):
             continue
-        img_path = (html_dir / src).resolve()
+        # Decoded as an internal href's path is: the images under MAM-with-doc's misc/
+        # have spaces in their names, so their srcs have %20 in their place.
+        img_path = (html_dir / unquote(src)).resolve()
         referenced_images.add(img_path)
         if not img_path.is_file():
             issues.append(f'{rel}: broken image "{src}"')
@@ -410,7 +416,8 @@ def _check_css_links(
     """Check that stylesheet hrefs resolve to existing files."""
     issues = []
     for href in info.css_hrefs:
-        css_path = (html_dir / href).resolve()
+        # Decoded as an img src is, although no stylesheet's name has a space yet.
+        css_path = (html_dir / unquote(href)).resolve()
         if not css_path.is_file():
             issues.append(f'{rel}: broken CSS link "{href}"')
     return issues

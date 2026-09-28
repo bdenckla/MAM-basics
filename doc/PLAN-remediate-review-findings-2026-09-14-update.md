@@ -34,3 +34,12 @@ two stale two-resource passages corrected by the 2026-09-16 review remediation.
 7. No new author annotation is owed for the entries in
    `doc/review-findings-2026-09-10-update.md` that were rewritten beneath older `Recorded by`
    lines.
+
+## 2026-09-27: counter-finding C2 implementation status
+
+Counter-finding C2's repository work was implemented through
+`doc/PLAN-retire-google-sheet.md`: the independent 36-page special-page mirror and its
+identity checks now belong to every `fr-wikisource` run, and the Google download,
+parse, comparison, and auto-edit pipeline has been removed. The overall retirement
+remains incomplete until Ben applies and reports the manual frozen-Sheet and Hebrew
+Wikisource documentation edits and both live results are verified as that plan requires.

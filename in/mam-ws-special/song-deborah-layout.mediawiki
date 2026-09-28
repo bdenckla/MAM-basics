@@ -1,0 +1,212 @@
+<noinclude>{{תבנית:טעמי המקרא באינטרנט}}
+{{מ:שוליים|5}}
+{{תבנית:משתמש:Dovi/טעמי המקרא|18}}{{פפפ}}</noinclude><קטע התחלה=צורת-השיר/>
+{| width=100% border=0 cellpadding=2 align=center
+|- <!-- צורת שירת דבורה ע"פ כתר ארם צובה -->
+|align=right colspan=6 width=50%|{{עוגן בשורה|שירת דבורה חזרה}}{{קק|[[#שירת דבורה בצורות כתיבה נוספות|♫]]}}<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|א|פרק=ה}}<קטע סוף=סימן/>וַתָּ֣שַׁר דְּבוֹרָ֔ה וּבָרָ֖ק בֶּן־אֲבִינֹ֑עַם
+|align=left colspan=6 width=50%|בַּיּ֥וֹם הַה֖וּא
+|-
+|align=right colspan=3 width=25%|לֵאמֹֽר׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ב}}<קטע סוף=סימן/>בִּפְרֹ֤עַ פְּרָעוֹת֙ בְּיִשְׂרָאֵ֔ל
+|align=left colspan=3 width=25%|בְּהִתְנַדֵּ֖ב
+|-
+|align=right colspan=6 width=50%|עָ֑ם בָּֽרְכ֖וּ יְהֹוָֽה׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ג}}<קטע סוף=סימן/>שִׁמְע֣וּ מְלָכִ֔ים הַאֲזִ֖ינוּ
+|-
+|align=right colspan=3 width=25%|רֹֽזְנִ֑ים
+|align=center colspan=6 width=50%|אָנֹכִ֗י לַֽיהֹוָה֙ אָנֹכִ֣י אָשִׁ֔ירָה
+|align=left colspan=3 width=25%|אֲזַמֵּ֕ר
+|-
+|align=right colspan=6 width=50%|לַֽיהֹוָ֖ה אֱלֹהֵ֥י יִשְׂרָאֵֽל׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ד}}<קטע סוף=סימן/>יְהֹוָ֗ה בְּצֵאתְךָ֤
+|-
+|align=right colspan=3 width=25%|מִשֵּׂעִיר֙
+|align=center colspan=6 width=50%|בְּצַעְדְּךָ֙ מִשְּׂדֵ֣ה אֱד֔וֹם
+|align=left colspan=3 width=25%|אֶ֣רֶץ
+|-
+|align=right colspan=6 width=50%|רָעָ֔שָׁה גַּם־שָׁמַ֖יִם נָטָ֑פוּ
+|align=left colspan=6 width=50%|גַּם־עָבִ֖ים נָ֥טְפוּ
+|-
+|align=right colspan=3 width=25%|מָֽיִם׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ה}}<קטע סוף=סימן/>הָרִ֥ים נָזְל֖וּ מִפְּנֵ֣י יְהֹוָ֑ה
+|align=left colspan=3 width=25%|זֶ֣ה
+|-
+|align=right colspan=6 width=50%|סִינַ֔י מִפְּנֵ֕י יְהֹוָ֖ה אֱלֹהֵ֥י יִשְׂרָאֵֽל׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ו}}<קטע סוף=סימן/>בִּימֵ֞י שַׁמְגַּ֤ר בֶּן־
+|-
+|align=right colspan=3 width=25%|עֲנָת֙
+|align=center colspan=6 width=50%|בִּימֵ֣י יָעֵ֔ל חָֽדְל֖וּ אֳרָח֑וֹת
+|align=left colspan=3 width=25%|וְהֹלְכֵ֣י
+|-
+|align=right colspan=6 width=50%|נְתִיב֔וֹת יֵלְכ֕וּ אֳרָח֖וֹת עֲקַלְקַלּֽוֹת׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ז}}<קטע סוף=סימן/>חָדְל֧וּ פְרָז֛וֹן בְּיִשְׂרָאֵ֖ל
+|-<!-- בשורה זו התא האמצעי גדול במיוחד -->
+|align=right colspan=2 width=17%|חָדֵ֑לּוּ
+|align=center colspan=8 width=66%|עַ֤ד שַׁקַּ֙מְתִּי֙ דְּבוֹרָ֔ה שַׁקַּ֥מְתִּי אֵ֖ם בְּיִשְׂרָאֵֽל׃
+|align=left colspan=2 width=17%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ח}}<קטע סוף=סימן/>יִבְחַר֙
+|-
+|align=right colspan=6 width=50%|אֱלֹהִ֣ים חֲדָשִׁ֔ים אָ֖ז לָחֶ֣ם שְׁעָרִ֑ים
+|align=left colspan=6 width=50%|מָגֵ֤ן אִם־יֵֽרָאֶה֙
+|-
+|align=right colspan=3 width=25%|וָרֹ֔מַח
+|align=center colspan=6 width=50%|בְּאַרְבָּעִ֥ים אֶ֖לֶף בְּיִשְׂרָאֵֽל׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ט}}<קטע סוף=סימן/>לִבִּי֙
+|-
+|align=right colspan=6 width=50%|לְחוֹקְקֵ֣י יִשְׂרָאֵ֔ל
+|align=left colspan=6 width=50%|הַמִּֽתְנַדְּבִ֖ים בָּעָ֑ם בָּרְכ֖וּ
+|-
+|align=right colspan=3 width=25%|יְהֹוָֽה׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|י}}<קטע סוף=סימן/>רֹכְבֵי֩ אֲתֹנ֨וֹת צְחֹר֜וֹת
+|align=left colspan=3 width=25%|יֹשְׁבֵ֧י
+|-
+|align=right colspan=6 width=50%|עַל־מִדִּ֛ין וְהֹלְכֵ֥י עַל־דֶּ֖רֶךְ שִֽׂיחוּ׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יא}}<קטע סוף=סימן/>מִקּ֣וֹל מְחַֽצְצִ֗ים בֵּ֚ין
+|-
+|align=right colspan=3 width=25%|מַשְׁאַבִּ֔ים
+|align=center colspan=6 width=50%|שָׁ֤ם יְתַנּוּ֙ צִדְק֣וֹת יְהֹוָ֔ה
+|align=left colspan=3 width=25%|צִדְקֹ֥ת
+|-
+|align=right colspan=6 width=50%|פִּרְזוֹנ֖וֹ בְּיִשְׂרָאֵ֑ל
+|align=left colspan=6 width=50%|אָ֛ז יָֽרְד֥וּ לַשְּׁעָרִ֖ים עַם־
+|-
+|align=right colspan=3 width=25%|יְהֹוָֽה׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יב}}<קטע סוף=סימן/>עוּרִ֤י עוּרִי֙ דְּבוֹרָ֔ה
+|align=left colspan=3 width=25%|ע֥וּרִי
+|-
+|align=right colspan=6 width=50%|ע֖וּרִי דַּבְּרִי־שִׁ֑יר
+|align=left colspan=6 width=50%|ק֥וּם בָּרָ֛ק וּֽשְׁבֵ֥ה שֶׁבְיְךָ֖ בֶּן־
+|-
+|align=right colspan=3 width=25%|אֲבִינֹֽעַם׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יג}}<קטע סוף=סימן/>אָ֚ז יְרַ֣ד שָׂרִ֔יד לְאַדִּירִ֖ים עָ֑ם
+|align=left colspan=3 width=25%|יְהֹוָ֕ה
+|-
+|align=right colspan=6 width=50%|יְרַד־לִ֖י בַּגִּבּוֹרִֽים׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יד}}<קטע סוף=סימן/>מִנִּ֣י אֶפְרַ֗יִם שׇׁרְשָׁם֙
+|-
+|align=right colspan=3 width=25%|בַּעֲמָלֵ֔ק
+|align=center colspan=6 width=50%|אַחֲרֶ֥יךָ בִנְיָמִ֖ין בַּעֲמָמֶ֑יךָ
+|align=left colspan=3 width=25%|מִנִּ֣י
+|-
+|align=right colspan=6 width=50%|מָכִ֗יר יָֽרְדוּ֙ מְחֹ֣קְקִ֔ים
+|align=left colspan=6 width=50%|וּמִ֨זְּבוּלֻ֔ן מֹשְׁכִ֖ים בְּשֵׁ֥בֶט
+|-
+|align=right colspan=3 width=25%|סֹפֵֽר׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|טו}}<קטע סוף=סימן/>וְשָׂרַ֤י בְּיִשָּׂשכָר֙ עִם־דְּבֹרָ֔ה
+|align=left colspan=3 width=25%|וְיִשָּׂשכָר֙
+|-
+|align=right colspan=6 width=50%|כֵּ֣ן בָּרָ֔ק בָּעֵ֖מֶק שֻׁלַּ֣ח בְּרַגְלָ֑יו
+|align=left colspan=6 width=50%|בִּפְלַגּ֣וֹת רְאוּבֵ֔ן גְּדֹלִ֖ים חִקְקֵי־
+|-
+|align=right colspan=3 width=25%|לֵֽב׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|טז}}<קטע סוף=סימן/>לָ֣מָּה יָשַׁ֗בְתָּ בֵּ֚ין הַֽמִּשְׁפְּתַ֔יִם
+|align=left colspan=3 width=25%|לִשְׁמֹ֖עַ
+|-
+|align=right colspan=6 width=50%|שְׁרִק֣וֹת עֲדָרִ֑ים
+|align=left colspan=6 width=50%|לִפְלַגּ֣וֹת רְאוּבֵ֔ן גְּדוֹלִ֖ים חִקְרֵי־
+|-
+|align=right colspan=3 width=25%|לֵֽב׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יז}}<קטע סוף=סימן/>גִּלְעָ֗ד בְּעֵ֤בֶר הַיַּרְדֵּן֙ שָׁכֵ֔ן
+|align=left colspan=3 width=25%|וְדָ֕ן
+|-
+|align=right colspan=6 width=50%|לָ֥מָּה יָג֖וּר אֳנִיּ֑וֹת
+|align=left colspan=6 width=50%|אָשֵׁ֗ר יָשַׁב֙ לְח֣וֹף
+|-
+|align=right colspan=3 width=25%|יַמִּ֔ים
+|align=center colspan=6 width=50%|וְעַ֥ל מִפְרָצָ֖יו יִשְׁכּֽוֹן׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יח}}<קטע סוף=סימן/>זְבֻל֗וּן
+|-
+|align=right colspan=6 width=50%|עַ֣ם חֵרֵ֥ף נַפְשׁ֛וֹ לָמ֖וּת
+|align=left colspan=6 width=50%|וְנַפְתָּלִ֑י עַ֖ל מְרוֹמֵ֥י
+|-
+|align=right colspan=3 width=25%|שָׂדֶֽה׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|יט}}<קטע סוף=סימן/>בָּ֤אוּ מְלָכִים֙ נִלְחָ֔מוּ
+|align=left colspan=3 width=25%|אָ֤ז
+|-
+|align=right colspan=6 width=50%|נִלְחֲמוּ֙ מַלְכֵ֣י כְנַ֔עַן
+|align=left colspan=6 width=50%|בְּתַעְנַ֖ךְ עַל־מֵ֣י
+|-
+|align=right colspan=3 width=25%|מְגִדּ֑וֹ
+|align=center colspan=6 width=50%|בֶּ֥צַע כֶּ֖סֶף לֹ֥א לָקָֽחוּ׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כ}}<קטע סוף=סימן/>מִן־
+|-
+|align=right colspan=6 width=50%|שָׁמַ֖יִם נִלְחָ֑מוּ
+|align=left colspan=6 width=50%|הַכּֽוֹכָבִים֙ מִמְּסִלּוֹתָ֔ם נִלְחֲמ֖וּ עִם־
+|-
+|align=right colspan=3 width=25%|סִֽיסְרָֽא׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כא}}<קטע סוף=סימן/>נַ֤חַל קִישׁוֹן֙ גְּרָפָ֔ם
+|align=left colspan=3 width=25%|נַ֥חַל
+|-
+|align=right colspan=6 width=50%|קְדוּמִ֖ים נַ֣חַל קִישׁ֑וֹן
+|align=left colspan=6 width=50%|תִּדְרְכִ֥י נַפְשִׁ֖י
+|-
+|align=right colspan=3 width=25%|עֹֽז׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כב}}<קטע סוף=סימן/>אָ֥ז הָלְמ֖וּ עִקְּבֵי־ס֑וּס
+|align=left colspan=3 width=25%|מִֽדַּהֲר֖וֹת
+|-
+|align=right colspan=6 width=50%|דַּהֲר֥וֹת אַבִּירָֽיו׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כג}}<קטע סוף=סימן/>א֣וֹרוּ מֵר֗וֹז אָמַר֙ מַלְאַ֣ךְ יְהֹוָ֔ה אֹ֥רוּ אָר֖וֹר
+|-
+|align=right colspan=3 width=25%|יֹשְׁבֶ֑יהָ
+|align=center colspan=6 width=50%|כִּ֤י לֹֽא־בָ֙אוּ֙ לְעֶזְרַ֣ת יְהֹוָ֔ה
+|align=left colspan=3 width=25%|לְעֶזְרַ֥ת
+|-
+|align=right colspan=6 width=50%|יְהֹוָ֖ה בַּגִּבּוֹרִֽים׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כד}}<קטע סוף=סימן/>תְּבֹרַךְ֙ מִנָּשִׁ֔ים יָעֵ֕ל אֵ֖שֶׁת חֶ֣בֶר
+|-
+|align=right colspan=3 width=25%|הַקֵּינִ֑י
+|align=center colspan=6 width=50%|מִנָּשִׁ֥ים בָּאֹ֖הֶל תְּבֹרָֽךְ׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כה}}<קטע סוף=סימן/>מַ֥יִם
+|-
+|align=right colspan=6 width=50%|שָׁאַ֖ל חָלָ֣ב נָתָ֑נָה
+|align=left colspan=6 width=50%|בְּסֵ֥פֶל אַדִּירִ֖ים הִקְרִ֥יבָה
+|-
+|align=right colspan=3 width=25%|חֶמְאָֽה׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כו}}<קטע סוף=סימן/>יָדָהּ֙ לַיָּתֵ֣ד תִּשְׁלַ֔חְנָה
+|align=left colspan=3 width=25%|וִימִינָ֖הּ
+|-
+|align=right colspan=6 width=50%|לְהַלְמ֣וּת עֲמֵלִ֑ים
+|align=left colspan=6 width=50%|וְהָלְמָ֤ה סִֽיסְרָא֙ מָחֲקָ֣ה
+|-
+|align=right colspan=3 width=25%|רֹאשׁ֔וֹ
+|align=center colspan=6 width=50%|וּמָחֲצָ֥ה וְחָלְפָ֖ה רַקָּתֽוֹ׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כז}}<קטע סוף=סימן/>בֵּ֣ין
+|-
+|align=right colspan=6 width=50%|רַגְלֶ֔יהָ כָּרַ֥ע נָפַ֖ל שָׁכָ֑ב
+|align=left colspan=6 width=50%|בֵּ֤ין רַגְלֶ֙יהָ֙ כָּרַ֣ע
+|-
+|align=right colspan=3 width=25%|נָפָ֔ל
+|align=center colspan=6 width=50%|בַּאֲשֶׁ֣ר כָּרַ֔ע שָׁ֖ם נָפַ֥ל שָׁדֽוּד׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כח}}<קטע סוף=סימן/>בְּעַד֩
+|-<!-- בשורה זו התא הימני רחב במיוחד -->
+|align=right colspan=9 width=75%|הַחַלּ֨וֹן נִשְׁקְפָ֧ה וַתְּיַבֵּ֛ב אֵ֥ם סִֽיסְרָ֖א בְּעַ֣ד הָאֶשְׁנָ֑ב
+|align=left colspan=3 width=25%|מַדּ֗וּעַ בֹּשֵׁ֤שׁ רִכְבּוֹ֙
+|-
+|align=right colspan=3 width=25%|לָב֔וֹא
+|align=center colspan=6 width=50%|מַדּ֣וּעַ אֶֽחֱר֔וּ פַּעֲמֵ֖י מַרְכְּבוֹתָֽיו׃
+|align=left colspan=3 width=25%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|כט}}<קטע סוף=סימן/>חַכְמ֥וֹת
+|-
+|align=right colspan=6 width=50%|שָׂרוֹתֶ֖יהָ תַּעֲנֶ֑ינָּה
+|align=left colspan=6 width=50%|אַף־הִ֕יא תָּשִׁ֥יב אֲמָרֶ֖יהָ
+|-
+|align=right colspan=3 width=25%|לָֽהּ׃
+|align=center colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|ל}}<קטע סוף=סימן/>הֲלֹ֨א יִמְצְא֜וּ יְחַלְּק֣וּ שָׁלָ֗ל
+|align=left colspan=3 width=25%|רַ֤חַם
+|-
+|align=right colspan=6 width=50%|רַחֲמָתַ֙יִם֙ לְרֹ֣אשׁ גֶּ֔בֶר
+|align=left colspan=6 width=50%|שְׁלַ֤ל צְבָעִים֙
+|-
+|align=right colspan=3 width=25%|לְסִ֣יסְרָ֔א
+|align=center colspan=6 width=50%|שְׁלַ֥ל צְבָעִ֖ים רִקְמָ֑ה
+|align=left colspan=3 width=25%|צֶ֥בַע
+|-
+|align=right colspan=6 width=50%|רִקְמָתַ֖יִם לְצַוְּארֵ֥י שָׁלָֽל׃
+|align=left colspan=6 width=50%|<קטע התחלה=סימן/>{{מ:פסוק-שירה|שופטים|ה|לא|סדר=ד}}<קטע סוף=סימן/>כֵּ֠ן יֹאבְד֤וּ כׇל־אוֹיְבֶ֙יךָ֙ יְהֹוָ֔ה
+|-
+|align=right colspan=6 width=50%|וְאֹ֣הֲבָ֔יו כְּצֵ֥את הַשֶּׁ֖מֶשׁ בִּגְבֻרָת֑וֹ
+|align=left colspan=6 width=50%|וַתִּשְׁקֹ֥ט הָאָ֖רֶץ אַרְבָּעִ֥ים שָׁנָֽה׃
+|}<קטע סוף=צורת-השיר/><noinclude>
+{{תבנית:משתמש:Dovi/טעמי המקרא-סוף}}
+{{מ:שוליים-סוף}}
+
+{{#קטע:שירת דבורה/צורות נוספות|שירת דבורה בצורות כתיבה נוספות}}
+</noinclude>

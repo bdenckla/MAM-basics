@@ -219,7 +219,8 @@ abbreviation it looks for, with zero hits.
   the six is in `all-repos.code-workspace`, so none belongs on a machine.
   `py/lenin_paths.py`, which the bullet names, was deleted on 2026-09-10 by phase 3
   of
-  [`doc/PLAN-mega-coverage.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-mega-coverage.md).
+  [`doc/PLAN-mega-coverage.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-mega-coverage.md),
+  and `py/cam1753_paths.py` on 2026-09-26 by `doc/PLAN-retire-codex-index-image-work.md`.
 - **No GitHub repo is an archiving candidate either**, and the reason is uniform: archiving makes
   a tracker read-only, and every candidate still has open issues — UXLC-utils 27,
   holman-ketiv-qere 60, book-of-job 19, wlc-utils 21, and on the private side the four counted in

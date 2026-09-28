@@ -276,30 +276,17 @@ the mirror records their revision IDs.
 Add an explicit one-site replacement specification under
 `in/mam-ws-bot-edits/` for 1 Kings 7:37. The specification must assert the exact
 old and new source strings and must change only the target atom; run the bot's
-no-save mode before the live edit. Apply the identical source call to the
-corresponding Google Sheet cell. Do not hand-edit downloaded Google CSV files.
+no-save mode before the live edit.
 
-After both sources are updated, refresh the Wikisource books and the MAM
+After Wikisource is updated, refresh the Wikisource books and the MAM
 introduction. The Wikisource book refresh updates production MAM-parsed plain and
-plus. Refresh the Google Sheet download separately to update only
-`MAM-parsed/google/`; then require `main_diff.py wsgo` to report no
-Wikisource-versus-Google difference. If the source-sync work must land before
-the implementation because the Google download reads remote `main`, make the
-source synchronization a separate commit and integrate it using the worktree
-procedure under “Integration and issue closure.”
+plus and maintains the special-page mirror. Review the exact source and generated
+diffs before proceeding.
 
 Use the production entry points from the MAM-basics worktree:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-ws-intro
-```
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-google
-```
-
-```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py wsgo
 ```
 
 Use the established Wikisource bot entry point and its documented dry-run/no-save
@@ -343,7 +330,8 @@ The OSIS handler returns the unmodified element text followed by an OSIS note
 with type `x-silluq-before-meteg` and text `סילוק לפני געיה`. The ordinary
 following MAM-simple text node supplies sof pasuq after the note.
 
-Update `py/py_ac_loc/mam_xml_verses.py` and the MAM-private consumer at
+Update `py/mb_cmn/mam_xml_verses.py` (at `py/py_ac_loc/` until 2026-09-26) and the
+MAM-private consumer at
 `C:/Users/BenDe/GitRepos/MAM-private/masorah-books/py/ocr_cmn/mam.py` if their
 element allowlists would otherwise reject or omit the new public MAM-simple
 element. These consumers must flatten it to `text`; neither consumer creates a
@@ -448,7 +436,8 @@ Acceptance requires all of the following:
    blob. A count of 353 in the first group means the new template's handler
    recursed on parameter 2 or ran `drop_post_silluq_metegs`, and this MAM-with-doc
    artifact keeps MAM's text.
-10. `main_diff.py wsgo` is empty after both live sources have the same call.
+10. The refreshed `in/mam-ws/` chapter has the exact approved source call and the
+    refreshed production artifacts contain the intended representation.
 11. The full MAM-basics suite passes with no silent skips caused by a missing
     sibling checkout. The last recorded clean-main baseline was 976 passed,
     5 skipped, and 65 subtests on 2026-09-06 in

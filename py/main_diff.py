@@ -6,14 +6,11 @@ Subcommands:
                 Compare CTR verse data against MAM verse data.
     mpplus
                 Compare MAM-parsed-plus revisions and generate HTML reports.
-    wsgo
-                Diff Wikisource against Google Sheets and emit auto-edits output.
 
 Examples:
     .venv/Scripts/python.exe py/main_diff.py ctr-vs-mam
     .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
     C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --check
-    .venv/Scripts/python.exe py/main_diff.py wsgo
 
 The mpplus freshness guard compares tracked change-log artifacts with reports regenerated
 against committed HEAD. Run it after committing refreshed MAM-parsed/plus data, not while that
@@ -25,7 +22,6 @@ import sys
 
 from subcommands import diff_ctr_vs_mam
 from subcommands import diff_mpplus
-from subcommands import diff_wsgo
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -68,12 +64,6 @@ def _add_subcommands(subparsers) -> None:
     diff_mpplus.add_arguments(mpplus_parser)
     mpplus_parser.set_defaults(func=_run_mpplus)
 
-    wsgo_parser = subparsers.add_parser(
-        "wsgo",
-        help="Diff Wikisource versus Google Sheets and write auto-edits output.",
-    )
-    wsgo_parser.set_defaults(func=_run_wsgo)
-
 
 def _run_ctr_vs_mam(_args: argparse.Namespace) -> None:
     diff_ctr_vs_mam.run()
@@ -81,10 +71,6 @@ def _run_ctr_vs_mam(_args: argparse.Namespace) -> None:
 
 def _run_mpplus(args: argparse.Namespace) -> None:
     diff_mpplus.run_from_args(args)
-
-
-def _run_wsgo(_args: argparse.Namespace) -> None:
-    diff_wsgo.run()
 
 
 if __name__ == "__main__":

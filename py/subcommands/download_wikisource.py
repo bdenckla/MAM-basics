@@ -12,6 +12,7 @@ from subcommands import parse_ws
 from ws import ws_download_selector as wsds
 from ws import ws_chapter_download as chapters
 from ws import ws_revision_api as api
+from ws import ws_special_page_download as special_pages
 
 
 def run(book_plans, *, force_download=False):
@@ -23,6 +24,14 @@ def run(book_plans, *, force_download=False):
         with polite_download.PoliteDownloader(
             _WIKISOURCE_DOWNLOAD_CONFIG, session=session
         ) as downloader:
+            special_stats = special_pages.download(
+                downloader,
+                endpoint=_WIKISOURCE_API_PHP,
+                out_path=_SPECIAL_OUT_PATH,
+                manifest_path=_SPECIAL_MANIFEST_PATH,
+                chapter_metadata_path=_METADATA_PATH,
+                force_download=force_download,
+            )
             stats = chapters.download_books(
                 book_plans,
                 downloader,
@@ -39,6 +48,12 @@ def run(book_plans, *, force_download=False):
             f"total={session.metadata_requests + session.content_requests}"
         )
     print(
+        f"Wikisource special pages: selected={special_stats['selected']}, "
+        f"reused={special_stats['reused']}, fetched={special_stats['fetched']}; "
+        f"batches metadata={special_stats['metadata_batches']}, "
+        f"content={special_stats['content_batches']}"
+    )
+    print(
         f"Wikisource chapters: selected={stats['selected']}, reused={stats['reused']}, "
         f"fetched={stats['fetched']}; batches metadata={stats['metadata_batches']}, "
         f"content={stats['content_batches']}"
@@ -46,6 +61,7 @@ def run(book_plans, *, force_download=False):
     parse_ws.almost_main(wsds.affected_bkids(book_plans))
     return {
         **stats,
+        "special_pages": special_stats,
         "download_seconds": elapsed,
         "metadata_requests": session.metadata_requests,
         "content_requests": session.content_requests,
@@ -58,6 +74,8 @@ def run_from_args(args):
 
 _OUT_PATH = "in/mam-ws"
 _METADATA_PATH = "in/mam-ws-revisions.json"
+_SPECIAL_OUT_PATH = "in/mam-ws-special"
+_SPECIAL_MANIFEST_PATH = "in/mam-ws-special/manifest.json"
 _WIKISOURCE_USER_PAGE = ws_urls.he_url("משתמש:Bdenckla")
 _WIKISOURCE_API_PHP = "https://he.wikisource.org/w/api.php"
 _WIKISOURCE_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(

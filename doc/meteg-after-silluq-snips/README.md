@@ -459,7 +459,9 @@ mgketer.org's image of Job 4.
 
 **The Aleppo Codex has two meteg/silluq strokes on this word, one under the mem and one under the
 he** — confirmed by Ben from this image on 2026-09-10. The Internet Archive's photograph of the
-leaf, `../../aleppo/aleppo-pages/271r.jpg`, has the same two strokes at its resolution.
+leaf has the same two strokes at its resolution. This repository held that photograph as
+`aleppo/aleppo-pages/271r.jpg` until 2026-09-26;
+`git show 1fba91fe:aleppo/aleppo-pages/271r.jpg` recovers it.
 
 The stroke under the mem stands to the right of its segol, in the same place as the Leningrad
 Codex's ([`leningrad-398A-Job4v12-menhu.png`](../../gh-pages/img/leningrad-398A-Job4v12-menhu.png)). Ben calls it an early

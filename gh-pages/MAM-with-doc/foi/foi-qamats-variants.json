@@ -3300,6 +3300,16 @@
     "r": "ד=בׇּֽאֳנִי֙ ס=בָּֽאֳנִי֙"
   },
   {
+    "bcv_short": "2K22:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "צ",
+    "m3_zmnl": ":",
+    "fp": "accent-1-(mos)-qq-count-1",
+    "r": "ד=מִבׇּֽצְקַֽת ס=מִבָּֽצְקַֽת"
+  },
+  {
     "bcv_short": "I1:5",
     "accent": "(mos)",
     "qq_count": "1",
@@ -5198,6 +5208,16 @@
     "m3_zmnl": "oa",
     "fp": "all",
     "r": "ד=קׇֽבׇל־ ס=קָֽבׇל־"
+  },
+  {
+    "bcv_short": "2K22:1",
+    "accent": "(mos)",
+    "qq_count": "1",
+    "stack_str": null,
+    "m2_lett": "צ",
+    "m3_zmnl": ":",
+    "fp": "all",
+    "r": "ד=מִבׇּֽצְקַֽת ס=מִבָּֽצְקַֽת"
   },
   {
     "bcv_short": "I1:5",

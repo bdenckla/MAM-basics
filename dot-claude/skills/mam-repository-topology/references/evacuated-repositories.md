@@ -151,10 +151,10 @@ remain source-tracker citations, while new public-side issues belong in MAM-basi
 ## Cambridge 1753 data is local under `cam1753/`
 
 Ben's decision, 2026-09-04: `codex-index-cam1753` belongs on no machine. Its archived GitHub
-history remains, but its live data is `cam1753/`, its programs are under `py/`, and the MAM
-word-sequence ground truth is `MAM-simple/xml-vtrad-mam/`. The fourteen source spreads are tracked;
-`cam1753-pages/` is ignored output that `py/main_cam1753_split_spreads.py` regenerates for an
-editor or crop task. The old clone left `all-repos.code-workspace` and
+history remains, but its live data is `cam1753/`, and the MAM word-sequence ground truth is
+`MAM-simple/xml-vtrad-mam/`. Its programs, its fourteen tracked source spreads, and the ignored
+`cam1753-pages/` split from them were retired on 2026-09-26 by
+`doc/PLAN-retire-codex-index-image-work.md`. The old clone left `all-repos.code-workspace` and
 `in/repo_maintenance_policy.json`'s `repo_visibility` map in the same completed lane: a missing
 workspace entry is therefore a decision, not a clone failure. The archived source tracker has no
 open issues; qualified citations of its closed issues remain source-tracker citations, while new

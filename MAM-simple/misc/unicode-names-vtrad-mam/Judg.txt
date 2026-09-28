@@ -15494,7 +15494,7 @@ SPACE
 SPACE
 n,a,(atn),α
 SPACE
-α,_,(tel_g),x,:_,r,‥,y
+α,_,(tel_g),x,:_,r,‥,(tel_g),y
 SPACE
 α,:_,$,·sh,∵,r,-,b,·,a,(ger_2),α
 SPACE

@@ -40,6 +40,11 @@ clusters between them, are known to be expected:
 - **4,621 are byte-verbatim captures of external sources**: `in/mam-ws-intro/`, `in/UXLC-39/`,
   `aleppo/aleppo-wiki/Wikisource-manual-*.txt`, `misc/zarqa-table-diff/`, `misc/*/img-sources/`.
 
+A capture tracked after that scan belongs with the second group: `hbce-psalms/in/transcriptions/`,
+HBCE's TEI transcriptions of Psalms, added 2026-09-26 with 126 clusters in the other order. The
+TSV and `.txt` outputs under `hbce-psalms/out/` quote those forms in HBCE's order by design, 60
+clusters on the same date; `hbce-psalms/README.md` describes both trees.
+
 **The other 7,247 clusters, in 152 files, are unclassified.** Nobody has established, file by
 file, whether each is a capture, an upstream intermediate, or a paste that should have been in
 MAM-normal order. The largest shares are in `uxlc/in/` and `uxlc/out/` (3,890), `in/accgram/`

@@ -48,7 +48,7 @@
 #הערות הנוסח מוצגות באופן יעיל לקריאה וחיפוש בתוך '''[https://bdenckla.github.io/MAM-with-doc/ מקרא על־פי המסורה עם הערות נוסח]''' (אתר חיצוני).
 #הערות הנוסח מסומנות ברצף הפסוקים באתר '''[https://mg.alhatorah.org/ מקראות גדולות על־התורה]''' (כגון [https://mg.alhatorah.org/Tanakh/Bereshit/1.1#m7e_he_he_n6 בראשית א]).
 
-רשימה של תיקונים שבוצעו בטקסט לאורך זמן ניתנת לצפייה [https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633 כאן].
+רשימת התיקונים שנרשמו עד 12 בספטמבר 2026 ניתנת לצפייה [https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633 בדף השינויים של גיליון הנתונים המוקפא]. לשינויים מאוחרים יותר יש לעיין ב"גרסאות קודמות" של דפי ויקיטקסט; דף השינויים בגיליון מוקפא ואינו מקבל רישומים נוספים.
 
 ==תוכן המבוא המלא==
 

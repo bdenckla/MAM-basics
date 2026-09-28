@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 import enum
 import re
+from urllib.parse import quote
 
 from mb_cmn import hebrew_verse_numerals as hvn
 from render_wt import render_element as renel
@@ -138,15 +139,21 @@ def _div_for_bido_page(
     div_contents_1 = [mb_html.para(cv_str), mb_html.para(html_for_nondoc.verse)]
     div_contents_2 = []
     if html_for_docs.verse:
-        div_contents_2.append(mb_html.para(html_for_docs.verse))
+        div_contents_2.append(_div_for_docs(html_for_docs.verse))
     if html_for_docs.vaf_next_cp:
         div_contents_1.append(mb_html.para(html_for_nondoc.vaf_next_cp))
-        div_contents_2.append(mb_html.para(html_for_docs.vaf_next_cp))
+        div_contents_2.append(_div_for_docs(html_for_docs.vaf_next_cp))
     if html_for_docs.good_ending:
         div_contents_1.append(mb_html.para(html_for_nondoc.good_ending))
-        div_contents_2.append(mb_html.para(html_for_docs.good_ending))
+        div_contents_2.append(_div_for_docs(html_for_docs.good_ending))
     div_contents = div_contents_1 + div_contents_2
     return mb_html.div(div_contents, div_attr)
+
+
+def _div_for_docs(html_for_docs):
+    # A div, since a note with more than one part holds a list, which a p may not hold.
+    # It has a p's margins, so that the page looks as it would with a p.
+    return mb_html.div(html_for_docs, {"style": "margin-block: 1em"})
 
 
 def _row_for_verse(bcvt, html_for_verse, html_for_docs):
@@ -191,8 +198,7 @@ def _row_for_good_ending(html_for_good_ending, html_for_docs):
 
 def mk_anchor_with_link_to_book(bkid):
     """Return the anchor for a book."""
-    filename = filename_for_bkid(bkid)
-    return mb_html.anchor_h(bkid, filename)
+    return mb_html.anchor_h(bkid, href_for_bkid(bkid))
 
 
 def mk_anchor_with_link_to_chapter(chnu):
@@ -202,9 +208,16 @@ def mk_anchor_with_link_to_chapter(chnu):
 
 
 def _mk_anchor_with_link_to_bido(bkid, cvt, doc_index):
-    filename = filename_for_bkid_for_bido(bkid)
+    # quote matters for exactly one book: "E1-Song of Songs" has a space in it.
+    href = quote(filename_for_bkid_for_bido(bkid))
     doc_id = _mk_doc_id(cvt, doc_index)
-    return mb_html.anchor_h("...", filename + "#" + doc_id)
+    return mb_html.anchor_h("...", href + "#" + doc_id)
+
+
+def href_for_bkid(bkid):
+    """Return the href of the main file for a book, relative to its directory."""
+    # quote matters for exactly one book: "E1-Song of Songs" has a space in it.
+    return quote(filename_for_bkid(bkid))
 
 
 def filename_for_bkid(bkid):
@@ -225,13 +238,21 @@ def _html_for_nondoc(hfr_ctx: hfr.HfrCtx, ver_ndd: VerseNdd):
 
 
 def _html_for_docs(doc_ctx: _DocCtx, doc_type):
+    # The notes of a verse's three rows are numbered in one sequence, in the order the
+    # rows appear, because a note's id is made from the verse and that number alone.
     doc_veraf = doc_ctx.ver_ndd.doc_veraf
-    return doc_veraf.map_over((_html_for_docs2, doc_ctx, doc_type))
+    start_of_next_cp = len(doc_veraf.verse)
+    start_of_good_ending = start_of_next_cp + len(doc_veraf.vaf_next_cp)
+    return vaf.VerseAndFriends(
+        _html_for_docs2(doc_ctx, doc_type, 0, doc_veraf.verse),
+        _html_for_docs2(doc_ctx, doc_type, start_of_next_cp, doc_veraf.vaf_next_cp),
+        _html_for_docs2(doc_ctx, doc_type, start_of_good_ending, doc_veraf.good_ending),
+    )
 
 
-def _html_for_docs2(doc_ctx: _DocCtx, doc_type, doc_renels):
+def _html_for_docs2(doc_ctx: _DocCtx, doc_type, start, doc_renels):
     hfd = my_utils.st_map(
-        (_html_for_single_doc_ren_el, doc_ctx, doc_type), enumerate(doc_renels)
+        (_html_for_single_doc_ren_el, doc_ctx, doc_type), enumerate(doc_renels, start)
     )
     line_break_seq = (mb_html.line_break(),)
     return _shrink_join(line_break_seq, hfd)

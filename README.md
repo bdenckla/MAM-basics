@@ -6,7 +6,7 @@ This repository contains files related to [MAM (Miqra according to the Masorah)]
 
 ### Core pipeline
 
-1. **Download.** `main_download.py fr-wikisource` downloads MAM's books from Hebrew Wikisource into `in/mam-ws/`.
+1. **Download.** `main_download.py fr-wikisource` downloads MAM's books from Hebrew Wikisource into `in/mam-ws/` and maintains a 36-page special-page mirror under `in/mam-ws-special/`.
 2. **Parse.** `main_parse.py ws` parses the downloaded Wikisource MAM into the two forms of [MAM-parsed](MAM-parsed/README.md): `MAM-parsed/plain/` and `MAM-parsed/plus/`.
 3. **Make MAM-simple.** `main_mam_simple.py` reads `MAM-parsed/plus/` and produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/).
 4. **Make MAM-for-Sefaria and MAM-OSIS.** MAM-simple is used to make two more products: `main_mam4sef.py` writes [`MAM-for-Sefaria/`](MAM-for-Sefaria/), and `main_mam_osis.py` writes [`MAM-OSIS/`](MAM-OSIS/README.md).
@@ -37,16 +37,10 @@ Several of the directories below have a README of their own, beside the files it
 
 ### Downloading
 
-- `main_download.py fr-google` — from Google Sheets
 - `main_download.py fr-ws-intro` — the MAM introduction's thirteen pages, from Hebrew Wikisource, mirrored as verbatim wikitext in `in/mam-ws-intro/`
-
-### Parsing
-
-- `main_parse.py go` — parses downloaded Google Sheets data into the independent comparison product
 
 ### Diffing and comparison
 
-- `main_diff.py wsgo` — diffs Wikisource vs. Google Sheets versions
 - `main_diff.py mpplus` — compares MAM-parsed plus revisions and writes release diff reports
 
 ### Analysis and surveys
@@ -92,6 +86,10 @@ Run tests through the unified harness (on MS-Windows):
 ```
 
 ## Repository layout
+
+Hebrew Wikisource is the maintained textual source. The former MAM Google Sheet has
+been a frozen historical archive since September 12, 2026; its download, comparison,
+and auto-edit pipeline is no longer part of this repository.
 
 ```
 py/              Python source

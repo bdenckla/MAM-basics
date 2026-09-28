@@ -2,15 +2,12 @@
 """Dispatch parse tools.
 
 Subcommands:
-    go
-                Parse downloaded Google Sheets data into the Google comparison product.
     ws
                 Parse downloaded Wikisource data into format 2 and production plain/plus.
     ws-products
                 Write candidate Wikisource-derived plain/plus JSON to an explicit directory.
 
 Examples:
-    .venv/Scripts/python.exe py/main_parse.py go
     .venv/Scripts/python.exe py/main_parse.py ws
     .venv/Scripts/python.exe py/main_parse.py ws --write-fmt-1
     .venv/Scripts/python.exe py/main_parse.py ws --book39 Joshua
@@ -20,7 +17,6 @@ import argparse
 import sys
 
 from mb_cmn import bib_locales as tbn
-from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import parse_ws_products
 
@@ -45,12 +41,6 @@ def main() -> None:
 
 
 def _add_subcommands(subparsers) -> None:
-    go_parser = subparsers.add_parser(
-        "go",
-        help="Parse Google Sheets data into the MAM-parsed Google comparison product.",
-    )
-    go_parser.set_defaults(func=_run_go)
-
     ws_parser = subparsers.add_parser(
         "ws",
         help="Parse Wikisource data into format 2 and production plain/plus outputs.",
@@ -78,10 +68,6 @@ def _bkids_from_args(args):
     if getattr(args, "section6", None):
         return tbn.bk39s_of_sec(args.section6)
     return None
-
-
-def _run_go(_args: argparse.Namespace) -> None:
-    parse_go.almost_main()
 
 
 def _run_ws(args: argparse.Namespace) -> None:

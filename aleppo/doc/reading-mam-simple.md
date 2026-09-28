@@ -17,9 +17,11 @@ What remains below is what is specific to this repo.
 `../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
 landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
 
-`../../py/py_ac_loc/mam_xml_verses.py` reads it. Its entry point is
+`../../py/mb_cmn/mam_xml_verses.py` reads it. Its entry point is
 `get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
-dict per verse with `cv`, `words`, `ketiv_indices`, and `parashah_before`.
+dict per verse with `cv`, `words`, `ketiv_indices`, `atoms`, and `parashah_before`. The
+module lived at `py/py_ac_loc/mam_xml_verses.py` until 2026-09-26, when the programs that
+made this repo's streams were retired.
 
 Two choices in it belong to this repo, not to MAM-simple:
 

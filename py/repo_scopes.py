@@ -28,20 +28,25 @@ included anyway while they lasted, since they passed both checks as they stood. 
 went on 2026-09-10 with the Wikisource index generator they served, by Ben's decision
 that day; `git show --stat 985262e2` names every file removed; Phase 3 of
 `doc/PLAN-mega-coverage.md` records the totals. None of
-that repository's Python remains.
+that repository's Python remains. None of Cambridge 1753's remains either, and two of
+codex-index-aleppo's top-level modules do: the rest went on 2026-09-26 with the
+codex-index image work, under ``doc/PLAN-retire-codex-index-image-work.md``.
 
-CORPUS ROOTS AND CODE PATHS COVER THE SAME THREE REPOS. ``check_mark_order`` reads
+CORPUS ROOTS COVER THREE REPOS, AND CODE PATHS TWO. ``check_mark_order`` reads
 ``.json`` as well as ``.py``, and the Ben-authored JSON under book-of-job, aleppo,
 and cam1753 is a large part of what the check was ever for -- measured 2026-09-12,
 7 JSON files in book-of-job, 80 in aleppo, and 72 in cam1753. Until that day the
 Leningrad code made ``code_paths()`` the longer list, while the Leningrad tree held
 only two generated JSON artifacts and no separate corpus root; it contributes no
-mark-order scope now, holding neither code nor JSON.
+mark-order scope now, holding neither code nor JSON. Since 2026-09-26 Cambridge 1753
+is the opposite case: its JSON stays in ``corpus_roots()``, and none of its code is
+left for ``code_paths()``.
 
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in
 ``check_all.py``, which is book-of-job's register, and codex-index-aleppo's
-``check_ac_all.py`` lists three checks that do not include it.  Widening it would
+``check_ac_all.py``, deleted on 2026-09-26, listed three checks that did not include
+it.  Widening it would
 turn a passing check into a failing one over code that has never been held to it,
 which is a decision rather than a restoration, so it still reads
 ``boj_paths.code_paths()`` directly.
@@ -51,7 +56,6 @@ from pathlib import Path
 
 import ac_paths
 import boj_paths
-import cam1753_paths
 from mb_cmn import paths
 
 
@@ -64,20 +68,19 @@ def code_paths() -> list[Path]:
     return [
         *boj_paths.code_paths(),
         *ac_paths.code_paths(),
-        *cam1753_paths.code_paths(),
     ]
 
 
 def corpus_roots() -> list[Path]:
     """The data roots whose ``.json`` the mark-order check reads.
 
-    One for each repo that ``code_paths()`` covers; the module docstring says why the
-    two lists differed until 2026-09-10.
+    One for each in-scope repo, including Cambridge 1753, whose code is gone; the
+    module docstring says how the two lists have differed.
     """
     return [
         paths.repo_root() / "book-of-job",
         ac_paths.ac_data_root(),
-        cam1753_paths.cam1753_data_root(),
+        paths.repo_root() / "cam1753",
     ]
 
 
