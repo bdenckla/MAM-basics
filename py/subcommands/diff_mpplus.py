@@ -6,6 +6,8 @@ Usage:
     .venv/Scripts/python.exe py/main_diff.py mpplus
     .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
     .venv/Scripts/python.exe py/main_diff.py mpplus --all
+    .venv/Scripts/python.exe py/main_diff.py mpplus --check
+    .venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>
 
 Named historical releases read tracked MAM-parsed/historical/ snapshots.
 HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
@@ -17,6 +19,12 @@ otherwise the sanitised hash range is used.
 
 The --all flag generates reports for every named release in releases.json
 and regenerates index.html, including unpinned-latest when unreleased diffs exist.
+The --check flag regenerates every artifact in a temporary directory and fails if
+a tracked copy differs.
+
+The --archive flag stores the MAM-basics commit that a boundary of releases.json
+names as a snapshot in MAM-parsed/historical/, so that generating the change log
+never again needs that commit in the clone. Run --all after it.
 
 When run with no arguments, the script compares the latest named release against
 HEAD and writes gh-pages/MAM-with-doc/change-log/unpinned-latest.html when that
@@ -37,6 +45,7 @@ from tempfile import TemporaryDirectory
 
 from mb_cmn import paths
 from mb_diff_mpu import (
+    mpplus_archive,
     mpplus_classify,
     mpplus_extract,
     mpplus_html,
@@ -256,6 +265,33 @@ def run_unpinned_latest(change_log_dir=CHANGE_LOG_DIR):
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
 
 
+def _release_boundaries():
+    """Every boundary releases.json names, each once, in the order the file names them."""
+    with open(RELEASES_JSON, "r", encoding="utf-8") as in_fp:
+        releases = json.load(in_fp)["releases"]
+    return list(
+        dict.fromkeys(entry[side] for entry in releases for side in ("old", "new"))
+    )
+
+
+def run_archive(boundary):
+    """Store a releases.json boundary that is a MAM-basics commit in MAM-parsed/historical/.
+
+    The change log is not regenerated here. Run ``--all`` next: its reports then name the
+    boundary by its full hash and New York date, as they name the stored releases before it.
+    """
+    if boundary not in _release_boundaries():
+        raise SystemExit(
+            f"--archive takes a boundary of {RELEASES_JSON}, and {boundary!r} is not one."
+        )
+    commit = mpplus_archive.archive_boundary(boundary)
+    print(f"Archived {boundary} as {mpplus_revisions.archive_path(commit)}")
+    print(f"  and listed it in {mpplus_revisions.manifest_path()}.")
+    print(
+        "Next: py/main_diff.py mpplus --all, then stage both files and the change log."
+    )
+
+
 def _generated_artifact_problems(
     generated_dir, tracked_dir=CHANGE_LOG_DIR
 ) -> list[str]:
@@ -310,19 +346,38 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         default=None,
         help="Output HTML path (default: auto from releases.json or hash range)",
     )
+    parser.add_argument(
+        "--archive",
+        metavar="BOUNDARY",
+        help="Store the MAM-basics commit a releases.json boundary names in"
+        " MAM-parsed/historical/",
+    )
 
 
 def run_from_args(args: argparse.Namespace) -> None:
     if args.check:
         conflicting = (
-            args.all or args.old or args.new or args.output or args.legacy_history
+            args.all
+            or args.old
+            or args.new
+            or args.output
+            or args.legacy_history
+            or args.archive is not None
         )
         if conflicting:
             raise SystemExit(
                 "--check cannot be combined with --all, --old, --new, --output, "
-                "or --legacy-history"
+                "--legacy-history, or --archive"
             )
         check_all()
+        return
+    if args.archive is not None:
+        if args.all or args.old or args.new or args.output or args.legacy_history:
+            raise SystemExit(
+                "--archive cannot be combined with --all, --old, --new, --output, "
+                "or --legacy-history"
+            )
+        run_archive(args.archive)
         return
     if args.legacy_history and (args.all or not args.old or not args.new):
         raise SystemExit(

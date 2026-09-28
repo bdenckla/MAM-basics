@@ -19,9 +19,11 @@ from mb_cmn import paths
 from mb_cmn.git_process import git_command
 from mb_cmn.new_york_time import new_york_date
 
-_ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
-_ZIP_CREATE_SYSTEM = 3
-_ZIP_EXTERNAL_ATTR = 0o100644 << 16
+# The member metadata every stored release archive carries. ``mpplus_archive`` writes
+# exactly this, and ``_validated_archive_members`` rejects anything else.
+ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
+ZIP_CREATE_SYSTEM = 3
+ZIP_EXTERNAL_ATTR = 0o100644 << 16
 
 
 def _git(repo, *args):
@@ -39,10 +41,40 @@ def _git(repo, *args):
     return result.stdout.strip()
 
 
-def _manifest():
-    path = paths.repo_root() / "MAM-parsed" / "historical" / "manifest.json"
-    with path.open(encoding="utf-8") as stream:
+def historical_directory():
+    """MAM-parsed/historical/, which holds the stored releases and their manifest."""
+    return paths.repo_root() / "MAM-parsed" / "historical"
+
+
+def manifest_path():
+    return historical_directory() / "manifest.json"
+
+
+def archive_path(commit):
+    """The stored release archive of ``commit``, a full 40-character hash."""
+    return historical_directory() / f"{commit}.zip"
+
+
+def load_manifest():
+    with manifest_path().open(encoding="utf-8") as stream:
         return json.load(stream)
+
+
+def stored_commit(rev, manifest=None):
+    """Return the manifest key that ``rev`` names, or None if it names no stored release.
+
+    ``rev`` names a stored release when it is 7 to 40 hexadecimal digits that begin exactly
+    one key of the manifest's ``revisions``. No Git is involved, so every clone, however
+    shallow, gives the same answer.
+    """
+    if not re.fullmatch(r"[0-9a-fA-F]{7,40}", rev):
+        return None
+    if manifest is None:
+        manifest = load_manifest()
+    matches = [sha for sha in manifest["revisions"] if sha.startswith(rev.lower())]
+    if len(matches) > 1:
+        raise ValueError(f"Ambiguous stored MAM-parsed revision: {rev}")
+    return matches[0] if matches else None
 
 
 def _listed_archive_members(prefix, stored_files):
@@ -105,9 +137,9 @@ def _validated_archive_members(archive_name, expected, _size, _mtime_ns):
                 if (
                     info.is_dir()
                     or info.compress_type != zipfile.ZIP_STORED
-                    or info.date_time != _ZIP_TIMESTAMP
-                    or info.create_system != _ZIP_CREATE_SYSTEM
-                    or info.external_attr != _ZIP_EXTERNAL_ATTR
+                    or info.date_time != ZIP_TIMESTAMP
+                    or info.create_system != ZIP_CREATE_SYSTEM
+                    or info.external_attr != ZIP_EXTERNAL_ATTR
                     or info.internal_attr != 0
                     or info.extra
                     or info.comment
@@ -271,23 +303,19 @@ def resolve(rev):
         date = new_york_date(committed).isoformat()
         return Revision(commit, date, repo, "plus")
 
-    manifest = _manifest()
-    if re.fullmatch(r"[0-9a-fA-F]{7,40}", rev):
-        matches = [sha for sha in manifest["revisions"] if sha.startswith(rev.lower())]
-        if len(matches) > 1:
-            raise ValueError(f"Ambiguous stored MAM-parsed revision: {rev}")
-        if matches:
-            commit = matches[0]
-            entry = manifest["revisions"][commit]
-            archive = paths.repo_root() / "MAM-parsed" / "historical" / f"{commit}.zip"
-            return Revision(
-                commit,
-                entry["date"],
-                archive.parent,
-                "plus",
-                tuple(row["path"].removeprefix("plus/") for row in entry["files"]),
-                archive,
-            )
+    manifest = load_manifest()
+    commit = stored_commit(rev, manifest)
+    if commit is not None:
+        entry = manifest["revisions"][commit]
+        archive = archive_path(commit)
+        return Revision(
+            commit,
+            entry["date"],
+            archive.parent,
+            "plus",
+            tuple(row["path"].removeprefix("plus/") for row in entry["files"]),
+            archive,
+        )
 
     migration = manifest["migration"]
     repo = paths.repo_root()

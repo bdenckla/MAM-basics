@@ -87,6 +87,7 @@ class TestDiffMpplusUnpinnedLatest(unittest.TestCase):
                 new=entry["new"],
                 legacy_history=True,
                 output=None,
+                archive=None,
             )
             named_output = f"{diff_mpplus.CHANGE_LOG_DIR}/{entry['name']}.html"
             with mock.patch.object(diff_mpplus, "generate_report") as generate_mock:
