@@ -621,3 +621,45 @@ in 152.34 seconds. This result covers the final 57-file Python source/test set o
 the handoff-based implementation working tree. Later changes before the first
 implementation commit are documentation/record text only. The post-staging receipt,
 prose-convention and prose-mark-order lints separately check the new update files.
+
+## Final upstream merge verified, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. **Committed and backed up:
+the implementation at `22d18d726f375003ac1d282e3ecf8bfea8eeecbc`.** The final fetch
+found upstream `main` at `57d2456f3f22f1c8df01a5ea96a309e54a39214c`, including
+retirement, CLC-oracle and chanted-word-survey module splits. The execution branch
+merges that main before the mandatory mega. Local `main` remains at the verified
+starting commit `85cb7acd8df98089614de8e3e30bb67bc5a2c36a` and is an ancestor.
+
+**Resolved: the module-move conflicts preserve the approved fixes.** The upstream
+retirement facade and five implementation modules are retained. Frozen relocation
+inventory matching lives in inspection; both execution revalidation calls use that
+same frozen inventory. The cleanup adapter retains unexpected-ref-error propagation
+and removes dead error reporting. The AST lint now discovers six retirement-family
+modules and includes six adapters/entry points, covering twelve source surfaces.
+Its two exact recursive-removal allowances remain; Git retirement mutations remain
+confined to execution. The CLC U+05C9 exclusion moves into the new oracle module.
+The live plan records these current source homes.
+
+A read-only agent's isolated operational run passed 35 tests in 201.90 seconds.
+The root independently compared all fifty split production function ASTs with the
+implementation commit before applying the six proposed files. Black at defaults
+left all twenty-five changed Python files formatted. No actual worktree retirement
+or lock/registry cleanup occurred.
+
+**Passed: verification on the resolved merged source**, with parents
+`22d18d726f375003ac1d282e3ecf8bfea8eeecbc` and
+`57d2456f3f22f1c8df01a5ea96a309e54a39214c`:
+
+- `py/main_test.py -q`: 1,019 passed, 5 skipped, 65 subtests passed in 162.40 seconds.
+- `py/main_test.py py/repo_util/worktree_retirement_simulation_test.py py/tests/test_worktree_retirement_policy.py -q`: 35 passed in 210.24 seconds.
+- The protected-data and frozen-receipt comparisons passed again; all 35 distinct complete-family archive paths exist at their full-SHA pin.
+
+**Explained: committed-state change-log metadata.** Regenerating all reports after
+the implementation commit changes only `unpinned-latest.html` and `.json`: their
+end-tree identifier moves from `8887223409b6de9892acc3b982372669846390a2` to
+`2929a44c3904e3a62c8efcd0163d998f4a657b5b`, which contains the approved notice
+headers. The four latest cards and every named report/index remain identical.
+The real committed freshness check, final mega, main fast-forward/push and complete
+user-configuration deployment remain pending. The plan stays live and this update
+stays open while its base survives.

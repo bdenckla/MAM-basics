@@ -189,7 +189,7 @@ def test_split_word_position_safe_rafe_dagesh():
 
 
 def test_split_word_position_safe_pasoleg():
-    # A word carries a SHARED pasoleg (see clc_dual_cant's module docstring terminology note)
+    # A word carries a SHARED pasoleg (see clc_dual_cant_oracle's module docstring terminology note)
     # earlier (present in both readings — e.g. two pasoleg-marked clauses in one atom, an unrelated
     # coincidence) and a second, DIVERGENT pasoleg later that only one strand keeps — mirroring
     # UXLC's own convention of a preceding space before an embedded pasoleg (the
@@ -850,7 +850,7 @@ def test_decalogue_qupo_vowel_split():
 
 def test_decalogue_pasoleg_tokenization():
     # ex 20:4 (לא תעשה לך פסל...): the first pasoleg-tokenization verse (#29) — MAM-simple
-    # tokenizes a standalone pasoleg (see clc_dual_cant's module docstring terminology note)
+    # tokenizes a standalone pasoleg (see clc_dual_cant_oracle's module docstring terminology note)
     # as its own word where UXLC embeds it directly in the preceding word's atom, which
     # looked like a real word-count mismatch
     # until a throwaway harvest script's pasoleg-fold (since retired) folded it the same way. Once
@@ -924,7 +924,7 @@ def test_decalogue_pasoleg_tokenization():
 def test_decalogue_pasoleg_tokenization_deuteronomy():
     # dt 5:8 — the Deuteronomy twin of ex 20:4 (#29). Same three pasoleg atoms (elyon keeps,
     # taxton drops) and the same מתחת pair, but here NEITHER occurrence is QUPO — an ordinary
-    # cross-book textual difference from ex 20:4 (see the module comment in clc_dual_cant.py).
+    # cross-book textual difference from ex 20:4 (see the module comment in clc_dual_cant_oracle.py).
     # Atom 2's mid-word pashta is corrected to a qadma upstream by clc_collect (simulated
     # below), so it is no longer an omitted-accent case — but the qadma still belongs to
     # taxton alone (MAM's cant-alef has it, cant-bet has a plain meteg instead), so the

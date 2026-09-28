@@ -33,7 +33,7 @@ strand (= MAM) reads through. So UXLC-utils#45 adds **no new rendered surface** 
 call): §7.8 is **validation-only**, the same shape as the MAM cross-checks of §7.7
 (issues UXLC-utils#42/UXLC-utils#43/UXLC-utils#44). ``clc_versification_test`` asserts
 the two accounts agree 1:1 (the taḥton reads-through points from this module's merge
-groups == the elyon-ends atoms of ``clc_dual_cant._ORACLE``).
+groups == the elyon-ends atoms of ``clc_dual_cant_oracle._ORACLE``).
 
 **Source-path (why hand-encoded).** The authoritative converter lives in MAM-basics'
 ``py_misc.vtrad_data`` / ``versification_differences`` — a **non-``mb_`` dir**, so neither

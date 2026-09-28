@@ -70,7 +70,7 @@ def test_render():
 
 
 def test_dual_cant_integration():
-    # Confirms clc_dual_cant._ORACLE's dt 5:8 atom-2 entry (no more "omit", and the qadma
+    # Confirms clc_dual_cant_oracle._ORACLE's dt 5:8 atom-2 entry (no more "omit", and the qadma
     # kept exclusive to taxton per MAM's cant-alef/cant-bet) against *real* patched input,
     # not just in isolation.
     book, _notes = clc_collect.collect_for_book("Deuter", chapters={5})

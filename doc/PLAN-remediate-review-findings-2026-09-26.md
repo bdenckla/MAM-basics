@@ -805,6 +805,16 @@ counting hazard. The frozen hazard base remains intact.
 
 ### Retirement safety fixes and independent checks
 
+Final integration on 2026-09-28 incorporates upstream `main`
+`57d2456f3f22f1c8df01a5ea96a309e54a39214c`, which split the retirement engine
+into a public facade and five implementation modules. The finding 16 functions
+below now live in `py/repo_util/worktree_retirement_inspection.py`; resume
+revalidation lives in `worktree_retirement_execution.py`. The finding 17 lint
+covers all six retirement-family modules and the six named adapters/entry points,
+with the existing recursive-relocation allowance in `worktree_retirement_relocation.py`.
+The CLC vowel-point exclusion from finding 21 moves with its upstream oracle to
+`py/clc/clc_dual_cant_oracle.py`. The execution record records the merge and checks.
+
 Finding 16 changes `py/repo_util/worktree_retirement.py`, particularly
 `_reference_matches`, `_citation_references`, `_tracked_relocation_citations` and
 their checkout-snapshot callers. Construct references from the actual per-target

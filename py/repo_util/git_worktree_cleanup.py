@@ -11,6 +11,14 @@ from pathlib import Path
 from collections.abc import Collection
 
 from repo_util import worktree_owners, worktree_retirement
+from repo_util.worktree_retirement_git import (
+    _default_branch,
+    _git,
+    _git_ok,
+    _is_ancestor,
+    _list_worktrees,
+    _same_path,
+)
 
 
 @dataclass
@@ -23,8 +31,7 @@ class CleanupReport:
 
 def is_linked_worktree(repo_dir: Path, path: Path) -> bool:
     return any(
-        worktree_retirement._same_path(record.path, path)
-        for record in worktree_retirement._list_worktrees(repo_dir)[1:]
+        _same_path(record.path, path) for record in _list_worktrees(repo_dir)[1:]
     )
 
 
@@ -35,7 +42,7 @@ def clean_worktrees(
     selected = worktree_retirement.select_worktrees(repo_dir, owner=owner)
     for path in sessions_ended:
         if is_linked_worktree(repo_dir, path) and not any(
-            worktree_retirement._same_path(record.path, path) for record in selected
+            _same_path(record.path, path) for record in selected
         ):
             raise worktree_retirement.RetirementError(
                 f"ended path outside {owner} selection: {path}"
@@ -46,14 +53,14 @@ def clean_worktrees(
             item["blocker"] or "audit passed; prepare and review a retirement preflight"
         )
         report.kept_worktrees.append((item["worktree"], reason))
-    default = worktree_retirement._default_branch(repo_dir)
+    default = _default_branch(repo_dir)
     prefixes = [
         prefix
         for selected_owner, values in worktree_owners.BRANCH_PREFIXES.items()
         if owner == "both" or selected_owner == owner
         for prefix in values
     ]
-    output = worktree_retirement._git_ok(
+    output = _git_ok(
         repo_dir,
         "for-each-ref",
         "--format=%(refname) %(objectname)",
@@ -62,7 +69,7 @@ def clean_worktrees(
     for line in output.splitlines():
         ref, tip = line.split()
         branch = ref.removeprefix("refs/remotes/origin/")
-        local = worktree_retirement._git(
+        local = _git(
             repo_dir, "show-ref", "--verify", "--quiet", f"refs/heads/{branch}"
         )
         if local.returncode not in (0, 1):
@@ -71,9 +78,7 @@ def clean_worktrees(
                 f"cannot determine whether local branch exists: {branch}: "
                 + (diagnostic or f"git show-ref exited {local.returncode}")
             )
-        if local.returncode == 1 and not worktree_retirement._is_ancestor(
-            repo_dir, tip, default
-        ):
+        if local.returncode == 1 and not _is_ancestor(repo_dir, tip, default):
             report.stranded_branches.append(branch)
     return report
 

@@ -96,7 +96,7 @@ None of these roots alone caused the observed failures.
 Synthetic retirement tests constructed 251-257-character destinations by
 reproducing the source path beneath the retention root. The implementation
 anchor is `_shadow_parts` in
-[`py/repo_util/worktree_retirement.py`](../py/repo_util/worktree_retirement.py),
+[`py/repo_util/worktree_retirement_preflight.py`](../py/repo_util/worktree_retirement_preflight.py),
 which turns the source's drive and absolute path components into the destination
 shadow.
 

@@ -16,6 +16,17 @@ Rendered-prose conventions are ``printed_decalogue_strands``' module docstring; 
 come from its ``ROM_*`` constants and are never retyped here.
 
 Run via ``main_accgram.py generate-html-maqaf-nonfinal-accents``.
+
+ONE MODULE, ON PURPOSE.  Issue #288 asks that a module this long either be split or say why not;
+it was reviewed on 2026-09-28 and kept whole.  Most of its length is recorded rationale, much of
+it for Ben's decisions about the page, in docstrings and comments beside the code they govern,
+and its functions are short.  The page's tables share one display vocabulary --
+``_ACCENT_DISPLAY``, the cell attributes, ``_cell_abbr`` -- and the comments that give its
+reasons are written about those tables.  The one part with an input of its own, the printed
+cases lifted from the vendored strands together with their table and their scans, reads that
+vocabulary too, so moving it out would take a third module for the vocabulary, apart from the
+tables its comments are about.  Other modules also cite ``_find_span`` and ``pin_claims`` here
+by name.
 """
 
 from __future__ import annotations
@@ -2083,8 +2094,8 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         #
         # SCOPED TO SPREADERS, Ben's own qualification (2026-08-04), and it does real work: the
         # merkha-before-silluq row visibly has a simple count of 1, and that chanted word -- Song
-        # 8:6 שלהבתיה -- is named by neither book, on ``chanted_word_accents``' §209 Yeivin entry.
-        # A sentence about the two PAIRS would therefore be false of it, where one about the
+        # 8:6 שלהבתיה -- is named by neither book, on ``chanted_word_accents_inventory``' §209 Yeivin
+        # entry.  A sentence about the two PAIRS would therefore be false of it, where one about the
         # spreaders is not, and the scoping costs the page nothing, the compounds being what §357
         # and ch. 1 §43 are about.  It replaced a trailing sentence that had said as much
         # outright, naming שלהבתיה through ``_example_cell``: "the limitation to spreaders ...

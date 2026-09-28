@@ -19,7 +19,7 @@ gitignored, so this test pins the map by hardcoded known facts instead of readin
 """
 
 import clc.clc_versification as cv
-import clc.clc_dual_cant as dc
+import clc.clc_dual_cant_oracle as dc
 import mb_cmn.hebrew_punctuation as hpu
 
 _SOF_PASUQ = hpu.SOPA
@@ -113,7 +113,7 @@ def test_differs_flag():
 
 def test_overlay_matches_dual_cant_oracle():
     # THE validation of #45 (§7.8): the boundaries MAM runs through (this module's merge
-    # groups) are exactly the atoms where clc_dual_cant._ORACLE shows the elyon (bet) strand
+    # groups) are exactly the atoms where clc_dual_cant_oracle._ORACLE shows the elyon (bet) strand
     # ending a verse (silluq/sof-pasuq) while the taxton (alef) strand reads on. That 1:1
     # match is the proof that MAM's versification == the taxton strand, so §7.7 already
     # renders the vtrad-MAM overlay and #45 needs no new rendered surface.

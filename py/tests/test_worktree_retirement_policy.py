@@ -5,8 +5,7 @@ from pathlib import Path
 
 from repo_util import worktree_retirement as retirement
 
-_MODULES = (
-    "repo_util/worktree_retirement.py",
+_ADAPTER_MODULES = (
     "repo_util/git_worktree_cleanup.py",
     "repo_util/codex_worktree_retirement.py",
     "repo_util/clean_worktrees.py",
@@ -14,7 +13,8 @@ _MODULES = (
     "main_repo_util.py",
     "main_repo_maintenance.py",
 )
-_ENGINE = "repo_util/worktree_retirement.py"
+_ENGINE = "repo_util/worktree_retirement_execution.py"
+_RELOCATION = "repo_util/worktree_retirement_relocation.py"
 
 
 def _argument_tokens(node):
@@ -123,7 +123,7 @@ class _PolicyVisitor(ast.NodeVisitor):
         if name in ("shutil.rmtree", "os.removedirs"):
             function = self.functions[-1] if self.functions else None
             expected = {
-                (_ENGINE, "_relocate_novc"): "source",
+                (_RELOCATION, "_relocate_novc"): "source",
                 ("main_repo_maintenance.py", "_clean_one_novc"): "novc",
             }.get((self.module, function))
             assert name == "shutil.rmtree" and expected is not None, (
@@ -164,8 +164,16 @@ def test_only_shared_engine_contains_nonforced_git_retirement():
     source_root = Path(retirement.__file__).resolve().parent.parent
     mutations = []
     recursive_removals = []
-    assert _MODULES
-    for module in _MODULES:
+    # Discover the whole retirement family so later engine modules stay covered.
+    family = tuple(
+        path.relative_to(source_root).as_posix()
+        for path in sorted((source_root / "repo_util").glob("worktree_retirement*.py"))
+        if not path.stem.endswith("_test")
+    )
+    assert family
+    modules = (*family, *_ADAPTER_MODULES)
+    assert len(modules) == len(set(modules))
+    for module in modules:
         source = source_root / module
         assert source.is_file(), source
         tree = ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
@@ -181,7 +189,7 @@ def test_only_shared_engine_contains_nonforced_git_retirement():
     )
     assert sorted(recursive_removals) == sorted(
         [
-            (_ENGINE, "_relocate_novc", "source"),
+            (_RELOCATION, "_relocate_novc", "source"),
             ("main_repo_maintenance.py", "_clean_one_novc", "novc"),
         ]
     )
