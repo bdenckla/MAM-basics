@@ -663,3 +663,41 @@ headers. The four latest cards and every named report/index remain identical.
 The real committed freshness check, final mega, main fast-forward/push and complete
 user-configuration deployment remain pending. The plan stays live and this update
 stays open while its base survives.
+
+## Final generation gates passed, 2026-09-28
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time. **Committed and backed up:
+the resolved upstream merge at `2374ea3085db57f1de9ed04a81e93e238eb83551`.** A fresh
+fetch still found `origin/main` at `57d2456f3f22f1c8df01a5ea96a309e54a39214c`,
+which is now an ancestor of the execution branch. The checkout was clean before
+the final pipeline. The preceding full-suite and operational results cover this
+commit's executable source; the later merge-record text does not expire those results.
+
+**Passed: the mandatory final mega at `2374ea3085db57f1de9ed04a81e93e238eb83551`.**
+`py/main_0_mega.py` completed all 52 steps in 264.0 seconds, with exit status zero,
+no skipped steps and no tracked diff. The pinned Graphviz/font check passed and
+the existing read-only private-dependent survey ran normally. Every generated
+product, including CLC, the public-corpus surveys and published Holman assets,
+reproduces the committed result. No generated-output commit is required.
+
+**Passed: the separate final hand-run and committed freshness gates at the same
+commit.** `py/main_authored.py gen-mam-parsed-docs` completed with 79 claims passed,
+zero failed and the same existing one pending claim; its documentation and claims
+index introduce no tracked diff. `py/main_diff.py mpplus --check` completed with
+exit status zero and reported every registered report, index and checked asset current.
+The final protected-data, twenty-crop, Scripture-payload, complete-family archive
+and frozen-review comparisons all passed again.
+
+**Verified: upstream survey/oracle splits preserve real-corpus behavior.** A read-only
+TEMP differential compares all 72 strand views over the 24 registered CLC loci,
+all survey fields across 56,172 public-corpus verse records, and all 28 annotated
+residue rows with their counts and page guards; every comparison passes. The CLC
+facade/oracle preserve all 42 original definitions and the three survey modules
+preserve all 63 original definitions. The affected Breuer entry point is explicitly
+a scratch-only measurement, with no retained local measurement or tracked product
+to regenerate; its 65 definitions and imported unit functions are identical.
+
+The approved issue correction, all active remediation and every required source,
+generator, suite and mega check are complete. Final main fast-forward/push and
+complete user-configuration deployment/check remain pending. The plan stays live;
+this update stays open while its base survives.
