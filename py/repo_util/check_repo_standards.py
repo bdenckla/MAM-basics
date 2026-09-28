@@ -64,7 +64,8 @@ The worktree-cleanup standard
 Repository maintenance should inspect linked worktrees through the shared retirement
 API. Candidate selection can be Claude-only, Codex-only, both, or an exact path;
 ownership never supplies a different Git or ignored-content safety policy.
-`repo_util.worktree_retirement` is the implementation of record. The compatibility
+`repo_util.worktree_retirement` is the API of record; its docstring names the
+`worktree_retirement_*` modules that implement it. The compatibility
 `git_worktree_cleanup` API and `--clean-worktrees` action inspect Claude candidates;
 they never prune registrations, sweep folders, or automatically delete branches.
 

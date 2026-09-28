@@ -19,6 +19,9 @@ from pathlib import Path
 import pytest
 
 from repo_util import worktree_retirement as retirement
+from repo_util import worktree_retirement_execution as execution
+from repo_util import worktree_retirement_preflight as preflight
+from repo_util import worktree_retirement_relocation as relocation
 from repo_util import worktree_owners
 from repo_util import git_worktree_cleanup
 from repo_util import codex_worktree_retirement
@@ -165,7 +168,7 @@ def assert_retained(plan, original):
 def test_equivalent_owner_retirement_matches_oracles(
     tmp_path, isolated_runtime, monkeypatch, cross_volume
 ):
-    monkeypatch.setattr(retirement, "_same_volume", lambda *_: not cross_volume)
+    monkeypatch.setattr(relocation, "_same_volume", lambda *_: not cross_volume)
     outcomes = []
     for owner in ("claude", "codex"):
         primary, target, branch = fixture_repo(tmp_path, isolated_runtime, owner)
@@ -385,7 +388,7 @@ def test_partial_removal_resumes_conservatively(
         primary, target, branch = fixture_repo(tmp_path, isolated_runtime, owner)
         original = tree_bytes(add_novc(target)) if with_novc else None
         path, plan = prepare(tmp_path, target, owner)
-        original_git = retirement._git
+        original_git = execution._git
         removal_calls = []
 
         def partial(repo, *args, **kwargs):
@@ -401,7 +404,7 @@ def test_partial_removal_resumes_conservatively(
             return original_git(repo, *args, **kwargs)
 
         with monkeypatch.context() as context:
-            context.setattr(retirement, "_git", partial)
+            context.setattr(execution, "_git", partial)
             if unregistered:
                 result = retirement.execute_retirement(path, confirm_task_ended=True)
                 assert result["residue"]["total_bytes_readable"] == len(
@@ -430,11 +433,11 @@ def test_destination_allocator_and_aliases(tmp_path, isolated_runtime, monkeypat
     source = add_novc(target)
     root = tmp_path / "retained"
     identifiers = iter(("collision", "unique"))
-    parent = root.joinpath(*retirement._shadow_parts(source.parent))
+    parent = root.joinpath(*preflight._shadow_parts(source.parent))
     parent.mkdir(parents=True)
     sentinel = parent / ".novc--collision.json"
     sentinel.write_bytes(b"already retained")
-    monkeypatch.setattr(retirement, "_retirement_id", lambda: next(identifiers))
+    monkeypatch.setattr(preflight, "_retirement_id", lambda: next(identifiers))
     path = tmp_path / "alias.json"
     plan = codex_worktree_retirement.prepare_retirement(
         target,
@@ -565,7 +568,7 @@ def test_exact_relocation_citations_gate_and_survive_retirement(
         assert reviewed["citation_review"]["note"] == (
             "Reviewed fixture references; retained paths are in this preflight."
         )
-        assert reviewed["citation_review"]["fingerprint"] == retirement._fingerprint(
+        assert reviewed["citation_review"]["fingerprint"] == preflight._fingerprint(
             review_payload
         )
         retirement.execute_retirement(reviewed_path, confirm_task_ended=True)
@@ -611,7 +614,7 @@ def test_resume_preserves_new_branch_reflog_history(
     for owner in ("claude", "codex"):
         primary, target, branch = fixture_repo(tmp_path, isolated_runtime, owner)
         path, plan = prepare(tmp_path, target, owner)
-        original_git = retirement._git
+        original_git = execution._git
 
         def fail_branch_delete(repo, *args, **kwargs):
             if args[:2] == ("branch", "-d"):
@@ -621,7 +624,7 @@ def test_resume_preserves_new_branch_reflog_history(
             return original_git(repo, *args, **kwargs)
 
         with monkeypatch.context() as context:
-            context.setattr(retirement, "_git", fail_branch_delete)
+            context.setattr(execution, "_git", fail_branch_delete)
             with pytest.raises(retirement.RetirementError):
                 retirement.execute_retirement(path, confirm_task_ended=True)
         assert target.as_posix() not in registration_paths(primary)
@@ -647,7 +650,7 @@ def test_cross_volume_source_drift_preserves_late_bytes(
         primary, target, branch = fixture_repo(tmp_path, isolated_runtime, owner)
         source = add_novc(target)
         path, plan = prepare(tmp_path, target, owner)
-        copytree = retirement.shutil.copytree
+        copytree = relocation.shutil.copytree
 
         def copy_then_change(*args, **kwargs):
             result = copytree(*args, **kwargs)
@@ -655,8 +658,8 @@ def test_cross_volume_source_drift_preserves_late_bytes(
             return result
 
         with monkeypatch.context() as context:
-            context.setattr(retirement, "_same_volume", lambda *_: False)
-            context.setattr(retirement.shutil, "copytree", copy_then_change)
+            context.setattr(relocation, "_same_volume", lambda *_: False)
+            context.setattr(relocation.shutil, "copytree", copy_then_change)
             with pytest.raises(retirement.RetirementError):
                 retirement.execute_retirement(path, confirm_task_ended=True)
         assert (source / "late").read_bytes() == b"must survive"
