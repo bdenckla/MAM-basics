@@ -86,8 +86,11 @@ def write_json(diffs, old_label, new_label, out_path):
     ``old_label`` and ``new_label`` are ``mpplus_revisions.Revision.label`` pairs, and
     each side's key is named for its kind: ``old_rev`` or ``new_rev`` holds the commit
     hash of a stored release or legacy:<ref>, and ``old_tree`` or ``new_tree`` holds the
-    git tree id of MAM-parsed/plus by which a MAM-basics ref has been recorded since
-    2026-09-14. That is the day unpinned-latest.json's ``new_rev`` became ``new_tree``.
+    git tree id of MAM-parsed/plus by which any other MAM-basics ref has been recorded
+    since 2026-09-14. That is the day unpinned-latest.json's ``new_rev`` became
+    ``new_tree``. On 2026-09-28 cb95915, the boundary between release 2026-09-17 and
+    unpinned-latest, became a stored release, so 2026-09-17.json's ``new_tree`` became
+    ``new_rev`` and unpinned-latest.json's ``old_tree`` became ``old_rev``.
 
     For text-changed diffs, includes narrowed word-level change pairs
     rather than full verse text. For structural diffs, includes the

@@ -167,8 +167,8 @@ class Revision:
 
     ``commit`` is always the full 40-character hash of the commit the tree is read from,
     never the revision as given. A stored release or a legacy:<ref> is recorded by that
-    commit and by ``date``. A MAM-basics ref is recorded by ``tree``, the git tree id of
-    MAM-parsed/plus at ``commit``, and its ``date`` is empty; ``resolve`` says why.
+    commit and by ``date``. Any other MAM-basics ref is recorded by ``tree``, the git tree
+    id of MAM-parsed/plus at ``commit``, and its ``date`` is empty; ``resolve`` says why.
     """
 
     commit: str
@@ -242,14 +242,18 @@ class Revision:
 def resolve(rev):
     """Resolve a stored release, a MAM-basics ref, or explicit legacy:<ref>.
 
-    A stored release and a legacy:<ref> are recorded by their MAM-parsed commit and its
-    date. A MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref,
-    and has no date.
+    A stored release and a legacy:<ref> are recorded by their commit and its date. A
+    stored release's commit is a MAM-parsed commit for the six pre-migration boundaries
+    and a MAM-basics commit for each boundary archived when it was pinned. Any other
+    MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref, and has
+    no date.
 
     Every date is the commit's date in New York time, by Ben's decision of 2026-09-14,
     recorded in mb_cmn/new_york_time.py. A legacy:<ref>'s date is converted from git's
-    committer time. A stored release's date is the manifest's, which a check that day
-    against GitHub's UTC committer times found is already the New York date.
+    committer time. A stored release's date is the manifest's. The six pre-migration
+    dates were found that day, by a check against GitHub's UTC committer times, to be
+    New York dates already; ``mpplus_archive`` converts a MAM-basics boundary's date
+    from git's committer time when it archives the boundary.
 
     WHY A TREE ID, AND NO DATE. Until 2026-09-14 a MAM-basics ref resolved to its content
     commit, the last commit at or before the ref that changed MAM-parsed/plus, found with

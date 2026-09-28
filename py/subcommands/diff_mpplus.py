@@ -9,8 +9,8 @@ Usage:
     .venv/Scripts/python.exe py/main_diff.py mpplus --check
     .venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>
 
-Named historical releases read tracked MAM-parsed/historical/ snapshots.
-HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
+Every boundary of a named release reads a tracked MAM-parsed/historical/
+snapshot. HEAD and any other MAM-basics ref read committed MAM-parsed/plus/ data.
 Use --legacy-history with --old and --new for arbitrary revisions in a sibling
 MAM-parsed clone. That rare mode requires read access and never fetches or clones.
 Output goes to gh-pages/MAM-with-doc/change-log/ by default. If the hash range
@@ -84,9 +84,9 @@ def generated_artifact_names() -> tuple[str, ...]:
 
 
 def _commit_date(rev):
-    """Return a stored release's or legacy:<ref>'s date, or "" for a MAM-basics ref.
+    """Return a stored release's or legacy:<ref>'s date, or "" for any other MAM-basics ref.
 
-    A MAM-basics ref has had no date since 2026-09-14, when it began to be recorded by the git
+    Such a ref has had no date since 2026-09-14, when it began to be recorded by the git
     tree id of MAM-parsed/plus.  Until then its date was that of the last commit to change
     MAM-parsed/plus, found by a path-filtered ``git log --full-history -1``, and in a shallow clone that walk can
     return the wrong commit.  Git treats each commit listed in .git/shallow as having no
@@ -179,9 +179,10 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     ``old_rev`` and ``new_rev`` verbatim, so unpinned-latest said "HEAD", which names
     nothing once the report is committed; Ben decided that day that "a true hash should
     be recorded". A stored release or a legacy:<ref> records the full hash of its
-    MAM-parsed commit. A MAM-basics ref recorded its content commit until 2026-09-14,
-    and since then records the git tree id of MAM-parsed/plus, which is the same in
-    every clone, shallow ones included; ``mpplus_revisions.resolve`` says why. The log
+    commit, a MAM-parsed commit or, for a boundary archived when it was pinned, a
+    MAM-basics commit. Any other MAM-basics ref recorded its content commit until
+    2026-09-14, and since then records the git tree id of MAM-parsed/plus, which is the
+    same in every clone, shallow ones included; ``mpplus_revisions.resolve`` says why. The log
     need not keep up with every commit -- Ben, 2026-09-11: "I want the diff to be able
     to run as sparsely or as frequently as the user wants" -- so a report that lags only
     has to say exactly what it describes, and the recorded ids say it.

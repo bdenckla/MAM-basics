@@ -89,9 +89,12 @@ git -C MAM-parsed-sparse sparse-checkout set MAM-parsed
 ```
 
 The files are under `MAM-parsed-sparse/MAM-parsed/`.
-The historical inputs are included. This sparse checkout supplies data and
-the self-contained toy example; the full MAM-basics checkout supplies the
-product generators. No release archive is maintained.
+The historical inputs are included: a ZIP snapshot of `plus/`, of 13 to 15 MB,
+for each boundary of a named change-log release, with one more for each release
+pinned later. This sparse checkout supplies data and the self-contained toy
+example; the full MAM-basics checkout supplies the product generators. No
+release archive of this product, such as a packaged download of a version, is
+maintained; the historical snapshots are inputs to the change log.
 
 ## Consumer cautions
 

@@ -1,12 +1,18 @@
 # Historical release inputs
 
 These snapshots are permanent, tracked inputs to the change-log generator.
-They contain the plus JSON at each boundary of the named pre-migration
-releases. Each snapshot is an uncompressed ZIP archive named by its full
-original MAM-parsed commit. Members retain their original `plus/...` names and
-exact bytes.
+They contain the plus JSON at each boundary of the named releases in
+`gh-pages/MAM-with-doc/change-log/releases.json`: the six boundaries of the
+pre-migration releases, which are MAM-parsed commits, and each boundary pinned
+since, which is a MAM-basics commit. Each snapshot is an uncompressed ZIP
+archive named by the full hash of its commit. Each member is named
+`plus/<file>`, the file's path relative to the MAM-parsed product root, and
+holds that file's exact bytes at the commit. A MAM-basics snapshot holds only
+the `.json` files of `MAM-parsed/plus/`, which are what the reader compares.
 `manifest.json` records the source repository, commit dates in New York time,
-source blob identifiers, and migration information. Preserve the JSON bytes,
+source blob identifiers, and migration information. An entry's `repository`
+names the repository its commit is in; an entry without one comes from the
+manifest-wide `source_repository`, MAM-parsed. Preserve the JSON bytes,
 including historical schema and filename differences; the reader handles
 those differences without rewriting these inputs.
 
@@ -15,12 +21,26 @@ at 1980-01-01 00:00:00, the creating platform is fixed to Unix, regular-file
 permissions are 0644, and members use `ZIP_STORED`. Archive and member comments
 and extra fields are empty. The reader checks the complete manifest/archive
 member set, rejects duplicate or unlisted members, validates this metadata and
-member CRCs, and reads members directly without extraction.
+member CRCs, and reads members directly without extraction. The six
+pre-migration archives were written on 2026-09-10 by a program that was never
+tracked. `py/mb_diff_mpu/mpplus_archive.py` writes the MAM-basics snapshots and,
+given the members of each pre-migration archive, reproduces it byte for byte.
 
 Ben's decision, 2026-09-06: common change-log generation must not require a
 sibling MAM-parsed clone. Arbitrary historical comparisons remain available
 through explicit, read-only use of a sibling clone. No history cache or
 automatic fetch is used.
+
+Ben's decisions, 2026-09-28: archive each MAM-basics boundary when it is
+pinned, and label it as the older snapshots are labelled, by its full hash and
+New York date. The snapshots had been made on 2026-09-06 for the six
+boundaries that lived in MAM-parsed, and a later boundary was read from
+MAM-basics history, which a shallow clone lacks beyond its depth. On 2026-09-28
+the depth-50 clone of main at 8c2fa6c3 in a Claude cloud container held 117
+commits and not cb95915, the boundary that 78559eba pinned on 2026-09-17, so
+the mega's diff-mpplus step stopped there. cb95915 was archived that day. Its
+new labels changed five published change-log files once: `2026-09-17.html` and
+`.json`, `unpinned-latest.html` and `.json`, and `index.html`.
 
 From the MAM-basics root, the usual command compares the latest named release
 with committed `MAM-parsed/plus/` at MAM-basics HEAD:
@@ -32,9 +52,9 @@ with committed `MAM-parsed/plus/` at MAM-basics HEAD:
 `--all` also regenerates every named release. Explicit `--old` and `--new`
 accept stored release hashes or MAM-basics refs. The original migration
 source commit also resolves to the byte-identical Land commit. A stored
-release is labelled by its commit and that commit's date in New York time;
-a MAM-basics ref is labelled by the git tree id of `MAM-parsed/plus` and has
-no date.
+release, whether a MAM-parsed or a MAM-basics commit, is labelled by its full
+hash and that commit's date in New York time; any other MAM-basics ref, such
+as HEAD, is labelled by the git tree id of `MAM-parsed/plus` and has no date.
 
 For an arbitrary pre-migration comparison, supply both revisions and opt
 into the sibling clone:
