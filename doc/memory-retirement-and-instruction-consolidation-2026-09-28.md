@@ -1,6 +1,7 @@
 # Memory retirement and instruction consolidation: execution record
 
 State: executed 2026-09-28; the authorized scope is complete through exact deletion-manifest delivery. No memory deletion is approved or performed.
+Updates and later status: [memory-retirement-and-instruction-consolidation-2026-09-28-update.md](memory-retirement-and-instruction-consolidation-2026-09-28-update.md).
 
 Codex prepared this sanitized record on 2026-09-28. Ben's instruction was to execute the approved
 public proposal and private appendix, complete backup, migration, consolidation, checks,

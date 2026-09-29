@@ -1,8 +1,8 @@
 # Checkout kinds and portable knowledge: feedback and plan
 
-State: live. Workstream B's focused memory retirement and instruction consolidation is complete
-through the exact deletion-approval boundary on 2026-09-28. Memory deletion remains unapproved.
-Workstream A and Decisions 1–3, 6 and 7 remain planning only.
+State: live. Workstream B's focused memory retirement and instruction consolidation, including
+approved legacy-memory deletion, is complete on 2026-09-29. Workstream A and Decisions 1–3,
+6 and 7 remain planning only.
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `a367f962`. File and line citations refer to that commit.
@@ -86,9 +86,11 @@ The intended outcome has four parts:
 
 **Verdict: both directions are sound, and the code is already mostly there.** Resolution of sibling
 repositories, cloud skips, user-configuration deployment and environment setup all work
-per checkout today. Two things still don't:
-- The instruction and policy text assumes one global primary clone.
-- The memory is tied to one repository on one machine.
+per checkout today. The remaining gaps identified on 2026-09-28 now have these dispositions:
+- **Open:** the instruction and policy text assumes one global primary clone; Workstream A
+  retains that unresolved checkout policy.
+- **Completed 2026-09-29:** Workstream B migrated the approved repository guidance into tracked
+  text, disabled memory and retired the approved legacy stores.
 
 ### Why the code already supports every checkout kind
 
@@ -173,9 +175,9 @@ Three rules apply to every kind:
 1. **Three silent failures to fix before first use (Workstream A):**
    - **Stale forests.** Nothing clones or refreshes the roster. `_how_to_obtain`
      (`py/repo_util/repo_selection.py:49`) only builds text for an error message.
-   - **Instructions that send sessions back into GitRepos.** The worst case is lines 54–62 of
-     `dot-claude/skills/hebrew-prose/references/verifying.md`, which set
-     `$env:REPOS_ROOT = "C:/Users/BenDe/GitRepos"`.
+   - **Instructions that send sessions back into GitRepos.** The stale mandatory
+     `REPOS_ROOT` recipe in `dot-claude/skills/hebrew-prose/references/verifying.md` was
+     corrected under Workstream B. Workstream A's broader checkout-path policy remains open.
    - **Policy that calls a forest residue.** Three passages do this:
      - `evacuated-repositories.md` says "A clone's presence is residue";
      - clause 5 of `gitrepos_setup_rule`;
@@ -351,9 +353,10 @@ writing in that repository.
 
 Ben authorized execution on 2026-09-28, including both approved proposal files named above.
 The root Codex executor owns both migrations and final integration, and is the sole writer.
-Deletion requires Ben's later approval of the refreshed exact manifest. The full public triage
-and private dispositions remain in their approved proposal files; private-derived material
-stays in MAM-private.
+Ben separately approved the exact deletion manifest on 2026-09-29. All 247 listed files and
+eight individually checked empty directories were removed and verified; both raw backups remain
+retained. The full public triage and private dispositions remain in their approved proposal files;
+private-derived material stays in MAM-private.
 
 **Verified checkouts and baselines, recorded before editing:**
 
@@ -460,7 +463,14 @@ private appendix and its destination-specific skill. These routes add no issue-o
    candidate files and separately names only their now-empty memory directories. Databases,
    sidecars, session logs, credentials, configuration and backup archives are excluded.
    Return the manifest to Ben and stop before deletion. Changed files invalidate their approval
-   entries. Deletion and backup disposal require separate explicit approval.
+   entries. Deletion and backup disposal require separate explicit approval. This boundary was
+   observed on 2026-09-28; Ben approved the exact files and conditional directories on 2026-09-29.
+8. **Execute only the separately approved deletion.** Recheck the manifest fingerprint, every
+   current source hash and timestamp, both complete backups, writer quiescence and disabled
+   settings. Remove only the approved literal file paths, indices last, and separately approved
+   directories only when empty. Verify absence and retained backup fidelity afterward. Completed
+   on 2026-09-29: 247 files and eight empty directories removed; postflight passed. Backup disposal
+   remains unapproved.
 
 Record completed checks, deployed versions, configuration evidence and exact private backup
 locations in the execution receipt; keep its public summary sanitized. Laptop retirement is an
@@ -487,9 +497,9 @@ MAM-basics declares product reach in `py/product_scopes.py`; MAM-private declare
 product map or root test runner. The approved authored `MAM-parsed/README.md` change is explicit;
 remaining products and generated outputs are expected unchanged. Outward or difficult-to-undo
 acts are separate: normal public/private `main` pushes, account deployment, account-setting writes,
-and later memory deletion. Deletion remains protected by the verified private archive and exact
-approval. Public main retains its existing Pages schedule. Forest creation and environment
-pinning remain outside this execution scope.
+and approved memory deletion. The completed deletion remains backed by the retained private
+archive and exact approval. Public main retains its existing Pages schedule. Forest creation
+and environment pinning remain outside this execution scope.
 
 
 ## Decisions for Ben
@@ -504,10 +514,11 @@ pinning remain outside this execution scope.
    direct dependencies. The alternative is pinning versions in `requirements.txt` itself.
 4. **Resolved — Claude memory:** Ben's approved focused proposal of 2026-09-28 retires all legacy
    stores and disables auto memory. No replacement `autoMemoryDirectory` is created. The exact
-   deletion manifest still requires later approval.
+   deletion manifest was separately approved on 2026-09-29; all listed files and empty directories
+   were removed and verified. Raw backups remain retained.
 5. **Resolved — Codex memories:** the same approval migrates useful content into tracked text and
    turns generation and use off. Its active metadata database is retained; the refreshed exact
-   legacy-file manifest governs any later deletion.
+   legacy-file manifest was separately approved and executed on 2026-09-29.
 6. **New lessons:** should a session propose the tracked edit in its final message and commit only
    when Ben says yes? Recommended. The alternative is to commit without asking.
 7. **Cloud skills:** should the cloud hook install every shared skill once none contains Windows
@@ -528,3 +539,12 @@ Both migrations are on origin/main, canonical deployment checks clean, account m
 fresh runtime settings are verified and the final eight-store backup matches every source hash.
 No memory was deleted. [memory-retirement-and-instruction-consolidation-2026-09-28.md](memory-retirement-and-instruction-consolidation-2026-09-28.md), “Disablement, retained backup and approval boundary”,
 records the sanitized evidence and private receipt route. Decisions 1–3, 6 and 7 remain open.
+
+
+Codex, 2026-09-29: Ben's “I approve” authorized the exact manifest returned in this chat.
+Reverified unchanged sources, both complete backups, disabled settings and writer quiescence;
+removed the 247 approved files and eight individually checked empty directories; postflight
+verified absence and retained backup fidelity. Workstream B is complete. Its current receipt is
+[memory-retirement-and-instruction-consolidation-2026-09-28-update.md](memory-retirement-and-instruction-consolidation-2026-09-28-update.md),
+“2026-09-29: exact approval and verified deletion”. Backup disposal remains unapproved.
+Workstream A, Decisions 1–3, 6 and 7, laptop execution and cloud expansion remain open.
