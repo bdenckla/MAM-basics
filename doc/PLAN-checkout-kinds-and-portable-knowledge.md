@@ -1,7 +1,7 @@
 # Checkout kinds and portable knowledge: feedback and plan
 
-State: live. Workstream B's focused memory retirement and instruction consolidation is in
-execution under Ben's explicit instruction of 2026-09-28. Memory deletion remains unapproved.
+State: live. Workstream B's focused memory retirement and instruction consolidation is complete
+through the exact deletion-approval boundary on 2026-09-28. Memory deletion remains unapproved.
 Workstream A and Decisions 1–3, 6 and 7 remain planning only.
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
@@ -522,3 +522,9 @@ verified source baselines, sole-writer and integration ownership, exact gates, p
 protection, fresh-session disablement and the later deletion-approval boundary. Decisions 4–5
 are resolved; Decisions 1–3, 6 and 7 remain open. Workstream A, laptop execution and cloud-skill
 expansion are not authorized by this revision.
+
+Codex, 2026-09-28: Workstream B is implemented through the exact deletion-approval boundary.
+Both migrations are on origin/main, canonical deployment checks clean, account memory is off,
+fresh runtime settings are verified and the final eight-store backup matches every source hash.
+No memory was deleted. [memory-retirement-and-instruction-consolidation-2026-09-28.md](memory-retirement-and-instruction-consolidation-2026-09-28.md), “Disablement, retained backup and approval boundary”,
+records the sanitized evidence and private receipt route. Decisions 1–3, 6 and 7 remain open.
