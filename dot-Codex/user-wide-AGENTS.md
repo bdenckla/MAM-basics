@@ -44,6 +44,14 @@ repository knowledge belongs in its owning tracked instructions, skills or docum
 Account-specific values belong in explicit account configuration. Retirement requires a
 verified backup and Ben's approval of the exact deletion list.
 
+## New reusable lessons
+
+When a session identifies a new reusable lesson outside the authorized task's scope, propose
+the owning tracked file, the exact text and its supporting evidence, and wait for Ben's
+approval before applying the edit. Record Ben's explicit decisions, verified task outcomes
+and documentation changes needed to complete authorized work within that work's existing
+authorization. Commit finished authorized work without asking again.
+
 ## Risk has two independent axes
 
 1. **Product reach** is repository-specific. Use the repository's declared product scopes. In
