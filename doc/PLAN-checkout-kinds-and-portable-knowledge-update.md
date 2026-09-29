@@ -195,7 +195,9 @@ separate from product reach.
 | Decision 6 policy choice | Implemented; Ben approved the exact narrow paragraph on 2026-09-29. |
 | Decision 6 canonical implementation, push and deployment | Implemented; verification and deployment evidence below. |
 | Decision 7 policy choice | Implemented; Ben approved the six-skill proposal with its stated cloud limits. |
-| Decision 7 canonical implementation and verification | Implemented; integration, push and deployment remain active until the completion entry below. |
+| Decision 7 canonical implementation, verification, integration, push and deployment | Implemented; completion evidence below. |
+| Actual Claude cloud startup and API-capability measurement | Deferred; cannot be established by this Windows-hosted verification. |
+| REST support in the existing issue-body helper | Deferred outside the approved instruction-installation scope. |
 | Source-forest synchronization and other excluded work | Deferred outside this task's scope. |
 
 **Planning write-back verification:** a scratch comparison against the required commit verified
@@ -305,3 +307,35 @@ Decision 7's approved implementation and verification are complete; integration,
 canonical deployment remain active. Actual Claude cloud loading and
 remote API capabilities remain unverified on this Windows machine. The existing body-edit
 helper's REST implementation and every originally excluded task remain outside this scope.
+
+## 2026-09-29: Decision 7 integrated, pushed and deployed
+
+Recorded by Codex. **Completed:** implementation commit
+`4d3ebf6670295495d715eb3b082026218090979c` was committed on this full clone's `main`.
+The fetched documentation changes through
+`3bf60ceca97d26e1194b6f4adda25baad786ca9d` merged without conflict into
+`50374e651a2a9392e98e8ddfb8c1e0d216311aad`, which was pushed normally to `origin/main`.
+The merge left the hook, canonical configuration, skills and this receipt family unchanged.
+The merged diff check and focused receipt-update-link lint passed. No product changed and
+the documentation-only merge did not expire the final 1011-passed, 5-skipped suite result.
+
+**Deployed and verified:** the complete canonical deployment fetched and sourced
+`refs/remotes/origin/main@50374e651a2a9392e98e8ddfb8c1e0d216311aad`, replaced 12 mappings
+(the common body, its fingerprint and both destinations of the five changed shared skills),
+and verified every installed resource. Its subsequent `--check` reported all 21 mappings
+clean and `USER_CONFIG_PROBLEM_COUNT=0`. Live files were changed only by the repository's
+deployment transaction. The Claude project hook travels with the checkout; it is not a
+machine-level file copied by local deployment.
+
+**Effective base State:** executed 2026-09-29 for Workstreams A and B and both approved
+continuation decisions. The new lesson rule and six-skill cloud installation are implemented,
+verified locally, integrated, pushed and deployed where applicable. This completion write-back
+needs only cheap documentation checks; it changes no canonical deployment source.
+
+**Still deferred:** real Claude cloud startup/loading and live API-capability measurement,
+REST support in the required issue-body editor, and all original exclusions: account
+permission/trust settings, laptop work, memory-backup disposal, separate source-forest
+synchronization, unrelated private pipeline changes and worktree retirement. The preceding
+session's observation that source MAM-private was clean but two commits behind origin remains
+a historical observation; this task performed no separate synchronization or fresh assertion
+about that remote state. No completed forest setup or verification was repeated.

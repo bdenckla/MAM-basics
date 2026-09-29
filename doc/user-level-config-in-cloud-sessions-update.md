@@ -116,3 +116,11 @@ workflow executable changed, so no mega was owed.
 **Cloud runtime remains unverified:** no real Claude cloud startup or live API operation was
 performed on this Windows machine. The historical 2026-09-09 loading measurement above does
 not establish loading of the expanded inventory.
+
+**Integrated and deployed:** implementation
+`4d3ebf6670295495d715eb3b082026218090979c` was merged with moved documentation-only
+`origin/main` and pushed at `50374e651a2a9392e98e8ddfb8c1e0d216311aad`. The merged diff
+and receipt-update-link lint passed. Complete canonical deployment changed 12 mappings;
+the subsequent fetched comparison reported all 21 mappings clean with zero problems.
+The local deployment copies common instructions and skills. The project cloud hook itself
+arrives through the checkout and remains subject to the unverified real-cloud limits above.
