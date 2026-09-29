@@ -1,9 +1,9 @@
 # Deeply retire MAM-parsed plain
 
-State: live; implementation in progress. Ben authorized this plan's persistence
-on 2026-09-27 and bounded implementation checkpoints through 2026-09-28. Neither
-that authorization nor the checkpoint commits authorize integration, push,
-publication, MAM-private edits, or worktree archival.
+State: executed 2026-09-28. Ben authorized the implementation checkpoints and
+then transferred final-integration responsibility to the Phase 8 executor. The
+coordinated MAM-basics and MAM-private integration is complete. Neither worktree
+has been archived or retired.
 
 ## Summary
 
@@ -16,12 +16,11 @@ or written. Keep `MAM-parsed/plus/` and its name unchanged. Preserve the ten
 published HTML paths frozen in `in/mam_parsed_redirect_pages.json` as minimal static
 retirement pages, not as maintained documentation or generated product outputs.
 
-The first implementation phase writes only MAM-basics. It finishes and commits the
-MAM-basics work on `codex-worktree-1a58`, then stops before integration or push.
-MAM-private derives its near-Aleppo consumer notice from the exact MAM-parsed-plus
-notice and pins that notice's SHA-256, so a separate MAM-private compatibility phase
-must be complete and verified before the MAM-basics branch is integrated. The two
-repositories are then integrated and pushed as one coordinated close-out.
+The implementation first wrote only MAM-basics and stopped before integration or
+push. MAM-private then updated its near-Aleppo consumer notice from the exact
+MAM-parsed-plus notice and pinned that notice's SHA-256. Phase 8 reverified the
+shared bytes, integrated MAM-basics first, integrated MAM-private second, and
+finally published this documentation-only close-out record.
 
 Ben made the retirement decisions on 2026-09-27. The phrase "deeply retire" means
 retiring not only the persisted/distributed plain product, but also the plain
@@ -29,23 +28,102 @@ survey, plain documentation, and their self-referential tests. Ben expressly kep
 the option, and preference, to run valuable raw-structure validations on the
 transient data corresponding to today's persisted plain files.
 
+## Phase 8 execution and close-out
+
+Phase 8 began with clean, verified development and primary checkouts. The
+MAM-basics worktree was at `87fc71418bf4d72ce952051bf00cf00500d512a6` on
+`codex-worktree-1a58`; MAM-basics `main` and `origin/main` were at
+`52f1f6bfce902b1493a6738979aac959841e8f0d`. The MAM-private worktree was at
+compatibility commit `4d57838de0f77d68792297ee00cef206bd1684b4` on
+`worktree-near-aleppo`, with its remote worktree branch at the same commit;
+MAM-private `main` and `origin/main` were at
+`e781b1accbdf8fb5f94c3a8469b78fd26ab2e86f`.
+
+Current MAM-basics `main` was merged into the development branch in merge commit
+`ebbfa90fec82a197b7558f2e89b9504f2c08eb3e`. The conflict resolution preserved
+the retirement deletions and static legacy pages, retained the new EVR index
+support from `main`, combined the two independently added finished-document
+dispositions, and kept current URLs in the mega-coverage test. The merge also
+exposed a real executable incompatibility: current `main` had added plain-template
+schema validation to stack-path lookup after the retirement branch had removed
+that product. The repair made stack-path lookup and verbose-payload rendering
+explicitly plus-only, retained current plus-template validation, and removed the
+retired plain-product tests and signatures. Black reported all five affected
+Python files unchanged, and the focused stack-path, mega-coverage, and public-notice
+tests passed with 16 tests.
+
+The required post-merge 52-step mega passed in 166.4 seconds. It validated all 24
+plus books and passed all 50 plus claims, with no failed or pending claim. The
+entire tracked generated diff consisted of
+`gh-pages/MAM-with-doc/change-log/unpinned-latest.html` and
+`gh-pages/MAM-with-doc/change-log/unpinned-latest.json`: their `new_tree` advanced
+from `2929a44c3904e3a62c8efcd0163d998f4a657b5b` to
+`0758f964704002424a4faf4b8a2635d88948364f`, while `diff_count` remained four.
+No other generated output changed. Commit
+`6c46a1a2b176b30ec6ad939dd0582f0f7bfb79b0` records that explained refresh and is
+the final MAM-basics product implementation commit. Because the merge repair
+changed executable behavior, the full suite was also run and passed with 1,011
+tests passed and five skipped in 104.05 seconds. The relevant working-tree,
+staged, and final `git diff --check` checks passed.
+
+The compatibility gate remained closed after the merge and generated refresh.
+The final `MAM-parsed/plus/` tree is
+`0758f964704002424a4faf4b8a2635d88948364f`, the Aleppo input blob is
+`b59014f825721227192749a00d4822f8c20881aa`, and the common notice SHA-256 is
+`b07de1e330ad37fc9700ffd77d6aa9cd8e42011c23375229f08989deb9a9d9f6`.
+Those three identities exactly match the provenance, build-population input, and
+notice constant used by MAM-private commit
+`4d57838de0f77d68792297ee00cef206bd1684b4`. The MAM-private near-Aleppo build
+check against the exact MAM-basics worktree reported the current 24-file dataset.
+
+The original removal inventory was 25 files under `MAM-parsed/plain/`, 14 files
+under `gh-pages/MAM-parsed/plain/`, and seven files under
+`out/tmpl-survey-plain/`. The final inventory has no `MAM-parsed/plain/` tree and
+no `out/tmpl-survey-plain/` tree. It retains 24 plus JSON books and exactly the ten
+approved static compatibility pages: eight under the old plain HTML path and two
+plus-comparison pages. The retired plain SVGs are absent.
+
+The valuable raw structural checks remain at the transient parser-stage boundary:
+closed-template, recursive-grammar, normal-form, expanded-stack, special
+ketiv/qere, paragraph-argument, D-column, and raw-to-plus validation all run before
+the surviving plus product is written. The retirement did not replace those checks
+with another persisted plain-shaped product or internal survey.
+
+MAM-basics `main` was fast-forwarded and pushed first, from
+`52f1f6bfce902b1493a6738979aac959841e8f0d` to
+`6c46a1a2b176b30ec6ad939dd0582f0f7bfb79b0`. MAM-private's worktree then merged
+current `main` without a content change and passed its required root audit: all
+104 census scripts matched their golden results, with no pinned differences,
+unpinned differences, or crashes; the 24-file dataset, 69 HTML files, two font
+copies, dependency graphs, and maintained sibling gates were current. MAM-private
+`main` was fast-forwarded and pushed second, from
+`e781b1accbdf8fb5f94c3a8469b78fd26ab2e86f` to
+`4d57838de0f77d68792297ee00cef206bd1684b4`. The first sandboxed root-audit attempt
+could not write its ignored `.novc` stderr receipt; the identical escalated run
+completed successfully and made no tracked change. This documentation-only record
+is the third and final push. Post-push verification proves that each development
+branch, primary `main`, and `origin/main` agree at the applicable final commit,
+that `origin/worktree-near-aleppo` remains at the MAM-private compatibility commit,
+and that all four checkouts are clean. Both worktrees remain attached and are ready
+for a separate retirement request.
+
 ## Approval snapshot and revision ledger
 
 | Requirement or decision | State | Disposition |
 | --- | --- | --- |
-| The target is MAM-parsed plain, not MAM-parsed plus. | active | Remove the plain product and its product-only support. |
-| Keep `MAM-parsed/plus/` and the word `plus` in its public name and path. | active | Do not rename the surviving product. |
-| Remove the persisted/distributed plain JSON. | implemented | Commit `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` stopped every generator from recreating it; the checkpoint containing this record deletes the tracked `MAM-parsed/plain/` tree. |
-| Remove the plain survey and its generated graphs and data. | implemented | The checkpoint containing this record deletes its outputs and product-facing code while preserving independently justified parser-stage validation. |
-| Remove plain documentation and self-referential tests. | implemented | The checkpoint containing this record deletes the generated documentation content, authoring sources, claims, examples, and tests whose subject or oracle was the retired product. |
-| Preserve frozen legacy URLs without preserving the retired documentation. | active | Ben decided on 2026-09-28 to keep the eight manifest-listed plain HTML paths and two manifest-listed plus-comparison paths as minimal static retirement pages. Delete their generators and old content; do not change the frozen manifest or redirect host. |
+| The target is MAM-parsed plain, not MAM-parsed plus. | implemented | The plain product and its product-only support are retired; plus remains. |
+| Keep `MAM-parsed/plus/` and the word `plus` in its public name and path. | implemented | The surviving product retains its public name and path. |
+| Remove the persisted/distributed plain JSON. | implemented | Commit `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` stopped every generator from recreating it; checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6` deletes the tracked `MAM-parsed/plain/` tree. |
+| Remove the plain survey and its generated graphs and data. | implemented | Checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6` deletes its outputs and product-facing code while preserving independently justified parser-stage validation. |
+| Remove plain documentation and self-referential tests. | implemented | Checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6` deletes the generated documentation content, authoring sources, claims, examples, and tests whose subject or oracle was the retired product. |
+| Preserve frozen legacy URLs without preserving the retired documentation. | implemented | The eight manifest-listed plain HTML paths and two manifest-listed plus-comparison paths remain as minimal static retirement pages; their generators and old content are retired. |
 | Keep valuable raw-structure validation. | implemented | Commits `24b7f23ab80430a1cb413f8e4759d97fb5db3e2d` and `146f6145ad85acf9342b421174e35074480c4301` validate the transient parser-stage structure and raw-to-plus relationship before writes; `4d4385c3cf9ec7ad385e87936739f8687b3cfc7e` moved raw grammar-lock ownership out of the plain survey. |
 | Make the plus survey self-contained. | implemented | Commit `146f6145ad85acf9342b421174e35074480c4301` embeds the full plus `mpasuq` result and removes the plus survey's dependency on `plain_result["mpasuq"]`. |
 | Make the plus consumer notice self-contained. | implemented | The surviving notice directly describes absent source boundary records while preserving the substantive plus warnings. |
-| Limit the first writing phase to MAM-basics. | implemented | The sibling repositories were audited read-only; MAM-private remains a separate task. |
-| Stop MAM-basics before integration and push until MAM-private is compatible. | active | The MAM-basics implementation commit is a handoff input, not yet a published result. |
-| Ignore unsupported external consumers for this retirement decision. | active | Do not retain plain merely as a compatibility product; Git history remains the reconstruction path. |
-| hbofonts and phonetic-hbo need no compatibility edit unless a fresh audit finds a real plain dependency. | active | Treat a newly found dependency as a finding and stop rather than expanding scope silently. |
+| Limit the first writing phase to MAM-basics. | implemented | MAM-basics stopped cleanly before the separately verified MAM-private compatibility phase. |
+| Stop MAM-basics before integration and push until MAM-private is compatible. | implemented | Compatibility commit `4d57838de0f77d68792297ee00cef206bd1684b4` was complete and byte-identity checks passed before the first product push. |
+| Ignore unsupported external consumers for this retirement decision. | implemented | Plain was not retained as a compatibility product; Git history remains the reconstruction path. |
+| hbofonts and phonetic-hbo need no compatibility edit unless a fresh audit finds a real plain dependency. | implemented | The audits found no persisted-plain dependency and neither repository was edited. |
 
 There are no unresolved policy choices in this snapshot. An implementation finding
 that would weaken a retained validation, change plus semantics beyond the consumer
@@ -84,7 +162,8 @@ execution for Ben.
    `73c6b1137777ad1a522949fcea290f8ac1f87a7b` wrapped those special-letter
    templates; no other generated artifact changed. `git diff --check` passed and
    the worktree was clean after the commit.
-6. The fourth checkpoint is complete in the commit containing this record. It
+6. The fourth checkpoint is complete in commit
+   `87fc71418bf4d72ce952051bf00cf00500d512a6`. It
    deletes all 25 files under `MAM-parsed/plain/`, all seven files under
    `out/tmpl-survey-plain/`, and the six plain survey SVGs. It retires the coupled
    authoring, survey, verifier, claim, example, and test consumers; makes the plus
@@ -324,7 +403,7 @@ closed-roster checks may remain mechanical tests.
 
 ## Phase 3: retire the plain product and survey
 
-Status in the checkpoint containing this record: implemented. The plain product
+Status in checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6`: implemented. The plain product
 and survey trees, plain survey SVGs, and their product-facing consumers are
 deleted. The plus survey remains self-contained, and production, candidate,
 documentation, survey, test, and mega runs do not recreate the retired artifacts.
@@ -369,7 +448,7 @@ scope.
 
 ## Phase 4: make plus documentation and notices independent
 
-Status in the checkpoint containing this record: implemented. The plus consumer
+Status in checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6`: implemented. The plus consumer
 notice, documentation, survey, and generated claim index are self-contained. The
 24 plus JSON payloads are byte-for-byte unchanged outside the approved notice
 sentence.
@@ -433,7 +512,7 @@ text search empty.
 
 ## Phase 5: retire self-referential claims and tests
 
-Status in the checkpoint containing this record: implemented. Plain-only claims,
+Status in checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6`: implemented. Plain-only claims,
 examples, artifact loaders, verifier registries, and tests are retired; surviving
 claims and verifiers are explicitly plus-only or parser-stage checks.
 
@@ -465,7 +544,7 @@ self-referential coverage.
 
 ## Phase 6: regenerate and verify MAM-basics
 
-Status in the checkpoint containing this record: complete for the MAM-basics
+Status in checkpoint `87fc71418bf4d72ce952051bf00cf00500d512a6`: complete for the MAM-basics
 implementation gate. The exact targeted, suite, generator, inventory, and diff
 results are recorded in “Implementation progress through 2026-09-28.” Final
 integration still requires the later merge-and-mega gate after MAM-private is
